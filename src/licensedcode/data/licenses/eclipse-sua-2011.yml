@@ -4,6 +4,7 @@ name: Eclipse Foundation Software User Agreement 2011
 category: Copyleft
 owner: Eclipse Foundation
 homepage_url: https://web.archive.org/web/20110629072232/http://www.eclipse.org/legal/epl/notice.php
+spdx_license_key: LicenseRef-scancode-eclipse-sua-2011
 ignorable_urls:
     - http://eclipse.org/equinox/p2/repository_packaging.html
     - http://www.apache.org/licenses/LICENSE

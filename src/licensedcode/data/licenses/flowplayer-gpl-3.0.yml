@@ -4,6 +4,7 @@ name: Flowplayer GPL 3.0
 category: Copyleft
 owner: Flowplayer
 homepage_url: https://flowplayer.org/license/
+spdx_license_key: LicenseRef-scancode-flowplayer-gpl-3.0
 other_urls:
     - http://www.gnu.org/licenses/gpl-3.0.html
 ignorable_authors:

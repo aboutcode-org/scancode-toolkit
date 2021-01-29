@@ -4,5 +4,6 @@ name: Westhawk License
 category: Permissive
 owner: Westhawk
 homepage_url: http://westhawksnmp.cvs.sourceforge.net/viewvc/westhawksnmp/westhawksnmp/src/uk/co/westhawk/snmp/
+spdx_license_key: LicenseRef-scancode-westhawk
 other_urls:
     - http://sourceforge.net/projects/westhawksnmp/?source=navbar

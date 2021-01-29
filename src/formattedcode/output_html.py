@@ -1,33 +1,11 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import io
 from operator import itemgetter
 from os.path import abspath
@@ -38,20 +16,14 @@ from os.path import isfile
 from os.path import join
 
 import click
-import simplejson
+import json
 
-from commoncode import compat
-from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import copytree
 from commoncode.fileutils import delete
 from commoncode.fileutils import file_name
 from commoncode.fileutils import file_base_name
-from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
-from commoncode.system import on_linux
-from commoncode.system import py2
-from commoncode.system import py3
 from formattedcode import FileOptionType
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
@@ -106,8 +78,12 @@ class CustomTemplateOutput(OutputPlugin):
 
         PluggableCommandLineOption(('--custom-template',),
             type=click.Path(
-                exists=True, file_okay=True, dir_okay=False,
-                readable=True, path_type=PATH_TYPE),
+                exists=True,
+                file_okay=True,
+                dir_okay=False,
+                readable=True,
+                path_type=str
+            ),
             required_options=['custom_output'],
             metavar='FILE',
             help='Use this Jinja template FILE as a custom template.',
@@ -121,10 +97,6 @@ class CustomTemplateOutput(OutputPlugin):
     def process_codebase(self, codebase, custom_output, custom_template, **kwargs):
         results = self.get_files(codebase, **kwargs)
         version = codebase.get_or_create_current_header().tool_version
-
-        if on_linux and py2:
-            custom_template = fsencode(custom_template)
-
         template_loc = custom_template
         output_file = custom_output
         write_templated(output_file, results, version, template_loc)
@@ -139,7 +111,7 @@ def write_templated(output_file, results, version, template_loc):
     template = get_template(template_loc)
 
     for template_chunk in generate_output(results, version, template):
-        assert isinstance(template_chunk, compat.unicode)
+        assert isinstance(template_chunk, str)
         try:
             output_file.write(template_chunk)
         except Exception:
@@ -175,9 +147,9 @@ def generate_output(results, version, template):
 
     from licensedcode.cache import get_licenses_db
 
-    converted = OrderedDict()
-    converted_infos = OrderedDict()
-    converted_packages = OrderedDict()
+    converted = {}
+    converted_infos = {}
+    converted_packages = {}
     licenses = {}
 
     LICENSES = 'licenses'
@@ -188,7 +160,7 @@ def generate_output(results, version, template):
 
     # Create a flattened data dict keyed by path
     for scanned_file in results:
-        scanned_file = OrderedDict(scanned_file)
+        scanned_file = dict(scanned_file)
         path = scanned_file['path']
         results = []
         if COPYRIGHTS in scanned_file:
@@ -223,7 +195,7 @@ def generate_output(results, version, template):
         # should rather just pass a the list of files from the scan
         # results and let the template handle this rather than
         # denormalizing the list here??
-        converted_infos[path] = OrderedDict()
+        converted_infos[path] = {}
         for name, value in scanned_file.items():
             if name in (LICENSES, PACKAGES, COPYRIGHTS, EMAILS, URLS):
                 continue
@@ -232,7 +204,7 @@ def generate_output(results, version, template):
         if PACKAGES in scanned_file:
             converted_packages[path] = scanned_file[PACKAGES]
 
-        licenses = OrderedDict(sorted(licenses.items()))
+        licenses = dict(sorted(licenses.items()))
 
     files = {
         'license_copyright': converted,
@@ -326,17 +298,10 @@ def create_html_app(output_file, results, version, scanned_path):  # NOQA
         with io.open(join(target_assets_dir, 'help.html'), 'w', encoding='utf-8') as f:
             f.write(rendered_help)
 
-        # write json data
         # FIXME: this should a regular JSON scan format
-        if py2:
-            mode = 'wb'
-            prefix = b'data='
-        if py3:
-            mode = 'w'
-            prefix = u'data='
-        with io.open(join(target_assets_dir, 'data.js'), mode) as f:
-            f.write(prefix)
-            simplejson.dump(results, f, iterable_as_array=True)
+        with io.open(join(target_assets_dir, 'data.js'), 'w') as f:
+            f.write('data=')
+            json.dump(list(results), f)
 
     except HtmlAppAssetCopyWarning as w:
         raise w

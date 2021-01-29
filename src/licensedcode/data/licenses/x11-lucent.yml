@@ -3,4 +3,5 @@ short_name: X11-Style (Lucent)
 name: X11-Style (Lucent)
 category: Permissive
 owner: Alcatel-Lucent
+spdx_license_key: LicenseRef-scancode-x11-lucent
 minimum_coverage: 80

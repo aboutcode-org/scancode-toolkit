@@ -2,5 +2,4 @@ license_expression: cc-by-2.5
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
-  - https://licensebuttons.net/l/by/2.5
-
+    - https://licensebuttons.net/l/by/2.5

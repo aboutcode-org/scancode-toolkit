@@ -1,0 +1,10 @@
+license_expressions:
+  - sleepycat
+  - sleepycat
+  - bsd-new
+  - bsd-new
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/Sleepycat.t1
+  originally expected to be detected as Sleepycat
+  with coverage of 100.0

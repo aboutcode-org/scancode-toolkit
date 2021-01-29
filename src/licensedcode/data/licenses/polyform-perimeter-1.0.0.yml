@@ -4,12 +4,12 @@ name: PolyForm Perimeter License 1.0.0
 category: Source-available
 owner: Polyform
 homepage_url: https://polyformproject.org/licenses/perimeter/1.0.0/
+spdx_license_key: LicenseRef-scancode-polyform-perimeter-1.0.0
 other_urls:
     - https://heathermeeker.com/2020/05/25/polyform-project-launches-licenses-limiting-competitive-uses-of-software/
 ignorable_copyrights:
-  - Copyright Yoyodyne, Inc. (http://example.com)
+    - Copyright Yoyodyne, Inc. (http://example.com)
 ignorable_holders:
-  - Yoyodyne, Inc.
+    - Yoyodyne, Inc.
 ignorable_urls:
-  - https://polyformproject.org/licenses/perimeter/1.0.0
-
+    - https://polyformproject.org/licenses/perimeter/1.0.0

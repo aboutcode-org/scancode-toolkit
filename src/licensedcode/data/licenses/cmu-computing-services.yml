@@ -4,6 +4,7 @@ name: Carnegie Mellon Computing Services License
 category: Permissive
 owner: Carnegie Mellon University
 homepage_url: http://www.cmu.edu/computing/
+spdx_license_key: LicenseRef-scancode-cmu-computing-services
 text_urls:
     - http://cyrusimap.org/mediawiki/index.php/Downloads#Licensing
 minimum_coverage: 70

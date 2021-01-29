@@ -1,0 +1,5 @@
+license_expression: w3c OR html5
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231.html

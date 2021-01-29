@@ -1,0 +1,9 @@
+- |
+  GPL-2+
+  AFL-2.1
+- afl-2.1 AND gpl-1.0-plus AND gpl-2.0-plus AND unknown
+- |
+  2000-2004 Ola Lundqvist <opal@debian.org>
+  2004-2011 sean finney <seanius@debian.org>
+  2013-2015 Paul Gevers <elbrus@debian.org>
+  2005 sean finney <seanius@debian.org>

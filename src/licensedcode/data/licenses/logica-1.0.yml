@@ -4,6 +4,7 @@ name: Logica Open Source License v1.0
 category: Permissive
 owner: Logica
 homepage_url: http://opensmpp.logica.com/CommonPart/Download/Download.htm
+spdx_license_key: LicenseRef-scancode-logica-1.0
 text_urls:
     - http://opensmpp.logica.com/CommonPart/Download/Download.htm
 ignorable_copyrights:

@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: GNOME Project
 homepage_url: https://github.com/GNOME/gnome-music/blob/master/LICENSE
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-gstreamer-exception-2.0
 standard_notice: |
     # GNOME Music is free software; you can redistribute it and/or modify
     # it under the terms of the GNU General Public License as published by

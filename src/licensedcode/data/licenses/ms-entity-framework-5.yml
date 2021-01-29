@@ -4,6 +4,7 @@ name: MS Entity Framework 5 License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://msdn.microsoft.com/en-US/data/jj250905
+spdx_license_key: LicenseRef-scancode-ms-entity-framework-5
 text_urls:
     - http://msdn.microsoft.com/en-US/data/jj250905
 ignorable_urls:

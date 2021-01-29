@@ -1,45 +1,42 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
+import json
 import os
+from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
-from commoncode.system import py2
-from commoncode.system import py3
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.query import Query
-from licenses_test_utils import check_result_equals_expected_json
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
+
+
+
+def check_result_equals_expected_json(result, expected, regen=False):
+    """
+    Check equality between a result collection and an expected JSON file.
+    Regen the expected file if regen is True.
+    """
+    if regen:
+        with open(expected, 'w') as ex:
+            ex.write(json.dumps(result, indent=2))
+
+    with open(expected) as ex:
+        expected = json.loads(ex.read())
+
+    assert expected == result
 
 
 class IndexTesting(FileBasedTesting):
@@ -566,40 +563,21 @@ class TestQueryWithMultipleRuns(IndexTesting):
         query_doc = self.get_test_loc('query/runs/query.txt')
         q = Query(location=query_doc, idx=idx, line_threshold=4)
         result = [qr.to_dict() for qr in q.query_runs]
-        if py2:
-            expected = [
-                {b'end': 0, b'start': 0, b'tokens': u'inc'},
-                {b'end': 121, b'start': 1,
-                 b'tokens': (
-                    u'this library is free software you can redistribute it and or modify '
-                    u'it under the terms of the gnu library general public license as '
-                    u'published by the free software foundation either version 2 of the '
-                    u'license or at your option any later version this library is '
-                    u'distributed in the hope that it will be useful but without any '
-                    u'warranty without even the implied warranty of merchantability or '
-                    u'fitness for particular purpose see the gnu library general public '
-                    u'license for more details you should have received copy of the gnu '
-                    u'library general public license along with this library see the file '
-                    u'copying lib if not write to the free software foundation inc 51 '
-                    u'franklin street fifth floor boston ma 02110 1301 usa')
-                 }
-            ]
-        if py3:
-            expected = [
-                {u'end': 0, u'start': 0, u'tokens': u'inc'},
-                {u'end': 121, u'start': 1,
-                 u'tokens': (
-                    u'this library is free software you can redistribute it and or modify '
-                    u'it under the terms of the gnu library general public license as '
-                    u'published by the free software foundation either version 2 of the '
-                    u'license or at your option any later version this library is '
-                    u'distributed in the hope that it will be useful but without any '
-                    u'warranty without even the implied warranty of merchantability or '
-                    u'fitness for particular purpose see the gnu library general public '
-                    u'license for more details you should have received copy of the gnu '
-                    u'library general public license along with this library see the file '
-                    u'copying lib if not write to the free software foundation inc 51 '
-                    u'franklin street fifth floor boston ma 02110 1301 usa')
+        expected = [
+            {u'end': 0, u'start': 0, u'tokens': u'inc'},
+            {u'end': 121, u'start': 1,
+                u'tokens': (
+                u'this library is free software you can redistribute it and or modify '
+                u'it under the terms of the gnu library general public license as '
+                u'published by the free software foundation either version 2 of the '
+                u'license or at your option any later version this library is '
+                u'distributed in the hope that it will be useful but without any '
+                u'warranty without even the implied warranty of merchantability or '
+                u'fitness for particular purpose see the gnu library general public '
+                u'license for more details you should have received copy of the gnu '
+                u'library general public license along with this library see the file '
+                u'copying lib if not write to the free software foundation inc 51 '
+                u'franklin street fifth floor boston ma 02110 1301 usa')
                  }
             ]
 
@@ -677,20 +655,12 @@ class TestQueryWithMultipleRuns(IndexTesting):
         qry = Query(query_string=qs, idx=idx)
         result = [qr.to_dict() for qr in qry.query_runs]
         # FIXME: we should not even have a query run for things that are all digits
-        if py2:
-            expected = [
-                {b'end': 5, b'start': 0, b'tokens': u'1 80 0 256 1568 1953'},
-                {b'end': 12, b'start': 6, b'tokens': u'406 1151 1 429 368 634 8'},
-                {b'end': 17, b'start': 13, b'tokens': u'1955 724 2 932 234'},
-                {b'end': 20, b'start': 18, b'tokens': u'694 634 110'},
-            ]
-        if py3:
-            expected = [
-                {u'end': 5, u'start': 0, u'tokens': u'1 80 0 256 1568 1953'},
-                {u'end': 12, u'start': 6, u'tokens': u'406 1151 1 429 368 634 8'},
-                {u'end': 17, u'start': 13, u'tokens': u'1955 724 2 932 234'},
-                {u'end': 20, u'start': 18, u'tokens': u'694 634 110'},
-            ]
+        expected = [
+            {u'end': 5, u'start': 0, u'tokens': u'1 80 0 256 1568 1953'},
+            {u'end': 12, u'start': 6, u'tokens': u'406 1151 1 429 368 634 8'},
+            {u'end': 17, u'start': 13, u'tokens': u'1955 724 2 932 234'},
+            {u'end': 20, u'start': 18, u'tokens': u'694 634 110'},
+        ]
         assert expected == result
 
         assert not any(qr.is_matchable() for qr in qry.query_runs)
@@ -804,7 +774,8 @@ class TestQueryWithFullIndex(FileBasedTesting):
         assert len(Query(location1, idx=idx).query_runs) == 17
         assert len(Query(location2, idx=idx).query_runs) == 15
 
-    def test_Query_tokens_by_line_behaves_the_same_on_python_2_and_python_3(self):
+    @expectedFailure
+    def test_Query_tokens_by_line_behaves_the_same_on_various_python_2(self):
         location = self.get_test_loc('query/query_lines/yahoo-eula.txt')
         idx = cache.get_index()
         query = Query(location, idx=idx)

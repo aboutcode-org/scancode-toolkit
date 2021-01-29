@@ -3,6 +3,7 @@ short_name: Larabie Fonts EULA
 name: Larabie Fonts EULA
 category: Proprietary Free
 owner: Larabie Fonts
+spdx_license_key: LicenseRef-scancode-larabie
 ignorable_urls:
     - http://come.to/larabiefonts
     - http://uk.zarcrom.com/font/

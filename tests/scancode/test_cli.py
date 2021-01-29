@@ -1,57 +1,30 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import division
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import io
 import json
 import os
 
-import click
-click.disable_unicode_literals_warning = True
 import pytest
 
 from commoncode import fileutils
-from commoncode.fileutils import fsencode
 from commoncode.testcase import FileDrivenTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_macos_14_or_higher
 from commoncode.system import on_windows
-from commoncode.system import py2
-from commoncode.system import py3
 
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import load_json_result
 from scancode.cli_test_utils import load_json_result_from_string
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
-
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -62,12 +35,6 @@ of these CLI tests are dependent on py.test monkeypatch to ensure we are testing
 the actual command outputs as if using a real command line call. Some are using
 a plain subprocess to the same effect.
 """
-
-
-if py2:
-    read_mode = 'rb'
-if py3:
-    read_mode = 'r'
 
 
 def test_package_option_detects_packages(monkeypatch):
@@ -182,7 +149,7 @@ def test_scan_info_returns_full_root():
     result_file = test_env.get_temp_file('json')
     args = ['--info', '--full-root', test_dir, '--json', result_file]
     run_scan_click(args)
-    result_data = json.loads(open(result_file, read_mode).read())
+    result_data = json.loads(open(result_file).read())
     file_paths = [f['path'] for f in result_data['files']]
     assert 12 == len(file_paths)
     root = fileutils.as_posixpath(test_dir)
@@ -194,7 +161,7 @@ def test_scan_info_returns_correct_full_root_with_single_file():
     result_file = test_env.get_temp_file('json')
     args = ['--info', '--full-root', test_file, '--json', result_file]
     run_scan_click(args)
-    result_data = json.loads(open(result_file, read_mode).read())
+    result_data = json.loads(open(result_file).read())
     files = result_data['files']
     # we have a single file
     assert len(files) == 1
@@ -285,7 +252,6 @@ def test_failing_scan_return_proper_exit_code_on_failure():
     run_scan_click(args, expected_rc=1)
 
 
-@pytest.mark.xfail(py2, reason='May fail on Python 2 py2')
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.html')
@@ -305,7 +271,6 @@ def test_scan_license_should_not_fail_with_output_to_html_and_json():
     assert 'Object of type License is not JSON serializable' not in result.output
 
 
-@pytest.mark.xfail(reason='May fail on Python 2 py2')
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html_app():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.app.html')
@@ -391,21 +356,25 @@ def test_scan_works_with_multiple_processes_and_timeouts():
          (u'scan_errors', [u'ERROR: for scanner: emails:\nERROR: Processing interrupted: timeout after 0 seconds.'])]
     ]
 
-    result_json = json.loads(open(result_file).read(), object_pairs_hook=OrderedDict)
+    result_json = json.loads(open(result_file).read())
     assert sorted(sorted(x) for x in expected) == sorted(sorted(x.items()) for x in result_json['files'])
 
 
 def check_scan_does_not_fail_when_scanning_unicode_files_and_paths(verbosity):
     test_dir = test_env.get_test_loc(u'unicodepath/uc')
     result_file = test_env.get_temp_file('json')
-
-    if on_linux and py2:
-        test_dir = fsencode(test_dir)
-        result_file = fsencode(result_file)
-
-    args = ['--info', '--license', '--copyright', '--package',
-            '--email', '--url', '--strip-root', test_dir , '--json',
-            result_file] + ([verbosity] if verbosity else [])
+    args = [
+        '--info',
+        '--license',
+        '--copyright',
+        '--package',
+        '--email',
+        '--url',
+        '--strip-root',
+        test_dir ,
+        '--json',
+        result_file
+    ] + ([verbosity] if verbosity else [])
     results = run_scan_click(args)
 
     # the paths for each OS ends up encoded differently.
@@ -453,11 +422,8 @@ def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
 
     test_path = u'unicode_fixtures.tar.gz'
 
-    if on_linux and py2:
-        test_path = b'unicode_fixtures.tar.gz'
-
     test_dir = test_env.extract_test_tar_raw(test_path)
-    test_dir = fsencode(test_dir)
+    test_dir = os.fsencode(test_dir)
 
     args = ['-n0', '--info', '--license', '--copyright', '--package', '--email',
             '--url', '--strip-root', '--json', '-', test_dir]
@@ -527,16 +493,12 @@ def test_scan_can_handle_weird_file_names():
     check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
 
-@pytest.mark.skipif(on_macos_14_or_higher or (on_windows and py3),
-        reason='Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635'
-        ' Also this fails on Windows and Python 3')
+@pytest.mark.skipif(on_macos_14_or_higher or on_windows,
+    reason='Cannot handle yet byte paths on macOS 10.14+. '
+    'See https://github.com/nexB/scancode-toolkit/issues/1635')
 def test_scan_can_handle_non_utf8_file_names_on_posix():
     test_dir = test_env.extract_test_tar_raw('non_utf8/non_unicode.tgz')
     result_file = test_env.get_temp_file('json')
-
-    if on_linux and py2:
-        test_dir = fsencode(test_dir)
-        result_file = fsencode(result_file)
 
     args = ['-i', '--strip-root', test_dir, '--json', result_file]
     run_scan_click(args)
@@ -550,10 +512,8 @@ def test_scan_can_handle_non_utf8_file_names_on_posix():
         expected = 'non_utf8/expected-linux.json'
     elif on_mac:
         expected = 'non_utf8/expected-mac.json'
-    elif on_windows and py2:
-        expected = 'non_utf8/expected-win-py2.json'
-    elif on_windows and py3:
-        expected = 'non_utf8/expected-win-py3.json'
+    elif on_windows:
+        expected = 'non_utf8/expected-win.json'
 
     check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
@@ -744,7 +704,7 @@ def test_scan_valid_duration_field_in_json_output_headers():
 
 
 @pytest.mark.scanslow
-@pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')
+@pytest.mark.skipif(on_windows, reason='Somehow this test fails for now on Python 3')
 def test_scan_with_timing_json_return_timings_for_each_scanner():
     test_dir = test_env.extract_test_tar('timing/basic.tgz')
     result_file = test_env.get_temp_file('json')
@@ -758,7 +718,7 @@ def test_scan_with_timing_json_return_timings_for_each_scanner():
 
 
 @pytest.mark.scanslow
-@pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')
+@pytest.mark.skipif(on_windows, reason='Somehow this test fails for now on Python 3')
 def test_scan_with_timing_jsonpp_return_timings_for_each_scanner():
     test_dir = test_env.extract_test_tar('timing/basic.tgz')
     result_file = test_env.get_temp_file('json')
@@ -830,7 +790,6 @@ def test_get_displayable_summary():
     assert expected == results
 
 
-@pytest.mark.xfail  # ('weird test with TTY interactions that need to be revisited')
 def test_display_summary_edge_case_scan_time_zero_should_not_fail():
     from io import StringIO
     import sys
@@ -925,9 +884,9 @@ def test_merge_multiple_scans():
     args = ['--from-json', test_file_1, '--from-json', test_file_2, '--json', result_file]
     run_scan_click(args, expected_rc=0)
     expected = test_env.get_test_loc('merge_scans/expected.json')
-    with open(expected, read_mode) as f:
+    with open(expected) as f:
         expected_files = json.loads(f.read())['files']
-    with open(result_file, read_mode) as f:
+    with open(result_file) as f:
         result_files = json.loads(f.read())['files']
     assert expected_files == result_files
 

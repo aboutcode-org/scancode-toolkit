@@ -1,0 +1,6 @@
+license_expression: unknown-license-reference AND trademark-notice
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.txt
+notes: See in https://github.com/PixarAnimationStudios/OpenTimelineIO

@@ -90,7 +90,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -109,7 +109,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -306,7 +306,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -325,7 +325,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -433,7 +433,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -452,7 +452,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -550,7 +550,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -569,7 +569,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -651,7 +651,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -670,7 +670,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         },
         {
@@ -683,7 +683,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 96,
@@ -862,7 +862,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -881,7 +881,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -941,7 +941,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -960,7 +960,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -1020,7 +1020,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -1039,7 +1039,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -1099,7 +1099,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -1118,7 +1118,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -1178,7 +1178,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -1197,7 +1197,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -1289,7 +1289,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -1308,7 +1308,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -1368,7 +1368,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -1387,7 +1387,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -1447,7 +1447,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -1466,7 +1466,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -1558,7 +1558,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -1577,7 +1577,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -1637,7 +1637,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -1656,7 +1656,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -1716,7 +1716,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -1735,7 +1735,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -1805,7 +1805,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -1824,7 +1824,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -1965,7 +1965,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -1984,7 +1984,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -2044,7 +2044,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 89,
@@ -2263,7 +2263,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 4,
@@ -2282,7 +2282,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -2380,7 +2380,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -2399,7 +2399,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -2459,7 +2459,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -2478,7 +2478,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -2538,7 +2538,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -2557,7 +2557,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -2617,7 +2617,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -2636,7 +2636,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -2696,7 +2696,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 112,
@@ -2715,7 +2715,7 @@
             "rule_length": 142,
             "matched_length": 142,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -2848,7 +2848,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 91,
@@ -2995,7 +2995,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 6,
@@ -3225,7 +3225,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -3244,7 +3244,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -3304,7 +3304,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -3323,7 +3323,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -3793,7 +3793,7 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
           "spdx_license_key": "GPL-2.0-or-later",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
           "start_line": 6,
@@ -3813,7 +3813,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         },
         {
@@ -3826,7 +3826,7 @@
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ada-linking-exception",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 6,
@@ -3846,7 +3846,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         }
       ],
@@ -3918,7 +3918,7 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
           "spdx_license_key": "GPL-2.0-or-later",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
           "start_line": 6,
@@ -3938,7 +3938,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         },
         {
@@ -3951,7 +3951,7 @@
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ada-linking-exception",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 6,
@@ -3971,7 +3971,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         }
       ],
@@ -4031,7 +4031,7 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
           "spdx_license_key": "GPL-2.0-or-later",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
           "start_line": 6,
@@ -4051,7 +4051,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         },
         {
@@ -4064,7 +4064,7 @@
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ada-linking-exception",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 6,
@@ -4084,7 +4084,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         }
       ],
@@ -4209,7 +4209,7 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
           "spdx_license_key": "GPL-2.0-or-later",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
           "start_line": 6,
@@ -4229,7 +4229,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         },
         {
@@ -4242,7 +4242,7 @@
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ada-linking-exception",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 6,
@@ -4262,7 +4262,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         }
       ],
@@ -4322,7 +4322,7 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
           "spdx_license_key": "GPL-2.0-or-later",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
           "start_line": 6,
@@ -4342,7 +4342,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         },
         {
@@ -4355,7 +4355,7 @@
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ada-linking-exception",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 6,
@@ -4375,7 +4375,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         }
       ],
@@ -4435,7 +4435,7 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
           "spdx_license_key": "GPL-2.0-or-later",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
           "start_line": 6,
@@ -4455,7 +4455,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         },
         {
@@ -4468,7 +4468,7 @@
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ada-linking-exception",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 6,
@@ -4488,7 +4488,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         }
       ],
@@ -4548,7 +4548,7 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
           "spdx_license_key": "GPL-2.0-or-later",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
           "start_line": 6,
@@ -4568,7 +4568,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         },
         {
@@ -4581,7 +4581,7 @@
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ada-linking-exception",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 6,
@@ -4601,7 +4601,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         }
       ],
@@ -4661,7 +4661,7 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
           "spdx_license_key": "GPL-2.0-or-later",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
           "start_line": 6,
@@ -4681,7 +4681,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         },
         {
@@ -4694,7 +4694,7 @@
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ada-linking-exception",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 6,
@@ -4714,7 +4714,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         }
       ],
@@ -4774,7 +4774,7 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
           "spdx_license_key": "GPL-2.0-or-later",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
           "start_line": 6,
@@ -4794,7 +4794,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         },
         {
@@ -4807,7 +4807,7 @@
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ada-linking-exception",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 6,
@@ -4827,7 +4827,7 @@
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         }
       ],
@@ -4887,7 +4887,7 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
           "spdx_license_key": "GPL-2.0-or-later",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
           "start_line": 6,
@@ -4920,7 +4920,7 @@
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ada-linking-exception",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 6,
@@ -5064,7 +5064,7 @@
           "owner": "Regents of the University of California",
           "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
           "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-new",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
           "spdx_license_key": "BSD-3-Clause",
           "spdx_url": "https://spdx.org/licenses/BSD-3-Clause",
           "start_line": 5,
@@ -5163,7 +5163,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 6,
@@ -5324,7 +5324,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -5343,7 +5343,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 99
           }
         }
       ],
@@ -5403,7 +5403,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 5,
@@ -5952,7 +5952,7 @@
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:boost-1.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
           "spdx_license_key": "BSL-1.0",
           "spdx_url": "https://spdx.org/licenses/BSL-1.0",
           "start_line": 1,
@@ -6019,7 +6019,7 @@
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:boost-1.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
           "spdx_license_key": "BSL-1.0",
           "spdx_url": "https://spdx.org/licenses/BSL-1.0",
           "start_line": 57,
@@ -6038,7 +6038,7 @@
             "rule_length": 27,
             "matched_length": 21,
             "match_coverage": 77.78,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -6180,7 +6180,7 @@
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:boost-1.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
           "spdx_license_key": "BSL-1.0",
           "spdx_url": "https://spdx.org/licenses/BSL-1.0",
           "start_line": 4,
@@ -6199,7 +6199,7 @@
             "rule_length": 27,
             "matched_length": 25,
             "match_coverage": 92.59,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -6265,7 +6265,7 @@
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:boost-1.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
           "spdx_license_key": "BSL-1.0",
           "spdx_url": "https://spdx.org/licenses/BSL-1.0",
           "start_line": 4,
@@ -6284,7 +6284,7 @@
             "rule_length": 27,
             "matched_length": 25,
             "match_coverage": 92.59,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -6350,7 +6350,7 @@
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:boost-1.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
           "spdx_license_key": "BSL-1.0",
           "spdx_url": "https://spdx.org/licenses/BSL-1.0",
           "start_line": 4,
@@ -6369,7 +6369,7 @@
             "rule_length": 27,
             "matched_length": 25,
             "match_coverage": 92.59,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -6435,7 +6435,7 @@
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:boost-1.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
           "spdx_license_key": "BSL-1.0",
           "spdx_url": "https://spdx.org/licenses/BSL-1.0",
           "start_line": 4,
@@ -6454,7 +6454,7 @@
             "rule_length": 27,
             "matched_length": 25,
             "match_coverage": 92.59,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -6520,7 +6520,7 @@
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:boost-1.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
           "spdx_license_key": "BSL-1.0",
           "spdx_url": "https://spdx.org/licenses/BSL-1.0",
           "start_line": 4,
@@ -6539,7 +6539,7 @@
             "rule_length": 27,
             "matched_length": 25,
             "match_coverage": 92.59,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -6637,7 +6637,7 @@
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:boost-1.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
           "spdx_license_key": "BSL-1.0",
           "spdx_url": "https://spdx.org/licenses/BSL-1.0",
           "start_line": 4,
@@ -6656,7 +6656,7 @@
             "rule_length": 27,
             "matched_length": 25,
             "match_coverage": 92.59,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -6722,7 +6722,7 @@
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:boost-1.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
           "spdx_license_key": "BSL-1.0",
           "spdx_url": "https://spdx.org/licenses/BSL-1.0",
           "start_line": 4,
@@ -6741,7 +6741,7 @@
             "rule_length": 27,
             "matched_length": 25,
             "match_coverage": 92.59,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -6807,7 +6807,7 @@
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:boost-1.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
           "spdx_license_key": "BSL-1.0",
           "spdx_url": "https://spdx.org/licenses/BSL-1.0",
           "start_line": 4,
@@ -6826,7 +6826,7 @@
             "rule_length": 27,
             "matched_length": 25,
             "match_coverage": 92.59,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -6929,7 +6929,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 17,
@@ -7077,7 +7077,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -7096,7 +7096,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -7156,7 +7156,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -7175,7 +7175,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -7267,7 +7267,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -7286,7 +7286,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -7346,7 +7346,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -7365,7 +7365,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -7435,7 +7435,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -7454,7 +7454,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -7578,7 +7578,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 5,
@@ -7597,7 +7597,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -7689,7 +7689,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 6,
@@ -7708,7 +7708,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -7955,7 +7955,7 @@
           "owner": "MIT",
           "homepage_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
           "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit-old-style",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/mit-old-style",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 9,
@@ -8104,7 +8104,7 @@
           "owner": "nexB",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:other-permissive",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/other-permissive",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 26,
@@ -8123,7 +8123,7 @@
             "rule_length": 22,
             "matched_length": 22,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -8441,7 +8441,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 16,
@@ -8557,7 +8557,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 5,
@@ -8576,7 +8576,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -8834,7 +8834,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 6,
@@ -8853,7 +8853,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -8950,7 +8950,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 168,
@@ -9960,7 +9960,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 55,
@@ -10066,7 +10066,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 4,
@@ -10085,7 +10085,7 @@
             "rule_length": 7,
             "matched_length": 7,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -10139,7 +10139,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 4,
@@ -10158,7 +10158,7 @@
             "rule_length": 7,
             "matched_length": 7,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -10212,7 +10212,7 @@
           "owner": "info-zip",
           "homepage_url": "http://www.info-zip.org/",
           "text_url": "ftp://ftp.info-zip.org/pub/infozip/license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:info-zip-2009-01",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/info-zip-2009-01",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 26,
@@ -10384,7 +10384,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 17,
@@ -10574,7 +10574,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 14,
@@ -10706,7 +10706,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -10725,7 +10725,7 @@
             "rule_length": 43,
             "matched_length": 43,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -10805,7 +10805,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 61,
@@ -10966,7 +10966,7 @@
           "owner": "Unspecified",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown-license-reference",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 5,
@@ -11109,7 +11109,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 4,
@@ -11128,7 +11128,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -11194,7 +11194,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 5,
@@ -11279,7 +11279,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 4,
@@ -11298,7 +11298,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -13704,7 +13704,7 @@
           "owner": "Peter Deutsch",
           "homepage_url": "http://www.ietf.org/rfc/rfc1952.txt",
           "text_url": "http://www.ietf.org/rfc/rfc1952.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:peter-deutsch-document",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/peter-deutsch-document",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 31,
@@ -13825,7 +13825,7 @@
           "owner": "Peter Deutsch",
           "homepage_url": "http://www.ietf.org/rfc/rfc1952.txt",
           "text_url": "http://www.ietf.org/rfc/rfc1952.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:peter-deutsch-document",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/peter-deutsch-document",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 29,
@@ -13946,7 +13946,7 @@
           "owner": "Peter Deutsch",
           "homepage_url": "http://www.ietf.org/rfc/rfc1952.txt",
           "text_url": "http://www.ietf.org/rfc/rfc1952.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:peter-deutsch-document",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/peter-deutsch-document",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 29,
@@ -14191,7 +14191,7 @@
           "owner": "Unspecified",
           "homepage_url": "http://www.linfo.org/publicdomain.html",
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:public-domain",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 2,
@@ -14210,7 +14210,7 @@
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 50
           }
         }
       ],
@@ -14258,7 +14258,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -14277,7 +14277,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -14347,7 +14347,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 6,
@@ -14442,7 +14442,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 6,
@@ -14527,7 +14527,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 4,
@@ -14546,7 +14546,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -14606,7 +14606,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 5,
@@ -14723,7 +14723,7 @@
           "owner": "Unspecified",
           "homepage_url": "http://www.linfo.org/publicdomain.html",
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:public-domain",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 23,
@@ -14742,7 +14742,7 @@
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 50
           }
         }
       ],
@@ -14812,7 +14812,7 @@
           "owner": "Unspecified",
           "homepage_url": "http://www.linfo.org/publicdomain.html",
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:public-domain",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 2,
@@ -14831,7 +14831,7 @@
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 50
           }
         }
       ],
@@ -14879,7 +14879,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -14898,7 +14898,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -15022,7 +15022,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -15041,7 +15041,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -15101,7 +15101,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -15120,7 +15120,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -15428,7 +15428,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -15447,7 +15447,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -15657,7 +15657,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 2,
@@ -15676,7 +15676,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -16041,7 +16041,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -16060,7 +16060,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -16120,7 +16120,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -16139,7 +16139,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -16199,7 +16199,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 3,
@@ -16218,7 +16218,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -16493,7 +16493,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 8,
@@ -16512,7 +16512,7 @@
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -16616,7 +16616,7 @@
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
           "spdx_license_key": "Zlib",
           "spdx_url": "https://spdx.org/licenses/Zlib",
           "start_line": 77,

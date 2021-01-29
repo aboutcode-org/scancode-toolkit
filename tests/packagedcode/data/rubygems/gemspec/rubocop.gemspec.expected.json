@@ -1,139 +1,139 @@
 [
   {
-	"type": "gem",
-	"namespace": null,
-	"name": "rubocop",
-	"version": "RuboCop::Version::STRING",
-	"qualifiers": {},
-	"subpath": null,
-	"primary_language": "Ruby",
-	"description": "Automatic Ruby code style checking tool. Aims to enforce the community-driven Ruby Style Guide.",
-	"release_date": null,
-	"parties": [
-	{
-	  "type": "person",
-	  "role": "author",
-	  "name": "Bozhidar Batsov",
-	  "email": null,
-	  "url": null
-	},
-	{
-	  "type": "person",
-	  "role": "author",
-	  "name": " Jonas Arvidsson",
-	  "email": null,
-	  "url": null
-	},
-	{
-	  "type": "person",
-	  "role": "author",
-	  "name": " Yuji Nakayama",
-	  "email": null,
-	  "url": null
-	},
-	{
-	  "type": "person",
-	  "role": "email",
-	  "name": null,
-	  "email": "rubocop@googlegroups.com",
-	  "url": null
-	}
-	],
-	"keywords": [],
-	"homepage_url": "https://github.com/rubocop-hq/rubocop",
-	"download_url": null,
-	"size": null,
-	"sha1": null,
-	"md5": null,
-	"sha256": null,
-	"sha512": null,
-	"bug_tracking_url": null,
-	"code_view_url": null,
-	"vcs_url": null,
-	"copyright": null,
-	"license_expression": null,
-	"declared_license": null,
-	"notice_text": null,
-	"root_path": null,
-	"dependencies": [
-	{
-	  "purl": "pkg:gem/bundler",
-	  "requirement": ">= 1.3.0, < 3.0",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/rack",
-	  "requirement": ">= 2.0",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/jaro_winkler",
-	  "requirement": "~> 1.5.1",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/parallel",
-	  "requirement": "~> 1.10",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/parser",
-	  "requirement": ">= 2.5",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/powerpack",
-	  "requirement": "~> 0.1",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/rainbow",
-	  "requirement": ">= 2.2.2, < 4.0",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/ruby-progressbar",
-	  "requirement": "~> 1.7",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/unicode-display_width",
-	  "requirement": "~> 1.4.0",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	}
-	],
-	"contains_source_code": null,
-	"source_packages": [],
-	"purl": "pkg:gem/rubocop@RuboCop::Version::STRING",
-	"repository_homepage_url": "https://rubygems.org/gems/rubocop/versions/RuboCop::Version::STRING",
-	"repository_download_url": "https://rubygems.org/downloads/rubocop-RuboCop::Version::STRING.gem",
-	"api_data_url": "https://rubygems.org/api/v2/rubygems/rubocop/versions/RuboCop::Version::STRING.json"
+    "type": "gem",
+    "namespace": null,
+    "name": "rubocop",
+    "version": "RuboCop::Version::STRING",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ruby",
+    "description": "Automatic Ruby code style checking tool. Aims to enforce the community-driven Ruby Style Guide.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Bozhidar Batsov",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": " Jonas Arvidsson",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": " Yuji Nakayama",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "email",
+        "name": null,
+        "email": "rubocop@googlegroups.com",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/rubocop-hq/rubocop",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:gem/bundler",
+        "requirement": ">= 1.3.0, < 3.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/rack",
+        "requirement": ">= 2.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/jaro_winkler",
+        "requirement": "~> 1.5.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/parallel",
+        "requirement": "~> 1.10",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/parser",
+        "requirement": ">= 2.5",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/powerpack",
+        "requirement": "~> 0.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/rainbow",
+        "requirement": ">= 2.2.2, < 4.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/ruby-progressbar",
+        "requirement": "~> 1.7",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/unicode-display_width",
+        "requirement": "~> 1.4.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:gem/rubocop@RuboCop::Version::STRING",
+    "repository_homepage_url": "https://rubygems.org/gems/rubocop/versions/RuboCop::Version::STRING",
+    "repository_download_url": "https://rubygems.org/downloads/rubocop-RuboCop::Version::STRING.gem",
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/rubocop/versions/RuboCop::Version::STRING.json"
   }
 ]

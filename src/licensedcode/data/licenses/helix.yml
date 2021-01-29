@@ -4,6 +4,7 @@ name: Helix DNA Technology Binary Research Use License
 category: Proprietary Free
 owner: RealNetworks
 homepage_url: https://helixcommunity.org/beula/
+spdx_license_key: LicenseRef-scancode-helix
 text_urls:
     - https://helixcommunity.org/beula/
 ignorable_copyrights:

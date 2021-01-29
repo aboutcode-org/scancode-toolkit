@@ -1,0 +1,11 @@
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 97
+notes: in newlib
+ignorable_copyrights:
+    - Copyright (c) 1996 Xavier Leroy (Xavier.Leroy@inria.fr)
+ignorable_holders:
+    - Xavier Leroy
+ignorable_emails:
+    - Xavier.Leroy@inria.fr

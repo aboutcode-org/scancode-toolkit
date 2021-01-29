@@ -3,6 +3,7 @@ short_name: Dynarch Developer Agreement
 name: Dynarch Developer Agreement
 category: Commercial
 owner: Dynarch
+spdx_license_key: LicenseRef-scancode-dynarch-developer
 text_urls:
     - http://jescali-swiss.com/media/js/hmenu/license.html
 minimum_coverage: 95

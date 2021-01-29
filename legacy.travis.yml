@@ -1,0 +1,78 @@
+
+################################################################################
+# We use Travis to run minimal smoke tests suites on Pythons 3.6
+# on macOS and Linux
+# We also run the documentation build and the ABOUT file checks
+################################################################################
+language: python
+
+matrix:
+  include:
+    # Run minimal test suite
+    - os: osx
+      env: 
+        - PYTHON=36
+        - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
+      language: generic
+
+    - os: linux
+      sudo: required
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
+      language: python
+      python: "3.6"
+      dist: xenial
+
+    - os: linux
+      sudo: required
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
+      language: python
+      python: "3.6"
+      dist: bionic
+
+    # Check and lint the documentation files
+    - os: linux
+      sudo: required
+      script: 
+        - source bin/activate
+        - cd docs
+        - pip install -r requirements-doc.txt
+        # Check that the Sphinx Documentation build minimally
+        - sphinx-build -E source build
+        # Check for documentation style errors
+        - ./scripts/doc8_style_check.sh
+      language: python
+      python: "3.6"
+      dist: bionic
+
+    # Check and lint .ABOUT files
+    - os: linux
+      sudo: required
+      script: 
+        - source bin/activate
+        - ./bin/about check thirdparty/
+        - ./bin/about check src/
+        - ./bin/about check etc/
+        - ./bin/about check scancode-toolkit.ABOUT
+      language: python
+      python: "3.6"
+      dist: bionic
+
+before_install:
+  - chmod +x ./docs/scripts/sphinx_build_link_check.sh
+  - chmod +x ./docs/scripts/doc8_style_check.sh
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+        source ./etc/ci/macports-ci install;
+        yes | sudo port install python$PYTHON;
+        sudo port select --set python3 python$PYTHON;
+        export PATH=$PATH:$(python3 -c "import site; print(site.USER_BASE)")/bin;
+        python3 --version;
+    fi
+
+install:
+  - ./configure --dev
+
+script:
+  # If debugging, use a subset of tests to wait less:
+  # - ./bin/py.test -n 2 -vvs tests/scancode
+  # - echo $TEST_SUITE
+  - $TEST_SUITE

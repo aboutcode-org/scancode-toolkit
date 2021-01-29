@@ -1,2 +1,2 @@
-# never convert crlf
+# Ignore all Git auto CR/LF line endings conversions
 * binary

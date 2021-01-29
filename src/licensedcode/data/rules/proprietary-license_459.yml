@@ -1,0 +1,8 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: Seen in https://github.com/srdqty/talc-3.0/blob/df83dd5ff0e2b189b13280ddae233d8277199350/tests/loader/flash/ver2/nameconvert.h#L16
+ignorable_authors:
+    - Rice University, Houston, Texas and its contributors
+ignorable_emails:
+    - techtran@rice.edu

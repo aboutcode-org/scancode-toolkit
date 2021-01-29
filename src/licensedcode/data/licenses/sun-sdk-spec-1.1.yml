@@ -3,8 +3,10 @@ short_name: Sun SDK Specification 1.1
 name: Sun SDK Specification 1.1
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-sdk-spec-1.1
 minimum_coverage: 30
 ignorable_copyrights:
-    - Copyright 2002 Sun Microsystems, Inc. 4150 Network Circle, Santa Clara, California 95054, U.S.A
+    - Copyright 2002 Sun Microsystems, Inc. 4150 Network Circle, Santa Clara, California 95054,
+        U.S.A
 ignorable_holders:
     - Sun Microsystems, Inc. 4150 Network Circle, Santa Clara, California 95054, U.S.A

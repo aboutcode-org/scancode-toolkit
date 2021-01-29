@@ -4,6 +4,7 @@ name: Adobe Flash Player EULA 21.0
 category: Proprietary Free
 owner: Adobe Systems
 homepage_url: http://wwwimages.adobe.com/content/dam/acom/en/legal/licenses-terms/pdf/Flash_Player_21_0.pdf
+spdx_license_key: LicenseRef-scancode-adobe-flash-player-eula-21.0
 ignorable_urls:
     - http://www.adobe.com/
     - http://www.adobe.com/go/RTMFP

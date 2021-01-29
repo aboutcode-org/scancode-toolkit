@@ -4,6 +4,9 @@
 # Python compiled files
 *.py[cod]
 
+# do not commit thriparty cache of wheels
+/thirdparty
+
 # virtualenv and other misc bits
 *.egg-info
 /dist
@@ -81,3 +84,4 @@ tcl
 /.env
 
 *.orig
+/release*

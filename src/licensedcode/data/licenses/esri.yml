@@ -4,6 +4,7 @@ name: Esri License
 category: Commercial
 owner: Esri
 homepage_url: http://www.esri.com/legal/pdfs/mla_e204_e300/english
+spdx_license_key: LicenseRef-scancode-esri
 minimum_coverage: 60
 ignorable_copyrights:
     - copyright date(s) from the source materials Esri and its licensors

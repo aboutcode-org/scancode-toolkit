@@ -3,6 +3,7 @@ short_name: Dynamic Drive TOU
 name: Dynamic Drive Terms of Use
 category: Permissive
 owner: DynamicDrive
+spdx_license_key: LicenseRef-scancode-dynamic-drive-tou
 ignorable_copyrights:
     - (c) Dynamic Drive (http://www.dynamicdrive.com)
 ignorable_holders:

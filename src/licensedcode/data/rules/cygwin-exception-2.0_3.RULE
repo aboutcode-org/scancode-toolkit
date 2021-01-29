@@ -1,0 +1,16 @@
+1. Linking Exception.
+
+As a special exception to GPLv2, Red Hat grants you permission to link
+software whose sources are distributed under a license that satisfies
+the Open Source Definition with libcygwin.a, without libcygwin.a
+itself causing the resulting program to be covered by GPLv2.
+
+This means that you can port an open source application to Cygwin, and
+distribute that executable as if it didn't include a copy of
+libcygwin.a linked into it.  Note that this does not apply to the
+Cygwin DLL itself.  If you distribute a (possibly modified) version of
+the DLL you must adhere to the terms of GPLv2, including the
+requirement to provide sources for the Cygwin DLL.
+
+See http://www.opensource.org/docs/osd/ for the precise Open Source
+Definition referenced above.

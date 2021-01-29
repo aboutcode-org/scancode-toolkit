@@ -32,7 +32,9 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
           "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.1",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml",
           "spdx_license_key": "LGPL-2.1-only",
           "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only",
           "start_line": 1,
@@ -47,11 +49,12 @@
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 4,
             "matched_length": 4,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           },
           "matched_text": "foo bar this that license: LGPL-2.1 bar"
         }

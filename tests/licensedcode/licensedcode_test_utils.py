@@ -1,32 +1,12 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import io
 import os
 import traceback
@@ -34,11 +14,8 @@ import traceback
 import attr
 from license_expression import Licensing
 import pytest
+import saneyaml
 
-from commoncode import compat
-from commoncode import saneyaml
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode import text
 from commoncode.testcase import get_test_file_pairs
 
@@ -124,7 +101,7 @@ class LicenseTest(object):
                     'have explanatory notes:  for: file://' + self.data_file)
 
     def to_dict(self):
-        dct = OrderedDict()
+        dct = {}
         if self.license_expressions:
             dct['license_expressions'] = self.license_expressions
         if self.expected_failure:
@@ -153,9 +130,7 @@ class LicenseTest(object):
         test_file_name = self.test_file_name
         test_name = '{prefix}{test_file_name}'.format(**locals())
         test_name = text.python_safe_name(test_name)
-        if py2 and not isinstance(test_name, bytes):
-            test_name = test_name.encode('utf-8')
-        if py3 and not isinstance(test_name, compat.unicode):
+        if not isinstance(test_name, str):
             test_name = test_name.decode('utf-8')
         return test_name
 
@@ -234,7 +209,7 @@ def make_test(license_test, regen=False):
             for match in matches:
                 qtext, itext = get_texts(match)
                 rule_text_file = match.rule.text_file
-                if match.rule.is_license:
+                if match.rule.is_from_license:
                     rule_data_file = rule_text_file.replace('LICENSE', 'yml')
                 else:
                     rule_data_file = match.rule.data_file

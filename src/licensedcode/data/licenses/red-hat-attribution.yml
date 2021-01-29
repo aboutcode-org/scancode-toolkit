@@ -4,3 +4,4 @@ name: Red Hat Attribution License
 category: Permissive
 owner: Red Hat
 notes: a very short permissive license, seen in newlib
+spdx_license_key: LicenseRef-scancode-red-hat-attribution

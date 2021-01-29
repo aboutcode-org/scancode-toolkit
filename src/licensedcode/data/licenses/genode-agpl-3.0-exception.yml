@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: Genode Labs
 homepage_url: https://github.com/genodelabs/genode/blob/e8acc5eabc447fb5da01d109d96988cd21962c56/LICENSE
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-genode-agpl-3.0-exception
 text_urls:
     - https://github.com/genodelabs/genode/blob/e8acc5eabc447fb5da01d109d96988cd21962c56/LICENSE
 ignorable_urls:

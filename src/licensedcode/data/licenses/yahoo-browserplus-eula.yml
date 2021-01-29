@@ -4,6 +4,7 @@ name: Yahoo BrowserPlus End User License
 category: Proprietary Free
 owner: Yahoo
 homepage_url: http://info.yahoo.com/legal/us/yahoo/browserplus/browserplus-2122.html
+spdx_license_key: LicenseRef-scancode-yahoo-browserplus-eula
 faq_url: https://developer.yahoo.com/browserplus/
 ignorable_urls:
     - http://privacy.yahoo.com/privacy/us/security/details.html

@@ -1,7 +1,0 @@
-about_resource: enum34-1.1.10-py2-none-any.whl
-name: enum34
-version: 1.1.10
-download_url: https://files.pythonhosted.org/packages/6f/2c/a9386903ece2ea85e9807e0e062174dc26fdce8b05f216d00491be29fad5/enum34-1.1.10-py2-none-any.whl
-checksum_md5: 85f9f5509176e863bb723e10f44cd317
-checksum_sha1: 3d28dc111abc17d42d1af85162c46d3a2433e46d
-package_url: pkg:pypi/enum34@1.1.10

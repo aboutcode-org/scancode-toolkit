@@ -3,6 +3,7 @@ short_name: Qualcomm ISO/IEC MPEG-B DASH License
 name: Qualcomm ISO/IEC MPEG-B DASH License
 category: Free Restricted
 owner: Qualcomm
+spdx_license_key: LicenseRef-scancode-qualcomm-iso
 other_urls:
     - https://www.iso.org/standard/65274.html
 ignorable_copyrights:

@@ -1,5 +1,5 @@
 license_expression: gpl-1.0-plus
 is_license_notice: yes
+minimum_coverage: 76
 referenced_filenames:
     - ../COPYING
-minimum_coverage: 76

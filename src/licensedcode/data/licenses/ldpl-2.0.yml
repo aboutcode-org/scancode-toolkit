@@ -4,6 +4,7 @@ name: Linux Documentation Project License (LDPL) v2.0
 category: Copyleft
 owner: Linux Documentation Project
 homepage_url: http://tldp.org/COPYRIGHT.html
+spdx_license_key: LicenseRef-scancode-ldpl-2.0
 text_urls:
     - http://linuxmafia.com/faq/Licensing_and_Law/ldp-license-2.0.html
 ignorable_urls:

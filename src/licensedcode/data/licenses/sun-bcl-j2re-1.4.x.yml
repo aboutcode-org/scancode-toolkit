@@ -3,6 +3,7 @@ short_name: Sun BCL J2RE 1.4.X
 name: Sun BCL J2RE 1.4.X
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bcl-j2re-1.4.x
 ignorable_urls:
     - http://oss.software.ibm.com/icu4j/
     - http://www.sun.com/policies/trademarks

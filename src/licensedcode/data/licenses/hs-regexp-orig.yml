@@ -1,7 +1,10 @@
 key: hs-regexp-orig
 short_name: Henry Spencer Original Regexp License
-name: Henry Spencer Orginal Regexp License
+name: Henry Spencer Original Regexp License
 category: Permissive
 owner: Henry Spencer
+spdx_license_key: Spencer-86
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License
+other_spdx_license_keys: 
+    - LicenseRef-scancode-regexp

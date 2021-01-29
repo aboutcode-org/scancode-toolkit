@@ -4,3 +4,4 @@ name: strongSwan exception to GPL
 category: Copyleft
 owner: Unspecified
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-strongswan-exception

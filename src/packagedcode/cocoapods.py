@@ -1,42 +1,20 @@
-# All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+#
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import logging
 import re
 
 import attr
-from packageurl import PackageURL
 
-from commoncode.fileutils import py2
 from commoncode import filetype
-from commoncode import fileutils
 from packagedcode import models
 from packagedcode.spec import Spec
-
 
 """
 Handle cocoapods packages manifests for macOS and iOS
@@ -45,7 +23,6 @@ See https://cocoapods.org
 """
 
 # TODO: override the license detection to detect declared_license correctly.
-
 
 TRACE = False
 
@@ -104,11 +81,16 @@ def build_package(podspec_data):
     name = podspec_data.get('name')
     version = podspec_data.get('version')
     declared_license = podspec_data.get('license')
-    summary = podspec_data.get('summary')
-    description = podspec_data.get('description')
+    summary = podspec_data.get('summary', '')
+    description = podspec_data.get('description', '')
     homepage_url = podspec_data.get('homepage_url')
     source = podspec_data.get('source')
     authors = podspec_data.get('author') or []
+    if summary and not description.startswith(summary):
+        desc = [summary]
+        if description:
+            desc += [description]
+        description = '\n'.join(desc)
 
     author_names = []
     author_email = []
@@ -166,7 +148,7 @@ person_parser_only_name = re.compile(
 def parse_person(person):
     """
     Return name and email from person string.
-    
+
     https://guides.cocoapods.org/syntax/podspec.html#authors
     Author can be in the form:
         s.author = 'Rohit Potter'
@@ -187,4 +169,4 @@ def parse_person(person):
         name = parsed.group('name')
         email = parsed.group('email')
 
-    return name, email 
+    return name, email

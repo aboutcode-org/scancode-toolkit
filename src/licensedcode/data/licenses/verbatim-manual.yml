@@ -4,6 +4,7 @@ name: Verbatim Copies Permission
 category: Copyleft
 owner: BPF Authors
 notes: the latext2e, verbatim-manual and abstyles are similar licenses
+spdx_license_key: LicenseRef-scancode-verbatim-manual
 text_urls:
     - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/bpf_helpers_doc.py?h=v5.0-rc4#n202
 minimum_coverage: 70

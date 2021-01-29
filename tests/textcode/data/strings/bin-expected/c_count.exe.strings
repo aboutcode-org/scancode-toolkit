@@ -1,5 +1,5 @@
 [
-  "!This program cannot be run in DOS mode.\r\r\n$",
+  "!This program cannot be run in DOS mode.",
   ".text",
   "0`.rdata",
   "0@.bss",

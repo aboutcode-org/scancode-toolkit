@@ -5,3 +5,4 @@ category: Copyleft
 owner: Trolltech
 notes: Trolltech is now The Qt Company
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-trolltech-gpl-exception-1.2

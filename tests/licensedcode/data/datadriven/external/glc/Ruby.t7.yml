@@ -1,0 +1,9 @@
+license_expressions:
+  - ruby OR gpl-2.0
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/Ruby.t7
+  originally expected to be detected as Ruby
+  with coverage of 91.2
+  Specifics after condition 4.
+  Example: https://github.com/evanphx/json (v1.4.3 COPYING)

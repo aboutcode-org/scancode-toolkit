@@ -5,6 +5,7 @@ category: Permissive
 owner: compuphase
 homepage_url: https://github.com/compuphase/minIni/blob/master/LICENSE
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-compuphase-linking-exception
 standard_notice: |
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

@@ -1,0 +1,9 @@
+key: clear-bsd-1-clause
+short_name: Clear BSD 1 Clause License
+name: Clear BSD  1 Clause License
+category: Permissive
+owner: MetaCarta
+homepage_url: https://github.com/spate/glimage/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-clear-bsd-1-clause
+minimum_coverage: 90
+notes: a rare variant seldom seen

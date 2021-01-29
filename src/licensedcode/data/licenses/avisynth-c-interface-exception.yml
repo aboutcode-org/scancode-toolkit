@@ -5,3 +5,4 @@ category: Copyleft Limited
 owner: Kevin Atkinson
 homepage_url: http://www.kevina.org/avisynth_c/readme.txt
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-avisynth-c-interface-exception

@@ -4,5 +4,6 @@ name: Apple Squeak License
 category: Proprietary Free
 owner: Apple
 homepage_url: http://squeak.org/SqueakLicense/
+spdx_license_key: LicenseRef-scancode-squeak
 text_urls:
     - https://squeak.org/SqueakLicense/

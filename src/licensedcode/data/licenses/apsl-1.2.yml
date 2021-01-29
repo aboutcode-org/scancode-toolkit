@@ -18,7 +18,7 @@ other_urls:
     - http://web.archive.org/web/20020203232348/http://www.opensource.org/licenses/apsl.html
     - https://fedoraproject.org/wiki/Licensing/Apple_Public_Source_License_1.2
 ignorable_copyrights:
-    - Portions Copyright (c) 1999-2001 Apple Computer, Inc.
+    - Portions Copyright (c) 1999-2003 Apple Computer, Inc.
 ignorable_holders:
     - Apple Computer, Inc.
 ignorable_urls:

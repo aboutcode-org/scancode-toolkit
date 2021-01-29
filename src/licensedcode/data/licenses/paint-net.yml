@@ -4,6 +4,7 @@ name: Paint.NET License
 category: Proprietary Free
 owner: dotPDN
 homepage_url: http://www.getpaint.net/license.html
+spdx_license_key: LicenseRef-scancode-paint-net
 ignorable_urls:
     - http://www.everaldo.com/crystal
     - http://www.getpaint.net/donate.html

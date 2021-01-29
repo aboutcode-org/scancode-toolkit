@@ -1,31 +1,12 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import os
 import re
@@ -34,8 +15,6 @@ from unittest.case import expectedFailure
 import pytest
 
 from commoncode.testcase import FileBasedTesting
-from commoncode import compat
-from commoncode.system import py3
 from cluecode import finder
 from cluecode.finder import find
 from cluecode.finder import urls_regex
@@ -693,18 +672,6 @@ class TestUrl(FileBasedTesting):
             result = [val for val, _ln in finder.find_urls([test])]
             assert result in ([test] , [test + u'/'])
 
-    @pytest.mark.skipif(py3, reason='url-cpp behaves differently')
-    def test_misc_invalid_urls_that_are_still_detected_and_may_not_be_really_invalidPpy2(self):
-        # set of non URLs from https://mathiasbynens.be/demo/url-regex
-        urls = u'''
-            http://www.foo.bar./
-            ftps://foo.bar/
-        '''
-        for test in urls.split():
-            result = [val for val, _ln in finder.find_urls([test])]
-            assert result in ([test] , [test + u'/'])
-
-    @pytest.mark.skipif(not py3, reason='url-cpp behaves differently')
     def test_misc_invalid_urls_that_are_still_detected_and_normalized(self):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''
@@ -714,7 +681,6 @@ class TestUrl(FileBasedTesting):
             result = [val for val, _ln in finder.find_urls([test])]
             assert [test] == result
 
-    @pytest.mark.skipif(not py3, reason='url-cpp behaves differently')
     def test_invalid_urls_are_not_detected(self):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''
@@ -736,7 +702,6 @@ class TestUrl(FileBasedTesting):
             result = [val for val, _ln in finder.find_urls([test])]
             assert result, test
 
-    @pytest.mark.skipif(py3, reason='url-cpp behaves differently')
     def test_misc_invalid_urls_that_should_not_be_detected_2(self):
         # At least per this set of non URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''
@@ -778,7 +743,7 @@ class TestUrl(FileBasedTesting):
         test_file = self.get_test_loc('finder/url/verify.go')
         patterns = [('urls', urls_regex(),)]
         for _key, url, _line, _lineno in find(test_file, patterns):
-            assert type(url) == compat.unicode
+            assert type(url) == str
 
 
 class TestSearch(FileBasedTesting):

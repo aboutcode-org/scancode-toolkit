@@ -1,30 +1,11 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import os
 
@@ -41,7 +22,6 @@ from licensedcode.models import Rule
 from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
 from licensedcode_test_utils import mini_legalese  # NOQA
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -1051,15 +1031,14 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         matches = idx.match(query_string=querys)
         assert [] == matches
 
-    def test_match_handles_negative_rules_and_does_not_match_negative_regions_properly(self):
-        # note: this test relies on the negative rule: not-a-license_busybox_2.RULE
+    def test_match_does_not_match_false_positive_regions_properly(self):
+        # note: this test relies on the false positive rule:
+        #  false-positive_busybox_1.RULE
         # with this text:
-        # "libbusybox is GPL, not LGPL, and exports no stable API that might act as a copyright barrier."
-        # and relies on the short rules that detect GPL and LGPL
+        #  "libbusybox is GPL, not LGPL, and exports no stable API that might act as a copyright barrier."
+        # And relies on the short single world rules that detect GPL and LGPL.
+        # the first and last lines should be matched. Not what is in between.
         idx = cache.get_index()
-        # lines 3 and 4 should NOT be part of any matches
-        # they should match the negative "not-a-license_busybox_2.RULE"
-        negative_lines_not_to_match = 3, 4
         querys = u'''
             licensed under the LGPL license
             libbusybox is GPL, not LGPL, and exports no stable API
@@ -1069,9 +1048,9 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
             '''
         matches = idx.match(query_string=querys)
 
-        for match in matches:
-            for line in negative_lines_not_to_match:
-                assert line not in match.lines()
+        results = [match.matched_text() for match in matches]
+        expected = ['licensed under the LGPL license', 'license: dual BSD/GPL']
+        assert expected == results
 
     def test_match_has_correct_line_positions_in_automake_perl_file(self):
         # reported as https://github.com/nexB/scancode-toolkit/issues/88

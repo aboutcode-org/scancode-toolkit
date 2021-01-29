@@ -1,4 +1,0 @@
-is_negative: yes
-notes: Seen in smartmontools
-ignorable_urls:
-    - http://www.gnu.org/licenses/gpl-2.0.txt

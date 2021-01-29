@@ -1,0 +1,11 @@
+license_expressions:
+  - bsd-new OR afl-2.1
+  - mpl-1.0 OR lgpl-2.0-plus OR gpl-1.0-plus
+  - apache-2.0
+  - apache-2.0
+  - apache-2.0
+  - afl-2.1 OR bsd-new
+  - afl-2.1 OR bsd-new
+  - bsd-new
+  - bsd-new
+  - afl-2.1

@@ -1,0 +1,4 @@
+license_expression: rsa-md5
+is_license_text: yes
+relevance: 100
+notes: typo in https://github.com/9fans/plan9port/blob/df2d9ec9d169626cdc2a23829bb2831738215722/src/libsec/port/md5.c

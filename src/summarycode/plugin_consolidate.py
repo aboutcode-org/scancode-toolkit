@@ -1,39 +1,17 @@
 #
-# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
 
 from collections import Counter
-from collections import OrderedDict
 
 import attr
 
 from cluecode.copyrights import CopyrightDetector
-from commoncode.system import py3
 from commoncode.text import python_safe_name
 from license_expression import Licensing
 from packagedcode import get_package_instance
@@ -44,10 +22,6 @@ from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
 from summarycode import copyright_summary
-
-
-if py3:
-    unicode = str
 
 
 # Tracing flags
@@ -69,7 +43,7 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(
-            ' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @attr.s
@@ -108,7 +82,7 @@ class Consolidation(object):
         self.consolidated_holders = sorted(set(self.core_holders + self.other_holders))
         # TODO: Verify and test that we are generating detectable copyrights
         self.consolidated_copyright = 'Copyright (c) {}'.format(', '.join(self.consolidated_holders))
-        return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
+        return attr.asdict(self, filter=dict_fields, dict_factory=dict)
 
 
 @attr.s
@@ -118,7 +92,7 @@ class ConsolidatedComponent(object):
     consolidation = attr.ib()
 
     def to_dict(self, **kwargs):
-        c = OrderedDict(type=self.type)
+        c = dict(type=self.type)
         c.update(self.consolidation.to_dict())
         return c
 
@@ -151,7 +125,7 @@ class Consolidator(PostScanPlugin):
     the identifier of the consolidated component or consolidated package it is part
     of is in the Resource's ``consolidated_to`` field.
     """
-    codebase_attributes = OrderedDict(
+    codebase_attributes = dict(
         consolidated_components=attr.ib(default=attr.Factory(list)),
         consolidated_packages=attr.ib(default=attr.Factory(list))
     )

@@ -28,8 +28,8 @@ Options:
                                  words that are not matched.
     --license-url-template TEXT  Set the template URL used for the license
                                  reference URLs. Curly braces ({}) are replaced by
-                                 the license key.  [default: https://enterprise.de
-                                 jacode.com/urn/urn:dje:license:{}]
+                                 the license key.  [default: https://scancode-
+                                 licensedb.aboutcode.org/{}]
     --max-email INT              Report only up to INT emails found in a file. Use
                                  0 for no limit.  [default: 50]
     --max-url INT                Report only up to INT urls found in a file. Use 0
@@ -135,10 +135,6 @@ Options:
                              Descend at most INTEGER levels of directories below
                              and including the starting directory. Use 0 for no
                              scan depth limit.
-
-  miscellaneous:
-    --reindex-licenses  Check the license index cache and reindex if needed and
-                        exit.
 
   documentation:
     -h, --help       Show this message and exit.

@@ -1,0 +1,27 @@
+Note on GPL versions
+
+(This note is informative, and if it conflicts with the terms of the licence
+then the licence is correct.  See the full text of the licence in the
+COPYING file for precise details.)
+
+The core source code of  is licensed under GPL v2 or later.
+However,  incorporates parts of the Gnulib portability library,
+copyrighted by the Free Software Foundation and others, and much of Gnulib
+is distributed under GPL v3 or later.  This means that  as a
+whole falls under the terms of the GPL v3 or later.  Unless you take special
+pains to remove the GPL v3 portions, you must therefore follow the terms and
+conditions of the GPL v3 or later when distributing  itself, or
+distributing code linked against it.
+
+Note that this does not require that your own source code be licensed under
+the GPL v3, contrary to popular misunderstanding.  However, you must be
+prepared to distribute your work as a whole under the terms of the GPL v3 or
+later, which requires that your licence be compatible with the GPL v3.  See
+http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses if you
+need advice on compatibility.
+
+The GPL mainly restricts distribution ("conveying", in the specific language
+of GPL v3), and is careful not to restrict private use.  Therefore, you may
+write programs for your own use that use  without needing to
+license them under GPL v3-compatible terms.  If you distribute these
+programs to others, then you must take care to use compatible licensing

@@ -4,6 +4,7 @@ name: wingo License
 category: Permissive
 owner: wingo
 homepage_url: http://www.wingo.com/jt_/license.html
+spdx_license_key: LicenseRef-scancode-wingo
 text_urls:
     - http://www.wingo.com/jt_/jt_license.html
 ignorable_copyrights:

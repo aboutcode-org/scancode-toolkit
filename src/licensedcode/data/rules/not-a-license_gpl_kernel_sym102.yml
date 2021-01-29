@@ -1,5 +1,0 @@
-is_negative: yes
-notes: seen in the Linux Kernel sources (kernel symbols related code or docs) To review as this
-    should be reported as GPL maybe?
-ignorable_emails:
-    - hans@reiser.to

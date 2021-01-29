@@ -4,6 +4,7 @@ name: mod_dav License Agreement v1
 category: Permissive
 owner: Gregg Stein
 homepage_url: http://www.webdav.org/mod_dav/
+spdx_license_key: LicenseRef-scancode-mod-dav-1.0
 text_urls:
     - http://www.webdav.org/mod_dav/
 ignorable_copyrights:

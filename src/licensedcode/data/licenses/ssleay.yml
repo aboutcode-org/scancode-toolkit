@@ -4,6 +4,7 @@ name: Original SSLeay License
 category: Permissive
 owner: OpenSSL
 homepage_url: http://www.openssl.org/source/license.html
+spdx_license_key: LicenseRef-scancode-ssleay
 text_urls:
     - http://www.openssl.org/source/license.html
 ignorable_authors:

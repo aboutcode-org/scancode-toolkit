@@ -6,7 +6,7 @@
   "qualifiers": {},
   "subpath": null,
   "primary_language": "Objective-C",
-  "description": " Make any UIView a full fledged animated notification center. It is a way to quickly add a notification badge icon to a UIView. It make very easy to add badge to any view.",
+  "description": "A way to quickly add a notification bedge icon to any view.\n Make any UIView a full fledged animated notification center. It is a way to quickly add a notification badge icon to a UIView. It make very easy to add badge to any view.",
   "release_date": null,
   "parties": [
     {

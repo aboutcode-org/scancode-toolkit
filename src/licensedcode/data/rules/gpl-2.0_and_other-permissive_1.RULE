@@ -1,0 +1,17 @@
+Red Hat grants you permission to distribute Cygwin with the following
+files, which are not considered part of Cygwin and are not governed by
+GPLv2, in source or binary form.
+
+winsup estsuite\winsup.api\msgtest.c
+winsup estsuite\winsup.api\semtest.c
+winsup estsuite\winsup.api\shmtest.c
+
+Red Hat grants you permission to link or combine code in Cygwin with
+code in or corresponding to the following files, which are not
+considered part of Cygwin and are not governed by GPLv2, and to
+distribute such combinations under terms of your choice, provided that
+such terms are otherwise consistent with the application of GPLv2 to
+Cygwin itself.  You must comply with GPLv2 with respect to all
+portions of such combinations other than those that correspond to or
+are derived from such non-Cygwin code but which do not correspond to
+or are not derived from Cygwin itself.

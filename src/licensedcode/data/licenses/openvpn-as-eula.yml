@@ -4,6 +4,7 @@ name: OpenVPN Access Server EULA
 category: Proprietary Free
 owner: OpenVPN
 homepage_url: http://openvpn.net/index.php/license.html
+spdx_license_key: LicenseRef-scancode-openvpn-as-eula
 other_urls:
     - http://openvpn.net/index.php/license.html
 ignorable_copyrights:

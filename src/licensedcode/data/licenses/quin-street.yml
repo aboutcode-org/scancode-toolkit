@@ -4,6 +4,7 @@ name: QuinStreet License
 category: Proprietary Free
 owner: QuinStreet
 homepage_url: http://www.codeguru.com/licensing.html
+spdx_license_key: LicenseRef-scancode-quin-street
 text_urls:
     - http://www.codeguru.com/licensing.html
     - http://www.freevbcode.com/licensing

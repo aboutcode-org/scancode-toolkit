@@ -4,3 +4,4 @@ name: HIDAPI License
 category: Permissive
 owner: Signal 11 Software
 homepage_url: https://github.com/signal11/hidapi/blob/master/LICENSE-orig.txt
+spdx_license_key: LicenseRef-scancode-hidapi

@@ -89,7 +89,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
-     },
+    },
     {
       "purl": "pkg:pypi/simplejson@2.4.0",
       "requirement": "==2.4.0",

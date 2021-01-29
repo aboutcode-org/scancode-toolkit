@@ -4,6 +4,7 @@ name: X11-Style (Tektronix)
 category: Permissive
 owner: Tektronix
 homepage_url: http://www.xfree86.org/current/LICENSE5.html
+spdx_license_key: LicenseRef-scancode-x11-tektronix
 text_urls:
     - http://www.xfree86.org/current/LICENSE5.html
 minimum_coverage: 80

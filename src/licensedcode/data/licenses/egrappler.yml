@@ -4,3 +4,4 @@ name: eGrappler License
 category: Commercial
 owner: eGrappler
 homepage_url: https://www.egrappler.com/license
+spdx_license_key: LicenseRef-scancode-egrappler

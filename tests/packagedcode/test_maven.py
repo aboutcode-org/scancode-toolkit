@@ -1,52 +1,24 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import io
-from collections import OrderedDict
 import json
 import os.path
 
 import pytest
 
-from commoncode import compat
 from commoncode import fileutils
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode import text
 from commoncode import testcase
 from packagedcode import maven
 from commoncode.resource import Codebase
 
-
-if py2:
-    mode = 'wb'
-if py3:
-    mode = 'w'
 
 
 class TestIsPom(testcase.FileBasedTesting):
@@ -85,11 +57,11 @@ class TestIsPom(testcase.FileBasedTesting):
 
 def compare_results(results, test_pom_loc, expected_json_loc, regen=False):
     if regen:
-        with open(expected_json_loc, mode) as ex:
+        with open(expected_json_loc, 'w') as ex:
             json.dump(results, ex, indent=2)
 
     with io.open(expected_json_loc, encoding='utf-8') as ex:
-        expected = json.load(ex, object_pairs_hook=OrderedDict)
+        expected = json.load(ex)
 
     results_dump = json.dumps(results, indent=2)
     expected_dump = json.dumps(expected, indent=2)
@@ -187,7 +159,7 @@ class TestMavenMisc(BaseMavenCase):
         test_loc = self.get_test_loc('maven2/xml-format-maven-plugin-3.0.6.pom')
         pom = maven.MavenPom(test_loc)
         pom.resolve()
-        expected = OrderedDict([
+        expected = dict([
             (u'system', 'GitHub Issues'),
             (u'url', 'https://github.com/acegi/xml-format-maven-plugin/issues')]
         )
@@ -502,9 +474,7 @@ def create_test_function(test_pom_loc, test_name, check_pom=True, regen=False):
 
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes
-    if py2 and isinstance(test_name, compat.unicode):
-        test_name = test_name.encode('utf-8')
-    if py3 and isinstance(test_name, bytes):
+    if isinstance(test_name, bytes):
         test_name = test_name.decode('utf-8')
 
     test_pom.__name__ = test_name

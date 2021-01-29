@@ -14,5 +14,6 @@ notes: |
     Before incorporating code licensed under the ADI BSD license into projects
     which you are going to ship in a end product, you must ensure that you have
     the patent rights to do.
+spdx_license_key: LicenseRef-scancode-adi-bsd
 text_urls:
     - https://docs.blackfin.uclinux.org/doku.php?id=adi_bsd

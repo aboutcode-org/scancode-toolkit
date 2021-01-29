@@ -1,8 +1,0 @@
-about_resource: html5lib-0.999999999-py2.py3-none-any.whl
-name: html5lib
-version: 0.999999999
-download_url: https://pypi.python.org/packages/f7/71/a96f36d34394bcfff9fb54bfe0aa72cc5b4ff2f803e5728645aef38f7aee/html5lib-0.999999999-py2.py3-none-any.whl#md5=c94780c55ea28529c39ad19ed372d629
-license_expression: mit
-license_file: html5lib.LICENSE
-owner: James Graham
-home_url: https://github.com/html5lib/html5lib-python

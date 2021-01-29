@@ -9,4 +9,3 @@ ignorable_urls:
     - http://www.openssl.org/~appro/cryptogams
 ignorable_emails:
     - appro@fy.chalmers.se
-

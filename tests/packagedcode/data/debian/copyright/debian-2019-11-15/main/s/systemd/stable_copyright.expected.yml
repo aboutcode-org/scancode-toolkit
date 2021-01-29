@@ -1,0 +1,68 @@
+- |
+  LGPL-2.1+
+  CC0-1.0
+  GPL-2
+  GPL-2+
+  Expat
+  public-domain
+- cc0-1.0 AND gpl-2.0 AND gpl-2.0-plus AND lgpl-2.1 AND lgpl-2.1-plus AND mit AND public-domain
+  AND public-domain-disclaimer AND unknown
+- |
+  2008-2015 Kay Sievers <kay@vrfy.org>
+  2010-2015 Lennart Poettering
+  2012-2015 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
+  2013-2015 Tom Gundersen <teg@jklm.no>
+  2013-2015 Daniel Mack
+  2010-2015 Harald Hoyer
+  2013-2015 David Herrmann
+  2013, 2014 Thomas H.P. Andersen
+  2013, 2014 Daniel Buch
+  2014 Susant Sahani
+  2009-2015 Intel Corporation
+  2000, 2005 Red Hat, Inc.
+  2009 Alan Jenkins <alan-jenkins@tuffmail.co.uk>
+  2010 ProFUSION embedded systems
+  2010 Maarten Lankhorst
+  1995-2004 Miquel van Smoorenburg
+  1999 Tom Tromey
+  2011 Michal Schmidt
+  2012 B. Poettering
+  2012 Holger Hans Peter Freyther
+  2012 Dan Walsh
+  2012 Roberto Sassu
+  2013 David Strauss
+  2013 Marius Vollmer
+  2013 Jan Janssen
+  2013 Simon Peeters
+  2012 Jean-Philippe Aumasson <jeanphilippe.aumasson@gmail.com>
+  2012 Daniel J. Bernstein <djb@cr.yp.to>
+  Linus Torvalds <torvalds@athlon.transmeta.com>
+  Jens Axboe <axboe@suse.de>
+  2008 Red Hat, Inc.
+  2008 Ian Kent <raven@themaw.net>
+  2012 Josh Triplett <josh@joshtriplett.org>
+  none
+  2003-2012 Kay Sievers <kay@vrfy.org>
+  2003-2004 Greg Kroah-Hartman <greg@kroah.com>
+  2004 Chris Friesen <chris_friesen@sympatico.ca>
+  2004, 2009, 2010 David Zeuthen <david@fubar.dk>
+  2005, 2006 SUSE Linux Products GmbH
+  2003 IBM Corp.
+  2007 Hannes Reinecke <hare@suse.de>
+  2009 Canonical Ltd.
+  2009 Scott James Remnant <scott@netsplit.com>
+  2009 Martin Pitt <martin.pitt@ubuntu.com>
+  2009 Piter Punk <piterpunk@slackware.com>
+  2009, 2010 Lennart Poettering
+  2009 Filippo Argiolas <filippo.argiolas@gmail.com>
+  2010 Maxim Levitsky
+  2011 ProFUSION embedded systems
+  2011 Karel Zak <kzak@redhat.com>
+  2014 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
+  2014 David Herrmann <dh.herrmann@gmail.com>
+  2014 Carlos Garnacho <carlosg@gnome.org>
+  2007-2013 Kay Sievers <kay@vrfy.org>
+  2013 Tom Gundersen <teg@jklm.no>
+  2010-2013 Tollef Fog Heen <tfheen@debian.org>
+  2013-2018 Michael Biebl <biebl@debian.org>
+  2013 Michael Stapelberg <stapelberg@debian.org>

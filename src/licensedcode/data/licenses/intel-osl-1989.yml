@@ -3,6 +3,7 @@ short_name: Intel OSL 1989
 name: Intel Open Source License 1989
 category: Permissive
 owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel-osl-1989
 ignorable_copyrights:
     - Copyright (c) 1989, Intel Corporation
 ignorable_holders:

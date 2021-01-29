@@ -1,8 +1,0 @@
-about_resource: gemfileparser-0.8.0-py2.py3-none-any.whl
-name: gemfileparser
-version: 0.8.0
-download_url: https://files.pythonhosted.org/packages/ed/b5/c3f4d21e121a65172f43b08b2699e469e3853455b5def48097f40164bb44/gemfileparser-0.8.0-py2.py3-none-any.whl
-license_expression: mit
-license_file: gemfileparser.LICENSE
-owner: Balasankar "Balu" C
-home_url: https://github.com/gemfileparser/gemfileparser

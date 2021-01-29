@@ -3,9 +3,12 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) Sebastian Classen <sebastian.classen at freenet.ag> , 2007 Jan Engelhardt <jengelh at medozas de> , 2007 - 2010
+  - Copyright (c) Sebastian Classen <sebastian.classen at freenet.ag> , 2007 Jan Engelhardt
+    <jengelh at medozas de> , 2007 - 2010
 holders:
-  - Sebastian Classen <sebastian.classen at freenet.ag> , Jan Engelhardt <jengelh at medozas de>
+  - Sebastian Classen <sebastian.classen at freenet.ag> , Jan Engelhardt <jengelh at medozas
+    de>
 holders_summary:
-  - value: Sebastian Classen <sebastian.classen at freenet.ag> , Jan Engelhardt <jengelh at medozas de>
+  - value: Sebastian Classen <sebastian.classen at freenet.ag> , Jan Engelhardt <jengelh at
+      medozas de>
     count: 1

@@ -1,37 +1,14 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
 import os
-from unittest import skipIf
-import pytest
 
-from commoncode.system import py2
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
@@ -49,7 +26,6 @@ from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode.spans import Span
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -98,7 +74,6 @@ class TestLicenseMatchBasic(FileBasedTesting):
         m4_r4 = LicenseMatch(rule=r4, qspan=Span(0, 2), ispan=Span(0, 3))
 
         assert m3_r3 != m4_r4
-
 
     def test_LicenseMatch_not_equal(self):
         r1 = Rule(text_file='r1', license_expression='apache-1.0 OR gpl')
@@ -541,7 +516,6 @@ class TestMergeMatches(FileBasedTesting):
         assert [m1] == matches
         assert sorted([m5, contained1, contained2, ]) == sorted(discarded)
 
-
     def test_merge_does_not_merge_matches_with_same_spans_if_licenses_are_identical_but_rule_differ(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0')
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
@@ -972,7 +946,6 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         matched_text = match.matched_text(_usecache=False)
         assert expected.rstrip() == matched_text
 
-
         # test again using some HTML with tags
         # Note that there is a trailing space in that string
         expected = u"""Copyright <br>2003</br> (<br>C</br>) <br>James</br>. <br>All</br> <br>Rights</br> <br>Reserved</br>.
@@ -1018,7 +991,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         assert 1 == len(result)
         match = result[0]
 
-        expected = 'MODULE_LICENSE_GPL+ +'
+        expected = 'MODULE_LICENSE_GPL+ +\n'
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, _usecache=False))
         assert expected == matched_text
 
@@ -1030,7 +1003,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         result2 = tokenize_matched_text(location, query_string, dictionary)
         assert result2 is result1
 
-        location = self.get_test_loc('match/tokenize_matched_text_query.txt')
+        location = self.get_test_loc('matched_text/tokenize_matched_text_query.txt')
         query_string = None
         result3 = tokenize_matched_text(location, query_string, dictionary)
         assert result3 is not result2
@@ -1082,11 +1055,11 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             Token(value=u' ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
             Token(value=u'CONTRIBUTORS', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
             Token(value=u'\n', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
-            Token(value=u'        ', line_num=4, pos=-1, is_text=False, is_matched=False, is_known=False)]
+            Token(value='        \n', line_num=4, pos=-1, is_text=False, is_matched=False, is_known=False)
+        ]
 
         assert expected == result
 
-    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_tokenize_matched_text_does_not_crash_on_turkish_unicode(self):
         querys = u'İrəli'
         result = tokenize_matched_text(location=None, query_string=querys, dictionary={})
@@ -1094,16 +1067,19 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         expected = [
             Token(value='i', line_num=1, pos=-1, is_text=True, is_matched=False, is_known=False),
             Token(value='rəli', line_num=1, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value='\n', line_num=1, pos=-1, is_text=False, is_matched=False, is_known=False),
         ]
         assert expected == result
 
-    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_tokenize_matched_text_behaves_like_query_tokenizer_on_turkish_unicode(self):
         from licensedcode.tokenize import query_tokenizer
         querys = u'İrəli'
         matched_text_result = tokenize_matched_text(location=None, query_string=querys, dictionary={})
         matched_text_result = [t.value for t in matched_text_result]
         query_tokenizer_result = list(query_tokenizer(querys))
+
+        if matched_text_result[-1] == '\n':
+            matched_text_result = matched_text_result[:-1]
 
         assert matched_text_result == query_tokenizer_result
 
@@ -1202,13 +1178,29 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         ]
         assert expected == results
 
-    @pytest.mark.scanslow
-    def test_matched_text_is_collected_correctly_end2end_for_spdx_match(self):
-        query_location = self.get_test_loc('matched_text_spdx/query.txt')
+    def check_matched_texts(self, test_loc, expected_texts, whole_lines=True):
         idx = cache.get_index()
-        results = [match.matched_text(_usecache=False) for match in idx.match(location=query_location)]
-        expected = ['SPDX-License-Identifier: BSD-2-Clause-Patent']
-        assert expected == results
+        test_loc = self.get_test_loc(test_loc)
+        matches = idx.match(location=test_loc)
+        matched_texts = [
+            m.matched_text(whole_lines=whole_lines, highlight=False, _usecache=False)
+            for m in matches
+        ]
+        assert expected_texts == matched_texts
+
+    def test_matched_text_is_collected_correctly_end2end_for_spdx_match_whole_lines(self):
+        self.check_matched_texts(
+            test_loc='matched_text/spdx/query.txt',
+            expected_texts=['@REM # SPDX-License-Identifier: BSD-2-Clause-Patent'],
+            whole_lines=True
+        )
+
+    def test_matched_text_is_collected_correctly_end2end_for_spdx_match(self):
+        self.check_matched_texts(
+            test_loc='matched_text/spdx/query.txt',
+            expected_texts=['SPDX-License-Identifier: BSD-2-Clause-Patent'],
+            whole_lines=False
+        )
 
     def test_matched_text_is_not_truncated_with_unicode_diacritic_input_from_query(self):
         idx = cache.get_index()
@@ -1222,7 +1214,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
     def test_matched_text_is_not_truncated_with_unicode_diacritic_input_from_file(self):
         idx = cache.get_index()
-        file_with_diacritic_unicode_location = self.get_test_loc('match/unicode_text/main3.js')
+        file_with_diacritic_unicode_location = self.get_test_loc('matched_text/unicode_text/main3.js')
         result = idx.match(location=file_with_diacritic_unicode_location)
         assert 1 == len(result)
         match = result[0]
@@ -1240,11 +1232,10 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         matched_text = match.matched_text(_usecache=False, whole_lines=True)
         assert expected == matched_text
 
-    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_matched_text_is_not_truncated_with_unicode_diacritic_input_with_diacritic_in_rules(self):
-        rule_dir = self.get_test_loc('match/turkish_unicode/rules')
+        rule_dir = self.get_test_loc('matched_text/turkish_unicode/rules')
         idx = index.LicenseIndex(load_rules(rule_dir))
-        query_loc = self.get_test_loc('match/turkish_unicode/query')
+        query_loc = self.get_test_loc('matched_text/turkish_unicode/query')
         matches = idx.match(location=query_loc)
         matched_texts = [
             m.matched_text(whole_lines=False, highlight=False, _usecache=False)
@@ -1261,16 +1252,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
         assert expected == matched_texts
 
-    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_matched_text_is_not_truncated_with_unicode_diacritic_input_and_full_index(self):
-        idx = cache.get_index()
-        query_loc = self.get_test_loc('match/turkish_unicode/query')
-        matches = idx.match(location=query_loc)
-        matched_texts = [
-            m.matched_text(whole_lines=False, highlight=False, _usecache=False)
-            for m in matches
-        ]
-
         expected = [
             'Licensed under the Apache License, Version 2.0',
             'license MIT',
@@ -1278,18 +1260,282 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             'Licensed under the Apache License, Version 2.0'
         ]
 
-        assert expected == matched_texts
+        self.check_matched_texts(
+            test_loc='matched_text/turkish_unicode/query',
+            expected_texts=expected,
+            whole_lines=False
+        )
 
-    def test_matched_text_ignores_whole_lines_in_binary(self):
-        rule_dir = self.get_test_loc('match/binary_text/rules')
+    def test_matched_text_does_not_ignores_whole_lines_in_binary_with_small_index(self):
+        rule_dir = self.get_test_loc('matched_text/binary_text/rules')
         idx = index.LicenseIndex(load_rules(rule_dir))
-        query_loc = self.get_test_loc('match/binary_text/gosu')
+        query_loc = self.get_test_loc('matched_text/binary_text/gosu')
         matches = idx.match(location=query_loc)
         matched_texts = [
             m.matched_text(whole_lines=True, highlight=False, _usecache=False)
             for m in matches
         ]
 
-        expected = ['license: GPL-3 (']
+        expected = ['{{ .Self }} license: GPL-3 (full text at https://github.com/tianon/gosu)']
 
         assert expected == matched_texts
+
+    def test_matched_text_does_not_ignores_whole_lines_in_binary_against_full_index(self):
+        expected = ['{{ .Self }} license: GPL-3 (full text at https://github.com/tianon/gosu)']
+        self.check_matched_texts(
+            test_loc='matched_text/binary_text/gosu',
+            expected_texts=expected,
+            whole_lines=True,
+        )
+
+    def test_matched_text_is_collected_correctly_in_binary_ffmpeg_windows_whole_lines(self):
+        expected_texts = [
+            '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
+            '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
+            '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
+            '--enable-libbs2b --enable-libcaca --enable-libfreetype --enable-libgme '
+            '--enable-libgsm --enable-libilbc --enable-libmodplug --enable-libmp3lame '
+            '--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 '
+            '--enable-libopenjpeg --enable-libopus --enable-librtmp --enable-libsnappy '
+            '--enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame '
+            '--enable-libvidstab --enable-libvo-amrwbenc --enable-libvorbis '
+            '--enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 '
+            '--enable-libx265 --enable-libxavs --enable-libxvid --enable-libzimg '
+            '--enable-lzma --enable-decklink --enable-zlib',
+
+            '%sconfiguration: --enable-gpl --enable-version3 --enable-dxva2 '
+            '--enable-libmfx --enable-nvenc --enable-avisynth --enable-bzlib '
+            '--enable-fontconfig --enable-frei0r --enable-gnutls --enable-iconv '
+            '--enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca '
+            '--enable-libfreetype --enable-libgme --enable-libgsm --enable-libilbc '
+            '--enable-libmodplug --enable-libmp3lame --enable-libopencore-amrnb '
+            '--enable-libopencore-amrwb --enable-libopenh264 --enable-libopenjpeg '
+            '--enable-libopus --enable-librtmp --enable-libsnappy --enable-libsoxr '
+            '--enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab '
+            '--enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx '
+            '--enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 '
+            '--enable-libxavs --enable-libxvid --enable-libzimg --enable-lzma '
+            '--enable-decklink --enable-zlib',
+
+            '%s is free software; you can redistribute it and/or modify\n'
+            'it under the terms of the GNU General Public License as published by\n'
+            'the Free Software Foundation; either version 3 of the License, or\n'
+            '(at your option) any later version.\n'
+            '%s is distributed in the hope that it will be useful,\n'
+            'but WITHOUT ANY WARRANTY; without even the implied warranty of\n'
+            'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n'
+            'GNU General Public License for more details.\n'
+            'You should have received a copy of the GNU General Public License\n'
+            'along with %s.  If not, see <http://www.gnu.org/licenses/>.',
+
+            '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
+            '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
+            '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
+            '--enable-libbs2b --enable-libcaca --enable-libfreetype --enable-libgme '
+            '--enable-libgsm --enable-libilbc --enable-libmodplug --enable-libmp3lame '
+            '--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 '
+            '--enable-libopenjpeg --enable-libopus --enable-librtmp --enable-libsnappy '
+            '--enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame '
+            '--enable-libvidstab --enable-libvo-amrwbenc --enable-libvorbis '
+            '--enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 '
+            '--enable-libx265 --enable-libxavs --enable-libxvid --enable-libzimg '
+            '--enable-lzma --enable-decklink --enable-zlib',
+
+            'libavfilter license: GPL version 3 or later',
+
+            '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
+            '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
+            '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
+            '--enable-libbs2b --enable-libcaca --enable-libfreetype --enable-libgme '
+            '--enable-libgsm --enable-libilbc --enable-libmodplug --enable-libmp3lame '
+            '--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 '
+            '--enable-libopenjpeg --enable-libopus --enable-librtmp --enable-libsnappy '
+            '--enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame '
+            '--enable-libvidstab --enable-libvo-amrwbenc --enable-libvorbis '
+            '--enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 '
+            '--enable-libx265 --enable-libxavs --enable-libxvid --enable-libzimg '
+            '--enable-lzma --enable-decklink --enable-zlib',
+
+            'libavformat license: GPL version 3 or later',
+
+            '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
+            '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
+            '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
+            '--enable-libbs2b --enable-libcaca --enable-libfreetype --enable-libgme '
+            '--enable-libgsm --enable-libilbc --enable-libmodplug --enable-libmp3lame '
+            '--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 '
+            '--enable-libopenjpeg --enable-libopus --enable-librtmp --enable-libsnappy '
+            '--enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame '
+            '--enable-libvidstab --enable-libvo-amrwbenc --enable-libvorbis '
+            '--enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 '
+            '--enable-libx265 --enable-libxavs --enable-libxvid --enable-libzimg '
+            '--enable-lzma --enable-decklink --enable-zlib',
+
+            'libavcodec license: GPL version 3 or later',
+
+            '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
+            '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
+            '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
+            '--enable-libbs2b --enable-libcaca --enable-libfreetype --enable-libgme '
+            '--enable-libgsm --enable-libilbc --enable-libmodplug --enable-libmp3lame '
+            '--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 '
+            '--enable-libopenjpeg --enable-libopus --enable-librtmp --enable-libsnappy '
+            '--enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame '
+            '--enable-libvidstab --enable-libvo-amrwbenc --enable-libvorbis '
+            '--enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 '
+            '--enable-libx265 --enable-libxavs --enable-libxvid --enable-libzimg '
+            '--enable-lzma --enable-decklink --enable-zlib',
+
+            'libpostproc license: GPL version 3 or later',
+
+            '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
+            '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
+            '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
+            '--enable-libbs2b --enable-libcaca --enable-libfreetype --enable-libgme '
+            '--enable-libgsm --enable-libilbc --enable-libmodplug --enable-libmp3lame '
+            '--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 '
+            '--enable-libopenjpeg --enable-libopus --enable-librtmp --enable-libsnappy '
+            '--enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame '
+            '--enable-libvidstab --enable-libvo-amrwbenc --enable-libvorbis '
+            '--enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 '
+            '--enable-libx265 --enable-libxavs --enable-libxvid --enable-libzimg '
+            '--enable-lzma --enable-decklink --enable-zlib',
+
+            'libswresample license: GPL version 3 or later',
+            '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
+            '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
+            '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
+            '--enable-libbs2b --enable-libcaca --enable-libfreetype --enable-libgme '
+            '--enable-libgsm --enable-libilbc --enable-libmodplug --enable-libmp3lame '
+            '--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 '
+            '--enable-libopenjpeg --enable-libopus --enable-librtmp --enable-libsnappy '
+            '--enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame '
+            '--enable-libvidstab --enable-libvo-amrwbenc --enable-libvorbis '
+            '--enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 '
+            '--enable-libx265 --enable-libxavs --enable-libxvid --enable-libzimg '
+            '--enable-lzma --enable-decklink --enable-zlib',
+
+            'libswscale license: GPL version 3 or later',
+            '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
+            '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
+            '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
+            '--enable-libbs2b --enable-libcaca --enable-libfreetype --enable-libgme '
+            '--enable-libgsm --enable-libilbc --enable-libmodplug --enable-libmp3lame '
+            '--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 '
+            '--enable-libopenjpeg --enable-libopus --enable-librtmp --enable-libsnappy '
+            '--enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame '
+            '--enable-libvidstab --enable-libvo-amrwbenc --enable-libvorbis '
+            '--enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 '
+            '--enable-libx265 --enable-libxavs --enable-libxvid --enable-libzimg '
+            '--enable-lzma --enable-decklink --enable-zlib',
+
+            'libavutil license: GPL version 3 or later',
+
+            'This software is derived from the GNU GPL XviD codec (1.3.0).'
+        ]
+
+        self.check_matched_texts(
+            test_loc='matched_text/ffmpeg/ffmpeg.exe',
+            expected_texts=expected_texts,
+            whole_lines=True
+        )
+
+    def test_matched_text_is_collected_correctly_in_binary_ffmpeg_windows_not_whole_lines(self):
+        expected_texts = [
+            'enable-gpl --enable-version3 --',
+            'enable-gpl --enable-version3 --',
+            'is free software; you can redistribute it and/or modify\n'
+            'it under the terms of the GNU General Public License as published by\n'
+            'the Free Software Foundation; either version 3 of the License, or\n'
+            '(at your option) any later version.\n'
+            '%s is distributed in the hope that it will be useful,\n'
+            'but WITHOUT ANY WARRANTY; without even the implied warranty of\n'
+            'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n'
+            'GNU General Public License for more details.\n'
+            'You should have received a copy of the GNU General Public License\n'
+            'along with %s.  If not, see <http://www.gnu.org/licenses/>.',
+            'enable-gpl --enable-version3 --',
+            'license: GPL version 3 or later',
+            'enable-gpl --enable-version3 --',
+            'license: GPL version 3 or later',
+            'enable-gpl --enable-version3 --',
+            'license: GPL version 3 or later',
+            'enable-gpl --enable-version3 --',
+            'license: GPL version 3 or later',
+            'enable-gpl --enable-version3 --',
+            'license: GPL version 3 or later',
+            'enable-gpl --enable-version3 --',
+            'license: GPL version 3 or later',
+            'enable-gpl --enable-version3 --',
+            'license: GPL version 3 or later',
+            'This software is derived from the GNU GPL XviD codec ('
+        ]
+
+        self.check_matched_texts(
+            test_loc='matched_text/ffmpeg/ffmpeg.exe',
+            expected_texts=expected_texts,
+            whole_lines=False,
+        )
+
+    def test_matched_text_is_collected_correctly_in_binary_ffmpeg_elf_whole_lines(self):
+        expected_texts = [
+            '--prefix=/usr --extra-version=0ubuntu0.1 --build-suffix=-ffmpeg '
+            '--toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu '
+            '--incdir=/usr/include/x86_64-linux-gnu --cc=cc --cxx=g++ --enable-gpl '
+            '--enable-shared --disable-stripping --disable-decoder=libopenjpeg '
+            '--disable-decoder=libschroedinger --enable-avresample --enable-avisynth '
+            '--enable-gnutls --enable-ladspa --enable-libass --enable-libbluray '
+            '--enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite '
+            '--enable-libfontconfig --enable-libfreetype --enable-libfribidi '
+            '--enable-libgme --enable-libgsm --enable-libmodplug --enable-libmp3lame '
+            '--enable-libopenjpeg --enable-libopus --enable-libpulse --enable-librtmp '
+            '--enable-libschroedinger --enable-libshine --enable-libsnappy '
+            '--enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora '
+            '--enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack '
+            '--enable-libwebp --enable-libx265 --enable-libxvid --enable-libzvbi '
+            '--enable-openal --enable-opengl --enable-x11grab --enable-libdc1394 '
+            '--enable-libiec61883 --enable-libzmq --enable-frei0r --enable-libx264 '
+            '--enable-libopencv',
+            '%sconfiguration: --prefix=/usr --extra-version=0ubuntu0.1 '
+            '--build-suffix=-ffmpeg --toolchain=hardened '
+            '--libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu '
+            '--cc=cc --cxx=g++ --enable-gpl --enable-shared --disable-stripping '
+            '--disable-decoder=libopenjpeg --disable-decoder=libschroedinger '
+            '--enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa '
+            '--enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca '
+            '--enable-libcdio --enable-libflite --enable-libfontconfig '
+            '--enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm '
+            '--enable-libmodplug --enable-libmp3lame --enable-libopenjpeg '
+            '--enable-libopus --enable-libpulse --enable-librtmp --enable-libschroedinger '
+            '--enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex '
+            '--enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis '
+            '--enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 '
+            '--enable-libxvid --enable-libzvbi --enable-openal --enable-opengl '
+            '--enable-x11grab --enable-libdc1394 --enable-libiec61883 --enable-libzmq '
+            '--enable-frei0r --enable-libx264 --enable-libopencv',
+            '%s is free software; you can redistribute it and/or modify\n'
+            'it under the terms of the GNU General Public License as published by\n'
+            'the Free Software Foundation; either version 2 of the License, or\n'
+            '(at your option) any later version.\n'
+            '%s is distributed in the hope that it will be useful,\n'
+            'but WITHOUT ANY WARRANTY; without even the implied warranty of\n'
+            'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n'
+            'GNU General Public License for more details.\n'
+            'You should have received a copy of the GNU General Public License\n'
+            'along with %s; if not, write to the Free Software\n'
+            'Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA'
+        ]
+
+        self.check_matched_texts(
+            test_loc='matched_text/ffmpeg/ffmpeg',
+            expected_texts=expected_texts,
+            whole_lines=True,
+        )
+
+    def test_matched_text_is_collected_correctly_in_binary_ffmpeg_static_whole_lines(self):
+        expected_texts = ['libswresample license: LGPL version 2.1 or later']
+        self.check_matched_texts(
+            test_loc='matched_text/ffmpeg/libavsample.lib',
+            expected_texts=expected_texts,
+            whole_lines=True,
+        )
