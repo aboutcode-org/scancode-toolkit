@@ -234,6 +234,8 @@ Other contributors, listed alphabetically, are:
 * Alex Zimin -- Nemerle lexer
 * Rob Zimmerman -- Kal lexer
 * Vincent Zurczak -- Roboconf lexer
+* Hubert Gruniaux -- C and C++ lexer improvements
+* Thomas Symalla -- AMDGPU Lexer
 * 15b3 -- Image Formatter improvements
 
 Many thanks for all contributions!
