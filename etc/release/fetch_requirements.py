@@ -59,6 +59,10 @@ import itertools
     is_flag=True,
     help='Allow requirements without pinned versions.',
 )
+@click.option('-s', '--only-sources',
+    is_flag=True,
+    help='Fetch only the corresponding source distributions.',
+)
 @click.help_option('-h', '--help')
 def fetch_requirements(
     requirements_file,
@@ -68,6 +72,7 @@ def fetch_requirements(
     with_sources,
     with_about,
     allow_unpinned,
+    only_sources,
 ):
     """
     Fetch and save to THIRDPARTY_DIR all the required wheels for pinned
@@ -85,21 +90,21 @@ def fetch_requirements(
     operating_systems = operating_system
     requirements_files = requirements_file
 
-    envs = itertools.product(python_versions, operating_systems)
-    envs = (utils_thirdparty.Environment.from_pyver_and_os(pyv, os) for pyv, os in envs)
-
-    for env, reqf in itertools.product(envs, requirements_files):
-        for package, error in utils_thirdparty.fetch_wheels(
-            environment=env,
-            requirements_file=reqf,
-            allow_unpinned=allow_unpinned,
-            dest_dir=thirdparty_dir,
-        ):
-            if error:
-                print('Failed to fetch wheel:', package, ':', error)
+    if not only_sources:
+        envs = itertools.product(python_versions, operating_systems)
+        envs = (utils_thirdparty.Environment.from_pyver_and_os(pyv, os) for pyv, os in envs)
+        for env, reqf in itertools.product(envs, requirements_files):
+            for package, error in utils_thirdparty.fetch_wheels(
+                environment=env,
+                requirements_file=reqf,
+                allow_unpinned=allow_unpinned,
+                dest_dir=thirdparty_dir,
+            ):
+                if error:
+                    print('Failed to fetch wheel:', package, ':', error)
 
     # optionally fetch sources
-    if with_sources:
+    if with_sources or only_sources:
         for reqf in requirements_files:
             for package, error in utils_thirdparty.fetch_sources(
                 requirements_file=reqf,
