@@ -39,33 +39,33 @@
         "count": 1
       }
     ],
-    "copyrights": [
+ "copyrights": [
       {
-        "value": null,
+        "copyright": null,
         "count": 2
       },
       {
-        "value": "Copyright (c) - Members of the Gmerlin project",
+        "copyright": "Copyright (c) - Members of the Gmerlin project",
         "count": 1
       },
       {
-        "value": "Copyright (c) - Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
+        "copyright": "Copyright (c) - Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
         "count": 1
       }
     ],
     "holders": [
       {
-        "value": null,
+        "holder": null,
         "count": 2
       },
       {
-        "value": "Members of the Gmerlin project",
+        "holder": "Members of the Gmerlin project",
         "count": 2
       }
     ],
-    "authors": [
+  "authors": [
       {
-        "value": null,
+        "author": null,
         "count": 4
       }
     ],
@@ -92,21 +92,21 @@
         "count": 1
       }
     ],
-    "copyrights": [
+ "copyrights": [
       {
-        "value": null,
+        "copyright": null,
         "count": 2
       }
     ],
     "holders": [
       {
-        "value": null,
+        "holder": null,
         "count": 2
       }
     ],
-    "authors": [
+  "authors": [
       {
-        "value": null,
+        "author": null,
         "count": 2
       }
     ],
@@ -555,14 +555,14 @@
       "percentage_of_license_text": 80.95,
       "copyrights": [
         {
-          "value": "Copyright (c) 2001 - 2011 Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
+          "copyright": "Copyright (c) 2001 - 2011 Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
           "start_line": 4,
           "end_line": 6
         }
       ],
       "holders": [
         {
-          "value": "Members of the Gmerlin project",
+          "holder": "Members of the Gmerlin project",
           "start_line": 4,
           "end_line": 6
         }
@@ -606,14 +606,14 @@
       "percentage_of_license_text": 0,
       "copyrights": [
         {
-          "value": "Copyright (c) 2001 - 2011 Members of the Gmerlin project",
+          "copyright": "Copyright (c) 2001 - 2011 Members of the Gmerlin project",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Members of the Gmerlin project",
+          "holder": "Members of the Gmerlin project",
           "start_line": 4,
           "end_line": 4
         }

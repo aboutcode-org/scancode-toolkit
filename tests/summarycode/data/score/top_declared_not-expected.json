@@ -157,9 +157,9 @@
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
-      "authors": [
+     "authors": [
         {
-          "value": "Alexander Plavinski <alexander.plavinski@invision.de>",
+          "author": "Alexander Plavinski <alexander.plavinski@invision.de>",
           "start_line": 6,
           "end_line": 8
         }

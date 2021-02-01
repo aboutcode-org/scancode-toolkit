@@ -371,51 +371,51 @@ To see all plugins available via command line help, use ``--plugins``.
         ],
         "copyrights": [
           {
-            "value": "Copyright (c) Mark Adler",
+            "copyright": "Copyright (c) Mark Adler",
             "count": 4
           },
           {
-            "value": "Copyright (c) Free Software Foundation, Inc.",
+            "copyright": "Copyright (c) Free Software Foundation, Inc.",
             "count": 2
           },
           {
-            "value": "Copyright (c) The Apache Software Foundation",
+            "copyright": "Copyright (c) The Apache Software Foundation",
             "count": 1
           },
           {
-            "value": "Copyright Red Hat, Inc. and individual contributors",
+            "copyright": "Copyright Red Hat, Inc. and individual contributors",
             "count": 1
           }
         ],
         "holders": [
           {
-            "value": null,
+            "holder": null,
             "count": 10
           },
           {
-            "value": "Mark Adler",
+            "holder": "Mark Adler",
             "count": 4
           },
           {
-            "value": "Red Hat, Inc. and individual contributors",
+            "holder": "Red Hat, Inc. and individual contributors",
             "count": 1
           },
           {
-            "value": "The Apache Software Foundation",
+            "holder": "The Apache Software Foundation",
             "count": 1
           },
         ],
         "authors": [
           {
-            "value": "Bela Ban",
+            "author": "Bela Ban",
             "count": 4
           },
           {
-            "value": "Brian Stansberry",
+            "author": "Brian Stansberry",
             "count": 1
           },
           {
-            "value": "the Apache Software Foundation (http://www.apache.org/)",
+            "author": "the Apache Software Foundation (http://www.apache.org/)",
             "count": 1
           }
         ],
