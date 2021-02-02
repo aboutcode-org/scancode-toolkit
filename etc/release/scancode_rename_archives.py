@@ -13,14 +13,15 @@ import os
 import sys
 
 
-def rename_archives(target_directory, python_version, operating_system):
+def rename_archives(target_directory, suffix):
     """
     Rename all the archives found in the `target_directory` to include a
-    python_version and operating_system name in their file names.
+    distinguishing suffix in their file names (typically a python version and
+    operating system name).
 
-    For example, if `target_directory` contains "foo.tar.gz" initially, and the
-    python_version="36 and operating_system="macos", then  "foo.tar.gz" will be
-    renamed to "foo-py36-macos.tar.gz"
+    For example, if `target_directory` contains "foo.tar.gz" initially, with the
+    suffix="py36-macos", then  "foo.tar.gz" will be renamed to "foo-
+    py36-macos.tar.gz"
     """
     supported_extensions = '.tar.gz', '.tar.bz2', '.zip', '.tar.xz',
     renameable = [
@@ -35,18 +36,17 @@ def rename_archives(target_directory, python_version, operating_system):
             name, extension, compression = old_name.rpartition('.tar')
             extension = extension + compression
 
-        pyos = f'py{python_version}-{operating_system}'
-        new_name = f'{name}-{pyos}{extension}'
-
         # do not rename twice
-        if not name.endswith(pyos):
-            os.rename(
-                os.path.join(target_directory, old_name),
-                os.path.join(target_directory, new_name),
-            )
+        if name.endswith(suffix):
+            return
+
+        os.rename(
+            os.path.join(target_directory, old_name),
+            os.path.join(target_directory, f'{name}-{suffix}{extension}'),
+        )
 
 
 if __name__ == '__main__':
     args = sys.argv[1:]
-    target_directory, python_version, operating_system = args
-    rename_archives(target_directory, python_version, operating_system)
+    target_directory, suffix = args
+    rename_archives(target_directory=target_directory, suffix=suffix)

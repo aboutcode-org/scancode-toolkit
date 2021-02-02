@@ -116,7 +116,11 @@ def fetch_requirements(
 
     if with_about:
         utils_thirdparty.add_fetch_or_update_about_and_license_files(dest_dir=thirdparty_dir)
-        utils_thirdparty.find_problems(dest_dir=thirdparty_dir)
+        utils_thirdparty.find_problems(
+            dest_dir=thirdparty_dir,
+            report_missing_sources=with_sources or only_sources,
+            report_missing_wheels=not only_sources,
+        )
 
 
 if __name__ == '__main__':

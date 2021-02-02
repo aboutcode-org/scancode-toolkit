@@ -678,7 +678,7 @@ class Distribution(NameVer):
                 if existing_content == content:
                     return False
 
-            print(f'Saving ABOUT (and NOTICE) files for: {self}')
+            if TRACE: print(f'Saving ABOUT (and NOTICE) files for: {self}')
             with open(location, 'w') as fo:
                 fo.write(content)
             return True
@@ -829,7 +829,7 @@ class Distribution(NameVer):
                     path_or_url=lic_url,
                     as_text=True,
                 )
-                print(f'Fetched license from {lic_url}')
+                if TRACE: print(f'Fetched license from remote: {lic_url}')
 
             except:
                 try:
@@ -841,7 +841,7 @@ class Distribution(NameVer):
                         path_or_url=lic_url,
                         as_text=True,
                     )
-                    print(f'Fetched license from {lic_url}')
+                    if TRACE: print(f'Fetched license from licensedb: {lic_url}')
 
                 except:
                     msg = f'No text for license {filename} in expression "{self.license_expression}" from {self}'
@@ -1399,14 +1399,14 @@ class PypiPackage(NameVer):
         """
         if self.sdist:
             assert self.sdist.filename
-            print('Fetching source for package:', self.name, self.version)
+            if TRACE: print('Fetching source for package:', self.name, self.version)
             fetch_and_save_path_or_url(
                 filename=self.sdist.filename,
                 dest_dir=dest_dir,
                 path_or_url=self.sdist.path_or_url,
                 as_text=False,
             )
-            print(' --> file:', self.sdist.filename)
+            if TRACE: print(' --> file:', self.sdist.filename)
             return self.sdist.filename
         else:
             print(f'Missing sdist for: {self.name}=={self.version}')
@@ -1819,7 +1819,7 @@ def get_file_content(path_or_url, as_text=True):
         return get_local_file_content(path=path_or_url, as_text=as_text)
 
     elif path_or_url.startswith('https://'):
-        print(f'Fetching: {path_or_url}')
+        if TRACE: print(f'Fetching: {path_or_url}')
         _headers, content = get_remote_file_content(url=path_or_url, as_text=as_text)
         return content
 
@@ -2142,16 +2142,14 @@ def find_links_from_release_url(links_url=REMOTE_LINKS_URL):
     URL that starts with the `prefix` string and ends with any of the extension
     in the list of `extensions` strings. Use the `base_url` to prefix the links.
     """
-    if TRACE:
-        print(f'Finding links for {links_url}')
+    if TRACE: print(f'Finding links for {links_url}')
 
     plinks_url = urllib.parse.urlparse(links_url)
 
     base_url = urllib.parse.SplitResult(
         plinks_url.scheme, plinks_url.netloc, '', '', '').geturl()
 
-    if TRACE:
-        print(f'Base URL {base_url}')
+    if TRACE: print(f'Base URL {base_url}')
 
     _headers, text = get_remote_file_content(links_url)
     links = []
@@ -2173,8 +2171,7 @@ def find_links_from_release_url(links_url=REMOTE_LINKS_URL):
             # relative link
             url = f'{links_url}/{link}'
 
-        if TRACE:
-            print(f'Adding URL: {url}')
+        if TRACE: print(f'Adding URL: {url}')
 
         links.append(url)
 
@@ -2187,8 +2184,7 @@ def find_pypi_links(name, simple_url=PYPI_SIMPLE_URL):
     Return a list of download link URLs found in a PyPI simple index for package name.
     with the list of `extensions` strings. Use the `simple_url` PyPI url.
     """
-    if TRACE:
-        print(f'Finding links for {simple_url}')
+    if TRACE: print(f'Finding links for {simple_url}')
 
     name = name and NameVer.normalize_name(name)
     simple_url = simple_url.strip('/')
@@ -2466,7 +2462,7 @@ def call(args):
     Call args in a subprocess and display output on the fly.
     Return or raise stdout, stderr, returncode
     """
-    print('Calling:', ' '.join(args))
+    if TRACE: print('Calling:', ' '.join(args))
     with subprocess.Popen(
         args,
         stdout=subprocess.PIPE,
@@ -2478,7 +2474,7 @@ def call(args):
             line = process.stdout.readline()
             if not line and process.poll() is not None:
                 break
-            print(line.rstrip(), flush=True)
+            if TRACE: print(line.rstrip(), flush=True)
 
         stdout, stderr = process.communicate()
         returncode = process.returncode
@@ -2736,7 +2732,7 @@ def build_wheels_locally_if_pure_python(
     return all_pure, pure_built
 
 
-    # TODO:
+# TODO: Use me
 def optimize_wheel(wheel_filename, dest_dir=THIRDPARTY_DIR):
     """
     Optimize a wheel named `wheel_filename` in `dest_dir` such as renaming its
@@ -2835,7 +2831,11 @@ def check_about(dest_dir=THIRDPARTY_DIR):
         print(cpe.output.decode('utf-8', errors='replace'))
 
 
-def find_problems(dest_dir=THIRDPARTY_DIR):
+def find_problems(
+    dest_dir=THIRDPARTY_DIR, 
+    report_missing_sources=False, 
+    report_missing_wheels=False,
+):
     """
     Print the problems found in `dest_dir`.
     """
@@ -2843,9 +2843,9 @@ def find_problems(dest_dir=THIRDPARTY_DIR):
     local_packages = get_local_packages(directory=dest_dir)
 
     for package in local_packages:
-        if not package.sdist:
+        if report_missing_sources and not package.sdist:
             print(f'{package.name}=={package.version}: Missing source distribution.')
-        if not package.wheels:
+        if report_missing_wheels and not package.wheels:
             print(f'{package.name}=={package.version}: Missing wheels.')
 
         for dist in package.get_distributions():
