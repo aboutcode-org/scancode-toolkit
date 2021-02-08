@@ -2627,27 +2627,8 @@ def build_wheels_remotely_on_multiple_platforms(
     combinations and save them back in `dest_dir` and return a list of built
     wheel file names.
     """
-    # these environment variable must be set before
-    has_envt = (
-        os.environ.get('ROMP_BUILD_REQUEST_URL') and
-        os.environ.get('ROMP_DEFINITION_ID') and
-        os.environ.get('ROMP_PERSONAL_ACCESS_TOKEN') and
-        os.environ.get('ROMP_USERNAME')
-    )
-
-    if not has_envt:
-        raise Exception(
-            'ROMP_BUILD_REQUEST_URL, ROMP_DEFINITION_ID, '
-            'ROMP_PERSONAL_ACCESS_TOKEN and ROMP_USERNAME '
-            'are required enironment variables.')
-
-    python_dot_versions = ['.'.join(pv) for pv in python_versions]
-    python_cli_options = sorted(set(itertools.chain.from_iterable(
-        ('--version', ver) for ver in python_dot_versions)))
-
-    os_cli_options = sorted(set(itertools.chain.from_iterable(
-        ('--platform' , plat) for plat in operating_systems)))
-
+    check_romp_is_configured()
+    pyos_options = get_romp_pyos_options(python_versions, operating_systems)
     deps = '' if with_deps else '--no-deps'
     verbose = '--verbose' if verbose else ''
 
@@ -2657,7 +2638,7 @@ def build_wheels_remotely_on_multiple_platforms(
         '--architecture', 'x86_64',
         '--check-period', '5',  # in seconds
 
-    ] + python_cli_options + os_cli_options + [
+    ] + pyos_options + [
 
         '--artifact-paths', '*.whl',
         '--artifact', 'artifacts.tar.gz',
@@ -2679,6 +2660,36 @@ def build_wheels_remotely_on_multiple_platforms(
     for wfn in wheel_filenames:
         print(f' built wheel: {wfn}')
     return wheel_filenames
+
+
+def get_romp_pyos_options(
+    python_versions=PYTHON_VERSIONS,
+    operating_systems=PLATFORMS_BY_OS,
+):
+    python_dot_versions = ['.'.join(pv) for pv in python_versions]
+    pyos_options = sorted(set(itertools.chain.from_iterable(
+        ('--version', ver) for ver in python_dot_versions)))
+
+    pyos_options += sorted(set(itertools.chain.from_iterable(
+        ('--platform' , plat) for plat in operating_systems)))
+
+    return pyos_options
+
+
+def check_romp_is_configured():
+    # these environment variable must be set before
+    has_envt = (
+        os.environ.get('ROMP_BUILD_REQUEST_URL') and
+        os.environ.get('ROMP_DEFINITION_ID') and
+        os.environ.get('ROMP_PERSONAL_ACCESS_TOKEN') and
+        os.environ.get('ROMP_USERNAME')
+    )
+
+    if not has_envt:
+        raise Exception(
+            'ROMP_BUILD_REQUEST_URL, ROMP_DEFINITION_ID, '
+            'ROMP_PERSONAL_ACCESS_TOKEN and ROMP_USERNAME '
+            'are required enironment variables.')
 
 
 def build_wheels_locally_if_pure_python(
@@ -2832,8 +2843,8 @@ def check_about(dest_dir=THIRDPARTY_DIR):
 
 
 def find_problems(
-    dest_dir=THIRDPARTY_DIR, 
-    report_missing_sources=False, 
+    dest_dir=THIRDPARTY_DIR,
+    report_missing_sources=False,
     report_missing_wheels=False,
 ):
     """
