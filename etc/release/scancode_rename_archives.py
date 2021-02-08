@@ -16,12 +16,11 @@ import sys
 def rename_archives(target_directory, suffix):
     """
     Rename all the archives found in the `target_directory` to include a
-    distinguishing suffix in their file names (typically a python version and
+    distinguishing `suffix` in their file names (typically a python version and
     operating system name).
 
     For example, if `target_directory` contains "foo.tar.gz" initially, with the
-    suffix="py36-macos", then  "foo.tar.gz" will be renamed to "foo-
-    py36-macos.tar.gz"
+    suffix="_py36-macos", then "foo.tar.gz" will be renamed to "foo_py36-macos.tar.gz"
     """
     supported_extensions = '.tar.gz', '.tar.bz2', '.zip', '.tar.xz',
     renameable = [
@@ -42,7 +41,7 @@ def rename_archives(target_directory, suffix):
 
         os.rename(
             os.path.join(target_directory, old_name),
-            os.path.join(target_directory, f'{name}-{suffix}{extension}'),
+            os.path.join(target_directory, f'{name}{suffix}{extension}'),
         )
 
 
