@@ -1,84 +1,108 @@
-#!/bin/bash
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #
-# Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
+# ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-################################################################################
-# ScanCode release test script
-################################################################################
+import hashlib
+import os
+import shutil
+import subprocess
+import sys
 
-set -e
-
-# Un-comment to trace execution
-#set -x
-
-
-function run_test_scan {
-    # Run a test scan for a given release archive
-    # Note that for now, these tests run only on Linux
-    # Arguments:
-    #   file_extension: the file name suffix to consider for testing
-    #   extract_command: the command to use to extract an archive
-
-    file_extension=$1
-    extract_command=$2
-    for archive in *$file_extension;
-        do
-            echo "    RELEASE: Testing release archive: $archive ... "
-            $($extract_command $archive)
-            extract_dir=$(ls -d */)
-            cd "$extract_dir"
-
-            # this is needed for the zip
-            chmod o+x scancode extractcode
-
-            # minimal tests: update when new scans are available
-            cmd="./scancode --quiet -lcip apache-2.0.LICENSE --json test_scan.json"
-            echo "RUNNING TEST: $cmd"
-            $cmd
-            echo "TEST PASSED"
-
-            cmd="./scancode --quiet -clipeu  apache-2.0.LICENSE --json-pp test_scan.json"
-            echo "RUNNING TEST: $cmd"
-            $cmd
-            echo "TEST PASSED"
-
-            cmd="./scancode --quiet -clipeu  apache-2.0.LICENSE --csv test_scan.csv"
-            echo "RUNNING TEST: $cmd"
-            $cmd
-            echo "TEST PASSED"
-
-            cmd="./scancode --quiet -clipeu apache-2.0.LICENSE --html test_scan.html"
-            echo "RUNNING TEST: $cmd"
-            $cmd
-            echo "TEST PASSED"
-
-            cmd="./scancode --quiet -clipeu apache-2.0.LICENSE --spdx-tv test_scan.spdx"
-            echo "RUNNING TEST: $cmd"
-            $cmd
-            echo "TEST PASSED"
-
-            mkdir -p foo
-            touch foo/bar
-            tar -czf foo.tgz foo
-            cmd="./extractcode --quiet foo.tgz"
-            echo "RUNNING TEST: $cmd"
-            $cmd
-            echo "TEST PASSED"
-
-            # cleanup
-            cd ..
-            rm -rf "$extract_dir"
-            echo "    RELEASE: Success"
-        done
-}
+# TODO: also test a pip install with a find-links option to our new PyPI repo
 
 
-cd release/archives
-echo "  RELEASE: Testing built archives for LINUX only..."
-run_test_scan "linux.tar.xz" "tar -xf"
-cd ../..
+def run_pypi_smoke_tests(pypi_archive):
+    """
+    Run basic install and "smoke" scancode tests for a PyPI archive.
+    """
+    # archive is either a wheel or an sdist as in
+    # scancode_toolkit-21.1.21-py3-none-any.whl or scancode-toolkit-21.1.21.tar.gz
+    run_command(['pip', 'install', pypi_archive + '[full]'])
+
+    with open('some.file', 'w') as sf:
+        sf.write('license: gpl-2.0')
+
+    run_command(['scancode', '-clipeu', '--json-pp', '-', 'some.file'])
 
 
-set +e
-set +x
+def run_app_smoke_tests(app_archive):
+    """
+    Run basic "smoke" scancode tests for the app release archive `app_archive`
+    """
+    # Extract app archive which has this namin pattern:
+    # scancode-toolki-21.1.21_py36-linux.tar.xz
+    # or scancode-toolkit-21.1.21_py36-windows.zip
+    # We split the name on "_" to extract the laft hand side which is name of
+    # the root directory inside the archive e.g. "scancode-toolkit-21.1.21"
+    # where the archive gest extracted
+    extract_dir, _, _py_ver_ext = app_archive.partition('_')
+    shutil.unpack_archive(app_archive)
+    print()
+    print('cwd:', os.getcwd())
+
+    extract_loc = os.path.normpath(os.path.abspath(os.path.expanduser(extract_dir)))
+    print('extract_loc:', extract_loc)
+    for f in os.listdir(extract_loc):
+        print('  ', f)
+    print()
+
+    os.chdir(extract_loc)
+
+    # minimal tests: update when new scans are available
+    args = [
+        os.path.join(extract_loc, 'scancode'),
+        '-clipeu',
+        '--classify',
+        '--verbose',
+        '--json', 'test_scan.json',
+        '--csv', 'test_scan.csv',
+        '--html', 'test_scan.html',
+        '--spdx-tv', 'test_scan.spdx',
+        '--json-pp', '-',
+        os.path.join(extract_loc, 'apache-2.0.LICENSE'),
+    ]
+
+    print(f'Testing scancode release: {app_archive}')
+    run_command(args)
+
+
+def run_command(args):
+    cmd = ' '.join(args)
+    print()
+    print(f'Running command: {cmd}')
+    try:
+        output = subprocess.check_output(args, encoding='utf-8')
+        print(f'Success to run command: {cmd}')
+        print(output)
+
+    except subprocess.CalledProcessError as cpe:
+        print(f'Failure to run command: {cmd}')
+        print(cpe.output)
+        sys.exit(128)
+
+
+if __name__ == '__main__':
+    args = sys.argv[1:]
+    action, archive, sha_arch, sha_py = args
+
+    with open(archive, 'rb') as arch:
+        current_sha_arch = hashlib.sha256(arch.read()).hexdigest()
+        assert current_sha_arch == sha_arch
+
+    with open(__file__, 'rb') as py:
+        current_sha_py = hashlib.sha256(py.read()).hexdigest()
+        assert current_sha_py == sha_py
+
+
+    if action == 'pypi':
+        run_pypi_smoke_tests(archive)
+    else:
+        # action =='app':
+        run_app_smoke_tests(archive)
