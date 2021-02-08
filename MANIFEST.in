@@ -2,6 +2,7 @@ graft src
 graft thirdparty
 recursive-include etc configure.py
 graft etc/thirdparty
+recursive-include etc/thirdparty *
 
 include *.LICENSE
 include NOTICE
