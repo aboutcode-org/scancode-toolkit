@@ -36,10 +36,18 @@ TRACE = False
 
 logger = logging.getLogger(__name__)
 
+
+def logger_debug(*args):
+    pass
+
+
 if TRACE:
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return print(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 # TODO: add os and engines from package.json??
 # add lock files and yarn details
@@ -54,7 +62,7 @@ class NpmPackage(models.Package):
         'package-lock.json',
         'yarn.lock',
     )
-    filetypes = ('.tgz',)
+    extensions = ('.tgz',)
     mimetypes = ('application/x-tar',)
     default_type = 'npm'
     default_primary_language = 'JavaScript'

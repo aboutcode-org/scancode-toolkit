@@ -1,18 +1,25 @@
 graft src
 graft thirdparty
 recursive-include etc configure.py
+graft etc/thirdparty
+recursive-include etc/thirdparty *
 
 include *.LICENSE
 include NOTICE
 include *.ABOUT
-include *.toml
-include *.rst
+
 include setup.*
 include configure*
+include requirements*
+include *.toml
+
 include extractcode*
 include scancode*
+
+
+include *.rst
 include Dockerfile
-include requirements*
+include .VERSION
 
 global-exclude *.py[co] __pycache__ *.*~
 

@@ -6,15 +6,21 @@ v21.x (next)
 
 
 
-v21.1.21
---------
+v21.2.9
+-------
+
+Security:
+
+ - Update vulnerable LXML to version 4.6.2 to fix
+   https://nvd.nist.gov/vuln/detail/CVE-2020-27783
+   This was detected thanks to https://github.com/nexb/vulnerablecode
 
 Operating system support:
 
  - Drop support for Python 2  #295
  - Drop support for 32 bits on Windows #335
  - Add support for Python 64 bits on Windows 64 bits #335
- - Add support for Python 3.6 to Python 3.9 on Linux, Windows and macOS.
+ - Add support for Python 3.6, 37, 3.8 and 3.9 on Linux, Windows and macOS.
    These are now tested on Azure.
  - Add deprecation message for native Windows support #2366
 
@@ -39,7 +45,7 @@ Copyright scanning:
 
  - Improve detection with minor grammar fixes
 
-Misc.
+Misc.:
 
  - Adopt a new calendar date-based versioning for scancode-toolkit version numbers
  - Update thirdparty dependencies and built-in plugins
