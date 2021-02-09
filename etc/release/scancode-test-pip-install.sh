@@ -18,12 +18,13 @@ bin/python setup.py bdist_wheel
 
 echo "###  Installing ScanCode release with pip ###"
 
-mkdir -p tmp/pip
-python -m venv tmp/pip
-tmp/pip/bin/pip install release/pypi/scancode_toolkit*.whl
+mkdir -p tmp/pipinst
+wget -O tmp/pipinst/virtualenv.pyz https://bootstrap.pypa.io/virtualenv/virtualenv.pyz
+python3 tmp/pipinst/virtualenv.pyz tmp/pipinst
+tmp/pipinst/bin/pip install release/pypi/scancode_toolkit*.whl
 
 # perform a minimal check of the results for https://github.com/nexB/scancode-toolkit/issues/2201
-if [ `tmp/pip/bin/scancode -i --json-pp - NOTICE | grep -c "scan_timings"` == 1 ]; then
+if [ `tmp/pipinst/bin/scancode -i --json-pp - NOTICE | grep -c "scan_timings"` == 1 ]; then
    echo "Failed scan that includes timings"
    exit 1
 else
