@@ -74,11 +74,16 @@ def run_app_smoke_tests(app_archive):
 
 
 def run_command(args):
+    """
+    Run a command list of `args` in a subprocess. Print the output. Exit on
+    error.
+    """
     cmd = ' '.join(args)
     print()
     print(f'Running command: {cmd}')
     try:
-        output = subprocess.check_output(args, encoding='utf-8')
+        on_windows = 'win32' in str(sys.platform).lower()
+        output = subprocess.check_output(args, encoding='utf-8', shell=on_windows)
         print(f'Success to run command: {cmd}')
         print(output)
 
@@ -99,7 +104,6 @@ if __name__ == '__main__':
     with open(__file__, 'rb') as py:
         current_sha_py = hashlib.sha256(py.read()).hexdigest()
         assert current_sha_py == sha_py
-
 
     if action == 'pypi':
         run_pypi_smoke_tests(archive)
