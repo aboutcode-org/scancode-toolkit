@@ -21,7 +21,10 @@ echo "###  Installing ScanCode release with pip ###"
 mkdir -p tmp/pipinst
 wget -O tmp/pipinst/virtualenv.pyz https://bootstrap.pypa.io/virtualenv/virtualenv.pyz
 python3 tmp/pipinst/virtualenv.pyz tmp/pipinst
-tmp/pipinst/bin/pip install release/pypi/scancode_toolkit*.whl
+
+archive_to_test=$(find release/pypi -type f -name "*.whl")
+
+tmp/pipinst/bin/pip install release/pypi/$archive_to_test[full]
 
 # perform a minimal check of the results for https://github.com/nexB/scancode-toolkit/issues/2201
 if [ `tmp/pipinst/bin/scancode -i --json-pp - NOTICE | grep -c "scan_timings"` == 1 ]; then

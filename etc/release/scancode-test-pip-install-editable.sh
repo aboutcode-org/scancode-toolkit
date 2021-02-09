@@ -13,12 +13,14 @@ set -x
 
 echo "###  Installing ScanCode release with pip editable###"
 
-mkdir -p tmp/pipe
-python -m venv tmp/pipe
-tmp/pipe/bin/pip install -e .
+mkdir -p tmp/pipedit
+wget -O tmp/pipedit/virtualenv.pyz https://bootstrap.pypa.io/virtualenv/virtualenv.pyz
+python3 tmp/pipedit/virtualenv.pyz tmp/pipedit
+
+tmp/pipedit/bin/pip install -e .[full]
 
 # perform a minimal check of the results for https://github.com/nexB/scancode-toolkit/issues/2201
-if [ `tmp/pipe/bin/scancode -i --json-pp - NOTICE | grep -c "scan_timings"` == 1 ]; then
+if [ `tmp/pipedit/bin/scancode -i --json-pp - NOTICE | grep -c "scan_timings"` == 1 ]; then
    echo "Failed scan that includes timings"
    exit 1
 else
