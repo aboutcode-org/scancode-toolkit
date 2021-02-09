@@ -11,6 +11,11 @@ set -e
 # un-comment to trace execution
 set -x
 
+echo "## Build a wheel"
+./configure --dev
+./scancode --reindex-licenses
+bin/python setup.py bdist_wheel
+
 echo "###  Installing ScanCode release with pip ###"
 
 mkdir -p tmp/pip
