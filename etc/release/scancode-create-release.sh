@@ -94,7 +94,7 @@ bin/python setup.py $QUIET sdist bdist_wheel
 mv dist release/pypi
 
 echo "## RELEASE: wheel and source distribution built and ready for PyPI upload"
-find release/pypi -ls
+find release -ls
 
 
 ################################
@@ -181,7 +181,7 @@ build_source_archive
 
 echo " "
 echo "## RELEASE: archives built and ready for test and publishing"
-find release/archives -ls 
+find release -ls 
 
 
 ################################
