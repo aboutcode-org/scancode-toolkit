@@ -22,7 +22,7 @@ mkdir -p tmp/pipinst
 wget -O tmp/pipinst/virtualenv.pyz https://bootstrap.pypa.io/virtualenv/virtualenv.pyz
 python3 tmp/pipinst/virtualenv.pyz tmp/pipinst
 
-archive_to_test=$(find release/pypi -type f -name "*.whl")
+archive_to_test=$(find dist -type f -name "*.whl")
 
 tmp/pipinst/bin/pip install release/pypi/$archive_to_test[full]
 
