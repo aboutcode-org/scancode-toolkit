@@ -2175,7 +2175,7 @@ def find_links_from_release_url(links_url=REMOTE_LINKS_URL):
 
         links.append(url)
 
-    print(f'Found {len(links)} links at {links_url}')
+    if TRACE: print(f'Found {len(links)} links at {links_url}')
     return links
 
 
