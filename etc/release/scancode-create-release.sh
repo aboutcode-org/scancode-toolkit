@@ -19,9 +19,9 @@ PYTHON_PYPI_TESTS_DOT_VERSIONS="3.6 3.7 3.8 3.9"
 
 OPERATING_SYSTEMS="linux macos windows"
 
-#QUIET=""
+QUIET=""
+#QUIET="--quiet"
 
-QUIET="--quiet"
 
 ################################################################################
 
