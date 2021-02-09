@@ -19,7 +19,7 @@ include scancode*
 
 include *.rst
 include Dockerfile
-include VERSION
+include .VERSION
 
 global-exclude *.py[co] __pycache__ *.*~
 
