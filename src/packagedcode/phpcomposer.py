@@ -52,8 +52,9 @@ class PHPComposerPackage(models.Package):
         'composer.json',
         'composer.lock',
     )
-    filetypes = ('.json', '.lock')
+    extensions = ('.json', '.lock',)
     mimetypes = ('application/json',)
+
     default_type = 'composer'
     default_primary_language = 'PHP'
     default_web_baseurl = 'https://packagist.org'
