@@ -472,9 +472,8 @@ class TestSetupPyVersions(object):
             with open(expected_loc, 'w') as ex:
                 json.dump(results, ex, indent=2, separators=(',', ': '))
 
-        with open(expected_loc, 'rb') as ex:
-            expected = json.load(
-                ex, encoding='utf-8')
+        with open(expected_loc) as ex:
+            expected = json.load(ex)
 
         try:
             assert expected == results

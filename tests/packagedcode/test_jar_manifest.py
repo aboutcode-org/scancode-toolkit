@@ -57,8 +57,8 @@ class BaseParseManifestCase(testcase.FileBasedTesting):
             with open(expected_json_loc, mode) as ex:
                 json.dump(package, ex, indent=2)
 
-        with io.open(expected_json_loc, 'rb') as ex:
-            expected = json.load(ex, encoding='utf-8')
+        with io.open(expected_json_loc) as ex:
+            expected = json.load(ex)
 
         assert json.dumps(expected) == json.dumps(package)
 
