@@ -81,7 +81,7 @@ jobs:
           image_name: macos-10.14
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 3 -vvs --reruns=1
+              all: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
 
 
     - template: etc/ci/azure-mac.yml
@@ -90,16 +90,16 @@ jobs:
           image_name: macos-10.15
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 3 -vvs --reruns=1
+              all: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
 
 
-    - template: etc/ci/azure-mac.yml
-      parameters:
-          job_name: macos_110_py3x
-          image_name: macos-11.0
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
-          test_suites:
-              all: bin/pytest -n 3 -vvs --reruns=1
+#    - template: etc/ci/azure-mac.yml
+#      parameters:
+#          job_name: macos_110_py3x
+#          image_name: macos-11.0
+#          python_versions: ['3.6', '3.7', '3.8', '3.9']
+#          test_suites:
+#              all: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
 
 
     - template: etc/ci/azure-win.yml
@@ -109,7 +109,7 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: Scripts\pytest -n 3 -vvs --reruns=1
+              all: Scripts\pytest -n 3 -vvs --reruns=1 tests/scancode
 
 
     - template: etc/ci/azure-win.yml
@@ -119,7 +119,7 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: Scripts\pytest -n 3 -vvs --reruns=1
+              all: Scripts\pytest -n 3 -vvs --reruns=1 tests/scancode
 
 
     - template: etc/ci/azure-linux.yml
@@ -128,7 +128,7 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 3 -vvs --reruns=1
+              all: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
 
 
     - template: etc/ci/azure-linux.yml
@@ -137,7 +137,7 @@ jobs:
           image_name: ubuntu-18.04
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 3 -vvs --reruns=1
+              all: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
 
 
     - template: etc/ci/azure-linux.yml
@@ -146,7 +146,7 @@ jobs:
           image_name: ubuntu-20.04
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 3 -vvs --reruns=1
+              all: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
 
 
 ################################################################################
