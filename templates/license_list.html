@@ -38,7 +38,11 @@
           <td>{{ license.short_name }}</td>
           <td>
             {% if license.spdx_license_key %}
-              <a href="https://spdx.org/licenses/{{ license.spdx_license_key }}.html">{{ license.spdx_license_key }}</a>
+              {% if "LicenseRef" in license.spdx_license_key %}
+                {{ license.spdx_license_key }}
+              {% else %}
+                <a href="https://spdx.org/licenses/{{ license.spdx_license_key }}.html">{{ license.spdx_license_key }}</a>
+              {% endif %}
             {% else %}
               -
             {% endif %}
