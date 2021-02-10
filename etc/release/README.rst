@@ -151,7 +151,7 @@ etc/thirdparty
   and save to thirdparty and update the ABOUT and LICENSE files as needed.
 
 * This virtualenv app contains also bundled pip, wheel and setuptools that are
-  essential for the correct operations to work.
+  essential for the installation to work.
 
 
 Other files 
