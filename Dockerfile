@@ -24,7 +24,9 @@
 FROM python:3.6 
 
 # Requirements as per https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html
-RUN apt-get update && apt-get install bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev
+RUN apt-get update \
+ && apt-get install -y bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev \
+ && rm -rf /var/lib/apt/lists/*
 
 # Create directory for scancode sources
 RUN mkdir scancode-toolkit

@@ -1,2 +1,4 @@
 # Ignore all Git auto CR/LF line endings conversions
 * binary
+# save the version details for git tarballs
+.VERSION  export-subst

@@ -144,7 +144,6 @@ TOKEN_HELP = (
         'to create the release such as in nexB/thirdparty/pypi',
     type=str,
     required=True,
-    required=False,
 )
 @click.option(
     '-d', '--directory',
