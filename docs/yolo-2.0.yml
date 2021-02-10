@@ -4,3 +4,4 @@ name: YOLO License v2
 category: Proprietary Free
 owner: Joseph Redmon
 homepage_url: https://github.com/pjreddie/darknet/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-yolo-2.0

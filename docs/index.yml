@@ -908,6 +908,16 @@
   yml: bsd-3-clause-devine.yml
   html: bsd-3-clause-devine.html
   text: bsd-3-clause-devine.LICENSE
+- license_key: bsd-3-clause-fda
+  json: bsd-3-clause-fda.json
+  yml: bsd-3-clause-fda.yml
+  html: bsd-3-clause-fda.html
+  text: bsd-3-clause-fda.LICENSE
+- license_key: bsd-3-clause-jtag
+  json: bsd-3-clause-jtag.json
+  yml: bsd-3-clause-jtag.yml
+  html: bsd-3-clause-jtag.html
+  text: bsd-3-clause-jtag.LICENSE
 - license_key: bsd-3-clause-no-change
   json: bsd-3-clause-no-change.json
   yml: bsd-3-clause-no-change.yml
@@ -918,6 +928,11 @@
   yml: bsd-3-clause-no-nuclear-warranty.yml
   html: bsd-3-clause-no-nuclear-warranty.html
   text: bsd-3-clause-no-nuclear-warranty.LICENSE
+- license_key: bsd-3-clause-no-trademark
+  json: bsd-3-clause-no-trademark.json
+  yml: bsd-3-clause-no-trademark.yml
+  html: bsd-3-clause-no-trademark.html
+  text: bsd-3-clause-no-trademark.LICENSE
 - license_key: bsd-3-clause-open-mpi
   json: bsd-3-clause-open-mpi.json
   yml: bsd-3-clause-open-mpi.yml
@@ -1348,6 +1363,11 @@
   yml: cc-by-nc-sa-2.5.yml
   html: cc-by-nc-sa-2.5.html
   text: cc-by-nc-sa-2.5.LICENSE
+- license_key: cc-by-nc-sa-3.0-us
+  json: cc-by-nc-sa-3.0-us.json
+  yml: cc-by-nc-sa-3.0-us.yml
+  html: cc-by-nc-sa-3.0-us.html
+  text: cc-by-nc-sa-3.0-us.LICENSE
 - license_key: cc-by-nc-sa-3.0
   json: cc-by-nc-sa-3.0.json
   yml: cc-by-nc-sa-3.0.yml
@@ -1578,6 +1598,11 @@
   yml: clause-6-exception-lgpl-2.1.yml
   html: clause-6-exception-lgpl-2.1.html
   text: clause-6-exception-lgpl-2.1.LICENSE
+- license_key: clear-bsd-1-clause
+  json: clear-bsd-1-clause.json
+  yml: clear-bsd-1-clause.yml
+  html: clear-bsd-1-clause.html
+  text: clear-bsd-1-clause.LICENSE
 - license_key: clear-bsd
   json: clear-bsd.json
   yml: clear-bsd.yml
@@ -1878,11 +1903,21 @@
   yml: curl.yml
   html: curl.html
   text: curl.LICENSE
+- license_key: cve-tou
+  json: cve-tou.json
+  yml: cve-tou.yml
+  html: cve-tou.html
+  text: cve-tou.LICENSE
 - license_key: cvwl
   json: cvwl.json
   yml: cvwl.yml
   html: cvwl.html
   text: cvwl.LICENSE
+- license_key: cwe-tou
+  json: cwe-tou.json
+  yml: cwe-tou.yml
+  html: cwe-tou.html
+  text: cwe-tou.LICENSE
 - license_key: cximage
   json: cximage.json
   yml: cximage.yml
@@ -2118,6 +2153,11 @@
   yml: dynarch-linkware.yml
   html: dynarch-linkware.html
   text: dynarch-linkware.LICENSE
+- license_key: ecfonts-1.0
+  json: ecfonts-1.0.json
+  yml: ecfonts-1.0.yml
+  html: ecfonts-1.0.html
+  text: ecfonts-1.0.LICENSE
 - license_key: ecl-1.0
   json: ecl-1.0.json
   yml: ecl-1.0.yml
@@ -2673,6 +2713,11 @@
   yml: generic-cla.yml
   html: generic-cla.html
   text: generic-cla.LICENSE
+- license_key: generic-exception
+  json: generic-exception.json
+  yml: generic-exception.yml
+  html: generic-exception.html
+  text: generic-exception.LICENSE
 - license_key: generic-export-compliance
   json: generic-export-compliance.json
   yml: generic-export-compliance.yml
@@ -3388,6 +3433,11 @@
   yml: hs-regexp.yml
   html: hs-regexp.html
   text: hs-regexp.LICENSE
+- license_key: html5
+  json: html5.json
+  yml: html5.yml
+  html: html5.html
+  text: html5.LICENSE
 - license_key: httpget
   json: httpget.json
   yml: httpget.yml
@@ -5603,6 +5653,11 @@
   yml: ocsl-1.0.yml
   html: ocsl-1.0.html
   text: ocsl-1.0.LICENSE
+- license_key: oculus-sdk
+  json: oculus-sdk.json
+  yml: oculus-sdk.yml
+  html: oculus-sdk.html
+  text: oculus-sdk.LICENSE
 - license_key: odbl-1.0
   json: odbl-1.0.json
   yml: odbl-1.0.yml
@@ -6398,6 +6453,11 @@
   yml: prosperity-2.0.yml
   html: prosperity-2.0.html
   text: prosperity-2.0.LICENSE
+- license_key: prosperity-3.0
+  json: prosperity-3.0.json
+  yml: prosperity-3.0.yml
+  html: prosperity-3.0.html
+  text: prosperity-3.0.LICENSE
 - license_key: protobuf
   json: protobuf.json
   yml: protobuf.yml
@@ -7888,6 +7948,11 @@
   yml: usrobotics-permissive.yml
   html: usrobotics-permissive.html
   text: usrobotics-permissive.LICENSE
+- license_key: utopia
+  json: utopia.json
+  yml: utopia.yml
+  html: utopia.html
+  text: utopia.LICENSE
 - license_key: vbaccelerator
   json: vbaccelerator.json
   yml: vbaccelerator.yml
@@ -7908,6 +7973,11 @@
   yml: verisign.yml
   html: verisign.html
   text: verisign.LICENSE
+- license_key: vhfpl-1.1
+  json: vhfpl-1.1.json
+  yml: vhfpl-1.1.yml
+  html: vhfpl-1.1.html
+  text: vhfpl-1.1.LICENSE
 - license_key: vic-metcalfe-pd
   json: vic-metcalfe-pd.json
   yml: vic-metcalfe-pd.yml
@@ -8268,6 +8338,11 @@
   yml: x11-sg.yml
   html: x11-sg.html
   text: x11-sg.LICENSE
+- license_key: x11-stanford
+  json: x11-stanford.json
+  yml: x11-stanford.yml
+  html: x11-stanford.html
+  text: x11-stanford.LICENSE
 - license_key: x11-tektronix
   json: x11-tektronix.json
   yml: x11-tektronix.yml

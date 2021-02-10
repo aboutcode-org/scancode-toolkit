@@ -9,7 +9,16 @@ https://scancode-licensedb.aboutcode.org/
 Build
 -----
 
-Generate the HTML content with: `$ make build`
+Generate the HTML content with: 
+
+    $ make build
+
+Upgrade
+-------
+
+Upgrade the ScanCode-toolkit and generate the HTML content:
+    
+    $ make clean upgrade build
 
 License
 -------

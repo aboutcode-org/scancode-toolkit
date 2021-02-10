@@ -4,3 +4,4 @@ name: Waterfall Feed Parser License
 category: Free Restricted
 owner: Michael Waterfall
 homepage_url: https://github.com/mwaterfall/MWFeedParser/blob/master/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-waterfall-feed-parser

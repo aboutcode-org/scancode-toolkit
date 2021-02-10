@@ -4,6 +4,7 @@ name: License Agreement for NVIDIA Software Development Kits v0.11
 category: Proprietary Free
 owner: NVIDIA
 homepage_url: https://docs.nvidia.com/pdf/EULA.pdf
+spdx_license_key: LicenseRef-scancode-nvidia-sdk-eula-v0.11
 standard_notice: |
   Important Notice—Read before downloading, installing, copying or using the
   licensed software:

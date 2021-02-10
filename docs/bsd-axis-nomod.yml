@@ -6,4 +6,5 @@ owner: Unspecified
 notes: This is a variant composed of clause 1 and 3 of a BSD-Modified found in the Linux kernel
   And this extra variant has the words "without modification" added at the end of clause 1 either
   with or without a comma
+spdx_license_key: LicenseRef-scancode-bsd-axis-nomod
 minimum_coverage: 95

@@ -3,3 +3,4 @@ short_name: Free unknown
 name: Free unknown license detected but not recognized
 category: Unstated License
 owner: Unspecified
+spdx_license_key: LicenseRef-scancode-free-unknown

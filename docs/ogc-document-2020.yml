@@ -4,6 +4,7 @@ name: OGC Document Notice 2020
 category: Proprietary Free
 owner: Open Geospatial Consortium
 homepage_url: https://www.ogc.org/ogc/Document
+spdx_license_key: LicenseRef-scancode-ogc-document-2020
 faq_url: https://www.ogc.org/ogc/legalfaq
 other_urls:
   - http://www.opengeospatial.org/ogc/legal

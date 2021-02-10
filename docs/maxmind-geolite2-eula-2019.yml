@@ -4,6 +4,7 @@ name: MaxMind GeoLite2 End User License Agreement 2019
 category: Copyleft
 owner: MaxMind
 homepage_url: https://www.maxmind.com/en/geolite2/eula
+spdx_license_key: LicenseRef-scancode-maxmind-geolite2-eula-2019
 ignorable_authors:
   - the USA Department of Commerce
   - the USA Department of State. Specifically

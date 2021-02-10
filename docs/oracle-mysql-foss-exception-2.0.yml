@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: Oracle Corporation
 homepage_url: http://www.mysql.com/about/legal/licensing/foss-exception.html
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-oracle-mysql-foss-exception-2.0
 other_urls:
   - http://www.gnu.org/licenses/gpl-2.0.txt
 minimum_coverage: 95

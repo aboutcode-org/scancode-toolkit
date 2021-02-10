@@ -4,6 +4,7 @@ name: Symphonysoft License
 category: Permissive
 owner: Symphonysoft
 notes: Symphonesoft was a predecessor to Mulesoft. This is similar to the Apache 1.0.
+spdx_license_key: LicenseRef-scancode-symphonysoft
 text_urls:
   - https://github.com/codehaus/mule-git/blob/master/tags/mule-1.0/LICENSE.txt
 ignorable_authors:

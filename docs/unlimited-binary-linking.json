@@ -1,1 +1,1 @@
-{"key": "unlimited-binary-linking", "short_name": "Unlimited Binary Linking Exception", "name": "Unlimited Binary Linking Exception", "category": "Permissive", "owner": "nexB", "is_exception": true}
+{"key": "unlimited-binary-linking", "short_name": "Unlimited Binary Linking Exception", "name": "Unlimited Binary Linking Exception", "category": "Permissive", "owner": "nexB", "is_exception": true, "spdx_license_key": "LicenseRef-scancode-unlimited-binary-linking"}

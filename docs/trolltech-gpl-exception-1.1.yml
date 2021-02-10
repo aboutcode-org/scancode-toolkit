@@ -6,3 +6,4 @@ owner: Trolltech
 homepage_url: https://doc.qt.io/archives/4.3/license-gpl-exceptions.html
 notes: Trolltech is now The Qt Company
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-trolltech-gpl-exception-1.1

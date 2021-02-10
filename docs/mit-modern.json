@@ -1,1 +1,1 @@
-{"key": "mit-modern", "short_name": "MIT Modern Variant", "name": "MIT Modern Variant", "category": "Permissive", "owner": "Fedora", "homepage_url": "http://fedoraproject.org/wiki/Licensing/MIT", "text_urls": ["http://fedoraproject.org/wiki/Licensing/MIT"]}
+{"key": "mit-modern", "short_name": "MIT Modern Variant", "name": "MIT Modern Variant", "category": "Permissive", "owner": "Fedora", "homepage_url": "http://fedoraproject.org/wiki/Licensing/MIT", "spdx_license_key": "LicenseRef-scancode-mit-modern", "text_urls": ["http://fedoraproject.org/wiki/Licensing/MIT"]}

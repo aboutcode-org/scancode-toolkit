@@ -39,8 +39,12 @@ conf:
 	${PYTHON_EXE} -m venv .
 	@${ACTIVATE} pip install "scancode-toolkit[full]"
 
+upgrade:
+	@echo "-> Configure the Python venv and install dependencies"
+	@${ACTIVATE} pip install --upgrade "scancode-toolkit[full]"
+
 clean:
-	git rm -r docs
+	git rm -r --ignore-unmatch docs
 
 isort:
 	@echo "-> Apply isort changes to ensure proper imports ordering"

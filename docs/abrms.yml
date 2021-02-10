@@ -4,3 +4,4 @@ name: Anyone But Richard Stallman License
 category: Proprietary Free
 owner: Unspecified
 notes: From https://github.com/ErikMcClure/bad-licenses
+spdx_license_key: LicenseRef-scancode-abrms

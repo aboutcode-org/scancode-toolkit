@@ -6,3 +6,4 @@ owner: Christophe Devine
 notes: The second clause for binaries is unique as it is optional and no longer a condition
   per this statement "Redistributions in binary form may or may not reproduce" Seen in AES code
   from GPL Ghostscript, originally from XyzSSL
+spdx_license_key: LicenseRef-scancode-bsd-3-clause-devine

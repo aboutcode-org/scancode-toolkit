@@ -4,6 +4,7 @@ name: PHP License 2.0.2
 category: Permissive
 owner: PHP Project
 homepage_url: http://www.php.net/license/2_02.txt
+spdx_license_key: LicenseRef-scancode-php-2.0.2
 osi_url: http://www.opensource.org/licenses/php.html
 minimum_coverage: 60
 ignorable_copyrights:

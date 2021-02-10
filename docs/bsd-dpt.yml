@@ -3,4 +3,5 @@ short_name: BSD DPT
 name: BSD Distributed Processing Technology License
 category: Permissive
 owner: Distributed Processing Technology
+spdx_license_key: LicenseRef-scancode-bsd-dpt
 minimum_coverage: 95

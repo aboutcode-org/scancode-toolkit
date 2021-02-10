@@ -5,6 +5,7 @@ category: Proprietary Free
 owner: Unstated
 homepage_url: http://dev.gutenberg.org/policy/license.html
 notes: Based on text retrieved in 09-2020
+spdx_license_key: LicenseRef-scancode-gutenberg-2020
 ignorable_urls:
   - http://www.gutenberg.org/
   - http://www.gutenberg.org/contact

@@ -5,6 +5,7 @@ category: Commercial
 owner: Nero AG
 homepage_url: http://www.nero.com/enu/corp-legal/end-user-agreement.php
 notes: composite
+spdx_license_key: LicenseRef-scancode-nero-eula
 faq_url: http://www.nero.com/enu/downloads/
 minimum_coverage: 80
 ignorable_copyrights:

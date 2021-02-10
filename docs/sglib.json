@@ -1,1 +1,1 @@
-{"key": "sglib", "short_name": "Sglib License", "name": "Sglib License", "category": "Permissive", "owner": "Unspecified", "other_urls": ["http://www.xref-tech.com/sglib/"], "ignorable_urls": ["http://www.opensource.org/"]}
+{"key": "sglib", "short_name": "Sglib License", "name": "Sglib License", "category": "Permissive", "owner": "Unspecified", "spdx_license_key": "LicenseRef-scancode-sglib", "other_urls": ["http://www.xref-tech.com/sglib/"], "ignorable_urls": ["http://www.opensource.org/"]}

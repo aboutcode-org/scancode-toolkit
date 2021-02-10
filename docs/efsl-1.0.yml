@@ -4,6 +4,7 @@ name: Eclipse Foundation Specification License - v1.0
 category: Proprietary Free
 owner: Eclipse Foundation
 homepage_url: https://www.eclipse.org/legal/efsl.php
+spdx_license_key: LicenseRef-scancode-efsl-1.0
 text_urls:
   - https://www.eclipse.org/legal/efsl.php
 faq_url: http://www.eclipse.org/legal/eplfaq.php

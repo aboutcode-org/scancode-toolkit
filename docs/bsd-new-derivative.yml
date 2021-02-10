@@ -5,4 +5,5 @@ category: Permissive
 owner: libpcap
 homepage_url: http://www.tcpdump.org/sniffex.c
 notes: this is a rather rare variant of the bsd-new found in tcpdump
+spdx_license_key: LicenseRef-scancode-bsd-new-derivative
 minimum_coverage: 70

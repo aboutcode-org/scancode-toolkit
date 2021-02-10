@@ -1,1 +1,1 @@
-{"key": "sun-javamail", "short_name": "Sun JavaMail", "name": "Sun JavaMail", "category": "Proprietary Free", "owner": "Oracle (Sun)", "ignorable_urls": ["http://java.sun.com/trademarks.html"]}
+{"key": "sun-javamail", "short_name": "Sun JavaMail", "name": "Sun JavaMail", "category": "Proprietary Free", "owner": "Oracle (Sun)", "spdx_license_key": "LicenseRef-scancode-sun-javamail", "ignorable_urls": ["http://java.sun.com/trademarks.html"]}

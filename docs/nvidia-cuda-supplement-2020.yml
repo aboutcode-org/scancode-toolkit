@@ -4,6 +4,7 @@ name: CUDA Toolkit Supplement to SLA for NVIDIA SDKs
 category: Proprietary Free
 owner: NVIDIA
 homepage_url: https://docs.nvidia.com/cuda/eula/index.html#cuda-toolkit-supplement-license-agreement
+spdx_license_key: LicenseRef-scancode-nvidia-cuda-supplement-2020
 ignorable_copyrights:
   - (c) Copyright 2013 King Abdullah University of Science and Technology
   - Copyright (c) 1997-2012 University of Cambridge

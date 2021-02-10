@@ -4,3 +4,4 @@ name: Stanford PVRG License
 category: Permissive
 owner: Stanford University
 homepage_url: http://marathon.csee.usf.edu/Mammography/JpegInfo.html
+spdx_license_key: LicenseRef-scancode-stanford-pvrg

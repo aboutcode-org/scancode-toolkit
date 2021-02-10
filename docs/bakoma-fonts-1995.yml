@@ -4,6 +4,7 @@ name: BaKoMa Fonts Licence 1995
 category: Unstated License
 owner: Unspecified
 homepage_url: http://www.ctan.org/tex-archive/fonts/cm/ps-type1/bakoma
+spdx_license_key: LicenseRef-scancode-bakoma-fonts-1995
 text_urls:
   - http://ctan.cs.uu.nl/fonts/cm/ps-type1/bakoma/LICENCE
   - http://www.ctan.org/tex-archive/fonts/cm/ps-type1/bakoma/LICENCE

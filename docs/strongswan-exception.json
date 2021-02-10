@@ -1,1 +1,1 @@
-{"key": "strongswan-exception", "short_name": "strongSwan exception to GPL", "name": "strongSwan exception to GPL", "category": "Copyleft", "owner": "Unspecified", "is_exception": true}
+{"key": "strongswan-exception", "short_name": "strongSwan exception to GPL", "name": "strongSwan exception to GPL", "category": "Copyleft", "owner": "Unspecified", "is_exception": true, "spdx_license_key": "LicenseRef-scancode-strongswan-exception"}

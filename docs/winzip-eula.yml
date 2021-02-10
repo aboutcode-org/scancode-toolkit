@@ -4,6 +4,7 @@ name: WinZip EULA
 category: Commercial
 owner: WinZip Computing LLC.
 homepage_url: http://www.winzip.com/eula.html
+spdx_license_key: LicenseRef-scancode-winzip-eula
 ignorable_copyrights:
   - Copyright (c) 20 Your name WinZip Computing, S.L. and its licensors
 ignorable_authors:

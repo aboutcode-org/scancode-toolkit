@@ -5,6 +5,7 @@ category: Permissive
 owner: COSCL - China Open Source Cloud League
 homepage_url: https://license.coscl.org.cn/MulanPSL2
 notes: there is also a Chinese version of this text.
+spdx_license_key: LicenseRef-scancode-mulanpsl-2.0-en
 text_urls:
   - https://license.coscl.org.cn/MulanPSL2
 standard_notice: |
