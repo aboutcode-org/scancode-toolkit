@@ -50,7 +50,7 @@
           <td>
             <a href="?search={{ license.category }}" style="color: inherit !important;">{{ license.category }}</a>
           </td>
-          <td>
+          <td style="white-space: nowrap;">
             <a href="{{ key }}.yml">yml</a> -
             <a href="{{ key }}.json">json</a> -
             <a href="{{ key }}.LICENSE">text</a>
@@ -80,13 +80,21 @@
         "sDom": '<"top"<"actions">lfpi<"clear">><"clear">rt<"bottom">',
       });
 
+      let url_params = new URLSearchParams(window.location.search);
+
       // https://datatables.net/reference/api/search()
       let searchbox = $("#searchbox");
       searchbox.on("keyup", function() {
         table.search(this.value).draw();
+
+        // Inject the search value in the browser href
+        if (history.replaceState) {
+          url_params.set('search', this.value);
+          let href = window.location.pathname + "?" + url_params.toString();
+          history.replaceState({}, null, href);
+        }
       });
 
-      let url_params = new URLSearchParams(window.location.search);
       let search = url_params.get('search');
       if (search) {
         searchbox.val(search);
