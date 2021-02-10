@@ -44,7 +44,8 @@ upgrade:
 	@${ACTIVATE} pip install --upgrade "scancode-toolkit[full]"
 
 clean:
-	git rm -r --ignore-unmatch docs
+	# Remove the whole content of docs/ except for the CNAME file
+	find docs/* ! -name 'CNAME' -exec git rm -r {} +
 
 isort:
 	@echo "-> Apply isort changes to ensure proper imports ordering"
