@@ -81,7 +81,7 @@ jobs:
           image_name: macos-10.14
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
+              all: bin/pytest -n 2 -vvs --reruns=1 tests/scancode/test_cli.py
 
 
     - template: etc/ci/azure-mac.yml
@@ -90,7 +90,7 @@ jobs:
           image_name: macos-10.15
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
+              all: bin/pytest -n 2 -vvs --reruns=1 tests/scancode/test_cli.py
 
 
 #    - template: etc/ci/azure-mac.yml
@@ -99,7 +99,7 @@ jobs:
 #          image_name: macos-11.0
 #          python_versions: ['3.6', '3.7', '3.8', '3.9']
 #          test_suites:
-#              all: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
+#              all: bin/pytest -n 2 -vvs --reruns=1 tests/scancode/test_cli.py
 
 
     - template: etc/ci/azure-win.yml
@@ -109,7 +109,7 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: Scripts\pytest -n 3 -vvs --reruns=1 tests/scancode
+              all: Scripts\pytest -n 2 -vvs --reruns=1 tests\scancode\test_cli.py
 
 
     - template: etc/ci/azure-win.yml
@@ -119,16 +119,16 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: Scripts\pytest -n 3 -vvs --reruns=1 tests/scancode
+              all: Scripts\pytest -n 2 -vvs --reruns=1 tests\scancode\test_cli.py
 
 
     - template: etc/ci/azure-linux.yml
       parameters:
           job_name: vm_ubuntu16_py3x
           image_name: ubuntu-16.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
+              all: bin/pytest -n 2 -vvs --reruns=1 tests/scancode/test_cli.py
 
 
     - template: etc/ci/azure-linux.yml
@@ -137,7 +137,7 @@ jobs:
           image_name: ubuntu-18.04
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
+              all: bin/pytest -n 2 -vvs --reruns=1 tests/scancode/test_cli.py
 
 
     - template: etc/ci/azure-linux.yml
@@ -146,32 +146,33 @@ jobs:
           image_name: ubuntu-20.04
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
+              all: bin/pytest -n 2 -vvs --reruns=1 tests/scancode/test_cli.py
 
 
 ################################################################################
 # These jobs are using containers and their own Python 3.6
 ################################################################################
 
-    - template: etc/ci/azure-container-deb.yml
-      parameters:
-          job_name: ubuntu18_py36
-          container: ubuntu:bionic
-          python_path: python3.6
-          python_version: '3.6'
-          install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-          test_suite_label: all
-          test_suite: bin/pytest -n 3 -vvs --reruns=1
+#    - template: etc/ci/azure-container-deb.yml
+#      parameters:
+#          job_name: ubuntu18_py36
+#          container: ubuntu:bionic
+#          python_path: python3.6
+#          python_version: '3.6'
+#          install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
+#          test_suite_label: all
+#          test_suite: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
 
-    - template: etc/ci/azure-container-deb.yml
-      parameters:
-          job_name: ubuntu20_py38
-          container: ubuntu:focal
-          python_path: python3.8
-          python_version: '3.8'
-          install_python: sudo apt-get install -y python3.8 python3.8-venv python3.8-dev
-          test_suite_label: all
-          test_suite: bin/pytest -n 3 -vvs --reruns=1
+
+#    - template: etc/ci/azure-container-deb.yml
+#      parameters:
+#          job_name: ubuntu20_py38
+#          container: ubuntu:focal
+#          python_path: python3.8
+#          python_version: '3.8'
+#          install_python: sudo apt-get install -y python3.8 python3.8-venv python3.8-dev
+#          test_suite_label: all
+#          test_suite: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
 
 
 #    - template: etc/ci/azure-container-rpm.yml
