@@ -237,5 +237,7 @@ Other contributors, listed alphabetically, are:
 * Hubert Gruniaux -- C and C++ lexer improvements
 * Thomas Symalla -- AMDGPU Lexer
 * 15b3 -- Image Formatter improvements
+* Fabian Neumann -- CDDL lexer
+* Thomas Duboucher -- CDDL lexer
 
 Many thanks for all contributions!
