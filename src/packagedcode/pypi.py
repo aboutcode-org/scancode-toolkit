@@ -1,31 +1,12 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-
-from collections import OrderedDict
 import ast
 import io
 import json
@@ -44,22 +25,13 @@ from pkginfo import UnpackedSDist
 from pkginfo import Wheel
 from packageurl import PackageURL
 import saneyaml
-from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
-from commoncode.system import py2
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
 
-try:
-    # Python 2
-    unicode = unicode  # NOQA
-
-except NameError:  # pragma: nocover
-    # Python 3
-    unicode = str  # NOQA
 
 """
 Detect and collect Python packages information.
@@ -80,7 +52,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 # FIXME: this whole module is a mess
 
@@ -190,7 +162,7 @@ def parse_with_pkginfo(pkginfo):
             homepage_url=pkginfo.home_page,
         )
         package = PythonPackage(**common_data)
-        declared_license = OrderedDict()
+        declared_license = {}
         if pkginfo.license:
             # TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
             declared_license['license'] = pkginfo.license
@@ -253,11 +225,7 @@ def parse_with_dparse(location):
                          filetypes.pipfile,
                          filetypes.pipfile_lock):
         return
-    if py2:
-        mode = 'rb'
-    else:
-        mode = 'r'
-    with open(location, mode) as f:
+    with open(location) as f:
         content = f.read()
 
     df = dparse.parse(content, file_type=dependency_type)
@@ -316,7 +284,7 @@ def parse_pipfile_lock(location):
     with open(location) as f:
         content = f.read()
 
-    data = json.loads(content, object_pairs_hook=OrderedDict)
+    data = json.loads(content)
 
     sha256 = None
     if '_meta' in data:
@@ -338,15 +306,10 @@ def parse_setup_py(location):
     if not location or not location.endswith('setup.py'):
         return
 
-    # FIXME: what if this is unicode text?
-    if py2:
-        mode = 'rb'
-    else:
-        mode = 'r'
-    with open(location, mode) as inp:
+    with open(location) as inp:
         setup_text = inp.read()
 
-    setup_args = OrderedDict()
+    setup_args = {}
 
     # Parse setup.py file and traverse the AST
     tree = ast.parse(setup_text)
@@ -412,7 +375,7 @@ def parse_setup_py(location):
             )
         )
 
-    declared_license = OrderedDict()
+    declared_license = {}
     license_setuptext = setup_args.get('license')
     declared_license['license'] = license_setuptext
 
@@ -467,7 +430,7 @@ def find_dunder_version(location):
     SPDX-License-Identifier: BSD-3-Clause
     (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
     """
-    pattern = re.compile(r"^__version__\s*=\s*['\"]([^'\"]*)['\"]", re.M)
+    pattern = re.compile(r"^__version__\s*=\s*['\"]([^'\"]*)['\"]", re.MULTILINE)
     match = find_pattern(location, pattern)
     if TRACE: logger_debug('find_dunder_version:', 'location:', location, 'match:', match)
     return match
@@ -478,7 +441,7 @@ def find_plain_version(location):
     Return a plain version attribute string or None from searching the module
     file at `location`.
     """
-    pattern = re.compile(r"^version\s*=\s*['\"]([^'\"]*)['\"]", re.M)
+    pattern = re.compile(r"^version\s*=\s*['\"]([^'\"]*)['\"]", re.MULTILINE)
     match = find_pattern(location, pattern)
     if TRACE: logger_debug('find_plain_version:', 'location:', location, 'match:', match)
     return match
@@ -500,7 +463,7 @@ def find_setup_py_dunder_version(location):
     SPDX-License-Identifier: BSD-3-Clause
     (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
     """
-    pattern = re.compile(r"^\s*version\s*=\s*(.*__version__)", re.M)
+    pattern = re.compile(r"^\s*version\s*=\s*(.*__version__)", re.MULTILINE)
     match = find_pattern(location, pattern)
     if TRACE: logger_debug('find_setup_py_dunder_version:', 'location:', location, 'match:', match)
     return match
@@ -653,7 +616,7 @@ def parse_metadata(location):
         return
 
     with open(location, 'rb') as infs:
-        infos = json.load(infs, object_pairs_hook=OrderedDict)
+        infos = json.load(infs)
 
     extensions = infos.get('extensions')
     if TRACE: logger_debug('parse_metadata: extensions:', extensions)
@@ -687,7 +650,7 @@ def parse_metadata(location):
             else:
                 other_classifiers.append(classifier)
 
-    declared_license = OrderedDict()
+    declared_license = {}
     lic = infos.get('license')
     if lic:
         declared_license['license'] = lic
@@ -784,7 +747,7 @@ def compute_normalized_license(declared_license):
         values = list(declared_license.values())
     elif isinstance(declared_license, list):
         values = list(declared_license)
-    elif isinstance(declared_license, (str, unicode,)):
+    elif isinstance(declared_license, str):
         values = [declared_license]
     else:
         return
@@ -795,7 +758,7 @@ def compute_normalized_license(declared_license):
         if not value:
             continue
         # The value could be a string or a list
-        if isinstance(value, string_types):
+        if isinstance(value, str):
             detected_license = models.compute_normalized_license(value)
             if detected_license:
                 detected_licenses.append(detected_license)

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 #
@@ -11,9 +11,6 @@
 # specific language governing permissions and limitations under the License.
 #
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 from traceback import format_exc as traceback_format_exc
 
@@ -50,7 +47,6 @@ TIMEOUT_MSG = 'ERROR: Processing interrupted: timeout after %(timeout)d seconds.
 ERROR_MSG = 'ERROR: Unknown error:\n'
 NO_ERROR = None
 NO_VALUE = None
-
 
 if not on_windows:
     """
@@ -113,21 +109,9 @@ elif on_windows:
     from ctypes import pythonapi
     from multiprocessing import TimeoutError as MpTimeoutError
 
-    try:
-        # python 3
-        from queue import Empty as Queue_Empty  # NOQA
-        from queue import Queue  # NOQA
-    except:
-        # python 2
-        from Queue import Empty as Queue_Empty  # NOQA
-        from Queue import Queue  # NOQA
-
-    try:
-        # python 3
-        from _thread import start_new_thread
-    except ImportError:
-        # python 2
-        from thread import start_new_thread
+    from queue import Empty as Queue_Empty
+    from queue import Queue
+    from _thread import start_new_thread
 
     def interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
         """

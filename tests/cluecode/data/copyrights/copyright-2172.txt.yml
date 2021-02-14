@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+copyrights:
+  - Copyright (c) 2015, Contributors
+  - Copyright 2018-2019 paritytech/substrate-light-ui authors & contributors
+holders:
+  - Contributors
+  - paritytech/substrate-light-ui authors & contributors
+    

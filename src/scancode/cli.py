@@ -1,31 +1,11 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
 
 # Import first because this import has monkey-patching side effects
 from scancode.pool import get_pool
@@ -34,7 +14,6 @@ from scancode.pool import get_pool
 import scancode_config
 
 from collections import defaultdict
-from collections import OrderedDict
 from functools import partial
 import os
 import logging
@@ -42,14 +21,6 @@ import sys
 from time import sleep
 from time import time
 import traceback
-
-# Python 2 and 3 support
-try:
-    # Python 2
-    import itertools.imap as map  # NOQA
-except ImportError:
-    # Python 3
-    pass
 
 # this exception is not available on posix
 try:
@@ -59,25 +30,18 @@ except NameError:
         pass
 
 import click  # NOQA
-click.disable_unicode_literals_warning = True
 
-from six import string_types
 
 from commoncode import cliutils
 from commoncode.cliutils import GroupedHelpCommand
 from commoncode.cliutils import path_progress_message
 from commoncode.cliutils import progressmanager
 from commoncode.cliutils import PluggableCommandLineOption
-from commoncode import compat
 from commoncode.fileutils import as_posixpath
-from commoncode.fileutils import PATH_TYPE
-from commoncode.fileutils import POSIX_PATH_SEP
 from commoncode.timeutils import time2tstamp
 from commoncode.resource import Codebase
 from commoncode.resource import VirtualCodebase
-from commoncode.system import py2
 from commoncode.system import on_windows
-from commoncode.system import on_linux
 
 # these are important to register plugin managers
 from plugincode import PluginManager
@@ -114,7 +78,7 @@ if TRACE or TRACE_DEEP:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types)
+        return logger.debug(' '.join(isinstance(a, str)
                                      and a or repr(a) for a in args))
 
 echo_stderr = partial(click.secho, err=True)
@@ -208,8 +172,7 @@ def validate_depth(ctx, param, value):
 
 @click.argument('input',
     metavar='<OUTPUT FORMAT OPTION(s)> <input>...', nargs=-1,
-    # ensure that the input path is bytes on Linux, unicode elsewhere
-    type=click.Path(exists=True, readable=True, path_type=PATH_TYPE))
+    type=click.Path(exists=True, readable=True, path_type=str))
 
 @click.option('--strip-root',
     is_flag=True,
@@ -518,10 +481,7 @@ def run_scan(
 
     if not isinstance(input, (list, tuple)):
         # nothing else todo
-        if on_linux and py2:
-            assert isinstance(input, bytes)
-        else:
-            assert isinstance(input, compat.unicode)
+        assert isinstance(input, str)
 
     elif len(input) == 1:
         # we received a single input path, so we treat this as a single path
@@ -546,7 +506,7 @@ def run_scan(
         if not common_prefix:
             # we have no common prefix, but all relative. therefore the
             # parent/root is the current ddirectory
-            common_prefix = PATH_TYPE('.')
+            common_prefix = str('.')
 
         elif not os.path.isdir(common_prefix):
             msg = 'Invalid inputs: all input paths must share a common parent directory.'
@@ -554,7 +514,7 @@ def run_scan(
 
         # and we craft a list of synthetic --include path pattern options from
         # the input list of paths
-        included_paths = [as_posixpath(path).rstrip(POSIX_PATH_SEP) for path in input]
+        included_paths = [as_posixpath(path).rstrip('/') for path in input]
         # FIXME: this is a hack as this "include" is from an external plugin!!!1
         include = list(requested_options.get('include', []) or [])
         include.extend(included_paths)
@@ -601,7 +561,7 @@ def run_scan(
         # Find and create known plugin instances and collect the enabled
         ########################################################################
 
-        enabled_plugins_by_stage = OrderedDict()
+        enabled_plugins_by_stage = {}
         all_enabled_plugins_by_qname = {}
         non_enabled_plugins_by_qname = {}
 
@@ -684,7 +644,7 @@ def run_scan(
         # Setup enabled and required plugins
         ########################################################################
 
-        setup_timings = OrderedDict()
+        setup_timings = {}
         plugins_setup_start = time()
 
         if not quiet and not verbose:
@@ -731,7 +691,7 @@ def run_scan(
                            '%(stage)s:%(name)s:' % locals())
                     raise ScancodeError(msg + '\n' + traceback.format_exc())
 
-        resource_attributes = OrderedDict()
+        resource_attributes = {}
         for _, name, attribs in sorted(sortable_resource_attributes):
             resource_attributes.update(attribs)
 
@@ -767,7 +727,7 @@ def run_scan(
                            '%(stage)s:%(name)s:' % locals())
                     raise ScancodeError(msg + '\n' + traceback.format_exc())
 
-        codebase_attributes = OrderedDict()
+        codebase_attributes = {}
         for _, name, attribs in sorted(sortable_codebase_attributes):
             codebase_attributes.update(attribs)
 
@@ -1134,10 +1094,7 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
 
         while True:
             try:
-                if py2:
-                    location, rid, scan_errors, scan_time, scan_result, scan_timings = scans.next()
-                else:
-                    location, rid, scan_errors, scan_time, scan_result, scan_timings = next(scans)
+                location, rid, scan_errors, scan_time, scan_result, scan_timings = next(scans)
 
                 if TRACE_DEEP:
                     logger_debug(
@@ -1243,9 +1200,9 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
     """
     scan_time = time()
     location, rid = location_rid
-    results = OrderedDict()
+    results = {}
     scan_errors = []
-    timings = OrderedDict() if with_timing else None
+    timings = {} if with_timing else None
 
     if not with_threading:
         interruptor = fake_interruptible
@@ -1526,7 +1483,7 @@ def get_pretty_params(ctx, generic_paths=False):
 
         # coerce to string for non-basic supported types
         if not (value in (True, False, None)
-            or isinstance(value, (str, string_types, bytes, tuple, list, dict, OrderedDict))):
+            or isinstance(value, (str, str, bytes, tuple, list, dict, dict))):
             value = repr(value)
 
         # opts is a list of CLI options as in "--strip-root": the last opt is
@@ -1538,4 +1495,4 @@ def get_pretty_params(ctx, generic_paths=False):
         else:
             options.append((cli_opt, value))
 
-    return OrderedDict(sorted(args) + sorted(options))
+    return dict(sorted(args) + sorted(options))

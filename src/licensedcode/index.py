@@ -1,31 +1,12 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 from array import array
 from collections import Counter
@@ -41,14 +22,7 @@ import pickle
 import sys
 from time import time
 
-# Python 2 and 3 support
-try:
-    import itertools.izip as zip  # NOQA
-except ImportError:
-    pass
-
 from intbitset import intbitset
-from six import string_types
 
 from commoncode.dict_utils import sparsify
 from licensedcode import MAX_DIST
@@ -99,8 +73,12 @@ if (TRACE
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a)
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a)
                                      for a in args))
+
+# This is the Pickle protocol we use, which was added in Python 3.4.
+PICKLE_PROTOCOL = 4
+
 
 ############################## Feature SWITCHES ################################
 ########## Ngram fragments detection
@@ -945,7 +923,7 @@ class LicenseIndex(object):
         # here cPickle fails when we load it back. Pickle is slower to write but
         # works when we read with cPickle :|
         pickler = cPickle if fast else pickle
-        pickled = pickler.dumps(self, protocol=cPickle.HIGHEST_PROTOCOL)
+        pickled = pickler.dumps(self, protocol=PICKLE_PROTOCOL)
 
         # NB: this is making the usage of cPickle possible... as a weird workaround.
         # the gain from dumping using cPickle is not as big with this optimize
@@ -963,7 +941,7 @@ class LicenseIndex(object):
         # here cPickle fails when we load it back. Pickle is slower to write but
         # works when we read with cPickle :|
         pickler = cPickle if fast else pickle
-        return pickler.dump(self, fn, protocol=cPickle.HIGHEST_PROTOCOL)
+        return pickler.dump(self, fn, protocol=PICKLE_PROTOCOL)
 
 
 def get_weak_rids(len_legalese, tids_by_rid, _idx):

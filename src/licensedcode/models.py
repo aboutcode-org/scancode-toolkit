@@ -1,35 +1,14 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
 
 from collections import Counter
 from collections import defaultdict
-from collections import OrderedDict
 from functools import partial
 from itertools import chain
 import io
@@ -43,12 +22,12 @@ import traceback
 
 import attr
 from license_expression import Licensing
+import saneyaml
 
 from commoncode.fileutils import copyfile
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import resource_iter
-from commoncode import saneyaml
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
@@ -223,7 +202,7 @@ class License(object):
 
     def to_dict(self):
         """
-        Return an OrderedDict of license data (excluding texts).
+        Return an dict of license data (excluding texts).
         Fields with empty values are not included.
         """
 
@@ -243,7 +222,7 @@ class License(object):
                 return False
             return True
 
-        data = attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
+        data = attr.asdict(self, filter=dict_fields, dict_factory=dict)
         cv = data.get('minimum_coverage', 0)
         if cv:
             data['minimum_coverage'] = as_int(cv)
@@ -460,7 +439,7 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     licenses = {}
     used_files = set()
     all_files = set(resource_iter(
-        licenses_data_dir, ignored=ignore_editor_tmp_files, with_dirs=False))
+        licenses_data_dir, ignored=ignore_editor_tmp_files, with_dirs=False, follow_symlinks=True))
     for data_file in sorted(all_files):
         if data_file.endswith('.yml'):
             key = file_base_name(data_file)
@@ -476,6 +455,9 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     if dangling:
         msg = 'Some License data or text files are orphaned in "{}".\n'.format(licenses_data_dir)
         msg += '\n'.join('file://{}'.format(f) for f in sorted(dangling))
+        raise Exception(msg)
+    if not licenses:
+        msg = 'No licenses were loaded. Check to see if the license data files are available at "{}".'.format(licenses_data_dir)
         raise Exception(msg)
     return licenses
 
@@ -958,7 +940,7 @@ class BasicRule(object):
         Return an ordered mapping of self, excluding texts. Used for
         serialization. Empty values are not included.
         """
-        data = OrderedDict()
+        data = {}
 
         is_false_positive = self.is_false_positive
 

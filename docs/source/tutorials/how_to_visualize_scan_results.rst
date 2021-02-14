@@ -27,7 +27,7 @@ Scancode Workbench.
 Setting up Scancode Workbench
 -----------------------------
 
-According to the Install :ref:`workbench_requirements`, we have to install Node.js 6.x or later.
+According to the Installation instructions for the Workbench, we have to install Node.js 6.x or later.
 Refer to Node.js install `instructions <https://nodejs.org/en/download/package-manager/>`_ here.
 
 You can also run the following commands::
@@ -76,7 +76,7 @@ Visualization
 Views
 ^^^^^
 
-Refer :ref:`workbench_views` for more information on Visualization.
+Refer to the workbench documentation for more information on Visualization.
 
 The dashboard has a general overview.
 

@@ -30,8 +30,8 @@ There are 4 main ways you can install ScanCode.
 Before Installing
 -----------------
 
-ScanCode requires either Python 3.6.x or Python 2.7.x and is tested on Linux, Mac, and Windows.
-Make sure Python 3.6 or Python 2.7 is installed first.
+ScanCode requires either Python 3.6.x and is tested on Linux, Mac, and Windows.
+Make sure Python 3.6 is installed first.
 
 System Requirements
 ^^^^^^^^^^^^^^^^^^^
@@ -43,8 +43,8 @@ System Requirements
 
     #. Linux: on most recent 64-bit Linux distributions (32-bit distros are
        only partially supported),
-    #. Mac: on recent Mac OSX (10.6.8 and up),
-    #. Windows: on Windows 7 and up (32- or 64-bit) using a 32-bit Python.
+    #. Mac: on recent Mac OSX (10.9 and up),
+    #. Windows: on Windows 7 and up (64-bit),
 
 .. _install_prerequisites:
 
@@ -79,15 +79,11 @@ ScanCode needs a Python 3.6 (*highly recommended*) or a Python 2.7 interpreter.
     For instance, visit this `wiki <https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos6>`_
     for instructions to compile Python 2.7 from sources on Centos.
 
-    To install Python 2.7 instead, replace ``python3.6-dev`` with ``python-dev`` (or ``devel``)
-    according to your specific platform.
-
 - **On Mac**:
 
     Download and install Python from this url:
 
     - Python 3.6.8 (*recommended*): https://www.python.org/ftp/python/3.6.8/python-3.6.8-macosx10.6.pkg
-    - Python 2.7.17 : https://www.python.org/ftp/python/2.7.17/python-2.7.17-macosx10.6.pkg
 
 - **On Windows**:
 
@@ -99,22 +95,12 @@ ScanCode needs a Python 3.6 (*highly recommended*) or a Python 2.7 interpreter.
         registers itself in the environment is the default, if you select the "Add to PATH" option
         while installing.
 
-    - Python 2.7.17 : https://www.python.org/ftp/python/2.7.17/python-2.7.17.msi
-
-        Install Python on the c: drive and use all default installer options (ScanCode will try to
-        find python just in c:python27python.exe).
-
     .. Note::
 
-      64-bit Python interpreters (x86-64) are currently not supported by Scancode for Python 3.6/2.7
-      in Windows. Use 32-bit Python instead, even with 64-bit Windows. For Python 2.7, use the
-      32 bit MSI installer linked above.
+      64-bit Python interpreters (x86-64) are the only interpreters supported by
+      Scancode on all operating systems which means only 64-bit Windows is supported.
 
     See the :ref:`windows_app_install` section for more installation details.
-
-.. WARNING::
-
-    Do not use Unicode, non-ASCII in your installation Path if you are using a Python 2.7 interpreter.
 
 .. Note::
 

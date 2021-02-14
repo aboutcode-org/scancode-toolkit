@@ -1,0 +1,12 @@
+about_resource: .
+name: ScanCode datasets
+license_expression: cc-by-4.0
+copyright: copyright (c) nexb Inc. and others.
+notes: |
+ the preferred attribution notice for data is:
+    Copyright (c) nexB Inc. and others. All rights reserved.
+    ScanCode is a trademark of nexB Inc.
+    SPDX-License-Identifier: CC-BY-4.0
+    See https://creativecommons.org/licenses/by/4.0/legalcode for the license text.
+    See https://github.com/nexB/scancode-toolkit for support or download. 
+    See https://aboutcode.org for more information about nexB OSS projects.
