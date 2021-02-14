@@ -1,0 +1,5 @@
+is_false_positive: yes
+notes: Do not detect license python module as a Python license
+ Seen in https://github.com/keras-team/keras/blob/ad9268d67014273e35faac4ff21cbfe929bf1d2b/keras/utils/generic_utils.py
+ and reported in https://github.com/nexB/scancode-toolkit/issues/2377
+
