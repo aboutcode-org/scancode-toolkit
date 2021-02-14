@@ -1,0 +1,10 @@
+key: adrian
+short_name: Andre Adrian DFS license 
+name: Andre Adrian DFS license
+category: Permissive
+owner: DFS Deutsche Flugsicherung
+spdx_license_key: LicenseRef-scancode-adrian
+text_urls:
+    - https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/blob/81c24738d5b62a5f092ce34ea06efab72eefbb9e/src/modules/echo-cancel/adrian-license.txt
+other_urls:
+    - https://mailarchive.ietf.org/arch/msg/avt/6erDp7-srszwgBNbFxcD_zSFMS0/
