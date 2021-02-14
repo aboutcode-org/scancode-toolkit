@@ -8648,8 +8648,7 @@
 '\n\t'        Text
 'def'         Keyword
 ' '           Text
-'value'       Name.Function
-'='           Operator
+'value='      Name.Function
 '('           Punctuation
 'value'       Name
 ')'           Punctuation
@@ -8748,8 +8747,7 @@
 '\n\t'        Text
 'def'         Keyword
 ' '           Text
-'maxage'      Name.Function
-'='           Operator
+'maxage='     Name.Function
 '('           Punctuation
 'maxage'      Name
 ')'           Punctuation
@@ -8833,8 +8831,7 @@
 '\n\t'        Text
 'def'         Keyword
 ' '           Text
-'path'        Name.Function
-'='           Operator
+'path='       Name.Function
 '('           Punctuation
 'path'        Name
 ')'           Punctuation
@@ -8895,8 +8892,7 @@
 '\n\t'        Text
 'def'         Keyword
 ' '           Text
-'domain'      Name.Function
-'='           Operator
+'domain='     Name.Function
 '('           Punctuation
 'domain'      Name
 ')'           Punctuation
@@ -8955,8 +8951,7 @@
 '\n\t'        Text
 'def'         Keyword
 ' '           Text
-'secure'      Name.Function
-'='           Operator
+'secure='     Name.Function
 '('           Punctuation
 'secure'      Name
 ')'           Punctuation
@@ -9009,8 +9004,7 @@
 '\n\t'        Text
 'def'         Keyword
 ' '           Text
-'comment'     Name.Function
-'='           Operator
+'comment='    Name.Function
 '('           Punctuation
 'comment'     Name
 ')'           Punctuation
@@ -9067,8 +9061,7 @@
 ' '           Text
 'Cookie'      Name.Class
 '.'           Operator
-'type'        Name.Function
-'='           Operator
+'type='       Name.Function
 '('           Punctuation
 'type'        Name
 ')'           Punctuation
