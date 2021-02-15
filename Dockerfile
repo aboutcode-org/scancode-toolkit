@@ -27,7 +27,7 @@ FROM python:3.6-slim-buster
 RUN apt-get update \
  && apt-get install -y bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev libgomp1 \
  && apt-get clean \
- && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/man/?? /usr/share/man/??_*
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Create directory for scancode sources
 RUN mkdir scancode-toolkit
