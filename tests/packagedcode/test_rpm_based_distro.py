@@ -36,14 +36,13 @@ from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import PackageTester
 
 
-#@skipIf(py2, 'Alpine linux package parsing is not worth testing on Python2')
+#@skipIf(py2, 'Not worth testing on Python2')
 class TestRpmBasePackage(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_parse_alpine_installed_db_small(self):
+    def test_parse_xml_from_rpm(self):
         test_installed = self.get_test_loc('rpm_distro/rpm.xml.txt')
         result = [package.to_dict(_detailed=True)
             for package in rpm_based_distro.parse_rpm_db(test_installed)]
         expected = test_installed + '-expected.json'
         check_result_equals_expected_json(result, expected, regen=False)
-

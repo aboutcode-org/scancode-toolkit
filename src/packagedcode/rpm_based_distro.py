@@ -220,6 +220,12 @@ def dirname_handler(value, current_file, **kwargs):
     for file in current_file:
         dirindexes, md5, basename = file
         dir = value[int(dirindexes)]
+        # There is case where entry of basename is "</string>" which will
+        # cause error as None type cannot be used for join.
+        # Therefore, we need to convert the None type to empty string
+        # in order to make the join works.
+        if basename == None:
+            basename = ''
         c_file = models.PackageFile(path=posixpath.join(dir, basename))
         c_file.md5 = md5
         installed_files.append(c_file)
