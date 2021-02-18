@@ -20,7 +20,7 @@ class TestSfdb(FileBasedTesting):
         test_file = self.get_test_loc(test_file)
         expected_file = self.get_test_loc(expected_file)
         expected = open(expected_file, 'rb').read().splitlines(True)
-        assert expected == list(sfdb.get_text_lines(test_file))
+        assert list(sfdb.get_text_lines(test_file)) == expected
 
     def test_get_text_lines_ambro(self):
         test_file = 'splinefonts/Ambrosia.sfd'

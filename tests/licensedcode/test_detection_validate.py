@@ -80,7 +80,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
     results = flatten((m.rule.identifier, str(int(m.coverage()))) for m in matches)
 
     try:
-        assert expected == results
+        assert results == expected
     except:
 
         from licensedcode.tracing import get_texts
@@ -115,7 +115,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
             ])
 
         # this assert will always fail and provide a detailed failure trace
-        assert '\n'.join(expected) == '\n'.join(failure_trace)
+        assert '\n'.join(failure_trace) == '\n'.join(expected)
 
 
 def check_ignorable_clues(rule, regen=False):
@@ -165,7 +165,7 @@ def check_ignorable_clues(rule, regen=False):
     expected = dict([(k, v) for k, v in sorted(expected.items()) if v])
 
     try:
-        assert expected == results
+        assert results == expected
     except:
         # On failure, we compare againto get additional failure details such as
         # a clickable text_file path
@@ -178,7 +178,7 @@ def check_ignorable_clues(rule, regen=False):
             'file://{text_file}'.format(**locals()),
         ]
         # this assert will always fail and provide a more detailed failure trace
-        assert saneyaml.dump(expected) == saneyaml.dump(results)
+        assert saneyaml.dump(results) == saneyaml.dump(expected)
 
 
 def build_validation_tests(rules, class_basic, class_extended):

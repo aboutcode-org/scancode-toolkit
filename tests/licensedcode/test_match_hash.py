@@ -29,13 +29,13 @@ class TestHashMatch(FileBasedTesting):
         query_doc = self.get_test_loc('hash/rules/lgpl-2.0-plus_23.RULE')
 
         matches = idx.match(query_doc)
-        assert 1 == len(matches)
+        assert len(matches) == 1
         match = matches[0]
-        assert 100 == match.coverage()
-        assert match_hash.MATCH_HASH == match.matcher
-        assert rules[0] == match.rule
-        assert Span(0, 119) == match.qspan
-        assert Span(0, 119) == match.ispan
+        assert match.coverage() == 100
+        assert match.matcher == match_hash.MATCH_HASH == 
+        assert match.rule == rules[0]
+        assert match.qspan == Span(0, 119)
+        assert match.ispan == Span(0, 119)
 
     def test_match_hash_returns_correct_offset(self):
         rule_dir = self.get_test_loc('hash/rules')
@@ -43,10 +43,10 @@ class TestHashMatch(FileBasedTesting):
         idx = index.LicenseIndex(rules)
         query_doc = self.get_test_loc('hash/query.txt')
         matches = idx.match(query_doc)
-        assert 1 == len(matches)
+        assert len(matches) == 1
         match = matches[0]
-        assert match_hash.MATCH_HASH == match.matcher
-        assert 100 == match.coverage()
-        assert rules[0] == match.rule
-        assert Span(0, 119) == match.qspan
-        assert Span(0, 119) == match.ispan
+        assert match.matcher == match_hash.MATCH_HASH 
+        assert match.coverage() == 100 
+        assert match.rule == rules[0]
+        assert match.qspan == Span(0, 119)
+        assert match.ispan == Span(0, 119)

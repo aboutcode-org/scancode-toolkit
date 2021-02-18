@@ -127,7 +127,7 @@ def check_rdf_scan(expected_file, result_file, regen=False):
             expected = json.load(i)
             expected = load_and_clean_rdf(result_file)
 
-    assert json.dumps(expected, indent=2) == json.dumps(result, indent=2)
+    assert json.dumps(result, indent=2) == json.dumps(expected, indent=2)
 
 
 def load_and_clean_tv(location):
@@ -154,7 +154,7 @@ def check_tv_scan(expected_file, result_file, regen=False):
             o.write(result)
 
     expected = load_and_clean_tv(expected_file)
-    assert expected == result
+    assert result == expected
 
 
 def test_spdx_rdf_basic():
@@ -314,7 +314,7 @@ def test_spdx_rdf_with_empty_scan():
     run_scan_plain(args)
     expected = "<!-- No results for package 'scan'. -->\n"
     results = open(result_file).read()
-    assert expected == results
+    assert result == expecteds
 
 
 @pytest.mark.scanslow

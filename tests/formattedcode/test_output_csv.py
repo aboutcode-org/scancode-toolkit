@@ -44,7 +44,7 @@ def check_json(result, expected_file, regen=False):
             reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
     with io.open(expected_file, encoding='utf-8') as exp:
         expected = json.load(exp)
-    assert expected == result
+    assert result == expected
 
 
 def check_csvs(result_file, expected_file,
@@ -59,13 +59,13 @@ def check_csvs(result_file, expected_file,
         import shutil
         shutil.copy2(result_file, expected_file)
     expected_fields, expected = load_csv(expected_file)
-    assert expected_fields == result_fields
+    assert result_fields == expected_fields
     # then check results line by line for more compact results
     for exp, res in zip(sorted(expected , key=lambda d: d.items()), sorted(results , key=lambda d: d.items())):
         for ign in ignore_keys:
             exp.pop(ign, None)
             res.pop(ign, None)
-        assert exp == res
+        assert res == exp
 
 
 def load_csv(location):
@@ -196,8 +196,8 @@ def test_flatten_scan_with_no_keys_does_not_error_out():
         ('url', []),
         ('package', []),
         ])
-    assert expected_headers == headers
-    assert [] == result
+    assert headers == expected_headers
+    assert result == []
 
 
 @pytest.mark.scanslow

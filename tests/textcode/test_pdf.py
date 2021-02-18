@@ -47,7 +47,7 @@ Page 1
 
 \x0c'''.splitlines(True)
 
-        assert expected == result
+        assert result == expected
 
     def test_pdfminer_can_parse_faulty_broadcom_doc(self):
         # test for https://github.com/euske/pdfminer/issues/118
@@ -75,7 +75,7 @@ Page 1
             b'10/15/07\n',
             b'\n',
             b'\x0c']
-        assert expected == result
+        assert result == expected
 
     def test_pdfminer_can_parse_apache_fop_test_pdf(self):
         test_file = self.get_test_loc('pdf/fop_test_pdf_1.5_test.pdf')
@@ -87,12 +87,12 @@ Page 1
 
         result = pdf.get_text_lines(test_file)
         expected = apache_fop_expected
-        assert expected == result
+        assert result == expected
 
     def test_numbered_text_lines_does_not_fail_on_autocad_test_pdf(self):
         test_file = self.get_test_loc('pdf/AutoCad_Diagram.pdf')
         result = list(numbered_text_lines(test_file))
-        assert [] == result
+        assert result == []
 
 
 apache_fop_expected = [

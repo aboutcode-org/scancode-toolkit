@@ -33,7 +33,7 @@ class TestWinPePeInfo(FileBasedTesting):
         with io.open(expected_file, encoding='utf-8') as expect:
             expected = json.load(expect)
 
-        assert expected == result
+        assert result == expected
 
     def test_win_pe_ctypes_test_pyd(self):
         test_file = self.get_test_loc('win_pe/_ctypes_test.pyd')

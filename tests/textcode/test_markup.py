@@ -210,5 +210,5 @@ class TestMarkup(FileBasedTesting):
             u' \r\n',
             u' '
         ]
-        assert expected == result
+        assert result == expected
 

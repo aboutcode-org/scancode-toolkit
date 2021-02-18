@@ -31,6 +31,6 @@ class TestMatchExact(FileBasedTesting):
         qry = query.build_query(location=query_loc, idx=idx)
 
         matches = match_aho.exact_match(idx, qry.whole_query_run(), idx.rules_automaton)
-        assert 1 == len(matches)
+        assert len(matches) == 1
         match = matches[0]
-        assert match_aho.MATCH_AHO_EXACT == match.matcher
+        assert match.matcher == match_aho.MATCH_AHO_EXACT
