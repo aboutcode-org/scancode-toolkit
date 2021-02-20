@@ -1,0 +1,27 @@
+key: gfdl-1.3-no-invariants-or-later
+short_name: GNU Free Documentation License v1.3 or later - no invariants
+name: GNU Free Documentation License v1.3 or later - no invariants
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/fdl-1.3.txt
+notes: Per SPDX.org, this license was released 3 November 2008.
+spdx_license_key: GFDL-1.3-no-invariants-or-later
+text_urls:
+    - http://www.gnu.org/licenses/fdl-1.3.txt
+other_urls:
+    - https://www.gnu.org/licenses/fdl-1.3.txt
+ignorable_copyrights:
+    - Copyright (c) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc. <http://fsf.org/>
+ignorable_holders:
+    - Free Software Foundation, Inc.
+ignorable_urls:
+    - http://fsf.org/
+    - http://www.gnu.org/copyleft
+standard_notice: |
+    Permission is granted to copy, distribute
+    and/or modify this document under the terms of the GNU Free Documentation
+    License, Version 1.3 or any later version published by the Free Software
+    Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-
+    Cover Texts. A copy of the license is included in the section entitled "GNU
+    Free Documentation License".
+minimum_coverage: 99
