@@ -20,3 +20,4 @@ other_urls:
 ignorable_urls:
     - http://scripts.sil.org/OFL
 osi_license_key: OFL-1.1
+minimum_coverage: 99
