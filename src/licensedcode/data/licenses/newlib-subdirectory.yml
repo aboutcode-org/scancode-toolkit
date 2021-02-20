@@ -1,0 +1,7 @@
+key: newlib-subdirectory
+short_name: newlib-subdirectory
+name: newlib-subdirectory License
+category: Copyleft Limited
+owner: Newlib Project
+homepage_url: https://sourceware.org/newlib/
+spdx_license_key: LicenseRef-scancode-newlib-subdirectory

@@ -1,7 +1,10 @@
 key: mit-open-group
-short_name: MIT Open Group
-name: MIT Open Group
-category: Permissive
-owner: Open Group
-is_deprecated: yes
-notes: replaced by mit-old-style
+short_name: MIT Open Group variant
+name: MIT Open Group variant
+spdx_license_key: MIT-open-group
+notes: Used to be mit-old-style before SPDX adopted it.
+other_urls:
+    - https://gitlab.freedesktop.org/xorg/app/iceauth/-/blob/master/COPYING
+    - https://gitlab.freedesktop.org/xorg/app/xvinfo/-/blob/master/COPYING
+    - https://gitlab.freedesktop.org/xorg/app/xsetroot/-/blob/master/COPYING
+    - https://gitlab.freedesktop.org/xorg/app/xauth/-/blob/master/COPYING

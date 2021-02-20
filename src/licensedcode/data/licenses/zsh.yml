@@ -1,0 +1,7 @@
+key: zsh
+short_name: zsh License
+name: Z Shell License
+category: Permissive
+owner: Zsh Development Group
+homepage_url: https://sourceforge.net/p/zsh/code/ci/master/tree/LICENCE
+spdx_license_key: LicenseRef-scancode-zsh

@@ -1,0 +1,13 @@
+key: npsl-exception-0.93
+short_name: Nmap NPSL Exception 0.93
+name: Nmap NPSL Exception 0.93
+category: Copyleft
+owner: Insecure.Com
+homepage_url: https://svn.nmap.org/nmap/LICENSE
+is_exception: yes
+faq_url: https://nmap.org/npsl/npsl-annotated.html
+other_urls:
+    - https://nmap.org/book/man-legal.html
+    - https://nmap.org/npsl/
+    - https://github.com/nmap/nmap/blob/master/zenmap/zenmap
+spdx_license_key: LicenseRef-scancode-npsl-exception-0.93
