@@ -178,7 +178,7 @@ def check_ignorable_clues(rule, regen=False):
             'file://{text_file}'.format(**locals()),
         ]
         # this assert will always fail and provide a more detailed failure trace
-        assert saneyaml.dump(expected) == saneyaml.dump(results)
+        assert saneyaml.dump(results) == saneyaml.dump(expected)
 
 
 def build_validation_tests(rules, class_basic, class_extended):
