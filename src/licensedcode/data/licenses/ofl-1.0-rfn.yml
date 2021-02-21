@@ -13,3 +13,6 @@ text_urls:
 other_urls:
     - http://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
 minimum_coverage: 99
+ignorable_urls:
+    - http://scripts.sil.org/OFL
+

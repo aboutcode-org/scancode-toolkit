@@ -7,3 +7,13 @@ homepage_url: https://developer.download.nvidia.com/assets/gamedev/docs/NVIDIA%2
 other_urls:
     - www.developer.nvidia.com/apex
 spdx_license_key: LicenseRef-scancode-nvidia-apex-sdk-eula-2011
+ignorable_copyrights:
+  - Copyright 2011 NVIDIA Corporation
+ignorable_emails:
+  - PHYSXLICENCING@NVIDIA.COM
+  - PHYSXLICENSING@NVIDIA.COM
+ignorable_holders:
+  - NVIDIA Corporation
+ignorable_urls:
+  - http://www.developer.nvidia.com/apex
+

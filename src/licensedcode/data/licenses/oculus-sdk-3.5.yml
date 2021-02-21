@@ -17,3 +17,12 @@ standard_notice: |
     See the License for the specific language governing permissions and
     limitations under the License.
 spdx_license_key: LicenseRef-scancode-oculus-sdk-3.5
+ignorable_copyrights:
+  - (c) Facebook Technologies, LLC and its affiliates
+  - Copyright (c) Facebook Technologies, LLC and its affiliates
+ignorable_holders:
+  - Facebook Technologies, LLC and its affiliates
+ignorable_urls:
+  - https://developer.oculus.com/
+  - https://developer.oculus.com/licenses/sdk-3.5/
+

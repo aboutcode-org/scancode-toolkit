@@ -18,3 +18,10 @@ other_urls:
     - https://opensource.org/licenses/LGPL-3.0
     - https://www.gnu.org/licenses/lgpl-3.0-standalone.html
 minimum_coverage: 99
+ignorable_copyrights:
+  - Copyright (c) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ignorable_holders:
+  - Free Software Foundation, Inc.
+ignorable_urls:
+  - https://fsf.org/
+

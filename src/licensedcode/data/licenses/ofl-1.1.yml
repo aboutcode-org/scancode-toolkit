@@ -17,6 +17,5 @@ other_urls:
     - http://www.opensource.org/licenses/OFL-1.1
     - https://github.com/adobe-fonts/source-code-pro/blob/master/LICENSE.txt
     - https://opensource.org/licenses/OFL-1.1
-ignorable_urls:
-    - http://scripts.sil.org/OFL
 osi_license_key: OFL-1.1
+

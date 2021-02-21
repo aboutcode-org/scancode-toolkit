@@ -7,4 +7,7 @@ owner: Creative Commons
 homepage_url: http://creativecommons.org/licenses/by-sa/2.0//uk
 other_urls:
     - https://creativecommons.org/licenses/by-sa/2.0/uk/legalcode
-minimum_coverage: 50
+minimum_coverage: 70
+ignorable_urls:
+  - https://creativecommons.org/
+

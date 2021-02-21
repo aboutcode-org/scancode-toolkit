@@ -12,8 +12,4 @@ text_urls:
     - http://www.antlr2.org/
 other_urls:
     - http://www.antlr2.org/license.html
-ignorable_authors:
-    - Terence Parr
-ignorable_emails:
-    - parrt@antlr.org
-    - parrt@cs.usfca.edu
+
