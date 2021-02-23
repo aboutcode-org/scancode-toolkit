@@ -116,4 +116,7 @@ if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
     CONFIGURE_QUIET=1 "$SCANCODE_ROOT_DIR/configure"
 fi
 
-"$SCANCODE_ROOT_DIR/bin/scancode" "$@"
+if [ -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
+    "$SCANCODE_ROOT_DIR/bin/scancode" "$@"
+fi
+
