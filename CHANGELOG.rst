@@ -1,9 +1,20 @@
 Changelog
 =========
 
+
 v21.x (next)
 ------------
 
+
+v21.2.24
+------------
+
+Installation:
+
+- Resolve reported installation issues on macOS, Windows and Linux
+- Stop using extras for a default wheel installation
+- Build new scancode-toolkit-mini package with limited dependencies for use
+  when packaging in distros and similar
 
 
 v21.2.9
