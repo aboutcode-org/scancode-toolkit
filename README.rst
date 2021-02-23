@@ -113,7 +113,7 @@ There are a few common ways to `install ScanCode <https://scancode-toolkit.readt
 - `Development installation from source code: git clone 
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-from-source-code-git-clone>`_
 
-- `Development installation as a library: via pip install scancode-toolkit[full] 
+- `Development installation as a library: via pip install scancode-toolkit
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#pip-install>`_
 
 - `Run as a Docker container: git clone and docker run
