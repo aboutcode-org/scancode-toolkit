@@ -314,7 +314,7 @@ def test_spdx_rdf_with_empty_scan():
     run_scan_plain(args)
     expected = "<!-- No results for package 'scan'. -->\n"
     results = open(result_file).read()
-    assert result == expecteds
+    assert results == expected
 
 
 @pytest.mark.scanslow

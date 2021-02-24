@@ -291,7 +291,7 @@ class TestMergeMatches(FileBasedTesting):
 
         expected = [LicenseMatch(rule=r1, qspan=Span(1, 3) | Span(14, 20), ispan=Span(1, 10))]
         results = merge_matches([m1, m2])
-        assert 
+        assert results == expected
 
     def test_merge_does_not_merge_overlapping_matches_of_same_rules_if_in_sequence_with_gaps_for_long_match(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
