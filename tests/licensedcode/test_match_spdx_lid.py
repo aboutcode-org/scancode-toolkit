@@ -400,7 +400,7 @@ class TestMatchSpdx(FileBasedTesting):
         unknown_symbol = get_unknown_spdx_symbol()
         line_text = '* SPDX-License-Identifier:     GPL-2.0+ BSD-2-Clause'
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
-        assert expression == unknown_symbol
+        assert expression != unknown_symbol
 
     def test__reparse_invalid_expression_without_or_should_return_a_proper_expression(self):
         # this is a uboot-style legacy expression without OR

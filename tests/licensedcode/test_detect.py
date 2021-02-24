@@ -246,7 +246,7 @@ of the Software, and to permit persons to whom the Software is
         assert len(matches) == 2
 
         qtext, itext = get_texts(matches[0])
-        assert qtext == 'MIT License'
+        assert qtext == 'mit license'
         assert itext == 'mit license'
         assert matches[0].qspan == Span(0, 1)
         assert matches[0].ispan == Span(0, 1)
@@ -264,7 +264,7 @@ of the Software, and to permit persons to whom the Software is
         assert len(matches) == 2
 
         qtext, itext = get_texts(matches[0])
-        assert qtext == 'MIT License'
+        assert qtext == 'mit license'
         assert itext == 'mit license'
         assert matches[0].qspan == Span(0, 1)
         assert matches[0].ispan == Span(0, 1)

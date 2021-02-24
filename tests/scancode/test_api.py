@@ -132,13 +132,13 @@ class TestAPI(FileBasedTesting):
             'apache-1.0',
             'gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib'
         ]
-        assert results == expected['license_expressions']
+        assert results['license_expressions'] == expected
 
     def test_get_license_with_expression2(self):
         test_file = self.get_test_loc('api/license/expression.RULE')
         results = api.get_licenses(test_file)
         expected = ['gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib']
-        assert results == expected['license_expressions']
+        assert results['license_expressions'] == expected
 
     def test_get_license_returns_correct_lines(self):
         test_file = self.get_test_loc('api/license/correct_lines2')

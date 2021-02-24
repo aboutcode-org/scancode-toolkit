@@ -441,7 +441,7 @@ class TestRule(FileBasedTesting):
         rule_dir = self.get_test_loc('models/similar_names')
         rules = list(models.load_rules(rule_dir))
         result = [' '.join(list(r.tokens())[-4:]) for r in  rules]
-        assert not any(['rules proprietary 10 rule' for r in result == r])
+        assert not any([r == 'rules proprietary 10 rule' for r in result])
 
     def test_Rule__validate_with_false_positive_rule(self):
         rule_dir = self.get_test_loc('models/rule_validate')
