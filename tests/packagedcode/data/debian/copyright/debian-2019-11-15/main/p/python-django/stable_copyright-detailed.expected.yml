@@ -1,0 +1,30 @@
+- |
+  BSD-3-Clause
+  Apache-2.0
+  Expat
+  BSD-2-Clause
+  PSF-baseconv
+  BSD-3-Clause and Expat
+- apache-2.0 AND bsd-new AND bsd-simplified AND mit AND psf-2.0 AND unknown
+- |
+  Django Software Foundation and individual contributors
+  2006-2008 Brett Parker <iDunno@sommitrealweird.co.uk>,
+  2006-2008, 2010-2015 Raphael Hertzog <hertzog@debian.org>,
+  2008 Gustavo Noronha Silva <kov@debian.org>,
+  2008 David Spreen <netzwurm@debian.org>,
+  2008-2011 Chris Lamb <lamby@debian.org>,
+  2013-2015 Luke Faraone <lfaraone@debian.org>,
+  2014 Brian May <bam@debian.org>
+  Copyright 2011 Google Inc.
+  2005, 2014 jQuery Foundation, Inc. and other contributors
+  2009 Stanislaus Madueke
+  2007 Justin Bronn
+  2001-2003 Patrick K. O'Brien and Contributors
+  2010 Guilherme Gondim, 2009 Simon Willison, 2002 Drew Perttula
+  2007 Google Inc.
+  2012 Raymond Hettinger
+  2010-2015 Benjamin Peterson
+  2004 CherryPy Team <team@cherrypy.org>, 2008 Ian Bicking
+  2007 Robert Coup <robert.coup@onetrackmind.co.nz>
+  2008 Yahoo! Inc. All rights reserved.
+  2010 Gary Wilson Jr. <gary.wilson@gmail.com> and contributors

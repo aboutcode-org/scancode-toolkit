@@ -70,7 +70,12 @@ def get_and_set_package_licenses_and_copyrights(package, root_dir):
     return declared_license, detected_license, copyrights
 
 
-def parse_copyright_file(copyright_file, skip_debian_packaging=True, simplify_licenses=True):
+def parse_copyright_file(
+    copyright_file,
+    skip_debian_packaging=True,
+    simplify_licenses=True,
+    unique=True
+):
     """
     Return a tuple of (declared license, detected license_expression, copyrights) strings computed
     from the `copyright_file` location. For each copyright file paragraph we
@@ -85,6 +90,7 @@ def parse_copyright_file(copyright_file, skip_debian_packaging=True, simplify_li
         copyright_file=copyright_file,
         skip_debian_packaging=skip_debian_packaging,
         simplify_licenses=simplify_licenses,
+        unique=unique,
     )
     if TRACE:
         logger_debug(
@@ -94,6 +100,7 @@ def parse_copyright_file(copyright_file, skip_debian_packaging=True, simplify_li
         )
 
     # dive into whole text only if we detected everything as unknown.
+    # TODO: this is not right.
     if not detected_license or detected_license == 'unknown':
         text = textcode.analysis.unicode_text(copyright_file)
         detected_license = get_normalized_expression(text, try_as_expression=False)
@@ -148,7 +155,7 @@ def parse_structured_copyright_file(
     If `simplify_licenses` is True the license expressions are simplified.
 
     If `unique` is True, repeated copyrights, detected or declared licenses are
-    ignore, and only unique detections are returne.
+    ignored, and only unique detections are returned.
     """
     if not copyright_file:
         return None, None, None
