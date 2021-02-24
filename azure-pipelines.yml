@@ -17,22 +17,22 @@ jobs:
           python_versions: ['3.6']
           test_suites:
               misc: |
-                bin/pytest -n 3 -vvs --reruns=1 --test-suite=all \
+                bin/pytest -n 3 -vvs --test-suite=all \
                   --ignore=tests/scancode \
                   --ignore=tests/cluecode \
                   --ignore=tests/licensedcode
 
               scancode: |
-                bin/pytest --reruns=1 -vvs --test-suite=all \
+                bin/pytest -vvs --test-suite=all \
                   tests/scancode
 
               cluecode: |
-                bin/pytest -n 3 --reruns=1 -vvs --test-suite=all \
+                bin/pytest -n 3 -vvs --test-suite=all \
                   tests/cluecode \
                   --cov=src --cov-report=term
 
               license_base: |
-                bin/pytest -n 3 --reruns=1 -vvs --test-suite=all \
+                bin/pytest -n 3 -vvs --test-suite=all \
                   --ignore=tests/licensedcode/test_zzzz_cache.py \
                   --ignore=tests/licensedcode/test_detection_datadriven_external.py \
                   --ignore=tests/licensedcode/test_detection_datadriven1.py \
@@ -72,7 +72,7 @@ jobs:
                   -k TestValidateLicenseExtended
 
               license_cache: |
-                bin/pytest -n 3 --reruns=1 -vvs --test-suite=all \
+                bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_zzzz_cache.py
 
     - template: etc/ci/azure-mac.yml
@@ -81,7 +81,7 @@ jobs:
           image_name: macos-10.14
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 2 -vvs --reruns=1 tests/scancode/test_cli.py
+              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
     - template: etc/ci/azure-mac.yml
@@ -90,7 +90,7 @@ jobs:
           image_name: macos-10.15
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 2 -vvs --reruns=1 tests/scancode/test_cli.py
+              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
 #    - template: etc/ci/azure-mac.yml
@@ -99,7 +99,7 @@ jobs:
 #          image_name: macos-11.0
 #          python_versions: ['3.6', '3.7', '3.8', '3.9']
 #          test_suites:
-#              all: bin/pytest -n 2 -vvs --reruns=1 tests/scancode/test_cli.py
+#              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
     - template: etc/ci/azure-win.yml
@@ -109,7 +109,7 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: Scripts\pytest -n 2 -vvs --reruns=1 tests\scancode\test_cli.py
+              all: Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
 
 
     - template: etc/ci/azure-win.yml
@@ -119,7 +119,7 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: Scripts\pytest -n 2 -vvs --reruns=1 tests\scancode\test_cli.py
+              all: Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
 
 
     - template: etc/ci/azure-linux.yml
@@ -128,7 +128,7 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 2 -vvs --reruns=1 tests/scancode/test_cli.py
+              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
     - template: etc/ci/azure-linux.yml
@@ -137,7 +137,7 @@ jobs:
           image_name: ubuntu-18.04
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 2 -vvs --reruns=1 tests/scancode/test_cli.py
+              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
     - template: etc/ci/azure-linux.yml
@@ -146,7 +146,7 @@ jobs:
           image_name: ubuntu-20.04
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pytest -n 2 -vvs --reruns=1 tests/scancode/test_cli.py
+              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
 ################################################################################
@@ -161,7 +161,7 @@ jobs:
 #          python_version: '3.6'
 #          install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
+#          test_suite: bin/pytest -n 3 -vvs tests/scancode
 
 
 #    - template: etc/ci/azure-container-deb.yml
@@ -172,7 +172,7 @@ jobs:
 #          python_version: '3.8'
 #          install_python: sudo apt-get install -y python3.8 python3.8-venv python3.8-dev
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 3 -vvs --reruns=1 tests/scancode
+#          test_suite: bin/pytest -n 3 -vvs tests/scancode
 
 
 #    - template: etc/ci/azure-container-rpm.yml
@@ -186,7 +186,7 @@ jobs:
 #              sudo yum install -y epel-release
 #              sudo yum install -y python36 python36-devel python36-virtualenv
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 2 -vvs --reruns=1
+#          test_suite: bin/pytest -n 2 -vvs
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -197,7 +197,7 @@ jobs:
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 2 -vvs --reruns=1
+#          test_suite: bin/pytest -n 2 -vvs
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -208,7 +208,7 @@ jobs:
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 2 -vvs --reruns=1
+#          test_suite: bin/pytest -n 2 -vvs
 
 
 ################################################################################
@@ -226,7 +226,7 @@ jobs:
 #              set -e -x
 #              sudo dnf install -y python3 python3-devel python3-virtualenv
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 2 -vvs --reruns=1
+#          test_suite: bin/pytest -n 2 -vvs
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -237,7 +237,7 @@ jobs:
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 2 -vvs --reruns=1
+#          test_suite: bin/pytest -n 2 -vvs
 
 
 ################################################################################
@@ -268,7 +268,7 @@ jobs:
 #            make -j8
 #            sudo make altinstall
 #          test_suite_label: basic tests
-#          test_suite: bin/pytest -n 2 -vvs --reruns=1
+#          test_suite: bin/pytest -n 2 -vvs
 
 
 ########################################################################
