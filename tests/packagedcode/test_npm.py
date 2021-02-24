@@ -19,41 +19,41 @@ class TestNpm(PackageTester):
 
     def test_parse_person(self):
         test = 'Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)'
-        assert ('Isaac Z. Schlueter', 'i@izs.me' , 'http://blog.izs.me') == npm.parse_person(test)
+        assert npm.parse_person(test) == ('Isaac Z. Schlueter', 'i@izs.me' , 'http://blog.izs.me')
 
     def test_parse_person2(self):
         test = 'Isaac Z. Schlueter <i@izs.me>'
-        assert ('Isaac Z. Schlueter', 'i@izs.me' , None) == npm.parse_person(test)
+        assert npm.parse_person(test) == ('Isaac Z. Schlueter', 'i@izs.me' , None)
 
     def test_parse_person3(self):
         test = 'Isaac Z. Schlueter  (http://blog.izs.me)'
-        assert ('Isaac Z. Schlueter', None , 'http://blog.izs.me') == npm.parse_person(test)
+        assert npm.parse_person(test) == ('Isaac Z. Schlueter', None , 'http://blog.izs.me')
 
     def test_parse_person4(self):
         test = 'Isaac Z. Schlueter'
-        assert ('Isaac Z. Schlueter', None , None) == npm.parse_person(test)
+        assert npm.parse_person(test) == ('Isaac Z. Schlueter', None , None)
 
     def test_parse_person5(self):
         test = '<i@izs.me> (http://blog.izs.me)'
-        assert (None, u'i@izs.me', u'http://blog.izs.me') == npm.parse_person(test)
+        assert npm.parse_person(test) == (None, u'i@izs.me', u'http://blog.izs.me')
 
     def test_parse_person_dict(self):
         test = {'name': 'Isaac Z. Schlueter'}
-        assert ('Isaac Z. Schlueter', None, None) == npm.parse_person(test)
+        assert npm.parse_person(test) == ('Isaac Z. Schlueter', None, None)
 
     def test_parse_person_dict2(self):
         test = {'email': 'me@this.com'}
-        assert (None, 'me@this.com', None) == npm.parse_person(test)
+        assert npm.parse_person(test) == (None, 'me@this.com', None)
 
     def test_parse_person_dict3(self):
         test = {'url': 'http://example.com'}
-        assert (None, None, 'http://example.com') == npm.parse_person(test)
+        assert npm.parse_person(test) == (None, None, 'http://example.com')
 
     def test_parse_person_dict4(self):
         test = {'name': 'Isaac Z. Schlueter',
                 'email': 'me@this.com',
                 'url': 'http://example.com'}
-        assert ('Isaac Z. Schlueter', 'me@this.com' , 'http://example.com') == npm.parse_person(test)
+        assert npm.parse_person(test) == ('Isaac Z. Schlueter', 'me@this.com' , 'http://example.com')
 
     def test_parse_dist_with_string_values(self):
         test_file = self.get_test_loc('npm/dist/package.json')
@@ -256,7 +256,7 @@ class TestNpm(PackageTester):
         package = MockPackage()
         repo = 'git+git://bitbucket.org/vendor/my-private-repo.git'
         result = npm.vcs_repository_mapper(repo, package)
-        assert repo == result.vcs_url
+        assert result.vcs_url == repo
 
     def test_vcs_repository_mapper_handles_version(self):
         package = MockPackage()
@@ -264,7 +264,7 @@ class TestNpm(PackageTester):
         rev = '213123aefd'
         expected = 'https://bitbucket.org/vendor/my-private-repo.git@213123aefd'
         result = npm.vcs_repository_mapper(repo, package, rev)
-        assert expected == result.vcs_url
+        assert result.vcs_url == expected
 
     def test_vcs_repository_mapper_handles_version_on_gh(self):
         package = MockPackage()
@@ -272,7 +272,7 @@ class TestNpm(PackageTester):
         rev = '213123aefd'
         expected = 'https://github.com/vendor/my-private-repo@213123aefd'
         result = npm.vcs_repository_mapper(repo, package, rev)
-        assert expected == result.vcs_url
+        assert result.vcs_url == expected
 
     def test_npm_get_package_resources(self):
         test_loc = self.get_test_loc('npm/get_package_resources')
@@ -284,7 +284,7 @@ class TestNpm(PackageTester):
             'get_package_resources/this-should-be-returned'
         ]
         results = [r.path for r in npm.NpmPackage.get_package_resources(root, codebase)]
-        assert expected == results
+        assert results == expected
 
 class MockPackage(object):
     pass

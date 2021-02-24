@@ -56,7 +56,7 @@ class TestModels(PackageTester):
             ('repository_download_url', None),
             ('api_data_url', None),
         ]
-        assert expected == list(package.to_dict().items())
+        assert list(package.to_dict().items()) == expected
 
     def test_Package_simple(self):
         package = Package(
@@ -83,7 +83,7 @@ class TestModels(PackageTester):
             version='23',
             qualifiers=dict(this='that')
         )
-        assert dict(this='that') == package.to_dict()['qualifiers']
+        assert package.to_dict()['qualifiers'] == dict(this='that')
 
     def test_Package_model_qualifiers_are_kept_as_mappings(self):
         package = models.Package(
@@ -92,7 +92,7 @@ class TestModels(PackageTester):
             version='23',
             qualifiers=dict(this='that')
         )
-        assert dict(this='that') == package.qualifiers
+        assert package.qualifiers == dict(this='that')
 
     def test_Package_model_qualifiers_are_converted_to_mappings(self):
         package = models.Package(
@@ -101,7 +101,7 @@ class TestModels(PackageTester):
             version='23',
             qualifiers='this=that'
         )
-        assert dict(this='that') == package.qualifiers
+        assert package.qualifiers == dict(this='that')
 
 
     def test_Package_full(self):

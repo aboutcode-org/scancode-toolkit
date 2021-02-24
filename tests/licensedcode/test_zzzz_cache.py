@@ -35,29 +35,29 @@ class LicenseIndexCacheTest(FileBasedTesting):
         fileutils.create_dir(os.path.join(test_dir, 'some dir'))
 
         after = cache.tree_checksum(test_dir)
-        assert before == after
+        assert after == before
 
         with open(os.path.join(test_dir, 'some.py'), 'w') as py:
             py.write(' ')
         after = cache.tree_checksum(test_dir)
-        assert before != after
+        assert after != before
 
         before = after
         with open(os.path.join(test_dir, 'some.LICENSE'), 'w') as f:
             f.write(' ')
         after = cache.tree_checksum(test_dir)
-        assert before != after
+        assert after != before
 
         before = after
         with open(os.path.join(test_dir, 'some.LICENSE~'), 'w') as f:
             f.write(' ')
         after = cache.tree_checksum(test_dir)
-        assert before == after
+        assert after == before
 
         with open(os.path.join(test_dir, 'some.LICENSE.swp'), 'w') as f:
             f.write(' ')
         after = cache.tree_checksum(test_dir)
-        assert before == after
+        assert after == before
 
     def test_tree_checksum_is_different_when_file_is_added(self):
         test_dir = self.get_test_loc('cache/tree', copy=True)
@@ -66,13 +66,13 @@ class LicenseIndexCacheTest(FileBasedTesting):
         with open(os.path.join(test_dir, 'some.py'), 'w') as py:
             py.write(' ')
         after = cache.tree_checksum(test_dir)
-        assert before != after
+        assert after != before
 
         before = after
         with open(os.path.join(test_dir, 'some.LICENSE'), 'w') as f:
             f.write(' ')
         after = cache.tree_checksum(test_dir)
-        assert before != after
+        assert after != before
 
     def test_tree_checksum_is_different_when_file_is_changed(self):
         test_dir = self.get_test_loc('cache/tree', copy=True)
@@ -84,7 +84,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
         with open(os.path.join(test_dir, 'some.py'), 'w') as py:
             py.write(' asas')
         after = cache.tree_checksum(test_dir)
-        assert before != after
+        assert after != before
 
     def test_tree_checksum_is_different_when_file_is_removed(self):
         test_dir = self.get_test_loc('cache/tree', copy=True)
@@ -96,7 +96,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         fileutils.delete(new_file)
         after = cache.tree_checksum(test_dir)
-        assert before != after
+        assert after != before
 
     def test_build_index(self):
         # note: this is a rather complex test because caching involves some globals
@@ -143,8 +143,8 @@ class LicenseIndexCacheTest(FileBasedTesting):
             rules_data_dir=rules_data_dir,
         )
 
-        assert tree_before == open(checksum_file).read()
-        assert idx_checksum_before == hash.sha1(cache_file)
+        assert open(checksum_file).read() == tree_before
+        assert hash.sha1(cache_file) == idx_checksum_before
 
         # now add some file in the source tree
         new_file = os.path.join(tree_base_dir, 'some file')
@@ -162,8 +162,8 @@ class LicenseIndexCacheTest(FileBasedTesting):
             licenses_data_dir=licenses_data_dir,
             rules_data_dir=rules_data_dir,
         )
-        assert tree_before == open(checksum_file).read()
-        assert idx_checksum_before == hash.sha1(cache_file)
+        assert open(checksum_file).read() == tree_before
+        assert hash.sha1(cache_file) == idx_checksum_before
 
         # when check_consistency is True, the index is rebuilt when new
         # files are added
@@ -176,7 +176,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
             licenses_data_dir=licenses_data_dir,
             rules_data_dir=rules_data_dir,
         )
-        assert tree_before != open(checksum_file).read()
+        assert open(checksum_file).read() != tree_before
 
         # now add some ignored file in the source tree
         tree_before = open(checksum_file).read()
@@ -197,8 +197,8 @@ class LicenseIndexCacheTest(FileBasedTesting):
             rules_data_dir=rules_data_dir,
         )
 
-        assert tree_before == open(checksum_file).read()
-        assert idx_checksum_before == hash.sha1(cache_file)
+        assert open(checksum_file).read() == tree_before
+        assert hash.sha1(cache_file) == idx_checksum_before
 
         # if the treechecksum file dies, the index is not rebuilt if
         # check_consistency is False. and no new checksum is created
@@ -231,7 +231,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
             rules_data_dir=rules_data_dir,
         )
 
-        assert tree_before == open(checksum_file).read()
+        assert open(checksum_file).read() == tree_before
 
         # if the index cache file dies the index is rebuilt
         fileutils.delete(cache_file)
@@ -248,7 +248,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         # load index, forced from file
         idx2 = cache.load_index(cache_file)
-        assert set(idx1.dictionary.keys()) == set(idx2.dictionary.keys())
+        assert set(idx2.dictionary.keys()) == set(idx1.dictionary.keys())
 
         # reset global caches
         cache._LICENSE_SYMBOLS_BY_SPDX_KEY = {}
@@ -267,13 +267,13 @@ class LicenseIndexCacheTest(FileBasedTesting):
             assert 'Failed to load license cache' in str(ex)
 
     def test_get_unknown_spdx_symbol(self):
-        assert 'unknown-spdx' == cache.get_unknown_spdx_symbol().key
+        assert cache.get_unknown_spdx_symbol().key == 'unknown-spdx'
 
     def test_get_unknown_spdx_symbol_from_defined_db(self):
         test_dir = self.get_test_loc('spdx/db-unknown')
         from licensedcode.models import load_licenses
         test_licenses = load_licenses(test_dir)
-        assert 'unknown-spdx' == cache.get_unknown_spdx_symbol(_test_licenses=test_licenses).key
+        assert cache.get_unknown_spdx_symbol(_test_licenses=test_licenses).key == 'unknown-spdx'
 
     def test_get_spdx_symbols_from_dir(self):
         test_dir = self.get_test_loc('spdx/db')
@@ -290,7 +290,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
             u'xskat': u'xskat'
         }
 
-        assert expected == result
+        assert result == expected
 
     def test_get_spdx_symbols(self):
         result = cache.get_spdx_symbols()

@@ -39,7 +39,7 @@ def check_expected(test_loc, expected_loc, regen=False):
             expected
         ])
 
-        assert expected == result
+        assert result == expected
 
 
 def relative_walk(dir_path):

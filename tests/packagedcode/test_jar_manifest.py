@@ -39,7 +39,7 @@ class BaseParseManifestCase(testcase.FileBasedTesting):
         with io.open(expected_manifest_loc, encoding='utf-8') as ex:
             expected = json.load(ex)
 
-        assert json.dumps(expected) == json.dumps(parsed_manifest)
+        assert json.dumps(parsed_manifest) == json.dumps(expected)
 
     def check_get_normalized_package_data(self, test_manifest, regen=False):
         """
@@ -60,7 +60,7 @@ class BaseParseManifestCase(testcase.FileBasedTesting):
         with io.open(expected_json_loc, 'rb') as ex:
             expected = json.load(ex, encoding='utf-8')
 
-        assert json.dumps(expected) == json.dumps(package)
+        assert json.dumps(package) == json.dumps(expected)
 
 
 class TestMavenMisc(BaseParseManifestCase):

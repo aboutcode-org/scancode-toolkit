@@ -50,9 +50,9 @@ class TestMatchSeq(FileBasedTesting):
             EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         '''
         result = idx.match(query_string=querys)
-        assert 1 == len(result)
+        assert len(result) == 1
         match = result[0]
-        assert match_seq.MATCH_SEQ == match.matcher
+        assert match.matcher == match_seq.MATCH_SEQ
 
         exp_qtext = u"""
             Copyright [2003] ([C]) [James]. [All] [Rights] [Reserved].
@@ -68,9 +68,9 @@ class TestMatchSeq(FileBasedTesting):
             EVEN IF ADVISED OF THE POSSIBILITY OF <NEW> SUCH DAMAGE
         """.lower().split()
         qtext, itext = get_texts(match)
-        assert exp_qtext == qtext.split()
-        assert exp_qtext == qtext.split()
-        assert exp_itext == itext.split()
+        assert qtext.split() == exp_qtext
+        assert qtext.split() == exp_qtext
+        assert itext.split() == exp_itext
         assert match.coverage() >= 70
 
     def test_match_seq_are_correct_on_apache(self):
@@ -84,9 +84,9 @@ class TestMatchSeq(FileBasedTesting):
 
         query_loc = self.get_test_loc('match_seq/query')
         matches = idx.match(location=query_loc)
-        assert 1 == len(matches)
+        assert len(matches) == 1
         match = matches[0]
-        assert match_seq.MATCH_SEQ == match.matcher
+        assert match.matcher == match_seq.MATCH_SEQ
         qtext, _itext = get_texts(match)
         expected = u'''
             The OpenSymphony Group. All rights reserved.
@@ -129,4 +129,4 @@ class TestMatchSeq(FileBasedTesting):
             OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
             ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         '''
-        assert expected.split() == qtext.split()
+        assert qtext.split() == expected.split()
