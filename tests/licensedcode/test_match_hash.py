@@ -32,7 +32,7 @@ class TestHashMatch(FileBasedTesting):
         assert len(matches) == 1
         match = matches[0]
         assert match.coverage() == 100
-        assert match.matcher == match_hash.MATCH_HASH == 
+        assert match.matcher == match_hash.MATCH_HASH
         assert match.rule == rules[0]
         assert match.qspan == Span(0, 119)
         assert match.ispan == Span(0, 119)
