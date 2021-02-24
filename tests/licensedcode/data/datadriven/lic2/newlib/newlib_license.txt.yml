@@ -10,7 +10,7 @@ license_expressions:
   - nilsson-historical
   - newlib-historical
   - bsd-new
-  - amd-historical
+  - warranty-disclaimer
   - bsd-new
   - bsd-simplified
   - bsd-simplified
