@@ -16,7 +16,7 @@ from commoncode.system import on_windows
 from scancode_config import scancode_root_dir
 
 
-def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None):
+def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None, retry=True):
     """
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
     """
@@ -31,22 +31,31 @@ def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None):
     scan_cmd = os.path.join(scancode_root_dir, scmd)
     rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd, env=env)
 
+    if retry and rc != expected_rc:
+        # wait and rerun in verbose mode to get more in the output
+        time.sleep(1)
+        if '--verbose' not in options:
+            options.append('--verbose')
+        result = rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd, env=env)
+
     if rc != expected_rc:
         opts = get_opts(options)
-        error = '''
-Failure to run: scancode %(opts)s
+        error = f'''
+Failure to run:
+rc: {rc}
+scancode {opts}
 stdout:
-%(stdout)s
+{stdout}
 
 stderr:
-%(stderr)s
+{stderr}
 ''' % locals()
         assert rc == expected_rc, error
 
     return rc, stdout, stderr
 
 
-def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env=None, retry=on_windows):
+def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env=None, retry=True):
     """
     Run a scan as a Click-controlled subprocess
     If monkeypatch is provided, a tty with a size (80, 43) is mocked.
@@ -69,9 +78,10 @@ def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env
     runner = CliRunner()
 
     result = runner.invoke(cli.scancode, options, catch_exceptions=False, env=env)
-    if result.exit_code != expected_rc and retry:
-        # wait and rerun in verbose mode to get more in the output
-        time.sleep(10)
+    if retry and result.exit_code != expected_rc:
+        if on_windows:
+            # wait and rerun in verbose mode to get more in the output
+           time.sleep(1)
         if '--verbose' not in options:
             options.append('--verbose')
         result = runner.invoke(cli.scancode, options, catch_exceptions=False, env=env)
@@ -79,11 +89,13 @@ def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env
     if result.exit_code != expected_rc:
         output = result.output
         opts = get_opts(options)
-        error = '''
-Failure to run: scancode %(opts)s
+        error = f'''
+Failure to run:
+rc: {result.exit_code}
+scancode {opts}
 output:
-%(output)s
-''' % locals()
+{output}
+'''
         assert result.exit_code == expected_rc, error
     return result
 
