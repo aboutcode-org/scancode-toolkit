@@ -15,6 +15,7 @@ from commoncode.fileutils import create_dir
 from commoncode import ignore
 
 from scancode_config import licensedcode_cache_dir
+from scancode_config import scancode_cache_dir
 from scancode_config import scancode_src_dir
 from scancode_config import SCANCODE_DEV_MODE
 
@@ -32,7 +33,8 @@ _LICENSES_BY_KEY_INDEX = None
 
 
 def get_index(
-    cache_dir=licensedcode_cache_dir,
+    licensedcode_cache_dir=licensedcode_cache_dir,
+    scancode_cache_dir=scancode_cache_dir,
     check_consistency=SCANCODE_DEV_MODE,
     return_value=True,
 ):
@@ -41,8 +43,14 @@ def get_index(
     Build the index from the built-in rules dataset.
     """
     global _LICENSES_BY_KEY_INDEX
+
     if not _LICENSES_BY_KEY_INDEX:
-        _LICENSES_BY_KEY_INDEX = get_cached_index(cache_dir, check_consistency)
+        _LICENSES_BY_KEY_INDEX = get_cached_index(
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
+            check_consistency=check_consistency,
+        )
+
     if return_value:
         return _LICENSES_BY_KEY_INDEX
 
@@ -56,6 +64,7 @@ def get_licenses_db(licenses_data_dir=None, _test_mode=False):
     Return a mapping of license key -> license object.
     """
     global _LICENSES_BY_KEY
+
     if not _LICENSES_BY_KEY or _test_mode:
         from licensedcode.models import load_licenses
         if not licenses_data_dir:
@@ -81,6 +90,7 @@ def get_licensing(_test_licenses=None):
     licenses.
     """
     global _LICENSING
+
     if not _LICENSING or _test_licenses:
 
         if _test_licenses:
@@ -114,6 +124,7 @@ def get_unknown_spdx_symbol(_test_licenses=None):
     instead of the standard license db.
     """
     global _UNKNOWN_SPDX_SYMBOL
+
     if not _UNKNOWN_SPDX_SYMBOL or _test_licenses:
         from license_expression import LicenseSymbolLike
 
@@ -190,7 +201,8 @@ def get_spdx_symbols(_test_licenses=None):
 
 
 def get_cached_index(
-    cache_dir=licensedcode_cache_dir,
+    licensedcode_cache_dir=licensedcode_cache_dir,
+    scancode_cache_dir=scancode_cache_dir,
     check_consistency=SCANCODE_DEV_MODE,
     # used for testing only
     timeout=LICENSE_INDEX_LOCK_TIMEOUT,
@@ -219,7 +231,10 @@ def get_cached_index(
     licenses_data_dir = licenses_data_dir or ldd
     rules_data_dir = rules_data_dir or rdd
 
-    lock_file, checksum_file, cache_file = get_license_cache_paths(cache_dir)
+    lock_file, checksum_file, cache_file = get_license_cache_paths(
+        licensedcode_cache_dir=licensedcode_cache_dir,
+        scancode_cache_dir=scancode_cache_dir,
+    )
 
     has_cache = os.path.exists(cache_file)
     # bypass check if no consistency check is needed
@@ -310,6 +325,7 @@ _ignored_from_hash = partial(
         '*.pyc': 'pyc files',
         '*~': 'temp gedit files',
         '*.swp': 'vi swap files',
+        '*license_index': 'scancode license index',
     },
     unignores={}
 )
@@ -327,21 +343,25 @@ def tree_checksum(tree_base_dir=licensedcode_dir, _ignored=_ignored_from_hash):
     NOTE: this is not 100% fool proof but good enough in practice.
     """
     resources = resource_iter(tree_base_dir, ignored=_ignored, with_dirs=False)
+    resources = (r for r in resources if licensedcode_cache_dir not in r)
     hashable = (pth + str(os.path.getmtime(pth)) + str(os.path.getsize(pth)) for pth in resources)
     hashable = ''.join(sorted(hashable))
     hashable = hashable.encode('utf-8')
     return md5(hashable).hexdigest()
 
 
-def get_license_cache_paths(cache_dir=licensedcode_cache_dir):
+def get_license_cache_paths(
+    licensedcode_cache_dir=licensedcode_cache_dir,
+    scancode_cache_dir=scancode_cache_dir,
+):
     """
     Return a tuple of index cache files given a master `cache_dir`
     """
-    idx_cache_dir = os.path.join(cache_dir, 'license_index')
+    idx_cache_dir = os.path.join(licensedcode_cache_dir, 'license_index')
     create_dir(idx_cache_dir)
-
-    lock_file = os.path.join(idx_cache_dir, 'lockfile')
-    checksum_file = os.path.join(idx_cache_dir, 'tree_checksums')
     cache_file = os.path.join(idx_cache_dir, 'index_cache')
+
+    lock_file = os.path.join(scancode_cache_dir, 'scancode_license_index_lockfile')
+    checksum_file = os.path.join(scancode_cache_dir, 'scancode_license_index_tree_checksums')
 
     return lock_file, checksum_file, cache_file
