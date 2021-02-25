@@ -31,6 +31,9 @@ LICENSE_INDEX_LOCK_TIMEOUT = 60 * 4
 # global in-memory cache of the main license index instance
 _LICENSES_BY_KEY_INDEX = None
 
+LICENSE_INDEX_DIR = 'license_index'
+LICENSE_INDEX_FILENAME = 'index_cache'
+
 
 def get_index(
     licensedcode_cache_dir=licensedcode_cache_dir,
@@ -200,6 +203,13 @@ def get_spdx_symbols(_test_licenses=None):
     return _LICENSE_SYMBOLS_BY_SPDX_KEY
 
 
+def has_cache_index_file(cache_file):
+    """
+    Return True the index file exists and is not empty.
+    """
+    return os.path.exists(cache_file) and os.path.getsize(cache_file)
+
+
 def get_cached_index(
     licensedcode_cache_dir=licensedcode_cache_dir,
     scancode_cache_dir=scancode_cache_dir,
@@ -209,7 +219,6 @@ def get_cached_index(
     tree_base_dir=scancode_src_dir,
     licenses_data_dir=None,
     rules_data_dir=None,
-    use_dumps=True,
 ):
     """
     Return a LicenseIndex: either load a cached index or build and cache the
@@ -236,10 +245,17 @@ def get_cached_index(
         scancode_cache_dir=scancode_cache_dir,
     )
 
-    has_cache = os.path.exists(cache_file)
+    has_cache = has_cache_index_file(cache_file)
     # bypass check if no consistency check is needed
     if has_cache and not check_consistency:
-        return load_index(cache_file)
+        try:
+            return load_index(cache_file)
+        except Exception as e:
+            # work around some rare Windows quirks
+            import traceback
+            print('Inconsistent License index cache: checking and rebuilding index.')
+            print(str(e))
+            print(traceback.format_exc())
 
     has_tree_checksum = os.path.exists(checksum_file)
 
@@ -253,8 +269,9 @@ def get_cached_index(
             if has_cache and has_tree_checksum:
                 # if we have a saved cached index
                 # load saved tree_checksum and compare with current tree_checksum
-                with open(checksum_file, 'r') as etcs:
+                with open(checksum_file) as etcs:
                     existing_checksum = etcs.read()
+
                 current_checksum = tree_checksum(tree_base_dir=tree_base_dir)
                 if current_checksum == existing_checksum:
                     # The cache is consistent with the latest code and data
@@ -277,10 +294,7 @@ def get_cached_index(
             idx = LicenseIndex(rules, _spdx_tokens=spdx_tokens)
 
             with open(cache_file, 'wb') as ifc:
-                if use_dumps:
-                    ifc.write(idx.dumps())
-                else:
-                    idx.dump(ifc)
+                idx.dump(ifc)
 
             # save the new tree checksum
             current_checksum = tree_checksum(tree_base_dir=tree_base_dir)
@@ -294,7 +308,7 @@ def get_cached_index(
         raise
 
 
-def load_index(cache_file, use_loads=False):
+def load_index(cache_file):
     """
     Return a LicenseIndex loaded from cache.
     """
@@ -302,21 +316,15 @@ def load_index(cache_file, use_loads=False):
     with open(cache_file, 'rb') as ifc:
         # Note: weird but read() + loads() is much (twice++???) faster than load()
         try:
-            if use_loads:
-                return LicenseIndex.loads(ifc.read())
-            else:
-                return LicenseIndex.load(ifc)
+            return LicenseIndex.load(ifc)
         except Exception as e:
-            import traceback
             msg = (
-                '\n'
                 'ERROR: Failed to load license cache (the file may be corrupted ?).\n'
-                'Please delete "{cache_file}" and retry.\n'
+                f'Please delete "{cache_file}" and retry.\n'
                 'If the problem persists, copy this error message '
-                'and submit a bug report.\n'.format(**locals())
+                'and submit a bug report at https://github.com/nexB/scancode-toolkit/issues/'
             )
-            msg += '\n' + traceback.format_exc()
-            raise Exception(msg)
+            raise Exception(msg) from e
 
 
 _ignored_from_hash = partial(
@@ -325,7 +333,6 @@ _ignored_from_hash = partial(
         '*.pyc': 'pyc files',
         '*~': 'temp gedit files',
         '*.swp': 'vi swap files',
-        '*license_index': 'scancode license index',
     },
     unignores={}
 )
@@ -333,17 +340,19 @@ _ignored_from_hash = partial(
 licensedcode_dir = os.path.join(scancode_src_dir, 'licensedcode')
 
 
-def tree_checksum(tree_base_dir=licensedcode_dir, _ignored=_ignored_from_hash):
+def tree_checksum(
+    tree_base_dir=licensedcode_dir,
+    _ignored=_ignored_from_hash,
+):
     """
     Return a checksum computed from a file tree using the file paths, size and
     last modified time stamps. The purpose is to detect is there has been any
     modification to source code or data files and use this as a proxy to verify
-    the cache consistency.
+    the cache consistency. This includes the actual cached index file.
 
     NOTE: this is not 100% fool proof but good enough in practice.
     """
     resources = resource_iter(tree_base_dir, ignored=_ignored, with_dirs=False)
-    resources = (r for r in resources if licensedcode_cache_dir not in r)
     hashable = (pth + str(os.path.getmtime(pth)) + str(os.path.getsize(pth)) for pth in resources)
     hashable = ''.join(sorted(hashable))
     hashable = hashable.encode('utf-8')
@@ -357,9 +366,9 @@ def get_license_cache_paths(
     """
     Return a tuple of index cache files given a master `cache_dir`
     """
-    idx_cache_dir = os.path.join(licensedcode_cache_dir, 'license_index')
+    idx_cache_dir = os.path.join(licensedcode_cache_dir, LICENSE_INDEX_DIR)
     create_dir(idx_cache_dir)
-    cache_file = os.path.join(idx_cache_dir, 'index_cache')
+    cache_file = os.path.join(idx_cache_dir, LICENSE_INDEX_FILENAME)
 
     lock_file = os.path.join(scancode_cache_dir, 'scancode_license_index_lockfile')
     checksum_file = os.path.join(scancode_cache_dir, 'scancode_license_index_tree_checksums')

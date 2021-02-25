@@ -59,6 +59,18 @@ class LicenseIndexCacheTest(FileBasedTesting):
         after = cache.tree_checksum(test_dir)
         assert before == after
 
+    def test_tree_checksum_does_not_ignore_the_index_cache(self):
+        # this is stored in the code tree as package data and we should not
+        # ignore it
+        test_dir = self.get_test_loc('cache/tree', copy=True)
+        before = cache.tree_checksum(test_dir)
+        # create some file name like the index
+        with open(os.path.join(test_dir, cache.LICENSE_INDEX_FILENAME), 'w') as pyc:
+            pyc.write(' ')
+        fileutils.create_dir(os.path.join(test_dir, 'some dir'))
+        after = cache.tree_checksum(test_dir)
+        assert after != before
+
     def test_tree_checksum_is_different_when_file_is_added(self):
         test_dir = self.get_test_loc('cache/tree', copy=True)
         before = cache.tree_checksum(test_dir)
@@ -100,8 +112,13 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
     def test_build_index(self):
         # note: this is a rather complex test because caching involves some globals
-        cache_dir = self.get_temp_dir('index_cache')
-        lock_file, checksum_file, cache_file = get_license_cache_paths(cache_dir=cache_dir)
+        licensedcode_cache_dir = self.get_temp_dir('index_cache')
+        scancode_cache_dir = self.get_temp_dir('index_metafiles')
+        lock_file, checksum_file, cache_file = get_license_cache_paths(
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
+        )
+
         tree_base_dir = self.get_temp_dir('src_dir')
         licenses_data_dir = self.get_test_loc('cache/data/licenses', copy=True)
         rules_data_dir = self.get_test_loc('cache/data/rules', copy=True)
@@ -120,7 +137,8 @@ class LicenseIndexCacheTest(FileBasedTesting):
         # when a new index is built, new index files are created
         check_consistency = True
         cache.get_cached_index(
-            cache_dir=cache_dir,
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
             check_consistency=check_consistency,
             timeout=timeout,
             tree_base_dir=tree_base_dir,
@@ -135,7 +153,8 @@ class LicenseIndexCacheTest(FileBasedTesting):
         tree_before = open(checksum_file).read()
         idx_checksum_before = hash.sha1(cache_file)
         cache.get_cached_index(
-            cache_dir=cache_dir,
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
             check_consistency=check_consistency,
             timeout=timeout,
             tree_base_dir=tree_base_dir,
@@ -155,7 +174,8 @@ class LicenseIndexCacheTest(FileBasedTesting):
         # new files are added
         check_consistency = False
         cache.get_cached_index(
-            cache_dir=cache_dir,
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
             check_consistency=check_consistency,
             timeout=timeout,
             tree_base_dir=tree_base_dir,
@@ -169,7 +189,8 @@ class LicenseIndexCacheTest(FileBasedTesting):
         # files are added
         check_consistency = True
         cache.get_cached_index(
-            cache_dir=cache_dir,
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
             check_consistency=check_consistency,
             timeout=timeout,
             tree_base_dir=tree_base_dir,
@@ -189,7 +210,8 @@ class LicenseIndexCacheTest(FileBasedTesting):
         # files are added that are ignored
         check_consistency = True
         cache.get_cached_index(
-            cache_dir=cache_dir,
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
             check_consistency=check_consistency,
             timeout=timeout,
             tree_base_dir=tree_base_dir,
@@ -207,7 +229,8 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         check_consistency = False
         cache.get_cached_index(
-            cache_dir=cache_dir,
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
             check_consistency=check_consistency,
             timeout=timeout,
             tree_base_dir=tree_base_dir,
@@ -223,7 +246,8 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         check_consistency = True
         cache.get_cached_index(
-            cache_dir=cache_dir,
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
             check_consistency=check_consistency,
             timeout=timeout,
             tree_base_dir=tree_base_dir,
@@ -238,7 +262,8 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         check_consistency = False
         idx1 = cache.get_cached_index(
-            cache_dir=cache_dir,
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
             check_consistency=check_consistency,
             timeout=timeout,
             tree_base_dir=tree_base_dir,
