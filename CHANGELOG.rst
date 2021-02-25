@@ -11,16 +11,24 @@ v21.2.25
 
 Installation:
 
-- Resolve reported installation issues on macOS, Windows and Linux
-- Stop using extras for a default wheel installation
-- Build new scancode-toolkit-mini package with limited dependencies for use
-  when packaging in distros and similar
+ - Resolve reported installation issues on macOS, Windows and Linux
+ - Stop using extras for a default wheel installation
+ - Build new scancode-toolkit-mini package with limited dependencies for use
+   when packaging in distros and similar
+ - The new Dockerfile will be create smaller images and containers
 
 License scanning:
 
- - Improve license detection accuracy with XXXX new license detection rules
-   added or updated and XXX new license added.
+ - Over 150 and and updated licenses
  - Support the latest SPDX license list v3.11
+ - Improve license detection accuracy with over 740 new and improved license
+   detection rules
+ - Fix license cache handling issues
+
+Misc.:
+
+ - Update extractcode, typecode and their native dependencies for better support
+   of latests versions of macOS.
 
 
 v21.2.9
@@ -50,6 +58,9 @@ License scanning:
  - Use SPDX LicenseRef-scancode namespace for all licenses keys not in SPDX
  - Replace DEJACODE_LICENSE_URL with SCANCODE_LICENSEDB_URL at
    https://scancode-licensedb.aboutcode.org #2165
+ - Add new license flag in license detection results "is_license_intro" that
+   is used to indicate that a license rule is a short license introduction
+   statement (that typically may be reported as some unknown license)
 
 Package scanning:
 
@@ -73,7 +84,6 @@ Misc.:
  - Create new release scripts to populate released archives with just the
    required wheels of a given OS and Python version.
  - Updated scancode.bat to handle % signs in the arguments #1876
-
 
 
 v3.2.3 (2020-10-27)
