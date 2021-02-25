@@ -48,19 +48,19 @@ class TestTokenizers(FileBasedTesting):
             u'modification',
             u'are',
             u'permitted']
-        assert expected == result
+        assert result == expected
 
     def test_word_splitter_with_trailing_plus(self):
         text = u'gpl-3.0+'
         result = list(word_splitter(text))
         expected = [u'gpl', u'3', u'0+']
-        assert expected == result
+        assert result == expected
 
     def test_word_splitter_with_internal_plus(self):
         text = u'gpl-+3.0'
         result = list(word_splitter(text))
         expected = [u'gpl', u'3', u'0']
-        assert expected == result
+        assert result == expected
 
     def test_query_lines_from_location(self):
         query_loc = self.get_test_loc('index/queryperfect-mini')
@@ -72,7 +72,7 @@ class TestTokenizers(FileBasedTesting):
              u'Always',
         ]
         result = [l for _, l in query_lines(location=query_loc)]
-        assert expected == result
+        assert result == expected
 
     def test_query_lines_from_location_return_a_correct_number_of_lines(self):
         query_loc = self.get_test_loc('tokenize/correct_lines')
@@ -86,7 +86,7 @@ class TestTokenizers(FileBasedTesting):
              ', , , sublicense, and/or  Software, ,'),
             (1, u'subject')]
         result = list(query_lines(location=query_loc))
-        assert expected == result
+        assert result == expected
 
     def test_query_lines_from_string(self):
         query_string = '''
@@ -106,7 +106,7 @@ class TestTokenizers(FileBasedTesting):
              u'',
         ]
         result = [l for _, l in query_lines(query_string=query_string)]
-        assert expected == result
+        assert result == expected
 
     def test_query_lines_complex(self):
         query_loc = self.get_test_loc('index/querytokens')
@@ -128,32 +128,32 @@ class TestTokenizers(FileBasedTesting):
              u'Redistributions',
         ]
         result = [l for _, l in query_lines(location=query_loc)]
-        assert expected == result
+        assert result == expected
 
     def test_query_tokenizer_handles_empty_string(self):
         text = ''
         result = list(query_tokenizer(text))
-        assert [] == result
+        assert result == []
 
     def test_query_tokenizer_handles_blank_lines(self):
         text = u' \n\n\t  '
         result = list(query_tokenizer(text))
-        assert [] == result
+        assert result == []
 
     def test_query_tokenizer_handles_blank_lines2(self):
         text = ' \n\t  '
         result = list(query_tokenizer(text))
-        assert [] == result
+        assert result == []
 
     def test_query_tokenizer_handles_empty_lines(self):
         text = u'\n\n'
         expected = []
-        assert expected == list(query_tokenizer(text))
+        assert list(query_tokenizer(text)) == expected
 
     def test_query_tokenizer_can_split(self):
         text = u'abc def \n GHI'
         result = list(query_tokenizer(text))
-        assert [u'abc', u'def', u'ghi'] == result
+        assert result == [u'abc', u'def', u'ghi']
 
     def test_query_tokenizer(self):
         text = u'''Redistribution and use in source and binary forms, with or
@@ -170,23 +170,23 @@ class TestTokenizers(FileBasedTesting):
         conditions are met redistributions of source code must retain the above
         copyright notice this list of conditions and the following
         disclaimer'''.split()
-        assert expected == result
+        assert result == expected
 
     def test_query_tokenizer_behavior1(self):
         text , expected = 'MODULE_LICENSE("Dual BSD/GPL");', ['module', 'license', 'dual', 'bsd', 'gpl']
-        assert expected == list(query_tokenizer(text))
+        assert list(query_tokenizer(text)) == expected
 
     def test_query_tokenizer_behavior2(self):
         text , expected = 'Dual BSD/GPL', ['dual', 'bsd', 'gpl']
-        assert expected == list(query_tokenizer(text))
+        assert list(query_tokenizer(text)) == expected
 
     def test_query_tokenizer_behavior3(self):
         text , expected = 'license=Dual BSD/GPL', ['license', 'dual', 'bsd', 'gpl']
-        assert expected == list(query_tokenizer(text))
+        assert list(query_tokenizer(text)) == expected
 
     def test_query_tokenizer_behavior4(self):
         text , expected = 'license_Dual+BSD-GPL', ['license', 'dual+bsd', 'gpl']
-        assert expected == list(query_tokenizer(text))
+        assert list(query_tokenizer(text)) == expected
 
     def test_query_tokenizer_behavior_from_file(self, regen=False):
         test_file = self.get_test_loc('tokenize/freertos/gpl-2.0-freertos.RULE')
@@ -201,24 +201,24 @@ class TestTokenizers(FileBasedTesting):
 
         with io.open(expected_file, encoding='utf-8') as exc_test:
             expected = json.load(exc_test)
-        assert expected == list(query_tokenizer(text))
+        assert list(query_tokenizer(text)) == expected
 
     def test_query_tokenizer_can_split_legacy_templates(self):
         text = u'abc def \n {{temp}} GHI'
         result = list(query_tokenizer(text))
         expected = [u'abc', u'def', u'temp', u'ghi', ]
-        assert expected == result
+        assert result == expected
 
     def test_query_tokenizer_merges_contiguous_gaps(self):
         text = u'abc{{temp}}{{xzy}}def'
         result = list(query_tokenizer(text))
         expected = [u'abc', u'temp', u'xzy', u'def']
-        assert expected == result
+        assert result == expected
 
     def test_query_tokenizer_handles_empty_legacy_templates(self):
         text = u'ab{{}}cd'
         expected = [u'ab', u'cd']
-        assert expected == list(query_tokenizer(text))
+        assert list(query_tokenizer(text)) == expected
 
     def test_query_tokenizer_does_not_throw_exception_for_pystache_templates(self):
         text = u'''Permission to use, copy, modify, and {{ /or : the
@@ -251,7 +251,7 @@ class TestTokenizers(FileBasedTesting):
 
         test_file = self.get_test_loc('tokenize/unicode/12180.atxt')
         with io.open(test_file, encoding='utf-8') as test:
-            assert expected == list(query_tokenizer(test.read()))
+            assert list(query_tokenizer(test.read())) == expected
 
     def test_query_tokenizer_can_handle_long_text(self):
         expected = [
@@ -279,7 +279,7 @@ class TestTokenizers(FileBasedTesting):
         ]
         test_file = self.get_test_loc('tokenize/unicode/12180.txt')
         with io.open(test_file, encoding='utf-8') as test:
-            assert expected == list(query_tokenizer(test.read()))
+            assert list(query_tokenizer(test.read())) == expected
 
     def test_query_tokenizer_does_not_crash_on_unicode_rules_text_1(self):
         test_file = self.get_test_loc('tokenize/unicode/12290.txt')
@@ -308,7 +308,7 @@ class TestTokenizers(FileBasedTesting):
 
     def test_query_tokenizer_does_not_crash_with_non_well_formed_legacy_templatized_parts(self):
         text = u'abcd{{ddd'
-        assert [u'abcd', u'ddd'] == list(query_tokenizer(text))
+        assert list(query_tokenizer(text)) == [u'abcd', u'ddd']
 
     def test_query_tokenizer_can_parse_ill_formed_legacy_template_from_file(self, regen=False):
         test_file = self.get_test_loc('tokenize/ill_formed_template/text.txt')
@@ -323,7 +323,7 @@ class TestTokenizers(FileBasedTesting):
         with io.open(expected_file, encoding='utf-8') as ex:
             expected = json.load(ex)
 
-        assert expected == result
+        assert result == expected
 
     def test_tokenizers_regex_do_not_choke_on_some_text(self):
         # somehow this text was making the regex choke.
@@ -352,7 +352,7 @@ class TestTokenizers(FileBasedTesting):
         text = '♡ Copying Art is an act of love. Love is not subject to law.'
         expected = [u'copying', u'art', u'is', u'an', u'act', u'of', u'love',
             u'love', u'is', u'not', u'subject', u'to', u'law']
-        assert expected == list(query_tokenizer(text))
+        assert list(query_tokenizer(text)) == expected
 
     def test_query_lines_on_html_like_texts(self, regen=False):
         test_file = self.get_test_loc('tokenize/htmlish.txt')
@@ -368,7 +368,7 @@ class TestTokenizers(FileBasedTesting):
         with io.open(expected_file, encoding='utf-8') as exc_test:
             expected = json.load(exc_test)
 
-        assert expected == result
+        assert result == expected
 
     def test_query_lines_on_html_like_texts_2(self, regen=False):
         test_file = self.get_test_loc('tokenize/htmlish.html')
@@ -384,7 +384,7 @@ class TestTokenizers(FileBasedTesting):
         with io.open(expected_file, encoding='utf-8') as exc_test:
             expected = json.load(exc_test)
 
-        assert expected == result
+        assert result == expected
 
     def test_query_tokenizer_on_html_like_texts(self, regen=False):
         test_file = self.get_test_loc('tokenize/htmlish.txt')
@@ -403,7 +403,7 @@ class TestTokenizers(FileBasedTesting):
         with io.open(expected_file, encoding='utf-8') as exc_test:
             expected = json.load(exc_test)
 
-        assert expected == result
+        assert result == expected
 
     def test_query_tokenizer_lines_on_html_like_texts_2(self, regen=False):
         test_file = self.get_test_loc('tokenize/htmlish.html')
@@ -422,7 +422,7 @@ class TestTokenizers(FileBasedTesting):
         with io.open(expected_file, encoding='utf-8') as exc_test:
             expected = json.load(exc_test)
 
-        assert expected == result
+        assert result == expected
 
 
 class TestNgrams(FileBasedTesting):
@@ -442,7 +442,7 @@ class TestNgrams(FileBasedTesting):
             ('source', 'and', 'binary', 'are'),
             ('and', 'binary', 'are', 'permitted.')
         ]
-        assert expected == result
+        assert result == expected
 
     def test_ngrams_with_None(self):
         tokens = ['Redistribution', 'and', 'use', None, 'in', 'source', 'and', 'binary', 'are', None]
@@ -455,7 +455,7 @@ class TestNgrams(FileBasedTesting):
             ('in', 'source', 'and', 'binary'),
             ('source', 'and', 'binary', 'are'),
             ('and', 'binary', 'are', None)]
-        assert expected == result
+        assert result == expected
 
     def test_ngrams_with_None_length_three(self):
         tokens = ['Redistribution', 'and', 'use', None, 'in', 'source', 'and', 'binary', 'are', None]
@@ -469,7 +469,7 @@ class TestNgrams(FileBasedTesting):
             ('source', 'and', 'binary'),
             ('and', 'binary', 'are'),
             ('binary', 'are', None)]
-        assert expected == result
+        assert result == expected
 
     def test_ngrams2(self):
         tokens = '''
@@ -485,12 +485,12 @@ class TestNgrams(FileBasedTesting):
             ('source', 'and', 'binary', 'are'),
             ('and', 'binary', 'are', 'permitted.')]
 
-        assert expected == result
+        assert result == expected
 
     def test_select_ngrams_with_unicode_inputs(self):
         result = list(select_ngrams(x for x in [('b', 'ä', 'c'), ('ä', 'ä', 'c'), ('e', 'ä', 'c'), ('b', 'f', 'ä'), ('g', 'c', 'd')]))
         expected = [('b', 'ä', 'c'), ('ä', 'ä', 'c'), ('e', 'ä', 'c'), ('b', 'f', 'ä'), ('g', 'c', 'd')]
-        assert expected == result
+        assert result == expected
 
 
 class MatchedTextTokenizer(FileBasedTesting):
@@ -537,11 +537,11 @@ class MatchedTextTokenizer(FileBasedTesting):
             {'punct': None, 'token': 'İrəli'},
             {'punct': ' .\t\n\n        \r', 'token': None}
         ]
-        assert expected == result
+        assert result == expected
 
         result_as_text = u''.join(itertools.chain.from_iterable(
             [v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
-        assert text == result_as_text
+        assert result_as_text == text
 
     def test_matched_query_text_tokenizer_works_with_spdx_ids(self):
         text = u''' * SPDX-License-Identifier: GPL-2.0+    BSD-3-Clause
@@ -602,11 +602,11 @@ class MatchedTextTokenizer(FileBasedTesting):
             (False, u')\n        ')
         ]
 
-        assert expected == result
+        assert result == expected
 
         result_as_text = u''.join(itertools.chain.from_iterable(
             [v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
-        assert text == result_as_text
+        assert result_as_text == text
 
     def test_matched_query_text_tokenizer_and_query_tokenizer_should_yield_the_same_texts(self):
         text = u'''Redistribution+ ;and use in! + 2003 source and +binary forms,

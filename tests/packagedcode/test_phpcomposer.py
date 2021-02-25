@@ -34,8 +34,7 @@ class TestPHPcomposer(PackageTester):
         expected = [('Nils Adermann', 'Developer', 'naderman@naderman.de', 'http://www.naderman.de'),
                     ('Jordi Boggiano', 'Developer', 'j.boggiano@seld.be', 'http://seld.be')
         ]
-        assert expected == list(phpcomposer.parse_person(test))
-
+        assert list(phpcomposer.parse_person(test)) == expected
     def test_parse_atimer(self):
         test_file = self.get_test_loc('phpcomposer/a-timer/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/a-timer/composer.json.expected')

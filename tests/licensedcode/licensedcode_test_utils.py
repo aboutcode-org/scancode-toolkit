@@ -240,7 +240,7 @@ def make_test(license_test, regen=False):
                     failure_trace.append('file://{test_data_file}'.format(**locals()))
 
             # this assert will always fail and provide a detailed failure trace
-            assert '\n'.join(results) == '\n'.join(failure_trace)
+            assert '\n'.join(failure_trace) == '\n'.join(results)
 
     closure_test_function.__name__ = test_name
 

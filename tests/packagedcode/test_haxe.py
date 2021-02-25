@@ -47,4 +47,4 @@ class TestHaxe(PackageTester):
         codebase = Codebase(test_dir)
         manifest_resource = codebase.get_resource_from_path(test_file, absolute=True)
         proot = haxe.HaxePackage.get_package_root(manifest_resource, codebase)
-        assert test_dir == proot.location
+        assert proot.location == test_dir

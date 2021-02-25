@@ -20,12 +20,12 @@ class TestConda(PackageTester):
     def test_parse_get_varialble(self):
         test_file = self.get_test_loc('conda/meta.yaml')
         results = conda.get_variables(test_file)
-        assert dict([(u'version', u'0.45.0'), (u'sha256', u'bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f')]) == results
+        assert results == dict([(u'version', u'0.45.0'), (u'sha256', u'bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f')])
 
     def test_get_yaml_data(self):
         test_file = self.get_test_loc('conda/meta.yaml')
         results = conda.get_yaml_data(test_file)
-        assert  (u'package', dict([(u'name', u'abeona'), (u'version', u'0.45.0')])) == list(results.items())[0]
+        assert  list(results.items())[0] == (u'package', dict([(u'name', u'abeona'), (u'version', u'0.45.0')]))
 
     def test_parse(self):
         test_file = self.get_test_loc('conda/meta.yaml')
@@ -39,4 +39,4 @@ class TestConda(PackageTester):
         codebase = Codebase(test_dir)
         manifest_resource = codebase.get_resource_from_path(test_file, absolute=True)
         proot = conda.CondaPackage.get_package_root(manifest_resource, codebase)
-        assert test_dir == proot.location
+        assert proot.location == test_dir

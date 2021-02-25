@@ -54,7 +54,7 @@ class TestGodeps(FileBasedTesting):
         gd = godeps.Godep()
         gd.loads(test)
         results = gd.to_dict()
-        assert expected == results
+        assert results == expected
 
     def check_package(self, test_file, expected_file, regen=False):
         test_loc = self.get_test_loc(test_file)
@@ -66,7 +66,7 @@ class TestGodeps(FileBasedTesting):
                 json.dump(results, ex, indent=2)
         with io.open(expected_loc, encoding='utf-8') as ex:
             expected = json.load(ex)
-        assert sorted(expected.items()) == sorted(results.items())
+        assert sorted(results.items()) == sorted(expected.items())
 
     def test_godeps_godeps_godeps_json_comments(self):
         self.check_package(

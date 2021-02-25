@@ -66,7 +66,7 @@ class TestAPI(FileBasedTesting):
             ('is_source', False),
             ('is_script', False)
         ]
-        assert expected == [(k, v) for k, v in info.items() if k != 'date']
+        assert [(k, v) for k, v in info.items() if k != 'date'] == expected
 
     def test_get_copyrights_include_copyrights_and_authors(self):
         test_file = self.get_test_loc('api/copyright/iproute.c')
@@ -83,7 +83,7 @@ class TestAPI(FileBasedTesting):
             ]),
         ])
 
-        assert expected == cops
+        assert cops == expected
 
     def test_get_emails(self):
         test_file = self.get_test_loc('api/email/3w-xxxx.c')
@@ -93,9 +93,9 @@ class TestAPI(FileBasedTesting):
             dict([(u'email', u'acme@conectiva.com.br'), (u'start_line', 3), (u'end_line', 3)]),
             dict([(u'email', u'andre@suse.com'), (u'start_line', 5), (u'end_line', 5)])
         ])
-        assert expected == results
+        assert results == expected
         results = api.get_emails(test_file, threshold=0)
-        assert expected == results
+        assert results == expected
 
     def test_get_emails_with_threshold(self):
         test_file = self.get_test_loc('api/email/3w-xxxx.c')
@@ -103,7 +103,7 @@ class TestAPI(FileBasedTesting):
         expected = dict(emails=[
             dict([(u'email', u'linux@3ware.com'), (u'start_line', 1), (u'end_line', 1)]),
         ])
-        assert expected == results
+        assert results == expected
 
     def test_get_urls(self):
         test_file = self.get_test_loc('api/url/IMarkerActionFilter.java')
@@ -113,9 +113,9 @@ class TestAPI(FileBasedTesting):
             dict([(u'url', u'https://github.com/rpm-software-management'), (u'start_line', 4), (u'end_line', 4)]),
             dict([(u'url', u'https://gitlab.com/Conan_Kudo'), (u'start_line', 6), (u'end_line', 6)]),
         ])
-        assert expected == results
+        assert results == expected
         results = api.get_urls(test_file, threshold=0)
-        assert expected == results
+        assert results == expected
 
     def test_get_urls_with_threshold(self):
         test_file = self.get_test_loc('api/url/IMarkerActionFilter.java')
@@ -123,7 +123,7 @@ class TestAPI(FileBasedTesting):
             dict([(u'url', u'http://www.eclipse.org/legal/epl-v10.html'), (u'start_line', 2), (u'end_line', 2)])
         ])
         results = api.get_urls(test_file, threshold=1)
-        assert expected == results
+        assert results == expected
 
     def test_get_license_with_expression(self):
         test_file = self.get_test_loc('api/license/apache-1.0.txt')
@@ -132,17 +132,17 @@ class TestAPI(FileBasedTesting):
             'apache-1.0',
             'gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib'
         ]
-        assert expected == results['license_expressions']
+        assert results['license_expressions'] == expected
 
     def test_get_license_with_expression2(self):
         test_file = self.get_test_loc('api/license/expression.RULE')
         results = api.get_licenses(test_file)
         expected = ['gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib']
-        assert expected == results['license_expressions']
+        assert results['license_expressions'] == expected
 
     def test_get_license_returns_correct_lines(self):
         test_file = self.get_test_loc('api/license/correct_lines2')
         results = api.get_licenses(test_file)
-        assert ['mit'] == results['license_expressions']
-        assert 2 == results['licenses'][0]['start_line']
-        assert 4 == results['licenses'][0]['end_line']
+        assert results['license_expressions'] == ['mit']
+        assert results['licenses'][0]['start_line'] == 2
+        assert results['licenses'][0]['end_line'] == 4

@@ -26,22 +26,22 @@ class TestPyPi(PackageTester):
     def test_parse(self):
         test_file = self.get_test_loc('pypi/setup.py/setup.py')
         package = pypi.parse(test_file)
-        assert 'scancode-toolkit' == package.name
-        assert '1.5.0' == package.version
-        assert 'ScanCode' == package.parties[0].name
-        assert ('ScanCode is a tool to scan code for license, '
-                'copyright and other interesting facts.') == package.description
-        assert 'https://github.com/nexB/scancode-toolkit' == package.homepage_url
+        assert package.name == 'scancode-toolkit'
+        assert package.version == '1.5.0'
+        assert package.parties[0].name == 'ScanCode'
+        assert package.description == ('ScanCode is a tool to scan code for license, '
+                'copyright and other interesting facts.')
+        assert package.homepage_url == 'https://github.com/nexB/scancode-toolkit'
 
     def test_parse_metadata(self):
         test_folder = self.get_test_loc('pypi')
         test_file = os.path.join(test_folder, 'metadata.json')
         package = pypi.parse_metadata(test_file)
-        assert 'six' == package.name
-        assert '1.10.0' == package.version
-        assert 'Python 2 and 3 compatibility utilities' == package.description
+        assert package.name == 'six'
+        assert package.version == '1.10.0'
+        assert package.description == 'Python 2 and 3 compatibility utilities'
         assert 'MIT' in package.declared_license['license']
-        assert ['License :: OSI Approved :: MIT License'] == package.declared_license['classifiers']
+        assert package.declared_license['classifiers'] == ['License :: OSI Approved :: MIT License']
         expected_classifiers = [
             "Programming Language :: Python :: 2",
             "Programming Language :: Python :: 3",
@@ -49,25 +49,25 @@ class TestPyPi(PackageTester):
             "Topic :: Software Development :: Libraries",
             "Topic :: Utilities"
         ]
-        assert expected_classifiers == package.keywords
+        assert package.keywords == expected_classifiers
         expected = [
             dict([
                 ('type', u'person'), ('role', u'contact'),
                 ('name', u'Benjamin Peterson'), ('email', None), ('url', None)])
         ]
-        assert expected == [p.to_dict() for p in package.parties]
-        assert 'http://pypi.python.org/pypi/six/' == package.homepage_url
+        assert [p.to_dict() for p in package.parties] == expected
+        assert package.homepage_url == 'http://pypi.python.org/pypi/six/'
 
     def test_parse_pkg_info(self):
         test_file = self.get_test_loc('pypi/PKG-INFO')
         package = pypi.parse_pkg_info(test_file)
-        assert 'TicketImport' == package.name
-        assert '0.7a' == package.version
-        assert 'Import CSV and Excel files' == package.description
+        assert package.name == 'TicketImport'
+        assert package.version == '0.7a'
+        assert package.description == 'Import CSV and Excel files'
         assert 'BSD' in package.declared_license
-        assert 'http://nexb.com' == package.homepage_url
+        assert package.homepage_url == 'http://nexb.com'
         expected = [dict([('type', u'person'), ('role', u''), ('name', u'Francois Granade'), ('email', None), ('url', None)])]
-        assert expected == [p.to_dict() for p in package.parties]
+        assert [p.to_dict() for p in package.parties] == expected
 
     @skipIf(on_windows, 'Somehow this fails on Windows')
     def test_parse_setup_py_arpy(self):
@@ -410,8 +410,8 @@ class TestPyPi(PackageTester):
     def test_parse_with_dparse(self):
         test_file = self.get_test_loc('pypi/dparse/requirements.txt')
         dependencies = pypi.parse_with_dparse(test_file)
-        assert [DependentPackage(purl='pkg:pypi/lxml@3.4.4', requirement='==3.4.4', scope='dependencies', is_resolved=True),
-                DependentPackage(purl='pkg:pypi/requests@2.7.0', requirement='==2.7.0', scope='dependencies', is_resolved=True)] == dependencies
+        assert dependencies == [DependentPackage(purl='pkg:pypi/lxml@3.4.4', requirement='==3.4.4', scope='dependencies', is_resolved=True),
+                DependentPackage(purl='pkg:pypi/requests@2.7.0', requirement='==2.7.0', scope='dependencies', is_resolved=True)]
 
 
 FILENAME_LIST = [
@@ -476,6 +476,6 @@ class TestSetupPyVersions(object):
             expected = json.load(ex)
 
         try:
-            assert expected == results
+            assert results == expected
         except AssertionError:
-            assert json.dumps(expected, indent=2) == json.dumps(results, indent=2)
+            assert json.dumps(results, indent=2) == json.dumps(expected, indent=2)

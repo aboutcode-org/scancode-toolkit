@@ -38,7 +38,7 @@ class TestDebianPackageGetInstalledPackages(PackageTester):
     def test_get_installed_packages_should_not_fail_on_rootfs_without_installed_debian_packages(self):
         test_rootfs = self.get_temp_dir()
         result = list(debian.get_installed_packages(test_rootfs))
-        assert [] == result
+        assert result == []
 
 
 class TestDebian(PackageTester):
@@ -47,7 +47,7 @@ class TestDebian(PackageTester):
     def test_parse_status_file_not_a_status_file(self):
         test_file = self.get_test_loc('debian/not-a-status-file')
         test_packages = list(debian.parse_status_file(test_file))
-        assert [] == test_packages
+        assert test_packages == []
 
     def test_parse_status_file_non_existing_file(self):
         test_file = os.path.join(self.get_test_loc('debian'), 'foobarbaz')
@@ -77,7 +77,7 @@ class TestDebian(PackageTester):
         test_file = os.path.join(test_info_dir, 'status')
 
         packages = list(debian.parse_status_file(test_file, distro='ubuntu'))
-        assert 1 == len(packages)
+        assert len(packages) == 1
 
         test_package = packages[0]
 
@@ -90,8 +90,8 @@ class TestDebian(PackageTester):
 
         resources = test_package.get_list_of_installed_files(test_info_dir)
 
-        assert 4 == len(resources)
-        assert expected == resources
+        assert len(resources) == 4
+        assert resources == expected
 
     def test_get_installed_packages_ubuntu_with_missing_md5sums(self):
         test_root_dir = self.get_test_loc('debian/ubuntu-var-lib-dpkg/')
@@ -114,7 +114,7 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
             qualifiers={'arch':'amd64'}
         )
 
-        assert [] == test_pkg.get_list_of_installed_files(test_info_dir)
+        assert test_pkg.get_list_of_installed_files(test_info_dir) == []
 
     @skipIf(on_windows, 'File names cannot contain colons on Windows')
     def test_multi_arch_is_same(self):
@@ -138,8 +138,8 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
 
         results = test_pkg.get_list_of_installed_files(test_info_dir)
 
-        assert 6 == len(results)
-        assert expected == results
+        assert len(results) == 6
+        assert results == expected
 
     def test_multi_arch_is_foreign(self):
         test_info_dir = self.get_test_loc('debian/foreign-multi-arch')
@@ -169,8 +169,8 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
 
         results = test_pkg.get_list_of_installed_files(test_info_dir)
 
-        assert 14 == len(results)
-        assert expected == results
+        assert len(results) == 14
+        assert results == expected
 
     def test_multi_arch_is_missing(self):
         test_info_dir = self.get_test_loc('debian/missing-multi-arch')
@@ -189,5 +189,5 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
         ]
         results = test_pkg.get_list_of_installed_files(test_info_dir)
 
-        assert 5 == len(results)
-        assert expected == results
+        assert len(results) == 5
+        assert results == expected

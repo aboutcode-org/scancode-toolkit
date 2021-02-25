@@ -66,12 +66,12 @@ def compare_results(results, test_pom_loc, expected_json_loc, regen=False):
     results_dump = json.dumps(results, indent=2)
     expected_dump = json.dumps(expected, indent=2)
     try:
-        assert expected_dump == results_dump
+        assert results_dump == expected_dump
     except AssertionError:
         test_pom_loc = 'file://' + test_pom_loc
         expected_json_loc = 'file://' + expected_json_loc
         expected = [test_pom_loc, expected_json_loc, expected_dump]
-        assert '\n'.join(expected) == results_dump
+        assert results_dump == '\n'.join(expected)
 
 
 def parse_pom(location=None, text=None, check_is_pom=False):
@@ -119,15 +119,15 @@ class TestMavenMisc(BaseMavenCase):
     def test_parse_pom_non_pom(self):
         test_pom_loc = self.get_test_loc('maven_misc/non-maven.pom')
         results = parse_pom(location=test_pom_loc, check_is_pom=True)
-        assert {} == results
+        assert results == {}
         self.check_parse_pom(test_pom_loc, regen=False)
 
     def test_MavenPom_simple_creation(self):
         test_loc = self.get_test_loc('maven_misc/mini-pom.xml')
         pom = maven.MavenPom(test_loc)
-        assert 'activemq-camel' == pom.artifact_id
+        assert pom.artifact_id == 'activemq-camel'
         # note: there has been no parent resolving yet
-        assert None == pom.group_id
+        assert pom.group_id == None
 
     def test_pom_dependencies(self):
         test_loc = self.get_test_loc('maven2/activemq-camel-pom.xml')
@@ -153,7 +153,7 @@ class TestMavenMisc(BaseMavenCase):
         expected = [(s, sorted(v)) for s, v in expected]
 
         results = [(s, sorted(v)) for s, v in pom.dependencies.items()]
-        assert expected == results
+        assert results == expected
 
     def test_pom_issue_management_properties_are_resolved(self):
         test_loc = self.get_test_loc('maven2/xml-format-maven-plugin-3.0.6.pom')
@@ -164,7 +164,7 @@ class TestMavenMisc(BaseMavenCase):
             (u'url', 'https://github.com/acegi/xml-format-maven-plugin/issues')]
         )
         result = pom.issue_management
-        assert expected == result
+        assert result == expected
 
     def test_pom_dependencies_are_resolved(self):
         test_loc = self.get_test_loc('maven2/activemq-camel-pom.xml')
@@ -190,7 +190,7 @@ class TestMavenMisc(BaseMavenCase):
         expected = [(s, sorted(v)) for s, v in expected]
 
         results = [(s, sorted(v)) for s, v in pom.dependencies.items()]
-        assert expected == results
+        assert results == expected
 
     def test_parse_to_package_base(self):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
@@ -205,7 +205,7 @@ class TestMavenMisc(BaseMavenCase):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
         package = maven.parse(test_file)
         package2 = maven.MavenPomPackage(**package.to_dict(exclude_properties=True))
-        assert package.to_dict().items() == package2.to_dict().items()
+        assert package2.to_dict().items() == package.to_dict().items()
 
     def test_package_root_is_properly_returned_for_metainf_poms(self):
         from packagedcode.plugin_package import PackageScanner
@@ -217,7 +217,7 @@ class TestMavenMisc(BaseMavenCase):
         manifest_resource.packages.append(packages[0].to_dict())
         manifest_resource.save(codebase)
         proot = maven.MavenPomPackage.get_package_root(manifest_resource, codebase)
-        assert 'activiti-image-generator-7-201802-EA-sources.jar-extract' == proot.name
+        assert proot.name == 'activiti-image-generator-7-201802-EA-sources.jar-extract'
 
     def test_package_dependency_not_missing(self):
         test_file = self.get_test_loc('maven2/log4j-pom.xml')
@@ -232,21 +232,21 @@ class TestPomProperties(testcase.FileBasedTesting):
         value = '${groupId}.mycomponent'
         expected = 'org.apache.mycomponent'
         test = maven.MavenPom._replace_props(value, properties)
-        assert expected == test
+        assert test == expected
 
     def test_resolve_properties_with_expression(self):
         properties = {'groupId': 'org.apache'}
         value = '${groupId.substring(4)}.mycomponent'
         expected = 'apache.mycomponent'
         test = maven.MavenPom._replace_props(value, properties)
-        assert expected == test
+        assert test == expected
 
     def test_resolve_properties_with_substring_expression(self):
         properties = {'groupId': 'org.apache'}
         value = '${groupId.substring(0,3)}.mycomponent'
         expected = 'org.mycomponent'
         test = maven.MavenPom._replace_props(value, properties)
-        assert expected == test
+        assert test == expected
 
     def test_get_properties(self):
         test_loc = self.get_test_loc('maven2_props/multiple/pom.xml')
@@ -282,7 +282,7 @@ class TestPomProperties(testcase.FileBasedTesting):
             'pkgVersion': '1.4',
         }
 
-        assert expected == test
+        assert test == expected
 
     def test_get_properties_single(self):
         test_loc = self.get_test_loc('maven2_props/single/pom.xml')
@@ -300,7 +300,7 @@ class TestPomProperties(testcase.FileBasedTesting):
             'project.version': None,
             'version': None
         }
-        assert expected == test
+        assert test == expected
 
     def test_get_properties_advanced(self):
         test_loc = self.get_test_loc('maven2_props/xml-format-maven-plugin-3.0.6.pom')
@@ -333,7 +333,7 @@ class TestPomProperties(testcase.FileBasedTesting):
             'project.version': '3.0.6',
             'version': '3.0.6'
         }
-        assert expected == test
+        assert test == expected
 
     def test_parse_can_run_without_pom_check(self):
         test_loc = self.get_test_loc('maven_misc/ant-1.6.5.maven')
@@ -346,7 +346,7 @@ class TestPomProperties(testcase.FileBasedTesting):
         # there is a file at maven2_props/props_file/activiti-image-generator/pom.properties
         test_loc = self.get_test_loc('maven2_props/props_file/activiti-image-generator/pom.xml')
         pom = maven.parse(test_loc, check_is_pom=False)
-        assert 'org.activiti' == pom.namespace
+        assert pom.namespace == 'org.activiti'
 
 
 class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
@@ -359,7 +359,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
-        assert expected == result
+        assert result == expected
 
     def test_compute_normalized_license_tree_nodes(self):
         declared_license = [
@@ -368,7 +368,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
-        assert expected == result
+        assert result == expected
 
     def test_compute_normalized_license_with_unknown_url(self):
         declared_license = [
@@ -377,7 +377,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
-        assert expected == result
+        assert result == expected
 
     def test_compute_normalized_license_with_unknown_url_known_comments(self):
         declared_license = [
@@ -386,7 +386,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
-        assert expected == result
+        assert result == expected
 
     def test_compute_normalized_license_with_unknown_url_unknown_comments(self):
         declared_license = [
@@ -395,7 +395,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
-        assert expected == result
+        assert result == expected
 
     def test_compute_normalized_license_unknown_name(self):
         declared_license = [
@@ -404,7 +404,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         ]
         result = maven.compute_normalized_license(declared_license)
         expected = '(unknown AND apache-2.0) AND mit'
-        assert expected == result
+        assert result == expected
 
     def test_compute_normalized_license_same_name_and_url(self):
         declared_license = [
@@ -413,7 +413,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
-        assert expected == result
+        assert result == expected
 
     def test_compute_normalized_license_same_name_url_comments(self):
         declared_license = [
@@ -422,7 +422,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
-        assert expected == result
+        assert result == expected
 
     def test_compute_normalized_license_with_url_invalid(self):
         declared_license = [
@@ -430,7 +430,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'mit'
-        assert expected == result
+        assert result == expected
 
     def test_compute_normalized_license_with_duplicated_license(self):
         declared_license = [
@@ -439,7 +439,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'lgpl-2.0-plus'
-        assert expected == result
+        assert result == expected
 
 
 def relative_walk(dir_path):

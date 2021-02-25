@@ -152,7 +152,7 @@ def test_scan_info_returns_full_root():
     run_scan_click(args)
     result_data = json.loads(open(result_file).read())
     file_paths = [f['path'] for f in result_data['files']]
-    assert 12 == len(file_paths)
+    assert len(file_paths) == 12
     root = fileutils.as_posixpath(test_dir)
     assert all(p.startswith(root) for p in file_paths)
 
@@ -168,7 +168,7 @@ def test_scan_info_returns_correct_full_root_with_single_file():
     assert len(files) == 1
     scanned_file = files[0]
     # and we check that the path is the full path without repeating the file name
-    assert fileutils.as_posixpath(test_file) == scanned_file['path']
+    assert scanned_file['path'] == fileutils.as_posixpath(test_file)
 
 
 def test_scan_info_returns_does_not_strip_root_with_single_file():
@@ -358,7 +358,7 @@ def test_scan_works_with_multiple_processes_and_timeouts():
     ]
 
     result_json = json.loads(open(result_file).read())
-    assert sorted(sorted(x) for x in expected) == sorted(sorted(x.items()) for x in result_json['files'])
+    assert sorted(sorted(x.items()) for x in result_json['files']) == sorted(sorted(x) for x in expected)
 
 
 def check_scan_does_not_fail_when_scanning_unicode_files_and_paths(verbosity):
@@ -461,7 +461,7 @@ def test_scan_quiet_to_stdout_only_echoes_json_results():
     json_result1_output = load_json_result_from_string(result1_output)
     json_result_to_stdout = load_json_result_from_string(result_to_stdout.output)
     # cleanup JSON
-    assert json_result1_output == json_result_to_stdout
+    assert json_result_to_stdout == json_result1_output
 
 
 def test_scan_verbose_to_stdout_does_not_echo_ansi_escapes():
@@ -657,7 +657,7 @@ def test_scan_cli_help(regen=False):
     if regen:
         with io.open(expected_file, 'w', encoding='utf-8') as ef:
             ef.write(result.output)
-    assert open(expected_file).read() == result.output
+    assert result.output == open(expected_file).read()
 
 
 def test_scan_errors_out_with_unknown_option():
@@ -788,7 +788,7 @@ def test_get_displayable_summary():
             u'  scan_start: None',
             u'  scan_end:   None']
     )
-    assert expected == results
+    assert results == expected
 
 
 def test_display_summary_edge_case_scan_time_zero_should_not_fail():
@@ -851,7 +851,7 @@ def test_scan_keep_temp_files_is_false_by_default():
     assert os.path.exists(temp_directory)
     # this does not make sense but that's what is seen in practice
     expected = 2 if (on_windows or on_mac_new_py) else 1
-    assert expected == len(list(os.walk(temp_directory)))
+    assert len(list(os.walk(temp_directory))) == expected
 
 
 def test_scan_keep_temp_files_keeps_files():
@@ -872,7 +872,7 @@ def test_scan_keep_temp_files_keeps_files():
     assert os.path.exists(temp_directory)
     # this does not make sense but that's what is seen in practice
     expected = 8 if (on_windows or on_mac_new_py) else 7
-    assert expected == len(list(os.walk(temp_directory)))
+    assert len(list(os.walk(temp_directory))) == expected
 
 
 def test_scan_errors_out_without_an_input_path():
@@ -892,7 +892,7 @@ def test_merge_multiple_scans():
         expected_files = json.loads(f.read())['files']
     with open(result_file) as f:
         result_files = json.loads(f.read())['files']
-    assert expected_files == result_files
+    assert result_files == expected_files
 
 
 def test_VirtualCodebase_output_with_from_json_is_same_as_original():
@@ -909,5 +909,5 @@ def test_VirtualCodebase_output_with_from_json_is_same_as_original():
     expected_headers = expected.pop('headers', [])
     results_headers = results.pop('headers', [])
 
-    assert json.dumps(expected, indent=2) == json.dumps(results , indent=2)
+    assert json.dumps(results , indent=2) == json.dumps(expected, indent=2)
     assert len(results_headers) == len(expected_headers) + 1

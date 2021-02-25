@@ -40,9 +40,9 @@ class PackageTester(testcase.FileBasedTesting):
             expected = json.load(ex)
 
         try:
-            assert expected == results
+            assert results == expected
         except AssertionError:
-            assert json.dumps(expected, indent=2) == json.dumps(results, indent=2)
+            assert json.dumps(results, indent=2) == json.dumps(expected, indent=2)
 
     def check_packages(self, packages, expected_loc, regen=False):
         """
@@ -69,7 +69,7 @@ class PackageTester(testcase.FileBasedTesting):
             expected_packages = json.load(ex, encoding='utf-8')
 
         for expected_package, result in zip(expected_packages, results):
-            assert expected_package == result
+            assert result == expected_package
 
 
 def check_result_equals_expected_json(result, expected, regen=False):
@@ -84,4 +84,4 @@ def check_result_equals_expected_json(result, expected, regen=False):
     with open(expected) as ex:
         expected = json.loads(ex.read())
 
-    assert expected == result
+    assert result == expected
