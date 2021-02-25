@@ -1,0 +1,13 @@
+license_expression: gpl-2.0 WITH linux-syscall-exception-gpl
+is_license_text: yes
+minimum_coverage: 98
+relevance: 100
+notes: from https://raw.githubusercontent.com/pombredanne/gpl-history/v1.0/allvers/linux.COPYING.1
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by me and others
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - me and others
+    - the Free Software Foundation

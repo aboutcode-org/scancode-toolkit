@@ -1,0 +1,71 @@
+- |
+  BSD (3Com)
+  Permissive (Advansys)
+  BSD (Agere)
+  Binary redistribution (Abilis)
+  Binary redistribution (Creative)
+  Binary redistribution
+  BSD 2-clause
+  Binary redistribution (Chelsio)
+  Permissive (BayCom)
+  Binary redistribution (Xceive)
+  Binary redistribution (DiBcom)
+  Binary redistribution (ITEtech)
+  Binary redistribution (Terratec)
+  BSD (Intel)
+  Binary redistribution (ENE)
+  Redistributable (Sensoray)
+  Redistributable (Micronas)
+  Binary redistribution (Intel, narrower patent license)
+  Binary redistribution (Intel)
+  Binary redistribution (NXP)
+  BSD 4-clause (Kawasaki LSI)
+  Binary redistribution (Matrox)
+  Binary redistribution (Moxa)
+  Binary redistribution (MediaTek)
+  Binary redistribution (MTS)
+  License For Customer Use of NVIDIA Software
+  Binary redistribution (Rockchip)
+  Binary redistribution (Comtrol)
+  Binary redistribution (Ralink)
+  BSD (Ikanos)
+  Binary redistribution (Conexant)
+- 3com-microcode AND agere-bsd AND bsd-new AND bsd-original AND bsd-simplified AND bsd-simplified-source
+  AND intel AND isc AND linux-openib AND mit AND other-permissive AND proprietary-license AND
+  ralink-firmware AND unknown
+- |
+  1999-2004, 3Com Corporation
+  1995-2000, Advanced System Products, Inc.
+  2000-2001, ConnectCom Solutions, Inc.
+  1994-1995, AT&T
+  1996-2000, Lucent Technologies
+  2001-2004, Agere Systems Inc.
+  2010, Abilis Systems Sarl
+  2012, Creative Technology Ltd
+  2007-2009, NetLogic Microsystems, Inc.
+  2003-2009, Chelsio, Inc.
+  2011-2013, Chelsio Communications
+  1999, BayCom GmbH
+  2009, Xceive Corporation <info@xceive.com>
+  2009, DiBcom
+  2014, ITE Tech. Inc.
+  Terratec
+  1999-2001, Intel Corporation
+  2011, ENE Technology Inc.
+  Sensoray
+  Micronas
+  2015, Intel Corporation
+  2017, NXP
+  1999, Kawasaki LSI.
+  1999, Matrox Graphics Inc.
+  Moxa Inc.
+  2013, Ralink, A MediaTek Company
+  2005, Multi-Tech Systems, Inc.
+  2014-2017, NVIDIA Corporation
+  2014, Intel Corporation.
+  2016, Fuzhou Rockchip Electronics Co.Ltd
+  2013, Comtrol Corporation
+  2007, Ralink Technology Corporation
+  2007, Tehuti Networks Ltd.
+  2000-2003, Broadcom Corporation.
+  2006, Ikanos Communications, Inc.

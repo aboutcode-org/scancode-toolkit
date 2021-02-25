@@ -1,0 +1,13 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_copyrights:
+    - (c) Waiver of Rights
+ignorable_holders:
+    - Waiver of Rights
+ignorable_urls:
+    - https://about.gitlab.com/handbook/dmca
+    - https://about.gitlab.com/handbook/dmca/
+    - https://about.gitlab.com/terms
+    - https://gitlab.com/gitlab-org/security-products/gemnasium-db

@@ -1,0 +1,110 @@
+key: newlib-subdirectory
+short_name: newlib-subdirectory
+name: newlib-subdirectory License
+category: Copyleft Limited
+owner: Newlib Project
+homepage_url: https://sourceware.org/newlib/
+spdx_license_key: LicenseRef-scancode-newlib-subdirectory
+ignorable_authors:
+  - Jon Beniston <jon@beniston.com>
+  - Mark Kettenis <kettenis@phys.uva.nl>
+  - S. L. Moshier
+ignorable_copyrights:
+  - (c) Copyright 1986 HEWLETT-PACKARD COMPANY
+  - (c) Copyright 2001,2006, International Business Machines Corporation, Sony Computer Entertainment,
+    Incorporated
+  - Copyright (c) 1981-2000 The Regents of the University of California
+  - Copyright (c) 1984,2000 S.L. Moshier
+  - Copyright (c) 1990-1999, 2000, 2001 Free Software Foundation, Inc.
+  - Copyright (c) 1991 DJ Delorie
+  - Copyright (c) 1991 by AT&T.
+  - Copyright (c) 1993 Intel Corporation
+  - Copyright (c) 1993 by Sun Microsystems, Inc.
+  - Copyright (c) 1994-2009 Red Hat, Inc.
+  - Copyright (c) 1995 Alex Tatmanjants <alex@elvisti.kiev.ua> at Electronni Visti IA, Kiev,
+    Ukraine
+  - Copyright (c) 1996 Xavier Leroy (Xavier.Leroy@inria.fr)
+  - Copyright (c) 1996 by Andrey A. Chernov, Moscow, Russia
+  - Copyright (c) 1996-2010,2014 Texas Instruments Incorporated http://www.ti.com
+  - Copyright (c) 1997 by Andrey A. Chernov, Moscow, Russia
+  - Copyright (c) 1997-2002 FreeBSD Project
+  - Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+  - Copyright (c) 1998, M. Warner Losh <imp@freebsd.org>
+  - Copyright (c) 1998-2001 by Lucent Technologies
+  - Copyright (c) 1999 Citrus Project
+  - Copyright (c) 1999 Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm,
+    Sweden)
+  - Copyright (c) 1999, 2000 Konstantin Chuguev
+  - Copyright (c) 1999, 2000, 2001, 2002 Stephane Carrez (stcarrez@nerim.fr)
+  - Copyright (c) 2000, 2001 Alexey Zelkin <phantom@FreeBSD.org>
+  - Copyright (c) 2001 Christopher G. Demetriou
+  - Copyright (c) 2001 Daniel Eischen <deischen@FreeBSD.org>
+  - Copyright (c) 2001 Hans-Peter Nilsson
+  - Copyright (c) 2001 Mike Barcroft <mike@FreeBSD.org>
+  - Copyright (c) 2003 Altera Corporation
+  - Copyright (c) 2003, Artem B. Bityuckiy, SoftMine Corporation
+  - Copyright (c) 2004 National Semiconductor Corporation
+  - Copyright (c) 2004, 2009 Xilinx, Inc.
+  - Copyright (c) 2008 Ed Schouten <ed@FreeBSD.org>
+  - Copyright (c) 2009 ARM Ltd
+  - Copyright (c) 2011, Adapteva, Inc.
+  - Copyright 1989, 1990 Advanced Micro Devices, Inc.
+  - Copyright 1992, 1993, 1994 Henry Spencer
+  - Copyright 2002 SuperH, Inc.
+ignorable_emails:
+  - Todd.Miller@courtesan.com
+  - Xavier.Leroy@inria.fr
+  - alex@elvisti.kiev.ua
+  - deischen@FreeBSD.org
+  - ed@FreeBSD.org
+  - imp@freebsd.org
+  - jon@beniston.com
+  - kettenis@phys.uva.nl
+  - mike@FreeBSD.org
+  - phantom@FreeBSD.org
+  - softwaresupport@superh.com
+  - stcarrez@nerim.fr
+ignorable_holders:
+  - ARM Ltd
+  - AT&T.
+  - Adapteva, Inc.
+  - Advanced Micro Devices, Inc.
+  - Alex Tatmanjants at Electronni Visti IA, Kiev, Ukraine
+  - Alexey Zelkin
+  - Altera Corporation
+  - Andrey A. Chernov, Moscow, Russia
+  - Artem B. Bityuckiy, SoftMine Corporation
+  - Christopher G. Demetriou
+  - Citrus Project
+  - DJ Delorie
+  - Daniel Eischen
+  - Ed Schouten
+  - Free Software Foundation, Inc.
+  - FreeBSD Project
+  - HEWLETT-PACKARD COMPANY
+  - Hans-Peter Nilsson
+  - Henry Spencer
+  - Intel Corporation
+  - International Business Machines Corporation, Sony Computer Entertainment, Incorporated
+  - Konstantin Chuguev
+  - Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm, Sweden)
+  - Lucent Technologies
+  - M. Warner Losh
+  - Mike Barcroft
+  - National Semiconductor Corporation
+  - Red Hat, Inc.
+  - S.L. Moshier
+  - Stephane Carrez
+  - Sun Microsystems, Inc.
+  - SuperH, Inc.
+  - Texas Instruments Incorporated
+  - The Regents of the University of California
+  - Todd C. Miller
+  - Xavier Leroy
+  - Xilinx, Inc.
+ignorable_urls:
+  - http://www.opensource.org/licenses
+  - http://www.ti.com/
+minimum_coverage: 90
+
+

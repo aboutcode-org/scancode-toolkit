@@ -1,0 +1,5 @@
+license_expression: generic-exception
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 98
+notes: This is an exception found in Tahoe-LAFS with the TGPPL or the GPL

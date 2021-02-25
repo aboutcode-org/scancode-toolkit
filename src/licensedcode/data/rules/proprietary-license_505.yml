@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+notes: the zoo license is for https://en.wikipedia.org/wiki/Zoo_(file_format) which is still
+    in use in some BSD OS

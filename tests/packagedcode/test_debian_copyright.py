@@ -18,12 +18,32 @@ import saneyaml
 from packagedcode import debian_copyright
 
 
-def check_expected(test_loc, expected_loc, regen=False):
+def check_expected_parse_copyright_file(
+    test_loc,
+    expected_loc,
+    regen=False,
+    with_details=False,
+):
     """
     Check copyright parsing of `test_loc` location against an expected JSON file
     at `expected_loc` location. Regen the expected file if `regen` is True.
     """
-    result = saneyaml.dump(list(debian_copyright.parse_copyright_file(test_loc)))
+    if with_details:
+        skip_debian_packaging = True
+        simplify_licenses = True
+        unique = True
+    else:
+        skip_debian_packaging = False
+        simplify_licenses = False
+        unique = False
+
+    parsed = debian_copyright.parse_copyright_file(
+        copyright_file=test_loc,
+        skip_debian_packaging=skip_debian_packaging,
+        simplify_licenses=simplify_licenses,
+        unique=unique,
+    )
+    result = saneyaml.dump(list(parsed))
     if regen:
         with io.open(expected_loc, 'w', encoding='utf-8') as reg:
             reg.write(result)
@@ -31,7 +51,7 @@ def check_expected(test_loc, expected_loc, regen=False):
     with io.open(expected_loc, encoding='utf-8') as ex:
         expected = ex.read()
 
-    if expected != result:
+    if result != expected:
 
         expected = '\n'.join([
             'file://' + test_loc,
@@ -56,14 +76,21 @@ def relative_walk(dir_path):
             yield file_path
 
 
-def create_test_function(test_loc, expected_loc, test_name, regen=False):
+def create_test_function(
+    test_loc,
+    expected_loc,
+    test_name,
+    with_details=False,
+    regen=False,
+):
     """
     Return a test function closed on test arguments.
     """
 
     # closure on the test params
     def test_func(self):
-        check_expected(test_loc, expected_loc, regen=regen)
+        check_expected_parse_copyright_file(
+            test_loc, expected_loc, with_details=with_details, regen=regen)
 
     # set a proper function name to display in reports and use in discovery
     if isinstance(test_name, bytes):
@@ -84,12 +111,25 @@ def build_tests(test_dir, clazz, prefix='test_', regen=False):
     for test_file in relative_walk(test_dir_loc):
         test_name = prefix + text.python_safe_name(test_file)
         test_loc = path.join(test_dir_loc, test_file)
-        expected_loc = test_loc + '.expected.yml'
+
+        # create two test methods: one with and one without details
+        test_method = create_test_function(
+            test_loc=test_loc,
+            expected_loc=test_loc + '.expected.yml',
+            test_name=test_name,
+            regen=regen,
+            with_details=False,
+        )
+        # attach that method to the class
+        setattr(clazz, test_name, test_method)
 
         test_method = create_test_function(
             test_loc=test_loc,
-            expected_loc=expected_loc,
-            test_name=test_name, regen=regen)
+            expected_loc=test_loc + '-detailed.expected.yml',
+            test_name=test_name,
+            regen=regen,
+            with_details=True,
+        )
         # attach that method to the class
         setattr(clazz, test_name, test_method)
 
@@ -101,6 +141,7 @@ class TestDebianCopyrightLicenseDetection(FileBasedTesting):
 
 build_tests(
     test_dir='debian/copyright/debian-2019-11-15',
-    prefix='test_debian_copyright_',
+    prefix='test_debian_parse_copyright_file_',
     clazz=TestDebianCopyrightLicenseDetection,
-    regen=False)
+    regen=False,
+)

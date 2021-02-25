@@ -1,0 +1,37 @@
+- |
+  GPL-3+
+  permissive
+  LGPL-2.1+
+  Expat
+  GPL-3+ or BSD-3-clause
+  LGPL-3+
+  RFC-Reference
+  TinySCHEME
+  CC0-1.0
+  BSD-3-clause
+- artistic-2.0 AND bsd-new AND cc0-1.0 AND fsf-unlimited-no-warranty AND gpl-3.0-plus AND ietf
+  AND lgpl-2.1-plus AND lgpl-3.0-plus AND mit AND other-permissive AND unknown
+- |
+  1992, 1995-2016, Free Software Foundation, Inc
+  1998-2007, 2009, 2012, Free Software Foundation, Inc
+  2013, Werner Koch
+  2003, g10 Code GmbH
+  1998-2001, 2003, 2004, 2006, 2007 Free Software Foundation, Inc
+  1985, 1989-1993, 1995-2003, 2007, 2008 Free Software Foundation, Inc.
+  2008-2010, 2012-2016 William Ahern
+  2004, 2005, g10 Code GmbH
+  2006, 2008, 2009, 2011, Free Software Foundation, Inc
+  2003-2007, Free Software Foundation, Inc
+  1999-2000, Werner Koch, Duesseldorf
+  2003-2004, g10 Code GmbH
+  2007, g10 Code GmbH
+  1998-2013 Free Software Foundation, Inc.
+  1997, 1998, 2013 Werner Koch
+  1998 The Internet Society
+  2000, Dimitrios Souflis
+  2016, Justus Winter, Werner Koch
+  1998-2018 Debian GnuPG packagers, including
+  Eric Dorland <eric@debian.org>
+  Daniel Kahn Gillmor <dkg@fifthhorseman.net>
+  NIIBE Yutaka <gniibe@fsij.org>
+  2017 Daniel Kahn Gillmor <dkg@fifthhorseman.net>
