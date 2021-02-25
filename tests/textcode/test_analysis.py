@@ -28,7 +28,7 @@ def check_text_lines(result, expected_file, regen=False):
                 json.dump(result, tf, indent=2)
         with open(expected_file, 'rb') as tf:
             expected = json.load(tf)
-        assert expected == result
+        assert result == expected
 
 
 class TestAnalysis(FileBasedTesting):
@@ -55,7 +55,7 @@ class TestAnalysis(FileBasedTesting):
     def test_archives_do_not_yield_numbered_text_lines(self):
         test_file = self.get_test_loc('archive/simple.jar')
         result = list(numbered_text_lines(test_file))
-        assert [] == result
+        assert result == []
 
     def test_mpg_media_do_not_yield_numbered_text_lines(self):
         test_dir = self.get_test_loc('media_with_text')
@@ -67,14 +67,14 @@ class TestAnalysis(FileBasedTesting):
         test_dir = self.get_test_loc('media_without_text')
         for test_file in resource_iter(test_dir, with_dirs=False):
             result = list(numbered_text_lines(test_file))
-            assert [] == result, 'Should not return text lines:' + test_file
+            assert result == [], 'Should not return text lines:' + test_file
 
     def test_numbered_text_lines_handles_sfdb(self):
         test_file = self.get_test_loc('analysis/splinefonts/Ambrosia.sfd')
         result = list(l for _, l in numbered_text_lines(test_file))
         expected_file = test_file + '.expected'
         expected = open(expected_file, 'r').read().splitlines(True)
-        assert expected == list(result)
+        assert list(result) == expected
 
     def test_numbered_text_lines_handles_jsmap1(self):
         test_file = self.get_test_loc('analysis/jsmap/angular-sanitize.min.js.map')
@@ -117,8 +117,8 @@ class TestAnalysis(FileBasedTesting):
             'the rights to use, copy, modify, merge, , , sublicense, and/or  Software, ,'),
             (1, u' subject')
         ]
-        assert expected == result
-        assert 2 == len(result)
+        assert result == expected
+        assert len(result) == 2
 
     def test_as_unicode_converts_bytes_to_unicode(self):
         test_line = '    // as defined in https://tools.ietf.org/html/rfc2821#section-4.1.2.'.encode()
@@ -140,10 +140,10 @@ class TestAnalysis(FileBasedTesting):
         test = b'\x00is designed to give them, \x00BEFORE the\x00\x00\x00\x00\x00\x00'
         result = as_unicode(test)
         expected = ' is designed to give them,  BEFORE the      '
-        assert expected == result
+        assert result == expected
 
     def test_as_unicode_from_unicode_replaces_null_bytes_with_space(self):
         test = '\x00is designed to give them, \x00BEFORE the\x00\x00\x00\x00\x00\x00'
         result = as_unicode(test)
         expected = ' is designed to give them,  BEFORE the      '
-        assert expected == result
+        assert result == expected

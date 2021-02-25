@@ -14,9 +14,9 @@ from packagedcode.licensing import get_normalized_expression
 
 class TestLicensing(TestCase):
     def test_get_normalized_expression(self):
-        assert 'mit' == get_normalized_expression('mit')
-        assert 'apache-2.0 AND unknown' == get_normalized_expression('mit or asasa or Apache-2.0')
-        assert 'apache-2.0 AND unknown' == get_normalized_expression('mit or asasa or Apache-2.0')
-        assert 'mit OR apache-2.0' == get_normalized_expression('mit asasa or Apache-2.0')
+        assert get_normalized_expression('mit') == 'mit'
+        assert get_normalized_expression('mit or asasa or Apache-2.0') == 'apache-2.0 AND unknown'
+        assert get_normalized_expression('mit or asasa or Apache-2.0') == 'apache-2.0 AND unknown'
+        assert get_normalized_expression('mit asasa or Apache-2.0') == 'mit OR apache-2.0'
         assert get_normalized_expression('') is None
         assert get_normalized_expression(None) is None

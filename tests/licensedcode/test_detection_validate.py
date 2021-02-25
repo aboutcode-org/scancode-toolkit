@@ -80,7 +80,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
     results = flatten((m.rule.identifier, str(int(m.coverage()))) for m in matches)
 
     try:
-        assert expected == results
+        assert results == expected
     except:
 
         from licensedcode.tracing import get_texts
