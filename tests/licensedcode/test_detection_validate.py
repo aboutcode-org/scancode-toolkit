@@ -115,7 +115,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
             ])
 
         # this assert will always fail and provide a detailed failure trace
-        assert '\n'.join(failure_trace) == '\n'.join(expected)
+        assert '\n'.join(expected) == '\n'.join(failure_trace)
 
 
 def check_ignorable_clues(rule, regen=False):
@@ -165,7 +165,7 @@ def check_ignorable_clues(rule, regen=False):
     expected = dict([(k, v) for k, v in sorted(expected.items()) if v])
 
     try:
-        assert results == expected
+        assert expected == results
     except:
         # On failure, we compare againto get additional failure details such as
         # a clickable text_file path

@@ -22,3 +22,13 @@ other_urls:
     - https://www.gnu.org/licenses/agpl.txt
 ignorable_urls:
     - http://www.gnu.org/licenses/
+minimum_coverage: 99
+ignorable_copyrights:
+  - Copyright (c) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ignorable_holders:
+  - Free Software Foundation, Inc.
+ignorable_urls:
+  - http://www.gnu.org/licenses/
+  - https://fsf.org/
+  - https://www.gnu.org/licenses/
+

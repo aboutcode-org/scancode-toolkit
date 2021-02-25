@@ -1,0 +1,45 @@
+COPYRIGHT
+
+
+The following rules apply only to the zoo archiver itself.
+Currently, all extract-only programs, and all supporting utili-
+ties, are fully in the public domain and are expected to remain so
+for the forseeable future.
+
+            COPYRIGHT STATEMENT FOR ZOO ARCHIVE PROGRAM
+
+1.   "This software" refers separately to each existing version, and
+     each existing authorized derivative work, of my zoo archive
+     program as of the date at the bottom of this copyright statement.
+
+2.   DISTRIBUTION IN UNMODIFIED FORM:  You may copy this software in
+     unmodified form for any purpose, whether commercial or
+     noncommercial, provided that you make no attempt to restrict
+     distribution of it by others.
+
+3.   CREATION OF DERIVATIVE WORKS:  You may create and distribute
+     derivative works made from any source code files that are part of
+     this software, provided that you (a) preserve all copyright
+     notices and author attributions, (b) do not create, whether
+     deliberately or through negligence, any derivative work that
+     violates the compatibility goals describe in the reference manual
+     for zoo 2.1, (c) do not attempt to restrict the distribution or
+     use of the derivative work by others, (d) make the fully commented
+     source code of the derivative work available to me at no cost if
+     I so request, and make no attempt to restrict the distribution
+     or use of this source code.
+
+4.   NO WARRANTY.  I make no claim that this software is free of defects.
+     I do not accept any legal obligation to provide any bug fixes or
+     any other type of support whatsoever.  I disclaim all liability
+     for damages, whether direct or consequential.
+
+5.   EXCEPTIONS:  Exceptions to the above conditions are probably
+     possible.  Please contact me to negotiate.
+
+6.   The prohibition against incompatible derivative works does not 
+     necessarily imply that the archiver and the archive format cannot
+     be enhanced.  However, if any incompatibility is created, it may
+     be done only with my permission.
+
+                                   -- Rahul Dhesi 1991/07/07

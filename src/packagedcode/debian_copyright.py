@@ -8,7 +8,8 @@
 #
 
 import io
-import logging
+import sys
+from os import environ
 from os import path
 
 from debut.copyright import DebianCopyright
@@ -28,14 +29,23 @@ copyright files, pre-dep-5 mostly machine-readable copyright files and
 unstructured copyright files.
 """
 
-TRACE = False
+TRACE = environ.get('SCANCODE_DEBUG_PACKAGE', False) or False
 
-logger = logging.getLogger(__name__)
+
+def logger_debug(*args):
+    pass
+
 
 if TRACE:
-    import sys
-    logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+    import logging
+
+    logger = logging.getLogger(__name__)
+    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+    logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 def get_and_set_package_licenses_and_copyrights(package, root_dir):
@@ -60,7 +70,12 @@ def get_and_set_package_licenses_and_copyrights(package, root_dir):
     return declared_license, detected_license, copyrights
 
 
-def parse_copyright_file(copyright_file, skip_debian_packaging=True, simplify_licenses=True):
+def parse_copyright_file(
+    copyright_file,
+    skip_debian_packaging=True,
+    simplify_licenses=True,
+    unique=True
+):
     """
     Return a tuple of (declared license, detected license_expression, copyrights) strings computed
     from the `copyright_file` location. For each copyright file paragraph we
@@ -70,24 +85,46 @@ def parse_copyright_file(copyright_file, skip_debian_packaging=True, simplify_li
     if not copyright_file:
         return None, None, None
 
+    # first parse as structured copyright file
     declared_license, detected_license, copyrights = parse_structured_copyright_file(
         copyright_file=copyright_file,
         skip_debian_packaging=skip_debian_packaging,
         simplify_licenses=simplify_licenses,
+        unique=unique,
     )
+    if TRACE:
+        logger_debug(
+            f'parse_copyright_file: declared_license: {declared_license}\n'
+            f'detected_license: {detected_license}\n'
+            f'copyrights: {copyrights}'
+        )
 
+    # dive into whole text only if we detected everything as unknown.
+    # TODO: this is not right.
     if not detected_license or detected_license == 'unknown':
         text = textcode.analysis.unicode_text(copyright_file)
         detected_license = get_normalized_expression(text, try_as_expression=False)
+        if TRACE:
+            logger_debug(
+                f'parse_copyright_file: using whole text: '
+                f'detected_license: {detected_license}'
+            )
+
+    # dive into copyright if we did not detect any.
     if not copyrights:
         copyrights = '\n'.join(copyright_detector(copyright_file))
+        if TRACE:
+            logger_debug(
+                f'parse_copyright_file: using whole text: '
+                f'copyrights: {copyrights}'
+            )
+
     return declared_license, detected_license, copyrights
 
 
 def copyright_detector(location):
     """
-    Return lists of detected copyrights, authors and holders
-    in file at location.
+    Return lists of detected copyrights, authors & holders in file at location.
     """
     if location:
         from cluecode.copyrights import detect_copyrights
@@ -112,13 +149,13 @@ def parse_structured_copyright_file(
     copyright file paragraph we treat the "name" as a license declaration. The
     text is used for detection and cross-reference with the declaration.
 
-    If `skip_debian_packaging` is True, the Debian packaging license --if
-    detected-- is skipped.
+    If `skip_debian_packaging` is True, the Debian packaging license is skipped
+    if detected.
 
     If `simplify_licenses` is True the license expressions are simplified.
 
     If `unique` is True, repeated copyrights, detected or declared licenses are
-    ignore, and only unique detections are returne.
+    ignored, and only unique detections are returned.
     """
     if not copyright_file:
         return None, None, None

@@ -1,5 +1,7 @@
 license_expression: gpl-2.0
 is_license_text: yes
+relevance: 100
+notes: from https://raw.githubusercontent.com/pombredanne/gpl-history/v1.0/allvers/COPYING.4.html
 ignorable_copyrights:
     - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
     - copyrighted by the Free Software Foundation

@@ -327,6 +327,7 @@ def tree_checksum(tree_base_dir=licensedcode_dir, _ignored=_ignored_from_hash):
     NOTE: this is not 100% fool proof but good enough in practice.
     """
     resources = resource_iter(tree_base_dir, ignored=_ignored, with_dirs=False)
+    resources = (r for r in resources if licensedcode_cache_dir not in r)
     hashable = (pth + str(os.path.getmtime(pth)) + str(os.path.getsize(pth)) for pth in resources)
     hashable = ''.join(sorted(hashable))
     hashable = hashable.encode('utf-8')

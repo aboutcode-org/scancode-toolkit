@@ -1,7 +1,7 @@
 license_expression: gpl-2.0
 is_license_text: yes
-notes: yet another variant of the GPL, temple address and library instead of lesser plus some
-    mojibake
+notes: yet another variant of the GPL-2.0, using the temple address and library instead of lesser plus some
+ mojibake. See https://github.com/pombredanne/gpl-history/blob/v1.0/allvers/COPYING.2
 ignorable_copyrights:
     - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
     - copyrighted by the Free Software Foundation

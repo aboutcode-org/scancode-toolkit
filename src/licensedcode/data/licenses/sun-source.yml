@@ -1,0 +1,14 @@
+key: sun-source
+short_name: Sun source code License
+name: Sun source code License
+category: Permissive
+owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-source
+notes: This license is highly similar to the sun-rpc. It is found in old
+ G711 audio codec code released by Sun circa 1996 and reused in sox
+ http://sox.sourceforge.net/ and a few oher places 
+other_urls:
+    - http://web.mit.edu/audio/src/build/i386_linux2/sox-11gamma-cb/g711.c
+    - http://www.speech.kth.se/cost250/refsys/v1.0/src/g711.c
+    - https://www.ibiblio.org/pub/historic-linux/ftp-archives/sunsite.unc.edu/Sep-29-1996/Incoming/sox-11gamma-cb2.tar.gz
+    - https://sourceforge.net/p/sox/code/ci/98267de439714fcdff94c9588f34fb8a67df70c1/tree/src/g711.c

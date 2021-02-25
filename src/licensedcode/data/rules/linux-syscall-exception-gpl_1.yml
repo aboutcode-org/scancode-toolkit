@@ -1,0 +1,10 @@
+license_expression: linux-syscall-exception-gpl
+is_license_text: yes
+relevance: 100
+notes: from https://raw.githubusercontent.com/pombredanne/gpl-history/v1.0/allvers/linux.COPYING.0.2
+ignorable_copyrights:
+    - copyrighted by me and others
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - me and others
+    - the Free Software Foundation
