@@ -6,8 +6,8 @@ v21.x (next)
 ------------
 
 
-v21.2.24
-------------
+v21.2.25
+--------
 
 Installation:
 
@@ -15,6 +15,12 @@ Installation:
 - Stop using extras for a default wheel installation
 - Build new scancode-toolkit-mini package with limited dependencies for use
   when packaging in distros and similar
+
+License scanning:
+
+ - Improve license detection accuracy with XXXX new license detection rules
+   added or updated and XXX new license added.
+ - Support the latest SPDX license list v3.11
 
 
 v21.2.9
@@ -37,7 +43,7 @@ Operating system support:
 
 License scanning:
 
- - Improve license detection accuracy with over 8400 new license detection fules
+ - Improve license detection accuracy with over 8400 new license detection rules
    added or updated
  - Remove the previously deprecated --license-diag option
  - Include pre-built license index in release archives to speed up start #988
