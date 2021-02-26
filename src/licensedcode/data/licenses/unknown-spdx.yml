@@ -3,3 +3,6 @@ short_name: unknown SPDX
 name: Unknown SPDX license detected but not recognized
 category: Unstated License
 owner: Unspecified
+spdx_license_key: LicenseRef-scancode-unknown-spdx
+notes: This is something that clearly ressembles a license in an SPDX license
+ expression but is not conclusively an SPDX license ID.

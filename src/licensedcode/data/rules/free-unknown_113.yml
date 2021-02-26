@@ -1,0 +1,6 @@
+license_expression: free-unknown
+is_license_notice: yes
+relevance: 100
+notes: this is a generic CC notie that there is a license
+ignorable_urls:
+    - https://creativecommons.org/

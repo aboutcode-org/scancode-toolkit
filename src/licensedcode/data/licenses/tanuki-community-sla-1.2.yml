@@ -4,6 +4,7 @@ name: Tanuki Community Software License Agreement 1.2
 category: Copyleft
 owner: Tanuki Software
 homepage_url: http://wrapper.tanukisoftware.com/doc/english/licenseCommunity.html
+spdx_license_key: LicenseRef-scancode-tanuki-community-sla-1.2
 minimum_coverage: 98
 ignorable_copyrights:
     - Copyright (c) 1989, 1991 Free Software Foundation, Inc.

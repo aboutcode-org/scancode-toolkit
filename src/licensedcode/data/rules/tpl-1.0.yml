@@ -1,5 +1,5 @@
 license_expression: tpl-1.0
 is_license_text: yes
-notes: 'from: http://terracotta.org/legal/terracotta-public-license AND  http://terracotta.org/legal/changes-from-the-mpl'
+notes: Seen at http://terracotta.org/legal/terracotta-public-license AND  http://terracotta.org/legal/changes-from-the-mpl
 ignorable_urls:
     - http://www.terracotta.org/TPL

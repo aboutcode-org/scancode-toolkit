@@ -3,4 +3,5 @@ short_name: X11-Style (Adobe-DEC)
 name: X11-Style (Adobe-DEC)
 category: Permissive
 owner: Adobe Systems
+spdx_license_key: LicenseRef-scancode-x11-adobe-dec
 minimum_coverage: 85

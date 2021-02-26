@@ -6,3 +6,4 @@ owner: Free Software Foundation (FSF)
 homepage_url: https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob;f=config.guess;h=a7448442748cc6f98a066d2d1051fad3b043761a;hb=HEAD
 notes: this is a simpler version of the Autonconf exception to the GPL
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-autoconf-simple-exception-2.0

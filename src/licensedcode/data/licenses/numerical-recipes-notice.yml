@@ -3,6 +3,7 @@ short_name: Numerical Recipes Notice
 name: Numerical Recipes Notice
 category: Commercial
 owner: Numerical Recipes
+spdx_license_key: LicenseRef-scancode-numerical-recipes-notice
 ignorable_urls:
     - http://www.nr.com/
 ignorable_emails:

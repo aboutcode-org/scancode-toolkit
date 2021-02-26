@@ -4,6 +4,7 @@ name: Appfire EULA
 category: Proprietary Free
 owner: Appfire
 homepage_url: http://appfire.com/eula
+spdx_license_key: LicenseRef-scancode-appfire-eula
 ignorable_urls:
     - https://bobswift.atlassian.net/
     - https://bobswift.atlassian.net/wiki/questions

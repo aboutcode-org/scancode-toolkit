@@ -6,3 +6,4 @@ owner: nexB
 notes: |
     this is a catch all and ellipsis to deal with some cases when a large
     number of ancillary yet similar licenses may be reported as one.
+spdx_license_key: LicenseRef-scancode-other-permissive

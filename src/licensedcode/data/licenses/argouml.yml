@@ -3,6 +3,7 @@ short_name: ArgoUML License
 name: ArgoUML License
 category: Permissive
 owner: Tigris Project
+spdx_license_key: LicenseRef-scancode-argouml
 other_urls:
     - http://argouml-downloads.tigris.org/nonav/argouml-0.24/ArgoUML-0.24-src.tar.gz
 ignorable_copyrights:

@@ -1,0 +1,10 @@
+- |
+  Proprietary_1
+  Proprietary_2
+  GPL-2+
+- broadcom-proprietary AND bsd-new AND gpl-2.0-plus AND unknown
+- |
+  2006, Broadcom Corporation
+  2015, Raspberry Pi (Trading) Ltd
+  2015 Broadcom Corporation
+  2015 Paolo Pisati <paolo.pisati@canonical.com>

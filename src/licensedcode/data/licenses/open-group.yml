@@ -4,5 +4,6 @@ name: Open Group Public License
 category: Copyleft Limited
 owner: Open Group
 homepage_url: http://www.opengroup.org/openmotif/license/
+spdx_license_key: LicenseRef-scancode-open-group
 text_urls:
     - http://www.opengroup.org/openmotif/license/

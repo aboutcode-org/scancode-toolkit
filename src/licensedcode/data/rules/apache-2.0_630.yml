@@ -1,0 +1,5 @@
+license_expression: apache-2.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://apache.org/licences/LICENCE-2.0.html

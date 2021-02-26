@@ -4,6 +4,7 @@ name: Opera EULA for European Economic Area 2018
 category: Proprietary Free
 owner: Opera Software ASA
 homepage_url: https://www.opera.com/eula/computers/eea
+spdx_license_key: LicenseRef-scancode-opera-eula-eea-2018
 ignorable_urls:
     - http://sourcecode.opera.com/
     - https://www.opera.com/eula/computers

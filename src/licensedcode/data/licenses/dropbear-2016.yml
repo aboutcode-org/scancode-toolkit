@@ -5,6 +5,7 @@ category: Permissive
 owner: Dropbear
 homepage_url: https://matt.ucc.asn.au/dropbear/dropbear.html
 notes: composite
+spdx_license_key: LicenseRef-scancode-dropbear-2016
 minimum_coverage: 50
 ignorable_copyrights:
     - (c) 2004 Mihnea Stoenescu

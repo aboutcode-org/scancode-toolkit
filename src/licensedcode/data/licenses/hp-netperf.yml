@@ -4,6 +4,7 @@ name: HP Netperf License
 category: Free Restricted
 owner: HP - Hewlett Packard
 homepage_url: http://www.netperf.org/netperf/training/Netperf.html
+spdx_license_key: LicenseRef-scancode-hp-netperf
 other_urls:
     - http://www.netperf.org/netperf/training/Netperf.html
 ignorable_copyrights:

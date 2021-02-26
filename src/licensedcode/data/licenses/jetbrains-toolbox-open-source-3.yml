@@ -4,6 +4,7 @@ name: Toolbox Subscription License Agreement For Open Source Projects Version 3
 category: Proprietary Free
 owner: JetBrains
 homepage_url: https://www.jetbrains.com/store/license_opensource.html
+spdx_license_key: LicenseRef-scancode-jetbrains-toolbox-open-source-3
 ignorable_urls:
     - http://www.jetbrains.com/
     - http://www.opensource.org/docs/osd

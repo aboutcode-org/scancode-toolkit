@@ -1,0 +1,6 @@
+license_expression: mpl-1.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_urls:
+    - http://wiki.netbeans.org/DevFaqMpl3rdPartySources

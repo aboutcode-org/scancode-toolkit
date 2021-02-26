@@ -4,5 +4,6 @@ name: CodeGuru Permissions
 category: Permissive
 owner: CodeGuru
 homepage_url: http://www.codeguru.com/submission-guidelines.php#permission
+spdx_license_key: LicenseRef-scancode-codeguru-permissions
 text_urls:
     - http://www.codeguru.com/submission-guidelines.php#permission

@@ -1,32 +1,12 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import os
 from unittest.case import skipIf
 from unittest.case import expectedFailure
@@ -35,8 +15,6 @@ import json
 import pytest
 
 from commoncode.system import on_windows
-from commoncode.system import py2
-from commoncode.system import py3
 from packagedcode.models import DependentPackage
 from packagedcode import pypi
 from packages_test_utils import PackageTester
@@ -48,22 +26,22 @@ class TestPyPi(PackageTester):
     def test_parse(self):
         test_file = self.get_test_loc('pypi/setup.py/setup.py')
         package = pypi.parse(test_file)
-        assert 'scancode-toolkit' == package.name
-        assert '1.5.0' == package.version
-        assert 'ScanCode' == package.parties[0].name
-        assert ('ScanCode is a tool to scan code for license, '
-                'copyright and other interesting facts.') == package.description
-        assert 'https://github.com/nexB/scancode-toolkit' == package.homepage_url
+        assert package.name == 'scancode-toolkit'
+        assert package.version == '1.5.0'
+        assert package.parties[0].name == 'ScanCode'
+        assert package.description == ('ScanCode is a tool to scan code for license, '
+                'copyright and other interesting facts.')
+        assert package.homepage_url == 'https://github.com/nexB/scancode-toolkit'
 
     def test_parse_metadata(self):
         test_folder = self.get_test_loc('pypi')
         test_file = os.path.join(test_folder, 'metadata.json')
         package = pypi.parse_metadata(test_file)
-        assert 'six' == package.name
-        assert '1.10.0' == package.version
-        assert 'Python 2 and 3 compatibility utilities' == package.description
+        assert package.name == 'six'
+        assert package.version == '1.10.0'
+        assert package.description == 'Python 2 and 3 compatibility utilities'
         assert 'MIT' in package.declared_license['license']
-        assert ['License :: OSI Approved :: MIT License'] == package.declared_license['classifiers']
+        assert package.declared_license['classifiers'] == ['License :: OSI Approved :: MIT License']
         expected_classifiers = [
             "Programming Language :: Python :: 2",
             "Programming Language :: Python :: 3",
@@ -71,25 +49,25 @@ class TestPyPi(PackageTester):
             "Topic :: Software Development :: Libraries",
             "Topic :: Utilities"
         ]
-        assert expected_classifiers == package.keywords
+        assert package.keywords == expected_classifiers
         expected = [
-            OrderedDict([
+            dict([
                 ('type', u'person'), ('role', u'contact'),
                 ('name', u'Benjamin Peterson'), ('email', None), ('url', None)])
         ]
-        assert expected == [p.to_dict() for p in package.parties]
-        assert 'http://pypi.python.org/pypi/six/' == package.homepage_url
+        assert [p.to_dict() for p in package.parties] == expected
+        assert package.homepage_url == 'http://pypi.python.org/pypi/six/'
 
     def test_parse_pkg_info(self):
         test_file = self.get_test_loc('pypi/PKG-INFO')
         package = pypi.parse_pkg_info(test_file)
-        assert 'TicketImport' == package.name
-        assert '0.7a' == package.version
-        assert 'Import CSV and Excel files' == package.description
+        assert package.name == 'TicketImport'
+        assert package.version == '0.7a'
+        assert package.description == 'Import CSV and Excel files'
         assert 'BSD' in package.declared_license
-        assert 'http://nexb.com' == package.homepage_url
-        expected = [OrderedDict([('type', u'person'), ('role', u''), ('name', u'Francois Granade'), ('email', None), ('url', None)])]
-        assert expected == [p.to_dict() for p in package.parties]
+        assert package.homepage_url == 'http://nexb.com'
+        expected = [dict([('type', u'person'), ('role', u''), ('name', u'Francois Granade'), ('email', None), ('url', None)])]
+        assert [p.to_dict() for p in package.parties] == expected
 
     @skipIf(on_windows, 'Somehow this fails on Windows')
     def test_parse_setup_py_arpy(self):
@@ -339,6 +317,7 @@ class TestPyPi(PackageTester):
     @expectedFailure
     def test_requirements_txt_sample12(self):
         # FAILURE: dparse library wrongly detect the dependencies
+        # we should return only a single value which should be the latest one
         test_file = self.get_test_loc('pypi/requirements_txt/sample12/requirements.txt')
         package = pypi.parse_requirements_txt(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/sample12/output.expected.json')
@@ -431,8 +410,8 @@ class TestPyPi(PackageTester):
     def test_parse_with_dparse(self):
         test_file = self.get_test_loc('pypi/dparse/requirements.txt')
         dependencies = pypi.parse_with_dparse(test_file)
-        assert [DependentPackage(purl='pkg:pypi/lxml@3.4.4', requirement='==3.4.4', scope='dependencies', is_resolved=True),
-                DependentPackage(purl='pkg:pypi/requests@2.7.0', requirement='==2.7.0', scope='dependencies', is_resolved=True)] == dependencies
+        assert dependencies == [DependentPackage(purl='pkg:pypi/lxml@3.4.4', requirement='==3.4.4', scope='dependencies', is_resolved=True),
+                DependentPackage(purl='pkg:pypi/requests@2.7.0', requirement='==2.7.0', scope='dependencies', is_resolved=True)]
 
 
 FILENAME_LIST = [
@@ -490,18 +469,13 @@ class TestSetupPyVersions(object):
             results = {}
 
         if regen:
-            if py2:
-                wmode = 'wb'
-            if py3:
-                wmode = 'w'
-            with open(expected_loc, wmode) as ex:
+            with open(expected_loc, 'w') as ex:
                 json.dump(results, ex, indent=2, separators=(',', ': '))
 
-        with open(expected_loc, 'rb') as ex:
-            expected = json.load(
-                ex, encoding='utf-8', object_pairs_hook=OrderedDict)
+        with open(expected_loc) as ex:
+            expected = json.load(ex)
 
         try:
-            assert expected == results
+            assert results == expected
         except AssertionError:
-            assert json.dumps(expected, indent=2) == json.dumps(results, indent=2)
+            assert json.dumps(results, indent=2) == json.dumps(expected, indent=2)

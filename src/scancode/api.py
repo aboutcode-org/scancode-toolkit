@@ -1,33 +1,11 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 from itertools import islice
 from os.path import getsize
 import logging
@@ -39,7 +17,6 @@ from commoncode.hash import multi_checksums
 from scancode import ScancodeError
 from typecode.contenttype import get_type
 
-
 TRACE = False
 
 logger = logging.getLogger(__name__)
@@ -47,7 +24,6 @@ logger = logging.getLogger(__name__)
 if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
-
 
 """
 Main scanning functions.
@@ -74,7 +50,7 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
 
         if dtype == 'copyrights':
             copyrights.append(
-                OrderedDict([
+                dict([
                     ('value', value),
                     ('start_line', start),
                     ('end_line', end)
@@ -82,7 +58,7 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
             )
         elif dtype == 'holders':
             holders.append(
-                OrderedDict([
+                dict([
                     ('value', value),
                     ('start_line', start),
                     ('end_line', end)
@@ -90,14 +66,14 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
             )
         elif dtype == 'authors':
             authors.append(
-                OrderedDict([
+                dict([
                     ('value', value),
                     ('start_line', start),
                     ('end_line', end)
                 ])
             )
 
-    results = OrderedDict([
+    results = dict([
         ('copyrights', copyrights),
         ('holders', holders),
         ('authors', authors),
@@ -130,7 +106,7 @@ def get_emails(location, threshold=50, test_slow_mode=False, test_error_mode=Fal
         found_emails = islice(found_emails, threshold)
 
     for email, line_num in found_emails:
-        result = OrderedDict()
+        result = {}
         results.append(result)
         result['email'] = email
         result['start_line'] = line_num
@@ -152,7 +128,7 @@ def get_urls(location, threshold=50, **kwargs):
         found_urls = islice(found_urls, threshold)
 
     for urls, line_num in found_urls:
-        result = OrderedDict()
+        result = {}
         results.append(result)
         result['url'] = urls
         result['start_line'] = line_num
@@ -160,13 +136,14 @@ def get_urls(location, threshold=50, **kwargs):
     return dict(urls=results)
 
 
-DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
+DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
+SCANCODE_LICENSEDB_URL = 'https://scancode-licensedb.aboutcode.org/{}'
 
 
 def get_licenses(location, min_score=0,
                  include_text=False, license_text_diagnostics=False,
-                 license_url_template=DEJACODE_LICENSE_URL,
+                 license_url_template=SCANCODE_LICENSEDB_URL,
                  deadline=sys.maxsize, **kwargs):
     """
     Return a mapping or detected_licenses for licenses detected in the file at
@@ -220,16 +197,18 @@ def get_licenses(location, min_score=0,
         query_tokens_length = match.query.tokens_length(with_unknown=True)
         percentage_of_license_text = round((matched_tokens_length / query_tokens_length) * 100, 2)
 
-    return OrderedDict([
+    detected_spdx_expressions = []
+    return dict([
         ('licenses', detected_licenses),
         ('license_expressions', detected_expressions),
+        ('spdx_license_expressions', detected_spdx_expressions),
         ('percentage_of_license_text', percentage_of_license_text),
     ])
 
 
 def _licenses_data_from_match(
         match, include_text=False, license_text_diagnostics=False,
-        license_url_template=DEJACODE_LICENSE_URL):
+        license_url_template=SCANCODE_LICENSEDB_URL):
     """
     Return a list of "licenses" scan data built from a license match.
     Used directly only internally for testing.
@@ -244,10 +223,14 @@ def _licenses_data_from_match(
         else:
             matched_text = match.matched_text(whole_lines=True, highlight=False)
 
+    SCANCODE_BASE_URL = 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses'
+    SCANCODE_LICENSE_TEXT_URL = SCANCODE_BASE_URL + '/{}.LICENSE'
+    SCANCODE_LICENSE_DATA_URL = SCANCODE_BASE_URL + '/{}.yml'
+
     detected_licenses = []
     for license_key in match.rule.license_keys():
         lic = licenses.get(license_key)
-        result = OrderedDict()
+        result = {}
         detected_licenses.append(result)
         result['key'] = lic.key
         result['score'] = match.score()
@@ -259,17 +242,25 @@ def _licenses_data_from_match(
         result['homepage_url'] = lic.homepage_url
         result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
         result['reference_url'] = license_url_template.format(lic.key)
+        result['scancode_text_url'] = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
+        result['scancode_data_url'] = SCANCODE_LICENSE_DATA_URL.format(lic.key)
+
         spdx_key = lic.spdx_license_key
         result['spdx_license_key'] = spdx_key
+
         if spdx_key:
-            spdx_key = lic.spdx_license_key.rstrip('+')
-            spdx_url = SPDX_LICENSE_URL.format(spdx_key)
+            is_license_ref = spdx_key.lower().startswith('licenseref-')
+            if is_license_ref:
+                spdx_url = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
+            else:
+                spdx_key = lic.spdx_license_key.rstrip('+')
+                spdx_url = SPDX_LICENSE_URL.format(spdx_key)
         else:
             spdx_url = ''
         result['spdx_url'] = spdx_url
         result['start_line'] = match.start_line
         result['end_line'] = match.end_line
-        matched_rule = result['matched_rule'] = OrderedDict()
+        matched_rule = result['matched_rule'] = {}
         matched_rule['identifier'] = match.rule.identifier
         matched_rule['license_expression'] = match.rule.license_expression
         matched_rule['licenses'] = match.rule.license_keys()
@@ -277,6 +268,7 @@ def _licenses_data_from_match(
         matched_rule['is_license_notice'] = match.rule.is_license_notice
         matched_rule['is_license_reference'] = match.rule.is_license_reference
         matched_rule['is_license_tag'] = match.rule.is_license_tag
+        matched_rule['is_license_intro'] = match.rule.is_license_intro
         matched_rule['matcher'] = match.matcher
         matched_rule['rule_length'] = match.rule.length
         matched_rule['matched_length'] = match.len()
@@ -321,7 +313,7 @@ def get_file_info(location, **kwargs):
     """
     Return a mapping of file information collected for the file at `location`.
     """
-    result = OrderedDict()
+    result = {}
 
     # TODO: move date and size these to the inventory collection step???
     result['date'] = get_last_modified_date(location) or None

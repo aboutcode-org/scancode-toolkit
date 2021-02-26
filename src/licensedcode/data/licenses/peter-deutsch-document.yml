@@ -4,5 +4,6 @@ name: Peter Deutsch Document License
 category: Permissive
 owner: Peter Deutsch
 homepage_url: http://www.ietf.org/rfc/rfc1952.txt
+spdx_license_key: LicenseRef-scancode-peter-deutsch-document
 text_urls:
     - http://www.ietf.org/rfc/rfc1952.txt

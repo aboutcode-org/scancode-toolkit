@@ -3,6 +3,7 @@ short_name: STLport License 2000
 name: STLport License 2000
 category: Permissive
 owner: STLport Consulting
+spdx_license_key: LicenseRef-scancode-stlport-2000
 minimum_coverage: 90
 ignorable_copyrights:
     - Copyright 1994 Hewlett-Packard Company

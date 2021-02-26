@@ -4,6 +4,7 @@ name: BLAS License 2017
 category: Permissive
 owner: BLAS Project
 homepage_url: http://www.netlib.org/blas/#_licensing
+spdx_license_key: LicenseRef-scancode-blas-2017
 text_urls:
     - https://android.googlesource.com/platform/external/cblas/+/master/LICENSE
 other_urls:

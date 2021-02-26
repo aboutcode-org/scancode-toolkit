@@ -1,0 +1,27 @@
+license_expressions:
+  - gpl-2.0-plus AND gpl-3.0-plus
+  - gpl-1.0-plus
+  - mif-exception
+  - gpl-1.0-plus
+  - ada-linking-exception
+  - gpl-1.0-plus
+  - gpl-1.0-plus
+  - gpl-1.0-plus
+  - gcc-compiler-exception-2.0
+  - gpl-1.0-plus
+  - classpath-exception-2.0
+  - gpl-1.0-plus WITH gcc-compiler-exception-2.0 AND gpl-1.0-plus WITH gcc-linking-exception-2.0
+  - linking-exception-2.0-plus
+  - gpl-1.0-plus
+  - gpl-1.0-plus WITH gcc-linking-exception-2.0
+  - gpl-1.0-plus
+  - linking-exception-2.0-plus
+  - gpl-2.0-plus
+  - unknown-license-reference
+  - d-zlib
+  - lgpl-2.1-plus
+  - linking-exception-2.0-plus
+  - unknown-license-reference
+  - mit
+  - gfdl-1.2
+notes: TODO refine expectations

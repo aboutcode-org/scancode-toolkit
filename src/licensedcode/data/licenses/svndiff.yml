@@ -3,4 +3,5 @@ short_name: svndiff License
 name: svndiff License
 category: Permissive
 owner: CollabNet
+spdx_license_key: LicenseRef-scancode-svndiff
 minimum_coverage: 60

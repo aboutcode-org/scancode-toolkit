@@ -6,6 +6,7 @@ owner: InnoSys
 notes: |
     This is a BSD variant with extra conditions on the placement of the notice.
     Common in the Linux kernel
+spdx_license_key: LicenseRef-scancode-bsd-innosys
 ignorable_copyrights:
     - Copyright (c) InnoSys Incorporated
 ignorable_holders:

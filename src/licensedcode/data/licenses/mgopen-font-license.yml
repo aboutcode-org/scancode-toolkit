@@ -4,6 +4,7 @@ name: MgOpen Font License
 category: Permissive
 owner: MgOpen
 homepage_url: http://pub.ellak.gr/fonts/mgopen/index.en.html
+spdx_license_key: LicenseRef-scancode-mgopen-font-license
 text_urls:
     - http://pub.ellak.gr/fonts/mgopen/index.en.html#license
 faq_url: http://pub.ellak.gr/fonts/mgopen/index.en.html#faq

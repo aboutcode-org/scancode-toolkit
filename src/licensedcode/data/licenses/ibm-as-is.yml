@@ -3,6 +3,7 @@ short_name: IBM AS-IS License
 name: IBM AS-IS License
 category: Permissive
 owner: IBM
+spdx_license_key: LicenseRef-scancode-ibm-as-is
 ignorable_copyrights:
     - COPYRIGHT I B M CORPORATION 2000
 ignorable_holders:

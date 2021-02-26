@@ -1,7 +1,0 @@
-about_resource: jsonstreams-0.5.0-py2.py3-none-any.whl
-name: jsonstreams
-version: 0.5.0
-download_url: https://files.pythonhosted.org/packages/78/e2/7286d0b8c2b775f2ec39c8e9d86324f9e66912b4e3485aad43782c152e9d/jsonstreams-0.5.0-py2.py3-none-any.whl
-checksum_md5: 743ee4f9f551a3ef506ba62fe680e735
-checksum_sha1: 889941fb009e8081c904a6fc6dc48daf68b78eae
-package_url: pkg:pypi/jsonstreams@0.5.0

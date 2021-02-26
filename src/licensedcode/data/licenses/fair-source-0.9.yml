@@ -4,6 +4,7 @@ name: Fair Source License v0.9
 category: Source-available
 owner: Fair Source
 homepage_url: https://fair.io/
+spdx_license_key: LicenseRef-scancode-fair-source-0.9
 text_urls:
     - https://fair.io/#license
     - https://github.com/fairsource/fairsource/blob/master/fair-source-license-v0.9.txt

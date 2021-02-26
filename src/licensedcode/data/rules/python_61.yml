@@ -1,0 +1,6 @@
+license_expression: python
+is_license_notice: yes
+relevance: 100
+notes: See https://github.com/pypa/twine/blob/35e40d95b7c1b46a6da0d80f1e7c62bd914d52d8/twine/_installed.py
+    See also https://bazaar.launchpad.net/~tseaver/pkginfo/trunk/revision/141 Newer versions
+    are MIT-licensed. Note the typo in Foudation

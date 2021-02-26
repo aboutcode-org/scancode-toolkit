@@ -1,15 +1,7 @@
 license_expression: gpl-2.0
 is_license_text: yes
-notes: |
-    This is the next version of the GPL text as published by the FSF.
-    Let's call it the GPL 2.0.3
-    This variation was published around about the time of the FSF office
-    move on May 1, 2005 from Temple Place to Franklin Street and slighlty
-    after the corresponding HTML version.
-    http://web.archive.org/web/20050511030123/http://www.fsf.org/licensing/licenses/gpl.txt
-    In this text version, it refers to the Franklin Street address rather than
-    Franklin St and uses the GNU Library General Public License references
-    throughout.
+relevance: 100
+notes: from https://raw.githubusercontent.com/pombredanne/gpl-history/v1.0/allvers/COPYING.4
 ignorable_copyrights:
     - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
     - copyrighted by the Free Software Foundation

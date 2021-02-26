@@ -4,6 +4,7 @@ name: SNMP++ License
 category: Permissive
 owner: HP - Hewlett Packard
 homepage_url: https://www.agentpp.com/licenses/SNMP_PP_LICENSE.txt
+spdx_license_key: LicenseRef-scancode-hp-snmp-pp
 standard_notice: |
     Copyright (c) 1999
     Hewlett-Packard Company

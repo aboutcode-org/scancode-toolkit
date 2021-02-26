@@ -1,101 +1,101 @@
 [
   {
-	"type": "gem",
-	"namespace": null,
-	"name": "cat_",
-	"version": "12",
-	"qualifiers": {},
-	"subpath": null,
-	"primary_language": "Ruby",
-	"description": "The loading cat generator.",
-	"release_date": null,
-	"parties": [
-	{
-	  "type": "person",
-	  "role": "author",
-	  "name": "\u84bc\u6642\u5f26\u4e5f",
-	  "email": null,
-	  "url": null
-	},
-	{
-	  "type": "person",
-	  "role": "email",
-	  "name": null,
-	  "email": "elct9620@frost.tw",
-	  "url": null
-	}
-	],
-	"keywords": [],
-	"homepage_url": "https://github.com/elct9620/.cat",
-	"download_url": null,
-	"size": null,
-	"sha1": null,
-	"md5": null,
-	"sha256": null,
-	"sha512": null,
-	"bug_tracking_url": null,
-	"code_view_url": null,
-	"vcs_url": null,
-	"copyright": null,
-	"license_expression": null,
-	"declared_license": null,
-	"notice_text": null,
-	"root_path": null,
-	"dependencies": [
-	{
-	  "purl": "pkg:gem/bundler",
-	  "requirement": "~> 1.13",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/rake",
-	  "requirement": "~> 10.0",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/rspec",
-	  "requirement": "~> 3.0",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/rack",
-	  "requirement": "",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/sassc",
-	  "requirement": "",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/slim",
-	  "requirement": "",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	}
-	],
-	"contains_source_code": null,
-	"source_packages": [],
-	"purl": "pkg:gem/cat_@12",
-	"repository_homepage_url": "https://rubygems.org/gems/cat_/versions/12",
-	"repository_download_url": "https://rubygems.org/downloads/cat_-12.gem",
-	"api_data_url": "https://rubygems.org/api/v2/rubygems/cat_/versions/12.json"
+    "type": "gem",
+    "namespace": null,
+    "name": "cat_",
+    "version": "12",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ruby",
+    "description": "The loading cat generator.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "\u84bc\u6642\u5f26\u4e5f",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "email",
+        "name": null,
+        "email": "elct9620@frost.tw",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/elct9620/.cat",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:gem/bundler",
+        "requirement": "~> 1.13",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/rake",
+        "requirement": "~> 10.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/rspec",
+        "requirement": "~> 3.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/rack",
+        "requirement": "",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/sassc",
+        "requirement": "",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/slim",
+        "requirement": "",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:gem/cat_@12",
+    "repository_homepage_url": "https://rubygems.org/gems/cat_/versions/12",
+    "repository_download_url": "https://rubygems.org/downloads/cat_-12.gem",
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/cat_/versions/12.json"
   }
 ]

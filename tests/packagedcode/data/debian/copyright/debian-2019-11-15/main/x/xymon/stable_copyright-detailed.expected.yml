@@ -1,0 +1,29 @@
+- |
+  GPL-2 with OpenSSL exception
+  GPL-2
+  GPL-2+
+  Zlib and GPL
+  BSD-3-Clause-Eric-Young
+  public-domain
+  BSD-3-Clause
+  BSD-ish
+  GPL
+  Zlib
+- bsd-new AND gfdl-1.2 AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND mit-old-style-no-advert
+  AND public-domain AND ssleay-windows AND unknown AND zlib
+- |
+  2002-2016 Henrik Størner <henrik@hswn.dk>
+  2005-2007 Henrik Størner <henrik@hswn.dk>
+  2007-2016 Christoph Berg <myon@debian.org>
+  2011-2016 Axel Beckert <abe@debian.org>
+  2005-2011 Henrik Størner
+  2006 Charles Goyard <cg@fsck.fr>
+  2005-2011 Henrik Storner
+  2006 Scott Smith ("status" section)
+  2004 Eric Steffen <eric.steffen@gmx.net>
+  1999, 2000, 2002 Aladdin Enterprises
+  1995-1998 Eric Young (eay@cryptsoft.com)
+  Under public domain.
+  2005, 2007 Olivier Gay <olivier.gay@a3.epfl.ch>
+  1998, 2000 by the Massachusetts Institute of Technology.
+  2004 by Daniel Stenberg et al

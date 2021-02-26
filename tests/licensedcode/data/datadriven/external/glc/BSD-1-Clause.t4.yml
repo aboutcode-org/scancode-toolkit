@@ -1,0 +1,9 @@
+license_expressions:
+  - bsd-1-clause
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/BSD-1-Clause.t4
+  originally expected to be detected as BSD-1-Clause
+  with coverage of 100.0
+  "this condition" instead of "this list of conditions"
+  Example: github.com/tsavola/pointer

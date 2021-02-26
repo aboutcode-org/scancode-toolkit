@@ -3,6 +3,7 @@ short_name: Netron Project License
 name: Netron Project License
 category: Permissive
 owner: Netron Project
+spdx_license_key: LicenseRef-scancode-netron
 other_urls:
     - http://www.netronproject.com
 ignorable_urls:

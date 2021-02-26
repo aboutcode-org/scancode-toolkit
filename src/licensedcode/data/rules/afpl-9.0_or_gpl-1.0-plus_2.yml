@@ -1,5 +1,0 @@
-license_expression: afpl-9.0 OR gpl-1.0-plus
-is_license_reference: yes
-is_false_positive: yes
-relevance: 100
-notes: just a note of credit instead of a license. See https://github.com/nexB/scancode-toolkit/issues/2242#issuecomment-698371970

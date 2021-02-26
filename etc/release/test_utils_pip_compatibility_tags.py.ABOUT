@@ -1,0 +1,14 @@
+about_resource: test_utils_pip_compatibility_tags.py
+
+type: github
+namespace: pypa
+name: pip
+version: 20.3.1
+subpath: tests/unit/test_utils_compatibility_tags.py
+
+package_url: pkg:github/pypa/pip@20.3.1#tests/unit/test_utils_compatibility_tags.py
+
+download_url: https://raw.githubusercontent.com/pypa/pip/20.3.1/tests/unit/test_utils_compatibility_tags.py
+copyright: Copyright (c) 2008-2020 The pip developers (see AUTHORS.txt file)
+license_expression: mit
+notes: subset copied from pip for tag handling

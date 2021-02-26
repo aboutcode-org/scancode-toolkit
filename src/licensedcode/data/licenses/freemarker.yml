@@ -4,6 +4,7 @@ name: FreeMarker License
 category: Permissive
 owner: freemarker.org
 homepage_url: http://freemarker.org/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-freemarker
 text_urls:
     - http://freemarker.org/LICENSE.txt
     - http://freemarker.org/docs/app_license.html

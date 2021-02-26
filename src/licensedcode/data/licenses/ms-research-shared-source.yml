@@ -4,6 +4,7 @@ name: Microsoft Research Shared Source License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://research.microsoft.com/downloads
+spdx_license_key: LicenseRef-scancode-ms-research-shared-source
 other_urls:
     - http://research.microsoft.com/downloads
 ignorable_copyrights:

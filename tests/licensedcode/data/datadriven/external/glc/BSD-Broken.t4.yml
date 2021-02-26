@@ -1,0 +1,9 @@
+license_expressions:
+  - proprietary-license
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/BSD-Broken.t4
+  originally expected to be detected as None
+  with coverage of 0.0
+  "... are not permitted provided ..."
+  Example: https://github.com/safecast/ttproto

@@ -1,0 +1,18 @@
+key: ofl-1.0-rfn
+short_name: OFL 1.0 Reserved Font Name
+name: SIL Open Font License 1.0 with Reserved Font Name
+category: Permissive
+owner: SIL International
+homepage_url: http://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
+notes: |
+    Per SPDX.org, this license has been superseded. This license was released
+    in November 2005.
+spdx_license_key: OFL-1.0-RFN
+text_urls:
+    - https://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=OFL10_plaintext&filename=OFL10.txt
+other_urls:
+    - http://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
+minimum_coverage: 99
+ignorable_urls:
+    - http://scripts.sil.org/OFL
+

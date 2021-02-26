@@ -4,5 +4,6 @@ name: Apple Quicktime License
 category: Proprietary Free
 owner: Apple
 homepage_url: http://store.apple.com/Catalog/US/Images/quicktime.html
+spdx_license_key: LicenseRef-scancode-quicktime
 ignorable_urls:
     - http://www.mpegla.com/

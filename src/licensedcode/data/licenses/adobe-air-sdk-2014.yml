@@ -4,6 +4,7 @@ name: Adobe Air SDK EULA - 2014
 category: Proprietary Free
 owner: Adobe Systems
 homepage_url: http://www.adobe.com/products/air/sdk-eula.html
+spdx_license_key: LicenseRef-scancode-adobe-air-sdk-2014
 other_urls:
     - www.adobe.com/go/redistributeairsdk
     - http://www.adobe.com/products/air/sdk-agreement.html

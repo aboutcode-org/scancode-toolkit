@@ -1,0 +1,7 @@
+license_expression: unknown-license-reference
+is_license_notice: yes
+relevance: 100
+notes: Seen in http://www.rowleydownload.co.uk/arm/packages/targets/EA_LPC3250_OEM/EA_LPC3250_OEM.c
+    and https://github.com/blalor/FreeRTOS/blob/master/Demo/CORTEX_LPC1768_GCC_Rowley/LPC1700_Startup.s
+    and https://cryptography.gmu.edu:4443/XBX/FreeRTOS/blob/712573f0336512b107329be544c899059d3d2de2/Demo/CORTEX_LM3Sxxxx_Rowley/thumb_crt0.s
+    What this license is is unknown.

@@ -1,0 +1,11 @@
+license_expression: ((gpl-2.0 AND proprietary-license) OR commercial-license) AND generic-cla
+    AND other-copyleft AND other-permissive
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/sqlmapproject/sqlmap/blob/master/LICENSE The extra terms added to
+    the GPL are a likely conflict that would require detailed legal review in all cases.
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.html
+ignorable_emails:
+    - dev@sqlmap.org
+    - sales@sqlmap.org

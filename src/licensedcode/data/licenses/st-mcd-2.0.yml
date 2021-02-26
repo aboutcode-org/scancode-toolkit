@@ -31,6 +31,7 @@ notes: |
     Feb 2018 ... May 2019
      https://www.st.com/content/ccc/resource/legal/legal_agreement/license_agreement/group0/59/57/63/12/cf/a6/47/65/SLA0044/files/SLA0044.txt/jcr:content/translations/en.SLA0044.txt
      This is the one I used for now as a text. It as has this header "SLA0044 Rev5/February 2018"
+spdx_license_key: LicenseRef-scancode-st-mcd-2.0
 text_urls:
     - https://www.st.com/content/ccc/resource/legal/legal_agreement/license_agreement/group0/59/57/63/12/cf/a6/47/65/SLA0044/files/SLA0044.txt/jcr:content/translations/en.SLA0044.txt
     - https://www.st.com/software_license_agreement_liberty_v2

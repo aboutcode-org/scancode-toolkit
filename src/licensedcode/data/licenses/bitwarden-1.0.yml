@@ -1,0 +1,8 @@
+key: bitwarden-1.0
+short_name: Bitwarden License Agreement v1
+name: Bitwarden License Agreement v1
+category: Source-available
+owner: Bitwarden
+homepage_url: https://github.com/bitwarden/server/blob/v1.38.1/LICENSE_BITWARDEN.txt
+faq_url: https://github.com/bitwarden/server/blob/v1.38.1/LICENSE_FAQ.md
+spdx_license_key: LicenseRef-scancode-bitwarden-1.0

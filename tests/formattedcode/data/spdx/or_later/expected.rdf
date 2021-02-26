@@ -1,50 +1,54 @@
 {
   "rdf:RDF": {
-    "@xmlns:ns1": "http://spdx.org/rdf/terms#", 
-    "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
     "ns1:SpdxDocument": {
-      "@rdf:about": "http://www.spdx.org/tools#SPDXANALYSIS", 
       "ns1:dataLicense": {
         "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
-      }, 
-      "ns1:describesPackage": {
-        "ns1:Package": {
-          "ns1:copyrightText": "Copyright 2010, Red Hat, Inc. and individual contributors", 
-          "ns1:downloadLocation": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }, 
-          "ns1:hasFile": null, 
-          "ns1:licenseConcluded": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }, 
-          "ns1:licenseDeclared": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }, 
-          "ns1:licenseInfoFromFiles": {
-            "@rdf:resource": "http://spdx.org/licenses/LGPL-2.1-or-later"
-          }, 
-          "ns1:name": "or_later"
-        }
-      }, 
+      },
       "ns1:referencesFile": {
         "ns1:File": {
-          "ns1:checksum": {
-            "ns1:Checksum": {
-              "ns1:algorithm": "SHA1", 
-              "ns1:checksumValue": "0c5bf934430394112921e7a1a8128176606d32ca"
-            }
-          }, 
-          "ns1:copyrightText": "Copyright 2010, Red Hat, Inc. and individual contributors", 
-          "ns1:fileName": "./test.java", 
-          "ns1:licenseConcluded": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }, 
           "ns1:licenseInfoInFile": {
             "@rdf:resource": "http://spdx.org/licenses/LGPL-2.1-or-later"
-          }
+          },
+          "ns1:licenseConcluded": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+          },
+          "ns1:checksum": {
+            "ns1:Checksum": {
+              "ns1:checksumValue": "0c5bf934430394112921e7a1a8128176606d32ca",
+              "ns1:algorithm": "SHA1"
+            }
+          },
+          "ns1:fileName": "./test.java",
+          "@rdf:about": "http://www.spdx.org/files#None",
+          "ns1:copyrightText": "Copyright 2010, Red Hat, Inc. and individual contributors"
         }
-      }, 
+      },
+      "ns1:describesPackage": {
+        "ns1:Package": {
+          "ns1:licenseInfoFromFiles": {
+            "@rdf:resource": "http://spdx.org/licenses/LGPL-2.1-or-later"
+          },
+          "ns1:downloadLocation": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+          },
+          "ns1:licenseConcluded": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+          },
+          "ns1:licenseDeclared": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+          },
+          "ns1:hasFile": {
+            "@rdf:resource": "http://www.spdx.org/files#None"
+          },
+          "@rdf:about": "http://www.spdx.org/tools#SPDXRef-Package",
+          "ns1:copyrightText": "Copyright 2010, Red Hat, Inc. and individual contributors",
+          "ns1:name": "or_later"
+        }
+      },
+      "@rdf:about": "http://www.spdx.org/tools#SPDXRef-DOCUMENT",
       "ns1:specVersion": "SPDX-2.1"
-    }
+    },
+    "@xmlns:ns1": "http://spdx.org/rdf/terms#",
+    "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   }
 }

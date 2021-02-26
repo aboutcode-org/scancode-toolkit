@@ -1,0 +1,12 @@
+license_expression: unicode-dfs-2015
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 1991-2015 Unicode, Inc.
+ignorable_holders:
+    - Unicode, Inc.
+ignorable_urls:
+    - http://www.unicode.org/Public
+    - http://www.unicode.org/cldr/data
+    - http://www.unicode.org/copyright.html
+    - http://www.unicode.org/reports

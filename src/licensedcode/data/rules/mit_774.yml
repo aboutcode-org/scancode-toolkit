@@ -1,0 +1,5 @@
+license_expression: mit
+is_license_notice: yes
+relevance: 99
+notes: truncated MIT from https://github.com/egoist/devdocs-desktop/blob/e03e48e606986bf892cf9e53a60ea26b83f5074c/LICENSE
+    See https://github.com/egoist/devdocs-desktop/pull/137 for a fix

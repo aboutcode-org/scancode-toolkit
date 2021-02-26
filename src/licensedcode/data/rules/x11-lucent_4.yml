@@ -1,0 +1,7 @@
+license_expression: x11-lucent
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+notes: See https://github.com/9fans/plan9port/blob/master/unix/NOTICE.regexp and https://github.com/9fans/plan9port/blob/master/src/lib9/fmt/LICENSE
+    and https://github.com/9fans/plan9port/blob/master/src/lib9/utf/LICENSE

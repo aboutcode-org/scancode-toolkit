@@ -1,0 +1,5 @@
+license_expression: gfdl-1.1
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.gnu.org/licenses/old-licenses/fdl-1.1.txt

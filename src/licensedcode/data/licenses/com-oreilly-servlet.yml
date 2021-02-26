@@ -4,6 +4,7 @@ name: com.oreilly.servlet License
 category: Commercial
 owner: Servlets.com
 homepage_url: http://www.servlets.com/cos/license.html
+spdx_license_key: LicenseRef-scancode-com-oreilly-servlet
 ignorable_copyrights:
     - Copyright (c) 2001-2009 by Jason Hunter, jhunter_AT_servlets.com
 ignorable_holders:

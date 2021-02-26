@@ -4,6 +4,7 @@ name: BugSense SDK License
 category: Proprietary Free
 owner: BugSense
 homepage_url: https://www.bugsense.com/sdklicense
+spdx_license_key: LicenseRef-scancode-bugsense-sdk
 text_urls:
     - https://www.bugsense.com/sdklicense
 other_urls:

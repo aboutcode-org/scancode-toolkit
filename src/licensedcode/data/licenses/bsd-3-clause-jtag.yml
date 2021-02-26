@@ -1,0 +1,11 @@
+key: bsd-3-clause-jtag
+short_name: BSD 3-Clause jtag
+name: BSD 3-Clause jtag
+category: Permissive
+owner: Regents of the University of California
+notes: Seen in https://github.com/ucb-art/chisel-jtag/blob/master/LICENSE
+ This is a cross over between a bsd-new and a postgres license with some new
+ language related to "two paragraphs". The warranty disclaimer is inspited from
+ the postgres license
+spdx_license_key: LicenseRef-scancode-bsd-3-clause-jtag
+minimum_coverage: 90

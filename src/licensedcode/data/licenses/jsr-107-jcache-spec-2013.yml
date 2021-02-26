@@ -4,12 +4,16 @@ name: JSR-107 JCache Specification 2013 License
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: https://github.com/jsr107/jsr107spec/blob/v1.0.0-PFD/LICENSE.txt
+notes: the license for the API has since changed in 2016 to Apache-2.0 after several intermediate
+    changes. See https://github.com/jsr107/jsr107spec/commits/master/LICENSE.txt for details.
+    This is an old spec license likely still current.
+spdx_license_key: LicenseRef-scancode-jsr-107-jcache-spec-2013
+other_urls:
+    - https://github.com/jsr107/jsr107spec/commits/master/LICENSE.txt
 minimum_coverage: 96
 ignorable_copyrights:
-  - Copyright 2013 ORACLE America, Inc. and Greg Luck 4150 Network Circle, Santa Clara, California
-    95054, U.S.A
+    - Copyright 2013 ORACLE America, Inc. and Greg Luck 4150 Network Circle, Santa Clara, California
+        95054, U.S.A
 ignorable_holders:
-  - ORACLE America, Inc. and Greg Luck 4150 Network Circle, Santa Clara, California 95054, U.S.A
-notes: the license for the API has since changed in 2016 to Apache-2.0
- after several intermediate changes. See https://github.com/jsr107/jsr107spec/commits/master/LICENSE.txt
- for details. This is an old spec license likely still current.
+    - ORACLE America, Inc. and Greg Luck 4150 Network Circle, Santa Clara, California 95054,
+        U.S.A

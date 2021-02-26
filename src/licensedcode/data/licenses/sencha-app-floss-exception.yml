@@ -6,6 +6,7 @@ owner: Sencha
 homepage_url: http://www.sencha.com/products/floss-exception.php
 notes: Sencha stopped offering this exception in 2015.
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-sencha-app-floss-exception
 other_urls:
     - http://web.archive.org/web/20140816133327/http://www.sencha.com/legal/open-source-faq/open-source-license-exception-for-applications/
     - http://www.sencha.com/legal/open-source-faq/open-source-license-exception-for-applications/

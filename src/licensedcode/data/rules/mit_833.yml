@@ -1,0 +1,5 @@
+license_expression: mit
+is_license_text: yes
+relevance: 100
+notes: An MIT variant with alternative hyphenation NON-INFRINGEMENT instead of NONINFRINGEMENT
+ Seen in https://github.com/zerocracy/farm/blob/f53547aa19cd51d1267f87ea3d9de503002d71c7/src/main/resources/META-INF/services/javax.xml.transform.TransformerFactory#L4

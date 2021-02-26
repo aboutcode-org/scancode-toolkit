@@ -4,8 +4,8 @@ name: Non-Violent Public License v4
 category: Proprietary Free
 owner: Thufie
 homepage_url: https://thufie.lain.haus/NPL.html
+spdx_license_key: LicenseRef-scancode-non-violent-4.0
+ignorable_authors:
+    - the Web Service
 ignorable_urls:
     - https://thufie.lain.haus/NPL.html
-ignorable_authors:
-  - the Web Service
-

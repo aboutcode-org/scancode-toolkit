@@ -4,6 +4,7 @@ name: Microsoft .NET Library License 2019-06
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://www.microsoft.com/en-us/web/webpi/eula/net_library_eula_ENU.htm
+spdx_license_key: LicenseRef-scancode-ms-net-library-2019-06
 ignorable_urls:
     - http://www.microsoft.com/exporting
     - https://docs.microsoft.com/en-us/legal/gdpr

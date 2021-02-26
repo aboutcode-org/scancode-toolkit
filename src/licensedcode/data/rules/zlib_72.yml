@@ -1,0 +1,7 @@
+license_expression: zlib
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - cAudio.h
+notes: https://github.com/monsterbasher/Multicraft/blob/1d3c67f53a95ce448da28fb6ccd63ee4b26433bc/Aurora/libs/cAudio/Headers/cFileLogReceiver.h

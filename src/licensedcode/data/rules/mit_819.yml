@@ -1,0 +1,4 @@
+license_expression: mit
+is_license_text: yes
+relevance: 100
+notes: An hyphenated version of the text Seen in https://github.com/boto/boto/blob/91ba037e54ef521c379263b0ac769c66182527d7/boto/datapipeline/exceptions.py

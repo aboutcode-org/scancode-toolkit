@@ -1,0 +1,7 @@
+license_expression: unknown-license-reference
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+    - README
+notes: often seen with the bzip2-libbzip-2010 license

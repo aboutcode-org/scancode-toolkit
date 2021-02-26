@@ -4,6 +4,7 @@ name: FSF Unlimited License No Warranty
 category: Permissive
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.fsf.org/licensing/licenses/
+spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
 text_urls:
     - http://www.fsf.org/licensing/licenses/
 other_urls:

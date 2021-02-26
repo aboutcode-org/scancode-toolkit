@@ -3,5 +3,6 @@ short_name: WIDE License
 name: WIDE License
 category: Permissive
 owner: WIDE Project
+spdx_license_key: LicenseRef-scancode-wide-license
 ignorable_authors:
     - WIDE Project and its contributors
