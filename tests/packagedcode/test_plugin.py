@@ -25,7 +25,7 @@ class TestPlugins(PackageTester):
         if regen:
             with open(expected_file, 'w') as ef:
                 ef.write(result.output)
-        assert open(expected_file).read() == result.output
+        assert result.output == open(expected_file).read()
 
     @skipIf(on_windows, 'somehow this fails on Windows')
     def test_package_command_scan_python(self):

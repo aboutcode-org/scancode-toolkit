@@ -43,7 +43,7 @@ class TestBuild(PackageTester):
             'get_package_resources/file1',
         ]
         results = [r.path for r in build.BaseBuildManifestPackage.get_package_resources(root, codebase)]
-        assert expected == results
+        assert results == expected
 
     def test_BazelPackage_recognize(self):
         test_file = self.get_test_loc('bazel/parse/BUILD')
@@ -88,4 +88,4 @@ def compare_package_results(expected, result):
         e = expected_package.to_dict()
         e.pop('root_path')
         expected_packages.append(e)
-    assert expected_packages == result_packages
+    assert result_packages == expected_packages

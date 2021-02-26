@@ -38,9 +38,9 @@ class TestGemfileLock(FileBasedTesting):
             expected = json.load(ex)
 
         try:
-            assert expected == results
+            assert results == expected
         except AssertionError:
-            assert json.dumps(expected, indent=2) == json.dumps(results, indent=2)
+            assert json.dumps(results, indent=2) == json.dumps(expected, indent=2)
 
     def check_gemfile_lock(self, test_file, expected_loc, regen=False):
         test_file = self.get_test_loc(test_file)
@@ -97,7 +97,7 @@ class TestGemfileLock(FileBasedTesting):
             (None, None)
         ]
         results = [gemfile_lock.get_option(t) for t in test]
-        assert expected == results
+        assert results == expected
 
     def test_NAME_VERSION_re(self):
         import re
@@ -139,7 +139,7 @@ class TestGemfileLock(FileBasedTesting):
         results = [(nv(x).group('name'),
                     nv(x).group('version'),) for x in test]
 
-        assert expected == results
+        assert results == expected
 
     def test_DEPS_re(self):
         test = '''DEPENDENCIES
@@ -181,7 +181,7 @@ class TestGemfileLock(FileBasedTesting):
                 results.append((name, version, pinned,))
             else:
                 results.append(None)
-        assert expected == results
+        assert results == expected
 
     def test_SPEC_DEPS_re(self):
         test = '''    specs:
@@ -207,7 +207,7 @@ class TestGemfileLock(FileBasedTesting):
         nv = gemfile_lock.SPEC_DEPS
         results = [(nv(x).group('name'), nv(x).group('version'),)
                    for x in test if nv(x)]
-        assert expected == results
+        assert results == expected
 
     def test_SPEC_SUB_DEPS_re(self):
         test = '''  specs:
@@ -238,7 +238,7 @@ class TestGemfileLock(FileBasedTesting):
         nv = gemfile_lock.SPEC_SUB_DEPS
         results = [(nv(x).group('name'), nv(x).group('version'),)
                    for x in test if nv(x)]
-        assert expected == results
+        assert results == expected
 
     def test_Gem_as_nv_tree(self):
         Gem = gemfile_lock.Gem
@@ -309,14 +309,14 @@ class TestGemfileLock(FileBasedTesting):
             (g, b),
             ])
         results = sorted(a.flatten())
-        assert expected == results
+        assert results == expected
 
     def test_Gem_as_nv_tree_with_no_deps(self):
         Gem = gemfile_lock.Gem
         a = Gem('a', '1')
         expected = {('a', '1'): {}}
         results = a.as_nv_tree()
-        assert expected == results
+        assert results == expected
 
 
     def test_Gem_to_dict(self):
@@ -343,7 +343,7 @@ class TestGemfileLock(FileBasedTesting):
         ]
 
         results = a.to_dict()
-        assert expected == list(results.items())
+        assert list(results.items()) == expected
 
     def test_GemfileLockParser_can_parse_a_flat_list_of_deps(self):
         test_file = 'gemfile_lock/as_deps/Gemfile.lock'

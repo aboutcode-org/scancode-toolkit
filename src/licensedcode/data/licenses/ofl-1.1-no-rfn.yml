@@ -1,0 +1,23 @@
+key: ofl-1.1-no-rfn
+short_name: OFL 1.1 no Reserved Font Name
+name: SIL Open Font License 1.1 with no Reserved Font Name
+category: Permissive
+owner: SIL International
+homepage_url: http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
+notes: |
+    Per SPDX.org, this license was released 26 February 2007. This license is
+    OSI certified
+spdx_license_key: OFL-1.1-no-RFN
+text_urls:
+    - http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
+    - https://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=OFL_plaintext&filename=OFL.txt
+faq_url: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+other_urls:
+    - http://scripts.sil.org/OFL
+    - http://www.opensource.org/licenses/OFL-1.1
+    - https://github.com/adobe-fonts/source-code-pro/blob/master/LICENSE.txt
+    - https://opensource.org/licenses/OFL-1.1
+ignorable_urls:
+    - http://scripts.sil.org/OFL
+osi_license_key: OFL-1.1
+minimum_coverage: 99

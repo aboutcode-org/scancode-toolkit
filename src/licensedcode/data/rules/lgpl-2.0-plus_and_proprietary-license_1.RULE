@@ -1,0 +1,9 @@
+LICENSE:
+
+The Software is distributed under LGPL, provided the following restriction:
+
+-- There is no license for products targeting military purpose.
+
+Note, that if any part of the LGPL contradicts with the former restrictions,
+the former restrictions have precedence. The 'no warranty clause' holds
+in any case.

@@ -66,7 +66,7 @@ class TestRpmBasics(FileBasedTesting):
             ('repository_download_url', None),
             ('api_data_url', None),
         ]
-        assert expected == list(package.to_dict().items())
+        assert list(package.to_dict().items()) == expected
 
     def test_pyrpm_basic(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
@@ -95,7 +95,7 @@ class TestRpmBasics(FileBasedTesting):
             'version': '0.7.1',
         }
 
-        assert expected == alltags
+        assert alltags == expected
         # tests that tags are all unicode
         assert all([isinstance(v, str) for v in alltags.values() if v])
 
@@ -121,9 +121,9 @@ class TestRpmBasics(FileBasedTesting):
             dist_url=None,
             is_binary=False,
         )
-        assert expected == rpm.get_rpm_tags(test_file, include_desc=True)
+        assert rpm.get_rpm_tags(test_file, include_desc=True) == expected
         expected = expected._replace(description=None)
-        assert expected == rpm.get_rpm_tags(test_file, include_desc=False)
+        assert rpm.get_rpm_tags(test_file, include_desc=False) == expected
 
     def test_packagedcode_rpm_tags_and_info_on_non_rpm_file(self):
         test_file = self.get_test_loc('rpm/README.txt')
@@ -139,7 +139,7 @@ def check_json(result, expected_file, regen=False):
 
     with io.open(expected_file, encoding='utf-8') as exp:
         expected = json.load(exp)
-    assert json.dumps(expected) == json.dumps(result)
+    assert json.dumps(result) == json.dumps(expected)
 
 
 class TestRpmTags(FileBasedTesting):

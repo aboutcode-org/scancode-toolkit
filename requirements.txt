@@ -9,11 +9,11 @@ chardet==3.0.4
 click==6.7
 colorama==0.4.4
 commoncode==21.1.21
-debut==0.9.8
+debut==0.9.9
 dparse2==0.5.0.4
-extractcode==21.1.21
-extractcode-7z==16.5.210122
-extractcode-libarchive==3.5.1.210122
+extractcode==21.2.24
+extractcode-7z==16.5.210223
+extractcode-libarchive==3.5.1.210223
 fasteners==0.16
 fingerprints==1.0.1
 ftfy==4.4.3
@@ -61,8 +61,8 @@ soupsieve==1.9.2
 spdx-tools==0.6.1
 text-unidecode==1.2
 toml==0.10.0
-typecode==21.1.21
-typecode-libmagic==5.39.1.1
+typecode==21.2.24
+typecode-libmagic==5.39.210223
 typing==3.6.4
 typing-extensions==3.7.4.3
 urllib3==1.26.2

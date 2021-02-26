@@ -19,10 +19,10 @@ import saneyaml
 from commoncode import text
 from commoncode.testcase import get_test_file_pairs
 
-
 """
 Data-driven tests using expectations stored in YAML files.
 """
+
 
 @attr.attrs(slots=True)
 class LicenseTest(object):
@@ -201,11 +201,11 @@ def make_test(license_test, regen=False):
             license_test.dump()
             return
 
-        if expected_expressions != detected_expressions:
+        if detected_expressions != expected_expressions:
             # On failure, we compare against more result data to get additional
             # failure details, including the test_file and full match details
-            results = expected_expressions + ['======================', '']
-            failure_trace = detected_expressions[:] + ['======================', '']
+            expected = expected_expressions + ['======================', '']
+            results_failure_trace = detected_expressions[:] + ['======================', '']
             for match in matches:
                 qtext, itext = get_texts(match)
                 rule_text_file = match.rule.text_file
@@ -213,17 +213,17 @@ def make_test(license_test, regen=False):
                     rule_data_file = rule_text_file.replace('LICENSE', 'yml')
                 else:
                     rule_data_file = match.rule.data_file
-                failure_trace.extend(['',
+                results_failure_trace.extend(['',
                     '======= MATCH ====', repr(match),
                     '======= Matched Query Text for:',
                     'file://{test_file}'.format(**locals())
                 ])
                 if test_data_file:
-                    failure_trace.append('file://{test_data_file}'.format(**locals()))
+                    results_failure_trace.append('file://{test_data_file}'.format(**locals()))
 
-                failure_trace.append('')
-                failure_trace.append(qtext)
-                failure_trace.extend(['',
+                results_failure_trace.append('')
+                results_failure_trace.append(qtext)
+                results_failure_trace.extend(['',
                     '======= Matched Rule Text for:',
                     'file://{rule_text_file}'.format(**locals()),
                     'file://{rule_data_file}'.format(**locals()),
@@ -231,16 +231,16 @@ def make_test(license_test, regen=False):
                     itext,
                 ])
             if not matches:
-                failure_trace.extend(['',
+                results_failure_trace.extend(['',
                     '======= NO MATCH ====',
                     '======= Not Matched Query Text for:',
                     'file://{test_file}'.format(**locals())
                 ])
                 if test_data_file:
-                    failure_trace.append('file://{test_data_file}'.format(**locals()))
+                    results_failure_trace.append('file://{test_data_file}'.format(**locals()))
 
             # this assert will always fail and provide a detailed failure trace
-            assert '\n'.join(results) == '\n'.join(failure_trace)
+            assert '\n'.join(results_failure_trace) == '\n'.join(expected)
 
     closure_test_function.__name__ = test_name
 
@@ -252,44 +252,44 @@ def make_test(license_test, regen=False):
 
 # a small test set of legalese to use in tests
 mini_legalese = frozenset([
-'accordance',
-'alternatively',
-'according',
-'acknowledgement',
-'enforcement',
-'admission',
-'alleged',
-'accused',
-'determines',
-'exceeding',
-'assessment',
-'exceeds',
-'literal',
-'existed',
-'ignored',
-'complementary',
-'responded',
-'observed',
-'assessments',
-'volunteer',
-'admitted',
-'ultimately',
-'choices',
-'complications',
-'allowance',
-'fragments',
-'plaintiff',
-'license',
-'agreement',
-'gnu',
-'general',
-'warranty',
-'distribute',
-'distribution',
-'licensed',
-'covered',
-'warranties',
-'damages',
-'liability',
-'means',
+    'accordance',
+    'alternatively',
+    'according',
+    'acknowledgement',
+    'enforcement',
+    'admission',
+    'alleged',
+    'accused',
+    'determines',
+    'exceeding',
+    'assessment',
+    'exceeds',
+    'literal',
+    'existed',
+    'ignored',
+    'complementary',
+    'responded',
+    'observed',
+    'assessments',
+    'volunteer',
+    'admitted',
+    'ultimately',
+    'choices',
+    'complications',
+    'allowance',
+    'fragments',
+    'plaintiff',
+    'license',
+    'agreement',
+    'gnu',
+    'general',
+    'warranty',
+    'distribute',
+    'distribution',
+    'licensed',
+    'covered',
+    'warranties',
+    'damages',
+    'liability',
+    'means',
 ])

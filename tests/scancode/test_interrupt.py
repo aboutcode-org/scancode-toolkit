@@ -33,10 +33,10 @@ class TestInterrupt(FileBasedTesting):
 
         results = interrupt.interruptible(some_long_function, args=(0.01,), timeout=10)
         expected = None, 'OK'
-        assert expected == results
+        assert results == expected
 
         after = threading.active_count()
-        assert before == after
+        assert after == before
 
     def test_interruptible_stops_execution_on_timeout(self):
         before = threading.active_count()
@@ -48,10 +48,10 @@ class TestInterrupt(FileBasedTesting):
 
         results = interrupt.interruptible(some_long_function, args=(20,), timeout=0.1)
         expected = 'ERROR: Processing interrupted: timeout after 0 seconds.', None
-        assert expected == results
+        assert results == expected
 
         after = threading.active_count()
-        assert before == after
+        assert after == before
 
     def test_interruptible_stops_execution_on_exception(self):
         before = threading.active_count()
@@ -64,7 +64,7 @@ class TestInterrupt(FileBasedTesting):
         assert 'I have to crash. Now!' in results
 
         after = threading.active_count()
-        assert before == after
+        assert after == before
 
     def test_fake_interruptible_stops_execution_on_exception(self):
         def some_crashing_function():

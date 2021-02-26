@@ -1,6 +1,5 @@
 aboutcode-toolkit==5.1.0
 apipkg==1.5
-bump2version==1.0.1
 codecov==2.1.11
 coverage==5.3.1
 execnet==1.7.1

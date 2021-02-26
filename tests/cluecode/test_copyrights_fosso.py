@@ -54,7 +54,7 @@ def build_copyright_test_methods_with_fossology_data():
             expected_files.append(tf)
             files_to_test.append(tf.replace('_raw', ''))
 
-    assert sorted(test_files) == sorted(files_to_test + expected_files)
+    assert sorted(files_to_test + expected_files) == sorted(test_files)
 
     copyregex = re.compile('<s>(.*?)</s>', re.DOTALL | re.UNICODE)  # NOQA
     for expected_file, test_file in zip(expected_files, files_to_test):
@@ -132,14 +132,14 @@ def make_test_func(test_file_loc, expected_file_loc, expected):
         copyrights, _authors, _holders = cluecode_test_utils.copyright_detector(test_file_loc)
 
         try:
-            assert expected == copyrights
+            assert copyrights == expected
         except:
             failure_trace = [
                 'Failed to detect copyright in: file://' + test_file_loc, '\n',
                 'expected as file://' + expected_file_loc, '\n',
                 ] + expected
 
-            assert failure_trace == copyrights
+            assert copyrights == failure_trace
 
     return copyright_test_method
 

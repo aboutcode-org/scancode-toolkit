@@ -1,0 +1,7 @@
+key: icann-public
+short_name: ICANN-Public
+name: ICANN-Public
+category: Public Domain
+owner: ICANN
+homepage_url: https://metadata.ftp-master.debian.org/changelogs//main/d/dns-root-data/dns-root-data_2019052802_copyright
+spdx_license_key: LicenseRef-scancode-icann-public
