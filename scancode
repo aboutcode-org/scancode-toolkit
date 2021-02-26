@@ -118,4 +118,7 @@ if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
     set +e
 fi
 
-"$SCANCODE_ROOT_DIR/bin/scancode" "$@"
+if [ -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
+    "$SCANCODE_ROOT_DIR/bin/scancode" "$@"
+fi
+

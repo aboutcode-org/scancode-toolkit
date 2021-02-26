@@ -36,8 +36,8 @@ class PackageTester(testcase.FileBasedTesting):
                 os.makedirs(expected_dir)
             shutil.copy(regened_exp_loc, expected_loc)
 
-        with open(expected_loc, 'rb') as ex:
-            expected = json.load(ex, encoding='utf-8')
+        with open(expected_loc) as ex:
+            expected = json.load(ex)
 
         try:
             assert results == expected

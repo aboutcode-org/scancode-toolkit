@@ -1333,6 +1333,8 @@ class PypiPackage(NameVer):
         Return the latest version of PypiPackage `name` from a list of `packages`.
         """
         versions = cls.get_versions(name, packages)
+        if not versions:
+            return
         return versions[-1]
 
     @classmethod
@@ -2507,13 +2509,14 @@ def add_or_upgrade_built_wheels(
     Build remotely is `build_remotely` is True.
     """
     assert name, 'Name is required'
-    print(f'\nAdding wheels for package: {name}=={version}')
+    ver = version and f'=={version}' or ''
+    print(f'\nAdding wheels for package: {name}{ver}')
 
     wheel_filenames = []
     # a mapping of {req specifier: {mapping build_wheels kwargs}}
     wheels_to_build = {}
     for python_version, operating_system in itertools.product(python_versions, operating_systems):
-        print(f'  Adding wheels for package: {name}=={version} on {python_version,} and {operating_system}')
+        print(f'  Adding wheels for package: {name}{ver} on {python_version,} and {operating_system}')
         environment = Environment.from_pyver_and_os(python_version, operating_system)
 
         # Check if requested wheel already exists locally for this version
