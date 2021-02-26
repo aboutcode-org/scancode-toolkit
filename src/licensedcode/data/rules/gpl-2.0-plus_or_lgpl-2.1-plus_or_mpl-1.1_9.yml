@@ -1,0 +1,8 @@
+license_expression: gpl-2.0-plus OR lgpl-2.1-plus OR mpl-1.1
+is_license_notice: yes
+relevance: 100
+notes: seen in https://github.com/ckeditor/ckeditor4/blob/major/LICENSE.md
+ignorable_urls:
+    - https://www.gnu.org/licenses/gpl.html
+    - https://www.gnu.org/licenses/lgpl.html
+    - https://www.mozilla.org/MPL/MPL-1.1.html
