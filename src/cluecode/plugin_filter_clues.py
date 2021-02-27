@@ -90,7 +90,7 @@ def filter_ignorable_resource_clues(resource, rules_by_id):
         if hasattr(resource, 'holders'):
             resource.holders = filtered.holders
         if hasattr(resource, 'copyrights'):
-            resource.copyrights = filtered.copyrights       
+            resource.copyrights = filtered.copyrights
         return resource
 
 
@@ -191,6 +191,10 @@ def is_empty(clues):
     if clues:
         return not any([
             clues.copyrights, clues.holders, clues.authors, clues.urls, clues.emails])
+    else:
+        # The logic is reversed, so a false or None "clues" object returns None, which
+        # is interpreted as False (i.e., the object is *not* empty).
+        return True
 
 
 def filter_ignorable_clues(detections, rules_by_id):
@@ -205,7 +209,7 @@ def filter_ignorable_clues(detections, rules_by_id):
     no_detected_ignorables = not detections.copyrights and not detections.authors
 
     ignorables = collect_ignorables(detections.licenses, rules_by_id)
-    
+
     no_ignorables = not detections.licenses or is_empty(ignorables)
 
     if TRACE:
@@ -220,36 +224,45 @@ def filter_ignorable_clues(detections, rules_by_id):
         attributes=detections.emails,
         ignorables=ignorables.emails.union(
             detections.copyrights_as_ignorable,
-            detections.authors_as_ignorable),
-        value_key='email'))
+            detections.authors_as_ignorable,
+        ),
+        value_key='email',
+    ))
 
     # discard redundant urls if ignorable or in a detected copyright or author
     urls = list(filter_values(
         attributes=detections.urls,
         ignorables=ignorables.urls.union(
             detections.copyrights_as_ignorable,
-            detections.authors_as_ignorable),
-        value_key='url', strip='/'))
+            detections.authors_as_ignorable,
+        ),
+        value_key='url',
+        strip='/',
+    ))
 
     # discard redundant authors if ignorable or in detected holders or copyrights
     authors = list(filter_values(
         attributes=detections.authors,
         ignorables=ignorables.authors.union(
             detections.copyrights_as_ignorable,
-            detections.holders_as_ignorable),
-        value_key='value'))
+            detections.holders_as_ignorable,
+        ),
+        value_key='value',
+    ))
 
     # discard redundant holders if ignorable
     holders = list(filter_values(
         attributes=detections.holders,
         ignorables=ignorables.holders,
-        value_key='value'))
+        value_key='value',
+    ))
 
     # discard redundant copyrights if ignorable
     copyrights = list(filter_values(
         attributes=detections.copyrights,
         ignorables=ignorables.copyrights,
-        value_key='value'))
+        value_key='value',
+    ))
 
     return Detections(
         copyrights=copyrights,
@@ -277,22 +290,26 @@ def filter_values(attributes, ignorables, value_key='value', strip=''):
         el = item['end_line']
         val = item[value_key].strip(strip)
         ignored = False
+
         if TRACE:
             logger_debug('   filter_values: ignorables:', ignorables)
+
         for ign in ignorables:
             if TRACE: logger_debug('   filter_values: ign:', ign)
             if (ls in ign.lines_range or el in ign.lines_range) and val in ign.value:
                 ignored = True
                 if TRACE: logger_debug('   filter_values: skipped')
                 break
+
         if not ignored:
             yield item
 
 
 def collect_ignorables(license_matches, rules_by_id):
     """
-    Collect and return an ignorable Clues object built from `license_matches` matched licenses
-    which is the list of "licenses" objects returned in JSON results.
+    Collect and return an ignorable Clues object built from `license_matches`
+    matched licenses which is the list of "licenses" objects returned in JSON
+    results.
 
     The value of each ignorable list of clues is a set of (set of
     lines number, set of ignorable values). The return values is a mapping
@@ -356,6 +373,9 @@ def collect_ignorables(license_matches, rules_by_id):
         if ign_urls:
             urls.add(Ignorable(lines_range=lines_range, value=ign_urls))
 
+        if TRACE:
+            logger_debug('  collect_ignorables: rule:', rule)
+
     ignorables = Ignorables(
         copyrights=frozenset(copyrights),
         holders=frozenset(holders),
@@ -365,7 +385,6 @@ def collect_ignorables(license_matches, rules_by_id):
     )
 
     if TRACE:
-        logger_debug('  collect_ignorables: rule:', rule)
         logger_debug('  collect_ignorables: ignorables:', ignorables)
 
     return ignorables
