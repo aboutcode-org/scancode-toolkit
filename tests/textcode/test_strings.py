@@ -28,7 +28,7 @@ class TestStrings(FileBasedTesting):
 
         with io.open(expected) as i:
             expected = json.loads(i.read())
-        assert expected == results
+        assert results == expected
         return results
 
     def test_clean_string(self):
@@ -68,7 +68,7 @@ class TestStrings(FileBasedTesting):
 
         test_file = self.get_test_loc('strings/basic/main.o')
         result = list(strings.strings_from_file(test_file))
-        assert expected == result
+        assert result == expected
 
     def test_strings_in_file_with_min_len(self):
         expected = [
@@ -87,7 +87,7 @@ class TestStrings(FileBasedTesting):
 
         test_file = self.get_test_loc('strings/basic/main.o')
         result = list(strings.strings_from_file(test_file, min_len=6))
-        assert expected == result
+        assert result == expected
 
     def test_strings_in_file_does_fail_if_contains_ERROR_string(self):
         test_file = self.get_test_loc('strings/bin/file_stripped')
@@ -117,7 +117,7 @@ class TestStrings(FileBasedTesting):
 
         test_file = self.get_test_loc('strings/basic/main.o')
         result = list(strings.strings_from_file(test_file))
-        assert expected == result
+        assert result == expected
 
     def test_strings_in_fonts(self):
         test_file = 'strings/font/DarkGardenMK.ttf'

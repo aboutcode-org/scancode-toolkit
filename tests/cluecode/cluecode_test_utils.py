@@ -216,7 +216,7 @@ def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_
                 '\ntest file: file://' + test_file + '\n'
             ) + expected_yaml
 
-            assert expected_yaml == results_yaml
+            assert results_yaml == expected_yaml
 
     data_file = test.data_file
     test_file = test.test_file

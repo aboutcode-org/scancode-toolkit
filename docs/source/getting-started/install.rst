@@ -33,6 +33,7 @@ Before Installing
 ScanCode requires either Python 3.6.x and is tested on Linux, Mac, and Windows.
 Make sure Python 3.6 is installed first.
 
+
 System Requirements
 ^^^^^^^^^^^^^^^^^^^
 
@@ -41,10 +42,10 @@ System Requirements
 
 - Supported operating systems : ScanCode should run on these OSes:
 
-    #. Linux: on most recent 64-bit Linux distributions (32-bit distros are
-       only partially supported),
-    #. Mac: on recent Mac OSX (10.9 and up),
-    #. Windows: on Windows 7 and up (64-bit),
+    #. Linux: on recent 64-bit Linux distributions running X86_64 proessors,
+    #. Mac: on recent 64-bit macOS (10.14 and up) running X86_64 proessors,
+    #. Windows: on Windows 7 and up (64-bit) running X86_64 proessors,
+
 
 .. _install_prerequisites:
 
@@ -117,47 +118,42 @@ Installation as an Application: Downloading Releases
 Installation on Linux and Mac
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get the Scancode Toolkit tarball or zip archive of a specific Version by going to the
-`GitHub Release Page <https://github.com/nexB/scancode-toolkit/releases/>`_
+Get the Scancode Toolkit tarball archive of a specific version and your
+operating system by going to the `project releases page <https://github.com/nexB/scancode-toolkit/releases/>`_
 
-For example, Version 3.1.1 tarball or .zip archive can be obtained from
-`Toolkit Release 3.1.1 <https://github.com/nexB/scancode-toolkit/releases/tag/v3.1.1>`_
-under assets options. Download and extract the Archive from command line:
+For example, Version 21.2.9 archive can be obtained from
+`Toolkit release 21.2.9 <https://github.com/nexB/scancode-toolkit/releases/tag/v21.2.9>`_
+under assets options. Download the archive for your operating systen and extract
+the archive from command line::
 
-For ``.zip`` archive::
+    tar -xvf scancode-toolkit-21.2.9_py36-linux.tar.xz
 
-    unzip scancode-toolkit-3.1.1.zip
 
-For ``.tar.bz2`` archive::
+Or, on Linux, right click and select "Extract Here".
 
-    tar -xvf scancode-toolkit-3.1.1.tar.bz2
-
-Or, Right Click and select "Extract Here".
-
-Check whether the :ref:`install_prerequisites` are installed. Open a terminal in the extracted
-directory and run::
+Check whether the :ref:`install_prerequisites` are installed. Open a terminal
+in the extracted directory and run::
 
     ./scancode --help
 
 This will configure ScanCode and display the command line :ref:`cli_help_text`.
 
+
 .. _windows_app_install:
 
-Installation on Windows
-^^^^^^^^^^^^^^^^^^^^^^^
+Installation on Windows 10
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Download the latest ScanCode release zip file from
-  https://github.com/nexB/scancode-toolkit/releases/
+- Download the latest ScanCode release zip file for Windows from the latest
+  version athttps://github.com/nexB/scancode-toolkit/releases/
 
-- In Windows Explorer (called File Explorer on Windows 10), select the downloaded ScanCode zip
-  and right-click.
+- In the File Explorer, select the downloaded ScanCode zip and right-click.
 
 - In the pop-up menu select 'Extract All...'
 
-- In the pop-up window 'Extract zip folders' ('Extract Compressed (Zipped) Folders' on Windows 10)
-  use the default options to extract.
+- In the pop-up window 'Extract Compressed (Zipped) Folders' use the default options to extract.
 
-- Once the extraction is complete, a new Windows Explorer/File Explorer window will pop up.
+- Once the extraction is complete, a new File Explorer window will pop up.
 
 - In this Explorer window, select the new folder that was created and right-click.
 
@@ -171,16 +167,15 @@ Installation on Windows
 - In the pop-up window 'Properties', select the Location value. Copy this to the clipboard and
   close the 'Properties' window.
 
-- Press the start menu button (On Windows 10, click the search box or search icon in the taskbar.)
+- Press the start menu button, click the search box or search icon in the taskbar.
 
 - In the search box type::
 
     cmd
 
-- Select 'cmd.exe' listed in the search results.
-  (On Windows 10, you may see 'Command Prompt' instead -- select that.)
+- Select 'cmd.exe' or 'Command Prompt' listed in the search results.
 
-- A new 'cmd.exe' window ('Command Prompt' on Windows 10) pops up.
+- A new 'Command Prompt'pops up.
 
 - In this window (aka a 'command prompt'), type 'cd' followed by a space and then Right-click in
   this window and select Paste. This will paste the path where you extracted ScanCode::
@@ -196,27 +191,16 @@ Installation on Windows
 
     scancode -h
 
-- Press enter. This will configure your ScanCode installation.
+- Press enter. This first command will configure your ScanCode installation.
 
 - Several messages are displayed followed by the ScanCode command help.
 
 - The installation is complete.
 
+
 This uses the default Python present in the PATH environment variable i.e. the last Python
-installed registers itself in the environment is the default. You can also use the ``configure``
-script to explicitly provide the Python path to ScanCode.
+installed registers itself in the environment as the default. 
 
-- Follow the Instructions above till changing the current location of your command prompt to the
-  root directory where ScanCode is installed.
-
-- Run this command with the path to Python Executable::
-
-    configure --python path/to/python
-
-- You can also use ``path`` instead of ``path/to/python`` to use the python from PATH environment
-  variable. More information is available at the `configure <https://github.com/nexB/scancode-toolkit/blob/develop/configure.bat>`_ script (L6-L15).
-
-- Now you can run ``scancode -h`` to display the Help Text, and here the installation is complete.
 
 Un-installation
 ^^^^^^^^^^^^^^^
@@ -227,6 +211,7 @@ Un-installation
 ----
 
 .. _docker_install:
+
 
 Installation via Docker:
 ------------------------
@@ -250,6 +235,7 @@ make sure to ``cd`` into the correct directory.::
     cd scancode-toolkit
     docker build -t scancode-toolkit .
 
+
 Run using Docker
 ^^^^^^^^^^^^^^^^
 
@@ -272,6 +258,7 @@ those after will be forwarded to scancode.
 
 ----
 
+
 .. _source_code_install:
 
 Installation from Source Code: Git Clone
@@ -280,10 +267,11 @@ Installation from Source Code: Git Clone
 You can also download the Scancode Toolkit Source Code and build from it yourself. This is how you
 would want to do it if:
 
-- You are Adding new patches to Scancode and want to test it. So you build ScanCode locally
+- You are adding new patches to Scancode and want to test it. So you build ScanCode locally
   with your added changes.
 
-- You want to test a specific Version/Checkpoint/Branch from the VCS.
+- You want to test a specific version/checkpoint/branch from the VCS.
+
 
 Download the ScanCode-Toolkit Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -308,6 +296,7 @@ of the following:
 - Tags (essentially Version Numbers) [Example - ``v3.1.1``, ``v3.1.0`` etc]
 - Commits (use the shortened commit hash) [Example - ``4502055``, ``f276398`` etc]
 
+
 Configure the build
 ^^^^^^^^^^^^^^^^^^^
 
@@ -320,14 +309,17 @@ On Linux/Mac:
 - Open a terminal
 - cd to the clone directory
 - run ``./configure``
+- run ``source bin/activate``
 
 On Windows:
 
 - open a command prompt
 - cd to the clone directory
-- run instead ``configure``
+- run ``configure``
+- run ``Scripts\activate``
 
 Now you are ready to use the freshly configured scancode-toolkit.
+
 
 ----
 
@@ -348,19 +340,17 @@ For more information on Python virtualenv, visit this `page <https://docs.python
 
     source venv-scancode/bin/activate
 
-#. Run ``pip install scancode-toolkit[full]`` to install the latest version of Scancode.
+#. Run ``pip install scancode-toolkit`` to install the latest version of Scancode.
 
 .. NOTE::
 
-    If you use Python 2.7, scancode-toolkit Version 3.0.2 is installed by default. For Python 3
-    the latest version of Scancode Toolkit is installed by default. Requesting a specific version
-    through ``pip install`` for Python 3 will give Errors if the Version isn't 3.1.x or later.
+    For advanced usage, ``scancode-toolkit-mini`` is alternative package with
+    no default dependencies on pre-built binaries. This may come handy for some
+    special use cases such as packaging for a Linux of FreeBSD distro.
 
-.. WARNING::
-
-    Python 3.7.x and 3.8.x is not supported yet.
 
 To uninstall, run ``pip uninstall scancode-toolkit``.
+
 
 ----
 

@@ -112,8 +112,13 @@ SCANCODE_ROOT_DIR="$( cd "$( dirname "${SCANCODE_BIN}" )" && pwd )"
 
 SCANCODE_CONFIGURED_PYTHON="$SCANCODE_ROOT_DIR/bin/python"
 if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
+    set -e
     echo "* Configuring ScanCode for first use..."
     CONFIGURE_QUIET=1 "$SCANCODE_ROOT_DIR/configure"
+    set +e
 fi
 
-"$SCANCODE_ROOT_DIR/bin/scancode" "$@"
+if [ -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
+    "$SCANCODE_ROOT_DIR/bin/scancode" "$@"
+fi
+

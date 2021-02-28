@@ -1,0 +1,5 @@
+license_expression: bsd-new
+is_license_text: yes
+relevance: 100
+minimum_coverage: 95
+notes: legacy bsd notice at https://github.com/mapbox/mapbox-gl-js/blob/main/LICENSE.txt

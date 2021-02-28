@@ -1,0 +1,13 @@
+key: fastbuild-2012-2020
+short_name: FASTBuild License 2012-2020
+name: FASTBuild License 2012-2020
+category: Permissive
+owner: fastbuild.org
+homepage_url: https://www.fastbuild.org/docs/license.html
+standard_notice: Copyright (c) 2012-2020 Franta Fulin
+spdx_license_key: LicenseRef-scancode-fastbuild-2012-2020
+ignorable_copyrights:
+  - (c) 2012-2020 Franta Fulin
+ignorable_holders:
+  - Franta Fulin
+

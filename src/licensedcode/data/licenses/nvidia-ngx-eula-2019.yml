@@ -1,0 +1,19 @@
+key: nvidia-ngx-eula-2019
+short_name: NVIDIA NGX EULA 2019
+name: NVIDIA NGX EULA 2019
+category: Proprietary Free
+owner: NVIDIA
+homepage_url: https://docs.nvidia.com/rtx/ngx/ngx-eula/index.html
+spdx_license_key: LicenseRef-scancode-nvidia-ngx-eula-2019
+ignorable_copyrights:
+  - (c) Marketing and Promotion
+  - Copyright (c) 2019 NVIDIA Corporation
+ignorable_emails:
+  - nvidia-rtx-license-questions@nvidia.com
+ignorable_holders:
+  - Marketing and Promotion
+  - NVIDIA Corporation
+ignorable_urls:
+  - https://developer.nvidia.com/
+  - https://developer.nvidia.com/sw-notification
+

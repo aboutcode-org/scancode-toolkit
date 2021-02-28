@@ -1,0 +1,20 @@
+- |
+  BSD-3
+  BSD-1 and BSD-2
+  BSD-1
+  BSD-2
+- bsd-new AND bsd-simplified AND isc AND unknown
+- |
+  Copyright (c) 1995-2001 Kungliga Tekniska Högskolan
+  (Royal Institute of Technology, Stockholm, Sweden).
+  All rights reserved.
+  Copyright (c) 2008 The DragonFly Project. All rights reserved.
+  This code is derived from software contributed to The DragonFly Project
+  by Matthias Schmidt <matthias@dragonflybsd.org>, University of Marburg,
+  Germany.
+  Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+  Copyright (c) 1998, M. Warner Losh <imp@freebsd.org> All rights reserved.
+  by Simon 'corecode' Schubert <corecode@fs.ei.tum.de>.
+  by Simon 'corecode' Schubert <corecode@fs.ei.tum.de> and
+  Matthias Schmidt <matthias@dragonflybsd.org>.
+  Copyright (c) 2009 - 2012 Peter Pentchev.

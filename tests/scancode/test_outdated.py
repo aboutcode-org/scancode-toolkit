@@ -39,7 +39,7 @@ def test_get_latest_version():
             status_code=200
         )
         result = outdated.get_latest_version()
-        assert '3.0.2' == result
+        assert result == '3.0.2'
 
 
 def test_get_latest_version_fails_on_http_error():
@@ -71,7 +71,7 @@ def test_get_latest_version_ignore_rc_versions():
             status_code=200
         )
         result = outdated.get_latest_version()
-        assert '2.2.1' == result
+        assert result == '2.2.1'
 
 
 def test_check_scancode_version():

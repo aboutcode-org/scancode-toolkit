@@ -144,4 +144,4 @@ class TestSeq(TestCase):
         b_end = 53
 
         tests = seq.find_longest_match(a, b, a_start, len(a), b_start, b_end, b2j, len_good, matchables)
-        assert seq.Match(a=357, b=0, size=8) == tests
+        assert tests == seq.Match(a=357, b=0, size=8)

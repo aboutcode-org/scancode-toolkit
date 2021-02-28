@@ -40,8 +40,8 @@ set "THIRDPARTY_DIR=thirdparty"
 set "THIRDPARTY_LINKS=https://thirdparty.aboutcode.org/pypi"
 
 @rem # requirements used by defaults and with --dev
-set "REQUIREMENTS=--editable .[full] --constraint requirements.txt"
-set "DEV_REQUIREMENTS=--editable .[full] --constraint requirements.txt --editable .[dev] --constraint requirements-dev.txt"
+set "REQUIREMENTS=--editable . --constraint requirements.txt"
+set "DEV_REQUIREMENTS=--editable .[dev] --constraint requirements.txt --constraint requirements-dev.txt"
 
 @rem # default supported Python version
 if not defined CONFIGURE_SUPPORTED_PYTHON (

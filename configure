@@ -51,8 +51,8 @@ export THIRDPARTY_LINKS="https://thirdparty.aboutcode.org/pypi"
 
 # requirements used by default or with --dev.
 # note the use of constraints with -c 
-REQUIREMENTS="--editable .[full] --constraint requirements.txt"
-DEV_REQUIREMENTS="--editable .[full] --constraint requirements.txt --editable .[dev] --constraint requirements-dev.txt"
+REQUIREMENTS="--editable . --constraint requirements.txt"
+DEV_REQUIREMENTS="--editable .[dev] --constraint requirements.txt --constraint requirements-dev.txt"
 
 # default supported Python version
 if [[ "$CONFIGURE_SUPPORTED_PYTHON" == "" ]]; then

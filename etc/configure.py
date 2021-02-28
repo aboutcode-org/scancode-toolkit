@@ -33,8 +33,8 @@ import sys
 
 def unsupported(platform):
     print('Unsupported Python, OS, platform or architecture: {platform}'.format(platform=platform))
-    print('See https://github.com/nexB/scancode-toolkit/ for supported OS/platforms.')
-    print('Enter a ticket https://github.com/nexB/scancode-toolkit/issues '
+    print('See https://github.com/nexB/scancode-toolkit/ for supported OS/platforms. '
+          'Enter a ticket https://github.com/nexB/scancode-toolkit/issues '
           'asking for support of your OS/platform combo.')
     sys.exit(1)
 
@@ -56,7 +56,7 @@ if not (sys.maxsize > 2 ** 32):
     unsupported('32 bits: use a 64 bits OS and Python instead.')
 
 if sys.version_info < (3, 6):
-    unsupported('Only Python 64 bits 3.6 and above on are supported')
+    unsupported('Only Python 64 bits 3.6 and above are supported.')
 
 on_win = 'win32' in sys_platform
 
@@ -81,8 +81,8 @@ def call(cmd):
             stderr=subprocess.STDOUT,
         )
     except Exception as e:
-        raise Exception(f'Failed to run {cmd}') from e
-
+        raise Exception('Failed to run {}\n{}'.format(cmd, str(e)))
+            
 
 # list of cleanble directory and file paths
 cleanable = '''
@@ -157,8 +157,8 @@ def create_virtualenv(root_dir, venv_pyz, quiet=False):
         print('* Configuring Python ...')
 
     if not venv_pyz or not os.path.exists(venv_pyz):
-        print(f'Configuration Error: Unable to find {venv_pyz}... aborting.')
-        exit(1)
+        print('Configuration Error: Unable to find {venv_pyz}... aborting.'.format(venv_pyz=venv_pyz))
+        sys.exit(1)
 
     standard_python = sys.executable
 
@@ -307,11 +307,13 @@ if __name__ == '__main__':
     etc_thirdparty = os.path.join(os.path.dirname(__file__), 'thirdparty')
     VIRTUALENV_PYZ_APP_LOC = os.path.join(etc_thirdparty, 'virtualenv.pyz')
     if not os.path.exists(VIRTUALENV_PYZ_APP_LOC):
-        print(
-            f'* FAILED to configure: virtualenv application {VIRTUALENV_PYZ_APP_LOC} not found. '
+        print((
+            '* FAILED to configure: virtualenv application {VIRTUALENV_PYZ_APP_LOC} not found. '
             'The current version needs to be saved in etc/thirdparty. '
             'See https://github.com/pypa/get-virtualenv and '
-            'https://virtualenv.pypa.io/en/latest/installation.html#via-zipapp')
+            'https://virtualenv.pypa.io/en/latest/installation.html#via-zipapp'
+            ).format(VIRTUALENV_PYZ_APP_LOC=VIRTUALENV_PYZ_APP_LOC)
+        )
         sys.exit(1)
 
     # Configure proper: create and activate virtualenv

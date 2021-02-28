@@ -1,0 +1,8 @@
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: See https://raw.githubusercontent.com/LawnchairLauncher/Lawnchair-V1/2acbd3c4756713f1f53e19c5cda9a7bbd399a199/LICENSE
+ignorable_copyrights:
+    - (c) Said project
+ignorable_holders:
+    - Said project

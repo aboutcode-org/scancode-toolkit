@@ -93,7 +93,17 @@ bin/python setup.py $QUIET sdist bdist_wheel
 
 mv dist release/pypi
 
-echo "## RELEASE: wheel and source distribution built and ready for PyPI upload"
+echo " "
+echo "## RELEASE: Building a mini wheel and a source distribution"
+mv setup.cfg setup-full.cfg
+cp setup-mini.cfg setup.cfg
+rm -rf build
+bin/python setup.py $QUIET sdist bdist_wheel
+mv setup-full.cfg setup.cfg
+
+cp dist/* release/pypi/
+
+echo "## RELEASE: full and mini, wheel and source distribution(s) built and ready for PyPI upload"
 find release -ls
 
 

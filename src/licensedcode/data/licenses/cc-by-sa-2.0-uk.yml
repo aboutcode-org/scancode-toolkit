@@ -1,0 +1,13 @@
+key: cc-by-sa-2.0-uk
+short_name: Creative Commons Attribution Share Alike 2.0 England and Wales
+name: Creative Commons Attribution Share Alike 2.0 England and Wales
+spdx_license_key: CC-BY-SA-2.0-UK
+category: Copyleft Limited
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by-sa/2.0//uk
+other_urls:
+    - https://creativecommons.org/licenses/by-sa/2.0/uk/legalcode
+minimum_coverage: 70
+ignorable_urls:
+  - https://creativecommons.org/
+

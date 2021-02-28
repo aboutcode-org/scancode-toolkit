@@ -1,6 +1,7 @@
 license_expression: gpl-2.0
 is_license_text: yes
-notes: This string "\x47\x50\x4c\x20\x76\x32" means GPL.
+relevance: 100
+notes: from https://raw.githubusercontent.com/pombredanne/gpl-history/v1.0/allvers/COPYING.2.5.html
 ignorable_copyrights:
     - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
     - copyrighted by the Free Software Foundation

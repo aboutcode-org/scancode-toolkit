@@ -1,0 +1,6 @@
+license_expression: gpl-3.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - legal/GPLV3
+notes: https://github.com/janisozaur/openage-priv/blob/a10f54f003a46e7743f4c22d4566290df8d5f500/copying.md#L5

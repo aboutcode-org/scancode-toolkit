@@ -87,7 +87,10 @@ def build_summary(resource, children, attribute, summarizer, keep_details=False)
 
     if values:
         # keep current data as plain strings
-        candidate_texts = [entry.get('value') for entry in values]
+        candidate_texts = [entry.get('copyright') for entry in values]
+        candidate_texts.append([entry.get('holder') for entry in values])
+        candidate_texts.append([entry.get('author') for entry in values])
+
     else:
         candidate_texts = []
         if resource.is_file:
@@ -98,9 +101,15 @@ def build_summary(resource, children, attribute, summarizer, keep_details=False)
         child_summaries = get_resource_summary(child, key=attribute, as_attribute=keep_details) or []
         for child_summary in child_summaries:
             count = child_summary['count']
-            value = child_summary['value']
-            if value:
-                candidate_texts.append(Text(value, value, count))
+            copyrights = child_summary['copyright']
+            holders = child_summary['holder']
+            authors = child_summary['author']
+            if copyrights:
+                candidate_texts.append(Text(copyrights, copyrights, count))
+            else if holders:
+                candidate_texts.append(Text(holders, holders, count))
+            else if authors:
+                candidate_texts.append(Text(authors, authors, count))   
             else:
                 no_detection_counter += count
 

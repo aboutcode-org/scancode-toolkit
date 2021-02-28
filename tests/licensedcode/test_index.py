@@ -60,12 +60,12 @@ class TestIndexing(IndexTesting):
         rules = [models.Rule(stored_text=t[0]) for t in test_rules]
         idx._add_rules(rules, _legalese=mini_legalese,)
 
-        assert 40 == idx.len_legalese
+        assert idx.len_legalese == 40
         expected_lengths = [r[1] for r in test_rules]
         results = [
             (rule.length_unique, rule.high_length_unique,
              rule.length, rule.high_length) for rule in rules]
-        assert expected_lengths == results
+        assert results == expected_lengths
 
         expected = set([
             'bsd',
@@ -85,7 +85,7 @@ class TestIndexing(IndexTesting):
 
         xdict = {key for key, val in idx.dictionary.items() if val >= idx.len_legalese}
 
-        assert expected == xdict
+        assert xdict == expected
 
         xtbi = sorted([
             'one',
@@ -103,7 +103,7 @@ class TestIndexing(IndexTesting):
             'bsd',
             'lgpl'])
 
-        assert xtbi == sorted([t for i, t in enumerate(idx.tokens_by_tid) if i >= idx.len_legalese])
+        assert sorted([t for i, t in enumerate(idx.tokens_by_tid) if i >= idx.len_legalese]) == xtbi
 
     def test_index_structures_with__add_rules(self):
         base = self.get_test_loc('index/tokens_count')
@@ -116,7 +116,7 @@ class TestIndexing(IndexTesting):
 
         idx._add_rules(rules, _legalese=mini_legalese)
 
-        assert 40 == idx.len_legalese
+        assert idx.len_legalese == 40
 
         expected = set([
             'all',
@@ -131,7 +131,7 @@ class TestIndexing(IndexTesting):
 
         xdict = {key for key, val in idx.dictionary.items() if val >= idx.len_legalese}
 
-        assert expected == xdict
+        assert xdict == expected
 
         xtbi = sorted([
             'all',
@@ -145,7 +145,7 @@ class TestIndexing(IndexTesting):
             'yes'
         ])
 
-        assert xtbi == sorted([t for i, t in enumerate(idx.tokens_by_tid) if i >= idx.len_legalese])
+        assert sorted([t for i, t in enumerate(idx.tokens_by_tid) if i >= idx.len_legalese]) == xtbi
 
         expected_msets_by_rid = [
             {u'redistribution': 1},
@@ -175,7 +175,7 @@ class TestIndexing(IndexTesting):
 
         htmset = [{idx.tokens_by_tid[tok]: freq for (tok, freq) in tids_mset.items()}
                   for tids_mset in idx.msets_by_rid]
-        assert expected_msets_by_rid == htmset
+        assert htmset == expected_msets_by_rid
 
     def test_index_fails_on_duplicated_rules(self):
         rule_dir = self.get_test_loc('index/no_duplicated_rule')
@@ -205,14 +205,14 @@ class TestMatchNoTemplates(IndexTesting):
             Always'''
 
         result = idx.match(query_string=querys)
-        assert 1 == len(result)
+        assert len(result) == 1
         match = result[0]
         qtext, itext = get_texts(match)
-        assert 'Redistribution and use in source and binary forms, with or without modification,\nare permitted.' == qtext
-        assert 'redistribution and use in source and binary forms with or without modification\nare permitted' == itext
+        assert qtext == 'Redistribution and use in source and binary forms, with or without modification,\nare permitted.'
+        assert itext == 'redistribution and use in source and binary forms with or without modification\nare permitted'
 
-        assert Span(0, 13) == match.qspan
-        assert Span(0, 13) == match.ispan
+        assert match.qspan == Span(0, 13)
+        assert match.ispan == Span(0, 13)
 
     def test_match_exact_from_string_twice_with_repeated_text(self):
         _stored_text = u'licensed under the GPL, licensed under the GPL'
@@ -225,25 +225,25 @@ class TestMatchNoTemplates(IndexTesting):
         #          0        1   2   3     4       5     6    7   8   9
 
         result = idx.match(query_string=querys)
-        assert 1 == len(result)
+        assert len(result) == 1
         match = result[0]
         qtext, itext = get_texts(match)
-        assert 'licensed under the GPL, licensed under the GPL' == qtext
-        assert 'licensed under the gpl licensed under the gpl' == itext
+        assert qtext == 'licensed under the GPL, licensed under the GPL'
+        assert itext == 'licensed under the gpl licensed under the gpl'
 
-        assert Span(0, 7) == match.qspan
-        assert Span(0, 7) == match.ispan
+        assert match.qspan == Span(0, 7)
+        assert match.ispan == Span(0, 7)
 
         # match again to ensure that there are no state side effects
         result = idx.match(query_string=querys)
-        assert 1 == len(result)
+        assert len(result) == 1
         match = result[0]
-        assert Span(0, 7) == match.qspan
-        assert Span(0, 7) == match.ispan
+        assert match.qspan == Span(0, 7)
+        assert match.ispan == Span(0, 7)
 
         qtext, itext = get_texts(match)
-        assert u'licensed under the GPL, licensed under the GPL' == qtext
-        assert u'licensed under the gpl licensed under the gpl' == itext
+        assert qtext == u'licensed under the GPL, licensed under the GPL'
+        assert itext == u'licensed under the gpl licensed under the gpl'
 
     def test_match_exact_with_junk_in_between_good_tokens(self):
         _stored_text = u'licensed under the GPL, licensed under the GPL'
@@ -254,26 +254,26 @@ class TestMatchNoTemplates(IndexTesting):
         querys = u'Hi licensed that under is the that GPL, licensed or under not the GPL by yes.'
 
         result = idx.match(query_string=querys)
-        assert 1 == len(result)
+        assert len(result) == 1
         match = result[0]
         qtext, itext = get_texts(match)
-        assert u'licensed [that] under [is] the [that] GPL, licensed [or] under [not] the GPL' == qtext
-        assert u'licensed under the gpl licensed under the gpl' == itext
+        assert qtext == u'licensed [that] under [is] the [that] GPL, licensed [or] under [not] the GPL'
+        assert itext == u'licensed under the gpl licensed under the gpl'
 
     def test_match_exact_from_file(self):
         idx = MiniLicenseIndex(self.get_test_rules('index/mini'))
         query_loc = self.get_test_loc('index/queryperfect-mini')
 
         result = idx.match(location=query_loc)
-        assert 1 == len(result)
+        assert len(result) == 1
         match = result[0]
 
         qtext, itext = get_texts(match)
-        assert 'Redistribution and use in source and binary forms, with or without modification,\nare permitted.' == qtext
-        assert 'redistribution and use in source and binary forms with or without modification\nare permitted' == itext
+        assert qtext == 'Redistribution and use in source and binary forms, with or without modification,\nare permitted.'
+        assert itext == 'redistribution and use in source and binary forms with or without modification\nare permitted'
 
-        assert Span(0, 13) == match.qspan
-        assert Span(0, 13) == match.ispan
+        assert match.qspan == Span(0, 13)
+        assert match.ispan == Span(0, 13)
 
     def test_match_multiple(self):
         test_rules = self.get_test_rules('index/bsd')
@@ -281,10 +281,10 @@ class TestMatchNoTemplates(IndexTesting):
         query = self.get_test_loc('index/querysimple')
 
         result = idx.match(location=query)
-        assert 1 == len(result)
+        assert len(result) == 1
         match = result[0]
-        assert Span(0, 211) == match.qspan
-        assert Span(0, 211) == match.ispan
+        assert match.qspan == Span(0, 211)
+        assert match.ispan == Span(0, 211)
 
     def test_match_return_correct_offsets(self):
         # notes: A is a stopword. This and that are not
@@ -298,14 +298,14 @@ class TestMatchNoTemplates(IndexTesting):
         #          0    1     2    3    4 5    6    7
 
         result = idx.match(query_string=querys)
-        assert 1 == len(result)
+        assert len(result) == 1
         match = result[0]
         qtext, itext = get_texts(match)
-        assert 'this GPL. A MIT. that LGPL.' == qtext
-        assert 'this gpl mit that lgpl' == itext
+        assert qtext == 'this GPL. A MIT. that LGPL.'
+        assert itext == 'this gpl mit that lgpl'
 
-        assert Span(0, 4) == match.qspan
-        assert Span(0, 4) == match.ispan
+        assert match.qspan == Span(0, 4)
+        assert match.ispan == Span(0, 4)
 
 
 class TestMatchWithTemplates(IndexTesting):
@@ -349,9 +349,9 @@ Goodbye
 No part of match        '''
         result = idx.match(query_string=querys)
         print('here3')
-        assert 1 == len(result)
+        assert len(result) == 1
         match = result[0]
-        assert match_seq.MATCH_SEQ == match.matcher
+        assert match.matcher == match_seq.MATCH_SEQ
 
         exp_qtext = u"""
             Redistribution and use in source and binary forms, with or without modification,
@@ -410,13 +410,13 @@ No part of match        '''
         """.lower().split()
 
         qtext, itext = get_texts(match)
-        assert exp_qtext == qtext.split()
-        assert exp_itext == itext.split()
+        assert qtext.split() == exp_qtext
+        assert itext.split() == exp_itext
 
-        assert (Span(1, 72) | Span(74, 211)) == match.qspan
+        assert match.qspan == (Span(1, 72) | Span(74, 211))
 
-        assert Span(0, 209) == match.ispan
-        assert 100 == match.coverage()
+        assert match.ispan == Span(0, 209)
+        assert match.coverage() == 100
 
     def test_match_to_indexed_template_with_few_tokens_around_gaps(self):
         # Was failing when a gap in a template starts very close to the start of
@@ -432,7 +432,7 @@ No part of match        '''
 
         query_loc = self.get_test_loc('index/templates/query.txt')
         result = idx.match(location=query_loc)
-        assert 1 == len(result)
+        assert len(result) == 1
         match = result[0]
 
         exp_qtext = u"""
@@ -517,10 +517,10 @@ No part of match        '''
             ADVISED OF THE DAMAGE
         """.lower().split()
         qtext, itext = get_texts(match)
-        assert exp_qtext == qtext.split()
-        assert exp_itext == itext.split()
+        assert qtext.split() == exp_qtext
+        assert itext.split() == exp_itext
         assert match.coverage() > 97
-        assert match_seq.MATCH_SEQ == match.matcher
+        assert match.matcher == match_seq.MATCH_SEQ
 
     def test_match_with_templates_with_redundant_tokens_yield_single_exact_match(self):
         _stored_text = u'copyright reserved mit is license, {{}} copyright reserved mit is license'
@@ -538,18 +538,18 @@ No part of match        '''
 
         expected = [None, None, u'copyright', u'reserved', u'mit', u'is', u'license', u'is', None, u'copyright', u'reserved', u'mit', u'is', u'license', None]
         #              0     1            2            3       4      5           6      7      8            9           10      11     12          13     14
-        assert expected == tks_as_str(qry.tokens_with_unknowns())
+        assert tks_as_str(qry.tokens_with_unknowns()) == expected
 
         result = idx.match(query_string=querys)
-        assert 1 == len(result)
+        assert len(result) == 1
 
         match = result[0]
-        assert Span(0, 4) | Span(6, 10) == match.qspan
-        assert Span(0, 9) == match.ispan
-        assert 100 == match.coverage()
+        assert match.qspan == Span(0, 4) | Span(6, 10)
+        assert match.ispan == Span(0, 9)
+        assert match.coverage() == 100
         qtext, itext = get_texts(match)
-        assert 'copyright reserved mit is license [is] [the] copyright reserved mit is license' == qtext
-        assert 'copyright reserved mit is license copyright reserved mit is license' == itext
+        assert qtext == 'copyright reserved mit is license [is] [the] copyright reserved mit is license'
+        assert itext == 'copyright reserved mit is license copyright reserved mit is license'
 
 
 class TestIndexDumpLoad(IndexTesting):
@@ -565,7 +565,7 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
+        assert sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese]) == expected
 
     def test_dump_load_default(self):
         test_rules = self.get_test_rules('index/dump_load')
@@ -580,11 +580,11 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
+        assert sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese]) == expected
 
         with open(test_dump, 'rb') as td:
             idx3 = index.LicenseIndex.loads(td.read())
-        assert expected == sorted([k for k, v in idx3.dictionary.items() if v >= idx3.len_legalese])
+        assert sorted([k for k, v in idx3.dictionary.items() if v >= idx3.len_legalese]) == expected
 
     def test_dumps_fast_loads_fast(self):
         test_rules = self.get_test_rules('index/dump_load')
@@ -596,7 +596,7 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
+        assert sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese]) == expected
 
     def test_dumps_slow_loads_slow(self):
         test_rules = self.get_test_rules('index/dump_load')
@@ -608,7 +608,7 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
+        assert sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese]) == expected
 
     def test_dumps_fast_loads_slow(self):
         test_rules = self.get_test_rules('index/dump_load')
@@ -620,7 +620,7 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
+        assert sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese]) == expected
 
     def test_dumps_slow_loads_fast(self):
         test_rules = self.get_test_rules('index/dump_load')
@@ -632,7 +632,7 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
+        assert sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese]) == expected
 
     def test_dump_fast_load_fast(self):
         test_rules = self.get_test_rules('index/dump_load')
@@ -647,7 +647,7 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
+        assert sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese]) == expected
 
     def test_dump_fast_load_slow(self):
         test_rules = self.get_test_rules('index/dump_load')
@@ -662,7 +662,7 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
+        assert sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese]) == expected
 
     def test_dump_slow_load_slow(self):
         test_rules = self.get_test_rules('index/dump_load')
@@ -677,7 +677,7 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
+        assert sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese]) == expected
 
     def test_dump_slow_load_fast(self):
         test_rules = self.get_test_rules('index/dump_load')
@@ -692,4 +692,4 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
+        assert sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese]) == expected

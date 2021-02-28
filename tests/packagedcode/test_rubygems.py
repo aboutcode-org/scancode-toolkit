@@ -118,7 +118,7 @@ def create_test_function(test_loc, test_name, regen=False):
 
         with io.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex)
-        assert expected == package
+        assert package == expected
 
     if isinstance(test_name, bytes):
         test_name = test_name.decode('utf-8')
