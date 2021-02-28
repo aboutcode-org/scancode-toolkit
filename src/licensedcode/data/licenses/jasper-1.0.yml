@@ -3,6 +3,7 @@ short_name: Jasper 1.0
 name: Jasper Reports License 1.0
 category: Permissive
 owner: JasperSoft
+spdx_license_key: LicenseRef-scancode-jasper-1.0
 ignorable_copyrights:
     - Copyright (c) 2001-2003 Teodor Danciu (teodord@hotmail.com)
 ignorable_authors:

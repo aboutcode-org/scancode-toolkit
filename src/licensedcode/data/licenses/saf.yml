@@ -3,6 +3,7 @@ short_name: Service Availability Forum License
 name: Service Availability Forum License
 category: Permissive
 owner: Service Availability Forum
+spdx_license_key: LicenseRef-scancode-saf
 ignorable_copyrights:
     - Copyright (c) Service Availability(TM) Forum
 ignorable_holders:

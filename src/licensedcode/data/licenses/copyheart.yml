@@ -4,5 +4,6 @@ name: Copyheart
 category: Public Domain
 owner: Nina Paley
 homepage_url: http://copyheart.org
+spdx_license_key: LicenseRef-scancode-copyheart
 text_urls:
     - http://copyheart.org

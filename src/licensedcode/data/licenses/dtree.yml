@@ -4,6 +4,7 @@ name: Dtree License
 category: Permissive
 owner: Unspecified
 homepage_url: http://destroydrop.com/javascripts/tree/
+spdx_license_key: LicenseRef-scancode-dtree
 other_urls:
     - http://destroydrop.com/javascripts/tree/
 ignorable_copyrights:

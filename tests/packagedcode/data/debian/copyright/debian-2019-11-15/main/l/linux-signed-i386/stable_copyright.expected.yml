@@ -1,0 +1,30 @@
+- |
+  GPL-2
+  LGPL-2.1
+  GPL-2+ or X11
+  CRYPTOGAMS
+  Unicode-data
+  Xen-interface
+- gpl-2.0 AND gpl-2.0-plus AND lgpl-2.1 AND lgpl-2.1-plus AND mit AND unicode AND unknown AND
+  (bsd-new OR gpl-1.0-plus)
+- |
+  1991-2012 Linus Torvalds and many others
+  1996-2006 Manoj Srivastava
+  2005-2012 Debian kernel team
+  2011 Lennart Poettering
+  2012-2018 Linus Torvalds and many others
+  2006,2014 Andy Polyakov <appro@openssl.org>
+  1991-2012 Unicode, Inc.
+  2002-2006 Keir Fraser
+  2004 Tim Deegan
+  2004 Andrew Warfield
+  2005 Nguyen Anh Quynh
+  2005-2006 IBM Corporation
+  2005 Anthony Liguori
+  2005 Rusty Russell
+  2005-2006 XenSource Ltd.
+  2006 Ian Campbell
+  2006 Red Hat, Inc.
+  2010 Ryan Wilson
+  2014-2015 Red Hat, Inc.
+  2015 Intel Corporation

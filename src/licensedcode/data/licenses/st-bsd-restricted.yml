@@ -4,3 +4,4 @@ name: STMicro BSD Restricted
 category: Free Restricted
 owner: STMicroelectronics
 homepage_url: https://www.st.com/
+spdx_license_key: LicenseRef-scancode-st-bsd-restricted

@@ -4,5 +4,6 @@ name: Eclipse Foundation Software User Agreement 2002
 category: Copyleft
 owner: Eclipse Foundation
 homepage_url: https://web.archive.org/web/20020914103136/http://eclipse.org/
+spdx_license_key: LicenseRef-scancode-eclipse-sua-2002
 ignorable_urls:
     - http://www.eclipse.org/legal/cpl-v10.html

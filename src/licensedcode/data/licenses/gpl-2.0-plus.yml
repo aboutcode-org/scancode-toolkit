@@ -10,10 +10,18 @@ notes: |
 spdx_license_key: GPL-2.0-or-later
 other_spdx_license_keys:
     - GPL-2.0+
+    - GPL 2.0+
 text_urls:
     - http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
 other_urls:
     - http://www.opensource.org/licenses/GPL-2.0
     - https://opensource.org/licenses/GPL-2.0
     - https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-minimum_coverage: 10
+minimum_coverage: 99
+ignorable_copyrights:
+  - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+  - copyrighted by the Free Software Foundation
+ignorable_holders:
+  - Free Software Foundation, Inc.
+  - the Free Software Foundation
+

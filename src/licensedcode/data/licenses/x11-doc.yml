@@ -4,6 +4,7 @@ name: X11 Documentation License
 category: Permissive
 owner: XFree86 Project, Inc
 homepage_url: https://www.x.org/
+spdx_license_key: LicenseRef-scancode-x11-doc
 text_urls:
     - https://answers.launchpad.net/ubuntu-leb/oneiric/+source/libxext/+copyright
     - https://www.x.org/releases/X11R7.7/doc/libXtst/xtestlib.txt

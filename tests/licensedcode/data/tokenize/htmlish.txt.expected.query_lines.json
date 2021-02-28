@@ -1,94 +1,94 @@
 [
   [
-    1, 
+    1,
     "<hr class=\"small\" /><div class=\"main-text-cont\">"
-  ], 
+  ],
   [
-    2, 
+    2,
     "<h3>MySQL</h3>"
-  ], 
+  ],
   [
-    3, 
+    3,
     "<p>For some of our temporary storage, we use a hardened version of MySQL.</p>"
-  ], 
+  ],
   [
-    4, 
+    4,
     "</div>"
-  ], 
+  ],
   [
-    5, 
+    5,
     "<hr class=\"small\" /><div class=\"main-text-cont\">"
-  ], 
+  ],
   [
-    6, 
+    6,
     "<h3>New BSD License (BSD)</h3>"
-  ], 
+  ],
   [
-    7, 
+    7,
     "<p>"
-  ], 
+  ],
   [
-    8, 
+    8,
     "Copyright (c) 2010, Noesis Innovation"
-  ], 
+  ],
   [
-    9, 
+    9,
     "All rights reserved."
-  ], 
+  ],
   [
-    10, 
+    10,
     "</p>"
-  ], 
+  ],
   [
-    11, 
+    11,
     "<p>"
-  ], 
+  ],
   [
-    12, 
+    12,
     "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:"
-  ], 
+  ],
   [
-    13, 
+    13,
     "</p>"
-  ], 
+  ],
   [
-    14, 
+    14,
     "<ul class=\"bullet-lists\">"
-  ], 
+  ],
   [
-    15, 
+    15,
     "<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>"
-  ], 
+  ],
   [
-    16, 
+    16,
     "<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>"
-  ], 
+  ],
   [
-    17, 
+    17,
     "<li>Neither the name of Noesis Innovation nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>"
-  ], 
+  ],
   [
-    18, 
+    18,
     "</ul>"
-  ], 
+  ],
   [
-    19, 
+    19,
     "<p>"
-  ], 
+  ],
   [
-    20, 
+    20,
     "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,"
-  ], 
+  ],
   [
-    20, 
+    20,
     "WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-  ], 
+  ],
   [
-    21, 
+    21,
     "</p>"
-  ], 
+  ],
   [
-    22, 
+    22,
     "</div>"
   ]
 ]

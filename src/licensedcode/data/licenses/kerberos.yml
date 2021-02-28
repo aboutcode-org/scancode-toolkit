@@ -4,6 +4,7 @@ name: Kerberos License
 category: Permissive
 owner: MIT
 notes: this is a complex composite
+spdx_license_key: LicenseRef-scancode-kerberos
 minimum_coverage: 80
 ignorable_copyrights:
     - Copyright (c) 2001, Dr Brian Gladman

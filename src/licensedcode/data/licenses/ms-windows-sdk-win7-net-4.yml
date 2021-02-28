@@ -3,6 +3,7 @@ short_name: MS Windows SDK Windows7 .NET Framework 4
 name: Microsoft Windows SDK for Windows 7 and .NET Framework 4
 category: Proprietary Free
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-windows-sdk-win7-net-4
 ignorable_copyrights:
     - Copyright (c) 2006 Microsoft Corporation
 ignorable_holders:

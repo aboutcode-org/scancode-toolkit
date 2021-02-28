@@ -3,6 +3,7 @@ short_name: Crashlytics Agreement 2018
 name: Crashlytics Agreement 2018
 category: Commercial
 owner: Google
+spdx_license_key: LicenseRef-scancode-crashlytics-agreement-2018
 ignorable_copyrights:
     - (c) Google LLC
 ignorable_holders:

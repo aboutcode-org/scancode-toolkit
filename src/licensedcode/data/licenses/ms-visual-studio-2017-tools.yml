@@ -4,6 +4,7 @@ name: Microsoft Visual Studio 2017 Tools
 category: Commercial
 owner: Microsoft
 homepage_url: https://visualstudio.microsoft.com/license-terms/mlt552233/
+spdx_license_key: LicenseRef-scancode-ms-visual-studio-2017-tools
 ignorable_urls:
     - http://go.microsoft.com/?linkid=9840733
     - http://www.microsoft.com/exporting

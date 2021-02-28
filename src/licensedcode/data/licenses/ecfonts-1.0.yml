@@ -1,0 +1,9 @@
+key: ecfonts-1.0
+short_name: latex-ec-fonts
+name: Copyright notice to the ec fonts
+category: Permissive
+homepage_url: http://dante.ctan.org
+owner: Joerg Knappen
+text_urls:
+    - http://dante.ctan.org/tex-archive/fonts/ec/src/copyrite.txt
+spdx_license_key: LicenseRef-scancode-ecfonts-1.0

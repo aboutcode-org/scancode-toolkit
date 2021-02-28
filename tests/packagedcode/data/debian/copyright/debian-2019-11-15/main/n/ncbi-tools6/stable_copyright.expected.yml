@@ -1,0 +1,31 @@
+- |
+  public_domain
+  BSL-1.0
+  MIT
+  NCSA
+  BSD-3-Clause
+  Expat
+  GPL-2+
+- boost-1.0 AND bsd-new AND flex-2.5 AND gpl-2.0-plus AND mit AND mit-old-style-no-advert AND
+  mit-veillard-variant AND proprietary-license AND public-domain AND public-domain-disclaimer
+  AND unknown AND uoi-ncsa AND us-govt-public-domain
+- |
+  1996-2017 NCBI
+  2006 John Maddock
+  1998-1999 The Massachusetts Institute of Technology
+  ???? National Center for Supercomputing Applications
+  1983 Regents of the University of California
+  1980, 1983, 1988 Regents of the University of California
+  1982, 1986, 1989 Regents of the University of California
+  1982, 1986, 1990 Regents of the University of California
+  1982 Regents of the University of California
+  2012-2016 Krzysztof Gabis
+  1993 Free Software Foundation, Inc.
+  1985, 1989, 1990, 1991, 1992, 1993 Free Software Foundation, Inc.
+  1998-1999 Stephane Bortzmeyer <bortzmeyer@pasteur.fr>
+  2001 Dr. Guenter Bechly <gbechly@debian.org>
+  2001-2019 Aaron M. Ucko <ucko@debian.org>
+  2012-2019 Andreas Tille <tille@debian.org
+  2019 Steffen Möller <moeller@debian.org>
+  1996-2018 NCBI
+  2018 Liubov Chuprikova <chuprikovalv@gmail.com>

@@ -69,7 +69,7 @@ Package: chrome
 Package: composer
   class: packagedcode.phpcomposer:PHPComposerPackage
   metafiles: composer.json, composer.lock
-  filetypes: .json, .lock
+  extensions: .json, .lock
 
 --------------------------------------------
 Package: conda
@@ -190,7 +190,7 @@ Package: msi
 Package: npm
   class: packagedcode.npm:NpmPackage
   metafiles: package.json, npm-shrinkwrap.json, package-lock.json, yarn.lock
-  filetypes: .tgz
+  extensions: .tgz
 
 --------------------------------------------
 Package: nsis
@@ -247,4 +247,10 @@ Package: war
   metafiles: WEB-INF/web.xml
   extensions: .war
   filetypes: java archive , zip archive
+
+--------------------------------------------
+Package: winexe
+  class: packagedcode.win_pe:WindowsExecutable
+  extensions: .exe, .dll
+  filetypes: pe32, for ms windows
 

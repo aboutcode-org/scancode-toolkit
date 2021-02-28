@@ -1,0 +1,10 @@
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright (c) Koninklijke Philips N.V., https://www.philips.com
+ignorable_holders:
+    - Koninklijke Philips N.V.
+ignorable_urls:
+    - https://www.philips.com/

@@ -4,6 +4,7 @@ name: NICTA Public Software Licence 1.0
 category: Permissive
 owner: NICTA
 homepage_url: http://www.opensource.apple.com/source/mDNSResponder/mDNSResponder-320.10/mDNSPosix/nss_ReadMe.txt
+spdx_license_key: LicenseRef-scancode-nicta-psl
 text_urls:
     - http://www.opensource.apple.com/source/mDNSResponder/mDNSResponder-320.10/mDNSPosix/nss_ReadMe.txt
 other_urls:

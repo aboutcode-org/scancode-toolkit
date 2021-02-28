@@ -1,0 +1,12 @@
+license_expression: proprietary-license AND other-permissive
+is_license_text: yes
+relevance: 100
+notes: Older w3c IPR text
+ignorable_copyrights:
+    - Copyright (c) 1994-2002 W3C
+    - copyright in Web
+ignorable_holders:
+    - W3C
+    - in Web
+ignorable_emails:
+    - site-policy@w3.org

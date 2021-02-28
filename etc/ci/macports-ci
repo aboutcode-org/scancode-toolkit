@@ -1,0 +1,304 @@
+#! /bin/bash
+
+# Copyright (c) 2019 Giovanni Bussi
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+export COLUMNS=80
+
+if [ "$GITHUB_ACTIONS" = true ] ; then
+    echo "COLUMNS=$COLUMNS" >> "$GITHUB_ENV"
+fi
+
+# file to be source at the end of subshell:
+export MACPORTS_CI_SOURCEME="$(mktemp)"
+
+(
+# start subshell
+# this allows to use the script in two ways:
+# 1. as ./macports-ci
+# 2. as source ./macports-ci
+# as of now, choice 2 only changes the env var COLUMNS.
+
+MACPORTS_VERSION=2.6.4
+MACPORTS_PREFIX=/opt/local
+MACPORTS_SYNC=tarball
+
+action=$1
+shift
+
+case "$action" in
+(install)
+
+echo "macports-ci: install"
+
+KEEP_BREW=yes
+
+for opt
+do
+  case "$opt" in
+  (--source) SOURCE=yes ;;
+  (--binary) SOURCE=no ;;
+  (--keep-brew) KEEP_BREW=yes ;;
+  (--remove-brew) KEEP_BREW=no ;;
+  (--version=*) MACPORTS_VERSION="${opt#--version=}" ;;
+  (--prefix=*)  MACPORTS_PREFIX="${opt#--prefix=}" ;;
+  (--sync=*)    MACPORTS_SYNC="${opt#--sync=}" ;;
+  (*) echo "macports-ci: unknown option $opt"
+      exit 1 ;;
+  esac
+done
+
+if test "$KEEP_BREW" = no ; then
+  echo "macports-ci: removing homebrew"
+  pushd "$(mktemp -d)"
+  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall > uninstall
+  chmod +x uninstall
+  ./uninstall --force
+  popd
+else
+  echo "macports-ci: keeping HomeBrew"
+fi
+
+echo "macports-ci: prefix=$MACPORTS_PREFIX"
+
+if test "$MACPORTS_PREFIX" != /opt/local ; then
+  echo "macports-ci: Installing on non standard prefix $MACPORTS_PREFIX can be only made from sources"
+  SOURCE=yes
+fi
+
+if test "$SOURCE" = yes ; then
+  echo "macports-ci: Installing from source"
+else
+  echo "macports-ci: Installing from binary"
+fi
+
+echo "macports-ci: Sync mode=$MACPORTS_SYNC"
+
+pushd "$(mktemp -d)"
+
+OSX_VERSION="$(sw_vers -productVersion | grep -o '^[0-9][0-9]*\.[0-9][0-9]*')"
+
+if test "$OSX_VERSION" == 10.10 ; then
+  OSX_NAME=Yosemite
+elif test "$OSX_VERSION" == 10.11 ; then
+  OSX_NAME=ElCapitan
+elif test "$OSX_VERSION" == 10.12 ; then
+  OSX_NAME=Sierra
+elif test "$OSX_VERSION" == 10.13 ; then
+  OSX_NAME=HighSierra
+elif test "$OSX_VERSION" == 10.14 ; then
+  OSX_NAME=Mojave
+elif test "$OSX_VERSION" == 10.15 ; then
+  OSX_NAME=Catalina
+else
+  echo "macports-ci: Unknown OSX version $OSX_VERSION"
+  exit 1
+fi
+
+echo "macports-ci: OSX version $OSX_VERSION $OSX_NAME"
+
+MACPORTS_PKG=MacPorts-${MACPORTS_VERSION}-${OSX_VERSION}-${OSX_NAME}.pkg
+
+# this is a workaround needed because binary installer MacPorts-2.6.3-10.12-Sierra.pkg is broken
+if [ "$SOURCE" != yes ] && [ "$MACPORTS_PKG" = "MacPorts-2.6.3-10.12-Sierra.pkg" ] ; then
+  echo "macports-ci: WARNING $MACPORTS_PKG installer is broken"
+  echo "macports-ci: reverting to 2.6.2 installer followed by selfupdate"
+  MACPORTS_VERSION=2.6.2
+  MACPORTS_PKG=MacPorts-${MACPORTS_VERSION}-${OSX_VERSION}-${OSX_NAME}.pkg
+fi
+
+URL="https://distfiles.macports.org/MacPorts"
+URL="https://github.com/macports/macports-base/releases/download/v$MACPORTS_VERSION/"
+
+echo "macports-ci: Base URL is $URL"
+
+if test "$SOURCE" = yes ; then
+# download source:
+  curl -LO $URL/MacPorts-${MACPORTS_VERSION}.tar.bz2
+  tar xjf MacPorts-${MACPORTS_VERSION}.tar.bz2
+  cd MacPorts-${MACPORTS_VERSION}
+# install
+  ./configure --prefix="$MACPORTS_PREFIX" --with-applications-dir="$MACPORTS_PREFIX/Applications" >/dev/null &&
+    sudo make install >/dev/null
+else
+
+# download installer:
+  curl -LO $URL/$MACPORTS_PKG
+# install:
+  sudo installer -verbose -pkg $MACPORTS_PKG -target /
+fi
+
+# update:
+export PATH="$MACPORTS_PREFIX/bin:$PATH"
+
+echo "PATH=\"$MACPORTS_PREFIX/bin:\$PATH\""  > "$MACPORTS_CI_SOURCEME"
+
+if [ "$GITHUB_ACTIONS" = true ] ; then
+    echo "$MACPORTS_PREFIX/bin" >> "$GITHUB_PATH"
+fi
+
+
+SOURCES="${MACPORTS_PREFIX}"/etc/macports/sources.conf
+
+case "$MACPORTS_SYNC" in
+(rsync)
+  echo "macports-ci: Using rsync"
+  ;;
+(github)
+  echo "macports-ci: Using github"
+   pushd "$MACPORTS_PREFIX"/var/macports/sources
+   sudo mkdir -p github.com/macports/macports-ports/
+   sudo chown -R $USER:admin github.com
+   git clone https://github.com/macports/macports-ports.git github.com/macports/macports-ports/
+   awk '{if($NF=="[default]") print "file:///opt/local/var/macports/sources/github.com/macports/macports-ports/"; else print}' "$SOURCES" > $HOME/$$.tmp
+   sudo mv -f $HOME/$$.tmp "$SOURCES"
+   popd
+  ;;
+(tarball)
+  echo "macports-ci: Using tarball"
+  awk '{if($NF=="[default]") print "https://distfiles.macports.org/ports.tar.gz [default]"; else print}' "$SOURCES" > $$.tmp
+  sudo mv -f $$.tmp "$SOURCES"
+  ;;
+(*)
+  echo "macports-ci: Unknown sync mode $MACPORTS_SYNC"
+  ;;
+esac
+
+i=1
+# run through a while to retry upon failure
+while true
+do
+  echo "macports-ci: Trying to selfupdate (iteration $i)"
+# here I test for the presence of a known portfile
+# this check confirms that ports were installed
+# notice that port -N selfupdate && break is not sufficient as a test
+# (sometime it returns a success even though ports have not been installed)
+# for some misterious reasons, running without "-d" does not work in some case
+  sudo port -d -N selfupdate 2>&1 | grep -v DEBUG | awk '{if($1!="x")print}'
+  port info xdrfile > /dev/null && break || true
+  sleep 5
+  i=$((i+1))
+  if ((i>20)) ; then
+    echo "macports-ci: Failed after $i iterations"
+    exit 1
+  fi
+done
+
+echo "macports-ci: Selfupdate successful after $i iterations"
+
+dir="$PWD"
+popd
+sudo rm -fr $dir
+
+;;
+
+(localports)
+
+echo "macports-ci: localports"
+
+for opt
+do
+  case "$opt" in
+  (*) ports="$opt" ;;
+  esac
+done
+
+if ! test -d "$ports" ; then
+  echo "macports-ci: Please provide a port directory"
+  exit 1
+fi
+
+w=$(which port)
+
+MACPORTS_PREFIX="${w%/bin/port}"
+
+cd "$ports"
+
+ports="$(pwd)"
+
+echo "macports-ci: Portdir fullpath: $ports"
+SOURCES="${MACPORTS_PREFIX}"/etc/macports/sources.conf
+
+awk -v repo="file://$ports" '{if($NF=="[default]") print repo; print}' "$SOURCES" > $$.tmp
+sudo mv -f $$.tmp "$SOURCES"
+
+portindex
+
+;;
+
+(ccache)
+w=$(which port)
+MACPORTS_PREFIX="${w%/bin/port}"
+
+echo "macports-ci: ccache"
+
+ccache_do=install
+
+for opt
+do
+  case "$opt" in
+  (--save) ccache_do=save ;;
+  (--install) ccache_do=install ;;
+  (*) echo "macports-ci: ccache: unknown option $opt"
+      exit 1 ;;
+  esac
+done
+
+
+case "$ccache_do" in
+(install)
+# first install ccache
+sudo port -N install ccache
+# then tell macports to use it
+CONF="${MACPORTS_PREFIX}"/etc/macports/macports.conf
+awk '{if(match($0,"configureccache")) print "configureccache yes" ; else print }' "$CONF" > $$.tmp
+sudo mv -f $$.tmp "$CONF"
+
+# notice that cache size is set to 512Mb, same as it is set by Travis-CI on linux
+# might be changed in the future
+test -f "$HOME"/.macports-ci-ccache/ccache.conf &&
+  sudo rm -fr "$MACPORTS_PREFIX"/var/macports/build/.ccache &&
+  sudo mkdir -p "$MACPORTS_PREFIX"/var/macports/build/.ccache &&
+  sudo cp -a "$HOME"/.macports-ci-ccache/* "$MACPORTS_PREFIX"/var/macports/build/.ccache/ &&
+  sudo echo "max_size = 512M" > "$MACPORTS_PREFIX"/var/macports/build/.ccache/ccache.conf &&
+  sudo chown -R macports:admin "$MACPORTS_PREFIX"/var/macports/build/.ccache
+
+;;
+(save)
+
+sudo rm -fr "$HOME"/.macports-ci-ccache
+sudo mkdir -p "$HOME"/.macports-ci-ccache
+sudo cp -a "$MACPORTS_PREFIX"/var/macports/build/.ccache/* "$HOME"/.macports-ci-ccache/
+
+esac
+
+CCACHE_DIR="$MACPORTS_PREFIX"/var/macports/build/.ccache/ ccache -s
+
+;;
+
+(*)
+echo "macports-ci: unknown action $action"
+
+esac
+
+)
+
+# allows setting env var if necessary:
+source "$MACPORTS_CI_SOURCEME"

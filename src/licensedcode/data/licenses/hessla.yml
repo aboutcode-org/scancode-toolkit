@@ -1,0 +1,10 @@
+key: hessla
+short_name: HESSLA 
+name: Hacktivismo Enhanced-Source Software License Agreement
+category: Proprietary Free
+owner: Hacktivismo
+spdx_license_key: LicenseRef-scancode-hessla
+homepage_url: http://www.hacktivismo.com/about/hessla.php
+text_urls: 
+    - https://directory.fsf.org/wiki/License:HESSLA
+

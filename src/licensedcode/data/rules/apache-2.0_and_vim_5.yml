@@ -1,0 +1,4 @@
+license_expression: apache-2.0 AND vim
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/neovim/neovim/blob/master/LICENSE

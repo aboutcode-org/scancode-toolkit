@@ -3,3 +3,4 @@ short_name: MS Systems Journal Sample Code License
 name: Microsoft Systems Journal Sample Code License
 category: Permissive
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-msj-sample-code

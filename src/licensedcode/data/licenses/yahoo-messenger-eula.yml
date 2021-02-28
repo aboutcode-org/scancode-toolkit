@@ -4,6 +4,7 @@ name: Yahoo Messenger EULA
 category: Proprietary Free
 owner: Yahoo
 homepage_url: https://info.yahoo.com/legal/us/yahoo/messenger/messengertos/messengertos-279.html
+spdx_license_key: LicenseRef-scancode-yahoo-messenger-eula
 ignorable_urls:
     - http://privacy.yahoo.com/privacy/us/mesg/index.htm
     - https://info.yahoo.com/legal/us/yahoo/messenger/messengertos/messengertos-279.html

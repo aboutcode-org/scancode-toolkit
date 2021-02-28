@@ -1,0 +1,33 @@
+- |
+  BSD-3-clause
+  GPL-2
+  BSD-2-clause
+  BSD-3-clause or GPL-2
+  BSD-3-clause or LGPL-2.1
+  GPL-3
+  GPL-2.0+
+  LGPL-2.1
+- bsd-new AND bsd-simplified AND gpl-2.0 AND gpl-2.0-plus AND gpl-3.0 AND lgpl-2.0-plus AND
+  lgpl-2.1 AND unknown
+- |
+  2008-2014 Cisco Systems, Inc.
+  2012-2014 6WIND S.A.
+  1999-2016 Intel Corporation.
+  2010-2013 Tilera Corporation.
+  2012-2016 Mellanox.
+  2007 VMware, Inc.
+  2007 Nuova Systems, Inc.
+  2014 IBM Corporation.
+  and many other contributors.
+  2007-2016, Intel Corporation
+  2006-2007 Myricom, Inc. for some LRO specific code
+  2007, Nuova Systems, Inc.
+  2008-2016, Cisco Systems, Inc.
+  2010-2016, Intel Corporation.
+  2007-2014, Intel Corporation.
+  2015, Neil Horman <nhorman@tuxdriver.com>
+  2007, VMware, Inc.
+  2016, Neil Horman <nhorman@tuxdriver.com>
+  2015, 2016 Canonical Ltd.
+  2009-2016 Andreas Beckmann <anbe@debian.org>
+  2010-2016 Russ Allbery <rra@debian.org>

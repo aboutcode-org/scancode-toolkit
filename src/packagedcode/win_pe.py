@@ -1,46 +1,32 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 from contextlib import closing
 
+import attr
 from ftfy import fix_text
 import pefile
-from six import string_types
 
+from commoncode import filetype
 from commoncode import text
 from typecode import contenttype
 
+from packagedcode import models
+from packagedcode.models import Party
+from packagedcode.models import party_org
 
 TRACE = False
 
+
 def logger_debug(*args):
     pass
+
 
 if TRACE:
     import logging
@@ -52,14 +38,15 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(
-            isinstance(a, string_types) and a or repr(a) for a in args))
-
+            isinstance(a, str) and a or repr(a) for a in args))
 
 """
 Extract data from windows PE DLLs and executable.
+
 Note that the extraction may not be correct for all PE in particular
 older legacy PEs. See tests and:
     http://msdn.microsoft.com/en-us/library/aa381058%28v=VS.85%29.aspx
+
 PE stores data in a "VarInfo" structure for "variable information".
 VarInfo are by definition variable key/value pairs:
     http://msdn.microsoft.com/en-us/library/ms646995%28v=vs.85%29.aspx
@@ -69,50 +56,95 @@ an eye on origin and license related information and return a value
 when there is one present.
 """
 
+"""
+https://docs.microsoft.com/en-us/windows/win32/menurc/versioninfo-resource
+Name                Description
+
+Comments            Additional information that should be displayed for
+                    diagnostic purposes.
+
+CompanyName         Company that produced the file?for example, "Microsoft
+                    Corporation" or "Standard Microsystems Corporation, Inc."
+                    This string is required.
+
+FileDescription     File description to be presented to users. This string may
+                    be displayed in a list box when the user is choosing files
+                    to install?for example, "Keyboard Driver for AT-Style
+                    Keyboards". This string is required.
+
+FileVersion         Version number of the file?for example, "3.10" or
+                    "5.00.RC2". This string is required.
+
+InternalName        Internal name of the file, if one exists?for example, a
+                    module name if the file is a dynamic-link library. If the
+                    file has no internal name, this string should be the
+                    original filename, without extension. This string is
+                    required.
+
+LegalCopyright      Copyright notices that apply to the file. This should
+                    include the full text of all notices, legal symbols,
+                    copyright dates, and so on. This string is optional.
+
+LegalTrademarks     Trademarks and registered trademarks that apply to the file.
+                    This should include the full text of all notices, legal
+                    symbols, trademark numbers, and so on. This string is
+                    optional.
+
+OriginalFilename    Original name of the file, not including a path. This
+                    information enables an application to determine whether a
+                    file has been renamed by a user. The format of the name
+                    depends on the file system for which the file was created.
+                    This string is required.
+
+ProductName         Name of the product with which the file is distributed. This
+                    string is required.
+
+ProductVersion      Version of the product with which the file is
+                    distributed?for example, "3.10" or "5.00.RC2". This string
+                    is required.
+"""
+
 # List of common info keys found in PE.
 PE_INFO_KEYS = (
-    u'APIVersion',
-    u'Assembly Version',
-    # u'BinType',
-    u'BuildDate',
-    # u'BuildType',
-    # u'BuildVariant',
-    u'BuildVersion',
-    u'Comments',
-    u'Company',
-    u'CompanyName',
-    # u'Configuration',
-    u'FileDescription',
-    u'FileVersion',
-    u'Full Version',
-    u'InternalName',
-    u'LegalCopyright',
-    u'LegalTrademarks',
-    u'LegalTrademarks1',
-    u'LegalTrademarks2',
-    # u'LibToolFileVersion',
-    u'License',
-    u'OriginalFilename',
-    u'ProductName',
-    u'ProductVersion',
-    # u'PrivateBuild',
-    # u'SharedMemoryVersion',
-    # u'SpecialBuild',
-    u'WWW',
+    'Full Version',  # rare and used only by Java exe
+    'ProductVersion',  # the actual version
+    'FileVersion',  # another common version
+    'Assembly Version',  # a version common in MSFT, redundant when present with ProductVersion
+
+    'BuildDate',  # rare but useful when there 2013/02/04-18:07:46 2018-11-10 14:38
+
+    'ProductName',  # often present often localized, that's a component name
+    'OriginalFilename',  # name or the original DLL
+    'InternalName',  # often present: sometimes a package name or a .dll or .exe
+
+    'License',  # rare, seen only in CURL
+    'LegalCopyright',  # copyright notice, sometimes a license tag or URL. Use it for license detection
+    'LegalTrademarks',  # may sometimes contains license or copyright. Ignore a single ".". Treat as part of the declared license
+    'LegalTrademarks1',  # mostly MSFT
+    'LegalTrademarks2',  # mostly MSFT
+    'LegalTrademarks3',  # mostly MSFT
+
+    'FileDescription',  # description, often localized
+    'Comments',  # random data. Append to a description
+
+    'CompanyName',  # the company e.g a party, sometimes localized
+    'Company',  # rare, use a fallback if present and CCompanyName missing
+    'URL',  # rarely there but good if there
+    'WWW',  # rarely there but good if there
 )
 
 PE_INFO_KEYSET = set(PE_INFO_KEYS)
 
 
-def pe_info(location, include_extra_data=False):
+def pe_info(location):
     """
     Return a mapping of common data available for a Windows dll or exe PE
     (portable executable).
     Return None for non-Windows PE files.
     Return an empty mapping for PE from which we could not collect data.
 
-    If `include_extra_data` is True, also collect extra data found if any,
-    returned as a dictionary under the 'extra_data' key in the returned mapping.
+    Also collect extra data found if any, returned as a dictionary under the
+    'extra_data' key in the returned mapping.
     """
     if not location:
         return {}
@@ -122,78 +154,172 @@ def pe_info(location, include_extra_data=False):
     if not T.is_winexe:
         return {}
 
-    # FIXME: WTF: we initialize with empty values, as we must always
-    # return something for all values
-    result = OrderedDict([(k, None,) for k in PE_INFO_KEYS])
-    result['extra_data'] = OrderedDict()
+    result = dict([(k, None,) for k in PE_INFO_KEYS])
+    extra_data = result['extra_data'] = {}
 
-    try:
-        with closing(pefile.PE(location)) as pe:
-            if not hasattr(pe, 'FileInfo'):
-                # No fileinfo section: we return just empties
-                return result
+    with closing(pefile.PE(location)) as pe:
+        if not hasattr(pe, 'FileInfo'):
+            # No fileinfo section: we return just empties
+            return result
 
-            # >>> pe.FileInfo: this is a list of list of Structure objects:
-            # [[<Structure: [VarFileInfo] >,  <Structure: [StringFileInfo]>]]
-            pefi = pe.FileInfo
-            if not pefi or not isinstance(pefi, list):
-                if TRACE:
-                    logger.debug('pe_info: not pefi')
-                return result
-
-            # here we have anon-empty list
-            pefi = pefi[0]
+        # >>> pe.FileInfo: this is a list of list of Structure objects:
+        # [[<Structure: [VarFileInfo] >,  <Structure: [StringFileInfo]>]]
+        file_info = pe.FileInfo
+        if not file_info or not isinstance(file_info, list):
             if TRACE:
-                logger.debug('pe_info: pefi:', pefi)
+                logger.debug('pe_info: not file_info')
+            return result
 
-            sfi = [x for x in pefi
-                   if type(x) == pefile.Structure
-                   and hasattr(x, 'name')
-                   and x.name == 'StringFileInfo']
-
-            if not sfi:
-                # No stringfileinfo section: we return just empties
-                if TRACE:
-                    logger.debug('pe_info: not sfi')
-                return result
-
-            sfi = sfi[0]
-
-            if not hasattr(sfi, 'StringTable'):
-                # No fileinfo.StringTable section: we return just empties
-                if TRACE:
-                    logger.debug('pe_info: not StringTable')
-                return result
-
-            strtab = sfi.StringTable
-            if not strtab or not isinstance(strtab, list):
-                return result
-
-            strtab = strtab[0]
-
-            if TRACE:
-                logger.debug('pe_info: Entries keys: ' + str(set(k for k in strtab.entries)))
-                logger.debug('pe_info: Entry values:')
-                for k, v in strtab.entries.items():
-                    logger.debug('  ' + str(k) + ': ' + repr(type(v)) + repr(v))
-
-            for k, v in strtab.entries.items():
-                # convert unicode to a safe ASCII representation
-                key = text.as_unicode(k).strip()
-                value = text.as_unicode(v).strip()
-                value = fix_text(value)
-                if key in PE_INFO_KEYSET:
-                    result[key] = value
-                else:
-                    # collect extra_data if any:
-                    result['extra_data'][key] = value
-
-    except Exception as e:
-        raise
+        # here we have a non-empty list
+        file_info = file_info[0]
         if TRACE:
-            logger.debug('pe_info: Failed to collect infos: ' + repr(e))
-        # FIXME: return empty for now: this is wrong
+            logger.debug('pe_info: file_info:', file_info)
 
-    # the ordering of extra_data is not guaranteed on Python 2 because the dict is not ordered
-    result['extra_data'] = OrderedDict(sorted(result['extra_data'].items()))
+        string_file_info = [x for x in file_info
+               if type(x) == pefile.Structure
+               and hasattr(x, 'name')
+               and x.name == 'StringFileInfo']
+
+        if not string_file_info:
+            # No stringfileinfo section: we return just empties
+            if TRACE:
+                logger.debug('pe_info: not string_file_info')
+            return result
+
+        string_file_info = string_file_info[0]
+
+        if not hasattr(string_file_info, 'StringTable'):
+            # No fileinfo.StringTable section: we return just empties
+            if TRACE:
+                logger.debug('pe_info: not StringTable')
+            return result
+
+        string_table = string_file_info.StringTable
+        if not string_table or not isinstance(string_table, list):
+            return result
+
+        string_table = string_table[0]
+
+        if TRACE:
+            logger.debug(
+                'pe_info: Entries keys: ' + str(set(k for k in string_table.entries)))
+
+            logger.debug('pe_info: Entry values:')
+            for k, v in string_table.entries.items():
+                logger.debug('  ' + str(k) + ': ' + repr(type(v)) + repr(v))
+
+        for k, v in string_table.entries.items():
+            # convert unicode to a safe ASCII representation
+            key = text.as_unicode(k).strip()
+            value = text.as_unicode(v).strip()
+            value = fix_text(value)
+            if key in PE_INFO_KEYSET:
+                result[key] = value
+            else:
+                extra_data[key] = value
+
     return result
+
+
+@attr.s()
+class WindowsExecutable(models.Package):
+    metafiles = ()
+    extensions = ('.exe', '.dll',)
+    filetypes = ('pe32', 'for ms windows',)
+    mimetypes = ('application/x-dosexec',)
+
+    default_type = 'winexe'
+
+    default_web_baseurl = None
+    default_download_baseurl = None
+    default_api_baseurl = None
+
+    @classmethod
+    def recognize(cls, location):
+        yield parse(location)
+
+
+def get_first(mapping, *keys):
+    """
+    Return the first value of the `keys` that is found in the `mapping`.
+    """
+    for key in keys:
+        value = mapping.get(key)
+        if value:
+            return value
+
+
+def concat(mapping, *keys):
+    """
+    Return a concatenated string of all unique values of the `keys found in the
+    `mapping`.
+    """
+    values = []
+    for key in keys:
+        val = mapping.get(key)
+        if val and val not in values:
+            values.append(val)
+    return '\n'.join(values)
+
+
+def parse(location):
+    """
+    Return a WindowsExecutable package from the file at `location` or None.
+    """
+    if not filetype.is_file(location):
+        return
+
+    T = contenttype.get_type(location)
+    if not T.is_winexe:
+        return
+
+    infos = pe_info(location)
+
+    version = get_first(infos, 'Full Version', 'ProductVersion', 'FileVersion', 'Assembly Version')
+    release_date = get_first(infos, 'BuildDate')
+    if release_date:
+        if len(release_date) >= 10:
+            release_date = release_date[:10]
+        release_date = release_date.replace('/', '-')
+
+    name = get_first(infos, 'ProductName', 'OriginalFilename', 'InternalName')
+    copyr = get_first(infos, 'LegalCopyright')
+
+    LegalCopyright = copyr,
+
+    LegalTrademarks = concat(
+        infos,
+        'LegalTrademarks',
+        'LegalTrademarks1',
+        'LegalTrademarks2',
+        'LegalTrademarks3')
+
+    License = get_first(infos, 'License')
+
+    declared_license = {}
+    if LegalCopyright or LegalTrademarks or License:
+        declared_license = dict(
+            LegalCopyright=copyr,
+            LegalTrademarks=LegalTrademarks,
+            License=License
+        )
+
+    description = concat(infos, 'FileDescription', 'Comments')
+
+    parties = []
+    cname = get_first(infos, 'CompanyName', 'Company')
+
+    if cname:
+        parties = [Party(type=party_org, role='author', name=cname)]
+    homepage_url = get_first(infos, 'URL', 'WWW')
+
+    return WindowsExecutable(
+        name=name,
+        version=version,
+        release_date=release_date,
+        copyright=copyr,
+        declared_license=declared_license,
+        description=description,
+        parties=parties,
+        homepage_url=homepage_url,
+    )

@@ -1,31 +1,12 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 from array import array
 from collections import Counter
@@ -41,14 +22,7 @@ import pickle
 import sys
 from time import time
 
-# Python 2 and 3 support
-try:
-    import itertools.izip as zip  # NOQA
-except ImportError:
-    pass
-
 from intbitset import intbitset
-from six import string_types
 
 from commoncode.dict_utils import sparsify
 from licensedcode import MAX_DIST
@@ -76,7 +50,6 @@ matching is delegated to other modules that implement a matching strategy.
 
 # Tracing flags
 TRACE = False or os.environ.get('SCANCODE_DEBUG_LICENSE', False)
-TRACE_NEGATIVE = False
 TRACE_APPROX = False
 TRACE_APPROX_CANDIDATES = False
 TRACE_APPROX_MATCHES = False
@@ -88,7 +61,7 @@ def logger_debug(*args):
     pass
 
 
-if (TRACE or TRACE_NEGATIVE
+if (TRACE
     or TRACE_APPROX or TRACE_APPROX_CANDIDATES or TRACE_APPROX_MATCHES
     or TRACE_INDEXING_PERF):
 
@@ -100,8 +73,11 @@ if (TRACE or TRACE_NEGATIVE
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a)
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a)
                                      for a in args))
+
+# This is the Pickle protocol we use, which was added in Python 3.4.
+PICKLE_PROTOCOL = 4
 
 
 ############################## Feature SWITCHES ################################
@@ -118,14 +94,11 @@ USE_RULE_STARTS = False
 # Enable using an bigrams for multisets/bags instead of tokens
 USE_BIGRAM_MULTISETS = False
 
-
 ########## Use diff match patch myers diff for approx matching
 # Enable using an bigrams for multisets/bags instead of tokens
 USE_DMP = False
 
-
 ############################## Feature SWITCHES ################################
-
 
 # Maximum number of unique tokens we can handle: 16 bits signed integers are up
 # to 32767. Since we use internally several arrays of ints for smaller and
@@ -159,11 +132,9 @@ class LicenseIndex(object):
         'rid_by_hash',
         'rules_automaton',
         'fragments_automaton',
-        'negative_automaton',
         'starts_automaton',
 
         'regular_rids',
-        'negative_rids',
         'false_positive_rids',
         'approx_matchable_rids',
 
@@ -215,17 +186,15 @@ class LicenseIndex(object):
         # mapping of hash -> single rid for hash match: duplicated rules are not allowed
         self.rid_by_hash = {}
 
-        # Aho-Corasick automatons for regular and negative rules
+        # Aho-Corasick automatons for regular rules and experimental fragments
         self.rules_automaton = match_aho.get_automaton()
         self.fragments_automaton = USE_AHO_FRAGMENTS and match_aho.get_automaton()
-        self.negative_automaton = match_aho.get_automaton()
         self.starts_automaton = USE_RULE_STARTS and match_aho.get_automaton()
 
-        # disjunctive sets of rule ids: regular, negative, false positive
+        # disjunctive sets of rule ids: regular and false positive
 
         # TODO: consider using intbitset instead
         self.regular_rids = set()
-        self.negative_rids = set()
         self.false_positive_rids = set()
 
         # These rule ids are for rules that can be matched with a sequence
@@ -282,9 +251,11 @@ class LicenseIndex(object):
         highest_tid = len_legalese - 1
 
         # Add SPDX key tokens to the dictionary
-        # these are always treated as non-legalese
+        # these are always treated as non-legalese. This may seem weird
+        # but they are detected in expressions alright and some of their
+        # tokens exist as rules too (e.g. GPL)
         ########################################################################
-        for sts in _spdx_tokens:
+        for sts in sorted(_spdx_tokens):
             stid = dictionary_get(sts)
             if stid is None:
                 # we have a never yet seen token, so we assign a new tokenid
@@ -296,15 +267,17 @@ class LicenseIndex(object):
         sparsify(dictionary)
 
         self.rules_by_rid = rules_by_rid = list(rules)
+        # ensure that rules are sorted
+        rules_by_rid.sort()
         len_rules = len(rules_by_rid)
 
         # create index data structures
-        # OPTIMIZATION: bind frequently used methods to the local scope for index structures
+        # OPTIMIZATION: bind frequently used methods to the local scope for
+        # index structures
         ########################################################################
         tids_by_rid_append = self.tids_by_rid.append
 
         false_positive_rids_add = self.false_positive_rids.add
-        negative_rids_add = self.negative_rids.add
         regular_rids_add = self.regular_rids.add
         approx_matchable_rids_add = self.approx_matchable_rids.add
 
@@ -316,10 +289,6 @@ class LicenseIndex(object):
 
         # track all duplicate rules: fail and report dupes at once at the end
         dupe_rules_by_hash = defaultdict(list)
-
-        # build partials for methods that populate automatons
-        negative_automaton_add = partial(match_aho.add_sequence,
-            automaton=self.negative_automaton, with_duplicates=False)
 
         rules_automaton_add = partial(match_aho.add_sequence,
             automaton=self.rules_automaton, with_duplicates=False)
@@ -375,19 +344,9 @@ class LicenseIndex(object):
             rule_hash = match_hash_index_hash(rule_token_ids)
             dupe_rules_by_hash[rule_hash].append(rule)
 
-            # classify rules and build disjuncted sets of rids
-            if rule.is_negative:
-                # negative rules are matched early and their tokens are only
-                # exactly matched. When matched as a whole, their tokens are
-                # removed from the token stream
-                negative_rids_add(rid)
-                negative_automaton_add(tids=rule_token_ids, rid=rid)
-                continue
-
             ####################
             # populate automaton with the whole rule tokens sequence, for all
             # RULEs, be they "standard"/regular, weak, false positive or small
-            # (but not negative)
             ####################
             rules_automaton_add(tids=rule_token_ids, rid=rid)
 
@@ -490,12 +449,9 @@ class LicenseIndex(object):
 
         # Finalize automatons
         ########################################################################
-        self.negative_automaton.make_automaton()
         self.rules_automaton.make_automaton()
-
         if USE_AHO_FRAGMENTS:
             self.fragments_automaton.make_automaton()
-
         if USE_RULE_STARTS:
             match_aho.finalize_starts(self.starts_automaton)
 
@@ -576,12 +532,12 @@ class LicenseIndex(object):
 
         for query_run, detectable_text in qrs_and_texts:
             if not query_run.matchables:
-                # this could happen if there was some negative match applied
                 continue
             spdx_match = match_spdx_lid.spdx_id_match(
                 self, query_run, detectable_text)
-            query_run.subtract(spdx_match.qspan)
-            matches.append(spdx_match)
+            if spdx_match:
+                query_run.subtract(spdx_match.qspan)
+                matches.append(spdx_match)
 
         return matches
 
@@ -816,16 +772,6 @@ class LicenseIndex(object):
             match.set_lines(matches, qry.line_by_pos)
             return matches
 
-        negative_matches = []
-        if self.negative_rids:
-            negative_matches = self.negative_match(whole_query_run)
-            for neg in negative_matches:
-                whole_query_run.subtract(neg.qspan)
-            if TRACE_NEGATIVE:
-                self.debug_matches(
-                    matches=negative_matches, message='negative_matches',
-                    location=location, query_string=query_string)  # , with_text, query)
-
         matches = []
 
         if USE_AHO_FRAGMENTS:
@@ -835,8 +781,8 @@ class LicenseIndex(object):
 
         matchers = [
             # matcher, include_low in post-matching remaining matchable check
-            (self.get_spdx_id_matches, True, 'spdx_lid'),
             (self.get_exact_matches, False, 'aho'),
+            (self.get_spdx_id_matches, True, 'spdx_lid'),
             (approx, False, 'seq'),
         ]
 
@@ -899,14 +845,6 @@ class LicenseIndex(object):
                                with_text=True, qry=qry)
         return matches
 
-    def negative_match(self, query_run):
-        """
-        Match a query run exactly against negative rules. Return a list
-        of negative LicenseMatch for a query run, subtract these matches
-        from the query run.
-        """
-        return match_aho.exact_match(self, query_run, self.negative_automaton)
-
     def _print_index_stats(self):
         """
         Print internal Index structures stats. Used for debugging and testing.
@@ -928,7 +866,6 @@ class LicenseIndex(object):
             'msets_by_rid',
 
             'regular_rids',
-            'negative_rids',
             'approx_matchable_rids',
             'false_positive_rids',
         )
@@ -986,7 +923,7 @@ class LicenseIndex(object):
         # here cPickle fails when we load it back. Pickle is slower to write but
         # works when we read with cPickle :|
         pickler = cPickle if fast else pickle
-        pickled = pickler.dumps(self, protocol=cPickle.HIGHEST_PROTOCOL)
+        pickled = pickler.dumps(self, protocol=PICKLE_PROTOCOL)
 
         # NB: this is making the usage of cPickle possible... as a weird workaround.
         # the gain from dumping using cPickle is not as big with this optimize
@@ -1004,7 +941,7 @@ class LicenseIndex(object):
         # here cPickle fails when we load it back. Pickle is slower to write but
         # works when we read with cPickle :|
         pickler = cPickle if fast else pickle
-        return pickler.dump(self, fn, protocol=cPickle.HIGHEST_PROTOCOL)
+        return pickler.dump(self, fn, protocol=PICKLE_PROTOCOL)
 
 
 def get_weak_rids(len_legalese, tids_by_rid, _idx):
@@ -1022,13 +959,12 @@ def get_weak_rids(len_legalese, tids_by_rid, _idx):
     if TRACE :
         for rid in sorted(weak_rids):
             rule = _idx.rules_by_rid[rid]
-            if not rule.is_negative:
-                message = (
-                    'WARNING: Weak rule, made only of frequent junk tokens. '
-                    'Can only be matched exactly:',
-                    _idx.rules_by_rid[rid].identifier,
-                    u' '.join(_idx.tokens_by_tid[t] for t in tids))
-                logger_debug(u' '.join(message))
+            message = (
+                'WARNING: Weak rule, made only of frequent junk tokens. '
+                'Can only be matched exactly:',
+                rule.identifier,
+                u' '.join(_idx.tokens_by_tid[t] for t in tids))
+            logger_debug(u' '.join(message))
 
     return weak_rids
 

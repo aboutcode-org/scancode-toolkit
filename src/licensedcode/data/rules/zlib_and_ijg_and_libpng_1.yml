@@ -1,0 +1,8 @@
+license_expression: zlib AND ijg AND libpng
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - irrlicht.h
+notes: Seen in https://github.com/shadowEpitech/indie-studio/blob/768d19aa4e17bae6bd8401de6e32869c36f89f1e/irrlicht-1.8.4/include/SMeshBuffer.h
+    and https://github.com/shadowEpitech/indie-studio/blob/768d19aa4e17bae6bd8401de6e32869c36f89f1e/irrlicht-1.8.4/include/irrlicht.h

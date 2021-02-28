@@ -4,6 +4,7 @@ name: LZMA SDK Original
 category: Copyleft Limited
 owner: Igor Pavlov
 homepage_url: http://www.7-zip.org/sdk.html
+spdx_license_key: LicenseRef-scancode-lzma-sdk-original
 other_urls:
     - http://sourceforge.net/projects/sevenzip/
     - http://www.7-zip.org/sdk.html

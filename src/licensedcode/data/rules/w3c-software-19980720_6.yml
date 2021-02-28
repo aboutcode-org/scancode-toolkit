@@ -1,9 +1,9 @@
 license_expression: w3c-software-19980720
 is_license_text: yes
 ignorable_copyrights:
-  - Copyright (c) http://www.w3.org/'> World Wide Web Consortium
+    - Copyright (c) http://www.w3.org/'> World Wide Web Consortium
 ignorable_holders:
-  - World Wide Web Consortium
+    - World Wide Web Consortium
 ignorable_urls:
     - http://www.inria.fr/
     - http://www.keio.ac.jp/

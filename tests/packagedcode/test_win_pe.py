@@ -1,59 +1,39 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import io
 import json
 import os
 
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from packagedcode import win_pe
 
 
-class TestWinPe(FileBasedTesting):
+class TestWinPePeInfo(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_win_pe(self, test_file, expected_file, regen=False):
-        result = win_pe.pe_info(test_file, include_extra_data=True)
+    expected_file_suffix = '.expected.json'
+
+    def get_results(self, test_file):
+        return win_pe.pe_info(test_file)
+
+    def check_win_pe(self, test_file, regen=False):
+        expected_file = test_file + self.expected_file_suffix
+        result = self.get_results(test_file)
         if regen:
-            if py2:
-                mode = 'wb'
-            if py3:
-                mode = 'w'
-            with open(expected_file, mode) as out:
+            with open(expected_file, 'w') as out:
                 json.dump(result, out, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as expect:
-            expected = json.load(expect, object_pairs_hook=OrderedDict)
+            expected = json.load(expect)
 
-        assert expected == result
+        assert result == expected
 
     def test_win_pe_ctypes_test_pyd(self):
         test_file = self.get_test_loc('win_pe/_ctypes_test.pyd')
@@ -99,3 +79,12 @@ class TestWinPe(FileBasedTesting):
         test_file = self.get_test_loc('win_pe/Moq.Silverlight.dll')
         expected_file = self.get_test_loc('win_pe/Moq.Silverlight.dll.expected.json')
         self.check_win_pe(test_file, expected_file)
+
+
+class TestWinPeParseToPackage(TestWinPePeInfo):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    expected_file_suffix = '.package-expected.json'
+
+    def get_results(self, test_file):
+        return win_pe.parse(test_file).to_dict()

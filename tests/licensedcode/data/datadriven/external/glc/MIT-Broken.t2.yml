@@ -1,0 +1,12 @@
+license_expressions:
+  - mit
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/MIT-Broken.t2
+  originally expected to be detected as None
+  with coverage of 0.0
+  Nothing "is hereby granted"
+  Example: https://github.com/Succo/wkttoorb
+  This is a typo and the license text is a bona fide MIT otherwise
+  See also https://github.com/Succo/emoji/issues/1
+  and https://github.com/Succo/wkttoorb/pull/1

@@ -4,6 +4,7 @@ name: MIT Addition License
 category: Permissive
 owner: Tom Wu
 homepage_url: http://www-cs-students.stanford.edu/~tjw/jsbn/LICENSE
+spdx_license_key: LicenseRef-scancode-mit-addition
 other_urls:
     - http://www-cs-students.stanford.edu/~tjw/jsbn/
 minimum_coverage: 90

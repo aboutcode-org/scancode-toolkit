@@ -1,0 +1,5 @@
+license_expression: mit
+is_license_text: yes
+relevance: 99
+notes: See in https://github.com/socketio/socket.io-client-cpp/blob/6063cb1d612f6ca0232d4134a018053fb8faea20/LICENSE
+    Uses "subject to all conditions" instead of "subject to the following conditions"

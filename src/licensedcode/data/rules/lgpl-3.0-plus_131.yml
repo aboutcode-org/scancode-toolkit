@@ -1,0 +1,6 @@
+license_expression: lgpl-3.0-plus
+is_license_notice: yes
+relevance: 100
+notes: Seen in FFmpeg binaries as injected at build time per https://github.com/FFmpeg/FFmpeg/blob/7aa7d68971e48f6bbf729a6feb318a17010d410f/fftools/cmdutils.c#L1237
+ignorable_urls:
+    - https://www.gnu.org/licenses/

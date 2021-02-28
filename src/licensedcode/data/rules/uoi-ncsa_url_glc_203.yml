@@ -1,0 +1,5 @@
+license_expression: uoi-ncsa
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://www.opensource.org/licenses/ncsa

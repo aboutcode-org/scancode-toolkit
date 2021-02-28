@@ -3,5 +3,6 @@ short_name: Generic Export Compliance Notice
 name: Generic Export Compliance Notice
 category: Unstated License
 owner: Unspecified
-notes: this is a generic export compliance notice. Actual terms are most commonly
- related to cryptography
+notes: this is a generic export compliance notice. Actual terms are most commonly related to
+    cryptography
+spdx_license_key: LicenseRef-scancode-generic-export-compliance

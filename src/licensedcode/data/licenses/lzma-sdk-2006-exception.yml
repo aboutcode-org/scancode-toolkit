@@ -6,5 +6,6 @@ owner: Igor Pavlov
 homepage_url: http://www.7-zip.org/sdk.html
 notes: this version of the license existed around 2006
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-lzma-sdk-2006-exception
 other_urls:
     - http://sourceforge.net/projects/sevenzip/

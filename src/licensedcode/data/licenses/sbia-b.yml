@@ -4,4 +4,5 @@ name: SBIA Software license - Downloading Agreement
 category: Permissive
 owner: SBIA
 homepage_url: https://www.cbica.upenn.edu/sbia/software/license.html
+spdx_license_key: LicenseRef-scancode-sbia-b
 minimum_coverage: 60

@@ -10,6 +10,7 @@ notes: |
     used for demonstration and educational purposes. Any other use may be
     prohibited by law in some coutries." The typo "coutries" is in the original
     license text.
+spdx_license_key: LicenseRef-scancode-ac3filter
 other_urls:
     - http://ac3filter.net
     - http://ac3filter.net/forum

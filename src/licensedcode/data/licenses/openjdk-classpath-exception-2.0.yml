@@ -4,6 +4,7 @@ name: OpenJDK Classpath exception to GPL 2.0
 category: Copyleft Limited
 owner: Oracle (Sun)
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-openjdk-classpath-exception-2.0
 faq_url: http://openjdk.java.net/legal/exception-modules-2007-05-08.html
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt

@@ -4,6 +4,7 @@ name: HDF5 License
 category: Permissive
 owner: The HDF Group
 homepage_url: https://bitbucket.hdfgroup.org/projects/HDFFV/repos/hdf5/browse/COPYING?raw
+spdx_license_key: LicenseRef-scancode-hdf5
 standard_notice: "This file is part of HDF5.  The full HDF5 copyright notice, including   \n\
     terms governing use, modification, and redistribution, is contained in  \nthe COPYING file,\
     \ which can be found at the root of the source code     \ndistribution tree, or in https://support.hdfgroup.org/ftp/HDF5/releases.\n\

@@ -1,0 +1,9 @@
+license_expressions:
+  - bsd-2-clause-views
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/BSD-2-Clause.t10
+  originally expected to be detected as BSD-2-Clause-Views
+  with coverage of 99.1
+  "WITHOUT ANY WARRANTIES WHATSOEVER"
+  Example: https://github.com/go-raml/raml

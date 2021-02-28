@@ -4,6 +4,7 @@ name: Bitzi Public Domain
 category: Permissive
 owner: Bitzi Corporation
 homepage_url: http://bitzi.com/publicdomain
+spdx_license_key: LicenseRef-scancode-bitzi-pd
 ignorable_urls:
     - http://bitzi.com/publicdomain
 ignorable_emails:

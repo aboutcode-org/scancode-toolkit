@@ -3,6 +3,7 @@ short_name: X11-Style (X Consortium Veillard)
 name: X11-Style (X Consortium Veillard)
 category: Permissive
 owner: Daniel Veillard
+spdx_license_key: LicenseRef-scancode-x11-xconsortium_veillard
 standard_notice: |
     Except where otherwise noted in the source code (e.g. the files hash.c,
     list.c and the trio files, which are covered by a similar licence but

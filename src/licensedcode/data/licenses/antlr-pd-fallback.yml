@@ -1,0 +1,15 @@
+key: antlr-pd-fallback
+short_name: ANTLR-PD with fallback
+name: ANTLR Software Rights Notice with license fallback
+category: Permissive
+owner: ANTLR
+homepage_url: http://www.antlr2.org/
+notes: |
+    Per SPDX.org, ANTLR used this public domain notice through version 2.7 and
+    then switched to a BSD license for version 3.0 and later.
+spdx_license_key: ANTLR-PD-fallback
+text_urls:
+    - http://www.antlr2.org/
+other_urls:
+    - http://www.antlr2.org/license.html
+

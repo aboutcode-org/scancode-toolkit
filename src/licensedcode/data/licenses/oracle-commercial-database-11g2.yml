@@ -4,6 +4,7 @@ name: Oracle Commercial Database License 11g Release 2 (11.2)
 category: Commercial
 owner: Oracle Corporation
 homepage_url: http://docs.oracle.com/cd/E11882_01/license.112/e47877/toc.htm
+spdx_license_key: LicenseRef-scancode-oracle-commercial-database-11g2
 faq_url: http://docs.oracle.com/cd/E11882_01/license.112/e47877/toc.htm
 ignorable_urls:
     - http://docs.oracle.com/cd/E11882_01/license.112/e47877/toc.htm

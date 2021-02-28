@@ -1,0 +1,18 @@
+- |
+  BSD-2-clause
+  GPL-2+
+  FSFUL
+  GPL-3+
+  GPL-2+ with libtool exception
+- bsd-simplified AND fsf-free AND fsf-unlimited AND gpl-2.0 AND gpl-2.0-plus AND gpl-3.0 AND
+  gpl-3.0-plus AND libtool-exception-2.0 AND unknown
+- |
+  Copyright (c) 2006-2018 Yubico AB
+  2014-2016 Yubico AB
+  2016-2018 Nicolas Braud-Santoni
+  1996-2017, Free Software Foundation, Inc.
+  2004 Scott James Remnant <scott@netsplit.com>.
+  2012-2015 Dan Nicholson <dbn.lists@gmail.com>
+  2004, 2005, 2007-2009, 2011-2015, Free Software
+  2011, Maarten Bosmans <mkbosmans@gmail.com>
+  2008, Guido U. Draheim <guidod@gmx.de>

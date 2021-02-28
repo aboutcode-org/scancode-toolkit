@@ -26,9 +26,6 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import io
 import os
@@ -56,15 +53,15 @@ class RPMTest(FileBasedTesting):
             'to work and integrate best with Enlightenment.'
         )
 
-        assert 'Eterm' == rpm[pyrpm.RPMTAG_NAME] == rpm.name
-        assert '0.9.3' == rpm[pyrpm.RPMTAG_VERSION] == rpm.version
-        assert '5mdv2007.0' == rpm[pyrpm.RPMTAG_RELEASE]
-        assert 'i586' == rpm[pyrpm.RPMTAG_ARCH]
-        assert 'BSD' == rpm[pyrpm.RPMTAG_COPYRIGHT]
-        assert description == rpm[pyrpm.RPMTAG_DESCRIPTION]
+        assert rpm[pyrpm.RPMTAG_NAME] == rpm.name == 'Eterm'
+        assert rpm[pyrpm.RPMTAG_VERSION] == rpm.version == '0.9.3'
+        assert rpm[pyrpm.RPMTAG_RELEASE] == '5mdv2007.0'
+        assert rpm[pyrpm.RPMTAG_ARCH] == 'i586'
+        assert rpm[pyrpm.RPMTAG_COPYRIGHT] == 'BSD'
+        assert rpm[pyrpm.RPMTAG_DESCRIPTION] == description
         assert rpm.is_binary is True
-        assert 'Eterm-0.9.3' == rpm.package
-        assert 'Eterm-0.9.3-5mdv2007.0.i586.rpm' == rpm.filename
+        assert rpm.package == 'Eterm-0.9.3'
+        assert rpm.filename == 'Eterm-0.9.3-5mdv2007.0.i586.rpm'
 
         expected = {
             'arch': u'i586',
@@ -86,4 +83,4 @@ class RPMTest(FileBasedTesting):
             'version': u'0.9.3'
         }
 
-        assert expected == rpm.to_dict()
+        assert rpm.to_dict() == expected

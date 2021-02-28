@@ -1,6 +1,5 @@
 license_expression: proprietary-license
 is_license_notice: yes
-is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://geogratis.cgdi.gc.ca/geogratis/en/licence.jsp

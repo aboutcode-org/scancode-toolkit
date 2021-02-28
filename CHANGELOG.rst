@@ -2,6 +2,117 @@ Changelog
 =========
 
 
+v21.x (next)
+------------
+
+
+v21.2.25
+--------
+
+Installation:
+
+ - Resolve reported installation issues on macOS, Windows and Linux
+ - Stop using extras for a default wheel installation
+ - Build new scancode-toolkit-mini package with limited dependencies for use
+   when packaging in distros and similar
+ - The new Dockerfile will be create smaller images and containers
+
+License scanning:
+
+ - Over 150 and and updated licenses
+ - Support the latest SPDX license list v3.11
+ - Improve license detection accuracy with over 740 new and improved license
+   detection rules
+ - Fix license cache handling issues
+
+Misc.:
+
+ - Update extractcode, typecode and their native dependencies for better support
+   of latests versions of macOS.
+
+
+v21.2.9
+-------
+
+Security:
+
+ - Update vulnerable LXML to version 4.6.2 to fix
+   https://nvd.nist.gov/vuln/detail/CVE-2020-27783
+   This was detected thanks to https://github.com/nexb/vulnerablecode
+
+Operating system support:
+
+ - Drop support for Python 2  #295
+ - Drop support for 32 bits on Windows #335
+ - Add support for Python 64 bits on Windows 64 bits #335
+ - Add support for Python 3.6, 37, 3.8 and 3.9 on Linux, Windows and macOS.
+   These are now tested on Azure.
+ - Add deprecation message for native Windows support #2366
+
+License scanning:
+
+ - Improve license detection accuracy with over 8400 new license detection rules
+   added or updated
+ - Remove the previously deprecated --license-diag option
+ - Include pre-built license index in release archives to speed up start #988
+ - Use SPDX LicenseRef-scancode namespace for all licenses keys not in SPDX
+ - Replace DEJACODE_LICENSE_URL with SCANCODE_LICENSEDB_URL at
+   https://scancode-licensedb.aboutcode.org #2165
+ - Add new license flag in license detection results "is_license_intro" that
+   is used to indicate that a license rule is a short license introduction
+   statement (that typically may be reported as some unknown license)
+
+Package scanning:
+
+ - Add detection of package-installed files
+ - Add analysis of system package installed databases for Debian, OpenWRT and
+   Alpine Linux packages
+ - Add support for Alpine Linux, Debian, OpenWRT.
+
+Copyright scanning:
+
+ - Improve detection with minor grammar fixes
+
+Misc.:
+
+ - Adopt a new calendar date-based versioning for scancode-toolkit version numbers
+ - Update thirdparty dependencies and built-in plugins
+ - Allow installation without extractcode and typecode native plugins. Instead
+   one can elect to install these or not to have a lighter footprint if needed.
+ - Update configuration and bootstrap scripts to support a new PyPI-like
+   repository at https://thirdparty.aboutcode.org/pypi/
+ - Create new release scripts to populate released archives with just the
+   required wheels of a given OS and Python version.
+ - Updated scancode.bat to handle % signs in the arguments #1876
+
+
+v3.2.3 (2020-10-27)
+-------------------
+
+Notable changes:
+
+ - Collect Windows executable metadata #652
+ - Fix minor bugs
+ - Add Dockerfile to build docker image from ScanCode sources #2265
+
+
+v3.2.2rc3 (2020-09-21)
+----------------------
+
+Notable changes:
+
+ - Use commoncode, typecode and extractcode as external standalone packages #2233
+
+
+v3.2.1rc2 (2020-09-11)
+----------------------
+
+Minor bug fixes:
+
+ - Do not fail if Debian status is missing #2224
+ - Report correct detected license text in binary #2226 #2227
+
+
 v3.2.0rc1 (2020-09-08)
 ----------------------
 
@@ -76,8 +187,7 @@ v3.2.0rc1 (2020-09-08)
  - Improve runtime support for FreeBSD #1695  @knobix
  - Update macOS image on azure pipeline @TG1999
  - Improve documentation - @Vinay0001     
- 
- 
+
 
 v3.1.1 (2019-09-04)
 -------------------

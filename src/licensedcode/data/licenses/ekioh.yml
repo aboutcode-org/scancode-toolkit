@@ -1,6 +1,12 @@
 key: ekioh
+is_deprecated: yes
 short_name: Ekioh License
 name: Ekioh License
 category: Permissive
 owner: Ekioh
 notes: see also https://kryogenix.org/code/browser/licence.html
+notes: |
+    Obsolete License -- do not use.  Except for the dangling ", subject to the
+    following conditions:" text, this license is essentially identical to the
+    MIT-0-Clause (mit-0) license, which has been accepted in the open source
+    community relatively recently.

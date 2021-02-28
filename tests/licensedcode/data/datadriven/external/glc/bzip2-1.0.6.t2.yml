@@ -1,0 +1,7 @@
+license_expressions:
+  - bzip2-libbzip-2010
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/bzip2-1.0.6.t2
+  originally expected to be detected as bzip2-1.0.6
+  with coverage of 92.2

@@ -4,6 +4,7 @@ name: Filament Group MIT License
 category: Permissive
 owner: Filament Group
 homepage_url: http://filamentgroup.com/examples/mit-license.txt
+spdx_license_key: LicenseRef-scancode-filament-group-mit
 text_urls:
     - http://filamentgroup.com/examples/mit-license.txt
 minimum_coverage: 85

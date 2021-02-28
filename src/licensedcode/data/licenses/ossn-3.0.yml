@@ -4,6 +4,7 @@ name: Open Source Social Network License v3.0
 category: Proprietary Free
 owner: Open Source Social Network
 homepage_url: http://www.opensource-socialnetwork.org/licence/
+spdx_license_key: LicenseRef-scancode-ossn-3.0
 text_urls:
     - https://github.com/opensource-socialnetwork/opensource-socialnetwork/blob/v4.x/LICENSE.txt
 minimum_coverage: 90

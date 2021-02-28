@@ -4,6 +4,7 @@ name: W3C Documentation License
 category: Free Restricted
 owner: W3C - World Wide Web Consortium
 homepage_url: http://www.w3.org/TR/REC-DOM-Level-1/copyright-notice.html
+spdx_license_key: LicenseRef-scancode-w3c-documentation
 text_urls:
     - http://www.w3.org/TR/REC-DOM-Level-1/copyright-notice.html
 ignorable_copyrights:

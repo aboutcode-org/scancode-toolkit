@@ -1,4 +1,4 @@
-license_expression: tatu-ylonen
+license_expression: openssh
 is_license_text: yes
 ignorable_urls:
     - http://www.cs.hut.fi/crypto

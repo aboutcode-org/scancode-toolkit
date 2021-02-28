@@ -36,7 +36,7 @@ Setting up Scancode Toolkit
 
 Get ScanCode Toolkit from ``pip``::
 
-    pip install scancode-toolkit
+    pip install scancode-toolkit[full]
 
 .. Note::
 

@@ -1,0 +1,9 @@
+license_expression: eupl-1.2
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - box/LICENSE
+ignorable_urls:
+    - https://joinup.ec.europa.eu/collection/eupl/eupl-text-11-12
+    - https://joinup.ec.europa.eu/collection/eupl/introduction-eupl
+    - https://joinup.ec.europa.eu/collection/eupl/matrix-eupl-compatible-open

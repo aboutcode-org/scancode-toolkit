@@ -1,0 +1,9 @@
+license_expressions:
+  - mit
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/MIT.t44
+  originally expected to be detected as MIT
+  with coverage of 100.0
+  "2." introducing disclaimer.
+  Example: https://github.com/pradeep-pyro/triangle@v0.0.0-20181224021403-536c46311a99/LICENSE.md

@@ -1,0 +1,6 @@
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/9fans/plan9port/blob/master/src/cmd/mk/NOTICE
+ignorable_urls:
+    - http://www.fsf.org/copyleft/gpl.html

@@ -1,0 +1,31 @@
+- |
+  Binary redistribution (Atheros)
+  Open ath9k HTC firmware
+  Binary redistribution (Qualcomm Atheros)
+- bsd-no-mod AND clear-bsd AND ecos-exception-2.0 AND gpl-1.0-plus AND gpl-2.0-plus AND intel
+  AND isc AND mit AND proprietary-license AND unknown
+- |
+  2008-2010, Atheros Communications, Inc.
+  1998-2002, Red Hat, Inc.
+  2002, Gary Thomas
+  2002-2005, Sam Leffler, Errno Consulting
+  2002-2013, Qualcomm Atheros, Inc.
+  2013, Tensilica Inc.
+  1986, Gary S. Brown
+  1988, 1990-1991, 1993, The Regents of the University of California
+  1998, The NetBSD Foundation, Inc.
+  1998, Todd C. Miller
+  1999-2006, Tensilica Inc.
+  2000-2001, Aaron D. Gifford
+  2002-2004, Sam Leffler, Errno Consulting
+  2002-2013, Jouni Malinen
+  2003-2006, Marcus Geelnard
+  2006-2007, 2012-2013, Atheros Communications Inc.
+  2010-2011, embWiSe Technologies
+  2011, The FreeBSD Foundation
+  2011, Qualcomm Technologies, Inc.
+  2011-2015, Qualcomm Atheros, Inc.
+  2013, Synopsys, Inc.
+  2011-2012, 2014-2015, Qualcomm Atheros, Inc.
+  2015-2016, The Android Open Source Project
+  2015, Qualcomm Atheros, Inc.

@@ -6,6 +6,7 @@ owner: US Government
 notes: Per  17 U.S. Code § 105. Subject matter of copyright, United States Government works
     Copyright protection under this title is not available for any work of the United States
     Government
+spdx_license_key: LicenseRef-scancode-us-govt-public-domain
 other_urls:
     - https://www.law.cornell.edu/uscode/text/17/105
     - https://en.wikipedia.org/wiki/Copyright_status_of_works_by_the_federal_government_of_the_United_States

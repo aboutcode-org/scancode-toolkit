@@ -4,6 +4,7 @@ name: Original SSLeay License with Windows Clause
 category: Permissive
 owner: OpenSSL
 homepage_url: https://www.openssl.org/source/license.html
+spdx_license_key: LicenseRef-scancode-ssleay-windows
 text_urls:
     - http://www.openssl.org/source/license.html
 other_urls:

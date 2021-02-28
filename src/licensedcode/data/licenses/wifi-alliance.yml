@@ -3,5 +3,6 @@ short_name: Wi-Fi Alliance
 name: Wi-Fi Alliance License
 category: Commercial
 owner: Wi-Fi Alliance
+spdx_license_key: LicenseRef-scancode-wifi-alliance
 ignorable_authors:
     - permission from Wi-Fi Alliance

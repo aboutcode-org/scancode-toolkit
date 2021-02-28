@@ -3,6 +3,7 @@ short_name: Java App Stub License
 name: Java Application Stub Binary Module License
 category: Permissive
 owner: Apple
+spdx_license_key: LicenseRef-scancode-java-app-stub
 ignorable_copyrights:
     - Copyright (c) Apple Inc.
 ignorable_holders:

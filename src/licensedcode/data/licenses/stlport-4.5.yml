@@ -4,3 +4,4 @@ name: STLport License v4.5
 category: Permissive
 owner: STLport Consulting
 notes: stlport-4.5 and mozilla-gc are mostly the same
+spdx_license_key: LicenseRef-scancode-stlport-4.5

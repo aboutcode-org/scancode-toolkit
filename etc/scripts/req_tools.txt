@@ -1,2 +1,0 @@
-pip-tools
-github-release-retry

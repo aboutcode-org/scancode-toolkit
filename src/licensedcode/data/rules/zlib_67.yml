@@ -1,0 +1,7 @@
+license_expression: zlib
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - tri_stripper.h
+notes: https://github.com/mysticbob/osg/blob/ca773ad07ea30556a4b4698fa8e76b3ad91100a1/src/osgUtil/tristripper/include/tri_stripper.h

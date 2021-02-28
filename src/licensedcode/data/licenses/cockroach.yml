@@ -4,6 +4,7 @@ name: Cockroach Community License
 category: Source-available
 owner: Cockroachlabs
 homepage_url: https://www.cockroachlabs.com/cockroachdb-community-license
+spdx_license_key: LicenseRef-scancode-cockroach
 text_urls:
     - https://github.com/cockroachdb/cockroach/blob/master/licenses/CCL.txt
 ignorable_urls:

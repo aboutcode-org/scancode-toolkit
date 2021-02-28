@@ -1,67 +1,36 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-
-from collections import OrderedDict
 import ast
 import io
 import json
 import logging
 import os
+import re
 import sys
 
 import attr
-from six import string_types
-
+import dparse
+from dparse import filetypes
 from pkginfo import BDist
 from pkginfo import Develop
 from pkginfo import SDist
 from pkginfo import UnpackedSDist
 from pkginfo import Wheel
-
-import dparse
-from dparse import filetypes
-
+from packageurl import PackageURL
 import saneyaml
 
 from commoncode import filetype
 from commoncode import fileutils
-from commoncode.system import py2
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
-from packageurl import PackageURL
-
-try:
-    # Python 2
-    unicode = unicode  # NOQA
-
-except NameError:  # pragma: nocover
-    # Python 3
-    unicode = str  # NOQA
 
 
 """
@@ -83,14 +52,23 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 # FIXME: this whole module is a mess
 
 
 @attr.s()
 class PythonPackage(models.Package):
-    metafiles = ('metadata.json', '*setup.py', 'PKG-INFO', '*.whl', '*.egg', '*requirements*.txt', '*requirements*.in', '*Pipfile.lock')
+    metafiles = (
+        'metadata.json',
+        '*setup.py',
+        'PKG-INFO',
+        '*.whl',
+        '*.egg',
+        '*requirements*.txt',
+        '*requirements*.in',
+        '*Pipfile.lock',
+    )
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
     default_type = 'pypi'
     default_primary_language = 'Python'
@@ -184,7 +162,7 @@ def parse_with_pkginfo(pkginfo):
             homepage_url=pkginfo.home_page,
         )
         package = PythonPackage(**common_data)
-        declared_license = OrderedDict()
+        declared_license = {}
         if pkginfo.license:
             # TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
             declared_license['license'] = pkginfo.license
@@ -247,11 +225,7 @@ def parse_with_dparse(location):
                          filetypes.pipfile,
                          filetypes.pipfile_lock):
         return
-    if py2:
-        mode = 'rb'
-    else:
-        mode = 'r'
-    with open(location, mode) as f:
+    with open(location) as f:
         content = f.read()
 
     df = dparse.parse(content, file_type=dependency_type)
@@ -310,12 +284,12 @@ def parse_pipfile_lock(location):
     with open(location) as f:
         content = f.read()
 
-    data = json.loads(content, object_pairs_hook=OrderedDict)
+    data = json.loads(content)
 
     sha256 = None
     if '_meta' in data:
         for name, meta in data['_meta'].items():
-            if name=='hash':
+            if name == 'hash':
                 sha256 = meta.get('sha256')
 
     package_dependencies = parse_with_dparse(location)
@@ -332,34 +306,41 @@ def parse_setup_py(location):
     if not location or not location.endswith('setup.py'):
         return
 
-    # FIXME: what if this is unicode text?
-    if py2:
-        mode = 'rb'
-    else:
-        mode = 'r'
-    with open(location, mode) as inp:
+    with open(location) as inp:
         setup_text = inp.read()
 
-    setup_args = OrderedDict()
+    setup_args = {}
 
     # Parse setup.py file and traverse the AST
     tree = ast.parse(setup_text)
     for statement in tree.body:
-        # We only care about function calls or assignments to functions named `setup`
-        if (isinstance(statement, ast.Expr)
-                or isinstance(statement, ast.Call)
-                or isinstance(statement, ast.Assign)
-                and isinstance(statement.value, ast.Call)
-                and isinstance(statement.value.func, ast.Name)
-                and statement.value.func.id == 'setup'):
+        # We only care about function calls or assignments to functions named
+        # `setup` or `main`
+        if (isinstance(statement, (ast.Expr, ast.Call, ast.Assign))
+            and isinstance(statement.value, ast.Call)
+            and isinstance(statement.value.func, ast.Name)
+            # we also look for main as sometimes this is used instead of setup()
+            and statement.value.func.id in ('setup', 'main')
+        ):
+
             # Process the arguments to the setup function
-            for kw in statement.value.keywords:
+            for kw in getattr(statement.value, 'keywords', []):
                 arg_name = kw.arg
+
                 if isinstance(kw.value, ast.Str):
                     setup_args[arg_name] = kw.value.s
-                if isinstance(kw.value, ast.List):
-                    # We collect the elements of a list if the element is not a function call
-                    setup_args[arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
+
+                elif isinstance(kw.value, (ast.List, ast.Tuple, ast.Set,)):
+                    # We collect the elements of a list if the element
+                    # and tag function calls
+                    value = [
+                        elt.s for elt in kw.value.elts
+                        if not isinstance(elt, ast.Call)
+                    ]
+                    setup_args[arg_name] = value
+
+                # TODO:  what if isinstance(kw.value, ast.Dict)
+                # or an expression like a call to version=get_version or version__version__
 
     package_name = setup_args.get('name')
     if not package_name:
@@ -367,7 +348,8 @@ def parse_setup_py(location):
 
     description = build_description(
         setup_args.get('summary', ''),
-        setup_args.get('description', ''))
+        setup_args.get('description', ''),
+    )
 
     parties = []
     author = setup_args.get('author')
@@ -383,8 +365,17 @@ def parse_setup_py(location):
                 url=homepage_url
             )
         )
+    elif author_email:
+        parties.append(
+            models.Party(
+                type=models.party_person,
+                email=author_email,
+                role='author',
+                url=homepage_url
+            )
+        )
 
-    declared_license = OrderedDict()
+    declared_license = {}
     license_setuptext = setup_args.get('license')
     declared_license['license'] = license_setuptext
 
@@ -394,15 +385,216 @@ def parse_setup_py(location):
 
     other_classifiers = [c for c in classifiers if not c.startswith('License')]
 
+    detected_version = setup_args.get('version')
+    if not detected_version:
+        # search for possible dunder versions here and elsewhere
+        detected_version = detect_version_attribute(location)
+
     return PythonPackage(
         name=package_name,
-        version=setup_args.get('version'),
+        version=detected_version,
         description=description or None,
         homepage_url=setup_args.get('url') or None,
         parties=parties,
         declared_license=declared_license,
         keywords=other_classifiers,
     )
+
+
+def find_pattern(location, pattern):
+    """
+    Search the file at `location` for a patern regex on a single line and return
+    this or None if not found. Reads the supplied location as text without
+    importing it.
+
+    Code inspired and heavily modified from:
+    https://github.com/pyserial/pyserial/blob/d867871e6aa333014a77498b4ac96fdd1d3bf1d8/setup.py#L34
+    SPDX-License-Identifier: BSD-3-Clause
+    (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
+    """
+    with io.open(location, encoding='utf8') as fp:
+        content = fp.read()
+
+    match = re.search(pattern, content)
+    if match:
+        return match.group(1).strip()
+
+
+def find_dunder_version(location):
+    """
+    Return a "dunder" __version__ string or None from searching the module file
+    at `location`.
+
+    Code inspired and heavily modified from:
+    https://github.com/pyserial/pyserial/blob/d867871e6aa333014a77498b4ac96fdd1d3bf1d8/setup.py#L34
+    SPDX-License-Identifier: BSD-3-Clause
+    (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
+    """
+    pattern = re.compile(r"^__version__\s*=\s*['\"]([^'\"]*)['\"]", re.MULTILINE)
+    match = find_pattern(location, pattern)
+    if TRACE: logger_debug('find_dunder_version:', 'location:', location, 'match:', match)
+    return match
+
+
+def find_plain_version(location):
+    """
+    Return a plain version attribute string or None from searching the module
+    file at `location`.
+    """
+    pattern = re.compile(r"^version\s*=\s*['\"]([^'\"]*)['\"]", re.MULTILINE)
+    match = find_pattern(location, pattern)
+    if TRACE: logger_debug('find_plain_version:', 'location:', location, 'match:', match)
+    return match
+
+
+def find_setup_py_dunder_version(location):
+    """
+    Return a "dunder" __version__ expression string used as a setup(version)
+    argument or None from searching the setup.py file at `location`.
+
+    For instance:
+        setup(
+            version=six.__version__,
+        ...
+    would return six.__version__.
+
+    Code inspired and heavily modified from:
+    https://github.com/pyserial/pyserial/blob/d867871e6aa333014a77498b4ac96fdd1d3bf1d8/setup.py#L34
+    SPDX-License-Identifier: BSD-3-Clause
+    (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
+    """
+    pattern = re.compile(r"^\s*version\s*=\s*(.*__version__)", re.MULTILINE)
+    match = find_pattern(location, pattern)
+    if TRACE: logger_debug('find_setup_py_dunder_version:', 'location:', location, 'match:', match)
+    return match
+
+
+def detect_version_attribute(setup_location):
+    """
+    Return a detected version from a setup.py file at `location` if used as in
+    a version argument of the setup() function.
+    Also search for neighbor files for __version__ and common patterns.
+    """
+    # search for possible dunder versions here and elsewhere
+    setup_version_arg = find_setup_py_dunder_version(setup_location)
+    setup_py__version = find_dunder_version(setup_location)
+    if TRACE:
+        logger_debug('    detect_dunder_version:', 'setup_location:', setup_location)
+        logger_debug('    setup_version_arg:', repr(setup_version_arg),)
+        logger_debug('    setup_py__version:', repr(setup_py__version),)
+    if setup_version_arg == '__version__' and setup_py__version:
+        version = setup_py__version or None
+        if TRACE: logger_debug('    detect_dunder_version: A:', version)
+        return version
+
+    # here we have a more complex __version__ location
+    # we start by adding the possible paths and file name
+    # and we look at these in sequence
+
+    candidate_locs = []
+
+    if setup_version_arg and '.' in setup_version_arg:
+        segments = setup_version_arg.split('.')[:-1]
+    else:
+        segments = []
+
+    special_names = (
+        '__init__.py',
+        '__main__.py',
+        '__version__.py',
+        '__about__.py',
+        '__version.py',
+        '_version.py',
+        'version.py',
+        'VERSION.py',
+        'package_data.py',
+    )
+
+    setup_py_dir = fileutils.parent_directory(setup_location)
+    src_dir = os.path.join(setup_py_dir, 'src')
+    has_src = os.path.exists(src_dir)
+
+    if segments:
+        for n in special_names:
+            candidate_locs.append(segments + [n])
+        if has_src:
+            for n in special_names:
+                candidate_locs.append(['src'] + segments + [n])
+
+        if len(segments) > 1:
+            heads = segments[:-1]
+            tail = segments[-1]
+            candidate_locs.append(heads + [tail + '.py'])
+            if has_src:
+                candidate_locs.append(['src'] + heads + [tail + '.py'])
+
+        else:
+            seg = segments[0]
+            candidate_locs.append([seg + '.py'])
+            if has_src:
+                candidate_locs.append(['src', seg + '.py'])
+
+    candidate_locs = [os.path.join(setup_py_dir, *cand_loc_segs) for cand_loc_segs in candidate_locs]
+
+    for fl in get_module_scripts(
+        location=setup_py_dir,
+        max_depth=4,
+        interesting_names=special_names,
+    ):
+        candidate_locs.append(fl)
+
+    if TRACE:
+        for loc in candidate_locs:
+            logger_debug('    can loc:', loc)
+
+    version = detect_version_in_locations(
+        candidate_locs=candidate_locs,
+        detector=find_dunder_version
+    )
+
+    if version:
+        return version
+
+    return detect_version_in_locations(
+        candidate_locs=candidate_locs,
+        detector=find_plain_version,
+    )
+
+
+def detect_version_in_locations(candidate_locs, detector=find_plain_version):
+    """
+    Return the first version found in a location from `candidate_locs` using the
+    `detector` callable. Or None.
+    """
+    for loc in candidate_locs:
+        if os.path.exists(loc):
+            if TRACE: logger_debug('detect_version_in_locations:', 'loc:', loc)
+            # here the file exists try to get a dunder version
+            version = detector(loc)
+            if TRACE: logger_debug('detect_version_in_locations:', 'detector', detector, 'version:', version)
+            if version:
+                return version
+
+
+def get_module_scripts(location, max_depth=1, interesting_names=()):
+    """
+    Yield interesting Python script paths that have a name in
+    `interesting_names` by walking the `location` directory recursively up to
+    `max_depth` path segments extending from the root `location`.
+    """
+
+    location = location.rstrip(os.path.sep)
+    current_depth = max_depth
+    for top, _dirs, files in os.walk(location):
+        if current_depth == 0:
+            break
+        for f in files:
+            if f in interesting_names:
+                path = os.path.join(top, f)
+                if TRACE: logger_debug('get_module_scripts:', 'path', path)
+                yield path
+
+        current_depth -= 1
 
 
 # FIXME: use proper library for parsing these
@@ -424,7 +616,7 @@ def parse_metadata(location):
         return
 
     with open(location, 'rb') as infs:
-        infos = json.load(infs, object_pairs_hook=OrderedDict)
+        infos = json.load(infs)
 
     extensions = infos.get('extensions')
     if TRACE: logger_debug('parse_metadata: extensions:', extensions)
@@ -458,7 +650,7 @@ def parse_metadata(location):
             else:
                 other_classifiers.append(classifier)
 
-    declared_license = OrderedDict()
+    declared_license = {}
     lic = infos.get('license')
     if lic:
         declared_license['license'] = lic
@@ -555,7 +747,7 @@ def compute_normalized_license(declared_license):
         values = list(declared_license.values())
     elif isinstance(declared_license, list):
         values = list(declared_license)
-    elif isinstance(declared_license, (str, unicode,)):
+    elif isinstance(declared_license, str):
         values = [declared_license]
     else:
         return
@@ -566,7 +758,7 @@ def compute_normalized_license(declared_license):
         if not value:
             continue
         # The value could be a string or a list
-        if isinstance(value, string_types):
+        if isinstance(value, str):
             detected_license = models.compute_normalized_license(value)
             if detected_license:
                 detected_licenses.append(detected_license)

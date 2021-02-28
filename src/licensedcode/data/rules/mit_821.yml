@@ -1,0 +1,5 @@
+license_expression: mit
+is_license_text: yes
+relevance: 100
+notes: typo in "includin without " Seen in https://github.com/mustache/mustache.github.com/blob/bbc8aea93243dd43bab4f804da0aeb1f27b0013d/LICENSE.md
+    Fixed PR at https://github.com/mustache/mustache.github.com/pull/134

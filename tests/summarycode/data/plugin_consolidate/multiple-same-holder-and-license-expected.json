@@ -103,7 +103,9 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
           "spdx_license_key": "GPL-2.0-only",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
           "start_line": 4,
@@ -118,11 +120,12 @@
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         },
         {
@@ -135,7 +138,9 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
           "spdx_license_key": "GPL-2.0-only",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
           "start_line": 5,
@@ -150,11 +155,12 @@
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -227,7 +233,9 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
           "spdx_license_key": "GPL-2.0-only",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
           "start_line": 4,
@@ -242,11 +250,12 @@
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         },
         {
@@ -259,7 +268,9 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
           "spdx_license_key": "GPL-2.0-only",
           "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
           "start_line": 5,
@@ -274,11 +285,12 @@
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],

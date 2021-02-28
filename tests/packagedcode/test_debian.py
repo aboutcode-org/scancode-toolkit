@@ -1,39 +1,20 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import os.path
+from unittest.case import skipIf
 
+from commoncode.system import on_windows
 from packagedcode import debian
 from packagedcode import models
 from packages_test_utils import PackageTester
 from packages_test_utils import check_result_equals_expected_json
-from unittest.case import skipIf
-from commoncode.system import on_windows
 
 
 @skipIf(on_windows, 'These tests contain files that are not legit on Windows.')
@@ -54,6 +35,11 @@ class TestDebianPackageGetInstalledPackages(PackageTester):
         expected = self.get_test_loc('debian/basic-rootfs-with-licenses-expected.json')
         check_result_equals_expected_json(result, expected, regen=False)
 
+    def test_get_installed_packages_should_not_fail_on_rootfs_without_installed_debian_packages(self):
+        test_rootfs = self.get_temp_dir()
+        result = list(debian.get_installed_packages(test_rootfs))
+        assert result == []
+
 
 class TestDebian(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -61,7 +47,15 @@ class TestDebian(PackageTester):
     def test_parse_status_file_not_a_status_file(self):
         test_file = self.get_test_loc('debian/not-a-status-file')
         test_packages = list(debian.parse_status_file(test_file))
-        assert [] == test_packages
+        assert test_packages == []
+
+    def test_parse_status_file_non_existing_file(self):
+        test_file = os.path.join(self.get_test_loc('debian'), 'foobarbaz')
+        try:
+            list(debian.parse_status_file(test_file))
+            self.fail('FileNotFoundError not raised')
+        except FileNotFoundError:
+            pass
 
     def test_parse_status_file_basic(self):
         test_file = self.get_test_loc('debian/basic/status')
@@ -83,7 +77,7 @@ class TestDebian(PackageTester):
         test_file = os.path.join(test_info_dir, 'status')
 
         packages = list(debian.parse_status_file(test_file, distro='ubuntu'))
-        assert 1 == len(packages)
+        assert len(packages) == 1
 
         test_package = packages[0]
 
@@ -96,8 +90,8 @@ class TestDebian(PackageTester):
 
         resources = test_package.get_list_of_installed_files(test_info_dir)
 
-        assert 4 == len(resources)
-        assert expected == resources
+        assert len(resources) == 4
+        assert resources == expected
 
     def test_get_installed_packages_ubuntu_with_missing_md5sums(self):
         test_root_dir = self.get_test_loc('debian/ubuntu-var-lib-dpkg/')
@@ -120,7 +114,7 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
             qualifiers={'arch':'amd64'}
         )
 
-        assert [] == test_pkg.get_list_of_installed_files(test_info_dir)
+        assert test_pkg.get_list_of_installed_files(test_info_dir) == []
 
     @skipIf(on_windows, 'File names cannot contain colons on Windows')
     def test_multi_arch_is_same(self):
@@ -144,8 +138,8 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
 
         results = test_pkg.get_list_of_installed_files(test_info_dir)
 
-        assert 6 == len(results)
-        assert expected == results
+        assert len(results) == 6
+        assert results == expected
 
     def test_multi_arch_is_foreign(self):
         test_info_dir = self.get_test_loc('debian/foreign-multi-arch')
@@ -175,8 +169,8 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
 
         results = test_pkg.get_list_of_installed_files(test_info_dir)
 
-        assert 14 == len(results)
-        assert expected == results
+        assert len(results) == 14
+        assert results == expected
 
     def test_multi_arch_is_missing(self):
         test_info_dir = self.get_test_loc('debian/missing-multi-arch')
@@ -195,5 +189,5 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
         ]
         results = test_pkg.get_list_of_installed_files(test_info_dir)
 
-        assert 5 == len(results)
-        assert expected == results
+        assert len(results) == 5
+        assert results == expected

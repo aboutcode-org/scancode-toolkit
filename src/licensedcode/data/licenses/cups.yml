@@ -4,6 +4,7 @@ name: CUPS License
 category: Copyleft
 owner: Apple
 homepage_url: http://www.cups.org/
+spdx_license_key: LicenseRef-scancode-cups
 text_urls:
     - http://www.cups.org/
 ignorable_copyrights:

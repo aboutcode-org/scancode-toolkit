@@ -1,0 +1,7 @@
+license_expression: epl-1.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 99
+ignorable_urls:
+    - http://www.eclipse.org/legal/epl-v10.html
+    - http://www.sat4j.org/

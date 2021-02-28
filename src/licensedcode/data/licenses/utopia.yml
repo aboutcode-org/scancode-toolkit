@@ -1,0 +1,17 @@
+key: utopia
+short_name: Utopia Typeface License 
+name: License to TeX Users Group for the Utopia Typeface
+category: Permissive
+owner: Adobe Systems Incorporated
+homepage_url: http://tug.org/fonts/utopia
+text_urls:
+    - https://tug.org/fonts/utopia/LICENSE-utopia.txt
+spdx_license_key: LicenseRef-scancode-utopia
+ignorable_copyrights:
+  - Copyright 1989, 1991 Adobe Systems Incorporated
+ignorable_holders:
+  - Adobe Systems Incorporated
+ignorable_urls:
+  - http://tug.org/fonts/utopia
+  - http://www.adobe.com/misc/pdfs/TM
+

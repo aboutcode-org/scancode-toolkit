@@ -1,0 +1,13 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://www.vmware.com/
+    - http://www.vmware.com/download/eula/vmtn.html
+    - http://www.vmware.com/download/open_source.html
+    - http://www.vmware.com/support/
+    - http://www.vmware.com/support/pubs
+ignorable_emails:
+    - benchmark@vmware.com
+    - info@vmware.com
+    - sales@vmware.com

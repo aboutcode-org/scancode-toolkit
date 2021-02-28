@@ -4,4 +4,5 @@ name: GPL 2.0 plus Adaptec conditions
 category: Copyleft
 owner: Adaptec
 notes: this is a combination of GPL and BSD terms
+spdx_license_key: LicenseRef-scancode-gpl-2.0-adaptec
 minimum_coverage: 90

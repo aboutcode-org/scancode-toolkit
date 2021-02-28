@@ -1,30 +1,12 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
 
 from collections import defaultdict
 from collections import deque
@@ -32,7 +14,6 @@ from itertools import chain
 import re
 
 from intbitset import intbitset
-from six import string_types
 
 from commoncode.text import toascii
 from licensedcode.spans import Span
@@ -104,7 +85,7 @@ if TRACE or TRACE_QR or TRACE_QR_BREAK:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 # for the cases of very long lines, we break in abritrary pseudo lines at 25
 # tokens to avoid getting huge query runs for texts on a single line (e.g.
@@ -169,6 +150,7 @@ class Query(object):
         'spdx_lid_token_ids',
         'spdx_lines',
         'has_long_lines',
+        'is_binary',
     )
 
     def __init__(self, location=None, query_string=None, idx=None,
@@ -190,6 +172,9 @@ class Query(object):
 
         # True if the text is made of very long lines
         self.has_long_lines = False
+
+        # True if the query is binary
+        self.is_binary = False
 
         # kown token ids array
         self.tokens = []
@@ -470,6 +455,8 @@ class Query(object):
             if ft.is_text_with_long_lines:
                 self.has_long_lines = True
                 tokens_by_line = break_long_lines(tokens_by_line)
+            if ft.is_binary:
+                self.is_binary = True
 
         for tokens in tokens_by_line:
             # have we reached a run break point?

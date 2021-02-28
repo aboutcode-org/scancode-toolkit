@@ -4,5 +4,6 @@ name: Matt Kruse License
 category: Permissive
 owner: MattKruse.com
 homepage_url: http://www.mattkruse.com/
+spdx_license_key: LicenseRef-scancode-mattkruse
 text_urls:
     - http://www.mattkruse.com/

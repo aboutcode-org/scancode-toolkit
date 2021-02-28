@@ -6,6 +6,7 @@ owner: lws-team
 homepage_url: https://github.com/warmcat/libwebsockets/blob/master/LICENSE
 notes: composite
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-libwebsockets-exception
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
 minimum_coverage: 70

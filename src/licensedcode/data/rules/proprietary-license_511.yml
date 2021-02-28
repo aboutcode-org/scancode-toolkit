@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: new proprietary notice at https://github.com/mapbox/mapbox-gl-js/blob/main/LICENSE.txt
+ignorable_urls:
+    - https://www.mapbox.com/legal/tos

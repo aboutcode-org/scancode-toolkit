@@ -1,3 +1,5 @@
 license_expression: linux-openib
 is_license_text: yes
 notes: openib
+minimum_coverage: 80
+

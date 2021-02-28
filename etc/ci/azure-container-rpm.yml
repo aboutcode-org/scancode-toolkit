@@ -41,7 +41,10 @@ jobs:
           - script: ${{ parameters.install_python }}
             displayName: 'Install Python ${{ parameters.python_version }}'
 
-          - script: PYTHON_EXE=${{ parameters.python_path }} ./configure
+          - script: ${{ parameters.python_path }} --version
+            displayName: 'Show Python version'
+
+          - script: PYTHON_EXE=${{ parameters.python_path }} ./configure --dev
             displayName: 'Run Configure'
 
           - script: ${{ parameters.test_suite }}

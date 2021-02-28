@@ -3,6 +3,7 @@ short_name: WS-Addressing Specification License
 name: WS-Addressing Specification License
 category: Permissive
 owner: Unspecified
+spdx_license_key: LicenseRef-scancode-ws-addressing-spec
 ignorable_copyrights:
     - Copyright (c) 2002-2004 BEA Systems Inc., International Business Machines Corporation,
         Microsoft Corporation, Inc, SAP AG, and Sun Microsystems, Inc

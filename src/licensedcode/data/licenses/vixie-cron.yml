@@ -3,5 +3,6 @@ short_name: Vixie Cron License
 name: Vixie Cron License
 category: Permissive
 owner: Unspecified
+spdx_license_key: LicenseRef-scancode-vixie-cron
 ignorable_emails:
     - paul@vix.com

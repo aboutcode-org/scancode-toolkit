@@ -4,5 +4,6 @@ name: WS-Policy Specification
 category: Permissive
 owner: W3C - World Wide Web Consortium
 homepage_url: https://en.wikipedia.org/wiki/WS-Policy
+spdx_license_key: LicenseRef-scancode-ws-policy-specification
 other_urls:
     - https://www.w3.org/TR/ws-policy-attach/

@@ -6,3 +6,4 @@ owner: Microsoft
 notes: |
     this notice is often found in Nuget packages added by Microsoft on top of
     other open source Attribution licenses, such as with jQuery.
+spdx_license_key: LicenseRef-scancode-ms-nuget

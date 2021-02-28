@@ -4,5 +4,6 @@ name: Sun Java Transaction API License
 category: Proprietary Free
 owner: Oracle (Sun)
 homepage_url: http://download.oracle.com/otndocs/jcp/7286-jta-1.0.1-spec-oth-JSpec/?submit=Download
+spdx_license_key: LicenseRef-scancode-sun-java-transaction-api
 ignorable_urls:
     - http://java.sun.com/trademarks.html

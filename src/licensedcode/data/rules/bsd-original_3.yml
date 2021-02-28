@@ -1,6 +1,6 @@
 license_expression: bsd-original
 is_license_text: yes
+minimum_coverage: 90
 notes: Variant of bsd-original
 ignorable_authors:
     - the and its contributors
-minimum_coverage: 90

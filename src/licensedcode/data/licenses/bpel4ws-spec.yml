@@ -5,6 +5,7 @@ category: Proprietary Free
 owner: Microsoft
 homepage_url: http://xml.coverpages.org/BPELv11-May052003Final.pdf
 notes: BPEL4WS Specification Version 1,1 Dated May 5, 2003, Copyright statement
+spdx_license_key: LicenseRef-scancode-bpel4ws-spec
 ignorable_copyrights:
     - Copyright (c) 2002, 2003 BEA Systems, International Business Machines Corporation, Microsoft
         Corporation, SAP AG, Siebel Systems

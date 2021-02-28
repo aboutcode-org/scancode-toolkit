@@ -1,0 +1,25 @@
+- |
+  GPL-2+
+  BSD-3-clause
+  BSD-2-clause
+  Expat
+  Danny-SLIRP
+  LGPL-2.1+
+  GPL-2
+- bsd-new AND bsd-simplified AND gpl-2.0 AND gpl-2.0-plus AND lgpl-2.1 AND lgpl-2.1-plus AND
+  mit AND unknown
+- |
+  2018 Giuseppe Scrivano <gscrivan@redhat.com>
+  Akihiro Suda <suda.akihiro@lab.ntt.co.jp>
+  2018, Reinhard Tartler <siretart@tauware.de>
+  1982, 1986, 1988, 1990-1994, The Regents of the University of California.
+  1995, 1996
+  2011, AdaCore
+  2004-2008, Fabrice Bellard
+  1995, Danny Gasparovski.
+  2016, Thomas Huth, Red Hat Inc.
+  2012, Klaus Stengel
+  2013, Guillaume Subiron, Yann Bordenave, Serigne Modou Wagne.
+  1995, Danny Gasparovski
+  2013, Guillaume Subiron
+  2016, Renzo Davoli VirtualSquare

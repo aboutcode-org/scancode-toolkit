@@ -1,0 +1,14 @@
+about_resource: glc
+purl: pkg:github/google/licensecheck@0.3.1#testdata
+namespace: google
+name: licensecheck
+download_url: https://github.com/google/licensecheck/archive/v0.3.1.tar.gz
+license_expression: bsd-new
+copyright: Copyright (c) 2019 The Go Authors.
+homepage_url: https://github.com/google/licensecheck
+vcs_url: git+https://github.com/google/licensecheck
+bug_tracking_url: https://github.com/google/licensecheck/issues
+attribute: yes
+licenses:
+  - key: bsd-new
+    file: glc.LICENSE

@@ -4,6 +4,7 @@ name: JetBrains Purchase Terms
 category: Commercial
 owner: JetBrains
 homepage_url: https://www.jetbrains.com/store/terms/
+spdx_license_key: LicenseRef-scancode-jetbrains-purchase-terms
 ignorable_urls:
     - http://www.jetbrains.com/
     - https://account.jetbrains.com/

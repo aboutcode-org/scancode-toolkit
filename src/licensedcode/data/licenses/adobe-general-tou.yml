@@ -4,6 +4,7 @@ name: Adobe General Terms of Use
 category: Commercial
 owner: Adobe Systems
 homepage_url: http://www.adobe.com/legal/general-terms.html
+spdx_license_key: LicenseRef-scancode-adobe-general-tou
 text_urls:
     - http://www.adobe.com/legal/general-terms.html
 ignorable_urls:

@@ -1,6 +1,7 @@
 key: passive-aggressive
-name: Passive-Aggressive License
 short_name: Passive-Aggressive License
+name: Passive-Aggressive License
 category: Proprietary Free
-notes: From https://github.com/ErikMcClure/bad-licenses
 owner: Unspecified
+notes: From https://github.com/ErikMcClure/bad-licenses
+spdx_license_key: LicenseRef-scancode-passive-aggressive

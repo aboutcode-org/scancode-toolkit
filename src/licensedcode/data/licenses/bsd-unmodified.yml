@@ -6,4 +6,5 @@ owner: Unspecified
 notes: |
     Contains this extra word unmodified in "the above copyright notice unmodified"
     when compared with a bsd-simplified. Found in the newlib C library
+spdx_license_key: LicenseRef-scancode-bsd-unmodified
 minimum_coverage: 95

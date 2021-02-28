@@ -1,3 +1,0 @@
-Copyright (c) Mikhail Korobov and Sean Burke
-
-This port is licensed under Artistic License and supports both Python 2.x and 3.x. If you're OK with GPL, use unidecode (it has better memory usage and better transliteration quality).

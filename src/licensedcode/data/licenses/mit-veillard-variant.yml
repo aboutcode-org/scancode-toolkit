@@ -3,8 +3,8 @@ short_name: MIT Veillard Variant
 name: MIT Veillard Variant
 category: Permissive
 owner: Daniel Veillard
-notes: this is similar to the mit-taylor-variant but uses a different warranty
- disclaimer. This is found in the original versions of https://en.wikipedia.org/wiki/Libxml2
+notes: this is similar to the mit-taylor-variant but uses a different warranty disclaimer. This
+    is found in the original versions of https://en.wikipedia.org/wiki/Libxml2
+spdx_license_key: LicenseRef-scancode-mit-veillard-variant
 text_urls:
-  - https://raw.githubusercontent.com/GNOME/libxml2/4c2e7c651f6c2f0d1a74f350cbda95f7df3e7017/hash.c
-
+    - https://raw.githubusercontent.com/GNOME/libxml2/4c2e7c651f6c2f0d1a74f350cbda95f7df3e7017/hash.c

@@ -3,5 +3,6 @@ short_name: CSPRNG
 name: CSPRNG
 category: Permissive
 owner: Peter Gutmann
+spdx_license_key: LicenseRef-scancode-csprng
 ignorable_emails:
     - pgut001@cs.auckland.ac.nz

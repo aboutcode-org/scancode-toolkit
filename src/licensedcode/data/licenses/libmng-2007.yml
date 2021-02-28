@@ -3,6 +3,7 @@ short_name: libmng License 2007
 name: libmng License 2007
 category: Permissive
 owner: libmng Project
+spdx_license_key: LicenseRef-scancode-libmng-2007
 other_urls:
     - http://www.linuxfromscratch.org/blfs/view/cvs/general/libmng.html
 standard_notice: |

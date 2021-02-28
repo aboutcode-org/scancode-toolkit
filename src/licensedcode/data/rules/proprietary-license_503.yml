@@ -1,0 +1,9 @@
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: See in https://www.govinfo.gov/content/pkg/USCODE-2014-title15/pdf/USCODE-2014-title15-chap7A-sec290e.pdf
+    and https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications
+ignorable_copyrights:
+    - Universal Copyright Convention
+ignorable_holders:
+    - Universal Convention
