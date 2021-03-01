@@ -1,0 +1,7 @@
+license_expression: vim
+is_license_notice: yes
+relevance: 99
+ignorable_urls:
+    - http://iccf-holland.org/
+    - http://www.iccf.nl/
+    - http://www.vim.org/iccf/

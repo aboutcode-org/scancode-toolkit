@@ -4,6 +4,7 @@ name: Sun BCL SDK 5.0
 category: Proprietary Free
 owner: Oracle (Sun)
 homepage_url: http://www.java.com/en/download/license.jsp
+spdx_license_key: LicenseRef-scancode-sun-bcl-sdk-5.0
 text_urls:
     - http://www.java.com/en/download/license.jsp
 ignorable_copyrights:

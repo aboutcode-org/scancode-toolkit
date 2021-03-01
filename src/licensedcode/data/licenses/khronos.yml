@@ -8,5 +8,6 @@ notes: |
     first paragraph "this software and/or associated documentation" is used
     instead of "this software and associated documentation" The words "the
     Software" are replaced by the words "the Materials".
+spdx_license_key: LicenseRef-scancode-khronos
 other_urls:
     - http://www.khronos.org/developers

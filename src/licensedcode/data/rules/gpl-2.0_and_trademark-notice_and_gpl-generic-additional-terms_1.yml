@@ -1,0 +1,14 @@
+license_expression: gpl-2.0 AND trademark-notice AND gpl-generic-additional-terms
+is_license_notice: yes
+relevance: 100
+notes: This notice may be ambiguous. Seen in https://raw.githubusercontent.com/Tripwire/tripwire-open-source/master/COPYING
+ignorable_copyrights:
+    - copyright 2000 Tripwire, Inc. Tripwire
+ignorable_holders:
+    - Tripwire, Inc. Tripwire
+ignorable_authors:
+    - Tripwire, Inc.
+ignorable_urls:
+    - http://www.tripwire.org/
+ignorable_emails:
+    - info@tripwire.org

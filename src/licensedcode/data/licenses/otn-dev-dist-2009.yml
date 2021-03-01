@@ -4,6 +4,7 @@ name: Oracle Technology Network Free Developer License 2009
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/testcontent/standard-license-088383.html
+spdx_license_key: LicenseRef-scancode-otn-dev-dist-2009
 minimum_coverage: 50
 ignorable_authors:
     - the OTN Program

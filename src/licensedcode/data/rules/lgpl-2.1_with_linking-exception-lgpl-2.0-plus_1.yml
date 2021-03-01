@@ -1,0 +1,6 @@
+license_expression: lgpl-2.1 WITH linking-exception-lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LGPL.2.1.txt
+notes: https://github.com/tcs-ulli/laz-n-tier/blob/130ed758f044a04afb2cba3aafa9c5b3a52f47a0/License.txt

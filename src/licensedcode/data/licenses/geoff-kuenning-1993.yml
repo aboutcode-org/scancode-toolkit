@@ -4,10 +4,10 @@ name: Geoff Kuenning License 1993
 category: Permissive
 owner: Geoff Kuenning
 homepage_url: https://www.hitachi.co.jp/Prod/comp/soft1/jp1/trial/trialv12/sla/license/373.txt
-ignorable_authors:
-  - Geoff Kuenning
+spdx_license_key: LicenseRef-scancode-geoff-kuenning-1993
 ignorable_copyrights:
-  - Copyright 1993, Geoff Kuenning, Granada Hills, CA
+    - Copyright 1993, Geoff Kuenning, Granada Hills, CA
+ignorable_authors:
+    - Geoff Kuenning
 ignorable_holders:
-  - Geoff Kuenning, Granada Hills, CA
-
+    - Geoff Kuenning, Granada Hills, CA

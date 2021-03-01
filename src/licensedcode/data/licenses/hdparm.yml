@@ -3,6 +3,7 @@ short_name: HDPARM License
 name: HDPARM License
 category: Permissive
 owner: Unspecified
+spdx_license_key: LicenseRef-scancode-hdparm
 minimum_coverage: 90
 ignorable_emails:
     - mlord@pobox.com

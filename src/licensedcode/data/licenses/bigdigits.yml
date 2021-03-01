@@ -11,6 +11,7 @@ notes: |
     source project provided the MPL licence remains unchanged in our source
     code modules. For reference, here is the old copyright and licence notice
     for version 2.4 (April 2013) and earlier.
+spdx_license_key: LicenseRef-scancode-bigdigits
 text_urls:
     - http://www.di-mgt.com.au/bigdigitsCopyright.txt
     - https://web-beta.archive.org/web/20151013165906/http://www.di-mgt.com.au/bigdigitsCopyright.txt

@@ -1,0 +1,9 @@
+license_expressions:
+  - x11-stanford
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/MIT.t37
+  originally expected to be detected as MIT
+  with coverage of 66.1
+  "under the copyrights"
+  Example: https://github.com/mininet/mininet

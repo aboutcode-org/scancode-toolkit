@@ -4,6 +4,7 @@ name: Mike95 License
 category: Free Restricted
 owner: Mike95
 homepage_url: http://www.mike95.com/c_plusplus/classes/JString/JString_h.aspx
+spdx_license_key: LicenseRef-scancode-mike95
 ignorable_authors:
     - Michael Olivero
 ignorable_urls:

@@ -4,6 +4,7 @@ name: Android Software Development Kit License Agreement 2015
 category: Proprietary Free
 owner: Google
 homepage_url: https://developer.android.com/studio/terms.html
+spdx_license_key: LicenseRef-scancode-android-sdk-license
 ignorable_urls:
     - http://source.android.com/
     - http://source.android.com/compatibility

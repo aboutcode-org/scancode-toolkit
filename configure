@@ -1,50 +1,102 @@
 #!/usr/bin/env bash
 #
-# Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# ScanCode is a trademark of nexB Inc.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-
 set -e
 
 if [[ "$OS" == "Windows_NT" ]]; then
-    echo "You seem to be running on Windows under Cygwin / MSYS(2), like e.g. Git for Windows Bash. This script does"
-    echo "not properly work in this scenario. As a Windows user, please run 'configure.bat' from a regular command"
-    echo "prompt instead."
+    echo "You seem to be running on Windows under Cygwin / MSYS(2),"
+    echo "like e.g. Git for Windows Bash. This script does not properly work in"
+    echo "this scenario. As a Windows user, please run 'configure.bat' from a "
+    echo "regular command prompt instead."
     exit 1
 fi
 
+
 ################################
-# change these variables to customize this script locally
+# A configuration script to set things up: create a virtualenv and install
+# update thirdparty packages
+
+function cli_help {
+    echo An initial configuration script
+    echo "  usage: ./configure [options]"
+    echo
+    echo The default is to configure for regular use.
+    echo The script will attempt to find a suitable Python executable.
+    echo Set the PYTHON_EXECUTABLE environment variable to provide your own
+    echo Python executable path.
+    echo
+    echo The options are:
+    echo  "--clean: clean built and installed files and exit."
+    echo  "--dev:   configure the environment for development."
+    echo  "--help:  display these help messages and exit."
+    echo
+    set +e
+    exit
+}
+
+
 ################################
-# you can define one or more thirdparty dirs, each prefixed with TPP_DIR
-export TPP_DIR="thirdparty"
+# Defaults. Change these variables to customize this script locally
+################################
 
-# default configurations for dev
-CONF_DEFAULT="etc/conf/dev"
+#  thirdparty package locations
+export THIRDPARTY_DIR="thirdparty"
+export THIRDPARTY_LINKS="https://thirdparty.aboutcode.org/pypi"
 
-if [[ "$CONF_DEFAULT" == "etc/conf/dev" ]]; then
-    export TPP_DIR_DEV="thirdparty/dev"
+# requirements used by default or with --dev.
+# note the use of constraints with -c 
+REQUIREMENTS="--editable . --constraint requirements.txt"
+DEV_REQUIREMENTS="--editable .[dev] --constraint requirements.txt --constraint requirements-dev.txt"
+
+# default supported Python version
+if [[ "$CONFIGURE_SUPPORTED_PYTHON" == "" ]]; then
+    CONFIGURE_SUPPORTED_PYTHON=3.6
 fi
 
+################################
 
-#################################
+# Current directory where this script lives
+PROJECT_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-CFG_CMD_LINE_ARGS="$@"
 
-if [[ "$1" == "" ]]; then
-    # default for dev conf if not argument is provided
-    CFG_CMD_LINE_ARGS=$CONF_DEFAULT
+# parse command line options
+CLI_ARGS="$REQUIREMENTS"
+CONFIGURE_DEV_MODE=0
+case "$1" in
+    --help)    cli_help;;
+    --clean)   CLI_ARGS=--clean;;
+    --dev)     CLI_ARGS="$DEV_REQUIREMENTS" && CONFIGURE_DEV_MODE=1;;
+esac
+
+
+# find a proper Python to run
+
+if [[ "$CONFIGURE_PYTHON_EXECUTABLE" == "" ]]; then
+    CONFIGURE_PYTHON_EXECUTABLE=python3
 fi
 
-CONFIGURE_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+################################
 
-if [[ "$PYTHON_EXE" == "" ]]; then
-    PYTHON_EXE=python
+# Setup development mode
+
+if [[ "$CONFIGURE_DEV_MODE" == 1 ]]; then
+    # Add development tag file to auto-regen license index on file changes
+    touch $PROJECT_ROOT_DIR/SCANCODE_DEV_MODE
 fi
 
-$PYTHON_EXE "$CONFIGURE_ROOT_DIR/etc/configure.py" $CFG_CMD_LINE_ARGS
+# Run configure scripts proper and activate
 
-if [ -f "$CONFIGURE_ROOT_DIR/bin/activate" ]; then
-    source "$CONFIGURE_ROOT_DIR/bin/activate"
+$CONFIGURE_PYTHON_EXECUTABLE "$PROJECT_ROOT_DIR/etc/configure.py" $CLI_ARGS
+
+# Activate the virtualenv if it exists
+if [[ -f "$PROJECT_ROOT_DIR/bin/activate" ]]; then
+    source "$PROJECT_ROOT_DIR/bin/activate"
 fi
 
 set +e

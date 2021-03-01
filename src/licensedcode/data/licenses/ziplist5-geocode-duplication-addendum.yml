@@ -4,6 +4,7 @@ name: ZIPList5 Geocode Duplication License Addendum
 category: Commercial
 owner: CD Light LLC
 homepage_url: https://web.archive.org/web/20160908211546/http://zipinfo.com/products/z5LL/z5llld.htm
+spdx_license_key: LicenseRef-scancode-ziplist5-geocode-duplication-addendum
 faq_url: https://web.archive.org/web/20160904120249/http://zipinfo.com/products/z5LL/z5lllo.htm
 ignorable_emails:
     - support@zipinfo.com

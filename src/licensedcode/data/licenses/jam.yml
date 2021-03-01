@@ -3,3 +3,4 @@ short_name: Jam License
 name: Jam License
 category: Permissive
 owner: Perforce
+spdx_license_key: LicenseRef-scancode-jam

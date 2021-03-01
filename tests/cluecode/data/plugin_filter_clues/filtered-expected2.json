@@ -1,0 +1,129 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--copyright": true,
+        "--email": true,
+        "--filter-clues": true,
+        "--info": true,
+        "--json": "<file>",
+        "--license": true,
+        "--url": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 1
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE2",
+      "type": "file",
+      "name": "LICENSE2",
+      "base_name": "LICENSE2",
+      "extension": "",
+      "size": 1386,
+      "date": "2021-02-26",
+      "sha1": "c43ffed01990c30300e07231790ace9f103ff7d7",
+      "md5": "9946f7dcaf5066f2fb17e682e0326090",
+      "sha256": "58416604a57e2e2625b802ac8c751c61763ae3d279c9c75d7c3bb55a3782cc6c",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "pygres-2.2",
+          "score": 100.0,
+          "name": "PyGres License v2.2",
+          "short_name": "PyGres License 2.2",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/pygres-2.2",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.yml",
+          "spdx_license_key": "LicenseRef-scancode-pygres-2.2",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE",
+          "start_line": 7,
+          "end_line": 22,
+          "matched_rule": {
+            "identifier": "pygres-2.2_2.RULE",
+            "license_expression": "pygres-2.2",
+            "licenses": [
+              "pygres-2.2"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "matcher": "2-aho",
+            "rule_length": 145,
+            "matched_length": 145,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        }
+      ],
+      "license_expressions": [
+        "pygres-2.2"
+      ],
+      "percentage_of_license_text": 69.38,
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996, Pascal Andre (andre@avia.ecp.fr)",
+          "start_line": 4,
+          "end_line": 5
+        },
+        {
+          "value": "copyright 1997, 1998, 1996 by D'Arcy John. Cain (darcy@druid.net)",
+          "start_line": 24,
+          "end_line": 25
+        }
+      ],
+      "holders": [
+        {
+          "value": "Pascal Andre",
+          "start_line": 4,
+          "end_line": 5
+        },
+        {
+          "value": "D'Arcy John. Cain",
+          "start_line": 24,
+          "end_line": 25
+        }
+      ],
+      "authors": [],
+      "emails": [
+        {
+          "email": "darcy@druid.net",
+          "start_line": 3,
+          "end_line": 3
+        },
+        {
+          "email": "andre@chimay.via.ecp.fr",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

@@ -4,6 +4,7 @@ name: Red Hat EULA JBoss Enterprise Middleware License
 category: Copyleft Limited
 owner: Red Hat
 homepage_url: https://www.redhat.com/f/pdf/licenses/GLOBAL_EULA_JBoss_English_20101110.pdf
+spdx_license_key: LicenseRef-scancode-rh-eula-lgpl
 ignorable_copyrights:
     - Copyright (c) 2010 Red Hat, Inc.
 ignorable_holders:

@@ -4,4 +4,5 @@ name: Wrox Download Terms and Conditions
 category: Source-available
 owner: Wiley
 homepage_url: http://web.archive.org/web/20030421055623/http://wrox.com/dynamic/books/download-info.aspx?ISBN=1861004257&email=&mode=#terms
+spdx_license_key: LicenseRef-scancode-wrox-download
 minimum_coverage: 30

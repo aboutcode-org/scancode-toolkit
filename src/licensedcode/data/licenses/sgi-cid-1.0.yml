@@ -4,6 +4,7 @@ name: SGI CID Font Code Public License v1.0
 category: Permissive
 owner: SGI - Silicon Graphics
 homepage_url: http://www.xfree86.org/current/LICENSE10.html
+spdx_license_key: LicenseRef-scancode-sgi-cid-1.0
 text_urls:
     - http://www.xfree86.org/current/LICENSE10.html
 ignorable_copyrights:

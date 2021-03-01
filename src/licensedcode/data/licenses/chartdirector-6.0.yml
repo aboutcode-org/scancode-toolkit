@@ -4,6 +4,7 @@ name: ChartDirector 6.0 License Agreement
 category: Proprietary Free
 owner: Advanced Software Engineering Ltd.
 homepage_url: http://www.advsofteng.com/doc/cdcomdoc/license.htm
+spdx_license_key: LicenseRef-scancode-chartdirector-6.0
 other_urls:
     - http://www.advsofteng.com/
 ignorable_copyrights:

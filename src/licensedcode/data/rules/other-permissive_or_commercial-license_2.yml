@@ -1,0 +1,5 @@
+license_expression: other-permissive OR commercial-license
+is_license_text: yes
+relevance: 100
+notes: Rare and seen in https://github.com/Desendos/PhysicsGame/blob/14082152869f1508fe8416e20ef65a4109db81b4/HavokOpenGL/HavokOpenGL/irrKlang/irrKlang.h
+    e.g. from https://www.ambiera.com/irrklang/downloads.html

@@ -1,0 +1,9 @@
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+ignorable_authors:
+    - the Fraunhofer Institut fuer Materialfluss und Logistik, Dortmund, Germany (http://www.iml.fraunhofer.de)
+ignorable_urls:
+    - http://www.iml.fraunhofer.de/
+ignorable_emails:
+    - info@myWMS.de

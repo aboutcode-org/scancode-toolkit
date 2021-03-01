@@ -4,6 +4,7 @@ name: Script# License
 category: Proprietary Free
 owner: ScriptSharp
 homepage_url: http://projects.nikhilk.net/Content/Projects/ScriptSharp/ScriptSharp.pdf
+spdx_license_key: LicenseRef-scancode-script-nikhilk
 text_urls:
     - http://projects.nikhilk.net/Content/Projects/ScriptSharp/ScriptSharp.pdf
 other_urls:

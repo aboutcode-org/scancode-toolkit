@@ -29,11 +29,11 @@
     "dependencies": [
       {
         "purl": "pkg:golang/github.com/davecgh/go-spew",
-              "requirement": "v1.1.1",
-              "scope": "require",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false
+        "requirement": "v1.1.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
       },
       {
         "purl": "pkg:golang/github.com/stretchr/testify",

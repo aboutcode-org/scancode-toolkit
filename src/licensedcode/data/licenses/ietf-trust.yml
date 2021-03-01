@@ -4,6 +4,7 @@ name: IETF Trust License
 category: Permissive
 owner: IETF - Internet Engineering Task Force
 homepage_url: http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf
+spdx_license_key: LicenseRef-scancode-ietf-trust
 text_urls:
     - http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf
 faq_url: http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf

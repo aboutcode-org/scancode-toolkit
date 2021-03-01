@@ -1,0 +1,8 @@
+key: qcad-exception-gpl
+short_name: QCAD Exception to GPL
+name: QCAD Exception to GPL
+category: Copyleft Limited
+owner: RibbonSoft GmbH
+homepage_url: https://github.com/qcad/qcad/blob/master/gpl-3.0-exceptions.txt
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-qcad-exception-gpl

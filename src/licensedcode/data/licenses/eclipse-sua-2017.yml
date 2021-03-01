@@ -4,6 +4,7 @@ name: Eclipse Foundation Software User Agreement 2017
 category: Copyleft
 owner: Eclipse Foundation
 homepage_url: https://www.eclipse.org/legal/epl/notice.php
+spdx_license_key: LicenseRef-scancode-eclipse-sua-2017
 text_urls:
     - https://web.archive.org/web/20200212074736/https://www.eclipse.org/legal/epl/notice.php
 ignorable_urls:

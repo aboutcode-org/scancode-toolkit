@@ -8,3 +8,9 @@ spdx_license_key: BSD-3-Clause-LBNL
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/LBNLBSD
 minimum_coverage: 90
+ignorable_copyrights:
+  - Copyright (c) 2003, The Regents of the University of California, through Lawrence Berkeley
+    National Laboratory
+ignorable_holders:
+  - The Regents of the University of California, through Lawrence Berkeley National Laboratory
+

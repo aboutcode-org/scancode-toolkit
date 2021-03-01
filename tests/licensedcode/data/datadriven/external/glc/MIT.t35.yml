@@ -1,0 +1,8 @@
+license_expressions:
+  - khronos
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/MIT.t35
+  originally expected to be detected as MIT
+  with coverage of 100.0
+  "Materials"

@@ -1,4 +1,4 @@
-license_expression: regexp
+license_expression: hs-regexp-orig
 is_license_reference: yes
 relevance: 95
 ignorable_urls:

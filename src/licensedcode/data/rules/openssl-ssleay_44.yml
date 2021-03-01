@@ -1,0 +1,4 @@
+license_expression: openssl-ssleay
+is_license_notice: yes
+relevance: 100
+notes: Seen in https://github.com/schmel/openssl-gost/blob/18028d11296f4675276f0814674c5143caaa75e7/engine/gost_grasshopper_mac.c#L3

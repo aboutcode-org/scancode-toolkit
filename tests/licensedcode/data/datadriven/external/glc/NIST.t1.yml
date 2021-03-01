@@ -1,0 +1,8 @@
+license_expressions:
+  - nist-pd
+  - unknown-license-reference
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/NIST.t1
+  originally expected to be detected as NIST-PD-fallback
+  with coverage of 89.3

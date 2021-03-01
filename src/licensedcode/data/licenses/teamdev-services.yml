@@ -4,6 +4,7 @@ name: TeamDev Services License
 category: Commercial
 owner: TeamDev
 homepage_url: https://www.teamdev.com/services
+spdx_license_key: LicenseRef-scancode-teamdev-services
 minimum_coverage: 98
 ignorable_urls:
     - http://google.com/+TeamDev

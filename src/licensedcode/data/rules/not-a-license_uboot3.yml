@@ -1,6 +1,0 @@
-is_negative: yes
-notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
-ignorable_copyrights:
-    - copyrighted by the Free Software Foundation
-ignorable_holders:
-    - the Free Software Foundation

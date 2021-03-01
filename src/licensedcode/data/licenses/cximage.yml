@@ -4,6 +4,7 @@ name: CxImage License
 category: Permissive
 owner: CxImage Project
 homepage_url: http://www.xdp.it/cximage/
+spdx_license_key: LicenseRef-scancode-cximage
 minimum_coverage: 30
 ignorable_copyrights:
     - Copyright (c) 1995, Alejandro Aguilar Sierra

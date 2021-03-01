@@ -1,0 +1,35 @@
+about_resource: virtualenv.pyz
+name: get-virtualenv
+version: 20.4.2
+download_url: https://github.com/pypa/get-virtualenv/raw/20.4.2/public/virtualenv.pyz
+description: virtualenv is a tool to create isolated Python environments.
+homepage_url: https://github.com/pypa/virtualenv
+license_expression: lgpl-2.1-plus AND (bsd-new OR apache-2.0) AND mit AND python AND bsd-new
+  AND apache-2.0 AND isc AND (bsd-simplified OR apache-2.0)
+copyright: Copyright (c) The Python Software Foundation and others
+redistribute: yes
+attribute: yes
+track_changes: yes
+package_url: pkg:github/pypa/get-virtualenv@20.4.2#public/virtualenv.pyz
+licenses:
+  - key: apache-2.0
+    name: Apache License 2.0
+    file: apache-2.0.LICENSE
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE
+  - key: bsd-simplified
+    name: BSD-2-Clause
+    file: bsd-simplified.LICENSE
+  - key: bsd-new
+    name: BSD-3-Clause
+    file: bsd-new.LICENSE
+  - key: python
+    name: Python Software Foundation License v2
+    file: python.LICENSE
+  - key: lgpl-2.1-plus
+    name: GNU Lesser General Public License 2.1 or later
+    file: lgpl-2.1-plus.LICENSE
+  - key: isc
+    name: ISC License
+    file: isc.LICENSE

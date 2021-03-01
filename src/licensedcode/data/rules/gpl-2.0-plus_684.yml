@@ -1,0 +1,4 @@
+license_expression: gpl-2.0-plus
+is_license_tag: yes
+relevance: 100
+notes: also seen in FFmpeg configure result strings and found in binaries

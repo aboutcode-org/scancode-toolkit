@@ -1,0 +1,104 @@
+ADDITIONAL TERMS PURSUANT TO SECTION 7 OF AGPLv3
+GlobaLeaks is an open-source whistleblowing framework distributed under the GNU
+Affero GPL v3 License terms, with Additional Terms pursuant to Section 7 of said
+license.
+
+This Program was created by Hermes Center for Transparency and Digital Human
+Rights (https://www.hermescenter.org) and by Whistleblowing Solutions I.S. SRL
+(https://www.whistleblowingsolutions.it) under the name "GlobaLeaks"
+(https://www.globaleaks.org).
+
+The purpose of Hermes (as a nonprofit association) and of Whistleblowing
+Solutions (as non-profit social enterprise) is to support the development of
+the GlobaLeaks software while maintaining it as free software available for
+public-interest purposes which include protecting whistleblowers and increasing
+transparency.
+
+We strongly believe in free software and open source distribution, since it
+guarantees easy and reasonable access to innovative software to a large
+community of users.
+
+We wish to recognize and attribute GlobaLeaks to its authors, regardless of its
+present or later use, modification, distribution or adaption. Accordingly,
+these terms aim to preserve the Hermes Center and Whistleblowing Solutions
+I.S. S.r.l moral rights over the software.
+
+We wish all the modified editions of the GlobaLeaks software redistributed to
+be kept always up-to-date with the official version and its security
+improvements and fixes.
+
+We strongly believe that the community will be positively affected by these
+terms, the ultimate goal of which is to ensure the security and sustainability
+of free and open source software by supporting R&D and improving the visibility
+of GlobaLeaks as free and open source software, while encouraging others to
+comply with our common ideals.
+
+Pursuant to this license, you are therefore free to use the software and
+modify it according to the GNU Affero General Public License version 3 and
+the Additional Terms.
+
+Following are the applicable Additional Terms for Use of GlobaLeaks pursuant to
+section 7, subsections (b) and (c) of the GNU Affero General Public License
+version 3.
+
+ADDITIONAL TERMS PURSUANT TO SECTION 7(b) OF AGPLv3
+
+Pursuant to Section 7(b) of the AGPLv3, we require the preservation of the legal
+notices, copyright notices and author attributions in the program and in its
+documentation or in the Appropriate Legal Notices displayed by works containing
+it.
+
+The Program displays such notices in each user interface screen with an author
+attribution that includes "Powered by GlobaLeaks".
+
+For works containing the Program or any covered work, each interactive user
+interface must include a prominent and conveniently accessible feature for the
+display of Appropriate Legal Notices. This display must include author
+attributions and copyright notices as found in the Program. This display of
+these author attributions must be convenient for a user wishing to browse
+credits, shown in a manner separate and distinct from license texts, and
+commensurately prominent with respect to other author attributions.
+To the extent that it is technically feasible and not obtrusive, the graphical
+form of these author attributions, such as a "Powered by GlobaLeaks" logo, must
+be preserved; otherwise, a textual equivalent is permitted. When users click on
+the "Powered by GlobaLeaks" logo it must direct them back to the
+https://www.globaleaks.org website.
+
+We require the Appropriate Legal Notices to be preserved clearly visible with
+size of the fonts and icons proportionate to the user interface being used.
+
+Any party that wishes to remove the author attribution from the user interfaces
+is required to obtain written consent from Whistleblowing Solutions I.S. SRL.
+
+              ADDITIONAL TERMS PURSUANT TO SECTION 7(c) OF AGPLv3
+Pursuant to Section 7(c) of the AGPLv3, we require that modified versions of the
+material should be marked in a reasonable way as different from the official
+version.
+
+Any modified material being redistributed must have the program display the
+Modified Material Notice in each user interface screen including the statement
+"This server is running a modified version of the GlobaLeaks software version
+VERSION_NUMBER released on RELEASE_DATE. Download the modified version of the
+source code." with a clearly visible hyperlink that provides access to the
+source code of the modified software.
+
+The string VERSION_NUMBER should be replaced with the exact version number of
+the official GlobaLeaks software on which the modified material is based.
+The string RELEASE_DATE should be replaced with the full date of the release of
+the version VERSION_NUMBER of the official GlobaLeaks software on which the
+modified material is based.
+
+Whenever the modified material being redistributed is not up-to-date with the
+official GlobaLeaks software within 6 months from the date of first subsequent
+official release on which it is based, the Modified Material Notice must read
+"This server is running a modified version of the GlobaLeaks software
+VERSION_NUMBER released on RELEASE_DATE, which has not been updated for more
+than 6 months and might include security vulnerabilities. Download the modified
+version of the source code." with a clearly visible hyperlink that provides
+access to the source code of the modified software.
+
+When a user clicks on the "Download the modified version of the source code"
+(or the equivalent localized language version of the sentence) it must direct
+the user to an archive file containing the modified version of the source code
+or to an intermediate web page containing a hyperlink to directly download an
+archive file of the modified source code from a Web browser.

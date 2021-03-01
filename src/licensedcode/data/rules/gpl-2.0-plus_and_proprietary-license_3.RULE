@@ -1,0 +1,30 @@
+* This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ *
+ * The GNU General Public License gives you the right to copy, modify,
+ * and redistribute this software according to the terms of the license.
+ * You are also hereby granted permission to use this software for any
+ * non-commercial purpose.
+ *
+ * The author of this software does not grant permission to use this
+ * software in any commercial context without the prior written consent
+ * of the author. "Commercial" here is defined in the same sense as it
+ * is for DGD. Please read the file dgd/doc/Commercial or contact the
+ * author for details.
+ *
+ * This copyright pertains only to the programs and documentation
+ * which comprise LPMOO. It specifically does not apply to DGD or any
+ * add-on package which LPMOO employs; these have their own copyrights
+ * which must also be adhered to. Please read the files dgd/Copyright,
+ * dgd-net/Copyright.NET, and dgd-rgx/README for details.

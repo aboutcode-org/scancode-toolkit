@@ -4,6 +4,7 @@ name: Metro Link Public License 1.0
 category: Copyleft
 owner: Metro Link Inc.
 homepage_url: http://web.archive.org/web/20120411024312/http://www.opengroup.org/openmotif/supporters/metrolink/license.html
+spdx_license_key: LicenseRef-scancode-metrolink-1.0
 text_urls:
     - http://web.archive.org/web/20120411024312/http://www.opengroup.org/openmotif/supporters/metrolink/license.html
 ignorable_copyrights:

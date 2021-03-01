@@ -4,5 +4,6 @@ name: ITC End User License Agreement
 category: Commercial
 owner: ITC
 homepage_url: https://web.archive.org/web/19980626184147/http://www.itcfonts.com/itc/license.html
+spdx_license_key: LicenseRef-scancode-itc-eula
 ignorable_emails:
     - info@itcfonts.com

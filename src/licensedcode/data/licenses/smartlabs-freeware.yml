@@ -4,5 +4,6 @@ name: SmartLabs Freeware License
 category: Proprietary Free
 owner: SmartLabs
 homepage_url: http://www.videohelp.com/tools/tsMuxeR
+spdx_license_key: LicenseRef-scancode-smartlabs-freeware
 text_urls:
     - http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/licenses/SmartLabs

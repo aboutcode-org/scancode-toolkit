@@ -4,5 +4,6 @@ name: Brian Gladman License
 category: Permissive
 owner: Brian Gladman
 homepage_url: http://www.gladman.me.uk/AES
+spdx_license_key: LicenseRef-scancode-brian-gladman
 text_urls:
     - http://gladman.plushost.co.uk/oldsite/AES/aes-src-12-09-11.zip

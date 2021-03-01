@@ -1,0 +1,15 @@
+key: prosperity-3.0
+short_name: Prosperity Public License 3.0
+name: The Prosperity Public License 3.0
+category: Source-available
+owner: Kyle Mitchell
+homepage_url: https://licensezero.com/licenses/prosperity
+spdx_license_key: LicenseRef-scancode-prosperity-3.0
+text_urls:
+    - https://raw.githubusercontent.com/licensezero/prosperity-public-license/v3.0.0/LICENSE.md
+ignorable_urls:
+  - https://blueoakcouncil.org/license/1.0.0
+  - https://spdx.org/licenses/BSD-2-Clause.html
+  - https://spdx.org/licenses/MIT.html
+  - https://www.apache.org/licenses/LICENSE-2.0.html
+

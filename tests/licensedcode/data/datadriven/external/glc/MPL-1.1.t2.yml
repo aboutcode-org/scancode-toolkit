@@ -1,0 +1,15 @@
+license_expressions:
+  - mpl-1.1 OR lgpl-2.1-plus
+  - mpl-1.0
+  - mpl-1.1 OR lgpl-2.1-plus OR apache-2.0
+expected_failure: yes
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/MPL-1.1.t2
+  originally expected to be detected as MPL-1.1
+  with coverage of 94.9
+  HTMLified MPL-1.1
+  Example: https://github.com/jboss-javassist/javassist
+  This is a complex combo of mpl and other licenses in a weirdly formatted HTML
+  See in  Seen https://github.com/jboss-javassist/javassist/blob/1c4e31b9677d020a1e89aeebc6686396f9e6c68a/License.html
+  

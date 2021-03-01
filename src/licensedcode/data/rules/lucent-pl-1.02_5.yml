@@ -1,0 +1,8 @@
+license_expression: lucent-pl-1.02
+is_license_text: yes
+relevance: 100
+notes: seen in https://github.com/9fans/plan9port/blob/master/LICENSE
+ignorable_copyrights:
+    - Copyright (c) 2003, Lucent Technologies Inc. and others
+ignorable_holders:
+    - Lucent Technologies Inc. and others

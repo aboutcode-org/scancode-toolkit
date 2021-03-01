@@ -4,6 +4,7 @@ name: BitTorrent End User License Agreement (EULA)
 category: Proprietary Free
 owner: BitTorrent, Inc.
 homepage_url: http://www.bittorrent.com/legal/eula
+spdx_license_key: LicenseRef-scancode-bittorrent-eula
 ignorable_urls:
     - http://www.bittorrent.com/legal/eula
     - http://www.bittorrent.com/legal/terms-of-use

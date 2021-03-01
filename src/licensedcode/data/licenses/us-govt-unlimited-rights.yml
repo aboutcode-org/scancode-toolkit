@@ -3,6 +3,7 @@ short_name: US Government Unlimited Rights
 name: US Government Grant of Unlimited Rights
 category: Permissive
 owner: US Government
+spdx_license_key: LicenseRef-scancode-us-govt-unlimited-rights
 text_urls:
     - https://github.com/Slicer/Slicer/blob/v4.6.2/COPYRIGHT.txt
 other_urls:

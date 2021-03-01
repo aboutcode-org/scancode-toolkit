@@ -1,4 +1,0 @@
-is_negative: yes
-notes: seen in LLVM sources and docs
-ignorable_urls:
-    - http://llvm.org/demo/

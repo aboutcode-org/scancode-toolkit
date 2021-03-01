@@ -1,0 +1,9 @@
+license_expressions:
+  - nasa-1.3
+  - nasa-1.3
+  - nasa-1.3
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/NASA-1.3.t1
+  originally expected to be detected as NASA-1.3
+  with coverage of 99.6

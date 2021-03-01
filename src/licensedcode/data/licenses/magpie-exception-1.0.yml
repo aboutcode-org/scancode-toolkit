@@ -5,3 +5,4 @@ category: Copyleft
 owner: MAgPIE
 homepage_url: https://github.com/magpiemodel/magpie/blob/master/LICENSE
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-magpie-exception-1.0

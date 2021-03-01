@@ -1,0 +1,9 @@
+license_expressions:
+  - boost-1.0
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/BSL-1.0.t2
+  originally expected to be detected as BSL-1.0
+  with coverage of 100.0
+  missing "and accompanying documentation" and "(the "Software")"
+  Example: https://github.com/ctessum/go.clipper

@@ -5,6 +5,7 @@ category: Permissive
 owner: Errbot
 homepage_url: http://errbot.io/
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-errbot-exception
 text_urls:
     - https://github.com/errbotio/errbot/blob/master/gplv3-exceptions.txt
 minimum_coverage: 30

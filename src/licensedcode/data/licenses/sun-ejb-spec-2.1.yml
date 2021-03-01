@@ -3,8 +3,10 @@ short_name: Sun EJB Specification 2.1
 name: Sun EJB Specification 2.1
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-ejb-spec-2.1
 minimum_coverage: 30
 ignorable_copyrights:
-    - Copyright 2003 Sun Microsystems, Inc. 4150 Network Circle, Santa Clara, California 95054, U.S.A
+    - Copyright 2003 Sun Microsystems, Inc. 4150 Network Circle, Santa Clara, California 95054,
+        U.S.A
 ignorable_holders:
     - Sun Microsystems, Inc. 4150 Network Circle, Santa Clara, California 95054, U.S.A

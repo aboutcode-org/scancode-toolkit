@@ -6,3 +6,5 @@ owner: nexB
 notes: |
     This is a variant composed of clause 1 and 3 of a BSD-Modified and some
     additional conditions on position and content of the notice
+spdx_license_key: LicenseRef-scancode-bsd-top
+minimum_coverage: 70

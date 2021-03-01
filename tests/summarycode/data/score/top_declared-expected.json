@@ -163,7 +163,9 @@
           "owner": "MIT",
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
           "spdx_license_key": "MIT",
           "spdx_url": "https://spdx.org/licenses/MIT",
           "start_line": 7,
@@ -178,11 +180,12 @@
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],

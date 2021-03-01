@@ -4,6 +4,7 @@ name: ComponentAce JCraft License
 category: Permissive
 owner: ComponentAce
 notes: composite license_expression bsd-new and bsd-new and zlib
+spdx_license_key: LicenseRef-scancode-componentace-jcraft
 minimum_coverage: 85
 ignorable_copyrights:
     - Copyright (c) 2000,2001,2002,2003 ymnk, JCraft,Inc.

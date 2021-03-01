@@ -1,5 +1,2 @@
-license_expression: other-copyleft AND other-permissive
 is_false_positive: yes
-is_license_reference: yes
-relevance: 100
 notes: Found in Debian docs

@@ -4,6 +4,7 @@ name: Health Administration Corporation Open Source License 1.2
 category: Copyleft
 owner: Health Administration Corp (NSW Department of Health)
 homepage_url: https://sourceforge.net/project/shownotes.php?group_id=123700&release_id=291669
+spdx_license_key: LicenseRef-scancode-hacos-1.2
 text_urls:
     - https://sourceforge.net/project/shownotes.php?group_id=123700&release_id=291669
 ignorable_copyrights:

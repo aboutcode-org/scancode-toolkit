@@ -3,6 +3,7 @@ short_name: HP JRE License
 name: Hewlett Packard JRE License
 category: Proprietary Free
 owner: HP - Hewlett Packard
+spdx_license_key: LicenseRef-scancode-hp-ux-jre
 ignorable_copyrights:
     - copyrighted by HP
 ignorable_holders:

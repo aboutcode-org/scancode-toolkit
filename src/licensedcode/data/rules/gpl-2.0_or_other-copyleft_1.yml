@@ -1,0 +1,5 @@
+license_expression: gpl-2.0 OR other-copyleft
+is_license_notice: yes
+relevance: 100
+notes: Seen in https://github.com/danlucraft/redcar/blob/ff1a671b26a8969ad16da893995cf07e293319e5/LICENSE
+ this is a unique license never seen elsewhere hence the use of the other-copyleft key

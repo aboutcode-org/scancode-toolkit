@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: Open Source Geospatial Foundation
 homepage_url: http://geoserver.org/
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-geoserver-exception-2.0-plus
 text_urls:
     - https://master.dl.sourceforge.net/project/geoserver/GeoServer/2.5/geoserver-2.5-src.zip
 other_urls:

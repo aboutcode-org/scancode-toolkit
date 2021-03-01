@@ -4,6 +4,7 @@ name: Adobe SDK License for INDESIGN, INDESIGN SERVER and INCOPY Software
 category: Proprietary Free
 owner: Adobe Systems
 homepage_url: http://www.adobe.com/devnet/indesign/sdk/eula_cs55.html
+spdx_license_key: LicenseRef-scancode-adobe-indesign-sdk
 ignorable_urls:
     - http://support.adobe.com/devsup/devsup.nsf/docs/50093.htm
     - http://www.adobe.com/go/thirdparty

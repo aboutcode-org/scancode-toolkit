@@ -1,0 +1,4 @@
+license_expression: proprietary-license
+is_license_tag: yes
+relevance: 100
+notes: FFmpeg configure result strings as found in binaries

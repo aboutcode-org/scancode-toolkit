@@ -14,6 +14,7 @@ faq_url: http://www.fsf.org/licensing/licenses/fdl.html
 other_urls:
     - http://www.gnu.org/licenses/old-licenses/fdl-1.2.txt
     - https://www.gnu.org/licenses/old-licenses/fdl-1.2.txt
+minimum_coverage: 50
 ignorable_copyrights:
     - Copyright (c) 2000,2001,2002 Free Software Foundation, Inc.
 ignorable_holders:

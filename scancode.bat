@@ -1,5 +1,11 @@
 @echo OFF
-@rem Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
+
+@rem Copyright (c) nexB Inc. and others. All rights reserved.
+@rem SPDX-License-Identifier: Apache-2.0
+@rem See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+@rem ScanCode is a trademark of nexB Inc.
+@rem See https://github.com/nexB/scancode-toolkit for support or download.
+@rem See https://aboutcode.org for more information about nexB OSS projects.
 
 @rem  A wrapper to ScanCode command line entry point
 
@@ -11,9 +17,10 @@ goto scancode
 
 :configure
 echo * Configuring ScanCode for first use...
-@rem FIXME: we did not set a given Python PATH
+echo * WARNING: Native Windows will be deprecated in the future in favor of Windows Subsystem for Linux
+echo * WARNING: Please visit https://github.com/nexB/scancode-toolkit/issues/2366 for details and to provide feedback
 set CONFIGURE_QUIET=1
-call "%SCANCODE_ROOT_DIR%configure" etc/conf
+call "%SCANCODE_ROOT_DIR%configure"
 
 @rem Return a proper return code on failure
 if %errorlevel% neq 0 (

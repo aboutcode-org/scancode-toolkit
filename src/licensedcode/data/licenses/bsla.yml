@@ -3,5 +3,6 @@ short_name: BSLA
 name: Berkeley Software License Agreement
 category: Permissive
 owner: Regents of the University of California
+spdx_license_key: LicenseRef-scancode-bsla
 ignorable_authors:
     - the University of California, Berkeley

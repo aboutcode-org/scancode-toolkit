@@ -1,0 +1,9 @@
+license_expressions:
+  - 996-icu-1.0
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/Anti996.t2
+  originally expected to be detected as Anti996
+  with coverage of 100.0
+  Various wording tweaks
+  Example: https://github.com/zslomo/2019-Autumn-recruitment-experience

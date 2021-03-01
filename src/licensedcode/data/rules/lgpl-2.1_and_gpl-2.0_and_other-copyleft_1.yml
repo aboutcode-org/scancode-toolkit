@@ -1,4 +1,0 @@
-license_expression: lgpl-2.1 AND gpl-2.0 AND other-copyleft
-is_false_positive: yes
-is_license_reference: yes
-notes: this is a comment about licenses in FFmpeg

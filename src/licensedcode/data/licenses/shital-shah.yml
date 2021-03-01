@@ -4,5 +4,6 @@ name: Shital Shah License
 category: Permissive
 owner: Shital Shah
 homepage_url: http://shitalshah.com/disclaimer/
+spdx_license_key: LicenseRef-scancode-shital-shah
 text_urls:
     - http://shitalshah.com/disclaimer/

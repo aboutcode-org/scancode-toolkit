@@ -3,6 +3,7 @@ short_name: RSA 1990
 name: RSA Data Security Notice 1990
 category: Permissive
 owner: RSA (the Security Division of EMC)
+spdx_license_key: LicenseRef-scancode-rsa-1990
 text_urls:
     - http://svn.apache.org/repos/asf/apr/apr/trunk/test/testmd4.c
     - http://www.opensource.apple.com/source/libmd/libmd-3/mddriver.c?txt

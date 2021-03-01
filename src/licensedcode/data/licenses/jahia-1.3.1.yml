@@ -4,6 +4,7 @@ name: Jahia Collaborative Source License v1.3.1
 category: Copyleft
 owner: JAHIA Community
 homepage_url: http://www.jahia.org/cms/home/Jahiapedia/Jahia_Licensing
+spdx_license_key: LicenseRef-scancode-jahia-1.3.1
 text_urls:
     - http://www.jahia.org/cms/home/Jahiapedia/Jahia_Licensing
 faq_url: http://www.jahia.org/cms/home/Jahiapedia/Jahia_Licensing

@@ -1,11 +1,7 @@
 license_expression: gpl-2.0
 is_license_text: yes
-notes: |
-    This is the oldest version of the GPL text as published by the FSF.
-    Let's call it the GPL 2.0.0
-    It predates the move to Franklin Street and it refers to the Temple Place address
-    and the GNU Library General Public License throughout
-    http://web.archive.org/web/20000519044930/http://www.fsf.org/copyleft/gpl.txt
+relevance: 100
+notes: from https://raw.githubusercontent.com/pombredanne/gpl-history/v1.0/allvers/COPYING.3
 ignorable_copyrights:
     - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
     - copyrighted by the Free Software Foundation

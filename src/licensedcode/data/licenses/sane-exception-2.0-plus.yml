@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: SANE Project
 homepage_url: https://alioth.debian.org/
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-sane-exception-2.0-plus
 text_urls:
     - https://alioth.debian.org/frs/download.php/file/4224/sane-backends-1.0.27.tar.gz
 other_urls:

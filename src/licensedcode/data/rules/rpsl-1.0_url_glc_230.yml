@@ -1,0 +1,5 @@
+license_expression: rpsl-1.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/rpsl-1.0

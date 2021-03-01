@@ -4,3 +4,4 @@ name: Paul Mackerras Simplified License
 category: Permissive
 owner: Paul Mackerras
 notes: same as paul-mackerras but without advertizing clause
+spdx_license_key: LicenseRef-scancode-paul-mackerras-simplified

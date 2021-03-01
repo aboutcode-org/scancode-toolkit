@@ -1,13 +1,14 @@
 key: jetty-ccla-1.1
 short_name: Jetty CCLA 1.1
 name: Jetty Project Corporate Contributor License Agreement V1.1
-category: Unstated License
+category: Proprietary Free
 owner: Jetty Project
 homepage_url: https://raw.githubusercontent.com/eclipse/jetty.project/jetty-9.4.x/LICENSE-CONTRIBUTOR/ccla-template.txt
+spdx_license_key: LicenseRef-scancode-jetty-ccla-1.1
 text_urls:
     - https://raw.githubusercontent.com/eclipse/jetty.project/jetty-9.4.x/LICENSE-CONTRIBUTOR/ccla-template.txt
-ignorable_emails:
-    - eclipse@eclipse.com
 ignorable_urls:
     - http://www.apache.org/licenses/
     - ssh://svn.jetty.codehaus.org/home/projects/jetty/scm/jetty
+ignorable_emails:
+    - eclipse@eclipse.com

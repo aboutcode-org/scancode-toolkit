@@ -4,9 +4,7 @@ name: MIT Old Style Spare
 category: Permissive
 owner: Kenneth S. Kundert
 homepage_url: http://sparse.sourceforge.net
-notes:
- Used in old Sparse versions and a few other places.
- This is very similar to the mit-old-style.
+notes: Used in old Sparse versions and a few other places. This is very similar to the mit-old-style.
+spdx_license_key: LicenseRef-scancode-mit-old-style-sparse
 ignorable_authors:
-  - the University of California
-
+    - the University of California

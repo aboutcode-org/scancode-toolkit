@@ -1,43 +1,20 @@
 #
-# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import os
 import unittest
 
 import pytest
 import saneyaml
 
-from commoncode import compat
 from commoncode.functional import flatten
 from commoncode import text
-from commoncode.system import py2
-from commoncode.system import py3
 from licensedcode import cache
 from licensedcode import models
 
@@ -47,8 +24,8 @@ Validate that each license and rule text is properly detected with exact
 detection and that their ignorable clues are correctly detected.
 
 TODO: to make the license detection test worthy, we should disable hash matching
-such that we test everything else including the negative, automaton, sets and
-seq detections.
+such that we test everything else including the automaton, sets and
+sequence detections.
 """
 
 
@@ -56,12 +33,10 @@ def make_validation_test(rule, test_name):
     """
     Build and return a test function closing on tests arguments.
     """
-    if py2 and isinstance(test_name, compat.unicode):
-        test_name = test_name.encode('utf-8')
-    if py3 and isinstance(test_name, bytes):
+    if isinstance(test_name, bytes):
         test_name = test_name.decode('utf-8')
 
-    if rule.is_negative or rule.is_false_positive:
+    if rule.is_false_positive:
 
         def closure_test_function(*args, **kwargs):
             check_special_rule_can_be_detected(rule)
@@ -105,7 +80,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
     results = flatten((m.rule.identifier, str(int(m.coverage()))) for m in matches)
 
     try:
-        assert expected == results
+        assert results == expected
     except:
 
         from licensedcode.tracing import get_texts
@@ -126,7 +101,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
         for i, match in enumerate(matches):
             qtext, itext = get_texts(match)
             m_text_file = match.rule.text_file
-            if match.rule.is_license:
+            if match.rule.is_from_license:
                 m_data_file = m_text_file.replace('LICENSE', '.yml')
             else:
                 m_data_file = match.rule.data_file
@@ -159,7 +134,7 @@ def check_ignorable_clues(rule, regen=False):
     scan_data.update(api.get_urls(text_file, threshold=0))
     scan_data.update(api.get_emails(text_file, threshold=0))
 
-    results = OrderedDict()
+    results = {}
     for what, detections in scan_data.items():
         # remove lines
         for detected in detections:
@@ -171,7 +146,7 @@ def check_ignorable_clues(rule, regen=False):
         detections = sorted(set(chain(*(detected.values() for detected in detections))))
         results['ignorable_' + what] = detections
 
-    results = OrderedDict([(k, v) for k, v in sorted(results.items()) if v])
+    results = dict([(k, v) for k, v in sorted(results.items()) if v])
 
     if regen:
         for k, v in results.items():
@@ -179,7 +154,7 @@ def check_ignorable_clues(rule, regen=False):
         rule.dump()
 
     # collect ignorables
-    expected = OrderedDict([
+    expected = dict([
         ('ignorable_copyrights', rule.ignorable_copyrights or []),
         ('ignorable_holders', rule.ignorable_holders or []),
         ('ignorable_authors', rule.ignorable_authors or []),
@@ -187,7 +162,7 @@ def check_ignorable_clues(rule, regen=False):
         ('ignorable_emails', rule.ignorable_emails or []),
     ])
 
-    expected = OrderedDict([(k, v) for k, v in sorted(expected.items()) if v])
+    expected = dict([(k, v) for k, v in sorted(expected.items()) if v])
 
     try:
         assert expected == results
@@ -203,7 +178,7 @@ def check_ignorable_clues(rule, regen=False):
             'file://{text_file}'.format(**locals()),
         ]
         # this assert will always fail and provide a more detailed failure trace
-        assert saneyaml.dump(expected) == saneyaml.dump(results)
+        assert saneyaml.dump(results) == saneyaml.dump(expected)
 
 
 def build_validation_tests(rules, class_basic, class_extended):

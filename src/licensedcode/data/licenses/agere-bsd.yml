@@ -19,6 +19,7 @@ notes: |
     firmware was developed by Agere and runs on the DISC processor embedded
     within the Hermes 1/2/2.5 Wireless MAC devices. Hope this helps. Sincerely,
     Viren Pathare Intellectual Property Licensing Manager Agere
+spdx_license_key: LicenseRef-scancode-agere-bsd
 other_urls:
     - https://github.com/mdamt/linux-firmware/blob/bf9f8648fdf1d1d63db471554781f897d219bd62/LICENCE.agere
 minimum_coverage: 80

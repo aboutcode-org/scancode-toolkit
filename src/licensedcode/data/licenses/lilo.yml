@@ -4,6 +4,7 @@ name: LILO License
 category: Permissive
 owner: Unspecified
 homepage_url: http://www.ingate.com/files/422/fwmanual-en/xx12671.html
+spdx_license_key: LicenseRef-scancode-lilo
 text_urls:
     - http://www.ingate.com/files/422/fwmanual-en/xx12671.html
     - https://launchpad.net/ubuntu/oneiric/+source/rxtx/+copyright

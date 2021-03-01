@@ -4,6 +4,7 @@ name: Internet Engineering Task Force License
 category: Permissive
 owner: IETF - Internet Engineering Task Force
 homepage_url: http://www.ietf.org/
+spdx_license_key: LicenseRef-scancode-ietf
 faq_url: http://www.ietf.org/contact-the-ietf.html
 other_urls:
     - http://www.ietf.org/

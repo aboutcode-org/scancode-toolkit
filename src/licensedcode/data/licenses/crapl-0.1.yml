@@ -4,6 +4,7 @@ name: CRAPL v0 BETA 1
 category: Proprietary Free
 owner: Matthew Might
 homepage_url: http://matt.might.net/articles/crapl/
+spdx_license_key: LicenseRef-scancode-crapl-0.1
 text_urls:
     - http://matt.might.net/articles/crapl/CRAPL-LICENSE.txt
 ignorable_urls:

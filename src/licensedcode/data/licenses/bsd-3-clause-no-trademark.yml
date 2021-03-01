@@ -1,0 +1,9 @@
+key: bsd-3-clause-no-trademark
+short_name: BSD 3-Clause no trademark
+name: BSD 3-Clause no trademark
+category: Permissive
+owner: Apple
+notes: Seen in https://github.com/carekit-apple/CareKit/blob/248c42c4e4ea97ff5fe349361fa6e0a849eab204/LICENSE
+ This is a bsd-new with an extra trademark statement
+spdx_license_key: LicenseRef-scancode-bsd-3-clause-no-trademark
+minimum_coverage: 90

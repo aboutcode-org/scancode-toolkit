@@ -4,6 +4,7 @@ name: BSD Acknowledgment (Carrot2) License
 category: Permissive
 owner: Carrot2
 homepage_url: http://www.carrot2.org/carrot2.LICENSE
+spdx_license_key: LicenseRef-scancode-bsd-ack-carrot2
 minimum_coverage: 90
 ignorable_authors:
     - the Carrot2 Project

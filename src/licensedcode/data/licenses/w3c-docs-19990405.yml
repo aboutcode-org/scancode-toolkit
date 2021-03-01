@@ -4,6 +4,7 @@ name: W3C Document Notice and License (1999-04-05)
 category: Free Restricted
 owner: W3C - World Wide Web Consortium
 homepage_url: http://www.w3.org/Consortium/Legal/copyright-documents-19990405
+spdx_license_key: LicenseRef-scancode-w3c-docs-19990405
 ignorable_copyrights:
     - Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology, Institut
         National de Recherche en Informatique et en Automatique, Keio University)

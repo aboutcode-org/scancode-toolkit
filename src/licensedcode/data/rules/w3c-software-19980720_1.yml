@@ -1,13 +1,14 @@
 license_expression: w3c-software-19980720
 is_license_text: yes
 ignorable_copyrights:
-  - Copyright (c) 1994-2001 World Wide Web Consortium, http://www.w3.org/' World Wide Web Consortium
-  - Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology, Institut
-    National de Recherche en Informatique et en Automatique, Keio University)
+    - Copyright (c) 1994-2001 World Wide Web Consortium, http://www.w3.org/' World Wide Web
+        Consortium
+    - Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology, Institut
+        National de Recherche en Informatique et en Automatique, Keio University)
 ignorable_holders:
-  - World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de
-    Recherche en Informatique et en Automatique, Keio University)
-  - World Wide Web Consortium, World Wide Web Consortium
+    - World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de
+        Recherche en Informatique et en Automatique, Keio University)
+    - World Wide Web Consortium, World Wide Web Consortium
 ignorable_urls:
     - http://www.inria.fr/
     - http://www.keio.ac.jp/
