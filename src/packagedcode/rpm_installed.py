@@ -7,129 +7,139 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import io
-from os import path
+import logging
+import os
 import posixpath
+import sys
+
 import xmltodict
 
-import attr
-from license_expression import Licensing
-
-from commoncode.datautils import List
+from commoncode import command
 from packagedcode import models
-from packagedcode import licensing
 from textcode.analysis import as_unicode
 
-
-@attr.s()
-class RpmBasePackage(models.Package):
-    # FIXME
-    # Please review if the extensions and default_type are correct
-    extensions = ('.rpm',)
-    default_type = 'rpm'
-
-    installed_files = List(
-        item_type=models.PackageFile,
-        label='installed files',
-        help='List of files installed by this package.')
-
-    def compute_normalized_license(self):
-        _declared, detected = detect_declared_license(self.declared_license)
-        return detected
-
-    def to_dict(self, _detailed=False, **kwargs):
-        data = models.Package.to_dict(self, **kwargs)
-        if _detailed:
-            #################################################
-            data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
-            #################################################
-        else:
-            #################################################
-            # remove temporary fields
-            data.pop('installed_files', None)
-            #################################################
-        return data
+TRACE = False
 
 
-def get_installed_packages(root_dir, **kwargs):
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+
+
+def parse_rpm_xmlish(location, detect_licenses=False):
     """
-    Given a directory to a rootfs, yield a RpmBasePackage and a list of `installed_files`
-    (path, md5sum) tuples.
+    Yield RpmPackage(s) from a RPM XML'ish file at `location`. This is a file
+    created with rpm and the xml query option.
     """
-    installed_file_loc = path.join(root_dir, 'var/lib/rpm/Packages')
-    if not path.exists(installed_file_loc):
-        return
-    # FIXME
-    # This code will not work as we need to parse/convert the "Packages" with
-    # the rpm command.
-    # i.e.
-    # rpm --query --all --qf '[%{*:xml}\n]' --dbpath=<path to RPM DB directory 
-    #                                typically some /var/lib/rpm/> > ~/rpm.xml.txt
-    # See https://github.com/nexB/scancode.io/issues/6
-    for package in parse_rpm_db(installed_file_loc):
-        yield package
-
-
-def parse_rpm_db(location):
-    """
-    Yield RpmBasePackage objects from an installed database file at `location`
-    or None. Typically found at '/var/lib/rpm/Packages' in an RPM
-    installation.
-    """
-    if not path.exists(location):
+    if not os.path.exists(location):
         return
 
+    # there are smetimes weird encodings. We avoid issues there
     with open(location, 'rb') as f:
-        installed = as_unicode(f.read())
+        rpms = as_unicode(f.read())
 
-    if installed:
-        parsed_result = []
-        # each paragraph is separated by <rpmHeader>
-        sections = installed.split('<rpmHeader>')
-        for section in sections:
-            if section:
-                result = '<rpmHeader>' + section
-                parsed_result.append(xmltodict.parse(result))
-
-        for result in parsed_result:
-            content_dict = result['rpmHeader']['rpmTag']
-            fields = []
-            for dict in content_dict:
-                # The keys should be '@name' and "type" (such as string/integer etc)
-                # This is the convention from xmltodict
-                assert len(dict.keys()) == 2
-                values = []
-                # The format of the dict.items() is something like
-                # ('@name', 'sample'), ('string', 'sample context')
-                # We want to extract the "real" value and make it a tuple
-                # i.e. ('sample', 'sample context')
-                # and therefore we will get the item[1] at the below
-                for item in list(dict.items()):
-                    values.append(item[1])
-                fields.append(tuple(values))
-            yield build_package(fields)
+    for section in build_sections(rpms):
+        tags = build_tags(section)
+        pkg = build_package(tags)
+        if detect_licenses:
+            pkg.license_expression = pkg.compute_normalized_license()
+        yield pkg
 
 
-# Note handlers MUST accept **kwargs as they also receive the current data
-# being processed so far as a processed_data kwarg, but most do not use it
-
-
-def build_package(package_fields):
+def build_sections(text):
     """
-    Return an RpmBasePackage object from a `package_fields` list of (name, value)
-    tuples.
+    Yield XML texts, one for each RPM from an XML'ish ``text``. The XML'ish
+    format is in fact multiple XML documents, one for each package wrapped in an
+    <rpmHeader> root element. So we split the input on that, and parse each
+    section as an XML document later.
     """
-    # mapping of actual Package field name -> value that have been converted to the expected format
-    converted_fields = {}
-    for name, value in package_fields:
-        handler = package_short_field_handlers.get(name)
+    sections = text.split('<rpmHeader>')
+    for section in sections:
+        section = section.strip()
+        if section:
+            yield '<rpmHeader>' + section
+
+
+def build_tags(text):
+    """
+    Yield tags as (name, value_type, value) tubles from an XML ``text``.
+
+    This XML document represents one RPM package and has this overall shape:
+        <rpmHeader>
+        ....
+          <rpmTag name="Name"><string>perl-Errno</string></rpmTag>
+          <rpmTag name="Version"><string>1.30</string></rpmTag>
+        ......
+          <rpmTag name="License"><string>GPL+ or Artistic</string></rpmTag>
+        ....
+          <rpmTag name="Filesizes">
+            <integer>6863</integer>
+            <integer>2629</integer>
+          </rpmTag>
+          <rpmTag name="Filemodes">
+            <integer>33188</integer>
+            <integer>33188</integer>
+          </rpmTag>
+        ...
+        </rpmHeader>
+
+    When parsed with xmltodict we end up with this structure:
+        {'rpmHeader': {'rpmTag': [
+            {'@name': 'Name', 'string': 'boost-license1_71_0'},
+            {'@name': 'Version', 'string': '1.71.0'},
+            {'@name': 'Filesizes', 'integer': ['0', '1338']},
+            {'@name': 'Filestates', 'integer': ['0', '0']},
+        ]}}
+
+    These structures are peculiar as there are parallel lists (for instance
+    for files) and each name comes with a type.
+    """
+    parsed = xmltodict.parse(text, dict_constructor=dict)
+    raw_tags = parsed['rpmHeader']['rpmTag']
+    for rtag in raw_tags:
+        # The format of a raw tag is: ('@name', 'sample'), ('string', 'sample context')
+        name = rtag.pop('@name')
+        assert len(rtag) == 1
+        value_type, value = list(rtag.items())[0]
+        yield name, value_type, value
+
+
+def build_package(rpm_tags):
+    """
+    Return an RpmBasePackage object from an `rpm_tags` iterable of (name,
+    value_type, value) tuples.
+    """
+    # guard from circular import
+    from packagedcode.rpm import RpmPackage
+
+    # mapping of real Package field name -> value converted to expected format
+    converted = {}
+    for name, value_type, value in rpm_tags:
+        handler = handler_by_name.get(name)
+        # FIXME: we need to handle EVRA correctly
+        # TODO: add more fields
+        # TODO: mereg with tag handling in rpm.py
         if handler:
-            converted = handler(value, **converted_fields)
-            converted_fields.update(converted)
+            handled = handler(value, **converted)
+            converted.update(handled)
 
     # construct the package: we ignore unknown as we added a few technical fields
-    package = RpmBasePackage.create(ignore_unknown=True, **converted_fields)
+    package = RpmPackage.create(ignore_unknown=True, **converted)
     return package
+
+################################################################################
+# Each handler function accepts a value and returns a {name: value} mapping
+# Note handlers MUST accept **kwargs as they also receive the current data
+# being processed so far as a processed_data kwarg, but most do not use it
 
 
 def name_value_str_handler(name):
@@ -141,17 +151,6 @@ def name_value_str_handler(name):
         return {name: value}
 
     return handler
-
-
-def license_handler(value, **kwargs):
-    """
-    Return a normalized declared license and a detected license expression.
-    """
-    declared, detected = detect_declared_license(value)
-    return {
-        'declared_license': declared,
-        'license_expression': detected,
-    }
 
 
 def size_handler(value, **kwargs):
@@ -192,45 +191,68 @@ def basename_handler(value, current_file, **kwargs):
 
 def dirname_handler(value, current_file, **kwargs):
     """
-    Update the current_file with joining the correct dir and basename
-    along with the md5 value.
-    Add to installed_files
+    Update the current_file by adding the correct dir and basename
+    along with the md5 value. Add to installed_files
     """
     installed_files = []
     for file in current_file:
         dirindexes, md5, basename = file
-        dir = value[int(dirindexes)]
+        dirname = value[int(dirindexes)]
+        # TODO: review this. Empty filename does not make sense, unless these
+        # are directories that we might ignore OK.
+
         # There is case where entry of basename is "</string>" which will
         # cause error as None type cannot be used for join.
         # Therefore, we need to convert the None type to empty string
         # in order to make the join works.
         if basename == None:
             basename = ''
-        c_file = models.PackageFile(path=posixpath.join(dir, basename))
-        c_file.md5 = md5
-        installed_files.append(c_file)
+
+        rpm_file = models.PackageFile(
+            path=posixpath.join(dirname, basename),
+            md5=md5,
+        )
+        installed_files.append(rpm_file)
+
     return {'installed_files': installed_files}
+
 
 # mapping of:
 # - the package field one letter name in the installed db,
 # - an handler for that field
-package_short_field_handlers = {
+handler_by_name = {
 
     ############################################################################
     # per-package fields
     ############################################################################
 
     'Name': name_value_str_handler('name'),
+    # TODO: add these
+    #  'Epoch'
+    #  'Release'
     'Version': name_value_str_handler('version'),
     'Description': name_value_str_handler('description'),
     'Sha1header': name_value_str_handler('sha1'),
     'Url': name_value_str_handler('homepage_url'),
-    'License': license_handler,
+    'License': name_value_str_handler('declared_license'),
     'Arch':  arch_handler,
     'Size': size_handler,
 
     ############################################################################
-    # ignored per-package fields. from here on, these fields are not used yet
+    # per-file fields
+    ############################################################################
+    # TODO: these two are needed:
+    #  'Fileflags' -> contains if a file is doc or license
+    #  'Filesizes' -> useful info
+
+    'Filedigests': checksum_handler,
+    'Dirindexes': dir_index_handler,
+    'Basenames': basename_handler,
+    'Dirnames': dirname_handler,
+    ############################################################################
+
+    ############################################################################
+    # TODO: ignored per-package fields. from here on, these fields are not used yet
     ############################################################################
     #  '(unknown)'
     #  'Archivesize'
@@ -247,14 +269,12 @@ package_short_field_handlers = {
     #  'Dependsdict'
     #  'Distribution'
     #  'Dsaheader'
-    #  'Epoch'
     #  'Fileclass'
     #  'Filecolors'
     #  'Filecontexts'
     #  'Filedependsn'
     #  'Filedependsx'
     #  'Filedevices'
-    #  'Fileflags'
     #  'Filegroupname'
     #  'Fileinodes'
     #  'Filelangs'
@@ -262,7 +282,6 @@ package_short_field_handlers = {
     #  'Filemodes'
     #  'Filemtimes'
     #  'Filerdevs'
-    #  'Filesizes'
     #  'Filestates'
     #  'Fileusername'
     #  'Fileverifyflags'
@@ -293,12 +312,10 @@ package_short_field_handlers = {
     #  'Provideflags'
     #  'Providename'
     #  'Provideversion'
-    #  'Release'
     #  'Requireflags'
     #  'Requirename'
     #  'Requireversion'
     #  'Rpmversion'
-    #  'Siggpg'
     #  'Sigmd5'
     #  'Sigsize'
     #  'Sourcerpm'
@@ -313,90 +330,111 @@ package_short_field_handlers = {
     #  'Headeri18ntable'
     ############################################################################
 
-    ############################################################################
-    # per-file fields
-    ############################################################################
-    'Filedigests': checksum_handler,
-    'Dirindexes': dir_index_handler,
-    'Basenames': basename_handler,
-    'Dirnames': dirname_handler,
-    ############################################################################
 }
 
-############################################################################
-# FIXME: this license detection code is copied from debian_copyright.py
-############################################################################
+RPM_BIN_DIR = 'rpm_inspector_rpm.rpm.bindir'
 
 
-def detect_declared_license(declared):
+def get_rpm_bin_location():
     """
-    Return a tuple of (declared license, detected license expression) from a
-    declared license. Both can be None.
+    Return the binary location for an RPM exe loaded from a plugin-provided path.
     """
-    declared = normalize_and_cleanup_declared_license(declared)
-    if not declared:
-        return None, None
+    from plugincode.location_provider import get_location
+    rpm_bin_dir = get_location(RPM_BIN_DIR)
+    if not rpm_bin_dir:
+        raise Exception(
+            'CRITICAL: RPM executable is not provided. '
+            'Unable to continue: you need to install a valid rpm-inspector-rpm '
+            'plugin with a valid RPM executable and shared libraries available.'
+    )
 
-    # apply multiple license detection in sequence
-    detected = detect_using_name_mapping(declared)
-    if detected:
-        return declared, detected
-
-    # cases of using a comma are for an AND
-    normalized_declared = declared.replace(',', ' and ')
-    detected = models.compute_normalized_license(normalized_declared)
-    return declared, detected
+    return rpm_bin_dir
 
 
-def normalize_and_cleanup_declared_license(declared):
+class InstalledRpmError(Exception):
+    pass
+
+
+def collect_installed_rpmdb_xmlish_from_rootfs(root_dir):
     """
-    Return a cleaned and normalized declared license.
+    Return the location of an RPM "XML'ish" inventory file collected from the
+    ``root_dir`` rootfs directory or None.
+
+    Raise an InstalledRpmError exception on errors.
+
+    The typical locations of the rpmdb are:
+
+    /var/lib/rpm/
+        centos all versions and rpmdb formats
+        fedora all versions and rpmdb formats
+        openmanidriva all versions and rpmdb formats
+        suse/opensuse all versions using bdb rpmdb format
+
+    /usr/lib/sysimage/rpm/ (/var/lib/rpm/ links to /usr/lib/sysimage/rpm)
+        suse/opensuse versions that use ndb rpmdb format
     """
-    declared = declared or ''
-    # there are few odd cases of license fileds starting with a colon or #
-    declared = declared.strip(': \t#')
-    # normalize spaces
-    declared = ' '.join(declared.split())
-    return declared
+    root_dir = os.path.abspath(os.path.expanduser(root_dir))
+
+    rpmdb_loc = os.path.join(root_dir, 'var/lib/rpm')
+    if not os.path.exists(rpmdb_loc):
+        rpmdb_loc = os.path.join(root_dir, 'usr/lib/sysimage/rpm')
+        if not os.path.exists(rpmdb_loc):
+            return
+    return collect_installed_rpmdb_xmlish_from_rpmdb_loc(rpmdb_loc)
 
 
-def detect_using_name_mapping(declared):
+def collect_installed_rpmdb_xmlish_from_rpmdb_loc(rpmdb_loc):
     """
-    Return a license expression detected from a `declared` license string.
+    Return the location of an RPM "XML'ish" inventory file collected from the
+    ``rpmdb_loc`` rpmdb directory or None.
+
+    Raise an InstalledRpmError exception on errors.
     """
-    declared = declared.lower()
-    detected = get_declared_to_detected().get(declared)
-    if detected:
-        licensing = Licensing()
-        return str(licensing.parse(detected, simple=True))
+    rpmdb_loc = os.path.abspath(os.path.expanduser(rpmdb_loc))
+    if not os.path.exists(rpmdb_loc):
+        return
+    rpm_bin_dir = get_rpm_bin_location()
 
+    env = dict(os.environ)
+    env['RPM_CONFIGDIR'] = rpm_bin_dir
+    env['LD_LIBRARY_PATH'] = rpm_bin_dir
 
-_DECLARED_TO_DETECTED = None
+    args = [
+        '--query',
+        '--all',
+        '--qf', '[%{*:xml}\n]',
+        '--dbpath', rpmdb_loc,
+    ]
 
+    cmd_loc = os.path.join(rpm_bin_dir, 'rpm')
+    if TRACE:
+        full_cmd = ' '.join([cmd_loc] + args)
+        logger_debug(
+            f'collect_installed_rpmdb_xmlish_from_rpmdb_loc:\n'
+            f'cmd: {full_cmd}')
 
-def get_declared_to_detected(data_file=None):
-    """
-    Return a mapping of declared to detected license expression cached and
-    loaded from a tab-separated text file, all lowercase, normalized for spaces.
+    rc, stdout_loc, stderr_loc = command.execute2(
+        cmd_loc=cmd_loc,
+        args=args,
+        lib_dir=rpm_bin_dir,
+        env=env,
+        to_files=True,
+    )
 
-    This data file is from license keys used in APKINDEX files and has been
-    derived from a large collection of most APKINDEX files released by Alpine
-    since circa Alpine 2.5.
-    """
-    global _DECLARED_TO_DETECTED
-    if _DECLARED_TO_DETECTED:
-        return _DECLARED_TO_DETECTED
+    if TRACE:
+        full_cmd = ' '.join([cmd_loc] + args)
+        logger_debug(
+            f'collect_installed_rpmdb_xmlish_from_rpmdb_loc:\n'
+            f'cmd: {full_cmd}\n'
+            f'rc: {rc}\n'
+            f'stderr: file://{stderr_loc}\n'
+            f'stdout: file://{stdout_loc}\n')
 
-    _DECLARED_TO_DETECTED = {}
-    if not data_file:
-        data_file = path.join(path.dirname(__file__), 'alpine_licenses.txt')
-    with io.open(data_file, encoding='utf-8') as df:
-        for line in df:
-            line = line.strip()
-            if not line or line.startswith('#'):
-                continue
-            decl, _, detect = line.partition('\t')
-            if detect and detect.strip():
-                decl = decl.strip()
-                _DECLARED_TO_DETECTED[decl] = detect
-    return _DECLARED_TO_DETECTED
+    if rc != 0:
+        with open(stderr_loc) as st:
+            stde = st.read()
+        full_cmd = ' '.join([cmd_loc] + args)
+        msg = f'collect_installed_rpmdb_xmlish_from_rpmdb_loc: Failed to execute RPM command: {full_cmd}\n{stde}'
+        raise Exception(msg)
+
+    return stdout_loc

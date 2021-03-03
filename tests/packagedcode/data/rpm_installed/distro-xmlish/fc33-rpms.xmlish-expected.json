@@ -1,0 +1,184 @@
+[
+  {
+    "type": "rpm",
+    "namespace": null,
+    "name": "libgcc",
+    "version": "10.1.1",
+    "qualifiers": {
+      "arch": "x86_64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "This package contains GCC shared support library which is needed\ne.g. for exception handling support.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": "http://gcc.gnu.org",
+    "download_url": null,
+    "size": 198880,
+    "sha1": "053a730acebd49fbfbc1b4bcf92ce6c04723db77",
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "(gpl-3.0-plus AND gpl-3.0-plus AND gpl-2.0-plus AND lgpl-2.0-plus) AND unknown",
+    "declared_license": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:rpm/libgcc@10.1.1?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "installed_files": [
+      {
+        "path": "/lib64/libgcc_s-10-20200507.so.1",
+        "size": 0,
+        "sha1": null,
+        "md5": "f0983775e8e6b1d6bd76db2a9f52cde1d6198b115f4e44a6167a5cb8eb0e6235",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/lib64/libgcc_s.so.1",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/lib/.build-id",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/lib/.build-id/6c",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/lib/.build-id/6c/87948c636ed6c91b75603625e32915177b72e9",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/licenses/libgcc",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/licenses/libgcc/COPYING",
+        "size": 0,
+        "sha1": null,
+        "md5": "231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/licenses/libgcc/COPYING.LIB",
+        "size": 0,
+        "sha1": null,
+        "md5": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/licenses/libgcc/COPYING.RUNTIME",
+        "size": 0,
+        "sha1": null,
+        "md5": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/licenses/libgcc/COPYING3",
+        "size": 0,
+        "sha1": null,
+        "md5": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/licenses/libgcc/COPYING3.LIB",
+        "size": 0,
+        "sha1": null,
+        "md5": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+        "sha256": null,
+        "sha512": null
+      }
+    ]
+  },
+  {
+    "type": "rpm",
+    "namespace": null,
+    "name": "fedora-release-identity-container",
+    "version": "33",
+    "qualifiers": {
+      "arch": "noarch"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "Provides the necessary files for a Fedora installation that is identifying\nitself as the Fedora Container Base Image.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": "https://fedoraproject.org/",
+    "download_url": null,
+    "size": 1585,
+    "sha1": "fac9f09e33edd7bfe368c9267af9423c0338f864",
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": "MIT",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:rpm/fedora-release-identity-container@33?arch=noarch",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "installed_files": [
+      {
+        "path": "/usr/lib/os-release",
+        "size": 0,
+        "sha1": null,
+        "md5": "e06cbdb1d9d52da73588f081b5dcf90fdf54e3abf60e4a07ec4e690639e4b982",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/lib/swidtag/fedoraproject.org/org.fedoraproject.Fedora-edition.swidtag",
+        "size": 0,
+        "sha1": null,
+        "md5": "c389a9a15d21e774f6e621ba4e8236b6b8304305f7bd8b5aa3b74ccd147c2ae7",
+        "sha256": null,
+        "sha512": null
+      }
+    ]
+  }
+]
