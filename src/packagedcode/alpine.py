@@ -29,12 +29,6 @@ from textcode.analysis import as_unicode
 class AlpinePackage(models.Package):
     extensions = ('.apk',)
     default_type = 'alpine'
-
-    installed_files = List(
-        item_type=models.PackageFile,
-        label='installed files',
-        help='List of files installed by this package.')
-
     def compute_normalized_license(self):
         _declared, detected = detect_declared_license(self.declared_license)
         return detected
