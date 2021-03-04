@@ -218,7 +218,11 @@ def parse_structured_copyright_file(
         if isinstance(paragraph, CatchAllParagraph):
             text = paragraph.dumps()
             if text:
-                detected = get_normalized_expression(text, try_as_expression=False)
+                detected = get_normalized_expression(
+                    text, 
+                    try_as_expression=False, 
+                    approximate=False,
+                )
                 if not detected:
                     detected = 'unknown'
                 detected_licenses.append(detected)
@@ -243,7 +247,11 @@ def parse_structured_copyright_file(
             # also detect in text
             text = paragraph.license.text
             if text:
-                detected = get_normalized_expression(text, try_as_expression=False)
+                detected = get_normalized_expression(
+                    text, 
+                    try_as_expression=False,
+                    approximate=True,
+                )
                 if not detected:
                     detected = 'unknown'
                 # avoid repeats
