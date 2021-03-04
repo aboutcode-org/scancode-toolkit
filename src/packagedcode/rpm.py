@@ -160,7 +160,7 @@ def get_installed_packages(root_dir, detect_licenses=False, **kwargs):
     # note that we also have file flags that can tell us which file is a license and doc.
 
     # dump the rpmdb to XMLish
-    xmlish_loc = rpm_installed.collect_installed_rpm_xmlish(root_dir)
+    xmlish_loc = rpm_installed.collect_installed_rpmdb_xmlish_from_rootfs(root_dir)
     return rpm_installed.parse_rpm_xmlish(xmlish_loc, detect_licenses=detect_licenses)
 
 
