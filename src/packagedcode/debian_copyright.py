@@ -207,8 +207,10 @@ def parse_structured_copyright_file(
                 if detected and detected not in detected_licenses:
                     detected_licenses.append(detected)
             else:
-                declared_licenses.append(declared)
-                detected_licenses.append(detected)
+                if declared:
+                    declared_licenses.append(declared)
+                if detected:
+                    detected_licenses.append(detected)
 
             # also detect in text
             text = paragraph.license.text
