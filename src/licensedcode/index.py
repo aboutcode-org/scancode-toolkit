@@ -79,7 +79,6 @@ if (TRACE
 # This is the Pickle protocol we use, which was added in Python 3.4.
 PICKLE_PROTOCOL = 4
 
-
 ############################## Feature SWITCHES ################################
 ########## Ngram fragments detection
 USE_AHO_FRAGMENTS = False
@@ -726,21 +725,32 @@ class LicenseIndex(object):
 
         return matches
 
-    def match(self, location=None, query_string=None, min_score=0,
-              as_expression=False, deadline=sys.maxsize, _skip_hash_match=False,
-              **kwargs):
+    def match(
+        self,
+        location=None,
+        query_string=None,
+        min_score=0,
+        as_expression=False,
+        approximate=True,
+        deadline=sys.maxsize,
+        _skip_hash_match=False,
+        **kwargs,
+    ):
         """
         This is the main entry point to match licenses.
 
         Return a sequence of LicenseMatch by matching the file at `location` or
-        the `query_string` text against the index. Only include matches with
+        the `query_string` string against this index. Only include matches with
         scores greater or equal to `min_score`.
 
         If `as_expression` is True, treat the whole text as a single SPDX
         license expression and use only expression matching.
 
-        `deadline` is a time.time() value in seconds by which the processing should stop
-        and return whatever was matched so far.
+        If `approximate` is True, perform approximate matching as a last
+        matching step. Otherwise, only do hash, exact and expression matching.
+
+        `deadline` is a time.time() value in seconds by which the processing
+        should stop and return whatever was matched so far.
 
         `_skip_hash_match` is used only for testing.
         """
@@ -783,8 +793,10 @@ class LicenseIndex(object):
             # matcher, include_low in post-matching remaining matchable check
             (self.get_exact_matches, False, 'aho'),
             (self.get_spdx_id_matches, True, 'spdx_lid'),
-            (approx, False, 'seq'),
         ]
+
+        if approximate:
+            matchers += [(approx, False, 'seq'), ]
 
         already_matched_qspans = []
         for matcher, include_low, matcher_name in matchers:
@@ -827,9 +839,10 @@ class LicenseIndex(object):
 
         if TRACE:
             logger_debug()
-            self.debug_matches(matches=matches, message='matches before final merge',
-                               location=location, query_string=query_string,
-                               with_text=True, qry=qry)
+            self.debug_matches(
+                matches=matches, message='matches before final merge',
+                location=location, query_string=query_string,
+                with_text=True, qry=qry)
 
         matches, _discarded = match.refine_matches(
             matches, idx=self, query=qry, min_score=min_score,
@@ -840,9 +853,11 @@ class LicenseIndex(object):
 
         if TRACE:
             print()
-            self.debug_matches(matches=matches, message='final matches',
-                               location=location, query_string=query_string ,
-                               with_text=True, qry=qry)
+            self.debug_matches(
+                matches=matches, message='final matches',
+                location=location, query_string=query_string ,
+                with_text=True, qry=qry)
+
         return matches
 
     def _print_index_stats(self):
@@ -852,7 +867,8 @@ class LicenseIndex(object):
         try:
             from pympler.asizeof import asizeof as size_of
         except ImportError:
-            print('Index statistics will be approximate: `pip install pympler` for correct structure sizes')
+            print('Index statistics will be approximate: `pip install pympler` '
+                  'for correct structure sizes')
             from sys import getsizeof as size_of
 
         fields = (
