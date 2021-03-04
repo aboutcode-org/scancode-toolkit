@@ -79,7 +79,7 @@ try:
 except (DistributionNotFound, ImportError):
     # package is not installed or we do not have setutools/pkg_resources
     # on hand
-    __version__ = '21.2.25'
+    __version__ = '21.3.1'
 
 system_temp_dir = tempfile.gettempdir()
 scancode_src_dir = dirname(__file__)
