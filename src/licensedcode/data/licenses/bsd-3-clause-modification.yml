@@ -1,0 +1,8 @@
+key: bsd-3-clause-modification
+short_name: BSD 3-Clause Modification
+name: BSD 3-Clause Modification
+owner: Unspecified
+category: Permissive
+spdx_license_key: BSD-3-Clause-Modification
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing:BSD#Modification_Variant
