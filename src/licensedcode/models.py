@@ -323,6 +323,8 @@ class License(object):
 
             if not lic.short_name:
                 error('No short name')
+            if len(lic.short_name) > 50:
+                error('short name must be under 50 characters.')
             if not lic.name:
                 error('No name')
             if not lic.category:
