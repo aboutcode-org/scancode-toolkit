@@ -30,7 +30,7 @@ def test_is_empty_():
     assert not is_empty(Detections(urls=['Foo']))
 
 
-def test_scan_plugin_filter_cluesfor_rule():
+def test_scan_plugin_filter_clues_for_rule():
     # this test fies is a copy of apache-1.1_63.RULE that contains
     # several emails, authors, urls and copyrights
     # it has been modified to include more unrelated clues
@@ -39,7 +39,7 @@ def test_scan_plugin_filter_cluesfor_rule():
     args = ['-clieu', '--filter-clues', test_dir, '--json', result_file]
     run_scan_click(args)
     expected = test_env.get_test_loc('plugin_filter_clues/filtered-expected.json')
-    check_json_scan(expected, result_file, regen=False)
+    check_json_scan(expected, result_file, remove_file_date=True, ignore_headers=True, regen=False)
 
 
 def test_scan_plugin_filter_clues_does_not_filter_incorrectly():
@@ -51,7 +51,7 @@ def test_scan_plugin_filter_clues_does_not_filter_incorrectly():
     args = ['-clieu', '--filter-clues', test_dir, '--json', result_file]
     run_scan_click(args)
     expected = test_env.get_test_loc('plugin_filter_clues/filtered-expected2.json')
-    check_json_scan(expected, result_file, regen=False)
+    check_json_scan(expected, result_file, remove_file_date=True, ignore_headers=True, regen=False)
 
 
 def test_scan_plugin_filter_clues_for_license():
@@ -62,4 +62,4 @@ def test_scan_plugin_filter_clues_for_license():
     args = ['-clieu', '--filter-clues', test_dir, '--json', result_file]
     run_scan_click(args)
     expected = test_env.get_test_loc('plugin_filter_clues/filtered-expected3.json')
-    check_json_scan(expected, result_file, regen=False)
+    check_json_scan(expected, result_file, remove_file_date=True, ignore_headers=True, regen=False)
