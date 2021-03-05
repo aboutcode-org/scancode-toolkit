@@ -105,17 +105,6 @@ def parse_copyright_file(
             f'detected_license: {detected_license}\n'
             f'copyrights: {copyrights}'
         )
-#
-#     # dive into whole text only if we detected everything as unknown.
-#     # TODO: this is not right.
-#     if not detected_license or detected_license == 'unknown':
-#         text = textcode.analysis.unicode_text(copyright_file)
-#         detected_license = get_normalized_expression(text, try_as_expression=False)
-#         if TRACE:
-#             logger_debug(
-#                 f'parse_copyright_file: using whole text: '
-#                 f'detected_license: {detected_license}'
-#             )
 
     # dive into copyright if we did not detect any.
     if not copyrights:
@@ -219,8 +208,8 @@ def parse_structured_copyright_file(
             text = paragraph.dumps()
             if text:
                 detected = get_normalized_expression(
-                    text, 
-                    try_as_expression=False, 
+                    text,
+                    try_as_expression=False,
                     approximate=False,
                 )
                 if not detected:
@@ -248,7 +237,7 @@ def parse_structured_copyright_file(
             text = paragraph.license.text
             if text:
                 detected = get_normalized_expression(
-                    text, 
+                    text,
                     try_as_expression=False,
                     approximate=True,
                 )
@@ -303,7 +292,11 @@ def detect_declared_license(declared):
 
     from packagedcode import licensing
     try:
-        detected = licensing.get_normalized_expression(declared, try_as_expression=False, approximate=False)
+        detected = licensing.get_normalized_expression(
+            declared,
+            try_as_expression=False,
+            approximate=False,
+        )
     except Exception:
         # FIXME: add logging
         # we never fail just for this
