@@ -3,7 +3,7 @@ short_name: FreeBSD Doc License
 name: FreeBSD Doc License
 category: Permissive
 spdx_license_key: FreeBSD-DOC
-other_spdx_license_key:
+other_spdx_license_keys:
     - LicenseRef-scancode-freebsd-doc
 other_urls:
     - https://www.freebsd.org/copyright/freebsd-doc-license/
