@@ -1,3 +1,4 @@
-license_expression: elastic-license-2018
+license_expression: elastic-license-v2
 is_license_notice: yes
-relevance: 100
+relevance: 99
+notes: this could refer to the older elastic-license-2018
