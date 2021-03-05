@@ -815,7 +815,9 @@ def merge_licenses(scancode_license, external_license, updatable_attributes,
         scancode_key = scancode_license.spdx_license_key
         external_key = external_license.spdx_license_key
         if scancode_key != external_key:
-            raise Exception('Non mergeable licenses with different SPDX keys: %(scancode_key)s <> %(external_key)s' % locals())
+            raise Exception(
+                f'Non mergeable licenses with different SPDX keys: scancode_license.spdx_license_key {scancode_key} <>  external_license.spdx_license_key {external_key}'
+            )
     else:
         scancode_key = scancode_license.key
         external_key = external_license.key
