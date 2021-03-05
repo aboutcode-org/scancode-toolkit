@@ -47,33 +47,27 @@ def parse_rpm_xmlish(location, detect_licenses=False):
     with open(location, 'rb') as f:
         rpms = as_unicode(f.read())
 
-    for section in build_sections(rpms):
-        tags = build_tags(section)
+    # The XML'ish format is in fact multiple XML documents, one for each package
+    # wrapped in an <rpmHeader> root element. So we add a global root element
+    # to make this a valid XML document.
+
+    for rpm_raw_tags in collect_rpms(rpms):
+        tags = collect_tags(rpm_raw_tags)
         pkg = build_package(tags)
         if detect_licenses:
             pkg.license_expression = pkg.compute_normalized_license()
         yield pkg
 
 
-def build_sections(text):
+def collect_rpms(text):
     """
-    Yield XML texts, one for each RPM from an XML'ish ``text``. The XML'ish
-    format is in fact multiple XML documents, one for each package wrapped in an
-    <rpmHeader> root element. So we split the input on that, and parse each
-    section as an XML document later.
-    """
-    sections = text.split('<rpmHeader>')
-    for section in sections:
-        section = section.strip()
-        if section:
-            yield '<rpmHeader>' + section
+    Yield lists of RPM raw tags, one list for each RPM from an XML'ish ``text``.
 
+    The XML'ish format is in fact multiple XML documents, one for each package
+    wrapped in an <rpmHeader> root element. Therefore, we add a global root
+    element to make this a valid XML document before parsing it.
 
-def build_tags(text):
-    """
-    Yield tags as (name, value_type, value) tubles from an XML ``text``.
-
-    This XML document represents one RPM package and has this overall shape:
+    Each XML document represents one RPM package and has this overall shape:
         <rpmHeader>
         ....
           <rpmTag name="Name"><string>perl-Errno</string></rpmTag>
@@ -92,19 +86,43 @@ def build_tags(text):
         ...
         </rpmHeader>
 
+    After wrapping in a top level element we get this shape:
+    <rpms>
+        <rpmHeader/>
+        <rpmHeader/>
+    </rpms>
+
     When parsed with xmltodict we end up with this structure:
-        {'rpmHeader': {'rpmTag': [
+    {'rpms':  {'rpmHeader': [
+        {'rpmTag': [
             {'@name': 'Name', 'string': 'boost-license1_71_0'},
             {'@name': 'Version', 'string': '1.71.0'},
             {'@name': 'Filesizes', 'integer': ['0', '1338']},
             {'@name': 'Filestates', 'integer': ['0', '0']},
-        ]}}
+        ]},
+        {'rpmTag': [
+            {'@name': 'Name', 'string': 'foobar'},
+            {'@name': 'Version', 'string': '1.0'},
+            ...
+        ]},
+    }}
 
-    These structures are peculiar as there are parallel lists (for instance
-    for files) and each name comes with a type.
+    Some of these structures are peculiar as there are parallel lists (for
+    instance for files) and each name comes with a type.
     """
+    text = f'<rpms>{text}</rpms>'
     parsed = xmltodict.parse(text, dict_constructor=dict)
-    raw_tags = parsed['rpmHeader']['rpmTag']
+    rpms = parsed['rpms']['rpmHeader']
+    for rpm in rpms:
+        yield rpm['rpmTag']
+
+
+def collect_tags(raw_tags):
+    """
+    Yield tags as (name, value_type, value) tubles from a ``raw_tags`` list of
+    raw RPM tag data.
+
+    """
     for rtag in raw_tags:
         # The format of a raw tag is: ('@name', 'sample'), ('string', 'sample context')
         name = rtag.pop('@name')
