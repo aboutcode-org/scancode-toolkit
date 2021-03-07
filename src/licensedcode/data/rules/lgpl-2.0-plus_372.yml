@@ -1,0 +1,4 @@
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/yasm/yasm/blob/009450c7ad4d425fa5a10ac4bd6efbd25248d823/libyasm/bitvect.c
