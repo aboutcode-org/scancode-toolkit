@@ -5,3 +5,7 @@ category: Proprietary Free
 owner: Microsoft
 homepage_url: https://docs.microsoft.com/en-us/virtualization/windowscontainers/images-eula
 spdx_license_key: LicenseRef-scancode-ms-windows-container-base-image-eula-2020
+ignorable_urls:
+  - http://aka.ms/getsource
+  - http://aka.ms/thirdpartynotices
+

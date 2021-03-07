@@ -7,3 +7,6 @@ category: Permissive
 homepage_url: https://data.gov.tw/en/license
 other_urls:
     - https://data.gov.tw/license
+ignorable_urls:
+  - https://data.gov.tw/license
+

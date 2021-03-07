@@ -10,3 +10,6 @@ text_urls:
 faq_url: https://www.elastic.co/blog/elastic-license-v2
 other_urls:
     - https://www.elastic.co/blog/elastic-license-v2
+ignorable_urls:
+  - https://www.elastic.co/licensing/elastic-license
+

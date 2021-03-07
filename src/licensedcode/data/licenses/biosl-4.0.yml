@@ -8,9 +8,12 @@ text_urls:
     - https://github.com/davidtiefenthaler/BOPT-DemandForecast/blob/199b1d63ca564885af2f0616ef6d1f98f6daff36/LICENSE.txt
     - https://github.com/teampothole/XDKAbdroidBluetoothConnectiondSendIOTA/blob/6ae3e07220d6b35acf986df2a28b61a9b4340458/LICENSE.txt
 spdx_license_key: LicenseRef-scancode-biosl-4.0
+ignorable_authors:
+  - Most Bosch
 ignorable_copyrights:
-    - (C) Robert Bosch GmbH
+    - (c) Robert Bosch GmbH, 2016
 ignorable_holders:
     - Robert Bosch GmbH
 ignorable_urls:
+    - https://sourcecode.socialcoding.bosch.com/
     - https://sourcecode.socialcoding.bosch.com/projects/SC/repos/soco_policies/browse/BIOS_License_V4_Deed.md
