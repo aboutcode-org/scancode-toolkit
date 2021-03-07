@@ -3986,7 +3986,7 @@
           "is_exception": false,
           "owner": "Perl Foundation",
           "homepage_url": "http://www.perlfoundation.org/",
-          "text_url": "http://www.perlfoundation.org/artistic_license_2_0",
+          "text_url": "https://www.perlfoundation.org/artistic_license_2_0",
           "reference_url": "https://scancode-licensedb.aboutcode.org/artistic-2.0",
           "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
           "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.yml",
