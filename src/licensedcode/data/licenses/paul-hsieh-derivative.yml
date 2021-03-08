@@ -1,0 +1,11 @@
+key: paul-hsieh-derivative
+short_name: Paul Hsieh Derivative License
+name: Paul Hsieh Derivative License
+category: Free Restricted
+owner: Paul Hsieh
+homepage_url: http://www.azillionmonkeys.com/qed/weblicense.html
+spdx_license_key: LicenseRef-scancode-paul-hsieh-derivative
+text_urls:
+    - http://www.azillionmonkeys.com/qed/weblicense.html
+other_urls:
+    - http://azillionmonkeys.com/qed/hash.html
