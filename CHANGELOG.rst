@@ -2,8 +2,14 @@ Changelog
 =========
 
 
-v21.x (next)
+v21.3.x (next)
 ------------
+
+
+Misc.:
+
+ - Fix bug when using the --filter-clues command line option
+   Thank you to Van Lindberg @VanL
 
 
 v21.2.25
@@ -15,11 +21,12 @@ Installation:
  - Stop using extras for a default wheel installation
  - Build new scancode-toolkit-mini package with limited dependencies for use
    when packaging in distros and similar
- - The new Dockerfile will be create smaller images and containers
+ - The new Dockerfile will create smaller images and containers.
+   Thank you to Viktor Tiulpin @tiulpin
 
 License scanning:
 
- - Over 150 and and updated licenses
+ - Over 150 new and updated licenses
  - Support the latest SPDX license list v3.11
  - Improve license detection accuracy with over 740 new and improved license
    detection rules
