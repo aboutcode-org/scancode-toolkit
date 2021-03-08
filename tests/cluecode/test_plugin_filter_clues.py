@@ -63,4 +63,3 @@ def test_scan_plugin_filter_clues_for_license():
     run_scan_click(args)
     expected = test_env.get_test_loc('plugin_filter_clues/filtered-expected3.json')
     check_json_scan(expected, result_file, remove_file_date=True, ignore_headers=True, regen=False)
-
