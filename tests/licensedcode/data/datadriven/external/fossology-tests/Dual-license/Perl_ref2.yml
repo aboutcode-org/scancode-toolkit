@@ -1,2 +1,2 @@
 license_expressions:
-  - gpl-1.0-plus OR artistic-perl-1.0
+  - artistic-perl-1.0 OR gpl-1.0-plus
