@@ -411,6 +411,9 @@ patterns = [
     (r'^AssemblyCopyright.?$', 'COPY'),
     (r'^AppCopyright?$', 'COPY'),
 
+    # SPDX-FileCopyrightText as defined by the FSFE Reuse project
+    (r'^[Ss][Pp][Dd][Xx]-[Ff]ile[Cc]opyright[Tt]ext', 'COPY'),
+
     ############################################################################
     # ALL Rights Reserved.
     ############################################################################
@@ -2722,6 +2725,7 @@ HOLDERS_JUNK = frozenset([
 
 
 def remove_dupe_copyright_words(c):
+    c = c.replace('SPDX-FileCopyrightText', 'Copyright')
     # from .net assemblies
     c = c.replace('AssemblyCopyright', 'Copyright')
     c = c.replace('AppCopyright', 'Copyright')
