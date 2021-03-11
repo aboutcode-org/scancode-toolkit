@@ -5,3 +5,4 @@ category: Permissive
 owner: Ming-Te Liao
 homepage_url: https://fedoraproject.org/wiki/Licensing/Array
 faq_url: https://fedoraproject.org/wiki/Licensing/Array#License_Notes
+spdx_license_key: LicenseRef-scancode-array-input-method-pl
