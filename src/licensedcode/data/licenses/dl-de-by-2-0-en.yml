@@ -7,3 +7,6 @@ homepage_url: http://www.govdata.de/dl-de/by-2-0
 other_urls:
     - https://www.dcat-ap.de/def/licenses/
 spdx_license_key: LicenseRef-scancode-dl-de-by-2-0-en
+ignorable_urls:
+  - http://www.govdata.de/dl-de/by-2-0
+
