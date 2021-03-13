@@ -168,3 +168,34 @@ class BazelPackage(StarlarkManifestPackage):
 class BuckPackage(StarlarkManifestPackage):
     metafiles = ('BUCK',)
     default_type = 'buck'
+
+
+@attr.s()
+class MetadataBzl(BaseBuildManifestPackage):
+    @classmethod
+    def recognize(cls, location):
+        if not cls._is_build_manifest(location):
+            return
+
+        with open(location, 'rb') as f:
+            tree = ast.parse(f.read())
+
+        metadata_fields = {}
+        for statement in tree.body:
+            if not (hasattr(statement, 'targets') and isinstance(statement, ast.Assign)):
+                continue
+            for target in statement.targets:
+                if not (target.id == 'METADATA' and isinstance(statement.value, ast.Dict)):
+                    continue
+                statement_keys = statement.value.keys
+                statement_values = statement.value.values
+                for statement_k, statement_v in zip(statement_keys, statement_values):
+                    if isinstance(statement_k, ast.Str):
+                        key_name = statement_k.s
+                    if isinstance(statement_v, ast.List):
+                        value = [e.s for e in statement_v.elts]
+                    if isinstance(statement_v, ast.Str):
+                        value = statement_v.s
+                    metadata_fields[key_name] = value
+
+        # TODO: Create function that determines package type from download URL, then create a package of that package type from the metadata info
