@@ -1,0 +1,6 @@
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 99
+notes: Originally from https://cvsweb.openbsd.org/src/sys/sys/utsname.h?rev=1.6&content-type=text/x-cvsweb-markup
+    but often seen truncated in this form
