@@ -1,4 +1,5 @@
 license_expression: gpl-2.0
+minimum_coverage: 95
 is_license_notice: yes
 ignorable_urls:
     - http://www.trolltech.com/products/qt/licensing.html
