@@ -76,6 +76,7 @@ license_expressions:
   - netcdf
   - bsd-original-uc
   - pcre
+  - pcre
   - x11-xconsortium_veillard
   - bsd-simplified
   - libpng
