@@ -464,14 +464,16 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     return licenses
 
 
-def get_rules(licenses_data_dir=licenses_data_dir, rules_data_dir=rules_data_dir):
+def get_rules(licenses_db=None, licenses_data_dir=licenses_data_dir,rules_data_dir=rules_data_dir):
     """
-    Yield Rule objects loaded from license files found in `licenses_data_dir`
-    and rule files fourn in `rules_data_dir`. Raise a Exceptions if a rule is
-    inconsistent or incorrect.
+    Yield Rule objects loaded from a licenses_db and license files found in
+    `licenses_data_dir` and rule files fourn in `rules_data_dir`. Raise a
+    Exceptions if a rule is inconsistent or incorrect.
     """
-    from licensedcode.cache import get_licenses_db
-    licenses = get_licenses_db(licenses_data_dir=licenses_data_dir)
+    from licensedcode.cache import build_licenses_db
+
+    licenses = licenses_db or build_licenses_db(licenses_data_dir=licenses_data_dir)
+    
     rules = list(load_rules(rules_data_dir=rules_data_dir))
     validate_rules(rules, licenses)
     licenses_as_rules = build_rules_from_licenses(licenses)
@@ -549,12 +551,12 @@ def build_rules_from_licenses(licenses):
             )
 
 
-def get_all_spdx_keys(licenses):
+def get_all_spdx_keys(licenses_db):
     """
-    Return an iterable of SPDX license keys collected from a `licenses` iterable
-    of license objects.
+    Return an iterable of SPDX license keys collected from a `licenses_db`
+    mapping of {key: License} objects.
     """
-    for lic in licenses.values():
+    for lic in licenses_db.values():
         for spdx_key in lic.spdx_keys():
             yield spdx_key
 
@@ -570,15 +572,15 @@ def get_essential_spdx_tokens():
     yield 'licenseref'
 
 
-def get_all_spdx_key_tokens(licenses):
+def get_all_spdx_key_tokens(licenses_db):
     """
-    Yield token strings collected from a `licenses` iterable of license objects'
-    SPDX license keys.
+    Yield SPDX token strings collected from a `licenses_db` mapping of {key:
+    License} objects.
     """
     for tok in get_essential_spdx_tokens():
         yield tok
 
-    for spdx_key in get_all_spdx_keys(licenses):
+    for spdx_key in get_all_spdx_keys(licenses_db):
         for token in query_tokenizer(spdx_key):
             yield token
 

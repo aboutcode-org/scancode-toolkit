@@ -116,13 +116,6 @@ class TestSeq(TestCase):
         555, 230, 936, 4, 8, 1537, 5, 7770, 12, 3479, 30, 8, 97, 8176, 947, 10,
         2567, 7, 755, 3670, 3723, 3716]
 
-        bto = '''
-        the beer ware license revision 42
-        phk login dknet dk wrote this file
-        as long as you retain this notice you can do whatever you want with this
-        stuff if we meet some day and you think this stuff is worth it you can
-        buy me a beer in return poul henning kamp'''
-
         # this is mapping of high token ids in b to a list of positions
         # for instance, 10248 is the 'phk' token and is found at position 6 in b
         # and 7770 is stuff and oudn in two places
@@ -139,7 +132,6 @@ class TestSeq(TestCase):
         len_good = 20000
 
         a_start = 357
-        a_end = 52
         b_start = 0
         b_end = 53
 
