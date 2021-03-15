@@ -6,8 +6,8 @@
   Danny-SLIRP
   LGPL-2.1+
   GPL-2
-- bsd-new AND bsd-simplified AND gpl-2.0 AND gpl-2.0-plus AND lgpl-2.1 AND lgpl-2.1-plus AND
-  mit AND unknown
+- bsd-new AND bsd-simplified AND gpl-2.0 AND gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1 AND
+  lgpl-2.1-plus AND mit AND unknown
 - |
   2018 Giuseppe Scrivano <gscrivan@redhat.com>
   Akihiro Suda <suda.akihiro@lab.ntt.co.jp>
