@@ -78,6 +78,7 @@ PACKAGE_TYPES = [
     build.AutotoolsPackage,
     conda.CondaPackage,
     win_pe.WindowsExecutable,
+    build.MetadataBzl,
 ]
 
 
