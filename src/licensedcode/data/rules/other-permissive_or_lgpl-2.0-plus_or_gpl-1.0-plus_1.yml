@@ -1,0 +1,4 @@
+license_expression: other-permissive OR lgpl-2.0-plus OR gpl-1.0-plus
+is_license_text: yes
+relevance: 100
+notes: see in pam_passwdqc PAM module. Close to the scanlogd-license
