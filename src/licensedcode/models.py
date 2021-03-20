@@ -34,7 +34,6 @@ from licensedcode import SMALL_RULE
 from licensedcode.tokenize import query_tokenizer
 from textcode.analysis import numbered_text_lines
 
-
 """
 Reference License and license Rule structures persisted as a combo of a YAML
 data file and one or more text files containing license or notice texts.
@@ -48,7 +47,6 @@ data_dir = join(abspath(dirname(__file__)), 'data')
 licenses_data_dir = join(data_dir, 'licenses')
 rules_data_dir = join(data_dir, 'rules')
 
-
 FOSS_CATEGORIES = set([
     'Copyleft',
     'Copyleft Limited',
@@ -57,7 +55,6 @@ FOSS_CATEGORIES = set([
     'Public Domain',
 ])
 
-
 OTHER_CATEGORIES = set([
     'Commercial',
     'Proprietary Free',
@@ -65,7 +62,6 @@ OTHER_CATEGORIES = set([
     'Source-available',
     'Unstated License',
 ])
-
 
 CATEGORIES = FOSS_CATEGORIES | OTHER_CATEGORIES
 
@@ -464,7 +460,11 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     return licenses
 
 
-def get_rules(licenses_db=None, licenses_data_dir=licenses_data_dir,rules_data_dir=rules_data_dir):
+def get_rules(
+    licenses_db=None,
+    licenses_data_dir=licenses_data_dir,
+    rules_data_dir=rules_data_dir
+):
     """
     Yield Rule objects loaded from a licenses_db and license files found in
     `licenses_data_dir` and rule files fourn in `rules_data_dir`. Raise a
@@ -473,7 +473,7 @@ def get_rules(licenses_db=None, licenses_data_dir=licenses_data_dir,rules_data_d
     from licensedcode.cache import build_licenses_db
 
     licenses = licenses_db or build_licenses_db(licenses_data_dir=licenses_data_dir)
-    
+
     rules = list(load_rules(rules_data_dir=rules_data_dir))
     validate_rules(rules, licenses)
     licenses_as_rules = build_rules_from_licenses(licenses)
