@@ -1,0 +1,5 @@
+license_expression: (cddl-1.0 OR gpl-2.0 WITH classpath-exception-2.0) AND apache-2.0
+is_license_notice: yes
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0
+    - https://glassfish.dev.java.net/public/CDDL+GPL.html

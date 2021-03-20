@@ -1,0 +1,6 @@
+license_expression: apache-2.0
+is_license_notice: yes
+referenced_filenames:
+    - AL2.0
+ignorable_urls:
+    - https://www.apache.org/licenses/

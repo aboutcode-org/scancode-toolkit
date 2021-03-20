@@ -1,0 +1,12 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 90
+notes: a modified apache license
+ignorable_copyrights:
+    - Copyright PocketWarriors Shalom Weiner
+ignorable_holders:
+    - PocketWarriors Shalom Weiner
+ignorable_urls:
+    - https://www.apache.org/licenses/
+    - https://www.apache.org/licenses/LICENSE-2.0
