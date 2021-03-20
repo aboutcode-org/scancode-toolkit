@@ -1,4 +1,5 @@
 license_expression: boost-1.0
+minimum_coverage: 90
 is_license_notice: yes
 relevance: 100
 referenced_filenames:
