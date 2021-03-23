@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: similar to the intel license
+ignorable_urls:
+    - http://opensource.org/licenses
