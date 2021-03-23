@@ -1,0 +1,9 @@
+license_expression: bsd-simplified OR gpl-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.GPL
+ignorable_copyrights:
+    - Copyright (c) Intel Corporation
+ignorable_holders:
+    - Intel Corporation
