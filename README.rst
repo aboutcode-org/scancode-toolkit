@@ -113,7 +113,9 @@ Before installing ScanCode make sure that you have installed the prerequisites
 properly. This means installing Python (Python 3.6+ is required).
 See `prerequisites <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#prerequisites>`_
 for detailed information on the support platforms and Python versions.
-Note: Native Windows will be deprecated in the future in favor of Windows Subsystem for Linux. This means that WSL https://docs.microsoft.com/en-us/windows/wsl/install-win10 would become a requirement on Windows platform.
+Note: Native Windows will be deprecated in the future in favor of Windows
+Subsystem for Linux (WSL): WSL and Windows 10 will become a
+requirement on Windows.
 
 There are a few common ways to `install ScanCode <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html>`_.
 
