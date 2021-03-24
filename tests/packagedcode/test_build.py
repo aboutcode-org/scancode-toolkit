@@ -10,6 +10,7 @@
 import os.path
 
 from packagedcode import build
+from packagedcode import models
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from commoncode.resource import Codebase
@@ -71,6 +72,27 @@ class TestBuild(PackageTester):
                 name='app',
                 declared_license=['LICENSE'],
             )
+        ]
+        compare_package_results(expected_packages, result_packages)
+
+    def test_MetadataBzl_recognize(self):
+        test_file = self.get_test_loc('metadatabzl/METADATA.bzl')
+        result_packages = build.MetadataBzl.recognize(test_file)
+        expected_packages = [
+            build.MetadataBzl(
+                type='github',
+                name='example',
+                version='0.0.1',
+                declared_license=['BSD-3-Clause'],
+                parties=[
+                    models.Party(
+                        type=models.party_org,
+                        name='oss_foundation',
+                        role='maintainer'
+                    )
+                ],
+                homepage_url='https://github.com/example/example',
+            ),
         ]
         compare_package_results(expected_packages, result_packages)
 
