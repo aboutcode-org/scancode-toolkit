@@ -28,7 +28,7 @@
     "root_path": null,
     "dependencies": [
       {
-        "purl": "pkg:golang/github.com/alecthomas/template",
+        "purl": "pkg:golang/github.com/alecthomas/template@v0.0.0-20160405071501-a0175ee3bccc",
         "requirement": "v0.0.0-20160405071501-a0175ee3bccc",
         "scope": "require",
         "is_runtime": true,
@@ -36,7 +36,7 @@
         "is_resolved": false
       },
       {
-        "purl": "pkg:golang/github.com/alecthomas/units",
+        "purl": "pkg:golang/github.com/alecthomas/units@v0.0.0-20151022065526-2efee857e7cf",
         "requirement": "v0.0.0-20151022065526-2efee857e7cf",
         "scope": "require",
         "is_runtime": true,
@@ -44,7 +44,7 @@
         "is_resolved": false
       },
       {
-        "purl": "pkg:golang/github.com/davecgh/go-spew",
+        "purl": "pkg:golang/github.com/davecgh/go-spew@v1.1.1",
         "requirement": "v1.1.1",
         "scope": "require",
         "is_runtime": true,
@@ -52,7 +52,7 @@
         "is_resolved": false
       },
       {
-        "purl": "pkg:golang/github.com/pmezard/go-difflib",
+        "purl": "pkg:golang/github.com/pmezard/go-difflib@v1.0.0",
         "requirement": "v1.0.0",
         "scope": "require",
         "is_runtime": true,
@@ -60,7 +60,7 @@
         "is_resolved": false
       },
       {
-        "purl": "pkg:golang/github.com/stretchr/testify",
+        "purl": "pkg:golang/github.com/stretchr/testify@v1.2.2",
         "requirement": "v1.2.2",
         "scope": "require",
         "is_runtime": true,

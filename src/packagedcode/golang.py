@@ -70,7 +70,7 @@ def build_gomod_package(gomods):
     for gomod in require:
         package_dependencies.append(
             models.DependentPackage(
-                purl=gomod.purl(include_version=False),
+                purl=gomod.purl(include_version=True),
                 requirement=gomod.version,
                 scope='require',
                 is_runtime=True,
@@ -83,7 +83,7 @@ def build_gomod_package(gomods):
     for gomod in exclude:
         package_dependencies.append(
             models.DependentPackage(
-                purl=gomod.purl(include_version=False),
+                purl=gomod.purl(include_version=True),
                 requirement=gomod.version,
                 scope='exclude',
                 is_runtime=True,

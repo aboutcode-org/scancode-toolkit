@@ -1,4 +1,9 @@
 --------------------------------------------
+Package: METADATA.bzl
+  class: packagedcode.build:MetadataBzl
+  metafiles: METADATA.bzl
+
+--------------------------------------------
 Package: about
   class: packagedcode.about:AboutPackage
   metafiles: *.ABOUT

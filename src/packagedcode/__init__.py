@@ -80,8 +80,8 @@ PACKAGE_TYPES = [
     conda.CondaPackage,
     win_pe.WindowsExecutable,
     readme.ReadmePackage,
+    build.MetadataBzl,
 ]
-
 
 PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
 
