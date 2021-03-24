@@ -155,7 +155,7 @@ See `How to select what will be detected in a scan
 and `How to specify the output format <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_format_scan_output.html>`_
 for more information.
 
-You can also refer to the `command line options' synopsis
+You can also refer to the `command line options synopsis
 <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/synopsis.html>`_
 and an exhaustive list of `all available command line options
 <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/list-options.html>`_.
