@@ -229,6 +229,11 @@ Package: pypi
   extensions: .egg, .whl, .pyz, .pex
 
 --------------------------------------------
+Package: readme
+  class: packagedcode.readme:ReadmePackage
+  metafiles: README.android, README.chromium, README.facebook, README.google, README.thirdparty
+
+--------------------------------------------
 Package: rpm
   class: packagedcode.rpm:RpmPackage
   metafiles: *.spec
