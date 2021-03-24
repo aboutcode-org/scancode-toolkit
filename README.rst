@@ -164,7 +164,7 @@ and an exhaustive list of `all available command line options
 Archive extraction
 ==================
 
-By default ScanCode does not extract files from tarballs, zip files, and
+By default, ScanCode does not extract files from tarballs, zip files, and
 other archives as part of the scan. The archives that exist in a codebase
 must be extracted before running a scan: `extractcode` is a bundled utility
 behaving as a mostly-universal archive extractor. For example, this command will
