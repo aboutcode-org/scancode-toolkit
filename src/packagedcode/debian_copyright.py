@@ -20,9 +20,7 @@ from debut.copyright import is_machine_readable_copyright
 from license_expression import Licensing
 
 from packagedcode.debian import DebianPackage
-from packagedcode import models
 from packagedcode.licensing import get_normalized_expression
-import textcode
 from packagedcode.utils import combine_expressions
 
 """
