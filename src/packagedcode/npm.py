@@ -265,7 +265,7 @@ def build_package(package_data):
     version = package_data.get('version')
     homepage = package_data.get('homepage', '')
 
-    if not name or not version:
+    if not name:
         # a package.json without name and version is not a usable npm package
         # FIXME: raise error?
         return

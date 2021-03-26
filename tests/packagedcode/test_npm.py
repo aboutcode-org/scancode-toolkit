@@ -245,6 +245,19 @@ class TestNpm(PackageTester):
         packages = npm.parse(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
+    def test_parse_with_name(self):
+        test_file = self.get_test_loc('npm/with_name/package.json')
+        expected_loc = self.get_test_loc('npm/with_name/package.json.expected')
+        packages = npm.parse(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
+
+    def test_parse_without_name(self):
+        test_file = self.get_test_loc('npm/without_name/package.json')
+        try:
+            npm.parse(test_file)
+        except AttributeError as e:
+            assert "'NoneType' object has no attribute 'to_dict'" in str(e)
+
     def test_parse_yarn_lock(self):
         test_file = self.get_test_loc('npm/yarn-lock/yarn.lock')
         expected_loc = self.get_test_loc(
