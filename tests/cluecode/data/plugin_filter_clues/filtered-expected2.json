@@ -84,24 +84,24 @@
       "percentage_of_license_text": 69.38,
       "copyrights": [
         {
-          "value": "Copyright (c) 1996, Pascal Andre (andre@avia.ecp.fr)",
+          "copyright": "Copyright (c) 1996, Pascal Andre (andre@avia.ecp.fr)",
           "start_line": 4,
           "end_line": 5
         },
         {
-          "value": "copyright 1997, 1998, 1996 by D'Arcy John. Cain (darcy@druid.net)",
+          "copyright": "copyright 1997, 1998, 1996 by D'Arcy John. Cain (darcy@druid.net)",
           "start_line": 24,
           "end_line": 25
         }
       ],
       "holders": [
         {
-          "value": "Pascal Andre",
+          "holder": "Pascal Andre",
           "start_line": 4,
           "end_line": 5
         },
         {
-          "value": "D'Arcy John. Cain",
+          "holder": "D'Arcy John. Cain",
           "start_line": 24,
           "end_line": 25
         }
