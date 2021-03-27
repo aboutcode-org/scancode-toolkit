@@ -104,7 +104,7 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
                                       Files and directories without findings
                                       are omitted (file information is not
                                       treated as findings).
-      --filter-ignoralbe-copyrights   Filter out copyrights that are for the 
+      --filter-ignorable-copyrights   Filter out copyrights that are for the 
                                       license text and not the code itself.
 
     output control:
