@@ -47,10 +47,10 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
         excludes = {'*.txt': 'test ignore'}
         assert not is_included(location, excludes=excludes)
 
-    def check_ProcessIgnore(self, test_dir, expected, ignore, include=()):
+    def check_ProcessIgnore(self, test_dir, expected, ignore):
         codebase = Codebase(test_dir, strip_root=True)
         test_plugin = ProcessIgnore()
-        test_plugin.process_codebase(codebase, ignore=ignore, include=include)
+        test_plugin.process_codebase(codebase, ignore=ignore)
         resources = [res.path for res in codebase.walk(skip_root=True)]
         assert sorted(resources) == expected
 
@@ -91,13 +91,12 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
 
     def test_ProcessIgnore_with_glob_for_path(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
-        ignore = ('*/src/test/*',)
+        ignore = ('*/src/test',)
         expected = [
             'user',
             'user/ignore.doc',
             'user/src',
-            'user/src/ignore.doc',
-            'user/src/test' # test is included, but no file inside
+            'user/src/ignore.doc'
         ]
         self.check_ProcessIgnore(test_dir, expected, ignore)
 
@@ -110,19 +109,6 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
             'user/src/test'
         ]
         self.check_ProcessIgnore(test_dir, expected, ignore)
-
-    def test_ProcessIgnore_include_with_glob_for_extension(self):
-        test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
-        include = ('*.doc',)
-        expected = [
-            'user',
-            'user/ignore.doc',
-            'user/src',
-            'user/src/ignore.doc',
-            'user/src/test',
-            'user/src/test/sample.doc',
-        ]
-        self.check_ProcessIgnore(test_dir, expected, ignore=(), include=include)
 
     def test_ProcessIgnore_process_codebase_does_not_fail_to_access_an_ignored_resourced_cached_to_disk(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
@@ -231,12 +217,12 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
     def test_scancode_multiple_ignores(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
         result_file = self.get_temp_file('json')
-        args = ['--copyright', '--strip-root', '--ignore', '*/src/test/*', '--ignore', '*.doc', test_dir, '--json', result_file]
+        args = ['--copyright', '--strip-root', '--ignore', '*/src/test', '--ignore', '*.doc', test_dir, '--json', result_file]
         run_scan_click(args)
         scan_result = load_json_result(result_file)
         assert scan_result['headers'][0]['extra_data']['files_count'] == 0
         scan_locs = [x['path'] for x in scan_result['files']]
-        assert scan_locs == [u'user', u'user/src', u'user/src/test']
+        assert scan_locs == [u'user', u'user/src']
 
     def test_scancode_codebase_attempt_to_access_an_ignored_resourced_cached_to_disk(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
@@ -251,6 +237,5 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
             u'user/ignore.doc',
             u'user/src',
             u'user/src/ignore.doc',
-            u'user/src/test',
         ]
         assert scan_locs == expected
