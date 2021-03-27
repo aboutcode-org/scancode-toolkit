@@ -101,7 +101,7 @@ ScanCode needs a Python 3.6 (*highly recommended*) or a Python 2.7 interpreter.
       64-bit Python interpreters (x86-64) are the only interpreters supported by
       Scancode on all operating systems which means only 64-bit Windows is supported.
       
-      If you have more than one installed Python version(eg: Python3.9, Python2.7).
+      If you have more than one installed Python version (e.g.: Python 3.6, 3.9, etc.) on Windows
       You can check all Python version installed in your local machine by running the below code::
       
          C:\Users>py -0
