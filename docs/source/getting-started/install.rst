@@ -104,10 +104,9 @@ ScanCode needs a Python 3.6 (*highly recommended*) or a Python 2.7 interpreter.
       If you have more than one installed Python version (e.g.: Python 3.6, 3.9, etc.) on Windows
       run this to get a list of these versions::
       
-         C:\Users>py -0
-        
+            C:\Users>py -0    
 
-    See the :ref:`windows_app_install` section for more installation details.
+      See the :ref:`windows_app_install` section for more installation details.
 
 .. Note::
 
