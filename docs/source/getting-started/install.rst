@@ -340,7 +340,7 @@ For more information on Python virtualenv, visit this `page <https://docs.python
 
     source venv-scancode/bin/activate
     
-#. Activate the Virtual Environment you just created for Windows::
+#. Activate the Virtual Environment you just created for Windows OS::
 
     venv-scancode\Scripts\activate
 
