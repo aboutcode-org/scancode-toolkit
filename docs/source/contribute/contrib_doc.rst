@@ -8,11 +8,11 @@ Contributing to the Documentation
 Setup Local Build
 -----------------
 
-To get started, create or identify a working directory on your local machine.
+To get started, fork this project on your GitHub.
 
-Open that directory and execute the following command in a terminal session::
+Open a directory on your local machine and  execute the following command in a terminal session along with your github usename::
 
-    git clone https://github.com/nexB/scancode-toolkit.git
+    git clone https://github.com/<YOUR GITHUB USERNAME>/scancode-toolkit.git
 
 That will create an ``/scancode-toolkit`` directory in your working directory.
 Now you can install the dependencies in a virtualenv::

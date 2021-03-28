@@ -330,15 +330,19 @@ Installation as a library: via ``pip``
 
 ScanCode can be installed using ``pip``, the default Python Package Manager. The steps are:
 
-#. Create a Python 3.6 Virtual Environment::
+#. Create a Python 3.6 Virtual Environment, To create a virtual environment, you must specify a path. For example to create one in the local directory called ‘venv-scancode’, type the following:::
 
     virtualenv -p /usr/bin/python3.6 venv-scancode
 
 For more information on Python virtualenv, visit this `page <https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv>`_.
 
-#. Activate the Virtual Environment you just created::
+#. Activate the Virtual Environment you just created for Mac OS / Linux::
 
     source venv-scancode/bin/activate
+    
+#. Activate the Virtual Environment you just created for Windows::
+
+    venv-scancode\Scripts\activate
 
 #. Run ``pip install scancode-toolkit`` to install the latest version of Scancode.
 
