@@ -730,7 +730,7 @@ class PowerShellLexer(RegexLexer):
             (r'\[[a-z_\[][\w. `,\[\]]*\]', Name.Constant),  # .net [type]s
             (r'-[a-z_]\w*', Name),
             (r'\w+', Name),
-            (r'[.,;@{}\[\]$()=+*/\\&%!~?^`|<>-]|::', Punctuation),
+            (r'[.,;:@{}\[\]$()=+*/\\&%!~?^`|<>-]', Punctuation),
         ],
         'child': [
             (r'\)', Punctuation, '#pop'),
