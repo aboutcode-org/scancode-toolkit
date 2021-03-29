@@ -172,6 +172,19 @@ class TestPypiUnpackedSdist(PackageTester):
         expected_loc = self.get_test_loc('pypi/unpacked_sdist/metadata-1.0/PyJPString-0.0.3-subdir-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
+    def test_parse_setup_py_with_name(self):
+        test_file = self.get_test_loc('pypi/setup.py/with_name.py')
+        packages = pypi.parse_setup_py(test_file)
+        expected_loc = self.get_test_loc('pypi/setup.py/with_name.py.expected')
+        self.check_packages(packages, expected_loc, regen=False)
+
+    def test_parse_setup_py_without_name(self):
+        test_file = self.get_test_loc('pypi/setup.py/without_name.py')
+        try:
+            pypi.parse_setup_py(test_file)
+        except AttributeError as e:
+            assert "'NoneType' object has no attribute 'to_dict'" in str(e)
+
     def test_parse_metadata_unpacked_sdist_metadata_v11_1(self):
         test_file = self.get_test_loc('pypi/unpacked_sdist/metadata-1.1/python-mimeparse-1.6.0/PKG-INFO')
         package = pypi.parse_metadata(test_file)
