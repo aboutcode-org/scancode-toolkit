@@ -1173,7 +1173,7 @@ patterns = [
     (r'^[Ll]\.?[Ll]\.?[CcPp]\.?,?$', 'COMP'),
     (r'^L\.P\.?$', 'COMP'),
     (r'^[Ss]ubsidiary$', 'COMP'),
-    (r'^[Ss]ubsidiaries$', 'COMP'),
+    (r'^[Ss]ubsidiaries\.?$', 'COMP'),
     (r'^[Ss]ubsidiary\(\-ies\)\.?$', 'COMP'),
 
     # company suffix : SA, SAS, AG, AB, AS, CO, labs followed by a dot
