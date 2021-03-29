@@ -224,6 +224,19 @@ class TestPyPi(PackageTester):
         expected_loc = self.get_test_loc('pypi/setup.py/xmltodict_setup.py-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
+    def test_parse_setup_py_with_name(self):
+        test_file = self.get_test_loc('pypi/setup.py/with_name.py')
+        packages = pypi.parse_setup_py(test_file)
+        expected_loc = self.get_test_loc('pypi/setup.py/with_name.py.expected')
+        self.check_packages(packages, expected_loc, regen=False)
+
+    def test_parse_setup_py_without_name(self):
+        test_file = self.get_test_loc('pypi/setup.py/without_name.py')
+        try:
+            pypi.parse_setup_py(test_file)
+        except AttributeError as e:
+            assert "'NoneType' object has no attribute 'to_dict'" in str(e)
+
     def test_pkginfo_parse_with_unpackaged_source(self):
         test_file = self.get_test_loc('pypi')
         package = pypi.parse_unpackaged_source(test_file)
