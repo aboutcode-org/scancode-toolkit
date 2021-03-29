@@ -315,7 +315,7 @@ On Windows:
 
 - open a command prompt
 - cd to the clone directory
-- run ``configure``
+- run ``.\configure``
 - run ``Scripts\activate``
 
 Now you are ready to use the freshly configured scancode-toolkit.
