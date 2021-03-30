@@ -25,6 +25,7 @@ from packagedcode import nuget
 from packagedcode import opam
 from packagedcode import phpcomposer
 from packagedcode import pypi
+from packagedcode import readme
 from packagedcode import rpm
 from packagedcode import rubygems
 from packagedcode import win_pe
@@ -78,8 +79,9 @@ PACKAGE_TYPES = [
     build.AutotoolsPackage,
     conda.CondaPackage,
     win_pe.WindowsExecutable,
+    readme.ReadmePackage,
+    build.MetadataBzl,
 ]
-
 
 PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
 

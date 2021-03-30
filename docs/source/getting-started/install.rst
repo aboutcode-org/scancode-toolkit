@@ -145,7 +145,7 @@ Installation on Windows 10
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Download the latest ScanCode release zip file for Windows from the latest
-  version athttps://github.com/nexB/scancode-toolkit/releases/
+  version at https://github.com/nexB/scancode-toolkit/releases/
 
 - In the File Explorer, select the downloaded ScanCode zip and right-click.
 
