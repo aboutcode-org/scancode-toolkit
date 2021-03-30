@@ -6,10 +6,8 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 
-from debut.copyright import CopyrightField
 from debut.copyright import CopyrightFilesParagraph
 from debut.copyright import CopyrightHeaderParagraph
-from debut.copyright import CopyrightStatementField
 from debut.copyright import DebianCopyright
 from license_expression import Licensing
 
@@ -18,6 +16,8 @@ from commoncode.cliutils import OUTPUT_GROUP
 from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
+
+from scancode import notice
 
 """
 Output plugin to write scan results as Debian machine-readable copyright format
@@ -91,13 +91,14 @@ def build_copyright_paragraphs(codebase, **kwargs):
     header_para = CopyrightHeaderParagraph(
         format='https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/',
         # TODO: add some details, but not all these
-        # comment=saneyaml.dump(codebase.get_headers())
+        # comment=saneyaml.dump(codebase.get_headers()),
+        comment=notice,
     )
     yield header_para
 
     # TODO: create CopyrightLicenseParagraph for common licenses
     # TODO: group files that share copyright and license
-    # TODO: infer files patterns
+    # TODO: infer files patternsas in decopy
 
     # for now this is dumb and will generate one paragraph per scanned file
     for scanned_file in OutputPlugin.get_files(codebase, **kwargs):
@@ -126,8 +127,8 @@ def build_copyright_field(scanned_file):
     if not holders:
         return
     # TODO: reinjects copyright year ranges like they show up in Debian
-    statements = [CopyrightStatementField(h['value']) for h in holders]
-    return CopyrightField(statements)
+    statements = [h['value'] for h in holders]
+    return '\n'.join(statements)
 
 
 def build_license(scanned_file):
