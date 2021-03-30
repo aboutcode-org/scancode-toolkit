@@ -37,12 +37,10 @@ Sync and update the ScanCode licenses against:
 Run python synclic.py -h for help.
 """
 
-
 TRACE = True
 TRACE_ADD = True
 TRACE_FETCH = True
 TRACE_DEEP = False
-
 
 # may be useful to change for testing
 SPDX_DEFAULT_REPO = 'spdx/license-list-data'
@@ -164,7 +162,7 @@ class ExternalLicensesSource(object):
         if not exists(self.new_dir):
             mkdir(self.new_dir)
 
-    def get_licenses(self, scancode_licenses):
+    def get_licenses(self, scancode_licenses, **kwargs):
         """
         Return a mapping of key -> ScanCode License objects either fetched
         externally or loaded from the existing `self.original_dir`
@@ -172,7 +170,7 @@ class ExternalLicensesSource(object):
         print('Fetching and storing external licenses in:', self.original_dir)
 
         licenses = []
-        for lic, text in self.fetch_licenses(scancode_licenses):
+        for lic, text in self.fetch_licenses(scancode_licenses, **kwargs):
             try:
                 with io.open(lic.text_file, 'w', encoding='utf-8')as tf:
                     tf.write(text)
@@ -193,7 +191,7 @@ class ExternalLicensesSource(object):
 
         return load_licenses(self.update_dir, with_deprecated=True)
 
-    def fetch_licenses(self, scancode_licenses):
+    def fetch_licenses(self, scancode_licenses, **kwargs):
         """
         Yield tuples of (License object, license text) fetched from this external source.
         """
@@ -338,14 +336,18 @@ class SpdxSource(ExternalLicensesSource):
         'notes',
     )
 
-    def fetch_licenses(self, scancode_licenses, from_repo=SPDX_DEFAULT_REPO):
+    def fetch_licenses(self, scancode_licenses, commitish=None, from_repo=SPDX_DEFAULT_REPO):
         """
         Yield License objects fetched from the latest SPDX license list.
+        Use the latest tagged version or the `commitish` is provided.
         """
-        # get latest tag
-        tags_url = 'https://api.github.com/repos/{from_repo}/tags'.format(**locals())
-        tags = get_response(tags_url, headers={}, params={})
-        tag = tags[0]['name']
+        if not commitish:
+            # get latest tag
+            tags_url = 'https://api.github.com/repos/{from_repo}/tags'.format(**locals())
+            tags = get_response(tags_url, headers={}, params={})
+            tag = tags[0]['name']
+        else:
+            tag = commitish
 
         # fetch licenses and exceptions
         # note that exceptions data have -- weirdly enough -- a different schema
@@ -385,11 +387,15 @@ class SpdxSource(ExternalLicensesSource):
 
         # these keys have a complicated history
         if key in set([
-                'gpl-1.0', 'gpl-2.0', 'gpl-3.0',
-                'lgpl-2.0', 'lgpl-2.1', 'lgpl-3.0',
-                'agpl-1.0', 'agpl-2.0', 'agpl-3.0',
-                'gfdl-1.1', 'gfdl-1.2', 'gfdl-1.3',
-                'nokia-qt-exception-1.1', 'bzip2-1.0.5']):
+            'gpl-1.0', 'gpl-2.0', 'gpl-3.0',
+            'lgpl-2.0', 'lgpl-2.1', 'lgpl-3.0',
+            'agpl-1.0', 'agpl-2.0', 'agpl-3.0',
+            'gfdl-1.1', 'gfdl-1.2', 'gfdl-1.3',
+            'nokia-qt-exception-1.1',
+            'bzip2-1.0.5',
+            'bsd-2-clause-freebsd',
+            'bsd-2-clause-netbsd',
+        ]):
             return
 
         deprecated = mapping.get('isDeprecatedLicenseId', False)
@@ -484,7 +490,7 @@ class DejaSource(ExternalLicensesSource):
 
         super(DejaSource, self).__init__(external_base_dir)
 
-    def fetch_licenses(self, scancode_licenses):
+    def fetch_licenses(self, scancode_licenses, **kwargs):
         api_url = '/'.join([self.api_base_url.rstrip('/'), 'licenses/'])
         for licenses in call_deja_api(api_url, self.api_key, paginate=100):
             for lic in licenses:
@@ -815,7 +821,9 @@ def merge_licenses(scancode_license, external_license, updatable_attributes,
         scancode_key = scancode_license.spdx_license_key
         external_key = external_license.spdx_license_key
         if scancode_key != external_key:
-            raise Exception('Non mergeable licenses with different SPDX keys: %(scancode_key)s <> %(external_key)s' % locals())
+            raise Exception(
+                f'Non mergeable licenses with different SPDX keys: scancode_license.spdx_license_key {scancode_key} <>  external_license.spdx_license_key {external_key}'
+            )
     else:
         scancode_key = scancode_license.key
         external_key = external_license.key
@@ -914,7 +922,7 @@ def merge_licenses(scancode_license, external_license, updatable_attributes,
 
 
 def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
-                         match_text=False, match_approx=False):
+                         match_text=False, match_approx=False, commitish=None):
     """
     Update the `scancode_licenses` ScanCodeLicenses licenses and texts in-place
     (e.g. in their current storage directory) from an `external_source`
@@ -949,7 +957,7 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
 
     # mappings of key -> License
     scancodes_by_key = scancode_licenses.by_key
-    externals_by_key = external_source.get_licenses(scancode_licenses)
+    externals_by_key = external_source.get_licenses(scancode_licenses, commitish=commitish)
 
     if use_spdx_key:
         scancodes_by_key = scancode_licenses.by_spdx_key
@@ -1123,8 +1131,9 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
 @click.option('-a', '--match-approx', is_flag=True, default=False, help='Include approximate license detection matches when matching ScanCode license.')
 @click.option('-t', '--trace', is_flag=True, default=False, help='Print execution trace.')
 @click.option('--create-ext', is_flag=True, default=False, help='Create new external licenses in the external source if possible.')
+@click.option('--commitish', type=str, default=None, help='An optional commitish to use for SPDX license data instead of the latest release.')
 @click.help_option('-h', '--help')
-def cli(license_dir, source, match_text, match_approx, trace, create_ext):
+def cli(license_dir, source, match_text, match_approx, trace, create_ext, commitish=None):
     """
     Synchronize ScanCode licenses with an external license source.
 
@@ -1143,10 +1152,13 @@ def cli(license_dir, source, match_text, match_approx, trace, create_ext):
     scancode_licenses = ScanCodeLicenses()
 
     use_spdx_key = source == 'spdx'
-    added_to_external = synchronize_licenses(scancode_licenses, external_source,
-                         use_spdx_key=use_spdx_key,
-                         match_text=match_text,
-                         match_approx=match_approx)
+    added_to_external = synchronize_licenses(
+        scancode_licenses, external_source,
+        use_spdx_key=use_spdx_key,
+        match_text=match_text,
+        match_approx=match_approx,
+        commitish=commitish,
+    )
     print()
     if create_ext and isinstance(external_source, DejaSource):
         api_url = external_source.api_base_url

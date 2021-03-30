@@ -14,9 +14,7 @@ from itertools import groupby
 
 from intbitset import intbitset
 
-from commoncode.dict_utils import sparsify
 from licensedcode.tokenize import ngrams
-
 
 """
 Approximate matching strategies using token sets and multisets.
@@ -82,13 +80,13 @@ step: skip if some threshold is not met and rank the candidates.
 Finally we return the sorted top candidates.
 """
 
-
 # Set to True for tracing
 TRACE = False
 TRACE_CANDIDATES = False
 TRACE_CANDIDATES_SET = False
 TRACE_CANDIDATES_MSET = False
 TRACE_CANDIDATES_FILTER_DUPE = False
+
 
 def logger_debug(*args): pass
 
@@ -203,8 +201,6 @@ def build_set_and_tids_mset(token_ids):
         if tid == -1:
             continue
         tids_mset[tid] += 1
-    # OPTIMIZED: sparsify for speed
-    sparsify(tids_mset)
 
     tids_set = intbitset(tids_mset.keys())
 
@@ -226,9 +222,6 @@ def build_set_and_bigrams_mset(token_ids):
         bigrams_mset[bigram] += 1
         tids_set.update(bigram)
 
-    # OPTIMIZED: sparsify for speed
-    sparsify(bigrams_mset)
-
     return tids_set, bigrams_mset
 
 
@@ -242,11 +235,11 @@ def build_set_and_mset(token_ids, _use_bigrams=False):
     else:
         return build_set_and_tids_mset(token_ids)
 
-
 # FIXME: we should consider more aggressively the thresholds and what a match
 # filters would discard when we compute candidates to eventually discard many or
 # all candidates: we compute too many candidates that may waste time in seq
 # matching for no reason.
+
 
 def compute_candidates(query_run, idx, matchable_rids, top=50,
                        high_resemblance=False, high_resemblance_threshold=0.8,
@@ -470,6 +463,7 @@ def filter_dupes(sortable_candidates):
     Given a list of `sortable_candidates` as (score_vector, rid, rule, intersection)
     yield filtered candidates.
     """
+
     def group_key(item):
         (sv_round, _sv_full), _rid, rule, _inter = item
         return (

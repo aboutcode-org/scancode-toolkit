@@ -1,4 +1,5 @@
 license_expressions:
-  - unknown-license-reference
   - proprietary-license
-  - unknown
+  - warranty-disclaimer
+  - proprietary-license
+  - proprietary-license

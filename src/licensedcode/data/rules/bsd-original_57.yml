@@ -1,0 +1,7 @@
+license_expression: bsd-original
+is_license_text: yes
+relevance: 90
+notes: well known FreeBSD issue with this note "IN NO EVENT SHALL Bill Paul OR THE VOICES IN
+    HIS HEAD" See for instance https://github.com/freebsd/freebsd-src/blob/098dbd7ff7f3da9dda03802cdb2d8755f816eada/sys/dev/an/if_an_isa.c#L25
+ignorable_authors:
+    - Bill Paul

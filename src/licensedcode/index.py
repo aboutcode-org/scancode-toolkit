@@ -11,20 +11,14 @@
 from array import array
 from collections import Counter
 from collections import defaultdict
-try:
-    import cPickle
-except ImportError:
-    import pickle as cPickle
 from functools import partial
 from operator import itemgetter
 import os
-import pickle
 import sys
 from time import time
 
 from intbitset import intbitset
 
-from commoncode.dict_utils import sparsify
 from licensedcode import MAX_DIST
 from licensedcode import SMALL_RULE
 from licensedcode.legalese import common_license_words
@@ -75,9 +69,6 @@ if (TRACE
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a)
                                      for a in args))
-
-# This is the Pickle protocol we use, which was added in Python 3.4.
-PICKLE_PROTOCOL = 4
 
 ############################## Feature SWITCHES ################################
 ########## Ngram fragments detection
@@ -262,9 +253,6 @@ class LicenseIndex(object):
                 stid = highest_tid
                 dictionary[sts] = stid
 
-        # OPTIMIZED
-        sparsify(dictionary)
-
         self.rules_by_rid = rules_by_rid = list(rules)
         # ensure that rules are sorted
         rules_by_rid.sort()
@@ -376,8 +364,6 @@ class LicenseIndex(object):
                         postings[tid].append(pos)
                 # OPTIMIZED: for speed and memory: convert postings to arrays
                 postings = {tid: array('h', value) for tid, value in postings.items()}
-                # OPTIMIZED: for speed, sparsify dict
-                sparsify(postings)
                 high_postings_by_rid[rid] = postings
 
                 ####################
@@ -453,9 +439,6 @@ class LicenseIndex(object):
             self.fragments_automaton.make_automaton()
         if USE_RULE_STARTS:
             match_aho.finalize_starts(self.starts_automaton)
-
-        # OPTIMIZED: sparser dicts for faster lookup
-        sparsify(self.rid_by_hash)
 
         ########################################################################
         # Do some sanity checks
@@ -909,55 +892,6 @@ class LicenseIndex(object):
         Used for tracing and debugging.
         """
         return u' '.join('None' if t is None else self.tokens_by_tid[t] for t in tokens)
-
-    @staticmethod
-    def loads(saved, fast=True):
-        """
-        Return a LicenseIndex from a pickled string.
-        """
-        pickler = cPickle if fast else pickle
-        idx = pickler.loads(saved)
-        # perform some optimizations on the dictionaries
-        sparsify(idx.dictionary)
-        return idx
-
-    @staticmethod
-    def load(fn, fast=True):
-        """
-        Return a LicenseIndex loaded from the `fn` file-like object pickled index.
-        """
-        pickler = cPickle if fast else pickle
-        idx = pickler.load(fn)
-        # perform some optimizations on the dictionaries
-        sparsify(idx.dictionary)
-        return idx
-
-    def dumps(self, fast=True):
-        """
-        Return a pickled string of self.
-        """
-        # here cPickle fails when we load it back. Pickle is slower to write but
-        # works when we read with cPickle :|
-        pickler = cPickle if fast else pickle
-        pickled = pickler.dumps(self, protocol=PICKLE_PROTOCOL)
-
-        # NB: this is making the usage of cPickle possible... as a weird workaround.
-        # the gain from dumping using cPickle is not as big with this optimize
-        # but still much faster than using the plain pickle module
-        # TODO: revisit me after the Python3 port
-        import pickletools
-        pickletools.code2op = sparsify(pickletools.code2op)
-        pickled = pickletools.optimize(pickled)
-        return pickled
-
-    def dump(self, fn, fast=False):
-        """
-        Dump (write) a pickled self to the `fn` file-like object.
-        """
-        # here cPickle fails when we load it back. Pickle is slower to write but
-        # works when we read with cPickle :|
-        pickler = cPickle if fast else pickle
-        return pickler.dump(self, fn, protocol=PICKLE_PROTOCOL)
 
 
 def get_weak_rids(len_legalese, tids_by_rid, _idx):

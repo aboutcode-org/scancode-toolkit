@@ -1,0 +1,5 @@
+license_expression: cddl-1.1
+is_license_notice: yes
+relevance: 99
+ignorable_urls:
+    - http://www.opensolaris.org/os/licensing

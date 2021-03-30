@@ -6,4 +6,6 @@ owner: Open Data Commons
 homepage_url: http://www.opendatacommons.org/licenses/odbl/1.0/
 spdx_license_key: ODbL-1.0
 text_urls:
-    - http://www.opendatacommons.org/licenses/odbl/1.0/
+    - https://www.opendatacommons.org/licenses/odbl/1.0/
+other_urls:
+    - https://opendatacommons.org/licenses/odbl/1-0/

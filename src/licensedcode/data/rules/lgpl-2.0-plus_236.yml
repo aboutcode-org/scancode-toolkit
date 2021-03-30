@@ -1,5 +1,6 @@
 license_expression: lgpl-2.0-plus
 is_license_notice: yes
 relevance: 100
+notes: contains a repeated trailing address fragment
 referenced_filenames:
     - COPYING.LIB

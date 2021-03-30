@@ -51,8 +51,8 @@ def get_automaton():
 
 def add_sequence(automaton, tids, rid, start=0, with_duplicates=False):
     """
-    Add the `tids` sequence of token ids for the `rid` Rule id starting at `start`
-    position to the an Aho-Corasick `automaton`.
+    Add the `tids` sequence of token ids for the `rid` Rule id starting at
+    `start` position to an Aho-Corasick `automaton`.
 
     If `with_duplicates` is True and if `tids` exists in the automaton, append a
     rule pointers to a list of "values" for these `tids`. Otherwise if `tids`
@@ -189,7 +189,6 @@ def match_fragments(idx, query_run):
     # Discard fragments that have any already matched positions in previous matches
     from licensedcode.match import filter_already_matched_matches
     matches, _discarded = filter_already_matched_matches(matches, query_run.query)
-
 
     # Merge matches with a zero max distance, e.g. contiguous or overlapping
     # with matches to the same rule

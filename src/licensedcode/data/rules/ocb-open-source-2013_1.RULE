@@ -1,0 +1,77 @@
+License 1 â€” License for Open-Source Software Implementations of OCB
+(Jan 9, 2013)
+
+Under this license, you are authorized to make, use, and distribute open-source software implementations of OCB. This license terminates for you if you sue someone over their
+open-source software implementation of OCB claiming that you have
+a patent covering their implementation.
+
+License for Open Source Software Implementations of OCB January 9, 2013
+
+1 Definitions
+
+1.1 â€œLicensorâ€ means Phillip Rogaway.
+
+1.2 â€œLicensed Patentsâ€ means any patent that claims priority to United
+States Patent Application No. 09918,615 entitled â€œMethod and Apparatus
+for Facilitating Efficient Authenticated Encryption,â€ and any utility,
+divisional, provisional, continuation, continuations-in-part, reexamination,
+reissue, or foreign counterpart patents that may issue with respect to the
+aforesaid patent application. This includes, but is not limited to, United
+States Patent No. 7,046,802 United States Patent No. 7,200,227 United
+States Patent No. 7,949,129 United States Patent No. 8,321,675  and any
+patent that issues out of United States Patent Application No. 13669,114.
+
+1.3 â€œUseâ€ means any practice of any invention claimed in the Licensed Patents.
+
+1.4 â€œSoftware Implementationâ€ means any practice of any invention
+claimed in the Licensed Patents that takes the form of software executing on
+a user-programmable, general-purpose computer or that takes the form of a
+computer-readable medium storing such software. Software Implementation does
+not include, for example, application-specific integrated circuits (ASICs),
+field-programmable gate arrays (FPGAs), embedded systems, or IP cores.
+
+1.5 â€œOpen Source Softwareâ€ means software whose source code is published
+and made available for inspection and use by anyone because either (a) the
+source code is subject to a license that permits recipients to copy, modify,
+and distribute the source code without payment of fees or royalties, or
+(b) the source code is in the public domain, including code released for
+public use through a CC0 waiver. All licenses certified by the Open Source
+Initiative at opensource.org as of January 9, 2013 and all Creative Commons
+licenses identified on the creativecommons.org website as of January 9,
+2013, including the Public License Fallback of the CC0 waiver, satisfy these
+requirements for the purposes of this license.
+
+1.6 â€œOpen Source Software Implementationâ€ means a Software
+Implementation in which the software implicating the Licensed Patents is
+Open Source Software. Open Source Software Implementation does not include
+any Software Implementation in which the software implicating the Licensed
+Patents is combined, so as to form a larger program, with software that is
+not Open Source Software.
+
+2 License Grant
+
+2.1 License. Subject to your compliance with the term s of this license,
+including the restriction set forth in Section 2.2, Licensor hereby
+grants to you a perpetual, worldwide, non-exclusive, non-transferable,
+non-sublicenseable, no-charge, royalty-free, irrevocable license to practice
+any invention claimed in the Licensed Patents in any Open Source Software
+Implementation.
+
+2.2 Restriction. If you or your affiliates institute patent litigation
+(including, but not limited to, a cross-claim or counterclaim in a lawsuit)
+against any entity alleging that any Use authorized by this license
+infringes another patent, then any rights granted to you under this license
+automatically terminate as of the date such litigation is filed.
+
+3 Disclaimer
+YOUR USE OF THE LICENSED PATENTS IS AT YOUR OWN RISK AND UNLESS REQUIRED
+BY APPLICABLE LAW, LICENSOR MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY
+KIND CONCERNING THE LICENSED PATENTS OR ANY PRODUCT EMBODYING ANY LICENSED
+PATENT, EXPRESS OR IMPLIED, STATUT ORY OR OTHERWISE, INCLUDING, WITHOUT
+LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY, FITNESS FOR A PARTICULAR
+PURPOSE, OR NONINFRINGEMENT. IN NO EVENT WILL LICENSOR BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+ARISING FROM OR RELATED TO ANY USE OF THE LICENSED PATENTS, INCLUDING,
+WITHOUT LIMITATION, DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE
+OR SPECIAL DAMAGES, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES PRIOR TO SUCH AN OCCURRENCE.

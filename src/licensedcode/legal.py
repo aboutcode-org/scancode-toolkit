@@ -32,8 +32,10 @@ special_names = (
     'AGREEMENTS',
     'ABOUT',
     'UNLICENSE',
-    'COMMITMENT'
-    'COMMITMENTS'
+    'COMMITMENT',
+    'COMMITMENTS',
+    'WARRANTY',
+    'COPYLEFT',
 )
 
 
@@ -56,8 +58,7 @@ def is_special_legal_file(location):
     )
 
     name_lower_is_special = (
-        special_name_lower == file_base_name_lower or
-        special_name_lower == file_extension_lower
+        special_name_lower in (file_base_name_lower, file_extension_lower)
             for special_name_lower in special_names_lower
     )
 

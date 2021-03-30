@@ -1,0 +1,11 @@
+key: fsf-notice
+short_name: FSF Free Software Notice
+name: Free Software Foundation - Free Software Notice
+category: Copyleft
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.fsf.org/licensing/licenses/
+spdx_license_key: LicenseRef-scancode-fsf-notice
+notes: This notice is commonly seen in L/GPL-licensed FSF and GNU projects
+ as a short additional notice in command line tools or build scritps. It 
+ was previsouly reported as a free but unknown. It is commonly seen in GCC, GCB,
+ Bash and related tools.
