@@ -29,12 +29,6 @@ from textcode.analysis import as_unicode
 class AlpinePackage(models.Package):
     extensions = ('.apk',)
     default_type = 'alpine'
-
-    installed_files = List(
-        item_type=models.PackageFile,
-        label='installed files',
-        help='List of files installed by this package.')
-
     def compute_normalized_license(self):
         _declared, detected = detect_declared_license(self.declared_license)
         return detected
@@ -56,8 +50,7 @@ class AlpinePackage(models.Package):
 
 def get_installed_packages(root_dir, **kwargs):
     """
-    Given a directory to a rootfs, yield a AlpinePackage and a list of `installed_files`
-    (path, md5sum) tuples.
+    Yield Package objects given a ``root_dir`` rootfs directory.
     """
     installed_file_loc = path.join(root_dir, 'lib/apk/db/installed')
     if not path.exists(installed_file_loc):
