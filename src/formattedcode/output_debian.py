@@ -6,12 +6,12 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 
+from debut.copyright import CopyrightField
 from debut.copyright import CopyrightFilesParagraph
 from debut.copyright import CopyrightHeaderParagraph
+from debut.copyright import CopyrightStatementField
 from debut.copyright import DebianCopyright
-
 from license_expression import Licensing
-import saneyaml
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
@@ -40,7 +40,7 @@ class DebianCopyrightOutput(OutputPlugin):
             # this is temporary , we should not needed these options explicitly
             # but instead adapt to the available data
             required_options=['copyright', 'license', 'license_text'],
-            sort_order=25),
+            sort_order=60),
     ]
 
     def is_enabled(self, output_debian, **kwargs):
@@ -105,7 +105,7 @@ def build_copyright_paragraphs(codebase, **kwargs):
             continue
         dfiles = scanned_file['path']
         dlicense = build_license(scanned_file)
-        dcopyright = build_copyright(scanned_file)
+        dcopyright = build_copyright_field(scanned_file)
 
         file_para = CopyrightFilesParagraph.from_dict(dict(
             files=dfiles,
@@ -116,17 +116,18 @@ def build_copyright_paragraphs(codebase, **kwargs):
         yield file_para
 
 
-def build_copyright(scanned_file):
+def build_copyright_field(scanned_file):
     """
-    Return a Debian-like text with one copyright per lien from the copyright
-    detected in `scanned_file` or None if no copyright is detected.
+    Return a CopyrightField from the copyright statements detected in
+    `scanned_file` or None if no copyright is detected.
     """
     # TODO: format copyright notices the same way Debian does
-    holders = scanned_file.get('holders', [])
+    holders = scanned_file.get('holders', []) or []
     if not holders:
         return
     # TODO: reinjects copyright year ranges like they show up in Debian
-    return '\n'.join(holder['value'] for holder in holders)
+    statements = [CopyrightStatementField(h['value']) for h in holders]
+    return CopyrightField(statements)
 
 
 def build_license(scanned_file):
