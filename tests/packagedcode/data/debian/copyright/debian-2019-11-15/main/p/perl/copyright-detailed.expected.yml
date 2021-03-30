@@ -33,10 +33,11 @@
   REGCOMP
   HSIEH-DERIVATIVE
   HSIEH-BSD
-- artistic-2.0 AND artistic-perl-1.0 AND bsd-new AND bsd-original AND bzip2-libbzip-2010 AND
-  cc0-1.0 AND fsf-ap AND gpl-1.0 AND gpl-1.0-plus AND gpl-2.0-plus AND gpl-3.0-plus AND gpl-3.0-plus
-  WITH bison-exception-2.2 AND hs-regexp-orig AND lgpl-2.1 AND lgpl-2.1-plus AND mit AND open-group
-  AND other-copyleft AND public-domain AND unicode-dfs-2015 AND unknown AND zlib
+- artistic-2.0 AND artistic-dist-1.0 AND artistic-perl-1.0 AND bsd-new AND bsd-original AND
+  bsd-x11 AND bzip2-libbzip-2010 AND cc0-1.0 AND fsf-ap AND gpl-1.0 AND gpl-1.0-plus AND gpl-2.0
+  AND gpl-2.0-plus AND gpl-3.0-plus AND gpl-3.0-plus WITH bison-exception-2.2 AND lgpl-2.1 AND
+  mit AND other-copyleft AND other-permissive AND paul-hsieh-derivative AND public-domain AND
+  regexp AND unicode-dfs-2015 AND unknown AND zlib
 - |
   Perl is Copyright (C) 1987-2018 by Larry Wall and others. All rights reserved.
   Copyright (c) 1996-2006, Nick Ing-Simmons
