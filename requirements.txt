@@ -65,7 +65,7 @@ typecode==21.2.24
 typecode-libmagic==5.39.210223
 typing==3.6.4
 typing-extensions==3.7.4.3
-urllib3==1.26.2
+urllib3==1.26.4
 urlpy==0.5
 wcwidth==0.1.7
 webencodings==0.5
