@@ -40,6 +40,6 @@ license_expressions:
   - gpl-1.0-plus
   - other-permissive
   - proprietary-license
-  - other-permissive
+  - isc
   - osf-1990
   - other-permissive
