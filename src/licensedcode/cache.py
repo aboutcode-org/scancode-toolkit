@@ -266,16 +266,16 @@ def build_unknown_spdx_symbol(licenses_db=None):
     return LicenseSymbolLike(licenses[u'unknown-spdx'])
 
 
-def get_cache():
+def get_cache(check_consistency=SCANCODE_DEV_MODE):
     """
     Optionally return and either load or build and cache a LicenseCache.
     """
-    populate_cache()
+    populate_cache(check_consistency=check_consistency)
     global _LICENSE_CACHE
     return _LICENSE_CACHE
 
 
-def populate_cache():
+def populate_cache(check_consistency=SCANCODE_DEV_MODE):
     """
     Load or build and cache a LicenseCache. Return None.
     """
@@ -284,7 +284,7 @@ def populate_cache():
         _LICENSE_CACHE = LicenseCache.load_or_build(
             licensedcode_cache_dir=licensedcode_cache_dir,
             scancode_cache_dir=scancode_cache_dir,
-            check_consistency=SCANCODE_DEV_MODE,
+            check_consistency=check_consistency,
             # used for testing only
             timeout=LICENSE_INDEX_LOCK_TIMEOUT,
             tree_base_dir=scancode_src_dir,
@@ -338,39 +338,42 @@ def tree_checksum(tree_base_dir=licensedcode_dir, _ignored=_ignored_from_hash):
     return md5(hashable).hexdigest()
 
 
-def get_index():
+def get_index(check_consistency=SCANCODE_DEV_MODE):
     """
     Return and eventually build and cache a LicenseIndex.
     """
-    return get_cache().index
+    return get_cache(check_consistency=check_consistency).index
 
 
-def get_licenses_db():
+get_cached_index = get_index
+
+
+def get_licenses_db(check_consistency=SCANCODE_DEV_MODE):
     """
     Return a mapping of license key -> license object.
     """
-    return get_cache().db
+    return get_cache(check_consistency=check_consistency).db
 
 
-def get_licensing():
+def get_licensing(check_consistency=SCANCODE_DEV_MODE):
     """
     Return a license_expression.Licensing objet built from the all the licenses.
     """
-    return get_cache().licensing
+    return get_cache(check_consistency=check_consistency).licensing
 
 
-def get_unknown_spdx_symbol():
+def get_unknown_spdx_symbol(check_consistency=SCANCODE_DEV_MODE):
     """
     Return the unknown SPDX license symbol.
     """
-    return get_cache().unknown_spdx_symbol
+    return get_cache(check_consistency=check_consistency).unknown_spdx_symbol
 
 
-def get_spdx_symbols(licenses_db=None):
+def get_spdx_symbols(licenses_db=None, check_consistency=SCANCODE_DEV_MODE):
     """
     Return a mapping of {lowercased SPDX license key: LicenseSymbolLike} where
     LicenseSymbolLike wraps a License object
     """
     if licenses_db:
         return build_spdx_symbols(licenses_db)
-    return get_cache().spdx_symbols
+    return get_cache(check_consistency=check_consistency).spdx_symbols
