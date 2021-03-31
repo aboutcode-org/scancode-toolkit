@@ -1,15 +1,108 @@
 Changelog
 =========
 
+v21.4.x (next)
+--------------
 
-v21.3.x (next)
-------------
+Breaking API changes:
+
+ - The data structure of the JSON output has changed for copyrights, authors
+   and holders: we now use proper name for attributes and not a generic "value".
+
+ - The data structure of the JSON output has changed for licenses: we now
+   return match details once for each matched license expression rather than
+   once for each license in a matched expression. There is a new top-level
+   "licenses" attributes that contains the data details for each detected
+   licenses only once. This data can contain the reference license text
+   as an option.
+
+ - The data structure of the JSON output has changed for packages: we now
+   return "package_manifests" package information at the manifest file-level
+   rather than "packages". There is a a new top-level "packages" attribute
+   that contains each package instace that can be aggregating data from
+   multiple manifests for a single package instance.
 
 
-Misc.:
+Ouputs:
+
+ - Add new YAML-formatted output. This is exactly the same data structure as for
+   the JSON output
+
+
+License scanning:
+
+ - Add new command line option to filter ignorable copyrights when included
+   in licenses.
+
+
+
+v21.3.30
+--------
+
+This is a mjor version with no breaking API changes. Heads-up: the next version
+will bring up some significant API changes.
+
+
+Security:
+
+ - Update dependency versions for security.
+
+
+License scanning:
+
+ - Add 22 new and update 71 existing reference licenses
+
+ - Update licenses to include the SPDX license list 3.12
+
+ - Improve license detection accuracy with over 2300 new and improved license
+   detection rules
+
+ - Undeprecate the regexp license and deprecate the hs-regexp-orig license
+
+ - Improve license db initial load time with caching for faster scancode
+   start time
+
+ - Ensure that license short names are no more than 50 characters long
+
+ - Thank you to Chin-Yeung Li @chinyeungli, Armijn Hemmel @jelmer
+
+
+Copyright scanning:
+
+ - Detect SPDX-FileCopyrightText as defined by the FSFE Reuse project
 
  - Fix bug when using the --filter-clues command line option
    Thank you to Van Lindberg @VanL
+
+ - Allow calling copyright detection from text lines to ease integration
+   Thank you to Jelmer Vernooĳ @jelmer
+   
+
+Package scanning:
+
+ - Add support for installed RPMs detection internally (not wired to scans)
+   Thank you to Chin-Yeung Li @chinyeungli
+
+ - Improve handling of Debian copyright files with faster and more
+   accurate license detection
+   Thank you to Thomas Druez @tdruez 
+   
+ - Add new built-in support for installed_files report. Only available when
+   used as a library.
+
+ - Improve support for RPM, npm, Debian, build scripts (Bazel) and Go packages
+ 
+ - Add new support to collect information from semi-structured Readme files
+
+
+Ouputs:
+
+ - Add new Debian copyright-formatted output.
+   Thank you to Jelmer Vernooĳ @jelmer
+   
+ - Fix bug in --ignore where directories where not skipped correctly
+   Thank you to Pierre Tardy @tardyp 
+
 
 
 v21.2.25

@@ -50,7 +50,7 @@ pycryptodome==3.6.1
 Pygments==2.7.3
 pymaven-patch==0.2.9
 pyparsing==2.4.0
-PyYAML==3.12
+PyYAML==5.4.1
 rdflib==4.2.1
 requests==2.25.1
 saneyaml==0.4
