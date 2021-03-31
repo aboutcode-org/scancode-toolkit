@@ -1,0 +1,5 @@
+license_expression: zlib
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+notes: Seen in BSD implementation of gzip

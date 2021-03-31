@@ -2,3 +2,5 @@ license_expression: unknown
 is_license_reference: yes
 ignorable_authors:
     - the National Center for Atmospheric Research
+notes: seen with FFpack at https://github.com/notlion/libluaav-wip/blob/master/gamma/fftpack%2B%2B2.cpp
+ technically since this is a US agency, it may be public domain in the US.

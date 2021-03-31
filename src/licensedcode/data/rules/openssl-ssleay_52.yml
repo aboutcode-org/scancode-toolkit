@@ -1,0 +1,7 @@
+license_expression: openssl-ssleay
+is_license_notice: yes
+relevance: 100
+ignorable_authors:
+    - the OpenSSL Project
+ignorable_urls:
+    - http://www.openssl.org/

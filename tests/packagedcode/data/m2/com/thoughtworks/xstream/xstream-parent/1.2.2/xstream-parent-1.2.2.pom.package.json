@@ -29,7 +29,7 @@
   "code_view_url": "https://svn.codehaus.org/xstream/tags/XSTREAM_1_2_2",
   "vcs_url": "svn+https://svn.codehaus.org/xstream/tags/XSTREAM_1_2_2",
   "copyright": null,
-  "license_expression": "other-permissive AND bsd-new",
+  "license_expression": "bsd-new",
   "declared_license": [
     {
       "name": "BSD style",

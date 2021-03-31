@@ -1,6 +1,6 @@
 license_expression: newsletr
 is_license_text: yes
-minimum_coverage: 10
+minimum_coverage: 50
 notes: license text as published by SPDX
 ignorable_copyrights:
     - Copyright 1989 2004 by Hunter Goatley

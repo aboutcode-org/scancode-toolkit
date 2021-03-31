@@ -1,3 +1,4 @@
 license_expression: gpl-2.0-plus OR bsd-new
 is_license_notice: yes
+minimum_coverage: 85
 relevance: 99

@@ -1,3 +1,4 @@
 license_expression: free-unknown
 is_license_notice: yes
-notes: typically for GPL but this can vary and be various versions
+relevance: 100
+minimum_coverage: 99

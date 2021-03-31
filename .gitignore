@@ -85,3 +85,6 @@ tcl
 
 *.orig
 /release*
+/00-*.txt
+/z-todo-licenses-*
+

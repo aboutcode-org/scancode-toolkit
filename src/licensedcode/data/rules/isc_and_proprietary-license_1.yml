@@ -1,0 +1,5 @@
+license_expression: isc AND proprietary-license
+is_license_text: yes
+relevance: 90
+notes: Seen in https://github.com/norouzi/mih/blob/96a629de834c1b974b0c5e378ab1037ee42120ab/license.txt
+    The rare extra citation requirement is reported as proprietary

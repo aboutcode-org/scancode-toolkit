@@ -1,0 +1,15 @@
+key: elastic-license-v2
+short_name: Elastic License 2.0 (ELv2)
+name: Elastic License 2.0 (ELv2)
+category: Source-available
+spdx_license_key: LicenseRef-scancode-elastic-license-v2
+owner: Elastic
+homepage_url: https://www.elastic.co/licensing/elastic-license
+text_urls:
+    - https://raw.githubusercontent.com/elastic/elasticsearch/6ab35978f28351e91dcf51d0ee2f4d5a74e02697/licenses/ELASTIC-LICENSE-2.0.txt
+faq_url: https://www.elastic.co/blog/elastic-license-v2
+other_urls:
+    - https://www.elastic.co/blog/elastic-license-v2
+ignorable_urls:
+  - https://www.elastic.co/licensing/elastic-license
+

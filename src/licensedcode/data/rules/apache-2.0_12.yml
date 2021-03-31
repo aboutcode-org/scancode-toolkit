@@ -1,7 +1,6 @@
 license_expression: apache-2.0
 is_license_notice: yes
-minimum_coverage: 80
 referenced_filenames:
-    - NOTICE
+    - AL2.0
 ignorable_urls:
-    - http://www.apache.org/licenses/LICENSE-2.0
+    - https://www.apache.org/licenses/

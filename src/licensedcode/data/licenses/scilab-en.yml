@@ -1,0 +1,16 @@
+key: scilab-en
+short_name: SCILAB
+name: SCILAB License 
+category: Proprietary Free
+owner: INRIA/ENPC
+spdx_license_key: LicenseRef-scancode-scilba-en
+homepage_url: http://web.archive.org/web/20051212214843/http://www.scilab.org/legal/license.html
+text_urls: 
+    - https://directory.fsf.org/wiki/License:Scilab-old
+ignorable_authors:
+  - INRIA
+ignorable_copyrights:
+  - Scilab (c) INRIA-ENPC.
+ignorable_holders:
+  - Scilab INRIA-ENPC.
+
