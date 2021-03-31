@@ -5,6 +5,7 @@ v21.4.x (next)
 --------------
 
 Breaking API changes:
+~~~~~~~~~~~~~~~~~~~~~
 
  - The data structure of the JSON output has changed for copyrights, authors
    and holders: we now use proper name for attributes and not a generic "value".
@@ -24,12 +25,14 @@ Breaking API changes:
 
 
 Ouputs:
+~~~~~~~
 
  - Add new YAML-formatted output. This is exactly the same data structure as for
    the JSON output
 
 
 License scanning:
+~~~~~~~~~~~~~~~~~
 
  - Add new command line option to filter ignorable copyrights when included
    in licenses.
@@ -39,22 +42,24 @@ License scanning:
 v21.3.30
 --------
 
-This is a mjor version with no breaking API changes. Heads-up: the next version
-will bring up some significant API changes.
+This is a major version with no breaking API changes. Heads-up: the next version
+will bring up some significant API changes summarized above.
 
 
 Security:
+~~~~~~~~~
 
- - Update dependency versions for security.
+ - Update dependency versions for security fixes.
 
 
 License scanning:
+~~~~~~~~~~~~~~~~~
 
- - Add 22 new and update 71 existing reference licenses
+ - Add 22 new licenses and update 71 existing licenses
 
  - Update licenses to include the SPDX license list 3.12
 
- - Improve license detection accuracy with over 2300 new and improved license
+ - Improve license detection accuracy with over 2,300 new and updated license
    detection rules
 
  - Undeprecate the regexp license and deprecate the hs-regexp-orig license
@@ -62,23 +67,35 @@ License scanning:
  - Improve license db initial load time with caching for faster scancode
    start time
 
- - Ensure that license short names are no more than 50 characters long
+ - Add experimental SCANCODE_LICENSE_INDEX_CACHE environment variable to point
+   to an alternative directory where the license index cache is stored (as
+   opposed to store this as package data.)
 
- - Thank you to Chin-Yeung Li @chinyeungli, Armijn Hemmel @jelmer
+ - Ensure that license short names are not more than 50 characters long
+
+ - Thank you to:
+    - Dennis Clark @DennisClark
+    - Chin-Yeung Li @chinyeungli
+    - Armijn Hemmel @armijnhemel
+    - Sarita Singh @itssingh
+    - Akanksha Garg @akugarg
 
 
 Copyright scanning:
+~~~~~~~~~~~~~~~~~~~
 
  - Detect SPDX-FileCopyrightText as defined by the FSFE Reuse project
+   Thank you to Daniel Eder @daniel-eder
 
  - Fix bug when using the --filter-clues command line option
    Thank you to Van Lindberg @VanL
 
  - Allow calling copyright detection from text lines to ease integration
    Thank you to Jelmer Vernooĳ @jelmer
-   
+
 
 Package scanning:
+~~~~~~~~~~~~~~~~~
 
  - Add support for installed RPMs detection internally (not wired to scans)
    Thank you to Chin-Yeung Li @chinyeungli
@@ -91,24 +108,40 @@ Package scanning:
    used as a library.
 
  - Improve support for RPM, npm, Debian, build scripts (Bazel) and Go packages
- 
+   Thank you to:
+   - Divyansh Sharma @Divyansh2512
+   - Jonothan Yang @JonoYang
+   - Steven Esser @majurg
+
  - Add new support to collect information from semi-structured Readme files
+   and related metadata files. 
+   Thank you to Jonothan Yang @JonoYang and Steven Esser @majurg
 
 
 Ouputs:
+~~~~~~~
 
  - Add new Debian copyright-formatted output.
    Thank you to Jelmer Vernooĳ @jelmer
    
- - Fix bug in --ignore where directories where not skipped correctly
-   Thank you to Pierre Tardy @tardyp 
+ - Fix bug in --include where directories where not skipped correctly
+   Thank you to Pierre Tardy @tardyp
 
+
+Misc. and documentation improvements:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - Update the way tests assertions are made
+   Thank you to Aditya Viki @adityaviki
+
+ - Thank you to Aryan Kenchappagol @aryanxk02
 
 
 v21.2.25
 --------
 
 Installation:
+~~~~~~~~~~~~~
 
  - Resolve reported installation issues on macOS, Windows and Linux
  - Stop using extras for a default wheel installation
@@ -118,6 +151,7 @@ Installation:
    Thank you to Viktor Tiulpin @tiulpin
 
 License scanning:
+~~~~~~~~~~~~~~~~~
 
  - Over 150 new and updated licenses
  - Support the latest SPDX license list v3.11
@@ -126,7 +160,7 @@ License scanning:
  - Fix license cache handling issues
 
 Misc.:
-
+~~~~~~
  - Update extractcode, typecode and their native dependencies for better support
    of latests versions of macOS.
 
@@ -135,12 +169,14 @@ v21.2.9
 -------
 
 Security:
+~~~~~~~~~
 
  - Update vulnerable LXML to version 4.6.2 to fix
    https://nvd.nist.gov/vuln/detail/CVE-2020-27783
    This was detected thanks to https://github.com/nexb/vulnerablecode
 
 Operating system support:
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
  - Drop support for Python 2  #295
  - Drop support for 32 bits on Windows #335
@@ -150,6 +186,7 @@ Operating system support:
  - Add deprecation message for native Windows support #2366
 
 License scanning:
+~~~~~~~~~~~~~~~~~
 
  - Improve license detection accuracy with over 8400 new license detection rules
    added or updated
@@ -163,6 +200,7 @@ License scanning:
    statement (that typically may be reported as some unknown license)
 
 Package scanning:
+~~~~~~~~~~~~~~~~~
 
  - Add detection of package-installed files
  - Add analysis of system package installed databases for Debian, OpenWRT and
@@ -170,10 +208,12 @@ Package scanning:
  - Add support for Alpine Linux, Debian, OpenWRT.
 
 Copyright scanning:
+~~~~~~~~~~~~~~~~~~~
 
  - Improve detection with minor grammar fixes
 
 Misc.:
+~~~~~~
 
  - Adopt a new calendar date-based versioning for scancode-toolkit version numbers
  - Update thirdparty dependencies and built-in plugins
@@ -190,6 +230,7 @@ v3.2.3 (2020-10-27)
 -------------------
 
 Notable changes:
+~~~~~~~~~~~~~~~~
 
  - Collect Windows executable metadata #652
  - Fix minor bugs
@@ -200,6 +241,7 @@ v3.2.2rc3 (2020-09-21)
 ----------------------
 
 Notable changes:
+~~~~~~~~~~~~~~~~
 
  - Use commoncode, typecode and extractcode as external standalone packages #2233
 
@@ -208,6 +250,7 @@ v3.2.1rc2 (2020-09-11)
 ----------------------
 
 Minor bug fixes:
+~~~~~~~~~~~~~~~~
 
  - Do not fail if Debian status is missing #2224
  - Report correct detected license text in binary #2226 #2227
