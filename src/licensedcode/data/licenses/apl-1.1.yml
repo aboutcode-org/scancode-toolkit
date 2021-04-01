@@ -1,0 +1,15 @@
+key: apl-1.1
+short_name: APL-1.1
+name: Academic Public License version 1.1
+category: Permissive
+owner: OMNeT++
+spdx_license_key: LicenseRef-scancode-apl-1.1
+homepage_url: https://github.com/omnetpp/omnetpp/blob/master/doc/License
+other_urls: 
+     - https://opencarp.org/download/license
+ignorable_copyrights:
+    -  Copyright (c) 2003, 2010, 2015 Andras Varga
+ignorable_holders:
+    - Andras Varga
+ignorable_urls:
+    - http://www.omnest.com/
