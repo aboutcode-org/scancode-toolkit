@@ -1,0 +1,5 @@
+license_expression: x11
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://source.icu-project.org/repos/icu/icu/trunk/license.html

@@ -1,0 +1,5 @@
+license_expression: python
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.python.org/download/releases/2.4.2/license/
