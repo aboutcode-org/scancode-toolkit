@@ -68,6 +68,11 @@ def test_license_option_reports_license_texts_diag_long_lines():
     check_json_scan(test_loc, result_file, regen=False)
 
 
+def test_reindex_licenses_works():
+    args = ['--reindex-licenses']
+    run_scan_click(args)
+
+
 @pytest.mark.scanslow
 def test_scan_license_with_url_template():
     test_dir = test_env.get_test_loc('plugin_license/license_url', copy=True)

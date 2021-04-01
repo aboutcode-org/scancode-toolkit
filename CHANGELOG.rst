@@ -39,7 +39,7 @@ License scanning:
 
 
 
-v21.3.30
+v21.3.31
 --------
 
 This is a major version with no breaking API changes. Heads-up: the next version
