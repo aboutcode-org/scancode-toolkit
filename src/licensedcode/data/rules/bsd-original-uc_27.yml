@@ -1,0 +1,6 @@
+license_expression: bsd-original-uc
+is_license_text: yes
+relevance: 100
+notes: seen in old sendmail notices
+ignorable_authors:
+    - the University of California, Berkeley and its contributors

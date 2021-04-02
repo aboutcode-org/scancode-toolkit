@@ -1,4 +1,4 @@
-aboutcode-toolkit==5.1.0
+aboutcode-toolkit==6.0.0
 apipkg==1.5
 codecov==2.1.11
 coverage==5.3.1

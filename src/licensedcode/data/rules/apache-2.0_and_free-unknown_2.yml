@@ -1,0 +1,7 @@
+license_expression: apache-2.0 AND free-unknown
+is_license_notice: yes
+minimum_coverage: 80
+referenced_filenames:
+    - docs/THIRDPARTY
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0

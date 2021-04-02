@@ -10,7 +10,7 @@ license_expressions:
   - nilsson-historical
   - newlib-historical
   - bsd-new
-  - warranty-disclaimer
+  - amd-historical
   - bsd-new
   - bsd-simplified
   - bsd-simplified
@@ -20,6 +20,7 @@ license_expressions:
   - bsd-new
   - delorie-historical
   - lgpl-2.1-plus
+  - lgpl-2.0-plus
   - lgpl-2.0-plus
   - intel-osl-1993
   - osf-1990
@@ -49,3 +50,4 @@ license_expressions:
   - bsd-unmodified
   - bsd-simplified
   - bsd-new
+

@@ -23,10 +23,12 @@
     "vcs_url": null,
     "copyright": null,
     "license_expression": "apache-2.0",
-    "declared_license": [{
+    "declared_license": [
+      {
         "type": "Apache License, Version 2.0",
         "url": "http://www.apache.org/licenses/LICENSE-2.0"
-    }],
+      }
+    ],
     "notice_text": null,
     "root_path": null,
     "dependencies": [],

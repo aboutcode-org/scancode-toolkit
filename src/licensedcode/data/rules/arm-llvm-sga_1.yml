@@ -1,0 +1,5 @@
+license_expression: arm-llvm-sga
+is_license_text: yes
+relevance: 99
+ignorable_urls:
+    - http://llvm.org/

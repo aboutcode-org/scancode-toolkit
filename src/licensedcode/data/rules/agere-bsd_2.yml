@@ -1,6 +1,7 @@
 license_expression: agere-bsd
 is_license_text: yes
 relevance: 100
+minimum_coverage: 80
 ignorable_copyrights:
     - Copyright (c) Agere Systems Inc.
 ignorable_holders:

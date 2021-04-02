@@ -8,3 +8,4 @@ homepage_url: http://bzip.org/1.0.5/bzip2-manual-1.0.5.html
 notes: formerly under spdx_license_key bzip2-1.0.5. See bzip2-libbzip-2010 for replacement
 other_urls:
     - http://www.bzip.org/
+    - https://sourceware.org/git/?p=bzip2.git;a=blob;f=LICENSE;hb=bzip2-1.0.5

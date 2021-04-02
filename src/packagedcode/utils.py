@@ -7,9 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-
 from license_expression import Licensing
-
 
 PLAIN_URLS = (
     'https://',
@@ -129,21 +127,30 @@ def build_description(summary, description):
     return description
 
 
-def combine_expressions(expressions, relation='AND', licensing=Licensing()):
+def combine_expressions(expressions, relation='AND', unique=True, licensing=Licensing()):
     """
     Return a combined license expression string with relation, given a list of
     license expressions strings.
 
-    For example:
-    >>> a = 'mit'
-    >>> b = 'gpl'
-    >>> combine_expressions([a, b])
-    'mit AND gpl'
-    >>> assert 'mit' == combine_expressions([a])
-    >>> combine_expressions([])
-    >>> combine_expressions(None)
-    >>> combine_expressions(('gpl', 'mit', 'apache',))
-    'gpl AND mit AND apache'
+    For example::
+
+        >>> a = 'mit'
+        >>> b = 'gpl'
+        >>> combine_expressions([a, b])
+        'mit AND gpl'
+        >>> assert 'mit' == combine_expressions([a])
+        >>> combine_expressions([])
+        >>> combine_expressions(None)
+        >>> combine_expressions(('gpl', 'mit', 'apache',))
+        'gpl AND mit AND apache'
+        >>> combine_expressions(('gpl', 'mit', 'mit',))
+        'gpl AND mit'
+        >>> combine_expressions(('mit WITH foo', 'gpl', 'mit',))
+        'mit WITH foo AND gpl AND mit'
+        >>> combine_expressions(('gpl', 'mit', 'mit',), relation='OR', unique=False)
+        'gpl OR mit OR mit'
+        >>> combine_expressions(('mit', 'gpl', 'mit',))
+        'mit AND gpl'
     """
     if not expressions:
         return
@@ -153,14 +160,16 @@ def combine_expressions(expressions, relation='AND', licensing=Licensing()):
             'expressions should be a list or tuple and not: {}'.format(
                 type(expressions)))
 
-    # Remove duplicate element in the expressions list
-    expressions = list(dict((x, True) for x in expressions).keys())
+    if unique:
+        # Remove duplicate element in the expressions list
+        expressions = list(dict((x, True) for x in expressions).keys())
 
     if len(expressions) == 1:
         return expressions[0]
 
     expressions = [licensing.parse(le, simple=True) for le in expressions]
-    if relation == 'OR':
-        return str(licensing.OR(*expressions))
-    else:
-        return str(licensing.AND(*expressions))
+
+    # licensing.OR or licensing.AND
+    assert relation and relation.upper() in ('AND', 'OR',)
+    relationship = getattr(licensing, relation)
+    return str(relationship(*expressions))

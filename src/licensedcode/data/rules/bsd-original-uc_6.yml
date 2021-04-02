@@ -1,6 +1,3 @@
 license_expression: bsd-original-uc
-is_license_text: yes
-relevance: 99
-minimum_coverage: 90
-notes: this is not exactly the bsd-original-uc text but a rare and close enough variant that
-    once existed in the early/mid 1990's as part of tpcpdump in bsdi 2.1
+is_license_reference: yes
+relevance: 100

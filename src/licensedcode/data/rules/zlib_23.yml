@@ -1,2 +1,5 @@
 license_expression: zlib
 is_license_text: yes
+minimum_coverage: 60
+
+

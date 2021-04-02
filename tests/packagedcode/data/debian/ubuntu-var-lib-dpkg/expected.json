@@ -41,10 +41,10 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
-    "multi_arch": "foreign",
     "installed_files": [
       {
         "path": "/etc/debian_version",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -52,6 +52,7 @@
       },
       {
         "path": "/etc/default/motd-news",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -59,6 +60,7 @@
       },
       {
         "path": "/etc/dpkg/origins/debian",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -66,6 +68,7 @@
       },
       {
         "path": "/etc/dpkg/origins/ubuntu",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -73,6 +76,7 @@
       },
       {
         "path": "/etc/host.conf",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -80,6 +84,7 @@
       },
       {
         "path": "/etc/issue",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -87,6 +92,7 @@
       },
       {
         "path": "/etc/issue.net",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -94,6 +100,7 @@
       },
       {
         "path": "/etc/legal",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -101,6 +108,7 @@
       },
       {
         "path": "/etc/lsb-release",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -108,6 +116,7 @@
       },
       {
         "path": "/etc/profile.d/01-locale-fix.sh",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -115,6 +124,7 @@
       },
       {
         "path": "/etc/update-motd.d/00-header",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -122,6 +132,7 @@
       },
       {
         "path": "/etc/update-motd.d/10-help-text",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -129,6 +140,7 @@
       },
       {
         "path": "/etc/update-motd.d/50-motd-news",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -136,6 +148,7 @@
       },
       {
         "path": "/lib/systemd/system/motd-news.service",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -143,6 +156,7 @@
       },
       {
         "path": "/lib/systemd/system/motd-news.timer",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -150,6 +164,7 @@
       },
       {
         "path": "/usr/bin/locale-check",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -157,6 +172,7 @@
       },
       {
         "path": "/usr/lib/os-release",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -164,6 +180,7 @@
       },
       {
         "path": "/usr/share/base-files/dot.bashrc",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -171,6 +188,7 @@
       },
       {
         "path": "/usr/share/base-files/dot.profile",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -178,6 +196,7 @@
       },
       {
         "path": "/usr/share/base-files/dot.profile.md5sums",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -185,6 +204,7 @@
       },
       {
         "path": "/usr/share/base-files/info.dir",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -192,6 +212,7 @@
       },
       {
         "path": "/usr/share/base-files/motd",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -199,6 +220,7 @@
       },
       {
         "path": "/usr/share/base-files/networks",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -206,6 +228,7 @@
       },
       {
         "path": "/usr/share/base-files/profile",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -213,6 +236,7 @@
       },
       {
         "path": "/usr/share/base-files/profile.md5sums",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -220,6 +244,7 @@
       },
       {
         "path": "/usr/share/base-files/staff-group-for-usr-local",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -227,6 +252,7 @@
       },
       {
         "path": "/usr/share/common-licenses/Apache-2.0",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -234,6 +260,7 @@
       },
       {
         "path": "/usr/share/common-licenses/Artistic",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -241,6 +268,7 @@
       },
       {
         "path": "/usr/share/common-licenses/BSD",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -248,6 +276,7 @@
       },
       {
         "path": "/usr/share/common-licenses/CC0-1.0",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -255,6 +284,7 @@
       },
       {
         "path": "/usr/share/common-licenses/GFDL-1.2",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -262,6 +292,7 @@
       },
       {
         "path": "/usr/share/common-licenses/GFDL-1.3",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -269,6 +300,7 @@
       },
       {
         "path": "/usr/share/common-licenses/GPL-1",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -276,6 +308,7 @@
       },
       {
         "path": "/usr/share/common-licenses/GPL-2",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -283,6 +316,7 @@
       },
       {
         "path": "/usr/share/common-licenses/GPL-3",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -290,6 +324,7 @@
       },
       {
         "path": "/usr/share/common-licenses/LGPL-2",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -297,6 +332,7 @@
       },
       {
         "path": "/usr/share/common-licenses/LGPL-2.1",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -304,6 +340,7 @@
       },
       {
         "path": "/usr/share/common-licenses/LGPL-3",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -311,6 +348,7 @@
       },
       {
         "path": "/usr/share/common-licenses/MPL-1.1",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -318,6 +356,7 @@
       },
       {
         "path": "/usr/share/common-licenses/MPL-2.0",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -325,6 +364,7 @@
       },
       {
         "path": "/usr/share/dict",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -332,6 +372,7 @@
       },
       {
         "path": "/usr/share/doc/base-files/README",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -339,6 +380,7 @@
       },
       {
         "path": "/usr/share/doc/base-files/README.FHS",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -346,6 +388,7 @@
       },
       {
         "path": "/usr/share/doc/base-files/changelog.gz",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -353,6 +396,7 @@
       },
       {
         "path": "/usr/share/doc/base-files/copyright",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -360,6 +404,7 @@
       },
       {
         "path": "/usr/share/lintian/overrides/base-files",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -367,6 +412,7 @@
       },
       {
         "path": "/etc/os-release",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -374,6 +420,7 @@
       },
       {
         "path": "/usr/share/common-licenses/GFDL",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -381,6 +428,7 @@
       },
       {
         "path": "/usr/share/common-licenses/GPL",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -388,6 +436,7 @@
       },
       {
         "path": "/usr/share/common-licenses/LGPL",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
@@ -395,12 +444,14 @@
       },
       {
         "path": "/usr/share/doc/base-files/FAQ",
+        "size": 0,
         "sha1": null,
         "md5": null,
         "sha256": null,
         "sha512": null
       }
     ],
+    "multi_arch": "foreign",
     "purl": "pkg:deb/ubuntu/base-files@11ubuntu5?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -448,10 +499,10 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
-    "multi_arch": "foreign",
     "installed_files": [
       {
         "path": "/usr/sbin/update-passwd",
+        "size": 0,
         "sha1": null,
         "md5": "151c5933546d90b0c6de9ba305d62f0e",
         "sha256": null,
@@ -459,6 +510,7 @@
       },
       {
         "path": "/usr/share/base-passwd/group.master",
+        "size": 0,
         "sha1": null,
         "md5": "eee0dc6a097ceaab6fd938092bc4b86c",
         "sha256": null,
@@ -466,6 +518,7 @@
       },
       {
         "path": "/usr/share/base-passwd/passwd.master",
+        "size": 0,
         "sha1": null,
         "md5": "47f32e500f784c3a1793aa2aa6fc5c31",
         "sha256": null,
@@ -473,6 +526,7 @@
       },
       {
         "path": "/usr/share/doc-base/users-and-groups",
+        "size": 0,
         "sha1": null,
         "md5": "cdac90d3d3ef8d60e4bc0eb73efa68d7",
         "sha256": null,
@@ -480,6 +534,7 @@
       },
       {
         "path": "/usr/share/doc/base-passwd/README",
+        "size": 0,
         "sha1": null,
         "md5": "504775da5bdbb321fcb9f47562a45b57",
         "sha256": null,
@@ -487,6 +542,7 @@
       },
       {
         "path": "/usr/share/doc/base-passwd/changelog.gz",
+        "size": 0,
         "sha1": null,
         "md5": "1c6403ff29b43b43a67bbc75bd9576b3",
         "sha256": null,
@@ -494,6 +550,7 @@
       },
       {
         "path": "/usr/share/doc/base-passwd/copyright",
+        "size": 0,
         "sha1": null,
         "md5": "8eb6cd60f247ab06801038c6daf03f05",
         "sha256": null,
@@ -501,6 +558,7 @@
       },
       {
         "path": "/usr/share/doc/base-passwd/users-and-groups.html",
+        "size": 0,
         "sha1": null,
         "md5": "4bfe6b64d2007e5cf366a124bacb55b1",
         "sha256": null,
@@ -508,6 +566,7 @@
       },
       {
         "path": "/usr/share/doc/base-passwd/users-and-groups.txt.gz",
+        "size": 0,
         "sha1": null,
         "md5": "d8e20ac4dd13bb84d0fdfd203aa9b1dc",
         "sha256": null,
@@ -515,6 +574,7 @@
       },
       {
         "path": "/usr/share/lintian/overrides/base-passwd",
+        "size": 0,
         "sha1": null,
         "md5": "8dc658a3a1b2fe714b45d245439bca24",
         "sha256": null,
@@ -522,6 +582,7 @@
       },
       {
         "path": "/usr/share/man/de/man8/update-passwd.8.gz",
+        "size": 0,
         "sha1": null,
         "md5": "1a3f08c04ae471580efcde9ea0936369",
         "sha256": null,
@@ -529,6 +590,7 @@
       },
       {
         "path": "/usr/share/man/es/man8/update-passwd.8.gz",
+        "size": 0,
         "sha1": null,
         "md5": "5ccedf3c81ac83de429e982ab2b07cdf",
         "sha256": null,
@@ -536,6 +598,7 @@
       },
       {
         "path": "/usr/share/man/fr/man8/update-passwd.8.gz",
+        "size": 0,
         "sha1": null,
         "md5": "bbf6c14f5296de0a6752d5972137d28f",
         "sha256": null,
@@ -543,6 +606,7 @@
       },
       {
         "path": "/usr/share/man/ja/man8/update-passwd.8.gz",
+        "size": 0,
         "sha1": null,
         "md5": "084c4f1c22b6d3fbf086fa8fce013dff",
         "sha256": null,
@@ -550,6 +614,7 @@
       },
       {
         "path": "/usr/share/man/man8/update-passwd.8.gz",
+        "size": 0,
         "sha1": null,
         "md5": "b4b1ebf4b0260cb3a4d19e5b733e4479",
         "sha256": null,
@@ -557,6 +622,7 @@
       },
       {
         "path": "/usr/share/man/pl/man8/update-passwd.8.gz",
+        "size": 0,
         "sha1": null,
         "md5": "011317bc9fdf4d1be3fa6a6b6851fcd2",
         "sha256": null,
@@ -564,12 +630,14 @@
       },
       {
         "path": "/usr/share/man/ru/man8/update-passwd.8.gz",
+        "size": 0,
         "sha1": null,
         "md5": "977fb42cbcfa775d302b5ca4955c328c",
         "sha256": null,
         "sha512": null
       }
     ],
+    "multi_arch": "foreign",
     "purl": "pkg:deb/ubuntu/base-passwd@3.5.47?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -617,10 +685,10 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
-    "multi_arch": "foreign",
     "installed_files": [
       {
         "path": "/bin/bash",
+        "size": 0,
         "sha1": null,
         "md5": "77506afebd3b7e19e937a678a185b62e",
         "sha256": null,
@@ -628,6 +696,7 @@
       },
       {
         "path": "/usr/bin/bashbug",
+        "size": 0,
         "sha1": null,
         "md5": "1c77d2031971b4e4c512ac952102cd85",
         "sha256": null,
@@ -635,6 +704,7 @@
       },
       {
         "path": "/usr/bin/clear_console",
+        "size": 0,
         "sha1": null,
         "md5": "ca6d248a913ad0eb1d7301a2b6f8147b",
         "sha256": null,
@@ -642,6 +712,7 @@
       },
       {
         "path": "/usr/share/doc/bash/COMPAT.gz",
+        "size": 0,
         "sha1": null,
         "md5": "f55e3a16959b0bb8915cb5f219521c80",
         "sha256": null,
@@ -649,6 +720,7 @@
       },
       {
         "path": "/usr/share/doc/bash/INTRO.gz",
+        "size": 0,
         "sha1": null,
         "md5": "ab78b78be766692463cb112b88d5a74f",
         "sha256": null,
@@ -656,6 +728,7 @@
       },
       {
         "path": "/usr/share/doc/bash/NEWS.gz",
+        "size": 0,
         "sha1": null,
         "md5": "ea9dd4d5a6822115b9134609ab6c1cfd",
         "sha256": null,
@@ -663,6 +736,7 @@
       },
       {
         "path": "/usr/share/doc/bash/POSIX.gz",
+        "size": 0,
         "sha1": null,
         "md5": "f3bbcb9d46d417ff8291421f567fca19",
         "sha256": null,
@@ -670,6 +744,7 @@
       },
       {
         "path": "/usr/share/doc/bash/RBASH",
+        "size": 0,
         "sha1": null,
         "md5": "172188e3a6fc5409d4f113485cc6d79f",
         "sha256": null,
@@ -677,6 +752,7 @@
       },
       {
         "path": "/usr/share/doc/bash/README.Debian.gz",
+        "size": 0,
         "sha1": null,
         "md5": "6bd7de8b98911613a536e83867e9b490",
         "sha256": null,
@@ -684,6 +760,7 @@
       },
       {
         "path": "/usr/share/doc/bash/README.abs-guide",
+        "size": 0,
         "sha1": null,
         "md5": "5dac7b9b6332d9845e315cf8fd50ea89",
         "sha256": null,
@@ -691,6 +768,7 @@
       },
       {
         "path": "/usr/share/doc/bash/README.commands.gz",
+        "size": 0,
         "sha1": null,
         "md5": "007dea9b8141f038c602b23f78509e34",
         "sha256": null,
@@ -698,6 +776,7 @@
       },
       {
         "path": "/usr/share/doc/bash/README.gz",
+        "size": 0,
         "sha1": null,
         "md5": "4b69f2196038772f358bf6cf4f3a2d2d",
         "sha256": null,
@@ -705,6 +784,7 @@
       },
       {
         "path": "/usr/share/doc/bash/changelog.Debian.gz",
+        "size": 0,
         "sha1": null,
         "md5": "481042f46ec4ec8ae86901df48efa598",
         "sha256": null,
@@ -712,6 +792,7 @@
       },
       {
         "path": "/usr/share/doc/bash/copyright",
+        "size": 0,
         "sha1": null,
         "md5": "9632d707e9eca8b3ba2b1a98c1c3fdce",
         "sha256": null,
@@ -719,6 +800,7 @@
       },
       {
         "path": "/usr/share/doc/bash/inputrc.arrows",
+        "size": 0,
         "sha1": null,
         "md5": "244319c9dd88c980910aacd76477b8d9",
         "sha256": null,
@@ -726,6 +808,7 @@
       },
       {
         "path": "/usr/share/lintian/overrides/bash",
+        "size": 0,
         "sha1": null,
         "md5": "4574de6676d74019761f409168aa8e01",
         "sha256": null,
@@ -733,6 +816,7 @@
       },
       {
         "path": "/usr/share/man/man1/bash.1.gz",
+        "size": 0,
         "sha1": null,
         "md5": "b3da2a5522496f6ca42d5c00a4e65d74",
         "sha256": null,
@@ -740,6 +824,7 @@
       },
       {
         "path": "/usr/share/man/man1/bashbug.1.gz",
+        "size": 0,
         "sha1": null,
         "md5": "ab8320c478c9d17caaa4d86e113cf0a2",
         "sha256": null,
@@ -747,6 +832,7 @@
       },
       {
         "path": "/usr/share/man/man1/clear_console.1.gz",
+        "size": 0,
         "sha1": null,
         "md5": "0c912132bdbce02861669392deb3f84c",
         "sha256": null,
@@ -754,6 +840,7 @@
       },
       {
         "path": "/usr/share/man/man1/rbash.1.gz",
+        "size": 0,
         "sha1": null,
         "md5": "6ad61b838c1370d3bed5d4410644f34a",
         "sha256": null,
@@ -761,6 +848,7 @@
       },
       {
         "path": "/usr/share/man/man7/bash-builtins.7.gz",
+        "size": 0,
         "sha1": null,
         "md5": "b2fb88f251700c29d638d9202e89a693",
         "sha256": null,
@@ -768,12 +856,14 @@
       },
       {
         "path": "/usr/share/menu/bash",
+        "size": 0,
         "sha1": null,
         "md5": "0c05a14279f95fdb4618a4ccaa469681",
         "sha256": null,
         "sha512": null
       }
     ],
+    "multi_arch": "foreign",
     "purl": "pkg:deb/ubuntu/bash@5.0-6ubuntu1?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -821,8 +911,8 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
-    "multi_arch": "foreign",
     "installed_files": [],
+    "multi_arch": "foreign",
     "purl": "pkg:deb/ubuntu/tar@1.30%2Bdfsg-7?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,

@@ -25,10 +25,10 @@ def reindex_licenses(ctx, param, value):
         return
 
     # TODO: check for temp file configuration and use that for the cache!!!
-    from licensedcode.cache import get_cached_index
+    from licensedcode.cache import get_index
     import click
     click.echo('Checking and rebuilding the license index...')
-    get_cached_index(check_consistency=True,)
+    get_index(check_consistency=True)
     click.echo('Done.')
     ctx.exit(0)
 
@@ -97,8 +97,8 @@ class LicenseScanner(ScanPlugin):
         """
         This is a cache warmup such that child process inherit from this.
         """
-        from licensedcode.cache import get_index
-        get_index(return_value=False)
+        from licensedcode.cache import populate_cache
+        populate_cache()
 
     def get_scanner(
         self,

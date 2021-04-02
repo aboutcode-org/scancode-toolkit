@@ -1,0 +1,5 @@
+license_expression: nortel-dasa
+is_license_text: yes
+relevance: 100
+ignorable_emails:
+    - frank@comsys.dofn.de

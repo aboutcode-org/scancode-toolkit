@@ -1,0 +1,354 @@
+- |
+  GPL-1+ or Artistic
+  Expat
+  REGCOMP, and GPL-1+ or Artistic
+  GPL-3+-WITH-BISON-EXCEPTION
+  Unicode
+  GPL-1+ or Artistic, and Unicode
+  S2P
+  BZIP
+  ZLIB
+  Artistic
+  GPL-2+ or Artistic
+  Expat or GPL-1+ or Artistic
+  RRA-KEEP-THIS-NOTICE
+  BSD-3-clause-with-weird-numbering
+  CC0-1.0
+  TEXT-TABS
+  GPL-1+ or Artistic, and BSD-4-clause-POWERDOG
+  GPL-1+ or Artistic, and BSD-3-clause-GENERIC
+  BSD-3-clause
+  SDBM-PUBLIC-DOMAIN
+  DONT-CHANGE-THE-GPL
+  GPL-1+ or Artistic or Artistic-dist
+  Artistic-dist
+  Artistic or GPL-1+ or Artistic-dist
+  GPL-1+ or Artistic, and Expat
+  LGPL-2.1
+  GPL-1+
+  GPL-2+
+  Artistic-2
+  BSD-4-clause-POWERDOG
+  BSD-3-clause-GENERIC
+  REGCOMP
+  HSIEH-DERIVATIVE
+  HSIEH-BSD
+- artistic-2.0 AND artistic-dist-1.0 AND artistic-perl-1.0 AND bsd-new AND bsd-original AND
+  bsd-x11 AND bzip2-libbzip-2010 AND cc0-1.0 AND fsf-ap AND gpl-1.0 AND gpl-1.0-plus AND gpl-2.0
+  AND gpl-2.0-plus AND gpl-3.0-plus AND gpl-3.0-plus WITH bison-exception-2.2 AND lgpl-2.1 AND
+  mit AND other-copyleft AND other-permissive AND paul-hsieh-derivative AND public-domain AND
+  regexp AND unicode-dfs-2015 AND unknown AND zlib
+- |
+  Perl is Copyright (C) 1987-2018 by Larry Wall and others. All rights reserved.
+  Copyright (c) 1996-2006, Nick Ing-Simmons
+  Copyright (c) 2006, 2007, 2008 Larry Wall and others
+  Modifications Copyright Ilya Zakharevich 1996-99.
+  Copyright (C) 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000,
+  2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 by Larry Wall and others
+  .
+  Copyright (C) Tom Horsley, 1997. All rights reserved.
+  Copyright (c) 2007 Brandon L Black
+  Copyright (c) 2007, 2008 Larry Wall and others
+  Copyright 1987-2018, Larry Wall
+  MS-DOS port Copyright (c) 1989, 1990, Diomidis Spinellis
+  OS/2 port Copyright (c) 1990, 1991, Raymond Chen, Kai Uwe Rommel
+  Version 5 port Copyright (c) 1994-2002, Andreas Kaiser, Ilya Zakharevich
+  Copyright (c) 2007-2008 Michael G Schwern
+  This software originally derived from Paul Sheer's pivotal_gmtime_r.c.
+  Copyright (c) 1986 by University of Toronto.
+  Written by Henry Spencer. Not derived from licensed software.
+  Alterations to Henry's code are...
+  Copyright (C) 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
+  2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008
+  by Larry Wall and others
+  NOTE: this is derived from Henry Spencer's regexp code, and should not
+  confused with the original package (see point 3 below). Thanks, Henry!
+  Copyright (C) 1984, 1989-1990, 2000-2013 Free Software Foundation, Inc.
+  Copyright 2006 by Marcus Holland-Moritz <mhx@cpan.org>.
+  © 1991-2016 Unicode®, Inc.
+  Copyright (C) 2009, 2011
+  unknown
+  Copyright (c) 1995 Graham Barr & Nick Ing-Simmons. All rights reserved.
+  Copyright (c) Nokia 2004-2005. All rights reserved.
+  Copyright (c) 2006 Alexander Smishlajev. All rights reserved.
+  Copyright (c) 2004-2005 Nokia. All rights reserved.
+  Copyright (c) 2006-2007 Jarkko Hietaniemi.
+  Copyright (c) 1991-2006 Unicode, Inc.
+  Copyright (c) 2002,2003 Jarkko Hietaniemi
+  Copyright 2003, 2007 by Marcus Holland-Moritz <mhx@cpan.org>.
+  Copyright (C) 2005-2012 by H.Merijn Brand (m)'12 [22-09-2012]
+  This software is copyright (c) 2010 by David Golden.
+  Copyright (C) 2000-01, 2002 Novell, Inc. All Rights Reserved.
+  Copyright (C) 1993-2015 by Charles Bailey and others.
+  Copyright (C) 1993 Eric Young - see README for more details
+  2002 - 2009 Jos Boumans <kane@cpan.org>. All rights reserved.
+  This package has the same copyright and license as the perl core:
+  Copyright (C) 1993, 1994, 1995, 1996, 1997, 1998, 1999,
+  2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2011, 2012
+  All rights reserved.
+  2008-2009, Paul Fenwick <pjf@perltraining.com.au>
+  Copyright 2013-2014, Niels Thykier <niels@thykier.net>
+  Copyright (c) 1996, 1997 Malcolm Beattie
+  Copyright (c) 2008, 2010, 2013, 2014 Reini Urban
+  Copyright (c) 2005-2017 Paul Marquess. All rights reserved.
+  Copyright(C) 1996-2010 Julian Seward. All rights reserved
+  Copyright (C) 1995-2017 Jean-loup Gailly and Mark Adler
+  Copyright (C) 2009-2017 H.Merijn Brand
+  (c) 2001-2015, brian d foy, All Rights Reserved.
+  This software is copyright (c) 2010 by David Golden, Ricardo Signes,
+  Adam Kennedy and Contributors.
+  Ken Williams
+  This software is copyright (c) 2010 by David Golden and Ricardo Signes.
+  This software is copyright (c) 2010 by Adam Kennedy.
+  Copyright (c) 1995-2016 Paul Marquess. All rights reserved.
+  Version 3.x, Copyright (C) 2004-2010, Marcus Holland-Moritz.
+  Version 2.x, Copyright (C) 2001, Paul Marquess.
+  Version 1.x, Copyright (C) 1999, Kenneth Albanowski.
+  Copyright (C) 2017, Pali <pali@cpan.org>
+  Copyright 1998-2006 Gisle Aas.
+  Copyright 1995,1996 Neil Winton.
+  Copyright 1998-2003 Gisle Aas.
+  Copyright 1995-1996 Neil Winton.
+  Copyright 1990-1992 RSA Data Security, Inc.
+  Copyright (C) 2003-2017 Mark Shelor, All Rights Reserved
+  Copyright 2002-2014 Dan Kogai <dankogai@cpan.org>
+  2015 Michael LaGrasta and Dan Kogai
+  Copyright 2004, 2005, 2006, 2007 by Audrey Tang <cpan@audreyt.org>.
+  This software is copyright (c) 2013 by Leon Timmermans.
+  2010 Gisle Aas <gisle@aas.no>
+  1996- by Andreas Koenig
+  There are no copyright notices in these distributions.
+  Their author is Jos Boumans <kane@cpan.org>.
+  This module is copyright (C) Charles Bailey, Tim Bunce, David Landgren,
+  James Keenan, and Richard Elberger 1995-2015. All rights reserved.
+  This software is copyright (c) 2013 by Tim Jenness and the UK Particle
+  Physics and Astronomy Research Council.
+  Copyright (c) 1995-2011 Paul Marquess. All rights reserved.
+  Copyright (c) 2011-2014 Reini Urban. All rights reserved.
+  Copyright (c) 2014-2017 cPanel Inc. All rights reserved.
+  Module Getopt::Long is Copyright 1990,2015 by Johan Vromans.
+  This software is copyright (c) 2016 by Christian Hansen.
+  Copyright (c) 1995-2017 Paul Marquess. All rights reserved.
+  Copyright (c) 1998-2004 Tom Hughes <tom@compton.nu>. All rights reserved.
+  Version 2.x, Copyright (C) 2007-2010, Marcus Holland-Moritz.
+  Version 1.x, Copyright (c) 1997, Graham Barr.
+  Version 1.x, Copyright (c) 1999, Graham Barr.
+  Copyright 2007-2016 by Makamaka Hannyaharamitu
+  (C) 1995-2006 Graham Barr. All rights reserved.
+  (C) 2013-2016 Steve Hay. All rights reserved.
+  Copyright (C) 2014 Steve Hay. All rights reserved.
+  Copyright (c) 1997-2009 Graham Barr <gbarr@pobox.com>. All rights reserved.
+  Copyright (c) 1997-2007 Graham Barr <gbarr@pobox.com>. All rights reserved.
+  Copyright (c) 1999 Tuomas J. Lukka <lukka@iki.fi>. All rights reserved.
+  Copyright (C) 2004, 2008 Matthijs van Duin. All rights reserved.
+  Copyright (C) 2014 cPanel Inc. All rights reserved.
+  (c) 2014 Paul Evans <leonerd@leonerd.org.uk>. All rights reserved
+  Copyright 2003, 2004, 2005, 2006 by Audrey Tang <cpan@audreyt.org>
+  Copyright (C) All Perl Hackers everywhere
+  Ton Voon <ton.voon@opsera.com>, 2009.
+  Copyright 1998, 1999, 2000, 2001, 2012 M-J. Dominus.
+  Copyright 1995-2004,2010 Gisle Aas <gisle@ActiveState.com>
+  Copyright 1997-2004 Gisle Aas
+  Copyright (c) 1991 Bell Communications Research, Inc. (Bellcore)
+  Copyright (c) 2001-2011 Ken Williams. All rights reserved.
+  Copyright (c) 2010-2011 Matt Trout and David Golden. All rights reserved.
+  Copyright (c) 2000-2001, Damian Conway. All Rights Reserved.
+  Copyright (c) 2007-10 Max Maischein <corion@cpan.org>
+  This software is copyright (c) 2015 by Adam Kennedy and Contributors.
+  Copyright (c) 2002-2004,2012 Elizabeth Mattijsen. All rights reserved.
+  This software is copyright (c) 2016 by David Golden.
+  Copyright (C) 1994-2000 by Bradford Appleton. All rights reserved.
+  Copyright (c) 2001-2004 Sean M. Burke. All rights reserved.
+  Copyright 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
+  2010, 2012, 2013, 2014, 2015, 2016, 2017 Russ Allbery <rra@cpan.org>
+  Substantial contributions by Sean Burke <sburke@cpan.org>
+  Copyright 2000 Joe Smith <Joe.Smith@inwap.com>.
+  Copyright 2001, 2004, 2008 Russ Allbery <rra@stanford.edu>.
+  Copyright 2015 Russ Allbery <rra@cpan.org>
+  Copyright 2012, 2013, 2014
+  The Board of Trustees of the Leland Stanford Junior University
+  Copyright 2016 Russ Allbery <eagle@eyrie.org>
+  Copyright 2016 Niko Tyni <ntyni@iki.fi>
+  Copyright 2016 Russ Allbery <rra@cpan.org>
+  Copyright 2014, 2015, 2016 Russ Allbery <eagle@eyrie.org>
+  Copyright 2012, 2013, 2014 The Board of Trustees of the Leland Stanford Junior University
+  Copyright (C) 1996-2000 by Bradford Appleton. All rights reserved.
+  Copyright 1999-2000 by Russ Allbery <rra@stanford.edu>
+  Copyright (C) 1999-2000 by Marek Rouchal. All rights reserved.
+  Copyright (C) 2005 Joshua Hoblitt
+  Copyright (c) 2002-2004 Sean M. Burke. All rights reserved.
+  Copyright (c) 2003-2005 Allison Randal.
+  Copyright (c) 1997-1999 Tom Christiansen and Nathan Torkington.
+  Copyright (c) 2001-2016 by Marek Rouchal.
+  Copyright (C) 1990-2012 by Larry Wall and others.
+  Copyright (c) 1982, 1986, 1988, 1993
+  The Regents of the University of California. All rights reserved.
+  Copyright 1996 Zenin
+  Copyright 1996, 1997, 1998, 2000, 2001, 2002, 2005, 2006, 2008, 2009,
+  2010, 2011, 2012, 2013, 2014, 2015, 2016 Russ Allbery <rra@cpan.org>
+  Copyright 2012 Kurt Starsinic <kstarsinic@gmail.com>
+  2013, 2014 The Board of Trustees of the Leland Stanford Junior University
+  Copyright 2015, 2016 Russ Allbery <eagle@eyrie.org>
+  Copyright 2013, 2014 The Board of Trustees of the Leland Stanford Junior University
+  1995-2015 (c) perl5 porters.
+  Copyright (c) 2007-2011, Andy Armstrong <andy@hexten.net>. All rights reserved.
+  Copyright 2006-2008 Curtis "Ovid" Poe, all rights reserved.
+  Copyright 2007-2011 Andy Armstrong.
+  Portions copyright 2006-2008 Adam Kennedy.
+  Copyright 2001-2008 by Michael G Schwern <schwern@pobox.com>.
+  Copyright 2018 Chad Granum <exodist@cpan.org>.
+  Copyright 2002-2008 by chromatic <chromatic@wgz.org> and
+  Michael G Schwern E<schwern@pobox.com>.
+  Copyright Mark Fowler <mark@twoshortplanks.com> 2002.
+  Copyright Mark Fowler <mark@twoshortplanks.com> 2002, 2004.
+  Some code taken from Test::More and Test::Catch, written by by
+  Michael G Schwern <schwern@pobox.com>. Hence, those parts
+  Copyright Michael G Schwern 2001. Used and distributed with
+  permission.
+  This module is copyright 2005 Fergal Daly <fergal@esatclear.ie>, some parts
+  are based on other people's work.
+  Copyright 2001 by Michael G Schwern <schwern@pobox.com>.
+  Copyright (c) 1996 by Eryq. All rights reserved.
+  Copyright (c) 1999,2001 by ZeeGee Software Inc. All rights reserved.
+  Copyright 2003 by Fergal Daly <fergal@esatclear.ie>.
+  none
+  To the extent possible under law, 唐鳳 has waived all copyright and related
+  or neighboring rights to L<Test-use-ok>
+  Copyright 1997 - 2001 Damian Conway. All Rights Reserved.
+  Some (minor) parts copyright 2009 Adam Kennedy.
+  Copyright (C) 1996-2009 David Muir Sharnoff.
+  Copyright (C) 2005 Aristotle Pagaltzis
+  Copyright (C) 2012-2013 Google, Inc.
+  Tie::File version 0.97 is copyright (C) 2003 Mark Jason Dominus.
+  Copyright (c) 1997 - 2016 by Graham Barr & Dave Rolsky.
+  strptime copied from freebsd with the following copyright:
+  Copyright (c) 1994 Powerdog Industries. All rights reserved.
+  This module is Copyright(C) 2001-2017, SADAHIRO Tomoyuki. Japan. All
+  rights reserved.
+  Copyright (c) 2016 Unicode, Inc.
+  Copyright(C) 2001-2012, SADAHIRO Tomoyuki. Japan. All rights reserved.
+  (c) 1995 Microsoft Corporation. All rights reserved.
+  Copyright (c) 2001-2009, Damian Conway. All Rights Reserved.
+  Copyright (c) 1998-2000, 2002, 2003, 2004, 2005, 2006 Stephen McCamant.
+  Copyright (c) 1994-2013 Larry Wall
+  Copyright (c) 2011, 2012, 2013 Andrew Main (Zefram) <zefram@fysh.org>
+  Copyright (c) 1996-2017 Gurusamy Sarathy. All rights reserved.
+  Copyright (c) 2003-2005 Ken Williams. All rights reserved.
+  Copyright (c) 2012-2017 Ken Williams. All rights reserved.
+  Copyright 2002-2012 by Ken Williams, David Golden and other contributors.
+  Copyright (c) 2000-2008, Damian Conway. All Rights Reserved.
+  This software is copyright (c) 2002 by Ilya Zakharevich.
+  Copyright 1998+, Sean M. Burke <sburke@cpan.org>, all rights
+  reserved.
+  Copyright (c) 2001+ Sean M. Burke. All rights reserved.
+  Copyright (c) 1996-2003 Graham Barr <gbarr@pobox.com>. All rights reserved.
+  Copyright (c) 1997-8 Graham Barr <gbarr@pobox.com>. All rights reserved.
+  Copyright 2001, Lincoln Stein <lstein@cshl.org>.
+  as above for 'Files: *'
+  Copyright 1999-2004, Sean M. Burke <sburke@cpan.org>, all rights reserved.
+  1999 The Perl Journal.
+  Copyright (C) 2002-2009 Richard Clamp. All Rights Reserved.
+  Copyright (c) 2002-2007 by D.H. aka PodMaster
+  Copyright (C) 2013 Chris Williams. All Rights Reserved.
+  Copyright (c) 2016, cPanel Inc. All rights reserved.
+  Copyright (c) 2012, Steve Peters. All rights reserved.
+  Copyright (c) 2002-2003, Rob Brown. All rights reserved.
+  Copyright (c) 2001, Colin McMillen. All rights reserved.
+  Copyright (c) 2004 by the Perl 5 Porters. All rights reserved.
+  Copyright (c) 2003 Constantin S. Svintsoff <kostik@iclub.nsu.ru>
+  Copyright (c) 2002-2007 Sean M. Burke.
+  Copyright (c) 2011 Mark Allen. All rights reserved.
+  Copyright (c) 2011 brian d foy. All rights reserved.
+  Copyright (c) 2017 Mark Allen.
+  Copyright (c) 1995-2001, Raphael Manfredi
+  Copyright (c) 2002-2014 by the Perl 5 Porters
+  Copyright (c) 2016,2017 cPanel Inc
+  Copyright (c) 2017, Reini Urban
+  Copyright (c) 1995-2000, Raphael Manfredi
+  (C) Copyright 1997, Universitat Dortmund, all rights reserved.
+  Copyright 2005, Adam Kennedy.
+  Copyright (c) 2002 Slaven Rezic
+  Copyright (c) 2001-2002, 2006 Larry Wall
+  Copyright (c) 1998-2000 Joshua Nathaniel Pritikin.
+  Copyright (c) 2001-2002 Michael G. Schwern.
+  Copyright (c) 2002-2004 Sean M. Burke.
+  Copyright (c) 1996-2002 Douglas E. Wegscheid. All rights reserved.
+  Copyright (c) 2002-2010 Jarkko Hietaniemi.
+  Copyright (C) 1990-2011 by Larry Wall and others.
+  Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008
+  Copyright (C) 2013 by Andy Broad.
+  Copyright (c) 1996, 1997, 1998 Malcolm Beattie
+  Copyright (C) 2000-2003 Stephen McCamant. All rights reserved.
+  Copyright (c) 1995-98 Ilya Zakharevich. All rights reserved.
+  This is an unpublished work copyright (c) 1992 Helios Software GmbH
+  3000 Hannover 1, Germany
+  based upon the file "dl.c", which is Copyright (c) 1994, Larry Wall
+  2004, Nokia
+  Copyright (c) 1997-8 Graham Barr. All rights reserved.
+  Copyright (c) 1989, 1993
+  This code is derived from software contributed to Berkeley by
+  Guido van Rossum.
+  hv_store() is from Array::RefElem, Copyright 2000 Gisle Aas.
+  Copyright (C) 2006-2007 by (Anno Siegel)
+  Copyright 2001 by Jarkko Hietaniemi
+  Copyright (c) 2008,2009 Larry Wall and others
+  Copyright (C) 2007 by Larry Wall and others
+  Copyright (C) 2002,2004 Tim Jenness, Christian Soeller, Hugo van der Sanden.
+  All Rights Reserved.
+  Copyright (C) 2009 Andrew Main (Zefram) <zefram@fysh.org>
+  Copyright (C) 2001 Tim Jenness All Rights Reserved.
+  Richard Foley <richard.foley@rfi.net> Copyright (c) 2000
+  Copyright (C) 1995, 1996, 1997, 1998 Doug MacEachern and Jon Orwant. All
+  Rights Reserved.
+  Copyright 2010, brian d foy <brian.d.foy@gmail.com>
+  Copyright (c) 1997-2010 Tom Christiansen, Nathan Torkington, and
+  other authors as noted. All rights reserved.
+  Tom Christiansen wrote the original version of this document.
+  brian d foy <bdfoy@cpan.org> wrote this version. See the
+  individual perlfaq documents for additional copyright information.
+  copyright 1998 The Perl Journal
+  Based on the Glossary of I<Programming Perl>, Fourth Edition,
+  by Tom Christiansen, brian d foy, Larry Wall, & Jon Orwant.
+  Copyright (c) 2000, 1996, 1991, 2012 O'Reilly Media, Inc.
+  Copyright (C) 1998, 2002, 2003 Jon Orwant. All Rights Reserved.
+  Copyright 1997-1999 Tom Christiansen.
+  Copyright 1999, 2000, 2001, 2004, 2006, 2008, 2010, 2015 Russ Allbery
+  <rra@cpan.org>
+  Copyright 2006 Yves Orton and 2007 Ævar Arnfjörð Bjarmason.
+  Copyright 1998 The Perl Journal.
+  Copyright (c) 2000 Mark Kvale
+  Copyright (c) 2012 Tom Christiansen
+  Copyright 2001-2011 Jarkko Hietaniemi <jhi@iki.fi>
+  Copyright (C) 1989 Free Software Foundation, Inc.
+  51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+  Copyright (C) 1999, Graham Barr <gbarr@pobox.com>.
+  Copyright (C) 2007-2010, Marcus Holland-Moritz <mhx@cpan.org>.
+  Copyright (c) 1996-1998, Andy Dougherty
+  Copyright (c) 1999-2011, H.Merijn Brand
+  Copyright (c) 1991-1997, 2004-2006, 2012 Raphael Manfredi
+  Copyright (c) 1996,1998 Andy Dougherty
+  Copyright (c) 1996, Cygnus Support
+  Copyright (c) 1996, Spider Boardman
+  Copyright (c) 1996, Sven Verdoolaege
+  Copyright (c) 1997, Chip Salzenberg
+  Copyright (c) 1998 Andy Dougherty
+  Copyright (c) 1999-2001 Jarkko Hietaniemi
+  Copyright (c) 1991-1997, 2004-2006, Raphael Manfredi
+  Copyright (c) 1996-2010, Andy Dougherty
+  Copyright (c) 1998-2016 Jarkko Hietaniemi
+  Copyright (c) 2004-2018 H.Merijn Brand
+  Copyright (c) 2006-2006, H.Merijn Brand & Nicholas Clark
+  Copyright (c) 2011, H.Merijn Brand & Tony Cook
+  Copyright (c) 2014-2014, Karl Williamson & H.Merijn Brand
+  Copyright (c) 2016 H.Merijn Brand & Todd Rinaldo
+  Copyright (c) 2016 Tony Cook
+  Copyright (c) 2017, Lukas Mai
+  Copyright (c) 2017 Dagfinn Ilmari Mannsåker
+  Copyright (c) 2017, Karl Williamson
+  Portions Copyright (c) 2008-2009 Bjoern Hoehrmann <bjoern@hoehrmann.de>
+  Portions of the Debian packaging are
+  Copyright 2008-2011 Niko Tyni <ntyni@debian.org>
+  Copyright 2011 Dominic Hargreaves <dom@earth.li>
+  The other people listed in debian/changelog are most probably
+  copyright holders too, but they have not included explicit copyright
+  or licensing information.

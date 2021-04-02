@@ -1,0 +1,164 @@
+License Agreement:
+
+The features set forth in this Section XIV (the "Strong Encryption
+Specification") are covered by a pending patent application. Portions of
+this Strong Encryption technology are available for use at no charge
+under the following terms and conditions.
+
+1. License Grant.
+
+   a. NOTICE TO USER. PLEASE READ THIS ENTIRE SECTION XIV OF THE
+   APPNOTE (THE "AGREEMENT") CAREFULLY. BY USING ALL OR ANY PORTION OF THE
+   LICENSED TECHNOLOGY, YOU ACCEPT ALL THE TERMS AND CONDITIONS OF THIS
+   AGREEMENT AND YOU AGREE THAT THIS AGREEMENT IS ENFORCEABLE LIKE ANY
+   WRITTEN NEGOTIATED AGREEMENT SIGNED BY YOU. IF YOU DO NOT AGREE, DO NOT
+   USE THE LICENSED TECHNOLOGY.
+
+   b. Definitions.
+
+      i. "Licensed Technology" shall mean that proprietary technology now or
+      hereafter owned or controlled by PKWare, Inc. ("PKWARE") or any
+      subsidiary or affiliate  that covers or is necessary to be used to give
+      software the ability to a) extract and decrypt data from zip files
+      encrypted using any methods of data encryption and key processing which
+      are published in this APPNOTE or any prior APPNOTE, as supplemented by
+      any Additional Compatibility Information; and b) encrypt file contents
+      as part of .ZIP file processing using only the Single Password Symmetric
+      Encryption Method as published in this APPNOTE or any prior APPNOTE, as
+      supplemented by any Additional Compatibility Information.  For purposes
+      of this AGREEMENT, "Additional Compatibility Information" means, with
+      regard to any method of data encryption and key processing published in
+      this or any prior APPNOTE, any corrections, additions, or clarifications
+      to the information in such APPNOTE that are required in order to give
+      software the ability to successfully extract and decrypt zip files (or,
+      but solely in the case of the Single Password Symmetric Encryption Method,
+      to successfully encrypt zip files) in a manner interoperable with the
+      actual implementation of such method in any PKWARE product that is
+      documented or publicly described by PKWARE as being able to create, or
+      to extract and decrypt, zip files using that method.
+
+      ii. "Licensed Products" shall mean any products you produce that
+      incorporate the Licensed Technology.
+
+   c. License to Licensed Technology.
+
+   PKWARE hereby grants to you a non-exclusive license to use the Licensed
+   Technology for the purpose of manufacturing, offering, selling and using
+   Licensed Products, which license shall extend to permit the practice of all
+   claims in any patent or patent application (collectively, "Patents") now or
+   hereafter owned or controlled by PKWARE in any jurisdiction in the world
+   that are infringed by implementation of the Licensed Technology.  You have
+   the right to sublicense rights you receive under the terms of this AGREEMENT
+   for the purpose of allowing sublicensee to manufacture, offer, sell and use
+   products that incorporate all or a portion of any of your Licensed Products,
+   but if you do, you agree to i) impose the same restrictions on any such
+   sublicensee as these terms impose on you and ii) notify the sublicensee,
+   by means chosen by you in your unfettered discretion, including a notice on
+   your web site, of the terms of this AGREEMENT and make available to each
+   sublicensee the full text of this APPNOTE.   Further, PKWARE hereby grants to
+   you a non-exclusive right to reproduce and distribute, in any form, copies of
+   this APPNOTE, without modification.  Notwithstanding anything to the contrary
+   in this AGREEMENT, you have the right to sublicense the rights, without any of
+   the restrictions described above or elsewhere in this AGREEMENT, to use, offer
+   to sell and sell Licensed Technology as incorporated in executable object code
+   or byte code forms of your Licensed Products.  Any sublicense to use the
+   Licensed Technology incorporated in a Licensed Product granted by you shall
+   survive the termination of this AGREEMENT for any reason.  PKWARE warrants that
+   this license shall continue to encumber the Licensed Technology regardless of
+   changes in ownership of the Licensed Technology.
+
+   d. Proprietary Notices.
+
+      i. With respect to any Licensed Product that is distributed by you either
+      in source code form or in the form of an object code library of externally
+      callable functions that has been designed by you for incorporation into third
+      party products, you agree to include, in the source code, or in the case of
+      an object code library, in accompanying documentation, a notice using the
+      words "patent pending" until a patent is issued to PKWARE covering any
+      portion of the Licensed Technology or PKWARE provides notice, by means
+      chosen by PKWARE in its unfettered discretion, that it no longer has any
+      patent pending covering any portion of the Licensed Technology.  With respect
+      to any Licensed Product, upon your becoming aware that at least one patent has
+      been granted covering the Licensed Technology, you agree to include in any
+      revisions made by you to the documentation (or any source code distributed
+      by you) the words "Pat. No.", or "Patent Number" and the patent number or
+      numbers of the applicable patent or patents.  PKWARE shall, from time to time,
+      inform you of the patent number or numbers of the patents covering the
+      Licensed Technology, by means chosen by PKWARE in its unfettered discretion,
+      including a notice on its web site.  It shall be a violation of the terms of
+      this AGREEMENT for you to sell Licensed Products without complying with the
+      foregoing marking provisions.
+
+      ii. You acknowledge that the terms of this AGREEMENT do not grant you any
+      license or other right to use any PKWARE trademark in connection with the sale,
+      offering for sale, distribution and delivery of the Licensed Products, or in
+      connection with the advertising, promotion and offering of the Licensed Products.
+      You acknowledge PKWARE's ownership of the PKZIP trademark and all other marks
+      owned by PKWARE.
+
+   e. Covenant of Compliance and Remedies.
+
+   To the extent that you have elected to implement portions of the Licensed
+   Technology, you agree to use reasonable diligence to comply with those portions
+   of this Section XIV, as modified or supplemented by Additional Compatibility
+   Information available to you, describing the portions of the Licensed Technology
+   that you have elected to implement.  Upon reasonable request by PKWARE, you will
+   provide written notice to PKWARE identifying which version of this APPNOTE you
+   have relied upon for your implementation of any specified Licensed Product.
+
+   If any substantial non-compliance with the terms of this AGREEMENT is determined
+   to exist, you will make such changes as necessary to bring your Licensed Products
+   into substantial compliance with the terms of this AGREEMENT.  If, within sixty
+   days of receipt of notice that a Licensed Product fails to comply with the terms
+   of this AGREEMENT, you fail to make such changes as necessary to bring your
+   Licensed Products into compliance with the terms of this AGREEMENT, PKWARE may
+   terminate your rights under this AGREEMENT.  PKWARE does not waive and expressly
+   reserves the right to pursue any and all additional remedies that are or may
+   become available to PKWARE.
+
+   f. Warranty and Indemnification Regarding Exportation.
+
+   You realize and acknowledge that, as between yourself and PKWARE, you are fully
+   responsible for compliance with the import and export laws and regulations of
+   any country in or to which you import or export any Licensed Products, and you
+   agree to hold PKWARE harmless from any claim of violation of any such import
+   or export laws.
+
+   g. Patent Infringement.
+
+   You agree that you will not bring or threaten to bring any action against PKWARE
+   for infringement of the claims of any patent owned or controlled by you solely
+   as a result of PKWARE's own implementation of the Licensed Technology.  As its
+   exclusive remedy for your breach of the foregoing agreement, PKWARE reserves
+   the right to suspend or terminate all rights granted under the terms of this
+   AGREEMENT if you bring or threaten to bring any such action against PKWARE,
+   effective immediately upon delivery of written notice of suspension or
+   termination to you.
+
+   h. Governing Law.
+
+   The license granted in this AGREEMENT shall be governed by and construed under
+   the laws of the State of Wisconsin and the United States.
+
+   i. Revisions and Notice.
+
+   The license granted in this APPNOTE is irrevocable, except as expressly set
+   forth above.  You agree and understand that any changes which PKWARE determines
+   to make to this APPNOTE shall be posted at the same location as the current
+   APPNOTE or at a location which will be identified by means chosen by PKWARE,
+   including a notice on its web site, and shall be available for adoption by you
+   immediately upon such posting, or at such other time as PKWARE shall determine.
+   Any changes to the terms of the license published in a subsequent version of
+   this AGREEMENT shall be binding upon you only with respect to your products
+   that (i) incorporate any Licensed Technology (as defined in the subsequent
+   AGREEMENT) that is not otherwise included in the definition of Licensed
+   Technology under this AGREEMENT, or (ii) that you expressly identify are to
+   be licensed under the subsequent AGREEMENT, which identification shall be by
+   written notice with reference to the APPNOTE (version and release date or other
+   unique identifier) in which the subsequent AGREEMENT is published.  PKWARE
+   agrees to identify each change to this APPNOTE by using a unique version and
+   release date identifier or other unique identifier.
+
+   j. Warranty by PKWARE
+
+   PKWare, Inc. warrants that it has the right to grant the license hereunder.

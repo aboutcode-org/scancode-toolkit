@@ -4,45 +4,12 @@
       "tool_name": "scancode-toolkit",
       "options": {
         "input": "<path>",
+        "--consolidate": true,
         "--copyright": true,
         "--info": true,
         "--json": "<file>",
         "--license": true,
         "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "files_count": 7
-      }
-    },
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--consolidate": true,
-        "--from-json": [
-          true
-        ],
-        "--json": "<file>"
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "files_count": 7
-      }
-    },
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--consolidate": true,
-        "--from-json": [
-          true
-        ],
-        "--json": "<file>"
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
@@ -124,7 +91,7 @@
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
       "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
       "identifier": "pkg_npm_test_package_0_0_1_1",
-      "consolidated_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown-license-reference",
+      "consolidated_license_expression": "apache-2.0 AND gpl-1.0-plus",
       "consolidated_holders": [
         "IBM Corp.",
         "The Apache Software",
@@ -133,7 +100,7 @@
       "consolidated_copyright": "Copyright (c) IBM Corp., The Apache Software, The Apache Software Foundation",
       "core_license_expression": "apache-2.0",
       "core_holders": [],
-      "other_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown-license-reference",
+      "other_license_expression": "apache-2.0 AND gpl-1.0-plus",
       "other_holders": [
         "The Apache Software Foundation",
         "The Apache Software",
@@ -807,41 +774,6 @@
       "is_script": false,
       "licenses": [
         {
-          "key": "unknown-license-reference",
-          "score": 16.0,
-          "name": "Unknown License file reference",
-          "short_name": "Unknown License reference",
-          "category": "Unstated License",
-          "is_exception": false,
-          "owner": "Unspecified",
-          "homepage_url": null,
-          "text_url": "",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
-          "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-          "start_line": 2,
-          "end_line": 2,
-          "matched_rule": {
-            "identifier": "license-intro_26.RULE",
-            "license_expression": "unknown-license-reference",
-            "licenses": [
-              "unknown-license-reference"
-            ],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": true,
-            "matcher": "2-aho",
-            "rule_length": 3,
-            "matched_length": 3,
-            "match_coverage": 100.0,
-            "rule_relevance": 16
-          }
-        },
-        {
           "key": "gpl-1.0-plus",
           "score": 100.0,
           "name": "GNU General Public License 1.0 or later",
@@ -859,26 +791,25 @@
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "gpl-1.0-plus_33.RULE",
+            "identifier": "gpl-1.0-plus_398.RULE",
             "license_expression": "gpl-1.0-plus",
             "licenses": [
               "gpl-1.0-plus"
             ],
             "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": true,
+            "is_license_notice": true,
+            "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
             "matcher": "2-aho",
-            "rule_length": 5,
-            "matched_length": 5,
+            "rule_length": 7,
+            "matched_length": 7,
             "match_coverage": 100.0,
             "rule_relevance": 100
           }
         }
       ],
       "license_expressions": [
-        "unknown-license-reference",
         "gpl-1.0-plus"
       ],
       "percentage_of_license_text": 50.0,
