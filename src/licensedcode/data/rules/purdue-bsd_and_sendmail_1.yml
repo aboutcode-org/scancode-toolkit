@@ -1,0 +1,6 @@
+license_expression: purdue-bsd AND sendmail
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+minimum_coverage: 60

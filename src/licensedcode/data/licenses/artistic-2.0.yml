@@ -8,18 +8,20 @@ notes: |
     Per SPDX.org, this version was released 2006 This license is OSI
     certifified.
 spdx_license_key: Artistic-2.0
+osi_license_key: Artistic-2.0
 text_urls:
-    - http://www.perlfoundation.org/artistic_license_2_0
-    - http://www.perlfoundation.org/attachment/legal/artistic-2_0.txt
-osi_url: http://www.opensource.org/licenses/artistic-license-2.0.php
-faq_url: http://www.perlfoundation.org/artistic-2-0-notes
+    - https://www.perlfoundation.org/artistic_license_2_0
+    - https://www.perlfoundation.org/attachment/legal/artistic-2_0.txt
+osi_url: https://www.opensource.org/licenses/artistic-license-2.0.php
+faq_url: https://www.perlfoundation.org/artistic-2-0-notes
 other_urls:
-    - http://www.opensource.org/licenses/artistic-license-2.0
+    - http://www.perlfoundation.org/artistic_license_2_0
     - https://opensource.org/licenses/artistic-license-2.0
+    - https://www.opensource.org/licenses/artistic-license-2.0
+    - https://www.perlfoundation.org/artistic-license-20.html
 ignorable_copyrights:
     - Copyright (c) 2000-2006, The Perl Foundation
 ignorable_authors:
     - The Perl Foundation
 ignorable_holders:
     - The Perl Foundation
-osi_license_key: Artistic-2.0

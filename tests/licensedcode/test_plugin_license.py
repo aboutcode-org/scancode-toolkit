@@ -9,7 +9,6 @@
 
 import os
 
-import click
 import pytest
 
 from commoncode.testcase import FileDrivenTesting
@@ -19,10 +18,10 @@ from scancode.cli_test_utils import run_scan_click
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-
 """
 These tests spawn new process as if launched from the command line.
 """
+
 
 def test_license_option_reports_license_expressions():
     test_dir = test_env.get_test_loc('plugin_license/license-expression/scan', copy=True)
@@ -67,6 +66,11 @@ def test_license_option_reports_license_texts_diag_long_lines():
     run_scan_click(args)
     test_loc = test_env.get_test_loc('plugin_license/text_long_lines/scan-diag.expected.json')
     check_json_scan(test_loc, result_file, regen=False)
+
+
+def test_reindex_licenses_works():
+    args = ['--reindex-licenses']
+    run_scan_click(args)
 
 
 @pytest.mark.scanslow

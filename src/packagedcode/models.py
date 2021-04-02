@@ -337,6 +337,41 @@ class DependentPackage(BaseModel):
 
 
 @attr.s()
+class PackageFile(BaseModel):
+    """
+    A file that belongs to a package.
+    """
+
+    path = String(
+        label='Path of this installed file',
+        help='The path of this installed file either relative to a rootfs '
+            '(typical for system packages) or a path in this scan (typical for '
+             'application packages).',
+        repr=True,
+    )
+
+    size = Integer(
+        label='file size',
+        help='size of the file in bytes')
+
+    sha1 = String(
+        label='SHA1 checksum',
+        help='SHA1 checksum for this file in hexadecimal')
+
+    md5 = String(
+        label='MD5 checksum',
+        help='MD5 checksum for this file in hexadecimal')
+
+    sha256 = String(
+        label='SHA256 checksum',
+        help='SHA256 checksum for this file in hexadecimal')
+
+    sha512 = String(
+        label='SHA512 checksum',
+        help='SHA512 checksum for this file in hexadecimal')
+
+
+@attr.s()
 class Package(BasePackage):
     """
     A package object as represented by its manifest data.
@@ -451,6 +486,11 @@ class Package(BasePackage):
              'this package. For instance an SRPM is the "source package" for a '
              'binary RPM.')
 
+    installed_files = List(
+        item_type=PackageFile,
+        label='installed files',
+        help='List of files installed by this package.')
+
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.type and hasattr(self, 'default_type'):
             self.type = self.default_type
@@ -552,6 +592,14 @@ class Package(BasePackage):
         """
         return []
 
+    def to_dict(self, _detailed=False, **kwargs):
+        data = super().to_dict(**kwargs)
+        if _detailed:
+            data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
+        else:
+            data.pop('installed_files', None)
+        return data
+
 
 def compute_normalized_license(declared_license):
     """
@@ -571,37 +619,6 @@ def compute_normalized_license(declared_license):
         # FIXME: add logging
         # we never fail just for this
         return 'unknown'
-
-
-@attr.s()
-class PackageFile(BaseModel):
-    """
-    A file that belongs to a package.
-    """
-
-    path = String(
-        label='Path of this installed file',
-        help='The path of this installed file either relative to a rootfs '
-            '(typical for system packages) or a path in this scan (typical for '
-             'application packages).',
-        repr=True,
-    )
-
-    sha1 = String(
-        label='SHA1 checksum',
-        help='SHA1 checksum for this file in hexadecimal')
-
-    md5 = String(
-        label='MD5 checksum',
-        help='MD5 checksum for this file in hexadecimal')
-
-    sha256 = String(
-        label='SHA256 checksum',
-        help='SHA256 checksum for this file in hexadecimal')
-
-    sha512 = String(
-        label='SHA512 checksum',
-        help='SHA512 checksum for this file in hexadecimal')
 
 
 # Package types

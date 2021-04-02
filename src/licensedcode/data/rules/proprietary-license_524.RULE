@@ -1,0 +1,17 @@
+1.4.1 This document, "APPNOTE.TXT -  .ZIP File Format Specification" is the
+   exclusive property of PKWARE.  Use of the information contained in this
+   document is permitted solely for the purpose of creating products,
+   programs and processes that read and write files in the ZIP format
+   subject to the terms and conditions herein.
+
+   1.4.2 Use of the content of this document within other publications is
+   permitted only through reference to this document.  Any reproduction
+   or distribution of this document in whole or in part without prior
+   written permission from PKWARE is strictly prohibited.
+
+   1.4.3 Certain technological components provided in this document are the
+   patented proprietary technology of PKWARE and as such require a
+   separate, executed license agreement from PKWARE.  Applicable
+   components are marked with the following, or similar, statement:
+   'Refer to the section in this document entitled  "Incorporating
+   PKWARE Proprietary Technology into Your Product" for more information'

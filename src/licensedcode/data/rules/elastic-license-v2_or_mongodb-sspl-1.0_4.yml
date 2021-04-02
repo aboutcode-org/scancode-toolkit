@@ -1,0 +1,6 @@
+license_expression: elastic-license-v2 OR mongodb-sspl-1.0
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - sspl+elastic-license-header.txt'
+notes: https://github.com/elastic/elasticsearch/commit/a92a647b9f17d1bddf5c707490a19482c273eda3

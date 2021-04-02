@@ -1,5 +1,6 @@
 license_expression: unicode
 is_license_notice: yes
+minimum_coverage: 80
 ignorable_urls:
     - http://www.unicode.org/cldr
     - http://www.unicode.org/copyright.html

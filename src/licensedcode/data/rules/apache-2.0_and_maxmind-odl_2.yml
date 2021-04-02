@@ -1,0 +1,10 @@
+license_expression: apache-2.0 AND maxmind-odl
+is_license_notice: yes
+minimum_coverage: 70
+ignorable_copyrights:
+    - Copyright (c) MaxMind, Inc.
+ignorable_holders:
+    - MaxMind, Inc.
+ignorable_urls:
+    - http://maxmind.com/
+    - https://www.apache.org/licenses/LICENSE-2.0

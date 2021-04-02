@@ -1,0 +1,11 @@
+key: mcrae-pl-4-r53
+short_name: McRae PL v4.r53
+name: McRae General Public License (version 4.r53)
+category: Proprietary Free
+owner: pgl.yoyo.org
+homepage_url: https://pgl.yoyo.org/license/
+faq_url: https://fedoraproject.org/wiki/Licensing:Main?rd=Licensing#Bad_Licenses
+other_urls:
+    - https://github.com/Pintu900/iit_project/blob/625c5cc85012428cc69f6094bbef8fe2abab92b6/.config/chromium/Default/Extensions/cjpalhdlnbpafiamejdnhcphjbkeiagm/1.24.2_0/assets/thirdparties/pgl.yoyo.org/as/README.md
+    - https://github.com/naveednajam/Little-Snitch---Rule-GroupsV2/blob/39d3b9981eaa71eb2b0e96b7c1433854f3e7fb1b/sources/ads/yoyo.org/update.json
+spdx_license_key: LicenseRef-scancode-mcrae-pl-4-r53

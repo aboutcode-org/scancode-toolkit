@@ -1,4 +1,5 @@
 license_expression: other-permissive
 is_license_text: yes
 relevance: 100
-notes: Per Fedora, this is the Whatever Variant or MIT
+notes: Per Fedora, this is the Whatever Variant of MIT
+minimum_coverage: 60

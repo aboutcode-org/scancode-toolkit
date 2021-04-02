@@ -1,0 +1,6 @@
+license_expression: csprng
+is_license_text: yes
+relevance: 100
+notes: typo in andor
+ignorable_emails:
+    - pgut001@cs.auckland.ac.nz

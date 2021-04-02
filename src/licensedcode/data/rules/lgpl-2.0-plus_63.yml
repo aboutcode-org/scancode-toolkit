@@ -1,5 +1,3 @@
 license_expression: lgpl-2.0-plus
-is_license_notice: yes
-minimum_coverage: 85
-referenced_filenames:
-    - COPYING.LIB
+is_license_reference: yes
+relevance: 100
