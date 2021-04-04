@@ -1511,7 +1511,7 @@ class VirtualCodebase(Codebase):
         Note: the root path and root Resource must already be in `parent_by_path` or else this
         function does not work.
         """
-        parent_path = parent_directory(path).rstrip('/').rstrip('\\')
+        parent_path = parent_directory(path).rstrip('/').rstrip('\\').lstrip("/")
         existing_parent = parent_by_path.get(parent_path)
         if existing_parent:
             return existing_parent
