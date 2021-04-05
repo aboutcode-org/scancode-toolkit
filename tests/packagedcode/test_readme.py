@@ -10,7 +10,7 @@
 import os.path
 import saneyaml
 
-from packagedcode import readme 
+from packagedcode import readme
 from packages_test_utils import PackageTester
 
 
@@ -21,13 +21,13 @@ class TestReadme(PackageTester):
         test_file = self.get_test_loc('readme/facebook/downloaded-from-as-download_url/README.facebook')
         expected_loc = self.get_test_loc('readme/facebook/downloaded-from-as-download_url/README.facebook.expected')
         package = readme.parse(test_file)
-        self.check_package(package, expected_loc, regen=True)
+        self.check_package(package, expected_loc, regen=False)
 
     def test_parse_facebook_download_link_as_download_url(self):
         test_file = self.get_test_loc('readme/facebook/download-link-as-download_url/README.facebook')
         expected_loc = self.get_test_loc('readme/facebook/download-link-as-download_url/README.facebook.expected')
         package = readme.parse(test_file)
-        self.check_package(package, expected_loc, regen=True)
+        self.check_package(package, expected_loc, regen=False)
 
     def test_parse_facebook_source_as_homepage_url(self):
         test_file = self.get_test_loc('readme/facebook/repo-as-homepage_url/README.facebook')
@@ -62,6 +62,12 @@ class TestReadme(PackageTester):
     def test_parse_facebook_capitalized_filename(self):
         test_file = self.get_test_loc('readme/facebook/capital-filename/README.FACEBOOK')
         expected_loc = self.get_test_loc('readme/facebook/capital-filename/README.FACEBOOK.expected')
+        package = readme.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_facebook_use_parent_dir_name_as_package_name_if_no_package_name_detected(self):
+        test_file = self.get_test_loc('readme/facebook/use-parent-dir-name-as-package-name/setuptools/README.facebook')
+        expected_loc = self.get_test_loc('readme/facebook/use-parent-dir-name-as-package-name/setuptools/README.facebook.expected')
         package = readme.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
 

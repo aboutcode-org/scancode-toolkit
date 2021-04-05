@@ -1,7 +1,7 @@
 {
   "type": "readme",
   "namespace": null,
-  "name": null,
+  "name": "lunit",
   "version": "0.5",
   "qualifiers": {},
   "subpath": null,
@@ -28,7 +28,7 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
-  "purl": null,
+  "purl": "pkg:readme/lunit@0.5",
   "repository_homepage_url": null,
   "repository_download_url": null,
   "api_data_url": null

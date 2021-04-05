@@ -82,7 +82,16 @@ def parse(location):
     with open(location, encoding='utf-8') as loc:
         readme_manifest = loc.read()
 
-    return build_package(readme_manifest)
+    package = build_package(readme_manifest)
+
+    if not package.name:
+        # If no name was detected for the Package, then we use the basename of
+        # the parent directory as the Package name
+        parent_dir = fileutils.parent_directory(location)
+        parent_dir_basename = fileutils.file_base_name(parent_dir)
+        package.name = parent_dir_basename
+
+    return package
 
 
 def build_package(readme_manifest):
@@ -97,7 +106,7 @@ def build_package(readme_manifest):
 
         if not key or not value:
             continue
- 
+
         # Map the key, value pairs to the Package
         key, value = key.lower(), value.strip()
         if key in README_MAPPING['name']:
