@@ -404,10 +404,16 @@ def get_declared_to_detected(data_file=None):
     Return a mapping of declared to detected license expression cached and
     loaded from a tab-separated text file, all lowercase.
 
+    Each line has this form:
+        some license name<tab>scancode license expression
+
+    For instance:
+        2-clause bsd    bsd-simplified
+
     This data file is about license keys used in copyright files and has been
     derived from a large collection of most copyright files from Debian (about
     320K files from circa 2019-11) and Ubuntu (about 200K files from circa
-    202-06)
+    2020-06)
     """
     global _DECLARED_TO_DETECTED
     if _DECLARED_TO_DETECTED:
