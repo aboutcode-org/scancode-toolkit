@@ -146,3 +146,16 @@ build_tests(
     clazz=TestDebianCopyrightLicenseDetection,
     regen=False,
 )
+
+
+class TestDebianSlimCopyrightLicenseDetection(FileBasedTesting):
+    # pytestmark = pytest.mark.scanslow
+    test_data_dir = path.join(path.dirname(__file__), 'data')
+
+
+build_tests(
+    test_dir='debian/copyright/debian-slim-2021-04-07',
+    prefix='test_debian_slim_parse_copyright_file_',
+    clazz=TestDebianSlimCopyrightLicenseDetection,
+    regen=False,
+)
