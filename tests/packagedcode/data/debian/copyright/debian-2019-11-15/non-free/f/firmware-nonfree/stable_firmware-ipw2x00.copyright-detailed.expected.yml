@@ -1,3 +1,12 @@
 -
-- free-unknown AND unknown AND unknown-license-reference
+- unknown AND unknown AND unknown AND unknown AND unknown AND (unknown-license-reference AND
+  unknown) AND unknown AND ((unknown-license-reference AND unknown-license-reference AND unknown-license-reference)
+  AND unknown) AND unknown AND unknown AND ((free-unknown AND unknown-license-reference) AND
+  unknown) AND unknown AND unknown AND unknown AND unknown AND unknown AND unknown AND unknown
+  AND unknown AND ((unknown-license-reference AND unknown-license-reference AND unknown-license-reference)
+  AND unknown) AND unknown AND (unknown-license-reference AND unknown) AND unknown AND ((free-unknown
+  AND unknown-license-reference) AND unknown) AND unknown AND unknown AND unknown AND unknown
+  AND unknown AND unknown AND unknown AND (unknown-license-reference AND unknown) AND unknown
+  AND (unknown-license-reference AND unknown) AND unknown AND unknown AND unknown AND unknown
+  AND unknown AND unknown AND unknown AND unknown AND unknown
 - Copyright 2003-2009 Intel Corporation

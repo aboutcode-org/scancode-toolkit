@@ -29,13 +29,13 @@ def check_expected_parse_copyright_file(
     at `expected_loc` location. Regen the expected file if `regen` is True.
     """
     if with_details:
-        skip_debian_packaging = True
-        simplify_licenses = True
-        unique = True
-    else:
         skip_debian_packaging = False
         simplify_licenses = False
         unique = False
+    else:
+        skip_debian_packaging = True
+        simplify_licenses = True
+        unique = True
 
     parsed = debian_copyright.parse_copyright_file(
         copyright_file=test_loc,
@@ -109,29 +109,30 @@ def build_tests(test_dir, clazz, prefix='test_', regen=False):
     test_dir_loc = path.join(test_data_dir, test_dir)
     # loop through all items and attach a test method to our test class
     for test_file in relative_walk(test_dir_loc):
-        test_name = prefix + text.python_safe_name(test_file)
         test_loc = path.join(test_dir_loc, test_file)
 
         # create two test methods: one with and one without details
+        test_name1 = prefix + text.python_safe_name(test_file)
         test_method = create_test_function(
             test_loc=test_loc,
             expected_loc=test_loc + '.expected.yml',
-            test_name=test_name,
+            test_name=test_name1,
             regen=regen,
             with_details=False,
         )
         # attach that method to the class
-        setattr(clazz, test_name, test_method)
+        setattr(clazz, test_name1, test_method)
 
+        test_name2 = prefix + 'detailed_' + text.python_safe_name(test_file)
         test_method = create_test_function(
             test_loc=test_loc,
             expected_loc=test_loc + '-detailed.expected.yml',
-            test_name=test_name,
+            test_name=test_name2,
             regen=regen,
             with_details=True,
         )
         # attach that method to the class
-        setattr(clazz, test_name, test_method)
+        setattr(clazz, test_name2, test_method)
 
 
 class TestDebianCopyrightLicenseDetection(FileBasedTesting):

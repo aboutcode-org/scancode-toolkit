@@ -25,14 +25,33 @@
   Binary redistribution (MediaTek)
   Binary redistribution (MTS)
   License For Customer Use of NVIDIA Software
+  Binary redistribution (Intel)
   Binary redistribution (Rockchip)
   Binary redistribution (Comtrol)
   Binary redistribution (Ralink)
+  Binary redistribution
+  Binary redistribution
   BSD (Ikanos)
   Binary redistribution (Conexant)
-- 3com-microcode AND agere-bsd AND bsd-new AND bsd-original AND bsd-simplified AND bsd-simplified-source
-  AND intel AND isc AND linux-openib AND mit AND other-permissive AND proprietary-license AND
-  ralink-firmware AND unknown
+  Binary redistribution (Intel)
+- unknown AND (3com-microcode AND unknown) AND unknown AND (bsd-simplified-source AND unknown)
+  AND unknown AND agere-bsd AND proprietary-license AND isc AND (proprietary-license AND unknown)
+  AND (proprietary-license AND unknown) AND proprietary-license AND other-permissive AND bsd-simplified
+  AND (linux-openib AND unknown) AND (proprietary-license AND unknown) AND (proprietary-license
+  AND unknown) AND unknown AND bsd-simplified-source AND (proprietary-license AND unknown) AND
+  proprietary-license AND proprietary-license AND isc AND proprietary-license AND isc AND (proprietary-license
+  AND unknown) AND proprietary-license AND unknown AND (bsd-new AND unknown) AND proprietary-license
+  AND isc AND unknown AND proprietary-license AND unknown AND proprietary-license AND (proprietary-license
+  AND unknown) AND (intel AND unknown) AND proprietary-license AND (proprietary-license AND
+  unknown) AND (proprietary-license AND unknown) AND (bsd-original AND unknown) AND bsd-original
+  AND proprietary-license AND (mit AND unknown) AND (proprietary-license AND unknown) AND proprietary-license
+  AND ralink-firmware AND (ralink-firmware AND unknown) AND proprietary-license AND proprietary-license
+  AND proprietary-license AND proprietary-license AND proprietary-license AND (proprietary-license
+  AND unknown) AND (proprietary-license AND unknown) AND (proprietary-license AND unknown) AND
+  proprietary-license AND (proprietary-license AND unknown) AND (ralink-firmware AND unknown)
+  AND proprietary-license AND other-permissive AND proprietary-license AND other-permissive
+  AND (bsd-new AND proprietary-license) AND (bsd-new AND proprietary-license) AND proprietary-license
+  AND proprietary-license AND proprietary-license AND (intel AND unknown)
 - |
   1999-2004, 3Com Corporation
   1995-2000, Advanced System Products, Inc.
@@ -54,6 +73,7 @@
   2011, ENE Technology Inc.
   Sensoray
   Micronas
+  2015, Intel Corporation
   2015, Intel Corporation
   2017, NXP
   1999, Kawasaki LSI.

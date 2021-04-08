@@ -2,7 +2,8 @@
   Proprietary_1
   Proprietary_2
   GPL-2+
-- broadcom-proprietary AND bsd-new AND gpl-2.0-plus AND unknown
+- unknown AND (bsd-new AND unknown) AND unknown AND ((broadcom-proprietary AND broadcom-proprietary)
+  AND unknown) AND gpl-2.0-plus AND (gpl-2.0-plus AND unknown)
 - |
   2006, Broadcom Corporation
   2015, Raspberry Pi (Trading) Ltd

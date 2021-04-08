@@ -13,22 +13,47 @@
   BSD-3-clause and BSL
   ISC
   LGPL-2
+  LGPL-2+
+  BSD-2-clause
+  BSD-3-clause
+  Expat
   BSL
+  LGPL-2
+  LGPL-2+
+  LGPL-2.1
+  LGPL-2.1+
   GPL-2+
+  GPL-3+
+  MIT-X11
   MPL-1.1
-- apache-2.0 AND boost-1.0 AND bsd-new AND bsd-simplified AND gpl-2.0-plus AND gpl-3.0-plus
-  AND isc AND lgpl-2.0 AND lgpl-2.0-plus AND lgpl-2.1 AND lgpl-2.1-plus AND mit AND mpl-1.1
-  AND public-domain AND unknown AND x11
+  Apache-2.0
+  ISC
+- bsd-simplified AND bsd-new AND unknown AND gpl-3.0-plus AND lgpl-2.0-plus AND lgpl-2.1 AND
+  lgpl-2.1-plus AND mit AND ((mpl-1.1 AND gpl-2.0-plus AND lgpl-2.1-plus) AND unknown) AND public-domain
+  AND public-domain AND apache-2.0 AND (bsd-new AND unknown) AND unknown AND lgpl-2.0 AND lgpl-2.0-plus
+  AND bsd-simplified AND bsd-simplified AND bsd-new AND (bsd-new AND unknown) AND unknown AND
+  mit AND unknown AND boost-1.0 AND lgpl-2.0 AND (lgpl-2.1-plus AND unknown) AND lgpl-2.0-plus
+  AND (lgpl-2.1-plus AND unknown) AND lgpl-2.1 AND ((lgpl-2.1-plus AND lgpl-2.1) AND unknown)
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-3.0-plus AND
+  (gpl-3.0-plus AND unknown) AND mit AND x11 AND mpl-1.1 AND mpl-1.1 AND apache-2.0 AND ((apache-2.0
+  AND apache-2.0) AND unknown) AND unknown AND isc
 - |
   © 2002-2019 Apple Inc. and others
   © 2002-2014 Apple Inc. and others
   © 2007-2009 The Khronos Group Inc.
   © 2013 Dave St.Germain
+  © 2002-2014 Apple Inc. and others
+  © 2002-2014 Apple Inc. and others
+  © 2002-2014 Apple Inc. and others
+  © 2002-2014 Apple Inc. and others
   © 1995-2006 International Business Machines Corporation and others
+  © 2002-2014 Apple Inc. and others
   No copyright holders
   © 2007 Google Inc.
+  © 2002-2014 Apple Inc. and others
   © 1996 David Mazieres <dm@uun.org>
   © 2008 Damien Miller <djm@openbsd.org>
+  © 2002-2014 Apple Inc. and others
   © 2007-2009 Mike Hommey <glandium@debian.org>
   © 2009 Gustavo Noronha Silva <kov@debian.org>
   © 2014-2019 Alberto Garcia <berto@igalia.com>

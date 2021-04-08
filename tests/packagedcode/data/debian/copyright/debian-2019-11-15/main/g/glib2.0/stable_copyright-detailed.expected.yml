@@ -2,7 +2,11 @@
   Expat
   GPL-2+
   Apache-2.0
-- apache-2.0 AND gpl-2.0-plus AND lgpl-2.0-plus AND mit AND unknown
+  Apache-2.0
+  Expat
+  GPL-2+
+- unknown AND lgpl-2.0-plus AND unknown AND gpl-2.0-plus AND apache-2.0 AND apache-2.0 AND ((apache-2.0
+  AND apache-2.0 AND apache-2.0) AND unknown) AND unknown AND mit AND gpl-2.0-plus AND gpl-2.0-plus
 - |
   2015 Remko Tronçon
   1998-1999 Tom Tromey

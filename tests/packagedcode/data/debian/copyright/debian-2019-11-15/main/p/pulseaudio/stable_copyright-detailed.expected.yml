@@ -1,12 +1,101 @@
 - |
   LGPL-2.1+
   This source code is a product of Sun Microsystems, Inc. and is provided
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
   GPL-2+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
   You are allowed to use this source code in any open source or closed
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
   Permission is hereby granted, free of charge, to any person
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
   LGPL-2+
-- adrian AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.1-plus AND
-  other-permissive AND sun-source AND unknown AND unknown-license-reference AND x11
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  LGPL-2.1+
+  GPL-2+
+  LGPL-2.1+
+  LGPL-2.1+
+- unknown AND lgpl-2.1-plus AND ((lgpl-2.0-plus AND lgpl-2.0-plus AND gpl-1.0-plus AND gpl-1.0-plus)
+  AND unknown) AND ((unknown-license-reference AND lgpl-2.1-plus AND lgpl-2.0-plus AND gpl-1.0-plus
+  AND gpl-1.0-plus AND gpl-1.0-plus AND lgpl-2.0-plus AND lgpl-2.0-plus AND gpl-1.0-plus AND
+  gpl-1.0-plus AND lgpl-2.1-plus) AND unknown) AND unknown AND (sun-source AND unknown) AND
+  unknown AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND (lgpl-2.1-plus AND unknown) AND gpl-2.0-plus AND ((gpl-1.0-plus
+  AND gpl-2.0 AND gpl-2.0) AND unknown) AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND unknown AND (adrian AND unknown) AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND (unknown-license-reference AND unknown) AND (x11 AND unknown) AND (other-permissive
+  AND unknown) AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND (lgpl-2.1-plus AND unknown) AND
+  unknown AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND unknown AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND gpl-2.0-plus AND ((gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND unknown) AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND ((lgpl-2.1-plus AND lgpl-2.1-plus) AND unknown) AND lgpl-2.1-plus AND
+  lgpl-2.1-plus
 - |
   Copyright (C) 2004-2009 Lennart Poettering
   Copyright (C) 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB
@@ -17,6 +106,7 @@
   Copyright (C) 2000 Red Hat, Inc.
   Copyright (C) 2004-2009 Marcel Holtmann <marcel@holtmann.org>
   Copyright (C) 2008-2009 Joao Paulo Rechi Vita
+  Copyright (C) 2004-2009 Marcel Holtmann <marcel@holtmann.org>
   Copyright (C) 2004-2005 Henryk Ploetz <henryk@ploetzli.ch>
   Copyright (C) 2005-2006 Brad Midgley <bmidgley@xmission.com>
   Copyright 2009 Tanu Kaskinen
@@ -26,11 +116,17 @@
   Copyright 2006 Lennart Poettering
   Copyright 2006 Shams E. King
   Copyright (C) 2008 Colin Guthrie
+  Copyright 2006 Lennart Poettering
+  Copyright 2006 Pierre Ossman <ossman@cendio.se> for Cendio AB
   Copyright 2006 Diego Petteno
   Copyright 2005-2007 Lennart Poettering
+  Copyright (C) 2008 Colin Guthrie
+  Copyright (C) 2008 Colin Guthrie
   Copyright (C) Kungliga Tekniska Hogskolan
+  Copyright 2006-2008 Lennart Poettering
   Copyright 2009 Colin Guthrie
   Copyright 2011 Colin Guthrie
+  Copyright 2006 Lennart Poettering
   Copyright 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB
   Copyright 2009 Finn Thain
   Copyright 2010 Intel Corporation
@@ -39,6 +135,7 @@
   Copyright (C) 2006-2008 Lennart Poettering
   Copyright (C) 2008 Nokia Corporation
   Copyright (C) 2008 Lennart Poettering
+  Copyright (C) 2009 Colin Guthrie
   Copyright 2006-2009 Sjoerd Simons <sjoerd@debian.org>
   Copyright 2006-2008 CJ van den Berg <cj@vdbonline.com>
   Copyright 2004-2006 Lennart Poettering
