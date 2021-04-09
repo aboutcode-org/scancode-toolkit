@@ -65,7 +65,7 @@ While a scan using absolute paths from the file system root will look like::
 
     home/ayansm/software/scancode-toolkit-3.1.1/scancode -clpieu --json-pp home/ayansm/scan_scan_results/output.json home/ayansm/codebases/samples/
 
-Commands similar to ``scancode --clpi --json-pp output.json samples`` will be used as examples
+Commands similar to ``scancode -clpi --json-pp output.json samples`` will be used as examples
 throughout the documentation.
 
 - Here we are inside the ``virtualenv`` where Scancode-Toolkit is configured.
