@@ -59,15 +59,21 @@ if (TRACE
     or TRACE_APPROX or TRACE_APPROX_CANDIDATES or TRACE_APPROX_MATCHES
     or TRACE_INDEXING_PERF):
 
-    import logging
+    use_print = True
 
-    logger = logging.getLogger(__name__)
-    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
+    if use_print:
+        printer = print
+    else:
+        import logging
+
+        logger = logging.getLogger(__name__)
+        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+        logging.basicConfig(stream=sys.stdout)
+        logger.setLevel(logging.DEBUG)
+        printer = logger.debug
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a)
+        return printer(' '.join(isinstance(a, str) and a or repr(a)
                                      for a in args))
 
 ############################## Feature SWITCHES ################################
@@ -198,13 +204,13 @@ class LicenseIndex(object):
         if rules:
             if TRACE_INDEXING_PERF:
                 start = time()
-                print('LicenseIndex: building index.')
+                logger_debug('LicenseIndex: building index.')
             # index all and optimize
             self._add_rules(
                 rules, _legalese=_legalese, _spdx_tokens=_spdx_tokens)
 
             if TRACE_TOKEN_DOC_FREQ:
-                print('LicenseIndex: token, frequency')
+                logger_debug('LicenseIndex: token, frequency')
                 from itertools import chain
                 tf = Counter(chain.from_iterable(tids for rid, tids
                         in enumerate(self.tids_by_rid)
@@ -213,7 +219,7 @@ class LicenseIndex(object):
             if TRACE_INDEXING_PERF:
                 duration = time() - start
                 len_rules = len(self.rules_by_rid)
-                print('LicenseIndex: built index with %(len_rules)d rules in '
+                logger_debug('LicenseIndex: built index with %(len_rules)d rules in '
                       '%(duration)f seconds.' % locals())
                 self._print_index_stats()
 
@@ -488,9 +494,8 @@ class LicenseIndex(object):
             for m in matches:
                 logger_debug(m)
                 qt, it = get_texts(m)
-                print('  MATCHED QUERY TEXT:', qt)
-                print('  MATCHED RULE TEXT:', it)
-                print()
+                logger_debug('  MATCHED QUERY TEXT:', qt)
+                logger_debug('  MATCHED RULE TEXT:', it)
 
     def get_spdx_id_matches(self, query, from_spdx_id_lines=True, **kwargs):
         """
@@ -581,7 +586,7 @@ class LicenseIndex(object):
             if TRACE_APPROX_CANDIDATES:
                 logger_debug('get_query_run_approximate_matches: near dupe candidates:')
                 for rank, ((sv1, sv2), _rid, can, _inter) in enumerate(near_dupe_candidates, 1):
-                    print(rank, sv1, sv2, can.identifier)
+                    logger_debug(rank, sv1, sv2, can.identifier)
 
             matched = self.get_query_run_approximate_matches(
                 whole_query_run, near_dupe_candidates, already_matched_qspans, deadline)
@@ -621,7 +626,7 @@ class LicenseIndex(object):
             if TRACE_APPROX_CANDIDATES:
                 logger_debug('get_query_run_approximate_matches: candidates:')
                 for rank, ((sv1, sv2), _rid, can, _inter) in enumerate(candidates, 1):
-                    print(rank, sv1, sv2, can.identifier)
+                    logger_debug(rank, sv1, sv2, can.identifier)
 
             matched = self.get_query_run_approximate_matches(
                 query_run, candidates, matched_qspans, deadline)
@@ -835,7 +840,6 @@ class LicenseIndex(object):
         match.set_lines(matches, qry.line_by_pos)
 
         if TRACE:
-            print()
             self.debug_matches(
                 matches=matches, message='final matches',
                 location=location, query_string=query_string ,
