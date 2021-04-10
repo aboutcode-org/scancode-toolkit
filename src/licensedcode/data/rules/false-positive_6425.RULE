@@ -1,0 +1,6 @@
+' BSD-3-Clause': 'BSD-3-Clause',
+  ' GPL-3.0+': 'GPL-3.0-or-later',
+  '"BD-2-Clause"': 'BSD-2-Clause',
+  '"BSD-2-Clause"': 'BSD-2-Clause',
+  '"MIT"': 'MIT',
+  '(LGPL)': 'LGPL-3.0-or-later',

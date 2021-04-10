@@ -1,0 +1,6 @@
+'LGPL-3.0+': 'LGPL-3.0-or-later',
+  'LICENSE-MIT': 'MIT',
+  'Licenses/GPL-3.0': 'GPL-3.0-or-later',
+  'M.I.T': 'MIT',
+  'M.I.T.': 'MIT',
+  'MIT ': 'MIT',

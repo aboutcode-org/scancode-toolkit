@@ -1,0 +1,6 @@
+'Gpl-2.0': 'GPL-2.0-only',
+  'Gpl-3.0': 'GPL-3.0-or-later',
+  Gpl2: 'GPL-2.0-only',
+  'Http://opensource.org/licenses/MIT': 'MIT',
+  'Http://unlicense.org': 'Unlicense',
+  'Http://wtfpl.org/': 'WTFPL',
