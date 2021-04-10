@@ -62,16 +62,21 @@ if (TRACE
     or TRACE_MATCHED_TEXT
     or TRACE_MATCHED_TEXT_DETAILS):
 
-    import logging
-    import sys
-
-    logger = logging.getLogger(__name__)
+    use_print = True
+    if use_print:
+        printer = print
+    else:
+        import logging
+        import sys
+        logger = logging.getLogger(__name__)
+        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+        logging.basicConfig(stream=sys.stdout)
+        logger.setLevel(logging.DEBUG)
+        printer = logger.debug
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
+        return printer(' '.join(isinstance(a, str) and a or repr(a)
+                                     for a in args))
 
     def _debug_print_matched_query_text(match, query, extras=5):
         """
@@ -88,7 +93,7 @@ if (TRACE
         logger_debug(new_match)
         logger_debug(' MATCHED QUERY TEXT with extras')
         qt = new_match.matched_text(whole_lines=False)
-        print(qt)
+        logger_debug(qt)
 
 
 # TODO: use attrs
@@ -181,8 +186,8 @@ class LicenseMatch(object):
         )
         return (
             'LicenseMatch: %(matcher)r, lines=%(lines)r, %(rule_id)r, '
-            '\n    %(license_expression)r,'
-            '\n    sc=%(score)r, cov=%(coverage)r, '
+            '%(license_expression)r, '
+            'sc=%(score)r, cov=%(coverage)r, '
             'len=%(len)r, hilen=%(hilen)r, rlen=%(rlen)r, '
             'qreg=%(qreg)r, ireg=%(ireg)r%(thresh)s%(spans)s') % rep
 
@@ -748,7 +753,6 @@ def filter_contained_matches(matches):
             current_match = matches[i]
             next_match = matches[j]
             if TRACE_FILTER_CONTAINED:
-                logger_debug('\n\n')
                 logger_debug('---> filter_contained_matches: current: i=', i, current_match)
                 logger_debug('---> filter_contained_matches: next:    j=', j, next_match)
 
@@ -765,12 +769,12 @@ def filter_contained_matches(matches):
             # equals matched spans
             if current_match.qspan == next_match.qspan:
                 if current_match.coverage() >= next_match.coverage():
-                    if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed next with lower or equal coverage', matches[j], '\n')
+                    if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed next with lower or equal coverage', matches[j])
                     discarded_append(next_match)
                     del matches[j]
                     continue
                 else:
-                    if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed current with lower coverage', matches[i], '\n')
+                    if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed current with lower coverage', matches[i])
                     discarded_append(current_match)
                     del matches[i]
                     i -= 1
@@ -778,14 +782,14 @@ def filter_contained_matches(matches):
 
             # remove contained matched spans
             if current_match.qcontains(next_match):
-                if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: next CONTAINED in current, removed next', matches[j], '\n')
+                if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: next CONTAINED in current, removed next', matches[j])
                 discarded_append(next_match)
                 del matches[j]
                 continue
 
             # remove contained matches the other way
             if next_match.qcontains(current_match):
-                if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: current CONTAINED in next, removed current', matches[i], '\n')
+                if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: current CONTAINED in next, removed current', matches[i])
                 discarded_append(current_match)
                 del matches[i]
                 i -= 1
@@ -801,7 +805,7 @@ def filter_contained_matches(matches):
 # we underreport
 
 
-def filter_overlapping_matches(matches):
+def filter_overlapping_matches(matches, skip_contiguous_false_positive=True):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a `matches` list of LicenseMatch by removing
@@ -830,11 +834,12 @@ def filter_overlapping_matches(matches):
     sorter = lambda m: (m.qspan.start, -m.hilen(), -m.len(), m.matcher)
     matches = sorted(matches, key=sorter)
 
-    if TRACE_FILTER_OVERLAPPING: print('filter_overlapping_matches: number of matches to process:', len(matches))
     if TRACE_FILTER_OVERLAPPING:
-        print('filter_overlapping_matches: initial matches')
+        logger_debug('filter_overlapping_matches: number of matches to process:', len(matches))
+    if TRACE_FILTER_OVERLAPPING:
+        logger_debug('filter_overlapping_matches: initial matches')
         for m in matches:
-            print(m)
+            logger_debug('  ', m)
 
     # compare two matches in the sorted sequence: current and next match we
     # progressively compare a pair and remove next or current
@@ -845,9 +850,8 @@ def filter_overlapping_matches(matches):
             current_match = matches[i]
             next_match = matches[j]
             if TRACE_FILTER_OVERLAPPING:
-                logger_debug('\n\n')
-                logger_debug('---> filter_overlapping_matches: current: i=', i, current_match)
-                logger_debug('---> filter_overlapping_matches: next:    j=', j, next_match)
+                logger_debug('  ---> filter_overlapping_matches: current: i=', i, current_match)
+                logger_debug('  ---> filter_overlapping_matches: next:    j=', j, next_match)
 
             # BREAK/shortcircuit rather than continue since continuing looking
             # next matches will yield no new findings. e.g. stop when no overlap
@@ -862,6 +866,14 @@ def filter_overlapping_matches(matches):
             overlap = current_match.overlap(next_match)
             if not overlap:
                 if TRACE_FILTER_OVERLAPPING: logger_debug('    ---> ###filter_overlapping_matches: matches do not overlap: NO OVERLAP POSSIBLE -->', 'qdist:', current_match.qdistance_to(next_match))
+                j += 1
+                continue
+
+            if (skip_contiguous_false_positive
+                and current_match.rule.is_false_positive
+                and next_match.rule.is_false_positive
+            ):
+                if TRACE_FILTER_OVERLAPPING: logger_debug('    ---> ###filter_overlapping_matches: overlaping FALSE POSITIVES are not treated as overlaping.')
                 j += 1
                 continue
 
@@ -903,73 +915,120 @@ def filter_overlapping_matches(matches):
                 )
 
             if extra_large_next and current_match.len() >= next_match.len():
-                if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: EXTRA_LARGE next included, removed shorter next', matches[j], '\n')
+                if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: EXTRA_LARGE next included, removed shorter next', matches[j])
                 discarded_append(next_match)
                 del matches[j]
                 continue
 
             if extra_large_current and current_match.len() <= next_match.len():
-                if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: EXTRA_LARGE next includes current, removed shorter current', matches[i], '\n')
+                if TRACE_FILTER_OVERLAPPING:
+                    logger_debug(
+                        '      ---> ###filter_overlapping_matches: EXTRA_LARGE next includes '
+                        'current, removed shorter current', matches[i])
                 discarded_append(current_match)
                 del matches[i]
                 i -= 1
                 break
 
             if large_next and current_match.len() >= next_match.len() and current_match.hilen() >= next_match.hilen():
-                if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: LARGE next included, removed shorter next', matches[j], '\n')
+                if TRACE_FILTER_OVERLAPPING:
+                    logger_debug(
+                        '      ---> ###filter_overlapping_matches: LARGE next included, '
+                        'removed shorter next', matches[j])
                 discarded_append(next_match)
                 del matches[j]
                 continue
 
             if large_current and current_match.len() <= next_match.len() and current_match.hilen() <= next_match.hilen():
-                if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: LARGE next includes current, removed shorter current', matches[i], '\n')
+                if TRACE_FILTER_OVERLAPPING:
+                    logger_debug(
+                        '      ---> ###filter_overlapping_matches: LARGE next includes '
+                        'current, removed shorter current', matches[i])
                 discarded_append(current_match)
                 del matches[i]
                 i -= 1
                 break
 
             if medium_next:
-                if TRACE_FILTER_OVERLAPPING: logger_debug('    ---> ###filter_overlapping_matches: MEDIUM NEXT')
-                if current_match.licensing_contains(next_match) and current_match.len() >= next_match.len() and current_match.hilen() >= next_match.hilen():
-                    if TRACE_FILTER_OVERLAPPING: logger_debug(
-                        '      ---> ###filter_overlapping_matches: MEDIUM next included with next licensing contained, removed next', matches[j], '\n',)
+                if TRACE_FILTER_OVERLAPPING:
+                    logger_debug('    ---> ###filter_overlapping_matches: MEDIUM NEXT')
+                if (current_match.licensing_contains(next_match)
+                    and current_match.len() >= next_match.len()
+                    and current_match.hilen() >= next_match.hilen()
+                ):
+                    if TRACE_FILTER_OVERLAPPING:
+                        logger_debug(
+                            '      ---> ###filter_overlapping_matches: MEDIUM next included '
+                            'with next licensing contained, removed next', matches[j],)
                     discarded_append(next_match)
                     del matches[j]
                     continue
 
-                if next_match.licensing_contains(current_match) and current_match.len() <= next_match.len() and current_match.hilen() <= next_match.hilen():
-                    if TRACE_FILTER_OVERLAPPING: logger_debug(
-                        '      ---> ###filter_overlapping_matches: MEDIUM next includes current with current licensing contained, removed current', matches[i], '\n')
+                if (next_match.licensing_contains(current_match)
+                    and current_match.len() <= next_match.len()
+                    and current_match.hilen() <= next_match.hilen()
+                ):
+                    if TRACE_FILTER_OVERLAPPING:
+                        logger_debug(
+                            '      ---> ###filter_overlapping_matches: MEDIUM next includes '
+                            'current with current licensing contained, removed current', matches[i])
                     discarded_append(current_match)
                     del matches[i]
                     i -= 1
                     break
 
             if medium_current:
-                if TRACE_FILTER_OVERLAPPING: logger_debug('    ---> ###filter_overlapping_matches: MEDIUM CURRENT')
-                if current_match.licensing_contains(next_match) and current_match.len() >= next_match.len() and current_match.hilen() >= next_match.hilen():
-                    if TRACE_FILTER_OVERLAPPING: logger_debug(
-                        '      ---> ###filter_overlapping_matches: MEDIUM current, bigger current with next licensing contained, removed next', matches[j], '\n')
+                if TRACE_FILTER_OVERLAPPING:
+                    logger_debug('    ---> ###filter_overlapping_matches: MEDIUM CURRENT')
+                if (current_match.licensing_contains(next_match)
+                    and current_match.len() >= next_match.len()
+                    and current_match.hilen() >= next_match.hilen()
+                ):
+                    if TRACE_FILTER_OVERLAPPING:
+                        logger_debug(
+                            '      ---> ###filter_overlapping_matches: MEDIUM current, '
+                            'bigger current with next licensing contained, removed next', matches[j])
                     discarded_append(next_match)
                     del matches[j]
                     continue
 
-                if next_match.licensing_contains(current_match) and current_match.len() <= next_match.len() and current_match.hilen() <= next_match.hilen():
-                    if TRACE_FILTER_OVERLAPPING: logger_debug(
-                        '      ---> ###filter_overlapping_matches: MEDIUM current, bigger next current with current licensing contained, removed current', matches[i], '\n')
+                if (next_match.licensing_contains(current_match)
+                    and current_match.len() <= next_match.len()
+                    and current_match.hilen() <= next_match.hilen()
+                ):
+                    if TRACE_FILTER_OVERLAPPING:
+                        logger_debug(
+                            '      ---> ###filter_overlapping_matches: MEDIUM current, '
+                            'bigger next current with current licensing contained, removed current', matches[i])
                     discarded_append(current_match)
                     del matches[i]
                     i -= 1
                     break
 
-            if small_next and current_match.surround(next_match) and current_match.licensing_contains(next_match) and current_match.len() >= next_match.len() and current_match.hilen() >= next_match.hilen():
-                if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: SMALL next surrounded, removed next', matches[j], '\n')
+            if (small_next
+                and current_match.surround(next_match)
+                and current_match.licensing_contains(next_match)
+                and current_match.len() >= next_match.len()
+                and current_match.hilen() >= next_match.hilen()
+            ):
+                if TRACE_FILTER_OVERLAPPING:
+                    logger_debug(
+                        '      ---> ###filter_overlapping_matches: SMALL next surrounded, '
+                        'removed next', matches[j])
                 discarded_append(next_match)
                 del matches[j]
                 continue
 
-            if small_current and next_match.surround(current_match) and next_match.licensing_contains(current_match) and current_match.len() <= next_match.len() and current_match.hilen() <= next_match.hilen():
-                if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: SMALL current surrounded, removed current', matches[i], '\n')
+            if (small_current
+                and next_match.surround(current_match)
+                and next_match.licensing_contains(current_match)
+                and current_match.len() <= next_match.len()
+                and current_match.hilen() <= next_match.hilen()
+            ):
+                if TRACE_FILTER_OVERLAPPING:
+                    logger_debug(
+                        '      ---> ###filter_overlapping_matches: SMALL current surrounded, '
+                        'removed current', matches[i])
                 discarded_append(next_match)
                 del matches[i]
                 i -= 1
@@ -992,7 +1051,10 @@ def filter_overlapping_matches(matches):
                         clen = current_match.len()
                         # we want at least 90% of the current that is in the overlap
                         if overlap_len >= (clen * 0.9):
-                            if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: current mostly contained in previsou and next, removed current', matches[i], '\n')
+                            if TRACE_FILTER_OVERLAPPING:
+                                logger_debug(
+                                    '      ---> ###filter_overlapping_matches: current mostly '
+                                    'contained in previsou and next, removed current', matches[i])
                             discarded_append(next_match)
                             del matches[i]
                             i -= 1
@@ -1000,6 +1062,14 @@ def filter_overlapping_matches(matches):
 
             j += 1
         i += 1
+
+    if TRACE_FILTER_OVERLAPPING:
+        print('filter_overlapping_matches: final  matches')
+        for m in matches:
+            print('  ', m)
+        print('filter_overlapping_matches: final  discarded')
+        for m in discarded:
+            print('  ', m)
 
     return matches, discarded
 
