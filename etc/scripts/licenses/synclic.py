@@ -162,7 +162,7 @@ class ExternalLicensesSource(object):
         if not exists(self.new_dir):
             mkdir(self.new_dir)
 
-    def get_licenses(self, scancode_licenses, **kwargs):
+    def get_licenses(self, scancode_licenses=None, **kwargs):
         """
         Return a mapping of key -> ScanCode License objects either fetched
         externally or loaded from the existing `self.original_dir`
@@ -170,7 +170,7 @@ class ExternalLicensesSource(object):
         print('Fetching and storing external licenses in:', self.original_dir)
 
         licenses = []
-        for lic, text in self.fetch_licenses(scancode_licenses, **kwargs):
+        for lic, text in self.fetch_licenses(scancode_licenses=scancode_licenses, **kwargs):
             try:
                 with io.open(lic.text_file, 'w', encoding='utf-8')as tf:
                     tf.write(text)
@@ -336,10 +336,19 @@ class SpdxSource(ExternalLicensesSource):
         'notes',
     )
 
-    def fetch_licenses(self, scancode_licenses, commitish=None, from_repo=SPDX_DEFAULT_REPO):
+    def fetch_licenses(
+        self,
+        scancode_licenses=None,
+        commitish=None,
+        skip_oddities=True,
+        from_repo=SPDX_DEFAULT_REPO,
+    ):
         """
-        Yield License objects fetched from the latest SPDX license list.
-        Use the latest tagged version or the `commitish` is provided.
+        Yield License objects fetched from the latest SPDX license list. Use the
+        latest tagged version or the `commitish` if provided.
+        If skip_oddities is True, some oddities are skipped or handled
+        specially, such as licenses with a trailing + or foreign language
+        licenses.
         """
         if not commitish:
             # get latest tag
@@ -361,18 +370,26 @@ class SpdxSource(ExternalLicensesSource):
                 and ('/json/details/' in path or '/json/exceptions/' in path)):
                     continue
                 if TRACE_FETCH: print('Loading license:', path)
-                if path.endswith('+.json'):
+                if skip_oddities and path.endswith('+.json'):
                     # Skip the old plus licenses. We use them in
                     # ScanCode, but they are deprecated in SPDX.
                     continue
                 details = json.loads(archive.read(path))
-                lic = self.build_license(details, scancode_licenses)
+                lic = self.build_license(
+                    mapping=details,
+                    scancode_licenses=scancode_licenses,
+                    skip_oddities=skip_oddities,
+                )
+
                 if lic:
                     yield lic
 
-    def build_license(self, mapping, scancode_licenses):
+    def build_license(self, mapping, skip_oddities=True, scancode_licenses=None):
         """
         Return a ScanCode License object built from an SPDX license mapping.
+        If skip_oddities is True, some oddities are skipped or handled
+        specially, such as licenses with a trailing + or foreign language
+        licenses.
         """
         spdx_license_key = mapping.get('licenseId') or mapping.get('licenseExceptionId')
         assert spdx_license_key
@@ -380,13 +397,13 @@ class SpdxSource(ExternalLicensesSource):
         key = spdx_license_key.lower()
 
         # TODO: Not yet available in ScanCode
-        is_foreign = key in scancode_licenses.non_english_by_spdx_key
-        if is_foreign:
+        is_foreign = scancode_licenses and key in scancode_licenses.non_english_by_spdx_key
+        if skip_oddities and is_foreign:
             if TRACE: print('Skipping NON-english license FOR NOW:', key)
             return
 
         # these keys have a complicated history
-        if key in set([
+        if skip_oddities and key in set([
             'gpl-1.0', 'gpl-2.0', 'gpl-3.0',
             'lgpl-2.0', 'lgpl-2.1', 'lgpl-3.0',
             'agpl-1.0', 'agpl-2.0', 'agpl-3.0',
@@ -399,7 +416,7 @@ class SpdxSource(ExternalLicensesSource):
             return
 
         deprecated = mapping.get('isDeprecatedLicenseId', False)
-        if deprecated:
+        if skip_oddities and deprecated:
             # we use concrete keys for some plus/or later versions for
             # simplicity and override SPDX deprecation for these
             if key.endswith('+'):
