@@ -1056,7 +1056,9 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
     # location, resource id)
 
     # NOTE: we never scan directories
-    resources = ((r.location, r.rid) for r in codebase.walk() if r.is_file)
+    skip_file_types = ['.pem', '.cer', '.crt', '.key']
+
+    resources = ((r.location, r.rid) for r in codebase.walk() if r.is_file and r.location[-4 : ] not in skip_file_types)
 
     use_threading = (processes >= 0)
     runner = partial(scan_resource, scanners=scanners,
