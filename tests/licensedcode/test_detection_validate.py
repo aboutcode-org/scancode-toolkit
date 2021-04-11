@@ -18,7 +18,6 @@ from commoncode import text
 from licensedcode import cache
 from licensedcode import models
 
-
 """
 Validate that each license and rule text is properly detected with exact
 detection and that their ignorable clues are correctly detected.
@@ -181,7 +180,7 @@ def check_ignorable_clues(rule, regen=False):
         assert saneyaml.dump(results) == saneyaml.dump(expected)
 
 
-def build_validation_tests(rules, class_basic, class_extended):
+def build_validation_tests(rules, test_classes):
     """
     Dynamically build an individual test method for each rule texts in a `rules`
     iterable of Rule objects then attach the test method to the `class_basic` and `class_extended` test
@@ -189,15 +188,24 @@ def build_validation_tests(rules, class_basic, class_extended):
     """
     # TODO: add test to detect the standard notice??
 
-    cls = class_basic
-    for i, rule in enumerate(rules):
-        # only push 20 rules in the basic set
-        if i > 20:
-            cls = class_extended
-        if rule.text_file and os.path.exists(rule.text_file):
-            test_name = ('test_validate_detect_' + text.python_safe_name(rule.identifier))
-            test_method = make_validation_test(rule=rule, test_name=test_name)
-            setattr(cls, test_name, test_method)
+    # we split our rules in chunks, one for each extended classes we have
+    # so we can split tests more or less evenly between them
+    # the first chunk is an arbitrary 200 length
+    chunks = [rules[:200]]
+    extended_rules = rules[200:]
+    number_of_ext_cls = len(test_classes) - 1
+    slice_length = int(len(extended_rules) / number_of_ext_cls)
+
+    for i in range(0, len(extended_rules), slice_length):
+        chnk = extended_rules[i:i + slice_length]
+        chunks.append(chnk)
+
+    for chunk, cls in zip(chunks, test_classes):
+        for rule in chunk:
+            if rule.text_file and os.path.exists(rule.text_file):
+                test_name = ('test_validate_detect_' + text.python_safe_name(rule.identifier))
+                test_method = make_validation_test(rule=rule, test_name=test_name)
+                setattr(cls, test_name, test_method)
 
 
 class TestValidateLicenseBasic(unittest.TestCase):
@@ -205,11 +213,41 @@ class TestValidateLicenseBasic(unittest.TestCase):
     pytestmark = pytest.mark.scanslow
 
 
-class TestValidateLicenseExtended(unittest.TestCase):
+class TestValidateLicenseExtended1(unittest.TestCase):
+    # Test functions are attached to this class at import time
+    pytestmark = pytest.mark.scanvalidate
+
+
+class TestValidateLicenseExtended2(unittest.TestCase):
+    # Test functions are attached to this class at import time
+    pytestmark = pytest.mark.scanvalidate
+
+
+class TestValidateLicenseExtended3(unittest.TestCase):
+    # Test functions are attached to this class at import time
+    pytestmark = pytest.mark.scanvalidate
+
+
+class TestValidateLicenseExtended4(unittest.TestCase):
+    # Test functions are attached to this class at import time
+    pytestmark = pytest.mark.scanvalidate
+
+
+class TestValidateLicenseExtended5(unittest.TestCase):
     # Test functions are attached to this class at import time
     pytestmark = pytest.mark.scanvalidate
 
 
 _rules = sorted(models.get_rules(), key=lambda r: r.identifier)
-build_validation_tests(_rules, TestValidateLicenseBasic, TestValidateLicenseExtended)
+build_validation_tests(
+    _rules,
+    test_classes=[
+        TestValidateLicenseBasic,
+        TestValidateLicenseExtended1,
+        TestValidateLicenseExtended2,
+        TestValidateLicenseExtended3,
+        TestValidateLicenseExtended4,
+        TestValidateLicenseExtended5,
+     ]
+)
 del _rules
