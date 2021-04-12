@@ -314,7 +314,7 @@ class LicenseMatch(object):
         """
         Return the maximal query length represented by this match start and end
         in the query. This number represents the full extent of the matched
-        query region including matched, unmatched and unknown tokens.
+        query region including matched, unmatched and INCLUDING unknown tokens.
 
         The magnitude is the same as the length of a match for a contiguous
         match without any unknown token in its range. It will be greater than
@@ -519,9 +519,14 @@ class LicenseMatch(object):
 
     # FIXME: this should be done for all the matches found in a given scanned
     # location at once to avoid reprocessing many times the original text
-    def matched_text(self, whole_lines=False, highlight=True,
-                     highlight_matched=u'%s', highlight_not_matched=u'[%s]',
-                     _usecache=True):
+    def matched_text(
+        self,
+        whole_lines=False,
+        highlight=True,
+        highlight_matched=u'%s',
+        highlight_not_matched=u'[%s]',
+        _usecache=True
+    ):
         """
         Return the matched text for this match or an empty string if no query
         exists for this match.
@@ -581,10 +586,9 @@ def merge_matches(matches, max_dist=None):
     # only merge matches with the same rule: sort then group by rule for the
     # same rule, sort on start, longer high, longer match, matcher type
     sorter = lambda m: (m.rule.identifier, m.qspan.start, -m.hilen(), -m.len(), m.matcher)
-    # FIXME: we sort in place?
     matches.sort(key=sorter)
-    matches_by_rule = [(rid, list(rule_matches)) for rid, rule_matches
-                        in groupby(matches, key=lambda m: m.rule.identifier)]
+    matches_by_rule = [(rid, list(rule_matches))
+        for rid, rule_matches in groupby(matches, key=lambda m: m.rule.identifier)]
 
     if TRACE_MERGE: print('merge_matches: number of matches to process:', len(matches))
 
@@ -1311,7 +1315,7 @@ def filter_already_matched_matches(matches, query):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a `matches` list of LicenseMatch by removing
-    matches that have at least oneposition that is already matched in the
+    matches that have at least one position that is already matched in the Query
     `query`.
     """
     kept = []
@@ -1330,8 +1334,14 @@ def filter_already_matched_matches(matches, query):
     return kept, discarded
 
 
-def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
-                   filter_false_positive=True, merge=True):
+def refine_matches(
+    matches,
+    idx,
+    query=None,
+    min_score=0,
+    filter_false_positive=True,
+    merge=True,
+):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a `matches` list of LicenseMatch by removing
@@ -1361,10 +1371,6 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
 
     # FIXME: we should have only a single loop on all the matches at once!!
     # and not 10's of loops!!!
-
-    matches, discarded = filter_if_only_known_words_rule(matches)
-    all_discarded.extend(discarded)
-    _log(matches, discarded, 'ACCEPTABLE IF UNKNOWN WORDS')
 
     matches, discarded = filter_rule_min_coverage(matches)
     all_discarded.extend(discarded)
@@ -1409,6 +1415,10 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
     matches, discarded_contained = filter_contained_matches(matches)
     all_discarded.extend(discarded_contained)
     _log(matches, discarded_contained, 'NON CONTAINED')
+
+    matches, discarded = filter_if_only_known_words_rule(matches)
+    all_discarded.extend(discarded)
+    _log(matches, discarded, 'ACCEPTABLE IF UNKNOWN WORDS')
 
     if filter_false_positive:
         matches, discarded = filter_false_positive_matches(matches, idx)
@@ -1717,5 +1727,5 @@ def get_full_matched_text(
                 else:
                     yield highlight_not_matched % val
             else:
-                # we do not highlight punctuation..
+                # we do not highlight punctuation and stopwords.
                 yield val
