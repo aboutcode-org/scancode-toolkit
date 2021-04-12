@@ -187,9 +187,9 @@ class TestIndexing(IndexTesting):
 
     @pytest.mark.scanslow
     def test_index_does_not_fail_on_rules_with_similar_normalized_names(self):
-        rule_dir = self.get_test_loc('index/similar_names/rules')
+        rules_dir = self.get_test_loc('index/similar_names/rules')
         lics_dir = self.get_test_loc('index/similar_names/licenses')
-        rules = models.get_rules(licenses_data_dir=lics_dir, rules_data_dir=rule_dir)
+        rules = models.get_rules(licenses_data_dir=lics_dir, rules_data_dir=rules_dir)
         index.LicenseIndex(rules)
 
 
