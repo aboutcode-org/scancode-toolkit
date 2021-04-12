@@ -467,16 +467,13 @@ def get_rules(
 ):
     """
     Yield Rule objects loaded from a licenses_db and license files found in
-    `licenses_data_dir` and rule files fourn in `rules_data_dir`. Raise a
-    Exceptions if a rule is inconsistent or incorrect.
+    `licenses_data_dir` and rule files found in `rules_data_dir`. Raise an
+    Exception if a rule is inconsistent or incorrect.
     """
-    from licensedcode.cache import build_licenses_db
-
-    licenses = licenses_db or build_licenses_db(licenses_data_dir=licenses_data_dir)
-
+    licenses_db = licenses_db or load_licenses(licenses_data_dir=licenses_data_dir)
     rules = list(load_rules(rules_data_dir=rules_data_dir))
-    validate_rules(rules, licenses)
-    licenses_as_rules = build_rules_from_licenses(licenses)
+    validate_rules(rules, licenses_db)
+    licenses_as_rules = build_rules_from_licenses(licenses_db)
     return chain(licenses_as_rules, rules)
 
 
@@ -1080,9 +1077,10 @@ class Rule(BasicRule):
         # We tag this rule as being a bare URL if it starts with a scheme and is
         # on one line: this is used to determine a matching approach
 
-        if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000].lower():
+        if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
             self.minimum_coverage = 100
 
+        # note this call of query_tokenizer will skip stopwords
         for token in query_tokenizer(self.text()):
             length += 1
             yield token
