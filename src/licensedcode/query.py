@@ -8,19 +8,21 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from collections import defaultdict
-from collections import deque
-from itertools import chain
 import re
 
+from collections import defaultdict
+from collections import deque
+from functools import partial
+from itertools import chain
+
 from intbitset import intbitset
+
+import typecode
 
 from commoncode.text import toascii
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
-import typecode
-
 
 """
 Build license queries from scanned files to feed the detection pipeline.
@@ -93,8 +95,13 @@ if TRACE or TRACE_QR or TRACE_QR_BREAK:
 MAX_TOKEN_PER_LINE = 25
 
 
-def build_query(location=None, query_string=None, idx=None,
-                text_line_threshold=15, bin_line_threshold=50):
+def build_query(
+    location=None,
+    query_string=None,
+    idx=None,
+    text_line_threshold=15,
+    bin_line_threshold=50,
+):
     """
     Return a Query built from location or query string given an index.
     """
@@ -153,8 +160,14 @@ class Query(object):
         'is_binary',
     )
 
-    def __init__(self, location=None, query_string=None, idx=None,
-                 line_threshold=4, _test_mode=False):
+    def __init__(
+        self,
+        location=None,
+        query_string=None,
+        idx=None,
+        line_threshold=4,
+        _test_mode=False,
+    ):
         """
         Initialize the query from a file `location` or `query_string` string for
         an `idx` LicenseIndex.
@@ -197,16 +210,14 @@ class Query(object):
         self.shorts_and_digits_pos = set()
 
         # list of the three SPDX-License-Identifier tokens to identify to detect
-        # a line for SPDX id matching
-        # note: this will not match anything if the index is not proper
+        # a line for SPDX id matching.
+        # note: this will not match anything if the index is not properly set
         dic_get = idx.dictionary.get
-        # None, None None this is mostly a possible issue in test mode
-        self.spdx_lid_token_ids = [x for x in
-            [[dic_get(u'spdx'), dic_get(u'license'), dic_get(u'identifier')],
-            # Even though it is technically NOT valid, this Enlish seplling
-            # happens in the wild
-            [dic_get(u'spdx'), dic_get(u'licence'), dic_get(u'identifier')], ]
-        if x != [None, None, None]]
+        spdxid1 = [dic_get(u'spdx'), dic_get(u'license'), dic_get(u'identifier')]
+        # Even though it is invalid, this Enlish seplling happens in the wild
+        spdxid2 = [dic_get(u'spdx'), dic_get(u'licence'), dic_get(u'identifier')]
+        # None, None None: this is mostly a possible issue in test mode
+        self.spdx_lid_token_ids = [x for x in [spdxid1, spdxid2, ] if x != [None, None, None]]
 
         # list of tuple (original line text, start known pos, end known pos) for
         # lines starting with SPDX-License-Identifier. This is to support the
@@ -220,8 +231,12 @@ class Query(object):
         if _test_mode:
             return
 
+        tokens_by_line = self.tokens_by_line(
+            location=location,
+            query_string=query_string,
+        )
         # this method has side effects to populate various data structures
-        self.tokenize_and_build_runs(self.tokens_by_line(), line_threshold=line_threshold)
+        self.tokenize_and_build_runs(tokens_by_line, line_threshold=line_threshold)
 
         len_legalese = idx.len_legalese
         tokens = self.tokens
@@ -295,7 +310,7 @@ class Query(object):
             for _ in range(unknowns[pos]):
                 yield None
 
-    def tokens_by_line(self):
+    def tokens_by_line(self, location=None, query_string=None):
         """
         Yield one sequence of tokens for each line in this query. Populate the
         query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos`,
@@ -328,10 +343,10 @@ class Query(object):
 
         if TRACE:
             logger_debug('tokens_by_line: query lines')
-            for line_num, line in query_lines(self.location, self.query_string):
+            for line_num, line in query_lines(location, query_string):
                 logger_debug(' ', line_num, ':', line)
 
-        for line_num, line in query_lines(self.location, self.query_string):
+        for line_num, line in query_lines(location, query_string):
             # keep track of tokens in a line
             line_tokens = []
             line_tokens_append = line_tokens.append
