@@ -1,0 +1,11 @@
+key: kfqf-accepted-gpl
+short_name: KFQF Accepted GPL
+name: KFQF Accepted GPL
+category: Copyleft
+owner: KDE Free Qt Foundation
+homepage_url: https://github.com/KDE/licensedigger/blob/master/licensetexts/LicenseRef-KFQF-Accepted-GPL.txt
+is_exception: yes
+spdx_license_key: LicenseRef-KFQF-Accepted-GPL
+ignorable_urls:
+    - https://www.gnu.org/licenses/gpl-2.0.html
+    - https://www.gnu.org/licenses/gpl-3.0.html

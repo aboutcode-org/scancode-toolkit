@@ -1,0 +1,7 @@
+key: kde-accepted-gpl
+short_name: KDE Accepted GPL
+name: KDE Accepted GPL
+category: Copyleft
+owner: KDE Project
+homepage_url: https://github.com/KDE/licensedigger/blob/master/LICENSES/LicenseRef-KDE-Accepted-GPL.txt
+spdx_license_key: LicenseRef-KDE-Accepted-GPL
