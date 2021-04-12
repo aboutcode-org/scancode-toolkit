@@ -857,6 +857,16 @@ class TestLicenseMatchScore(FileBasedTesting):
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 19) | Span(30, 51), ispan=Span(0, 41))
         assert m1.score() == 80.77
 
+    def test_LicenseMatch_stopwords_are_treated_as_unknown_2484(self):
+        rules_dir = self.get_test_loc('stopwords/index/rules')
+        lics_dir = self.get_test_loc('stopwords/index/licenses')
+        rules = models.get_rules(licenses_data_dir=lics_dir, rules_data_dir=rules_dir)
+        idx = LicenseIndex(rules)
+
+        query_location = self.get_test_loc('stopwords/query.txt')
+        matches = idx.match(location=query_location)
+        assert matches == []
+
 
 class TestCollectLicenseMatchTexts(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR

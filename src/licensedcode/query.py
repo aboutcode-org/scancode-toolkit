@@ -317,16 +317,19 @@ class Query(object):
         `shorts_and_digits_pos` and `spdx_lines` as a side effect.
         """
         from licensedcode.match_spdx_lid import split_spdx_lid
+        from licensedcode.stopwords import STOPWORDS
 
         # bind frequently called functions to local scope
-        tokenizer = query_tokenizer
         line_by_pos_append = self.line_by_pos.append
         self_unknowns_by_pos = self.unknowns_by_pos
-
         unknowns_pos = set()
         unknowns_pos_add = unknowns_pos.add
         self_shorts_and_digits_pos_add = self.shorts_and_digits_pos.add
         dic_get = self.idx.dictionary.get
+
+        # note that we ignore stopwords at first here so that we can then treat
+        # them as unknown words later
+        tokenizer = partial(query_tokenizer, stopwords=None)
 
         # note: positions start at zero
         # absolute position in a query, including all known and unknown tokens
@@ -354,7 +357,11 @@ class Query(object):
 
             # FIXME: the implicit update of abs_pos is not clear
             for abs_pos, token in enumerate(tokenizer(line), abs_pos + 1):
-                tid = dic_get(token)
+                # always treat a STOPWORDS as an unknown word
+                if token in STOPWORDS:
+                    tid = None
+                else:
+                    tid = dic_get(token)
 
                 if tid is not None:
                     # this is a known token
@@ -767,8 +774,6 @@ class QueryRun(object):
         of the run. Used for debugging and testing.
         """
         tokens_by_tid = self.query.idx.tokens_by_tid
-
-        from functools import partial
 
         def tokens_string(tks, sort=False):
             "Return a string from a token id seq"

@@ -1,0 +1,45 @@
+key: gpl-2.0
+short_name: GPL 2.0
+name: GNU General Public License 2.0
+category: Copyleft
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+notes: This is the last version of the GPL text as published by the FSF.
+ This variation was published around about the time of the FSF released the GPL 3
+ in July 2007. See http://web.archive.org/web/20070716031727/http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+ It is found live here https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+ and here https://www.gnu.org/licenses/old-licenses/gpl-2.0.html 
+ It refers to the Franklin Street address and to the
+ GNU Lesser General Public License everywhere both in the text and HTML
+ formats. There are many other variations of the GPL 2.0 text that were
+ published over the years by the FSF and the gnu.org website. You can find the
+ detailed history of this text at https://github.com/pombredanne/gpl-history
+ and each variant is available as a license detection rule.
+ Per SPDX.org, this license was released June 1991
+ This license is OSI certified.
+
+spdx_license_key: GPL-2.0-only
+other_spdx_license_keys:
+    - GPL-2.0
+    - GPL 2.0
+text_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+osi_url: http://opensource.org/licenses/gpl-license.php
+faq_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html
+other_urls:
+    - http://creativecommons.org/choose/cc-gpl
+    - http://creativecommons.org/images/public/cc-GPL-a.png
+    - http://creativecommons.org/licenses/GPL/2.0/
+    - http://creativecommons.org/licenses/GPL/2.0/legalcode.pt
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+    - http://www.opensource.org/licenses/GPL-2.0
+    - https://opensource.org/licenses/GPL-2.0
+    - https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation
+osi_license_key: GPL-2.0
