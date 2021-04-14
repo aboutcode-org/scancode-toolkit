@@ -1,5 +1,7 @@
-GNU Free Documentation License
+
+                GNU Free Documentation License
                  Version 1.3, 3 November 2008
+
 
  Copyright (C) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
      <http://fsf.org/>
@@ -9,14 +11,14 @@ GNU Free Documentation License
 0. PREAMBLE
 
 The purpose of this License is to make a manual, textbook, or other
-functional and useful document ""free"" in the sense of freedom: to
+functional and useful document "free" in the sense of freedom: to
 assure everyone the effective freedom to copy and redistribute it,
 with or without modifying it, either commercially or noncommercially.
 Secondarily, this License preserves for the author and publisher a way
 to get credit for their work, while not being considered responsible
 for modifications made by others.
 
-This License is a kind of ""copyleft"", which means that derivative
+This License is a kind of "copyleft", which means that derivative
 works of the document must themselves be free in the same sense.  It
 complements the GNU General Public License, which is a copyleft
 license designed for free software.
@@ -36,17 +38,17 @@ This License applies to any manual or other work, in any medium, that
 contains a notice placed by the copyright holder saying it can be
 distributed under the terms of this License.  Such a notice grants a
 world-wide, royalty-free license, unlimited in duration, to use that
-work under the conditions stated herein.  The ""Document"", below,
+work under the conditions stated herein.  The "Document", below,
 refers to any such manual or work.  Any member of the public is a
-licensee, and is addressed as ""you"".  You accept the license if you
+licensee, and is addressed as "you".  You accept the license if you
 copy, modify or distribute the work in a way requiring permission
 under copyright law.
 
-A ""Modified Version"" of the Document means any work containing the
+A "Modified Version" of the Document means any work containing the
 Document or a portion of it, either copied verbatim, or with
 modifications and/or translated into another language.
 
-A ""Secondary Section"" is a named appendix or a front-matter section of
+A "Secondary Section" is a named appendix or a front-matter section of
 the Document that deals exclusively with the relationship of the
 publishers or authors of the Document to the Document's overall
 subject (or to related matters) and contains nothing that could fall
@@ -57,7 +59,7 @@ connection with the subject or with related matters, or of legal,
 commercial, philosophical, ethical or political position regarding
 them.
 
-The ""Invariant Sections"" are certain Secondary Sections whose titles
+The "Invariant Sections" are certain Secondary Sections whose titles
 are designated, as being those of Invariant Sections, in the notice
 that says that the Document is released under this License.  If a
 section does not fit the above definition of Secondary then it is not
@@ -65,12 +67,12 @@ allowed to be designated as Invariant.  The Document may contain zero
 Invariant Sections.  If the Document does not identify any Invariant
 Sections then there are none.
 
-The ""Cover Texts"" are certain short passages of text that are listed,
+The "Cover Texts" are certain short passages of text that are listed,
 as Front-Cover Texts or Back-Cover Texts, in the notice that says that
 the Document is released under this License.  A Front-Cover Text may
 be at most 5 words, and a Back-Cover Text may be at most 25 words.
 
-A ""Transparent"" copy of the Document means a machine-readable copy,
+A "Transparent" copy of the Document means a machine-readable copy,
 represented in a format whose specification is available to the
 general public, that is suitable for revising the document
 straightforwardly with generic text editors or (for images composed of
@@ -81,7 +83,7 @@ to text formatters.  A copy made in an otherwise Transparent file
 format whose markup, or absence of markup, has been arranged to thwart
 or discourage subsequent modification by readers is not Transparent.
 An image format is not Transparent if used for any substantial amount
-of text.  A copy that is not ""Transparent"" is called ""Opaque"".
+of text.  A copy that is not "Transparent" is called "Opaque".
 
 Examples of suitable formats for Transparent copies include plain
 ASCII without markup, Texinfo input format, LaTeX input format, SGML
@@ -94,23 +96,23 @@ processing tools are not generally available, and the
 machine-generated HTML, PostScript or PDF produced by some word
 processors for output purposes only.
 
-The ""Title Page"" means, for a printed book, the title page itself,
+The "Title Page" means, for a printed book, the title page itself,
 plus such following pages as are needed to hold, legibly, the material
 this License requires to appear in the title page.  For works in
-formats which do not have any title page as such, ""Title Page"" means
+formats which do not have any title page as such, "Title Page" means
 the text near the most prominent appearance of the work's title,
 preceding the beginning of the body of the text.
 
-The ""publisher"" means any person or entity that distributes copies of
+The "publisher" means any person or entity that distributes copies of
 the Document to the public.
 
-A section ""Entitled XYZ"" means a named subunit of the Document whose
+A section "Entitled XYZ" means a named subunit of the Document whose
 title either is precisely XYZ or contains XYZ in parentheses following
 text that translates XYZ in another language.  (Here XYZ stands for a
-specific section name mentioned below, such as ""Acknowledgements"",
-""Dedications"", ""Endorsements"", or ""History"".)  To ""Preserve the Title""
+specific section name mentioned below, such as "Acknowledgements",
+"Dedications", "Endorsements", or "History".)  To "Preserve the Title"
 of such a section when you modify the Document means that it remains a
-section ""Entitled XYZ"" according to this definition.
+section "Entitled XYZ" according to this definition.
 
 The Document may include Warranty Disclaimers next to the notice which
 states that this License applies to the Document.  These Warranty
@@ -204,30 +206,30 @@ F. Include, immediately after the copyright notices, a license notice
 G. Preserve in that license notice the full lists of Invariant Sections
    and required Cover Texts given in the Document's license notice.
 H. Include an unaltered copy of this License.
-I. Preserve the section Entitled ""History"", Preserve its Title, and add
+I. Preserve the section Entitled "History", Preserve its Title, and add
    to it an item stating at least the title, year, new authors, and
    publisher of the Modified Version as given on the Title Page.  If
-   there is no section Entitled ""History"" in the Document, create one
+   there is no section Entitled "History" in the Document, create one
    stating the title, year, authors, and publisher of the Document as
    given on its Title Page, then add an item describing the Modified
    Version as stated in the previous sentence.
 J. Preserve the network location, if any, given in the Document for
    public access to a Transparent copy of the Document, and likewise
    the network locations given in the Document for previous versions
-   it was based on.  These may be placed in the ""History"" section.
+   it was based on.  These may be placed in the "History" section.
    You may omit a network location for a work that was published at
    least four years before the Document itself, or if the original
    publisher of the version it refers to gives permission.
-K. For any section Entitled ""Acknowledgements"" or ""Dedications"",
+K. For any section Entitled "Acknowledgements" or "Dedications",
    Preserve the Title of the section, and preserve in the section all
    the substance and tone of each of the contributor acknowledgements
    and/or dedications given therein.
 L. Preserve all the Invariant Sections of the Document,
    unaltered in their text and in their titles.  Section numbers
    or the equivalent are not considered part of the section titles.
-M. Delete any section Entitled ""Endorsements"".  Such a section
+M. Delete any section Entitled "Endorsements".  Such a section
    may not be included in the Modified Version.
-N. Do not retitle any existing section to be Entitled ""Endorsements""
+N. Do not retitle any existing section to be Entitled "Endorsements"
    or to conflict in title with any Invariant Section.
 O. Preserve any Warranty Disclaimers.
 
@@ -238,7 +240,7 @@ of these sections as invariant.  To do this, add their titles to the
 list of Invariant Sections in the Modified Version's license notice.
 These titles must be distinct from any other section titles.
 
-You may add a section Entitled ""Endorsements"", provided it contains
+You may add a section Entitled "Endorsements", provided it contains
 nothing but endorsements of your Modified Version by various
 parties--for example, statements of peer review or that the text has
 been approved by an organization as the authoritative definition of a
@@ -277,11 +279,11 @@ author or publisher of that section if known, or else a unique number.
 Make the same adjustment to the section titles in the list of
 Invariant Sections in the license notice of the combined work.
 
-In the combination, you must combine any sections Entitled ""History""
+In the combination, you must combine any sections Entitled "History"
 in the various original documents, forming one section Entitled
-""History""; likewise combine any sections Entitled ""Acknowledgements"",
-and any sections Entitled ""Dedications"".  You must delete all sections
-Entitled ""Endorsements"".
+"History"; likewise combine any sections Entitled "Acknowledgements",
+and any sections Entitled "Dedications".  You must delete all sections
+Entitled "Endorsements".
 
 
 6. COLLECTIONS OF DOCUMENTS
@@ -304,7 +306,7 @@ document.
 
 A compilation of the Document or its derivatives with other separate
 and independent documents or works, in or on a volume of a storage or
-distribution medium, is called an ""aggregate"" if the copyright
+distribution medium, is called an "aggregate" if the copyright
 resulting from the compilation is not used to limit the legal rights
 of the compilation's users beyond what the individual works permit.
 When the Document is included in an aggregate, this License does not
@@ -335,8 +337,8 @@ of those notices and disclaimers.  In case of a disagreement between
 the translation and the original version of this License or a notice
 or disclaimer, the original version will prevail.
 
-If a section in the Document is Entitled ""Acknowledgements"",
-""Dedications"", or ""History"", the requirement (section 4) to Preserve
+If a section in the Document is Entitled "Acknowledgements",
+"Dedications", or "History", the requirement (section 4) to Preserve
 its Title (section 1) will typically require changing the actual
 title.
 
@@ -379,7 +381,7 @@ http://www.gnu.org/copyleft/.
 
 Each version of the License is given a distinguishing version number.
 If the Document specifies that a particular numbered version of this
-License ""or any later version"" applies to it, you have the option of
+License "or any later version" applies to it, you have the option of
 following the terms and conditions either of that specified version or
 of any later version that has been published (not as a draft) by the
 Free Software Foundation.  If the Document does not specify a version
@@ -392,23 +394,23 @@ Document.
 
 11. RELICENSING
 
-""Massive Multiauthor Collaboration Site"" (or ""MMC Site"") means any
+"Massive Multiauthor Collaboration Site" (or "MMC Site") means any
 World Wide Web server that publishes copyrightable works and also
 provides prominent facilities for anybody to edit those works.  A
 public wiki that anybody can edit is an example of such a server.  A
-""Massive Multiauthor Collaboration"" (or ""MMC"") contained in the site
+"Massive Multiauthor Collaboration" (or "MMC") contained in the site
 means any set of copyrightable works thus published on the MMC site.
 
-""CC-BY-SA"" means the Creative Commons Attribution-Share Alike 3.0 
+"CC-BY-SA" means the Creative Commons Attribution-Share Alike 3.0 
 license published by Creative Commons Corporation, a not-for-profit 
 corporation with a principal place of business in San Francisco, 
 California, as well as future copyleft versions of that license 
 published by that same organization.
 
-""Incorporate"" means to publish or republish a Document, in whole or in 
+"Incorporate" means to publish or republish a Document, in whole or in 
 part, as part of another Document.
 
-An MMC is ""eligible for relicensing"" if it is licensed under this 
+An MMC is "eligible for relicensing" if it is licensed under this 
 License, and if all works that were first published under this License 
 somewhere other than this MMC, and subsequently incorporated in whole or 
 in part into the MMC, (1) had no cover texts or invariant sections, and 
@@ -430,11 +432,11 @@ license notices just after the title page:
     under the terms of the GNU Free Documentation License, Version 1.3
     or any later version published by the Free Software Foundation;
     with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-    A copy of the license is included in the section entitled ""GNU
-    Free Documentation License"".
+    A copy of the license is included in the section entitled "GNU
+    Free Documentation License".
 
 If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
-replace the ""with...Texts."" line with this:
+replace the "with...Texts." line with this:
 
     with the Invariant Sections being LIST THEIR TITLES, with the
     Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.

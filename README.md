@@ -18,7 +18,7 @@ Upgrade
 
 Upgrade the ScanCode-toolkit and generate the HTML content:
     
-    $ make clean upgrade build
+    $ make clean upgrade build publish
 
 License
 -------

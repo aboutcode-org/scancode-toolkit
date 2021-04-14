@@ -4,6 +4,7 @@ name: Oracle MySQL FOSS exception to GPL 2.0
 category: Copyleft Limited
 owner: Oracle Corporation
 homepage_url: http://www.mysql.com/about/legal/licensing/foss-exception.html
+notes: dated 2012-02-23 See https://web.archive.org/web/20120322105249/https://www.mysql.com/about/legal/licensing/foss-exception/
 is_exception: yes
 spdx_license_key: LicenseRef-scancode-oracle-mysql-foss-exception-2.0
 other_urls:

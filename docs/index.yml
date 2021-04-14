@@ -163,6 +163,11 @@
   yml: adobe-scl.yml
   html: adobe-scl.html
   text: adobe-scl.LICENSE
+- license_key: adrian
+  json: adrian.json
+  yml: adrian.yml
+  html: adrian.html
+  text: adrian.LICENSE
 - license_key: adsl
   json: adsl.json
   yml: adsl.yml
@@ -358,6 +363,11 @@
   yml: android-sdk-preview-2015.yml
   html: android-sdk-preview-2015.html
   text: android-sdk-preview-2015.LICENSE
+- license_key: antlr-pd-fallback
+  json: antlr-pd-fallback.json
+  yml: antlr-pd-fallback.yml
+  html: antlr-pd-fallback.html
+  text: antlr-pd-fallback.LICENSE
 - license_key: antlr-pd
   json: antlr-pd.json
   yml: antlr-pd.yml
@@ -503,6 +513,11 @@
   yml: arphic-public.yml
   html: arphic-public.html
   text: arphic-public.LICENSE
+- license_key: array-input-method-pl
+  json: array-input-method-pl.json
+  yml: array-input-method-pl.yml
+  html: array-input-method-pl.html
+  text: array-input-method-pl.LICENSE
 - license_key: artistic-1.0-cl8
   json: artistic-1.0-cl8.json
   yml: artistic-1.0-cl8.yml
@@ -523,6 +538,11 @@
   yml: artistic-clarified.yml
   html: artistic-clarified.html
   text: artistic-clarified.LICENSE
+- license_key: artistic-dist-1.0
+  json: artistic-dist-1.0.json
+  yml: artistic-dist-1.0.yml
+  html: artistic-dist-1.0.html
+  text: artistic-dist-1.0.LICENSE
 - license_key: artistic-perl-1.0
   json: artistic-perl-1.0.json
   yml: artistic-perl-1.0.yml
@@ -643,6 +663,11 @@
   yml: barr-tex.yml
   html: barr-tex.html
   text: barr-tex.LICENSE
+- license_key: bash-exception-gpl
+  json: bash-exception-gpl.json
+  yml: bash-exception-gpl.yml
+  html: bash-exception-gpl.html
+  text: bash-exception-gpl.LICENSE
 - license_key: bea-2.1
   json: bea-2.1.json
   yml: bea-2.1.yml
@@ -673,6 +698,11 @@
   yml: biopython.yml
   html: biopython.html
   text: biopython.LICENSE
+- license_key: biosl-4.0
+  json: biosl-4.0.json
+  yml: biosl-4.0.yml
+  html: biosl-4.0.html
+  text: biosl-4.0.LICENSE
 - license_key: bison-exception-2.0
   json: bison-exception-2.0.json
   yml: bison-exception-2.0.yml
@@ -708,6 +738,11 @@
   yml: bittorrent-eula.yml
   html: bittorrent-eula.html
   text: bittorrent-eula.LICENSE
+- license_key: bitwarden-1.0
+  json: bitwarden-1.0.json
+  yml: bitwarden-1.0.yml
+  html: bitwarden-1.0.html
+  text: bitwarden-1.0.LICENSE
 - license_key: bitzi-pd
   json: bitzi-pd.json
   yml: bitzi-pd.yml
@@ -923,6 +958,11 @@
   yml: bsd-3-clause-no-change.yml
   html: bsd-3-clause-no-change.html
   text: bsd-3-clause-no-change.LICENSE
+- license_key: bsd-3-clause-no-military
+  json: bsd-3-clause-no-military.json
+  yml: bsd-3-clause-no-military.yml
+  html: bsd-3-clause-no-military.html
+  text: bsd-3-clause-no-military.LICENSE
 - license_key: bsd-3-clause-no-nuclear-warranty
   json: bsd-3-clause-no-nuclear-warranty.json
   yml: bsd-3-clause-no-nuclear-warranty.yml
@@ -943,6 +983,11 @@
   yml: bsd-3-clause-sun.yml
   html: bsd-3-clause-sun.html
   text: bsd-3-clause-sun.LICENSE
+- license_key: bsd-4-clause-shortened
+  json: bsd-4-clause-shortened.json
+  yml: bsd-4-clause-shortened.yml
+  html: bsd-4-clause-shortened.html
+  text: bsd-4-clause-shortened.LICENSE
 - license_key: bsd-ack-carrot2
   json: bsd-ack-carrot2.json
   yml: bsd-ack-carrot2.yml
@@ -1178,6 +1223,11 @@
   yml: c-fsl-1.1.yml
   html: c-fsl-1.1.html
   text: c-fsl-1.1.LICENSE
+- license_key: c-uda-1.0
+  json: c-uda-1.0.json
+  yml: c-uda-1.0.yml
+  html: c-uda-1.0.html
+  text: c-uda-1.0.LICENSE
 - license_key: ca-tosl-1.1
   json: ca-tosl-1.1.json
   yml: ca-tosl-1.1.yml
@@ -1273,11 +1323,11 @@
   yml: cc-by-2.5.yml
   html: cc-by-2.5.html
   text: cc-by-2.5.LICENSE
-- license_key: cc-by-3.0-at
-  json: cc-by-3.0-at.json
-  yml: cc-by-3.0-at.yml
-  html: cc-by-3.0-at.html
-  text: cc-by-3.0-at.LICENSE
+- license_key: cc-by-3.0-us
+  json: cc-by-3.0-us.json
+  yml: cc-by-3.0-us.yml
+  html: cc-by-3.0-us.html
+  text: cc-by-3.0-us.LICENSE
 - license_key: cc-by-3.0
   json: cc-by-3.0.json
   yml: cc-by-3.0.yml
@@ -1408,6 +1458,11 @@
   yml: cc-by-sa-1.0.yml
   html: cc-by-sa-1.0.html
   text: cc-by-sa-1.0.LICENSE
+- license_key: cc-by-sa-2.0-uk
+  json: cc-by-sa-2.0-uk.json
+  yml: cc-by-sa-2.0-uk.yml
+  html: cc-by-sa-2.0-uk.html
+  text: cc-by-sa-2.0-uk.LICENSE
 - license_key: cc-by-sa-2.0
   json: cc-by-sa-2.0.json
   yml: cc-by-sa-2.0.yml
@@ -1418,11 +1473,6 @@
   yml: cc-by-sa-2.5.yml
   html: cc-by-sa-2.5.html
   text: cc-by-sa-2.5.LICENSE
-- license_key: cc-by-sa-3.0-at
-  json: cc-by-sa-3.0-at.json
-  yml: cc-by-sa-3.0-at.yml
-  html: cc-by-sa-3.0-at.html
-  text: cc-by-sa-3.0-at.LICENSE
 - license_key: cc-by-sa-3.0
   json: cc-by-sa-3.0.json
   yml: cc-by-sa-3.0.yml
@@ -1938,11 +1988,6 @@
   yml: cygwin-exception-lgpl-3.0-plus.yml
   html: cygwin-exception-lgpl-3.0-plus.html
   text: cygwin-exception-lgpl-3.0-plus.LICENSE
-- license_key: d-fsl-1.0-de
-  json: d-fsl-1.0-de.json
-  yml: d-fsl-1.0-de.yml
-  html: d-fsl-1.0-de.html
-  text: d-fsl-1.0-de.LICENSE
 - license_key: d-fsl-1.0-en
   json: d-fsl-1.0-en.json
   yml: d-fsl-1.0-en.yml
@@ -2053,6 +2098,21 @@
   yml: divx-open-2.1.yml
   html: divx-open-2.1.html
   text: divx-open-2.1.LICENSE
+- license_key: dl-de-by-1-0-en
+  json: dl-de-by-1-0-en.json
+  yml: dl-de-by-1-0-en.yml
+  html: dl-de-by-1-0-en.html
+  text: dl-de-by-1-0-en.LICENSE
+- license_key: dl-de-by-2-0-en
+  json: dl-de-by-2-0-en.json
+  yml: dl-de-by-2-0-en.yml
+  html: dl-de-by-2-0-en.html
+  text: dl-de-by-2-0-en.LICENSE
+- license_key: dl-de-by-nc-1-0-en
+  json: dl-de-by-nc-1-0-en.json
+  yml: dl-de-by-nc-1-0-en.yml
+  html: dl-de-by-nc-1-0-en.html
+  text: dl-de-by-nc-1-0-en.LICENSE
 - license_key: dmalloc
   json: dmalloc.json
   yml: dmalloc.yml
@@ -2098,6 +2158,11 @@
   yml: dr-john-maddock.yml
   html: dr-john-maddock.html
   text: dr-john-maddock.LICENSE
+- license_key: drl-1.0
+  json: drl-1.0.json
+  yml: drl-1.0.yml
+  html: drl-1.0.html
+  text: drl-1.0.LICENSE
 - license_key: dropbear-2016
   json: dropbear-2016.json
   yml: dropbear-2016.yml
@@ -2313,6 +2378,11 @@
   yml: elastic-license-2018.yml
   html: elastic-license-2018.html
   text: elastic-license-2018.LICENSE
+- license_key: elastic-license-v2
+  json: elastic-license-v2.json
+  yml: elastic-license-v2.yml
+  html: elastic-license-v2.html
+  text: elastic-license-v2.LICENSE
 - license_key: elib-gpl
   json: elib-gpl.json
   yml: elib-gpl.yml
@@ -2488,6 +2558,11 @@
   yml: far-manager-exception.yml
   html: far-manager-exception.html
   text: far-manager-exception.LICENSE
+- license_key: fastbuild-2012-2020
+  json: fastbuild-2012-2020.json
+  yml: fastbuild-2012-2020.yml
+  html: fastbuild-2012-2020.html
+  text: fastbuild-2012-2020.LICENSE
 - license_key: fastcgi-devkit
   json: fastcgi-devkit.json
   yml: fastcgi-devkit.yml
@@ -2658,6 +2733,11 @@
   yml: fsf-free.yml
   html: fsf-free.html
   text: fsf-free.LICENSE
+- license_key: fsf-notice
+  json: fsf-notice.json
+  yml: fsf-notice.yml
+  html: fsf-notice.html
+  text: fsf-notice.LICENSE
 - license_key: fsf-unlimited-no-warranty
   json: fsf-unlimited-no-warranty.json
   yml: fsf-unlimited-no-warranty.yml
@@ -2753,6 +2833,26 @@
   yml: geoserver-exception-2.0-plus.yml
   html: geoserver-exception-2.0-plus.html
   text: geoserver-exception-2.0-plus.LICENSE
+- license_key: gfdl-1.1-invariants-only
+  json: gfdl-1.1-invariants-only.json
+  yml: gfdl-1.1-invariants-only.yml
+  html: gfdl-1.1-invariants-only.html
+  text: gfdl-1.1-invariants-only.LICENSE
+- license_key: gfdl-1.1-invariants-or-later
+  json: gfdl-1.1-invariants-or-later.json
+  yml: gfdl-1.1-invariants-or-later.yml
+  html: gfdl-1.1-invariants-or-later.html
+  text: gfdl-1.1-invariants-or-later.LICENSE
+- license_key: gfdl-1.1-no-invariants-only
+  json: gfdl-1.1-no-invariants-only.json
+  yml: gfdl-1.1-no-invariants-only.yml
+  html: gfdl-1.1-no-invariants-only.html
+  text: gfdl-1.1-no-invariants-only.LICENSE
+- license_key: gfdl-1.1-no-invariants-or-later
+  json: gfdl-1.1-no-invariants-or-later.json
+  yml: gfdl-1.1-no-invariants-or-later.yml
+  html: gfdl-1.1-no-invariants-or-later.html
+  text: gfdl-1.1-no-invariants-or-later.LICENSE
 - license_key: gfdl-1.1-plus
   json: gfdl-1.1-plus.json
   yml: gfdl-1.1-plus.yml
@@ -2763,6 +2863,26 @@
   yml: gfdl-1.1.yml
   html: gfdl-1.1.html
   text: gfdl-1.1.LICENSE
+- license_key: gfdl-1.2-invariants-only
+  json: gfdl-1.2-invariants-only.json
+  yml: gfdl-1.2-invariants-only.yml
+  html: gfdl-1.2-invariants-only.html
+  text: gfdl-1.2-invariants-only.LICENSE
+- license_key: gfdl-1.2-invariants-or-later
+  json: gfdl-1.2-invariants-or-later.json
+  yml: gfdl-1.2-invariants-or-later.yml
+  html: gfdl-1.2-invariants-or-later.html
+  text: gfdl-1.2-invariants-or-later.LICENSE
+- license_key: gfdl-1.2-no-invariants-only
+  json: gfdl-1.2-no-invariants-only.json
+  yml: gfdl-1.2-no-invariants-only.yml
+  html: gfdl-1.2-no-invariants-only.html
+  text: gfdl-1.2-no-invariants-only.LICENSE
+- license_key: gfdl-1.2-no-invariants-or-later
+  json: gfdl-1.2-no-invariants-or-later.json
+  yml: gfdl-1.2-no-invariants-or-later.yml
+  html: gfdl-1.2-no-invariants-or-later.html
+  text: gfdl-1.2-no-invariants-or-later.LICENSE
 - license_key: gfdl-1.2-plus
   json: gfdl-1.2-plus.json
   yml: gfdl-1.2-plus.yml
@@ -2773,6 +2893,26 @@
   yml: gfdl-1.2.yml
   html: gfdl-1.2.html
   text: gfdl-1.2.LICENSE
+- license_key: gfdl-1.3-invariants-only
+  json: gfdl-1.3-invariants-only.json
+  yml: gfdl-1.3-invariants-only.yml
+  html: gfdl-1.3-invariants-only.html
+  text: gfdl-1.3-invariants-only.LICENSE
+- license_key: gfdl-1.3-invariants-or-later
+  json: gfdl-1.3-invariants-or-later.json
+  yml: gfdl-1.3-invariants-or-later.yml
+  html: gfdl-1.3-invariants-or-later.html
+  text: gfdl-1.3-invariants-or-later.LICENSE
+- license_key: gfdl-1.3-no-invariants-only
+  json: gfdl-1.3-no-invariants-only.json
+  yml: gfdl-1.3-no-invariants-only.yml
+  html: gfdl-1.3-no-invariants-only.html
+  text: gfdl-1.3-no-invariants-only.LICENSE
+- license_key: gfdl-1.3-no-invariants-or-later
+  json: gfdl-1.3-no-invariants-or-later.json
+  yml: gfdl-1.3-no-invariants-or-later.yml
+  html: gfdl-1.3-no-invariants-or-later.html
+  text: gfdl-1.3-no-invariants-or-later.LICENSE
 - license_key: gfdl-1.3-plus
   json: gfdl-1.3-plus.json
   yml: gfdl-1.3-plus.yml
@@ -3513,6 +3653,11 @@
   yml: ibpp.yml
   html: ibpp.html
   text: ibpp.LICENSE
+- license_key: icann-public
+  json: icann-public.json
+  yml: icann-public.yml
+  html: icann-public.html
+  text: icann-public.LICENSE
 - license_key: ice-exception-2.0
   json: ice-exception-2.0.json
   yml: ice-exception-2.0.yml
@@ -3668,6 +3813,11 @@
   yml: intel-bcl.yml
   html: intel-bcl.html
   text: intel-bcl.LICENSE
+- license_key: intel-bsd-2-clause
+  json: intel-bsd-2-clause.json
+  yml: intel-bsd-2-clause.yml
+  html: intel-bsd-2-clause.html
+  text: intel-bsd-2-clause.LICENSE
 - license_key: intel-bsd-export-control
   json: intel-bsd-export-control.json
   yml: intel-bsd-export-control.yml
@@ -3888,6 +4038,11 @@
   yml: jdom.yml
   html: jdom.html
   text: jdom.LICENSE
+- license_key: jelurida-public-1.1
+  json: jelurida-public-1.1.json
+  yml: jelurida-public-1.1.yml
+  html: jelurida-public-1.1.html
+  text: jelurida-public-1.1.LICENSE
 - license_key: jetbrains-purchase-terms
   json: jetbrains-purchase-terms.json
   yml: jetbrains-purchase-terms.yml
@@ -4018,6 +4173,11 @@
   yml: karl-peterson.yml
   html: karl-peterson.html
   text: karl-peterson.LICENSE
+- license_key: kde-accepted-lgpl
+  json: kde-accepted-lgpl.json
+  yml: kde-accepted-lgpl.yml
+  html: kde-accepted-lgpl.html
+  text: kde-accepted-lgpl.LICENSE
 - license_key: keith-rule
   json: keith-rule.json
   yml: keith-rule.yml
@@ -4113,6 +4273,11 @@
   yml: ldpm-1998.yml
   html: ldpm-1998.html
   text: ldpm-1998.LICENSE
+- license_key: leap-motion-sdk-2019
+  json: leap-motion-sdk-2019.json
+  yml: leap-motion-sdk-2019.yml
+  html: leap-motion-sdk-2019.html
+  text: leap-motion-sdk-2019.LICENSE
 - license_key: leptonica
   json: leptonica.json
   yml: leptonica.yml
@@ -4588,6 +4753,11 @@
   yml: mcafee-tou.yml
   html: mcafee-tou.html
   text: mcafee-tou.LICENSE
+- license_key: mcrae-pl-4-r53
+  json: mcrae-pl-4-r53.json
+  yml: mcrae-pl-4-r53.yml
+  html: mcrae-pl-4-r53.html
+  text: mcrae-pl-4-r53.LICENSE
 - license_key: mediainfo-lib
   json: mediainfo-lib.json
   yml: mediainfo-lib.yml
@@ -4608,6 +4778,11 @@
   yml: merit-network-derivative.yml
   html: merit-network-derivative.html
   text: merit-network-derivative.LICENSE
+- license_key: metageek-inssider-eula
+  json: metageek-inssider-eula.json
+  yml: metageek-inssider-eula.yml
+  html: metageek-inssider-eula.html
+  text: metageek-inssider-eula.LICENSE
 - license_key: metrolink-1.0
   json: metrolink-1.0.json
   yml: metrolink-1.0.yml
@@ -4733,11 +4908,6 @@
   yml: mit-old-style.yml
   html: mit-old-style.html
   text: mit-old-style.LICENSE
-- license_key: mit-open-group
-  json: mit-open-group.json
-  yml: mit-open-group.yml
-  html: mit-open-group.html
-  text: mit-open-group.LICENSE
 - license_key: mit-readme
   json: mit-readme.json
   yml: mit-readme.yml
@@ -4898,6 +5068,11 @@
   yml: ms-asp-net-web-pages-templates.yml
   html: ms-asp-net-web-pages-templates.html
   text: ms-asp-net-web-pages-templates.LICENSE
+- license_key: ms-azure-data-studio
+  json: ms-azure-data-studio.json
+  yml: ms-azure-data-studio.yml
+  html: ms-azure-data-studio.html
+  text: ms-azure-data-studio.LICENSE
 - license_key: ms-capicom
   json: ms-capicom.json
   yml: ms-capicom.yml
@@ -4953,6 +5128,11 @@
   yml: ms-exchange-server-2010-sp2-sdk.yml
   html: ms-exchange-server-2010-sp2-sdk.html
   text: ms-exchange-server-2010-sp2-sdk.LICENSE
+- license_key: ms-iis-container-images-eula-2020
+  json: ms-iis-container-images-eula-2020.json
+  yml: ms-iis-container-images-eula-2020.yml
+  html: ms-iis-container-images-eula-2020.html
+  text: ms-iis-container-images-eula-2020.LICENSE
 - license_key: ms-ilmerge
   json: ms-ilmerge.json
   yml: ms-ilmerge.yml
@@ -5023,6 +5203,11 @@
   yml: ms-net-library-2019-06.yml
   html: ms-net-library-2019-06.html
   text: ms-net-library-2019-06.LICENSE
+- license_key: ms-net-library-2020-09
+  json: ms-net-library-2020-09.json
+  yml: ms-net-library-2020-09.yml
+  html: ms-net-library-2020-09.html
+  text: ms-net-library-2020-09.LICENSE
 - license_key: ms-net-library
   json: ms-net-library.json
   yml: ms-net-library.yml
@@ -5163,6 +5348,11 @@
   yml: ms-web-developer-tools-1.0.yml
   html: ms-web-developer-tools-1.0.html
   text: ms-web-developer-tools-1.0.LICENSE
+- license_key: ms-windows-container-base-image-eula-2020
+  json: ms-windows-container-base-image-eula-2020.json
+  yml: ms-windows-container-base-image-eula-2020.yml
+  html: ms-windows-container-base-image-eula-2020.html
+  text: ms-windows-container-base-image-eula-2020.LICENSE
 - license_key: ms-windows-driver-kit
   json: ms-windows-driver-kit.json
   yml: ms-windows-driver-kit.yml
@@ -5343,6 +5533,11 @@
   yml: net-snmp.yml
   html: net-snmp.html
   text: net-snmp.LICENSE
+- license_key: netapp-sdk-aug2020
+  json: netapp-sdk-aug2020.json
+  yml: netapp-sdk-aug2020.yml
+  html: netapp-sdk-aug2020.html
+  text: netapp-sdk-aug2020.LICENSE
 - license_key: netcat
   json: netcat.json
   yml: netcat.yml
@@ -5513,6 +5708,11 @@
   yml: npl-1.1.yml
   html: npl-1.1.html
   text: npl-1.1.LICENSE
+- license_key: npsl-exception-0.93
+  json: npsl-exception-0.93.json
+  yml: npsl-exception-0.93.yml
+  html: npsl-exception-0.93.html
+  text: npsl-exception-0.93.LICENSE
 - license_key: nrl-permission
   json: nrl-permission.json
   yml: nrl-permission.yml
@@ -5558,6 +5758,11 @@
   yml: nvidia-2002.yml
   html: nvidia-2002.html
   text: nvidia-2002.LICENSE
+- license_key: nvidia-apex-sdk-eula-2011
+  json: nvidia-apex-sdk-eula-2011.json
+  yml: nvidia-apex-sdk-eula-2011.yml
+  html: nvidia-apex-sdk-eula-2011.html
+  text: nvidia-apex-sdk-eula-2011.LICENSE
 - license_key: nvidia-cuda-supplement-2020
   json: nvidia-cuda-supplement-2020.json
   yml: nvidia-cuda-supplement-2020.yml
@@ -5568,6 +5773,11 @@
   yml: nvidia-gov.yml
   html: nvidia-gov.html
   text: nvidia-gov.LICENSE
+- license_key: nvidia-ngx-eula-2019
+  json: nvidia-ngx-eula-2019.json
+  yml: nvidia-ngx-eula-2019.yml
+  html: nvidia-ngx-eula-2019.html
+  text: nvidia-ngx-eula-2019.LICENSE
 - license_key: nvidia-sdk-eula-v0.11
   json: nvidia-sdk-eula-v0.11.json
   yml: nvidia-sdk-eula-v0.11.yml
@@ -5583,6 +5793,16 @@
   yml: nwhm.yml
   html: nwhm.html
   text: nwhm.LICENSE
+- license_key: nxp-microcontroller-proprietary
+  json: nxp-microcontroller-proprietary.json
+  yml: nxp-microcontroller-proprietary.yml
+  html: nxp-microcontroller-proprietary.html
+  text: nxp-microcontroller-proprietary.LICENSE
+- license_key: nxp-warranty-disclaimer
+  json: nxp-warranty-disclaimer.json
+  yml: nxp-warranty-disclaimer.yml
+  html: nxp-warranty-disclaimer.html
+  text: nxp-warranty-disclaimer.LICENSE
 - license_key: nysl-0.9982
   json: nysl-0.9982.json
   yml: nysl-0.9982.yml
@@ -5653,6 +5873,16 @@
   yml: ocsl-1.0.yml
   html: ocsl-1.0.html
   text: ocsl-1.0.LICENSE
+- license_key: oculus-sdk-2020
+  json: oculus-sdk-2020.json
+  yml: oculus-sdk-2020.yml
+  html: oculus-sdk-2020.html
+  text: oculus-sdk-2020.LICENSE
+- license_key: oculus-sdk-3.5
+  json: oculus-sdk-3.5.json
+  yml: oculus-sdk-3.5.yml
+  html: oculus-sdk-3.5.html
+  text: oculus-sdk-3.5.LICENSE
 - license_key: oculus-sdk
   json: oculus-sdk.json
   yml: oculus-sdk.yml
@@ -5678,11 +5908,31 @@
   yml: odl.yml
   html: odl.html
   text: odl.LICENSE
+- license_key: ofl-1.0-no-rfn
+  json: ofl-1.0-no-rfn.json
+  yml: ofl-1.0-no-rfn.yml
+  html: ofl-1.0-no-rfn.html
+  text: ofl-1.0-no-rfn.LICENSE
+- license_key: ofl-1.0-rfn
+  json: ofl-1.0-rfn.json
+  yml: ofl-1.0-rfn.yml
+  html: ofl-1.0-rfn.html
+  text: ofl-1.0-rfn.LICENSE
 - license_key: ofl-1.0
   json: ofl-1.0.json
   yml: ofl-1.0.yml
   html: ofl-1.0.html
   text: ofl-1.0.LICENSE
+- license_key: ofl-1.1-no-rfn
+  json: ofl-1.1-no-rfn.json
+  yml: ofl-1.1-no-rfn.yml
+  html: ofl-1.1-no-rfn.html
+  text: ofl-1.1-no-rfn.LICENSE
+- license_key: ofl-1.1-rfn
+  json: ofl-1.1-rfn.json
+  yml: ofl-1.1-rfn.yml
+  html: ofl-1.1-rfn.html
+  text: ofl-1.1-rfn.LICENSE
 - license_key: ofl-1.1
   json: ofl-1.1.json
   yml: ofl-1.1.yml
@@ -5708,6 +5958,11 @@
   yml: ogc.yml
   html: ogc.html
   text: ogc.LICENSE
+- license_key: ogdl-taiwan-1.0
+  json: ogdl-taiwan-1.0.json
+  yml: ogdl-taiwan-1.0.yml
+  html: ogdl-taiwan-1.0.html
+  text: ogdl-taiwan-1.0.LICENSE
 - license_key: ogl-uk-1.0
   json: ogl-uk-1.0.json
   yml: ogl-uk-1.0.yml
@@ -5978,6 +6233,16 @@
   yml: opl-1.0.yml
   html: opl-1.0.html
   text: opl-1.0.LICENSE
+- license_key: opnl-1.0
+  json: opnl-1.0.json
+  yml: opnl-1.0.yml
+  html: opnl-1.0.html
+  text: opnl-1.0.LICENSE
+- license_key: opnl-2.0
+  json: opnl-2.0.json
+  yml: opnl-2.0.yml
+  html: opnl-2.0.html
+  text: opnl-2.0.LICENSE
 - license_key: oracle-bcl-javaee
   json: oracle-bcl-javaee.json
   yml: oracle-bcl-javaee.yml
@@ -6233,6 +6498,11 @@
   yml: patent-disclaimer.yml
   html: patent-disclaimer.html
   text: patent-disclaimer.LICENSE
+- license_key: paul-hsieh-derivative
+  json: paul-hsieh-derivative.json
+  yml: paul-hsieh-derivative.yml
+  html: paul-hsieh-derivative.html
+  text: paul-hsieh-derivative.LICENSE
 - license_key: paul-hsieh-exposition
   json: paul-hsieh-exposition.json
   yml: paul-hsieh-exposition.yml
@@ -6403,6 +6673,11 @@
   yml: polyform-perimeter-1.0.0.yml
   html: polyform-perimeter-1.0.0.html
   text: polyform-perimeter-1.0.0.LICENSE
+- license_key: polyform-shield-1.0.0
+  json: polyform-shield-1.0.0.json
+  yml: polyform-shield-1.0.0.yml
+  html: polyform-shield-1.0.0.html
+  text: polyform-shield-1.0.0.LICENSE
 - license_key: polyform-small-business-1.0.0
   json: polyform-small-business-1.0.0.json
   yml: polyform-small-business-1.0.0.yml
@@ -6538,6 +6813,11 @@
   yml: qca-technology.yml
   html: qca-technology.html
   text: qca-technology.LICENSE
+- license_key: qcad-exception-gpl
+  json: qcad-exception-gpl.json
+  yml: qcad-exception-gpl.yml
+  html: qcad-exception-gpl.html
+  text: qcad-exception-gpl.LICENSE
 - license_key: qhull
   json: qhull.json
   yml: qhull.yml
@@ -6673,6 +6953,11 @@
   yml: rdisc.yml
   html: rdisc.html
   text: rdisc.LICENSE
+- license_key: realm-platform-extension-2017
+  json: realm-platform-extension-2017.json
+  yml: realm-platform-extension-2017.yml
+  html: realm-platform-extension-2017.html
+  text: realm-platform-extension-2017.LICENSE
 - license_key: red-hat-attribution
   json: red-hat-attribution.json
   yml: red-hat-attribution.yml
@@ -6908,6 +7193,11 @@
   yml: scea-1.0.yml
   html: scea-1.0.html
   text: scea-1.0.LICENSE
+- license_key: scilab-en
+  json: scilab-en.json
+  yml: scilab-en.yml
+  html: scilab-en.html
+  text: scilab-en.LICENSE
 - license_key: scola-en
   json: scola-en.json
   yml: scola-en.yml
@@ -7488,6 +7778,11 @@
   yml: sun-sissl-1.2.yml
   html: sun-sissl-1.2.html
   text: sun-sissl-1.2.LICENSE
+- license_key: sun-source
+  json: sun-source.json
+  yml: sun-source.yml
+  html: sun-source.html
+  text: sun-source.LICENSE
 - license_key: sun-ssscfr-1.1
   json: sun-ssscfr-1.1.json
   yml: sun-ssscfr-1.1.yml
@@ -7783,6 +8078,11 @@
   yml: tu-berlin.yml
   html: tu-berlin.html
   text: tu-berlin.LICENSE
+- license_key: tumbolia
+  json: tumbolia.json
+  yml: tumbolia.yml
+  html: tumbolia.html
+  text: tumbolia.LICENSE
 - license_key: twisted-snmp
   json: twisted-snmp.json
   yml: twisted-snmp.yml
@@ -8548,6 +8848,11 @@
   yml: zpl-2.1.yml
   html: zpl-2.1.html
   text: zpl-2.1.LICENSE
+- license_key: zsh
+  json: zsh.json
+  yml: zsh.yml
+  html: zsh.html
+  text: zsh.LICENSE
 - license_key: zuora-software
   json: zuora-software.json
   yml: zuora-software.yml

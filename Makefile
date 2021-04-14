@@ -66,4 +66,10 @@ build: conf
 	@cp -R static/ docs/static/
 	@echo "Available at docs/index.html"
 
-.PHONY: conf clean isort black valid build
+publish:
+	@echo "-> Add changes to git"
+	git add *
+	"Upgrade ScanCode-toolkit to latest version"
+
+
+.PHONY: conf clean isort black valid build publish

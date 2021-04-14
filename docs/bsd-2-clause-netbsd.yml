@@ -9,5 +9,7 @@ notes: |
   Except for the NetBSD Foundation name this license is identical to the
   bsd-simplified Per SPDX.org, NetBSD adopted this 2-clause license in 2008
   for code contributed to NetBSD Foundation.
+  Its former SPDX key was BSD-2-Clause-NetBSD. This is now tracked as
+  bsd-simplified aka. BSD-2-Clause.
 text_urls:
   - http://www.netbsd.org/about/redistribution.html#default

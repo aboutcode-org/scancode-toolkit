@@ -1,0 +1,8 @@
+key: kde-accepted-lgpl
+short_name: KDE Accepted LGPL Exception
+name: KDE Accepted LGPL Exception
+category: Copyleft
+owner: KDE Project
+homepage_url: https://github.com/KDE/kate/blob/master/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-kde-accepted-lgpl
