@@ -68,8 +68,9 @@ build: conf
 
 publish:
 	@echo "-> Add changes to git"
-	git add *
-	"Upgrade ScanCode-toolkit to latest version"
-
+	@git add .
+	git commit -m "Upgrade ScanCode-toolkit to latest version"
+	@echo "-> Push changes to main repo"
+	@git push
 
 .PHONY: conf clean isort black valid build publish
