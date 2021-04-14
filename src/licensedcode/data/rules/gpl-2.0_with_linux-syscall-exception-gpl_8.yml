@@ -1,0 +1,11 @@
+license_expression: gpl-2.0 WITH linux-syscall-exception-gpl
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+ignorable_copyrights:
+    - copyrighted by me and others
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - me and others
+    - the Free Software Foundation
