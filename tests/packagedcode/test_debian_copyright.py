@@ -38,7 +38,7 @@ def check_expected_parse_copyright_file(
         unique = True
 
     parsed = debian_copyright.parse_copyright_file(
-        copyright_file=test_loc,
+        location=test_loc,
         skip_debian_packaging=skip_debian_packaging,
         simplify_licenses=simplify_licenses,
         unique=unique,

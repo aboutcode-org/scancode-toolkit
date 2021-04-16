@@ -12,6 +12,8 @@ import sys
 from os import environ
 from os import path
 
+import attr
+
 from debut.copyright import DebianCopyright
 from debut.copyright import CatchAllParagraph
 from debut.copyright import CopyrightFilesParagraph
@@ -22,6 +24,8 @@ from license_expression import Licensing
 from packagedcode.debian import DebianPackage
 from packagedcode.licensing import get_normalized_expression
 from packagedcode.utils import combine_expressions
+
+from textcode.analysis import unicode_text
 
 """
 Detect licenses in Debian copyright files. Can handle dep-5 machine-readable
@@ -58,9 +62,9 @@ def get_and_set_package_licenses_and_copyrights(package, root_dir):
     The text is used for detection and cross-reference with the declaration.
     """
     assert isinstance(package, DebianPackage)
-    copyright_file = package.get_copyright_file_path(root_dir)
+    location = package.get_copyright_file_path(root_dir)
 
-    results = parse_copyright_file(copyright_file)
+    results = parse_copyright_file(location)
     declared_license, detected_license, copyrights = results
 
     package.license_expression = detected_license
@@ -70,48 +74,145 @@ def get_and_set_package_licenses_and_copyrights(package, root_dir):
     return declared_license, detected_license, copyrights
 
 
+@attr.s
+class DebianCopyrightDetector:
+
+    location = attr.ib()
+    is_structured = attr.ib(default=True)
+
+    # List of strings of License: tag values in a structured debian copyright file
+    declared_licenses = attr.ib(default=attr.Factory(list))
+
+    # ToDo: Consider returning Line Positions
+    # List of strings of Copyright: tag values in a structured debian copyright file
+    # or the detected copyrights in an unstructured file
+    detected_copyrights = attr.ib(default=attr.Factory(list))
+    
+    # List of LicenseMatch objects
+    license_matches = attr.ib(default=attr.Factory(list))
+
+    @property
+    def detected_copyrights_text(self):
+        return '\n'.join(self.detected_copyrights)
+
+    @classmethod
+    def from_file(cls, location, with_copyright=True, skip_debian_packaging=True, unique=True):
+        """
+        Return a DebianCopyrightDetector object built from debian copyright file at ``location``,
+        or None if this is not a debian copyright file.
+        Optionally detect copyright statements, if ``with_copyright`` is True.
+        """
+        if not location:
+            return
+        
+        if not location.endswith('copyright'):
+            return
+
+        dc = cls(location=location)
+
+        # FIXME:
+        #    1. Either is_machine_readable_copyright should take in a location
+        #    2. Read once and pass strings instead
+        
+        # Not fixing the `is not is_machine_readable_copyright:` bug to avoid regeneration
+        dc.is_structured = True
+        # dc.is_structured = is_machine_readable_copyright(content)
+        
+        content = unicode_text(location)
+        
+        if with_copyright:
+            dc.detected_copyrights = dc.detect_copyrights(
+                skip_debian_packaging=skip_debian_packaging, unique=unique,
+            )
+
+        if not dc.is_structured:
+            dc.license_matches = get_license_matches(query_string=content)
+        
+        return dc
+            
+            
+    def detect_copyrights(self, skip_debian_packaging=False, unique=True):
+        """
+        Return copyrights collected from a structured file or an unstructured file.
+        """
+        copyrights = []
+        if self.is_structured:
+            deco = DebianCopyright.from_file(self.location)
+            for paragraph in deco.paragraphs:
+                if skip_debian_packaging and is_debian_packaging(paragraph):
+                    continue
+                if isinstance(paragraph, (CopyrightHeaderParagraph, CopyrightFilesParagraph)):
+                    pcs = paragraph.copyright.statements or []
+                    for p in pcs:
+                        p = p.dumps()
+                        # avoid repeats
+                        if unique:
+                            if p not in copyrights:
+                                copyrights.append(p)
+                        else:
+                            copyrights.append(p)
+        # We detect plain copyrights in a unstructured file if we didn't find any, or
+        # in an structured file
+        if not copyrights:
+            copyrights = copyright_detector(self.location)
+            
+        return copyrights
+    
+    @property
+    def license_expressions(self):
+        """
+        Return a list of license expressions.
+        """
+        matches = self.license_matches
+        if not matches:
+            # we have no match: return an unknown key
+            return ['unknown']
+
+        detected_expressions = [match.rule.license_expression for match in matches]
+        return detected_expressions
+
+
 def parse_copyright_file(
-    copyright_file,
+    location,
     skip_debian_packaging=True,
     simplify_licenses=True,
     unique=True
 ):
     """
     Return a tuple of (declared license, detected license_expression, copyrights) strings computed
-    from the `copyright_file` location. For each copyright file paragraph we
+    from the debain copyright file at `location`. For each copyright file paragraph we
     treat the "name" as a license declaration. The text is used for detection
     and cross-reference with the declaration.
     """
-    if not copyright_file:
+    if not location:
+        return None, None, None
+    
+    if not location.endswith('copyright'):
         return None, None, None
 
-    if not is_machine_readable_copyright:
-        # TODO do a plain license and copyright detection, no parsing
-        license_expression = detect_license_in_unstructured_text(location=copyright_file)
-        copyrights = '\n'.join(copyright_detector(copyright_file))
-        return None, license_expression, copyrights
-
-    declared_license, detected_license, copyrights = parse_structured_copyright_file(
-        copyright_file=copyright_file,
-        skip_debian_packaging=skip_debian_packaging,
-        simplify_licenses=simplify_licenses,
-        unique=unique,
+    dc = DebianCopyrightDetector.from_file(
+        location=location, skip_debian_packaging=skip_debian_packaging, unique=unique,
     )
+
+    declared_license = None
+    copyrights = dc.detected_copyrights_text
+
+    if not dc.is_structured:
+        detected_license = combine_expressions(dc.license_expressions)
+    else:
+        declared_license, detected_license = parse_structured_copyright_file(
+            location=location,
+            skip_debian_packaging=skip_debian_packaging,
+            simplify_licenses=simplify_licenses,
+            unique=unique,
+        )
+
     if TRACE:
         logger_debug(
             f'parse_copyright_file: declared_license: {declared_license}\n'
             f'detected_license: {detected_license}\n'
             f'copyrights: {copyrights}'
         )
-
-    # dive into copyright if we did not detect any.
-    if not copyrights:
-        copyrights = '\n'.join(copyright_detector(copyright_file))
-        if TRACE:
-            logger_debug(
-                f'parse_copyright_file: using whole text: '
-                f'copyrights: {copyrights}'
-            )
 
     return declared_license, detected_license, copyrights
 
@@ -130,37 +231,31 @@ def copyright_detector(location):
                 copyrights_append(value)
         return copyrights
 
-
-def detect_license_in_unstructured_text(location):
+def get_license_matches(location=None, query_string=None):
     """
-    Return a detected license expression string from a file at `location`
+    Return a sequence of LicenseMatch objects.
     """
-    from scancode.api import get_licenses
-    detected = get_licenses(location)
-    if not detected:
-        # we have no match: return an unknown key
-        return 'unknown'
+    from licensedcode import cache
 
-    detected_expressions = detected['license_expressions']
+    idx = cache.get_index()
+    return idx.match(location=location, query_string=query_string)
 
-    if TRACE:
-        logger_debug('detect_license_in_unstructured_text: detected_expressions:', detected_expressions)
 
-    return combine_expressions(detected_expressions)
+class NoLicenseFoundError(Exception):
+    """
+    Raised when some license is expected to be found, but is not found.
+    """
 
 
 def parse_structured_copyright_file(
-    copyright_file,
+    location,
     skip_debian_packaging=True,
     simplify_licenses=True,
     unique=True,
 ):
     """
-    Return a tuple of (declared license, detected license_expression,
-    copyrights) strings computed from the `copyright_file` location. For each
-    copyright file paragraph we treat the "name" as a license declaration. The
-    text is used for detection and cross-reference with the declaration.
-    The returned "copyrights" is a string with one statement per line.
+    Return a tuple of (list of declared license strings, list of detected license matches)
+    collected from the debian copyright file at `location`.
 
     If `skip_debian_packaging` is True, the Debian packaging license is skipped
     if detected.
@@ -169,17 +264,19 @@ def parse_structured_copyright_file(
 
     If `unique` is True, repeated copyrights, detected or declared licenses are
     ignored, and only unique detections are returned.
+    
+    #TODO: We want to find in a file where in a copyright file a license was found.
     """
-    if not copyright_file:
-        return None, None, None
+    if not location:
+        return None, None
 
-    deco = DebianCopyright.from_file(copyright_file)
+    deco = DebianCopyright.from_file(location)
 
     declared_licenses = []
     detected_licenses = []
-    copyrights = []
 
-    deco = fix_copyright(deco)
+    #TODO: Revisit: is this really needed
+    deco = refine_debian_copyright(deco)
 
     licensing = Licensing()
     for paragraph in deco.paragraphs:
@@ -188,18 +285,6 @@ def parse_structured_copyright_file(
             # Skipping packaging license and copyrights since they are not
             # relevant to the effective package license
             continue
-
-        # collect copyright statements
-        if isinstance(paragraph, (CopyrightHeaderParagraph, CopyrightFilesParagraph)):
-            pcs = paragraph.copyright.statements or []
-            for p in pcs:
-                p = p.dumps()
-                # avoid repeats
-                if unique:
-                    if p not in copyrights:
-                        copyrights.append(p)
-                else:
-                    copyrights.append(p)
 
         # rare case where we have not a structured file
         if isinstance(paragraph, CatchAllParagraph):
@@ -266,8 +351,7 @@ def parse_structured_copyright_file(
     else:
         detected_license = 'unknown'
 
-    copyrights = '\n'.join(copyrights)
-    return declared_license, detected_license, copyrights
+    return declared_license, detected_license
 
 
 def detect_declared_license(declared):
@@ -348,11 +432,10 @@ def is_primary_license_paragraph(paragraph):
     )
 
 
-def fix_copyright(debian_copyright):
+def refine_debian_copyright(debian_copyright):
     """
     Update in place the `debian_copyright` DebianCopyright object based on
-    issues found in a large collection of Debian copyrights such as names that
-    rea either copyright staments or license texts.
+    issues found in a large collection of Debian copyright files.
     """
     for paragraph in debian_copyright.paragraphs:
         if not hasattr(paragraph, 'license'):
