@@ -255,7 +255,7 @@
           "start_line": 18,
           "end_line": 31,
           "matched_rule": {
-            "identifier": "apache-2.0_12.RULE",
+            "identifier": "apache-2.0_2.RULE",
             "license_expression": "apache-2.0",
             "licenses": [
               "apache-2.0"
@@ -504,7 +504,7 @@
           "start_line": 18,
           "end_line": 31,
           "matched_rule": {
-            "identifier": "apache-2.0_12.RULE",
+            "identifier": "apache-2.0_2.RULE",
             "license_expression": "apache-2.0",
             "licenses": [
               "apache-2.0"

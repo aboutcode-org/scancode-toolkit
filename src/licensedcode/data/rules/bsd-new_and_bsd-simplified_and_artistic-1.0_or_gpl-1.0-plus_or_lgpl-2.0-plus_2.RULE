@@ -1,0 +1,6 @@
+is 2-clause or 3-clause BSD licensed, with the exception of
+bitvect, which is triple-licensed under the Artistic license, GPL, and
+LGPL.  is thus GPL and LGPL compatible.  In addition, this also
+means that is free for binary-only distribution as long as the
+terms of the 3-clause BSD license and Artistic license (as it applies to
+bitvect) are fulfilled.

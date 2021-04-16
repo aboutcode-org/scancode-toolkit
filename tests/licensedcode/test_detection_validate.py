@@ -155,11 +155,11 @@ def check_ignorable_clues(rule, regen=False):
 
     # collect ignorables
     expected = dict([
-        ('ignorable_copyrights', rule.ignorable_copyrights or []),
-        ('ignorable_holders', rule.ignorable_holders or []),
-        ('ignorable_authors', rule.ignorable_authors or []),
-        ('ignorable_urls', rule.ignorable_urls or []),
-        ('ignorable_emails', rule.ignorable_emails or []),
+        ('ignorable_copyrights', sorted(rule.ignorable_copyrights or [])),
+        ('ignorable_holders', sorted(rule.ignorable_holders or [])),
+        ('ignorable_authors', sorted(rule.ignorable_authors or [])),
+        ('ignorable_urls', sorted(rule.ignorable_urls or [])),
+        ('ignorable_emails', sorted(rule.ignorable_emails or [])),
     ])
 
     expected = dict([(k, v) for k, v in sorted(expected.items()) if v])

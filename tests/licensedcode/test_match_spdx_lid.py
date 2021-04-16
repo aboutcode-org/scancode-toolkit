@@ -503,7 +503,8 @@ class TestMatchSpdx(FileBasedTesting):
         from licensedcode import tracing
         rule_dir = self.get_test_loc('spdx/rules-overlap/rules')
         lics_dir = self.get_test_loc('spdx/rules-overlap/licenses')
-        idx = index.LicenseIndex(models.get_rules(lics_dir, rule_dir))
+        rules = models.get_rules(licenses_data_dir=lics_dir, rules_data_dir=rule_dir)
+        idx = index.LicenseIndex(rules)
         querys = 'SPDX-license-identifier: BSD-3-Clause-No-Nuclear-Warranty'
         matches = idx.match(query_string=querys)
         assert len(matches) == 1

@@ -1,0 +1,11 @@
+key: intel-bsd-2-clause
+short_name: Intel BSD 2 Clause License
+name: Intel BSD 2 Clause License
+category: Permissive
+owner: Intel Corporation
+notes: |
+  this license is seen in ZFS and FreeBSD. It is the same as intel-bsd
+  but with 2 clauses only.
+spdx_license_key: LicenseRef-scancode-intel-bsd-2-clause
+text_urls:
+    - https://github.com/freebsd/freebsd-src/blob/098dbd7ff7f3da9dda03802cdb2d8755f816eada/cddl/usr.sbin/zfsd/zfsd_exception.cc

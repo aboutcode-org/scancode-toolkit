@@ -5,3 +5,5 @@ category: Permissive
 owner: Microsoft
 homepage_url: https://github.com/microsoft/Open-Use-of-Data-Agreement/blob/v1.0/O-UDA-1.0.md
 spdx_license_key: O-UDA-1.0
+other_urls:
+    - https://cdla.dev/open-use-of-data-agreement-v1-0/

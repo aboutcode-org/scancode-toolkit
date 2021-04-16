@@ -14,3 +14,5 @@ other_urls:
     - http://www.opensource.org/licenses/Zlib
     - http://www.zlib.net/zlib_license.html
     - https://opensource.org/licenses/Zlib
+minimum_coverage: 50
+

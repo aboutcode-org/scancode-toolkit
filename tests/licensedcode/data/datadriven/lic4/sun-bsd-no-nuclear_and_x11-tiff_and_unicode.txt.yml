@@ -4,4 +4,5 @@ license_expressions:
   - x11-tiff
   - unicode
   - unicode
+  - unicode
 notes: intertwined license mentions in an itext notice

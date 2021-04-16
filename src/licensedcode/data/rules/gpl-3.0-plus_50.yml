@@ -1,4 +1,5 @@
 license_expression: gpl-3.0-plus
-is_license_reference: yes
+is_license_tag: yes
+relevance: 100
 ignorable_urls:
     - http://spdx.org/licenses/GPL-3.0

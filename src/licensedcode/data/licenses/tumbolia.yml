@@ -1,0 +1,17 @@
+key: tumbolia
+short_name: Tumbolia Public License
+name: Tumbolia Public License
+category: Permissive
+owner: Paul Davis
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/Tumbolia
+    - https://github.com/c-w/ghp-import/blob/aef95b550990374fa5e6598752813bf59bfab9cc/LICENSE
+minimum_coverage: 95
+spdx_license_key: LicenseRef-scancode-tumbolia
+ignorable_copyrights:
+  - Copyright 2013, Paul Davis <paul.joseph.davis@gmail.com>
+ignorable_emails:
+  - paul.joseph.davis@gmail.com
+ignorable_holders:
+  - Paul Davis
+

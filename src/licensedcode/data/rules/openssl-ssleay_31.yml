@@ -1,5 +1,6 @@
 license_expression: openssl-ssleay
 is_license_text: yes
+notes: typo in "if the [rouines] from the library" 
 ignorable_copyrights:
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
     - Copyright (c) 1998-2008 The OpenSSL Project

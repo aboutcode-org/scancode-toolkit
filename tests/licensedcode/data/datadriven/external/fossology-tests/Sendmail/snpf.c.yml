@@ -1,4 +1,4 @@
 license_expressions:
-  - unknown-license-reference
+  - purdue-bsd AND sendmail
   - sendmail
-  - bsd-original-uc
+  - sendmail

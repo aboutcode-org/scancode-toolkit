@@ -25,6 +25,7 @@ To compare the JSON output in different formats refer :ref:`comparing_json`.
 
 .. include::  /rst_snippets/stdout.rst
 
+
 HTML
 ----
 

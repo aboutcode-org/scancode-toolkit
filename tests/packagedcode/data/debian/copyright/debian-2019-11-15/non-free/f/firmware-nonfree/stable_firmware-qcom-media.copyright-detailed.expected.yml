@@ -1,7 +1,7 @@
 -
-- bsd-new AND bsd-original AND bsd-unmodified AND free-unknown AND gary-s-brown AND isc AND
-  openssl-ssleay AND other-permissive AND proprietary-license AND public-domain AND unknown
-  AND unknown-license-reference AND zlib
+- bsd-new AND free-unknown AND gary-s-brown AND isc AND openssl-ssleay AND other-permissive
+  AND proprietary-license AND public-domain AND unknown AND unknown-license-reference AND warranty-disclaimer
+  AND zlib
 - |
   Copyright (c) 2013-2017 Qualcomm Technologies, Inc.
   Copyright (c) 2013-2017 Qualcomm Technologies, Inc.

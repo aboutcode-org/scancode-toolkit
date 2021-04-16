@@ -1,0 +1,7 @@
+license_expression: bsd-plus-mod-notice
+is_license_notice: yes
+referenced_filenames:
+    - ITKCopyright.txt
+notes: Seen in https://web.archive.org/web/20020206001851/http://itk.org/HTML/Copyright.htm
+ignorable_urls:
+    - http://www.itk.org/HTML/Copyright.htm

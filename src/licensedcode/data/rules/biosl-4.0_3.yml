@@ -1,0 +1,6 @@
+license_expression: biosl-4.0
+is_license_tag: yes
+relevance: 100
+notes: seen in https://raw.githubusercontent.com/davidtiefenthaler/BOPT-DemandForecast/main/README.md
+ignorable_urls:
+    - http://bios.intranet.bosch.com/bioslv4-badge.svg

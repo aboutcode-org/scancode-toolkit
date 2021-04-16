@@ -1,0 +1,183 @@
+[
+  {
+    "type": "rpm",
+    "namespace": null,
+    "name": "python3-setuptools-wheel",
+    "version": "39.2.0",
+    "qualifiers": {
+      "arch": "noarch"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "A Python wheel of setuptools to use with venv.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": "https://pypi.python.org/pypi/setuptools",
+    "download_url": null,
+    "size": 347696,
+    "sha1": "9c1510ea7bda0cc40b61a1c87b56e480415dbfed",
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": "MIT",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:rpm/python3-setuptools-wheel@39.2.0?arch=noarch",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "installed_files": [
+      {
+        "path": "/usr/share/licenses/python3-setuptools-wheel",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/licenses/python3-setuptools-wheel/LICENSE",
+        "size": 0,
+        "sha1": null,
+        "md5": "c32a3ac395af6321efd28be73d06a00f0db6ab887d1c21d4fec46128d2056d5a",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/python3-wheels",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/python3-wheels/setuptools-39.2.0-py2.py3-none-any.whl",
+        "size": 0,
+        "sha1": null,
+        "md5": "938955c41e6dcc2e73ccaf51bd8f755c64df739929a4acff453fde2d0b921bb2",
+        "sha256": null,
+        "sha512": null
+      }
+    ]
+  },
+  {
+    "type": "rpm",
+    "namespace": null,
+    "name": "centos-gpg-keys",
+    "version": "8.1",
+    "qualifiers": {
+      "arch": "noarch"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "CentOS Linux RPM signature keys",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": 3370,
+    "sha1": "2f44019797e26744fb67d24e56ccab34146ec5fa",
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "gpl-2.0",
+    "declared_license": "GPLv2",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:rpm/centos-gpg-keys@8.1?arch=noarch",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "installed_files": [
+      {
+        "path": "/etc/pki/rpm-gpg",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial",
+        "size": 0,
+        "sha1": null,
+        "md5": "146059788b214d7ba0dd70c1cf21111e594c6cfde201da8a9a88fe7101be8a78",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/pki/rpm-gpg/RPM-GPG-KEY-centostesting",
+        "size": 0,
+        "sha1": null,
+        "md5": "c9c03d66017969a4e7cc2378cac520d726d87e1f24422ec28a96065e43ce8c4a",
+        "sha256": null,
+        "sha512": null
+      }
+    ]
+  },
+  {
+    "type": "rpm",
+    "namespace": null,
+    "name": "langpacks-en",
+    "version": "1.0",
+    "qualifiers": {
+      "arch": "noarch"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "This package provides English langpacks meta-package.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": 400,
+    "sha1": "770705e46ee139ff2f1b5b22705127013da215fb",
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "gpl-2.0-plus",
+    "declared_license": "GPLv2+",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:rpm/langpacks-en@1.0?arch=noarch",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "installed_files": [
+      {
+        "path": "/o",
+        "size": 0,
+        "sha1": null,
+        "md5": "3",
+        "sha256": null,
+        "sha512": null
+      }
+    ]
+  }
+]

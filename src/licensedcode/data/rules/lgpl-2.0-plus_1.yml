@@ -1,3 +1,5 @@
 license_expression: lgpl-2.0-plus
 is_license_notice: yes
 notes: this is a confused notice mixing v2 and v2.1 references
+minimum_coverage: 70
+
