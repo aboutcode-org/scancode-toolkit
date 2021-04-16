@@ -1,46 +1,122 @@
+-
+- lgpl-2.1-plus AND sun-source AND libpbm AND gpl-2.0-plus AND adrian AND mit
 - |
-  LGPL-2.1+
-  This source code is a product of Sun Microsystems, Inc. and is provided
-  GPL-2+
-  You are allowed to use this source code in any open source or closed
-  Permission is hereby granted, free of charge, to any person
-  LGPL-2+
-- adrian AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.1-plus AND
-  other-permissive AND sun-source AND unknown AND unknown-license-reference AND x11
-- |
-  Copyright (C) 2004-2009 Lennart Poettering
-  Copyright (C) 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB
-  Copyright (C) 2001 Chris Bagwell
+  Copyright (c) 2004-2009 Lennart Poettering
+  Copyright (c) 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB
+  Copyright (c) Sun Microsystems, Inc
+  Copyright (c) 2001 Chris Bagwell
   Copyright 2006 Pierre Ossman <ossman@cendio.se> for Cendio AB
-  Copyright (C)1994,96,97,98,99,2000,2001,2004 Free Software Foundation, Inc.
-  Copyright (C) 1999 Tom Tromey
-  Copyright (C) 2000 Red Hat, Inc.
-  Copyright (C) 2004-2009 Marcel Holtmann <marcel@holtmann.org>
-  Copyright (C) 2008-2009 Joao Paulo Rechi Vita
-  Copyright (C) 2004-2005 Henryk Ploetz <henryk@ploetzli.ch>
-  Copyright (C) 2005-2006 Brad Midgley <bmidgley@xmission.com>
+  Copyright (c) 1994,96,97,98,99,2000,2001,2004 Free Software Foundation, Inc.
+  Copyright (c) 1999 Tom Tromey
+  Copyright (c) 2000 Red Hat, Inc.
+  Copyright (c) 2004-2009 Marcel Holtmann <marcel@holtmann.org>
+  Copyright (c) 2008-2009 Joao Paulo Rechi Vita
+  Copyright (c) 2000-2001 Qualcomm Incorporated
+  Copyright (c) 2002-2003 Maxim Krasnyansky <maxk@qualcomm.com>
+  Copyright (c) 2002-2007 Marcel Holtmann <marcel@holtmann.org>
+  Copyright (c) 2004-2009 Marcel Holtmann <marcel@holtmann.org>
+  Copyright (c) 2004-2005 Henryk Ploetz <henryk@ploetzli.ch>
+  Copyright (c) 2005-2006 Brad Midgley <bmidgley@xmission.com>
   Copyright 2009 Tanu Kaskinen
-  Copyright (C) DFS Deutsche Flugsicherung (2004). All Rights Reserved.
-  Copyright 2006-2008 Lennart Poettering
-  Copyright (C) 2009 Colin Guthrie
+  Copyright 2009 Vincent Filali-Ansary <filali.v@azurdigitalnetworks.net>
+  Copyright 2009 Tanu Kaskinen
   Copyright 2006 Lennart Poettering
   Copyright 2006 Shams E. King
-  Copyright (C) 2008 Colin Guthrie
+  Copyright 2009 Tanu Kaskinen
+  Copyright (c) DFS Deutsche Flugsicherung (2004)
+  Copyright 2010 Arun Raghavan <arun.raghavan@collabora.co.uk>
+  Copyright 2010 Wim Taymans <wim.taymans@gmail.com>
+  Copyright 2010 Wim Taymans <wim.taymans@gmail.com>
+  Copyright 2010 Canonical Ltd.
+  Copyright 2006-2008 Lennart Poettering
+  Copyright (c) 2009 Colin Guthrie
+  Copyright 2004-2008 Lennart Poettering
+  Copyright 2009 Jason Newton <nevion@gmail.com>
+  Copyright 2006 Lennart Poettering
+  Copyright 2006 Shams E. King
+  Copyright (c) 2000-2002 Richard W.E. Furse, Paul Barton-Davis, Stefan Westerfeld
+  Copyright (c) 2008 Colin Guthrie
+  Copyright 2006 Lennart Poettering
+  Copyright 2006 Pierre Ossman <ossman@cendio.se> for Cendio AB
   Copyright 2006 Diego Petteno
   Copyright 2005-2007 Lennart Poettering
-  Copyright (C) Kungliga Tekniska Hogskolan
+  Copyright (c) 2008 Colin Guthrie
+  Copyright (c) 2008 Colin Guthrie
+  Copyright (c) Kungliga Tekniska Hogskolan
+  Copyright 2006-2008 Lennart Poettering
   Copyright 2009 Colin Guthrie
   Copyright 2011 Colin Guthrie
+  Copyright 2006 Lennart Poettering
   Copyright 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB
   Copyright 2009 Finn Thain
+  Copyright 2006 Lennart Poettering
+  Copyright 2009 Canonical Ltd
   Copyright 2010 Intel Corporation
-  Contributor: Pierre-Louis Bossart <pierre-louis.bossart@intel.com>
-  Copyright 2009 (C) Lennart Poettering
-  Copyright (C) 2006-2008 Lennart Poettering
-  Copyright (C) 2008 Nokia Corporation
-  Copyright (C) 2008 Lennart Poettering
+  Copyright 2009 (c) Lennart Poettering
+  Copyright (c) 2006-2008 Lennart Poettering
+  Copyright (c) 2008 Nokia Corporation
+  Copyright (c) 2004-2006 Lennart Poettering
+  Copyright (c) 2004 Joe Marcus Clarke
+  Copyright (c) 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB
+  Copyright (c) 2008 Lennart Poettering
+  Copyright (c) 2009 Colin Guthrie
+  Copyright (c) 2001 Fabrice Bellard
+  Copyright (c) 2004 Michael Niedermayer <michaelni@gmx.at>
+  Copyright (c) 2004-2006 Lennart Poettering
+  Copyright (c) 2004 Joe Marcus Clarke
+  Copyright (c) 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB
+  Copyright (c) 2000-2002 Oliver Kurth <oku@masqmail.cx>
+  Copyright (c) 2003 Lennart Poettering <mzkzygbzna@0pointer.de>
+  Copyright (c) 2008 Xavier Conde Rueda <xavi.conde@gmail.com>
+  Copyright (c) 2009 Agusti Grau <fletxa@gmail.com> , 2009
+  Copyright (c) Judith Pinto Subirada <judithp@gmail.com>
+  Copyright (c) 2009 Josep Torne Llavall <josep.torne@gmail.com>
+  Copyright (c) 2008,2009 Petr Kovar <pknbe@volny.cz>
+  Copyright (c) 2008,2009 Fabian Affolter <fab@fedoraproject.org>
+  Copyright (c) 2008,2009 Micha Pietsch <barney@fedoraproject.org>
+  Copyright (c) 2008, 2009 Fabian Affolter <fab@fedoraproject.org>
+  Copyright (c) 2008, 2009 Micha Pietsch <barney@fedoraproject.org>
+  Copyright (c) 2008 Dimitris Glezos <dimitris@glezos.com>
+  Copyright (c) 2009 Thalia Papoutsaki <saliyath@gmail.com>
+  Copyright (c) 2009 Domingo Becker <domingobecker@gmail.com>
+  Copyright (c) 2008 Hector Daniel Cabrera <h.daniel.cabrera@gmail.com>
+  Copyright (c) 2009 Fernando Gonzalez Blanco <fgonz@fedoraproject.org>
+  Copyright (c) 2009 Timo Jyrinki <timo.jyrinki@iki.fi>
+  Copyright (c) 2009 Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>
+  Copyright (c) 2008 Robert-Andre Mauchin <zebob.m@pengzone.org>
+  Copyright (c) 2008 Michael Ughetto
+  Copyright (c) 2008 Pablo Martin-Gomez <pablo.martin-gomez@laposte.net>
+  Copyright (c) 2009 Corentin Perard <corentin.perard@gmail.com>
+  Copyright (c) 2009 Sweta Kothari <swkothar@redhat.com>
+  Copyright (c) 2009 Rajesh Ranjan <rajesh672@gmail.com>
+  Copyright (c) 2008,2009 Luca Ferretti <elle.uca@libero.it>
+  Copyright (c) 2009 Milo Casagrande <milo@ubuntu.com>
+  Copyright (c) 2009
+  Copyright (c) 2009 Milo Casagrande <milo@ubuntu.com>
+  Copyright (c) 2009
+  Copyright (c) 2009 Shankar Prasad <svenkate@redhat.com>
+  Copyright (c) 2009 Sandeep Shedmake <sandeep.shedmake@gmail.com>
+  Copyright (c) 2009 Sandeep Shedmake <sshedmak@redhat.com>
+  Copyright (c) 2009 Geert Warrink <geert.warrink@onsnet.nu>
+  Copyright (c) 2009 Reinout van Schouwen <reinout@gmail.com>
+  Copyright (c) 2009 Manoj Kumar Giri <mgiri@redhat.com>
+  Copyright (c) 2009 Amanpreet Singh Alam <aalam@users.sf.net>
+  Copyright (c) 2009 Jaswinder Singh <jsingh@redhat.com>
+  Copyright (c) 2009 A S Alam <aalam@users.sf.net>
+  Copyright (c) 2008 Piotr Drag <piotrdrag@gmail.com>
+  Copyright (c) 2008 Fabian Affolter <fab@fedoraproject.org>
+  Copyright (c) 2009 Igor Miletic
+  Copyright (c) 2009 Milos Komarcevic <kmilos@gmail.com> , 2009
+  Copyright (c) 2008 Daniel Nylander <po@danielnylander.se>
+  Copyright (c) 2009 I. Felix <ifelix@redhat.com>
+  Copyright (c) 2009 Krishna Babu K <kkrothap@redhat.com>
+  Copyright (c) 2009 Yuri Chornoivan <yurchor@ukr.net>
+  Copyright (c) 2008 Yan Feng Gang
   Copyright 2006-2009 Sjoerd Simons <sjoerd@debian.org>
-  Copyright 2006-2008 CJ van den Berg <cj@vdbonline.com>
+  Copyright 2006-2008 CJ
   Copyright 2004-2006 Lennart Poettering
   Copyright 2009 Wim Taymans <wim.taymans@collabora.co.uk>
-  2009 Jason Newton <nevion@gmail.com>
+  Copyright 2004-2006 Lennart Poettering
+  Copyright 2006 Pierre Ossman <ossman@cendio.se> for Cendio AB
+  Copyright 2009 Ted Percival
+  Copyright 2009 Jason Newton <nevion@gmail.com>

@@ -1,16 +1,7 @@
 -
-- unknown AND unknown AND unknown AND unknown AND (openldap-2.8 AND unknown) AND unknown AND
-  unknown AND unknown AND unknown AND unknown AND unknown AND unknown AND (openldap-2.8 AND
-  unknown) AND unknown AND unknown AND unknown AND unknown AND unknown AND unknown AND unknown
-  AND unknown AND (mit AND unknown) AND unknown AND unknown AND unknown AND unknown AND (hs-regexp
-  AND unknown) AND unknown AND (ibm-dhcp AND unknown) AND unknown AND (ietf AND unknown) AND
-  unknown AND unknown AND (isc AND unknown) AND unknown AND (other-permissive AND unknown) AND
-  unknown AND unknown AND unknown AND unknown AND (other-permissive AND unknown) AND unknown
-  AND unknown AND unknown AND unknown AND (mit-old-style-no-advert AND unknown) AND unknown
-  AND (other-permissive AND unknown) AND (hs-regexp AND unknown) AND (openldap-2.8 AND unknown)
-  AND (bsla AND unknown) AND (bsd-original-uc AND unknown) AND unknown AND (bsd-original-uc
-  AND unknown) AND (bsd-original-uc AND unknown) AND unknown AND (bsd-original-uc-1986 AND unknown)
-  AND unknown AND unknown AND unknown AND unknown AND unknown
+- openldap-2.8 AND mit AND fsf-unlimited-no-warranty AND hs-regexp AND ibm-dhcp AND ietf AND
+  isc AND other-permissive AND mit-old-style-no-advert AND baekmuk-fonts AND bsla AND bsd-original-uc
+  AND bsd-original-uc-1986
 - |
   Copyright 1998-2016 The OpenLDAP Foundation
   Copyright 1999 Computing Research Labs, New Mexico State University

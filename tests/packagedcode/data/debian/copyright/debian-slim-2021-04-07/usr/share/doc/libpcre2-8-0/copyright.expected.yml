@@ -1,5 +1,5 @@
 -
-- bsd-new AND pcre AND public-domain AND unknown AND unknown-license-reference
+- pcre AND bsd-new AND unknown-license-reference AND public-domain
 - |
   Copyright (c) 1997-2015 University of Cambridge
   Copyright (c) 2010-2015 Zoltan Herczeg

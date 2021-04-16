@@ -110,16 +110,9 @@ class DebianCopyrightDetector:
 
         dc = cls(location=location)
 
-        # FIXME:
-        #    1. Either is_machine_readable_copyright should take in a location
-        #    2. Read once and pass strings instead
-        
-        # Not fixing the `is not is_machine_readable_copyright:` bug to avoid regeneration
-        dc.is_structured = True
-        # dc.is_structured = is_machine_readable_copyright(content)
-        
         content = unicode_text(location)
-        
+        dc.is_structured = is_machine_readable_copyright(content)
+
         if with_copyright:
             dc.detected_copyrights = dc.detect_copyrights(
                 skip_debian_packaging=skip_debian_packaging, unique=unique,

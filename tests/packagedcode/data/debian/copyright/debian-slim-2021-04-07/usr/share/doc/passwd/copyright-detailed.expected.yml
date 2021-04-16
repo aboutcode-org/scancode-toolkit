@@ -1,7 +1,5 @@
 -
-- unknown AND unknown AND unknown AND unknown AND unknown AND unknown AND unknown AND unknown
-  AND unknown AND unknown AND unknown AND unknown AND (other-permissive AND unknown) AND unknown
-  AND (gpl-2.0-plus AND unknown) AND (gpl-1.0-plus AND unknown) AND (gpl-1.0-plus AND unknown)
+- bsd-new AND tcp-wrappers AND gpl-2.0-plus
 - |
   copyright 1988 - 1994, Julianne Frances Haugh
   copyright 1997 - 2001, Marek Michalkiewicz
