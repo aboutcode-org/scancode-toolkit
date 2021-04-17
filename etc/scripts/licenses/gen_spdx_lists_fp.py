@@ -73,11 +73,15 @@ notes: a sequence of SPDX license ids and names is not a license
     help='Use file with a list of entries to ignore instead')
 
 @click.option(
+    '-n', '--ngrams-length', type=int, default=6,
+    help='Number of elements in a sub-sequence when generating a rule.')
+
+@click.option(
     '-t', '--trace', is_flag=True, default=False,
     help='Print execution trace.')
 
 @click.help_option('-h', '--help')
-def cli(license_dir, output, commitish=None, from_list=None, trace=False):
+def cli(license_dir, output, commitish=None, from_list=None, trace=False, ngrams_length=6):
     """
     Generate ScanCode false-positive license detection rules from lists of SPDX
     license. Save these in FILE for use with buildrules.
@@ -148,7 +152,7 @@ def cli(license_dir, output, commitish=None, from_list=None, trace=False):
 
     with open(output, 'w') as o:
         for lic_list in lists_of_sorted_licenses:
-            write_ngrams(texts=lic_list, output=o)
+            write_ngrams(texts=lic_list, output=o, ngram_length=ngrams_length)
 
         o.write('----------------------------------------\n')
 
