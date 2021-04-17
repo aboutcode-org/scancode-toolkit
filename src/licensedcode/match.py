@@ -146,10 +146,12 @@ class LicenseMatch(object):
         self.end_line = end_line
         self.query = query
 
-    def __repr__(self,
-                 trace_spans=TRACE_REPR_SPAN_DETAILS,
-                 trace_thresholds=TRACE_REPR_THRESHOLDS,
-                 trace_rule=TRACE_REPR_MATCHED_RULE):
+    def __repr__(
+        self,
+        trace_spans=TRACE_REPR_SPAN_DETAILS,
+        trace_thresholds=TRACE_REPR_THRESHOLDS,
+        trace_rule=TRACE_REPR_MATCHED_RULE,
+    ):
         spans = ''
         if trace_spans:
             hispan = self.hispan
@@ -189,7 +191,8 @@ class LicenseMatch(object):
             '%(license_expression)r, '
             'sc=%(score)r, cov=%(coverage)r, '
             'len=%(len)r, hilen=%(hilen)r, rlen=%(rlen)r, '
-            'qreg=%(qreg)r, ireg=%(ireg)r%(thresh)s%(spans)s') % rep
+            'qreg=%(qreg)r, ireg=%(ireg)r%(thresh)s%(spans)s'
+        ) % rep
 
     def __eq__(self, other):
         """
@@ -211,9 +214,9 @@ class LicenseMatch(object):
             return True
 
         return not all([
-                self.same_licensing(other),
-                self.qspan == other.qspan,
-                self.ispan == other.ispan,
+            self.same_licensing(other),
+            self.qspan == other.qspan,
+            self.ispan == other.ispan,
         ])
 
     def same_licensing(self, other):
@@ -335,8 +338,10 @@ class LicenseMatch(object):
         if query:
             # Compute a count of unknowns tokens that are inside the matched
             # range, ignoring end position of the query span: unknowns here do
-            # not matter as they are never in the match
+            # not matter as they are never in the match but they influence the
+            # score. The same applies to stopwords, 
             unknowns_pos = qspan & query.unknowns_span
+            stopwords_pos = qspan & query.stopwords_span
             qspe = qspan.end
             unknowns_pos = (pos for pos in unknowns_pos if pos != qspe)
             qry_unkxpos = query.unknowns_by_pos

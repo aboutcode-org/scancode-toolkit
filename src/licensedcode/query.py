@@ -149,6 +149,8 @@ class Query(object):
         'line_by_pos',
         'unknowns_by_pos',
         'unknowns_span',
+        'stopwords_by_pos',
+        'stopwords_span',
         'shorts_and_digits_pos',
         'query_runs',
         '_whole_query_run',
@@ -195,14 +197,21 @@ class Query(object):
         # index of known position -> line number where the pos is the list index
         self.line_by_pos = []
 
-        # index of "known positions" (yes really!) to number of unknown tokens
+        # index of "known positions" (yes really!) to a number of unknown tokens
         # after that known position. For unknowns at the start, the position is
         # using the magic -1 key
         self.unknowns_by_pos = defaultdict(int)
 
-        # Span of "known positions" (yes really!) followed by unknown
-        # token(s)
+        # Span of "known positions" (yes really!) followed by unknown token(s)
         self.unknowns_span = None
+
+        # index of "known positions" (yes really!) to a number of stopword tokens
+        # after that known position. For stopwords at the start, the position is
+        # using the magic -1 key
+        self.stopwords_by_pos = defaultdict(int)
+
+        # Span of "known positions" (yes really!) followed by stopwords
+        self.stopwords_span = None
 
         # set of known positions were there is a short, single letter token or
         # digits-only token
@@ -321,9 +330,15 @@ class Query(object):
 
         # bind frequently called functions to local scope
         line_by_pos_append = self.line_by_pos.append
+
         self_unknowns_by_pos = self.unknowns_by_pos
         unknowns_pos = set()
         unknowns_pos_add = unknowns_pos.add
+
+        self_stopwords_by_pos = self.stopwords_by_pos
+        stopwords_pos = set()
+        stopwords_pos_add = stopwords_pos.add
+
         self_shorts_and_digits_pos_add = self.shorts_and_digits_pos.add
         dic_get = self.idx.dictionary.get
 
@@ -357,13 +372,9 @@ class Query(object):
 
             # FIXME: the implicit update of abs_pos is not clear
             for abs_pos, token in enumerate(tokenizer(line), abs_pos + 1):
-                # always treat a STOPWORDS as an unknown word
-                if token in STOPWORDS:
-                    tid = None
-                else:
-                    tid = dic_get(token)
-
-                if tid is not None:
+                tid = dic_get(token)
+                is_stopword = token in STOPWORDS
+                if tid is not None and not is_stopword:
                     # this is a known token
                     known_pos += 1
                     started = True
@@ -373,16 +384,29 @@ class Query(object):
                     if line_first_known_pos is None:
                         line_first_known_pos = known_pos
                 else:
-                    if not started:
-                        # If we have not yet started globally, then all tokens
-                        # seen so far are unknowns and we keep a count of them
-                        # in the magic "-1" position.
-                        self_unknowns_by_pos[-1] += 1
+                    # process STOPWORDS and unknown words
+                    if is_stopword:
+                        if not started:
+                            # If we have not yet started globally, then all tokens
+                            # seen so far are stopwords and we keep a count of them
+                            # in the magic "-1" position.
+                            self_stopwords_by_pos[-1] += 1
+                        else:
+                            # here we have a new unknwon token positioned right after
+                            # the current known_pos
+                            self_stopwords_by_pos[known_pos] += 1
+                            stopwords_pos_add(known_pos)
                     else:
-                        # here we have a new unknwon token positioned right after
-                        # the current known_pos
-                        self_unknowns_by_pos[known_pos] += 1
-                        unknowns_pos_add(known_pos)
+                        if not started:
+                            # If we have not yet started globally, then all tokens
+                            # seen so far are unknowns and we keep a count of them
+                            # in the magic "-1" position.
+                            self_unknowns_by_pos[-1] += 1
+                        else:
+                            # here we have a new unknwon token positioned right after
+                            # the current known_pos
+                            self_unknowns_by_pos[known_pos] += 1
+                            unknowns_pos_add(known_pos)
 
                 line_tokens_append(tid)
 
@@ -413,9 +437,11 @@ class Query(object):
 
             yield line_tokens
 
-        # finally create a Span of positions followed by unkwnons, used
-        # for intersection with the query span for scoring matches
+        # finally create a Span of positions followed by unkwnons and another
+        # for positions followed by stopwords used for intersection with the
+        # query span to do the scoring matches correctly
         self.unknowns_span = Span(unknowns_pos)
+        self.stopwords_span = Span(stopwords_pos)
 
     def tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
         """
