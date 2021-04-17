@@ -1,0 +1,4 @@
+license_expression: gpl-2.0 WITH openvpn-openssl-exception
+is_license_notice: yes
+relevance: 100
+notes: https://tracker.debian.org/media/packages/o/openvpn/copyright-2.4.0-6%2Bdeb9u2
