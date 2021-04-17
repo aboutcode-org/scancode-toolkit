@@ -6,6 +6,8 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+
+from __future__ import absolute_import, print_function
 from itertools import islice
 from os.path import getsize
 import logging
@@ -13,6 +15,7 @@ import os
 import sys
 
 from commoncode.filetype import get_last_modified_date
+from commoncode.functional import memoize
 from commoncode.hash import multi_checksums
 from scancode import ScancodeError
 from typecode.contenttype import get_type
@@ -309,6 +312,23 @@ def get_package_info(location, **kwargs):
     return dict(packages=[])
 
 
+@memoize
+def file_lines_count(location):
+    """
+    Return line counts in a source text file at
+    `location`. Memoization guarantees that we do only one pass on a file.
+    """
+
+    num_lines = 0
+
+    with open(location, 'rb') as lines:
+        for line in lines:
+            ls = line.strip()
+            if ls:
+                num_lines += 1
+    return num_lines
+
+
 def get_file_info(location, **kwargs):
     """
     Return a mapping of file information collected for the file at `location`.
@@ -318,6 +338,7 @@ def get_file_info(location, **kwargs):
     # TODO: move date and size these to the inventory collection step???
     result['date'] = get_last_modified_date(location) or None
     result['size'] = getsize(location) or 0
+    result['lines'] = file_lines_count(location) or 0
 
     sha1, md5, sha256 = multi_checksums(location, ('sha1', 'md5', 'sha256')).values()
     result['sha1'] = sha1

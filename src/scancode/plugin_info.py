@@ -23,6 +23,7 @@ class InfoScanner(ScanPlugin):
     basic checksums.
     """
     resource_attributes = dict([
+        ('lines', attr.ib(default=0, repr=False)),
         ('date', attr.ib(default=None, repr=False)),
         ('sha1', attr.ib(default=None, repr=False)),
         ('md5', attr.ib(default=None, repr=False)),
