@@ -4,6 +4,6 @@ name: KDE Accepted LGPL
 category: Copyleft
 owner: KDE Project
 homepage_url: https://github.com/KDE/kate/blob/master/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt
-spdx_license_key: LicenseRef-KDE-Accepted-LGPL
+spdx_license_key:LicenseRef-scancode-kde-accepted-lgpl
 other_spdx_license_keys:
-    - LicenseRef-scancode-kde-accepted-lgpl
+    - LicenseRef-KDE-Accepted-LGPL
