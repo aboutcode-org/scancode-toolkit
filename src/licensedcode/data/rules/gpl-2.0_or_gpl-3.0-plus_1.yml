@@ -1,4 +1,4 @@
-license_expression: gpl-2.0 OR gpl-3.0-plus
+license_expression: gpl-2.0 OR gpl-3.0 OR kde-accepted-gpl
 is_license_notice: yes
 minimum_coverage: 85
 notes: see https://community.kde.org/Policies/Licensing_Policy
