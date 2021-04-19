@@ -17,7 +17,7 @@ from licensedcode import query
 from licensedcode.spans import Span
 from licensedcode.stopwords import STOPWORDS
 from licensedcode.tokenize import matched_query_text_tokenizer
-from licensedcode.tokenize import query_tokenizer
+from licensedcode.tokenize import index_tokenizer
 
 """
 LicenseMatch data structure and matches merging and filtering routines.
@@ -325,7 +325,7 @@ class LicenseMatch(object):
         greater than the query length when there are unknown tokens in the
         matched range.
         """
-        # The query side of the match may not be contiguous and may contains
+        # The query side of the match may not be contiguous and may contain
         # unmatched known tokens or unknown tokens. Therefore we need to compute
         # the real portion query length including unknown tokens that is
         # included in this match, for both matches and unmatched tokens
@@ -336,12 +336,11 @@ class LicenseMatch(object):
 
         # note: to avoid breaking many tests we check query presence
         if query:
-            # Compute a count of unknowns tokens that are inside the matched
+            # Compute a count of unknown tokens that are inside the matched
             # range, ignoring end position of the query span: unknowns here do
             # not matter as they are never in the match but they influence the
-            # score. The same applies to stopwords, 
+            # score.
             unknowns_pos = qspan & query.unknowns_span
-            stopwords_pos = qspan & query.stopwords_span
             qspe = qspan.end
             unknowns_pos = (pos for pos in unknowns_pos if pos != qspe)
             qry_unkxpos = query.unknowns_by_pos
@@ -353,6 +352,28 @@ class LicenseMatch(object):
             qmagnitude += unknowns_in_match
 
         return qmagnitude
+
+    def qcontains_stopwords(self):
+        """
+        Return True if this match query contains stopwords between its start and end
+        in the query. Stopwords are never match by construction.
+        """
+        # The query side of the match may not be contiguous and may contain
+        # unmatched stopword tokens.
+        query = self.query
+        qspan = self.qspan
+
+        # note: to avoid breaking many tests we check query presence
+        if query:
+            qspe = qspan.end
+            # Count stopword tokens that are inside the matched range, ignoring
+            # end position of the query span. This is used to check if there are
+            # stopwords inside an "only_known_words" match.
+
+            stopwords_pos = qspan & query.stopwords_span
+            stopwords_pos = (pos for pos in stopwords_pos if pos != qspe)
+            qry_stopxpos = query.stopwords_by_pos
+            return any(qry_stopxpos[pos] for pos in stopwords_pos)
 
     def qrange(self):
         """
@@ -1139,7 +1160,7 @@ def filter_if_only_known_words_rule(matches):
             kept.append(match)
             continue
 
-        if match.qrange() != match.qmagnitude():
+        if match.qrange() != match.qmagnitude() or match.qcontains_stopwords():
             if TRACE_FILTER_LOW_SCORE: logger_debug('    ==> DISCARDING small score:', match)
 
             # we have unknown tokens in the matched range
@@ -1501,36 +1522,37 @@ def _tokenize_matched_text(location, query_string, dictionary):
         for is_text, token_str in matched_query_text_tokenizer(line):
             if TRACE_MATCHED_TEXT_DETAILS:
                 logger_debug('     is_text:', is_text, 'token_str:', repr(token_str))
-            # known = False
-            # determine if a token is known in the license index or not. This is
-            # essential as we need to realign the query-time tokenization with
-            # the full text to report proper matches
-            if is_text and token_str and token_str.strip():  # and token_str and token_str.strip():
+            # Determine if a token is is_known in the license index or not. This
+            # is essential as we need to realign the query-time tokenization
+            # with the full text to report proper matches.
+            if is_text and token_str and token_str.strip():  
 
                 # we retokenize using the query tokenizer:
-                # 1. to lookup for known tokens in the index dictionary
+                # 1. to lookup for is_known tokens in the index dictionary
 
                 # 2. to ensure the number of tokens is the same in both
                 # tokenizers (though, of course, the case will differ as the
                 # regular query tokenizer ignores case and punctuations).
 
-                # NOTE: we have a rare Unicode bug/issue because of some
-                # Unicode codepoint such as some Turkish characters that
-                # decompose char + punct when casefolded.
+                # NOTE: we have a rare Unicode bug/issue because of some Unicode
+                # codepoint such as some Turkish characters that decompose to
+                # char + punct when casefolded. This should be fixed in Unicode
+                # release 14 and up and likely implemented in Python 3.10 and up
                 # See https://github.com/nexB/scancode-toolkit/issues/1872
                 # See also: https://bugs.python.org/issue34723#msg359514
-                qtokenized = list(query_tokenizer(token_str))
+                qtokenized = list(index_tokenizer(token_str))
                 if not qtokenized:
                     yield Token(
                         value=token_str,
                         line_num=line_num,
                         is_text=is_text,
                         is_known=False,
-                        pos=-1)
+                        pos=-1,
+                    )
 
                 elif len(qtokenized) == 1:
-                    known = qtokenized[0] in dictionary
-                    if known:
+                    is_known = qtokenized[0] in dictionary
+                    if is_known:
                         p = pos
                         pos += 1
                     else:
@@ -1539,14 +1561,15 @@ def _tokenize_matched_text(location, query_string, dictionary):
                         value=token_str,
                         line_num=line_num,
                         is_text=is_text,
-                        is_known=known,
-                        pos=p)
+                        is_known=is_known,
+                        pos=p,
+                    )
                 else:
                     # we have two or more tokens from the original query mapped
                     # to a single matched text tokenizer token.
                     for qtoken in qtokenized:
-                        known = qtoken in dictionary
-                        if known:
+                        is_known = qtoken in dictionary
+                        if is_known:
                             p = pos
                             pos += 1
                         else:
@@ -1556,15 +1579,18 @@ def _tokenize_matched_text(location, query_string, dictionary):
                             value=qtoken,
                             line_num=line_num,
                             is_text=is_text,
-                            is_known=known,
-                            pos=p)
+                            is_known=is_known,
+                            pos=p,
+                        )
             else:
+
                 yield Token(
                     value=token_str,
                     line_num=line_num,
                     is_text=False,
                     is_known=False,
-                    pos=-1)
+                    pos=-1,
+                )
 
 
 def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=False):
@@ -1611,9 +1637,11 @@ def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=Fal
                 logger_debug('  tok.is_matched = True', 'match_qspan:', match_qspan)
         else:
             if TRACE_MATCHED_TEXT_DETAILS:
-                logger_debug('  unmatched token: tok.is_matched = False',
-                             'match_qspan:', match_qspan,
-                             'tok.pos in match_qspan:', tok.pos in match_qspan)
+                logger_debug(
+                    '  unmatched token: tok.is_matched = False',
+                    'match_qspan:', match_qspan,
+                    'tok.pos in match_qspan:', tok.pos in match_qspan,
+                )
 
         if whole_lines:
             # we only work on matched lines so no need to test further
