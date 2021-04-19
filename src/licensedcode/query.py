@@ -222,9 +222,11 @@ class Query(object):
         # a line for SPDX id matching.
         # note: this will not match anything if the index is not properly set
         dic_get = idx.dictionary.get
-        spdxid1 = [dic_get(u'spdx'), dic_get(u'license'), dic_get(u'identifier')]
+        _spdx = dic_get(u'spdx')
+        _spdx_id = dic_get(u'identifier')
+        spdxid1 = [_spdx, dic_get(u'license'), _spdx_id]
         # Even though it is invalid, this Enlish seplling happens in the wild
-        spdxid2 = [dic_get(u'spdx'), dic_get(u'licence'), dic_get(u'identifier')]
+        spdxid2 = [_spdx, dic_get(u'licence'), _spdx_id]
         # None, None None: this is mostly a possible issue in test mode
         self.spdx_lid_token_ids = [x for x in [spdxid1, spdxid2, ] if x != [None, None, None]]
 
@@ -342,10 +344,6 @@ class Query(object):
         self_shorts_and_digits_pos_add = self.shorts_and_digits_pos.add
         dic_get = self.idx.dictionary.get
 
-        # note that we ignore stopwords at first here so that we can then treat
-        # them as unknown words later
-        tokenizer = partial(query_tokenizer, stopwords=None)
-
         # note: positions start at zero
         # absolute position in a query, including all known and unknown tokens
         abs_pos = -1
@@ -371,7 +369,7 @@ class Query(object):
             line_first_known_pos = None
 
             # FIXME: the implicit update of abs_pos is not clear
-            for abs_pos, token in enumerate(tokenizer(line), abs_pos + 1):
+            for abs_pos, token in enumerate(query_tokenizer(line), abs_pos + 1):
                 tid = dic_get(token)
                 is_stopword = token in STOPWORDS
                 if tid is not None and not is_stopword:
