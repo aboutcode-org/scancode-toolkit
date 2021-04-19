@@ -78,20 +78,27 @@ def logger_debug(*args):
 
 
 if TRACE or TRACE_QR or TRACE_QR_BREAK:
-    import logging
     import sys
 
-    logger = logging.getLogger(__name__)
-    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
+    use_print = True
+
+    if use_print:
+        printer = print
+    else:
+        import logging
+
+        logger = logging.getLogger(__name__)
+        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+        logging.basicConfig(stream=sys.stdout)
+        logger.setLevel(logging.DEBUG)
+        printer = logger.debug
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        return printer(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
-# for the cases of very long lines, we break in abritrary pseudo lines at 25
-# tokens to avoid getting huge query runs for texts on a single line (e.g.
-# minified JS or CSS)
+# for the cases of very long lines, we break texts in abritrary pseudo lines of
+# up to 25 tokens (aka. words) each to avoid getting huge query runs for texts
+# on a single line (e.g. minified JS or CSS).
 MAX_TOKEN_PER_LINE = 25
 
 
@@ -323,12 +330,17 @@ class Query(object):
 
     def tokens_by_line(self, location=None, query_string=None):
         """
-        Yield one sequence of tokens for each line in this query. Populate the
-        query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos`,
-        `shorts_and_digits_pos` and `spdx_lines` as a side effect.
+        Yield multiple sequences of tokens, one for each line in this query.
+
+        SIDE EFFECT: This populates the query `line_by_pos`, `unknowns_by_pos`,
+        `unknowns_span`, `stopwords_by_pos`, `stopwords_span`,
+        `shorts_and_digits_pos` and `spdx_lines` .
         """
         from licensedcode.match_spdx_lid import split_spdx_lid
         from licensedcode.stopwords import STOPWORDS
+
+        location = location or self.location
+        query_string = query_string or self.query_string
 
         # bind frequently called functions to local scope
         line_by_pos_append = self.line_by_pos.append
@@ -345,9 +357,6 @@ class Query(object):
         dic_get = self.idx.dictionary.get
 
         # note: positions start at zero
-        # absolute position in a query, including all known and unknown tokens
-        abs_pos = -1
-
         # absolute position in a query, including only known tokens
         known_pos = -1
 
@@ -357,19 +366,20 @@ class Query(object):
 
         spdx_lid_token_ids = self.spdx_lid_token_ids
 
+        qlines = query_lines(location=location, query_string=query_string)
         if TRACE:
-            logger_debug('tokens_by_line: query lines')
-            for line_num, line in query_lines(location, query_string):
+            logger_debug('tokens_by_line: query lines:')
+            qlines = list(qlines)
+            for line_num, line in qlines:
                 logger_debug(' ', line_num, ':', line)
 
-        for line_num, line in query_lines(location, query_string):
+        for line_num, line in qlines:
             # keep track of tokens in a line
             line_tokens = []
             line_tokens_append = line_tokens.append
             line_first_known_pos = None
 
-            # FIXME: the implicit update of abs_pos is not clear
-            for abs_pos, token in enumerate(query_tokenizer(line), abs_pos + 1):
+            for token in query_tokenizer(line):
                 tid = dic_get(token)
                 is_stopword = token in STOPWORDS
                 if tid is not None and not is_stopword:
@@ -394,6 +404,8 @@ class Query(object):
                             # the current known_pos
                             self_stopwords_by_pos[known_pos] += 1
                             stopwords_pos_add(known_pos)
+                        # we do not track stopwords, only their position
+                        continue
                     else:
                         if not started:
                             # If we have not yet started globally, then all tokens
