@@ -1205,7 +1205,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             whole_lines=True
         )
 
-    def test_matched_text_is_collected_correctly_end2end_for_spdx_match(self):
+    def test_matched_text_is_collected_correctly_end2end_for_spdx_match_plain(self):
         self.check_matched_texts(
             test_loc='matched_text/spdx/query.txt',
             expected_texts=['SPDX-License-Identifier: BSD-2-Clause-Patent'],
