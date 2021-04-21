@@ -1,10 +1,16 @@
 - |
   BSD-3-Clause
   permissive-like-automake-output
+  BSD-3-Clause
   ISC
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
   same-as-rest-of-p11kit
-- bsd-new AND free-unknown AND fsf-unlimited-no-warranty AND ibm-dhcp AND isc AND mit AND unknown
-  AND unknown-license-reference
+- bsd-new AND unknown AND fsf-unlimited-no-warranty AND bsd-new AND ((bsd-new AND mit) AND unknown)
+  AND unknown AND isc AND ((isc AND ibm-dhcp) AND unknown) AND bsd-new AND (bsd-new AND unknown)
+  AND bsd-new AND bsd-new AND ((bsd-new AND unknown-license-reference AND bsd-new) AND unknown)
+  AND unknown AND (free-unknown AND unknown) AND ((bsd-new AND bsd-new) AND unknown)
 - |
   2011 Collabora Ltd.
   2004, 2005, 2007, 2008, 2012, 2013 Stefan Walter

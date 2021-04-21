@@ -1,5 +1,10 @@
-- LGPL-2.1
-- lgpl-2.1 AND lgpl-3.0-plus AND unknown
+- |
+  LGPL-2.1
+  LGPL-2.1
+  LGPL-2.1
+  LGPL-2.1
+  LGPL-2.1
+- lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1 AND (lgpl-3.0-plus AND unknown)
 - |
   2012 Paul Moore <pmoore@redhat.com>
   2012 Ashley Lai <adlai@us.ibm.com>

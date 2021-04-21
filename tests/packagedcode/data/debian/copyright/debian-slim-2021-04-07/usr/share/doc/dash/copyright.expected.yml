@@ -1,14 +1,41 @@
 - |
   BSD-3-Clause
   FSFULLR
+  FSFULLR
   FSFUL
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
+  BSD-3-clause
   BSD-3-clause
   Expat
   GPL-2+ or BSD-3-clause
   public-domain
+  BSD-3-clause
+  FSFULLR
   GPL-2+
-- bsd-new AND fsf-free AND fsf-unlimited AND fsf-unlimited-no-warranty AND gpl-2.0-plus AND
-  public-domain AND unknown AND x11-xconsortium
+  BSD-3-clause
+  FSFUL
+  FSFULLR
+  Expat
+  GPL-2+
+- bsd-new AND fsf-unlimited AND fsf-unlimited AND fsf-free AND bsd-new AND bsd-new AND bsd-new
+  AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new
+  AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND unknown AND ((gpl-2.0-plus
+  AND bsd-new) AND unknown) AND public-domain AND bsd-new AND fsf-unlimited AND gpl-2.0-plus
+  AND bsd-new AND bsd-new AND fsf-free AND fsf-free AND fsf-unlimited AND fsf-unlimited-no-warranty
+  AND unknown AND (x11-xconsortium AND public-domain) AND gpl-2.0-plus AND gpl-2.0-plus
 - |
   1989-1994 The Regents of the University of California. All rights reserved.
   1997 Christos Zoulas. All rights reserved.
@@ -43,6 +70,8 @@
   2009, Julien Patriarca <patriarcaj@gmail.com>
   2008, Thijs Kinkhorst <thijs@debian.org>
   2010, Eric Spreen <erispre@gmail.com>
+  2008, André Luís Lopes <andrelop@debian.org>
+  2008-2010, Adriano Rafael Gomes <adrianorg@gmail.com>
   2008, André Luís Lopes <andrelop@debian.org>
   2008-2010, Adriano Rafael Gomes <adrianorg@gmail.com>
   2011, Slavko <linux@slavino.sk>

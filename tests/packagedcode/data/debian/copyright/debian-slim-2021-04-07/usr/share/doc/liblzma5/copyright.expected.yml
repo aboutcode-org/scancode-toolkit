@@ -3,18 +3,44 @@
   PD
   probably-PD
   GPL-2+
+  PD
+  PD
   LGPL-2.1+
   permissive-fsf
   Autoconf
   permissive-nowarranty
   GPL-2
   none
+  none
+  PD
+  PD
+  PD
+  permissive-nowarranty
   config-h
+  LGPL-2.1+
   noderivs
   PD-debian
-- autoconf-exception-2.0 AND fsf-ap AND fsf-unlimited AND gpl-2.0 AND gpl-2.0-plus AND gpl-3.0
-  AND gpl-3.0-plus AND gpl-3.0-plus WITH autoconf-macro-exception AND lgpl-2.0 AND lgpl-2.0-plus
-  AND lgpl-2.1 AND lgpl-2.1-plus AND other-copyleft AND public-domain AND unknown
+  LGPL-2.1+
+  GPL-2
+  GPL-2+
+  Autoconf
+  permissive-fsf
+  permissive-nowarranty
+- unknown AND ((public-domain AND public-domain AND lgpl-2.0 AND lgpl-2.1-plus AND gpl-2.0-plus
+  AND public-domain AND public-domain AND (public-domain AND gpl-2.0-plus AND gpl-3.0-plus)
+  AND public-domain AND public-domain AND public-domain AND public-domain AND public-domain
+  AND lgpl-2.1 AND (epl-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus) AND gpl-3.0 AND public-domain)
+  AND unknown) AND unknown AND (public-domain AND unknown) AND unknown AND unknown AND gpl-2.0-plus
+  AND unknown AND (public-domain AND unknown) AND unknown AND public-domain AND lgpl-2.1-plus
+  AND unknown AND unknown AND unknown AND gpl-2.0 AND unknown AND unknown AND unknown AND unknown
+  AND unknown AND public-domain AND unknown AND public-domain AND unknown AND public-domain
+  AND unknown AND unknown AND ((public-domain AND fsf-unlimited AND autoconf-exception-2.0 AND
+  gpl-2.0 AND gpl-2.0) AND unknown) AND lgpl-2.1-plus AND ((lgpl-2.0-plus AND (lgpl-2.0-plus
+  AND lgpl-2.1)) AND unknown) AND unknown AND other-copyleft AND unknown AND (public-domain
+  AND unknown) AND lgpl-2.1-plus AND ((lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND unknown)
+  AND gpl-2.0 AND ((gpl-2.0 AND gpl-2.0-plus AND gpl-2.0) AND unknown) AND gpl-2.0-plus AND
+  gpl-2.0-plus AND unknown AND ((gpl-3.0-plus WITH autoconf-macro-exception AND gpl-3.0) AND
+  unknown) AND unknown AND fsf-unlimited AND unknown AND fsf-ap
 - |
   2006-2018, Lasse Collin
   1999-2008, Igor Pavlov
@@ -30,6 +56,7 @@
   © 2006 Timo Lindfors
   2005, Charles Levert
   2005, 2009, Lasse Collin
+  2009, Andrew Dudman
   2009, Andrew Dudman
   2009, Lasse Collin
   2010, Daniel Mealha Cabrita

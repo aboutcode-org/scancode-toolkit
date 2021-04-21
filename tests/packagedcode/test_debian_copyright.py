@@ -22,26 +22,15 @@ def check_expected_parse_copyright_file(
     test_loc,
     expected_loc,
     regen=False,
-    with_details=False,
+    with_debian_packaging=False,
 ):
     """
     Check copyright parsing of `test_loc` location against an expected JSON file
     at `expected_loc` location. Regen the expected file if `regen` is True.
     """
-    if with_details:
-        skip_debian_packaging = False
-        simplify_licenses = False
-        unique = False
-    else:
-        skip_debian_packaging = True
-        simplify_licenses = True
-        unique = True
-
     parsed = debian_copyright.parse_copyright_file(
         location=test_loc,
-        skip_debian_packaging=skip_debian_packaging,
-        simplify_licenses=simplify_licenses,
-        unique=unique,
+        with_debian_packaging=with_debian_packaging,
     )
     result = saneyaml.dump(list(parsed))
     if regen:
@@ -80,7 +69,7 @@ def create_test_function(
     test_loc,
     expected_loc,
     test_name,
-    with_details=False,
+    with_debian_packaging=False,
     regen=False,
 ):
     """
@@ -90,7 +79,7 @@ def create_test_function(
     # closure on the test params
     def test_func(self):
         check_expected_parse_copyright_file(
-            test_loc, expected_loc, with_details=with_details, regen=regen)
+            test_loc, expected_loc, with_debian_packaging=with_debian_packaging, regen=regen)
 
     # set a proper function name to display in reports and use in discovery
     if isinstance(test_name, bytes):
@@ -118,7 +107,7 @@ def build_tests(test_dir, clazz, prefix='test_', regen=False):
             expected_loc=test_loc + '.expected.yml',
             test_name=test_name1,
             regen=regen,
-            with_details=False,
+            with_debian_packaging=False,
         )
         # attach that method to the class
         setattr(clazz, test_name1, test_method)
@@ -129,7 +118,7 @@ def build_tests(test_dir, clazz, prefix='test_', regen=False):
             expected_loc=test_loc + '-detailed.expected.yml',
             test_name=test_name2,
             regen=regen,
-            with_details=True,
+            with_debian_packaging=True,
         )
         # attach that method to the class
         setattr(clazz, test_name2, test_method)

@@ -1,7 +1,7 @@
 - |
   Expat
   GPL-2+
-- gpl-2.0-plus AND mit AND unknown
+- unknown AND mit AND gpl-2.0-plus AND (gpl-2.0-plus AND unknown)
 - |
   Microsoft Corporation
   2016 Fabian Wolff <fabi.wolff@arcor.de>

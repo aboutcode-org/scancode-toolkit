@@ -1,9 +1,34 @@
 - |
   BSD-2-clause
+  BSD-2-clause
+  BSD-2-clause
+  BSD-2-clause
+  BSD-2-clause
+  BSD-2-clause
+  BSD-3-clause
+  BSD-4-clause
+  BSD-2-clause
+  BSD-2-clause
+  BSD-2-clause
+  BSD-2-clause
+  MIT
+  MIT
+  BSD-2-clause
+  BSD-2-clause
+  BSD-2-clause
+  BSD-2-clause
+  BSD-2-clause
+  BSD-2-clause
+  BSD-2-clause
   BSD-3-clause
   BSD-4-clause
   MIT
-- bsd-new AND bsd-original AND bsd-simplified AND mit AND unknown
+- bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified
+  AND bsd-simplified AND bsd-new AND bsd-original AND bsd-simplified AND bsd-simplified AND
+  bsd-simplified AND bsd-simplified AND unknown AND unknown AND bsd-simplified AND bsd-simplified
+  AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified
+  AND (bsd-simplified AND unknown) AND bsd-new AND (bsd-new AND unknown) AND bsd-original AND
+  bsd-new AND unknown AND mit
 - |
   2002-2014 Igor Sysoev
   2011-2014 Nginx, Inc.

@@ -1,13 +1,54 @@
 - |
   BSD-3-Clause
   GPL-2
+  BSD-3-Clause
   __AUTO_PERMISSIVE__
   BSD-2-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
   BSD-4-Clause
   LGPL-2.1+
   PERMISSIVE
-- bsd-new AND bsd-original AND bsd-simplified AND fsf-ap AND gpl-2.0 AND lgpl-2.1 AND lgpl-2.1-plus
-  AND unknown
+  BSD-3-Clause
+  BSD-2-Clause
+  BSD-2-Clause
+  BSD-2-Clause
+  BSD-2-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-3-Clause
+  BSD-2-Clause
+  BSD-4-Clause
+  LGPL-2.1+
+  GPL-2
+- bsd-new AND gpl-2.0 AND bsd-new AND unknown AND unknown AND bsd-simplified AND bsd-new AND
+  bsd-new AND bsd-new AND bsd-new AND bsd-original AND lgpl-2.1-plus AND unknown AND (fsf-ap
+  AND unknown) AND bsd-new AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified
+  AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new
+  AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new
+  AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-simplified AND bsd-simplified
+  AND bsd-original AND (bsd-original AND unknown) AND lgpl-2.1-plus AND ((lgpl-2.1-plus AND
+  lgpl-2.1 AND lgpl-2.1) AND unknown) AND gpl-2.0 AND ((gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND
+  unknown)
 - |
   2005 Bull S.A
   2009 Steinar H. Gunderson <sesse@debian.org>
@@ -33,4 +74,22 @@
   2015 Axentia Technologies AB.
   2001 Dima Dorfman.
   2001 Daniel Eischen <deischen@FreeBSD.org>.
+  1986-2009 Sun Microsystems, Inc.
   2003 Niels Provos <provos@citi.umich.edu>
+  2010 Oracle America, Inc.
+  1984-2009 Sun Microsystems, Inc.
+  2009 Sun Microsystems, Inc.
+  2009 Sun Microsystems, Inc.
+  2009 Sun Microsystems, Inc.
+  1984-2009 Sun Microsystems, Inc.
+  1984-2009 Sun Microsystems, Inc.
+  1986-2009 Sun Microsystems, Inc.
+  1986-2009 Sun Microsystems, Inc.
+  2009 Sun Microsystems, Inc.
+  1984-2009 Sun Microsystems, Inc.
+  1984-2009 Sun Microsystems, Inc.
+  2009 Sun Microsystems, Inc.
+  2009 Sun Microsystems, Inc.
+  1986-2009 Sun Microsystems, Inc.
+  2010 Oracle America, Inc.
+  2009 Sun Microsystems, Inc.

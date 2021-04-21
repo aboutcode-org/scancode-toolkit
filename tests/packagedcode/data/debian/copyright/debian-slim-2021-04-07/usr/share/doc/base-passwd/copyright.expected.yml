@@ -1,7 +1,9 @@
 - |
   GPL-2
   public-domain
-- gpl-2.0 AND public-domain AND unknown
+  GPL-2
+  GPL-2
+- gpl-2.0 AND public-domain AND gpl-2.0 AND gpl-2.0 AND ((gpl-2.0 AND gpl-2.0) AND unknown)
 - |
   Copyright 1999-2002 Wichert Akkerman <wichert@deephackmode.org>
   Copyright 2002, 2003, 2004 Colin Watson <cjwatson@debian.org>

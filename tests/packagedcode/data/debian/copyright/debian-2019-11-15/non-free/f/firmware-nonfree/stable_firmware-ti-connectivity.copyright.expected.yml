@@ -1,3 +1,4 @@
 - Binary redistribution (wl1251)
-- bsd-source-code AND proprietary-license AND unknown AND unknown-license-reference
+- proprietary-license AND ((unknown-license-reference AND bsd-source-code AND bsd-source-code)
+  AND unknown)
 - 2000-2016, Texas Instruments Incorporated

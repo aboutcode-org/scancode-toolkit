@@ -1,10 +1,18 @@
 - |
   GPL-2+
+  GPL-2+
   GPL-2
   BSD-2-clause
   public-domain-s-s-d
   public-domain-md5
-- bsd-simplified AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND public-domain AND unknown
+  GPL-2+
+  GPL-2
+  BSD-2-clause
+- gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND bsd-simplified AND (public-domain AND unknown)
+  AND ((public-domain AND public-domain AND public-domain AND public-domain) AND unknown) AND
+  (public-domain AND unknown) AND (public-domain AND unknown) AND gpl-2.0-plus AND (gpl-2.0-plus
+  AND gpl-1.0-plus) AND gpl-2.0 AND (gpl-2.0 AND unknown) AND bsd-simplified AND (bsd-simplified
+  AND unknown)
 - |
   Copyright © 1994 Ian Murdock <imurdock@debian.org>
   Copyright © 1994 Matt Welsh <mdw@sunsite.unc.edu>
@@ -63,6 +71,8 @@
   Copyright © 1999 Marek Michalkiewicz <marekm@i17linuxb.ists.pwr.wroc.pl>
   Copyright © 1999 Christian Schwarz <schwarz@monet.m.isar.de>
   Copyright © 1999 Klee Dienes <klee@debian.org>
+  Copyright © 1999 Ben Collins <bcollins@debian.org>
+  Copyright © 1999-2002 Wichert Akkerman <wakkerma@debian.org>
   Copyright © 2000-2003 Adam Heath <doogie@debian.org>
   Copyright © 2001 Sontri Tomo Huynh <huynh.29@osu.edu>
   Copyright © 2001 Andreas Schuldei <andreas@schuldei.org>

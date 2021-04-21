@@ -96,7 +96,7 @@ class DebianCopyrightDetector:
         return '\n'.join(self.detected_copyrights)
 
     @classmethod
-    def from_file(cls, location, with_copyright=True, skip_debian_packaging=True, unique=True):
+    def from_file(cls, location, with_copyright=True, with_debian_packaging=False):
         """
         Return a DebianCopyrightDetector object built from debian copyright file at ``location``,
         or None if this is not a debian copyright file.
@@ -115,7 +115,7 @@ class DebianCopyrightDetector:
 
         if with_copyright:
             dc.detected_copyrights = dc.detect_copyrights(
-                skip_debian_packaging=skip_debian_packaging, unique=unique,
+                with_debian_packaging=with_debian_packaging,
             )
 
         if not dc.is_structured:
@@ -124,7 +124,7 @@ class DebianCopyrightDetector:
         return dc
             
             
-    def detect_copyrights(self, skip_debian_packaging=False, unique=True):
+    def detect_copyrights(self, with_debian_packaging=False):
         """
         Return copyrights collected from a structured file or an unstructured file.
         """
@@ -132,18 +132,13 @@ class DebianCopyrightDetector:
         if self.is_structured:
             deco = DebianCopyright.from_file(self.location)
             for paragraph in deco.paragraphs:
-                if skip_debian_packaging and is_debian_packaging(paragraph):
+                if is_debian_packaging(paragraph) and not with_debian_packaging:
                     continue
                 if isinstance(paragraph, (CopyrightHeaderParagraph, CopyrightFilesParagraph)):
                     pcs = paragraph.copyright.statements or []
                     for p in pcs:
                         p = p.dumps()
-                        # avoid repeats
-                        if unique:
-                            if p not in copyrights:
-                                copyrights.append(p)
-                        else:
-                            copyrights.append(p)
+                        copyrights.append(p)
         # We detect plain copyrights in a unstructured file if we didn't find any, or
         # in an structured file
         if not copyrights:
@@ -167,9 +162,7 @@ class DebianCopyrightDetector:
 
 def parse_copyright_file(
     location,
-    skip_debian_packaging=True,
-    simplify_licenses=True,
-    unique=True
+    with_debian_packaging=False,
 ):
     """
     Return a tuple of (declared license, detected license_expression, copyrights) strings computed
@@ -184,7 +177,7 @@ def parse_copyright_file(
         return None, None, None
 
     dc = DebianCopyrightDetector.from_file(
-        location=location, skip_debian_packaging=skip_debian_packaging, unique=unique,
+        location=location, with_debian_packaging=with_debian_packaging,
     )
 
     declared_license = None
@@ -194,10 +187,7 @@ def parse_copyright_file(
         detected_license = combine_expressions(dc.license_expressions)
     else:
         declared_license, detected_license = parse_structured_copyright_file(
-            location=location,
-            skip_debian_packaging=skip_debian_packaging,
-            simplify_licenses=simplify_licenses,
-            unique=unique,
+            location=location, with_debian_packaging=with_debian_packaging,
         )
 
     if TRACE:
@@ -242,21 +232,13 @@ class NoLicenseFoundError(Exception):
 
 def parse_structured_copyright_file(
     location,
-    skip_debian_packaging=True,
-    simplify_licenses=True,
-    unique=True,
+    with_debian_packaging=False,
 ):
     """
     Return a tuple of (list of declared license strings, list of detected license matches)
     collected from the debian copyright file at `location`.
 
-    If `skip_debian_packaging` is True, the Debian packaging license is skipped
-    if detected.
-
-    If `simplify_licenses` is True the license expressions are simplified.
-
-    If `unique` is True, repeated copyrights, detected or declared licenses are
-    ignored, and only unique detections are returned.
+    If `with_debian_packaging` is False, the Debian packaging license is skipped if detected.
     
     #TODO: We want to find in a file where in a copyright file a license was found.
     """
@@ -274,7 +256,7 @@ def parse_structured_copyright_file(
     licensing = Licensing()
     for paragraph in deco.paragraphs:
 
-        if skip_debian_packaging and is_debian_packaging(paragraph):
+        if is_debian_packaging(paragraph) and not with_debian_packaging:
             # Skipping packaging license and copyrights since they are not
             # relevant to the effective package license
             continue
@@ -297,17 +279,10 @@ def parse_structured_copyright_file(
                 continue
 
             declared, detected = detect_declared_license(plicense.name)
-            # avoid repeats
-            if unique:
-                if declared and declared not in declared_licenses:
-                    declared_licenses.append(declared)
-                if detected and detected not in detected_licenses:
-                    detected_licenses.append(detected)
-            else:
-                if declared:
-                    declared_licenses.append(declared)
-                if detected:
-                    detected_licenses.append(detected)
+            if declared:
+                declared_licenses.append(declared)
+            if detected:
+                detected_licenses.append(detected)
 
             # also detect in text
             text = paragraph.license.text
@@ -319,12 +294,8 @@ def parse_structured_copyright_file(
                 )
                 if not detected:
                     detected = 'unknown'
-                # avoid repeats
-                if unique:
-                    if detected not in detected_licenses:
-                        detected_licenses.append(detected)
-                else:
-                    detected_licenses.append(detected)
+
+                detected_licenses.append(detected)
 
     declared_license = '\n'.join(declared_licenses)
 
@@ -335,9 +306,6 @@ def parse_structured_copyright_file(
             detected_license = licensing.AND(*detected_licenses)
         else:
             detected_license = detected_licenses[0]
-
-        if simplify_licenses:
-            detected_license = detected_license.simplify()
 
         detected_license = str(detected_license)
 
