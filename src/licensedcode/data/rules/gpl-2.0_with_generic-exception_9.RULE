@@ -1,0 +1,7 @@
+Special exception for linking OpenVPN with both OpenSSL and LZO:
+
+Hereby I grant a special exception to the OpenVPN project
+(http://openvpn.net/) to link the LZO library with
+the OpenSSL library (http://www.openssl.org).
+
+Markus F.X.J. Oberhumer

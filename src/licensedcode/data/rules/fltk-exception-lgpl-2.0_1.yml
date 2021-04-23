@@ -1,0 +1,7 @@
+license_expression: fltk-exception-lgpl-2.0
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://www.fltk.org/
+ignorable_emails:
+    - fltk-bugs@fltk.org

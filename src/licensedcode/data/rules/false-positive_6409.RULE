@@ -1,0 +1,2 @@
+// Should be `Apache-2.0`.
+  parse('Apache 2')

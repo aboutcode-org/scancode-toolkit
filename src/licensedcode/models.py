@@ -31,7 +31,7 @@ from commoncode.fileutils import resource_iter
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
-from licensedcode.tokenize import query_tokenizer
+from licensedcode.tokenize import index_tokenizer
 from textcode.analysis import numbered_text_lines
 
 """
@@ -365,7 +365,7 @@ class License(object):
             # local text consistency
             text = lic.text
 
-            license_qtokens = tuple(query_tokenizer(text))
+            license_qtokens = tuple(index_tokenizer(text))
             if not license_qtokens:
                 info('No license text')
             else:
@@ -467,16 +467,13 @@ def get_rules(
 ):
     """
     Yield Rule objects loaded from a licenses_db and license files found in
-    `licenses_data_dir` and rule files fourn in `rules_data_dir`. Raise a
-    Exceptions if a rule is inconsistent or incorrect.
+    `licenses_data_dir` and rule files found in `rules_data_dir`. Raise an
+    Exception if a rule is inconsistent or incorrect.
     """
-    from licensedcode.cache import build_licenses_db
-
-    licenses = licenses_db or build_licenses_db(licenses_data_dir=licenses_data_dir)
-
+    licenses_db = licenses_db or load_licenses(licenses_data_dir=licenses_data_dir)
     rules = list(load_rules(rules_data_dir=rules_data_dir))
-    validate_rules(rules, licenses)
-    licenses_as_rules = build_rules_from_licenses(licenses)
+    validate_rules(rules, licenses_db)
+    licenses_as_rules = build_rules_from_licenses(licenses_db)
     return chain(licenses_as_rules, rules)
 
 
@@ -581,7 +578,7 @@ def get_all_spdx_key_tokens(licenses_db):
         yield tok
 
     for spdx_key in get_all_spdx_keys(licenses_db):
-        for token in query_tokenizer(spdx_key):
+        for token in index_tokenizer(spdx_key):
             yield token
 
 
@@ -1080,10 +1077,10 @@ class Rule(BasicRule):
         # We tag this rule as being a bare URL if it starts with a scheme and is
         # on one line: this is used to determine a matching approach
 
-        if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000].lower():
+        if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
             self.minimum_coverage = 100
 
-        for token in query_tokenizer(self.text()):
+        for token in index_tokenizer(self.text()):
             length += 1
             yield token
 

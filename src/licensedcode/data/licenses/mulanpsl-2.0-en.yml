@@ -17,9 +17,5 @@ standard_notice: |
     EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
     MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
     See the Mulan PSL v2 for more details.
-ignorable_copyrights:
-    - copyright holder Software Name
-ignorable_holders:
-    - Software Name
 ignorable_urls:
     - http://license.coscl.org.cn/MulanPSL2

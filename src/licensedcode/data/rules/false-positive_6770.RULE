@@ -1,0 +1,6 @@
+UNLICENSED: 'Unlicense',
+  UNLICNSE: 'Unlicense',
+  Unlicence: 'Unlicense',
+  'Unlicense (http://unlicense.org/)': 'Unlicense',
+  'Unlicense (see http://unlicense.org/)': 'Unlicense',
+  Unlicense: 'Unlicense',

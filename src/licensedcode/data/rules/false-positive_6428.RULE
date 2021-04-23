@@ -1,0 +1,6 @@
+'"BSD-2-Clause"': 'BSD-2-Clause',
+  '"MIT"': 'MIT',
+  '(LGPL)': 'LGPL-3.0-or-later',
+  '2 clause BSD': 'BSD-2-Clause',
+  '2-clause-BSD': 'BSD-2-Clause',
+  '3-Clause BSD': 'BSD-3-Clause',

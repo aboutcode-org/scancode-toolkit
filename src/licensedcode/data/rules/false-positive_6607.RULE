@@ -1,0 +1,6 @@
+'GNU v2': 'GPL-2.0-only',
+  GNU: 'GPL-3.0-or-later',
+  'GNU-GPL': 'GPL-3.0-or-later',
+  'GNU/GPL': 'GPL-3.0-or-later',
+  'GNU/GPLv2': 'GPL-2.0-only',
+  'GPL 2': 'GPL-2.0-only',

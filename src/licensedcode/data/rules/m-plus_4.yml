@@ -1,0 +1,9 @@
+license_expression: m-plus
+is_license_notice: yes
+relevance: 100
+notes: Seen in https://github.com/asciidoctor/asciidoctor-pdf/blob/main/NOTICE.adoc This is
+    not exactly a bsd-zero and we track this as a the m-plus license
+ignorable_authors:
+    - Unlimited
+ignorable_urls:
+    - https://opensource.org/licenses/0BSD

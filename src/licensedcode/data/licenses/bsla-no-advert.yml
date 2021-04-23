@@ -1,0 +1,13 @@
+key: bsla-no-advert
+short_name: BSLA no advertizing
+name: Berkeley Software License Agreement with no advertizing
+category: Permissive
+owner: Regents of the University of California
+spdx_license_key: LicenseRef-scancode-bsla-no-advert
+ignorable_authors:
+    - the University of California, Berkeley
+notes: this is a variant of the license introuced by changes in Cygwin
+ to remove the advertizing clause since it has been "rescinded" by the UC
+ regents for their BSD-licensed code at large.
+ See https://github.com/mirror/newlib-cygwin/commit/9042d0ce65533a26fc3264206db5828d5692332c#
+ 

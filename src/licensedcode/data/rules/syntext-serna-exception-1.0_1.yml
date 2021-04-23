@@ -1,0 +1,6 @@
+license_expression: syntext-serna-exception-1.0
+is_license_text: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - GPL_Exception_Addendum.txt

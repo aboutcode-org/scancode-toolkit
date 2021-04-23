@@ -1,0 +1,5 @@
+license_expression: unicode
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.unicode.org/terms_of_use.html

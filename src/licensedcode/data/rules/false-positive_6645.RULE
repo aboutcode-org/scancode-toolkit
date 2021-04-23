@@ -1,0 +1,6 @@
+GUN: 'GPL-3.0-or-later',
+  'Gnu public license v2.0': 'GPL-2.0-only',
+  'Gpl v3': 'GPL-3.0-or-later',
+  Gpl: 'GPL-3.0-or-later',
+  'Gpl-2.0': 'GPL-2.0-only',
+  'Gpl-3.0': 'GPL-3.0-or-later',

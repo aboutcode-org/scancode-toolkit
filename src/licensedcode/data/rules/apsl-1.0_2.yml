@@ -1,8 +1,5 @@
 license_expression: apsl-1.0
 is_license_notice: yes
-ignorable_copyrights:
-    - Portions Copyright (c) 1999 Apple Computer, Inc.
-ignorable_holders:
-    - Apple Computer, Inc.
+minimum_coverage: 70
 ignorable_urls:
     - http://www.apple.com/publicsource

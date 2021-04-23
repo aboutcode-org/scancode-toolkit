@@ -15,16 +15,31 @@ import os
 from time import time
 
 from commoncode.testcase import FileBasedTesting
+from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import matched_query_text_tokenizer
-from licensedcode.tokenize import ngrams
-from licensedcode.tokenize import select_ngrams
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
+from licensedcode.tokenize import ngrams
+from licensedcode.tokenize import select_ngrams
 from licensedcode.tokenize import tokens_and_non_tokens
 from licensedcode.tokenize import word_splitter
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
+
+def check_results(result, expected_file, regen=False):
+
+    # we dumps/loads to normalize tuples/etc
+    result = json.loads(json.dumps(result))
+
+    if regen:
+        with open(expected_file, 'w') as exc_test:
+            json.dump(result , exc_test, indent=2)
+
+    with io.open(expected_file, encoding='utf-8') as exc_test:
+        expected = json.load(exc_test)
+
+    assert result == expected
 
 
 class TestTokenizers(FileBasedTesting):
@@ -193,15 +208,8 @@ class TestTokenizers(FileBasedTesting):
         with io.open(test_file, encoding='utf-8') as test:
             text = test.read()
         result = list(query_tokenizer(text))
-
         expected_file = test_file + '.json'
-        if regen:
-            with open(expected_file, 'w') as exc_test:
-                json.dump(result , exc_test, indent=2)
-
-        with io.open(expected_file, encoding='utf-8') as exc_test:
-            expected = json.load(exc_test)
-        assert list(query_tokenizer(text)) == expected
+        check_results(result, expected_file, regen=regen)
 
     def test_query_tokenizer_can_split_legacy_templates(self):
         text = u'abc def \n {{temp}} GHI'
@@ -315,15 +323,7 @@ class TestTokenizers(FileBasedTesting):
         with io.open(test_file, encoding='utf-8') as text:
             result = list(query_tokenizer(text.read()))
         expected_file = self.get_test_loc('tokenize/ill_formed_template/expected.json')
-
-        if regen:
-            with open(expected_file, 'w') as ex:
-                json.dump(result, ex, indent=2, separators=(',', ': '))
-
-        with io.open(expected_file, encoding='utf-8') as ex:
-            expected = json.load(ex)
-
-        assert result == expected
+        check_results(result, expected_file, regen=regen)
 
     def test_tokenizers_regex_do_not_choke_on_some_text(self):
         # somehow this text was making the regex choke.
@@ -357,72 +357,42 @@ class TestTokenizers(FileBasedTesting):
     def test_query_lines_on_html_like_texts(self, regen=False):
         test_file = self.get_test_loc('tokenize/htmlish.txt')
         expected_file = test_file + '.expected.query_lines.json'
-
-        # we dumps/loads to normalize tuples/etc
-        result = json.loads(json.dumps(list(query_lines(test_file))))
-
-        if regen:
-            with open(expected_file, 'w') as exc_test:
-                json.dump(result , exc_test, indent=2)
-
-        with io.open(expected_file, encoding='utf-8') as exc_test:
-            expected = json.load(exc_test)
-
-        assert result == expected
+        result = list(query_lines(test_file))
+        check_results(result, expected_file, regen=regen)
 
     def test_query_lines_on_html_like_texts_2(self, regen=False):
         test_file = self.get_test_loc('tokenize/htmlish.html')
         expected_file = test_file + '.expected.query_lines.json'
-
-        # we dumps/loads to normalize tuples/etc
-        result = json.loads(json.dumps(list(query_lines(test_file))))
-
-        if regen:
-            with open(expected_file, 'w') as exc_test:
-                json.dump(result , exc_test, indent=2)
-
-        with io.open(expected_file, encoding='utf-8') as exc_test:
-            expected = json.load(exc_test)
-
-        assert result == expected
+        result = list(query_lines(test_file))
+        check_results(result, expected_file, regen=regen)
 
     def test_query_tokenizer_on_html_like_texts(self, regen=False):
         test_file = self.get_test_loc('tokenize/htmlish.txt')
-        expected_file = test_file + '.expected.tokenized_lines.json'
-
+        expected_file = test_file + '.expected.query_tokenizer.json'
         lines = query_lines(test_file)
-        tokens = list(list(query_tokenizer(line)) for _ln, line in lines)
-
-        # we dumps/loads to normalize tuples/etc
-        result = json.loads(json.dumps(tokens))
-
-        if regen:
-            with open(expected_file, 'w') as exc_test:
-                json.dump(result , exc_test, indent=2)
-
-        with io.open(expected_file, encoding='utf-8') as exc_test:
-            expected = json.load(exc_test)
-
-        assert result == expected
+        result = [list(query_tokenizer(line)) for _ln, line in lines]
+        check_results(result, expected_file, regen=regen)
 
     def test_query_tokenizer_lines_on_html_like_texts_2(self, regen=False):
         test_file = self.get_test_loc('tokenize/htmlish.html')
-        expected_file = test_file + '.expected.tokenized_lines.json'
-
+        expected_file = test_file + '.expected.query_tokenizer.json'
         lines = query_lines(test_file)
-        tokens = list(list(query_tokenizer(line)) for _ln, line in lines)
+        result = [list(query_tokenizer(line)) for _ln, line in lines]
+        check_results(result, expected_file, regen=regen)
 
-        # we dumps/loads to normalize tuples/etc
-        result = json.loads(json.dumps(tokens))
+    def test_index_tokenizer_on_html_like_texts(self, regen=False):
+        test_file = self.get_test_loc('tokenize/htmlish.txt')
+        expected_file = test_file + '.expected.index_tokenizer.json'
+        lines = query_lines(test_file)
+        result = [list(index_tokenizer(line)) for _ln, line in lines]
+        check_results(result, expected_file, regen=regen)
 
-        if regen:
-            with open(expected_file, 'w') as exc_test:
-                json.dump(result , exc_test, indent=2)
-
-        with io.open(expected_file, encoding='utf-8') as exc_test:
-            expected = json.load(exc_test)
-
-        assert result == expected
+    def test_index_tokenizer_lines_on_html_like_texts_2(self, regen=False):
+        test_file = self.get_test_loc('tokenize/htmlish.html')
+        expected_file = test_file + '.expected.index_tokenizer.json'
+        lines = query_lines(test_file)
+        result = [list(index_tokenizer(line)) for _ln, line in lines]
+        check_results(result, expected_file, regen=regen)
 
 
 class TestNgrams(FileBasedTesting):
@@ -614,7 +584,7 @@ class MatchedTextTokenizer(FileBasedTesting):
         \r'''
 
         mqtt_result = [t for is_tok, t in matched_query_text_tokenizer(text) if is_tok]
-        qt_result = list(query_tokenizer(text, stopwords=()))
+        qt_result = list(query_tokenizer(text))
         mqtt_expected = [
             'Redistribution+',
             'and',
@@ -652,7 +622,7 @@ class MatchedTextTokenizer(FileBasedTesting):
             'are',
             'permitted',
             'with',
-            # this is NOT the same as above... 
+            # this is NOT the same as above...
             # See https://github.com/nexB/scancode-toolkit/issues/1872
             'i',
             'rəli'

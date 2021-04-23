@@ -1,0 +1,1 @@
+includes('BSD-3-Clause'); //=> true

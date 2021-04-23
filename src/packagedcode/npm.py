@@ -125,7 +125,7 @@ def compute_normalized_license(declared_license):
                 # The type should have precedence and any unknowns
                 # in url should be ignored.
                 # TODO: find a better way to detect unknown licenses
-                if via_url in ('unknown', 'unknwon-license-reference',):
+                if via_url in ('unknown', 'unknown-license-reference',):
                     via_url = None
 
             if via_type:

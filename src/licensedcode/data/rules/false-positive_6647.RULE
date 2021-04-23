@@ -1,0 +1,6 @@
+'Gpl v3': 'GPL-3.0-or-later',
+  Gpl: 'GPL-3.0-or-later',
+  'Gpl-2.0': 'GPL-2.0-only',
+  'Gpl-3.0': 'GPL-3.0-or-later',
+  Gpl2: 'GPL-2.0-only',
+  'Http://opensource.org/licenses/MIT': 'MIT',

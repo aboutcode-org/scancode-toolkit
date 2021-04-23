@@ -1,0 +1,9 @@
+Markus F.X.J. Oberhumer <markus@oberhumer.com> made the following 
+exception in LZO's license to make possible the use of LZO with OpenSSL
+in OpenVPN:
+
+  Hereby I grant a special exception to the OpenVPN project
+  (http://openvpn.sourceforge.net) to link the LZO library with
+  the OpenSSL library (http://www.openssl.org).
+
+        Markus F.X.J. Oberhumer

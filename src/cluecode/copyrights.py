@@ -1033,6 +1033,14 @@ patterns = [
     (r'^November$', 'NN'),
     (r'^December$', 'NN'),
 
+    (r'^Name[\.,]?$', 'NN'),
+    (r'^Co-Author[\.,]?$', 'NN'),
+    (r'^Author\'s$', 'NN'),
+    (r'^Co-Author\'s$', 'NN'),
+    #  the Universal Copyright Convention (1971 Paris text).
+    (r'^Convention[\.,]?$', 'NN'),
+    (r'^Paris[\.,]?$', 'NN'),
+
     # we do not include Jan and Jun that are common enough first names
     (r'^(Feb|Mar|Apr|May|Jul|Aug|Sep|Oct|Nov|Dec)$', 'NN'),
     (r'^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$', 'NN'),
@@ -2590,6 +2598,14 @@ COPYRIGHTS_JUNK = frozenset([
     'copyright (c) <holders>',
     'copyright (c) , and others',
     'copyright from license',
+    'and/or the universal copyright convention 1971',
+    'universal copyright convention',
+    'copyright 2005 m. y. name',
+    'copyright 2005 m. y.',
+    'copyright 2003 m. y. name',
+    'copyright 2003 m. y.',
+    'copyright 2001 m. y. name',
+    'copyright 2001 m. y.',
 ])
 
 ################################################################################

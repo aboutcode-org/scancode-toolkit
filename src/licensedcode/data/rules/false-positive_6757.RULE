@@ -1,0 +1,6 @@
+'Old BSD': 'BSD-4-Clause',
+  'Original BSD License': 'BSD-4-Clause',
+  'Public Domain (UNLISCENSE)': 'Unlicense',
+  'Public Domain (Unlicense)': 'Unlicense',
+  'Public Domain <Unlicense>': 'Unlicense',
+  'Public domain(unlicense)': 'Unlicense',

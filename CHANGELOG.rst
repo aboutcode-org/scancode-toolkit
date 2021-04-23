@@ -37,6 +37,10 @@ License scanning:
  - Add new command line option to filter ignorable copyrights when included
    in licenses.
 
+ - Add new and improved license detection rules.
+   Thank you to:
+    - Sebastian Thomas @sebathomas
+    - Till Jaeger @LeChasseur 
 
 
 v21.3.31
@@ -92,6 +96,9 @@ Copyright scanning:
 
  - Allow calling copyright detection from text lines to ease integration
    Thank you to Jelmer Vernooĳ @jelmer
+
+ - Fixed copyright truncation bug
+   Thank you to Akanksha Garg @akugarg
 
 
 Package scanning:
