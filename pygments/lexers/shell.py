@@ -238,7 +238,7 @@ class BatchLexer(RegexLexer):
     .. versionadded:: 0.7
     """
     name = 'Batchfile'
-    aliases = ['bat', 'batch', 'dosbatch', 'winbatch']
+    aliases = ['batch', 'bat', 'dosbatch', 'winbatch']
     filenames = ['*.bat', '*.cmd']
     mimetypes = ['application/x-dos-batch']
 
