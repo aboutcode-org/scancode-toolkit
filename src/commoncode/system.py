@@ -20,7 +20,6 @@
 
 import getpass
 import os
-import subprocess
 import sys
 
 
