@@ -802,6 +802,13 @@ class TestVirtualCodebase(FileBasedTesting):
         ]
         assert expected == [(r.name, r.is_file) for r in results]
 
+    def test_virtual_codebase_get_path_with_strip_root_and_walk_with_skip_root(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/stripped-and-skipped-root.json')
+        virtual_codebase = VirtualCodebase(location=scan_data)
+        results = [r.get_path(strip_root=True) for r in virtual_codebase.walk(skip_root=True)]
+        expected = ['README', 'screenshot.png']
+        assert results == expected
+
     def test_virtual_codebase_walk_filtered_with_filtered_root(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
@@ -1322,6 +1329,13 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
             dict([(u'path', u'virtual_root/thirdparty/example.zip'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])])
         ]
         assert expected == results
+
+    def test_VirtualCodebase_scanning_full_root(self):
+        test_file = self.get_test_loc("resource/virtual_codebase/path_full_root.json")
+        codebase = VirtualCodebase(test_file)
+        resource = sorted(r for r in codebase.walk())[0]
+        assert resource.path == "/Users/sesser/code/nexb/scancode-toolkit/samples/README"
+        assert codebase.compute_counts()[0] == 1
 
 
 class TestResource(FileBasedTesting):
