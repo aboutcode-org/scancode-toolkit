@@ -1330,6 +1330,13 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         ]
         assert expected == results
 
+    def test_VirtualCodebase_scanning_full_root(self):
+        test_file = self.get_test_loc("resource/virtual_codebase/path_full_root.json")
+        codebase = VirtualCodebase(test_file)
+        resource = sorted(r for r in codebase.walk())[0]
+        assert resource.path == "/Users/sesser/code/nexb/scancode-toolkit/samples/README"
+        assert codebase.compute_counts()[0] == 1
+
 
 class TestResource(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
