@@ -1,6 +1,6 @@
-license_expression: trademark-notice
+license_expression: generic-trademark
 is_license_text: yes
-notes: https://web.archive.org/web/20180303212217/http://openjdk.java.net:80/legal/openjdk-trademark-notice.html
+notes: https://web.archive.org/web/20180303212217/http://openjdk.java.net:80/legal/openjdk-generic-trademark.html
 ignorable_urls:
     - http://download.java.net/openjdk/jdk6
     - http://download.java.net/openjdk/jdk7
