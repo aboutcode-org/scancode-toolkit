@@ -4,6 +4,14 @@ Release notes
 vNext
 -----
 
+
+Version 21.4.28
+---------------
+
+*2020-04-28*
+- Add new function to get a Resource path stripped from its root path segment
+
+
 Version 21.1.21
 ---------------
 
