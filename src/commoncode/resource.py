@@ -60,6 +60,7 @@ from commoncode.fileutils import parent_directory
 from commoncode.fileutils import splitext_name
 
 from commoncode import ignore
+from commoncode import paths
 
 """
 This module provides Codebase and Resource objects as an abstraction for files
@@ -1054,6 +1055,12 @@ class Resource(object):
         else:
             self.is_file = False
 
+    def get_path(self, strip_root=False):
+        if strip_root:
+            return strip_first_path_segment(self.path)
+        else:
+            return self.path
+
     @property
     def is_dir(self):
         # note: we only store is_file
@@ -1354,6 +1361,29 @@ def get_path(root_location, location, full_root=False, strip_root=False):
     return posix_loc.replace(posix_root_loc, '', 1)
 
 
+def strip_first_path_segment(path):
+    """
+    Return a POSIX path stripped from its first path segment.
+
+    For example::
+        >>> strip_first_path_segment('')
+        ''
+        >>> strip_first_path_segment('foo')
+        'foo'
+        >>> strip_first_path_segment('foo/bar/baz')
+        'bar/baz'
+        >>> strip_first_path_segment('/foo/bar/baz/')
+        'bar/baz'
+        >>> strip_first_path_segment('foo/')
+        'foo/'
+    """
+    segments = paths.split(path)
+    if not segments or len(segments) == 1:
+        return path
+    stripped = segments[1:]
+    return '/'.join(stripped)
+
+
 def get_codebase_cache_dir(temp_dir):
     """
     Return a new, created and unique per-run cache storage directory path rooted
@@ -1506,10 +1536,11 @@ class VirtualCodebase(Codebase):
         """
         Return a parent resource for a given `path` from `parent_by_path`.
 
-        If a parent resource for a `path` does not exist in `parent_by_path`, it is created recursively.
+        If a parent resource for a `path` does not exist in `parent_by_path`, it
+        is created recursively.
 
-        Note: the root path and root Resource must already be in `parent_by_path` or else this
-        function does not work.
+        Note: the root path and root Resource must already be in
+        `parent_by_path` or else this function does not work.
         """
         parent_path = parent_directory(path).rstrip('/').rstrip('\\')
         existing_parent = parent_by_path.get(parent_path)
@@ -1519,7 +1550,13 @@ class VirtualCodebase(Codebase):
         parent_name = file_base_name(parent_path)
         parent_is_file = False
         parent_resource_data = self._create_empty_resource_data()
-        parent_resource = self._create_resource(parent_name, parent_parent, parent_is_file, parent_path, parent_resource_data)
+        parent_resource = self._create_resource(
+            parent_name,
+            parent_parent,
+            parent_is_file,
+            parent_path,
+            parent_resource_data,
+        )
         parent_by_path[parent_path] = parent_resource
         return parent_resource
 
@@ -1620,7 +1657,12 @@ class VirtualCodebase(Codebase):
         root_name = root_path
         root_is_file = False
         root_data = self._create_empty_resource_data()
-        root_resource = self._create_root_resource(root_name, root_path, root_is_file, root_data)
+        root_resource = self._create_root_resource(
+            name=root_name,
+            path=root_path,
+            is_file=root_is_file,
+            root_data=root_data,
+        )
 
         # To help recreate the resource tree we keep a mapping by path of any
         # parent resource
@@ -1630,24 +1672,32 @@ class VirtualCodebase(Codebase):
             path = resource_data.get('path')
             # Append virtual_root path to imported Resource path if we are merging multiple scans
             if multiple_input:
-                path = os.path.join(root_path, path)
+                path = posixpath.join(root_path, path)
+
             name = resource_data.get('name', None)
             if not name:
                 name = file_name(path)
+
             is_file = resource_data.get('type', 'file') == 'file'
 
             existing_parent = parent_by_path.get(path)
             if existing_parent:
-                # We update the empty parent Resouorce we in _get_or_create_parent() with the data
-                # from the scan
+                # We update the empty parent Resouorce we in
+                # _get_or_create_parent() with the data from the scan
                 for k, v in resource_data.items():
                     setattr(existing_parent, k, v)
                 self.save_resource(existing_parent)
             else:
-                # Note: `root_path`: `root_resource` must be in `parent_by_path` in order for
-                # `_get_or_create_parent` to work
+                # Note: `root_path`: `root_resource` must be in `parent_by_path`
+                # in order for `_get_or_create_parent` to work
                 parent = self._get_or_create_parent(path, parent_by_path)
-                resource = self._create_resource(name, parent, is_file, path, resource_data)
+                resource = self._create_resource(
+                    name=name,
+                    parent=parent,
+                    is_file=is_file,
+                    path=path,
+                    resource_data=resource_data,
+                )
 
                 # Files are not parents (for now), so we do not need to add this
                 # to the parent_by_path mapping
@@ -1665,7 +1715,14 @@ class VirtualCodebase(Codebase):
         if root_data:
             root_data = remove_properties_and_basics(root_data)
         root = self.resource_class(
-            name=name, location=None, path=path, rid=0, pid=None, is_file=is_file, **root_data)
+            name=name,
+            location=None,
+            path=path,
+            rid=0,
+            pid=None,
+            is_file=is_file,
+            **root_data,
+        )
 
         self.resource_ids.add(0)
         self.resources[0] = root
