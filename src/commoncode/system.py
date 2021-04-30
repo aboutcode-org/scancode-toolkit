@@ -125,6 +125,7 @@ py36 = py3 and _sys_v1 == 6
 py37 = py3 and _sys_v1 == 7
 py38 = py3 and _sys_v1 == 8
 py39 = py3 and _sys_v1 == 9
+py310 = py3 and _sys_v1 == 10
 
 # Do not let Windows error pop up messages with default SetErrorMode
 # See http://msdn.microsoft.com/en-us/library/ms680621(VS100).aspx
