@@ -549,18 +549,24 @@ class GroovyLexer(RegexLexer):
             default('base'),
         ],
         'base': [
-            # method names
-            (r'^(\s*(?:[a-zA-Z_][\w.\[\]]*\s+)+?)'  # return arguments
-             r'([a-zA-Z_]\w*)'                      # method name
-             r'(\s*)(\()',                          # signature start
-             bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*.*?\*/', Comment.Multiline),
-            (r'@[a-zA-Z_][\w.]*', Name.Decorator),
+            # keywords: go before method names to avoid lexing "throw new XYZ"
+            # as a method signature
             (r'(assert|break|case|catch|continue|default|do|else|finally|for|'
              r'if|goto|instanceof|new|return|switch|this|throw|try|while|in|as)\b',
              Keyword),
+            # method names
+            (r'^(\s*(?:[a-zA-Z_][\w.\[\]]*\s+)+?)'  # return arguments
+             r'('
+             r'[a-zA-Z_]\w*'                        # method name
+             r'|"(?:\\\\|\\[^\\]|[^"\\])*"'         # or double-quoted method name
+             r"|'(?:\\\\|\\[^\\]|[^'\\])*'"         # or single-quoted method name
+             r')'
+             r'(\s*)(\()',                          # signature start
+             bygroups(using(this), Name.Function, Text, Operator)),
+            (r'@[a-zA-Z_][\w.]*', Name.Decorator),
             (r'(abstract|const|enum|extends|final|implements|native|private|'
              r'protected|public|static|strictfp|super|synchronized|throws|'
              r'transient|volatile)\b', Keyword.Declaration),
