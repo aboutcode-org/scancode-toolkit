@@ -560,6 +560,10 @@ class DejaSource(ExternalLicensesSource):
         standard_notice = mapping.get('standard_notice') or ''
         standard_notice = clean_text(standard_notice)
 
+        spdx_license_key = mapping['spdx_license_key']
+        if not spdx_license_key and not deprecated:
+            spdx_license_key = f'LicenseRef-scancode-{key}'
+
         lic = License(
             key=key,
             src_dir=self.original_dir,
@@ -572,7 +576,7 @@ class DejaSource(ExternalLicensesSource):
 
             # FIXME: we may not want to carry notes over???
             # lic.notes = mapping.notes
-            spdx_license_key=mapping['spdx_license_key'],
+            spdx_license_key=spdx_license_key,
             text_urls=mapping['text_urls'].splitlines(False),
             osi_url=mapping['osi_url'],
             faq_url=mapping['faq_url'],
