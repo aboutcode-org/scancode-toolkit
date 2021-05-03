@@ -1,0 +1,5 @@
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: Seen in https://github.com/pyu10055/ntlm-http/blob/56c32a63a94f3bba0b499899b6939ee4ad4f963c/lib/net/ntlm.rb
+    and http://davenport.sourceforge.net/ntlm.html
