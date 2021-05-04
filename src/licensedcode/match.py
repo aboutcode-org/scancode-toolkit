@@ -1346,7 +1346,7 @@ def filter_already_matched_matches(matches, query):
     """
     kept = []
     discarded = []
-    matched_pos = query.matched()
+    matched_pos = query.matched
     for match in matches:
         # FIXME: do not use internals!!!
         match_qspan_set = match.qspan._set

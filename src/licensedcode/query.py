@@ -310,7 +310,7 @@ class Query(object):
         Return a set of every matched token positions for this query.
         """
         all_pos = intbitset(range(len(self.tokens)))
-        all_pos.difference_update(self.matchables())
+        all_pos.difference_update(self.matchables)
         return all_pos
 
     # FIXME: this is not used anywhere except for tests
