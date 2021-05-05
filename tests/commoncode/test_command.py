@@ -131,6 +131,10 @@ class TestCommand(FileBasedTesting):
 
         env_vars = 'FOO_SCANCODE_TEST1', 'FOO_SCANCODE_TEST2'
         expected = d1, d2, d2, d1
+        if on_mac:
+            # macOS somehow adds a /private to the paths in the CI as a side-
+            # effect of calling "realpath" and likely resolving links
+            expected = f'/private{d1}', f'/private{d2}', f'/private{d2}', f'/private{d1}'
         assert command.searchable_paths(env_vars=env_vars) == expected
 
     def test_find_in_path(self):
