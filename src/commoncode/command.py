@@ -34,20 +34,9 @@ from commoncode.system import on_windows
 from commoncode import text
 
 """
-Wrapper for executing external commands in sub-processes. The approach is
-unconventionally relying on vendoring scripts or pre-built executable binary
-commands rather than relying on OS-provided binaries (though using OS-provided
-binaries is possible.)
-
-While this could seem contrived at first this approach ensures that:
- - a distributed whole application is self-contained
- - a non technical user does not have any extra installation to do, in
-   particular there is no compilation needed at installation time.
- - we have few dependencies on the OS.
- - we control closely the version of these executables and how they were
-   built to ensure sanity, especially on Linux where several different
-   (oftentimes older) version may exist in the path for a given distro.
-   For instance this applies to tools such as 7z, binutils and file.
+Wrapper for executing external commands in sub-processes which works
+consistently the same way on POSIX and Windows OSes and can cope with the
+capture of large command standard outputs without exhausting memory.
 """
 
 logger = logging.getLogger(__name__)
@@ -67,7 +56,7 @@ LD_LIBRARY_PATH = 'LD_LIBRARY_PATH'
 DYLD_LIBRARY_PATH = 'DYLD_LIBRARY_PATH'
 
 
-def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False, log=TRACE):
+def execute(cmd_loc, args, cwd=None, env=None, to_files=False, log=TRACE):
     """
     Run a `cmd_loc` command with the `args` arguments list and return the return
     code, the stdout and stderr.
@@ -84,7 +73,10 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False, lo
     assert cmd_loc
     full_cmd = [cmd_loc] + (args or [])
 
-    env = get_env(env, lib_dir) or None
+    # any shared object should be either in the PATH, the rpath or
+    # side-by-side with the exceutable
+    cmd_dir = os.path.dirname(cmd_loc)
+    env = get_env(env, lib_dir=cmd_dir) or None
     cwd = cwd or curr_dir
 
     # temp files for stderr and stdout
@@ -107,43 +99,78 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False, lo
     proc = None
     rc = 100
 
-    okwargs = dict(mode='w', encoding='utf-8')
-
     try:
-        with io.open(sop, **okwargs) as stdout, io.open(sep, **okwargs) as stderr:
-            with pushd(lib_dir):
-                popen_args = dict(
-                    cwd=cwd,
-                    env=env,
-                    stdout=stdout,
-                    stderr=stderr,
-                    shell=shell,
-                    # -1 defaults bufsize to system bufsize
-                    bufsize=-1,
-                    universal_newlines=True,
-                )
-
-                proc = subprocess.Popen(full_cmd, **popen_args)
-                stdout, stderr = proc.communicate()
-                rc = proc.returncode if proc else 0
-
+        with io.open(sop, 'wb') as stdout, io.open(sep, 'wb') as stderr, pushd(cmd_dir):
+            proc = subprocess.Popen(
+                full_cmd,
+                cwd=cwd,
+                env=env,
+                stdout=stdout,
+                stderr=stderr,
+                shell=shell,
+                # -1 defaults bufsize to system bufsize
+                bufsize=-1,
+                universal_newlines=True,
+            )
+            stdout, stderr = proc.communicate()
+            rc = proc.returncode if proc else 0
     finally:
         close(proc)
 
     if not to_files:
         # return output as ASCII string loaded from the output files
-        sop = text.toascii(open(sop, 'rb').read().strip())
-        sep = text.toascii(open(sep, 'rb').read().strip())
+        with open(sop, 'rb') as so:
+            sor = so.read()
+            sop = text.toascii(sor).strip()
+
+        with open(sep, 'rb') as se:
+            ser = se.read()
+            sep = text.toascii(ser).strip()
+
     return rc, sop, sep
+
+
+def execute2(
+    cmd_loc,
+    args,
+    lib_dir=None,
+    cwd=None,
+    env=None,
+    to_files=False,
+    log=TRACE,
+):
+    """
+    DEPRECATED: DO NOT USE. Use execute() instead
+    Run a `cmd_loc` command with the `args` arguments list and return the return
+    code, the stdout and stderr.
+
+    To avoid RAM exhaustion, always write stdout and stderr streams to files.
+
+    If `to_files` is False, return the content of stderr and stdout as ASCII
+    strings. Otherwise, return the locations to the stderr and stdout temporary
+    files.
+
+    Run the command using the `cwd` current working directory with an `env` dict
+    of environment variables.
+    """
+    import warnings
+
+    warnings.warn(
+        "commoncode.command.execute2 is deprecated. Use execute() instead.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+
+    return execute(cmd_loc, args, cwd, env, to_files, log)
 
 
 def get_env(base_vars=None, lib_dir=None):
     """
     Return a dictionary of environment variables for command execution with
-    appropriate LD paths. Use the optional `base_vars` environment variables
-    dictionary as a base if provided. Note: if `base_vars`  contains LD
-    variables these will be overwritten.
-    Add `lib_dir` as a proper "LD_LIBRARY_PATH"-like path if provided.
+    appropriate DY/LD_LIBRARY_PATH path variables. Use the optional `base_vars`
+    environment variables dictionary as a base if provided. Note: if `base_vars`
+    contains DY/LD_LIBRARY_PATH variables these will be overwritten. On POSIX,
+    add `lib_dir` as DY/LD_LIBRARY_PATH-like path if provided.
     """
     env_vars = {}
     if base_vars:
@@ -151,7 +178,7 @@ def get_env(base_vars=None, lib_dir=None):
 
     # Create and add LD environment variables
     if lib_dir and on_posix:
-        new_path = '%(lib_dir)s' % locals()
+        new_path = f'{lib_dir}'
         # on Linux/posix
         ld_lib_path = os.environ.get(LD_LIBRARY_PATH)
         env_vars.update({LD_LIBRARY_PATH: update_path_var(ld_lib_path, new_path)})
@@ -195,42 +222,36 @@ def close(proc):
     proc.wait()
 
 
-def load_shared_library(dll_path, lib_dir):
+def load_shared_library(dll_loc, *args):
     """
-    Return the loaded shared library object from the dll_path and adding
-    `lib_dir` to the path.
+    Return the loaded shared library object from the ``dll_loc`` location.
     """
+    if not dll_loc or not path.exists(dll_loc):
+        raise ImportError(f'Shared library does not exists: dll_loc: {dll_loc}')
 
-    if not dll_path or not path.exists(dll_path):
-        raise ImportError(f'Shared library "dll_path" does not exists: dll_path="{dll_path}" and lib_dir={lib_dir})')
+    if not isinstance(dll_loc, str):
+        dll_loc = os.fsdecode(dll_loc)
 
-    if lib_dir and not path.exists(lib_dir):
-        raise ImportError(f'Shared library "lib_dir" does not exists: dll_path="{dll_path}" and lib_dir={lib_dir})')
+    lib = None
 
-    if not isinstance(dll_path, str):
-        dll_path = os.fsdecode(dll_path)
-
+    dll_dir = os.path.dirname(dll_loc)
     try:
-        with pushd(lib_dir):
-            lib = ctypes.CDLL(dll_path)
+        with pushd(dll_dir):
+            lib = ctypes.CDLL(dll_loc)
     except OSError as e:
         from pprint import pformat
         import traceback
         msgs = tuple([
-            'ctypes.CDLL(dll_path): {}'.format(dll_path),
-            'lib_dir: {}'.format(lib_dir),
+            f'ctypes.CDLL("{dll_loc}")',
             'os.environ:\n{}'.format(pformat(dict(os.environ))),
             traceback.format_exc(),
         ])
-        e.args = tuple(e.args + msgs)
-        raise e
+        raise Exception(msgs) from e
 
     if lib and lib._name:
         return lib
 
-    raise ImportError(
-        'Failed to load shared library with ctypes: %(dll_path)r and lib_dir: '
-        '%(lib_dir)r' % locals())
+    raise Exception(f'Failed to load shared library with ctypes: {dll_loc}')
 
 
 @contextlib.contextmanager
@@ -280,3 +301,30 @@ def update_path_var(existing_path_var, new_path):
         updated_path_var = os.fsdecode(updated_path_var)
 
     return updated_path_var
+
+
+PATH_VARS = DYLD_LIBRARY_PATH, LD_LIBRARY_PATH, 'PATH',
+
+
+def searchable_paths(env_vars=PATH_VARS):
+    """
+    Return a list of directories where to search "in the PATH" in the provided
+    ``env_vars`` list of PATH-like environment variables.
+    """
+    dirs = []
+    for env_var in env_vars:
+        value = os.environ.get(env_var, '') or ''
+        dirs.extend(value.split(os.pathsep))
+    dirs = [os.path.realpath(d.strip()) for d in dirs if d.strip()]
+    return tuple(d for d in dirs if os.path.isdir(d))
+
+
+def find_in_path(filename, searchable_paths=searchable_paths()):
+    """
+    Return the location of a ``filename`` found in the ``searchable_paths`` list
+    of directory or None.
+    """
+    for path in searchable_paths:
+        location = os.path.join(path, filename)
+        if os.path.exists(location):
+            return location
