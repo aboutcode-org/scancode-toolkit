@@ -3,6 +3,7 @@ requires = ["setuptools >= 50", "wheel", "setuptools_scm[toml] >= 4"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
+fallback_version = "v9999.$Format:%h-%cs$"
 
 [tool.pytest.ini_options]
 norecursedirs = [
