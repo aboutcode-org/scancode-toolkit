@@ -32,7 +32,7 @@ jobs:
           - script: |
                python --version
                echo | set /p=py $(python_version)> PYTHON_EXECUTABLE
-			   configure --dev
+               configure --dev
             displayName: 'Run Configure'
 
           - script: $(test_suite)
