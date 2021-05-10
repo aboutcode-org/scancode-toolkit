@@ -83,7 +83,7 @@ if "%1" EQU "--python"  (
     exit /b 0
 )
 
-################################
+@rem ################################
 @rem # find a proper Python to run
 @rem # Use environment variables or a file if available.
 @rem # Otherwise the latest Python by default.
