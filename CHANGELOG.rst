@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v21.4.x (next)
+v21.x.x (next)
 --------------
 
 Breaking API changes:
@@ -24,6 +24,19 @@ Breaking API changes:
    multiple manifests for a single package instance.
 
 
+v21.5.11
+--------
+
+Breaking API changes:
+~~~~~~~~~~~~~~~~~~~~~
+
+ - The configure scripts for Linux, macOS and Windows are new. These are now
+   only native scripts (.bat on Windows and .sh on POSIX) and the Python script
+   etc/configure.py has been removed. Use the PYTHON_EXECUTABLE enviroment
+   varibale to point to alternative non-default Python executable. An this on
+   all OSes.
+
+
 Ouputs:
 ~~~~~~~
 
@@ -41,6 +54,7 @@ License scanning:
    Thank you to:
     - Sebastian Thomas @sebathomas
     - Till Jaeger @LeChasseur 
+
 
 
 v21.3.31

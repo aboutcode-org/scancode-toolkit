@@ -17,9 +17,9 @@ goto scancode
 
 :configure
 echo * Configuring ScanCode for first use...
-echo * WARNING: Native Windows will be deprecated in the future in favor of Windows Subsystem for Linux
+echo * WARNING: Native Windows may be deprecated in the future in favor of Windows Subsystem for Linux 2
 echo * WARNING: Please visit https://github.com/nexB/scancode-toolkit/issues/2366 for details and to provide feedback
-set CONFIGURE_QUIET=1
+set CONFIGURE_QUIET=-qq
 call "%SCANCODE_ROOT_DIR%configure"
 
 @rem Return a proper return code on failure

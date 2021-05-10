@@ -10,7 +10,7 @@ jobs:
 # These jobs are using VMs and Azure-provided Pythons 3.6
 ################################################################################
 
-    - template: etc/ci/azure-linux.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
           job_name: vm_ubuntu16_py36
           image_name: ubuntu-16.04
@@ -95,7 +95,7 @@ jobs:
                 bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_zzzz_cache.py
 
-    - template: etc/ci/azure-mac.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
           job_name: macos_1014_py3x
           image_name: macos-10.14
@@ -104,7 +104,7 @@ jobs:
               all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
-    - template: etc/ci/azure-mac.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
           job_name: macos_1015_py3x
           image_name: macos-10.15
@@ -113,7 +113,7 @@ jobs:
               all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
-#    - template: etc/ci/azure-mac.yml
+#    - template: etc/ci/azure-posix.yml
 #      parameters:
 #          job_name: macos_110_py3x
 #          image_name: macos-11.0
@@ -142,7 +142,7 @@ jobs:
               all: Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
 
 
-    - template: etc/ci/azure-linux.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
           job_name: vm_ubuntu16_py3x
           image_name: ubuntu-16.04
@@ -151,7 +151,7 @@ jobs:
               all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
-    - template: etc/ci/azure-linux.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
           job_name: vm_ubuntu18_py3x
           image_name: ubuntu-18.04
@@ -160,7 +160,7 @@ jobs:
               all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
-    - template: etc/ci/azure-linux.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
           job_name: vm_ubuntu20_py3x
           image_name: ubuntu-20.04

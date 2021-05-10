@@ -188,7 +188,7 @@ function backup_previous_release {
 }
 
 function clean_build {
-    rm -rf build dist thirdparty
+    rm -rf build dist thirdparty PYTHON_EXECUTABLE SCANCODE_DEV_MODE
 }
 
 backup_previous_release
@@ -249,15 +249,17 @@ function build_app_archive {
     echo " "
     echo "## RELEASE: Building archive for Python $PYTHON_APP_VERSION on operating system: $operating_system"
 
+    clean_build
+    mkdir -p thirdparty
+
     if [ "$operating_system" == "windows" ]; then
         # create a zip only on Windows
         formats=zip
+        echo -n "py 3.6">PYTHON_EXECUTABLE
     else
         formats=xztar
+        echo -n "python3.6">PYTHON_EXECUTABLE
     fi
-
-    clean_build
-    mkdir -p thirdparty
 
     # 1. Collect thirdparty deps only for the subset for this Python/operating_system
     bin/python etc/release/fetch_requirements.py \

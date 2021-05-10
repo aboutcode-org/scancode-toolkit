@@ -16,6 +16,8 @@ include *.toml
 include extractcode*
 include scancode*
 
+# path to executable used by a built app
+include PYTHON_EXECUTABLE
 
 include *.rst
 include Dockerfile

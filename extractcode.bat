@@ -17,7 +17,7 @@ goto scancode
 
 :configure
 echo * Configuring ScanCode for first use...
-set CONFIGURE_QUIET=1
+set CONFIGURE_QUIET=-qq
 call "%SCANCODE_ROOT_DIR%configure"
 
 @rem Return a proper return code on failure
