@@ -19,6 +19,7 @@ jobs:
                      python_version: ${{ pyver }}
                      test_suite_label: ${{ tsuite.key }}
                      test_suite: ${{ tsuite.value }}
+
       steps:
           - checkout: self
             fetchDepth: 10
@@ -29,7 +30,11 @@ jobs:
                 architecture: '${{ parameters.python_architecture }}'
             displayName: 'Install Python $(python_version)'
 
-          - script: ./configure
+          - script: |
+                python3 --version
+                python$(python_version) --version
+                echo "python$(python_version)" > PYTHON_EXECUTABLE
+                ./configure --dev
             displayName: 'Run Configure'
 
           - script: $(test_suite)
