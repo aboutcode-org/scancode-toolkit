@@ -12,7 +12,7 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: ubuntu16
+          job_name: core_tests
           image_name: ubuntu-16.04
           python_versions: ['3.6']
           test_suites:
@@ -179,7 +179,7 @@ jobs:
 
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
-#          job_name: ubuntu18_py36
+#          job_name: ubuntu18c
 #          container: ubuntu:bionic
 #          python_path: python3.6
 #          python_version: '3.6'
@@ -190,7 +190,7 @@ jobs:
 
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
-#          job_name: ubuntu20_py38
+#          job_name: ubuntu20c
 #          container: ubuntu:focal
 #          python_path: python3.8
 #          python_version: '3.8'
@@ -201,7 +201,7 @@ jobs:
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          job_name: centos7_py36
+#          job_name: centos7c
 #          container: centos:7
 #          python_path: python3.6
 #          python_version: '3.6'
@@ -241,7 +241,7 @@ jobs:
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          job_name: fedora30_py37
+#          job_name: fedora30c
 #          container: fedora:30
 #          package_manager: dnf
 #          python_path: python3.7
@@ -271,7 +271,7 @@ jobs:
 # here we build from sources
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
-#          job_name: debian9_py36
+#          job_name: debian9c
 #          container: debian:stretch
 #          python_path: python3.6
 #          python_version: '3.6'
