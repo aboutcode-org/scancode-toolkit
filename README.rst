@@ -41,3 +41,10 @@ You typically want to perform these customizations:
 
 - remove or update the src/README.rst and tests/README.rst files
 - check the configure and configure.bat defaults
+
+
+Release Notes
+-------------
+
+- 2021-05-11: adopt new configure scripts from ScanCode TK that allows correct
+  configuration of which Python version is used.
