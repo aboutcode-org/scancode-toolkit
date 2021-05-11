@@ -87,6 +87,7 @@ def execute(cmd_loc, args, cwd=None, env=None, to_files=False, log=TRACE):
 
     # shell==True is DANGEROUS but we are not running arbitrary commands
     # though we can execute commands that just happen to be in the path
+    # See why we need it on Windows https://bugs.python.org/issue8557
     shell = True if on_windows else False
 
     if log:
