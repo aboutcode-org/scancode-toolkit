@@ -7,7 +7,7 @@
 
 jobs:
 
-    - template: etc/ci/azure-linux.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
           job_name: ubuntu16_cpython
           image_name: ubuntu-16.04
@@ -15,7 +15,7 @@ jobs:
           test_suites:
               all: tmp/bin/pytest -vvs
 
-    - template: etc/ci/azure-linux.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
           job_name: ubuntu18_cpython
           image_name: ubuntu-18.04
@@ -23,7 +23,7 @@ jobs:
           test_suites:
               all: tmp/bin/pytest -n 2 -vvs
 
-    - template: etc/ci/azure-linux.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
           job_name: ubuntu20_cpython
           image_name: ubuntu-20.04
@@ -31,7 +31,7 @@ jobs:
           test_suites:
               all: tmp/bin/pytest -n 2 -vvs
 
-    - template: etc/ci/azure-mac.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
           job_name: macos1014_cpython
           image_name: macos-10.14
@@ -39,7 +39,7 @@ jobs:
           test_suites:
               all: tmp/bin/pytest -n 2 -vvs
 
-    - template: etc/ci/azure-mac.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
           job_name: macos1015_cpython
           image_name: macos-10.15
