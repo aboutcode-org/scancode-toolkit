@@ -32,3 +32,12 @@ Update an existing project
     git merge skeleton/main --allow-unrelated-histories
 
 This is also the workflow to use when updating the skeleton files in any given repository.
+
+
+Customizing
+-----------
+
+You typically want to perform these customizations:
+
+- remove or update the src/README.rst and tests/README.rst files
+- check the configure and configure.bat defaults
