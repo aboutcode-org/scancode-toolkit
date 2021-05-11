@@ -13,6 +13,7 @@ Version 21.5.5
 - Add new simplified the commoncode.command.execute() function. 
 - Add support for Python 3.10
 - Update tests to cope with Python 3.6 bug https://bugs.python.org/issue26919
+- Adopt new skeleton with configure scripts updates
 
 Breaking API changes:
 
