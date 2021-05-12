@@ -1,21 +1,9 @@
 #
-# Copyright (c) nexB Inc. and others.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
-#
-# Visit https://aboutcode.org and https://github.com/nexB/ for support and download.
-# ScanCode is a trademark of nexB Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/commoncode for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
 
 import os
@@ -51,9 +39,10 @@ class TestUtils(FileDrivenTesting):
         result = runner.invoke(mycli)
         assert result.exit_code == 0
         expected = '''Start
+xyz
 End
 '''
-        assert expected == result.output
+        assert result.output == expected
 
 
 class TestFixedWidthFilename(FileDrivenTesting):
@@ -61,58 +50,58 @@ class TestFixedWidthFilename(FileDrivenTesting):
     def test_fixed_width_file_name_with_file_name_larger_than_max_length_is_shortened(self):
         test = fixed_width_file_name('0123456789012345678901234.c', 25)
         expected = '0123456789...5678901234.c'
-        assert expected == test
+        assert test == expected
 
     def test_fixed_width_file_name_with_file_name_smaller_than_max_length_is_not_shortened(self):
         file_name = '0123456789012345678901234.c'
         test = fixed_width_file_name(file_name, max_length=50)
-        assert file_name == test
+        assert test == file_name
 
     def test_fixed_width_file_name_with_file_name_at_max_length_is_not_shortened(self):
         test = fixed_width_file_name('01234567890123456789012.c', 25)
         expected = '01234567890123456789012.c'
-        assert expected == test
+        assert test == expected
 
     def test_fixed_width_file_name_with_file_name_smaller_than_max_length_not_shortened(self):
         test = fixed_width_file_name('0123456789012345678901.c', 25)
         expected = '0123456789012345678901.c'
-        assert expected == test
+        assert test == expected
 
     def test_fixed_width_file_name_with_none_filename_return_empty_string(self):
         test = fixed_width_file_name(None, 25)
         expected = ''
-        assert expected == test
+        assert test == expected
 
     def test_fixed_width_file_name_without_extension(self):
         test = fixed_width_file_name('012345678901234567890123456', 25)
         expected = '01234567890...67890123456'
-        assert expected == test
+        assert test == expected
 
     def test_fixed_width_file_name_with_posix_path_without_shortening(self):
         test = fixed_width_file_name('C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/drupal.js', 25)
         expected = 'drupal.js'
-        assert expected == test
+        assert test == expected
 
     def test_fixed_width_file_name_with_posix_path_with_shortening(self):
         test = fixed_width_file_name('C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/012345678901234567890123.c', 25)
         expected = '0123456789...4567890123.c'
-        assert expected == test
+        assert test == expected
 
     def test_fixed_width_file_name_with_win_path_without_shortening(self):
         test = fixed_width_file_name('C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\drupal.js', 25)
         expected = 'drupal.js'
-        assert expected == test
+        assert test == expected
 
     def test_fixed_width_file_name_with_win_path_with_shortening(self):
         test = fixed_width_file_name('C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\012345678901234567890123.c', 25)
         expected = '0123456789...4567890123.c'
-        assert expected == test
+        assert test == expected
 
     def test_fixed_width_file_name_with_very_small_file_name_and_long_extension(self):
         test = fixed_width_file_name('abc.abcdef', 5)
         # FIXME: what is expected is TBD
         expected = ''
-        assert expected == test
+        assert test == expected
 
 
 class TestGroupedHelpCommand(FileDrivenTesting):

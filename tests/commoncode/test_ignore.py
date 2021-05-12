@@ -1,21 +1,9 @@
 #
-# Copyright (c) nexB Inc. and others.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
-#
-# Visit https://aboutcode.org and https://github.com/nexB/ for support and download.
-# ScanCode is a trademark of nexB Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/commoncode for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
 
 import os
@@ -145,7 +133,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
             ('/vcs/.svnignore', True),
             ('/vcs/vssver.scc', True),
         ]
-        assert sorted(expected) == sorted(result)
+        assert sorted(result) == sorted(expected)
 
     def test_fileset_is_included_with_default_ignore_does_not_skip_one_char_names(self):
         # use fileset directly to work on strings not locations
@@ -177,7 +165,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
             ('Data', True)
         ]
 
-        assert expected == result
+        assert result == expected
 
     @skipIf(on_mac or on_windows, 'We are only testing on posix for now')
     def test_is_ignored_path_string_skip_special(self):

@@ -1,21 +1,9 @@
 #
-# Copyright (c) nexB Inc. and others.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
-#
-# Visit https://aboutcode.org and https://github.com/nexB/ for support and download.
-# ScanCode is a trademark of nexB Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/commoncode for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
 
 import os
@@ -267,7 +255,7 @@ class TestFileUtils(FileBasedTesting):
         os.utime(test_file, (expected, expected))
         fileutils.copyfile(test_file, dest)
         result = os.stat(dest).st_mtime
-        assert expected == result
+        assert result == expected
 
     def test_copyfile_can_copy_file_to_dir_keeping_full_file_name(self):
         test_file = self.get_test_loc('fileutils/exec/subtxt/a.txt', copy=True)
@@ -277,22 +265,22 @@ class TestFileUtils(FileBasedTesting):
         assert os.path.exists(expected)
 
     def test_resource_name(self):
-        assert 'f' == fileutils.resource_name('/a/b/d/f/f')
-        assert 'f' == fileutils.resource_name('/a/b/d/f/f/')
-        assert 'f' == fileutils.resource_name('a/b/d/f/f/')
-        assert 'f.a' == fileutils.resource_name('/a/b/d/f/f.a')
-        assert 'f.a' == fileutils.resource_name('/a/b/d/f/f.a/')
-        assert 'f.a' == fileutils.resource_name('a/b/d/f/f.a')
-        assert 'f.a' == fileutils.resource_name('f.a')
+        assert fileutils.resource_name('/a/b/d/f/f') == 'f'
+        assert fileutils.resource_name('/a/b/d/f/f/') == 'f'
+        assert fileutils.resource_name('a/b/d/f/f/') == 'f'
+        assert fileutils.resource_name('/a/b/d/f/f.a') == 'f.a'
+        assert fileutils.resource_name('/a/b/d/f/f.a/') == 'f.a'
+        assert fileutils.resource_name('a/b/d/f/f.a') == 'f.a'
+        assert fileutils.resource_name('f.a') == 'f.a'
 
     @skipIf(on_windows, 'Windows FS encoding is ... different!')
     def test_fsdecode_and_fsencode_are_idempotent(self):
         a = b'foo\xb1bar'
         b = u'foo\udcb1bar'
-        assert a == os.fsencode(os.fsdecode(a))
-        assert a == os.fsencode(os.fsdecode(b))
-        assert b == os.fsdecode(os.fsencode(a))
-        assert b == os.fsdecode(os.fsencode(b))
+        assert os.fsencode(os.fsdecode(a)) == a
+        assert os.fsencode(os.fsdecode(b)) == a
+        assert os.fsdecode(os.fsencode(a)) == b
+        assert os.fsdecode(os.fsencode(b)) == b
 
 
 class TestFileUtilsWalk(FileBasedTesting):
@@ -308,7 +296,7 @@ class TestFileUtilsWalk(FileBasedTesting):
             (str(test_dir), ['a'], [u'2.csv']),
             (str(test_dir) + sep + 'a', [], [u'gru\u0308n.png'])
         ]
-        assert expected == result
+        assert result == expected
 
     def test_fileutils_walk(self):
         test_dir = self.get_test_loc('fileutils/walk')
@@ -320,7 +308,7 @@ class TestFileUtilsWalk(FileBasedTesting):
             ('/walk/d1/d2', ['d3'], ['f2']),
             ('/walk/d1/d2/d3', [], ['f3'])
         ]
-        assert expected == result
+        assert result == expected
 
     def test_fileutils_walk_with_unicode_path(self):
         test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
@@ -328,7 +316,7 @@ class TestFileUtilsWalk(FileBasedTesting):
 
         result = list(x[-1] for x in fileutils.walk(test_dir))
         expected = [[u'2.csv'], [u'gru\u0308n.png']]
-        assert expected == result
+        assert result == expected
 
     def test_fileutils_walk_can_walk_a_single_file(self):
         test_file = self.get_test_loc('fileutils/walk/f')
@@ -336,7 +324,7 @@ class TestFileUtilsWalk(FileBasedTesting):
         expected = [
             (fileutils.parent_directory(test_file), [], ['f'])
         ]
-        assert expected == result
+        assert result == expected
 
     def test_fileutils_walk_can_walk_an_empty_dir(self):
         test_dir = self.get_temp_dir()
@@ -344,7 +332,7 @@ class TestFileUtilsWalk(FileBasedTesting):
         expected = [
             (test_dir, [], [])
         ]
-        assert expected == result
+        assert result == expected
 
     @skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
     def test_walk_can_walk_non_utf8_path_from_unicode_path(self):
@@ -355,7 +343,7 @@ class TestFileUtilsWalk(FileBasedTesting):
             test_dir = str(test_dir)
         result = list(fileutils.walk(test_dir))[0]
         _dirpath, _dirnames, filenames = result
-        assert 18 == len(filenames)
+        assert len(filenames) == 18
 
     @skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
     def test_os_walk_can_walk_non_utf8_path_from_unicode_path(self):
@@ -364,7 +352,7 @@ class TestFileUtilsWalk(FileBasedTesting):
 
         result = list(os.walk(test_dir))[0]
         _dirpath, _dirnames, filenames = result
-        assert 18 == len(filenames)
+        assert len(filenames) == 18
 
     @skipIf(on_windows, 'os.symlink does not work on Windows')
     def test_walk_on_symlinks(self):
@@ -378,7 +366,7 @@ class TestFileUtilsWalk(FileBasedTesting):
             ('test-dir-link', ['dir'], ['a']),
             ('dir', [], ['b'])
         ]
-        assert expected == results
+        assert results == expected
 
 
 class TestFileUtilsIter(FileBasedTesting):
@@ -395,31 +383,31 @@ class TestFileUtilsIter(FileBasedTesting):
             '/walk/d1/d2/f2',
             '/walk/d1/d2/d3/f3'
         ]
-        assert sorted(expected) == sorted(result)
+        assert sorted(result) == sorted(expected)
 
     def test_resource_iter_can_iterate_a_single_file(self):
         test_file = self.get_test_loc('fileutils/walk/f')
         result = [as_posixpath(f) for f in fileutils.resource_iter(test_file, with_dirs=False)]
         expected = [as_posixpath(test_file)]
-        assert expected == result
+        assert result == expected
 
     def test_resource_iter_can_iterate_a_single_file_with_dirs(self):
         test_file = self.get_test_loc('fileutils/walk/f')
         result = [as_posixpath(f) for f in fileutils.resource_iter(test_file, with_dirs=True)]
         expected = [as_posixpath(test_file)]
-        assert expected == result
+        assert result == expected
 
     def test_resource_iter_can_walk_an_empty_dir(self):
         test_dir = self.get_temp_dir()
         result = list(fileutils.resource_iter(test_dir, with_dirs=False))
         expected = []
-        assert expected == result
+        assert result == expected
 
     def test_resource_iter_can_walk_an_empty_dir_with_dirs(self):
         test_dir = self.get_temp_dir()
         result = list(fileutils.resource_iter(test_dir, with_dirs=False))
         expected = []
-        assert expected == result
+        assert result == expected
 
     def test_resource_iter_without_dir(self):
         test_dir = self.get_test_loc('fileutils/walk')
@@ -433,7 +421,7 @@ class TestFileUtilsIter(FileBasedTesting):
             '/walk/d1/d2/f2',
             '/walk/d1/d2/d3/f3'
         ]
-        assert sorted(expected) == sorted(result)
+        assert sorted(result) == sorted(expected)
 
     def test_resource_iter_with_dirs(self):
         test_dir = self.get_test_loc('fileutils/walk')
@@ -450,7 +438,7 @@ class TestFileUtilsIter(FileBasedTesting):
             '/walk/f',
             '/walk/unicode.zip'
         ]
-        assert sorted(expected) == sorted(result)
+        assert sorted(result) == sorted(expected)
 
     def test_resource_iter_return_byte_on_byte_input(self):
         test_dir = self.get_test_loc('fileutils/walk')
@@ -467,7 +455,7 @@ class TestFileUtilsIter(FileBasedTesting):
             '/walk/f',
             '/walk/unicode.zip'
         ]
-        assert sorted(expected) == sorted(result)
+        assert sorted(result) == sorted(expected)
         assert all(isinstance(p, str) for p in result)
 
     def test_resource_iter_return_unicode_on_unicode_input(self):
@@ -485,7 +473,7 @@ class TestFileUtilsIter(FileBasedTesting):
             u'/walk/f',
             u'/walk/unicode.zip'
         ]
-        assert sorted(expected) == sorted(result)
+        assert sorted(result) == sorted(expected)
         assert all(isinstance(p, str) for p in result)
 
     def test_resource_iter_can_walk_unicode_path_with_zip(self):
@@ -513,7 +501,7 @@ class TestFileUtilsIter(FileBasedTesting):
                 u'\\a',
                 u'\\a\\gru\u0308n.png'
             ]
-        assert expected == result
+        assert result == expected
 
     @skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
     def test_resource_iter_can_walk_non_utf8_path_from_unicode_path_with_dirs(self):
@@ -521,7 +509,7 @@ class TestFileUtilsIter(FileBasedTesting):
         test_dir = join(test_dir, 'non_unicode')
 
         result = list(fileutils.resource_iter(test_dir, with_dirs=True))
-        assert 18 == len(result)
+        assert len(result) == 18
 
     @skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
     def test_resource_iter_can_walk_non_utf8_path_from_unicode_path(self):
@@ -529,7 +517,7 @@ class TestFileUtilsIter(FileBasedTesting):
         test_dir = join(test_dir, 'non_unicode')
 
         result = list(fileutils.resource_iter(test_dir, with_dirs=False))
-        assert 18 == len(result)
+        assert len(result) == 18
 
     @skipIf(on_windows, 'Symlinks do not work well on Windows')
     def test_resource_iter_follow_symlinks(self):
@@ -543,7 +531,7 @@ class TestFileUtilsIter(FileBasedTesting):
             'a',
             'b'
         ]
-        assert sorted(expected) == sorted(result)
+        assert sorted(result) == sorted(expected)
 
 
 class TestBaseName(FileBasedTesting):
@@ -554,99 +542,99 @@ class TestBaseName(FileBasedTesting):
         test_file = 'a/.a/file'
         expected_name = 'file'
         result = fileutils.file_base_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_base_name(join(test_dir, test_file))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_base_name_on_file_path_for_dot_file  (self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/.a/'
         expected_name = '.a'
         result = fileutils.file_base_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_base_name(join(test_dir, test_file))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_base_name_on_file_path_for_dot_file_with_extension(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/b/.a.b'
         expected_name = '.a'
         result = fileutils.file_base_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_base_name(join(test_dir, test_file))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_base_name_on_file_path_for_file_with_unknown_composed_extension(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/b/a.tag.gz'
         expected_name = 'a.tag'
         result = fileutils.file_base_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_base_name(join(test_dir, test_file))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_base_name_on_file_path_for_file_with_known_composed_extension(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/b/a.tar.gz'
         expected_name = 'a'
         result = fileutils.file_base_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_base_name(join(test_dir, test_file))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_base_name_on_dir_path(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/b/'
         expected_name = 'b'
         result = fileutils.file_base_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_base_name(join(test_dir, test_file))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_base_name_on_plain_file(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/f.a'
         expected_name = 'f'
         result = fileutils.file_base_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_base_name(join(test_dir, test_file))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_base_name_on_plain_file_with_parent_dir_extension(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'f.a/a.c'
         expected_name = 'a'
         result = fileutils.file_base_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_base_name(join(test_dir, test_file))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_base_name_on_path_for_plain_dir(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/'
         expected_name = 'a'
         result = fileutils.file_base_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_base_name(join(test_dir, test_file))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_base_name_on_path_for_plain_dir_with_extension(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'f.a/'
         expected_name = 'f.a'
         result = fileutils.file_base_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_base_name(join(test_dir, test_file))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_base_name_on_path_for_plain_file(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'tst'
         expected_name = 'tst'
         result = fileutils.file_base_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_base_name(join(test_dir, test_file))
-        assert expected_name == result
+        assert result == expected_name
 
 
 class TestFileName(FileBasedTesting):
@@ -657,90 +645,90 @@ class TestFileName(FileBasedTesting):
         test_file = 'a/.a/file'
         expected_name = 'file'
         result = fileutils.file_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_name((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_name_on_path_and_location_2(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/.a/'
         expected_name = '.a'
         result = fileutils.file_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_name((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_name_on_path_and_location_3(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/b/.a.b'
         expected_name = '.a.b'
         result = fileutils.file_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_name((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_name_on_path_and_location_4(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/b/a.tag.gz'
         expected_name = 'a.tag.gz'
         result = fileutils.file_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_name((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_name_on_path_and_location_5(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/b/'
         expected_name = 'b'
         result = fileutils.file_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_name((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_name_on_path_and_location_6(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/f.a'
         expected_name = 'f.a'
         result = fileutils.file_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_name((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_name_on_path_and_location_7(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/'
         expected_name = 'a'
         result = fileutils.file_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_name((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_name_on_path_and_location_8(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'f.a/a.c'
         expected_name = 'a.c'
         result = fileutils.file_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_name((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_name_on_path_and_location_9(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'f.a/'
         expected_name = 'f.a'
         result = fileutils.file_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_name((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_name_on_path_and_location_10(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'tst'
         expected_name = 'tst'
         result = fileutils.file_name(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_name((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
 
 class TestFileExtension(FileBasedTesting):
@@ -751,130 +739,130 @@ class TestFileExtension(FileBasedTesting):
         test_file = 'a/.a/file'
         expected_name = ''
         result = fileutils.file_extension(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_extension((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_extension_on_path_and_location_2(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/.a/'
         expected_name = ''
         result = fileutils.file_extension(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_extension((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_extension_on_path_and_location_3(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/b/.a.b'
         expected_name = '.b'
         result = fileutils.file_extension(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_extension((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_extension_on_path_and_location_4(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/b/a.tag.gz'
         expected_name = '.gz'
         result = fileutils.file_extension(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_extension((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_extension_on_path_and_location_5(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/b/'
         expected_name = ''
         result = fileutils.file_extension(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_extension((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_extension_on_path_and_location_6(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/f.a'
         expected_name = '.a'
         result = fileutils.file_extension(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_extension((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_extension_on_path_and_location_7(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/'
         expected_name = ''
         result = fileutils.file_extension(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_extension((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_extension_on_path_and_location_8(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'f.a/a.c'
         expected_name = '.c'
         result = fileutils.file_extension(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_extension((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_extension_on_path_and_location_9(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'f.a/'
         expected_name = ''
         result = fileutils.file_extension(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_extension((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_file_extension_on_path_and_location_10(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'tst'
         expected_name = ''
         result = fileutils.file_extension(test_file)
-        assert expected_name == result
+        assert result == expected_name
         result = fileutils.file_extension((os.path.join(test_dir, test_file)))
-        assert expected_name == result
+        assert result == expected_name
 
     def test_splitext_base(self):
         expected = 'path', '.ext'
-        assert expected == fileutils.splitext('C:\\dir\\path.ext')
+        assert fileutils.splitext('C:\\dir\\path.ext') == expected
 
     def test_splitext_directories_even_with_dotted_names_have_no_extension(self):
         import ntpath
         expected = 'path.ext', ''
-        assert expected == fileutils.splitext('C:\\dir\\path.ext' + ntpath.sep)
+        assert fileutils.splitext('C:\\dir\\path.ext' + ntpath.sep) == expected
 
         expected = 'path.ext', ''
-        assert expected == fileutils.splitext('/dir/path.ext/')
+        assert fileutils.splitext('/dir/path.ext/') == expected
 
         expected = 'file', '.txt'
-        assert expected == fileutils.splitext('/some/file.txt')
+        assert fileutils.splitext('/some/file.txt') == expected
 
     def test_splitext_composite_extensions_for_tarballs_are_properly_handled(self):
         expected = 'archive', '.tar.gz'
-        assert expected == fileutils.splitext('archive.tar.gz')
+        assert fileutils.splitext('archive.tar.gz') == expected
 
     def test_splitext_name_base(self):
         expected = 'path', '.ext'
-        assert expected == fileutils.splitext_name('path.ext')
+        assert fileutils.splitext_name('path.ext') == expected
 
     def test_splitext_name_directories_have_no_extension(self):
         expected = 'path.ext', ''
-        assert expected == fileutils.splitext_name('path.ext', is_file=False)
+        assert fileutils.splitext_name('path.ext', is_file=False) == expected
 
         expected = 'file', '.txt'
-        assert expected == fileutils.splitext_name('file.txt')
+        assert fileutils.splitext_name('file.txt') == expected
 
     def test_splitext_name_composite_extensions_for_tarballs_are_properly_handled(self):
         expected = 'archive', '.tar.gz'
-        assert expected == fileutils.splitext_name('archive.tar.gz')
+        assert fileutils.splitext_name('archive.tar.gz') == expected
 
     def test_splitext_name_dotfile_are_properly_handled(self):
         expected = '.dotfile', ''
-        assert expected == fileutils.splitext_name('.dotfile')
+        assert fileutils.splitext_name('.dotfile') == expected
         expected = '.dotfile', '.this'
-        assert expected == fileutils.splitext_name('.dotfile.this')
+        assert fileutils.splitext_name('.dotfile.this') == expected
 
 
 class TestParentDir(FileBasedTesting):
@@ -886,7 +874,7 @@ class TestParentDir(FileBasedTesting):
         expected_name = 'a/.a/'
         result = fileutils.parent_directory(test_file)
         result = fileutils.as_posixpath(result)
-        assert expected_name == result
+        assert result == expected_name
 
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
@@ -898,7 +886,7 @@ class TestParentDir(FileBasedTesting):
         expected_name = 'a/'
         result = fileutils.parent_directory(test_file)
         result = fileutils.as_posixpath(result)
-        assert expected_name == result
+        assert result == expected_name
 
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
@@ -910,7 +898,7 @@ class TestParentDir(FileBasedTesting):
         expected_name = 'a/b/'
         result = fileutils.parent_directory(test_file)
         result = fileutils.as_posixpath(result)
-        assert expected_name == result
+        assert result == expected_name
 
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
@@ -922,7 +910,7 @@ class TestParentDir(FileBasedTesting):
         expected_name = 'a/b/'
         result = fileutils.parent_directory(test_file)
         result = fileutils.as_posixpath(result)
-        assert expected_name == result
+        assert result == expected_name
 
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
@@ -934,7 +922,7 @@ class TestParentDir(FileBasedTesting):
         expected_name = 'a/'
         result = fileutils.parent_directory(test_file)
         result = fileutils.as_posixpath(result)
-        assert expected_name == result
+        assert result == expected_name
 
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
@@ -946,7 +934,7 @@ class TestParentDir(FileBasedTesting):
         expected_name = 'a/'
         result = fileutils.parent_directory(test_file)
         result = fileutils.as_posixpath(result)
-        assert expected_name == result
+        assert result == expected_name
 
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
@@ -958,7 +946,7 @@ class TestParentDir(FileBasedTesting):
         expected_name = '/'
         result = fileutils.parent_directory(test_file)
         result = fileutils.as_posixpath(result)
-        assert expected_name == result
+        assert result == expected_name
 
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
@@ -970,7 +958,7 @@ class TestParentDir(FileBasedTesting):
         expected_name = 'f.a/'
         result = fileutils.parent_directory(test_file)
         result = fileutils.as_posixpath(result)
-        assert expected_name == result
+        assert result == expected_name
 
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
@@ -982,7 +970,7 @@ class TestParentDir(FileBasedTesting):
         expected_name = '/'
         result = fileutils.parent_directory(test_file)
         result = fileutils.as_posixpath(result)
-        assert expected_name == result
+        assert result == expected_name
 
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
@@ -994,7 +982,7 @@ class TestParentDir(FileBasedTesting):
         expected_name = '/'
         result = fileutils.parent_directory(test_file)
         result = fileutils.as_posixpath(result)
-        assert expected_name == result
+        assert result == expected_name
 
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
