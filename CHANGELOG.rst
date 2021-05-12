@@ -5,7 +5,7 @@ vNext
 -----
 
 
-Version 21.5.5
+Version 21.5.12
 ---------------
 
 - Add new function to find a command or shared object file in the PATH (e.g. in
@@ -13,13 +13,16 @@ Version 21.5.5
 - Add new simplified the commoncode.command.execute() function. 
 - Add support for Python 3.10
 - Update tests to cope with Python 3.6 bug https://bugs.python.org/issue26919
-- Adopt new skeleton with configure scripts updates
+- Adopt latest skeleton with configure scripts updates
 
 Breaking API changes:
 
 - commoncode.command.load_shared_library() now ignores the lib_dir argument
 - commoncode.command.execute2() is deprecated and ignores the lib_dir argument
   it is replaced by commoncode.command.execute()
+- In commoncode.testcase get_test_loc() "exists" argument has been renamed to
+  "must_exist". It has also been added to FileDrivenTesting.get_test_loc()
+  method.
 
 
 Version 21.4.28
