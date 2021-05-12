@@ -10,7 +10,7 @@ description: fileutils borrows snippets of code from the shutil copytree,
 homepage_url: http://python.org/
 
 owner: nexB
-license_expression: python
+license_expression: apache-2.0 AND python
 licenses:
 -   file: python.LICENSE
     key: python

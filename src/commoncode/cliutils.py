@@ -1,21 +1,9 @@
 #
-# Copyright (c) nexB Inc. and others.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
-#
-# Visit https://aboutcode.org and https://github.com/nexB/ for support and download.
-# ScanCode is a trademark of nexB Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/commoncode for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
 
 import sys
@@ -255,13 +243,13 @@ def fixed_width_file_name(path, max_length=25):
 
     For example:
     >>> fwfn = fixed_width_file_name('0123456789012345678901234.c')
-    >>> assert '0123456789...5678901234.c' == fwfn
+    >>> assert fwfn == '0123456789...5678901234.c'
     >>> fwfn = fixed_width_file_name('some/path/0123456789012345678901234.c')
-    >>> assert '0123456789...5678901234.c' == fwfn
+    >>> assert fwfn == '0123456789...5678901234.c'
     >>> fwfn = fixed_width_file_name('some/sort.c')
-    >>> assert 'sort.c' == fwfn
+    >>> assert fwfn == 'sort.c'
     >>> fwfn = fixed_width_file_name('some/123456', max_length=5)
-    >>> assert '' == fwfn
+    >>> assert fwfn == ''
     """
     if not path:
         return ''

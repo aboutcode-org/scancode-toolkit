@@ -1,21 +1,9 @@
 #
-# Copyright (c) nexB Inc. and others.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
-#
-# Visit https://aboutcode.org and https://github.com/nexB/ for support and download.
-# ScanCode is a trademark of nexB Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/commoncode for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
 
 import filecmp
@@ -61,10 +49,16 @@ def to_os_native_path(path):
     )
 
 
-def get_test_loc(test_path, test_data_dir, debug=False, exists=True):
+def get_test_loc(
+    test_path,
+    test_data_dir,
+    debug=False,
+    must_exist=True,
+):
     """
     Given a `test_path` relative to the `test_data_dir` directory, return the
     location to a test file or directory for this path. No copy is done.
+    Raise an IOError if `must_exist` is True and the `test_path` does not exists.
     """
     if debug:
         import inspect
@@ -81,7 +75,7 @@ def get_test_loc(test_path, test_data_dir, debug=False, exists=True):
     tpath = to_os_native_path(test_path)
     test_loc = path.abspath(path.join(test_data_dir, tpath))
 
-    if exists and not path.exists(test_loc):
+    if must_exist and not path.exists(test_loc):
         raise IOError("[Errno 2] No such file or directory: "
                       "test_path not found: '%(test_loc)s'" % locals())
 
@@ -96,11 +90,14 @@ class FileDrivenTesting(object):
     """
     test_data_dir = None
 
-    def get_test_loc(self, test_path, copy=False, debug=False):
+    def get_test_loc(self, test_path, copy=False, debug=False, must_exist=True):
         """
         Given a `test_path` relative to the self.test_data_dir directory, return the
         location to a test file or directory for this path. Copy to a temp
         test location if `copy` is True.
+
+        Raise an IOError if `must_exist` is True and the `test_path` does not
+        exists.
         """
         test_data_dir = self.test_data_dir
         if debug:
@@ -108,7 +105,12 @@ class FileDrivenTesting(object):
             caller = inspect.stack()[1][3]
             print('\nself.get_test_loc,%(caller)s,"%(test_path)s"' % locals())
 
-        test_loc = get_test_loc(test_path, test_data_dir, debug=debug)
+        test_loc = get_test_loc(
+            test_path,
+            test_data_dir,
+            debug=debug,
+            must_exist=must_exist,
+        )
         if copy:
             base_name = path.basename(test_loc)
             if filetype.is_file(test_loc):
@@ -127,9 +129,8 @@ class FileDrivenTesting(object):
 
     def get_temp_file(self, extension=None, dir_name='td', file_name='tf'):
         """
-        Return a unique new temporary file location to a non-existing
-        temporary file that can safely be created without a risk of name
-        collision.
+        Return a unique new temporary file location to a non-existing temporary
+        file that can safely be created without a risk of name collision.
         """
         if extension is None:
             extension = '.txt'
@@ -147,7 +148,7 @@ class FileDrivenTesting(object):
         Create a unique new temporary directory location. Create directories
         identified by sub_dir_path if provided in this temporary directory.
         Return the location for this unique directory joined with the
-        sub_dir_path if any.
+        `sub_dir_path` if any.
         """
         # ensure that we have a new unique temp directory for each test run
         global test_run_temp_dir
@@ -268,7 +269,7 @@ def file_cmp(file1, file2, ignore_line_endings=False):
         f2c = f2.read()
         if ignore_line_endings:
             f2c = b'\n'.join(f2c.splitlines(False))
-    assert f1c == f2c
+    assert f2c == f1c
 
 
 def make_non_readable(location):
