@@ -38,7 +38,7 @@ class TestTimeStamp(FileBasedTesting):
         dt = datetime.utcnow()
         ts = time2tstamp(dt)
         dt_from_ts = tstamp2time(ts)
-        assert dt == dt_from_ts
+        assert dt_from_ts == dt
 
     def test_tstamp2time_format(self):
         import re
@@ -48,39 +48,39 @@ class TestTimeStamp(FileBasedTesting):
 
     def test_tstamp2time(self):
         dt_from_ts = tstamp2time('2010-11-12T131415.000016')
-        assert dt_from_ts == datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=16, tzinfo=UTC())
+        assert datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=16, tzinfo=UTC()) == dt_from_ts
 
     def test_tstamp2time2(self):
         dt_from_ts = tstamp2time('20101112T131415.000016')
-        assert dt_from_ts == datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=16, tzinfo=UTC())
+        assert datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=16, tzinfo=UTC()) == dt_from_ts
 
     def test_tstamp2time3(self):
         dt_from_ts = tstamp2time('20101112T131415.000016Z')
-        assert dt_from_ts == datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=16, tzinfo=UTC())
+        assert datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=16, tzinfo=UTC()) == dt_from_ts
 
     def test_tstamp2time4(self):
         dt_from_ts = tstamp2time('2010-11-12T131415')
-        assert dt_from_ts == datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=0, tzinfo=UTC())
+        assert datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=0, tzinfo=UTC()) == dt_from_ts
 
     def test_tstamp2time5(self):
         dt_from_ts = tstamp2time('2010-11-12T13:14:15')
-        assert dt_from_ts == datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=0, tzinfo=UTC())
+        assert datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=0, tzinfo=UTC()) == dt_from_ts
 
     def test_tstamp2time6(self):
         dt_from_ts = tstamp2time('20101112T13:14:15')
-        assert dt_from_ts == datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=0, tzinfo=UTC())
+        assert datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=0, tzinfo=UTC()) == dt_from_ts
 
     def test_tstamp2time7(self):
         dt_from_ts = tstamp2time('20101112T13:14:15Z')
-        assert dt_from_ts == datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=0, tzinfo=UTC())
+        assert datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=0, tzinfo=UTC()) == dt_from_ts
 
     def test_tstamp2time8(self):
         dt_from_ts = tstamp2time('20101112T13:14:15Z')
-        assert dt_from_ts == datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=0, tzinfo=UTC())
+        assert datetime(year=2010, month=11, day=12, hour=13, minute=14, second=15, microsecond=0, tzinfo=UTC()) == dt_from_ts
 
     def test_tstamp2time9(self):
         dt_from_ts = tstamp2time('2010-06-30T21:26:40.000Z')
-        assert dt_from_ts == datetime(year=2010, month=6, day=30, hour=21, minute=26, second=40, microsecond=0, tzinfo=UTC())
+        assert datetime(year=2010, month=6, day=30, hour=21, minute=26, second=40, microsecond=0, tzinfo=UTC()) == dt_from_ts
 
     def test_tstamp2time_raise(self):
         self.assertRaises(ValueError, tstamp2time, '201011A12T13:14:15Z')

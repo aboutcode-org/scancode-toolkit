@@ -133,7 +133,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
             ('/vcs/.svnignore', True),
             ('/vcs/vssver.scc', True),
         ]
-        assert sorted(expected) == sorted(result)
+        assert sorted(result) == sorted(expected)
 
     def test_fileset_is_included_with_default_ignore_does_not_skip_one_char_names(self):
         # use fileset directly to work on strings not locations
@@ -165,7 +165,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
             ('Data', True)
         ]
 
-        assert expected == result
+        assert result == expected
 
     @skipIf(on_mac or on_windows, 'We are only testing on posix for now')
     def test_is_ignored_path_string_skip_special(self):

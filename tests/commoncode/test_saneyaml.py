@@ -23,4 +23,4 @@ class TestSaneyaml(FileBasedTesting):
         test_file_without_tag = self.get_test_loc('saneyaml/metadata1.notag')
         with_tags = saneyaml.load(open(test_file_with_tag, 'rb').read())
         without_tags = saneyaml.load(open(test_file_without_tag, 'rb').read())
-        assert with_tags == without_tags
+        assert without_tags == with_tags

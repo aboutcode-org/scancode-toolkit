@@ -28,11 +28,11 @@ class TypeTest(commoncode.testcase.FileBasedTesting):
 
     def test_get_size_on_file(self):
         test_file = self.get_test_loc('filetype/size/Image1.eps')
-        assert 12388 == filetype.get_size(test_file)
+        assert filetype.get_size(test_file) == 12388
 
     def test_get_size_on_directory(self):
         test_dir = self.get_test_loc('filetype/size', copy=True)
-        assert 12400 == filetype.get_size(test_dir)
+        assert filetype.get_size(test_dir) == 12400
 
     def test_get_type(self):
         test_dir = self.extract_test_tar('filetype/types.tar', verbatim=True)
@@ -60,12 +60,12 @@ class TypeTest(commoncode.testcase.FileBasedTesting):
             expected += [ ('2-SYMTYPE', 'l'), ('6-FIFOTYPE', 's'), ]
 
         try:
-            assert sorted(expected) == sorted(results)
+            assert sorted(results) == sorted(expected)
         except Exception as e:
             if on_windows and py3:
                 # On some Windows symlinkes are detected OK (Windows 10?) but not in Windows 7
                 expected += [ ('2-SYMTYPE', 'l') ]
-                assert sorted(expected) == sorted(results)
+                assert sorted(results) == sorted(expected)
             else:
                 raise e
 
@@ -128,24 +128,24 @@ class CountTest(FileBasedTesting):
 
     def test_get_file_count_with_empty_dir(self):
         test_dir = self.get_temp_dir()
-        assert 0 == filetype.get_file_count(test_dir)
+        assert filetype.get_file_count(test_dir) == 0
 
     def test_get_file_count_with_single_file(self):
         test_file = self.get_temp_file()
         with open(test_file, 'w') as f:
             f.write(u'')
         assert filetype.is_file(test_file)
-        assert 1 == filetype.get_file_count(test_file)
+        assert filetype.get_file_count(test_file) == 1
 
     def test_get_file_count_with_empty_folders(self):
         test_dir = self.get_test_count_dir()
         result = filetype.get_file_count(test_dir)
-        assert 9 == result
+        assert result == 9
 
     def test_get_file_size_and_count(self):
         test_dir = self.get_test_count_dir()
         result = filetype.get_size(test_dir)
-        assert 18 == result
+        assert result == 18
 
     def test_get_file_size(self):
         test_dir = self.get_test_count_dir()
@@ -168,7 +168,7 @@ class CountTest(FileBasedTesting):
         )
         for test_file, size in tests:
             result = filetype.get_size(os.path.join(test_dir, test_file))
-            assert size == result
+            assert result == size
 
     def test_get_file_count(self):
         test_dir = self.get_test_count_dir()
@@ -191,7 +191,7 @@ class CountTest(FileBasedTesting):
         )
         for test_file, count in tests:
             result = filetype.get_file_count(os.path.join(test_dir, test_file))
-            assert count == result
+            assert result == count
 
 
 def SymlinkTest(FileBasedTesting):

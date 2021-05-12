@@ -120,4 +120,4 @@ class TestVersionHint(unittest.TestCase):
             expected = data[path]
             if not expected.lower().startswith('v'):
                 expected = 'v ' + expected
-            assert expected == version.hint(path)
+            assert version.hint(path) == expected

@@ -19,7 +19,7 @@ class TestFunctional(TestCase):
     def test_flatten(self):
         expected = [7, 6, 5, 4, 'a', 3, 3, 2, 1]
         test = flatten([7, (6, [5, [4, ["a"], 3]], 3), 2, 1])
-        assert expected == test
+        assert test == expected
 
     def test_flatten_generator(self):
 
@@ -29,12 +29,12 @@ class TestFunctional(TestCase):
 
         expected = [0, 1, 2, 3, 4, 0, 1, 2, 3, 4]
         test = flatten(gen())
-        assert expected == test
+        assert test == expected
 
     def test_flatten_empties(self):
         expected = ['a']
         test = flatten([[], (), ['a']])
-        assert expected == test
+        assert test == expected
 
     def test_partial(self):
 
@@ -42,7 +42,7 @@ class TestFunctional(TestCase):
             pass
 
         wrapped = partial(test_func, a=2)
-        assert 'test_func' == wrapped.__name__
+        assert wrapped.__name__ == 'test_func'
 
     def test_memoized(self):
         call_count = Counter()
@@ -52,12 +52,12 @@ class TestFunctional(TestCase):
             call_count[a] += 1
 
         test_func(1)
-        assert call_count[1] == 1
+        assert 1 == call_count[1]
         test_func(1)
-        assert call_count[1] == 1
+        assert 1 == call_count[1]
         test_func(2)
-        assert call_count[2] == 1
+        assert 1 == call_count[2]
         test_func(2)
-        assert call_count[2] == 1
+        assert 1 == call_count[2]
         test_func(2)
-        assert call_count[1] == 1
+        assert 1 == call_count[1]

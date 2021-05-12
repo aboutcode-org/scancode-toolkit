@@ -26,68 +26,68 @@ class TestHash(FileBasedTesting):
 
     def test_get_hasher(self):
         h = get_hasher(160)
-        assert u'hvfkN_qlp_zhXR3cuerq6jd2Z7g=' == h(b'a').b64digest()
-        assert u'4MkDWJjdUvxlxBRUzsnE0mEb-zc=' == h(b'aa').b64digest()
-        assert u'fiQN50-x7Qj6CNOAY_amqRRiqBU=' == h(b'aaa').b64digest()
+        assert h(b'a').b64digest() == u'hvfkN_qlp_zhXR3cuerq6jd2Z7g='
+        assert h(b'aa').b64digest() == u'4MkDWJjdUvxlxBRUzsnE0mEb-zc='
+        assert h(b'aaa').b64digest() == u'fiQN50-x7Qj6CNOAY_amqRRiqBU='
 
     def test_short_hashes(self):
         h = get_hasher(32)
-        assert u'0cc175b9' == h(b'a').hexdigest()
-        assert u'4124bc0a' == h(b'aa').hexdigest()
+        assert h(b'a').hexdigest() == u'0cc175b9'
+        assert h(b'aa').hexdigest() == u'4124bc0a'
         h = get_hasher(64)
-        assert u'4124bc0a9335c27f' == h(b'aa').hexdigest()
+        assert h(b'aa').hexdigest() == u'4124bc0a9335c27f'
 
     def test_sha1_checksum_on_text(self):
         test_file = self.get_test_loc('hash/dir1/a.txt')
-        assert sha1(test_file) == u'3ca69e8d6c234a469d16ac28a4a658c92267c423'
+        assert u'3ca69e8d6c234a469d16ac28a4a658c92267c423' == sha1(test_file)
 
     def test_sha1_checksum_on_text2(self):
         test_file = self.get_test_loc('hash/dir2/a.txt')
-        assert sha1(test_file) == u'3ca69e8d6c234a469d16ac28a4a658c92267c423'
+        assert u'3ca69e8d6c234a469d16ac28a4a658c92267c423' == sha1(test_file)
 
     def test_sha1_checksum_on_dos_text(self):
         test_file = self.get_test_loc('hash/dir2/dos.txt')
-        assert sha1(test_file) == u'a71718fb198630ae8ba32926015d8555a03cb06c'
+        assert u'a71718fb198630ae8ba32926015d8555a03cb06c' == sha1(test_file)
 
     def test_sha1_checksum_base64(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
-        assert b64sha1(test_file) == u'NKxUZdSKmwT8J18JvCIwZg349Pc='
+        assert u'NKxUZdSKmwT8J18JvCIwZg349Pc=' == b64sha1(test_file)
 
     def test_md5_checksum_on_text(self):
         test_file = self.get_test_loc('hash/dir1/a.txt')
-        assert md5(test_file) == u'40c53c58fdafacc83cfff6ee3d2f6d69'
+        assert u'40c53c58fdafacc83cfff6ee3d2f6d69' == md5(test_file)
 
     def test_md5_checksum_on_text2(self):
         test_file = self.get_test_loc('hash/dir2/a.txt')
-        assert md5(test_file) == u'40c53c58fdafacc83cfff6ee3d2f6d69'
+        assert u'40c53c58fdafacc83cfff6ee3d2f6d69' == md5(test_file)
 
     def test_md5_checksum_on_dos_text(self):
         test_file = self.get_test_loc('hash/dir2/dos.txt')
-        assert md5(test_file) == u'095f5068940e41df9add5d4cc396c181'
+        assert u'095f5068940e41df9add5d4cc396c181' == md5(test_file)
 
     def test_md5_checksum(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
-        assert md5(test_file) == u'4760fb467f1ebf3b0aeace4a3926f1a4'
+        assert u'4760fb467f1ebf3b0aeace4a3926f1a4' == md5(test_file)
 
     def test_sha1_checksum(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
-        assert sha1(test_file) == u'34ac5465d48a9b04fc275f09bc2230660df8f4f7'
+        assert u'34ac5465d48a9b04fc275f09bc2230660df8f4f7' == sha1(test_file)
 
     def test_sha256_checksum(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
-        assert sha256(test_file) == u'1b598db6fee8f1ec7bb919c0adf68956f3d20af8c9934a9cf2db52e1347efd35'
+        assert u'1b598db6fee8f1ec7bb919c0adf68956f3d20af8c9934a9cf2db52e1347efd35' == sha256(test_file)
 
     def test_sha512_checksum(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
-        assert sha512(test_file) == u'5be9e01cd20ff288fd3c3fc46be5c2747eaa2c526197125330947a95cdb418222176b182a4680f0e435ba8f114363c45a67b30eed9a9222407e63ccbde46d3b4'
+        assert u'5be9e01cd20ff288fd3c3fc46be5c2747eaa2c526197125330947a95cdb418222176b182a4680f0e435ba8f114363c45a67b30eed9a9222407e63ccbde46d3b4' == sha512(test_file)
 
     def test_checksum_sha1(self):
         test_file = self.get_test_loc('hash/dir1/a.txt')
-        assert checksum(test_file, 'sha1') == '3ca69e8d6c234a469d16ac28a4a658c92267c423'
+        assert '3ca69e8d6c234a469d16ac28a4a658c92267c423' == checksum(test_file, 'sha1')
 
     def test_checksum_md5(self):
         test_file = self.get_test_loc('hash/dir1/a.txt')
-        assert checksum(test_file, 'md5') == '40c53c58fdafacc83cfff6ee3d2f6d69'
+        assert '40c53c58fdafacc83cfff6ee3d2f6d69' == checksum(test_file, 'md5')
 
     def test_multi_checksums(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
@@ -97,7 +97,7 @@ class TestHash(FileBasedTesting):
             ('sha256', u'1b598db6fee8f1ec7bb919c0adf68956f3d20af8c9934a9cf2db52e1347efd35'),
         ])
         result = multi_checksums(test_file, 'md5 sha1 sha256'.split())
-        assert expected == result
+        assert result == expected
 
     def test_multi_checksums_custom(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
@@ -105,7 +105,7 @@ class TestHash(FileBasedTesting):
         expected = dict([
             ('sha512', u'5be9e01cd20ff288fd3c3fc46be5c2747eaa2c526197125330947a95cdb418222176b182a4680f0e435ba8f114363c45a67b30eed9a9222407e63ccbde46d3b4'),
         ])
-        assert expected == result
+        assert result == expected
 
     def test_multi_checksums_shattered1(self):
         test_file = self.get_test_loc('hash/sha1-collision/shattered-1.pdf')
@@ -117,7 +117,7 @@ class TestHash(FileBasedTesting):
             ('sha1_git', 'ba9aaa145ccd24ef760cf31c74d8f7ca1a2e47b0'),
         ])
         result = multi_checksums(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_multi_checksums_shattered2(self):
         test_file = self.get_test_loc('hash/sha1-collision/shattered-2.pdf')
@@ -130,7 +130,7 @@ class TestHash(FileBasedTesting):
             ('sha1_git', 'b621eeccd5c7edac9b7dcba35a8d5afd075e24f2'),
         ])
         result = multi_checksums(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_sha1_git_checksum(self):
         # $ pushd tests/commoncode/data && for f in `find hash/ -type f` ;
@@ -148,4 +148,4 @@ class TestHash(FileBasedTesting):
         for test_file, expected_sha1_git in tests:
             test_file = self.get_test_loc(test_file)
             # test that we match the git hash-object
-            assert expected_sha1_git == sha1_git(test_file)
+            assert sha1_git(test_file) == expected_sha1_git

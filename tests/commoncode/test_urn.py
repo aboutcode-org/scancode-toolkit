@@ -15,23 +15,23 @@ class URNTestCase(unittest.TestCase):
 
     def test_encode_license(self):
         u1 = urn.encode('license', key='somekey')
-        assert 'urn:dje:license:somekey' == u1
+        assert u1 == 'urn:dje:license:somekey'
 
     def test_encode_owner(self):
         u1 = urn.encode('owner', name='somekey')
-        assert 'urn:dje:owner:somekey' == u1
+        assert u1 == 'urn:dje:owner:somekey'
 
     def test_encode_component(self):
         u1 = urn.encode('component', name='name', version='version')
-        assert 'urn:dje:component:name:version' == u1
+        assert u1 == 'urn:dje:component:name:version'
 
     def test_encode_component_no_version(self):
         u1 = urn.encode('component', name='name', version='')
-        assert 'urn:dje:component:name:' == u1
+        assert u1 == 'urn:dje:component:name:'
 
     def test_encode_license_with_extra_fields_are_ignored(self):
         u1 = urn.encode('license', key='somekey', junk='somejunk')
-        assert 'urn:dje:license:somekey' == u1
+        assert u1 == 'urn:dje:license:somekey'
 
     def test_encode_missing_field_raise_keyerror(self):
         with self.assertRaises(KeyError):
@@ -48,51 +48,51 @@ class URNTestCase(unittest.TestCase):
     def test_encode_component_with_spaces_are_properly_quoted(self):
         u1 = urn.encode('component', name='name space',
                         version='version space')
-        assert 'urn:dje:component:name+space:version+space' == u1
+        assert u1 == 'urn:dje:component:name+space:version+space'
 
     def test_encode_leading_and_trailing_spaces_are_trimmed_and_ignored(self):
         u1 = urn.encode(' component ', name=' name space    ',
                         version='''  version space ''')
-        assert 'urn:dje:component:name+space:version+space' == u1
+        assert u1 == 'urn:dje:component:name+space:version+space'
 
     def test_encode_component_with_semicolon_are_properly_quoted(self):
         u1 = urn.encode('component', name='name:', version=':version')
-        assert 'urn:dje:component:name%3A:%3Aversion' == u1
+        assert u1 == 'urn:dje:component:name%3A:%3Aversion'
 
     def test_encode_component_with_plus_are_properly_quoted(self):
         u1 = urn.encode('component', name='name+', version='version+')
-        assert 'urn:dje:component:name%2B:version%2B' == u1
+        assert u1 == 'urn:dje:component:name%2B:version%2B'
 
     def test_encode_component_with_percent_are_properly_quoted(self):
         u1 = urn.encode('component', name='name%', version='version%')
-        assert 'urn:dje:component:name%25:version%25' == u1
+        assert u1 == 'urn:dje:component:name%25:version%25'
 
     def test_encode_object_type_case_is_not_significant(self):
         u1 = urn.encode('license', key='key')
         u2 = urn.encode('lICENSe', key='key')
-        assert u1 == u2
+        assert u2 == u1
 
     def test_decode_component(self):
         u = 'urn:dje:component:name:version'
         parsed = ('component', {'name': 'name', 'version': 'version'})
-        assert parsed == urn.decode(u)
+        assert urn.decode(u) == parsed
 
     def test_decode_license(self):
         u = 'urn:dje:license:lic'
         parsed = ('license', {'key': 'lic'})
-        assert parsed == urn.decode(u)
+        assert urn.decode(u) == parsed
 
     def test_decode_org(self):
         u = 'urn:dje:owner:name'
         parsed = ('owner', {'name': 'name'})
-        assert parsed == urn.decode(u)
+        assert urn.decode(u) == parsed
 
     def test_decode_build_is_idempotent(self):
         u1 = urn.encode('component', owner__name='org%', name='name%',
                        version='version%')
         m, f = urn.decode(u1)
         u3 = urn.encode(m, **f)
-        assert u1 == u3
+        assert u3 == u1
 
     def test_decode_raise_exception_if_incorrect_prefix(self):
         with self.assertRaises(urn.URNValidationError):
@@ -142,5 +142,5 @@ class URNTestCase(unittest.TestCase):
         object_type = 'component'
         fields = {'name': 'SIP Servlets (MSS)', 'version': 'v 1.4.0.FINAL'}
         encoded = 'urn:dje:component:SIP+Servlets+%28MSS%29:v+1.4.0.FINAL'
-        assert encoded == urn.encode(object_type, **fields)
-        assert object_type, fields == urn.decode(encoded)
+        assert urn.encode(object_type, **fields) == encoded
+        assert urn.decode(encoded) == (object_type, fields)

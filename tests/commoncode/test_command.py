@@ -30,9 +30,9 @@ class TestCommand(FileBasedTesting):
         rc, stdout, stderr = command.execute(
             python, ['-c', 'print("non ascii: été just passed it !")']
         )
-        assert '' == stderr
-        assert 'non ascii: ete just passed it !' == stdout
-        assert 0 == rc
+        assert stderr == ''
+        assert stdout == 'non ascii: ete just passed it !'
+        assert rc == 0
         # do not throw exception
         stdout.encode('ascii')
 
@@ -41,9 +41,9 @@ class TestCommand(FileBasedTesting):
         rc, stdout, stderr = command.execute(
             python, ['-c', 'print("foobar")']
         )
-        assert '' == stderr
-        assert 'foobar' == stdout
-        assert 0 == rc
+        assert stderr == ''
+        assert stdout == 'foobar'
+        assert rc == 0
         # do not throw exception
         stdout.encode('ascii')
 
@@ -52,9 +52,9 @@ class TestCommand(FileBasedTesting):
         rc, stdout, stderr = command.execute2(
             python, ['-c', 'print("foobar")']
         )
-        assert '' == stderr
-        assert 'foobar' == stdout
-        assert 0 == rc
+        assert stderr == ''
+        assert stdout == 'foobar'
+        assert rc == 0
         # do not throw exception
         stdout.encode('ascii')
 
@@ -64,23 +64,23 @@ class TestCommand(FileBasedTesting):
 
         new_path = b'foo\xb1bar'
         updated_path = command.update_path_var(existing_path_var, new_path)
-        assert 'foo\udcb1bar:/usr/bin:/usr/local' == updated_path
+        assert updated_path == 'foo\udcb1bar:/usr/bin:/usr/local'
 
         new_path = u'/bin/foo\udcb1bar'
         updated_path = command.update_path_var(updated_path, new_path)
-        assert '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local' == updated_path
+        assert updated_path == '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'
 
         new_path = b'/bin/foo\xb1bar'
         updated_path = command.update_path_var(updated_path, new_path)
-        assert '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local' == updated_path
+        assert updated_path == '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'
 
         new_path = u'foo\udcb1bar'
         updated_path = command.update_path_var(updated_path, new_path)
-        assert '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local' == updated_path
+        assert updated_path == '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'
 
         new_path = b'foo\xb1bar'
         updated_path = command.update_path_var(updated_path, new_path)
-        assert '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local' == updated_path
+        assert updated_path == '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'
 
     @skipIf(not on_mac, 'Mac only')
     def test_update_path_var_on_mac(self):
@@ -88,15 +88,15 @@ class TestCommand(FileBasedTesting):
 
         new_path = u'foo\udcb1bar'
         updated_path = command.update_path_var(existing_path_var, new_path)
-        assert 'foo\udcb1bar:/usr/bin:/usr/local' == updated_path
+        assert updated_path == 'foo\udcb1bar:/usr/bin:/usr/local'
 
         new_path = b'/bin/foo\xb1bar'
         updated_path = command.update_path_var(updated_path, new_path)
-        assert '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local' == updated_path
+        assert updated_path == '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'
 
         new_path = u'foo\udcb1bar'
         updated_path = command.update_path_var(updated_path, new_path)
-        assert '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local' == updated_path
+        assert updated_path == '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'
 
     @skipIf(not on_windows, 'Windows only')
     def test_update_path_var_on_windows(self):
@@ -104,11 +104,11 @@ class TestCommand(FileBasedTesting):
 
         new_path = u'foo\udcb1bar'
         updated_path = command.update_path_var(existing_path_var, new_path)
-        assert u'foo\udcb1bar;c:\\windows;C:Program Files' == updated_path
+        assert updated_path == u'foo\udcb1bar;c:\\windows;C:Program Files'
 
         new_path = u'foo\udcb1bar'
         updated_path = command.update_path_var(updated_path, new_path)
-        assert u'foo\udcb1bar;c:\\windows;C:Program Files' == updated_path
+        assert updated_path == u'foo\udcb1bar;c:\\windows;C:Program Files'
 
     def test_searchable_paths(self):
         d1 = self.get_temp_dir('foo')
@@ -123,25 +123,25 @@ class TestCommand(FileBasedTesting):
             # macOS somehow adds a /private to the paths in the CI as a side-
             # effect of calling "realpath" and likely resolving links
             expected = f'/private{d1}', f'/private{d2}', f'/private{d2}', f'/private{d1}'
-        assert command.searchable_paths(env_vars=env_vars) == expected
+        assert expected == command.searchable_paths(env_vars=env_vars)
 
     def test_find_in_path(self):
         d1 = self.get_temp_dir('foo')
         d2 = self.get_temp_dir('bar')
         filename = 'baz'
 
-        assert command.find_in_path(filename, searchable_paths=(d1, d2,)) == None
+        assert None == command.find_in_path(filename, searchable_paths=(d1, d2,))
 
         f2 = os.path.join(d2, filename)
         with open(f2, 'w') as o:
             o.write('some')
 
-        assert command.find_in_path(filename, searchable_paths=(d1, d2,)) == f2
-        assert command.find_in_path(filename, searchable_paths=(d2, d1,)) == f2
+        assert f2 == command.find_in_path(filename, searchable_paths=(d1, d2,))
+        assert f2 == command.find_in_path(filename, searchable_paths=(d2, d1,))
 
         f1 = os.path.join(d1, filename)
         with open(f1, 'w') as o:
             o.write('some')
 
-        assert command.find_in_path(filename, searchable_paths=(d1, d2,)) == f1
-        assert command.find_in_path(filename, searchable_paths=(d2, d1,)) == f2
+        assert f1 == command.find_in_path(filename, searchable_paths=(d1, d2,))
+        assert f2 == command.find_in_path(filename, searchable_paths=(d2, d1,))
