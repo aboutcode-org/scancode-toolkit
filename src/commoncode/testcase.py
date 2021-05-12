@@ -269,7 +269,7 @@ def file_cmp(file1, file2, ignore_line_endings=False):
         f2c = f2.read()
         if ignore_line_endings:
             f2c = b'\n'.join(f2c.splitlines(False))
-    assert f1c == f2c
+    assert f2c == f1c
 
 
 def make_non_readable(location):

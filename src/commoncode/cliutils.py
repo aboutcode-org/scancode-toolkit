@@ -243,13 +243,13 @@ def fixed_width_file_name(path, max_length=25):
 
     For example:
     >>> fwfn = fixed_width_file_name('0123456789012345678901234.c')
-    >>> assert '0123456789...5678901234.c' == fwfn
+    >>> assert fwfn == '0123456789...5678901234.c'
     >>> fwfn = fixed_width_file_name('some/path/0123456789012345678901234.c')
-    >>> assert '0123456789...5678901234.c' == fwfn
+    >>> assert fwfn == '0123456789...5678901234.c'
     >>> fwfn = fixed_width_file_name('some/sort.c')
-    >>> assert 'sort.c' == fwfn
+    >>> assert fwfn == 'sort.c'
     >>> fwfn = fixed_width_file_name('some/123456', max_length=5)
-    >>> assert '' == fwfn
+    >>> assert fwfn == ''
     """
     if not path:
         return ''
