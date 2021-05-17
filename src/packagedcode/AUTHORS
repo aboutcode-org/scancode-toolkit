@@ -201,6 +201,7 @@ Other contributors, listed alphabetically, are:
 * Robert Simmons -- Standard ML lexer
 * Kirill Simonov -- YAML lexer
 * Corbin Simpson -- Monte lexer
+* Ville Skyttä -- ASCII armored lexer
 * Alexander Smishlajev -- Visual FoxPro lexer
 * Steve Spigarelli -- XQuery lexer
 * Jerome St-Louis -- eC lexer
