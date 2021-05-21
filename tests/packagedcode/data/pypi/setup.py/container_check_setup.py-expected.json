@@ -13,11 +13,12 @@
       "type": "person",
       "role": "author",
       "name": "Ian Main",
-      "email": "imain@redhat.com",
-      "url": "https://github.com/imain/container-check"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
+    "containers update rpm yum",
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Topic :: System :: Archiving :: Packaging",
@@ -52,7 +53,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/container-check@1.0.6",
-  "repository_homepage_url": "https://pypi.org/project/container-check",
-  "repository_download_url": "https://pypi.io/packages/source/c/container-check/container-check-1.0.6.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/container-check/1.0.6/json"
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/c/container-check/container-check-1.0.6.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/container-check/1.0.6/json"
 }

@@ -13,11 +13,13 @@
       "type": "person",
       "role": "author",
       "name": "Marc Abramowitz",
-      "email": "msabramo@gmail.com",
-      "url": "https://github.com/msabramo/setuppycheck"
+      "email": null,
+      "url": null
     }
   ],
-  "keywords": [],
+  "keywords": [
+    "setup.py pin dependencies"
+  ],
   "homepage_url": "https://github.com/msabramo/setuppycheck",
   "download_url": null,
   "size": null,
@@ -31,8 +33,7 @@
   "copyright": null,
   "license_expression": "mit",
   "declared_license": {
-    "license": "MIT",
-    "classifiers": []
+    "license": "MIT"
   },
   "notice_text": null,
   "root_path": null,
@@ -40,7 +41,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/setuppycheck",
-  "repository_homepage_url": "https://pypi.org/project/setuppycheck",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": null,
-  "api_data_url": "http://pypi.python.org/pypi/setuppycheck/json"
+  "api_data_url": "https://pypi.org/pypi/setuppycheck/json"
 }

@@ -13,8 +13,8 @@
       "type": "person",
       "role": "author",
       "name": "Chromium Authors",
-      "email": "chromium-dev@googlegroups.com",
-      "url": "http://code.google.com/p/gyp"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [],
@@ -30,17 +30,14 @@
   "vcs_url": null,
   "copyright": null,
   "license_expression": null,
-  "declared_license": {
-    "license": null,
-    "classifiers": []
-  },
+  "declared_license": {},
   "notice_text": null,
   "root_path": null,
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/gyp@0.1",
-  "repository_homepage_url": "https://pypi.org/project/gyp",
-  "repository_download_url": "https://pypi.io/packages/source/g/gyp/gyp-0.1.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/gyp/0.1/json"
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/g/gyp/gyp-0.1.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/gyp/0.1/json"
 }

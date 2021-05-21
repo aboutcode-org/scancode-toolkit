@@ -14,7 +14,7 @@
       "role": "author",
       "name": "Beyang Liu",
       "email": null,
-      "url": "http://github.com/sourcegraph/pydep"
+      "url": null
     }
   ],
   "keywords": [],
@@ -30,17 +30,14 @@
   "vcs_url": null,
   "copyright": null,
   "license_expression": null,
-  "declared_license": {
-    "license": null,
-    "classifiers": []
-  },
+  "declared_license": {},
   "notice_text": null,
   "root_path": null,
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/pydep@0.0",
-  "repository_homepage_url": "https://pypi.org/project/pydep",
-  "repository_download_url": "https://pypi.io/packages/source/p/pydep/pydep-0.0.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/pydep/0.0/json"
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/p/pydep/pydep-0.0.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/pydep/0.0/json"
 }

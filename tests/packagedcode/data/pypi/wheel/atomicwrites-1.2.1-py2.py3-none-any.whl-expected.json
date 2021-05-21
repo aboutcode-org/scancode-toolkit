@@ -1,0 +1,56 @@
+{
+  "type": "pypi",
+  "namespace": null,
+  "name": "atomicwrites",
+  "version": "1.2.1",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Python",
+  "description": "===================\npython-atomicwrites\n===================\n\n.. image:: https://travis-ci.org/untitaker/python-atomicwrites.svg?branch=master\n    :target: https://travis-ci.org/untitaker/python-atomicwrites\n\n.. image:: https://ci.appveyor.com/api/projects/status/vadc4le3c27to59x/branch/master?svg=true\n   :target: https://ci.appveyor.com/project/untitaker/python-atomicwrites/branch/master\n\nAtomic file writes.\n\n.. code-block:: python\n\n    from atomicwrites import atomic_write\n\n    with atomic_write('foo.txt', overwrite=True) as f:\n        f.write('Hello world.')\n        # \"foo.txt\" doesn't exist yet.\n\n    # Now it does.\n\n\nFeatures that distinguish it from other similar libraries (see `Alternatives and Credit`_):\n\n- Race-free assertion that the target file doesn't yet exist. This can be\n  controlled with the ``overwrite`` parameter.\n\n- Windows support, although not well-tested. The MSDN resources are not very\n  explicit about which operations are atomic. I'm basing my assumptions off `a\n  comment\n  <https://social.msdn.microsoft.com/Forums/windowsdesktop/en-US/449bb49d-8acc-48dc-a46f-0760ceddbfc3/movefileexmovefilereplaceexisting-ntfs-same-volume-atomic?forum=windowssdk#a239bc26-eaf0-4920-9f21-440bd2be9cc8>`_\n  by `Doug Crook\n  <https://social.msdn.microsoft.com/Profile/doug%20e.%20cook>`_, who appears\n  to be a Microsoft employee:\n\n      FAQ: Is MoveFileEx atomic\n      Frequently asked question: Is MoveFileEx atomic if the existing and new\n      files are both on the same drive?\n\n      The simple answer is \"usually, but in some cases it will silently fall-back\n      to a non-atomic method, so don't count on it\".\n\n      The implementation of MoveFileEx looks something like this: [...]\n\n      The problem is if the rename fails, you might end up with a CopyFile, which\n      is definitely not atomic.\n\n      If you really need atomic-or-nothing, you can try calling\n      NtSetInformationFile, which is unsupported but is much more likely to be\n      atomic. \n\n- Simple high-level API that wraps a very flexible class-based API.\n\n- Consistent error handling across platforms.\n\n\nHow it works\n============\n\nIt uses a temporary file in the same directory as the given path. This ensures\nthat the temporary file resides on the same filesystem.\n\nThe temporary file will then be atomically moved to the target location: On\nPOSIX, it will use ``rename`` if files should be overwritten, otherwise a\ncombination of ``link`` and ``unlink``. On Windows, it uses MoveFileEx_ through\nstdlib's ``ctypes`` with the appropriate flags.\n\nNote that with ``link`` and ``unlink``, there's a timewindow where the file\nmight be available under two entries in the filesystem: The name of the\ntemporary file, and the name of the target file.\n\nAlso note that the permissions of the target file may change this way. In some\nsituations a ``chmod`` can be issued without any concurrency problems, but\nsince that is not always the case, this library doesn't do it by itself.\n\n.. _MoveFileEx: https://msdn.microsoft.com/en-us/library/windows/desktop/aa365240%28v=vs.85%29.aspx\n\nfsync\n-----\n\nOn POSIX, ``fsync`` is invoked on the temporary file after it is written (to\nflush file content and metadata), and on the parent directory after the file is\nmoved (to flush filename).\n\n``fsync`` does not take care of disks' internal buffers, but there don't seem\nto be any standard POSIX APIs for that. On OS X, ``fcntl`` is used with\n``F_FULLFSYNC`` instead of ``fsync`` for that reason.\n\nOn Windows, `_commit <https://msdn.microsoft.com/en-us/library/17618685.aspx>`_\nis used, but there are no guarantees about disk internal buffers.\n\nAlternatives and Credit\n=======================\n\nAtomicwrites is directly inspired by the following libraries (and shares a\nminimal amount of code):\n\n- The Trac project's `utility functions\n  <http://www.edgewall.org/docs/tags-trac-0.11.7/epydoc/trac.util-pysrc.html>`_,\n  also used in `Werkzeug <http://werkzeug.pocoo.org/>`_ and\n  `mitsuhiko/python-atomicfile\n  <https://github.com/mitsuhiko/python-atomicfile>`_. The idea to use\n  ``ctypes`` instead of ``PyWin32`` originated there.\n\n- `abarnert/fatomic <https://github.com/abarnert/fatomic>`_. Windows support\n  (based on ``PyWin32``) was originally taken from there.\n\nOther alternatives to atomicwrites include:\n\n- `sashka/atomicfile <https://github.com/sashka/atomicfile>`_. Originally I\n  considered using that, but at the time it was lacking a lot of features I\n  needed (Windows support, overwrite-parameter, overriding behavior through\n  subclassing).\n\n- The `Boltons library collection <https://github.com/mahmoud/boltons>`_\n  features a class for atomic file writes, which seems to have a very similar\n  ``overwrite`` parameter. It is lacking Windows support though.\n\nLicense\n=======\n\nLicensed under the MIT, see ``LICENSE``.",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Markus Unterwaditzer",
+      "email": "markus@unterwaditzer.net",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: Implementation :: CPython"
+  ],
+  "homepage_url": "https://github.com/untitaker/python-atomicwrites",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "mit",
+  "declared_license": {
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:pypi/atomicwrites@1.2.1",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/a/atomicwrites/atomicwrites-1.2.1.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json"
+}

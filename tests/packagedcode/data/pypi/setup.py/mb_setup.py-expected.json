@@ -13,8 +13,8 @@
       "type": "person",
       "role": "author",
       "name": "MirrorBrain project",
-      "email": "info@mirrorbrain.org",
-      "url": "http://mirrorbrain.org/"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [],
@@ -31,8 +31,7 @@
   "copyright": null,
   "license_expression": "gpl-2.0",
   "declared_license": {
-    "license": "GPLv2",
-    "classifiers": []
+    "license": "GPLv2"
   },
   "notice_text": null,
   "root_path": null,
@@ -40,7 +39,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/mb@2.19.0",
-  "repository_homepage_url": "https://pypi.org/project/mb",
-  "repository_download_url": "https://pypi.io/packages/source/m/mb/mb-2.19.0.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/mb/2.19.0/json"
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/m/mb/mb-2.19.0.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/mb/2.19.0/json"
 }

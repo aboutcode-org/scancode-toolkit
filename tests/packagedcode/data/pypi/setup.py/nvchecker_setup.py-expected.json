@@ -13,11 +13,12 @@
       "type": "person",
       "role": "author",
       "name": "lilydjwg",
-      "email": "lilydjwg@gmail.com",
-      "url": "https://github.com/lilydjwg/nvchecker"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
+    "new version build check",
     "Development Status :: 4 - Beta",
     "Environment :: Console",
     "Intended Audience :: Developers",
@@ -59,7 +60,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/nvchecker",
-  "repository_homepage_url": "https://pypi.org/project/nvchecker",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": null,
-  "api_data_url": "http://pypi.python.org/pypi/nvchecker/json"
+  "api_data_url": "https://pypi.org/pypi/nvchecker/json"
 }

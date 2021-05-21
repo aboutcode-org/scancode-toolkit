@@ -1,0 +1,69 @@
+{
+  "type": "pypi",
+  "namespace": null,
+  "name": "pymongo",
+  "version": "3.6.1",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Python",
+  "description": "Python driver for MongoDB <http://www.mongodb.org>\n=======\nPyMongo\n=======\n:Info: See `the mongo site <http://www.mongodb.org>`_ for more information. See `github <http://github.com/mongodb/mongo-python-driver/tree>`_ for the latest source.\n:Author: Mike Dirolf\n:Maintainer: Bernie Hackett <bernie@mongodb.com>\n\nAbout\n=====\n\nThe PyMongo distribution contains tools for interacting with MongoDB\ndatabase from Python.  The ``bson`` package is an implementation of\nthe `BSON format <http://bsonspec.org>`_ for Python. The ``pymongo``\npackage is a native Python driver for MongoDB. The ``gridfs`` package\nis a `gridfs\n<http://www.mongodb.org/display/DOCS/GridFS+Specification>`_\nimplementation on top of ``pymongo``.\n\nPyMongo supports MongoDB 2.6, 3.0, 3.2, 3.4, and 3.6.\n\nSupport / Feedback\n==================\n\nFor issues with, questions about, or feedback for PyMongo, please look into\nour `support channels <http://www.mongodb.org/about/support>`_. Please\ndo not email any of the PyMongo developers directly with issues or\nquestions - you're more likely to get an answer on the `mongodb-user\n<http://groups.google.com/group/mongodb-user>`_ list on Google Groups.\n\nBugs / Feature Requests\n=======================\n\nThink you\u2019ve found a bug? Want to see a new feature in PyMongo? Please open a\ncase in our issue management tool, JIRA:\n\n- `Create an account and login <https://jira.mongodb.org>`_.\n- Navigate to `the PYTHON project <https://jira.mongodb.org/browse/PYTHON>`_.\n- Click **Create Issue** - Please provide as much information as possible about the issue type and how to reproduce it.\n\nBug reports in JIRA for all driver projects (i.e. PYTHON, CSHARP, JAVA) and the\nCore Server (i.e. SERVER) project are **public**.\n\nHow To Ask For Help\n-------------------\n\nPlease include all of the following information when opening an issue:\n\n- Detailed steps to reproduce the problem, including full traceback, if possible.\n- The exact python version used, with patch level::\n\n  $ python -c \"import sys; print(sys.version)\"\n\n- The exact version of PyMongo used, with patch level::\n\n  $ python -c \"import pymongo; print(pymongo.version); print(pymongo.has_c())\"\n\n- The operating system and version (e.g. Windows 7, OSX 10.8, ...)\n- Web framework or asynchronous network library used, if any, with version (e.g.\n  Django 1.7, mod_wsgi 4.3.0, gevent 1.0.1, Tornado 4.0.2, ...)\n\nSecurity Vulnerabilities\n------------------------\n\nIf you\u2019ve identified a security vulnerability in a driver or any other\nMongoDB project, please report it according to the `instructions here\n<http://docs.mongodb.org/manual/tutorial/create-a-vulnerability-report>`_.\n\nInstallation\n============\n\nPyMongo can be installed with `pip <http://pypi.python.org/pypi/pip>`_::\n\n  $ python -m pip install pymongo\n\nOr ``easy_install`` from\n`setuptools <http://pypi.python.org/pypi/setuptools>`_::\n\n  $ python -m easy_install pymongo\n\nYou can also download the project source and do::\n\n  $ python setup.py install\n\nDo **not** install the \"bson\" package from pypi. PyMongo comes with its own\nbson package; doing \"easy_install bson\" installs a third-party package that\nis incompatible with PyMongo.\n\nDependencies\n============\n\nPyMongo supports CPython 2.6, 2.7, 3.4+, PyPy, and PyPy3.\n\nOptional dependencies:\n\nGSSAPI authentication requires `pykerberos\n<https://pypi.python.org/pypi/pykerberos>`_ on Unix or `WinKerberos\n<https://pypi.python.org/pypi/winkerberos>`_ on Windows. The correct\ndependency can be installed automatically along with PyMongo::\n\n  $ python -m pip install pymongo[gssapi]\n\nSupport for mongodb+srv:// URIs requires `dnspython\n<https://pypi.python.org/pypi/dnspython>`_::\n\n  $ python -m pip install pymongo[srv]\n\nTLS / SSL support may require `ipaddress\n<https://pypi.python.org/pypi/ipaddress>`_ and `certifi\n<https://pypi.python.org/pypi/certifi>`_ or `wincertstore\n<https://pypi.python.org/pypi/wincertstore>`_ depending on the Python\nversion in use. The necessary dependencies can be installed along with\nPyMongo::\n\n  $ python -m pip install pymongo[tls]\n\nYou can install all dependencies automatically with the following\ncommand::\n\n  $ python -m pip install pymongo[gssapi,srv,tls]\n\nOther optional packages:\n\n- `backports.pbkdf2 <https://pypi.python.org/pypi/backports.pbkdf2/>`_,\n  improves authentication performance with SCRAM-SHA-1, the default\n  authentication mechanism for MongoDB 3.0+. It especially improves\n  performance on Python versions older than 2.7.8.\n- `monotonic <https://pypi.python.org/pypi/monotonic>`_ adds support for\n  a monotonic clock, which improves reliability in environments\n  where clock adjustments are frequent. Not needed in Python 3.\n\n\nAdditional dependencies are:\n\n- (to generate documentation) sphinx_\n- (to run the tests under Python 2.6) unittest2_\n\nExamples\n========\nHere's a basic example (for more see the *examples* section of the docs):\n\n.. code-block:: python\n\n  >>> import pymongo\n  >>> client = pymongo.MongoClient(\"localhost\", 27017)\n  >>> db = client.test\n  >>> db.name\n  u'test'\n  >>> db.my_collection\n  Collection(Database(MongoClient('localhost', 27017), u'test'), u'my_collection')\n  >>> db.my_collection.insert_one({\"x\": 10}).inserted_id\n  ObjectId('4aba15ebe23f6b53b0000000')\n  >>> db.my_collection.insert_one({\"x\": 8}).inserted_id\n  ObjectId('4aba160ee23f6b543e000000')\n  >>> db.my_collection.insert_one({\"x\": 11}).inserted_id\n  ObjectId('4aba160ee23f6b543e000002')\n  >>> db.my_collection.find_one()\n  {u'x': 10, u'_id': ObjectId('4aba15ebe23f6b53b0000000')}\n  >>> for item in db.my_collection.find():\n  ...     print(item[\"x\"])\n  ...\n  10\n  8\n  11\n  >>> db.my_collection.create_index(\"x\")\n  u'x_1'\n  >>> for item in db.my_collection.find().sort(\"x\", pymongo.ASCENDING):\n  ...     print(item[\"x\"])\n  ...\n  8\n  10\n  11\n  >>> [item[\"x\"] for item in db.my_collection.find().limit(2).skip(1)]\n  [8, 11]\n\nDocumentation\n=============\n\nYou will need sphinx_ installed to generate the\ndocumentation. Documentation can be generated by running **python\nsetup.py doc**. Generated documentation can be found in the\n*doc/build/html/* directory.\n\nTesting\n=======\n\nThe easiest way to run the tests is to run **python setup.py test** in\nthe root of the distribution. Note that you will need unittest2_ to\nrun the tests under Python 2.6.\n\nTo verify that PyMongo works with Gevent's monkey-patching::\n\n    $ python green_framework_test.py gevent\n\nOr with Eventlet's::\n\n    $ python green_framework_test.py eventlet\n\n.. _sphinx: http://sphinx.pocoo.org/\n.. _unittest2: https://pypi.python.org/pypi/unittest2",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Bernie Hackett",
+      "email": "bernie@mongodb.com",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "mongo",
+    "mongodb",
+    "pymongo",
+    "gridfs",
+    "bson",
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.6",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Database"
+  ],
+  "homepage_url": "http://github.com/mongodb/mongo-python-driver",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "apache-2.0",
+  "declared_license": {
+    "license": "Apache License, Version 2.0",
+    "classifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ]
+  },
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:pypi/pymongo@3.6.1",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/p/pymongo/pymongo-3.6.1.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/pymongo/3.6.1/json"
+}

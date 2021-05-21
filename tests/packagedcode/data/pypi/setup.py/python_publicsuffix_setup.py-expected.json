@@ -13,7 +13,7 @@
       "type": "person",
       "role": "author",
       "name": "Tomaz Solc",
-      "email": "tomaz.solc@tablix.org",
+      "email": null,
       "url": null
     }
   ],
@@ -47,7 +47,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/publicsuffix@1.1.1",
-  "repository_homepage_url": "https://pypi.org/project/publicsuffix",
-  "repository_download_url": "https://pypi.io/packages/source/p/publicsuffix/publicsuffix-1.1.1.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/publicsuffix/1.1.1/json"
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/p/publicsuffix/publicsuffix-1.1.1.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/publicsuffix/1.1.1/json"
 }

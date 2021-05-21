@@ -13,8 +13,8 @@
       "type": "person",
       "role": "author",
       "name": "Dan Lecocq",
-      "email": "dan@seomoz.org",
-      "url": "http://github.com/nexB/url-py"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
@@ -47,7 +47,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/urlpy@0.2.0.2",
-  "repository_homepage_url": "https://pypi.org/project/urlpy",
-  "repository_download_url": "https://pypi.io/packages/source/u/urlpy/urlpy-0.2.0.2.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/urlpy/0.2.0.2/json"
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/u/urlpy/urlpy-0.2.0.2.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/urlpy/0.2.0.2/json"
 }

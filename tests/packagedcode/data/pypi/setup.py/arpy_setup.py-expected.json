@@ -13,8 +13,8 @@
       "type": "person",
       "role": "author",
       "name": "Stanis\u0142aw Pitucha",
-      "email": "viraptor@gmail.com",
-      "url": "http://bitbucket.org/viraptor/arpy"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [],
@@ -31,8 +31,7 @@
   "copyright": null,
   "license_expression": "bsd-simplified",
   "declared_license": {
-    "license": "Simplified BSD",
-    "classifiers": []
+    "license": "Simplified BSD"
   },
   "notice_text": null,
   "root_path": null,
@@ -40,7 +39,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/arpy@0.1.1",
-  "repository_homepage_url": "https://pypi.org/project/arpy",
-  "repository_download_url": "https://pypi.io/packages/source/a/arpy/arpy-0.1.1.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/arpy/0.1.1/json"
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json"
 }

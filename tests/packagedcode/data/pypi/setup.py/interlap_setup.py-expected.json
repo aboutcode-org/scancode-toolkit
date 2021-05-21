@@ -13,8 +13,8 @@
       "type": "person",
       "role": "author",
       "name": "Brent S Pedersen",
-      "email": "bpederse@gmail.com",
-      "url": "http://brentp.github.io/interlap"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
@@ -53,7 +53,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/interlap",
-  "repository_homepage_url": "https://pypi.org/project/interlap",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": null,
-  "api_data_url": "http://pypi.python.org/pypi/interlap/json"
+  "api_data_url": "https://pypi.org/pypi/interlap/json"
 }

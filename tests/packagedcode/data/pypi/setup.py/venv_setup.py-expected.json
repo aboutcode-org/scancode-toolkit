@@ -13,11 +13,12 @@
       "type": "person",
       "role": "author",
       "name": "Ian Bicking",
-      "email": "ianb@colorstudy.com",
-      "url": "https://virtualenv.pypa.io/"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
+    "setuptools deployment installation distutils",
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 2",
@@ -52,7 +53,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/virtualenv",
-  "repository_homepage_url": "https://pypi.org/project/virtualenv",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": null,
-  "api_data_url": "http://pypi.python.org/pypi/virtualenv/json"
+  "api_data_url": "https://pypi.org/pypi/virtualenv/json"
 }

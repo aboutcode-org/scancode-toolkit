@@ -13,11 +13,15 @@
       "type": "person",
       "role": "author",
       "name": "AboutCode authors and others.",
-      "email": "info@nexb.com",
-      "url": "http://aboutcode.org"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
+    "yaml",
+    "block",
+    "flow",
+    "readable",
     "Development Status :: 4 - Beta",
     "Programming Language :: Python",
     "Programming Language :: Python :: 2",
@@ -53,7 +57,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/saneyaml@0.2dev",
-  "repository_homepage_url": "https://pypi.org/project/saneyaml",
-  "repository_download_url": "https://pypi.io/packages/source/s/saneyaml/saneyaml-0.2dev.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/saneyaml/0.2dev/json"
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/s/saneyaml/saneyaml-0.2dev.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/saneyaml/0.2dev/json"
 }
