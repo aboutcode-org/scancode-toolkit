@@ -114,7 +114,7 @@ SCANCODE_CONFIGURED_PYTHON="$SCANCODE_ROOT_DIR/bin/python"
 if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
     set -e
     echo "* Configuring ScanCode for first use..."
-    CONFIGURE_QUIET=1 "$SCANCODE_ROOT_DIR/configure"
+    CONFIGURE_QUIET=-qq "$SCANCODE_ROOT_DIR/configure"
     set +e
 fi
 
