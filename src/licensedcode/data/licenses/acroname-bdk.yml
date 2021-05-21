@@ -1,0 +1,15 @@
+key: acroname-bdk
+short_name: Acroname BDK
+name: Acroname Brainstem Development Kit license
+category: Proprietary Free
+owner: Acroname
+homepage_url: https://acroname.com/software-license
+spdx_license_key: LicenseRef-scancode-acroname-bdk
+ignorable_copyrights:
+    - Copyright (c) 1994-2020 Acroname Inc.
+ignorable_holders:
+    - Acroname Inc.
+ignorable_urls:
+    - https://libusb.info/
+ignorable_emails:
+    - support@acroname.com
