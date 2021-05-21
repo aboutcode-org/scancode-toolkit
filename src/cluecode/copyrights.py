@@ -25,13 +25,15 @@ TRACE_DEEP = 0
 if os.environ.get('SCANCODE_DEBUG_COPYRIGHT_DEEP'):
     TRACE_DEEP = 1
 
+TRACE_TOK = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT_TOKEN', False)
+
 
 # Tracing flags
 def logger_debug(*args):
     pass
 
 
-if TRACE or TRACE_DEEP:
+if TRACE or TRACE_DEEP or TRACE_TOK:
     import logging
 
     logger = logging.getLogger(__name__)
@@ -98,7 +100,18 @@ def detect_copyrights_from_lines(numbered_lines, copyrights=True, holders=True, 
     """
     detector = CopyrightDetector()
 
-    for candidates in candidate_lines(numbered_lines):
+    candidate_lines_groups = candidate_lines(numbered_lines)
+    if TRACE:
+        candidate_lines_groups = list(candidate_lines_groups)
+        logger_debug(
+            f'detect_copyrights_from_lines: ALL groups of candidate '
+            f'lines collected: {len(candidate_lines_groups)}')
+
+    for candidates in candidate_lines_groups:
+        if TRACE:
+            from pprint import pformat
+            can = pformat(candidates, width=160)
+            logger_debug(f' detect_copyrights_from_lines: processing candidates group:\n{can}')
 
         detections = detector.detect(
             numbered_lines=candidates,
@@ -109,12 +122,16 @@ def detect_copyrights_from_lines(numbered_lines, copyrights=True, holders=True, 
             include_allrights=include_allrights
         )
 
+        if TRACE:
+            detections = list(detections)
+            logger_debug(f' detect_copyrights_from_lines: {detections}')
+
         for detection in detections:
             # tuple of type, string, start, end
             yield detection
+
         if time() > deadline:
             break
-
 
 ################################################################################
 # DETECTION PROPER
@@ -149,7 +166,14 @@ class CopyrightDetector(object):
         numbered_lines = list(numbered_lines)
         start_line = numbered_lines[0][0]
         end_line = numbered_lines[-1][0]
+
+        if TRACE: logger_debug(f'CopyrightDetector:numbered_lines: {numbered_lines}')
+
         tokens = self.get_tokens(numbered_lines)
+
+        if TRACE:
+            tokens = list(tokens)
+            logger_debug(f'CopyrightDetector:tokens: {tokens}')
 
         if not tokens:
             return
@@ -242,9 +266,9 @@ class CopyrightDetector(object):
         tokens_append = tokens.append
 
         for _line_number, line in numbered_lines:
-            if TRACE: logger_debug('  get_tokens:  bare line: ' + repr(line))
+            if TRACE_TOK: logger_debug('  get_tokens:  bare line: ' + repr(line))
             line = prepare_text_line(line)
-            if TRACE: logger_debug('  get_tokens:preped line: ' + repr(line))
+            if TRACE_TOK: logger_debug('  get_tokens:preped line: ' + repr(line))
             for tok in splitter(line):
                 # strip trailing single quotes and ignore empties
                 tok = tok.strip("' ")
@@ -254,7 +278,9 @@ class CopyrightDetector(object):
                 tok = tok.lstrip('@').strip()
                 if tok and tok not in (':',):
                     tokens_append(tok)
-        if TRACE: logger_debug('  get_tokens:tokens: ' + repr(tokens))
+        if TRACE_TOK:
+            logger_debug('  get_tokens:tokens: ' + repr(tokens))
+            logger_debug('  get_tokens: ALL tokens collected')
         return tokens
 
     @classmethod
@@ -442,7 +468,7 @@ patterns = [
 
     # CamELCaseeXXX is typcally JUNK such as code variable names
     # AzaAzaaaAz BBSDSB002923,
-    (r'^([A-Z][a-z]+){3,}[A-Z]+[0-9]*,?$', 'JUNK'),
+    (r'^([A-Z][a-z]+){3,20}[A-Z]+[0-9]*,?$', 'JUNK'),
 
     # multiple parens (at least two (x) groups) is a sign of junk
     # such as in (1)(ii)(OCT
@@ -1446,8 +1472,8 @@ patterns = [
     ############################################################################
 
      # email start-at-end: <sebastian.classen at freenet.ag>: <EMAIL_START> <AT> <EMAIL_END>
-    (r'^<([a-zA-Z]+[a-zA-Z\.]){3,}$', 'EMAIL_START'),
-    (r'^[a-zA-Z\.]{2,}>$', 'EMAIL_END'),
+    (r'^<([a-zA-Z]+[a-zA-Z\.]){2,5}$', 'EMAIL_START'),
+    (r'^[a-zA-Z\.]{2,5}>$', 'EMAIL_END'),
 
     # a .sh shell scripts is NOT an email.
     (r'^.*\.sh\.?$', 'JUNK'),
@@ -3037,9 +3063,9 @@ def is_end_of_statement(chars_only_line):
 
 def candidate_lines(numbered_lines):
     """
-    Yield lists of candidate lines where each list element is a tuple of
-    (line number,  line text) given an iterable of numbered_lines as tuples of
-    (line number,  line text) .
+    Yield groups of candidate lines as list where each list element is a tuple
+    of (line number,  line text) given an iterable of numbered_lines as tuples
+    of (line number,  line text) .
 
     A candidate line is a line of text that may contain copyright statements.
     A few lines before and after a candidate line are also included.
@@ -3081,7 +3107,6 @@ def candidate_lines(numbered_lines):
 
             previous_chars = chars_only
             if TRACE: logger_debug('   candidate_lines: line is candidate')
-
 
         elif 's>' in line:
             # this is for debian-style <s></s> copyright name tags
