@@ -30,7 +30,6 @@ from packagedcode import rpm
 from packagedcode import rubygems
 from packagedcode import win_pe
 
-
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
 PACKAGE_TYPES = [
@@ -89,6 +88,7 @@ PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
 if len(PACKAGES_BY_TYPE) != len(PACKAGE_TYPES):
     seen_types = {}
     for pt in PACKAGE_TYPES:
+        assert pt.default_type
         seen = seen_types.get(pt.default_type)
         if seen:
             msg = ('Invalid duplicated packagedcode.Package types: '
