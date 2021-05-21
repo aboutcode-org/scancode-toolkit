@@ -57,6 +57,11 @@ class TestRpmInstalled(PackageTester):
         result = json.loads(json.dumps(result))
         check_result_equals_expected_json(result, expected, regen=False)
 
+    def test_parse_rpm_xmlish_does_not_with_empty_or_missing_location(self):
+        rpm_installed.parse_rpm_xmlish(None)
+        rpm_installed.parse_rpm_xmlish('')
+        rpm_installed.parse_rpm_xmlish('/foo/bar/does-not-exists')
+
     def test_parse_rpm_xmlish_can_detect_license(self):
         test_installed = self.get_test_loc('rpm_installed/xmlish/centos-5-rpms.xmlish')
         expected = self.get_test_loc('rpm_installed/xmlish/centos-5-rpms.xmlish-with-license-expected.json')
