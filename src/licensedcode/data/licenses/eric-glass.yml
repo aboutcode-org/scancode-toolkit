@@ -1,0 +1,17 @@
+key: eric-glass
+short_name: Eric Glass License
+name: Eric Glass License
+category: Permissive
+owner: NTLM Authorization Proxy Server Project
+homepage_url: http://davenport.sourceforge.net/ntlm.html
+spdx_license_key: LicenseRef-scancode-eric-glass
+standard_notice: |
+    All trademarks mentioned in this document are the property of their
+    respective owners.
+    Copyright © 2003, 2006 Eric Glass
+    Permission to use, copy, modify, and distribute this document for any
+    purpose and without any fee is hereby granted, provided that the above
+    copyright notice and this list of conditions appear in all copies.
+    The most current version of this document may be obtained from
+    http://davenport.sourceforge.net/ntlm.html. The author may be contacted vie
+    e-mail at eric.glass at gmail.com.
