@@ -225,7 +225,7 @@ Package: pods
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:PythonPackage
-  metafiles: metadata.json, *setup.py, PKG-INFO, *.whl, *.egg, *requirements*.txt, *requirements*.in, *Pipfile.lock
+  metafiles: *setup.py, *setup.cfg, PKG-INFO, METADATA, *.whl, *.egg, *requirements*.txt, *requirements*.in, *Pipfile.lock
   extensions: .egg, .whl, .pyz, .pex
 
 --------------------------------------------
