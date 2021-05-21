@@ -603,13 +603,12 @@ class Package(BasePackage):
 
 def compute_normalized_license(declared_license):
     """
-    Return a normalized license_expression string using the declared_license
-    field. Return 'unknown' if there is a declared license but it cannot be
-    detected (including on errors) and return None if there is no declared
-    license.
+    Return a normalized license_expression string from the ``declared_license``.
+    Return 'unknown' if there is a declared license but it cannot be detected
+    (including on errors) and return None if there is no declared license.
     """
 
-    if not declared_license or not declared_license.strip():
+    if not declared_license:
         return
 
     from packagedcode import licensing
