@@ -3,16 +3,15 @@ short_name: SCILAB en 2005
 name: SCILAB License 2005
 category: Proprietary Free
 owner: INRIA/ENPC
+homepage_url: http://web.archive.org/web/20051212214843/http://www.scilab.org/legal/license.html
 spdx_license_key: LicenseRef-scancode-scilab-en
 other_spdx_license_keys:
     - LicenseRef-scancode-scilba-en
-homepage_url: http://web.archive.org/web/20051212214843/http://www.scilab.org/legal/license.html
-text_urls: 
+text_urls:
     - https://directory.fsf.org/wiki/License:Scilab-old
-ignorable_authors:
-  - INRIA
 ignorable_copyrights:
-  - Scilab (c) INRIA-ENPC.
+    - Scilab (c) INRIA-ENPC.
+ignorable_authors:
+    - INRIA
 ignorable_holders:
-  - Scilab INRIA-ENPC.
-
+    - Scilab INRIA-ENPC.
