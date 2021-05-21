@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+mimeparse.py
+mimeparse_test.py
+setup.cfg
+setup.py
+testdata.json
+python_mimeparse.egg-info/PKG-INFO
+python_mimeparse.egg-info/SOURCES.txt
+python_mimeparse.egg-info/dependency_links.txt
+python_mimeparse.egg-info/top_level.txt

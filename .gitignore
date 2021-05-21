@@ -8,7 +8,7 @@
 /thirdparty
 
 # virtualenv and other misc bits
-*.egg-info
+/src/*.egg-info
 /dist
 /build
 /bin
