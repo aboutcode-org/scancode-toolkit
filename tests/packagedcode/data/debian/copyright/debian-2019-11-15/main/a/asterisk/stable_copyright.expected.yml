@@ -1,74 +1,69 @@
-- |
-  GPL-2-Asterisk
-  FSFUL
-  GPL-2+ with Autoconf exception
-  MIT
-  GPL-2
-  GPL-2
-  None
-  BSD-4-Clause-UC
-  GPL-2
-  GSM
-  BSD-3-Clause~Xiph
-  BSD-3-Clause
-  BSD-4-Clause~NetBSD
-  GPL-2+
-  public-domain
-  None
-  GPL-2
-  public-domain
-  Unrestricted~author
-  Expat and GPL-2-Asterisk
-  GPL-2+
-  Unrestricted~app_curl
-  BSD-4-Clause-UC and ISC and GPL-2-Asterisk
-  BSD-4-Clause-UC
-  GPL-3+ with bison exception
-  BSD-3-Clause~IETF
-  GPL-2
-  WOL and GPL-2-Asterisk
-  LGPL-2.1 or GPL-2-Asterisk
-  public-domain
-  ISC
-  BSD-4-Clause~Clapper
-  LGPL-2.1
-  Expat~disclaimer
-  GPL-2-Asterisk
-  GPL-2
-  GPL-2-Asterisk
-  GPL-2
-  LGPL-2.1
-  Expat
-  Expat~disclaimer
-  MIT
-  BSD-3-Clause
-  BSD-3-Clause~Xiph
-  BSD-3-Clause~IETF
-  BSD-4-Clause-UC
-  BSD-4-Clause~NetBSD
-  BSD-4-Clause~Clapper
-  GSM
-  ISC
-  WOL
-  FSFUL
-- (gpl-2.0 AND unknown) AND fsf-free AND (gpl-2.0-plus AND unknown) AND autoconf-simple-exception-2.0
-  AND unknown AND gpl-2.0 AND gpl-2.0 AND unknown AND bsd-original-uc AND gpl-2.0 AND unknown
-  AND (bsd-new AND unknown) AND bsd-new AND (bsd-original AND unknown) AND gpl-2.0-plus AND
-  public-domain AND (public-domain AND unknown) AND unknown AND gpl-2.0 AND public-domain AND
-  (public-domain AND unknown) AND unknown AND other-permissive AND (gpl-2.0 AND unknown) AND
-  gpl-2.0-plus AND unknown AND unknown AND ((bsd-original-uc AND gpl-2.0) AND unknown) AND bsd-original-uc
-  AND (gpl-3.0-plus AND unknown) AND bison-exception-2.2 AND (bsd-new AND unknown) AND gpl-2.0
-  AND (gpl-2.0 AND unknown) AND ((lgpl-2.1 AND gpl-2.0) AND unknown) AND public-domain AND public-domain
-  AND unknown AND (bsd-original AND unknown) AND lgpl-2.1 AND unknown AND (gpl-2.0 AND unknown)
-  AND gpl-2.0 AND (gpl-2.0 AND unknown) AND ((gpl-2.0 AND gpl-1.0-plus AND gpl-1.0-plus AND
-  gpl-1.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND unknown-license-reference AND gpl-1.0-plus
-  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference)
-  AND unknown) AND gpl-2.0 AND lgpl-2.1 AND unknown AND mit AND unknown AND mit-0 AND unknown
-  AND mit-old-style-no-advert AND bsd-new AND bsd-new AND (bsd-new AND unknown) AND (bsd-new
-  AND unknown) AND (bsd-new AND unknown) AND bsd-new AND bsd-original-uc AND (bsd-original-uc
-  AND unknown) AND (bsd-original AND unknown) AND bsd-original AND (bsd-original AND unknown)
-  AND (brian-clapper AND unknown) AND unknown AND tu-berlin AND unknown AND isc AND unknown
-  AND (wol AND unknown) AND fsf-free AND fsf-free
+- - GPL-2-Asterisk
+  - FSFUL
+  - GPL-2+ with Autoconf exception
+  - MIT
+  - GPL-2
+  - GPL-2
+  - None
+  - BSD-4-Clause-UC
+  - GPL-2
+  - GSM
+  - BSD-3-Clause~Xiph
+  - BSD-3-Clause
+  - BSD-4-Clause~NetBSD
+  - GPL-2+
+  - public-domain
+  - None
+  - GPL-2
+  - public-domain
+  - Unrestricted~author
+  - Expat and GPL-2-Asterisk
+  - GPL-2+
+  - Unrestricted~app_curl
+  - BSD-4-Clause-UC and ISC and GPL-2-Asterisk
+  - BSD-4-Clause-UC
+  - GPL-3+ with bison exception
+  - BSD-3-Clause~IETF
+  - GPL-2
+  - WOL and GPL-2-Asterisk
+  - LGPL-2.1 or GPL-2-Asterisk
+  - public-domain
+  - ISC
+  - BSD-4-Clause~Clapper
+  - LGPL-2.1
+  - Expat~disclaimer
+  - GPL-2-Asterisk
+  - GPL-2
+- (gpl-2.0 AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus
+  AND unknown-license-reference AND unknown-license-reference AND gpl-1.0-plus AND gpl-1.0-plus
+  AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference AND gpl-1.0-plus AND gpl-1.0-plus
+  AND unknown-license-reference AND unknown-license-reference AND unknown-license-reference)
+  AND fsf-free AND autoconf-simple-exception-2.0 AND mit-old-style-no-advert AND gpl-2.0 AND
+  gpl-2.0 AND none AND bsd-original-uc AND gpl-2.0 AND tu-berlin AND bsd-new AND bsd-new AND
+  bsd-original AND gpl-2.0-plus AND public-domain AND none AND gpl-2.0 AND public-domain AND
+  other-permissive AND (mit AND (gpl-2.0 AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND unknown-license-reference AND unknown-license-reference
+  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference
+  AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference AND unknown-license-reference
+  AND unknown-license-reference)) AND gpl-2.0-plus AND free-unknown AND (bsd-original-uc AND
+  isc AND (gpl-2.0 AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0
+  AND gpl-1.0-plus AND unknown-license-reference AND unknown-license-reference AND gpl-1.0-plus
+  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference AND gpl-1.0-plus
+  AND gpl-1.0-plus AND unknown-license-reference AND unknown-license-reference AND unknown-license-reference))
+  AND bsd-original-uc AND bison-exception-2.2 AND bsd-new AND gpl-2.0 AND (wol AND (gpl-2.0
+  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus
+  AND unknown-license-reference AND unknown-license-reference AND gpl-1.0-plus AND gpl-1.0-plus
+  AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference AND gpl-1.0-plus AND gpl-1.0-plus
+  AND unknown-license-reference AND unknown-license-reference AND unknown-license-reference))
+  AND (lgpl-2.1 OR (gpl-2.0 AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0 AND
+  gpl-2.0 AND gpl-1.0-plus AND unknown-license-reference AND unknown-license-reference AND gpl-1.0-plus
+  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference AND gpl-1.0-plus
+  AND gpl-1.0-plus AND unknown-license-reference AND unknown-license-reference AND unknown-license-reference))
+  AND public-domain AND isc AND brian-clapper AND lgpl-2.1 AND mit-0 AND (gpl-2.0 AND gpl-1.0-plus
+  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND unknown-license-reference
+  AND unknown-license-reference AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
+  AND unknown-license-reference AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference
+  AND unknown-license-reference AND unknown-license-reference) AND gpl-2.0
 - |
   1999-2006, Brett Bryant <bbryant@digium.com>
   1999-2006, Mark Spencer <markster@digium.com>

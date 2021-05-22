@@ -1,21 +1,12 @@
-- |
-  LGPL-2.1
-  GPL-2
-  BSD-3
-  MIT(*)
-  MIT(**)
-  GPL-2+
-  BSD-3
-  GPL-2
-  GPL-2+
-  LGPL-2.1
-  MIT(*)
-  MIT(**)
-- lgpl-2.1 AND gpl-2.0 AND bsd-new AND unknown AND unknown AND gpl-2.0-plus AND bsd-new AND
-  (bsd-new AND unknown) AND gpl-2.0 AND ((gpl-2.0 AND gpl-1.0-plus AND gpl-2.0) AND unknown)
-  AND gpl-2.0-plus AND ((gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND unknown) AND lgpl-2.1
-  AND (gpl-3.0-plus AND unknown) AND unknown AND ((isc AND ibm-dhcp) AND unknown) AND unknown
-  AND xfree86-1.0
+- - LGPL-2.1
+  - GPL-2
+  - BSD-3
+  - MIT(*)
+  - MIT(**)
+  - GPL-2+
+- (lgpl-2.1 AND gpl-3.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND gpl-2.0) AND bsd-new
+  AND (isc AND ibm-dhcp) AND xfree86-1.0 AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus
+  AND gpl-2.0)
 - |
   VMware, Inc. <http://www.vmware.com/>
   VMware, Inc. <http://www.vmware.com/>

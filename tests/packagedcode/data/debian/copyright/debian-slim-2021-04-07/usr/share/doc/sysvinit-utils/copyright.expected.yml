@@ -1,8 +1,6 @@
-- |
-  GPL-2+
-  GPL-2+
-  GPL-2+
-- gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
+- - GPL-2+
+  - GPL-2+
+- (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
 - |
   1997-2005 Miquel van Smoorenburg <miquels@cistron.nl>
   2015 Adam Conrad <adconrad@debian.org>

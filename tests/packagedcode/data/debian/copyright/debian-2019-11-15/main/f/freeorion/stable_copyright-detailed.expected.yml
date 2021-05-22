@@ -1,26 +1,17 @@
-- |
-  GPL-2
-  CC-BY-SA-3.0
-  LGPL-2.1+
-  BSL-1.0
-  LGPL-2.1+
-  BSD-3-clause
-  DejaVu-License
-  Apache-2.0
-  LGPL-2.1+
-  GPL-2
-  LGPL-2.1+
-  BSL-1.0
-  BSD-3-clause
-  Apache-2.0
-  CC-BY-SA-3.0
-  DejaVu-License
-- gpl-2.0 AND cc-by-sa-3.0 AND lgpl-2.1-plus AND unknown AND lgpl-2.1-plus AND bsd-new AND unknown
-  AND apache-2.0 AND lgpl-2.1-plus AND gpl-2.0 AND (gpl-2.0-plus AND unknown) AND lgpl-2.1-plus
-  AND ((lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1) AND unknown) AND unknown AND boost-1.0
-  AND bsd-new AND (bsd-new AND unknown) AND apache-2.0 AND ((apache-2.0 AND apache-2.0) AND
-  unknown) AND cc-by-sa-3.0 AND (cc-by-sa-3.0 AND unknown) AND unknown AND ((bitstream AND bitstream)
-  AND unknown)
+- - GPL-2
+  - CC-BY-SA-3.0
+  - LGPL-2.1+
+  - BSL-1.0
+  - LGPL-2.1+
+  - BSD-3-clause
+  - DejaVu-License
+  - Apache-2.0
+  - LGPL-2.1+
+- (gpl-2.0 AND gpl-2.0-plus) AND cc-by-sa-3.0 AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus
+  AND lgpl-2.1) AND boost-1.0 AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1)
+  AND bsd-new AND (bitstream AND bitstream AND unknown-license-reference) AND (apache-2.0 AND
+  unknown-license-reference AND apache-2.0 AND apache-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.0-plus AND lgpl-2.1)
 - |
   The FreeOrion project
   The FreeOrion project

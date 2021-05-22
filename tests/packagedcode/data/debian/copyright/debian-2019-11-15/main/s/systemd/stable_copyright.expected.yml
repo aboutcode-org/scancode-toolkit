@@ -1,25 +1,20 @@
-- |
-  LGPL-2.1+
-  CC0-1.0
-  GPL-2
-  GPL-2
-  GPL-2+
-  Expat
-  public-domain
-  GPL-2+
-  LGPL-2.1+
-  GPL-2
-  LGPL-2.1+
-  Expat
-  GPL-2
-  GPL-2+
-  LGPL-2.1+
-  CC0-1.0
-- lgpl-2.1-plus AND cc0-1.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0-plus AND unknown AND public-domain
-  AND public-domain-disclaimer AND gpl-2.0-plus AND lgpl-2.1-plus AND gpl-2.0 AND lgpl-2.1-plus
-  AND unknown AND mit AND gpl-2.0 AND ((gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND unknown) AND gpl-2.0-plus
-  AND gpl-2.0-plus AND lgpl-2.1-plus AND ((lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND unknown)
-  AND cc0-1.0 AND (cc0-1.0 AND cc0-1.0)
+- - LGPL-2.1+
+  - CC0-1.0
+  - GPL-2
+  - GPL-2
+  - GPL-2+
+  - Expat
+  - public-domain
+  - GPL-2+
+  - LGPL-2.1+
+  - GPL-2
+  - LGPL-2.1+
+- (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (cc0-1.0 AND cc0-1.0 AND cc0-1.0)
+  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND
+  gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND mit AND public-domain-disclaimer AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND
+  lgpl-2.1)
 - |
   2008-2015 Kay Sievers <kay@vrfy.org>
   2010-2015 Lennart Poettering

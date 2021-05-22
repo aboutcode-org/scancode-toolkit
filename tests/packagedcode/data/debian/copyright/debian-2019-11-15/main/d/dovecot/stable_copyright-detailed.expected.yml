@@ -1,40 +1,30 @@
-- |
-  LGPL-2.1
-  MIT
-  MIT
-  Beerware
-  MIT
-  public-domain-solardiz
-  BSD-3-Clause
-  BSD-3-Clause
-  MIT
-  MIT
-  MIT
-  MIT
-  MIT
-  Unicode-DFS-2015
-  BSD-3-Clause
-  Apache-2.0
-  BSD-2-Clause
-  MIT
-  Apache-2.0 or LGPL-2.1
-  GPL-2+
-  LGPL-2.1
-  MIT
-  LGPL-2.1
-  Apache-2.0
-  BSD-3-Clause
-  BSD-2-Clause
-  GPL-2+
-  Unicode-DFS-2015
-- lgpl-2.1 AND unknown AND unknown AND beerware AND beerware AND unknown AND public-domain AND
-  (public-domain AND unknown) AND bsd-new AND bsd-new AND unknown AND unknown AND unknown AND
-  unknown AND unknown AND unicode-dfs-2015 AND bsd-new AND apache-2.0 AND bsd-simplified AND
-  unknown AND ((apache-2.0 AND lgpl-2.1) AND unknown) AND gpl-2.0-plus AND lgpl-2.1 AND unknown
-  AND mit AND lgpl-2.1 AND ((lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND unknown) AND
-  apache-2.0 AND (apache-2.0 AND unknown) AND bsd-new AND (bsd-new AND unknown) AND bsd-simplified
-  AND bsd-simplified AND gpl-2.0-plus AND ((gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND unknown)
-  AND unicode-dfs-2015 AND (unicode AND unknown)
+- - LGPL-2.1
+  - MIT
+  - MIT
+  - Beerware
+  - MIT
+  - public-domain-solardiz
+  - BSD-3-Clause
+  - BSD-3-Clause
+  - MIT
+  - MIT
+  - MIT
+  - MIT
+  - MIT
+  - Unicode-DFS-2015
+  - BSD-3-Clause
+  - Apache-2.0
+  - BSD-2-Clause
+  - MIT
+  - Apache-2.0 or LGPL-2.1
+  - GPL-2+
+  - LGPL-2.1
+- (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND mit AND mit AND beerware AND
+  mit AND public-domain AND bsd-new AND bsd-new AND mit AND mit AND mit AND mit AND mit AND
+  unicode AND bsd-new AND (apache-2.0 AND apache-2.0) AND bsd-simplified AND mit AND ((apache-2.0
+  AND apache-2.0) OR (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1)
 - |
   (c) 2001-2018 Dovecot authors
   (c) 2001-2018 Dovecot authors

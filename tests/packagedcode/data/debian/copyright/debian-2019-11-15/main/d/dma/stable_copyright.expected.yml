@@ -1,17 +1,13 @@
-- |
-  BSD-3
-  BSD-3
-  BSD-3
-  BSD-1 and BSD-2
-  BSD-3
-  BSD-3
-  BSD-3
-  BSD-3
-  BSD-3
-  BSD-1
-  BSD-2
-- bsd-new AND bsd-new AND bsd-new AND unknown AND bsd-new AND bsd-new AND bsd-new AND bsd-new
-  AND bsd-new AND (bsd-simplified AND unknown) AND unknown AND isc AND unknown AND bsd-simplified
+- - BSD-3
+  - BSD-3
+  - BSD-3
+  - BSD-1 and BSD-2
+  - BSD-3
+  - BSD-3
+  - BSD-3
+  - BSD-3
+- bsd-simplified AND bsd-simplified AND bsd-simplified AND (isc AND bsd-simplified) AND bsd-simplified
+  AND bsd-simplified AND bsd-simplified AND bsd-simplified
 - |
   Copyright (c) 1995-2001 Kungliga Tekniska Högskolan
   (Royal Institute of Technology, Stockholm, Sweden).

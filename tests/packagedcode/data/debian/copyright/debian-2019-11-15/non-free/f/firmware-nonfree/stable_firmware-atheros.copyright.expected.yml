@@ -1,14 +1,10 @@
-- |
-  Binary redistribution (Atheros)
-  Open ath9k HTC firmware
-  Binary redistribution (Qualcomm Atheros)
-  Binary redistribution (Qualcomm Atheros)
-  Binary redistribution (Qualcomm Atheros)
-  Binary redistribution (Qualcomm Atheros)
-- (proprietary-license AND unknown) AND (intel AND unknown) AND unknown AND ((clear-bsd AND
-  isc AND bsd-no-mod AND gpl-2.0-plus AND ecos-exception-2.0 AND mit) AND unknown) AND (proprietary-license
-  AND unknown) AND (proprietary-license AND unknown) AND (proprietary-license AND unknown) AND
-  (proprietary-license AND unknown) AND (proprietary-license AND unknown)
+- - Binary redistribution (Atheros)
+  - Open ath9k HTC firmware
+  - Binary redistribution (Qualcomm Atheros)
+  - Binary redistribution (Qualcomm Atheros)
+  - Binary redistribution (Qualcomm Atheros)
+- intel AND (clear-bsd AND isc AND bsd-no-mod AND gpl-2.0-plus AND ecos-exception-2.0 AND mit)
+  AND proprietary-license AND proprietary-license AND proprietary-license
 - |
   2008-2010, Atheros Communications, Inc.
   1998-2002, Red Hat, Inc.

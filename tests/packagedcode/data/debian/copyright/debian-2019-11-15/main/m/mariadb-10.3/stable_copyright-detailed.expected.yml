@@ -1,116 +1,126 @@
-- |
-  GPL-2
-  GPL-2+
-  GPL-2
-  GPL-2+
-  GPL-2
-  GPL-2
-  GPL-verbatim
-  GPL-2+
-  public-domain
-  BSD-3-clause
-  BSD-3-clause
-  LGPL-2.1+
-  BSD-2-clause
-  LGPL-2.1+
-  LGPL-2
-  GPL-2+
-  BSD-2-clause
-  BSD-2-clause
-  LGPL-2.1+
-  GPL-2+
-  GPL-2+
-  GPL-2
-  unlimited-free-doc
-  LGPL
-  GPL-2
-  GPL-2+
-  GPL-2
-  GPL-2
-  GPL-2 and BSD-2-clause
-  BSD-3-clause
-  BSD-3-clause
-  GPL-2
-  GPL-2+
-  LGPL
-  LGPL
-  GPL-2
-  zlib/libpng
-  GPL-2
-  GPL-2
-  LGPL
-  public-domain
-  GPL-3+-with-bison-exception
-  GPL-2+-with-bison-exception
-  GPL-3+-with-bison-exception
-  GPL-3+-with-bison-exception
-  BSD-2-clause
-  public-domain
-  public-domain
-  BSD-3-clause
-  BSD-3-clause
-  BSD-2-clause
-  GPL-2
-  LGPL-2.1+
-  LGPL-2.1+
-  GPL-2
-  BSD-3-clause
-  GPL-2
-  GPL-2
-  GPL-2
-  GPL-2
-  GPL-2
-  GPL-2
-  LGPL
-  LGPL
-  SWsoft
-  public-domain
-  GPL-2
-  GPL-2 or Artistic
-  public-domain
-  BSD-3-clause
-  GPL-2
-  GPL-2+
-  GPL-3+
-  LGPL-2.1+
-  GPL-2+
-  MIT/X11
-  BSD-3-clause
-  GPL-2
-  GPL-2
-  GPL-2
-  GPL-2
-  GPL-2+
-  LGPL-2.1+
-  LGPL
-  BSD-2-clause
-  BSD-3-clause
-  Artistic
-  public-domain
-  GPL-3+
-  LGPL-2
-- gpl-2.0 AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND (gpl-1.0-plus
-  AND unknown) AND other-copyleft AND gpl-2.0-plus AND public-domain AND bsd-new AND bsd-new
-  AND lgpl-2.1-plus AND bsd-simplified AND lgpl-2.1-plus AND lgpl-2.0 AND gpl-2.0-plus AND bsd-simplified
-  AND bsd-simplified AND lgpl-2.1-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND unknown
-  AND fsf-free AND lgpl-2.0-plus AND gpl-2.0 AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND ((gpl-2.0
-  AND bsd-simplified) AND unknown) AND bsd-new AND bsd-new AND gpl-2.0 AND gpl-2.0-plus AND
-  lgpl-2.0-plus AND lgpl-2.0-plus AND gpl-2.0 AND zlib AND zlib AND gpl-2.0 AND gpl-2.0 AND
-  lgpl-2.0-plus AND public-domain AND (gpl-3.0-plus AND unknown) AND (gpl-2.0-plus AND unknown)
-  AND gpl-2.0-plus WITH bison-exception-2.2 AND (gpl-3.0-plus AND unknown) AND (gpl-3.0-plus
-  AND unknown) AND gpl-3.0-plus WITH bison-exception-2.2 AND (gpl-2.0 AND unknown) AND bsd-simplified
-  AND public-domain AND public-domain AND bsd-new AND bsd-new AND bsd-simplified AND gpl-2.0
-  AND lgpl-2.1-plus AND lgpl-2.1-plus AND gpl-2.0 AND bsd-new AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
-  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND lgpl-2.0-plus AND lgpl-2.0-plus AND unknown AND stlport-4.5
-  AND public-domain AND gpl-2.0 AND (gpl-2.0 AND unknown) AND public-domain AND bsd-new AND
-  gpl-2.0 AND gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND gpl-2.0-plus AND mit AND (x11-xconsortium
-  AND public-domain) AND bsd-new AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND ((gpl-2.0
-  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND unknown) AND gpl-2.0-plus AND ((gpl-2.0-plus
-  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND unknown) AND lgpl-2.1-plus AND ((lgpl-2.1-plus
-  AND lgpl-2.1 AND lgpl-2.1) AND unknown) AND lgpl-2.0-plus AND (lgpl-2.0-plus AND unknown)
-  AND bsd-simplified AND (bsd-simplified AND unknown) AND bsd-new AND bsd-new AND unknown AND
-  artistic-perl-1.0 AND public-domain AND (public-domain AND unknown) AND gpl-3.0-plus AND gpl-3.0-plus
-  AND lgpl-2.0 AND ((lgpl-3.0-plus AND lgpl-2.0) AND unknown)
+- - GPL-2
+  - GPL-2+
+  - GPL-2
+  - GPL-2+
+  - GPL-2
+  - GPL-2
+  - GPL-verbatim
+  - GPL-2+
+  - public-domain
+  - BSD-3-clause
+  - BSD-3-clause
+  - LGPL-2.1+
+  - BSD-2-clause
+  - LGPL-2.1+
+  - LGPL-2
+  - GPL-2+
+  - BSD-2-clause
+  - BSD-2-clause
+  - LGPL-2.1+
+  - GPL-2+
+  - GPL-2+
+  - GPL-2
+  - unlimited-free-doc
+  - LGPL
+  - GPL-2
+  - GPL-2+
+  - GPL-2
+  - GPL-2
+  - GPL-2 and BSD-2-clause
+  - BSD-3-clause
+  - BSD-3-clause
+  - GPL-2
+  - GPL-2+
+  - LGPL
+  - LGPL
+  - GPL-2
+  - zlib/libpng
+  - GPL-2
+  - GPL-2
+  - LGPL
+  - public-domain
+  - GPL-3+-with-bison-exception
+  - GPL-2+-with-bison-exception
+  - GPL-3+-with-bison-exception
+  - BSD-2-clause
+  - public-domain
+  - public-domain
+  - BSD-3-clause
+  - BSD-3-clause
+  - BSD-2-clause
+  - GPL-2
+  - LGPL-2.1+
+  - LGPL-2.1+
+  - GPL-2
+  - BSD-3-clause
+  - GPL-2
+  - GPL-2
+  - GPL-2
+  - GPL-2
+  - GPL-2
+  - GPL-2
+  - LGPL
+  - LGPL
+  - SWsoft
+  - public-domain
+  - GPL-2
+  - GPL-2 or Artistic
+  - public-domain
+  - BSD-3-clause
+  - GPL-2
+  - GPL-2+
+  - GPL-3+
+  - LGPL-2.1+
+  - GPL-2+
+  - MIT/X11
+  - BSD-3-clause
+  - GPL-2
+  - GPL-2
+  - GPL-2
+- (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND other-copyleft AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (public-domain AND unknown-license-reference)
+  AND bsd-new AND bsd-new AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND
+  bsd-simplified AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.0
+  AND lgpl-3.0-plus AND lgpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0
+  AND gpl-1.0-plus) AND bsd-simplified AND bsd-simplified AND (lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND
+  gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND fsf-free AND (lgpl-2.0-plus
+  AND lgpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND
+  (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND
+  gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND
+  gpl-2.0 AND gpl-1.0-plus) AND ((gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND bsd-simplified) AND bsd-new AND bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (gpl-2.0 AND
+  gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND zlib AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (public-domain AND unknown-license-reference) AND
+  gpl-3.0-plus WITH bison-exception-2.2 AND gpl-2.0-plus WITH bison-exception-2.2 AND gpl-3.0-plus
+  WITH bison-exception-2.2 AND bsd-simplified AND (public-domain AND unknown-license-reference)
+  AND (public-domain AND unknown-license-reference) AND bsd-new AND bsd-new AND bsd-simplified
+  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (lgpl-2.1-plus AND
+  lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1
+  AND lgpl-2.1) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND bsd-new
+  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-2.0 AND gpl-1.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND
+  lgpl-2.0-plus) AND stlport-4.5 AND (public-domain AND unknown-license-reference) AND (gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND ((gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-2.0 AND gpl-1.0-plus) OR (artistic-2.0 AND artistic-perl-1.0)) AND (public-domain
+  AND unknown-license-reference) AND bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND (gpl-3.0-plus AND gpl-3.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND
+  lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND
+  (x11-xconsortium AND public-domain) AND bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
 - |
   2000-2016, Oracle and/or its affiliates. All rights reserved.
   2008-2013 Monty Program AB

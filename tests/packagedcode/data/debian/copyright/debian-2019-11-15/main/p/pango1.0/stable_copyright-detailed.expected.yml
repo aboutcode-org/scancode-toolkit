@@ -1,25 +1,20 @@
-- |
-  LGPL-2+
-  Example
-  LGPL-2+
-  LGPL-2+
-  LGPL-2+
-  LGPL-2+ and TCL
-  LGPL-2+
-  LGPL-2+
-  Unicode
-  LGPL-2+ and ICU
-  LGPL-2+
-  Example
-  ICU
-  LGPL-2+
-  TCL
-  Unicode
-- lgpl-2.0-plus AND unknown AND lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0-plus AND (lgpl-2.0-plus
-  AND unknown) AND lgpl-2.0-plus AND lgpl-2.0-plus AND unknown AND (lgpl-2.0-plus AND unknown)
-  AND lgpl-2.0-plus AND unknown AND (mit-old-style AND unknown) AND unknown AND x11 AND lgpl-2.0-plus
-  AND ((gpl-3.0-plus AND lgpl-2.0) AND unknown) AND unknown AND (tcl AND unknown) AND unknown
-  AND (unicode AND unknown)
+- - LGPL-2+
+  - Example
+  - LGPL-2+
+  - LGPL-2+
+  - LGPL-2+
+  - LGPL-2+ and TCL
+  - LGPL-2+
+  - LGPL-2+
+  - Unicode
+  - LGPL-2+ and ICU
+  - LGPL-2+
+- (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND mit-old-style AND (lgpl-2.0-plus AND gpl-3.0-plus
+  AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus
+  AND lgpl-2.0) AND ((lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND tcl) AND (lgpl-2.0-plus
+  AND gpl-3.0-plus AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND unicode
+  AND ((lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND x11) AND (lgpl-2.0-plus AND gpl-3.0-plus
+  AND lgpl-2.0)
 - |
   1999-2015 Red Hat
   2005-2007 Imendio AB

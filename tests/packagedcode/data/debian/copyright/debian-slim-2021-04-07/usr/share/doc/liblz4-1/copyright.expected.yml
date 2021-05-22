@@ -1,24 +1,20 @@
-- |
-  BSD-2-clause
-  BSD-2-clause
-  BSD-2-clause
-  BSD-2-clause
-  GPL-2+
-  GPL-2+
-  GPL-2+
-  GPL-2+
-  GPL-2
-  GPL-2
-  GPL-2
-  BSD-2-clause
-  GPL-2
-  GPL-2+
-  BSD-2-clause
-- bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified AND gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND bsd-simplified
-  AND (gpl-2.0-plus AND unknown) AND gpl-2.0 AND ((gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND unknown)
-  AND gpl-2.0-plus AND ((gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND unknown) AND bsd-simplified AND
-  bsd-simplified
+- - BSD-2-clause
+  - BSD-2-clause
+  - BSD-2-clause
+  - BSD-2-clause
+  - GPL-2+
+  - GPL-2+
+  - GPL-2+
+  - GPL-2+
+  - GPL-2
+  - GPL-2
+  - GPL-2
+  - BSD-2-clause
+- bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified AND (gpl-2.0-plus
+  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-2.0)
+  AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0
+  AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND
+  gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND bsd-simplified
 - |
   Copyright (C) 2011-2017, Yann Collet.
   Copyright (C) 2011-2017, Yann Collet.

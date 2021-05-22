@@ -1,7 +1,6 @@
-- |
-  BSD-variant
-  GPL-2
-- unknown AND bzip2-libbzip-2010 AND gpl-2.0 AND ((gpl-2.0 AND gpl-2.0) AND unknown)
+- - BSD-variant
+  - GPL-2
+- bzip2-libbzip-2010 AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)
 - |
   1996-2010 Julian R Seward <jseward@bzip.org>
   2018 Nicolas Boulenguez <nicolas.boulenguez@free.fr>
