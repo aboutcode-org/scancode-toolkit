@@ -11,7 +11,7 @@ import logging
 import os
 
 import attr
-from debut import debcon
+from debian_inspector import debcon
 from packageurl import PackageURL
 
 from commoncode import filetype
