@@ -120,7 +120,7 @@
   lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND
   (x11-xconsortium AND public-domain) AND bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
   AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0
-  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND gpl-2.0
 - |
   2000-2016, Oracle and/or its affiliates. All rights reserved.
   2008-2013 Monty Program AB

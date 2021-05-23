@@ -15,6 +15,7 @@
   AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0
   AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND
   gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND bsd-simplified
+  AND gpl-2.0-plus
 - |
   Copyright (C) 2011-2017, Yann Collet.
   Copyright (C) 2011-2017, Yann Collet.

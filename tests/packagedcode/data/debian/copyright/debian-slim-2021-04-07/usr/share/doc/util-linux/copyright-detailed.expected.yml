@@ -45,7 +45,8 @@
   AND lgpl-2.1-plus AND lgpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)
   AND (lgpl-3.0-plus AND lgpl-3.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND
   lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0 AND gpl-2.0)
+  gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (public-domain AND unknown-license-reference AND
+  public-domain)
 - |
   Michal Luscon <mluscon@redhat.com>
   1986 Gary S. Brown

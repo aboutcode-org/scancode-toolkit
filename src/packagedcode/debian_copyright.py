@@ -284,9 +284,9 @@ class DebianStructuredCopyrightFileProcessor:
             )
             license_detections.append(license_detections_para)
             
-        #license_detections.extend(
-        #    self.detect_license_in_other_paras(other_paras=debian_paras.other_paras)
-        #)
+        license_detections.extend(
+            self.detect_license_in_other_paras(other_paras=debian_paras.other_paras)
+        )
 
         return license_detections
 
@@ -558,8 +558,7 @@ class DebianLicensing:
                         matches=text_matches,
                         reference_matches=comment_matches
                     ):
-                        #matches.extend(comment_matches)
-                        pass
+                        matches.extend(comment_matches)
 
             license_matches_by_symbol[cleaned] = matches
 
