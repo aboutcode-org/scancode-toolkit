@@ -1,49 +1,13 @@
 - - BSD-3-Clause
-  - GPL-2
-  - BSD-3-Clause
   - __AUTO_PERMISSIVE__
   - BSD-2-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
   - BSD-4-Clause
   - LGPL-2.1+
   - PERMISSIVE
-  - BSD-3-Clause
-  - BSD-2-Clause
-  - BSD-2-Clause
-  - BSD-2-Clause
-  - BSD-2-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-  - BSD-3-Clause
-- bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND bsd-new AND other-permissive
-  AND bsd-simplified AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-original AND (lgpl-2.1-plus
-  AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND fsf-ap AND bsd-new AND bsd-simplified AND
-  bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-new AND bsd-new AND bsd-new AND
-  bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new
-  AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new
+- bsd-new AND other-permissive AND bsd-simplified AND bsd-original AND (lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1 AND lgpl-2.1) AND fsf-ap
 - |
   2005 Bull S.A
-  2009 Steinar H. Gunderson <sesse@debian.org>
-  2019 Josue Ortega <josue@debian.org>
   1984-2009 Sun Microsystems, Inc.
   1986-1991 Sun Microsystems Inc.
   1986-1991 Sun Microsystems Inc. In addition, portions of such source code were derived from Berkeley

@@ -1,11 +1,8 @@
 - - GPL-3+
   - LGPL-3+ or GPL-2+
-  - GPL-3+
-  - GPL-3+
   - Unicode
 - (gpl-3.0-plus AND gpl-3.0-plus) AND ((lgpl-3.0-plus AND lgpl-3.0-plus AND lgpl-3.0-plus) OR
-  (gpl-2.0-plus AND gpl-2.0-plus)) AND (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus AND
-  gpl-3.0-plus) AND (unicode AND unicode)
+  (gpl-2.0-plus AND gpl-2.0-plus)) AND (unicode AND unicode)
 - |
   Copyright (C) 2011-2014 Simon Josefsson
   Copyright (C) 2011-2014 Simon Josefsson

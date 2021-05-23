@@ -78,7 +78,7 @@ def get_and_set_package_licenses_and_copyrights(package, root_dir):
     return declared_license, detected_license, copyrights
 
 
-def parse_copyright_file(location, with_debian_packaging=False):
+def parse_copyright_file(location, with_details=True):
     """
     Return a tuple of (declared license, detected license_expression, copyrights) strings computed
     from the debain copyright file at `location`. For each copyright file paragraph we
@@ -92,7 +92,7 @@ def parse_copyright_file(location, with_debian_packaging=False):
         return None, None, None
 
     dc = DebianStructuredCopyrightFileProcessor.from_file(
-        location=location, with_debian_packaging=with_debian_packaging,
+        location=location, with_details=with_details,
     )
 
     declared_license = None
@@ -149,7 +149,7 @@ class DebianStructuredCopyrightFileProcessor:
         return '\n'.join(self.detected_copyrights)
 
     @classmethod
-    def from_file(cls, location, with_copyright=True, with_debian_packaging=False):
+    def from_file(cls, location, with_copyright=True, with_details=True):
         """
         Return a DebianCopyrightDetector object built from debian copyright file at ``location``,
         or None if this is not a debian copyright file.
@@ -160,8 +160,21 @@ class DebianStructuredCopyrightFileProcessor:
         
         if not location.endswith('copyright'):
             return
+        
+        if with_details:
+            filter_licenses = False
+            with_debian_packaging = True
+            simplify_licenses = False
+        else:
+            filter_licenses = True
+            with_debian_packaging = False
+            simplify_licenses = False
 
-        debian_paras = DebianCopyrightParagraphs.from_file(location=location)
+        debian_paras = DebianCopyrightParagraphs.from_file(
+            location=location,
+            filter_licenses=filter_licenses,
+            with_debian_packaging=with_debian_packaging,
+        )
         dc = cls(location=location, debian_paras=debian_paras)
 
         content = unicode_text(location)
@@ -619,7 +632,7 @@ class DebianCopyrightParagraphs:
     seen_license_names = attr.ib(default=attr.Factory(set))
 
     @classmethod
-    def from_file(cls, location):
+    def from_file(cls, location, filter_licenses=False, with_debian_packaging=True):
         """
         From a structured debian copyright file at location, parse and extract paragraphs.
         """
@@ -627,15 +640,45 @@ class DebianCopyrightParagraphs:
         
         dc = cls(deco=deco)
         
+        header_license = None
+        seen_file_license = set()
+        
         for paragraph in deco.paragraphs:
             if isinstance(paragraph, CopyrightHeaderParagraph):
+                if paragraph.license.name:
+                    header_license = paragraph.license.name
+                
                 if paragraph.license.text:
                     dc.other_paras_with_license_text.append(paragraph)
                 dc.header_para = paragraph
+            
             elif isinstance(paragraph, CopyrightFilesParagraph):
+                license_name = paragraph.license.name
+                if is_primary_license_paragraph(paragraph):
+                    if header_license:
+                        if license_name != header_license:
+                            # FIXME: Header and Files Header has different license
+                            pass
+                        elif filter_licenses:
+                            continue
+                    else:
+                        header_license = license_name
+                    
+                elif license_name == header_license:
+                    if filter_licenses:
+                        continue
+                elif license_name in seen_file_license:
+                    if filter_licenses:
+                        continue
+                elif is_debian_packaging(paragraph) and not with_debian_packaging:
+                    continue
+
                 if paragraph.license.text:
                     dc.other_paras_with_license_text.append(paragraph)
+                
                 dc.file_paras.append(paragraph)
+                seen_file_license.add(license_name)
+            
             elif isinstance(paragraph, CopyrightLicenseParagraph):
                 lic_name = paragraph.license.name
                 if lic_name:
@@ -647,8 +690,10 @@ class DebianCopyrightParagraphs:
                         dc.duplicate_license_paras.append(paragraph)   
                 else:
                     dc.other_paras.append(paragraph)
+            
             elif isinstance(paragraph, CatchAllParagraph):
                 dc.other_paras.append(paragraph)
+            
             else:
                 raise Exception(
                     f'Unknown paragraph type in copyright file, location:{location}',
@@ -997,7 +1042,7 @@ def is_debian_packaging(paragraph):
     """
     return (
         isinstance(paragraph, CopyrightFilesParagraph)
-        and paragraph.files == ['debian/*']
+        and paragraph.files.values == ['debian/*']
     )
 
 
@@ -1008,7 +1053,7 @@ def is_primary_license_paragraph(paragraph):
     """
     return (
         isinstance(paragraph, CopyrightFilesParagraph)
-        and paragraph.files == ['*']
+        and paragraph.files.values == ['*']
     )
 
 

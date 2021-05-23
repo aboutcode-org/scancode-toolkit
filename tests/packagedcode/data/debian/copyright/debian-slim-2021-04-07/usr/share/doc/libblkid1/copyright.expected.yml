@@ -1,52 +1,21 @@
 - - GPL-2+
   - GPL-2
-  - GPL-2
-  - GPL-2
-  - GPL-2
-  - GPL-2
   - public-domain
   - BSD-4-clause
   - MIT
-  - MIT
-  - BSD-2-clause
-  - BSD-2-clause
   - BSD-2-clause
   - BSD-3-clause
-  - BSD-3-clause
   - LGPL-2+
-  - LGPL-2+
-  - LGPL-2+
-  - LGPL-2.1+
-  - LGPL-2.1+
   - LGPL-2.1+
   - GPL-3+
-  - LGPL-2.1+
   - LGPL
-  - LGPL-2.1+
-  - LGPL
-  - LGPL
-  - LGPL-2.1+
   - LGPL-3+
-  - LGPL-2.1+
-  - GPL-2+
-  - GPL-2+
 - (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0
-  AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND
-  gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0
-  AND gpl-2.0 AND gpl-2.0) AND public-domain AND bsd-original-uc AND mit AND mit AND bsd-no-disclaimer
-  AND bsd-no-disclaimer AND bsd-no-disclaimer AND bsd-new AND bsd-new AND (lgpl-2.0-plus AND
-  lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0-plus
-  AND lgpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0) AND (lgpl-2.1-plus
-  AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1
-  AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-3.0-plus
-  AND gpl-3.0-plus AND gpl-3.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)
-  AND (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND
-  lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.0) AND (lgpl-2.0-plus
-  AND lgpl-2.1-plus AND lgpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)
-  AND (lgpl-3.0-plus AND lgpl-3.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND
-  lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (public-domain AND unknown-license-reference AND
-  public-domain)
+  AND gpl-2.0) AND public-domain AND bsd-original-uc AND mit AND bsd-no-disclaimer AND bsd-new
+  AND (lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0) AND (lgpl-2.1-plus AND
+  lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND
+  (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.0) AND (lgpl-3.0-plus AND lgpl-3.0-plus) AND (public-domain
+  AND unknown-license-reference AND public-domain)
 - |
   Michal Luscon <mluscon@redhat.com>
   1986 Gary S. Brown
@@ -148,16 +117,6 @@
   2013, Red Hat, Inc.
   2009-2014 Karel Zak <kzak@redhat.com>
   2014 Ondrej Oprala <ooprala@redhat.com>
-  Guy Maor <maor@debian.org>
-  Sean 'Shaleh' Perry <shaleh@debian.org>
-  Adrian Bunk <bunk@stusta.de>
-  LaMont Jones <lamont@debian.org>
-  1996-2003 Martin Mitchell (martin@debian.org)
-  2008-2012 Frank Lichtenheld (djpig@debian.org)
-  2014 Andreas Henriksson <andreas@fatal.se>
-  2017-2020 Michael Biebl <biebl@debian.org>
-  2019 Petter Reinholdtsen <pere@debian.org>
-  2017-2020 Chris Hofstaedtler <zeha@debian.org>
   Aiet Kolkhi <aietkolkhi@gmail.com>
   Anton Gladky <gladky.anton@gmail.com>
   Arief S F (arief@gurame.fisika.ui.ac.id>

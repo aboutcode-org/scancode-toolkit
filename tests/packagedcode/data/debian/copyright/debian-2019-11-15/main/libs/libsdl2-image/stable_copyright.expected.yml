@@ -1,10 +1,7 @@
 - - zlib/libpng
-  - zlib/libpng
   - LGPL-2+
   - public-domain
-  - LGPL-2+
-- zlib AND zlib AND (lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0) AND unlicense AND (lgpl-2.0-plus
-  AND gpl-2.0-plus AND lgpl-2.0)
+- zlib AND (lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0) AND unlicense
 - |
   1997-2016 Sam Lantinga <slouken@libsdl.org>
   1997-2016 Sam Lantinga <slouken@libsdl.org>
@@ -13,6 +10,3 @@
   1997-2016 Sam Lantinga <slouken@libsdl.org>
   1998 Philippe Lavoie
   in public domain
-  2013, Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>
-  2013, Felix Geyer <fgeyer@debian.org>
-  2016, Gianfranco Costamagna <locutusofborg@debian.org>

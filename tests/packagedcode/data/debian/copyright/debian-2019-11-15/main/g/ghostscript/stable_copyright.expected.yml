@@ -1,49 +1,27 @@
 - - AGPL-3+
   - BSD-3-Clause~Adobe
-  - AGPL-3+
   - LGPL-2.1
   - FTL
   - GPL
-  - GPL
   - AGPL-3+ with font exception
-  - GPL
-  - GPL
   - GAP~configure
   - GPL-2+
-  - GPL
-  - GPL-2+
   - ZLIB
-  - BSD-3-Clause
   - BSD-3-Clause
   - Expat~SunSoft with SunSoft exception
   - Expat
   - public-domain
   - Apache-2.0
-  - Apache-2.0
-  - AGPL-3+
   - ISC
-  - GPL-2+
-  - GPL-2+
-  - GPL-2+
-  - GPL-2+
-  - GPL-2+
-  - GPL-2+
   - Expat~Ghostgum
   - NTP~Open
   - other
-  - GPL
   - NTP~Lucent
   - NTP~WSU
-  - ZLIB
-  - GPL-3+
-  - GPL
-- agpl-3+ AND bsd-new AND agpl-3+ AND lgpl-2.1 AND freetype AND gpl-1.0-plus AND gpl-1.0-plus
-  AND agpl-3.0 WITH ps-or-pdf-font-exception-20170817 AND gpl-1.0-plus AND gpl-1.0-plus AND
-  fsf-free AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0-plus AND zlib AND bsd-new AND bsd-new
-  AND sunsoft AND mit AND ((lgpl-2.1 AND public-domain) AND public-domain) AND apache-2.0 AND
-  apache-2.0 AND agpl-3+ AND isc AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0-plus AND other-permissive AND x11-opengroup AND unknown-license-reference
-  AND gpl-1.0-plus AND x11-lucent AND libpbm AND zlib AND gpl-3.0-plus AND gpl-1.0-plus
+- agpl-3+ AND bsd-new AND lgpl-2.1 AND freetype AND gpl-1.0-plus AND agpl-3.0 WITH ps-or-pdf-font-exception-20170817
+  AND fsf-free AND gpl-2.0-plus AND zlib AND bsd-new AND sunsoft AND mit AND ((lgpl-2.1 AND
+  public-domain) AND public-domain) AND apache-2.0 AND isc AND other-permissive AND x11-opengroup
+  AND unknown-license-reference AND x11-lucent AND libpbm
 - |
   1986, Eric Gisin
   1989, Berthold K.P. Horn
@@ -106,6 +84,4 @@
   1998, Lucent Technologies
   1992, Washington State University.
   1997, Anthony Shipman
-  2004-2009, Masayuki Hatta (mhatta) <mhatta@debian.org>
-  2009-2019, Jonas Smedegaard <dr@jones.dk>
   2010, Kenshi Muto <kmuto@debian.org>

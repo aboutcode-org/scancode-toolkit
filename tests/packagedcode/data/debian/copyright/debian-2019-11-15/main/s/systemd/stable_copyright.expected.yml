@@ -1,20 +1,12 @@
 - - LGPL-2.1+
   - CC0-1.0
   - GPL-2
-  - GPL-2
   - GPL-2+
   - Expat
   - public-domain
-  - GPL-2+
-  - LGPL-2.1+
-  - GPL-2
-  - LGPL-2.1+
 - (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (cc0-1.0 AND cc0-1.0 AND cc0-1.0)
-  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND
-  gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND mit AND public-domain-disclaimer AND (gpl-2.0-plus
-  AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0
-  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND
-  lgpl-2.1)
+  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
+  mit AND public-domain-disclaimer
 - |
   2008-2015 Kay Sievers <kay@vrfy.org>
   2010-2015 Lennart Poettering
@@ -72,6 +64,3 @@
   2007-2013 Kay Sievers <kay@vrfy.org>
   2013 Tom Gundersen <teg@jklm.no>
   2003 IBM Corp.
-  2010-2013 Tollef Fog Heen <tfheen@debian.org>
-  2013-2018 Michael Biebl <biebl@debian.org>
-  2013 Michael Stapelberg <stapelberg@debian.org>

@@ -22,7 +22,7 @@ def check_expected_parse_copyright_file(
     test_loc,
     expected_loc,
     regen=False,
-    with_debian_packaging=False,
+    with_details=False,
 ):
     """
     Check copyright parsing of `test_loc` location against an expected JSON file
@@ -30,7 +30,7 @@ def check_expected_parse_copyright_file(
     """
     parsed = debian_copyright.parse_copyright_file(
         location=test_loc,
-        with_debian_packaging=with_debian_packaging,
+        with_details=with_details,
     )
     result = saneyaml.dump(list(parsed))
     if regen:
@@ -69,7 +69,7 @@ def create_test_function(
     test_loc,
     expected_loc,
     test_name,
-    with_debian_packaging=False,
+    with_details=True,
     regen=False,
 ):
     """
@@ -79,7 +79,7 @@ def create_test_function(
     # closure on the test params
     def test_func(self):
         check_expected_parse_copyright_file(
-            test_loc, expected_loc, with_debian_packaging=with_debian_packaging, regen=regen)
+            test_loc, expected_loc, with_details=with_details, regen=regen)
 
     # set a proper function name to display in reports and use in discovery
     if isinstance(test_name, bytes):
@@ -107,7 +107,7 @@ def build_tests(test_dir, clazz, prefix='test_', regen=False):
             expected_loc=test_loc + '.expected.yml',
             test_name=test_name1,
             regen=regen,
-            with_debian_packaging=False,
+            with_details=False,
         )
         # attach that method to the class
         setattr(clazz, test_name1, test_method)
@@ -118,7 +118,7 @@ def build_tests(test_dir, clazz, prefix='test_', regen=False):
             expected_loc=test_loc + '-detailed.expected.yml',
             test_name=test_name2,
             regen=regen,
-            with_debian_packaging=True,
+            with_details=True,
         )
         # attach that method to the class
         setattr(clazz, test_name2, test_method)

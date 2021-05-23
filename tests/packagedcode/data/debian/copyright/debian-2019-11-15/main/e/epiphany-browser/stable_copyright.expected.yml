@@ -1,21 +1,12 @@
 - - GPL-3+
   - CC0-1.0
-  - GPL-2+
-  - GPL-3+
   - CC-BY-SA-3.0
   - LGPL-2+
-  - LGPL-2+
-  - LGPL-2+
-  - LGPL-2+
   - Apache-2.0
-  - GPL-3+
   - CC-BY-SA-4.0
-- (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND (cc0-1.0 AND cc0-1.0) AND (gpl-2.0-plus AND
-  gpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND cc-by-sa-3.0 AND (lgpl-2.0-plus
-  AND gpl-3.0-plus AND lgpl-2.0 AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0
-  AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0 AND lgpl-2.0) AND (lgpl-2.0-plus
-  AND gpl-3.0-plus AND lgpl-2.0 AND lgpl-2.0) AND (apache-2.0 AND apache-2.0) AND (gpl-3.0-plus
-  AND gpl-3.0-plus AND gpl-3.0) AND (cc-by-sa-4.0 AND cc-by-sa-4.0)
+- (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND (cc0-1.0 AND cc0-1.0) AND cc-by-sa-3.0 AND
+  (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0 AND lgpl-2.0) AND (apache-2.0 AND apache-2.0)
+  AND (cc-by-sa-4.0 AND cc-by-sa-4.0)
 - |
   2009-2018 Igalia S.L
   2002 Jorn Baayen
@@ -40,7 +31,6 @@
   2018 Purism SPC
   2013 Red Hat, Inc.
   2013, 2015 Epiphany contributors
-  2003-2019 The Debian GNOME Team
   1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
   1998 Shawn T. Amundson
   2007 Xan López

@@ -1,123 +1,15 @@
 - - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
   - LGPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
   - Expat
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
   - GPL-3+
-  - LGPL-3+ or GPL-2+
-  - LGPL-3+ or GPL-2+
   - GPL-2+
   - GPL-3+ with Autoconf exception
-  - public-domain
   - GPL-2
   - GAP
-- ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND (lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0 AND lgpl-2.0)
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND mit AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND (gpl-3.0-plus AND gpl-3.0-plus WITH tex-exception) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND (gpl-2.0-plus AND gpl-2.0-plus) AND autoconf-simple-exception-2.0 AND
-  public-domain AND (gpl-2.0 AND gpl-2.0 AND unknown-license-reference AND unknown-license-reference)
-  AND fsf-ap
+- ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND (lgpl-2.0-plus
+  AND gpl-2.0-plus AND lgpl-2.0 AND lgpl-2.0) AND mit AND (gpl-3.0-plus AND gpl-3.0-plus WITH
+  tex-exception) AND (gpl-2.0-plus AND gpl-2.0-plus) AND autoconf-simple-exception-2.0 AND (gpl-2.0
+  AND gpl-2.0 AND unknown-license-reference AND unknown-license-reference) AND fsf-ap
 - |
   © 2001-2020 Niels Möller
   Some parts are Copyright © the Free Software Foundation and various
@@ -242,7 +134,6 @@
   2009 Magnus Holmgren
   1987-2001 Free Software Foundation, Inc.
   © 1992-2020 Free Software Foundation, Inc.
-  none
   2002 Timshel Knoll <timshel@debian.org>
   2007 Magnus Holmgren
   2007 Magnus Holmgren
