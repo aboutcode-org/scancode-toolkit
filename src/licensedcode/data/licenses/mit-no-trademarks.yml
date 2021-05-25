@@ -5,3 +5,8 @@ category: Permissive
 owner: MIT
 homepage_url: http://web.mit.edu/ivlib/www/copyright.html
 spdx_license_key: LicenseRef-scancode-mit-no-trademarks
+ignorable_copyrights:
+  - Copyright 1995 by the Massachusetts Institute of Technology
+ignorable_holders:
+  - the Massachusetts Institute of Technology
+
