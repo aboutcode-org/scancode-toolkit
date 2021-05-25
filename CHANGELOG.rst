@@ -5,6 +5,13 @@ vNext
 -----
 
 
+Version 21.5.25
+---------------
+
+- Fix click-realted bug https://github.com/nexB/scancode-toolkit/issues/2529
+- Add tests to run on the latest of every dependency
+
+
 Version 21.5.12
 ---------------
 
