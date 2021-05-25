@@ -28,9 +28,21 @@ def check_expected_parse_copyright_file(
     Check copyright parsing of `test_loc` location against an expected JSON file
     at `expected_loc` location. Regen the expected file if `regen` is True.
     """
+    if with_details:
+        filter_licenses=False
+        skip_debian_packaging=False
+        simplify_licenses=False
+    else:
+        filter_licenses=True
+        skip_debian_packaging=True
+        simplify_licenses=True
+    
     parsed = debian_copyright.parse_copyright_file(
         location=test_loc,
-        with_details=with_details,
+        with_copyright=True,
+        filter_licenses=filter_licenses,
+        skip_debian_packaging=skip_debian_packaging,
+        simplify_licenses=False,
     )
     result = saneyaml.dump(list(parsed))
     if regen:
@@ -148,3 +160,8 @@ build_tests(
     clazz=TestDebianSlimCopyrightLicenseDetection,
     regen=False,
 )
+
+class DebianCopyrightFileProcessor(FileBasedTesting):
+    test_data_dir = path.join(path.dirname(__file__), 'data/debian/copyright/')
+    
+    
