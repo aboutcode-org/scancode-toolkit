@@ -138,8 +138,13 @@ class TestGroupedHelpCommand(FileDrivenTesting):
         from commoncode.cliutils import CORE_GROUP
 
         @click.command(name='scan', cls=GroupedHelpCommand)
-        @click.option('--opt', is_flag=True, help='Help text for option',
-                      help_group=CORE_GROUP, cls=PluggableCommandLineOption)
+        @click.option(
+            '--opt', 
+            is_flag=True, 
+            help='Help text for option',
+            help_group=CORE_GROUP, 
+            cls=PluggableCommandLineOption,
+        )
         def scan(opt):
             pass
 
