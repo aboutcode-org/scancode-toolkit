@@ -29,7 +29,7 @@
     {
       "purl": "pkg:pypi/setuptools",
       "requirement": ">=32.0.0",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false
@@ -37,7 +37,7 @@
     {
       "purl": "pkg:pypi/nose",
       "requirement": ">=1.3.7",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false
@@ -45,7 +45,7 @@
     {
       "purl": "pkg:pypi/chardet",
       "requirement": ">=3.0.4",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false

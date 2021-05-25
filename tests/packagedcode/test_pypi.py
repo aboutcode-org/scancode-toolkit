@@ -9,8 +9,8 @@
 
 import json
 import os
-from unittest.case import skipIf
 from unittest.case import expectedFailure
+from unittest.case import skipIf
 
 import pytest
 
@@ -19,6 +19,22 @@ from packagedcode import pypi
 
 from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import PackageTester
+
+
+class TestPyPiDevelop(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_develop_with_parse_metadata(self):
+        test_file = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info/PKG-INFO')
+        package = pypi.parse_metadata(test_file)
+        expected_loc = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_develop_with_parse(self):
+        test_file = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info/PKG-INFO')
+        package = pypi.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info-expected.json')
+        self.check_package(package, expected_loc, regen=False)
 
 
 class TestPyPiMetadata(PackageTester):
@@ -67,67 +83,117 @@ class TestPyPiMetadata(PackageTester):
         self.check_package(package, expected_loc, regen=False)
 
 
-class TestPyPi(PackageTester):
+class TestPypiArchive(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_develop_with_parse_unpacked_sdist(self):
-        test_file = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info')
-        package = pypi.parse_unpacked_sdist(test_file)
-        expected_loc = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info-expected-sdist.json')
-        self.check_package(package, expected_loc, regen=False)
-
-    def test_develop_with_parse(self):
-        test_file = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info')
-        package = pypi.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info-expected-parse.json')
-        self.check_package(package, expected_loc, regen=False)
-
-    def test_parse_wheel_with_wheelfile(self):
-        test_file = self.get_test_loc('pypi/wheel/atomicwrites-1.2.1-py2.py3-none-any.whl')
-        package = pypi.parse_wheel(test_file)
-        expected_loc = self.get_test_loc('pypi/wheel/atomicwrites-1.2.1-py2.py3-none-any.whl-expected.json')
+    def test_parse_archive_with_wheelfile(self):
+        test_file = self.get_test_loc('pypi/archive/atomicwrites-1.2.1-py2.py3-none-any.whl')
+        package = pypi.parse_archive(test_file)
+        expected_loc = self.get_test_loc('pypi/archive/atomicwrites-1.2.1-py2.py3-none-any.whl-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
     def test_parse_with_wheelfile(self):
-        test_file = self.get_test_loc('pypi/wheel/atomicwrites-1.2.1-py2.py3-none-any.whl')
+        test_file = self.get_test_loc('pypi/archive/atomicwrites-1.2.1-py2.py3-none-any.whl')
         package = pypi.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/wheel/atomicwrites-1.2.1-py2.py3-none-any.whl-expected.json')
+        expected_loc = self.get_test_loc('pypi/archive/atomicwrites-1.2.1-py2.py3-none-any.whl-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_with_unpacked_wheel_1(self):
-        test_file = self.get_test_loc('pypi/unpacked_wheel/pip-20.2.2.dist-info/')
+    def test_parse_with_eggfile(self):
+        test_file = self.get_test_loc('pypi/archive/commoncode-21.5.12-py3.9.egg')
         package = pypi.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/unpacked_wheel/pip-20.2.2.dist-info-expected.json')
+        expected_loc = self.get_test_loc('pypi/archive/commoncode-21.5.12-py3.9.egg-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_with_unpacked_wheel_1_meta(self):
-        test_file = self.get_test_loc('pypi/unpacked_wheel/pip-20.2.2.dist-info/METADATA')
+
+class TestPypiUnpackedWheel(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_parse_with_unpacked_wheel_meta_v20_1(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.0/Jinja2-2.10.dist-info/METADATA')
         package = pypi.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/unpacked_wheel/pip-20.2.2.dist-info-METADATA-expected.json')
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.0/Jinja2-2.10.dist-info-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_with_unpacked_wheel_2(self):
-        test_file = self.get_test_loc('pypi/unpacked_wheel/python_mimeparse-1.6.0.dist-info/')
+    def test_parse_with_unpacked_wheel_meta_v20_2(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.0/python_mimeparse-1.6.0.dist-info/METADATA')
         package = pypi.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/unpacked_wheel/python_mimeparse-1.6.0.dist-info-expected.json')
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.0/python_mimeparse-1.6.0.dist-info-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_with_unpacked_wheel_2_meta(self):
-        test_file = self.get_test_loc('pypi/unpacked_wheel/python_mimeparse-1.6.0.dist-info/METADATA')
+    def test_parse_with_unpacked_wheel_meta_v20_3(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.0/toml-0.10.1.dist-info/METADATA')
         package = pypi.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/unpacked_wheel/python_mimeparse-1.6.0.dist-info-METADATA-expected.json')
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.0/toml-0.10.1.dist-info-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_with_unpacked_wheel_3(self):
-        test_file = self.get_test_loc('pypi/unpacked_wheel/toml-0.10.1.dist-info/')
+    def test_parse_with_unpacked_wheel_meta_v20_4(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.0/urllib3-1.26.4.dist-info/METADATA')
         package = pypi.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/unpacked_wheel/toml-0.10.1.dist-info-expected.json')
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.0/urllib3-1.26.4.dist-info-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_with_unpacked_wheel_3_meta(self):
-        test_file = self.get_test_loc('pypi/unpacked_wheel/toml-0.10.1.dist-info/METADATA')
+    def test_parse_with_unpacked_wheel_meta_v21_1(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/haruka_bot-1.2.3.dist-info/METADATA')
         package = pypi.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/unpacked_wheel/toml-0.10.1.dist-info-METADATA-expected.json')
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/haruka_bot-1.2.3.dist-info-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_with_unpacked_wheel_meta_v21_2(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/pip-20.2.2.dist-info/METADATA')
+        package = pypi.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/pip-20.2.2.dist-info-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_with_unpacked_wheel_meta_v21_3(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/plugincode-21.1.21.dist-info/METADATA')
+        package = pypi.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/plugincode-21.1.21.dist-info-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_with_unpacked_wheel_meta_v21__with_sources(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/with_sources/anonapi-0.0.19.dist-info/METADATA')
+        package = pypi.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/with_sources/anonapi-0.0.19.dist-info-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+
+class TestPypiUnpackedSdist(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_parse_metadata_unpacked_sdist_metadata_v10(self):
+        test_file = self.get_test_loc('pypi/unpacked_sdist/metadata-1.0/PyJPString-0.0.3/PKG-INFO')
+        package = pypi.parse_metadata(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_sdist/metadata-1.0/PyJPString-0.0.3-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_metadata_unpacked_sdist_metadata_v10_subdir(self):
+        test_file = self.get_test_loc('pypi/unpacked_sdist/metadata-1.0/PyJPString-0.0.3/PyJPString.egg-info/PKG-INFO')
+        package = pypi.parse_metadata(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_sdist/metadata-1.0/PyJPString-0.0.3-subdir-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_metadata_unpacked_sdist_metadata_v11_1(self):
+        test_file = self.get_test_loc('pypi/unpacked_sdist/metadata-1.1/python-mimeparse-1.6.0/PKG-INFO')
+        package = pypi.parse_metadata(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_sdist/metadata-1.1/python-mimeparse-1.6.0-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_metadata_unpacked_sdist_metadata_v11_2(self):
+        test_file = self.get_test_loc('pypi/unpacked_sdist/metadata-1.1/pyup-django-0.4.0/PKG-INFO')
+        package = pypi.parse_metadata(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_sdist/metadata-1.1/pyup-django-0.4.0-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_metadata_unpacked_sdist_metadata_v12(self):
+        test_file = self.get_test_loc('pypi/unpacked_sdist/metadata-1.2/anonapi-0.0.19/PKG-INFO')
+        package = pypi.parse_metadata(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_sdist/metadata-1.2/anonapi-0.0.19-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_metadata_unpacked_sdist_metadata_v21(self):
+        test_file = self.get_test_loc('pypi/unpacked_sdist/metadata-2.1/commoncode-21.5.12/PKG-INFO')
+        package = pypi.parse_metadata(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_sdist/metadata-2.1/commoncode-21.5.12-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
 
@@ -135,120 +201,120 @@ class TestPyPiRequirements(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_parse_with_dparse_requirements(self):
-        test_file = self.get_test_loc('pypi/dparse/requirements.txt')
+        test_file = self.get_test_loc('pypi/requirements_txt/simple/requirements.txt')
         dependencies = [d.to_dict() for d in pypi.parse_with_dparse(test_file)]
-        expected_loc = self.get_test_loc('pypi/dparse/requirements.txt-expected.json')
+        expected_loc = self.get_test_loc('pypi/requirements_txt/simple/output.expected.json')
         check_result_equals_expected_json(dependencies, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_basic(self):
+    def test_parse_dependency_file_basic(self):
         test_file = self.get_test_loc('pypi/requirements_txt/basic/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/basic/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_pinned(self):
+    def test_parse_dependency_file_pinned(self):
         test_file = self.get_test_loc('pypi/requirements_txt/pinned/sample-requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/pinned/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_dev(self):
+    def test_parse_dependency_file_dev(self):
         test_file = self.get_test_loc('pypi/requirements_txt/dev/requirements-dev.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/dev/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_requirements_in(self):
+    def test_parse_dependency_file_requirements_in(self):
         test_file = self.get_test_loc('pypi/requirements_txt/requirements_in/requirements.in')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/requirements_in/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_eol_comment(self):
+    def test_parse_dependency_file_eol_comment(self):
         test_file = self.get_test_loc('pypi/requirements_txt/eol_comment/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/eol_comment/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_complex(self):
+    def test_parse_dependency_file_complex(self):
         test_file = self.get_test_loc('pypi/requirements_txt/complex/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/complex/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_editable(self):
+    def test_parse_dependency_file_editable(self):
         test_file = self.get_test_loc('pypi/requirements_txt/editable/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/editable/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_double_extras(self):
+    def test_parse_dependency_file_double_extras(self):
         test_file = self.get_test_loc('pypi/requirements_txt/double_extras/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/double_extras/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
     @expectedFailure
-    def test_parse_requirements_txt_repeated(self):
+    def test_parse_dependency_file_repeated(self):
         # FAILURE: dparse library wrongly detect the first of two repeated
         # dependencies we should return only a single value which should be the
         # last one
         test_file = self.get_test_loc('pypi/requirements_txt/repeated/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/repeated/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_vcs_eggs(self):
+    def test_parse_dependency_file_vcs_eggs(self):
         test_file = self.get_test_loc('pypi/requirements_txt/vcs_eggs/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/vcs_eggs/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_local_paths_and_files(self):
+    def test_parse_dependency_file_local_paths_and_files(self):
         test_file = self.get_test_loc('pypi/requirements_txt/local_paths_and_files/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/local_paths_and_files/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_urls_wth_checksums(self):
+    def test_parse_dependency_file_urls_wth_checksums(self):
         test_file = self.get_test_loc('pypi/requirements_txt/urls_wth_checksums/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/urls_wth_checksums/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_mixed(self):
+    def test_parse_dependency_file_mixed(self):
         test_file = self.get_test_loc('pypi/requirements_txt/mixed/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/mixed/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_comments_and_empties(self):
+    def test_parse_dependency_file_comments_and_empties(self):
         test_file = self.get_test_loc('pypi/requirements_txt/comments_and_empties/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/comments_and_empties/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_many_specs(self):
+    def test_parse_dependency_file_many_specs(self):
         test_file = self.get_test_loc('pypi/requirements_txt/many_specs/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/many_specs/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_vcs_editable(self):
+    def test_parse_dependency_file_vcs_editable(self):
         test_file = self.get_test_loc('pypi/requirements_txt/vcs_editable/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/vcs_editable/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_vcs_extras_require(self):
+    def test_parse_dependency_file_vcs_extras_require(self):
         test_file = self.get_test_loc('pypi/requirements_txt/vcs_extras_require/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/vcs_extras_require/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_requirements_txt_vcs_git(self):
+    def test_parse_dependency_file_vcs_git(self):
         test_file = self.get_test_loc('pypi/requirements_txt/vcs-git/requirements.txt')
-        package = pypi.parse_requirements_txt(test_file)
+        package = pypi.parse_dependency_file(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/vcs-git/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 

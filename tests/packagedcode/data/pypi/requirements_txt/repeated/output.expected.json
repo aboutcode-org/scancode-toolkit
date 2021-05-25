@@ -27,9 +27,9 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:pypi/test",
+      "purl": "pkg:pypi/test@1.2.0",
       "requirement": "=>1.2.0",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false

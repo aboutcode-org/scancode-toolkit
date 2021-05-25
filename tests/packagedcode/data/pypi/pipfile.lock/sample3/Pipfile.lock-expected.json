@@ -29,7 +29,7 @@
     {
       "purl": "pkg:pypi/python-baseconv@1.2.2",
       "requirement": "==1.2.2",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true

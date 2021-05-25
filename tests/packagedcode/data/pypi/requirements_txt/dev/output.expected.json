@@ -29,7 +29,7 @@
     {
       "purl": "pkg:pypi/prompt-toolkit",
       "requirement": ">=1.0.14",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false
@@ -37,7 +37,7 @@
     {
       "purl": "pkg:pypi/pygments@2.2.0",
       "requirement": "==2.2.0",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -45,7 +45,7 @@
     {
       "purl": "pkg:pypi/regex",
       "requirement": "regex",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false

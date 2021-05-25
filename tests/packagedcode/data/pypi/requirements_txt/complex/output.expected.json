@@ -29,7 +29,7 @@
     {
       "purl": "pkg:pypi/babel@0.9.6",
       "requirement": "==0.9.6",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -37,7 +37,7 @@
     {
       "purl": "pkg:pypi/django-uuidfield@0.2",
       "requirement": "==0.2",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true

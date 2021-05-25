@@ -1,0 +1,14 @@
+setup.py
+PyJPString.egg-info/PKG-INFO
+PyJPString.egg-info/SOURCES.txt
+PyJPString.egg-info/dependency_links.txt
+PyJPString.egg-info/requires.txt
+PyJPString.egg-info/top_level.txt
+jpstring/__init__.py
+jpstring/converters.py
+jpstring/normalizers.py
+jpstring/patterns.py
+jpstring/string.py
+jpstring/validators.py
+jpstring/django/__init__.py
+jpstring/django/validators.py

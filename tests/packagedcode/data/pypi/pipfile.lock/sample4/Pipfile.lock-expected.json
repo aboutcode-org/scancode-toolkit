@@ -29,7 +29,7 @@
     {
       "purl": "pkg:pypi/functools32@3.2.3.post2",
       "requirement": "==3.2.3.post2",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -37,7 +37,7 @@
     {
       "purl": "pkg:pypi/urllib3@1.24.2",
       "requirement": "==1.24.2",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -45,7 +45,7 @@
     {
       "purl": "pkg:pypi/alabaster@0.7.12",
       "requirement": "==0.7.12",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -53,7 +53,7 @@
     {
       "purl": "pkg:pypi/attrs@19.3.0",
       "requirement": "==19.3.0",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -61,7 +61,7 @@
     {
       "purl": "pkg:pypi/certifi@2019.9.11",
       "requirement": "==2019.9.11",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -69,7 +69,7 @@
     {
       "purl": "pkg:pypi/markupsafe@1.1.1",
       "requirement": "==1.1.1",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -77,7 +77,7 @@
     {
       "purl": "pkg:pypi/packaging@19.2",
       "requirement": "==19.2",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -85,7 +85,7 @@
     {
       "purl": "pkg:pypi/parver@0.2.0",
       "requirement": "==0.2.0",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -93,7 +93,7 @@
     {
       "purl": "pkg:pypi/pkginfo@1.5.0.1",
       "requirement": "==1.5.0.1",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -101,7 +101,7 @@
     {
       "purl": "pkg:pypi/pygments@2.4.2",
       "requirement": "==2.4.2",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -109,7 +109,7 @@
     {
       "purl": "pkg:pypi/six@1.12.0",
       "requirement": "==1.12.0",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -117,7 +117,7 @@
     {
       "purl": "pkg:pypi/toml@0.10.0",
       "requirement": "==0.10.0",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -125,7 +125,7 @@
     {
       "purl": "pkg:pypi/wheel@0.32.3",
       "requirement": "==0.32.3",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true

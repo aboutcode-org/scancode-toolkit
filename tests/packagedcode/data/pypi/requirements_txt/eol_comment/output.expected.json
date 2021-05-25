@@ -29,7 +29,7 @@
     {
       "purl": "pkg:pypi/req@1.0",
       "requirement": "==1.0",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true

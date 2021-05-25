@@ -1,0 +1,1 @@
+include README.rst LICENSE mimeparse_test.py testdata.json

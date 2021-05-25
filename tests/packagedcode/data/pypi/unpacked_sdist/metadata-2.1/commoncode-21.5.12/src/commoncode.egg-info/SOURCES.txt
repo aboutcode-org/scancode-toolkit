@@ -1,0 +1,9 @@
+MANIFEST.in
+NOTICE
+README.rst
+configure.bat
+pyproject.toml
+requirements.txt
+setup.cfg
+setup.py
+src/commoncode/__init__.py

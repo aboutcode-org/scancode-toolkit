@@ -29,7 +29,7 @@
     {
       "purl": "pkg:pypi/pickything",
       "requirement": "!=1.9.6,<1.6,<2.0a0,==2.4c1,>1.9",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false

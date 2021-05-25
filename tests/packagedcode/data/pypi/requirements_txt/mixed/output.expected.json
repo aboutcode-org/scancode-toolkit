@@ -29,7 +29,7 @@
     {
       "purl": "pkg:pypi/django",
       "requirement": "<1.6,>=1.5",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false
@@ -37,7 +37,7 @@
     {
       "purl": "pkg:pypi/numpy",
       "requirement": "numpy",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false
@@ -45,7 +45,7 @@
     {
       "purl": "pkg:pypi/docparser",
       "requirement": "DocParser",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false

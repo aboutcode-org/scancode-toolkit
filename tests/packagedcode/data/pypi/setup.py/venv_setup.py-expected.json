@@ -15,6 +15,13 @@
       "name": "Ian Bicking",
       "email": null,
       "url": null
+    },
+    {
+      "type": "person",
+      "role": "maintainer",
+      "name": "Jannis Leidel, Carl Meyer and Brian Rosner",
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [

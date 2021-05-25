@@ -29,7 +29,7 @@
     {
       "purl": "pkg:pypi/mypackage@3.0",
       "requirement": "==3.0",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true
@@ -37,7 +37,7 @@
     {
       "purl": "pkg:pypi/fizzy",
       "requirement": "Fizzy",
-      "scope": "dependencies",
+      "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false

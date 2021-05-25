@@ -8,28 +8,41 @@
 #
 
 import ast
-import email
+import fnmatch
 import io
 import json
 import logging
 import os
 import re
 import sys
+import zipfile
+from pathlib import Path
 
 import attr
 import dparse
-from pkginfo import BDist
-from pkginfo import Develop
-from pkginfo import SDist
-from pkginfo import UnpackedSDist
-from pkginfo import Wheel
 from packageurl import PackageURL
+from packaging.requirements import Requirement
+from packaging import markers
+from packaging.utils import canonicalize_name
+
+# TODO: replace this
+from pkginfo import SDist
 
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
+
+try:
+    import importlib.metadata as importlib_metadata
+except ImportError:
+    import importlib_metadata
+
+try:
+    from zipfile import Path as ZipPath
+except ImportError:
+    from zipp import Path as ZipPath
 
 """
 Detect and collect Python packages information.
@@ -52,8 +65,6 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
-# FIXME: this whole module is a mess
-
 
 @attr.s()
 class PythonPackage(models.Package):
@@ -62,11 +73,16 @@ class PythonPackage(models.Package):
         '*setup.cfg',
         'PKG-INFO',
         'METADATA',
+        # TODO: we are ignoing sdists such as tar.gz and pex, pyz, etc.
         '*.whl',
         '*.egg',
         '*requirements*.txt',
+        '*requirements*.pip',
         '*requirements*.in',
         '*Pipfile.lock',
+        'conda.yml',
+        '*setup.cfg',
+        'tox.ini',
     )
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
     default_type = 'pypi'
@@ -104,96 +120,128 @@ def parse(location):
     """
     Return a Package built from parsing a file or directory at 'location'.
     """
-    # FIXME: there are more cases such as setup.py and more
-    if filetype.is_dir(location):
-        package = None
-        if location.endswith('.dist-info'):
-            package = parse_wheel(location)
-        else:
-            package = parse_unpacked_sdist(location)
+    parsers = (
+        parse_metadata,
+        parse_setup_py,
+        parse_pipfile_lock,
+        parse_dependency_file,
+        parse_archive,
+        parse_sdist,
+    )
 
-        if package:
-            package.dependencies.extend(get_dependencies(location))
-        return package
-
-    # not a dir
-    file_name = fileutils.file_name(location)
-
-    # FIXME these are not the same as the PythonPackage definitions
-    parsers = {
-        'setup.py': parse_setup_py,
-        'requirements.txt': parse_requirements_txt,
-        'requirements.in': parse_requirements_txt,
-        'Pipfile.lock': parse_pipfile_lock,
-        'PKG-INFO': parse_unpacked_sdist,
-        'METADATA': parse_metadata,
-        '.whl': parse_wheel,
-        '.egg': parse_egg_binary,
-        '.tar.gz': parse_source_distribution,
-        '.zip': parse_source_distribution,
-    }
-
-    for name, parser in parsers.items():
-        if not file_name.endswith(name):
-            continue
-
+    # try all available parser in a well defined order
+    for parser in parsers:
         package = parser(location)
-        if not package:
-            continue
-
-        parent_directory = fileutils.parent_directory(location)
-        package.dependencies.extend(get_dependencies(parent_directory))
-        return package
+        if package:
+            return package
 
 
-def parse_unpacked_sdist(location):
+meta_dir_suffixes = '.dist-info', '.egg-info', 'EGG-INFO',
+meta_file_names = 'PKG-INFO', 'METADATA',
+
+
+def parse_metadata(location):
     """
-    Return a PytthonPackage from a unpacked/extracted sdist source distribution
-    archive, including --develop installations.
+    Return a PythonPackage from an  PKG-INFO or METADATA file ``location``
+    string or pathlib.Path-like object.
+
+    Looks in neighboring files as needed when an installed layout is found.
     """
-    unpacked_sdist = None
+    # FIXME: handle other_urls
 
-    try:
-        unpacked_sdist = UnpackedSDist(location)
-    except ValueError:
-        try:
-            unpacked_sdist = Develop(location)
-        except ValueError:
-            pass
+    if not location:
+        return
 
-    if unpacked_sdist:
-        return parse_with_pkginfo(unpacked_sdist)
+    path = location
+    if not isinstance(location, (Path, ZipPath)):
+        path = Path(location)
 
-    return parse_metadata(location)
+    if not path.name.endswith(meta_file_names):
+        return
+
+    # build from dir if we are an installed distro
+    parent = path.parent
+    if parent.name.endswith(meta_dir_suffixes):
+        path = parent
+
+    dist = importlib_metadata.PathDistribution(path)
+
+    meta = dist.metadata
+    urls, other_urls = get_urls(meta)
+
+    return PythonPackage(
+        name=get_attribute(meta, 'Name'),
+        version=get_attribute(meta, 'Version'),
+        description=get_description(meta, location),
+        declared_license=get_declared_license(meta),
+        keywords=get_keywords(meta),
+        parties=get_parties(meta),
+        dependencies=get_dist_dependencies(dist),
+        **urls,
+    )
 
 
-def parse_wheel(location):
+bdist_file_suffixes = '.whl', '.egg',
+
+
+def parse_archive(location):
     """
-    Passing wheel file location which is generated via setup.py bdist_wheel.
+    Return a PythonPackage from a package archive wheel or egg file at
+    ``location``.
     """
-    return parse_with_pkginfo(Wheel(location))
+    if not location or not location.endswith(bdist_file_suffixes):
+        return
+
+    metafile = find_archive_metafile(location)
+    if metafile:
+        return parse_metadata(metafile)
 
 
-def parse_egg_binary(location):
+def find_archive_metafile(location):
     """
-    Passing wheel file location which is generated via setup.py bdist, including
-    legacy eggs.
+    Return a Path-like object to a Python metafile found in a Python package egg
+    or wheel archive at ``location`` or None.
     """
-    return parse_with_pkginfo(BDist(location))
+    zf = zipfile.ZipFile(location)
+    for path in ZipPath(zf).iterdir():
+        if path.name.endswith(meta_dir_suffixes):
+            for metapath in path.iterdir():
+                if metapath.name.endswith(meta_file_names):
+                    return metapath
 
 
-def parse_source_distribution(location):
+sdist_file_suffixes = '.tar.gz', '.tar.bz2', '.zip',
+
+
+def parse_sdist(location):
     """
-    SDist objects are created from a filesystem path to the corresponding
-    archive. Such as Zip or .tar.gz files
+    Return a PythonPackage from an sdist source distribution file at
+    ``location`` such as a .zip, .tar.gz or .tar.bz2 (leagcy) file.
     """
-    return parse_with_pkginfo(SDist(location))
+    # FIXME: add dependencies
+    # FIXME: handle other_urls
+
+    if not location or not location.endswith(sdist_file_suffixes):
+        return
+    sdist = SDist(location)
+    urls, other_urls = get_urls(sdist)
+    return PythonPackage(
+        name=sdist.name,
+        version=sdist.version,
+        description=get_description(sdist, location=location),
+        declared_license=get_declared_license(sdist),
+        keywords=get_keywords(sdist),
+        parties=get_parties(sdist),
+        **urls,
+    )
 
 
 def parse_setup_py(location):
     """
     Return a PythonPackage built from setup.py data.
     """
+    # FIXME: handle other_urls
+
     if not location or not location.endswith('setup.py'):
         return
 
@@ -204,11 +252,6 @@ def parse_setup_py(location):
     if not package_name:
         return
 
-    parties = get_parties(setup_args)
-    description = get_description(setup_args)
-    declared_license = get_declared_license(setup_args)
-    keywords = get_keywords(setup_args)
-    # FIXME: handle other_urls
     urls, other_urls = get_urls(setup_args)
 
     detected_version = setup_args.get('version')
@@ -219,78 +262,35 @@ def parse_setup_py(location):
     return PythonPackage(
         name=package_name,
         version=detected_version,
-        description=description,
-        parties=parties,
-        declared_license=declared_license,
-        keywords=keywords,
+        description=get_description(setup_args),
+        parties=get_parties(setup_args),
+        declared_license=get_declared_license(setup_args),
+        dependencies=get_setup_py_dependencies(setup_args),
+        keywords=get_keywords(setup_args),
         **urls,
     )
 
 
-def parse_with_pkginfo(pkginfo, location=None):
+def parse_dependency_file(location):
     """
-    Return a PythonPackage built from a pkginfo Distribution object, either an
-    UnpackedSDist or a Develop object.
-    """
-    if not pkginfo or not pkginfo.name:
-        return
-    # FIXME: handle other_urls
-    urls, other_urls = get_urls(pkginfo)
-    return PythonPackage(
-        name=pkginfo.name,
-        version=pkginfo.version,
-        description=get_description(pkginfo, location=location),
-        declared_license=get_declared_license(pkginfo),
-        keywords=get_keywords(pkginfo),
-        parties=get_parties(pkginfo),
-        **urls,
-    )
-
-
-def parse_metadata(location):
-    """
-    Return a PythonPackage from a a 'PKG-INFO' or 'METADATA' file at 'location'
-    or None.
-    """
-    if not location or not location.endswith(('PKG-INFO', 'METADATA',)):
-        return
-
-    with io.open(location, encoding='utf-8') as loc:
-        infos = email.message_from_string(loc.read())
-
-    # TODO: may we should not bail out here?
-    if not infos.get('Name'):
-        return
-
-    parties = get_parties(infos)
-    # FIXME: handle other_urls
-    urls, other_urls = get_urls(infos)
-
-    package = PythonPackage(
-        name=get_attribute(infos, 'Name'),
-        version=get_attribute(infos, 'Version'),
-        description=get_description(infos, location),
-        declared_license=get_declared_license(infos),
-        keywords=get_keywords(infos),
-        parties=parties,
-        **urls,
-    )
-    return package
-
-
-def parse_requirements_txt(location):
-    """
-    Return a PythonPackage built from a Python requirements.txt files at
+    Return a PythonPackage built from a dparse-supported dependency file at
     location.
     """
-    dependent_packages = parse_with_dparse(location)
-    return PythonPackage(dependencies=dependent_packages)
+    if not location:
+        return
+
+    dt = get_dparse_dependency_type(fileutils.file_name(location))
+    if dt:
+        dependent_packages = parse_with_dparse(location)
+        return PythonPackage(dependencies=dependent_packages)
 
 
 def parse_pipfile_lock(location):
     """
     Return a PythonPackage built from a Python Pipfile.lock file at location.
     """
+    if not location or not location.endswith('Pipfile.lock'):
+        return
     with open(location) as f:
         content = f.read()
 
@@ -390,7 +390,7 @@ def get_declared_license(metainfo):
     # TODO: We should make the declared license as it is, this should be
     # updated in scancode to parse a pure string
     lic = get_attribute(metainfo, 'License')
-    if lic and not lic =='UNKNOWN':
+    if lic and not lic == 'UNKNOWN':
         declared_license['license'] = lic
 
     license_classifiers, _ = get_classifiers(metainfo)
@@ -449,6 +449,7 @@ def get_parties(metainfo):
     Return a list of parties found in a ``metainfo`` object or mapping.
     """
     parties = []
+
     author = get_attribute(metainfo, 'Author')
     author_email = get_attribute(metainfo, 'Author-email')
     if author or author_email:
@@ -458,20 +459,175 @@ def get_parties(metainfo):
             role='author',
             email=author_email or None,
         ))
+
+    maintainer = get_attribute(metainfo, 'Maintainer')
+    maintainer_email = get_attribute(metainfo, 'Maintainer-email')
+    if maintainer or maintainer_email:
+        parties.append(models.Party(
+            type=models.party_person,
+            name=maintainer or None,
+            role='maintainer',
+            email=maintainer_email or None,
+        ))
+
     return parties
 
 
-def get_dependencies(location):
+def get_setup_py_dependencies(setup_args):
     """
-    Return a list of DependentPackage found in dependency manifests (aka. lock
-    files) in the ``location`` directory or an empty list.
+    Return a list of DependentPackage found in a ``setup_args`` mapping of
+    setup.py arguments or an empty list.
     """
     dependencies = []
-    for name in os.listdir(location):
-        loc = os.path.join(location, name)
-        dependencies = parse_with_dparse(loc) or []
-        dependencies.extend(dependencies)
+    install_requires = setup_args.get('install_requires')
+    dependencies.extend(get_requires_dependencies(install_requires))
+
+    tests_requires = setup_args.get('tests_requires')
+    dependencies.extend(
+        get_requires_dependencies(tests_requires, default_scope='tests')
+    )
+
+    setup_requires = setup_args.get('setup_requires')
+    dependencies.extend(
+        get_requires_dependencies(setup_requires, default_scope='setup')
+    )
+
+    extras_require = setup_args.get('extras_require', {})
+    for scope, requires in extras_require.items():
+        dependencies.extend(
+            get_requires_dependencies(requires, default_scope=scope)
+        )
+
     return dependencies
+
+
+def is_simple_requires(requires):
+    """
+    Return True if ``requires`` is a sequence of strings.
+    """
+    return (
+        requires
+        and isinstance(requires, list)
+        and all(isinstance(i, str) for i in requires)
+    )
+
+
+def get_dist_dependencies(dist):
+    """
+    Return a list of DependentPackage found in a ``dist`` Distribution object or
+    an empty list.
+    """
+    # we treat extras as scopes
+    # TODO: use these for verification?
+    scopes = dist.metadata.get_all('Provides-Extra') or []
+    return get_requires_dependencies(requires=dist.requires)
+
+
+def get_requires_dependencies(requires, default_scope='install'):
+    """
+    Return a list of DependentPackage found in a ``requires`` list of
+    requirement strings or an empty list.
+    """
+    if not is_simple_requires(requires):
+        return []
+    dependent_packages = []
+    for req in (requires or []):
+        req = Requirement(req)
+        name = canonicalize_name(req.name)
+        is_resolved = False
+        purl = PackageURL(type='pypi', name=name)
+        # note: packaging.requirements.Requirement.specifier is a
+        # packaging.specifiers.SpecifierSet object and a SpecifierSet._specs is
+        # a set of either: packaging.specifiers.Specifier or
+        # packaging.specifiers.LegacySpecifier and each of these have a
+        # .operator and .version property
+        # a packaging.specifiers.SpecifierSet
+        specifiers_set = req.specifier  # a list of packaging.specifiers.Specifier
+        specifiers = specifiers_set._specs
+        requirement = None
+        if specifiers:
+            # SpecifierSet stringifies to comma-separated sorted Specifiers
+            requirement = str(specifiers_set)
+            # are we pinned e.g. resolved? this is true if we have a single
+            # equality specifier
+            if len(specifiers) == 1:
+                specifier = list(specifiers)[0]
+                if specifier.operator in ('==', '==='):
+                    is_resolved = True
+                    purl = purl._replace(version=specifier.version)
+
+        # we use the extra as scope if avialble
+        scope = get_extra(req.marker) or default_scope
+
+        dependent_packages.append(
+            models.DependentPackage(
+                purl=purl.to_string(),
+                scope=scope,
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=is_resolved,
+                requirement=requirement,
+        ))
+
+    return dependent_packages
+
+
+def get_extra(marker):
+    """
+    Return the "extra" value of a ``marker`` requirement Marker or None.
+    """
+    if not marker or not isinstance(marker, markers.Marker):
+        return
+
+    marks = getattr(marker, '_markers', [])
+
+    for mark in marks:
+        # filter for variable(extra) == value tuples of (Variable, Op, Value)
+        if not isinstance(mark, tuple) and not len(mark) == 3:
+            continue
+
+        variable, operator, value = mark
+
+        if (
+            isinstance(variable, markers.Variable)
+            and variable.value == 'extra'
+            and isinstance(operator, markers.Op)
+            and operator.value == '=='
+            and isinstance(value, markers.Value)
+        ):
+            return value.value
+
+
+def is_requirements_file(location):
+    """
+    Return True if the ``location`` is likely for a pip requirements file.
+
+    For example::
+    >>> is_requirements_file('dev-requirements.txt')
+    True
+    >>> is_requirements_file('requirements.txt')
+    True
+    >>> is_requirements_file('requirements.in')
+    True
+    >>> is_requirements_file('requirements.pip')
+    True
+    >>> is_requirements_file('requirements-dev.txt')
+    True
+    >>> is_requirements_file('some-requirements-dev.txt')
+    True
+    >>> is_requirements_file('reqs.txt')
+    False
+    >>> is_requirements_file('requires.txt')
+    True
+    """
+    filename = fileutils.file_name(location)
+    req_files = (
+        '*requirements*.txt',
+        '*requirements*.pip',
+        '*requirements*.in',
+        'requires.txt',
+    )
+    return any(fnmatch.fnmatchcase(filename, rf) for rf in req_files)
 
 
 def get_dparse_dependency_type(file_name):
@@ -481,7 +637,6 @@ def get_dparse_dependency_type(file_name):
     """
     # this is kludgy but the upstream data structure and API needs this
     filetype_by_name_end = {
-        ('.txt', '.in'): dparse.filetypes.requirements_txt,
         'Pipfile.lock': dparse.filetypes.pipfile_lock,
         'Pipfile': dparse.filetypes.pipfile,
         'conda.yml': dparse.filetypes.conda_yml,
@@ -489,6 +644,9 @@ def get_dparse_dependency_type(file_name):
         'tox.ini': dparse.filetypes.tox_ini,
     }
     for extensions, dependency_type in filetype_by_name_end.items():
+        if is_requirements_file(file_name):
+            return dparse.filetypes.requirements_txt
+
         if file_name.endswith(extensions):
             return dependency_type
 
@@ -496,7 +654,7 @@ def get_dparse_dependency_type(file_name):
 def parse_with_dparse(location):
     """
     Return a list of DependentPackage built from a dparse-supported dependency
-    manifest such as requirements.txt, Conda manifest or Pipfile.lock files , or
+    manifest such as requirements.txt, Conda manifest or Pipfile.lock files, or
     return an empty list.
     """
     is_dir = filetype.is_dir(location)
@@ -549,7 +707,7 @@ def parse_with_dparse(location):
             models.DependentPackage(
                 purl=purl.to_string(),
                 # are we always this scope? what if we have requirements-dev.txt?
-                scope='dependencies',
+                scope='install',
                 is_runtime=True,
                 is_optional=False,
                 is_resolved=is_resolved,

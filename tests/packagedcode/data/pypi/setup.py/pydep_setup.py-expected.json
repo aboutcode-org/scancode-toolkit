@@ -33,7 +33,16 @@
   "declared_license": {},
   "notice_text": null,
   "root_path": null,
-  "dependencies": [],
+  "dependencies": [
+    {
+      "purl": "pkg:pypi/pip@7.1.2",
+      "requirement": "==7.1.2",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    }
+  ],
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/pydep@0.0",

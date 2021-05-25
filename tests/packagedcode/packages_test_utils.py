@@ -7,8 +7,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import os.path
 import json
+import os
 import shutil
 
 from commoncode import testcase
