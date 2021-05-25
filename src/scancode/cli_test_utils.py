@@ -81,7 +81,7 @@ def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env
     if retry and result.exit_code != expected_rc:
         if on_windows:
             # wait and rerun in verbose mode to get more in the output
-           time.sleep(1)
+            time.sleep(1)
         if '--verbose' not in options:
             options.append('--verbose')
         result = runner.invoke(cli.scancode, options, catch_exceptions=False, env=env)
@@ -216,7 +216,7 @@ def streamline_headers(headers):
         hle.pop('start_timestamp', None)
         hle.pop('end_timestamp', None)
         hle.pop('duration', None)
-        header= hle.get('options', {})
+        header = hle.get('options', {})
         header.pop('--verbose', None)
         streamline_errors(hle['errors'])
 
