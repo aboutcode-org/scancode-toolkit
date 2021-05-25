@@ -352,6 +352,7 @@ class PluggableCommandLineOption(click.Option):
         allow_from_autoenv=True,
         type=None,  # NOQA
         help=None,  # NOQA
+        hidden=False,
         # custom additions #
         # a string that set the CLI help group for this option
         help_group=MISC_GROUP,
@@ -365,24 +366,22 @@ class PluggableCommandLineOption(click.Option):
         # a sequence of other option name strings that this option
         # conflicts with if they are set
         conflicting_options=(),
-        # a flag set to True if this option should be hidden from the CLI help
-        hidden=False,
         **kwargs
     ):
-
         super(PluggableCommandLineOption, self).__init__(
-            param_decls,
-            show_default,
-            prompt,
-            confirmation_prompt,
-            hide_input,
-            is_flag,
-            flag_value,
-            multiple,
-            count,
-            allow_from_autoenv,
-            type,
-            help,
+            param_decls=param_decls,
+            show_default=show_default,
+            prompt=prompt,
+            confirmation_prompt=confirmation_prompt,
+            hide_input=hide_input,
+            is_flag=is_flag,
+            flag_value=flag_value,
+            multiple=multiple,
+            count=count,
+            allow_from_autoenv=allow_from_autoenv,
+            type=type,
+            help=help,
+            hidden=hidden,
             **kwargs
         )
 
@@ -412,10 +411,6 @@ class PluggableCommandLineOption(click.Option):
         """
         _validate_option_dependencies(ctx, self, value, self.required_options, required=True)
         _validate_option_dependencies(ctx, self, value, self.conflicting_options, required=False)
-
-    def get_help_record(self, ctx):
-        if not self.hidden:
-            return click.Option.get_help_record(self, ctx)
 
 
 def validate_option_dependencies(ctx):
