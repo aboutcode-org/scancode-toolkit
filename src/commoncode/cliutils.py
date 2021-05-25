@@ -9,7 +9,7 @@
 import sys
 
 import click
-click.disable_unicode_literals_warning = True
+
 from click.utils import echo
 from click.termui import style
 from click.types import BoolParamType
