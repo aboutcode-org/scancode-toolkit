@@ -1,0 +1,18 @@
+key: solace-software-eula-2020
+short_name: Solace-Software-EULA-2020
+name: Solace-Software-EULA-2020
+category: Proprietary Free
+owner: solace
+homepage_url: https://solace.com/license-software/
+spdx_license_key: LicenseRef-scancode-solace-software-eula-2020
+text_urls:
+    - https://solace.com/wp-content/uploads/2019/03/Solace-Software-EULA.pdf
+ignorable_emails:
+  - support@solace.com
+  - support@solcae.com
+ignorable_urls:
+  - http://www.bis.doc.gov/
+  - http://www.opensource.org/licenses/alphabetical
+  - http://www.treas.gov/offices/enforcement/ofac
+  - https://solace.com/support
+

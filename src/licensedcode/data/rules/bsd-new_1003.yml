@@ -1,0 +1,5 @@
+license_expression: bsd-new
+is_license_text: yes
+relevance: 99
+notes: This is a sun-bsd-no-nuclear stripped from the nuclear clause which is essentially a
+    bsd-3-clause See https://archive.softwareheritage.org/browse/content/sha1_git:152044fdb0e884d04ea9efb4df809a01484f6461/raw/

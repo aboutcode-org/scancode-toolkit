@@ -1,0 +1,11 @@
+key: nvidia-isaac-eula-2019.1
+short_name: NVIDIA ISAAC EULA v2019.1
+name: NVIDIA ISAAC EULA v2019.1
+category: Proprietary Free
+owner: NVIDIA
+homepage_url: https://developer.nvidia.com/isaac-sdk
+spdx_license_key: LicenseRef-scancode-nvidia-isaac-eula-2019.1
+faq_url: https://forums.developer.nvidia.com/t/when-do-i-get-charged-for-using-isaac-in-my-business-application/121294
+ignorable_urls:
+  - https://developer.nvidia.com/
+
