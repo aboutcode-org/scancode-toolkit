@@ -13,8 +13,8 @@
       "type": "person",
       "role": "author",
       "name": "Vineet Naik",
-      "email": "naikvin@gmail.com",
-      "url": "https://github.com/naiquevin/pipdeptree"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
@@ -52,7 +52,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/pipdeptree",
-  "repository_homepage_url": "https://pypi.org/project/pipdeptree",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": null,
-  "api_data_url": "http://pypi.python.org/pypi/pipdeptree/json"
+  "api_data_url": "https://pypi.org/pypi/pipdeptree/json"
 }

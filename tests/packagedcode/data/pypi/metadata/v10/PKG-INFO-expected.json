@@ -1,0 +1,45 @@
+{
+  "type": "pypi",
+  "namespace": null,
+  "name": "prompt-toolkit",
+  "version": "0.53.1",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Python",
+  "description": "Library for building powerful interactive command lines in Python\nPython Prompt Toolkit\n        =====================\n        \n        |Build Status|  |PyPI|\n        \n        ``prompt_toolkit`` is a library for building powerful interactive command lines\n        in Python.\n        \n        Looking for ptpython, the Python REPL?\n        **************************************\n        \n        Are you looking for ``ptpython``, the interactive Python Shell? We moved the\n        ``ptpython`` source code to a separate repository. This way we are sure not to\n        pollute the ``prompt_toolkit`` library with any ``ptpython``-specific stuff and\n        ``ptpython`` can be developed independently. You will now have to install it\n        through::\n        \n            pip install ptpython\n        \n        `Go to ptpython... <http://github.com/jonathanslenders/ptpython/>`_\n        \n        .. image :: https://github.com/jonathanslenders/python-prompt-toolkit/raw/master/docs/images/ptpython.png\n        \n        prompt-toolkit features\n        ***********************\n        \n        ``prompt_toolkit`` could be a replacement for `GNU readline\n        <http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html>`_, but it can be much\n        more than that.\n        \n        Some features:\n        \n        - Pure Python.\n        - Syntax highlighting of the input while typing. (For instance, with a Pygments lexer.)\n        - Multi-line input editing.\n        - Advanced code completion.\n        - Both Emacs and Vi key bindings. (Similar to readline.)\n        - Reverse and forward incremental search.\n        - Runs on all Python versions from 2.6 up to 3.4.\n        - Works well with Unicode double width characters. (Chinese input.)\n        - Selecting text for copy/paste. (Both Emacs and Vi style.)\n        - Mouse support for cursor positioning and scrolling.\n        - Auto suggestions. (Like `fish shell <http://fishshell.com/>`_.)\n        - Multiple input buffers.\n        - No global state.\n        - Lightweight, the only dependencies are Pygments, six and wcwidth.\n        - Code written with love.\n        - Runs on Linux, OS X, OpenBSD and Windows systems.\n        \n        Feel free to create tickets for bugs and feature requests, and create pull\n        requests if you have nice patches that you would like to share with others.\n        \n        \n        About Windows support\n        *********************\n        \n        ``prompt_toolkit`` is cross platform, and everything that you build on top\n        should run fine on both Unix and Windows systems. On Windows, it uses a\n        different event loop (``WaitForMultipleObjects`` instead of ``select``), and\n        another input and output system. (Win32 APIs instead of pseudo-terminals and\n        VT100.)\n        \n        It's worth noting that the implementation is a \"best effort of what is\n        possible\". Both Unix and Windows terminals have their limitations. But in\n        general, the Unix experience will still be a little better.\n        \n        For Windows, it's recommended to use either `cmder\n        <http://gooseberrycreative.com/cmder/>`_ or `conemu <https://conemu.github.io/>`_.\n        \n        \n        Installation\n        ************\n        \n        ::\n        \n            pip install prompt-toolkit\n        \n        \n        Getting started\n        ***************\n        \n        The most simple example of the library would look like this:\n        \n        .. code:: python\n        \n            from prompt_toolkit import prompt\n        \n            if __name__ == '__main__':\n                answer = prompt('Give me some input: ')\n                print('You said: %s' % answer)\n        \n        For more complex examples, have a look in the ``examples`` directory. All\n        examples are chosen to demonstrate only one thing. Also, don't be afraid to\n        look at the source code. The implementation of the ``prompt`` function could be\n        a good start.\n        \n        Note: For Python 2, you need to add ``from __future__ import unicode_literals``\n        to the above example. All strings are expected to be unicode strings.\n        \n        \n        Projects using prompt-toolkit\n        *****************************\n        \n        - `ptpython <http://github.com/jonathanslenders/ptpython/>`_: Python REPL\n        - `ptpdb <http://github.com/jonathanslenders/ptpdb/>`_: Python debugger (pdb replacement)\n        - `pgcli <http://pgcli.com/>`_: Postgres client.\n        - `mycli <http://mycli.net>`_: MySql client.\n        - `pyvim <http://github.com/jonathanslenders/pyvim/>`_: A Vim clone in pure Python\n        - `wharfee <http://wharfee.com/>`_: A Docker command line.\n        - `xonsh <http://xonsh.org/>`_: A Python-ish, BASHwards-compatible shell.\n        - `saws <https://github.com/donnemartin/saws>`_: A Supercharged AWS Command Line Interface.\n        \n        \n        (Want your own project to be listed here? Please create a GitHub issue.)\n        \n        \n        Philosophy\n        **********\n        \n        The source code of ``prompt_toolkit`` should be readable, concise and\n        efficient. We prefer short functions focussing each on one task and for which\n        the input and output types are clearly specified. We mostly prefer composition\n        over inheritance, because inheritance can result in too much functionality in\n        the same object. We prefer immutable objects where possible (objects don't\n        change after initialisation). Reusability is important. We absolutely refrain\n        from having a changing global state, it should be possible to have multiple\n        independent instances of the same code in the same process. The architecture\n        should be layered: the lower levels operate on primitive operations and data\n        structures giving -- when correctly combined -- all the possible flexibility;\n        while at the higher level, there should be a simpler API, ready-to-use and\n        sufficient for most use cases. Thinking about algorithms and efficiency is\n        important, but avoid premature optimization.\n        \n        \n        Special thanks to\n        *****************\n        \n        - `Pygments <http://pygments.org/>`_: Syntax highlighter.\n        - `wcwidth <https://github.com/jquast/wcwidth>`_: Determine columns needed for a wide characters.\n        \n        .. |Build Status| image:: https://api.travis-ci.org/jonathanslenders/python-prompt-toolkit.svg?branch=master\n            :target: https://travis-ci.org/jonathanslenders/python-prompt-toolkit#\n        \n        .. |PyPI| image:: https://pypip.in/version/prompt-toolkit/badge.svg\n            :target: https://pypi.python.org/pypi/prompt-toolkit/\n            :alt: Latest Version",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Jonathan Slenders",
+      "email": "UNKNOWN",
+      "url": null
+    }
+  ],
+  "keywords": [],
+  "homepage_url": "https://github.com/jonathanslenders/python-prompt-toolkit",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "unknown",
+  "declared_license": {
+    "license": "LICENSE.txt"
+  },
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:pypi/prompt-toolkit@0.53.1",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/p/prompt-toolkit/prompt-toolkit-0.53.1.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/prompt-toolkit/0.53.1/json"
+}

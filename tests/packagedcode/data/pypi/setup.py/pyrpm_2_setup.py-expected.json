@@ -13,8 +13,8 @@
       "type": "person",
       "role": "author",
       "name": "Stefan Richter",
-      "email": "stefan@02strich.de",
-      "url": "https://github.com/02strich/pyrpm"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
@@ -54,7 +54,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/pyrpm-02strich@0.5.3",
-  "repository_homepage_url": "https://pypi.org/project/pyrpm-02strich",
-  "repository_download_url": "https://pypi.io/packages/source/p/pyrpm-02strich/pyrpm-02strich-0.5.3.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/pyrpm-02strich/0.5.3/json"
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/p/pyrpm-02strich/pyrpm-02strich-0.5.3.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/pyrpm-02strich/0.5.3/json"
 }

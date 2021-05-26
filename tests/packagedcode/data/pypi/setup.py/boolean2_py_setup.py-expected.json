@@ -13,11 +13,15 @@
       "type": "person",
       "role": "author",
       "name": "Sebastian Kraemer",
-      "email": "basti.kr@gmail.com",
-      "url": "https://github.com/bastikr/boolean.py"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
+    "boolean expression",
+    "boolean algebra",
+    "logic",
+    "expression parser",
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Operating System :: OS Independent",
@@ -53,7 +57,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/boolean.py@1.2",
-  "repository_homepage_url": "https://pypi.org/project/boolean.py",
-  "repository_download_url": "https://pypi.io/packages/source/b/boolean.py/boolean.py-1.2.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/boolean.py/1.2/json"
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/b/boolean.py/boolean.py-1.2.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/boolean.py/1.2/json"
 }
