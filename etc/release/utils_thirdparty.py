@@ -2685,12 +2685,18 @@ def get_romp_pyos_options(
     python_versions=PYTHON_VERSIONS,
     operating_systems=PLATFORMS_BY_OS,
 ):
+    """
+    Return a list of CLI options for romp
+    For example:
+    >>> get_romp_pyos_options()
+    ['--version', '3.6', '--version', '3.7', '--version', '3.8', '--version', '3.9', '--platform', 'linux', '--platform', 'macos', '--platform', 'windows']
+    """
     python_dot_versions = ['.'.join(pv) for pv in python_versions]
-    pyos_options = sorted(set(itertools.chain.from_iterable(
-        ('--version', ver) for ver in python_dot_versions)))
+    pyos_options = list(itertools.chain.from_iterable(
+        ('--version', ver) for ver in python_dot_versions))
 
-    pyos_options += sorted(set(itertools.chain.from_iterable(
-        ('--platform' , plat) for plat in operating_systems)))
+    pyos_options += list(itertools.chain.from_iterable(
+        ('--platform' , plat) for plat in operating_systems))
 
     return pyos_options
 
