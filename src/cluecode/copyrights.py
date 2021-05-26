@@ -17,7 +17,6 @@ from time import time
 from cluecode import copyrights_hint
 from commoncode.text import toascii
 from commoncode.text import unixlinesep
-from textcode import analysis
 
 # Tracing flags
 TRACE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT', False)
@@ -60,6 +59,7 @@ The process consists in:
 
 def detect_copyrights(location, copyrights=True, holders=True, authors=True,
                       include_years=True, include_allrights=False,
+                      demarkup=True,
                       deadline=sys.maxsize):
     """
     Yield tuples of (detection type, detected string, start line, end line)
@@ -68,13 +68,35 @@ def detect_copyrights(location, copyrights=True, holders=True, authors=True,
     Valid detection types are: copyrights, authors, holders.
     These are included in the yielded tuples based on the values of `copyrights=True`, `holders=True`, `authors=True`,
     """
-    detector = CopyrightDetector()
-    numbered_lines = analysis.numbered_text_lines(location, demarkup=True)
+    from textcode.analysis import numbered_text_lines
+    numbered_lines = numbered_text_lines(location, demarkup=demarkup)
     numbered_lines = list(numbered_lines)
     if TRACE:
         numbered_lines = list(numbered_lines)
         for nl in numbered_lines:
             logger_debug('numbered_line:', repr(nl))
+
+    yield from detect_copyrights_from_lines(
+        numbered_lines,
+        copyrights=copyrights,
+        holders=holders,
+        authors=authors,
+        include_years=include_years,
+        include_allrights=include_allrights,
+        deadline=deadline)
+
+
+def detect_copyrights_from_lines(numbered_lines, copyrights=True, holders=True, authors=True,
+          include_years=True, include_allrights=False,
+          deadline=sys.maxsize):
+    """
+    Yield tuples of (detection type, detected string, start line, end line)
+    detected in numbered lines
+    Include years in copyrights if include_years is True.
+    Valid detection types are: copyrights, authors, holders.
+    These are included in the yielded tuples based on the values of `copyrights=True`, `holders=True`, `authors=True`,
+    """
+    detector = CopyrightDetector()
 
     for candidates in candidate_lines(numbered_lines):
 
@@ -92,6 +114,7 @@ def detect_copyrights(location, copyrights=True, holders=True, authors=True,
             yield detection
         if time() > deadline:
             break
+
 
 ################################################################################
 # DETECTION PROPER
@@ -387,6 +410,9 @@ patterns = [
     # A copyright line in some manifest, meta or structured files such Windows PE
     (r'^AssemblyCopyright.?$', 'COPY'),
     (r'^AppCopyright?$', 'COPY'),
+
+    # SPDX-FileCopyrightText as defined by the FSFE Reuse project
+    (r'^[Ss][Pp][Dd][Xx]-[Ff]ile[Cc]opyright[Tt]ext', 'COPY'),
 
     ############################################################################
     # ALL Rights Reserved.
@@ -1007,6 +1033,14 @@ patterns = [
     (r'^November$', 'NN'),
     (r'^December$', 'NN'),
 
+    (r'^Name[\.,]?$', 'NN'),
+    (r'^Co-Author[\.,]?$', 'NN'),
+    (r'^Author\'s$', 'NN'),
+    (r'^Co-Author\'s$', 'NN'),
+    #  the Universal Copyright Convention (1971 Paris text).
+    (r'^Convention[\.,]?$', 'NN'),
+    (r'^Paris[\.,]?$', 'NN'),
+
     # we do not include Jan and Jun that are common enough first names
     (r'^(Feb|Mar|Apr|May|Jul|Aug|Sep|Oct|Nov|Dec)$', 'NN'),
     (r'^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$', 'NN'),
@@ -1147,7 +1181,7 @@ patterns = [
     (r'^[Ll]\.?[Ll]\.?[CcPp]\.?,?$', 'COMP'),
     (r'^L\.P\.?$', 'COMP'),
     (r'^[Ss]ubsidiary$', 'COMP'),
-    (r'^[Ss]ubsidiaries$', 'COMP'),
+    (r'^[Ss]ubsidiaries\.?$', 'COMP'),
     (r'^[Ss]ubsidiary\(\-ies\)\.?$', 'COMP'),
 
     # company suffix : SA, SAS, AG, AB, AS, CO, labs followed by a dot
@@ -2564,6 +2598,14 @@ COPYRIGHTS_JUNK = frozenset([
     'copyright (c) <holders>',
     'copyright (c) , and others',
     'copyright from license',
+    'and/or the universal copyright convention 1971',
+    'universal copyright convention',
+    'copyright 2005 m. y. name',
+    'copyright 2005 m. y.',
+    'copyright 2003 m. y. name',
+    'copyright 2003 m. y.',
+    'copyright 2001 m. y. name',
+    'copyright 2001 m. y.',
 ])
 
 ################################################################################
@@ -2699,6 +2741,7 @@ HOLDERS_JUNK = frozenset([
 
 
 def remove_dupe_copyright_words(c):
+    c = c.replace('SPDX-FileCopyrightText', 'Copyright')
     # from .net assemblies
     c = c.replace('AssemblyCopyright', 'Copyright')
     c = c.replace('AppCopyright', 'Copyright')

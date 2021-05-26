@@ -1,0 +1,6 @@
+'M.I.T': 'MIT',
+  'M.I.T.': 'MIT',
+  'MIT ': 'MIT',
+  'MIT (http://mootools.net/license.txt)': 'MIT',
+  'MIT (https://github.com/AlekseyLeshko/say-me/blob/master/LICENSE)': 'MIT',
+  'MIT (https://github.com/AlekseyLeshko/testimonial.js/blob/master/LICENSE)': 'MIT',

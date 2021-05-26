@@ -1,0 +1,135 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--copyright": true,
+        "--email": true,
+        "--filter-clues": true,
+        "--info": true,
+        "--json": "<file>",
+        "--license": true,
+        "--url": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 1
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "type": "file",
+      "name": "LICENSE",
+      "base_name": "LICENSE",
+      "extension": "",
+      "size": 2861,
+      "date": "2021-02-26",
+      "sha1": "c4d6f133413f1ea9d3c436fb797f9060c8640c04",
+      "md5": "55a970437979ffe95e7b8ee6e51abb0c",
+      "sha256": "ebdef41bf0f5bd7d378e4f76052e02156ce1c80ce67f89209b018a3fca8a071c",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "apache-1.1",
+          "score": 96.07,
+          "name": "Apache License 1.1",
+          "short_name": "Apache 1.1",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://apache.org/licenses/LICENSE-1.1",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.1",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.yml",
+          "spdx_license_key": "Apache-1.1",
+          "spdx_url": "https://spdx.org/licenses/Apache-1.1",
+          "start_line": 7,
+          "end_line": 70,
+          "matched_rule": {
+            "identifier": "apache-1.1_63.RULE",
+            "license_expression": "apache-1.1",
+            "licenses": [
+              "apache-1.1"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "matcher": "3-seq",
+            "rule_length": 367,
+            "matched_length": 367,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        }
+      ],
+      "license_expressions": [
+        "apache-1.1"
+      ],
+      "percentage_of_license_text": 92.44,
+      "copyrights": [
+        {
+          "value": "Copyright (c) The Eclipse Foundation https://eclipse.org",
+          "start_line": 2,
+          "end_line": 5
+        },
+        {
+          "value": "Copyright (c) The Eclipse Foundation https://eclipse.org",
+          "start_line": 41,
+          "end_line": 44
+        }
+      ],
+      "holders": [
+        {
+          "value": "The Eclipse Foundation",
+          "start_line": 2,
+          "end_line": 5
+        },
+        {
+          "value": "The Eclipse Foundation",
+          "start_line": 41,
+          "end_line": 44
+        }
+      ],
+      "authors": [
+        {
+          "value": "John Doe",
+          "start_line": 2,
+          "end_line": 5
+        },
+        {
+          "value": "John Doe",
+          "start_line": 41,
+          "end_line": 44
+        }
+      ],
+      "emails": [
+        {
+          "email": "foo@eclipse.org",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

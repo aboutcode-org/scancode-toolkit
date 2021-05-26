@@ -31,9 +31,8 @@ from commoncode.fileutils import resource_iter
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
-from licensedcode.tokenize import query_tokenizer
+from licensedcode.tokenize import index_tokenizer
 from textcode.analysis import numbered_text_lines
-
 
 """
 Reference License and license Rule structures persisted as a combo of a YAML
@@ -48,7 +47,6 @@ data_dir = join(abspath(dirname(__file__)), 'data')
 licenses_data_dir = join(data_dir, 'licenses')
 rules_data_dir = join(data_dir, 'rules')
 
-
 FOSS_CATEGORIES = set([
     'Copyleft',
     'Copyleft Limited',
@@ -57,7 +55,6 @@ FOSS_CATEGORIES = set([
     'Public Domain',
 ])
 
-
 OTHER_CATEGORIES = set([
     'Commercial',
     'Proprietary Free',
@@ -65,7 +62,6 @@ OTHER_CATEGORIES = set([
     'Source-available',
     'Unstated License',
 ])
-
 
 CATEGORIES = FOSS_CATEGORIES | OTHER_CATEGORIES
 
@@ -323,6 +319,8 @@ class License(object):
 
             if not lic.short_name:
                 error('No short name')
+            elif len(lic.short_name) > 50:
+                error('short name must be under 50 characters.')
             if not lic.name:
                 error('No name')
             if not lic.category:
@@ -367,7 +365,7 @@ class License(object):
             # local text consistency
             text = lic.text
 
-            license_qtokens = tuple(query_tokenizer(text))
+            license_qtokens = tuple(index_tokenizer(text))
             if not license_qtokens:
                 info('No license text')
             else:
@@ -462,17 +460,20 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     return licenses
 
 
-def get_rules(licenses_data_dir=licenses_data_dir, rules_data_dir=rules_data_dir):
+def get_rules(
+    licenses_db=None,
+    licenses_data_dir=licenses_data_dir,
+    rules_data_dir=rules_data_dir
+):
     """
-    Yield Rule objects loaded from license files found in `licenses_data_dir`
-    and rule files fourn in `rules_data_dir`. Raise a Exceptions if a rule is
-    inconsistent or incorrect.
+    Yield Rule objects loaded from a licenses_db and license files found in
+    `licenses_data_dir` and rule files found in `rules_data_dir`. Raise an
+    Exception if a rule is inconsistent or incorrect.
     """
-    from licensedcode.cache import get_licenses_db
-    licenses = get_licenses_db(licenses_data_dir=licenses_data_dir)
+    licenses_db = licenses_db or load_licenses(licenses_data_dir=licenses_data_dir)
     rules = list(load_rules(rules_data_dir=rules_data_dir))
-    validate_rules(rules, licenses)
-    licenses_as_rules = build_rules_from_licenses(licenses)
+    validate_rules(rules, licenses_db)
+    licenses_as_rules = build_rules_from_licenses(licenses_db)
     return chain(licenses_as_rules, rules)
 
 
@@ -547,12 +548,12 @@ def build_rules_from_licenses(licenses):
             )
 
 
-def get_all_spdx_keys(licenses):
+def get_all_spdx_keys(licenses_db):
     """
-    Return an iterable of SPDX license keys collected from a `licenses` iterable
-    of license objects.
+    Return an iterable of SPDX license keys collected from a `licenses_db`
+    mapping of {key: License} objects.
     """
-    for lic in licenses.values():
+    for lic in licenses_db.values():
         for spdx_key in lic.spdx_keys():
             yield spdx_key
 
@@ -568,16 +569,16 @@ def get_essential_spdx_tokens():
     yield 'licenseref'
 
 
-def get_all_spdx_key_tokens(licenses):
+def get_all_spdx_key_tokens(licenses_db):
     """
-    Yield token strings collected from a `licenses` iterable of license objects'
-    SPDX license keys.
+    Yield SPDX token strings collected from a `licenses_db` mapping of {key:
+    License} objects.
     """
     for tok in get_essential_spdx_tokens():
         yield tok
 
-    for spdx_key in get_all_spdx_keys(licenses):
-        for token in query_tokenizer(spdx_key):
+    for spdx_key in get_all_spdx_keys(licenses_db):
+        for token in index_tokenizer(spdx_key):
             yield token
 
 
@@ -1076,10 +1077,10 @@ class Rule(BasicRule):
         # We tag this rule as being a bare URL if it starts with a scheme and is
         # on one line: this is used to determine a matching approach
 
-        if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000].lower():
+        if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
             self.minimum_coverage = 100
 
-        for token in query_tokenizer(self.text()):
+        for token in index_tokenizer(self.text()):
             length += 1
             yield token
 

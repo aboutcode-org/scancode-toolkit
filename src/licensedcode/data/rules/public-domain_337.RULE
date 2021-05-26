@@ -1,0 +1,6 @@
+This is a plain C recursive-descent translation of an old
+public-domain YACC grammar that has been used for parsing dates in
+very many open-source projects.
+Since the original authors were generous enough to donate their
+work to the public domain, I feel compelled to match their
+generosity.

@@ -1,0 +1,12 @@
+license_expression: mpl-1.1
+is_license_reference: yes
+relevance: 100
+notes: "note the subtle \"or later\", which is already something baked in the license itself.\n\
+    therefore this has no extra effect\nHere is the license excerpt:\n   6.2. Effect of New\
+    \ Versions\n   \n   Once Covered Code has been published under a particular version of the\n\
+    \   License, You may always continue to use it under the terms of that version.\n   You\
+    \ may also choose to use such Covered Code under the terms of any\n   subsequent version\
+    \ of the License published by Netscape. No one other than\n   Netscape has the right to\
+    \ modify the terms applicable to Covered Code\n   created under this License."
+ignorable_urls:
+    - https://www.mozilla.org/MPL/MPL-1.1.html

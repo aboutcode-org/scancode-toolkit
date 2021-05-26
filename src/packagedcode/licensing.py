@@ -19,6 +19,7 @@ Detect and normalize licenses as found in package manifests data.
 
 TRACE = False
 
+
 def logger_debug(*args):
     pass
 
@@ -45,20 +46,26 @@ def matches_have_unknown(matches, licensing):
             return True
 
 
-def get_normalized_expression(query_string, try_as_expression=True):
+def get_normalized_expression(query_string, try_as_expression=True, approximate=True):
     """
     Given a text `query_string` return a single detected license expression.
     `query_string` is typically the value of a license field as found in package
-    manifests. If `try_as_expression` is True try frst to parse this as a
-    license_expression. Return None if there is the `query_string` is empty.
-    Return "unknown" as a license expression if there is a `query_string` but
-    nothing was detected.
+    manifests.
+
+    If `try_as_expression` is True try first to parse this as a license
+    expression.
+
+    If `approximate` is True, also include approximate license detection as
+    part of the matching procedure.
+
+    Return None if the `query_string` is empty. Return "unknown" as a license
+    expression if there is a `query_string` but nothing was detected.
     """
     if not query_string or not query_string.strip():
         return
 
     if TRACE:
-        logger_debug('get_normalized_expression: query_string: "{}"'.format(query_string))
+        logger_debug(f'get_normalized_expression: query_string: "{query_string}"')
 
     from licensedcode.cache import get_index
     idx = get_index()
@@ -70,18 +77,33 @@ def get_normalized_expression(query_string, try_as_expression=True):
     if try_as_expression:
         try:
             matched_as_expression = True
-            matches = idx.match(query_string=query_string, as_expression=True)
+            matches = idx.match(
+                query_string=query_string,
+                as_expression=True,
+            )
             if matches_have_unknown(matches, licensing):
                 # rematch also if we have unknowns
                 matched_as_expression = False
-                matches = idx.match(query_string=query_string, as_expression=False)
-    
+                matches = idx.match(
+                    query_string=query_string,
+                    as_expression=False,
+                    approximate=approximate,
+                )
+
         except Exception:
             matched_as_expression = False
-            matches = idx.match(query_string=query_string, as_expression=False)
+            matches = idx.match(
+                query_string=query_string,
+                as_expression=False,
+                approximate=approximate,
+            )
     else:
         matched_as_expression = False
-        matches = idx.match(query_string=query_string, as_expression=False)
+        matches = idx.match(
+            query_string=query_string,
+            as_expression=False,
+            approximate=approximate,
+        )
 
     if not matches:
         # we have a query_string text but there was no match: return an unknown
@@ -119,7 +141,7 @@ def get_normalized_expression(query_string, try_as_expression=True):
             raise Exception(
                 'Inconsistent package.declared_license: text with multiple "queries".'
                 'Please report this issue to the scancode-toolkit team.\n'
-                '{}'.format(query_string))
+                f'{query_string}')
 
     query_len = len(query.tokens)
     matched_qspans = [m.qspan for m in matches]

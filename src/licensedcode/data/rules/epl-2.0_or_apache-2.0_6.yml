@@ -1,0 +1,5 @@
+license_expression: epl-2.0 OR apache-2.0
+is_license_notice: yes
+ignorable_urls:
+    - https://www.apache.org/licenses/
+    - https://www.eclipse.org/org/documents/epl-2.0/

@@ -1,0 +1,5 @@
+license_expression: apache-2.0
+is_license_tag: yes
+relevance: 99
+notes: Seen in dulwich. This is an uncommon license reference to or later for apache For now
+    we report only apache-2.0

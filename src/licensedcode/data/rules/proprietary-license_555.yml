@@ -1,0 +1,15 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_copyrights:
+    - (c) Germany and Austria. i. Warranty
+ignorable_holders:
+    - Germany and Austria. i. Warranty
+ignorable_urls:
+    - http://aka.ms/arb-agreement-1
+    - http://aka.ms/exporting
+    - http://aka.ms/mpegla
+    - http://aka.ms/thirdpartynotices
+    - https://go.microsoft.com/fwlink/?LinkId=521839
+    - https://thirdpartysource.microsoft.com/

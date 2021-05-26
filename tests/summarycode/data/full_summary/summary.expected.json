@@ -3910,7 +3910,7 @@
       "licenses": [
         {
           "key": "cc0-1.0",
-          "score": 97.97,
+          "score": 99.18,
           "name": "Creative Commons CC0 1.0 Universal",
           "short_name": "CC0-1.0",
           "category": "Public Domain",
@@ -3926,7 +3926,7 @@
           "start_line": 1,
           "end_line": 98,
           "matched_rule": {
-            "identifier": "cc0-1.0_85.RULE",
+            "identifier": "cc0-1.0_116.RULE",
             "license_expression": "cc0-1.0",
             "licenses": [
               "cc0-1.0"
@@ -3937,9 +3937,9 @@
             "is_license_tag": false,
             "is_license_intro": false,
             "matcher": "3-seq",
-            "rule_length": 987,
+            "rule_length": 975,
             "matched_length": 967,
-            "match_coverage": 97.97,
+            "match_coverage": 99.18,
             "rule_relevance": 100
           }
         }
@@ -3986,7 +3986,7 @@
           "is_exception": false,
           "owner": "Perl Foundation",
           "homepage_url": "http://www.perlfoundation.org/",
-          "text_url": "http://www.perlfoundation.org/artistic_license_2_0",
+          "text_url": "https://www.perlfoundation.org/artistic_license_2_0",
           "reference_url": "https://scancode-licensedb.aboutcode.org/artistic-2.0",
           "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
           "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.yml",

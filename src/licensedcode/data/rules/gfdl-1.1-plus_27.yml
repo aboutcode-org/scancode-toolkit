@@ -1,0 +1,6 @@
+license_expression: gfdl-1.1-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - COPYING.DOC

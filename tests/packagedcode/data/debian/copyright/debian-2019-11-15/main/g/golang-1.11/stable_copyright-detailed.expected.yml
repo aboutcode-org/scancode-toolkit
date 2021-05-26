@@ -9,7 +9,7 @@
   CC-BY-3.0
   BSD-3-clause
 - apache-2.0 AND bsd-2-clause-views AND bsd-new AND bsd-simplified AND cc-by-3.0 AND google-patent-license-golang
-  AND mit AND mpeg-ssg AND multics AND unknown AND x11-xconsortium
+  AND mit AND mpeg-ssg AND multics AND unknown
 - |
   © 2009, 2010, The Go Authors. All rights reserved.
   © 1994-1999 Lucent Technologies Inc. All rights reserved.

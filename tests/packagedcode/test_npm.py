@@ -9,6 +9,8 @@
 
 import os.path
 
+import pytest
+
 from packagedcode import npm
 from commoncode.resource import Codebase
 from packages_test_utils import PackageTester
@@ -245,6 +247,19 @@ class TestNpm(PackageTester):
         packages = npm.parse(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
+    def test_parse_with_name(self):
+        test_file = self.get_test_loc('npm/with_name/package.json')
+        expected_loc = self.get_test_loc('npm/with_name/package.json.expected')
+        packages = npm.parse(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
+
+    def test_parse_without_name(self):
+        test_file = self.get_test_loc('npm/without_name/package.json')
+        try:
+            npm.parse(test_file)
+        except AttributeError as e:
+            assert "'NoneType' object has no attribute 'to_dict'" in str(e)
+
     def test_parse_yarn_lock(self):
         test_file = self.get_test_loc('npm/yarn-lock/yarn.lock')
         expected_loc = self.get_test_loc(
@@ -285,6 +300,29 @@ class TestNpm(PackageTester):
         ]
         results = [r.path for r in npm.NpmPackage.get_package_resources(root, codebase)]
         assert results == expected
+
+
+test_data = [
+    (['MIT'], 'mit'),
+    (['(MIT OR Apache-2.0)'], 'mit OR apache-2.0'),
+    (['SEE LICENSE IN LICENSE'], 'unknown-license-reference'),
+    (['For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license.'], 'unknown-license-reference AND unknown'),
+    (['See License in ./LICENSE file'], 'unknown-license-reference AND unknown'),
+    # FIXME: Apache2 is a valid license
+    (['MIT', 'Apache2'], 'mit AND unknown'),
+    ([{'type': 'MIT', 'url': 'https://github.com/jonschlinkert/repeat-element/blob/master/LICENSE'}], 'mit'),
+    ([{'type': 'Freeware', 'url': 'https://github.com/foor/bar'}], 'unknown-license-reference'),
+    ([{'type': 'patent grant', 'url': 'Freeware'}], 'unknown'),
+    ([{'type': 'GPLv2', 'url': 'https://example.com/licenses/GPLv2'}, {'type': 'MIT', 'url': 'https://example.com/licenses/MIT'}, ],
+     '(gpl-2.0 AND (gpl-2.0 AND unknown)) AND mit'),
+]
+
+
+@pytest.mark.parametrize('declared_license,expected_expression', test_data)
+def test_compute_normalized_license_from_declared(declared_license, expected_expression):
+    result = npm.compute_normalized_license(declared_license)
+    assert result == expected_expression
+
 
 class MockPackage(object):
     pass

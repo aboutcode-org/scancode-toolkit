@@ -1,0 +1,2628 @@
+<rpmHeader>
+  <rpmTag name="Headeri18ntable">
+	<string>C</string>
+  </rpmTag>
+  <rpmTag name="Sigsize">
+	<integer>67828</integer>
+  </rpmTag>
+  <rpmTag name="Sigpgp">
+	<base64>iQEVAwUAXrQWBriLL9Q9vcKEAQgoOAf/V4NNvH7qVWFYUOnYLtJKau6LQbXGm76M
+paXlJgY4gGpTe8Dg0i73kd5irR3iMgJS8sRx1ov8ObwC385tpBgJSTKH50UnpHRu
+rkC51WTQt0NwpP7wvyuKkXUfZLHitFytc86TyHEm6/bHVRfhvxvNIlXbUSdmixbg
+kYruCBrP+7OAXcNl76P2SVas/kB5oL0tPGY6mQBocQxVT3XpvQLCsEKao946WWvs
+Hq01X23BUhzlbYJkXftC9yrJQx9PRYbCHSF1UrKExvtKo8yKsFQdImnY9b06QQYK
+d+l00mUJlkyMoAK7Ycbb+3KystGENv0SLKTVTmmSkuSSszmyN1eKPQ==
+</base64>
+  </rpmTag>
+  <rpmTag name="Sigmd5">
+	<base64>4TY/bRPSaJCLJPrq/6Wcsg==
+</base64>
+  </rpmTag>
+  <rpmTag name="Rsaheader">
+	<base64>iQEVAwUAXrQWBriLL9Q9vcKEAQiZFAgAtERqIa9WjN4VOC9sKVK9eK5y450P6zh/
+xG+BlVDlL7fIf8q63baxe7xodC7I1yx6iKKTp/NvOfMOYpJIWJJQULY5ooqrOPA4
+GnnUmw600ffkyTnx9Sh1OOPFCiH67foEFRXYnKaZzFJCA5iMzb+PuIOdT5tfOkpw
+yyOB0kSFvHd8jcnOIR4Ig3iYm7mGzW+LcKzwWwvcQTD4++e0kmG/5u/60XxbmdZy
+umOl5lAA67iB40E6UuCbjhMxGsDrZux17pSUOVoTiOaiC2e5aMbzpO941X/qR3hA
+OlfGTi62WSu8bakPjk4qe1vzb+zX2YWB/NtpoWhdp0IPXqMYBAICOg==
+</base64>
+  </rpmTag>
+  <rpmTag name="Sha1header">
+	<string>9a205eb8abb9efb46992f835f9548bfeda162f0d</string>
+  </rpmTag>
+  <rpmTag name="Sha256header">
+	<string>18b3bf8f5d98203d36cf51949dc387b0c6de8980f665fcb0881ed2930c81a04c</string>
+  </rpmTag>
+  <rpmTag name="Name">
+	<string>boost-license1_71_0</string>
+  </rpmTag>
+  <rpmTag name="Version">
+	<string>1.71.0</string>
+  </rpmTag>
+  <rpmTag name="Release">
+	<string>9.3</string>
+  </rpmTag>
+  <rpmTag name="Summary">
+	<string>Boost License</string>
+  </rpmTag>
+  <rpmTag name="Description">
+	<string>This package contains the license boost is provided under.</string>
+  </rpmTag>
+  <rpmTag name="Buildtime">
+	<integer>1588859726</integer>
+  </rpmTag>
+  <rpmTag name="Buildhost">
+	<string>build75</string>
+  </rpmTag>
+  <rpmTag name="Installtime">
+	<integer>1590701246</integer>
+  </rpmTag>
+  <rpmTag name="Size">
+	<integer>1338</integer>
+  </rpmTag>
+  <rpmTag name="Distribution">
+	<string>openSUSE Tumbleweed</string>
+  </rpmTag>
+  <rpmTag name="Vendor">
+	<string>openSUSE</string>
+  </rpmTag>
+  <rpmTag name="License">
+	<string>BSL-1.0</string>
+  </rpmTag>
+  <rpmTag name="Packager">
+	<string>https://bugs.opensuse.org</string>
+  </rpmTag>
+  <rpmTag name="Group">
+	<string>Development/Libraries/C and C++</string>
+  </rpmTag>
+  <rpmTag name="Url">
+	<string>http://www.boost.org</string>
+  </rpmTag>
+  <rpmTag name="Os">
+	<string>linux</string>
+  </rpmTag>
+  <rpmTag name="Arch">
+	<string>noarch</string>
+  </rpmTag>
+  <rpmTag name="Filesizes">
+	<integer>0</integer>
+	<integer>1338</integer>
+  </rpmTag>
+  <rpmTag name="Filestates">
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemodes">
+	<integer>16877</integer>
+	<integer>33188</integer>
+  </rpmTag>
+  <rpmTag name="Filerdevs">
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemtimes">
+	<integer>1588860226</integer>
+	<integer>1565784130</integer>
+  </rpmTag>
+  <rpmTag name="Filedigests">
+	<string/>
+	<string>c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566</string>
+  </rpmTag>
+  <rpmTag name="Filelinktos">
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Fileflags">
+	<integer>0</integer>
+	<integer>128</integer>
+  </rpmTag>
+  <rpmTag name="Fileusername">
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Filegroupname">
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Sourcerpm">
+	<string>boost-base-1.71.0-9.3.src.rpm</string>
+  </rpmTag>
+  <rpmTag name="Fileverifyflags">
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+  </rpmTag>
+  <rpmTag name="Archivesize">
+	<integer>1784</integer>
+  </rpmTag>
+  <rpmTag name="Providename">
+	<string>boost-license</string>
+	<string>boost-license1_71_0</string>
+  </rpmTag>
+  <rpmTag name="Requireflags">
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+  </rpmTag>
+  <rpmTag name="Requirename">
+	<string>rpmlib(CompressedFileNames)</string>
+	<string>rpmlib(FileDigests)</string>
+	<string>rpmlib(PayloadFilesHavePrefix)</string>
+	<string>rpmlib(PayloadIsXz)</string>
+  </rpmTag>
+  <rpmTag name="Requireversion">
+	<string>3.0.4-1</string>
+	<string>4.6.0-1</string>
+	<string>4.0-1</string>
+	<string>5.2-1</string>
+  </rpmTag>
+  <rpmTag name="Rpmversion">
+	<string>4.15.1</string>
+  </rpmTag>
+  <rpmTag name="Changelogtime">
+	<integer>1584014400</integer>
+	<integer>1582891200</integer>
+	<integer>1578916800</integer>
+	<integer>1576238400</integer>
+	<integer>1573214400</integer>
+	<integer>1570104000</integer>
+	<integer>1568894400</integer>
+	<integer>1568808000</integer>
+	<integer>1568203200</integer>
+	<integer>1568116800</integer>
+	<integer>1559044800</integer>
+	<integer>1557748800</integer>
+	<integer>1555070400</integer>
+	<integer>1552046400</integer>
+	<integer>1551873600</integer>
+	<integer>1549022400</integer>
+	<integer>1548244800</integer>
+	<integer>1547467200</integer>
+	<integer>1544788800</integer>
+	<integer>1538395200</integer>
+	<integer>1536753600</integer>
+	<integer>1533902400</integer>
+	<integer>1530619200</integer>
+	<integer>1526990400</integer>
+	<integer>1522843200</integer>
+	<integer>1522843200</integer>
+	<integer>1516363200</integer>
+	<integer>1513598400</integer>
+	<integer>1511956800</integer>
+	<integer>1508846400</integer>
+	<integer>1507636800</integer>
+	<integer>1507550400</integer>
+	<integer>1505908800</integer>
+	<integer>1494331200</integer>
+	<integer>1494244800</integer>
+	<integer>1492689600</integer>
+	<integer>1486728000</integer>
+	<integer>1486123200</integer>
+	<integer>1485345600</integer>
+	<integer>1484654400</integer>
+	<integer>1484481600</integer>
+	<integer>1483531200</integer>
+	<integer>1478606400</integer>
+	<integer>1478174400</integer>
+	<integer>1475236800</integer>
+	<integer>1475150400</integer>
+	<integer>1471521600</integer>
+	<integer>1471003200</integer>
+	<integer>1466164800</integer>
+	<integer>1465905600</integer>
+	<integer>1465905600</integer>
+	<integer>1459252800</integer>
+	<integer>1455451200</integer>
+	<integer>1453118400</integer>
+	<integer>1451908800</integer>
+	<integer>1450872000</integer>
+	<integer>1450008000</integer>
+	<integer>1449576000</integer>
+	<integer>1448539200</integer>
+	<integer>1445601600</integer>
+	<integer>1434024000</integer>
+	<integer>1432209600</integer>
+	<integer>1431172800</integer>
+	<integer>1425902400</integer>
+	<integer>1424692800</integer>
+	<integer>1417780800</integer>
+	<integer>1412251200</integer>
+	<integer>1411819200</integer>
+	<integer>1408017600</integer>
+	<integer>1406721600</integer>
+	<integer>1406030400</integer>
+	<integer>1406030400</integer>
+	<integer>1398772800</integer>
+	<integer>1397908800</integer>
+	<integer>1396353600</integer>
+	<integer>1394539200</integer>
+	<integer>1394452800</integer>
+	<integer>1393502400</integer>
+	<integer>1391860800</integer>
+	<integer>1391774400</integer>
+	<integer>1391601600</integer>
+	<integer>1389096000</integer>
+	<integer>1388836800</integer>
+	<integer>1385467200</integer>
+	<integer>1382270400</integer>
+	<integer>1379505600</integer>
+	<integer>1376827200</integer>
+	<integer>1370692800</integer>
+	<integer>1364990400</integer>
+	<integer>1363953600</integer>
+	<integer>1363867200</integer>
+	<integer>1363435200</integer>
+	<integer>1361966400</integer>
+	<integer>1358942400</integer>
+	<integer>1358424000</integer>
+	<integer>1346932800</integer>
+	<integer>1343908800</integer>
+	<integer>1337342400</integer>
+	<integer>1336737600</integer>
+	<integer>1336564800</integer>
+	<integer>1331985600</integer>
+	<integer>1331640000</integer>
+	<integer>1329134400</integer>
+	<integer>1323172800</integer>
+	<integer>1322222400</integer>
+	<integer>1322136000</integer>
+	<integer>1317643200</integer>
+	<integer>1303128000</integer>
+	<integer>1300708800</integer>
+	<integer>1300708800</integer>
+	<integer>1300449600</integer>
+	<integer>1300449600</integer>
+	<integer>1300276800</integer>
+	<integer>1300104000</integer>
+	<integer>1290686400</integer>
+	<integer>1288008000</integer>
+	<integer>1285761600</integer>
+	<integer>1283515200</integer>
+	<integer>1282824000</integer>
+	<integer>1282824000</integer>
+	<integer>1278676800</integer>
+	<integer>1278676800</integer>
+	<integer>1276689600</integer>
+	<integer>1276171200</integer>
+	<integer>1274702400</integer>
+	<integer>1274356800</integer>
+	<integer>1272542400</integer>
+	<integer>1272283200</integer>
+	<integer>1271246400</integer>
+	<integer>1270209600</integer>
+	<integer>1262779200</integer>
+	<integer>1260878400</integer>
+	<integer>1255953600</integer>
+	<integer>1249560000</integer>
+	<integer>1249387200</integer>
+	<integer>1248782400</integer>
+	<integer>1239883200</integer>
+	<integer>1239796800</integer>
+	<integer>1237204800</integer>
+	<integer>1236081600</integer>
+	<integer>1235563200</integer>
+	<integer>1235304000</integer>
+	<integer>1235131200</integer>
+	<integer>1234526400</integer>
+	<integer>1234353600</integer>
+	<integer>1231502400</integer>
+	<integer>1231416000</integer>
+	<integer>1231329600</integer>
+	<integer>1228996800</integer>
+	<integer>1227787200</integer>
+	<integer>1227096000</integer>
+	<integer>1226404800</integer>
+	<integer>1225454400</integer>
+	<integer>1225108800</integer>
+	<integer>1224763200</integer>
+	<integer>1224763200</integer>
+	<integer>1224244800</integer>
+	<integer>1224072000</integer>
+	<integer>1223985600</integer>
+	<integer>1220356800</integer>
+	<integer>1214222400</integer>
+	<integer>1213963200</integer>
+	<integer>1207828800</integer>
+	<integer>1201521600</integer>
+	<integer>1200657600</integer>
+	<integer>1200571200</integer>
+	<integer>1200312000</integer>
+	<integer>1193227200</integer>
+	<integer>1187611200</integer>
+	<integer>1186833600</integer>
+	<integer>1186660800</integer>
+	<integer>1184500800</integer>
+	<integer>1174737600</integer>
+	<integer>1158926400</integer>
+	<integer>1152878400</integer>
+	<integer>1152792000</integer>
+	<integer>1150718400</integer>
+	<integer>1144152000</integer>
+	<integer>1144152000</integer>
+	<integer>1139400000</integer>
+	<integer>1138190400</integer>
+	<integer>1137499200</integer>
+	<integer>1133956800</integer>
+	<integer>1133870400</integer>
+	<integer>1124971200</integer>
+	<integer>1124452800</integer>
+	<integer>1124366400</integer>
+	<integer>1110456000</integer>
+	<integer>1083931200</integer>
+	<integer>1082894400</integer>
+	<integer>1078488000</integer>
+	<integer>1073736000</integer>
+	<integer>1061380800</integer>
+	<integer>1058961600</integer>
+  </rpmTag>
+  <rpmTag name="Changelogname">
+	<string>Adam Majer &lt;adam.majer@suse.de&gt;</string>
+	<string>Egbert Eich &lt;eich@suse.com&gt;</string>
+	<string>Christian Goll &lt;cgoll@suse.com&gt;</string>
+	<string>Stefan Brüns &lt;stefan.bruens@rwth-aachen.de&gt;</string>
+	<string>Stefan Brüns &lt;stefan.bruens@rwth-aachen.de&gt;</string>
+	<string>Nicolas Morey-Chaisemartin &lt;nmoreychaisemartin@suse.com&gt;</string>
+	<string>Andreas Schwab &lt;schwab@suse.de&gt;</string>
+	<string>Andreas Schwab &lt;schwab@suse.de&gt;</string>
+	<string>Adam Majer &lt;adam.majer@suse.de&gt;</string>
+	<string>Adam Majer &lt;adam.majer@suse.de&gt;</string>
+	<string>Adam Majer &lt;adam.majer@suse.de&gt;</string>
+	<string>Adam Majer &lt;adam.majer@suse.de&gt;</string>
+	<string>Adam Majer &lt;adam.majer@suse.de&gt;</string>
+	<string>Dominique Leuenberger &lt;dimstar@opensuse.org&gt;</string>
+	<string>Adam Majer &lt;adam.majer@suse.de&gt;</string>
+	<string>cgoll@suse.com</string>
+	<string>cgoll@suse.com</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>schwab@suse.de</string>
+	<string>aeszter@gwdg.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>jmatejek@suse.com</string>
+	<string>adam.majer@suse.de</string>
+	<string>nmoreychaisemartin@suse.com</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>jmatejek@suse.com</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>jengelh@inai.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>adam.majer@suse.de</string>
+	<string>mvetter@suse.com</string>
+	<string>adrian@suse.de</string>
+	<string>adrian@suse.de</string>
+	<string>adrian@suse.de</string>
+	<string>adrian@suse.de</string>
+	<string>dmitry_r@opensuse.org</string>
+	<string>egeorget@openmailbox.org</string>
+	<string>idonmez@suse.com</string>
+	<string>idonmez@suse.com</string>
+	<string>fstrba@suse.com</string>
+	<string>egeorget@openmailbox.org</string>
+	<string>pth@suse.de</string>
+	<string>schwab@suse.de</string>
+	<string>idonmez@suse.com</string>
+	<string>idonmez@suse.com</string>
+	<string>schwab@suse.de</string>
+	<string>dmueller@suse.com</string>
+	<string>rneuhauser@suse.cz</string>
+	<string>rguenther@suse.com</string>
+	<string>dimstar@opensuse.org</string>
+	<string>michael.hamann@kit.edu</string>
+	<string>dmitry_r@opensuse.org</string>
+	<string>dmitry_r@opensuse.org</string>
+	<string>coolo@suse.com</string>
+	<string>fcrozat@suse.com</string>
+	<string>fcrozat@suse.com</string>
+	<string>dvaleev@suse.com</string>
+	<string>schwab@suse.de</string>
+	<string>coolo@suse.com</string>
+	<string>Rene.vanPaassen@gmail.com</string>
+	<string>Rene.vanPaassen@gmail.com</string>
+	<string>coolo@suse.com</string>
+	<string>pth@suse.de</string>
+	<string>ro@suse.de</string>
+	<string>ro@suse.de</string>
+	<string>schwab@suse.de</string>
+	<string>coolo@suse.com</string>
+	<string>tbehrens@suse.com</string>
+	<string>jengelh@inai.de</string>
+	<string>dap.darkness@gmail.com</string>
+	<string>tchvatal@suse.com</string>
+	<string>schwab@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>idonmez@suse.com</string>
+	<string>mmeister@suse.com</string>
+	<string>dap.darkness@gmail.com</string>
+	<string>dmueller@suse.com</string>
+	<string>BSipos@rkf-eng.com</string>
+	<string>opensuse@dstoecker.de</string>
+	<string>cfarrell@suse.com</string>
+	<string>aj@suse.de</string>
+	<string>aj@suse.de</string>
+	<string>coolo@suse.com</string>
+	<string>coolo@suse.com</string>
+	<string>jengelh@medozas.de</string>
+	<string>pth@suse.de</string>
+	<string>coolo@suse.com</string>
+	<string>aj@suse.de</string>
+	<string>jengelh@medozas.de</string>
+	<string>nadvornik@suse.com</string>
+	<string>dmueller@suse.de</string>
+	<string>ro@suse.de</string>
+	<string>idoenmez@novell.com</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>jslaby@novell.com</string>
+	<string>coolo@novell.com</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>lnussel@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>wittemar@googlemail.com</string>
+	<string>bg@novell.com</string>
+	<string>bg@novell.com</string>
+	<string>pth@novell.com</string>
+	<string>pth@novell.com</string>
+	<string>pth@suse.de</string>
+	<string>freespacer@gmx.de</string>
+	<string>jengelh@medozas.de</string>
+	<string>jengelh@medozas.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>coolo@novell.com</string>
+	<string>crrodriguez@suse.de</string>
+	<string>ro@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>ro@suse.de</string>
+	<string>ro@suse.de</string>
+	<string>jjolly@suse.de</string>
+	<string>ro@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>ro@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>ro@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>schwab@suse.de</string>
+	<string>ro@suse.de</string>
+	<string>schwab@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>schwab@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>rguenther@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>aj@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>schwab@suse.de</string>
+	<string>aj@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>sf@suse.de</string>
+	<string>sf@suse.de</string>
+	<string>jw@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>schwab@suse.de</string>
+	<string>mls@suse.de</string>
+	<string>schwab@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>coolo@suse.de</string>
+	<string>pth@suse.de</string>
+	<string>adrian@suse.de</string>
+	<string>pthomas@suse.de</string>
+	<string>pthomas@suse.de</string>
+  </rpmTag>
+  <rpmTag name="Changelogtext">
+	<string>- Fix packaging errors in cases where python2 is disabled and
+  unavailable.</string>
+	<string>- Fix macro which defines the name of the HPC python3 library
+  directory (bsc#1165277).
+- Include headers and serial libs in the HPC MPI packages
+  (bsc#1165307).</string>
+	<string>- removed hpc bjam package (boo#1160621)
+- added gnu-hpc-openmpi3 and mpich flavor (boo#1160622)</string>
+	<string>- Remove hardcoded abiflags (%py3_abiflags is not available for 3
+  years), use python3-config instead. Fixes build with Python 3.8.</string>
+	<string>- Make sure openmpi-macros-devel is not required for base flavor --
+  consolidate build_mpi/mpi macro into just one.
+- Remove BuildArch guards, no longer relevant since SuSE 11.2</string>
+	<string>- Use new openmpi-macros-devel package</string>
+	<string>- Enable context on riscv64
+- riscv-support.patch: Add missing bits for riscv support</string>
+	<string>- Make sure %{_libdir}/cmake is packaged also without openblas-devel</string>
+	<string>- Update URL to reflect new location of Boost sources</string>
+	<string>- Update to version 1.71.0 (jsc#SLE-8571)
+  Breaking changes:
+  * Uuid: MD5 name-based uuid generation was corrected to be identical
+    on all endian systems. Define BOOST_UUID_COMPAT_PRE_1_71_MD5 to
+    keep the result in a format compatible with 1.66 through 1.70.
+    This does not affect the default name-based uuid generation
+    which is based on SHA1
+  * Test: Boost.Test shows deprecation warnings if some very old
+    headers as deprecated. If you encounter such warnings, please
+    follow the indications: those headers will be removed in a future
+    release.
+  New libraries:
+  * Variant2: A never-valueless, strong guarantee implementation
+    of std::variant
+  Updated libraries:
+  * align, asio, any, beast, circular buffer, container, context,
+    conversion, core, dynamic bitset, endian, fiber, filesystem,
+    flyweight, histogram, iostreams, interprocess, intrusive,
+    legical cast, log, math, metaparse, move, multi array,
+    multi-index containers, outcome, parameter, ptrcontainer,
+    polycollection, smartptr, stacktrace, test, utility, uuid,
+    variant, yap
+  For detailed changes see
+  https://www.boost.org/users/history/version_1_71_0.html
+- drop upstream patches no longer needed:
+  boost-1.57.0-python-libpython_dep.patch,
+  0001-beast-fix-moved-from-executor.patch,
+  remove_boost_serialization_depends, cmake.patch
+- updated patches: boost-1.57.0-python-abi_letters.patch,
+  3ecbf83f.patch</string>
+	<string>- 3ecbf83f.patch: add upstream patch to build and install python-mpi
+  extention.
+- remove_boost_serialization_depends.patch: workaround to build
+  python mpi extention</string>
+	<string>- cmake.patch: add upstream patches making it more compatible with
+  cmake's FindBoost</string>
+	<string>- Update to version 1.70.0
+  Breaking changes:
+  * beast - there were many API changes. For details, see upstream
+    release notes
+  New libraries:
+  * outcome: A set of tools for reporting and handling function
+    failures in contexts where directly using exception handling
+    is unsuitable
+  * histogram: Fast and extensible multi-dimensional histograms
+  Updated libraries:
+  * asio, beast, context, coroutine2, dynamic bitset, fiber,
+    filesystem, integer, log, math, mp11, multi-index containers,
+    multiprecision, polycollection, spirit, stacktrace, test,
+    typeindex, typetraits, variant and ublas.
+  For detailed changes see
+  https://www.boost.org/users/history/version_1_70_0.html
+- 0001-beast-fix-moved-from-executor.patch: upstream patch to fix regresion
+- boost-rpmoptflags-only.patch: refresh but don't disable all extra
+  warnings
+- dynamic_linking.patch: refreshed
+- baselibs.conf - updated to 1.70.0</string>
+	<string>- Do not build gnu-mvapich2-hpc and gnu-openmpi2-hpc flavors in
+  Staging areas.</string>
+	<string>- Add missing build conditions for -extra flavour</string>
+	<string>- fixed hpc build for python3.7</string>
+	<string>- added hpc modularized versions, which have a different naming
+  scheme so that they do not collide with existing libraries
+  * hpc builds miss the documentation
+  * three new _mulitbuild flavors which are
+  * gnu-hpc -&gt; all libraries except the parallel ones
+  * gnu-openmpi2-hpc -&gt; parallel versions with openmpi2
+  * gnu-mvapich2-hpc -&gt; parallel versions with mvapich2</string>
+	<string>- Simplify _multibuild flavours</string>
+	<string>- Update to version 1.69.0
+  Breaking Changes:
+    + Logic: use explicit operator bool when available
+    + Boost.Signals removed
+  New libraries:
+  * SafeNumerics: A library for guaranteed correct integer
+    arithmetic for C++14 and later
+  Updated libraries:
+  Any, Asio, Assign, Beast, CircularBuffer, ConceptCheck, Context,
+  Core, Dynamic Bisect, Fiber, Filesystem, Flyweight, Function,
+  Geometry, Integer, Iostreams, Iterator, LexicalCast, Log, Math,
+  Mp11, MultiArray, Multi-index Containers, Multiprecision,
+  PolyCollection, Pool, Preprocessor, Rational, Spirit,
+  Stacktrace, System, Test, TypeIndex, Utility, Variant, YAP
+  For complete changelog see
+  https://www.boost.org/users/history/version_1_69_0.html
+- python_library_name.patch: updated to leave Boost.MPI python
+  names unchanged.
+- dynamic_linking.patch: refreshed
+- baselibs.conf: updated to 1.69.0
+- cleanup spec file
+  * removed no-op conditionals
+  * appended -impl to all unversioned named Provides: to facilitate
+    introduction of boost-defaults. The defaults package will provide
+    upgrade path in Tumbleweed for -devel subpackages.</string>
+	<string>- Stay with openmpi also on ppc</string>
+	<string>- Fix build on Leap &lt; 15.0</string>
+	<string>- Update to version 1.68.0
+  New libraries:
+  * YAP: An expression template library for C++14 and later
+  Breaking changes since 1.67.0:
+  * uuid: sha1 detail namespace header redirection for backwards
+    compatibility was removed
+  * signals: Boost.Signals will be removed in the next release.
+    Boost.Signals was deprecated in version 1.54.0.
+    Transition to Boost.Signals2 now to avoid disruption.
+  Updated libraries: Beast, Context, Coroutine2, Fiber, Fusion,
+  Geometry, GIL, Graph, Lexical Cast, Log, Math,
+  Multi-index containers, Optional, Predef, Program Options,
+  Python, Rational, System, Stacktrace, Test, TypeIndex and Uuid.
+  For complete list of changes, see
+  https://www.boost.org/users/history/version_1_68_0.html
+- refreshed patches: boost-no_type_punning.patch,
+  python_library_name.patch
+- dropped: python_numpy_retfunc.patch - no longer needed</string>
+	<string>- Re-enable python2 module build by default. Still too many things
+  depend on it.</string>
+	<string>- fix packaging of Boost.Contract on s390 and other platforms
+  without Boost.Context support.
+- fix build on older SLE SP by owning /usr/share/licenses directory</string>
+	<string>- Update to version 1.67.0
+  New libraries:
+  * Contract: Contract programming for C++. All contract
+    programming features are supported: Subcontracting, class
+    invariants, postconditions (with old and return values),
+    preconditions, customizable actions on assertion failure (e.g.,
+    terminate or throw), optional compilation and checking of
+    assertions, etc, from Lorenzo Caminiti.
+  * HOF: Higher-order functions for C++, from Paul Fultz II.
+  Breaking changes in updated libraries:
+  * atomic: Breaking change: Changed the result of the
+    (op)_and_test operations added in Boost 1.66 to the opposite -
+    the functions now return true if the operation result is
+    non-zero. This is consistent with other test methods in
+    Boost.Atomic and the C++ standard library. Users can define
+    BOOST_ATOMIC_DETAIL_HIGHLIGHT_OP_AND_TEST when compiling their
+    code to emit warnings on every use of the changed functions.
+    This way users can locate the code that needs to be updated.
+  * multiprecission: When converting a multiprecision integer to a
+    narrower type, if the value is too large (or negative) to fit
+    in the smaller type, then the result is either the maximum (or
+    minimum) value of the target type. This was always the intended
+    behaviour, but was somewhat haphazardly enforced before. If you
+    really do want just the low order N bits of a value, then you
+    will need to mask these out prior to the case, for example:
+    static_cast&lt;unsigned&gt;(~static_cast&lt;unsigned&gt;(0) &amp; my_value).
+    Note that technically (to avoid undefined behaviour) you should
+    do the same thing with built in integer types too.
+  * spirit: Removed `with_context`
+    utility: &lt;boost/utility.hpp&gt; header no longer includes
+    boost::next and boost::prior as they have been moved to the
+    iterator module. Instead include &lt;boost/next_prior.hpp&gt;. Other
+    uses of &lt;boost/utility.hpp&gt; are discouraged, it's better to use
+    the header for the specific functionality instead.
+  * uuid: random_generator is no longer copyable
+  Libraries that were updated: Asio, Atomic, Beast, ContainerHash,
+  Context, Core, Coroutine2, DateTime, DLL, Fiber, Filesystem,
+  Fusion, Locale, Log, Math, Multi-index Containers,
+  Multiprecission, Optional, Phoenix, PolyCollection, Python,
+  Spirit, Stacktrace, Test, TypeIndex, TypeTraits, Utility,
+  Unordered, Units, Uuid, and Variant. For complete list of
+  changes, see,
+  https://www.boost.org/users/history/version_1_67_0.html
+- refreshed patches:
+  * boost-strict_aliasing.patch
+  * boost-aarch64-flags.patch
+- python_library_name.patch: adapted to not append version number
+  to library names, like new boost is doing.
+- disable python2 builds by default
+- use regular Requires for libboost_header dependency</string>
+	<string>- Use %license instead of %doc [bsc#1082318]</string>
+	<string>- Multibuild requires versioned Name: tag and doesn't seem to do
+  this automatically. (bnc#1076640)</string>
+	<string>- Update to version 1.66.0
+  + Beast: new portable HTTP, WebSocket and network operations
+    using Boost.Asio. Header-only library.
+  + Callable Traits: new library and successor to
+    Boost.FunctionTypes. Header-only library.
+  + Mp11: new metaprogramming library
+  + Asio:
+  * implemented interface changes to reflect the Networking TS
+    (N4656)
+  * functions and classes that have been superseded by
+    Networking TS functionality have been deprecated.
+  * added support for customized handler tracking
+  * removed previously deprecated functions
+  + Atomic: improved compatibility with GCC 7. 128-bit operations
+    on x86_64 no longer require linking with compiled library.
+  + DateTime: Fixed an integral overflow that could cause incorrect
+    results when adding or subtracting many years from a date.
+  + Format: New format specifiers added and volatile arguments
+    can not be safely used with operator%
+  + Fusion:
+  * fix compile error with std::array
+  * remove circular preprocessor include
+  + PolyCollection: backported to GCC 4.8 and 4.9 with some
+    limitations
+  + Uuid: added RTF-4122 namespaces in boost::uuids::ns
+  + for complete changelog, see
+    http://www.boost.org/users/history/version_1_66_0.html
+- refreshed patches: boost-rpmoptflags-only.patch</string>
+	<string>- re-enable Python 2 by default. It's still conditional, but
+  remains enabled by default. This can be disabled in project
+  config.</string>
+	<string>- build Python 2 conditionally</string>
+	<string>- Use multibuild setup - build no-dependency libraries in the
+  base package and build the rest of the compiled libraries in
+  the main variant. This should speed up bootstrapping.
+- boost-devel not built by default anymore.
+- libboost_headers-devel now provides boost-devel for legacy
+  dependencies. If you need compiled boost libraries depend on
+  the current compiled devel subpackage.
+- run %fdupes only on the header files and documentation
+- drop build dependencies on gcc-fortran, chrpath.</string>
+	<string>- Setup MPI environment prior to building boost.
+- Switch to OpenMPI2 as OpenMPI1 is becoming deprecated.</string>
+	<string>- New upstream version 1.65.1
+  + config, fiber - Return a continuation from functions executed
+    by resume_with.
+  + stacktrace - Change preprocessor file extensions to work with
+    the installation system.
+- Changes in version 1.65.0
+  + stacktrace - new library providing call sequence in human
+    readable format.
+  + polycollection - new library providing fast containers of
+    polymorphic objects, from Joaquín M López Muñoz.
+  + For full list of changes, see
+    http://www.boost.org/users/history/version_1_65_1.html
+- 1d862615.patch: upstreamed and removed
+- gcc_path.patch: obsolete, tr1 module is removed
+- mpi_upstream.patch: upstreamed and removed
+- boost-1.57.0-python-abi_letters.patch: refreshed
+- python_library_name.patch: refreshed and reverted upstream
+  changes to mpi/build/Jamfile as we are building python2 and
+  python3 versions of MPI separately.
+- baselibs.conf
+  + add libboost_stracktrace
+  + update to version 1.65.1</string>
+	<string>- 1d862615.patch: Fix regression caused by refactoring of
+  serialization code (bnc#1038083)</string>
+	<string>- make python-numpy optional build dependency
+- fix building of mpi python3 plugin</string>
+	<string>- New upstream version 1.64.0
+  + process - new library providing cross platform methods to
+  - create child processes
+  - setup stream for child processes
+  - sync and async communication streams with children
+  - sync and async wait
+  - process termination
+  + geometry library had some breaking changes,
+  - ublas_transformer is renamed to matrix_transformer
+  - explicit modifier is added to constructors of rtree
+    index::dynamic_* parameters
+  - strategy::area::huiller replaced by strategy::area::spherical
+  + context library updates
+  - deprecated API:execution-context
+  - fixed bad assembly for fcontext on ppc64/sysv/elf
+  + Updated libraries: any, atomic, config, container, context,
+    conversion, core, coroutine2, fiber, hash, interprocess,
+    intrusive, lexicalcast, math, multi-index containers,
+    multiprecision, predef, program options, regex, smart pointers,
+    test ,typeindex, typetraits, unordered, variant
+  + for details, see
+    http://www.boost.org/users/history/version_1_64_0.html
+- Build PyNumpy module
+  + add build requires on python-numpy
+- test_lowcase.patch: upstreamed
+- refreshed patches: boost-strict_aliasing.patch, gcc_path.patch,
+  python_mpi.patch
+- mpi_upstream.patch: pending upstream fixes to OpenMPI build
+- python_library_name.patch: we are building python versions in
+  different stagings so drop library renames.
+- python_numpy_retfunc.patch: rpmlint fixes</string>
+	<string>- update python macros</string>
+	<string>- baselibs.conf: (re)add python 2.7 and 3.x libraries</string>
+	<string>- Fix dependency typos.</string>
+	<string>- test_lowcase.patch: downcase Boost::Test usage of uppercase
+  variables. VERSION was clashing with GNU Autotools define
+  resulting in compilation errors of various packages.
+- recombine headers from various devel subpackages under the
+  libboost_headers-devel package. Not all usage of headers that
+  have compiled parts pull in their associated compiled symbols.
+- general cleanup of the spec file from old, commented stuffs</string>
+	<string>- remove non-existent dependency in the boost mpi python package</string>
+	<string>- update to version 1.63.0
+  * updated libraries: atomic, container, context, fiber,
+    fusion, geometry, hash, interprocess, intrusive, lexical cast,
+    log, metaparse, move, optional, phoenix, python, test,
+    typeindex, units, unordered
+  * see http://www.boost.org/users/history/version_1_63_0.html
+    for complete list of changes
+- refresh patches
+  * boost-1.55.0-python-test-PyImport_AppendInittab.patch
+  * boost-strict_aliasing.patch, and enable -fno-strict-aliasing
+    for python module
+- baselibs.conf:
+  * add libboost_locale
+  * rename python to include new soname
+- remove python-2059618.patch, not needed
+- make build condition --without buil_mpi work
+- allow building without python3 bindings, for SLE11SP4
+- remove versioned build dependency on libicu-devel, apparently
+  not needed.
+- split out the boost-devel package into individudal compiled
+  libraries and their -devel subpackages and libboost_headers-devel
+  package for header-only libraries.
+- remove all the -mt.so symlinks, probably not needed anymore.
+- ship MPI python bindings for both Python 2.7 and 3.x
+  * add python_mpi.patch to allow proper compiled library loading
+- dynamic_linking.patch: first attempt to remove static library
+  generation during build process.</string>
+	<string>- Revert upstream change that set default python version and
+  ignored user configuration.
+  python-2059618.patch (boo#1006584)</string>
+	<string>- Rectify groups and description</string>
+	<string>- package boost-jam
+- add missing ldconfig for libboost_type_erasure
+- fix EOL encoding for documentation files</string>
+	<string>- update to version 1.62.0
+  * new library: fiber: framework for userland-threads/fibers
+  * new library: QVM: library for working with quaternions,
+    vectors and matrices of static size
+  * see http://www.boost.org/users/history/version_1_62_0.html
+    for complete changelog
+- remove boost-fix_include_config.patch - upstreamed
+- gcc_path.patch - fix GCC search paths (bnc#996917)
+  Boost assumes /usr/include/c++/x.y.z/ existence for GCC 4.x
+  onward while our version of GCC only has /usr/include/c++/x.y
+  for 4.x GCC and /usr/include/c++/x/ for 5.x onward.
+- migrate to using %bcond_ instead of hardcoding macros
+  for different Boost features
+- better way to limit max number of compilation units than
+  by reading /proc/meminfo and guesstimating.</string>
+	<string>- Fix boo#994378, boo#994381, boo#994382 boo#994383:
+  Fix build issues when optional_fwd.hpp is used before
+  including boost/config.hpp
+- Add boost-fix_include_config.patch from
+  gh#boostorg/optional#19</string>
+	<string>- build it from "boost.spec", but create versioned "boost-1_61-devel"
+  packages</string>
+	<string>- build quickbook also in versioned package</string>
+	<string>- update to version 1.61.0
+  Details on http://www.boost.org/users/history/version_1_61_0.html
+  Obsolete patches:
+  * boost-1.59-test-fenv.patch
+  * boost-deprecated-type_traits.patch</string>
+	<string>- rename package to boost-1_60 to allow multiple versions</string>
+	<string>- Fix build on systems with GCC4</string>
+	<string>- Added libboost_python3 to the dependency macro.
+  * boost-devel will now correctly requires libboost_python3.</string>
+	<string>- Add boost-deprecated-type_traits.patch to fix deprecated
+  type_traits usage in boost/graph/adjacency_matrix.hpp header.</string>
+	<string>- Add the following patches from Fedora to fix underlinking in
+  boost::python code
+  * boost-1.57.0-python-abi_letters.patch
+  * boost-1.57.0-python-libpython_dep.patch
+  * boost-1.55.0-python-test-PyImport_AppendInittab.patch</string>
+	<string>- Updated to version 1.60.0
+  * New library: VMD.
+  * Updated libraries: Atomic, Chrono, Container, Context, Core,
+    Filesystem, Flyweight, Fusion, Interprocess, Intrusive, Lexical
+    Cast, Locale, log, Move, Multi-index Containers, odeint,
+    Optional, Predef, Test, Thread, UUID
+  * See http://www.boost.org/users/history/version_1_60_0.html for
+    complete changelog.
+- Modified patch:
+  * boost-disable-pch-on-aarch64.patch
+  - rediff to a new context
+- Removed patch:
+  * boost-1.59-python-make_setter.patch
+  - integrated upstream
+- Add libboost_type_erasure subpackage</string>
+	<string>- Add support to Boost:Python3 (boo#951902)
+  * New library: python3</string>
+	<string>- Add boost-visibility.patch to make members of basic_xml_grammar&lt;char&gt;
+  visible (boo#958150).
+- Fix redefinition of _docdir.</string>
+	<string>- coroutine2 depends on context, disable it if context is not built</string>
+	<string>- Updated to version 1.59.0:
+  * New libraries: Convert, Coroutine2
+  * Updated Libraries: Container, Context, Coroutine, Fusion,
+    Geometry, Interprocess, Intrusive, Lexical Cast, Log, Move,
+    Multi-index Containers, Predef, Program Options, Property Tree,
+    Boost.Test v3, TypeIndex, Variant
+  * See http://www.boost.org/users/history/version_1_59_0.html for
+    complete changelog.
+- context now builds on aarch64
+- Import two patches from Fedora: boost-1.59-python-make_setter.patch,
+  boost-1.59-test-fenv.patch
+- Drop 0001-Fix-exec_file-for-Python-3-3.4.patch,
+  0002-Fix-a-regression-with-non-constexpr-types.patch,
+  boost-uuid-comparison.patch, boost-unrecognized-option.patch.
+  Fixed upstream.</string>
+	<string>- Remove unneeded dependency on xorg-x11-devel</string>
+	<string>- boost-unrecognized-option.patch: remove unrecognized option -m32</string>
+	<string>- update to 1.58.0:
+  boost docs remain at 1.56 since upstream hasn't updated yet
+  * New Libraries: Endian, Sort.
+  * Updated Libraries: Asio, Chrono, Container, Context, Conversion,
+  DateTime, Flyweight, Function, Functional/Factory, Fusion, Geometry,
+  Hash, Interprocess, Intrusive, Lexical Cast, Log, Math, Move,
+  Multi-index Containers, Multiprecision, Optional, Phoenix,
+  Predef, Random, Thread, TypeErasure, TypeIndex, Units,
+  Unordered, Variant.
+  See http://www.boost.org/users/history/version_1_58_0.html
+- add 0001-Fix-exec_file-for-Python-3-3.4.patch ,
+  0002-Fix-a-regression-with-non-constexpr-types.patch: Fixes regressions
+  in 1.58
+- drop bjam-alignment.patch, boost-gcc5.patch: Already fixed upstream
+  differently
+- add boost-rpmoptflags-only.patch: Build only with optflags
+- add boost-aarch64-flags.patch: Avoid using -m64
+- add boost-uuid-comparison.patch: Fix regression in UUID operator&lt;
+- add boost-disable-pch-on-aarch64.patch: Disable pch on math library
+  to avoid compiler segfault</string>
+	<string>- Add quickbook subpackage</string>
+	<string>- Use $RPM_OPT_FLAGS for building, force use of the GCC toolset.
+  Be more verbose and fail building with the first error.
+- Add boost-gcc5.patch to use -std=c++11 when building the coroutines
+  module which fixes build with GCC 5.</string>
+	<string>- Revert the python3 building: it resulted in BOTH libboost_python
+  libraries to be using python 3 instructions, resulting in
+  failures of all Py2 related packages.</string>
+	<string>- Added boost_python3 for boost 1.56.0, config based on
+  https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/boost</string>
+	<string>- Update documentation tarball (source was changed)
+- Fix aarch64 build</string>
+	<string>- Update to version 1.56.0. Major changes since 1.54.0:
+  New libraries:
+  * Predef: This library defines a set of compiler, architecture,
+    operating system, library, and other version numbers from the
+    information it can gather of C, C++, Objective C, and Objective
+    C++ predefined macros or those defined in generally available
+    headers, from Rene Rivera.
+  * Align: Memory alignment functions, allocators, and adaptors.
+  * Type_Index: Runtime/Compile time copyable type info.
+  For a detailed descriptions see:
+  http://www.boost.org/users/history/version_1_56_0.html
+  http://www.boost.org/users/history/version_1_55_0.html
+- Rebase boost-thread.patch
+- Rabase boost-use_std_xml_catalog.patch
+- Rebase bjam-alignment.patch
+- Remove obsolete boost-glibc-2.18.patch
+- Remove obsolete boost-1.54-001-coroutine.patch
+- Remove obsolete boost-1.54-002-date-time.patch
+- Remove obsolete boost-1.54-003-log.patch
+- Remove obsolete boost-1.54-change85160.patch
+- Remove obsolete boost-1.54.0-thread-link_atomic.patch
+- Remove obsolete boost-ppc64-abiv2-context.patch
+- Remove obsolete boost-ppc64-abiv2-coroutine.patch
+- Remove outdated man pages boost_1_54_man.tar.bz2</string>
+	<string>- add baselibs.conf as source</string>
+	<string>- Ensure there is enough disk space available for build.</string>
+	<string>- use only JOBS=2 to avoid gcc being killed with OOM when memory is
+  between 4G and 7G.</string>
+	<string>- ppc64 ABIv2 support
+- enable build_context for ppc64le
+- added patches:
+  * boost-ppc64-abiv2-context.patch
+  * boost-ppc64-abiv2-coroutine.patch</string>
+	<string>- Fix quoting while creating shared build instructions
+- Properly configure library list
+- bjam-alignment.patch: fix alignment check in bjam</string>
+	<string>- buildignore python, python-base is enough</string>
+	<string>- further improved the use of supplied b2 / bootstrap.sh,
+  include user-config.jam, and remove superfluous python
+  and gcc instructions from user-config.jam</string>
+	<string>- fix problem with executable .pdf in doc by correcting
+  permissions after install (%attr with a dir failed on
+  sled/sles)
+- add dependency on zlib-devel and libbz2-devel and use the
+  supplied bootstrap.sh script in building. This adds
+  on-the-fly compression to boost-iostreams</string>
+	<string>- remove broken python module mpi.so
+- trying to make the build more reliable:
+  * use -fno-var-tracking in cxxflags as recommended by richi
+  * disable parallel build on low memory</string>
+	<string>- Add post and postun sections for libboost_graph_parallel.</string>
+	<string>- add boost-1.54.0-thread-link_atomic.patch fixing upstream issue
+  https://svn.boost.org/trac/boost/ticket/9041
+  (fixes compilation failure of snapper on various platforms)</string>
+	<string>- enable build_mpi on s390/s390x</string>
+	<string>- Disable coroutine library together with context</string>
+	<string>- fix build of libzypp - patch from boost's track
+- added patches:
+  * boost-1.54-change85160.patch</string>
+	<string>- Add boost-pool_check_overflow.patch: Prevent possible overflow when
+  calculating the amount to malloc (bnc#765443).
+  Fix from https://svn.boost.org/trac/boost/ticket/6701</string>
+	<string>- Split libboost_graph so that the MPI components are not forced</string>
+	<string>- Update to 1.54.0. Major changes since 1.53.0:
+  New libraries:
+  * Log: Logging library, from Andrey Semashev.
+  * TTI: Type Traits Introspection library, from Edward Diener.
+  * Type Erasure: Runtime polymorphism based on concepts.
+  For a detailed descriptions see
+  http://www.boost.org/users/history/version_1_54_0.html
+- Update broken patch:
+  * boost-use_std_xml_catalog.patch
+- Delete merged patch:
+  * boost-fix_ppc64_asm.patch
+- Add post-release fix patches:
+  * boost-1.54-001-coroutine.patch
+  * boost-1.54-002-date-time.patch
+  * boost-1.54-003-log.patch
+- build_pdf define was deleted as unused;
+  package_pdf was refactored.
+- _constraints was added to request more memory to build.</string>
+	<string>- Fix build with updated glibc:
+  * boost-glibc-2.18.patch - taken from upstream scm</string>
+	<string>- Build context library only on supported architectures
+- Reenable mpi on aarch64
+- Avoid duplication between %build and %install</string>
+	<string>- Apply upstream patch that fixes the ppc64 code in boost::context
+  (boost#8374): boost-fix_ppc64_asm.patch</string>
+	<string>- Rename manpages to avoid conflict with other packages</string>
+	<string>- Added url as source.
+  Please see http://en.opensuse.org/SourceUrls</string>
+	<string>- Update to 1.53.0. Major changes since 1.49.0:
+  New libraries:
+  * Algorithm:  A collection of useful generic algorithms.
+  * Context:  Context switching library.
+  * Functional/OverloadedFunction: Overload different functions.
+  * LocalFunction: Program functions locally, within other functions.
+  * Utility/IdentityType: Wrap types within round parenthesis.
+  For a detailed descriptions see
+  http://www.boost.org/users/history/version_1_50_0.html
+  http://www.boost.org/users/history/version_1_51_0.html
+  http://www.boost.org/users/history/version_1_52_0.html
+- Delete unneeded patches:
+  * boost-chrono_add_function_return.patch
+  * boost-fix_documentation.patch
+  * boost-time_utc.patch</string>
+	<string>- build without openmpi on aarch64 for now</string>
+	<string>- Require package for ICU having same minimum version that the build requires.
+- Avoid obsoleting older versions of boost documentation to allow multiple boost package versions in same environment.</string>
+	<string>- use bzip2 instead of xz to support older SUSE releases</string>
+	<string>- license update: BSL-1.0
+  Boost Software License 1.0 is available in SPDX format on
+  http://www.spdx.org/licenses as BSL-1.0</string>
+	<string>- Add patch from upstream to use TIME_UTC_ instead of TIME_UTC since
+  the later is part of ISO C11.</string>
+	<string>- Fix timer post script, it used the comment as content.</string>
+	<string>- fixing the previous fix</string>
+	<string>- fixing baselibs.conf after version bump</string>
+	<string>- Adjust Require for new libxslt-tools</string>
+	<string>- Update to 1.49.0. Major changes since 1.46.1:
+  New libraries:
+  * Heap.
+  * Container
+  * Locale
+  * Move
+  * Chrono
+  * Geometry
+  * Phoenix
+  * Ratio
+  For a detailed descriptions see
+  http://www.boost.org/users/history/version_1_47_0.html
+  http://www.boost.org/users/history/version_1_48_0.html
+  http://www.boost.org/users/history/version_1_49_0.html
+- Rebuilt the man documentation with gcc 4.5 as the current gcc
+  segfaults when building quickbook.
+- Package PDF documentation independent of whether we build it
+  ourselves.
+- Fix missing function return in Boost::Chrono's process_cpu_clocks.hpp</string>
+	<string>- patch license to follow spdx.org standard</string>
+	<string>- Do not package NEWS and LICENSE twice.</string>
+	<string>- Remove redundant/unwanted tags/section (cf. specfile guidelines)</string>
+	<string>- dropped visit_each patch (bnc#714373)</string>
+	<string>- disable openmpi on %%arm</string>
+	<string>- update baselibs.conf</string>
+	<string>- Fix attribute handling problem in spirit library,
+  See http://comments.gmane.org/gmane.comp.parsers.spirit.general/22073</string>
+	<string>- Prefix bug numbers.</string>
+	<string>- Make packaging of the pdf documentation configurable.</string>
+	<string>- Update to 1.46.1, a bugfix release:
+  • Asio:
+  - EV_ONESHOT seems to cause problems on some versions of Mac OS X, with
+    the io_service destructor getting stuck inside the close() system call.
+    Changed the kqueue backend to use EV_CLEAR instead (boost#5021).
+  - Fixed compile failures with some versions of g++ due to the use of
+    anonymous enums (boost#4883).
+  - Fixed a bug on kqueue-based platforms, where some system calls that
+    repeatedly fail with EWOULDBLOCK are not correctly re-registered with
+    kqueue.
+  - Changed asio::streambuf to ensure that its internal pointers are
+    updated correctly after the data has been modified using std::streambuf
+    member functions.
+  - Fixed a bug that prevented the linger socket option from working on
+    platforms other than Windows.
+  For the rest see NEWS or the boost web site http://www.boost.org</string>
+	<string>- Remove comment chars from doc-pdf description.</string>
+	<string>- Use xz to compress tarballs.
+- Generate new man pages tarball.
+- Update pdf tarball.
+- Update to 1.46:
+  New Libraries
+    Icl: Interval Container Library, interval sets and maps and
+    aggregation of associated values, from Joachim Faulhaber.
+  For the rest of the changes see NEWS in the package documentation
+  directory or see http://www.boost.org/users/news/version_1_46_0 .</string>
+	<string>- Remove the boost specific autoconf macros now that we have the
+  complete autoconf archive packaged (bnc#655747).
+- Move the lib64 patch over to autoconf-archive.</string>
+	<string>- take care of random library (build 32bit on x86_64 and
+  require it in boost-devel)</string>
+	<string>- fix baselibs.conf</string>
+	<string>- Shorten the list of update items.
+- Fix typo in spec.</string>
+	<string>- Redo the lib64 patch for the boost autoconf macros so that
+  lib64 is used on all archs that need it.
+- Remove the ICU patch.</string>
+	<string>- Update to 1.44.0:
+  New Libraries:
+  * Meta State Machine: High-performance expressive UML2 finite
+    state machines
+  * Polygon: Booleans/clipping, resizing/offsetting and more for
+    planar polygons with integral coordinates
+  Updated Libraries:
+  * Accumulators:
+  * Asio:
+  * Foreach:
+  * Fusion:
+  * Hash:
+  * Math:
+  * MPL:
+  * Multi-index Containers:
+  * Proto:
+  * Regex:
+  * Thread:
+  * Type Traits:
+  * uBLAS:
+  * Utility:
+  * Uuid:
+  * Config:
+  * Xpressive:
+  * Filesystem:
+    o This release contains both version 2 and version 3 of the
+    library.  Version 3 is a major upgrade that will break some
+    existing user code, so version 2 is the default.  Users are
+    encouraged to migrate to version 3.  See 'Version 2' and
+    'Version 3' for more information.
+  * Iostreams:
+    o Several fixes for file descriptors class, including a
+    breaking change to the constructors and open methods for
+    file_descriptor, file_descriptor_source and
+    file_descriptor_sink.  See the documentation for details.
+    The old methods are still available if you define
+    BOOST_IOSTREAMS_USE_DEPRECATED
+  * Spirit: Spirit V2.4, see the 'What's New' section for details.
+  * System:
+    o Change system_category and generic_category to functions, to
+    conform to the C++0x FCD.  This change may cause compile
+    errors some user code; the fix is add "()" to references to
+    system_category and generic_category, so that they become
+    function calls.
+  * Wave: See the Changelog for details.
+  Major Changes in 1.43.0:
+  New Libraries
+  * Functional/factory: Function objects for dynamic and by-value
+    construction
+  * Functional/forward: Function object adapters to address the
+    forwarding problem
+  For a complete list of changes see
+  http://www.boost.org/users/news/version_1_43_0 and
+  http://www.boost.org/users/news/version_1_44_0.</string>
+	<string>- Rename patch to be identical to the one checked in for 11.3.
+  The patch adds an explicite specialization to the call to prevent
+  unwanted temporary instantiations.</string>
+	<string>- fix bug that shows with gcc 4.5 (bnc#621140)</string>
+	<string>- Noarch sub packages only doable from 11.2 on up.</string>
+	<string>- build 32bit-packages</string>
+	<string>- disable long double support for hppa</string>
+	<string>- openmpi does not build on hppa</string>
+	<string>- Move provides/obsoletes for boost-license to the right section
+  (bnc#544958).</string>
+	<string>- Delete unneeded patches.</string>
+	<string>- Readd those patches that are still needed.
+- Try to fix an aliasing bug in function_base.hpp
+- Build man pages locally and only include them as a tarball.
+- Split documentation in in format specific packages.</string>
+	<string>- update to 1.42.0:
+  New Libraries
+  * Uuid: A universally unique identifier, from Andy Tompkins.
+  Updated Libraries (see README for details)
+  * Asio:
+  * Circular Buffer:
+  * Fusion:
+  * Graph:
+  * Integer:
+  * Iostreams:
+  * Program.Options:
+  * PropertyMap:
+  * Proto:
+  * Regex:
+  * Spirit:
+  * Unordered:
+  * Xpressive:
+- update to 1.41.0:
+  New Libraries
+  * Property Tree: A tree data structure especially suited to storing
+    configuration data, from Marcin Kalicinski and Sebastian Redl.
+  Updated Libraries (see README for details)
+  * DateTime:
+  * Filesystem:
+  * Iostreams:
+  * Math:
+  * Multi-index Containers:
+  * Proto:
+  * Regex:
+  * Spirit:
+  * System:
+  * Thread:
+  * Unordered:
+  * Utility:
+  * Wave:
+  * Xpressive:
+- update to 1.40.0:
+  Updated Libraries (see README for details)
+  * Accumulators:
+  * Asio:
+  * Circular Buffer:
+  * Foreach:
+  * Function:
+  * Fusion:
+  * Graph:
+  * Hash:
+  * Interprocess:
+  * Intrusive:
+  * MPL:
+  * Program.Options:
+  * Property Map:
+  * Proto:
+  * Random:
+  * Serialization:
+  * Unordered:
+  * Xpressive:
+- removed patches no longer needed</string>
+	<string>- documentation change needed to be done in boost.spec.in
+  (not boost.spec)
+- openmpi change was missing too; add it now</string>
+	<string>- add baselibs for SPARC
+- add baselibs.conf as a source
+- deactivate use of openmpi on SPARC, as compat-dapl is not
+  available
+- package documentation as noarch</string>
+	<string>- Provide/Obsolete boost-license (bnc#544958)</string>
+	<string>- Add a fix from boost bugtracker that fixes the hash resizing
+  (boost#54376)
+- Add a test for cancelling deadline timers from the same changeset.</string>
+	<string>- Readd the patch to fix the misplaced ifdef in
+  template_function.hpp:move_assign.</string>
+	<string>- update to 1.39.0:
+  New Libraries
+  * Signals2: Managed signals &amp; slots callback implementation (thread-safe version 2),
+    from Frank Mori Hess.
+  Updated Libraries (see README for details)
+  * Asio:
+  * Flyweight:
+  * Foreach:
+  * Hash:
+  * Interprocess:
+  * Intrusive:
+  * Program.Options:
+  * Proto:
+  * PtrContainer:
+  * Range:
+  * Unordered:
+  * Xpressive:
+- removed patches no longer needed (hoping the best for ppc asm)</string>
+	<string>- as agreed with maintainer, get rid of static libraries</string>
+	<string>- buildfix: fix typo in specfile</string>
+	<string>- Don't rely on system default mpi implementation being set. This
+  fixes building boost on systems before openSUSE 11.0.</string>
+	<string>- Fix misplaced ifdef in template_function.hpp:move_assign. Fixes
+  building software that defines BOOST_NO_EXCEPTION (bnc#479659).</string>
+	<string>- Fix packaging of the documentation.</string>
+	<string>- Fix the line in the spec that copies the documentation.</string>
+	<string>- Put the license in a versioned package. This allows installing
+  libraries in parallel (bnc#477603).</string>
+	<string>- Fix spec file (remove patches).</string>
+	<string>- Add boost autoconf macros from the autoconf archive to the
+  - devel package.
+- Update to 1.38.0:
+  New Libraries
+  * Flyweight:
+    o Design pattern to manage large quantities of highly redundant
+    objects, from Joaquín M López Muñoz.
+  * ScopeExit:
+    o Execute arbitrary code at scope exit, from Alexander Nasonov.
+  * Swap:
+    o Enhanced generic swap function, from Joseph Gauterin.
+  Updated Libraries
+  * Accumulators:
+    o Add rolling_sum, rolling_count and rolling_mean accumulators.
+  * Any:
+    o Use a by-value argument for operator= (#2311).
+  * Asio:
+    o Improved compatibility with some Windows firewall software.
+    o Ensured arguments to windows::overlapped_ptr::complete() are
+    correctly passed to the completion handler (#2614).
+    o Drop back to using a pipe for notification if eventfd is not
+    available at runtime on Linux (#2683).
+    o Various minor bug and documentation fixes (#2534, #2541,
+    [#2607], #2617, #2619)
+  * Config:
+    o Add new macros BOOST_NO_STD_UNORDERED and
+    BOOST_NO_INITIALIZER_LISTS.
+    o Added Codegear compiler support.
+    o Added Dragonfly to the BSD family of configs.
+    o Recognise latest compilers from MS and Intel.
+  * Date_Time:
+    o Added support for formatting and reading time durations longer
+    than 24 hours with new formatter: %0.
+    o Removed the testfrmwk.hpp file from the public include directory.
+    o Fixed several bugs and compile errors.
+    o For full details see the change history
+  * Exception:
+    o Improved and more customizable diagnostic_information output.
+  * Filesystem:
+    o Fix native(name) test failures on POSIX-like systems.
+    o Several bugfixes (#2543, #2224, #2531, #1840, #2542).
+  * Graph:
+    o Added a new algorithms for Travelling Salesman Problem
+    approximation (metric_tsp_approx) and resource-constrained
+    Shortest Paths (r_c_shortest_paths).
+    o Support for named vertices in adjacency_list.
+    o A number of bugfixes ( #416, #1622, #1700, #2209, #2392,
+    [#2460], and #2550)
+  * Hash:
+    o boost/functional/detail/container_fwd.hpp has been moved to
+    boost/detail/container_fwd.hpp.  The current location is
+    deprecated.
+    o For more detail, see the library changelog.
+  * Interprocess:
+    o Updated documentation to show rvalue-references functions
+    instead of emulation functions.
+    o More non-copyable classes are now movable.
+    o Move-constructor and assignments now leave moved object in
+    default-constructed state instead of just swapping contents.
+    o Several bugfixes (#2391, #2431, #1390, #2570, #2528).
+  * Intrusive:
+    o New treap-based containers: treap, treap_set, treap_multiset.
+    o Corrected compilation bug for Windows-based 64 bit compilers.
+    o Corrected exception-safety bugs in container constructors.
+    o Updated documentation to show rvalue-references functions
+    instead of emulation functions.
+  * Lexical Cast:
+    o Changed to work without RTTI when BOOST_NO_TYPEID is defined
+    (#1220).
+  * Math:
+    o Added Johan Råde's optimised floating point classification routines.
+    o Fixed code so that it compiles in GCC's -pedantic mode (bug report #1451).
+  * Multi-index Containers:
+    o Some redundant type definitions have been deprecated. Consult the
+    library release notes for further information.
+  * Proto:
+    o Fix problem with SFINAE of binary operators (Bug 2407).
+    o Fix proto::call transform for callable transforms with &gt;3 arguments.
+    o result_of::value changed behavior for array-by-value terminals.
+    o unpack_expr requires only Forward Sequences rather than Random Access
+    Sequences.
+    o Deprecate legacy undocumented BOOST_PROTO_DEFINE_(VARARG_)FUNCTION_TEMPLATE
+    macros.
+    o Add BOOST_PROTO_REPEAT and BOOST_PROTO_LOCAL_ITERATE macros to help with
+    repetitive code generation
+    o Support for nullary expressions with tag types other than
+    proto::tag::terminal
+    o Allow 0- and 1-argument variants of proto::or_ and proto::and_
+  * Regex:
+    o Breaking change: empty expressions, and empty alternatives are
+    now allowed when using the Perl regular expression syntax.
+    This change has been added for Perl compatibility, when the
+    new syntax_option_type no_empty_expressions is set then the
+    old behaviour is preserved and empty expressions are
+    prohibited.  This is issue #1081.
+    o Added support for Perl style ${n} expressions in format strings
+    (issue #2556).
+    o Added support for accessing the location of sub-expressions
+    within the regular expression string (issue #2269).
+    o Fixed compiler compatibility issues #2244, #2514, and #2458.
+  * Thread:
+    o No longer catches unhandled exceptions in threads as this debuggers
+    couldn't identify the cause of unhandled exceptions in threads. An
+    unhandled exception will still cause the application to terminate.
+  * TR1:
+    o Added support for the TR1 math functions and the unordered
+    containers.
+  * Type Traits:
+    o Added support for Codegear intrinsics.
+    o Minor tweaks to warning suppression and alignment_of code.
+  * Unordered:
+    o Use boost::swap.
+    o Use a larger prime number list for selecting the number of buckets.
+    o Use aligned storage to store the types.
+    o Add support for C++0x initializer lists where they're available.
+    o For more detail, see the library changelog.
+  * Xpressive:
+    o basic_regex gets nested syntax_option_flags and value_type typedef,
+    for compatibility with std::basic_regex
+    o Ported to Proto v4; Proto v2 at boost/xpressive/proto has been
+    removed.
+    o regex_error inherits from boost::exception
+  Other Changes
+  * Experimental support for building Boost with CMake has been introduced in
+    this version. For more details see the wiki, Discussion is taking place
+    on the Boost-cmake mailing list.
+  * Fixed subversion properties for several files. Most notably, unix shell
+    scripts should always have unix line endings, even in the windows
+    packages.</string>
+	<string>- Apply patch in boost.spec.in</string>
+	<string>- Actually use the patch.</string>
+	<string>- Initialize all data passed in the syscall to keep valgrind
+  happy (bnc#461372).</string>
+	<string>- fix baselibs.conf (no requirement for boost-xxbit)
+  (bnc#457699)</string>
+	<string>- update baselibs.conf
+- package mpi.so only in mpi package, not in devel</string>
+	<string>- Made the use of the mpi-selector conditional for mpi-enabled
+  platforms.</string>
+	<string>- SLE-11 uses PPC64 instead of PPC, adapt baselibs.conf</string>
+	<string>- Fix the bug that made boost.monitor mix up uid and pib and
+  also make boost.monitor not special-case SIGCLD (bnc#439805)
+- Fix generation of default extension in boost.filesystem.
+- Make boost recommend library subpackages instead of requiring
+  them to allow removal of unwanted libraries after update.
+- Run mkspec explicitely in a shell so that mkspec.sh doesn't
+  need to be executable.
+- Disable deletion of full-name symlinks in boost.spec.in.
+- Make boost-devel directly require all library subpackages.
+- boost.rpm isn't needed, even for updates, so don't build it and
+  remove the README file needeed only for this package.
+- Make debug package require all library subpackages.
+- Add pre_checkin.sh to ensure that boost.spec is regenerated
+  at check-in time.
+- Make boost.build use sane library names. Only the multi-threaded
+  libraries are built and these have no -mt in their name.
+  Symlinks for convenience are spupplied.
+- Use -fno-strict-aliasing only for boost.python, where it's needed.
+- Don't use configure and make (only convenience wrappers) but
+  call bjam directly.</string>
+	<string>- do not remove full-name symlinks for shared libs</string>
+	<string>- Use a script and a Makefile to generate boost.spec.
+- Pull in all libraries on update.
+- Modify README to apply to both openSUSE and SLE.</string>
+	<string>- fix regexp for short symlinks
+- hook all mpi related parts to build_mpi macro
+- disable build_mpi on ia64 s390 s390x for the moment</string>
+	<string>- Using a rpm macros in package name doesn't work with autobuild.</string>
+	<string>- Fix naming of library packages to match the horribly broken
+  sonames of the boost libraries.
+- Add post/postun for all library packages.
+- Stop rpmlint warning about explicit library dependencies
+  needed to pull in all library subpackages during updates.</string>
+	<string>- Fix build failure (README not in build directory).</string>
+	<string>- Split off runtime libraries into their own packages.
+- Update to 1.36.0:
+  New Libraries
+  * Accumulators: Framework for incremental calculation, and
+    collection of statistical accumulators.
+  * Exception: A library for transporting of arbitrary data in
+    exception objects, and transporting of exceptions
+    between threads.
+  * Units: Zero-overhead dimensional analysis and unit/quantity
+    manipulation and conversion.
+  * Unordered: Unordered associative containers.
+  Updated Libraries
+  * Asio:
+    o Added support for serial ports.
+    o Added support for UNIX domain sockets.
+    o Added support for raw sockets and ICMP.
+    o Added wrappers for POSIX stream-oriented file descriptors
+    (excluding regular files).
+    o Added support for reactor-style operations using a new
+    null_buffers type.
+    o Added an iterator type for bytewise traversal of buffer
+    sequences.
+    o Added new read_until() and async_read_until() overloads that
+    take a user-defined function object for locating message
+    boundaries.
+    o Added an experimental two-lock queue (enabled by defining
+    BOOST_ASIO_ENABLE_TWO_LOCK_QUEUE) that may provide better
+    io_service scalability across many processors.
+    o Various fixes, performance improvements, and more complete
+    coverage of the custom memory allocation support.
+  * Assign:list_of() (and its variants) now has overloaded comparison
+    operators. This allows you to write test code such as
+    BOOST_CHECK_EQUAL(my_container,list_of(2)(3)(4)(5));.
+  * Foreach:BOOST_FOREACH macro for easily iterating over the elements
+    of a sequence.
+    o New BOOST_REVERSE_FOREACH macro for iterating over a sequence
+    in reverse.
+  * Function:
+    o Improved allocator support.
+  * Hash: Minor updates and fixes, for more info see the change log.
+  * Interprocess:
+    o Added anonymous shared memory for UNIX systems.
+    o Fixed missing move semantics on managed memory classes.
+    o Added copy_on_write and open_read_only options for shared
+    memory and mapped file managed classes.
+    o shared_ptr is movable and supports aliasing.
+  * Intrusive:
+    o Added linear&lt;&gt; and cache_last&lt;&gt; options to singly linked lists.
+    o Added optimize_multikey&lt;&gt; option to unordered container hooks.
+    o Optimized unordered containers when store_hash option is used
+    in the hook.
+    o Implementation changed to avoid explicit use of try-catch
+    blocks and be compilable with exceptions disabled.
+  * Math:
+    o Added new non-central Chi-Square, Beta, F and T distributions.
+    o Added Exponential Integral and Zeta special functions.
+    o Added Rounding, Truncation, and Unit-in-the-last-place
+    functions.
+    o Added support for compile time powers of a runtime base.
+    o Added a few SSE2 based optimisations for the Lanczos
+    approximations.
+  * MPI:
+    o Added support for non-blocking operations in Python
+    o Added support for graph topologies.
+  * Multi-index Containers: Minor additions and maintenance fixes.
+    Consult the library release notes for
+    further information.
+  * PtrContainer: Support for a few more containers, and addition
+    of insert iterators. For details see upgrading
+    details.
+  * Spirit: Integrated the "Classic" Spirit V1.8.x code base with
+    Spirit V2, "The New Generation". See Change Log.
+  * Thread:
+    o New generic lock and try_lock functions for locking multiple
+    mutexes at once.
+    o Rvalue reference support for move semantics where the
+    compilers supports it.
+    o A few bugs fixed and missing functions added (including
+    the serious win32 condition variable bug).
+    o scoped_try_lock types are now backwards-compatible with
+    Boost 1.34.0 and previous releases.
+    o Support for passing function arguments to the thread
+    function by supplying additional arguments to the thread
+    constructor.
+    o Backwards-compatibility overloads added for timed_lock and
+    timed_wait functions to allow use of xtime for timeouts.
+  * Wave:
+    o Wave V2.0 is a new major release introducing some breaking
+    API changes, preventing it to be used with Boost versions
+    earlier than V1.36.0. Mainly, the API and hook interface
+    have been streamlined for more consistency.
+    o Fixed a couple of bugs, improved regression test system to
+    include testing of the preporcessing hooks interface
+    (for details see: Changelog).
+  * Xpressive:
+    o Regular expressions that can be written as strings or as
+    expression templates, and that can refer to each other and
+    themselves recursively with the power of context-free
+    grammars.
+    o skip() for specifying which parts of the input sequence
+    to ignore when matching it against a regex.
+    o regex_replace() accepts formatter objects and formatter
+    expressions in addition to format strings.
+    o Range-based regex_replace() algorithm.
+    o Fix crash when semantic actions are placed in look-aheads,
+    look-behinds or independent sub-expressions.</string>
+	<string>- Qualify name to avoid clash (bnc#401964)</string>
+	<string>- Fix ppc atomic ops.</string>
+	<string>- added baselibs.conf file to build xxbit packages
+  for multilib support</string>
+	<string>- Remove obsolete patch again.</string>
+	<string>- Fix CVE-2008-0171 and CVE-2008-0171 (bugzilla #353180)
+- Qualify special_values_parser (bugzilla #353897)</string>
+	<string>- Remove obsolete patch.</string>
+	<string>- Move 1.34.1 from BS to Autobuild
+- Add patch for critical bug in Boost.Function.
+- Include C headers where necessary.
+- Make the tests for ULONG_MAX more readable 64.</string>
+	<string>- Use -fpermissive in addition to -O2 for building.
+- Add patch to enable building wave with GCC 4.3.</string>
+	<string>- Only use fdupes from 10.3 onwards.</string>
+	<string>- Fix spec file to build again.</string>
+	<string>- Add man pages (made for 1.33.1).
+- Package html documentation differently.
+- Check all links and add missing files that do exist.
+- Use %%fdupes
+- Add patch by rschiele@gmail.com to pass compiler flags into
+  Boost.build.
+- Update to 1.34.1 and use .spec file from bkoz@redhat.com as
+  a basis.
+  Changes 1.33.1 -&gt; 1.34.0:
+  New Libraries:
+  * Foreach Library: BOOST_FOREACH macro for easily iterating over
+    the elements of a sequence,
+  * Statechart Library: Arbitrarily complex finite state machines
+    can be implemented in easily readable and
+    maintainable C++ code,
+  * TR1 Library: An implementation of the C++ Technical Report on Standard
+    Library Extensions, from John Maddock. This library does
+    not itself implement the TR1 components, rather it's a
+    thin wrapper that will include your standard library's
+    TR1 implementation (if it has one), otherwise it will
+    include the Boost Library equivalents, and import them
+    into namespace std::tr1. Highlights include: Reference
+    Wrappers, Smart Pointers, result_of, Function Object
+    Binders, Polymorphic function wrappers, Type Traits,
+    Random Number Generators and Distributions, Tuples, Fixed
+    Size Array, Hash Function Objects, Regular Expressions,
+    and Complex Number Additional Algorithms.
+  * Typeof Library: Typeof operator emulation, from Arkadiy Vertleyb
+    and Peder Holt.
+  * Xpressive Library: Regular expressions that can be written as strings
+    or as expression templates, and that can refer to
+    each other and themselves recursively with the
+    power of context-free grammars, from Eric Niebler.
+    Updated Libraries:
+  * Assign Library:
+    o Support for ptr_map&lt;key,T&gt; via the new function ptr_map_insert()
+    o Support for initialization of Pointer Containers when the
+    containers hold pointers to an abstract base class.
+  * Date_time library:
+    o Support for new US/Canada timezone rules and other bug fixes.
+    See Change History for details.
+  * Filesystem Library: Major upgrade in preparation for submission to the
+    C++ Standards Committee for TR2. Changes include:
+    o Internationalization, provided by class templates basic_path,
+    basic_filesystem_error, basic_directory_iterator, and
+    basic_directory_entry.
+    o Simplification of the path interface by eliminating special
+    constructors to identify native formats.
+    o Rationalization of predicate function design, including the
+    addition of several new functions.
+    o Clearer specification by reference to POSIX, the ISO/IEEE Single
+    Unix Standard, with provisions for Windows and other operating
+    systems.
+    o Preservation of existing user code whenever possible.
+    o More efficient directory iteration.
+    o Addition of a recursive directory iterator.
+  * Function Library: Boost.Function now implements a small buffer
+    optimization, which can drastically improve the
+    performance when copying or constructing
+    Boost.Function objects storing small function
+    objects. For instance, bind(&amp;X:foo, &amp;x, _1, _2)
+    requires no heap allocation when placed into a
+    Boost.Function object.
+  * Functional/Hash Library
+    o Use declarations for standard classes, so that the library
+    doesn't need to include all of their headers
+    o Deprecated the &lt;boost/functional/hash/*.hpp&gt; headers.
+    o Add support for the BOOST_HASH_NO_EXTENSIONS macro, which
+    disables the extensions to TR1
+    o Minor improvements to the hash functions for floating point numbers.
+  * Graph Library:
+    o edmonds_maximum_cardinality_matching,
+    o lengauer_tarjan_dominator_tree,
+    o compressed_sparse_row_graph,
+    o sorted_erdos_renyi_iterator,
+    o biconnected_components now supports a visitor and named
+    parameters,
+    o adjacency_matrix now models the Bidirectional Graph concept.
+    o dijkstra_shortest_paths now calls vis.initialize_vertex for each
+    vertex during initialization.
+    o Note: the name of the compiled library for the GraphViz reader has
+    changed to boost_graph (from bgl-viz) to match Boost conventions.
+    o See the complete revision history for more information.
+  * MultiArray Library: Boost.MultiArray now by default provides
+    range-checking for operator[]. Range checking can
+    be disabled by defining the macro
+    BOOST_DISABLE_ASSERTS before including
+    multi_array.hpp. A bug in multi_array::resize()
+    related to storage orders was fixed.
+  * Multi-index Containers Library:
+    o New random access indices.
+    o Non key-based indices feature new rearrange facilities.
+    o This version also includes a number of optimizations and usage
+    improvements. For a complete list of changes, see the library
+    release notes.
+  * Optional Library:
+    o boost::none_t and boost::none now added to Optional's
+    documentation
+    o Relational operators now directly support arguments of type
+    'T' and 'none_t'
+    o operator-&gt;() now also works with reference types.
+    o Helper functions make_optional(val), make_optional(cond,val)
+    and get_optional_value_or(opt,alternative_value) added.
+    o Constructor taking a boolean condition (as well as a value)
+    added.
+    o Member function get_value_or(alternative_value) added.
+    o Incompatbility bug with mpl::apply&lt;&gt; fixed.
+    o Converting assignment bug with uninitialized lvalues fixed.
+  * Parameter Library:
+    o Every ArgumentPack is now a valid MPL Forward Sequence.
+    o Support for unnamed arguments (those whose keyword is
+    deduced from their types) is added.
+    o Support for named and unnamed template arguments is added.
+    o New overload generation macros solve the forwarding problem
+    directly.
+    o See also the Python library changes, below.
+  * Pointer Container Library:
+    o Support for serialization via Boost.Serialization.
+    o Exceptions can be disabled by defining the macro
+    BOOST_PTR_CONTAINER_NO_EXCEPTIONS before including any header.
+    This macro is defined by default if BOOST_NO_EXCEPTIONS is defined.
+    o Additional std::auto_ptr&lt;T&gt; overloads added s.t. one can also
+    pass std::auto_ptr&lt;T&gt; instead of only T* arguments to member
+    functions.
+    o transfer() now has weaker requirements s.t. one can transfer
+    objects from ptr_container&lt;Derived&gt; to ptr_container&lt;Base&gt;,
+  * Python Library:
+    o Boost.Python now automatically appends C++ signatures to
+    docstrings. The new docstring_options.hpp header is available to
+    control the content of docstrings.
+    o stl_input_iterator, for turning a Python iterable object into an
+    STL input iterator, from Eric Niebler.
+    o Support for void* conversions is added.
+    o Integrated support for wrapping C++ functions built with the
+    parameter library; keyword names are automatically known to
+    docsstrings.
+    o Enhancements to the API for better embedding support
+    (boost::python::import(), boost::python::exec(), and
+    boost::python::exec_file()).
+  * Signals Library: More improvements to signal invocation performance.
+  * Smart Pointers Library:
+    o Allocator support as proposed in N1851 (162 Kb PDF).
+    o pointer_cast and pointer_to_other utilities to allow
+    pointer-independent code,
+  * String Algorithm Library:
+    o lexicographical_compare
+    o join
+    o New comparison predicates is_less, is_not_greater.
+    o Negative indexes support (like Perl) in various algorihtms
+    (*_head/tail, *_nth).
+  * Wave Library:
+    o Wave now correctly recognizes pp-number tokens as mandated by
+    the C++ Standard, which are converted to C++ tokens right before
+    they are returned from the library.
+    o Several new preprocessing hooks have been added. For a complete
+    description please refer to the related documentation page: The
+    Context Policy.
+    o Shared library (dll) support has been added for the generated
+    Wave libraries.
+    o The overall error handling has been improved. It is now possible
+    to recover and continue after an error or a warning was issued.
+    o Support for optional comment and/or full whitespace
+    preservation in the generated output stream has been added.
+    o The Wave library now performs automatic include guard
+    detection to avoid accessing header files more than once, if
+    appropriate.
+    o Full interactive mode has been added to the Wave tool. Now the
+    Wave tool can be used just like Python or Perl for instance to
+    interactively try out your BOOST_PP macros. Additionally it is
+    now possible to load and save the current state of an
+    interactive session (macro tables et.al.).
+    o The overall performance has been improved by upto 40-60%,
+    depending on the concrete files to process.
+    o Support for new pragmas has been added allowing to control
+    certain library features from inside the preprocessed sources
+    (partial output redirection, control of generated whitespace
+    and #line directives).
+    o Optional support for #pragma message "..." has been added.
+    o This version also includes a number of bug fixes and usage
+    improvements. For a complete list of changes, see the
+    libraries change log.
+  Fixes in 1.34.1:
+  * Fixes for build on IBM pSeries for AIX and Linux
+  * gcc-4.2 atomicity.h location fixed
+  * [iostreams] zlib_compressor memory leaks in 1.34.0
+  * filtering ostream problem... pushing zlib_compressor works in 1_33,
+    dies in 1_34
+  * [doc] The "Getting Started" page mentions incorrect library names
+  * [filesystem] missing documentation or bad links
+  * add missing docs for boost.python API enhancements.
+  * Entire iostreams library outdated in 1.34.0
+  * numeric_limits specializations in limits.hpp are incorrect
+  * Updated ICU support in Boost.Regex
+  * Make boost.python compatible with python 2.5
+  * ::boost::detail::empty_base improved
+  * Fix failing uild of libs/python/example/quickstart.
+  * Fix problems when building Python modules on boost 1.34.0
+  * Patches to allow boost 1.34.0 to compile with stricter warning
+    checking under mac OS and gcc
+  * Unable to compile Python example, tutorial, or quickstart with
+    Boost 1_34_0
+  * Improper overflow handling in shortest paths algorithms
+  * Multiple include paths for Python
+  * Add documentation for the iter_find/split algorithms
+  * regex_token_iterator crashes
+  * regex_error exception when quantifying some non-capturing groups
+  * read_write_mutex docs don't clearly specify that the functionality
+    is not present
+- Remove patches not needed anymore.
+- Replace file dupes by symlinks.
+- Add rpmlintrc to suppress rpmlint warnings for things that won't be
+  changed.</string>
+	<string>- Fix reference to atomicity.h.</string>
+	<string>- Add libbz2-devel to BuildRequires.</string>
+	<string>- Apply patch from community to build with Python 2.5</string>
+	<string>- fixed wrong usage of visit_each() (Bug #192116 )</string>
+	<string>- fixed link creation to libboost_thread.so, using %_lib instead
+  of lib</string>
+	<string>- added a libboost_thread.so as a symlink to libboost_thread-mt.so</string>
+	<string>- Add libboost_wave.a to file list</string>
+	<string>- Use explicit file names instead of wildcards to detect libraries
+  that weren't built.</string>
+	<string>- Fix broken assembler constraints [#148429].</string>
+	<string>- converted neededforbuild to BuildRequires</string>
+	<string>- Don't strip binaries.</string>
+	<string>- Fix cases of type-punning in boost::python
+- Compile without -fno-strict-aliasing again.
+- Remove unnecessary type attributes in forward declarations.</string>
+	<string>- Update to 1.33.1.
+- Fix use of uninitialized variable.
+- Compile with -fno-strict-aliasing.
+- Update NEWS file</string>
+	<string>- Incorporate fixes that are bound to be in 1.33.1
+- Build boost.regex with unicode support.</string>
+	<string>- Add a NEWS file.</string>
+	<string>- Update to 1.33.0 with 5 new libraries. See NEWS for specifics.
+- Fix use of uninitialized class member (matz@suse.de)
+- Compile with -O2 instead of -O3
+- Make build process use %optflags</string>
+	<string>- Update to 1.32.0</string>
+	<string>- Add convenience symlinks (#38491)</string>
+	<string>- build with several jobs</string>
+	<string>- Update to 1.31.0.
+- Make building boost work on Linux platforms where gcc does not
+  define _REENTRANT when passed -pthread. Patch was done by
+  Robert Schiele.</string>
+	<string>- add %run_ldconfig</string>
+	<string>- Update to 1.30.2, a bugfix release</string>
+	<string>- Initial package, based on the work by Robert Schiele.
+- Fix building with Python 2.3</string>
+  </rpmTag>
+  <rpmTag name="Cookie">
+	<string>build75 1588859726</string>
+  </rpmTag>
+  <rpmTag name="Filedevices">
+	<integer>1</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Fileinodes">
+	<integer>1</integer>
+	<integer>2</integer>
+  </rpmTag>
+  <rpmTag name="Filelangs">
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Provideflags">
+	<integer>8</integer>
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Provideversion">
+	<string>1.71.0-9.3</string>
+	<string>1.71.0-9.3</string>
+  </rpmTag>
+  <rpmTag name="Dirindexes">
+	<integer>0</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Basenames">
+	<string>boost-license1_71_0</string>
+	<string>LICENSE_1_0.txt</string>
+  </rpmTag>
+  <rpmTag name="Dirnames">
+	<string>/usr/share/licenses/</string>
+	<string>/usr/share/licenses/boost-license1_71_0/</string>
+  </rpmTag>
+  <rpmTag name="Optflags">
+	<string>-O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g</string>
+  </rpmTag>
+  <rpmTag name="Disturl">
+	<string>obs://build.opensuse.org/openSUSE:Factory/standard/a893cdde84cdd55e4d62acd58cfcef3a-boost:base</string>
+  </rpmTag>
+  <rpmTag name="Payloadformat">
+	<string>cpio</string>
+  </rpmTag>
+  <rpmTag name="Payloadcompressor">
+	<string>xz</string>
+  </rpmTag>
+  <rpmTag name="Payloadflags">
+	<string>5</string>
+  </rpmTag>
+  <rpmTag name="Installcolor">
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Installtid">
+	<integer>1590701246</integer>
+  </rpmTag>
+  <rpmTag name="Platform">
+	<string>x86_64-suse-linux</string>
+  </rpmTag>
+  <rpmTag name="Fileclass">
+	<integer>0</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Classdict">
+	<string>directory</string>
+	<string>ASCII text</string>
+  </rpmTag>
+  <rpmTag name="Sourcepkgid">
+	<base64>wuDaLFsRa9S66NPdgYhD5w==
+</base64>
+  </rpmTag>
+  <rpmTag name="Filedigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Encoding">
+	<string>utf-8</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigest">
+	<string>2f27b62083ce90b7465d24147298650ebc2947654cfe749bda96a44637942827</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+</rpmHeader>
+<rpmHeader>
+  <rpmTag name="Headeri18ntable">
+	<string>C</string>
+  </rpmTag>
+  <rpmTag name="Sigsize">
+	<integer>108744</integer>
+  </rpmTag>
+  <rpmTag name="Sigpgp">
+	<base64>iQEVAwUAXj29u7iLL9Q9vcKEAQjW3gf+LuyRfUDEdV6Hu6CYUBsV16prBLraVHZR
+9C0BOZND9UBaAq4Tr33opYjCi7a6ySIxFYP/VTK0uKD1BJcX30hGPE5+nc4E69Pb
+5bdpE9Vs6R6pHQoHojsQqU9cYjDYoln4qtMfUV8RsDgi3JrZmjTIH56i5DO3+b3z
+wvfVctW3bgecH9DxwLfiXOQxpfB0JKWJcBvHqWVDvMG6L+u0E6smyPy8FLpLnLMB
+fWkZq0X/pR9w9LC35HFGEl7nDjE95+fMeFwycGgjBcKknqh2TF+7oXFH3GvyLtCC
+begHR5hvG5pCKbQB4iYRmMiOdoQR664MU4nVC3kq4Zl18MIZJeeo0g==
+</base64>
+  </rpmTag>
+  <rpmTag name="Sigmd5">
+	<base64>9E2Z3neol/Q2BbNV2o7EVA==
+</base64>
+  </rpmTag>
+  <rpmTag name="Rsaheader">
+	<base64>iQEVAwUAXj29u7iLL9Q9vcKEAQjhhQgAwuxeKscIdAMpd/7i6kb5QIOEZbpk47F9
+pEvwAT9l+wIZJq1tDPYD96d9KznAtDPiJqWjJgrrzaoxcvMNHdShk09CvegpIHJz
++QBfwZJo+xj8sUpg4oCJOA6qWYduVDTfAgM00AS+CwQORtXhpWikFshUs6BPW9uz
+J+kZjt4HULmdGeZ0ABqZ57yOUr5xRbFzB5PuBvETAu5nNNaRU5fuqSqOPjMIRDSA
+JNPUoHOtdSdPDp04FB+Q7hiU5TiujTocA+YIWlRLqSb6f8uLB1Q6WLS2HG+mj+6F
+Sb7aCPkL0eMKJDHUK5G92/p1X5RAlA887dp5Q2Bca16KWa20Y6EDpw==
+</base64>
+  </rpmTag>
+  <rpmTag name="Sha1header">
+	<string>892abab7ad3318ff40a50331310127d67d6074a8</string>
+  </rpmTag>
+  <rpmTag name="Sha256header">
+	<string>bae53d4e5c287ab546b800024af810f9ca7e3d140031ea57987b00087f89576e</string>
+  </rpmTag>
+  <rpmTag name="Name">
+	<string>cracklib-dict-small</string>
+  </rpmTag>
+  <rpmTag name="Version">
+	<string>2.9.6</string>
+  </rpmTag>
+  <rpmTag name="Release">
+	<string>2.15</string>
+  </rpmTag>
+  <rpmTag name="Summary">
+	<string>Small dictionary for cracklib - A Password-Checking Library</string>
+  </rpmTag>
+  <rpmTag name="Description">
+	<string>CrackLib tests passwords to determine whether they match certain
+security-oriented characteristics. You can use CrackLib to stop users
+from choosing passwords that are easy to guess.
+
+This package contains a small dictionay file used by cracklib.</string>
+  </rpmTag>
+  <rpmTag name="Buildtime">
+	<integer>1581104539</integer>
+  </rpmTag>
+  <rpmTag name="Buildhost">
+	<string>build32</string>
+  </rpmTag>
+  <rpmTag name="Installtime">
+	<integer>1590701246</integer>
+  </rpmTag>
+  <rpmTag name="Size">
+	<integer>259081</integer>
+  </rpmTag>
+  <rpmTag name="Distribution">
+	<string>openSUSE Tumbleweed</string>
+  </rpmTag>
+  <rpmTag name="Vendor">
+	<string>openSUSE</string>
+  </rpmTag>
+  <rpmTag name="License">
+	<string>LGPL-2.1</string>
+  </rpmTag>
+  <rpmTag name="Packager">
+	<string>https://bugs.opensuse.org</string>
+  </rpmTag>
+  <rpmTag name="Group">
+	<string>System/Libraries</string>
+  </rpmTag>
+  <rpmTag name="Url">
+	<string>http://sourceforge.net/projects/cracklib</string>
+  </rpmTag>
+  <rpmTag name="Os">
+	<string>linux</string>
+  </rpmTag>
+  <rpmTag name="Arch">
+	<string>x86_64</string>
+  </rpmTag>
+  <rpmTag name="Filesizes">
+	<integer>1024</integer>
+	<integer>245161</integer>
+	<integer>12896</integer>
+  </rpmTag>
+  <rpmTag name="Filestates">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemodes">
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+  </rpmTag>
+  <rpmTag name="Filerdevs">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemtimes">
+	<integer>1581104560</integer>
+	<integer>1581104560</integer>
+	<integer>1581104560</integer>
+  </rpmTag>
+  <rpmTag name="Filedigests">
+	<string>6787c3ee0d1f03e47a6cfc6d639fb89575ef5e28bbb0c8b2ccdc2876b0713669</string>
+	<string>c5de5d3ab2fa1e8d1bec21ab2937dfff48e59493fc9af2d7835968516e1d1f68</string>
+	<string>7fabf3751149bae4104b400b916b674fac3749c138fec9e9a63cfe8bde6d6044</string>
+  </rpmTag>
+  <rpmTag name="Filelinktos">
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Fileflags">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Fileusername">
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Filegroupname">
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Sourcerpm">
+	<string>cracklib-2.9.6-2.15.src.rpm</string>
+  </rpmTag>
+  <rpmTag name="Fileverifyflags">
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+  </rpmTag>
+  <rpmTag name="Archivesize">
+	<integer>259640</integer>
+  </rpmTag>
+  <rpmTag name="Providename">
+	<string>cracklib-dict</string>
+	<string>cracklib-dict-small</string>
+	<string>cracklib-dict-small(x86-64)</string>
+  </rpmTag>
+  <rpmTag name="Requireflags">
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+  </rpmTag>
+  <rpmTag name="Requirename">
+	<string>rpmlib(CompressedFileNames)</string>
+	<string>rpmlib(FileDigests)</string>
+	<string>rpmlib(PayloadFilesHavePrefix)</string>
+	<string>rpmlib(PayloadIsXz)</string>
+  </rpmTag>
+  <rpmTag name="Requireversion">
+	<string>3.0.4-1</string>
+	<string>4.6.0-1</string>
+	<string>4.0-1</string>
+	<string>5.2-1</string>
+  </rpmTag>
+  <rpmTag name="Conflictflags">
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Conflictname">
+	<string>cracklib-dict-full</string>
+  </rpmTag>
+  <rpmTag name="Conflictversion">
+	<string/>
+  </rpmTag>
+  <rpmTag name="Rpmversion">
+	<string>4.15.1</string>
+  </rpmTag>
+  <rpmTag name="Changelogtime">
+	<integer>1519300800</integer>
+	<integer>1510401600</integer>
+	<integer>1481544000</integer>
+	<integer>1471435200</integer>
+	<integer>1471262400</integer>
+	<integer>1439899200</integer>
+	<integer>1428062400</integer>
+	<integer>1420372800</integer>
+	<integer>1370692800</integer>
+	<integer>1359460800</integer>
+	<integer>1325505600</integer>
+	<integer>1325246400</integer>
+	<integer>1322654400</integer>
+	<integer>1316260800</integer>
+	<integer>1305720000</integer>
+	<integer>1299499200</integer>
+	<integer>1297684800</integer>
+	<integer>1288440000</integer>
+	<integer>1287662400</integer>
+	<integer>1277726400</integer>
+	<integer>1277467200</integer>
+	<integer>1267790400</integer>
+	<integer>1267704000</integer>
+	<integer>1260705600</integer>
+	<integer>1242820800</integer>
+	<integer>1238846400</integer>
+	<integer>1233748800</integer>
+	<integer>1228910400</integer>
+	<integer>1227268800</integer>
+	<integer>1225886400</integer>
+	<integer>1225368000</integer>
+	<integer>1220270400</integer>
+	<integer>1213963200</integer>
+	<integer>1212753600</integer>
+	<integer>1210334400</integer>
+	<integer>1208174400</integer>
+	<integer>1207828800</integer>
+	<integer>1205841600</integer>
+	<integer>1202817600</integer>
+	<integer>1190376000</integer>
+	<integer>1188561600</integer>
+	<integer>1187611200</integer>
+	<integer>1181044800</integer>
+	<integer>1178193600</integer>
+	<integer>1177329600</integer>
+	<integer>1176724800</integer>
+	<integer>1154520000</integer>
+	<integer>1152100800</integer>
+	<integer>1150113600</integer>
+	<integer>1143460800</integer>
+	<integer>1141646400</integer>
+	<integer>1138190400</integer>
+	<integer>1132315200</integer>
+	<integer>1128513600</integer>
+	<integer>1127995200</integer>
+	<integer>1125316800</integer>
+	<integer>1124971200</integer>
+	<integer>1124798400</integer>
+	<integer>1124452800</integer>
+	<integer>1124280000</integer>
+	<integer>1122379200</integer>
+	<integer>1119528000</integer>
+	<integer>1117800000</integer>
+	<integer>1112443200</integer>
+	<integer>1112356800</integer>
+	<integer>1108468800</integer>
+	<integer>1075118400</integer>
+	<integer>1074427200</integer>
+	<integer>1074254400</integer>
+	<integer>1073476800</integer>
+	<integer>1071489600</integer>
+	<integer>1070971200</integer>
+	<integer>1070280000</integer>
+	<integer>1069416000</integer>
+	<integer>1063972800</integer>
+	<integer>1061812800</integer>
+	<integer>1059393600</integer>
+	<integer>1054036800</integer>
+	<integer>1052740800</integer>
+	<integer>1052395200</integer>
+	<integer>1029240000</integer>
+	<integer>989582400</integer>
+	<integer>970574400</integer>
+	<integer>959774400</integer>
+	<integer>942667200</integer>
+	<integer>937224000</integer>
+	<integer>925819200</integer>
+  </rpmTag>
+  <rpmTag name="Changelogname">
+	<string>fvogt@suse.com</string>
+	<string>aavindraa@gmail.com</string>
+	<string>dimstar@opensuse.org</string>
+	<string>hguo@suse.com</string>
+	<string>hguo@suse.com</string>
+	<string>mpluskal@suse.com</string>
+	<string>mpluskal@suse.com</string>
+	<string>p.drouand@gmail.com</string>
+	<string>mc@suse.com</string>
+	<string>dmueller@suse.com</string>
+	<string>mc@suse.de</string>
+	<string>meissner@suse.com</string>
+	<string>coolo@suse.com</string>
+	<string>jengelh@medozas.de</string>
+	<string>meissner@suse.de</string>
+	<string>cdenicolo@novell.com</string>
+	<string>sbrabec@suse.cz</string>
+	<string>cristian.rodriguez@opensuse.org</string>
+	<string>ro@suse.de</string>
+	<string>jengelh@medozas.de</string>
+	<string>dmueller@suse.de</string>
+	<string>coolo@novell.com</string>
+	<string>coolo@novell.com</string>
+	<string>jengelh@medozas.de</string>
+	<string>mc@suse.de</string>
+	<string>crrodriguez@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>olh@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>olh@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>ro@suse.de</string>
+	<string>schwab@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>mc@suse.de</string>
+	<string>aj@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>mls@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>ro@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>meissner@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>ademar@conectiva.com.br</string>
+	<string>schwab@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>kukuk@suse.de</string>
+	<string>bs@suse.de</string>
+	<string>kukuk@suse.de</string>
+  </rpmTag>
+  <rpmTag name="Changelogtext">
+	<string>- Use %license (boo#1082318)</string>
+	<string>- Update to 2.9.6
+  * fix issue with sort and locale
+  * some particularly bad cases to the cracklib small dictionary
+  * updates to cracklib-words (adds a bunch of other dictionary lists)
+  * migration to github
+- run spec-cleaner</string>
+	<string>- Only buildrequire and call translation-update-upstream on SLE:
+  the package in openSUSE is a dummy and is empty.</string>
+	<string>- Add patch 0004-overflow-processing-long-words.patch
+  to fix a new buffer overflow identified together with bsc#992966.</string>
+	<string>- Relabel patches:
+  cracklib-magic.diff -&gt; 0001-cracklib-magic.diff
+  cracklib-2.9.2-visibility.patch -&gt; 0002-cracklib-2.9.2-visibility.patch
+- Add patch 0003-overflow-processing-gecos.patch
+  to fix a buffer overflow in GECOS parser (bsc#992966 CVE-2016-6318)</string>
+	<string>- Update to 2.9.5
+  * fix matching against first password in dictionary (Anton Dobkin)
+- Changes for 2.9.4
+  * remove doubled prototype
+- Changes for 2.9.3
+  * expose additional functions externally</string>
+	<string>- Cleanup spec file with spec-cleaner
+- Remove old ppc provides/obsoletes</string>
+	<string>- Update to version 2.9.2
+  + support build of python support outside of source tree
+  + fix bug in Python string distance calculation
+  + fix bug #16 / debian bug 724570 - broken optimization with packlib
+    prevblock
+- Adapt patch to upstream changes
+  + cracklib-visibility.patch &gt; cracklib-2.9.2-visibility.patch</string>
+	<string>- update to version 2.9.0
+  * add new FascistCheckUser function
+- remove translation-fix.dif
+  * text changed - get translation via translation-update-upstream</string>
+	<string>- update to 2.8.22:
+  - add words from "The Top 500 Worst Passwords of All Time"
+  - python 3 support (not yet packaged)</string>
+	<string>- fix broken chinese translation (bnc#726059)</string>
+	<string>- do not run update-po to make build-compare work.
+  (Likely added for translation-update-upstream, but this should just
+  change the .po files, no need for a .pot change?)</string>
+	<string>- add automake and libtool as buildrequire to avoid implicit dependency</string>
+	<string>- Remove redundant tags/sections from specfile
+- Add cracklib-devel to baselibs</string>
+	<string>- ppc64 has different symbols in nm output.</string>
+	<string>- license update: LGPLv2.1
+  Project has changed license to LGPLv2.1</string>
+	<string>- Added support for translation-update-upstream.</string>
+	<string>- Support GCC visibility</string>
+	<string>- update to 2.8.18
+  - make sure python lib builds against build dir instead of system
+    installed libs
+- update to 2.8.17
+  - updated Hindi translation
+  - fixed NLS issue in cracklib-check
+  - add Ukrainian translation
+  - fix segmentation fault in Python extension
+  - add -Wall to AM_CFLAGS to discover possible programming errors
+  - updated Wei Liu (zh_CN) translation
+  - fixed NLS support in python module compilation
+- removed patch:
+  datarootdir.patch (old buildfix, not needed anymore)</string>
+	<string>- use %_smp_mflags</string>
+	<string>- obsolete the old package</string>
+	<string>- fix baselibs.conf</string>
+	<string>- update to version 2.8.16
+    update licensing information in Python extension (Jan Dittberner)
+    make translations work in Python extension (Jan Dittberner)
+    fix Python extension compilation warning (Jan Dittberner)
+    add a long description to Python extension (Jan Dittberner)
+    add Hindi translation (Rajesh Ranjan)
+    add Korean translation (Eunju Kim)
+    updated Russian translation (Yulia Poyarko)
+    fix filename output in Python exceptions (Nalin Dahyabhai)
+    fix format strings in util/packer.c (Mike Frysinger)
+    improvement to rules based checking in fascist.c for better checking of closely related letter pairs (Ben Karsin)
+    allow building of Python extension outside source folder (Jan Dittberner)
+    fix type on Python extension's trove classifier
+    reflect license change discussion that was never actually implemented in the repository and update to LGPL
+    Added Assamese translation (Amitakhya Phukan)
+    Added Bengali India translation (Runa Bhattacharjee)
+    Added Gujarati translation (Ankit Patel)
+    Added Kannada translation (shankysringeri)
+    Added Malayalam translation (Ani Peter)
+    Added Marathi translation (Sandeep Shedmake)
+    Added Oriya translation (Manoj Giri)
+    Added Russian translation (Anton Dobkin)
+    Added Tamil translation (I. Felix)
+    Added Telugu translation (Krishna Babu)
+    Updated Polish translation (Piotr Drąg)
+    Updated Panjabi translation (A S Alam)
+    optimize order of commands in util/cracklib-format (Jan Dittberner, Debian)
+    fix several CC warnings (Jan Dittberner, Debian)
+    add a function GetDefaultCracklibDict() to libcrack
+    bump library revision
+    add python/setup.py.in to allow building eggs
+- removed old translations
+- split libcrack2 package out</string>
+	<string>- add baselibs.conf as a source</string>
+	<string>- update to version 2.8.13
+  * Compressed dictionary support and better python module
+- remove zlib patch which is now upstream.</string>
+	<string>- remove static libraries</string>
+	<string>- update translations</string>
+	<string>- use Obsoletes: -XXbit only for ppc64 to help solver during distupgrade
+  (bnc#437293)</string>
+	<string>- update translations</string>
+	<string>- update translations</string>
+	<string>- obsolete old -XXbit packages (bnc#437293)</string>
+	<string>- do not zip the dict by default. A check takes too long.
+  The support for zip'ed dicts is still available</string>
+	<string>- implement reading compressed password databases
+  (FATE#303536)
+- compress password database</string>
+	<string>- update i18n files</string>
+	<string>- update i18n files</string>
+	<string>- update i18n files</string>
+	<string>- added baselibs.conf file to build xxbit packages
+  for multilib support</string>
+	<string>- Don't use autopoint.</string>
+	<string>- update to version 2.8.12
+  * minor bugfixes
+- update localization files</string>
+	<string>- update localization files</string>
+	<string>- update localization files</string>
+	<string>- update localization files</string>
+	<string>- update i18n</string>
+	<string>- add translations from Novell</string>
+	<string>- added cracklib-dict-small and splitted the full dictionary
+  into a seperate package. [#265733]
+- cracklib requires cracklib-dict</string>
+	<string>- update to version 2.8.10
+  * better hanlding of cracklist dictionary paths in
+    python binding.</string>
+	<string>- update to version 2.8.9
+- ChangeLog, configure.in: bump version numbers, skipped a couple
+  due to packaging/disting issues with sf
+- lib/packlib.c: also close wfp fd if it was opened</string>
+	<string>- Fix build.</string>
+	<string>- Update sl_SI translation</string>
+	<string>- Update pl and fi translations</string>
+	<string>- Add km and uk translations, update fi translation</string>
+	<string>- converted neededforbuild to BuildRequires</string>
+	<string>- Update to 2.8.6 (merge locale and compile fixes)</string>
+	<string>- Fix installing of translations</string>
+	<string>- Update to official 2.8.5
+- Fix warnings about undeclared functions</string>
+	<string>- Add translations for fi, sl_SI and el</string>
+	<string>- Add pl translation</string>
+	<string>- Remove support for broken 64bit indexes from
+  magic entry [Bug #106007]</string>
+	<string>- Add Novell Tier1 translations</string>
+	<string>- Add translations for da, lt, nb, pa and pt
+- Fixes #105413</string>
+	<string>- Update to internal version 2.8.3.0.2 (based on CVS)</string>
+	<string>- Update to internal version 2.8.3.0.1 (based on CVS)</string>
+	<string>- Update to version 2.8.3
+- Fix compiler warnings</string>
+	<string>- Remove words from neededforbuild</string>
+	<string>- Update to version 2.8.2</string>
+	<string>- fix Makefile (no need to add Makefile to ar archive)</string>
+	<string>- Use reentrant getpwuid function
+- Revert last change</string>
+	<string>- Compile with -fPIC.</string>
+	<string>- Add italian translation</string>
+	<string>- Add translation for hu</string>
+	<string>- Add translation for nl</string>
+	<string>- Add translations for es and fr</string>
+	<string>- Fix all compiler warnings
+- Add german translation</string>
+	<string>- Compile with no execstack
+- Build as normal user</string>
+	<string>- Add czech translation</string>
+	<string>- Add slovak translation</string>
+	<string>- Make similar error messages unique</string>
+	<string>- Make crack.h header C++ conform
+- Build static library
+- Create cracklib-devel sub package</string>
+	<string>- Add defattr</string>
+	<string>- Add patch which allows translation of cracklib messages</string>
+	<string>- Added several en wordlists and pt_BR and es dictionaries</string>
+	<string>- Fix portability bugs.</string>
+	<string>- Use gcc for creating shared library
+- Add support for 32/64bit library path</string>
+	<string>- Use new URL, add Group tag</string>
+	<string>- Remove ldconfig calls</string>
+	<string>- ran old prepare_spec on spec file to switch to new prepare_spec.</string>
+	<string>- initial version of cracklib</string>
+  </rpmTag>
+  <rpmTag name="Cookie">
+	<string>build32 1581104539</string>
+  </rpmTag>
+  <rpmTag name="Filedevices">
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Fileinodes">
+	<integer>1</integer>
+	<integer>2</integer>
+	<integer>3</integer>
+  </rpmTag>
+  <rpmTag name="Filelangs">
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Provideflags">
+	<integer>0</integer>
+	<integer>8</integer>
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Provideversion">
+	<string/>
+	<string>2.9.6-2.15</string>
+	<string>2.9.6-2.15</string>
+  </rpmTag>
+  <rpmTag name="Dirindexes">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Basenames">
+	<string>pw_dict.hwm</string>
+	<string>pw_dict.pwd</string>
+	<string>pw_dict.pwi</string>
+  </rpmTag>
+  <rpmTag name="Dirnames">
+	<string>/usr/share/cracklib/</string>
+  </rpmTag>
+  <rpmTag name="Optflags">
+	<string>-O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g</string>
+  </rpmTag>
+  <rpmTag name="Disturl">
+	<string>obs://build.opensuse.org/openSUSE:Factory/standard/e0b8f14f5f1c4402af5295c4f12a66d5-cracklib</string>
+  </rpmTag>
+  <rpmTag name="Payloadformat">
+	<string>cpio</string>
+  </rpmTag>
+  <rpmTag name="Payloadcompressor">
+	<string>xz</string>
+  </rpmTag>
+  <rpmTag name="Payloadflags">
+	<string>5</string>
+  </rpmTag>
+  <rpmTag name="Installcolor">
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Installtid">
+	<integer>1590701246</integer>
+  </rpmTag>
+  <rpmTag name="Platform">
+	<string>x86_64-suse-linux</string>
+  </rpmTag>
+  <rpmTag name="Fileclass">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Classdict">
+	<string/>
+  </rpmTag>
+  <rpmTag name="Sourcepkgid">
+	<base64>xz6hvod/qLXLW3TNEc8Phw==
+</base64>
+  </rpmTag>
+  <rpmTag name="Filedigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Encoding">
+	<string>utf-8</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigest">
+	<string>ab95dadd4d61801b9ca9886c568416ca4ca3dc080f07a5ed4b570702946c6bbb</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+</rpmHeader>

@@ -1,0 +1,8 @@
+license_expression: unicode-tou
+is_license_text: yes
+relevance: 100
+minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright (c) 1991-2010 Unicode, Inc.
+ignorable_holders:
+    - Unicode, Inc.

@@ -1,0 +1,60 @@
+{
+  "type": "pypi",
+  "namespace": null,
+  "name": "pyup-django",
+  "version": "0.4.0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Python",
+  "description": "pyup-django checks your installed dependencies for known security vulnerabilities and displays them in the admin area.\n[![PyPi](https://img.shields.io/pypi/v/pyup-django.svg)](https://pypi.python.org/pypi/pyup-django)\n        [![Travis](https://img.shields.io/travis/pyupio/pyup-django.svg)](https://travis-ci.org/pyupio/pyup-django)\n        \n        # About\n        \n        Displays a red warning banner if you are running an insecure Django release.\n        \n        ![insecure](insecure.png)\n        \n        # Installation\n        \n        Install `pyup-django` with pip:\n        \n        ```\n        pip install pyup-django\n        ```\n        \n        and add it to your `INSTALLED_APPS`, before `django.contrib.admin`\n        \n        ```\n        INSTALLED_APPS = [\n            'pyup_django',\n            'django.contrib.admin',\n        ]\n        ```\n        \n        # How does it work?\n        \n        `pyup-django` extends the admin base template and checks [https://pyup.io/api/v1/insecure/django/](https://pyup.io/api/v1/insecure/django/)\n        if the currently installed Django release is insecure.\n        \n        Requests to the API are cached for 24 hours and won't leak any sensitive\n        information other than the servers IP address.\n        \n        \n        # Support\n        \n        If you are using `pyup-django` in one of your projects, please consider getting a paid\n        [pyup.io](https://pyup.io) account. This is what makes projects like this possible.",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "pyup.io",
+      "email": "support@pyup.io",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "pyup_django",
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.6",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5"
+  ],
+  "homepage_url": "https://github.com/pyupio/pyup-django",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "mit",
+  "declared_license": {
+    "license": "MIT license",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:pypi/pyup-django@0.4.0",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/p/pyup-django/pyup-django-0.4.0.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/pyup-django/0.4.0/json"
+}

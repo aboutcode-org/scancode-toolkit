@@ -1,0 +1,303 @@
+[
+  {
+    "type": "rpm",
+    "namespace": null,
+    "name": "setup",
+    "version": "2.5.58",
+    "qualifiers": {
+      "arch": "noarch"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "The setup package contains a set of important system configuration and\nsetup files, such as passwd, group, and profile.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": 381527,
+    "sha1": "10596a674645d2802a2230c1b0add036ac6d14d7",
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "public-domain",
+    "declared_license": "public domain",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:rpm/setup@2.5.58?arch=noarch",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "installed_files": [
+      {
+        "path": "/etc/aliases",
+        "size": 0,
+        "sha1": null,
+        "md5": "039e9bb0c206d57c616c8fab3cb82c2a",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/bashrc",
+        "size": 0,
+        "sha1": null,
+        "md5": "4d93be6a1e2c112096e6545faf8f829c",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/csh.cshrc",
+        "size": 0,
+        "sha1": null,
+        "md5": "0e866df1fad20b59214c563f56412b45",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/csh.login",
+        "size": 0,
+        "sha1": null,
+        "md5": "106d1a19969f1d12b1949bc331975c47",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/environment",
+        "size": 0,
+        "sha1": null,
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/exports",
+        "size": 0,
+        "sha1": null,
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/filesystems",
+        "size": 0,
+        "sha1": null,
+        "md5": "59b5f604a6899aca8dc54e6e6897086e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/fstab",
+        "size": 0,
+        "sha1": null,
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/group",
+        "size": 0,
+        "sha1": null,
+        "md5": "71803878c7d0b35d21a22c7b9349c1a6",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/gshadow",
+        "size": 0,
+        "sha1": null,
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/host.conf",
+        "size": 0,
+        "sha1": null,
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/hosts.allow",
+        "size": 0,
+        "sha1": null,
+        "md5": "25fd7a8a9ec4794960ef198a60f66d22",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/hosts.deny",
+        "size": 0,
+        "sha1": null,
+        "md5": "75febde367e30a4fdf539eb679d59120",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/inputrc",
+        "size": 0,
+        "sha1": null,
+        "md5": "b2a7c18ae5159070abb2a4e4a615f999",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/motd",
+        "size": 0,
+        "sha1": null,
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/mtab",
+        "size": 0,
+        "sha1": null,
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/passwd",
+        "size": 0,
+        "sha1": null,
+        "md5": "b4936b3216c0a2655fc4abedcefbdbd4",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/printcap",
+        "size": 0,
+        "sha1": null,
+        "md5": "dc208a34b021823564a290720169534e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/profile",
+        "size": 0,
+        "sha1": null,
+        "md5": "e685859fe01e8c62fd9de8a2c1934001",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/profile.d",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/protocols",
+        "size": 0,
+        "sha1": null,
+        "md5": "21a25996ed4424d22d2902ee94029f6a",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/securetty",
+        "size": 0,
+        "sha1": null,
+        "md5": "30afa82e759c95ea880593a4fb43e25e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/services",
+        "size": 0,
+        "sha1": null,
+        "md5": "dde31302b080df6ec5fcacee0d56dc90",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/shadow",
+        "size": 0,
+        "sha1": null,
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/shells",
+        "size": 0,
+        "sha1": null,
+        "md5": "11bf793328a6037085fbd47931d69a1f",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/doc/setup-2.5.58",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/doc/setup-2.5.58/uidgid",
+        "size": 0,
+        "sha1": null,
+        "md5": "72a2ada9ad25c217338369667c6ef302",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/var/log/lastlog",
+        "size": 0,
+        "sha1": null,
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "sha256": null,
+        "sha512": null
+      }
+    ]
+  },
+  {
+    "type": "rpm",
+    "namespace": null,
+    "name": "basesystem",
+    "version": "8.0",
+    "qualifiers": {
+      "arch": "noarch"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "Basesystem defines the components of a basic CentOS system (for\nexample, the package installation order to use during bootstrapping).\nBasesystem should be the first package installed on a system, and it\nshould never be removed.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": 0,
+    "sha1": "640b66efc6a459ebf80e53622f217dbc1fc49983",
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "public-domain",
+    "declared_license": "public domain",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:rpm/basesystem@8.0?arch=noarch",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "installed_files": []
+  }
+]

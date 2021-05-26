@@ -1,0 +1,8 @@
+license_expression: mit AND unicode
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.md
+ignorable_urls:
+    - http://opensource.org/licenses/MIT
+    - http://www.unicode.org/copyright.html#Exhibit1

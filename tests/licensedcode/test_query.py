@@ -156,7 +156,8 @@ class TestQueryWithSingleRun(IndexTesting):
             Always'''
 
         qry = Query(query_string=querys, idx=idx, _test_mode=True)
-        qry.tokenize_and_build_runs(qry.tokens_by_line())
+        tokens_by_line = list(qry.tokens_by_line(query_string=querys))
+        qry.tokenize_and_build_runs(tokens_by_line)
         # convert tid to actual token strings
         tks_as_str = lambda tks: [None if tid is None else idx.tokens_by_tid[tid] for tid  in tks]
 

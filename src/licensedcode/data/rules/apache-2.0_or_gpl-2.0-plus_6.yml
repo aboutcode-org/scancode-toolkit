@@ -1,0 +1,5 @@
+license_expression: apache-2.0 OR gpl-2.0-plus
+is_license_reference: yes
+relevance: 99
+notes: Seen in dulwich. This is an uncommon license reference to a future Apache license version.
+    For now we report only apache-2.0

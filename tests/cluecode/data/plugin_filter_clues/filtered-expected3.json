@@ -1,0 +1,96 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--copyright": true,
+        "--email": true,
+        "--filter-clues": true,
+        "--info": true,
+        "--json": "<file>",
+        "--license": true,
+        "--url": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 1
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE3",
+      "type": "file",
+      "name": "LICENSE3",
+      "base_name": "LICENSE3",
+      "extension": "",
+      "size": 1899,
+      "date": "2021-02-26",
+      "sha1": "9db841f62fdb2372f5f474bb75366140a00c62ca",
+      "md5": "3fdbe85d79aa58aaeab119505f2007b6",
+      "sha256": "408dfe8f9a70ea7bc9feaa9f77fb731ada0c26dc39008fdc5ead52d0442c656f",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "pcre",
+          "score": 100.0,
+          "name": "PCRE License",
+          "short_name": "PCRE License",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "University of Cambridge",
+          "homepage_url": "http://www.pcre.org/licence.txt",
+          "text_url": "http://www.pcre.org/licence.txt",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/pcre",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.yml",
+          "spdx_license_key": "LicenseRef-scancode-pcre",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE",
+          "start_line": 1,
+          "end_line": 47,
+          "matched_rule": {
+            "identifier": "pcre.LICENSE",
+            "license_expression": "pcre",
+            "licenses": [
+              "pcre"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "matcher": "1-hash",
+            "rule_length": 303,
+            "matched_length": 303,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        }
+      ],
+      "license_expressions": [
+        "pcre"
+      ],
+      "percentage_of_license_text": 100.0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "emails": [],
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

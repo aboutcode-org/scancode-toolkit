@@ -1,5 +1,6 @@
 license_expression: bsd-original
 is_license_text: yes
+minimum_coverage: 80
 relevance: 100
 ignorable_authors:
     - the NetBSD Foundation, Inc. and its contributors

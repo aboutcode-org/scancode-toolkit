@@ -30,21 +30,25 @@ There are 4 main ways you can install ScanCode.
 Before Installing
 -----------------
 
-ScanCode requires either Python 3.6.x and is tested on Linux, Mac, and Windows.
-Make sure Python 3.6 is installed first.
+- ScanCode supports Python 3.6 and higher and is tested on Linux, Mac, and Windows.
+- ScanCode supports Python 3.6, 3.7, 3.8. and 3.9 when installed from ``pip``.
+- When installing as an application from a release archive, Python 3.6 is required.
+
+Make sure Python is installed first.
 
 
 System Requirements
 ^^^^^^^^^^^^^^^^^^^
 
-- Hardware : ScanCode will run best with a modern X86 processor and at least 2GB of RAM and
-  250MB of disk.
+- Hardware : ScanCode will run best with a modern X86 processor and at least 4GB
+  of RAM and 500MB of disk.
 
-- Supported operating systems : ScanCode should run on these OSes:
+- Supported operating systems: ScanCode should run on these 64-bit OSes running
+  X86_64 processors:
 
-    #. Linux: on recent 64-bit Linux distributions running X86_64 proessors,
-    #. Mac: on recent 64-bit macOS (10.14 and up) running X86_64 proessors,
-    #. Windows: on Windows 7 and up (64-bit) running X86_64 proessors,
+    #. Linux: on recent 64-bit Linux distributions,
+    #. Mac: on recent 64-bit macOS (10.14 and up),
+    #. Windows: on Windows 7 and up,
 
 
 .. _install_prerequisites:
@@ -52,45 +56,40 @@ System Requirements
 Prerequisites
 ^^^^^^^^^^^^^
 
-ScanCode needs a Python 3.6 (*highly recommended*) or a Python 2.7 interpreter.
-
-.. Note::
-
-    ScanCode currently doesn't support versions above Python 3.6.x, though support will be added soon.
+ScanCode needs a Python 3.6 interpreter when installed as an application.
 
 - **On Linux**:
 
-    Use your package manager to install ``python3.6`` (*Recommended*) or ``python2.7``.
+    Use your package manager to install ``python3.6`` (*Recommended*).
 
     For ubuntu, it is ``sudo apt install python3.6-dev``
 
-    - On Ubuntu 14, 16 and 18, run:
-      ``sudo apt install python3.6-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev``
+    - On Ubuntu 14, 16, 18 and 20 run:
+      ``sudo apt install python3.6-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev libpopt0``
 
     - On Debian and Debian-based distros run:
-      ``sudo apt-get install python3.6-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev``
+      ``sudo apt-get install python3.6-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-devlibpopt0``
 
     - On RPM-based distros run:
-      ``sudo yum install python3.6-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel``
+      ``sudo yum install python3.6-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devellibpopt0``
 
     - On Fedora 22 and later run:
-      ``sudo dnf install python3.6-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs``
+      ``sudo dnf install python3.6-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs libpopt0``
 
-    If they are not available from your package manager, you must compile it from sources.
-    For instance, visit this `wiki <https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos6>`_
-    for instructions to compile Python 2.7 from sources on Centos.
+    If these packages are not available from your package manager, you must
+    compile them  from sources.
 
 - **On Mac**:
 
     Download and install Python from this url:
 
-    - Python 3.6.8 (*recommended*): https://www.python.org/ftp/python/3.6.8/python-3.6.8-macosx10.6.pkg
+    - Python 3.6.8: https://www.python.org/ftp/python/3.6.8/python-3.6.8-macosx10.6.pkg
 
 - **On Windows**:
 
     Download and install Python from this url:
 
-    - Python 3.6.8 (*recommended*): https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe
+    - Python 3.6.8: https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe
 
         Add python to PATH, as ScanCode uses the python from PATH. The last Python you install
         registers itself in the environment is the default, if you select the "Add to PATH" option
@@ -121,12 +120,12 @@ Installation on Linux and Mac
 Get the Scancode Toolkit tarball archive of a specific version and your
 operating system by going to the `project releases page <https://github.com/nexB/scancode-toolkit/releases/>`_
 
-For example, Version 21.2.9 archive can be obtained from
-`Toolkit release 21.2.9 <https://github.com/nexB/scancode-toolkit/releases/tag/v21.2.9>`_
+For example, Version 21.3.31 archive can be obtained from
+`Toolkit release 21.3.31 <https://github.com/nexB/scancode-toolkit/releases/tag/v21.3.31>`_
 under assets options. Download the archive for your operating systen and extract
 the archive from command line::
 
-    tar -xvf scancode-toolkit-21.2.9_py36-linux.tar.xz
+    tar -xvf scancode-toolkit-21.3.31_py36-linux.tar.xz
 
 
 Or, on Linux, right click and select "Extract Here".
@@ -145,7 +144,7 @@ Installation on Windows 10
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Download the latest ScanCode release zip file for Windows from the latest
-  version athttps://github.com/nexB/scancode-toolkit/releases/
+  version at https://github.com/nexB/scancode-toolkit/releases/
 
 - In the File Explorer, select the downloaded ScanCode zip and right-click.
 
@@ -287,14 +286,14 @@ Or you can run the following if you have `Git <https://git-scm.com/>`_ installed
 Now, by default the files are checked out to the develop branch, but you can jump to any checkpoint
 using the following command::
 
-    git checkout master
+    git checkout main
 
-Here, ``master`` branch has the latest release of Scancode-Toolkit. You can also check out to any
+Here, ``main`` branch has the latest release of Scancode-Toolkit. You can also check out to any
 of the following:
 
-- Branches (Locally created or already present) [Example - ``master``, ``develop`` etc]
-- Tags (essentially Version Numbers) [Example - ``v3.1.1``, ``v3.1.0`` etc]
-- Commits (use the shortened commit hash) [Example - ``4502055``, ``f276398`` etc]
+- Branches (Locally created or already present) [Example - ``main``]
+- Tags (essentially version numbers) [Example - ``v21.2.25``, ``v21.3.31``]
+- Commits (use the shortened commit hash) [Example - ``4502055``, ``f276398``]
 
 
 Configure the build
@@ -344,7 +343,7 @@ For more information on Python virtualenv, visit this `page <https://docs.python
 
 .. NOTE::
 
-    For advanced usage, ``scancode-toolkit-mini`` is alternative package with
+    For advanced usage, ``scancode-toolkit-mini`` is an alternative package with
     no default dependencies on pre-built binaries. This may come handy for some
     special use cases such as packaging for a Linux of FreeBSD distro.
 

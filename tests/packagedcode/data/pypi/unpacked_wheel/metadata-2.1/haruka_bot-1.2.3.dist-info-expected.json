@@ -1,0 +1,154 @@
+{
+  "type": "pypi",
+  "namespace": null,
+  "name": "haruka-bot",
+  "version": "1.2.3",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Python",
+  "description": "Push dynamics and live informations from bilibili to QQ. Based on nonebot2.\n[![HarukaBot](https://socialify.git.ci/SK-415/HarukaBot/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FSK-415%2FHarukaBot%2Fmaster%2Fdocs%2F.vuepress%2Fpublic%2Flogo.png&owner=1&pattern=Circuit%20Board&stargazers=1&theme=Light)](https://haruka-bot.live/)\n\n# HarukaBot \u2014\u2014\u4f60\u7684\u201c\u5355\u63a8\u201d\u5c0f\u52a9\u624b\n\n\u540d\u79f0\u6765\u6e90\uff1a[@\u767d\u795e\u9065Haruka](https://space.bilibili.com/477332594 )\n  \nlogo \u753b\u5e08\uff1a[@\u79e6\u65e0](https://space.bilibili.com/4668826 )\n\n[![VERSION](https://img.shields.io/pypi/v/haruka-bot)](https://haruka-bot.live/about/CHANGELOG.html)\n[![time tracker](https://wakatime.com/badge/github/SK-415/HarukaBot.svg )](https://wakatime.com/badge/github/SK-415/HarukaBot)\n[![qq group](https://img.shields.io/badge/QQ%E7%BE%A4-629574472-orange )](https://jq.qq.com/?_wv=1027&k=sHPbCRAd)\n[![docs](https://img.shields.io/badge/%E6%96%87%E6%A1%A3-%E7%82%B9%E5%87%BB%E6%9F%A5%E7%9C%8B-green)](https://haruka-bot.live/)\n\n## \u7b80\u4ecb\n\n\u4e00\u6b3e\u5c06\u54d4\u54e9\u54d4\u54e9UP\u4e3b\u7684\u76f4\u64ad\u4e0e\u52a8\u6001\u4fe1\u606f\u63a8\u9001\u81f3QQ\u7684\u673a\u5668\u4eba\u3002\u57fa\u4e8e [`NoneBot2`](https://github.com/nonebot/nonebot2 ) \u5f00\u53d1\uff0c\u524d\u8eab\u4e3a [`dd-bot`](https://github.com/SK-415/dd-bot) \u3002\n  \nHarukaBot \u81f4\u529b\u4e8e\u4e3aB\u7ad9UP\u4e3b\u4eec\u63d0\u4f9b\u4e00\u4e2a\u5f00\u6e90\u514d\u8d39\u7684\u7c89\u4e1d\u7fa4\u63a8\u9001\u65b9\u6848\u3002\u6781\u5927\u7684\u51cf\u8f7b\u7ba1\u7406\u5458\u8d1f\u62c5\uff0c\u4e0d\u4f1a\u518d\u9047\u5230\u7a81\u51fb\u65e0\u4eba\u63a8\u9001\u7684\u5c34\u5c2c\u60c5\u51b5\u3002\u540c\u65f6\u8fd8\u80fd\u5c06B\u535a\u52a8\u6001\u622a\u56fe\u8f6c\u53d1\u81f3\u7c89\u4e1d\u7fa4\uff0c\u6d3b\u8dc3\u7fa4\u5185\u8bdd\u9898\u3002\n  \n> \u4ecb\u4e8e\u4f5c\u8005\u6280\u672f\u529b\u4f4e\u4e0b\uff0cHarukaBot \u7684\u4f53\u9a8c\u53ef\u80fd\u5e76\u4e0d\u662f\u5f88\u597d\u3002\u5982\u679c\u4f7f\u7528\u4e2d\u6709\u4efb\u4f55\u610f\u89c1\u6216\u8005\u5efa\u8bae\u90fd\u6b22\u8fce\u63d0\u51fa\uff0c\u6211\u4f1a\u52aa\u529b\u53bb\u5b8c\u5584\u5b83\u3002\n\n## [\u6587\u6863\uff08\u70b9\u6211\u67e5\u770b\uff09](https://haruka-bot.live/)\n\n## \u529f\u80fd\u4ecb\u7ecd\n\n**\u4ee5\u4e0b\u4ec5\u4e3a\u529f\u80fd\u4ecb\u7ecd\uff0c\u5e76\u975e\u5b9e\u9645\u547d\u4ee4\u540d\u79f0\u3002\u5177\u4f53\u547d\u4ee4\u5411 bot \u53d1\u9001 `\u5e2e\u52a9` \u67e5\u770b\uff0c\u7fa4\u91cc\u4f7f\u7528\u9700\u8981\u5148@\u673a\u5668\u4eba**\u3002\n\nHarukaBot \u4e13\u6ce8\u4e8e\u8ba2\u9605B\u7ad9UP\u4e3b\u4eec\u7684\u52a8\u6001\u4e0e\u5f00\u64ad\u63d0\u9192\uff0c\u5e76\u8f6c\u53d1\u81f3QQ\u7fa4/\u597d\u53cb\u3002\n\n\u540c\u65f6 HarukaBot \u9488\u5bf9\u7c89\u4e1d\u7fa4\u4e2d\u7684\u63a8\u9001\u573a\u666f\u8fdb\u884c\u4e86\u82e5\u5e72\u4f18\u5316: \n\n- **\u6743\u9650\u5f00\u5173**: \u6307\u5b9a\u67d0\u4e2a\u7fa4\u53ea\u6709\u7ba1\u7406\u5458\u624d\u80fd\u89e6\u53d1\u6307\u4ee4\n\n- **@\u5168\u4f53\u5f00\u5173**: \u6307\u5b9a\u7fa4\u91cc\u67d0\u4f4d\u8ba2\u9605\u7684\u4e3b\u64ad\u5f00\u64ad\u63a8\u9001\u5e26@\u5168\u4f53\n\n- **\u52a8\u6001/\u76f4\u64ad\u5f00\u5173**: \u53ef\u4ee5\u81ea\u7531\u8bbe\u7f6e\u6bcf\u4f4d\u4e3b\u64ad\u662f\u5426\u63a8\u9001\u76f4\u64ad/\u52a8\u6001\n\n- **\u8ba2\u9605\u5217\u8868**: \u6bcf\u4e2a\u7fa4/\u597d\u53cb\u7684\u8ba2\u9605\u90fd\u662f\u5206\u5f00\u6765\u7684\n\n- **\u591a\u7aef\u63a8\u9001**: \u53d7\u9650\u4e8e\u4e00\u4e2aQQ\u53f7\u4e00\u5929\u53ea\u80fd@\u5341\u6b21\u5168\u4f53\u6210\u5458\uff0c\u56e0\u6b64\u5bf9\u4e8e\u7c89\u4e1d\u7fa4\u591a\u7684UP\u6765\u8bf4\u4e00\u4e2a bot \u7684\u6b21\u6570\u5b8c\u5168\u4e0d\u591f\u63a8\u9001\u3002\u56e0\u6b64\u4e00\u53f0 HarukaBot \u652f\u6301\u540c\u65f6\u8fde\u63a5\u591a\u4e2aQQ\uff0c\u5206\u522b\u5411\u4e0d\u540c\u7684\u7fa4/\u597d\u53cb\u540c\u65f6\u63a8\u9001\n\n## \u7279\u522b\u611f\u8c22\n\n- [`go-cqhttp`](https://github.com/Mrs4s/go-cqhttp)\uff1a\u7b80\u5355\u53c8\u5b8c\u5584\u7684 cqhttp \u5b9e\u73b0\n\n- [`NoneBot2`](https://github.com/nonebot/nonebot2)\uff1a\u8d85\u597d\u7528\u7684\u5f00\u53d1\u6846\u67b6\uff0c\u6ca1\u6709\u5b83\u5c31\u6ca1\u6709 HarukaBot\uff08yyy\u4f6c\u725b\u903c\uff09\n\n- [`bilibili-API-collect`](https://github.com/SocialSisterYi/bilibili-API-collect)\uff1a\u975e\u5e38\u8be6\u7ec6\u7684 B\u7ad9 api \u6587\u6863\n\n- [`bilibili_api`](https://github.com/Passkou/bilibili_api)\uff1aPython \u5b9e\u73b0\u7684\u5f3a\u5927 B\u7ad9 api \u5e93\n\n## \u652f\u6301\u4e0e\u8d21\u732e\n\n\u70b9\u4e2a\u5c0f\u661f\u661f\u5c31\u662f\u5bf9\u6211\u6700\u597d\u7684\u652f\u6301\uff0c\u611f\u8c22\u4f7f\u7528 HarukaBot\u3002\u4e5f\u6b22\u8fce \u6709\u80fdman \u5bf9\u672c\u9879\u76ee Pull requests\u3002\n\n## \u8bb8\u53ef\u8bc1\n\u672c\u9879\u76ee\u4f7f\u7528 [`GNU AGPLv3`](https://choosealicense.com/licenses/agpl-3.0/) \u4f5c\u4e3a\u5f00\u6e90\u8bb8\u53ef\u8bc1\u3002",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "SK-415",
+      "email": "2967923486@qq.com",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "nonebot",
+    "nonebot2",
+    "qqbot",
+    "bilibili",
+    "bot",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9"
+  ],
+  "homepage_url": "https://github.com/SK-415/HarukaBot",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": "Repository, https://github.com/SK-415/HarukaBot/tree/master/src/plugins/haruka_bot",
+  "copyright": null,
+  "license_expression": "agpl-3.0-plus",
+  "declared_license": {
+    "license": "AGPL-3.0-or-later",
+    "classifiers": [
+      "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)"
+    ]
+  },
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [
+    {
+      "purl": "pkg:pypi/click",
+      "requirement": "<8.0.0,>=7.1.2",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/httpx",
+      "requirement": "<0.18.0,>=0.17.0",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/nonebot-adapter-cqhttp",
+      "requirement": "<3.0.0,>=2.0.0-alpha.11",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/nonebot-plugin-apscheduler",
+      "requirement": "<0.2.0,>=0.1.2",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/nonebot2",
+      "requirement": "<3.0.0,>=2.0.0-alpha.11",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/packaging",
+      "requirement": "<21.0,>=20.9",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/pydantic",
+      "requirement": "<2.0.0,>=1.8.1",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/pyppeteer",
+      "requirement": "<0.3.0,>=0.2.5",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/python-dotenv",
+      "requirement": "<0.16.0,>=0.15.0",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/qrcode",
+      "requirement": "<7.0,>=6.1",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/rsa",
+      "requirement": "<5.0,>=4.7",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/tinydb",
+      "requirement": "<5.0.0,>=4.3.0",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    }
+  ],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:pypi/haruka-bot@1.2.3",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/h/haruka-bot/haruka-bot-1.2.3.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/haruka-bot/1.2.3/json"
+}

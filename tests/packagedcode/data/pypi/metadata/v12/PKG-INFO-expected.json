@@ -1,0 +1,69 @@
+{
+  "type": "pypi",
+  "namespace": null,
+  "name": "pyldap",
+  "version": "2.4.45",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Python",
+  "description": "Python modules for implementing LDAP clients\npyldap:\n          pyldap is a fork of python-ldap, and provides an object-oriented API to access LDAP\n          directory servers from Python programs. Mainly it wraps the OpenLDAP 2.x libs for that purpose.\n          Additionally the package contains modules for other LDAP-related stuff\n          (e.g. processing LDIF, LDAPURLs, LDAPv3 schema, LDAPv3 extended operations\n          and controls, etc.).",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "pyldap project",
+      "email": null,
+      "url": null
+    }
+  ],
+  "keywords": [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Programming Language :: C",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Topic :: Database",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Systems Administration :: Authentication/Directory :: LDAP"
+  ],
+  "homepage_url": "https://github.com/pyldap/pyldap/",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": "https://pypi.python.org/pypi/pyldap/",
+  "copyright": null,
+  "license_expression": "unknown AND python",
+  "declared_license": {
+    "license": "Python style",
+    "classifiers": [
+      "License :: OSI Approved :: Python Software Foundation License"
+    ]
+  },
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:pypi/pyldap@2.4.45",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/p/pyldap/pyldap-2.4.45.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/pyldap/2.4.45/json"
+}

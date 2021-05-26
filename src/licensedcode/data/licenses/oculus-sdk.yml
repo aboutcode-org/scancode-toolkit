@@ -1,17 +1,16 @@
 key: oculus-sdk
-short_name: Oculus SDK License Agreement 
+short_name: Oculus SDK License Agreement
 name: Oculus SDK License Agreement
 category: Copyleft Limited
-owner: Facebook Technologies, LLC 
+owner: Facebook
 homepage_url: https://www.oculus.com/
+spdx_license_key: LicenseRef-scancode-oculus-sdk
 text_urls:
     - https://developer.oculus.com/licenses/
-spdx_license_key: LicenseRef-scancode-oculus-sdk
 ignorable_copyrights:
-  - (c) Facebook Technologies, LLC and its affiliates
-  - Copyright (c) Facebook Technologies, LLC and its affiliates
+    - (c) Facebook Technologies, LLC and its affiliates
+    - Copyright (c) Facebook Technologies, LLC and its affiliates
 ignorable_holders:
-  - Facebook Technologies, LLC and its affiliates
+    - Facebook Technologies, LLC and its affiliates
 ignorable_urls:
-  - https://developer.oculus.com/
-
+    - https://developer.oculus.com/

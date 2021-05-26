@@ -1,0 +1,6 @@
+' Apache License V2': 'Apache-2.0',
+  ' BSD-3-Clause': 'BSD-3-Clause',
+  ' GPL-3.0+': 'GPL-3.0-or-later',
+  '"BD-2-Clause"': 'BSD-2-Clause',
+  '"BSD-2-Clause"': 'BSD-2-Clause',
+  '"MIT"': 'MIT',

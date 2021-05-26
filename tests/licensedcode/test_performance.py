@@ -154,7 +154,7 @@ class TestIndexingPerformance(FileBasedTesting):
         import cProfile as profile
         import pstats
         stats = 'build_index_performance_profile_log.txt'
-        test_py = 'cache.get_index(return_value=False)'
+        test_py = 'cache.populate_cache()'
         profile.runctx(test_py, globals(), locals(), stats)
         p = pstats.Stats(stats)
         p.sort_stats('time').print_stats(40)

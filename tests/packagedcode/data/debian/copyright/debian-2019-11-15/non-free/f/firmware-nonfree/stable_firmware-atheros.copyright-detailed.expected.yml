@@ -2,8 +2,8 @@
   Binary redistribution (Atheros)
   Open ath9k HTC firmware
   Binary redistribution (Qualcomm Atheros)
-- bsd-no-mod AND clear-bsd AND ecos-exception-2.0 AND gpl-1.0-plus AND gpl-2.0-plus AND intel
-  AND isc AND mit AND proprietary-license AND unknown
+- bsd-no-mod AND clear-bsd AND ecos-exception-2.0 AND gpl-2.0-plus AND intel AND isc AND mit
+  AND proprietary-license AND unknown
 - |
   2008-2010, Atheros Communications, Inc.
   1998-2002, Red Hat, Inc.

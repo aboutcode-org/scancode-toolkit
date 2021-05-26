@@ -1,0 +1,14 @@
+license_expression: openssl-ssleay AND other-permissive
+is_license_notice: yes
+relevance: 100
+notes: Openevidence OpenSSL-based license as seen in curl
+ignorable_authors:
+    - Eric Young (eay@cryptsoft.com)
+    - Tim Hudson (tjh@cryptsoft.com)
+    - the OpenSSL Project
+    - the Project
+ignorable_urls:
+    - http://www.openssl.org/
+ignorable_emails:
+    - eay@cryptsoft.com
+    - tjh@cryptsoft.com

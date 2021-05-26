@@ -1,0 +1,6 @@
+// Licensed under a combination of:
+      // - the MIT License AND
+      // - a combination of:
+      //   - LGPL 2.1 (or a later version) AND
+      //   - Three-Clause BSD
+      parse('(MIT AND (LGPL-2.1+ AND BSD-3-Clause))'),

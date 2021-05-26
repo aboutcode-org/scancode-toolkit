@@ -1,0 +1,15 @@
+key: opnl-1.0
+short_name: OPNL-1.0
+name: Open Innovation License version 1.0
+category: Permissive
+owner: Stark Drones Corporation
+homepage_url: https://github.com/StarkDrones/OPNL
+spdx_license_key: LicenseRef-scancode-opnl-1.0
+other_urls:
+    - https://github.com/StarkDrones/OPNLv1
+ignorable_copyrights:
+    - Copyright (c) 2020 Andrew Magdy Kamal
+    - Copyright (c) 2020 Stark Drones Corporation
+ignorable_holders:
+    - Andrew Magdy Kamal
+    - Stark Drones Corporation

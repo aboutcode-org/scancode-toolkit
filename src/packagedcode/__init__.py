@@ -25,10 +25,10 @@ from packagedcode import nuget
 from packagedcode import opam
 from packagedcode import phpcomposer
 from packagedcode import pypi
+from packagedcode import readme
 from packagedcode import rpm
 from packagedcode import rubygems
 from packagedcode import win_pe
-
 
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
@@ -78,8 +78,9 @@ PACKAGE_TYPES = [
     build.AutotoolsPackage,
     conda.CondaPackage,
     win_pe.WindowsExecutable,
+    readme.ReadmePackage,
+    build.MetadataBzl,
 ]
-
 
 PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
 
@@ -87,6 +88,7 @@ PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
 if len(PACKAGES_BY_TYPE) != len(PACKAGE_TYPES):
     seen_types = {}
     for pt in PACKAGE_TYPES:
+        assert pt.default_type
         seen = seen_types.get(pt.default_type)
         if seen:
             msg = ('Invalid duplicated packagedcode.Package types: '

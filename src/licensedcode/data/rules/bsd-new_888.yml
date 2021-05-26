@@ -1,0 +1,7 @@
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 99
+notes: the referenced license at the URL changed over time. It was a 3 clause BSD and is now
+    a 2 clause. For safety we use 3 clause
+ignorable_urls:
+    - https://creativecommons.org/licenses/BSD/

@@ -47,12 +47,9 @@ This opens the Workbench.
 
     You can also build Scancode Toolkit and Scancode Workbench from source. Clone the repository,
     don't forget to checkout to the specific release using ``git checkout <release>``, and follow
-    the build instructions. You'll also have to create a Python 2.7 Virtual Environment, or use the
-    same venv-3.1.1 created here at :ref:`how_to_run_a_scan`.
+    the build instructions. You will ll also have to create a Python virtual environment.
 
-..
-  [ToDo]
-  Update from Python 2.x to 3.x
+
 
 Importing Data into Scancode Workbench
 --------------------------------------
@@ -82,7 +79,7 @@ The dashboard has a general overview.
 
 .. image::  /tutorials/data/workbench_dashboard.png
 
-There are 3 principal views (They appear in the same order in the GIFs):
+There are three main views (They appear in the same order in the GIFs):
 
 - Chart Summary View,
 - Table View,

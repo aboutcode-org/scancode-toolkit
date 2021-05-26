@@ -11,21 +11,14 @@
 from array import array
 from collections import Counter
 from collections import defaultdict
-try:
-    import cPickle
-except ImportError:
-    import pickle as cPickle
 from functools import partial
 from operator import itemgetter
 import os
-import pickle
 import sys
 from time import time
 
 from intbitset import intbitset
 
-from commoncode.dict_utils import sparsify
-from licensedcode import MAX_DIST
 from licensedcode import SMALL_RULE
 from licensedcode.legalese import common_license_words
 from licensedcode import match
@@ -65,20 +58,22 @@ if (TRACE
     or TRACE_APPROX or TRACE_APPROX_CANDIDATES or TRACE_APPROX_MATCHES
     or TRACE_INDEXING_PERF):
 
-    import logging
+    use_print = True
 
-    logger = logging.getLogger(__name__)
-    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
+    if use_print:
+        printer = print
+    else:
+        import logging
+
+        logger = logging.getLogger(__name__)
+        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+        logging.basicConfig(stream=sys.stdout)
+        logger.setLevel(logging.DEBUG)
+        printer = logger.debug
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a)
+        return printer(' '.join(isinstance(a, str) and a or repr(a)
                                      for a in args))
-
-# This is the Pickle protocol we use, which was added in Python 3.4.
-PICKLE_PROTOCOL = 4
-
 
 ############################## Feature SWITCHES ################################
 ########## Ngram fragments detection
@@ -208,13 +203,13 @@ class LicenseIndex(object):
         if rules:
             if TRACE_INDEXING_PERF:
                 start = time()
-                print('LicenseIndex: building index.')
+                logger_debug('LicenseIndex: building index.')
             # index all and optimize
             self._add_rules(
                 rules, _legalese=_legalese, _spdx_tokens=_spdx_tokens)
 
             if TRACE_TOKEN_DOC_FREQ:
-                print('LicenseIndex: token, frequency')
+                logger_debug('LicenseIndex: token, frequency')
                 from itertools import chain
                 tf = Counter(chain.from_iterable(tids for rid, tids
                         in enumerate(self.tids_by_rid)
@@ -223,7 +218,7 @@ class LicenseIndex(object):
             if TRACE_INDEXING_PERF:
                 duration = time() - start
                 len_rules = len(self.rules_by_rid)
-                print('LicenseIndex: built index with %(len_rules)d rules in '
+                logger_debug('LicenseIndex: built index with %(len_rules)d rules in '
                       '%(duration)f seconds.' % locals())
                 self._print_index_stats()
 
@@ -263,9 +258,6 @@ class LicenseIndex(object):
                 stid = highest_tid
                 dictionary[sts] = stid
 
-        # OPTIMIZED
-        sparsify(dictionary)
-
         self.rules_by_rid = rules_by_rid = list(rules)
         # ensure that rules are sorted
         rules_by_rid.sort()
@@ -294,12 +286,17 @@ class LicenseIndex(object):
             automaton=self.rules_automaton, with_duplicates=False)
 
         if USE_AHO_FRAGMENTS:
-            fragments_automaton_add = partial(match_aho.add_sequence,
-                automaton=self.fragments_automaton, with_duplicates=True)
+            fragments_automaton_add = partial(
+                match_aho.add_sequence,
+                automaton=self.fragments_automaton,
+                with_duplicates=True,
+            )
 
         if USE_RULE_STARTS:
-            starts_automaton_add_start = partial(match_aho.add_start,
-                automaton=self.starts_automaton)
+            starts_automaton_add_start = partial(
+                match_aho.add_start,
+                automaton=self.starts_automaton,
+            )
 
         # OPTIMIZED: bind frequently used objects to local scope
         rid_by_hash = self.rid_by_hash
@@ -377,14 +374,15 @@ class LicenseIndex(object):
                         postings[tid].append(pos)
                 # OPTIMIZED: for speed and memory: convert postings to arrays
                 postings = {tid: array('h', value) for tid, value in postings.items()}
-                # OPTIMIZED: for speed, sparsify dict
-                sparsify(postings)
                 high_postings_by_rid[rid] = postings
 
                 ####################
                 # ... and ngram fragments: compute ngrams and populate an automaton with ngrams
                 ####################
-                if USE_AHO_FRAGMENTS and rule.minimum_coverage < 100 and rule.length > ngram_len:
+                if (USE_AHO_FRAGMENTS
+                    and rule.minimum_coverage < 100
+                    and rule.length > ngram_len
+                ):
                     all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=ngram_len)
                     all_ngrams_with_pos = tokenize.select_ngrams(all_ngrams, with_pos=True)
                     # all_ngrams_with_pos = enumerate(all_ngrams)
@@ -398,7 +396,8 @@ class LicenseIndex(object):
                     starts_automaton_add_start(
                         tids=rule_token_ids[:len_starts],
                         rule_identifier=rule.identifier,
-                        rule_length=rule.length)
+                        rule_length=rule.length,
+                    )
 
             ####################
             # build sets and multisets indexes, for all regular rules as we need
@@ -455,9 +454,6 @@ class LicenseIndex(object):
         if USE_RULE_STARTS:
             match_aho.finalize_starts(self.starts_automaton)
 
-        # OPTIMIZED: sparser dicts for faster lookup
-        sparsify(self.rid_by_hash)
-
         ########################################################################
         # Do some sanity checks
         ########################################################################
@@ -506,9 +502,8 @@ class LicenseIndex(object):
             for m in matches:
                 logger_debug(m)
                 qt, it = get_texts(m)
-                print('  MATCHED QUERY TEXT:', qt)
-                print('  MATCHED RULE TEXT:', it)
-                print()
+                logger_debug('  MATCHED QUERY TEXT:', qt)
+                logger_debug('  MATCHED RULE TEXT:', it)
 
     def get_spdx_id_matches(self, query, from_spdx_id_lines=True, **kwargs):
         """
@@ -525,16 +520,21 @@ class LicenseIndex(object):
             # identifier line, then use the whole query run with the whole text.
             # Note this can only work for small texts or this will likely make
             # the expression parser choke if you feed it large texts
-            query_lines = [ln for _, ln
-                in tokenize.query_lines(query.location, query.query_string)]
+            query_lines = tokenize.query_lines(query.location, query.query_string)
+            query_lines = [ln for _, ln in query_lines]
             qrs_and_texts = query.whole_query_run(), u'\n'.join(query_lines)
             qrs_and_texts = [qrs_and_texts]
 
         for query_run, detectable_text in qrs_and_texts:
             if not query_run.matchables:
                 continue
+
             spdx_match = match_spdx_lid.spdx_id_match(
-                self, query_run, detectable_text)
+                idx=self,
+                query_run=query_run,
+                text=detectable_text,
+            )
+
             if spdx_match:
                 query_run.subtract(spdx_match.qspan)
                 matches.append(spdx_match)
@@ -546,12 +546,30 @@ class LicenseIndex(object):
         Extract matching strategy using an automaton for multimatching at once.
         """
         wqr = query.whole_query_run()
-        matches = match_aho.exact_match(self, wqr, self.rules_automaton, deadline=deadline)
-        matches, _discarded = match.refine_matches(matches, self,
-            query=query, filter_false_positive=False, merge=False)
+
+        matches = match_aho.exact_match(
+            idx=self,
+            query_run=wqr,
+            automaton=self.rules_automaton,
+            deadline=deadline,
+        )
+
+        matches, _discarded = match.refine_matches(
+            matches=matches,
+            idx=self,
+            query=query,
+            filter_false_positive=False,
+            merge=False,
+        )
         return matches
 
-    def get_fragments_matches(self, query, matched_qspans, deadline=sys.maxsize, **kwargs):
+    def get_fragments_matches(
+        self,
+        query,
+        matched_qspans,
+        deadline=sys.maxsize,
+        **kwargs,
+    ):
         """
         Approximate matching strategy breaking a query in query_runs and using
         fragment matching. Return a list of matches.
@@ -586,12 +604,13 @@ class LicenseIndex(object):
         # first check if the whole file may be close, near-dupe match
         whole_query_run = query.whole_query_run()
         near_dupe_candidates = match_set.compute_candidates(
-                query_run=whole_query_run,
-                idx=self,
-                matchable_rids=matchable_rids,
-                top=MAX_NEAR_DUPE_CANDIDATES,
-                high_resemblance=True,
-                _use_bigrams=USE_BIGRAM_MULTISETS)
+            query_run=whole_query_run,
+            idx=self,
+            matchable_rids=matchable_rids,
+            top=MAX_NEAR_DUPE_CANDIDATES,
+            high_resemblance=True,
+            _use_bigrams=USE_BIGRAM_MULTISETS,
+        )
 
         # if near duplicates, we only match the whole file at once against these
         # candidates
@@ -599,7 +618,7 @@ class LicenseIndex(object):
             if TRACE_APPROX_CANDIDATES:
                 logger_debug('get_query_run_approximate_matches: near dupe candidates:')
                 for rank, ((sv1, sv2), _rid, can, _inter) in enumerate(near_dupe_candidates, 1):
-                    print(rank, sv1, sv2, can.identifier)
+                    logger_debug(rank, sv1, sv2, can.identifier)
 
             matched = self.get_query_run_approximate_matches(
                 whole_query_run, near_dupe_candidates, already_matched_qspans, deadline)
@@ -634,12 +653,13 @@ class LicenseIndex(object):
                 matchable_rids=matchable_rids,
                 top=MAX_CANDIDATES,
                 high_resemblance=False,
-                _use_bigrams=USE_BIGRAM_MULTISETS)
+                _use_bigrams=USE_BIGRAM_MULTISETS,
+            )
 
             if TRACE_APPROX_CANDIDATES:
                 logger_debug('get_query_run_approximate_matches: candidates:')
                 for rank, ((sv1, sv2), _rid, can, _inter) in enumerate(candidates, 1):
-                    print(rank, sv1, sv2, can.identifier)
+                    logger_debug(rank, sv1, sv2, can.identifier)
 
             matched = self.get_query_run_approximate_matches(
                 query_run, candidates, matched_qspans, deadline)
@@ -652,8 +672,14 @@ class LicenseIndex(object):
 
         return matches
 
-    def get_query_run_approximate_matches(self, query_run, candidates,
-            matched_qspans, deadline=sys.maxsize, **kwargs):
+    def get_query_run_approximate_matches(
+        self,
+        query_run,
+        candidates,
+        matched_qspans,
+        deadline=sys.maxsize,
+        **kwargs,
+    ):
         """
         Return Return a list of approximate matches for a single query run.
         """
@@ -694,12 +720,16 @@ class LicenseIndex(object):
                     self, candidate_rule, query_run,
                     high_postings=high_postings,
                     start_offset=start_offset,
-                    match_blocks=match_blocks)
+                    match_blocks=match_blocks,
+                )
 
                 if TRACE_APPROX_MATCHES:
                     self.debug_matches(
-                        matches=rule_matches, message='get_query_run_approximate_matches: rule_matches:',
-                        with_text=True, qry=query_run.query)
+                        matches=rule_matches,
+                        message='get_query_run_approximate_matches: rule_matches:',
+                        with_text=True,
+                        qry=query_run.query,
+                    )
 
                 if not rule_matches:
                     break
@@ -726,21 +756,32 @@ class LicenseIndex(object):
 
         return matches
 
-    def match(self, location=None, query_string=None, min_score=0,
-              as_expression=False, deadline=sys.maxsize, _skip_hash_match=False,
-              **kwargs):
+    def match(
+        self,
+        location=None,
+        query_string=None,
+        min_score=0,
+        as_expression=False,
+        approximate=True,
+        deadline=sys.maxsize,
+        _skip_hash_match=False,
+        **kwargs,
+    ):
         """
         This is the main entry point to match licenses.
 
         Return a sequence of LicenseMatch by matching the file at `location` or
-        the `query_string` text against the index. Only include matches with
+        the `query_string` string against this index. Only include matches with
         scores greater or equal to `min_score`.
 
         If `as_expression` is True, treat the whole text as a single SPDX
         license expression and use only expression matching.
 
-        `deadline` is a time.time() value in seconds by which the processing should stop
-        and return whatever was matched so far.
+        If `approximate` is True, perform approximate matching as a last
+        matching step. Otherwise, only do hash, exact and expression matching.
+
+        `deadline` is a time.time() value in seconds by which the processing
+        should stop and return whatever was matched so far.
 
         `_skip_hash_match` is used only for testing.
         """
@@ -749,8 +790,14 @@ class LicenseIndex(object):
         if not location and not query_string:
             return []
 
-        qry = query.build_query(location, query_string, idx=self,
-            text_line_threshold=15, bin_line_threshold=50)
+        qry = query.build_query(
+            location=location,
+            query_string=query_string,
+            idx=self,
+            text_line_threshold=15,
+            bin_line_threshold=50,
+        )
+
         if TRACE:
             logger_debug('match: for:', location, 'query:', qry)
         if not qry:
@@ -766,7 +813,7 @@ class LicenseIndex(object):
                 match.set_lines(matches, qry.line_by_pos)
                 return matches
 
-        # TODO: add match to degenerated expressions with custom symbols
+        # TODO: add matching to degenerated expressions with custom symbols
         if as_expression:
             matches = self.get_spdx_id_matches(qry, from_spdx_id_lines=False)
             match.set_lines(matches, qry.line_by_pos)
@@ -783,8 +830,10 @@ class LicenseIndex(object):
             # matcher, include_low in post-matching remaining matchable check
             (self.get_exact_matches, False, 'aho'),
             (self.get_spdx_id_matches, True, 'spdx_lid'),
-            (approx, False, 'seq'),
         ]
+
+        if approximate:
+            matchers += [(approx, False, 'seq'), ]
 
         already_matched_qspans = []
         for matcher, include_low, matcher_name in matchers:
@@ -804,15 +853,19 @@ class LicenseIndex(object):
 
             # subtract whole text matched if this is long enough
             for m in matched:
-                if m.rule.is_license_text and m.rule.length > 120 and m.coverage() > 98:
+                if (m.rule.is_license_text
+                    and m.rule.length > 120
+                    and m.coverage() > 98
+                ):
                     qry.subtract(m.qspan)
 
-            # check if we have some matchable left
-            # do not match futher if we do not need to
-            # collect qspans matched exactly e.g. with coverage 100%
-            # this coverage check is because we have provision to match fragments (unused for now)
+            # check if we have some matchable left do not match futher if we do
+            # not need to collect qspans matched exactly e.g. with coverage 100%
+            # this coverage check is because we have provision to match
+            # fragments (unused for now)
 
-            already_matched_qspans.extend(m.qspan for m in matched if m.coverage() == 100)
+            already_matched_qspans.extend(
+                m.qspan for m in matched if m.coverage() == 100)
 
             if not whole_query_run.is_matchable(
                 include_low=include_low, qspans=already_matched_qspans):
@@ -827,22 +880,33 @@ class LicenseIndex(object):
 
         if TRACE:
             logger_debug()
-            self.debug_matches(matches=matches, message='matches before final merge',
-                               location=location, query_string=query_string,
-                               with_text=True, qry=qry)
+            self.debug_matches(
+                matches=matches, message='matches before final merge',
+                location=location, query_string=query_string,
+                with_text=True, qry=qry)
 
         matches, _discarded = match.refine_matches(
-            matches, idx=self, query=qry, min_score=min_score,
-            max_dist=MAX_DIST // 2, filter_false_positive=True, merge=True)
+            matches=matches,
+            idx=self,
+            query=qry,
+            min_score=min_score,
+            filter_false_positive=True,
+            merge=True,
+        )
 
         matches.sort()
         match.set_lines(matches, qry.line_by_pos)
 
         if TRACE:
-            print()
-            self.debug_matches(matches=matches, message='final matches',
-                               location=location, query_string=query_string ,
-                               with_text=True, qry=qry)
+            self.debug_matches(
+                matches=matches,
+                message='final matches',
+                location=location,
+                query_string=query_string ,
+                with_text=True,
+                qry=qry,
+            )
+
         return matches
 
     def _print_index_stats(self):
@@ -852,7 +916,8 @@ class LicenseIndex(object):
         try:
             from pympler.asizeof import asizeof as size_of
         except ImportError:
-            print('Index statistics will be approximate: `pip install pympler` for correct structure sizes')
+            print('Index statistics will be approximate: `pip install pympler` '
+                  'for correct structure sizes')
             from sys import getsizeof as size_of
 
         fields = (
@@ -893,55 +958,6 @@ class LicenseIndex(object):
         Used for tracing and debugging.
         """
         return u' '.join('None' if t is None else self.tokens_by_tid[t] for t in tokens)
-
-    @staticmethod
-    def loads(saved, fast=True):
-        """
-        Return a LicenseIndex from a pickled string.
-        """
-        pickler = cPickle if fast else pickle
-        idx = pickler.loads(saved)
-        # perform some optimizations on the dictionaries
-        sparsify(idx.dictionary)
-        return idx
-
-    @staticmethod
-    def load(fn, fast=True):
-        """
-        Return a LicenseIndex loaded from the `fn` file-like object pickled index.
-        """
-        pickler = cPickle if fast else pickle
-        idx = pickler.load(fn)
-        # perform some optimizations on the dictionaries
-        sparsify(idx.dictionary)
-        return idx
-
-    def dumps(self, fast=True):
-        """
-        Return a pickled string of self.
-        """
-        # here cPickle fails when we load it back. Pickle is slower to write but
-        # works when we read with cPickle :|
-        pickler = cPickle if fast else pickle
-        pickled = pickler.dumps(self, protocol=PICKLE_PROTOCOL)
-
-        # NB: this is making the usage of cPickle possible... as a weird workaround.
-        # the gain from dumping using cPickle is not as big with this optimize
-        # but still much faster than using the plain pickle module
-        # TODO: revisit me after the Python3 port
-        import pickletools
-        pickletools.code2op = sparsify(pickletools.code2op)
-        pickled = pickletools.optimize(pickled)
-        return pickled
-
-    def dump(self, fn, fast=False):
-        """
-        Dump (write) a pickled self to the `fn` file-like object.
-        """
-        # here cPickle fails when we load it back. Pickle is slower to write but
-        # works when we read with cPickle :|
-        pickler = cPickle if fast else pickle
-        return pickler.dump(self, fn, protocol=PICKLE_PROTOCOL)
 
 
 def get_weak_rids(len_legalese, tids_by_rid, _idx):

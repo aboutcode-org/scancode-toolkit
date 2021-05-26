@@ -9,8 +9,9 @@
   TinySCHEME
   CC0-1.0
   BSD-3-clause
-- artistic-2.0 AND bsd-new AND cc0-1.0 AND fsf-unlimited-no-warranty AND gpl-3.0-plus AND ietf
-  AND lgpl-2.1-plus AND lgpl-3.0-plus AND mit AND other-permissive AND unknown
+- artistic-2.0 AND bsd-new AND cc0-1.0 AND fsf-unlimited-no-warranty AND gpl-1.0-plus AND gpl-3.0
+  AND gpl-3.0-plus AND ietf AND lgpl-2.1-plus AND lgpl-3.0 AND lgpl-3.0-plus AND mit AND other-permissive
+  AND unknown
 - |
   1992, 1995-2016, Free Software Foundation, Inc
   1998-2007, 2009, 2012, Free Software Foundation, Inc

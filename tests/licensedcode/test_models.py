@@ -16,6 +16,7 @@ from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 from licensedcode.models import Rule
+from licensedcode.models import rules_data_dir
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -193,6 +194,32 @@ class TestRule(FileBasedTesting):
         results = as_sorted_mapping_seq(rules)
         expected = self.get_test_loc('models/rules.expected.json')
         check_json(expected, results)
+
+    def test_rules_types_has_only_boolean_values(self):
+        rules = list(models.load_rules(rules_data_dir))
+        rule_consitency_errors = []
+
+        for r in rules:
+            list_rule_types = [r.is_license_text, r.is_license_notice, 
+                               r.is_license_tag, r.is_license_reference]
+    
+            if any(type(rule_type) != bool for rule_type in list_rule_types):
+                rule_consitency_errors.append((r.data_file, r.text_file))
+
+        assert rule_consitency_errors == []
+
+    def test_rules_have_only_one_rule_type(self):
+        rules = list(models.load_rules(rules_data_dir))
+        rule_consitency_errors = []
+
+        for r in rules:
+            list_rule_types = [r.is_license_text, r.is_license_notice, 
+                               r.is_license_tag, r.is_license_reference]
+
+            if sum(list_rule_types) > 1:
+                rule_consitency_errors.append(r.data_file)
+
+        assert rule_consitency_errors == []
 
     def test_dump_rules(self):
         test_dir = self.get_test_loc('models/rules', copy=True)

@@ -1,8 +1,6 @@
 -
-- baekmuk-fonts AND bsd-original-uc AND bsd-original-uc-1986 AND bsd-simplified AND bsla AND
-  fsf-unlimited-no-warranty AND gpl-1.0-plus AND hs-regexp AND ibm-dhcp AND ietf AND isc AND
-  mit AND mit-old-style-no-advert AND openldap-2.8 AND other-permissive AND philippe-de-muyter
-  AND unknown AND warranty-disclaimer
+- bsd-original-uc AND bsd-original-uc-1986 AND bsla AND hs-regexp AND ibm-dhcp AND ietf AND
+  isc AND mit AND mit-old-style-no-advert AND openldap-2.8 AND other-permissive AND unknown
 - |
   Copyright 1998-2016 The OpenLDAP Foundation
   Copyright 1999 Computing Research Labs, New Mexico State University

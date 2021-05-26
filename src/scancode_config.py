@@ -72,14 +72,17 @@ def _create_dir(location):
 # current installation location. This is where the source code and static data
 # lives.
 
-
+# in case package is not installed or we do not have setutools/pkg_resources
+# on hand fall back to this version
+__version__ = '21.3.31'
 try:
     from pkg_resources import get_distribution, DistributionNotFound
-    __version__ = get_distribution('scancode-toolkit').version
-except (DistributionNotFound, ImportError):
-    # package is not installed or we do not have setutools/pkg_resources
-    # on hand
-    __version__ = '21.2.25'
+    try:
+        __version__ = get_distribution('scancode-toolkit').version
+    except DistributionNotFound:
+        pass
+except ImportError:
+    pass
 
 system_temp_dir = tempfile.gettempdir()
 scancode_src_dir = dirname(__file__)
@@ -121,17 +124,15 @@ else:
     # each version
     user_home = abspath(expanduser('~'))
     __env_cache_dir = os.getenv('SCANCODE_CACHE')
-    scancode_cache_dir = (__env_cache_dir
-        or join(user_home, '.cache', 'scancode-tk', __version__))
+    std_scancode_cache_dir = join(user_home, '.cache', 'scancode-tk', __version__)
+    scancode_cache_dir = (__env_cache_dir or std_scancode_cache_dir)
 
 # we pre-build the index and bundle this with the the deployed release
 # therefore we use package data
-licensedcode_cache_dir = join(
-    scancode_src_dir,
-    'licensedcode',
-    'data',
-    'cache',
-)
+# .... but we accept this to be overriden with and env variable
+std_license_cache_dir = join(scancode_src_dir, 'licensedcode', 'data', 'cache')
+__env_license_cache_dir = os.getenv('SCANCODE_LICENSE_INDEX_CACHE')
+licensedcode_cache_dir = (__env_license_cache_dir or std_license_cache_dir)
 
 _create_dir(licensedcode_cache_dir)
 _create_dir(scancode_cache_dir)

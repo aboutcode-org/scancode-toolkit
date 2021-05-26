@@ -1,0 +1,4 @@
+This module may be modified, used, copied, and redistributed at your own risk.
+Although allowed by the preceding license, please do not publicly
+redistribute modified versions of this code with the name "Text::Wrap"
+unless it passes the unmodified Text::Wrap test suite.

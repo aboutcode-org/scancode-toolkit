@@ -1,0 +1,11 @@
+license_expression: biosl-4.0
+is_license_notice: yes
+relevance: 100
+notes: seen in https://raw.githubusercontent.com/davidtiefenthaler/BOPT-DemandForecast/main/README.md
+ignorable_copyrights:
+    - Copyright (c) 2009, 2018 Robert Bosch GmbH and its subsidiaries
+ignorable_holders:
+    - Robert Bosch GmbH and its subsidiaries
+ignorable_urls:
+    - http://bios.intranet.bosch.com/bioslv4-badge.svg
+    - http://bios.intranet.bosch.com/bioslv4.txt

@@ -1,0 +1,14 @@
+key: katharos-0.1.0
+short_name: Katharos License v0.1.0
+name: Katharos License v0.1.0
+category: Proprietary Free
+owner: Katharos Technology
+homepage_url: https://github.com/katharostech/katharos-license/tree/v0.1.0
+spdx_license_key: LicenseRef-scancode-katharos-0.1.0
+text_urls:
+    - https://github.com/katharostech/katharos-license/blob/v0.1.0/LICENSE.md
+ignorable_urls:
+  - https://firstdonoharm.dev/version/2/1/license.html
+  - https://github.com/raisely/NoHarm
+  - https://spdx.org/licenses/BSD-3-Clause.html
+

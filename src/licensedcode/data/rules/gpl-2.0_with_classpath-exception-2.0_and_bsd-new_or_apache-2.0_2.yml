@@ -1,0 +1,8 @@
+license_expression: gpl-2.0 WITH classpath-exception-2.0 AND (bsd-new OR apache-2.0)
+is_license_notice: yes
+minimum_coverage: 90
+referenced_filenames:
+    - LICENSE
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0
+    - http://www.oracle.com/

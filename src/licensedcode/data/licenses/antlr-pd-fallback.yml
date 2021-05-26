@@ -1,7 +1,7 @@
 key: antlr-pd-fallback
 short_name: ANTLR-PD with fallback
 name: ANTLR Software Rights Notice with license fallback
-category: Permissive
+category: Public Domain
 owner: ANTLR
 homepage_url: http://www.antlr2.org/
 notes: |
@@ -12,4 +12,3 @@ text_urls:
     - http://www.antlr2.org/
 other_urls:
     - http://www.antlr2.org/license.html
-

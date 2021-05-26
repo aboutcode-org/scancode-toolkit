@@ -1,0 +1,3 @@
+p('MIT AND BSD-3-Clause WITH GCC-exception-3.1 OR CC-BY-4.0 AND Apache-2.0'),
+left: {
+left: { license: 'MIT' },

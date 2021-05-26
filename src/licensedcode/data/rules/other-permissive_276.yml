@@ -1,0 +1,7 @@
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: |
+    This is the original license used in STP (simple theorem prover) circa 2005
+    It was replaced by the MIT circa 2008.
+    See https://sourceforge.net/projects/stp-fast-prover and https://stp.github.io/

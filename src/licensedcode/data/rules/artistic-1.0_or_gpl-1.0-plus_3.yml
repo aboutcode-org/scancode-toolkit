@@ -1,0 +1,5 @@
+license_expression: artistic-1.0 OR gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+notes: https://github.com/yasm/yasm/blob/009450c7ad4d425fa5a10ac4bd6efbd25248d823/libyasm/bitvect.c

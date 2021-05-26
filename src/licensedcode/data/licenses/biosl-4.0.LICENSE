@@ -1,0 +1,202 @@
+BIOSL v4 -- Bosch Internal Open Source License Version 4 
+(C) Robert Bosch GmbH,
+2016 Release Date: 2016-03-22
+
+Note from the authors: Most Bosch employees are not in fact lawyers, so we also
+make the license available in a format that that can be understood by every
+Bosch associate -- the BIOSL v4 Deed, accessible under https://sourcecode.socialcoding.bosch.com/projects/SC/repos/soco_policies/browse/BIOS_License_V4_Deed.md
+
+DISCLAIMER
+
+Each contribution to or start of a project on the Bosch Social Coding Platform
+which is accessible to all Bosch affiliates shall be licensed under this
+"BIOS-License".  The Parties hereby agree as follows: 
+
+1. Definitions
+
+1.1.  "Affiliates" means, with respect to any Party, any other legal entity
+      that, directly, or indirectly, controls, or is controlled by or is under 
+      common control with, such Party. For purposes of this definition, 
+      "control" shall mean the possession, directly, or indirectly, of more 
+      than fifty percent (50%) of the shares.
+
+1.2.  "Contribution" means any or all modifications, corrections, translations,
+      adaptations and/or new functions resulting in a modified version.
+
+1.3.  "Distribution" means, for the purpose of this License Agreement, off-line
+      and on-line distribution.
+
+1.4.  "BIOS" Bosch Internal Open Source projects
+
+1.5.  "BIOSL" means this legal document.
+
+1.6.  "Licensee" means any Party exercising permissions granted under this
+      License Agreement.
+
+1.7.  "Licensor" means any Author granting a License under this License
+      Agreement.
+
+1.8.  "BIOS Artefact" means the software licensed under this License Agreement
+      in its object code and/or Source Code form and its documentation.
+
+1.9.  "Repository" means the software repository in which the Program and
+       modified versions are stored and administered and which is accessible at
+       https://sourcecode.socialcoding.bosch.com.
+
+1.10. "Software-as-a-Service" means a software distribution model in which the
+      Program is hosted by a service provider and made available to customers 
+      over a network with or without transferring a copy of the Program.
+
+1.11. "Source Code" means the preferred form of the Program for making
+       modifications to it.  
+       
+2. Grant of Rights
+
+2.1.  Grant of a Copyright License 
+
+      Each Licensor hereby grants to each Licensee a worldwide, perpetual,
+      royalty-free, irrevocable non-exclusive license to use the Program in all
+      known and unknown forms of use
+
+2.2.  Grant of a Invention or Patent License 
+
+      Each Licensor hereby grants to each Licensee and its Affiliates a 
+      worldwide, perpetual, royalty-free, irrevocable non-exclusive license to
+      make, have made, use, offer to sell, sell, import, and otherwise transfer
+      the Program, where such license applies only to those patent claims 
+      licensable by such Licensor that are necessarily infringed by their 
+      Contribution(s) alone or by Modified Versions of the Program distributed
+      or used by such Licensor.
+
+      Legal obligations arising from employee inventions or inventions with 
+      inventive mission remain unaffected.
+
+2.3.  No Transfer of Licenses 
+
+      Licenses granted under this License Agreement may not be transferred or
+      assigned to third parties.
+
+2.4.  Licenses to Third Parties 
+
+      Each Licensee may grant to any third party the sublicense to reproduce and
+      distribute the Program and/or to offer the Program by way of 
+      "Software-as-a-Service".
+
+2.5.  Licenses to Affiliates 
+
+      Each Licensor may grant to its Affiliates the sublicense to use the
+      Program in all known and unknown forms of use.  
+
+3.  Limitations
+
+These grants of rights are subject to the following conditions:
+
+3.1.  Any derivative software has to be licensed under the BIOSL.
+
+3.2.  The incorporated copyright notice for each file stating the name of the
+      author and/or the legal entity or third party the author is employed at,
+      the LICENSE file, and this permission notice shall be included in all
+      copies or substantial portions of the Software.
+
+3.3.  If any third party software is included in any derivative work the origin,
+      name, version and license of this third party component has to be added
+      to the documentation (this applies for Open Source as well as for 
+      proprietary Open Source Software) 
+      
+4. Distribution
+
+4.1.  If a Party or its Affiliate distributes the Program or Modified Versions
+      or offers the Program or Modified Versions by way of Software-as-a-Service
+      this Party has to meet the following conditions:
+
+      (1) The parts of the Software provided under the BIOSL for internal usage
+          are in general closed (non open) source and no source code or any 
+          associated documentation from the Software may be distributed 
+          outside Robert Bosch GmbH and its affiliates unless
+
+          a) it is required for certain integrated open source components; or
+          b) it is stringently required by a third party and protected by a NDA 
+             which follows the RB NDA standard.
+
+      (2) The business unit or legal entity building a product for external 
+          usage based on the Software or distributing the source code within
+          Robert Bosch GmbH
+
+          a) is responsible for the product warranty and liability.
+          b) has to ensure fulfilment of all obligations related to all third
+             party components (including open source licenses) integrated into 
+             the Software as well as proprietary licenses if any.
+          c) has to ensure compliance to the Central Directive "Handling OSS".
+      
+          d) has to exclude the development costs for all integrated BIOS
+             Artefacts from product cost calculation.
+
+      (3) Each usage of a BIOS Artefact within product development and/or for
+          distribution this has to be reported to the Social Coding Core Team.
+
+      (4) The Third party shall not be entitled to use the product based on the
+          BIOS Artefact outside its operation or for purposes other than its own
+          operational purposes.  
+          
+5. Compensation
+
+The grant of rights according to Section 2 is free of charge.  
+
+6. Warranty and Liability
+
+6.1.  All warranties with regard to the grant of rights according to Section 2
+      are specifically excluded; in particular licensor do not warrant the 
+      usability, usefulness or practicability of their Contributions and 
+      non-infringement of third party rights.
+
+6.2.  The Parties of this License Agreement shall be liable to the respective
+      other Party only in case of intent or gross negligence of the liable Party
+      or its Affiliates.  
+      
+7. Effective Date
+
+This License Agreement shall be effective for all software, which is is created
+in relation to a BIOS project and/or stored in a BIOS project repository by any
+Party whereas this License Agreement is applicable from the date of the
+creation or respective storage.  
+
+8. Termination
+
+8.1.  Any violation of obligations of a Party under this License automatically
+      terminates the rights of the incompliant Party and its Affiliates under 
+      this License Agreement. How-ever, if the incompliant Party becomes
+      compliant, then the rights granted under this License Agreement are 
+      reinstated.
+
+8.2.  Any rights of third parties having obtained the Program or rights to the
+      Program from the incompliant Party shall remain unaffected.
+
+8.3.  If the License Agreement terminates for a single or several individual
+      Parties, the License Agreement shall continue in full force and effect for
+      the remaining Parties.
+
+8.4.  With respect to any Party, for which the License Agreement is terminated,
+      the grant of rights according to Section 2 and the obligations set forth
+      in Section 3 shall continue in full force and effect for the grant of
+      rights of this Party owned prior to the date of the termination.  
+      
+9. Applicable Law
+
+9.1  Any claim arising under or relating to this License Agreement shall be
+     governed by the laws of Germany, without regard to principles of conflict
+     of laws to the contrary.
+
+9.2  All disputes arising out of or in connection with this License Agreement
+     shall be subject to the exclusive jurisdiction of the courts of Stuttgart
+     Federal Republic of Germany.  
+     
+10. Miscellaneous
+
+10.1. If any paragraph, provision, or clause in this License Agreement shall be
+      found or be held to be invalid or unenforceable in any jurisdiction in
+      which this License Agreement is being performed, the remainder of this
+      License Agreement shall be valid and enforceable and the parties shall use
+      good faith to negotiate a substitute, valid and enforceable provision 
+      which most nearly effects the parties intent in entering into this License 
+      Agreement.
+

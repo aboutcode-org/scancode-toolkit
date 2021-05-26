@@ -168,3 +168,83 @@ class BazelPackage(StarlarkManifestPackage):
 class BuckPackage(StarlarkManifestPackage):
     metafiles = ('BUCK',)
     default_type = 'buck'
+
+
+@attr.s()
+class MetadataBzl(BaseBuildManifestPackage):
+    metafiles = ('METADATA.bzl',)
+    # TODO: Not sure what the default type should be, change this to something
+    # more appropriate later
+    default_type = 'METADATA.bzl'
+
+    @classmethod
+    def recognize(cls, location):
+        if not cls._is_build_manifest(location):
+            return
+
+        with open(location, 'rb') as f:
+            tree = ast.parse(f.read())
+
+        metadata_fields = {}
+        for statement in tree.body:
+            if not (hasattr(statement, 'targets') and isinstance(statement, ast.Assign)):
+                continue
+            # We are looking for a dictionary assigned to the variable `METADATA`
+            for target in statement.targets:
+                if not (target.id == 'METADATA' and isinstance(statement.value, ast.Dict)):
+                    continue
+                # Once we find the dictionary assignment, get and store its contents
+                statement_keys = statement.value.keys
+                statement_values = statement.value.values
+                for statement_k, statement_v in zip(statement_keys, statement_values):
+                    if isinstance(statement_k, ast.Str):
+                        key_name = statement_k.s
+                    # The list values in a `METADATA.bzl` file seem to only contain strings
+                    if isinstance(statement_v, ast.List):
+                        value = []
+                        for e in statement_v.elts:
+                            if not isinstance(e, ast.Str):
+                                continue
+                            value.append(e.s)
+                    if isinstance(statement_v, ast.Str):
+                        value = statement_v.s
+                    metadata_fields[key_name] = value
+
+        parties = []
+        maintainers = metadata_fields.get('maintainers', [])
+        for maintainer in maintainers:
+            parties.append(
+                models.Party(
+                    type=models.party_org,
+                    name=maintainer,
+                    role='maintainer',
+                )
+            )
+
+        # TODO: Create function that determines package type from download URL,
+        # then create a package of that package type from the metadata info
+        yield cls(
+            type=metadata_fields.get('upstream_type', ''),
+            name=metadata_fields.get('name', ''),
+            version=metadata_fields.get('version', ''),
+            declared_license=metadata_fields.get('licenses', []),
+            parties=parties,
+            homepage_url=metadata_fields.get('upstream_address', ''),
+            # TODO: Store 'upstream_hash` somewhere
+        )
+
+    def compute_normalized_license(self):
+        """
+        Return a normalized license expression string detected from a list of
+        declared license strings.
+        """
+        if not self.declared_license:
+            return
+
+        detected_licenses = []
+        for declared in self.declared_license:
+            detected_license = models.compute_normalized_license(declared)
+            detected_licenses.append(detected_license)
+
+        if detected_licenses:
+            return combine_expressions(detected_licenses)

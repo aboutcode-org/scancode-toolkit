@@ -53,10 +53,37 @@ query_pattern = '[^_\\W]+\\+?[^_\\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
 
-def query_tokenizer(text, stopwords=STOPWORDS):
+def index_tokenizer(text, stopwords=STOPWORDS):
     """
     Return an iterable of tokens from a unicode query text. Ignore words that
     exist as lowercase in the `stopwords` set.
+
+    For example::
+    >>> list(index_tokenizer(''))
+    []
+    >>> x = list(index_tokenizer('some Text with   spAces! + _ -'))
+    >>> assert x == ['some', 'text', 'with', 'spaces']
+
+    >>> x = list(index_tokenizer('{{}some }}Text with   spAces! + _ -'))
+    >>> assert x == ['some', 'text', 'with', 'spaces']
+
+    >>> x = list(index_tokenizer('{{Hi}}some {{}}Text with{{noth+-_!@ing}}   {{junk}}spAces! + _ -{{}}'))
+    >>> assert x == ['hi', 'some', 'text', 'with', 'noth+', 'ing', 'junk', 'spaces']
+
+    >>> stops = set(['quot', 'lt', 'gt'])
+    >>> x = list(index_tokenizer('some &quot&lt markup &gt&quot', stopwords=stops))
+    >>> assert x == ['some', 'markup']
+    """
+    if not text:
+        return []
+    words = word_splitter(text.lower())
+    return (token for token in words if token and token not in stopwords)
+
+
+def query_tokenizer(text):
+    """
+    Return an iterable of tokens from a unicode query text. Do not ignore stop
+    words. They are handled at a later stage in a query.
 
     For example::
     >>> list(query_tokenizer(''))
@@ -69,19 +96,11 @@ def query_tokenizer(text, stopwords=STOPWORDS):
 
     >>> x = list(query_tokenizer('{{Hi}}some {{}}Text with{{noth+-_!@ing}}   {{junk}}spAces! + _ -{{}}'))
     >>> assert x == ['hi', 'some', 'text', 'with', 'noth+', 'ing', 'junk', 'spaces']
-
-    """
-    return _query_tokenizer(text.lower(), stopwords)
-
-
-def _query_tokenizer(text, stopwords=STOPWORDS):
-    """
-    Return an iterable of tokens from a unicode query text. Ignore words that
-    exist as lowercase in the `stopwords` set.
     """
     if not text:
         return []
-    return (token for token in word_splitter(text) if token and token not in stopwords)
+    words = word_splitter(text.lower())
+    return (token for token in words if token)
 
 
 # Alternate pattern which is the opposite of query_pattern used for

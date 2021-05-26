@@ -4,122 +4,198 @@
 @rem Copyright (c) nexB Inc. and others. All rights reserved.
 @rem SPDX-License-Identifier: Apache-2.0
 @rem See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-@rem ScanCode is a trademark of nexB Inc.
-@rem See https://github.com/nexB/scancode-toolkit for support or download.
+@rem See https://github.com/nexB/ for support or download.
 @rem See https://aboutcode.org for more information about nexB OSS projects.
 
-@rem ################################
-@rem # A configuration script to set things up: create a virtualenv and install
-@rem # update thirdparty packages
-goto config
-:cli_help
-    echo An initial configuration script
-    echo "  usage: configure [options]"
-    echo.
-    echo The default is to configure for regular use.
-    echo The script will attempt to find a suitable Python executable.
-    echo Set the PYTHON_EXECUTABLE environment variable to provide your own
-    echo Python executable path.
-    echo.
-    echo The options are:
-    echo  "--clean: clean built and installed files and exit."
-    echo  "--dev:   configure the environment for development."
-    echo  "--help:  display these help messages and exit."
-    echo.
-    endlocal
-    exit /b 0
 
-
-:config
 @rem ################################
-@rem # Defaults. Change these variables to customize this script locally
+@rem # A configuration script to set things up: 
+@rem # create a virtualenv and install or update thirdparty packages.
+@rem # Source this script for initial configuration
+@rem # Use configure --help for details
+
+@rem # This script will search for a virtualenv.pyz app in etc\thirdparty\virtualenv.pyz
+@rem # Otherwise it will download the latest from the VIRTUALENV_PYZ_URL default
 @rem ################################
 
-@rem # thirdparty package locations
-set "THIRDPARTY_DIR=thirdparty"
-set "THIRDPARTY_LINKS=https://thirdparty.aboutcode.org/pypi"
 
-@rem # requirements used by defaults and with --dev
+@rem ################################
+@rem # Defaults. Change these variables to customize this script
+@rem ################################
+
+@rem # Requirement arguments passed to pip and used by default or with --dev.
 set "REQUIREMENTS=--editable . --constraint requirements.txt"
-set "DEV_REQUIREMENTS=--editable .[dev] --constraint requirements.txt --constraint requirements-dev.txt"
+set "DEV_REQUIREMENTS=--editable .[dev] --editable .[packages] --constraint requirements.txt --constraint requirements-dev.txt"
 
-@rem # default supported Python version
-if not defined CONFIGURE_SUPPORTED_PYTHON (
-    set CONFIGURE_SUPPORTED_PYTHON=3.6
-)
+@rem # where we create a virtualenv
+set "VIRTUALENV_DIR=."
 
-@rem #################################
+@rem # Cleanable files and directories to delete with the --clean option
+set "CLEANABLE=build Scripts Lib include tcl local .Python .eggs pip-selfcheck.json src/scancode_toolkit.egg-info SCANCODE_DEV_MODE man"
 
-@rem Current directory where this script lives
-set PROJECT_ROOT_DIR=%~dp0
+@rem # extra  arguments passed to pip
+set "PIP_EXTRA_ARGS= "
 
-
-@rem parse command line options
-set CLI_ARGS="%REQUIREMENTS%"
-set CONFIGURE_DEV_MODE=0
-if "%1" EQU "--help"   (goto cli_help)
-if "%1" EQU "--clean"  (set CLI_ARGS=--clean)
-if "%1" EQU "--dev"    (
-    set CLI_ARGS=%DEV_REQUIREMENTS%
-    set CONFIGURE_DEV_MODE=1
-)
-
-
-@rem find a proper Python to run
-if defined CONFIGURE_PYTHON_EXECUTABLE (
-    if exist "%CONFIGURE_PYTHON_EXECUTABLE%" (
-        goto run
-    )
-)
-
-:find_python
-
-@rem Check the existence of the "py" launcher available in Python 3
-@rem If we have it, check if we have a py -3 installed with the required version
-@rem Try to use a Python in the path if all else fail
-
-where py >nul 2>nul
-if %ERRORLEVEL% == 0 (
-    @rem we have a py launcher, check for the availability of our Python 3 version
-    set CONFIGURE_PYTHON_EXECUTABLE=py -%CONFIGURE_SUPPORTED_PYTHON%%
-    %CONFIGURE_PYTHON_EXECUTABLE% --version >nul 2>nul
-    if %ERRORLEVEL% neq 0 (
-        echo "* Unable to find a suitable installation of Python %CONFIGURE_SUPPORTED_PYTHON%."
-        exit /b 1
-    )
-) else (
-    echo "* Unable to find a suitable installation of Python %CONFIGURE_SUPPORTED_PYTHON%."
-    exit /b 1
-)
-
-:run
+@rem # the URL to download virtualenv.pyz if needed
+set VIRTUALENV_PYZ_URL=https://bootstrap.pypa.io/virtualenv.pyz
 @rem ################################
 
-@rem # Setup development mode
 
-if "%CONFIGURE_DEV_MODE%" == 1 (
-    @rem # Add development tag file to auto-regen license index on file changes
-    echo. 2>%%PROJECT_ROOT_DIR%\SCANCODE_DEV_MODE"
+@rem ################################
+@rem # Current directory where this script lives
+set CFG_ROOT_DIR=%~dp0
+set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
+
+
+@rem ################################
+@rem # scancode-specific: Thirdparty package locations and index handling
+@rem # Do we have thirdparty/files? use the mit.LICENSE as a proxy
+if exist ""%CFG_ROOT_DIR%\thirdparty\mit.LICENSE"" (
+    set "LINKS=%CFG_ROOT_DIR%\thirdparty"
+) else (
+    set "LINKS=https://thirdparty.aboutcode.org/pypi"
+)
+set "PIP_EXTRA_ARGS=--no-index --find-links %LINKS%"
+@rem ################################
+
+
+@rem ################################
+@rem # Set the quiet flag to empty if not defined 
+if not defined CFG_QUIET (
+    set "CFG_QUIET= "
 )
 
-@rem # Run configure scripts proper and activate
 
-@rem without this there are some heisenbugs on Windows 10
-@rem but this make scancode run slower
-set PYTHONDONTWRITEBYTECODE=1
+@rem ################################
+@rem # Main command line entry point
+set CFG_DEV_MODE=0
+set "CFG_REQUIREMENTS=%REQUIREMENTS%"
 
+if "%1" EQU "--help"   (goto cli_help)
+if "%1" EQU "--clean"  (goto clean)
+if "%1" EQU "--dev"    (
+    set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
+    set CFG_DEV_MODE=1
+)
+if "%1" EQU "--python"  (
+    echo "The --python is now DEPRECATED. Use the PYTHON_EXECUTABLE environment
+    echo "variable instead. Run configure --help for details."
+    exit /b 0
+)
 
-call %CONFIGURE_PYTHON_EXECUTABLE% "%PROJECT_ROOT_DIR%etc\configure.py" %CLI_ARGS%
+@rem ################################
+@rem # find a proper Python to run
+@rem # Use environment variables or a file if available.
+@rem # Otherwise the latest Python by default.
+if not defined PYTHON_EXECUTABLE (
+    @rem # check for a file named PYTHON_EXECUTABLE 
+    if exist ""%CFG_ROOT_DIR%\PYTHON_EXECUTABLE"" (
+        set /p PYTHON_EXECUTABLE=<""%CFG_ROOT_DIR%\PYTHON_EXECUTABLE""
+    ) else (
+        set "PYTHON_EXECUTABLE=py"
+    )
+)
 
-@rem Return a proper return code on failure
+:create_virtualenv
+@rem # create a virtualenv for Python
+@rem # Note: we do not use the bundled Python 3 "venv" because its behavior and
+@rem # presence is not consistent across Linux distro and sometimes pip is not
+@rem # included either by default. The virtualenv.pyz app cures all these issues.
+
+if not exist ""%CFG_BIN_DIR%\python.exe"" (
+    if not exist "%CFG_BIN_DIR%" (
+        mkdir %CFG_BIN_DIR%
+    )
+
+    if exist ""%CFG_ROOT_DIR%\etc\thirdparty\virtualenv.pyz"" (
+        %PYTHON_EXECUTABLE% "%CFG_ROOT_DIR%\etc\thirdparty\virtualenv.pyz" ^
+            --wheel embed --pip embed --setuptools embed ^
+            --seeder pip ^
+            --never-download ^
+            --no-periodic-update ^
+            --no-vcs-ignore ^
+            %CFG_QUIET% ^
+            %CFG_ROOT_DIR%\%VIRTUALENV_DIR%
+    ) else (
+        if not exist ""%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\virtualenv.pyz"" (
+            curl -o "%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\virtualenv.pyz" %VIRTUALENV_PYZ_URL%
+
+            if %ERRORLEVEL% neq 0 (
+                exit /b %ERRORLEVEL%
+            )
+        )
+        %PYTHON_EXECUTABLE% "%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\virtualenv.pyz" ^
+            --wheel embed --pip embed --setuptools embed ^
+            --seeder pip ^
+            --never-download ^
+            --no-periodic-update ^
+            --no-vcs-ignore ^
+            %CFG_QUIET% ^
+            %CFG_ROOT_DIR%\%VIRTUALENV_DIR%
+    )
+)
+
 if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-endlocal
 
-@rem # Activate the virtualenv if it exists
-if exist "%PROJECT_ROOT_DIR%Scripts\activate" (
-    "%PROJECT_ROOT_DIR%Scripts\activate"
+:install_packages
+@rem # install requirements in virtualenv
+@rem # note: --no-build-isolation means that pip/wheel/setuptools will not
+@rem # be reinstalled a second time and reused from the virtualenv and this
+@rem # speeds up the installation.
+@rem # We always have the PEP517 build dependencies installed already.
+
+%CFG_BIN_DIR%\pip install ^
+    --upgrade ^
+    --no-build-isolation ^
+    %CFG_QUIET% ^
+    %PIP_EXTRA_ARGS% ^
+    %CFG_REQUIREMENTS%
+
+if %ERRORLEVEL% neq 0 (
+    exit /b %ERRORLEVEL%
+)
+
+
+@rem ################################
+@rem # scancode-specific: Setup development mode
+if "%CFG_DEV_MODE%" == 1 (
+    @rem # Add development tag file to auto-regen license index on file changes
+    echo.>%CFG_ROOT_DIR%\SCANCODE_DEV_MODE
+)
+@rem ################################
+
+exit /b 0
+
+
+@rem ################################
+
+:cli_help
+    echo An initial configuration script
+    echo "  usage: configure [options]"
+    echo " "
+    echo The default is to configure for regular use. Use --dev for development.
+    echo " "
+    echo The options are:
+    echo " --clean: clean built and installed files and exit."
+    echo " --dev:   configure the environment for development."
+    echo " --help:  display this help message and exit."
+    echo " "
+    echo By default, the python interpreter version found in the path is used.
+    echo Alternatively, the PYTHON_EXECUTABLE environment variable can be set to
+    echo configure another Python executable interpreter to use. If this is not
+    echo set, a file named PYTHON_EXECUTABLE containing a single line with the
+    echo path of the Python executable to use will be checked last.
+    exit /b 0
+
+
+:clean
+@rem # Remove cleanable file and directories and files from the root dir.
+echo "* Cleaning ..."
+for %%F in (%CLEANABLE%) do (
+    rmdir /s /q "%CFG_ROOT_DIR%\%%F" >nul 2>&1
+    del /f /q "%CFG_ROOT_DIR%\%%F" >nul 2>&1
 )
 exit /b 0

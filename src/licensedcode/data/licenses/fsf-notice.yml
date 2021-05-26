@@ -1,0 +1,10 @@
+key: fsf-notice
+short_name: FSF Notice
+name: FSF Notice
+category: Permissive
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.fsf.org/licensing/licenses/
+notes: This notice is commonly seen in L/GPL-licensed FSF and GNU projects as a short additional
+    notice in command line tools or build scritps. It was previsouly reported as a free but
+    unknown. It is commonly seen in GCC, GCB, Bash and related tools.
+spdx_license_key: LicenseRef-scancode-fsf-notice

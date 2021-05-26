@@ -139,7 +139,7 @@ def rule_exists(text):
     if len(matches) > 1:
         return False
     match = matches[0]
-    if match.matcher == match_hash.MATCH_HASH:
+    if match.matcher == match_hash.MATCH_HASH and match.score() == 100:
         return match.rule.identifier
 
 

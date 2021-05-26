@@ -1,0 +1,20 @@
+license_expression: python
+is_license_text: yes
+relevance: 100
+notes: from 2.7.13 rst format
+ignorable_copyrights:
+    - Copyright (c) 1991 - 1995, Stichting Mathematisch Centrum Amsterdam, The Netherlands
+    - Copyright (c) 1995-2001 Corporation for National Research Initiatives
+    - Copyright (c) 2001-2016 Python Software Foundation
+ignorable_holders:
+    - Corporation for National Research Initiatives
+    - Python Software Foundation
+    - Stichting Mathematisch Centrum Amsterdam, The Netherlands
+ignorable_urls:
+    - http://hdl.handle.net/1895.22/1013
+    - http://www.pythonlabs.com/logos.html
+    - http://www.zope.com/
+    - https://opensource.org/
+    - https://www.cnri.reston.va.us/
+    - https://www.cwi.nl/
+    - https://www.python.org/psf

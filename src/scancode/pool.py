@@ -37,6 +37,14 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 def wrapped(func):
+    """
+    Ensure that we have a default timeout in all cases.
+    This is to work around some subtle Python bugs in multiprocessing
+    - https://bugs.python.org/issue8296
+    - https://bugs.python.org/issue9205
+    - https://bugs.python.org/issue22393
+    - https://bugs.python.org/issue38084
+    - """
     # ensure that we do not double wrap
     if func.__name__ != 'wrap':
 

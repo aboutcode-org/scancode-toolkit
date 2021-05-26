@@ -8,3 +8,4 @@ notes: |
     Per Fedora, This is a zlib variant, less restrictive. It was found on the
     component of texlive 2010. It is Free and GPL-compatible.
 spdx_license_key: Newsletr
+minimum_coverage: 50

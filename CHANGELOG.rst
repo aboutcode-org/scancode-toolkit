@@ -1,32 +1,187 @@
 Changelog
 =========
 
+v21.x.x (next)
+--------------
 
-v21.x (next)
-------------
+Breaking API changes:
+~~~~~~~~~~~~~~~~~~~~~
+
+ - The data structure of the JSON output has changed for copyrights, authors
+   and holders: we now use proper name for attributes and not a generic "value".
+
+ - The data structure of the JSON output has changed for licenses: we now
+   return match details once for each matched license expression rather than
+   once for each license in a matched expression. There is a new top-level
+   "licenses" attributes that contains the data details for each detected
+   licenses only once. This data can contain the reference license text
+   as an option.
+
+ - The data structure of the JSON output has changed for packages: we now
+   return "package_manifests" package information at the manifest file-level
+   rather than "packages". There is a a new top-level "packages" attribute
+   that contains each package instace that can be aggregating data from
+   multiple manifests for a single package instance.
+
+
+v21.5.11
+--------
+
+Breaking API changes:
+~~~~~~~~~~~~~~~~~~~~~
+
+ - The configure scripts for Linux, macOS and Windows are new. These are now
+   only native scripts (.bat on Windows and .sh on POSIX) and the Python script
+   etc/configure.py has been removed. Use the PYTHON_EXECUTABLE enviroment
+   varibale to point to alternative non-default Python executable. An this on
+   all OSes.
+
+
+Ouputs:
+~~~~~~~
+
+ - Add new YAML-formatted output. This is exactly the same data structure as for
+   the JSON output
+
+
+License scanning:
+~~~~~~~~~~~~~~~~~
+
+ - Add new command line option to filter ignorable copyrights when included
+   in licenses.
+
+ - Add new and improved license detection rules.
+   Thank you to:
+    - Sebastian Thomas @sebathomas
+    - Till Jaeger @LeChasseur 
+
+
+
+v21.3.31
+--------
+
+This is a major version with no breaking API changes. Heads-up: the next version
+will bring up some significant API changes summarized above.
+
+
+Security:
+~~~~~~~~~
+
+ - Update dependency versions for security fixes.
+
+
+License scanning:
+~~~~~~~~~~~~~~~~~
+
+ - Add 22 new licenses and update 71 existing licenses
+
+ - Update licenses to include the SPDX license list 3.12
+
+ - Improve license detection accuracy with over 2,300 new and updated license
+   detection rules
+
+ - Undeprecate the regexp license and deprecate the hs-regexp-orig license
+
+ - Improve license db initial load time with caching for faster scancode
+   start time
+
+ - Add experimental SCANCODE_LICENSE_INDEX_CACHE environment variable to point
+   to an alternative directory where the license index cache is stored (as
+   opposed to store this as package data.)
+
+ - Ensure that license short names are not more than 50 characters long
+
+ - Thank you to:
+    - Dennis Clark @DennisClark
+    - Chin-Yeung Li @chinyeungli
+    - Armijn Hemmel @armijnhemel
+    - Sarita Singh @itssingh
+    - Akanksha Garg @akugarg
+
+
+Copyright scanning:
+~~~~~~~~~~~~~~~~~~~
+
+ - Detect SPDX-FileCopyrightText as defined by the FSFE Reuse project
+   Thank you to Daniel Eder @daniel-eder
+
+ - Fix bug when using the --filter-clues command line option
+   Thank you to Van Lindberg @VanL
+
+ - Allow calling copyright detection from text lines to ease integration
+   Thank you to Jelmer Vernooĳ @jelmer
+
+ - Fixed copyright truncation bug
+   Thank you to Akanksha Garg @akugarg
+
+
+Package scanning:
+~~~~~~~~~~~~~~~~~
+
+ - Add support for installed RPMs detection internally (not wired to scans)
+   Thank you to Chin-Yeung Li @chinyeungli
+
+ - Improve handling of Debian copyright files with faster and more
+   accurate license detection
+   Thank you to Thomas Druez @tdruez 
+   
+ - Add new built-in support for installed_files report. Only available when
+   used as a library.
+
+ - Improve support for RPM, npm, Debian, build scripts (Bazel) and Go packages
+   Thank you to:
+   - Divyansh Sharma @Divyansh2512
+   - Jonothan Yang @JonoYang
+   - Steven Esser @majurg
+
+ - Add new support to collect information from semi-structured Readme files
+   and related metadata files. 
+   Thank you to Jonothan Yang @JonoYang and Steven Esser @majurg
+
+
+Ouputs:
+~~~~~~~
+
+ - Add new Debian copyright-formatted output.
+   Thank you to Jelmer Vernooĳ @jelmer
+   
+ - Fix bug in --include where directories where not skipped correctly
+   Thank you to Pierre Tardy @tardyp
+
+
+Misc. and documentation improvements:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - Update the way tests assertions are made
+   Thank you to Aditya Viki @adityaviki
+
+ - Thank you to Aryan Kenchappagol @aryanxk02
 
 
 v21.2.25
 --------
 
 Installation:
+~~~~~~~~~~~~~
 
  - Resolve reported installation issues on macOS, Windows and Linux
  - Stop using extras for a default wheel installation
  - Build new scancode-toolkit-mini package with limited dependencies for use
    when packaging in distros and similar
- - The new Dockerfile will be create smaller images and containers
+ - The new Dockerfile will create smaller images and containers.
+   Thank you to Viktor Tiulpin @tiulpin
 
 License scanning:
+~~~~~~~~~~~~~~~~~
 
- - Over 150 and and updated licenses
+ - Over 150 new and updated licenses
  - Support the latest SPDX license list v3.11
  - Improve license detection accuracy with over 740 new and improved license
    detection rules
  - Fix license cache handling issues
 
 Misc.:
-
+~~~~~~
  - Update extractcode, typecode and their native dependencies for better support
    of latests versions of macOS.
 
@@ -35,12 +190,14 @@ v21.2.9
 -------
 
 Security:
+~~~~~~~~~
 
  - Update vulnerable LXML to version 4.6.2 to fix
    https://nvd.nist.gov/vuln/detail/CVE-2020-27783
    This was detected thanks to https://github.com/nexb/vulnerablecode
 
 Operating system support:
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
  - Drop support for Python 2  #295
  - Drop support for 32 bits on Windows #335
@@ -50,6 +207,7 @@ Operating system support:
  - Add deprecation message for native Windows support #2366
 
 License scanning:
+~~~~~~~~~~~~~~~~~
 
  - Improve license detection accuracy with over 8400 new license detection rules
    added or updated
@@ -63,6 +221,7 @@ License scanning:
    statement (that typically may be reported as some unknown license)
 
 Package scanning:
+~~~~~~~~~~~~~~~~~
 
  - Add detection of package-installed files
  - Add analysis of system package installed databases for Debian, OpenWRT and
@@ -70,10 +229,12 @@ Package scanning:
  - Add support for Alpine Linux, Debian, OpenWRT.
 
 Copyright scanning:
+~~~~~~~~~~~~~~~~~~~
 
  - Improve detection with minor grammar fixes
 
 Misc.:
+~~~~~~
 
  - Adopt a new calendar date-based versioning for scancode-toolkit version numbers
  - Update thirdparty dependencies and built-in plugins
@@ -90,6 +251,7 @@ v3.2.3 (2020-10-27)
 -------------------
 
 Notable changes:
+~~~~~~~~~~~~~~~~
 
  - Collect Windows executable metadata #652
  - Fix minor bugs
@@ -100,6 +262,7 @@ v3.2.2rc3 (2020-09-21)
 ----------------------
 
 Notable changes:
+~~~~~~~~~~~~~~~~
 
  - Use commoncode, typecode and extractcode as external standalone packages #2233
 
@@ -108,6 +271,7 @@ v3.2.1rc2 (2020-09-11)
 ----------------------
 
 Minor bug fixes:
+~~~~~~~~~~~~~~~~
 
  - Do not fail if Debian status is missing #2224
  - Report correct detected license text in binary #2226 #2227

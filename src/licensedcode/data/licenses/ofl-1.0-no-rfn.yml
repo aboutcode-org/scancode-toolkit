@@ -15,4 +15,3 @@ other_urls:
 minimum_coverage: 99
 ignorable_urls:
     - http://scripts.sil.org/OFL
-

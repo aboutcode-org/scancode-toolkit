@@ -1,0 +1,5 @@
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt

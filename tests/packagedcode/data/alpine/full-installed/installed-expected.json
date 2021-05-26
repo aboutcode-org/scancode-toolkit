@@ -41,9 +41,14 @@
     "source_packages": [
       "pkg:alpine/musl@1.1.24-r8"
     ],
+    "purl": "pkg:alpine/musl@1.1.24-r8?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "lib/ld-musl-x86_64.so.1",
+        "size": 0,
         "sha1": "f1145b73e06675918af4a9dbad376aac37bdcef5",
         "md5": null,
         "sha256": null,
@@ -51,16 +56,13 @@
       },
       {
         "path": "lib/libc.musl-x86_64.so.1",
+        "size": 0,
         "sha1": "ef2277245372a40e26c61249af4a2ee82cec2552",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/musl@1.1.24-r8?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -104,9 +106,14 @@
     "source_packages": [
       "pkg:alpine/busybox@1.31.1-r16"
     ],
+    "purl": "pkg:alpine/busybox@1.31.1-r16?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "bin/busybox",
+        "size": 0,
         "sha1": "c8813c5dfb67505c01515a074b9f1a9e967d7a72",
         "md5": null,
         "sha256": null,
@@ -114,6 +121,7 @@
       },
       {
         "path": "bin/sh",
+        "size": 0,
         "sha1": "a5c7d37c33446cd290736b35b626bb75ad3933c4",
         "md5": null,
         "sha256": null,
@@ -121,6 +129,7 @@
       },
       {
         "path": "etc/securetty",
+        "size": 0,
         "sha1": "e150ec86058595eb836e9e23a9793e50d112eb94",
         "md5": null,
         "sha256": null,
@@ -128,6 +137,7 @@
       },
       {
         "path": "etc/udhcpd.conf",
+        "size": 0,
         "sha1": "50088f65c0c85b50a5473a1b7e081c090efb576f",
         "md5": null,
         "sha256": null,
@@ -135,6 +145,7 @@
       },
       {
         "path": "etc/logrotate.d/acpid",
+        "size": 0,
         "sha1": "4f29720883559a74be03f4de69de2f66113b064b",
         "md5": null,
         "sha256": null,
@@ -142,6 +153,7 @@
       },
       {
         "path": "etc/network/if-up.d/dad",
+        "size": 0,
         "sha1": "865c5ddea131ae2847f1b6310d0de2ed3b0cff8e",
         "md5": null,
         "sha256": null,
@@ -149,16 +161,13 @@
       },
       {
         "path": "usr/share/udhcpc/default.script",
+        "size": 0,
         "sha1": "9c33c0dc1c78cd2452bc3397f14dd6366610ff81",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/busybox@1.31.1-r16?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -202,9 +211,14 @@
     "source_packages": [
       "pkg:alpine/alpine-baselayout@3.2.0-r6"
     ],
+    "purl": "pkg:alpine/alpine-baselayout@3.2.0-r6?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "etc/fstab",
+        "size": 0,
         "sha1": "d50ee135ef10a434b9df582ea8276b5c1ce803fa",
         "md5": null,
         "sha256": null,
@@ -212,6 +226,7 @@
       },
       {
         "path": "etc/group",
+        "size": 0,
         "sha1": "a09d7ac56b9d80a3ab5c812ab840f3945d8bb26e",
         "md5": null,
         "sha256": null,
@@ -219,6 +234,7 @@
       },
       {
         "path": "etc/hostname",
+        "size": 0,
         "sha1": "ea75706155cffed0a1bd43ddba4543da27d73a67",
         "md5": null,
         "sha256": null,
@@ -226,6 +242,7 @@
       },
       {
         "path": "etc/hosts",
+        "size": 0,
         "sha1": "043eb324a653456caa1a73e2e2d49f77792bb0c5",
         "md5": null,
         "sha256": null,
@@ -233,6 +250,7 @@
       },
       {
         "path": "etc/inittab",
+        "size": 0,
         "sha1": "4ecb616e15bb4335917b513f34ac133ae0f8a477",
         "md5": null,
         "sha256": null,
@@ -240,6 +258,7 @@
       },
       {
         "path": "etc/modules",
+        "size": 0,
         "sha1": "b68a208d48a91c670c8040a03c95fae12c144f53",
         "md5": null,
         "sha256": null,
@@ -247,6 +266,7 @@
       },
       {
         "path": "etc/motd",
+        "size": 0,
         "sha1": "5e676e555354447436ed3bd8a752ebe5332d15c0",
         "md5": null,
         "sha256": null,
@@ -254,6 +274,7 @@
       },
       {
         "path": "etc/mtab",
+        "size": 0,
         "sha1": "9229638575c7d4b950ae81ec1092243d98367a2c",
         "md5": null,
         "sha256": null,
@@ -261,6 +282,7 @@
       },
       {
         "path": "etc/passwd",
+        "size": 0,
         "sha1": "4dc86eb8b51fbabd22cef7d9419c6037f2c9841f",
         "md5": null,
         "sha256": null,
@@ -268,6 +290,7 @@
       },
       {
         "path": "etc/profile",
+        "size": 0,
         "sha1": "2a915bf249792efc175a56377b9f0536c8eb237e",
         "md5": null,
         "sha256": null,
@@ -275,6 +298,7 @@
       },
       {
         "path": "etc/protocols",
+        "size": 0,
         "sha1": "dc5a97527bee3a9303ac7ffaade871b98004137e",
         "md5": null,
         "sha256": null,
@@ -282,6 +306,7 @@
       },
       {
         "path": "etc/services",
+        "size": 0,
         "sha1": "0ba1c936042f2d6aade5563e9fb319275aec0ee6",
         "md5": null,
         "sha256": null,
@@ -289,6 +314,7 @@
       },
       {
         "path": "etc/shadow",
+        "size": 0,
         "sha1": "96dacf2005b6cc778389a8ec7b1d81766ab7baa0",
         "md5": null,
         "sha256": null,
@@ -296,6 +322,7 @@
       },
       {
         "path": "etc/shells",
+        "size": 0,
         "sha1": "a239b661da4227a07f6a9183699fd275bdb12640",
         "md5": null,
         "sha256": null,
@@ -303,6 +330,7 @@
       },
       {
         "path": "etc/sysctl.conf",
+        "size": 0,
         "sha1": "e2ea73ded7e7371664204b148569fb5e88b0f7a8",
         "md5": null,
         "sha256": null,
@@ -310,6 +338,7 @@
       },
       {
         "path": "etc/crontabs/root",
+        "size": 0,
         "sha1": "bdf9356a9516238c8b2468613517749098b17ef6",
         "md5": null,
         "sha256": null,
@@ -317,6 +346,7 @@
       },
       {
         "path": "etc/modprobe.d/aliases.conf",
+        "size": 0,
         "sha1": "5946e1e930583552bb7b863eb94bcbb3feef8aa9",
         "md5": null,
         "sha256": null,
@@ -324,6 +354,7 @@
       },
       {
         "path": "etc/modprobe.d/blacklist.conf",
+        "size": 0,
         "sha1": "c7160653a4ba4cb42f6fb7abbcfad65b0016a8c8",
         "md5": null,
         "sha256": null,
@@ -331,6 +362,7 @@
       },
       {
         "path": "etc/modprobe.d/i386.conf",
+        "size": 0,
         "sha1": "a676b2fe78e7ea897d702b2c2fb2a2659f1eb657",
         "md5": null,
         "sha256": null,
@@ -338,6 +370,7 @@
       },
       {
         "path": "etc/modprobe.d/kms.conf",
+        "size": 0,
         "sha1": "ca76cb9f71980e9bda8db6bf95da759e26b27a88",
         "md5": null,
         "sha256": null,
@@ -345,6 +378,7 @@
       },
       {
         "path": "etc/profile.d/color_prompt",
+        "size": 0,
         "sha1": "d302f6dc6b920957ee98c4606a469b508e84b129",
         "md5": null,
         "sha256": null,
@@ -352,6 +386,7 @@
       },
       {
         "path": "etc/profile.d/locale",
+        "size": 0,
         "sha1": "4786c81299cac71392ae59d9cbd0286b0a99e435",
         "md5": null,
         "sha256": null,
@@ -359,6 +394,7 @@
       },
       {
         "path": "lib/sysctl.d/00-alpine.conf",
+        "size": 0,
         "sha1": "1e9125cd6d7112098a7c446d4f2ee8a269a7aba7",
         "md5": null,
         "sha256": null,
@@ -366,6 +402,7 @@
       },
       {
         "path": "sbin/mkmntdirs",
+        "size": 0,
         "sha1": "61eb92982ee20db116aeeb0fcc0ff351017a6128",
         "md5": null,
         "sha256": null,
@@ -373,6 +410,7 @@
       },
       {
         "path": "var/run",
+        "size": 0,
         "sha1": "d7f48d673ffc70ad9d48a2be709a55ad922e1784",
         "md5": null,
         "sha256": null,
@@ -380,6 +418,7 @@
       },
       {
         "path": "var/spool/mail",
+        "size": 0,
         "sha1": "7736dd6b36190369d3cd2206dd8c8dc3b77826e7",
         "md5": null,
         "sha256": null,
@@ -387,16 +426,13 @@
       },
       {
         "path": "var/spool/cron/crontabs",
+        "size": 0,
         "sha1": "38566df99329ee3d069f2d2ba922ae589caa6260",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/alpine-baselayout@3.2.0-r6?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -440,9 +476,14 @@
     "source_packages": [
       "pkg:alpine/alpine-keys@2.2-r0"
     ],
+    "purl": "pkg:alpine/alpine-keys@2.2-r0?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "etc/apk/keys/alpine-devel@lists.alpinelinux.org-4a6a0840.rsa.pub",
+        "size": 0,
         "sha1": "3af08548ef78cfdedcf349880c2c6a1a48763a0e",
         "md5": null,
         "sha256": null,
@@ -450,6 +491,7 @@
       },
       {
         "path": "etc/apk/keys/alpine-devel@lists.alpinelinux.org-5243ef4b.rsa.pub",
+        "size": 0,
         "sha1": "bfb616658cc05a872568b0c8e398c482e23b60dd",
         "md5": null,
         "sha256": null,
@@ -457,6 +499,7 @@
       },
       {
         "path": "etc/apk/keys/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub",
+        "size": 0,
         "sha1": "3671ae0ec7503b1e193587c1dcdf7b78bc863e42",
         "md5": null,
         "sha256": null,
@@ -464,6 +507,7 @@
       },
       {
         "path": "usr/share/apk/keys/alpine-devel@lists.alpinelinux.org-4a6a0840.rsa.pub",
+        "size": 0,
         "sha1": "3af08548ef78cfdedcf349880c2c6a1a48763a0e",
         "md5": null,
         "sha256": null,
@@ -471,6 +515,7 @@
       },
       {
         "path": "usr/share/apk/keys/alpine-devel@lists.alpinelinux.org-5243ef4b.rsa.pub",
+        "size": 0,
         "sha1": "bfb616658cc05a872568b0c8e398c482e23b60dd",
         "md5": null,
         "sha256": null,
@@ -478,6 +523,7 @@
       },
       {
         "path": "usr/share/apk/keys/alpine-devel@lists.alpinelinux.org-524d27bb.rsa.pub",
+        "size": 0,
         "sha1": "053a92f87fd4532850bb31f0881978efe0532ae5",
         "md5": null,
         "sha256": null,
@@ -485,6 +531,7 @@
       },
       {
         "path": "usr/share/apk/keys/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub",
+        "size": 0,
         "sha1": "3671ae0ec7503b1e193587c1dcdf7b78bc863e42",
         "md5": null,
         "sha256": null,
@@ -492,6 +539,7 @@
       },
       {
         "path": "usr/share/apk/keys/alpine-devel@lists.alpinelinux.org-58199dcc.rsa.pub",
+        "size": 0,
         "sha1": "39ac5d72c6ba018a0f74b8b453894edc9db07b5f",
         "md5": null,
         "sha256": null,
@@ -499,6 +547,7 @@
       },
       {
         "path": "usr/share/apk/keys/alpine-devel@lists.alpinelinux.org-58cbb476.rsa.pub",
+        "size": 0,
         "sha1": "c8fabeb2eeb992c368c77b9707e0d1ecfd7cf905",
         "md5": null,
         "sha256": null,
@@ -506,6 +555,7 @@
       },
       {
         "path": "usr/share/apk/keys/alpine-devel@lists.alpinelinux.org-58e4f17d.rsa.pub",
+        "size": 0,
         "sha1": "329643357d0b78b1ef48ec155325e25f1d7534dd",
         "md5": null,
         "sha256": null,
@@ -513,6 +563,7 @@
       },
       {
         "path": "usr/share/apk/keys/alpine-devel@lists.alpinelinux.org-5e69ca50.rsa.pub",
+        "size": 0,
         "sha1": "825090fde25bbc0e71a9cb3076316b5afe459e4d",
         "md5": null,
         "sha256": null,
@@ -520,6 +571,7 @@
       },
       {
         "path": "usr/share/apk/keys/aarch64/alpine-devel@lists.alpinelinux.org-58199dcc.rsa.pub",
+        "size": 0,
         "sha1": "ee3f67589910fb07c8b95433205ae6159edf48e7",
         "md5": null,
         "sha256": null,
@@ -527,6 +579,7 @@
       },
       {
         "path": "usr/share/apk/keys/armhf/alpine-devel@lists.alpinelinux.org-524d27bb.rsa.pub",
+        "size": 0,
         "sha1": "53d42db1d37ead867d661efa11f5f2d342591cc8",
         "md5": null,
         "sha256": null,
@@ -534,6 +587,7 @@
       },
       {
         "path": "usr/share/apk/keys/mips64/alpine-devel@lists.alpinelinux.org-5e69ca50.rsa.pub",
+        "size": 0,
         "sha1": "84265d171f8bbf36cbb4fb3be778deefc8041014",
         "md5": null,
         "sha256": null,
@@ -541,6 +595,7 @@
       },
       {
         "path": "usr/share/apk/keys/ppc64le/alpine-devel@lists.alpinelinux.org-58cbb476.rsa.pub",
+        "size": 0,
         "sha1": "b76d5d8422db4c99801d748278e32aff6bdf4a0a",
         "md5": null,
         "sha256": null,
@@ -548,6 +603,7 @@
       },
       {
         "path": "usr/share/apk/keys/s390x/alpine-devel@lists.alpinelinux.org-58e4f17d.rsa.pub",
+        "size": 0,
         "sha1": "b236d5dabdb0d08876bf07730b826ae9423b70c4",
         "md5": null,
         "sha256": null,
@@ -555,6 +611,7 @@
       },
       {
         "path": "usr/share/apk/keys/x86/alpine-devel@lists.alpinelinux.org-4a6a0840.rsa.pub",
+        "size": 0,
         "sha1": "222e758bb36b738b9fb75e0786aba0694a9d1fae",
         "md5": null,
         "sha256": null,
@@ -562,6 +619,7 @@
       },
       {
         "path": "usr/share/apk/keys/x86/alpine-devel@lists.alpinelinux.org-5243ef4b.rsa.pub",
+        "size": 0,
         "sha1": "638f5e571869bdfb5b437c8076f94b7dcacf2d35",
         "md5": null,
         "sha256": null,
@@ -569,6 +627,7 @@
       },
       {
         "path": "usr/share/apk/keys/x86_64/alpine-devel@lists.alpinelinux.org-4a6a0840.rsa.pub",
+        "size": 0,
         "sha1": "222e758bb36b738b9fb75e0786aba0694a9d1fae",
         "md5": null,
         "sha256": null,
@@ -576,16 +635,13 @@
       },
       {
         "path": "usr/share/apk/keys/x86_64/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub",
+        "size": 0,
         "sha1": "014158f9fc1205372b61eb634fb347bda7eb4907",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/alpine-keys@2.2-r0?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -629,9 +685,14 @@
     "source_packages": [
       "pkg:alpine/openssl@1.1.1g-r0"
     ],
+    "purl": "pkg:alpine/libcrypto1.1@1.1.1g-r0?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "etc/ssl/ct_log_list.cnf",
+        "size": 0,
         "sha1": "a2587c4e97408b64274e5e052b74e3754892c13a",
         "md5": null,
         "sha256": null,
@@ -639,6 +700,7 @@
       },
       {
         "path": "etc/ssl/ct_log_list.cnf.dist",
+        "size": 0,
         "sha1": "a2587c4e97408b64274e5e052b74e3754892c13a",
         "md5": null,
         "sha256": null,
@@ -646,6 +708,7 @@
       },
       {
         "path": "etc/ssl/openssl.cnf",
+        "size": 0,
         "sha1": "c06bb154438af6218b8f58bc0f70520674fb3090",
         "md5": null,
         "sha256": null,
@@ -653,6 +716,7 @@
       },
       {
         "path": "etc/ssl/openssl.cnf.dist",
+        "size": 0,
         "sha1": "c06bb154438af6218b8f58bc0f70520674fb3090",
         "md5": null,
         "sha256": null,
@@ -660,6 +724,7 @@
       },
       {
         "path": "etc/ssl/misc/CA.pl",
+        "size": 0,
         "sha1": "20009ebca84af77198047a7de887b6ea3819d7bb",
         "md5": null,
         "sha256": null,
@@ -667,6 +732,7 @@
       },
       {
         "path": "etc/ssl/misc/tsget",
+        "size": 0,
         "sha1": "dcd5607ebedd414b86631babd2d35a947e842235",
         "md5": null,
         "sha256": null,
@@ -674,6 +740,7 @@
       },
       {
         "path": "etc/ssl/misc/tsget.pl",
+        "size": 0,
         "sha1": "c7d245bd0f6f3c5cc22de4ec0b594a6a86151008",
         "md5": null,
         "sha256": null,
@@ -681,6 +748,7 @@
       },
       {
         "path": "lib/libcrypto.so.1.1",
+        "size": 0,
         "sha1": "f814fa3d26530a8baf1e66cfe8374dc96d445a81",
         "md5": null,
         "sha256": null,
@@ -688,6 +756,7 @@
       },
       {
         "path": "usr/lib/libcrypto.so.1.1",
+        "size": 0,
         "sha1": "4f6b22f9ceedb3bb200f1418bdee01de2d43828d",
         "md5": null,
         "sha256": null,
@@ -695,6 +764,7 @@
       },
       {
         "path": "usr/lib/engines-1.1/afalg.so",
+        "size": 0,
         "sha1": "4618d0e6fa10b3d5085a5189a12992827b7033d0",
         "md5": null,
         "sha256": null,
@@ -702,6 +772,7 @@
       },
       {
         "path": "usr/lib/engines-1.1/capi.so",
+        "size": 0,
         "sha1": "106df609582d774d27549d6b5c661953f2ffe9f0",
         "md5": null,
         "sha256": null,
@@ -709,16 +780,13 @@
       },
       {
         "path": "usr/lib/engines-1.1/padlock.so",
+        "size": 0,
         "sha1": "59400c9ae3240279c1123867a452063492ec2afc",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/libcrypto1.1@1.1.1g-r0?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -762,9 +830,14 @@
     "source_packages": [
       "pkg:alpine/openssl@1.1.1g-r0"
     ],
+    "purl": "pkg:alpine/libssl1.1@1.1.1g-r0?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "lib/libssl.so.1.1",
+        "size": 0,
         "sha1": "5b425f2461b6f7209899f894965a8c396ec5086c",
         "md5": null,
         "sha256": null,
@@ -772,16 +845,13 @@
       },
       {
         "path": "usr/lib/libssl.so.1.1",
+        "size": 0,
         "sha1": "f23df9a5edf2a7a1ce80c8a1d709463f5fe69b67",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/libssl1.1@1.1.1g-r0?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -825,9 +895,14 @@
     "source_packages": [
       "pkg:alpine/ca-certificates@20191127-r2"
     ],
+    "purl": "pkg:alpine/ca-certificates-bundle@20191127-r2?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "etc/ssl/cert.pem",
+        "size": 0,
         "sha1": "363ea04c17646694c55bfa1b2467697ef2b44ad0",
         "md5": null,
         "sha256": null,
@@ -835,16 +910,13 @@
       },
       {
         "path": "etc/ssl/certs/ca-certificates.crt",
+        "size": 0,
         "sha1": "fff5130cf90ce33d3c6583d187f30e9f4fdf836b",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/ca-certificates-bundle@20191127-r2?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -889,9 +961,14 @@
     "source_packages": [
       "pkg:alpine/libtls-standalone@2.9.1-r1"
     ],
+    "purl": "pkg:alpine/libtls-standalone@2.9.1-r1?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "usr/lib/libtls-standalone.so.1",
+        "size": 0,
         "sha1": "31e3c927c02372ebdce71fbabe5177ca0268658c",
         "md5": null,
         "sha256": null,
@@ -899,16 +976,13 @@
       },
       {
         "path": "usr/lib/libtls-standalone.so.1.0.0",
+        "size": 0,
         "sha1": "914f370b123189e3076aed12e399c24f0b8a474a",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/libtls-standalone@2.9.1-r1?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -952,19 +1026,20 @@
     "source_packages": [
       "pkg:alpine/busybox@1.31.1-r16"
     ],
+    "purl": "pkg:alpine/ssl_client@1.31.1-r16?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "usr/bin/ssl_client",
+        "size": 0,
         "sha1": "ab7d14b4927427b4b12d018cea40b4892777c1a3",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/ssl_client@1.31.1-r16?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -1008,9 +1083,14 @@
     "source_packages": [
       "pkg:alpine/zlib@1.2.11-r3"
     ],
+    "purl": "pkg:alpine/zlib@1.2.11-r3?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "lib/libz.so.1",
+        "size": 0,
         "sha1": "6b61fc84fdb8af208019ff1f9dcd4d85af482077",
         "md5": null,
         "sha256": null,
@@ -1018,16 +1098,13 @@
       },
       {
         "path": "lib/libz.so.1.2.11",
+        "size": 0,
         "sha1": "ef4f4263bea9e33108894bf882cc8ff1d6af9578",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/zlib@1.2.11-r3?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -1071,19 +1148,20 @@
     "source_packages": [
       "pkg:alpine/apk-tools@2.10.5-r1"
     ],
+    "purl": "pkg:alpine/apk-tools@2.10.5-r1?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "sbin/apk",
+        "size": 0,
         "sha1": "1f928f5a65ffc8d0793060f6f6ab919899008937",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/apk-tools@2.10.5-r1?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -1127,19 +1205,20 @@
     "source_packages": [
       "pkg:alpine/pax-utils@1.2.6-r0"
     ],
+    "purl": "pkg:alpine/scanelf@1.2.6-r0?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "usr/bin/scanelf",
+        "size": 0,
         "sha1": "ca0742501204515725074431bf77d8732c434641",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/scanelf@1.2.6-r0?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -1192,9 +1271,14 @@
     "source_packages": [
       "pkg:alpine/musl@1.1.24-r8"
     ],
+    "purl": "pkg:alpine/musl-utils@1.1.24-r8?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "sbin/ldconfig",
+        "size": 0,
         "sha1": "2a36b6f8f3992b112450e66ac128c2ea499a103e",
         "md5": null,
         "sha256": null,
@@ -1202,6 +1286,7 @@
       },
       {
         "path": "usr/bin/getconf",
+        "size": 0,
         "sha1": "503ba79c6c04fd06dde3435db403fe65640d8666",
         "md5": null,
         "sha256": null,
@@ -1209,6 +1294,7 @@
       },
       {
         "path": "usr/bin/getent",
+        "size": 0,
         "sha1": "a5ba128d0f532063e8f0ffa457c0c743a6310b46",
         "md5": null,
         "sha256": null,
@@ -1216,6 +1302,7 @@
       },
       {
         "path": "usr/bin/iconv",
+        "size": 0,
         "sha1": "b3868fc2e6729f540bf02dab5912069eb4c73289",
         "md5": null,
         "sha256": null,
@@ -1223,16 +1310,13 @@
       },
       {
         "path": "usr/bin/ldd",
+        "size": 0,
         "sha1": "c850211a08262fb11181b200eca431c93cdfde4b",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/musl-utils@1.1.24-r8?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   },
   {
     "type": "alpine",
@@ -1285,10 +1369,10 @@
     "source_packages": [
       "pkg:alpine/libc-dev@0.7.2-r3"
     ],
-    "installed_files": [],
     "purl": "pkg:alpine/libc-utils@0.7.2-r3?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": null
+    "api_data_url": null,
+    "installed_files": []
   }
 ]

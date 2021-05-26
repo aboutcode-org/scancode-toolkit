@@ -3,7 +3,9 @@ license_expressions:
   - gpl-2.0-plus
   - bsd-new
   - bsd-new
+  - unknown-license-reference
   - historical
+  - unknown-license-reference
   - bsd-new
   - carnegie-mellon-contributors
   - bsd-new

@@ -1,4 +1,4 @@
-license_expression: lgpl-2.1 OR lgpl-3.0
+license_expression: lgpl-2.1 OR lgpl-3.0 OR kde-accepted-lgpl
 is_license_notice: yes
 notes: see https://community.kde.org/Policies/Licensing_Policy
 ignorable_urls:

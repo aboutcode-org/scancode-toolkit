@@ -1,5 +1,6 @@
 license_expression: ogc-1.0
 is_license_text: yes
+minimum_coverage: 80
 relevance: 100
 ignorable_copyrights:
     - Copyright (c) Open Geospatial Consortium, Inc.

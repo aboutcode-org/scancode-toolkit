@@ -1,0 +1,9 @@
+key: c-uda-1.0
+short_name: Computational Use of Data Agreement v1.0
+name: Computational Use of Data Agreement v1.0
+category: Free Restricted
+owner: Microsoft
+spdx_license_key: C-UDA-1.0
+other_urls:
+    - https://github.com/microsoft/Computational-Use-of-Data-Agreement/blob/master/C-UDA-1.0.md
+    - https://cdla.dev/computational-use-of-data-agreement-v1-0/

@@ -1,0 +1,4 @@
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: Seen in Perl Text::Tabs https://github.com/kbmbo/react/blob/6700d5e0bf93afee8e4ac806c94dec491770d629/usr/share/perl5/core_perl/Text/Tabs.pm#L188

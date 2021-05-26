@@ -5,8 +5,8 @@
   You are allowed to use this source code in any open source or closed
   Permission is hereby granted, free of charge, to any person
   LGPL-2+
-- adrian AND bloomberg-blpapi AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND lgpl-2.0-plus
-  AND lgpl-2.1-plus AND lgpl-3.0 AND other-permissive AND sun-source AND unknown AND x11
+- adrian AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.1-plus AND
+  other-permissive AND sun-source AND unknown AND unknown-license-reference AND x11
 - |
   Copyright (C) 2004-2009 Lennart Poettering
   Copyright (C) 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB

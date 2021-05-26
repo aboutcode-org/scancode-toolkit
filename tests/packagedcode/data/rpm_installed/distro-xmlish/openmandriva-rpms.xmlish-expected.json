@@ -1,0 +1,872 @@
+[
+  {
+    "type": "rpm",
+    "namespace": null,
+    "name": "chkconfig",
+    "version": "1.11",
+    "qualifiers": {
+      "arch": "x86_64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "Chkconfig is a basic system utility.  It updates and queries runlevel\ninformation for system services.  Chkconfig manipulates the numerous\nsymbolic links in /etc/rc*.d, to relieve system administrators of some\nof the drudgery of manually editing the symbolic links.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": "https://github.com/fedora-sysv/chkconfig",
+    "download_url": null,
+    "size": 754233,
+    "sha1": "5f45047cf0491b40757ebd320f6f137ae8350959",
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "gpl-1.0-plus",
+    "declared_license": "GPL",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:rpm/chkconfig@1.11?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "installed_files": [
+      {
+        "path": "/etc/alternatives",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/init.d",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/rc.d",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/rc.d/init.d",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/rc.d/rc0.d",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/rc.d/rc1.d",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/rc.d/rc2.d",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/rc.d/rc3.d",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/rc.d/rc4.d",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/rc.d/rc5.d",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/etc/rc.d/rc6.d",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/lib/systemd/systemd-sysv-install",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/sbin/chkconfig",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/sbin/alternatives",
+        "size": 0,
+        "sha1": null,
+        "md5": "50ccf901344d826de15cbe191c4cdc752e84d5ae9752b290556f61948eaaf7c7",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/sbin/chkconfig",
+        "size": 0,
+        "sha1": null,
+        "md5": "24bc8d5419bdc3f2854cac232e4997b1e157eb72af8ddebe555789772235aa78",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/sbin/update-alternatives",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ar/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "bb0f9a100149074b852a3cd9e0646c241ea92a4c5e337108feef5818a45bb854",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/as/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "8bb77a5617dada2185f200e1e49ae9a8f2570e9394216c8edeb075ce1fad282c",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/bal/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "0690448d7b076a9c0ca2db46a99419dbf995f8fc839a9ae816b5471460ea4c83",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/be/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "b2dab4a2177c4d9fdc3ac245f94082e172be837336d65855de5a1692525e5098",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/bg/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "58dc1622c2f6eb27e38930ef71ae5bbfb7d8da58c3ce82e33d9053c7245916e7",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/bn/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "c79f4effe4c6fc508a885d6d9022762f07771c5b747e69c521f46a14eac8f582",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/bn_IN/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "255207564629faae0f683900ead573259e82975121e505eceb18f0a97a71f486",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/bs/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "09ccb784bdfb604f15c630a96558a3c5a23df9283514fdf7765526714d59c3ef",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ca/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "adeef793bfff5ba10907745504bb9b605da4bc9a26c366eb5099b874076df6cf",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/cs/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "7c2dd83599819153119a7d7d347168966e0ffcc7896a6619dad13f502a53c312",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/cy/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "f4f43e3b963e62b0251e4127dd6a58641d8d89ad982ee7477d71ea79a801e941",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/da/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "bf3d31e8f8890ba41d0df97ea80708571faec84ef99ffc4eb6add7149a21831e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/de/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "5ba8a3de74e49406fb00ec8942794c26280d803c717b02d923ff55ee333c3c93",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/el/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "89967d3c650b03e53be965f675671572e80289603294d6589437e7dd61b2ebcc",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/en_GB/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "047717ab293021c183b76feaf27e73008d52e210fd58652858fe2b90e28e862e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/es/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "6ffa3b9aca954c6068a60baed884d9244f15047128f64c6bfb1caa9ff7fe4bd3",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/et/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "54112572cd84b066457ce2ea28288bae888192b951607cb2c9354fd8fc5d13f7",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/eu/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "cde24b32810142b7b8b366ae75064c8dc3639ddf31aa55e32218e9c7c2d19715",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/fa/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "ec514eaa3a0429cbb0fb44ec6d3625a335bf3fc9cbfdea3eed42024043b784fd",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/fi/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "d62e8a9a1ee77d9490178b958b817fc7d4222f41666bb867ba7f5608f474617b",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/fr/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "03eeaf7920a06c34c73cdad4285b02aa5e5b2b4fcfa548008692c7bd551dfa67",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/gl/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "7d47bcb4732aea2293387d0aeea62386bcc66edd1c0f3841410ce7594de80dcb",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/gu/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "d820bcc1c0cf80b5c671ae51250483171cfff50b763fe27066f52a5c40becfb2",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/he/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "8cd59fd02d83bf3093436c2cae19f4eeaa9f4742aa8ed28e4b541a2936a6407d",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/hi/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "cad764390e48748349b95a0df874d1c396e730ed6bf1174652d8a9bd0db7f70a",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/hr/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "cda9c1e680c527753d168ea5948baa49c1ba46bbac1ca55f5c082a180649927b",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/hu/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "0c62bd246c6ce4f5edc7b3cd9f584f452060e1cc7b0ae0d98a954670eab96194",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/hy/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "d3d76f7c7f9da30200fc695f23c8f862b142b5f6e01d3bc37d0f7b7e1e383aeb",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ia/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "155d52fa12a1f3faf9fb01d52092076f736e388402f5d75cbb842f29e7f4227c",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/id/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "e366957cf3af4c72a79b4f0da721e536b35df5f202252b344a8f211be2f8c6e8",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/is/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "22a413cfcd310816331882b520469d1c656a723debbb3dec8847cca2e1ea14f9",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/it/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "3b6dc7618882b412c246db2a45056950f36a12bd4858b58ca2f7bc53d60a6265",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ja/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "bcb5934c2e0f63dd9f476c0549883ede310ff24c150c0a1ea93d41dee3b26749",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ka/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "e926c2d4285ef33a84b9914222368216aee52c180a657fe7d66e3428b9ffcae5",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/km/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "d81ae8b8a0448c06eb9b8714bcc2e88aa9fe19ab2b064759f70c2160662ec1f7",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/kn/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "74a0ee8fe1638bb3e1add576bffcc09223ea2e169f88dd437b53ce317877ccb8",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ko/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "1a025ce2a348503ab54822083a7a735c321447f3b9580b0db50e421bceb6ba85",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ku/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "8eb18d07600b14e4ca4ebec48d00aef44ab3c28c69b450d8d7c2416a4d63cb2d",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/lo/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "36c6d62a9074a1de5b19d3f45fdaa1eb7065104954ae4a1efd49ecdfaffe04b5",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/lv/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "6daf7fbbddbd90dfcaa8cb97a666662516ff763bf0fc82a39d41492e099db66a",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/mai/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "6f691e64be81dfba2a36b39bde079a63077d600585d32d7900b01aa081de4f8b",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/mk/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "818e6c6d5fd4b3fa6050770c9f85f117a506327a3bcc69fc8beb7ecf559df082",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ml/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "10441504ba39278b15a761005e5f49eeb8b36b6ec2f092d64703369fed12dd2d",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/mr/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "41fd54929eb1121c8c1e45842e92ba369044d04a952776c166f89eaa59abfab9",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ms/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "5890351c2896dd0c349cd479d5ae3af94d7418796e25946764f9968ddc779c0e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/my/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "99d006d7f5ec86751cc0fa27512d2e4a28f75d7a80c4f8bcafd15e6618e6df2e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/nb/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "d78cabb3afe05aa3f1ce1c4b3d4e79753d0a5661e7ca759370998e5c56166ec9",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/nds/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "19d706b2da02cf4bd15edb0c4c8810ccfc4bfa92b83976b8fe4299c94998dadb",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/nl/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "ce091ebc06cefc16466c033d524696a399b51af35edd144c23088456e62eccc4",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/nn/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "a7aff3772422604475c6e11d870d29b69600a0857f3f0ad8cbfc0ee8bdeba5d9",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/or/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "a5659384bd30efd1909c37a480cba5e7e4b5dc111bea048774d15a597414eaaf",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/pa/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "ce594c7cb05e5efaf777399c94844ccf35b9256992493d979e879ed5bb8ed3fc",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/pl/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "5944a1cb201fb6f0c450b56f2b2489bde1c97d75f2c8c614f546e40e056824f0",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/pt/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "3fa3f5d5412a0abe37ea9645e1a7bcb9a39da0da2ba5115ec97bae4feae7b302",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/pt_BR/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "d4d2c06fa475dc3d852e9f2f76fbc9ed3d565aa0cebccbd9bda530d63494a4af",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ro/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "0efba2529a551f89d23dbaed44d8412a126bf13e209d489561e6ae37327f03fc",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ru/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "edfb5d111f41692165bc35c255364e5635d335411db91ed0b9105856e3a4bf4a",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/si/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "28851725f7fa4ece33aaceffa8b1a9b99551174cbc2ea2e8f34d3e35a293d190",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/sk/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "ad56a33568c1c06ef3c86ebc9cb6ab8bc4bc45b432abfa0a50eba1cdf6d2edb7",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/sl/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "ea201fce2287bbd2ac0540c90516c1bd1a64b7ed7b520f801b5c90df6eef5fd8",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/sq/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "e893e5a6ef4e514733c8ba6a71ab21dafecd8ed459aba6ffdc2f958d3a8ee70e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/sr/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "8db9fdb05219ed33094912501d1052ee56dc5960cc07adb2be6aa5ac282b8e64",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/sr@latin/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "85a6e2fc8a67212f2965995af21b59ffaf7c6d2aab1a499b31487e2a871c007d",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/sv/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "eab29f7ef56781d98581f545e216a0f8a5bb894dc8adf48ebc6ba72f3ed1685a",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ta/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "91e09b855f3a9ea3b7bd81b0ec9907f6186c436869cbff5df3660b3b723d1c06",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/te/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "1530e04f0f5b8e68a73f14c70bf4d2561ee29d8e1fa5d9291dcff156506f779e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/tg/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "68d10e9d28f91fc224d69de2989f0391c5bc8dba67def05722f1661a98e1101d",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/th/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "1f6867604ad81b334ebc7255081e08e45f2fb906e577fa06d6d1e2eb08482d65",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/tr/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "8344dc87552381f8666545fa2cd8a0669712a816ee5a22d03a266a5ee4b5ce5f",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/uk/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "a1024bc9bc264d08cfc185be1a64cbbf56950abf3c6e22d6beef9078cd948347",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/ur/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "3812312eca29ea3edd13290729cbd3478a58d7f780534be82a90f947a342585b",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/vi/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "e99a0b495313afa649bcea5d97bc6afac0196f404d4fc2e375e32232accc0c00",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/zh_CN/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "6cac1bcc01fa77262c0acd5aa555df905894a862aec43c2a90d5da6329e0f51d",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/zh_TW.Big5/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "f482bb0dfbebb5e96cfeb366ee280b362b895e4a8345c96139432241eddf15f2",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/locale/zh_TW/LC_MESSAGES/chkconfig.mo",
+        "size": 0,
+        "sha1": null,
+        "md5": "21b7712ee97b120dc68e9dcda30686715b9cff716bab0a0112ac3a78bb287a7e",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/man/man8/alternatives.8.zst",
+        "size": 0,
+        "sha1": null,
+        "md5": "13dffb5cab7d1edb171842abfb4f59fa2e5f920c91e8455f9d4466fc39c0a3a0",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/man/man8/chkconfig.8.zst",
+        "size": 0,
+        "sha1": null,
+        "md5": "a37c1ff33c7b5b17d7f927b911360495199dd30156820907b4389a550254eaec",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/man/man8/update-alternatives.8.zst",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/var/lib/alternatives",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/var/log/update-alternatives.log",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      }
+    ]
+  },
+  {
+    "type": "rpm",
+    "namespace": null,
+    "name": "lib64ncursesw6",
+    "version": "6.2",
+    "qualifiers": {
+      "arch": "x86_64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "The curses library routines are a terminal-independent method of updating\ncharacter screens with reasonalble optimization. The ncurses (new curses)\nlibrary is a freely distributable replacement for the discontinued 4.4BSD\nclassic curses library.\n\nThis package contains ncurses libraries which support wide char (UTF8),\nand is not compatible with those without.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": "http://www.gnu.org/software/ncurses/ncurses.html",
+    "download_url": null,
+    "size": 396832,
+    "sha1": "7ba91eb0bb7fcc61c2a0cffb2c7dd6024a329d70",
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": "MIT",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:rpm/lib64ncursesw6@6.2?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "installed_files": [
+      {
+        "path": "/lib64/libncursesw.so.6",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/lib64/libncursesw.so.6.2",
+        "size": 0,
+        "sha1": null,
+        "md5": "a8aea5ccc3098f9272fc9ca13c636adf5785e9da48aa257eba54ab8331fbdc1c",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/lib64/libncursesw.so.6",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      }
+    ]
+  }
+]

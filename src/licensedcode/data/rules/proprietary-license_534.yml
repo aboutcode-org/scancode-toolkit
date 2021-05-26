@@ -1,0 +1,10 @@
+license_expression: proprietary-license
+is_license_notice: yes
+minimum_coverage: 95
+notes: |
+    This is an extra clause inserted by Palantir in an Apache license
+    See https://github.com/palantir/blueprint/blob/826380132bcef856425a1cf88e379f19081c179a/LICENSE#L176
+    and this ticket for more details https://github.com/palantir/blueprint/issues/2602
+ignorable_urls:
+    - https://www.apache.org/licenses/
+    - https://www.apache.org/licenses/LICENSE-2.0

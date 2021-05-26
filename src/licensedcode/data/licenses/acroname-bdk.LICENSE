@@ -1,0 +1,31 @@
+                       BRAINSTEM DEVELOPMENT KIT SOFTWARE PACKAGE LICENSE AGREEMENT:
+
+PLEASE READ THIS SOFTWARE LICENSE AGREEMENT CAREFULLY BEFORE DOWNLOADING OR USING THE SOFTWARE.
+
+BY USING THE SOFTWARE, OR USING EQUIPMENT THAT CONTAINS THE SOFTWARE, YOU ARE CONSENTING TO BE BOUND BY THIS AGREEMENT. IF YOU DO NOT AGREE TO ALL OF THE TERMS OF THIS AGREEMENT, DO NOT USE THE SOFTWARE AND DESTROY ALL COPIES IN YOUR POSSESSION.
+
+BRAINSTEM2 LIBRARY SHARED OBJECT, STATIC ARCHIVE, AND LIBRARY HEADERS.
+SOFTWARE LICENSE AGREEMENT Copyright (c) 1994-2020 Acroname Inc.
+
+Single User and Multiple-Users License Grant: Acroname Inc. ("Acroname") and its suppliers grant to Customer ("Customer") a nonexclusive and nontransferable license to use the BrainStem2 shared object (.dylib, .framework, .so, .dll, etc) static archive (.a), and associated library header files ("Software") in object code form.
+
+CUSTOMER SHALL NOT: MODIFY THE SOFTWARE; REVERSE ENGINEER OR REVERSE COMPILE OR REVERSE ASSEMBLE ALL OR ANY PORTION OF THE SOFTWARE.
+
+Customer agrees that aspects of the licensed materials, including the specific design and structure of individual programs, constitute trade secrets and/or copyrighted material of Acroname. Title to Software and documentation shall remain solely with Acroname.
+
+Customer agrees that redistributions of this Software must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+DISCLAIMER. EXCEPT AS SPECIFIED IN THIS AGREEMENT, ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS, AND WARRANTIES INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, 
+NONINFRINGEMENT OR ARISING FROM A COURSE OF DEALING, USAGE, OR TRADE PRACTICE, ARE HEREBY EXCLUDED TO THE EXTENT ALLOWED BY APPLICABLE LAW. IN NO EVENT WILL ACRONAME OR ITS SUPPLIERS BE LIABLE FOR ANY LOST REVENUE, PROFIT, OR DATA, 
+OR FOR SPECIAL, INDIRECT, CONSEQUENTIAL, INCIDENTAL, OR PUNITIVE DAMAGES HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE EVEN IF ACRONAME OR ITS SUPPLIERS HAVE BEEN ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGES. THIS SOFTWARE IS NOT INTENDED FOR USE IN LIFE SUPPORT SYSTEMS. In no event shall Acroname's or its suppliers' liability to Customer, whether in contract, tort (including negligence), or otherwise, exceed the price paid by Customer. Some jurisdictions may not allow limitation or exclusion of liability for consequential or incidental damages.
+
+This Software License Agreement is effective until terminated. Customer may terminate this License at any time by destroying all copies of the Software including any documentation. This License will terminate immediately without notice from Acroname if Customer fails to comply with any provision of this License. Upon termination, Customer must destroy all copies of the Software.
+
+This Software, including technical data, is subject to U.S. export control laws, including the U.S. Export Administration Act and its associated regulations, and may be subject to export or import regulations in other countries. Customer agrees to comply strictly with all such regulations and acknowledges that it has the responsibility to obtain licenses to export, re-export, 
+or import Software. This License shall be governed by and construed in accordance with the laws of the State of Colorado, United States of America, as if performed wholly within the state and without giving effect to the principles of conflict of law. If any portion hereof is found to be void or unenforceable, the remaining provisions of this License shall remain in full force and effect. 
+This License constitutes the entire License between the parties with respect to the use of the Software.
+
+BRAINSTEM2 DIRECT DEPENDENCY LICENSE NOTIFICATION:
+LIB USB
+This binary distribution uses libUSB v1.0 (https://libusb.info). LibUSB is licensed under GNU Lesser General Public License (LGPL) v2.1. Acroname will provide, at request (support@acroname.com), object code sufficient to recompile the Acroname BrainStem binary distribution with an updated interface compatible copy of the libUSB library.

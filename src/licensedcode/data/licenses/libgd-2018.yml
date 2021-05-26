@@ -4,7 +4,9 @@ name: libgd License 2018
 category: Permissive
 owner: GD Graphics (Draw) Library Project
 homepage_url: https://github.com/libgd/libgd/blob/master/COPYING
-spdx_license_key: LicenseRef-scancode-libgd-2018
+spdx_license_key: GD
+other_spdx_license_keys:
+    - LicenseRef-scancode-libgd-2018
 text_urls:
     - https://libgd.github.io/manuals/2.3.0/files/license-txt.html
 ignorable_copyrights:

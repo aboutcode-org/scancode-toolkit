@@ -1,0 +1,6 @@
+license_expression: tsl-2020
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - LICENSE-TIMESCALE
+notes: this could be also the tsl-2018 therefore we do not have a relevance of 100 

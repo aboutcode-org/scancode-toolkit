@@ -1,0 +1,6 @@
+license_expression: lgpl-2.1 OR lgpl-3.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 95
+ignorable_urls:
+    - https://www.gnu.org/licenses/lgpl-3.0.txt

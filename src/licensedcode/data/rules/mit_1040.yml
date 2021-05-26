@@ -1,0 +1,6 @@
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+notes: this looks like an Apache license notice Seen in https://github.com/asciidoctor/asciidoctor-pdf/blob/main/NOTICE.adoc
+ignorable_urls:
+    - http://opensource.org/licenses/MIT

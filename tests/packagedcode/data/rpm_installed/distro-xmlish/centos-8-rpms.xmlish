@@ -1,0 +1,1489 @@
+<rpmHeader>
+  <rpmTag name="Headeri18ntable">
+	<string>C</string>
+  </rpmTag>
+  <rpmTag name="Sigsize">
+	<integer>289956</integer>
+  </rpmTag>
+  <rpmTag name="Sigpgp">
+	<base64>iQIVAwUAXeh1cwW1VbOEg8ZdAQgq9xAAoyf/J18tPV/yQp64y8RrwuicnV5G9pDb
+VqShdzaRS6GkgsLsNKMYdWPAWH8jFhWUBXk0061ZimaN20vdVefJ0SsDs/Bw/SMn
+j2yw6t0ptmRDfi02Bicu+UnnUnUsahgl654mwlqx7e6fULTXwnh7ZSQAtrYtbnif
+Ktcjf26RSkf5moXZkWytJS6JzPg9U8AHeY6I3sEuxOui0ydG+OkM6+JCvgCsVD/3
+bzNLG3CLJ9+fB+0qFT47eZT7KI5PyQvwoxvO+zUzFSrXgJb3jHefCAHt0gmg404S
+LMMuUXTxtBSUqwpjEZzBGLm7eX8czBpc5565ARIJ6ePjGgkmkBW0TiQj+zqiy2VR
+PhjuNzFmsocc3MdE0t3JQkE8rT3kxWgDIa3V30uKJGgInaLIY0rQS8UePbRl8/7P
+hlmYKgZZeBhPYa4qQSVEUNTB07sVFZEpxUzyT7uk8Whk9E5YjJY5NRaTKbHHIKLO
+OWc8H0BDQ6OxOCMmR7mfpowNIDZJl66Y1JxA/9xIDKyuWKvzVg16QKdl06yRl4Tu
+0Y+6LeGoU5+QbNtuO5cbFjEfvSX3dDz3neV7BOVpbpRnkMD8gJuMJzSJ76cizzIz
+Ei2AiWudvLOYPe1QnTwHxkYu/40j0zpKeu5pn+7nDGJDS3/TkVGLluEcBru1cajy
+3kjsNUmb4As=
+</base64>
+  </rpmTag>
+  <rpmTag name="Sigmd5">
+	<base64>hrYT8+H78zdV0bNNPhywmA==
+</base64>
+  </rpmTag>
+  <rpmTag name="Rsaheader">
+	<base64>iQIVAwUAXeh1cwW1VbOEg8ZdAQgcTg/6AvtjmVlXCjciL74o1F6PK60QLVb8XMu2
+Dyqmx/rd/QYECFIsWZ3XOf66P1pP+cJubUYEsvTn0RdKBKRUHa5KXPLKpGhkU2aQ
+67T35NDUhDO1/ZKOaznjmZqtfsHLEkrcrTdNMy/imXnynmmKEkczsQ9Z9pUx3+os
+OcdHLdrEd37kNHfjlYbpamYgaBYdvaiRs5n0hw/zQzqGthpOYAs5jmHvNiniMCTF
+hMa70RRBFXc1DjHwF0rc95gMypN8zUTMkoF++9WRLNcra/gmqfIIk2lbY6y2DacO
+wQh2TMzWsmzo8Ii0ZzfnQUWbWRdu8lQHYI0w4NMWQ3YZgWuYByPti6LG1/iylaGg
+nLASwS1k1rOXNQeAA8XPBXRtBwMPE5U5/WUe43z0VST+lHtj276/u+EEDqJDFJ1p
+ziVyei5hQ78fDWXnL5NlgvIOkpEtUU6JC1u8Foehpp84oHSkC6ixUOntZZQb5Sjk
+vBfi1iKBJuM/O0inCjmSg1+c6n0Xg689b6JWyIqdeGtTVPhW06pBNJEWsX5YK57y
+VXv1KkoembLEspcHc2VWN96wUUVkeqVK1Aud/wZsK4c4gMMhqegm0ot0248YaLKz
+j2b+OBVt+RKYC0FtAn64sA7rkKXFWWqVuGPSSuyFXsJ9bzB3FEByI5CKQHCTH8V9
+sj04wCozgWc=
+</base64>
+  </rpmTag>
+  <rpmTag name="Sha1header">
+	<string>9c1510ea7bda0cc40b61a1c87b56e480415dbfed</string>
+  </rpmTag>
+  <rpmTag name="Sha256header">
+	<string>a1ff4cecee719b0ccfe6282a5639f3c27fb21c7d0f7ac30976f0067b0167758a</string>
+  </rpmTag>
+  <rpmTag name="Name">
+	<string>python3-setuptools-wheel</string>
+  </rpmTag>
+  <rpmTag name="Version">
+	<string>39.2.0</string>
+  </rpmTag>
+  <rpmTag name="Release">
+	<string>5.el8</string>
+  </rpmTag>
+  <rpmTag name="Summary">
+	<string>The setuptools wheel</string>
+  </rpmTag>
+  <rpmTag name="Description">
+	<string>A Python wheel of setuptools to use with venv.</string>
+  </rpmTag>
+  <rpmTag name="Buildtime">
+	<integer>1573572823</integer>
+  </rpmTag>
+  <rpmTag name="Buildhost">
+	<string>aarch64-04.mbox.centos.org</string>
+  </rpmTag>
+  <rpmTag name="Installtime">
+	<integer>1578952144</integer>
+  </rpmTag>
+  <rpmTag name="Size">
+	<integer>347696</integer>
+  </rpmTag>
+  <rpmTag name="Distribution">
+	<string>CentOS</string>
+  </rpmTag>
+  <rpmTag name="Vendor">
+	<string>CentOS</string>
+  </rpmTag>
+  <rpmTag name="License">
+	<string>MIT</string>
+  </rpmTag>
+  <rpmTag name="Packager">
+	<string>CentOS Buildsys &lt;bugs@centos.org&gt;</string>
+  </rpmTag>
+  <rpmTag name="Group">
+	<string>Applications/System</string>
+  </rpmTag>
+  <rpmTag name="Url">
+	<string>https://pypi.python.org/pypi/setuptools</string>
+  </rpmTag>
+  <rpmTag name="Os">
+	<string>linux</string>
+  </rpmTag>
+  <rpmTag name="Arch">
+	<string>noarch</string>
+  </rpmTag>
+  <rpmTag name="Filesizes">
+	<integer>0</integer>
+	<integer>1078</integer>
+	<integer>0</integer>
+	<integer>346618</integer>
+  </rpmTag>
+  <rpmTag name="Filestates">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemodes">
+	<integer>16877</integer>
+	<integer>33188</integer>
+	<integer>16877</integer>
+	<integer>33261</integer>
+  </rpmTag>
+  <rpmTag name="Filerdevs">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemtimes">
+	<integer>1573572823</integer>
+	<integer>1526757502</integer>
+	<integer>1573572723</integer>
+	<integer>1573572720</integer>
+  </rpmTag>
+  <rpmTag name="Filedigests">
+	<string/>
+	<string>c32a3ac395af6321efd28be73d06a00f0db6ab887d1c21d4fec46128d2056d5a</string>
+	<string/>
+	<string>938955c41e6dcc2e73ccaf51bd8f755c64df739929a4acff453fde2d0b921bb2</string>
+  </rpmTag>
+  <rpmTag name="Filelinktos">
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Fileflags">
+	<integer>0</integer>
+	<integer>128</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Fileusername">
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Filegroupname">
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Sourcerpm">
+	<string>python-setuptools-39.2.0-5.el8.src.rpm</string>
+  </rpmTag>
+  <rpmTag name="Fileverifyflags">
+	<integer>0</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+  </rpmTag>
+  <rpmTag name="Archivesize">
+	<integer>348460</integer>
+  </rpmTag>
+  <rpmTag name="Providename">
+	<string>python3-setuptools-wheel</string>
+  </rpmTag>
+  <rpmTag name="Requireflags">
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+  </rpmTag>
+  <rpmTag name="Requirename">
+	<string>rpmlib(CompressedFileNames)</string>
+	<string>rpmlib(FileDigests)</string>
+	<string>rpmlib(PayloadFilesHavePrefix)</string>
+	<string>rpmlib(PayloadIsXz)</string>
+  </rpmTag>
+  <rpmTag name="Requireversion">
+	<string>3.0.4-1</string>
+	<string>4.6.0-1</string>
+	<string>4.0-1</string>
+	<string>5.2-1</string>
+  </rpmTag>
+  <rpmTag name="Rpmversion">
+	<string>4.14.2</string>
+  </rpmTag>
+  <rpmTag name="Changelogtime">
+	<integer>1555502400</integer>
+	<integer>1540209600</integer>
+	<integer>1529928000</integer>
+	<integer>1529668800</integer>
+	<integer>1529409600</integer>
+	<integer>1528372800</integer>
+	<integer>1521547200</integer>
+	<integer>1521028800</integer>
+	<integer>1518177600</integer>
+	<integer>1516104000</integer>
+	<integer>1516104000</integer>
+	<integer>1514894400</integer>
+	<integer>1511265600</integer>
+	<integer>1511265600</integer>
+	<integer>1510228800</integer>
+	<integer>1503230400</integer>
+	<integer>1502280000</integer>
+	<integer>1502280000</integer>
+	<integer>1502280000</integer>
+	<integer>1502193600</integer>
+	<integer>1501156800</integer>
+	<integer>1500120000</integer>
+	<integer>1497528000</integer>
+	<integer>1495886400</integer>
+	<integer>1492948800</integer>
+	<integer>1490443200</integer>
+	<integer>1488024000</integer>
+	<integer>1487332800</integer>
+	<integer>1487246400</integer>
+	<integer>1486209600</integer>
+	<integer>1483444800</integer>
+	<integer>1483012800</integer>
+	<integer>1482926400</integer>
+	<integer>1482494400</integer>
+	<integer>1481630400</integer>
+	<integer>1481457600</integer>
+	<integer>1481284800</integer>
+	<integer>1481284800</integer>
+	<integer>1478692800</integer>
+	<integer>1477915200</integer>
+	<integer>1477396800</integer>
+	<integer>1476792000</integer>
+	<integer>1475928000</integer>
+	<integer>1475409600</integer>
+	<integer>1475409600</integer>
+	<integer>1475064000</integer>
+	<integer>1474804800</integer>
+	<integer>1474113600</integer>
+	<integer>1473508800</integer>
+	<integer>1472299200</integer>
+	<integer>1470830400</integer>
+	<integer>1469793600</integer>
+	<integer>1469707200</integer>
+	<integer>1469275200</integer>
+	<integer>1469188800</integer>
+	<integer>1468929600</integer>
+	<integer>1467633600</integer>
+	<integer>1465992000</integer>
+	<integer>1465300800</integer>
+	<integer>1464868800</integer>
+	<integer>1464696000</integer>
+	<integer>1464523200</integer>
+	<integer>1461844800</integer>
+	<integer>1460808000</integer>
+	<integer>1460721600</integer>
+	<integer>1459425600</integer>
+	<integer>1459339200</integer>
+	<integer>1458129600</integer>
+	<integer>1456574400</integer>
+	<integer>1455364800</integer>
+	<integer>1455278400</integer>
+	<integer>1454932800</integer>
+	<integer>1454760000</integer>
+	<integer>1454500800</integer>
+	<integer>1454241600</integer>
+	<integer>1453723200</integer>
+	<integer>1453723200</integer>
+	<integer>1453118400</integer>
+	<integer>1452600000</integer>
+	<integer>1452254400</integer>
+	<integer>1450440000</integer>
+	<integer>1450180800</integer>
+	<integer>1449921600</integer>
+	<integer>1449230400</integer>
+	<integer>1448452800</integer>
+	<integer>1447588800</integer>
+	<integer>1446811200</integer>
+	<integer>1446552000</integer>
+	<integer>1444737600</integer>
+	<integer>1443009600</integer>
+	<integer>1442923200</integer>
+	<integer>1441627200</integer>
+	<integer>1438776000</integer>
+	<integer>1435579200</integer>
+	<integer>1435233600</integer>
+	<integer>1434801600</integer>
+	<integer>1434628800</integer>
+	<integer>1433937600</integer>
+	<integer>1433678400</integer>
+	<integer>1432987200</integer>
+	<integer>1431950400</integer>
+	<integer>1430136000</integer>
+	<integer>1428148800</integer>
+	<integer>1427025600</integer>
+	<integer>1426939200</integer>
+	<integer>1426507200</integer>
+	<integer>1426420800</integer>
+	<integer>1426420800</integer>
+	<integer>1425643200</integer>
+	<integer>1425556800</integer>
+	<integer>1425038400</integer>
+	<integer>1421755200</integer>
+	<integer>1420804800</integer>
+	<integer>1420632000</integer>
+	<integer>1420372800</integer>
+	<integer>1419595200</integer>
+	<integer>1414065600</integer>
+	<integer>1413201600</integer>
+	<integer>1413028800</integer>
+	<integer>1412337600</integer>
+	<integer>1411819200</integer>
+	<integer>1404129600</integer>
+	<integer>1404129600</integer>
+	<integer>1404129600</integer>
+	<integer>1402142400</integer>
+	<integer>1398427200</integer>
+	<integer>1398340800</integer>
+	<integer>1398254400</integer>
+	<integer>1386590400</integer>
+	<integer>1384776000</integer>
+	<integer>1383825600</integer>
+	<integer>1383566400</integer>
+	<integer>1382961600</integer>
+	<integer>1382788800</integer>
+	<integer>1375617600</integer>
+	<integer>1374580800</integer>
+	<integer>1373976000</integer>
+	<integer>1373025600</integer>
+	<integer>1372852800</integer>
+	<integer>1370865600</integer>
+	<integer>1365681600</integer>
+	<integer>1360843200</integer>
+	<integer>1343995200</integer>
+	<integer>1343995200</integer>
+	<integer>1343044800</integer>
+	<integer>1342872000</integer>
+	<integer>1339416000</integer>
+	<integer>1339070400</integer>
+	<integer>1337083200</integer>
+	<integer>1326542400</integer>
+	<integer>1318852800</integer>
+	<integer>1313928000</integer>
+	<integer>1310644800</integer>
+	<integer>1298376000</integer>
+	<integer>1298376000</integer>
+	<integer>1297252800</integer>
+	<integer>1282478400</integer>
+	<integer>1281441600</integer>
+	<integer>1279800000</integer>
+	<integer>1279800000</integer>
+	<integer>1279713600</integer>
+	<integer>1279713600</integer>
+	<integer>1278158400</integer>
+	<integer>1276171200</integer>
+	<integer>1276171200</integer>
+	<integer>1276171200</integer>
+	<integer>1276171200</integer>
+	<integer>1265284800</integer>
+	<integer>1264766400</integer>
+	<integer>1264766400</integer>
+	<integer>1264507200</integer>
+	<integer>1264161600</integer>
+	<integer>1260792000</integer>
+	<integer>1260705600</integer>
+	<integer>1258372800</integer>
+	<integer>1257249600</integer>
+	<integer>1257249600</integer>
+	<integer>1255694400</integer>
+	<integer>1255348800</integer>
+	<integer>1248609600</integer>
+	<integer>1247572800</integer>
+	<integer>1235649600</integer>
+  </rpmTag>
+  <rpmTag name="Changelogname">
+	<string>Petr Viktorin &lt;pviktori@redhat.com&gt; - 39.0.1-10</string>
+	<string>Lumír Balhar &lt;lbalhar@redhat.com&gt; - 39.2.0-4</string>
+	<string>Petr Viktorin &lt;pviktori@redhat.com&gt; - 39.2.0-3</string>
+	<string>Petr Viktorin &lt;pviktori@redhat.com&gt; - 39.2.0-2</string>
+	<string>Charalampos Stratakis &lt;cstratak@redhat.com&gt; - 39.2.0-1</string>
+	<string>Petr Viktorin &lt;pviktori@redhat.com&gt; - 39.0.1-2</string>
+	<string>Charalampos Stratakis &lt;cstratak@redhat.com&gt; - 39.0.1-1</string>
+	<string>Tomas Orsava &lt;torsava@redhat.com&gt; - 38.4.0-4</string>
+	<string>Fedora Release Engineering &lt;releng@fedoraproject.org&gt; - 38.4.0-3</string>
+	<string>Troy Dawson &lt;tdawson@redhat.com&gt; - 38.4.0-2</string>
+	<string>Charalampos Stratakis &lt;cstratak@redhat.com&gt; - 38.4.0-1</string>
+	<string>Charalampos Stratakis &lt;cstratak@redhat.com&gt; - 38.2.5-1</string>
+	<string>Miro Hrončok &lt;mhroncok@redhat.com&gt; - 37.0.0-1</string>
+	<string>Miro Hrončok &lt;mhroncok@redhat.com&gt; - 36.5.0-1</string>
+	<string>Tomas Orsava &lt;torsava@redhat.com&gt; - 36.2.0-8</string>
+	<string>Tomas Orsava &lt;torsava@redhat.com&gt; - 36.2.0-7</string>
+	<string>Tomas Orsava &lt;torsava@redhat.com&gt; - 36.2.0-6</string>
+	<string>Tomas Orsava &lt;torsava@redhat.com&gt; - 36.2.0-5</string>
+	<string>Tomas Orsava &lt;torsava@redhat.com&gt; - 36.2.0-4</string>
+	<string>Michal Cyprian &lt;mcyprian@redhat.com&gt; - 36.2.0-3</string>
+	<string>Fedora Release Engineering &lt;releng@fedoraproject.org&gt; - 36.2.0-2</string>
+	<string>Charalampos Stratakis &lt;cstratak@redhat.com&gt; - 36.2.0-1</string>
+	<string>Charalampos Stratakis &lt;cstratak@redhat.com&gt; - 36.0.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 35.0.2-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 35.0.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 34.3.2-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 34.3.0-1</string>
+	<string>Michal Cyprian &lt;mcyprian@redhat.com&gt; - 34.2.0-2</string>
+	<string>Charalampos Stratakis &lt;cstratak@redhat.com&gt; - 34.2.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 34.1.1-1</string>
+	<string>Michal Cyprian &lt;mcyprian@redhat.com&gt; - 32.3.1-2</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 32.3.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 32.3.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 32.2.0-1</string>
+	<string>Stratakis Charalampos &lt;cstratak@redhat.com&gt; - 30.4.0-2</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 30.4.0-1</string>
+	<string>Charalampos Stratakis &lt;cstratak@redhat.com&gt; - 28.8.0-3</string>
+	<string>Charalampos Stratakis &lt;cstratak@redhat.com&gt; - 28.8.0-2</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 28.8.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 28.7.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 28.6.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 28.6.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 28.3.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 28.2.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 28.1.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 28.0.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 27.3.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 27.2.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 27.1.2-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 26.0.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 25.1.6-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 25.1.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 25.1.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 25.0.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 24.2.0-1</string>
+	<string>Fedora Release Engineering &lt;rel-eng@lists.fedoraproject.org&gt; - 24.0.1-2</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 24.0.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 23.0.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 22.0.5-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 20.0.0-1</string>
+	<string>Nils Philippsen &lt;nils@redhat.com&gt;</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 21.2.2-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 20.10.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 20.9.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 20.8.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 20.6.7-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 20.4-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 20.3-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 20.2.2-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 20.1.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 20.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 20.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 19.7-1</string>
+	<string>Orion Poplawski &lt;orion@cora.nwra.com&gt; - 19.6.2-2</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 19.6.2-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 19.6-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 19.5-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 19.4-1</string>
+	<string>Orion Poplawski &lt;orion@cora.nwra.com&gt; - 19.2-2</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 19.2-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 19.1.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 18.8.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 18.8-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 18.7.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 18.6.1-1</string>
+	<string>Thomas Spura &lt;tomspur@fedoraproject.org&gt; - 18.5-3</string>
+	<string>Robert Kuska &lt;rkuska@redhat.com&gt; - 18.5-2</string>
+	<string>Robert Kuska &lt;rkuska@redhat.com&gt; - 18.5-1</string>
+	<string>Robert Kuska &lt;rkuska@redhat.coM&gt; - 18.4-1</string>
+	<string>Robert Kuska &lt;rkuska@redhat.com&gt; - 18.3.2-2</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 18.3.2-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 18.3.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 18.1-1</string>
+	<string>Pierre-Yves Chibon &lt;pingou@pingoured.fr&gt; - 18.0.1-2</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 18.0.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 17.1.1-3</string>
+	<string>Fedora Release Engineering &lt;rel-eng@lists.fedoraproject.org&gt; - 17.1.1-2</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 17.1.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 17.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 17.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 16.0-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 15.2-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 15.0-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 14.3.1-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 14.3.1-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 14.3-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 14.2-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 14.1.1-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 13.0.2-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 12.4-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 12.3-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 12.0.3-1</string>
+	<string>Slavek Kabrda &lt;bkabrda@redhat.com&gt; - 11.3.1-2</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 11.3.1-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 11.0-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 8.2.1-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 7.0-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 6.1-1</string>
+	<string>Ralph Bean &lt;rbean@redhat.com&gt; - 6.0.2-2</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 6.0.2-1</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; 6.0.1-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 2.0-8</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 2.0-7</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 2.0-6</string>
+	<string>Fedora Release Engineering &lt;rel-eng@lists.fedoraproject.org&gt; - 2.0-5</string>
+	<string>Matej Stuchlik &lt;mstuchli@redhat.com&gt; - 2.0-4</string>
+	<string>Tomas Radej &lt;tradej@redhat.com&gt; - 2.0-3</string>
+	<string>Matej Stuchlik &lt;mstuchli@redhat.com&gt; - 2.0-2</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 2.0-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 1.4-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 1.3.1-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 1.3-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 1.1.7-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 1.1.6-1</string>
+	<string>Fedora Release Engineering &lt;rel-eng@lists.fedoraproject.org&gt; - 0.9.6-2</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.9.6-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.9.5-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.8-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.7.7-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.7.2-2</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.36-1</string>
+	<string>Fedora Release Engineering &lt;rel-eng@lists.fedoraproject.org&gt; - 0.6.28-4</string>
+	<string>David Malcolm &lt;dmalcolm@redhat.com&gt; - 0.6.28-3</string>
+	<string>David Malcolm &lt;dmalcolm@redhat.com&gt; - 0.6.28-2</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.28-1</string>
+	<string>Fedora Release Engineering &lt;rel-eng@lists.fedoraproject.org&gt; - 0.6.27-3</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.27-2</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.27-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.24-2</string>
+	<string>Fedora Release Engineering &lt;rel-eng@lists.fedoraproject.org&gt; - 0.6.24-2</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.24-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.21-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.19-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.14-7</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.14-6</string>
+	<string>Fedora Release Engineering &lt;rel-eng@lists.fedoraproject.org&gt; - 0.6.14-5</string>
+	<string>Thomas Spura &lt;tomspur@fedoraproject.org&gt; - 0.6.14-4</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.14-3</string>
+	<string>Thomas Spura &lt;tomspur@fedoraproject.org&gt; - 0.6.14-2</string>
+	<string>Thomas Spura &lt;tomspur@fedoraproject.org&gt; - 0.6.14-1</string>
+	<string>David Malcolm &lt;dmalcolm@redhat.com&gt; - 0.6.13-7</string>
+	<string>David Malcolm &lt;dmalcolm@redhat.com&gt; - 0.6.13-6</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.13-5</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.13-4</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.13-3</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.13-2</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.13-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.10-3</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.10-2</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.10-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.9-4</string>
+	<string>David Malcolm &lt;dmalcolm@redhat.com&gt; - 0.6.9-2</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.9-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.8-2</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.8-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.7-2</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.7-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.6-1</string>
+	<string>Toshio Kuratomi &lt;toshio@fedoraproject.org&gt; - 0.6.4-1</string>
+	<string>Fedora Release Engineering &lt;rel-eng@lists.fedoraproject.org&gt; - 0.6c9-5</string>
+	<string>Konstantin Ryabitsev &lt;icon@fedoraproject.org&gt; - 0.6c9-4</string>
+	<string>Fedora Release Engineering &lt;rel-eng@lists.fedoraproject.org&gt; - 0.6c9-3</string>
+  </rpmTag>
+  <rpmTag name="Changelogtext">
+	<string>- Add subpackages with wheels
+Resolves: rhbz#1718032</string>
+	<string>- New subpackage platform-python-setuptools without files from /usr/bin/*
+- python3-setuptools contains only files from /usr/bin/* and depends
+  on platform-python-setuptools
+- Resolves: rhbz#1641973</string>
+	<string>- Allow Python 2 for build
+  see https://hurl.corp.redhat.com/rhel8-py2</string>
+	<string>- Do not use wheel on Python 2</string>
+	<string>- update to 39.2.0 Fixes bug #1572889</string>
+	<string>- Remove test requirements on python2 packages and some exotic packages
+- Skip tests on Python 2</string>
+	<string>- update to 39.0.1 Fixes bug #1531527</string>
+	<string>- Skip test_virtualenv due to broken executable detection</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild</string>
+	<string>- Update conditional</string>
+	<string>- update to 38.4.0 Fixes bug #1531527</string>
+	<string>- update to 38.2.5 Fixes bug #1528968</string>
+	<string>- Update to 37.0.0 (fixes #1474126)
+- Removed not needed pip3 patch (upstream included different version of fix)</string>
+	<string>- Update to 36.5.0 (related to #1474126)</string>
+	<string>- Remove the platform-python subpackage</string>
+	<string>- Re-enable tests to finish bootstrapping the platform-python stack
+  (https://fedoraproject.org/wiki/Changes/Platform_Python_Stack)</string>
+	<string>- Add the platform-python subpackage
+- Disable tests so platform-python stack can be bootstrapped
+  (https://fedoraproject.org/wiki/Changes/Platform_Python_Stack)</string>
+	<string>- Add Patch 0 that fixes a test suite failure on Python 3 in absence of
+  the Python 2 version of pip
+- Move docs to their proper place</string>
+	<string>- Switch macros to bcond's and make Python 2 optional to facilitate building
+  the Python 2 and Python 3 modules.</string>
+	<string>- Revert "Add --executable option to easy_install command"
+  This enhancement is currently not needed and it can possibly
+  collide with `pip --editable`option</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild</string>
+	<string>- update to 36.2.0. Fixes bug #1470908</string>
+	<string>- update to 36.0.1. Fixes bug #1458093</string>
+	<string>- update to 35.0.2. Fixes bug #1446622</string>
+	<string>- Update to 35.0.1. Fixes bug #1440388</string>
+	<string>- Update to 34.3.2. Fixes bug #1428818</string>
+	<string>- Update to 34.3.0. Fixes bug #1426463</string>
+	<string>- Add --executable option to easy_install command</string>
+	<string>- Update to 34.2.0. Fixes bug #1421676</string>
+	<string>- Update to 34.1.1. Fixes bug #1412268
+- Fix License tag. Fixes bug #1412268
+- Add Requires for fomerly bundled projects: six, packaging appdirs</string>
+	<string>- Use python macros in build and install sections</string>
+	<string>- Update to 32.3.1. Fixes bug #1409091</string>
+	<string>- Update to 32.3.0. Fixes bug #1408564</string>
+	<string>- Update to 32.2.0. Fixes bug #1400310</string>
+	<string>- Enable tests</string>
+	<string>- Update to 30.4.0. Fixes bug #1400310</string>
+	<string>- Rebuild for Python 3.6 with wheel
+- Disable tests</string>
+	<string>- Rebuild for Python 3.6 without wheel</string>
+	<string>- Update to 28.8.1. Fixes bug #1392722</string>
+	<string>- Update to 28.7.1. Fixes bug #1389917</string>
+	<string>- Update to 28.6.1. Fixes bug #1387071</string>
+	<string>- Update to 28.6.0. Fixes bug #1385655</string>
+	<string>- Update to 28.3.0. Fixes bug #1382971</string>
+	<string>- Update to 28.2.0. Fixes bug #1381099</string>
+	<string>- Update to 28.1.0. Fixes bug #1381066</string>
+	<string>- Update to 28.0.0. Fixes bug #1380073</string>
+	<string>- Update to 27.3.0. Fixes bug #1378067</string>
+	<string>- Update to 27.2.0. Fixes bug #1376298</string>
+	<string>- Update to 27.1.2. Fixes bug #1370777</string>
+	<string>- Update to 26.0.0. Fixes bug #1370777</string>
+	<string>- Update to 25.1.6. Fixes bug #1362325</string>
+	<string>- Update to 25.1.1. Fixes bug #1361465</string>
+	<string>- Update to 25.1.0</string>
+	<string>- Update to 25.0.0</string>
+	<string>- Update to 24.2.0. Fixes bug #1352734</string>
+	<string>- https://fedoraproject.org/wiki/Changes/Automatic_Provides_for_Python_RPM_Packages</string>
+	<string>- Update to 24.0.1. Fixes bug #1352532</string>
+	<string>- Update to 23.0.0. Fixes bug #1346542</string>
+	<string>- Update to 22.0.5. Fixes bug #1342706</string>
+	<string>- Upgrade to 22.0.0</string>
+	<string>- fix source URL</string>
+	<string>- Update to 21.2.2. Fixes bug #1332357</string>
+	<string>- Update to 20.10.1. Fixes bug #1330375</string>
+	<string>- Update to 20.9.0. Fixes bug #1327827</string>
+	<string>- Update to 20.8.1. Fixes bug #1325910</string>
+	<string>- Update to 20.6.7. Fixes bug #1322836</string>
+	<string>- Update to 20.4. Fixes bug #1319366</string>
+	<string>- Update to 20.3. Fixes bug #1311967</string>
+	<string>- Update to 20.2.2. Fixes bug #1311967</string>
+	<string>- Update to 20.1.1. Fixes bug #130719</string>
+	<string>- Update to 20.1. Fixes bug #1307000</string>
+	<string>- Update to 20.0. Fixes bug #1305394</string>
+	<string>- Update to 19.7. Fixes bug #1304563</string>
+	<string>- Fix python3 package file ownership</string>
+	<string>- Update to 19.6.2. Fixes bug #1303397</string>
+	<string>- Update to 19.6.</string>
+	<string>- Update to 19.5. Fixes bug #1301313</string>
+	<string>- Update to 19.4. Fixes bug #1299288</string>
+	<string>- Cleanup spec from python3-setuptools review</string>
+	<string>- Update to 19.2. Fixes bug #1296755</string>
+	<string>- Update to 19.1.1. Fixes bug #1292658</string>
+	<string>- Update to 18.8.1. Fixes bug #1291678</string>
+	<string>- Update to 18.8. Fixes bug #1290942</string>
+	<string>- Update to 18.7.1. Fixes bug #1287372</string>
+	<string>- Update to 18.6.1. Fixes bug #1270578</string>
+	<string>- Try to disable zip_safe bug #1271776
+- Add python2 subpackage</string>
+	<string>- Add patch so it is possible to set test_args variable</string>
+	<string>- Update to 18.5. Fixes bug #1270578</string>
+	<string>- Update to 18.4. Fixes bug #1270578
+- Build with wheel and check phase</string>
+	<string>- Python3.5 rebuild: rebuild without wheel and check phase</string>
+	<string>- Update to 18.3.2. Fixes bug #1264902</string>
+	<string>- Update to 18.3.1. Fixes bug #1256188</string>
+	<string>- Update to 18.1. Fixes bug #1249436</string>
+	<string>- Explicitely provide python2-setuptools</string>
+	<string>- Update to 18.0.1</string>
+	<string>- Drop no longer needed Requires/BuildRequires on python-backports-ssl_match_hostname
+- Fixes bug #1231325</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild</string>
+	<string>- Update to 17.1.1. Fixes bug 1229507</string>
+	<string>- Update to 17.1. Fixes bug 1229066</string>
+	<string>- Update to 17</string>
+	<string>- Update to 16</string>
+	<string>- new version</string>
+	<string>- new version</string>
+	<string>- new version</string>
+	<string>- new version</string>
+	<string>- new version</string>
+	<string>- new version</string>
+	<string>- new version</string>
+	<string>- new version</string>
+	<string>- new version</string>
+	<string>- new version</string>
+	<string>- Update to 12.0.3</string>
+	<string>- Huge spec cleanup
+- Make spec buildable on all Fedoras and RHEL 6 and 7
+- Make tests actually run</string>
+	<string>- Update to 11.3.1. Fixes bugs: #1179393 and #1178817</string>
+	<string>- Update to 11.0. Fixes bug #1178421</string>
+	<string>- Update to 8.2.1. Fixes bug #1175229</string>
+	<string>- Latest upstream.  Fixes bug #1154590.</string>
+	<string>- Latest upstream.  Fixes bug #1152130.</string>
+	<string>- Modernized python2 macros.
+- Inlined locale environment variables in the %check section.
+- Remove bundled egg-info and .exes.</string>
+	<string>- Update to 6.0.2</string>
+	<string>- Update to 6.0.1. Fixes bug #1044444</string>
+	<string>- Remove the python-setuptools-devel Virtual Provides as per this Fedora 21
+  Change: http://fedoraproject.org/wiki/Changes/Remove_Python-setuptools-devel</string>
+	<string>- And another bug in sdist</string>
+	<string>- Fix a bug in the sdist command</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild</string>
+	<string>- Rebuild as wheel for Python 3.4</string>
+	<string>- Rebuilt for tag f21-python</string>
+	<string>- Add a switch to build setuptools as wheel</string>
+	<string>- Update to new upstream release with a few things removed from the API:
+  Changelog: https://pypi.python.org/pypi/setuptools#id139</string>
+	<string>- Update to 1.4 that gives easy_install pypi credential handling</string>
+	<string>- Minor upstream update to reign in overzealous warnings</string>
+	<string>- Upstream update that pulls in our security patches</string>
+	<string>- Update to newer upstream release that has our patch to the unittests
+- Fix for http://bugs.python.org/issue17997#msg194950 which affects us since
+  setuptools copies that code. Changed to use
+  python-backports-ssl_match_hostname so that future issues can be fixed in
+  that package.</string>
+	<string>- Update to newer upstream release.  Some minor incompatibilities listed but
+  they should affect few, if any consumers.</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild</string>
+	<string>- Upstream update -- just fixes python-2.4 compat</string>
+	<string>- Update to 0.9.5
+  - package_index can handle hashes other than md5
+  - Fix security vulnerability in SSL certificate validation
+  - https://bugzilla.redhat.com/show_bug.cgi?id=963260</string>
+	<string>- Update to upstream 0.8  release.  Codebase now runs on anything from
+  python-2.4 to python-3.3 without having to be translated by 2to3.</string>
+	<string>- Update to 0.7.7 upstream release</string>
+	<string>- Update to the setuptools-0.7 branch that merges distribute and setuptools</string>
+	<string>- Update to upstream 0.6.36.  Many bugfixes</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild</string>
+	<string>- rebuild for https://fedoraproject.org/wiki/Features/Python_3.3</string>
+	<string>- remove rhel logic from with_python3 conditional</string>
+	<string>- New upstream release:
+  - python-3.3 fixes
+  - honor umask when setuptools is used to install other modules</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild</string>
+	<string>- Fix easy_install.py having a python3 shebang in the python2 package</string>
+	<string>- Upstream bugfix</string>
+	<string>- Upstream bugfix</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild</string>
+	<string>- Upstream bugfix
+- Compile the win32 launcher binary using mingw</string>
+	<string>- Upstream bugfix release</string>
+	<string>- Upstream bugfix release</string>
+	<string>- Switch to patch that I got in to upstream</string>
+	<string>- Fix build on python-3.2</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild</string>
+	<string>- rebuild with python3.2
+  http://lists.fedoraproject.org/pipermail/devel/2010-August/141368.html</string>
+	<string>- Update description to mention this is distribute</string>
+	<string>- bump for building against python 2.7</string>
+	<string>- update to new version
+- all patches are upsteam</string>
+	<string>- generalize path of easy_install-2.6 and -3.1 to -2.* and -3.*</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Features/Python_2.7/MassRebuild</string>
+	<string>- Upstream patch for compatibility problem with setuptools
+- Minor spec cleanups
+- Provide python-distribute for those who see an import distribute and need
+  to get the proper package.</string>
+	<string>- Fix race condition in unittests under the python-2.6.x on F-14.</string>
+	<string>- Fix few more buildroot macros</string>
+	<string>- Include data that's needed for running tests</string>
+	<string>- Update to upstream 0.6.13
+- Minor specfile formatting fixes</string>
+	<string>- First build with python3 support enabled.</string>
+	<string>- Really disable the python3 portion</string>
+	<string>- Update the python3 portions but disable for now.
+- Update to 0.6.10
+- Remove %pre scriptlet as the file has a different name than the old
+  package's directory</string>
+	<string>- Fix install to make /usr/bin/easy_install the py2 version
+- Don't need python3-tools since the library is now in the python3 package
+- Few other changes to cleanup style</string>
+	<string>- add python3 subpackage</string>
+	<string>- New upstream bugfix release.</string>
+	<string>- Test rebuild</string>
+	<string>- Update to 0.6.8.
+- Fix directory =&gt; file transition when updating from setuptools-0.6c9.</string>
+	<string>- Fix duplicate inclusion of files.
+- Only Obsolete old versions of python-setuptools-devel</string>
+	<string>- Move easy_install back into the main package as the needed files have been
+  moved from python-devel to the main python package.
+- Update to 0.6.7 bugfix.</string>
+	<string>- Upstream bugfix release.</string>
+	<string>- First build from the distribute codebase -- distribute-0.6.4.
+- Remove svn patch as upstream has chosen to go with an easier change for now.</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_12_Mass_Rebuild</string>
+	<string>- Apply SVN-1.6 versioning patch (rhbz #511021)</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_11_Mass_Rebuild</string>
+  </rpmTag>
+  <rpmTag name="Filedevices">
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Fileinodes">
+	<integer>1</integer>
+	<integer>2</integer>
+	<integer>3</integer>
+	<integer>4</integer>
+  </rpmTag>
+  <rpmTag name="Filelangs">
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Provideflags">
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Provideversion">
+	<string>39.2.0-5.el8</string>
+  </rpmTag>
+  <rpmTag name="Dirindexes">
+	<integer>0</integer>
+	<integer>1</integer>
+	<integer>2</integer>
+	<integer>3</integer>
+  </rpmTag>
+  <rpmTag name="Basenames">
+	<string>python3-setuptools-wheel</string>
+	<string>LICENSE</string>
+	<string>python3-wheels</string>
+	<string>setuptools-39.2.0-py2.py3-none-any.whl</string>
+  </rpmTag>
+  <rpmTag name="Dirnames">
+	<string>/usr/share/licenses/</string>
+	<string>/usr/share/licenses/python3-setuptools-wheel/</string>
+	<string>/usr/share/</string>
+	<string>/usr/share/python3-wheels/</string>
+  </rpmTag>
+  <rpmTag name="Optflags">
+	<string>-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -fasynchronous-unwind-tables -fstack-clash-protection</string>
+  </rpmTag>
+  <rpmTag name="Payloadformat">
+	<string>cpio</string>
+  </rpmTag>
+  <rpmTag name="Payloadcompressor">
+	<string>xz</string>
+  </rpmTag>
+  <rpmTag name="Payloadflags">
+	<string>2</string>
+  </rpmTag>
+  <rpmTag name="Installcolor">
+	<integer>3</integer>
+  </rpmTag>
+  <rpmTag name="Installtid">
+	<integer>1578952143</integer>
+  </rpmTag>
+  <rpmTag name="Platform">
+	<string>noarch-redhat-linux-gnu</string>
+  </rpmTag>
+  <rpmTag name="Filecolors">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Fileclass">
+	<integer>0</integer>
+	<integer>1</integer>
+	<integer>0</integer>
+	<integer>2</integer>
+  </rpmTag>
+  <rpmTag name="Classdict">
+	<string>directory</string>
+	<string>ASCII text</string>
+	<string>Python script, ASCII text executable (Zip archive data, at least v2.0 to extract)</string>
+  </rpmTag>
+  <rpmTag name="Filedigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Encoding">
+	<string>utf-8</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigest">
+	<string>c4c7e51b96a49540655acdb7187ba320818818fad98376843150556793f768a8</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+</rpmHeader>
+<rpmHeader>
+  <rpmTag name="Headeri18ntable">
+	<string>C</string>
+  </rpmTag>
+  <rpmTag name="Sigsize">
+	<integer>6108</integer>
+  </rpmTag>
+  <rpmTag name="Sigpgp">
+	<base64>iQIVAwUAXg5FkgW1VbOEg8ZdAQhxWRAAjXX9mPM/kqCYJrHT1ifBMsR2INMaLv1C
+xfweTcoW0sVKP9W+p6G3U8KC6RYwrXJ4ylUK110McQsRDg82RGUdrX70pp5QX4Po
+ajoAAcbqDmDr++lDvBub9Sre2CgW9LWWsu9W2vPAOZWMawvHidUYxIQ6c8ADDXbn
+YV4INu1RPo58pIvO4awSutVleNJQUW6VoA/7+vR6V0+g131TgJTcIrSPjuNGBVLJ
+Pj1BuKBhj32prH/V0sY4q+zns32KZ45N/S4L3xbeXJIIuezTQrqK1f0lj0bzLOrd
+3IQvZF7lgJ/HLmZ9MCLSft86LthVIOcDDrReJPx9gwM/jqqOZqc+BRCtX4o1Yc09
+AbinAeALF7y64UU2PZ4gyBkyq95QS7fGp96HFfAo/4rpjQ0GG+uGgTuBanHtur53
+AlZ2qbqdbCRk+aYMx8oQEv4+GxIC1IF2e7NrnLmjMN28cBSkmjmF9FajJSOTl+rA
+ocTbf50Gr99ex0pmmCJiwRgPidjq8/2Eri3F+d8cL6ouj4Utt2yWZwWlIrzjPcD/
+wu/RVzsmbpf1EKE+tuVvKuXPplgpFsgjJaFj7d8ikLde9cqm336XB/i6a9tq8EPj
+w3AugoH8UTcIRAlcqXHBEUyYV67gVq3piMAAOAQKunSllohWtj/dNOpxOZE7S4sI
+EvcN96Efsv4=
+</base64>
+  </rpmTag>
+  <rpmTag name="Sigmd5">
+	<base64>uvXgSxLcrP83kuQh/sdCdQ==
+</base64>
+  </rpmTag>
+  <rpmTag name="Rsaheader">
+	<base64>iQIVAwUAXg5FkgW1VbOEg8ZdAQhYEw//UBuTKJYt3M/o+3EWGdMUwMIqdR0fdZnM
+juPTZ1VJnPPy6Zqzk7CH/zmzXARzNo3KvTHn+F1YZSHH5Ufwmyz4tqlgfXRmig4Z
+thAdPUsWE67pyckPq+XWI8qZI5H91keOlmlIwuoMlz/5saBBANqwGxwFrWU2ep2q
+Jq52vrblDMV0wjEl45+EPLESWcd3W81U4nmODlTyVaiRnMx7o8Ti3UsryNHgOE2X
+rpddLVuf00qCfaU+OUpyBzs1GZy83rLeUAPsw5vldIEyOsleXLMTneMWVa+QNT2D
+iDuubMiyYkwMrsroYLbjGH7nziTxIqh8ImJy7CrCZ6yK00mDkZts3P/uyeqb028b
+5STMMY6ow32thgs9oed77QXayTuK2c2rs0ZekjgkfAr0ACmpG0HD0I2JqfODN9g1
++3w4q2H/nFPfXiEuOf7DaU2MQ/InjY9EBCDT2uQG9/BmMZlYDb25QhNO8dELuSMI
+Mtdef8NYcSIpVLcXALhlgk/5vMPArB6kneV8dpoVAEiH2JxPuAJp2Z3QdOSBlj6q
+CrBcnD2GL6UzIKqUexAHo5TVPX15jo9Rp0x4vVpy46YrgEQYf+Ma77lDxcsx2YO0
+8tGFmx3Sf+d6+CzHW5UgBvEUfMOd6LHkQ/FBU6olRHdt/WWpJi38i9xhZ8V14F/Z
+RPQiUFwrNNA=
+</base64>
+  </rpmTag>
+  <rpmTag name="Sha1header">
+	<string>2f44019797e26744fb67d24e56ccab34146ec5fa</string>
+  </rpmTag>
+  <rpmTag name="Sha256header">
+	<string>a10e56489fa653215f224d8cff8aa16bf7c764ec1698dcd062606cf10ff565f3</string>
+  </rpmTag>
+  <rpmTag name="Name">
+	<string>centos-gpg-keys</string>
+  </rpmTag>
+  <rpmTag name="Version">
+	<string>8.1</string>
+  </rpmTag>
+  <rpmTag name="Release">
+	<string>1.1911.0.8.el8</string>
+  </rpmTag>
+  <rpmTag name="Summary">
+	<string>CentOS Linux RPM keys</string>
+  </rpmTag>
+  <rpmTag name="Description">
+	<string>CentOS Linux RPM signature keys</string>
+  </rpmTag>
+  <rpmTag name="Buildtime">
+	<integer>1577978521</integer>
+  </rpmTag>
+  <rpmTag name="Buildhost">
+	<string>aarch64-06.mbox.centos.org</string>
+  </rpmTag>
+  <rpmTag name="Installtime">
+	<integer>1578952144</integer>
+  </rpmTag>
+  <rpmTag name="Size">
+	<integer>3370</integer>
+  </rpmTag>
+  <rpmTag name="Distribution">
+	<string>CentOS</string>
+  </rpmTag>
+  <rpmTag name="Vendor">
+	<string>CentOS</string>
+  </rpmTag>
+  <rpmTag name="License">
+	<string>GPLv2</string>
+  </rpmTag>
+  <rpmTag name="Packager">
+	<string>CentOS Buildsys &lt;bugs@centos.org&gt;</string>
+  </rpmTag>
+  <rpmTag name="Group">
+	<string>System Environment/Base</string>
+  </rpmTag>
+  <rpmTag name="Os">
+	<string>linux</string>
+  </rpmTag>
+  <rpmTag name="Arch">
+	<string>noarch</string>
+  </rpmTag>
+  <rpmTag name="Filesizes">
+	<integer>0</integer>
+	<integer>1683</integer>
+	<integer>1687</integer>
+  </rpmTag>
+  <rpmTag name="Filestates">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemodes">
+	<integer>16877</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+  </rpmTag>
+  <rpmTag name="Filerdevs">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemtimes">
+	<integer>1577978520</integer>
+	<integer>1577978520</integer>
+	<integer>1577978520</integer>
+  </rpmTag>
+  <rpmTag name="Filedigests">
+	<string/>
+	<string>146059788b214d7ba0dd70c1cf21111e594c6cfde201da8a9a88fe7101be8a78</string>
+	<string>c9c03d66017969a4e7cc2378cac520d726d87e1f24422ec28a96065e43ce8c4a</string>
+  </rpmTag>
+  <rpmTag name="Filelinktos">
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Fileflags">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Fileusername">
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Filegroupname">
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Sourcerpm">
+	<string>centos-release-8.1-1.1911.0.8.el8.src.rpm</string>
+  </rpmTag>
+  <rpmTag name="Fileverifyflags">
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+  </rpmTag>
+  <rpmTag name="Archivesize">
+	<integer>3936</integer>
+  </rpmTag>
+  <rpmTag name="Providename">
+	<string>centos-gpg-keys</string>
+  </rpmTag>
+  <rpmTag name="Requireflags">
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+  </rpmTag>
+  <rpmTag name="Requirename">
+	<string>rpmlib(CompressedFileNames)</string>
+	<string>rpmlib(FileDigests)</string>
+	<string>rpmlib(PayloadFilesHavePrefix)</string>
+	<string>rpmlib(PayloadIsXz)</string>
+  </rpmTag>
+  <rpmTag name="Requireversion">
+	<string>3.0.4-1</string>
+	<string>4.6.0-1</string>
+	<string>4.0-1</string>
+	<string>5.2-1</string>
+  </rpmTag>
+  <rpmTag name="Conflictflags">
+	<integer>2</integer>
+  </rpmTag>
+  <rpmTag name="Conflictname">
+	<string>centos-release</string>
+  </rpmTag>
+  <rpmTag name="Conflictversion">
+	<string>8.0-0.1905.0.10</string>
+  </rpmTag>
+  <rpmTag name="Rpmversion">
+	<string>4.14.2</string>
+  </rpmTag>
+  <rpmTag name="Changelogtime">
+	<integer>1577966400</integer>
+	<integer>1576756800</integer>
+	<integer>1576670400</integer>
+	<integer>1576584000</integer>
+	<integer>1565784000</integer>
+	<integer>1565438400</integer>
+	<integer>1565438400</integer>
+	<integer>1565438400</integer>
+	<integer>1557316800</integer>
+  </rpmTag>
+  <rpmTag name="Changelogname">
+	<string>Brian Stinson &lt;bstinson@centosproject.org&gt; - 8-1.0.8</string>
+	<string>bstinson@centosproject.org - 8-1.0.7</string>
+	<string>Pablo Greco &lt;pgreco@centosproject.org&gt; - 8-1.el8</string>
+	<string>bstinson@centosproject.org - 8-1.el8</string>
+	<string>Neal Gompa &lt;ngompa@centosproject.org&gt; 8-1.el8</string>
+	<string>Fabian Arrotin &lt;arrfab@centos.org&gt; 8-0.el8</string>
+	<string>Fabian Arrotin &lt;arrfab@centos.org&gt; 8-0.el8</string>
+	<string>Brian Stinson &lt;bstinson@centosproject.org&gt; 8-0.el7</string>
+	<string>Pablo Greco &lt;pablo@fliagreco.com.ar&gt; 8-0.el7</string>
+  </rpmTag>
+  <rpmTag name="Changelogtext">
+	<string>- Add base module platform Provides so DNF can auto-discover modular platform (ngompa)pr#6
+- Switched CR repo to mirrorlist to spread the load (arrfab)pr#5</string>
+	<string>- Typo fixes
+- Disable the HA repo by default</string>
+	<string>- Fix requires in armhfp</string>
+	<string>- Add the HighAvailability repository</string>
+	<string>- Split repositories and GPG keys out into subpackages</string>
+	<string>- modified baseurl paths, even if disabled</string>
+	<string>- Enabled Extras by default.
+- Fixed sources paths for BaseOS/AppStream</string>
+	<string>- Update Debuginfo and fasttrack to use releasever
+- Fix CentOS-media.repo to include appstream</string>
+	<string>- Initial setup for CentOS-8</string>
+  </rpmTag>
+  <rpmTag name="Filedevices">
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Fileinodes">
+	<integer>1</integer>
+	<integer>2</integer>
+	<integer>3</integer>
+  </rpmTag>
+  <rpmTag name="Filelangs">
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Provideflags">
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Provideversion">
+	<string>8.1-1.1911.0.8.el8</string>
+  </rpmTag>
+  <rpmTag name="Dirindexes">
+	<integer>0</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Basenames">
+	<string>rpm-gpg</string>
+	<string>RPM-GPG-KEY-centosofficial</string>
+	<string>RPM-GPG-KEY-centostesting</string>
+  </rpmTag>
+  <rpmTag name="Dirnames">
+	<string>/etc/pki/</string>
+	<string>/etc/pki/rpm-gpg/</string>
+  </rpmTag>
+  <rpmTag name="Optflags">
+	<string>-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -fasynchronous-unwind-tables -fstack-clash-protection</string>
+  </rpmTag>
+  <rpmTag name="Payloadformat">
+	<string>cpio</string>
+  </rpmTag>
+  <rpmTag name="Payloadcompressor">
+	<string>xz</string>
+  </rpmTag>
+  <rpmTag name="Payloadflags">
+	<string>2</string>
+  </rpmTag>
+  <rpmTag name="Installcolor">
+	<integer>3</integer>
+  </rpmTag>
+  <rpmTag name="Installtid">
+	<integer>1578952143</integer>
+  </rpmTag>
+  <rpmTag name="Platform">
+	<string>aarch64-redhat-linux-gnu</string>
+  </rpmTag>
+  <rpmTag name="Filecolors">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Fileclass">
+	<integer>0</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Classdict">
+	<string>directory</string>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Filedigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Encoding">
+	<string>utf-8</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigest">
+	<string>6dd3fc43178e91c37365de93270105848a158e06478511f3c6f3feed1c410d64</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+</rpmHeader>
+<rpmHeader>
+  <rpmTag name="Headeri18ntable">
+	<string>C</string>
+  </rpmTag>
+  <rpmTag name="Sigsize">
+	<integer>4184</integer>
+  </rpmTag>
+  <rpmTag name="Sigpgp">
+	<base64>iQIVAwUAXRqQ7AW1VbOEg8ZdAQiuvRAAn5uWj1Jia/VcSZ+/pqb6hfs+kRyz0nYp
+SpZKJ/6FaDSlKmmV559vBZ+pr5KJN5jzlObv1QCn5ZzYcVezWDL/znwBIq1cYQ1u
+zFQ8yc8J2oW62PO2xixdxVI5lB/YzGlVWN9KfYakuKX7VZi6CPVObolbyvqTaNIi
+IDqgejop95OsNIjZVMzw0OI7arUdVcFFMwnBg4lFxZRStAfB4ea5ZWSXXLQnhHMU
+5tm4KieLGMNqbFxYRIyg8Q2+b9bp0Q6+71lZ/+BGm+hBfCQuWOO06dzMQIaoTQcb
+iip8GKR0KcrpXy38q4hDVjbH/cYMwa6yw/Sr0u6D0QQvkAq5buBdgcB9XUfn93tF
+GFZ4V7uEkHAdWCXiaqbzFRcyV79I5SRXqc7qRMawOZfjdE5Sut2EseToA35+jo77
+Q1Ffp3negR6+5ypmb1LNttQTSXtdt0V6EHsRBpwi3I+UxSmbSKv8Y8Uuf7IIZcZa
+wRMnXFaETTRXXR95EgR17Y0QpSleJ6qszstoFyawXKiDDAlC/HPkAKZ0wRnfTz+s
+y+VJopplBrxQUjtB64FkkzPqUdsAxUexI120+rCHmtjkuCXA6GiUp3FYT7/IL3zv
+0QRdNmSp8pmS3yvU+uc3sNRph0i4zcZ1D+MCelynhT4pqpKzsJI+l6cJGQ+NOeUl
+QuyM9r1vrLM=
+</base64>
+  </rpmTag>
+  <rpmTag name="Sigmd5">
+	<base64>FwFnYysP6D/is/KxKWEJ4g==
+</base64>
+  </rpmTag>
+  <rpmTag name="Rsaheader">
+	<base64>iQIVAwUAXRqQ7AW1VbOEg8ZdAQgq5RAAvUWpAHCvxXTL0s2f7O16k74Xd1VxiCLw
+/afAA3UcIH2M711wQw6waHmqRnSCzRTGAv3BD5T1Nf5z6VUQzUqCclbx5CO52YnB
+CUkXZz6YvYPTyHqw8L3SrhY8Nw3HHWP2vtGkUR3B/LJ9kBzlEf0fiY0nb/5z29Iw
+ad0kS39qM6E3SzNzQ9Fgoiuiq+rCV+vbCs1V015tdEDDihiDlIQmC7mS409ntLMy
+3McY5QpxJu3JQZgOgQaMwzPxwphZB0asaSOyQKSsu9rG5R4KPFjTS2Dl38NitfaB
+MLdffJUusBTVxvrJOGt2y5cQy2WR1lJ9O4ZTRzNcqIYXqFHyTI2ie9fwy6L9/8r0
+MY2Cc8H7VvnGjrPjhctiKX0FC3ybYFBzjSdGiTXNhhUkFMLJHRY9Cr/1syVBZvtt
+rXukVLa1eGcmjnjbZljxcCadeWvUGhu76picCC9wghjt6xRgXg7R28sfOb6eeo6A
+2PfdnH0HpmYZGPEnOCFe8RrXqiSGYdb53Ygnm77PsMg4syRMchqYb3xPqrqtoQKp
+U07ConhZBDcukJvKo4g6Do4CCxrjepXd1r3bFL/t7DmPn8SpSsnlITnX8YwGjhpb
+bYv8tEjUEFgzleOVQpzwQpROuXEbQsNhn52QQDCSuMNCGc6QG77QgfrJBdcAqToE
+igr94Q5XZxM=
+</base64>
+  </rpmTag>
+  <rpmTag name="Sha1header">
+	<string>770705e46ee139ff2f1b5b22705127013da215fb</string>
+  </rpmTag>
+  <rpmTag name="Sha256header">
+	<string>291aeadedf06189d50bf3aeaf1171f5c52649136bc95b73ba6c9e8233eef8fb6</string>
+  </rpmTag>
+  <rpmTag name="Name">
+	<string>langpacks-en</string>
+  </rpmTag>
+  <rpmTag name="Version">
+	<string>1.0</string>
+  </rpmTag>
+  <rpmTag name="Release">
+	<string>12.el8</string>
+  </rpmTag>
+  <rpmTag name="Summary">
+	<string>English langpacks meta-package</string>
+  </rpmTag>
+  <rpmTag name="Description">
+	<string>This package provides English langpacks meta-package.</string>
+  </rpmTag>
+  <rpmTag name="Buildtime">
+	<integer>1557795722</integer>
+  </rpmTag>
+  <rpmTag name="Buildhost">
+	<string>x86-01.mbox.centos.org</string>
+  </rpmTag>
+  <rpmTag name="Installtime">
+	<integer>1578952160</integer>
+  </rpmTag>
+  <rpmTag name="Size">
+	<integer>400</integer>
+  </rpmTag>
+  <rpmTag name="Distribution">
+	<string>CentOS</string>
+  </rpmTag>
+  <rpmTag name="Vendor">
+	<string>CentOS</string>
+  </rpmTag>
+  <rpmTag name="License">
+	<string>GPLv2+</string>
+  </rpmTag>
+  <rpmTag name="Packager">
+	<string>CentOS Buildsys &lt;bugs@centos.org&gt;</string>
+  </rpmTag>
+  <rpmTag name="Group">
+	<string>Unspecified</string>
+  </rpmTag>
+  <rpmTag name="Os">
+	<string>linux</string>
+  </rpmTag>
+  <rpmTag name="Arch">
+	<string>noarch</string>
+  </rpmTag>
+  <rpmTag name="Filesizes">
+	<integer>400</integer>
+  </rpmTag>
+  <rpmTag name="Filestates">
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemodes">
+	<integer>33188</integer>
+  </rpmTag>
+  <rpmTag name="Filerdevs">
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemtimes">
+	<integer>1557795721</integer>
+  </rpmTag>
+  <rpmTag name="Filedigests">
+	<string>3d8d5f74443d23b5a2d5f36ffa1937389d8960cdc748a1a1a88d061fd0e6e13b</string>
+  </rpmTag>
+  <rpmTag name="Filelinktos">
+	<string/>
+  </rpmTag>
+  <rpmTag name="Fileflags">
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Fileusername">
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Filegroupname">
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Sourcerpm">
+	<string>langpacks-1.0-12.el8.src.rpm</string>
+  </rpmTag>
+  <rpmTag name="Fileverifyflags">
+	<integer>4294967295</integer>
+  </rpmTag>
+  <rpmTag name="Archivesize">
+	<integer>700</integer>
+  </rpmTag>
+  <rpmTag name="Providename">
+	<string>langpacks-en</string>
+	<string>metainfo()</string>
+	<string>metainfo(org.fedoraproject.LangPack-en.metainfo.xml)</string>
+  </rpmTag>
+  <rpmTag name="Requireflags">
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+  </rpmTag>
+  <rpmTag name="Requirename">
+	<string>rpmlib(CompressedFileNames)</string>
+	<string>rpmlib(FileDigests)</string>
+	<string>rpmlib(PayloadFilesHavePrefix)</string>
+	<string>rpmlib(PayloadIsXz)</string>
+  </rpmTag>
+  <rpmTag name="Requireversion">
+	<string>3.0.4-1</string>
+	<string>4.6.0-1</string>
+	<string>4.0-1</string>
+	<string>5.2-1</string>
+  </rpmTag>
+  <rpmTag name="Rpmversion">
+	<string>4.14.2</string>
+  </rpmTag>
+  <rpmTag name="Changelogtime">
+	<integer>1518004800</integer>
+	<integer>1517486400</integer>
+	<integer>1501070400</integer>
+	<integer>1486728000</integer>
+	<integer>1471262400</integer>
+	<integer>1456747200</integer>
+	<integer>1456488000</integer>
+	<integer>1456228800</integer>
+	<integer>1454587200</integer>
+	<integer>1453896000</integer>
+	<integer>1453809600</integer>
+	<integer>1453377600</integer>
+  </rpmTag>
+  <rpmTag name="Changelogname">
+	<string>Fedora Release Engineering &lt;releng@fedoraproject.org&gt; - 1.0-12</string>
+	<string>Parag Nemade &lt;pnemade AT redhat DOT com&gt; - 1.0-11</string>
+	<string>Fedora Release Engineering &lt;releng@fedoraproject.org&gt; - 1.0-10</string>
+	<string>Fedora Release Engineering &lt;releng@fedoraproject.org&gt; - 1.0-9</string>
+	<string>Richard Hughes &lt;richard@hughsie.com&gt; - 1.0-8</string>
+	<string>Parag Nemade &lt;pnemade AT redhat DOT com&gt; - 1.0-7</string>
+	<string>Richard Hughes &lt;richard@hughsie.com&gt; - 1.0-6</string>
+	<string>Parag Nemade &lt;pnemade AT redhat DOT com&gt; - 1.0-5</string>
+	<string>Fedora Release Engineering &lt;releng@fedoraproject.org&gt; - 1.0-4</string>
+	<string>Parag Nemade &lt;pnemade AT redhat DOT com&gt; - 1.0-3</string>
+	<string>Parag Nemade &lt;pnemade AT redhat DOT com&gt; - 1.0-2</string>
+	<string>Parag Nemade &lt;pnemade AT redhat DOT com&gt; - 1.0-1</string>
+  </rpmTag>
+  <rpmTag name="Changelogtext">
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild</string>
+	<string>- Added description in appdata metainfo files (rh#1538105)</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild</string>
+	<string>- Use a specific AppStream component type of localization.</string>
+	<string>- Resolves:rh#1312890: langpacks-en should be added</string>
+	<string>- Explode the metainfo files into the subpackages so they get added to the
+  distro-specific AppStream metadata.
+- This allows us to add and remove languages in GNOME Software.</string>
+	<string>- Resolves:rh#1310538: Added br ga he nn nr ss tn ts ve xh languages</string>
+	<string>- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild</string>
+	<string>- Removed %files to disable langpacks.noarch package</string>
+	<string>- Changed metapackage -&gt; meta-package
+- Added information about how we chose language list</string>
+	<string>- Initial packaging</string>
+  </rpmTag>
+  <rpmTag name="Filedevices">
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Fileinodes">
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Filelangs">
+	<string/>
+  </rpmTag>
+  <rpmTag name="Provideflags">
+	<integer>8</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+  </rpmTag>
+  <rpmTag name="Provideversion">
+	<string>1.0-12.el8</string>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Dirindexes">
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Basenames">
+	<string>org.fedoraproject.LangPack-en.metainfo.xml</string>
+  </rpmTag>
+  <rpmTag name="Dirnames">
+	<string>/usr/share/metainfo/</string>
+  </rpmTag>
+  <rpmTag name="Optflags">
+	<string>-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m32 -march=x86-64 -mtune=generic -mfpmath=sse -mstackrealign -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection</string>
+  </rpmTag>
+  <rpmTag name="Payloadformat">
+	<string>cpio</string>
+  </rpmTag>
+  <rpmTag name="Payloadcompressor">
+	<string>xz</string>
+  </rpmTag>
+  <rpmTag name="Payloadflags">
+	<string>2</string>
+  </rpmTag>
+  <rpmTag name="Installcolor">
+	<integer>3</integer>
+  </rpmTag>
+  <rpmTag name="Installtid">
+	<integer>1578952143</integer>
+  </rpmTag>
+  <rpmTag name="Platform">
+	<string>noarch-redhat-linux-gnu</string>
+  </rpmTag>
+  <rpmTag name="Filecolors">
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Fileclass">
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Classdict">
+	<string>XML 1.0 document, ASCII text</string>
+  </rpmTag>
+  <rpmTag name="Filedependsx">
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filedependsn">
+	<integer>2</integer>
+  </rpmTag>
+  <rpmTag name="Dependsdict">
+	<integer>1342177281</integer>
+	<integer>1342177282</integer>
+  </rpmTag>
+  <rpmTag name="Filedigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Encoding">
+	<string>utf-8</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigest">
+	<string>3c320217c4867e58178cf01c1e2d31629e794b1ee5c1473a5d6bf31c56d7d76c</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+</rpmHeader>

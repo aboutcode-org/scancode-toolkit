@@ -1,0 +1,10 @@
+license_expression: gpl-2.0 OR bsd-new
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright (c) Intel Corporation
+ignorable_holders:
+    - Intel Corporation
+ignorable_emails:
+    - linuxwifi@intel.com

@@ -112,6 +112,8 @@ class ProcessIgnore(PreScanPlugin):
             resource_rid = resource.rid
             if resource.is_root:
                 continue
+            if resource.is_dir:  # removing dirs will also remove its files
+                continue
             if resource_rid in rids_to_remove:
                 rids_to_remove_discard(resource_rid)
                 remove_resource(resource)

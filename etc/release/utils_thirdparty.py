@@ -1745,7 +1745,13 @@ def get_remote_repo(remote_links_url=REMOTE_LINKS_URL):
 
 
 def get_remote_package(name, version, remote_links_url=REMOTE_LINKS_URL):
-    return get_remote_repo(remote_links_url).get_package(name, version)
+    """
+    Return a PypiPackage or None.
+    """
+    try:
+        return get_remote_repo(remote_links_url).get_package(name, version)
+    except RemoteNotFetchedException as e:
+        print(f'Failed to fetch remote package info: {e}')
 
 
 _PYPI_REPO = None
@@ -1759,7 +1765,13 @@ def get_pypi_repo(pypi_simple_url=PYPI_SIMPLE_URL):
 
 
 def get_pypi_package(name, version, pypi_simple_url=PYPI_SIMPLE_URL):
-    return get_pypi_repo(pypi_simple_url).get_package(name, version)
+    """
+    Return a PypiPackage or None.
+    """
+    try:
+        return get_pypi_repo(pypi_simple_url).get_package(name, version)
+    except RemoteNotFetchedException as e:
+        print(f'Failed to fetch remote package info: {e}')
 
 ################################################################################
 #
@@ -2003,20 +2015,25 @@ def fetch_missing_sources(dest_dir=THIRDPARTY_DIR):
     for package in local_packages:
         if not package.sdist:
             print(f'Finding sources for: {package.name}=={package.version}: ', end='')
-            pypi_package = pypi_repo.get_package(
-                name=package.name, version=package.version)
-
-            if pypi_package and pypi_package.sdist:
-                print(f'Fetching sources from Pypi')
-                pypi_package.fetch_sdist(dest_dir=dest_dir)
-            else:
-                remote_package = remote_repo.get_package(
+            try:
+                pypi_package = pypi_repo.get_package(
                     name=package.name, version=package.version)
 
-                if remote_package and remote_package.sdist:
-                    print(f'Fetching sources from Remote')
-                    remote_package.fetch_sdist(dest_dir=dest_dir)
+                if pypi_package and pypi_package.sdist:
+                    print(f'Fetching sources from Pypi')
+                    pypi_package.fetch_sdist(dest_dir=dest_dir)
                     continue
+                else:
+                    remote_package = remote_repo.get_package(
+                        name=package.name, version=package.version)
+
+                    if remote_package and remote_package.sdist:
+                        print(f'Fetching sources from Remote')
+                        remote_package.fetch_sdist(dest_dir=dest_dir)
+                        continue
+
+            except RemoteNotFetchedException as e:
+                print(f'Failed to fetch remote package info: {e}')
 
             print(f'No sources found')
             not_found.append((package.name, package.version,))
@@ -2542,7 +2559,6 @@ def add_or_upgrade_built_wheels(
             name=name, version=version, environment=environment, dest_dir=dest_dir)
         if wheel_filename:
             wheel_filenames.append(wheel_filename)
-            continue
 
         # the wheel is not available locally, remotely or in Pypi
         # we need to build binary from sources

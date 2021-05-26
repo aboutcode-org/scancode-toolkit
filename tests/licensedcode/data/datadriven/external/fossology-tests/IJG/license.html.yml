@@ -4,7 +4,6 @@ license_expressions:
   - proprietary-license
   - bsd-new
   - bsd-new AND ijg AND libpng
-  - free-unknown
   - bsd-new
   - ijg
   - ijg

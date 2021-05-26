@@ -1,0 +1,11 @@
+license_expression: wtfpl-2.0
+is_license_text: yes
+relevance: 95
+notes: derived from the WTFPL See https://github.com/tankf33der/hacl-hmac/blob/master/COPYING
+    and https://git.envs.net/mpech/tfpl/src/branch/master/COPYING.TFPL and https://github.com/tankf33der/tfpl
+ignorable_copyrights:
+    - Copyright (c) Mike <tankf33der@disroot.org>
+ignorable_holders:
+    - Mike
+ignorable_emails:
+    - tankf33der@disroot.org

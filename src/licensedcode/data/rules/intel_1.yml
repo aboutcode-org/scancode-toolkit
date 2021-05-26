@@ -1,0 +1,6 @@
+license_expression: intel
+is_license_text: yes
+relevance: 95
+notes: intel for Realtek
+ignorable_urls:
+    - http://opensource.org/licenses

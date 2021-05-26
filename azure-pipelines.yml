@@ -10,9 +10,9 @@ jobs:
 # These jobs are using VMs and Azure-provided Pythons 3.6
 ################################################################################
 
-    - template: etc/ci/azure-linux.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: vm_ubuntu16_py36
+          job_name: core_tests
           image_name: ubuntu-16.04
           python_versions: ['3.6']
           test_suites:
@@ -61,50 +61,73 @@ jobs:
                 bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_detection_datadriven_external.py
 
-              license_validate1: |
+              license_validate_basic: |
                 bin/pytest -n 3 -vvs --test-suite=validate \
                   tests/licensedcode/test_detection_validate.py \
                   -k TestValidateLicenseBasic
 
-              license_validate2: |
+              license_validate_ext_1: |
                 bin/pytest -n 3 -vvs --test-suite=validate \
                   tests/licensedcode/test_detection_validate.py \
-                  -k TestValidateLicenseExtended
+                  -k TestValidateLicenseExtended1
+
+              license_validate_ext_2: |
+                bin/pytest -n 3 -vvs --test-suite=validate \
+                  tests/licensedcode/test_detection_validate.py \
+                  -k TestValidateLicenseExtended2
+
+              license_validate_ext_3: |
+                bin/pytest -n 3 -vvs --test-suite=validate \
+                  tests/licensedcode/test_detection_validate.py \
+                  -k TestValidateLicenseExtended3
+
+              license_validate_ext_4: |
+                bin/pytest -n 3 -vvs --test-suite=validate \
+                  tests/licensedcode/test_detection_validate.py \
+                  -k TestValidateLicenseExtended4
+
+              license_validate_ext_5: |
+                bin/pytest -n 3 -vvs --test-suite=validate \
+                  tests/licensedcode/test_detection_validate.py \
+                  -k TestValidateLicenseExtended5
 
               license_cache: |
                 bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_zzzz_cache.py
 
-    - template: etc/ci/azure-mac.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos_1014_py3x
+          job_name: mac1014
           image_name: macos-10.14
           python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_architecture: x64
           test_suites:
               all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
-    - template: etc/ci/azure-mac.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos_1015_py3x
+          job_name: mac1015
           image_name: macos-10.15
           python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_architecture: x64
           test_suites:
               all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
-#    - template: etc/ci/azure-mac.yml
+#    - template: etc/ci/azure-posix.yml
 #      parameters:
-#          job_name: macos_110_py3x
+#          job_name: mac1100
 #          image_name: macos-11.0
 #          python_versions: ['3.6', '3.7', '3.8', '3.9']
+#          python_architecture: x64
 #          test_suites:
 #              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win_2016_py3x
+          job_name: win2016
           image_name: vs2017-win2016
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
@@ -114,37 +137,38 @@ jobs:
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win_2019_py3x
+          job_name: win2019
           image_name: windows-2019
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
               all: Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
 
-
-    - template: etc/ci/azure-linux.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: vm_ubuntu16_py3x
+          job_name: ubuntu16
           image_name: ubuntu-16.04
           python_versions: ['3.7', '3.8', '3.9']
+          python_architecture: x64
           test_suites:
               all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
-    - template: etc/ci/azure-linux.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: vm_ubuntu18_py3x
+          job_name: ubuntu18
           image_name: ubuntu-18.04
           python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_architecture: x64
           test_suites:
               all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
-
-    - template: etc/ci/azure-linux.yml
+    - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: vm_ubuntu20_py3x
+          job_name: ubuntu20
           image_name: ubuntu-20.04
           python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_architecture: x64
           test_suites:
               all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
@@ -155,7 +179,7 @@ jobs:
 
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
-#          job_name: ubuntu18_py36
+#          job_name: ubuntu18c
 #          container: ubuntu:bionic
 #          python_path: python3.6
 #          python_version: '3.6'
@@ -166,7 +190,7 @@ jobs:
 
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
-#          job_name: ubuntu20_py38
+#          job_name: ubuntu20c
 #          container: ubuntu:focal
 #          python_path: python3.8
 #          python_version: '3.8'
@@ -177,7 +201,7 @@ jobs:
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          job_name: centos7_py36
+#          job_name: centos7c
 #          container: centos:7
 #          python_path: python3.6
 #          python_version: '3.6'
@@ -217,7 +241,7 @@ jobs:
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          job_name: fedora30_py37
+#          job_name: fedora30c
 #          container: fedora:30
 #          package_manager: dnf
 #          python_path: python3.7
@@ -247,7 +271,7 @@ jobs:
 # here we build from sources
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
-#          job_name: debian9_py36
+#          job_name: debian9c
 #          container: debian:stretch
 #          python_path: python3.6
 #          python_version: '3.6'

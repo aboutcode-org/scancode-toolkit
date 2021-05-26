@@ -1,0 +1,7 @@
+by the GNU Library General Public License (LGPL). Any other programs (such
+as the examples) are covered by the GNU General Public License (GPL). All
+the gory details for the LGPL reside in COPYING.LIB, and for the GPL reside
+in COPYING.
+
+Various parts are also covered under a BSD style license, detailed in
+COPYING.BSD. Currently, code covered under such license is copyrighted by

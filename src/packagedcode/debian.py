@@ -15,11 +15,8 @@ from debut import debcon
 from packageurl import PackageURL
 
 from commoncode import filetype
-from commoncode import fileutils
-from commoncode.datautils import List
 from commoncode.datautils import String
 from packagedcode import models
-
 
 """
 Handle Debian packages.
@@ -47,24 +44,17 @@ class DebianPackage(models.Package):
         label='Multi-Arch',
         help='Multi-Arch value from status file')
 
-    installed_files = List(
-        item_type=models.PackageFile,
-        label='installed files',
-        help='List of files installed by this package.')
-
     def to_dict(self, _detailed=False, **kwargs):
-        data = models.Package.to_dict(self, **kwargs)
+        data = super().to_dict(_detailed=_detailed, **kwargs)
         if _detailed:
             #################################################
-            # remove temporary fields
+            # populate temporary fields
             data['multi_arch'] = self.multi_arch
-            data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
             #################################################
         else:
             #################################################
             # remove temporary fields
             data.pop('multi_arch', None)
-            data.pop('installed_files', None)
             #################################################
 
         return data
@@ -178,8 +168,7 @@ class DebianPackage(models.Package):
 
 def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **kwargs):
     """
-    Given a directory to a rootfs, yield a DebianPackage and a list of `installed_files`
-    (path, md5sum) tuples.
+    Yield installed Package objects given a ``root_dir`` rootfs directory.
     """
 
     base_status_file_loc = os.path.join(root_dir, 'var/lib/dpkg/status')
@@ -199,8 +188,7 @@ def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **k
 
 
 def is_debian_status_file(location):
-    return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'status')
+    return filetype.is_file(location) and location.endswith('/status')
 
 
 def parse_status_file(location, distro='debian'):

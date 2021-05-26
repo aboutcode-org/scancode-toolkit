@@ -1,0 +1,5 @@
+license_expression: bsd-new AND ecma-no-patent
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.ecma-international.org/memento/codeofconduct.htm

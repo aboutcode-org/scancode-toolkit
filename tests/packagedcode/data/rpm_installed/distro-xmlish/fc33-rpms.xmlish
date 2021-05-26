@@ -1,0 +1,1298 @@
+<rpmHeader>
+  <rpmTag name="Headeri18ntable">
+	<string>C</string>
+  </rpmTag>
+  <rpmTag name="Sigsize">
+	<integer>89080</integer>
+  </rpmTag>
+  <rpmTag name="Sigpgp">
+	<base64>iQIVAwUAXrUtbUn9d0mVcP8xAQixqQ//d8aw1RPXP0ZpNnk6ltcd9JoCuzRVByxn
+gg9BIiMaaszjCb/NCumxTiBiFySMoJa6Qic2steRkBDsEWPlauitDYjgi0TGX3n9
+Q8kYArl9IHZwXxWThJP2ZjkLf91o8WE5e+CRCjgUitiAI+ob3rNvthiZL32KmPZA
+93cUjVDxMNVWfHSLXO5oCpefFMzJ/6yTsa0yopRoxqN2i301VOFHokCE5sDcosXF
+UNGl2ntkiANVCVfiltXye+5OM484n3ni1iiY9DRDcgh0TCTXQz4wcj9cw88HFS+n
+Wo0y2THObHfKJFmlEfWj+7rUtVOKzLVBjnieMd670XQxZBUSruoCVsq/2BeiFuON
+uELR1Xr1AZIVf5oN+7G1ifIkx5b5D4YJqNmcj9qmbJ5NX0BcVLZOoThfhjIYQ/dC
+KWydoIN5/t85EuD45axF9VHPXjX3cdGILcz681ukol7aG7y53f/LdJP0Fy+MkRvu
+i7Azz39lTAzlLrqQA+WMj8A7zK8YMXc4GGH+RksalsmNa6FjxNHL6GxfiJYshggD
+ZpHrL5LwQ/EK5RoR+AuHR60u2CWVrm4UR9kpI7Jc5oL+3st9s7ElPzZLgh+xttS1
+QHDhA2k7kCnQ1H56wljbY8yqXmzH3LkyxHl9qdL7sgbK3ebae58CPaJDIpd4KSt0
+NS45t6oBy4w=
+</base64>
+  </rpmTag>
+  <rpmTag name="Sigmd5">
+	<base64>UVmvZ90CsSldSuzSaBeScw==
+</base64>
+  </rpmTag>
+  <rpmTag name="Rsaheader">
+	<base64>iQIVAwUAXrUtbUn9d0mVcP8xAQis2hAAzrOF4oanqhtBJ1lryQmC9UICtWdxHJzx
+mTMTp/x411tw4tbxLC4rJiXeHvOSFtYOul8EQTJaT8rvcV03YPdm1G4g87b93ey+
+JZe1qXz0JNRCNA3hP1cwDAwuKl4RImjBp1L2QS6qG8W+/KmA432gaKScxxrDO4kF
+hM81hULwIQ583PDPKDqsnAO/6boo6DGbeb82+DuP9v/QGzxcScXT/xD00wTsr2sD
+izUtIcZ+XEeKPyTNMmQbww4L1/fKC/B/Q/Xa2vpTK0NcUGwJalbQNssMppK8D5Ee
+NxR6ImmSZtFR9hns6wrPmlwJ7DjFpslxByDrRHivafK2JnfBYQGZ/8lOQZI+SSZo
+nkY20BmVhD863ZZbXLu9Gb1CVdWV88kasvwFYRdPzX9YPdiOq6DaDgGHIgvbN9tV
+t9X2g/inhz8LXr7j3KpNtfzsF9+s1025dChECzDOQX67m0IgQIm32Vv914/A8n/W
+ujNuFb9dqTCcF/Qlx0sCNcnXWmUIFxwMykH6CySKTEnfxZtWip069S+jyRcJFCyZ
+oUMpa1JMDRCA3rPdzDol3g+Q5bqiDf9Z4OmZDmFQhc39j6LMHPGuQ57x8jAlcgYe
+uV6/1uVvdkuEnzfCBmRYiPyf+CX4uHN7kgcUaIz99NNYgxh/DTGyL0ldMNH7c96k
+gPXY+TBbBRs=
+</base64>
+  </rpmTag>
+  <rpmTag name="Sha1header">
+	<string>053a730acebd49fbfbc1b4bcf92ce6c04723db77</string>
+  </rpmTag>
+  <rpmTag name="Sha256header">
+	<string>020fd9a4ca492a6de2772393b845f00502253d86af14fa1f8ce15113d84ad0b7</string>
+  </rpmTag>
+  <rpmTag name="Name">
+	<string>libgcc</string>
+  </rpmTag>
+  <rpmTag name="Version">
+	<string>10.1.1</string>
+  </rpmTag>
+  <rpmTag name="Release">
+	<string>1.fc33</string>
+  </rpmTag>
+  <rpmTag name="Summary">
+	<string>GCC version 10 shared support library</string>
+  </rpmTag>
+  <rpmTag name="Description">
+	<string>This package contains GCC shared support library which is needed
+e.g. for exception handling support.</string>
+  </rpmTag>
+  <rpmTag name="Buildtime">
+	<integer>1588885116</integer>
+  </rpmTag>
+  <rpmTag name="Buildhost">
+	<string>buildvm-26.phx2.fedoraproject.org</string>
+  </rpmTag>
+  <rpmTag name="Installtime">
+	<integer>1589363084</integer>
+  </rpmTag>
+  <rpmTag name="Size">
+	<integer>198880</integer>
+  </rpmTag>
+  <rpmTag name="Distribution">
+	<string>Fedora Project</string>
+  </rpmTag>
+  <rpmTag name="Vendor">
+	<string>Fedora Project</string>
+  </rpmTag>
+  <rpmTag name="License">
+	<string>GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD</string>
+  </rpmTag>
+  <rpmTag name="Packager">
+	<string>Fedora Project</string>
+  </rpmTag>
+  <rpmTag name="Group">
+	<string>Unspecified</string>
+  </rpmTag>
+  <rpmTag name="Url">
+	<string>http://gcc.gnu.org</string>
+  </rpmTag>
+  <rpmTag name="Os">
+	<string>linux</string>
+  </rpmTag>
+  <rpmTag name="Arch">
+	<string>x86_64</string>
+  </rpmTag>
+  <rpmTag name="Postin">
+	<string>if posix.access ("/sbin/ldconfig", "x") then
+  local pid = posix.fork ()
+  if pid == 0 then
+    posix.exec ("/sbin/ldconfig")
+  elseif pid ~= -1 then
+    posix.wait (pid)
+  end
+end</string>
+  </rpmTag>
+  <rpmTag name="Postun">
+	<string>if posix.access ("/sbin/ldconfig", "x") then
+  local pid = posix.fork ()
+  if pid == 0 then
+    posix.exec ("/sbin/ldconfig")
+  elseif pid ~= -1 then
+    posix.wait (pid)
+  end
+end</string>
+  </rpmTag>
+  <rpmTag name="Filesizes">
+	<integer>108328</integer>
+	<integer>25</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>43</integer>
+	<integer>0</integer>
+	<integer>18002</integer>
+	<integer>26440</integer>
+	<integer>3324</integer>
+	<integer>35147</integer>
+	<integer>7639</integer>
+  </rpmTag>
+  <rpmTag name="Filestates">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemodes">
+	<integer>33261</integer>
+	<integer>41471</integer>
+	<integer>16877</integer>
+	<integer>16877</integer>
+	<integer>41471</integer>
+	<integer>16877</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+  </rpmTag>
+  <rpmTag name="Filerdevs">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemtimes">
+	<integer>1588892507</integer>
+	<integer>1588892122</integer>
+	<integer>1588909277</integer>
+	<integer>1588909277</integer>
+	<integer>1588909277</integer>
+	<integer>1588909277</integer>
+	<integer>1588878508</integer>
+	<integer>1588878508</integer>
+	<integer>1588878508</integer>
+	<integer>1588878508</integer>
+	<integer>1588878508</integer>
+  </rpmTag>
+  <rpmTag name="Filedigests">
+	<string>f0983775e8e6b1d6bd76db2a9f52cde1d6198b115f4e44a6167a5cb8eb0e6235</string>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string>231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c</string>
+	<string>32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b</string>
+	<string>9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74</string>
+	<string>8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903</string>
+	<string>a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c</string>
+  </rpmTag>
+  <rpmTag name="Filelinktos">
+	<string/>
+	<string>libgcc_s-10-20200507.so.1</string>
+	<string/>
+	<string/>
+	<string>../../../../lib64/libgcc_s-10-20200507.so.1</string>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Fileflags">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>4096</integer>
+	<integer>4096</integer>
+	<integer>4096</integer>
+	<integer>0</integer>
+	<integer>128</integer>
+	<integer>128</integer>
+	<integer>128</integer>
+	<integer>128</integer>
+	<integer>128</integer>
+  </rpmTag>
+  <rpmTag name="Fileusername">
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Filegroupname">
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Sourcerpm">
+	<string>gcc-10.1.1-1.fc33.src.rpm</string>
+  </rpmTag>
+  <rpmTag name="Fileverifyflags">
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+  </rpmTag>
+  <rpmTag name="Archivesize">
+	<integer>200692</integer>
+  </rpmTag>
+  <rpmTag name="Providename">
+	<string>libgcc</string>
+	<string>libgcc(x86-64)</string>
+	<string>libgcc_s.so.1()(64bit)</string>
+	<string>libgcc_s.so.1(GCC_3.0)(64bit)</string>
+	<string>libgcc_s.so.1(GCC_3.3)(64bit)</string>
+	<string>libgcc_s.so.1(GCC_3.3.1)(64bit)</string>
+	<string>libgcc_s.so.1(GCC_3.4)(64bit)</string>
+	<string>libgcc_s.so.1(GCC_3.4.2)(64bit)</string>
+	<string>libgcc_s.so.1(GCC_3.4.4)(64bit)</string>
+	<string>libgcc_s.so.1(GCC_4.0.0)(64bit)</string>
+	<string>libgcc_s.so.1(GCC_4.2.0)(64bit)</string>
+	<string>libgcc_s.so.1(GCC_4.3.0)(64bit)</string>
+	<string>libgcc_s.so.1(GCC_4.7.0)(64bit)</string>
+	<string>libgcc_s.so.1(GCC_4.8.0)(64bit)</string>
+	<string>libgcc_s.so.1(GCC_7.0.0)(64bit)</string>
+  </rpmTag>
+  <rpmTag name="Requireflags">
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+  </rpmTag>
+  <rpmTag name="Requirename">
+	<string>rpmlib(BuiltinLuaScripts)</string>
+	<string>rpmlib(CompressedFileNames)</string>
+	<string>rpmlib(FileDigests)</string>
+	<string>rpmlib(PayloadFilesHavePrefix)</string>
+	<string>rpmlib(PayloadIsZstd)</string>
+  </rpmTag>
+  <rpmTag name="Requireversion">
+	<string>4.2.2-1</string>
+	<string>3.0.4-1</string>
+	<string>4.6.0-1</string>
+	<string>4.0-1</string>
+	<string>5.4.18-1</string>
+  </rpmTag>
+  <rpmTag name="Rpmversion">
+	<string>4.15.90</string>
+  </rpmTag>
+  <rpmTag name="Changelogtime">
+	<integer>1588852800</integer>
+	<integer>1588420800</integer>
+	<integer>1588334400</integer>
+	<integer>1587384000</integer>
+	<integer>1585396800</integer>
+	<integer>1585137600</integer>
+	<integer>1583928000</integer>
+	<integer>1581854400</integer>
+	<integer>1580385600</integer>
+	<integer>1580040000</integer>
+	<integer>1579780800</integer>
+	<integer>1579608000</integer>
+	<integer>1579348800</integer>
+  </rpmTag>
+  <rpmTag name="Changelogname">
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.1.1-1</string>
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.0.1-0.14</string>
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.0.1-0.13</string>
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.0.1-0.12</string>
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.0.1-0.11</string>
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.0.1-0.10</string>
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.0.1-0.9</string>
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.0.1-0.8</string>
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.0.1-0.7</string>
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.0.1-0.6</string>
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.0.1-0.5</string>
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.0.1-0.4</string>
+	<string>Jakub Jelinek &lt;jakub@redhat.com&gt; 10.0.1-0.3</string>
+  </rpmTag>
+  <rpmTag name="Changelogtext">
+	<string>- update from releases/gcc-10 branch
+  - GCC 10.1.0 release
+  - PRs bootstrap/94918, c++/94907, c++/94938, c++/94946, c++/94951, c/94842,
+	c/94968, libstdc++/94901, middle-end/94941, rtl-optimization/94873,
+	target/94942, target/94950</string>
+	<string>- use libgcc_s.so linker script also on aarch64 and riscv64 (#1830472)</string>
+	<string>- update from trunk and releases/gcc-10 branch
+  - GCC 10.1-rc1
+  - PRs analyzer/94447, analyzer/94639, analyzer/94732, analyzer/94754,
+	analyzer/94816, bootstrap/94739, c++/79585, c++/90320, c++/90448,
+	c++/90750, c++/93807, c++/94288, c++/94383, c++/94505, c++/94510,
+	c++/94546, c++/94549, c++/94583, c++/94592, c++/94597, c++/94628,
+	c++/94645, c++/94661, c++/94682, c++/94701, c++/94719, c++/94733,
+	c++/94742, c++/94752, c++/94759, c++/94760, c++/94772, c++/94775,
+	c++/94808, c++/94819, c++/94827, c++/94830, c++/94879, c++/94883,
+	c++/94886, c/94641, c/94686, c/94705, c/94755, d/89418, d/94777,
+	d/94825, demangler/94797, driver/90983, fortran/90350, fortran/93956,
+	fortran/94578, fortran/94709, fortran/94737, fortran/94769,
+	fortran/94788, ipa/94856, libfortran/25830, libfortran/94586,
+	libfortran/94694, libstdc++/89510, libstdc++/90415, libstdc++/91480,
+	libstdc++/92156, libstdc++/94831, libstdc++/94854, lto/94659,
+	lto/94822, middle-end/92830, middle-end/93488, middle-end/94647,
+	middle-end/94724, rtl-optimization/94708, rtl-optimization/94740,
+	target/57002, target/91518, target/92713, target/93654, target/94248,
+	target/94279, target/94282, target/94383, target/94514, target/94515,
+	target/94577, target/94613, target/94622, target/94668, target/94678,
+	target/94697, target/94704, target/94706, target/94707, target/94710,
+	target/94711, target/94748, target/94780, target/94812, target/94820,
+	target/94826, target/94832, testsuite/94712, translation/94698,
+	tree-optimization/89430, tree-optimization/94683,
+	tree-optimization/94700, tree-optimization/94717,
+	tree-optimization/94727, tree-optimization/94734,
+	tree-optimization/94774, tree-optimization/94784,
+	tree-optimization/94809</string>
+	<string>- update from trunk
+  - PRs analyzer/94378, bootstrap/89494, bootstrap/92008, c++/67825,
+	c++/79937, c++/85278, c++/86327, c++/88754, c++/90711, c++/90996,
+	c++/91377, c++/91966, c++/92010, c++/92187, c++/92878, c++/93207,
+	c++/93211, c++/93790, c++/94034, c++/94149, c++/94155, c++/94205,
+	c++/94219, c++/94252, c++/94306, c++/94314, c++/94325, c++/94359,
+	c++/94385, c++/94426, c++/94453, c++/94454, c++/94462, c++/94470,
+	c++/94475, c++/94477, c++/94478, c++/94480, c++/94481, c++/94483,
+	c++/94507, c++/94512, c++/94521, c++/94523, c++/94528, c++/94571,
+	c++/94588, c++/94608, c++/94632, c/92326, c/94392, c/94593, d/90136,
+	d/94304, d/94305, d/94315, d/94321, d/94424, d/94425, d/94609,
+	debug/94439, debug/94441, debug/94450, debug/94459, debug/94495,
+	driver/94381, fortran/57129, fortran/85982, fortran/87644,
+	fortran/87923, fortran/91800, fortran/93364, fortran/93498,
+	fortran/93500, fortran/93522, fortran/93686, fortran/93871,
+	fortran/94030, fortran/94090, fortran/94091, fortran/94192,
+	fortran/94246, fortran/94347, fortran/94348, fortran/94386,
+	gcov-profile/93401, gcov-profile/94570, go/94607, ipa/92676,
+	ipa/93621, ipa/93940, ipa/94363, ipa/94434, ipa/94445, ipa/94582,
+	libgcc/94513, libgomp/92843, libstdc++/93960, libstdc++/94498,
+	libstdc++/94520, libstdc++/94562, libstdc++/94565, lto/94612,
+	middle-end/89433, middle-end/93465, middle-end/94412,
+	middle-end/94423, middle-end/94436, middle-end/94465,
+	middle-end/94479, middle-end/94526, middle-end/94539,
+	middle-end/94614, middle-end/94635, objc/94637, other/94629,
+	rtl-optimization/84169, rtl-optimization/87716,
+	rtl-optimization/93946, rtl-optimization/93974,
+	rtl-optimization/94123, rtl-optimization/94291,
+	rtl-optimization/94344, rtl-optimization/94468,
+	rtl-optimization/94516, rtl-optimization/94605,
+	rtl-optimization/94618, target/93053, target/94317, target/94368,
+	target/94396, target/94417, target/94420, target/94435, target/94438,
+	target/94460, target/94467, target/94488, target/94494, target/94500,
+	target/94509, target/94530, target/94542, target/94551, target/94556,
+	target/94561, target/94567, target/94584, target/94603, target/94606,
+	testsuite/93369, testsuite/94079, testsuite/94402, testsuite/94533,
+	tree-optimization/89713, tree-optimization/91322,
+	tree-optimization/93674, tree-optimization/94043,
+	tree-optimization/94398, tree-optimization/94401,
+	tree-optimization/94403, tree-optimization/94443,
+	tree-optimization/94482, tree-optimization/94524,
+	tree-optimization/94573, tree-optimization/94574,
+	tree-optimization/94598, tree-optimization/94621</string>
+	<string>- update from trunk
+  - PRs c++/81349, c++/84733, c++/93810, c++/93824, c++/94057, c++/94078,
+	c++/94098, c++/94257, c++/94265, c++/94272, c++/94319, c++/94326,
+	c++/94336, c++/94339, c++/94346, c/93573, debug/94273, debug/94281,
+	debug/94296, debug/94323, fortran/93363, fortran/93957, ipa/94271,
+	lto/94259, middle-end/94004, rtl-optimization/92264, target/94145,
+	target/94220, target/94292, testsuite/94334, tree-optimization/90332,
+	tree-optimization/94131, tree-optimization/94269,
+	tree-optimization/94329, tree-optimization/94352
+- fix x86 vec_extract_{lo,hi}*_mask AVX512* patterns (PR target/93069)
+- fix x86 *one_cmpl*2* AVX512* patterns (PR target/94343)
+- add BuildRequires: libzstd-devel</string>
+	<string>- update from trunk
+  - PRs analyzer/94047, analyzer/94099, analyzer/94105, c++/67960, c++/69694,
+	c++/90995, c++/91759, c++/91993, c++/92068, c++/92909, c++/93248,
+	c++/93596, c++/93805, c++/93931, c++/94044, c++/94066, c++/94147,
+	c++/94175, c++/94186, c++/94190, c++/94197, c++/94223, c/94040,
+	c/94172, c/94179, c/94239, d/92216, d/92309, d/92792, d/93038,
+	d/94240, debug/93751, debug/94167, debug/94277, debug/94280,
+	debug/94283, debug/94285, fortran/93365, fortran/93484, fortran/93600,
+	gcov-profile/94029, ipa/92372, ipa/92799, ipa/93347, ipa/94202,
+	ipa/94217, ipa/94232, ipa/94245, ipa/94250, libgomp/81689,
+	libgomp/94251, libstdc++/93245, libstdc++/94033, libstdc++/94199,
+	libstdc++/94203, libstdc++/94242, lto/91027, lto/94157, lto/94249,
+	middle-end/92071, middle-end/93566, middle-end/94072,
+	middle-end/94120, middle-end/94188, middle-end/94189,
+	middle-end/94206, middle-end/94216, middle-end/94233,
+	middle-end/94303, rtl-optimization/90275, rtl-optimization/92303,
+	rtl-optimization/94042, rtl-optimization/94052,
+	rtl-optimization/94119, rtl-optimization/94148, target/92379,
+	target/93694, target/94052, target/94144, target/94154, target/94176,
+	target/94185, target/94201, target/94238, target/94286,
+	testsuite/93935, tree-optimization/93435, tree-optimization/94103,
+	tree-optimization/94125, tree-optimization/94163,
+	tree-optimization/94166, tree-optimization/94187,
+	tree-optimization/94211, tree-optimization/94224,
+	tree-optimization/94261, tree-optimization/94266,
+	tree-optimization/94300
+- fix ICE in final_scan_insn_1 on i686 with vzeroupper (#1816760,
+  PR target/94308)
+- fix ppc64* hang with dfp (PR target/94254)</string>
+	<string>- update from trunk
+  - PRs ada/91100, analyzer/93032, analyzer/93388, analyzer/93692,
+	analyzer/93774, analyzer/93775, analyzer/93777, analyzer/93778,
+	analyzer/93779, analyzer/93899, analyzer/93947, analyzer/93950,
+	analyzer/93959, analyzer/93993, analyzer/94028, bootstrap/93962,
+	c++/52320, c++/66139, c++/90432, c++/90467, c++/90505, c++/90938,
+	c++/91465, c++/92031, c++/92721, c++/93169, c++/93676, c++/93712,
+	c++/93729, c++/93789, c++/93801, c++/93803, c++/93804, c++/93817,
+	c++/93862, c++/93869, c++/93870, c++/93882, c++/93901, c++/93905,
+	c++/93907, c++/93922, c++/93933, c++/93956, c++/93958, c++/93998,
+	c++/94027, c++/94041, c++/94068, c++/94074, c++/94117, c++/94124,
+	c/86134, c/93577, c/93812, c/93858, c/93886, c/93887, c/93949,
+	debug/93888, driver/47785, driver/93796, fortran/92785, fortran/92959,
+	fortran/92976, fortran/93486, fortran/93552, fortran/93580,
+	fortran/93581, fortran/93599, fortran/93601, fortran/93603,
+	fortran/93604, fortran/93714, fortran/93792, fortran/93825,
+	fortran/93835, fortran/93889, fortran/93890, gcov-profile/93753,
+	inline-asm/94095, ipa/92518, ipa/92548, ipa/92924, ipa/93583,
+	ipa/93707, ipa/93760, ipa/93797, libstdc++/92546, libstdc++/93244,
+	libstdc++/93818, libstdc++/93872, libstdc++/93884, libstdc++/93936,
+	libstdc++/93972, libstdc++/93978, libstdc++/94013, libstdc++/94017,
+	libstdc++/94051, libstdc++/94063, libstdc++/94069, lto/78353,
+	middle-end/81401, middle-end/92152, middle-end/93399,
+	middle-end/93829, middle-end/93843, middle-end/93874,
+	middle-end/93926, middle-end/93961, middle-end/94111, other/55930,
+	other/93756, other/93912, other/93965, rtl-optimization/93564,
+	rtl-optimization/93996, rtl-optimization/94002,
+	rtl-optimization/94045, rtl-optimization/PR92989, sanitizer/93731,
+	target/26877, target/87560, target/87612, target/89229, target/89346,
+	target/90311, target/90763, target/91276, target/91598, target/93047,
+	target/93658, target/93709, target/93743, target/93800, target/93828,
+	target/93860, target/93913, target/93932, target/93937, target/93995,
+	target/93997, target/94046, target/94065, target/94088, target/94121,
+	target/94134, testsuite/91797, testsuite/91799, testsuite/94019,
+	testsuite/94023, translation/93755, translation/93759,
+	translation/93830, translation/93831, translation/93838,
+	translation/93841, translation/93864, tree-optimization/90883,
+	tree-optimization/91890, tree-optimization/92128,
+	tree-optimization/92982, tree-optimization/93508,
+	tree-optimization/93586, tree-optimization/93667,
+	tree-optimization/93767, tree-optimization/93776,
+	tree-optimization/93780, tree-optimization/93820,
+	tree-optimization/93845, tree-optimization/93868,
+	tree-optimization/93927, tree-optimization/93945,
+	tree-optimization/93946, tree-optimization/93953,
+	tree-optimization/93964, tree-optimization/93986,
+	tree-optimization/94001, tree-optimization/94114
+  - fix ICE on rotate with -Wconversion (#1810941, PR c++/94067)
+  - fix -fcf-protection -flto -g interaction (#1808484, PR lto/93966)
+  - fix git miscompilation on s390x with -O2 -march=zEC12 -mtune=z13
+    (#1799408, PR rtl-optimization/93908)
+  - fix ICE in in propagate_vals_across_arith_jfunc (#1806466, PR ipa/93763)
+  - ARM ABI alignment fix for classes derived from user aligned empty
+    bases (PR c++/94050)
+- strlen pass fixes (PR tree-optimization/94015)
+- fix {memset,memcpy,memmove,strncpy} head trimming if the result is used
+  (PR tree-optimization/94130)
+- drop python2-devel Requires</string>
+	<string>- update from trunk
+  - PRs analyzer/93212, analyzer/93288, analyzer/93350, analyzer/93356,
+	analyzer/93373, analyzer/93374, analyzer/93379, analyzer/93405,
+	analyzer/93438, analyzer/93457, analyzer/93543, analyzer/93544,
+	analyzer/93546, analyzer/93547, analyzer/93647, analyzer/93649,
+	analyzer/93657, analyzer/93659, analyzer/93669, c++/14179, c++/61414,
+	c++/66477, c++/69448, c++/80471, c++/86216, c++/86917, c++/88256,
+	c++/88819, c++/89404, c++/90691, c++/90951, c++/91953, c++/92003,
+	c++/92517, c++/92556, c++/92583, c++/92593, c++/92654, c++/92717,
+	c++/92947, c++/93140, c++/93458, c++/93530, c++/93549, c++/93551,
+	c++/93557, c++/93559, c++/93597, c++/93618, c++/93633, c++/93643,
+	c++/93650, c++/93675, c++/93684, c++/93710, c++/93713, c/87488,
+	c/88660, c/93576, c/93640, fortran/83113, fortran/92305,
+	fortran/93427, fortran/93462, fortran/93541, gcov-profile/91971,
+	gcov-profile/93466, ipa/93203, libgcc/85334, libgomp/93481,
+	libgomp/93515, libstdc++/79193, libstdc++/88999, libstdc++/92906,
+	libstdc++/93562, lto/93489, middle-end/90648, middle-end/93519,
+	middle-end/93555, middle-end/93646, middle-end/93663, other/93168,
+	other/93641, preprocessor/92319, preprocessor/93545,
+	rtl-optimization/91333, rtl-optimization/91838,
+	rtl-optimization/93561, rtl-optimization/93565, target/58218,
+	target/65782, target/85667, target/87763, target/91052, target/91816,
+	target/91913, target/91927, target/92190, target/93122, target/93136,
+	target/93300, target/93372, target/93532, target/93533, target/93548,
+	target/93568, target/93569, target/93594, target/93611, target/93615,
+	target/93637, target/93656, target/93670, target/93673, target/93696,
+	target/93704, target/93724, testsuite/92177, testsuite/93697,
+	testsuite/93717, tree-optimization/91123, tree-optimization/92819,
+	tree-optimization/93516, tree-optimization/93538,
+	tree-optimization/93582, tree-optimization/93661,
+	tree-optimization/93662, tree-optimization/93683,
+	tree-optimization/93744</string>
+	<string>- update from trunk
+  - PRs analyzer/93276, analyzer/93291, analyzer/93349, analyzer/93450,
+	analyzer/93451, bootstrap/93409, c++/60503, c++/82521, c++/88092,
+	c++/89357, c++/89640, c++/90333, c++/90338, c++/90546, c++/90731,
+	c++/90966, c++/90992, c++/91118, c++/91754, c++/91826, c++/92440,
+	c++/92601, c++/92948, c++/93442, c++/93443, c++/93477, driver/91220,
+	fortran/85781, fortran/87103, fortran/92123, fortran/93025,
+	fortran/93461, fortran/93463, fortran/93464, fortran/93473,
+	gcov-profile/93403, libstdc++/92895, libstdc++/93325, libstdc++/93426,
+	libstdc++/93470, libstdc++/93478, libstdc++/93479, middle-end/92323,
+	middle-end/93437, middle-end/93505, rtl-optimization/87763,
+	rtl-optimization/92989, rtl-optimization/93170,
+	rtl-optimization/93272, sanitizer/93436, target/91399, target/91461,
+	target/91824, target/92822, target/93221, target/93274, target/93418,
+	target/93494, testsuite/71727, testsuite/91171, testsuite/93393,
+	testsuite/93460, tree-optimization/89689, tree-optimization/92706,
+	tree-optimization/92822, tree-optimization/93397,
+	tree-optimization/93428, tree-optimization/93434,
+	tree-optimization/93439, tree-optimization/93454
+  - LTO fix for *.localalias aliases (#1795575, PR lto/93384)
+  - __has_include{,_next} fix (#1795633, PR preprocessor/93452)</string>
+	<string>- update from trunk
+  - PRs analyzer/93367, c++/90997, c++/92852, c++/93279, c++/93299, c++/93377,
+	c++/93400, c++/93414, inline-asm/93027, ipa/93166, target/13721,
+	target/92269, target/93395, target/93412, target/93430,
+	translation/90162, tree-optimization/92788
+- temporarily disable broken strcmp optimization (PR tree-optimization/92765)
+- riscv64 tweaks from David Abdurachmanov (#1794343)</string>
+	<string>- update from trunk
+  - PRs analyzer/93307, analyzer/93316, analyzer/93352, analyzer/93375,
+	analyzer/93378, analyzer/93382, c++/40752, c++/60855, c++/90732,
+	c++/91476, c++/92804, c++/92907, c++/93324, c++/93331, c++/93345,
+	c/84919, c/93348, fortran/93329, ipa/93315, libstdc++/91947,
+	rtl-optimization/93124, rtl-optimization/93402, target/91298,
+	target/92424, target/9311, target/93119, target/93333, target/93335,
+	target/93341, target/93346, target/93376, testsuite/93391,
+	tree-optimization/92924, tree-optimization/93381
+  - fix ICE in nothrow_spec_p (#1794094, c++/93345)</string>
+	<string>- update from trunk
+  - PRs c++/33799, c++/92536, debug/92763, fortran/44960, fortran/93309,
+	lto/93318, middle-end/93194, middle-end/93242, preprocessor/80005,
+	target/93073, target/93304, target/93319, testsuite/92829,
+	tree-opt/93321, tree-optimization/92328, tree-optimization/93094,
+	tree-optimization/93199
+- add arm_bf16.h and arm_sve.h to arm and arm/aarch64 (#1793471)</string>
+	<string>- new package</string>
+  </rpmTag>
+  <rpmTag name="Postinprog">
+	<string>&lt;lua&gt;</string>
+  </rpmTag>
+  <rpmTag name="Postunprog">
+	<string>&lt;lua&gt;</string>
+  </rpmTag>
+  <rpmTag name="Obsoletename">
+	<string>libcilkrts</string>
+	<string>libcilkrts-static</string>
+	<string>libgcj</string>
+	<string>libgcj-devel</string>
+	<string>libgcj-src</string>
+	<string>libmpx</string>
+	<string>libmpx-static</string>
+	<string>libmudflap</string>
+	<string>libmudflap-devel</string>
+	<string>libmudflap-static</string>
+  </rpmTag>
+  <rpmTag name="Filedevices">
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Fileinodes">
+	<integer>1</integer>
+	<integer>2</integer>
+	<integer>3</integer>
+	<integer>4</integer>
+	<integer>5</integer>
+	<integer>6</integer>
+	<integer>7</integer>
+	<integer>8</integer>
+	<integer>9</integer>
+	<integer>10</integer>
+	<integer>11</integer>
+  </rpmTag>
+  <rpmTag name="Filelangs">
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Provideflags">
+	<integer>8</integer>
+	<integer>8</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+  </rpmTag>
+  <rpmTag name="Provideversion">
+	<string>10.1.1-1.fc33</string>
+	<string>10.1.1-1.fc33</string>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Obsoleteflags">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>2</integer>
+	<integer>2</integer>
+	<integer>2</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Obsoleteversion">
+	<string/>
+	<string/>
+	<string>10.1.1-1.fc33</string>
+	<string>10.1.1-1.fc33</string>
+	<string>10.1.1-1.fc33</string>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Dirindexes">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>1</integer>
+	<integer>2</integer>
+	<integer>3</integer>
+	<integer>4</integer>
+	<integer>5</integer>
+	<integer>5</integer>
+	<integer>5</integer>
+	<integer>5</integer>
+	<integer>5</integer>
+  </rpmTag>
+  <rpmTag name="Basenames">
+	<string>libgcc_s-10-20200507.so.1</string>
+	<string>libgcc_s.so.1</string>
+	<string>.build-id</string>
+	<string>6c</string>
+	<string>87948c636ed6c91b75603625e32915177b72e9</string>
+	<string>libgcc</string>
+	<string>COPYING</string>
+	<string>COPYING.LIB</string>
+	<string>COPYING.RUNTIME</string>
+	<string>COPYING3</string>
+	<string>COPYING3.LIB</string>
+  </rpmTag>
+  <rpmTag name="Dirnames">
+	<string>/lib64/</string>
+	<string>/usr/lib/</string>
+	<string>/usr/lib/.build-id/</string>
+	<string>/usr/lib/.build-id/6c/</string>
+	<string>/usr/share/licenses/</string>
+	<string>/usr/share/licenses/libgcc/</string>
+  </rpmTag>
+  <rpmTag name="Optflags">
+	<string>-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches   -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection</string>
+  </rpmTag>
+  <rpmTag name="Payloadformat">
+	<string>cpio</string>
+  </rpmTag>
+  <rpmTag name="Payloadcompressor">
+	<string>zstd</string>
+  </rpmTag>
+  <rpmTag name="Payloadflags">
+	<string>19</string>
+  </rpmTag>
+  <rpmTag name="Installcolor">
+	<integer>3</integer>
+  </rpmTag>
+  <rpmTag name="Installtid">
+	<integer>1589363083</integer>
+  </rpmTag>
+  <rpmTag name="Platform">
+	<string>x86_64-redhat-linux</string>
+  </rpmTag>
+  <rpmTag name="Filecolors">
+	<integer>2</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Fileclass">
+	<integer>0</integer>
+	<integer>1</integer>
+	<integer>2</integer>
+	<integer>2</integer>
+	<integer>1</integer>
+	<integer>2</integer>
+	<integer>3</integer>
+	<integer>3</integer>
+	<integer>3</integer>
+	<integer>3</integer>
+	<integer>3</integer>
+  </rpmTag>
+  <rpmTag name="Classdict">
+	<string>ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), statically linked, BuildID[sha1]=6c87948c636ed6c91b75603625e32915177b72e9, stripped</string>
+	<string/>
+	<string>directory</string>
+	<string>ASCII text</string>
+  </rpmTag>
+  <rpmTag name="Filedependsx">
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filedependsn">
+	<integer>24</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Dependsdict">
+	<integer>1342177283</integer>
+	<integer>1342177284</integer>
+	<integer>1342177284</integer>
+	<integer>1342177285</integer>
+	<integer>1342177285</integer>
+	<integer>1342177286</integer>
+	<integer>1342177286</integer>
+	<integer>1342177287</integer>
+	<integer>1342177287</integer>
+	<integer>1342177288</integer>
+	<integer>1342177288</integer>
+	<integer>1342177289</integer>
+	<integer>1342177289</integer>
+	<integer>1342177290</integer>
+	<integer>1342177290</integer>
+	<integer>1342177291</integer>
+	<integer>1342177291</integer>
+	<integer>1342177292</integer>
+	<integer>1342177292</integer>
+	<integer>1342177293</integer>
+	<integer>1342177293</integer>
+	<integer>1342177294</integer>
+	<integer>1342177294</integer>
+	<integer>1342177282</integer>
+  </rpmTag>
+  <rpmTag name="Filedigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Bugurl">
+	<string>https://bugz.fedoraproject.org/gcc</string>
+  </rpmTag>
+  <rpmTag name="Encoding">
+	<string>utf-8</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigest">
+	<string>57fc9792447fb8fc41c09098307ea4c3847cab634aaf0a5865be7aac1ef26e92</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Payloaddigestalt">
+	<string>0a62823e9a74ed3fb92965c05ef0e7cfe6908a864d17ebfd866781f6b70201a8</string>
+  </rpmTag>
+</rpmHeader>
+<rpmHeader>
+  <rpmTag name="Headeri18ntable">
+	<string>C</string>
+  </rpmTag>
+  <rpmTag name="Sigsize">
+	<integer>9006</integer>
+  </rpmTag>
+  <rpmTag name="Sigpgp">
+	<base64>iQIVAwUAXrBFC0n9d0mVcP8xAQhJ2xAAvyuTG5YD1B8XXrtely1wP9jP7pk5hDiZ
+M9lWBSvYsVPeURsK4KIe7wrqO922oEL0lMWivw6McygZ1AUPMrcPvL79ECZTsoVa
+k3sy8dmATLXy4zZZtElOd2st+4jkypnAAj8iBAKJNlUYbQxX6PTvmwOzNudZfLP+
+kWGvQhD6OkHB4N202gT4Qecl8MI0L1eIMbLCV6QbFQnLzepXnLhW+suFwLoB3Jud
+kxWoO38clPFy4ToUmmFGkQF4OsT9c9/tyszGUUw+pvqi0MVR1BoUSovy+tl26Ev0
+pRBeExxAL/6iyv+KJpJc0luafglKQYw85/wyadkc7IVesm3BUHgRBfedexxu3IxF
+Gt7tBTKQmnOrPmE7oRyX8D0fjzkVIDHrIrW7VF9TlmGs6pAB/bb7MyPb2k9pRrHs
+X0+J8KC5KRoVgF9HL//5sqvxo+HTbuA5yhjP43Fr0onpL/yuTdzhhHE4O66sUBbZ
+mlLR731rOpLotQOQUnempP1Zybvj2UYutyJ6S9Wg6h7avYWUMXgWUmdQubJM7ISs
+5QoFGL9I+MMTPaZs9csAvJS5WfQMt4OWhzUc610I6vZulCVrdA+g9dxKIZ+DYSEV
+XfdoH46O1ZnDzUgwazBxUhLkcsWoi6TiOT+A6wyVCSXcpvxsgmy5BVnjYZIAvmdx
+orcbnL2edqA=
+</base64>
+  </rpmTag>
+  <rpmTag name="Sigmd5">
+	<base64>aDoQUezPjSAIR2et8+TnDw==
+</base64>
+  </rpmTag>
+  <rpmTag name="Rsaheader">
+	<base64>iQIVAwUAXrBFC0n9d0mVcP8xAQj20BAAxMo/PsM0R/XMdg67DEyTeeEsePXgrplM
+Ce+Ceeg+oCHl6GnHrTDZFFM3kT1O0GLvqQp1ZevIEBFSxCKuHUpsIoub3y5EU+y8
+iGjmtLLHTZ7JdLamV0m8nW9y9MYiDfQaWn/vu0c5aLsuK+OYUiqsUhTRmg2CBrYg
+HIDIss9M22RMN+xBV9i496AEL7zkpyO8jGrNggvuSWACbnIvzuwX6eeGX5TPbtBW
+CVpIOhDFdL+3wMj+LXb5mrjqUwrZAodTgqG7BU1F5qxe+YSS68h+HdoSD8HJUvCh
+YJg2yN3Zyf6V+uQYClAJKr9aiKs3zLkZSHLZ3Vd/Q8WhoKKpJvnCufmn8lHj9bvF
+ST4ejoWpKZWU7NsoU9CJ8ziGIKkgfjv/q+C1CutUxt4r04BLgh9kaxFK1vMcaGi0
+wWhKWsGOn6S99m0AXqaECLeeyegwi0JYDr/llpvidVaqAxeDm2Cpaw9FfwZFnrKf
+4DMvyBxrEXMazVYcnimvWm8IVyVOPR5QoUxfahyc4QPHryxyNThwC5m4OtfLm20q
+kl0R0fY9CAihlFs7sxP9XNLmbkUDtXje5Vq9pR1/SUBoQKSmnEG13ex2pE7xuUaL
+4ABOaDA5FDH1Z28j7K9Cqxi4iELeP9/8Uycx4wFbYElik15WOGOV14CM3OmmjAPY
+2hWOn2ODHqA=
+</base64>
+  </rpmTag>
+  <rpmTag name="Sha1header">
+	<string>fac9f09e33edd7bfe368c9267af9423c0338f864</string>
+  </rpmTag>
+  <rpmTag name="Sha256header">
+	<string>41ea7aa8e01a2fb6a29ce2b575411c7ad83837c83cfd7f76498e086f114e6130</string>
+  </rpmTag>
+  <rpmTag name="Name">
+	<string>fedora-release-identity-container</string>
+  </rpmTag>
+  <rpmTag name="Version">
+	<string>33</string>
+  </rpmTag>
+  <rpmTag name="Release">
+	<string>0.8</string>
+  </rpmTag>
+  <rpmTag name="Summary">
+	<string>Package providing the identity for Fedora Container Base Image</string>
+  </rpmTag>
+  <rpmTag name="Description">
+	<string>Provides the necessary files for a Fedora installation that is identifying
+itself as the Fedora Container Base Image.</string>
+  </rpmTag>
+  <rpmTag name="Buildtime">
+	<integer>1588610165</integer>
+  </rpmTag>
+  <rpmTag name="Buildhost">
+	<string>buildhw-03.phx2.fedoraproject.org</string>
+  </rpmTag>
+  <rpmTag name="Installtime">
+	<integer>1589363084</integer>
+  </rpmTag>
+  <rpmTag name="Size">
+	<integer>1585</integer>
+  </rpmTag>
+  <rpmTag name="Distribution">
+	<string>Fedora Project</string>
+  </rpmTag>
+  <rpmTag name="Vendor">
+	<string>Fedora Project</string>
+  </rpmTag>
+  <rpmTag name="License">
+	<string>MIT</string>
+  </rpmTag>
+  <rpmTag name="Packager">
+	<string>Fedora Project</string>
+  </rpmTag>
+  <rpmTag name="Group">
+	<string>Unspecified</string>
+  </rpmTag>
+  <rpmTag name="Url">
+	<string>https://fedoraproject.org/</string>
+  </rpmTag>
+  <rpmTag name="Os">
+	<string>linux</string>
+  </rpmTag>
+  <rpmTag name="Arch">
+	<string>noarch</string>
+  </rpmTag>
+  <rpmTag name="Filesizes">
+	<integer>797</integer>
+	<integer>788</integer>
+  </rpmTag>
+  <rpmTag name="Filestates">
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemodes">
+	<integer>33188</integer>
+	<integer>33188</integer>
+  </rpmTag>
+  <rpmTag name="Filerdevs">
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemtimes">
+	<integer>1588610165</integer>
+	<integer>1588610165</integer>
+  </rpmTag>
+  <rpmTag name="Filedigests">
+	<string>e06cbdb1d9d52da73588f081b5dcf90fdf54e3abf60e4a07ec4e690639e4b982</string>
+	<string>c389a9a15d21e774f6e621ba4e8236b6b8304305f7bd8b5aa3b74ccd147c2ae7</string>
+  </rpmTag>
+  <rpmTag name="Filelinktos">
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Fileflags">
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Fileusername">
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Filegroupname">
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Sourcerpm">
+	<string>fedora-release-33-0.8.src.rpm</string>
+  </rpmTag>
+  <rpmTag name="Fileverifyflags">
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+  </rpmTag>
+  <rpmTag name="Archivesize">
+	<integer>2032</integer>
+  </rpmTag>
+  <rpmTag name="Providename">
+	<string>fedora-release-identity</string>
+	<string>fedora-release-identity-container</string>
+  </rpmTag>
+  <rpmTag name="Requireflags">
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+	<integer>16777226</integer>
+  </rpmTag>
+  <rpmTag name="Requirename">
+	<string>rpmlib(CompressedFileNames)</string>
+	<string>rpmlib(FileDigests)</string>
+	<string>rpmlib(PayloadFilesHavePrefix)</string>
+	<string>rpmlib(PayloadIsZstd)</string>
+  </rpmTag>
+  <rpmTag name="Requireversion">
+	<string>3.0.4-1</string>
+	<string>4.6.0-1</string>
+	<string>4.0-1</string>
+	<string>5.4.18-1</string>
+  </rpmTag>
+  <rpmTag name="Conflictflags">
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Conflictname">
+	<string>fedora-release-identity</string>
+  </rpmTag>
+  <rpmTag name="Conflictversion">
+	<string/>
+  </rpmTag>
+  <rpmTag name="Rpmversion">
+	<string>4.15.90</string>
+  </rpmTag>
+  <rpmTag name="Changelogtime">
+	<integer>1588593600</integer>
+	<integer>1587470400</integer>
+	<integer>1587384000</integer>
+	<integer>1586692800</integer>
+	<integer>1585742400</integer>
+	<integer>1584705600</integer>
+	<integer>1584532800</integer>
+	<integer>1581422400</integer>
+	<integer>1581076800</integer>
+	<integer>1572436800</integer>
+	<integer>1571659200</integer>
+	<integer>1565870400</integer>
+	<integer>1565697600</integer>
+	<integer>1565438400</integer>
+	<integer>1563019200</integer>
+	<integer>1559822400</integer>
+	<integer>1557835200</integer>
+	<integer>1554897600</integer>
+	<integer>1554724800</integer>
+	<integer>1554379200</integer>
+	<integer>1553083200</integer>
+	<integer>1550577600</integer>
+	<integer>1550232000</integer>
+	<integer>1549627200</integer>
+	<integer>1549195200</integer>
+	<integer>1547812800</integer>
+	<integer>1545998400</integer>
+	<integer>1544616000</integer>
+	<integer>1544529600</integer>
+	<integer>1543838400</integer>
+	<integer>1543320000</integer>
+	<integer>1542283200</integer>
+	<integer>1541937600</integer>
+	<integer>1540296000</integer>
+	<integer>1539259200</integer>
+	<integer>1537790400</integer>
+	<integer>1536926400</integer>
+	<integer>1535371200</integer>
+	<integer>1535112000</integer>
+	<integer>1535025600</integer>
+	<integer>1534766400</integer>
+	<integer>1534593600</integer>
+	<integer>1534334400</integer>
+	<integer>1534248000</integer>
+  </rpmTag>
+  <rpmTag name="Changelogname">
+	<string>Stephen Gallagher &lt;sgallagh@redhat.com&gt; - 33-0.8</string>
+	<string>Stephen Gallagher &lt;sgallagh@redhat.com&gt; - 33-0.7</string>
+	<string>Stephen Gallagher &lt;sgallagh@redhat.com&gt; - 33-0.6</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 33-0.5</string>
+	<string>Christian Glombek &lt;cglombek@redhat.com&gt; 33-0.4</string>
+	<string>Patrick Uiterwijk &lt;puiterwijk@redhat.com&gt; 33-0.3</string>
+	<string>Peter Robinson &lt;pbrobinson@fedoraproject.org&gt; 33-0.2</string>
+	<string>Mohan Boddu &lt;mboddu@bhujji.com&gt; - 33-0.1</string>
+	<string>Zbigniew Jędrzejewski-Szmek &lt;zbyszek@in.waw.pl&gt; - 32-0.5</string>
+	<string>Peter Robinson &lt;pbrobinson@fedoraproject.org&gt; 32-0.4</string>
+	<string>Michael Nguyen &lt;mnguyen@redhat.com&gt; - 32-0.3</string>
+	<string>Miro Hrončok &lt;mhroncok@redhat.com&gt; - 32-0.2</string>
+	<string>Mohan Boddu &lt;mboddu@bhujji.com&gt; - 32-0.1</string>
+	<string>Tom Callaway &lt;spot@fedoraproject.org&gt; - 31-0.9</string>
+	<string>Colin Walters &lt;walters@verbum.org&gt; - 31-0.8</string>
+	<string>Stephen Gallagher &lt;sgallagh@redhat.com&gt; - 31-0.7</string>
+	<string>Robert Fairley &lt;rfairley@redhat.com&gt; - 31-0.6</string>
+	<string>Stephen Gallagher &lt;sgallagh@redhat.com&gt; - 31-0.5</string>
+	<string>Michael Nguyen &lt;mnguyen@redhat.com&gt; - 31-0.4</string>
+	<string>Kalev Lember &lt;klember@redhat.com&gt; - 31-0.3</string>
+	<string>Jason L Tibbitts III &lt;tibbs@math.uh.edu&gt; - 31-0.2</string>
+	<string>Tomas Hrcka &lt;thrcka@redhat.com&gt; - 31-0.1</string>
+	<string>Sinny Kumari &lt;skumari@redhat.com&gt; - 30-0.23</string>
+	<string>David Rheinsberg &lt;david.rheinsberg@gmail.com&gt; - 30-0.22</string>
+	<string>Neal Gompa &lt;ngompa13@gmail.com&gt; - 30-0.21</string>
+	<string>Robert Fairley &lt;rfairley@redhat.com&gt; - 30-0.20</string>
+	<string>Kevin Fenzi &lt;kevin@scrye.com&gt; - 30-0.19</string>
+	<string>Stephen Gallagher &lt;sgallagh@redhat.com&gt; - 30-0.18</string>
+	<string>Mohan Boddu &lt;mboddu@bhujji.com&gt; 30-0.17</string>
+	<string>Mohan Boddu &lt;mboddu@bhujji.com&gt; 30-0.16</string>
+	<string>Peter Robinson &lt;pbrobinson@fedoraproject.org&gt; 30-0.15</string>
+	<string>Jan Pazdziora &lt;jpazdziora@redhat.com&gt; - 30-0.14</string>
+	<string>Stephen Gallagher &lt;sgallagh@redhat.com&gt; - 30-0.13</string>
+	<string>Stephen Gallagher &lt;sgallagh@redhat.com&gt; - 30-0.12</string>
+	<string>Jan Pazdziora &lt;jpazdziora@redhat.com&gt; 30-0.10</string>
+	<string>Mohan Boddu &lt;mboddu@bhujji.com&gt; 30-0.9</string>
+	<string>Mohan Boddu &lt;mboddu@bhujji.com&gt; 30-0.8</string>
+	<string>Stephen Gallagher &lt;sgallagh@redhat.com&gt; - 30-0.7</string>
+	<string>Matthew Miller &lt;mattdm@fedoraproject.org&gt; - 30-0.6</string>
+	<string>Peter Robinson &lt;pbrobinson@fedoraproject.org&gt; 30-0.5</string>
+	<string>Jun Aruga &lt;jaruga@redhat.com&gt; - 30-0.4</string>
+	<string>Jason L Tibbitts III &lt;tibbs@math.uh.edu&gt; - 30-0.3</string>
+	<string>David Herrmann &lt;dh.herrmann@gmail.com&gt; - 30-0.2</string>
+	<string>Mohan Boddu &lt;mboddu@bhujji.com&gt; - 30-0.1</string>
+  </rpmTag>
+  <rpmTag name="Changelogtext">
+	<string>- Fix incorrect prerelease labeling for Editions and Spins
+- Resolves: rhbz#1831102</string>
+	<string>- Add new "identity" subpackages to allow Edition and Spin environment groups
+  to be installed together.</string>
+	<string>- Add "Prerelease" notation to PRETTY_NAME and VERSION in os-release</string>
+	<string>- Update color to Fedora blue. Fixes bug #1823099</string>
+	<string>- Add IoT user preset to disable grub-boot-success.timer
+- Update links in 80-coreos.preset</string>
+	<string>- Enable IoT provisioning service</string>
+	<string>- Add IoT provisioning URL config
+- Enable fstrim.timer (crobinso)
+- Enable kata-osbuilder-generate.service (crobinso)</string>
+	<string>- Setup for rawhide being F33</string>
+	<string>- Add 'disable *' default preset for user units (#1468501)</string>
+	<string>- Drop clevis IoT defaults change</string>
+	<string>- Update os-release information for Fedora CoreOS</string>
+	<string>- RPM macros: Redefining %fedora now changes %dist</string>
+	<string>- Setup for rawhide being F32
+- Disable zram-swap service (sgallagh)</string>
+	<string>- update legal text (reflect current release, refer to Fedora OS instead of Fedora)</string>
+	<string>- Sync Silverblue with Workstation
+  In particular, it should have the same "ssh disabled by default" etc.
+  https://discussion.fedoraproject.org/t/strange-etc-os-release-contents-on-silverblue/2024/2
+- Enable zram-swap on workstation installations
+- Enable the session agent for snaps</string>
+	<string>- Work around upgrade bug
+- Resolves: rhbz#1710543</string>
+	<string>- Remove presets from 80-coreos.preset and add note referring to FCOS overlay RPM</string>
+	<string>- Add Provides for the base module for Fedora (BZ #1688462)</string>
+	<string>- Add presets for CoreOS</string>
+	<string>- Enable the Fedora flatpak repos service (#1696225)</string>
+	<string>- Allow bootstrap suffix to be overridden.</string>
+	<string>- Setup for rawhide being f30</string>
+	<string>- Don't build AtomicHost from F30 and onward releases in favor of coreos</string>
+	<string>- Enable dbus-broker over dbus-daemon, to make new installs use the broker as
+  new system- and user-bus implementation.</string>
+	<string>- Add snappy variant</string>
+	<string>- Own /etc/issue.d directory.</string>
+	<string>- Own /etc/swid directory.</string>
+	<string>- Include empty VERSION_CODENAME= field in os-release</string>
+	<string>- Use the icon logo for `LOGO`</string>
+	<string>- Add 'LOGO' to os-release(5) for Fedora
+- Enable the Docker daemon socket</string>
+	<string>- Add IoT config to fix policy around TPM2 requirements</string>
+	<string>- Fix the supplemental edition SWID tag, add the supplemental attribute.</string>
+	<string>- Drop unneeded Requires(post) and Requires(postun) dependencies causing
+  loops. The glib-compile-schemas dependency is now handled by file triggers
+  and the systemd requirement was just completely erroneous.
+- Also drop strict dependencies on edition packages. They are causing
+  un-breakable dependency loops.</string>
+	<string>- Convert to more maintainable implementation of variant-handling</string>
+	<string>- Add edition supplemental .swidtag files, and amend convert-to-edition.lua
+  to keep symlink to the correct one in sync with os-release.
+- Produce distro-level SWID tag in /usr/lib/swidtag/fedoraproject.org.
+- Enable ostree-finalize-staged.path</string>
+	<string>- Enable the stratis daemon for managing stratis storage</string>
+	<string>- Set cpi.service as enabled in the systemd presets
+- Set device_cio_free service as enabled</string>
+	<string>- Remove specialized handling for /etc/issue.
+- Drop convert-to-edition script</string>
+	<string>- add container
+- add coreos
+- add desktop spins</string>
+	<string>- Add Fedora IoT edition components</string>
+	<string>- Update dist macro to consider bootstrapping.</string>
+	<string>- Escape use of the distprefix macro, so it makes it into the macro
+  file instead of being expanded in the spec.</string>
+	<string>- Enable dbus user units explicitly</string>
+	<string>- Setup for rawhide being f30</string>
+  </rpmTag>
+  <rpmTag name="Filedevices">
+	<integer>1</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Fileinodes">
+	<integer>1</integer>
+	<integer>2</integer>
+  </rpmTag>
+  <rpmTag name="Filelangs">
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Provideflags">
+	<integer>8</integer>
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Provideversion">
+	<string>33-0.8</string>
+	<string>33-0.8</string>
+  </rpmTag>
+  <rpmTag name="Dirindexes">
+	<integer>0</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Basenames">
+	<string>os-release</string>
+	<string>org.fedoraproject.Fedora-edition.swidtag</string>
+  </rpmTag>
+  <rpmTag name="Dirnames">
+	<string>/usr/lib/</string>
+	<string>/usr/lib/swidtag/fedoraproject.org/</string>
+  </rpmTag>
+  <rpmTag name="Optflags">
+	<string>-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection</string>
+  </rpmTag>
+  <rpmTag name="Payloadformat">
+	<string>cpio</string>
+  </rpmTag>
+  <rpmTag name="Payloadcompressor">
+	<string>zstd</string>
+  </rpmTag>
+  <rpmTag name="Payloadflags">
+	<string>19</string>
+  </rpmTag>
+  <rpmTag name="Installcolor">
+	<integer>3</integer>
+  </rpmTag>
+  <rpmTag name="Installtid">
+	<integer>1589363083</integer>
+  </rpmTag>
+  <rpmTag name="Platform">
+	<string>noarch-redhat-linux-gnu</string>
+  </rpmTag>
+  <rpmTag name="Filecolors">
+	<integer>0</integer>
+	<integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Fileclass">
+	<integer>0</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Classdict">
+	<string>ASCII text</string>
+	<string>XML 1.0 document, ASCII text</string>
+  </rpmTag>
+  <rpmTag name="Filedigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Bugurl">
+	<string>https://bugz.fedoraproject.org/fedora-release</string>
+  </rpmTag>
+  <rpmTag name="Encoding">
+	<string>utf-8</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigest">
+	<string>27520c70343906864802147481e8e3647a22cffb5178ec07d606a5dd6c89cd26</string>
+  </rpmTag>
+  <rpmTag name="Payloaddigestalgo">
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Payloaddigestalt">
+	<string>d219a9721eb3cb61bcd87cc9dcb610d8647f755728ecfcba54f3a1e375c5b7da</string>
+  </rpmTag>
+</rpmHeader>

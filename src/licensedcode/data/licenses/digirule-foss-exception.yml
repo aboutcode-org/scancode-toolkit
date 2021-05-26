@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: bradsprojects
 homepage_url: https://bradsprojects.com/the-digirule/
 is_exception: yes
+minimum_coverage: 90
 spdx_license_key: DigiRule-FOSS-exception
 other_urls:
     - http://www.digirulesolutions.com/drupal/foss

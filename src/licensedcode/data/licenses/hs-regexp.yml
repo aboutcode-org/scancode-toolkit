@@ -13,3 +13,5 @@ text_urls:
     - https://dev.mysql.com/doc/mysql-security-excerpt/5.0/en/license-regex.html
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License
+notes: this is very similar to the purdue-bsd license
+minimum_coverage: 70

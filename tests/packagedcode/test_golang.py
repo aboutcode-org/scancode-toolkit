@@ -16,6 +16,9 @@ from packages_test_utils import PackageTester
 
 
 class TestGolang(PackageTester):
+    """
+    Check go.mod and go.sum file tests.
+    """
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_parse_gomod_kingpin(self):

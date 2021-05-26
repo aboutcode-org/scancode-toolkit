@@ -1,0 +1,6 @@
+license_expression: gpl-2.0-plus AND cc-by-sa-4.0 AND other-copyleft AND other-permissive
+is_license_notice: yes
+relevance: 100
+notes: https://www.mageia.org/en/about/license/
+ignorable_urls:
+    - http://www.mp3licensing.com/

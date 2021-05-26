@@ -1,0 +1,120 @@
+[
+  {
+    "type": "rpm",
+    "namespace": null,
+    "name": "boost-license1_71_0",
+    "version": "1.71.0",
+    "qualifiers": {
+      "arch": "noarch"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "This package contains the license boost is provided under.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": "http://www.boost.org",
+    "download_url": null,
+    "size": 1338,
+    "sha1": "9a205eb8abb9efb46992f835f9548bfeda162f0d",
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "boost-1.0",
+    "declared_license": "BSL-1.0",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:rpm/boost-license1_71_0@1.71.0?arch=noarch",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "installed_files": [
+      {
+        "path": "/usr/share/licenses/boost-license1_71_0",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/usr/share/licenses/boost-license1_71_0/LICENSE_1_0.txt",
+        "size": 0,
+        "sha1": null,
+        "md5": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+        "sha256": null,
+        "sha512": null
+      }
+    ]
+  },
+  {
+    "type": "rpm",
+    "namespace": null,
+    "name": "cracklib-dict-small",
+    "version": "2.9.6",
+    "qualifiers": {
+      "arch": "x86_64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "CrackLib tests passwords to determine whether they match certain\nsecurity-oriented characteristics. You can use CrackLib to stop users\nfrom choosing passwords that are easy to guess.\n\nThis package contains a small dictionay file used by cracklib.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": "http://sourceforge.net/projects/cracklib",
+    "download_url": null,
+    "size": 259081,
+    "sha1": "892abab7ad3318ff40a50331310127d67d6074a8",
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "lgpl-2.1",
+    "declared_license": "LGPL-2.1",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:rpm/cracklib-dict-small@2.9.6?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "installed_files": [
+      {
+        "path": "/pw_dict.hwm",
+        "size": 0,
+        "sha1": null,
+        "md5": "6787c3ee0d1f03e47a6cfc6d639fb89575ef5e28bbb0c8b2ccdc2876b0713669",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/pw_dict.pwd",
+        "size": 0,
+        "sha1": null,
+        "md5": "c5de5d3ab2fa1e8d1bec21ab2937dfff48e59493fc9af2d7835968516e1d1f68",
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "/pw_dict.pwi",
+        "size": 0,
+        "sha1": null,
+        "md5": "7fabf3751149bae4104b400b916b674fac3749c138fec9e9a63cfe8bde6d6044",
+        "sha256": null,
+        "sha512": null
+      }
+    ]
+  }
+]

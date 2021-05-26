@@ -43,6 +43,8 @@ Options:
     --html FILE             Write scan output as HTML to FILE.
     --custom-output FILE    Write scan output to FILE formatted with the custom
                             Jinja template file.
+    --debian FILE           Write scan output in machine-readable Debian copyright
+                            format to FILE.
     --custom-template FILE  Use this Jinja template FILE as a custom template.
     --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
     --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
