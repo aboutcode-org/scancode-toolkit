@@ -220,7 +220,6 @@ def validate_depth(ctx, param, value):
 
 @click.option('--from-json',
     is_flag=True,
-    multiple=True,
     help='Load codebase from one or more <input> JSON scan file(s).',
     help_group=cliutils.CORE_GROUP, sort_order=25, cls=PluggableCommandLineOption)
 
@@ -474,7 +473,7 @@ def scancode(
 
 def run_scan(
     input,  # NOQA
-    from_json=None,
+    from_json=False,
     strip_root=False,
     full_root=False,
     max_in_memory=10000,
@@ -517,27 +516,34 @@ def run_scan(
         raise ScancodeError(msg)
 
     if not isinstance(input, (list, tuple)):
-        # nothing else todo
-        assert isinstance(input, str)
+        if not isinstance(input, str):
+            msg = 'Unknown <input> format: "{}".'.format(repr(input))
+            raise ScancodeError(msg)
 
     elif len(input) == 1:
         # we received a single input path, so we treat this as a single path
         input = input[0]  # NOQA
 
-    # This is the case where we have a list of inputs, but the list of inputs are not from the
-    # `from_json` option. If the `from_json` option is available and we have a list of inputs
-    # from it, we can pass `input` just fine when we create a VirtualCodebase, otherwise we have to
-    # process `input` below.
+    # Note that If the `from_json` option is available and we have a list of
+    # input paths, we can pass this `input` list just fine when we create a
+    # VirtualCodebase; otherwise we have to process `input` to make it a single
+    # root with excludes.
     elif not from_json:
-        # we received a several input paths: we can handle this IFF they share
+        # FIXME: support the multiple root better. This is quirky at best
+
+        # This is the case where we have a list of input path and the
+        # `from_json` option is not selected: we can handle this IFF they share
         # a common root directory and none is an absolute path
 
         if any(os.path.isabs(p) for p in input):
-            msg = ('Invalid inputs: all input paths must be relative.')
+            msg = (
+                'Invalid inputs: all input paths must be relative when '
+                'using multiple inputs.'
+            )
             raise ScancodeError(msg)
 
-        # find the common prefix directory (note that this is a pre string operation
-        # hence it may return non-existing paths
+        # find the common prefix directory (note that this is a pre string
+        # operation hence it may return non-existing paths
         common_prefix = os.path.commonprefix(input)
 
         if not common_prefix:
@@ -546,20 +552,23 @@ def run_scan(
             common_prefix = str('.')
 
         elif not os.path.isdir(common_prefix):
-            msg = 'Invalid inputs: all input paths must share a common parent directory.'
+            msg = (
+                'Invalid inputs: all input paths must share a '
+                'common single parent directory.'
+            )
+
             raise ScancodeError(msg)
 
         # and we craft a list of synthetic --include path pattern options from
         # the input list of paths
         included_paths = [as_posixpath(path).rstrip('/') for path in input]
-        # FIXME: this is a hack as this "include" is from an external plugin!!!1
+        # FIXME: this is a hack as this "include" is from an external plugin!!!
         include = list(requested_options.get('include', []) or [])
         include.extend(included_paths)
         requested_options['include'] = include
 
         # ... and use the common prefix as our new input
         input = common_prefix  # NOQA
-
 
     # build mappings of all options to pass down to plugins
     standard_options = dict(

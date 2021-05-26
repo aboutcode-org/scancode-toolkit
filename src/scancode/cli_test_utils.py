@@ -16,7 +16,14 @@ from commoncode.system import on_windows
 from scancode_config import scancode_root_dir
 
 
-def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None, retry=True):
+def run_scan_plain(
+    options, 
+    cwd=None, 
+    test_mode=True, 
+    expected_rc=0, 
+    env=None, 
+    retry=True,
+):
     """
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
     """
@@ -27,16 +34,29 @@ def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None, r
     if test_mode and '--test-mode' not in options:
         options.append('--test-mode')
 
+    if not env:
+        env = dict(os.environ)
+
     scmd = u'scancode'
     scan_cmd = os.path.join(scancode_root_dir, scmd)
-    rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd, env=env)
+    rc, stdout, stderr = execute2(
+        cmd_loc=scan_cmd,
+        args=options,
+        cwd=cwd,
+        env=env,
+    )
 
     if retry and rc != expected_rc:
         # wait and rerun in verbose mode to get more in the output
         time.sleep(1)
         if '--verbose' not in options:
             options.append('--verbose')
-        result = rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd, env=env)
+        result = rc, stdout, stderr = execute2(
+            cmd_loc=scan_cmd,
+            args=options,
+            cwd=cwd,
+            env=env,
+        )
 
     if rc != expected_rc:
         opts = get_opts(options)
@@ -55,7 +75,14 @@ stderr:
     return rc, stdout, stderr
 
 
-def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env=None, retry=True):
+def run_scan_click(
+    options,
+    monkeypatch=None,
+    test_mode=True,
+    expected_rc=0,
+    env=None,
+    retry=True,
+):
     """
     Run a scan as a Click-controlled subprocess
     If monkeypatch is provided, a tty with a size (80, 43) is mocked.
@@ -74,6 +101,9 @@ def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env
     if monkeypatch:
         monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
         monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
+
+    if not env:
+        env = dict(os.environ)
 
     runner = CliRunner()
 
@@ -132,7 +162,13 @@ def remove_windows_extra_timeout(scancode_options, timeout=WINDOWS_CI_TIMEOUT):
             del scancode_options['--timeout']
 
 
-def check_json_scan(expected_file, result_file, regen=False, remove_file_date=False, ignore_headers=False):
+def check_json_scan(
+    expected_file,
+    result_file,
+    regen=False,
+    remove_file_date=False,
+    ignore_headers=False
+):
     """
     Check the scan `result_file` JSON results against the `expected_file`
     expected JSON results.
@@ -223,15 +259,20 @@ def streamline_headers(headers):
 
 def streamline_scanned_file(scanned_file, remove_file_date=False):
     """
-    Modify the `scanned_file` mapping for a file in scan results in place to make
-    it easier to test.
+    Modify the `scanned_file` mapping for a file in scan results in place to
+    make it easier to test.
     """
     streamline_errors(scanned_file.get('scan_errors', []))
     if remove_file_date:
         scanned_file.pop('date', None)
 
 
-def check_jsonlines_scan(expected_file, result_file, regen=False, remove_file_date=False):
+def check_jsonlines_scan(
+    expected_file,
+    result_file,
+    regen=False,
+    remove_file_date=False,
+):
     """
     Check the scan result_file JSON Lines results against the expected_file
     expected JSON results, which is a list of mappings, one per line. If regen

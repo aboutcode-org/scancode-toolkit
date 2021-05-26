@@ -161,6 +161,5 @@ Options:
 
       scancode --json-pp - --license --package  samples
 
-  Note: when you run scancode, a progress bar is displayed with a counter of
-  the number of files processed. Use --verbose to display file-by-file
-  progress.
+  Note: when you run scancode, a progress bar is displayed with a counter of the
+  number of files processed. Use --verbose to display file-by-file progress.
