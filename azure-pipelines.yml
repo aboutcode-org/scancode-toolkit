@@ -328,7 +328,7 @@ jobs:
           image_name: ubuntu-20.04
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: tmp/bin/pip install --force-reinstall --upgrade -e .[dev] && tmp/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: bin/pip install --force-reinstall --upgrade -e .[dev] && bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -336,7 +336,7 @@ jobs:
           image_name: windows-2019
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: tmp\Scripts\pip install --force-reinstall --upgrade -e .[dev] &&  tmp\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
+              all: Scripts\pip install --force-reinstall --upgrade -e .[dev] &&  Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
 
     - template: etc/ci/azure-posix.yml
       parameters:
@@ -344,6 +344,6 @@ jobs:
           image_name: macos-10.15
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: tmp/bin/pip install --force-reinstall --upgrade -e .[dev] && tmp/bin/pytest -n 2 -vvs  tests/scancode/test_cli.py
+              all: bin/pip install --force-reinstall --upgrade -e .[dev] && bin/pytest -n 2 -vvs  tests/scancode/test_cli.py
 
 
