@@ -10,7 +10,7 @@ license_expressions:
   - apache-2.0
   - oracle-openjdk-classpath-exception-2.0
   - openjdk-exception
-  - trademark-notice
+  - generic-trademark
   - mit
   - bsd-new
   - zlib

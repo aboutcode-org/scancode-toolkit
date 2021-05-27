@@ -1,0 +1,3 @@
+[console_scripts]
+hb=haruka_bot.cli.__main__:main
+

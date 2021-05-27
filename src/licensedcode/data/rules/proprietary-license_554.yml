@@ -1,0 +1,13 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_copyrights:
+    - (c) 2015-2020 Progress
+ignorable_holders:
+    - Progress
+ignorable_urls:
+    - http://getfiddler.com/
+    - http://www.telerik.com/purchase/fiddler
+    - http://www.telerik.com/purchase/license-agreement/fiddler-enterprise-support
+    - https://www.progress.com/legal/privacy-policy

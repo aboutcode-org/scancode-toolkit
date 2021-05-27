@@ -7,3 +7,4 @@ homepage_url: https://github.com/KDE/licensedigger/blob/master/LICENSES/LicenseR
 spdx_license_key: LicenseRef-scancode-kde-accepted-gpl
 other_spdx_license_keys:
     - LicenseRef-KDE-Accepted-GPL
+faq_url: https://community.kde.org/Policies/Licensing_Policy

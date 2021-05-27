@@ -7,3 +7,4 @@ homepage_url: https://github.com/KDE/kate/blob/master/LICENSES/LicenseRef-KDE-Ac
 spdx_license_key: LicenseRef-scancode-kde-accepted-lgpl
 other_spdx_license_keys:
     - LicenseRef-KDE-Accepted-LGPL
+faq_url: https://community.kde.org/Policies/Licensing_Policy

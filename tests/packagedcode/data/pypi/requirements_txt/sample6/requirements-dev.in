@@ -1,3 +1,0 @@
-prompt_toolkit>=1.0.14
-Pygments==2.2.0
-regex

@@ -546,10 +546,13 @@ class DejaSource(ExternalLicensesSource):
         # instead each part of the combo
         dejacode_special_composites = set([
               'intel-bsd-special',
+              #'newlib-subdirectory',
             ])
-        is_combo = key in dejacode_special_composites
+        is_component_license = mapping.get('is_component_license') or False
+
+        is_combo = is_component_license or key in dejacode_special_composites
         if is_combo:
-            if TRACE: print('Skipping DejaCode combo license', key)
+            if TRACE: print('Skipping DejaCode combo/component license', key)
             return
 
         deprecated = not mapping.get('is_active')
@@ -559,6 +562,13 @@ class DejaSource(ExternalLicensesSource):
 
         standard_notice = mapping.get('standard_notice') or ''
         standard_notice = clean_text(standard_notice)
+
+        spdx_license_key = mapping.get('spdx_license_key') or None
+        if deprecated:
+            spdx_license_key = None
+        else:
+            if not spdx_license_key:
+                spdx_license_key = f'LicenseRef-scancode-{key}'
 
         lic = License(
             key=key,
@@ -572,7 +582,7 @@ class DejaSource(ExternalLicensesSource):
 
             # FIXME: we may not want to carry notes over???
             # lic.notes = mapping.notes
-            spdx_license_key=mapping['spdx_license_key'],
+            spdx_license_key=spdx_license_key,
             text_urls=mapping['text_urls'].splitlines(False),
             osi_url=mapping['osi_url'],
             faq_url=mapping['faq_url'],
@@ -805,8 +815,12 @@ EXTERNAL_LICENSE_SYNCHRONIZATION_SOURCES = {
 }
 
 
-def merge_licenses(scancode_license, external_license, updatable_attributes,
-                   from_spdx=False):
+def merge_licenses(
+    scancode_license, 
+    external_license, 
+    updatable_attributes,
+    from_spdx=False,
+):
     """
     Compare and update two License objects in-place given a sequence of
     `updatable_attributes`.
@@ -839,20 +853,21 @@ def merge_licenses(scancode_license, external_license, updatable_attributes,
         external_key = external_license.spdx_license_key
         if scancode_key != external_key:
             raise Exception(
-                f'Non mergeable licenses with different SPDX keys: scancode_license.spdx_license_key {scancode_key} <>  external_license.spdx_license_key {external_key}'
+                f'Non mergeable licenses with different SPDX keys: '
+                'scancode_license.spdx_license_key {scancode_key} <>  '
+                'external_license.spdx_license_key {external_key}'
             )
     else:
         scancode_key = scancode_license.key
         external_key = external_license.key
         if scancode_key != external_key:
-            raise Exception('Non mergeable licenses with different keys: %(scancode_key)s <> %(external_key)s' % locals())
+            raise Exception('Non mergeable licenses with different keys: '
+                            '%(scancode_key)s <> %(external_key)s' % locals())
 
-#         if scancode_license.spdx_license_key != external_license.spdx_license_key:
-#             pass
-#         else:
-#             if TRACE:
-#                 print('Merging licenses with different keys, but same SPDX key: %(scancode_key)s <> %(external_key)s' % locals())
-#             update_external('key', scancode_key, external_key)
+        if scancode_license.spdx_license_key != external_license.spdx_license_key:
+            if TRACE:
+                print(f'Updating external SPDX key: from {external_license.spdx_license_key} to {scancode_license.spdx_license_key}')
+            external_license.spdx_license_key = scancode_license.spdx_license_key
 
     for attrib in updatable_attributes:
         scancode_value = getattr(scancode_license, attrib)
@@ -932,7 +947,11 @@ def merge_licenses(scancode_license, external_license, updatable_attributes,
 
         # on difference, the other license wins
         if scancode_value != external_value:
-            update_scancode(attrib, scancode_value, external_value)
+            # unless we have SPDX ids
+            if attrib== 'spdx_license_key' and external_value.startswith('LicenseRef-scancode'):
+                update_external(attrib, scancode_value, external_value)
+            else:
+                update_scancode(attrib, scancode_value, external_value)
             continue
 
     return updated_scancode_attributes, updated_external_attributes
@@ -1065,16 +1084,20 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
                 print('External license with different key:', matching_key, 'and text matched to ScanCode key:', matched_key)
 
             if matched_key:
-                print('\nExternal license with different key and matched text to ScanCode:', matching_key, ' matched to:', matched_key)
+                print('External license with different key:', matching_key, 'and text matched to ScanCode key:', matched_key)
                 if matched_key in unmatched_scancode_by_key:
                     del unmatched_scancode_by_key[matched_key]
 
                 scancode_license = scancodes_by_key.get(matched_key)
+                if TRACE:
+                    print('scancode_license:', matching_key, scancode_license)
 
                 scancode_updated, external_updated = merge_licenses(
-                    scancode_license, external_license,
-                    external_source.updatable_attributes,
-                    from_spdx=use_spdx_key)
+                    scancode_license=scancode_license,
+                    external_license=external_license,
+                    updatable_attributes=external_source.updatable_attributes,
+                    from_spdx=use_spdx_key,
+                )
 
                 if not scancode_updated and not external_updated:
                     if TRACE_DEEP: print('License attributes are identical:', matching_key)

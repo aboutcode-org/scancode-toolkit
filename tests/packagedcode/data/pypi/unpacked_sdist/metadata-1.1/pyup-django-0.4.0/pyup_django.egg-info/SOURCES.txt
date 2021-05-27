@@ -1,0 +1,17 @@
+HISTORY.rst
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+pyup_django/__init__.py
+pyup_django/admin.py
+pyup_django/apps.py
+pyup_django/models.py
+pyup_django/settings.py
+pyup_django.egg-info/PKG-INFO
+pyup_django.egg-info/SOURCES.txt
+pyup_django.egg-info/dependency_links.txt
+pyup_django.egg-info/not-zip-safe
+pyup_django.egg-info/requires.txt
+pyup_django.egg-info/top_level.txt

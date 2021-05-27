@@ -40,7 +40,7 @@ patch==1.16
 pdfminer.six==20181108
 pefile==2019.4.18
 pip==20.3.3
-pkginfo==1.5.0.1
+pkginfo==1.7.0
 pluggy==0.12.0
 plugincode==21.1.21
 ply==3.9
@@ -72,4 +72,4 @@ wcwidth==0.1.7
 webencodings==0.5
 wheel==0.36.2
 xmltodict==0.11.0
-zipp==0.5.1
+zipp==3.4.1

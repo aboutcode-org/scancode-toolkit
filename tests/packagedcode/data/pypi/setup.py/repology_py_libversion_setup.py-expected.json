@@ -13,8 +13,8 @@
       "type": "person",
       "role": "author",
       "name": "Dmitry Marakasov",
-      "email": "amdmi3@amdmi3.ru",
-      "url": "https://github.com/repology/py-libversion"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
@@ -52,7 +52,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/libversion",
-  "repository_homepage_url": "https://pypi.org/project/libversion",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": null,
-  "api_data_url": "http://pypi.python.org/pypi/libversion/json"
+  "api_data_url": "https://pypi.org/pypi/libversion/json"
 }

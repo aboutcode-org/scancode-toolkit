@@ -1,0 +1,16 @@
+key: paypal-sdk-2013-2016
+short_name: PayPal SDK License 2013-2016
+name: PayPal SDK License 2013-2016
+category: Permissive
+owner: PayPal
+homepage_url: https://github.com/paypal/sdk-core-ruby/blob/master/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-paypal-sdk-2013-2016
+standard_notice: |
+    The PayPal SDK is released under the following license:
+    Copyright (c) 2013-2016 PAYPAL, INC.
+    SDK LICENSE
+ignorable_copyrights:
+  - Copyright (c) 2013-2016 PAYPAL, INC.
+ignorable_holders:
+  - PAYPAL, INC.
+

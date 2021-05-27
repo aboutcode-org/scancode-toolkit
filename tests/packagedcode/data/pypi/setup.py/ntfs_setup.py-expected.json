@@ -13,11 +13,12 @@
       "type": "person",
       "role": "author",
       "name": "Siddharth Agarwal",
-      "email": "sid.bugzilla@gmail.com",
-      "url": "https://github.com/sid0/ntfs"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
+    "windows ntfs hardlink junction",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Programming Language :: Python :: 2.5",
@@ -49,7 +50,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/ntfsutils",
-  "repository_homepage_url": "https://pypi.org/project/ntfsutils",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": null,
-  "api_data_url": "http://pypi.python.org/pypi/ntfsutils/json"
+  "api_data_url": "https://pypi.org/pypi/ntfsutils/json"
 }

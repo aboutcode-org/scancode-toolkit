@@ -1,0 +1,3 @@
+[console_scripts]
+anon = anonapi.anon:main
+
