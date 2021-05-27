@@ -24,9 +24,7 @@
       "tool_name": "scancode-toolkit",
       "options": {
         "input": "<path>",
-        "--from-json": [
-          true
-        ],
+        "--from-json": true,
         "--json-pp": "<file>",
         "--only-findings": true
       },
