@@ -66,6 +66,9 @@
   - public-domain
   - GPL-2
   - GAP
+  - LGPL-3+
+  - GPL-2+
+  - Expat
 - ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
   AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
   OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus

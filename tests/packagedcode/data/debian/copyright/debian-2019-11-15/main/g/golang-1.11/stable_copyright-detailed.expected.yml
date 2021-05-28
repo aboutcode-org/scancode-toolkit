@@ -13,6 +13,14 @@
   - CC-BY-3.0
   - BSD-3-clause
   - Go
+  - BSD-3-clause
+  - Go
+  - Apache-2.0
+  - X11
+  - FreeBSD
+  - MPEG
+  - CC-BY-3.0
+  - BSD-2-clause-svgpan
 - (bsd-new AND google-patent-license-golang) AND mit AND (bsd-new AND google-patent-license-golang)
   AND (bsd-new AND google-patent-license-golang) AND (bsd-new AND google-patent-license-golang)
   AND bsd-simplified AND (bsd-new AND google-patent-license-golang) AND (bsd-new AND google-patent-license-golang)

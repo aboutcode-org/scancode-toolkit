@@ -13,6 +13,20 @@
   - ISC
   - LGPL-2
   - LGPL-2+
+  - BSD-2-clause
+  - BSD-3-clause
+  - Expat
+  - BSL
+  - LGPL-2
+  - LGPL-2+
+  - LGPL-2.1
+  - LGPL-2.1+
+  - GPL-2+
+  - GPL-3+
+  - MIT-X11
+  - MPL-1.1
+  - Apache-2.0
+  - ISC
 - bsd-simplified AND bsd-new AND mit AND (gpl-3.0-plus AND gpl-3.0-plus AND unknown-license-reference
   AND gpl-3.0) AND (lgpl-2.0-plus AND lgpl-2.1-plus) AND (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1)
   AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND x11 AND ((mpl-1.1 AND mpl-1.1) OR (gpl-2.0-plus

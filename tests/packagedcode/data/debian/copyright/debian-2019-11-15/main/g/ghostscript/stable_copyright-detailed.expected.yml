@@ -37,6 +37,25 @@
   - ZLIB
   - GPL-3+
   - GPL
+  - AGPL-3
+  - GPL-3+
+  - GPL-2+
+  - GPL-2
+  - GPL
+  - LGPL-2.1
+  - Apache-2.0
+  - GAP~configure
+  - Expat
+  - Expat~SunSoft
+  - Expat~Ghostgum
+  - NTP~Open
+  - NTP~WSU
+  - NTP~Lucent
+  - BSD-3-Clause
+  - BSD-3-Clause~Adobe
+  - FTL
+  - ZLIB
+  - ISC
 - agpl-3+ AND bsd-new AND agpl-3+ AND lgpl-2.1 AND freetype AND gpl-1.0-plus AND gpl-1.0-plus
   AND agpl-3.0 WITH ps-or-pdf-font-exception-20170817 AND gpl-1.0-plus AND gpl-1.0-plus AND
   fsf-free AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0-plus AND zlib AND bsd-new AND bsd-new

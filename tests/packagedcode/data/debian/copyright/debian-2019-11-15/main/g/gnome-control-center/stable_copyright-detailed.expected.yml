@@ -2,6 +2,10 @@
   - Expat
   - LGPL-2+
   - LGPL-2.1+
+  - GPL-2+
+  - Expat
+  - LGPL-2+
+  - LGPL-2.1+
 - (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND mit AND (lgpl-2.0-plus AND lgpl-2.1-plus AND
   lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)
 - |

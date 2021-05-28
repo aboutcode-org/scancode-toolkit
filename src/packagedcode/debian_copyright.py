@@ -179,7 +179,9 @@ class StructuredCopyrightProcessor(DebianDetector):
 
         return dc
 
-    def get_declared_license(self, filter_licenses=False, skip_debian_packaging=False, *args, **kwargs):
+    def get_declared_license(
+        self, filter_licenses=False, skip_debian_packaging=False, *args, **kwargs
+    ):
         """
         Return a list of declared license strings built from the available license detections.
         """
@@ -187,7 +189,7 @@ class StructuredCopyrightProcessor(DebianDetector):
         declarable_paragraphs = [
             para
             for para in self.debian_copyright.paragraphs
-            if hasattr(para, "license") and para.license.name and not isinstance(para, CopyrightLicenseParagraph)
+            if hasattr(para, "license") and para.license.name
         ]
 
         if skip_debian_packaging:

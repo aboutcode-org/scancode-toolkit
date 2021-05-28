@@ -12,6 +12,17 @@
   - GPL-2+-libtool-exception
   - permissive-autoconf-m4
   - permissive-fsf
+  - GPL-2+-autoconf-exception
+  - GPL-2+-libtool-exception
+  - GPL-3+-autoconf-exception
+  - LGPL-2.1
+  - LGPL-2.1+
+  - MIT
+  - permissive-autoconf-m4
+  - permissive-autoconf-m4-no-warranty
+  - permissive-configure
+  - permissive-fsf
+  - permissive-makefile-in
 - (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1 AND lgpl-3.0-plus
   AND gpl-1.0-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)
   AND bsd-3-clause AND fsf-ap AND fsf-unlimited-no-warranty AND fsf-unlimited-no-warranty AND

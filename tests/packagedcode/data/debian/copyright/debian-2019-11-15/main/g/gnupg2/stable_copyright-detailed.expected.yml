@@ -12,6 +12,13 @@
   - TinySCHEME
   - GPL-3+
   - CC0-1.0
+  - TinySCHEME
+  - RFC-Reference
+  - LGPL-3+
+  - LGPL-2.1+
+  - BSD-3-clause
+  - Expat
+  - CC0-1.0
 - gpl-3.0-plus AND gpl-3.0-plus AND permissive AND permissive AND (lgpl-2.1-plus AND lgpl-3.0-plus)
   AND mit AND gpl-3.0-plus AND (gpl-3.0-plus OR bsd-new) AND (lgpl-3.0-plus AND lgpl-3.0-plus
   AND lgpl-3.0 AND lgpl-3.0) AND gpl-3.0-plus AND (unknown-license-reference AND unknown-license-reference

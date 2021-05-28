@@ -10,6 +10,10 @@
   - Apache-2.0 and Zeus
   - Apache-2.0 or GPL-2+
   - Expat
+  - Zeus
+  - GPL-2+
+  - Haines
+  - Custom
 - (apache-2.0 AND apache-2.0 AND apache-2.0) AND ((apache-2.0 AND apache-2.0 AND apache-2.0)
   AND bsd-3-clause-cambridge) AND bsd-new AND (gpl-3.0-plus OR bison-exception-2.2) AND bsd-3-clause-smrgrav
   AND ((apache-2.0 AND apache-2.0 AND apache-2.0) AND cisco) AND bsd-2-clause-darwin AND ((apache-2.0

@@ -22,6 +22,15 @@
   - Artistic-dist
   - Artistic or GPL-1+ or Artistic-dist
   - GPL-1+ or Artistic, and Expat
+  - LGPL-2.1
+  - GPL-1+
+  - GPL-2+
+  - Artistic-2
+  - BSD-4-clause-POWERDOG
+  - BSD-3-clause-GENERIC
+  - REGCOMP
+  - HSIEH-DERIVATIVE
+  - HSIEH-BSD
 - ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND mit AND (regexp AND
   ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))) AND gpl-3.0-plus WITH
   bison-exception-2.2 AND unicode-dfs-2015 AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0

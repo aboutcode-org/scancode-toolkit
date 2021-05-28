@@ -3,6 +3,7 @@
   - Binary redistribution (Qualcomm Atheros)
   - Binary redistribution (Qualcomm Atheros)
   - Binary redistribution (Qualcomm Atheros)
+  - Binary redistribution (Qualcomm Atheros)
 - intel AND (clear-bsd AND isc AND bsd-no-mod AND gpl-2.0-plus AND ecos-exception-2.0 AND mit)
   AND proprietary-license AND proprietary-license AND proprietary-license
 - |

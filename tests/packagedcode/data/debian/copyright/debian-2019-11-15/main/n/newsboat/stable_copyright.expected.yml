@@ -1,6 +1,7 @@
 - - MIT/Expat
   - Boost-1.0
   - GPL-2+
+  - GPL-2
 - mit AND boost-1.0 AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-2.0)
 - |
   2015-2018, Alexander Batischev <eual.jp@gmail.com>

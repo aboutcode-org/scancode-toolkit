@@ -12,6 +12,9 @@
   - BSD-3-clause and BSL
   - ISC
   - LGPL-2
+  - BSL
+  - GPL-2+
+  - MPL-1.1
 - bsd-simplified AND bsd-new AND mit AND (gpl-3.0-plus AND gpl-3.0-plus AND unknown-license-reference
   AND gpl-3.0) AND (lgpl-2.0-plus AND lgpl-2.1-plus) AND (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1)
   AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND x11 AND ((mpl-1.1 AND mpl-1.1) OR (gpl-2.0-plus

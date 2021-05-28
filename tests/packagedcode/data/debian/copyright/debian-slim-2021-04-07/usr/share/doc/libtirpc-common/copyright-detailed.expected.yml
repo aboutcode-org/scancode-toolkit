@@ -34,6 +34,11 @@
   - BSD-3-Clause
   - BSD-3-Clause
   - BSD-3-Clause
+  - BSD-3-Clause
+  - BSD-2-Clause
+  - BSD-4-Clause
+  - LGPL-2.1+
+  - GPL-2
 - bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND bsd-new AND other-permissive
   AND bsd-simplified AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-original AND (lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND fsf-ap AND bsd-new AND bsd-simplified AND

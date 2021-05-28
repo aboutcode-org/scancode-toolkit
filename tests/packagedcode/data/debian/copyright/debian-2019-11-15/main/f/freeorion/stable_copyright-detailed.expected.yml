@@ -7,6 +7,13 @@
   - DejaVu-License
   - Apache-2.0
   - LGPL-2.1+
+  - GPL-2
+  - LGPL-2.1+
+  - BSL-1.0
+  - BSD-3-clause
+  - Apache-2.0
+  - CC-BY-SA-3.0
+  - DejaVu-License
 - (gpl-2.0 AND gpl-2.0-plus) AND cc-by-sa-3.0 AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus
   AND lgpl-2.1) AND boost-1.0 AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1)
   AND bsd-new AND (bitstream AND bitstream AND unknown-license-reference) AND (apache-2.0 AND

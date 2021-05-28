@@ -4,6 +4,7 @@
   - LGPL-2+
   - Apache-2.0
   - CC-BY-SA-4.0
+  - GPL-2+
 - (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND (cc0-1.0 AND cc0-1.0) AND cc-by-sa-3.0 AND
   (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0 AND lgpl-2.0) AND (apache-2.0 AND apache-2.0)
   AND (cc-by-sa-4.0 AND cc-by-sa-4.0)

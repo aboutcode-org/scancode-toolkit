@@ -42,6 +42,7 @@
   - GPL-3+-with-bison-exception
   - GPL-2+-with-bison-exception
   - GPL-3+-with-bison-exception
+  - GPL-3+-with-bison-exception
   - BSD-2-clause
   - public-domain
   - public-domain
@@ -77,6 +78,16 @@
   - GPL-2
   - GPL-2
   - GPL-2
+  - GPL-2
+  - GPL-2+
+  - LGPL-2.1+
+  - LGPL
+  - BSD-2-clause
+  - BSD-3-clause
+  - Artistic
+  - public-domain
+  - GPL-3+
+  - LGPL-2
 - (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus
   AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
   AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)

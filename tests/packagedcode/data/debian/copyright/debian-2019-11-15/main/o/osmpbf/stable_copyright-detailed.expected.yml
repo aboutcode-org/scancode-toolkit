@@ -1,5 +1,7 @@
 - - LGPL-3+
   - GPL-3+
+  - LGPL-3+
+  - GPL-3+
 - (lgpl-3.0-plus AND lgpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus)
 - |
   2010, Scott A. Crosby <scott@sacrosby.com>

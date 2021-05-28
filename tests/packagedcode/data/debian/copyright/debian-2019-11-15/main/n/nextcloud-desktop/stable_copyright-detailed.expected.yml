@@ -13,6 +13,16 @@
   - BSL-1
   - GPL-3 or LGPL-2.1
   - GPL-2+
+  - Apache-2
+  - BSD-3-clause
+  - BSL-1
+  - CC-BY-3.0
+  - Expat
+  - GPL-2+
+  - GPL-3
+  - LGPL-2.1
+  - LGPL-2.1+
+  - public-domain
 - (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus
   AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)

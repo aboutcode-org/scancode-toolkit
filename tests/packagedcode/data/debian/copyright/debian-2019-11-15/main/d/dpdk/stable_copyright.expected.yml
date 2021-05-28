@@ -4,6 +4,8 @@
   - BSD-3-clause or GPL-2
   - BSD-3-clause or LGPL-2.1
   - GPL-2.0+
+  - GPL-3
+  - LGPL-2.1
 - bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND bsd-simplified AND (bsd-new OR (gpl-2.0
   AND gpl-2.0 AND gpl-2.0)) AND (bsd-new OR (lgpl-2.1 AND lgpl-2.0-plus AND lgpl-2.1)) AND gpl-2.0-plus
 - |

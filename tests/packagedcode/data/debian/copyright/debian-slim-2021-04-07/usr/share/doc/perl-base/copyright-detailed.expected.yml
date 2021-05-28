@@ -197,6 +197,29 @@
   - Artistic or GPL-1+ or Artistic-dist
   - GPL-1+ or Artistic, and Expat
   - GPL-1+ or Artistic
+  - LGPL-2.1
+  - GPL-1+
+  - GPL-2+
+  - Artistic
+  - Artistic-2
+  - BZIP
+  - ZLIB
+  - Expat
+  - BSD-3-clause-with-weird-numbering
+  - BSD-4-clause-POWERDOG
+  - Unicode
+  - BSD-3-clause-GENERIC
+  - BSD-3-clause
+  - REGCOMP
+  - TEXT-TABS
+  - DONT-CHANGE-THE-GPL
+  - SDBM-PUBLIC-DOMAIN
+  - GPL-3+-WITH-BISON-EXCEPTION
+  - HSIEH-DERIVATIVE
+  - HSIEH-BSD
+  - CC0-1.0
+  - RRA-KEEP-THIS-NOTICE
+  - Artistic-dist
 - ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND
   gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
   AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))

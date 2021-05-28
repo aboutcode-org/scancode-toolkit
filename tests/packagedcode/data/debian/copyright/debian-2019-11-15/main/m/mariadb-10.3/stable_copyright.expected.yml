@@ -16,6 +16,7 @@
   - GPL-2 or Artistic
   - GPL-3+
   - MIT/X11
+  - Artistic
 - (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus
   AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND other-copyleft AND (public-domain AND unknown-license-reference)
   AND bsd-new AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND bsd-simplified

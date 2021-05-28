@@ -12,6 +12,12 @@
   - Danny-SLIRP
   - Danny-SLIRP
   - LGPL-2.1+
+  - BSD-3-clause
+  - Danny-SLIRP
+  - Expat
+  - GPL-2
+  - GPL-2+
+  - LGPL-2.1+
 - (gpl-2.0-plus AND gpl-3.0-plus) AND (gpl-2.0-plus AND gpl-3.0-plus) AND bsd-new AND bsd-simplified
   AND mit AND mit AND bsd-simplified AND (gpl-2.0-plus AND gpl-3.0-plus) AND (gpl-2.0-plus AND
   gpl-3.0-plus) AND mit AND bsd-simplified AND bsd-simplified AND bsd-simplified AND (lgpl-2.1-plus

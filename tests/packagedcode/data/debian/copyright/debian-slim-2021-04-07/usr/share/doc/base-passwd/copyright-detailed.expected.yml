@@ -1,6 +1,7 @@
 - - GPL-2
   - public-domain
   - GPL-2
+  - GPL-2
 - (gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND public-domain AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)
 - |
   Copyright 1999-2002 Wichert Akkerman <wichert@deephackmode.org>

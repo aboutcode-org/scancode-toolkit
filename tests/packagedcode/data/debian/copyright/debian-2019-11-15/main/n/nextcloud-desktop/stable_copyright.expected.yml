@@ -8,6 +8,7 @@
   - Apache-2
   - BSL-1
   - GPL-3 or LGPL-2.1
+  - GPL-3
 - (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND (lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND public-domain-disclaimer AND bsd-new AND
   (lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1) AND (mit AND mit) AND (unknown-license-reference

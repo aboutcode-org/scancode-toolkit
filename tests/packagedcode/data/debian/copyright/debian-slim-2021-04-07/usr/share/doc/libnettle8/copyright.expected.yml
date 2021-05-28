@@ -6,6 +6,7 @@
   - GPL-3+ with Autoconf exception
   - GPL-2
   - GAP
+  - LGPL-3+
 - ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND (lgpl-2.0-plus
   AND gpl-2.0-plus AND lgpl-2.0 AND lgpl-2.0) AND mit AND (gpl-3.0-plus AND gpl-3.0-plus WITH
   tex-exception) AND (gpl-2.0-plus AND gpl-2.0-plus) AND autoconf-simple-exception-2.0 AND (gpl-2.0

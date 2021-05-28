@@ -3,6 +3,10 @@
   - Boost-1.0
   - GPL-2+
   - GPL-2
+  - MIT/Expat
+  - Boost-1.0
+  - GPL-2
+  - GPL-2+
 - mit AND mit AND boost-1.0 AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0
   AND gpl-2.0 AND gpl-2.0 AND gpl-2.0)
 - |

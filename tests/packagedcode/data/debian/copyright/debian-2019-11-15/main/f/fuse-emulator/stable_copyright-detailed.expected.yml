@@ -3,6 +3,8 @@
   - LGPL-2.1+
   - LGPL-2.1+
   - GPL-2+
+  - GPL-2+
+  - LGPL-2.1+
 - (gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND (lgpl-2.1-plus AND
   lgpl-2.1-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
 - |

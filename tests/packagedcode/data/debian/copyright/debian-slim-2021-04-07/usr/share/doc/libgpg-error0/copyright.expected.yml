@@ -2,6 +2,7 @@
   - LGPL-2.1+ or BSD-3-clause
   - g10-permissive
   - GPL-3+
+  - BSD-3-clause
 - (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND ((lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1 AND lgpl-2.1) OR bsd-new) AND fsf-unlimited-no-warranty AND (gpl-3.0-plus AND
   gpl-3.0-plus AND gpl-3.0)

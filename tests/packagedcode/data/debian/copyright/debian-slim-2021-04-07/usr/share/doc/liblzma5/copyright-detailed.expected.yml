@@ -19,6 +19,12 @@
   - LGPL-2.1+
   - noderivs
   - PD-debian
+  - LGPL-2.1+
+  - GPL-2
+  - GPL-2+
+  - Autoconf
+  - permissive-fsf
+  - permissive-nowarranty
 - (public-domain AND public-domain AND lgpl-2.0 AND lgpl-2.1-plus AND gpl-2.0-plus AND public-domain
   AND public-domain AND (public-domain AND gpl-2.0-plus AND gpl-3.0-plus) AND public-domain
   AND public-domain AND public-domain AND public-domain AND unknown-license-reference AND public-domain

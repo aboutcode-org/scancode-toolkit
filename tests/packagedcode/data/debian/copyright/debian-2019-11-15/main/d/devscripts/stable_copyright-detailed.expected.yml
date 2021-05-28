@@ -65,6 +65,15 @@
   - GPL-2+
   - GPL-2+
   - GPL-2+
+  - Artistic
+  - Artistic-2.0
+  - GPL-1+
+  - GPL-2
+  - GPL-2+
+  - GPL-3
+  - GPL-3+
+  - ISC
+  - Public-Domain
 - (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-3.0 AND gpl-1.0-plus AND
   gpl-3.0 AND gpl-3.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND isc AND
   (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND ((artistic-2.0 AND artistic-2.0)

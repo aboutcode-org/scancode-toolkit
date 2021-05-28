@@ -30,6 +30,17 @@
   - LGPL-2.1+
   - GPL-2+
   - GPL-2+
+  - GPL-2
+  - GPL-2+
+  - GPL-3+
+  - BSD-2-clause
+  - BSD-3-clause
+  - BSD-4-clause
+  - LGPL
+  - LGPL-2+
+  - LGPL-2.1+
+  - LGPL-3+
+  - MIT
 - (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0
   AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND
   gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0

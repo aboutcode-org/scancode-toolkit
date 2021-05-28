@@ -34,6 +34,22 @@
   - Expat~disclaimer
   - GPL-2-Asterisk
   - GPL-2
+  - GPL-2-Asterisk
+  - GPL-2
+  - LGPL-2.1
+  - Expat
+  - Expat~disclaimer
+  - MIT
+  - BSD-3-Clause
+  - BSD-3-Clause~Xiph
+  - BSD-3-Clause~IETF
+  - BSD-4-Clause-UC
+  - BSD-4-Clause~NetBSD
+  - BSD-4-Clause~Clapper
+  - GSM
+  - ISC
+  - WOL
+  - FSFUL
 - (gpl-2.0 AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus
   AND unknown-license-reference AND unknown-license-reference AND gpl-1.0-plus AND gpl-1.0-plus
   AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference AND gpl-1.0-plus AND gpl-1.0-plus

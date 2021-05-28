@@ -8,6 +8,12 @@
   - public-domain
   - BSD-3-Clause
   - BSD-ish
+  - GPL-2 with OpenSSL exception
+  - GPL-2
+  - GPL-2+
+  - GPL
+  - Zlib
+  - BSD-3-Clause
 - (gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0
   AND gpl-1.0-plus AND gfdl-1.2 AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-1.0-plus
   AND gfdl-1.2 AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0-plus

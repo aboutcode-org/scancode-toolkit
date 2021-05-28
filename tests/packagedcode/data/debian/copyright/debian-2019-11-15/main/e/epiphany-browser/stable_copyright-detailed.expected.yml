@@ -10,6 +10,13 @@
   - Apache-2.0
   - GPL-3+
   - CC-BY-SA-4.0
+  - Apache-2.0
+  - GPL-2+
+  - GPL-3+
+  - LGPL-2+
+  - CC0-1.0
+  - CC-BY-SA-3.0
+  - CC-BY-SA-4.0
 - (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND (cc0-1.0 AND cc0-1.0) AND (gpl-2.0-plus AND
   gpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND cc-by-sa-3.0 AND (lgpl-2.0-plus
   AND gpl-3.0-plus AND lgpl-2.0 AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0

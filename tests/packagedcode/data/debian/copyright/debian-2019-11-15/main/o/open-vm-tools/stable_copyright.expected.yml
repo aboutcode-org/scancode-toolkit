@@ -3,6 +3,7 @@
   - BSD-3
   - MIT(*)
   - MIT(**)
+  - GPL-2+
 - (lgpl-2.1 AND gpl-3.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND gpl-2.0) AND bsd-new
   AND (isc AND ibm-dhcp) AND xfree86-1.0
 - |

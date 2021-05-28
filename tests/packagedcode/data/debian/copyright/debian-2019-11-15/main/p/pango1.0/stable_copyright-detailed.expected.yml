@@ -9,6 +9,11 @@
   - Unicode
   - LGPL-2+ and ICU
   - LGPL-2+
+  - Example
+  - ICU
+  - LGPL-2+
+  - TCL
+  - Unicode
 - (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND mit-old-style AND (lgpl-2.0-plus AND gpl-3.0-plus
   AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus
   AND lgpl-2.0) AND ((lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND tcl) AND (lgpl-2.0-plus

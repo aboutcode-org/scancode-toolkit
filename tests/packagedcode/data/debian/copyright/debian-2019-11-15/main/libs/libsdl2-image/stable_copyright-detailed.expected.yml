@@ -3,6 +3,8 @@
   - LGPL-2+
   - public-domain
   - LGPL-2+
+  - zlib/libpng
+  - LGPL-2+
 - zlib AND zlib AND (lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0) AND unlicense AND (lgpl-2.0-plus
   AND gpl-2.0-plus AND lgpl-2.0)
 - |

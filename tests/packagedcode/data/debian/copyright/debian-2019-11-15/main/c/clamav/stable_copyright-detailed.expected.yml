@@ -29,6 +29,12 @@
   - LZW
   - public-domain
   - Apache-2.0 with GPL exception
+  - GPL-2+
+  - LGPL-2.1
+  - Expat
+  - BSD-2-clause
+  - BSD-3-clause
+  - Zlib
 - (gpl-2.0 AND openssl-exception-gpl-3.0-plus AND gpl-1.0-plus AND other-copyleft AND gpl-2.0
   AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
   AND autoconf-simple-exception-2.0 AND gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0)

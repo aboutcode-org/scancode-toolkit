@@ -19,6 +19,13 @@
   - Apache-2.0 or LGPL-2.1
   - GPL-2+
   - LGPL-2.1
+  - MIT
+  - LGPL-2.1
+  - Apache-2.0
+  - BSD-3-Clause
+  - BSD-2-Clause
+  - GPL-2+
+  - Unicode-DFS-2015
 - (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND mit AND mit AND beerware AND
   mit AND public-domain AND bsd-new AND bsd-new AND mit AND mit AND mit AND mit AND mit AND
   unicode AND bsd-new AND (apache-2.0 AND apache-2.0) AND bsd-simplified AND mit AND ((apache-2.0

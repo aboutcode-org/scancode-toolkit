@@ -7,6 +7,7 @@
   - Apache-2.0
   - BSD-2-Clause
   - Apache-2.0 or LGPL-2.1
+  - GPL-2+
 - (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND mit AND beerware AND public-domain
   AND bsd-new AND unicode AND (apache-2.0 AND apache-2.0) AND bsd-simplified AND ((apache-2.0
   AND apache-2.0) OR (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1))

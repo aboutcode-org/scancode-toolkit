@@ -1,6 +1,7 @@
 - - GPL-2
   - GPL-2
   - BSD-3-clause
+  - GPL-2
 - (gpl-2.0 AND gpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0-plus) AND bsd-new
 - |
   2002-2010, Chris Lawrence <lawrencc@debian.org>

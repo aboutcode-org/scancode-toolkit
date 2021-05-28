@@ -3,6 +3,10 @@
   - GPL-3+
   - GPL-3+
   - Unicode
+  - GPL-3+
+  - GPL-2+
+  - LGPL-3+
+  - Unicode
 - (gpl-3.0-plus AND gpl-3.0-plus) AND ((lgpl-3.0-plus AND lgpl-3.0-plus AND lgpl-3.0-plus) OR
   (gpl-2.0-plus AND gpl-2.0-plus)) AND (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus AND
   gpl-3.0-plus) AND (unicode AND unicode)

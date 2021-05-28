@@ -4,6 +4,9 @@
   - BSD-2-clause
   - public-domain-s-s-d
   - public-domain-md5
+  - GPL-2+
+  - GPL-2
+  - BSD-2-clause
 - (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
   AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND bsd-simplified AND (public-domain
   AND public-domain AND public-domain AND public-domain) AND public-domain

@@ -12,6 +12,13 @@
   - Apache-2.0 or GPL-2+
   - Expat
   - Apache-2.0
+  - Apache-2.0
+  - Zeus
+  - PCRE
+  - GPL-2+
+  - Haines
+  - Custom
+  - Expat
 - (apache-2.0 AND apache-2.0 AND apache-2.0) AND ((apache-2.0 AND apache-2.0 AND apache-2.0)
   AND bsd-3-clause-cambridge) AND bsd-new AND (gpl-3.0-plus OR bison-exception-2.2) AND bsd-3-clause-smrgrav
   AND ((apache-2.0 AND apache-2.0 AND apache-2.0) AND cisco) AND (apache-2.0 AND apache-2.0

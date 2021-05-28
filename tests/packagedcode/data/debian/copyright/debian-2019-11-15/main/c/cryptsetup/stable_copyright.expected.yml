@@ -4,6 +4,8 @@
   - LGPL-2.1+ with OpenSSL exception
   - CC0 or Apache-2.0
   - public-domain
+  - CC0
+  - Apache-2.0
 - (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND openssl-exception-gpl-3.0-plus) AND (gpl-2.0-plus
   AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus
   AND unknown-license-reference AND lgpl-2.1-plus AND gpl-3.0-plus WITH openssl-exception-gpl-3.0-plus)

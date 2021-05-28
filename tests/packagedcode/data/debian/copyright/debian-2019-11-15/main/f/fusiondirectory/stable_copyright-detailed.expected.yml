@@ -26,6 +26,14 @@
   - BSD-4-clause
   - Expat
   - GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause
+  - GPL-2+
+  - GPL-3+
+  - LGPL-2.1+
+  - Expat
+  - BSD-3-clause
+  - BSD-4-clause
+  - LGPL-3+
+  - public-domain
 - (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
   AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0)
   AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND bsd-new AND (gpl-2.0-plus

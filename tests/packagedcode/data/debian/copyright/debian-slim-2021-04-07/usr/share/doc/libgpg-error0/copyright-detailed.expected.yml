@@ -9,6 +9,10 @@
   - LGPL-2.1+
   - GPL-3+
   - g10-permissive
+  - g10-permissive
+  - LGPL-2.1+
+  - GPL-3+
+  - BSD-3-clause
 - (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1 AND lgpl-2.1) AND ((lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)
   OR bsd-new) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus
