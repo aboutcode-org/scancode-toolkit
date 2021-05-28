@@ -25,7 +25,6 @@
   zlib AND gpl-3.0-plus WITH bison-exception-2.2 AND gpl-2.0-plus WITH bison-exception-2.2 AND
   stlport-4.5 AND ((gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) OR (artistic-2.0
   AND artistic-perl-1.0)) AND (gpl-3.0-plus AND gpl-3.0-plus) AND (x11-xconsortium AND public-domain)
-  AND gpl-2.0
 - |
   2000-2016, Oracle and/or its affiliates. All rights reserved.
   2008-2013 Monty Program AB
@@ -121,6 +120,9 @@
   1995-2009 Innobase Oy.
   1984,1989-1990,2000-2004 Free Software Foundation Inc.
   1984, 1989-1990, 2000-2006 Free Software Foundation, Inc.
+  2000 MySQL AB
+  1998 Theppitak Karoonboonyanan
+  1998-1999 Pruet Boonma
   Richard A. O'Keefe.
   1998 Abandoned Irena Pancirov - Irnet Snc
   1987 Abandoned Fred Fish

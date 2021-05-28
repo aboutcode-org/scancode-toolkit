@@ -43,6 +43,7 @@
   - GPL-2+-with-bison-exception
   - GPL-3+-with-bison-exception
   - GPL-3+-with-bison-exception
+  - GPL-2
   - BSD-2-clause
   - public-domain
   - public-domain
@@ -112,26 +113,27 @@
   AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
   AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (public-domain AND unknown-license-reference) AND
   gpl-3.0-plus WITH bison-exception-2.2 AND gpl-2.0-plus WITH bison-exception-2.2 AND gpl-3.0-plus
-  WITH bison-exception-2.2 AND bsd-simplified AND (public-domain AND unknown-license-reference)
-  AND (public-domain AND unknown-license-reference) AND bsd-new AND bsd-new AND bsd-simplified
-  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (lgpl-2.1-plus AND
-  lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1
-  AND lgpl-2.1) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND bsd-new
-  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0
+  WITH bison-exception-2.2 AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND bsd-simplified AND (public-domain AND unknown-license-reference) AND (public-domain AND
+  unknown-license-reference) AND bsd-new AND bsd-new AND bsd-simplified AND (gpl-2.0 AND gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1
+  AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND bsd-new AND (gpl-2.0 AND gpl-2.0
   AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
   AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0
   AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0
-  AND gpl-2.0 AND gpl-1.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND
-  lgpl-2.0-plus) AND stlport-4.5 AND (public-domain AND unknown-license-reference) AND (gpl-2.0
-  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND ((gpl-2.0 AND gpl-2.0 AND gpl-2.0
-  AND gpl-2.0 AND gpl-1.0-plus) OR (artistic-2.0 AND artistic-perl-1.0)) AND (public-domain
-  AND unknown-license-reference) AND bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
-  AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
-  AND (gpl-3.0-plus AND gpl-3.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND
-  lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND
-  (x11-xconsortium AND public-domain) AND bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
-  AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0
-  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND gpl-2.0
+  AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND stlport-4.5
+  AND (public-domain AND unknown-license-reference) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND
+  gpl-2.0 AND gpl-1.0-plus) AND ((gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  OR (artistic-2.0 AND artistic-perl-1.0)) AND (public-domain AND unknown-license-reference)
+  AND bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus)
+  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (x11-xconsortium AND public-domain) AND bsd-new
+  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-1.0-plus)
 - |
   2000-2016, Oracle and/or its affiliates. All rights reserved.
   2008-2013 Monty Program AB
@@ -268,6 +270,9 @@
   1995-2009 Innobase Oy.
   1984,1989-1990,2000-2004 Free Software Foundation Inc.
   1984, 1989-1990, 2000-2006 Free Software Foundation, Inc.
+  2000 MySQL AB
+  1998 Theppitak Karoonboonyanan
+  1998-1999 Pruet Boonma
   Richard A. O'Keefe.
   2000 TXT DataKonsult Ab & Monty Program Ab
   2009-2011, Monty Program Ab

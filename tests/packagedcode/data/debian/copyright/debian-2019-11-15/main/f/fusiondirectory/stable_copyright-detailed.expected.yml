@@ -23,6 +23,7 @@
   - GPL-2+
   - GPL-2+
   - GPL-2+
+  - GPL-2+
   - BSD-4-clause
   - Expat
   - GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause
@@ -49,9 +50,10 @@
   AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0)
   AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
   AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0)
-  AND bsd-original AND mit AND ((gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0)
-  OR (gpl-3.0-plus AND gpl-2.0-plus) OR (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)
-  OR (lgpl-3.0-plus AND gpl-3.0-plus AND lgpl-3.0) OR mit OR bsd-new OR bsd-original) AND gpl-2.0-plus
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND bsd-original AND mit
+  AND ((gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) OR (gpl-3.0-plus AND gpl-2.0-plus)
+  OR (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) OR (lgpl-3.0-plus AND gpl-3.0-plus
+  AND lgpl-3.0) OR mit OR bsd-new OR bsd-original)
 - |
   2011-2016, FusionDirectory
   2011-2017, FusionDirectory
@@ -119,6 +121,8 @@
   2003, Alejandro Escanero Blanco <aescanero@chaosdimension.org>
   2003-2010, Cajus Pollmeier
   2011-2016, FusionDirectory
+  2009-2010, Bas Tichelaar
+  2013-2016, FusionDirectory
   2005, Benoit Mortier
   2011-2016, FusionDirectory
   2005, Guillame Delecourt

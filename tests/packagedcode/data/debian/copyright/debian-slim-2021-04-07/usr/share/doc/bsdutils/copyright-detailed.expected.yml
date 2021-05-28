@@ -30,6 +30,7 @@
   - LGPL-2.1+
   - GPL-2+
   - GPL-2+
+  - public-domain
   - GPL-2
   - GPL-2+
   - GPL-3+
@@ -44,20 +45,19 @@
 - (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0
   AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND
   gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0
-  AND gpl-2.0 AND gpl-2.0) AND public-domain AND bsd-original-uc AND mit AND mit AND bsd-no-disclaimer
-  AND bsd-no-disclaimer AND bsd-no-disclaimer AND bsd-new AND bsd-new AND (lgpl-2.0-plus AND
-  lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0-plus
-  AND lgpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0) AND (lgpl-2.1-plus
-  AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1
-  AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-3.0-plus
-  AND gpl-3.0-plus AND gpl-3.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)
-  AND (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND
-  lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.0) AND (lgpl-2.0-plus
-  AND lgpl-2.1-plus AND lgpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)
-  AND (lgpl-3.0-plus AND lgpl-3.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND
-  lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (public-domain AND unknown-license-reference AND
-  public-domain)
+  AND gpl-2.0 AND gpl-2.0) AND (unknown-license-reference AND public-domain) AND bsd-original-uc
+  AND mit AND mit AND bsd-no-disclaimer AND bsd-no-disclaimer AND bsd-no-disclaimer AND bsd-new
+  AND bsd-new AND (lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0) AND (lgpl-2.0-plus
+  AND lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.0-plus AND
+  lgpl-2.0-plus AND lgpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)
+  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1 AND lgpl-2.1) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND (lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.0)
+  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.0-plus AND lgpl-2.1-plus
+  AND lgpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-3.0-plus AND lgpl-3.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND
+  (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0)
 - |
   Michal Luscon <mluscon@redhat.com>
   1986 Gary S. Brown

@@ -11,7 +11,7 @@
   AND gpl-3.0-plus AND lgpl-3.0) AND public-domain AND mit AND bsd-original AND ((gpl-2.0-plus
   AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) OR (gpl-3.0-plus AND gpl-2.0-plus) OR (lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) OR (lgpl-3.0-plus AND gpl-3.0-plus AND lgpl-3.0)
-  OR mit OR bsd-new OR bsd-original) AND gpl-2.0-plus
+  OR mit OR bsd-new OR bsd-original)
 - |
   2011-2016, FusionDirectory
   2011-2017, FusionDirectory
@@ -59,6 +59,7 @@
   2006, Steve Moitozo <god at zilla dot us>
   1998, Eric Kilfoil <eric@ipass.net>
   2003, Alejandro Escanero Blanco <aescanero@chaosdimension.org>
+  2009-2010, Bas Tichelaar
   2005, Benoit Mortier
   2005, Guillame Delecourt
   2006, Benoit Mortier

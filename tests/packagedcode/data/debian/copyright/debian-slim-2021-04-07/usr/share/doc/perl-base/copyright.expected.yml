@@ -44,8 +44,7 @@
   (artistic-2.0 AND artistic-perl-1.0) OR (artistic-dist-1.0 AND unknown-license-reference))
   AND (artistic-dist-1.0 AND unknown-license-reference) AND ((artistic-2.0 AND artistic-perl-1.0)
   OR (gpl-1.0-plus AND gpl-1.0) OR (artistic-dist-1.0 AND unknown-license-reference)) AND (((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND mit) AND ((gpl-1.0-plus OR artistic-perl-1.0)
-  AND (gpl-1.0-plus OR artistic-1.0))
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND mit)
 - |
   Perl is Copyright (C) 1987-2021 by Larry Wall and others. All rights reserved.
   Copyright (c) 1996-2006, Nick Ing-Simmons
@@ -122,6 +121,7 @@
   2015 Michael LaGrasta and Dan Kogai
   Copyright 2004, 2005, 2006, 2007 by Audrey Tang <cpan@audreyt.org>.
   Tie::File version 0.97 is copyright (C) 2003 Mark Jason Dominus.
+  This software is copyright (c) 2013 by Leon Timmermans.
   2010 Gisle Aas <gisle@aas.no>
   1996- by Andreas Koenig
   There are no copyright notices in these distributions.

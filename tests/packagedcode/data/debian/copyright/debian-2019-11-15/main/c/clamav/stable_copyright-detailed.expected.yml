@@ -1,4 +1,5 @@
-- - GPL-2 with OpenSSL exception
+- - GPL-2
+  - GPL-2 with OpenSSL exception
   - GPL-2+
   - GPL-2+
   - GPL-2+ with Autoconf exception
@@ -29,14 +30,16 @@
   - LZW
   - public-domain
   - Apache-2.0 with GPL exception
+  - GPL-3+ with Bison exception
   - GPL-2+
   - LGPL-2.1
   - Expat
   - BSD-2-clause
   - BSD-3-clause
   - Zlib
-- (gpl-2.0 AND openssl-exception-gpl-3.0-plus AND gpl-1.0-plus AND other-copyleft AND gpl-2.0
-  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
+- (gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0
+  AND openssl-exception-gpl-3.0-plus AND gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
   AND autoconf-simple-exception-2.0 AND gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0)
   AND (gpl-3.0-plus AND gpl-1.0-plus AND autoconf-simple-exception AND gpl-1.0-plus AND other-copyleft
   AND gpl-3.0 AND gpl-3.0) AND (gpl-3.0-plus WITH libtool-exception-2.0 AND gpl-1.0-plus AND
@@ -49,9 +52,14 @@
   fsf-ap AND fsf-ap AND bzip2-libbzip-2010 AND (public-domain AND public-domain) AND public-domain
   AND public-domain AND x11-tiff AND (public-domain AND public-domain) AND (apache-2.0 AND gpl-1.0-plus
   AND apache-2.0 AND apache-2.0 AND unknown-license-reference AND gpl-1.0-plus AND apache-2.0
-  AND apache-2.0) AND (gpl-2.0 AND gpl-2.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus WITH bison-exception-2.2
-  AND gpl-2.0-plus AND gpl-2.0 AND gpl-3.0)
+  AND apache-2.0) AND (gpl-3.0-plus AND bison-exception-2.2 AND gpl-1.0-plus AND other-copyleft
+  AND gpl-3.0 AND gpl-3.0)
 - |
+  1998-2015, Sourcefire, Inc.
+  2002-2007, Tomasz Kojm <tkojm@clamav.net>
+  2006, Sensory Networks, Inc
+  2007-2015, Cisco Systems, Inc
+  2014-2018, Cisco and/or its affiliates
   2014, 2017-2018 Cisco and/or its affiliates
   2002-2013, Tomasz Kojm <tkojm@clamav.net>
   2004 Trog <trog@uncon.org>
@@ -99,3 +107,4 @@
   Public Domain
   Copyright (C) 2014 Cisco Systems, Inc. and/or its affiliates. All rights reserved.
   Copyright (c) 2013. The YARA Authors. All Rights Reserved.
+  1984, 1989-1990, 2000-2011, Free Software Foundation, Inc.

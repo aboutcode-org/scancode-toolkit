@@ -10,6 +10,7 @@
   - GPL-2
   - GPL-2
   - BSD-2-clause
+  - GPL-2+
   - GPL-2
   - GPL-2+
   - BSD-2-clause
@@ -18,7 +19,7 @@
   AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0
   AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND
   gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND bsd-simplified
-  AND gpl-2.0-plus
+  AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-2.0)
 - |
   Copyright (C) 2011-2017, Yann Collet.
   Copyright (C) 2011-2017, Yann Collet.
@@ -32,3 +33,4 @@
   Takayuki Matsuoka
   Yann Collet
   Kyle Harper
+  2013 Nobuhiro Iwamatsu <iwamatsu@debian.org>
