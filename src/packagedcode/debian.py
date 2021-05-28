@@ -198,7 +198,7 @@ def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **k
                 )
                 package.copyright = dc.get_copyright(
                     skip_debian_packaging=True,
-                    unique_copyrights=False,
+                    unique_copyrights=True,
                 )
 
         yield package

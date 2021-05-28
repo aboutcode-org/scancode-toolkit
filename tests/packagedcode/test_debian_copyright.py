@@ -39,7 +39,7 @@ def check_expected_parse_copyright_file(
         filter_licenses=True
         skip_debian_packaging=True
         simplify_licenses=False
-        unique_copyrights=False
+        unique_copyrights=True
 
     dc = debian_copyright.parse_copyright_file(location=test_loc)
     declared_license = dc.get_declared_license(
