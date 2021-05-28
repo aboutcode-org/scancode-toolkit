@@ -11,18 +11,20 @@ import io
 from os import path
 from os import walk
 
+from debian_inspector.copyright import DebianCopyright
+
 from commoncode.testcase import FileBasedTesting
 from commoncode import text
 import saneyaml
 
-from packagedcode import debian_copyright
+from packagedcode import debian, debian_copyright
 
 
 def check_expected_parse_copyright_file(
     test_loc,
     expected_loc,
     regen=False,
-    with_details=False,
+    with_details=True,
 ):
     """
     Check copyright parsing of `test_loc` location against an expected JSON file
@@ -32,18 +34,31 @@ def check_expected_parse_copyright_file(
         filter_licenses=False
         skip_debian_packaging=False
         simplify_licenses=False
+        unique_copyrights=False
     else:
         filter_licenses=True
         skip_debian_packaging=True
-        simplify_licenses=True
-    
-    parsed = debian_copyright.parse_copyright_file(
-        location=test_loc,
-        with_copyright=True,
+        simplify_licenses=False
+        unique_copyrights=False
+
+    dc = debian_copyright.parse_copyright_file(location=test_loc)
+    declared_license = dc.get_declared_license(
         filter_licenses=filter_licenses,
         skip_debian_packaging=skip_debian_packaging,
-        simplify_licenses=False,
+        simplify_licenses=simplify_licenses,
     )
+    license_expression = dc.get_license_expression(
+        filter_licenses=filter_licenses,
+        skip_debian_packaging=skip_debian_packaging,
+        simplify_licenses=simplify_licenses,
+    )
+    copyright = dc.get_copyright(
+        skip_debian_packaging=skip_debian_packaging,
+        unique_copyrights=unique_copyrights,
+    )
+
+    parsed = declared_license, license_expression, copyright
+    
     result = saneyaml.dump(list(parsed))
     if regen:
         with io.open(expected_loc, 'w', encoding='utf-8') as reg:
@@ -161,7 +176,79 @@ build_tests(
     regen=False,
 )
 
-class DebianCopyrightFileProcessor(FileBasedTesting):
+class TestEnhancedDebianCopyright(FileBasedTesting):
     test_data_dir = path.join(path.dirname(__file__), 'data/debian/copyright/')
     
+    def test_is_paragraph_debian_packaging(self):
+        test_file = self.get_test_loc("debian-slim-2021-04-07/usr/share/doc/libhogweed6/copyright")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        file_paras = edebian_copyright.file_paragraphs
+        assert debian_copyright.is_paragraph_debian_packaging(file_paras[-3])
+
+    def test_is_paragraph_primary_license(self):
+        test_file = self.get_test_loc("debian-slim-2021-04-07/usr/share/doc/libhogweed6/copyright")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        file_paras = edebian_copyright.file_paragraphs
+        assert debian_copyright.is_paragraph_primary_license(file_paras[0])
+
+    def test_get_header_para(self):
+        test_file = self.get_test_loc("debian-slim-2021-04-07/usr/share/doc/libhogweed6/copyright")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        header_para = edebian_copyright.header_paragraph
+        assert header_para.license.name == "LGPL-3+ or GPL-2+"
+        assert header_para.upstream_name.value == "Nettle"
+        assert header_para.source.text == "http://www.lysator.liu.se/~nisse/nettle/"
     
+    def test_get_files_paras(self):
+        test_file = self.get_test_loc("debian-2019-11-15/main/c/cryptsetup/stable_copyright")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        files_paras = edebian_copyright.file_paragraphs
+        assert len(files_paras) == 15
+        assert files_paras[1].license.name == "GPL-2+"
+        
+    def test_get_license_paras(self):
+        test_file = self.get_test_loc("debian-2019-11-15/main/c/cryptsetup/stable_copyright")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        license_paras = edebian_copyright.license_paragraphs
+        assert len(license_paras) == 6
+        assert license_paras[0].license.name == "GPL-2+"
+
+    def test_get_paras_with_license_text(self):
+        test_file = self.get_test_loc("debian-slim-2021-04-07/usr/share/doc/liblzma5/copyright")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        paras_with_license = edebian_copyright.paragraphs_with_license_text
+        assert isinstance(paras_with_license[0], debian_copyright.CopyrightHeaderParagraph)
+        assert isinstance(paras_with_license[1], debian_copyright.CopyrightFilesParagraph)
+        
+
+    def test_get_other_paras(self):
+        test_file = self.get_test_loc("crafted_for_tests/test_other_paras")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        other_paras = edebian_copyright.other_paragraphs
+        assert len(other_paras) == 1
+        assert other_paras[0].extra_data["unknown"].text == "Example of other paras."
+        
+    def test_get_duplicate_license_paras(self):
+        test_file = self.get_test_loc("crafted_for_tests/test_duplicate_license_para_name")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        duplicate_paras = edebian_copyright.duplicate_license_paragraphss
+        assert len(duplicate_paras) == 1
+        duplicate_paras[0].license.name == "GPL-2+"
+  
+    def test_if_structured_copyright_file(self):
+        test_file = self.get_test_loc("debian-slim-2021-04-07/usr/share/doc/libhogweed6/copyright")
+        content = debian_copyright.unicode_text(test_file)
+        assert debian_copyright.is_machine_readable_copyright(content)
+
+    def test_if_not_structured_copyright_file(self):
+        test_file = self.get_test_loc("debian-2019-11-15/main/p/pulseaudio/stable_copyright")
+        content = debian_copyright.unicode_text(test_file)
+        assert not debian_copyright.is_machine_readable_copyright(content)
+
+    def test_multiple_blank_lines_is_valid_paragraph(self):
+        test_file = self.get_test_loc("debian-slim-gpgv.copyright")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        other_paras = edebian_copyright.other_paragraphs
+        print(other_paras)
+        assert len(other_paras) == 1
+        assert other_paras[0].extra_data["unknown"].text == "This is a catchall para."
