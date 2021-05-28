@@ -1,0 +1,5 @@
+Part of the Ragel output is copied from Ragel source, covered by the MIT (or GPL v2) 
+license. As an exception, you may use the parts of Ragel output copied from 
+Ragel source without restriction. The remainder of Ragel output is derived from 
+the input and inherits the copyright and license of the input file. Use of Ragel 
+makes absolutely no requirement about the license of generated code.

@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v21.4.x (next)
+v21.x.x (next)
 --------------
 
 Breaking API changes:
@@ -24,6 +24,19 @@ Breaking API changes:
    multiple manifests for a single package instance.
 
 
+v21.5.11
+--------
+
+Breaking API changes:
+~~~~~~~~~~~~~~~~~~~~~
+
+ - The configure scripts for Linux, macOS and Windows are new. These are now
+   only native scripts (.bat on Windows and .sh on POSIX) and the Python script
+   etc/configure.py has been removed. Use the PYTHON_EXECUTABLE enviroment
+   varibale to point to alternative non-default Python executable. An this on
+   all OSes.
+
+
 Ouputs:
 ~~~~~~~
 
@@ -36,6 +49,11 @@ License scanning:
 
  - Add new command line option to filter ignorable copyrights when included
    in licenses.
+
+ - Add new and improved license detection rules.
+   Thank you to:
+    - Sebastian Thomas @sebathomas
+    - Till Jaeger @LeChasseur 
 
 
 
@@ -92,6 +110,9 @@ Copyright scanning:
 
  - Allow calling copyright detection from text lines to ease integration
    Thank you to Jelmer Vernooĳ @jelmer
+
+ - Fixed copyright truncation bug
+   Thank you to Akanksha Garg @akugarg
 
 
 Package scanning:

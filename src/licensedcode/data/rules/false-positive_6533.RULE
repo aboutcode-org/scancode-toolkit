@@ -1,0 +1,6 @@
+BOOST: 'BSL-1.0',
+  'BS3 3-Clause': 'BSD-3-Clause',
+  'BSD 2-Clause license': 'BSD-2-Clause',
+  'BSD 2-Clause': 'BSD-2-Clause',
+  'BSD 2-clause': 'BSD-2-Clause',
+  'BSD 3 Clause': 'BSD-3-Clause',

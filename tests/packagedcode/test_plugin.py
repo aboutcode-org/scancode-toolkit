@@ -29,7 +29,7 @@ class TestPlugins(PackageTester):
 
     @skipIf(on_windows, 'somehow this fails on Windows')
     def test_package_command_scan_python(self):
-        test_dir = self.get_test_loc('pypi/package')
+        test_dir = self.get_test_loc('recon/pypi')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin/python-package-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])

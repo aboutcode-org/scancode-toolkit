@@ -1,0 +1,6 @@
+NetBSD: 'BSD-2-Clause-NetBSD',
+  'New BSD': 'BSD-3-Clause',
+  'Old BSD': 'BSD-4-Clause',
+  'Original BSD License': 'BSD-4-Clause',
+  'Public Domain (UNLISCENSE)': 'Unlicense',
+  'Public Domain (Unlicense)': 'Unlicense',

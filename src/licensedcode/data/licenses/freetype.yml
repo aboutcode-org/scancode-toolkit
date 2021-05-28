@@ -12,6 +12,7 @@ other_urls:
     - http://freetype.fis.uniroma2.it/FTL.TXT
     - http://freetype.org/patents.html
     - http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/FTL.TXT
+    - http://gitlab.freedesktop.org/freetype/freetype/-/raw/master/docs/FTL.TXT
     - http://www.freetype.org/
 ignorable_copyrights:
     - Copyright 1996-2002, 2006 by David Turner, Robert Wilhelm, and Werner Lemberg

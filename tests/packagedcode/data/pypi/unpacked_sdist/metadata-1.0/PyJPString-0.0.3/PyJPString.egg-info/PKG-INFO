@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: PyJPString
+Version: 0.0.3
+Summary: Python japanese string utilities.
+Home-page: http://github.com/odoku/PyJPString
+Author: odoku
+Author-email: masashi.onogawa@wamw.jp
+License: MIT
+Description: UNKNOWN
+Keywords: japanese,string
+Platform: UNKNOWN

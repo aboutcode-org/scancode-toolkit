@@ -1,4 +1,4 @@
-license_expression: apache-2.0 AND trademark-notice
+license_expression: apache-2.0 AND generic-trademark
 is_license_notice: yes
 relevance: 100
 notes: see https://github.com/quantumblacklabs/kedro/blob/master/kedro/pipeline/decorators.py

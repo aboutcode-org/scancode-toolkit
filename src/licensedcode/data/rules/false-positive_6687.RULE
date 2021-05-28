@@ -1,0 +1,6 @@
+'Licenses/GPL-3.0': 'GPL-3.0-or-later',
+  'M.I.T': 'MIT',
+  'M.I.T.': 'MIT',
+  'MIT ': 'MIT',
+  'MIT (http://mootools.net/license.txt)': 'MIT',
+  'MIT (https://github.com/AlekseyLeshko/say-me/blob/master/LICENSE)': 'MIT',

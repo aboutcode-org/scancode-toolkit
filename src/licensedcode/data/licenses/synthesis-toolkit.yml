@@ -1,0 +1,11 @@
+key: synthesis-toolkit
+short_name: Synthesis Toolkit License
+name: Synthesis Toolkit License
+category: Permissive
+owner: Stanford University
+homepage_url: https://ccrma.stanford.edu/software/stk/faq.html#license
+spdx_license_key: LicenseRef-scancode-synthesis-toolkit
+minimum_coverage: 70
+standard_notice: |
+    The Synthesis ToolKit in C++ (STK)
+    Copyright (c) 1995--2019 Perry R. Cook and Gary P. Scavone

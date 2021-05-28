@@ -7,20 +7,28 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import os.path
+import os
+from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
 
 import packagedcode
+from packagedcode.recognize import recognize_packages
+
+from packagedcode import bower
+from packagedcode import cargo
 from packagedcode import freebsd
+from packagedcode import haxe
 from packagedcode import maven
 from packagedcode import npm
-from packagedcode import cargo
+from packagedcode import nuget
 from packagedcode import opam
 from packagedcode import phpcomposer
 from packagedcode import rpm
-from packagedcode.recognize import recognize_packages
-from packagedcode import nuget
+from packagedcode import win_pe
+from packagedcode import pypi
+from packagedcode import golang
+from packagedcode import models
 
 
 class TestRecognize(FileBasedTesting):
@@ -127,6 +135,12 @@ class TestRecognize(FileBasedTesting):
         assert packages
         assert isinstance(packages[0], phpcomposer.PHPComposerPackage)
 
+    def test_recognize_haxe(self):
+        test_file = self.get_test_loc('recon/haxelib.json')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], haxe.HaxePackage)
+
     def test_recognize_freebsd(self):
         test_file = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST')
         packages = recognize_packages(test_file)
@@ -138,3 +152,70 @@ class TestRecognize(FileBasedTesting):
         packages = recognize_packages(test_file)
         assert packages
         assert isinstance(packages[0], nuget.NugetPackage)
+
+    def test_recognize_winexe(self):
+        test_file = self.get_test_loc('win_pe/tre4.dll')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], win_pe.WindowsExecutable)
+
+    def test_recognize_bower(self):
+        test_file = self.get_test_loc('bower/basic/bower.json')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], bower.BowerPackage)
+
+    @expectedFailure
+    def test_recognize_cpan(self):
+        test_file = self.get_test_loc('cpan/MANIFEST')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], models.CpanModule)
+
+    def test_recognize_python2(self):
+        test_file = self.get_test_loc('recon/pypi/atomicwrites-1.2.1-py2.py3-none-any.whl')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], pypi.PythonPackage)
+
+    def test_recognize_python3(self):
+        test_file = self.get_test_loc('recon/pypi/METADATA')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], pypi.PythonPackage)
+
+    def test_recognize_python5(self):
+        test_file = self.get_test_loc('recon/pypi/PKG-INFO')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], pypi.PythonPackage)
+
+    def test_recognize_python6(self):
+        test_file = self.get_test_loc('recon/pypi/setup.py')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], pypi.PythonPackage)
+
+    def test_recognize_python7(self):
+        test_file = self.get_test_loc('recon/pypi/Pipfile.lock')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], pypi.PythonPackage)
+
+    def test_recognize_python8(self):
+        test_file = self.get_test_loc('recon/pypi/requirements.txt')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], pypi.PythonPackage)
+
+    def test_recognize_go_mod(self):
+        test_file = self.get_test_loc('golang/gomod/kingpin/go.mod')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], golang.GolangPackage)
+
+    def test_recognize_go_sum(self):
+        test_file = self.get_test_loc('golang/gosum/sample1/go.sum')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], golang.GolangPackage)

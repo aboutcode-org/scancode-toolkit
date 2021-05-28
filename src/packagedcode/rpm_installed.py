@@ -40,7 +40,7 @@ def parse_rpm_xmlish(location, detect_licenses=False):
     Yield RpmPackage(s) from a RPM XML'ish file at `location`. This is a file
     created with rpm and the xml query option.
     """
-    if not os.path.exists(location):
+    if not location or not os.path.exists(location):
         return
 
     # there are smetimes weird encodings. We avoid issues there

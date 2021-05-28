@@ -98,6 +98,7 @@ class LicenseCache:
 
         from licensedcode.models import licenses_data_dir as ldd
         from licensedcode.models import rules_data_dir as rdd
+        from licensedcode.models import load_licenses
         from scancode import lockfile
 
         licenses_data_dir = licenses_data_dir or ldd
@@ -131,7 +132,7 @@ class LicenseCache:
                 # data: It is either stale or non-existing: we need to
                 # rebuild all cached data (e.g. mostly the index) and cache it
 
-                licenses_db = build_licenses_db(licenses_data_dir=licenses_data_dir)
+                licenses_db = load_licenses(licenses_data_dir=licenses_data_dir)
                 index = build_index(
                     licenses_db=licenses_db,
                     licenses_data_dir=licenses_data_dir,
@@ -164,19 +165,6 @@ class LicenseCache:
             raise
 
 
-def build_licenses_db(licenses_data_dir=None):
-    """
-    Return a mapping of license key -> license object loaded from a
-    ``licenses_data_dir``.
-    """
-    from licensedcode.models import load_licenses
-
-    if not licenses_data_dir:
-        from licensedcode.models import licenses_data_dir as ldd
-        licenses_data_dir = ldd
-    return load_licenses(licenses_data_dir)
-
-
 def build_index(licenses_db=None, licenses_data_dir=None, rules_data_dir=None):
     """
     Return an index built from rules and licenses directories
@@ -186,46 +174,43 @@ def build_index(licenses_db=None, licenses_data_dir=None, rules_data_dir=None):
     from licensedcode.models import get_all_spdx_key_tokens
     from licensedcode.models import licenses_data_dir as ldd
     from licensedcode.models import rules_data_dir as rdd
+    from licensedcode.models import load_licenses
 
     licenses_data_dir = licenses_data_dir or ldd
     rules_data_dir = rules_data_dir or rdd
 
-    licenses = licenses_db or build_licenses_db(
-        licenses_data_dir=licenses_data_dir)
-
-    spdx_tokens = set(get_all_spdx_key_tokens(licenses))
-
-    rules = get_rules(
-        licenses_data_dir=licenses_data_dir,
-        rules_data_dir=rules_data_dir)
-
+    licenses_db = licenses_db or load_licenses(licenses_data_dir=licenses_data_dir)
+    spdx_tokens = set(get_all_spdx_key_tokens(licenses_db))
+    rules = get_rules(licenses_db=licenses_db, rules_data_dir=rules_data_dir)
     return LicenseIndex(rules, _spdx_tokens=spdx_tokens)
 
 
 def build_licensing(licenses_db=None):
     """
-    Return a `license_expression.Licensing` objet built from `licenses_db`
+    Return a `license_expression.Licensing` objet built from a `licenses_db`
     mapping of {key: License} or the standard license db.
     """
     from license_expression import LicenseSymbolLike
     from license_expression import Licensing
+    from licensedcode.models import load_licenses
 
-    licenses = licenses_db or build_licenses_db()
-    return Licensing((LicenseSymbolLike(lic) for lic in licenses.values()))
+    licenses_db = licenses_db or load_licenses()
+    return Licensing((LicenseSymbolLike(lic) for lic in licenses_db.values()))
 
 
 def build_spdx_symbols(licenses_db=None):
     """
     Return a mapping of {lowercased SPDX license key: LicenseSymbolLike} where
-    LicenseSymbolLike wraps a License object loaded from `licenses_db` mapping
+    LicenseSymbolLike wraps a License object loaded from a `licenses_db` mapping
     of {key: License} or the standard license db.
     """
     from license_expression import LicenseSymbolLike
+    from licensedcode.models import load_licenses
 
-    licenses = licenses_db or build_licenses_db()
+    licenses_db = licenses_db or load_licenses()
     symbols_by_spdx_key = {}
 
-    for lic in licenses.values():
+    for lic in licenses_db.values():
         if not (lic.spdx_license_key or lic.other_spdx_license_keys):
             continue
 
@@ -262,8 +247,9 @@ def build_unknown_spdx_symbol(licenses_db=None):
     {key: License} or the standard license db.
     """
     from license_expression import LicenseSymbolLike
-    licenses = licenses_db or build_licenses_db()
-    return LicenseSymbolLike(licenses[u'unknown-spdx'])
+    from licensedcode.models import load_licenses
+    licenses_db = licenses_db or load_licenses()
+    return LicenseSymbolLike(licenses_db['unknown-spdx'])
 
 
 def get_cache(check_consistency=SCANCODE_DEV_MODE):

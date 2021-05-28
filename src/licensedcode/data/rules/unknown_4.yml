@@ -1,0 +1,5 @@
+license_expression: unknown
+is_license_tag: yes
+relevance: 100
+minimum_coverage: 100
+notes: Used in brew for things that cannot be set in an SPDX expression

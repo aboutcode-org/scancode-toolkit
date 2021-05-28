@@ -23,23 +23,20 @@ license_expressions:
   - boost-1.0
   - mpich
   - freetts
-  - x11-keith-packard
+  - other-permissive
+  - warranty-disclaimer
   - mozilla-gc
   - adobe-glyph
   - mit-xfig
   - x11-tiff
   - x11
   - x11 AND other-permissive
-  - free-unknown
-  - other-permissive
-  - other-permissive
-  - mit
   - other-permissive
   - other-permissive
   - other-permissive
-  - gpl-1.0-plus
   - other-permissive
-  - proprietary-license
+  - other-permissive
+  - other-permissive
   - isc
   - osf-1990
   - other-permissive

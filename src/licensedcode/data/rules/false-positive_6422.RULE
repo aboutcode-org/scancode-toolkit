@@ -1,0 +1,1 @@
+(correct('GPL-3.0', { upgrade: false }), 'GPL-3.0')

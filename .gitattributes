@@ -1,4 +1,13 @@
-# Ignore all Git auto CR/LF line endings conversions
-* binary
+# make sure end of lines are always lf
+*		text eol=lf
+*.bat		text eol=crlf
+
+# data in the tests should be kept as is
+**/data/** binary
+**/assets/** binary
+**/samples/** binary
+*.pyz binary
+
+# *.json		text eol=lf
 # save the version details for git tarballs
 .VERSION  export-subst

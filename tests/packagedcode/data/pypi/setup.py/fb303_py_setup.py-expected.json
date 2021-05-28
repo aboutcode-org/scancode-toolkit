@@ -15,10 +15,8 @@
       "name": [
         "Thrift Developers"
       ],
-      "email": [
-        "dev@thrift.apache.org"
-      ],
-      "url": "http://thrift.apache.org"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
@@ -43,8 +41,7 @@
   "copyright": null,
   "license_expression": "apache-2.0",
   "declared_license": {
-    "license": "Apache License 2.0",
-    "classifiers": []
+    "license": "Apache License 2.0"
   },
   "notice_text": null,
   "root_path": null,
@@ -52,7 +49,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/thrift-fb303@0.10.0",
-  "repository_homepage_url": "https://pypi.org/project/thrift_fb303",
-  "repository_download_url": "https://pypi.io/packages/source/t/thrift_fb303/thrift_fb303-0.10.0.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/thrift_fb303/0.10.0/json"
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/t/thrift_fb303/thrift_fb303-0.10.0.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/thrift_fb303/0.10.0/json"
 }

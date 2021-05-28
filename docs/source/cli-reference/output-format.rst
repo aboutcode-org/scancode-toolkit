@@ -354,7 +354,7 @@ Comparing Different ``json`` Output Formats
     Here the file is structured as a dictionary of named properties and classes using W3C's
     `RDF Technology <https://www.w3.org/RDF/>`_.
 
-    ... figure:: data/output_spdx_rdf1.png
+    .. figure:: data/output_spdx_rdf1.png
 
 ----
 

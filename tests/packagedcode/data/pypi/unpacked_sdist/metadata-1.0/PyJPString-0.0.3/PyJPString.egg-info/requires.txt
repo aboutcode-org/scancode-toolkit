@@ -1,0 +1,6 @@
+six>=1.10.0
+zenhan>=0.5.2
+
+[test]
+django
+pytest==2.9.1

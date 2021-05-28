@@ -1,0 +1,10 @@
+key: tsl-2020
+short_name: TSL Agreement 2020
+name: Timescale License Agreement 2020
+category: Source-available
+owner: Timescale
+homepage_url: https://github.com/timescale/timescaledb/blob/master/tsl/LICENSE-TIMESCALE
+spdx_license_key: LicenseRef-scancode-tsl-2020
+ignorable_urls:
+    - https://github.com/timescale
+    - https://opensource.org/licenses/Apache-2.0

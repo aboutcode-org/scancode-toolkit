@@ -13,11 +13,12 @@
       "type": "person",
       "role": "author",
       "name": "__author__",
-      "email": "juga@riseup.net",
-      "url": "https://lab.openintegrity.org/agents/agents-common-code"
+      "email": null,
+      "url": null
     }
   ],
   "keywords": [
+    "agents development utils",
     "Development Status :: 3 - Alpha",
     "Environment :: Console",
     "Intended Audience :: Developers",
@@ -51,7 +52,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/agents-common",
-  "repository_homepage_url": "https://pypi.org/project/agents_common",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": null,
-  "api_data_url": "http://pypi.python.org/pypi/agents_common/json"
+  "api_data_url": "https://pypi.org/pypi/agents_common/json"
 }

@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+notes: An MIT-based license with extra and modified terms Seen in https://github.com/NaturalIntelligence/fast-xml-parser/blob/5d4e95188c4d3bf57ee1b2f5489c017ca3be627c/LICENSE

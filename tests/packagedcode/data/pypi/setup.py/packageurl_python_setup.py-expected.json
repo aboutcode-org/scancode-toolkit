@@ -14,10 +14,14 @@
       "role": "author",
       "name": "the purl authors",
       "email": null,
-      "url": "https://github.com/package-url/packageurl-python"
+      "url": null
     }
   ],
   "keywords": [
+    "package",
+    "url",
+    "package manager",
+    "package url",
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Operating System :: OS Independent",
@@ -53,7 +57,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/packageurl-python@0.8.5",
-  "repository_homepage_url": "https://pypi.org/project/packageurl-python",
-  "repository_download_url": "https://pypi.io/packages/source/p/packageurl-python/packageurl-python-0.8.5.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/packageurl-python/0.8.5/json"
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/p/packageurl-python/packageurl-python-0.8.5.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/packageurl-python/0.8.5/json"
 }

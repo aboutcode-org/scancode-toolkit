@@ -1,0 +1,5 @@
+license_expression: lgpl-2.0 OR lgpl-3.0 OR kde-accepted-lgpl
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - COPYING.LIB

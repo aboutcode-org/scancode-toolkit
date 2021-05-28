@@ -1,0 +1,81 @@
+{
+  "type": "pypi",
+  "namespace": null,
+  "name": "PyJPString",
+  "version": "0.0.3",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Python",
+  "description": "Python japanese string utilities.\nUNKNOWN",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "odoku",
+      "email": "masashi.onogawa@wamw.jp",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "japanese",
+    "string"
+  ],
+  "homepage_url": "http://github.com/odoku/PyJPString",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "mit",
+  "declared_license": {
+    "license": "MIT"
+  },
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [
+    {
+      "purl": "pkg:pypi/six",
+      "requirement": ">=1.10.0",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/zenhan",
+      "requirement": ">=0.5.2",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/django",
+      "requirement": null,
+      "scope": "test",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:pypi/pytest@2.9.1",
+      "requirement": "==2.9.1",
+      "scope": "test",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    }
+  ],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:pypi/pyjpstring@0.0.3",
+  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+  "repository_download_url": "https://pypi.org/packages/source/P/PyJPString/PyJPString-0.0.3.tar.gz",
+  "api_data_url": "https://pypi.org/pypi/PyJPString/0.0.3/json"
+}

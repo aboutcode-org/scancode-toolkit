@@ -1,0 +1,7 @@
+license_expression: wordnet
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright by Princeton University
+ignorable_holders:
+    - Princeton University
