@@ -9,7 +9,7 @@
 
 
 @rem ################################
-@rem # A configuration script to set things up: 
+@rem # A configuration script to set things up:
 @rem # create a virtualenv and install or update thirdparty packages.
 @rem # Source this script for initial configuration
 @rem # Use configure --help for details
@@ -48,7 +48,7 @@ set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
 
 
 @rem ################################
-@rem # Set the quiet flag to empty if not defined 
+@rem # Set the quiet flag to empty if not defined
 if not defined CFG_QUIET (
     set "CFG_QUIET= "
 )
@@ -65,8 +65,8 @@ if "%1" EQU "--dev"    (
     set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
     set CFG_DEV_MODE=1
 )
-if "%1" EQU "--python"  (
-    echo "The --python is now DEPRECATED. Use the PYTHON_EXECUTABLE environment
+if "%1" EQU "--python"(
+    echo "The --python option is now DEPRECATED. Use the PYTHON_EXECUTABLE environment"
     echo "variable instead. Run configure --help for details."
     exit /b 0
 )
@@ -76,7 +76,7 @@ if "%1" EQU "--python"  (
 @rem # Use environment variables or a file if available.
 @rem # Otherwise the latest Python by default.
 if not defined PYTHON_EXECUTABLE (
-    @rem # check for a file named PYTHON_EXECUTABLE 
+    @rem # check for a file named PYTHON_EXECUTABLE
     if exist ""%CFG_ROOT_DIR%\PYTHON_EXECUTABLE"" (
         set /p PYTHON_EXECUTABLE=<""%CFG_ROOT_DIR%\PYTHON_EXECUTABLE""
     ) else (
