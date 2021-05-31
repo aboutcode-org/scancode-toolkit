@@ -1,11 +1,11 @@
 [build-system]
-requires = ["setuptools >= 50", "wheel", "setuptools_scm[toml] >= 4"]
+requires = ["setuptools >= 50", "wheel", "setuptools_scm[toml] >= 6"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
 # this is used populated when creating a git archive
 # and when there is .git dir and/or there is no git installed
-fallback_version = "v9999.$Format:%h-%cs$"
+fallback_version = "9999.$Format:%h-%cs$"
 
 [tool.pytest.ini_options]
 norecursedirs = [
