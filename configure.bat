@@ -65,7 +65,7 @@ if "%1" EQU "--dev"    (
     set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
     set CFG_DEV_MODE=1
 )
-if "%1" EQU "--python"(
+if "%1" EQU "--python" (
     echo "The --python option is now DEPRECATED. Use the PYTHON_EXECUTABLE environment"
     echo "variable instead. Run configure --help for details."
     exit /b 0
