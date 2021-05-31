@@ -577,4 +577,172 @@ Comparing Different ``json`` Output Formats
 
 ----
 
+``--ccsv FILE``
+--------------
+
+    ScanCode can publish results in the useful ``.csv`` format.
+
+    The following code performs a scan on the samples directory, and publishes the results in
+    ``csv`` format::
+
+        scancode -lpceiu --ccsv sample.csv samples
+
+    The first line of the ccsv file contains the headings, and they are:
+
+    .. hlist::
+        :columns: 3
+
+        - Resource,
+        - type,
+        - name,
+        - base_name,
+        - extension,
+        - date,
+        - size,
+        - sha1,
+        - md5,
+        - files_count,
+        - mime_type,
+        - file_type,
+        - programming_language,
+        - is_binary,
+        - is_text,
+        - is_archive,
+        - is_media,
+        - is_source,
+        - is_script,
+        - scan_errors,
+        - license__key,
+        - license__score,
+        - license__short_name,
+        - license__category,
+        - license__owner,
+        - license__homepage_url,
+        - license__text_url,
+        - license__reference_url,
+        - license__spdx_license_key,
+        - license__spdx_url,
+        - matched_rule__identifier,
+        - matched_rule__license_choice,
+        - matched_rule__licenses,
+        - copyright,
+        - copyright_holder,
+        - author,
+        - email,
+        - start_line,
+        - end_line,
+        - url,
+        - package__type,
+        - package__name,
+        - package__version,
+        - package__primary_language,
+        - package__summary,
+        - package__description,
+        - package__size,
+        - package__release_date,
+        - package__homepage_url,
+        - package__notes,
+        - package__bug_tracking_url,
+        - package__vcs_repository,
+        - package__copyright_top_level
+
+    Each subsequent line represents one element, i.e. can be any of the following:
+
+    .. hlist::
+        :columns: 5
+
+        - license
+        - copyright
+        - package
+        - email
+        - url
+
+    So if there's multiple elements in a file, they are each given an entry with the details mentioned
+    earlier.
+
+    .. figure:: data/output_csv.png
+
+----
+
+``--doc FILE``
+--------------
+
+    ScanCode can publish results in the useful ``.doc`` format.
+
+    The following code performs a scan on the samples directory, and publishes the results in
+    ``doc`` format::
+
+        scancode -lpceiu --doc sample.doc samples
+
+    The first line of the doc file contains the headings, and they are:
+
+    .. hlist::
+        :columns: 3
+
+        - Resource,
+        - type,
+        - name,
+        - base_name,
+        - extension,
+        - date,
+        - size,
+        - sha1,
+        - md5,
+        - files_count,
+        - mime_type,
+        - file_type,
+        - programming_language,
+        - is_binary,
+        - is_text,
+        - is_archive,
+        - is_media,
+        - is_source,
+        - is_script,
+        - scan_errors,
+        - license__key,
+        - license__score,
+        - license__short_name,
+        - license__category,
+        - license__owner,
+        - license__homepage_url,
+        - license__text_url,
+        - license__reference_url,
+        - license__spdx_license_key,
+        - license__spdx_url,
+        - matched_rule__identifier,
+        - matched_rule__license_choice,
+        - matched_rule__licenses,
+        - copyright,
+        - copyright_holder,
+        - author,
+        - email,
+        - start_line,
+        - end_line,
+        - url,
+        - package__type,
+        - package__name,
+        - package__version,
+        - package__primary_language,
+        - package__summary,
+        - package__description,
+        - package__size,
+        - package__release_date,
+        - package__homepage_url,
+        - package__notes,
+        - package__bug_tracking_url,
+        - package__vcs_repository,
+        - package__copyright_top_level
+
+    Each subsequent line represents one element, i.e. can be any of the following:
+
+    .. hlist::
+        :columns: 5
+
+        - license
+        - copyright
+        - package
+        - email
+        - url
+
+----
 .. include::  /rst_snippets/custom_output_format.rst

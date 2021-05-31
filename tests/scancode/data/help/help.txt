@@ -40,6 +40,8 @@ Options:
     --json-pp FILE          Write scan output as pretty-printed JSON to FILE.
     --json-lines FILE       Write scan output as JSON Lines to FILE.
     --csv FILE              Write scan output as CSV to FILE.
+    --ccsv FILE             Write scan output as ccsv to FILE.
+    --doc FILE              Write scan output as DOC to FILE.
     --html FILE             Write scan output as HTML to FILE.
     --custom-output FILE    Write scan output to FILE formatted with the custom
                             Jinja template file.
