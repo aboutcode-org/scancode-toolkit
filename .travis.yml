@@ -13,6 +13,7 @@ python:
   - "3.6"
   - "3.7"
   - "3.8"
+  - "3.9"
 
 # Scripts to run at install stage
 install: ./configure --dev
