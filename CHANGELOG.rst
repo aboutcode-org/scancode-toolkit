@@ -24,17 +24,17 @@ Breaking API changes:
    multiple manifests for a single package instance.
 
 
-v21.5.11
+v21.6.2
 --------
 
 Breaking API changes:
 ~~~~~~~~~~~~~~~~~~~~~
 
- - The configure scripts for Linux, macOS and Windows are new. These are now
-   only native scripts (.bat on Windows and .sh on POSIX) and the Python script
-   etc/configure.py has been removed. Use the PYTHON_EXECUTABLE enviroment
-   varibale to point to alternative non-default Python executable. An this on
-   all OSes.
+ - The configure scripts for Linux, macOS and Windows have been entirely
+   refactored and should be considered as new. These are now only native scripts
+   (.bat on Windows and .sh on POSIX) and the Python script etc/configure.py
+   has been removed. Use the PYTHON_EXECUTABLE enviroment variable to point to
+   alternative non-default Python executable and this on all OSes.
 
 
 Ouputs:
