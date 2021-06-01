@@ -42,7 +42,7 @@
   AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus
   AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus
   AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (lgpl-3.0-plus
-  AND gpl-3.0-plus AND lgpl-3.0) AND public-domain AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus
+  AND gpl-2.0-plus AND lgpl-3.0) AND public-domain AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus
   AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND mit AND
   (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
   AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0)
@@ -52,7 +52,7 @@
   AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0)
   AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND bsd-original AND mit
   AND ((gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) OR (gpl-3.0-plus AND gpl-2.0-plus)
-  OR (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) OR (lgpl-3.0-plus AND gpl-3.0-plus
+  OR (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) OR (lgpl-3.0-plus AND gpl-2.0-plus
   AND lgpl-3.0) OR mit OR bsd-new OR bsd-original)
 - |
   2011-2016, FusionDirectory

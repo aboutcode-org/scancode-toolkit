@@ -16,9 +16,8 @@
   - DejaVu-License
 - (gpl-2.0 AND gpl-2.0-plus) AND cc-by-sa-3.0 AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus
   AND lgpl-2.1) AND boost-1.0 AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1)
-  AND bsd-new AND (bitstream AND bitstream AND unknown-license-reference) AND (apache-2.0 AND
-  unknown-license-reference AND apache-2.0 AND apache-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.0-plus AND lgpl-2.1)
+  AND bsd-new AND (bitstream AND bitstream) AND (apache-2.0 AND apache-2.0 AND apache-2.0) AND
+  (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1)
 - |
   The FreeOrion project
   The FreeOrion project

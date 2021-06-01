@@ -14,11 +14,11 @@
   - LGPL-2+
   - TCL
   - Unicode
-- (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND mit-old-style AND (lgpl-2.0-plus AND gpl-3.0-plus
-  AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus
-  AND lgpl-2.0) AND ((lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND tcl) AND (lgpl-2.0-plus
-  AND gpl-3.0-plus AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND unicode
-  AND ((lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0) AND x11) AND (lgpl-2.0-plus AND gpl-3.0-plus
+- (lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0) AND mit-old-style AND (lgpl-2.0-plus AND gpl-2.0-plus
+  AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-2.0-plus
+  AND lgpl-2.0) AND ((lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0) AND tcl) AND (lgpl-2.0-plus
+  AND gpl-2.0-plus AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0) AND unicode
+  AND ((lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0) AND x11) AND (lgpl-2.0-plus AND gpl-2.0-plus
   AND lgpl-2.0)
 - |
   1999-2015 Red Hat

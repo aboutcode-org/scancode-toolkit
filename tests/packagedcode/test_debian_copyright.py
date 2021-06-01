@@ -17,7 +17,7 @@ from commoncode.testcase import FileBasedTesting
 from commoncode import text
 import saneyaml
 
-from packagedcode import debian, debian_copyright
+from packagedcode import debian_copyright
 
 
 def check_expected_parse_copyright_file(
@@ -176,6 +176,16 @@ build_tests(
     regen=False,
 )
 
+
+class TestDebianDetector(FileBasedTesting):
+    test_data_dir = path.join(path.dirname(__file__), 'data/debian/copyright/')
+
+    def test_add_unknown_matches(self):
+        
+        matches = debian_copyright.add_unknown_matches(name='foo',text='bar')
+        assert len(matches) == 1
+        
+
 class TestEnhancedDebianCopyright(FileBasedTesting):
     test_data_dir = path.join(path.dirname(__file__), 'data/debian/copyright/')
     
@@ -231,7 +241,7 @@ class TestEnhancedDebianCopyright(FileBasedTesting):
     def test_get_duplicate_license_paras(self):
         test_file = self.get_test_loc("crafted_for_tests/test_duplicate_license_para_name")
         edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
-        duplicate_paras = edebian_copyright.duplicate_license_paragraphss
+        duplicate_paras = edebian_copyright.duplicate_license_paragraphs
         assert len(duplicate_paras) == 1
         duplicate_paras[0].license.name == "GPL-2+"
   

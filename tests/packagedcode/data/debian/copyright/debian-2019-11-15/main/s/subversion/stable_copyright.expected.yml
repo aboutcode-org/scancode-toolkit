@@ -11,9 +11,8 @@
   - Expat
   - Unicode
 - (apache-2.0 AND apache-2.0) AND (bsd-new OR (apache-2.0 AND apache-2.0)) AND other-permissive
-  AND bsd-new AND other-copyleft AND (gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0 AND unknown-license-reference
-  AND gpl-2.0) AND (gpl-3.0-plus AND gpl-1.0-plus AND gpl-3.0 AND unknown-license-reference
-  AND gpl-3.0) AND afl-3.0 AND (mit AND unicode) AND bsd-simplified
+  AND bsd-new AND other-copyleft AND (gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0)
+  AND (gpl-3.0-plus AND gpl-3.0) AND afl-3.0 AND (mit AND unicode) AND bsd-simplified
 - |
   Apache Software Foundation
   2007 Max Bowsher

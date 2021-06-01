@@ -9,8 +9,8 @@
   - BSD-3
   - BSD-1
   - BSD-2
-- bsd-simplified AND bsd-simplified AND bsd-simplified AND (isc AND bsd-simplified) AND bsd-simplified
-  AND bsd-simplified AND bsd-simplified AND bsd-simplified
+- bsd-new AND bsd-new AND bsd-new AND (isc AND bsd-simplified) AND bsd-new AND bsd-new AND bsd-new
+  AND bsd-new
 - |
   Copyright (c) 1995-2001 Kungliga Tekniska Högskolan
   (Royal Institute of Technology, Stockholm, Sweden).

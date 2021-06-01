@@ -28,9 +28,8 @@
   gpl-3.0) AND ((gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-3.0
   AND gpl-3.0) OR bsd-new) AND (lgpl-3.0-plus AND lgpl-3.0-plus AND lgpl-3.0 AND lgpl-3.0) AND
   (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-3.0 AND gpl-3.0)
-  AND (unknown-license-reference AND unknown-license-reference AND ietf) AND bsd-new AND (gpl-3.0-plus
-  AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-3.0 AND gpl-3.0) AND (cc0-1.0 AND
-  cc0-1.0 AND artistic-2.0)
+  AND ietf AND bsd-new AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
+  AND gpl-3.0 AND gpl-3.0) AND (cc0-1.0 AND cc0-1.0 AND artistic-2.0)
 - |
   1992, 1995-2016, Free Software Foundation, Inc
   1998-2007, 2009, 2012, Free Software Foundation, Inc

@@ -19,9 +19,9 @@
   - CC-BY-SA-4.0
 - (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND (cc0-1.0 AND cc0-1.0) AND (gpl-2.0-plus AND
   gpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND cc-by-sa-3.0 AND (lgpl-2.0-plus
-  AND gpl-3.0-plus AND lgpl-2.0 AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0
-  AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.0 AND lgpl-2.0) AND (lgpl-2.0-plus
-  AND gpl-3.0-plus AND lgpl-2.0 AND lgpl-2.0) AND (apache-2.0 AND apache-2.0) AND (gpl-3.0-plus
+  AND gpl-2.0-plus AND lgpl-2.0 AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0
+  AND lgpl-2.0) AND (lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0 AND lgpl-2.0) AND (lgpl-2.0-plus
+  AND gpl-2.0-plus AND lgpl-2.0 AND lgpl-2.0) AND (apache-2.0 AND apache-2.0) AND (gpl-3.0-plus
   AND gpl-3.0-plus AND gpl-3.0) AND (cc-by-sa-4.0 AND cc-by-sa-4.0)
 - |
   2009-2018 Igalia S.L

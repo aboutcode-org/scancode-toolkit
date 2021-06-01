@@ -4,8 +4,8 @@
   - public-domain-s-s-d
   - public-domain-md5
 - (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND
-  bsd-simplified AND (public-domain AND public-domain AND public-domain AND public-domain) AND
-  public-domain
+  bsd-simplified AND (public-domain AND other-permissive AND public-domain AND public-domain
+  AND public-domain) AND public-domain
 - |
   Copyright © 1994 Ian Murdock <imurdock@debian.org>
   Copyright © 1994 Matt Welsh <mdw@sunsite.unc.edu>

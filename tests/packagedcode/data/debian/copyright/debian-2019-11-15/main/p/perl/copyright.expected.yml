@@ -42,10 +42,9 @@
   AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND bsd-original) AND (((gpl-1.0-plus
   AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND bsd-new) AND bsd-new AND (public-domain
   AND public-domain AND public-domain AND public-domain) AND other-copyleft AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0) OR (artistic-dist-1.0 AND unknown-license-reference))
-  AND (artistic-dist-1.0 AND unknown-license-reference) AND ((artistic-2.0 AND artistic-perl-1.0)
-  OR (gpl-1.0-plus AND gpl-1.0) OR (artistic-dist-1.0 AND unknown-license-reference)) AND (((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND mit)
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0) OR artistic-dist-1.0) AND artistic-dist-1.0
+  AND ((artistic-2.0 AND artistic-perl-1.0) OR (gpl-1.0-plus AND gpl-1.0) OR artistic-dist-1.0)
+  AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND mit)
 - |
   Perl is Copyright (C) 1987-2018 by Larry Wall and others. All rights reserved.
   Copyright (c) 1996-2006, Nick Ing-Simmons

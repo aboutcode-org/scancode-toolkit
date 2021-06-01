@@ -6,10 +6,9 @@
   - public-domain
   - CC0
   - Apache-2.0
-- (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND openssl-exception-gpl-3.0-plus) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus
-  AND unknown-license-reference AND lgpl-2.1-plus AND gpl-3.0-plus WITH openssl-exception-gpl-3.0-plus)
-  AND ((cc0-1.0 AND cc0-1.0) OR (apache-2.0 AND apache-2.0)) AND gary-s-brown
+- gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus AND (gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.1-plus
+  AND lgpl-2.1-plus) AND lgpl-2.1-plus WITH openssl-exception-gpl-3.0-plus AND (cc0-1.0 OR (apache-2.0
+  AND apache-2.0)) AND gary-s-brown
 - |
   © 2004 Christophe Saout <christophe@saout.de>
   © 2004-2008 Clemens Fruhwirth <clemens@endorphin.org>

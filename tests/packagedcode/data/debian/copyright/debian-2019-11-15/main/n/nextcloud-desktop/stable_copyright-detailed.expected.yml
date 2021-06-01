@@ -28,9 +28,7 @@
   AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)
   AND public-domain-disclaimer AND bsd-new AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1
   AND lgpl-2.1) AND (lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1) AND (mit AND mit) AND
-  (unknown-license-reference AND unknown-license-reference AND unknown-license-reference AND
-  unknown-license-reference AND unknown-license-reference AND ijg AND unknown-license-reference)
-  AND (apache-2.0 AND lgpl-2.1 AND apache-2.0) AND (mit AND mit) AND boost-1.0 AND ((gpl-3.0
+  ijg AND (apache-2.0 AND lgpl-2.1 AND apache-2.0) AND (mit AND mit) AND boost-1.0 AND ((gpl-3.0
   AND gpl-3.0 AND gpl-1.0-plus AND gpl-1.0-plus AND other-copyleft AND gpl-1.0-plus AND gpl-3.0
   AND gpl-3.0) OR (lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1)) AND (gpl-2.0-plus AND gpl-2.0-plus
   AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0)

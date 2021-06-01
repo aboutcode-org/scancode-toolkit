@@ -1,8 +1,7 @@
 - - GPL-3+
   - GPL-3+
   - GPL-3+
-- (gpl-3.0-plus AND gpl-3.0-plus AND unknown-license-reference AND gpl-3.0) AND (gpl-3.0-plus
-  AND gpl-3.0-plus AND unknown-license-reference AND gpl-3.0)
+- (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus)
 - |
   1992, 1997-2002, 2004-2012 Free Software Foundation, Inc.
   2004, Stepan Kasal <kasal@ucw.cz>

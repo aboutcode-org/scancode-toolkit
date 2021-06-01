@@ -27,12 +27,11 @@
   - MPL-1.1
   - Apache-2.0
   - ISC
-- bsd-simplified AND bsd-new AND mit AND (gpl-3.0-plus AND gpl-3.0-plus AND unknown-license-reference
-  AND gpl-3.0) AND (lgpl-2.0-plus AND lgpl-2.1-plus) AND (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1)
-  AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND x11 AND ((mpl-1.1 AND mpl-1.1) OR (gpl-2.0-plus
-  AND gpl-2.0-plus) OR (lgpl-2.1-plus AND lgpl-2.1-plus)) AND public-domain AND (apache-2.0
-  AND apache-2.0 AND apache-2.0) AND (bsd-new AND boost-1.0) AND isc AND (lgpl-2.0 AND lgpl-2.1-plus)
-  AND (lgpl-2.0-plus AND lgpl-2.1-plus)
+- bsd-simplified AND bsd-new AND mit AND (gpl-3.0-plus AND gpl-3.0-plus) AND (lgpl-2.0-plus
+  AND lgpl-2.1-plus) AND (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus)
+  AND x11 AND ((mpl-1.1 AND mpl-1.1) OR (gpl-2.0-plus AND gpl-2.0-plus) OR (lgpl-2.1-plus AND
+  lgpl-2.1-plus)) AND public-domain AND (apache-2.0 AND apache-2.0 AND apache-2.0) AND (bsd-new
+  AND boost-1.0) AND isc AND (lgpl-2.0 AND lgpl-2.1-plus) AND (lgpl-2.0-plus AND lgpl-2.1-plus)
 - |
   © 2002-2019 Apple Inc. and others
   © 2002-2014 Apple Inc. and others
