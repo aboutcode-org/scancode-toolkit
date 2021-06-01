@@ -2688,15 +2688,17 @@ def get_romp_pyos_options(
     """
     Return a list of CLI options for romp
     For example:
-    >>> get_romp_pyos_options()
-    ['--version', '3.6', '--version', '3.7', '--version', '3.8', '--version', '3.9', '--platform', 'linux', '--platform', 'macos', '--platform', 'windows']
+    >>> expected = ['--version', '3.6', '--version', '3.7', '--version', '3.8',
+    ... '--version', '3.9', '--platform', 'linux', '--platform', 'macos',
+    ... '--platform', 'windows']
+    >>> assert get_romp_pyos_options() == expected
     """
-    python_dot_versions = ['.'.join(pv) for pv in python_versions]
+    python_dot_versions = ['.'.join(pv) for pv in sorted(set(python_versions))]
     pyos_options = list(itertools.chain.from_iterable(
         ('--version', ver) for ver in python_dot_versions))
 
     pyos_options += list(itertools.chain.from_iterable(
-        ('--platform' , plat) for plat in operating_systems))
+        ('--platform' , plat) for plat in sorted(set(operating_systems))))
 
     return pyos_options
 
