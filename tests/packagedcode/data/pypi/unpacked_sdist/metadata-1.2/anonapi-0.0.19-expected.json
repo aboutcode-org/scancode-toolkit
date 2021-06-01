@@ -6,7 +6,7 @@
   "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
-  "description": "Client and tools for working with the anoymization web API\n=======\n        AnonAPI\n        =======\n        \n        .. image:: https://img.shields.io/pypi/v/anonapi.svg\n            :target: https://pypi.python.org/pypi/anonapi",
+  "description": "Client and tools for working with the anoymization web API\n=======\nAnonAPI\n=======\n\n.. image:: https://img.shields.io/pypi/v/anonapi.svg\n    :target: https://pypi.python.org/pypi/anonapi",
   "release_date": null,
   "parties": [
     {
