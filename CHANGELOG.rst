@@ -22,6 +22,13 @@ Breaking API changes:
    rather than "packages". There is a a new top-level "packages" attribute
    that contains each package instace that can be aggregating data from
    multiple manifests for a single package instance.
+   
+Ouputs:
+~~~~~~~
+
+ - New output format ccsv and doc. ccsv generates a curated list of licence copyright 
+   package and URL info for each file of the source scanned. doc format generates 
+   report with consolidated packages and licenses.
 
 
 v21.5.11

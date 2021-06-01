@@ -14,6 +14,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Aviral Verma @avirlrma
 - Ayan Sinha Mahapatra @AyanSinhaMahapatra
 - Ayush Jain @aj4ayushjain
+- Bosch Global @BoschGlobal
 - Bruno Oliveira @nicoddemus
 - Carmen Bianca Bakker @carmenbianca
 - Chaitya Shah @Chaitya62
@@ -45,6 +46,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Michael Rupprecht @michaelrup
 - Mrinal Paliwal @mnpw
 - nexB Inc. @nexB
+- Neha P S @NehaSherugar
 - Nirmal Sarswat @vivonk
 - Nisha Kumar @nishakm
 - Nishchith Shetty @inishchith
