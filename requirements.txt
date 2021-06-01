@@ -4,11 +4,13 @@ beautifulsoup4==4.9.3
 binaryornot==0.4.4
 bitarray==2.1.0
 boolean.py==3.8
-certifi==2020.12.5
+certifi==2021.5.30
+cffi==1.14.5
 chardet==4.0.0
 click==8.0.1
 colorama==0.4.4
 commoncode==21.5.25
+cryptography==3.4.7
 debian-inspector==21.5.25
 dparse==0.5.1
 extractcode==21.6.1
@@ -17,7 +19,7 @@ extractcode-libarchive==3.5.1.210531
 fasteners==0.16
 fingerprints==1.0.3
 ftfy==6.0.3
-future==0.16.0
+future==0.18.2
 gemfileparser==0.8.0
 html5lib==1.1
 idna==2.10
@@ -32,7 +34,7 @@ license-expression==1.2
 lxml==4.6.3
 MarkupSafe==2.0.1
 more-itertools==8.8.0
-nltk==3.6.2
+nltk==3.4.5
 normality==2.2.2
 packageurl-python==0.9.4
 packaging==20.9
@@ -46,7 +48,7 @@ plugincode==21.1.21
 ply==3.11
 publicsuffix2==2.20191221
 pyahocorasick==1.4.2
-pycryptodome==3.6.6
+pycparser==2.20
 Pygments==2.9.0
 pymaven-patch==0.3.0
 pyparsing==2.4.7
