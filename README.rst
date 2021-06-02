@@ -215,13 +215,6 @@ See the NOTICE file and the .ABOUT files that document the origin and license of
 the third-party code used in ScanCode for more details.
 
 
-.. |master-cov| image:: https://codecov.io/gh/nexB/scancode-toolkit/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/nexB/scancode-toolkit/branch/master
-    :alt: Master branch test coverage (Linux)
-.. |devel-cov| image:: https://codecov.io/gh/nexB/scancode-toolkit/branch/develop/graph/badge.svg
-    :target: https://codecov.io/gh/nexB/scancode-toolkit/branch/develop
-    :alt: Develop branch test coverage (Linux)
-
 .. |master-posix| image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=master
     :target: https://travis-ci.org/nexB/scancode-toolkit
     :alt: Linux Master branch tests status

@@ -9,6 +9,8 @@
 
 import os
 
+import pytest
+
 from commoncode.testcase import FileDrivenTesting
 
 from cluecode.plugin_filter_clues import Detections
@@ -54,6 +56,8 @@ def test_scan_plugin_filter_clues_does_not_filter_incorrectly():
     check_json_scan(expected, result_file, remove_file_date=True, ignore_headers=True, regen=False)
 
 
+# Regression on types tracked in https://github.com/nexB/typecode/issues/21
+@pytest.mark.xfail#
 def test_scan_plugin_filter_clues_for_license():
     # this test fies is a copy of pcre.LICENSE that contains
     # several emails, authors, urls

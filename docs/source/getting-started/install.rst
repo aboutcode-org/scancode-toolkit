@@ -120,12 +120,12 @@ Installation on Linux and Mac
 Get the Scancode Toolkit tarball archive of a specific version and your
 operating system by going to the `project releases page <https://github.com/nexB/scancode-toolkit/releases/>`_
 
-For example, Version 21.3.31 archive can be obtained from
-`Toolkit release 21.3.31 <https://github.com/nexB/scancode-toolkit/releases/tag/v21.3.31>`_
+For example, Version 21.6.2 archive can be obtained from
+`Toolkit release 21.6.2 <https://github.com/nexB/scancode-toolkit/releases/tag/v21.6.1>`_
 under assets options. Download the archive for your operating systen and extract
 the archive from command line::
 
-    tar -xvf scancode-toolkit-21.3.31_py36-linux.tar.xz
+    tar -xvf scancode-toolkit-21.6.2_py36-linux.tar.xz
 
 
 Or, on Linux, right click and select "Extract Here".
@@ -292,7 +292,7 @@ Here, ``main`` branch has the latest release of Scancode-Toolkit. You can also c
 of the following:
 
 - Branches (Locally created or already present) [Example - ``main``]
-- Tags (essentially version numbers) [Example - ``v21.2.25``, ``v21.3.31``]
+- Tags (essentially version numbers) [Example - ``v21.2.25``, ``v21.6.1``]
 - Commits (use the shortened commit hash) [Example - ``4502055``, ``f276398``]
 
 
