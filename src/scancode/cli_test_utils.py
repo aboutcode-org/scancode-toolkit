@@ -195,7 +195,7 @@ def check_json_scan(
     # TODO: remove sort, this should no longer be needed
     expected = json.dumps(expected, indent=2, sort_keys=True, separators=(',', ': '))
     results = json.dumps(results, indent=2, sort_keys=True, separators=(',', ': '))
-    assert expected == results
+    assert results == expected
 
 
 def load_json_result(location, remove_file_date=False):
@@ -297,7 +297,7 @@ def check_jsonlines_scan(
 
     expected = json.dumps(expected, indent=2, separators=(',', ': '))
     results = json.dumps(results, indent=2, separators=(',', ': '))
-    assert expected == results
+    assert results == expected
 
 
 def streamline_jsonlines_scan(scan_result, remove_file_date=False):
