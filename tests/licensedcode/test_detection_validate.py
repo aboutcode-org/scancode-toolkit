@@ -74,7 +74,7 @@ def check_special_rule_can_be_detected(rule):
 
 def check_rule_or_license_can_be_self_detected_exactly(rule):
     idx = cache.get_index()
-    matches = idx.match(location=rule.text_file, _skip_hash_match=True)
+    matches = idx.match(location=rule.text_file, _skip_hash_match=True, deadline=10)
     expected = [rule.identifier, '100']
     results = flatten((m.rule.identifier, str(int(m.coverage()))) for m in matches)
 
@@ -129,7 +129,7 @@ def check_ignorable_clues(rule, regen=False):
 
     # scan clues
     scan_data = {}
-    scan_data.update(api.get_copyrights(text_file))
+    scan_data.update(api.get_copyrights(text_file, deadline=10))
     scan_data.update(api.get_urls(text_file, threshold=0))
     scan_data.update(api.get_emails(text_file, threshold=0))
 
