@@ -1,0 +1,4 @@
+license_expressions:
+  - mit
+  - mit
+notes: Based on https://raw.githubusercontent.com/jaredhanson/utils-merge/v1.0.1/package.json
