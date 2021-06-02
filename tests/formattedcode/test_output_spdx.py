@@ -319,7 +319,7 @@ def test_spdx_rdf_with_empty_scan():
 
 @pytest.mark.scanslow
 def test_output_spdx_rdf_can_handle_non_ascii_paths():
-    test_file = test_env.get_test_loc('unicode.json')
+    test_file = test_env.get_test_loc('spdx/unicode.json')
     result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
     run_scan_click(['--from-json', test_file, '--spdx-rdf', result_file])
     with io.open(result_file, encoding='utf-8') as res:
@@ -328,7 +328,7 @@ def test_output_spdx_rdf_can_handle_non_ascii_paths():
 
 
 def test_output_spdx_tv_can_handle_non_ascii_paths():
-    test_file = test_env.get_test_loc('unicode.json')
+    test_file = test_env.get_test_loc('spdx/unicode.json')
     result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
     run_scan_click(['--from-json', test_file, '--spdx-tv', result_file])
     with io.open(result_file, encoding='utf-8') as res:
