@@ -52,6 +52,10 @@ from utils_thirdparty import PypiPackage
     show_default=True,
     help='OS(ses) to use for this build: one of linux, mac or windows.',
 )
+@click.option('-l', '--latest-version',
+    is_flag=True,
+    help='Get the latest version of all packages, ignoring version specifiers.',
+)
 @click.option('--sync-dejacode',
     is_flag=True,
     help='Synchronize packages with DejaCode.',
@@ -67,6 +71,7 @@ def bootstrap(
     python_version,
     operating_system,
     with_deps,
+    latest_version,
     sync_dejacode,
     build_remotely=False,
 ):
@@ -74,12 +79,15 @@ def bootstrap(
     Boostrap a thirdparty Python packages directory from pip requirements.
 
     Fetch or build to THIRDPARTY_DIR all the wheels and source distributions for
-    the pip `--requirement-file` requirements FILE(s). Build wheels compatible
-    with all the provided `--python-version` PYVER(s) and `--operating_system`
+    the pip ``--requirement-file`` requirements FILE(s). Build wheels compatible
+    with all the provided ``--python-version`` PYVER(s) and ```--operating_system``
     OS(s) defaulting to all supported combinations. Create or fetch .ABOUT and
     .LICENSE files.
 
-    Sources and wheels are first fetched from PyPI, then our remote repository.
+    Optionally ignore version specifiers and use the ``--latest-version`` 
+    of everything.
+
+    Sources and wheels are fetched with attempts first from PyPI, then our remote repository.
     If missing wheels are built as needed.
     """
     # rename variables for clarity since these are lists
@@ -99,8 +107,9 @@ def bootstrap(
     for req_file in requirements_files:
         nvs = utils_thirdparty.load_requirements(
             requirements_file=req_file, force_pinned=False)
-
         required_name_versions.update(nvs)
+    if latest_version:
+        required_name_versions = set((name, None) for name, _ver in required_name_versions)
 
     print(f'PROCESSING {len(required_name_versions)} REQUIREMENTS in {len(requirements_files)} FILES')
 

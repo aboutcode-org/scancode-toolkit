@@ -4,3 +4,4 @@ relevance: 100
 ignorable_urls:
     - http://opensource.org/licenses/MIT
     - http://www.gnu.org/licenses/gpl-2.0.html
+minimum_coverage: 60

@@ -164,7 +164,7 @@ def check_ignorable_clues(rule, regen=False):
     expected = dict([(k, v) for k, v in sorted(expected.items()) if v])
 
     try:
-        assert expected == results
+        assert results == expected
     except:
         # On failure, we compare againto get additional failure details such as
         # a clickable text_file path
