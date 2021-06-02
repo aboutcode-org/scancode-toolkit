@@ -24,17 +24,30 @@ Breaking API changes:
    multiple manifests for a single package instance.
 
 
-v21.5.11
+v21.6.2
 --------
 
 Breaking API changes:
 ~~~~~~~~~~~~~~~~~~~~~
 
- - The configure scripts for Linux, macOS and Windows are new. These are now
-   only native scripts (.bat on Windows and .sh on POSIX) and the Python script
-   etc/configure.py has been removed. Use the PYTHON_EXECUTABLE enviroment
-   varibale to point to alternative non-default Python executable. An this on
-   all OSes.
+ - The configure scripts for Linux, macOS and Windows have been entirely
+   refactored and should be considered as new. These are now only native scripts
+   (.bat on Windows and .sh on POSIX) and the Python script etc/configure.py
+   has been removed. Use the PYTHON_EXECUTABLE enviroment variable to point to
+   alternative non-default Python executable and this on all OSes.
+
+Security updates:
+~~~~~~~~~~~~~~~~~
+
+ - Update minimum versions and pinned version of thirdparty dependencies
+   to benefit from latest improvements and sceurity fixes. This includes in
+   particular this issues:
+
+     - pkg:pypi/pygments: (low severity, limited impact) CVE-2021-20270, CVE-2021-27291
+     - pkg:pypi/lxml: (low severity, likely no impact) CVE-2021-28957
+     - pkg:pypi/nltk: (low severity, likely no impact) CVE-2019-14751
+     - pkg:pypi/jinja2: (low severity, likely no impact) CVE-2020-28493, CVE-2019-10906
+     - pkg:pypi/pycryptodome: (high severity) CVE-2018-15560 (dropped since no longer used)
 
 
 Ouputs:

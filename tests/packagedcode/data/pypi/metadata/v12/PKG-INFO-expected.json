@@ -6,7 +6,7 @@
   "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
-  "description": "Python modules for implementing LDAP clients\npyldap:\n          pyldap is a fork of python-ldap, and provides an object-oriented API to access LDAP\n          directory servers from Python programs. Mainly it wraps the OpenLDAP 2.x libs for that purpose.\n          Additionally the package contains modules for other LDAP-related stuff\n          (e.g. processing LDIF, LDAPURLs, LDAPv3 schema, LDAPv3 extended operations\n          and controls, etc.).",
+  "description": "Python modules for implementing LDAP clients\npyldap:\n  pyldap is a fork of python-ldap, and provides an object-oriented API to access LDAP\n  directory servers from Python programs. Mainly it wraps the OpenLDAP 2.x libs for that purpose.\n  Additionally the package contains modules for other LDAP-related stuff\n  (e.g. processing LDIF, LDAPURLs, LDAPv3 schema, LDAPv3 extended operations\n  and controls, etc.).",
   "release_date": null,
   "parties": [
     {
