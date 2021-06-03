@@ -235,8 +235,8 @@ def cli(licenses_file):
             print('Skipping already added rule with text for:', base_name)
         else:
             rules_tokens.add(rule_tokens)
-            rulerec.dump()
             models.update_ignorables(rulerec, verbose=False)
+            rulerec.dump()
             print('Rule added:', 'file://' + rulerec.data_file, '\n', 'file://' + rulerec.text_file,)
 
 
