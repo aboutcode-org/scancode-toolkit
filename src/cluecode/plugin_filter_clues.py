@@ -38,8 +38,8 @@ if TRACE:
 @post_scan_impl
 class RedundantCluesFilter(PostScanPlugin):
     """
-    Filter redundant clues (copyrights, authors, emails, and urls) that are already
-    contained in another more important scan result.
+    Filter redundant clues (copyrights, authors, emails, and urls) that are
+    already contained in a matched license text.
     """
     sort_order = 1
 
@@ -275,13 +275,14 @@ def filter_ignorable_clues(detections, rules_by_id):
 
 def filter_values(attributes, ignorables, value_key='value', strip=''):
     """
-    Yield filtered `attributes` based on line positions and values found in a
-    ignorables.
+    Yield filtered ``attributes`` based on line positions and values found in a
+    ``ignorables`` Ignorables object. Use the ``value_key`` key for getting the
+    value.
 
     `attributes` is a list of mappings that contain a `start_line`, `end_line`
     and a `value_key` key.
 
-    Optionally strip `strip` from the the values.
+    Optionally strip the ``strip`` characters from the values.
     """
     for item in attributes:
         if TRACE:
@@ -296,7 +297,7 @@ def filter_values(attributes, ignorables, value_key='value', strip=''):
 
         for ign in ignorables:
             if TRACE: logger_debug('   filter_values: ign:', ign)
-            if (ls in ign.lines_range or el in ign.lines_range) and val in ign.value:
+            if (ls in ign.lines_range or el in ign.lines_range)  and val in ign.value:
                 ignored = True
                 if TRACE: logger_debug('   filter_values: skipped')
                 break
@@ -307,13 +308,12 @@ def filter_values(attributes, ignorables, value_key='value', strip=''):
 
 def collect_ignorables(license_matches, rules_by_id):
     """
-    Collect and return an ignorable Clues object built from `license_matches`
-    matched licenses which is the list of "licenses" objects returned in JSON
-    results.
+    Collect and return an Ignorables object built from ``license_matches``
+    matched licenses list of "licenses" objects returned in ScanCode JSON
+    results and the ``rules_by_id`` mapping of Rule objects by identifier.
 
-    The value of each ignorable list of clues is a set of (set of
-    lines number, set of ignorable values). The return values is a mapping
-    {label: ignorables}.
+    The value of each ignorable list of clues is a set of (set of lines number,
+    set of ignorable values).
     """
     emails = set()
     urls = set()
@@ -323,16 +323,17 @@ def collect_ignorables(license_matches, rules_by_id):
 
     if not license_matches:
         return Ignorables(
-        copyrights=frozenset(copyrights),
-        holders=frozenset(holders),
-        authors=frozenset(authors),
-        urls=frozenset(urls),
-        emails=frozenset(emails),
-    )
+            copyrights=frozenset(copyrights),
+            holders=frozenset(holders),
+            authors=frozenset(authors),
+            urls=frozenset(urls),
+            emails=frozenset(emails),
+        )
     # build tuple of (set of lines number, set of ignorbale values)
     for lic in license_matches:
 
-        if TRACE: logger_debug('collect_ignorables: license:', lic['key'], lic['score'])
+        if TRACE:
+            logger_debug('collect_ignorables: license:', lic['key'], lic['score'])
 
         matched_rule = lic.get('matched_rule', {})
         rid = matched_rule.get('identifier')
@@ -341,7 +342,8 @@ def collect_ignorables(license_matches, rules_by_id):
         # ignore poor partial matches
         # TODO: there must be a better way using coverage
         if match_coverage < 90:
-            if TRACE: logger_debug('  collect_ignorables: skipping, match_coverage under 90%')
+            if TRACE:
+                logger_debug('  collect_ignorables: skipping, match_coverage under 90%')
             continue
 
         if not rid:
