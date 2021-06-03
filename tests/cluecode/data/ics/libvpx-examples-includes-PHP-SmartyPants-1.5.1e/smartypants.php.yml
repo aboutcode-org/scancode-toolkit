@@ -17,3 +17,6 @@ holders_summary:
     count: 2
   - value: Michel Fortin
     count: 2
+expected_failures:
+  - copyrights
+    
