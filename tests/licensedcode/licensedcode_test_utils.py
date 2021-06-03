@@ -139,8 +139,11 @@ class LicenseTest(object):
         """
         Return an iterable of LicenseTest objects loaded from `test_dir`
         """
-        return [LicenseTest(data_file, test_file)
-                 for data_file, test_file in get_test_file_pairs(test_dir)]
+        return [
+            LicenseTest(data_file, test_file)
+            for data_file, test_file
+            in get_test_file_pairs(test_dir)
+        ]
 
 
 def build_tests(test_dir, clazz, regen=False):
@@ -219,7 +222,8 @@ def make_test(license_test, regen=False):
                     'file://{test_file}'.format(**locals())
                 ])
                 if test_data_file:
-                    results_failure_trace.append('file://{test_data_file}'.format(**locals()))
+                    results_failure_trace.append(
+                        'file://{test_data_file}'.format(**locals()))
 
                 results_failure_trace.append('')
                 results_failure_trace.append(qtext)
@@ -237,7 +241,8 @@ def make_test(license_test, regen=False):
                     'file://{test_file}'.format(**locals())
                 ])
                 if test_data_file:
-                    results_failure_trace.append('file://{test_data_file}'.format(**locals()))
+                    results_failure_trace.append(
+                        'file://{test_data_file}'.format(**locals()))
 
             # this assert will always fail and provide a detailed failure trace
             assert '\n'.join(results_failure_trace) == '\n'.join(expected)
