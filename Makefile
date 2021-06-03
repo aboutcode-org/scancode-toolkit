@@ -58,12 +58,14 @@ black:
 
 valid: isort black
 
-build: conf
+html:
 	@echo "-> Generate the HTML content"
 	@bin/python app.py
 	@echo "-> Copy the static assets"
 	@cp -R static/ docs/static/
 	@echo "Available at docs/index.html"
+
+build: conf html
 
 publish:
 	@echo "-> Add changes to git"
@@ -72,4 +74,4 @@ publish:
 	@echo "-> Push changes to main repo"
 	@git push
 
-.PHONY: conf clean isort black valid build publish
+.PHONY: conf clean isort black valid html build publish

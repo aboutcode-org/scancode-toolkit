@@ -34,7 +34,11 @@
       <tbody>
       {% for key, license in licenses.items() %}
         <tr>
-          <td><a href="{{ key }}.html">{{ key }}</a></td>
+          <td>
+            <a href="{{ key }}.html">{{ key }}</a>
+            {% if license.is_deprecated %}<span class="text-warning">[Deprecated]</span>{% endif %}
+            <span class="d-none">{% if license.is_deprecated %}deprecated{% else %}active{% endif %}</span>
+          </td>
           <td>{{ license.short_name }}</td>
           <td>
             {% if license.spdx_license_key %}
@@ -74,10 +78,20 @@
         "ordering": true,
         "info": true,
         "infoCallback": function(settings, start, end, max, total, pre) {
-          return pre.replace(/entries/g, "licenses");
+          let show_deprecated_link = ' (<a id="toggle-deprecated" href="#">show deprecated</a>)';
+          return pre.replace(/entries/g, "licenses") + show_deprecated_link;
         },
         // Display "info" on top
         "sDom": '<"top"<"actions">lfpi<"clear">><"clear">rt<"bottom">',
+        // Hide deprecated rows by default using the search on the first column
+        "searchCols": [
+          {"search": "active"},
+        ]
+      });
+
+      $("#toggle-deprecated").on("click", function(event) {
+        event.preventDefault();
+        table.search("deprecated").column(0).search("").draw();
       });
 
       let url_params = new URLSearchParams(window.location.search);
