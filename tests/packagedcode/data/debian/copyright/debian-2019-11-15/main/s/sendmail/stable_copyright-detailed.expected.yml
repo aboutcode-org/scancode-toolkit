@@ -1,5 +1,7 @@
-- other-Sendmail
-- sendmail AND unknown
+- - other-Sendmail
+  - other-Sendmail
+  - other-Sendmail
+- sendmail AND sendmail
 - |
   Copyright (c) 1998-2015 Proofpoint, Inc. and its suppliers. All rights reserved.
   Copyright (c) 1983, 1995-1997 Eric P. Allman. All rights reserved.

@@ -1,15 +1,31 @@
-- |
-  Go
-  X11
-  FreeBSD
-  MPEG
-  noderivs
-  Apache-2.0
-  BSD-2-clause-svgpan
-  CC-BY-3.0
-  BSD-3-clause
-- apache-2.0 AND bsd-2-clause-views AND bsd-new AND bsd-simplified AND cc-by-3.0 AND google-patent-license-golang
-  AND mit AND mpeg-ssg AND multics AND unknown
+- - Go
+  - X11
+  - Go
+  - Go
+  - Go
+  - FreeBSD
+  - Go
+  - Go
+  - MPEG
+  - noderivs
+  - Apache-2.0
+  - BSD-2-clause-svgpan
+  - CC-BY-3.0
+  - BSD-3-clause
+  - Go
+  - BSD-3-clause
+  - Go
+  - Apache-2.0
+  - X11
+  - FreeBSD
+  - MPEG
+  - CC-BY-3.0
+  - BSD-2-clause-svgpan
+- (bsd-new AND google-patent-license-golang) AND mit AND (bsd-new AND google-patent-license-golang)
+  AND (bsd-new AND google-patent-license-golang) AND (bsd-new AND google-patent-license-golang)
+  AND bsd-simplified AND (bsd-new AND google-patent-license-golang) AND (bsd-new AND google-patent-license-golang)
+  AND mpeg-ssg AND multics AND (apache-2.0 AND apache-2.0) AND bsd-2-clause-views AND cc-by-3.0
+  AND bsd-new AND (bsd-new AND google-patent-license-golang)
 - |
   © 2009, 2010, The Go Authors. All rights reserved.
   © 1994-1999 Lucent Technologies Inc. All rights reserved.
@@ -21,8 +37,11 @@
   Revisions © 2000-2007 Lucent Technologies Inc. and others
   Portions © 2009 The Go Authors. All rights reserved.
   © 2009, The Go Authors. All rights reserved.
+  © 2009, 2010, The Go Authors. All rights reserved.
+  © 2009, 2010, The Go Authors. All rights reserved.
   © 1996-1998 John D. Polstra. All rights reserved.
   © 2001 David E. O'Brien
+  Portions © 2009 The Go Authors. All rights reserved.
   © 2009, 2011 The Go Authors. All rights reserved.
   Based on code © 1984, 1987, 1989, 1992, 2000 by Stephen L. Moshier
   © 2010 The Go Authors. All rights reserved.

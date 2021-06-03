@@ -1,16 +1,24 @@
-- |
-  GPL-2 with OpenSSL exception
-  GPL-2
-  GPL-2+
-  Zlib and GPL
-  BSD-3-Clause-Eric-Young
-  public-domain
-  BSD-3-Clause
-  BSD-ish
-  GPL
-  Zlib
-- bsd-new AND gfdl-1.2 AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND mit-old-style-no-advert
-  AND public-domain AND ssleay-windows AND unknown AND zlib
+- - GPL-2 with OpenSSL exception
+  - GPL-2 with OpenSSL exception
+  - GPL-2
+  - GPL-2
+  - GPL-2+
+  - Zlib and GPL
+  - BSD-3-Clause-Eric-Young
+  - public-domain
+  - BSD-3-Clause
+  - BSD-ish
+  - GPL-2 with OpenSSL exception
+  - GPL-2
+  - GPL-2+
+  - GPL
+  - Zlib
+  - BSD-3-Clause
+- (gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0
+  AND gpl-1.0-plus AND gfdl-1.2 AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-1.0-plus
+  AND gfdl-1.2 AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0-plus
+  AND gpl-1.0-plus AND gpl-2.0) AND (zlib AND (gpl-1.0-plus AND gpl-1.0-plus AND gfdl-1.2 AND
+  gpl-2.0 AND gpl-1.0-plus)) AND ssleay-windows AND public-domain AND bsd-new AND mit-old-style-no-advert
 - |
   2002-2016 Henrik Størner <henrik@hswn.dk>
   2005-2007 Henrik Størner <henrik@hswn.dk>

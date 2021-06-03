@@ -1,18 +1,20 @@
-- |
-  GPL-2+
-  LGPL-2.1+
-  public-domain
-  BSD-3-clause
-  LGPL-2.1
-  Expat
-  CC-BY-3.0
-  Apache-2
-  BSL-1
-  GPL-3 or LGPL-2.1
-  GPL-3
-- apache-2.0 AND boost-1.0 AND bsd-new AND cc-by-3.0 AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus
-  AND gpl-3.0 AND ijg AND lgpl-2.1 AND lgpl-2.1-plus AND mit AND other-copyleft AND public-domain
-  AND public-domain-disclaimer AND unknown
+- - GPL-2+
+  - LGPL-2.1+
+  - public-domain
+  - BSD-3-clause
+  - LGPL-2.1
+  - Expat
+  - CC-BY-3.0
+  - Apache-2
+  - BSL-1
+  - GPL-3 or LGPL-2.1
+  - GPL-3
+- (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND (lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND public-domain-disclaimer AND bsd-new AND
+  (lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1) AND (mit AND mit) AND ijg AND (apache-2.0
+  AND lgpl-2.1 AND apache-2.0) AND boost-1.0 AND ((gpl-3.0 AND gpl-3.0 AND gpl-1.0-plus AND
+  gpl-1.0-plus AND other-copyleft AND gpl-1.0-plus AND gpl-3.0 AND gpl-3.0) OR (lgpl-2.1 AND
+  lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1))
 - |
   2006, Alexander Neundorf <neundorf@kde.org>
   2006, Andreas Schneider <asn@cryptomilk.org>
@@ -43,7 +45,6 @@
   2005-2014, jQuery Foundation, Inc.
   2015, nocteau
   2012-2015, ownCloud, inc.; Nuernberg, Germany., 2016 Nextcloud GmbH
-  Sandro Knauß <hefee@debian.org>
   2015, Daniel Molkentin <danimo@owncloud.com>
   2013, Klaas Freitag <freitag@owncloud.com>
   2000-2013, Liferay, Inc
