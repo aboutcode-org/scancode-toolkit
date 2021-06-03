@@ -80,10 +80,9 @@ Page 1
     def test_pdfminer_can_parse_apache_fop_test_pdf(self):
         test_file = self.get_test_loc('pdf/fop_test_pdf_1.5_test.pdf')
         result = pdf.get_text_lines(test_file)
-        try:
-            assert result == apache_fop_expected
-        except AssertionError:
-            assert result == apache_fop_expected_2020
+        if result == apache_fop_expected:
+            return
+        assert result == apache_fop_expected_2020
 
     def test_numbered_text_lines_does_not_fail_on_autocad_test_pdf(self):
         test_file = self.get_test_loc('pdf/AutoCad_Diagram.pdf')
