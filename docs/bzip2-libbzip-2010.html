@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bzip2-libbzip-2010
-short_name: bzip2 License 2010
-name: bzip2 License 2010
-category: Permissive
-owner: bzip
-homepage_url: https://github.com/asimonov-im/bzip2/blob/master/LICENSE
-notes: until bzip2 1.0.6 there is only one license and not two as listed in SPDX. Therefore
-  we only track one such license.
-spdx_license_key: bzip2-1.0.6
-other_spdx_license_keys:
-  - bzip2-1.0.5
-other_urls:
-  - http://bzip.org/1.0.5/bzip2-manual-1.0.5.html
-  - http://www.bzip.org/
-  - https://sourceware.org/git/?p=bzip2.git;a=blob;f=LICENSE;hb=bzip2-1.0.6
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bzip2-libbzip-2010
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            bzip2 License 2010
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            bzip2 License 2010
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            bzip
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/asimonov-im/bzip2/blob/master/LICENSE" rel="noopener" target="_blank">https://github.com/asimonov-im/bzip2/blob/master/LICENSE</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            until bzip2 1.0.6 there is only one license and not two as listed in SPDX. Therefore we only track one such license.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            bzip2-1.0.6
+          
+        </dd>
+      
+        <dt style="">other_spdx_license_keys</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>bzip2-1.0.5</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://bzip.org/1.0.5/bzip2-manual-1.0.5.html" rel="noopener" target="_blank">http://bzip.org/1.0.5/bzip2-manual-1.0.5.html</a></li><li><a href="http://www.bzip.org/" rel="noopener" target="_blank">http://www.bzip.org/</a></li><li><a href="https://sourceware.org/git/?p=bzip2.git;a=blob;f=LICENSE;hb=bzip2-1.0.6" rel="noopener" target="_blank">https://sourceware.org/git/?p=bzip2.git;a=blob;f=LICENSE;hb=bzip2-1.0.6</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
 

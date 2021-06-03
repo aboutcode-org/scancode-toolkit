@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,62 +62,144 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/libwebsockets-exception.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/libwebsockets-exception.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: libwebsockets-exception
-short_name: libwebsockets exception to LGPL 2.1
-name: libwebsockets exception to LGPL 2.1
-category: Copyleft Limited
-owner: lws-team
-homepage_url: https://github.com/warmcat/libwebsockets/blob/master/LICENSE
-notes: composite
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-libwebsockets-exception
-other_urls:
-  - http://www.gnu.org/licenses/lgpl-2.1.txt
-minimum_coverage: 70
-standard_notice: |
-  Libwebsockets and included programs are provided under the terms of the GNU
-  Library General Public License (LGPL) 2.1, with the following exceptions:
-  1) Any reference, whether in these modifications or in the GNU
-  Library General Public License 2.1, to this License, these terms, the
-  GNU Lesser Public License, GNU Library General Public License, LGPL, or
-  any similar reference shall refer to the GNU Library General Public
-  License 2.1 as modified by these paragraphs 1) through 4).
-  2) Static linking of programs with the libwebsockets library does not
-  constitute a derivative work and does not require the author to provide
-  source code for the program, use the shared libwebsockets libraries, or
-  link their program against a user-supplied version of libwebsockets.
-  If you link the program to a modified version of libwebsockets, then the
-  changes to libwebsockets must be provided under the terms of the LGPL in
-  sections 1, 2, and 4.
-  3) You do not have to provide a copy of the libwebsockets license with
-  programs that are linked to the libwebsockets library, nor do you have to
-  identify the libwebsockets license in your program or documentation as
-  required by section 6 of the LGPL.
-  However, programs must still identify their use of libwebsockets. The
-  following example statement can be included in user documentation to
-  satisfy this requirement:
-  &#34;[program] is based in part on the work of the libwebsockets project
-  (https://libwebsockets.org)&#34;
-  4) Some sources included have their own, more liberal licenses, or options
-  to get original sources with the liberal terms.
-  Original liberal license retained
-  - lib/sha-1.c - 3-clause BSD license retained, link to original
-  - win32port/zlib - ZLIB license (see zlib.h)
-  - lib/mbedtls_wrapper - Apache 2.0 (only built if linked against mbedtls)
-  Relicensed to libwebsocket license
-  - lib/base64-decode.c - relicensed to LGPL2.1+SLE, link to original
-  - lib/daemonize.c - relicensed from Public Domain to LGPL2.1+SLE,
-  link to original Public Domain version
-  Public Domain (CC-zero) to simplify reuse
-  - test-apps/*.c
-  - test-apps/*.h
-  - lwsws/*
-  ------ end of exceptions
-ignorable_urls:
-  - https://libwebsockets.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Libwebsockets and included programs are provided under the terms of the GNU
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            libwebsockets-exception
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            libwebsockets exception to LGPL 2.1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            libwebsockets exception to LGPL 2.1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            lws-team
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/warmcat/libwebsockets/blob/master/LICENSE" rel="noopener" target="_blank">https://github.com/warmcat/libwebsockets/blob/master/LICENSE</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            composite
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-libwebsockets-exception
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/lgpl-2.1.txt" rel="noopener" target="_blank">http://www.gnu.org/licenses/lgpl-2.1.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            70
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            Libwebsockets and included programs are provided under the terms of the GNU
+Library General Public License (LGPL) 2.1, with the following exceptions:
+1) Any reference, whether in these modifications or in the GNU
+Library General Public License 2.1, to this License, these terms, the
+GNU Lesser Public License, GNU Library General Public License, LGPL, or
+any similar reference shall refer to the GNU Library General Public
+License 2.1 as modified by these paragraphs 1) through 4).
+2) Static linking of programs with the libwebsockets library does not
+constitute a derivative work and does not require the author to provide
+source code for the program, use the shared libwebsockets libraries, or
+link their program against a user-supplied version of libwebsockets.
+If you link the program to a modified version of libwebsockets, then the
+changes to libwebsockets must be provided under the terms of the LGPL in
+sections 1, 2, and 4.
+3) You do not have to provide a copy of the libwebsockets license with
+programs that are linked to the libwebsockets library, nor do you have to
+identify the libwebsockets license in your program or documentation as
+required by section 6 of the LGPL.
+However, programs must still identify their use of libwebsockets. The
+following example statement can be included in user documentation to
+satisfy this requirement:
+&#34;[program] is based in part on the work of the libwebsockets project
+(<a href="https://libwebsockets.org)&#34;" rel="noopener" target="_blank">https://libwebsockets.org)&#34;</a>
+4) Some sources included have their own, more liberal licenses, or options
+to get original sources with the liberal terms.
+Original liberal license retained
+- lib/sha-1.c - 3-clause BSD license retained, link to original
+- win32port/zlib - ZLIB license (see zlib.h)
+- lib/mbedtls_wrapper - Apache 2.0 (only built if linked against mbedtls)
+Relicensed to libwebsocket license
+- lib/base64-decode.c - relicensed to LGPL2.1+SLE, link to original
+- lib/daemonize.c - relicensed from Public Domain to LGPL2.1+SLE,
+link to original Public Domain version
+Public Domain (CC-zero) to simplify reuse
+- test-apps/*.c
+- test-apps/*.h
+- lwsws/*
+------ end of exceptions
+
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://libwebsockets.org/" rel="noopener" target="_blank">https://libwebsockets.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Libwebsockets and included programs are provided under the terms of the GNU
 Library General Public License (LGPL) 2.1, with the following exceptions:
 
 1) Any reference, whether in these modifications or in the GNU

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lil-1.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lil-1.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: lil-1
-short_name: Lil License v1
-name: Lil License v1
-category: Permissive
-owner: Jeremy Ashkenas
-homepage_url: http://lillicense.org/v1.html
-notes: this license has MIT-like terms with extra non-obvious patent grants.
-spdx_license_key: LicenseRef-scancode-lil-1
-other_urls:
-  - https://github.com/jashkenas/lil-license
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted by the authors of this software, to any
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            lil-1
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Lil License v1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Lil License v1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Jeremy Ashkenas
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://lillicense.org/v1.html" rel="noopener" target="_blank">http://lillicense.org/v1.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this license has MIT-like terms with extra non-obvious patent grants.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-lil-1
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/jashkenas/lil-license" rel="noopener" target="_blank">https://github.com/jashkenas/lil-license</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted by the authors of this software, to any
 person, to use the software for any purpose, free of charge, including
 the rights to run, read, copy, change, distribute and sell it, and
 including usage rights to any patents the authors may hold on it,

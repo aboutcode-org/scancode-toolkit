@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,48 +62,117 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/linking-exception-lgpl-3.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/linking-exception-lgpl-3.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: linking-exception-lgpl-3.0
-is_deprecated: yes
-short_name: Linking exception to LGPL 3.0
-name: Linking exception to LGPL 3.0
-category: Copyleft Limited
-owner: Canonical Inc.
-homepage_url: https://github.com/go-yaml/yaml/blob/v2/LICENSE
-notes: This is deprecated and replaced by lgpl-3.0-linking-exception
-is_exception: yes
-other_urls:
-  - http://www.gnu.org/licenses/lgpl-3.0.txt
-standard_notice: |
-  This library is free software; you can redistribute it and/or modify it
-  under the terms of the GNU Lesser General Public License as published by
-  the Free Software Foundation; either version 3 of the License, or (at your
-  option) any later version.
-  This library is distributed in the hope that it will be useful, but WITHOUT
-  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-  FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
-  for more details.
-  You should have received a copy of the GNU Lesser General Public License
-  along with this library; if not, write to the Free Software Foundation,
-  Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
-  As a special exception to the GNU Lesser General Public License version 3
-  (&#34;LGPL3&#34;), the copyright holders of this Library give you permission to
-  convey to a third party a Combined Work that links statically or
-  dynamically to this Library without providing any Minimal Corresponding
-  Source or
-  Minimal Application Code as set out in 4d or providing the installation
-  information set out in section 4e, provided that you comply with the other
-  provisions of LGPL3 and provided that you meet, for the Application the
-  terms and conditions of the license(s) which apply to the Application.
-  Except as stated in this special exception, the provisions of LGPL3 will
-  continue to comply in full to this Library. If you modify this Library, you
-  may apply this exception to your version of this Library, but you are not
-  obliged to do so. If you do not wish to do so, delete this exception
-  statement from your version. This exception does not (and cannot) modify
-  any license terms which apply to the Application, with which you must still
-  comply.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>As a special exception to the GNU Lesser General Public License version 3
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            linking-exception-lgpl-3.0
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Linking exception to LGPL 3.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Linking exception to LGPL 3.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Canonical Inc.
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/go-yaml/yaml/blob/v2/LICENSE" rel="noopener" target="_blank">https://github.com/go-yaml/yaml/blob/v2/LICENSE</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This is deprecated and replaced by lgpl-3.0-linking-exception
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/lgpl-3.0.txt" rel="noopener" target="_blank">http://www.gnu.org/licenses/lgpl-3.0.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; either version 3 of the License, or (at your
+option) any later version.
+This library is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
+for more details.
+You should have received a copy of the GNU Lesser General Public License
+along with this library; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+As a special exception to the GNU Lesser General Public License version 3
+(&#34;LGPL3&#34;), the copyright holders of this Library give you permission to
+convey to a third party a Combined Work that links statically or
+dynamically to this Library without providing any Minimal Corresponding
+Source or
+Minimal Application Code as set out in 4d or providing the installation
+information set out in section 4e, provided that you comply with the other
+provisions of LGPL3 and provided that you meet, for the Application the
+terms and conditions of the license(s) which apply to the Application.
+Except as stated in this special exception, the provisions of LGPL3 will
+continue to comply in full to this Library. If you modify this Library, you
+may apply this exception to your version of this Library, but you are not
+obliged to do so. If you do not wish to do so, delete this exception
+statement from your version. This exception does not (and cannot) modify
+any license terms which apply to the Application, with which you must still
+comply.
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>As a special exception to the GNU Lesser General Public License version 3
 (&#34;LGPL3&#34;), the copyright holders of this Library give you permission to convey
 to a third party a Combined Work that links statically or dynamically to this
 Library without providing any Minimal Corresponding Source or Minimal

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,25 +62,94 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cximage.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cximage.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: cximage
-short_name: CxImage License
-name: CxImage License
-category: Permissive
-owner: CxImage Project
-homepage_url: http://www.xdp.it/cximage/
-spdx_license_key: LicenseRef-scancode-cximage
-minimum_coverage: 30
-ignorable_copyrights:
-  - Copyright (c) 1995, Alejandro Aguilar Sierra
-  - Copyright (c) 2001 - 2004, Davide Pizzolato
-ignorable_holders:
-  - Alejandro Aguilar Sierra
-  - Davide Pizzolato
-ignorable_urls:
-  - http://www.xdp.it/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This copy of the CxImage notices is provided for your convenience. In case of
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            cximage
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            CxImage License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            CxImage License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            CxImage Project
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.xdp.it/cximage/" rel="noopener" target="_blank">http://www.xdp.it/cximage/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-cximage
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            30
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1995, Alejandro Aguilar Sierra</li><li>Copyright (c) 2001 - 2004, Davide Pizzolato</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Alejandro Aguilar Sierra</li><li>Davide Pizzolato</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.xdp.it/" rel="noopener" target="_blank">http://www.xdp.it/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This copy of the CxImage notices is provided for your convenience. In case of
 any discrepancy between this copy and the notices in the file ximage.h that is
 included in the CxImage distribution, the latter shall prevail.
 

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cwe-tou.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cwe-tou.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: cwe-tou
-short_name: CWE ToU
-name: Common Weaness Enumeration ToU License
-category: Permissive
-owner: Mitre
-homepage_url: https://cwe.mitre.org/about/termsofuse.html
-spdx_license_key: LicenseRef-scancode-cwe-tou
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>CWE Usage: MITRE hereby grants you a non-exclusive, royalty-free license to use
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            cwe-tou
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            CWE ToU
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Common Weaness Enumeration ToU License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Mitre
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://cwe.mitre.org/about/termsofuse.html" rel="noopener" target="_blank">https://cwe.mitre.org/about/termsofuse.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-cwe-tou
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>CWE Usage: MITRE hereby grants you a non-exclusive, royalty-free license to use
 CWE for research, development, and commercial purposes. Any copy you make for
 such purposes is authorized on the condition that you reproduce MITRE’s
 copyright designation and this license in any such copy.

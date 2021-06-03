@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,29 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-visual-studio-2017.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-visual-studio-2017.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ms-visual-studio-2017
-short_name: MS Visual Studio 2017
-name: Microsoft Visual Studio 2017
-category: Commercial
-owner: Microsoft
-homepage_url: https://visualstudio.microsoft.com/license-terms/mlt687465/
-spdx_license_key: LicenseRef-scancode-ms-visual-studio-2017
-text_urls:
-  - See https://visualstudio.microsoft.com/wp-content/uploads/2018/03/VS_2017_ENT_PRO_TRIAL_RTW_ENU_Eula.1033.docx
-  - https://visualstudio.microsoft.com/wp-content/uploads/2018/03/VS_2017_ENT_PRO_TRIAL_RTW_ENU_Eula.1033.docx
-faq_url: https://visualstudio.microsoft.com/wp-content/uploads/2017/11/Visual-Studio-2018-Licensing-Whitepaper-November-2017.pdf
-ignorable_urls:
-  - http://go.microsoft.com/?linkid=9840733
-  - http://www.howtotell.com/
-  - http://www.microsoft.com/exporting
-  - http://www.microsoft.com/info/nareturns.htm
-  - http://www.microsoft.com/worldwide
-  - https://go.microsoft.com/fwlink/?LinkID=824704
-  - https://go.microsoft.com/fwlink/?linkid=823097
-  - https://support.microsoft.com/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>MICROSOFT SOFTWARE LICENSE TERMS
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ms-visual-studio-2017
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MS Visual Studio 2017
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Microsoft Visual Studio 2017
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://visualstudio.microsoft.com/license-terms/mlt687465/" rel="noopener" target="_blank">https://visualstudio.microsoft.com/license-terms/mlt687465/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ms-visual-studio-2017
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>See <a href="https://visualstudio.microsoft.com/wp-content/uploads/2018/03/VS_2017_ENT_PRO_TRIAL_RTW_ENU_Eula.1033.docx" rel="noopener" target="_blank">https://visualstudio.microsoft.com/wp-content/uploads/2018/03/VS_2017_ENT_PRO_TRIAL_RTW_ENU_Eula.1033.docx</a></li><li><a href="https://visualstudio.microsoft.com/wp-content/uploads/2018/03/VS_2017_ENT_PRO_TRIAL_RTW_ENU_Eula.1033.docx" rel="noopener" target="_blank">https://visualstudio.microsoft.com/wp-content/uploads/2018/03/VS_2017_ENT_PRO_TRIAL_RTW_ENU_Eula.1033.docx</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="https://visualstudio.microsoft.com/wp-content/uploads/2017/11/Visual-Studio-2018-Licensing-Whitepaper-November-2017.pdf" rel="noopener" target="_blank">https://visualstudio.microsoft.com/wp-content/uploads/2017/11/Visual-Studio-2018-Licensing-Whitepaper-November-2017.pdf</a>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://go.microsoft.com/?linkid=9840733" rel="noopener" target="_blank">http://go.microsoft.com/?linkid=9840733</a></li><li><a href="http://www.howtotell.com/" rel="noopener" target="_blank">http://www.howtotell.com/</a></li><li><a href="http://www.microsoft.com/exporting" rel="noopener" target="_blank">http://www.microsoft.com/exporting</a></li><li><a href="http://www.microsoft.com/info/nareturns.htm" rel="noopener" target="_blank">http://www.microsoft.com/info/nareturns.htm</a></li><li><a href="http://www.microsoft.com/worldwide" rel="noopener" target="_blank">http://www.microsoft.com/worldwide</a></li><li><a href="https://go.microsoft.com/fwlink/?LinkID=824704" rel="noopener" target="_blank">https://go.microsoft.com/fwlink/?LinkID=824704</a></li><li><a href="https://go.microsoft.com/fwlink/?linkid=823097" rel="noopener" target="_blank">https://go.microsoft.com/fwlink/?linkid=823097</a></li><li><a href="https://support.microsoft.com/" rel="noopener" target="_blank">https://support.microsoft.com/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>MICROSOFT SOFTWARE LICENSE TERMS
 
 MICROSOFT VISUAL STUDIO ENTERPRISE 2017, VISUAL STUDIO PROFESSIONAL 2017, VISUAL STUDIO TEST PROFESSIONAL 2017 AND TRIAL EDITION
 

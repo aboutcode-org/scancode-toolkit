@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,57 +62,108 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/libmng-2007.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/libmng-2007.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: libmng-2007
-short_name: libmng License 2007
-name: libmng License 2007
-category: Permissive
-owner: libmng Project
-spdx_license_key: LicenseRef-scancode-libmng-2007
-other_urls:
-  - http://www.linuxfromscratch.org/blfs/view/cvs/general/libmng.html
-standard_notice: |
-  Copyright (c) 2000-2007 Gerard Juyn (gerard@libmng.com)
-  [You may insert additional notices after this sentence if you modify
-  this source]
-  For the purposes of this copyright and license, &#34;Contributing Authors&#34;
-  is defined as the following set of individuals:
-  Gerard Juyn
-  Glenn Randers-Pehrson
-  The MNG Library is supplied &#34;AS IS&#34;. The Contributing Authors
-  disclaim all warranties, expressed or implied, including, without
-  limitation, the warranties of merchantability and of fitness for any
-  purpose. The Contributing Authors assume no liability for direct,
-  indirect, incidental, special, exemplary, or consequential damages,
-  which may result from the use of the MNG Library, even if advised of
-  the possibility of such damage.
-  Permission is hereby granted to use, copy, modify, and distribute this
-  source code, or portions hereof, for any purpose, without fee, subject
-  to the following restrictions:
-  1. The origin of this source code must not be misrepresented;
-  you must not claim that you wrote the original software.
-  2. Altered versions must be plainly marked as such and must not be
-  misrepresented as being the original source.
-  3. This Copyright notice may not be removed or altered from any source
-  or altered source distribution.
-  The Contributing Authors specifically permit, without fee, and
-  encourage the use of this source code as a component to supporting
-  the MNG and JNG file format in commercial products. If you use this
-  source code in a product, acknowledgment would be highly appreciated.
-  Parts of this software have been adapted from the libpng package.
-  Although this library supports all features from the PNG specification
-  (as MNG descends from it) it does not require the libpng package.
-  It does require the zlib library and optionally the IJG jpeg library,
-  and/or the &#34;little-cms&#34; library by Marti Maria (depending on the
-  inclusion of support for JNG and Full-Color-Management respectively.
-  This library&#39;s function is primarily to read and display MNG
-  animations. It is not meant as a full-featured image-editing
-  component! It does however offer creation and editing functionality
-  at the chunk level.
-  (future modifications may include some more support for creation
-  and or editing)
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The MNG Library is supplied &#34;AS IS&#34;.  The Contributing Authors         
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            libmng-2007
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            libmng License 2007
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            libmng License 2007
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            libmng Project
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-libmng-2007
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.linuxfromscratch.org/blfs/view/cvs/general/libmng.html" rel="noopener" target="_blank">http://www.linuxfromscratch.org/blfs/view/cvs/general/libmng.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            Copyright (c) 2000-2007 Gerard Juyn (<a href="mailto:gerard@libmng.com">gerard@libmng.com</a>)
+[You may insert additional notices after this sentence if you modify
+this source]
+For the purposes of this copyright and license, &#34;Contributing Authors&#34;
+is defined as the following set of individuals:
+Gerard Juyn
+Glenn Randers-Pehrson
+The MNG Library is supplied &#34;AS IS&#34;. The Contributing Authors
+disclaim all warranties, expressed or implied, including, without
+limitation, the warranties of merchantability and of fitness for any
+purpose. The Contributing Authors assume no liability for direct,
+indirect, incidental, special, exemplary, or consequential damages,
+which may result from the use of the MNG Library, even if advised of
+the possibility of such damage.
+Permission is hereby granted to use, copy, modify, and distribute this
+source code, or portions hereof, for any purpose, without fee, subject
+to the following restrictions:
+1. The origin of this source code must not be misrepresented;
+you must not claim that you wrote the original software.
+2. Altered versions must be plainly marked as such and must not be
+misrepresented as being the original source.
+3. This Copyright notice may not be removed or altered from any source
+or altered source distribution.
+The Contributing Authors specifically permit, without fee, and
+encourage the use of this source code as a component to supporting
+the MNG and JNG file format in commercial products. If you use this
+source code in a product, acknowledgment would be highly appreciated.
+Parts of this software have been adapted from the libpng package.
+Although this library supports all features from the PNG specification
+(as MNG descends from it) it does not require the libpng package.
+It does require the zlib library and optionally the IJG jpeg library,
+and/or the &#34;little-cms&#34; library by Marti Maria (depending on the
+inclusion of support for JNG and Full-Color-Management respectively.
+This library&#39;s function is primarily to read and display MNG
+animations. It is not meant as a full-featured image-editing
+component! It does however offer creation and editing functionality
+at the chunk level.
+(future modifications may include some more support for creation
+and or editing)
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The MNG Library is supplied &#34;AS IS&#34;.  The Contributing Authors         
 disclaim all warranties, expressed or implied, including, without      
 limitation, the warranties of merchantability and of fitness for any   
 purpose.  The Contributing Authors assume no liability for direct,     

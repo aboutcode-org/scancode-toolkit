@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,94 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/liberation-font-exception.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/liberation-font-exception.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: liberation-font-exception
-short_name: Liberation Font Exception to GPL 2.0
-name: Liberation Font Exception to GPL 2.0
-category: Copyleft
-owner: Red Hat
-homepage_url: https://fedoraproject.org/wiki/Licensing:LiberationFontLicense
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-liberation-font-exception
-text_urls:
-  - https://fedoraproject.org/wiki/Licensing:LiberationFontLicense
-  - https://pagure.io/liberation-fonts/raw/cf3040c146097d6b7361e2823d5c6b5c309a456a/f/master/License.txt
-ignorable_copyrights:
-  - Copyright (c) 2007 Red Hat, Inc.
-ignorable_holders:
-  - Red Hat, Inc.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code> LICENSE AGREEMENT AND LIMITED PRODUCT WARRANTY
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            liberation-font-exception
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Liberation Font Exception to GPL 2.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Liberation Font Exception to GPL 2.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Red Hat
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing:LiberationFontLicense" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing:LiberationFontLicense</a>
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-liberation-font-exception
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://fedoraproject.org/wiki/Licensing:LiberationFontLicense" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing:LiberationFontLicense</a></li><li><a href="https://pagure.io/liberation-fonts/raw/cf3040c146097d6b7361e2823d5c6b5c309a456a/f/master/License.txt" rel="noopener" target="_blank">https://pagure.io/liberation-fonts/raw/cf3040c146097d6b7361e2823d5c6b5c309a456a/f/master/License.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2007 Red Hat, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Red Hat, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code> LICENSE AGREEMENT AND LIMITED PRODUCT WARRANTY
  LIBERATION FONT SOFTWARE
  
  This agreement governs the use of the Software and any updates to the Software, regardless of the delivery mechanism. Subject to the following terms, Red Hat, Inc. (&#34;Red Hat&#34;) grants to the user (&#34;Client&#34;) a license to this work pursuant to the GNU General Public License v.2 with the exceptions set forth below and such other terms as are set forth in this End User License Agreement.

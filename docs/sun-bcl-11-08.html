@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-bcl-11-08.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-bcl-11-08.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: sun-bcl-11-08
-short_name: Sun BCL 11 plus 8
-name: Sun BCL 11 plus 8
-category: Proprietary Free
-owner: Oracle (Sun)
-homepage_url: http://download.java.net/media/jai/builds/release/1_1_3/LICENSE-jai.txt
-spdx_license_key: LicenseRef-scancode-sun-bcl-11-08
-text_urls:
-  - http://download.java.net/media/jai/builds/release/1_1_3/LICENSE-jai.txt
-ignorable_urls:
-  - http://www.java.sun.com/jdk/index.html
-  - http://www.sun.com/policies/trademarks
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Sun Microsystems, Inc.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            sun-bcl-11-08
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Sun BCL 11 plus 8
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sun BCL 11 plus 8
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle (Sun)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://download.java.net/media/jai/builds/release/1_1_3/LICENSE-jai.txt" rel="noopener" target="_blank">http://download.java.net/media/jai/builds/release/1_1_3/LICENSE-jai.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-sun-bcl-11-08
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://download.java.net/media/jai/builds/release/1_1_3/LICENSE-jai.txt" rel="noopener" target="_blank">http://download.java.net/media/jai/builds/release/1_1_3/LICENSE-jai.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.java.sun.com/jdk/index.html" rel="noopener" target="_blank">http://www.java.sun.com/jdk/index.html</a></li><li><a href="http://www.sun.com/policies/trademarks" rel="noopener" target="_blank">http://www.sun.com/policies/trademarks</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Sun Microsystems, Inc.
 Binary Code License Agreement
 
 {ProductName}

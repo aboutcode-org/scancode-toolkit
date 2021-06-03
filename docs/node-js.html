@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,79 +62,128 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/node-js.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/node-js.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: node-js
-short_name: Node License
-name: Node License
-category: Permissive
-owner: Joyent
-homepage_url: https://raw.githubusercontent.com/nodejs/node/master/LICENSE
-notes: composite
-spdx_license_key: LicenseRef-scancode-node-js
-other_urls:
-  - https://nodejs.org/en/
-minimum_coverage: 70
-ignorable_copyrights:
-  - Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler
-  - Copyright (c) 1998-2011 The OpenSSL Project
-  - Copyright (c) 2000-2006, The Perl Foundation
-  - Copyright (c) 2002-2012 Igor Sysoev
-  - Copyright (c) 2007, Google Inc.
-  - Copyright (c) 2009 Google Inc.
-  - Copyright (c) 2011, Ben Noordhuis &lt;info@bnoordhuis.nl&gt;
-  - Copyright (c) 2011,2012 Nginx, Inc.
-  - Copyright (c) 2011-2012, Christopher Jeffrey (https://github.com/chjj/)
-  - Copyright (c) Isaac Z. Schlueter
-  - Copyright (c) by Tjarda Koster, http://jelloween.deviantart.com
-  - Copyright 1998 by the Massachusetts Institute of Technology
-  - Copyright 2006-2012, the V8 project authors
-  - Copyright 2011 Mathias Bynens &lt;http://mathiasbynens.be/&gt;
-  - Copyright Joyent, Inc. and other Node contributors
-  - copyright 2011 Mathias Bynens &lt;http://mathiasbynens.be/&gt;
-  - copyright Igor Sysoev
-  - copyright Joyent, Inc. and other Node contributors
-  - copyrighted by Apple Computer, Inc.
-  - copyrighted by Sun Microsystems Inc.
-ignorable_authors:
-  - Eric Young (eay@cryptsoft.com)
-  - Mathias Pettersson and Brian Hammond
-  - The Perl Foundation
-  - Tim Hudson (tjh@cryptsoft.com)
-  - the OpenSSL Project
-ignorable_holders:
-  - Apple Computer, Inc.
-  - Ben Noordhuis
-  - Christopher Jeffrey
-  - Google Inc.
-  - Igor Sysoev
-  - Isaac Z. Schlueter
-  - Jean-loup Gailly and Mark Adler
-  - Joyent, Inc. and other Node contributors
-  - Mathias Bynens
-  - Nginx, Inc.
-  - Sun Microsystems Inc.
-  - The OpenSSL Project
-  - The Perl Foundation
-  - Tjarda Koster
-  - the Massachusetts Institute of Technology
-  - the V8 project authors
-ignorable_urls:
-  - http://jelloween.deviantart.com/
-  - http://mathiasbynens.be/
-  - http://mths.be/mit
-  - http://mths.be/punycode
-  - http://www.apache.org/licenses/
-  - http://www.openssl.org/
-  - https://github.com/chjj
-ignorable_emails:
-  - eay@cryptsoft.com
-  - info@bnoordhuis.nl
-  - jloup@gzip.org
-  - madler@alumni.caltech.edu
-  - openssl-core@openssl.org
-  - tjh@cryptsoft.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Node&#39;s license follows:
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            node-js
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Node License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Node License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Joyent
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://raw.githubusercontent.com/nodejs/node/master/LICENSE" rel="noopener" target="_blank">https://raw.githubusercontent.com/nodejs/node/master/LICENSE</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            composite
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-node-js
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://nodejs.org/en/" rel="noopener" target="_blank">https://nodejs.org/en/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            70
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler</li><li>Copyright (c) 1998-2011 The OpenSSL Project</li><li>Copyright (c) 2000-2006, The Perl Foundation</li><li>Copyright (c) 2002-2012 Igor Sysoev</li><li>Copyright (c) 2007, Google Inc.</li><li>Copyright (c) 2009 Google Inc.</li><li>Copyright (c) 2011, Ben Noordhuis &lt;<a href="mailto:info@bnoordhuis.nl">info@bnoordhuis.nl</a>&gt;</li><li>Copyright (c) 2011,2012 Nginx, Inc.</li><li>Copyright (c) 2011-2012, Christopher Jeffrey (<a href="https://github.com/chjj/" rel="noopener" target="_blank">https://github.com/chjj/</a>)</li><li>Copyright (c) Isaac Z. Schlueter</li><li>Copyright (c) by Tjarda Koster, <a href="http://jelloween.deviantart.com" rel="noopener" target="_blank">http://jelloween.deviantart.com</a></li><li>Copyright 1998 by the Massachusetts Institute of Technology</li><li>Copyright 2006-2012, the V8 project authors</li><li>Copyright 2011 Mathias Bynens &lt;<a href="http://mathiasbynens.be/" rel="noopener" target="_blank">http://mathiasbynens.be/</a>&gt;</li><li>Copyright Joyent, Inc. and other Node contributors</li><li>copyright 2011 Mathias Bynens &lt;<a href="http://mathiasbynens.be/" rel="noopener" target="_blank">http://mathiasbynens.be/</a>&gt;</li><li>copyright Igor Sysoev</li><li>copyright Joyent, Inc. and other Node contributors</li><li>copyrighted by Apple Computer, Inc.</li><li>copyrighted by Sun Microsystems Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Eric Young (<a href="mailto:eay@cryptsoft.com">eay@cryptsoft.com</a>)</li><li>Mathias Pettersson and Brian Hammond</li><li>The Perl Foundation</li><li>Tim Hudson (<a href="mailto:tjh@cryptsoft.com">tjh@cryptsoft.com</a>)</li><li>the OpenSSL Project</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Apple Computer, Inc.</li><li>Ben Noordhuis</li><li>Christopher Jeffrey</li><li>Google Inc.</li><li>Igor Sysoev</li><li>Isaac Z. Schlueter</li><li>Jean-loup Gailly and Mark Adler</li><li>Joyent, Inc. and other Node contributors</li><li>Mathias Bynens</li><li>Nginx, Inc.</li><li>Sun Microsystems Inc.</li><li>The OpenSSL Project</li><li>The Perl Foundation</li><li>Tjarda Koster</li><li>the Massachusetts Institute of Technology</li><li>the V8 project authors</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://jelloween.deviantart.com/" rel="noopener" target="_blank">http://jelloween.deviantart.com/</a></li><li><a href="http://mathiasbynens.be/" rel="noopener" target="_blank">http://mathiasbynens.be/</a></li><li><a href="http://mths.be/mit" rel="noopener" target="_blank">http://mths.be/mit</a></li><li><a href="http://mths.be/punycode" rel="noopener" target="_blank">http://mths.be/punycode</a></li><li><a href="http://www.apache.org/licenses/" rel="noopener" target="_blank">http://www.apache.org/licenses/</a></li><li><a href="http://www.openssl.org/" rel="noopener" target="_blank">http://www.openssl.org/</a></li><li><a href="https://github.com/chjj" rel="noopener" target="_blank">https://github.com/chjj</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:eay@cryptsoft.com">eay@cryptsoft.com</a></li><li><a href="mailto:info@bnoordhuis.nl">info@bnoordhuis.nl</a></li><li><a href="mailto:jloup@gzip.org">jloup@gzip.org</a></li><li><a href="mailto:madler@alumni.caltech.edu">madler@alumni.caltech.edu</a></li><li><a href="mailto:openssl-core@openssl.org">openssl-core@openssl.org</a></li><li><a href="mailto:tjh@cryptsoft.com">tjh@cryptsoft.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Node&#39;s license follows:
 
 ====
 

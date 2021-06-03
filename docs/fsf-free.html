@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/fsf-free.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/fsf-free.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: fsf-free
-short_name: FSF Free Software License
-name: Free Software Foundation - Free Software License
-category: Public Domain
-owner: Free Software Foundation (FSF)
-homepage_url: http://www.fsf.org/licensing/licenses/
-spdx_license_key: FSFUL
-text_urls:
-  - https://fedoraproject.org/wiki/Licensing/FSF_Unlimited_License
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This configure script is free software; the Free Software Foundation gives
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            fsf-free
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            FSF Free Software License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Free Software Foundation - Free Software License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Public Domain
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.fsf.org/licensing/licenses/" rel="noopener" target="_blank">http://www.fsf.org/licensing/licenses/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            FSFUL
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://fedoraproject.org/wiki/Licensing/FSF_Unlimited_License" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/FSF_Unlimited_License</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This configure script is free software; the Free Software Foundation gives
 unlimited permission to copy, distribute and modify it.</code></pre>
   </div>
 

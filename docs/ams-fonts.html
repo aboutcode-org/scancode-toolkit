@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ams-fonts.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ams-fonts.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ams-fonts
-short_name: AMSFonts license
-name: AMSFonts license
-category: Permissive
-owner: American Mathematical Society (AMS)
-homepage_url: http://www.ams.org/publications/type1-fonts
-spdx_license_key: LicenseRef-scancode-ams-fonts
-other_urls:
-  - https://fedoraproject.org/wiki/Licensing:AMS
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The PostScript Type 1 implementation of the Computer Modern and AMSFonts produced by and previously distributed by Blue Sky Research and Y&amp;Y, Inc., are now 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ams-fonts
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            AMSFonts license
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            AMSFonts license
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            American Mathematical Society (AMS)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.ams.org/publications/type1-fonts" rel="noopener" target="_blank">http://www.ams.org/publications/type1-fonts</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ams-fonts
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://fedoraproject.org/wiki/Licensing:AMS" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing:AMS</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The PostScript Type 1 implementation of the Computer Modern and AMSFonts produced by and previously distributed by Blue Sky Research and Y&amp;Y, Inc., are now 
 freely available for general use. This has been accomplished through the cooperation of a consortium of scientific publishers with Blue Sky Research and Y&amp;Y. 
 Members of this consortium include:
 

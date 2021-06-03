@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/trca-odl-1.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/trca-odl-1.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: trca-odl-1.0
-short_name: TRCA Open Data Licence 1.0
-name: Toronto Region Conservation Authority Open Data Licence 1.0
-category: Free Restricted
-owner: Toronto Region Conservation Authority
-homepage_url: https://trca.ca/datalicense
-spdx_license_key: LicenseRef-scancode-trca-odl-1.0
-ignorable_urls:
-  - https://trca.ca/datalicense
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            trca-odl-1.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            TRCA Open Data Licence 1.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Toronto Region Conservation Authority Open Data Licence 1.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Toronto Region Conservation Authority
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://trca.ca/datalicense" rel="noopener" target="_blank">https://trca.ca/datalicense</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-trca-odl-1.0
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://trca.ca/datalicense" rel="noopener" target="_blank">https://trca.ca/datalicense</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>
 Toronto and Region Conservation Authority (TRCA) Open Data Licence v1.0
 
 Share:

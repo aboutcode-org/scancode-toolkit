@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lcs-telegraphics.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lcs-telegraphics.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: lcs-telegraphics
-short_name: LCS-Telegraphics License
-name: LCS-Telegraphics License
-category: Permissive
-owner: LCS-Telegraphics
-spdx_license_key: LicenseRef-scancode-lcs-telegraphics
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The text and information contained in this file may be freely used,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            lcs-telegraphics
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LCS-Telegraphics License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            LCS-Telegraphics License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            LCS-Telegraphics
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-lcs-telegraphics
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The text and information contained in this file may be freely used,
 copied, or distributed without compensation or licensing restrictions.
 </code></pre>
   </div>

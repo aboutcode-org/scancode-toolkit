@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-material.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-material.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: intel-material
-short_name: Intel Material License
-name: Intel Material License
-category: Commercial
-owner: Intel Corporation
-spdx_license_key: LicenseRef-scancode-intel-material
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The source code, information and material (&#34;Material&#34;) contained herein is
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            intel-material
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Intel Material License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Intel Material License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Intel Corporation
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-intel-material
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The source code, information and material (&#34;Material&#34;) contained herein is
 owned by Intel Corporation or its suppliers or licensors, and title to such
 Material remains with Intel Corporation or its suppliers or licensors.
 

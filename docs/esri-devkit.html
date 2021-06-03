@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/esri-devkit.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/esri-devkit.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: esri-devkit
-short_name: Esri Developer Kit License
-name: Esri Developer Kit License
-category: Proprietary Free
-owner: Esri
-spdx_license_key: LicenseRef-scancode-esri-devkit
-ignorable_copyrights:
-  - Copyright 2006 ESRI
-ignorable_holders:
-  - ESRI
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Copyright 2006 ESRI
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            esri-devkit
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Esri Developer Kit License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Esri Developer Kit License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Esri
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-esri-devkit
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright 2006 ESRI</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>ESRI</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Copyright 2006 ESRI
 
 All rights reserved under the copyright laws of the United States
 and applicable international laws, treaties, and conventions.

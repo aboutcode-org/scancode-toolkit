@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-2.1-nokia-qt.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-2.1-nokia-qt.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: lgpl-2.1-nokia-qt
-is_deprecated: yes
-short_name: LGPL 2.1 with Nokia Qt Exception
-name: LGPL 2.1 with Nokia Qt Exception
-category: Copyleft Limited
-owner: Nokia
-is_exception: yes
-text_urls:
-  - https://www.keepassx.org/dev/projects/keepassx/repository/revisions/b8dfb9cc4d5133e0f09cd7533d15a4f1c19a40f2/entry/LICENSE.NOKIA-LGPL-EXCEPTION
-other_urls:
-  - http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This library is free software; you can redistribute it and/or modify it under
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            lgpl-2.1-nokia-qt
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LGPL 2.1 with Nokia Qt Exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            LGPL 2.1 with Nokia Qt Exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Nokia
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.keepassx.org/dev/projects/keepassx/repository/revisions/b8dfb9cc4d5133e0f09cd7533d15a4f1c19a40f2/entry/LICENSE.NOKIA-LGPL-EXCEPTION" rel="noopener" target="_blank">https://www.keepassx.org/dev/projects/keepassx/repository/revisions/b8dfb9cc4d5133e0f09cd7533d15a4f1c19a40f2/entry/LICENSE.NOKIA-LGPL-EXCEPTION</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html" rel="noopener" target="_blank">http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This library is free software; you can redistribute it and/or modify it under
 the terms of the GNU Lesser General Public License as published by the Free
 Software Foundation; either version 2.1 of the License, or (at your option) any
 later version.

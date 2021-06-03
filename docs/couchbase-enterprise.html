@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/couchbase-enterprise.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/couchbase-enterprise.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: couchbase-enterprise
-short_name: Couchbase Enterprise Edition License
-name: Couchbase Enterprise Edition License
-category: Proprietary Free
-owner: Couchbase
-homepage_url: http://www.couchbase.com/download
-spdx_license_key: LicenseRef-scancode-couchbase-enterprise
-minimum_coverage: 20
-ignorable_urls:
-  - http://www.couchbase.com/
-  - http://www.couchbase.org/forums
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>COUCHBASE INC. ENTERPRISE LICENSE AGREEMENT - FREE EDITION
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            couchbase-enterprise
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Couchbase Enterprise Edition License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Couchbase Enterprise Edition License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Couchbase
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.couchbase.com/download" rel="noopener" target="_blank">http://www.couchbase.com/download</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-couchbase-enterprise
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            20
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.couchbase.com/" rel="noopener" target="_blank">http://www.couchbase.com/</a></li><li><a href="http://www.couchbase.org/forums" rel="noopener" target="_blank">http://www.couchbase.org/forums</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>COUCHBASE INC. ENTERPRISE LICENSE AGREEMENT - FREE EDITION
 
 IMPORTANT-READ CAREFULLY: BY CLICKING THE &#34;I ACCEPT&#34; BOX OR INSTALLING,
 DOWNLOADING OR OTHERWISE USING THIS SOFTWARE AND ANY ASSOCIATED

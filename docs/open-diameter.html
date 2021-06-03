@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,80 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/open-diameter.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/open-diameter.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: open-diameter
-short_name: Open Diameter License
-name: Open Diameter License
-category: Copyleft
-owner: Open Diameter Project
-spdx_license_key: LicenseRef-scancode-open-diameter
-ignorable_copyrights:
-  - Copyright (c) 2002-2007 Open Diameter Project
-ignorable_holders:
-  - Open Diameter Project
-ignorable_emails:
-  - diameter-developers@lists.sourceforge.net
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Open Diameter License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            open-diameter
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Open Diameter License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Open Diameter License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Open Diameter Project
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-open-diameter
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2002-2007 Open Diameter Project</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Open Diameter Project</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:diameter-developers@lists.sourceforge.net">diameter-developers@lists.sourceforge.net</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Open Diameter License
 
 Open Diameter: Open-source software for the Diameter and Diameter related protocols
 

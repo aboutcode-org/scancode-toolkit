@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/google-patent-license-webrtc.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/google-patent-license-webrtc.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: google-patent-license-webrtc
-short_name: Google Patent License for WebRTC
-name: Google Patent License for WebRTC
-category: Patent License
-owner: Google
-homepage_url: https://webrtc.org/license/additional-ip-grant/
-spdx_license_key: LicenseRef-scancode-google-patent-license-webrtc
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Additional IP Rights Grant (Patents)
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            google-patent-license-webrtc
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Google Patent License for WebRTC
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Google Patent License for WebRTC
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Patent License
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Google
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://webrtc.org/license/additional-ip-grant/" rel="noopener" target="_blank">https://webrtc.org/license/additional-ip-grant/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-google-patent-license-webrtc
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Additional IP Rights Grant (Patents)
 
 &#34;This implementation&#34; means the copyrightable works distributed by
 Google as part of the WebRTC code package.

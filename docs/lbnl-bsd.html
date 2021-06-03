@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,94 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lbnl-bsd.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lbnl-bsd.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: lbnl-bsd
-short_name: LBNL BSD Variant
-name: Lawrence Berkeley National Labs BSD variant license
-category: Permissive
-owner: Regents of the University of California
-homepage_url: https://fedoraproject.org/wiki/Licensing:LBNLBSD?rd=Licensing/LBNLBSD
-spdx_license_key: BSD-3-Clause-LBNL
-other_urls:
-  - https://fedoraproject.org/wiki/Licensing/LBNLBSD
-minimum_coverage: 90
-ignorable_copyrights:
-  - Copyright (c) 2003, The Regents of the University of California, through Lawrence Berkeley
-    National Laboratory
-ignorable_holders:
-  - The Regents of the University of California, through Lawrence Berkeley National Laboratory
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Copyright (c) 2003, The Regents of the University of California, through
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            lbnl-bsd
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LBNL BSD Variant
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Lawrence Berkeley National Labs BSD variant license
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Regents of the University of California
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing:LBNLBSD?rd=Licensing/LBNLBSD" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing:LBNLBSD?rd=Licensing/LBNLBSD</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            BSD-3-Clause-LBNL
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://fedoraproject.org/wiki/Licensing/LBNLBSD" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/LBNLBSD</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            90
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2003, The Regents of the University of California, through Lawrence Berkeley National Laboratory</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>The Regents of the University of California, through Lawrence Berkeley National Laboratory</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Copyright (c) 2003, The Regents of the University of California, through
 Lawrence Berkeley National Laboratory (subject to receipt of any required
 approvals from the U.S. Dept. of Energy). All rights reserved. 
 

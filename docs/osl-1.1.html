@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/osl-1.1.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/osl-1.1.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: osl-1.1
-short_name: OSL 1.1
-name: Open Software License 1.1
-category: Copyleft
-owner: Lawrence Rosen
-homepage_url: https://fedoraproject.org/wiki/Licensing:OSL1.1?rd=Licensing/OSL1.1
-spdx_license_key: OSL-1.1
-other_urls:
-  - http://www.gnu.org/licenses/license-list.html#OSL
-  - https://fedoraproject.org/wiki/Licensing/OSL1.1
-ignorable_copyrights:
-  - Copyright (c) 2002 Lawrence E. Rosen
-ignorable_holders:
-  - Lawrence E. Rosen
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The Open Software License v. 1.1
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            osl-1.1
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            OSL 1.1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Open Software License 1.1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Lawrence Rosen
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing:OSL1.1?rd=Licensing/OSL1.1" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing:OSL1.1?rd=Licensing/OSL1.1</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            OSL-1.1
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/license-list.html#OSL" rel="noopener" target="_blank">http://www.gnu.org/licenses/license-list.html#OSL</a></li><li><a href="https://fedoraproject.org/wiki/Licensing/OSL1.1" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/OSL1.1</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2002 Lawrence E. Rosen</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Lawrence E. Rosen</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The Open Software License v. 1.1
 This Open Software License (the &#34;License&#34;) applies to any original work of authorship (the &#34;Original Work&#34;) whose owner (the &#34;Licensor&#34;) has placed the following notice immediately following the copyright notice for the Original Work:
 
 Licensed under the Open Software License version 1.1

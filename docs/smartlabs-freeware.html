@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/smartlabs-freeware.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/smartlabs-freeware.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: smartlabs-freeware
-short_name: SmartLabs Freeware License
-name: SmartLabs Freeware License
-category: Proprietary Free
-owner: SmartLabs
-homepage_url: http://www.videohelp.com/tools/tsMuxeR
-spdx_license_key: LicenseRef-scancode-smartlabs-freeware
-text_urls:
-  - http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/licenses/SmartLabs
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Freeware Licence Agreement
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            smartlabs-freeware
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            SmartLabs Freeware License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            SmartLabs Freeware License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            SmartLabs
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.videohelp.com/tools/tsMuxeR" rel="noopener" target="_blank">http://www.videohelp.com/tools/tsMuxeR</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-smartlabs-freeware
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/licenses/SmartLabs" rel="noopener" target="_blank">http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/licenses/SmartLabs</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Freeware Licence Agreement
 This licence agreement only applies to the free version of this software.
 
 Terms and Conditions

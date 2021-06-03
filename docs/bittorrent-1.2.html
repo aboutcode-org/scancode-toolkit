@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bittorrent-1.2.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bittorrent-1.2.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bittorrent-1.2
-short_name: BitTorrent 1.2
-name: BitTorrent Open Source License 1.2
-category: Copyleft Limited
-owner: BitTorrent, Inc.
-homepage_url: http://www.bittorrent.com/license/
-spdx_license_key: LicenseRef-scancode-bittorrent-1.2
-ignorable_urls:
-  - http://www.bittorrent.com/license
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>BitTorrent Open Source License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bittorrent-1.2
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            BitTorrent 1.2
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            BitTorrent Open Source License 1.2
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            BitTorrent, Inc.
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.bittorrent.com/license/" rel="noopener" target="_blank">http://www.bittorrent.com/license/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-bittorrent-1.2
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.bittorrent.com/license" rel="noopener" target="_blank">http://www.bittorrent.com/license</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>BitTorrent Open Source License
 Version 1.2
 
 This BitTorrent Open Source License (the &#34;License&#34;) applies to certain software that is distributed by BitTorrent, Inc. (&#34;Licensor&#34;) specifically under this license (&#34;BitTorrent Products&#34;). Any BitTorrent Product licensed pursuant to this License is a Licensed Product. Licensed Product, in its entirety, is protected by U.S. copyright law. This License identifies the terms under which you may use, copy, distribute or modify Licensed Product.

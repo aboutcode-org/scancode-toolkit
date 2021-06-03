@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/shavlik-eula.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/shavlik-eula.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: shavlik-eula
-short_name: Shavlik Technologies EULA
-name: Shavlik Technologies EULA
-category: Commercial
-owner: Shavlik Technologies
-homepage_url: http://www.shavlik.com/
-spdx_license_key: LicenseRef-scancode-shavlik-eula
-ignorable_emails:
-  - info@shavlik.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Shavlik Technologies, LLC
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            shavlik-eula
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Shavlik Technologies EULA
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Shavlik Technologies EULA
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Shavlik Technologies
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.shavlik.com/" rel="noopener" target="_blank">http://www.shavlik.com/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-shavlik-eula
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:info@shavlik.com">info@shavlik.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Shavlik Technologies, LLC
 END USER LICENSE AGREEMENT
 CAREFULLY READ THE FOLLOWING TERMS AND CONDITIONS BEFORE LOADING THE SOFTWARE. THIS 
 AGREEMENT GOVERNS THE USE OF THE PRODUCT (AS DEFINED BELOW). BY CLICKING &#34;I ACCEPT&#34; 

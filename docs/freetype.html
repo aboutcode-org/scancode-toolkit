@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,36 +62,121 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/freetype.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/freetype.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: freetype
-short_name: FreeType Project License
-name: FreeType Project License
-category: Permissive
-owner: FreeType Project
-homepage_url: http://www.freetype.org/license.html
-notes: Per SPDX.org, this license was released 27 Jan 2006
-spdx_license_key: FTL
-text_urls:
-  - http://www.freetype.org/FTL.TXT
-other_urls:
-  - http://freetype.fis.uniroma2.it/FTL.TXT
-  - http://freetype.org/patents.html
-  - http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/FTL.TXT
-  - http://www.freetype.org/
-ignorable_copyrights:
-  - Copyright 1996-2002, 2006 by David Turner, Robert Wilhelm, and Werner Lemberg
-  - copyright (c) 1996-2000 by David Turner, Robert Wilhelm, and Werner Lemberg
-  - copyright (c) The FreeType Project (www.freetype.org)
-ignorable_holders:
-  - David Turner, Robert Wilhelm, and Werner Lemberg
-  - The FreeType Project
-ignorable_urls:
-  - http://www.freetype.org/
-ignorable_emails:
-  - freetype-devel@nongnu.org
-  - freetype@nongnu.org
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The FreeType Project LICENSE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            freetype
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            FreeType Project License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            FreeType Project License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            FreeType Project
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.freetype.org/license.html" rel="noopener" target="_blank">http://www.freetype.org/license.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per <a href="http://SPDX.org" rel="noopener" target="_blank">SPDX.org</a>, this license was released 27 Jan 2006
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            FTL
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.freetype.org/FTL.TXT" rel="noopener" target="_blank">http://www.freetype.org/FTL.TXT</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://freetype.fis.uniroma2.it/FTL.TXT" rel="noopener" target="_blank">http://freetype.fis.uniroma2.it/FTL.TXT</a></li><li><a href="http://freetype.org/patents.html" rel="noopener" target="_blank">http://freetype.org/patents.html</a></li><li><a href="http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/FTL.TXT" rel="noopener" target="_blank">http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/FTL.TXT</a></li><li><a href="http://www.freetype.org/" rel="noopener" target="_blank">http://www.freetype.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright 1996-2002, 2006 by David Turner, Robert Wilhelm, and Werner Lemberg</li><li>copyright (c) 1996-2000 by David Turner, Robert Wilhelm, and Werner Lemberg</li><li>copyright (c) The FreeType Project (<a href="http://www.freetype.org" rel="noopener" target="_blank">www.freetype.org</a>)</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>David Turner, Robert Wilhelm, and Werner Lemberg</li><li>The FreeType Project</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.freetype.org/" rel="noopener" target="_blank">http://www.freetype.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:freetype-devel@nongnu.org">freetype-devel@nongnu.org</a></li><li><a href="mailto:freetype@nongnu.org">freetype@nongnu.org</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The FreeType Project LICENSE
 ----------------------------
 2006-Jan-27
 

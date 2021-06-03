@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/psfrag.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/psfrag.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: psfrag
-short_name: psfrag License
-name: psfrag License
-category: Permissive
-owner: Craig Barratt
-homepage_url: https://fedoraproject.org/wiki/Licensing/psfrag
-notes: |
-  Per Fedora, this license is considered Free, but GPL-incompatible only when
-  used for TeX files. In all other use cases, this may not be true.
-spdx_license_key: psfrag
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This system is distributed in the hope that it will be useful, but WITHOUT ANY
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            psfrag
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            psfrag License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            psfrag License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Craig Barratt
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing/psfrag" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/psfrag</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per Fedora, this license is considered Free, but GPL-incompatible only when
+used for TeX files. In all other use cases, this may not be true.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            psfrag
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This system is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
 A PARTICULAR PURPOSE. Don&#39;t come complaining to us if you modify this file and
 it doesn&#39;t work! If this file is modified by anyone but the authors, those

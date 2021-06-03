@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/saas-mit.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/saas-mit.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: saas-mit
-short_name: SaaS MIT License
-name: SaaS MIT License
-category: Permissive
-owner: CubesViewer
-homepage_url: https://github.com/jjmontesl/cubesviewer/blob/master/LICENSE
-spdx_license_key: LicenseRef-scancode-saas-mit
-minimum_coverage: 80
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a copy
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            saas-mit
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            SaaS MIT License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            SaaS MIT License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            CubesViewer
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/jjmontesl/cubesviewer/blob/master/LICENSE" rel="noopener" target="_blank">https://github.com/jjmontesl/cubesviewer/blob/master/LICENSE</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-saas-mit
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            80
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the &#34;Software&#34;), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell

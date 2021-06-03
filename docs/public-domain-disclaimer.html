@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/public-domain-disclaimer.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/public-domain-disclaimer.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: public-domain-disclaimer
-short_name: Public Domain Disclaimer
-name: Public Domain Disclaimer
-category: Public Domain
-owner: Unspecified
-notes: this is used also as a placeholder for similar public domain dedications texts and notices
-  that come with an additional warranty disclaimer
-spdx_license_key: LicenseRef-scancode-public-domain-disclaimer
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This code is hereby placed in the public domain.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            public-domain-disclaimer
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Public Domain Disclaimer
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Public Domain Disclaimer
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Public Domain
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this is used also as a placeholder for similar public domain dedications texts and notices that come with an additional warranty disclaimer
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-public-domain-disclaimer
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This code is hereby placed in the public domain.
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHORS &#39;&#39;AS IS&#39;&#39; AND ANY EXPRESS
 OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

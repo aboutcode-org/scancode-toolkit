@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,62 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ibm-dhcp.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ibm-dhcp
-short_name: IBM DHCP License
-name: IBM DHCP License
-category: Permissive
-owner: IBM
-spdx_license_key: LicenseRef-scancode-ibm-dhcp
-other_urls:
-  - http://svn.opendnssec.org/trunk/OpenDNSSEC/common/b64_pton.c
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>International Business Machines, Inc. (hereinafter called IBM) grants
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ibm-dhcp
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            IBM DHCP License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            IBM DHCP License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            IBM
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ibm-dhcp
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://svn.opendnssec.org/trunk/OpenDNSSEC/common/b64_pton.c" rel="noopener" target="_blank">http://svn.opendnssec.org/trunk/OpenDNSSEC/common/b64_pton.c</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>International Business Machines, Inc. (hereinafter called IBM) grants
 permission under its copyrights to use, copy, modify, and distribute this
 Software with or without fee, provided that the above copyright notice and
 all paragraphs of this notice appear in all copies, and that the name of IBM

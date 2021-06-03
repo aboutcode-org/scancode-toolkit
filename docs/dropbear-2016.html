@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,48 +62,119 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/dropbear-2016.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/dropbear-2016.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: dropbear-2016
-short_name: Dropbear-2016
-name: Dropbear-2016
-category: Permissive
-owner: Dropbear
-homepage_url: https://matt.ucc.asn.au/dropbear/dropbear.html
-notes: composite
-spdx_license_key: LicenseRef-scancode-dropbear-2016
-minimum_coverage: 50
-ignorable_copyrights:
-  - (c) 2004 Mihnea Stoenescu
-  - (c) Todd C. Miller
-  - Copyright (c) 1995 Tatu Ylonen &lt;ylo@cs.hut.fi&gt; , Espoo, Finland
-  - Copyright (c) 2002-2015 Matt Johnston
-  - Copyright 2008, Google Inc.
-  - Portions copyright (c) 2004 Mihnea Stoenescu
-  - Portions copyright Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz,
-    Jeroen Massar, Wez Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
-  - copyright 1997-2003 Simon Tatham
-ignorable_authors:
-  - Daniel J. Bernstein &lt;djb@cr.yp.to&gt;
-  - Matt Johnston
-  - Tom St Denis
-ignorable_holders:
-  - Google Inc.
-  - Matt Johnston
-  - Mihnea Stoenescu
-  - Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez
-    Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
-  - Simon Tatham
-  - Tatu Ylonen , Espoo, Finland
-  - Todd C. Miller
-ignorable_urls:
-  - http://code.google.com/p/curve25519-donna/
-  - http://cr.yp.to/ecdh.html
-ignorable_emails:
-  - agl@imperialviolet.org
-  - djb@cr.yp.to
-  - ylo@cs.hut.fi
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Dropbear contains a number of components from different sources, hence there
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            dropbear-2016
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Dropbear-2016
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Dropbear-2016
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Dropbear
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://matt.ucc.asn.au/dropbear/dropbear.html" rel="noopener" target="_blank">https://matt.ucc.asn.au/dropbear/dropbear.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            composite
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-dropbear-2016
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            50
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>(c) 2004 Mihnea Stoenescu</li><li>(c) Todd C. Miller</li><li>Copyright (c) 1995 Tatu Ylonen &lt;<a href="mailto:ylo@cs.hut.fi">ylo@cs.hut.fi</a>&gt; , Espoo, Finland</li><li>Copyright (c) 2002-2015 Matt Johnston</li><li>Copyright 2008, Google Inc.</li><li>Portions copyright (c) 2004 Mihnea Stoenescu</li><li>Portions copyright Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.</li><li>copyright 1997-2003 Simon Tatham</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Daniel J. Bernstein &lt;<a href="mailto:djb@cr.yp.to">djb@cr.yp.to</a>&gt;</li><li>Matt Johnston</li><li>Tom St Denis</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Google Inc.</li><li>Matt Johnston</li><li>Mihnea Stoenescu</li><li>Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.</li><li>Simon Tatham</li><li>Tatu Ylonen , Espoo, Finland</li><li>Todd C. Miller</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://code.google.com/p/curve25519-donna/" rel="noopener" target="_blank">http://code.google.com/p/curve25519-donna/</a></li><li><a href="http://cr.yp.to/ecdh.html" rel="noopener" target="_blank">http://cr.yp.to/ecdh.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:agl@imperialviolet.org">agl@imperialviolet.org</a></li><li><a href="mailto:djb@cr.yp.to">djb@cr.yp.to</a></li><li><a href="mailto:ylo@cs.hut.fi">ylo@cs.hut.fi</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Dropbear contains a number of components from different sources, hence there
 are a few licenses and authors involved. All licenses are fairly 
 non-restrictive.
 The majority of code is written by Matt Johnston, under the license below.

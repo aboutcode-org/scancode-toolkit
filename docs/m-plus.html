@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/m-plus.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/m-plus.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: m-plus
-short_name: M+ Fonts license
-name: M+ Fonts license
-category: Permissive
-owner: Coji Morishita
-homepage_url: http://mplus-fonts.osdn.jp
-spdx_license_key: LicenseRef-scancode-m-plus
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>These fonts are free software.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            m-plus
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            M+ Fonts license
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            M+ Fonts license
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Coji Morishita
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://mplus-fonts.osdn.jp" rel="noopener" target="_blank">http://mplus-fonts.osdn.jp</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-m-plus
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>These fonts are free software.
 Unlimited permission is granted to use, copy, and distribute them, with or
 without modification, either commercially or noncommercially.
 THESE FONTS ARE PROVIDED &#34;AS IS&#34; WITHOUT WARRANTY. </code></pre>

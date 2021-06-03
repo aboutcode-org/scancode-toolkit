@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cpp-core-guidelines.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cpp-core-guidelines.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: cpp-core-guidelines
-short_name: CppCoreGuidelines License
-name: CppCoreGuidelines License
-category: Permissive
-owner: isocpp
-homepage_url: https://github.com/isocpp/CppCoreGuidelines/blob/master/LICENSE
-spdx_license_key: LicenseRef-scancode-cpp-core-guidelines
-ignorable_emails:
-  - admin@isocpp.org
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Standard C++ Foundation grants you a worldwide, nonexclusive, royalty-free,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            cpp-core-guidelines
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            CppCoreGuidelines License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            CppCoreGuidelines License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            isocpp
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/isocpp/CppCoreGuidelines/blob/master/LICENSE" rel="noopener" target="_blank">https://github.com/isocpp/CppCoreGuidelines/blob/master/LICENSE</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-cpp-core-guidelines
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:admin@isocpp.org">admin@isocpp.org</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Standard C++ Foundation grants you a worldwide, nonexclusive, royalty-free,
 perpetual license to copy, use, modify, and create derivative works from this
 project for your personal or internal business use only. The above copyright
 notice and this permission notice shall be included in all copies or

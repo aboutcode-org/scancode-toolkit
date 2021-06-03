@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/pddl-1.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/pddl-1.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: pddl-1.0
-short_name: PDDL 1.0
-name: Public Domain Dedication &amp; Licence (PDDL)
-category: Public Domain
-owner: Open Data Commons
-homepage_url: http://opendatacommons.org/licenses/pddl/1-0/
-spdx_license_key: PDDL-1.0
-text_urls:
-  - http://opendatacommons.org/licenses/pddl/1-0/
-other_urls:
-  - http://opendatacommons.org/licenses/pddl/1.0/
-  - https://opendatacommons.org/licenses/pddl/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Open Data Commons – Public Domain Dedication &amp; Licence (PDDL)
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            pddl-1.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            PDDL 1.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Public Domain Dedication &amp; Licence (PDDL)
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Public Domain
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Open Data Commons
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://opendatacommons.org/licenses/pddl/1-0/" rel="noopener" target="_blank">http://opendatacommons.org/licenses/pddl/1-0/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            PDDL-1.0
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://opendatacommons.org/licenses/pddl/1-0/" rel="noopener" target="_blank">http://opendatacommons.org/licenses/pddl/1-0/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://opendatacommons.org/licenses/pddl/1.0/" rel="noopener" target="_blank">http://opendatacommons.org/licenses/pddl/1.0/</a></li><li><a href="https://opendatacommons.org/licenses/pddl/" rel="noopener" target="_blank">https://opendatacommons.org/licenses/pddl/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Open Data Commons – Public Domain Dedication &amp; Licence (PDDL)
 Preamble
 The Open Data Commons – Public Domain Dedication &amp; Licence is a document intended to allow you to freely share, modify, and use this work for any purpose and without any restrictions. This licence is intended for use on databases or their contents (&#34;data&#34;), either together or individually.
 

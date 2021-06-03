@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,34 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/paraview-1.2.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/paraview-1.2.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: paraview-1.2
-short_name: ParaView License 1.2
-name: ParaView License 1.2
-category: Permissive
-owner: ParaView Project
-spdx_license_key: LicenseRef-scancode-paraview-1.2
-minimum_coverage: 80
-ignorable_copyrights:
-  - Copyright (c) 2000-2005 Kitware Inc. 28 Corporate Drive, Suite 204, Clifton Park, NY, 12065,
-    USA.
-  - Copyright (c) 2000-2006 Kitware Inc. 28 Corporate Drive, Suite 204, Clifton Park, NY, 12065,
-    USA.
-  - Copyright (c) 2002 U.S. Army Research Laboratory
-  - Copyright (c) 2002-2005 Los Alamos National Laboratory
-  - Copyright (c) 2005-2008 Sandia Corporation, Kitware Inc.
-  - Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 by the Board of Trustees of the
-    University of Illinois
-ignorable_authors:
-  - the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign
-ignorable_holders:
-  - Kitware Inc. 28 Corporate Drive, Suite 204, Clifton Park, NY, 12065, USA.
-  - Los Alamos National Laboratory
-  - Sandia Corporation, Kitware Inc.
-  - U.S. Army Research Laboratory
-  - the Board of Trustees of the University of Illinois
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Parts of ParaView are under the following licenses:
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            paraview-1.2
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            ParaView License 1.2
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            ParaView License 1.2
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            ParaView Project
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-paraview-1.2
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            80
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2000-2005 Kitware Inc. 28 Corporate Drive, Suite 204, Clifton Park, NY, 12065, USA.</li><li>Copyright (c) 2000-2006 Kitware Inc. 28 Corporate Drive, Suite 204, Clifton Park, NY, 12065, USA.</li><li>Copyright (c) 2002 U.S. Army Research Laboratory</li><li>Copyright (c) 2002-2005 Los Alamos National Laboratory</li><li>Copyright (c) 2005-2008 Sandia Corporation, Kitware Inc.</li><li>Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 by the Board of Trustees of the University of Illinois</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Kitware Inc. 28 Corporate Drive, Suite 204, Clifton Park, NY, 12065, USA.</li><li>Los Alamos National Laboratory</li><li>Sandia Corporation, Kitware Inc.</li><li>U.S. Army Research Laboratory</li><li>the Board of Trustees of the University of Illinois</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Parts of ParaView are under the following licenses:
 
 ParaView License Version 1.2
 ========================================================================

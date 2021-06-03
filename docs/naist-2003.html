@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/naist-2003.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/naist-2003.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: naist-2003
-short_name: Nara Institute License 2003
-name: Nara Institute License 2003
-category: Permissive
-owner: Nara Institute of Science and Technology
-notes: this license references the icot-free license
-spdx_license_key: NAIST-2003
-other_spdx_license_keys:
-  - LicenseRef-scancode-naist-2003
-other_urls:
-  - https://enterprise.dejacode.com/licenses/public/naist-2003/#license-text
-  - https://github.com/nodejs/node/blob/4a19cc8947b1bba2b2d27816ec3d0edf9b28e503/LICENSE#L343
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Use, reproduction, and distribution of this software is permitted.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            naist-2003
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Nara Institute License 2003
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Nara Institute License 2003
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Nara Institute of Science and Technology
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this license references the icot-free license
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            NAIST-2003
+          
+        </dd>
+      
+        <dt style="">other_spdx_license_keys</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>LicenseRef-scancode-naist-2003</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://enterprise.dejacode.com/licenses/public/naist-2003/#license-text" rel="noopener" target="_blank">https://enterprise.dejacode.com/licenses/public/naist-2003/#license-text</a></li><li><a href="https://github.com/nodejs/node/blob/4a19cc8947b1bba2b2d27816ec3d0edf9b28e503/LICENSE#L343" rel="noopener" target="_blank">https://github.com/nodejs/node/blob/4a19cc8947b1bba2b2d27816ec3d0edf9b28e503/LICENSE#L343</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Use, reproduction, and distribution of this software is permitted.
 Any copy of this software, whether in its original form or modified,
 must include both the above copyright notice and the following
 paragraphs.

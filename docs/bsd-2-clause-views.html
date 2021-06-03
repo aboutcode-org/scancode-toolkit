@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,26 +62,96 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-2-clause-views.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-2-clause-views.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bsd-2-clause-views
-short_name: BSD-2-Clause-Views
-name: BSD 2-Clause with views sentence
-category: Permissive
-owner: FreeBSD
-homepage_url: https://www.freebsd.org/copyright/freebsd-license.html
-spdx_license_key: BSD-2-Clause-Views
-other_spdx_license_keys:
-  - BSD-2-Clause-FreeBSD
-text_urls:
-  - https://github.com/protegeproject/protege/blob/master/license.txt
-other_urls:
-  - http://www.freebsd.org/copyright/freebsd-license.html
-  - https://people.freebsd.org/~ivoras/wine/patch-wine-nvidia.sh
-standard_notice: |
-  The FreeBSD Copyright
-  Copyright 1992-2020 The FreeBSD Project.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bsd-2-clause-views
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            BSD-2-Clause-Views
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            BSD 2-Clause with views sentence
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            FreeBSD
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.freebsd.org/copyright/freebsd-license.html" rel="noopener" target="_blank">https://www.freebsd.org/copyright/freebsd-license.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            BSD-2-Clause-Views
+          
+        </dd>
+      
+        <dt style="">other_spdx_license_keys</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>BSD-2-Clause-FreeBSD</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/protegeproject/protege/blob/master/license.txt" rel="noopener" target="_blank">https://github.com/protegeproject/protege/blob/master/license.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.freebsd.org/copyright/freebsd-license.html" rel="noopener" target="_blank">http://www.freebsd.org/copyright/freebsd-license.html</a></li><li><a href="https://people.freebsd.org/~ivoras/wine/patch-wine-nvidia.sh" rel="noopener" target="_blank">https://people.freebsd.org/~ivoras/wine/patch-wine-nvidia.sh</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            The FreeBSD Copyright
+Copyright 1992-2020 The FreeBSD Project.
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
 Redistributions of source code must retain the above copyright notice, this list

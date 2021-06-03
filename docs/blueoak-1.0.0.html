@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/blueoak-1.0.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/blueoak-1.0.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: blueoak-1.0.0
-short_name: Blue Oak Model License 1.0.0
-name: Blue Oak Model License 1.0.0
-category: Permissive
-owner: Blue Oak Council
-homepage_url: https://blueoakcouncil.org/license/1.0.0
-spdx_license_key: BlueOak-1.0.0
-other_urls:
-  - https://blueoakcouncil.org/license/1.0.0
-ignorable_urls:
-  - https://blueoakcouncil.org/license/1.0.0
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code># Blue Oak Model License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            blueoak-1.0.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Blue Oak Model License 1.0.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Blue Oak Model License 1.0.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Blue Oak Council
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://blueoakcouncil.org/license/1.0.0" rel="noopener" target="_blank">https://blueoakcouncil.org/license/1.0.0</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            BlueOak-1.0.0
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://blueoakcouncil.org/license/1.0.0" rel="noopener" target="_blank">https://blueoakcouncil.org/license/1.0.0</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://blueoakcouncil.org/license/1.0.0" rel="noopener" target="_blank">https://blueoakcouncil.org/license/1.0.0</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code># Blue Oak Model License
 
 Version 1.0.0
 

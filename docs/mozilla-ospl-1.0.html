@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mozilla-ospl-1.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mozilla-ospl-1.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: mozilla-ospl-1.0
-short_name: Mozilla Open Software Patent License 1.0
-name: Mozilla Open Software Patent License Agreement v1
-category: Patent License
-owner: Mozilla
-homepage_url: https://www.mozilla.org/en-US/about/patents/license/
-spdx_license_key: LicenseRef-scancode-mozilla-ospl-1.0
-faq_url: https://www.mozilla.org/en-US/about/patents/
-other_urls:
-  - https://www.mozilla.org/en-US/about/patents/guide/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Mozilla Open Software Patent License Agreement v1
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            mozilla-ospl-1.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Mozilla Open Software Patent License 1.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Mozilla Open Software Patent License Agreement v1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Patent License
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Mozilla
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.mozilla.org/en-US/about/patents/license/" rel="noopener" target="_blank">https://www.mozilla.org/en-US/about/patents/license/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-mozilla-ospl-1.0
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="https://www.mozilla.org/en-US/about/patents/" rel="noopener" target="_blank">https://www.mozilla.org/en-US/about/patents/</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.mozilla.org/en-US/about/patents/guide/" rel="noopener" target="_blank">https://www.mozilla.org/en-US/about/patents/guide/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Mozilla Open Software Patent License Agreement v1
 This Open Software Patent License Agreement (&#34;Agreement&#34;) is made between you and the Licensor identified below. For purposes of this Agreement, you means you and your Affiliates, and Licensor means the Mozilla Corporation, Mozilla Foundation and any of their Affiliates.
 
 1.	Definitions

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/proprietary-license.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: proprietary-license
-short_name: Proprietary License
-name: Proprietary License
-category: Commercial
-owner: Unspecified
-notes: replaces the proprietary key
-spdx_license_key: LicenseRef-scancode-proprietary-license
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This component is normally licensed under a proprietary license agreement with 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            proprietary-license
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Proprietary License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Proprietary License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            replaces the proprietary key
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-proprietary-license
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This component is normally licensed under a proprietary license agreement with 
 a supplier that has terms and conditions that restrict the use of the code, 
 but may not require payment to the supplier.</code></pre>
   </div>

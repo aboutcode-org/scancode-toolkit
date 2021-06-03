@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,36 +62,93 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/linking-exception-2.0-plus.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/linking-exception-2.0-plus.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: linking-exception-2.0-plus
-short_name: Linking exception to GPL 2.0 or later
-name: Linking exception to GPL 2.0 or later
-category: Copyleft Limited
-owner: Free Software Foundation (FSF)
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-linking-exception-2.0-plus
-other_urls:
-  - http://www.gnu.org/licenses/gpl-2.0.txt
-standard_notice: |
-  This library is free software; you can redistribute it and/or modify it
-  under the terms of the GNU General Public License as published by the Free
-  Software Foundation; either version 2, or (at your option) any later
-  version.
-  This library is distributed in the hope that it will be useful, but WITHOUT
-  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-  FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
-  more details.
-  You should have received a copy of the GNU General Public License along
-  with this library; see the file COPYING. If not, write to the Free Software
-  Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
-  As a special exception, if you link this library with other files,
-  some of which are compiled with GCC, to produce an executable,
-  this library does not by itself cause the resulting executable to
-  be covered by the GNU General Public License. This exception does
-  not however invalidate any other reasons why the executable file
-  might be covered by the GNU General Public License.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>As a special exception, if you link this library with other files,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            linking-exception-2.0-plus
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Linking exception to GPL 2.0 or later
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Linking exception to GPL 2.0 or later
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-linking-exception-2.0-plus
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/gpl-2.0.txt" rel="noopener" target="_blank">http://www.gnu.org/licenses/gpl-2.0.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2, or (at your option) any later
+version.
+This library is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+more details.
+You should have received a copy of the GNU General Public License along
+with this library; see the file COPYING. If not, write to the Free Software
+Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+As a special exception, if you link this library with other files,
+some of which are compiled with GCC, to produce an executable,
+this library does not by itself cause the resulting executable to
+be covered by the GNU General Public License. This exception does
+not however invalidate any other reasons why the executable file
+might be covered by the GNU General Public License.
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>As a special exception, if you link this library with other files,
 some of which are compiled with GCC, to produce an executable,
 this library does not by itself cause the resulting executable to
 be covered by the GNU General Public License.  This exception does

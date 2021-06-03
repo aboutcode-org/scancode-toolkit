@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit-nagy.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit-nagy.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: mit-nagy
-short_name: MIT Nagy Variant
-name: MIT Szabolcs Nagy Variant
-category: Permissive
-owner: Szabolcs Nagy
-notes: this MIT-like variant is found in the musl library
-spdx_license_key: LicenseRef-scancode-mit-nagy
-text_urls:
-  - https://git.musl-libc.org/cgit/musl/commit/src/prng/random.c?id=1569f396bb76e9d54f6c4492ed6778e37b87bc70
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, and/or distribute this code
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            mit-nagy
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MIT Nagy Variant
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            MIT Szabolcs Nagy Variant
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Szabolcs Nagy
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this MIT-like variant is found in the musl library
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-mit-nagy
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://git.musl-libc.org/cgit/musl/commit/src/prng/random.c?id=1569f396bb76e9d54f6c4492ed6778e37b87bc70" rel="noopener" target="_blank">https://git.musl-libc.org/cgit/musl/commit/src/prng/random.c?id=1569f396bb76e9d54f6c4492ed6778e37b87bc70</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, and/or distribute this code
 for any purpose with or without fee is hereby granted.
 There is no warranty.</code></pre>
   </div>

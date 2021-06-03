@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-nt-resource-kit.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-nt-resource-kit.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ms-nt-resource-kit
-short_name: MS NT Resource Kit License
-name: Microsoft NT Resource Kit License
-category: Commercial
-owner: Microsoft
-spdx_license_key: LicenseRef-scancode-ms-nt-resource-kit
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Microsoft NT Resource Kit License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ms-nt-resource-kit
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MS NT Resource Kit License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Microsoft NT Resource Kit License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ms-nt-resource-kit
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Microsoft NT Resource Kit License
 MICROSOFT WINDOWS NT RESOURCE KIT SUPPORT TOOLS
 END-USER LICENSE AGREEMENT FOR MICROSOFT SOFTWARE 
 

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ocb-patent-openssl-2013.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ocb-patent-openssl-2013.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ocb-patent-openssl-2013
-short_name: OCB Patent License for OpenSSL 2013
-name: Patent License for OpenSSL of OCB 2013
-category: Proprietary Free
-owner: Phillip Rogaway
-homepage_url: https://web.cs.ucdavis.edu/~rogaway/ocb/license.htm
-spdx_license_key: LicenseRef-scancode-ocb-patent-openssl-2013
-text_urls:
-  - https://web.cs.ucdavis.edu/~rogaway/ocb/license3.pdf
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Patent License for OpenSSL
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ocb-patent-openssl-2013
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            OCB Patent License for OpenSSL 2013
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Patent License for OpenSSL of OCB 2013
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Phillip Rogaway
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://web.cs.ucdavis.edu/~rogaway/ocb/license.htm" rel="noopener" target="_blank">https://web.cs.ucdavis.edu/~rogaway/ocb/license.htm</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ocb-patent-openssl-2013
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://web.cs.ucdavis.edu/~rogaway/ocb/license3.pdf" rel="noopener" target="_blank">https://web.cs.ucdavis.edu/~rogaway/ocb/license3.pdf</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Patent License for OpenSSL
 1. Definitions
 1.1 &#34; Licensor&#34; means Phillip Rogaway. orOne Shields Avenue, Davis, CA 95616-8562.
 1.2 &#34; Licensed Patents&#34; means any patent that claims priority to United States Patent Application No. 09/918 ,615 entitled &#34;Method and Apparatus for Facilitating Efficient Authenticated Encryption,&#34; and any utili ty, divisional, provisional, continuation, continuat ions in part, reexami nation , reissue, or foreign counterpart patents that may issue with respect to the aforesaid patent application. This includes, but is not limited to, Uni ted States Patent No. 7,046,802; United States Palen I No. 7,200,227; United States Patent No. 7,949, 129; United States Patent No.8 ,321 ,675; and any patent that issues out or Uni ted States Patent Application No. 13/669, 114.

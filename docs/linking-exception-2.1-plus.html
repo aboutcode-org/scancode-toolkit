@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,38 +62,95 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/linking-exception-2.1-plus.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/linking-exception-2.1-plus.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: linking-exception-2.1-plus
-short_name: Linking exception to LGPL 2.1 or later
-name: Linking exception to LGPL 2.1 or later
-category: Copyleft Limited
-owner: Free Software Foundation (FSF)
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-linking-exception-2.1-plus
-other_urls:
-  - http://www.gnu.org/licenses/lgpl-2.1.txt
-standard_notice: |
-  The GNU C Library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
-  The GNU C Library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-  Lesser General Public License for more details.
-  You should have received a copy of the GNU Lesser General Public
-  License along with the GNU C Library; if not, see
-  &lt;http://www.gnu.org/licenses/&gt;.
-  As a special exception, if you link the code in this file with
-  files compiled with a GNU compiler to produce an executable,
-  that does not cause the resulting executable to be covered by
-  the GNU Lesser General Public License. This exception does not
-  however invalidate any other reasons why the executable file
-  might be covered by the GNU Lesser General Public License.
-  This exception applies to code released by its copyright holders
-  in files containing the exception.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>As a special exception, if you link the code in this file with
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            linking-exception-2.1-plus
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Linking exception to LGPL 2.1 or later
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Linking exception to LGPL 2.1 or later
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-linking-exception-2.1-plus
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/lgpl-2.1.txt" rel="noopener" target="_blank">http://www.gnu.org/licenses/lgpl-2.1.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            The GNU C Library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+The GNU C Library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public
+License along with the GNU C Library; if not, see
+&lt;<a href="http://www.gnu.org/licenses/" rel="noopener" target="_blank">http://www.gnu.org/licenses/</a>&gt;.
+As a special exception, if you link the code in this file with
+files compiled with a GNU compiler to produce an executable,
+that does not cause the resulting executable to be covered by
+the GNU Lesser General Public License. This exception does not
+however invalidate any other reasons why the executable file
+might be covered by the GNU Lesser General Public License.
+This exception applies to code released by its copyright holders
+in files containing the exception.
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>As a special exception, if you link the code in this file with
 files compiled with a GNU compiler to produce an executable,
 that does not cause the resulting executable to be covered by
 the GNU Lesser General Public License.  This exception does not

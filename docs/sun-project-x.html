@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-project-x.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-project-x.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: sun-project-x
-short_name: Sun Project X
-name: Sun Project X
-category: Proprietary Free
-owner: Oracle (Sun)
-spdx_license_key: LicenseRef-scancode-sun-project-x
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Java Project X Technology Release 2 Source Software License Agreement
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            sun-project-x
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Sun Project X
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sun Project X
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle (Sun)
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-sun-project-x
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Java Project X Technology Release 2 Source Software License Agreement
 
 1. LICENSE GRANT (A) Definition of Software
 

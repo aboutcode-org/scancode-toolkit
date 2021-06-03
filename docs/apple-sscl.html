@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/apple-sscl.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/apple-sscl.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: apple-sscl
-short_name: Apple Sample Source Code License
-name: Apple Sample Source Code License
-category: Permissive
-owner: Apple
-spdx_license_key: LicenseRef-scancode-apple-sscl
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Apple Sample Source Code License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            apple-sscl
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Apple Sample Source Code License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Apple Sample Source Code License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Apple
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-apple-sscl
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Apple Sample Source Code License
 
 You may incorporate this Apple sample source code into your program(s) without restriction. This Apple sample source code has been provided &#34;AS IS&#34; and the responsibility for its operation is yours. You are not permitted to redistribute this Apple sample source code as &#34;Apple sample source code&#34; after having made changes. If you&#39;re going to re-distribute the source, we require that you make it clear in the source that the code was descended from Apple sample source code, but that you&#39;ve made changes.</code></pre>
   </div>

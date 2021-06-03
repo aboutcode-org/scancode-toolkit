@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,74 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-2.0-plus-openssl.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-2.0-plus-openssl.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: gpl-2.0-plus-openssl
-is_deprecated: yes
-short_name: GPL 2.0 or later with OpenSSL exception
-name: GPL 2.0 or later with OpenSSL exception
-category: Copyleft
-owner: magnumripper
-homepage_url: https://github.com/magnumripper/JohnTheRipper/blob/1.8.0/doc/LICENSE
-notes: replaced by openssl-exception-gpl-2.0-plus
-is_exception: yes
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>As a special exception to the GNU General Public License terms,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            gpl-2.0-plus-openssl
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            GPL 2.0 or later with OpenSSL exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            GPL 2.0 or later with OpenSSL exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            magnumripper
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/magnumripper/JohnTheRipper/blob/1.8.0/doc/LICENSE" rel="noopener" target="_blank">https://github.com/magnumripper/JohnTheRipper/blob/1.8.0/doc/LICENSE</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            replaced by openssl-exception-gpl-2.0-plus
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>As a special exception to the GNU General Public License terms,
 permission is hereby granted to link the code of this program, with or
 without modification, with any version of the OpenSSL library and/or any
 version of unRAR, and to distribute such linked combinations.  You must

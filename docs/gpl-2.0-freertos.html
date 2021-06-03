@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,83 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-2.0-freertos.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-2.0-freertos.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: gpl-2.0-freertos
-is_deprecated: yes
-short_name: GPL 2.0 with FreeRTOS exception
-name: GPL 2.0 with FreeRTOS exception
-category: Copyleft Limited
-owner: FreeRTOS
-homepage_url: http://www.freertos.org/a00114.html
-notes: replaced by freertos-exception-2.0
-is_exception: yes
-text_urls:
-  - http://www.freertos.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The FreeRTOS source code is licensed by a modified GNU General Public License - the
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            gpl-2.0-freertos
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            GPL 2.0 with FreeRTOS exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            GPL 2.0 with FreeRTOS exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            FreeRTOS
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.freertos.org/a00114.html" rel="noopener" target="_blank">http://www.freertos.org/a00114.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            replaced by freertos-exception-2.0
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.freertos.org/" rel="noopener" target="_blank">http://www.freertos.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The FreeRTOS source code is licensed by a modified GNU General Public License - the
 modification taking the form of an exception.
 
 The exception permits the source code of applications that use FreeRTOS solely

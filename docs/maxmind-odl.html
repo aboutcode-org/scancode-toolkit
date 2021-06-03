@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/maxmind-odl.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/maxmind-odl.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: maxmind-odl
-short_name: MaxMind Open Data License
-name: MaxMind Open Data License
-category: Free Restricted
-owner: MaxMind
-homepage_url: https://geolite.maxmind.com/download/geoip/database/LICENSE.txt
-notes: This license is mostly the same as a bsd-original (or rather a bsd-simplified with an
-  advertizing clause)
-spdx_license_key: LicenseRef-scancode-maxmind-odl
-ignorable_urls:
-  - http://maxmind.com/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>OPEN DATA LICENSE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            maxmind-odl
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MaxMind Open Data License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            MaxMind Open Data License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            MaxMind
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://geolite.maxmind.com/download/geoip/database/LICENSE.txt" rel="noopener" target="_blank">https://geolite.maxmind.com/download/geoip/database/LICENSE.txt</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This license is mostly the same as a bsd-original (or rather a bsd-simplified with an advertizing clause)
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-maxmind-odl
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://maxmind.com/" rel="noopener" target="_blank">http://maxmind.com/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>OPEN DATA LICENSE
 
 All advertising materials and documentation mentioning features or use of
 this database must display the following acknowledgment:

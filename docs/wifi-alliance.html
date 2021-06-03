@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,62 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/wifi-alliance.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/wifi-alliance.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: wifi-alliance
-short_name: Wi-Fi Alliance
-name: Wi-Fi Alliance License
-category: Commercial
-owner: Wi-Fi Alliance
-spdx_license_key: LicenseRef-scancode-wifi-alliance
-ignorable_authors:
-  - permission from Wi-Fi Alliance
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Confidential not for redistribution
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            wifi-alliance
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Wi-Fi Alliance
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Wi-Fi Alliance License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Wi-Fi Alliance
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-wifi-alliance
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>permission from Wi-Fi Alliance</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Confidential not for redistribution
 
 =======================================================================
 LICENSE

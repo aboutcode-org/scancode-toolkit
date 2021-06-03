@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-limited-public.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-limited-public.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ms-limited-public
-is_deprecated: yes
-short_name: MS Limited Public License
-name: Microsoft Limited Public License
-category: Permissive
-owner: Microsoft
-homepage_url: http://msdn.microsoft.com/en-us/cc300389.aspx#P
-text_urls:
-  - http://msdn.microsoft.com/en-us/cc300389.aspx#P
-other_urls:
-  - http://web.archive.org/web/20080417054425/http://www.microsoft.com/resources/sharedsource/licensingbasics/limitedpubliclicense.mspx
-  - https://web.archive.org/web/20091211214028/http://msdn.microsoft.com/en-us/cc300389.aspx#MLPL
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Microsoft Limited Public License (Ms-LPL)
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ms-limited-public
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MS Limited Public License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Microsoft Limited Public License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://msdn.microsoft.com/en-us/cc300389.aspx#P" rel="noopener" target="_blank">http://msdn.microsoft.com/en-us/cc300389.aspx#P</a>
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://msdn.microsoft.com/en-us/cc300389.aspx#P" rel="noopener" target="_blank">http://msdn.microsoft.com/en-us/cc300389.aspx#P</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://web.archive.org/web/20080417054425/http://www.microsoft.com/resources/sharedsource/licensingbasics/limitedpubliclicense.mspx" rel="noopener" target="_blank">http://web.archive.org/web/20080417054425/http://www.microsoft.com/resources/sharedsource/licensingbasics/limitedpubliclicense.mspx</a></li><li><a href="https://web.archive.org/web/20091211214028/http://msdn.microsoft.com/en-us/cc300389.aspx#MLPL" rel="noopener" target="_blank">https://web.archive.org/web/20091211214028/http://msdn.microsoft.com/en-us/cc300389.aspx#MLPL</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Microsoft Limited Public License (Ms-LPL)
 
 This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, do not use the software.
 

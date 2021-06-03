@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/chicken-dl-0.2.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/chicken-dl-0.2.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: chicken-dl-0.2
-short_name: Chicken Dance License v0.2
-name: Chicken Dance v0.2
-category: Permissive
-owner: Andrew &#34;Tuna&#34; Harris
-homepage_url: https://github.com/supertunaman/cdl/blob/master/COPYING
-spdx_license_key: LicenseRef-scancode-chicken-dl-0.2
-ignorable_urls:
-  - http://supertunaman.com/cdl/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Chicken Dance License v0.2
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            chicken-dl-0.2
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Chicken Dance License v0.2
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Chicken Dance v0.2
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Andrew &#34;Tuna&#34; Harris
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/supertunaman/cdl/blob/master/COPYING" rel="noopener" target="_blank">https://github.com/supertunaman/cdl/blob/master/COPYING</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-chicken-dl-0.2
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://supertunaman.com/cdl/" rel="noopener" target="_blank">http://supertunaman.com/cdl/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Chicken Dance License v0.2
 http://supertunaman.com/cdl/
 
 Redistribution and use in source and binary forms, with 

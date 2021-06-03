@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,74 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-2.0-fltk.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-2.0-fltk.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: lgpl-2.0-fltk
-is_deprecated: yes
-short_name: LGPL 2.0 with FLTK exception
-name: LGPL 2.0 with FLTK exception
-category: Copyleft Limited
-owner: FLTK
-homepage_url: http://www.fltk.org/COPYING.php
-notes: replaced by fltk-exception-lgpl-2.0
-is_exception: yes
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>                             FLTK License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            lgpl-2.0-fltk
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LGPL 2.0 with FLTK exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            LGPL 2.0 with FLTK exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            FLTK
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.fltk.org/COPYING.php" rel="noopener" target="_blank">http://www.fltk.org/COPYING.php</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            replaced by fltk-exception-lgpl-2.0
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>                             FLTK License
                            December 11, 2001
 
 The FLTK library and included programs are provided under the terms

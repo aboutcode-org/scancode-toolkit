@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mpeg-ssg.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mpeg-ssg.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: mpeg-ssg
-short_name: MPEG SSG License
-name: MPEG SSG License
-category: Permissive
-owner: MSSG - MPEG Software Simulation Group
-homepage_url: http://www.mpeg.org/MPEG/video/mssg-free-mpeg-software.html
-spdx_license_key: LicenseRef-scancode-mpeg-ssg
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Disclaimer of Warranty
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            mpeg-ssg
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MPEG SSG License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            MPEG SSG License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            MSSG - MPEG Software Simulation Group
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.mpeg.org/MPEG/video/mssg-free-mpeg-software.html" rel="noopener" target="_blank">http://www.mpeg.org/MPEG/video/mssg-free-mpeg-software.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-mpeg-ssg
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Disclaimer of Warranty
 
 These software programs are available to the user without any license fee or
 royalty on an &#34;as is&#34; basis.  The MPEG Software Simulation Group disclaims

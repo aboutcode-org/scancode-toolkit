@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/planet-source-code.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/planet-source-code.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: planet-source-code
-short_name: Planet Source Code License
-name: Planet Source Code License
-category: Free Restricted
-owner: Planet Source Code
-spdx_license_key: LicenseRef-scancode-planet-source-code
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Terms of Agreement:   
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            planet-source-code
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Planet Source Code License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Planet Source Code License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Planet Source Code
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-planet-source-code
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Terms of Agreement:   
 By using this code, you agree to the following terms...   
 
 You may use this code in your own programs (and may compile it into a program and distribute it in compiled format for languages that allow it) freely and with no charge.

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,81 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/fftpack-2004.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/fftpack-2004.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: fftpack-2004
-short_name: FFTPACK License 2004
-name: FFTPACK License 2004
-category: Permissive
-owner: NCAR
-homepage_url: https://github.com/marton78/pffft/blob/master/pffft.c
-spdx_license_key: LicenseRef-scancode-fftpack-2004
-other_urls:
-  - https://github.com/nexB/scancode-toolkit/issues/1978
-standard_notice: |
-  http://www.cisl.ucar.edu/css/software/fftpack5/ftpk.html
-  Copyright (c) 2004 the University Corporation for Atmospheric
-  Research (&#34;UCAR&#34;). All rights reserved. Developed by NCAR&#39;s
-  Computational and Information Systems Laboratory, UCAR,
-  www.cisl.ucar.edu.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>FFTPACK license:
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            fftpack-2004
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            FFTPACK License 2004
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            FFTPACK License 2004
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            NCAR
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/marton78/pffft/blob/master/pffft.c" rel="noopener" target="_blank">https://github.com/marton78/pffft/blob/master/pffft.c</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-fftpack-2004
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/nexB/scancode-toolkit/issues/1978" rel="noopener" target="_blank">https://github.com/nexB/scancode-toolkit/issues/1978</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            <a href="http://www.cisl.ucar.edu/css/software/fftpack5/ftpk.html" rel="noopener" target="_blank">http://www.cisl.ucar.edu/css/software/fftpack5/ftpk.html</a>
+Copyright (c) 2004 the University Corporation for Atmospheric
+Research (&#34;UCAR&#34;). All rights reserved. Developed by NCAR&#39;s
+Computational and Information Systems Laboratory, UCAR,
+<a href="http://www.cisl.ucar.edu" rel="noopener" target="_blank">www.cisl.ucar.edu</a>.
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>FFTPACK license:
 Redistribution and use of the Software in source and binary forms,
 with or without modification, is permitted provided that the
 following conditions are met:

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ibm-developerworks-community-download.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ibm-developerworks-community-download.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ibm-developerworks-community-download
-short_name: IBM developerWorks Community Download Agreement
-name: IBM developerWorks Community Download of Content Agreement
-category: Proprietary Free
-owner: IBM
-homepage_url: https://www.ibm.com/developerworks/community/terms/download?lang=en
-spdx_license_key: LicenseRef-scancode-ibm-developerworks-community-download
-ignorable_urls:
-  - http://www.ibm.com/developerworks/exchange
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Download of Content Agreement
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ibm-developerworks-community-download
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            IBM developerWorks Community Download Agreement
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            IBM developerWorks Community Download of Content Agreement
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            IBM
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.ibm.com/developerworks/community/terms/download?lang=en" rel="noopener" target="_blank">https://www.ibm.com/developerworks/community/terms/download?lang=en</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ibm-developerworks-community-download
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.ibm.com/developerworks/exchange" rel="noopener" target="_blank">http://www.ibm.com/developerworks/exchange</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Download of Content Agreement
 The following are terms of a legal downloader agreement (the &#34;Agreement&#34;) regarding Your download of Content (as defined below) from this Website. IBM may change these terms of use and other requirements and guidelines for use of this Website at its sole discretion. This Website may contain other proprietary notices and copyright information (http://www.ibm.com/developerworks/exchange), the terms of which must be observed and followed. Any use of the Content in violation of this Agreement is strictly prohibited.
 
 &#34;Content&#34; includes, but is not limited to software, text and/or speech files, code, associated materials, media and /or documentation that You download from this Website. The Content may be provided by IBM or third-parties. IBM-Content is owned by IBM and is copyrighted and licensed, not sold. Third-party Content is owned by its respective owner and is licensed by the third party directly to You. IBM&#39;s decision to permit posting of third-party Content does not constitute an express or implied license from IBM to You or a recommendation or endorsement by IBM of any particular product, service, company or technology.

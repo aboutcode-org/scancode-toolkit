@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/independent-module-linking-exception.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/independent-module-linking-exception.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: independent-module-linking-exception
-short_name: Independent Module Linking Exception
-name: Independent Module Linking Exception
-category: Copyleft Limited
-owner: Unspecified
-notes: this is typically seen with the LGPL but is not L/GPL specific
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-independent-module-linking-exception
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>As a special exception, the copyright holders of this library give you
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            independent-module-linking-exception
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Independent Module Linking Exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Independent Module Linking Exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this is typically seen with the LGPL but is not L/GPL specific
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-independent-module-linking-exception
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>As a special exception, the copyright holders of this library give you
 permission to link this library with independent modules to produce an
 executable, regardless of the license terms of these independent modules, and to
 copy and distribute the resulting executable under terms of your choice,

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/hp-ux-jre.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/hp-ux-jre.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: hp-ux-jre
-short_name: HP JRE License
-name: Hewlett Packard JRE License
-category: Proprietary Free
-owner: HP - Hewlett Packard
-spdx_license_key: LicenseRef-scancode-hp-ux-jre
-ignorable_copyrights:
-  - copyrighted by HP
-ignorable_holders:
-  - HP
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>LEGAL NOTICE - READ BEFORE DOWNLOADING OR OTHERWISE USING THIS SOFTWARE.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            hp-ux-jre
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            HP JRE License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Hewlett Packard JRE License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            HP - Hewlett Packard
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-hp-ux-jre
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>copyrighted by HP</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>HP</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>LEGAL NOTICE - READ BEFORE DOWNLOADING OR OTHERWISE USING THIS SOFTWARE.
 
 ATTENTION: USE OF THE SOFTWARE IS SUBJECT TO THE HP SOFTWARE LICENSE TERMS, AND SUPPLEMENTAL RESTRICTIONS SET FORTH BELOW AND THE HP WARRANTY DISCLAIMER ATTACHED. CLICK ON THE &#34;I ACCEPT&#34; BOX BELOW TO INDICATE YOUR ACCEPTANCE OF THESE TERMS. IF YOU DO NOT ACCEPT THESE TERMS FULLY, YOU MAY NOT INSTALL OR OTHERWISE USE THE SOFTWARE. NOTWITHSTANDING ANYTHING TO THE CONTRARY IN THIS NOTICE, INSTALLING OR OTHERWISE USING THE SOFTWARE INDICATES YOUR ACCEPTANCE OF THESE LICENSE TERMS.
 Download license for HPjconfig 2.1

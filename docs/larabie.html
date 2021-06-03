@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/larabie.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/larabie.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: larabie
-short_name: Larabie Fonts EULA
-name: Larabie Fonts EULA
-category: Proprietary Free
-owner: Larabie Fonts
-spdx_license_key: LicenseRef-scancode-larabie
-ignorable_urls:
-  - http://come.to/larabiefonts
-  - http://uk.zarcrom.com/font/
-  - http://www.larabiefonts.com/
-ignorable_emails:
-  - drowsy@cheerful.com
-  - rlarabie@hotmail.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The fonts contained in this archive are Freeware. No payment is required for the use of these fonts.  They&#39;re free!
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            larabie
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Larabie Fonts EULA
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Larabie Fonts EULA
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Larabie Fonts
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-larabie
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://come.to/larabiefonts" rel="noopener" target="_blank">http://come.to/larabiefonts</a></li><li><a href="http://uk.zarcrom.com/font/" rel="noopener" target="_blank">http://uk.zarcrom.com/font/</a></li><li><a href="http://www.larabiefonts.com/" rel="noopener" target="_blank">http://www.larabiefonts.com/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:drowsy@cheerful.com">drowsy@cheerful.com</a></li><li><a href="mailto:rlarabie@hotmail.com">rlarabie@hotmail.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The fonts contained in this archive are Freeware. No payment is required for the use of these fonts.  They&#39;re free!
 Commercial use?  Sure, but a donation or a product sample would be appreciated.
 
 $40 US is the usual donation amount per font for commercial use but any amount is appreciated.

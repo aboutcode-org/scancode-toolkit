@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/h2-1.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/h2-1.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: h2-1.0
-short_name: H2 1.0
-name: H2 License 1.0
-category: Copyleft Limited
-owner: H2 Group
-homepage_url: http://h2database.com
-notes: |
-  This is an old license that is derived from the MPL-1.1 and different
-  enough to be tracked as such. Newer versions use a plain MPL-2.0 license.
-spdx_license_key: LicenseRef-scancode-h2-1.0
-text_urls:
-  - https://web.archive.org/web/20110519100109/http://h2database.com/html/license.html
-minimum_coverage: 98
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>H2 License - Version 1.0
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            h2-1.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            H2 1.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            H2 License 1.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            H2 Group
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://h2database.com" rel="noopener" target="_blank">http://h2database.com</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This is an old license that is derived from the MPL-1.1 and different
+enough to be tracked as such. Newer versions use a plain MPL-2.0 license.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-h2-1.0
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://web.archive.org/web/20110519100109/http://h2database.com/html/license.html" rel="noopener" target="_blank">https://web.archive.org/web/20110519100109/http://h2database.com/html/license.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            98
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>H2 License - Version 1.0
 
 
 1. Definitions

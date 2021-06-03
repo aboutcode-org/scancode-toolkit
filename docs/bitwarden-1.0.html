@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bitwarden-1.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bitwarden-1.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bitwarden-1.0
-short_name: Bitwarden License Agreement v1
-name: Bitwarden License Agreement v1
-category: Source-available
-owner: Bitwarden
-homepage_url: https://github.com/bitwarden/server/blob/v1.38.1/LICENSE_BITWARDEN.txt
-spdx_license_key: LicenseRef-scancode-bitwarden-1.0
-faq_url: https://github.com/bitwarden/server/blob/v1.38.1/LICENSE_FAQ.md
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>BITWARDEN LICENSE AGREEMENT
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bitwarden-1.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Bitwarden License Agreement v1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Bitwarden License Agreement v1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Source-available
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Bitwarden
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/bitwarden/server/blob/v1.38.1/LICENSE_BITWARDEN.txt" rel="noopener" target="_blank">https://github.com/bitwarden/server/blob/v1.38.1/LICENSE_BITWARDEN.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-bitwarden-1.0
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="https://github.com/bitwarden/server/blob/v1.38.1/LICENSE_FAQ.md" rel="noopener" target="_blank">https://github.com/bitwarden/server/blob/v1.38.1/LICENSE_FAQ.md</a>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>BITWARDEN LICENSE AGREEMENT
 Version 1, 4 September 2020
 
 PLEASE CAREFULLY READ THIS BITWARDEN LICENSE AGREEMENT (&#34;AGREEMENT&#34;). THIS

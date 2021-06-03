@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,80 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/divx-open-2.1.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/divx-open-2.1.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: divx-open-2.1
-short_name: DivX Open License 2.1
-name: DivX Open License v2.1
-category: Copyleft Limited
-owner: DivX, LLC
-spdx_license_key: LicenseRef-scancode-divx-open-2.1
-ignorable_copyrights:
-  - Copyright (c) 2001 Project Mayo
-ignorable_authors:
-  - Project Mayo
-ignorable_holders:
-  - Project Mayo
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>&#34;OpenDivX&#34; is licensed under the DivX Open License.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            divx-open-2.1
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            DivX Open License 2.1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            DivX Open License v2.1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            DivX, LLC
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-divx-open-2.1
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2001 Project Mayo</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Project Mayo</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Project Mayo</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>&#34;OpenDivX&#34; is licensed under the DivX Open License.
 
 DivX Open License
 =================

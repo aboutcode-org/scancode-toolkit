@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/barr-tex.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/barr-tex.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: barr-tex
-short_name: Barr TeX License
-name: Barr TeX License
-category: Permissive
-owner: Michael Barr
-homepage_url: https://fedoraproject.org/wiki/Licensing/Barr
-spdx_license_key: Barr
-ignorable_emails:
-  - barr@barrs.org
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This is a package of commutative diagram macros built on top of Xy-pic  by
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            barr-tex
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Barr TeX License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Barr TeX License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Michael Barr
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing/Barr" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Barr</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Barr
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:barr@barrs.org">barr@barrs.org</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This is a package of commutative diagram macros built on top of Xy-pic  by
 Michael Barr (email: barr@barrs.org). Its use is unrestricted. It  may be freely
 distributed, unchanged, for non-commercial or commercial  use. If changed, it
 must be renamed. Inclusion in a commercial  software package is also permitted,

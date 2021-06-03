@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,27 +62,89 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jboss-eula.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jboss-eula.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: jboss-eula
-short_name: JBoss EULA
-name: JBoss EULA
-category: Proprietary Free
-owner: JBoss Community
-spdx_license_key: LicenseRef-scancode-jboss-eula
-text_urls:
-  - http://repository.jboss.org/licenses/jbossorg-eula.txt
-ignorable_copyrights:
-  - Copyright 2006 Red Hat, Inc.
-ignorable_holders:
-  - Red Hat, Inc.
-ignorable_urls:
-  - http://www.jboss.com/company/logos
-  - http://www.jboss.org/
-  - http://www.opensource.org/licenses/index.php
-  - http://www.redhat.com/about/corporate/trademark
-  - http://www.redhat.com/licenses
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>LICENSE AGREEMENT
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            jboss-eula
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            JBoss EULA
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            JBoss EULA
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            JBoss Community
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-jboss-eula
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://repository.jboss.org/licenses/jbossorg-eula.txt" rel="noopener" target="_blank">http://repository.jboss.org/licenses/jbossorg-eula.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright 2006 Red Hat, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Red Hat, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.jboss.com/company/logos" rel="noopener" target="_blank">http://www.jboss.com/company/logos</a></li><li><a href="http://www.jboss.org/" rel="noopener" target="_blank">http://www.jboss.org/</a></li><li><a href="http://www.opensource.org/licenses/index.php" rel="noopener" target="_blank">http://www.opensource.org/licenses/index.php</a></li><li><a href="http://www.redhat.com/about/corporate/trademark" rel="noopener" target="_blank">http://www.redhat.com/about/corporate/trademark</a></li><li><a href="http://www.redhat.com/licenses" rel="noopener" target="_blank">http://www.redhat.com/licenses</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>LICENSE AGREEMENT
 JBOSS(r)
 
 This License Agreement governs the use of the Software Packages and any updates to the Software 

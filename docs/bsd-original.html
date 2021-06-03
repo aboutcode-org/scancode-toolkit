@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,92 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-original.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-original.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bsd-original
-short_name: BSD-Original
-name: BSD-Original
-category: Permissive
-owner: Regents of the University of California
-homepage_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
-notes: Per SPDX.org, this license was rescinded by the author on 22 July 1999.
-spdx_license_key: BSD-4-Clause
-text_urls:
-  - http://www.xfree86.org/3.3.6/COPYRIGHT2.html#6
-osi_url: http://www.opensource.org/licenses/bsd-license.php
-other_urls:
-  - http://directory.fsf.org/wiki/License:BSD_4Clause
-  - http://www.fsf.org/licensing/essays/bsd.html
-  - http://www.gnu.org/philosophy/bsd.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bsd-original
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            BSD-Original
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            BSD-Original
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Regents of the University of California
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.xfree86.org/3.3.6/COPYRIGHT2.html" rel="noopener" target="_blank">http://www.xfree86.org/3.3.6/COPYRIGHT2.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per <a href="http://SPDX.org" rel="noopener" target="_blank">SPDX.org</a>, this license was rescinded by the author on 22 July 1999.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            BSD-4-Clause
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.xfree86.org/3.3.6/COPYRIGHT2.html#6" rel="noopener" target="_blank">http://www.xfree86.org/3.3.6/COPYRIGHT2.html#6</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">osi_url</dt>
+        <dd>
+          
+            <a href="http://www.opensource.org/licenses/bsd-license.php" rel="noopener" target="_blank">http://www.opensource.org/licenses/bsd-license.php</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://directory.fsf.org/wiki/License:BSD_4Clause" rel="noopener" target="_blank">http://directory.fsf.org/wiki/License:BSD_4Clause</a></li><li><a href="http://www.fsf.org/licensing/essays/bsd.html" rel="noopener" target="_blank">http://www.fsf.org/licensing/essays/bsd.html</a></li><li><a href="http://www.gnu.org/philosophy/bsd.html" rel="noopener" target="_blank">http://www.gnu.org/philosophy/bsd.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice,

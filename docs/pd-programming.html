@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,62 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/pd-programming.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/pd-programming.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: pd-programming
-short_name: PD&#39;Programming License
-name: PD&#39;Programming License
-category: Permissive
-owner: PD&#39;Programming
-spdx_license_key: LicenseRef-scancode-pd-programming
-other_urls:
-  - http://www.pdmagic.com/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            pd-programming
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            PD&#39;Programming License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            PD&#39;Programming License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            PD&#39;Programming
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-pd-programming
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.pdmagic.com/" rel="noopener" target="_blank">http://www.pdmagic.com/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>
 Coords.js is free for both commercial and non-commercial use and
 redistribution, provided that PD&#39;Programming&#39;s copyright and disclaimer are
 retained intact.  You are free to modify coords.js for your own use and

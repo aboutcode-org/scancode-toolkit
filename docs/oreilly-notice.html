@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/oreilly-notice.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/oreilly-notice.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: oreilly-notice
-short_name: O&#39;Reilly Code Sample Notice
-name: O&#39;Reilly Code Sample Notice
-category: Permissive
-owner: O&#39;Reilly Media, Inc.
-homepage_url: http://shop.oreilly.com/category/customer-service/faq-examples.do
-spdx_license_key: LicenseRef-scancode-oreilly-notice
-ignorable_emails:
-  - permissions@oreilly.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Our books are here to help you get your job done. In general, you may use the
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            oreilly-notice
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            O&#39;Reilly Code Sample Notice
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            O&#39;Reilly Code Sample Notice
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            O&#39;Reilly Media, Inc.
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://shop.oreilly.com/category/customer-service/faq-examples.do" rel="noopener" target="_blank">http://shop.oreilly.com/category/customer-service/faq-examples.do</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-oreilly-notice
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:permissions@oreilly.com">permissions@oreilly.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Our books are here to help you get your job done. In general, you may use the
 code in our books in your programs and documentation. You do not need to contact
 us for permission unless you&#39;re reproducing a significant portion of the code.
 For example, writing a program that uses several chunks of code from our books

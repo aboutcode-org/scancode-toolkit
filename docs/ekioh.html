@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,64 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ekioh.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ekioh.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ekioh
-is_deprecated: yes
-short_name: Ekioh License
-name: Ekioh License
-category: Permissive
-owner: Ekioh
-notes: |
-  Obsolete License -- do not use.  Except for the dangling &#34;, subject to the
-  following conditions:&#34; text, this license is essentially identical to the
-  MIT-0-Clause (mit-0) license, which has been accepted in the open source
-  community relatively recently.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a copy
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ekioh
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Ekioh License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Ekioh License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Ekioh
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Obsolete License -- do not use.  Except for the dangling &#34;, subject to the
+following conditions:&#34; text, this license is essentially identical to the
+MIT-0-Clause (mit-0) license, which has been accepted in the open source
+community relatively recently.
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the &#34;Software&#34;), to
 deal in the Software without restriction, including without limitation
 the rights to use, copy, modify, merge, publish, distribute, sublicense,

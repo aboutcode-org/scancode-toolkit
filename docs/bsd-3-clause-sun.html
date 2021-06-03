@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-3-clause-sun.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-3-clause-sun.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bsd-3-clause-sun
-short_name: BSD 3-Clause Sun
-name: BSD 3-Clause Sun
-category: Permissive
-owner: Oracle (Sun)
-notes: This is the same as the bsd-3-clause-no-nuclear-warranty but without the nuclear related
-  terms. Rare and not exactly the same as a plain bsd.
-spdx_license_key: LicenseRef-scancode-bsd-3-clause-sun
-minimum_coverage: 90
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bsd-3-clause-sun
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            BSD 3-Clause Sun
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            BSD 3-Clause Sun
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle (Sun)
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This is the same as the bsd-3-clause-no-nuclear-warranty but without the nuclear related terms. Rare and not exactly the same as a plain bsd.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-bsd-3-clause-sun
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            90
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
 
 -Redistribution of source code must retain the above copyright notice, this

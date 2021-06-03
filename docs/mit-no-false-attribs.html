@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,70 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit-no-false-attribs.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit-no-false-attribs.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: mit-no-false-attribs
-short_name: MIT no false attribution License
-name: MIT with no false attribution License
-category: Permissive
-owner: npm Registry
-homepage_url: https://fedoraproject.org/wiki/Licensing/MITNFA
-notes: |
-  Per Fedora, this license is based on the MIT license, but contains an
-  additional section covering the removal of attributions in certain
-  modification scenarios. It is Free and GPL-compatible. Use License MITNFA
-spdx_license_key: MITNFA
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            mit-no-false-attribs
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MIT no false attribution License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            MIT with no false attribution License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            npm Registry
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing/MITNFA" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/MITNFA</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per Fedora, this license is based on the MIT license, but contains an
+additional section covering the removal of attributions in certain
+modification scenarios. It is Free and GPL-compatible. Use License MITNFA
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            MITNFA
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
 files (the &#34;Software&#34;), to deal in the Software without
 restriction, including without limitation the rights to use,

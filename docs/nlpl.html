@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,25 +62,81 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/nlpl.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/nlpl.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: nlpl
-short_name: NLPL
-name: No Limit Public License
-category: Public Domain
-owner: Gilles Lamiral
-homepage_url: https://fedoraproject.org/wiki/Licensing/NLPL
-notes: |
-  Per Fedora, there is a certain irony in a Frenchman writing a license that
-  isn&#39;t wholly applicable in France, due to Moral Rights. But I digress. This
-  license is basically the same as the WTFPL (with slightly less profanity).
-  It is Free and GPL-Compatible. A copy of the license text was taken from
-  http://imapsync.lamiral.info/COPYING on 2012-07-09.
-spdx_license_key: NLPL
-text_urls:
-  - http://imapsync.lamiral.info/COPYING
-  - http://imapsync.lamiral.info/NOLIMIT
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>NO LIMIT PUBLIC LICENSE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            nlpl
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            NLPL
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            No Limit Public License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Public Domain
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Gilles Lamiral
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing/NLPL" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/NLPL</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per Fedora, there is a certain irony in a Frenchman writing a license that
+isn&#39;t wholly applicable in France, due to Moral Rights. But I digress. This
+license is basically the same as the WTFPL (with slightly less profanity).
+It is Free and GPL-Compatible. A copy of the license text was taken from
+<a href="http://imapsync.lamiral.info/COPYING" rel="noopener" target="_blank">http://imapsync.lamiral.info/COPYING</a> on 2012-07-09.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            NLPL
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://imapsync.lamiral.info/COPYING" rel="noopener" target="_blank">http://imapsync.lamiral.info/COPYING</a></li><li><a href="http://imapsync.lamiral.info/NOLIMIT" rel="noopener" target="_blank">http://imapsync.lamiral.info/NOLIMIT</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>NO LIMIT PUBLIC LICENSE
            Version 0, June 2012
 
 Gilles LAMIRAL

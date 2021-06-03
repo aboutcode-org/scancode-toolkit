@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,31 +62,103 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jetty.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jetty.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: jetty
-short_name: Jetty License
-name: Jetty License
-category: Permissive
-owner: Jetty Project
-homepage_url: http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt
-spdx_license_key: LicenseRef-scancode-jetty
-text_urls:
-  - http://svn.apache.org/repos/asf/forrest/trunk/tools/jetty/jetty-4.2.19.jar.license.html
-  - http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt
-faq_url: http://en.wikipedia.org/wiki/Jetty_(web_server)
-ignorable_copyrights:
-  - Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others
-  - copyright Sun Microsystems Inc.
-ignorable_holders:
-  - Mort Bay Consulting Pty. Ltd. (Australia) and others
-  - Sun Microsystems Inc.
-ignorable_urls:
-  - http://ftp.uu.net/
-  - http://jetty.mortbay.org/
-  - http://www.opensource.com/
-  - http://www.opensource.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Jetty License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            jetty
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Jetty License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Jetty License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Jetty Project
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt" rel="noopener" target="_blank">http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-jetty
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://svn.apache.org/repos/asf/forrest/trunk/tools/jetty/jetty-4.2.19.jar.license.html" rel="noopener" target="_blank">http://svn.apache.org/repos/asf/forrest/trunk/tools/jetty/jetty-4.2.19.jar.license.html</a></li><li><a href="http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt" rel="noopener" target="_blank">http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://en.wikipedia.org/wiki/Jetty_(web_server" rel="noopener" target="_blank">http://en.wikipedia.org/wiki/Jetty_(web_server</a>)
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others</li><li>copyright Sun Microsystems Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Mort Bay Consulting Pty. Ltd. (Australia) and others</li><li>Sun Microsystems Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://ftp.uu.net/" rel="noopener" target="_blank">http://ftp.uu.net/</a></li><li><a href="http://jetty.mortbay.org/" rel="noopener" target="_blank">http://jetty.mortbay.org/</a></li><li><a href="http://www.opensource.com/" rel="noopener" target="_blank">http://www.opensource.com/</a></li><li><a href="http://www.opensource.org/" rel="noopener" target="_blank">http://www.opensource.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Jetty License
 $Revision: 584 $
 
 Preamble:

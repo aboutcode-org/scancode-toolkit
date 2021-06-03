@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/click-license.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/click-license.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: click-license
-short_name: Click License
-name: Click License
-category: Permissive
-owner: Unspecified
-homepage_url: https://changelogs.ubuntu.com/changelogs/pool/main/t/t1utils/t1utils_1.39-2/copyright
-spdx_license_key: LicenseRef-scancode-click-license
-minimum_coverage: 80
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            click-license
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Click License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Click License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://changelogs.ubuntu.com/changelogs/pool/main/t/t1utils/t1utils_1.39-2/copyright" rel="noopener" target="_blank">https://changelogs.ubuntu.com/changelogs/pool/main/t/t1utils/t1utils_1.39-2/copyright</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-click-license
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            80
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &#34;Software&#34;),
 to deal in the Software without restriction, including without limitation
 the rights to use, copy, modify, merge, publish, distribute, sublicense,

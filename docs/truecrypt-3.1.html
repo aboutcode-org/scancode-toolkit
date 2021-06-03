@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,28 +62,96 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/truecrypt-3.1.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/truecrypt-3.1.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: truecrypt-3.1
-short_name: TrueCrypt License 3.1
-name: TrueCrypt License 3.1
-category: Copyleft Limited
-owner: TrueCrypt
-spdx_license_key: LicenseRef-scancode-truecrypt-3.1
-minimum_coverage: 60
-ignorable_copyrights:
-  - Copyright (c) 1998-2000 Paul Le Roux
-  - Copyright (c) 1998-2008, Brian Gladman, Worcester, UK.
-  - Copyright (c) 2002-2004 Mark Adler
-ignorable_authors:
-  - Paul Le Roux &lt;pleroux@swprofessionals.com&gt;
-ignorable_holders:
-  - Brian Gladman, Worcester, UK.
-  - Mark Adler
-  - Paul Le Roux
-ignorable_emails:
-  - pleroux@swprofessionals.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>TrueCrypt License Version 3.1
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            truecrypt-3.1
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            TrueCrypt License 3.1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            TrueCrypt License 3.1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            TrueCrypt
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-truecrypt-3.1
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            60
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1998-2000 Paul Le Roux</li><li>Copyright (c) 1998-2008, Brian Gladman, Worcester, UK.</li><li>Copyright (c) 2002-2004 Mark Adler</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Paul Le Roux &lt;<a href="mailto:pleroux@swprofessionals.com">pleroux@swprofessionals.com</a>&gt;</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Brian Gladman, Worcester, UK.</li><li>Mark Adler</li><li>Paul Le Roux</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:pleroux@swprofessionals.com">pleroux@swprofessionals.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>TrueCrypt License Version 3.1
 
 Software distributed under this license is distributed on an &#34;AS
 IS&#34; BASIS WITHOUT WARRANTIES OF ANY KIND. THE AUTHORS AND

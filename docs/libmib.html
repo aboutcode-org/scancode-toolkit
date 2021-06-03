@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,80 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/libmib.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/libmib.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: libmib
-short_name: LibMib License
-name: LibMib License
-category: Permissive
-owner: MIB Software
-spdx_license_key: LicenseRef-scancode-libmib
-ignorable_copyrights:
-  - Copyright 1998 Forrest J. Cavalier III
-ignorable_holders:
-  - Forrest J. Cavalier III
-ignorable_urls:
-  - http://www.mibsoftware.com/
-  - http://www.mibsoftware.com/libmib/
-  - http://www.opensource.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>- - - - - - - - - - - - Copyright Notice - - - - - - - - - - - -
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            libmib
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LibMib License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            LibMib License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            MIB Software
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-libmib
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright 1998 Forrest J. Cavalier III</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Forrest J. Cavalier III</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.mibsoftware.com/" rel="noopener" target="_blank">http://www.mibsoftware.com/</a></li><li><a href="http://www.mibsoftware.com/libmib/" rel="noopener" target="_blank">http://www.mibsoftware.com/libmib/</a></li><li><a href="http://www.opensource.org/" rel="noopener" target="_blank">http://www.opensource.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>- - - - - - - - - - - - Copyright Notice - - - - - - - - - - - -
 
 Copyright 1998 Forrest J. Cavalier III
 

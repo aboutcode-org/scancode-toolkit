@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,29 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/libpng-v2.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/libpng-v2.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: libpng-v2
-short_name: LIbpng License v2
-name: PNG Reference Library License version 2
-category: Permissive
-owner: libpng
-homepage_url: http://www.libpng.org/pub/png/src/libpng-LICENSE.txt
-spdx_license_key: libpng-2.0
-minimum_coverage: 70
-ignorable_copyrights:
-  - Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.
-  - Copyright (c) 1995-2018 The PNG Reference Library Authors
-  - Copyright (c) 1996-1997 Andreas Dilger
-  - Copyright (c) 2000-2002, 2004, 2006-2018 Glenn Randers-Pehrson
-  - Copyright (c) 2018 Cosmin Truta
-ignorable_holders:
-  - Andreas Dilger
-  - Cosmin Truta
-  - Glenn Randers-Pehrson
-  - Guy Eric Schalnat, Group 42, Inc.
-  - The PNG Reference Library Authors
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>COPYRIGHT NOTICE, DISCLAIMER, and LICENSE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            libpng-v2
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LIbpng License v2
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            PNG Reference Library License version 2
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            libpng
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.libpng.org/pub/png/src/libpng-LICENSE.txt" rel="noopener" target="_blank">http://www.libpng.org/pub/png/src/libpng-LICENSE.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            libpng-2.0
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            70
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.</li><li>Copyright (c) 1995-2018 The PNG Reference Library Authors</li><li>Copyright (c) 1996-1997 Andreas Dilger</li><li>Copyright (c) 2000-2002, 2004, 2006-2018 Glenn Randers-Pehrson</li><li>Copyright (c) 2018 Cosmin Truta</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Andreas Dilger</li><li>Cosmin Truta</li><li>Glenn Randers-Pehrson</li><li>Guy Eric Schalnat, Group 42, Inc.</li><li>The PNG Reference Library Authors</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>COPYRIGHT NOTICE, DISCLAIMER, and LICENSE
 =========================================
 
 PNG Reference Library License version 2

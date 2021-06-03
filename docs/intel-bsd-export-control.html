@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,90 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-bsd-export-control.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-bsd-export-control.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: intel-bsd-export-control
-short_name: Intel BSD - Export Control
-name: Intel BSD - Export Control
-category: Permissive
-owner: Intel Corporation
-homepage_url: http://opensource.org/licenses/intel-open-source-license.html
-notes: this has this title in SPDX and OSI text The Intel Open Source License for CDSA/CSSM
-  Implementation (BSD License with Export Notice)
-spdx_license_key: Intel
-osi_url: http://www.opensource.org/licenses/intel-open-source-license.html
-other_urls:
-  - http://opensource.org/licenses/Intel
-  - https://opensource.org/licenses/Intel
-  - https://opensource.org/licenses/intel-open-source-license.php
-minimum_coverage: 75
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            intel-bsd-export-control
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Intel BSD - Export Control
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Intel BSD - Export Control
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Intel Corporation
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://opensource.org/licenses/intel-open-source-license.html" rel="noopener" target="_blank">http://opensource.org/licenses/intel-open-source-license.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this has this title in SPDX and OSI text The Intel Open Source License for CDSA/CSSM Implementation (BSD License with Export Notice)
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Intel
+          
+        </dd>
+      
+        <dt style="">osi_url</dt>
+        <dd>
+          
+            <a href="http://www.opensource.org/licenses/intel-open-source-license.html" rel="noopener" target="_blank">http://www.opensource.org/licenses/intel-open-source-license.html</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://opensource.org/licenses/Intel" rel="noopener" target="_blank">http://opensource.org/licenses/Intel</a></li><li><a href="https://opensource.org/licenses/Intel" rel="noopener" target="_blank">https://opensource.org/licenses/Intel</a></li><li><a href="https://opensource.org/licenses/intel-open-source-license.php" rel="noopener" target="_blank">https://opensource.org/licenses/intel-open-source-license.php</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            75
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
 Redistributions of source code must retain the above copyright notice, this list

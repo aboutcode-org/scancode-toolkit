@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/netcomponents.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/netcomponents.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: netcomponents
-short_name: NetComponents License
-name: NetComponents License
-category: Permissive
-owner: Savarese.Org
-homepage_url: http://gruntspud.sourceforge.net/NETCOMPONENTS_LICENSE.html
-spdx_license_key: LicenseRef-scancode-netcomponents
-text_urls:
-  - http://gruntspud.sourceforge.net/NETCOMPONENTS_LICENSE.html
-ignorable_copyrights:
-  - Copyright (c) 1996-1999 Daniel F. Savarese
-ignorable_holders:
-  - Daniel F. Savarese
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Savarese.Org
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            netcomponents
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            NetComponents License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            NetComponents License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Savarese.Org
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://gruntspud.sourceforge.net/NETCOMPONENTS_LICENSE.html" rel="noopener" target="_blank">http://gruntspud.sourceforge.net/NETCOMPONENTS_LICENSE.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-netcomponents
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://gruntspud.sourceforge.net/NETCOMPONENTS_LICENSE.html" rel="noopener" target="_blank">http://gruntspud.sourceforge.net/NETCOMPONENTS_LICENSE.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1996-1999 Daniel F. Savarese</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Daniel F. Savarese</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Savarese.Org
 Copyright © 1996-1999 Daniel F. Savarese.
 Copyright in this document and the software accompanying this document is owned by Daniel F. Savarese. All rights reserved.
 

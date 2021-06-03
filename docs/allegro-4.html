@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/allegro-4.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/allegro-4.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: allegro-4
-short_name: Allegro 4 License
-name: Allegro 4 License
-category: Permissive
-owner: Allegro Project
-homepage_url: http://alleg.sourceforge.net//license.html
-notes: |
-  Per SPDX.org, this license may also be known as Allegro 4. The Allegro 5
-  license shown at the alleg.sourceforge.net URL is the same as zlib.
-spdx_license_key: Giftware
-other_urls:
-  - http://liballeg.org/license.html#allegro-4-the-giftware-license
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Allegro 4 (the giftware license)
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            allegro-4
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Allegro 4 License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Allegro 4 License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Allegro Project
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://alleg.sourceforge.net//license.html" rel="noopener" target="_blank">http://alleg.sourceforge.net//license.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per <a href="http://SPDX.org" rel="noopener" target="_blank">SPDX.org</a>, this license may also be known as Allegro 4. The Allegro 5
+license shown at the <a href="http://alleg.sourceforge.net" rel="noopener" target="_blank">alleg.sourceforge.net</a> URL is the same as zlib.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Giftware
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://liballeg.org/license.html#allegro-4-the-giftware-license" rel="noopener" target="_blank">http://liballeg.org/license.html#allegro-4-the-giftware-license</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Allegro 4 (the giftware license)
 
 Allegro is gift-ware. It was created by a number of people working in cooperation, and is given to you freely as a gift. You may use, modify, redistribute, and generally hack it about in any way you like, and you do not have to give us anything in return.
 

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,30 +62,120 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/openssl.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/openssl.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: openssl
-short_name: OpenSSL License
-name: OpenSSL License
-category: Permissive
-owner: OpenSSL
-homepage_url: http://openssl.org/source/license.html
-notes: |
-  This is the OpenSSL license proper, without the SSLEay part. The SPDX
-  OpenSSL identifier does not apply here. Instead it matches the openssl-
-  ssleay license.
-spdx_license_key: LicenseRef-scancode-openssl
-faq_url: http://www.openssl.org/support/faq.html
-other_urls:
-  - http://www.openssl.org/source/license.html
-minimum_coverage: 70
-ignorable_authors:
-  - the OpenSSL Project
-ignorable_urls:
-  - http://www.openssl.org/
-ignorable_emails:
-  - licensing@OpenSSL.org
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            openssl
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            OpenSSL License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            OpenSSL License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            OpenSSL
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://openssl.org/source/license.html" rel="noopener" target="_blank">http://openssl.org/source/license.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This is the OpenSSL license proper, without the SSLEay part. The SPDX
+OpenSSL identifier does not apply here. Instead it matches the openssl-
+ssleay license.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-openssl
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://www.openssl.org/support/faq.html" rel="noopener" target="_blank">http://www.openssl.org/support/faq.html</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.openssl.org/source/license.html" rel="noopener" target="_blank">http://www.openssl.org/source/license.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            70
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>the OpenSSL Project</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.openssl.org/" rel="noopener" target="_blank">http://www.openssl.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:licensing@OpenSSL.org">licensing@OpenSSL.org</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
 

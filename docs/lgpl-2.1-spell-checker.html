@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,31 +62,100 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-2.1-spell-checker.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-2.1-spell-checker.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: lgpl-2.1-spell-checker
-is_deprecated: yes
-short_name: LGPL 2.1 or later with Spell-Checker exception
-name: LGPL 2.1 or later with Spell-Checker exception
-category: Copyleft Limited
-owner: AbiSource
-notes: replaced by spell-checker-exception-lgpl-2.1-plus
-is_exception: yes
-text_urls:
-  - https://github.com/AbiWord/enchant/blob/master/src/enchant.h
-other_urls:
-  - https://github.com/AbiWord/enchant/archive/enchant-1-0-0.tar.gz
-standard_notice: |
-  In addition, as a special exception, Dom Lachowicz
-  gives permission to link the code of this program with
-  non-LGPL Spelling Provider libraries (eg: a MSFT Office
-  spell checker backend) and distribute linked combinations including
-  the two. You must obey the GNU Lesser General Public License in all
-  respects for all of the code used other than said providers. If you modify
-  this file, you may extend this exception to your version of the
-  file, but you are not obligated to do so. If you do not wish to
-  do so, delete this exception statement from your version.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>In addition, as a special exception, Dom Lachowicz
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            lgpl-2.1-spell-checker
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LGPL 2.1 or later with Spell-Checker exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            LGPL 2.1 or later with Spell-Checker exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            AbiSource
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            replaced by spell-checker-exception-lgpl-2.1-plus
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/AbiWord/enchant/blob/master/src/enchant.h" rel="noopener" target="_blank">https://github.com/AbiWord/enchant/blob/master/src/enchant.h</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/AbiWord/enchant/archive/enchant-1-0-0.tar.gz" rel="noopener" target="_blank">https://github.com/AbiWord/enchant/archive/enchant-1-0-0.tar.gz</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            In addition, as a special exception, Dom Lachowicz
+gives permission to link the code of this program with
+non-LGPL Spelling Provider libraries (eg: a MSFT Office
+spell checker backend) and distribute linked combinations including
+the two. You must obey the GNU Lesser General Public License in all
+respects for all of the code used other than said providers. If you modify
+this file, you may extend this exception to your version of the
+file, but you are not obligated to do so. If you do not wish to
+do so, delete this exception statement from your version.
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>In addition, as a special exception, Dom Lachowicz
 gives permission to link the code of this program with
 non-LGPL Spelling Provider libraries (eg: a MSFT Office
 spell checker backend) and distribute linked combinations including

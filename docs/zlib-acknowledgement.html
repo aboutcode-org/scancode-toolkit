@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,35 +62,115 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/zlib-acknowledgement.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/zlib-acknowledgement.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: zlib-acknowledgement
-short_name: ZLIB License with Acknowledgment
-name: ZLIB License with Acknowledgment
-category: Permissive
-owner: Charlie Poole
-homepage_url: https://fedoraproject.org/wiki/Licensing:ZlibWithAcknowledgement?rd=Licensing/ZlibWithAcknowledgement
-notes: |
-  Per Fedora, this license is the same as zlib, except that it requires that
-  an acknowledgement be made in the product documentation. For Fedora, this
-  is our Release notes, so if you have any packages which use this license,
-  you MUST be sure to have the appropriate acknowledgement in the release
-  notes.
-spdx_license_key: zlib-acknowledgement
-other_spdx_license_keys:
-  - Nunit
-other_urls:
-  - https://fedoraproject.org/wiki/Licensing/ZlibWithAcknowledgement
-minimum_coverage: 50
-ignorable_copyrights:
-  - Copyright (c) 2000-2002 Philip A. Craig
-  - Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
-  - Portions Copyright (c) 2002-2007 Charlie Poole
-ignorable_holders:
-  - Charlie Poole
-  - James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
-  - Philip A. Craig
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This software is provided &#39;as-is&#39;, without any express or implied warranty. In
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            zlib-acknowledgement
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            ZLIB License with Acknowledgment
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            ZLIB License with Acknowledgment
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Charlie Poole
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing:ZlibWithAcknowledgement?rd=Licensing/ZlibWithAcknowledgement" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing:ZlibWithAcknowledgement?rd=Licensing/ZlibWithAcknowledgement</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per Fedora, this license is the same as zlib, except that it requires that
+an acknowledgement be made in the product documentation. For Fedora, this
+is our Release notes, so if you have any packages which use this license,
+you MUST be sure to have the appropriate acknowledgement in the release
+notes.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            zlib-acknowledgement
+          
+        </dd>
+      
+        <dt style="">other_spdx_license_keys</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Nunit</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://fedoraproject.org/wiki/Licensing/ZlibWithAcknowledgement" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/ZlibWithAcknowledgement</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            50
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2000-2002 Philip A. Craig</li><li>Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov</li><li>Portions Copyright (c) 2002-2007 Charlie Poole</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Charlie Poole</li><li>James W. Newkirk, Michael C. Two, Alexei A. Vorontsov</li><li>Philip A. Craig</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This software is provided &#39;as-is&#39;, without any express or implied warranty. In
 no event will the authors be held liable for any damages arising from the use of
 this software.
 

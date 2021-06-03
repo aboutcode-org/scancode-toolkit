@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/carnegie-mellon.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/carnegie-mellon.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: carnegie-mellon
-short_name: Carnegie Mellon License
-name: Carnegie Mellon License
-category: Permissive
-owner: Carnegie Mellon University
-spdx_license_key: LicenseRef-scancode-carnegie-mellon
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, and distribute this program for any purpose and
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            carnegie-mellon
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Carnegie Mellon License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Carnegie Mellon License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Carnegie Mellon University
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-carnegie-mellon
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, and distribute this program for any purpose and
 without fee is hereby granted, provided that this copyright and permission
 notice appear on all copies and supporting documentation, the name of Carnegie
 Mellon not be used in advertising or publicity pertaining to distribution of the

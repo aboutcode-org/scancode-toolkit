@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/zsh.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/zsh.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: zsh
-short_name: zsh License
-name: Z Shell License
-category: Permissive
-owner: Zsh Development Group
-homepage_url: https://sourceforge.net/p/zsh/code/ci/master/tree/LICENCE
-spdx_license_key: LicenseRef-scancode-zsh
-minimum_coverage: 90
-ignorable_copyrights:
-  - copyright (c) 1992-2017 Paul Falstad, Richard Coleman, Zoltan Hidvegi, Andrew Main, Peter
-    Stephenson, Sven Wischnowsky, and others
-ignorable_holders:
-  - Paul Falstad, Richard Coleman, Zoltan Hidvegi, Andrew Main, Peter Stephenson, Sven Wischnowsky,
-    and others
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Unless otherwise noted in the header of specific files, files in this
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            zsh
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            zsh License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Z Shell License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Zsh Development Group
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://sourceforge.net/p/zsh/code/ci/master/tree/LICENCE" rel="noopener" target="_blank">https://sourceforge.net/p/zsh/code/ci/master/tree/LICENCE</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-zsh
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            90
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>copyright (c) 1992-2017 Paul Falstad, Richard Coleman, Zoltan Hidvegi, Andrew Main, Peter Stephenson, Sven Wischnowsky, and others</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Paul Falstad, Richard Coleman, Zoltan Hidvegi, Andrew Main, Peter Stephenson, Sven Wischnowsky, and others</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Unless otherwise noted in the header of specific files, files in this
 distribution have the licence shown below.
 
 However, note that certain shell functions are licensed under versions

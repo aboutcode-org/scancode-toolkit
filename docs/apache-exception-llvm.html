@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,83 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/apache-exception-llvm.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/apache-exception-llvm.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: apache-exception-llvm
-is_deprecated: yes
-short_name: Apache-Exception-llvm
-name: Apache Exception LLVM
-category: Permissive
-owner: Apache Software Foundation
-homepage_url: https://lists.spdx.org
-notes: Replaced by llvm-exception
-is_exception: yes
-text_urls:
-  - https://lists.spdx.org/pipermail/spdx-legal/2017-December/002421.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>---- LLVM Exceptions to the Apache 2.0 License ----
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            apache-exception-llvm
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Apache-Exception-llvm
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Apache Exception LLVM
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Apache Software Foundation
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://lists.spdx.org" rel="noopener" target="_blank">https://lists.spdx.org</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Replaced by llvm-exception
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://lists.spdx.org/pipermail/spdx-legal/2017-December/002421.html" rel="noopener" target="_blank">https://lists.spdx.org/pipermail/spdx-legal/2017-December/002421.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>---- LLVM Exceptions to the Apache 2.0 License ----
 
 As an exception, if, as a result of your compiling your source code, portions
 of this Software are embedded into an Object form of such source code, you

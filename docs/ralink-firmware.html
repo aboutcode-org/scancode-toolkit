@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ralink-firmware.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ralink-firmware
-short_name: Ralink Firmware License
-name: Ralink Firmware License
-category: Proprietary Free
-owner: MediaTek
-homepage_url: http://iotdk.intel.com/repos/3.0/licenses/linux-firmware/LICENCE.ralink-firmware.txt
-spdx_license_key: LicenseRef-scancode-ralink-firmware
-ignorable_urls:
-  - http://opensource.org/licenses
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ralink-firmware
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Ralink Firmware License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Ralink Firmware License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            MediaTek
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://iotdk.intel.com/repos/3.0/licenses/linux-firmware/LICENCE.ralink-firmware.txt" rel="noopener" target="_blank">http://iotdk.intel.com/repos/3.0/licenses/linux-firmware/LICENCE.ralink-firmware.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ralink-firmware
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://opensource.org/licenses" rel="noopener" target="_blank">http://opensource.org/licenses</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution.
 Redistribution and use in binary form, without modification, are
 permitted provided that the following conditions are met:
 

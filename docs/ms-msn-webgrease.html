@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,83 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-msn-webgrease.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-msn-webgrease.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ms-msn-webgrease
-short_name: MS MSN WebGrease License
-name: Microsoft MSN WebGrease License
-category: Proprietary Free
-owner: Microsoft
-homepage_url: http://www.microsoft.com/web/webpi/eula/msn_webgrease_eula.htm
-notes: also contains some French language terms
-spdx_license_key: LicenseRef-scancode-ms-msn-webgrease
-minimum_coverage: 90
-ignorable_urls:
-  - http://www.microsoft.com/exporting
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>MICROSOFT SOFTWARE LICENSE TERMS
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ms-msn-webgrease
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MS MSN WebGrease License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Microsoft MSN WebGrease License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.microsoft.com/web/webpi/eula/msn_webgrease_eula.htm" rel="noopener" target="_blank">http://www.microsoft.com/web/webpi/eula/msn_webgrease_eula.htm</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            also contains some French language terms
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ms-msn-webgrease
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            90
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.microsoft.com/exporting" rel="noopener" target="_blank">http://www.microsoft.com/exporting</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>MICROSOFT SOFTWARE LICENSE TERMS
 MICROSOFT MSN WEBGREASE
 
 These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software named above, which includes the media on which you received it, if any. The terms also apply to any Microsoft

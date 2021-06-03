@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-doc.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-doc.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: x11-doc
-short_name: X11 Documentation License
-name: X11 Documentation License
-category: Permissive
-owner: XFree86 Project, Inc
-homepage_url: https://www.x.org/
-spdx_license_key: LicenseRef-scancode-x11-doc
-text_urls:
-  - https://answers.launchpad.net/ubuntu-leb/oneiric/+source/libxext/+copyright
-  - https://www.x.org/releases/X11R7.7/doc/libXtst/xtestlib.txt
-other_urls:
-  - https://books.google.com/books?id=DgzG_28omiYC&amp;pg=PA393&amp;lpg=PA393&amp;dq=%22This+documentation+is+provided+%60%60as+is%27%27+without+express+or+implied+warranty.%22&amp;source=bl&amp;ots=dH16WA9q7t&amp;sig=hS0ElVWtLI_JJ_D3WbCmnH56XdA&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwiZytPX2YrQAhXmr1QKHVOkA0YQ6AEIKzAD#v=onepage&amp;q=%22This%20documentation%20is%20provided%20%60%60as%20is%27%27%20without%20express%20or%20implied%20warranty.%22&amp;f=false
-minimum_coverage: 80
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, distribute, and sell this
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            x11-doc
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            X11 Documentation License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            X11 Documentation License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            XFree86 Project, Inc
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.x.org/" rel="noopener" target="_blank">https://www.x.org/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-x11-doc
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://answers.launchpad.net/ubuntu-leb/oneiric/+source/libxext/+copyright" rel="noopener" target="_blank">https://answers.launchpad.net/ubuntu-leb/oneiric/+source/libxext/+copyright</a></li><li><a href="https://www.x.org/releases/X11R7.7/doc/libXtst/xtestlib.txt" rel="noopener" target="_blank">https://www.x.org/releases/X11R7.7/doc/libXtst/xtestlib.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://books.google.com/books?id=DgzG_28omiYC&amp;pg=PA393&amp;lpg=PA393&amp;dq=%22This+documentation+is+provided+%60%60as+is%27%27+without+express+or+implied+warranty.%22&amp;source=bl&amp;ots=dH16WA9q7t&amp;sig=hS0ElVWtLI_JJ_D3WbCmnH56XdA&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwiZytPX2YrQAhXmr1QKHVOkA0YQ6AEIKzAD#v=onepage&amp;q=%22This%20documentation%20is%20provided%20%60%60as%20is%27%27%20without%20express%20or%20implied%20warranty.%22&amp;f=false" rel="noopener" target="_blank">https://books.google.com/books?id=DgzG_28omiYC&amp;pg=PA393&amp;lpg=PA393&amp;dq=%22This+documentation+is+provided+%60%60as+is%27%27+without+express+or+implied+warranty.%22&amp;source=bl&amp;ots=dH16WA9q7t&amp;sig=hS0ElVWtLI_JJ_D3WbCmnH56XdA&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwiZytPX2YrQAhXmr1QKHVOkA0YQ6AEIKzAD#v=onepage&amp;q=%22This%20documentation%20is%20provided%20%60%60as%20is%27%27%20without%20express%20or%20implied%20warranty.%22&amp;f=false</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            80
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, distribute, and sell this
 documentation for any purpose is hereby granted without fee,
 provided that the above copyright notice and this permission
 notice appear in all copies.  The author makes no 

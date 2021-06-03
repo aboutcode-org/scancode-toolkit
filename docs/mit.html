@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,25 +62,99 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: mit
-short_name: MIT License
-name: MIT License
-category: Permissive
-owner: MIT
-homepage_url: http://opensource.org/licenses/mit-license.php
-notes: Per SPDX.org, this license is OSI certified.
-spdx_license_key: MIT
-text_urls:
-  - http://opensource.org/licenses/mit-license.php
-osi_url: http://www.opensource.org/licenses/MIT
-faq_url: https://ieeexplore.ieee.org/document/9263265
-other_urls:
-  - https://opensource.com/article/18/3/patent-grant-mit-license
-  - https://opensource.com/article/19/4/history-mit-license
-  - https://opensource.org/licenses/MIT
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            mit
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MIT License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            MIT License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            MIT
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://opensource.org/licenses/mit-license.php" rel="noopener" target="_blank">http://opensource.org/licenses/mit-license.php</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per <a href="http://SPDX.org" rel="noopener" target="_blank">SPDX.org</a>, this license is OSI certified.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            MIT
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://opensource.org/licenses/mit-license.php" rel="noopener" target="_blank">http://opensource.org/licenses/mit-license.php</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">osi_url</dt>
+        <dd>
+          
+            <a href="http://www.opensource.org/licenses/MIT" rel="noopener" target="_blank">http://www.opensource.org/licenses/MIT</a>
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="https://ieeexplore.ieee.org/document/9263265" rel="noopener" target="_blank">https://ieeexplore.ieee.org/document/9263265</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://opensource.com/article/18/3/patent-grant-mit-license" rel="noopener" target="_blank">https://opensource.com/article/18/3/patent-grant-mit-license</a></li><li><a href="https://opensource.com/article/19/4/history-mit-license" rel="noopener" target="_blank">https://opensource.com/article/19/4/history-mit-license</a></li><li><a href="https://opensource.org/licenses/MIT" rel="noopener" target="_blank">https://opensource.org/licenses/MIT</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
 &#34;Software&#34;), to deal in the Software without restriction, including
 without limitation the rights to use, copy, modify, merge, publish,

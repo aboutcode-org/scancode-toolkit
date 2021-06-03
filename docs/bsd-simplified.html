@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,27 +62,101 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-simplified.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bsd-simplified
-short_name: BSD-2-Clause
-name: BSD-2-Clause
-category: Permissive
-owner: Regents of the University of California
-homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
-notes: Per SPDX.org, this license is OSI certified.
-spdx_license_key: BSD-2-Clause
-other_spdx_license_keys:
-  - BSD-2-Clause-NetBSD
-  - BSD-2
-text_urls:
-  - http://opensource.org/licenses/bsd-license.php
-osi_url: http://opensource.org/licenses/bsd-license.php
-other_urls:
-  - http://spdx.org/licenses/BSD-2-Clause
-  - http://www.freebsd.org/copyright/copyright.html
-  - https://opensource.org/licenses/BSD-2-Clause
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bsd-simplified
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            BSD-2-Clause
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            BSD-2-Clause
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Regents of the University of California
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.opensource.org/licenses/BSD-2-Clause" rel="noopener" target="_blank">http://www.opensource.org/licenses/BSD-2-Clause</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per <a href="http://SPDX.org" rel="noopener" target="_blank">SPDX.org</a>, this license is OSI certified.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            BSD-2-Clause
+          
+        </dd>
+      
+        <dt style="">other_spdx_license_keys</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>BSD-2-Clause-NetBSD</li><li>BSD-2</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://opensource.org/licenses/bsd-license.php" rel="noopener" target="_blank">http://opensource.org/licenses/bsd-license.php</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">osi_url</dt>
+        <dd>
+          
+            <a href="http://opensource.org/licenses/bsd-license.php" rel="noopener" target="_blank">http://opensource.org/licenses/bsd-license.php</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://spdx.org/licenses/BSD-2-Clause" rel="noopener" target="_blank">http://spdx.org/licenses/BSD-2-Clause</a></li><li><a href="http://www.freebsd.org/copyright/copyright.html" rel="noopener" target="_blank">http://www.freebsd.org/copyright/copyright.html</a></li><li><a href="https://opensource.org/licenses/BSD-2-Clause" rel="noopener" target="_blank">https://opensource.org/licenses/BSD-2-Clause</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
 Redistributions of source code must retain the above copyright notice, this list

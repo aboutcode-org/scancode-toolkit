@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ada-linking-exception.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ada-linking-exception
-short_name: Ada linking exception to GPL 2.0 or later
-name: Ada linking exception to GPL 2.0 or later
-category: Copyleft Limited
-owner: Dmitriy Anisimkov
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-ada-linking-exception
-other_urls:
-  - http://zlib-ada.sourceforge.net/
-  - http://ada-ru.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>As a special exception, if other files instantiate generics from this 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ada-linking-exception
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Ada linking exception to GPL 2.0 or later
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Ada linking exception to GPL 2.0 or later
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Dmitriy Anisimkov
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ada-linking-exception
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://zlib-ada.sourceforge.net/" rel="noopener" target="_blank">http://zlib-ada.sourceforge.net/</a></li><li><a href="http://ada-ru.org/" rel="noopener" target="_blank">http://ada-ru.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>As a special exception, if other files instantiate generics from this 
 unit, or you link this unit with other files to produce an executable, 
 this  unit  does not  by itself cause  the resulting executable to be 
 covered by the GNU General Public License. This exception does not 

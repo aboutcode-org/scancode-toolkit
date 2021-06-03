@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,55 +62,118 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/oracle-openjdk-classpath-exception-2.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/oracle-openjdk-classpath-exception-2.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: oracle-openjdk-classpath-exception-2.0
-short_name: Oracle OpenJDK classpath exception to GPL 2.0
-name: Oracle OpenJDK classpath exception to GPL 2.0
-category: Copyleft Limited
-owner: Oracle Corporation
-homepage_url: http://openjdk.java.net/legal/gplv2+ce.html
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-oracle-openjdk-classpath-exception-2.0
-other_urls:
-  - http://www.gnu.org/licenses/gpl-2.0.txt
-standard_notice: |
-  This library is free software; you can redistribute it and/or modify it
-  under the terms of the GNU General Public License as published by the Free
-  Software Foundation; either version 2, or (at your option) any later
-  version.
-  This library is distributed in the hope that it will be useful, but WITHOUT
-  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-  FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
-  more details.
-  You should have received a copy of the GNU General Public License along
-  with this library; see the file COPYING. If not, write to the Free Software
-  Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
-  &#34;CLASSPATH&#34; EXCEPTION TO THE GPL
-  Certain source files distributed by Oracle America and/or its affiliates
-  are
-  subject to the following clarification and special exception to the GPL,
-  but
-  only where Oracle has expressly included in the particular source file&#39;s
-  header
-  the words &#34;Oracle designates this particular file as subject to the
-  &#34;Classpath&#34;
-  exception as provided by Oracle in the LICENSE file that accompanied this
-  code.&#34;
-  Linking this library statically or dynamically with other modules is making
-  a combined work based on this library. Thus, the terms and conditions of
-  the GNU General Public License cover the whole combination.
-  As a special exception, the copyright holders of this library give you
-  permission to link this library with independent modules to produce an
-  executable, regardless of the license terms of these independent modules,
-  and to copy and distribute the resulting executable under terms of your
-  choice, provided that you also meet, for each linked independent module,
-  the terms and conditions of the license of that module. An independent
-  module is a module which is not derived from or based on this library. If
-  you modify this library, you may extend this exception to your version of
-  the library, but you are not obligated to do so. If you do not wish to do
-  so, delete this exception statement from your version.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>&#34;CLASSPATH&#34; EXCEPTION TO THE GPL
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            oracle-openjdk-classpath-exception-2.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Oracle OpenJDK classpath exception to GPL 2.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Oracle OpenJDK classpath exception to GPL 2.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle Corporation
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://openjdk.java.net/legal/gplv2+ce.html" rel="noopener" target="_blank">http://openjdk.java.net/legal/gplv2+ce.html</a>
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-oracle-openjdk-classpath-exception-2.0
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/gpl-2.0.txt" rel="noopener" target="_blank">http://www.gnu.org/licenses/gpl-2.0.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2, or (at your option) any later
+version.
+This library is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+more details.
+You should have received a copy of the GNU General Public License along
+with this library; see the file COPYING. If not, write to the Free Software
+Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+&#34;CLASSPATH&#34; EXCEPTION TO THE GPL
+Certain source files distributed by Oracle America and/or its affiliates
+are
+subject to the following clarification and special exception to the GPL,
+but
+only where Oracle has expressly included in the particular source file&#39;s
+header
+the words &#34;Oracle designates this particular file as subject to the
+&#34;Classpath&#34;
+exception as provided by Oracle in the LICENSE file that accompanied this
+code.&#34;
+Linking this library statically or dynamically with other modules is making
+a combined work based on this library. Thus, the terms and conditions of
+the GNU General Public License cover the whole combination.
+As a special exception, the copyright holders of this library give you
+permission to link this library with independent modules to produce an
+executable, regardless of the license terms of these independent modules,
+and to copy and distribute the resulting executable under terms of your
+choice, provided that you also meet, for each linked independent module,
+the terms and conditions of the license of that module. An independent
+module is a module which is not derived from or based on this library. If
+you modify this library, you may extend this exception to your version of
+the library, but you are not obligated to do so. If you do not wish to do
+so, delete this exception statement from your version.
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>&#34;CLASSPATH&#34; EXCEPTION TO THE GPL
 
 Certain source files distributed by Oracle America and/or its affiliates are
 subject to the following clarification and special exception to the GPL, but

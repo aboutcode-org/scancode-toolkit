@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/odl.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/odl.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: odl
-short_name: Open Directory License
-name: Open Directory License
-category: Permissive
-owner: Open Directory
-homepage_url: http://www.dmoz.org/license.html
-spdx_license_key: LicenseRef-scancode-odl
-text_urls:
-  - http://www.dmoz.org/license.html
-other_urls:
-  - http://dmoz.org/become_an_editor
-ignorable_urls:
-  - http://dmoz.org/
-  - http://dmoz.org/become_an_editor
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Open Directory License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            odl
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Open Directory License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Open Directory License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Open Directory
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.dmoz.org/license.html" rel="noopener" target="_blank">http://www.dmoz.org/license.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-odl
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.dmoz.org/license.html" rel="noopener" target="_blank">http://www.dmoz.org/license.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://dmoz.org/become_an_editor" rel="noopener" target="_blank">http://dmoz.org/become_an_editor</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://dmoz.org/" rel="noopener" target="_blank">http://dmoz.org/</a></li><li><a href="http://dmoz.org/become_an_editor" rel="noopener" target="_blank">http://dmoz.org/become_an_editor</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Open Directory License
 
 The Open Directory is a compilation of many different editors&#39; contributions.  Netscape Communications Corporation (`Netscape&#39;) owns the copyright to the compilation of the different contributions, and makes the Open Directory available to you to use under the following license agreement terms and conditions (`Open Directory License&#39;).  For purposes of this Open Directory License, `Open Directory&#39; means only the Open Directory Project currently hosted at http://dmoz.org (or at another site as may be designated by Netscape in the future), and does not include any other versions of directories, even if referred to as an `Open Directory,&#39; that may be hosted by Netscape on other web pages (e.g., Netscape Netcenter).
 

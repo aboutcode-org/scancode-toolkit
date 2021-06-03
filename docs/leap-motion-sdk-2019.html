@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/leap-motion-sdk-2019.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/leap-motion-sdk-2019.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: leap-motion-sdk-2019
-short_name: Leap Motion SDK Agreement 2019
-name: Leap Motion SDK Agreement 2019
-category: Proprietary Free
-owner: Ultraleap
-homepage_url: https://central.leapmotion.com/agreements/SdkAgreement
-spdx_license_key: LicenseRef-scancode-leap-motion-sdk-2019
-faq_url: https://support.leapmotion.com/hc/en-us/articles/360004340197-SDK-Agreement-FAQs
-ignorable_urls:
-  - http://leapmotion.com/legal
-ignorable_emails:
-  - developers@leapmotion.com
-  - partnerships@leapmotion.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Leap Motion SDK Agreement
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            leap-motion-sdk-2019
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Leap Motion SDK Agreement 2019
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Leap Motion SDK Agreement 2019
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Ultraleap
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://central.leapmotion.com/agreements/SdkAgreement" rel="noopener" target="_blank">https://central.leapmotion.com/agreements/SdkAgreement</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-leap-motion-sdk-2019
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="https://support.leapmotion.com/hc/en-us/articles/360004340197-SDK-Agreement-FAQs" rel="noopener" target="_blank">https://support.leapmotion.com/hc/en-us/articles/360004340197-SDK-Agreement-FAQs</a>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://leapmotion.com/legal" rel="noopener" target="_blank">http://leapmotion.com/legal</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:developers@leapmotion.com">developers@leapmotion.com</a></li><li><a href="mailto:partnerships@leapmotion.com">partnerships@leapmotion.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Leap Motion SDK Agreement
 
 A note on our SDK Agreement
 To help avoid uncertainty about our licensing terms, please note we have a two-tier license structure for distribution of applications or technology developed with or that use our SDK:

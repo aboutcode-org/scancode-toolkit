@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,31 +62,94 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cygwin-exception-lgpl-3.0-plus.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cygwin-exception-lgpl-3.0-plus.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: cygwin-exception-lgpl-3.0-plus
-short_name: Cygwin exception to LGPL 3.0 or later
-name: Cygwin exception to LGPL 3.0 or later
-category: Copyleft Limited
-owner: Cygwin Project
-homepage_url: https://cygwin.com/licensing.html
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-cygwin-exception-lgpl-3.0-plus
-other_urls:
-  - http://www.gnu.org/licenses/lgpl-3.0.txt
-standard_notice: |
-  The Cygwin API library found in the winsup subdirectory of the source code
-  is covered by the GNU Lesser General Public License (LGPL) version 3 or
-  later. For details of the requirements of LGPLv3, please read the GNU
-  Lesser General Public License (LGPL).
-  Cygwin™ Linking Exception
-  As a special exception, the copyright holders of the Cygwin library grant
-  you additional permission to link libcygwin.a, crt0.o, and gcrt0.o with
-  independent modules to produce an executable, and to convey the resulting
-  executable under terms of your choice, without any need to comply with the
-  conditions of LGPLv3 section 4. An independent module is a module which is
-  not itself based on the Cygwin library.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>As a special exception, the copyright holders of the Cygwin library grant you
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            cygwin-exception-lgpl-3.0-plus
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Cygwin exception to LGPL 3.0 or later
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Cygwin exception to LGPL 3.0 or later
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Cygwin Project
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://cygwin.com/licensing.html" rel="noopener" target="_blank">https://cygwin.com/licensing.html</a>
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-cygwin-exception-lgpl-3.0-plus
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/lgpl-3.0.txt" rel="noopener" target="_blank">http://www.gnu.org/licenses/lgpl-3.0.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            The Cygwin API library found in the winsup subdirectory of the source code
+is covered by the GNU Lesser General Public License (LGPL) version 3 or
+later. For details of the requirements of LGPLv3, please read the GNU
+Lesser General Public License (LGPL).
+Cygwin™ Linking Exception
+As a special exception, the copyright holders of the Cygwin library grant
+you additional permission to link libcygwin.a, crt0.o, and gcrt0.o with
+independent modules to produce an executable, and to convey the resulting
+executable under terms of your choice, without any need to comply with the
+conditions of LGPLv3 section 4. An independent module is a module which is
+not itself based on the Cygwin library.
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>As a special exception, the copyright holders of the Cygwin library grant you
 additional permission to link libcygwin.a, crt0.o, and gcrt0.o with independent
 modules to produce an executable, and to convey the resulting executable under
 terms of your choice, without any need to comply with the conditions of LGPLv3

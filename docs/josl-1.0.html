@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,29 +62,103 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/josl-1.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/josl-1.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: josl-1.0
-short_name: Jabber 1.0
-name: Jabber Open Source License 1.0
-category: Copyleft Limited
-owner: Jabber Technology
-homepage_url: http://www.opensource.org/licenses/jabberpl.php
-spdx_license_key: LicenseRef-scancode-josl-1.0
-text_urls:
-  - http://code.google.com/p/jabber-net/source/browse/branches/RELEASE_1_0/LICENSE.txt
-osi_url: http://www.opensource.org/licenses/jabberpl.php
-ignorable_copyrights:
-  - Copyright (c) 1999-2000 Jabber.com, Inc.
-  - Portions Copyright (c) 1998-1999 Jeremie Miller
-ignorable_holders:
-  - Jabber.com, Inc.
-  - Jeremie Miller
-ignorable_urls:
-  - http://www.jabber.com/
-  - http://www.jabber.com/license/
-  - http://www.opensource.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Jabber Open Source License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            josl-1.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Jabber 1.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Jabber Open Source License 1.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Jabber Technology
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.opensource.org/licenses/jabberpl.php" rel="noopener" target="_blank">http://www.opensource.org/licenses/jabberpl.php</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-josl-1.0
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://code.google.com/p/jabber-net/source/browse/branches/RELEASE_1_0/LICENSE.txt" rel="noopener" target="_blank">http://code.google.com/p/jabber-net/source/browse/branches/RELEASE_1_0/LICENSE.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">osi_url</dt>
+        <dd>
+          
+            <a href="http://www.opensource.org/licenses/jabberpl.php" rel="noopener" target="_blank">http://www.opensource.org/licenses/jabberpl.php</a>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1999-2000 <a href="http://Jabber.com" rel="noopener" target="_blank">Jabber.com</a>, Inc.</li><li>Portions Copyright (c) 1998-1999 Jeremie Miller</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://Jabber.com" rel="noopener" target="_blank">Jabber.com</a>, Inc.</li><li>Jeremie Miller</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.jabber.com/" rel="noopener" target="_blank">http://www.jabber.com/</a></li><li><a href="http://www.jabber.com/license/" rel="noopener" target="_blank">http://www.jabber.com/license/</a></li><li><a href="http://www.opensource.org/" rel="noopener" target="_blank">http://www.opensource.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Jabber Open Source License
 Version 1.0
 
 This Jabber Open Source License (the &#34;License&#34;) applies to Jabber Server and related software products as well as any updates or maintenance releases of that software (&#34;Jabber Products&#34;) that are distributed by Jabber.Com, Inc. (&#34;Licensor&#34;). Any Jabber Product licensed pursuant to this License is a Licensed Product. Licensed Product, in its entirety, is protected by U.S. copyright law. This License identifies the terms under which you may use, copy, distribute or modify Licensed Product.

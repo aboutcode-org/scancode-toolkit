@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,89 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/qualcomm-iso.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/qualcomm-iso.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: qualcomm-iso
-short_name: Qualcomm ISO/IEC MPEG-B DASH License
-name: Qualcomm ISO/IEC MPEG-B DASH License
-category: Free Restricted
-owner: Qualcomm
-spdx_license_key: LicenseRef-scancode-qualcomm-iso
-other_urls:
-  - https://www.iso.org/standard/65274.html
-ignorable_copyrights:
-  - Copyright (c) ISO/IEC 2010
-ignorable_authors:
-  - Qualcomm, Inc.
-ignorable_holders:
-  - ISO/IEC
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This software module was originally developed by Qualcomm, Inc. in
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            qualcomm-iso
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Qualcomm ISO/IEC MPEG-B DASH License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Qualcomm ISO/IEC MPEG-B DASH License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Qualcomm
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-qualcomm-iso
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.iso.org/standard/65274.html" rel="noopener" target="_blank">https://www.iso.org/standard/65274.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) ISO/IEC 2010</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Qualcomm, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>ISO/IEC</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This software module was originally developed by Qualcomm, Inc. in
 the course of development of the ISO/IEC MPEG-B DASH standard for
 reference purposes and its performance may not have been optimized.
 This software module is an implementation of one or more tools as

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,80 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mup.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mup.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: mup
-short_name: Mup License
-name: Mup License
-category: Permissive
-owner: Arkkra Enterprises
-homepage_url: http://www.arkkra.com/doc/license.html
-notes: |
-  Per Fedora, this is a BSD derived Free license, but clause 3 makes it GPL-
-  incompatible, due to the need to include the reasons for the changes. A
-  copy of this license was taken from http://www.arkkra.com/doc/license.html
-  on 2013-02-15.
-spdx_license_key: Mup
-text_urls:
-  - https://fedoraproject.org/wiki/Licensing/Mup
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            mup
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Mup License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Mup License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Arkkra Enterprises
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.arkkra.com/doc/license.html" rel="noopener" target="_blank">http://www.arkkra.com/doc/license.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per Fedora, this is a BSD derived Free license, but clause 3 makes it GPL-
+incompatible, due to the need to include the reasons for the changes. A
+copy of this license was taken from <a href="http://www.arkkra.com/doc/license.html" rel="noopener" target="_blank">http://www.arkkra.com/doc/license.html</a>
+on 2013-02-15.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Mup
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://fedoraproject.org/wiki/Licensing/Mup" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Mup</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following DISCLAIMER.

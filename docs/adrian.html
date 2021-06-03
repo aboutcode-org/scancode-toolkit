@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adrian.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adrian.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: adrian
-short_name: Andre Adrian DFS license
-name: Andre Adrian DFS license
-category: Permissive
-owner: DFS Deutsche Flugsicherung
-spdx_license_key: LicenseRef-scancode-adrian
-text_urls:
-  - https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/blob/81c24738d5b62a5f092ce34ea06efab72eefbb9e/src/modules/echo-cancel/adrian-license.txt
-other_urls:
-  - https://mailarchive.ietf.org/arch/msg/avt/6erDp7-srszwgBNbFxcD_zSFMS0/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>You are allowed to use this source code in any open source or closed
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            adrian
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Andre Adrian DFS license
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Andre Adrian DFS license
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            DFS Deutsche Flugsicherung
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-adrian
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/blob/81c24738d5b62a5f092ce34ea06efab72eefbb9e/src/modules/echo-cancel/adrian-license.txt" rel="noopener" target="_blank">https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/blob/81c24738d5b62a5f092ce34ea06efab72eefbb9e/src/modules/echo-cancel/adrian-license.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://mailarchive.ietf.org/arch/msg/avt/6erDp7-srszwgBNbFxcD_zSFMS0/" rel="noopener" target="_blank">https://mailarchive.ietf.org/arch/msg/avt/6erDp7-srszwgBNbFxcD_zSFMS0/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>You are allowed to use this source code in any open source or closed
 source software you want. You are allowed to use the algorithms for a
 hardware solution. You are allowed to modify the source code.
 You are not allowed to remove the name of the author from this memo or

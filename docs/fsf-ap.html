@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,27 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/fsf-ap.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: fsf-ap
-short_name: FSF All Permissive License
-name: FSF All Permissive License
-category: Permissive
-owner: Free Software Foundation (FSF)
-homepage_url: http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
-notes: |
-  Per Fedora, This is a simple permissive license, created by the FSF. It is
-  Free and GPL compatible. The FSF recommends it for &#34;small supporting files,
-  short manuals (under 300 lines long) and rough documentation (README files,
-  INSTALL files, etc.)&#34;.
-spdx_license_key: FSFAP
-other_urls:
-  - http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
-  - http://www.gnu.org/software/autoconf-archive/ax_lib_readline.html
-  - https://fedoraproject.org/wiki/Licensing/FSFAP
-  - https://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
-minimum_coverage: 85
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Copying and distribution of this file, with or without modification, are
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            fsf-ap
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            FSF All Permissive License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            FSF All Permissive License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html" rel="noopener" target="_blank">http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per Fedora, This is a simple permissive license, created by the FSF. It is
+Free and GPL compatible. The FSF recommends it for &#34;small supporting files,
+short manuals (under 300 lines long) and rough documentation (README files,
+INSTALL files, etc.)&#34;.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            FSFAP
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html" rel="noopener" target="_blank">http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html</a></li><li><a href="http://www.gnu.org/software/autoconf-archive/ax_lib_readline.html" rel="noopener" target="_blank">http://www.gnu.org/software/autoconf-archive/ax_lib_readline.html</a></li><li><a href="https://fedoraproject.org/wiki/Licensing/FSFAP" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/FSFAP</a></li><li><a href="https://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html" rel="noopener" target="_blank">https://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            85
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Copying and distribution of this file, with or without modification, are
 permitted in any medium without royalty provided the copyright notice
 and this notice are preserved. This file is offered as-is, without any
 warranty.

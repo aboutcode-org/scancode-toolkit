@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,27 +62,84 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/enlightenment.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/enlightenment.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: enlightenment
-short_name: EFL MIT-Style License
-name: Enlightenment (EFL) MIT-Style License
-category: Permissive
-owner: Enlightenment
-homepage_url: http://www.enlightenment.org/
-notes: |
-  Per Fedora, this license is a modified version of the common MIT license,
-  with an additional advertising clause that makes it GPL-incompatible. It
-  was originally found at
-  http://www.enlightenment.org/viewvc/e16/e/COPYING?revision=1.10 , but that
-  URL is gone (they seem to have moved source control systems). The latest
-  available copy from enlightment.org
-  http://trac.enlightenment.org/e/browser/trunk/E16/e/COPYING has been
-  preserved here for reference.
-spdx_license_key: MIT-advertising
-text_urls:
-  - https://fedoraproject.org/wiki/Licensing/MIT_With_Advertising
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &#34;Software&#34;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            enlightenment
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            EFL MIT-Style License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Enlightenment (EFL) MIT-Style License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Enlightenment
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.enlightenment.org/" rel="noopener" target="_blank">http://www.enlightenment.org/</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per Fedora, this license is a modified version of the common MIT license,
+with an additional advertising clause that makes it GPL-incompatible. It
+was originally found at
+<a href="http://www.enlightenment.org/viewvc/e16/e/COPYING?revision=1.10" rel="noopener" target="_blank">http://www.enlightenment.org/viewvc/e16/e/COPYING?revision=1.10</a> , but that
+URL is gone (they seem to have moved source control systems). The latest
+available copy from <a href="http://enlightment.org" rel="noopener" target="_blank">enlightment.org</a>
+<a href="http://trac.enlightenment.org/e/browser/trunk/E16/e/COPYING" rel="noopener" target="_blank">http://trac.enlightenment.org/e/browser/trunk/E16/e/COPYING</a> has been
+preserved here for reference.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            MIT-advertising
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://fedoraproject.org/wiki/Licensing/MIT_With_Advertising" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/MIT_With_Advertising</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &#34;Software&#34;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies of the Software, its documentation and marketing &amp; publicity materials, and acknowledgment shall be given in the documentation, materials and software packages that this Software was used.
 

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/abrms.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/abrms.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: abrms
-short_name: ABRMS
-name: Anyone But Richard Stallman License
-category: Proprietary Free
-owner: Unspecified
-notes: From https://github.com/ErikMcClure/bad-licenses
-spdx_license_key: LicenseRef-scancode-abrms
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The &#34;Anyone But Richard M Stallman&#34; license
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            abrms
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            ABRMS
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Anyone But Richard Stallman License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            From <a href="https://github.com/ErikMcClure/bad-licenses" rel="noopener" target="_blank">https://github.com/ErikMcClure/bad-licenses</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-abrms
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The &#34;Anyone But Richard M Stallman&#34; license
 Do anything you want with this program, with the exceptions listed below under &#34;EXCEPTIONS&#34;.
 
 THIS SOFTWARE IS PROVIDED &#34;AS IS&#34; WITH NO WARRANTY OF ANY KIND.

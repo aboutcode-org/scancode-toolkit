@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,26 +62,94 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/vhfpl-1.1.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/vhfpl-1.1.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: vhfpl-1.1
-short_name: vhfPL 1.1
-name: vhf Public License V 1.1
-category: Copyleft
-owner: Cenon GmbH
-homepage_url: http://www.cenon.de
-notes: The original name of Cenon was vhf interservice GmbH at http://www.vhf-interservice.com/
-  and http://www.vhf.de The company has websites under several different domain names.
-spdx_license_key: LicenseRef-scancode-vhfpl-1.1
-ignorable_copyrights:
-  - Copyright (c) 2003 vhf interservice GmbH service@vhf.de
-  - Copyright (c) 2003/2004 vhf interservice GmbH, Im Marxle
-ignorable_holders:
-  - vhf interservice GmbH
-  - vhf interservice GmbH, Im Marxle
-ignorable_emails:
-  - service@vhf.de
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>                          vhf Public License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            vhfpl-1.1
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            vhfPL 1.1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            vhf Public License V 1.1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Cenon GmbH
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.cenon.de" rel="noopener" target="_blank">http://www.cenon.de</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            The original name of Cenon was vhf interservice GmbH at <a href="http://www.vhf-interservice.com/" rel="noopener" target="_blank">http://www.vhf-interservice.com/</a> and <a href="http://www.vhf.de" rel="noopener" target="_blank">http://www.vhf.de</a> The company has websites under several different domain names.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-vhfpl-1.1
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2003 vhf interservice GmbH <a href="mailto:service@vhf.de">service@vhf.de</a></li><li>Copyright (c) 2003/2004 vhf interservice GmbH, Im Marxle</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>vhf interservice GmbH</li><li>vhf interservice GmbH, Im Marxle</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:service@vhf.de">service@vhf.de</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>                          vhf Public License
 
 Below is a version of the license for the vhf Free Software. The license is
 called the vhf Public License (or &#34;vhfPL&#34;), and is an Open Source license.

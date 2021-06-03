@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,64 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-xconsortium_veillard.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-xconsortium_veillard.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: x11-xconsortium_veillard
-short_name: X11-Style (X Consortium Veillard)
-name: X11-Style (X Consortium Veillard)
-category: Permissive
-owner: Daniel Veillard
-spdx_license_key: LicenseRef-scancode-x11-xconsortium_veillard
-standard_notice: |
-  Except where otherwise noted in the source code (e.g. the files hash.c,
-  list.c and the trio files, which are covered by a similar licence but
-  with different Copyright notices) all the files are:
-  Copyright (C) 1998-2003 Daniel Veillard. All Rights Reserved.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a copy of
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            x11-xconsortium_veillard
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            X11-Style (X Consortium Veillard)
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            X11-Style (X Consortium Veillard)
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Daniel Veillard
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-x11-xconsortium_veillard
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            Except where otherwise noted in the source code (e.g. the files hash.c,
+list.c and the trio files, which are covered by a similar licence but
+with different Copyright notices) all the files are:
+Copyright (C) 1998-2003 Daniel Veillard. All Rights Reserved.
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the &#34;Software&#34;), to deal in
 the Software without restriction, including without limitation the rights to
 use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of

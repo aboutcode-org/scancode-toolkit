@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/odbl-1.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/odbl-1.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: odbl-1.0
-short_name: ODbL 1.0
-name: ODC Open Database License v1.0
-category: Copyleft
-owner: Open Data Commons
-homepage_url: http://www.opendatacommons.org/licenses/odbl/1.0/
-spdx_license_key: ODbL-1.0
-text_urls:
-  - https://www.opendatacommons.org/licenses/odbl/1.0/
-other_urls:
-  - https://opendatacommons.org/licenses/odbl/1-0/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>## ODC Open Database License (ODbL)
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            odbl-1.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            ODbL 1.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            ODC Open Database License v1.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Open Data Commons
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.opendatacommons.org/licenses/odbl/1.0/" rel="noopener" target="_blank">http://www.opendatacommons.org/licenses/odbl/1.0/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            ODbL-1.0
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.opendatacommons.org/licenses/odbl/1.0/" rel="noopener" target="_blank">https://www.opendatacommons.org/licenses/odbl/1.0/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://opendatacommons.org/licenses/odbl/1-0/" rel="noopener" target="_blank">https://opendatacommons.org/licenses/odbl/1-0/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>## ODC Open Database License (ODbL)
 
 ### Preamble
 

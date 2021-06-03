@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sglib.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sglib.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: sglib
-short_name: Sglib License
-name: Sglib License
-category: Permissive
-owner: Unspecified
-spdx_license_key: LicenseRef-scancode-sglib
-other_urls:
-  - http://www.xref-tech.com/sglib/
-ignorable_urls:
-  - http://www.opensource.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Basically, I only care that you do not remove the Copyright notice from the
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            sglib
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Sglib License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sglib License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-sglib
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.xref-tech.com/sglib/" rel="noopener" target="_blank">http://www.xref-tech.com/sglib/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.opensource.org/" rel="noopener" target="_blank">http://www.opensource.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Basically, I only care that you do not remove the Copyright notice from the
 source code when using Sglib.
 
 More precisely: you can use Sglib or its derivative forms (under the condition

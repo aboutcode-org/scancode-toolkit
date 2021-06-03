@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,96 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/erlangpl-1.1.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/erlangpl-1.1.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: erlangpl-1.1
-short_name: Erlang Public License 1.1
-name: Erlang Public License v1.1
-category: Copyleft
-owner: Erlang
-homepage_url: http://www.erlang.org/EPLICENSE
-spdx_license_key: ErlPL-1.1
-text_urls:
-  - http://www.erlang.org/EPLICENSE
-ignorable_copyrights:
-  - Copyright 1999, Ericsson Utvecklings AB.
-ignorable_holders:
-  - Ericsson Utvecklings AB.
-ignorable_urls:
-  - http://www.erlang.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>ERLANG PUBLIC LICENSE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            erlangpl-1.1
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Erlang Public License 1.1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Erlang Public License v1.1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Erlang
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.erlang.org/EPLICENSE" rel="noopener" target="_blank">http://www.erlang.org/EPLICENSE</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            ErlPL-1.1
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.erlang.org/EPLICENSE" rel="noopener" target="_blank">http://www.erlang.org/EPLICENSE</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright 1999, Ericsson Utvecklings AB.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Ericsson Utvecklings AB.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.erlang.org/" rel="noopener" target="_blank">http://www.erlang.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>ERLANG PUBLIC LICENSE
 Version 1.1
 
 1. Definitions.

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,96 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cern-ohl-1.1.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cern-ohl-1.1.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: cern-ohl-1.1
-short_name: CERN Open Hardware License v1.1
-name: CERN Open Hardware License v1.1
-category: Permissive
-owner: CERN
-homepage_url: https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.1
-spdx_license_key: CERN-OHL-1.1
-other_urls:
-  - https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.1
-ignorable_copyrights:
-  - copyright of CERN.
-ignorable_holders:
-  - CERN.
-ignorable_urls:
-  - http://www.ohwr.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>CERN OHL v1.1
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            cern-ohl-1.1
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            CERN Open Hardware License v1.1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            CERN Open Hardware License v1.1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            CERN
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.1" rel="noopener" target="_blank">https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.1</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            CERN-OHL-1.1
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.1" rel="noopener" target="_blank">https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.1</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>copyright of CERN.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>CERN.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.ohwr.org/" rel="noopener" target="_blank">http://www.ohwr.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>CERN OHL v1.1
 
 2011-07-08 - CERN, Geneva, Switzerland
 

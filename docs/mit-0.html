@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,26 +62,88 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit-0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit-0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: mit-0
-short_name: MIT-0-Clause
-name: MIT No Attribution
-category: Permissive
-owner: Amazon Web Services
-homepage_url: https://github.com/awsdocs/aws-cloud9-user-guide/blob/master/LICENSE-SAMPLECODE
-notes: |
-  The former ekioh license has been deprecated in favor of this license. Except
-  for the dangling &#34;, subject to the following conditions:&#34; text, the ekioh
-  license is essentially identical to the mit-0.
-spdx_license_key: MIT-0
-other_spdx_license_keys:
-  - LicenseRef-scancode-ekioh
-other_urls:
-  - https://github.com/aws/mit-0
-  - https://romanrm.net/mit-zero
-  - https://kryogenix.org/code/browser/licence.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a copy of this
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            mit-0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MIT-0-Clause
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            MIT No Attribution
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Amazon Web Services
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/awsdocs/aws-cloud9-user-guide/blob/master/LICENSE-SAMPLECODE" rel="noopener" target="_blank">https://github.com/awsdocs/aws-cloud9-user-guide/blob/master/LICENSE-SAMPLECODE</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            The former ekioh license has been deprecated in favor of this license. Except
+for the dangling &#34;, subject to the following conditions:&#34; text, the ekioh
+license is essentially identical to the mit-0.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            MIT-0
+          
+        </dd>
+      
+        <dt style="">other_spdx_license_keys</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>LicenseRef-scancode-ekioh</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/aws/mit-0" rel="noopener" target="_blank">https://github.com/aws/mit-0</a></li><li><a href="https://romanrm.net/mit-zero" rel="noopener" target="_blank">https://romanrm.net/mit-zero</a></li><li><a href="https://kryogenix.org/code/browser/licence.html" rel="noopener" target="_blank">https://kryogenix.org/code/browser/licence.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a copy of this
 software and associated documentation files (the &#34;Software&#34;), to deal in the Software
 without restriction, including without limitation the rights to use, copy, modify,
 merge, publish, distribute, sublicense, and/or sell copies of the Software, and to

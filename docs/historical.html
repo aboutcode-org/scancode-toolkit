@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,25 +62,94 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/historical.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/historical.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: historical
-short_name: Historical Permission Notice and Disclaimer
-name: Historical Permission Notice and Disclaimer
-category: Permissive
-owner: OSI - Open Source Initiative
-homepage_url: http://www.opensource.org/licenses/historical.php
-notes: |
-  Per SPDX.org, this license is OSI certified. This license has been
-  voluntarily deprecated by its author.
-spdx_license_key: HPND
-text_urls:
-  - http://www.opensource.org/licenses/historical.php
-osi_url: http://www.opensource.org/licenses/historical.php
-other_urls:
-  - http://www.opensource.org/licenses/HPND
-  - https://opensource.org/licenses/HPND
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission to use, copy, modify and distribute this software and its
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            historical
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Historical Permission Notice and Disclaimer
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Historical Permission Notice and Disclaimer
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            OSI - Open Source Initiative
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.opensource.org/licenses/historical.php" rel="noopener" target="_blank">http://www.opensource.org/licenses/historical.php</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per <a href="http://SPDX.org" rel="noopener" target="_blank">SPDX.org</a>, this license is OSI certified. This license has been
+voluntarily deprecated by its author.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            HPND
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.opensource.org/licenses/historical.php" rel="noopener" target="_blank">http://www.opensource.org/licenses/historical.php</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">osi_url</dt>
+        <dd>
+          
+            <a href="http://www.opensource.org/licenses/historical.php" rel="noopener" target="_blank">http://www.opensource.org/licenses/historical.php</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.opensource.org/licenses/HPND" rel="noopener" target="_blank">http://www.opensource.org/licenses/HPND</a></li><li><a href="https://opensource.org/licenses/HPND" rel="noopener" target="_blank">https://opensource.org/licenses/HPND</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission to use, copy, modify and distribute this software and its
 documentation for any purpose and without fee is hereby granted,
 provided that the above copyright notice appear in all copies, and
 that both that copyright notice and this permission notice

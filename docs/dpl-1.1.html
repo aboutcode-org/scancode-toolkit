@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/dpl-1.1.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/dpl-1.1.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: dpl-1.1
-short_name: DPL-1.1
-name: DSTC Public License (DPL) v1.1
-category: Copyleft Limited
-owner: DIFI
-homepage_url: http://begrep.difi.no/SikkerDigitalPost/xsd/xs3p/LICENSE.html
-spdx_license_key: LicenseRef-scancode-dpl-1.1
-other_urls:
-  - https://en.wikipedia.org/wiki/Distributed_Systems_Technology_Centre
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>DSTC Public License (DPL)
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            dpl-1.1
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            DPL-1.1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            DSTC Public License (DPL) v1.1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            DIFI
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://begrep.difi.no/SikkerDigitalPost/xsd/xs3p/LICENSE.html" rel="noopener" target="_blank">http://begrep.difi.no/SikkerDigitalPost/xsd/xs3p/LICENSE.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-dpl-1.1
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://en.wikipedia.org/wiki/Distributed_Systems_Technology_Centre" rel="noopener" target="_blank">https://en.wikipedia.org/wiki/Distributed_Systems_Technology_Centre</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>DSTC Public License (DPL)
 Version 1.1
 
 1. Definitions.

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/verbatim-manual.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/verbatim-manual.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: verbatim-manual
-short_name: Verbatim Copies
-name: Verbatim Copies Permission
-category: Copyleft
-owner: BPF Authors
-notes: the latext2e, verbatim-manual and abstyles are similar licenses
-spdx_license_key: LicenseRef-scancode-verbatim-manual
-text_urls:
-  - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/bpf_helpers_doc.py?h=v5.0-rc4#n202
-minimum_coverage: 70
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is granted to make and distribute verbatim copies of this
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            verbatim-manual
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Verbatim Copies
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Verbatim Copies Permission
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            BPF Authors
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            the latext2e, verbatim-manual and abstyles are similar licenses
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-verbatim-manual
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/bpf_helpers_doc.py?h=v5.0-rc4#n202" rel="noopener" target="_blank">https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/bpf_helpers_doc.py?h=v5.0-rc4#n202</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            70
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
 preserved on all copies.
 

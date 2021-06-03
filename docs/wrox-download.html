@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/wrox-download.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/wrox-download.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: wrox-download
-short_name: Wrox Download Terms and Conditions
-name: Wrox Download Terms and Conditions
-category: Source-available
-owner: Wiley
-homepage_url: http://web.archive.org/web/20030421055623/http://wrox.com/dynamic/books/download-info.aspx?ISBN=1861004257&amp;email=&amp;mode=#terms
-spdx_license_key: LicenseRef-scancode-wrox-download
-minimum_coverage: 30
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>While we try to make it as open as possible, for commercial reasons we do have to assert a few simple Terms and Conditions. By downloading the code you signify that you agree with these. They are:
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            wrox-download
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Wrox Download Terms and Conditions
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Wrox Download Terms and Conditions
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Source-available
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Wiley
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://web.archive.org/web/20030421055623/http://wrox.com/dynamic/books/download-info.aspx?ISBN=1861004257&amp;email=&amp;mode=#terms" rel="noopener" target="_blank">http://web.archive.org/web/20030421055623/http://wrox.com/dynamic/books/download-info.aspx?ISBN=1861004257&amp;email=&amp;mode=#terms</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-wrox-download
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            30
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>While we try to make it as open as possible, for commercial reasons we do have to assert a few simple Terms and Conditions. By downloading the code you signify that you agree with these. They are:
 
 Wrox Press, the authors and distributors cannot be held responsible for any loss, damage or other claim caused by using the executable code or other files.
 

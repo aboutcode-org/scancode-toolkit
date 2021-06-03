@@ -92,14 +92,13 @@ def generate_details(output_path):
     license_details_template = env.get_template("license_details.html")
     for license in licenses.values():
         license_data = license.to_dict()
-        yml = saneyaml.dump(license_data)
         html = license_details_template.render(
             **base_context,
             license=license,
-            license_data=yml,
+            license_data=license_data,
         )
         write_file(output_path, f"{license.key}.html", html)
-        write_file(output_path, f"{license.key}.yml", yml)
+        write_file(output_path, f"{license.key}.yml", saneyaml.dump(license_data))
         write_file(output_path, f"{license.key}.json", json.dumps(license_data))
         write_file(output_path, f"{license.key}.LICENSE", license.text)
 

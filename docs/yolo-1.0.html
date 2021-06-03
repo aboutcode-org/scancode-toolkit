@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/yolo-1.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/yolo-1.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: yolo-1.0
-short_name: YOLO License v1
-name: YOLO License v1
-category: Proprietary Free
-owner: Joseph Redmon
-notes: From https://github.com/ErikMcClure/bad-licenses
-spdx_license_key: LicenseRef-scancode-yolo-1.0
-text_urls:
-  - https://github.com/shizukachan/darknet-nnpack/blob/master/LICENSE.v1
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>                                  YOLO LICENSE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            yolo-1.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            YOLO License v1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            YOLO License v1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Joseph Redmon
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            From <a href="https://github.com/ErikMcClure/bad-licenses" rel="noopener" target="_blank">https://github.com/ErikMcClure/bad-licenses</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-yolo-1.0
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/shizukachan/darknet-nnpack/blob/master/LICENSE.v1" rel="noopener" target="_blank">https://github.com/shizukachan/darknet-nnpack/blob/master/LICENSE.v1</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>                                  YOLO LICENSE
                              Version 1, July 10 2015
 
 THIS SOFTWARE LICENSE IS PROVIDED &#34;ALL CAPS&#34; SO THAT YOU KNOW IT IS SUPER

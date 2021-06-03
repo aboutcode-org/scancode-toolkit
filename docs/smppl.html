@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/smppl.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/smppl.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: smppl
-short_name: SMPPL
-name: Secure Messaging Protocol Public License
-category: Copyleft Limited
-owner: National Security Agency
-homepage_url: https://github.com/dcblake/SMP/blob/master/Documentation/License.txt
-spdx_license_key: SMPPL
-ignorable_copyrights:
-  - Copyright (c) 1997-2002 National Security Agency
-ignorable_authors:
-  - the U.S. Government. BAE Systems
-ignorable_holders:
-  - National Security Agency
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Secure Messaging Protocol (SMP) Libraries [ACL, CML, SFL]
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            smppl
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            SMPPL
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Secure Messaging Protocol Public License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            National Security Agency
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/dcblake/SMP/blob/master/Documentation/License.txt" rel="noopener" target="_blank">https://github.com/dcblake/SMP/blob/master/Documentation/License.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            SMPPL
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1997-2002 National Security Agency</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>the U.S. Government. BAE Systems</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>National Security Agency</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Secure Messaging Protocol (SMP) Libraries [ACL, CML, SFL]
 Distribution Rights
 
 All source code for the SMP is being provided at no cost and with no financial limitations regarding its use and distribution. Organizations can use the SMP without paying any royalties or licensing fees. The SMP was originally developed by the U.S. Government. BAE Systems is enhancing and supporting the SMP under contract to the U.S. Government. The U.S. Government is furnishing the SMP software at no cost to the vendor subject to the conditions of the SMP Public License provided with the SMP software.

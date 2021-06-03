@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bzip2-libbzip-1.0.5.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bzip2-libbzip-1.0.5.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bzip2-libbzip-1.0.5
-is_deprecated: yes
-short_name: bzip2 License
-name: bzip2 License
-category: Permissive
-owner: bzip
-homepage_url: http://bzip.org/1.0.5/bzip2-manual-1.0.5.html
-notes: formerly under spdx_license_key bzip2-1.0.5. See bzip2-libbzip-2010 for replacement
-other_urls:
-  - http://www.bzip.org/
-  - https://sourceware.org/git/?p=bzip2.git;a=blob;f=LICENSE;hb=bzip2-1.0.5
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The bzip2 license
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bzip2-libbzip-1.0.5
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            bzip2 License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            bzip2 License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            bzip
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://bzip.org/1.0.5/bzip2-manual-1.0.5.html" rel="noopener" target="_blank">http://bzip.org/1.0.5/bzip2-manual-1.0.5.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            formerly under spdx_license_key bzip2-1.0.5. See bzip2-libbzip-2010 for replacement
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.bzip.org/" rel="noopener" target="_blank">http://www.bzip.org/</a></li><li><a href="https://sourceware.org/git/?p=bzip2.git;a=blob;f=LICENSE;hb=bzip2-1.0.5" rel="noopener" target="_blank">https://sourceware.org/git/?p=bzip2.git;a=blob;f=LICENSE;hb=bzip2-1.0.5</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The bzip2 license
 Terms
 This program, &#34;bzip2&#34; and associated library &#34;libbzip2&#34;, are 
 copyright (C)  Julian R Seward. All rights reserved.

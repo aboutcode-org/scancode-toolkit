@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/libtool-exception.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/libtool-exception.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: libtool-exception
-is_deprecated: yes
-short_name: Libtool Exception
-name: GNU Libtool Exception
-category: Copyleft Limited
-owner: Free Software Foundation (FSF)
-notes: replaced by libtool-exception-2.0
-is_exception: yes
-other_urls:
-  - http://git.savannah.gnu.org/cgit/libtool.git/tree/m4/libtool.m4
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>As a special exception to the GNU General Public License, if you
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            libtool-exception
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Libtool Exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            GNU Libtool Exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            replaced by libtool-exception-2.0
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://git.savannah.gnu.org/cgit/libtool.git/tree/m4/libtool.m4" rel="noopener" target="_blank">http://git.savannah.gnu.org/cgit/libtool.git/tree/m4/libtool.m4</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>As a special exception to the GNU General Public License, if you
 distribute this file as part of a program or library that is built using
 GNU Libtool, you may include this file under the same distribution terms
 that you use for the rest of that program.</code></pre>

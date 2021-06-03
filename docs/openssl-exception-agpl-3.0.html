@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,46 +62,96 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/openssl-exception-agpl-3.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/openssl-exception-agpl-3.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: openssl-exception-agpl-3.0
-short_name: OpenSSL exception to AGPL 3.0
-name: OpenSSL exception to AGPL 3.0
-category: Copyleft Limited
-owner: MongoDB
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-openssl-exception-agpl-3.0
-standard_notice: |
-  This program is free software: you can redistribute it and/or modify
-  it under the terms of the GNU Affero General Public License as
-  published by the Free Software Foundation, either version 3 of the
-  License, or (at your option) any later version.
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU Affero General Public License for more details.
-  You should have received a copy of the GNU Affero General Public License
-  along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.
-  Also add information on how to contact you by electronic and paper mail.
-  If your software can interact with users remotely through a computer
-  network, you should also make sure that it provides a way for users to get
-  its source. For example, if your program is a web application, its
-  interface could display a &#34;Source&#34; link that leads users to an archive of
-  the code. There are many ways you could offer source, and different
-  solutions will be better for different programs; see section 13 for the
-  specific requirements.
-  As a special exception, the copyright holders give permission to link the
-  code of portions of this program with the OpenSSL library under certain
-  conditions as described in each individual source file and distribute
-  linked combinations including the program with the OpenSSL library. You
-  must comply with the GNU Affero General Public License in all respects for
-  all of the code used other than as permitted herein. If you modify file(s)
-  with this exception, you may extend this exception to your version of the
-  file(s), but you are not obligated to do so. If you do not wish to do so,
-  delete this exception statement from your version. If you delete this
-  exception statement from all source files in the program, then also delete
-  it in the license file.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>As a special exception, the copyright holders give permission to link the
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            openssl-exception-agpl-3.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            OpenSSL exception to AGPL 3.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            OpenSSL exception to AGPL 3.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            MongoDB
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-openssl-exception-agpl-3.0
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see &lt;<a href="http://www.gnu.org/licenses/" rel="noopener" target="_blank">http://www.gnu.org/licenses/</a>&gt;.
+Also add information on how to contact you by electronic and paper mail.
+If your software can interact with users remotely through a computer
+network, you should also make sure that it provides a way for users to get
+its source. For example, if your program is a web application, its
+interface could display a &#34;Source&#34; link that leads users to an archive of
+the code. There are many ways you could offer source, and different
+solutions will be better for different programs; see section 13 for the
+specific requirements.
+As a special exception, the copyright holders give permission to link the
+code of portions of this program with the OpenSSL library under certain
+conditions as described in each individual source file and distribute
+linked combinations including the program with the OpenSSL library. You
+must comply with the GNU Affero General Public License in all respects for
+all of the code used other than as permitted herein. If you modify file(s)
+with this exception, you may extend this exception to your version of the
+file(s), but you are not obligated to do so. If you do not wish to do so,
+delete this exception statement from your version. If you delete this
+exception statement from all source files in the program, then also delete
+it in the license file.
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>As a special exception, the copyright holders give permission to link the
 code of portions of this program with the OpenSSL library under certain
 conditions as described in each individual source file and distribute
 linked combinations including the program with the OpenSSL library. You

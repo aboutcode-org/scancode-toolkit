@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/wordnet.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/wordnet.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: wordnet
-short_name: Wordnet License
-name: Wordnet License
-category: Permissive
-owner: Princeton University
-homepage_url: http://wordnetcode.princeton.edu
-spdx_license_key: LicenseRef-scancode-wordnet
-text_urls:
-  - http://wordnetcode.princeton.edu/3.0/LICENSE
-ignorable_copyrights:
-  - Copyright by Princeton University
-ignorable_holders:
-  - Princeton University
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This software and database is being provided to you, the LICENSEE, by  
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            wordnet
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Wordnet License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Wordnet License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Princeton University
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://wordnetcode.princeton.edu" rel="noopener" target="_blank">http://wordnetcode.princeton.edu</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-wordnet
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://wordnetcode.princeton.edu/3.0/LICENSE" rel="noopener" target="_blank">http://wordnetcode.princeton.edu/3.0/LICENSE</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright by Princeton University</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Princeton University</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This software and database is being provided to you, the LICENSEE, by  
 Princeton University under the following license.  By obtaining, using  
 and/or copying this software and database, you agree that you have  
 read, understood, and will comply with these terms and conditions.:  

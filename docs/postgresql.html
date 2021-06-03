@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,30 +62,110 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/postgresql.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/postgresql.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: postgresql
-short_name: PostgreSQL License
-name: PostgreSQL License
-category: Permissive
-owner: PostgreSQL
-homepage_url: http://www.postgresql.org/about/licence
-notes: Per SPDX.org, this license is OSI certified.
-spdx_license_key: PostgreSQL
-text_urls:
-  - http://www.opensource.org/licenses/postgresql
-  - http://www.postgresql.org/about/licence
-osi_url: http://www.opensource.org/licenses/postgresql
-other_urls:
-  - http://www.opensource.org/licenses/PostgreSQL
-  - https://opensource.org/licenses/PostgreSQL
-ignorable_copyrights:
-  - Portions Copyright (c) 1994, The Regents of the University of California
-  - Portions Copyright (c) The PostgreSQL Global Development Group
-ignorable_holders:
-  - The PostgreSQL Global Development Group
-  - The Regents of the University of California
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>PostgreSQL is released under the PostgreSQL License, a liberal Open Source license, similar to the BSD or MIT licenses.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            postgresql
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            PostgreSQL License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            PostgreSQL License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            PostgreSQL
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.postgresql.org/about/licence" rel="noopener" target="_blank">http://www.postgresql.org/about/licence</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per <a href="http://SPDX.org" rel="noopener" target="_blank">SPDX.org</a>, this license is OSI certified.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            PostgreSQL
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.opensource.org/licenses/postgresql" rel="noopener" target="_blank">http://www.opensource.org/licenses/postgresql</a></li><li><a href="http://www.postgresql.org/about/licence" rel="noopener" target="_blank">http://www.postgresql.org/about/licence</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">osi_url</dt>
+        <dd>
+          
+            <a href="http://www.opensource.org/licenses/postgresql" rel="noopener" target="_blank">http://www.opensource.org/licenses/postgresql</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.opensource.org/licenses/PostgreSQL" rel="noopener" target="_blank">http://www.opensource.org/licenses/PostgreSQL</a></li><li><a href="https://opensource.org/licenses/PostgreSQL" rel="noopener" target="_blank">https://opensource.org/licenses/PostgreSQL</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Portions Copyright (c) 1994, The Regents of the University of California</li><li>Portions Copyright (c) The PostgreSQL Global Development Group</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>The PostgreSQL Global Development Group</li><li>The Regents of the University of California</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>PostgreSQL is released under the PostgreSQL License, a liberal Open Source license, similar to the BSD or MIT licenses.
 
 PostgreSQL Database Management System
 (formerly known as Postgres, then as Postgres95)

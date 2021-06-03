@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,62 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-bsd-no-nuclear.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-bsd-no-nuclear.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: sun-bsd-no-nuclear
-short_name: Sun BSD-Style with Nuclear Restrictions
-name: Sun BSD-Style with Nuclear Restrictions
-category: Free Restricted
-owner: Oracle (Sun)
-spdx_license_key: BSD-3-Clause-No-Nuclear-License
-other_urls:
-  - http://download.oracle.com/otn-pub/java/licenses/bsd.txt?AuthParam=1467140197_43d516ce1776bd08a58235a7785be1cc
-  - https://jogamp.org/git/?p=gluegen.git;a=blob_plain;f=LICENSE.txt
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            sun-bsd-no-nuclear
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Sun BSD-Style with Nuclear Restrictions
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sun BSD-Style with Nuclear Restrictions
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle (Sun)
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            BSD-3-Clause-No-Nuclear-License
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://download.oracle.com/otn-pub/java/licenses/bsd.txt?AuthParam=1467140197_43d516ce1776bd08a58235a7785be1cc" rel="noopener" target="_blank">http://download.oracle.com/otn-pub/java/licenses/bsd.txt?AuthParam=1467140197_43d516ce1776bd08a58235a7785be1cc</a></li><li><a href="https://jogamp.org/git/?p=gluegen.git;a=blob_plain;f=LICENSE.txt" rel="noopener" target="_blank">https://jogamp.org/git/?p=gluegen.git;a=blob_plain;f=LICENSE.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:
 

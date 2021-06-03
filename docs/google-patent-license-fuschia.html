@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,74 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/google-patent-license-fuschia.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/google-patent-license-fuschia.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: google-patent-license-fuschia
-is_deprecated: yes
-short_name: Google Patent License for Fuschia
-name: Google Patent License for Fuschia
-category: Patent License
-owner: Google
-homepage_url: https://github.com/flutter/flutter/blob/master/PATENTS
-notes: there was a typo in the license name and key and this is now replaced by google-patent-license-fuchsia
-faq_url: https://en.wikipedia.org/wiki/Google_Fuchsia
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Additional IP Rights Grant (Patents)
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            google-patent-license-fuschia
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Google Patent License for Fuschia
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Google Patent License for Fuschia
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Patent License
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Google
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/flutter/flutter/blob/master/PATENTS" rel="noopener" target="_blank">https://github.com/flutter/flutter/blob/master/PATENTS</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            there was a typo in the license name and key and this is now replaced by google-patent-license-fuchsia
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="https://en.wikipedia.org/wiki/Google_Fuchsia" rel="noopener" target="_blank">https://en.wikipedia.org/wiki/Google_Fuchsia</a>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Additional IP Rights Grant (Patents)
 &#34;This implementation&#34; means the copyrightable works distributed by
 Google as part of the Fuchsia project.
 Google hereby grants to you a perpetual, worldwide, non-exclusive,

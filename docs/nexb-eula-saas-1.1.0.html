@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/nexb-eula-saas-1.1.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/nexb-eula-saas-1.1.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: nexb-eula-saas-1.1.0
-short_name: nexB EULA for SaaS 1.1.0
-name: nexB EULA for SaaS 1.1.0
-category: Commercial
-owner: nexB
-spdx_license_key: LicenseRef-scancode-nexb-eula-saas-1.1.0
-ignorable_urls:
-  - https://dejacode.zendesk.com/home
-ignorable_emails:
-  - marketing@nexb.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>NEXB INC.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            nexb-eula-saas-1.1.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            nexB EULA for SaaS 1.1.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            nexB EULA for SaaS 1.1.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            nexB
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-nexb-eula-saas-1.1.0
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://dejacode.zendesk.com/home" rel="noopener" target="_blank">https://dejacode.zendesk.com/home</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:marketing@nexb.com">marketing@nexb.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>NEXB INC.
 END USER AGREEMENT FOR SOFTWARE AS A SERVICE
 READ THIS AGREEMENT CAREFULLY.
 

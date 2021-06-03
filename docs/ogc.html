@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ogc.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ogc.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ogc
-short_name: OGC Software Notice
-name: OGC Software Notice
-category: Permissive
-owner: Open Geospatial Consortium
-homepage_url: https://www.ogc.org/ogc/software
-spdx_license_key: LicenseRef-scancode-ogc
-other_urls:
-  - http://www.opengeospatial.org/ogc/legal
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This OGC work (including software, documents, or other related items) is being
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ogc
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            OGC Software Notice
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            OGC Software Notice
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Open Geospatial Consortium
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.ogc.org/ogc/software" rel="noopener" target="_blank">https://www.ogc.org/ogc/software</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ogc
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.opengeospatial.org/ogc/legal" rel="noopener" target="_blank">http://www.opengeospatial.org/ogc/legal</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This OGC work (including software, documents, or other related items) is being
 provided by the copyright holders under the following license. By obtaining,
 using and/or copying this work, you (the licensee) agree that you have read,
 understood, and will comply with the following terms and conditions:

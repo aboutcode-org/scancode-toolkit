@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-dsc.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-dsc.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: x11-dsc
-short_name: X11-Style (DSC Technologies)
-name: X11-Style (DSC Technologies)
-category: Permissive
-owner: Alcatel-Lucent
-spdx_license_key: LicenseRef-scancode-x11-dsc
-minimum_coverage: 90
-ignorable_copyrights:
-  - Copyright 1997 DSC Technologies Corporation
-  - copyrighted by DSC Technologies
-ignorable_holders:
-  - DSC Technologies
-  - DSC Technologies Corporation
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This software is copyrighted by DSC Technologies and private individual
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            x11-dsc
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            X11-Style (DSC Technologies)
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            X11-Style (DSC Technologies)
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Alcatel-Lucent
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-x11-dsc
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            90
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright 1997 DSC Technologies Corporation</li><li>copyrighted by DSC Technologies</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>DSC Technologies</li><li>DSC Technologies Corporation</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This software is copyrighted by DSC Technologies and private individual
 contributors. The copyright holder is specifically listed in the header of each
 file. The following terms apply to all files associated with the software unless
 explicitly disclaimed in individual files by private contributors.

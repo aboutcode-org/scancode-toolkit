@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/paint-net.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/paint-net.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: paint-net
-short_name: Paint.NET License
-name: Paint.NET License
-category: Proprietary Free
-owner: dotPDN
-homepage_url: http://www.getpaint.net/license.html
-spdx_license_key: LicenseRef-scancode-paint-net
-ignorable_urls:
-  - http://www.everaldo.com/crystal
-  - http://www.getpaint.net/donate.html
-  - http://www.gnu.org/copyleft/lesser.html
-  - http://www.oxygen-icons.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Paint.NET is free for use in any environment, including but not necessarily limited to: personal, academic, commercial, government, business, non-profit, and for-profit. &#34;Free&#34; in the preceding sentence means that there is no cost or charge associated with the installation and use of Paint.NET. Donations are always appreciated, of course! http://www.getpaint.net/donate.html 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            paint-net
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Paint.NET License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Paint.NET License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            dotPDN
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.getpaint.net/license.html" rel="noopener" target="_blank">http://www.getpaint.net/license.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-paint-net
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.everaldo.com/crystal" rel="noopener" target="_blank">http://www.everaldo.com/crystal</a></li><li><a href="http://www.getpaint.net/donate.html" rel="noopener" target="_blank">http://www.getpaint.net/donate.html</a></li><li><a href="http://www.gnu.org/copyleft/lesser.html" rel="noopener" target="_blank">http://www.gnu.org/copyleft/lesser.html</a></li><li><a href="http://www.oxygen-icons.org/" rel="noopener" target="_blank">http://www.oxygen-icons.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Paint.NET is free for use in any environment, including but not necessarily limited to: personal, academic, commercial, government, business, non-profit, and for-profit. &#34;Free&#34; in the preceding sentence means that there is no cost or charge associated with the installation and use of Paint.NET. Donations are always appreciated, of course! http://www.getpaint.net/donate.html 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software (the &#34;Software&#34;), to use the Software without restriction, including the rights to use, copy, publish, and distribute the Software, and to permit persons to whom the Software is furnished to do so.
 

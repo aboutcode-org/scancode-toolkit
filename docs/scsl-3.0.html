@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/scsl-3.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/scsl-3.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: scsl-3.0
-short_name: Sun Community Source License 3.0
-name: Sun Community Source License 3.0
-category: Copyleft Limited
-owner: Oracle (Sun)
-spdx_license_key: LicenseRef-scancode-scsl-3.0
-other_urls:
-  - http://www.sun.com/software/jini/licensing/SCSL3_JiniTSA1.html
-ignorable_urls:
-  - http://sun.com/software/communitysource
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Sun Community Source License v3.0
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            scsl-3.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Sun Community Source License 3.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sun Community Source License 3.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle (Sun)
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-scsl-3.0
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.sun.com/software/jini/licensing/SCSL3_JiniTSA1.html" rel="noopener" target="_blank">http://www.sun.com/software/jini/licensing/SCSL3_JiniTSA1.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://sun.com/software/communitysource" rel="noopener" target="_blank">http://sun.com/software/communitysource</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Sun Community Source License v3.0
 					
 II. PURPOSES
 Original Contributor is licensing the Reference Code and Technology Specifications and is permitting implementation of Technology under and subject to this Sun Community Source License (the &#34;License&#34;) to promote research, education, innovation and product development using the Technology.

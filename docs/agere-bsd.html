@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,34 +62,91 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/agere-bsd.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/agere-bsd.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: agere-bsd
-short_name: Agere BSD
-name: Agere Systems BSD Software license
-category: Permissive
-owner: LSI Corporation
-notes: |
-  commonly found in Linux The driver is coverred by the following copyright
-  and software license. ... license text ... The following statement from
-  Agere clarifies the status of the firmware. I would like to confirm that
-  the two drivers; Linux LKM Wireless Driver Source Code, Version 7.18 and
-  Linux LKM Wireless Driver Source Code, Version 7.22 comply with Open Source
-  BSD License. Therefore the source code can be distributed in unmodified or
-  modified form consistent with the terms of the license. The Linux driver
-  architecture was based on two modules, the MSF (Module specific functions)
-  and the HCF (Hardware Control Functions). Included in the HCF is run-time
-  firmware (binary format) which is downloaded into the RAM of the Hermes
-  1/2/2.5 WMAC. This hex coded firmware is not based on any open source
-  software and hence it is not subject to any Open Source License. The
-  firmware was developed by Agere and runs on the DISC processor embedded
-  within the Hermes 1/2/2.5 Wireless MAC devices. Hope this helps. Sincerely,
-  Viren Pathare Intellectual Property Licensing Manager Agere
-spdx_license_key: LicenseRef-scancode-agere-bsd
-other_urls:
-  - https://github.com/mdamt/linux-firmware/blob/bf9f8648fdf1d1d63db471554781f897d219bd62/LICENCE.agere
-minimum_coverage: 80
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>SOFTWARE LICENSE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            agere-bsd
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Agere BSD
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Agere Systems BSD Software license
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            LSI Corporation
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            commonly found in Linux The driver is coverred by the following copyright
+and software license. ... license text ... The following statement from
+Agere clarifies the status of the firmware. I would like to confirm that
+the two drivers; Linux LKM Wireless Driver Source Code, Version 7.18 and
+Linux LKM Wireless Driver Source Code, Version 7.22 comply with Open Source
+BSD License. Therefore the source code can be distributed in unmodified or
+modified form consistent with the terms of the license. The Linux driver
+architecture was based on two modules, the MSF (Module specific functions)
+and the HCF (Hardware Control Functions). Included in the HCF is run-time
+firmware (binary format) which is downloaded into the RAM of the Hermes
+1/2/2.5 WMAC. This hex coded firmware is not based on any open source
+software and hence it is not subject to any Open Source License. The
+firmware was developed by Agere and runs on the DISC processor embedded
+within the Hermes 1/2/2.5 Wireless MAC devices. Hope this helps. Sincerely,
+Viren Pathare Intellectual Property Licensing Manager Agere
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-agere-bsd
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/mdamt/linux-firmware/blob/bf9f8648fdf1d1d63db471554781f897d219bd62/LICENCE.agere" rel="noopener" target="_blank">https://github.com/mdamt/linux-firmware/blob/bf9f8648fdf1d1d63db471554781f897d219bd62/LICENCE.agere</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            80
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>SOFTWARE LICENSE
 
 This software is provided subject to the following terms and conditions,
 which you should read carefully before using the software.  Using this

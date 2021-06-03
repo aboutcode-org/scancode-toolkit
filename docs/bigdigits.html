@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,36 +62,118 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bigdigits.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bigdigits.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bigdigits
-short_name: BigDigits License
-name: BigDigits License
-category: Permissive
-owner: DI Management Services
-homepage_url: http://www.di-mgt.com.au/
-notes: |
-  As of version 2.5 (October 2015) we have re-issued this source code under
-  the Mozilla Public License, v. 2.0. We have no objection whatsoever to
-  developers using this code in commercial software or as part of an open
-  source project provided the MPL licence remains unchanged in our source
-  code modules. For reference, here is the old copyright and licence notice
-  for version 2.4 (April 2013) and earlier.
-spdx_license_key: LicenseRef-scancode-bigdigits
-text_urls:
-  - http://www.di-mgt.com.au/bigdigitsCopyright.txt
-  - https://web-beta.archive.org/web/20151013165906/http://www.di-mgt.com.au/bigdigitsCopyright.txt
-ignorable_copyrights:
-  - copyright (c) 2001-11 D.I. Management Services Pty Limited
-  - copyright (c) 2001-11 by D.I. Management Services Pty Limited &lt;www.di-mgt.com.au&gt;
-ignorable_authors:
-  - David Ireland
-ignorable_holders:
-  - D.I. Management Services Pty Limited
-ignorable_urls:
-  - http://www.di-mgt.com.au/
-  - http://www.di-mgt.com.au/bigdigits.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>BigDigits License 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bigdigits
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            BigDigits License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            BigDigits License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            DI Management Services
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.di-mgt.com.au/" rel="noopener" target="_blank">http://www.di-mgt.com.au/</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            As of version 2.5 (October 2015) we have re-issued this source code under
+the Mozilla Public License, v. 2.0. We have no objection whatsoever to
+developers using this code in commercial software or as part of an open
+source project provided the MPL licence remains unchanged in our source
+code modules. For reference, here is the old copyright and licence notice
+for version 2.4 (April 2013) and earlier.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-bigdigits
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.di-mgt.com.au/bigdigitsCopyright.txt" rel="noopener" target="_blank">http://www.di-mgt.com.au/bigdigitsCopyright.txt</a></li><li><a href="https://web-beta.archive.org/web/20151013165906/http://www.di-mgt.com.au/bigdigitsCopyright.txt" rel="noopener" target="_blank">https://web-beta.archive.org/web/20151013165906/http://www.di-mgt.com.au/bigdigitsCopyright.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>copyright (c) 2001-11 D.I. Management Services Pty Limited</li><li>copyright (c) 2001-11 by D.I. Management Services Pty Limited &lt;<a href="http://www.di-mgt.com.au" rel="noopener" target="_blank">www.di-mgt.com.au</a>&gt;</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>David Ireland</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>D.I. Management Services Pty Limited</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.di-mgt.com.au/" rel="noopener" target="_blank">http://www.di-mgt.com.au/</a></li><li><a href="http://www.di-mgt.com.au/bigdigits.html" rel="noopener" target="_blank">http://www.di-mgt.com.au/bigdigits.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>BigDigits License 
 
 This source code is part of the BIGDIGITS multiple-precision arithmetic
 library Version 2.3 originally written by David Ireland, copyright (c)

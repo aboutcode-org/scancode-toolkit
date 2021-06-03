@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,49 +62,133 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-2.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: gpl-2.0
-short_name: GPL 2.0
-name: GNU General Public License 2.0
-category: Copyleft
-owner: Free Software Foundation (FSF)
-homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
-notes: This is the last version of the GPL text as published by the FSF. This variation was
-  published around about the time of the FSF released the GPL 3 in July 2007. See http://web.archive.org/web/20070716031727/http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
-  It is found live here https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt and here https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-  It refers to the Franklin Street address and to the GNU Lesser General Public License everywhere
-  both in the text and HTML formats. There are many other variations of the GPL 2.0 text that
-  were published over the years by the FSF and the gnu.org website. You can find the detailed
-  history of this text at https://github.com/pombredanne/gpl-history and each variant is available
-  as a license detection rule. Per SPDX.org, this license was released June 1991 This license
-  is OSI certified.
-spdx_license_key: GPL-2.0-only
-other_spdx_license_keys:
-  - GPL-2.0
-  - GPL 2.0
-osi_license_key: GPL-2.0
-text_urls:
-  - http://www.gnu.org/licenses/gpl-2.0.txt
-  - http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
-osi_url: http://opensource.org/licenses/gpl-license.php
-faq_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html
-other_urls:
-  - http://creativecommons.org/choose/cc-gpl
-  - http://creativecommons.org/images/public/cc-GPL-a.png
-  - http://creativecommons.org/licenses/GPL/2.0/
-  - http://creativecommons.org/licenses/GPL/2.0/legalcode.pt
-  - http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-  - http://www.opensource.org/licenses/GPL-2.0
-  - https://opensource.org/licenses/GPL-2.0
-  - https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-ignorable_copyrights:
-  - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
-  - copyrighted by the Free Software Foundation
-ignorable_holders:
-  - Free Software Foundation, Inc.
-  - the Free Software Foundation
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>                    GNU GENERAL PUBLIC LICENSE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            gpl-2.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            GPL 2.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            GNU General Public License 2.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.gnu.org/licenses/gpl-2.0.html" rel="noopener" target="_blank">http://www.gnu.org/licenses/gpl-2.0.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This is the last version of the GPL text as published by the FSF. This variation was published around about the time of the FSF released the GPL 3 in July 2007. See <a href="http://web.archive.org/web/20070716031727/http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt" rel="noopener" target="_blank">http://web.archive.org/web/20070716031727/http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a> It is found live here <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt" rel="noopener" target="_blank">https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a> and here <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" rel="noopener" target="_blank">https://www.gnu.org/licenses/old-licenses/gpl-2.0.html</a> It refers to the Franklin Street address and to the GNU Lesser General Public License everywhere both in the text and HTML formats. There are many other variations of the GPL 2.0 text that were published over the years by the FSF and the <a href="http://gnu.org" rel="noopener" target="_blank">gnu.org</a> website. You can find the detailed history of this text at <a href="https://github.com/pombredanne/gpl-history" rel="noopener" target="_blank">https://github.com/pombredanne/gpl-history</a> and each variant is available as a license detection rule. Per <a href="http://SPDX.org" rel="noopener" target="_blank">SPDX.org</a>, this license was released June 1991 This license is OSI certified.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            GPL-2.0-only
+          
+        </dd>
+      
+        <dt style="">other_spdx_license_keys</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>GPL-2.0</li><li>GPL 2.0</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">osi_license_key</dt>
+        <dd>
+          
+            GPL-2.0
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/gpl-2.0.txt" rel="noopener" target="_blank">http://www.gnu.org/licenses/gpl-2.0.txt</a></li><li><a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt" rel="noopener" target="_blank">http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">osi_url</dt>
+        <dd>
+          
+            <a href="http://opensource.org/licenses/gpl-license.php" rel="noopener" target="_blank">http://opensource.org/licenses/gpl-license.php</a>
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html" rel="noopener" target="_blank">http://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://creativecommons.org/choose/cc-gpl" rel="noopener" target="_blank">http://creativecommons.org/choose/cc-gpl</a></li><li><a href="http://creativecommons.org/images/public/cc-GPL-a.png" rel="noopener" target="_blank">http://creativecommons.org/images/public/cc-GPL-a.png</a></li><li><a href="http://creativecommons.org/licenses/GPL/2.0/" rel="noopener" target="_blank">http://creativecommons.org/licenses/GPL/2.0/</a></li><li><a href="http://creativecommons.org/licenses/GPL/2.0/legalcode.pt" rel="noopener" target="_blank">http://creativecommons.org/licenses/GPL/2.0/legalcode.pt</a></li><li><a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html" rel="noopener" target="_blank">http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html</a></li><li><a href="http://www.opensource.org/licenses/GPL-2.0" rel="noopener" target="_blank">http://www.opensource.org/licenses/GPL-2.0</a></li><li><a href="https://opensource.org/licenses/GPL-2.0" rel="noopener" target="_blank">https://opensource.org/licenses/GPL-2.0</a></li><li><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html" rel="noopener" target="_blank">https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1989, 1991 Free Software Foundation, Inc.</li><li>copyrighted by the Free Software Foundation</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Free Software Foundation, Inc.</li><li>the Free Software Foundation</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>                    GNU GENERAL PUBLIC LICENSE
                        Version 2, June 1991
 
  Copyright (C) 1989, 1991 Free Software Foundation, Inc.,

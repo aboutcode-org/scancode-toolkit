@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/occt-pl.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/occt-pl.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: occt-pl
-short_name: OCCT-PL
-name: Open CASCADE Technology Public License
-category: Copyleft Limited
-owner: Open Cascade
-homepage_url: http://www.opencascade.com/content/occt-public-license
-spdx_license_key: OCCT-PL
-ignorable_copyrights:
-  - copyright (c) OPEN CASCADE SAS, 2001
-  - copyright (c) Open CASCADE SAS, 2001
-ignorable_holders:
-  - OPEN CASCADE SAS
-  - Open CASCADE SAS
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Open CASCADE Technology Public License 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            occt-pl
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            OCCT-PL
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Open CASCADE Technology Public License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Open Cascade
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.opencascade.com/content/occt-public-license" rel="noopener" target="_blank">http://www.opencascade.com/content/occt-public-license</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            OCCT-PL
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>copyright (c) OPEN CASCADE SAS, 2001</li><li>copyright (c) Open CASCADE SAS, 2001</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>OPEN CASCADE SAS</li><li>Open CASCADE SAS</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Open CASCADE Technology Public License 
 Version 6.6, April 2013
 OPEN CASCADE releases and makes publicly available the source code of the software Open CASCADE Technology to the free software development community under the terms and conditions of this license.
 

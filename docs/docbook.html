@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,81 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/docbook.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/docbook.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: docbook
-short_name: Docbook License
-name: Docbook License
-category: Permissive
-owner: DocBook Project
-homepage_url: https://github.com/docbook/xslt10-stylesheets/blob/282955cda01b7ace132a734dca0a241cfd736d91/xsl/COPYING
-notes: this is an MIT/X11 style license with an extra advertizing clause
-spdx_license_key: LicenseRef-scancode-docbook
-faq_url: https://web-beta.archive.org/web/20160118144348/http://wiki.docbook.org/DocBookLicense
-minimum_coverage: 80
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            docbook
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Docbook License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Docbook License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            DocBook Project
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/docbook/xslt10-stylesheets/blob/282955cda01b7ace132a734dca0a241cfd736d91/xsl/COPYING" rel="noopener" target="_blank">https://github.com/docbook/xslt10-stylesheets/blob/282955cda01b7ace132a734dca0a241cfd736d91/xsl/COPYING</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this is an MIT/X11 style license with an extra advertizing clause
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-docbook
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="https://web-beta.archive.org/web/20160118144348/http://wiki.docbook.org/DocBookLicense" rel="noopener" target="_blank">https://web-beta.archive.org/web/20160118144348/http://wiki.docbook.org/DocBookLicense</a>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            80
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
 files (the ``Software&#39;&#39;), to deal in the Software without
 restriction, including without limitation the rights to use,

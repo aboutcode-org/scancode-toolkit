@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,34 +62,84 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/usrobotics-permissive.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/usrobotics-permissive.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: usrobotics-permissive
-short_name: USRobotics Permissive License
-name: USRobotics Permissive License
-category: Permissive
-owner: USRobotics
-homepage_url: http://web.mit.edu/kolya/.f/root/athena.mit.edu/net/project/radius/3.6B/src/resources.c
-spdx_license_key: LicenseRef-scancode-usrobotics-permissive
-standard_notice: |
-  /*
-  *
-  * Copyright (c) 1996 U.S. Robotics, Access Corp.
-  * All rights reserved.
-  *
-  * Permission to copy, display, distribute and make derivative works
-  * from this material in whole or in part for any purpose is granted
-  * provided that the above copyright notice and this paragraph are
-  * duplicated in all copies. THIS SOFTWARE IS PROVIDED &#34;AS IS&#34; AND
-  * WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES INCLUDING, WITHOUT
-  * LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-  * FOR A PARTICULAR PURPOSE.
-  *
-  * If providing code not subject to a copyright please indicate that the
-  * code has been dedicated to the public.
-  *
-  */
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission to copy, display, distribute and make derivative works
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            usrobotics-permissive
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            USRobotics Permissive License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            USRobotics Permissive License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            USRobotics
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://web.mit.edu/kolya/.f/root/athena.mit.edu/net/project/radius/3.6B/src/resources.c" rel="noopener" target="_blank">http://web.mit.edu/kolya/.f/root/athena.mit.edu/net/project/radius/3.6B/src/resources.c</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-usrobotics-permissive
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            /*
+*
+* Copyright (c) 1996 U.S. Robotics, Access Corp.
+* All rights reserved.
+*
+* Permission to copy, display, distribute and make derivative works
+* from this material in whole or in part for any purpose is granted
+* provided that the above copyright notice and this paragraph are
+* duplicated in all copies. THIS SOFTWARE IS PROVIDED &#34;AS IS&#34; AND
+* WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES INCLUDING, WITHOUT
+* LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+* FOR A PARTICULAR PURPOSE.
+*
+* If providing code not subject to a copyright please indicate that the
+* code has been dedicated to the public.
+*
+*/
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission to copy, display, distribute and make derivative works
 from this material in whole or in part for any purpose is granted
 provided that the above copyright notice and this paragraph are
 duplicated in all copies.  THIS SOFTWARE IS PROVIDED &#34;AS IS&#34; AND

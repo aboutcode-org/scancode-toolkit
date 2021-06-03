@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/haskell-report.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/haskell-report.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: haskell-report
-short_name: Haskell Report License
-name: Haskell Language Report License
-category: Permissive
-owner: Simon Marlow
-homepage_url: https://fedoraproject.org/wiki/Licensing/Haskell_Language_Report_License
-spdx_license_key: HaskellReport
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The authors intend this Report to belong to the entire Haskell community, and
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            haskell-report
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Haskell Report License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Haskell Language Report License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Simon Marlow
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing/Haskell_Language_Report_License" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Haskell_Language_Report_License</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            HaskellReport
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The authors intend this Report to belong to the entire Haskell community, and
 so we grant permission to copy and distribute it for any purpose, provided that
 it is reproduced in its entirety, including this Notice.  Modified versions of
 this Report may also be copied and distributed for any purpose, provided that

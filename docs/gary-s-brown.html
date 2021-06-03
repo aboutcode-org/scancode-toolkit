@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gary-s-brown.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gary-s-brown.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: gary-s-brown
-short_name: Gary S. Brown License
-name: Gary S. Brown License
-category: Permissive
-owner: Gary S. Brown
-spdx_license_key: LicenseRef-scancode-gary-s-brown
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>You may use this program, or code or tables extracted from it, as desired
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            gary-s-brown
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Gary S. Brown License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Gary S. Brown License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Gary S. Brown
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-gary-s-brown
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>You may use this program, or code or tables extracted from it, as desired
 without restriction </code></pre>
   </div>
 

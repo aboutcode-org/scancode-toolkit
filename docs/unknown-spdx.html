@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/unknown-spdx.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/unknown-spdx.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: unknown-spdx
-short_name: unknown SPDX
-name: Unknown SPDX license detected but not recognized
-category: Unstated License
-owner: Unspecified
-notes: This is something that clearly ressembles a license in an SPDX license expression but
-  is not conclusively an SPDX license ID.
-spdx_license_key: LicenseRef-scancode-unknown-spdx
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code></code></pre>
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            unknown-spdx
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            unknown SPDX
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Unknown SPDX license detected but not recognized
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Unstated License
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This is something that clearly ressembles a license in an SPDX license expression but is not conclusively an SPDX license ID.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-unknown-spdx
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code></code></pre>
   </div>
 
     <div class="container">

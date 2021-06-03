@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/rsa-md2.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/rsa-md2.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: rsa-md2
-short_name: RSA-MD2 License
-name: RSA Data Security MD2
-category: Free Restricted
-owner: RSA (the Security Division of EMC)
-spdx_license_key: LicenseRef-scancode-rsa-md2
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>License to copy and use this software is granted for non-commercial Internet Privacy-Enhanced Mail provided that it is identified as the &#34;RSA Data Security, Inc. MD2 Message Digest Algorithm&#34; in all material mentioning or referencing this software or this function.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            rsa-md2
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            RSA-MD2 License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            RSA Data Security MD2
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            RSA (the Security Division of EMC)
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-rsa-md2
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>License to copy and use this software is granted for non-commercial Internet Privacy-Enhanced Mail provided that it is identified as the &#34;RSA Data Security, Inc. MD2 Message Digest Algorithm&#34; in all material mentioning or referencing this software or this function.
 
 RSA Data Security, Inc. makes no representations concerning either the merchantability of this software or the suitability of this software for any particular purpose. It is provided &#34;as is&#34; without express or implied warranty of any kind.
 

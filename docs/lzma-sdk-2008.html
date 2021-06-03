@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lzma-sdk-2008.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lzma-sdk-2008.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: lzma-sdk-2008
-short_name: LZMA SDK 2008
-name: LZMA SDK 2008
-category: Copyleft Limited
-owner: Igor Pavlov
-spdx_license_key: LicenseRef-scancode-lzma-sdk-2008
-ignorable_authors:
-  - Igor Pavlov
-ignorable_urls:
-  - http://www.gnu.org/
-  - http://www.opensource.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>LZMA SDK provides the documentation, samples, header files, libraries, 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            lzma-sdk-2008
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LZMA SDK 2008
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            LZMA SDK 2008
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Igor Pavlov
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-lzma-sdk-2008
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Igor Pavlov</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/" rel="noopener" target="_blank">http://www.gnu.org/</a></li><li><a href="http://www.opensource.org/" rel="noopener" target="_blank">http://www.opensource.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>LZMA SDK provides the documentation, samples, header files, libraries, 
 and tools you need to develop applications that use LZMA compression.
 
 LICENSE

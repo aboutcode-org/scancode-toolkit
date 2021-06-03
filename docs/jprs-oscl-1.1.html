@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,27 +62,103 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jprs-oscl-1.1.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jprs-oscl-1.1.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: jprs-oscl-1.1
-short_name: JPRS OSCL 1.1
-name: JPRS Open Source Code License v1.1
-category: Free Restricted
-owner: JPRS
-homepage_url: https://jprs.co.jp/idn/idnkit2-OSCL.txt
-spdx_license_key: LicenseRef-scancode-jprs-oscl-1.1
-text_urls:
-  - https://jprs.co.jp/idn/idnkit2-OSCL.txt
-minimum_coverage: 70
-ignorable_copyrights:
-  - Copyright (c) 2000-2002 Japan Network Information Center
-  - Copyright (c) 2010-2012 Japan Registry Services Co., Ltd.
-ignorable_holders:
-  - Japan Network Information Center
-  - Japan Registry Services Co., Ltd.
-ignorable_urls:
-  - http://jprs.co.jp/idn/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>                          TERMS AND CONDITIONS
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            jprs-oscl-1.1
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            JPRS OSCL 1.1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            JPRS Open Source Code License v1.1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            JPRS
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://jprs.co.jp/idn/idnkit2-OSCL.txt" rel="noopener" target="_blank">https://jprs.co.jp/idn/idnkit2-OSCL.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-jprs-oscl-1.1
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://jprs.co.jp/idn/idnkit2-OSCL.txt" rel="noopener" target="_blank">https://jprs.co.jp/idn/idnkit2-OSCL.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            70
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2000-2002 Japan Network Information Center</li><li>Copyright (c) 2010-2012 Japan Registry Services Co., Ltd.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Japan Network Information Center</li><li>Japan Registry Services Co., Ltd.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://jprs.co.jp/idn/" rel="noopener" target="_blank">http://jprs.co.jp/idn/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>                          TERMS AND CONDITIONS
                                   FOR
                         OPEN SOURCE CODE LICENSE
                               Version 1.1

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/libsrv-1.0.2.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/libsrv-1.0.2.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: libsrv-1.0.2
-short_name: libsrv License v1.0.2
-name: libsrv License v1.0.2
-category: Permissive
-owner: libsrv project
-homepage_url: https://sourceforge.net/projects/libsrv/files/libsrv/RELEASE_1_0_2/
-spdx_license_key: LicenseRef-scancode-libsrv-1.0.2
-standard_notice: |
-  This software is copyrighted (c) 2002 Rick van Rein, the Netherlands.
-  OpenFortress encourages the release of this code by employee Rick van Rein.
-ignorable_authors:
-  - Rick van Rein and other contributors
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            libsrv-1.0.2
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            libsrv License v1.0.2
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            libsrv License v1.0.2
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            libsrv project
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://sourceforge.net/projects/libsrv/files/libsrv/RELEASE_1_0_2/" rel="noopener" target="_blank">https://sourceforge.net/projects/libsrv/files/libsrv/RELEASE_1_0_2/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-libsrv-1.0.2
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            This software is copyrighted (c) 2002 Rick van Rein, the Netherlands.
+OpenFortress encourages the release of this code by employee Rick van Rein.
+
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Rick van Rein and other contributors</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
 modification, are permitted for any legal purpose, provided that the following
 conditions are met:
  * Redistributions of source code and/or documentation must retain the above

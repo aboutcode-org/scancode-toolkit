@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,77 +62,133 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/merit-network-derivative.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/merit-network-derivative.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: merit-network-derivative
-short_name: Merit Network Derivative Works License
-name: Merit Network Derivative Works License
-category: Copyleft
-owner: Merit Network
-homepage_url: http://web.mit.edu/kolya/.f/root/athena.mit.edu/net/project/radius/3.6B/src/resources.c
-spdx_license_key: LicenseRef-scancode-merit-network-derivative
-standard_notice: |
-  /*
-  * Copyright [C] The Regents of the University of Michigan and Merit
-  Network,
-  * Inc. 1992, 1993, 1994, 1995, 1996, 1997, 1998 All Rights Reserved
-  *
-  * Permission to use, copy, and modify this software and its documentation
-  * for any purpose and without fee is hereby granted, provided:
-  *
-  * 1) that the above copyright notice and this permission notice appear in
-  all
-  * copies of the software and derivative works or modified versions thereof,
-  *
-  * 2) that both the copyright notice and this permission and disclaimer
-  notice
-  * appear in all supporting documentation, and
-  *
-  * 3) that all derivative works made from this material are returned to the
-  * Regents of the University of Michigan and Merit Network, Inc. with
-  * permission to copy, to display, to distribute, and to make derivative
-  * works from the provided material in whole or in part for any purpose.
-  *
-  * Users of this code are requested to notify Merit Network, Inc. of such
-  use
-  * by sending email to aaa-admin@merit.edu
-  *
-  * Please also use aaa-admin@merit.edu to inform Merit Network, Inc of any
-  * derivative works.
-  *
-  * Distribution of this software or derivative works or the associated
-  * documentation is not allowed without an additional license.
-  *
-  * Licenses for other uses are available on an individually negotiated
-  * basis. Contact aaa-license@merit.edu for more information.
-  *
-  * THIS SOFTWARE IS PROVIDED &#34;AS IS&#34; WITHOUT WARRANTY OF ANY KIND, EITHER
-  * EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF
-  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE REGENTS OF THE
-  * UNIVERSITY OF MICHIGAN AND MERIT NETWORK, INC. DO NOT WARRANT THAT THE
-  * FUNCTIONS CONTAINED IN THE SOFTWARE WILL MEET LICENSEE&#39;S REQUIREMENTS OR
-  * THAT OPERATION WILL BE UNINTERRUPTED OR ERROR FREE. The Regents of the
-  * University of Michigan and Merit Network, Inc. shall not be liable for
-  any
-  * special, indirect, incidental or consequential damages with respect to
-  any
-  * claim by Licensee or any third party arising from use of the software.
-  *
-  * Merit AAA Server Support
-  * Merit Network, Inc.
-  * 4251 Plymouth Road, Suite C.
-  * Ann Arbor, Michigan, USA 48105-2785
-  *
-  * attn: John Vollbrecht
-  * voice: 734-764-9430
-  * fax: 734-647-3185
-  * email: aaa-admin@merit.edu
-  *
-  */
-ignorable_emails:
-  - aaa-admin@merit.edu
-  - aaa-license@merit.edu
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission to use, copy, and modify this software and its documentation 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            merit-network-derivative
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Merit Network Derivative Works License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Merit Network Derivative Works License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Merit Network
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://web.mit.edu/kolya/.f/root/athena.mit.edu/net/project/radius/3.6B/src/resources.c" rel="noopener" target="_blank">http://web.mit.edu/kolya/.f/root/athena.mit.edu/net/project/radius/3.6B/src/resources.c</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-merit-network-derivative
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            /*
+* Copyright [C] The Regents of the University of Michigan and Merit
+Network,
+* Inc. 1992, 1993, 1994, 1995, 1996, 1997, 1998 All Rights Reserved
+*
+* Permission to use, copy, and modify this software and its documentation
+* for any purpose and without fee is hereby granted, provided:
+*
+* 1) that the above copyright notice and this permission notice appear in
+all
+* copies of the software and derivative works or modified versions thereof,
+*
+* 2) that both the copyright notice and this permission and disclaimer
+notice
+* appear in all supporting documentation, and
+*
+* 3) that all derivative works made from this material are returned to the
+* Regents of the University of Michigan and Merit Network, Inc. with
+* permission to copy, to display, to distribute, and to make derivative
+* works from the provided material in whole or in part for any purpose.
+*
+* Users of this code are requested to notify Merit Network, Inc. of such
+use
+* by sending email to <a href="mailto:aaa-admin@merit.edu">aaa-admin@merit.edu</a>
+*
+* Please also use <a href="mailto:aaa-admin@merit.edu">aaa-admin@merit.edu</a> to inform Merit Network, Inc of any
+* derivative works.
+*
+* Distribution of this software or derivative works or the associated
+* documentation is not allowed without an additional license.
+*
+* Licenses for other uses are available on an individually negotiated
+* basis. Contact <a href="mailto:aaa-license@merit.edu">aaa-license@merit.edu</a> for more information.
+*
+* THIS SOFTWARE IS PROVIDED &#34;AS IS&#34; WITHOUT WARRANTY OF ANY KIND, EITHER
+* EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF
+* MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE REGENTS OF THE
+* UNIVERSITY OF MICHIGAN AND MERIT NETWORK, INC. DO NOT WARRANT THAT THE
+* FUNCTIONS CONTAINED IN THE SOFTWARE WILL MEET LICENSEE&#39;S REQUIREMENTS OR
+* THAT OPERATION WILL BE UNINTERRUPTED OR ERROR FREE. The Regents of the
+* University of Michigan and Merit Network, Inc. shall not be liable for
+any
+* special, indirect, incidental or consequential damages with respect to
+any
+* claim by Licensee or any third party arising from use of the software.
+*
+* Merit AAA Server Support
+* Merit Network, Inc.
+* 4251 Plymouth Road, Suite C.
+* Ann Arbor, Michigan, USA 48105-2785
+*
+* attn: John Vollbrecht
+* voice: 734-764-9430
+* fax: 734-647-3185
+* email: <a href="mailto:aaa-admin@merit.edu">aaa-admin@merit.edu</a>
+*
+*/
+
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:aaa-admin@merit.edu">aaa-admin@merit.edu</a></li><li><a href="mailto:aaa-license@merit.edu">aaa-license@merit.edu</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission to use, copy, and modify this software and its documentation 
 for any purpose and without fee is hereby granted, provided: 
 
 1) that the above copyright notice and this permission notice appear in all

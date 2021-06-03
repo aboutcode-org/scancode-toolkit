@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/classpath-exception-2.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/classpath-exception-2.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: classpath-exception-2.0
-short_name: Classpath exception to GPL 2.0 or later
-name: Classpath exception to GPL 2.0 or later
-category: Copyleft Limited
-owner: Free Software Foundation (FSF)
-homepage_url: http://www.gnu.org/software/classpath/
-is_exception: yes
-spdx_license_key: Classpath-exception-2.0
-text_urls:
-  - http://www.gnu.org/software/classpath/license.html
-other_urls:
-  - http://en.wikipedia.org/wiki/GPL_linking_exception
-  - https://fedoraproject.org/wiki/Licensing/GPL_Classpath_Exception
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Linking this library statically or dynamically with other modules is making a
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            classpath-exception-2.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Classpath exception to GPL 2.0 or later
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Classpath exception to GPL 2.0 or later
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.gnu.org/software/classpath/" rel="noopener" target="_blank">http://www.gnu.org/software/classpath/</a>
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Classpath-exception-2.0
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/software/classpath/license.html" rel="noopener" target="_blank">http://www.gnu.org/software/classpath/license.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://en.wikipedia.org/wiki/GPL_linking_exception" rel="noopener" target="_blank">http://en.wikipedia.org/wiki/GPL_linking_exception</a></li><li><a href="https://fedoraproject.org/wiki/Licensing/GPL_Classpath_Exception" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/GPL_Classpath_Exception</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Linking this library statically or dynamically with other modules is making a
 combined work based on this library. Thus, the terms and conditions of the GNU
 General Public License cover the whole combination.
 

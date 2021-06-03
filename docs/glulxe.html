@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/glulxe.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/glulxe.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: glulxe
-short_name: Glulxe License
-name: Glulxe License
-category: Permissive
-owner: Andrew Plotkin
-homepage_url: https://fedoraproject.org/wiki/Licensing/Glulxe
-spdx_license_key: Glulxe
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>You may copy and distribute it freely, by any means and under any conditions,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            glulxe
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Glulxe License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Glulxe License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Andrew Plotkin
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing/Glulxe" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Glulxe</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Glulxe
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>You may copy and distribute it freely, by any means and under any conditions,
 as long as the code and documentation is not changed. You may also incorporate
 this code into your own program and distribute that, or modify this code and
 use and distribute the modified version, as long as you retain a notice in your

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,27 +62,97 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/saxpath.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/saxpath.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: saxpath
-short_name: Saxpath License
-name: Saxpath License
-category: Permissive
-owner: Codehaus
-homepage_url: https://fedoraproject.org/wiki/Licensing/Saxpath_License
-notes: |
-  Per Fedora, this is a slightly modified version of Apache 1.1. The
-  documentation requirement in Apache 1.1 has been weakened to a suggestion,
-  but clause 4 still makes this license Free but GPL-incompatible.
-spdx_license_key: Saxpath
-ignorable_authors:
-  - the SAXPath Project (http://www.saxpath.org/)
-ignorable_urls:
-  - http://www.saxpath.org/
-ignorable_emails:
-  - license@saxpath.org
-  - pm@saxpath.org
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            saxpath
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Saxpath License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Saxpath License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Codehaus
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing/Saxpath_License" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Saxpath_License</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per Fedora, this is a slightly modified version of Apache 1.1. The
+documentation requirement in Apache 1.1 has been weakened to a suggestion,
+but clause 4 still makes this license Free but GPL-incompatible.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Saxpath
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>the SAXPath Project (<a href="http://www.saxpath.org/" rel="noopener" target="_blank">http://www.saxpath.org/</a>)</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.saxpath.org/" rel="noopener" target="_blank">http://www.saxpath.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:license@saxpath.org">license@saxpath.org</a></li><li><a href="mailto:pm@saxpath.org">pm@saxpath.org</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
 re permitted provided that the following conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this

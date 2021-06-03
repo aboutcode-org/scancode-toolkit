@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-firmware.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-firmware.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: intel-firmware
-short_name: Intel Firmware License
-name: Intel Firmware License
-category: Proprietary Free
-owner: Intel Corporation
-homepage_url: https://github.com/coreos/portage-stable/blob/master/licenses/ipw2200-fw
-spdx_license_key: LicenseRef-scancode-intel-firmware
-text_urls:
-  - http://www.redhat.com/licenses/thirdparty/intel_ipw2100.html
-other_urls:
-  - ftp://ftp.supermicro.com/CDR-X9_1.30_for_Intel_X9_platform/Intel/ME/INTEL_SOFTWARE_LICENSE_AGREEMENT.pdf
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>TERMS AND CONDITIONS
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            intel-firmware
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Intel Firmware License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Intel Firmware License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Intel Corporation
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/coreos/portage-stable/blob/master/licenses/ipw2200-fw" rel="noopener" target="_blank">https://github.com/coreos/portage-stable/blob/master/licenses/ipw2200-fw</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-intel-firmware
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.redhat.com/licenses/thirdparty/intel_ipw2100.html" rel="noopener" target="_blank">http://www.redhat.com/licenses/thirdparty/intel_ipw2100.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>ftp://ftp.supermicro.com/CDR-X9_1.30_for_Intel_X9_platform/Intel/ME/INTEL_SOFTWARE_LICENSE_AGREEMENT.pdf</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>TERMS AND CONDITIONS
     IMPORTANT - PLEASE READ BEFORE INSTALLING OR USING THIS INTEL(C) SOFTWARE
 
 Do not use or load this firmware (the &#34;Software&#34;) until you have carefully read

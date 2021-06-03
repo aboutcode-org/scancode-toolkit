@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,94 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/elib-gpl.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/elib-gpl.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: elib-gpl
-short_name: GPL-Elib
-name: GNU Elib General Public License
-category: Copyleft
-owner: Free Software Foundation (FSF)
-homepage_url: http://www.math.utah.edu/docs/info/elib_1.html
-spdx_license_key: LicenseRef-scancode-elib-gpl
-text_urls:
-  - http://www.math.utah.edu/docs/info/elib_1.html#SEC1
-faq_url: http://www.math.utah.edu/docs/info/elib_3.html
-ignorable_copyrights:
-  - Copyright (c) 1992 Free Software Foundation
-ignorable_holders:
-  - Free Software Foundation
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>GNU ELIB GENERAL PUBLIC LICENSE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            elib-gpl
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            GPL-Elib
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            GNU Elib General Public License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.math.utah.edu/docs/info/elib_1.html" rel="noopener" target="_blank">http://www.math.utah.edu/docs/info/elib_1.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-elib-gpl
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.math.utah.edu/docs/info/elib_1.html#SEC1" rel="noopener" target="_blank">http://www.math.utah.edu/docs/info/elib_1.html#SEC1</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://www.math.utah.edu/docs/info/elib_3.html" rel="noopener" target="_blank">http://www.math.utah.edu/docs/info/elib_3.html</a>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1992 Free Software Foundation</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Free Software Foundation</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>GNU ELIB GENERAL PUBLIC LICENSE
 
 The license agreements of most software companies keep you at the mercy of those companies. By contrast, our general public license is intended to give everyone the right to share GNU Elib. To make sure that you get the rights we want you to have, we need to make restrictions that forbid anyone to deny you these rights or to ask you to surrender the rights. Hence this license agreement.
 

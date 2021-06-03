@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/httpget.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/httpget.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: httpget
-short_name: httpget notice and disclaimer
-name: httpget notice and disclaimer
-category: Permissive
-owner: Unspecified
-homepage_url: http://www.softorchestra.com/downloads/
-notes: |
-  This license is an historical permission with a simplified warranty
-  disclaimer as found in the libpbm license.
-spdx_license_key: LicenseRef-scancode-httpget
-text_urls:
-  - https://github.com/BackupTheBerlios/oolite-linux-svn/blob/4ae1a88fd7bfaae3918d48170710ccfaf252e3d5/branches/DynamicOolite/deps/src/libhttp-1.1/httpget.c
-minimum_coverage: 70
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The right to use, modify and redistribute this code is allowed
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            httpget
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            httpget notice and disclaimer
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            httpget notice and disclaimer
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.softorchestra.com/downloads/" rel="noopener" target="_blank">http://www.softorchestra.com/downloads/</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This license is an historical permission with a simplified warranty
+disclaimer as found in the libpbm license.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-httpget
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/BackupTheBerlios/oolite-linux-svn/blob/4ae1a88fd7bfaae3918d48170710ccfaf252e3d5/branches/DynamicOolite/deps/src/libhttp-1.1/httpget.c" rel="noopener" target="_blank">https://github.com/BackupTheBerlios/oolite-linux-svn/blob/4ae1a88fd7bfaae3918d48170710ccfaf252e3d5/branches/DynamicOolite/deps/src/libhttp-1.1/httpget.c</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            70
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The right to use, modify and redistribute this code is allowed
 provided the above copyright notice and the below disclaimer appear
 on all copies.
 This file is provided AS IS with no warranties of any kind.  The author

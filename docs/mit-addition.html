@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit-addition.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit-addition.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: mit-addition
-short_name: MIT Addition License
-name: MIT Addition License
-category: Permissive
-owner: Tom Wu
-homepage_url: http://www-cs-students.stanford.edu/~tjw/jsbn/LICENSE
-spdx_license_key: LicenseRef-scancode-mit-addition
-other_urls:
-  - http://www-cs-students.stanford.edu/~tjw/jsbn/
-minimum_coverage: 90
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            mit-addition
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MIT Addition License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            MIT Addition License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Tom Wu
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www-cs-students.stanford.edu/~tjw/jsbn/LICENSE" rel="noopener" target="_blank">http://www-cs-students.stanford.edu/~tjw/jsbn/LICENSE</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-mit-addition
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www-cs-students.stanford.edu/~tjw/jsbn/" rel="noopener" target="_blank">http://www-cs-students.stanford.edu/~tjw/jsbn/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            90
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
 &#34;Software&#34;), to deal in the Software without restriction, including
 without limitation the rights to use, copy, modify, merge, publish,

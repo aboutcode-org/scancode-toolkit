@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,88 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ja-sig.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ja-sig.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ja-sig
-short_name: JA-SiG License
-name: JA-SiG License
-category: Permissive
-owner: JA-SIG Collaborative
-homepage_url: http://web.archive.org/web/20040402030132/http://uportal.org/license.html
-notes: |
-  this is an old and rare license, replaced since by an Apache 2.0. This is a
-  BSD variant. See original at
-  http://web.archive.org/web/20040402030132/http://uportal.org/license.html
-spdx_license_key: LicenseRef-scancode-ja-sig
-ignorable_authors:
-  - the JA-SIG Collaborative (http://www.ja-sig.org/)
-ignorable_urls:
-  - http://www.ja-sig.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ja-sig
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            JA-SiG License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            JA-SiG License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            JA-SIG Collaborative
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://web.archive.org/web/20040402030132/http://uportal.org/license.html" rel="noopener" target="_blank">http://web.archive.org/web/20040402030132/http://uportal.org/license.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this is an old and rare license, replaced since by an Apache 2.0. This is a
+BSD variant. See original at
+<a href="http://web.archive.org/web/20040402030132/http://uportal.org/license.html" rel="noopener" target="_blank">http://web.archive.org/web/20040402030132/http://uportal.org/license.html</a>
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ja-sig
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>the JA-SIG Collaborative (<a href="http://www.ja-sig.org/" rel="noopener" target="_blank">http://www.ja-sig.org/</a>)</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.ja-sig.org/" rel="noopener" target="_blank">http://www.ja-sig.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this

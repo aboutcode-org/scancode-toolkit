@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,62 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/freebsd-first.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/freebsd-first.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: freebsd-first
-short_name: FreeBSD unmodified first lines License
-name: FreeBSD unmodified first lines License
-category: Permissive
-owner: FreeBSD
-spdx_license_key: LicenseRef-scancode-freebsd-first
-text_urls:
-  - https://opensource.apple.com/source/Libc/Libc-498/pthreads/pthread_getschedparam.3.auto.html
-  - https://github.com/samir-kassab/RSX208/blob/ff9c702aad525de0a6482d54a39fb116899666c8/git-1.8.1.2/vcs-svn/LICENSE
-  - https://github.com/jpostel/FreeBSD-mirror/blob/4e7ff5fca339937345c5ccdc58200e62452bd903/sys/sys/_sx.h
-  - https://github.com/barrbrain/svn-dump-fast-export/blob/0ab007d2fab61f9ebcb4c59e2e97e164eece861c/vcs-svn/LICENSE
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            freebsd-first
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            FreeBSD unmodified first lines License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            FreeBSD unmodified first lines License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            FreeBSD
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-freebsd-first
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://opensource.apple.com/source/Libc/Libc-498/pthreads/pthread_getschedparam.3.auto.html" rel="noopener" target="_blank">https://opensource.apple.com/source/Libc/Libc-498/pthreads/pthread_getschedparam.3.auto.html</a></li><li><a href="https://github.com/samir-kassab/RSX208/blob/ff9c702aad525de0a6482d54a39fb116899666c8/git-1.8.1.2/vcs-svn/LICENSE" rel="noopener" target="_blank">https://github.com/samir-kassab/RSX208/blob/ff9c702aad525de0a6482d54a39fb116899666c8/git-1.8.1.2/vcs-svn/LICENSE</a></li><li><a href="https://github.com/jpostel/FreeBSD-mirror/blob/4e7ff5fca339937345c5ccdc58200e62452bd903/sys/sys/_sx.h" rel="noopener" target="_blank">https://github.com/jpostel/FreeBSD-mirror/blob/4e7ff5fca339937345c5ccdc58200e62452bd903/sys/sys/_sx.h</a></li><li><a href="https://github.com/barrbrain/svn-dump-fast-export/blob/0ab007d2fab61f9ebcb4c59e2e97e164eece861c/vcs-svn/LICENSE" rel="noopener" target="_blank">https://github.com/barrbrain/svn-dump-fast-export/blob/0ab007d2fab61f9ebcb4c59e2e97e164eece861c/vcs-svn/LICENSE</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
 1. Redistributions of source code must retain the above copyright

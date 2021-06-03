@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/blessing.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/blessing.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: blessing
-short_name: SQLite Blessing
-name: SQLite Blessing
-category: Public Domain
-owner: SQLite
-homepage_url: https://sqlite.org/src/artifact/df5091916dbb40e6
-spdx_license_key: blessing
-other_urls:
-  - https://www.sqlite.org/src/artifact/e33a4df7e32d742a?ln=4-9
-  - https://sqlite.org/src/artifact/df5091916dbb40e6
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The author disclaims copyright to this source code.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            blessing
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            SQLite Blessing
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            SQLite Blessing
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Public Domain
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            SQLite
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://sqlite.org/src/artifact/df5091916dbb40e6" rel="noopener" target="_blank">https://sqlite.org/src/artifact/df5091916dbb40e6</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            blessing
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.sqlite.org/src/artifact/e33a4df7e32d742a?ln=4-9" rel="noopener" target="_blank">https://www.sqlite.org/src/artifact/e33a4df7e32d742a?ln=4-9</a></li><li><a href="https://sqlite.org/src/artifact/df5091916dbb40e6" rel="noopener" target="_blank">https://sqlite.org/src/artifact/df5091916dbb40e6</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The author disclaims copyright to this source code.
 In place of a legal notice, here is a blessing:
    May you do good and not evil.
    May you find forgiveness for yourself and forgive others.

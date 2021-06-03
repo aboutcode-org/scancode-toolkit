@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,96 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-2.0-djvu.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-2.0-djvu.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: gpl-2.0-djvu
-short_name: GPL 2.0 with DjVu Patent Grant
-name: GNU General Public License 2.0 with DjVu Patent Grant
-category: Copyleft
-owner: LizardTech
-notes: GPL and other terms
-spdx_license_key: LicenseRef-scancode-gpl-2.0-djvu
-other_urls:
-  - https://sourceforge.net/projects/djvu/files/DjVuLibre/3.5.1/djvulibre-3.5.1.tar.gz/download
-ignorable_copyrights:
-  - Copyright (c) 1999-2001 LizardTech, Inc.
-ignorable_holders:
-  - LizardTech, Inc.
-ignorable_urls:
-  - http://www.fsf.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>DjVu (r) Reference Library (v. 3.5)
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            gpl-2.0-djvu
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            GPL 2.0 with DjVu Patent Grant
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            GNU General Public License 2.0 with DjVu Patent Grant
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            LizardTech
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            GPL and other terms
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-gpl-2.0-djvu
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://sourceforge.net/projects/djvu/files/DjVuLibre/3.5.1/djvulibre-3.5.1.tar.gz/download" rel="noopener" target="_blank">https://sourceforge.net/projects/djvu/files/DjVuLibre/3.5.1/djvulibre-3.5.1.tar.gz/download</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1999-2001 LizardTech, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>LizardTech, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.fsf.org/" rel="noopener" target="_blank">http://www.fsf.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>DjVu (r) Reference Library (v. 3.5)
 
 Copyright (c) 1999-2001 LizardTech, Inc. All Rights Reserved.
 The DjVu Reference Library is protected by U.S. Pat. No.

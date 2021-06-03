@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/nrl-permission.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/nrl-permission.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: nrl-permission
-short_name: NRL permission
-name: NRL permission
-category: Permissive
-owner: NRL
-homepage_url: https://web.mit.edu/kerberos/krb5-1.14/doc/mitK5license.html
-spdx_license_key: LicenseRef-scancode-nrl-permission
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission to use, copy, modify and distribute this software and its
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            nrl-permission
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            NRL permission
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            NRL permission
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            NRL
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://web.mit.edu/kerberos/krb5-1.14/doc/mitK5license.html" rel="noopener" target="_blank">https://web.mit.edu/kerberos/krb5-1.14/doc/mitK5license.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-nrl-permission
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission to use, copy, modify and distribute this software and its
 documentation is hereby granted, provided that both the copyright
 notice and this permission notice appear in all copies of the software,
 derivative works or modified versions, and any portions thereof, and

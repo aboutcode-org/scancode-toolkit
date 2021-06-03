@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,94 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/issl-2018.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/issl-2018.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: issl-2018
-short_name: ISSL 2018
-name: Intel Simplified Software License (Version April 2018)
-category: Free Restricted
-owner: Intel Corporation
-homepage_url: https://software.intel.com/en-us/license/intel-simplified-software-license
-spdx_license_key: LicenseRef-scancode-issl-2018
-faq_url: https://software.intel.com/en-us/mkl/license-faq
-other_urls:
-  - https://software.intel.com/en-us/articles/end-user-license-agreement
-ignorable_copyrights:
-  - Copyright (c) 2018 Intel Corporation
-ignorable_holders:
-  - Intel Corporation
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Intel Simplified Software License (Version April 2018)
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            issl-2018
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            ISSL 2018
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Intel Simplified Software License (Version April 2018)
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Intel Corporation
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://software.intel.com/en-us/license/intel-simplified-software-license" rel="noopener" target="_blank">https://software.intel.com/en-us/license/intel-simplified-software-license</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-issl-2018
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="https://software.intel.com/en-us/mkl/license-faq" rel="noopener" target="_blank">https://software.intel.com/en-us/mkl/license-faq</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://software.intel.com/en-us/articles/end-user-license-agreement" rel="noopener" target="_blank">https://software.intel.com/en-us/articles/end-user-license-agreement</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2018 Intel Corporation</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Intel Corporation</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Intel Simplified Software License (Version April 2018)
 
 Copyright (c) 2018 Intel Corporation.
 

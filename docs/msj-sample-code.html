@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/msj-sample-code.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/msj-sample-code.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: msj-sample-code
-short_name: MS Systems Journal Sample Code License
-name: Microsoft Systems Journal Sample Code License
-category: Permissive
-owner: Microsoft
-spdx_license_key: LicenseRef-scancode-msj-sample-code
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Microsoft grants to you a royalty-free right to use and modify the source code version and to reproduce and distribute the object code version of the sample code, icons, cursors, and bitmaps provided within the Sample Code bin/folder on the SOFTWARE (&#34;Sample Code&#34;) provided that you:
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            msj-sample-code
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MS Systems Journal Sample Code License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Microsoft Systems Journal Sample Code License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-msj-sample-code
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Microsoft grants to you a royalty-free right to use and modify the source code version and to reproduce and distribute the object code version of the sample code, icons, cursors, and bitmaps provided within the Sample Code bin/folder on the SOFTWARE (&#34;Sample Code&#34;) provided that you:
 
 distribute the Sample Code only in conjunction with and as a part of your software product that adds primary and significant functionality to the sample code;
 

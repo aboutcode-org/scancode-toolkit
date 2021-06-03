@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/eurosym.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/eurosym.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: eurosym
-short_name: Eurosym License
-name: Eurosym License
-category: Copyleft Limited
-owner: Henrik Theiling
-homepage_url: https://fedoraproject.org/wiki/Licensing:Eurosym?rd=Licensing/Eurosym
-spdx_license_key: Eurosym
-other_urls:
-  - https://fedoraproject.org/wiki/Licensing/Eurosym
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Licence Version 2
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            eurosym
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Eurosym License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Eurosym License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Henrik Theiling
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing:Eurosym?rd=Licensing/Eurosym" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing:Eurosym?rd=Licensing/Eurosym</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Eurosym
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://fedoraproject.org/wiki/Licensing/Eurosym" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Eurosym</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Licence Version 2
 
 This software is provided &#39;as-is&#39;, without warranty of any kind, express or implied. In no event will the authors or copyright holders be held liable for any damages arising from the use of this software.
 

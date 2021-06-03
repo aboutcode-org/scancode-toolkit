@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/vim.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/vim.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: vim
-short_name: VIM License
-name: VIM License
-category: Copyleft
-owner: VIM
-homepage_url: http://vimdoc.sourceforge.net/htmldoc/uganda.html
-spdx_license_key: Vim
-other_urls:
-  - http://www.vim.org/docs.php
-ignorable_urls:
-  - http://www.vim.org/
-ignorable_emails:
-  - Bram@vim.org
-  - maintainer@vim.org
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>VIM LICENSE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            vim
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            VIM License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            VIM License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            VIM
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://vimdoc.sourceforge.net/htmldoc/uganda.html" rel="noopener" target="_blank">http://vimdoc.sourceforge.net/htmldoc/uganda.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Vim
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.vim.org/docs.php" rel="noopener" target="_blank">http://www.vim.org/docs.php</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.vim.org/" rel="noopener" target="_blank">http://www.vim.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:Bram@vim.org">Bram@vim.org</a></li><li><a href="mailto:maintainer@vim.org">maintainer@vim.org</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>VIM LICENSE
 
 I)  There are no restrictions on distributing unmodified copies of Vim except
     that they must include this license text.  You can also distribute

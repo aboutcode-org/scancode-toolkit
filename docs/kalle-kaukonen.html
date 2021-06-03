@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,62 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/kalle-kaukonen.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/kalle-kaukonen.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: kalle-kaukonen
-short_name: Kalle Kaukonen License
-name: Kalle Kaukonen License
-category: Permissive
-owner: Kalle Kaukonen
-spdx_license_key: LicenseRef-scancode-kalle-kaukonen
-other_urls:
-  - http://files.support.epson.com/htmldocs/wfp4090/wfp4090ug/source/printers/source/notices/reference/copyright_ps_pcl.html
-  - https://launchpad.net/ubuntu/oneiric/+source/mupdf/+copyright
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            kalle-kaukonen
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Kalle Kaukonen License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Kalle Kaukonen License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Kalle Kaukonen
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-kalle-kaukonen
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://files.support.epson.com/htmldocs/wfp4090/wfp4090ug/source/printers/source/notices/reference/copyright_ps_pcl.html" rel="noopener" target="_blank">http://files.support.epson.com/htmldocs/wfp4090/wfp4090ug/source/printers/source/notices/reference/copyright_ps_pcl.html</a></li><li><a href="https://launchpad.net/ubuntu/oneiric/+source/mupdf/+copyright" rel="noopener" target="_blank">https://launchpad.net/ubuntu/oneiric/+source/mupdf/+copyright</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that this copyright notice and disclaimer are retained.
 
 THIS SOFTWARE IS PROVIDED BY KALLE KAUKONEN AND CONTRIBUTORS &#34;AS IS&#34; AND ANY

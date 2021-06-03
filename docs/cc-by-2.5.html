@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cc-by-2.5.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cc-by-2.5.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: cc-by-2.5
-short_name: CC-BY-2.5
-name: Creative Commons Attribution License 2.5
-category: Permissive
-owner: Creative Commons
-homepage_url: http://creativecommons.org/licenses/by/2.5/
-spdx_license_key: CC-BY-2.5
-text_urls:
-  - http://creativecommons.org/licenses/by/2.5/legalcode
-other_urls:
-  - https://creativecommons.org/licenses/by/2.5/legalcode
-ignorable_urls:
-  - http://creativecommons.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Attribution 2.5
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            cc-by-2.5
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            CC-BY-2.5
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Creative Commons Attribution License 2.5
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Creative Commons
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://creativecommons.org/licenses/by/2.5/" rel="noopener" target="_blank">http://creativecommons.org/licenses/by/2.5/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            CC-BY-2.5
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://creativecommons.org/licenses/by/2.5/legalcode" rel="noopener" target="_blank">http://creativecommons.org/licenses/by/2.5/legalcode</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://creativecommons.org/licenses/by/2.5/legalcode" rel="noopener" target="_blank">https://creativecommons.org/licenses/by/2.5/legalcode</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://creativecommons.org/" rel="noopener" target="_blank">http://creativecommons.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Attribution 2.5
 
 CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN &#34;AS-IS&#34; BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE.
 License

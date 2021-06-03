@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/can-ogl-2.0-en.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/can-ogl-2.0-en.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: can-ogl-2.0-en
-short_name: OGL Canada 2.0
-name: Open Government Licence Canada 2.0
-category: Permissive
-owner: Canada Government
-homepage_url: https://open.canada.ca/en/open-government-licence-canada
-spdx_license_key: OGL-Canada-2.0
-other_urls:
-  - https://open.canada.ca/en/open-government-licence-canada
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            can-ogl-2.0-en
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            OGL Canada 2.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Open Government Licence Canada 2.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Canada Government
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://open.canada.ca/en/open-government-licence-canada" rel="noopener" target="_blank">https://open.canada.ca/en/open-government-licence-canada</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            OGL-Canada-2.0
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://open.canada.ca/en/open-government-licence-canada" rel="noopener" target="_blank">https://open.canada.ca/en/open-government-licence-canada</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>
 Open Government Licence - Canada
 
 You are encouraged to use the Information that is available under this licence with only a few conditions.

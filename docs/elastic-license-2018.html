@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,30 +62,105 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/elastic-license-2018.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/elastic-license-2018.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: elastic-license-2018
-short_name: Elastic License 2018
-name: Elastic License Agreement 2018
-category: Source-available
-owner: Elastic
-homepage_url: https://github.com/elastic/elasticsearch/blob/0d8aa7527e242fbda9d84867ab8bc955758eebce/licenses/ELASTIC-LICENSE.txt
-spdx_license_key: LicenseRef-scancode-elastic-license-2018
-text_urls:
-  - https://github.com/elastic/elasticsearch/blob/0d8aa7527e242fbda9d84867ab8bc955758eebce/licenses/ELASTIC-LICENSE.txt
-other_urls:
-  - https://www.elastic.co/blog/doubling-down-on-open
-  - https://www.elastic.co/products/x-pack/open
-  - https://github.com/elastic/elasticsearch/blob/master/x-pack/plugin/core/src/main/java/org/elasticsearch/index/engine/FrozenEngine.java#L3
-standard_notice: |
-  Licensed under the Elastic License; you may not use this file except in
-  compliance with the Elastic License.
-ignorable_urls:
-  - https://www.elastic.co/subscriptions
-ignorable_emails:
-  - elastic_license@elastic.co
-  - legal@elastic.co
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>ELASTIC LICENSE AGREEMENT
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            elastic-license-2018
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Elastic License 2018
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Elastic License Agreement 2018
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Source-available
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Elastic
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/elastic/elasticsearch/blob/0d8aa7527e242fbda9d84867ab8bc955758eebce/licenses/ELASTIC-LICENSE.txt" rel="noopener" target="_blank">https://github.com/elastic/elasticsearch/blob/0d8aa7527e242fbda9d84867ab8bc955758eebce/licenses/ELASTIC-LICENSE.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-elastic-license-2018
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/elastic/elasticsearch/blob/0d8aa7527e242fbda9d84867ab8bc955758eebce/licenses/ELASTIC-LICENSE.txt" rel="noopener" target="_blank">https://github.com/elastic/elasticsearch/blob/0d8aa7527e242fbda9d84867ab8bc955758eebce/licenses/ELASTIC-LICENSE.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.elastic.co/blog/doubling-down-on-open" rel="noopener" target="_blank">https://www.elastic.co/blog/doubling-down-on-open</a></li><li><a href="https://www.elastic.co/products/x-pack/open" rel="noopener" target="_blank">https://www.elastic.co/products/x-pack/open</a></li><li><a href="https://github.com/elastic/elasticsearch/blob/master/x-pack/plugin/core/src/main/java/org/elasticsearch/index/engine/FrozenEngine.java#L3" rel="noopener" target="_blank">https://github.com/elastic/elasticsearch/blob/master/x-pack/plugin/core/src/main/java/org/elasticsearch/index/engine/FrozenEngine.java#L3</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            Licensed under the Elastic License; you may not use this file except in
+compliance with the Elastic License.
+
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.elastic.co/subscriptions" rel="noopener" target="_blank">https://www.elastic.co/subscriptions</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:elastic_license@elastic.co">elastic_license@elastic.co</a></li><li><a href="mailto:legal@elastic.co">legal@elastic.co</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>ELASTIC LICENSE AGREEMENT
 
 PLEASE READ CAREFULLY THIS ELASTIC LICENSE AGREEMENT (THIS &#34;AGREEMENT&#34;), WHICH
 CONSTITUTES A LEGALLY BINDING AGREEMENT AND GOVERNS ALL OF YOUR USE OF ALL OF

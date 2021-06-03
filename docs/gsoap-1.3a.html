@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,89 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gsoap-1.3a.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gsoap-1.3a.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: gsoap-1.3a
-short_name: gSOAP Public License v1.3a
-name: gSOAP Public License v1.3a
-category: Copyleft Limited
-owner: Genivia
-spdx_license_key: LicenseRef-scancode-gsoap-1.3a
-ignorable_copyrights:
-  - Copyright (c) 2001-2004 Robert A. van Engelen, Genivia inc.
-ignorable_authors:
-  - Robert A. van Engelen
-ignorable_holders:
-  - Robert A. van Engelen, Genivia inc.
-ignorable_urls:
-  - http://genivia.com/Products/gsoap/contract.html
-  - http://genivia.com/Products/gsoap/license.pdf
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>****** gSOAP Public License ******
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            gsoap-1.3a
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            gSOAP Public License v1.3a
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            gSOAP Public License v1.3a
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Genivia
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-gsoap-1.3a
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2001-2004 Robert A. van Engelen, Genivia inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Robert A. van Engelen</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Robert A. van Engelen, Genivia inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://genivia.com/Products/gsoap/contract.html" rel="noopener" target="_blank">http://genivia.com/Products/gsoap/contract.html</a></li><li><a href="http://genivia.com/Products/gsoap/license.pdf" rel="noopener" target="_blank">http://genivia.com/Products/gsoap/license.pdf</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>****** gSOAP Public License ******
 **** Version 1.3a ****
 
 The gSOAP public license is derived from the Mozilla Public License (MPL1.1).

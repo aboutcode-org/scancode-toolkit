@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/rar-winrar-eula.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/rar-winrar-eula.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: rar-winrar-eula
-short_name: RAR and WinRAR EULA
-name: RAR and WinRAR EULA
-category: Commercial
-owner: RAR
-homepage_url: http://www.win-rar.com/
-spdx_license_key: LicenseRef-scancode-rar-winrar-eula
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>RAR and WinRAR END USER LICENSE AGREEMENT (EULA)
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            rar-winrar-eula
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            RAR and WinRAR EULA
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            RAR and WinRAR EULA
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            RAR
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.win-rar.com/" rel="noopener" target="_blank">http://www.win-rar.com/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-rar-winrar-eula
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>RAR and WinRAR END USER LICENSE AGREEMENT (EULA)
 
 The following agreement regarding RAR (and its Windows version - WinRAR) archiver - referred to as &#34;software&#34; - is made between win.rar GmbH - referred to as &#34;licensor&#34; - and anyone who is installing, accessing or in any other way using the software - referred to as &#34;user&#34;.
 

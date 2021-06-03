@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,27 +62,96 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/inno-setup.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/inno-setup.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: inno-setup
-short_name: Inno Setup License
-name: Inno Setup License
-category: Permissive
-owner: jrsoftware.org
-homepage_url: http://www.jrsoftware.org/files/is/license.txt
-spdx_license_key: LicenseRef-scancode-inno-setup
-text_urls:
-  - http://www.jrsoftware.org/files/is/license.txt
-ignorable_copyrights:
-  - Copyright (c) 1997-2010 Jordan Russell
-  - Portions Copyright (c) 2000-2010 Martijn Laan
-  - copyrighted by Jordan Russell
-ignorable_holders:
-  - Jordan Russell
-  - Martijn Laan
-ignorable_urls:
-  - http://www.jrsoftware.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Inno Setup License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            inno-setup
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Inno Setup License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Inno Setup License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            <a href="http://jrsoftware.org" rel="noopener" target="_blank">jrsoftware.org</a>
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.jrsoftware.org/files/is/license.txt" rel="noopener" target="_blank">http://www.jrsoftware.org/files/is/license.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-inno-setup
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.jrsoftware.org/files/is/license.txt" rel="noopener" target="_blank">http://www.jrsoftware.org/files/is/license.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1997-2010 Jordan Russell</li><li>Portions Copyright (c) 2000-2010 Martijn Laan</li><li>copyrighted by Jordan Russell</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Jordan Russell</li><li>Martijn Laan</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.jrsoftware.org/" rel="noopener" target="_blank">http://www.jrsoftware.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Inno Setup License
 ==================
 
 Except where otherwise noted, all of the documentation and software included

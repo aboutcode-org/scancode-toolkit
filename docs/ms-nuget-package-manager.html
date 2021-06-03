@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-nuget-package-manager.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-nuget-package-manager.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ms-nuget-package-manager
-short_name: MS NuGet-Based Package Manager License
-name: Microsoft NuGet-Based Package Manager License
-category: Proprietary Free
-owner: Microsoft
-homepage_url: http://www.microsoft.com/web/webpi/eula/nuget_release_eula.htm
-spdx_license_key: LicenseRef-scancode-ms-nuget-package-manager
-ignorable_urls:
-  - http://docs.nuget.org/docs/reference/package-restore
-  - http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog
-  - http://www.microsoft.com/exporting
-  - http://www.microsoft.com/web/webpi/eula/package-manager-for-net-privacy.htm
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>MICROSOFT SOFTWARE LICENSE TERMS
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ms-nuget-package-manager
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MS NuGet-Based Package Manager License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Microsoft NuGet-Based Package Manager License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.microsoft.com/web/webpi/eula/nuget_release_eula.htm" rel="noopener" target="_blank">http://www.microsoft.com/web/webpi/eula/nuget_release_eula.htm</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ms-nuget-package-manager
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://docs.nuget.org/docs/reference/package-restore" rel="noopener" target="_blank">http://docs.nuget.org/docs/reference/package-restore</a></li><li><a href="http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog" rel="noopener" target="_blank">http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog</a></li><li><a href="http://www.microsoft.com/exporting" rel="noopener" target="_blank">http://www.microsoft.com/exporting</a></li><li><a href="http://www.microsoft.com/web/webpi/eula/package-manager-for-net-privacy.htm" rel="noopener" target="_blank">http://www.microsoft.com/web/webpi/eula/package-manager-for-net-privacy.htm</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>MICROSOFT SOFTWARE LICENSE TERMS
 
 NUGET-BASED MICROSOFT PACKAGE MANAGER
 

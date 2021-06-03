@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/beerware.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/beerware.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: beerware
-short_name: Beer-Ware License
-name: Beer-Ware License
-category: Permissive
-owner: FreeBSD
-homepage_url: http://people.freebsd.org/~phk/
-spdx_license_key: Beerware
-text_urls:
-  - http://people.freebsd.org/~phk/
-  - https://fedoraproject.org/wiki/Licensing/Beerware
-other_urls:
-  - https://people.freebsd.org/~phk/
-ignorable_emails:
-  - phk@FreeBSD.ORG
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>&#34;THE BEER-WARE LICENSE&#34; (Revision 42):
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            beerware
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Beer-Ware License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Beer-Ware License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            FreeBSD
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://people.freebsd.org/~phk/" rel="noopener" target="_blank">http://people.freebsd.org/~phk/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Beerware
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://people.freebsd.org/~phk/" rel="noopener" target="_blank">http://people.freebsd.org/~phk/</a></li><li><a href="https://fedoraproject.org/wiki/Licensing/Beerware" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Beerware</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://people.freebsd.org/~phk/" rel="noopener" target="_blank">https://people.freebsd.org/~phk/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:phk@FreeBSD.ORG">phk@FreeBSD.ORG</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>&#34;THE BEER-WARE LICENSE&#34; (Revision 42):
 &lt;phk@FreeBSD.ORG&gt; wrote this file. As long as you retain this notice you
 can do whatever you want with this stuff. If we meet some day, and you think
 this stuff is worth it, you can buy me a beer in return Poul-Henning Kamp

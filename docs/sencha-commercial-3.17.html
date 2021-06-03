@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sencha-commercial-3.17.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sencha-commercial-3.17.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: sencha-commercial-3.17
-short_name: Sencha Software License Agreement v3.17
-name: Sencha Software License Agreement v3.17
-category: Commercial
-owner: Sencha
-homepage_url: https://www.sencha.com/legal/sencha-software-license-agreement/
-spdx_license_key: LicenseRef-scancode-sencha-commercial-3.17
-faq_url: https://www.sencha.com/support/faqs/
-other_urls:
-  - https://www.sencha.com/legal/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Sencha Software License Agreement
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            sencha-commercial-3.17
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Sencha Software License Agreement v3.17
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sencha Software License Agreement v3.17
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Sencha
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.sencha.com/legal/sencha-software-license-agreement/" rel="noopener" target="_blank">https://www.sencha.com/legal/sencha-software-license-agreement/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-sencha-commercial-3.17
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="https://www.sencha.com/support/faqs/" rel="noopener" target="_blank">https://www.sencha.com/support/faqs/</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.sencha.com/legal/" rel="noopener" target="_blank">https://www.sencha.com/legal/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Sencha Software License Agreement
 Version 3.17
 
 THIS DOCUMENT IS A LEGAL AGREEMENT (the “Agreement”) BETWEEN SENCHA INC. (“We,” “Us”) AND YOU OR THE ORGANIZATION ON WHOSE BEHALF YOU ARE ENTERING INTO THIS AGREEMENT (“You”) IN RELATION TO SENCHA SOFTWARE GENERALLY MADE AVAILABLE IN SOURCE CODE FORMAT (“Sencha SDKs”) AND/OR SENCHA SOFTWARE GENERALLY MADE AVAILABLE IN OBJECT CODE FORMAT (“Sencha Tools”). (The Sencha SDKs and the Sencha Tools are sometimes hereinafter collectively referred to as the “Software”.)

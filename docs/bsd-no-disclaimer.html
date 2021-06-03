@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-no-disclaimer.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-no-disclaimer.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bsd-no-disclaimer
-short_name: BSD-2-Clause no disclaimer
-name: BSD-2-Clause without Warranty Disclaimer
-category: Permissive
-owner: Unspecified
-notes: A rare variant that comes with a slightly different wording and no warranty disclaimer.
-spdx_license_key: LicenseRef-scancode-bsd-no-disclaimer
-other_urls:
-  - https://github.com/miekg/miek.nl/blob/17ef2d311da721ccb3ddb3649ec41ff51305952f/static/downloads/2009/tt.pl.txt#L5
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code># Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bsd-no-disclaimer
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            BSD-2-Clause no disclaimer
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            BSD-2-Clause without Warranty Disclaimer
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            A rare variant that comes with a slightly different wording and no warranty disclaimer.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-bsd-no-disclaimer
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/miekg/miek.nl/blob/17ef2d311da721ccb3ddb3649ec41ff51305952f/static/downloads/2009/tt.pl.txt#L5" rel="noopener" target="_blank">https://github.com/miekg/miek.nl/blob/17ef2d311da721ccb3ddb3649ec41ff51305952f/static/downloads/2009/tt.pl.txt#L5</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code># Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
 # are met:
 # 1. Redistributions of source code must retain the above copyright

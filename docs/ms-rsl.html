@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,80 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-rsl.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-rsl.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ms-rsl
-short_name: MS Reference Source License
-name: Microsoft Reference Source License
-category: Proprietary Free
-owner: Microsoft
-homepage_url: http://referencesource.microsoft.com/license.html
-notes: &#34;This is a rarely seen license. It was used shortly in 2005/2007 with the release of\n\
-  some .Net code. There are two versions one published in 2006 and this\nversion from March\
-  \ 2007 . It is sometimes named Microsoft Reference License (Ms-RL)\nwith the exact same text.\
-  \ \n&#34;
-spdx_license_key: LicenseRef-scancode-ms-rsl
-text_urls:
-  - http://www.microsoft.com/resources/sharedsource/referencesourcelicense.mspx
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, do not use the software.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ms-rsl
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MS Reference Source License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Microsoft Reference Source License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://referencesource.microsoft.com/license.html" rel="noopener" target="_blank">http://referencesource.microsoft.com/license.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This is a rarely seen license. It was used shortly in 2005/2007 with the release of
+some .Net code. There are two versions one published in 2006 and this
+version from March 2007 . It is sometimes named Microsoft Reference License (Ms-RL)
+with the exact same text. 
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ms-rsl
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.microsoft.com/resources/sharedsource/referencesourcelicense.mspx" rel="noopener" target="_blank">http://www.microsoft.com/resources/sharedsource/referencesourcelicense.mspx</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, do not use the software.
 
 1. Definitions
 The terms &#34;reproduce,&#34; &#34;reproduction&#34; and &#34;distribution&#34; have the same meaning here as under U.S. copyright law.

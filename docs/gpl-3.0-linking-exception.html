@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-3.0-linking-exception.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-3.0-linking-exception.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: gpl-3.0-linking-exception
-short_name: GPL-3.0 Linking Exception
-name: GPL-3.0 Linking Exception
-category: Copyleft Limited
-owner: Free Software Foundation (FSF)
-homepage_url: https://www.gnu.org/licenses/gpl-faq.en.html#GPLIncompatibleLibs
-is_exception: yes
-spdx_license_key: GPL-3.0-linking-exception
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Additional permission under GNU GPL version 3 section 7
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            gpl-3.0-linking-exception
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            GPL-3.0 Linking Exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            GPL-3.0 Linking Exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.gnu.org/licenses/gpl-faq.en.html#GPLIncompatibleLibs" rel="noopener" target="_blank">https://www.gnu.org/licenses/gpl-faq.en.html#GPLIncompatibleLibs</a>
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            GPL-3.0-linking-exception
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Additional permission under GNU GPL version 3 section 7
 
 If you modify this Program, or any covered work, by linking or combining it with [name of library] (or a modified version of that library), containing parts covered by the terms of [name of library&#39;s license], the licensors of this Program grant you additional permission to convey the resulting work.</code></pre>
   </div>

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,73 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/khronos.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/khronos.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: khronos
-short_name: Khronos License
-name: Khronos License
-category: Permissive
-owner: Khronos Group
-notes: |
-  This is the same text as the MIT license with minor modifications. In the
-  first paragraph &#34;this software and/or associated documentation&#34; is used
-  instead of &#34;this software and associated documentation&#34; The words &#34;the
-  Software&#34; are replaced by the words &#34;the Materials&#34;.
-spdx_license_key: LicenseRef-scancode-khronos
-other_urls:
-  - http://www.khronos.org/developers
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            khronos
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Khronos License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Khronos License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Khronos Group
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This is the same text as the MIT license with minor modifications. In the
+first paragraph &#34;this software and/or associated documentation&#34; is used
+instead of &#34;this software and associated documentation&#34; The words &#34;the
+Software&#34; are replaced by the words &#34;the Materials&#34;.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-khronos
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.khronos.org/developers" rel="noopener" target="_blank">http://www.khronos.org/developers</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and/or associated documentation files (the
 &#34;Materials&#34;), to deal in the Materials without restriction, including
 without limitation the rights to use, copy, modify, merge, publish,

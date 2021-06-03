@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adobe-postscript.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adobe-postscript.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: adobe-postscript
-short_name: Adobe PostScript License
-name: Adobe PostScript License
-category: Proprietary Free
-owner: Adobe Systems
-spdx_license_key: LicenseRef-scancode-adobe-postscript
-minimum_coverage: 25
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Patents Pending
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            adobe-postscript
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Adobe PostScript License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Adobe PostScript License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Adobe Systems
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-adobe-postscript
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            25
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Patents Pending
 
 NOTICE: All information contained herein is the property
 of Adobe Systems Incorporated.

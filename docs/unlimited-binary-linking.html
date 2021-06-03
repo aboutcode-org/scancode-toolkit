@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/unlimited-binary-linking.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/unlimited-binary-linking.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: unlimited-binary-linking
-short_name: Unlimited Binary Linking Exception
-name: Unlimited Binary Linking Exception
-category: Permissive
-owner: nexB
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-unlimited-binary-linking
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>As a special exception, you may use, copy, link, modify and distribute
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            unlimited-binary-linking
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Unlimited Binary Linking Exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Unlimited Binary Linking Exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            nexB
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-unlimited-binary-linking
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>As a special exception, you may use, copy, link, modify and distribute
 under the user&#39;s own terms, binary object code versions of works based
 on the library.
 </code></pre>

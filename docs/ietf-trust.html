@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,41 +62,137 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ietf-trust.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ietf-trust.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ietf-trust
-short_name: IETF Trust License
-name: IETF Trust License
-category: Permissive
-owner: IETF - Internet Engineering Task Force
-homepage_url: http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf
-spdx_license_key: LicenseRef-scancode-ietf-trust
-text_urls:
-  - http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf
-faq_url: http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf
-other_urls:
-  - http://opensource.org/licenses/bsd-license.php
-  - http://trustee.ietf.org/license-info/
-  - http://trustee.ietf.org/policyandprocedures.html
-minimum_coverage: 70
-ignorable_copyrights:
-  - Copyright (c) IETF Trust
-  - Copyright (c) IETF Trust and the persons identified as the document authors
-ignorable_authors:
-  - IETF Trust
-  - the IETF Trust
-ignorable_holders:
-  - IETF Trust
-  - IETF Trust and the persons identified as the document authors
-ignorable_urls:
-  - http://opensource.org/licenses/bsd-license.php
-  - http://trustee.ietf.org/license-info
-  - http://trustee.ietf.org/policyandprocedures.html
-  - http://www.ietf.org/ipr
-ignorable_emails:
-  - ietf-ipr@ietf.org
-  - trustees@ietf.org
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>IETF TRUST 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ietf-trust
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            IETF Trust License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            IETF Trust License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            IETF - Internet Engineering Task Force
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf" rel="noopener" target="_blank">http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ietf-trust
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf" rel="noopener" target="_blank">http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf" rel="noopener" target="_blank">http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://opensource.org/licenses/bsd-license.php" rel="noopener" target="_blank">http://opensource.org/licenses/bsd-license.php</a></li><li><a href="http://trustee.ietf.org/license-info/" rel="noopener" target="_blank">http://trustee.ietf.org/license-info/</a></li><li><a href="http://trustee.ietf.org/policyandprocedures.html" rel="noopener" target="_blank">http://trustee.ietf.org/policyandprocedures.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            70
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) IETF Trust</li><li>Copyright (c) IETF Trust and the persons identified as the document authors</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>IETF Trust</li><li>the IETF Trust</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>IETF Trust</li><li>IETF Trust and the persons identified as the document authors</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://opensource.org/licenses/bsd-license.php" rel="noopener" target="_blank">http://opensource.org/licenses/bsd-license.php</a></li><li><a href="http://trustee.ietf.org/license-info" rel="noopener" target="_blank">http://trustee.ietf.org/license-info</a></li><li><a href="http://trustee.ietf.org/policyandprocedures.html" rel="noopener" target="_blank">http://trustee.ietf.org/policyandprocedures.html</a></li><li><a href="http://www.ietf.org/ipr" rel="noopener" target="_blank">http://www.ietf.org/ipr</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:ietf-ipr@ietf.org">ietf-ipr@ietf.org</a></li><li><a href="mailto:trustees@ietf.org">trustees@ietf.org</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>IETF TRUST 
 Legal Provisions Relating to IETF Documents 
 Effective Date: December 28, 2009
 

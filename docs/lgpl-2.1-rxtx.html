@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,83 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-2.1-rxtx.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-2.1-rxtx.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: lgpl-2.1-rxtx
-is_deprecated: yes
-short_name: LGPL 2.1 with RXTX exception
-name: LGPL 2.1 with RXTX exception
-category: Copyleft Limited
-owner: RXTX
-homepage_url: http://users.frii.com/jarvi/rxtx/license.html
-notes: replaced by rxtx-exception-lgpl-2.1
-is_exception: yes
-other_urls:
-  - http://www.fsf.org/licenses/gpl-faq.html#LinkingOverControlledInterface
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>RXTX License v 2.1 - LGPL v 2.1 + Linking Over Controlled Interface.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            lgpl-2.1-rxtx
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LGPL 2.1 with RXTX exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            LGPL 2.1 with RXTX exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            RXTX
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://users.frii.com/jarvi/rxtx/license.html" rel="noopener" target="_blank">http://users.frii.com/jarvi/rxtx/license.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            replaced by rxtx-exception-lgpl-2.1
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.fsf.org/licenses/gpl-faq.html#LinkingOverControlledInterface" rel="noopener" target="_blank">http://www.fsf.org/licenses/gpl-faq.html#LinkingOverControlledInterface</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>RXTX License v 2.1 - LGPL v 2.1 + Linking Over Controlled Interface.
 RXTX is a native interface to serial ports in java.
 Copyright 1997-2007 by Trent Jarvi tjarvi@qbang.org and others who
 actually wrote it.  See individual source files for more information.

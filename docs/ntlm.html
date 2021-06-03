@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,29 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ntlm.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ntlm.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ntlm
-short_name: NTLM License
-name: NTLM License
-category: Permissive
-owner: Unspecified
-spdx_license_key: LicenseRef-scancode-ntlm
-minimum_coverage: 15
-ignorable_copyrights:
-  - Copyright (c) 1997 Eric S. Raymond
-  - Copyright (c) 2001 Mark Bush. &lt;Mark.Bush@bushnet.demon.co.uk&gt;
-  - Copyright (c) 2007 David (Buzz) Bussenschutt. &lt;davidbuzz@gmail.com&gt;
-  - Copyright (c) Andrew Tridgell 1992-1998
-ignorable_holders:
-  - Andrew Tridgell
-  - David (Buzz) Bussenschutt
-  - Eric S. Raymond
-  - Mark Bush
-ignorable_emails:
-  - Mark.Bush@bushnet.demon.co.uk
-  - davidbuzz@gmail.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>COPYRIGHT AND LICENCE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ntlm
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            NTLM License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            NTLM License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ntlm
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            15
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1997 Eric S. Raymond</li><li>Copyright (c) 2001 Mark Bush. &lt;<a href="mailto:Mark.Bush@bushnet.demon.co.uk">Mark.Bush@bushnet.demon.co.uk</a>&gt;</li><li>Copyright (c) 2007 David (Buzz) Bussenschutt. &lt;<a href="mailto:davidbuzz@gmail.com">davidbuzz@gmail.com</a>&gt;</li><li>Copyright (c) Andrew Tridgell 1992-1998</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Andrew Tridgell</li><li>David (Buzz) Bussenschutt</li><li>Eric S. Raymond</li><li>Mark Bush</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:Mark.Bush@bushnet.demon.co.uk">Mark.Bush@bushnet.demon.co.uk</a></li><li><a href="mailto:davidbuzz@gmail.com">davidbuzz@gmail.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>COPYRIGHT AND LICENCE
 
 This application is free software. This code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. You may freely use, copy and distribute this software as long as all copyright notices, including this notice, remain intact and that you do not try to claim it as your own or try to sell it. You may alter the code as long as you send me any diffs (this will ensure that you have an easier time of it when you upgrade ;).
 

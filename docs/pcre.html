@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,30 +62,114 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/pcre.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/pcre.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: pcre
-short_name: PCRE License
-name: PCRE License
-category: Permissive
-owner: University of Cambridge
-homepage_url: http://www.pcre.org/licence.txt
-spdx_license_key: LicenseRef-scancode-pcre
-text_urls:
-  - http://www.pcre.org/licence.txt
-ignorable_copyrights:
-  - Copyright (c) 1997-2001 University of Cambridge
-  - copyright by the University of Cambridge, England
-ignorable_authors:
-  - Philip Hazel
-ignorable_holders:
-  - University of Cambridge
-  - the University of Cambridge, England
-ignorable_urls:
-  - ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
-ignorable_emails:
-  - ph10@cam.ac.uk
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>PCRE LICENCE 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            pcre
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            PCRE License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            PCRE License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            University of Cambridge
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.pcre.org/licence.txt" rel="noopener" target="_blank">http://www.pcre.org/licence.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-pcre
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.pcre.org/licence.txt" rel="noopener" target="_blank">http://www.pcre.org/licence.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1997-2001 University of Cambridge</li><li>copyright by the University of Cambridge, England</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Philip Hazel</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>University of Cambridge</li><li>the University of Cambridge, England</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:ph10@cam.ac.uk">ph10@cam.ac.uk</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>PCRE LICENCE 
 ------------ 
 
 PCRE is a library of functions to support regular expressions whose

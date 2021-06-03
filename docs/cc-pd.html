@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cc-pd.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cc-pd.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: cc-pd
-short_name: CC-PD
-name: Creative Commons Public Domain Certification
-category: Public Domain
-owner: Creative Commons
-homepage_url: https://creativecommons.org/licenses/publicdomain/
-spdx_license_key: CC-PDDC
-text_urls:
-  - http://creativecommons.org/licenses/publicdomain/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The person or persons who have associated work with this document (the &#34;Dedicator&#34; or &#34;Certifier&#34;) hereby either (a) certifies that, to the best of his knowledge, the work of authorship identified is in the public domain of the country from which the work is published, or (b) hereby dedicates whatever copyright the dedicators holds in the work of authorship identified below (the &#34;Work&#34;) to the public domain. A certifier, moreover, dedicates any copyright interest he may have in the associated work, and for these purposes, is described as a &#34;dedicator&#34; below.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            cc-pd
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            CC-PD
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Creative Commons Public Domain Certification
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Public Domain
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Creative Commons
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://creativecommons.org/licenses/publicdomain/" rel="noopener" target="_blank">https://creativecommons.org/licenses/publicdomain/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            CC-PDDC
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://creativecommons.org/licenses/publicdomain/" rel="noopener" target="_blank">http://creativecommons.org/licenses/publicdomain/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The person or persons who have associated work with this document (the &#34;Dedicator&#34; or &#34;Certifier&#34;) hereby either (a) certifies that, to the best of his knowledge, the work of authorship identified is in the public domain of the country from which the work is published, or (b) hereby dedicates whatever copyright the dedicators holds in the work of authorship identified below (the &#34;Work&#34;) to the public domain. A certifier, moreover, dedicates any copyright interest he may have in the associated work, and for these purposes, is described as a &#34;dedicator&#34; below.
 
 A certifier has taken reasonable steps to verify the copyright status of this work. Certifier recognizes that his good faith efforts may not shield him from liability if in fact the work certified is not in the public domain.
 

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lsi-proprietary-eula.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lsi-proprietary-eula.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: lsi-proprietary-eula
-short_name: LSI Proprietary EULA
-name: LSI Proprietary EULA
-category: Proprietary Free
-owner: LSI Corporation
-homepage_url: http://www.lsi.com/Pages/user/eula.aspx
-spdx_license_key: LicenseRef-scancode-lsi-proprietary-eula
-ignorable_urls:
-  - http://www.oracle.com/technetwork/java/javase/terms/license/index.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>USE OF LSI DOCUMENTATION AND SOFTWARE DOWNLOADS IS SUBJECT TO THIS AGREEMENT
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            lsi-proprietary-eula
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LSI Proprietary EULA
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            LSI Proprietary EULA
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            LSI Corporation
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.lsi.com/Pages/user/eula.aspx" rel="noopener" target="_blank">http://www.lsi.com/Pages/user/eula.aspx</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-lsi-proprietary-eula
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html" rel="noopener" target="_blank">http://www.oracle.com/technetwork/java/javase/terms/license/index.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>USE OF LSI DOCUMENTATION AND SOFTWARE DOWNLOADS IS SUBJECT TO THIS AGREEMENT
 
 IMPORTANT - READ CAREFULLY: This Software License Agreement (&#34;SLA&#34;) is a legal
 agreement between you (either an individual or a single entity) and LSI

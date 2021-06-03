@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-3.0-bison.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-3.0-bison.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: gpl-3.0-bison
-is_deprecated: yes
-short_name: GPL 3.0 or later with Bison exception
-name: GPL 3.0 or later with Bison exception
-category: Copyleft Limited
-owner: Free Software Foundation (FSF)
-notes: replaced by bison-exception-2.2
-is_exception: yes
-other_urls:
-  - http://www.gnu.org/licenses/gpl-3.0.txt
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Skeleton implementation for Bison&#39;s Yacc-like parsers in C
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            gpl-3.0-bison
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            GPL 3.0 or later with Bison exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            GPL 3.0 or later with Bison exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            replaced by bison-exception-2.2
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/gpl-3.0.txt" rel="noopener" target="_blank">http://www.gnu.org/licenses/gpl-3.0.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Skeleton implementation for Bison&#39;s Yacc-like parsers in C
 
 Copyright (C) 1984, 1989-1990, 2000-2006, 2009-2010 Free Software
 Foundation, Inc.

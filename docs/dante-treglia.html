@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/dante-treglia.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/dante-treglia.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: dante-treglia
-short_name: Dante Treglia License
-name: Dante Treglia License
-category: Permissive
-owner: Dante Treglia
-spdx_license_key: LicenseRef-scancode-dante-treglia
-ignorable_copyrights:
-  - Portions copyright (c) Dante Treglia II, 2000
-ignorable_holders:
-  - Dante Treglia II
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This is provided as is without express or implied warranties. You may freely
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            dante-treglia
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Dante Treglia License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Dante Treglia License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Dante Treglia
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-dante-treglia
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Portions copyright (c) Dante Treglia II, 2000</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Dante Treglia II</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This is provided as is without express or implied warranties. You may freely
 copy and compile this source into applications you distribute provided that the
 copyright text below is included in the resulting source code, for example:
 

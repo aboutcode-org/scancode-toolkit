@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ypl-1.1.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ypl-1.1.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ypl-1.1
-short_name: YPL 1.1
-name: Yahoo! Public License v1.1
-category: Copyleft
-owner: Yahoo
-homepage_url: http://www.zimbra.com/license/yahoo_public_license_1.1.html
-spdx_license_key: YPL-1.1
-text_urls:
-  - http://www.zimbra.com/license/yahoo_public_license_1.1.html
-other_urls:
-  - http://www.gnu.org/licenses/license-list.html#Yahoo
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Yahoo! Public License, Version 1.1 (YPL)
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ypl-1.1
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            YPL 1.1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Yahoo! Public License v1.1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Yahoo
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.zimbra.com/license/yahoo_public_license_1.1.html" rel="noopener" target="_blank">http://www.zimbra.com/license/yahoo_public_license_1.1.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            YPL-1.1
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.zimbra.com/license/yahoo_public_license_1.1.html" rel="noopener" target="_blank">http://www.zimbra.com/license/yahoo_public_license_1.1.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/license-list.html#Yahoo" rel="noopener" target="_blank">http://www.gnu.org/licenses/license-list.html#Yahoo</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Yahoo! Public License, Version 1.1 (YPL)
 
 This Yahoo! Public License (this &#34;Agreement&#34;) is a legal agreement that
 describes the terms under which Yahoo! Inc., a Delaware corporation having its

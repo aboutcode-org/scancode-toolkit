@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/taligent-jdk.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/taligent-jdk.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: taligent-jdk
-short_name: Taligent JDK Proprietary Notice
-name: Taligent JDK Proprietary Notice
-category: Proprietary Free
-owner: Taligent
-homepage_url: https://github.com/typetools/checker-framework/blob/3c427f380f61f234688893467d9bc433cf1a584c/checker/jdk/index/src/java/sun/util/resources/OpenListResourceBundle.java#L26-L39
-notes: This notice is common is OpenJDK and related Java code.
-spdx_license_key: LicenseRef-scancode-taligent-jdk
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The original version of this source code and documentation
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            taligent-jdk
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Taligent JDK Proprietary Notice
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Taligent JDK Proprietary Notice
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Taligent
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/typetools/checker-framework/blob/3c427f380f61f234688893467d9bc433cf1a584c/checker/jdk/index/src/java/sun/util/resources/OpenListResourceBundle.java#L26-L39" rel="noopener" target="_blank">https://github.com/typetools/checker-framework/blob/3c427f380f61f234688893467d9bc433cf1a584c/checker/jdk/index/src/java/sun/util/resources/OpenListResourceBundle.java#L26-L39</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This notice is common is OpenJDK and related Java code.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-taligent-jdk
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The original version of this source code and documentation
 is copyrighted and owned by Taligent, Inc., a wholly-owned
 subsidiary of IBM. These materials are provided under terms
 of a License Agreement between Taligent and Sun. This technology

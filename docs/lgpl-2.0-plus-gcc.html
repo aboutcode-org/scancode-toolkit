@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-2.0-plus-gcc.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-2.0-plus-gcc.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: lgpl-2.0-plus-gcc
-is_deprecated: yes
-short_name: LGPL 2.0 or later with GCC exception
-name: LGPL 2.0 or later with GCC Runtime Library exception
-category: Copyleft Limited
-owner: Free Software Foundation (FSF)
-is_exception: yes
-text_urls:
-  - http://www.opensource.apple.com/source/libcppabi/libcppabi-26/include/demangle.h
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This program is free software; you can redistribute it and/or
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            lgpl-2.0-plus-gcc
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LGPL 2.0 or later with GCC exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            LGPL 2.0 or later with GCC Runtime Library exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.opensource.apple.com/source/libcppabi/libcppabi-26/include/demangle.h" rel="noopener" target="_blank">http://www.opensource.apple.com/source/libcppabi/libcppabi-26/include/demangle.h</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU Library General Public License
 as published by the Free Software Foundation; either version 2, or
 (at your option) any later version.

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/facebook-software-license.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/facebook-software-license.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: facebook-software-license
-short_name: Facebook Software License
-name: Facebook Software License
-category: Proprietary Free
-owner: Facebook
-notes: license found in several Facebook SDKs
-spdx_license_key: LicenseRef-scancode-facebook-software-license
-text_urls:
-  - https://github.com/facebook/facebook-android-sdk/blob/752ea7b77a1779ed8b784dbd55a886cc00aeb8a6/LICENSE.txt
-  - https://github.com/facebook/facebook-android-sdk/blob/master/LICENSE.txt
-  - https://github.com/facebook/facebook-ios-sdk/blob/master/LICENSE
-faq_url: http://developers.facebook.com/policy/
-ignorable_urls:
-  - http://developers.facebook.com/policy/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            facebook-software-license
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Facebook Software License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Facebook Software License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Facebook
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            license found in several Facebook SDKs
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-facebook-software-license
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/facebook/facebook-android-sdk/blob/752ea7b77a1779ed8b784dbd55a886cc00aeb8a6/LICENSE.txt" rel="noopener" target="_blank">https://github.com/facebook/facebook-android-sdk/blob/752ea7b77a1779ed8b784dbd55a886cc00aeb8a6/LICENSE.txt</a></li><li><a href="https://github.com/facebook/facebook-android-sdk/blob/master/LICENSE.txt" rel="noopener" target="_blank">https://github.com/facebook/facebook-android-sdk/blob/master/LICENSE.txt</a></li><li><a href="https://github.com/facebook/facebook-ios-sdk/blob/master/LICENSE" rel="noopener" target="_blank">https://github.com/facebook/facebook-ios-sdk/blob/master/LICENSE</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://developers.facebook.com/policy/" rel="noopener" target="_blank">http://developers.facebook.com/policy/</a>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://developers.facebook.com/policy/" rel="noopener" target="_blank">http://developers.facebook.com/policy/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
 copy, modify, and distribute this software in source code or binary form for use
 in connection with the web services and APIs provided by Facebook.
 

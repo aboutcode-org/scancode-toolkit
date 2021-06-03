@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-no-high-risk-activities.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-no-high-risk-activities.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: sun-no-high-risk-activities
-short_name: Sun No High Risk Activities License
-name: Sun No High Risk Activities License
-category: Free Restricted
-owner: Oracle (Sun)
-homepage_url: https://web.archive.org/web/20061213092245/http://java.sun.com:80/developer/technicalArticles/Programming/sprintf/PrintfFormat.java
-spdx_license_key: LicenseRef-scancode-sun-no-high-risk-activities
-ignorable_urls:
-  - http://java.sun.com/nav/business/index.html
-  - http://www.sun.com/policies/trademarks/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, and distribute this Software and its 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            sun-no-high-risk-activities
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Sun No High Risk Activities License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sun No High Risk Activities License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle (Sun)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://web.archive.org/web/20061213092245/http://java.sun.com:80/developer/technicalArticles/Programming/sprintf/PrintfFormat.java" rel="noopener" target="_blank">https://web.archive.org/web/20061213092245/http://java.sun.com:80/developer/technicalArticles/Programming/sprintf/PrintfFormat.java</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-sun-no-high-risk-activities
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://java.sun.com/nav/business/index.html" rel="noopener" target="_blank">http://java.sun.com/nav/business/index.html</a></li><li><a href="http://www.sun.com/policies/trademarks/" rel="noopener" target="_blank">http://www.sun.com/policies/trademarks/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, and distribute this Software and its 
 documentation for NON-COMMERCIAL or COMMERCIAL purposes and without fee is 
 hereby granted.  
 

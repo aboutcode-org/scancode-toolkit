@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,44 +62,119 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/net-snmp.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/net-snmp.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: net-snmp
-short_name: Net SNMP License
-name: Net SNMP License
-category: Permissive
-owner: Net-SNMP
-homepage_url: http://net-snmp.sourceforge.net/about/license.html
-notes: composite
-spdx_license_key: Net-SNMP
-minimum_coverage: 70
-ignorable_copyrights:
-  - Copyright (c) 2001-2003, Networks Associates Technology, Inc
-  - Copyright (c) 2003 Sun Microsystems, Inc., 4150 Network Circle, Santa Clara, California
-    95054, U.S.A.
-  - Copyright (c) 2003-2006, Sparta, Inc
-  - Copyright (c) 2004, Cisco, Inc and Information Network Center of Beijing University of Posts
-    and Telecommunications
-  - Copyright (c) Fabasoft R&amp;D Software GmbH &amp; Co
-  - Copyright 1989, 1991, 1992 by Carnegie Mellon University
-  - Copyright 1996, 1998-2000 The Regents of the University of California
-  - copyright (c) 2001-2003, Cambridge Broadband Ltd.
-ignorable_authors:
-  - Bernhard Penz
-ignorable_holders:
-  - Cambridge Broadband Ltd.
-  - Carnegie Mellon University
-  - Cisco, Inc and Information Network Center of Beijing University of Posts and Telecommunications
-  - Fabasoft R&amp;D Software GmbH &amp; Co
-  - Networks Associates Technology, Inc
-  - Sparta, Inc
-  - Sun Microsystems, Inc., 4150 Network Circle, Santa Clara, California 95054, U.S.A.
-  - The Regents of the University of California
-ignorable_urls:
-  - http://net-snmp.sourceforge.net/about/license.html
-ignorable_emails:
-  - oss@fabasoft.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Net SNMP License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            net-snmp
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Net SNMP License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Net SNMP License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Net-SNMP
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://net-snmp.sourceforge.net/about/license.html" rel="noopener" target="_blank">http://net-snmp.sourceforge.net/about/license.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            composite
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Net-SNMP
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            70
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2001-2003, Networks Associates Technology, Inc</li><li>Copyright (c) 2003 Sun Microsystems, Inc., 4150 Network Circle, Santa Clara, California 95054, U.S.A.</li><li>Copyright (c) 2003-2006, Sparta, Inc</li><li>Copyright (c) 2004, Cisco, Inc and Information Network Center of Beijing University of Posts and Telecommunications</li><li>Copyright (c) Fabasoft R&amp;D Software GmbH &amp; Co</li><li>Copyright 1989, 1991, 1992 by Carnegie Mellon University</li><li>Copyright 1996, 1998-2000 The Regents of the University of California</li><li>copyright (c) 2001-2003, Cambridge Broadband Ltd.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Bernhard Penz</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Cambridge Broadband Ltd.</li><li>Carnegie Mellon University</li><li>Cisco, Inc and Information Network Center of Beijing University of Posts and Telecommunications</li><li>Fabasoft R&amp;D Software GmbH &amp; Co</li><li>Networks Associates Technology, Inc</li><li>Sparta, Inc</li><li>Sun Microsystems, Inc., 4150 Network Circle, Santa Clara, California 95054, U.S.A.</li><li>The Regents of the University of California</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://net-snmp.sourceforge.net/about/license.html" rel="noopener" target="_blank">http://net-snmp.sourceforge.net/about/license.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:oss@fabasoft.com">oss@fabasoft.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Net SNMP License
 http://net-snmp.sourceforge.net/about/license.html 
 
 Various copyrights apply to this package, listed in various separate parts 

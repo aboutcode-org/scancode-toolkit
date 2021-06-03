@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/swig.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/swig.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: swig
-short_name: SWIG Library License
-name: SWIG Library License
-category: Permissive
-owner: SWIG
-homepage_url: http://www.swig.org/
-notes: |
-  SWIG is itself GPL-licensed. The SWIG library and examples, under the Lib
-  and Examples top level directories are distributed under the these terms.
-spdx_license_key: LicenseRef-scancode-swig
-text_urls:
-  - http://www.swig.org/Release/LICENSE
-other_urls:
-  - http://www.swig.org/Release/COPYRIGHT
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>You may copy, modify, distribute, and make derivative works based on this
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            swig
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            SWIG Library License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            SWIG Library License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            SWIG
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.swig.org/" rel="noopener" target="_blank">http://www.swig.org/</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            SWIG is itself GPL-licensed. The SWIG library and examples, under the Lib
+and Examples top level directories are distributed under the these terms.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-swig
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.swig.org/Release/LICENSE" rel="noopener" target="_blank">http://www.swig.org/Release/LICENSE</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.swig.org/Release/COPYRIGHT" rel="noopener" target="_blank">http://www.swig.org/Release/COPYRIGHT</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>You may copy, modify, distribute, and make derivative works based on this
 software, in source code or object code form, without restriction. If you
 distribute the software to others, you may do so according to the terms of your
 choice. This software is offered as is, without warranty of any kind.

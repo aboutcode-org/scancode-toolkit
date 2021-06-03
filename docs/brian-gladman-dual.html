@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,32 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/brian-gladman-dual.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/brian-gladman-dual.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: brian-gladman-dual
-is_deprecated: yes
-short_name: Brian Gladman Dual BSD-GPL
-name: Brian Gladman Dual BSD-GPL
-category: Permissive
-owner: Brian Gladman
-homepage_url: http://www.gladman.me.uk/
-notes: this is a composite of gpl-2.0-plus AND brian-gladman-3-clause. See the addition of &#34;of
-  your choice&#34; to the text based on https://github.com/BrianGladman/aes/issues/7#issuecomment-155121598
-  BrianGladman commented on Nov 9, 2015 Hi Jonas, I really wish now that I had not done this
-  dual licensing as the BSD license should have been sufficient. But someone at the time wouldn&#39;t
-  accept this and insisted on the GPL. You can interpret the GPL license on any of my code wherever
-  it appears as &#34;ALTERNATIVELY, provided that this notice is retained in full, this product
-  may be distributed under the terms of a GNU General Public License (GPL) of your choice, in
-  which case the provisions of this GPL apply INSTEAD OF those given above.&#34; I hope that helps,
-  if not please get back to me.
-text_urls:
-  - https://github.com/basho/skerl/blob/master/c_src/brg_types.h
-other_urls:
-  - http://brgladman.org/
-  - http://fp.gladman.plus.com/
-  - http://www.ecrypt.eu.org/stream/svn/viewcvs.cgi/ecrypt/trunk/benchmarks/aes-ctr/aes-128/gladman/aes.h?diff_format=s&amp;rev=190&amp;view=auto
-  - https://launchpad.net/ubuntu/oneiric/+source/silc-server/+copyright
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>LICENSE TERMS
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            brian-gladman-dual
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Brian Gladman Dual BSD-GPL
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Brian Gladman Dual BSD-GPL
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Brian Gladman
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.gladman.me.uk/" rel="noopener" target="_blank">http://www.gladman.me.uk/</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this is a composite of gpl-2.0-plus AND brian-gladman-3-clause. See the addition of &#34;of your choice&#34; to the text based on <a href="https://github.com/BrianGladman/aes/issues/7#issuecomment-155121598" rel="noopener" target="_blank">https://github.com/BrianGladman/aes/issues/7#issuecomment-155121598</a> BrianGladman commented on Nov 9, 2015 Hi Jonas, I really wish now that I had not done this dual licensing as the BSD license should have been sufficient. But someone at the time wouldn&#39;t accept this and insisted on the GPL. You can interpret the GPL license on any of my code wherever it appears as &#34;ALTERNATIVELY, provided that this notice is retained in full, this product may be distributed under the terms of a GNU General Public License (GPL) of your choice, in which case the provisions of this GPL apply INSTEAD OF those given above.&#34; I hope that helps, if not please get back to me.
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/basho/skerl/blob/master/c_src/brg_types.h" rel="noopener" target="_blank">https://github.com/basho/skerl/blob/master/c_src/brg_types.h</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://brgladman.org/" rel="noopener" target="_blank">http://brgladman.org/</a></li><li><a href="http://fp.gladman.plus.com/" rel="noopener" target="_blank">http://fp.gladman.plus.com/</a></li><li><a href="http://www.ecrypt.eu.org/stream/svn/viewcvs.cgi/ecrypt/trunk/benchmarks/aes-ctr/aes-128/gladman/aes.h?diff_format=s&amp;rev=190&amp;view=auto" rel="noopener" target="_blank">http://www.ecrypt.eu.org/stream/svn/viewcvs.cgi/ecrypt/trunk/benchmarks/aes-ctr/aes-128/gladman/aes.h?diff_format=s&amp;rev=190&amp;view=auto</a></li><li><a href="https://launchpad.net/ubuntu/oneiric/+source/silc-server/+copyright" rel="noopener" target="_blank">https://launchpad.net/ubuntu/oneiric/+source/silc-server/+copyright</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>LICENSE TERMS
 
  The free distribution and use of this software in both source and binary
  form is allowed (with or without changes) provided that:

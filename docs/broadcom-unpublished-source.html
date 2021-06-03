@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/broadcom-unpublished-source.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/broadcom-unpublished-source.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: broadcom-unpublished-source
-is_deprecated: yes
-short_name: Broadcom Unpublished Source License
-name: Broadcom Unpublished Source License
-category: Commercial
-owner: Broadcom
-notes: use unpublished-source instead
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This is UNPUBLISHED PROPRIETARY SOURCE CODE of Broadcom Corporation; the contents of this file may not be disclosed to third parties, copied or duplicated in any form, in whole or in part, without the prior written permission of Broadcom Corporation. </code></pre>
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            broadcom-unpublished-source
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Broadcom Unpublished Source License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Broadcom Unpublished Source License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Broadcom
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            use unpublished-source instead
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This is UNPUBLISHED PROPRIETARY SOURCE CODE of Broadcom Corporation; the contents of this file may not be disclosed to third parties, copied or duplicated in any form, in whole or in part, without the prior written permission of Broadcom Corporation. </code></pre>
   </div>
 
     <div class="container">

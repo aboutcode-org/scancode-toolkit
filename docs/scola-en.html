@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/scola-en.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/scola-en.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: scola-en
-short_name: Statistics Canada Open Licence Agreement
-name: Statistics Canada Open Licence Agreement
-category: Proprietary Free
-owner: Minister for Statistics Canada
-homepage_url: https://www.statcan.gc.ca/eng/reference/licence
-spdx_license_key: LicenseRef-scancode-scola-en
-ignorable_emails:
-  - information@fip-pcim.gc.ca
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            scola-en
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Statistics Canada Open Licence Agreement
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Statistics Canada Open Licence Agreement
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Minister for Statistics Canada
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.statcan.gc.ca/eng/reference/licence" rel="noopener" target="_blank">https://www.statcan.gc.ca/eng/reference/licence</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-scola-en
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:information@fip-pcim.gc.ca">information@fip-pcim.gc.ca</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>
 Statistics Canada Open Licence Agreement
 
 This agreement is between Her Majesty the Queen in Right of Canada, as represented by the Minister for Statistics Canada (&#34;Statistics Canada&#34;) and you (an individual or a legal entity that you are authorized to represent).

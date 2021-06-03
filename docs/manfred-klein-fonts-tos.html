@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,62 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/manfred-klein-fonts-tos.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/manfred-klein-fonts-tos.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: manfred-klein-fonts-tos
-short_name: Manfred Klein Fonts TOS
-name: Manfred Klein Fonts TOS
-category: Free Restricted
-owner: Manfred Klein
-spdx_license_key: LicenseRef-scancode-manfred-klein-fonts-tos
-ignorable_authors:
-  - Manfred Klein
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Simple Terms of Use
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            manfred-klein-fonts-tos
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Manfred Klein Fonts TOS
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Manfred Klein Fonts TOS
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Manfred Klein
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-manfred-klein-fonts-tos
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Manfred Klein</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Simple Terms of Use
 Manfred’s fonts are free for private and charity use. They are even free for commercial use – but if there’s any profit, pls make a donation to organizations like Doctors Without Borders.
 
 These fonts can NOT be included in any compilation CDs, disks or products, either commercial or shareware unless prior permission granted.

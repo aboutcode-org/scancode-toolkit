@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/rackspace.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/rackspace.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: rackspace
-short_name: Rackspace License
-name: Rackspace License
-category: Free Restricted
-owner: Rackspace
-spdx_license_key: LicenseRef-scancode-rackspace
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Subject to the terms of this notice, Rackspace, Inc. grants you a
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            rackspace
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Rackspace License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Rackspace License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Rackspace
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-rackspace
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Subject to the terms of this notice, Rackspace, Inc. grants you a
 nonexclusive, nontransferable license, without the right to
 sublicense, to (a) install and execute one copy of these files on any
 number of workstations owned or controlled by you and (b) distribute

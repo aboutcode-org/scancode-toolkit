@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,26 +62,94 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-opengroup.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-opengroup.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: x11-opengroup
-short_name: X11-Style (Open Group)
-name: X11-Style (Open Group)
-category: Permissive
-owner: Open Group
-homepage_url: http://www.xfree86.org/current/LICENSE5.html
-spdx_license_key: MIT-open-group
-other_spdx_license_keys:
-  - LicenseRef-scancode-x11-opengroup
-text_urls:
-  - http://www.xfree86.org/current/LICENSE5.html
-other_urls:
-  - https://gitlab.freedesktop.org/xorg/app/iceauth/-/blob/master/COPYING
-  - https://gitlab.freedesktop.org/xorg/app/xvinfo/-/blob/master/COPYING
-  - https://gitlab.freedesktop.org/xorg/app/xsetroot/-/blob/master/COPYING
-  - https://gitlab.freedesktop.org/xorg/app/xauth/-/blob/master/COPYING
-minimum_coverage: 80
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, distribute, and sell this software and
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            x11-opengroup
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            X11-Style (Open Group)
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            X11-Style (Open Group)
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Open Group
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.xfree86.org/current/LICENSE5.html" rel="noopener" target="_blank">http://www.xfree86.org/current/LICENSE5.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            MIT-open-group
+          
+        </dd>
+      
+        <dt style="">other_spdx_license_keys</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>LicenseRef-scancode-x11-opengroup</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.xfree86.org/current/LICENSE5.html" rel="noopener" target="_blank">http://www.xfree86.org/current/LICENSE5.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://gitlab.freedesktop.org/xorg/app/iceauth/-/blob/master/COPYING" rel="noopener" target="_blank">https://gitlab.freedesktop.org/xorg/app/iceauth/-/blob/master/COPYING</a></li><li><a href="https://gitlab.freedesktop.org/xorg/app/xvinfo/-/blob/master/COPYING" rel="noopener" target="_blank">https://gitlab.freedesktop.org/xorg/app/xvinfo/-/blob/master/COPYING</a></li><li><a href="https://gitlab.freedesktop.org/xorg/app/xsetroot/-/blob/master/COPYING" rel="noopener" target="_blank">https://gitlab.freedesktop.org/xorg/app/xsetroot/-/blob/master/COPYING</a></li><li><a href="https://gitlab.freedesktop.org/xorg/app/xauth/-/blob/master/COPYING" rel="noopener" target="_blank">https://gitlab.freedesktop.org/xorg/app/xauth/-/blob/master/COPYING</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            80
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, distribute, and sell this software and
 its documentation for any purpose is hereby granted without fee,
 provided that the above copyright notice appear in all copies and that
 both that copyright notice and this permission notice appear in

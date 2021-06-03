@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/fsf-notice.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/fsf-notice.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: fsf-notice
-short_name: FSF Free Software Notice
-name: Free Software Foundation - Free Software Notice
-category: Copyleft
-owner: Free Software Foundation (FSF)
-homepage_url: http://www.fsf.org/licensing/licenses/
-notes: This notice is commonly seen in L/GPL-licensed FSF and GNU projects as a short additional
-  notice in command line tools or build scritps. It was previsouly reported as a free but unknown.
-  It is commonly seen in GCC, GCB, Bash and related tools.
-spdx_license_key: LicenseRef-scancode-fsf-notice
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This is free software: you are free to change and redistribute it
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            fsf-notice
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            FSF Free Software Notice
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Free Software Foundation - Free Software Notice
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.fsf.org/licensing/licenses/" rel="noopener" target="_blank">http://www.fsf.org/licensing/licenses/</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This notice is commonly seen in L/GPL-licensed FSF and GNU projects as a short additional notice in command line tools or build scritps. It was previsouly reported as a free but unknown. It is commonly seen in GCC, GCB, Bash and related tools.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-fsf-notice
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This is free software: you are free to change and redistribute it
 There is NO WARRANTY, to the extent permitted by law.
 </code></pre>
   </div>

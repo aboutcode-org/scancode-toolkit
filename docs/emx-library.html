@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/emx-library.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/emx-library.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: emx-library
-short_name: EMX Library License
-name: EMX Library License
-category: Permissive
-owner: Unspecified
-spdx_license_key: LicenseRef-scancode-emx-library
-faq_url: http://web.lemoyne.edu/courseinformation/emtex/emx/doc/COPYING.EMX
-other_urls:
-  - http://web.lemoyne.edu/courseinformation/emtex/emx/doc/COPYING.EMX
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The emx libraries are not distributed under the GPL.  Linking an
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            emx-library
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            EMX Library License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            EMX Library License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-emx-library
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://web.lemoyne.edu/courseinformation/emtex/emx/doc/COPYING.EMX" rel="noopener" target="_blank">http://web.lemoyne.edu/courseinformation/emtex/emx/doc/COPYING.EMX</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://web.lemoyne.edu/courseinformation/emtex/emx/doc/COPYING.EMX" rel="noopener" target="_blank">http://web.lemoyne.edu/courseinformation/emtex/emx/doc/COPYING.EMX</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The emx libraries are not distributed under the GPL.  Linking an
 application with the emx libraries does not cause the executable
 to be covered by the GNU General Public License.  You are allowed
 to change and copy the emx library sources if you keep the copyright

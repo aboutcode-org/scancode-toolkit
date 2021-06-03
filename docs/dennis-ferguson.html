@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,62 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/dennis-ferguson.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/dennis-ferguson.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: dennis-ferguson
-short_name: Dennis Ferguson License
-name: Dennis Ferguson License
-category: Free Restricted
-owner: Dennis Ferguson
-spdx_license_key: LicenseRef-scancode-dennis-ferguson
-text_urls:
-  - http://web.mit.edu/jhawk/mnt/spo/netbsd/src/domestic/dist/krb5/src/lib/crypto/des/f_cbc.c
-  - http://web.mit.edu/jhawk/mnt/spo/netbsd/src/domestic/dist/krb5/src/lib/des425/pcbc_encrypt.c
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Commercial use is permitted only if products which are derived from or include
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            dennis-ferguson
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Dennis Ferguson License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Dennis Ferguson License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Dennis Ferguson
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-dennis-ferguson
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://web.mit.edu/jhawk/mnt/spo/netbsd/src/domestic/dist/krb5/src/lib/crypto/des/f_cbc.c" rel="noopener" target="_blank">http://web.mit.edu/jhawk/mnt/spo/netbsd/src/domestic/dist/krb5/src/lib/crypto/des/f_cbc.c</a></li><li><a href="http://web.mit.edu/jhawk/mnt/spo/netbsd/src/domestic/dist/krb5/src/lib/des425/pcbc_encrypt.c" rel="noopener" target="_blank">http://web.mit.edu/jhawk/mnt/spo/netbsd/src/domestic/dist/krb5/src/lib/des425/pcbc_encrypt.c</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Commercial use is permitted only if products which are derived from or include
 this software are made available for purchase and/or use in Canada. 
 Otherwise, redistribution and use in source and binary forms are permitted.</code></pre>
   </div>

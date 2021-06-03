@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-patent-promise.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-patent-promise.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ms-patent-promise
-short_name: MS Patent Promise for .NET
-name: Microsoft Patent Promise for .NET Libraries and Runtime Components
-category: Patent License
-owner: Microsoft
-homepage_url: https://github.com/dotnet/corefx/blob/master/PATENTS.TXT
-spdx_license_key: LicenseRef-scancode-ms-patent-promise
-other_urls:
-  - https://techcrunch.com/2016/11/16/google-signs-on-to-the-net-foundation-and-samsung-brings-net-support-to-tizen/
-ignorable_urls:
-  - https://github.com/dotnet/coreclr
-  - https://github.com/dotnet/corefx
-  - https://github.com/dotnet/corert
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Microsoft Patent Promise for .NET Libraries and Runtime Components 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ms-patent-promise
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MS Patent Promise for .NET
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Microsoft Patent Promise for .NET Libraries and Runtime Components
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Patent License
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/dotnet/corefx/blob/master/PATENTS.TXT" rel="noopener" target="_blank">https://github.com/dotnet/corefx/blob/master/PATENTS.TXT</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ms-patent-promise
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://techcrunch.com/2016/11/16/google-signs-on-to-the-net-foundation-and-samsung-brings-net-support-to-tizen/" rel="noopener" target="_blank">https://techcrunch.com/2016/11/16/google-signs-on-to-the-net-foundation-and-samsung-brings-net-support-to-tizen/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/dotnet/coreclr" rel="noopener" target="_blank">https://github.com/dotnet/coreclr</a></li><li><a href="https://github.com/dotnet/corefx" rel="noopener" target="_blank">https://github.com/dotnet/corefx</a></li><li><a href="https://github.com/dotnet/corert" rel="noopener" target="_blank">https://github.com/dotnet/corert</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Microsoft Patent Promise for .NET Libraries and Runtime Components 
 
 Microsoft Corporation and its affiliates (&#34;Microsoft&#34;) promise not to assert 
 any .NET Patents against you for making, using, selling, offering for sale, 

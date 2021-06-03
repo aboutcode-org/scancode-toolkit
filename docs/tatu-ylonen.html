@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,62 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/tatu-ylonen.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/tatu-ylonen.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: tatu-ylonen
-short_name: Tatu Ylonen License
-name: Tatu Ylonen License
-category: Permissive
-owner: Secure Shell
-spdx_license_key: SSH-short
-other_urls:
-  - https://github.com/openssh/openssh-portable/blob/1b11ea7c58cd5c59838b5fa574cd456d6047b2d4/pathnames.h
-  - http://web.mit.edu/kolya/.f/root/athena.mit.edu/sipb.mit.edu/project/openssh/OldFiles/src/openssh-2.9.9p2/ssh-add.1
-  - https://joinup.ec.europa.eu/svn/lesoll/trunk/italc/lib/src/dsa_key.cpp
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>As far as I am concerned, the code I have written for this software
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            tatu-ylonen
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Tatu Ylonen License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Tatu Ylonen License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Secure Shell
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            SSH-short
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/openssh/openssh-portable/blob/1b11ea7c58cd5c59838b5fa574cd456d6047b2d4/pathnames.h" rel="noopener" target="_blank">https://github.com/openssh/openssh-portable/blob/1b11ea7c58cd5c59838b5fa574cd456d6047b2d4/pathnames.h</a></li><li><a href="http://web.mit.edu/kolya/.f/root/athena.mit.edu/sipb.mit.edu/project/openssh/OldFiles/src/openssh-2.9.9p2/ssh-add.1" rel="noopener" target="_blank">http://web.mit.edu/kolya/.f/root/athena.mit.edu/sipb.mit.edu/project/openssh/OldFiles/src/openssh-2.9.9p2/ssh-add.1</a></li><li><a href="https://joinup.ec.europa.eu/svn/lesoll/trunk/italc/lib/src/dsa_key.cpp" rel="noopener" target="_blank">https://joinup.ec.europa.eu/svn/lesoll/trunk/italc/lib/src/dsa_key.cpp</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>As far as I am concerned, the code I have written for this software
 can be used freely for any purpose.  Any derived versions of this
 software must be clearly marked as such, and if the derived work is
 incompatible with the protocol description in the RFC file, it must be

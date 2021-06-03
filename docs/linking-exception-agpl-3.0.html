@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/linking-exception-agpl-3.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/linking-exception-agpl-3.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: linking-exception-agpl-3.0
-short_name: Linking exception to AGPL 3.0
-name: Linking exception to AGPL 3.0
-category: Copyleft Limited
-owner: Unspecified
-homepage_url: http://mo.morsi.org/blog/2009/08/13/lesser_affero_gplv3/
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-linking-exception-agpl-3.0
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Additional permission under the GNU Affero GPL version 3 section 7:
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            linking-exception-agpl-3.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Linking exception to AGPL 3.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Linking exception to AGPL 3.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://mo.morsi.org/blog/2009/08/13/lesser_affero_gplv3/" rel="noopener" target="_blank">http://mo.morsi.org/blog/2009/08/13/lesser_affero_gplv3/</a>
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-linking-exception-agpl-3.0
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Additional permission under the GNU Affero GPL version 3 section 7:
 
 If you modify this Program, or any covered work, by linking or
 combining it with other code, such other code is not for that reason

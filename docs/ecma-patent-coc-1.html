@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ecma-patent-coc-1.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ecma-patent-coc-1.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ecma-patent-coc-1
-short_name: Ecma Code of Conduct in Patent Matters v1
-name: Ecma Code of Conduct in Patent Matters v1
-category: Proprietary Free
-owner: Ecma International
-homepage_url: http://www.ecma-international.org/memento/codeofconduct_version1.htm
-spdx_license_key: LicenseRef-scancode-ecma-patent-coc-1
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Code of Conduct in Patent Matters
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ecma-patent-coc-1
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Ecma Code of Conduct in Patent Matters v1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Ecma Code of Conduct in Patent Matters v1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Ecma International
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.ecma-international.org/memento/codeofconduct_version1.htm" rel="noopener" target="_blank">http://www.ecma-international.org/memento/codeofconduct_version1.htm</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ecma-patent-coc-1
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Code of Conduct in Patent Matters
 Version 1 (approved by the Ecma GA in December 2009)
 
 1. Ecma considers it is desirable that fullest available information should be disclosed to those selecting technology for Ecma International Standards* and those interested in adopting Ecma International Standards. Ecma desires to develop standards for which licenses for any essential patents are available on a non-discriminatory basis and on reasonable terms and conditions. Therefore, Ecma desires that any party participating in a technical committee of Ecma International promptly disclose any patent or pending patent application that it believes contain claims that may be required to implement an Ecma International Standard, in accordance with the following provisions.

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adobe-eula.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adobe-eula.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: adobe-eula
-short_name: Adobe EULA
-name: Adobe End User License Agreement
-category: Commercial
-owner: Adobe Systems
-homepage_url: http://www.adobe.com/products/eulas/
-notes: |
-  This is a generic license for a large number of Adobe EULAs that are very
-  long and proprietary.
-spdx_license_key: LicenseRef-scancode-adobe-eula
-minimum_coverage: 70
-ignorable_urls:
-  - http://www.adobe.com/products/eulas/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Patents pending in the United States and 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            adobe-eula
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Adobe EULA
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Adobe End User License Agreement
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Adobe Systems
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.adobe.com/products/eulas/" rel="noopener" target="_blank">http://www.adobe.com/products/eulas/</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This is a generic license for a large number of Adobe EULAs that are very
+long and proprietary.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-adobe-eula
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            70
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.adobe.com/products/eulas/" rel="noopener" target="_blank">http://www.adobe.com/products/eulas/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Patents pending in the United States and 
 other countries. Adobe and Flash are either trademarks or registered 
 trademarks in the United States and/or other countries.
 

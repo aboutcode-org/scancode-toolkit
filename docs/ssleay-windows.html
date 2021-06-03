@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,26 +62,96 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ssleay-windows.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ssleay-windows.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ssleay-windows
-short_name: Original SSLeay License with Windows Clause
-name: Original SSLeay License with Windows Clause
-category: Permissive
-owner: OpenSSL
-homepage_url: https://www.openssl.org/source/license.html
-spdx_license_key: LicenseRef-scancode-ssleay-windows
-text_urls:
-  - http://www.openssl.org/source/license.html
-other_urls:
-  - http://h71000.www7.hp.com/doc/83final/ba554_90007/apcs02.html
-ignorable_authors:
-  - Eric Young (eay@cryptsoft.com)
-  - Tim Hudson (tjh@cryptsoft.com)
-ignorable_emails:
-  - eay@cryptsoft.com
-  - tjh@cryptsoft.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This package is an SSL implementation written by Eric Young (eay@cryptsoft.com).
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ssleay-windows
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Original SSLeay License with Windows Clause
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Original SSLeay License with Windows Clause
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            OpenSSL
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.openssl.org/source/license.html" rel="noopener" target="_blank">https://www.openssl.org/source/license.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ssleay-windows
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.openssl.org/source/license.html" rel="noopener" target="_blank">http://www.openssl.org/source/license.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://h71000.www7.hp.com/doc/83final/ba554_90007/apcs02.html" rel="noopener" target="_blank">http://h71000.www7.hp.com/doc/83final/ba554_90007/apcs02.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Eric Young (<a href="mailto:eay@cryptsoft.com">eay@cryptsoft.com</a>)</li><li>Tim Hudson (<a href="mailto:tjh@cryptsoft.com">tjh@cryptsoft.com</a>)</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:eay@cryptsoft.com">eay@cryptsoft.com</a></li><li><a href="mailto:tjh@cryptsoft.com">tjh@cryptsoft.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This package is an SSL implementation written by Eric Young (eay@cryptsoft.com).
 The implementation was written so as to conform with Netscapes SSL.
 
 This library is free for commercial and non-commercial use as long as

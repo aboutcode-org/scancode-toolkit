@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/epl-2.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/epl-2.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: epl-2.0
-short_name: EPL 2.0
-name: Eclipse Public License 2.0
-category: Copyleft Limited
-owner: Eclipse Foundation
-homepage_url: https://www.eclipse.org/legal/epl-2.0/
-spdx_license_key: EPL-2.0
-text_urls:
-  - https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt
-faq_url: http://www.eclipse.org/legal/eplfaq.php
-other_urls:
-  - https://www.eclipse.org/legal/epl-2.0
-  - https://www.opensource.org/licenses/EPL-2.0
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Eclipse Public License - v 2.0
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            epl-2.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            EPL 2.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Eclipse Public License 2.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Eclipse Foundation
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.eclipse.org/legal/epl-2.0/" rel="noopener" target="_blank">https://www.eclipse.org/legal/epl-2.0/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            EPL-2.0
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" rel="noopener" target="_blank">https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://www.eclipse.org/legal/eplfaq.php" rel="noopener" target="_blank">http://www.eclipse.org/legal/eplfaq.php</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.eclipse.org/legal/epl-2.0" rel="noopener" target="_blank">https://www.eclipse.org/legal/epl-2.0</a></li><li><a href="https://www.opensource.org/licenses/EPL-2.0" rel="noopener" target="_blank">https://www.opensource.org/licenses/EPL-2.0</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Eclipse Public License - v 2.0
 
     THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE
     PUBLIC LICENSE (&#34;AGREEMENT&#34;). ANY USE, REPRODUCTION OR DISTRIBUTION

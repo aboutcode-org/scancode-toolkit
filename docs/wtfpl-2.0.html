@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,25 +62,96 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/wtfpl-2.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/wtfpl-2.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: wtfpl-2.0
-short_name: WTFPL 2.0
-name: WTFPL 2.0
-category: Public Domain
-owner: Sam Hocevar
-homepage_url: http://sam.zoy.org/wtfpl/
-spdx_license_key: WTFPL
-text_urls:
-  - http://sam.zoy.org/wtfpl/COPYING
-other_urls:
-  - http://fedoraproject.org/wiki/Licensing/WTFPL
-  - http://www.wtfpl.net/about/
-ignorable_copyrights:
-  - Copyright (c) 2004 Sam Hocevar
-ignorable_holders:
-  - Sam Hocevar
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            wtfpl-2.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            WTFPL 2.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            WTFPL 2.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Public Domain
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Sam Hocevar
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://sam.zoy.org/wtfpl/" rel="noopener" target="_blank">http://sam.zoy.org/wtfpl/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            WTFPL
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://sam.zoy.org/wtfpl/COPYING" rel="noopener" target="_blank">http://sam.zoy.org/wtfpl/COPYING</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://fedoraproject.org/wiki/Licensing/WTFPL" rel="noopener" target="_blank">http://fedoraproject.org/wiki/Licensing/WTFPL</a></li><li><a href="http://www.wtfpl.net/about/" rel="noopener" target="_blank">http://www.wtfpl.net/about/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2004 Sam Hocevar</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Sam Hocevar</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
                     Version 2, December 2004
 
  Copyright (C) 2004 Sam Hocevar

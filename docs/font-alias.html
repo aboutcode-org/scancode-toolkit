@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,25 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/font-alias.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/font-alias.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: font-alias
-short_name: font-alias License
-name: font-alias License
-category: Permissive
-owner: X.Org
-spdx_license_key: LicenseRef-scancode-font-alias
-text_urls:
-  - https://www.x.org/releases/individual/font/font-alias-1.0.3.tar.bz2
-standard_notice: |
-  Copyright (C) 1994-95 Cronyx Ltd.
-  Author: Serge Vakulenko, &lt;vak@cronyx.ru&gt;
-  This software may be used, modified, copied, distributed, and sold,
-  in both source and binary form provided that the above copyright
-  and these terms are retained. Under no circumstances is the author
-  responsible for the proper functioning of this software, nor does
-  the author assume any responsibility for damages incurred with its use.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This software may be used, modified, copied, distributed, and sold,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            font-alias
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            font-alias License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            font-alias License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            X.Org
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-font-alias
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.x.org/releases/individual/font/font-alias-1.0.3.tar.bz2" rel="noopener" target="_blank">https://www.x.org/releases/individual/font/font-alias-1.0.3.tar.bz2</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            Copyright (C) 1994-95 Cronyx Ltd.
+Author: Serge Vakulenko, &lt;<a href="mailto:vak@cronyx.ru">vak@cronyx.ru</a>&gt;
+This software may be used, modified, copied, distributed, and sold,
+in both source and binary form provided that the above copyright
+and these terms are retained. Under no circumstances is the author
+responsible for the proper functioning of this software, nor does
+the author assume any responsibility for damages incurred with its use.
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This software may be used, modified, copied, distributed, and sold,
 in both source and binary form provided that the above copyright
 and these terms are retained. Under no circumstances is the author
 responsible for the proper functioning of this software, nor does

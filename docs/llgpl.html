@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/llgpl.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/llgpl.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: llgpl
-short_name: LLGPL
-name: Lisp Lesser General Public License (LLPGL)
-category: Copyleft Limited
-owner: Franz Inc
-homepage_url: http://opensource.franz.com/preamble.html
-spdx_license_key: LicenseRef-scancode-llgpl
-faq_url: http://opensource.franz.com/
-other_urls:
-  - http://www.gnu.org/licenses/lgpl-2.1.txt
-  - https://github.com/franzinc
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The concept of the GNU Lesser General Public License version 2.1
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            llgpl
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LLGPL
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Lisp Lesser General Public License (LLPGL)
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Franz Inc
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://opensource.franz.com/preamble.html" rel="noopener" target="_blank">http://opensource.franz.com/preamble.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-llgpl
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://opensource.franz.com/" rel="noopener" target="_blank">http://opensource.franz.com/</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/lgpl-2.1.txt" rel="noopener" target="_blank">http://www.gnu.org/licenses/lgpl-2.1.txt</a></li><li><a href="https://github.com/franzinc" rel="noopener" target="_blank">https://github.com/franzinc</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The concept of the GNU Lesser General Public License version 2.1
 (&#34;LGPL&#34;) has been adopted to govern the use and distribution of above-
 mentioned application. However, the LGPL uses terminology that is more
 appropriate for a program written in C than one written in Lisp.

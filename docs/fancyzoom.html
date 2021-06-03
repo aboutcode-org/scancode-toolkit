@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/fancyzoom.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/fancyzoom.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: fancyzoom
-short_name: FancyZoom License
-name: FancyZoom License
-category: Proprietary Free
-owner: Cabel Sasser
-spdx_license_key: LicenseRef-scancode-fancyzoom
-other_urls:
-  - http://www.cabel.name/2008/02/fancyzoom-10.html
-ignorable_urls:
-  - http://www.fancyzoom.com/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use of this effect in source form, with or without modification,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            fancyzoom
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            FancyZoom License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            FancyZoom License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Cabel Sasser
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-fancyzoom
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.cabel.name/2008/02/fancyzoom-10.html" rel="noopener" target="_blank">http://www.cabel.name/2008/02/fancyzoom-10.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.fancyzoom.com/" rel="noopener" target="_blank">http://www.fancyzoom.com/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use of this effect in source form, with or without modification,
 are permitted provided that the following conditions are met:
 
 * USE OF SOURCE ON COMMERCIAL (FOR-PROFIT) WEBSITE REQUIRES ONE-TIME LICENSE FEE PER DOMAIN.

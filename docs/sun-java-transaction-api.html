@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-java-transaction-api.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-java-transaction-api.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: sun-java-transaction-api
-short_name: Sun Java Transaction API License
-name: Sun Java Transaction API License
-category: Proprietary Free
-owner: Oracle (Sun)
-homepage_url: http://download.oracle.com/otndocs/jcp/7286-jta-1.0.1-spec-oth-JSpec/?submit=Download
-spdx_license_key: LicenseRef-scancode-sun-java-transaction-api
-ignorable_urls:
-  - http://java.sun.com/trademarks.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>License Agreement
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            sun-java-transaction-api
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Sun Java Transaction API License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sun Java Transaction API License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle (Sun)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://download.oracle.com/otndocs/jcp/7286-jta-1.0.1-spec-oth-JSpec/?submit=Download" rel="noopener" target="_blank">http://download.oracle.com/otndocs/jcp/7286-jta-1.0.1-spec-oth-JSpec/?submit=Download</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-sun-java-transaction-api
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://java.sun.com/trademarks.html" rel="noopener" target="_blank">http://java.sun.com/trademarks.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>License Agreement
 
 SUN MICROSYSTEMS, INC. (``SUN&#39;&#39;) IS WILLING TO LICENSE ITS Java Transaction API
 SOFTWARE (``SOFTWARE&#39;&#39;) TO YOU (&#34;CUSTOMER&#34;) ONLY UPON THE CONDITION 

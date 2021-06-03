@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,33 +62,97 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/tosl.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/tosl.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: tosl
-short_name: TOSL 1.0a
-name: Trusster Open Source License 1.0a
-category: Copyleft
-owner: Trusster
-homepage_url: https://fedoraproject.org/wiki/Licensing/TOSL
-notes: |
-  Per Fedora, the Trusster Open Source License (TOSL) is a derivation of the
-  Sleepycat License. The one significant difference is that where the
-  Sleepycat License says The source code must either be included in the
-  distribution or be available for no more than the cost of distribution plus
-  a nominal fee, and must be freely redistributable under reasonable
-  conditions. TOSL is somewhat more specific The source code must either be
-  included in the distribution or be available in a timely fashion for no
-  more than the cost of distribution plus a nominal fee, and must be freely
-  redistributable under reasonable and no more restrictive conditions. While
-  the Sleepycat License is considered to be a free, GPL-compatible license,
-  TOSL is GPL-incompatible because of the addition of the &#34;no more
-  restrictive&#34; language.
-spdx_license_key: TOSL
-ignorable_copyrights:
-  - copyright (c) 2006 Mike Mintz and Robert Ekendahl
-ignorable_holders:
-  - Mike Mintz and Robert Ekendahl
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Trusster Open Source License version 1.0a (TRUST) 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            tosl
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            TOSL 1.0a
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Trusster Open Source License 1.0a
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Trusster
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing/TOSL" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/TOSL</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per Fedora, the Trusster Open Source License (TOSL) is a derivation of the
+Sleepycat License. The one significant difference is that where the
+Sleepycat License says The source code must either be included in the
+distribution or be available for no more than the cost of distribution plus
+a nominal fee, and must be freely redistributable under reasonable
+conditions. TOSL is somewhat more specific The source code must either be
+included in the distribution or be available in a timely fashion for no
+more than the cost of distribution plus a nominal fee, and must be freely
+redistributable under reasonable and no more restrictive conditions. While
+the Sleepycat License is considered to be a free, GPL-compatible license,
+TOSL is GPL-incompatible because of the addition of the &#34;no more
+restrictive&#34; language.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            TOSL
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>copyright (c) 2006 Mike Mintz and Robert Ekendahl</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Mike Mintz and Robert Ekendahl</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Trusster Open Source License version 1.0a (TRUST) 
 copyright (c) 2006 Mike Mintz and Robert Ekendahl. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,

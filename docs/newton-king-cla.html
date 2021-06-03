@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/newton-king-cla.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/newton-king-cla.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: newton-king-cla
-short_name: Newton-King CLA
-name: James Newton-King CLA
-category: Unstated License
-owner: James Newton-King
-homepage_url: https://github.com/JamesNK/Newtonsoft.Json/blob/ce7f283b94c86341036078ed2f4e241b907b816d/CONTRIBUTING.md
-notes: this is a CLA
-spdx_license_key: LicenseRef-scancode-newton-king-cla
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Contributor License Agreement
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            newton-king-cla
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Newton-King CLA
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            James Newton-King CLA
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Unstated License
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            James Newton-King
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/JamesNK/Newtonsoft.Json/blob/ce7f283b94c86341036078ed2f4e241b907b816d/CONTRIBUTING.md" rel="noopener" target="_blank">https://github.com/JamesNK/Newtonsoft.Json/blob/ce7f283b94c86341036078ed2f4e241b907b816d/CONTRIBUTING.md</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this is a CLA
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-newton-king-cla
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Contributor License Agreement
 
 By contributing your code to Json.NET you grant James Newton-King a non-exclusive, irrevocable, worldwide,
 royalty-free, sublicenseable, transferable license under all of Your relevant intellectual property rights

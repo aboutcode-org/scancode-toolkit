@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-net-framework-deployment.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-net-framework-deployment.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ms-net-framework-deployment
-short_name: MS .NET Framework Redistributable EULA
-name: Microsoft .NET Framework Redistributable EULA
-category: Commercial
-owner: Microsoft
-spdx_license_key: LicenseRef-scancode-ms-net-framework-deployment
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>.NET Framework Deployment 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ms-net-framework-deployment
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MS .NET Framework Redistributable EULA
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Microsoft .NET Framework Redistributable EULA
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ms-net-framework-deployment
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>.NET Framework Deployment 
 Microsoft .NET Framework Redistributable EULA
 
 IMPORTANT: READ CAREFULLY—These Microsoft Corporation (&#34;Microsoft&#34;) operating system components, including any &#34;online&#34; or electronic documentation (&#34;OS Components&#34;) are subject to the terms and conditions of the agreement under which you have licensed the applicable Microsoft operating system product (&#34;OS Product&#34;) described below (each an &#34;End User License Agreement&#34; or &#34;EULA&#34;) and the terms and conditions of this Supplemental EULA. BY INSTALLING, COPYING OR OTHERWISE USING THE OS COMPONENTS, YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THE APPLICABLE OS PRODUCT EULA AND THIS SUPPLEMENTAL EULA. IF YOU DO NOT AGREE TO THESE TERMS AND CONDITIONS, DO NOT INSTALL, COPY OR USE THE OS COMPONENTS.

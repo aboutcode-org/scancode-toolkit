@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-sample-source-code-2015.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-sample-source-code-2015.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: intel-sample-source-code-2015
-short_name: Intel Sample Source Code 2015
-name: Intel Sample Source Code License Agreement 2015
-category: Proprietary Free
-owner: Intel Corporation
-homepage_url: https://software.intel.com/protected-download/267270/734854
-spdx_license_key: LicenseRef-scancode-intel-sample-source-code-2015
-ignorable_urls:
-  - http://www.intel.com/content/www/us/en/legal/export-compliance.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Intel Sample Source Code License Agreement
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            intel-sample-source-code-2015
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Intel Sample Source Code 2015
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Intel Sample Source Code License Agreement 2015
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Intel Corporation
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://software.intel.com/protected-download/267270/734854" rel="noopener" target="_blank">https://software.intel.com/protected-download/267270/734854</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-intel-sample-source-code-2015
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.intel.com/content/www/us/en/legal/export-compliance.html" rel="noopener" target="_blank">http://www.intel.com/content/www/us/en/legal/export-compliance.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Intel Sample Source Code License Agreement
 
 Code Samples License Agreement (Version December 2015)
 

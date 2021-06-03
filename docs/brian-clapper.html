@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/brian-clapper.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/brian-clapper.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: brian-clapper
-short_name: Brian Clapper License
-name: Brian Clapper License
-category: Permissive
-owner: clapper.org
-homepage_url: http://software.clapper.org/poll/index.html
-spdx_license_key: LicenseRef-scancode-brian-clapper
-ignorable_authors:
-  - Brian M. Clapper &lt;bmc@clapper.org&gt;
-ignorable_emails:
-  - bmc@clapper.org
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms are
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            brian-clapper
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Brian Clapper License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Brian Clapper License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            <a href="http://clapper.org" rel="noopener" target="_blank">clapper.org</a>
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://software.clapper.org/poll/index.html" rel="noopener" target="_blank">http://software.clapper.org/poll/index.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-brian-clapper
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Brian M. Clapper &lt;<a href="mailto:bmc@clapper.org">bmc@clapper.org</a>&gt;</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:bmc@clapper.org">bmc@clapper.org</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms are
 permitted provided that: (1) source distributions retain
 this entire copyright notice and comment; (2) modifications
 made to the software are prominently mentioned, and a copy

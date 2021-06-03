@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,96 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sparky.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sparky.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: sparky
-short_name: Sparky License
-name: Sparky License
-category: Permissive
-owner: Regents of the University of California
-homepage_url: http://www.cgl.ucsf.edu/home/sparky/
-spdx_license_key: LicenseRef-scancode-sparky
-text_urls:
-  - http://www.cgl.ucsf.edu/home/sparky/sparky-license.html
-ignorable_copyrights:
-  - Copyright (c) 2009, The Regents of the University of California
-ignorable_authors:
-  - the UCSF Resource
-ignorable_holders:
-  - The Regents of the University of California
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Copyright, License, and Disclaimer
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            sparky
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Sparky License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sparky License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Regents of the University of California
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.cgl.ucsf.edu/home/sparky/" rel="noopener" target="_blank">http://www.cgl.ucsf.edu/home/sparky/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-sparky
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.cgl.ucsf.edu/home/sparky/sparky-license.html" rel="noopener" target="_blank">http://www.cgl.ucsf.edu/home/sparky/sparky-license.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2009, The Regents of the University of California</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>the UCSF Resource</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>The Regents of the University of California</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Copyright, License, and Disclaimer
 
 The following copyright, license and disclaimer applies to the distributed
 Sparky source code, documentation and binaries.

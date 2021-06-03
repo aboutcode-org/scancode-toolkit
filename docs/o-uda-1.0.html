@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/o-uda-1.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/o-uda-1.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: o-uda-1.0
-short_name: O-UDA-1.0
-name: Open Use of Data Agreement v1.0
-category: Permissive
-owner: Microsoft
-homepage_url: https://github.com/microsoft/Open-Use-of-Data-Agreement/blob/v1.0/O-UDA-1.0.md
-spdx_license_key: O-UDA-1.0
-other_urls:
-  - https://cdla.dev/open-use-of-data-agreement-v1-0/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Open Use of Data Agreement v1.0
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            o-uda-1.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            O-UDA-1.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Open Use of Data Agreement v1.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/microsoft/Open-Use-of-Data-Agreement/blob/v1.0/O-UDA-1.0.md" rel="noopener" target="_blank">https://github.com/microsoft/Open-Use-of-Data-Agreement/blob/v1.0/O-UDA-1.0.md</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            O-UDA-1.0
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://cdla.dev/open-use-of-data-agreement-v1-0/" rel="noopener" target="_blank">https://cdla.dev/open-use-of-data-agreement-v1-0/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Open Use of Data Agreement v1.0
 This is the Open Use of Data Agreement, Version 1.0 (the &#34;O-UDA&#34;). Capitalized terms are defined in Section 5. Data Provider and you agree as follows:
 
 Provision of the Data

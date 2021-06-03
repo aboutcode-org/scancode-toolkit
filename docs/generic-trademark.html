@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/generic-trademark.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/generic-trademark.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: generic-trademark
-short_name: Generic Trademark Notice
-name: Generic Trademark and Name Protection Notice
-category: Unstated License
-owner: Unspecified
-notes: this is a generic export Trademark and name realted notice. Actual terms are most commonly
-  related to name use restrictions and no endorsement. This should be used only for rare one-off
-  notices.
-spdx_license_key: LicenseRef-scancode-generic-trademark
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code></code></pre>
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            generic-trademark
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Generic Trademark Notice
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Generic Trademark and Name Protection Notice
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Unstated License
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this is a generic export Trademark and name realted notice. Actual terms are most commonly related to name use restrictions and no endorsement. This should be used only for rare one-off notices.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-generic-trademark
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code></code></pre>
   </div>
 
     <div class="container">

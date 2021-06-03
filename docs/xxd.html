@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/xxd.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/xxd.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: xxd
-short_name: xxd License
-name: xxd License
-category: Permissive
-owner: Juergen Weigert
-homepage_url: https://github.com/unixdj/xxd/blob/master/README
-spdx_license_key: LicenseRef-scancode-xxd
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Distribute freely and credit me,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            xxd
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            xxd License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            xxd License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Juergen Weigert
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/unixdj/xxd/blob/master/README" rel="noopener" target="_blank">https://github.com/unixdj/xxd/blob/master/README</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-xxd
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Distribute freely and credit me,
 make money and share with me,
 lose money and don&#39;t ask me.</code></pre>
   </div>

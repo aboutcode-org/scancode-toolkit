@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,50 +62,128 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/openssh.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/openssh.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: openssh
-short_name: OpenSSH License
-name: OpenSSH License
-category: Permissive
-owner: OpenBSD Project
-homepage_url: https://github.com/openssh/openssh-portable/blob/V_7_3_P1/LICENCE
-notes: composite
-spdx_license_key: SSH-OpenSSH
-other_urls:
-  - http://www.openssh.org/
-  - https://github.com/openssh/openssh-portable/blob/1b11ea7c58cd5c59838b5fa574cd456d6047b2d4/LICENCE#L10
-minimum_coverage: 80
-ignorable_copyrights:
-  - Copyright (c) 1983, 1990, 1992, 1993, 1995 The Regents of the University of California
-  - Copyright (c) 1995 Tatu Ylonen &lt;ylo@cs.hut.fi&gt; , Espoo, Finland
-  - Copyright (c) 1998 CORE SDI
-  - Copyright 1995, 1996 by David Mazieres &lt;dm@lcs.mit.edu&gt;
-  - Copyright Patrick Powell 1995
-ignorable_authors:
-  - Antoon Bosselaers &lt;antoon.bosselaers@esat.kuleuven.ac.be&gt;
-  - Patrick Powell (papowell@astart.com)
-  - Paulo Barreto &lt;paulo.barreto@terra.com.br&gt;
-  - Vincent Rijmen &lt;vincent.rijmen@esat.kuleuven.ac.be&gt;
-ignorable_holders:
-  - CORE SDI
-  - David Mazieres
-  - Patrick Powell
-  - Tatu Ylonen , Espoo, Finland
-  - The Regents of the University of California
-ignorable_urls:
-  - http://www.core-sdi.com/
-  - http://www.cs.hut.fi/crypto
-ignorable_emails:
-  - antoon.bosselaers@esat.kuleuven.ac.be
-  - dm@lcs.mit.edu
-  - futo@core-sdi.com
-  - papowell@astart.com
-  - paulo.barreto@terra.com.br
-  - phk@login.dknet.dk
-  - vincent.rijmen@esat.kuleuven.ac.be
-  - ylo@cs.hut.fi
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This file is part of the OpenSSH software.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            openssh
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            OpenSSH License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            OpenSSH License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            OpenBSD Project
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/openssh/openssh-portable/blob/V_7_3_P1/LICENCE" rel="noopener" target="_blank">https://github.com/openssh/openssh-portable/blob/V_7_3_P1/LICENCE</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            composite
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            SSH-OpenSSH
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.openssh.org/" rel="noopener" target="_blank">http://www.openssh.org/</a></li><li><a href="https://github.com/openssh/openssh-portable/blob/1b11ea7c58cd5c59838b5fa574cd456d6047b2d4/LICENCE#L10" rel="noopener" target="_blank">https://github.com/openssh/openssh-portable/blob/1b11ea7c58cd5c59838b5fa574cd456d6047b2d4/LICENCE#L10</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            80
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1983, 1990, 1992, 1993, 1995 The Regents of the University of California</li><li>Copyright (c) 1995 Tatu Ylonen &lt;<a href="mailto:ylo@cs.hut.fi">ylo@cs.hut.fi</a>&gt; , Espoo, Finland</li><li>Copyright (c) 1998 CORE SDI</li><li>Copyright 1995, 1996 by David Mazieres &lt;<a href="mailto:dm@lcs.mit.edu">dm@lcs.mit.edu</a>&gt;</li><li>Copyright Patrick Powell 1995</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Antoon Bosselaers &lt;<a href="mailto:antoon.bosselaers@esat.kuleuven.ac.be">antoon.bosselaers@esat.kuleuven.ac.be</a>&gt;</li><li>Patrick Powell (<a href="mailto:papowell@astart.com">papowell@astart.com</a>)</li><li>Paulo Barreto &lt;<a href="mailto:paulo.barreto@terra.com.br">paulo.barreto@terra.com.br</a>&gt;</li><li>Vincent Rijmen &lt;<a href="mailto:vincent.rijmen@esat.kuleuven.ac.be">vincent.rijmen@esat.kuleuven.ac.be</a>&gt;</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>CORE SDI</li><li>David Mazieres</li><li>Patrick Powell</li><li>Tatu Ylonen , Espoo, Finland</li><li>The Regents of the University of California</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.core-sdi.com/" rel="noopener" target="_blank">http://www.core-sdi.com/</a></li><li><a href="http://www.cs.hut.fi/crypto" rel="noopener" target="_blank">http://www.cs.hut.fi/crypto</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:antoon.bosselaers@esat.kuleuven.ac.be">antoon.bosselaers@esat.kuleuven.ac.be</a></li><li><a href="mailto:dm@lcs.mit.edu">dm@lcs.mit.edu</a></li><li><a href="mailto:futo@core-sdi.com">futo@core-sdi.com</a></li><li><a href="mailto:papowell@astart.com">papowell@astart.com</a></li><li><a href="mailto:paulo.barreto@terra.com.br">paulo.barreto@terra.com.br</a></li><li><a href="mailto:phk@login.dknet.dk">phk@login.dknet.dk</a></li><li><a href="mailto:vincent.rijmen@esat.kuleuven.ac.be">vincent.rijmen@esat.kuleuven.ac.be</a></li><li><a href="mailto:ylo@cs.hut.fi">ylo@cs.hut.fi</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This file is part of the OpenSSH software.
 
 The licences which components of this software fall under are as
 follows.  First, we will summarize and say that all components

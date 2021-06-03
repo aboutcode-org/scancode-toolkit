@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/rsa-md4.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/rsa-md4.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: rsa-md4
-short_name: RSA-MD4 License
-name: RSA Data Security MD4
-category: Permissive
-owner: RSA (the Security Division of EMC)
-spdx_license_key: LicenseRef-scancode-rsa-md4
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>License to copy and use this software is granted provided that it
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            rsa-md4
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            RSA-MD4 License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            RSA Data Security MD4
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            RSA (the Security Division of EMC)
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-rsa-md4
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>License to copy and use this software is granted provided that it
 is identified as the &#34;RSA Data Security, Inc. MD4 Message-Digest
 Algorithm&#34; in all material mentioning or referencing this software
 or this function.

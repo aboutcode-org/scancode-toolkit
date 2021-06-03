@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/scrub.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/scrub.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: scrub
-short_name: SCRUB License
-name: SCRUB License
-category: Proprietary Free
-owner: Duxbury Systems, Inc.
-homepage_url: http://www.duxburysystems.com/
-spdx_license_key: LicenseRef-scancode-scrub
-ignorable_copyrights:
-  - Copyright 1988-1993 Duxbury Systems, Inc.
-ignorable_holders:
-  - Duxbury Systems, Inc.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>SCRUB - Simple Character String Replacer Documentation
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            scrub
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            SCRUB License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            SCRUB License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Duxbury Systems, Inc.
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.duxburysystems.com/" rel="noopener" target="_blank">http://www.duxburysystems.com/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-scrub
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright 1988-1993 Duxbury Systems, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Duxbury Systems, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>SCRUB - Simple Character String Replacer Documentation
 
 First Release: December 1988
 

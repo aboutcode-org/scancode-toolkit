@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,80 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-bcl-sdk-1.4.2.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-bcl-sdk-1.4.2.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: sun-bcl-sdk-1.4.2
-short_name: Sun BCL SDK 1.4.2
-name: Sun BCL SDK 1.4.2
-category: Proprietary Free
-owner: Oracle (Sun)
-spdx_license_key: LicenseRef-scancode-sun-bcl-sdk-1.4.2
-ignorable_copyrights:
-  - Copyright 2003, Sun Microsystems, Inc.
-ignorable_holders:
-  - Sun Microsystems, Inc.
-ignorable_urls:
-  - http://www.sun.com/policies/trademarks
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Sun Microsystems, Inc. Binary Code License Agreement
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            sun-bcl-sdk-1.4.2
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Sun BCL SDK 1.4.2
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sun BCL SDK 1.4.2
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle (Sun)
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-sun-bcl-sdk-1.4.2
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright 2003, Sun Microsystems, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Sun Microsystems, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.sun.com/policies/trademarks" rel="noopener" target="_blank">http://www.sun.com/policies/trademarks</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Sun Microsystems, Inc. Binary Code License Agreement
 for the JAVA 2 SOFTWARE DEVELOPMENT KIT (J2SDK), STANDARD EDITION,
 VERSION 1.4.2_X
 

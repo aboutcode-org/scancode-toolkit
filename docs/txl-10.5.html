@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,25 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/txl-10.5.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/txl-10.5.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: txl-10.5
-short_name: TXL 10.5 License
-name: TXL 10.5 License
-category: Free Restricted
-owner: Unspecified
-homepage_url: http://fossat.googlecode.com/svn/trunk/bin/COPYRIGHT.txt
-spdx_license_key: LicenseRef-scancode-txl-10.5
-text_urls:
-  - http://fossat.googlecode.com/svn/trunk/bin/COPYRIGHT.txt
-ignorable_copyrights:
-  - Copyright 1988-2009 Queen&#39;s University at Kingston
-  - Copyright 2009 by Queen&#39;s University at Kingston
-  - Copyright Convention 1971 Paris
-ignorable_holders:
-  - Convention Paris
-  - Queen&#39;s University at Kingston
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>===================
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            txl-10.5
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            TXL 10.5 License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            TXL 10.5 License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://fossat.googlecode.com/svn/trunk/bin/COPYRIGHT.txt" rel="noopener" target="_blank">http://fossat.googlecode.com/svn/trunk/bin/COPYRIGHT.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-txl-10.5
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://fossat.googlecode.com/svn/trunk/bin/COPYRIGHT.txt" rel="noopener" target="_blank">http://fossat.googlecode.com/svn/trunk/bin/COPYRIGHT.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright 1988-2009 Queen&#39;s University at Kingston</li><li>Copyright 2009 by Queen&#39;s University at Kingston</li><li>Copyright Convention 1971 Paris</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Convention Paris</li><li>Queen&#39;s University at Kingston</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>===================
 TXL Version 10.5e
     Sept 2009
 ===================

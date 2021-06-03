@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,27 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/appfire-eula.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/appfire-eula.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: appfire-eula
-short_name: Appfire EULA
-name: Appfire EULA
-category: Proprietary Free
-owner: Appfire
-homepage_url: http://appfire.com/eula
-spdx_license_key: LicenseRef-scancode-appfire-eula
-ignorable_urls:
-  - https://bobswift.atlassian.net/
-  - https://bobswift.atlassian.net/wiki/questions
-  - https://marketplace.atlassian.com/
-  - https://wittified.atlassian.net/
-  - https://wittified.atlassian.net/wiki/questions
-  - https://www.atlassian.com/licensing/marketplace/termsofuse
-ignorable_emails:
-  - legal@appfire.com
-  - operations@appfire.com
-  - unsubscribe@appfire.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Appfire EULA
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            appfire-eula
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Appfire EULA
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Appfire EULA
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Appfire
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://appfire.com/eula" rel="noopener" target="_blank">http://appfire.com/eula</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-appfire-eula
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://bobswift.atlassian.net/" rel="noopener" target="_blank">https://bobswift.atlassian.net/</a></li><li><a href="https://bobswift.atlassian.net/wiki/questions" rel="noopener" target="_blank">https://bobswift.atlassian.net/wiki/questions</a></li><li><a href="https://marketplace.atlassian.com/" rel="noopener" target="_blank">https://marketplace.atlassian.com/</a></li><li><a href="https://wittified.atlassian.net/" rel="noopener" target="_blank">https://wittified.atlassian.net/</a></li><li><a href="https://wittified.atlassian.net/wiki/questions" rel="noopener" target="_blank">https://wittified.atlassian.net/wiki/questions</a></li><li><a href="https://www.atlassian.com/licensing/marketplace/termsofuse" rel="noopener" target="_blank">https://www.atlassian.com/licensing/marketplace/termsofuse</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:legal@appfire.com">legal@appfire.com</a></li><li><a href="mailto:operations@appfire.com">operations@appfire.com</a></li><li><a href="mailto:unsubscribe@appfire.com">unsubscribe@appfire.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Appfire EULA
 IMPORTANT! BE SURE TO CAREFULLY READ AND UNDERSTAND ALL OF THE RIGHTS AND RESTRICTIONS SET FORTH IN THIS END USER LICENSE AGREEMENT (“EULA”). YOU ARE NOT AUTHORIZED TO USE THIS SOFTWARE UNLESS AND UNTIL YOU ACCEPT THE TERMS OF THIS EULA.
 
 This EULA is a binding legal agreement between Appfire Technologies, Inc. (hereinafter “Licensor”), a provider of downloadable and cloud-based applications under the Bob Swift Atlassian Add-ons and Wittified Atlassian Add-ons brand names through the Atlassian Marketplace or any other means that interoperate with applicable products manufactured by Atlassian Pty Ltd (“Atlassian”), and you (either an individual or a single legal entity you represent) whose details are provided to Licensor upon purchase (hereinafter “Licensee” or “you”) for the materials accompanying this EULA, including the accompanying computer software, associated media, printed materials and any “online” or electronic documentation.

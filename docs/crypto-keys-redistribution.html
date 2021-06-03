@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,74 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/crypto-keys-redistribution.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/crypto-keys-redistribution.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: crypto-keys-redistribution
-short_name: Cryptographic keys redistribution
-name: Cryptographic keys redistribution
-category: Copyleft
-owner: kernel.org
-notes: |
-  This was found as a Linux addition to the GPL in Linux 3.x in files such as
-  in drivers/scsi/aha1740.c drivers/message/i2o/i2o_scsi.c
-  drivers/ide/cs5520.c drivers/ide/ide-pci-generic.c drivers/ide/ide-io.c
-  drivers/scsi/eata_pio.c drivers/scsi/in2000.c drivers/scsi/qlogicfas.c
-  drivers/scsi/qlogicfas408.c
-spdx_license_key: LicenseRef-scancode-crypto-keys-redistribution
-text_urls:
-  - http://git.savannah.gnu.org/cgit/dmidecode.git/tree/dmidecode.c?id=ee07a1b4249560d620d05194eb8ff61b40d3ce23
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>For the avoidance of doubt the &#34;preferred form&#34; of this code is one which
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            crypto-keys-redistribution
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Cryptographic keys redistribution
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Cryptographic keys redistribution
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            <a href="http://kernel.org" rel="noopener" target="_blank">kernel.org</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This was found as a Linux addition to the GPL in Linux 3.x in files such as
+in drivers/scsi/aha1740.c drivers/message/i2o/i2o_scsi.c
+drivers/ide/cs5520.c drivers/ide/ide-pci-generic.c drivers/ide/ide-io.c
+drivers/scsi/eata_pio.c drivers/scsi/in2000.c drivers/scsi/qlogicfas.c
+drivers/scsi/qlogicfas408.c
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-crypto-keys-redistribution
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://git.savannah.gnu.org/cgit/dmidecode.git/tree/dmidecode.c?id=ee07a1b4249560d620d05194eb8ff61b40d3ce23" rel="noopener" target="_blank">http://git.savannah.gnu.org/cgit/dmidecode.git/tree/dmidecode.c?id=ee07a1b4249560d620d05194eb8ff61b40d3ce23</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>For the avoidance of doubt the &#34;preferred form&#34; of this code is one which
 is in an open non patent encumbered format. Where cryptographic key signing
 forms part of the process of creating an executable the information
 including keys needed to generate an equivalently functional executable

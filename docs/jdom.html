@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,92 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jdom.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jdom.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: jdom
-short_name: JDOM License
-name: JDOM License
-category: Permissive
-owner: JDOM
-homepage_url: http://www.jdom.org/docs/faq.html#a0030
-notes: this based on an Apache 1.1 license
-spdx_license_key: LicenseRef-scancode-jdom
-faq_url: http://www.jdom.org/docs/faq.html#a0030
-ignorable_authors:
-  - Jason Hunter and Brett McLaughlin
-  - the JDOM Project (http://www.jdom.org/)
-ignorable_urls:
-  - http://www.jdom.org/
-  - http://www.jdom.org/images/logos
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            jdom
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            JDOM License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            JDOM License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            JDOM
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.jdom.org/docs/faq.html#a0030" rel="noopener" target="_blank">http://www.jdom.org/docs/faq.html#a0030</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this based on an Apache 1.1 license
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-jdom
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://www.jdom.org/docs/faq.html#a0030" rel="noopener" target="_blank">http://www.jdom.org/docs/faq.html#a0030</a>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Jason Hunter and Brett McLaughlin</li><li>the JDOM Project (<a href="http://www.jdom.org/" rel="noopener" target="_blank">http://www.jdom.org/</a>)</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.jdom.org/" rel="noopener" target="_blank">http://www.jdom.org/</a></li><li><a href="http://www.jdom.org/images/logos" rel="noopener" target="_blank">http://www.jdom.org/images/logos</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
 

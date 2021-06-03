@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,38 +62,100 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/llvm-exception.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/llvm-exception.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: llvm-exception
-short_name: LLVM Exception to Apache 2.0
-name: LLVM Exception to Apache 2.0
-category: Permissive
-owner: llvm Project
-homepage_url: http://llvm.org/foundation/relicensing/LICENSE.txt
-is_exception: yes
-spdx_license_key: LLVM-exception
-other_urls:
-  - http://www.apache.org/licenses/LICENSE-2.0.txt
-  - https://github.com/apple/cups/blob/v2.3.3/NOTICE
-standard_notice: |
-  --- LLVM Exceptions to the Apache 2.0 License ----
-  As an exception, if, as a result of your compiling your source code,
-  portions
-  of this Software are embedded into an Object form of such source code, you
-  may redistribute such embedded portions in such Object form without
-  complying
-  with the conditions of Sections 4(a), 4(b) and 4(d) of the License.
-  In addition, if you combine or link compiled forms of this Software with
-  software that is licensed under the GPLv2 (&#34;Combined Software&#34;) and if a
-  court of competent jurisdiction determines that the patent provision
-  (Section
-  3), the indemnity provision (Section 9) or other Section of the License
-  conflicts with the conditions of the GPLv2, you may retroactively and
-  prospectively choose to deem waived or otherwise exclude such Section(s) of
-  the License, but only in their entirety and only with respect to the
-  Combined
-  Software.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>--- LLVM Exceptions to the Apache 2.0 License ----
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            llvm-exception
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            LLVM Exception to Apache 2.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            LLVM Exception to Apache 2.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            llvm Project
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://llvm.org/foundation/relicensing/LICENSE.txt" rel="noopener" target="_blank">http://llvm.org/foundation/relicensing/LICENSE.txt</a>
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LLVM-exception
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.apache.org/licenses/LICENSE-2.0.txt" rel="noopener" target="_blank">http://www.apache.org/licenses/LICENSE-2.0.txt</a></li><li><a href="https://github.com/apple/cups/blob/v2.3.3/NOTICE" rel="noopener" target="_blank">https://github.com/apple/cups/blob/v2.3.3/NOTICE</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            --- LLVM Exceptions to the Apache 2.0 License ----
+As an exception, if, as a result of your compiling your source code,
+portions
+of this Software are embedded into an Object form of such source code, you
+may redistribute such embedded portions in such Object form without
+complying
+with the conditions of Sections 4(a), 4(b) and 4(d) of the License.
+In addition, if you combine or link compiled forms of this Software with
+software that is licensed under the GPLv2 (&#34;Combined Software&#34;) and if a
+court of competent jurisdiction determines that the patent provision
+(Section
+3), the indemnity provision (Section 9) or other Section of the License
+conflicts with the conditions of the GPLv2, you may retroactively and
+prospectively choose to deem waived or otherwise exclude such Section(s) of
+the License, but only in their entirety and only with respect to the
+Combined
+Software.
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>--- LLVM Exceptions to the Apache 2.0 License ----
 
 As an exception, if, as a result of your compiling your source code, portions
 of this Software are embedded into an Object form of such source code, you

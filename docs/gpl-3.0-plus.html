@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,37 +62,130 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: gpl-3.0-plus
-short_name: GPL 3.0 or later
-name: GNU General Public License 3.0 or later
-category: Copyleft
-owner: Free Software Foundation (FSF)
-homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
-notes: |
-  Per SPDX.org, this license was released 29 June 2007 This license is OSI
-  certified.
-spdx_license_key: GPL-3.0-or-later
-other_spdx_license_keys:
-  - GPL-3.0+
-text_urls:
-  - http://www.gnu.org/licenses/gpl-3.0-standalone.html
-other_urls:
-  - http://www.opensource.org/licenses/GPL-3.0
-  - https://opensource.org/licenses/GPL-3.0
-  - https://www.gnu.org/licenses/gpl-3.0-standalone.html
-minimum_coverage: 99
-ignorable_copyrights:
-  - Copyright (c) 2007 Free Software Foundation, Inc. &lt;https://fsf.org/&gt;
-ignorable_holders:
-  - Free Software Foundation, Inc.
-ignorable_urls:
-  - http://www.gnu.org/licenses/
-  - https://fsf.org/
-  - https://www.gnu.org/licenses/
-  - https://www.gnu.org/licenses/why-not-lgpl.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This program is free software: you can redistribute it and/or modify
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            gpl-3.0-plus
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            GPL 3.0 or later
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            GNU General Public License 3.0 or later
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Free Software Foundation (FSF)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.gnu.org/licenses/gpl-3.0-standalone.html" rel="noopener" target="_blank">http://www.gnu.org/licenses/gpl-3.0-standalone.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per <a href="http://SPDX.org" rel="noopener" target="_blank">SPDX.org</a>, this license was released 29 June 2007 This license is OSI
+certified.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            GPL-3.0-or-later
+          
+        </dd>
+      
+        <dt style="">other_spdx_license_keys</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>GPL-3.0+</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/gpl-3.0-standalone.html" rel="noopener" target="_blank">http://www.gnu.org/licenses/gpl-3.0-standalone.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.opensource.org/licenses/GPL-3.0" rel="noopener" target="_blank">http://www.opensource.org/licenses/GPL-3.0</a></li><li><a href="https://opensource.org/licenses/GPL-3.0" rel="noopener" target="_blank">https://opensource.org/licenses/GPL-3.0</a></li><li><a href="https://www.gnu.org/licenses/gpl-3.0-standalone.html" rel="noopener" target="_blank">https://www.gnu.org/licenses/gpl-3.0-standalone.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            99
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2007 Free Software Foundation, Inc. &lt;<a href="https://fsf.org/" rel="noopener" target="_blank">https://fsf.org/</a>&gt;</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Free Software Foundation, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/" rel="noopener" target="_blank">http://www.gnu.org/licenses/</a></li><li><a href="https://fsf.org/" rel="noopener" target="_blank">https://fsf.org/</a></li><li><a href="https://www.gnu.org/licenses/" rel="noopener" target="_blank">https://www.gnu.org/licenses/</a></li><li><a href="https://www.gnu.org/licenses/why-not-lgpl.html" rel="noopener" target="_blank">https://www.gnu.org/licenses/why-not-lgpl.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.

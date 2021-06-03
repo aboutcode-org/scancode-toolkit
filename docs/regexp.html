@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/regexp.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/regexp.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: regexp
-short_name: Regexp License
-name: Regexp License
-category: Permissive
-owner: Henry Spencer
-homepage_url: https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License
-spdx_license_key: Spencer-86
-other_spdx_license_keys:
-  - LicenseRef-scancode-regexp
-minimum_coverage: 80
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is granted to anyone to use this software for any
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            regexp
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Regexp License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Regexp License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Henry Spencer
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Spencer-86
+          
+        </dd>
+      
+        <dt style="">other_spdx_license_keys</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>LicenseRef-scancode-regexp</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            80
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is granted to anyone to use this software for any
 purpose on any computer system, and to redistribute it freely,
 subject to the following restrictions:
 

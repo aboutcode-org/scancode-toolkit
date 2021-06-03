@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/pivotal-tou.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/pivotal-tou.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: pivotal-tou
-short_name: Pivotal Software Terms of Use
-name: Pivotal Software Terms of Use
-category: Commercial
-owner: Pivotal
-homepage_url: https://pivotal.io/terms-of-use
-spdx_license_key: LicenseRef-scancode-pivotal-tou
-minimum_coverage: 90
-ignorable_urls:
-  - https://pivotal.io/terms-of-use
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Pivotal Software, Inc. Terms of Use
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            pivotal-tou
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Pivotal Software Terms of Use
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Pivotal Software Terms of Use
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Pivotal
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://pivotal.io/terms-of-use" rel="noopener" target="_blank">https://pivotal.io/terms-of-use</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-pivotal-tou
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            90
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://pivotal.io/terms-of-use" rel="noopener" target="_blank">https://pivotal.io/terms-of-use</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Pivotal Software, Inc. Terms of Use
 
 See https://pivotal.io/terms-of-use  for complete text. 
 

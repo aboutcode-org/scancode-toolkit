@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adobe-glyph.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adobe-glyph.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: adobe-glyph
-short_name: Adobe Glyph License
-name: Adobe Glyph License
-category: Permissive
-owner: Adobe Systems
-homepage_url: https://fedoraproject.org/wiki/Licensing/MIT#AdobeGlyph
-spdx_license_key: Adobe-Glyph
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a copy of this documentation file to use, copy, publish, distribute, sublicense, and/or sell copies of the documentation, and to permit others to do the same, provided that: 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            adobe-glyph
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Adobe Glyph License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Adobe Glyph License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Adobe Systems
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing/MIT#AdobeGlyph" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/MIT#AdobeGlyph</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Adobe-Glyph
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, free of charge, to any person obtaining a copy of this documentation file to use, copy, publish, distribute, sublicense, and/or sell copies of the documentation, and to permit others to do the same, provided that: 
      - No modification, editing or other alteration of this document is allowed; and 
      - The above copyright notice and this permission notice shall be included in all copies of the documentation. 
 

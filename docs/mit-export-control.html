@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit-export-control.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit-export-control.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: mit-export-control
-short_name: MIT with Export Control
-name: MIT with Export Control
-category: Permissive
-owner: Xerox PARC
-homepage_url: https://fedoraproject.org/wiki/Licensing:Xerox?rd=Licensing/Xerox
-notes: |
-  Per Fedora, this license is very similar to MIT, except that it requires
-  that US Export Control laws be followed, which makes it GPL-Incompatible.
-spdx_license_key: Xerox
-other_urls:
-  - https://fedoraproject.org/wiki/Licensing/Xerox
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Use and copying of this software and preparation of derivative works
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            mit-export-control
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MIT with Export Control
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            MIT with Export Control
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Xerox PARC
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing:Xerox?rd=Licensing/Xerox" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing:Xerox?rd=Licensing/Xerox</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per Fedora, this license is very similar to MIT, except that it requires
+that US Export Control laws be followed, which makes it GPL-Incompatible.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Xerox
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://fedoraproject.org/wiki/Licensing/Xerox" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Xerox</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Use and copying of this software and preparation of derivative works
 based upon this software are permitted. Any copy of this software or of
 any derivative work must include the above copyright notice of
 {copyright-holder}, this paragraph and the one after it. Any

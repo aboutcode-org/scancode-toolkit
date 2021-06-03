@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/zpl-2.1.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/zpl-2.1.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: zpl-2.1
-short_name: ZPL 2.1
-name: Zope Public License 2.1
-category: Permissive
-owner: Zope Community
-homepage_url: http://www.zope.org/Resources/License/
-notes: Per SPDX.org, this is a generic version of the ZPL 2.0 license
-spdx_license_key: ZPL-2.1
-text_urls:
-  - http://www.zope.org/Resources/License/
-other_urls:
-  - http://old.zope.org/Resources/ZPL/
-  - http://www.zope.org/Resources/License/ZPL-2.1
-  - http://www.zope.org/Resources/ZPL
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This license has been certified as open source. It has also been designated as
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            zpl-2.1
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            ZPL 2.1
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Zope Public License 2.1
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Zope Community
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.zope.org/Resources/License/" rel="noopener" target="_blank">http://www.zope.org/Resources/License/</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per <a href="http://SPDX.org" rel="noopener" target="_blank">SPDX.org</a>, this is a generic version of the ZPL 2.0 license
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            ZPL-2.1
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.zope.org/Resources/License/" rel="noopener" target="_blank">http://www.zope.org/Resources/License/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://old.zope.org/Resources/ZPL/" rel="noopener" target="_blank">http://old.zope.org/Resources/ZPL/</a></li><li><a href="http://www.zope.org/Resources/License/ZPL-2.1" rel="noopener" target="_blank">http://www.zope.org/Resources/License/ZPL-2.1</a></li><li><a href="http://www.zope.org/Resources/ZPL" rel="noopener" target="_blank">http://www.zope.org/Resources/ZPL</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This license has been certified as open source. It has also been designated as
 GPL compatible by the Free Software Foundation (FSF).
 
 Redistribution and use in source and binary forms, with or without modification,

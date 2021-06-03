@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-jsr-spec-04-2006.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-jsr-spec-04-2006.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: sun-jsr-spec-04-2006
-short_name: Sun JSR Specification 04-2006
-name: Sun JSR Specification License April 2006
-category: Proprietary Free
-owner: Oracle (Sun)
-notes: a highly similar earlier version was published in January 2006.
-spdx_license_key: LicenseRef-scancode-sun-jsr-spec-04-2006
-ignorable_copyrights:
-  - Copyright 2006 SUN MICROSYSTEMS, INC. 4150 Network Circle, Santa Clara, California 95054,
-    U.S.A
-ignorable_holders:
-  - SUN MICROSYSTEMS, INC. 4150 Network Circle, Santa Clara, California 95054, U.S.A
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Copyright 2006 SUN MICROSYSTEMS, INC.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            sun-jsr-spec-04-2006
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Sun JSR Specification 04-2006
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sun JSR Specification License April 2006
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle (Sun)
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            a highly similar earlier version was published in January 2006.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-sun-jsr-spec-04-2006
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright 2006 SUN MICROSYSTEMS, INC. 4150 Network Circle, Santa Clara, California 95054, U.S.A</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>SUN MICROSYSTEMS, INC. 4150 Network Circle, Santa Clara, California 95054, U.S.A</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Copyright 2006 SUN MICROSYSTEMS, INC.
 4150 Network Circle, Santa Clara, California 95054, U.S.A
 All rights reserved.
 

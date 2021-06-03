@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/us-govt-unlimited-rights.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/us-govt-unlimited-rights.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: us-govt-unlimited-rights
-short_name: US Government Unlimited Rights
-name: US Government Grant of Unlimited Rights
-category: Permissive
-owner: US Government
-spdx_license_key: LicenseRef-scancode-us-govt-unlimited-rights
-text_urls:
-  - https://github.com/Slicer/Slicer/blob/v4.6.2/COPYRIGHT.txt
-other_urls:
-  - https://github.com/fernando-rodriguez/freexc16/blob/95cad1ccc9568b9e83ddc25a28711011546a5c63/src/XC_GCC/gcc/gcc/testsuite/ada/acats/tests/a/a22006b.ada
-  - https://github.com/AppliedIS/tau-ui/blob/b6af0deb755b412e7d24e9f3d78a6173180d3619/COPYRIGHT.txt
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>                        Grant of Unlimited Rights
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            us-govt-unlimited-rights
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            US Government Unlimited Rights
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            US Government Grant of Unlimited Rights
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            US Government
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-us-govt-unlimited-rights
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/Slicer/Slicer/blob/v4.6.2/COPYRIGHT.txt" rel="noopener" target="_blank">https://github.com/Slicer/Slicer/blob/v4.6.2/COPYRIGHT.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/fernando-rodriguez/freexc16/blob/95cad1ccc9568b9e83ddc25a28711011546a5c63/src/XC_GCC/gcc/gcc/testsuite/ada/acats/tests/a/a22006b.ada" rel="noopener" target="_blank">https://github.com/fernando-rodriguez/freexc16/blob/95cad1ccc9568b9e83ddc25a28711011546a5c63/src/XC_GCC/gcc/gcc/testsuite/ada/acats/tests/a/a22006b.ada</a></li><li><a href="https://github.com/AppliedIS/tau-ui/blob/b6af0deb755b412e7d24e9f3d78a6173180d3619/COPYRIGHT.txt" rel="noopener" target="_blank">https://github.com/AppliedIS/tau-ui/blob/b6af0deb755b412e7d24e9f3d78a6173180d3619/COPYRIGHT.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>                        Grant of Unlimited Rights
 
 Under contracts , the U.S. Government obtained 
 unlimited rights in the software and documentation contained herein.

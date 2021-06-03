@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-windows-identity-foundation.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-windows-identity-foundation.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ms-windows-identity-foundation
-short_name: MS Windows Identity Foundation License
-name: Microsoft Windows Identity Foundation License
-category: Proprietary Free
-owner: Microsoft
-notes: also contains some French language terms
-spdx_license_key: LicenseRef-scancode-ms-windows-identity-foundation
-text_urls:
-  - http://download.microsoft.com/download/7/0/1/70118832-3749-4C75-B860-456FC0712870/wif-nuget-eula-rtm.rtf
-ignorable_urls:
-  - http://www.support.microsoft.com/common/international.aspx
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>MICROSOFT SOFTWARE SUPPLEMENTAL LICENSE TERMS
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ms-windows-identity-foundation
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MS Windows Identity Foundation License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Microsoft Windows Identity Foundation License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            also contains some French language terms
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ms-windows-identity-foundation
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://download.microsoft.com/download/7/0/1/70118832-3749-4C75-B860-456FC0712870/wif-nuget-eula-rtm.rtf" rel="noopener" target="_blank">http://download.microsoft.com/download/7/0/1/70118832-3749-4C75-B860-456FC0712870/wif-nuget-eula-rtm.rtf</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.support.microsoft.com/common/international.aspx" rel="noopener" target="_blank">http://www.support.microsoft.com/common/international.aspx</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>MICROSOFT SOFTWARE SUPPLEMENTAL LICENSE TERMS
 WINDOWS IDENTITY FOUNDATION FOR MICROSOFT WINDOWS OPERATING SYSTEMS 
 
 Microsoft Corporation (or based on where you live, one of its affiliates) licenses this supplement to you. If you are licensed to use Microsoft Windows operating systems software (for which this supplement is applicable) (the &#34;software&#34;), you may use this supplement. You may not use it if you do not have a license for the software. You may use this supplement with each validly licensed copy of the software.

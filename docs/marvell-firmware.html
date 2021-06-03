@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/marvell-firmware.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/marvell-firmware.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: marvell-firmware
-short_name: Marvell Firmware License
-name: Marvell Firmware License
-category: Proprietary Free
-owner: Marvell
-homepage_url: https://dev.openwrt.org/browser/trunk/package/libertas/files/LICENSE?rev=9768
-spdx_license_key: LicenseRef-scancode-marvell-firmware
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution.  Redistribution and use in binary form, without 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            marvell-firmware
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Marvell Firmware License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Marvell Firmware License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Marvell
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://dev.openwrt.org/browser/trunk/package/libertas/files/LICENSE?rev=9768" rel="noopener" target="_blank">https://dev.openwrt.org/browser/trunk/package/libertas/files/LICENSE?rev=9768</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-marvell-firmware
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution.  Redistribution and use in binary form, without 
 modification, are permitted provided that the following conditions are 
 met:
 

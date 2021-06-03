@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-3.0-openbd.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-3.0-openbd.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: gpl-3.0-openbd
-is_deprecated: yes
-short_name: GPL 3.0h with OpenBD exception
-name: GPL 3.0h with OpenBD exception
-category: Copyleft
-owner: OpenBD
-notes: composite replaced by openbd-exception-3.0
-is_exception: yes
-standard_notice: |
-  tagServlet Ltd grants the user the exception to distribute the entire Open
-  BlueDragon runtime libraries without the web application (.cfml, .html,
-  .js, .css, etc) that Open BlueDragon powers, from itself being licensed
-  under the GNU General Public License (v3), as long the entire runtime
-  remains intact and includes all license information.
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Open BlueDragon (OpenBD) is distributed under the GNU General Public 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            gpl-3.0-openbd
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            GPL 3.0h with OpenBD exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            GPL 3.0h with OpenBD exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            OpenBD
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            composite replaced by openbd-exception-3.0
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            tagServlet Ltd grants the user the exception to distribute the entire Open
+BlueDragon runtime libraries without the web application (.cfml, .html,
+.js, .css, etc) that Open BlueDragon powers, from itself being licensed
+under the GNU General Public License (v3), as long the entire runtime
+remains intact and includes all license information.
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Open BlueDragon (OpenBD) is distributed under the GNU General Public 
 License (v3).  A copy of this can be found in the COPYING.txt file or
 at http://www.gnu.org/licenses/
 

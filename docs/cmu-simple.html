@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cmu-simple.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cmu-simple.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: cmu-simple
-short_name: CMU Simple License
-name: Carnegie Mellon Simple License
-category: Permissive
-owner: Carnegie Mellon University
-notes: This is a simplified variant of license with a text otherwise borrowed from the cmu-template
-  license
-spdx_license_key: LicenseRef-scancode-cmu-simple
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, and distribute this software and its
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            cmu-simple
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            CMU Simple License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Carnegie Mellon Simple License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Carnegie Mellon University
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This is a simplified variant of license with a text otherwise borrowed from the cmu-template license
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-cmu-simple
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, and distribute this software and its
 documentation is hereby granted, provided that the above copyright
 notice appears in all copies.  This software is provided without any
 warranty, express or implied.

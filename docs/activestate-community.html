@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,25 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/activestate-community.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/activestate-community.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: activestate-community
-short_name: ActiveState Community License
-name: ActiveState Community License
-category: Proprietary Free
-owner: ActiveState Software, Inc.
-spdx_license_key: LicenseRef-scancode-activestate-community
-ignorable_copyrights:
-  - Copyright (c) 1991-1995 Stichting Mathematisch Centrum, Amsterdam
-  - Copyright (c) 1995-2001 Corporation for National Research Initiatives
-  - Copyright (c) 2000 BeOpen.com
-  - Copyright (c) 2001 Python Software Foundation
-ignorable_holders:
-  - BeOpen.com
-  - Corporation for National Research Initiatives
-  - Python Software Foundation
-  - Stichting Mathematisch Centrum, Amsterdam
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>ActiveState Community License 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            activestate-community
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            ActiveState Community License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            ActiveState Community License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            ActiveState Software, Inc.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-activestate-community
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 1991-1995 Stichting Mathematisch Centrum, Amsterdam</li><li>Copyright (c) 1995-2001 Corporation for National Research Initiatives</li><li>Copyright (c) 2000 <a href="http://BeOpen.com" rel="noopener" target="_blank">BeOpen.com</a></li><li>Copyright (c) 2001 Python Software Foundation</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://BeOpen.com" rel="noopener" target="_blank">BeOpen.com</a></li><li>Corporation for National Research Initiatives</li><li>Python Software Foundation</li><li>Stichting Mathematisch Centrum, Amsterdam</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>ActiveState Community License 
 Preamble:
 The intent of this document is to state the conditions under which the Package may be copied and distributed, such that ActiveState maintains control over the development and distribution of the Package, while allowing the users of the Package to use the Package in a variety of ways.
 

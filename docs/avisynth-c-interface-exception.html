@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/avisynth-c-interface-exception.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/avisynth-c-interface-exception.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: avisynth-c-interface-exception
-short_name: Avisynth C Interface Exception
-name: Avisynth C Interface Exception
-category: Copyleft Limited
-owner: Kevin Atkinson
-homepage_url: http://www.kevina.org/avisynth_c/readme.txt
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-avisynth-c-interface-exception
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>As a special exception, I give you permission to link to the Avisynth
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            avisynth-c-interface-exception
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Avisynth C Interface Exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Avisynth C Interface Exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Kevin Atkinson
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.kevina.org/avisynth_c/readme.txt" rel="noopener" target="_blank">http://www.kevina.org/avisynth_c/readme.txt</a>
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-avisynth-c-interface-exception
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>As a special exception, I give you permission to link to the Avisynth
 C interface with independent modules that communicate with the
 Avisynth C interface solely through the interfaces defined in
 avisynth_c.h, regardless of the license terms of these independent

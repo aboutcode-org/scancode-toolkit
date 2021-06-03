@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,25 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/altova-eula.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/altova-eula.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: altova-eula
-short_name: Altova EULA
-name: Altova EULA
-category: Commercial
-owner: Altova
-homepage_url: http://www.altova.com/eula.html
-spdx_license_key: LicenseRef-scancode-altova-eula
-ignorable_copyrights:
-  - Copyright (c) 2007-2011 Altova GmbH (www.altova.com)
-ignorable_holders:
-  - Altova GmbH
-ignorable_urls:
-  - http://www.altova.com/
-  - http://www.altova.com/eula
-  - http://www.altova.com/legal_3rdparty.html
-  - http://www.altova.com/privacy
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>THIS IS A LEGAL DOCUMENT -- RETAIN FOR YOUR RECORDS
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            altova-eula
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Altova EULA
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Altova EULA
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Altova
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.altova.com/eula.html" rel="noopener" target="_blank">http://www.altova.com/eula.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-altova-eula
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2007-2011 Altova GmbH (<a href="http://www.altova.com" rel="noopener" target="_blank">www.altova.com</a>)</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Altova GmbH</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.altova.com/" rel="noopener" target="_blank">http://www.altova.com/</a></li><li><a href="http://www.altova.com/eula" rel="noopener" target="_blank">http://www.altova.com/eula</a></li><li><a href="http://www.altova.com/legal_3rdparty.html" rel="noopener" target="_blank">http://www.altova.com/legal_3rdparty.html</a></li><li><a href="http://www.altova.com/privacy" rel="noopener" target="_blank">http://www.altova.com/privacy</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>THIS IS A LEGAL DOCUMENT -- RETAIN FOR YOUR RECORDS
 
 ALTOVA® END-USER LICENSE AGREEMENT
 

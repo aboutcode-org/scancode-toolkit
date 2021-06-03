@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,30 +62,114 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/freemarker.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/freemarker.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: freemarker
-short_name: FreeMarker License
-name: FreeMarker License
-category: Permissive
-owner: freemarker.org
-homepage_url: http://freemarker.org/LICENSE.txt
-spdx_license_key: LicenseRef-scancode-freemarker
-text_urls:
-  - http://freemarker.org/LICENSE.txt
-  - http://freemarker.org/docs/app_license.html
-ignorable_copyrights:
-  - Copyright (c) 2003 The Visigoth Software Society
-ignorable_authors:
-  - the Visigoth Software Society (http://www.visigoths.org/)
-ignorable_holders:
-  - The Visigoth Software Society
-ignorable_urls:
-  - http://www.apache.org/licenses/LICENSE-2.0
-  - http://www.visigoths.org/
-ignorable_emails:
-  - visigoths@visigoths.org
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>FreeMarker License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            freemarker
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            FreeMarker License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            FreeMarker License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            <a href="http://freemarker.org" rel="noopener" target="_blank">freemarker.org</a>
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://freemarker.org/LICENSE.txt" rel="noopener" target="_blank">http://freemarker.org/LICENSE.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-freemarker
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://freemarker.org/LICENSE.txt" rel="noopener" target="_blank">http://freemarker.org/LICENSE.txt</a></li><li><a href="http://freemarker.org/docs/app_license.html" rel="noopener" target="_blank">http://freemarker.org/docs/app_license.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) 2003 The Visigoth Software Society</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>the Visigoth Software Society (<a href="http://www.visigoths.org/" rel="noopener" target="_blank">http://www.visigoths.org/</a>)</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>The Visigoth Software Society</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.apache.org/licenses/LICENSE-2.0" rel="noopener" target="_blank">http://www.apache.org/licenses/LICENSE-2.0</a></li><li><a href="http://www.visigoths.org/" rel="noopener" target="_blank">http://www.visigoths.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:visigoths@visigoths.org">visigoths@visigoths.org</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>FreeMarker License
 
 FreeMarker 1.x was released under the LGPL license. Later, by community
 consensus, we have switched over to a BSD-style license. As of FreeMarker

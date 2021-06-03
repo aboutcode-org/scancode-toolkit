@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ntpl-origin.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ntpl-origin.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ntpl-origin
-short_name: NTP Origin License
-name: NTP Origin License
-category: Permissive
-owner: Atos
-notes: a rare, NTP-like license found in NTP. Origin B.V. was merged into Atos
-spdx_license_key: LicenseRef-scancode-ntpl-origin
-minimum_coverage: 90
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission to use, copy, modify and distribute this software and its
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ntpl-origin
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            NTP Origin License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            NTP Origin License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Atos
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            a rare, NTP-like license found in NTP. Origin B.V. was merged into Atos
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ntpl-origin
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            90
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission to use, copy, modify and distribute this software and its
 documentation for any purpose and without fee is hereby granted,
 provided that the above copyright notice appears in all copies and
 that both the copyright notice and this permission notice appear in

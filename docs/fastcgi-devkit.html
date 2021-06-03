@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,27 +62,98 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/fastcgi-devkit.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/fastcgi-devkit.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: fastcgi-devkit
-short_name: FastCGI DevKit
-name: FastCGI DevKit
-category: Permissive
-owner: OpenMarket
-homepage_url: http://www.fastcgi.com/devkit/LICENSE.TERMS
-notes: |
-  Per Fedora, this license is based on MIT, but contains additional clauses
-  which make it more than a simple MIT variant, notably, the requirement of
-  statement of new terms of contributions under a different license. For that
-  reason, this license is Free, but GPL-incompatible.
-spdx_license_key: OML
-text_urls:
-  - https://fedoraproject.org/wiki/Licensing/Open_Market_License
-ignorable_copyrights:
-  - copyrighted by Open Market, Inc &#39;Open Market
-ignorable_holders:
-  - Open Market, Inc &#39;Open Market
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This FastCGI application library source and object code (the
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            fastcgi-devkit
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            FastCGI DevKit
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            FastCGI DevKit
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            OpenMarket
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.fastcgi.com/devkit/LICENSE.TERMS" rel="noopener" target="_blank">http://www.fastcgi.com/devkit/LICENSE.TERMS</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per Fedora, this license is based on MIT, but contains additional clauses
+which make it more than a simple MIT variant, notably, the requirement of
+statement of new terms of contributions under a different license. For that
+reason, this license is Free, but GPL-incompatible.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            OML
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://fedoraproject.org/wiki/Licensing/Open_Market_License" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Open_Market_License</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>copyrighted by Open Market, Inc &#39;Open Market</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Open Market, Inc &#39;Open Market</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This FastCGI application library source and object code (the
 &#34;Software&#34;) and its documentation (the &#34;Documentation&#34;) are
 copyrighted by Open Market, Inc (&#34;Open Market&#34;).  The following terms
 apply to all files associated with the Software and Documentation

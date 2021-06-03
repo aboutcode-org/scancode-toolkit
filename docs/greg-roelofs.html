@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,62 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/greg-roelofs.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/greg-roelofs.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: greg-roelofs
-short_name: Greg Roelofs License
-name: Greg Roelofs License
-category: Permissive
-owner: Unspecified
-spdx_license_key: LicenseRef-scancode-greg-roelofs
-ignorable_authors:
-  - Greg Roelofs and contributors
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code> This software is provided &#34;as is,&#34; without warranty of any kind,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            greg-roelofs
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Greg Roelofs License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Greg Roelofs License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-greg-roelofs
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Greg Roelofs and contributors</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code> This software is provided &#34;as is,&#34; without warranty of any kind,
  express or implied.  In no event shall the author or contributors
  be held liable for any damages arising in any way from the use of
  this software.

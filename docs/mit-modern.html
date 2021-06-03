@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit-modern.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mit-modern.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: mit-modern
-short_name: MIT Modern Variant
-name: MIT Modern Variant
-category: Permissive
-owner: Fedora
-homepage_url: http://fedoraproject.org/wiki/Licensing/MIT
-spdx_license_key: MIT-Modern-Variant
-other_spdx_license_keys:
-  - LicenseRef-scancode-mit-modern
-text_urls:
-  - http://fedoraproject.org/wiki/Licensing/MIT
-other_urls:
-  - https://fedoraproject.org/wiki/Licensing:MIT#Modern_Variants
-  - https://ptolemy.berkeley.edu/copyright.htm
-  - https://pirlwww.lpl.arizona.edu/resources/guide/software/PerlTk/Tixlic.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is hereby granted, without written agreement and without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            mit-modern
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MIT Modern Variant
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            MIT Modern Variant
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Fedora
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://fedoraproject.org/wiki/Licensing/MIT" rel="noopener" target="_blank">http://fedoraproject.org/wiki/Licensing/MIT</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            MIT-Modern-Variant
+          
+        </dd>
+      
+        <dt style="">other_spdx_license_keys</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>LicenseRef-scancode-mit-modern</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://fedoraproject.org/wiki/Licensing/MIT" rel="noopener" target="_blank">http://fedoraproject.org/wiki/Licensing/MIT</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://fedoraproject.org/wiki/Licensing:MIT#Modern_Variants" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing:MIT#Modern_Variants</a></li><li><a href="https://ptolemy.berkeley.edu/copyright.htm" rel="noopener" target="_blank">https://ptolemy.berkeley.edu/copyright.htm</a></li><li><a href="https://pirlwww.lpl.arizona.edu/resources/guide/software/PerlTk/Tixlic.html" rel="noopener" target="_blank">https://pirlwww.lpl.arizona.edu/resources/guide/software/PerlTk/Tixlic.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is hereby granted, without written agreement and without
 license or royalty fees, to use, copy, modify, and distribute this
 software and its documentation for any purpose, provided that the
 above copyright notice and the following two paragraphs appear in

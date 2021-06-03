@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-source-code.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-source-code.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bsd-source-code
-short_name: BSD Source Code Attribution
-name: BSD Source Code Attribution
-category: Permissive
-owner: TSRM
-homepage_url: https://github.com/infusion/PHP/blob/master/TSRM/LICENSE
-spdx_license_key: BSD-Source-Code
-text_urls:
-  - https://github.com/infusion/PHP/blob/master/TSRM/LICENSE
-  - https://github.com/robbiehanson/CocoaHTTPServer/blob/master/LICENSE.txt
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bsd-source-code
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            BSD Source Code Attribution
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            BSD Source Code Attribution
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            TSRM
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/infusion/PHP/blob/master/TSRM/LICENSE" rel="noopener" target="_blank">https://github.com/infusion/PHP/blob/master/TSRM/LICENSE</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            BSD-Source-Code
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/infusion/PHP/blob/master/TSRM/LICENSE" rel="noopener" target="_blank">https://github.com/infusion/PHP/blob/master/TSRM/LICENSE</a></li><li><a href="https://github.com/robbiehanson/CocoaHTTPServer/blob/master/LICENSE.txt" rel="noopener" target="_blank">https://github.com/robbiehanson/CocoaHTTPServer/blob/master/LICENSE.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:
 

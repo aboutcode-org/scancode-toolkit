@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-2.0-plus-upx.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gpl-2.0-plus-upx.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: gpl-2.0-plus-upx
-is_deprecated: yes
-short_name: GPL 2.0 or later with UPX exception
-name: GPL 2.0 or later with UPX exception
-category: Copyleft Limited
-owner: UPX
-homepage_url: https://github.com/upx/upx/blob/master/LICENSE
-is_exception: yes
-other_urls:
-  - http://wildsau.idv.uni-linz.ac.at/mfx/upx.html
-  - http://www.nexus.hu/upx
-  - http://upx.tsx.org
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>PLEASE CAREFULLY READ THIS LICENSE AGREEMENT, ESPECIALLY IF YOU PLAN
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            gpl-2.0-plus-upx
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            GPL 2.0 or later with UPX exception
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            GPL 2.0 or later with UPX exception
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            UPX
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://github.com/upx/upx/blob/master/LICENSE" rel="noopener" target="_blank">https://github.com/upx/upx/blob/master/LICENSE</a>
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://wildsau.idv.uni-linz.ac.at/mfx/upx.html" rel="noopener" target="_blank">http://wildsau.idv.uni-linz.ac.at/mfx/upx.html</a></li><li><a href="http://www.nexus.hu/upx" rel="noopener" target="_blank">http://www.nexus.hu/upx</a></li><li><a href="http://upx.tsx.org" rel="noopener" target="_blank">http://upx.tsx.org</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>PLEASE CAREFULLY READ THIS LICENSE AGREEMENT, ESPECIALLY IF YOU PLAN
 TO MODIFY THE UPX SOURCE CODE OR USE A MODIFIED UPX VERSION.
 
 ABSTRACT

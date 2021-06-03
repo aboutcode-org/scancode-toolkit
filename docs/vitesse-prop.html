@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/vitesse-prop.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/vitesse-prop.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: vitesse-prop
-short_name: Vitesse Proprietary Notice
-name: Vitesse Proprietary Notice
-category: Proprietary Free
-owner: Vitesse Semiconductor Corporation
-spdx_license_key: LicenseRef-scancode-vitesse-prop
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code> Unpublished rights reserved under the copyright laws of the United States of
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            vitesse-prop
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Vitesse Proprietary Notice
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Vitesse Proprietary Notice
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Vitesse Semiconductor Corporation
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-vitesse-prop
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code> Unpublished rights reserved under the copyright laws of the United States of
  America, other countries and international treaties. Permission to use, copy,
  store and modify, the software and its source code is granted. Permission to
  integrate into other products, disclose, transmit and distribute the software

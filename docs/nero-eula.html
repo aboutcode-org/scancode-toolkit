@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,71 +62,126 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/nero-eula.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/nero-eula.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: nero-eula
-short_name: Nero EULA
-name: Nero EULA
-category: Commercial
-owner: Nero AG
-homepage_url: http://www.nero.com/enu/corp-legal/end-user-agreement.php
-notes: composite
-spdx_license_key: LicenseRef-scancode-nero-eula
-faq_url: http://www.nero.com/enu/downloads/
-minimum_coverage: 80
-ignorable_copyrights:
-  - (c) 2012 Nero AG.
-  - (c) DTS, Inc.
-  - Copyright (c) 1991-2, RSA Data Security, Inc.
-  - Copyright (c) 1992-1999 Dolby Laboratories, Inc.
-  - Copyright (c) 1996-2012 Nero AG and its licensors
-  - Copyright (c) 1999-2002. Microsoft Corporation
-  - Copyright (c) 2008 Microsoft Corporation
-  - Copyright 2011 Dolby Laboratories
-  - copyright (c) 1998-2005 The OpenSSL Project
-  - copyright (c) 2000-2008 Gracenote
-  - copyright (c) 2000-2008 Gracenote. Gracenote Software
-  - copyright (c) 2002, Dr Brian Gladman, Worcester, UK.
-  - copyright 1997-2005 Simon Tatham
-  - copyright Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar,
-    Wez Furlong, Nicolas Barry, Justin Bradford, Ben Harris, Malcolm Smith, Ahmad Khalifa, Markus
-    Kuhn, and CORE SDI S.A.
-ignorable_authors:
-  - Coding Technologies
-  - the OpenSSL Project
-ignorable_holders:
-  - DTS, Inc.
-  - Dolby Laboratories
-  - Dolby Laboratories, Inc.
-  - Dr Brian Gladman, Worcester, UK.
-  - Gracenote
-  - Gracenote. Gracenote Software
-  - Microsoft Corporation
-  - Nero AG and its licensors
-  - Nero AG.
-  - RSA Data Security, Inc.
-  - Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez
-    Furlong, Nicolas Barry, Justin Bradford, Ben Harris, Malcolm Smith, Ahmad Khalifa, Markus
-    Kuhn, and CORE SDI S.A.
-  - Simon Tatham
-  - The OpenSSL Project
-ignorable_urls:
-  - http://ffmpeg.mplayerhq.hu/
-  - http://fp.gladman.plus.com/
-  - http://www.7-zip.org/license.txt
-  - http://www.codingtechnologies.com/
-  - http://www.gracenote.com/
-  - http://www.mp3licensing.com/
-  - http://www.mpeg4ip.net/
-  - http://www.nero.com/
-  - http://www.nero.com/link.php?topic_id=7106
-  - http://www.nero.com/link.php?topic_id=7107
-  - http://www.openssl.org/
-ignorable_emails:
-  - PRESS@NERO.COM
-  - legal@nero.com
-  - openssl-core@openssl.org
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Licensor: Nero AG (&#34;Nero&#34;) 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            nero-eula
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Nero EULA
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Nero EULA
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Nero AG
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.nero.com/enu/corp-legal/end-user-agreement.php" rel="noopener" target="_blank">http://www.nero.com/enu/corp-legal/end-user-agreement.php</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            composite
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-nero-eula
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://www.nero.com/enu/downloads/" rel="noopener" target="_blank">http://www.nero.com/enu/downloads/</a>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            80
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>(c) 2012 Nero AG.</li><li>(c) DTS, Inc.</li><li>Copyright (c) 1991-2, RSA Data Security, Inc.</li><li>Copyright (c) 1992-1999 Dolby Laboratories, Inc.</li><li>Copyright (c) 1996-2012 Nero AG and its licensors</li><li>Copyright (c) 1999-2002. Microsoft Corporation</li><li>Copyright (c) 2008 Microsoft Corporation</li><li>Copyright 2011 Dolby Laboratories</li><li>copyright (c) 1998-2005 The OpenSSL Project</li><li>copyright (c) 2000-2008 Gracenote</li><li>copyright (c) 2000-2008 Gracenote. Gracenote Software</li><li>copyright (c) 2002, Dr Brian Gladman, Worcester, UK.</li><li>copyright 1997-2005 Simon Tatham</li><li>copyright Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez Furlong, Nicolas Barry, Justin Bradford, Ben Harris, Malcolm Smith, Ahmad Khalifa, Markus Kuhn, and CORE SDI S.A.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Coding Technologies</li><li>the OpenSSL Project</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>DTS, Inc.</li><li>Dolby Laboratories</li><li>Dolby Laboratories, Inc.</li><li>Dr Brian Gladman, Worcester, UK.</li><li>Gracenote</li><li>Gracenote. Gracenote Software</li><li>Microsoft Corporation</li><li>Nero AG and its licensors</li><li>Nero AG.</li><li>RSA Data Security, Inc.</li><li>Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez Furlong, Nicolas Barry, Justin Bradford, Ben Harris, Malcolm Smith, Ahmad Khalifa, Markus Kuhn, and CORE SDI S.A.</li><li>Simon Tatham</li><li>The OpenSSL Project</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://ffmpeg.mplayerhq.hu/" rel="noopener" target="_blank">http://ffmpeg.mplayerhq.hu/</a></li><li><a href="http://fp.gladman.plus.com/" rel="noopener" target="_blank">http://fp.gladman.plus.com/</a></li><li><a href="http://www.7-zip.org/license.txt" rel="noopener" target="_blank">http://www.7-zip.org/license.txt</a></li><li><a href="http://www.codingtechnologies.com/" rel="noopener" target="_blank">http://www.codingtechnologies.com/</a></li><li><a href="http://www.gracenote.com/" rel="noopener" target="_blank">http://www.gracenote.com/</a></li><li><a href="http://www.mp3licensing.com/" rel="noopener" target="_blank">http://www.mp3licensing.com/</a></li><li><a href="http://www.mpeg4ip.net/" rel="noopener" target="_blank">http://www.mpeg4ip.net/</a></li><li><a href="http://www.nero.com/" rel="noopener" target="_blank">http://www.nero.com/</a></li><li><a href="http://www.nero.com/link.php?topic_id=7106" rel="noopener" target="_blank">http://www.nero.com/link.php?topic_id=7106</a></li><li><a href="http://www.nero.com/link.php?topic_id=7107" rel="noopener" target="_blank">http://www.nero.com/link.php?topic_id=7107</a></li><li><a href="http://www.openssl.org/" rel="noopener" target="_blank">http://www.openssl.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:PRESS@NERO.COM">PRESS@NERO.COM</a></li><li><a href="mailto:legal@nero.com">legal@nero.com</a></li><li><a href="mailto:openssl-core@openssl.org">openssl-core@openssl.org</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Licensor: Nero AG (&#34;Nero&#34;) 
 THIS IS A LEGAL AGREEMENT BETWEEN YOU, THE &#34;END USER&#34;, AND NERO AG, RÜPPURRER STRASSE 1A, 76307 KARLSRUHE, GERMANY. 
 
 CONCLUSION OF THE CONTRACT 

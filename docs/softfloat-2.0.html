@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,92 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/softfloat-2.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/softfloat-2.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: softfloat-2.0
-short_name: SoftFloat Legal Notice 2.0
-name: SoftFloat Legal Notice with Prominent Notice
-category: Permissive
-owner: John R. Hauser
-homepage_url: http://www.jhauser.us/arithmetic/SoftFloat.html
-notes: this license with extra requirements was used for Softfloat v2 and in the linux kernel.
-  The newest v3 uses a plain bsd-new license
-spdx_license_key: LicenseRef-scancode-softfloat-2.0
-minimum_coverage: 90
-ignorable_authors:
-  - John R. Hauser
-ignorable_urls:
-  - http://www.jhauser.us/arithmetic/SoftFloat-2b/SoftFloat-source.txt
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>SoftFloat Legal Notice
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            softfloat-2.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            SoftFloat Legal Notice 2.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            SoftFloat Legal Notice with Prominent Notice
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            John R. Hauser
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.jhauser.us/arithmetic/SoftFloat.html" rel="noopener" target="_blank">http://www.jhauser.us/arithmetic/SoftFloat.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this license with extra requirements was used for Softfloat v2 and in the linux kernel. The newest v3 uses a plain bsd-new license
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-softfloat-2.0
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            90
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>John R. Hauser</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.jhauser.us/arithmetic/SoftFloat-2b/SoftFloat-source.txt" rel="noopener" target="_blank">http://www.jhauser.us/arithmetic/SoftFloat-2b/SoftFloat-source.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>SoftFloat Legal Notice
 
 Written by John R. Hauser.
 

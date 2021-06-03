@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/itunes.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/itunes.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: itunes
-short_name: Apple iTunes License
-name: Apple iTunes License
-category: Proprietary Free
-owner: Apple
-homepage_url: http://images.apple.com/legal/sla/docs/itunes.pdf
-spdx_license_key: LicenseRef-scancode-itunes
-text_urls:
-  - http://images.apple.com/legal/sla/docs/itunes.pdf
-ignorable_emails:
-  - sales@kerbango.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>ENGLISH
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            itunes
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Apple iTunes License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Apple iTunes License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Apple
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://images.apple.com/legal/sla/docs/itunes.pdf" rel="noopener" target="_blank">http://images.apple.com/legal/sla/docs/itunes.pdf</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-itunes
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://images.apple.com/legal/sla/docs/itunes.pdf" rel="noopener" target="_blank">http://images.apple.com/legal/sla/docs/itunes.pdf</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:sales@kerbango.com">sales@kerbango.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>ENGLISH
 
 APPLE INC.
 SOFTWARE LICENSE AGREEMENT FOR iTUNES

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/netcat.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/netcat.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: netcat
-short_name: Netcat License
-name: Netcat License
-category: Permissive
-owner: Netcat Project
-homepage_url: http://nc110.sourceforge.net/
-spdx_license_key: LicenseRef-scancode-netcat
-ignorable_emails:
-  - nc110-devel@lists.sourceforge.net
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Netcat is entirely my own creation, although plenty of other code was used as
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            netcat
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Netcat License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Netcat License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Netcat Project
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://nc110.sourceforge.net/" rel="noopener" target="_blank">http://nc110.sourceforge.net/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-netcat
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:nc110-devel@lists.sourceforge.net">nc110-devel@lists.sourceforge.net</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Netcat is entirely my own creation, although plenty of other code was used as
 examples.  It is freely given away to the Internet community in the hope that
 it will be useful, with no restrictions except giving credit where it is due.
 No GPLs, Berkeley copyrights or any of that nonsense.  The author assumes NO

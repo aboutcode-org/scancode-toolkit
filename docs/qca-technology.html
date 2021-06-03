@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/qca-technology.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/qca-technology.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: qca-technology
-short_name: QCA Technology License
-name: Qualcomm Atheros Technology License
-category: Proprietary Free
-owner: Qualcomm Atheros
-spdx_license_key: LicenseRef-scancode-qca-technology
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in binary forms, without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            qca-technology
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            QCA Technology License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Qualcomm Atheros Technology License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Qualcomm Atheros
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-qca-technology
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in binary forms, without
 modification, are permitted (subject to the limitations in the
 disclaimer below) provided that the following conditions are met:
 

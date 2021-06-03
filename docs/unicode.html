@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,29 +62,103 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/unicode.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/unicode.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: unicode
-short_name: Unicode Inc License Agreement
-name: Unicode Inc License Agreement
-category: Permissive
-owner: Unicode Consortium
-homepage_url: http://unicode.org/
-spdx_license_key: LicenseRef-scancode-unicode
-text_urls:
-  - http://unicode.org/copyright.html
-minimum_coverage: 60
-ignorable_copyrights:
-  - Copyright (c) Unicode, Inc.
-ignorable_holders:
-  - Unicode, Inc.
-ignorable_urls:
-  - http://www.unicode.org/Public
-  - http://www.unicode.org/cldr/data
-  - http://www.unicode.org/cldr/data/
-  - http://www.unicode.org/copyright.html
-  - http://www.unicode.org/reports
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            unicode
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Unicode Inc License Agreement
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Unicode Inc License Agreement
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unicode Consortium
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://unicode.org/" rel="noopener" target="_blank">http://unicode.org/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-unicode
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://unicode.org/copyright.html" rel="noopener" target="_blank">http://unicode.org/copyright.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            60
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright (c) Unicode, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Unicode, Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.unicode.org/Public" rel="noopener" target="_blank">http://www.unicode.org/Public</a></li><li><a href="http://www.unicode.org/cldr/data" rel="noopener" target="_blank">http://www.unicode.org/cldr/data</a></li><li><a href="http://www.unicode.org/cldr/data/" rel="noopener" target="_blank">http://www.unicode.org/cldr/data/</a></li><li><a href="http://www.unicode.org/copyright.html" rel="noopener" target="_blank">http://www.unicode.org/copyright.html</a></li><li><a href="http://www.unicode.org/reports" rel="noopener" target="_blank">http://www.unicode.org/reports</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
 
 Unicode Data Files include all data files under the directories
 http://www.unicode.org/Public/, http://www.unicode.org/reports/, and

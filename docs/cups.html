@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,29 +62,105 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cups.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cups.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: cups
-short_name: CUPS License
-name: CUPS License
-category: Copyleft
-owner: Apple
-homepage_url: http://www.cups.org/
-spdx_license_key: LicenseRef-scancode-cups
-text_urls:
-  - http://www.cups.org/
-ignorable_copyrights:
-  - Copyright 2007-2009 by Apple Inc.
-  - copyright 2006 by Jelmer Vernooij
-ignorable_authors:
-  - Apple Inc.
-  - permission from Apple Inc.
-ignorable_holders:
-  - Apple Inc.
-  - Jelmer Vernooij
-ignorable_urls:
-  - http://www.cups.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Software License Agreement
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            cups
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            CUPS License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            CUPS License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Apple
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.cups.org/" rel="noopener" target="_blank">http://www.cups.org/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-cups
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.cups.org/" rel="noopener" target="_blank">http://www.cups.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright 2007-2009 by Apple Inc.</li><li>copyright 2006 by Jelmer Vernooij</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_authors</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Apple Inc.</li><li>permission from Apple Inc.</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Apple Inc.</li><li>Jelmer Vernooij</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.cups.org/" rel="noopener" target="_blank">http://www.cups.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Software License Agreement
 
 Copyright 2007-2009 by Apple Inc.
 1 Infinite Loop

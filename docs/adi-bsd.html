@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,28 +62,85 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adi-bsd.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adi-bsd.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: adi-bsd
-short_name: ADI BSD
-name: ADI BSD License
-category: Permissive
-owner: Analog Devices
-homepage_url: https://docs.blackfin.uclinux.org/doku.php?id=adi_bsd
-notes: |
-  the home page contains these comments This is a slightly modified version
-  of the three clause BSD license. It adds a clause to explicitly state the
-  patent protection that this license provides (which is none). The ADI BSD
-  License is similar to the Clear BSD License, which the Free Software
-  Foundation indicates is compatible with both GPLv2 and GPLv3. If you have
-  any questions about license compatibility - consult your nearest lawyer.
-  Before incorporating code licensed under the ADI BSD license into projects
-  which you are going to ship in a end product, you must ensure that you have
-  the patent rights to do.
-spdx_license_key: LicenseRef-scancode-adi-bsd
-text_urls:
-  - https://docs.blackfin.uclinux.org/doku.php?id=adi_bsd
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            adi-bsd
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            ADI BSD
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            ADI BSD License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Analog Devices
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://docs.blackfin.uclinux.org/doku.php?id=adi_bsd" rel="noopener" target="_blank">https://docs.blackfin.uclinux.org/doku.php?id=adi_bsd</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            the home page contains these comments This is a slightly modified version
+of the three clause BSD license. It adds a clause to explicitly state the
+patent protection that this license provides (which is none). The ADI BSD
+License is similar to the Clear BSD License, which the Free Software
+Foundation indicates is compatible with both GPLv2 and GPLv3. If you have
+any questions about license compatibility - consult your nearest lawyer.
+Before incorporating code licensed under the ADI BSD license into projects
+which you are going to ship in a end product, you must ensure that you have
+the patent rights to do.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-adi-bsd
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://docs.blackfin.uclinux.org/doku.php?id=adi_bsd" rel="noopener" target="_blank">https://docs.blackfin.uclinux.org/doku.php?id=adi_bsd</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
   - Redistributions of source code must retain the above copyright

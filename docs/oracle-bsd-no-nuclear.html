@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,83 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/oracle-bsd-no-nuclear.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/oracle-bsd-no-nuclear.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: oracle-bsd-no-nuclear
-short_name: Oracle BSD-Style with Nuclear Restrictions
-name: Oracle BSD-Style with Nuclear Restrictions
-category: Free Restricted
-owner: Oracle Corporation
-homepage_url: https://java.net/projects/javaeetutorial/pages/BerkeleyLicense
-notes: this is a minor variation on similar licenses by Sun and Oracle.
-spdx_license_key: BSD-3-Clause-No-Nuclear-License-2014
-other_urls:
-  - https://web.archive.org/web/20150906075957/https://java.net/projects/javaeetutorial/pages/BerkeleyLicense
-minimum_coverage: 88
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Use is subject to license terms.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            oracle-bsd-no-nuclear
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Oracle BSD-Style with Nuclear Restrictions
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Oracle BSD-Style with Nuclear Restrictions
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle Corporation
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://java.net/projects/javaeetutorial/pages/BerkeleyLicense" rel="noopener" target="_blank">https://java.net/projects/javaeetutorial/pages/BerkeleyLicense</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this is a minor variation on similar licenses by Sun and Oracle.
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            BSD-3-Clause-No-Nuclear-License-2014
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://web.archive.org/web/20150906075957/https://java.net/projects/javaeetutorial/pages/BerkeleyLicense" rel="noopener" target="_blank">https://web.archive.org/web/20150906075957/https://java.net/projects/javaeetutorial/pages/BerkeleyLicense</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            88
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Use is subject to license terms.
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:

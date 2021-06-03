@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,71 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-bsd-2-clause.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-bsd-2-clause.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: intel-bsd-2-clause
-short_name: Intel BSD 2 Clause License
-name: Intel BSD 2 Clause License
-category: Permissive
-owner: Intel Corporation
-notes: |
-  this license is seen in ZFS and FreeBSD. It is the same as intel-bsd
-  but with 2 clauses only.
-spdx_license_key: LicenseRef-scancode-intel-bsd-2-clause
-text_urls:
-  - https://github.com/freebsd/freebsd-src/blob/098dbd7ff7f3da9dda03802cdb2d8755f816eada/cddl/usr.sbin/zfsd/zfsd_exception.cc
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            intel-bsd-2-clause
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Intel BSD 2 Clause License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Intel BSD 2 Clause License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Intel Corporation
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this license is seen in ZFS and FreeBSD. It is the same as intel-bsd
+but with 2 clauses only.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-intel-bsd-2-clause
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/freebsd/freebsd-src/blob/098dbd7ff7f3da9dda03802cdb2d8755f816eada/cddl/usr.sbin/zfsd/zfsd_exception.cc" rel="noopener" target="_blank">https://github.com/freebsd/freebsd-src/blob/098dbd7ff7f3da9dda03802cdb2d8755f816eada/cddl/usr.sbin/zfsd/zfsd_exception.cc</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
 1. Redistributions of source code must retain the above copyright

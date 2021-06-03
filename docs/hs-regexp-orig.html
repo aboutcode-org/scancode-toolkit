@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/hs-regexp-orig.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/hs-regexp-orig.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: hs-regexp-orig
-is_deprecated: yes
-short_name: Henry Spencer Original Regexp License
-name: Henry Spencer Original Regexp License
-category: Permissive
-owner: Henry Spencer
-notes: deprecated in favor of the regexp license which is identical
-other_urls:
-  - https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Not derived from licensed software.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            hs-regexp-orig
+          
+        </dd>
+      
+        <dt style="">is_deprecated</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Henry Spencer Original Regexp License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Henry Spencer Original Regexp License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Henry Spencer
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            deprecated in favor of the regexp license which is identical
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Not derived from licensed software.
 
 Permission is granted to anyone to use this software for any
 purpose on any computer system, and to redistribute it freely,

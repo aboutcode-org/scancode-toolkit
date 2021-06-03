@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,29 +62,115 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/spl-1.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/spl-1.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: spl-1.0
-short_name: SPL 1.0
-name: Sun Public License 1.0
-category: Copyleft Limited
-owner: Oracle (Sun)
-homepage_url: http://www.netbeans.org/about/legal/spl.html
-notes: Per SPDX.org, this license is OSI certified
-spdx_license_key: SPL-1.0
-osi_license_key: SPL-1.0
-text_urls:
-  - http://java.sun.com/spl.html
-  - https://fedoraproject.org/wiki/Licensing/Sun_Public_License
-osi_url: http://opensource.org/licenses/sunpublic.php
-faq_url: http://www.netbeans.org/kb/faqs/license.html
-other_urls:
-  - http://www.gnu.org/licenses/license-list.html#SPL
-  - http://www.opensource.org/licenses/SPL-1.0
-  - https://opensource.org/licenses/SPL-1.0
-ignorable_urls:
-  - http://www.sun.com/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>1. Definitions.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            spl-1.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            SPL 1.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sun Public License 1.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle (Sun)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.netbeans.org/about/legal/spl.html" rel="noopener" target="_blank">http://www.netbeans.org/about/legal/spl.html</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per <a href="http://SPDX.org" rel="noopener" target="_blank">SPDX.org</a>, this license is OSI certified
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            SPL-1.0
+          
+        </dd>
+      
+        <dt style="">osi_license_key</dt>
+        <dd>
+          
+            SPL-1.0
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://java.sun.com/spl.html" rel="noopener" target="_blank">http://java.sun.com/spl.html</a></li><li><a href="https://fedoraproject.org/wiki/Licensing/Sun_Public_License" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Sun_Public_License</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">osi_url</dt>
+        <dd>
+          
+            <a href="http://opensource.org/licenses/sunpublic.php" rel="noopener" target="_blank">http://opensource.org/licenses/sunpublic.php</a>
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://www.netbeans.org/kb/faqs/license.html" rel="noopener" target="_blank">http://www.netbeans.org/kb/faqs/license.html</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.gnu.org/licenses/license-list.html#SPL" rel="noopener" target="_blank">http://www.gnu.org/licenses/license-list.html#SPL</a></li><li><a href="http://www.opensource.org/licenses/SPL-1.0" rel="noopener" target="_blank">http://www.opensource.org/licenses/SPL-1.0</a></li><li><a href="https://opensource.org/licenses/SPL-1.0" rel="noopener" target="_blank">https://opensource.org/licenses/SPL-1.0</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.sun.com/" rel="noopener" target="_blank">http://www.sun.com/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>1. Definitions.
 
     1.0.1. &#34;Commercial Use&#34; means distribution or otherwise making the
     Covered Code available to a third party.

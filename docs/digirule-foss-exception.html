@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,86 +62,153 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/digirule-foss-exception.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/digirule-foss-exception.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: digirule-foss-exception
-short_name: DigiRule FOSS Exception to GPL 2.0
-name: DigiRule FOSS License Exception to GPL 2.0
-category: Copyleft Limited
-owner: bradsprojects
-homepage_url: https://bradsprojects.com/the-digirule/
-is_exception: yes
-spdx_license_key: DigiRule-FOSS-exception
-other_urls:
-  - http://www.digirulesolutions.com/drupal/foss
-  - http://www.gnu.org/licenses/gpl-2.0.txt
-  - https://www.bradsprojects.com/wp-content/uploads/2015/10/Digirule_Files_04_July_2017.zip
-minimum_coverage: 90
-standard_notice: |
-  DigiRule Solutions&#39;s FOSS License Exception Terms and Conditions
-  1. Definitions.
-  &#34;Derivative Work&#34; means a derivative work, as defined under applicable
-  copyright law, formed entirely from the Program and one or more FOSS
-  Applications.
-  &#34;FOSS Application&#34; means a free and open source software application
-  distributed subject to a license listed in the section below titled &#34;FOSS
-  License List.&#34;
-  &#34;FOSS Notice&#34; means a notice placed by DigiRule Solutions in a copy of the
-  Client Libraries stating that such copy of the Client Libraries may be
-  distributed under DigiRule Solutions&#39;s or FOSS License Exception.
-  &#34;Independent Work&#34; means portions of the Derivative Work that are not
-  derived from the Program and can reasonably be considered independent and
-  separate works.
-  &#34;Program&#34; means a copy of DigiRule Solutions&#39;s Client Libraries that
-  contain a FOSS Notice.
-  2. A FOSS application developer (&#34;you&#34; or &#34;your&#34;) may distribute a
-  Derivative Work provided that you and the Derivative Work meet all of the
-  following conditions:
-  1. You obey the GPL in all respects for the Program and all portions
-  (including modifications) of the Program included in the Derivative Work
-  (provided that this condition does not apply to Independent Works);
-  2. The Derivative Work does not include any work licensed under the GPL
-  other than the Program;
-  3. You distribute Independent Works subject to a license listed in the
-  section below titled &#34;FOSS License List&#34;;
-  4. You distribute Independent Works in object code or executable form with
-  the complete corresponding machine-readable source code on the same medium
-  and under the same FOSS license applying to the object code or executable
-  forms;
-  5. All works that are aggregated with the Program or the Derivative Work on
-  a medium or volume of storage are not derivative works of the Program,
-  Derivative Work or FOSS Application, and must reasonably be considered
-  independent and separate works.
-  3. DigiRule Solutions reserves all rights not expressly granted in these
-  terms and conditions. If all of the above conditions are not met, then this
-  FOSS License Exception does not apply to you or your Derivative Work.
-  FOSS License List
-  License Name Version(s)/Copyright Date
-  Release Early Certified Software
-  Academic Free License 2.0
-  Apache Software License 1.0/1.1/2.0
-  Apple Public Source License 2.0
-  Artistic license From Perl 5.8.0
-  BSD license &#34;July 22 1999&#34;
-  Common Development and Distribution License (CDDL) 1.0
-  Common Public License 1.0
-  Eclipse Public License 1.0
-  GNU Library or &#34;Lesser&#34; General Public License (LGPL) 2.0/2.1/3.0
-  Jabber Open Source License 1.0
-  MIT License (As listed in file MIT-License.txt) -
-  Mozilla Public License (MPL) 1.0/1.1
-  Open Software License 2.0
-  OpenSSL license (with original SSLeay license) &#34;2003&#34; (&#34;1998&#34;)
-  PHP License 3.0/3.01
-  Python license (CNRI Python License) -
-  Python Software Foundation License 2.1.1
-  Sleepycat License &#34;1999&#34;
-  University of Illinois/NCSA Open Source License -
-  W3C License &#34;2001&#34;
-  X11 License &#34;2001&#34;
-  Zlib/libpng License -
-  Zope Public License 2.0
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>DigiRule Solutions&#39;s FOSS License Exception Terms and Conditions
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            digirule-foss-exception
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            DigiRule FOSS Exception to GPL 2.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            DigiRule FOSS License Exception to GPL 2.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            bradsprojects
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://bradsprojects.com/the-digirule/" rel="noopener" target="_blank">https://bradsprojects.com/the-digirule/</a>
+          
+        </dd>
+      
+        <dt style="">is_exception</dt>
+        <dd>
+          
+            True
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            DigiRule-FOSS-exception
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.digirulesolutions.com/drupal/foss" rel="noopener" target="_blank">http://www.digirulesolutions.com/drupal/foss</a></li><li><a href="http://www.gnu.org/licenses/gpl-2.0.txt" rel="noopener" target="_blank">http://www.gnu.org/licenses/gpl-2.0.txt</a></li><li><a href="https://www.bradsprojects.com/wp-content/uploads/2015/10/Digirule_Files_04_July_2017.zip" rel="noopener" target="_blank">https://www.bradsprojects.com/wp-content/uploads/2015/10/Digirule_Files_04_July_2017.zip</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            90
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            DigiRule Solutions&#39;s FOSS License Exception Terms and Conditions
+1. Definitions.
+&#34;Derivative Work&#34; means a derivative work, as defined under applicable
+copyright law, formed entirely from the Program and one or more FOSS
+Applications.
+&#34;FOSS Application&#34; means a free and open source software application
+distributed subject to a license listed in the section below titled &#34;FOSS
+License List.&#34;
+&#34;FOSS Notice&#34; means a notice placed by DigiRule Solutions in a copy of the
+Client Libraries stating that such copy of the Client Libraries may be
+distributed under DigiRule Solutions&#39;s or FOSS License Exception.
+&#34;Independent Work&#34; means portions of the Derivative Work that are not
+derived from the Program and can reasonably be considered independent and
+separate works.
+&#34;Program&#34; means a copy of DigiRule Solutions&#39;s Client Libraries that
+contain a FOSS Notice.
+2. A FOSS application developer (&#34;you&#34; or &#34;your&#34;) may distribute a
+Derivative Work provided that you and the Derivative Work meet all of the
+following conditions:
+1. You obey the GPL in all respects for the Program and all portions
+(including modifications) of the Program included in the Derivative Work
+(provided that this condition does not apply to Independent Works);
+2. The Derivative Work does not include any work licensed under the GPL
+other than the Program;
+3. You distribute Independent Works subject to a license listed in the
+section below titled &#34;FOSS License List&#34;;
+4. You distribute Independent Works in object code or executable form with
+the complete corresponding machine-readable source code on the same medium
+and under the same FOSS license applying to the object code or executable
+forms;
+5. All works that are aggregated with the Program or the Derivative Work on
+a medium or volume of storage are not derivative works of the Program,
+Derivative Work or FOSS Application, and must reasonably be considered
+independent and separate works.
+3. DigiRule Solutions reserves all rights not expressly granted in these
+terms and conditions. If all of the above conditions are not met, then this
+FOSS License Exception does not apply to you or your Derivative Work.
+FOSS License List
+License Name Version(s)/Copyright Date
+Release Early Certified Software
+Academic Free License 2.0
+Apache Software License 1.0/1.1/2.0
+Apple Public Source License 2.0
+Artistic license From Perl 5.8.0
+BSD license &#34;July 22 1999&#34;
+Common Development and Distribution License (CDDL) 1.0
+Common Public License 1.0
+Eclipse Public License 1.0
+GNU Library or &#34;Lesser&#34; General Public License (LGPL) 2.0/2.1/3.0
+Jabber Open Source License 1.0
+MIT License (As listed in file MIT-License.txt) -
+Mozilla Public License (MPL) 1.0/1.1
+Open Software License 2.0
+OpenSSL license (with original SSLeay license) &#34;2003&#34; (&#34;1998&#34;)
+PHP License 3.0/3.01
+Python license (CNRI Python License) -
+Python Software Foundation License 2.1.1
+Sleepycat License &#34;1999&#34;
+University of Illinois/NCSA Open Source License -
+W3C License &#34;2001&#34;
+X11 License &#34;2001&#34;
+Zlib/libpng License -
+Zope Public License 2.0
+
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>DigiRule Solutions&#39;s FOSS License Exception Terms and Conditions
 
     1. Definitions.
 

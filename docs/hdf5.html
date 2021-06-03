@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,72 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/hdf5.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/hdf5.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: hdf5
-short_name: HDF5License
-name: HDF5 License
-category: Permissive
-owner: The HDF Group
-homepage_url: https://bitbucket.hdfgroup.org/projects/HDFFV/repos/hdf5/browse/COPYING?raw
-spdx_license_key: LicenseRef-scancode-hdf5
-standard_notice: &#34;This file is part of HDF5.  The full HDF5 copyright notice, including   \n\
-  terms governing use, modification, and redistribution, is contained in  \nthe COPYING file,\
-  \ which can be found at the root of the source code     \ndistribution tree, or in https://support.hdfgroup.org/ftp/HDF5/releases.\n\
-  If you do not have access to either file, you may request a copy from   \nhelp@hdfgroup.org. &#34;
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            hdf5
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            HDF5License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            HDF5 License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            The HDF Group
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://bitbucket.hdfgroup.org/projects/HDFFV/repos/hdf5/browse/COPYING?raw" rel="noopener" target="_blank">https://bitbucket.hdfgroup.org/projects/HDFFV/repos/hdf5/browse/COPYING?raw</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-hdf5
+          
+        </dd>
+      
+        <dt style="">standard_notice</dt>
+        <dd>
+          
+            This file is part of HDF5.  The full HDF5 copyright notice, including   
+terms governing use, modification, and redistribution, is contained in  
+the COPYING file, which can be found at the root of the source code     
+distribution tree, or in <a href="https://support.hdfgroup.org/ftp/HDF5/releases" rel="noopener" target="_blank">https://support.hdfgroup.org/ftp/HDF5/releases</a>.
+If you do not have access to either file, you may request a copy from   
+<a href="mailto:help@hdfgroup.org">help@hdfgroup.org</a>. 
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without 
 modification, are permitted for any purpose (including commercial purposes) 
 provided that the following conditions are met:
 

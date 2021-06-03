@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/rsa-proprietary.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/rsa-proprietary.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: rsa-proprietary
-short_name: RSA Proprietary
-name: RSA Proprietary Shrinkwrap License
-category: Commercial
-owner: RSA (the Security Division of EMC)
-homepage_url: https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf
-spdx_license_key: LicenseRef-scancode-rsa-proprietary
-text_urls:
-  - https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf
-ignorable_urls:
-  - https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The text of this license is secured, and may be viewed at
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            rsa-proprietary
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            RSA Proprietary
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            RSA Proprietary Shrinkwrap License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            RSA (the Security Division of EMC)
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf" rel="noopener" target="_blank">https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-rsa-proprietary
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf" rel="noopener" target="_blank">https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf" rel="noopener" target="_blank">https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>The text of this license is secured, and may be viewed at
 https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf</code></pre>
   </div>
 

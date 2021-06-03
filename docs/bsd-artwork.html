@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,19 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-artwork.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-artwork.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bsd-artwork
-short_name: BSD Artwork
-name: BSD Artwork License
-category: Permissive
-owner: Armin Ronacher
-homepage_url: http://flask.pocoo.org/docs/1.0/license/
-notes: this is a bsd-like license for ogos nd artwork without a disclaimer
-spdx_license_key: LicenseRef-scancode-bsd-artwork
-other_urls:
-  - https://www.getlektor.com/license/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This logo or a modified version may be used by anyone to refer to the 
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bsd-artwork
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            BSD Artwork
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            BSD Artwork License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Armin Ronacher
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://flask.pocoo.org/docs/1.0/license/" rel="noopener" target="_blank">http://flask.pocoo.org/docs/1.0/license/</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            this is a bsd-like license for ogos nd artwork without a disclaimer
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-bsd-artwork
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://www.getlektor.com/license/" rel="noopener" target="_blank">https://www.getlektor.com/license/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This logo or a modified version may be used by anyone to refer to the 
 project, but does not indicate endorsement by the project.
 
 Redistribution and use in source (the SVG file) and binary forms

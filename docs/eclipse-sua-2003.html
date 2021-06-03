@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/eclipse-sua-2003.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/eclipse-sua-2003.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: eclipse-sua-2003
-short_name: Eclipse Foundation Software User Agreement 2003
-name: Eclipse Foundation Software User Agreement 2003
-category: Copyleft
-owner: Eclipse Foundation
-homepage_url: https://web.archive.org/web/20030210115256/http://www.eclipse.org/legal/notice.html
-spdx_license_key: LicenseRef-scancode-eclipse-sua-2003
-ignorable_urls:
-  - http://oss.software.ibm.com/developerworks/opensource/license10.html
-  - http://www.apache.org/licenses/LICENSE
-  - http://www.eclipse.org/legal/cpl-v10.html
-  - http://www.mozilla.org/MPL/MPL-1.1.html
-  - http://www.opengroup.org/openmotif/supporters/metrolink/license.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Eclipse.org Software User Agreement
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            eclipse-sua-2003
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Eclipse Foundation Software User Agreement 2003
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Eclipse Foundation Software User Agreement 2003
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Eclipse Foundation
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://web.archive.org/web/20030210115256/http://www.eclipse.org/legal/notice.html" rel="noopener" target="_blank">https://web.archive.org/web/20030210115256/http://www.eclipse.org/legal/notice.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-eclipse-sua-2003
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://oss.software.ibm.com/developerworks/opensource/license10.html" rel="noopener" target="_blank">http://oss.software.ibm.com/developerworks/opensource/license10.html</a></li><li><a href="http://www.apache.org/licenses/LICENSE" rel="noopener" target="_blank">http://www.apache.org/licenses/LICENSE</a></li><li><a href="http://www.eclipse.org/legal/cpl-v10.html" rel="noopener" target="_blank">http://www.eclipse.org/legal/cpl-v10.html</a></li><li><a href="http://www.mozilla.org/MPL/MPL-1.1.html" rel="noopener" target="_blank">http://www.mozilla.org/MPL/MPL-1.1.html</a></li><li><a href="http://www.opengroup.org/openmotif/supporters/metrolink/license.html" rel="noopener" target="_blank">http://www.opengroup.org/openmotif/supporters/metrolink/license.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Eclipse.org Software User Agreement
 
 14th August, 2003
 Usage Of Content

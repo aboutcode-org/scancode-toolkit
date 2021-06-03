@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/atlassian-marketplace-tou.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/atlassian-marketplace-tou.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: atlassian-marketplace-tou
-short_name: Atlassian Marketplace Terms of Use
-name: Atlassian Marketplace Terms of Use
-category: Proprietary Free
-owner: Atlassian
-homepage_url: https://www.atlassian.com/licensing/marketplace/termsofuse
-spdx_license_key: LicenseRef-scancode-atlassian-marketplace-tou
-ignorable_urls:
-  - https://marketplace.atlassian.com/
-ignorable_emails:
-  - legal@atlassian.com
-  - sales@atlassian.com
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Atlassian Marketplace Terms of Use
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            atlassian-marketplace-tou
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Atlassian Marketplace Terms of Use
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Atlassian Marketplace Terms of Use
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Atlassian
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.atlassian.com/licensing/marketplace/termsofuse" rel="noopener" target="_blank">https://www.atlassian.com/licensing/marketplace/termsofuse</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-atlassian-marketplace-tou
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://marketplace.atlassian.com/" rel="noopener" target="_blank">https://marketplace.atlassian.com/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_emails</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="mailto:legal@atlassian.com">legal@atlassian.com</a></li><li><a href="mailto:sales@atlassian.com">sales@atlassian.com</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Atlassian Marketplace Terms of Use
 Welcome to the Atlassian Marketplace! The Atlassian Marketplace is an online marketplace for cloud and downloadable software applications, plugins and extensions (“Marketplace Apps” or “Apps”) that are designed to interoperate with Atlassian’s software and cloud offerings (“Atlassian Products”).
 
 Use of the Atlassian Marketplace is governed by these Atlassian Marketplace Terms of Use (“Terms of Use”), which form a legally binding agreement between you (defined in Section 1.1) and Atlassian Pty Ltd, an Australian corporation (ABN 53 102 443 916) (“Atlassian” or “we”).

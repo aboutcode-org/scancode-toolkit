@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,21 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/free-art-1.3.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/free-art-1.3.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: free-art-1.3
-short_name: FAL 1.3
-name: Free Art License 1.3
-category: Permissive
-owner: Copyleft Attitude
-homepage_url: http://artlibre.org/licence/lal/en
-spdx_license_key: LicenseRef-scancode-free-art-1.3
-text_urls:
-  - http://artlibre.org/licence/lal/en
-ignorable_urls:
-  - http://artlibre.org/licence/lal/en/
-  - http://www.artlibre.org/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Free Art License 1.3 (FAL 1.3)
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            free-art-1.3
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            FAL 1.3
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Free Art License 1.3
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Copyleft Attitude
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://artlibre.org/licence/lal/en" rel="noopener" target="_blank">http://artlibre.org/licence/lal/en</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-free-art-1.3
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://artlibre.org/licence/lal/en" rel="noopener" target="_blank">http://artlibre.org/licence/lal/en</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://artlibre.org/licence/lal/en/" rel="noopener" target="_blank">http://artlibre.org/licence/lal/en/</a></li><li><a href="http://www.artlibre.org/" rel="noopener" target="_blank">http://www.artlibre.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Free Art License 1.3 (FAL 1.3)
 
 Preamble
 

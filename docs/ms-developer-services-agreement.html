@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,33 +62,103 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-developer-services-agreement.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-developer-services-agreement.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ms-developer-services-agreement
-short_name: MS Developer Services Agreement
-name: Microsoft Developer Services Agreement
-category: Proprietary Free
-owner: Microsoft
-homepage_url: http://msdn.microsoft.com/en-us/cc300389.aspx
-spdx_license_key: LicenseRef-scancode-ms-developer-services-agreement
-text_urls:
-  - http://msdn.microsoft.com/en-us/cc300389.aspx
-minimum_coverage: 70
-ignorable_copyrights:
-  - (c) 2013 Microsoft Corporation
-ignorable_holders:
-  - Microsoft Corporation
-ignorable_urls:
-  - http://connect.microsoft.com/
-  - http://go.microsoft.com/fwlink/?LinkID=246330
-  - http://go.microsoft.com/fwlink/?LinkId=303819
-  - http://go.microsoft.com/fwlink/?LinkId=309360
-  - http://msdn.microsoft.com/
-  - http://technet.microsoft.com/
-  - http://www.microsoft.com/exporting
-  - http://www.microsoft.com/info/cpyrtInfrg.htm
-  - http://www.visualstudio.com/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Microsoft Developer Services Agreement
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ms-developer-services-agreement
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MS Developer Services Agreement
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Microsoft Developer Services Agreement
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://msdn.microsoft.com/en-us/cc300389.aspx" rel="noopener" target="_blank">http://msdn.microsoft.com/en-us/cc300389.aspx</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ms-developer-services-agreement
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://msdn.microsoft.com/en-us/cc300389.aspx" rel="noopener" target="_blank">http://msdn.microsoft.com/en-us/cc300389.aspx</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            70
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>(c) 2013 Microsoft Corporation</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Microsoft Corporation</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://connect.microsoft.com/" rel="noopener" target="_blank">http://connect.microsoft.com/</a></li><li><a href="http://go.microsoft.com/fwlink/?LinkID=246330" rel="noopener" target="_blank">http://go.microsoft.com/fwlink/?LinkID=246330</a></li><li><a href="http://go.microsoft.com/fwlink/?LinkId=303819" rel="noopener" target="_blank">http://go.microsoft.com/fwlink/?LinkId=303819</a></li><li><a href="http://go.microsoft.com/fwlink/?LinkId=309360" rel="noopener" target="_blank">http://go.microsoft.com/fwlink/?LinkId=309360</a></li><li><a href="http://msdn.microsoft.com/" rel="noopener" target="_blank">http://msdn.microsoft.com/</a></li><li><a href="http://technet.microsoft.com/" rel="noopener" target="_blank">http://technet.microsoft.com/</a></li><li><a href="http://www.microsoft.com/exporting" rel="noopener" target="_blank">http://www.microsoft.com/exporting</a></li><li><a href="http://www.microsoft.com/info/cpyrtInfrg.htm" rel="noopener" target="_blank">http://www.microsoft.com/info/cpyrtInfrg.htm</a></li><li><a href="http://www.visualstudio.com/" rel="noopener" target="_blank">http://www.visualstudio.com/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Microsoft Developer Services Agreement
 Updated October, 2013
 
 This agreement is between you or the entity you represent and the Microsoft entity listed in Exhibit A, and consists of the terms below, Exhibit A, Exhibit B, the SLAs, Offer Details for any Service as published on the date of a Service purchase or renewal, terms incorporated by reference, terms applicable to other Microsoft web sites and services that you use and are necessary to use the Services (for example, your Microsoft Account) and, the Privacy Statement (together, the &#34;Agreement&#34;). If you are entering into this Agreement on behalf of an entity, such as your employer, you represent that you have the legal authority to bind that entity. If you specify a company name in connection with signing up for or ordering a Service, you will be deemed to have placed that order and to have entered into this Agreement on behalf of that organization or company. Key terms are defined in Section 11. In addition, if you are a Windows Azure customer, this Agreement supplements your existing Windows Azure agreement and governs to the extent of any conflict with the Windows Azure terms (except that the Windows Azure billing terms will continue to apply).

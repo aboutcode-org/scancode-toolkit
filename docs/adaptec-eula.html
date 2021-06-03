@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adaptec-eula.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adaptec-eula.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: adaptec-eula
-short_name: Adaptec EULA
-name: Adaptec EULA
-category: Proprietary Free
-owner: Adaptec
-homepage_url: https://www.adaptec.com/en-us/support/_eula/license.php
-spdx_license_key: LicenseRef-scancode-adaptec-eula
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>PMC-Sierra Inc.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            adaptec-eula
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Adaptec EULA
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Adaptec EULA
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Adaptec
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://www.adaptec.com/en-us/support/_eula/license.php" rel="noopener" target="_blank">https://www.adaptec.com/en-us/support/_eula/license.php</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-adaptec-eula
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>PMC-Sierra Inc.
 Adaptec by PMC Downloadable Files:
 
 This License is granted by PMC-Sierra, Inc., referred to in this License as

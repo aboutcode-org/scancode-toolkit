@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/linux-openib.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/linux-openib.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: linux-openib
-short_name: Linux-OpenIB
-name: Linux-OpenIB
-category: Permissive
-owner: Linux Foundation
-homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h
-notes: |
-  This license is a hybrid of two common licenses the BSD-2-Clause (bsd-
-  simplified) and the MIT License (mit).
-spdx_license_key: Linux-OpenIB
-text_urls:
-  - https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README
-other_urls:
-  - https://github.com/spdx/license-list-XML/issues/620
-  - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h?id=3215b9d57a2c75c4305a3956ca303d7004485200
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            linux-openib
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Linux-OpenIB
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Linux-OpenIB
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Linux Foundation
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h" rel="noopener" target="_blank">https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            This license is a hybrid of two common licenses the BSD-2-Clause (bsd-
+simplified) and the MIT License (mit).
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Linux-OpenIB
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README" rel="noopener" target="_blank">https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://github.com/spdx/license-list-XML/issues/620" rel="noopener" target="_blank">https://github.com/spdx/license-list-XML/issues/620</a></li><li><a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h?id=3215b9d57a2c75c4305a3956ca303d7004485200" rel="noopener" target="_blank">https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h?id=3215b9d57a2c75c4305a3956ca303d7004485200</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
 - Redistributions of source code must retain the above copyright notice, this

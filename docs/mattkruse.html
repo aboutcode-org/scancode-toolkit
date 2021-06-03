@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mattkruse.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mattkruse.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: mattkruse
-short_name: Matt Kruse License
-name: Matt Kruse License
-category: Permissive
-owner: MattKruse.com
-homepage_url: http://www.mattkruse.com/
-spdx_license_key: LicenseRef-scancode-mattkruse
-text_urls:
-  - http://www.mattkruse.com/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>NOTICE: You may use this code for any purpose, commercial or private, without any further permission from the author. You may remove this notice from your final code if you wish, however it is appreciated by the author if at least my web site address is kept.
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            mattkruse
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Matt Kruse License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Matt Kruse License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            <a href="http://MattKruse.com" rel="noopener" target="_blank">MattKruse.com</a>
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.mattkruse.com/" rel="noopener" target="_blank">http://www.mattkruse.com/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-mattkruse
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.mattkruse.com/" rel="noopener" target="_blank">http://www.mattkruse.com/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>NOTICE: You may use this code for any purpose, commercial or private, without any further permission from the author. You may remove this notice from your final code if you wish, however it is appreciated by the author if at least my web site address is kept.
 
 You may *NOT* re-distribute this code in any way except through its use. That means, you can include it in your product, or your web site, or any other form where the code is actually being used. You may not put the plain javascript up on your site for download or include it in your javascript libraries for download.
 If you wish to share this code with others, please just point them to the URL instead.

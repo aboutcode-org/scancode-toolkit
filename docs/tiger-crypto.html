@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,20 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/tiger-crypto.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/tiger-crypto.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: tiger-crypto
-short_name: Tiger Cryptography License
-name: Tiger Cryptography License
-category: Permissive
-owner: Tiger
-spdx_license_key: LicenseRef-scancode-tiger-crypto
-faq_url: http://www.cs.technion.ac.il/~biham/Reports/Tiger/
-other_urls:
-  - http://www.cs.technion.ac.il/~biham/Reports/Tiger/
-ignorable_urls:
-  - http://www.cs.technion.ac.il/~biham/Reports/Tiger/
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Tiger Cryptography
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            tiger-crypto
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Tiger Cryptography License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Tiger Cryptography License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Tiger
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-tiger-crypto
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="http://www.cs.technion.ac.il/~biham/Reports/Tiger/" rel="noopener" target="_blank">http://www.cs.technion.ac.il/~biham/Reports/Tiger/</a>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.cs.technion.ac.il/~biham/Reports/Tiger/" rel="noopener" target="_blank">http://www.cs.technion.ac.il/~biham/Reports/Tiger/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.cs.technion.ac.il/~biham/Reports/Tiger/" rel="noopener" target="_blank">http://www.cs.technion.ac.il/~biham/Reports/Tiger/</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Tiger Cryptography
 
 This code comes from the reference implementation of the Tiger cryptographic hash function. The only modification made is to pull out the data types and the api into a header file (this file, tiger.h). The reference implementation is available at:
 

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,62 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-javamail.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sun-javamail.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: sun-javamail
-short_name: Sun JavaMail
-name: Sun JavaMail
-category: Proprietary Free
-owner: Oracle (Sun)
-spdx_license_key: LicenseRef-scancode-sun-javamail
-ignorable_urls:
-  - http://java.sun.com/trademarks.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Sun JavaMail
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            sun-javamail
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Sun JavaMail
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Sun JavaMail
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Oracle (Sun)
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-sun-javamail
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://java.sun.com/trademarks.html" rel="noopener" target="_blank">http://java.sun.com/trademarks.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Sun JavaMail
 License Agreement
 
 1.	License to Distribute. Customer is granted a royalty-free, non-transferable right to reproduce and use the Software for the purpose of developing applications which run in conjunction with the Software. Customer may not modify the Software (including any APIs exposed by the Software) in any way.

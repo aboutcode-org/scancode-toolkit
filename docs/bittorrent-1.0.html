@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bittorrent-1.0.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bittorrent-1.0.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bittorrent-1.0
-short_name: BitTorrent 1.0
-name: BitTorrent Open Source License 1.0
-category: Copyleft Limited
-owner: BitTorrent, Inc.
-homepage_url: http://www.bittorrent.com/license/
-spdx_license_key: BitTorrent-1.0
-text_urls:
-  - http://web.archive.org/web/20050209224501/http://www.bittorrent.com/license/
-  - http://www.bittorrent.com/license/
-  - https://spdx.org/licenses/BitTorrent-1.0.html
-other_urls:
-  - http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/licenses/BitTorrent?r1=1.1&amp;r2=1.1.1.1&amp;diff_format=s
-ignorable_urls:
-  - http://www.bittorrent.com/license
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>BitTorrent Open Source License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bittorrent-1.0
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            BitTorrent 1.0
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            BitTorrent Open Source License 1.0
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Copyleft Limited
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            BitTorrent, Inc.
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.bittorrent.com/license/" rel="noopener" target="_blank">http://www.bittorrent.com/license/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            BitTorrent-1.0
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://web.archive.org/web/20050209224501/http://www.bittorrent.com/license/" rel="noopener" target="_blank">http://web.archive.org/web/20050209224501/http://www.bittorrent.com/license/</a></li><li><a href="http://www.bittorrent.com/license/" rel="noopener" target="_blank">http://www.bittorrent.com/license/</a></li><li><a href="https://spdx.org/licenses/BitTorrent-1.0.html" rel="noopener" target="_blank">https://spdx.org/licenses/BitTorrent-1.0.html</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/licenses/BitTorrent?r1=1.1&amp;r2=1.1.1.1&amp;diff_format=s" rel="noopener" target="_blank">http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/licenses/BitTorrent?r1=1.1&amp;r2=1.1.1.1&amp;diff_format=s</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.bittorrent.com/license" rel="noopener" target="_blank">http://www.bittorrent.com/license</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>BitTorrent Open Source License
 
 Version 1.0
 

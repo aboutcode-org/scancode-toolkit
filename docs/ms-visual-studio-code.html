@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,76 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-visual-studio-code.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-visual-studio-code.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ms-visual-studio-code
-short_name: MS Visual Studio Code License
-name: Microsoft Visual Studio Code License
-category: Proprietary Free
-owner: Microsoft
-homepage_url: https://code.visualstudio.com/License/
-spdx_license_key: LicenseRef-scancode-ms-visual-studio-code
-faq_url: https://code.visualstudio.com/
-ignorable_urls:
-  - http://go.microsoft.com/fwlink/?LinkID=528096&amp;clcid=0x409
-  - http://go.microsoft.com/fwlink/?LinkID=616397
-  - http://thirdpartysource.microsoft.com/
-  - http://www.microsoft.com/exporting
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>MICROSOFT SOFTWARE LICENSE TERMS
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ms-visual-studio-code
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            MS Visual Studio Code License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Microsoft Visual Studio Code License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Microsoft
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://code.visualstudio.com/License/" rel="noopener" target="_blank">https://code.visualstudio.com/License/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ms-visual-studio-code
+          
+        </dd>
+      
+        <dt style="">faq_url</dt>
+        <dd>
+          
+            <a href="https://code.visualstudio.com/" rel="noopener" target="_blank">https://code.visualstudio.com/</a>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://go.microsoft.com/fwlink/?LinkID=528096&amp;clcid=0x409" rel="noopener" target="_blank">http://go.microsoft.com/fwlink/?LinkID=528096&amp;clcid=0x409</a></li><li><a href="http://go.microsoft.com/fwlink/?LinkID=616397" rel="noopener" target="_blank">http://go.microsoft.com/fwlink/?LinkID=616397</a></li><li><a href="http://thirdpartysource.microsoft.com/" rel="noopener" target="_blank">http://thirdpartysource.microsoft.com/</a></li><li><a href="http://www.microsoft.com/exporting" rel="noopener" target="_blank">http://www.microsoft.com/exporting</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>MICROSOFT SOFTWARE LICENSE TERMS
 MICROSOFT VISUAL STUDIO CODE
 These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. They apply to the software named above. The terms also apply to any Microsoft services or updates for the software, except to the extent those have additional terms.
 

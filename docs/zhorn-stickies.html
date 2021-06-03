@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/zhorn-stickies.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/zhorn-stickies.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: zhorn-stickies
-short_name: Zhorn Stickies License
-name: Zhorn Stickies License
-category: Proprietary Free
-owner: Zhorn Software
-homepage_url: http://www.zhornsoftware.co.uk/stickies/download.html
-spdx_license_key: LicenseRef-scancode-zhorn-stickies
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Copyright, licence and disclaimer
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            zhorn-stickies
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Zhorn Stickies License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Zhorn Stickies License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Zhorn Software
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.zhornsoftware.co.uk/stickies/download.html" rel="noopener" target="_blank">http://www.zhornsoftware.co.uk/stickies/download.html</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-zhorn-stickies
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Copyright, licence and disclaimer
 Stickies is freeware. You may use this software on any number of computers for as long as you like, and you don&#39;t have to pay a penny. There are no crippled features for registered users only, no time delays and no stupid nag screens.
 
 All that said, Stickies is not public domain software. I allow the free distribution of the software, but I retain ownership and copyright of the software and its source code in its entirety.

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,25 +62,75 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/diffmark.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/diffmark.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: diffmark
-short_name: diffmark License
-name: diffmark License
-category: Public Domain
-owner: Unspecified
-homepage_url: https://fedoraproject.org/wiki/Licensing/diffmark
-notes: |
-  Per Fedora, this extremely minimal and permissive license was found in
-  diffmark (0.08). While poorly written, our interpretation of the text
-  permits use, modification, and distribution. It also permits wearing it as
-  a hat or eating it for lunch, although neither of those cases are
-  recommended. This would perhaps be considered Copyright only, except that
-  no requirement of retention of copyright is present, and the copyright
-  holder is disclaiming liability (albeit, poorly). This license is Free, and
-  GPL compatible.
-spdx_license_key: diffmark
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>1. you can do what you want with it
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            diffmark
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            diffmark License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            diffmark License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Public Domain
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Unspecified
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing/diffmark" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/diffmark</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per Fedora, this extremely minimal and permissive license was found in
+diffmark (0.08). While poorly written, our interpretation of the text
+permits use, modification, and distribution. It also permits wearing it as
+a hat or eating it for lunch, although neither of those cases are
+recommended. This would perhaps be considered Copyright only, except that
+no requirement of retention of copyright is present, and the copyright
+holder is disclaiming liability (albeit, poorly). This license is Free, and
+GPL compatible.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            diffmark
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>1. you can do what you want with it
 2. I refuse any responsibility for the consequences</code></pre>
   </div>
 

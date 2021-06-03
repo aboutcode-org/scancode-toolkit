@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,22 +62,78 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-master-eula-sw-dev-2016.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-master-eula-sw-dev-2016.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: intel-master-eula-sw-dev-2016
-short_name: Intel Master EULA for SW Dev 2016
-name: Intel Master EULA for SW Development Products March 2016
-category: Proprietary Free
-owner: Intel Corporation
-homepage_url: https://registrationcenter.intel.com/en/forms/?productid=2558&amp;licensetype=2
-spdx_license_key: LicenseRef-scancode-intel-master-eula-sw-dev-2016
-text_urls:
-  - https://software.intel.com/sites/default/files/managed/67/99/Master_EULA_for_Intel_Sw_Development_Products_March_2016.pdf
-ignorable_urls:
-  - http://www.intel.com/privacy
-  - https://software.intel.com/en
-  - https://software.intel.com/en-us/articles/end-user-license-agreement
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>IMPORTANT INFORMATION ABOUT YOUR RIGHTS, OBLIGATIONS AND THE USE OF YOUR DATA - READ AND AGREE BEFORE COPYING, INSTALLING OR USING
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            intel-master-eula-sw-dev-2016
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Intel Master EULA for SW Dev 2016
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Intel Master EULA for SW Development Products March 2016
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Intel Corporation
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://registrationcenter.intel.com/en/forms/?productid=2558&amp;licensetype=2" rel="noopener" target="_blank">https://registrationcenter.intel.com/en/forms/?productid=2558&amp;licensetype=2</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-intel-master-eula-sw-dev-2016
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://software.intel.com/sites/default/files/managed/67/99/Master_EULA_for_Intel_Sw_Development_Products_March_2016.pdf" rel="noopener" target="_blank">https://software.intel.com/sites/default/files/managed/67/99/Master_EULA_for_Intel_Sw_Development_Products_March_2016.pdf</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.intel.com/privacy" rel="noopener" target="_blank">http://www.intel.com/privacy</a></li><li><a href="https://software.intel.com/en" rel="noopener" target="_blank">https://software.intel.com/en</a></li><li><a href="https://software.intel.com/en-us/articles/end-user-license-agreement" rel="noopener" target="_blank">https://software.intel.com/en-us/articles/end-user-license-agreement</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>IMPORTANT INFORMATION ABOUT YOUR RIGHTS, OBLIGATIONS AND THE USE OF YOUR DATA - READ AND AGREE BEFORE COPYING, INSTALLING OR USING
 This Agreement forms a legally binding contract between you, or the company or other legal entity (&#34;Legal Entity&#34;) for which you represent and warrant that you have the legal authority to bind that Legal Entity, are agreeing to this Agreement (each, &#34;You&#34; or &#34;Your&#34;) and Intel Corporation and its subsidiaries (collectively &#34;Intel&#34;) regarding Your use of the Materials. By copying, installing, distributing, publicly displaying, or otherwise using the Materials, You agree to be bound by the terms of this Agreement. If You do not agree to the terms of this Agreement, do not copy, install, distribute, publicly display, or use the Materials. You affirm that You are 18 years old or older or, if not, Your parent, legal guardian or Legal Entity must agree and enter into this Agreement.
 
 DATA COLLECTION. The Materials may contain certain features that generate, collect, and transmit data to Intel about the installation, setup, and use of the Materials. The purposes of data collection are: 1) to verify compliance with the terms of this Agreement; and 2) to enable Intel to develop, improve, and support Intel’s products and services. When data is collected to verify compliance with the terms of this Agreement, this collection may be mandatory and a condition of using the Materials. This data includes the Material’s unique serial number combined with other information about the Materials and Your computer.

@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,86 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-plus-patent.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-plus-patent.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bsd-plus-patent
-short_name: BSD-2-Clause Plus Patent
-name: BSD-2-Clause Plus Patent
-category: Permissive
-owner: OSI - Open Source Initiative
-homepage_url: https://opensource.org/licenses/BSDplusPatent
-notes: |
-  Per the OSI, this license is designed to provide a) a simple permissive
-  license; b) that is compatible with the GNU General Public License (GPL),
-  version 2; and c) which also has an express patent grant included.
-spdx_license_key: BSD-2-Clause-Patent
-text_urls:
-  - https://opensource.org/licenses/BSDplusPatent
-osi_url: https://opensource.org/licenses/BSDplusPatent
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bsd-plus-patent
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            BSD-2-Clause Plus Patent
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            BSD-2-Clause Plus Patent
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            OSI - Open Source Initiative
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://opensource.org/licenses/BSDplusPatent" rel="noopener" target="_blank">https://opensource.org/licenses/BSDplusPatent</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per the OSI, this license is designed to provide a) a simple permissive
+license; b) that is compatible with the GNU General Public License (GPL),
+version 2; and c) which also has an express patent grant included.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            BSD-2-Clause-Patent
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="https://opensource.org/licenses/BSDplusPatent" rel="noopener" target="_blank">https://opensource.org/licenses/BSDplusPatent</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">osi_url</dt>
+        <dd>
+          
+            <a href="https://opensource.org/licenses/BSDplusPatent" rel="noopener" target="_blank">https://opensource.org/licenses/BSDplusPatent</a>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:
 

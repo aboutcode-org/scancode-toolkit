@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,16 +62,60 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/vicomsoft-software.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/vicomsoft-software.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: vicomsoft-software
-short_name: Vicomsoft Software License
-name: Vicomsoft Software License
-category: Commercial
-owner: Vicomsoft Ltd.
-homepage_url: http://www.vicomsoft.com/
-spdx_license_key: LicenseRef-scancode-vicomsoft-software
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>VICOMSOFT SOFTWARE LICENSE
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            vicomsoft-software
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Vicomsoft Software License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Vicomsoft Software License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Commercial
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Vicomsoft Ltd.
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.vicomsoft.com/" rel="noopener" target="_blank">http://www.vicomsoft.com/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-vicomsoft-software
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>VICOMSOFT SOFTWARE LICENSE
 Please read this document carefully before installing the 
 Vicomsoft software. By installing the software you agree 
 to become contractually bound by the terms of this licence. 

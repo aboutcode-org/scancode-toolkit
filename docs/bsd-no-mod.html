@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-no-mod.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bsd-no-mod.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: bsd-no-mod
-short_name: Madwifi License
-name: Madwifi License Agreement
-category: Free Restricted
-owner: MadWifi
-homepage_url: http://www.madwifi.org/
-spdx_license_key: LicenseRef-scancode-bsd-no-mod
-text_urls:
-  - http://wiki.freespire.org/index.php/Madwifi_License_Agreement
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms are permitted
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            bsd-no-mod
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Madwifi License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Madwifi License Agreement
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Free Restricted
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            MadWifi
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.madwifi.org/" rel="noopener" target="_blank">http://www.madwifi.org/</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-bsd-no-mod
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://wiki.freespire.org/index.php/Madwifi_License_Agreement" rel="noopener" target="_blank">http://wiki.freespire.org/index.php/Madwifi_License_Agreement</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Redistribution and use in source and binary forms are permitted
 provided that the following conditions are met:
 1. The materials contained herein are unmodified and are used
    unmodified.

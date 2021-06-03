@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,23 +62,87 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/antlr-pd-fallback.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/antlr-pd-fallback.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: antlr-pd-fallback
-short_name: ANTLR-PD with fallback
-name: ANTLR Software Rights Notice with license fallback
-category: Public Domain
-owner: ANTLR
-homepage_url: http://www.antlr2.org/
-notes: |
-  Per SPDX.org, ANTLR used this public domain notice through version 2.7 and
-  then switched to a BSD license for version 3.0 and later.
-spdx_license_key: ANTLR-PD-fallback
-text_urls:
-  - http://www.antlr2.org/
-other_urls:
-  - http://www.antlr2.org/license.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>ANTLR 2 License
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            antlr-pd-fallback
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            ANTLR-PD with fallback
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            ANTLR Software Rights Notice with license fallback
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Public Domain
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            ANTLR
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.antlr2.org/" rel="noopener" target="_blank">http://www.antlr2.org/</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            Per <a href="http://SPDX.org" rel="noopener" target="_blank">SPDX.org</a>, ANTLR used this public domain notice through version 2.7 and
+then switched to a BSD license for version 3.0 and later.
+
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            ANTLR-PD-fallback
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.antlr2.org/" rel="noopener" target="_blank">http://www.antlr2.org/</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.antlr2.org/license.html" rel="noopener" target="_blank">http://www.antlr2.org/license.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>ANTLR 2 License
 
 We reserve no legal rights to the ANTLR --it is fully in the public domain. An
 individual or company may do whatever they wish with source code distributed

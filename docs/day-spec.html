@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,24 +62,94 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/day-spec.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/day-spec.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: day-spec
-short_name: Day Specification License
-name: Day Specification License
-category: Proprietary Free
-owner: Day Management AG
-homepage_url: http://www.day.com/maven/jsr170/jars/LICENSE.txt
-spdx_license_key: LicenseRef-scancode-day-spec
-text_urls:
-  - http://www.day.com/maven/jsr170/jars/LICENSE.txt
-  - http://www.day.com/maven/jsr170/licenses/day-spec-license.htm
-minimum_coverage: 70
-ignorable_copyrights:
-  - Copyright 2005 Day Management AG Barfusserplatz 6, 4001 Basel, Switzerland
-ignorable_holders:
-  - Day Management AG Barfusserplatz 6, 4001 Basel, Switzerland
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>[Day Specification License]
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            day-spec
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Day Specification License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Day Specification License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Proprietary Free
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Day Management AG
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://www.day.com/maven/jsr170/jars/LICENSE.txt" rel="noopener" target="_blank">http://www.day.com/maven/jsr170/jars/LICENSE.txt</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-day-spec
+          
+        </dd>
+      
+        <dt style="">text_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.day.com/maven/jsr170/jars/LICENSE.txt" rel="noopener" target="_blank">http://www.day.com/maven/jsr170/jars/LICENSE.txt</a></li><li><a href="http://www.day.com/maven/jsr170/licenses/day-spec-license.htm" rel="noopener" target="_blank">http://www.day.com/maven/jsr170/licenses/day-spec-license.htm</a></li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">minimum_coverage</dt>
+        <dd>
+          
+            70
+          
+        </dd>
+      
+        <dt style="">ignorable_copyrights</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Copyright 2005 Day Management AG Barfusserplatz 6, 4001 Basel, Switzerland</li>
+            </ul>
+          
+        </dd>
+      
+        <dt style="">ignorable_holders</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li>Day Management AG Barfusserplatz 6, 4001 Basel, Switzerland</li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>[Day Specification License]
 
 Day Management AG (&#34;Licensor&#34;) is willing to license this specification
 to you ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED

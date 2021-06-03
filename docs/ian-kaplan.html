@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,15 +62,53 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ian-kaplan.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ian-kaplan.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: ian-kaplan
-short_name: Ian Kaplan License
-name: Ian Kaplan License
-category: Permissive
-owner: Bearcave.com
-spdx_license_key: LicenseRef-scancode-ian-kaplan
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Use of this program, for any purpose, is granted the author,
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            ian-kaplan
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Ian Kaplan License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Ian Kaplan License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            <a href="http://Bearcave.com" rel="noopener" target="_blank">Bearcave.com</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-ian-kaplan
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Use of this program, for any purpose, is granted the author,
 Ian Kaplan, as long as this copyright notice is included in
 the source code or any source code derived from this program.
 The user assumes all responsibility for using this code.

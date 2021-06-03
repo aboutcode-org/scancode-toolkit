@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,69 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/softsurfer.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/softsurfer.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: softsurfer
-short_name: softSurfer License
-name: softSurfer License
-category: Permissive
-owner: Dan Sunday
-homepage_url: http://geomalgorithms.com/a05-_intersect-1.html#Intersection%20of%202%20Planes
-spdx_license_key: LicenseRef-scancode-softsurfer
-other_urls:
-  - http://geomalgorithms.com/index.html
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This code may be freely used and modified for any purpose
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            softsurfer
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            softSurfer License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            softSurfer License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            Dan Sunday
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="http://geomalgorithms.com/a05-_intersect-1.html#Intersection%20of%202%20Planes" rel="noopener" target="_blank">http://geomalgorithms.com/a05-_intersect-1.html#Intersection%20of%202%20Planes</a>
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-softsurfer
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://geomalgorithms.com/index.html" rel="noopener" target="_blank">http://geomalgorithms.com/index.html</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>This code may be freely used and modified for any purpose
 providing that this copyright notice is included with it.
 Copyright holder makes no warranty for this code, and cannot be held
 liable for any real or imagined damage resulting from its use.

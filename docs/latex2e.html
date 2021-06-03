@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,17 +62,67 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/latex2e.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/latex2e.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: latex2e
-short_name: Latex2e License
-name: Latex2e License
-category: Permissive
-owner: LaTeX
-homepage_url: https://fedoraproject.org/wiki/Licensing/Latex2e
-notes: the latext2e, verbatim-manual and abstyles are similar licenses
-spdx_license_key: Latex2e
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission is granted to make and distribute verbatim copies of this
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            latex2e
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            Latex2e License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Latex2e License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            LaTeX
+          
+        </dd>
+      
+        <dt style="">homepage_url</dt>
+        <dd>
+          
+            <a href="https://fedoraproject.org/wiki/Licensing/Latex2e" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Licensing/Latex2e</a>
+          
+        </dd>
+      
+        <dt style="">notes</dt>
+        <dd>
+          
+            the latext2e, verbatim-manual and abstyles are similar licenses
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            Latex2e
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
 preserved on all copies.
 

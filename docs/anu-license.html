@@ -25,6 +25,12 @@
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
   </style>
 
   </head>
@@ -56,18 +62,62 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/anu-license.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/anu-license.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap; font-family: inherit;">key: anu-license
-short_name: ANU License
-name: Australian National University License
-category: Permissive
-owner: ANU Data Mining Group
-spdx_license_key: LicenseRef-scancode-anu-license
-other_urls:
-  - http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/bsd/net/if_pppvar.h
-  - http://www.panasonic.net/pcc/support/pbx/docs/freeware_header.txt
-</pre>
-    <hr>
-    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, and distribute this software and its
+    <dl>
+      
+        <dt style="">key</dt>
+        <dd>
+          
+            anu-license
+          
+        </dd>
+      
+        <dt style="">short_name</dt>
+        <dd>
+          
+            ANU License
+          
+        </dd>
+      
+        <dt style="">name</dt>
+        <dd>
+          
+            Australian National University License
+          
+        </dd>
+      
+        <dt style="">category</dt>
+        <dd>
+          
+            Permissive
+          
+        </dd>
+      
+        <dt style="">owner</dt>
+        <dd>
+          
+            ANU Data Mining Group
+          
+        </dd>
+      
+        <dt style="">spdx_license_key</dt>
+        <dd>
+          
+            LicenseRef-scancode-anu-license
+          
+        </dd>
+      
+        <dt style="">other_urls</dt>
+        <dd>
+          
+            <ul class="list-style-none">
+             <li><a href="http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/bsd/net/if_pppvar.h" rel="noopener" target="_blank">http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/bsd/net/if_pppvar.h</a></li><li><a href="http://www.panasonic.net/pcc/support/pbx/docs/freeware_header.txt" rel="noopener" target="_blank">http://www.panasonic.net/pcc/support/pbx/docs/freeware_header.txt</a></li>
+            </ul>
+          
+        </dd>
+      
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>Permission to use, copy, modify, and distribute this software and its
 documentation is hereby granted, provided that the above copyright notice
 appears in all copies. This software is provided without any warranty, express
 or implied. The Australian National University makes no representations about
