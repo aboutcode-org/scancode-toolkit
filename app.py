@@ -74,12 +74,15 @@ def generate_indexes(output_path):
     index = [
         {
             "license_key": key,
+            "spdx_license_key": license.spdx_license_key,
+            "other_spdx_license_keys": license.other_spdx_license_keys,
+            "is_exception": license.is_exception,
             "json": f"{key}.json",
             "yml": f"{key}.yml",
             "html": f"{key}.html",
             "text": f"{key}.LICENSE",
         }
-        for key in licenses.keys()
+        for key, license in licenses.items()
     ]
     write_file(output_path, "index.json", json.dumps(index))
     write_file(output_path, "index.yml", saneyaml.dump(index))
