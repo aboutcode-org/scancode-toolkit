@@ -29,19 +29,18 @@
 # others.
 # Visit https://github.com/nexB/scancode-toolkit for support and download.
 
-PYTHON_EXE=python3.6
-MANAGE=bin/python manage.py
+PYTHON_EXE=python3
 ACTIVATE=. bin/activate;
 BLACK_ARGS=--exclude="docs" .
 
 conf:
 	@echo "-> Configure the Python venv and install dependencies"
 	${PYTHON_EXE} -m venv .
-	@${ACTIVATE} pip install "scancode-toolkit[full]"
+	@${ACTIVATE} pip install scancode-toolkit
 
 upgrade:
 	@echo "-> Configure the Python venv and install dependencies"
-	@${ACTIVATE} pip install --upgrade "scancode-toolkit[full]"
+	@${ACTIVATE} pip install --upgrade scancode-toolkit
 
 clean:
 	# Remove the whole content of docs/ except for the CNAME file
