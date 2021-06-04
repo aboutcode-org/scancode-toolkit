@@ -3,3 +3,4 @@ short_name: Unicode Mappings License
 name: Unicode Mappings License
 category: Permissive
 owner: Unicode Consortium
+spdx_license_key: LicenseRef-scancode-unicode-mappings

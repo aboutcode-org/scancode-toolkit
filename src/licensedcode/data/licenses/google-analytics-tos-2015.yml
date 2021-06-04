@@ -4,6 +4,7 @@ name: Google Analytics Terms of Service 2015
 category: Proprietary Free
 owner: Google
 homepage_url: http://www.google.com/analytics/terms/us.html
+spdx_license_key: LicenseRef-scancode-google-analytics-tos-2015
 other_urls:
     - http://support.google.com/analytics/bin/answer.py?hl=en&topic=2611283&answer=2700409
     - http://www.google.com/analytics

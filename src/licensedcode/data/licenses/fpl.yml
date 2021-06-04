@@ -4,5 +4,6 @@ name: Freeware Public License (FPL)
 category: Permissive
 owner: Packetizer
 homepage_url: https://github.com/abahdanovich/sha1/blob/master/c/license.txt
+spdx_license_key: LicenseRef-scancode-fpl
 text_urls:
     - https://github.com/abahdanovich/sha1/blob/master/c/license.txt

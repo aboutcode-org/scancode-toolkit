@@ -4,6 +4,7 @@ name: OTN Developer License for JAVA EE SDK
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/java/javase/downloads/366879
+spdx_license_key: LicenseRef-scancode-oracle-java-ee-sdk-2010
 minimum_coverage: 50
 ignorable_authors:
     - the OTN Program

@@ -1,30 +1,12 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
 
 import os.path
 
@@ -38,51 +20,51 @@ class TestTextPreparation(FileBasedTesting):
 
     def test_strip_leading_numbers(self):
         a = '2.6.6 (r266:84297, Aug 24 2010, 18:46:32) [MSC v.1500 32 bit (Intel)] on win32'
-        assert a == copyrights_module.strip_leading_numbers(a)
+        assert copyrights_module.strip_leading_numbers(a) == a
 
         a = '26 6 24 2010, 18:46:32) [MSC v.1500 32 bit (Intel)] on 12'
         expected = '2010, 18:46:32) [MSC v.1500 32 bit (Intel)] on 12'
-        assert expected == copyrights_module.strip_leading_numbers(a)
+        assert copyrights_module.strip_leading_numbers(a) == expected
 
     def test_prepare_text_line(self):
         cp = 'test (C) all rights reserved'
         result = copyrights_module.prepare_text_line(cp)
-        assert 'test (c) all rights reserved' == result
+        assert result == 'test (c) all rights reserved'
 
     def test_prepare_text_line_debian(self):
         cp = 'Parts Copyright (c) 1992 <s>Uri Blumentha<s>l, I</s>BM</s>'
         result = copyrights_module.prepare_text_line(cp)
-        assert 'Parts Copyright (c) 1992 Uri Blumenthal, IBM' == result
+        assert result == 'Parts Copyright (c) 1992 Uri Blumenthal, IBM'
 
     def test_prepare_text_line_does_not_truncate_transliterable_unicode(self):
         cp = u'Muła'
         result = copyrights_module.prepare_text_line(cp)
-        assert 'Mula' == result
+        assert result == 'Mula'
 
     def test_strip_markup(self):
         cp = 'Parts Copyright (c) 1992 <s>Uri Blumentha<s>l, I</s>BM</s>'
         result = copyrights_module.strip_markup(cp)
-        assert 'Parts Copyright (c) 1992 Uri Blumenthal, IBM' == result
+        assert result == 'Parts Copyright (c) 1992 Uri Blumenthal, IBM'
 
     def test_prepare_text_line_removes_C_comments(self):
         cp = '/*  Copyright 1996-2005, 2008-2011 by   */'
         result = copyrights_module.prepare_text_line(cp)
-        assert 'Copyright 1996-2005, 2008-2011 by' == result
+        assert result == 'Copyright 1996-2005, 2008-2011 by'
 
     def test_prepare_text_line_removes_C_comments2(self):
         cp = '/*  David Turner, Robert Wilhelm, and Werner Lemberg. */'
         result = copyrights_module.prepare_text_line(cp)
-        assert 'David Turner, Robert Wilhelm, and Werner Lemberg.' == result
+        assert result == 'David Turner, Robert Wilhelm, and Werner Lemberg.'
 
     def test_prepare_text_line_removes_Cpp_comments(self):
         cp = '//  David Turner, Robert Wilhelm, and Werner Lemberg. */'
         result = copyrights_module.prepare_text_line(cp)
-        assert 'David Turner, Robert Wilhelm, and Werner Lemberg.' == result
+        assert result == 'David Turner, Robert Wilhelm, and Werner Lemberg.'
 
     def test_prepare_text_line_does_not_damage_urls(self):
         cp = 'copyright (c) 2000 World Wide Web Consortium, http://www.w3.org'
         result = copyrights_module.prepare_text_line(cp)
-        assert 'copyright (c) 2000 World Wide Web Consortium, http://www.w3.org' == result
+        assert result == 'copyright (c) 2000 World Wide Web Consortium, http://www.w3.org'
 
     def test_is_end_of_statement(self):
         line = '''          "All rights reserved\\n"'''
@@ -93,7 +75,7 @@ class TestTextPreparation(FileBasedTesting):
         lines = [(1, ' test (C) all rights reserved')]
         result = list(copyrights_module.candidate_lines(lines))
         expected = [[(1, ' test (C) all rights reserved')]]
-        assert expected == result
+        assert result == expected
 
     def test_candidate_lines_complex(self):
         lines = '''
@@ -137,7 +119,7 @@ class TestTextPreparation(FileBasedTesting):
         ]
 
         result = list(copyrights_module.candidate_lines(enumerate(lines, 1)))
-        assert expected == result
+        assert result == expected 
 
     def test_is_candidates_should_not_select_line_with_bare_full_year(self):
         line = '2012'
@@ -222,7 +204,7 @@ class TestCopyrightDetector(FileBasedTesting):
             '(c) 2008',
         ]
         copyrights, _, _ = cluecode_test_utils.copyright_detector(location)
-        assert expected == copyrights
+        assert copyrights == expected
 
     def test_detect_with_lines(self):
         location = self.get_test_loc('copyrights_basic/essential_smoke-ibm_c.c')
@@ -234,7 +216,7 @@ class TestCopyrightDetector(FileBasedTesting):
             ('copyrights', u'(c) 2008', 8, 8)
         ]
         results = list(copyrights_module.detect_copyrights(location))
-        assert expected == results
+        assert results == expected
 
     def test_detect_with_lines_only_holders(self):
         location = self.get_test_loc('copyrights_basic/essential_smoke-ibm_c.c')
@@ -243,7 +225,7 @@ class TestCopyrightDetector(FileBasedTesting):
             ('holders', u'Eclipse, IBM and others', 8, 8)
         ]
         results = list(copyrights_module.detect_copyrights(location, copyrights=False, authors=False))
-        assert expected == results
+        assert results == expected
 
 
 def check_detection_with_lines(expected, test_file):
@@ -259,7 +241,7 @@ def check_detection_with_lines(expected, test_file):
     )
 
     results = [(statement, start, end) for _t, statement, start, end in detections]
-    assert expected == results
+    assert results == expected
 
 
 class TestCopyrightLinesDetection(FileBasedTesting):

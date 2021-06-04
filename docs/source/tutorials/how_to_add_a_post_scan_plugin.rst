@@ -141,7 +141,7 @@ The 7 Files are:
             'Intended Audience :: Developers',
             'License :: OSI Approved :: Apache Software License',
             'Programming Language :: Python',
-            'Programming Language :: Python :: 2.7',
+            'Programming Language :: Python :: 3',
             'Topic :: Utilities',
         ],
         keywords=[
@@ -186,44 +186,11 @@ The 7 Files are:
 
 #. Add a ``hello_scancode.py`` file.
 
-Notice at the top of the file
-"""""""""""""""""""""""""""""
-
-::
-
-    #
-    # Copyright (c) 2019 nexB Inc. and others. All rights reserved.
-    # http://nexb.com and https://github.com/nexB/scancode-toolkit/
-    # The ScanCode software is licensed under the Apache License version 2.0.
-    # Data generated with ScanCode require an acknowledgment.
-    # ScanCode is a trademark of nexB Inc.
-    #
-    # You may not use this software except in compliance with the License.
-    # You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-    # Unless required by applicable law or agreed to in writing, software distributed
-    # under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-    # CONDITIONS OF ANY KIND, either express or implied. See the License for the
-    # specific language governing permissions and limitations under the License.
-    #
-    # When you publish or redistribute any data created with ScanCode or any ScanCode
-    # derivative work, you must accompany this data with the following acknowledgment:
-    #
-    #  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-    #  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-    #  ScanCode should be considered or used as legal advice. Consult an Attorney
-    #  for any legal advice.
-    #  ScanCode is a free software code scanning tool from nexB Inc. and others.
-    #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
 Imports
 """""""
 
 ::
 
-    from __future__ import absolute_import
-    from __future__ import division
-    from __future__ import print_function
-    from __future__ import unicode_literals
 
     from plugincode.post_scan import PostScanPlugin
     from plugincode.post_scan import post_scan_impl
@@ -233,12 +200,12 @@ Imports
 Create a ``PostScanPlugin`` class
 """""""""""""""""""""""""""""""""
 
-The ``PostScanPlugin`` class (see L40-L45
-`code <https://github.com/nexB/scancode-toolkit/blob/develop/src/plugincode/post_scan.py>`__)
-inherits from the ``CodebasePlugin`` class (see L139-L150
-`code <https://github.com/nexB/scancode-toolkit/blob/794d7acf78480823084def703b5d61ade12efdf2/src/plugincode/__init__.py>`_ ),
-which inherits from the ``BasePlugin`` class (see L38-L136
-`code <https://github.com/nexB/scancode-toolkit/blob/794d7acf78480823084def703b5d61ade12efdf2/src/plugincode/__init__.py>`__ ).
+The ``PostScanPlugin`` class
+`PostScanPlugin code <https://github.com/nexB/scancode-toolkit/blob/develop/src/plugincode/post_scan.py>`_)
+inherits from the ``CodebasePlugin`` class (see
+`CodebasePlugin code <https://github.com/nexB/scancode-toolkit/blob/794d7acf78480823084def703b5d61ade12efdf2/src/plugincode/__init__.py#L139-L150>`_),
+which inherits from the ``BasePlugin`` class (see
+`BasePlugin code <https://github.com/nexB/scancode-toolkit/blob/794d7acf78480823084def703b5d61ade12efdf2/src/plugincode/__init__.py#L38-L136>`_).
 
 ::
 
@@ -250,9 +217,9 @@ which inherits from the ``BasePlugin`` class (see L38-L136
 
         options = [
             CommandLineOption(('--hello',),
-                                            is_flag=True, default=False,
-                                            help='Generate a simple "Hello ScanCode" greeting in the terminal.',
-                                            help_group=POST_SCAN_GROUP)
+            is_flag=True, default=False,
+            help='Generate a simple "Hello ScanCode" greeting in the terminal.',
+            help_group=POST_SCAN_GROUP)
         ]
 
         def is_enabled(self, hello, **kwargs):
@@ -265,7 +232,8 @@ which inherits from the ``BasePlugin`` class (see L38-L136
             if not self.is_enabled(hello):
                 return
 
-            print('\nHello ScanCode!!\n')
+            print('Hello ScanCode!!')
+
 
 Load the plugin
 ---------------
@@ -276,6 +244,7 @@ Load the plugin
 - If you're developing and want to test your work, save your edits and run ``pip install -e .``
   from the same folder.
 
+
 More-complex examples
 ---------------------
 
@@ -285,6 +254,7 @@ functionalities you can take a look at the other post-scan plugins for guidance 
 One good example is the License Policy post-scan plugin. This plugin is installed when ScanCode
 is installed and consequently is not located in the ``/plugins/`` directory used for
 manually-installed post-scan plugins. The code for the License Policy plugin can be found at
-`/scancode-toolkit/src/licensedcode/plugin_license_policy.py <https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/plugin_license_policy.py>`_
+`/scancode-toolkit/src/licensedcode/plugin_license_policy.py
+<https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/plugin_license_policy.py>`_
 and illustrates how a plugin can be used to analyze the results of a ScanCode scan using external
 data files and add the results of that analysis as a new field in the ScanCode JSON output file.

@@ -4,5 +4,6 @@ name: JGraph General License
 category: Proprietary Free
 owner: JGraph
 homepage_url: http://dsl.serc.iisc.ernet.in/projects/PICASSO/picasso_download/doc/Installation/LibraryLicenses/licenseJGraph.htm
+spdx_license_key: LicenseRef-scancode-jgraph-general
 text_urls:
     - http://dsl.serc.iisc.ernet.in/projects/PICASSO/picasso_download/doc/Installation/LibraryLicenses/licenseJGraph.htm

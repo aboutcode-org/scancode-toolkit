@@ -1,0 +1,10 @@
+key: netapp-sdk-aug2020
+short_name: NetApp SDK License Agreement rev. Aug2020
+name: NetApp Manageability SDK License Agreement rev. Aug2020
+category: Proprietary Free
+owner: NetApp
+homepage_url: https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=60427
+spdx_license_key: LicenseRef-scancode-netapp-sdk-aug2020
+ignorable_urls:
+  - https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=60427
+

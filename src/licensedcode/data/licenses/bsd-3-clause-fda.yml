@@ -1,0 +1,8 @@
+key: bsd-3-clause-fda
+short_name: BSD 3-Clause FDA
+name: BSD 3-Clause FDA
+category: Permissive
+owner:  U.S. Food and Drug Administration
+notes: This is based on the bsd-3-clause and a different disclaimer
+spdx_license_key: LicenseRef-scancode-bsd-3-clause-fda
+minimum_coverage: 90

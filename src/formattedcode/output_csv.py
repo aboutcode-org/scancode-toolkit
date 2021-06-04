@@ -1,45 +1,21 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import division
-from __future__ import unicode_literals
-
-from collections import OrderedDict
+import csv
 
 import saneyaml
-from six import string_types
-import unicodecsv
 
-from commoncode import compat
-from formattedcode import FileOptionType
-from plugincode.output import output_impl
-from plugincode.output import OutputPlugin
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
+from plugincode.output import output_impl
+from plugincode.output import OutputPlugin
 
+from formattedcode import FileOptionType
 
 # Tracing flags
 TRACE = False
@@ -58,7 +34,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types)
+        return logger.debug(' '.join(isinstance(a, str)
                                      and a or repr(a) for a in args))
 
 
@@ -67,7 +43,7 @@ class CsvOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--csv',),
-            type=FileOptionType(mode='wb', lazy=True),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             help='Write scan output as CSV to FILE.',
             help_group=OUTPUT_GROUP,
@@ -86,7 +62,7 @@ def write_csv(results, output_file):
     # FIXMe: this is reading all in memory
     results = list(results)
 
-    headers = OrderedDict([
+    headers = dict([
         ('info', []),
         ('license_expression', []),
         ('license', []),
@@ -103,7 +79,7 @@ def write_csv(results, output_file):
     for key_group in headers.values():
         ordered_headers.extend(key_group)
 
-    w = unicodecsv.DictWriter(output_file, ordered_headers)
+    w = csv.DictWriter(output_file, fieldnames=ordered_headers)
     w.writeheader()
 
     for r in rows:
@@ -137,7 +113,7 @@ def flatten_scan(scan, headers):
 
         errors = scanned_file.pop('scan_errors', [])
 
-        file_info = OrderedDict(Resource=path)
+        file_info = dict(Resource=path)
         file_info.update(((k, v) for k, v in scanned_file.items()
         # FIXME: info are NOT lists: lists are the actual scans
                           if not isinstance(v, (list, dict))))
@@ -148,12 +124,12 @@ def flatten_scan(scan, headers):
         yield file_info
 
         for lic_exp in scanned_file.get('license_expressions', []):
-            inf = OrderedDict(Resource=path, license_expression=lic_exp)
+            inf = dict(Resource=path, license_expression=lic_exp)
             collect_keys(inf, 'license_expression')
             yield inf
 
         for licensing in scanned_file.get('licenses', []):
-            lic = OrderedDict(Resource=path)
+            lic = dict(Resource=path)
             for k, val in licensing.items():
                 # do not include matched text for now.
                 if k == 'matched_text':
@@ -183,7 +159,7 @@ def flatten_scan(scan, headers):
             yield lic
 
         for copyr in scanned_file.get('copyrights', []):
-            inf = OrderedDict(Resource=path)
+            inf = dict(Resource=path)
             inf['copyright'] = copyr['value']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
@@ -191,7 +167,7 @@ def flatten_scan(scan, headers):
             yield inf
 
         for copyr in scanned_file.get('holders', []):
-            inf = OrderedDict(Resource=path)
+            inf = dict(Resource=path)
             inf['copyright_holder'] = copyr['value']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
@@ -199,7 +175,7 @@ def flatten_scan(scan, headers):
             yield inf
 
         for copyr in scanned_file.get('authors', []):
-            inf = OrderedDict(Resource=path)
+            inf = dict(Resource=path)
             inf['author'] = copyr['value']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
@@ -207,13 +183,13 @@ def flatten_scan(scan, headers):
             yield inf
 
         for email in scanned_file.get('emails', []):
-            email_info = OrderedDict(Resource=path)
+            email_info = dict(Resource=path)
             email_info.update(email)
             collect_keys(email_info, 'email')
             yield email_info
 
         for url in scanned_file.get('urls', []):
-            url_info = OrderedDict(Resource=path)
+            url_info = dict(Resource=path)
             url_info.update(url)
             collect_keys(url_info, 'url')
             yield url_info
@@ -232,10 +208,10 @@ def pretty(data):
     if not data:
         return None
     seqtypes = list, tuple
-    maptypes = OrderedDict, dict
+    maptypes = dict, dict
     coltypes = seqtypes + maptypes
     if isinstance(data, seqtypes):
-        if len(data) == 1 and isinstance(data[0], string_types):
+        if len(data) == 1 and isinstance(data[0], str):
             return data[0].strip()
     if isinstance(data, coltypes):
         return saneyaml.dump(
@@ -286,7 +262,7 @@ def flatten_package(_package, path, prefix='package__'):
 
     package_columns = get_package_columns()
 
-    pack = OrderedDict(Resource=path)
+    pack = dict(Resource=path)
     for k, val in _package.items():
         if k not in package_columns:
             continue
@@ -320,7 +296,7 @@ def flatten_package(_package, path, prefix='package__'):
                     if isinstance(component_val, list):
                         component_val = '\n'.join(component_val)
 
-                    if not isinstance(component_val, compat.unicode):
+                    if not isinstance(component_val, str):
                         component_val = repr(component_val)
 
                     existing = pack.get(component_new_key) or []
@@ -338,7 +314,7 @@ def flatten_package(_package, path, prefix='package__'):
 
         pack[nk] = ''
 
-        if isinstance(val, compat.unicode):
+        if isinstance(val, str):
             pack[nk] = val
         else:
             # Use repr if not a string

@@ -4,9 +4,12 @@ name: Simple Public License Version 1.1
 category: Permissive
 owner: Analysis and Solutions Company
 homepage_url: http://www.analysisandsolutions.com/software/license.htm
+spdx_license_key: LicenseRef-scancode-simpl-1.1
 ignorable_copyrights:
     - Copyright (c) The Analysis and Solutions Company http://www.analysisandsolutions.com
 ignorable_holders:
     - The Analysis and Solutions Company
 ignorable_urls:
     - http://www.analysisandsolutions.com/
+minimum_coverage: 80
+

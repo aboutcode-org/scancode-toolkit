@@ -4,3 +4,4 @@ name: Softerra LDAP Browser EULA
 category: Proprietary Free
 owner: Softerra
 homepage_url: http://www.ldapadministrator.com/softerra-ldap-browser.htm
+spdx_license_key: LicenseRef-scancode-softerra-ldap-browser-eula

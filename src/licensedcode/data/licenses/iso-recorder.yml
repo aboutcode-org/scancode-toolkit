@@ -4,5 +4,6 @@ name: ISO Recorder License
 category: Proprietary Free
 owner: Alex Feinman
 homepage_url: http://isorecorder.alexfeinman.com/v1.htm
+spdx_license_key: LicenseRef-scancode-iso-recorder
 ignorable_emails:
     - isorecorder@alexfeinman.com

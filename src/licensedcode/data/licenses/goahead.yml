@@ -4,6 +4,7 @@ name: GoAhead License
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: https://github.com/socoola/yhrouter/blob/master/user/goahead/license.txt
+spdx_license_key: LicenseRef-scancode-goahead
 text_urls:
     - https://github.com/socoola/yhrouter/blob/master/user/goahead/license.txt
 other_urls:

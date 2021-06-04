@@ -1,0 +1,7 @@
+license_expressions:
+  - gfdl-1.1-plus
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/GFDL-1.1.t5
+  originally expected to be detected as GFDL-1.1-no-invariants-or-later
+  with coverage of 100.0

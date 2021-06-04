@@ -1,4 +1,9 @@
 --------------------------------------------
+Package: METADATA.bzl
+  class: packagedcode.build:MetadataBzl
+  metafiles: METADATA.bzl
+
+--------------------------------------------
 Package: about
   class: packagedcode.about:AboutPackage
   metafiles: *.ABOUT
@@ -69,7 +74,7 @@ Package: chrome
 Package: composer
   class: packagedcode.phpcomposer:PHPComposerPackage
   metafiles: composer.json, composer.lock
-  filetypes: .json, .lock
+  extensions: .json, .lock
 
 --------------------------------------------
 Package: conda
@@ -190,7 +195,7 @@ Package: msi
 Package: npm
   class: packagedcode.npm:NpmPackage
   metafiles: package.json, npm-shrinkwrap.json, package-lock.json, yarn.lock
-  filetypes: .tgz
+  extensions: .tgz
 
 --------------------------------------------
 Package: nsis
@@ -220,8 +225,13 @@ Package: pods
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:PythonPackage
-  metafiles: metadata.json, *setup.py, PKG-INFO, *.whl, *.egg, *requirements*.txt, *requirements*.in, *Pipfile.lock
+  metafiles: *setup.py, *setup.cfg, PKG-INFO, METADATA, *.whl, *.egg, *requirements*.txt, *requirements*.pip, *requirements*.in, *Pipfile.lock, conda.yml, *setup.cfg, tox.ini
   extensions: .egg, .whl, .pyz, .pex
+
+--------------------------------------------
+Package: readme
+  class: packagedcode.readme:ReadmePackage
+  metafiles: README.android, README.chromium, README.facebook, README.google, README.thirdparty
 
 --------------------------------------------
 Package: rpm

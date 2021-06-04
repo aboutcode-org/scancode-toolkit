@@ -1,0 +1,42 @@
+license_expressions:
+  - mit-old-style
+  - mit-old-style-no-advert
+  - mit-old-style-no-advert AND warranty-disclaimer
+  - isc
+  - mit-old-style AND warranty-disclaimer
+  - historical
+  - postgresql
+  - postgresql
+  - postgresql
+  - cmu-uc
+  - standard-ml-nj
+  - standard-ml-nj
+  - standard-ml-nj
+  - wordnet
+  - wordnet
+  - mit
+  - unicode
+  - mit-modern
+  - x11
+  - mit-ack
+  - enna
+  - boost-1.0
+  - mpich
+  - freetts
+  - other-permissive
+  - warranty-disclaimer
+  - mozilla-gc
+  - adobe-glyph
+  - mit-xfig
+  - x11-tiff
+  - x11
+  - x11 AND other-permissive
+  - other-permissive
+  - other-permissive
+  - other-permissive
+  - other-permissive
+  - other-permissive
+  - other-permissive
+  - isc
+  - osf-1990
+  - other-permissive

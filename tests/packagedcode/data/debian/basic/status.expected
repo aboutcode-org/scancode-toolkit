@@ -43,7 +43,9 @@
     "source_packages": [
       "pkg:deb/ubuntu/ncurses"
     ],
-    "extra_data": {},
+    "extra_data": {
+      "multi_arch": "same"
+    },
     "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -93,7 +95,9 @@
     "source_packages": [
       "pkg:deb/ubuntu/e2fsprogs"
     ],
-    "extra_data": {},
+    "extra_data": {
+      "multi_arch": "same"
+    },
     "purl": "pkg:deb/ubuntu/libcom-err2@1.44.1-1ubuntu1.1?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -143,7 +147,9 @@
     "source_packages": [
       "pkg:deb/ubuntu/apt"
     ],
-    "extra_data": {},
+    "extra_data": {
+      "multi_arch": "same"
+    },
     "purl": "pkg:deb/ubuntu/libapt-pkg5.0@1.6.11?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -193,7 +199,9 @@
     "source_packages": [
       "pkg:deb/ubuntu/audit"
     ],
-    "extra_data": {},
+    "extra_data": {
+      "multi_arch": "same"
+    },
     "purl": "pkg:deb/ubuntu/libaudit1@1:2.8.2-1ubuntu1?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -293,7 +301,9 @@
     "source_packages": [
       "pkg:deb/ubuntu/systemd"
     ],
-    "extra_data": {},
+    "extra_data": {
+      "multi_arch": "same"
+    },
     "purl": "pkg:deb/ubuntu/libudev1@237-3ubuntu10.22?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,

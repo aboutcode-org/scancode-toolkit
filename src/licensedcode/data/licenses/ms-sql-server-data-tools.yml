@@ -4,6 +4,7 @@ name: Microsoft SQL Server Data Tools License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://docs.microsoft.com/en-us/sql/ssdt/sql-server-data-tools-license-terms
+spdx_license_key: LicenseRef-scancode-ms-sql-server-data-tools
 ignorable_urls:
     - http://go.microsoft.com/?linkid=9710837
     - http://go.microsoft.com/fwlink/?LinkID=248686

@@ -1,5 +1,6 @@
-license_expression: unknown-license-reference AND libmng-2007
+license_expression: libmng-2007
 is_license_reference: yes
+relevance: 100
 minimum_coverage: 100
 referenced_filenames:
     - libmng.h

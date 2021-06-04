@@ -1,0 +1,6 @@
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+notes: see https://github.com/quantumblacklabs/kedro/blob/master/kedro/pipeline/decorators.py
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0

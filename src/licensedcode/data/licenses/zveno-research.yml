@@ -3,5 +3,6 @@ short_name: Zveno Research License
 name: Zveno Research License
 category: Permissive
 owner: Zveno
+spdx_license_key: LicenseRef-scancode-zveno-research
 other_urls:
     - http://sourceforge.net/p/tclxml/svn/HEAD/tree/trunk/LICENSE

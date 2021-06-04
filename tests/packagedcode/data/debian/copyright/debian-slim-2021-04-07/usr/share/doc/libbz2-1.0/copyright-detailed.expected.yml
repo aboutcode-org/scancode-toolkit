@@ -1,0 +1,11 @@
+- - BSD-variant
+  - GPL-2
+- bzip2-libbzip-2010 AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)
+- |
+  1996-2010 Julian R Seward <jseward@bzip.org>
+  2018 Nicolas Boulenguez <nicolas.boulenguez@free.fr>
+  2012-2015 Santiago Ruano Rincón <santiago@debian.org>
+  2014 Canonical Ltd.
+  2004-2011 Anibal Monsalve Salazar <anibal@debian.org>
+  1999-2002 Philippe Troin <phil@fifi.org>
+  1997-1999 Anthony Fok <foka@debian.org>

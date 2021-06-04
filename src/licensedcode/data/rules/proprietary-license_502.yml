@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: https://uefi.org/revocationlistfile
+ignorable_urls:
+    - http://www.uefi.org/

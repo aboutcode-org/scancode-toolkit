@@ -1,0 +1,4 @@
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: Seen in https://github.com/rockchip-toybrick/hardware-rockchip-camera/blob/10957c7e3dd4e69e4e4e8aabbf0306e9acc610c1/SiliconImage/include/version/version.h#L11

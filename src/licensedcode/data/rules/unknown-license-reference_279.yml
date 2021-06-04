@@ -1,0 +1,7 @@
+license_expression: unknown-license-reference
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - Main.h
+notes: Seen in https://github.com/spech66/lightfire3d/blob/a93ba233451349d88e32eaa83cc7f948ea6da6e4/lightfire3d/src/Main.h
+    with a gpl, but this file name is too generic to report such license

@@ -2,11 +2,10 @@ license_expression: gpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 ignorable_copyrights:
-  - (c) Benjamin Reed
-  - (c) David Hinds
-ignorable_emails:
-  - simon@thekelleys.org.uk
+    - (c) Benjamin Reed
+    - (c) David Hinds
 ignorable_holders:
-  - Benjamin Reed
-  - David Hinds
-
+    - Benjamin Reed
+    - David Hinds
+ignorable_emails:
+    - simon@thekelleys.org.uk

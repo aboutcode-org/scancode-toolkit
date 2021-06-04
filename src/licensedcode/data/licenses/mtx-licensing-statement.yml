@@ -4,8 +4,8 @@ name: MicroType Express (MTX) License
 category: Proprietary Free
 owner: Monotype
 homepage_url: https://www.monotype.com/legal/mtx-licensing-statement
+spdx_license_key: LicenseRef-scancode-mtx-licensing-statement
 other_urls:
     - http://www.w3.org/Submission/MTX/
 ignorable_urls:
-  - http://www.w3.org/Submission/MTX
-
+    - http://www.w3.org/Submission/MTX

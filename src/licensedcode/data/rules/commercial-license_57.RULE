@@ -1,0 +1,15 @@
+As long as you don't use DGD commercially, you can treat it as free
+software.  Commercial use is defined as making money using DGD, e.g.
+a mud that charges players for playing or for certain privileges (even
+if those privileges can also be obtained in another way) is commercial,
+as well as a mud which advertises for commercial products; using DGD
+for a mud on a machine which provides internet access need not be
+commercial as long as the mud can also be reached on the same terms by
+non-paying players.  Other cases where DGD can be used freely are muds
+which ask for voluntary contributions to buy new hardware, or forms of
+distribution of the source or binaries which do not charge extra for
+DGD specifically (bulletin boards, the FreeBSD CDROM).
+
+   If you do use DGD commercially, you'll need my permission.  For a
+commercial mud, permission will be granted for a fee of $100 per month.
+Contact me for details (email: dworkin@hippolytos.cd.chalmers.se).

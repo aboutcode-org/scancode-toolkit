@@ -1,5 +1,8 @@
-license_expression: elastic-license-2018
-is_license_reference: yes
-relevance: 100
+license_expression: elastic-license-v2
+is_license_notice: yes
+relevance: 99
+notes: this could refer to the older elastic-license-2018
 referenced_filenames:
     - ELASTIC-LICENSE.txt
+
+

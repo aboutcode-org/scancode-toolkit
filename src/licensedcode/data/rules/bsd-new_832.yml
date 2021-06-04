@@ -1,0 +1,7 @@
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+notes: based on https://web.archive.org/web/20160601142057/http://silvershell.googlecode.com/files/LICENSE
+    this was a bsd-new
+ignorable_urls:
+    - http://silvershell.googlecode.com/files/LICENSE

@@ -1,0 +1,7 @@
+license_expression: zlib
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - jsimdext.inc
+notes: https://github.com/kronic-staging/platform_external_libjpeg-turbo/blob/nougat-mr2/simd/jsimdext.inc

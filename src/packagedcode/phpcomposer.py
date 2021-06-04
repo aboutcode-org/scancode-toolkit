@@ -1,32 +1,12 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 from functools import partial
 import io
 import json
@@ -34,8 +14,6 @@ import logging
 import sys
 
 import attr
-from packageurl import PackageURL
-from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -65,7 +43,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @attr.s()
@@ -74,8 +52,9 @@ class PHPComposerPackage(models.Package):
         'composer.json',
         'composer.lock',
     )
-    filetypes = ('.json', '.lock')
+    extensions = ('.json', '.lock',)
     mimetypes = ('application/json',)
+
     default_type = 'composer'
     default_primary_language = 'PHP'
     default_web_baseurl = 'https://packagist.org'
@@ -120,7 +99,7 @@ def compute_normalized_license(declared_license):
 
     detected_licenses = []
 
-    if isinstance(declared_license, string_types):
+    if isinstance(declared_license, str):
         if declared_license == 'proprietary':
             return declared_license
         if '(' in declared_license and ')' in declared_license and ' or ' in declared_license:
@@ -158,12 +137,12 @@ def parse(location):
     """
     if is_phpcomposer_json(location):
         with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+            package_data = json.load(loc)
         yield build_package_from_json(package_data)
 
     elif is_phpcomposer_lock(location):
         with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+            package_data = json.load(loc)
         for package in build_packages_from_lock(package_data):
             yield package
 
@@ -204,7 +183,7 @@ def build_package_from_json(package_data):
 
     for source, target in plain_fields:
         value = package_data.get(source)
-        if isinstance(value, string_types):
+        if isinstance(value, str):
             value = value.strip()
             if value:
                 setattr(package, target, value)
@@ -230,7 +209,7 @@ def build_package_from_json(package_data):
         logger.debug('parse: %(source)r, %(func)r' % locals())
         value = package_data.get(source)
         if value:
-            if isinstance(value, string_types):
+            if isinstance(value, str):
                 value = value.strip()
             if value:
                 func(value, package)

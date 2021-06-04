@@ -4,6 +4,7 @@ name: FreeBSD Boot
 category: Permissive
 owner: FreeBSD
 homepage_url: http://freebsd.active-venture.com/FreeBSD-srctree/newsrc/boot/i386/boot2/boot2.c.html
+spdx_license_key: LicenseRef-scancode-freebsd-boot
 text_urls:
     - http://freebsd.active-venture.com/FreeBSD-srctree/newsrc/boot/i386/boot2/boot2.c.html
 other_urls:

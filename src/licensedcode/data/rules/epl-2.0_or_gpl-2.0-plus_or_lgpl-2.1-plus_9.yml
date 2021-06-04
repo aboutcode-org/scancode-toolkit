@@ -1,8 +1,8 @@
 license_expression: epl-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus
 is_license_notice: yes
 relevance: 100
-notes: this is in the JRuby pom.rb
 minimum_coverage: 80
+notes: this is in the JRuby pom.rb
 ignorable_urls:
     - http://www.eclipse.org/legal/epl-v20.html
     - http://www.gnu.org/licenses/gpl-2.0-standalone.html

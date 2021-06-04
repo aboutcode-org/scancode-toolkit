@@ -3,7 +3,7 @@ parameters:
     image_name: ''
     python_versions: []
     test_suites: {}
-    python_architecture: x86
+    python_architecture: x64
 
 jobs:
     - job: ${{ parameters.job_name }}
@@ -29,7 +29,10 @@ jobs:
                 architecture: '${{ parameters.python_architecture }}'
             displayName: 'Install Python $(python_version)'
 
-          - script: configure --python path
+          - script: |
+               python --version
+               echo | set /p=python> PYTHON_EXECUTABLE
+               configure --dev
             displayName: 'Run Configure'
 
           - script: $(test_suite)

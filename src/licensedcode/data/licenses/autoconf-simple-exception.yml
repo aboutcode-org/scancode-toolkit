@@ -8,3 +8,4 @@ notes: |
     this is a simpler version of the Autonconf exception to the GPL 3.0 used in
     GNU Config config.guess and config.sub
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-autoconf-simple-exception

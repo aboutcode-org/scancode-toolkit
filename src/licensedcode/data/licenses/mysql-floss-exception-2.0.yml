@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: Oracle Corporation
 homepage_url: https://mariadb.com/kb/en/mariadb/mariadb-license/#the-floss-exception
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-mysql-floss-exception-2.0
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
 ignorable_urls:

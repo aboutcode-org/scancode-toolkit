@@ -4,4 +4,5 @@ name: BSD 3-Clause with GPL reference
 category: Permissive
 owner: Initio Corporation
 notes: this license requires top of the file notice. See in linux kernels
+spdx_license_key: LicenseRef-scancode-bsd-top-gpl-addition
 minimum_coverage: 70

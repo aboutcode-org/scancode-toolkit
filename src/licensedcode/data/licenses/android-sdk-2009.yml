@@ -4,3 +4,4 @@ name: Android Software Development Kit License Agreement 2009
 category: Proprietary Free
 owner: Google
 homepage_url: https://android.googlesource.com/platform/prebuilts/sdk/+/master/NOTICE
+spdx_license_key: LicenseRef-scancode-android-sdk-2009

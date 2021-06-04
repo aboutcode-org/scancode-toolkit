@@ -1,0 +1,6 @@
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - GPL.TXT
+notes: See https://github.com/nemequ/lzmat/blob/25d9b958fff9514050a28642c99b3fff10761aac/test_lzmat.c

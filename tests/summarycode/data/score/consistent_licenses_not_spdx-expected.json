@@ -93,9 +93,11 @@
           "owner": "Xfig Project",
           "homepage_url": "http://www.xfig.org",
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit-xfig",
-          "spdx_license_key": null,
-          "spdx_url": "",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/mit-xfig",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.yml",
+          "spdx_license_key": "LicenseRef-scancode-mit-xfig",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.LICENSE",
           "start_line": 17,
           "end_line": 24,
           "matched_rule": {
@@ -108,11 +110,12 @@
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 81,
             "matched_length": 81,
             "match_coverage": 100.0,
-            "rule_relevance": 90.0
+            "rule_relevance": 90
           }
         }
       ],
@@ -239,9 +242,11 @@
           "owner": "Xfig Project",
           "homepage_url": "http://www.xfig.org",
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit-xfig",
-          "spdx_license_key": null,
-          "spdx_url": "",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/mit-xfig",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.yml",
+          "spdx_license_key": "LicenseRef-scancode-mit-xfig",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.LICENSE",
           "start_line": 1,
           "end_line": 8,
           "matched_rule": {
@@ -254,11 +259,12 @@
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
+            "is_license_intro": false,
             "matcher": "1-hash",
             "rule_length": 81,
             "matched_length": 81,
             "match_coverage": 100.0,
-            "rule_relevance": 90.0
+            "rule_relevance": 90
           }
         }
       ],

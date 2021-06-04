@@ -1,0 +1,10 @@
+license_expression: epl-1.0
+is_license_notice: yes
+relevance: 99
+notes: an odd GNU EPL
+ignorable_copyrights:
+    - copyright information, may be obtained here http://junit.org/license.html
+ignorable_holders:
+    - information, may be obtained here
+ignorable_urls:
+    - http://junit.org/license.html

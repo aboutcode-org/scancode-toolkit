@@ -4,6 +4,7 @@ name: Linux Documentation Project Copying License 1997-01-06
 category: Copyleft
 owner: Linux Documentation Project
 homepage_url: https://web.archive.org/web/19990202103614/http://metalab.unc.edu/LDP/COPYRIGHT.html
+spdx_license_key: LicenseRef-scancode-ldpc-1997
 text_urls:
     - http://linuxmafia.com/faq/Licensing_and_Law/ldpc-license-1997-01-06.html
 ignorable_emails:

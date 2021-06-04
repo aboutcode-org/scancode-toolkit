@@ -1,0 +1,6 @@
+license_expression: us-govt-public-domain
+is_license_notice: yes
+relevance: 100
+notes: https://nvd.nist.gov/vuln/data-feeds
+ignorable_emails:
+    - nvd@nist.gov

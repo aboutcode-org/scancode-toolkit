@@ -1,0 +1,5 @@
+license_expression: mit
+is_license_text: yes
+relevance: 100
+notes: An MIT variant with alternative hyphenation of sub-license and NON-INFRINGEMENT
+ Seen in https://github.com/SilverMagnum/linux-yocto-3.19/blob/343c7bd127a372776caaad7f783b1229c6686436/include/drm/drm_cache.h#L9

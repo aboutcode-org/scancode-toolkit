@@ -3,4 +3,5 @@ short_name: Adobe PostScript License
 name: Adobe PostScript License
 category: Proprietary Free
 owner: Adobe Systems
+spdx_license_key: LicenseRef-scancode-adobe-postscript
 minimum_coverage: 25

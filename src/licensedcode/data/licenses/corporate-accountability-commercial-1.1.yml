@@ -5,7 +5,7 @@ category: Proprietary Free
 owner: Corporate Accountability Lab
 homepage_url: https://legaldesign.org/cccal-license
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-corporate-accountability-commercial-1.1
 ignorable_urls:
     - https://creativecommons.org/choose
     - https://wiki.creativecommons.org/wiki/CCPlus
-

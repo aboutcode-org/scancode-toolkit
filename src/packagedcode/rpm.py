@@ -1,44 +1,26 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 from collections import namedtuple
 import logging
+import os
 import sys
 
 import attr
-from six import string_types
+from license_expression import Licensing
 
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm import RPM
 from packagedcode.utils import build_description
+from packagedcode import rpm_installed
 import typecode.contenttype
-
 
 TRACE = False
 
@@ -54,7 +36,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 # TODO: retrieve dependencies
 
@@ -150,84 +132,210 @@ class RpmPackage(models.Package):
     def recognize(cls, location):
         yield parse(location)
 
+    def compute_normalized_license(self):
+        _declared, detected = detect_declared_license(self.declared_license)
+        return detected
+
+    def to_dict(self, _detailed=False, **kwargs):
+        data = models.Package.to_dict(self, **kwargs)
+        if _detailed:
+            #################################################
+            data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
+            #################################################
+        else:
+            #################################################
+            # remove temporary fields
+            data.pop('installed_files', None)
+            #################################################
+        return data
+
+
+def get_installed_packages(root_dir, detect_licenses=False, **kwargs):
+    """
+    Yield Package objects given a ``root_dir`` rootfs directory.
+    """
+
+    # TODO:  license and docs are typically at usr/share/doc/packages/<package name>/* and should be used
+    # packages_doc_dir = os.path.join(root_dir, 'usr/share/doc/packages')
+    # note that we also have file flags that can tell us which file is a license and doc.
+
+    # dump the rpmdb to XMLish
+    xmlish_loc = rpm_installed.collect_installed_rpmdb_xmlish_from_rootfs(root_dir)
+    return rpm_installed.parse_rpm_xmlish(xmlish_loc, detect_licenses=detect_licenses)
+
 
 def parse(location):
     """
     Return an RpmPackage object for the file at location or None if
     the file is not an RPM.
     """
-    tags = get_rpm_tags(location, include_desc=True)
-    if TRACE: logger_debug('parse: tags', tags)
-    if not tags:
+    rpm_tags = get_rpm_tags(location, include_desc=True)
+    return build_from_tags(rpm_tags)
+
+
+def build_from_tags(rpm_tags):
+    """
+    Return an RpmPackage object from an ``rpm_tags`` RPMtags object.
+    """
+    if TRACE: logger_debug('build_from_tags: rpm_tags', rpm_tags)
+    if not rpm_tags:
         return
 
-    name = tags.name
+    name = rpm_tags.name
 
     try:
-        epoch = tags.epoch and int(tags.epoch) or None
+        epoch = rpm_tags.epoch and int(rpm_tags.epoch) or None
     except ValueError:
         epoch = None
 
     evr = EVR(
-        version=tags.version or None,
-        release=tags.release or None,
+        version=rpm_tags.version or None,
+        release=rpm_tags.release or None,
         epoch=epoch).to_string()
 
     qualifiers = {}
-    os = tags.os
+    os = rpm_tags.os
     if os and os.lower() != 'linux':
         qualifiers['os'] = os
 
-    arch = tags.arch
+    arch = rpm_tags.arch
     if arch:
         qualifiers['arch'] = arch
 
     source_packages = []
-    if tags.source_rpm:
-        src_epoch, src_name, src_version, src_release, src_arch = nevra.from_name(tags.source_rpm)
-        src_evr = EVR(src_version, src_release, src_epoch).to_string()
+    if rpm_tags.source_rpm:
+        sepoch, sname, sversion, srel, sarch = nevra.from_name(rpm_tags.source_rpm)
+        src_evr = EVR(sversion, srel, sepoch).to_string()
         src_qualifiers = {}
-        if src_arch:
-            src_qualifiers['arch'] = src_arch
+        if sarch:
+            src_qualifiers['arch'] = sarch
 
         src_purl = models.PackageURL(
             type=RpmPackage.default_type,
-            name=src_name,
+            name=sname,
             version=src_evr,
             qualifiers=src_qualifiers
         ).to_string()
 
-        if TRACE: logger_debug('parse: source_rpm', src_purl)
+        if TRACE: logger_debug('build_from_tags: source_rpm', src_purl)
         source_packages = [src_purl]
 
     parties = []
-    if tags.distribution:
-        parties.append(models.Party(name=tags.distribution, role='distributor'))
-    if tags.vendor:
-        parties.append(models.Party(name=tags.vendor, role='vendor'))
 
-    description = build_description(tags.summary, tags.description)
+    # TODO: also use me to craft a namespace!!!
+    # TODO: assign a namepsace to Package URL based on distro names.
+    # CentOS
+    # Fedora Project
+    # OpenMandriva Lx
+    # openSUSE Tumbleweed
+    # Red Hat
+
+    if rpm_tags.distribution:
+        parties.append(models.Party(name=rpm_tags.distribution, role='distributor'))
+
+    if rpm_tags.vendor:
+        parties.append(models.Party(name=rpm_tags.vendor, role='vendor'))
+
+    description = build_description(rpm_tags.summary, rpm_tags.description)
 
     if TRACE:
         data = dict(
             name=name,
             version=evr,
             description=description or None,
-            homepage_url=tags.url or None,
+            homepage_url=rpm_tags.url or None,
             parties=parties,
-            declared_license=tags.license or None,
-            source_packages=source_packages)
-        logger_debug('parse: data to create a package:\n', data)
+            declared_license=rpm_tags.license or None,
+            source_packages=source_packages,
+        )
+        logger_debug('build_from_tags: data to create a package:\n', data)
 
     package = RpmPackage(
         name=name,
         version=evr,
         description=description or None,
-        homepage_url=tags.url or None,
+        homepage_url=rpm_tags.url or None,
         parties=parties,
-        declared_license=tags.license or None,
-        source_packages=source_packages)
+        declared_license=rpm_tags.license or None,
+        source_packages=source_packages,
+    )
+
     if TRACE:
-        logger_debug('parse: created package:\n', package)
+        logger_debug('build_from_tags: created package:\n', package)
 
     return package
+
+############################################################################
+# FIXME: this license detection code is mostly copied from debian_copyright.py and alpine.py
+############################################################################
+
+
+def detect_declared_license(declared):
+    """
+    Return a tuple of (declared license, detected license expression) from a
+    declared license. Both can be None.
+    """
+    declared = normalize_and_cleanup_declared_license(declared)
+    if not declared:
+        return None, None
+
+    # apply multiple license detection in sequence
+    detected = detect_using_name_mapping(declared)
+    if detected:
+        return declared, detected
+
+    # cases of using a comma are for an AND
+    normalized_declared = declared.replace(',', ' and ')
+    detected = models.compute_normalized_license(normalized_declared)
+    return declared, detected
+
+
+def normalize_and_cleanup_declared_license(declared):
+    """
+    Return a cleaned and normalized declared license.
+    """
+    if declared:
+        # normalize spaces
+        declared = ' '.join(declared.split())
+        return declared
+
+
+def detect_using_name_mapping(declared, licensing=Licensing()):
+    """
+    Return a license expression detected from a `declared` license string.
+    """
+    # TODO: use RPM symbology
+    declared = declared.lower()
+    detected = get_declared_to_detected().get(declared)
+    if detected:
+        return str(licensing.parse(detected, simple=True))
+
+
+_DECLARED_TO_DETECTED = None
+
+
+def get_declared_to_detected(data_file=None):
+    """
+    Return a mapping of declared to detected license expression cached and
+    loaded from a tab-separated text file, all lowercase, normalized for spaces.
+
+    This data file is from license keys used in RPMs files and should be
+    derived from a large collection of RPMs files.
+    """
+    global _DECLARED_TO_DETECTED
+    if _DECLARED_TO_DETECTED is not None:
+        return _DECLARED_TO_DETECTED
+
+    _DECLARED_TO_DETECTED = {}
+    if not data_file:
+        data_file = os.path.join(os.path.dirname(__file__), 'rpm_licenses.txt')
+    with open(data_file) as df:
+        for line in df:
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            decl, _, detect = line.partition('\t')
+            if detect and detect.strip():
+                decl = decl.strip()
+                _DECLARED_TO_DETECTED[decl] = detect
+    return _DECLARED_TO_DETECTED

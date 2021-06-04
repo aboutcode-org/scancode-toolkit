@@ -1,0 +1,6 @@
+license_expressions:
+  - fsf-unlimited-no-warranty
+  - fsf-unlimited
+  - fsf-unlimited
+  - gpl-2.0-plus WITH libtool-exception-2.0
+  - gpl-2.0-plus WITH autoconf-simple-exception-2.0

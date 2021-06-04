@@ -4,6 +4,6 @@ name: Corporate Accountability Lab Software
 category: Proprietary Free
 owner: Corporate Accountability Lab
 homepage_url: https://legaldesign.org/cal-software-license
+spdx_license_key: LicenseRef-scancode-corporate-accountability-1.1
 ignorable_urls:
     - https://www.legaldesign.org/cal-software-license
-

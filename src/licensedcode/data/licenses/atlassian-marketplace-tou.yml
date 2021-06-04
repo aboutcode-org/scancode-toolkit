@@ -4,6 +4,7 @@ name: Atlassian Marketplace Terms of Use
 category: Proprietary Free
 owner: Atlassian
 homepage_url: https://www.atlassian.com/licensing/marketplace/termsofuse
+spdx_license_key: LicenseRef-scancode-atlassian-marketplace-tou
 ignorable_urls:
     - https://marketplace.atlassian.com/
 ignorable_emails:

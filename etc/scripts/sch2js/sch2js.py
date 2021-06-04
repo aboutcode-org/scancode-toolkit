@@ -39,9 +39,6 @@ for model in models:
 """
 
 if __name__ == '__main__':
-    from collections import OrderedDict
-
-    from six import iteritems
 
     from schematics.types.base import BaseType
     from schematics.types.compound import ListType
@@ -76,7 +73,7 @@ if __name__ == '__main__':
         """
         Return a mapping for the schema of a single field.
         """
-        field_schema = OrderedDict()
+        field_schema = {}
 
         field_schema['type'] = SCHEMATIC_TYPE_TO_JSON_TYPE.get(
             field_instance.__class__.__name__, 'string')
@@ -85,7 +82,7 @@ if __name__ == '__main__':
             field_schema['title'] = field_instance.metadata.get('label', '')
             field_schema['description'] = field_instance.metadata.get('description', '')
 
-        for js_key, schematic_key in iteritems(schema_kwargs_to_schematics):
+        for js_key, schematic_key in schema_kwargs_to_schematics.items():
             value = getattr(field_instance, schematic_key, None)
             if value is not None:
                 field_schema[js_key] = value
@@ -97,9 +94,9 @@ if __name__ == '__main__':
         """
         Return a mapping for the schema of a collection of fields.
         """
-        properties = OrderedDict()
+        properties = {}
         required = []
-        for field_name, field_instance in iteritems(model.fields):
+        for field_name, field_instance in model.fields.items():
             serialized_name = getattr(field_instance, 'serialized_name', None) or field_name
 
             if isinstance(field_instance, ModelType):
@@ -109,7 +106,7 @@ if __name__ == '__main__':
                 try:
                     node = jsonschema_for_model(field_instance.model_class, 'array')
                     if hasattr(field_instance, 'metadata'):
-                        _node = OrderedDict()
+                        _node = {}
                         _node['type'] = node.pop('type')
                         _node['title'] = field_instance.metadata.get('label', '')
                         _node['description'] = field_instance.metadata.get('description', '')
@@ -117,7 +114,7 @@ if __name__ == '__main__':
                         node = _node
                 except AttributeError:
                     field_schema = jsonschema_for_single_field(field_instance.field)
-                    node = OrderedDict()
+                    node = {}
                     node['type'] = 'array'
                     if hasattr(field_instance, 'metadata'):
                         node['title'] = field_instance.metadata.get('label', '')
@@ -156,23 +153,23 @@ if __name__ == '__main__':
             schema_title = ''
             schema_description = ''
 
-        schema = OrderedDict([
-            ('type', 'object'),
-            ('title', schema_title),
-            ('description', schema_description),
-        ])
+        schema = {
+            'type': 'object',
+            'title': schema_title,
+            'description':schema_description,
+        }
 
         if required:
             schema['required'] = required
 
         if hasattr(model, '_schema_order'):
             ordered_properties = [(i, properties.pop(i)) for i in model._schema_order]
-            schema['properties'] = OrderedDict(ordered_properties)
+            schema['properties'] = dict(ordered_properties)
         else:
             schema['properties'] = properties
 
         if _type == 'array':
-            schema = OrderedDict([
+            schema = dict([
                 ('type', 'array'),
                 ('items', schema),
             ])
@@ -185,7 +182,7 @@ if __name__ == '__main__':
         Return a a JSON schema mapping for the `model` class.
         """
         schema_id = kwargs.pop('schema_id', '')
-        jsonschema = OrderedDict([
+        jsonschema = dict([
             ('$schema', 'http://json-schema.org/draft-04/schema#'),
             ('id', schema_id)
         ])

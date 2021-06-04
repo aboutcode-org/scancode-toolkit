@@ -3,6 +3,7 @@ short_name: Sun BCL J2RE 5.0
 name: Sun BCL J2RE 5.0
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bcl-j2re-5.0
 text_urls:
     - http://java.sun.com/j2se/1.5.0/jre-1_5_0_06-license.txt
 ignorable_urls:

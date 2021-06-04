@@ -1,4 +1,5 @@
 license_expression: gpl-2.0-plus
 is_license_notice: yes
+minimum_coverage: 80
 ignorable_urls:
     - http://www.gnu.org/

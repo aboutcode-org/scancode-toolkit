@@ -1,7 +1,9 @@
 key: hs-regexp-orig
+is_deprecated: yes
 short_name: Henry Spencer Original Regexp License
-name: Henry Spencer Orginal Regexp License
+name: Henry Spencer Original Regexp License
 category: Permissive
 owner: Henry Spencer
+notes: deprecated in favor of the regexp license which is identical
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License

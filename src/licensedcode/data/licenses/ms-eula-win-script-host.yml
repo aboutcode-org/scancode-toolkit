@@ -3,3 +3,4 @@ short_name: MS EULA for Windows Script Host
 name: Microsoft EULA for Windows Script Host
 category: Commercial
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-eula-win-script-host

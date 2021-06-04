@@ -3,6 +3,7 @@ short_name: PyGres License 2.2
 name: PyGres License v2.2
 category: Permissive
 owner: Unspecified
+spdx_license_key: LicenseRef-scancode-pygres-2.2
 text_urls:
     - http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431
 ignorable_copyrights:

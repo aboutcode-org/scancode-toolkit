@@ -1,0 +1,5 @@
+license_expression: gpl-3.0-plus AND proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/feramhq/transity/commit/53c0c0f6aa75f64ed8373cdc050deb748653df65 the
+    notice seems to be a conflict with the GPL See also https://github.com/feramhq/transity#license

@@ -1,0 +1,11 @@
+key: ogdl-taiwan-1.0
+short_name: Taiwan Open Government Data License, version 1.0
+name: Taiwan Open Government Data License, version 1.0
+category: Permissive
+owner: Taiwan National Development Council
+homepage_url: https://data.gov.tw/en/license
+spdx_license_key: OGDL-Taiwan-1.0
+other_urls:
+    - https://data.gov.tw/license
+ignorable_urls:
+    - https://data.gov.tw/license

@@ -1,0 +1,11 @@
+license_expressions:
+  - bsd-source-code
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/BSD-Broken.t1
+  originally expected to be detected as BSD-Source-Code
+  with coverage of 97.5
+  BSD-3-Clause with the middle clause removed.
+  Observed in github.com/keybase/client@v0.0.0-20181106163034-dc1b0e00ee4e
+  in the file shared/react-native/ios/CocoaLumberjack/LICENSE.txt.
+  Should not be recognized as BSD-3-Clause nor BSD-2-Clause.

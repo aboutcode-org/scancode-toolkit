@@ -3,3 +3,5 @@ short_name: Tidy License
 name: Tidy License
 category: Permissive
 owner: W3C - World Wide Web Consortium
+homepage_url: https://github.com/htacg/tidy-html5/blob/next/README/LICENSE.md
+spdx_license_key: HTMLTIDY

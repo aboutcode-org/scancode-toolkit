@@ -1,0 +1,6 @@
+license_expression: x11-xconsortium
+is_license_text: yes
+relevance: 99
+notes: This is a text with minor variations taken from the original at http://www.xfree86.org/3.3.6/COPYRIGHT2.html#3
+    and modified to remove (partially) X references such as "authors or copyright holders X"
+    Seen also in wikipedia https://fr.wikipedia.org/wiki/Licence_MIT#Modèle_de_la_licence_X11

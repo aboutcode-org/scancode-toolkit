@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) , 2001-2011, Omega Tech. Co., Ltd.
+  - Copyright (c) , 2001-2011, Omega Tech. Co., Ltd.
 holders:
-    - Omega Tech. Co., Ltd.
+  - Omega Tech. Co., Ltd.
 holders_summary:
-    -   value: Omega Tech. Co., Ltd.
-        count: 1
+  - value: Omega Tech. Co., Ltd.
+    count: 1

@@ -4,6 +4,7 @@ name: Microsoft Visual Studio Code License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://code.visualstudio.com/License/
+spdx_license_key: LicenseRef-scancode-ms-visual-studio-code
 faq_url: https://code.visualstudio.com/
 ignorable_urls:
     - http://go.microsoft.com/fwlink/?LinkID=528096&clcid=0x409

@@ -1,36 +1,15 @@
 #
-# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
 
 from itertools import chain
 
 import attr
-from six import string_types
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
@@ -53,14 +32,14 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @post_scan_impl
 class RedundantCluesFilter(PostScanPlugin):
     """
-    Filter redundant clues (copyrights, authors, emails, and urls) that are already
-    contained in another more important scan result.
+    Filter redundant clues (copyrights, authors, emails, and urls) that are
+    already contained in a matched license text.
     """
     sort_order = 1
 
@@ -102,11 +81,16 @@ def filter_ignorable_resource_clues(resource, rules_by_id):
     detections = Detections.from_resource(resource)
     filtered = filter_ignorable_clues(detections, rules_by_id)
     if filtered:
-        resource.emails = filtered.emails
-        resource.urls = filtered.urls
-        resource.authors = filtered.authors
-        resource.holders = filtered.holders
-        resource.copyrights = filtered.copyrights
+        if hasattr(resource, 'emails'):
+            resource.emails = filtered.emails
+        if hasattr(resource, 'urls'):
+            resource.urls = filtered.urls
+        if hasattr(resource, 'authors'):
+            resource.authors = filtered.authors
+        if hasattr(resource, 'holders'):
+            resource.holders = filtered.holders
+        if hasattr(resource, 'copyrights'):
+            resource.copyrights = filtered.copyrights
         return resource
 
 
@@ -207,6 +191,10 @@ def is_empty(clues):
     if clues:
         return not any([
             clues.copyrights, clues.holders, clues.authors, clues.urls, clues.emails])
+    else:
+        # The logic is reversed, so a false or None "clues" object returns None, which
+        # is interpreted as False (i.e., the object is *not* empty).
+        return True
 
 
 def filter_ignorable_clues(detections, rules_by_id):
@@ -220,10 +208,7 @@ def filter_ignorable_clues(detections, rules_by_id):
 
     no_detected_ignorables = not detections.copyrights and not detections.authors
 
-    if detections.licenses:
-        ignorables = collect_ignorables(detections.licenses, rules_by_id)
-    else:
-        ignorables = None
+    ignorables = collect_ignorables(detections.licenses, rules_by_id)
 
     no_ignorables = not detections.licenses or is_empty(ignorables)
 
@@ -239,36 +224,45 @@ def filter_ignorable_clues(detections, rules_by_id):
         attributes=detections.emails,
         ignorables=ignorables.emails.union(
             detections.copyrights_as_ignorable,
-            detections.authors_as_ignorable),
-        value_key='email'))
+            detections.authors_as_ignorable,
+        ),
+        value_key='email',
+    ))
 
     # discard redundant urls if ignorable or in a detected copyright or author
     urls = list(filter_values(
         attributes=detections.urls,
         ignorables=ignorables.urls.union(
             detections.copyrights_as_ignorable,
-            detections.authors_as_ignorable),
-        value_key='url', strip='/'))
+            detections.authors_as_ignorable,
+        ),
+        value_key='url',
+        strip='/',
+    ))
 
     # discard redundant authors if ignorable or in detected holders or copyrights
     authors = list(filter_values(
         attributes=detections.authors,
         ignorables=ignorables.authors.union(
             detections.copyrights_as_ignorable,
-            detections.holders_as_ignorable),
-        value_key='value'))
+            detections.holders_as_ignorable,
+        ),
+        value_key='value',
+    ))
 
     # discard redundant holders if ignorable
     holders = list(filter_values(
         attributes=detections.holders,
         ignorables=ignorables.holders,
-        value_key='value'))
+        value_key='value',
+    ))
 
     # discard redundant copyrights if ignorable
     copyrights = list(filter_values(
         attributes=detections.copyrights,
         ignorables=ignorables.copyrights,
-        value_key='value'))
+        value_key='value',
+    ))
 
     return Detections(
         copyrights=copyrights,
@@ -281,13 +275,14 @@ def filter_ignorable_clues(detections, rules_by_id):
 
 def filter_values(attributes, ignorables, value_key='value', strip=''):
     """
-    Yield filtered `attributes` based on line positions and values found in a
-    ignorables.
+    Yield filtered ``attributes`` based on line positions and values found in a
+    ``ignorables`` Ignorables object. Use the ``value_key`` key for getting the
+    value.
 
     `attributes` is a list of mappings that contain a `start_line`, `end_line`
     and a `value_key` key.
 
-    Optionally strip `strip` from the the values.
+    Optionally strip the ``strip`` characters from the values.
     """
     for item in attributes:
         if TRACE:
@@ -296,26 +291,29 @@ def filter_values(attributes, ignorables, value_key='value', strip=''):
         el = item['end_line']
         val = item[value_key].strip(strip)
         ignored = False
+
         if TRACE:
             logger_debug('   filter_values: ignorables:', ignorables)
+
         for ign in ignorables:
             if TRACE: logger_debug('   filter_values: ign:', ign)
-            if (ls in ign.lines_range or el in ign.lines_range) and val in ign.value:
+            if (ls in ign.lines_range or el in ign.lines_range)  and val in ign.value:
                 ignored = True
                 if TRACE: logger_debug('   filter_values: skipped')
                 break
+
         if not ignored:
             yield item
 
 
 def collect_ignorables(license_matches, rules_by_id):
     """
-    Collect and return an ignorable Clues object built from `license_matches` matched licenses
-    which is the list of "licenses" objects returned in JSON results.
+    Collect and return an Ignorables object built from ``license_matches``
+    matched licenses list of "licenses" objects returned in ScanCode JSON
+    results and the ``rules_by_id`` mapping of Rule objects by identifier.
 
-    The value of each ignorable list of clues is a set of (set of
-    lines number, set of ignorable values). The return values is a mapping
-    {label: ignorables}.
+    The value of each ignorable list of clues is a set of (set of lines number,
+    set of ignorable values).
     """
     emails = set()
     urls = set()
@@ -323,10 +321,19 @@ def collect_ignorables(license_matches, rules_by_id):
     holders = set()
     copyrights = set()
 
+    if not license_matches:
+        return Ignorables(
+            copyrights=frozenset(copyrights),
+            holders=frozenset(holders),
+            authors=frozenset(authors),
+            urls=frozenset(urls),
+            emails=frozenset(emails),
+        )
     # build tuple of (set of lines number, set of ignorbale values)
     for lic in license_matches:
 
-        if TRACE: logger_debug('collect_ignorables: license:', lic['key'], lic['score'])
+        if TRACE:
+            logger_debug('collect_ignorables: license:', lic['key'], lic['score'])
 
         matched_rule = lic.get('matched_rule', {})
         rid = matched_rule.get('identifier')
@@ -335,7 +342,8 @@ def collect_ignorables(license_matches, rules_by_id):
         # ignore poor partial matches
         # TODO: there must be a better way using coverage
         if match_coverage < 90:
-            if TRACE: logger_debug('  collect_ignorables: skipping, match_coverage under 90%')
+            if TRACE:
+                logger_debug('  collect_ignorables: skipping, match_coverage under 90%')
             continue
 
         if not rid:
@@ -367,6 +375,9 @@ def collect_ignorables(license_matches, rules_by_id):
         if ign_urls:
             urls.add(Ignorable(lines_range=lines_range, value=ign_urls))
 
+        if TRACE:
+            logger_debug('  collect_ignorables: rule:', rule)
+
     ignorables = Ignorables(
         copyrights=frozenset(copyrights),
         holders=frozenset(holders),
@@ -376,7 +387,6 @@ def collect_ignorables(license_matches, rules_by_id):
     )
 
     if TRACE:
-        logger_debug('  collect_ignorables: rule:', rule)
         logger_debug('  collect_ignorables: ignorables:', ignorables)
 
     return ignorables

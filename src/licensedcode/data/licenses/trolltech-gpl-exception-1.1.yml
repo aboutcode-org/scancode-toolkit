@@ -3,6 +3,7 @@ short_name: Trolltech GPL Exception 1.1
 name: Trolltech GPL Exception version v1.1
 category: Copyleft
 owner: Trolltech
+homepage_url: https://doc.qt.io/archives/4.3/license-gpl-exceptions.html
 notes: Trolltech is now The Qt Company
 is_exception: yes
-homepage_url: https://doc.qt.io/archives/4.3/license-gpl-exceptions.html
+spdx_license_key: LicenseRef-scancode-trolltech-gpl-exception-1.1

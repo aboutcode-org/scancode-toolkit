@@ -4,5 +4,6 @@ name: BitTorrent Open Source License 1.2
 category: Copyleft Limited
 owner: BitTorrent, Inc.
 homepage_url: http://www.bittorrent.com/license/
+spdx_license_key: LicenseRef-scancode-bittorrent-1.2
 ignorable_urls:
     - http://www.bittorrent.com/license

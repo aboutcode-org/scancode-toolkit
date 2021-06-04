@@ -3,5 +3,6 @@ short_name: Click License
 name: Click License
 category: Permissive
 owner: Unspecified
-minimum_coverage: 80
 homepage_url: https://changelogs.ubuntu.com/changelogs/pool/main/t/t1utils/t1utils_1.39-2/copyright
+spdx_license_key: LicenseRef-scancode-click-license
+minimum_coverage: 80

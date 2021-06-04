@@ -4,6 +4,7 @@ name: Ada linking exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: Dmitriy Anisimkov
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-ada-linking-exception
 other_urls:
     - http://zlib-ada.sourceforge.net/
     - http://ada-ru.org/

@@ -1,32 +1,11 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
-
 import errno
 import os
 from os.path import abspath
@@ -46,8 +25,10 @@ Note: this module MUST import ONLY from the standard library.
 try:
     WindowsError  # NOQA
 except NameError:
+
     class WindowsError(Exception):
         pass
+
 
 def _create_dir(location):
     """
@@ -91,13 +72,17 @@ def _create_dir(location):
 # current installation location. This is where the source code and static data
 # lives.
 
-
-from pkg_resources import get_distribution, DistributionNotFound
+# in case package is not installed or we do not have setutools/pkg_resources
+# on hand fall back to this version
+__version__ = '21.6.2'
 try:
-    __version__ = get_distribution('scancode-toolkit').version
-except DistributionNotFound:
-    # package is not installed ??
-    __version__ = '3.2.3'
+    from pkg_resources import get_distribution, DistributionNotFound
+    try:
+        __version__ = get_distribution('scancode-toolkit').version
+    except DistributionNotFound:
+        pass
+except ImportError:
+    pass
 
 system_temp_dir = tempfile.gettempdir()
 scancode_src_dir = dirname(__file__)
@@ -135,19 +120,22 @@ if SCANCODE_DEV_MODE:
     scancode_cache_dir = join(scancode_root_dir, '.cache')
 else:
     # In other usage modes (as a CLI or as a library, regardless of how
-    # installed) we use sensible defaults in the user home directory.
-    # These are version specific
-
-    # WARNING: do not change this code without changing
-    # commoncode.fileutils.get_temp_dir too
-
+    # installed) the cache dir goes to the home directory and is different for
+    # each version
     user_home = abspath(expanduser('~'))
     __env_cache_dir = os.getenv('SCANCODE_CACHE')
-    scancode_cache_dir = (__env_cache_dir
-        or join(user_home, '.cache', 'scancode-tk', __version__))
+    std_scancode_cache_dir = join(user_home, '.cache', 'scancode-tk', __version__)
+    scancode_cache_dir = (__env_cache_dir or std_scancode_cache_dir)
 
+# we pre-build the index and bundle this with the the deployed release
+# therefore we use package data
+# .... but we accept this to be overriden with and env variable
+std_license_cache_dir = join(scancode_src_dir, 'licensedcode', 'data', 'cache')
+__env_license_cache_dir = os.getenv('SCANCODE_LICENSE_INDEX_CACHE')
+licensedcode_cache_dir = (__env_license_cache_dir or std_license_cache_dir)
+
+_create_dir(licensedcode_cache_dir)
 _create_dir(scancode_cache_dir)
-
 
 # - scancode_temp_dir: for short-lived temporary files which are import- or run-
 # specific that may live for the duration of a function call or for the duration

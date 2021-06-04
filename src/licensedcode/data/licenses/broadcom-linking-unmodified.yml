@@ -5,3 +5,4 @@ category: Copyleft Limited
 owner: Broadcom
 notes: The exception does not apply when modified
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-broadcom-linking-unmodified

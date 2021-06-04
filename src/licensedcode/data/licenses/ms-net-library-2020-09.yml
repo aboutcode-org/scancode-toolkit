@@ -1,0 +1,12 @@
+key: ms-net-library-2020-09
+short_name: MS .NET Library License 2020-09
+name: Microsoft .NET Library License 2020-09
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://www.microsoft.com/web/webpi/eula/dotnet_library_license_non_redistributable.htm
+other_urls:
+    - https://www.nuget.org/packages/Microsoft.Net.Compilers/1.0.0
+spdx_license_key: LicenseRef-scancode-ms-net-library-2020-09
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+

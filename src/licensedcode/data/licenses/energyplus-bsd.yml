@@ -4,5 +4,6 @@ name: EnergyPlus BSD-Style License
 category: Permissive
 owner: Regents of the University of California
 homepage_url: https://energyplus.net/licensing
+spdx_license_key: LicenseRef-scancode-energyplus-bsd
 ignorable_emails:
     - IPO@lbl.gov

@@ -3,6 +3,7 @@ short_name: Intel Limited Patent License
 name: Intel Limited Patent License
 category: Proprietary Free
 owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel
 other_urls:
     - http://web.archive.org/web/20060924155349/http://www.mepis.org/node/10358
 ignorable_urls:

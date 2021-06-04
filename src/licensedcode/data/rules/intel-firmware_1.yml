@@ -1,0 +1,5 @@
+license_expression: intel-firmware
+is_license_text: yes
+relevance: 95
+notes: See https://github.com/freebsd/freebsd-src/blob/cf5d1112408ddef3fdff8212599727c49ba90fa4/sys/contrib/dev/ipw/LICENSE
+    This has extra terms for confidentiality and is still a problematic license

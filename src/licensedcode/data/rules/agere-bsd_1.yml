@@ -1,3 +1,5 @@
 license_expression: agere-bsd
 is_license_text: yes
 relevance: 100
+minimum_coverage: 80
+

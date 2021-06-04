@@ -104,7 +104,7 @@
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
       "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
       "identifier": "pkg_npm_test_package_0_0_1_1",
-      "consolidated_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown",
+      "consolidated_license_expression": "apache-2.0 AND gpl-1.0-plus",
       "consolidated_holders": [
         "IBM Corp.",
         "The Apache Software",
@@ -113,7 +113,7 @@
       "consolidated_copyright": "Copyright (c) IBM Corp., The Apache Software, The Apache Software Foundation",
       "core_license_expression": "apache-2.0",
       "core_holders": [],
-      "other_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown",
+      "other_license_expression": "apache-2.0 AND gpl-1.0-plus",
       "other_holders": [
         "The Apache Software Foundation",
         "The Apache Software",
@@ -201,12 +201,12 @@
       "sha256": "688b99bb403bc14345d9fce5a96137b8b4d8b6e6510da4c1ce574fd90835a8c0",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": null,
+      "programming_language": "Python",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
-      "is_source": false,
+      "is_source": true,
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
@@ -325,7 +325,9 @@
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
           "spdx_license_key": "Apache-2.0",
           "spdx_url": "https://spdx.org/licenses/Apache-2.0",
           "start_line": 2,
@@ -340,11 +342,12 @@
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -406,7 +409,9 @@
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
           "spdx_license_key": "Apache-2.0",
           "spdx_url": "https://spdx.org/licenses/Apache-2.0",
           "start_line": 2,
@@ -421,11 +426,12 @@
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -487,7 +493,9 @@
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
           "spdx_license_key": "Apache-2.0",
           "spdx_url": "https://spdx.org/licenses/Apache-2.0",
           "start_line": 2,
@@ -502,11 +510,12 @@
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -568,7 +577,9 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/lgpl-2.0.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.yml",
           "spdx_license_key": "LGPL-2.0-only",
           "spdx_url": "https://spdx.org/licenses/LGPL-2.0-only",
           "start_line": 2,
@@ -583,11 +594,12 @@
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 80.0
+            "rule_relevance": 80
           }
         }
       ],
@@ -683,7 +695,9 @@
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
           "spdx_license_key": "Apache-2.0",
           "spdx_url": "https://spdx.org/licenses/Apache-2.0",
           "start_line": 5,
@@ -698,11 +712,12 @@
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 4,
             "matched_length": 4,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -803,7 +818,9 @@
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
           "spdx_license_key": "Apache-2.0",
           "spdx_url": "https://spdx.org/licenses/Apache-2.0",
           "start_line": 2,
@@ -818,11 +835,12 @@
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -875,38 +893,6 @@
       "is_script": false,
       "licenses": [
         {
-          "key": "unknown",
-          "score": 16.0,
-          "name": "Unknown license detected but not recognized",
-          "short_name": "unknown",
-          "category": "Unstated License",
-          "is_exception": false,
-          "owner": "Unspecified",
-          "homepage_url": null,
-          "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
-          "spdx_license_key": null,
-          "spdx_url": "",
-          "start_line": 2,
-          "end_line": 2,
-          "matched_rule": {
-            "identifier": "lead-in_unknown_25.RULE",
-            "license_expression": "unknown",
-            "licenses": [
-              "unknown"
-            ],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
-            "matcher": "2-aho",
-            "rule_length": 3,
-            "matched_length": 3,
-            "match_coverage": 100.0,
-            "rule_relevance": 16
-          }
-        },
-        {
           "key": "gpl-1.0-plus",
           "score": 100.0,
           "name": "GNU General Public License 1.0 or later",
@@ -916,31 +902,33 @@
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-1.0-plus",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.yml",
           "spdx_license_key": "GPL-1.0-or-later",
           "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later",
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "gpl-1.0-plus_33.RULE",
+            "identifier": "gpl-1.0-plus_398.RULE",
             "license_expression": "gpl-1.0-plus",
             "licenses": [
               "gpl-1.0-plus"
             ],
             "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": true,
+            "is_license_notice": true,
+            "is_license_reference": false,
             "is_license_tag": false,
+            "is_license_intro": false,
             "matcher": "2-aho",
-            "rule_length": 5,
-            "matched_length": 5,
+            "rule_length": 7,
+            "matched_length": 7,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
       "license_expressions": [
-        "unknown",
         "gpl-1.0-plus"
       ],
       "percentage_of_license_text": 50.0,

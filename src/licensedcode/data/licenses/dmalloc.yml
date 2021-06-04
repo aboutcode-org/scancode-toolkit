@@ -3,6 +3,7 @@ short_name: dmalloc License
 name: dmalloc License
 category: Permissive
 owner: Dmalloc
+spdx_license_key: LicenseRef-scancode-dmalloc
 faq_url: http://dmalloc.com/
 other_urls:
     - http://dmalloc.com/

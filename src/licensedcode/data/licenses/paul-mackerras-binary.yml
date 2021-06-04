@@ -4,6 +4,7 @@ name: Paul Mackerras Binary License
 category: Permissive
 owner: Paul Mackerras
 notes: this is very similar to the bsd-ack but there is a different warranty disclaimer
+spdx_license_key: LicenseRef-scancode-paul-mackerras-binary
 ignorable_authors:
     - Paul Mackerras <paulus@samba.org>
 ignorable_emails:

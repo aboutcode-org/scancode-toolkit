@@ -1,0 +1,6 @@
+'LGPL:': 'LGPL-3.0-or-later',
+  'LGPLv2.1': 'LGPL-2.1-only',
+  LGPLv3: 'LGPL-3.0-or-later',
+  'LGPLv3+': 'LGPL-3.0-or-later',
+  'LGPL-2.0+': 'LGPL-2.0-or-later',
+  'LGPL-2.1+': 'LGPL-2.1-or-later',

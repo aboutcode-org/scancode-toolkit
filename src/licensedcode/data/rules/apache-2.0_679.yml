@@ -1,0 +1,7 @@
+license_expression: apache-2.0
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - Magnesium.h
+notes: https://github.com/ErikMcClure/magnesium/blob/25ad607e59cef1fb4a22852f753dadb602fba089/include/magnesium/Magnesium.h

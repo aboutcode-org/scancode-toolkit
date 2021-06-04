@@ -4,6 +4,7 @@ name: RubyEncoder Commercial Licence
 category: Commercial
 owner: RubyEncoder
 homepage_url: https://www.rubyencoder.com/terms.html
+spdx_license_key: LicenseRef-scancode-rubyencoder-commercial
 other_urls:
     - https://www.rubyencoder.com/loaders.html#
 ignorable_urls:

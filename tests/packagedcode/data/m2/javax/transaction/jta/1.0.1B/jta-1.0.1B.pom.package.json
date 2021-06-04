@@ -30,6 +30,7 @@
   "source_packages": [
     "pkg:maven/javax.transaction/jta@1.0.1B?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/javax.transaction/jta@1.0.1B",
   "repository_homepage_url": "https://repo1.maven.org/maven2/javax/transaction/jta/1.0.1B/",
   "repository_download_url": "https://repo1.maven.org/maven2/javax/transaction/jta/1.0.1B/jta-1.0.1B.jar",

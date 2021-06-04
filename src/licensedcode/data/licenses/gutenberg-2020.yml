@@ -2,14 +2,14 @@ key: gutenberg-2020
 short_name: Gutenberg License 2020
 name: Project Gutenberg License 2020
 category: Proprietary Free
-owner: Unstated
+owner: gutenberg Project
 homepage_url: http://dev.gutenberg.org/policy/license.html
 notes: Based on text retrieved in 09-2020
-ignorable_emails:
-  - gbnewby@pglaf.org
+spdx_license_key: LicenseRef-scancode-gutenberg-2020
 ignorable_urls:
-  - http://www.gutenberg.org/
-  - http://www.gutenberg.org/contact
-  - http://www.gutenberg.org/donate
-  - http://www.gutenberg.org/license
-
+    - http://www.gutenberg.org/
+    - http://www.gutenberg.org/contact
+    - http://www.gutenberg.org/donate
+    - http://www.gutenberg.org/license
+ignorable_emails:
+    - gbnewby@pglaf.org

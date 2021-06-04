@@ -1,8 +1,10 @@
 key: odc-1.0
+is_deprecated: yes
 short_name: ODC-By
 name: Open Data Commons Attribution License
 category: Copyleft
 owner: Open Data Commons
 homepage_url: https://opendatacommons.org/
+notes: deprecated in favor of odc-by-1.0
 text_urls:
     - http://www.opendatacommons.org/licenses/by/1.0/

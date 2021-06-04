@@ -4,6 +4,7 @@ name: ScanCode generated data acknowledgment
 category: Permissive
 owner: nexB
 homepage_url: https://github.com/nexB/scancode-toolkit/
+spdx_license_key: LicenseRef-scancode-scancode-acknowledgment
 minimum_coverage: 95
 ignorable_urls:
     - https://github.com/nexB/scancode-toolkit/

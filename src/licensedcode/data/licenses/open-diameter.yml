@@ -3,6 +3,7 @@ short_name: Open Diameter License
 name: Open Diameter License
 category: Copyleft
 owner: Open Diameter Project
+spdx_license_key: LicenseRef-scancode-open-diameter
 ignorable_copyrights:
     - Copyright (c) 2002-2007 Open Diameter Project
 ignorable_holders:

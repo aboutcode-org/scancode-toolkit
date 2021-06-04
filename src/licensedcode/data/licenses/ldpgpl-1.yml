@@ -3,5 +3,6 @@ short_name: LDPGPL-1
 name: Linux Documentation Project General Public License v1, September 1998
 category: Copyleft
 owner: Linux Documentation Project
+spdx_license_key: LicenseRef-scancode-ldpgpl-1
 text_urls:
     - https://old.calculate-linux.org/packages/licenses/LDP-1

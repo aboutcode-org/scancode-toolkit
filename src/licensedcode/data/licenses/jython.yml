@@ -5,6 +5,7 @@ category: Permissive
 owner: Python Software Foundation (PSF)
 homepage_url: http://www.jython.org/license.txt
 notes: this is a complex composite of multiple licenses
+spdx_license_key: LicenseRef-scancode-jython
 text_urls:
     - http://www.jython.org/license.txt
 minimum_coverage: 80

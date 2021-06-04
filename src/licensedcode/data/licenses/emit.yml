@@ -5,6 +5,7 @@ category: Permissive
 owner: Wix
 homepage_url: https://raw.githubusercontent.com/wix/react-native-zss-rich-text-editor/v1.1.0/LICENSE
 notes: See also https://wptavern.com/wix-removes-gpl-licensed-wordpress-code-from-mobile-app-forks-original-mit-library
+spdx_license_key: LicenseRef-scancode-emit
 minimum_coverage: 50
 ignorable_copyrights:
     - Copyright (c) 2016 Wix.com

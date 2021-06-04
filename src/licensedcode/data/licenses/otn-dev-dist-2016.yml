@@ -4,6 +4,7 @@ name: Oracle Technology Network License Agreement 2016
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/licenses/distribution-license-152002.html
+spdx_license_key: LicenseRef-scancode-otn-dev-dist-2016
 ignorable_urls:
     - http://www.oracle.com/documentation
     - http://www.oracle.com/goto/opensourcecode

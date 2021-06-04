@@ -3,6 +3,7 @@ short_name: ilmid License
 name: ilmid License
 category: Permissive
 owner: University of Kansas
+spdx_license_key: LicenseRef-scancode-ilmid
 other_urls:
     - 'http://linuxcommand.org/man_pages/ilmid8.html '
     - http://www.freebsd.org/cgi/man.cgi?query=ilmid&sektion=8&apropos=0&manpath=FreeBSD+5.4-RELEASE

@@ -1,0 +1,4 @@
+license_expression: aml
+is_license_text: yes
+relevance: 100
+notes: https://opensource.apple.com/source/Security/Security-54.1.5/CertTool/cdsaUtils/pem.cpp

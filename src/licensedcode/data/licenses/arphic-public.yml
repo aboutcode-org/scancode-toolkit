@@ -4,5 +4,6 @@ name: Arphic Public License
 category: Copyleft
 owner: Arphic Technology
 homepage_url: http://ftp.gnu.org/gnu/non-gnu/chinese-fonts-truetype/LICENSE
+spdx_license_key: LicenseRef-scancode-arphic-public
 text_urls:
     - http://ftp.gnu.org/gnu/non-gnu/chinese-fonts-truetype/LICENSE

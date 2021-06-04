@@ -1,7 +1,6 @@
 key: bsd-2-clause-netbsd
-short_name: BSD-2-Clause-NetBSD
 is_deprecated: yes
-notes: NetBSD adopted this 2-clause license in 2008 for code contributed to NetBSD Foundation. It is being deprecated as a separate license because it is a match to BSD-2-Clause. The line describing that the code is derived from software contributed to NetBSD is not viewed as being a substantive part of the license text. Its previous spdx_license_key was BSD-2-Clause-NetBSD
+short_name: BSD-2-Clause-NetBSD
 name: BSD-2-Clause-NetBSD License
 category: Permissive
 owner: NetBSD
@@ -10,5 +9,7 @@ notes: |
     Except for the NetBSD Foundation name this license is identical to the
     bsd-simplified Per SPDX.org, NetBSD adopted this 2-clause license in 2008
     for code contributed to NetBSD Foundation.
+    Its former SPDX key was BSD-2-Clause-NetBSD. This is now tracked as
+    bsd-simplified aka. BSD-2-Clause.
 text_urls:
     - http://www.netbsd.org/about/redistribution.html#default

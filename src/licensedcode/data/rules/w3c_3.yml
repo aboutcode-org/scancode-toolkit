@@ -1,9 +1,8 @@
 license_expression: w3c
 is_license_notice: yes
 ignorable_copyrights:
-  - Copyright World Wide Web Consortium, (Massachusetts Institute of Technology, European Research
-    Consortium for Informatics and Mathematics, Keio University)
+    - Copyright World Wide Web Consortium, (Massachusetts Institute of Technology, European
+        Research Consortium for Informatics and Mathematics, Keio University)
 ignorable_holders:
-  - World Wide Web Consortium, (Massachusetts Institute of Technology, European Research Consortium
-    for Informatics and Mathematics, Keio University)
-
+    - World Wide Web Consortium, (Massachusetts Institute of Technology, European Research Consortium
+        for Informatics and Mathematics, Keio University)

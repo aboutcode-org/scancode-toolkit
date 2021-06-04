@@ -5,6 +5,7 @@ category: Permissive
 owner: John R. Hauser
 homepage_url: http://www.jhauser.us/arithmetic/SoftFloat.html
 notes: this original license was used for Softfloat v1. The newest v3 uses a plain bsd-new license
+spdx_license_key: LicenseRef-scancode-softfloat
 minimum_coverage: 90
 ignorable_authors:
     - John R. Hauser

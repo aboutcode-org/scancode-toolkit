@@ -1,5 +1,0 @@
-license_expression: apache-2.0
-is_license_tag: yes
-relevance: 99
-notes: we picked the latest version and we set the relevance to less than 100 because of that.
-    the tag does not have a license version

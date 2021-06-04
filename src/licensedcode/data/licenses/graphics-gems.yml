@@ -4,5 +4,6 @@ name: Graphics Gems License
 category: Permissive
 owner: Eric Haines
 homepage_url: https://github.com/erich666/GraphicsGems/blob/master/LICENSE.md
+spdx_license_key: LicenseRef-scancode-graphics-gems
 text_urls:
     - https://github.com/erich666/GraphicsGems/blob/master/LICENSE.md

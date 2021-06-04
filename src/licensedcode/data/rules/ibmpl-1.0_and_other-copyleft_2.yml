@@ -1,0 +1,5 @@
+license_expression: ibmpl-1.0 AND other-copyleft
+is_license_text: yes
+relevance: 100
+notes: and old license based on or preceding the ibmpl Seen in https://fossies.org/linux/misc/old/dx-4.4.4.tar.gz/dx-4.4.4/LICENSE?m=t
+    and https://github.com/aur-archive/opendx/blob/fe0b9f3b94319f869b8edf2e2093cd11757d42ac/LICENSE

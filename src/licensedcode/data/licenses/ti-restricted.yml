@@ -3,4 +3,5 @@ short_name: TI Restricted Use License
 name: Texas Instruments Restricted Use License
 category: Commercial
 owner: TI - Texas Instruments
+spdx_license_key: LicenseRef-scancode-ti-restricted
 minimum_coverage: 50

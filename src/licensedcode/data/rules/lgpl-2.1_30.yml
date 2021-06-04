@@ -1,5 +1,6 @@
 license_expression: lgpl-2.1
 is_license_reference: yes
-notes: Name and Url combination
+relevance: 100
+notes: This Name and Url combination is not "or later"
 ignorable_urls:
     - http://tinymce.moxiecode.com/license

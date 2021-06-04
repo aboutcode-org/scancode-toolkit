@@ -4,6 +4,7 @@ name: Developer Certificate of Origin 1.1
 category: Permissive
 owner: Linux Foundation
 homepage_url: https://developercertificate.org/
+spdx_license_key: LicenseRef-scancode-dco-1.1
 text_urls:
     - https://developercertificate.org/
 minimum_coverage: 90

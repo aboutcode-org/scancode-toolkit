@@ -4,6 +4,7 @@ name: PowerVR Tools Software End User License Agreement
 category: Proprietary Free
 owner: Imagination
 homepage_url: https://www.imgtec.com/developers/powervr-sdk-tools/powervr-tools-software-eula/
+spdx_license_key: LicenseRef-scancode-powervr-tools-software-eula
 standard_notice: |
     PLEASE READ THIS AGREEMENT CAREFULLY. BY USING ANY PORTION OF THE POWERVR
     TOOLS SOFTWARE YOU WILL BE LEGALLY BOUND TO THESE TERMS.

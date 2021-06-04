@@ -1,0 +1,26 @@
+license_expressions:
+  - gpl-2.0
+  - gpl-1.0-plus
+  - tex-live
+  - gpl-1.0-plus
+  - public-domain
+  - proprietary-license
+  - public-domain
+  - unknown-license-reference
+  - gpl-1.0-plus
+  - gust-font-1.0
+  - artistic-2.0 AND bsd-new AND gpl-2.0
+  - gpl-1.0-plus
+  - lppl-1.3c
+  - artistic-2.0 AND public-domain
+  - public-domain
+  - public-domain
+  - public-domain
+  - other-permissive
+  - public-domain
+  - lppl-1.0
+  - gpl-2.0-plus
+  - lppl-1.2
+  - lppl-1.2
+  - lppl-1.2
+  - lppl-1.2

@@ -3,3 +3,4 @@ short_name: Sun IIOP License
 name: Sun IIOP License
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-iiop

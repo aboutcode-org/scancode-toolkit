@@ -1,0 +1,9 @@
+license_expressions:
+  - osl-3.0
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/OSL-3.0.t2
+  originally expected to be detected as OSL-3.0
+  with coverage of 99.6
+  "a b c d e" list became "1 2 3 4 5".
+  Example: https://github.com/RestyaPlatform/board

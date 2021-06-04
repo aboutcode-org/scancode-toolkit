@@ -8,6 +8,7 @@ notes: |
     this is an old and rare license, replaced since by an Apache 2.0. This is a
     BSD variant. See original at
     http://web.archive.org/web/20040402030132/http://uportal.org/license.html
+spdx_license_key: LicenseRef-scancode-ja-sig
 ignorable_authors:
     - the JA-SIG Collaborative (http://www.ja-sig.org/)
 ignorable_urls:

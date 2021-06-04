@@ -3,6 +3,7 @@ short_name: ASN.1 Object Dumping Code License
 name: ASN.1 Object Dumping Code License
 category: Permissive
 owner: ASN.1 Project
+spdx_license_key: LicenseRef-scancode-asn1
 ignorable_copyrights:
     - copyright Peter Gutmann <pgut001@cs.auckland.ac.nz>
 ignorable_authors:

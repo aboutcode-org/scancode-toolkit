@@ -1,0 +1,14 @@
+- - GPL-3+
+  - LGPL-3+ or GPL-2+
+  - Unicode
+  - GPL-2+
+  - LGPL-3+
+- (gpl-3.0-plus AND gpl-3.0-plus) AND ((lgpl-3.0-plus AND lgpl-3.0-plus AND lgpl-3.0-plus) OR
+  (gpl-2.0-plus AND gpl-2.0-plus)) AND (unicode AND unicode)
+- |
+  Copyright (C) 2011-2014 Simon Josefsson
+  Copyright (C) 2001-2011 Free Software Foundation, Inc.
+  Copyright (c) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011 Simon Josefsson
+  Copyright (c) 2001, 2002 Nikos Mavrogiannopoulos
+  Copyright (c) 1998 Michael Zucchi
+  Copyright (c) 1991-2010 Unicode, Inc.

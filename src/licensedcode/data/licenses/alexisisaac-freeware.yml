@@ -4,5 +4,6 @@ name: Alexisisaac Freeware License
 category: Permissive
 owner: Alexis Isaac
 homepage_url: https://sourceforge.net/projects/soleditor/?source=typ_redirect
+spdx_license_key: LicenseRef-scancode-alexisisaac-freeware
 ignorable_urls:
     - http://www.alexisisaac.net/products

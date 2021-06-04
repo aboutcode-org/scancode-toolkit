@@ -1,4 +1,2 @@
-license_expression: unknown
 is_false_positive: yes
-is_license_tag: yes
 notes: not a license, but the inclusion of a license file reference

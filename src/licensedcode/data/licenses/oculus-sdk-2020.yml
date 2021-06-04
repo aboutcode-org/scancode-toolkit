@@ -1,0 +1,18 @@
+key: oculus-sdk-2020
+short_name: Oculus SDK License Agreement 2020
+name: Oculus SDK License Agreement 2020
+category: Proprietary Free
+owner: Facebook
+homepage_url: https://developer.oculus.com/licenses/oculussdk/
+other_urls:
+    - https://developer.oculus.com/downloads/
+spdx_license_key: LicenseRef-scancode-oculus-sdk-2020
+ignorable_copyrights:
+  - (c) Facebook Technologies, LLC and its affiliates
+  - Copyright (c) Facebook Technologies, LLC and its affiliates
+ignorable_holders:
+  - Facebook Technologies, LLC and its affiliates
+ignorable_urls:
+  - https://developer.oculus.com/
+  - https://developer.oculus.com/licenses/oculussdk/
+

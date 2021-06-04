@@ -4,3 +4,4 @@ name: BSD-1-Clause Build system
 category: Permissive
 owner: PRPL Foundation.
 homepage_url: https://github.com/prplfoundation/prplwrt/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-bsd-1-clause-build

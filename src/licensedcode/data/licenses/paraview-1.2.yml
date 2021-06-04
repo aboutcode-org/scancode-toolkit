@@ -3,10 +3,13 @@ short_name: ParaView License 1.2
 name: ParaView License 1.2
 category: Permissive
 owner: ParaView Project
+spdx_license_key: LicenseRef-scancode-paraview-1.2
 minimum_coverage: 80
 ignorable_copyrights:
-    - Copyright (c) 2000-2005 Kitware Inc. 28 Corporate Drive, Suite 204, Clifton Park, NY, 12065, USA.
-    - Copyright (c) 2000-2006 Kitware Inc. 28 Corporate Drive, Suite 204, Clifton Park, NY, 12065, USA.
+    - Copyright (c) 2000-2005 Kitware Inc. 28 Corporate Drive, Suite 204, Clifton Park, NY,
+        12065, USA.
+    - Copyright (c) 2000-2006 Kitware Inc. 28 Corporate Drive, Suite 204, Clifton Park, NY,
+        12065, USA.
     - Copyright (c) 2002 U.S. Army Research Laboratory
     - Copyright (c) 2002-2005 Los Alamos National Laboratory
     - Copyright (c) 2005-2008 Sandia Corporation, Kitware Inc.

@@ -1,0 +1,9 @@
+license_expressions:
+  - apsl-2.0
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/APSL-2.0.t2
+  originally expected to be detected as APSL-2.0
+  with coverage of 100.0
+  "Apple Computer Inc" instead of "Apple Inc"
+  Example: https://github.com/apple/darwin-xnu

@@ -1,6 +1,4 @@
 
-from __future__ import absolute_import
-from __future__ import division
 
 from collections import namedtuple
 import sys
@@ -49,7 +47,7 @@ if TRACE :
     logger = logging.getLogger(__name__)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
@@ -105,7 +103,7 @@ def int2unicode(nums):
     """
     Convert an array of positive integers to a unicode string.
     """
-    return u''.join(unichr(i + 1) for i in nums)
+    return u''.join(chr(i + 1) for i in nums)
 
 
 def trim(diffs):

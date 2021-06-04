@@ -1,4 +1,3 @@
 license_expression: gpl-2.0 WITH linux-syscall-exception-gpl
 is_license_notice: yes
-is_license_tag: yes
 minimum_coverage: 90

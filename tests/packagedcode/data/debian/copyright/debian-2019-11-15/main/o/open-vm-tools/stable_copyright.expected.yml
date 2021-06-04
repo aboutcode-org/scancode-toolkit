@@ -1,0 +1,13 @@
+- - LGPL-2.1
+  - GPL-2
+  - BSD-3
+  - MIT(*)
+  - MIT(**)
+  - GPL-2+
+- (lgpl-2.1 AND gpl-3.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND gpl-2.0) AND bsd-new
+  AND (isc AND ibm-dhcp) AND xfree86-1.0
+- |
+  VMware, Inc. <http://www.vmware.com/>
+  1990, 1993 The Regents of the University of California.
+  1996, 1998 Internet Software Consortium
+  2006 VMware, Inc. <http://www.vmware.com/>

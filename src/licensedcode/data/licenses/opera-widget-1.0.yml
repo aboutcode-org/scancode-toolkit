@@ -4,6 +4,7 @@ name: Opera Widget License v1.0
 category: Proprietary Free
 owner: Opera Software ASA
 homepage_url: http://dev.opera.com/articles/view/opera-widgets-sdk/
+spdx_license_key: LicenseRef-scancode-opera-widget-1.0
 ignorable_copyrights:
     - (c) Copyright 2006 Opera Software ASA.
 ignorable_holders:

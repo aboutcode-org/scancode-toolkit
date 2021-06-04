@@ -1,0 +1,16 @@
+license_expression: gpl-2.0-plus WITH upx-exception-2.0-plus
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 1996-2000 Laszlo Molnar
+    - Copyright (c) 1996-2000 Markus Franz Xaver Johannes Oberhumer
+    - Copyright (c) 1996-2000 Markus Franz Xaver Johannes Oberhumer UPX
+ignorable_holders:
+    - Laszlo Molnar
+    - Markus Franz Xaver Johannes Oberhumer
+    - Markus Franz Xaver Johannes Oberhumer UPX
+ignorable_urls:
+    - http://upx.sourceforge.net/upx-license.html
+ignorable_emails:
+    - markus.oberhumer@jk.uni-linz.ac.at
+    - ml1050@cdata.tvnet.hu

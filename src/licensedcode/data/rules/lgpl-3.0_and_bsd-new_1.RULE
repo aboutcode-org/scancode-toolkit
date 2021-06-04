@@ -1,0 +1,11 @@
+The 'core' of  (located in /core) is licensed under LGPLv3.
+This just means that if you make any changes to how that code works,
+you must release those changes under the LGPL.
+If you just *use* , then you can use any license you want for your own code.
+
+We don't feel that the restrictions imposed by the LGPL make sense for the
+'non-core' functionality in (derivative code must *also* be LGPL or GPL),
+especially for examples and utility code, so we have relicensed all 'non-core'
+code under the more permissive BSD (specifically Modified BSD aka New BSD aka
+3-clause BSD), where possible. This means that you can copy this code and build
+your own apps without needing to license your own code with the LGPL or GPL.

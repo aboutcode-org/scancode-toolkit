@@ -3,5 +3,6 @@ short_name: Sun BCL J2RE 1.4.2
 name: Sun BCL J2RE 1.4.2
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bcl-j2re-1.4.2
 ignorable_urls:
     - http://www.sun.com/policies/trademarks

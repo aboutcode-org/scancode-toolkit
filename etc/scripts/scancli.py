@@ -1,22 +1,12 @@
 #
-# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import json
 from os.path import abspath
 from os.path import dirname
@@ -63,7 +53,7 @@ def scan(locations, deserialize=False, scancode_root_dir=None):
         channel.send(scan_kwargs)  # execute func-call remotely
         results = channel.receive()
         if deserialize:
-            results = json.loads(results, object_pairs_hook=OrderedDict)
+            results = json.loads(results)
         yield results
 
 

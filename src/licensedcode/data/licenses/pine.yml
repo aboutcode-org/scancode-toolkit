@@ -4,6 +4,7 @@ name: Pine License
 category: Permissive
 owner: University of Washington IT
 homepage_url: http://www.washington.edu/pine/overview/legal.html
+spdx_license_key: LicenseRef-scancode-pine
 text_urls:
     - http://www.washington.edu/pine/overview/legal.html
 other_urls:

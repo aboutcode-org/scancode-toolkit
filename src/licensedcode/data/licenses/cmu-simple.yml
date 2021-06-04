@@ -5,3 +5,4 @@ category: Permissive
 owner: Carnegie Mellon University
 notes: This is a simplified variant of license with a text otherwise borrowed from the cmu-template
     license
+spdx_license_key: LicenseRef-scancode-cmu-simple

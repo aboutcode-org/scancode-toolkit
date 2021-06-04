@@ -1,0 +1,5 @@
+license_expression: mit
+is_license_notice: yes
+relevance: 99
+notes: The leading "Permission" word is missing. This is a typo and the license text is a bona
+    fide MIT otherwise See also https://github.com/Succo/emoji/issues/1 and https://github.com/Succo/wkttoorb/pull/1

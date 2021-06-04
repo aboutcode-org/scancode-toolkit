@@ -4,4 +4,5 @@ name: SaaS MIT License
 category: Permissive
 owner: CubesViewer
 homepage_url: https://github.com/jjmontesl/cubesviewer/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-saas-mit
 minimum_coverage: 80

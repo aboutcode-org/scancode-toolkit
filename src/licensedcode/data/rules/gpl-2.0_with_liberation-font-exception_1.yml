@@ -1,0 +1,5 @@
+license_expression: gpl-2.0 WITH liberation-font-exception
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://fedoraproject.org/wiki/Licensing/LiberationFontLicense

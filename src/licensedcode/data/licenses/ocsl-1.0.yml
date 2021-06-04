@@ -4,6 +4,7 @@ name: Oracle Community Source License v1.0
 category: Copyleft Limited
 owner: Oracle Corporation
 homepage_url: https://oss.oracle.com/licenses/OCSL
+spdx_license_key: LicenseRef-scancode-ocsl-1.0
 ignorable_copyrights:
     - Copyright 1999, 2000 Oracle Corporation
 ignorable_holders:

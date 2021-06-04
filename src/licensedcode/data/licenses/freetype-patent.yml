@@ -6,4 +6,5 @@ owner: FreeType Project
 homepage_url: https://www.freetype.org/
 notes: This patent grant clause is similat to Apache-2.0 section 3 and is sometimes seen used
     alone with the freetype license.
+spdx_license_key: LicenseRef-scancode-freetype-patent
 minimum_coverage: 70

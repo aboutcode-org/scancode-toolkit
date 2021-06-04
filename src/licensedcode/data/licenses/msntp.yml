@@ -4,6 +4,7 @@ name: MSNTP software license
 category: Copyleft
 owner: Fedora
 homepage_url: http://fedoraproject.org/wiki/Licensing/MSNTP
+spdx_license_key: LicenseRef-scancode-msntp
 text_urls:
     - http://fedoraproject.org/wiki/Licensing/MSNTP
 ignorable_copyrights:

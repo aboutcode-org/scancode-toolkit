@@ -4,6 +4,6 @@ relevance: 100
 ignorable_copyrights:
     - Copyright https://DidierStevens.com
 ignorable_holders:
-  - https://DidierStevens.com
+    - https://DidierStevens.com
 ignorable_urls:
     - https://didierstevens.com/

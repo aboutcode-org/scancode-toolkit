@@ -4,14 +4,14 @@ name: Dgraph Community License Agreement
 category: Source-available
 owner: Dgraph
 homepage_url: https://github.com/dgraph-io/dgraph/blob/master/licenses/DCL.txt
+spdx_license_key: LicenseRef-scancode-dgraph-cla
 ignorable_copyrights:
-  - (c) Dgraph Enterprise Edition
-ignorable_emails:
-  - contact@dgraph.io
+    - (c) Dgraph Enterprise Edition
 ignorable_holders:
-  - Dgraph Enterprise Edition
+    - Dgraph Enterprise Edition
 ignorable_urls:
-  - http://www.apache.org/licenses/LICENSE-2.0
-  - https://cla-assistant.io/dgraph-io/dgraph
-  - https://github.com/dgraph-io/dgraph
-
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - https://cla-assistant.io/dgraph-io/dgraph
+    - https://github.com/dgraph-io/dgraph
+ignorable_emails:
+    - contact@dgraph.io

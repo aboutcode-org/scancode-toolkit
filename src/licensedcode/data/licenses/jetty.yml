@@ -4,6 +4,7 @@ name: Jetty License
 category: Permissive
 owner: Jetty Project
 homepage_url: http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt
+spdx_license_key: LicenseRef-scancode-jetty
 text_urls:
     - http://svn.apache.org/repos/asf/forrest/trunk/tools/jetty/jetty-4.2.19.jar.license.html
     - http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt

@@ -4,6 +4,7 @@ name: CommonJ Timer and Work Manager License
 category: Permissive
 owner: Oracle Corporation
 homepage_url: http://ebr.springsource.com/repository/app/bundle/version/detail?name=com.springsource.commonj&version=1.1.0
+spdx_license_key: LicenseRef-scancode-commonj-timer
 faq_url: http://docs.oracle.com/cd/E13222_01/wls/docs100/commonj/commonj.html
 other_urls:
     - http://docs.oracle.com/cd/E13222_01/wls/docs100/commonj/commonj.html

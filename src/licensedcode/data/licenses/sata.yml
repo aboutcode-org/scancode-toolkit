@@ -4,17 +4,17 @@ name: Star And Thank Author License
 category: Permissive
 owner: zTrix
 homepage_url: https://github.com/zTrix/sata-license/blob/a72e947589ac80df3a0e586f2cb3c154bb9923f0/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-sata
 other_urls:
     - https://github.com/zTrix/sata-license
     - https://github.com/kongtianyi/sata-license
 ignorable_copyrights:
     - Copyright (c) 2014 zTrix(i@ztrix.me)
+ignorable_holders:
+    - zTrix(i@ztrix.me)
 ignorable_urls:
     - https://github.com/kongtianyi/sata-license
     - https://github.com/zTrix/sata-license
 ignorable_emails:
     - i@ztrix.me
     - kongtianyi@foxmail.com
-ignorable_holders:
-  - zTrix(i@ztrix.me)
-

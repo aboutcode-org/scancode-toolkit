@@ -1,58 +1,34 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import json
 import os
 
 from commoncode.testcase import FileBasedTesting
-from commoncode.system import py2
-from commoncode.system import py3
 
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 from licensedcode.models import Rule
+from licensedcode.models import rules_data_dir
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
 def check_json(expected, results, regen=False):
     if regen:
-        if py2:
-            mode = 'wb'
-        if py3:
-            mode = 'w'
+        mode = 'w'
         with open(expected, mode) as ex:
             json.dump(results, ex, indent=2, separators=(',', ': '))
     with open(expected) as ex:
-        expected = json.load(ex, object_pairs_hook=OrderedDict)
-    assert expected == results
+        expected = json.load(ex)
+    assert results == expected
 
 
 def as_sorted_mapping_seq(licenses):
@@ -127,37 +103,47 @@ class TestLicense(FileBasedTesting):
 
     def test_validate_license_library(self):
         errors, warnings, infos = models.License.validate(
-            cache.get_licenses_db(), verbose=True)
-        assert {} == errors
-        assert {} == warnings
+            cache.get_licenses_db(),
+            verbose=False,
+        )
+        assert errors == {}
+        assert warnings == {}
         assert infos
 
     def test_validate_license_library_can_return_errors(self):
         test_dir = self.get_test_loc('models/validate')
         lics = models.load_licenses(test_dir)
         errors, warnings, infos = models.License.validate(
-            lics, no_dupe_urls=True, verbose=True)
+            lics,
+            no_dupe_urls=True,
+            verbose=False,
+        )
+
         expected_errors = {
             'GLOBAL': [
-                'Duplicate texts in multiple licenses:apache-2.0: TEXT, bsd-ack-carrot2: TEXT',
-                'Duplicate short name:GPL 1.0 in licenses:gpl-1.0-plus, gpl-1.0',
-                'Duplicate name:GNU General Public License 1.0 in licenses:gpl-1.0-plus, gpl-1.0'],
+                'Duplicate texts in multiple licenses: apache-2.0: TEXT, bsd-ack-carrot2: TEXT',
+                'Duplicate short name: GPL 1.0 in licenses: gpl-1.0-plus, gpl-1.0',
+                'Duplicate name: GNU General Public License 1.0 in licenses: gpl-1.0-plus, gpl-1.0'],
             'bsd-ack-carrot2': [
                 'No short name',
                 'No name',
                 'No category',
-                'No owner'],
+                'No owner',
+                'No SPDX license key'],
             'gpl-1.0': [
                 'Unknown license category: GNU Copyleft.\nUse one of these valid categories:\n'
                 'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
-                'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License'],
+                'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License',
+                'No SPDX license key'],
             'w3c-docs-19990405': [
                 'Unknown license category: Permissive Restricted.\nUse one of these valid categories:\n'
                 'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
-                'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License']
+                'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License',
+                'No SPDX license key'],
         }
 
-        assert expected_errors == errors
+        assert errors == expected_errors
+
         expected_warnings = {
             'gpl-1.0': [
                 'Some empty text_urls values',
@@ -170,10 +156,10 @@ class TestLicense(FileBasedTesting):
                 'Some duplicated URLs']
         }
 
-        assert expected_warnings == warnings
+        assert warnings == expected_warnings
 
         expected_infos = {'w3c-docs-19990405': [u'No license text']}
-        assert expected_infos == infos
+        assert infos == expected_infos
 
     def test_load_licenses_fails_if_directory_contains_orphaned_files(self):
         test_dir = self.get_test_loc('models/orphaned_licenses')
@@ -181,7 +167,7 @@ class TestLicense(FileBasedTesting):
             list(models.load_licenses(test_dir))
             self.fail('Exception not raised')
         except Exception as e:
-            assert 'Some License data or text files are orphaned' in str(e)
+            assert 'Some License files are orphaned in' in str(e)
 
 
 class TestRule(FileBasedTesting):
@@ -190,8 +176,8 @@ class TestRule(FileBasedTesting):
     def test_create_rule_ignore_punctuation(self):
         test_rule = models.Rule(stored_text='A one. A {{}}two. A three.')
         expected = ['one', 'two', 'three']
-        assert expected == list(test_rule.tokens())
-        assert 3 == test_rule.length
+        assert list(test_rule.tokens()) == expected
+        assert test_rule.length == 3
 
     def test_create_plain_rule_with_text_file(self):
 
@@ -203,8 +189,8 @@ class TestRule(FileBasedTesting):
 
         test_rule = models.Rule(text_file=create_test_file('A one. A two. A three.'))
         expected = ['one', 'two', 'three']
-        assert expected == list(test_rule.tokens())
-        assert 3 == test_rule.length
+        assert list(test_rule.tokens()) == expected
+        assert test_rule.length == 3
 
     def test_load_rules(self):
         test_dir = self.get_test_loc('models/rules')
@@ -213,6 +199,32 @@ class TestRule(FileBasedTesting):
         results = as_sorted_mapping_seq(rules)
         expected = self.get_test_loc('models/rules.expected.json')
         check_json(expected, results)
+
+    def test_rules_types_has_only_boolean_values(self):
+        rules = list(models.load_rules(rules_data_dir))
+        rule_consitency_errors = []
+
+        for r in rules:
+            list_rule_types = [r.is_license_text, r.is_license_notice,
+                               r.is_license_tag, r.is_license_reference]
+
+            if any(type(rule_type) != bool for rule_type in list_rule_types):
+                rule_consitency_errors.append((r.data_file, r.text_file))
+
+        assert rule_consitency_errors == []
+
+    def test_rules_have_only_one_rule_type(self):
+        rules = list(models.load_rules(rules_data_dir))
+        rule_consitency_errors = []
+
+        for r in rules:
+            list_rule_types = [r.is_license_text, r.is_license_notice,
+                               r.is_license_tag, r.is_license_reference]
+
+            if sum(list_rule_types) > 1:
+                rule_consitency_errors.append(r.data_file)
+
+        assert rule_consitency_errors == []
 
     def test_dump_rules(self):
         test_dir = self.get_test_loc('models/rules', copy=True)
@@ -261,7 +273,7 @@ class TestRule(FileBasedTesting):
     def test_template_rule_is_loaded_correctly(self):
         test_dir = self.get_test_loc('models/rule_template')
         rules = list(models.load_rules(test_dir))
-        assert 1 == len(rules)
+        assert len(rules) == 1
 
     def test_rule_len_is_computed_correctly(self):
         test_text = '''zero one two three
@@ -269,12 +281,12 @@ class TestRule(FileBasedTesting):
             five six seven eight nine ten'''
         r1 = models.Rule(stored_text=test_text)
         list(r1.tokens())
-        assert 12 == r1.length
+        assert r1.length == 12
 
     def test_rule_templates_are_ignored(self):
         test_text = '''{{gap0}}zero one two three{{gap2}}'''
         r1 = models.Rule(stored_text=test_text)
-        assert ['gap0', 'zero', 'one', 'two', 'three', 'gap2'] == list(r1.tokens())
+        assert list(r1.tokens()) == ['gap0', 'zero', 'one', 'two', 'three', 'gap2']
 
     def test_rule_tokens_are_computed_correctly_ignoring_templates(self):
         test_text = '''I hereby abandon any{{SAX 2.0 (the)}}, and Release all of {{the SAX 2.0 }}source code of his'''
@@ -286,7 +298,7 @@ class TestRule(FileBasedTesting):
             'release', 'all', 'of', 'the', 'sax', '2', '0', 'source', 'code',
             'of', 'his'
         ]
-        assert expected == rule_tokens
+        assert rule_tokens == expected
 
     def test_compute_thresholds_occurences(self):
         minimum_coverage = 0.0
@@ -298,7 +310,7 @@ class TestRule(FileBasedTesting):
         expected_min_matched_length = 4
         expected_min_high_matched_length = 3
         expected = expected_min_cov, expected_min_matched_length, expected_min_high_matched_length
-        assert expected == results
+        assert results == expected
 
         length_unique = 39
         high_length_unique = 7
@@ -308,8 +320,7 @@ class TestRule(FileBasedTesting):
         expected_min_matched_length_unique = 4
         expected_min_high_matched_length_unique = 3
         expected = expected_min_matched_length_unique, expected_min_high_matched_length_unique
-        assert expected == results
-
+        assert results == expected
 
     def test_Thresholds(self):
         r1_text = 'licensed under the GPL, licensed under the GPL'
@@ -323,7 +334,7 @@ class TestRule(FileBasedTesting):
         expected_min_matched_length = 8
         expected_min_high_matched_length = 4
         expected = expected_min_cov, expected_min_matched_length, expected_min_high_matched_length
-        assert expected == results
+        assert results == expected
 
         results = models.compute_thresholds_unique(
             r1.minimum_coverage, r1.length, r1.length_unique, r1.high_length_unique)
@@ -331,21 +342,21 @@ class TestRule(FileBasedTesting):
         expected_min_matched_length_unique = 3
         expected_min_high_matched_length_unique = 2
         expected = expected_min_matched_length_unique, expected_min_high_matched_length_unique
-        assert expected == results
+        assert results == expected
 
         results = models.compute_thresholds_occurences(r2.minimum_coverage, r2.length, r2.high_length)
         expected_min_cov = 0.0
         expected_min_matched_length = 4
         expected_min_high_matched_length = 3
         expected = expected_min_cov, expected_min_matched_length, expected_min_high_matched_length
-        assert expected == results
+        assert results == expected
 
         results = models.compute_thresholds_unique(
             r2.minimum_coverage, r2.length, r2.length_unique, r2.high_length_unique)
         expected_min_matched_length_unique = 4
         expected_min_high_matched_length_unique = 1
         expected = expected_min_matched_length_unique, expected_min_high_matched_length_unique
-        assert expected == results
+        assert results == expected
 
     def test_compute_relevance_does_not_change_stored_relevance(self):
         rule = models.Rule(stored_text='1', license_expression='public-domain')
@@ -353,7 +364,7 @@ class TestRule(FileBasedTesting):
         rule.has_stored_relevance = True
         rule.length = 1000
         rule.compute_relevance()
-        assert 13 == rule.relevance
+        assert rule.relevance == 13
 
     def test_compute_relevance_is_hundred_for_false_positive(self):
         rule = models.Rule(stored_text='1', license_expression='public-domain')
@@ -362,17 +373,7 @@ class TestRule(FileBasedTesting):
         rule.is_false_positive = True
         rule.length = 1000
         rule.compute_relevance()
-        assert 100 == rule.relevance
-
-    def test_compute_relevance_is_hundred_for_negative(self):
-        rule = models.Rule(stored_text='1')
-        rule.is_negative = True
-        rule.relevance = 13
-        rule.has_stored_relevance = False
-        rule.is_false_positive = False
-        rule.length = 1000
-        rule.compute_relevance()
-        assert 100 == rule.relevance
+        assert rule.relevance == 100
 
     def test_compute_relevance_is_using_rule_length(self):
         rule = models.Rule(stored_text='1', license_expression='some-license')
@@ -382,71 +383,71 @@ class TestRule(FileBasedTesting):
 
         rule.length = 1000
         rule.compute_relevance()
-        assert 100 == rule.relevance
+        assert rule.relevance == 100
 
         rule.length = 21
         rule.compute_relevance()
-        assert 100 == rule.relevance
+        assert rule.relevance == 100
 
         rule.length = 20
         rule.compute_relevance()
-        assert 100 == rule.relevance
+        assert rule.relevance == 100
 
         rule.length = 18
         rule.compute_relevance()
-        assert 100 == rule.relevance
+        assert rule.relevance == 100
 
         rule.length = 17
         rule.compute_relevance()
-        assert 94 == rule.relevance
+        assert rule.relevance == 94
 
         rule.length = 16
         rule.compute_relevance()
-        assert 88 == rule.relevance
+        assert rule.relevance == 88
 
         rule.length = 15
         rule.compute_relevance()
-        assert 83 == rule.relevance
+        assert rule.relevance == 83
 
         rule.length = 14
         rule.compute_relevance()
-        assert 77 == rule.relevance
+        assert rule.relevance == 77
 
         rule.length = 13
         rule.compute_relevance()
-        assert 72 == rule.relevance
+        assert rule.relevance == 72
 
         rule.length = 12
         rule.compute_relevance()
-        assert 66 == rule.relevance
+        assert rule.relevance == 66
 
         rule.length = 11
         rule.compute_relevance()
-        assert 61 == rule.relevance
+        assert rule.relevance == 61
 
         rule.length = 10
         rule.compute_relevance()
-        assert 55 == rule.relevance
+        assert rule.relevance == 55
 
         rule.length = 8
         rule.compute_relevance()
-        assert 44 == rule.relevance
+        assert rule.relevance == 44
 
         rule.length = 5
         rule.compute_relevance()
-        assert 27 == rule.relevance
+        assert rule.relevance == 27
 
         rule.length = 2
         rule.compute_relevance()
-        assert 11 == rule.relevance
+        assert rule.relevance == 11
 
         rule.length = 1
         rule.compute_relevance()
-        assert 5 == rule.relevance
+        assert rule.relevance == 5
 
         rule.length = 0
         rule.compute_relevance()
-        assert 0 == rule.relevance
+        assert rule.relevance == 0
 
     def test_rule_must_have_text(self):
         data_file = self.get_test_loc('models/rule_no_text/mit.yml')
@@ -472,3 +473,8 @@ class TestRule(FileBasedTesting):
         rules = list(models.load_rules(rule_dir))
         result = [' '.join(list(r.tokens())[-4:]) for r in  rules]
         assert not any([r == 'rules proprietary 10 rule' for r in result])
+
+    def test_Rule__validate_with_false_positive_rule(self):
+        rule_dir = self.get_test_loc('models/rule_validate')
+        rule = list(models.load_rules(rule_dir))[0]
+        assert list(rule.validate()) == []

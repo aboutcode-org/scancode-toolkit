@@ -3,3 +3,4 @@ short_name: GLUT License
 name: OpenGL Utility Toolkit (GLUT) License
 category: Permissive
 owner: OpenGL
+spdx_license_key: LicenseRef-scancode-glut

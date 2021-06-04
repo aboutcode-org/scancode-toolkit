@@ -4,6 +4,7 @@ name: William Alexander License
 category: Permissive
 owner: Unspecified
 homepage_url: http://www.java-samples.com/
+spdx_license_key: LicenseRef-scancode-william-alexander
 text_urls:
     - http://www.java-samples.com/
 other_urls:

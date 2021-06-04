@@ -3,6 +3,7 @@ short_name: FreeBSD unmodified first lines License
 name: FreeBSD unmodified first lines License
 category: Permissive
 owner: FreeBSD
+spdx_license_key: LicenseRef-scancode-freebsd-first
 text_urls:
     - https://opensource.apple.com/source/Libc/Libc-498/pthreads/pthread_getschedparam.3.auto.html
     - https://github.com/samir-kassab/RSX208/blob/ff9c702aad525de0a6482d54a39fb116899666c8/git-1.8.1.2/vcs-svn/LICENSE

@@ -4,6 +4,7 @@ name: Facebook Software License
 category: Proprietary Free
 owner: Facebook
 notes: license found in several Facebook SDKs
+spdx_license_key: LicenseRef-scancode-facebook-software-license
 text_urls:
     - https://github.com/facebook/facebook-android-sdk/blob/752ea7b77a1779ed8b784dbd55a886cc00aeb8a6/LICENSE.txt
     - https://github.com/facebook/facebook-android-sdk/blob/master/LICENSE.txt

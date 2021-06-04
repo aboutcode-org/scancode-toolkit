@@ -4,6 +4,7 @@ name: GNU General Public License 2.0 with DjVu Patent Grant
 category: Copyleft
 owner: LizardTech
 notes: GPL and other terms
+spdx_license_key: LicenseRef-scancode-gpl-2.0-djvu
 other_urls:
     - https://sourceforge.net/projects/djvu/files/DjVuLibre/3.5.1/djvulibre-3.5.1.tar.gz/download
 ignorable_copyrights:

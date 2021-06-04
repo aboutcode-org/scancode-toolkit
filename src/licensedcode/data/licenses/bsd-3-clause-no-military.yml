@@ -1,0 +1,12 @@
+key: bsd-3-clause-no-military
+short_name: BSD-3-Clause-No-Military
+name: BSD-3-Clause-No-Military
+category: Free Restricted
+owner: Unspecified
+spdx_license_key: BSD-3-Clause-No-Military-License
+other_spdx_license_keys:
+    - LicenseRef-scancode-bsd-3-clause-no-military
+other_urls:
+    - https://gitlab.syncad.com/hive/dhive/-/blob/master/LICENSE
+    - https://github.com/greymass/swift-eosio/blob/master/LICENSE
+minimum_coverage: 90

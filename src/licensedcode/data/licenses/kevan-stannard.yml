@@ -4,6 +4,7 @@ name: Kevan Stannard Free Software License
 category: Permissive
 owner: Kevan Stannard
 homepage_url: https://github.com/jmlingeman/Network-Inference-Workspace/blob/master/algorithms/banjo/src/edu/duke/cs/banjo/utility/JZOOWildCardFilter.java#L30
+spdx_license_key: LicenseRef-scancode-kevan-stannard
 standard_notice: |
     * Copyright (c) 1998 Kevan Stannard. All Rights Reserved.
     *

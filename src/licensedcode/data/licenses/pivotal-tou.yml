@@ -4,6 +4,7 @@ name: Pivotal Software Terms of Use
 category: Commercial
 owner: Pivotal
 homepage_url: https://pivotal.io/terms-of-use
+spdx_license_key: LicenseRef-scancode-pivotal-tou
 minimum_coverage: 90
 ignorable_urls:
     - https://pivotal.io/terms-of-use

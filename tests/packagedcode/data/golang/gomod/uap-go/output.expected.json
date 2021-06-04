@@ -28,7 +28,7 @@
     "root_path": null,
     "dependencies": [
       {
-        "purl": "pkg:golang/gopkg.in/yaml.v2",
+        "purl": "pkg:golang/gopkg.in/yaml.v2@v2.2.1",
         "requirement": "v2.2.1",
         "scope": "require",
         "is_runtime": true,

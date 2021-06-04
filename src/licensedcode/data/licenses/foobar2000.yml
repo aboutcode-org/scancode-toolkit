@@ -4,3 +4,4 @@ name: foobar2000 License
 category: Proprietary Free
 owner: foobar2000 Project
 homepage_url: http://www.foobar2000.org/license
+spdx_license_key: LicenseRef-scancode-foobar2000

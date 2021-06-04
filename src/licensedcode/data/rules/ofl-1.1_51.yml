@@ -1,0 +1,5 @@
+license_expression: ofl-1.1
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL

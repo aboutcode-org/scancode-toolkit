@@ -4,6 +4,7 @@ name: Creative Commons Attribution License 2.0 UK
 category: Permissive
 owner: Creative Commons
 homepage_url: http://creativecommons.org/licenses/by/2.0/uk/
+spdx_license_key: LicenseRef-scancode-cc-by-2.0-uk
 text_urls:
     - http://creativecommons.org/licenses/by/2.0/uk/legalcode
 faq_url: http://creativecommons.org/licenses/by/2.0/uk/

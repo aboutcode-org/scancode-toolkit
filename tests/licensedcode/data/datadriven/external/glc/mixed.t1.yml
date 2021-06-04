@@ -1,0 +1,11 @@
+license_expressions:
+  - mit
+  - mit
+  - bsd-new
+  - bsd-new
+  - cc-by-4.0
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/mixed.t1
+  originally expected to be detected as CC-BY-4.0
+  with coverage of 93.6

@@ -1,16 +1,118 @@
 #!/bin/bash
 #
-# Copyright (c) 2015 nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# ScanCode is a trademark of nexB Inc.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
+# A minimal shell wrapper to the CLI entry point fo ScanCode
 
-# A minimal shell wrapper to the CLI entry point
 
-SCANCODE_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+###################################################################################
+# from https://raw.githubusercontent.com/mkropat/sh-realpath/58c03982cfd8accbcf0c4426a4adf0f120a8b2bb/realpath.sh
+# realpath emulation for portability on *nix
+# this allow running scancode from arbitrary locations and from symlinks
+#
+# Copyright (c) 2014 Michael Kropat
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
 
-SCANCODE_CONFIGURED_PYTHON=$SCANCODE_ROOT_DIR/bin/python
+realpath() {
+    canonicalize_path "$(resolve_symlinks "$1")"
+}
+
+resolve_symlinks() {
+    _resolve_symlinks "$1"
+}
+
+_resolve_symlinks() {
+    _assert_no_path_cycles "$@" || return
+
+    local dir_context path
+    path=$(readlink -- "$1")
+    if [ $? -eq 0 ]; then
+        dir_context=$(dirname -- "$1")
+        _resolve_symlinks "$(_prepend_dir_context_if_necessary "$dir_context" "$path")" "$@"
+    else
+        printf '%s\n' "$1"
+    fi
+}
+
+_prepend_dir_context_if_necessary() {
+    if [ "$1" = . ]; then
+        printf '%s\n' "$2"
+    else
+        _prepend_path_if_relative "$1" "$2"
+    fi
+}
+
+_prepend_path_if_relative() {
+    case "$2" in
+        /* ) printf '%s\n' "$2" ;;
+         * ) printf '%s\n' "$1/$2" ;;
+    esac
+}
+
+_assert_no_path_cycles() {
+    local target path
+
+    target=$1
+    shift
+
+    for path in "$@"; do
+        if [ "$path" = "$target" ]; then
+            return 1
+        fi
+    done
+}
+
+canonicalize_path() {
+    if [ -d "$1" ]; then
+        _canonicalize_dir_path "$1"
+    else
+        _canonicalize_file_path "$1"
+    fi
+}
+
+_canonicalize_dir_path() {
+    (cd "$1" 2>/dev/null && pwd -P)
+}
+
+_canonicalize_file_path() {
+    local dir file
+    dir=$(dirname -- "$1")
+    file=$(basename -- "$1")
+    (cd "$dir" 2>/dev/null && printf '%s/%s\n' "$(pwd -P)" "$file")
+}
+
+###################################################################################
+# Now run scancode proper
+
+SCANCODE_BIN="$( realpath "${BASH_SOURCE[0]}" )"
+SCANCODE_ROOT_DIR="$( cd "$( dirname "${SCANCODE_BIN}" )" && pwd )"
+
+SCANCODE_CONFIGURED_PYTHON="$SCANCODE_ROOT_DIR/bin/python"
 if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
     echo "* Configuring ScanCode for first use..."
-    CONFIGURE_QUIET=1 $SCANCODE_ROOT_DIR/configure etc/conf
+    CONFIGURE_QUIET=-qq "$SCANCODE_ROOT_DIR/configure"
 fi
 
-$SCANCODE_ROOT_DIR/bin/extractcode "$@"
+"$SCANCODE_ROOT_DIR/bin/extractcode" "$@"

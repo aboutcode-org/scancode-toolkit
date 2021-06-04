@@ -3,6 +3,7 @@ short_name: Sun Communications API
 name: Sun Communications API
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-communications-api
 ignorable_copyrights:
     - Copyright Sun Microsystems, Inc.
 ignorable_holders:

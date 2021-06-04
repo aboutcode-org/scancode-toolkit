@@ -4,6 +4,7 @@ name: Vtiger Public License 1.1
 category: Copyleft Limited
 owner: vtiger
 homepage_url: https://www.vtiger.com/open-source-crm/vtiger-public-license/
+spdx_license_key: LicenseRef-scancode-vpl-1.1
 faq_url: https://www.vtiger.com/open-source-crm/
 other_urls:
     - https://www.vtiger.com/open-source-crm/

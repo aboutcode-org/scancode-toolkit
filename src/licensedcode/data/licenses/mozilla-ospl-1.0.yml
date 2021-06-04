@@ -4,6 +4,7 @@ name: Mozilla Open Software Patent License Agreement v1
 category: Patent License
 owner: Mozilla
 homepage_url: https://www.mozilla.org/en-US/about/patents/license/
+spdx_license_key: LicenseRef-scancode-mozilla-ospl-1.0
 faq_url: https://www.mozilla.org/en-US/about/patents/
 other_urls:
     - https://www.mozilla.org/en-US/about/patents/guide/

@@ -1,5 +1,5 @@
 [
-  "!<arch>\n/               1103042908              0       437       `",
+  "!<arch>",
   "0??_C@_01FBAH@1?$AA@",
   "??_C@_01GJD@?9?$AA@",
   "??_C@_01PLJA@0?$AA@",
@@ -28,8 +28,7 @@
   "_php_embed_init",
   "_php_embed_module",
   "_php_embed_shutdown",
-  "//              1103042908              0       27        `\n.\\Release_TS\\php_embed.obj",
-  "/0              1103042908              100666  6875      `\nL",
+  ".\\Release_TS\\php_embed.obj",
   ".drectve",
   ".data",
   ".data",

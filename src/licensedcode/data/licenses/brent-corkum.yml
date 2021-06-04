@@ -3,6 +3,7 @@ short_name: Brent Corkum License
 name: Brent Corkum License
 category: Permissive
 owner: Rocscience
+spdx_license_key: LicenseRef-scancode-brent-corkum
 ignorable_authors:
     - Brent Corkum
 ignorable_urls:

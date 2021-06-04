@@ -2,5 +2,4 @@ license_expression: public-domain
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
-  - https://licensebuttons.net/l/publicdomain
-
+    - https://licensebuttons.net/l/publicdomain

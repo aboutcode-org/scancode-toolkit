@@ -1,0 +1,7 @@
+license_expression: agpl-3.0 WITH ps-or-pdf-font-exception-20170817
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - LICENSE
+ignorable_urls:
+    - http://www.artifex.com/

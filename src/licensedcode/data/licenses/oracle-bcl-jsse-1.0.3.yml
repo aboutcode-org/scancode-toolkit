@@ -4,6 +4,7 @@ name: Oracle BCL for JSSE 1.0.3 for CDC 1.0.2
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://download.oracle.com/otn-pub/java/licenses/OTN_JSSE_Legacy_Binary-Code-License_9Mar2012.pdf
+spdx_license_key: LicenseRef-scancode-oracle-bcl-jsse-1.0.3
 ignorable_urls:
     - http://www.oracle.com/products/export
     - http://www.oracle.com/us/legal/third-party-trademarks/index.html

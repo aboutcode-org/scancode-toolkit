@@ -3,5 +3,6 @@ short_name: nexB SSLA 1.1.0
 name: nexB Software Subscription License Agreement 1.1.0
 category: Commercial
 owner: nexB
+spdx_license_key: LicenseRef-scancode-nexb-ssla-1.1.0
 ignorable_emails:
     - sales@nexb.com

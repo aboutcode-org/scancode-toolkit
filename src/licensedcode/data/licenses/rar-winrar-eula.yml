@@ -4,3 +4,4 @@ name: RAR and WinRAR EULA
 category: Commercial
 owner: RAR
 homepage_url: http://www.win-rar.com/
+spdx_license_key: LicenseRef-scancode-rar-winrar-eula

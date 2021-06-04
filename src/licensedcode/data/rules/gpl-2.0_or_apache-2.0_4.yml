@@ -1,6 +1,7 @@
 license_expression: gpl-2.0 OR apache-2.0
 is_license_notice: yes
 relevance: 100
+minimum_coverage: 90
 referenced_filenames:
     - COPYING
     - LICENSE.Apache
@@ -11,4 +12,3 @@ ignorable_holders:
     - the original author or authors
 ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
-minimum_coverage: 90

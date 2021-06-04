@@ -1,0 +1,7 @@
+license_expression: mit
+is_license_reference: yes
+relevance: 99
+minimum_coverage: 100
+referenced_filenames:
+    - Prerequisites.hpp
+notes: seen in https://github.com/DigitalPulseSoftware/NazaraEngine/blob/5075c35c52ad459cfc06973b5349cb7f8391de9a/SDK/include/NDK/Systems/ListenerSystem.inl

@@ -1,0 +1,8 @@
+license_expression: mit AND proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 90
+notes: Note a real MIT seen in https://github.com/AllenDowney/ThinkPython2/blob/master/LICENSE
+    where the main topic is the documentation. The sentence "to any person obtaining a copy
+    of this software and associated documentation files ..." has been changed to "to any person
+    obtaining a copy of this software ...." removing the reference to associated documentation.

@@ -3,5 +3,6 @@ short_name: MSXML 4.0 EULA
 name: Microsoft XML Core Services (MSXML) 4.0 EULA
 category: Proprietary Free
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-xml-core-4.0
 ignorable_urls:
     - http://www.microsoft.com/exporting

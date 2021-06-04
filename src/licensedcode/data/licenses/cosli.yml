@@ -4,6 +4,7 @@ name: Civilian Open Source License
 category: Free Restricted
 owner: Fieldtracks
 homepage_url: https://cosli.eu/
+spdx_license_key: LicenseRef-scancode-cosli
 ignorable_copyrights:
     - Copyright (c) 2017-2019 The Fieldtracks Project
     - Copyright (c) The OpenSSL Project

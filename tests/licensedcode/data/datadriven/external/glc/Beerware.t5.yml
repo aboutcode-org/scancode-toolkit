@@ -1,0 +1,7 @@
+license_expressions:
+  - beerware
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/Beerware.t5
+  originally expected to be detected as Beerware
+  with coverage of 100.0

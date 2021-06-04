@@ -1,46 +1,21 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import logging
 import os
 
 import attr
-from debut import debcon
+from debian_inspector import debcon
 from packageurl import PackageURL
-from six import string_types
 
 from commoncode import filetype
-from commoncode import fileutils
-from commoncode.datautils import List
-from commoncode.datautils import String
 from packagedcode import models
-
 
 """
 Handle Debian packages.
@@ -64,31 +39,16 @@ class DebianPackage(models.Package):
     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
     default_type = 'deb'
 
-    multi_arch = String(
-        label='Multi-Arch',
-        help='Multi-Arch value from status file')
+    @property
+    def multi_arch(self):
+        """
+        Multi-Arch value from a status or spec file.
+        """
+        return self.extra_data.get('multi_arch')
 
-    installed_files = List(
-        item_type=models.PackageFile,
-        label='installed files',
-        help='List of files installed by this package.')
-
-    def to_dict(self, _detailed=False, **kwargs):
-        data = models.Package.to_dict(self, **kwargs)
-        if _detailed:
-            #################################################
-            # remove temporary fields
-            data['multi_arch'] = self.multi_arch
-            data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
-            #################################################
-        else:
-            #################################################
-            # remove temporary fields
-            data.pop('multi_arch', None)
-            data.pop('installed_files', None)
-            #################################################
-
-        return data
+    def set_multi_arch(self, value):
+        if value:
+            self.extra_data['multi_arch'] = value
 
     def populate_installed_files(self, var_lib_dpkg_info_dir):
         """
@@ -199,8 +159,7 @@ class DebianPackage(models.Package):
 
 def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **kwargs):
     """
-    Given a directory to a rootfs, yield a DebianPackage and a list of `installed_files`
-    (path, md5sum) tuples.
+    Yield installed Package objects given a ``root_dir`` rootfs directory.
     """
 
     base_status_file_loc = os.path.join(root_dir, 'var/lib/dpkg/status')
@@ -215,13 +174,29 @@ def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **k
     for package in parse_status_file(base_status_file_loc, distro=distro):
         package.populate_installed_files(var_lib_dpkg_info_dir)
         if detect_licenses:
-            debian_copyright.get_and_set_package_licenses_and_copyrights(package, root_dir)
+            copyright_location = package.get_copyright_file_path(root_dir)
+            dc = debian_copyright.parse_copyright_file(copyright_location)
+            if dc:
+                package.declared_license = dc.get_declared_license(
+                    filter_licenses=True,
+                    skip_debian_packaging=True,
+                    simplify_licenses=False,
+                )
+                package.license_expression = dc.get_license_expression(
+                    filter_licenses=True,
+                    skip_debian_packaging=True,
+                    simplify_licenses=False,
+                )
+                package.copyright = dc.get_copyright(
+                    skip_debian_packaging=True,
+                    unique_copyrights=True,
+                )
+
         yield package
 
 
 def is_debian_status_file(location):
-    return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'status')
+    return filetype.is_file(location) and location.endswith('/status')
 
 
 def parse_status_file(location, distro='debian'):
@@ -247,9 +222,11 @@ def build_package(package_data, distro='debian'):
     package.namespace = distro
 
     # add debian-specific package 'qualifiers'
-    package.qualifiers = OrderedDict([
+    package.qualifiers = dict([
         ('arch', package_data.get('architecture')),
     ])
+
+    package.set_multi_arch(package_data.get('multi-arch'))
 
     # mapping of top level `status` file items to the Package object field name
     plain_fields = [
@@ -259,13 +236,12 @@ def build_package(package_data, distro='debian'):
         ('package', 'name'),
         ('version', 'version'),
         ('maintainer', 'maintainer'),
-        ('multi-arch', 'multi_arch'),
     ]
 
     for source, target in plain_fields:
         value = package_data.get(source)
         if value:
-            if isinstance(value, string_types):
+            if isinstance(value, str):
                 value = value.strip()
             if value:
                 setattr(package, target, value)

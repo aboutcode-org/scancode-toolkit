@@ -4,6 +4,7 @@ name: German Free Software License
 category: Copyleft
 owner: Institute for Legal Issues On Free and Open Source Software
 homepage_url: http://www.dipp.nrw.de/d-fsl/index_html/lizenzen/en/D-FSL-1_0_en.txt
+spdx_license_key: LicenseRef-scancode-d-fsl-1.0-en
 text_urls:
     - http://www.dipp.nrw.de/d-fsl/index_html/lizenzen/en/D-FSL-1_0_en.txt
 faq_url: http://www.d-fsl.org/

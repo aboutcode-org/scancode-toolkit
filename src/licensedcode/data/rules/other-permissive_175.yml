@@ -1,0 +1,9 @@
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: See in https://github.com/noahtkeller/go-bacnet/blob/d13987947ee0a0b1507bd29f2f4edeb295768cfa/LICENSE
+    and this is a mostly MIT-like but the condition has beem relaxed and does not require to
+    reproduce copyright. e.g. where a standard MIT has "The above copyright notice and this
+    permission notice shall be included in all copies or substantial portions of the Software."
+    here we have instead "This permission notice shall be included in all copies or substantial
+    portions of the Software."

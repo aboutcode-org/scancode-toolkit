@@ -7,4 +7,5 @@ notes: |
     Contains this extra text "in this position and unchanged" when compared
     with a bsd-simplified. Found in the BSD codebase, for instance at
     http://web.mit.edu/freebsd/head/sys/sys/sbuf.h
+spdx_license_key: LicenseRef-scancode-bsd-unchanged
 minimum_coverage: 98

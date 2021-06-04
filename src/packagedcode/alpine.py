@@ -1,33 +1,16 @@
 #
-# Copyright (c) 2020 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
 import base64
 import codecs
 from datetime import datetime
 import email
 import io
-import os
 from os import path
 import posixpath
 import re
@@ -46,12 +29,6 @@ from textcode.analysis import as_unicode
 class AlpinePackage(models.Package):
     extensions = ('.apk',)
     default_type = 'alpine'
-
-    installed_files = List(
-        item_type=models.PackageFile,
-        label='installed files',
-        help='List of files installed by this package.')
-
     def compute_normalized_license(self):
         _declared, detected = detect_declared_license(self.declared_license)
         return detected
@@ -73,8 +50,7 @@ class AlpinePackage(models.Package):
 
 def get_installed_packages(root_dir, **kwargs):
     """
-    Given a directory to a rootfs, yield a AlpinePackage and a list of `installed_files`
-    (path, md5sum) tuples.
+    Yield Package objects given a ``root_dir`` rootfs directory.
     """
     installed_file_loc = path.join(root_dir, 'lib/apk/db/installed')
     if not path.exists(installed_file_loc):

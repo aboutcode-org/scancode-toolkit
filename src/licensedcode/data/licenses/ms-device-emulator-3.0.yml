@@ -3,5 +3,6 @@ short_name: MS Device Emulator 3.0
 name: Microsoft Device Emulator 3.0
 category: Proprietary Free
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-device-emulator-3.0
 ignorable_urls:
     - http://www.microsoft.com/exporting

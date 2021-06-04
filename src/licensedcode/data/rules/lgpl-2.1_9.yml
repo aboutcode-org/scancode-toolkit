@@ -1,5 +1,5 @@
 license_expression: lgpl-2.1
 is_license_reference: yes
-notes: http://creativecommons.org/licenses/LGPL/2.1/
+relevance: 100
 ignorable_urls:
     - http://creativecommons.org/licenses/LGPL/2.1/

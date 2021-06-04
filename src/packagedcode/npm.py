@@ -1,34 +1,13 @@
 
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
 import base64
 from collections import defaultdict
-from collections import OrderedDict
 from functools import partial
 import io
 import json
@@ -37,16 +16,12 @@ import re
 
 import attr
 from packageurl import PackageURL
-from six import string_types
-from six import binary_type
 
 from commoncode import filetype
 from commoncode import fileutils
-from commoncode import ignore
 from packagedcode import models
 from packagedcode.utils import combine_expressions
-from packagedcode.utils import parse_repo_url
-
+from packagedcode.utils import normalize_vcs_url
 
 """
 Handle Node.js npm packages
@@ -61,10 +36,18 @@ TRACE = False
 
 logger = logging.getLogger(__name__)
 
+
+def logger_debug(*args):
+    pass
+
+
 if TRACE:
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return print(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 # TODO: add os and engines from package.json??
 # add lock files and yarn details
@@ -79,7 +62,7 @@ class NpmPackage(models.Package):
         'package-lock.json',
         'yarn.lock',
     )
-    filetypes = ('.tgz',)
+    extensions = ('.tgz',)
     mimetypes = ('application/x-tar',)
     default_type = 'npm'
     default_primary_language = 'JavaScript'
@@ -124,7 +107,7 @@ def compute_normalized_license(declared_license):
     detected_licenses = []
 
     for declared in declared_license:
-        if isinstance(declared, string_types):
+        if isinstance(declared, str):
             detected_license = models.compute_normalized_license(declared)
             if detected_license:
                 detected_licenses.append(detected_license)
@@ -142,7 +125,7 @@ def compute_normalized_license(declared_license):
                 # The type should have precedence and any unknowns
                 # in url should be ignored.
                 # TODO: find a better way to detect unknown licenses
-                if via_url in ('unknown', 'unknwon-license-reference',):
+                if via_url in ('unknown', 'unknown-license-reference',):
                     via_url = None
 
             if via_type:
@@ -257,12 +240,12 @@ def parse(location):
     """
     if is_package_json(location):
         with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+            package_data = json.load(loc)
         yield build_package(package_data)
 
     if is_package_lock(location) or is_npm_shrinkwrap(location):
         with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+            package_data = json.load(loc)
         for package in build_packages_from_lockfile(package_data):
             yield package
 
@@ -282,7 +265,7 @@ def build_package(package_data):
     version = package_data.get('version')
     homepage = package_data.get('homepage', '')
 
-    if not name or not version:
+    if not name:
         # a package.json without name and version is not a usable npm package
         # FIXME: raise error?
         return
@@ -325,7 +308,7 @@ def build_package(package_data):
         if TRACE: logger.debug('parse: %(source)r, %(func)r' % locals())
         value = package_data.get(source) or None
         if value:
-            if isinstance(value, string_types):
+            if isinstance(value, str):
                 value = value.strip()
             if value:
                 func(value, package)
@@ -419,7 +402,7 @@ def get_declared_licenses(license_object):
     if not license_object:
         return []
 
-    if isinstance(license_object, string_types):
+    if isinstance(license_object, str):
         # current, up to date form
         return [license_object]
 
@@ -507,7 +490,7 @@ def bugs_mapper(bugs, package):
     url, you can specify the value for "bugs" as a simple string instead of an
     object.
     """
-    if isinstance(bugs, string_types):
+    if isinstance(bugs, str):
         package.bug_tracking_url = bugs
     elif isinstance(bugs, dict):
         # we ignore the bugs email for now
@@ -537,11 +520,11 @@ def vcs_repository_mapper(repo, package, vcs_revision=None):
     vcs_tool = ''
     vcs_repository = ''
 
-    if isinstance(repo, string_types):
-        vcs_repository = parse_repo_url(repo)
+    if isinstance(repo, str):
+        vcs_repository = normalize_vcs_url(repo)
 
     elif isinstance(repo, dict):
-        repo_url = parse_repo_url(repo.get('url'))
+        repo_url = normalize_vcs_url(repo.get('url'))
         if repo_url:
             vcs_tool = repo.get('type') or 'git'
             # remove vcs_tool string if repo_url already contains it
@@ -581,12 +564,11 @@ def dist_mapper(dist, package):
         assert 'sha512' == algo
 
         decoded_b64value = base64.b64decode(b64value)
-        if isinstance(decoded_b64value, string_types):
+        if isinstance(decoded_b64value, str):
             sha512 = decoded_b64value.encode('hex')
-        elif isinstance(decoded_b64value, binary_type):
+        elif isinstance(decoded_b64value, bytes):
             sha512 = decoded_b64value.hex()
         package.sha512 = sha512
-        
 
     sha1 = dist.get('shasum')
     if sha1:
@@ -747,7 +729,7 @@ def parse_person(person):
     email = None
     url = None
 
-    if isinstance(person, string_types):
+    if isinstance(person, str):
         parsed = person_parser(person)
         if not parsed:
             parsed = person_parser_no_name(person)
@@ -772,7 +754,7 @@ def parse_person(person):
         return None, None, None
 
     if name:
-        if isinstance(name, string_types):
+        if isinstance(name, str):
             name = name.strip()
             if name.lower() == 'none':
                 name = None
@@ -786,7 +768,7 @@ def parse_person(person):
             email = [e.strip('<> ') for e in email if e and e.strip()]
             email = '\n'.join([e.strip() for e in email
                                if e.strip() and e.strip().lower() != 'none'])
-        if isinstance(email, string_types):
+        if isinstance(email, str):
             email = email.strip('<> ').strip()
             if email.lower() == 'none':
                 email = None
@@ -800,7 +782,7 @@ def parse_person(person):
             url = [u.strip('() ') for u in email if u and u.strip()]
             url = '\n'.join([u.strip() for u in url
                                if u.strip() and u.strip().lower() != 'none'])
-        if isinstance(url, string_types):
+        if isinstance(url, str):
             url = url.strip('() ').strip()
             if url.lower() == 'none':
                 url = None
@@ -817,7 +799,7 @@ def keywords_mapper(keywords, package):
     This is supposed to be an array of strings, but sometimes this is a string.
     https://docs.npmjs.com/files/package.json#keywords
     """
-    if isinstance(keywords, string_types):
+    if isinstance(keywords, str):
         if ',' in keywords:
             keywords = [k.strip() for k in keywords.split(',') if k.strip()]
         else:
@@ -945,7 +927,6 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
     packages = []
     packages_reqs = []
     current_package_data = {}
-    prev_line = None
     dependencies = False
     for line in yarn_lock_lines:
         # Check if this is not an empty line or comment

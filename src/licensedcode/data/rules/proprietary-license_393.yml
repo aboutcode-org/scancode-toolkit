@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 90
+notes: this is an bsd/mit-like but proprietary https://github.com/Neirys/sps/blob/2eb962c24f4980e519ce459420719ef4a00225b3/LICENSE.md#L7

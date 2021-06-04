@@ -1,5 +1,5 @@
 license_expression: gpl-1.0-plus
-relevance: 50
 is_license_reference: yes
+relevance: 50
 notes: Curl doc on licensing where nothing should be detected. This is a discussion on licensing
     which is interesting but not a license notice or statement.

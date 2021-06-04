@@ -39,6 +39,7 @@
   "source_packages": [
     "pkg:maven/javax.servlet/jstl@1.1.0?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/javax.servlet/jstl@1.1.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/javax/servlet/jstl/1.1.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/javax/servlet/jstl/1.1.0/jstl-1.1.0.jar",

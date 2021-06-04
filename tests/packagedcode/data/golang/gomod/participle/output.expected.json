@@ -28,7 +28,7 @@
     "root_path": null,
     "dependencies": [
       {
-        "purl": "pkg:golang/github.com/alecthomas/repr",
+        "purl": "pkg:golang/github.com/alecthomas/repr@v0.0.0-20181024024818-d37bc2a10ba1",
         "requirement": "v0.0.0-20181024024818-d37bc2a10ba1",
         "scope": "require",
         "is_runtime": true,
@@ -36,7 +36,7 @@
         "is_resolved": false
       },
       {
-        "purl": "pkg:golang/github.com/davecgh/go-spew",
+        "purl": "pkg:golang/github.com/davecgh/go-spew@v1.1.1",
         "requirement": "v1.1.1",
         "scope": "require",
         "is_runtime": true,
@@ -44,7 +44,7 @@
         "is_resolved": false
       },
       {
-        "purl": "pkg:golang/github.com/stretchr/testify",
+        "purl": "pkg:golang/github.com/stretchr/testify@v1.4.0",
         "requirement": "v1.4.0",
         "scope": "require",
         "is_runtime": true,

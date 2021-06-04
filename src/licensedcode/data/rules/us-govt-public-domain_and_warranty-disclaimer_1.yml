@@ -1,0 +1,10 @@
+license_expression: us-govt-public-domain AND warranty-disclaimer
+is_license_notice: yes
+relevance: 100
+notes: See in https://raw.githubusercontent.com/madorning/energySim0.1.0/0ad5c19898215e11fd8cfb0d569b4d48a886e922/LICENSE
+ignorable_copyrights:
+    - copyright policy at https://www2.usgs.gov/visual-id/credit_usgs.html
+ignorable_holders:
+    - policy at
+ignorable_urls:
+    - https://www2.usgs.gov/visual-id/credit_usgs.html#copyright

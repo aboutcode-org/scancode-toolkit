@@ -4,6 +4,7 @@ name: Polyform Strict License 1.0.0
 category: Proprietary Free
 owner: Polyform
 homepage_url: https://polyformproject.org/licenses/strict/1.0.0/
+spdx_license_key: LicenseRef-scancode-polyform-strict-1.0.0
 text_urls:
     - https://polyformproject.org/wp-content/uploads/2019/07/Polyform-Strict-1.0.0.txt
 ignorable_urls:

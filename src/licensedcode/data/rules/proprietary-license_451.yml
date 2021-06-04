@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: mit-like from https://github.com/Ahmed-Ali/JSONExport/blob/ec2051df23faf2b90290360139b9918c485b746a/LICENSE
+ignorable_urls:
+    - https://github.com/Ahmed-Ali/JSONExport

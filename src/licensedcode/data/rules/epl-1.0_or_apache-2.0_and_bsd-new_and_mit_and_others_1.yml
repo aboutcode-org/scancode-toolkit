@@ -1,0 +1,7 @@
+license_expression: (epl-1.0 OR apache-2.0) AND bsd-new AND mit AND bsd-new AND gpl-3.0-plus
+    WITH autoconf-simple-exception
+is_license_notice: yes
+minimum_coverage: 80
+ignorable_urls:
+    - https://www.apache.org/licenses/
+    - http://www.eclipse.org/legal/epl-v10.html

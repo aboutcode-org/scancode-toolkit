@@ -3,3 +3,4 @@ short_name: Sun Project X
 name: Sun Project X
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-project-x

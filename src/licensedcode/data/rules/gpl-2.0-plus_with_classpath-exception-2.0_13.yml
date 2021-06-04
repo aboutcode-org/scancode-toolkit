@@ -1,0 +1,6 @@
+license_expression: gpl-2.0-plus WITH classpath-exception-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+notes: libgcj is GPLv2 not v1

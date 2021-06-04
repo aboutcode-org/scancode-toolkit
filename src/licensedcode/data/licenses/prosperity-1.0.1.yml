@@ -4,6 +4,7 @@ name: The Prosperity Public License 1.0.1
 category: Proprietary Free
 owner: Kyle Mitchell
 homepage_url: https://licensezero.com/licenses/prosperity
+spdx_license_key: LicenseRef-scancode-prosperity-1.0.1
 text_urls:
     - https://github.com/licensezero/prosperity-public-license/blob/master/LICENSE.mustache
 other_urls:

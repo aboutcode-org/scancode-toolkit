@@ -4,6 +4,7 @@ name: C/Migemo License
 category: Proprietary Free
 owner: Fedora
 homepage_url: http://fedoraproject.org/wiki/Licensing/CMigemo
+spdx_license_key: LicenseRef-scancode-cmigemo
 text_urls:
     - http://fedoraproject.org/wiki/Licensing/CMigemo
 other_urls:

@@ -1,0 +1,15 @@
+license_expression: agpl-3.0 WITH agpl-generic-additional-terms
+is_license_text: yes
+relevance: 100
+notes: A set of complex additional terms found at https://github.com/globaleaks/GlobaLeaks/blob/381c2152055ca632ee44aa143c9964d4025960d4/LICENSE#L640
+ignorable_copyrights:
+    - (c) OF AGPLv3 Pursuant
+ignorable_holders:
+    - AGPLv3 Pursuant
+ignorable_authors:
+    - Hermes Center for Transparency and Digital Human
+    - attributions. To
+ignorable_urls:
+    - https://www.globaleaks.org/
+    - https://www.hermescenter.org/
+    - https://www.whistleblowingsolutions.it/

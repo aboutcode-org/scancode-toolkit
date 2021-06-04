@@ -5,6 +5,7 @@ category: Permissive
 owner: Joyent
 homepage_url: https://raw.githubusercontent.com/nodejs/node/master/LICENSE
 notes: composite
+spdx_license_key: LicenseRef-scancode-node-js
 other_urls:
     - https://nodejs.org/en/
 minimum_coverage: 70

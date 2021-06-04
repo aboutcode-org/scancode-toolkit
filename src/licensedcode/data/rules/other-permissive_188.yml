@@ -1,0 +1,4 @@
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: Seen in VUXML at https://www.vuxml.org/ and  https://svn.freebsd.org/ports/head/security/vuxml/vuln.xml

@@ -4,5 +4,6 @@ name: bpmn.io License
 category: Permissive
 owner: bpmn.io
 homepage_url: http://bpmn.io/license/
+spdx_license_key: LicenseRef-scancode-bpmn-io
 ignorable_urls:
     - http://bpmn.io/

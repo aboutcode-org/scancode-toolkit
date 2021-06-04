@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+notes: It looks like an MIT but has an extra condition AND does not allow selling
+ Seen in https://github.com/mitesh77/Best-Flutter-UI-Templates/blob/52a94954b6814577781b2c38d5c8a841effbb0ce/LICENSE

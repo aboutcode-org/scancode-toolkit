@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: ProGuard Project
 homepage_url: http://proguard.sourceforge.net/index.html#license.html
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-proguard-exception-2.0
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
 standard_notice: |

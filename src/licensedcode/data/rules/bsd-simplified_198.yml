@@ -1,0 +1,7 @@
+license_expression: bsd-simplified
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - nsc.cpp
+notes: https://github.com/suzukiplan/nsdlib/blob/5b46f81e5314af88171130daa9f0c06185089b95/src/nsc/nsc.cpp

@@ -3,8 +3,10 @@ short_name: Intel BSD License
 name: Intel BSD License
 category: Permissive
 owner: Intel Corporation
-notes: "this license is often used in conjunction with a choice of gpl-2.0 such as\nin the Linux\
-    \ Kernel "
+notes: |
+  this license is often used in conjunction with a choice of gpl-2.0 such
+  as in the Linux Kernel
+spdx_license_key: LicenseRef-scancode-intel-bsd
 text_urls:
     - https://git.kernel.org/pub/scm/linux/kernel/git/history/history.git/tree/include/acpi/acoutput.h?h=v2.6.24&id=f9f4601f331aa1226d7a798a01950efbb388f07f
     - https://github.com/rwatson/mbufs/blob/748b87203d7219fd9fe2f73894359a6301ce5be1/sys/xen/xenstore/xenstore_internal.h

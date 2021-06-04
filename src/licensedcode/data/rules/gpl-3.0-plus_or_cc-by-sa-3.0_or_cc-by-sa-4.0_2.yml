@@ -1,0 +1,6 @@
+license_expression: gpl-3.0-plus OR (cc-by-sa-3.0 OR cc-by-sa-4.0)
+is_license_notice: yes
+relevance: 100
+notes: http://www.damhan.net/aaben/dan-eng/dan-eng.tei https://lists.debian.org/debian-legal/2019/09/msg00003.html
+ignorable_urls:
+    - https://www.gnu.org/licenses/gpl-3.0.html

@@ -4,5 +4,6 @@ name: Karl Peterson License
 category: Free Restricted
 owner: Karl Peterson
 homepage_url: http://www.mvps.org/vb
+spdx_license_key: LicenseRef-scancode-karl-peterson
 other_urls:
     - http://www.mvps.org/vb

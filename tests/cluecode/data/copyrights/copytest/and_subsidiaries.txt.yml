@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright (c) 2009, 2018 Robert Bosch GmbH and its subsidiaries
+holders:
+  - Robert Bosch GmbH and its subsidiaries
+holders_summary:
+  - value: Robert Bosch GmbH and its subsidiaries
+    count: 1

@@ -1,0 +1,5 @@
+license_expression: bsd-new OR gpl-1.0-plus OR other-permissive OR other-copyleft
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/opd.html

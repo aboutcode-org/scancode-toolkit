@@ -1,49 +1,23 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import io
-from collections import OrderedDict
 import json
 import os.path
 
-from commoncode import compat
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode import text
 from commoncode import testcase
 from packagedcode.jar_manifest import parse_manifest
 from packagedcode.jar_manifest import get_normalized_package_data
 
 
-if py2:
-    mode = 'wb'
-if py3:
-    mode = 'w'
+mode = 'w'
 
 
 class BaseParseManifestCase(testcase.FileBasedTesting):
@@ -63,9 +37,9 @@ class BaseParseManifestCase(testcase.FileBasedTesting):
                 json.dump(parsed_manifest, ex, indent=2)
 
         with io.open(expected_manifest_loc, encoding='utf-8') as ex:
-            expected = json.load(ex, object_pairs_hook=OrderedDict)
+            expected = json.load(ex)
 
-        assert json.dumps(expected) == json.dumps(parsed_manifest)
+        assert json.dumps(parsed_manifest) == json.dumps(expected)
 
     def check_get_normalized_package_data(self, test_manifest, regen=False):
         """
@@ -83,10 +57,10 @@ class BaseParseManifestCase(testcase.FileBasedTesting):
             with open(expected_json_loc, mode) as ex:
                 json.dump(package, ex, indent=2)
 
-        with io.open(expected_json_loc, 'rb') as ex:
-            expected = json.load(ex, encoding='utf-8', object_pairs_hook=OrderedDict)
+        with io.open(expected_json_loc) as ex:
+            expected = json.load(ex)
 
-        assert json.dumps(expected) == json.dumps(package)
+        assert json.dumps(package) == json.dumps(expected)
 
 
 class TestMavenMisc(BaseParseManifestCase):
@@ -124,9 +98,7 @@ def create_test_function(test_manifest_loc, test_name, check_parse=True, regen=F
 
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes
-    if py2 and isinstance(test_name, compat.unicode):
-        test_name = test_name.encode('utf-8')
-    if py3 and isinstance(test_name, bytes):
+    if isinstance(test_name, bytes):
         test_name = test_name.decode('utf-8')
     test_manifest.__name__ = test_name
     return test_manifest

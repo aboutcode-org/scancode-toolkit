@@ -8,3 +8,4 @@ notes: |
     this is the official old license for the OpenJDK binaries but is rarely
     ever seen in practice as Sun/Oracle do not redistribute pre- built binaries
     for the OpenJDK.
+spdx_license_key: LicenseRef-scancode-sun-bcl-openjdk

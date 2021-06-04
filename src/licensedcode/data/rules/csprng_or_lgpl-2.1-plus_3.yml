@@ -1,0 +1,7 @@
+license_expression: csprng OR lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+notes: typo in andor
+ignorable_emails:
+    - pgut001@cs.auckland.ac.nz

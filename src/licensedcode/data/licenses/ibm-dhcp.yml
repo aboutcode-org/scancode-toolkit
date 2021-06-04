@@ -3,5 +3,6 @@ short_name: IBM DHCP License
 name: IBM DHCP License
 category: Permissive
 owner: IBM
+spdx_license_key: LicenseRef-scancode-ibm-dhcp
 other_urls:
     - http://svn.opendnssec.org/trunk/OpenDNSSEC/common/b64_pton.c

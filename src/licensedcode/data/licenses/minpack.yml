@@ -3,6 +3,7 @@ short_name: Minpack Copyright Notice
 name: Minpack Copyright Notice
 category: Permissive
 owner: University of Chicago
+spdx_license_key: LicenseRef-scancode-minpack
 text_urls:
     - http://www.netlib.org/minpack/disclaimer
 ignorable_authors:

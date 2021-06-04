@@ -3,4 +3,5 @@ short_name: MIT With Modification Obligations
 name: MIT With Modification Obligations
 category: Permissive
 owner: MIT
+spdx_license_key: LicenseRef-scancode-mit-with-modification-obligations
 minimum_coverage: 80

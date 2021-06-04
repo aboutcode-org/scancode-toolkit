@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: commoncode
+Version: 21.5.12
+Summary: Set of common utilities, originally split from ScanCode
+Home-page: https://github.com/nexB/commoncode
+Author: nexB. Inc. and others
+Author-email: info@aboutcode.org
+License: Apache-2.0
+Description: CommonCode
+        ==========
+        
+        - license: Apache-2.0
+        - copyright: copyright (c) nexB. Inc. and others
+        - homepage_url: https://github.com/nexB/commoncode
+        - keywords: utilities, scancode-toolkit, commoncode
+        
+        Commoncode provides a set of common functions and utilities for handling various things like paths,
+        dates, files and hashes. It started as library in scancode-toolkit.
+        Visit https://aboutcode.org and https://github.com/nexB/ for support and download.
+        
+        
+        To install this package use::
+        
+            pip install commoncode
+        
+        
+        
+        Alternatively, to set up a development environment::
+        
+            source configure --dev
+        
+        To run unit tests::
+        
+            pytest -vvs -n 2
+        
+        To clean up development environment::
+        
+            ./configure --clean
+        
+        
+Keywords: utilities,scancode-toolkit
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Provides-Extra: testing
+Provides-Extra: docs

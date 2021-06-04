@@ -4,6 +4,7 @@ name: Common Public License 0.5
 category: Copyleft Limited
 owner: IBM
 homepage_url: http://www.eclipse.org/legal/cpl-v05.html
+spdx_license_key: LicenseRef-scancode-cpl-0.5
 text_urls:
     - http://www.eclipse.org/legal/cpl-v05.html
 faq_url: http://web.archive.org/web/20101104092121/http://www.ibm.com/developerworks/library/os-cplfaq.html

@@ -4,3 +4,4 @@ name: IOzone License
 category: Proprietary Free
 owner: William Norcott
 homepage_url: http://www.iozone.org/docs/Iozone_License.txt
+spdx_license_key: LicenseRef-scancode-iozone

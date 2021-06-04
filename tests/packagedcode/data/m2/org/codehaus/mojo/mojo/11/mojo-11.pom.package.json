@@ -47,6 +47,7 @@
   "source_packages": [
     "pkg:maven/org.codehaus.mojo/mojo@11?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.codehaus.mojo/mojo@11",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/11/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/11/mojo-11.jar",

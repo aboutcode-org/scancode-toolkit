@@ -1,35 +1,15 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 from itertools import groupby
 
 import ahocorasick
-from six import string_types
 
 from licensedcode import SMALL_RULE
 from licensedcode.match import LicenseMatch
@@ -51,7 +31,7 @@ if TRACE or TRACE_FRAG:
     logger = logging.getLogger(__name__)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
@@ -71,8 +51,8 @@ def get_automaton():
 
 def add_sequence(automaton, tids, rid, start=0, with_duplicates=False):
     """
-    Add the `tids` sequence of token ids for the `rid` Rule id starting at `start`
-    position to the an Aho-Corasick `automaton`.
+    Add the `tids` sequence of token ids for the `rid` Rule id starting at
+    `start` position to an Aho-Corasick `automaton`.
 
     If `with_duplicates` is True and if `tids` exists in the automaton, append a
     rule pointers to a list of "values" for these `tids`. Otherwise if `tids`
@@ -142,16 +122,15 @@ def get_matched_spans(positions, matchables):
     within the `matchables` set of matchable positions.
     """
     for rid, match_qstart, match_qend, istart, iend in positions:
-        # if not all( x >= 0 for x in (match_qstart, match_qend, istart, iend)):
-        #    raise Exception(rid, match_qstart, match_qend, istart, iend)
 
         qspan = Span(list(range(match_qstart, match_qend)))
-        # TODO: is this about negatives? this should be optimized?
-        # if any(p not in query_run_matchables for p in qspan):
-        if any(p not in matchables for p in qspan):  # not qspan.set.issubset(matchables):
+        # TODO: this should be optimized?
+        # e.g. with not qspan.set.issubset(matchables):
+        if any(p not in matchables for p in qspan):  
             if TRACE: logger_debug(
-                '   #exact_AHO:get_matched_spans not matchable match: any(p not in '
-                'query_run_matchables for p in qspan), discarding rule:', rid)
+                '   #exact_AHO:get_matched_spans not matchable match:',
+                'any(p not in matchables for p in qspan)',
+                'discarding rule:', rid)
             continue
         ispan = Span(list(range(istart, iend)))
         yield rid, qspan, ispan
@@ -210,7 +189,6 @@ def match_fragments(idx, query_run):
     # Discard fragments that have any already matched positions in previous matches
     from licensedcode.match import filter_already_matched_matches
     matches, _discarded = filter_already_matched_matches(matches, query_run.query)
-
 
     # Merge matches with a zero max distance, e.g. contiguous or overlapping
     # with matches to the same rule

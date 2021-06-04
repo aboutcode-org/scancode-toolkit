@@ -42,9 +42,14 @@
       "pkg:alpine/busybox@1.31.1-r9"
     ],
     "extra_data": {},
+    "purl": "pkg:alpine/busybox@1.31.1-r9?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
     "installed_files": [
       {
         "path": "bin/busybox",
+        "size": 0,
         "sha1": "593739e717ef3e8833034614576e03d189be30a1",
         "md5": null,
         "sha256": null,
@@ -52,6 +57,7 @@
       },
       {
         "path": "bin/sh",
+        "size": 0,
         "sha1": "a5c7d37c33446cd290736b35b626bb75ad3933c4",
         "md5": null,
         "sha256": null,
@@ -59,6 +65,7 @@
       },
       {
         "path": "etc/securetty",
+        "size": 0,
         "sha1": "e150ec86058595eb836e9e23a9793e50d112eb94",
         "md5": null,
         "sha256": null,
@@ -66,6 +73,7 @@
       },
       {
         "path": "etc/udhcpd.conf",
+        "size": 0,
         "sha1": "50088f65c0c85b50a5473a1b7e081c090efb576f",
         "md5": null,
         "sha256": null,
@@ -73,6 +81,7 @@
       },
       {
         "path": "etc/logrotate.d/acpid",
+        "size": 0,
         "sha1": "4f29720883559a74be03f4de69de2f66113b064b",
         "md5": null,
         "sha256": null,
@@ -80,6 +89,7 @@
       },
       {
         "path": "etc/network/if-up.d/dad",
+        "size": 0,
         "sha1": "865c5ddea131ae2847f1b6310d0de2ed3b0cff8e",
         "md5": null,
         "sha256": null,
@@ -87,15 +97,12 @@
       },
       {
         "path": "usr/share/udhcpc/default.script",
+        "size": 0,
         "sha1": "9c33c0dc1c78cd2452bc3397f14dd6366610ff81",
         "md5": null,
         "sha256": null,
         "sha512": null
       }
-    ],
-    "purl": "pkg:alpine/busybox@1.31.1-r9?arch=x86_64",
-    "repository_homepage_url": null,
-    "repository_download_url": null,
-    "api_data_url": null
+    ]
   }
 ]

@@ -4,6 +4,7 @@ name: ej-technologies EULA
 category: Commercial
 owner: ej-technologies
 homepage_url: http://www.ej-technologies.com/buy/jprofiler/jprofiler_license.html
+spdx_license_key: LicenseRef-scancode-ej-technologies-eula
 text_urls:
     - http://www.ej-technologies.com/buy/jprofiler/jprofiler_license.html
 ignorable_urls:

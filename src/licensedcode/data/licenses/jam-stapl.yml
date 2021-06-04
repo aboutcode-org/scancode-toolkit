@@ -4,3 +4,4 @@ name: Jam STAPL Software License
 category: Free Restricted
 owner: Altera Corporation
 homepage_url: https://www.intel.com/content/www/us/en/programmable/support/support-resources/download/licensing/lic-jam.html
+spdx_license_key: LicenseRef-scancode-jam-stapl

@@ -3,6 +3,7 @@ short_name: Tiger Cryptography License
 name: Tiger Cryptography License
 category: Permissive
 owner: Tiger
+spdx_license_key: LicenseRef-scancode-tiger-crypto
 faq_url: http://www.cs.technion.ac.il/~biham/Reports/Tiger/
 other_urls:
     - http://www.cs.technion.ac.il/~biham/Reports/Tiger/

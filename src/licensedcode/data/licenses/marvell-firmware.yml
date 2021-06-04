@@ -4,3 +4,4 @@ name: Marvell Firmware License
 category: Proprietary Free
 owner: Marvell
 homepage_url: https://dev.openwrt.org/browser/trunk/package/libertas/files/LICENSE?rev=9768
+spdx_license_key: LicenseRef-scancode-marvell-firmware

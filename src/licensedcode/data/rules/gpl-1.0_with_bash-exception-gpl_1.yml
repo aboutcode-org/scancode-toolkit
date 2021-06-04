@@ -1,0 +1,10 @@
+license_expression: gpl-1.0 WITH bash-exception-gpl
+is_license_text: yes
+relevance: 100
+notes: See in https://git.savannah.gnu.org/cgit/bash.git/plain/COPYING?id=726f63884db0132f01745f1fb4465e6621088ccf
+ignorable_copyrights:
+    - Copyright (c) 1989 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

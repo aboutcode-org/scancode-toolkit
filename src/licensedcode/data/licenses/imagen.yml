@@ -3,3 +3,4 @@ short_name: IMAGEN License
 name: IMAGEN License
 category: Free Restricted
 owner: IMAGEN
+spdx_license_key: LicenseRef-scancode-imagen

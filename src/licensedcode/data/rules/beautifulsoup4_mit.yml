@@ -3,3 +3,4 @@ is_license_notice: yes
 relevance: 99
 minimum_coverage: 95
 notes: this variant has the word DAMMIT inside, so we set relevance to less than 100
+ note that the author has since switchted to a proper MIT license

@@ -1,35 +1,15 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import re
 import string
 
-from commoncode.text import toascii
 
 """
 Extract raw ASCII strings from (possibly) binary strings.
@@ -53,11 +33,11 @@ https://github.com/TakahiroHaruyama/openioc_scan/blob/d7e8c5962f77f55f9a5d34dbfd
 MIN_LEN = 4
 MIN_LEN_STR = b'4'
 
-def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, min_len=MIN_LEN):
+def strings_from_file(location, buff_size=1024 * 1024, clean=True, min_len=MIN_LEN):
     """
-    Yield unicode strings made only of ASCII characters found in file at location.
-    Process the file in chunks (to limit memory usage). If ascii is True, strings
-    are converted to plain ASCII "str or byte" strings instead of unicode.
+    Yield unicode strings made only of printable ASCII characters found in file
+    at `location``. Process the file in chunks of `buff_size` bytes (to limit
+    memory usage).
     """
     with open(location, 'rb') as f:
         while 1:
@@ -65,8 +45,6 @@ def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, 
             if not buf:
                 break
             for s in strings_from_string(buf, clean=clean, min_len=min_len):
-                if ascii:
-                    s = toascii(s)
                 s = s.strip()
                 if len(s) >= min_len:
                     yield s
@@ -95,25 +73,41 @@ _ascii_pattern = (
 ascii_strings = re.compile(_ascii_pattern).finditer
 
 
+replace_literal_line_returns = re.compile(
+    '[\\n\\r]+$'
+).sub
+
+
+def normalize_line_ends(s):
+    """
+    Replace trailing literal line returns by real line return (e.g. POSIX LF
+    aka. \n) in string `s`.
+    """
+    return replace_literal_line_returns('\n', s)
+
+
 def strings_from_string(binary_string, clean=False, min_len=0):
     """
-    Yield strings extracted from a (possibly binary) string. The strings are ASCII
-    printable characters only. If clean is True, also clean and filter short and
-    repeated strings.
-    Note: we do not keep the offset of where a string was found (e.g. match.start).
+    Yield strings extracted from a (possibly binary) string `binary_string`. The
+    strings are ASCII printable characters only. If `clean` is True, also clean
+    and filter short and repeated strings. Note: we do not keep the offset of
+    where a string was found (e.g. match.start).
     """
     for match in ascii_strings(binary_string):
         s = decode(match.group())
         if not s:
             continue
-        s = s.strip()
-        if len(s) < min_len:
-            continue
-        if clean:
-            for ss in clean_string(s, min_len=min_len):
-                yield ss
-        else:
-            yield s
+        s = normalize_line_ends(s)
+        for line in s.splitlines(False):
+            line = line.strip()
+            if len(line) < min_len:
+                continue
+
+            if clean:
+                for ss in clean_string(line, min_len=min_len):
+                    yield ss
+            else:
+                yield line
 
 
 def string_from_string(binary_string, clean=False, min_len=0):

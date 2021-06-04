@@ -1,0 +1,7 @@
+license_expression: mit OR apache-2.0
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - LICENSE-APACHE
+    - LICENSE-MIT
+notes: There is some ambiguity in the wording, but this is a choice.

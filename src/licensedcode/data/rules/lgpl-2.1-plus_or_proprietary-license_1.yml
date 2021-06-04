@@ -1,0 +1,5 @@
+license_expression: lgpl-2.1-plus OR proprietary-license
+is_license_notice: yes
+relevance: 95
+minimum_coverage: 100
+notes: Seen in https://github.com/Upipe/upipe/blob/cb8109860b4200ed4d6e39bcdb06dcbb93a7072e/README

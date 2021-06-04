@@ -1,0 +1,13 @@
+license_expression: w3c-docs-19990405
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology, Institut
+        National de Recherche en Informatique et en Automatique, Keio University)
+ignorable_holders:
+    - World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de
+        Recherche en Informatique et en Automatique, Keio University)
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/
+ignorable_emails:
+    - site-policy@w3.org

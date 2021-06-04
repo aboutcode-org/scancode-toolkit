@@ -4,43 +4,12 @@ How to Run a Scan
 In this simple tutorial example, we perform a basic scan on the ``samples`` directory distributed
 by default with Scancode.
 
+
 Prerequisites
 -------------
 
-Refer :ref:`install_prerequisites` to make sure the correct Python Interpreters and other
-prerequisites are satisfied.
+Refer to the :ref:`install` installation guide.
 
-Setting up a Virtual Environment
---------------------------------
-
-ScanCode Toolkit supports Python 3 in 3.2.x and later versions, so if you are using 3.2.x or later
-versions, you should create a `virtual environment <https://docs.python-guide.org/dev/virtualenvs/>`_
-using the ``Virtualenv`` tool with a python 3.6 interpreter.
-
-The following commands set up and activate the Virtual Environment ``venv-scancode-py3``:
-
-::
-
-    virtualenv -p /usr/bin/python3.6 venv-scancode-py3
-    source venv-scancode-py3/bin/activate
-
-
-If you are using Scancode Toolkit 3.1.0 and earlier versions, they are not compatible with
-Python 3.x so you should create the virtual environment with a python 2.7 interpreter::
-
-    virtualenv -p /usr/bin/python2.7 venv-scancode-py2
-    source venv-scancode-py2/bin/activate
-
-Setting up Scancode Toolkit
----------------------------
-
-Get ScanCode Toolkit from ``pip``::
-
-    pip install scancode-toolkit
-
-.. Note::
-
-    You can install a specific version of Scancode Toolkit like ``scancode-toolkit==3.1.1``.
 
 Looking into Files
 ------------------
@@ -52,6 +21,7 @@ by default with Scancode Toolkit. Here's the directory structure and respective 
 
 We notice here that the sample files contain a package ``zlib.tar.gz``. So we have to extract the
 archive before running the scan, to also scan the files inside this package.
+
 
 Performing Extraction
 ---------------------
@@ -68,21 +38,20 @@ This extracts the zlib.tar.gz package:
 
     ``--shallow`` option can be used to recursively extract packages.
 
+
 Deciding Scan Options
 ---------------------
 
 These are some common scan options you should consider using before you start the actual scan,
 according to your requirements.
 
-#. The Basic Scan options, i.e. ``-c``, ``-l``, ``-p``, ``-e``, ``-u``, and ``-i`` are to be
-   decided, according to your requirements. If you do not need one specific type of information
-   (say, licenses), consider removing it, because the more things you scan for, longer it will take
-   for the scan to complete.
+#. The basic scan options, i.e. ``-c`` or ``--copyright``,  ``-l`` or ``--license``,
+   ``-p`` or ``--package``, ``-e`` or ``--email``, ``-u`` or ``--url``, and ``-i``
+   or ``--info`` cane be selected according to your requirements. If you do not
+   need one specific type of information (say, licenses), consider removing it
+   because the more options you scan for, the longer it will take for the scan
+   to complete.
 
-.. Note::
-
-    You have to select these options explicitly, as they are not default anymore from
-    versions 3.x, unlike earlier versions having ``-clp`` as default.
 
 #. ``--license-score INTEGER`` is to be set if license matching accuracy is desired (Default is 0,
    and increasing this means a more accurate match). Also, using ``--license-text`` includes the
@@ -90,7 +59,7 @@ according to your requirements.
 
 #. ``-n INTEGER`` option can be used to speed up the scan using multiple parallel processes.
 
-#. ``--timeout FLOAT`` option can be used to skip a file taking a lot of time to scan.
+#. ``--timeout FLOAT`` option can be used to skip files taking a long time to scan.
 
 #. ``--ignore <pattern>`` can be used to skip certain group of files.
 
@@ -99,6 +68,7 @@ according to your requirements.
    ``json`` files only.
 
 For the complete list of options, refer :ref:`cli_list_options`.
+
 
 Running The Scan
 ----------------

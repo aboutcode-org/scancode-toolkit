@@ -4,6 +4,7 @@ name: Open Web Foundation Final Specification Agreement (OWFa 1.0)
 category: Proprietary Free
 owner: Open Web Foundation
 homepage_url: http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0
+spdx_license_key: LicenseRef-scancode-owfa-1.0
 text_urls:
     - http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0
 faq_url: http://www.openwebfoundation.org/faqs/open-web-foundation-cla-1-0-owfa-1-0-faq

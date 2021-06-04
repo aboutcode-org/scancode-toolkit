@@ -4,6 +4,7 @@ name: Aladdin Free Public License v9
 category: Copyleft
 owner: Aladdin Enterprises
 homepage_url: http://www.artifex.com/downloads/doc/Public.htm
+spdx_license_key: LicenseRef-scancode-afpl-9.0
 text_urls:
     - http://www.artifex.com/downloads/doc/Public.htm
 ignorable_copyrights:

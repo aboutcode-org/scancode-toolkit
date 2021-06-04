@@ -3,6 +3,7 @@ short_name: MS Visual C++ 2010 Runtime Libraries License
 name: Microsoft Visual C++ 2010 Runtime Libraries License
 category: Proprietary Free
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-visual-2010-runtime
 faq_url: http://msdn.microsoft.com/en-us/library/vstudio/ms235299(v=vs.100).aspx
 other_urls:
     - www.microsoft.com/exporting

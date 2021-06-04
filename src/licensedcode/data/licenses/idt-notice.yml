@@ -3,3 +3,4 @@ short_name: IDT License Notice
 name: IDT License Notice
 category: Permissive
 owner: Wind River Systems
+spdx_license_key: LicenseRef-scancode-idt-notice

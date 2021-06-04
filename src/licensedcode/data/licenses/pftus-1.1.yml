@@ -1,6 +1,7 @@
 key: pftus-1.1
-name: Protected Free To Use Software License
 short_name: PFTUS-license
+name: Protected Free To Use Software License
 category: Proprietary Free
-notes: From https://github.com/ErikMcClure/bad-licenses
 owner: Unspecified
+notes: From https://github.com/ErikMcClure/bad-licenses
+spdx_license_key: LicenseRef-scancode-pftus-1.1

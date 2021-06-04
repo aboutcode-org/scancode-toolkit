@@ -4,6 +4,7 @@ name: wxWindows Unrestricted Licence 3.0
 category: Permissive
 owner: wxWidgets
 homepage_url: http://www.wxwidgets.org/about/licence.htm
+spdx_license_key: LicenseRef-scancode-wxwindows-u-3.0
 text_urls:
     - http://www.wxwidgets.org/about/licence.htm
 faq_url: http://www.wxwidgets.org/about/newlicen.htm

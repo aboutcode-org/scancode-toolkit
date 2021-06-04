@@ -1,0 +1,4 @@
+license_expression: apache-1.1
+is_license_notice: yes
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-1.1.txt

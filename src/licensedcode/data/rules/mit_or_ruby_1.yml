@@ -1,0 +1,6 @@
+license_expression: mit OR ruby
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - MIT.txt
+notes: Seen in Rubygems

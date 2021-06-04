@@ -1,0 +1,7 @@
+license_expression: mit
+is_license_notice: yes
+relevance: 99
+notes: https://github.com/akavel/goluago/blob/84681bf1471c0674cef056cef3b7636c3fa78fa1/internal/lua.h
+    There are other licenses historically for Lua, but we take the latest, current one
+ignorable_urls:
+    - http://www.lua.org/

@@ -4,6 +4,7 @@ name: Adobe AIR SDK EULA - 2008
 category: Proprietary Free
 owner: Adobe Systems
 homepage_url: http://www.adobe.com/products/eulas/
+spdx_license_key: LicenseRef-scancode-adobe-air-sdk
 faq_url: http://www.adobe.com/products/eulas/
 other_urls:
     - http://www.adobe.com/products/eulas/

@@ -4,8 +4,8 @@ name: XFree86 License 1.0
 category: Permissive
 owner: XFree86 Project, Inc
 homepage_url: http://www.xfree86.org/current/LICENSE5.html
+spdx_license_key: LicenseRef-scancode-xfree86-1.0
 text_urls:
     - http://www.xfree86.org/current/LICENSE5.html
 minimum_coverage: 80
-ignorable_authors:
-    - authorization from the XFree86 Project
+

@@ -4,5 +4,6 @@ name: Microsoft .NET Library License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm
+spdx_license_key: LicenseRef-scancode-ms-net-library
 ignorable_urls:
     - http://www.microsoft.com/exporting

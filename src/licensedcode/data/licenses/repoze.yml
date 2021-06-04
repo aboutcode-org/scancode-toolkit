@@ -5,6 +5,13 @@ category: Permissive
 owner: Repoze
 homepage_url: http://repoze.org/license.html
 notes: found in Debian reportbug
+spdx_license_key: BSD-3-Clause-Modification
+other_spdx_license_keys:
+    - LicenseRef-scancode-repoze
 text_urls:
     - http://repoze.org/LICENSE.txt
     - http://repoze.org/license.html
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing:BSD#Modification_Variant
+
+    

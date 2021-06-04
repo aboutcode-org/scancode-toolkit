@@ -4,6 +4,7 @@ name: Couchbase Community Edition License
 category: Proprietary Free
 owner: Couchbase
 homepage_url: http://www.couchbase.com/download
+spdx_license_key: LicenseRef-scancode-couchbase-community
 ignorable_copyrights:
     - Copyright 2010 Couchbase, Inc.
 ignorable_holders:

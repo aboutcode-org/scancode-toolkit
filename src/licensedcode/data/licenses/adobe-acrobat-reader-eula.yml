@@ -3,6 +3,7 @@ short_name: Adobe Acrobat Reader EULA
 name: Adobe Acrobat Reader EULA
 category: Proprietary Free
 owner: Adobe Systems
+spdx_license_key: LicenseRef-scancode-adobe-acrobat-reader-eula
 other_urls:
     - http://www.adobe.com/products/reader/distribution.html
 ignorable_urls:

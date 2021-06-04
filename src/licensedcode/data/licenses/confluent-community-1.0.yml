@@ -4,6 +4,7 @@ name: Confluent Community License 1.0
 category: Source-available
 owner: Confluent, Inc.
 homepage_url: https://www.confluent.io/confluent-community-license
+spdx_license_key: LicenseRef-scancode-confluent-community-1.0
 faq_url: https://www.confluent.io/confluent-community-license-faq
 other_urls:
     - https://www.confluent.io/blog/license-changes-confluent-platform

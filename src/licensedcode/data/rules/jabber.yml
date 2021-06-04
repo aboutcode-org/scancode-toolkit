@@ -1,0 +1,12 @@
+license_expression: josl-1.0
+is_license_reference: yes
+ignorable_copyrights:
+    - Copyright (c) 1999-2000 Jabber.com, Inc.
+    - Portions Copyright (c) 1998-1999 Jeremie Miller
+ignorable_holders:
+    - Jabber.com, Inc.
+    - Jeremie Miller
+ignorable_urls:
+    - http://www.jabber.com/
+    - http://www.jabber.com/license/
+    - http://www.opensource.org/

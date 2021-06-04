@@ -4,6 +4,7 @@ name: Microsoft ASP.NET MVC 3 License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/web/webpi/eula/aspnetmvc3update-eula.htm
+spdx_license_key: LicenseRef-scancode-ms-asp-net-mvc3
 ignorable_urls:
     - http://www.microsoft.com/exporting
     - http://www.support.microsoft.com/common/international.aspx

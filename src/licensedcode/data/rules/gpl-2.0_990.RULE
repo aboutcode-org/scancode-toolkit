@@ -1,0 +1,8 @@
+<licenses>
+        <license>
+            <name>GPL-2</name>
+            <url>http://www.fsf.org/licensing/licenses/gpl.txt</url>
+            <distribution>manual</distribution>
+            <comments>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</comments>
+        </license>
+    </licenses>

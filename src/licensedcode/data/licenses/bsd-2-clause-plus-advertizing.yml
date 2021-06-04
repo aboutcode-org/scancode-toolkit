@@ -3,6 +3,7 @@ short_name: BSD-2-Clause-plus-advertizing
 name: BSD-2-Clause-plus-advertizing
 category: Permissive
 owner: Konstantin Chuguev
+spdx_license_key: LicenseRef-scancode-bsd-2-clause-plus-advertizing
 other_urls:
     - http://www.trieuvan.com/apache/apr/apr-iconv-1.2.1.tar.gz
     - https://apr.apache.org/

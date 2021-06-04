@@ -1,17 +1,14 @@
 #
 # Copyright (c) 2016 Fireeye, Inc. All rights reserved.
 #
-# Modifications Copyright (c) 2016 nexB, Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# ScanCode is a trademark of nexB Inc.
+# Modifications Copyright (c) nexB, Inc. and others. All rights reserved.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
+# Copyright (c) nexB Inc. and others. All rights reserved.
+# ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
 # This file contains code derived and modified from Fireeye's flare FLOSS:
 # https://www.github.com/fireeye/flare-floss
@@ -23,8 +20,6 @@
 # - removed main()
 # - do not cache compiled patterns. re does cache patterns alright.
 
-from __future__ import absolute_import
-from __future__ import print_function
 
 import re
 

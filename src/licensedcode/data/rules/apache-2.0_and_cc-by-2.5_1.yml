@@ -1,6 +1,6 @@
 license_expression: apache-2.0 AND cc-by-2.5
-relevance: 100
 is_license_notice: yes
+relevance: 100
 minimum_coverage: 99
 ignorable_urls:
     - http://creativecommons.org/licenses/by/2.5

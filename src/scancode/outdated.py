@@ -1,27 +1,11 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
-#
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-#
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
+##
 # This code was in part derived from the pip library:
 # Copyright (c) 2008-2014 The pip developers (see outdated.NOTICE file)
 #
@@ -44,27 +28,20 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
-from __future__ import absolute_import
-
-from collections import OrderedDict
 import datetime
 import json
 import logging
 from os import path
-import sys
 
 from packaging import version as packaging_version
 import requests
 from requests.exceptions import ConnectionError
-import yg.lockfile
 
 from scancode_config import scancode_cache_dir
 from scancode_config import __version__ as scancode_version
-
+from scancode import lockfile
 
 SELFCHECK_DATE_FMT = "%Y-%m-%dT%H:%M:%SZ"
-
 
 logger = logging.getLogger(__name__)
 # logging.basicConfig(stream=sys.stdout)
@@ -80,6 +57,7 @@ def total_seconds(td):
 
 
 class VersionCheckState(object):
+
     def __init__(self):
         self.statefile_path = path.join(
             scancode_cache_dir, 'scancode-version-check.json')
@@ -93,7 +71,7 @@ class VersionCheckState(object):
 
     def save(self, latest_version, current_time):
         # Attempt to write out our version check file
-        with yg.lockfile.FileLock(self.lockfile_path, timeout=10):
+        with lockfile.FileLock(self.lockfile_path).locked(timeout=10):
             state = {
                 'last_check': current_time.strftime(SELFCHECK_DATE_FMT),
                 'latest_version': latest_version,
@@ -103,9 +81,11 @@ class VersionCheckState(object):
                           separators=(',', ':'))
 
 
-def check_scancode_version(installed_version=scancode_version,
-                           new_version_url='https://pypi.org/pypi/scancode-toolkit/json',
-                           force=False):
+def check_scancode_version(
+    installed_version=scancode_version,
+    new_version_url='https://pypi.org/pypi/scancode-toolkit/json',
+    force=False,
+):
     """
     Check for an updated version of scancode-toolkit. Return a message to
     display if outdated or None. Limit the frequency of checks to once per week.
@@ -158,7 +138,7 @@ def check_scancode_version(installed_version=scancode_version,
         # Our git version string is not PEP 440 compliant, and thus improperly parsed via
         # most 3rd party version parsers. We handle this case by pulling out the "base"
         # release version by split()-ting on "post".
-        # 
+        #
         # For example, "3.1.2.post351.850399ba3" becomes "3.1.2"
         if isinstance(installed_version, packaging_version.LegacyVersion):
             installed_version = installed_version.split('post')
@@ -198,7 +178,7 @@ def get_latest_version(new_version_url='https://pypi.org/pypi/scancode-toolkit/j
         raise Exception(msg)
 
     # The check is done using python.org PyPI API
-    payload = response.json(object_pairs_hook=OrderedDict)
+    payload = response.json()
     releases = [
         r for r in payload['releases'] if not packaging_version.parse(r).is_prerelease]
     releases = sorted(releases, key=packaging_version.parse)

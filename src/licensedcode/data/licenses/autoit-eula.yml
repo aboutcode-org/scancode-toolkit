@@ -4,6 +4,7 @@ name: Autoit EULA
 category: Proprietary Free
 owner: Autoit Team
 homepage_url: https://www.autoitscript.com/autoit3/docs/license.htm
+spdx_license_key: LicenseRef-scancode-autoit-eula
 ignorable_authors:
     - Jonathan Bennett and the AutoIt Team WWW https://www.autoitscript.com/site/autoit
 ignorable_urls:

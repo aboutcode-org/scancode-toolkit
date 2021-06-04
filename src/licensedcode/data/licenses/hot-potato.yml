@@ -4,3 +4,4 @@ name: Hot Potato
 category: Permissive
 owner: Unspecified
 notes: From https://github.com/ErikMcClure/bad-licenses
+spdx_license_key: LicenseRef-scancode-hot-potato

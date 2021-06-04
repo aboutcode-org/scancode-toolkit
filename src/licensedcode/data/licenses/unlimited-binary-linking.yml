@@ -4,3 +4,4 @@ name: Unlimited Binary Linking Exception
 category: Permissive
 owner: nexB
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-unlimited-binary-linking

@@ -4,6 +4,7 @@ name: Microsoft Limited Permissive License (MS-LPL)
 category: Permissive
 owner: Microsoft
 homepage_url: http://web.archive.org/web/20061122070300/http://www.microsoft.com/resources/sharedsource/licensingbasics/limitedpermissivelicense.mspx
+spdx_license_key: LicenseRef-scancode-ms-lpl
 text_urls:
     - http://web.archive.org/web/20061122070300/http://www.microsoft.com/resources/sharedsource/licensingbasics/limitedpermissivelicense.mspx
 other_urls:

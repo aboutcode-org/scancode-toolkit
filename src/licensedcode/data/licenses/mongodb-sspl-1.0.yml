@@ -1,6 +1,6 @@
 key: mongodb-sspl-1.0
-short_name: MongoDB SSPL 1.0
-name: MongoDB Server Side Public License (SSPL) 1.0
+short_name: SSPL 1.0
+name: Server Side Public License (SSPL) 1.0
 category: Source-available
 owner: MongoDB
 homepage_url: https://www.mongodb.com/licensing/server-side-public-license

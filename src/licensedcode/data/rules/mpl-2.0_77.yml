@@ -1,0 +1,6 @@
+license_expression: mpl-2.0
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/fauna/faunadb-go/blob/f8a03e4ee59acbbe842d65c3d142746ab375424f/LICENSE
+ignorable_urls:
+    - http://mozilla.org/MPL/2.0/

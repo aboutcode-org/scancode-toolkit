@@ -1,0 +1,13 @@
+key: jelurida-public-1.1
+short_name: Jeulurida Public License 1.1
+name: Jeulurida Public License 1.1
+category: Copyleft
+owner: Jelurida
+homepage_url: https://github.com/mrv777/NXT/blob/master/LICENSE.txt
+standard_notice: |
+    This program is distributed under the terms of the Jelurida Public License
+    version 1.1
+spdx_license_key: LicenseRef-scancode-jelurida-public-1.1
+ignorable_authors:
+  - Jelurida Swiss SA
+

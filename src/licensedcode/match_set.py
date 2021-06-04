@@ -1,30 +1,11 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import division
 
 from collections import defaultdict
 from collections import namedtuple
@@ -32,11 +13,8 @@ from functools import partial
 from itertools import groupby
 
 from intbitset import intbitset
-from six import string_types
 
-from commoncode.dict_utils import sparsify
 from licensedcode.tokenize import ngrams
-
 
 """
 Approximate matching strategies using token sets and multisets.
@@ -102,13 +80,13 @@ step: skip if some threshold is not met and rank the candidates.
 Finally we return the sorted top candidates.
 """
 
-
 # Set to True for tracing
 TRACE = False
 TRACE_CANDIDATES = False
 TRACE_CANDIDATES_SET = False
 TRACE_CANDIDATES_MSET = False
 TRACE_CANDIDATES_FILTER_DUPE = False
+
 
 def logger_debug(*args): pass
 
@@ -125,7 +103,7 @@ if (TRACE or TRACE_CANDIDATES or
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 def tids_sets_intersector(qset, iset):
@@ -223,8 +201,6 @@ def build_set_and_tids_mset(token_ids):
         if tid == -1:
             continue
         tids_mset[tid] += 1
-    # OPTIMIZED: sparsify for speed
-    sparsify(tids_mset)
 
     tids_set = intbitset(tids_mset.keys())
 
@@ -246,9 +222,6 @@ def build_set_and_bigrams_mset(token_ids):
         bigrams_mset[bigram] += 1
         tids_set.update(bigram)
 
-    # OPTIMIZED: sparsify for speed
-    sparsify(bigrams_mset)
-
     return tids_set, bigrams_mset
 
 
@@ -262,11 +235,11 @@ def build_set_and_mset(token_ids, _use_bigrams=False):
     else:
         return build_set_and_tids_mset(token_ids)
 
-
 # FIXME: we should consider more aggressively the thresholds and what a match
 # filters would discard when we compute candidates to eventually discard many or
 # all candidates: we compute too many candidates that may waste time in seq
 # matching for no reason.
+
 
 def compute_candidates(query_run, idx, matchable_rids, top=50,
                        high_resemblance=False, high_resemblance_threshold=0.8,
@@ -490,6 +463,7 @@ def filter_dupes(sortable_candidates):
     Given a list of `sortable_candidates` as (score_vector, rid, rule, intersection)
     yield filtered candidates.
     """
+
     def group_key(item):
         (sv_round, _sv_full), _rid, rule, _inter = item
         return (

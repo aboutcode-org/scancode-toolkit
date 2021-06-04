@@ -1,0 +1,11 @@
+license_expression: lgpl-2.1
+is_license_text: yes
+relevance: 99
+notes: there is one typo with "authoried" instead of "authorized" and that text variant is frequent
+    enough
+ignorable_copyrights:
+    - Copyright (c) 1991, 1999 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

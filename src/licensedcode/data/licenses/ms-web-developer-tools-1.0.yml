@@ -4,5 +4,6 @@ name: Microsoft Web Developer Tools 1.0
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/web/webpi/eula/webdevelopertools_1_eula_enu.htm
+spdx_license_key: LicenseRef-scancode-ms-web-developer-tools-1.0
 ignorable_urls:
     - http://www.microsoft.com/exporting

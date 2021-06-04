@@ -1,0 +1,1 @@
+pyup_django

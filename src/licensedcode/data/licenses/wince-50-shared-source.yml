@@ -4,5 +4,6 @@ name: Microsoft Windows CE 5.0 Shared Source License Agreement
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://msdn.microsoft.com/en-us/windowsembedded/aa714524.aspx
+spdx_license_key: LicenseRef-scancode-wince-50-shared-source
 text_urls:
     - http://msdn.microsoft.com/en-us/windowsembedded/aa714524.aspx

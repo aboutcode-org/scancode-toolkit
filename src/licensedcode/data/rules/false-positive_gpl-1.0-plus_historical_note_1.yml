@@ -1,0 +1,4 @@
+is_false_positive: yes
+notes: |
+    Historical note about former GPL licensing.
+    See https://github.com/gettalong/kramdown/blob/179b81dcf057f8079fd9df5296ba858114d30f7a/README.md

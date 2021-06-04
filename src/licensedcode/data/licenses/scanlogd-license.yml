@@ -3,5 +3,6 @@ short_name: scanlogd License
 name: scanlogd License
 category: Permissive
 owner: Openwall
+spdx_license_key: LicenseRef-scancode-scanlogd-license
 other_urls:
     - http://www.openwall.com/scanlogd/

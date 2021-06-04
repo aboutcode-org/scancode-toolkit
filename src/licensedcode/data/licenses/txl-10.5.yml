@@ -4,12 +4,11 @@ name: TXL 10.5 License
 category: Free Restricted
 owner: Unspecified
 homepage_url: http://fossat.googlecode.com/svn/trunk/bin/COPYRIGHT.txt
+spdx_license_key: LicenseRef-scancode-txl-10.5
 text_urls:
     - http://fossat.googlecode.com/svn/trunk/bin/COPYRIGHT.txt
 ignorable_copyrights:
     - Copyright 1988-2009 Queen's University at Kingston
     - Copyright 2009 by Queen's University at Kingston
-    - Copyright Convention 1971 Paris
 ignorable_holders:
-    - Convention Paris
     - Queen's University at Kingston

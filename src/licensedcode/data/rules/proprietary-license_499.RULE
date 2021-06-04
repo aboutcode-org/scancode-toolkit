@@ -1,0 +1,47 @@
+GSAS-II may be used by anyone on a royalty-free basis. Use and
+redistribution, with or without modification, are permitted provided
+that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+* Software changes, modifications, or derivative works should be noted
+  with comments and the author and organization's name.
+* Distribution of changed, modified or derivative works based on
+  GSAS-II grants the GSAS-II copyright holder unrestricted permission
+  to include any, or all, new and changed code in future GSAS-II
+  releases.
+* Redistributions that include binary forms must include all relevant
+  source code and reproduce the above copyright notice, this list of
+  conditions and the following disclaimers in the documentation and/or
+  other materials provided with the distribution.
+* Neither the names of UChicago Argonne, LLC or the Department of
+  Energy nor the names of its contributors may be used to endorse or
+  promote products derived from this software without specific prior
+  written permission.
+* The software and the end-user documentation included with the
+  redistribution, if any, must include the following acknowledgment:
+  "This product includes software produced by UChicago Argonne, LLC
+  under Contract No. DE-AC02-06CH11357 with the Department of Energy."
+
+*****************************************************************************
+WARRANTY DISCLAIMER: THE SOFTWARE IS SUPPLIED "AS IS" WITHOUT WARRANTY
+OF ANY KIND. THE COPYRIGHT HOLDERS, THEIR THIRD PARTY LICENSORS, THE
+UNITED STATES, THE UNITED STATES DEPARTMENT OF ENERGY, AND THEIR
+EMPLOYEES: (1) DISCLAIM ANY WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
+BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, TITLE OR NON-INFRINGEMENT, (2) DO NOT ASSUME
+ANY LEGAL LIABILITY OR RESPONSIBILITY FOR THE ACCURACY, COMPLETENESS,
+OR USEFULNESS OF THE SOFTWARE, (3) DO NOT REPRESENT THAT USE OF THE
+SOFTWARE WOULD NOT INFRINGE PRIVATELY OWNED RIGHTS, (4) DO NOT WARRANT
+THAT THE SOFTWARE WILL FUNCTION UNINTERRUPTED, THAT IT IS ERROR-FREE
+OR THAT ANY ERRORS WILL BE CORRECTED.
+
+LIMITATION OF LIABILITY: IN NO EVENT WILL THE COPYRIGHT HOLDERS, THEIR
+THIRD PARTY LICENSORS, THE UNITED STATES, THE UNITED STATES DEPARTMENT
+OF ENERGY, OR THEIR EMPLOYEES: BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
+CONSEQUENTIAL, SPECIAL OR PUNITIVE DAMAGES OF ANY KIND OR NATURE,
+INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS OR LOSS OF DATA, FOR ANY
+REASON WHATSOEVER, WHETHER SUCH LIABILITY IS ASSERTED ON THE BASIS OF
+CONTRACT, TORT (INCLUDING NEGLIGENCE OR STRICT LIABILITY), OR
+OTHERWISE, EVEN IF ANY OF SAID PARTIES HAS BEEN WARNED OF THE
+POSSIBILITY OF SUCH LOSS OR DAMAGES.

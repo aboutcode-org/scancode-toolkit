@@ -1,32 +1,12 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import io
 import os
 import traceback
@@ -34,18 +14,15 @@ import traceback
 import attr
 from license_expression import Licensing
 import pytest
+import saneyaml
 
-from commoncode import compat
-from commoncode import saneyaml
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode import text
 from commoncode.testcase import get_test_file_pairs
-
 
 """
 Data-driven tests using expectations stored in YAML files.
 """
+
 
 @attr.attrs(slots=True)
 class LicenseTest(object):
@@ -87,7 +64,7 @@ class LicenseTest(object):
                 with io.open(self.data_file, encoding='utf-8') as df:
                     data = saneyaml.load(df.read()) or {}
             except Exception as e:
-                raise Exception('Failed to read:', 'file://' + self.data_file, e)
+                raise Exception(f'Failed to read: file://{self.data_file}', e)
 
             self.license_expressions = data.pop('license_expressions', [])
             self.notes = data.pop('notes', None)
@@ -106,14 +83,14 @@ class LicenseTest(object):
                 except:
                     raise Exception(
                         'Unable to parse License rule expression: '
-                        +repr(exp) + ' for: file://' + self.data_file +
-                        '\n' + traceback.format_exc()
-                )
+                        f'{exp!r} for: file://{self.data_file}\n' +
+                        traceback.format_exc()
+                    )
                 if expression is None:
                     raise Exception(
                         'Unable to parse License rule expression: '
-                        +repr(exp) + ' for:' + repr(self.data_file))
-
+                        f'{exp!r} for: file://{self.data_file}'
+                    )
                 new_exp = expression.render()
                 self.license_expressions[i] = new_exp
 
@@ -121,10 +98,11 @@ class LicenseTest(object):
             if not self.notes:
                 raise Exception(
                     'A license test without expected license_expressions should '
-                    'have explanatory notes:  for: file://' + self.data_file)
+                    f'have explanatory notes:  for: file://{self.data_file}'
+                )
 
     def to_dict(self):
-        dct = OrderedDict()
+        dct = {}
         if self.license_expressions:
             dct['license_expressions'] = self.license_expressions
         if self.expected_failure:
@@ -153,9 +131,7 @@ class LicenseTest(object):
         test_file_name = self.test_file_name
         test_name = '{prefix}{test_file_name}'.format(**locals())
         test_name = text.python_safe_name(test_name)
-        if py2 and not isinstance(test_name, bytes):
-            test_name = test_name.encode('utf-8')
-        if py3 and not isinstance(test_name, compat.unicode):
+        if not isinstance(test_name, str):
             test_name = test_name.decode('utf-8')
         return test_name
 
@@ -164,8 +140,11 @@ class LicenseTest(object):
         """
         Return an iterable of LicenseTest objects loaded from `test_dir`
         """
-        return [LicenseTest(data_file, test_file)
-                 for data_file, test_file in get_test_file_pairs(test_dir)]
+        return [
+            LicenseTest(data_file, test_file)
+            for data_file, test_file
+            in get_test_file_pairs(test_dir)
+        ]
 
 
 def build_tests(test_dir, clazz, regen=False):
@@ -187,8 +166,9 @@ def build_tests(test_dir, clazz, regen=False):
 
         # avoid duplicated test method
         if hasattr(clazz, test_name):
-            msg = ('Duplicated test method name: {test_name}: file://{test_file}'
-            ).format(**locals())
+            msg = (
+                f'Duplicated test method name: {test_name}: file://{test_file}'
+            )
             raise Exception(msg)
 
         # attach that method to our license_test class
@@ -226,46 +206,46 @@ def make_test(license_test, regen=False):
             license_test.dump()
             return
 
-        if expected_expressions != detected_expressions:
+        if detected_expressions != expected_expressions:
             # On failure, we compare against more result data to get additional
             # failure details, including the test_file and full match details
-            results = expected_expressions + ['======================', '']
-            failure_trace = detected_expressions[:] + ['======================', '']
+            expected = expected_expressions + ['======================', '']
+            results_failure_trace = detected_expressions[:] + ['======================', '']
             for match in matches:
                 qtext, itext = get_texts(match)
                 rule_text_file = match.rule.text_file
-                if match.rule.is_license:
+                if match.rule.is_from_license:
                     rule_data_file = rule_text_file.replace('LICENSE', 'yml')
                 else:
                     rule_data_file = match.rule.data_file
-                failure_trace.extend(['',
+                results_failure_trace.extend(['',
                     '======= MATCH ====', repr(match),
                     '======= Matched Query Text for:',
-                    'file://{test_file}'.format(**locals())
+                    f'file://{test_file}'
                 ])
                 if test_data_file:
-                    failure_trace.append('file://{test_data_file}'.format(**locals()))
+                    results_failure_trace.append(f'file://{test_data_file}')
 
-                failure_trace.append('')
-                failure_trace.append(qtext)
-                failure_trace.extend(['',
+                results_failure_trace.append('')
+                results_failure_trace.append(qtext)
+                results_failure_trace.extend(['',
                     '======= Matched Rule Text for:',
-                    'file://{rule_text_file}'.format(**locals()),
-                    'file://{rule_data_file}'.format(**locals()),
+                    f'file://{rule_text_file}',
+                    f'file://{rule_data_file}',
                     '',
                     itext,
                 ])
             if not matches:
-                failure_trace.extend(['',
+                results_failure_trace.extend(['',
                     '======= NO MATCH ====',
                     '======= Not Matched Query Text for:',
-                    'file://{test_file}'.format(**locals())
+                    f'file://{test_file}'
                 ])
                 if test_data_file:
-                    failure_trace.append('file://{test_data_file}'.format(**locals()))
+                    results_failure_trace.append(f'file://{test_data_file}')
 
             # this assert will always fail and provide a detailed failure trace
-            assert '\n'.join(results) == '\n'.join(failure_trace)
+            assert '\n'.join(results_failure_trace) == '\n'.join(expected)
 
     closure_test_function.__name__ = test_name
 
@@ -277,44 +257,44 @@ def make_test(license_test, regen=False):
 
 # a small test set of legalese to use in tests
 mini_legalese = frozenset([
-'accordance',
-'alternatively',
-'according',
-'acknowledgement',
-'enforcement',
-'admission',
-'alleged',
-'accused',
-'determines',
-'exceeding',
-'assessment',
-'exceeds',
-'literal',
-'existed',
-'ignored',
-'complementary',
-'responded',
-'observed',
-'assessments',
-'volunteer',
-'admitted',
-'ultimately',
-'choices',
-'complications',
-'allowance',
-'fragments',
-'plaintiff',
-'license',
-'agreement',
-'gnu',
-'general',
-'warranty',
-'distribute',
-'distribution',
-'licensed',
-'covered',
-'warranties',
-'damages',
-'liability',
-'means',
+    'accordance',
+    'alternatively',
+    'according',
+    'acknowledgement',
+    'enforcement',
+    'admission',
+    'alleged',
+    'accused',
+    'determines',
+    'exceeding',
+    'assessment',
+    'exceeds',
+    'literal',
+    'existed',
+    'ignored',
+    'complementary',
+    'responded',
+    'observed',
+    'assessments',
+    'volunteer',
+    'admitted',
+    'ultimately',
+    'choices',
+    'complications',
+    'allowance',
+    'fragments',
+    'plaintiff',
+    'license',
+    'agreement',
+    'gnu',
+    'general',
+    'warranty',
+    'distribute',
+    'distribution',
+    'licensed',
+    'covered',
+    'warranties',
+    'damages',
+    'liability',
+    'means',
 ])

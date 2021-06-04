@@ -5,3 +5,4 @@ category: Copyleft Limited
 owner: AviSynth Library Project
 homepage_url: http://avisynth.nl/users/fizick/docs/english/license.htm
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-avisynth-linking-exception

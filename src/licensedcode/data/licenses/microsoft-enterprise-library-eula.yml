@@ -4,6 +4,7 @@ name: Microsoft Enterprise Library EULA
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://msdn.microsoft.com/en-us/library/ms998253
+spdx_license_key: LicenseRef-scancode-microsoft-enterprise-library-eula
 ignorable_copyrights:
     - (c) 2005 Microsoft Corporation
 ignorable_holders:

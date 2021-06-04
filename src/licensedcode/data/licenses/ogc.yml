@@ -4,6 +4,6 @@ name: OGC Software Notice
 category: Permissive
 owner: Open Geospatial Consortium
 homepage_url: https://www.ogc.org/ogc/software
+spdx_license_key: LicenseRef-scancode-ogc
 other_urls:
     - http://www.opengeospatial.org/ogc/legal
-

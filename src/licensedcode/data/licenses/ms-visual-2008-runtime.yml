@@ -3,6 +3,7 @@ short_name: MS Visual C++ 2008 Runtime Libraries License
 name: Microsoft Visual C++ 2008 Runtime Libraries License
 category: Proprietary Free
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-visual-2008-runtime
 other_urls:
     - http://msdn.microsoft.com/en-us/library/vstudio/ms235299.aspx
 ignorable_urls:

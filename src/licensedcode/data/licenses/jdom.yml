@@ -5,6 +5,7 @@ category: Permissive
 owner: JDOM
 homepage_url: http://www.jdom.org/docs/faq.html#a0030
 notes: this based on an Apache 1.1 license
+spdx_license_key: LicenseRef-scancode-jdom
 faq_url: http://www.jdom.org/docs/faq.html#a0030
 ignorable_authors:
     - Jason Hunter and Brett McLaughlin

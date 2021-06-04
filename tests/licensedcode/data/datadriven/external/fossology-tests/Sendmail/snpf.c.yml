@@ -1,0 +1,4 @@
+license_expressions:
+  - purdue-bsd AND sendmail
+  - sendmail
+  - sendmail

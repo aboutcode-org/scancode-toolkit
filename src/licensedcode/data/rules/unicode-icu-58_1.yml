@@ -1,0 +1,5 @@
+license_expression: unicode-icu-58
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://source.icu-project.org/repos/icu/trunk/icu4j/main/shared/licenses/LICENSE

@@ -47,6 +47,7 @@
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-components@1.1.9?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.codehaus.plexus/plexus-components@1.1.9",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.9/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.9/plexus-components-1.1.9.jar",

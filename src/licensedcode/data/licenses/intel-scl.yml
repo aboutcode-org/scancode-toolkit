@@ -3,5 +3,6 @@ short_name: Intel Source Code License Agreement
 name: Intel Source Code License Agreement
 category: Proprietary Free
 owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel-scl
 other_urls:
     - http://software.intel.com/en-us/articles/intel-64-architecture-processor-topology-enumeration

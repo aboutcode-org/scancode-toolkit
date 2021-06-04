@@ -6,5 +6,6 @@ owner: MaxMind
 homepage_url: https://geolite.maxmind.com/download/geoip/database/LICENSE.txt
 notes: This license is mostly the same as a bsd-original (or rather a bsd-simplified with an
     advertizing clause)
+spdx_license_key: LicenseRef-scancode-maxmind-odl
 ignorable_urls:
     - http://maxmind.com/

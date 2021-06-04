@@ -1,0 +1,5 @@
+license_expression: simpl-2.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/simpl-2.0

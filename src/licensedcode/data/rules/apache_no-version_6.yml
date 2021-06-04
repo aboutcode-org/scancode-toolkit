@@ -1,0 +1,9 @@
+license_expression: apache-2.0
+is_license_reference: yes
+relevance: 95
+minimum_coverage: 100
+ignorable_urls:
+    - http://www.apache.org/licenses/
+notes: the actual version of the license is not provided
+ but the most common one is the Apache 2.0
+

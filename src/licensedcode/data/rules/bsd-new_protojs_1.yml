@@ -1,4 +1,5 @@
 license_expression: bsd-new
 is_license_notice: yes
+minimum_coverage: 60
 ignorable_urls:
     - https://opensource.org/licenses/BSD-3-Clause

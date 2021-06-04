@@ -4,6 +4,7 @@ name: TeX Live License
 category: Permissive
 owner: Karl Berry
 homepage_url: ftp://tug.org/historic/systems/texlive/2007/LICENSE.TL
+spdx_license_key: LicenseRef-scancode-tex-live
 ignorable_urls:
     - http://latex-project.org/lppl.html
     - http://www.ctan.org/tex-archive/help/Catalogue/

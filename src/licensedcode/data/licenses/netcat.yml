@@ -4,5 +4,6 @@ name: Netcat License
 category: Permissive
 owner: Netcat Project
 homepage_url: http://nc110.sourceforge.net/
+spdx_license_key: LicenseRef-scancode-netcat
 ignorable_emails:
     - nc110-devel@lists.sourceforge.net

@@ -4,6 +4,7 @@ name: GPL 2.0 with Dmitry Koterov additions
 category: Copyleft
 owner: Dmitry Koterov
 homepage_url: https://github.com/DmitryKoterov/dklab_realplexor/blob/master/dklab_realplexor.license-additional.txt
+spdx_license_key: LicenseRef-scancode-gpl-2.0-koterov
 ignorable_authors:
     - dmitry.koterov@gmail.com
 ignorable_urls:

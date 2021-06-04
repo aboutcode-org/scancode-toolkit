@@ -1,0 +1,91 @@
+SOFTWARE LICENSE Agreement 
+1. Licensed Product and Rights to Use
+This is a legal agreement between (the “LICENSOR“) and you (the
+“LICENSEE“). It governs the licensee's right to use, bundle and distribute the irrKlang Pro software
+(the “Software”) or parts of it. This Licence is also protected by copyright law.
+The Licensor grants the Licensee the limited, worldwide, non-exclusive, non-transferable, non-
+sublicensable right to use and redistribute the Software in association with the programming of an
+unlimited amount of “programs” which are sold for a price less than 20€. “Programs” refers to any work
+based on the Software, i.e. containing the Software or a portion of it.
+The license extends to minor upgrades up to, but not including, the next major version of the Software.
+This right is subject to the following conditions and limitations.
+This license is only valid if the Licensee is a "hobbyist developer" and a special offer for non-
+professional developers, it does not apply to companies and publishers.
+2. License Fee
+The Licensee pays a License fee of (plus value-added tax if applicable) to the Licensor. As soon
+as the Licensor acknowledges the receipt of the fee, the Licensee may use the Software as defined in
+this Agreement.
+3. Redistribution
+The source code of the Software (if provided) and derivative works of it may not be disclosed,
+transferred, sold or rented to any third party (directly or indirectly).
+The Software and derivative works of it may only be distributed in binary form as part of one single
+product. If the use of the Software in conjunction with more than one product is desired, payment of
+additional licence fees becomes due.
+The Software and derivative works of it may not be redistributed by the Licensee's end-users or
+customers.
+All trademark notices, copyrights and copies of third party license texts (if inclusion is demanded in the
+respective licenses) must be included in the redistributed Software or derivative work.
+4. Ownership of Software
+The Software is licensed and not sold. The Software is owned by the Licensor. The Licensor retains all
+rights, including all copyrights and intellectual property rights in and to the Software, its documentation,
+title, logos, data files and all copies thereof. All rights not explicitly granted to the Licensee in this
+License are reserved by the Licensor.
+5. Disclaimer of Warranty
+THE SOFTWARE IS PROVIDED BY THE LICENSEE ''AS IS'' AND ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+In any case, entire liability under any provision of this license shall be limited to € 1.00.
+Furthermore, the Licensee acknowledges that he was able to test and use the test version of the
+Software freely for an unlimited amount of time before agreeing to this license. The Licensee is thus
+conscious of the exact functionality provided by the Software and will not claim any missing or wrongly
+advertised functionality by the Licensor.
+The Software is especially not guaranteed to work with or on all versions of the Linux operating
+system, due its open source nature, changing application binary interfaces and numerous
+configurations of different distributions.The Licensee acknowleges that the software is especially not designed for use in hazardous
+environments such as medical, biologic, military, nuclear, or aircraft facilities, life critical applications or
+critical business applications. The term „life critical application“ means an application in which the
+functioning or malfunctioning of the software may result directly or indirectly in phyiscal injury or loss of
+human life. In no event will the licensor be liable for any damages, including lost profits or data, or
+other incidental or consequential damages, arising out of the use or inability to use the software, even
+if the licensee has been advised of the possibility of such damages, or for any claim by any other
+party.
+6. Reverse Engineering
+The Licensee is not entitled to reverse-engineer, decompile or modify the licenced software under this
+agreement.
+7. Dependencies and third Party licenses
+The Licensee acknowledges that the Software includes third party software and is depending on other
+software as described in the documentation and at the website.
+8. Termination
+If the Licensee fails to comply with the terms and conditions of this license, the Licensor will terminate
+the License agreement and the Licensee immediately has to delete all copies of the Software and its
+source (if provided).
+9. Publicity
+Documentation and website, (and if wished additionally credit screen, splash applications and package
+box) of the licensee's programs based on the Software must display the Logo or a text
+indicating that the software is contained in the program.
+Use of the License under this License agreement includes the option to be linked from a sub page of
+the website (i.e. 'Products using the Software'). The Licensor is allowed to indicate the
+existence of the business relationship with the Licensee on all advertising media including his
+website(s) using the Licensee's name and logo, subject to optional withdrawal in written form by the
+Licensee.
+10. Support
+This license does not include support services, although the Licensor can decide to offer the Licensee
+prioritized support via email. Repeated voluntary provision of support services by the Licensor does
+not constitute a claim for future provision of support services for the Licensee.
+11. Jurisdiction and Choice of Law
+Insofar as not otherwise agreed, this Agreement shall be governed exclusively by law.
+law shall also be applied in case of the Licensee being located outside of . The
+Licensee expressly agrees that exclusive jurisdiction for any claim or dispute with the Licensor linked
+in any way to the Licensee's use of the Software and/or Documentation resides in the competent court
+in the town of 
+12. Severability
+Should individual terms of this agreement be or become inoperative, this will not affect the remaining
+terms of this agreement. The Licensor and Licensee will work in a spirit of partnership to find an
+arrangement that approximates the inoperative terms as closely as possible.

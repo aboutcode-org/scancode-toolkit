@@ -3,6 +3,7 @@ short_name: OpenSAML License v1
 name: OpenSAML License Version 1
 category: Permissive
 owner: OpenSAML Project
+spdx_license_key: LicenseRef-scancode-opensaml-1.0
 other_urls:
     - https://wiki.shibboleth.net/confluence/display/OpenSAML/Home
 ignorable_copyrights:

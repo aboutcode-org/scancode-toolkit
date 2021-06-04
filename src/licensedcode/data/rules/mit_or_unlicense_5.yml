@@ -1,0 +1,6 @@
+license_expression: mit OR unlicense
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/boyter/lc/blob/a4c40b5e4d33075d3d7296cd1310eedb0fc1121a/README.md
+ignorable_urls:
+    - http://unlicense.org/

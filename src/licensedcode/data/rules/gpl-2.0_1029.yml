@@ -1,0 +1,10 @@
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 99
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

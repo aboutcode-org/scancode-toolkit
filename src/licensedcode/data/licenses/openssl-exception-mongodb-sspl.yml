@@ -1,6 +1,7 @@
 key: openssl-exception-mongodb-sspl
-short_name: OpenSSL exception to MongoDB SSPL
-name: OpenSSL exception to MongoDB SSPL
+short_name: OpenSSL exception to SSPL
+name: OpenSSL exception to the Server Side Public License
 category: Copyleft
 owner: MongoDB
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-openssl-exception-mongodb-sspl

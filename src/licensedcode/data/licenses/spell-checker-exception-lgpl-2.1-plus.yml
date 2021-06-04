@@ -4,6 +4,7 @@ name: Spell-Checker exception to LGPL 2.1 or later
 category: Copyleft Limited
 owner: AbiSource
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-spell-checker-exception-lgpl-2.1-plus
 text_urls:
     - https://github.com/AbiWord/enchant/blob/master/src/enchant.h
 other_urls:

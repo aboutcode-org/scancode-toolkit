@@ -1,7 +1,6 @@
 license_expression: liberation-font-exception
 is_license_notice: yes
 ignorable_copyrights:
-  - Copyright (c) 2007 Red Hat, Inc.
+    - Copyright (c) 2007 Red Hat, Inc.
 ignorable_holders:
-  - Red Hat, Inc.
-
+    - Red Hat, Inc.

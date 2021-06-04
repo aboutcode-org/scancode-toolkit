@@ -1,6 +1,6 @@
 license_expression: zlib-acknowledgement
 is_license_notice: yes
-minimum_coverage: 10
+minimum_coverage: 60
 notes: license text as published by SPDX for nunit-v2
 ignorable_copyrights:
     - Copyright (c) 2000-2004 Philip A. Craig

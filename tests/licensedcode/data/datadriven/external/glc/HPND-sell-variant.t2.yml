@@ -1,0 +1,8 @@
+license_expressions:
+  - mit-old-style
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/HPND-sell-variant.t2
+  originally expected to be detected as HPND-sell-variant
+  with coverage of 100.0
+  https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#Old_Style

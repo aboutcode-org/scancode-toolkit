@@ -1,0 +1,4 @@
+license_expression: gpl-2.0-plus WITH generic-exception
+is_license_notice: yes
+relevance: 100
+notes: Problematic injections in the GPL main text https://github.com/gat3way/hashkill/blob/50ba2b5971e1b7228df9d1c9e1e775881b18f96c/COPYING#L259

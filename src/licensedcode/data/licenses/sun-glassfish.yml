@@ -4,6 +4,7 @@ name: Sun GlassFish License
 category: Proprietary Free
 owner: Oracle (Sun)
 homepage_url: https://glassfish.dev.java.net/public/BinariesLicense.html
+spdx_license_key: LicenseRef-scancode-sun-glassfish
 text_urls:
     - https://glassfish.dev.java.net/public/BinariesLicense.html
 minimum_coverage: 80

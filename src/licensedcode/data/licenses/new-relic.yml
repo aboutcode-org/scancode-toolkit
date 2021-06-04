@@ -4,6 +4,7 @@ name: New Relic License
 category: Proprietary Free
 owner: New Relic
 homepage_url: https://github.com/newrelic/rpm/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-new-relic
 ignorable_copyrights:
     - Copyright (c) 2008-2014 New Relic, Inc.
 ignorable_holders:

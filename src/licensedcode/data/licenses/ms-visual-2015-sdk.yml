@@ -4,6 +4,7 @@ name: Microsoft Visual Studio 2015 Software Development Kit License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://visualstudio.microsoft.com/license-terms/mt171586/
+spdx_license_key: LicenseRef-scancode-ms-visual-2015-sdk
 other_urls:
     - http://go.microsoft.com/fwlink/?LinkID=614949
 ignorable_urls:

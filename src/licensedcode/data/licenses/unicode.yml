@@ -4,6 +4,7 @@ name: Unicode Inc License Agreement
 category: Permissive
 owner: Unicode Consortium
 homepage_url: http://unicode.org/
+spdx_license_key: LicenseRef-scancode-unicode
 text_urls:
     - http://unicode.org/copyright.html
 minimum_coverage: 60

@@ -4,5 +4,6 @@ name: OSF 1990 License
 category: Permissive
 owner: Open Group
 homepage_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
+spdx_license_key: LicenseRef-scancode-osf-1990
 text_urls:
     - https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant

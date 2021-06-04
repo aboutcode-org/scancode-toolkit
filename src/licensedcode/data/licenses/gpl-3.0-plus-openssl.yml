@@ -3,6 +3,6 @@ is_deprecated: yes
 short_name: GPL 3.0 or later with OpenSSL exception
 name: GPL 3.0 or later with OpenSSL exception
 category: Copyleft Limited
-owner: Tidleslash
+owner: Tildeslash
 notes: replaced by openssl-exception-gpl-3.0-plus
 is_exception: yes

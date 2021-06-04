@@ -4,6 +4,7 @@ name: Flex License v2.5
 category: Permissive
 owner: Regents of the University of California
 homepage_url: http://www.cs.princeton.edu/~appel/modern/c/software/flex/flex.html
+spdx_license_key: LicenseRef-scancode-flex-2.5
 text_urls:
     - http://www.cs.cmu.edu/afs/cs/project/ai-repository-9/ai/areas/nlp/parsing/flex/copying.txt
 minimum_coverage: 80

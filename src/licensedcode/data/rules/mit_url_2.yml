@@ -1,5 +1,5 @@
 license_expression: mit
 is_license_reference: yes
-relevance: 100 
+relevance: 100
 ignorable_urls:
     - https://spdx.org/licenses/mit

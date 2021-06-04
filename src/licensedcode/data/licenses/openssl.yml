@@ -8,6 +8,7 @@ notes: |
     This is the OpenSSL license proper, without the SSLEay part. The SPDX
     OpenSSL identifier does not apply here. Instead it matches the openssl-
     ssleay license.
+spdx_license_key: LicenseRef-scancode-openssl
 faq_url: http://www.openssl.org/support/faq.html
 other_urls:
     - http://www.openssl.org/source/license.html
@@ -18,3 +19,4 @@ ignorable_urls:
     - http://www.openssl.org/
 ignorable_emails:
     - licensing@OpenSSL.org
+minimum_coverage: 70

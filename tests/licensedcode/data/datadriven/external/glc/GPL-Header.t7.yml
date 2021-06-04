@@ -1,0 +1,9 @@
+license_expressions:
+  - gpl-2.0-plus
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/GPL-Header.t7
+  originally expected to be detected as GPL-2.0-or-later
+  with coverage of 79.1
+  Dropped "in the hope that it will be useful". ☺
+  Example: https://github.com/0xd4d/de4dot

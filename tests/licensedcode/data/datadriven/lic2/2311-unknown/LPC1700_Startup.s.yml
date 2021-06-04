@@ -1,0 +1,3 @@
+license_expressions:
+  - unknown-license-reference
+notes: Seen in https://cryptography.gmu.edu:4443/XBX/FreeRTOS/raw/b1796dec343ec1a521f9d1f9a752a2c268451fa5/Demo/CORTEX_LPC1768_GCC_Rowley/LPC1700_Startup.s

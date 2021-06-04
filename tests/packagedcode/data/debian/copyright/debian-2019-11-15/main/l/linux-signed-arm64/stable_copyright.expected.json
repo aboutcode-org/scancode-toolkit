@@ -1,5 +1,0 @@
-[
-  "GPL-2\nLGPL-2.1\nGPL-2+ or X11\nCRYPTOGAMS\nUnicode-data\nXen-interface",
-  "gpl-2.0 AND gpl-2.0-plus AND lgpl-2.1 AND lgpl-2.1-plus AND mit AND unicode AND unknown AND (bsd-new OR gpl-1.0-plus)",
-  "1991-2012 Linus Torvalds and many others\n1996-2006 Manoj Srivastava\n2005-2012 Debian kernel team\n2011 Lennart Poettering\n2012-2018 Linus Torvalds and many others\n2006,2014 Andy Polyakov <appro@openssl.org>\n1991-2012 Unicode, Inc.\n2002-2006 Keir Fraser\n2004 Tim Deegan\n2004 Andrew Warfield\n2005 Nguyen Anh Quynh\n2005-2006 IBM Corporation\n2005 Anthony Liguori\n2005 Rusty Russell\n2005-2006 XenSource Ltd.\n2006 Ian Campbell\n2006 Red Hat, Inc.\n2010 Ryan Wilson\n2014-2015 Red Hat, Inc.\n2015 Intel Corporation"
-]

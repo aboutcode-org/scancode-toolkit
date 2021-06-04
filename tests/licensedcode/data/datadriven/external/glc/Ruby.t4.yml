@@ -1,0 +1,9 @@
+license_expressions:
+  - ruby OR mit
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/Ruby.t4
+  originally expected to be detected as Ruby
+  with coverage of 90.2
+  Ruby s/binaries/executables/
+  Example: https://github.com/rubygems/rubygems

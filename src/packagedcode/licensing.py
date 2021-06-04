@@ -1,35 +1,15 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import logging
 
 from license_expression import Licensing
-from six import string_types
 
 from licensedcode.spans import Span
 
@@ -38,6 +18,7 @@ Detect and normalize licenses as found in package manifests data.
 """
 
 TRACE = False
+
 
 def logger_debug(*args):
     pass
@@ -51,7 +32,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a)
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a)
                                      for a in args))
 
 
@@ -65,20 +46,26 @@ def matches_have_unknown(matches, licensing):
             return True
 
 
-def get_normalized_expression(query_string, try_as_expression=True):
+def get_normalized_expression(query_string, try_as_expression=True, approximate=True):
     """
     Given a text `query_string` return a single detected license expression.
     `query_string` is typically the value of a license field as found in package
-    manifests. If `try_as_expression` is True try frst to parse this as a
-    license_expression. Return None if there is the `query_string` is empty.
-    Return "unknown" as a license expression if there is a `query_string` but
-    nothing was detected.
+    manifests.
+
+    If `try_as_expression` is True try first to parse this as a license
+    expression.
+
+    If `approximate` is True, also include approximate license detection as
+    part of the matching procedure.
+
+    Return None if the `query_string` is empty. Return "unknown" as a license
+    expression if there is a `query_string` but nothing was detected.
     """
     if not query_string or not query_string.strip():
         return
 
     if TRACE:
-        logger_debug('get_normalized_expression: query_string: "{}"'.format(query_string))
+        logger_debug(f'get_normalized_expression: query_string: "{query_string}"')
 
     from licensedcode.cache import get_index
     idx = get_index()
@@ -90,18 +77,33 @@ def get_normalized_expression(query_string, try_as_expression=True):
     if try_as_expression:
         try:
             matched_as_expression = True
-            matches = idx.match(query_string=query_string, as_expression=True)
+            matches = idx.match(
+                query_string=query_string,
+                as_expression=True,
+            )
             if matches_have_unknown(matches, licensing):
                 # rematch also if we have unknowns
                 matched_as_expression = False
-                matches = idx.match(query_string=query_string, as_expression=False)
-    
+                matches = idx.match(
+                    query_string=query_string,
+                    as_expression=False,
+                    approximate=approximate,
+                )
+
         except Exception:
             matched_as_expression = False
-            matches = idx.match(query_string=query_string, as_expression=False)
+            matches = idx.match(
+                query_string=query_string,
+                as_expression=False,
+                approximate=approximate,
+            )
     else:
         matched_as_expression = False
-        matches = idx.match(query_string=query_string, as_expression=False)
+        matches = idx.match(
+            query_string=query_string,
+            as_expression=False,
+            approximate=approximate,
+        )
 
     if not matches:
         # we have a query_string text but there was no match: return an unknown
@@ -139,7 +141,7 @@ def get_normalized_expression(query_string, try_as_expression=True):
             raise Exception(
                 'Inconsistent package.declared_license: text with multiple "queries".'
                 'Please report this issue to the scancode-toolkit team.\n'
-                '{}'.format(query_string))
+                f'{query_string}')
 
     query_len = len(query.tokens)
     matched_qspans = [m.qspan for m in matches]

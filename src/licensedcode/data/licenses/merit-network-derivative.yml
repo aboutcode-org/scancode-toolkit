@@ -4,6 +4,7 @@ name: Merit Network Derivative Works License
 category: Copyleft
 owner: Merit Network
 homepage_url: http://web.mit.edu/kolya/.f/root/athena.mit.edu/net/project/radius/3.6B/src/resources.c
+spdx_license_key: LicenseRef-scancode-merit-network-derivative
 standard_notice: |
     /*
     * Copyright [C] The Regents of the University of Michigan and Merit
@@ -63,6 +64,5 @@ standard_notice: |
     *
     */
 ignorable_emails:
-  - aaa-admin@merit.edu
-  - aaa-license@merit.edu
-
+    - aaa-admin@merit.edu
+    - aaa-license@merit.edu

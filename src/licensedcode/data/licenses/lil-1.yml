@@ -5,5 +5,6 @@ category: Permissive
 owner: Jeremy Ashkenas
 homepage_url: http://lillicense.org/v1.html
 notes: this license has MIT-like terms with extra non-obvious patent grants.
+spdx_license_key: LicenseRef-scancode-lil-1
 other_urls:
     - https://github.com/jashkenas/lil-license

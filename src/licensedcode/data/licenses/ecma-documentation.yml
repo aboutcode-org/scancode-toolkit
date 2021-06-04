@@ -4,3 +4,4 @@ name: Ecma Documentation License
 category: Free Restricted
 owner: Ecma International
 homepage_url: http://www.ecma-international.org/publications/DISCLAIMER.pdf
+spdx_license_key: LicenseRef-scancode-ecma-documentation

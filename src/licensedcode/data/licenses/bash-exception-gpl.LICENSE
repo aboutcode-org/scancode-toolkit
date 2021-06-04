@@ -1,0 +1,7 @@
+The Free Software Foundation has exempted Bash from the requirement of
+Paragraph 2c of the General Public License.  This is to say, there is
+no requirement for Bash to print a notice when it is started
+interactively in the usual way.  We made this exception because users
+and standards expect shells not to print such messages.  This
+exception applies to any program that serves as a shell and that is
+based primarily on Bash as opposed to other GNU software.

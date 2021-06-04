@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.eglibc.org/cgi-bin/viewvc.cgi/branches/eglibc-2_18/libc/io/stat64.c?revision=23787&view=markup
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-unlimited-linking-exception-lgpl
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
 standard_notice: |

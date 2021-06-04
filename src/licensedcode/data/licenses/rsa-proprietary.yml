@@ -4,6 +4,7 @@ name: RSA Proprietary Shrinkwrap License
 category: Commercial
 owner: RSA (the Security Division of EMC)
 homepage_url: https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf
+spdx_license_key: LicenseRef-scancode-rsa-proprietary
 text_urls:
     - https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf
 ignorable_urls:

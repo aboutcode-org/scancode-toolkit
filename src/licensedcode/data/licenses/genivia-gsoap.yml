@@ -4,6 +4,7 @@ name: Genivia gSOAP Commercial Licensing
 category: Commercial
 owner: Genivia
 homepage_url: http://www.genivia.com/Products/gsoap/contract.html
+spdx_license_key: LicenseRef-scancode-genivia-gsoap
 text_urls:
     - http://www.genivia.com/Products/gsoap/contract.html
 other_urls:

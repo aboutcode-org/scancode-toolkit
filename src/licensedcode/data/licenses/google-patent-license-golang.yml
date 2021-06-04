@@ -4,3 +4,4 @@ name: Google Patent License for Go
 category: Patent License
 owner: Google
 homepage_url: https://golang.org/PATENTS
+spdx_license_key: LicenseRef-scancode-google-patent-license-golang

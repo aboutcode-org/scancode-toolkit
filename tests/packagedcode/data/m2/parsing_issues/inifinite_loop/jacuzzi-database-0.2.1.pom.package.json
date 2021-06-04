@@ -55,6 +55,7 @@
   "source_packages": [
     "pkg:maven/com.github.albertoanguita/jacuzzi-database@%24%7Bversion%7D?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/com.github.albertoanguita/jacuzzi-database@%24%7Bversion%7D",
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/github/albertoanguita/jacuzzi-database/${version}/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/github/albertoanguita/jacuzzi-database/${version}/jacuzzi-database-${version}.jar",

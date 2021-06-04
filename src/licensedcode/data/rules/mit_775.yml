@@ -1,0 +1,5 @@
+license_expression: mit
+is_license_text: yes
+relevance: 100
+notes: typo in text from https://github.com/ChavezChen/CWLateralSlide/blob/fdf8f70471832b8e50f78639a792e55a08741d75/LICENSE
+    See also this PR to fix this https://github.com/ChavezChen/CWLateralSlide/pull/130

@@ -3,3 +3,6 @@ short_name: Purdue BSD-Style License
 name: Purdue BSD-Style License
 category: Permissive
 owner: Purdue Research Foundation
+spdx_license_key: LicenseRef-scancode-purdue-bsd
+notes: this is very similar to the hs-regexp license
+minimum_coverage: 70

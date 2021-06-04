@@ -3,6 +3,7 @@ short_name: LibMib License
 name: LibMib License
 category: Permissive
 owner: MIB Software
+spdx_license_key: LicenseRef-scancode-libmib
 ignorable_copyrights:
     - Copyright 1998 Forrest J. Cavalier III
 ignorable_holders:

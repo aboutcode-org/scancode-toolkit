@@ -1,0 +1,7 @@
+license_expression: lgpl-3.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 95
+notes: worded like an Apache notice
+ignorable_urls:
+    - https://www.gnu.org/licenses/lgpl-3.0.txt

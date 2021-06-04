@@ -2,5 +2,4 @@ license_expression: lgpl-2.1
 is_license_text: yes
 relevance: 100
 ignorable_urls:
-  - https://licensebuttons.net/l/LGPL/2.1
-
+    - https://licensebuttons.net/l/LGPL/2.1

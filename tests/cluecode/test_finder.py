@@ -1,31 +1,12 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import os
 import re
@@ -34,8 +15,6 @@ from unittest.case import expectedFailure
 import pytest
 
 from commoncode.testcase import FileBasedTesting
-from commoncode import compat
-from commoncode.system import py3
 from cluecode import finder
 from cluecode.finder import find
 from cluecode.finder import urls_regex
@@ -75,7 +54,7 @@ class TestEmail(FileBasedTesting):
             u'linux@3ware.com'
         ]
         result = re.findall(finder.emails_regex(), test_input)
-        assert expected == result
+        assert result == expected
 
     def test_find_emails_in_c(self):
         test_file = self.get_test_loc('finder/email/3w-xxxx.c')
@@ -85,19 +64,19 @@ class TestEmail(FileBasedTesting):
             'andre@suse.com'
         ]
         result = find_emails_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_find_emails_in_python1(self):
         test_file = self.get_test_loc('finder/email/jardiff.py')
         expected = ['jp_py@demonseed.net']
         result = find_emails_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_find_emails_in_python2(self):
         test_file = self.get_test_loc('finder/email/thomas.py')
         expected = ['amir@divmod.org']
         result = find_emails_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_find_emails_does_not_return_bogus_emails(self):
         lines = [
@@ -117,37 +96,37 @@ class TestEmail(FileBasedTesting):
         ]
         expected = []
         result = find_emails_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_emails_does_not_return_png(self):
         lines = ['navigation-logo@2x.png']
         expected = []
         result = find_emails_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_emails_does_not_return_incomplete_emails_or_example_emails(self):
         lines = ['user@...', 'thomas@...', '*@example.com', 'user@localhost']
         expected = []
         result = find_emails_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_emails_filters_unique_by_default(self):
         lines = ['user@me.com', 'user@me.com']
         expected = ['user@me.com']
         result = find_emails_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_emails_does_not_filter_unique_if_requested(self):
         lines = ['user@me.com', 'user@me.com']
         expected = ['user@me.com', 'user@me.com']
         result = find_emails_tester(lines, unique=False)
-        assert expected == result
+        assert result == expected
 
     def test_find_emails_does_return_line_number(self):
         lines = ['user@me.com', 'user2@me.com']
         expected = [('user@me.com', 1), ('user2@me.com', 2)]
         result = find_emails_tester(lines, with_lineno=True)
-        assert expected == result
+        assert result == expected
 
     def test_find_emails_does_not_return_junk(self):
         lines = '''
@@ -174,13 +153,13 @@ class TestEmail(FileBasedTesting):
             u'trivial@kernel.org'
         ]
         result = find_emails_tester(lines, with_lineno=False)
-        assert expected == result
+        assert result == expected
 
     def test_emails_does_filter_junk_domains(self):
         test_file = self.get_test_loc('finder/email/Content.json')
         expected = []
         result = find_emails_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_emails_for_ignored_hosts(self):
         test_string = '''
@@ -196,7 +175,7 @@ class TestEmail(FileBasedTesting):
             u'efg@many.org'
         ]
         result = find_emails_tester(test_string, with_lineno=False)
-        assert expected == result
+        assert result == expected
 
 
 class TestUrl(FileBasedTesting):
@@ -206,7 +185,7 @@ class TestUrl(FileBasedTesting):
         result = re.match(finder.urls_regex(),
                         u'www.something.domain.tld').group()
         expected = u'www.something.domain.tld'
-        assert expected == result
+        assert result == expected
 
     def test_urls_regex(self):
         test_file = self.get_test_loc('finder/url/BeautifulSoup.py')
@@ -219,7 +198,7 @@ class TestUrl(FileBasedTesting):
             u'http://chardet.feedparser.org/',
             u'http://cjkpython.i18n.org/',
         ]
-        assert expected == re.findall(finder.urls_regex(), test_input)
+        assert re.findall(finder.urls_regex(), test_input) == expected
 
     def test_canonical_url(self):
         data = (
@@ -235,7 +214,7 @@ class TestUrl(FileBasedTesting):
         )
 
         for test, expected in data:
-            assert expected == finder.canonical_url(test)
+            assert finder.canonical_url(test) == expected
 
     def test_find_urls_returns_unique(self):
         lines = [
@@ -277,7 +256,7 @@ class TestUrl(FileBasedTesting):
             u'http://kernelnewbies.org/',
         ]
         result = find_urls_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_does_not_return_local_urls(self):
         lines = [
@@ -293,7 +272,7 @@ class TestUrl(FileBasedTesting):
         ]
         expected = []
         result = find_urls_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_does_not_return_local_ip(self):
         lines = [
@@ -318,7 +297,7 @@ class TestUrl(FileBasedTesting):
         ]
         expected = [u'http://172.32.120.155/']
         result = find_urls_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_is_good_host(self):
         assert finder.is_good_host('172.32.120.155')
@@ -326,19 +305,19 @@ class TestUrl(FileBasedTesting):
     def test_url_host_domain(self):
         result = finder.url_host_domain('http://svn.codehaus.org')
         expected = ('svn.codehaus.org', 'codehaus.org',)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_filters_bogus_url(self):
         lines = [u'http://__________________']
         expected = []
         result = find_urls_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_with_square_brackets_from_trac_wiki_html(self):
         lines = ['title="Link: [http://www.somedo.com/ Example]"']
         expected = ['http://www.somedo.com/']
         result = find_urls_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_in_pom(self):
         lines = [
@@ -373,7 +352,7 @@ class TestUrl(FileBasedTesting):
             u'https://svn.sourceforge.net/svn/jtidy/trunk/jtidy/',
         ]
         result = find_urls_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_in_file_with_markup_in_code(self):
         test_file = self.get_test_loc('finder/url/markup_in_code.c')
@@ -388,7 +367,7 @@ class TestUrl(FileBasedTesting):
             u'http://xml.libexpat.org/ns1'
         ]
         result = find_urls_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_does_not_return_duplicate_urls_by_default(self):
         test_file = self.get_test_loc('finder/url/nodupe.htm')
@@ -398,13 +377,13 @@ class TestUrl(FileBasedTesting):
             u'http://www.edgewall.org/',
         ]
         result = find_urls_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls__does_not_return_junk_urls(self):
         test_file = self.get_test_loc('finder/url/junk_urls.c')
         expected = []
         result = find_urls_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_detects_urls_correcty_in_html(self):
         test_file = self.get_test_loc('finder/url/some_html.htm')
@@ -461,7 +440,7 @@ class TestUrl(FileBasedTesting):
             u'http://www.edgewall.org/'
         ]
         result = find_urls_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_without_scheme_in_lines(self):
         lines = [
@@ -475,7 +454,7 @@ class TestUrl(FileBasedTesting):
             u'http://www.programming-with-objects.com/',
         ]
         result = find_urls_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_without_scheme_in_python(self):
         test_file = self.get_test_loc('finder/url/no-scheme.py')
@@ -485,13 +464,13 @@ class TestUrl(FileBasedTesting):
             u'http://www.programming-with-objects.com/',
         ]
         result = find_urls_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_filters_invalid_urls(self):
         test_file = self.get_test_loc('finder/url/truncated_url')
         result = find_urls_tester(test_file)
         expected = []
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_with_fragments(self):
         test_file = self.get_test_loc('finder/url/ABOUT')
@@ -502,7 +481,7 @@ class TestUrl(FileBasedTesting):
             u'http://pypi.python.org/packages/2.4/P/Pygments/Pygments-0.11.1-py2.4.egg#md5=52d7a46a91a4a426f8fbc681c5c6f1f5',
         ]
         result = find_urls_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_in_python(self):
         test_file = self.get_test_loc('finder/url/BeautifulSoup.py')
@@ -513,37 +492,37 @@ class TestUrl(FileBasedTesting):
             u'http://www.crummy.com/software/BeautifulSoup/documentation.html',
         ]
         result = find_urls_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_in_java(self):
         test_file = self.get_test_loc('finder/url/IMarkerActionFilter.java')
         expected = [u'http://www.eclipse.org/legal/epl-v10.html']
         result = find_urls_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_filters_unique_by_default(self):
         lines = ['http://www.me.com', 'http://www.me.com']
         expected = ['http://www.me.com/']
         result = find_urls_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_does_not_filter_unique_if_requested(self):
         lines = ['http://www.me.com', 'http://www.me.com']
         expected = ['http://www.me.com/', 'http://www.me.com/']
         result = find_urls_tester(lines, unique=False)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_does_return_line_number(self):
         lines = ['http://www.me.com', 'http://www.me2.com']
         expected = [('http://www.me.com/', 1), ('http://www.me2.com/', 2)]
         result = find_urls_tester(lines, with_lineno=True)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_finds_git_urls(self):
         lines = ['git@github.com:christophercantu/pipeline.git', ]
         expected = ['git@github.com:christophercantu/pipeline.git']
         result = find_urls_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_does_not_crash_on_weird_urls(self):
         lines = [
@@ -552,12 +531,12 @@ class TestUrl(FileBasedTesting):
         ]
         expected = []
         result = find_urls_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_in_classfiles_does_not_return_junk_urls(self):
         test_file = self.get_test_loc('finder/url/XMLConstants.class')
         result = find_urls_tester(test_file)
-        assert [] == result
+        assert result == []
 
     def test_misc_valid_urls(self):
         # set of good URLs from https://mathiasbynens.be/demo/url-regex
@@ -572,7 +551,7 @@ class TestUrl(FileBasedTesting):
         '''
         for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
-            assert [test] == result
+            assert result == [test]
 
     def test_misc_valid_urls_reported_with_trailing_slash(self):
         # set of good URLs from https://mathiasbynens.be/demo/url-regex
@@ -585,7 +564,7 @@ class TestUrl(FileBasedTesting):
         '''
         for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
-            assert [test + u'/'] == result
+            assert result == [test + u'/']
 
     @expectedFailure
     def test_misc_valid_unicode_or_punycode_urls_that_should_pass(self):
@@ -603,7 +582,7 @@ class TestUrl(FileBasedTesting):
         '''
         for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
-            assert [test] == result
+            assert result == [test]
 
     @expectedFailure
     def test_misc_valid_urls_that_should_pass(self):
@@ -617,7 +596,7 @@ class TestUrl(FileBasedTesting):
         '''
         for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
-            assert [test] == result
+            assert result == [test]
 
     def test_example_dot_com_valid_urls_return_nothing(self):
         urls = u'''
@@ -635,7 +614,7 @@ class TestUrl(FileBasedTesting):
         '''
         for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
-            assert [] == result
+            assert result == []
 
     def test_misc_invalid_urls(self):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
@@ -680,7 +659,7 @@ class TestUrl(FileBasedTesting):
         '''
         for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
-            assert [] == result
+            assert result == []
 
     def test_misc_invalid_urls_that_are_still_detected_and_may_not_be_really_invalid(self):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
@@ -693,18 +672,6 @@ class TestUrl(FileBasedTesting):
             result = [val for val, _ln in finder.find_urls([test])]
             assert result in ([test] , [test + u'/'])
 
-    @pytest.mark.skipif(py3, reason='url-cpp behaves differently')
-    def test_misc_invalid_urls_that_are_still_detected_and_may_not_be_really_invalidPpy2(self):
-        # set of non URLs from https://mathiasbynens.be/demo/url-regex
-        urls = u'''
-            http://www.foo.bar./
-            ftps://foo.bar/
-        '''
-        for test in urls.split():
-            result = [val for val, _ln in finder.find_urls([test])]
-            assert result in ([test] , [test + u'/'])
-
-    @pytest.mark.skipif(not py3, reason='url-cpp behaves differently')
     def test_misc_invalid_urls_that_are_still_detected_and_normalized(self):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''
@@ -712,9 +679,8 @@ class TestUrl(FileBasedTesting):
         '''
         for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
-            assert [test] == result
+            assert result == [test]
 
-    @pytest.mark.skipif(not py3, reason='url-cpp behaves differently')
     def test_invalid_urls_are_not_detected(self):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''
@@ -723,7 +689,7 @@ class TestUrl(FileBasedTesting):
         '''
         for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
-            assert [] == result
+            assert result == []
 
     def test_misc_invalid_urls_that_should_not_be_detected(self):
         # At least per this set of non URLs from https://mathiasbynens.be/demo/url-regex
@@ -736,7 +702,6 @@ class TestUrl(FileBasedTesting):
             result = [val for val, _ln in finder.find_urls([test])]
             assert result, test
 
-    @pytest.mark.skipif(py3, reason='url-cpp behaves differently')
     def test_misc_invalid_urls_that_should_not_be_detected_2(self):
         # At least per this set of non URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''
@@ -764,7 +729,7 @@ class TestUrl(FileBasedTesting):
             'https://tools.ietf.org/html/rfc6125#appendix-B.2'
         ]
         result = find_urls_tester(test_file)
-        assert expected == result
+        assert result == expected
 
     def test_find_urls_does_not_crash_on_mojibake_bytes(self):
         lines = [
@@ -772,13 +737,13 @@ class TestUrl(FileBasedTesting):
         ]
         expected = ['https://tools.ietf.org/html/rfc2821#section-4.1.2']
         result = find_urls_tester(lines)
-        assert expected == result
+        assert result == expected
 
     def test_find_in_go_does_not_crash_with_unicode_error(self):
         test_file = self.get_test_loc('finder/url/verify.go')
         patterns = [('urls', urls_regex(),)]
         for _key, url, _line, _lineno in find(test_file, patterns):
-            assert type(url) == compat.unicode
+            assert str == type(url)
 
 
 class TestSearch(FileBasedTesting):
@@ -797,7 +762,7 @@ class TestSearch(FileBasedTesting):
         for test_file, expected in tests:
             location = os.path.join(test_dir, test_file)
             result = list(s for s, _ln in finder.find_pattern(location, pattern))
-            assert expected == result
+            assert result == expected
 
     def test_search_unique(self):
         test_dir = self.get_test_loc('finder/search', copy=True)
@@ -812,11 +777,11 @@ class TestSearch(FileBasedTesting):
         for test_file, expected in tests:
             location = os.path.join(test_dir, test_file)
             result = list(s for s, _ln in finder.find_pattern(location, pattern, unique=True))
-            assert expected == result
+            assert result == expected
 
     def test_search_in_binaries_with_line(self):
         test_file = self.get_test_loc('finder/binaries/gapi32.dll')
         pattern = r'This program ([\(\w\)\.\- ]+)'
         expected = [('cannot be run in DOS mode.', 1)]
         result = list(finder.find_pattern(test_file, pattern))
-        assert expected == result
+        assert result == expected

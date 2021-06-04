@@ -3,6 +3,7 @@ short_name: First Works Appreciative License 1.2
 name: First Works Appreciative License 1.2
 category: Proprietary Free
 owner: Jonathan Michael Davis
+spdx_license_key: LicenseRef-scancode-first-works-appreciative-1.2
 ignorable_copyrights:
     - Copyright (c) 2005 Jonathan Michael Davis <jond_123@hotmail.com>
 ignorable_holders:

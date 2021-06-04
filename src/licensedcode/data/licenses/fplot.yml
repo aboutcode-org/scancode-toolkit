@@ -4,3 +4,4 @@ name: FPLOT LIcense
 category: Permissive
 owner: Michael C. Ring
 homepage_url: http://www.tc.umn.edu/~ringx004/fplot-readme.html
+spdx_license_key: LicenseRef-scancode-fplot

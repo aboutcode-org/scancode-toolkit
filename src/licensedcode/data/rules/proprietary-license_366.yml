@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: BSD-looking with "Redistributions in any kind of AppStore (whether for free or paid)
+    are not permitted." See https://github.com/lukakerr/Pine/blob/7c6dedc4836477f034ead573cfde3036106726d8/LICENSE

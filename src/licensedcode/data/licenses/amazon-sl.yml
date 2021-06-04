@@ -4,6 +4,7 @@ name: Amazon Software License
 category: Proprietary Free
 owner: Amazon Web Services
 homepage_url: http://aws.amazon.com/asl/
+spdx_license_key: LicenseRef-scancode-amazon-sl
 text_urls:
     - http://aws.amazon.com/asl/
     - https://github.com/aws/aws-sdk-android/blob/master/LICENSE.AMAZON.txt

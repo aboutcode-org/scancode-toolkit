@@ -2,9 +2,8 @@ license_expression: lgpl-2.1
 is_license_text: yes
 notes: in this variant the address has changed to 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ignorable_copyrights:
-  - Copyright A9 1991, 1999 Free Software Foundation, Inc.
-  - copyrighted by the Free Software Foundation
+    - Copyright A9 1991, 1999 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
 ignorable_holders:
-  - A9 Free Software Foundation, Inc.
-  - the Free Software Foundation
-
+    - A9 Free Software Foundation, Inc.
+    - the Free Software Foundation

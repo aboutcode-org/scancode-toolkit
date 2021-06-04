@@ -3,3 +3,4 @@ short_name: Cavium malloc License
 name: Cavium malloc License
 category: Permissive
 owner: Cavium
+spdx_license_key: LicenseRef-scancode-cavium-malloc

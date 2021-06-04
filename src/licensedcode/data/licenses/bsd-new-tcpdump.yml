@@ -4,3 +4,4 @@ name: BSD-3-Clause tcpdump variant
 category: Permissive
 owner: libpcap
 notes: This license is a custom variation on the BSD  found in tcpdump
+spdx_license_key: LicenseRef-scancode-bsd-new-tcpdump

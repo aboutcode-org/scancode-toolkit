@@ -1,0 +1,9 @@
+license_expressions:
+  - json
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/JSON.t2
+  originally expected to be detected as JSON
+  with coverage of 100.0
+  "should rather be" instead of "shall be"
+  Example: https://github.com/ArthurHlt/gominlog

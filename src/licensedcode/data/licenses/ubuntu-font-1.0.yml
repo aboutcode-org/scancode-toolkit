@@ -4,6 +4,7 @@ name: Ubuntu Font Licence v1.0
 category: Free Restricted
 owner: Ubuntu Font Family
 homepage_url: http://font.ubuntu.com/licence/
+spdx_license_key: LicenseRef-scancode-ubuntu-font-1.0
 text_urls:
     - https://assets.ubuntu.com/v1/81e5605d-ubuntu-font-licence-1.0.txt
 faq_url: https://www.ubuntu.com/legal/font-licence

@@ -5,6 +5,7 @@ category: Permissive
 owner: Marcus Crane
 homepage_url: https://github.com/marcus-crane/pkgparse-node/blob/46446413cbdd1b7f67fad0e12188930920222b4a/LICENSE
 notes: a rare license replaced by MIT since.
+spdx_license_key: LicenseRef-scancode-things-i-made-public-license
 ignorable_copyrights:
     - Copyright (c) Marcus Crane <marcus@thingsima.de>
 ignorable_holders:

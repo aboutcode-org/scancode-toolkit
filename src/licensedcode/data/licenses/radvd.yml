@@ -4,6 +4,8 @@ name: radvd License
 category: Permissive
 owner: Unspecified
 homepage_url: https://github.com/reubenhwk/radvd/blob/master/COPYRIGHT
+spdx_license_key: LicenseRef-scancode-radvd
 other_urls:
     - http://www.litech.org/radvd/
+    - https://github.com/radvd-project/radvd/blob/d3cc8882cb0a527d7abe986dff0228a0bc0b3f00/COPYRIGHT
 minimum_coverage: 60

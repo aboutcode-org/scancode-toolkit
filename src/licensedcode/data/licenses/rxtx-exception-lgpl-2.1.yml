@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: RXTX
 homepage_url: http://users.frii.com/jarvi/rxtx/license.html
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-rxtx-exception-lgpl-2.1
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
 standard_notice: |

@@ -5,5 +5,6 @@ category: Permissive
 owner: David Corcoran
 homepage_url: https://pcsclite.apdu.fr/
 notes: there is an extra clause about changes which has some ambiguities
+spdx_license_key: LicenseRef-scancode-bsd-3-clause-no-change
 other_urls:
     - https://salsa.debian.org/rousseau/PCSC/blob/master/COPYING

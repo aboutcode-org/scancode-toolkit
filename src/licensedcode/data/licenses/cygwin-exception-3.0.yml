@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: Cygwin Project
 homepage_url: http://cygwin.com/licensing.html
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-cygwin-exception-3.0
 text_urls:
     - http://cygwin.com/cgi-bin/cvsweb.cgi/src/winsup/CYGWIN_LICENSE?cvsroot=src
 other_urls:

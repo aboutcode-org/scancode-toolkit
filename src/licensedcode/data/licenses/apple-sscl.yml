@@ -3,3 +3,4 @@ short_name: Apple Sample Source Code License
 name: Apple Sample Source Code License
 category: Permissive
 owner: Apple
+spdx_license_key: LicenseRef-scancode-apple-sscl

@@ -1,15 +1,2 @@
-license_expression: gpl-1.0-plus AND artistic-1.0
 is_false_positive: yes
-is_license_reference: yes
-relevance: 100
 notes: Found in Debian docs
-ignorable_copyrights:
-    - copyrighted by the Free Software Foundation, Inc.
-ignorable_holders:
-    - the Free Software Foundation, Inc.
-ignorable_authors:
-    - Bruce Perens <Bruce@Pixar.com>
-ignorable_urls:
-    - http://ftp.gnu.org/
-ignorable_emails:
-    - Bruce@Pixar.com

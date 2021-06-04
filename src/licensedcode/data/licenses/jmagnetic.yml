@@ -3,6 +3,7 @@ short_name: JMagnetic License
 name: JMagnetic License
 category: Proprietary Free
 owner: Stefan Meier
+spdx_license_key: LicenseRef-scancode-jmagnetic
 ignorable_copyrights:
     - copyright (c) 1998-99, Stefan Meier
 ignorable_holders:

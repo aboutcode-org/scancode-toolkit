@@ -4,6 +4,7 @@ name: Oasis IPR Policy License 2014-10-15
 category: Proprietary Free
 owner: OASIS
 homepage_url: https://www.oasis-open.org/policies-guidelines/ipr
+spdx_license_key: LicenseRef-scancode-oasis-ipr-policy-2014
 ignorable_copyrights:
     - Copyright (c) OASIS Open
 ignorable_holders:

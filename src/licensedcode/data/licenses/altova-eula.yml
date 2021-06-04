@@ -4,6 +4,7 @@ name: Altova EULA
 category: Commercial
 owner: Altova
 homepage_url: http://www.altova.com/eula.html
+spdx_license_key: LicenseRef-scancode-altova-eula
 ignorable_copyrights:
     - Copyright (c) 2007-2011 Altova GmbH (www.altova.com)
 ignorable_holders:

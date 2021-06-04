@@ -3,6 +3,7 @@ short_name: VPL 1.2
 name: Vtiger Public License 1.2
 category: Copyleft Limited
 owner: vtiger
+spdx_license_key: LicenseRef-scancode-vpl-1.2
 other_urls:
     - https://master.dl.sourceforge.net/project/vtigercrm/vtiger%20CRM%207.0.1/Core%20Product/vtigercrm7.0.1.tar.gz
 ignorable_copyrights:

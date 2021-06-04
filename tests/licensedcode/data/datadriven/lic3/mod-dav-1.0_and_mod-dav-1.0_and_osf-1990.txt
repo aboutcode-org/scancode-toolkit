@@ -1,0 +1,76 @@
+/*
+** Copyright (C) 1998-1999 Greg Stein. All Rights Reserved.
+**
+** By using this file, you agree to the terms and conditions set forth in
+** the LICENSE.html file which can be found at the top level of the mod_dav
+** distribution or at http://www.webdav.org/mod_dav/license-1.html.
+**
+** Contact information:
+**   Greg Stein, PO Box 3151, Redmond, WA, 98073
+**   gstein@lyra.org, http://www.webdav.org/mod_dav/
+*/
+
+/*
+** DAV opaquelocktoken scheme implementation
+**
+** Written 5/99 by Keith Wannamaker, wannamak@us.ibm.com
+** Adapted from ISO/DCE RPC spec and a former Internet Draft
+** by Leach and Salz:
+** http://www.ics.uci.edu/pub/ietf/webdav/uuid-guid/draft-leach-uuids-guids-01
+**
+** Portions of the code are covered by the following license:
+**
+** Copyright (c) 1990- 1993, 1996 Open Software Foundation, Inc.
+** Copyright (c) 1989 by Hewlett-Packard Company, Palo Alto, Ca. &
+** Digital Equipment Corporation, Maynard, Mass.
+** Copyright (c) 1998 Microsoft.
+** To anyone who acknowledges that this file is provided "AS IS"
+** without any express or implied warranty: permission to use, copy,
+** modify, and distribute this file for any purpose is hereby
+** granted without fee, provided that the above copyright notices and
+** this notice appears in all source code copies, and that none of
+** the names of Open Software Foundation, Inc., Hewlett-Packard
+** Company, or Digital Equipment Corporation be used in advertising
+** or publicity pertaining to distribution of the software without
+** specific, written prior permission.  Neither Open Software
+** Foundation, Inc., Hewlett-Packard Company, Microsoft, nor Digital Equipment
+** Corporation makes any representations about the suitability of
+** this software for any purpose.
+*/
+
+/*This file was stolen from webtools/mozbot/uuidgen/token.c */
+
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <ctype.h>
+
+#include "md5.h"
+#include "token.h"
+
+#ifdef WIN32
+#include <windows.h>
+#else
+#include <sys/types.h>
+#include <sys/time.h>
+#include <unistd.h>
+#ifdef XP_BEOS
+#include <be/net/netdb.h>
+#endif
+#endif
+
+/* set the following to the number of 100ns ticks of the actual resolution of
+   your system's clock */
+#define UUIDS_PER_TICK 1024
+
+/* Set this to what your compiler uses for 64 bit data type */
+#ifdef WIN32
+#define unsigned64_t unsigned __int64
+#define I64(C) C
+#else
+#define unsigned64_t unsigned long long
+#define I64(C) C##LL
+#endif
+
+

@@ -4,6 +4,7 @@ name: JPRS Open Source Code License v1.1
 category: Free Restricted
 owner: JPRS
 homepage_url: https://jprs.co.jp/idn/idnkit2-OSCL.txt
+spdx_license_key: LicenseRef-scancode-jprs-oscl-1.1
 text_urls:
     - https://jprs.co.jp/idn/idnkit2-OSCL.txt
 minimum_coverage: 70

@@ -4,6 +4,7 @@ name: 3D Slicer Contribution and Software License Agreement v1.0
 category: Permissive
 owner: Slicer Project
 homepage_url: https://www.slicer.org/wiki/License
+spdx_license_key: LicenseRef-scancode-3dslicer-1.0
 text_urls:
     - https://github.com/Slicer/Slicer/blob/v4.6.2/COPYRIGHT.txt
 faq_url: https://www.slicer.org/wiki/CommercialUse

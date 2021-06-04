@@ -1,3 +1,5 @@
 license_expression: zlib-acknowledgement
 is_license_notice: yes
 relevance: 99
+minimum_coverage: 50
+

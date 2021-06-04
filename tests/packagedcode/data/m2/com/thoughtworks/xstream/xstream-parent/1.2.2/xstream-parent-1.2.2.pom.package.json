@@ -29,7 +29,7 @@
   "code_view_url": "https://svn.codehaus.org/xstream/tags/XSTREAM_1_2_2",
   "vcs_url": "svn+https://svn.codehaus.org/xstream/tags/XSTREAM_1_2_2",
   "copyright": null,
-  "license_expression": "other-permissive AND bsd-new",
+  "license_expression": "bsd-new",
   "declared_license": [
     {
       "name": "BSD style",
@@ -45,6 +45,7 @@
   "source_packages": [
     "pkg:maven/com.thoughtworks.xstream/xstream-parent@1.2.2?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/com.thoughtworks.xstream/xstream-parent@1.2.2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream-parent/1.2.2/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream-parent/1.2.2/xstream-parent-1.2.2.jar",

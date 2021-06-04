@@ -1,3 +1,5 @@
 license_expression: lgpl-2.1-plus
 is_license_notice: yes
 relevance: 99
+minimum_coverage: 95
+notes: mix of lgpl and gpl

@@ -4,6 +4,7 @@ name: HP Non-Commercial License
 category: Proprietary Free
 owner: HP - Hewlett Packard
 homepage_url: http://h30097.www3.hp.com/hp_sw_license.html
+spdx_license_key: LicenseRef-scancode-hp
 text_urls:
     - http://h30097.www3.hp.com/hp_sw_license.html
 ignorable_copyrights:

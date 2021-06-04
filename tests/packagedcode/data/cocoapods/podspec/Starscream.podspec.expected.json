@@ -6,7 +6,7 @@
   "qualifiers": {},
   "subpath": null,
   "primary_language": "Objective-C",
-  "description": null,
+  "description": "A conforming WebSocket RFC 6455 client library in Swift.",
   "release_date": null,
   "parties": [
     {

@@ -4,6 +4,7 @@ name: Opera for Computers EULA 2018
 category: Proprietary Free
 owner: Opera Software ASA
 homepage_url: https://www.opera.com/eula/computers
+spdx_license_key: LicenseRef-scancode-opera-eula-2018
 ignorable_urls:
     - http://sourcecode.opera.com/
     - https://www.opera.com/eula/computers

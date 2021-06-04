@@ -1,0 +1,16 @@
+This is a command-line ANSI C program to convert raw photos from
+   any digital camera on any computer running any operating system.
+
+   No license is required to download and use dcraw.c.  However,
+   to lawfully redistribute dcraw, you must either (a) offer, at
+   no extra charge, full source code* for all executable files
+   containing RESTRICTED functions, (b) distribute this code under
+   the GPL Version 2 or later, (c) remove all RESTRICTED functions,
+   re-implement them, or copy them from an earlier, unrestricted
+   Revision of dcraw.c, or (d) purchase a license from the author.
+
+   The functions that process Foveon images have been RESTRICTED
+   since Revision 1.237.  All other code remains free for all uses.
+
+   *If you have not modified dcraw.c in any way, a link to my
+   homepage qualifies as "full source code".

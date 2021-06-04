@@ -1,0 +1,6 @@
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+notes: seen in https://github.com/ap/Text-Tabs/blob/master/lib.old/Text/Wrap.pm and https://github.com/ap/Text-Tabs/blob/master/lib.modern/Text/Wrap.pm
+    Fedora RPMS calls this the TTWL license

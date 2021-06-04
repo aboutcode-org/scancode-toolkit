@@ -1,32 +1,12 @@
 #
-# Copyright (c) 2016-2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import io
 import json
 import os
@@ -34,11 +14,7 @@ import re
 import unicodedata
 
 import chardet
-from six import string_types
 
-from commoncode import compat
-from commoncode.system import on_linux
-from commoncode.system import py2
 from textcode import pdf
 from textcode import markup
 from textcode import sfdb
@@ -69,7 +45,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 def numbered_text_lines(location, demarkup=False, plain_text=False):
@@ -92,7 +68,7 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
     if not location:
         return iter([])
 
-    if not isinstance(location, string_types):
+    if not isinstance(location, str):
         # not a path: wrap an iterator on location which should be a sequence
         # of lines
         if TRACE:
@@ -150,12 +126,9 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
     if T.is_text:
         numbered_lines = enumerate(unicode_text_lines(location), 1)
         # text with very long lines such minified JS, JS map files or large JSON
-        locale = b'locale' if on_linux and py2 else u'locale'
-        package_json = b'package.json' if on_linux and py2 else u'package.json'
-
-        if (not location.endswith(package_json)
+        if (not location.endswith('package.json')
             and (T.is_text_with_long_lines or T.is_compact_js
-              or T.filetype_file == 'data' or locale in location)):
+              or T.filetype_file == 'data' or 'locale' in location)):
 
             numbered_lines = break_numbered_unicode_text_lines(numbered_lines)
             if TRACE:
@@ -237,11 +210,11 @@ def js_map_sources_lines(location):
     We care only about the presence of these tags for detection: version, sources, sourcesContent.
     """
     with io.open(location, encoding='utf-8') as jsm:
-        content = json.load(jsm, object_pairs_hook=OrderedDict)
+        content = json.load(jsm)
         sources = content.get('sourcesContent', [])
         for entry in sources:
             for line in entry.splitlines():
-                yield line               
+                yield line
 
 
 def as_unicode(line):
@@ -253,7 +226,7 @@ def as_unicode(line):
 
     TODO: Add file/magic detection, unicodedmanit/BS3/4
     """
-    if isinstance(line, compat.unicode):
+    if isinstance(line, str):
         return remove_null_bytes(line)
 
     try:
@@ -274,7 +247,7 @@ def as_unicode(line):
             except UnicodeDecodeError:
                 try:
                     enc = chardet.detect(line)['encoding']
-                    s = compat.unicode(line, enc)
+                    s = str(line, enc)
                 except UnicodeDecodeError:
                     # fall-back to strings extraction if all else fails
                     s = strings.string_from_string(s)

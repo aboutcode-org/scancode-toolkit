@@ -1,40 +1,27 @@
-graft etc
 graft src
 graft thirdparty
-graft plugins
-graft samples
-graft docs
+recursive-include etc configure.py
+graft etc/thirdparty
+recursive-include etc/thirdparty *
 
-graft tests
-graft plugins-builtin
-
-include .bumpversion.cfg
-include .coveragerc
-include .gitattributes
-include .gitignore
-include .travis.yml
-include apache-2.0.LICENSE
-include appveyor.yml
-include AUTHORS.rst
-include azure-pipelines.yml
-include cc0-1.0.LICENSE
-include CHANGELOG.rst
-include codecov.yml
-include configure
-include configure.bat
-include conftest.py
-include CONTRIBUTING.rst
-include extractcode
-include extractcode.bat
-include MANIFEST.in
+include *.LICENSE
 include NOTICE
-include README.rst
-include scancode
-include scancode-toolkit.ABOUT
-include scancode.bat
-include setup.cfg
-include setup.py
+include *.ABOUT
 
-exclude SCANCODE_DEV_MODE
+include setup.*
+include configure*
+include requirements*
+include *.toml
+
+include extractcode*
+include scancode*
+
+# path to executable used by a built app
+include PYTHON_EXECUTABLE
+
+include *.rst
+include Dockerfile
+include .VERSION
 
 global-exclude *.py[co] __pycache__ *.*~
+

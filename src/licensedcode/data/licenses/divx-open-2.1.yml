@@ -3,6 +3,7 @@ short_name: DivX Open License 2.1
 name: DivX Open License v2.1
 category: Copyleft Limited
 owner: DivX, LLC
+spdx_license_key: LicenseRef-scancode-divx-open-2.1
 ignorable_copyrights:
     - Copyright (c) 2001 Project Mayo
 ignorable_authors:

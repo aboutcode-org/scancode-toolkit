@@ -1,45 +1,42 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
+import json
 import os
+from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
-from commoncode.system import py2
-from commoncode.system import py3
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.query import Query
-from licenses_test_utils import check_result_equals_expected_json
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
+
+
+
+def check_result_equals_expected_json(result, expected, regen=False):
+    """
+    Check equality between a result collection and an expected JSON file.
+    Regen the expected file if regen is True.
+    """
+    if regen:
+        with open(expected, 'w') as ex:
+            ex.write(json.dumps(result, indent=2))
+
+    with open(expected) as ex:
+        expected = json.loads(ex.read())
+
+    assert result == expected
 
 
 class IndexTesting(FileBasedTesting):
@@ -82,7 +79,7 @@ class TestQueryWithSingleRun(IndexTesting):
             [None],
         ]
 
-        assert expected == result
+        assert result == expected
 
         # convert tid to actual token strings
         qtbl_as_str = lambda qtbl: [[None if tid is None else idx.tokens_by_tid[tid] for tid in tids] for tids in qtbl]
@@ -98,16 +95,16 @@ class TestQueryWithSingleRun(IndexTesting):
             [None],
         ]
 
-        assert expected_str == result_str
+        assert result_str == expected_str
 
-        assert [3, 3, 3, 3, 3, 3, 3, 3, 3, 6] == qry.line_by_pos
+        assert qry.line_by_pos == [3, 3, 3, 3, 3, 3, 3, 3, 3, 6]
 
         idx = index.LicenseIndex([Rule(stored_text=rule_text, license_expression='bsd')])
         querys = 'and this is not a license'
         qry = Query(query_string=querys, idx=idx, _test_mode=True)
         result = list(qry.tokens_by_line())
         expected = [['and', None, None, None, 'license']]
-        assert expected == qtbl_as_str(result)
+        assert qtbl_as_str(result) == expected
 
     def test_Query_known_and_unknown_positions(self):
 
@@ -120,15 +117,14 @@ class TestQueryWithSingleRun(IndexTesting):
         qry = Query(query_string=querys, idx=idx, _test_mode=False)
         # we have only 4 known positions in this query, hence only 4 entries there on a single line
         # "Redistribution and use in"
-        assert [1, 1, 1, 1, 1] == qry.line_by_pos
+        assert qry.line_by_pos == [1, 1, 1, 1, 1]
 
         # this show our 4 known token in this query with their known position
         # "Redistribution and use in"
-        assert [1, 2, 3, 4, 0] == qry.tokens
+        assert qry.tokens == [1, 2, 3, 4, 0]
 
         # the first two tokens are unknown, then starting after "in" we have three trailing unknown.
-        assert {3: 1, 4: 1, -1: 2} == qry.unknowns_by_pos
-
+        assert qry.unknowns_by_pos == {3: 1, 4: 1, -1: 2}
         # This shows how knowns and unknowns are blended
         result = list(qry.tokens_with_unknowns())
         expected = [
@@ -145,7 +141,7 @@ class TestQueryWithSingleRun(IndexTesting):
             # other form always'
             None, 0, None
         ]
-        assert expected == result
+        assert result == expected
 
 
     def test_Query_tokenize_from_string(self):
@@ -160,29 +156,30 @@ class TestQueryWithSingleRun(IndexTesting):
             Always'''
 
         qry = Query(query_string=querys, idx=idx, _test_mode=True)
-        qry.tokenize_and_build_runs(qry.tokens_by_line())
+        tokens_by_line = list(qry.tokens_by_line(query_string=querys))
+        qry.tokenize_and_build_runs(tokens_by_line)
         # convert tid to actual token strings
         tks_as_str = lambda tks: [None if tid is None else idx.tokens_by_tid[tid] for tid  in tks]
 
         expected = ['redistribution', 'and', 'use', 'in', 'source', 'and', 'binary', 'are', 'permitted', 'and']
         result = tks_as_str(qry.tokens)
-        assert expected == result
+        assert result == expected
 
         expected = [None, 'redistribution', 'and', 'use', 'in', 'source', 'and', 'binary', 'are', 'permitted', None, None, None, None, None, 'and', None, None]
         result = tks_as_str(qry.tokens_with_unknowns())
-        assert expected == result
+        assert result == expected
 
-        assert 1 == len(qry.query_runs)
+        assert len(qry.query_runs) == 1
         qr1 = qry.query_runs[0]
-        assert 0 == qr1.start
-        assert 9 == qr1.end
-        assert 10 == len(qr1)
+        assert qr1.start == 0
+        assert qr1.end == 9
+        assert len(qr1) == 10
         expected = ['redistribution', 'and', 'use', 'in', 'source', 'and', 'binary', 'are', 'permitted', 'and']
         result = tks_as_str(qr1.tokens)
-        assert expected == result
+        assert result == expected
         expected = [None, 'redistribution', 'and', 'use', 'in', 'source', 'and', 'binary', 'are', 'permitted', None, None, None, None, None, 'and']
         result = tks_as_str(qr1.tokens_with_unknowns())
-        assert expected == result
+        assert result == expected
 
     def test_QueryRuns_tokens_with_unknowns(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
@@ -196,22 +193,22 @@ class TestQueryWithSingleRun(IndexTesting):
             Always'''
 
         qry = Query(query_string=querys, idx=idx)
-        assert set([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == set(qry.matchables)
+        assert set(qry.matchables) == set([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
-        assert 1 == len(qry.query_runs)
+        assert len(qry.query_runs) == 1
         qrun = qry.query_runs[0]
 
         # convert tid to actual token strings
         tks_as_str = lambda tks: [None if tid is None else idx.tokens_by_tid[tid] for tid  in tks]
 
         expected = ['redistribution', 'and', 'use', 'in', 'source', 'and', 'binary', 'are', 'permitted', 'and']
-        assert expected == tks_as_str(qrun.tokens)
+        assert tks_as_str(qrun.tokens) == expected
 
         expected = [None, 'redistribution', 'and', 'use', 'in', 'source', 'and', 'binary', 'are', 'permitted', None, None, None, None, None, 'and']
-        assert expected == tks_as_str(qrun.tokens_with_unknowns())
+        assert tks_as_str(qrun.tokens_with_unknowns()) == expected
 
-        assert 0 == qrun.start
-        assert 9 == qrun.end
+        assert qrun.start == 0
+        assert qrun.end == 9
 
     def test_QueryRun_does_not_end_with_None(self):
         rule_text = 'Redistribution and use in source and binary forms, with or without modification, are permitted'
@@ -241,21 +238,21 @@ class TestQueryWithSingleRun(IndexTesting):
             'modification',
             None
         ]
-        assert [x for x in expected if x] == tks_as_str(qry.tokens)
-        assert expected == tks_as_str(qry.tokens_with_unknowns())
+        assert tks_as_str(qry.tokens) == [x for x in expected if x]
+        assert tks_as_str(qry.tokens_with_unknowns()) == expected
 
-        assert 2 == len(qry.query_runs)
+        assert len(qry.query_runs) == 2
         qrun = qry.query_runs[0]
         expected = ['redistribution', 'and', 'use', 'in', 'source', 'and', 'binary', 'forms', 'with', 'or', 'without', 'modification', 'are', 'permitted']
-        assert expected == tks_as_str(qrun.tokens)
-        assert 0 == qrun.start
-        assert 13 == qrun.end
+        assert tks_as_str(qrun.tokens) == expected
+        assert qrun.start == 0
+        assert qrun.end == 13
 
         qrun = qry.query_runs[1]
         expected = ['modification']
-        assert expected == tks_as_str(qrun.tokens)
-        assert 14 == qrun.start
-        assert 14 == qrun.end
+        assert tks_as_str(qrun.tokens) == expected
+        assert qrun.start == 14
+        assert qrun.end == 14
 
     def test_Query_from_real_index_and_location(self):
         idx = index.LicenseIndex(self.get_test_rules('index/bsd'))
@@ -272,13 +269,13 @@ class TestQueryWithSingleRun(IndexTesting):
                         u'provided by the copyright holders and contributors as is')
              },
             {'end': 36, 'start': 36, 'tokens': u'redistributions'}]
-        assert expected == result
+        assert result == expected
 
         expected_lbp = [
             4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8,
             9, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 15
         ]
-        assert expected_lbp == qry.line_by_pos
+        assert qry.line_by_pos == expected_lbp
 
     def test_query_and_index_tokens_are_identical_for_same_text(self):
         rule_dir = self.get_test_loc('query/rtos_exact/')
@@ -301,72 +298,72 @@ class TestQueryWithSingleRun(IndexTesting):
         idx = index.LicenseIndex([Rule(stored_text='a is the binary')],
                                  _legalese=legalese,
                                  _spdx_tokens=set())
-        assert 1 == idx.len_legalese
-        assert {u'binary': 0, u'is': 1, u'the': 2} == idx.dictionary
+        assert idx.len_legalese == 1
+        assert idx.dictionary == {u'binary': 0, u'is': 1, u'the': 2}
 
         # two junks
         q = Query(query_string='a the', idx=idx)
         assert q.line_by_pos
         qrun = q.query_runs[0]
-        assert [2] == qrun.tokens
-        assert {} == qrun.query.unknowns_by_pos
+        assert qrun.tokens == [2]
+        assert qrun.query.unknowns_by_pos == {}
 
         # one junk
         q = Query(query_string='a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [0] == qrun.tokens
-        assert {} == qrun.query.unknowns_by_pos
+        assert qrun.tokens == [0]
+        assert qrun.query.unknowns_by_pos == {}
 
         # one junk
         q = Query(query_string='binary the', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [0, 2] == qrun.tokens
-        assert {} == qrun.query.unknowns_by_pos
+        assert qrun.tokens == [0, 2]
+        assert qrun.query.unknowns_by_pos == {}
 
         # one unknown at start
         q = Query(query_string='that binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [0] == qrun.tokens
-        assert {-1: 1} == qrun.query.unknowns_by_pos
+        assert qrun.tokens == [0]
+        assert qrun.query.unknowns_by_pos == {-1: 1}
 
         # one unknown at end
         q = Query(query_string='binary that', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [0] == qrun.tokens
-        assert {0: 1} == qrun.query.unknowns_by_pos
+        assert qrun.tokens == [0]
+        assert qrun.query.unknowns_by_pos == {0: 1}
 
         # onw unknown in the middle
         q = Query(query_string='binary that a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [0, 0] == qrun.tokens
-        assert {0: 1} == qrun.query.unknowns_by_pos
+        assert qrun.tokens == [0, 0]
+        assert qrun.query.unknowns_by_pos == {0: 1}
 
         # onw unknown in the middle
         q = Query(query_string='a binary that a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [0, 0] == qrun.tokens
-        assert {0: 1} == qrun.query.unknowns_by_pos
+        assert qrun.tokens == [0, 0]
+        assert qrun.query.unknowns_by_pos == {0: 1}
 
         # two unknowns in the middle
         q = Query(query_string='binary that was a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [0, 0] == qrun.tokens
-        assert {0: 2} == qrun.query.unknowns_by_pos
+        assert qrun.tokens == [0, 0]
+        assert qrun.query.unknowns_by_pos == {0: 2}
 
         # unknowns at start, middle and end
         q = Query(query_string='hello dolly binary that was a binary end really', idx=idx)
         #                         u     u           u    u            u    u
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [0, 0] == qrun.tokens
-        assert {0: 2, 1: 2, -1: 2} == qrun.query.unknowns_by_pos
+        assert qrun.tokens == [0, 0]
+        assert qrun.query.unknowns_by_pos == {0: 2, 1: 2, -1: 2}
 
     def test_query_tokens_are_same_for_different_text_formatting(self):
 
@@ -382,26 +379,26 @@ class TestQueryWithSingleRun(IndexTesting):
         idx = index.LicenseIndex([Rule(text_file=rule_file, license_expression='mit')])
 
         q = Query(location=rule_file, idx=idx)
-        assert 1 == len(q.query_runs)
+        assert len(q.query_runs) == 1
         expected = q.query_runs[0]
         for tf in test_files:
             q = Query(tf, idx=idx)
             qr = q.query_runs[0]
-            assert expected.tokens == qr.tokens
+            assert qr.tokens == expected.tokens
 
     def test_query_run_unknowns(self):
         legalese = set(['binary'])
         idx = index.LicenseIndex([Rule(stored_text='a is the binary')], _legalese=legalese)
 
-        assert {u'binary': 0, u'is': 1, u'the': 2} == idx.dictionary
-        assert 1 == idx.len_legalese
+        assert idx.dictionary == {u'binary': 0, u'is': 1, u'the': 2}
+        assert idx.len_legalese == 1
 
         # multiple unknowns at start, middle and end
         q = Query(query_string='that new binary was sure a kind of the real mega deal', idx=idx)
         # known pos                      0               1         2
         # abs pos                  0   1 2      3   4    5 6    7  8   9    10   11
         expected = {-1: 2, 0: 4, 1: 3}
-        assert expected == dict(q.unknowns_by_pos)
+        assert dict(q.unknowns_by_pos) == expected
 
 
 class TestQueryWithMultipleRuns(IndexTesting):
@@ -422,7 +419,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
              'end': 36,
              'tokens': u'redistributions'}
         ]
-        assert expected == result
+        assert result == expected
 
     def test_query_runs_three_runs(self):
         idx = index.LicenseIndex(self.get_test_rules('index/bsd'))
@@ -439,18 +436,18 @@ class TestQueryWithMultipleRuns(IndexTesting):
         ]
 
         result = [q.to_dict(brief=True) for q in qry.query_runs]
-        assert expected == result
+        assert result == expected
 
     def test_QueryRun(self):
         idx = index.LicenseIndex([Rule(stored_text='redistributions in binary form must redistributions in')])
         qry = Query(query_string='redistributions in binary form must redistributions in', idx=idx)
         qruns = qry.query_runs
-        assert 1 == len(qruns)
+        assert len(qruns) == 1
         qr = qruns[0]
         # test
         result = [idx.tokens_by_tid[tid] for tid in qr.tokens]
         expected = ['redistributions', 'in', 'binary', 'form', 'must', 'redistributions', 'in']
-        assert expected == result
+        assert result == expected
 
     def test_QueryRun_repr(self):
         idx = index.LicenseIndex([Rule(stored_text='redistributions in binary form must redistributions in')])
@@ -459,10 +456,10 @@ class TestQueryWithMultipleRuns(IndexTesting):
         qr = qruns[0]
         # test
         expected = 'QueryRun(start=0, len=7, start_line=1, end_line=1)'
-        assert expected == repr(qr)
+        assert repr(qr) == expected
 
         expected = 'QueryRun(start=0, len=7, start_line=1, end_line=1, tokens="redistributions in binary form must redistributions in")'
-        assert expected == qr.__repr__(trace_repr=True)
+        assert qr.__repr__(trace_repr=True) == expected
 
     def test_query_runs_text_is_correct(self):
         test_rules = self.get_test_rules('query/full_text/idx',)
@@ -498,7 +495,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
             software even if advised of the possibility of such damage'''.split(),
             u'no <None> of'.split(),
         ]
-        assert expected == result
+        assert result == expected
 
     def test_query_runs_with_plain_rule(self):
         rule_text = u'''X11 License
@@ -556,8 +553,8 @@ class TestQueryWithMultipleRuns(IndexTesting):
                 u'system is trademark of x consortium inc'
             )
         }]
-        assert 214 == len(qry.query_runs[0].tokens)
-        assert expected == result
+        assert len(qry.query_runs[0].tokens) == 214
+        assert result == expected
 
     def test_query_run_has_correct_offset(self):
         rule_dir = self.get_test_loc('query/runs/rules')
@@ -566,44 +563,25 @@ class TestQueryWithMultipleRuns(IndexTesting):
         query_doc = self.get_test_loc('query/runs/query.txt')
         q = Query(location=query_doc, idx=idx, line_threshold=4)
         result = [qr.to_dict() for qr in q.query_runs]
-        if py2:
-            expected = [
-                {b'end': 0, b'start': 0, b'tokens': u'inc'},
-                {b'end': 121, b'start': 1,
-                 b'tokens': (
-                    u'this library is free software you can redistribute it and or modify '
-                    u'it under the terms of the gnu library general public license as '
-                    u'published by the free software foundation either version 2 of the '
-                    u'license or at your option any later version this library is '
-                    u'distributed in the hope that it will be useful but without any '
-                    u'warranty without even the implied warranty of merchantability or '
-                    u'fitness for particular purpose see the gnu library general public '
-                    u'license for more details you should have received copy of the gnu '
-                    u'library general public license along with this library see the file '
-                    u'copying lib if not write to the free software foundation inc 51 '
-                    u'franklin street fifth floor boston ma 02110 1301 usa')
-                 }
-            ]
-        if py3:
-            expected = [
-                {u'end': 0, u'start': 0, u'tokens': u'inc'},
-                {u'end': 121, u'start': 1,
-                 u'tokens': (
-                    u'this library is free software you can redistribute it and or modify '
-                    u'it under the terms of the gnu library general public license as '
-                    u'published by the free software foundation either version 2 of the '
-                    u'license or at your option any later version this library is '
-                    u'distributed in the hope that it will be useful but without any '
-                    u'warranty without even the implied warranty of merchantability or '
-                    u'fitness for particular purpose see the gnu library general public '
-                    u'license for more details you should have received copy of the gnu '
-                    u'library general public license along with this library see the file '
-                    u'copying lib if not write to the free software foundation inc 51 '
-                    u'franklin street fifth floor boston ma 02110 1301 usa')
+        expected = [
+            {u'end': 0, u'start': 0, u'tokens': u'inc'},
+            {u'end': 121, u'start': 1,
+                u'tokens': (
+                u'this library is free software you can redistribute it and or modify '
+                u'it under the terms of the gnu library general public license as '
+                u'published by the free software foundation either version 2 of the '
+                u'license or at your option any later version this library is '
+                u'distributed in the hope that it will be useful but without any '
+                u'warranty without even the implied warranty of merchantability or '
+                u'fitness for particular purpose see the gnu library general public '
+                u'license for more details you should have received copy of the gnu '
+                u'library general public license along with this library see the file '
+                u'copying lib if not write to the free software foundation inc 51 '
+                u'franklin street fifth floor boston ma 02110 1301 usa')
                  }
             ]
 
-        assert expected == result
+        assert result == expected
 
     def test_query_run_and_tokenizing_breaking_works__with_plus_as_expected(self):
         rule_dir = self.get_test_loc('query/run_breaking/rules')
@@ -630,7 +608,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
                 'street fifth floor boston ma 02110 1301 usa'}
         ]
 
-        assert expected == result
+        assert result == expected
 
         # check rules token are the same exact set as the set of the last query run
         txtid = idx.tokens_by_tid
@@ -677,21 +655,13 @@ class TestQueryWithMultipleRuns(IndexTesting):
         qry = Query(query_string=qs, idx=idx)
         result = [qr.to_dict() for qr in qry.query_runs]
         # FIXME: we should not even have a query run for things that are all digits
-        if py2:
-            expected = [
-                {b'end': 5, b'start': 0, b'tokens': u'1 80 0 256 1568 1953'},
-                {b'end': 12, b'start': 6, b'tokens': u'406 1151 1 429 368 634 8'},
-                {b'end': 17, b'start': 13, b'tokens': u'1955 724 2 932 234'},
-                {b'end': 20, b'start': 18, b'tokens': u'694 634 110'},
-            ]
-        if py3:
-            expected = [
-                {u'end': 5, u'start': 0, u'tokens': u'1 80 0 256 1568 1953'},
-                {u'end': 12, u'start': 6, u'tokens': u'406 1151 1 429 368 634 8'},
-                {u'end': 17, u'start': 13, u'tokens': u'1955 724 2 932 234'},
-                {u'end': 20, u'start': 18, u'tokens': u'694 634 110'},
-            ]
-        assert expected == result
+        expected = [
+            {u'end': 5, u'start': 0, u'tokens': u'1 80 0 256 1568 1953'},
+            {u'end': 12, u'start': 6, u'tokens': u'406 1151 1 429 368 634 8'},
+            {u'end': 17, u'start': 13, u'tokens': u'1955 724 2 932 234'},
+            {u'end': 20, u'start': 18, u'tokens': u'694 634 110'},
+        ]
+        assert result == expected
 
         assert not any(qr.is_matchable() for qr in qry.query_runs)
 
@@ -740,7 +710,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         '''.split())
         idx = cache.get_index()
         result = Query(query_string=query_s, idx=idx)
-        assert 1 == len(result.query_runs)
+        assert len(result.query_runs) == 1
         qr = result.query_runs[0]
         # NOTE: this is not a token present in any rules or licenses
         unknown_tokens = ('baridationally',)
@@ -768,7 +738,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         types h types h h h h h
         '''.split())
         result = Query(query_string=query_s, idx=idx)
-        assert 1 == len(result.query_runs)
+        assert len(result.query_runs) == 1
         qr = result.query_runs[0]
         expected_qr0 = u' '.join(u'''
         3 unable to create proc entry license gpl description driver author eric
@@ -781,15 +751,15 @@ class TestQueryWithFullIndex(FileBasedTesting):
         linux include asm include asm generic include acpi acpi c posix types 32 h
         types h types h h h h h
         '''.split())
-        assert expected_qr0 == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens)
+        assert u' '.join(idx.tokens_by_tid[t] for t in qr.tokens) == expected_qr0
 
-        assert expected_qr0 == u' '.join(
-            idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.matchables)
+        assert u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(
+                qr.tokens) if p in qr.matchables) == expected_qr0
 
         # only gpl and gnu are is in high matchables
         expected = u'license gpl author gnu gnu'
-        assert expected == u' '.join(
-            idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.high_matchables)
+        assert u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(
+                qr.tokens) if p in qr.high_matchables) == expected
 
     def test_query_run_for_text_with_long_lines(self):
         location1 = self.get_test_loc('query/long_lines.txt')
@@ -804,7 +774,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         assert len(Query(location1, idx=idx).query_runs) == 17
         assert len(Query(location2, idx=idx).query_runs) == 15
 
-    def test_Query_tokens_by_line_behaves_the_same_on_python_2_and_python_3(self):
+    def test_Query_tokens_by_line_behaves_the_same_on_various_python_2(self):
         location = self.get_test_loc('query/query_lines/yahoo-eula.txt')
         idx = cache.get_index()
         query = Query(location, idx=idx)

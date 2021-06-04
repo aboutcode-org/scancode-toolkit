@@ -1,4 +1,0 @@
-is_negative: yes
-notes: Seen in config files for Busybox
-ignorable_urls:
-    - http://dmalloc.com/

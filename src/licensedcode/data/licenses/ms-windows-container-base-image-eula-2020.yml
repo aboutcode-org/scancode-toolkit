@@ -1,0 +1,11 @@
+key: ms-windows-container-base-image-eula-2020
+short_name: MS Windows Container Base Image EULA 2020
+name: Microsoft Windows Container Base Image EULA 2020
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://docs.microsoft.com/en-us/virtualization/windowscontainers/images-eula
+spdx_license_key: LicenseRef-scancode-ms-windows-container-base-image-eula-2020
+ignorable_urls:
+  - http://aka.ms/getsource
+  - http://aka.ms/thirdpartynotices
+

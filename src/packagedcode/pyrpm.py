@@ -31,9 +31,6 @@ file.
 This is heavily modified version from the original.
 """
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 from io import BytesIO
 import struct
@@ -364,6 +361,7 @@ class RPM(object):
         Read the header-header section
         [3bytes][1byte][4bytes][4bytes][4bytes]
           MN      VER   UNUSED  IDXNUM  STSIZE
+        IDXNUM is the number of index entries. Each entry is 16 bytes
         """
         if not len(header) == 16:
             raise RPMError('invalid header size')
@@ -391,7 +389,8 @@ class RPM(object):
         for _entry in range(entries_count):
             entry_index = self.rpmfile.read(16)
             entries_index.append(entry_index)
-        store = BytesIO(self.rpmfile.read(header[4]))
+        index_store_size = header[4]
+        store = BytesIO(self.rpmfile.read(index_store_size))
         header = Header(header, entries_index, store)
         self.headers.append(header)
 

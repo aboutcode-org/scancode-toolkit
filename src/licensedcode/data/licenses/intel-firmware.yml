@@ -4,6 +4,7 @@ name: Intel Firmware License
 category: Proprietary Free
 owner: Intel Corporation
 homepage_url: https://github.com/coreos/portage-stable/blob/master/licenses/ipw2200-fw
+spdx_license_key: LicenseRef-scancode-intel-firmware
 text_urls:
     - http://www.redhat.com/licenses/thirdparty/intel_ipw2100.html
 other_urls:

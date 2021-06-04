@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: Tigris Project
 homepage_url: http://subversion.tigris.org/
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-subcommander-exception-2.0-plus
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
 standard_notice: |

@@ -3,6 +3,7 @@ short_name: LZMA SDK 2006
 name: LZMA SDK 2006
 category: Copyleft Limited
 owner: Igor Pavlov
+spdx_license_key: LicenseRef-scancode-lzma-sdk-2006
 ignorable_copyrights:
     - Copyright (c) 1999-2006 Igor Pavlov (2006-05-01) http://www.7-zip.org
 ignorable_holders:

@@ -3,3 +3,4 @@ short_name: Tested Software License
 name: Tested Software License
 category: Permissive
 owner: Autonomous Zone Industries
+spdx_license_key: LicenseRef-scancode-tested-software

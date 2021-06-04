@@ -4,6 +4,7 @@ name: Paul Hsieh Exposition License
 category: Free Restricted
 owner: Paul Hsieh
 homepage_url: http://www.azillionmonkeys.com/qed/weblicense.html
+spdx_license_key: LicenseRef-scancode-paul-hsieh-exposition
 text_urls:
     - http://www.azillionmonkeys.com/qed/weblicense.html
 other_urls:

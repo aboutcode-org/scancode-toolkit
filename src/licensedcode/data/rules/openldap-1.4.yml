@@ -1,8 +1,8 @@
 license_expression: openldap-1.4
 is_license_text: yes
+minimum_coverage: 70
 notes: OpenLDAP 1.4
 ignorable_copyrights:
     - Copyright 1998-1999, The OpenLDAP Foundation
 ignorable_holders:
     - The OpenLDAP Foundation
-minimum_coverage: 70

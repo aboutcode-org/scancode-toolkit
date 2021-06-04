@@ -4,6 +4,7 @@ name: Microsoft Control Spy 2.0
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://www.microsoft.com/en-us/download/details.aspx?id=4635
+spdx_license_key: LicenseRef-scancode-ms-control-spy-2.0
 ignorable_urls:
     - http://www.microsoft.com/exporting
     - http://www.microsoft.com/licensing/userights

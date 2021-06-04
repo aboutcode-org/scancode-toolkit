@@ -1,0 +1,4 @@
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+notes: problemtic injection in the main GPL text at https://github.com/audacious-media-player/audacious/blob/ff6887fcbe5b525ac3824a8af310b555c45695fa/COPYING#L237

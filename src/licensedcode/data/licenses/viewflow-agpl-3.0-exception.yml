@@ -5,10 +5,10 @@ category: Copyleft Limited
 owner: Viewflow
 homepage_url: https://github.com/viewflow/viewflow/blob/master/LICENSE_EXCEPTION
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-viewflow-agpl-3.0-exception
 ignorable_copyrights:
-  - Copyright (c) 2017 Mikhail Podgurskiy <kmmbvnr@gmail.com>
-ignorable_emails:
-  - kmmbvnr@gmail.com
+    - Copyright (c) 2017 Mikhail Podgurskiy <kmmbvnr@gmail.com>
 ignorable_holders:
-  - Mikhail Podgurskiy
-
+    - Mikhail Podgurskiy
+ignorable_emails:
+    - kmmbvnr@gmail.com

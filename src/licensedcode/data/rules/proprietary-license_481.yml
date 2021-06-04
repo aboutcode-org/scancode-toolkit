@@ -1,0 +1,9 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: https://github.com/kunal15595/ros/blob/d77f32233b3cac4fe1790a86207d4c5982afc078/mp/omplapp/LICENSE
+ignorable_urls:
+    - http://ompl.kavrakilab.org/
+ignorable_emails:
+    - OTTsoftware@rice.edu
+    - ompl-devel@lists.sourceforge.net

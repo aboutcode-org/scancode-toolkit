@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: seen in https://github.com/layerJS/layerJS/blob/861a8797b5444266896a7acf229807b8dbb8d3a8/LICENSE
+ignorable_urls:
+    - https://opensource.org/licenses/MIT

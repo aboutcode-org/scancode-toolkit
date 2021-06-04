@@ -6,3 +6,4 @@ owner: Unspecified
 notes: |
     This is a catch all license for plain, generic warranty disclaimers that do
     not provide much rights. Often seen in Microsoft code.
+spdx_license_key: LicenseRef-scancode-warranty-disclaimer

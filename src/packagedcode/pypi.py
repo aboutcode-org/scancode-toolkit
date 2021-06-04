@@ -1,70 +1,53 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-
-from collections import OrderedDict
 import ast
+import fnmatch
 import io
 import json
 import logging
 import os
 import re
 import sys
+import zipfile
+from pathlib import Path
 
 import attr
 import dparse
-from dparse import filetypes
-from pkginfo import BDist
-from pkginfo import Develop
-from pkginfo import SDist
-from pkginfo import UnpackedSDist
-from pkginfo import Wheel
 from packageurl import PackageURL
-import saneyaml
-from six import string_types
+from packaging.requirements import Requirement
+from packaging import markers
+from packaging.utils import canonicalize_name
+
+# TODO: replace this
+from pkginfo import SDist
 
 from commoncode import filetype
 from commoncode import fileutils
-from commoncode.system import py2
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
 
 try:
-    # Python 2
-    unicode = unicode  # NOQA
+    import importlib.metadata as importlib_metadata
+except ImportError:
+    import importlib_metadata
 
-except NameError:  # pragma: nocover
-    # Python 3
-    unicode = str  # NOQA
+try:
+    from zipfile import Path as ZipPath
+except ImportError:
+    from zipp import Path as ZipPath
 
 """
 Detect and collect Python packages information.
-
 """
+# TODO: add support for poetry and setup.cfg
 
 TRACE = False
 
@@ -80,29 +63,33 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
-
-# FIXME: this whole module is a mess
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @attr.s()
 class PythonPackage(models.Package):
     metafiles = (
-        'metadata.json',
         '*setup.py',
+        '*setup.cfg',
         'PKG-INFO',
+        'METADATA',
+        # TODO: we are ignoing sdists such as tar.gz and pex, pyz, etc.
         '*.whl',
         '*.egg',
         '*requirements*.txt',
+        '*requirements*.pip',
         '*requirements*.in',
         '*Pipfile.lock',
+        'conda.yml',
+        '*setup.cfg',
+        'tox.ini',
     )
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
     default_type = 'pypi'
     default_primary_language = 'Python'
     default_web_baseurl = 'https://pypi.org'
-    default_download_baseurl = 'https://pypi.io/packages/source'
-    default_api_baseurl = 'http://pypi.python.org/pypi'
+    default_download_baseurl = 'https://pypi.org/packages/source'
+    default_api_baseurl = 'https://pypi.org/pypi'
 
     @classmethod
     def recognize(cls, location):
@@ -112,222 +99,140 @@ class PythonPackage(models.Package):
         return compute_normalized_license(self.declared_license)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
-        if not self.name:
-            return
-        return '{}/project/{}'.format(baseurl, self.name)
+        if self.name:
+            return f'{baseurl}/project/{baseurl}'
 
     def repository_download_url(self, baseurl=default_download_baseurl):
-        if not self.name or not self.version:
-            return
-        return '{baseurl}/{name[0]}/{name}/{name}-{version}.tar.gz'.format(baseurl=baseurl, name=self.name, version=self.version)
+        if self.name and self.version:
+            name = self.name
+            name1 = name[0]
+            return f'{baseurl}/{name1}/{name}/{name}-{self.version}.tar.gz'
 
     def api_data_url(self, baseurl=default_api_baseurl):
-        if not self.name:
-            return
-        if not self.version:
-            return '{}/{}/json'.format(baseurl, self.name)
-        return '{}/{}/{}/json'.format(baseurl, self.name, self.version)
+        if self.name:
+            if self.version:
+                return f'{baseurl}/{self.name}/{self.version}/json'
+            else:
+                return f'{baseurl}/{self.name}/json'
 
 
 def parse(location):
     """
-    Return a Package built from parsing a file or directory at 'location'
+    Return a Package built from parsing a file or directory at 'location'.
     """
-    if filetype.is_dir(location):
-        package = parse_unpackaged_source(location)
+    parsers = (
+        parse_metadata,
+        parse_setup_py,
+        parse_pipfile_lock,
+        parse_dependency_file,
+        parse_archive,
+        parse_sdist,
+    )
+
+    # try all available parser in a well defined order
+    for parser in parsers:
+        package = parser(location)
         if package:
-            parse_dependencies(location, package)
             return package
-    else:
-        file_name = fileutils.file_name(location)
-        parsers = {
-            'setup.py': parse_setup_py,
-            'requirements.txt': parse_requirements_txt,
-            'requirements.in': parse_requirements_txt,
-            'Pipfile.lock': parse_pipfile_lock,
-            'metadata.json': parse_metadata,
-            'PKG-INFO': parse_unpackaged_source,
-            '.whl': parse_wheel,
-            '.egg': parse_egg_binary,
-            '.tar.gz': parse_source_distribution,
-            '.zip': parse_source_distribution,
-        }
-        for name, parser in parsers.items():
-            if file_name.endswith(name):
-                package = parser(location)
-                if package:
-                    parent_directory = fileutils.parent_directory(location)
-                    parse_dependencies(parent_directory, package)
-                    return package
 
 
-def parse_unpackaged_source(location):
+meta_dir_suffixes = '.dist-info', '.egg-info', 'EGG-INFO',
+meta_file_names = 'PKG-INFO', 'METADATA',
+
+
+def parse_metadata(location):
     """
-    Passing it the path to the unpacked package, or by passing it the setup.py at the top level.
+    Return a PythonPackage from an  PKG-INFO or METADATA file ``location``
+    string or pathlib.Path-like object.
+
+    Looks in neighboring files as needed when an installed layout is found.
     """
-    unpackaged_dist = None
-    try:
-        unpackaged_dist = UnpackedSDist(location)
-    except ValueError:
-        try:
-            unpackaged_dist = Develop(location)
-        except ValueError:
-            pass
+    # FIXME: handle other_urls
 
-    return parse_with_pkginfo(unpackaged_dist)
-
-
-def parse_with_pkginfo(pkginfo):
-    if pkginfo and pkginfo.name:
-        description = pkginfo.description
-        if not description:
-            description = pkginfo.summary
-        common_data = dict(
-            name=pkginfo.name,
-            version=pkginfo.version,
-            description=description,
-            download_url=pkginfo.download_url,
-            homepage_url=pkginfo.home_page,
-        )
-        package = PythonPackage(**common_data)
-        declared_license = OrderedDict()
-        if pkginfo.license:
-            # TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
-            declared_license['license'] = pkginfo.license
-        if pkginfo.classifiers:
-            license_classifiers = []
-            other_classifiers = []
-            for classifier in pkginfo.classifiers:
-                if classifier.startswith('License'):
-                    license_classifiers.append(classifier)
-                else:
-                    other_classifiers.append(classifier)
-            declared_license['classifiers'] = license_classifiers
-            package.keywords = other_classifiers
-        if declared_license:
-            package.declared_license = declared_license
-        if pkginfo.author_email:
-            parties = []
-            parties.append(models.Party(
-                type=models.party_person, name=pkginfo.author, role='author', email=pkginfo.author_email))
-            package.parties = parties
-        return package
-
-
-def parse_dependencies(location, package):
-    """
-    Loop all resources from the passing folder location, get the dependencies from the resources and set it to the passing package object.
-    """
-    for resource_location in os.listdir(location):
-        dependencies = parse_with_dparse(resource_location)
-        if dependencies:
-            package.dependencies = dependencies
-
-
-dependency_type_by_extensions = {
-    ('.txt', '.in'): 'requirements.txt',
-    ('Pipfile.lock'): 'Pipfile.lock',
-}
-
-
-def get_dependency_type(file_name, dependency_type_by_extensions=dependency_type_by_extensions):
-    """
-    Return the type of a dependency as a string or None given a `file_name` string.
-    """
-    for extensions, dependency_type in dependency_type_by_extensions.items():
-        if file_name.endswith(extensions):
-            return dependency_type
-
-
-def parse_with_dparse(location):
-    is_dir = filetype.is_dir(location)
-    if is_dir:
-        return
-    file_name = fileutils.file_name(location)
-
-    dependency_type = get_dependency_type(file_name)
-
-    if dependency_type not in (filetypes.requirements_txt,
-                         filetypes.conda_yml,
-                         filetypes.tox_ini,
-                         filetypes.pipfile,
-                         filetypes.pipfile_lock):
-        return
-    if py2:
-        mode = 'rb'
-    else:
-        mode = 'r'
-    with open(location, mode) as f:
-        content = f.read()
-
-    df = dparse.parse(content, file_type=dependency_type)
-    df_dependencies = df.dependencies
-
-    if not df_dependencies:
+    if not location:
         return
 
-    package_dependencies = []
-    for df_dependency in df_dependencies:
-        specs = list(df_dependency.specs._specs)
-        is_resolved = False
-        requirement = None
-        purl = PackageURL(
-            type='pypi',
-            name=df_dependency.name
-        ).to_string()
-        if specs:
-            requirement = str(df_dependency.specs)
-            for spec in specs:
-                operator = spec.operator
-                version = spec.version
-                if any(operator == element for element in ('==', '===')):
-                    is_resolved = True
-                    purl = PackageURL(
-                        type='pypi',
-                        name=df_dependency.name,
-                        version=version
-                    ).to_string()
-        package_dependencies.append(
-            models.DependentPackage(
-                purl=purl,
-                scope='dependencies',
-                is_runtime=True,
-                is_optional=False,
-                is_resolved=is_resolved,
-                requirement=requirement
-            )
-        )
+    path = location
+    if not isinstance(location, (Path, ZipPath)):
+        path = Path(location)
 
-    return package_dependencies
+    if not path.name.endswith(meta_file_names):
+        return
 
+    # build from dir if we are an installed distro
+    parent = path.parent
+    if parent.name.endswith(meta_dir_suffixes):
+        path = parent
 
-def parse_requirements_txt(location):
-    """
-    Return a PythonPackage built from a Python requirements.txt files at location.
-    """
-    package_dependencies = parse_with_dparse(location)
-    return PythonPackage(dependencies=package_dependencies)
+    dist = importlib_metadata.PathDistribution(path)
 
+    meta = dist.metadata
+    urls, other_urls = get_urls(meta)
 
-def parse_pipfile_lock(location):
-    """
-    Return a PythonPackage built from a Python Pipfile.lock file at location.
-    """
-    with open(location) as f:
-        content = f.read()
-
-    data = json.loads(content, object_pairs_hook=OrderedDict)
-
-    sha256 = None
-    if '_meta' in data:
-        for name, meta in data['_meta'].items():
-            if name == 'hash':
-                sha256 = meta.get('sha256')
-
-    package_dependencies = parse_with_dparse(location)
     return PythonPackage(
-        sha256=sha256,
-        dependencies=package_dependencies
+        name=get_attribute(meta, 'Name'),
+        version=get_attribute(meta, 'Version'),
+        description=get_description(meta, location),
+        declared_license=get_declared_license(meta),
+        keywords=get_keywords(meta),
+        parties=get_parties(meta),
+        dependencies=get_dist_dependencies(dist),
+        **urls,
+    )
+
+
+bdist_file_suffixes = '.whl', '.egg',
+
+
+def parse_archive(location):
+    """
+    Return a PythonPackage from a package archive wheel or egg file at
+    ``location``.
+    """
+    if not location or not location.endswith(bdist_file_suffixes):
+        return
+
+    metafile = find_archive_metafile(location)
+    if metafile:
+        return parse_metadata(metafile)
+
+
+def find_archive_metafile(location):
+    """
+    Return a Path-like object to a Python metafile found in a Python package egg
+    or wheel archive at ``location`` or None.
+    """
+    zf = zipfile.ZipFile(location)
+    for path in ZipPath(zf).iterdir():
+        if path.name.endswith(meta_dir_suffixes):
+            for metapath in path.iterdir():
+                if metapath.name.endswith(meta_file_names):
+                    return metapath
+
+
+sdist_file_suffixes = '.tar.gz', '.tar.bz2', '.zip',
+
+
+def parse_sdist(location):
+    """
+    Return a PythonPackage from an sdist source distribution file at
+    ``location`` such as a .zip, .tar.gz or .tar.bz2 (leagcy) file.
+    """
+    # FIXME: add dependencies
+    # FIXME: handle other_urls
+
+    if not location or not location.endswith(sdist_file_suffixes):
+        return
+    sdist = SDist(location)
+    urls, other_urls = get_urls(sdist)
+    return PythonPackage(
+        name=sdist.name,
+        version=sdist.version,
+        description=get_description(sdist, location=location),
+        declared_license=get_declared_license(sdist),
+        keywords=get_keywords(sdist),
+        parties=get_parties(sdist),
+        **urls,
     )
 
 
@@ -335,92 +240,19 @@ def parse_setup_py(location):
     """
     Return a PythonPackage built from setup.py data.
     """
+    # FIXME: handle other_urls
+
     if not location or not location.endswith('setup.py'):
         return
 
-    # FIXME: what if this is unicode text?
-    if py2:
-        mode = 'rb'
-    else:
-        mode = 'r'
-    with open(location, mode) as inp:
-        setup_text = inp.read()
+    setup_args = get_setup_py_args(location)
 
-    setup_args = OrderedDict()
-
-    # Parse setup.py file and traverse the AST
-    tree = ast.parse(setup_text)
-    for statement in tree.body:
-        # We only care about function calls or assignments to functions named
-        # `setup` or `main`
-        if (isinstance(statement, (ast.Expr, ast.Call, ast.Assign))
-            and isinstance(statement.value, ast.Call)
-            and isinstance(statement.value.func, ast.Name)
-            # we also look for main as sometimes this is used instead of setup()
-            and statement.value.func.id in ('setup', 'main')
-        ):
-
-            # Process the arguments to the setup function
-            for kw in getattr(statement.value, 'keywords', []):
-                arg_name = kw.arg
-
-                if isinstance(kw.value, ast.Str):
-                    setup_args[arg_name] = kw.value.s
-
-                elif isinstance(kw.value, (ast.List, ast.Tuple, ast.Set,)):
-                    # We collect the elements of a list if the element
-                    # and tag function calls
-                    value = [
-                        elt.s for elt in kw.value.elts
-                        if not isinstance(elt, ast.Call)
-                    ]
-                    setup_args[arg_name] = value
-
-                # TODO:  what if isinstance(kw.value, ast.Dict)
-                # or an expression like a call to version=get_version or version__version__
-
+    # FIXME: it may be legit to have a name-less package?
     package_name = setup_args.get('name')
     if not package_name:
         return
 
-    description = build_description(
-        setup_args.get('summary', ''),
-        setup_args.get('description', ''),
-    )
-
-    parties = []
-    author = setup_args.get('author')
-    author_email = setup_args.get('author_email')
-    homepage_url = setup_args.get('url')
-    if author:
-        parties.append(
-            models.Party(
-                type=models.party_person,
-                name=author,
-                email=author_email,
-                role='author',
-                url=homepage_url
-            )
-        )
-    elif author_email:
-        parties.append(
-            models.Party(
-                type=models.party_person,
-                email=author_email,
-                role='author',
-                url=homepage_url
-            )
-        )
-
-    declared_license = OrderedDict()
-    license_setuptext = setup_args.get('license')
-    declared_license['license'] = license_setuptext
-
-    classifiers = setup_args.get('classifiers', [])
-    license_classifiers = [c for c in classifiers if c.startswith('License')]
-    declared_license['classifiers'] = license_classifiers
-
-    other_classifiers = [c for c in classifiers if not c.startswith('License')]
+    urls, other_urls = get_urls(setup_args)
 
     detected_version = setup_args.get('version')
     if not detected_version:
@@ -430,12 +262,610 @@ def parse_setup_py(location):
     return PythonPackage(
         name=package_name,
         version=detected_version,
-        description=description or None,
-        homepage_url=setup_args.get('url') or None,
-        parties=parties,
-        declared_license=declared_license,
-        keywords=other_classifiers,
+        description=get_description(setup_args),
+        parties=get_parties(setup_args),
+        declared_license=get_declared_license(setup_args),
+        dependencies=get_setup_py_dependencies(setup_args),
+        keywords=get_keywords(setup_args),
+        **urls,
     )
+
+
+def parse_dependency_file(location):
+    """
+    Return a PythonPackage built from a dparse-supported dependency file at
+    location.
+    """
+    if not location:
+        return
+
+    dt = get_dparse_dependency_type(fileutils.file_name(location))
+    if dt:
+        dependent_packages = parse_with_dparse(location)
+        return PythonPackage(dependencies=dependent_packages)
+
+
+def parse_pipfile_lock(location):
+    """
+    Return a PythonPackage built from a Python Pipfile.lock file at location.
+    """
+    if not location or not location.endswith('Pipfile.lock'):
+        return
+    with open(location) as f:
+        content = f.read()
+
+    data = json.loads(content)
+
+    sha256 = None
+    if '_meta' in data:
+        for name, meta in data['_meta'].items():
+            if name == 'hash':
+                sha256 = meta.get('sha256')
+
+    dependent_packages = parse_with_dparse(location)
+    return PythonPackage(sha256=sha256, dependencies=dependent_packages)
+
+
+def get_attribute(metainfo, name, multiple=False):
+    """
+    Return the value for the attribute ``name`` in the ``metainfo`` mapping,
+    pkginfo object or email object. Treat the value as a list of multiple values
+    if ``multiple`` is True. Return None or an empty list (if multiple is True)
+    if no value is found or the attribute ``name`` does not exist.
+    Ignore case (but returns the value for the original case if present.
+    """
+
+    # note: the approach for this function is to be used with the various
+    # metainfo objects and dictionsaries we use that can be a
+    # pkginfo.Distribution, an email.message.EmailMessage or a dict.
+
+    # Because of that, the key can be obtained as a plain named attribute,
+    # either as-is or lowercased (and with dash replaced by dunder) or we
+    # can use a get on dicts of emails.
+
+    def attr_getter(_aname, default):
+        _aname = _aname.replace('-', '_')
+        return (
+            getattr(metainfo, _aname, default)
+            or getattr(metainfo, _aname.lower(), default)
+        )
+
+    def item_getter(_iname, getter, default):
+        getter = getattr(metainfo, getter, None)
+        if getter:
+            return getter(_iname, default) or getter(_iname.lower(), default)
+        return default
+
+    if multiple:
+        return (
+            attr_getter(name, [])
+            or item_getter(name, 'get_all', [])
+            or item_getter(name, 'get', [])
+            or []
+        )
+    else:
+        return (
+            attr_getter(name, None)
+            or item_getter(name, 'get', None)
+            or None
+        )
+
+
+def get_description(metainfo, location=None):
+    """
+    Return a list of keywords found in a ``metainfo`` object or mapping.
+    """
+    description = None
+    # newer metadata versions use the payload for the description
+    if hasattr(metainfo, 'get_payload'):
+        description = metainfo.get_payload()
+    if not description:
+        # legacymetadata versions use the Description for the description
+        description = get_attribute(metainfo, 'Description')
+        if not description and location:
+            # older metadata versions can use a DESCRIPTION.rst file
+            description = get_legacy_description(
+                fileutils.parent_directory(location))
+
+    summary = get_attribute(metainfo, 'Summary')
+    return build_description(summary, description)
+
+
+def get_legacy_description(location):
+    """
+    Return the text of a legacy DESCRIPTION.rst.
+    """
+    location = os.path.join(location, 'DESCRIPTION.rst')
+    if os.path.exists(location):
+        with open(location) as i:
+            return i.read()
+
+
+def get_declared_license(metainfo):
+    """
+    Return a mapping of declared license information found in a ``metainfo``
+    object or mapping.
+    """
+    declared_license = {}
+    # TODO: We should make the declared license as it is, this should be
+    # updated in scancode to parse a pure string
+    lic = get_attribute(metainfo, 'License')
+    if lic and not lic == 'UNKNOWN':
+        declared_license['license'] = lic
+
+    license_classifiers, _ = get_classifiers(metainfo)
+    if license_classifiers:
+        declared_license['classifiers'] = license_classifiers
+    return declared_license
+
+
+def get_classifiers(metainfo):
+    """
+    Return a two tuple of (license_classifiers, other_classifiers) found in a
+    ``metainfo`` object or mapping.
+    """
+
+    classifiers = (
+        get_attribute(metainfo, 'Classifier', multiple=True)
+        or get_attribute(metainfo, 'Classifiers', multiple=True)
+    )
+    if not classifiers:
+        return [], []
+
+    license_classifiers = []
+    other_classifiers = []
+    for classifier in classifiers:
+        if classifier.startswith('License'):
+            license_classifiers.append(classifier)
+        else:
+            other_classifiers.append(classifier)
+    return license_classifiers, other_classifiers
+
+
+def get_keywords(metainfo):
+    """
+    Return a list of keywords found in a ``metainfo`` object or mapping.
+    """
+    keywords = []
+    kws = get_attribute(metainfo, 'Keywords') or []
+    if kws:
+        if isinstance(kws, str):
+            kws = kws.split(',')
+        elif isinstance(kws, (list, tuple)):
+            pass
+        else:
+            kws = [repr(kws)]
+        kws = [k.strip() for k in kws if k and k.strip()]
+        keywords.extend(kws)
+
+    # we are calling this again and ignoring licenses
+    _, other_classifiers = get_classifiers(metainfo)
+    keywords.extend(other_classifiers)
+    return keywords
+
+
+def get_parties(metainfo):
+    """
+    Return a list of parties found in a ``metainfo`` object or mapping.
+    """
+    parties = []
+
+    author = get_attribute(metainfo, 'Author')
+    author_email = get_attribute(metainfo, 'Author-email')
+    if author or author_email:
+        parties.append(models.Party(
+            type=models.party_person,
+            name=author or None,
+            role='author',
+            email=author_email or None,
+        ))
+
+    maintainer = get_attribute(metainfo, 'Maintainer')
+    maintainer_email = get_attribute(metainfo, 'Maintainer-email')
+    if maintainer or maintainer_email:
+        parties.append(models.Party(
+            type=models.party_person,
+            name=maintainer or None,
+            role='maintainer',
+            email=maintainer_email or None,
+        ))
+
+    return parties
+
+
+def get_setup_py_dependencies(setup_args):
+    """
+    Return a list of DependentPackage found in a ``setup_args`` mapping of
+    setup.py arguments or an empty list.
+    """
+    dependencies = []
+    install_requires = setup_args.get('install_requires')
+    dependencies.extend(get_requires_dependencies(install_requires))
+
+    tests_requires = setup_args.get('tests_requires')
+    dependencies.extend(
+        get_requires_dependencies(tests_requires, default_scope='tests')
+    )
+
+    setup_requires = setup_args.get('setup_requires')
+    dependencies.extend(
+        get_requires_dependencies(setup_requires, default_scope='setup')
+    )
+
+    extras_require = setup_args.get('extras_require', {})
+    for scope, requires in extras_require.items():
+        dependencies.extend(
+            get_requires_dependencies(requires, default_scope=scope)
+        )
+
+    return dependencies
+
+
+def is_simple_requires(requires):
+    """
+    Return True if ``requires`` is a sequence of strings.
+    """
+    return (
+        requires
+        and isinstance(requires, list)
+        and all(isinstance(i, str) for i in requires)
+    )
+
+
+def get_dist_dependencies(dist):
+    """
+    Return a list of DependentPackage found in a ``dist`` Distribution object or
+    an empty list.
+    """
+    # we treat extras as scopes
+    # TODO: use these for verification?
+    scopes = dist.metadata.get_all('Provides-Extra') or []
+    return get_requires_dependencies(requires=dist.requires)
+
+
+def get_requires_dependencies(requires, default_scope='install'):
+    """
+    Return a list of DependentPackage found in a ``requires`` list of
+    requirement strings or an empty list.
+    """
+    if not is_simple_requires(requires):
+        return []
+    dependent_packages = []
+    for req in (requires or []):
+        req = Requirement(req)
+        name = canonicalize_name(req.name)
+        is_resolved = False
+        purl = PackageURL(type='pypi', name=name)
+        # note: packaging.requirements.Requirement.specifier is a
+        # packaging.specifiers.SpecifierSet object and a SpecifierSet._specs is
+        # a set of either: packaging.specifiers.Specifier or
+        # packaging.specifiers.LegacySpecifier and each of these have a
+        # .operator and .version property
+        # a packaging.specifiers.SpecifierSet
+        specifiers_set = req.specifier  # a list of packaging.specifiers.Specifier
+        specifiers = specifiers_set._specs
+        requirement = None
+        if specifiers:
+            # SpecifierSet stringifies to comma-separated sorted Specifiers
+            requirement = str(specifiers_set)
+            # are we pinned e.g. resolved? this is true if we have a single
+            # equality specifier
+            if len(specifiers) == 1:
+                specifier = list(specifiers)[0]
+                if specifier.operator in ('==', '==='):
+                    is_resolved = True
+                    purl = purl._replace(version=specifier.version)
+
+        # we use the extra as scope if avialble
+        scope = get_extra(req.marker) or default_scope
+
+        dependent_packages.append(
+            models.DependentPackage(
+                purl=purl.to_string(),
+                scope=scope,
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=is_resolved,
+                requirement=requirement,
+        ))
+
+    return dependent_packages
+
+
+def get_extra(marker):
+    """
+    Return the "extra" value of a ``marker`` requirement Marker or None.
+    """
+    if not marker or not isinstance(marker, markers.Marker):
+        return
+
+    marks = getattr(marker, '_markers', [])
+
+    for mark in marks:
+        # filter for variable(extra) == value tuples of (Variable, Op, Value)
+        if not isinstance(mark, tuple) and not len(mark) == 3:
+            continue
+
+        variable, operator, value = mark
+
+        if (
+            isinstance(variable, markers.Variable)
+            and variable.value == 'extra'
+            and isinstance(operator, markers.Op)
+            and operator.value == '=='
+            and isinstance(value, markers.Value)
+        ):
+            return value.value
+
+
+def is_requirements_file(location):
+    """
+    Return True if the ``location`` is likely for a pip requirements file.
+
+    For example::
+    >>> is_requirements_file('dev-requirements.txt')
+    True
+    >>> is_requirements_file('requirements.txt')
+    True
+    >>> is_requirements_file('requirements.in')
+    True
+    >>> is_requirements_file('requirements.pip')
+    True
+    >>> is_requirements_file('requirements-dev.txt')
+    True
+    >>> is_requirements_file('some-requirements-dev.txt')
+    True
+    >>> is_requirements_file('reqs.txt')
+    False
+    >>> is_requirements_file('requires.txt')
+    True
+    """
+    filename = fileutils.file_name(location)
+    req_files = (
+        '*requirements*.txt',
+        '*requirements*.pip',
+        '*requirements*.in',
+        'requires.txt',
+    )
+    return any(fnmatch.fnmatchcase(filename, rf) for rf in req_files)
+
+
+def get_dparse_dependency_type(file_name):
+    """
+    Return the type of a dependency as a string or None given a `file_name`
+    string.
+    """
+    # this is kludgy but the upstream data structure and API needs this
+    filetype_by_name_end = {
+        'Pipfile.lock': dparse.filetypes.pipfile_lock,
+        'Pipfile': dparse.filetypes.pipfile,
+        'conda.yml': dparse.filetypes.conda_yml,
+        'setup.cfg': dparse.filetypes.setup_cfg,
+        'tox.ini': dparse.filetypes.tox_ini,
+    }
+    for extensions, dependency_type in filetype_by_name_end.items():
+        if is_requirements_file(file_name):
+            return dparse.filetypes.requirements_txt
+
+        if file_name.endswith(extensions):
+            return dependency_type
+
+
+def parse_with_dparse(location):
+    """
+    Return a list of DependentPackage built from a dparse-supported dependency
+    manifest such as requirements.txt, Conda manifest or Pipfile.lock files, or
+    return an empty list.
+    """
+    is_dir = filetype.is_dir(location)
+    if is_dir:
+        return
+
+    file_name = fileutils.file_name(location)
+
+    dependency_type = get_dparse_dependency_type(file_name)
+    if not dependency_type:
+        return
+
+    with open(location) as f:
+        content = f.read()
+
+    dep_file = dparse.parse(content, file_type=dependency_type)
+    if not dep_file:
+        return []
+
+    dependent_packages = []
+
+    for dependency in dep_file.dependencies:
+        requirement = dependency.name
+        is_resolved = False
+        purl = PackageURL(type='pypi', name=dependency.name)
+
+        # note: dparse.dependencies.Dependency.specs comes from
+        # packaging.requirements.Requirement.specifier
+        # which in turn is a packaging.specifiers.SpecifierSet objects
+        # and a SpecifierSet._specs is a set of either:
+        # packaging.specifiers.Specifier or packaging.specifiers.LegacySpecifier
+        # and each of these have a .operator and .version property
+
+        # a packaging.specifiers.SpecifierSet
+        specifiers_set = dependency.specs
+        # a list of packaging.specifiers.Specifier
+        specifiers = specifiers_set._specs
+
+        if specifiers:
+            # SpecifierSet stringifies to comma-separated sorted Specifiers
+            requirement = str(specifiers_set)
+            # are we pinned e.g. resolved?
+            if len(specifiers) == 1:
+                specifier = list(specifiers)[0]
+                if specifier.operator in ('==', '==='):
+                    is_resolved = True
+                    purl = purl._replace(version=specifier.version)
+
+        dependent_packages.append(
+            models.DependentPackage(
+                purl=purl.to_string(),
+                # are we always this scope? what if we have requirements-dev.txt?
+                scope='install',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=is_resolved,
+                requirement=requirement
+            )
+        )
+
+    return dependent_packages
+
+
+def get_setup_py_args(location):
+    """
+    Return a mapping of arguments passed to a setup.py setup() function.
+    """
+    with open(location) as inp:
+        setup_text = inp.read()
+
+    setup_args = {}
+
+    # Parse setup.py file and traverse the AST
+    tree = ast.parse(setup_text)
+    for statement in tree.body:
+        # We only care about function calls or assignments to functions named
+        # `setup` or `main`
+        if not (isinstance(statement, (ast.Expr, ast.Call, ast.Assign))
+            and isinstance(statement.value, ast.Call)
+            and isinstance(statement.value.func, ast.Name)
+            # we also look for main as sometimes this is used instead of setup()
+            and statement.value.func.id in ('setup', 'main')
+        ):
+            continue
+
+        # Process the arguments to the setup function
+        for kw in getattr(statement.value, 'keywords', []):
+            arg_name = kw.arg
+
+            if isinstance(kw.value, ast.Str):
+                setup_args[arg_name] = kw.value.s
+
+            elif isinstance(kw.value, (ast.List, ast.Tuple, ast.Set,)):
+                # We collect the elements of a list if the element
+                # and tag function calls
+                value = [
+                    elt.s for elt in kw.value.elts
+                    if not isinstance(elt, ast.Call)
+                ]
+                setup_args[arg_name] = value
+
+            # TODO:  what if isinstance(kw.value, ast.Dict)
+            # or an expression like a call to version=get_version or version__version__
+
+    return setup_args
+
+
+def get_urls(metainfo):
+    """
+    Return a mapping of Package URLs and a mapping of other URLs collected from
+    metainfo.
+    """
+    # Misc URLs to possibly track
+    # Project-URL: Release notes
+    # Project-URL: Release Notes
+    # Project-URL: Changelog
+    # Project-URL: Changes
+    #
+    # Project-URL: Further Documentation
+    # Project-URL: Packaging tutorial
+    # Project-URL: Docs
+    # Project-URL: Docs: RTD
+    # Project-URL: Documentation
+    # Project-URL: Documentation (dev)
+    # Project-URL: Wiki
+    #
+    # Project-URL: Chat
+    # Project-URL: Chat: Gitter
+    # Project-URL: Mailing lists
+    # Project-URL: Twitter
+    #
+    # Project-URL: Travis CI
+    # Project-URL: Coverage: codecov
+    # Project-URL: CI
+    # Project-URL: CI: Azure Pipelines
+    # Project-URL: CI: Shippable
+    #
+    # Project-URL: Tidelift
+    # Project-URL: Code of Conduct
+    # Project-URL: Donate
+    # Project-URL: Funding
+    # Project-URL: Ko-fi
+    # Project-URL: Twine documentation
+    # Project-URL: Twine source
+    # Project-URL: Say Thanks!
+
+    urls = {}
+    other_urls = {}
+
+    def add_url(_url, _utype=None, _attribute=None):
+        """
+        Add ``_url`` to ``urls`` as _``_attribute`` or to ``other_urls`` as
+        ``_utype`` if already defined or no ``_attribute`` is provided.
+        """
+        if _url:
+            if _attribute and _attribute not in urls:
+                urls[_attribute] = _url
+            elif _utype:
+                other_urls[_utype] = _url
+
+    # get first as this is the most common one
+    homepage_url = (
+        get_attribute(metainfo, 'Home-page')
+        or get_attribute(metainfo, 'url')
+        or get_attribute(metainfo, 'home')
+    )
+    add_url(homepage_url, _attribute='homepage_url')
+
+    project_urls = (
+        get_attribute(metainfo, 'Project-URL', multiple=True)
+        or get_attribute(metainfo, 'project_urls')
+        or []
+    )
+
+    for url in project_urls:
+        utype, _, uvalue = url.partition(',')
+        uvalue = uvalue.strip()
+        utype = utype.strip()
+        utypel = utype.lower()
+        if utypel in (
+            'tracker',
+            'bug reports',
+            'github: issues',
+            'bug tracker',
+            'issues',
+            'issue tracker',
+        ):
+            add_url(url, _utype=utype, _attribute='bug_tracking_url')
+
+        elif utypel in (
+            'source',
+            'source code',
+            'code',
+        ):
+            add_url(url, _utype=utype, _attribute='code_view_url')
+
+        elif utypel in ('github: repo', 'repository'):
+            add_url(url, _utype=utype, _attribute='vcs_url')
+
+        elif utypel in ('website', 'homepage', 'home',):
+            add_url(url, _utype=utype, _attribute='homepage_url')
+
+        else:
+            add_url(url, _utype=utype)
+
+    # FIXME: this may not be the actual correct package download URL, so for now
+    # we incorrectly set this as  the vcs_url
+    download_url = get_attribute(metainfo, 'Download-URL')
+    add_url(download_url, _utype='Download-URL', _attribute='vcs_url')
+
+    return urls, other_urls
 
 
 def find_pattern(location, pattern):
@@ -467,7 +897,7 @@ def find_dunder_version(location):
     SPDX-License-Identifier: BSD-3-Clause
     (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
     """
-    pattern = re.compile(r"^__version__\s*=\s*['\"]([^'\"]*)['\"]", re.M)
+    pattern = re.compile(r"^__version__\s*=\s*['\"]([^'\"]*)['\"]", re.MULTILINE)
     match = find_pattern(location, pattern)
     if TRACE: logger_debug('find_dunder_version:', 'location:', location, 'match:', match)
     return match
@@ -478,7 +908,7 @@ def find_plain_version(location):
     Return a plain version attribute string or None from searching the module
     file at `location`.
     """
-    pattern = re.compile(r"^version\s*=\s*['\"]([^'\"]*)['\"]", re.M)
+    pattern = re.compile(r"^version\s*=\s*['\"]([^'\"]*)['\"]", re.MULTILINE)
     match = find_pattern(location, pattern)
     if TRACE: logger_debug('find_plain_version:', 'location:', location, 'match:', match)
     return match
@@ -500,9 +930,10 @@ def find_setup_py_dunder_version(location):
     SPDX-License-Identifier: BSD-3-Clause
     (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
     """
-    pattern = re.compile(r"^\s*version\s*=\s*(.*__version__)", re.M)
+    pattern = re.compile(r"^\s*version\s*=\s*(.*__version__)", re.MULTILINE)
     match = find_pattern(location, pattern)
-    if TRACE: logger_debug('find_setup_py_dunder_version:', 'location:', location, 'match:', match)
+    if TRACE:
+        logger_debug('find_setup_py_dunder_version:', 'location:', location, 'match:', match)
     return match
 
 
@@ -519,6 +950,7 @@ def detect_version_attribute(setup_location):
         logger_debug('    detect_dunder_version:', 'setup_location:', setup_location)
         logger_debug('    setup_version_arg:', repr(setup_version_arg),)
         logger_debug('    setup_py__version:', repr(setup_py__version),)
+
     if setup_version_arg == '__version__' and setup_py__version:
         version = setup_py__version or None
         if TRACE: logger_debug('    detect_dunder_version: A:', version)
@@ -571,7 +1003,10 @@ def detect_version_attribute(setup_location):
             if has_src:
                 candidate_locs.append(['src', seg + '.py'])
 
-    candidate_locs = [os.path.join(setup_py_dir, *cand_loc_segs) for cand_loc_segs in candidate_locs]
+    candidate_locs = [
+        os.path.join(setup_py_dir, *cand_loc_segs)
+        for cand_loc_segs in candidate_locs
+    ]
 
     for fl in get_module_scripts(
         location=setup_py_dir,
@@ -600,17 +1035,27 @@ def detect_version_attribute(setup_location):
 
 def detect_version_in_locations(candidate_locs, detector=find_plain_version):
     """
-    Return the first version found in a location from `candidate_locs` using the
-    `detector` callable. Or None.
+    Return the first version found in a location from the `candidate_locs` list
+    using the `detector` callable. Return None if no version is found.
     """
     for loc in candidate_locs:
-        if os.path.exists(loc):
-            if TRACE: logger_debug('detect_version_in_locations:', 'loc:', loc)
-            # here the file exists try to get a dunder version
-            version = detector(loc)
-            if TRACE: logger_debug('detect_version_in_locations:', 'detector', detector, 'version:', version)
-            if version:
-                return version
+        if not os.path.exists(loc):
+            continue
+
+        if TRACE: logger_debug('detect_version_in_locations:', 'loc:', loc)
+
+        # here the file exists try to get a dunder version
+        version = detector(loc)
+
+        if TRACE:
+            logger_debug(
+                'detect_version_in_locations:',
+                'detector', detector,
+                'version:', version,
+            )
+
+        if version:
+            return version
 
 
 def get_module_scripts(location, max_depth=1, interesting_names=()):
@@ -634,148 +1079,10 @@ def get_module_scripts(location, max_depth=1, interesting_names=()):
         current_depth -= 1
 
 
-# FIXME: use proper library for parsing these
-def parse_metadata(location):
-    """
-    Return a Package object from the Python wheel 'metadata.json' file
-    at 'location' or None. Check if the parent directory of 'location'
-    contains both a 'METADATA' and a 'DESCRIPTION.rst' file to ensure
-    this is a proper metadata.json file.
-    """
-    if not location or not location.endswith('metadata.json'):
-        if TRACE: logger_debug('parse_metadata: not metadata.json:', location)
-        return
-    parent_dir = fileutils.parent_directory(location)
-    # FIXME: is the absence of these two files a show stopper?
-    paths = [os.path.join(parent_dir, n) for n in ('METADATA', 'DESCRIPTION.rst')]
-    if not all(os.path.exists(p) for p in paths):
-        if TRACE: logger_debug('parse_metadata: not extra paths', paths)
-        return
-
-    with open(location, 'rb') as infs:
-        infos = json.load(infs, object_pairs_hook=OrderedDict)
-
-    extensions = infos.get('extensions')
-    if TRACE: logger_debug('parse_metadata: extensions:', extensions)
-    details = extensions and extensions.get('python.details')
-    urls = details and details.get('project_urls')
-    homepage_url = urls and urls.get('Home')
-
-    parties = []
-    if TRACE: logger_debug('parse_metadata: contacts:', details.get('contacts'))
-    contacts = details and details.get('contacts') or []
-    for contact in contacts:
-        if TRACE: logger_debug('parse_metadata: contact:', contact)
-        name = contact and contact.get('name')
-        if not name:
-            if TRACE: logger_debug('parse_metadata: no name:', contact)
-            continue
-        parties.append(models.Party(type=models.party_person, name=name, role='contact'))
-
-    description = build_description(
-        infos.get('summary'),
-        infos.get('description')
-    )
-
-    classifiers = infos.get('classifiers')
-    license_classifiers = []
-    other_classifiers = []
-    if classifiers:
-        for classifier in classifiers:
-            if classifier.startswith('License'):
-                license_classifiers.append(classifier)
-            else:
-                other_classifiers.append(classifier)
-
-    declared_license = OrderedDict()
-    lic = infos.get('license')
-    if lic:
-        declared_license['license'] = lic
-    if license_classifiers:
-        declared_license['classifiers'] = license_classifiers
-
-    package = PythonPackage(
-        name=infos.get('name'),
-        version=infos.get('version'),
-        description=description or None,
-        declared_license=declared_license or None,
-        homepage_url=homepage_url or None,
-        parties=parties,
-        keywords=other_classifiers,
-    )
-    return package
-
-
-def parse_pkg_info(location):
-    """
-    Return a PythonPackage from a a 'PKG-INFO' file at 'location' or None.
-    """
-    if not location:
-        return
-
-    if not location.endswith('PKG-INFO'):
-        return
-
-    with io.open(location, encoding='utf-8') as loc:
-        infos = saneyaml.load(loc.read())
-
-    logger.error(logger)
-    if not infos.get('Name'):
-        return
-
-    parties = []
-    author = infos.get('Author')
-    if author:
-        parties.append(models.Party(type=models.party_person, name=author, role=''))
-
-    package = PythonPackage(
-        name=infos.get('Name'),
-        version=infos.get('Version'),
-        description=infos.get('Summary') or infos.get('Description'),
-        homepage_url=infos.get('Home-page') or None,
-        # FIXME: this is NOT correct as classifiers can be used for this too
-        declared_license=infos.get('License') or None,
-        # FIXME: what about email?
-        # FIXME: what about maintainers?
-        parties=parties,
-    )
-    return package
-
-
-def parse_wheel(location):
-    """
-    Passing wheel file location which is generated via setup.py bdist_wheel.
-    """
-    wheel = Wheel(location)
-    return parse_with_pkginfo(wheel)
-
-
-def parse_egg_binary(location):
-    """
-    Passing wheel file location which is generated via setup.py bdist_wheel.
-    """
-    binary_dist = BDist(location)
-    return parse_with_pkginfo(binary_dist)
-
-
-def parse_source_distribution(location):
-    """
-    SDist objects are created from a filesystem path to the corresponding archive. Such as Zip or .tar.gz files
-    """
-    sdist = SDist(location)
-    if sdist:
-        common_data = dict(
-            name=sdist.name,
-            version=sdist.version,
-        )
-        package = PythonPackage(**common_data)
-        return package
-
-
 def compute_normalized_license(declared_license):
     """
-    Return a normalized license expression string detected from a mapping or list of
-    declared license items.
+    Return a normalized license expression string detected from a mapping or
+    list of declared license items.
     """
     if not declared_license:
         return
@@ -784,7 +1091,7 @@ def compute_normalized_license(declared_license):
         values = list(declared_license.values())
     elif isinstance(declared_license, list):
         values = list(declared_license)
-    elif isinstance(declared_license, (str, unicode,)):
+    elif isinstance(declared_license, str):
         values = [declared_license]
     else:
         return
@@ -795,7 +1102,7 @@ def compute_normalized_license(declared_license):
         if not value:
             continue
         # The value could be a string or a list
-        if isinstance(value, string_types):
+        if isinstance(value, str):
             detected_license = models.compute_normalized_license(value)
             if detected_license:
                 detected_licenses.append(detected_license)

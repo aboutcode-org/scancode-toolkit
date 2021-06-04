@@ -3,6 +3,7 @@ short_name: X11-Style (OAR)
 name: X11-Style (OAR)
 category: Permissive
 owner: OAR - On-Line Applications Research Corporation
+spdx_license_key: LicenseRef-scancode-x11-oar
 other_urls:
     - http://www.oarcorp.com/index.htm
 minimum_coverage: 80

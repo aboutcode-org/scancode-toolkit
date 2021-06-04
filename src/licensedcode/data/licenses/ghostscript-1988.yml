@@ -7,6 +7,7 @@ notes: |
     This is a rare license and there is no original web location available
     anymore. Because some old version of the "ansi2knr.c" found in libjpeg and
     libpng have it, It can still be found sometimes in the wild.
+spdx_license_key: LicenseRef-scancode-ghostscript-1988
 text_urls:
     - http://sourceforge.net/p/libpng/code/ci/0d5805822f8817a17937462a2fd0606ffdad378e/tree/ansi2knr.c
     - http://www.mit.edu/afs.new/athena/contrib/xemacs/OldFiles/src/aux/libpng-1.0.3/ansi2knr.c

@@ -4,6 +4,7 @@ name: NetComponents License
 category: Permissive
 owner: Savarese.Org
 homepage_url: http://gruntspud.sourceforge.net/NETCOMPONENTS_LICENSE.html
+spdx_license_key: LicenseRef-scancode-netcomponents
 text_urls:
     - http://gruntspud.sourceforge.net/NETCOMPONENTS_LICENSE.html
 ignorable_copyrights:

@@ -1,7 +1,7 @@
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 99
-notes: Found in Chromium Debian copyright files
 minimum_coverage: 95
 referenced_filenames:
     - LICENSE
+notes: Found in Chromium Debian copyright files

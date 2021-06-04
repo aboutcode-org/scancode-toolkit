@@ -4,6 +4,7 @@ name: ActiveState Community License 2012
 category: Proprietary Free
 owner: ActiveState Software, Inc.
 homepage_url: https://web.archive.org/web/20130420143215/http://www.activestate.com/activeperl/license-agreement
+spdx_license_key: LicenseRef-scancode-activestate-community-2012
 standard_notice: |
     ActivePerl is covered by the ActiveState Community License.
     Please note:

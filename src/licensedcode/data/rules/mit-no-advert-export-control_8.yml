@@ -1,0 +1,5 @@
+license_expression: mit-no-advert-export-control
+is_license_text: yes
+relevance: 100
+notes: https://sources.debian.org/src/netkit-telnet-ssl/0.17.41+0.2-3.2/debian/patches/500-implement_ssl.diff/?hl=1612
+    This has a shorter disclaimer

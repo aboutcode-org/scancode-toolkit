@@ -1,0 +1,20 @@
+- - GPL-2
+  - CC-BY-SA-3.0
+  - LGPL-2.1+
+  - BSL-1.0
+  - BSD-3-clause
+  - DejaVu-License
+  - Apache-2.0
+- (gpl-2.0 AND gpl-2.0-plus) AND cc-by-sa-3.0 AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus
+  AND lgpl-2.1) AND boost-1.0 AND bsd-new AND (bitstream AND bitstream) AND (apache-2.0 AND
+  apache-2.0 AND apache-2.0)
+- |
+  The FreeOrion project
+  2003-2008, T. Zachary Laine
+  2006, Nemanja Trifunovic
+  2001, Daniel C. Nuffer
+  2006, T. Zachary Laine
+  2000-2011, Kitware, Inc
+  2003, Bitstream Inc
+  2006, Tavmjong Bah
+  2015, Google Inc.

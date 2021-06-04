@@ -1,6 +1,6 @@
 #
 # Copyright (c) 2010 Matt Chaput. All rights reserved.
-# Modifications by nexB Copyright 2016 nexB Inc. All rights reserved.
+# Modifications by nexB Copyright (c) nexB Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -27,18 +27,12 @@
 # those of the authors and should not be interpreted as representing official
 # policies, either expressed or implied, of Matt Chaput.
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 from collections import Set
 from itertools import count
 from itertools import groupby
 
 from intbitset import intbitset
-
-from commoncode import compat
-
 
 """
 Ranges and intervals of integers using bitmaps.
@@ -110,7 +104,7 @@ class Span(Set):
 
         elif len_args == 1:
             # args0 is a single int or an iterable of ints
-            if isinstance(args[0], compat.integer_types):
+            if isinstance(args[0], int):
                 self._set = intbitset(args)
             else:
                 # some sequence or iterable
@@ -207,7 +201,7 @@ class Span(Set):
         if isinstance(other, Span):
             return self._set.issuperset(other._set)
 
-        if isinstance(other, compat.integer_types):
+        if isinstance(other, int):
             return self._set.__contains__(other)
 
         if isinstance(other, (set, frozenset)):

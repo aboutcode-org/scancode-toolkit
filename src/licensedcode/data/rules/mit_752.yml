@@ -1,0 +1,5 @@
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://github.com/GianlucaGuarini/jQuery.BlackAndWhite/blob/master/LICENSE.txt

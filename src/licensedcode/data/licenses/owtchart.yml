@@ -4,6 +4,7 @@ name: OWTChart License
 category: Permissive
 owner: Unspecified
 notes: composite
+spdx_license_key: LicenseRef-scancode-owtchart
 minimum_coverage: 85
 ignorable_copyrights:
     - Copyright (c) 1998, 1999, Daniel Morissette

@@ -1,0 +1,6 @@
+license_expression: gpl-3.0-plus
+is_license_notice: yes
+relevance: 100
+notes: See in https://raw.githubusercontent.com/madorning/energySim0.1.0/0ad5c19898215e11fd8cfb0d569b4d48a886e922/LICENSE
+ignorable_urls:
+    - http://www.gnu.org/licenses

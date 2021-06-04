@@ -1,0 +1,6 @@
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/deuce2367/aware/blob/7fd8331b2b98f9723dc4dc16817937de912a83bc/SRC/perl-Date-Calc/tools/pc2iso.c#L378
+ignorable_urls:
+    - ftp://ftp.gnu.org/pub/gnu/COPYING-2.0

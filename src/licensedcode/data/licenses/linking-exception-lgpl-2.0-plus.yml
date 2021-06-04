@@ -4,6 +4,7 @@ name: Linking exception to LGPL 2.0 or later
 category: Copyleft Limited
 owner: FreeBASIC Project
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-linking-exception-lgpl-2.0-plus
 other_urls:
     - https://master.dl.sourceforge.net/project/fbc/Source%20Code/FreeBASIC-1.05.0-source.tar.gz
 standard_notice: |

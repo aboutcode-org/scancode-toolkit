@@ -1,50 +1,201 @@
 #!/usr/bin/env bash
 #
-# Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/ for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
 
 set -e
-
-if [[ "$OS" == "Windows_NT" ]]; then
-    echo "You seem to be running on Windows under Cygwin / MSYS(2), like e.g. Git for Windows Bash. This script does"
-    echo "not properly work in this scenario. As a Windows user, please run 'configure.bat' from a regular command"
-    echo "prompt instead."
-    exit 1
-fi
+#set -x
 
 ################################
-# change these variables to customize this script locally
+# A configuration script to set things up: 
+# create a virtualenv and install or update thirdparty packages.
+# Source this script for initial configuration
+# Use configure --help for details
+#
+# This script will search for a virtualenv.pyz app in etc/thirdparty/virtualenv.pyz
+# Otherwise it will download the latest from the VIRTUALENV_PYZ_URL default
 ################################
-# you can define one or more thirdparty dirs, each prefixed with TPP_DIR
-export TPP_DIR="thirdparty"
+CLI_ARGS=$1
 
-# default configurations for dev
-CONF_DEFAULT="etc/conf/dev"
+################################
+# Defaults. Change these variables to customize this script
+################################
 
-if [[ "$CONF_DEFAULT" == "etc/conf/dev" ]]; then
-    export TPP_DIR_DEV="thirdparty/dev"
+# Requirement arguments passed to pip and used by default or with --dev.
+REQUIREMENTS="--editable . --constraint requirements.txt"
+DEV_REQUIREMENTS="--editable .[dev] --editable .[packages] --constraint requirements.txt --constraint requirements-dev.txt"
+
+# where we create a virtualenv
+VIRTUALENV_DIR=.
+
+# Cleanable files and directories to delete with the --clean option
+CLEANABLE="
+    build
+    bin
+    lib
+    lib64
+    include
+    tcl
+    local
+    .Python
+    .eggs
+    pip-selfcheck.json
+    src/scancode_toolkit.egg-info
+    SCANCODE_DEV_MODE
+    man
+    Scripts"
+
+# extra  arguments passed to pip
+PIP_EXTRA_ARGS=" "
+
+# the URL to download virtualenv.pyz if needed
+VIRTUALENV_PYZ_URL=https://bootstrap.pypa.io/virtualenv.pyz
+################################
+
+
+################################
+# Current directory where this script lives
+CFG_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
+
+
+################################
+# scancode-specific: Thirdparty package locations and index handling
+# Do we have thirdparty/files? use the mit.LICENSE as a proxy
+if [[ -f "$CFG_ROOT_DIR/thirdparty/mit.LICENSE" ]]; then
+    LINKS=$CFG_ROOT_DIR/thirdparty
+else
+    LINKS=https://thirdparty.aboutcode.org/pypi
+fi
+PIP_EXTRA_ARGS="--no-index --find-links $LINKS"
+################################
+
+
+################################
+# Set the quiet flag to empty if not defined 
+if [[ "$CFG_QUIET" == "" ]]; then
+    CFG_QUIET=" "
 fi
 
 
-#################################
-
-CFG_CMD_LINE_ARGS="$@"
-
-if [[ "$1" == "" ]]; then
-    # default for dev conf if not argument is provided
-    CFG_CMD_LINE_ARGS=$CONF_DEFAULT
+################################
+# find a proper Python to run
+# Use environment variables or a file if available.
+# Otherwise the latest Python by default.
+if [[ "$PYTHON_EXECUTABLE" == "" ]]; then
+    # check for a file named PYTHON_EXECUTABLE 
+    if [ -f "$CFG_ROOT_DIR/PYTHON_EXECUTABLE" ]; then
+        PYTHON_EXECUTABLE=$(cat "$CFG_ROOT_DIR/PYTHON_EXECUTABLE")
+    else
+        PYTHON_EXECUTABLE=python3
+    fi
 fi
 
-CONFIGURE_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-if [[ "$PYTHON_EXE" == "" ]]; then
-    PYTHON_EXE=python
-fi
+################################
+cli_help() {
+    echo An initial configuration script
+    echo "  usage: ./configure [options]"
+    echo
+    echo The default is to configure for regular use. Use --dev for development.
+    echo
+    echo The options are:
+    echo " --clean: clean built and installed files and exit."
+    echo " --dev:   configure the environment for development."
+    echo " --help:  display this help message and exit."
+    echo
+    echo By default, the python interpreter version found in the path is used.
+    echo Alternatively, the PYTHON_EXECUTABLE environment variable can be set to
+    echo configure another Python executable interpreter to use. If this is not
+    echo set, a file named PYTHON_EXECUTABLE containing a single line with the
+    echo path of the Python executable to use will be checked last.
+    set +e
+    exit
+}
 
-$PYTHON_EXE "$CONFIGURE_ROOT_DIR/etc/configure.py" $CFG_CMD_LINE_ARGS
 
-if [ -f "$CONFIGURE_ROOT_DIR/bin/activate" ]; then
-    source "$CONFIGURE_ROOT_DIR/bin/activate"
+clean() {
+    # Remove cleanable file and directories and files from the root dir.
+    echo "* Cleaning ..."
+    for cln in $CLEANABLE;
+        do rm -rf "${CFG_ROOT_DIR:?}/${cln:?}";
+    done
+    set +e
+    exit
+}
+
+
+create_virtualenv() {
+    # create a virtualenv for Python
+    # Note: we do not use the bundled Python 3 "venv" because its behavior and
+    # presence is not consistent across Linux distro and sometimes pip is not
+    # included either by default. The virtualenv.pyz app cures all these issues.
+
+    VENV_DIR="$1"
+    if [ ! -f "$CFG_BIN_DIR/python" ]; then
+
+        mkdir -p "$CFG_ROOT_DIR/$VENV_DIR"
+
+        if [ -f "$CFG_ROOT_DIR/etc/thirdparty/virtualenv.pyz" ]; then
+            VIRTUALENV_PYZ="$CFG_ROOT_DIR/etc/thirdparty/virtualenv.pyz"
+        else
+            VIRTUALENV_PYZ="$CFG_ROOT_DIR/$VENV_DIR/virtualenv.pyz"
+            wget -O "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL"
+        fi
+
+        $PYTHON_EXECUTABLE "$VIRTUALENV_PYZ" \
+            --wheel embed --pip embed --setuptools embed \
+            --seeder pip \
+            --never-download \
+            --no-periodic-update \
+            --no-vcs-ignore \
+            $CFG_QUIET \
+            "$CFG_ROOT_DIR/$VENV_DIR"
+    fi
+}
+
+
+install_packages() {
+    # install requirements in virtualenv
+    # note: --no-build-isolation means that pip/wheel/setuptools will not
+    # be reinstalled a second time and reused from the virtualenv and this
+    # speeds up the installation.
+    # We always have the PEP517 build dependencies installed already.
+
+    "$CFG_BIN_DIR/pip" install \
+        --upgrade \
+        --no-build-isolation \
+        $CFG_QUIET \
+        $PIP_EXTRA_ARGS \
+        $1
+}
+
+
+################################
+# Main command line entry point
+CFG_DEV_MODE=0
+CFG_REQUIREMENTS=$REQUIREMENTS
+
+case "$CLI_ARGS" in
+    --help)    cli_help;;
+    --clean)   clean;;
+    --dev)     CFG_REQUIREMENTS="$DEV_REQUIREMENTS" && CFG_DEV_MODE=1;;
+esac
+
+create_virtualenv "$VIRTUALENV_DIR"
+install_packages "$CFG_REQUIREMENTS"
+. "$CFG_BIN_DIR/activate"
+
+################################
+# scancode-specific: Setup development mode
+
+if [[ "$CFG_DEV_MODE" == 1 ]]; then
+    # Add development tag file to auto-regen license index on file changes
+    touch "$CFG_ROOT_DIR/SCANCODE_DEV_MODE"
 fi
 
 set +e

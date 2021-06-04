@@ -4,5 +4,6 @@ name: MIT Old Style
 category: Permissive
 owner: MIT
 homepage_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style
+spdx_license_key: LicenseRef-scancode-mit-old-style
 text_urls:
     - http://fedoraproject.org/wiki/Licensing:MIT#Old_Style

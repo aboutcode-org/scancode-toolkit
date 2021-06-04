@@ -1,0 +1,10 @@
+license_expressions:
+  - proprietary-license
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/MIT-Broken.t1
+  originally expected to be detected as None
+  with coverage of 0.0
+  "may only be used in connection with services provided by Go Gopher"
+  Example: https://github.com/OneSignal/react-native-onesignal
+  TODO: cover is wrong!

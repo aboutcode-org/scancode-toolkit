@@ -1,4 +1,4 @@
 license_expression: mpl-1.1
 is_license_reference: yes
-notes: 'No version is provided: the MPL 1.1 is as good a candidate as any other. In contrast
-    with the GPL there is no notion of an MPL without version.'
+notes: No version is provided and the MPL 1.1 is as good a candidate as any other MPL. In contrast
+    with the GPL there is no notion of an MPL without version.

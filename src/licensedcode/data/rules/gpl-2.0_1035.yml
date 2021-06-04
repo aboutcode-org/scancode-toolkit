@@ -1,0 +1,10 @@
+license_expression: gpl-2.0
+is_license_text: yes
+relevance: 99
+notes: The text contains some likely mistaken search and replace. Seen in https://raw.githubusercontent.com/narfight/clanlite/d946c1cb7632e7a1eab2b06de20ffbf81594f3f5/DOCS/COPYING
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

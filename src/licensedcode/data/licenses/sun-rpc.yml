@@ -4,5 +4,6 @@ name: Sun RPC License
 category: Permissive
 owner: Oracle (Sun)
 homepage_url: http://www.opensource.apple.com/license/sunrpc/
+spdx_license_key: LicenseRef-scancode-sun-rpc
 text_urls:
     - http://www.opensource.apple.com/license/sunrpc/

@@ -9,6 +9,7 @@ notes: |
     something that looks like a BSD license. Later version of the same home
     page has references to the GPL instead of the LGPL. The original site is no
     longer onlilne.
+spdx_license_key: LicenseRef-scancode-statewizard
 ignorable_authors:
     - the IntelliWizard Project
     - the Intelliwizard Project

@@ -1,0 +1,11 @@
+license_expression: gpl-2.0 WITH generic-exception AND gpl-generic-additional-terms
+is_license_text: yes
+relevance: 100
+notes: See https://github.com/armedbear/abcl/blob/master/COPYING The GPL text is modified which
+    is problematic
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

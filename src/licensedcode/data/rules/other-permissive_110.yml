@@ -1,9 +1,5 @@
 license_expression: other-permissive
 is_license_text: yes
 relevance: 100
-ignorable_authors:
-    - Computing Services at Carnegie Mellon University (http://www.cmu.edu/computing/)
-ignorable_urls:
-    - http://www.cmu.edu/computing
-ignorable_emails:
-    - tech-transfer@andrew.cmu.edu
+notes: Seen in https://github.com/nficano/pytube/blob/67e6144ecdabc66088c87ac79f4fc46c7cf01101/LICENSE
+    an mit-like license with some weird extra terms

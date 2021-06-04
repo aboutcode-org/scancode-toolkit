@@ -4,6 +4,7 @@ name: HDF4 License
 category: Permissive
 owner: The HDF Group
 homepage_url: https://bitbucket.hdfgroup.org/projects/HDFFR/repos/hdf4/browse/COPYING?raw
+spdx_license_key: LicenseRef-scancode-hdf4
 other_urls:
     - https://support.hdfgroup.org/ftp/HDF/releases/HDF4.2.14/src/hdf-4.2.14.tar.bz2
 standard_notice: |

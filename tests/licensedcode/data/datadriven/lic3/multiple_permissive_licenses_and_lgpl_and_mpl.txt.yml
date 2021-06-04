@@ -1,0 +1,33 @@
+license_expressions:
+  - mit
+  - freetype
+  - mit
+  - x11
+  - x11
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - naist-2003
+  - naist-2003
+  - bsd-simplified
+  - bsd-simplified
+  - bsd-new
+  - public-domain
+  - public-domain
+  - sgi-freeb-2.0
+  - libpng
+  - libpng
+  - libpng
+  - libpng
+  - bsd-new
+  - mit
+  - mpl-2.0
+  - openssl-ssleay
+  - public-domain
+  - lgpl-2.0 AND bsd-new
+  - lgpl-2.0
+  - bsd-new
+  - bsd-simplified
+  - zlib

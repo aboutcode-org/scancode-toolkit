@@ -4,5 +4,6 @@ name: Do No Harm
 category: Proprietary Free
 owner: Raisely
 homepage_url: https://github.com/raisely/NoHarm
+spdx_license_key: LicenseRef-scancode-do-no-harm-0.1
 ignorable_urls:
-  - https://github.com/raisely/NoHarm
+    - https://github.com/raisely/NoHarm

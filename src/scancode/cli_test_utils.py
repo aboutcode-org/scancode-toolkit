@@ -1,52 +1,29 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import division
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import io
 import json
 import os
 import time
 
-from commoncode.system import on_linux
 from commoncode.system import on_windows
-from commoncode.system import py2
-from commoncode.system import py3
 from scancode_config import scancode_root_dir
 
 
-if py2:
-    mode = 'wb'
-if py3:
-    mode = 'w'
-
-
-def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None):
+def run_scan_plain(
+    options, 
+    cwd=None, 
+    test_mode=True, 
+    expected_rc=0, 
+    env=None, 
+    retry=True,
+):
     """
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
     """
@@ -57,29 +34,55 @@ def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None):
     if test_mode and '--test-mode' not in options:
         options.append('--test-mode')
 
-    if on_linux and py2:
-        scmd = b'scancode'
-    else:
-        scmd = u'scancode'
+    if not env:
+        env = dict(os.environ)
+
+    scmd = u'scancode'
     scan_cmd = os.path.join(scancode_root_dir, scmd)
-    rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd, env=env)
+    rc, stdout, stderr = execute2(
+        cmd_loc=scan_cmd,
+        args=options,
+        cwd=cwd,
+        env=env,
+    )
+
+    if retry and rc != expected_rc:
+        # wait and rerun in verbose mode to get more in the output
+        time.sleep(1)
+        if '--verbose' not in options:
+            options.append('--verbose')
+        result = rc, stdout, stderr = execute2(
+            cmd_loc=scan_cmd,
+            args=options,
+            cwd=cwd,
+            env=env,
+        )
 
     if rc != expected_rc:
         opts = get_opts(options)
-        error = '''
-Failure to run: scancode %(opts)s
+        error = f'''
+Failure to run:
+rc: {rc}
+scancode {opts}
 stdout:
-%(stdout)s
+{stdout}
 
 stderr:
-%(stderr)s
+{stderr}
 ''' % locals()
         assert rc == expected_rc, error
 
     return rc, stdout, stderr
 
 
-def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env=None, retry=on_windows):
+def run_scan_click(
+    options,
+    monkeypatch=None,
+    test_mode=True,
+    expected_rc=0,
+    env=None,
+    retry=True,
+):
     """
     Run a scan as a Click-controlled subprocess
     If monkeypatch is provided, a tty with a size (80, 43) is mocked.
@@ -99,12 +102,16 @@ def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env
         monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
         monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
 
+    if not env:
+        env = dict(os.environ)
+
     runner = CliRunner()
 
     result = runner.invoke(cli.scancode, options, catch_exceptions=False, env=env)
-    if result.exit_code != expected_rc and retry:
-        # wait and rerun in verbose mode to get more in the output
-        time.sleep(10)
+    if retry and result.exit_code != expected_rc:
+        if on_windows:
+            # wait and rerun in verbose mode to get more in the output
+            time.sleep(1)
         if '--verbose' not in options:
             options.append('--verbose')
         result = runner.invoke(cli.scancode, options, catch_exceptions=False, env=env)
@@ -112,11 +119,13 @@ def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env
     if result.exit_code != expected_rc:
         output = result.output
         opts = get_opts(options)
-        error = '''
-Failure to run: scancode %(opts)s
+        error = f'''
+Failure to run:
+rc: {result.exit_code}
+scancode {opts}
 output:
-%(output)s
-''' % locals()
+{output}
+'''
         assert result.exit_code == expected_rc, error
     return result
 
@@ -153,7 +162,13 @@ def remove_windows_extra_timeout(scancode_options, timeout=WINDOWS_CI_TIMEOUT):
             del scancode_options['--timeout']
 
 
-def check_json_scan(expected_file, result_file, regen=False, remove_file_date=False, ignore_headers=False):
+def check_json_scan(
+    expected_file,
+    result_file,
+    regen=False,
+    remove_file_date=False,
+    ignore_headers=False
+):
     """
     Check the scan `result_file` JSON results against the `expected_file`
     expected JSON results.
@@ -166,7 +181,7 @@ def check_json_scan(expected_file, result_file, regen=False, remove_file_date=Fa
     """
     results = load_json_result(result_file, remove_file_date)
     if regen:
-        with open(expected_file, mode) as reg:
+        with open(expected_file, 'w') as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
     expected = load_json_result(expected_file, remove_file_date)
@@ -180,7 +195,7 @@ def check_json_scan(expected_file, result_file, regen=False, remove_file_date=Fa
     # TODO: remove sort, this should no longer be needed
     expected = json.dumps(expected, indent=2, sort_keys=True, separators=(',', ': '))
     results = json.dumps(results, indent=2, sort_keys=True, separators=(',', ': '))
-    assert expected == results
+    assert results == expected
 
 
 def load_json_result(location, remove_file_date=False):
@@ -202,7 +217,7 @@ def load_json_result_from_string(string, remove_file_date=False):
     """
     Load the JSON scan results `string` as UTF-8 JSON.
     """
-    scan_results = json.loads(string, object_pairs_hook=OrderedDict)
+    scan_results = json.loads(string)
     # clean new headers attributes
     streamline_headers(scan_results.get('headers', []))
     # clean file_level attributes
@@ -237,22 +252,27 @@ def streamline_headers(headers):
         hle.pop('start_timestamp', None)
         hle.pop('end_timestamp', None)
         hle.pop('duration', None)
-        header= hle.get('options', {})
+        header = hle.get('options', {})
         header.pop('--verbose', None)
         streamline_errors(hle['errors'])
 
 
 def streamline_scanned_file(scanned_file, remove_file_date=False):
     """
-    Modify the `scanned_file` mapping for a file in scan results in place to make
-    it easier to test.
+    Modify the `scanned_file` mapping for a file in scan results in place to
+    make it easier to test.
     """
     streamline_errors(scanned_file.get('scan_errors', []))
     if remove_file_date:
         scanned_file.pop('date', None)
 
 
-def check_jsonlines_scan(expected_file, result_file, regen=False, remove_file_date=False):
+def check_jsonlines_scan(
+    expected_file,
+    result_file,
+    regen=False,
+    remove_file_date=False,
+):
     """
     Check the scan result_file JSON Lines results against the expected_file
     expected JSON results, which is a list of mappings, one per line. If regen
@@ -262,22 +282,22 @@ def check_jsonlines_scan(expected_file, result_file, regen=False, remove_file_da
     If `remove_file_date` is True, the file.date attribute is removed.
     """
     with io.open(result_file, encoding='utf-8') as res:
-        results = [json.loads(line, object_pairs_hook=OrderedDict) for line in res]
+        results = [json.loads(line) for line in res]
 
     streamline_jsonlines_scan(results, remove_file_date)
 
     if regen:
-        with open(expected_file, mode) as reg:
+        with open(expected_file, 'w') as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
     with io.open(expected_file, encoding='utf-8') as res:
-        expected = json.load(res, object_pairs_hook=OrderedDict)
+        expected = json.load(res)
 
     streamline_jsonlines_scan(expected, remove_file_date)
 
     expected = json.dumps(expected, indent=2, separators=(',', ': '))
     results = json.dumps(results, indent=2, separators=(',', ': '))
-    assert expected == results
+    assert results == expected
 
 
 def streamline_jsonlines_scan(scan_result, remove_file_date=False):

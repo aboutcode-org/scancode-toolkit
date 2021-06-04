@@ -3,4 +3,8 @@ short_name: Inner Net 2.0
 name: Inner Net License 2.0
 category: Permissive
 owner: Unspecified
+spdx_license_key: LicenseRef-scancode-inner-net-2.0
 minimum_coverage: 60
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/Inner_Net_License
+    - https://www.calculate-linux.org/packages/licenses/inner-net

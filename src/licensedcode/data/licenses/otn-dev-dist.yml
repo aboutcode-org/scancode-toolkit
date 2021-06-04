@@ -4,6 +4,7 @@ name: Oracle Technology Network Development and Distribution License Terms
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/licenses/distribution-license-152002.html
+spdx_license_key: LicenseRef-scancode-otn-dev-dist
 text_urls:
     - http://www.oracle.com/technetwork/licenses/distribution-license-152002.html
 ignorable_authors:

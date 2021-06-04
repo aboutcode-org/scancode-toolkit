@@ -1,0 +1,19 @@
+key: vhfpl-1.1
+short_name: vhfPL 1.1
+name: vhf Public License V 1.1
+category: Copyleft
+owner: Cenon GmbH
+homepage_url: http://www.cenon.de
+notes: The original name of Cenon was vhf interservice GmbH at 
+ http://www.vhf-interservice.com/ and http://www.vhf.de
+ The company has websites under several different domain names.
+spdx_license_key: LicenseRef-scancode-vhfpl-1.1
+ignorable_copyrights:
+  - Copyright (c) 2003 vhf interservice GmbH service@vhf.de
+  - Copyright (c) 2003/2004 vhf interservice GmbH, Im Marxle
+ignorable_emails:
+  - service@vhf.de
+ignorable_holders:
+  - vhf interservice GmbH
+  - vhf interservice GmbH, Im Marxle
+

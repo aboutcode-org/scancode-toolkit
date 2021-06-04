@@ -4,5 +4,6 @@ name: TripTracker Slideshow License
 category: Proprietary Free
 owner: Klika
 homepage_url: http://slideshow.triptracker.net/
+spdx_license_key: LicenseRef-scancode-triptracker
 ignorable_urls:
     - http://slideshow.triptracker.net/

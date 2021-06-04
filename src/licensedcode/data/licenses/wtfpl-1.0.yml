@@ -14,6 +14,7 @@ notes: |
     verbatim copies of this license document, but changing it is not allowed.
     Ok, the purpose of this license is simple and you just DO WHAT THE FUCK YOU
     WANT TO.
+spdx_license_key: LicenseRef-scancode-wtfpl-1.0
 text_urls:
     - http://hg.windowmaker.info/wmaker/file/0a3a3e370483/COPYING.WTFPL
 other_urls:

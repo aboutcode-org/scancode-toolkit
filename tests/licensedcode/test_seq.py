@@ -1,30 +1,11 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 from unittest.case import TestCase
 
@@ -135,13 +116,6 @@ class TestSeq(TestCase):
         555, 230, 936, 4, 8, 1537, 5, 7770, 12, 3479, 30, 8, 97, 8176, 947, 10,
         2567, 7, 755, 3670, 3723, 3716]
 
-        bto = '''
-        the beer ware license revision 42
-        phk login dknet dk wrote this file
-        as long as you retain this notice you can do whatever you want with this
-        stuff if we meet some day and you think this stuff is worth it you can
-        buy me a beer in return poul henning kamp'''
-
         # this is mapping of high token ids in b to a list of positions
         # for instance, 10248 is the 'phk' token and is found at position 6 in b
         # and 7770 is stuff and oudn in two places
@@ -158,9 +132,8 @@ class TestSeq(TestCase):
         len_good = 20000
 
         a_start = 357
-        a_end = 52
         b_start = 0
         b_end = 53
 
         tests = seq.find_longest_match(a, b, a_start, len(a), b_start, b_end, b2j, len_good, matchables)
-        assert seq.Match(a=357, b=0, size=8) == tests
+        assert tests == seq.Match(a=357, b=0, size=8)

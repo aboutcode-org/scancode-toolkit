@@ -1,2 +1,4 @@
 license_expression: hs-regexp
 is_license_text: yes
+minimum_coverage: 80
+

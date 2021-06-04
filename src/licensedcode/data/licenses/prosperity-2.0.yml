@@ -4,5 +4,6 @@ name: The Prosperity Public License 2.0
 category: Source-available
 owner: Kyle Mitchell
 homepage_url: https://licensezero.com/licenses/prosperity
+spdx_license_key: LicenseRef-scancode-prosperity-2.0
 text_urls:
-    - hhttps://github.com/licensezero/prosperity-public-license/blob/v2.0.0/LICENSE.mustache
+    - https://github.com/licensezero/prosperity-public-license/blob/v2.0.0/LICENSE.mustache

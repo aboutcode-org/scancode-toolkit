@@ -1,0 +1,11 @@
+license_expression: agpl-3.0
+is_license_text: yes
+relevance: 100
+notes: minor variant with copyright sign
+ignorable_copyrights:
+    - Copyright (c) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ignorable_holders:
+    - Free Software Foundation, Inc.
+ignorable_urls:
+    - https://fsf.org/
+    - https://www.gnu.org/licenses/

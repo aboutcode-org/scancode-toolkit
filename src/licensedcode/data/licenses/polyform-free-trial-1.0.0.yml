@@ -4,6 +4,7 @@ name: Polyform Free Trial License 1.0.0
 category: Source-available
 owner: Polyform
 homepage_url: https://polyformproject.org/licenses/free-trial/1.0.0/
+spdx_license_key: LicenseRef-scancode-polyform-free-trial-1.0.0
 text_urls:
     - https://polyformproject.org/wp-content/uploads/2019/07/Polyform-Free-Trial-1.0.0.txt
 ignorable_urls:

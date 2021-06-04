@@ -5,6 +5,7 @@ category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/web/webpi/eula/msn_webgrease_eula.htm
 notes: also contains some French language terms
+spdx_license_key: LicenseRef-scancode-ms-msn-webgrease
 minimum_coverage: 90
 ignorable_urls:
     - http://www.microsoft.com/exporting

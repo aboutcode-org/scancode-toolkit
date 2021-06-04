@@ -70,6 +70,7 @@
   "source_packages": [
     "pkg:maven/org.testng/testng@5.7?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.testng/testng@5.7",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/testng/testng/5.7/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/testng/testng/5.7/testng-5.7.jar",

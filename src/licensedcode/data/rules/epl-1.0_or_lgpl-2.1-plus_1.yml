@@ -1,0 +1,5 @@
+license_expression: epl-1.0 OR lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.eclipse.org/legal/epl-v10.html

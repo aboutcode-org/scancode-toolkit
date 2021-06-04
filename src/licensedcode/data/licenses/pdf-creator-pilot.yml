@@ -4,6 +4,7 @@ name: PDF Creator Pilot License Agreement
 category: Commercial
 owner: Two Pilots
 homepage_url: http://www.colorpilot.com/pdflibrary_eula.html
+spdx_license_key: LicenseRef-scancode-pdf-creator-pilot
 ignorable_copyrights:
     - Copyright (c) 1999-2012 Two Pilots and its licensors
 ignorable_holders:

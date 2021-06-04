@@ -5,3 +5,4 @@ category: Permissive
 owner: Theodore Ts'o
 notes: this license is used in e2fsprogs and is rather unique. The disclaimer is mostly based
     on a truncated BSD license disclaimer
+spdx_license_key: LicenseRef-scancode-tso-license

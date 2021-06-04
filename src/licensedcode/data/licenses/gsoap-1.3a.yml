@@ -3,6 +3,7 @@ short_name: gSOAP Public License v1.3a
 name: gSOAP Public License v1.3a
 category: Copyleft Limited
 owner: Genivia
+spdx_license_key: LicenseRef-scancode-gsoap-1.3a
 ignorable_copyrights:
     - Copyright (c) 2001-2004 Robert A. van Engelen, Genivia inc.
 ignorable_authors:

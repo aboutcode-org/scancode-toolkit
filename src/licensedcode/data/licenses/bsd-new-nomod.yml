@@ -5,4 +5,5 @@ category: Permissive
 owner: Unspecified
 notes: this bsd-new variant has the words "without modification" added at the end of the first
     clause, sometimes with or without a comma.
+spdx_license_key: LicenseRef-scancode-bsd-new-nomod
 minimum_coverage: 99

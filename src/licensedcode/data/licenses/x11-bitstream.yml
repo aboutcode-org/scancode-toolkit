@@ -4,6 +4,7 @@ name: X11-Style (Bitstream Charter)
 category: Permissive
 owner: Bitstream
 notes: this is an historical license with an extra grant
+spdx_license_key: LicenseRef-scancode-x11-bitstream
 ignorable_copyrights:
     - (c) Copyright 1989-1992, Bitstream Inc., Cambridge, MA.
 ignorable_holders:

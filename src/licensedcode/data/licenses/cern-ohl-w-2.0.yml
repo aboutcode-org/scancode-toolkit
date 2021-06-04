@@ -9,6 +9,7 @@ text_urls:
     - https://ohwr.org/cern_ohl_w_v2.txt
     - https://ohwr.org/project/cernohl/wikis/uploads/10946616b8cbcdef2274a58d9f3a98fb/cern_ohl_w_v2.txt
     - https://ohwr.org/project/cernohl/wikis/uploads/b94a1a92b29984226c56a0dd4dca0d39/cern_ohl_w_v2.pdf
+osi_url: https://opensource.org/CERN-OHL-W
 faq_url: https://ohwr.org/project/cernohl/wikis/faq
 other_urls:
     - https://ohwr.org/project/cernohl

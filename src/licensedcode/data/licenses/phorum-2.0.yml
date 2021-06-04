@@ -4,6 +4,7 @@ name: Phorum License 2.0
 category: Permissive
 owner: Phorum
 homepage_url: http://www.phorum.org/license.txt
+spdx_license_key: LicenseRef-scancode-phorum-2.0
 text_urls:
     - http://www.phorum.org/license.txt
 other_urls:
@@ -21,3 +22,5 @@ ignorable_urls:
     - http://www.apache.org/
 ignorable_emails:
     - core@phorum.org
+minimum_coverage: 80
+

@@ -1,0 +1,5 @@
+license_expression: bsd-new
+is_license_text: yes
+relevance: 100
+minimum_coverage: 98
+notes: duplicated line See https://github.com/josephlewis42/njson/blob/30ce2ac0a62d78ed3197daaf514a2d5567e04ee2/LICENSE

@@ -3,6 +3,7 @@ short_name: Sun BCL JRE 6
 name: Sun BCL JRE 6
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bcl-jre6
 ignorable_urls:
     - http://java.com/data
     - http://www.sun.com/policies/trademarks

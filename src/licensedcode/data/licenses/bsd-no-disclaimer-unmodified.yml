@@ -5,3 +5,4 @@ category: Permissive
 owner: Unspecified
 notes: A rare variant that comes with a slightly different wording and no warranty disclaimer
     and the words "without modifications" applying to the license conditions
+spdx_license_key: LicenseRef-scancode-bsd-no-disclaimer-unmodified

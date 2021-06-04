@@ -1,0 +1,9 @@
+license_expression: other-permissive
+is_license_notice: yes
+relevance: 100
+notes: Seen in https://github.com/apple-opensource-mirror/X11/blob/43e6e6c55db6622bca4484723ff154a9c59125a0/xc/programs/Xserver/hw/xfree86/getconfig/getconfig.sh
+    This is a mix of Apache-1.1 and xfree86-1.1
+ignorable_authors:
+    - X-Oz Technologies (http://www.x-oz.com/)
+ignorable_urls:
+    - http://www.x-oz.com/

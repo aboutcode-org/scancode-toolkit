@@ -4,3 +4,4 @@ name: QLogic Microcode
 category: Permissive
 owner: QLogic
 notes: this is a Linux firmware BSD-like license with some weird extra terms
+spdx_license_key: LicenseRef-scancode-qlogic-microcode

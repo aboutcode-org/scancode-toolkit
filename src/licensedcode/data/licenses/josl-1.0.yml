@@ -4,6 +4,7 @@ name: Jabber Open Source License 1.0
 category: Copyleft Limited
 owner: Jabber Technology
 homepage_url: http://www.opensource.org/licenses/jabberpl.php
+spdx_license_key: LicenseRef-scancode-josl-1.0
 text_urls:
     - http://code.google.com/p/jabber-net/source/browse/branches/RELEASE_1_0/LICENSE.txt
 osi_url: http://www.opensource.org/licenses/jabberpl.php

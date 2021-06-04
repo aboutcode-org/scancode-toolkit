@@ -1,18 +1,14 @@
 
 ################################################################################
-# We use  Appveyor to run minimal smoke tests suites on Pythons 2.7 and 3.6
-# on Windows 32 and 64 bits
+# We use  Appveyor to run minimal smoke tests suites on Pythons 3.x
+# on Windows 64 bits
 ################################################################################
 environment:
     matrix:
-        - PYTHON: "C:\\Python27"
-        - PYTHON: "C:\\Python27-x64"
-        - PYTHON: "C:\\Python36"
         - PYTHON: "C:\\Python36-x64"
-#        - PYTHON: "C:\\Python37"
 #        - PYTHON: "C:\\Python37-x64"
-#        - PYTHON: "C:\\Python38"
 #        - PYTHON: "C:\\Python38-x64"
+#        - PYTHON: "C:\\Python39-x64"
 
 
 build: off
@@ -20,4 +16,4 @@ build: off
 
 test_script:
     - python -c "import sys;print(sys.getdefaultencoding())"
-    - cmd: "configure --python %PYTHON%\\python.exe && Scripts\\pytest -vvs --reruns 3 tests\\scancode"
+    - cmd: "set PYTHON_EXECUTABLE=%PYTHON%\\python.exe && configure --dev && Scripts\\pytest -vvs --reruns 2 tests\\scancode"

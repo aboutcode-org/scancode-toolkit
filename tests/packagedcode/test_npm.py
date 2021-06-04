@@ -1,35 +1,16 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import os.path
 
-from commoncode.system import py2
-from commoncode.system import py3
+import pytest
+
 from packagedcode import npm
 from commoncode.resource import Codebase
 from packages_test_utils import PackageTester
@@ -40,41 +21,41 @@ class TestNpm(PackageTester):
 
     def test_parse_person(self):
         test = 'Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)'
-        assert ('Isaac Z. Schlueter', 'i@izs.me' , 'http://blog.izs.me') == npm.parse_person(test)
+        assert npm.parse_person(test) == ('Isaac Z. Schlueter', 'i@izs.me' , 'http://blog.izs.me')
 
     def test_parse_person2(self):
         test = 'Isaac Z. Schlueter <i@izs.me>'
-        assert ('Isaac Z. Schlueter', 'i@izs.me' , None) == npm.parse_person(test)
+        assert npm.parse_person(test) == ('Isaac Z. Schlueter', 'i@izs.me' , None)
 
     def test_parse_person3(self):
         test = 'Isaac Z. Schlueter  (http://blog.izs.me)'
-        assert ('Isaac Z. Schlueter', None , 'http://blog.izs.me') == npm.parse_person(test)
+        assert npm.parse_person(test) == ('Isaac Z. Schlueter', None , 'http://blog.izs.me')
 
     def test_parse_person4(self):
         test = 'Isaac Z. Schlueter'
-        assert ('Isaac Z. Schlueter', None , None) == npm.parse_person(test)
+        assert npm.parse_person(test) == ('Isaac Z. Schlueter', None , None)
 
     def test_parse_person5(self):
         test = '<i@izs.me> (http://blog.izs.me)'
-        assert (None, u'i@izs.me', u'http://blog.izs.me') == npm.parse_person(test)
+        assert npm.parse_person(test) == (None, u'i@izs.me', u'http://blog.izs.me')
 
     def test_parse_person_dict(self):
         test = {'name': 'Isaac Z. Schlueter'}
-        assert ('Isaac Z. Schlueter', None, None) == npm.parse_person(test)
+        assert npm.parse_person(test) == ('Isaac Z. Schlueter', None, None)
 
     def test_parse_person_dict2(self):
         test = {'email': 'me@this.com'}
-        assert (None, 'me@this.com', None) == npm.parse_person(test)
+        assert npm.parse_person(test) == (None, 'me@this.com', None)
 
     def test_parse_person_dict3(self):
         test = {'url': 'http://example.com'}
-        assert (None, None, 'http://example.com') == npm.parse_person(test)
+        assert npm.parse_person(test) == (None, None, 'http://example.com')
 
     def test_parse_person_dict4(self):
         test = {'name': 'Isaac Z. Schlueter',
                 'email': 'me@this.com',
                 'url': 'http://example.com'}
-        assert ('Isaac Z. Schlueter', 'me@this.com' , 'http://example.com') == npm.parse_person(test)
+        assert npm.parse_person(test) == ('Isaac Z. Schlueter', 'me@this.com' , 'http://example.com')
 
     def test_parse_dist_with_string_values(self):
         test_file = self.get_test_loc('npm/dist/package.json')
@@ -150,10 +131,7 @@ class TestNpm(PackageTester):
         try:
             npm.parse(test_file)
         except ValueError as e:
-            if py2:
-                assert 'No JSON object could be decoded' in str(e)
-            if py3:
-                assert 'Expecting value: line 60 column 3' in str(e)
+            assert 'Expecting value: line 60 column 3' in str(e)
 
     def test_parse_keywords(self):
         test_file = self.get_test_loc('npm/keywords/package.json')
@@ -269,6 +247,19 @@ class TestNpm(PackageTester):
         packages = npm.parse(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
+    def test_parse_with_name(self):
+        test_file = self.get_test_loc('npm/with_name/package.json')
+        expected_loc = self.get_test_loc('npm/with_name/package.json.expected')
+        packages = npm.parse(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
+
+    def test_parse_without_name(self):
+        test_file = self.get_test_loc('npm/without_name/package.json')
+        try:
+            npm.parse(test_file)
+        except AttributeError as e:
+            assert "'NoneType' object has no attribute 'to_dict'" in str(e)
+
     def test_parse_yarn_lock(self):
         test_file = self.get_test_loc('npm/yarn-lock/yarn.lock')
         expected_loc = self.get_test_loc(
@@ -280,7 +271,7 @@ class TestNpm(PackageTester):
         package = MockPackage()
         repo = 'git+git://bitbucket.org/vendor/my-private-repo.git'
         result = npm.vcs_repository_mapper(repo, package)
-        assert repo == result.vcs_url
+        assert result.vcs_url == repo
 
     def test_vcs_repository_mapper_handles_version(self):
         package = MockPackage()
@@ -288,7 +279,7 @@ class TestNpm(PackageTester):
         rev = '213123aefd'
         expected = 'https://bitbucket.org/vendor/my-private-repo.git@213123aefd'
         result = npm.vcs_repository_mapper(repo, package, rev)
-        assert expected == result.vcs_url
+        assert result.vcs_url == expected
 
     def test_vcs_repository_mapper_handles_version_on_gh(self):
         package = MockPackage()
@@ -296,7 +287,7 @@ class TestNpm(PackageTester):
         rev = '213123aefd'
         expected = 'https://github.com/vendor/my-private-repo@213123aefd'
         result = npm.vcs_repository_mapper(repo, package, rev)
-        assert expected == result.vcs_url
+        assert result.vcs_url == expected
 
     def test_npm_get_package_resources(self):
         test_loc = self.get_test_loc('npm/get_package_resources')
@@ -308,7 +299,30 @@ class TestNpm(PackageTester):
             'get_package_resources/this-should-be-returned'
         ]
         results = [r.path for r in npm.NpmPackage.get_package_resources(root, codebase)]
-        assert expected == results
+        assert results == expected
+
+
+test_data = [
+    (['MIT'], 'mit'),
+    (['(MIT OR Apache-2.0)'], 'mit OR apache-2.0'),
+    (['SEE LICENSE IN LICENSE'], 'unknown-license-reference'),
+    (['For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license.'], 'unknown-license-reference AND unknown'),
+    (['See License in ./LICENSE file'], 'unknown-license-reference AND unknown'),
+    # FIXME: Apache2 is a valid license
+    (['MIT', 'Apache2'], 'mit AND unknown'),
+    ([{'type': 'MIT', 'url': 'https://github.com/jonschlinkert/repeat-element/blob/master/LICENSE'}], 'mit'),
+    ([{'type': 'Freeware', 'url': 'https://github.com/foor/bar'}], 'unknown-license-reference'),
+    ([{'type': 'patent grant', 'url': 'Freeware'}], 'unknown'),
+    ([{'type': 'GPLv2', 'url': 'https://example.com/licenses/GPLv2'}, {'type': 'MIT', 'url': 'https://example.com/licenses/MIT'}, ],
+     '(gpl-2.0 AND (gpl-2.0 AND unknown)) AND mit'),
+]
+
+
+@pytest.mark.parametrize('declared_license,expected_expression', test_data)
+def test_compute_normalized_license_from_declared(declared_license, expected_expression):
+    result = npm.compute_normalized_license(declared_license)
+    assert result == expected_expression
+
 
 class MockPackage(object):
     pass

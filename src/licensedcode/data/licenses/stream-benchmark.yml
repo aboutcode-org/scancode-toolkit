@@ -4,6 +4,7 @@ name: STREAM Benchmark License
 category: Permissive
 owner: STREAM
 homepage_url: https://www.cs.virginia.edu/stream/ref.html#runrules
+spdx_license_key: LicenseRef-scancode-stream-benchmark
 text_urls:
     - https://www.cs.virginia.edu/stream/FTP/Code/stream.c
 ignorable_copyrights:

@@ -4,6 +4,7 @@ name: CSLA .NET License
 category: Free Restricted
 owner: Marimer, LLC
 homepage_url: https://github.com/MarimerLLC/csla/blob/master/license.txt
+spdx_license_key: LicenseRef-scancode-csla
 text_urls:
     - https://github.com/MarimerLLC/csla/blob/0650fd13adc4689dcd6ec7b8f4609563ee12f401/license.md
 ignorable_copyrights:

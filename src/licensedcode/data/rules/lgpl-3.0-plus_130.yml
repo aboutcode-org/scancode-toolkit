@@ -1,0 +1,4 @@
+license_expression: lgpl-3.0-plus
+is_license_tag: yes
+relevance: 99
+notes: configure option injected by FFmpeg in the built binaries alone this should be for LGPL

@@ -5,3 +5,4 @@ category: Permissive
 owner: Unspecified
 notes: This is essentially a bsd-new with an extra non infrigment disclaimer borrowed from the
     X11-r75/MIT license
+spdx_license_key: LicenseRef-scancode-bsd-x11

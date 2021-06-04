@@ -1,0 +1,7 @@
+license_expressions:
+  - w3c-software-19980720
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/W3C-19980720.t1
+  originally expected to be detected as W3C-19980720
+  with coverage of 100.0

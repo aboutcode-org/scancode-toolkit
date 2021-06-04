@@ -1,0 +1,8 @@
+license_expression: free-unknown
+relevance: 100
+notes: |
+    License test derived from a file of the BSD-licensed repository at:
+    https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/ccurls.t1
+    originally expected to be detected as LiLiQ-R-1.1
+    with coverage of 0
+    This is a URL test extracted from ccurls.t1.

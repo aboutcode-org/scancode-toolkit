@@ -3,5 +3,6 @@ short_name: Sun BCL SDK 1.3
 name: Sun BCL SDK 1.3
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bcl-sdk-1.3
 ignorable_urls:
     - http://www.sun.com/policies/trademarks

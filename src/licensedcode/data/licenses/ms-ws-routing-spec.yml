@@ -3,6 +3,7 @@ short_name: MS WS Routing Specifications License
 name: Microsoft WS Routing Specifications License
 category: Permissive
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-ws-routing-spec
 ignorable_copyrights:
     - Copyright 2001 Microsoft Corporation
 ignorable_holders:

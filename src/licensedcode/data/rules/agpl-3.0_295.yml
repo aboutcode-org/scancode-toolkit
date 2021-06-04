@@ -1,0 +1,7 @@
+license_expression: agpl-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.org/licenses/AGPL-3.0
+    - https://oss.oracle.com/pipermail/bdb/2013-June/000056.html
+    - https://www.gnu.org/licenses/agpl-3.0.html

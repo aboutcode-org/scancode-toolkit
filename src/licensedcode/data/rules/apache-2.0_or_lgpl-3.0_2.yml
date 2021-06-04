@@ -1,7 +1,7 @@
 license_expression: apache-2.0 OR lgpl-3.0
 is_license_tag: yes
-minimum_coverage: 70
 relevance: 95
+minimum_coverage: 70
 referenced_filenames:
     - LICENSE-apache2
     - LICENSE-lgpl

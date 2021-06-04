@@ -4,6 +4,7 @@ name: Enhydra Public License 1.1
 category: Copyleft Limited
 owner: Lutris Technologies, Inc.
 homepage_url: http://ksoap.objectweb.org/software/license/index.html
+spdx_license_key: LicenseRef-scancode-enhydra-1.1
 text_urls:
     - http://ksoap.objectweb.org/software/license/index.html
 minimum_coverage: 30

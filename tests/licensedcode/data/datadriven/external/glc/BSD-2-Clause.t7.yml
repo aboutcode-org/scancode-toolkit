@@ -1,0 +1,9 @@
+license_expressions:
+  - bsd-simplified
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/BSD-2-Clause.t7
+  originally expected to be detected as BSD-2-Clause
+  with coverage of 100.0
+  "THE SOFTWARE" (instead of "THIS SOFTWARE")
+  Example: https://github.com/ryanchapman/googleiapclient

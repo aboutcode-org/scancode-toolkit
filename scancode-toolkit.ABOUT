@@ -1,6 +1,6 @@
 about_resource: .
 name: scancode-toolkit
-license_expression: apache-2.0 WITH scancode-acknowledgment AND cc0-1.0 and other-permissive and other-copyleft
+license_expression: apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft
 copyright: Copyright (c) nexB Inc. and others.
 homepage_url: https://www.aboutcode.org/
 vcs_url: git+https://github.com/nexB/scancode-toolkit

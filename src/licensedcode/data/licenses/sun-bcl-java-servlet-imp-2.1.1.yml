@@ -3,5 +3,6 @@ short_name: Sun BCL Java Servlet Implementation 2.1.1
 name: Sun BCL Java Servlet Implementation Classes 2.1.1
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bcl-java-servlet-imp-2.1.1
 ignorable_urls:
     - http://java.sun.com/

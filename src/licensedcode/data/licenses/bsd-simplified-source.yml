@@ -6,3 +6,4 @@ owner: Unspecified
 notes: |
     a very simplified bsd variant mentioning only source and without disclaimer.
     Found in the Linux kernel
+spdx_license_key: LicenseRef-scancode-bsd-simplified-source

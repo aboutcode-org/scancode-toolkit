@@ -1,30 +1,11 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-    # When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import os
 
@@ -34,9 +15,6 @@ from commoncode.testcase import FileBasedTesting
 from commoncode import fileutils
 from commoncode import hash
 from licensedcode import cache
-from licensedcode.cache import get_license_cache_paths
-from licensedcode.cache import load_index
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -55,29 +33,41 @@ class LicenseIndexCacheTest(FileBasedTesting):
         fileutils.create_dir(os.path.join(test_dir, 'some dir'))
 
         after = cache.tree_checksum(test_dir)
-        assert before == after
+        assert after == before
 
         with open(os.path.join(test_dir, 'some.py'), 'w') as py:
             py.write(' ')
         after = cache.tree_checksum(test_dir)
-        assert before != after
+        assert after != before
 
         before = after
         with open(os.path.join(test_dir, 'some.LICENSE'), 'w') as f:
             f.write(' ')
         after = cache.tree_checksum(test_dir)
-        assert before != after
+        assert after != before
 
         before = after
         with open(os.path.join(test_dir, 'some.LICENSE~'), 'w') as f:
             f.write(' ')
         after = cache.tree_checksum(test_dir)
-        assert before == after
+        assert after == before
 
         with open(os.path.join(test_dir, 'some.LICENSE.swp'), 'w') as f:
             f.write(' ')
         after = cache.tree_checksum(test_dir)
-        assert before == after
+        assert after == before
+
+    def test_tree_checksum_does_not_ignore_the_index_cache(self):
+        # this is stored in the code tree as package data and we should not
+        # ignore it
+        test_dir = self.get_test_loc('cache/tree', copy=True)
+        before = cache.tree_checksum(test_dir)
+        # create some file name like the index
+        with open(os.path.join(test_dir, cache.LICENSE_INDEX_FILENAME), 'w') as pyc:
+            pyc.write(' ')
+        fileutils.create_dir(os.path.join(test_dir, 'some dir'))
+        after = cache.tree_checksum(test_dir)
+        assert after != before
 
     def test_tree_checksum_is_different_when_file_is_added(self):
         test_dir = self.get_test_loc('cache/tree', copy=True)
@@ -86,13 +76,13 @@ class LicenseIndexCacheTest(FileBasedTesting):
         with open(os.path.join(test_dir, 'some.py'), 'w') as py:
             py.write(' ')
         after = cache.tree_checksum(test_dir)
-        assert before != after
+        assert after != before
 
         before = after
         with open(os.path.join(test_dir, 'some.LICENSE'), 'w') as f:
             f.write(' ')
         after = cache.tree_checksum(test_dir)
-        assert before != after
+        assert after != before
 
     def test_tree_checksum_is_different_when_file_is_changed(self):
         test_dir = self.get_test_loc('cache/tree', copy=True)
@@ -104,7 +94,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
         with open(os.path.join(test_dir, 'some.py'), 'w') as py:
             py.write(' asas')
         after = cache.tree_checksum(test_dir)
-        assert before != after
+        assert after != before
 
     def test_tree_checksum_is_different_when_file_is_removed(self):
         test_dir = self.get_test_loc('cache/tree', copy=True)
@@ -116,12 +106,19 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         fileutils.delete(new_file)
         after = cache.tree_checksum(test_dir)
-        assert before != after
+        assert after != before
 
-    def test_build_index(self):
-        # note: this is a rather complex test because caching involves some globals
-        cache_dir = self.get_temp_dir('index_cache')
-        lock_file, checksum_file, cache_file = get_license_cache_paths(cache_dir=cache_dir)
+    def test_LicenseCache_load_or_build(self):
+
+        # recreate internal paths for testing
+        licensedcode_cache_dir = self.get_temp_dir('index_cache')
+        scancode_cache_dir = self.get_temp_dir('index_metafiles')
+        idx_cache_dir = os.path.join(licensedcode_cache_dir, cache.LICENSE_INDEX_DIR)
+        fileutils.create_dir(idx_cache_dir)
+        cache_file = os.path.join(idx_cache_dir, cache.LICENSE_INDEX_FILENAME)
+        lock_file = os.path.join(scancode_cache_dir, cache.LICENSE_LOCKFILE_NAME)
+        checksum_file = os.path.join(scancode_cache_dir, cache.LICENSE_CHECKSUM_FILE)
+
         tree_base_dir = self.get_temp_dir('src_dir')
         licenses_data_dir = self.get_test_loc('cache/data/licenses', copy=True)
         rules_data_dir = self.get_test_loc('cache/data/rules', copy=True)
@@ -131,28 +128,42 @@ class LicenseIndexCacheTest(FileBasedTesting):
         with open(new_file, 'w') as nf:
             nf.write('somthing')
 
-        timeout = 10
-
         assert not os.path.exists(checksum_file)
         assert not os.path.exists(cache_file)
         assert not os.path.exists(lock_file)
 
-        # when a new index is built, new index files are created
+        timeout = 10
+
+        # when a new cache is built, new cache files are created
         check_consistency = True
-        cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        _cached1 = cache.LicenseCache.load_or_build(
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
 
         assert os.path.exists(checksum_file)
         assert os.path.exists(cache_file)
-        assert not os.path.exists(lock_file)
 
         # when nothing changed a new index files is not created
         tree_before = open(checksum_file).read()
         idx_checksum_before = hash.sha1(cache_file)
-        cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
-        assert tree_before == open(checksum_file).read()
-        assert idx_checksum_before == hash.sha1(cache_file)
+        _cached2 = cache.LicenseCache.load_or_build(
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
+
+        assert open(checksum_file).read() == tree_before
+        assert hash.sha1(cache_file) == idx_checksum_before
 
         # now add some file in the source tree
         new_file = os.path.join(tree_base_dir, 'some file')
@@ -162,17 +173,31 @@ class LicenseIndexCacheTest(FileBasedTesting):
         # when check_consistency is False, the index is not rebuild when
         # new files are added
         check_consistency = False
-        cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
-        assert tree_before == open(checksum_file).read()
-        assert idx_checksum_before == hash.sha1(cache_file)
+        _cached3 = cache.LicenseCache.load_or_build(
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
+        assert open(checksum_file).read() == tree_before
+        assert hash.sha1(cache_file) == idx_checksum_before
 
         # when check_consistency is True, the index is rebuilt when new
         # files are added
         check_consistency = True
-        cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
-        assert tree_before != open(checksum_file).read()
+        _cached4 = cache.LicenseCache.load_or_build(
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
+        assert open(checksum_file).read() != tree_before
 
         # now add some ignored file in the source tree
         tree_before = open(checksum_file).read()
@@ -184,57 +209,85 @@ class LicenseIndexCacheTest(FileBasedTesting):
         # when check_consistency is True, the index is not rebuilt when new
         # files are added that are ignored
         check_consistency = True
-        cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        _cached5 = cache.LicenseCache.load_or_build(
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
 
-        assert tree_before == open(checksum_file).read()
-        assert idx_checksum_before == hash.sha1(cache_file)
+        assert open(checksum_file).read() == tree_before
+        assert hash.sha1(cache_file) == idx_checksum_before
 
-        # if the treechecksum file dies, the index is rebuilt
+        # if the treechecksum file dies, the index is not rebuilt if
+        # check_consistency is False. and no new checksum is created
         fileutils.delete(checksum_file)
         idx_checksum_before = hash.sha1(cache_file)
 
         check_consistency = False
-        cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        _cached6 = cache.LicenseCache.load_or_build(
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
 
-        assert tree_before == open(checksum_file).read()
+        assert not os.path.exists(checksum_file)
+
+        # with the treechecksum file gone, the index is rebuilt if
+        # check_consistency is True and a new checksum is created
+        idx_checksum_before = hash.sha1(cache_file)
+
+        check_consistency = True
+        _cached7 = cache.LicenseCache.load_or_build(
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
+
+        assert open(checksum_file).read() == tree_before
 
         # if the index cache file dies the index is rebuilt
         fileutils.delete(cache_file)
-
         check_consistency = False
-        idx1 = cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        cached8 = cache.LicenseCache.load_or_build(
+            licensedcode_cache_dir=licensedcode_cache_dir,
+            scancode_cache_dir=scancode_cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
+        idx1 = cached8.index
 
         # load index, forced from file
-        idx2 = cache.load_index(cache_file)
-        assert set(idx1.dictionary.keys()) == set(idx2.dictionary.keys())
-
-        # reset global caches
-        cache._LICENSE_SYMBOLS_BY_SPDX_KEY = {}
-        cache._LICENSES_BY_KEY_INDEX = None
-        cache._UNKNOWN_SPDX_SYMBOL = None
-        cache._LICENSES_BY_KEY = None
+        cached9 = cache.load_cache_file(cache_file)
+        idx2 = cached9.index
+        assert set(idx2.dictionary.keys()) == set(idx1.dictionary.keys())
 
     def test_load_index_with_corrupted_index(self):
         test_file = self.get_temp_file('test')
         with open(test_file, 'w') as tf:
             tf.write('some junk')
         try:
-            load_index(test_file)
+            cache.load_cache_file(test_file)
             self.fail('No exception raised for corrupted index file.')
         except Exception as ex:
             assert 'Failed to load license cache' in str(ex)
 
     def test_get_unknown_spdx_symbol(self):
-        assert 'unknown-spdx' == cache.get_unknown_spdx_symbol().key
-
-    def test_get_unknown_spdx_symbol_from_defined_db(self):
-        test_dir = self.get_test_loc('spdx/db-unknown')
-        from licensedcode.models import load_licenses
-        test_licenses = load_licenses(test_dir)
-        assert 'unknown-spdx' == cache.get_unknown_spdx_symbol(_test_licenses=test_licenses).key
+        assert cache.get_unknown_spdx_symbol().key == 'unknown-spdx'
 
     def test_get_spdx_symbols_from_dir(self):
         test_dir = self.get_test_loc('spdx/db')
@@ -242,7 +295,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
         test_licenses = load_licenses(test_dir)
         result = {
             key: val.key for key, val
-            in cache.get_spdx_symbols(_test_licenses=test_licenses).items()
+            in cache.get_spdx_symbols(licenses_db=test_licenses).items()
         }
         expected = {
             u'bar': u'xxd',
@@ -251,7 +304,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
             u'xskat': u'xskat'
         }
 
-        assert expected == result
+        assert result == expected
 
     def test_get_spdx_symbols(self):
         result = cache.get_spdx_symbols()
@@ -262,7 +315,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
         from licensedcode.models import load_licenses
         test_licenses = load_licenses(test_dir)
         try:
-            cache.get_spdx_symbols(_test_licenses=test_licenses)
+            cache.get_spdx_symbols(licenses_db=test_licenses)
             self.fail('ValueError not raised!')
         except ValueError as e:
             assert 'Duplicated SPDX license key' in str(e)
@@ -272,7 +325,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
         from licensedcode.models import load_licenses
         test_licenses = load_licenses(test_dir)
         try:
-            cache.get_spdx_symbols(_test_licenses=test_licenses)
+            cache.get_spdx_symbols(licenses_db=test_licenses)
             self.fail('ValueError not raised!')
         except ValueError as e:
             assert 'Duplicated "other" SPDX license key' in str(e)
@@ -280,4 +333,4 @@ class LicenseIndexCacheTest(FileBasedTesting):
     def test_get_spdx_symbols_checks_duplicates_with_deprecated_on_live_db(self):
         from licensedcode.models import load_licenses
         test_licenses = load_licenses(with_deprecated=True)
-        cache.get_spdx_symbols(_test_licenses=test_licenses)
+        cache.get_spdx_symbols(licenses_db=test_licenses)

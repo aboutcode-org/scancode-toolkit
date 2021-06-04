@@ -1,4 +1,5 @@
 license_expression: gpl-2.0-plus WITH ecos-exception-2.0
+minimum_coverage: 90
 is_license_notice: yes
 ignorable_urls:
     - http://sources.redhat.com/ecos/ecos-license/

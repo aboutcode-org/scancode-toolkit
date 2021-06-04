@@ -7,6 +7,8 @@ homepage_url: http://www.cs.wustl.edu/~schmidt/
 spdx_license_key: DOC
 text_urls:
     - http://www.cs.wustl.edu/~schmidt/ACE-copying.html
+other_urls:
+    - https://www.dre.vanderbilt.edu/~schmidt/ACE-copying.html
 minimum_coverage: 30
 ignorable_copyrights:
     - copyrighted by Douglas C. Schmidt and his research group at Washington University, University

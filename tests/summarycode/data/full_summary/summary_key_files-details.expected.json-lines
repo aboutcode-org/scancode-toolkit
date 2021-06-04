@@ -317,7 +317,7 @@
         "licenses": [
           {
             "key": "cc0-1.0",
-            "score": 97.97,
+            "score": 99.18,
             "name": "Creative Commons CC0 1.0 Universal",
             "short_name": "CC0-1.0",
             "category": "Public Domain",
@@ -325,13 +325,15 @@
             "owner": "Creative Commons",
             "homepage_url": "http://creativecommons.org/publicdomain/zero/1.0/",
             "text_url": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:cc0-1.0",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/cc0-1.0",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml",
             "spdx_license_key": "CC0-1.0",
             "spdx_url": "https://spdx.org/licenses/CC0-1.0",
             "start_line": 1,
             "end_line": 98,
             "matched_rule": {
-              "identifier": "cc0-1.0_85.RULE",
+              "identifier": "cc0-1.0_116.RULE",
               "license_expression": "cc0-1.0",
               "licenses": [
                 "cc0-1.0"
@@ -340,11 +342,12 @@
               "is_license_notice": false,
               "is_license_reference": false,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "3-seq",
-              "rule_length": 987,
+              "rule_length": 975,
               "matched_length": 967,
-              "match_coverage": 97.97,
-              "rule_relevance": 100.0
+              "match_coverage": 99.18,
+              "rule_relevance": 100
             }
           }
         ],
@@ -398,8 +401,10 @@
             "is_exception": false,
             "owner": "Perl Foundation",
             "homepage_url": "http://www.perlfoundation.org/",
-            "text_url": "http://www.perlfoundation.org/artistic_license_2_0",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:artistic-2.0",
+            "text_url": "https://www.perlfoundation.org/artistic_license_2_0",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/artistic-2.0",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.yml",
             "spdx_license_key": "Artistic-2.0",
             "spdx_url": "https://spdx.org/licenses/Artistic-2.0",
             "start_line": 198,
@@ -414,11 +419,12 @@
               "is_license_notice": false,
               "is_license_reference": false,
               "is_license_tag": true,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 3,
               "matched_length": 3,
               "match_coverage": 100.0,
-              "rule_relevance": 90.0
+              "rule_relevance": 90
             }
           }
         ],
@@ -557,7 +563,9 @@
             "owner": "zlib",
             "homepage_url": "http://www.zlib.net/",
             "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
             "spdx_license_key": "Zlib",
             "spdx_url": "https://spdx.org/licenses/Zlib",
             "start_line": 3,
@@ -572,11 +580,12 @@
               "is_license_notice": false,
               "is_license_reference": true,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 12,
               "matched_length": 12,
               "match_coverage": 100.0,
-              "rule_relevance": 100.0
+              "rule_relevance": 100
             }
           }
         ],
@@ -643,7 +652,9 @@
             "owner": "zlib",
             "homepage_url": "http://www.zlib.net/",
             "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
             "spdx_license_key": "Zlib",
             "spdx_url": "https://spdx.org/licenses/Zlib",
             "start_line": 6,
@@ -658,6 +669,7 @@
               "is_license_notice": false,
               "is_license_reference": false,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 144,
               "matched_length": 144,
@@ -729,7 +741,9 @@
             "owner": "zlib",
             "homepage_url": "http://www.zlib.net/",
             "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
             "spdx_license_key": "Zlib",
             "spdx_url": "https://spdx.org/licenses/Zlib",
             "start_line": 3,
@@ -744,11 +758,12 @@
               "is_license_notice": false,
               "is_license_reference": true,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 12,
               "matched_length": 12,
               "match_coverage": 100.0,
-              "rule_relevance": 100.0
+              "rule_relevance": 100
             }
           }
         ],
@@ -893,7 +908,9 @@
             "owner": "Free Software Foundation (FSF)",
             "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
             "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.1-plus",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
             "spdx_license_key": "LGPL-2.1-or-later",
             "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later",
             "start_line": 7,
@@ -908,6 +925,7 @@
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 125,
               "matched_length": 125,
@@ -979,7 +997,9 @@
             "owner": "Creative Commons",
             "homepage_url": "http://creativecommons.org/licenses/by/2.5/",
             "text_url": "http://creativecommons.org/licenses/by/2.5/legalcode",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:cc-by-2.5",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/cc-by-2.5",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-2.5.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-2.5.yml",
             "spdx_license_key": "CC-BY-2.5",
             "spdx_url": "https://spdx.org/licenses/CC-BY-2.5",
             "start_line": 4,
@@ -994,11 +1014,12 @@
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 14,
               "matched_length": 14,
               "match_coverage": 100.0,
-              "rule_relevance": 100.0
+              "rule_relevance": 100
             }
           }
         ],
@@ -1071,7 +1092,9 @@
             "owner": "Free Software Foundation (FSF)",
             "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
             "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.1-plus",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
             "spdx_license_key": "LGPL-2.1-or-later",
             "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later",
             "start_line": 7,
@@ -1086,6 +1109,7 @@
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 125,
               "matched_length": 125,
@@ -1247,7 +1271,9 @@
             "owner": "Free Software Foundation (FSF)",
             "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
             "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.1-plus",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
             "spdx_license_key": "LGPL-2.1-or-later",
             "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later",
             "start_line": 7,
@@ -1262,6 +1288,7 @@
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 125,
               "matched_length": 125,
@@ -1417,7 +1444,9 @@
             "owner": "zlib",
             "homepage_url": "http://www.zlib.net/",
             "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
             "spdx_license_key": "Zlib",
             "spdx_url": "https://spdx.org/licenses/Zlib",
             "start_line": 3,
@@ -1432,11 +1461,12 @@
               "is_license_notice": false,
               "is_license_reference": true,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 12,
               "matched_length": 12,
               "match_coverage": 100.0,
-              "rule_relevance": 100.0
+              "rule_relevance": 100
             }
           }
         ],
@@ -1503,7 +1533,9 @@
             "owner": "zlib",
             "homepage_url": "http://www.zlib.net/",
             "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
             "spdx_license_key": "Zlib",
             "spdx_url": "https://spdx.org/licenses/Zlib",
             "start_line": 3,
@@ -1518,11 +1550,12 @@
               "is_license_notice": false,
               "is_license_reference": true,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 12,
               "matched_length": 12,
               "match_coverage": 100.0,
-              "rule_relevance": 100.0
+              "rule_relevance": 100
             }
           }
         ],
@@ -1589,7 +1622,9 @@
             "owner": "zlib",
             "homepage_url": "http://www.zlib.net/",
             "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
             "spdx_license_key": "Zlib",
             "spdx_url": "https://spdx.org/licenses/Zlib",
             "start_line": 3,
@@ -1604,11 +1639,12 @@
               "is_license_notice": false,
               "is_license_reference": true,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 12,
               "matched_length": 12,
               "match_coverage": 100.0,
-              "rule_relevance": 100.0
+              "rule_relevance": 100
             }
           }
         ],
@@ -1675,7 +1711,9 @@
             "owner": "zlib",
             "homepage_url": "http://www.zlib.net/",
             "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
             "spdx_license_key": "Zlib",
             "spdx_url": "https://spdx.org/licenses/Zlib",
             "start_line": 6,
@@ -1690,6 +1728,7 @@
               "is_license_notice": false,
               "is_license_reference": false,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 144,
               "matched_length": 144,
@@ -1761,7 +1800,9 @@
             "owner": "zlib",
             "homepage_url": "http://www.zlib.net/",
             "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
             "spdx_license_key": "Zlib",
             "spdx_url": "https://spdx.org/licenses/Zlib",
             "start_line": 3,
@@ -1776,11 +1817,12 @@
               "is_license_notice": false,
               "is_license_reference": true,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 12,
               "matched_length": 12,
               "match_coverage": 100.0,
-              "rule_relevance": 100.0
+              "rule_relevance": 100
             }
           }
         ],
@@ -1847,7 +1889,9 @@
             "owner": "zlib",
             "homepage_url": "http://www.zlib.net/",
             "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
             "spdx_license_key": "Zlib",
             "spdx_url": "https://spdx.org/licenses/Zlib",
             "start_line": 3,
@@ -1862,11 +1906,12 @@
               "is_license_notice": false,
               "is_license_reference": true,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 12,
               "matched_length": 12,
               "match_coverage": 100.0,
-              "rule_relevance": 100.0
+              "rule_relevance": 100
             }
           }
         ],
@@ -1972,7 +2017,9 @@
             "owner": "Free Software Foundation (FSF)",
             "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
             "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml",
             "spdx_license_key": "GPL-2.0-or-later",
             "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
             "start_line": 6,
@@ -1988,6 +2035,7 @@
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 176,
               "matched_length": 176,
@@ -2005,9 +2053,11 @@
             "owner": "Dmitriy Anisimkov",
             "homepage_url": null,
             "text_url": "",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ada-linking-exception",
-            "spdx_license_key": null,
-            "spdx_url": "",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.yml",
+            "spdx_license_key": "LicenseRef-scancode-ada-linking-exception",
+            "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE",
             "start_line": 6,
             "end_line": 25,
             "matched_rule": {
@@ -2021,6 +2071,7 @@
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 176,
               "matched_length": 176,
@@ -2182,7 +2233,9 @@
             "owner": "Boost",
             "homepage_url": "http://www.boost.org/users/license.html",
             "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:boost-1.0",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.yml",
             "spdx_license_key": "BSL-1.0",
             "spdx_url": "https://spdx.org/licenses/BSL-1.0",
             "start_line": 4,
@@ -2197,11 +2250,12 @@
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 32,
               "matched_length": 32,
               "match_coverage": 100.0,
-              "rule_relevance": 100.0
+              "rule_relevance": 100
             }
           }
         ],
@@ -2307,7 +2361,9 @@
             "owner": "zlib",
             "homepage_url": "http://www.zlib.net/",
             "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
             "spdx_license_key": "Zlib",
             "spdx_url": "https://spdx.org/licenses/Zlib",
             "start_line": 17,
@@ -2322,6 +2378,7 @@
               "is_license_notice": false,
               "is_license_reference": false,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 132,
               "matched_length": 132,
@@ -2438,7 +2495,9 @@
             "owner": "zlib",
             "homepage_url": "http://www.zlib.net/",
             "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
             "spdx_license_key": "Zlib",
             "spdx_url": "https://spdx.org/licenses/Zlib",
             "start_line": 3,
@@ -2453,11 +2512,12 @@
               "is_license_notice": false,
               "is_license_reference": true,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 12,
               "matched_length": 12,
               "match_coverage": 100.0,
-              "rule_relevance": 100.0
+              "rule_relevance": 100
             }
           }
         ],
@@ -2524,7 +2584,9 @@
             "owner": "zlib",
             "homepage_url": "http://www.zlib.net/",
             "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
             "spdx_license_key": "Zlib",
             "spdx_url": "https://spdx.org/licenses/Zlib",
             "start_line": 3,
@@ -2539,11 +2601,12 @@
               "is_license_notice": false,
               "is_license_reference": true,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 12,
               "matched_length": 12,
               "match_coverage": 100.0,
-              "rule_relevance": 100.0
+              "rule_relevance": 100
             }
           }
         ],
@@ -2649,9 +2712,11 @@
             "owner": "MIT",
             "homepage_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
             "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
-            "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit-old-style",
-            "spdx_license_key": null,
-            "spdx_url": "",
+            "reference_url": "https://scancode-licensedb.aboutcode.org/mit-old-style",
+            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.LICENSE",
+            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.yml",
+            "spdx_license_key": "LicenseRef-scancode-mit-old-style",
+            "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.LICENSE",
             "start_line": 9,
             "end_line": 15,
             "matched_rule": {
@@ -2664,6 +2729,7 @@
               "is_license_notice": false,
               "is_license_reference": false,
               "is_license_tag": false,
+              "is_license_intro": false,
               "matcher": "2-aho",
               "rule_length": 71,
               "matched_length": 71,

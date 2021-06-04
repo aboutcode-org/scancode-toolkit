@@ -4,5 +4,6 @@ name: Facebook License Agreement for Nuclide Software
 category: Proprietary Free
 owner: Facebook
 homepage_url: https://github.com/facebook/nuclide/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-facebook-nuclide
 text_urls:
     - https://github.com/facebook/nuclide/blob/e961c4d3461c3abc35a6f8ccaf3f6e959b622f1e/LICENSE

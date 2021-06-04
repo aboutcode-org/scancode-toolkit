@@ -3,3 +3,4 @@ short_name: Linux Device Drivers
 name: Linux Device Drivers License
 category: Permissive
 owner: O'Reilly Media, Inc.
+spdx_license_key: LicenseRef-scancode-linux-device-drivers

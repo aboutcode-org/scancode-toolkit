@@ -4,5 +4,6 @@ name: AgentX++ License Agreement
 category: Commercial
 owner: agentpp
 homepage_url: https://agentpp.com/licenses/LICENSE_AgentX++.txt
+spdx_license_key: LicenseRef-scancode-agentxpp
 ignorable_urls:
     - http://www.agentpp.com/

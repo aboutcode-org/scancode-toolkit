@@ -4,5 +4,6 @@ name: Aptana Public License 1.0
 category: Copyleft Limited
 owner: Appcelerator
 homepage_url: http://aptana.com/legal/apl/
+spdx_license_key: LicenseRef-scancode-aptana-1.0
 text_urls:
     - http://aptana.com/legal/apl/

@@ -4,6 +4,7 @@ name: Frontier Artistic License
 category: Copyleft Limited
 owner: Frontier Scripting
 homepage_url: http://www.spinwardstars.com/frontier/fal.html
+spdx_license_key: LicenseRef-scancode-frontier-1.0
 text_urls:
     - http://www.spinwardstars.com/frontier/fal10.txt
 ignorable_copyrights:

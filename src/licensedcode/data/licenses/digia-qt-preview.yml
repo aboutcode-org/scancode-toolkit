@@ -5,3 +5,4 @@ category: Commercial
 owner: Digia
 homepage_url: http://qt.digia.com/licensing
 notes: This agreement is also included in Qt open source.
+spdx_license_key: LicenseRef-scancode-digia-qt-preview

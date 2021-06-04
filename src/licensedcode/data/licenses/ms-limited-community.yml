@@ -4,6 +4,7 @@ name: Microsoft Limited Community License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/resources/sharedsource/licensingbasics/limitedcommunitylicense.mspx
+spdx_license_key: LicenseRef-scancode-ms-limited-community
 other_urls:
     - http://web.archive.org/web/20060109220553/http://www.microsoft.com/resources/sharedsource/licensingbasics/limitedcommunitylicense.mspx
 minimum_coverage: 40

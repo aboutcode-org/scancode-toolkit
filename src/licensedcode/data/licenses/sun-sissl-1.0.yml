@@ -3,6 +3,7 @@ short_name: Sun Industry Standards Source License 1.0
 name: Sun Industry Standards Source License 1.0
 category: Free Restricted
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-sissl-1.0
 ignorable_copyrights:
     - Copyright 1998 by Sun Microsystems, Inc
 ignorable_holders:

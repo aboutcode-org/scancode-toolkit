@@ -1,6 +1,6 @@
 license_expression: agpl-3.0
 is_license_text: yes
-minimum_coverage: 99.2
+minimum_coverage: 99
 notes: oodoo agpl
 ignorable_copyrights:
     - Copyright (c) 2007 Free Software Foundation, Inc. <http://fsf.org/>

@@ -41,10 +41,17 @@ Why use ScanCode?
   companion `ScanCode workbench GUI app <https://github.com/nexB/scancode-workbench>`_
   to review and display scan results, statistics and graphics.
 
+- You can also organize and run ScanCode server-side with the
+  companion `ScanCode.io web app <https://github.com/nexB/scancodeio>`_
+  to organize and store multiple scan projects including scripting scanning piplines.
+
+
 - ScanCode is **actively maintained**, has a **growing users and contributors
   community**.
 
 - ScanCode is heavily **tested** with an automated test suite of over **20,000 tests**.
+
+- ScanCode has an extensive and growing documentation.
 
 See our `roadmap <https://scancode-toolkit.readthedocs.io/en/latest/contribute/roadmap.html>`_
 for upcoming features.
@@ -91,7 +98,9 @@ Other Important Documentation Pages:
 - An exhaustive list of `all available options <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/list-options.html>`_
 
 - Documentation on `Contributing to Code Development <https://scancode-toolkit.readthedocs.io/en/latest/contribute/contrib_dev.html>`_
+
 - Documentation on `Plugin Architecture <https://scancode-toolkit.readthedocs.io/en/latest/plugins/plugin_arch.html>`_
+
 - `FAQ <https://scancode-toolkit.readthedocs.io/en/latest/misc/faq.html>`_
 
 See also https://aboutcode.org for related companion projects and tools.
@@ -101,7 +110,7 @@ Installation
 ============
 
 Before installing ScanCode make sure that you have installed the prerequisites
-properly. This means installing Python (Python 3.6 is required in most cases).
+properly. This means installing Python (Python 3.6+ is required).
 See `prerequisites <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#prerequisites>`_
 for detailed information on the support platforms and Python versions.
 
@@ -110,15 +119,14 @@ There are a few common ways to `install ScanCode <https://scancode-toolkit.readt
 - `*Recommended* installation as an application: Download a release archive, extract and run.
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-as-an-application-downloading-releases>`_
 
-- `Development installation from source code: git clone 
+- `Development installation from source code using a git clone
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-from-source-code-git-clone>`_
 
-- `Development installation as a library: via pip install scancode-toolkit[full] 
+- `Development installation as a library with "pip install scancode-toolkit"
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#pip-install>`_
 
-- `Run as a Docker container: git clone and docker run
+- `Run in a Docker container with a git clone and "docker run"
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-via-docker>`_
-
 
 
 Quick Start
@@ -146,17 +154,17 @@ for more information.
 
 You can also refer to the `command line options synopsis
 <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/synopsis.html>`_
-and an exhaustive list of `all available options
+and an exhaustive list of `all available command line options
 <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/list-options.html>`_.
 
 
 Archive extraction
 ==================
 
-ScanCode does not extract by default files from tarballs, zip files, and
+By default ScanCode does not extract files from tarballs, zip files, and
 other archives as part of the scan. The archives that exist in a codebase
-must be extracted before running a scan: the bundled utility `extractcode`
-is a mostly-universal archive extractor. For example, this command will
+must be extracted before running a scan: `extractcode` is a bundled utility
+behaving as a mostly-universal archive extractor. For example, this command will
 recursively extract the mytar.tar.bz2 tarball in the mytar.tar.bz2-extract
 directory::
 
@@ -197,20 +205,15 @@ Source code and downloads
 License
 =======
 
-* Apache-2.0 with an acknowledgement required to accompany the scan output.
-* Public domain CC0-1.0 for reference datasets.
-* Multiple licenses (GPL2/3, LGPL, MIT, BSD, etc.) for third-party components.
+* Apache-2.0 as the overall license
+* CC-BY-4.0 for reference datasets (initially was in the Public Domain).
+* Multiple other secondary permissive or copyleft licenses (LGPL, MIT,
+  BSD, GPL 2/3, etc.) for third-party components.
+
 
 See the NOTICE file and the .ABOUT files that document the origin and license of
 the third-party code used in ScanCode for more details.
 
-
-.. |master-cov| image:: https://codecov.io/gh/nexB/scancode-toolkit/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/nexB/scancode-toolkit/branch/master
-    :alt: Master branch test coverage (Linux)
-.. |devel-cov| image:: https://codecov.io/gh/nexB/scancode-toolkit/branch/develop/graph/badge.svg
-    :target: https://codecov.io/gh/nexB/scancode-toolkit/branch/develop
-    :alt: Develop branch test coverage (Linux)
 
 .. |master-posix| image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=master
     :target: https://travis-ci.org/nexB/scancode-toolkit

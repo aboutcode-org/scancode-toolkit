@@ -1,0 +1,12 @@
+key: cc-by-3.0-us
+short_name: CC-BY-3.0-US
+name: Creative Commons Attribution 3.0 United States
+category: Permissive
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by/3.0/us
+spdx_license_key: CC-BY-3.0-US
+other_urls:
+    - https://creativecommons.org/licenses/by/3.0/us/legalcode
+minimum_coverage: 50
+ignorable_urls:
+    - https://creativecommons.org/

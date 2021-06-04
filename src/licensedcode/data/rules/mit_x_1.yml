@@ -1,0 +1,5 @@
+license_expression: mit
+is_license_text: yes
+notes: there was a typo in sublicensen that is fixed in this rule
+ see https://gitlab.archlinux.org/dvzrv/linux-rt-lts/-/blob/e54a80c31b40c6b0a22cd275472f9bf410d490ca/drivers/staging/gma500/mdfld_pyr_cmd.c for example
+

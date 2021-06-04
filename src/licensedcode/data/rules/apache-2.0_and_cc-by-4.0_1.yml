@@ -1,0 +1,7 @@
+license_expression: apache-2.0 AND cc-by-4.0
+is_license_notice: yes
+relevance: 100
+notes: ScanCode notice
+ignorable_urls:
+    - https://creativecommons.org/licenses/by/4.0/legalcode
+    - https://www.apache.org/licenses/LICENSE-2.0

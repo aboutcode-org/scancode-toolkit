@@ -1,39 +1,18 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import logging
 import sys
 
 import attr
 from packageurl import normalize_qualifiers
 from packageurl import PackageURL
-from six import string_types
 
 from commoncode.datautils import choices
 from commoncode.datautils import Boolean
@@ -88,7 +67,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 class BaseModel(object):
@@ -98,9 +77,9 @@ class BaseModel(object):
 
     def to_dict(self, **kwargs):
         """
-        Return an OrderedDict of primitive Python types.
+        Return an dict of primitive Python types.
         """
-        return attr.asdict(self, dict_factory=OrderedDict)
+        return attr.asdict(self, dict_factory=dict)
 
     @classmethod
     def create(cls, ignore_unknown=True, **kwargs):
@@ -293,9 +272,9 @@ class BasePackage(BaseModel):
 
     def to_dict(self, **kwargs):
         """
-        Return an OrderedDict of primitive Python types.
+        Return an dict of primitive Python types.
         """
-        mapping = attr.asdict(self, dict_factory=OrderedDict)
+        mapping = attr.asdict(self, dict_factory=dict)
         if not kwargs.get('exclude_properties'):
             mapping['purl'] = self.purl
             mapping['repository_homepage_url'] = self.repository_homepage_url()
@@ -355,6 +334,41 @@ class DependentPackage(BaseModel):
         help='True if this dependency version requirement has '
              'been resolved and this dependency url points to an '
              'exact version.')
+
+
+@attr.s()
+class PackageFile(BaseModel):
+    """
+    A file that belongs to a package.
+    """
+
+    path = String(
+        label='Path of this installed file',
+        help='The path of this installed file either relative to a rootfs '
+            '(typical for system packages) or a path in this scan (typical for '
+             'application packages).',
+        repr=True,
+    )
+
+    size = Integer(
+        label='file size',
+        help='size of the file in bytes')
+
+    sha1 = String(
+        label='SHA1 checksum',
+        help='SHA1 checksum for this file in hexadecimal')
+
+    md5 = String(
+        label='MD5 checksum',
+        help='MD5 checksum for this file in hexadecimal')
+
+    sha256 = String(
+        label='SHA256 checksum',
+        help='SHA256 checksum for this file in hexadecimal')
+
+    sha512 = String(
+        label='SHA512 checksum',
+        help='SHA512 checksum for this file in hexadecimal')
 
 
 @attr.s()
@@ -472,6 +486,11 @@ class Package(BasePackage):
              'this package. For instance an SRPM is the "source package" for a '
              'binary RPM.')
 
+    installed_files = List(
+        item_type=PackageFile,
+        label='installed files',
+        help='List of files installed by this package.')
+
     extra_data = Mapping(
         label='extra data',
         help='A Mapping where arbitrary data that is related to the Package can be stored ')
@@ -577,16 +596,23 @@ class Package(BasePackage):
         """
         return []
 
+    def to_dict(self, _detailed=False, **kwargs):
+        data = super().to_dict(**kwargs)
+        if _detailed:
+            data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
+        else:
+            data.pop('installed_files', None)
+        return data
+
 
 def compute_normalized_license(declared_license):
     """
-    Return a normalized license_expression string using the declared_license
-    field. Return 'unknown' if there is a declared license but it cannot be
-    detected (including on errors) and return None if there is no declared
-    license.
+    Return a normalized license_expression string from the ``declared_license``.
+    Return 'unknown' if there is a declared license but it cannot be detected
+    (including on errors) and return None if there is no declared license.
     """
 
-    if not declared_license or not declared_license.strip():
+    if not declared_license:
         return
 
     from packagedcode import licensing
@@ -596,37 +622,6 @@ def compute_normalized_license(declared_license):
         # FIXME: add logging
         # we never fail just for this
         return 'unknown'
-
-
-@attr.s()
-class PackageFile(BaseModel):
-    """
-    A file that belongs to a package.
-    """
-
-    path = String(
-        label='Path of this installed file',
-        help='The path of this installed file either relative to a rootfs '
-            '(typical for system packages) or a path in this scan (typical for '
-             'application packages).',
-        repr=True,
-    )
-
-    sha1 = String(
-        label='SHA1 checksum',
-        help='SHA1 checksum for this file in hexadecimal')
-
-    md5 = String(
-        label='MD5 checksum',
-        help='MD5 checksum for this file in hexadecimal')
-
-    sha256 = String(
-        label='SHA256 checksum',
-        help='SHA256 checksum for this file in hexadecimal')
-
-    sha512 = String(
-        label='SHA512 checksum',
-        help='SHA512 checksum for this file in hexadecimal')
 
 
 # Package types

@@ -5,6 +5,13 @@ category: Permissive
 owner: Amazon Web Services
 homepage_url: https://github.com/awsdocs/aws-cloud9-user-guide/blob/master/LICENSE-SAMPLECODE
 spdx_license_key: MIT-0
+other_spdx_license_keys:
+    - LicenseRef-scancode-ekioh
 other_urls:
     - https://github.com/aws/mit-0
     - https://romanrm.net/mit-zero
+    - https://kryogenix.org/code/browser/licence.html
+notes: |
+    The former ekioh license has been deprecated in favor of this license. Except
+    for the dangling ", subject to the following conditions:" text, the ekioh
+    license is essentially identical to the mit-0.

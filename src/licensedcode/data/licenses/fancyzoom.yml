@@ -3,6 +3,7 @@ short_name: FancyZoom License
 name: FancyZoom License
 category: Proprietary Free
 owner: Cabel Sasser
+spdx_license_key: LicenseRef-scancode-fancyzoom
 other_urls:
     - http://www.cabel.name/2008/02/fancyzoom-10.html
 ignorable_urls:

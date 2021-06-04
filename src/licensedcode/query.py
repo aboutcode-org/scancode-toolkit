@@ -1,45 +1,28 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
+import re
 
 from collections import defaultdict
 from collections import deque
+from functools import partial
 from itertools import chain
-import re
 
 from intbitset import intbitset
-from six import string_types
+
+import typecode
 
 from commoncode.text import toascii
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
-import typecode
-
 
 """
 Build license queries from scanned files to feed the detection pipeline.
@@ -95,25 +78,37 @@ def logger_debug(*args):
 
 
 if TRACE or TRACE_QR or TRACE_QR_BREAK:
-    import logging
     import sys
 
-    logger = logging.getLogger(__name__)
-    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
+    use_print = True
+
+    if use_print:
+        printer = print
+    else:
+        import logging
+
+        logger = logging.getLogger(__name__)
+        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+        logging.basicConfig(stream=sys.stdout)
+        logger.setLevel(logging.DEBUG)
+        printer = logger.debug
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return printer(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
-# for the cases of very long lines, we break in abritrary pseudo lines at 25
-# tokens to avoid getting huge query runs for texts on a single line (e.g.
-# minified JS or CSS)
+# for the cases of very long lines, we break texts in abritrary pseudo lines of
+# up to 25 tokens (aka. words) each to avoid getting huge query runs for texts
+# on a single line (e.g. minified JS or CSS).
 MAX_TOKEN_PER_LINE = 25
 
 
-def build_query(location=None, query_string=None, idx=None,
-                text_line_threshold=15, bin_line_threshold=50):
+def build_query(
+    location=None,
+    query_string=None,
+    idx=None,
+    text_line_threshold=15,
+    bin_line_threshold=50,
+):
     """
     Return a Query built from location or query string given an index.
     """
@@ -161,6 +156,8 @@ class Query(object):
         'line_by_pos',
         'unknowns_by_pos',
         'unknowns_span',
+        'stopwords_by_pos',
+        'stopwords_span',
         'shorts_and_digits_pos',
         'query_runs',
         '_whole_query_run',
@@ -172,8 +169,14 @@ class Query(object):
         'is_binary',
     )
 
-    def __init__(self, location=None, query_string=None, idx=None,
-                 line_threshold=4, _test_mode=False):
+    def __init__(
+        self,
+        location=None,
+        query_string=None,
+        idx=None,
+        line_threshold=4,
+        _test_mode=False,
+    ):
         """
         Initialize the query from a file `location` or `query_string` string for
         an `idx` LicenseIndex.
@@ -201,14 +204,21 @@ class Query(object):
         # index of known position -> line number where the pos is the list index
         self.line_by_pos = []
 
-        # index of "known positions" (yes really!) to number of unknown tokens
+        # index of "known positions" (yes really!) to a number of unknown tokens
         # after that known position. For unknowns at the start, the position is
         # using the magic -1 key
         self.unknowns_by_pos = defaultdict(int)
 
-        # Span of "known positions" (yes really!) followed by unknown
-        # token(s)
+        # Span of "known positions" (yes really!) followed by unknown token(s)
         self.unknowns_span = None
+
+        # index of "known positions" (yes really!) to a number of stopword tokens
+        # after that known position. For stopwords at the start, the position is
+        # using the magic -1 key
+        self.stopwords_by_pos = defaultdict(int)
+
+        # Span of "known positions" (yes really!) followed by stopwords
+        self.stopwords_span = None
 
         # set of known positions were there is a short, single letter token or
         # digits-only token
@@ -216,16 +226,16 @@ class Query(object):
         self.shorts_and_digits_pos = set()
 
         # list of the three SPDX-License-Identifier tokens to identify to detect
-        # a line for SPDX id matching
-        # note: this will not match anything if the index is not proper
+        # a line for SPDX id matching.
+        # note: this will not match anything if the index is not properly set
         dic_get = idx.dictionary.get
-        # None, None None this is mostly a possible issue in test mode
-        self.spdx_lid_token_ids = [x for x in
-            [[dic_get(u'spdx'), dic_get(u'license'), dic_get(u'identifier')],
-            # Even though it is technically NOT valid, this Enlish seplling
-            # happens in the wild
-            [dic_get(u'spdx'), dic_get(u'licence'), dic_get(u'identifier')], ]
-        if x != [None, None, None]]
+        _spdx = dic_get(u'spdx')
+        _spdx_id = dic_get(u'identifier')
+        spdxid1 = [_spdx, dic_get(u'license'), _spdx_id]
+        # Even though it is invalid, this Enlish seplling happens in the wild
+        spdxid2 = [_spdx, dic_get(u'licence'), _spdx_id]
+        # None, None None: this is mostly a possible issue in test mode
+        self.spdx_lid_token_ids = [x for x in [spdxid1, spdxid2, ] if x != [None, None, None]]
 
         # list of tuple (original line text, start known pos, end known pos) for
         # lines starting with SPDX-License-Identifier. This is to support the
@@ -239,8 +249,12 @@ class Query(object):
         if _test_mode:
             return
 
+        tokens_by_line = self.tokens_by_line(
+            location=location,
+            query_string=query_string,
+        )
         # this method has side effects to populate various data structures
-        self.tokenize_and_build_runs(self.tokens_by_line(), line_threshold=line_threshold)
+        self.tokenize_and_build_runs(tokens_by_line, line_threshold=line_threshold)
 
         len_legalese = idx.len_legalese
         tokens = self.tokens
@@ -296,7 +310,7 @@ class Query(object):
         Return a set of every matched token positions for this query.
         """
         all_pos = intbitset(range(len(self.tokens)))
-        all_pos.difference_update(self.matchables())
+        all_pos.difference_update(self.matchables)
         return all_pos
 
     # FIXME: this is not used anywhere except for tests
@@ -314,28 +328,35 @@ class Query(object):
             for _ in range(unknowns[pos]):
                 yield None
 
-    def tokens_by_line(self):
+    def tokens_by_line(self, location=None, query_string=None):
         """
-        Yield one sequence of tokens for each line in this query. Populate the
-        query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos`,
-        `shorts_and_digits_pos` and `spdx_lines` as a side effect.
+        Yield multiple sequences of tokens, one for each line in this query.
+
+        SIDE EFFECT: This populates the query `line_by_pos`, `unknowns_by_pos`,
+        `unknowns_span`, `stopwords_by_pos`, `stopwords_span`,
+        `shorts_and_digits_pos` and `spdx_lines` .
         """
         from licensedcode.match_spdx_lid import split_spdx_lid
+        from licensedcode.stopwords import STOPWORDS
+
+        location = location or self.location
+        query_string = query_string or self.query_string
 
         # bind frequently called functions to local scope
-        tokenizer = query_tokenizer
         line_by_pos_append = self.line_by_pos.append
-        self_unknowns_by_pos = self.unknowns_by_pos
 
+        self_unknowns_by_pos = self.unknowns_by_pos
         unknowns_pos = set()
         unknowns_pos_add = unknowns_pos.add
+
+        self_stopwords_by_pos = self.stopwords_by_pos
+        stopwords_pos = set()
+        stopwords_pos_add = stopwords_pos.add
+
         self_shorts_and_digits_pos_add = self.shorts_and_digits_pos.add
         dic_get = self.idx.dictionary.get
 
         # note: positions start at zero
-        # absolute position in a query, including all known and unknown tokens
-        abs_pos = -1
-
         # absolute position in a query, including only known tokens
         known_pos = -1
 
@@ -345,22 +366,23 @@ class Query(object):
 
         spdx_lid_token_ids = self.spdx_lid_token_ids
 
+        qlines = query_lines(location=location, query_string=query_string)
         if TRACE:
-            logger_debug('tokens_by_line: query lines')
-            for line_num, line in query_lines(self.location, self.query_string):
+            logger_debug('tokens_by_line: query lines:')
+            qlines = list(qlines)
+            for line_num, line in qlines:
                 logger_debug(' ', line_num, ':', line)
 
-        for line_num, line in query_lines(self.location, self.query_string):
+        for line_num, line in qlines:
             # keep track of tokens in a line
             line_tokens = []
             line_tokens_append = line_tokens.append
             line_first_known_pos = None
 
-            # FIXME: the implicit update of abs_pos is not clear
-            for abs_pos, token in enumerate(tokenizer(line), abs_pos + 1):
+            for token in query_tokenizer(line):
                 tid = dic_get(token)
-
-                if tid is not None:
+                is_stopword = token in STOPWORDS
+                if tid is not None and not is_stopword:
                     # this is a known token
                     known_pos += 1
                     started = True
@@ -370,16 +392,31 @@ class Query(object):
                     if line_first_known_pos is None:
                         line_first_known_pos = known_pos
                 else:
-                    if not started:
-                        # If we have not yet started globally, then all tokens
-                        # seen so far are unknowns and we keep a count of them
-                        # in the magic "-1" position.
-                        self_unknowns_by_pos[-1] += 1
+                    # process STOPWORDS and unknown words
+                    if is_stopword:
+                        if not started:
+                            # If we have not yet started globally, then all tokens
+                            # seen so far are stopwords and we keep a count of them
+                            # in the magic "-1" position.
+                            self_stopwords_by_pos[-1] += 1
+                        else:
+                            # here we have a new unknwon token positioned right after
+                            # the current known_pos
+                            self_stopwords_by_pos[known_pos] += 1
+                            stopwords_pos_add(known_pos)
+                        # we do not track stopwords, only their position
+                        continue
                     else:
-                        # here we have a new unknwon token positioned right after
-                        # the current known_pos
-                        self_unknowns_by_pos[known_pos] += 1
-                        unknowns_pos_add(known_pos)
+                        if not started:
+                            # If we have not yet started globally, then all tokens
+                            # seen so far are unknowns and we keep a count of them
+                            # in the magic "-1" position.
+                            self_unknowns_by_pos[-1] += 1
+                        else:
+                            # here we have a new unknwon token positioned right after
+                            # the current known_pos
+                            self_unknowns_by_pos[known_pos] += 1
+                            unknowns_pos_add(known_pos)
 
                 line_tokens_append(tid)
 
@@ -410,9 +447,11 @@ class Query(object):
 
             yield line_tokens
 
-        # finally create a Span of positions followed by unkwnons, used
-        # for intersection with the query span for scoring matches
+        # finally create a Span of positions followed by unkwnons and another
+        # for positions followed by stopwords used for intersection with the
+        # query span to do the scoring matches correctly
         self.unknowns_span = Span(unknowns_pos)
+        self.stopwords_span = Span(stopwords_pos)
 
     def tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
         """
@@ -771,8 +810,6 @@ class QueryRun(object):
         of the run. Used for debugging and testing.
         """
         tokens_by_tid = self.query.idx.tokens_by_tid
-
-        from functools import partial
 
         def tokens_string(tks, sort=False):
             "Return a string from a token id seq"

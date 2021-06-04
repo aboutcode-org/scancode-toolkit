@@ -1,0 +1,5 @@
+license_expression: other-copyleft
+is_license_text: yes
+relevance: 100
+notes: Seen in Perl printf https://github.com/longluo/BusyBox/blob/aa81123c0a9e3aa05aef6d782e0d5dab93e6819c/Windows/ppt/bin/printf#L57
+    and https://github.com/gitpan/ppt/blob/7ad5c69e04cf686f9a1dae993233f9da6d69ace5/src/rev/rev.roland#L60

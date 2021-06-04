@@ -1,0 +1,9 @@
+key: drl-1.0
+short_name: Detection Rule License 1.0
+name: Detection Rule License 1.0
+category: Permissive
+owner: SigmaHQ
+homepage_url: https://github.com/Neo23x0/sigma/blob/master/LICENSE.Detection.Rules.md
+spdx_license_key: DRL-1.0
+other_urls:
+    - https://github.com/Neo23x0/sigma/blob/master/LICENSE.Detection.Rules.md

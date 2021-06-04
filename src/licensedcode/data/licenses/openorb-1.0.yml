@@ -4,6 +4,7 @@ name: OpenORB Community Software License Version 1.0
 category: Permissive
 owner: OpenORB Project
 homepage_url: http://openorb.sourceforge.net/license.txt
+spdx_license_key: LicenseRef-scancode-openorb-1.0
 text_urls:
     - http://openorb.sourceforge.net/license.txt
 ignorable_copyrights:

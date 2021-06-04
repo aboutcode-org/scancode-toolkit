@@ -1,7 +1,6 @@
 license_expression: bzip2-libbzip-2010
 is_license_text: yes
 relevance: 100
+minimum_coverage: 60
 referenced_filenames:
     - COPYING
-minimum_coverage: 60
-

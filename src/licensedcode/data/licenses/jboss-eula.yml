@@ -3,6 +3,7 @@ short_name: JBoss EULA
 name: JBoss EULA
 category: Proprietary Free
 owner: JBoss Community
+spdx_license_key: LicenseRef-scancode-jboss-eula
 text_urls:
     - http://repository.jboss.org/licenses/jbossorg-eula.txt
 ignorable_copyrights:

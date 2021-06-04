@@ -4,5 +4,6 @@ name: Zipeg License
 category: Proprietary Free
 owner: Leo Kuznetsov
 homepage_url: http://www.zipeg.com/about
+spdx_license_key: LicenseRef-scancode-zipeg
 ignorable_urls:
     - http://www.zipeg.com/

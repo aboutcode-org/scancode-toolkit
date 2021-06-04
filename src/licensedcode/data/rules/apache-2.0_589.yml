@@ -1,0 +1,6 @@
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+notes: seen in https://github.com/varlink/go/blob/0ad3cc7fadf04a0a303a285643e6ed43e4afc5cd/COPYRIGHT

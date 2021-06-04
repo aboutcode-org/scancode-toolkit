@@ -3,6 +3,7 @@ short_name: Bloomberg BLPAPI License
 name: Bloomberg BLPAPI License
 category: Proprietary Free
 owner: Bloomberg Labs
+spdx_license_key: LicenseRef-scancode-bloomberg-blpapi
 other_urls:
     - https://bloomberg.bintray.com/BLPAPI-Stable-Generic/blpapi_cpp_3.8.18.1-linux.tar.gz
-minimum_coverage: 50
+minimum_coverage: 80

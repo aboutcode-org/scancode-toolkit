@@ -1,0 +1,5 @@
+license_expression: ecl-1.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.org/licenses/ecl-1.0

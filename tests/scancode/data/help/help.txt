@@ -28,8 +28,8 @@ Options:
                                  words that are not matched.
     --license-url-template TEXT  Set the template URL used for the license
                                  reference URLs. Curly braces ({}) are replaced by
-                                 the license key.  [default: https://enterprise.de
-                                 jacode.com/urn/urn:dje:license:{}]
+                                 the license key.  [default: https://scancode-
+                                 licensedb.aboutcode.org/{}]
     --max-email INT              Report only up to INT emails found in a file. Use
                                  0 for no limit.  [default: 50]
     --max-url INT                Report only up to INT urls found in a file. Use 0
@@ -43,6 +43,8 @@ Options:
     --html FILE             Write scan output as HTML to FILE.
     --custom-output FILE    Write scan output to FILE formatted with the custom
                             Jinja template file.
+    --debian FILE           Write scan output in machine-readable Debian copyright
+                            format to FILE.
     --custom-template FILE  Use this Jinja template FILE as a custom template.
     --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
     --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
@@ -124,7 +126,8 @@ Options:
     --quiet                  Do not print summary or progress.
     --verbose                Print progress as file-by-file path instead of a
                              progress bar. Print verbose scan counters.
-    --from-json              Load codebase from an existing JSON scan
+    --from-json              Load codebase from one or more <input> JSON scan
+                             file(s).
     --max-in-memory INTEGER  Maximum number of files and directories scan details
                              kept in memory during a scan. Additional files and
                              directories scan details above this number are cached
@@ -135,10 +138,6 @@ Options:
                              Descend at most INTEGER levels of directories below
                              and including the starting directory. Use 0 for no
                              scan depth limit.
-
-  miscellaneous:
-    --reindex-licenses  Check the license index cache and reindex if needed and
-                        exit.
 
   documentation:
     -h, --help       Show this message and exit.
@@ -162,6 +161,5 @@ Options:
 
       scancode --json-pp - --license --package  samples
 
-  Note: when you run scancode, a progress bar is displayed with a counter of
-  the number of files processed. Use --verbose to display file-by-file
-  progress.
+  Note: when you run scancode, a progress bar is displayed with a counter of the
+  number of files processed. Use --verbose to display file-by-file progress.

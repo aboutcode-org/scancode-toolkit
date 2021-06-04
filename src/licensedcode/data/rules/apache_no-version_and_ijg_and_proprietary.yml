@@ -1,0 +1,17 @@
+license_expression: apache-2.0 AND proprietary-license AND ijg
+is_license_reference: yes
+minimum_coverage: 90
+notes: found in SUN/Oracle JREs.
+ The actual version of the license is not provided
+ but the most common one is the Apache 2.0
+ignorable_copyrights:
+    - Copyright property of CompuServe Incorporated
+    - Portions Copyright Eastman Kodak Company 1992
+ignorable_holders:
+    - CompuServe Incorporated
+    - Eastman Kodak Company
+ignorable_authors:
+    - the Apache Software Foundation (http://www.apache.org)
+ignorable_urls:
+    - http://www.apache.org/
+

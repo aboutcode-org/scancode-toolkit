@@ -1,0 +1,7 @@
+- - GPL-2
+  - BSD-3-clause
+- (gpl-2.0 AND gpl-2.0-plus) AND bsd-new
+- |
+  2002-2010, Chris Lawrence <lawrencc@debian.org>
+  2005-2011, Canonical Ltd.
+  2002-2009, Chris Lawrence <lawrencc@debian.org>

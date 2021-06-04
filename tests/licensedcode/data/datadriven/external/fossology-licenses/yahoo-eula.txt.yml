@@ -1,0 +1,14 @@
+license_expressions:
+  - unknown
+  - unknown-license-reference
+  - proprietary-license
+  - other-permissive
+  - amd-historical
+  - amd-historical
+expected_failure: yes
+notes: this is a license from fossology license reference Yahoo-EULA (Yahoo Software License)
+  http://info.yahoo.com/legal/us/yahoo/toolbar/tbeula/tbeula-282.html This tests behaves differently
+  between Python 2 and Python 3 due to differences in rounding causing different license match
+  candidates to be selected for the license sequence matcher The expectations here are for Python
+  3 and the test is expected to fail on Python 2, but is marked to fail everywhere When the
+  Python 3 migration is complete, the expected failure should be removed.

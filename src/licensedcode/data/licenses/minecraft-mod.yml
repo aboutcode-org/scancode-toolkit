@@ -1,7 +1,8 @@
 key: minecraft-mod
+short_name: Minecraft Mod License
 name: Minecraft Mod License
-short_name: Minecraft Mod License 
 category: Proprietary Free
-notes: From https://github.com/ErikMcClure/bad-licenses
 owner: Unspecified
 homepage_url: https://bdew.net/
+notes: From https://github.com/ErikMcClure/bad-licenses
+spdx_license_key: LicenseRef-scancode-minecraft-mod

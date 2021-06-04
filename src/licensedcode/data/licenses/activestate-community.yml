@@ -3,6 +3,7 @@ short_name: ActiveState Community License
 name: ActiveState Community License
 category: Proprietary Free
 owner: ActiveState Software, Inc.
+spdx_license_key: LicenseRef-scancode-activestate-community
 ignorable_copyrights:
     - Copyright (c) 1991-1995 Stichting Mathematisch Centrum, Amsterdam
     - Copyright (c) 1995-2001 Corporation for National Research Initiatives

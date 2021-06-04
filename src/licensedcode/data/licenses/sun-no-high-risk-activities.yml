@@ -4,6 +4,7 @@ name: Sun No High Risk Activities License
 category: Free Restricted
 owner: Oracle (Sun)
 homepage_url: https://web.archive.org/web/20061213092245/http://java.sun.com:80/developer/technicalArticles/Programming/sprintf/PrintfFormat.java
+spdx_license_key: LicenseRef-scancode-sun-no-high-risk-activities
 ignorable_urls:
     - http://java.sun.com/nav/business/index.html
     - http://www.sun.com/policies/trademarks/

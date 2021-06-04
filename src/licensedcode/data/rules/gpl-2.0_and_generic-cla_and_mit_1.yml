@@ -1,0 +1,4 @@
+license_expression: gpl-2.0 AND generic-cla AND mit
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/scanoss/engine/blob/master/CONTRIBUTING.md An assymetric CLA

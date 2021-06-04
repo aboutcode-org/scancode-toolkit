@@ -3,6 +3,7 @@ short_name: ARM LLVM Grant
 name: ARM LLVM Software Grant License Agreement
 category: Permissive
 owner: ARM
+spdx_license_key: LicenseRef-scancode-arm-llvm-sga
 minimum_coverage: 80
 ignorable_urls:
     - http://llvm.org/

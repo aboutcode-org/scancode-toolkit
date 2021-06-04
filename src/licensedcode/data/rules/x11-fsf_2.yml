@@ -1,0 +1,5 @@
+license_expression: x11-fsf
+is_license_text: yes
+relevance: 99
+notes: the no advert paragraph has its position switched with the warranty disclaimer in this
+    variant. The texts are otherwise essentially the same See https://github.com/achillean/shodan-python/blob/90491308971a7ba6e358d6152d7b02307964c6fe/LICENSE

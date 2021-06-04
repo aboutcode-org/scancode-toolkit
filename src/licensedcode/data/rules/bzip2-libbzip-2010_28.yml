@@ -1,0 +1,7 @@
+license_expression: bzip2-libbzip-2010
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 100
+notes: https://github.com/btigi/iiInfinityEngine/blob/f859ee0af9d4fac1ca6cad38a4698dd942f2d2b9/License/License.bzip2.txt#L6
+ignorable_authors:
+    - Julian Seward

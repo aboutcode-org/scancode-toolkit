@@ -2,14 +2,14 @@ what:
   - holders
   - holders_summary
   - copyrights
-holders:
-  - Foobar Company
-  - Foobar Company (PC) Property of Foobar Company
-  - Foobar Company
 copyrights:
   - Foobar Company, (c) 2005
   - Copyright Foobar Company (PC) Property of Foobar Company
   - Copyright (2003) Foobar Company
+holders:
+  - Foobar Company
+  - Foobar Company (PC) Property of Foobar Company
+  - Foobar Company
 holders_summary:
   - value: Foobar Company
     count: 2

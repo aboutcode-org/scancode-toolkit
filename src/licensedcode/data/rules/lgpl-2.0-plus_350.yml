@@ -1,0 +1,4 @@
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+notes: Seen in https://github.com/abiquo-rpms/anaconda-ee/blob/a4771519c87f4367397a8510a1dde159a8d2e71a/anaconda-ee-11.1.2.242/xsetup.py

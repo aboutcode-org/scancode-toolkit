@@ -1,0 +1,257 @@
+NVIDIA CORPORATION
+NVIDIA APEX SDK END USER LICENSE AGREEMENT
+Welcome to the new world of game development physical asset creation provided to you
+with the APEX SDK from NVIDIA®.
+
+NVIDIA Corporation (“NVIDIA”) is willing to license the APEX SDK and the
+accompanying documentation, samples applications, utilities, and asset authoring
+libraries to you only on the condition that you accept all the terms in this License
+Agreement (“Agreement”).
+
+IMPORTANT: READ THE FOLLOWING TERMS AND CONDITIONS BEFORE
+USING THE ACCOMPANYING NVIDIA APEX SDK.
+IF YOU DO NOT AGREE TO THE TERMS OF THIS AGREEMENT, NVIDIA IS
+NOT WILLING TO LICENSE THE APEX SDK TO YOU. IF YOU DO NOT AGREE
+TO THESE TERMS, YOU SHALL DESTROY THIS ENTIRE PRODUCT AND
+PROVIDE EMAIL VERIFICATION TO PHYSXLICENCING@NVIDIA.COM OF
+DELETION OF ALL COPIES OF THE ENTIRE PRODUCT.
+NVIDIA MAY MODIFY THE TERMS OF THIS AGREEMENT FROM TIME TO
+TIME. ANY USE OF THE APEX SDK WILL BE SUBJECT TO SUCH UPDATED
+TERMS. A CURRENT VERSION OF THIS AGREEMENT IS POSTED ON
+NVIDIA’S DEVELOPER WEBSITE: www.developer.nvidia.com/apex
+
+1. Definitions.
+“Physics Application” means a software application designed for use and fully
+compatible with the PhysX and APEX SDK and/or NVIDIA Graphics processor
+products, including but not limited to, a video game, visual simulation, movie, or other
+product. “APEX Software Development Kit” or “APEX SDK” means the set of
+instructions for computers, in executable form and in any media (which may include
+diskette, CD-ROM, downloadable internet, hardware, or firmware) comprising
+NVIDIA’s proprietary Software Development Kit and related media and printed
+materials, including Redistributable Code, Sample Code, reference guides and manuals,
+installation routines, API’s, libraries, any subsequent updates or adaptations provided by
+NVIDIA, whether with this installation or as separately downloaded. “Sample Code”
+means the sample interface or application source and object code files contained within
+the APEX SDK’s “Samples” directory or made available for download from the PhysX
+developer site and designated as sample code.
+
+2. License. NVIDIA grants you (“you”) a limited, non-exclusive, non-transferable
+world-wide, royalty-free license to (a) internally install, use and display the APEX SDK, 
+solely for purposes of developing APEX asset content for Physics Applications; (b)
+internally use, copy, modify and compile the Sample Code to design, develop and test
+APEX assets; and (c) reproduce and distribute the Redistributable Code only in object
+code form and only as fully integrated into Physics Applications, provided you meet and
+comply with all requirements of this Agreement.
+
+In addition, you may not and shall not permit others to:
+(i) modify, reproduce, de-compile, reverse engineer or translate the APEX
+SDK; or
+(ii) distribute or transfer the APEX SDK other than as part of the Physics
+Application.
+
+Except as expressly granted herein, no other license under any patent, copyright, trade
+secret, trademark or other intellectual property right is granted to or conferred upon you
+by this Agreement. All other rights are expressly reserved by NVIDIA and its licensors.
+
+3. Redistribution; Physics Applications. Any redistribution of the APEX SDK (in
+accordance with Section 2 above) or portions thereof must be subject to an end user
+license agreement including language that
+(a) prohibits the end user from modifying, reproducing, de-compiling, reverse
+engineering or translating the APEX SDK;
+(b) prohibits the end user from distributing or transferring the APEX SDK other
+than as part of the Physics Application;
+(c) disclaims any and all warranties on behalf of NVIDIA and its affiliated
+companies and licensors;
+(d) disclaims, to the maximum extent permitted by law, NVIDIA’s, its affiliated
+companies and its licensors' liability for all damages, direct or indirect, incidental or
+consequential, that may arise from any use of the APEX SDK and/or Physics
+Application;
+(e) requires the end user to agree not to export the APEX SDK and/or Physics
+Application, directly or indirectly, in violation of any U.S. laws; and
+
+YOU ARE REQUIRED TO NOTIFY NVIDIA PRIOR TO USE OF THE APEX SDK
+IN THE DEVELOPMENT OF ANY COMMERCIAL PHYSICS APPLICATION.
+PLEASE SEND NOTIFICATION BY EMAIL TO:
+PHYSXLICENSING@NVIDIA.COM AND PROVIDE THE FOLLOWING
+INFORMATION IN THE EMAIL:
+- COMPANY NAME
+- PUBLISHER NAME
+- GAME TITLE
+- PLATFORMS (I.E. PC, XBOX, PS3, WII)
+- SCHEDULED SHIP DATE
+
+ANY COMMERCIAL PHYSICS APPLICATION INTEGRATING THE APEX SDK IS
+SUBJECT TO A LICENSE TO NVIDIA FOR USE AND PUBLIC DISPLAY OF
+SUCH PHYSICS APPLICATION FOR ADVERTISING AND MARKETING
+PURPOSES.
+
+FAILURE TO NOTIFY NVIDIA PURSUANT TO THIS SECTION AND FAILURE
+TO PROVIDE ATTRIBUTION PURSUANT TO SECTION 6 SHALL BE
+CONSIDERED A MATERIAL BREACH OF THIS AGREEMENT.
+
+4. Ownership, Protections. The APEX SDK is owned by NVIDIA and NVIDIA
+licensors, and is protected by United States copyright laws, international treaty
+provisions, and other applicable laws. With regard to any copies made, you agree to
+reproduce any copyright notices and other proprietary legends included on the original.
+NVIDIA copyright notice(s) may appear in any of several forms, including machinereadable 
+form, and you agree to reproduce such notice in each form in which it appears.
+Title and copyrights to the APEX SDK and any copies made by you remain with
+NVIDIA and its licensors. You acknowledge that the APEX SDK contain valuable
+proprietary information and trade secrets and that unauthorized or improper use of the
+APEX SDK will result in irreparable harm to NVIDIA and its licensors for which
+monetary damages would be inadequate and for which NVIDIA and its licensors will be
+entitled to immediate injunctive relief. Subject to the rights of NVIDIA and its licensors
+in the APEX SDK and the Sample Code, you own your modifications to the Sample
+Code.
+
+5. Restrictions. You will not, and will not permit others to: (a) modify, translate,
+decompile, bootleg, reverse engineer, disassemble, or extract the inner workings of any
+portion of the APEX SDK except the Sample Code, (b) copy the look-and-feel or
+functionality of any portion of the APEX SDK except the Sample Code; (c) remove any
+proprietary notices, marks, labels, or logos from the APEX SDK or any portion thereof;
+(d) rent, transfer or use as a service bureau all or some of the APEX SDK without
+NVIDIA’s prior written consent, except in the form of Physics Applications and subject
+to the requirements of this Agreement; (e) utilize any computer software or hardware
+which is designed to defeat any copy protection device, should the APEX SDK be
+equipped with such a protection device; or (f) use the NVIDIA Licensed Software in any
+manner that would cause the NVIDIA Licensed Software to become subject to an Open
+Source License. "Open Source License" includes, without limitation, a software license
+that requires as a condition of use, modification, and/or distribution of such software that
+the NVIDIA Licensed Software be (i) disclosed or distributed in source code form; (ii) be
+licensed for the purpose of making derivative works; or (iii) be redistributable at no
+charge. Unauthorized copying of the APEX SDK, or failure to comply with any of the
+provisions of this Agreement, will result in automatic termination of this license.
+
+6. Attribution Requirements and Trademark License. You must provide attribution
+to NVIDIA.
+
+A: You will include a reference to the APEX SDK and NVIDIA in any press releases
+for such Game that relate to NVIDIA, or in-game physics, and will identify 
+NVIDIA as the provider of "APEX" (or such other term or phrase as indicated by
+NVIDIA from time to time).
+
+B: For Games, Demos, and Videos that incorporate the APEX SDK or portions
+thereof, the NVIDIA logos must appear:
+a. on the back cover of the instruction manual or similar placement in an
+electronic file for the purpose of acknowledgement/copyright/trademark
+notice;
+b. on external packaging;
+c. during opening marquee or credits with inclusion of “NVIDIA”;
+d. must appear on title marketing feature list with a specific call-out of
+NVIDIA APEX Technology
+e. on the credit screen; and
+f. in the “About” or “Info” box menu items (or equivalent) of all Physics
+Games or Applications using any portion of the APEX SDK.
+
+C: Provide a quote citing the Licensee’s integration of the APEX SDK into the Game
+or Application for NVIDIA’s use in press materials and website.
+
+D: Refer to NVIDIA’s APEX SDK in all press coverage referring to the use APEX
+in the development of any Game or Application.
+FAILURE TO PROVIDE ATTRIBUTION PURSUANT TO THIS SECTION SHALL
+BE CONSIDERED A MATERIAL BREACH OF THIS AGREEMENT.
+
+Except as expressly set forth in this Section 6, or in a separate written agreement with
+NVIDIA, you may not use NVIDIA's trademarks, whether registered or unregistered, in
+connection with the Physics Application in any manner or imply that NVIDIA endorses
+or otherwise approves of the Physics Application or that you and NVIDIA are in any way
+affiliated. Your use of the NVIDIA name under this Agreement does not create any
+right, title or interest in the NVIDIA name or any NVIDIA trademarks and all goodwill
+arising from your use inure solely to the benefit of NVIDIA.
+
+7. DISCLAIMER. EXCEPT FOR THE ABOVE EXPRESS LIMITED
+WARRANTY, THE APEX SDK IS PROVIDED “AS IS” AND NVIDIA AND ITS
+LICENSORS MAKE, AND YOU RECEIVE, NO OTHER WARRANTIES OF ANY
+KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR IN ANY
+COMMUNICATION WITH YOU. NVIDIA SPECIFICALLY DISCLAIMS ANY
+OTHER WARRANTY INCLUDING THE IMPLIED WARRANTIES OF
+MERCHANTABILITY, NON-INFRINGEMENT, OR FITNESS FOR A PARTICULAR
+PURPOSE. NVIDIA DOES NOT WARRANT THAT THE OPERATION OF THE
+SOFTWARE WILL BE UNINTERRUPTED OR ERROR FREE OR THAT DEFECTS
+IN THE SOFTWARE WILL BE CORRECTED. NVIDIA MAKES NO WARRANTY
+WITH RESPECT TO THE CORRECTNESS, ACCURACY, OR RELIABILITY OF
+THE SOFTWARE AND DOCUMENTATION. Some jurisdictions do not allow the
+exclusion of implied warranties, so the above exclusion may not apply to you.
+
+8. Remedies. The entire liability of NVIDIA and its licensors, and your exclusive
+remedy under the warranty provided herein will be, at NVIDIA’s option, to replace any
+media found to be defective within the warranty period, or to refund the purchase price 
+and terminate this Agreement. To seek such a remedy, you must return the entire APEX
+SDK to NVIDIA, with a copy of the original purchase receipt within the warranty period.
+
+9. Confidential Information. All technical and business information disclosed by
+NVIDIA to you under this Agreement, including but not limited to source code,
+documentation, technical assistance and any confidential information pertaining to
+NVIDIA’s business or products, are to be considered “NVIDIA Confidential
+Information.” You will not disclose any portion of NVIDIA Confidential Information to
+any third party and will protect all NVIDIA Confidential Information with the same
+degree of care as you use to protect your own information of a confidential or proprietary
+nature, but always with at least a reasonable degree of care. This obligation of
+confidentiality will survive termination and/or expiration of this Agreement for any
+reason.
+
+10. LIMITATION OF LIABILITY. THE TOTAL LIABILITY OF NVIDIA AND
+ITS LICENSORS UNDER THIS AGREEMENT FOR DAMAGES WILL NOT
+EXCEED $100 IN THE AGGREGATE. IN NO EVENT WILL NVIDIA OR ITS
+LICENSORS BE LIABLE IN ANY WAY FOR INCIDENTAL, CONSEQUENTIAL,
+INDIRECT, SPECIAL OR PUNITIVE DAMAGES OF ANY NATURE, INCLUDING
+WITHOUT LIMITATION, LOST BUSINESS PROFITS, OR LIABILITY OR INJURY
+TO THIRD PERSONS, WHETHER FORESEEABLE OR NOT, REGARDLESS OF
+WHETHER NVIDIA OR ITS LICENSORS HAVE BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES. Some jurisdictions do not permit limitations of
+liability for incidental or consequential damages, so the above exclusions may not apply
+to you.
+
+11. Customer and Technical Support. You will be solely responsible for providing
+customer and technical support to end users of the Physics Application for all features of
+the Physics Application, including those features that relate to integration, functionality
+or compatibility of the Physics Application with NVIDIA products. NVIDIA may
+provide you with technical support related to use of the APEX SDK under terms and
+conditions as posted on the NVIDIA PhysX developer website, which may, in NVIDIA’s
+sole discretion, be changed from time to time.
+
+12. Term of License; Termination. Your right to use the APEX SDK will begin when
+you click the “ACCEPT” button, which constitutes acceptance of the terms and
+conditions herein. The license is effective until otherwise terminated. You may
+terminate it at any time by destroying the APEX SDK and all portions thereof, together
+with all copies in any form. If you fail to comply with any material term or condition of
+this Agreement and do not cure the noncompliance within 30 days of receipt of written
+notice of noncompliance from NVIDIA, NVIDIA may terminate your rights to conduct
+any further development under Sections 2(a) and (b) of this Agreement ("Partial
+Termination"). Upon Partial Termination, you will certify to NVIDIA in writing that the
+original and all stand-alone copies, in whole or in part, of the APEX SDK have been
+destroyed. Upon Partial Termination, you may continue to distribute any Physics
+Application that has been commercially released prior to such termination subject to
+prospective compliance with this Agreement. Upon any other termination, you will
+certify to NVIDIA in writing that the original and all copies, in whole or in part, of the 
+APEX SDK have been destroyed, including those portions contained within any
+unshipped Physics Applications.
+
+13. Governing Law. This Agreement will be governed by the laws of the United
+States of America to the extent that they apply and otherwise by the laws of the State of
+California, without reference to principles of conflicts of law.
+
+14. Export. You agree and certify that no portion of the APEX SDK nor any other
+technical data received from NVIDIA will be exported outside the United States except
+as authorized and as permitted by the laws and regulations of the United States. If you
+have rightfully obtained the APEX SDK outside of the United States, you agree that you
+will not re-export any portion of the APEX SDK nor any other technical data received
+from NVIDIA, except as permitted by the laws and regulations of the United States and
+the laws and regulations of the jurisdiction in which you obtained the APEX SDK.
+
+15. Assignment. You may not sublicense, assign or transfer this Agreement or the
+APEX SDK except as expressly provided in this Agreement. Any attempt to otherwise
+sublicense, assign or transfer any of the rights, duties or obligations hereunder is null and
+void.
+
+16. Survival. The parties agree that where the context of any provision indicates an
+intent that it will survive the term of this Agreement, then it will survive. All terms of
+this Agreement survive Partial Termination except Sections 2(a) and (b).
+
+17. Entire Agreement. This Agreement contains the parties’ entire agreement
+regarding your use of the APEX SDK and may be amended only in writing signed by
+both parties.
+
+Copyright 2011 NVIDIA Corporation. All rights reserved.
+US AND INTERNATIONAL PATENTS PENDING.
+Rev (7-22-11)

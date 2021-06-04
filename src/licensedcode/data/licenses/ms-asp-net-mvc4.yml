@@ -4,5 +4,6 @@ name: Microsoft ASP.NET MVC 4 License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/web/webpi/eula/mvc_4_eula_enu.htm
+spdx_license_key: LicenseRef-scancode-ms-asp-net-mvc4
 ignorable_urls:
     - http://www.microsoft.com/exporting

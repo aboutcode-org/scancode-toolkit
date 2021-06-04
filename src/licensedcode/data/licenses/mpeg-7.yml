@@ -4,6 +4,7 @@ name: MPEG-7 License
 category: Proprietary Free
 owner: MPEG7FexLib
 homepage_url: https://github.com/cdmh/MPEG7FexLib/blob/master/Extraction/ColorLayoutExtraction.cpp
+spdx_license_key: LicenseRef-scancode-mpeg-7
 text_urls:
     - https://github.com/cdmh/MPEG7FexLib/blob/master/Extraction/EdgeHistExtraction.cpp
 ignorable_copyrights:

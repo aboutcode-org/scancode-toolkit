@@ -4,4 +4,7 @@ name: Regexp License
 category: Permissive
 owner: Henry Spencer
 homepage_url: https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License
+other_spdx_license_keys:
+    - LicenseRef-scancode-regexp
 spdx_license_key: Spencer-86
+minimum_coverage: 80

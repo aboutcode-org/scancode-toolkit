@@ -4,5 +4,6 @@ name: Oracle Master Agreement (OMA)
 category: Commercial
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/us/corporate/contracts/oma/index.html
+spdx_license_key: LicenseRef-scancode-oracle-master-agreement
 ignorable_urls:
     - http://www.oracle.com/us/corporate/contracts/oma/index.html

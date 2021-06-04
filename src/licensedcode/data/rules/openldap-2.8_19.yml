@@ -1,0 +1,9 @@
+license_expression: openldap-2.8
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - LICENSE
+ignorable_urls:
+    - http://www.openldap.org/
+    - http://www.openldap.org/license.html
+    - http://www.umich.edu/~dirsvcs/ldap/

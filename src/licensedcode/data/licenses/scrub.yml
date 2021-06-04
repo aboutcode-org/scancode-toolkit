@@ -4,6 +4,7 @@ name: SCRUB License
 category: Proprietary Free
 owner: Duxbury Systems, Inc.
 homepage_url: http://www.duxburysystems.com/
+spdx_license_key: LicenseRef-scancode-scrub
 ignorable_copyrights:
     - Copyright 1988-1993 Duxbury Systems, Inc.
 ignorable_holders:

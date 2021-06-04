@@ -1,44 +1,34 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-
-import os.path
+import os
+from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
 
 import packagedcode
+from packagedcode.recognize import recognize_packages
+
+from packagedcode import bower
+from packagedcode import cargo
 from packagedcode import freebsd
+from packagedcode import haxe
 from packagedcode import maven
 from packagedcode import npm
-from packagedcode import cargo
+from packagedcode import nuget
 from packagedcode import opam
 from packagedcode import phpcomposer
 from packagedcode import rpm
-from packagedcode.recognize import recognize_packages
-from packagedcode import nuget
+from packagedcode import win_pe
+from packagedcode import pypi
+from packagedcode import golang
+from packagedcode import models
 
 
 class TestRecognize(FileBasedTesting):
@@ -145,6 +135,12 @@ class TestRecognize(FileBasedTesting):
         assert packages
         assert isinstance(packages[0], phpcomposer.PHPComposerPackage)
 
+    def test_recognize_haxe(self):
+        test_file = self.get_test_loc('recon/haxelib.json')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], haxe.HaxePackage)
+
     def test_recognize_freebsd(self):
         test_file = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST')
         packages = recognize_packages(test_file)
@@ -156,3 +152,70 @@ class TestRecognize(FileBasedTesting):
         packages = recognize_packages(test_file)
         assert packages
         assert isinstance(packages[0], nuget.NugetPackage)
+
+    def test_recognize_winexe(self):
+        test_file = self.get_test_loc('win_pe/tre4.dll')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], win_pe.WindowsExecutable)
+
+    def test_recognize_bower(self):
+        test_file = self.get_test_loc('bower/basic/bower.json')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], bower.BowerPackage)
+
+    @expectedFailure
+    def test_recognize_cpan(self):
+        test_file = self.get_test_loc('cpan/MANIFEST')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], models.CpanModule)
+
+    def test_recognize_python2(self):
+        test_file = self.get_test_loc('recon/pypi/atomicwrites-1.2.1-py2.py3-none-any.whl')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], pypi.PythonPackage)
+
+    def test_recognize_python3(self):
+        test_file = self.get_test_loc('recon/pypi/METADATA')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], pypi.PythonPackage)
+
+    def test_recognize_python5(self):
+        test_file = self.get_test_loc('recon/pypi/PKG-INFO')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], pypi.PythonPackage)
+
+    def test_recognize_python6(self):
+        test_file = self.get_test_loc('recon/pypi/setup.py')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], pypi.PythonPackage)
+
+    def test_recognize_python7(self):
+        test_file = self.get_test_loc('recon/pypi/Pipfile.lock')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], pypi.PythonPackage)
+
+    def test_recognize_python8(self):
+        test_file = self.get_test_loc('recon/pypi/requirements.txt')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], pypi.PythonPackage)
+
+    def test_recognize_go_mod(self):
+        test_file = self.get_test_loc('golang/gomod/kingpin/go.mod')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], golang.GolangPackage)
+
+    def test_recognize_go_sum(self):
+        test_file = self.get_test_loc('golang/gosum/sample1/go.sum')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], golang.GolangPackage)

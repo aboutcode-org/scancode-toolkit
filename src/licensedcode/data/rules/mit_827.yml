@@ -1,0 +1,6 @@
+license_expression: mit
+is_license_text: yes
+relevance: 99
+notes: Seen in https://github.com/pratikborsadiya/vali-admin/blob/44735d3d71d3e6bd448e27a39e4c188140b3c13c/LICENSE
+ uses "notice must be included" instead of "notice shall be included"
+ 

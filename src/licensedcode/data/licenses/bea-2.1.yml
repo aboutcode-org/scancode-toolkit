@@ -3,6 +3,7 @@ short_name: BEA 2.1
 name: BEA Public License 2.1
 category: Permissive
 owner: Oracle Corporation
+spdx_license_key: LicenseRef-scancode-bea-2.1
 ignorable_copyrights:
     - (c) Date BEA Systems, Inc.
 ignorable_holders:

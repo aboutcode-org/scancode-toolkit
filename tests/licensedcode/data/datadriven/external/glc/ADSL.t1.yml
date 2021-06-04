@@ -1,0 +1,7 @@
+license_expressions:
+  - adsl
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/ADSL.t1
+  originally expected to be detected as ADSL
+  with coverage of 100.0

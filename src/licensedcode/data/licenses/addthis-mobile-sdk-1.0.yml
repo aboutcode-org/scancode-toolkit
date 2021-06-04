@@ -4,6 +4,7 @@ name: AddThis Mobile Application SDK License 1.0
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: https://www.addthis.com/appsdk-license-agreement#.VvMVkRIrJZ1
+spdx_license_key: LicenseRef-scancode-addthis-mobile-sdk-1.0
 other_urls:
     - http://www.addthis.com/about
 minimum_coverage: 80

@@ -1,0 +1,8 @@
+license_expression: lgpl-2.1 OR epl-2.0
+is_license_notice: yes
+relevance: 100
+notes: See https://github.com/jgrapht/jgrapht/tree/ccd78f3efd8646160b0388b037bc11fa827bc3dc
+ignorable_urls:
+    - http://www.eclipse.org/org/documents/epl-v20.php
+    - http://www.gnu.org/licenses/lgpl-2.1.html
+    - https://github.com/wiki/Relicensing

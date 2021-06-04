@@ -1,0 +1,10 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 70
+ignorable_copyrights:
+    - copyrighted work of LSI CORPORATION
+ignorable_holders:
+    - work of LSI CORPORATION
+ignorable_authors:
+    - LSI CORPORATION

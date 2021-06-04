@@ -3,6 +3,7 @@ short_name: Fraunhofer ISO 14496-10 License
 name: Fraunhofer ISO 14496-10 License
 category: Permissive
 owner: Fraunhofer-Gesellschaft
+spdx_license_key: LicenseRef-scancode-fraunhofer-iso-14496-10
 minimum_coverage: 60
 ignorable_copyrights:
     - Copyright (c) ISO/IEC 2005

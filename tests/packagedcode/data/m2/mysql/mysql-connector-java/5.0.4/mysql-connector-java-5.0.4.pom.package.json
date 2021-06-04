@@ -21,7 +21,7 @@
   "code_view_url": "http://svn.mysql.com/svnpublic/connector-j/trunk/connector-j",
   "vcs_url": "svn+http://svn.mysql.com/svnpublic/connector-j/trunk/connector-j",
   "copyright": null,
-  "license_expression": "gpl-2.0 AND gpl-1.0-plus AND ((gpl-1.0-plus AND unknown) AND unknown)",
+  "license_expression": "gpl-2.0 AND gpl-1.0-plus AND ((gpl-1.0-plus AND unknown-license-reference) AND unknown)",
   "declared_license": [
     {
       "name": "The GNU General Public License, Version 2",
@@ -37,6 +37,7 @@
   "source_packages": [
     "pkg:maven/mysql/mysql-connector-java@5.0.4?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/mysql/mysql-connector-java@5.0.4",
   "repository_homepage_url": "https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.0.4/",
   "repository_download_url": "https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.0.4/mysql-connector-java-5.0.4.jar",

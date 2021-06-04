@@ -5,6 +5,7 @@ category: Permissive
 owner: Agendaless Consulting
 homepage_url: https://github.com/Supervisor/supervisor/blob/master/LICENSES.txt
 notes: composite
+spdx_license_key: LicenseRef-scancode-supervisor
 other_urls:
     - http://eikeon.com/
     - http://www.agendaless.com

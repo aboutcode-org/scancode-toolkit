@@ -1,0 +1,6 @@
+license_expression: gpl-2.0 WITH gcc-linking-exception-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.mit
+notes: https://github.com/newren/git-filter-repo/blob/e9e0308df1e9e792598b8e41d0086d7a785e9cc5/COPYING

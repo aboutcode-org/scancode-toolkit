@@ -1,5 +1,4 @@
 license_expression: bakoma-fonts-1995
 is_license_notice: yes
 ignorable_urls:
-  - http://www.ctan.org/tex-archive/fonts/cm/ps-type1/bakoma
-
+    - http://www.ctan.org/tex-archive/fonts/cm/ps-type1/bakoma

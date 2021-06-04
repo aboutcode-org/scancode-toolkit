@@ -1,0 +1,4 @@
+license_expression: postgresql
+is_license_text: yes
+relevance: 100
+notes: https://github.com/postgrespro/pg_probackup/blob/cde244e1bab9f25e03380f17c8f7d921f7f2e9c5/LICENSE

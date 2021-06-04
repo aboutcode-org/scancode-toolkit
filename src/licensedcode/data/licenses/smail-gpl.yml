@@ -4,6 +4,7 @@ name: SMAIL General Public License
 category: Copyleft
 owner: SMAIL Project
 homepage_url: https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL
+spdx_license_key: LicenseRef-scancode-smail-gpl
 text_urls:
     - https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL
 ignorable_copyrights:

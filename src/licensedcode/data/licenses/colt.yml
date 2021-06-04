@@ -4,6 +4,7 @@ name: Colt License Agreement
 category: Free Restricted
 owner: CERN
 homepage_url: http://acs.lbl.gov/software/colt/license.html
+spdx_license_key: LicenseRef-scancode-colt
 text_urls:
     - http://acs.lbl.gov/software/colt/license.html
 minimum_coverage: 85

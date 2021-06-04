@@ -3,3 +3,4 @@ short_name: Intel Material License
 name: Intel Material License
 category: Commercial
 owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel-material

@@ -5,5 +5,6 @@ name: License for the Service Component Architecture JavaDoc, Interface Definiti
 category: Permissive
 owner: osoa
 homepage_url: http://www.osoa.org/display/Main/Service+Component+Architecture+Specifications
+spdx_license_key: LicenseRef-scancode-service-comp-arch
 ignorable_urls:
     - http://www.osoa.org/display/Main/Service+Component+Architecture+Specifications

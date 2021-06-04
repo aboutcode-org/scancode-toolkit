@@ -1,0 +1,14 @@
+key: leap-motion-sdk-2019
+short_name: Leap Motion SDK Agreement 2019
+name: Leap Motion SDK Agreement 2019
+category: Proprietary Free
+owner: Ultraleap
+homepage_url: https://central.leapmotion.com/agreements/SdkAgreement
+faq_url: https://support.leapmotion.com/hc/en-us/articles/360004340197-SDK-Agreement-FAQs
+spdx_license_key: LicenseRef-scancode-leap-motion-sdk-2019
+ignorable_emails:
+  - developers@leapmotion.com
+  - partnerships@leapmotion.com
+ignorable_urls:
+  - http://leapmotion.com/legal
+

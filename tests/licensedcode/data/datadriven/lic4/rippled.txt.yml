@@ -1,0 +1,8 @@
+license_expressions:
+  - isc
+  - isc
+  - boost-1.0
+  - mit
+  - unknown-license-reference
+  - mit-addition
+notes: from https://raw.githubusercontent.com/ripple/rippled/develop/LICENSE

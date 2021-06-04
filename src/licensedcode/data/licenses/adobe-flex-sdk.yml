@@ -4,5 +4,6 @@ name: Adobe Flex SDK SLA
 category: Proprietary Free
 owner: Adobe Systems
 homepage_url: https://raw.githubusercontent.com/nginadfoundation/flexsdk/master/license-adobesdk.htm
+spdx_license_key: LicenseRef-scancode-adobe-flex-sdk
 ignorable_urls:
     - http://www.adobe.com/go/thirdparty

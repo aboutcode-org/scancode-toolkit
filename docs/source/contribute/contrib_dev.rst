@@ -39,7 +39,7 @@ patches.
 We write tests, a lot of tests, thousands of tests. Several tests are data-driven and use data
 files as test input and sometimes data files as test expectation (in this case using either
 JSON or YAML files). The tests should pass on Linux 64 bits, Windows 32 and 64 bits and on
-MacOSX 10.6.8 and up. We maintain two CI loops with Travis (Linux) at
+MacOS 10.9 and up. We maintain two CI loops with Travis (Linux) at
 https://travis-ci.org/nexB/scancode-toolkit and Appveyor (Windows) at
 https://ci.appveyor.com/project/nexB/scancode-toolkit.
 

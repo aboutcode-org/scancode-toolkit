@@ -22,96 +22,96 @@
     {
       "path": "basic.tgz",
       "type": "directory",
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic",
       "type": "directory",
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dbase.fdt",
       "type": "file",
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir",
       "type": "directory",
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/e.tar",
       "type": "file",
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/subdir",
       "type": "directory",
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/subdir/a.aif",
       "type": "file",
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2",
       "type": "directory",
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir",
       "type": "directory",
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir/config.conf",
       "type": "file",
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/main.c",
       "type": "file",
-      "holders": [
+      "copyrights": [
         {
-          "value": "Jouni Malinen",
+          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
           "start_line": 3,
           "end_line": 3
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
+          "value": "Jouni Malinen",
           "start_line": 3,
           "end_line": 3
         }

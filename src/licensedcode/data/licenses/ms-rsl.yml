@@ -8,5 +8,6 @@ notes: "This is a rarely seen license. It was used shortly in 2005/2007 with the
     some .Net code. There are two versions one published in 2006 and this\nversion from March\
     \ 2007 . It is sometimes named Microsoft Reference License (Ms-RL)\nwith the exact same\
     \ text. \n"
+spdx_license_key: LicenseRef-scancode-ms-rsl
 text_urls:
     - http://www.microsoft.com/resources/sharedsource/referencesourcelicense.mspx

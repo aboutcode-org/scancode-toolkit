@@ -4,5 +4,6 @@ name: Wind River License
 category: Commercial
 owner: Wind River Systems
 homepage_url: http://www.windriver.com/licensing/
+spdx_license_key: LicenseRef-scancode-windriver-commercial
 ignorable_urls:
     - http://www.windriver.com/licensing/

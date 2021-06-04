@@ -4,3 +4,4 @@ name: Nilsson Historical License
 category: Permissive
 owner: Hans-Peter Nilsson
 notes: this is a short historical permissive license seen in the newlib C library
+spdx_license_key: LicenseRef-scancode-nilsson-historical

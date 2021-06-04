@@ -4,6 +4,7 @@ name: Oracle Technology Network License Agreement for Oracle Java SE
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: https://www.oracle.com/downloads/licenses/oracle-javase-license.html
+spdx_license_key: LicenseRef-scancode-oracle-otn-javase-2019
 faq_url: https://www.oracle.com/technetwork/java/javase/overview/oracle-jdk-faqs.html
 other_urls:
     - https://www.oracle.com/technetwork/java/javase/terms/oaa.html
@@ -16,4 +17,3 @@ ignorable_urls:
     - https://java.com/oaa
     - https://oss.oracle.com/sources/
     - https://www.oracle.com/technetwork/java/javase/documentation/
-

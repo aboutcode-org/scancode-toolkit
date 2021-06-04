@@ -1,0 +1,9 @@
+license_expression: tmate AND apache-2.0
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) TMate Software
+ignorable_holders:
+    - TMate Software
+ignorable_emails:
+    - support@svnkit.com

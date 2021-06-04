@@ -1,0 +1,9 @@
+license_expression: bsd-original
+is_license_text: yes
+relevance: 100
+minimum_coverage: 95
+notes: See in https://github.com/MirBSD/z-archive-cvs/blob/cf42464925efd09ffd028556dc89021aef74901c/src/share/doc/legal/lbsd-caldera.mdoc%2Cv
+ignorable_copyrights:
+    - Copyright (c) Caldera International Inc. 2001-2002
+ignorable_holders:
+    - Caldera International Inc.

@@ -1,0 +1,16 @@
+license_expressions:
+  - gpl-2.0 OR gpl-3.0 OR kde-accepted-gpl
+  - lgpl-2.1 OR lgpl-3.0 OR kde-accepted-lgpl
+  - gpl-2.0-plus
+  - gpl-3.0
+  - gpl-3.0-plus
+  - gpl-3.0-plus
+  - gpl-3.0-plus
+  - lgpl-2.1
+  - lgpl-2.1
+  - lgpl-2.1-plus
+  - bsd-simplified AND bsd-new
+  - x11-xconsortium
+  - x11-xconsortium
+  - mit
+  - mit

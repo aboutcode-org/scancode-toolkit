@@ -4,6 +4,7 @@ name: NVIDIA License
 category: Permissive
 owner: NVIDIA
 homepage_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html#7
+spdx_license_key: LicenseRef-scancode-nvidia
 text_urls:
     - http://www.xfree86.org/3.3.6/COPYRIGHT2.html#7
 ignorable_copyrights:

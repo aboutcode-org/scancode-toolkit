@@ -1,4 +1,4 @@
 license_expression: proprietary-license
-minimum_coverage: 25
 is_license_text: yes
+minimum_coverage: 25
 notes: a fairly complicated license that looks a bit like a bsd. from https://github.com/SBPrime/AsyncWorldEdit/wiki/License

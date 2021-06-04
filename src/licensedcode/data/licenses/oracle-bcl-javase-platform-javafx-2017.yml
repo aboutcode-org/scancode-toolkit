@@ -4,6 +4,7 @@ name: Oracle BCL for Java SE Platform Products and JavaFX 2017 Restricted
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/java/javase/terms/license/index.html
+spdx_license_key: LicenseRef-scancode-oracle-bcl-javase-platform-javafx-2017
 faq_url: https://www.oracle.com/technetwork/java/javase/documentation/index.html
 other_urls:
     - https://www.oracle.com/technetwork/java/javase/terms/products/index.html

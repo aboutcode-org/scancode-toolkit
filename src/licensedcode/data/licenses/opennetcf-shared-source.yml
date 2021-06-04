@@ -4,6 +4,7 @@ name: OpenNETCF Shared Source License
 category: Proprietary Free
 owner: OpenNETCF Consulting
 homepage_url: http://www.opennetcf.com/products/licenses.aspx
+spdx_license_key: LicenseRef-scancode-opennetcf-shared-source
 ignorable_copyrights:
     - (c) 2006-2012 OpenNETCF Consulting, LLC.
 ignorable_holders:

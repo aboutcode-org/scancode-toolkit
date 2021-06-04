@@ -4,5 +4,6 @@ name: ATI Software End User License Agreement
 category: Proprietary Free
 owner: Advanced Micro Devices
 homepage_url: http://www.amd.com/us/pages/amdhomepage.aspx
+spdx_license_key: LicenseRef-scancode-ati-eula
 text_urls:
     - http://www.amd.com/us/pages/amdhomepage.aspx

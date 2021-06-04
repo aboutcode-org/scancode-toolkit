@@ -4,6 +4,7 @@ name: Lyubinskiy dropdown License
 category: Proprietary Free
 owner: Ilya S. Lyubinskiy
 homepage_url: http://www.php-development.ru/
+spdx_license_key: LicenseRef-scancode-lyubinskiy-dropdown
 other_urls:
     - http://www.php-development.ru/javascripts/dropdown.php
 ignorable_urls:

@@ -4,4 +4,5 @@ name: NTP Origin License
 category: Permissive
 owner: Atos
 notes: a rare, NTP-like license found in NTP. Origin B.V. was merged into Atos
+spdx_license_key: LicenseRef-scancode-ntpl-origin
 minimum_coverage: 90

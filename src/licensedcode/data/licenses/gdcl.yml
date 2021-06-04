@@ -4,5 +4,6 @@ name: GDCL License
 category: Permissive
 owner: Geraint Davies Consulting Ltd
 homepage_url: http://www.gdcl.co.uk/
+spdx_license_key: LicenseRef-scancode-gdcl
 other_urls:
     - http://www.gdcl.co.uk

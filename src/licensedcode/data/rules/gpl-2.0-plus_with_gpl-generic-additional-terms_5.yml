@@ -1,0 +1,5 @@
+license_expression: gpl-2.0-plus WITH gpl-generic-additional-terms
+is_license_notice: yes
+relevance: 100
+notes: This is a rare exception that is used in some old Tahoe-LAFS versions. It was later replaced
+    by a choice of GPL or TGPPL See https://tahoe-lafs.org/trac/tahoe-lafs/browser/trunk/README?rev=bf14613b6aa1efdc13195e7578020426a9f4dfdc

@@ -1,0 +1,7 @@
+license_expression: proprietary-license
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - ZipArchive.h
+notes: Seen in https://github.com/Abin-Liu/JDArchive/blob/8f4e7b56ccbb659b6d855a05aa8f2bd447e9ada3/Client/ZipArchive/ZipInternalInfo.cpp

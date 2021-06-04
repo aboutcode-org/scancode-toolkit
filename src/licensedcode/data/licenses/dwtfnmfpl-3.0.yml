@@ -5,3 +5,4 @@ category: Permissive
 owner: dittodhole
 homepage_url: https://github.com/dittodhole/WTFNMFPLv3
 notes: A variant on the Do What The Fuck You Want Public License (WTFPL) by Sam Hocevar.
+spdx_license_key: LicenseRef-scancode-dwtfnmfpl-3.0

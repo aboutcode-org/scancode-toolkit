@@ -1,0 +1,7 @@
+license_expressions:
+  - unknown-license-reference
+  - sun-jsr-spec-04-2006
+  - commercial-license
+  - proprietary-license
+notes: this is not really the EJB or SDk spec but is essentially the same license, but from
+  BEA. The detection is not perfect, but we do not want to add such a rare full text for now.

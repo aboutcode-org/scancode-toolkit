@@ -4,6 +4,6 @@ name: Hazelcast Community License 1.0
 category: Source-available
 owner: Hazelcast
 homepage_url: https://github.com/hazelcast/hazelcast-aws/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-hazelcast-community-1.0
 ignorable_urls:
-  - http://hazelcast.com/Hazelcast-community-license
-
+    - http://hazelcast.com/Hazelcast-community-license

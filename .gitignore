@@ -4,8 +4,11 @@
 # Python compiled files
 *.py[cod]
 
+# do not commit thriparty cache of wheels
+/thirdparty
+
 # virtualenv and other misc bits
-*.egg-info
+/src/*.egg-info
 /dist
 /build
 /bin
@@ -79,3 +82,9 @@ pyvenv.cfg
 lib64
 tcl
 /.env
+
+*.orig
+/release*
+/00-*.txt
+/z-todo-licenses-*
+

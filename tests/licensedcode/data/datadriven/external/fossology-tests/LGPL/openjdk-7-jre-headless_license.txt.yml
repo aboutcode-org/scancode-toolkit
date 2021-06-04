@@ -1,0 +1,114 @@
+license_expressions:
+  - openjdk-assembly-exception-1.0
+  - mit
+  - gpl-2.0 WITH classpath-exception-2.0
+  - gpl-2.0
+  - agpl-3.0-plus
+  - gpl-2.0 WITH oracle-openjdk-classpath-exception-2.0 AND gpl-2.0 WITH openjdk-assembly-exception-1.0
+    AND other-copyleft AND other-permissive
+  - lgpl-2.0
+  - apache-2.0
+  - oracle-openjdk-classpath-exception-2.0
+  - openjdk-exception
+  - generic-trademark
+  - mit
+  - bsd-new
+  - zlib
+  - w3c-software-19980720
+  - unknown
+  - jscheme
+  - bsd-3-clause-no-change
+  - apache-1.1
+  - w3c
+  - w3c
+  - apache-1.1
+  - apache-1.1
+  - npl-1.1
+  - mpl-1.1
+  - khronos
+  - apache-2.0
+  - apache-1.1
+  - apache-1.1
+  - apache-1.1
+  - apache-1.1
+  - standard-ml-nj
+  - sax-pd
+  - bzip2-libbzip-2010
+  - bzip2-libbzip-2010
+  - bsd-new
+  - libpng
+  - unknown
+  - apache-2.0
+  - apache-2.0
+  - apache-2.0
+  - x11
+  - unknown
+  - unicode
+  - bzip2-libbzip-2010
+  - mit
+  - unknown
+  - unknown
+  - xfree86-1.1
+  - apache-1.1
+  - warranty-disclaimer
+  - ijg
+  - ijg
+  - xfree86-1.0
+  - x11-keith-packard
+  - xfree86-1.0
+  - apache-2.0
+  - apache-2.0
+  - unknown
+  - apache-2.0
+  - apache-2.0
+  - mit-no-advert-export-control
+  - unknown
+  - mit
+  - x11-keith-packard
+  - unicode
+  - historical
+  - x11 AND other-permissive
+  - mit
+  - historical
+  - warranty-disclaimer
+  - x11-xconsortium
+  - x11
+  - x11-keith-packard
+  - x11-opengroup
+  - x11-keith-packard
+  - x11-xconsortium
+  - x11-xconsortium
+  - x11-keith-packard
+  - unknown
+  - mit
+  - unknown
+  - free-unknown
+  - zlib
+  - apache-1.1
+  - apache-1.1
+  - public-domain
+  - zlib
+  - gpl-2.0-plus AND other-permissive AND other-copyleft
+  - mozilla-gc
+  - gpl-1.0-plus AND other-permissive AND other-copyleft
+  - mit
+  - x11-lucent
+  - sunpro
+  - gpl-2.0
+  - gpl-2.0-plus
+  - gpl-2.0-plus
+  - gpl-2.0-plus
+  - gpl-2.0 WITH classpath-exception-2.0
+  - gpl-1.0-plus WITH autoconf-simple-exception-2.0
+  - gpl-2.0-plus
+  - zlib
+  - mozilla-gc
+  - mit
+  - gpl-2.0-plus
+  - gpl-2.0-plus
+expected_failure: yes
+notes: This tests behaves differently between Python 2 and Python 3 due to differences in rounding
+  causing different license match candidates to be selected for the license sequence matcher
+  The expectations here are for Python 3 and the test is expected to fail on Python 2, but is
+  marked to fail everywhere When the Python 3 migration is complete, the expected failure should
+  be removed.

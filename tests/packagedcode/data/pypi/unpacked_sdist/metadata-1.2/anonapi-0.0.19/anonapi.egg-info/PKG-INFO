@@ -1,0 +1,24 @@
+Metadata-Version: 1.2
+Name: anonapi
+Version: 0.0.19
+Summary: Client and tools for working with the anoymization web API
+Home-page: https://github.com/sjoerdk/anonapi
+Author: Sjoerd Kerkstra
+Author-email: sjoerd.kerkstra@radboudumc.nl
+License: MIT license
+Description: =======
+        AnonAPI
+        =======
+        
+        .. image:: https://img.shields.io/pypi/v/anonapi.svg
+            :target: https://pypi.python.org/pypi/anonapi
+        
+Keywords: anonapi
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.6

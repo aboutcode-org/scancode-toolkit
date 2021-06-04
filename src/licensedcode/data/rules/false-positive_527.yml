@@ -1,0 +1,2 @@
+is_false_positive: yes
+notes: Seen in Python setuptools/_distutils/dist.py https://github.com/pypa/setuptools/blob/b6bbe236ed0689f50b5148f1172510b975687e62/setuptools/_distutils/dist.py#L109

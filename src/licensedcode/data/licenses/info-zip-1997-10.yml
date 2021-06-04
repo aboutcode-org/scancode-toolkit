@@ -4,6 +4,7 @@ name: Info-Zip License 1997-10
 category: Permissive
 owner: info-zip
 homepage_url: http://www.info-zip.org/
+spdx_license_key: LicenseRef-scancode-info-zip-1997-10
 text_urls:
     - ftp://ftp.info-zip.org/pub/infozip/doc/copying
 ignorable_copyrights:

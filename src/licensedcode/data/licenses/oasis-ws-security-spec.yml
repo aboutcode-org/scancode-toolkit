@@ -4,6 +4,7 @@ name: Oasis WS Security Specification License
 category: Permissive
 owner: OASIS
 homepage_url: http://www.oasis-open.org/org
+spdx_license_key: LicenseRef-scancode-oasis-ws-security-spec
 text_urls:
     - http://www.oasis-open.org/org
 ignorable_copyrights:

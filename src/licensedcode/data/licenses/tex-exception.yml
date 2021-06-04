@@ -4,3 +4,4 @@ name: TeX exception to GPL 3.0
 category: Copyleft Limited
 owner: Unspecified
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-tex-exception

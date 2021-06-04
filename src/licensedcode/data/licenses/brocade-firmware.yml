@@ -4,3 +4,4 @@ name: Brocade Firmware License
 category: Permissive
 owner: Brocade
 homepage_url: http://download.vikis.lt/doc//bfa-firmware-3.2.23.0/LICENSE
+spdx_license_key: LicenseRef-scancode-brocade-firmware

@@ -4,4 +4,5 @@ name: X11-Style (David R. Hanson)
 category: Permissive
 owner: David R. Hanson
 homepage_url: http://www.research.microsoft.com/~drh/
+spdx_license_key: LicenseRef-scancode-x11-hanson
 minimum_coverage: 80

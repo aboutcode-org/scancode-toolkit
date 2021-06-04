@@ -1,0 +1,15 @@
+about_resource: atarashi
+purl: pkg:github/fossology/atarashi@4064aaff6e76da0d94c0e9abf709758e4ee107d9#atarashi/evaluator/TestFiles
+namespace: fossology
+name: atarashi
+download_url: https://github.com/fossology/atarashi/archive/4064aaff6e76da0d94c0e9abf709758e4ee107d9.tar.gz
+license_expression: gpl-2.0
+copyright: Copyright 2018 Aman Jain, Gaurav Mishra and others.
+homepage_url: https://github.com/fossology/atarashi
+vcs_url: git+https://github.com/fossology/atarashi
+bug_tracking_url: https://github.com/fossology/atarashi/issues
+attribute: yes
+redistribute: yes
+licenses:
+  - key: gpl-2.0
+    file: atarashi.LICENSE

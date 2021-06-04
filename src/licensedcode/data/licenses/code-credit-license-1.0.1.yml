@@ -1,0 +1,15 @@
+key: code-credit-license-1.0.1
+short_name: Code Credit License v1.0.1
+name: Code Credit License v1.0.1
+category: Permissive
+owner: Kyle Mitchell
+homepage_url: https://github.com/creditstxt/code-credit-license/releases/tag/v1.0.1
+spdx_license_key: LicenseRef-scancode-code-credit-license-1.0.1
+other_urls:
+    - https://github.com/otherjoel/amulet-mining/blob/main/LICENSE.md
+    - https://github.com/DoctorLaplace/Storm-Mind-Public/blob/main/LICENSE
+    - https://github.com/pedrohdjs/javascript-basico-para-programadores/blob/main/LICENSE
+ignorable_urls:
+  - https://codecreditlicense.com/license/1.0.1
+  - https://creditstxt.com/
+

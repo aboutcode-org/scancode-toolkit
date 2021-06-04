@@ -8,6 +8,7 @@ notes: |
     this is a patents grant and obligations notice available in several
     Facebook open source components since 2015 typically associated with a bsd-
     new license.
+spdx_license_key: LicenseRef-scancode-facebook-patent-rights-2
 text_urls:
     - https://github.com/facebook/osquery/blob/f1d6686735c4582c8ccbcbb3f7c8bc9825247965/PATENTS
     - https://github.com/facebook/react/blob/56e20b4ab5899127b67b4a31cfd7b4bf1fc79616/PATENTS

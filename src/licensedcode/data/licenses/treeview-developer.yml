@@ -4,6 +4,7 @@ name: TreeView Developer License
 category: Proprietary Free
 owner: GubuSoft
 homepage_url: http://www.treeview.net/tv/license_dev.asp
+spdx_license_key: LicenseRef-scancode-treeview-developer
 minimum_coverage: 60
 ignorable_copyrights:
     - Copyright (c) 2006 Conor O'Mahony (gubusoft@gubusoft.com)

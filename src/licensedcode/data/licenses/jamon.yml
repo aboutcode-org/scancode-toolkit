@@ -4,6 +4,7 @@ name: JAMon License
 category: Free Restricted
 owner: Steve Souza
 homepage_url: http://jamonapi.sourceforge.net/JAMonLicense.html
+spdx_license_key: LicenseRef-scancode-jamon
 minimum_coverage: 95
 ignorable_copyrights:
     - Copyright (c) 2002, Steve Souza (admin@jamonapi.com)

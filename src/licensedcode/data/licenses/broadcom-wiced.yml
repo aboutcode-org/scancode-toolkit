@@ -3,5 +3,6 @@ short_name: Broadcom WICED SDK License
 name: Broadcom WICED Development Kit License Agreement
 category: Proprietary Free
 owner: Broadcom
+spdx_license_key: LicenseRef-scancode-broadcom-wiced
 ignorable_urls:
     - http://www.broadcom.com/

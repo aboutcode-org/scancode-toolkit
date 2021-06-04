@@ -4,5 +4,6 @@ name: Martin Bergmeier License
 category: Permissive
 owner: Martin Bergmeier
 homepage_url: https://chromium.googlesource.com/native_client/nacl-newlib/+/590b76526a1ff92504bf20234610043fd45ae034/newlib/libc/stdlib/rand48.h
+spdx_license_key: LicenseRef-scancode-martin-birgmeier
 text_urls:
     - https://chromium.googlesource.com/native_client/nacl-newlib/+/590b76526a1ff92504bf20234610043fd45ae034/newlib/libc/stdlib/rand48.h

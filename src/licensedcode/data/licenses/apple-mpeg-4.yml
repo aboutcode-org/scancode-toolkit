@@ -3,6 +3,7 @@ short_name: Apple MPEG-4 License
 name: Apple MPEG-4 License
 category: Free Restricted
 owner: Apple
+spdx_license_key: LicenseRef-scancode-apple-mpeg-4
 ignorable_copyrights:
     - Copyright (c) 1999
 ignorable_authors:

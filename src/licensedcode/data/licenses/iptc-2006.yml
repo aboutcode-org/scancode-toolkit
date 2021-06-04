@@ -4,5 +4,6 @@ name: License Agreement for International Press Telecommunications Council 2006
 category: Proprietary Free
 owner: International Press Telecommunications Council
 homepage_url: https://iptc.org/download/public/IPTC-SpecAndMaterialLicense.html
+spdx_license_key: LicenseRef-scancode-iptc-2006
 ignorable_urls:
     - http://www.iptc.org/

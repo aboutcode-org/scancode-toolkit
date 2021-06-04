@@ -1,8 +1,8 @@
 license_expression: bsd-original-uc
 is_license_text: yes
+minimum_coverage: 90
 ignorable_authors:
     - UC Berkeley and its contributors
     - the University of California, Berkeley and its contributors
 ignorable_urls:
     - ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
-minimum_coverage: 90

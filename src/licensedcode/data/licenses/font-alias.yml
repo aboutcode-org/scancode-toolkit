@@ -3,6 +3,7 @@ short_name: font-alias License
 name: font-alias License
 category: Permissive
 owner: X.Org
+spdx_license_key: LicenseRef-scancode-font-alias
 text_urls:
     - https://www.x.org/releases/individual/font/font-alias-1.0.3.tar.bz2
 standard_notice: |

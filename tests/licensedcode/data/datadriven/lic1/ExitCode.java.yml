@@ -1,0 +1,3 @@
+license_expressions:
+  - epl-1.0 OR lgpl-2.1-plus
+notes: from https://gitlab.ow2.org/sat4j/sat4j/-/raw/master/org.sat4j.core/src/main/java/org/sat4j/ExitCode.java

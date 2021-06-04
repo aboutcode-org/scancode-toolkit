@@ -1,0 +1,8 @@
+license_expressions:
+  - google-patent-license-golang
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/GooglePatentClause.t1
+  originally expected to be detected as GooglePatentClause
+  with coverage of 100.0
+  This is for an other (likey older?) version of google-patent-license-golang

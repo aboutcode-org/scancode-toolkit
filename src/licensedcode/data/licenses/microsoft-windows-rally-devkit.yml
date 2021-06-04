@@ -3,6 +3,7 @@ short_name: MS Windows Rally Development Kit License
 name: Microsoft Windows Rally Development Kit License
 category: Proprietary Free
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-microsoft-windows-rally-devkit
 ignorable_urls:
     - http://www.microsoft.com/
     - http://www.microsoft.com/exporting

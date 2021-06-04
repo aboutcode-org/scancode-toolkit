@@ -1,0 +1,11 @@
+license_expression: lgpl-2.1-plus WITH rxtx-exception-lgpl-2.1
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright 1997-2007 by Trent Jarvi tjarvi@qbang.org and others
+ignorable_holders:
+    - Trent Jarvi and others
+ignorable_urls:
+    - http://www.fsf.org/licenses/gpl-faq.html#LinkingOverControlledInterface
+ignorable_emails:
+    - tjarvi@qbang.org

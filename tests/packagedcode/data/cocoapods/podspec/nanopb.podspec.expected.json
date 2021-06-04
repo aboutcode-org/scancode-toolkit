@@ -6,7 +6,7 @@
   "qualifiers": {},
   "subpath": null,
   "primary_language": "Objective-C",
-  "description": " Nanopb is a small code-size Protocol Buffers implementation Nanopb is a small code-size Protocol Buffers implementation in ansi C. It is especially suitable for use in Nanopb is a small code-size Protocol Buffers implementation Nanopb is a small code-size Protocol Buffers implementation in ansi C. It is especially suitable for use in microcontrollers, but fits any memory restricted system.",
+  "description": "Protocol buffers with small code size.\n Nanopb is a small code-size Protocol Buffers implementation Nanopb is a small code-size Protocol Buffers implementation in ansi C. It is especially suitable for use in Nanopb is a small code-size Protocol Buffers implementation Nanopb is a small code-size Protocol Buffers implementation in ansi C. It is especially suitable for use in microcontrollers, but fits any memory restricted system.",
   "release_date": null,
   "parties": [
     {

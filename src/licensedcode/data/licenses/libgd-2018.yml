@@ -4,40 +4,42 @@ name: libgd License 2018
 category: Permissive
 owner: GD Graphics (Draw) Library Project
 homepage_url: https://github.com/libgd/libgd/blob/master/COPYING
+spdx_license_key: GD
+other_spdx_license_keys:
+    - LicenseRef-scancode-libgd-2018
 text_urls:
     - https://libgd.github.io/manuals/2.3.0/files/license-txt.html
 ignorable_copyrights:
-  - Portions copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004 by Cold
-    Spring Harbor Laboratory
-  - Portions copyright 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004 by Boutell.Com,
-    Inc.
-  - Portions copyright 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Pierre-Alain Joye (pierre@libgd.org)
-  - copyright (c) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004 Thomas G.
-    Lane
-  - copyright 1989 by Jef Poskanzer and David Rowley
-  - copyright 1990, 1991, 1993 by David Koblas
-  - copyright 1999, 2000, 2001, 2002, 2003, 2004 Greg Roelofs
-  - copyright 1999, 2000, 2001, 2002, 2003, 2004 John Ellson (ellson@graphviz.org)
-  - copyright 1999, 2000, 2001, 2002, 2003, 2004 Philip Warner
-  - copyright 2000, 2001, 2002, 2003, 2004 Maurice Szmurlo and Johan Van den Brande
-  - copyright 2000, 2001, 2002, 2003, 2004, Doug Becker
-  - copyright 2001, 2002, 2003, 2004 John Ellson (ellson@graphviz.org)
-  - copyright 2004 Jaakko Hyvatti (jaakko.hyvatti@iki.fi)
-ignorable_emails:
-  - ellson@graphviz.org
-  - jaakko.hyvatti@iki.fi
-  - pierre@libgd.org
+    - Portions copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004 by
+        Cold Spring Harbor Laboratory
+    - Portions copyright 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004 by Boutell.Com,
+        Inc.
+    - Portions copyright 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Pierre-Alain Joye (pierre@libgd.org)
+    - copyright (c) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004 Thomas
+        G. Lane
+    - copyright 1989 by Jef Poskanzer and David Rowley
+    - copyright 1990, 1991, 1993 by David Koblas
+    - copyright 1999, 2000, 2001, 2002, 2003, 2004 Greg Roelofs
+    - copyright 1999, 2000, 2001, 2002, 2003, 2004 John Ellson (ellson@graphviz.org)
+    - copyright 1999, 2000, 2001, 2002, 2003, 2004 Philip Warner
+    - copyright 2000, 2001, 2002, 2003, 2004 Maurice Szmurlo and Johan Van den Brande
+    - copyright 2000, 2001, 2002, 2003, 2004, Doug Becker
+    - copyright 2001, 2002, 2003, 2004 John Ellson (ellson@graphviz.org)
+    - copyright 2004 Jaakko Hyvatti (jaakko.hyvatti@iki.fi)
 ignorable_holders:
-  - Boutell.Com, Inc.
-  - Cold Spring Harbor Laboratory
-  - David Koblas
-  - Doug Becker
-  - Greg Roelofs
-  - Jaakko Hyvatti
-  - Jef Poskanzer and David Rowley
-  - John Ellson
-  - Maurice Szmurlo and Johan Van den Brande
-  - Philip Warner
-  - Pierre-Alain Joye
-  - Thomas G. Lane
-
+    - Boutell.Com, Inc.
+    - Cold Spring Harbor Laboratory
+    - David Koblas
+    - Doug Becker
+    - Greg Roelofs
+    - Jaakko Hyvatti
+    - Jef Poskanzer and David Rowley
+    - John Ellson
+    - Maurice Szmurlo and Johan Van den Brande
+    - Philip Warner
+    - Pierre-Alain Joye
+    - Thomas G. Lane
+ignorable_emails:
+    - ellson@graphviz.org
+    - jaakko.hyvatti@iki.fi
+    - pierre@libgd.org
