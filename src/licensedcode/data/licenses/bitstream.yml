@@ -8,5 +8,4 @@ spdx_license_key: LicenseRef-scancode-bitstream
 text_urls:
     - http://www.gnome.org/fonts/#Final_Bitstream_Vera_Fonts
 minimum_coverage: 50
-ignorable_authors:
-    - authorization from the Gnome Foundation or Bitstream Inc.
+
