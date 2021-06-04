@@ -147,8 +147,8 @@ class License(object):
                 self.load()
 
     def set_file_paths(self):
-        self.data_file = join(self.src_dir, self.key + '.yml')
-        self.text_file = join(self.src_dir, self.key + '.LICENSE')
+        self.data_file = join(self.src_dir, f'{self.key}.yml')
+        self.text_file = join(self.src_dir, f'{self.key}.LICENSE')
 
     def relocate(self, target_dir, new_key=None):
         """
@@ -263,9 +263,9 @@ class License(object):
 
                 if k == 'key':
                     assert self.key == v, (
-                        'The license "key" attribute in the .yml file MUST '
-                        'be the same as the base name of this license .LICENSE '
-                        'and .yml data files license files. '
+                        'The license "key" attribute in the .yml file MUST ' +
+                        'be the same as the base name of this license .LICENSE ' +
+                        'and .yml data files license files. ' +
                         f'Yet file name = {self.key} and license key = {v}'
                     )
 
@@ -336,7 +336,7 @@ class License(object):
             if lic.category and lic.category not in CATEGORIES:
                 cats = '\n'.join(sorted(CATEGORIES))
                 error(
-                    f'Unknown license category: {lic.category}.\n'
+                    f'Unknown license category: {lic.category}.\n' +
                     f'Use one of these valid categories:\n{cats}'
                 )
             if not lic.owner:
@@ -400,7 +400,7 @@ class License(object):
         if multiple_spdx_keys_used:
             for k, lkeys in multiple_spdx_keys_used.items():
                 errors['GLOBAL'].append(
-                    f'SPDX key: {k} used in multiple licenses: '
+                    f'SPDX key: {k} used in multiple licenses: ' +
                     ', '.join(sorted(lkeys)))
 
         # global text dedupe
@@ -408,7 +408,7 @@ class License(object):
         if multiple_texts:
             for k, msgs in multiple_texts.items():
                 errors['GLOBAL'].append(
-                    'Duplicate texts in multiple licenses:'
+                    'Duplicate texts in multiple licenses: ' +
                     ', '.join(sorted(msgs))
                 )
 
@@ -417,7 +417,7 @@ class License(object):
             if len(licenses) == 1:
                 continue
             errors['GLOBAL'].append(
-                f'Duplicate short name: {short_name} in licenses:'
+                f'Duplicate short name: {short_name} in licenses: ' +
                 ', '.join(l.key for l in licenses)
             )
 
@@ -426,7 +426,7 @@ class License(object):
             if len(licenses) == 1:
                 continue
             errors['GLOBAL'].append(
-                f'Duplicate name: {name} in licenses:'
+                f'Duplicate name: {name} in licenses: ' +
                 ', '.join(l.key for l in licenses)
             )
 
@@ -484,7 +484,7 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     dangling = all_files.difference(used_files)
     if dangling:
         msg = (
-            f'Some License files are orphaned in "{licenses_data_dir}".\n'
+            f'Some License files are orphaned in {licenses_data_dir!r}.\n' +
             '\n'.join(f'file://{f}' for f in sorted(dangling))
         )
         raise Exception(msg)
@@ -548,7 +548,7 @@ def validate_rules(rules, licenses_by_key, with_text=False):
             message.append('')
             message.append(msg)
             for rule in rules:
-                message.append('  ' + repr(rule))
+                message.append(f'  {rule!r}')
                 if rule.text_file:
                     message.append(f'    file://{rule.text_file}')
                 if rule.data_file:
@@ -640,7 +640,7 @@ def load_rules(rules_data_dir=rules_data_dir):
             base_name = file_base_name(data_file)
             if ' ' in base_name:
                 space_problems.append(data_file)
-            rule_file = join(rules_data_dir, base_name + '.RULE')
+            rule_file = join(rules_data_dir, f'{base_name}.RULE')
             try:
                 rule = Rule(data_file=data_file, text_file=rule_file)
                 yield rule
@@ -847,14 +847,11 @@ class BasicRule(object):
             try:
                 expression = self.licensing.parse(self.license_expression)
             except:
+                exp = self.license_expression
+                trace = traceback.format_exc()
                 raise InvalidRule(
-                    'Unable to parse rule License expression: {license_expression!r} '
-                    'for: file://{data_file}'
-                    '\n{trace}'.format(
-                        license_expression=self.license_expression,
-                        data_file=self.data_file,
-                        trace=traceback.format_exc(),
-                    )
+                    f'Unable to parse rule License expression: {exp!r} '
+                    f'for: file://{self.data_file}\n{trace}'
                 )
 
             if expression is None:
@@ -1114,7 +1111,8 @@ class Rule(BasicRule):
         if not self.text_file:
             # for SPDX or tests only
             if not self.stored_text :
-                raise InvalidRule(f'Invalid rule without its corresponding text file: {self}')
+                raise InvalidRule(
+                    f'Invalid rule without its corresponding text file: {self}')
             self.identifier = '_tst_' + str(len(self.stored_text))
         else:
             self.identifier = file_name(self.text_file)
@@ -1139,7 +1137,10 @@ class Rule(BasicRule):
         # We tag this rule as being a bare URL if it starts with a scheme and is
         # on one line: this is used to determine a matching approach
 
-        if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
+        if (
+            text.startswith(('http://', 'https://', 'ftp://'))
+            and '\n' not in text[:1000]
+        ):
             self.minimum_coverage = 100
 
         for token in index_tokenizer(self.text()):
@@ -1152,23 +1153,27 @@ class Rule(BasicRule):
     def compute_thresholds(self, small_rule=SMALL_RULE):
         """
         Compute and set thresholds either considering the occurrence of all
-        tokens or the occurance of unique tokens.
+        tokens or the occurence of unique tokens.
         """
-        minimum_coverage, self.min_matched_length, self.min_high_matched_length = (
+        min_cov, self.min_matched_length, self.min_high_matched_length = (
             compute_thresholds_occurences(
                 self.minimum_coverage,
                 self.length,
-                self.high_length))
+                self.high_length,
+            )
+        )
         if not self.has_stored_minimum_coverage:
-            self.minimum_coverage = minimum_coverage
+            self.minimum_coverage = min_cov
 
         self._minimum_containment = self.minimum_coverage / 100
 
         self.min_matched_length_unique, self.min_high_matched_length_unique = (
-        compute_thresholds_unique(
-            self.minimum_coverage,
-            self.length,
-            self.length_unique, self.high_length_unique))
+            compute_thresholds_unique(
+                self.minimum_coverage,
+                self.length,
+                self.length_unique, self.high_length_unique,
+            )
+        )
 
         self.is_small = self.length < small_rule
 
@@ -1184,7 +1189,8 @@ class Rule(BasicRule):
             return
 
         def write(location, byte_string):
-            # we write as binary because rules and licenses texts and data are UTF-8-encoded bytes
+            # we write as binary because rules and licenses texts and data are
+            # UTF-8-encoded bytes
             with io.open(location, 'wb') as of:
                 of.write(byte_string)
 
@@ -1204,7 +1210,7 @@ class Rule(BasicRule):
                 data = saneyaml.load(f.read())
         except Exception as e:
             print('#############################')
-            print('INVALID LICENSE RULE FILE:', 'file://' + self.data_file)
+            print('INVALID LICENSE RULE FILE:', f'file://{self.data_file}')
             print('#############################')
             print(e)
             print('#############################')
@@ -1283,7 +1289,8 @@ class Rule(BasicRule):
 
         - false positive rule has 100 relevance.
         - rule length equal or larger than threshold has 100 relevance
-        - rule length smaller than threshold has 100/threshold relevance rounded down.
+        - rule length smaller than threshold has 100/threshold relevance rounded
+          down.
 
         The current threshold is 18 words.
         """
@@ -1327,11 +1334,11 @@ class Rule(BasicRule):
             rules_directory=self.rule_dir()
         )
 
-        new_data_file = new_base_loc + '.yml'
+        new_data_file = f'{new_base_loc}.yml'
         shutil.move(self.data_file, new_data_file)
         self.data_file = new_data_file
 
-        new_text_file = new_base_loc + '.RULE'
+        new_text_file = f'{new_base_loc}.RULE'
         shutil.move(self.text_file, new_text_file)
         self.text_file = new_text_file
 
@@ -1435,20 +1442,22 @@ class SpdxRule(Rule):
     """
 
     def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = 'spdx-license-identifier: ' + self.license_expression
+        self.identifier = f'spdx-license-identifier: {self.license_expression}'
         expression = None
         try:
             expression = self.licensing.parse(self.license_expression)
         except:
             raise InvalidRule(
-                'Unable to parse License rule expression: ' +
-                repr(self.license_expression) + ' for: SPDX rule:' +
-                self.stored_text +
-                '\n' + traceback.format_exc())
+                'Unable to parse License rule expression: '
+                f'{self.license_expression!r} for: SPDX rule: '
+                f'{self.stored_text}\n' + traceback.format_exc()
+            )
+
         if expression is None:
             raise InvalidRule(
                 'Unable to parse License rule expression: '
-                +repr(self.license_expression) + ' for:' + repr(self.data_file))
+                f'{self.license_expression!r} for: {self.data_file!r}'
+            )
 
         self.license_expression = expression.render()
         self.license_expression_object = expression
@@ -1473,13 +1482,19 @@ def _print_rule_stats():
     rules = idx.rules_by_rid
     sizes = Counter(r.length for r in rules)
     print('Top 15 lengths: ', sizes.most_common(15))
-    print('15 smallest lengths: ', sorted(sizes.items(),
-                                          key=itemgetter(0))[:15])
+    print(
+        '15 smallest lengths: ',
+        sorted(sizes.items(),
+        key=itemgetter(0))[:15],
+    )
 
     high_sizes = Counter(r.high_length for r in rules)
     print('Top 15 high lengths: ', high_sizes.most_common(15))
-    print('15 smallest high lengths: ', sorted(high_sizes.items(),
-                                               key=itemgetter(0))[:15])
+    print(
+        '15 smallest high lengths: ',
+        sorted(high_sizes.items(),
+        key=itemgetter(0))[:15],
+    )
 
 
 def update_ignorables(licensish, verbose=False):
@@ -1491,7 +1506,7 @@ def update_ignorables(licensish, verbose=False):
     """
 
     if verbose:
-        print(f'Processing:', 'file://{licensish.text_file}')
+        print(f'Processing: file://{licensish.text_file}')
 
     if not exists(licensish.text_file):
         return licensish
@@ -1575,7 +1590,8 @@ def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):
     without overwriting any existing rule. Use the ``name_prefix`` string as a
     prefix for this name.
     """
-    template = (
+
+    cleaned = (
         name_prefix
         .lower()
         .strip()
@@ -1583,12 +1599,13 @@ def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):
         .replace('(', '')
         .replace(')', '')
         .strip('_-')
-    ) + '_{}'
+    )
+    template = cleaned + '_{idx}'
 
     idx = 1
     while True:
-        base_name = template.format(idx)
+        base_name = template.format(idx=idx)
         base_loc = join(rules_directory, base_name)
-        if not exists(base_loc + '.RULE'):
+        if not exists(f'{base_loc}.RULE'):
             return base_loc
         idx += 1

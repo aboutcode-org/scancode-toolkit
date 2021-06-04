@@ -118,7 +118,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
         assert '\n'.join(failure_trace) == '\n'.join(expected)
 
 
-def check_ignorable_clues(licensish, regen=False, verbose=True):
+def check_ignorable_clues(licensish, regen=False, verbose=False):
     """
     Validate that all current ignorable clues declared in a `licensish` License
     or Rule object are properly detected in that rule text file. Optionally

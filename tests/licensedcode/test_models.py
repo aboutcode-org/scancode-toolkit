@@ -103,7 +103,9 @@ class TestLicense(FileBasedTesting):
 
     def test_validate_license_library(self):
         errors, warnings, infos = models.License.validate(
-            cache.get_licenses_db(), verbose=True)
+            cache.get_licenses_db(),
+            verbose=False,
+        )
         assert errors == {}
         assert warnings == {}
         assert infos
@@ -112,13 +114,16 @@ class TestLicense(FileBasedTesting):
         test_dir = self.get_test_loc('models/validate')
         lics = models.load_licenses(test_dir)
         errors, warnings, infos = models.License.validate(
-            lics, no_dupe_urls=True, verbose=True)
+            lics,
+            no_dupe_urls=True,
+            verbose=False,
+        )
 
         expected_errors = {
             'GLOBAL': [
-                'Duplicate texts in multiple licenses:apache-2.0: TEXT, bsd-ack-carrot2: TEXT',
-                'Duplicate short name:GPL 1.0 in licenses:gpl-1.0-plus, gpl-1.0',
-                'Duplicate name:GNU General Public License 1.0 in licenses:gpl-1.0-plus, gpl-1.0'],
+                'Duplicate texts in multiple licenses: apache-2.0: TEXT, bsd-ack-carrot2: TEXT',
+                'Duplicate short name: GPL 1.0 in licenses: gpl-1.0-plus, gpl-1.0',
+                'Duplicate name: GNU General Public License 1.0 in licenses: gpl-1.0-plus, gpl-1.0'],
             'bsd-ack-carrot2': [
                 'No short name',
                 'No name',
@@ -162,7 +167,7 @@ class TestLicense(FileBasedTesting):
             list(models.load_licenses(test_dir))
             self.fail('Exception not raised')
         except Exception as e:
-            assert 'Some License data or text files are orphaned' in str(e)
+            assert 'Some License files are orphaned in' in str(e)
 
 
 class TestRule(FileBasedTesting):
@@ -200,9 +205,9 @@ class TestRule(FileBasedTesting):
         rule_consitency_errors = []
 
         for r in rules:
-            list_rule_types = [r.is_license_text, r.is_license_notice, 
+            list_rule_types = [r.is_license_text, r.is_license_notice,
                                r.is_license_tag, r.is_license_reference]
-    
+
             if any(type(rule_type) != bool for rule_type in list_rule_types):
                 rule_consitency_errors.append((r.data_file, r.text_file))
 
@@ -213,7 +218,7 @@ class TestRule(FileBasedTesting):
         rule_consitency_errors = []
 
         for r in rules:
-            list_rule_types = [r.is_license_text, r.is_license_notice, 
+            list_rule_types = [r.is_license_text, r.is_license_notice,
                                r.is_license_tag, r.is_license_reference]
 
             if sum(list_rule_types) > 1:
@@ -316,7 +321,6 @@ class TestRule(FileBasedTesting):
         expected_min_high_matched_length_unique = 3
         expected = expected_min_matched_length_unique, expected_min_high_matched_length_unique
         assert results == expected
-
 
     def test_Thresholds(self):
         r1_text = 'licensed under the GPL, licensed under the GPL'
