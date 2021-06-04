@@ -5,6 +5,5 @@ notes: Seen in https://github.com/apple-opensource-mirror/X11/blob/43e6e6c55db66
     This is a mix of Apache-1.1 and xfree86-1.1
 ignorable_authors:
     - X-Oz Technologies (http://www.x-oz.com/)
-    - authorization from X-Oz Technologies
 ignorable_urls:
     - http://www.x-oz.com/

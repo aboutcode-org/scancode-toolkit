@@ -1,0 +1,26 @@
+- - GPL-2+
+  - GPL-2+
+  - GPL-2+
+- (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+- |
+  1997-2005 Miquel van Smoorenburg <miquels@cistron.nl>
+  2015 Adam Conrad <adconrad@debian.org>
+  2018 Dmitry Bogatov <KAction@gnu.org>
+  2018 Vincenzo (KatolaZ) Nicosia <katolaz@freaknet.org>
+  2006 Henrique de Moraes Holschuh <hmh@debian.org>
+  2017 Ian Jackson <ijackson@chiark.greenend.org.uk>
+  2014 Petter Reinholdtsen <pere@debian.org>
+  2014 Robert Millan <rmh@debian.org>
+  2014 Thomas Goirand <zigo@debian.org>
+  2006 Thomas Hood <jdthood@yahoo.co.uk>
+  2015-2016 Andreas Henriksson <andreas@fatal.se>
+  2011,2016 Ben Hutchings <ben@decadent.org.uk>
+  2010-2012 Christian Perrier <bubulle@debian.org>
+  2015-2016 Martin Pitt <mpitt@debian.org>
+  2014-2018 Michael Biebl <biebl@debian.org>
+  1996-2004 Miquel van Smoorenburg <miquels@cistron.nl>
+  2005-2006 Petter Reinholdtsen <pere@debian.org>
+  2006-2010 Petter Reinholdtsen <pere@debian.org>
+  2011-2013 Roger Leigh <rleigh@debian.org>
+  2006-2007 Steinar H. Gunderson <sesse@debian.org>
+  2012-2013 Steve Langasek <vorlon@debian.org>

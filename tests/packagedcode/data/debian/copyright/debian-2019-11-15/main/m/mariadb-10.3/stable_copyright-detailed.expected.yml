@@ -1,28 +1,136 @@
-- |
-  GPL-2
-  GPL-2+
-  GPL-verbatim
-  public-domain
-  BSD-3-clause
-  LGPL-2.1+
-  BSD-2-clause
-  LGPL-2
-  unlimited-free-doc
-  LGPL
-  GPL-2 and BSD-2-clause
-  zlib/libpng
-  GPL-3+-with-bison-exception
-  GPL-2+-with-bison-exception
-  SWsoft
-  GPL-2 or Artistic
-  GPL-3+
-  MIT/X11
-  Artistic
-- artistic-perl-1.0 AND bsd-new AND bsd-simplified AND fsf-free AND gpl-1.0-plus AND gpl-2.0
-  AND gpl-2.0-plus AND gpl-2.0-plus WITH bison-exception-2.2 AND gpl-3.0-plus AND gpl-3.0-plus
-  WITH bison-exception-2.2 AND lgpl-2.0 AND lgpl-2.0-plus AND lgpl-2.1 AND lgpl-2.1-plus AND
-  lgpl-3.0-plus AND mit AND other-copyleft AND public-domain AND stlport-4.5 AND unknown AND
-  x11-xconsortium AND zlib
+- - GPL-2
+  - GPL-2+
+  - GPL-2
+  - GPL-2+
+  - GPL-2
+  - GPL-2
+  - GPL-verbatim
+  - GPL-2+
+  - public-domain
+  - BSD-3-clause
+  - BSD-3-clause
+  - LGPL-2.1+
+  - BSD-2-clause
+  - LGPL-2.1+
+  - LGPL-2
+  - GPL-2+
+  - BSD-2-clause
+  - BSD-2-clause
+  - LGPL-2.1+
+  - GPL-2+
+  - GPL-2+
+  - GPL-2
+  - unlimited-free-doc
+  - LGPL
+  - GPL-2
+  - GPL-2+
+  - GPL-2
+  - GPL-2
+  - GPL-2 and BSD-2-clause
+  - BSD-3-clause
+  - BSD-3-clause
+  - GPL-2
+  - GPL-2+
+  - LGPL
+  - LGPL
+  - GPL-2
+  - zlib/libpng
+  - GPL-2
+  - GPL-2
+  - LGPL
+  - public-domain
+  - GPL-3+-with-bison-exception
+  - GPL-2+-with-bison-exception
+  - GPL-3+-with-bison-exception
+  - GPL-3+-with-bison-exception
+  - GPL-2
+  - BSD-2-clause
+  - public-domain
+  - public-domain
+  - BSD-3-clause
+  - BSD-3-clause
+  - BSD-2-clause
+  - GPL-2
+  - LGPL-2.1+
+  - LGPL-2.1+
+  - GPL-2
+  - BSD-3-clause
+  - GPL-2
+  - GPL-2
+  - GPL-2
+  - GPL-2
+  - GPL-2
+  - GPL-2
+  - LGPL
+  - LGPL
+  - SWsoft
+  - public-domain
+  - GPL-2
+  - GPL-2 or Artistic
+  - public-domain
+  - BSD-3-clause
+  - GPL-2
+  - GPL-2+
+  - GPL-3+
+  - LGPL-2.1+
+  - GPL-2+
+  - MIT/X11
+  - BSD-3-clause
+  - GPL-2
+  - GPL-2
+  - GPL-2
+  - GPL-2
+  - GPL-2+
+  - LGPL-2.1+
+  - LGPL
+  - BSD-2-clause
+  - BSD-3-clause
+  - Artistic
+  - public-domain
+  - GPL-3+
+  - LGPL-2
+- (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND other-copyleft AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND public-domain AND bsd-new AND bsd-new AND (lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND bsd-simplified AND (lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.0 AND lgpl-3.0-plus AND lgpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND bsd-simplified AND bsd-simplified
+  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND
+  gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND fsf-free AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND
+  gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND ((gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-1.0-plus) AND bsd-simplified) AND bsd-new AND bsd-new AND (gpl-2.0 AND gpl-2.0 AND
+  gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0
+  AND gpl-1.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus)
+  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND zlib AND (gpl-2.0 AND
+  gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND
+  gpl-2.0 AND gpl-1.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND public-domain AND gpl-3.0-plus
+  WITH bison-exception-2.2 AND gpl-2.0-plus WITH bison-exception-2.2 AND gpl-3.0-plus WITH bison-exception-2.2
+  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND bsd-simplified AND
+  public-domain AND public-domain AND bsd-new AND bsd-new AND bsd-simplified AND (gpl-2.0 AND
+  gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND
+  lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND
+  (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND bsd-new AND (gpl-2.0 AND
+  gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND
+  gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-1.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus)
+  AND stlport-4.5 AND public-domain AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND ((gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND public-domain AND bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-3.0-plus
+  AND gpl-3.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (x11-xconsortium AND public-domain)
+  AND bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0
+  AND gpl-2.0 AND gpl-1.0-plus)
 - |
   2000-2016, Oracle and/or its affiliates. All rights reserved.
   2008-2013 Monty Program AB
@@ -102,9 +210,12 @@
   2009-2011, Monty Program Ab
   2000 TXT DataKonsult Ab & Monty Program Ab
   Richard A. O'Keefe
+  2011 Kristian Nielsen and Monty Program Ab
   2007-2013 Arjen G Lentz & Antony T Curtis for Open Query
   2000-2006 MySQL AB
   2004-2012 Olivier Bertrand
+  2007-2013 Arjen G Lentz & Antony T Curtis for Open Query
+  2000-2006 MySQL AB
   1994-1996, 1999-2002, 2004-2006, Free Software Foundation, Inc.
   2004, 2007, 2011, Oracle and/or its affiliates
   2000, 2001, 2010, 2011, Oracle and/or its affiliates
@@ -118,6 +229,7 @@
   2009 Percona Inc
   2013, 2014 SkySQL Ab
   2012 Facebook Inc
+  2008-2009 Sun Microsystems, Inc
   2008 Sun AB
   2006 MySQL Finland AB
   2006 TCX DataKonsult AB
@@ -137,8 +249,10 @@
   2001-2014 Andrew Aksyonoff
   2008-2014 Sphinx Technologies Inc
   1987-2006 Free Software Foundation Inc
+  2009 Sun Microsystems, Inc
   2000-2007 MySQL AB
   2000-2013 Oracle and/or its affiliates
+  2000-2007 MySQL AB
   2009 Sun Microsystems Inc
   2010 Kristian Nielsen and Monty Program AB
   1995-2005 Jean-loup Gailly
@@ -153,7 +267,12 @@
   1995-2009 Innobase Oy.
   1984,1989-1990,2000-2004 Free Software Foundation Inc.
   1984, 1989-1990, 2000-2006 Free Software Foundation, Inc.
+  2000 MySQL AB
+  1998 Theppitak Karoonboonyanan
+  1998-1999 Pruet Boonma
   Richard A. O'Keefe.
+  2000 TXT DataKonsult Ab & Monty Program Ab
+  2009-2011, Monty Program Ab
   1998 Abandoned Irena Pancirov - Irnet Snc
   1987 Abandoned Fred Fish
   2008-2009 Sun Microsystems Inc
@@ -188,6 +307,7 @@
   2007-2012 Oracle and/or its affiliates.
   1991,2000-2001 Lucent Technologies
   2000-2002,2005-2008 MySQL AB
+  2008-2009 Sun Microsystems Inc
   2000 SWsoft company
   1998 Abandoned TCX DataKonsult AB & Monty Program KB & Detron HB
   1997, Yves.Carlier@rug.ac.be
@@ -204,8 +324,10 @@
   1996 Fran,cois Pinard <pinard@iro.umontreal.ca>
   1996 Gordon Matzigkeit
   2007 Steven G. Johnson <stevenj@alum.mit.edu>
+  1987-2009 Free Software Foundation, Inc.
   1989-1994,1996-1999,2001,2003,2004 Free Software Foundation, Inc.
   Copyright (C) 1994 X Consortium
   2005-2011 Google Inc.
+  2006, 2014, Oracle and/or its affiliates
   2015 Daniel Black
   2008-2015 Codership Oy <http://www.codership.com>

@@ -17,11 +17,11 @@ from scancode_config import scancode_root_dir
 
 
 def run_scan_plain(
-    options,
-    cwd=None,
-    test_mode=True,
-    expected_rc=0,
-    env=None,
+    options, 
+    cwd=None, 
+    test_mode=True, 
+    expected_rc=0, 
+    env=None, 
     retry=True,
 ):
     """
@@ -107,25 +107,14 @@ def run_scan_click(
 
     runner = CliRunner()
 
-    result = runner.invoke(
-        cli.scancode,
-        options,
-        catch_exceptions=False,
-        env=env,
-    )
-
+    result = runner.invoke(cli.scancode, options, catch_exceptions=False, env=env)
     if retry and result.exit_code != expected_rc:
         if on_windows:
             # wait and rerun in verbose mode to get more in the output
             time.sleep(1)
         if '--verbose' not in options:
             options.append('--verbose')
-        result = runner.invoke(
-            cli.scancode,
-            options,
-            catch_exceptions=False,
-            env=env,
-        )
+        result = runner.invoke(cli.scancode, options, catch_exceptions=False, env=env)
 
     if result.exit_code != expected_rc:
         output = result.output
@@ -159,8 +148,7 @@ def add_windows_extra_timeout(options, timeout=WINDOWS_CI_TIMEOUT):
     Add a timeout to an options list if on Windows.
     """
     if on_windows and '--timeout' not in options:
-        # somehow the Appevyor windows CI is now much slower and timeouts at 120
-        # secs
+        # somehow the Appevyor windows CI is now much slower and timeouts at 120 secs
         options += ['--timeout', timeout]
     return options
 
@@ -205,10 +193,8 @@ def check_json_scan(
     # NOTE we redump the JSON as a string for a more efficient display of the
     # failures comparison/diff
     # TODO: remove sort, this should no longer be needed
-    expected = json.dumps(
-        expected, indent=2, sort_keys=True, separators=(',', ': '))
-    results = json.dumps(
-        results, indent=2, sort_keys=True, separators=(',', ': '))
+    expected = json.dumps(expected, indent=2, sort_keys=True, separators=(',', ': '))
+    results = json.dumps(results, indent=2, sort_keys=True, separators=(',', ': '))
     assert results == expected
 
 
@@ -229,16 +215,9 @@ def load_json_result(location, remove_file_date=False):
 
 def load_json_result_from_string(string, remove_file_date=False):
     """
-    Load and clean the JSON scan results `string`.
+    Load the JSON scan results `string` as UTF-8 JSON.
     """
     scan_results = json.loads(string)
-    return streamline_scan(scan_results, remove_file_date=remove_file_date)
-
-
-def streamline_scan(scan_results, remove_file_date=False):
-    """
-    Modify the `scan_results` mapping in place to make it easier to test,
-    """
     # clean new headers attributes
     streamline_headers(scan_results.get('headers', []))
     # clean file_level attributes

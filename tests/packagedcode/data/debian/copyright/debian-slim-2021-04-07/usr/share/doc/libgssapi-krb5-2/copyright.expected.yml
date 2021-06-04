@@ -1,0 +1,58 @@
+-
+- bsd-simplified AND generic-export-compliance AND cc-by-sa-3.0 AND proprietary-license AND
+  other-permissive AND mit-no-advert-export-control AND brian-gladman-3-clause AND bsd-new AND
+  unknown-license-reference AND mit AND bsd-2-clause-views AND michigan-disclaimer AND fsf-unlimited-no-warranty
+  AND openldap-2.8 AND freebsd-doc AND cmu-uc AND nrl-permission AND ietf-trust AND mit-old-style
+  AND (mit-no-advert-export-control AND proprietary-license) AND bsd-original-uc AND bsd-original
+  AND isc AND rsa-md4 AND rsa-md5 AND rsa-1990 AND mit-with-modification-obligations AND (bsd-simplified
+  OR gpl-2.0-plus) AND (mpl-1.1 OR gpl-1.0-plus) AND gpl-2.0
+- |
+  Copyright (c) 1985-2018 by the Massachusetts Institute of Technology
+  copyright MIT, Cygnus Support, Novell, OpenVision Technologies, Oracle, Red Hat, Sun Microsystems, FundsXpress, and others
+  Copyright, OpenVision Technologies, Inc., 1993-1996
+  Copyright (c) 1998 by the FundsXpress, INC.
+  Copyright (c) 2001, Dr Brian Gladman brg@gladman.uk.net', Worcester, UK.
+  Copyright (c) 2006 Red Hat, Inc.
+  Portions copyright (c) 2006 Massachusetts Institute of Technology
+  Copyright 2011 Red Hat, Inc.
+  Copyright 2013,2014 Red Hat, Inc.
+  Copyright (c) 2004 Sun Microsystems, Inc.
+  Copyright (c) 1983 Regents of the University of California
+  Copyright (c) 2004-2005, Novell, Inc.
+  COPYRIGHT (c) 2006-2007 THE REGENTS OF THE UNIVERSITY OF MICHIGAN
+  Copyright 2006 g10 Code GmbH
+  Copyright 2006 Andreas Jellinghaus
+  Copyright 2004-2008 Apple Inc.
+  Copyright 1999-2003 The OpenLDAP Foundation, Redwood City, California, USA.
+  Copyright (c) 2006 Kungliga Tekniska Hogskola (Royal Institute of Technology, Stockholm, Sweden)
+  Copyright (c) 2009 Kungliga Tekniska Hogskola (Royal Institute of Technology, Stockholm, Sweden)
+  Portions Copyright (c) 2009 Apple Inc.
+  Copyright (c) 2010, Oracle America, Inc.
+  Copyright (c) 2006,2007,2009 NTT (Nippon Telegraph and Telephone Corporation)
+  Copyright 2000 by Carnegie Mellon University
+  Copyright (c) 2002 Naval Research Laboratory
+  Copyright (c) The Internet Society (2006)
+  Copyright (c) 1991, 1992, 1994 by Cygnus
+  Copyright (c) 2006 Secure Endpoints Inc.
+  Copyright (c) 2005 Marko Kreen
+  Copyright (c) 1994 by the University of Southern California
+  Copyright (c) 1995 The President and Fellows of Harvard University
+  Copyright (c) 2008 by the Massachusetts Institute of Technology
+  Copyright 1995 by Richard P. Basch
+  Copyright 1995 by Lehman Brothers, Inc.
+  Copyright (c) 1997, 1998 The NetBSD Foundation, Inc.
+  Copyright 1997, 1998, 1999 Computing Research Labs, New Mexico State University
+  Copyright (c) 1998 Todd C. Miller Todd.Miller@courtesan.com
+  Copyright 1999 by Theodore Ts'o
+  Copyright (c) 1999-2000, The University of Chicago
+  Copyright (c) 2000 The Regents of the University of Michigan
+  Copyright (c) 2000 Dug Song dugsong@UMICH.EDU
+  Copyright (c) 1990, RSA Data Security, Inc.
+  Copyright (c) 1990, RSA Data Security, Inc.
+  Copyright (c) 1990-2, RSA Data Security, Inc.
+  Copyright (c) 1994 CyberSAFE Corporation
+  Copyright 1990,1991,2007,2008 by the Massachusetts Institute of Technology
+  Copyright (c) 2011, PADL Software Pty Ltd.
+  Copyright (c) 2007,2008,2009 Marc Alexander Lehmann
+  Copyright (c) 2010, Intel Corporation
+  Copyright (c) 1998 by Danilo Almeida

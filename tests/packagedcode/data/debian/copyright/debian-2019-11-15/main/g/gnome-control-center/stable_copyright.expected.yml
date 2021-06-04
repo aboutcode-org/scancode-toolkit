@@ -1,9 +1,9 @@
-- |
-  GPL-2+
-  Expat
-  LGPL-2+
-  LGPL-2.1+
-- gpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.1-plus AND mit AND unknown
+- - GPL-2+
+  - Expat
+  - LGPL-2+
+  - LGPL-2.1+
+- (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND mit AND (lgpl-2.0-plus AND lgpl-2.1-plus AND
+  lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)
 - |
   1996-2018 Free Software Foundation, Inc.
   1999-2015 The Gnome Project

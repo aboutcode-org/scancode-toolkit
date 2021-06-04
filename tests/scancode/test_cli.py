@@ -654,25 +654,35 @@ def test_scan_does_scan_rpm():
 def test_scan_cli_help(regen=False):
     expected_file = test_env.get_test_loc('help/help.txt')
     result = run_scan_click(['--help'])
+    result = result.output
     if regen:
         with io.open(expected_file, 'w', encoding='utf-8') as ef:
-            ef.write(result.output)
-    assert result.output == open(expected_file).read()
+            ef.write(result)
+
+    def no_spaces(s):
+        return ' '.join(s.split())
+
+    expected = open(expected_file).read()
+
+    if no_spaces(result) != no_spaces(expected):
+        assert result == expected
 
 
 def test_scan_errors_out_with_unknown_option():
     test_file = test_env.get_test_loc('license_text/test.txt')
     args = ['--json--info', test_file]
     result = run_scan_click(args, expected_rc=2)
-    assert 'Error: no such option: --json--info' in result.output
+    assert 'Error: No such option: --json--info'.lower() in result.output.lower()
 
 
 def test_scan_to_json_without_FILE_does_not_write_to_next_option():
     test_file = test_env.get_test_loc('license_text/test.txt')
     args = ['--json', '--info', test_file]
     result = run_scan_click(args, expected_rc=2)
-    assert ('Error: Invalid value for "--json": Illegal file name '
-            'conflicting with an option name: --info.') in result.output
+    assert (
+        'Error: Invalid value for "--json": Illegal file name '
+        'conflicting with an option name: --info.'
+    ).replace("'", '"') in result.output.replace("'", '"')
 
 
 def test_scan_errors_out_with_conflicting_root_options():

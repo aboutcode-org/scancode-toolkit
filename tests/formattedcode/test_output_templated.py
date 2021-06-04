@@ -109,7 +109,10 @@ def test_custom_format_with_custom_filename_fails_for_directory():
     result_file = test_env.get_temp_file('html')
     args = ['--info', '--custom-template', test_dir, '--custom-output', result_file, test_dir]
     result = run_scan_click(args, expected_rc=2)
-    assert 'Invalid value for "--custom-template": Path' in result.output
+    assert 'Invalid value for "--custom-template":' in normalize_quotes(result.output)
+
+def normalize_quotes(s):
+    return s.replace("'", '"')
 
 
 @pytest.mark.scanslow

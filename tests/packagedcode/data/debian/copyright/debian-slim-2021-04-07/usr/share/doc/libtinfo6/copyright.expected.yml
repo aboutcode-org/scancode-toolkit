@@ -1,0 +1,10 @@
+- - MIT/X11
+  - X11
+  - BSD-3-clause
+- x11-fsf AND x11-xconsortium AND bsd-new
+- |
+  1998-2017,2018 Free Software Foundation, Inc.
+  1996-2019,2020 Thomas E. Dickey
+  2001 Pradeep Padala
+  1994 X Consortium
+  1980,1991,1992,1993 The Regents of the University of California

@@ -1,9 +1,12 @@
-- |
-  Expat
-  BSD-3-clause-Parakey
-  public-domain
-  GPL-2+
-- bsd-new AND gpl-2.0-plus AND mit AND public-domain AND unknown AND warranty-disclaimer
+- - Expat
+  - Expat
+  - BSD-3-clause-Parakey
+  - public-domain
+  - BSD-3-clause-Parakey
+  - Expat
+  - GPL-2+
+  - public-domain
+- mit AND mit AND bsd-new AND warranty-disclaimer AND (gpl-2.0-plus AND gpl-2.0-plus)
 - |
   JS Foundation and other contributors <https:js.foundation/>
   Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors

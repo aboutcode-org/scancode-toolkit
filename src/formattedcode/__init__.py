@@ -6,6 +6,8 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+
+import os
 from itertools import chain
 
 import click
@@ -22,9 +24,10 @@ class FileOptionType(click.File):
             p.opts for p in ctx.command.params if isinstance(p, click.Option)))
         if value in known_opts:
             self.fail(
-                'Illegal file name conflicting with an option name: %s. '
-                'Use the special "-" file name to print results on screen/stdout.'
-                % (click.types.filename_to_ui(value),
-            ), param, ctx)
+                'Illegal file name conflicting with an option name: '
+                f'{ os.fsdecode(value)}. '
+                'Use the special "-" file name to print results on screen/stdout.',
+                param,
+                ctx,
+            )
         return click.File.convert(self, value, param, ctx)
-

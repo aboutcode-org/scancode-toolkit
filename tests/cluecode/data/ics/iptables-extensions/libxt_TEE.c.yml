@@ -12,3 +12,8 @@ holders_summary:
   - value: Sebastian Classen <sebastian.classen at freenet.ag> , Jan Engelhardt <jengelh at
       medozas de>
     count: 1
+expected_failures:
+  - copyrights
+  - holders
+  - holders_summary
+    

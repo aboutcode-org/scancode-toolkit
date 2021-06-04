@@ -1,14 +1,32 @@
-- |
-  public_domain
-  BSL-1.0
-  MIT
-  NCSA
-  BSD-3-Clause
-  Expat
-  GPL-2+
-- boost-1.0 AND bsd-new AND flex-2.5 AND gpl-2.0-plus AND mit AND mit-old-style-no-advert AND
-  mit-veillard-variant AND proprietary-license AND public-domain AND public-domain-disclaimer
-  AND unknown AND us-govt-public-domain
+- - public_domain
+  - BSL-1.0
+  - MIT
+  - NCSA
+  - BSD-3-Clause
+  - BSD-3-Clause
+  - BSD-3-Clause
+  - BSD-3-Clause
+  - BSD-3-Clause
+  - Expat
+  - GPL-2+
+  - GPL-2+
+  - public_domain
+  - public_domain
+  - public_domain
+  - public_domain
+  - BSL-1.0
+  - Expat
+  - MIT
+  - NCSA
+  - BSD-3-Clause
+  - GPL-2+
+- (public-domain AND public-domain AND us-govt-public-domain AND public-domain-disclaimer) AND
+  boost-1.0 AND (mit-old-style-no-advert AND mit-veillard-variant AND proprietary-license) AND
+  unknown-license-reference AND flex-2.5 AND flex-2.5 AND flex-2.5 AND flex-2.5 AND flex-2.5
+  AND mit AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (public-domain
+  AND public-domain AND us-govt-public-domain AND public-domain-disclaimer) AND (public-domain
+  AND public-domain AND us-govt-public-domain AND public-domain-disclaimer) AND (public-domain
+  AND public-domain AND us-govt-public-domain AND public-domain-disclaimer)
 - |
   1996-2017 NCBI
   2006 John Maddock

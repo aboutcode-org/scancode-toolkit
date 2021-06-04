@@ -1,16 +1,16 @@
-- |
-  LGPL-2.1
-  MIT
-  Beerware
-  public-domain-solardiz
-  BSD-3-Clause
-  Unicode-DFS-2015
-  Apache-2.0
-  BSD-2-Clause
-  Apache-2.0 or LGPL-2.1
-  GPL-2+
-- apache-2.0 AND beerware AND bsd-new AND bsd-simplified AND gpl-2.0 AND gpl-2.0-plus AND lgpl-2.1
-  AND lgpl-2.1-plus AND mit AND public-domain AND unicode AND unicode-dfs-2015 AND unknown
+- - LGPL-2.1
+  - MIT
+  - Beerware
+  - public-domain-solardiz
+  - BSD-3-Clause
+  - Unicode-DFS-2015
+  - Apache-2.0
+  - BSD-2-Clause
+  - Apache-2.0 or LGPL-2.1
+  - GPL-2+
+- (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND mit AND beerware AND public-domain
+  AND bsd-new AND unicode AND (apache-2.0 AND apache-2.0) AND bsd-simplified AND ((apache-2.0
+  AND apache-2.0) OR (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1))
 - |
   (c) 2001-2018 Dovecot authors
   (c) 2004-2006 Andrey Panin <pazke@donpac.ru>
@@ -35,12 +35,5 @@
   (c) 2005, Jacques Savoy.
   Copyright 2010 Lennart Poettering
   (C) 2003-2006 Ben van Klinken and the CLucene Team
-  (c) 2006-2016 Jaldhar H. Vyas <jaldhar@debian.org>
-  (c) 2006-2009 Fabio Tranchitella <kobold@debian.org>
-  (c) 2008-2009 Joel Johnson <mrjoel@lixil.net>
-  (c) 2009-2012 Marco Nenciarini <mnencia@debian.org>
-  (c) 2011-2013 Micah Anderson <micah@debian.org>
-  (c) 2014-2015 Jelmer Vernooij <jelmer@debian.org>
-  (c) 2016-2018 Apollon Oikonomopoulos <apoikos@debian.org>
   (c) 2002-2018 Stephan Bosch <stephan@rename-it.nl>
   (c) 2002-2018 Dovecot authors

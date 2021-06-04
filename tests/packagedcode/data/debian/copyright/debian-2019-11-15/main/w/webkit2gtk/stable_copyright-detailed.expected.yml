@@ -1,34 +1,54 @@
-- |
-  BSD-2-clause
-  BSD-3-clause
-  Expat
-  GPL-3+
-  LGPL-2+
-  LGPL-2.1
-  LGPL-2.1+
-  MIT-X11
-  MPL-1.1 or GPL-2+ or LGPL-2.1+
-  public-domain
-  Apache-2.0
-  BSD-3-clause and BSL
-  ISC
-  LGPL-2
-  BSL
-  GPL-2+
-  MPL-1.1
-- apache-2.0 AND boost-1.0 AND bsd-new AND bsd-simplified AND gpl-2.0-plus AND gpl-3.0-plus
-  AND isc AND lgpl-2.0 AND lgpl-2.0-plus AND lgpl-2.1 AND lgpl-2.1-plus AND mit AND mpl-1.1
-  AND public-domain AND unknown AND x11
+- - BSD-2-clause
+  - BSD-3-clause
+  - Expat
+  - GPL-3+
+  - LGPL-2+
+  - LGPL-2.1
+  - LGPL-2.1+
+  - MIT-X11
+  - MPL-1.1 or GPL-2+ or LGPL-2.1+
+  - public-domain
+  - Apache-2.0
+  - BSD-3-clause and BSL
+  - ISC
+  - LGPL-2
+  - LGPL-2+
+  - BSD-2-clause
+  - BSD-3-clause
+  - Expat
+  - BSL
+  - LGPL-2
+  - LGPL-2+
+  - LGPL-2.1
+  - LGPL-2.1+
+  - GPL-2+
+  - GPL-3+
+  - MIT-X11
+  - MPL-1.1
+  - Apache-2.0
+  - ISC
+- bsd-simplified AND bsd-new AND mit AND (gpl-3.0-plus AND gpl-3.0-plus) AND (lgpl-2.0-plus
+  AND lgpl-2.1-plus) AND (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus)
+  AND x11 AND ((mpl-1.1 AND mpl-1.1) OR (gpl-2.0-plus AND gpl-2.0-plus) OR (lgpl-2.1-plus AND
+  lgpl-2.1-plus)) AND public-domain AND (apache-2.0 AND apache-2.0 AND apache-2.0) AND (bsd-new
+  AND boost-1.0) AND isc AND (lgpl-2.0 AND lgpl-2.1-plus) AND (lgpl-2.0-plus AND lgpl-2.1-plus)
 - |
   © 2002-2019 Apple Inc. and others
   © 2002-2014 Apple Inc. and others
   © 2007-2009 The Khronos Group Inc.
   © 2013 Dave St.Germain
+  © 2002-2014 Apple Inc. and others
+  © 2002-2014 Apple Inc. and others
+  © 2002-2014 Apple Inc. and others
+  © 2002-2014 Apple Inc. and others
   © 1995-2006 International Business Machines Corporation and others
+  © 2002-2014 Apple Inc. and others
   No copyright holders
   © 2007 Google Inc.
+  © 2002-2014 Apple Inc. and others
   © 1996 David Mazieres <dm@uun.org>
   © 2008 Damien Miller <djm@openbsd.org>
+  © 2002-2014 Apple Inc. and others
   © 2007-2009 Mike Hommey <glandium@debian.org>
   © 2009 Gustavo Noronha Silva <kov@debian.org>
   © 2014-2019 Alberto Garcia <berto@igalia.com>

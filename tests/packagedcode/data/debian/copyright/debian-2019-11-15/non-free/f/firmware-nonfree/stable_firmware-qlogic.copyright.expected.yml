@@ -1,11 +1,10 @@
-- |
-  Binary redistribution (QLogic 1)
-  The OpenIB.org BSD license
-  Binary redistribution (QLogic 2)
-  Binary redistribution (QLogic BR-series)
-  Binary redistribution (QLogic 3)
-- bsd-new AND linux-openib AND other-permissive AND proprietary-license AND qlogic-microcode
-  AND unknown
+- - Binary redistribution (QLogic 1)
+  - The OpenIB.org BSD license
+  - Binary redistribution (QLogic 2)
+  - Binary redistribution (QLogic BR-series)
+  - Binary redistribution (QLogic 3)
+- bsd-new AND linux-openib AND qlogic-microcode AND (other-permissive AND proprietary-license)
+  AND other-permissive
 - |
   1995, 1996, 1997, 1998, 1999, 2000, QLogic, Inc.
   2007, 2008. QLogic Corporation

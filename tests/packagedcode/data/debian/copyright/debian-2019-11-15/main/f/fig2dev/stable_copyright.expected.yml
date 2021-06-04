@@ -1,10 +1,9 @@
-- |
-  xfig
-  GPL-2+
-  MIT
-  GPL-3
-- gpl-2.0-plus AND gpl-3.0 AND gpl-3.0-plus AND mit AND mit-old-style-no-advert AND mit-xfig
-  AND unknown
+- - xfig
+  - GPL-2+
+  - MIT
+  - GPL-3
+- mit-xfig AND (gpl-2.0-plus AND gpl-2.0-plus) AND mit-old-style-no-advert AND (gpl-3.0 AND
+  gpl-3.0-plus AND gpl-3.0 AND gpl-3.0)
 - |
   Copyright (c) 1991-1999 by Micah Beck
   Parts Copyright (c) 1985-1988 by Supoj Sutanthavibul
@@ -24,13 +23,6 @@
   Parts Copyright (c) 2002-2006 by Martin Kroeker
   Parts Copyright (c) 2004-2008 by Eugene Ressler
   Parts Copyright (c) 2014-2018 by Thomas Loimer
-  1999-2018 Roland Rosenfeld <roland@debian.org>
-  2010 Steve Langasek <vorlon@debian.org>
-  1998-1999 Edward Betts <edward@debian.org>
-  1997-1998 Enrique Zanardi <ezanardi@molec1.dfis.ull.es
-  1998 Christian Meder <meder@isr.uni-stuttgart.de>
-  1998 Paul Slootman <paul@debian.org>
-  1997 joost witteveen <joostje@debian.org>
   Copyright (C) 2006 Michael Pfeiffer -- p3fff@web.de
   Copyright, 1987, Massachusetts Institute of Technology
   Copyright (C) 1997, 2003-2004, 2006-2007, 2009-2015 Free Software Foundation, Inc.

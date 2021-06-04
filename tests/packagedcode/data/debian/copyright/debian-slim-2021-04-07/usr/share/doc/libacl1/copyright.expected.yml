@@ -1,0 +1,9 @@
+- - GPL-2+
+  - LGPL-2+
+- (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (lgpl-2.0-plus
+  AND lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.1)
+- |
+  Copyright © 2000-2008 Silicon Graphics, Inc.
+  Copyright © 1999-2001,2007-2009 Andreas Gruenbacher
+  Copyright © 2001-2002 Silicon Graphics, Inc.
+  Copyright © 1999-2003,2007,2009,2011 Andreas Gruenbacher

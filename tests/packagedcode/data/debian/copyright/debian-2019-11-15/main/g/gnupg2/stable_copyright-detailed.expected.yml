@@ -1,17 +1,35 @@
-- |
-  GPL-3+
-  permissive
-  LGPL-2.1+
-  Expat
-  GPL-3+ or BSD-3-clause
-  LGPL-3+
-  RFC-Reference
-  TinySCHEME
-  CC0-1.0
-  BSD-3-clause
-- artistic-2.0 AND bsd-new AND cc0-1.0 AND fsf-unlimited-no-warranty AND gpl-1.0-plus AND gpl-3.0
-  AND gpl-3.0-plus AND ietf AND lgpl-2.1-plus AND lgpl-3.0 AND lgpl-3.0-plus AND mit AND other-permissive
-  AND unknown
+- - GPL-3+
+  - GPL-3+
+  - permissive
+  - permissive
+  - LGPL-2.1+
+  - Expat
+  - GPL-3+
+  - GPL-3+ or BSD-3-clause
+  - LGPL-3+
+  - GPL-3+
+  - RFC-Reference
+  - TinySCHEME
+  - GPL-3+
+  - CC0-1.0
+  - TinySCHEME
+  - permissive
+  - RFC-Reference
+  - GPL-3+
+  - LGPL-3+
+  - LGPL-2.1+
+  - BSD-3-clause
+  - Expat
+  - CC0-1.0
+- (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-3.0 AND gpl-3.0)
+  AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-3.0 AND gpl-3.0)
+  AND fsf-unlimited-no-warranty AND fsf-unlimited-no-warranty AND (lgpl-2.1-plus AND lgpl-3.0-plus)
+  AND mit AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-3.0 AND
+  gpl-3.0) AND ((gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-3.0
+  AND gpl-3.0) OR bsd-new) AND (lgpl-3.0-plus AND lgpl-3.0-plus AND lgpl-3.0 AND lgpl-3.0) AND
+  (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-3.0 AND gpl-3.0)
+  AND ietf AND bsd-new AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
+  AND gpl-3.0 AND gpl-3.0) AND (cc0-1.0 AND cc0-1.0 AND artistic-2.0)
 - |
   1992, 1995-2016, Free Software Foundation, Inc
   1998-2007, 2009, 2012, Free Software Foundation, Inc

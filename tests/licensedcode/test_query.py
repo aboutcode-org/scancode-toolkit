@@ -774,7 +774,6 @@ class TestQueryWithFullIndex(FileBasedTesting):
         assert len(Query(location1, idx=idx).query_runs) == 17
         assert len(Query(location2, idx=idx).query_runs) == 15
 
-    @expectedFailure
     def test_Query_tokens_by_line_behaves_the_same_on_various_python_2(self):
         location = self.get_test_loc('query/query_lines/yahoo-eula.txt')
         idx = cache.get_index()

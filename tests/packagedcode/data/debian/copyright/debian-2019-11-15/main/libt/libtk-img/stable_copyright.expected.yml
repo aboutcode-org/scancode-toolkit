@@ -1,7 +1,6 @@
-- |
-  Tcl
-  Public-domain
-- pngsuite AND public-domain AND tcl AND unknown
+- - Tcl
+  - Public-domain
+- tcl AND pngsuite
 - |
   1997-2004 Jan Nijtmans
   1999, 2011 Willem van Schaik

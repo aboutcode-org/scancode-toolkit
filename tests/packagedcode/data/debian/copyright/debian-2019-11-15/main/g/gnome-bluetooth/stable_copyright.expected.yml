@@ -1,7 +1,6 @@
-- |
-  LGPL-2.1+
-  GPL-2+
-- gpl-1.0-plus AND gpl-2.0-plus AND lgpl-2.1-plus AND unknown
+- - LGPL-2.1+
+  - GPL-2+
+- (lgpl-2.1-plus AND lgpl-3.0-plus) AND (gpl-2.0-plus AND gpl-3.0-plus)
 - |
   2006-2013 Bastien Nocera <hadess@hadess.net>
   2010 Giovanni Campagna <scampa.giovanni@gmail.com>
