@@ -11,6 +11,7 @@ from os.path import basename
 from os.path import dirname
 from os.path import isdir
 import sys
+import uuid
 
 from io import BytesIO
 try:
@@ -184,6 +185,7 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
 
     doc = Document(Version(2, 1), License.from_identifier('CC0-1.0'))
     doc.comment = notice
+    doc.namespace = f'http://spdx.org/spdxdocs/{basename(input_path)}-{uuid.uuid4()}'
     tool_name = tool_name or 'ScanCode'
     doc.creation_info.add_creator(Tool(tool_name + ' ' + tool_version))
     doc.creation_info.set_created_now()
