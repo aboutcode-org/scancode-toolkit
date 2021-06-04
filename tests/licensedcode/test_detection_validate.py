@@ -39,7 +39,7 @@ def make_validation_test(rule, test_name):
     if rule.is_false_positive:
 
         def closure_test_function(*args, **kwargs):
-            check_special_rule_can_be_detected(rule)
+            check_special_rule_cannot_be_detected(rule)
 
     else:
 
@@ -53,24 +53,18 @@ def make_validation_test(rule, test_name):
     return closure_test_function
 
 
-def check_special_rule_can_be_detected(rule):
+def check_special_rule_cannot_be_detected(rule):
     idx = cache.get_index()
     results = idx.match(location=rule.text_file)
-    try:
-        assert not results
-    except:
+    if results:
         data_file = rule.data_file
         if not data_file:
             data_file = rule.text_file.replace('.LICENSE', '.yml')
         # On failure, we compare againto get additional failure details such as
         # a clickable text_file path
-        results = (
-            results,
-            f'file://{data_file}',
-            f'file://{rule.text_file}',
-        )
+        results = (results, f'file://{data_file}', f'file://{rule.text_file}')
         # this assert will always fail and provide a more detailed failure trace
-        assert not results
+        assert  results == []
 
 
 def check_rule_or_license_can_be_self_detected_exactly(rule):
@@ -240,6 +234,7 @@ class TestValidateLicenseExtended5(unittest.TestCase):
 
 
 _rules = sorted(models.get_rules(), key=lambda r: r.identifier)
+
 build_validation_tests(
     _rules,
     test_classes=[
@@ -251,4 +246,5 @@ build_validation_tests(
         TestValidateLicenseExtended5,
      ]
 )
+
 del _rules

@@ -64,7 +64,7 @@ class LicenseTest(object):
                 with io.open(self.data_file, encoding='utf-8') as df:
                     data = saneyaml.load(df.read()) or {}
             except Exception as e:
-                raise Exception('Failed to read:', 'file://' + self.data_file, e)
+                raise Exception(f'Failed to read: file://{self.data_file}', e)
 
             self.license_expressions = data.pop('license_expressions', [])
             self.notes = data.pop('notes', None)
@@ -83,14 +83,14 @@ class LicenseTest(object):
                 except:
                     raise Exception(
                         'Unable to parse License rule expression: '
-                        +repr(exp) + ' for: file://' + self.data_file +
-                        '\n' + traceback.format_exc()
-                )
+                        f'{exp!r} for: file://{self.data_file}\n' +
+                        traceback.format_exc()
+                    )
                 if expression is None:
                     raise Exception(
                         'Unable to parse License rule expression: '
-                        +repr(exp) + ' for:' + repr(self.data_file))
-
+                        f'{exp!r} for: file://{self.data_file}'
+                    )
                 new_exp = expression.render()
                 self.license_expressions[i] = new_exp
 
@@ -98,7 +98,8 @@ class LicenseTest(object):
             if not self.notes:
                 raise Exception(
                     'A license test without expected license_expressions should '
-                    'have explanatory notes:  for: file://' + self.data_file)
+                    f'have explanatory notes:  for: file://{self.data_file}'
+                )
 
     def to_dict(self):
         dct = {}
@@ -165,8 +166,9 @@ def build_tests(test_dir, clazz, regen=False):
 
         # avoid duplicated test method
         if hasattr(clazz, test_name):
-            msg = ('Duplicated test method name: {test_name}: file://{test_file}'
-            ).format(**locals())
+            msg = (
+                f'Duplicated test method name: {test_name}: file://{test_file}'
+            )
             raise Exception(msg)
 
         # attach that method to our license_test class
@@ -219,18 +221,17 @@ def make_test(license_test, regen=False):
                 results_failure_trace.extend(['',
                     '======= MATCH ====', repr(match),
                     '======= Matched Query Text for:',
-                    'file://{test_file}'.format(**locals())
+                    f'file://{test_file}'
                 ])
                 if test_data_file:
-                    results_failure_trace.append(
-                        'file://{test_data_file}'.format(**locals()))
+                    results_failure_trace.append(f'file://{test_data_file}')
 
                 results_failure_trace.append('')
                 results_failure_trace.append(qtext)
                 results_failure_trace.extend(['',
                     '======= Matched Rule Text for:',
-                    'file://{rule_text_file}'.format(**locals()),
-                    'file://{rule_data_file}'.format(**locals()),
+                    f'file://{rule_text_file}',
+                    f'file://{rule_data_file}',
                     '',
                     itext,
                 ])
@@ -238,11 +239,10 @@ def make_test(license_test, regen=False):
                 results_failure_trace.extend(['',
                     '======= NO MATCH ====',
                     '======= Not Matched Query Text for:',
-                    'file://{test_file}'.format(**locals())
+                    f'file://{test_file}'
                 ])
                 if test_data_file:
-                    results_failure_trace.append(
-                        'file://{test_data_file}'.format(**locals()))
+                    results_failure_trace.append(f'file://{test_data_file}')
 
             # this assert will always fail and provide a detailed failure trace
             assert '\n'.join(results_failure_trace) == '\n'.join(expected)
