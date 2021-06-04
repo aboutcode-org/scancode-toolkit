@@ -237,14 +237,15 @@ class License(object):
          - <key>.LICENSE: the license text
         """
 
-        def write(location, _string):
-            with open(location, 'w') as of:
-                of.write(_string)
+        def write(location, byte_string):
+            # we write as binary because rules and licenses texts and data are UTF-8-encoded bytes
+            with io.open(location, 'wb') as of:
+                of.write(byte_string)
 
-        write(self.data_file, saneyaml.dump(self.to_dict(), indent=4))
-
+        as_yaml = saneyaml.dump(self.to_dict(), indent=4, encoding='utf-8')
+        write(self.data_file, as_yaml)
         if self.text:
-            write(self.text_file, self.text)
+            write(self.text_file, self.text.encode('utf-8'))
 
     def load(self):
         """
@@ -253,7 +254,7 @@ class License(object):
         Unknown fields are ignored and not bound to the License object.
         """
         try:
-            with open(self.data_file) as f:
+            with io.open(self.data_file, encoding='utf-8') as f:
                 data = saneyaml.load(f.read())
 
             for k, v in data.items():
@@ -282,9 +283,11 @@ class License(object):
 
     def _read_text(self, location):
         if not exists(location):
-            return ''
-        with open(location) as f:
-            return f.read()
+            text = ''
+        else:
+            with io.open(location, encoding='utf-8') as f:
+                text = f.read()
+        return text
 
     def spdx_keys(self):
         """
