@@ -1,14 +1,13 @@
-- |
-  BSD-3-clause
-  GPL-2
-  BSD-2-clause
-  BSD-3-clause or GPL-2
-  BSD-3-clause or LGPL-2.1
-  GPL-3
-  GPL-2.0+
-  LGPL-2.1
-- bsd-new AND bsd-simplified AND gpl-2.0 AND gpl-2.0-plus AND gpl-3.0 AND lgpl-2.0-plus AND
-  lgpl-2.1 AND unknown
+- - BSD-3-clause
+  - GPL-2
+  - BSD-2-clause
+  - BSD-3-clause or GPL-2
+  - BSD-3-clause or LGPL-2.1
+  - GPL-2.0+
+  - GPL-3
+  - LGPL-2.1
+- bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND bsd-simplified AND (bsd-new OR (gpl-2.0
+  AND gpl-2.0 AND gpl-2.0)) AND (bsd-new OR (lgpl-2.1 AND lgpl-2.0-plus AND lgpl-2.1)) AND gpl-2.0-plus
 - |
   2008-2014 Cisco Systems, Inc.
   2012-2014 6WIND S.A.
@@ -28,6 +27,5 @@
   2015, Neil Horman <nhorman@tuxdriver.com>
   2007, VMware, Inc.
   2016, Neil Horman <nhorman@tuxdriver.com>
-  2015, 2016 Canonical Ltd.
   2009-2016 Andreas Beckmann <anbe@debian.org>
   2010-2016 Russ Allbery <rra@debian.org>

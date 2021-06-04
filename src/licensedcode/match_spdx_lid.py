@@ -95,7 +95,8 @@ def spdx_id_match(idx, query_run, text):
         # spdx-license-identifier: this may be wrong too, if the line was
         # not padded originally with this tag
         stored_text=text,
-        length=match_len)
+        length=match_len,
+    )
 
     # build match from parsed expression
     # collect match start and end: e.g. the whole text
@@ -108,9 +109,13 @@ def spdx_id_match(idx, query_run, text):
     hispan = Span(p for p, t in enumerate(matched_tokens) if t < len_legalese)
 
     match = LicenseMatch(
-        rule=rule, qspan=qspan, ispan=ispan, hispan=hispan,
+        rule=rule,
+        qspan=qspan,
+        ispan=ispan,
+        hispan=hispan,
         query_run_start=match_start,
-        matcher=MATCH_SPDX_ID, query=query_run.query
+        matcher=MATCH_SPDX_ID,
+        query=query_run.query,
     )
     return match
 

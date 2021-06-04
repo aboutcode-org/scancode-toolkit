@@ -1,44 +1,57 @@
+- - GPL-2
+  - GPL-2 with OpenSSL exception
+  - GPL-2+
+  - GPL-2+ with Autoconf exception
+  - GPL-3+ with Autoconf exception
+  - GPL-2+ with Libtool exception
+  - LGPL-2+ with Libtool exception
+  - LGPL-2.1
+  - LGPL-2.1 and BSD-3-clause
+  - Expat
+  - BSD-2-clause
+  - BSD-3-clause
+  - Zlib
+  - ISC
+  - permissive~1
+  - permissive~2
+  - permissive~3
+  - permissive~4
+  - permissive
+  - nsis-bzip2
+  - public-domain~1
+  - public-domain~2
+  - public-domain~3
+  - LZW
+  - public-domain
+  - Apache-2.0 with GPL exception
+  - GPL-3+ with Bison exception
+- (gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0
+  AND openssl-exception-gpl-3.0-plus AND gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND autoconf-simple-exception-2.0 AND
+  gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0) AND (gpl-3.0-plus AND gpl-1.0-plus
+  AND autoconf-simple-exception AND gpl-1.0-plus AND other-copyleft AND gpl-3.0 AND gpl-3.0)
+  AND (gpl-3.0-plus WITH libtool-exception-2.0 AND gpl-1.0-plus AND other-copyleft AND gpl-2.0
+  AND gpl-2.0) AND (lgpl-2.0-plus AND libtool-exception-2.0 AND gpl-2.0-plus AND lgpl-2.1-plus
+  AND gpl-2.0 AND other-copyleft AND gpl-2.0 AND lgpl-2.0) AND (lgpl-2.1 AND lgpl-2.1-plus AND
+  lgpl-2.1-plus AND other-copyleft AND lgpl-2.1 AND lgpl-2.1) AND ((lgpl-2.1 AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND other-copyleft AND lgpl-2.1 AND lgpl-2.1) AND bsd-new) AND mit AND bsd-simplified
+  AND bsd-new AND zlib AND isc AND fsf-unlimited AND fsf-free AND fsf-unlimited-no-warranty
+  AND fsf-ap AND fsf-ap AND bzip2-libbzip-2010 AND (public-domain AND public-domain) AND public-domain
+  AND public-domain AND x11-tiff AND (public-domain AND public-domain) AND (apache-2.0 AND gpl-1.0-plus
+  AND apache-2.0 AND apache-2.0 AND gpl-1.0-plus AND apache-2.0 AND apache-2.0) AND (gpl-3.0-plus
+  AND bison-exception-2.2 AND gpl-1.0-plus AND other-copyleft AND gpl-3.0 AND gpl-3.0)
 - |
-  GPL-2 with OpenSSL exception
-  GPL-2+
-  GPL-2+ with Autoconf exception
-  GPL-3+ with Autoconf exception
-  GPL-2+ with Libtool exception
-  LGPL-2+ with Libtool exception
-  LGPL-2.1
-  LGPL-2.1 and BSD-3-clause
-  Expat
-  BSD-2-clause
-  BSD-3-clause
-  Zlib
-  ISC
-  permissive~1
-  permissive~2
-  permissive~3
-  permissive~4
-  permissive
-  nsis-bzip2
-  public-domain~1
-  public-domain~2
-  public-domain~3
-  LZW
-  public-domain
-  Apache-2.0 with GPL exception
-- apache-2.0 AND autoconf-simple-exception AND autoconf-simple-exception-2.0 AND bsd-new AND
-  bsd-simplified AND bzip2-libbzip-2010 AND fsf-ap AND fsf-free AND fsf-unlimited AND fsf-unlimited-no-warranty
-  AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND gpl-3.0 AND gpl-3.0-plus AND gpl-3.0-plus
-  WITH bison-exception-2.2 AND gpl-3.0-plus WITH libtool-exception-2.0 AND isc AND lgpl-2.0-plus
-  AND lgpl-2.1 AND lgpl-2.1-plus AND libtool-exception-2.0 AND mit AND openssl-exception-gpl-3.0-plus
-  AND public-domain AND unknown AND x11-tiff AND zlib
-- |
+  1998-2015, Sourcefire, Inc.
+  2002-2007, Tomasz Kojm <tkojm@clamav.net>
+  2006, Sensory Networks, Inc
+  2007-2015, Cisco Systems, Inc
+  2014-2018, Cisco and/or its affiliates
   2014, 2017-2018 Cisco and/or its affiliates
   2002-2013, Tomasz Kojm <tkojm@clamav.net>
   2004 Trog <trog@uncon.org>
   2006, Everton da Silva Marques <everton.marques@gmail.com>
-  2006, Sensory Networks, Inc
   2007-2013, Sourcefire, Inc.
   2014, Cisco Systems, Inc.
-  2004, Stephen Gran <sgran@debian.org>
   1992-2013, Free Software Foundation, Inc.
   1996-2011, Free Software Foundation, Inc.
   1998-2001, 2004-2010, Free Software Foundation, Inc
@@ -75,3 +88,4 @@
   Public Domain
   Copyright (C) 2014 Cisco Systems, Inc. and/or its affiliates. All rights reserved.
   Copyright (c) 2013. The YARA Authors. All Rights Reserved.
+  1984, 1989-1990, 2000-2011, Free Software Foundation, Inc.

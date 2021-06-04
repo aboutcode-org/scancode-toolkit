@@ -1,16 +1,13 @@
-- |
-  GPL-2
-  LGPL-2.1
-  GPL-2+ or X11
-  CRYPTOGAMS
-  Unicode-data
-  Xen-interface
-- gpl-2.0 AND gpl-2.0-plus AND lgpl-2.1 AND lgpl-2.1-plus AND mit AND unicode AND unknown AND
-  (bsd-new OR gpl-1.0-plus)
+- - GPL-2
+  - LGPL-2.1
+  - GPL-2+ or X11
+  - CRYPTOGAMS
+  - Unicode-data
+  - Xen-interface
+- (gpl-2.0 AND gpl-2.0) AND (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0-plus
+  OR mit) AND (bsd-new OR gpl-1.0-plus) AND unicode AND mit
 - |
   1991-2012 Linus Torvalds and many others
-  1996-2006 Manoj Srivastava
-  2005-2012 Debian kernel team
   2011 Lennart Poettering
   2012-2018 Linus Torvalds and many others
   2006,2014 Andy Polyakov <appro@openssl.org>

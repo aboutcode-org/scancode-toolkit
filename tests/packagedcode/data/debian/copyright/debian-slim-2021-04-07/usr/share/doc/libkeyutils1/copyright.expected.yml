@@ -1,0 +1,5 @@
+- - GPL-2+
+  - LGPL-2+
+- (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.0-plus
+  AND lgpl-2.0-plus AND lgpl-2.0)
+- 2005-2018, Red Hat <http://www.redhat.com/>

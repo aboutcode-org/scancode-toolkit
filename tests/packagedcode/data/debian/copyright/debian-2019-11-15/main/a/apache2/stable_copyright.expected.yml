@@ -1,23 +1,30 @@
-- |
-  Apache-2.0
-  Apache-2.0 and BSD-3-clause-Cambridge
-  PCRE
-  GPL-3+ or Custom
-  BSD-3-clause-Smrgrav
-  Apache-2.0 and Cisco
-  BSD-2-clause-Darwin
-  Apache-2.0 and Haines
-  Apache-2.0 and MD5
-  Apache-2.0 and Zeus
-  Apache-2.0 or GPL-2+
-  Expat
-  Zeus
-  GPL-2+
-  Haines
-  Custom
-- apache-2.0 AND bison-exception-2.2 AND bsd-new AND bsd-simplified AND bsd-simplified-darwin
-  AND bsd-unchanged AND gpl-2.0 AND gpl-2.0-plus AND gpl-3.0 AND gpl-3.0-plus AND historical
-  AND hs-regexp AND mit AND unknown AND x11-keith-packard AND zeusbench
+- - Apache-2.0
+  - Apache-2.0 and BSD-3-clause-Cambridge
+  - PCRE
+  - GPL-3+ or Custom
+  - BSD-3-clause-Smrgrav
+  - Apache-2.0 and Cisco
+  - BSD-2-clause-Darwin
+  - Apache-2.0 and Haines
+  - Apache-2.0 and MD5
+  - Apache-2.0 and Zeus
+  - Apache-2.0 or GPL-2+
+  - Expat
+  - Zeus
+  - MD5
+  - GPL-3+
+  - GPL-2+
+  - Haines
+  - Cisco
+  - BSD-3-clause-Cambridge
+  - Custom
+- (apache-2.0 AND apache-2.0 AND apache-2.0) AND ((apache-2.0 AND apache-2.0 AND apache-2.0)
+  AND bsd-new) AND bsd-new AND ((gpl-3.0-plus AND gpl-3.0-plus AND gpl-2.0 AND gpl-3.0) OR bison-exception-2.2)
+  AND bsd-unchanged AND ((apache-2.0 AND apache-2.0 AND apache-2.0) AND (apache-2.0 AND hs-regexp))
+  AND bsd-simplified-darwin AND ((apache-2.0 AND apache-2.0 AND apache-2.0) AND unknown-license-reference)
+  AND ((apache-2.0 AND apache-2.0 AND apache-2.0) AND (x11-keith-packard AND historical)) AND
+  ((apache-2.0 AND apache-2.0 AND apache-2.0) AND zeusbench) AND ((apache-2.0 AND apache-2.0
+  AND apache-2.0) OR (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0)) AND mit
 - |
   Copyright 2019 The Apache Software Foundation
   2019 The Apache Software Foundation

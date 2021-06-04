@@ -1,43 +1,383 @@
-- |
-  GPL-1+ or Artistic
-  Expat
-  REGCOMP, and GPL-1+ or Artistic
-  GPL-3+-WITH-BISON-EXCEPTION
-  Unicode
-  GPL-1+ or Artistic, and Unicode
-  S2P
-  BZIP
-  ZLIB
-  Artistic
-  GPL-2+ or Artistic
-  Expat or GPL-1+ or Artistic
-  RRA-KEEP-THIS-NOTICE
-  BSD-3-clause-with-weird-numbering
-  CC0-1.0
-  TEXT-TABS
-  GPL-1+ or Artistic, and BSD-4-clause-POWERDOG
-  GPL-1+ or Artistic, and BSD-3-clause-GENERIC
-  BSD-3-clause
-  SDBM-PUBLIC-DOMAIN
-  DONT-CHANGE-THE-GPL
-  GPL-1+ or Artistic or Artistic-dist
-  Artistic-dist
-  Artistic or GPL-1+ or Artistic-dist
-  GPL-1+ or Artistic, and Expat
-  LGPL-2.1
-  GPL-1+
-  GPL-2+
-  Artistic-2
-  BSD-4-clause-POWERDOG
-  BSD-3-clause-GENERIC
-  REGCOMP
-  HSIEH-DERIVATIVE
-  HSIEH-BSD
-- artistic-2.0 AND artistic-dist-1.0 AND artistic-perl-1.0 AND bsd-new AND bsd-original AND
-  bsd-x11 AND bzip2-libbzip-2010 AND cc0-1.0 AND fsf-ap AND gpl-1.0 AND gpl-1.0-plus AND gpl-2.0
-  AND gpl-2.0-plus AND gpl-3.0-plus AND gpl-3.0-plus WITH bison-exception-2.2 AND lgpl-2.1 AND
-  mit AND other-copyleft AND other-permissive AND paul-hsieh-derivative AND public-domain AND
-  regexp AND unicode-dfs-2015 AND unknown AND zlib
+- - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - Expat
+  - REGCOMP, and GPL-1+ or Artistic
+  - GPL-3+-WITH-BISON-EXCEPTION
+  - GPL-1+ or Artistic
+  - Unicode
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic, and Unicode
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - S2P
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - BZIP
+  - GPL-1+ or Artistic
+  - ZLIB
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-2+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - Expat or GPL-1+ or Artistic
+  - Expat or GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - RRA-KEEP-THIS-NOTICE
+  - Expat
+  - Expat
+  - GPL-1+ or Artistic
+  - Expat
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - BSD-3-clause-with-weird-numbering
+  - GPL-1+ or Artistic
+  - Expat
+  - Expat
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - CC0-1.0
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - TEXT-TABS
+  - GPL-2+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic, and BSD-4-clause-POWERDOG
+  - GPL-1+ or Artistic
+  - Unicode
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic, and BSD-3-clause-GENERIC
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - Artistic
+  - BSD-3-clause
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - Artistic
+  - GPL-1+ or Artistic
+  - SDBM-PUBLIC-DOMAIN
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - RRA-KEEP-THIS-NOTICE
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic
+  - DONT-CHANGE-THE-GPL
+  - GPL-1+ or Artistic
+  - GPL-1+ or Artistic or Artistic-dist
+  - Artistic-dist
+  - Artistic or GPL-1+ or Artistic-dist
+  - GPL-1+ or Artistic, and Expat
+  - GPL-1+ or Artistic
+  - LGPL-2.1
+  - GPL-1+
+  - GPL-2+
+  - Artistic
+  - Artistic-2
+  - BZIP
+  - ZLIB
+  - Expat
+  - BSD-3-clause-with-weird-numbering
+  - BSD-4-clause-POWERDOG
+  - Unicode
+  - BSD-3-clause-GENERIC
+  - BSD-3-clause
+  - REGCOMP
+  - TEXT-TABS
+  - S2P
+  - DONT-CHANGE-THE-GPL
+  - SDBM-PUBLIC-DOMAIN
+  - GPL-3+-WITH-BISON-EXCEPTION
+  - HSIEH-DERIVATIVE
+  - HSIEH-BSD
+  - CC0-1.0
+  - RRA-KEEP-THIS-NOTICE
+  - Artistic-dist
+- ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND
+  gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND mit AND (regexp AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))) AND gpl-3.0-plus WITH bison-exception-2.2
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND unicode-dfs-2015
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (((gpl-1.0-plus AND gpl-1.0) OR
+  (artistic-2.0 AND artistic-perl-1.0)) AND unicode-dfs-2015) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND other-copyleft AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND bzip2-libbzip-2010 AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND zlib AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND (artistic-2.0 AND artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-2.0-plus AND gpl-2.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (mit OR (gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-2.0 AND artistic-perl-1.0)) AND (mit OR (gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND fsf-ap AND mit
+  AND mit AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND mit AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND
+  gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND bsd-new AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-2.0 AND artistic-perl-1.0)) AND mit AND mit AND ((gpl-1.0-plus AND gpl-1.0) OR
+  (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
+  artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND (cc0-1.0 AND cc0-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND other-permissive
+  AND ((gpl-2.0-plus AND gpl-2.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND bsd-original)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND unicode-dfs-2015
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND bsd-new) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND
+  gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND (artistic-2.0 AND artistic-perl-1.0) AND bsd-new AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND (artistic-2.0 AND artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-2.0 AND artistic-perl-1.0)) AND (public-domain AND public-domain AND public-domain
+  AND public-domain) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND fsf-ap AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND other-copyleft AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0) OR artistic-dist-1.0)
+  AND artistic-dist-1.0 AND ((artistic-2.0 AND artistic-perl-1.0) OR (gpl-1.0-plus AND gpl-1.0)
+  OR artistic-dist-1.0) AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND mit) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
 - |
   Perl is Copyright (C) 1987-2018 by Larry Wall and others. All rights reserved.
   Copyright (c) 1996-2006, Nick Ing-Simmons
@@ -54,13 +394,16 @@
   OS/2 port Copyright (c) 1990, 1991, Raymond Chen, Kai Uwe Rommel
   Version 5 port Copyright (c) 1994-2002, Andreas Kaiser, Ilya Zakharevich
   Copyright (c) 2007-2008 Michael G Schwern
+  .
   This software originally derived from Paul Sheer's pivotal_gmtime_r.c.
   Copyright (c) 1986 by University of Toronto.
   Written by Henry Spencer. Not derived from licensed software.
+  .
   Alterations to Henry's code are...
   Copyright (C) 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
   2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008
   by Larry Wall and others
+  .
   NOTE: this is derived from Henry Spencer's regexp code, and should not
   confused with the original package (see point 3 below). Thanks, Henry!
   Copyright (C) 1984, 1989-1990, 2000-2013 Free Software Foundation, Inc.
@@ -80,20 +423,26 @@
   This software is copyright (c) 2010 by David Golden.
   Copyright (C) 2000-01, 2002 Novell, Inc. All Rights Reserved.
   Copyright (C) 1993-2015 by Charles Bailey and others.
+  unknown
   Copyright (C) 1993 Eric Young - see README for more details
   2002 - 2009 Jos Boumans <kane@cpan.org>. All rights reserved.
   This package has the same copyright and license as the perl core:
   Copyright (C) 1993, 1994, 1995, 1996, 1997, 1998, 1999,
   2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2011, 2012
+  by Larry Wall and others
+  .
   All rights reserved.
+  2008-2009, Paul Fenwick <pjf@perltraining.com.au>
   2008-2009, Paul Fenwick <pjf@perltraining.com.au>
   Copyright 2013-2014, Niels Thykier <niels@thykier.net>
   Copyright (c) 1996, 1997 Malcolm Beattie
   Copyright (c) 2008, 2010, 2013, 2014 Reini Urban
   Copyright (c) 2005-2017 Paul Marquess. All rights reserved.
   Copyright(C) 1996-2010 Julian Seward. All rights reserved
+  Copyright (c) 2005-2017 Paul Marquess. All rights reserved.
   Copyright (C) 1995-2017 Jean-loup Gailly and Mark Adler
   Copyright (C) 2009-2017 H.Merijn Brand
+  unknown
   (c) 2001-2015, brian d foy, All Rights Reserved.
   This software is copyright (c) 2010 by David Golden, Ricardo Signes,
   Adam Kennedy and Contributors.
@@ -115,6 +464,7 @@
   2015 Michael LaGrasta and Dan Kogai
   Copyright 2004, 2005, 2006, 2007 by Audrey Tang <cpan@audreyt.org>.
   This software is copyright (c) 2013 by Leon Timmermans.
+  unknown
   2010 Gisle Aas <gisle@aas.no>
   1996- by Andreas Koenig
   There are no copyright notices in these distributions.
@@ -150,6 +500,7 @@
   Copyright 2003, 2004, 2005, 2006 by Audrey Tang <cpan@audreyt.org>
   Copyright (C) All Perl Hackers everywhere
   Ton Voon <ton.voon@opsera.com>, 2009.
+  unknown
   Copyright 1998, 1999, 2000, 2001, 2012 M-J. Dominus.
   Copyright 1995-2004,2010 Gisle Aas <gisle@ActiveState.com>
   Copyright 1997-2004 Gisle Aas
@@ -183,7 +534,10 @@
   Copyright (c) 2002-2004 Sean M. Burke. All rights reserved.
   Copyright (c) 2003-2005 Allison Randal.
   Copyright (c) 1997-1999 Tom Christiansen and Nathan Torkington.
+  All rights reserved.
+  Copyright (C) 1996-2000 by Bradford Appleton. All rights reserved.
   Copyright (c) 2001-2016 by Marek Rouchal.
+  Copyright 1999-2000 by Russ Allbery <rra@stanford.edu>
   Copyright (C) 1990-2012 by Larry Wall and others.
   Copyright (c) 1982, 1986, 1988, 1993
   The Regents of the University of California. All rights reserved.
@@ -205,10 +559,12 @@
   Michael G Schwern E<schwern@pobox.com>.
   Copyright Mark Fowler <mark@twoshortplanks.com> 2002.
   Copyright Mark Fowler <mark@twoshortplanks.com> 2002, 2004.
+  .
   Some code taken from Test::More and Test::Catch, written by by
   Michael G Schwern <schwern@pobox.com>. Hence, those parts
   Copyright Michael G Schwern 2001. Used and distributed with
   permission.
+  .
   This module is copyright 2005 Fergal Daly <fergal@esatclear.ie>, some parts
   are based on other people's work.
   Copyright 2001 by Michael G Schwern <schwern@pobox.com>.
@@ -220,11 +576,14 @@
   or neighboring rights to L<Test-use-ok>
   Copyright 1997 - 2001 Damian Conway. All Rights Reserved.
   Some (minor) parts copyright 2009 Adam Kennedy.
+  unknown
   Copyright (C) 1996-2009 David Muir Sharnoff.
   Copyright (C) 2005 Aristotle Pagaltzis
   Copyright (C) 2012-2013 Google, Inc.
   Tie::File version 0.97 is copyright (C) 2003 Mark Jason Dominus.
+  unknown
   Copyright (c) 1997 - 2016 by Graham Barr & Dave Rolsky.
+  unknown
   strptime copied from freebsd with the following copyright:
   Copyright (c) 1994 Powerdog Industries. All rights reserved.
   This module is Copyright(C) 2001-2017, SADAHIRO Tomoyuki. Japan. All
@@ -233,13 +592,16 @@
   Copyright(C) 2001-2012, SADAHIRO Tomoyuki. Japan. All rights reserved.
   (c) 1995 Microsoft Corporation. All rights reserved.
   Copyright (c) 2001-2009, Damian Conway. All Rights Reserved.
+  unknown
   Copyright (c) 1998-2000, 2002, 2003, 2004, 2005, 2006 Stephen McCamant.
+  All rights reserved.
   Copyright (c) 1994-2013 Larry Wall
   Copyright (c) 2011, 2012, 2013 Andrew Main (Zefram) <zefram@fysh.org>
   Copyright (c) 1996-2017 Gurusamy Sarathy. All rights reserved.
   Copyright (c) 2003-2005 Ken Williams. All rights reserved.
   Copyright (c) 2012-2017 Ken Williams. All rights reserved.
   Copyright 2002-2012 by Ken Williams, David Golden and other contributors.
+  All rights reserved.
   Copyright (c) 2000-2008, Damian Conway. All Rights Reserved.
   This software is copyright (c) 2002 by Ilya Zakharevich.
   Copyright 1998+, Sean M. Burke <sburke@cpan.org>, all rights
@@ -259,6 +621,7 @@
   Copyright (c) 2002-2003, Rob Brown. All rights reserved.
   Copyright (c) 2001, Colin McMillen. All rights reserved.
   Copyright (c) 2004 by the Perl 5 Porters. All rights reserved.
+  Copyright (c) 2004 by the Perl 5 Porters. All rights reserved.
   Copyright (c) 2003 Constantin S. Svintsoff <kostik@iclub.nsu.ru>
   Copyright (c) 2002-2007 Sean M. Burke.
   Copyright (c) 2011 Mark Allen. All rights reserved.
@@ -272,33 +635,48 @@
   (C) Copyright 1997, Universitat Dortmund, all rights reserved.
   Copyright 2005, Adam Kennedy.
   Copyright (c) 2002 Slaven Rezic
+  unknown
+  unknown
   Copyright (c) 2001-2002, 2006 Larry Wall
   Copyright (c) 1998-2000 Joshua Nathaniel Pritikin.
   Copyright (c) 2001-2002 Michael G. Schwern.
   Copyright (c) 2002-2004 Sean M. Burke.
   Copyright (c) 1996-2002 Douglas E. Wegscheid. All rights reserved.
   Copyright (c) 2002-2010 Jarkko Hietaniemi.
+  Copyright (c) 2011, 2012, 2013 Andrew Main (Zefram) <zefram@fysh.org>
+  All rights reserved.
   Copyright (C) 1990-2011 by Larry Wall and others.
   Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008
+  by Larry Wall and others
   Copyright (C) 2013 by Andy Broad.
   Copyright (c) 1996, 1997, 1998 Malcolm Beattie
   Copyright (C) 2000-2003 Stephen McCamant. All rights reserved.
   Copyright (c) 1995-98 Ilya Zakharevich. All rights reserved.
+  unknown
   This is an unpublished work copyright (c) 1992 Helios Software GmbH
   3000 Hannover 1, Germany
   based upon the file "dl.c", which is Copyright (c) 1994, Larry Wall
   2004, Nokia
   Copyright (c) 1997-8 Graham Barr. All rights reserved.
+  unknown
   Copyright (c) 1989, 1993
+  The Regents of the University of California. All rights reserved.
+  .
   This code is derived from software contributed to Berkeley by
   Guido van Rossum.
+  unknown
   hv_store() is from Array::RefElem, Copyright 2000 Gisle Aas.
   Copyright (C) 2006-2007 by (Anno Siegel)
   Copyright 2001 by Jarkko Hietaniemi
+  Copyright (c) 2007 Brandon L Black
   Copyright (c) 2008,2009 Larry Wall and others
+  unknown
+  unknown
+  none
   Copyright (C) 2007 by Larry Wall and others
   Copyright (C) 2002,2004 Tim Jenness, Christian Soeller, Hugo van der Sanden.
   All Rights Reserved.
+  .
   Copyright (C) 2009 Andrew Main (Zefram) <zefram@fysh.org>
   Copyright (C) 2001 Tim Jenness All Rights Reserved.
   Richard Foley <richard.foley@rfi.net> Copyright (c) 2000
@@ -321,6 +699,7 @@
   Copyright 2006 Yves Orton and 2007 Ævar Arnfjörð Bjarmason.
   Copyright 1998 The Perl Journal.
   Copyright (c) 2000 Mark Kvale
+  All rights reserved.
   Copyright (c) 2012 Tom Christiansen
   Copyright 2001-2011 Jarkko Hietaniemi <jhi@iki.fi>
   Copyright (C) 1989 Free Software Foundation, Inc.
@@ -339,6 +718,7 @@
   Copyright (c) 1999-2001 Jarkko Hietaniemi
   Copyright (c) 1991-1997, 2004-2006, Raphael Manfredi
   Copyright (c) 1996-2010, Andy Dougherty
+  Copyright (c) 1996, Sven Verdoolaege
   Copyright (c) 1998-2016 Jarkko Hietaniemi
   Copyright (c) 2004-2018 H.Merijn Brand
   Copyright (c) 2006-2006, H.Merijn Brand & Nicholas Clark

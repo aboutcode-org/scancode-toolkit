@@ -1,0 +1,16 @@
+- - LGPL-2.1
+  - LGPL-2.1
+  - LGPL-2.1
+  - LGPL-2.1
+  - LGPL-2.1
+- (lgpl-2.1 AND lgpl-3.0-plus) AND (lgpl-2.1 AND lgpl-3.0-plus) AND (lgpl-2.1 AND lgpl-3.0-plus)
+  AND (lgpl-2.1 AND lgpl-3.0-plus)
+- |
+  2012 Paul Moore <pmoore@redhat.com>
+  2012 Ashley Lai <adlai@us.ibm.com>
+  2012 Corey Bryant <coreyb@linux.vnet.ibm.com>
+  2012 Eduardo Otubo <otubo@linux.vnet.ibm.com>
+  2012 Eric Paris <eparis@redhat.com>
+  2013 Vitaly Shukela <vi0oss@gmail.com>
+  2006 Bob Jenkins <bob_jenkins@burtleburtle.net>
+  2012 Kees Cook <kees@debian.org>

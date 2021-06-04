@@ -1,0 +1,17 @@
+- - BSD-3-clause
+  - BSD-3-clause
+  - GPL-2+
+  - GPL-2+
+  - GPL-2+
+  - GPL-2+
+  - BSD-3-clause
+- bsd-new AND bsd-new AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus)
+- |
+  2013 Michael Stapelberg
+  2013 Michael Stapelberg <stapelberg@debian.org>
+  2006 Red Hat, Inc
+  2008 Canonical Ltd
+  2000,2001 Henrique de Moraes Holschuh <hmh@debian.org>
+  1997-2005 Miquel van Smoorenburg <miquels@cistron.nl>
+  Members of the pkg-sysvinit project

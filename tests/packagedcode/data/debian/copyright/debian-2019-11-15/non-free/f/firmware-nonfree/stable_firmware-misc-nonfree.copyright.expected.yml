@@ -1,38 +1,40 @@
-- |
-  BSD (3Com)
-  Permissive (Advansys)
-  BSD (Agere)
-  Binary redistribution (Abilis)
-  Binary redistribution (Creative)
-  Binary redistribution
-  BSD 2-clause
-  Binary redistribution (Chelsio)
-  Permissive (BayCom)
-  Binary redistribution (Xceive)
-  Binary redistribution (DiBcom)
-  Binary redistribution (ITEtech)
-  Binary redistribution (Terratec)
-  BSD (Intel)
-  Binary redistribution (ENE)
-  Redistributable (Sensoray)
-  Redistributable (Micronas)
-  Binary redistribution (Intel, narrower patent license)
-  Binary redistribution (Intel)
-  Binary redistribution (NXP)
-  BSD 4-clause (Kawasaki LSI)
-  Binary redistribution (Matrox)
-  Binary redistribution (Moxa)
-  Binary redistribution (MediaTek)
-  Binary redistribution (MTS)
-  License For Customer Use of NVIDIA Software
-  Binary redistribution (Rockchip)
-  Binary redistribution (Comtrol)
-  Binary redistribution (Ralink)
-  BSD (Ikanos)
-  Binary redistribution (Conexant)
-- 3com-microcode AND agere-bsd AND bsd-new AND bsd-original AND bsd-simplified AND bsd-simplified-source
-  AND intel AND isc AND linux-openib AND mit AND other-permissive AND proprietary-license AND
-  ralink-firmware AND unknown
+- - BSD (3Com)
+  - Permissive (Advansys)
+  - BSD (Agere)
+  - Binary redistribution (Abilis)
+  - Binary redistribution (Creative)
+  - Binary redistribution
+  - BSD 2-clause
+  - Binary redistribution (Chelsio)
+  - Permissive (BayCom)
+  - Binary redistribution (Xceive)
+  - Binary redistribution (DiBcom)
+  - Binary redistribution (ITEtech)
+  - Binary redistribution (Terratec)
+  - BSD (Intel)
+  - Binary redistribution (ENE)
+  - Redistributable (Sensoray)
+  - Redistributable (Micronas)
+  - Binary redistribution (Intel, narrower patent license)
+  - Binary redistribution (Intel)
+  - Binary redistribution (NXP)
+  - BSD 4-clause (Kawasaki LSI)
+  - Binary redistribution (Matrox)
+  - Binary redistribution (Moxa)
+  - Binary redistribution (MediaTek)
+  - Binary redistribution (MTS)
+  - License For Customer Use of NVIDIA Software
+  - Binary redistribution (Rockchip)
+  - Binary redistribution (Comtrol)
+  - Binary redistribution (Ralink)
+  - BSD (Ikanos)
+  - Binary redistribution (Conexant)
+- 3com-microcode AND bsd-simplified-source AND agere-bsd AND isc AND proprietary-license AND
+  other-permissive AND linux-openib AND proprietary-license AND bsd-simplified-source AND proprietary-license
+  AND isc AND isc AND proprietary-license AND bsd-new AND isc AND proprietary-license AND proprietary-license
+  AND intel AND intel AND proprietary-license AND bsd-original AND mit AND proprietary-license
+  AND ralink-firmware AND proprietary-license AND proprietary-license AND proprietary-license
+  AND proprietary-license AND ralink-firmware AND (bsd-new AND proprietary-license) AND proprietary-license
 - |
   1999-2004, 3Com Corporation
   1995-2000, Advanced System Products, Inc.

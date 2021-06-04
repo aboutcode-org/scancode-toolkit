@@ -1,0 +1,30 @@
+-
+- gpl-1.0-plus AND public-domain AND fsf-unlimited-no-warranty AND lgpl-2.1-plus AND gpl-2.0-plus
+  AND unknown-license-reference AND lgpl-2.0-plus AND ((gpl-2.0 AND lgpl-2.1-plus) AND other-permissive)
+  AND bsd-new AND (bsd-new OR gpl-1.0-plus) AND x11-xconsortium AND ocb-open-source-2013
+- |
+  Copyright (c) 1989,1991-2019 Free Software Foundation, Inc.
+  Copyright (c) 1994 X Consortium
+  Copyright (c) 1996 L. Peter Deutsch
+  Copyright (c) 1997 Werner Koch
+  Copyright (c) 1998 The Internet Society
+  Copyright (c) 1996-1999 Peter Gutmann, Paul Kendall, and Chris Wedgwood
+  Copyright (c) 1996-2006 Peter Gutmann, Matt Thomlinson and Blake Coverett
+  Copyright (c) 2003 Nikos Mavroyanopoulos
+  Copyright (c) 2006-2007 NTT (Nippon Telegraph and Telephone Corporation)
+  Copyright (c) 2012-2019 g10 Code GmbH
+  Copyright (c) 2012 Simon Josefsson, Niels Moller
+  Copyright (c) 2012 Intel Corporation
+  Copyright (c) 2013 Christian Grothoff
+  Copyright (c) 2013-2017 Jussi Kivilinna
+  Copyright (c) 2013-2014 Dmitry Eremin-Solenikov
+  Copyright (c) 2014 Stephan Mueller
+  Copyright (c) 2017 Bundesamt fur Sicherheit
+  Copyright Peter Gutmann, Paul Kendall, and Chris Wedgwood 1996-1999
+  Copyright 2012 Simon Josefsson and Niels Moller
+  Copyright (c) 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2006 2007, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
+  Copyright 2000, 2002, 2003, 2004, 2006, 2007, 2008, 2009, 2011, 2012 Free Software Foundation, Inc.
+  Copyright 2012, 2013, 2016 2017 g10 Code GmbH
+  Copyright (c) 2012, Intel Corporation
+  Copyright Stephan Mueller <smueller@chronox.de> , 2013
+  Copyright (c) 1994 X Consortium

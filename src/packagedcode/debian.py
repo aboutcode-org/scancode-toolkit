@@ -11,7 +11,7 @@ import logging
 import os
 
 import attr
-from debut import debcon
+from debian_inspector import debcon
 from packageurl import PackageURL
 
 from commoncode import filetype
@@ -183,7 +183,24 @@ def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **k
     for package in parse_status_file(base_status_file_loc, distro=distro):
         package.populate_installed_files(var_lib_dpkg_info_dir)
         if detect_licenses:
-            debian_copyright.get_and_set_package_licenses_and_copyrights(package, root_dir)
+            copyright_location = package.get_copyright_file_path(root_dir)
+            dc = debian_copyright.parse_copyright_file(copyright_location)
+            if dc:
+                package.declared_license = dc.get_declared_license(
+                    filter_licenses=True,
+                    skip_debian_packaging=True,
+                    simplify_licenses=False,
+                )
+                package.license_expression = dc.get_license_expression(
+                    filter_licenses=True,
+                    skip_debian_packaging=True,
+                    simplify_licenses=False,
+                )
+                package.copyright = dc.get_copyright(
+                    skip_debian_packaging=True,
+                    unique_copyrights=True,
+                )
+
         yield package
 
 

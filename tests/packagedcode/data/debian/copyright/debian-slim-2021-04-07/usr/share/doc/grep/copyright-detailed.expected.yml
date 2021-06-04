@@ -1,0 +1,15 @@
+- - GPL-3+
+  - GPL-3+
+  - GPL-3+
+- (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus)
+- |
+  1992, 1997-2002, 2004-2012 Free Software Foundation, Inc.
+  2004, Stepan Kasal <kasal@ucw.cz>
+  2007, Tony Abou-Assaleh <taa@acm.org>
+  2009-2012, Jim Meyering <jim@meyering.net> and Paolo Bonzini <bonzini@gnu.org>
+  2005-2013 Anibal Monsalve Salazar <anibal@debian.org> and Santiago Ruano Rincón <santiago@debian.org>
+  2003-2004 Ryan M. Golbeck <rmgolbeck@debian.org>
+  2003, Jeff Bailey <jbailey@nisa.net>
+  2003, Clint Adams <schizo@debian.org> Mon, 10 Mar 2003 02:10:32 -0500
+  2001 Robert van der Meulen <rvdm@debian.org>
+  1996-2000 Wichert Akkerman <wakkerma@debian.org>
