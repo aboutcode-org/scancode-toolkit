@@ -1,8 +1,8 @@
 Changelog
 =========
 
-v21.x.x (next)
---------------
+v21.x.x (next, future)
+-----------------------
 
 Breaking API changes:
 ~~~~~~~~~~~~~~~~~~~~~
@@ -24,7 +24,7 @@ Breaking API changes:
    multiple manifests for a single package instance.
 
 
-v21.6.2
+v21.6.6
 --------
 
 Breaking API changes:
@@ -35,6 +35,7 @@ Breaking API changes:
    (.bat on Windows and .sh on POSIX) and the Python script etc/configure.py
    has been removed. Use the PYTHON_EXECUTABLE enviroment variable to point to
    alternative non-default Python executable and this on all OSes.
+
 
 Security updates:
 ~~~~~~~~~~~~~~~~~
@@ -47,7 +48,8 @@ Security updates:
      - pkg:pypi/lxml: (low severity, likely no impact) CVE-2021-28957
      - pkg:pypi/nltk: (low severity, likely no impact) CVE-2019-14751
      - pkg:pypi/jinja2: (low severity, likely no impact) CVE-2020-28493, CVE-2019-10906
-     - pkg:pypi/pycryptodome: (high severity) CVE-2018-15560 (dropped since no longer used)
+     - pkg:pypi/pycryptodome: (high severity) CVE-2018-15560 (dropped since no
+       longer used by pdfminer)
 
 
 Ouputs:
@@ -55,6 +57,9 @@ Ouputs:
 
  - Add new YAML-formatted output. This is exactly the same data structure as for
    the JSON output
+ - The JSON output packages section has a new "extra_data" attributes which is
+   a JSON object that can contain arbitrary data that are specific to a package
+   type.
 
 
 License scanning:
