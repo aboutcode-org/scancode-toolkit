@@ -151,7 +151,7 @@ def build_package(rpm_tags):
             converted.update(handled)
 
     # construct the package: we ignore unknown as we added a few technical fields
-    package = RpmPackage.create(ignore_unknown=True, **converted)
+    package = RpmPackage.create(**converted)
     return package
 
 ################################################################################
