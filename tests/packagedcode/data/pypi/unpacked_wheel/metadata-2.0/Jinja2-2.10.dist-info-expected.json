@@ -75,6 +75,7 @@
   ],
   "contains_source_code": null,
   "source_packages": [],
+  "extra_data": {},
   "purl": "pkg:pypi/jinja2@2.10",
   "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": "https://pypi.org/packages/source/J/Jinja2/Jinja2-2.10.tar.gz",

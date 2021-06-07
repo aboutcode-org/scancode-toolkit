@@ -77,7 +77,9 @@
         "sha512": null
       }
     ],
-    "multi_arch": "same",
+    "extra_data": {
+      "multi_arch": "same"
+    },
     "purl": "pkg:deb/debian/libncurses5@6.1-1ubuntu1.18.04?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -153,7 +155,9 @@
         "sha512": null
       }
     ],
-    "multi_arch": "same",
+    "extra_data": {
+      "multi_arch": "same"
+    },
     "purl": "pkg:deb/debian/libndp0@1.4-2ubuntu0.16.04.1?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,

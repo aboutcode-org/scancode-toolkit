@@ -45,6 +45,7 @@
   "source_packages": [
     "https://github.com/jogendra/BadgeHub.git"
   ],
+  "extra_data": {},
   "purl": "pkg:pods/BadgeHub@0.1.1",
   "repository_homepage_url": "https://cocoapods.org/pods/BadgeHub",
   "repository_download_url": "https://github.com/jogendra/BadgeHub/archive/0.1.1.zip",

@@ -80,6 +80,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:npm/angular-compare-validator@0.1.1",
     "repository_homepage_url": "https://www.npmjs.com/package/angular-compare-validator",
     "repository_download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",

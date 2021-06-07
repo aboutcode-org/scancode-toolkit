@@ -68,6 +68,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:npm/exif@0.6.0",
     "repository_homepage_url": "https://www.npmjs.com/package/exif",
     "repository_download_url": "https://registry.npmjs.org/exif/-/exif-0.6.0.tgz",

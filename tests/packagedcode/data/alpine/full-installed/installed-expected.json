@@ -41,6 +41,7 @@
     "source_packages": [
       "pkg:alpine/musl@1.1.24-r8"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/musl@1.1.24-r8?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -106,6 +107,7 @@
     "source_packages": [
       "pkg:alpine/busybox@1.31.1-r16"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/busybox@1.31.1-r16?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -211,6 +213,7 @@
     "source_packages": [
       "pkg:alpine/alpine-baselayout@3.2.0-r6"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/alpine-baselayout@3.2.0-r6?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -476,6 +479,7 @@
     "source_packages": [
       "pkg:alpine/alpine-keys@2.2-r0"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/alpine-keys@2.2-r0?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -685,6 +689,7 @@
     "source_packages": [
       "pkg:alpine/openssl@1.1.1g-r0"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/libcrypto1.1@1.1.1g-r0?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -830,6 +835,7 @@
     "source_packages": [
       "pkg:alpine/openssl@1.1.1g-r0"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/libssl1.1@1.1.1g-r0?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -895,6 +901,7 @@
     "source_packages": [
       "pkg:alpine/ca-certificates@20191127-r2"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/ca-certificates-bundle@20191127-r2?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -961,6 +968,7 @@
     "source_packages": [
       "pkg:alpine/libtls-standalone@2.9.1-r1"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/libtls-standalone@2.9.1-r1?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -1026,6 +1034,7 @@
     "source_packages": [
       "pkg:alpine/busybox@1.31.1-r16"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/ssl_client@1.31.1-r16?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -1083,6 +1092,7 @@
     "source_packages": [
       "pkg:alpine/zlib@1.2.11-r3"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/zlib@1.2.11-r3?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -1148,6 +1158,7 @@
     "source_packages": [
       "pkg:alpine/apk-tools@2.10.5-r1"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/apk-tools@2.10.5-r1?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -1205,6 +1216,7 @@
     "source_packages": [
       "pkg:alpine/pax-utils@1.2.6-r0"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/scanelf@1.2.6-r0?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -1271,6 +1283,7 @@
     "source_packages": [
       "pkg:alpine/musl@1.1.24-r8"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/musl-utils@1.1.24-r8?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -1369,6 +1382,7 @@
     "source_packages": [
       "pkg:alpine/libc-dev@0.7.2-r3"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/libc-utils@0.7.2-r3?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,

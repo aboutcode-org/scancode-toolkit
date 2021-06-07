@@ -127,6 +127,7 @@
           ],
           "contains_source_code": null,
           "source_packages": [],
+          "extra_data": {},
           "purl": "pkg:npm/busboy@0.2.14",
           "repository_homepage_url": "https://www.npmjs.com/package/busboy",
           "repository_download_url": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",

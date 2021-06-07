@@ -62,6 +62,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:gem/mysmallidea-address_standardization@0.4.1",
     "repository_homepage_url": "https://rubygems.org/gems/mysmallidea-address_standardization/versions/0.4.1",
     "repository_download_url": "https://rubygems.org/downloads/mysmallidea-address_standardization-0.4.1.gem",

@@ -54,6 +54,7 @@
   "source_packages": [
     "pkg:maven/org.hibernate/hibernate-commons-annotations@3.0.0.ga?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.hibernate/hibernate-commons-annotations@3.0.0.ga",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-commons-annotations/3.0.0.ga/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-commons-annotations/3.0.0.ga/hibernate-commons-annotations-3.0.0.ga.jar",

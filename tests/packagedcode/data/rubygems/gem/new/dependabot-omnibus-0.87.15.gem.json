@@ -128,6 +128,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:gem/dependabot-omnibus@0.87.15",
     "repository_homepage_url": "https://rubygems.org/gems/dependabot-omnibus/versions/0.87.15",
     "repository_download_url": "https://rubygems.org/downloads/dependabot-omnibus-0.87.15.gem",

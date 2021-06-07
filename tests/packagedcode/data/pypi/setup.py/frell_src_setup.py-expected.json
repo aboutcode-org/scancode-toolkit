@@ -38,6 +38,7 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
+  "extra_data": {},
   "purl": "pkg:pypi/%40name%40",
   "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": null,

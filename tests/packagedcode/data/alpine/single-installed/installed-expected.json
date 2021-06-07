@@ -41,6 +41,7 @@
     "source_packages": [
       "pkg:alpine/busybox@1.31.1-r9"
     ],
+    "extra_data": {},
     "purl": "pkg:alpine/busybox@1.31.1-r9?arch=x86_64",
     "repository_homepage_url": null,
     "repository_download_url": null,

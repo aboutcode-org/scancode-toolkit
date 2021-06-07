@@ -43,6 +43,7 @@
     "source_packages": [
       "pkg:deb/debian/perl"
     ],
+    "extra_data": {},
     "purl": "pkg:deb/debian/perl-base@5.22.1-9ubuntu0.6?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
