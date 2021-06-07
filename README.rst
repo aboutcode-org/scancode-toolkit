@@ -42,7 +42,7 @@ Why use ScanCode?
   to review and display scan results, statistics and graphics.
 
 - You can also organize and run ScanCode server-side with the
-  companion `ScanCode.io web app <https://github.com/nexB/scancodeio>`_
+  companion `ScanCode.io web app <https://github.com/nexB/scancode.io>`_
   to organize and store multiple scan projects including scripting scanning piplines.
 
 
