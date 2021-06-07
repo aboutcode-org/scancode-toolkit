@@ -1,4 +1,5 @@
 license_expression: generic-cla
 is_license_text: yes
+is_generic: yes
 relevance: 100
 minimum_coverage: 80

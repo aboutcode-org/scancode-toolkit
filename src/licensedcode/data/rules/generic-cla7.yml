@@ -2,3 +2,4 @@ license_expression: generic-cla
 is_license_notice: yes
 ignorable_urls:
     - http://fedoraproject.org/wiki/Legal/Licenses/CLA
+is_generic: yes
