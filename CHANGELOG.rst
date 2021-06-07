@@ -23,9 +23,39 @@ Breaking API changes:
    that contains each package instace that can be aggregating data from
    multiple manifests for a single package instance.
 
+Ouputs:
+~~~~~~~
 
-v21.6.6
+ - Add new YAML-formatted output. This is exactly the same data structure as for
+   the JSON output
+
+
+v21.6.7
 --------
+
+This is a major new release with important security and bug fixes, as well as
+significant improvement in license detection.
+
+
+Many thanks to every contributors that made this possible and in particular:
+
+- Akanksha Garg @akugarg
+- Ayan Sinha Mahapatra @AyanSinhaMahapatra
+- Dennis Clark @DennisClark
+- François Granade @farialima
+- Hanna Modica @hanna-modica
+- Jelmer Vernooĳ @jelmer
+- Jono Yang @JonoYang
+- Konrad Weihmann @priv-kweihmann
+- Philippe Ombredanne @pombredanne
+- Pierre Tardy @tardyp
+- Sarita Singh @itssingh
+- Sebastian Thomas @sebathomas
+- Steven Esser @majurg
+- Till Jaeger @LeChasseur 
+- Thomas Druez @tdruez
+
+
 
 Breaking API changes:
 ~~~~~~~~~~~~~~~~~~~~~
@@ -41,7 +71,7 @@ Security updates:
 ~~~~~~~~~~~~~~~~~
 
  - Update minimum versions and pinned version of thirdparty dependencies
-   to benefit from latest improvements and sceurity fixes. This includes in
+   to benefit from latest improvements and security fixes. This includes in
    particular this issues:
 
      - pkg:pypi/pygments: (low severity, limited impact) CVE-2021-20270, CVE-2021-27291
@@ -55,23 +85,58 @@ Security updates:
 Ouputs:
 ~~~~~~~
 
- - Add new YAML-formatted output. This is exactly the same data structure as for
-   the JSON output
  - The JSON output packages section has a new "extra_data" attributes which is
    a JSON object that can contain arbitrary data that are specific to a package
    type.
 
 
-License scanning:
+License detection:
 ~~~~~~~~~~~~~~~~~
 
- - Add new command line option to filter ignorable copyrights when included
-   in licenses.
+ - The SPDX license list has been update to 3.13
 
- - Add new and improved license detection rules.
-   Thank you to:
-    - Sebastian Thomas @sebathomas
-    - Till Jaeger @LeChasseur 
+ - Add 42 new and updated 45 existing licenses.
+
+ - Over 14,300 new and improved license detection rules have been added. A large
+   number of these (~13,400) are to avoid false positive detections.
+
+
+Copyright detection:
+~~~~~~~~~~~~~~~~~~~~
+
+ - Improved speed and fixed some timeout issues. Fixed minor misc. bugs.
+
+ - Allow calling copyright detection from text lines to ease integration
+
+
+Package detection:
+~~~~~~~~~~~~~~~~~~
+
+ - A new "extra_data" dictiuonary is now part of the "packages" data in the
+   returned JSON. This is used to store arbitrary type-specific data that do
+   cannot be fit in the Package data structure.
+
+ - The Debian copyright files license detection has been reworked and
+   significantly improved.
+
+ - The PyPI package detection and manifest parsing has been reworked and
+   significantly improved.
+   
+ - The detection of Windows executables and DLLs metadata has been enabled.
+   These metadata are returned as packages.
+
+
+Other:
+~~~~~~~
+ - Most third-party libraries have been updated to their newer versions. Some
+   dependency constraints have been relaxed to help some usage as a library.
+
+ - The on-commit CI tests now validate that we can install from PyPI without
+   problem.
+
+ - Fix several installation issues.
+
+ - Add new function to detect copyrights from lines.
 
 
 
@@ -125,9 +190,6 @@ Copyright scanning:
 
  - Fix bug when using the --filter-clues command line option
    Thank you to Van Lindberg @VanL
-
- - Allow calling copyright detection from text lines to ease integration
-   Thank you to Jelmer Vernooĳ @jelmer
 
  - Fixed copyright truncation bug
    Thank you to Akanksha Garg @akugarg
