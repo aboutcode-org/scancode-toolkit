@@ -91,7 +91,7 @@ Ouputs:
 
 
 License detection:
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
  - The SPDX license list has been update to 3.13
 
