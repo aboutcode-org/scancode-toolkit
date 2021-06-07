@@ -1,7 +1,8 @@
 -
-- openldap-2.8 AND mit AND fsf-unlimited-no-warranty AND hs-regexp AND ibm-dhcp AND ietf AND
-  isc AND other-permissive AND mit-old-style-no-advert AND baekmuk-fonts AND bsla AND bsd-original-uc
-  AND bsd-original-uc-1986
+- openldap-2.8 AND openldap-2.8 AND openldap-2.8 AND mit AND fsf-unlimited-no-warranty AND hs-regexp
+  AND ibm-dhcp AND ietf AND isc AND other-permissive AND other-permissive AND mit-old-style-no-advert
+  AND baekmuk-fonts AND other-permissive AND hs-regexp AND openldap-2.8 AND bsla AND bsd-original-uc
+  AND bsd-original-uc AND bsd-original-uc AND bsd-original-uc-1986
 - |
   Copyright 1998-2016 The OpenLDAP Foundation
   Copyright 1999 Computing Research Labs, New Mexico State University

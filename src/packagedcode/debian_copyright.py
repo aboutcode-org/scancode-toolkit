@@ -134,14 +134,14 @@ class UnstructuredCopyrightProcessor(DebianDetector):
     def get_declared_license(self, *args, **kwargs):
         return None
     
-    def get_license_expression(self, *args, **kwargs):
+    def get_license_expression(self, filter_licenses=False, *args, **kwargs):
         matches = self.license_matches
         if not matches:
             # we have no match: return an unknown key
             return ['unknown']
 
         detected_expressions = [match.rule.license_expression for match in matches]
-        return combine_expressions(detected_expressions)
+        return combine_expressions(detected_expressions, unique=filter_licenses)
 
     def get_copyright(self, *args, **kwargs):
         return '\n'.join(self.detected_copyrights)

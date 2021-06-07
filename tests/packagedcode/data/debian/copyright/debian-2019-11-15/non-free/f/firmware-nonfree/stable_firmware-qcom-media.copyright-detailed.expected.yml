@@ -1,7 +1,11 @@
 -
-- unknown-license-reference AND free-unknown AND proprietary-license AND openssl-ssleay AND
-  zlib AND public-domain AND bsd-new AND gary-s-brown AND other-permissive AND isc AND bsd-unmodified
-  AND (gpl-2.0 OR bsd-new) AND bsd-original
+- unknown-license-reference AND unknown-license-reference AND unknown-license-reference AND
+  free-unknown AND unknown-license-reference AND proprietary-license AND unknown-license-reference
+  AND unknown-license-reference AND unknown-license-reference AND unknown-license-reference
+  AND openssl-ssleay AND openssl-ssleay AND openssl-ssleay AND zlib AND zlib AND public-domain
+  AND bsd-new AND gary-s-brown AND other-permissive AND public-domain AND isc AND public-domain
+  AND bsd-unmodified AND (gpl-2.0 OR bsd-new) AND (gpl-2.0 OR bsd-new) AND bsd-original AND
+  bsd-new AND bsd-new AND isc
 - |
   Copyright (c) 2013-2017 Qualcomm Technologies, Inc.
   Copyright (c) 2013-2017 Qualcomm Technologies, Inc.

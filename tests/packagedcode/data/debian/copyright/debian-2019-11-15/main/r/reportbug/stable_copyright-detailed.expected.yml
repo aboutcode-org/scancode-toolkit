@@ -1,5 +1,5 @@
 -
-- reportbug AND gpl-1.0-plus AND gpl-2.0
+- reportbug AND gpl-1.0-plus AND reportbug AND gpl-2.0
 - |
   Copyright (c) 1999-2006 Chris Lawrence
   Copyright (c) 2008-2019 Sandro Tosi <morph@debian.org>

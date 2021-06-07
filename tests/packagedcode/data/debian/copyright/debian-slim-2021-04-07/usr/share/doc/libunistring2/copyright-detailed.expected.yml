@@ -1,7 +1,9 @@
 -
-- lgpl-3.0-plus AND gpl-2.0-plus AND fsf-unlimited AND gpl-1.0-plus WITH autoconf-simple-exception-2.0
-  AND gpl-3.0-plus AND gfdl-1.2-plus AND x11-xconsortium AND mit AND unknown-license-reference
-  AND gfdl-1.1-plus AND gfdl-1.2
+- lgpl-3.0-plus AND gpl-2.0-plus AND fsf-unlimited AND gpl-2.0-plus AND gpl-1.0-plus WITH autoconf-simple-exception-2.0
+  AND gpl-3.0-plus AND gfdl-1.2-plus AND gpl-3.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND
+  x11-xconsortium AND mit AND gpl-3.0-plus AND lgpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus
+  AND gpl-2.0-plus AND gfdl-1.2-plus AND unknown-license-reference AND gfdl-1.1-plus AND gfdl-1.1-plus
+  AND gfdl-1.2 AND mit AND x11-xconsortium
 - |
   Copyright 1995-2017 Free Software Foundation, Inc.
   Copyright 1995-2017 Free Software Foundation, Inc.
