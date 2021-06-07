@@ -23,7 +23,6 @@ from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.datautils import TriBoolean
 
-
 """
 Data models for package information and dependencies, abstracting the
 differences existing between package formats and tools.
@@ -79,25 +78,18 @@ class BaseModel(object):
         """
         Return an dict of primitive Python types.
         """
-        return attr.asdict(self, dict_factory=dict)
+        return attr.asdict(self)
 
     @classmethod
-    def create(cls, ignore_unknown=True, **kwargs):
+    def create(cls, **kwargs):
         """
-        Return an object built from kwargs.
-        Optionally `ignore_unknown` attributes provided in `kwargs`.
+        Return an object built from ``kwargs``. Always ignore unknown attributes
+        provided in ``kwargs`` that do not exist as declared attr fields in
+        ``cls``.
         """
-        if ignore_unknown:
-            known_attr = set(attr.fields_dict(cls).keys())
-            kwargs = {k: v for k, v in kwargs.items() if k in known_attr}
+        known_attr = attr.fields_dict(cls)
+        kwargs = {k: v for k, v in kwargs.items() if k in known_attr}
         return cls(**kwargs)
-
-    @classmethod
-    def fields(cls):
-        """
-        Return a list of field names defined on this model.
-        """
-        return [a.name for a in attr.fields(cls)]
 
 
 party_person = 'person'
@@ -120,26 +112,31 @@ class Party(BaseModel):
     """
 
     type = String(
+        repr=True,
         validator=choices(PARTY_TYPES),
         label='party type',
         help='the type of this party: One of: '
             +', '.join(p for p in PARTY_TYPES if p))
 
     role = String(
+        repr=True,
         label='party role',
         help='A role for this party. Something such as author, '
              'maintainer, contributor, owner, packager, distributor, '
              'vendor, developer, owner, etc.')
 
     name = String(
+        repr=True,
         label='name',
         help='Name of this party.')
 
     email = String(
+        repr=True,
         label='email',
         help='Email for this party.')
 
     url = String(
+        repr=True,
         label='url',
         help='URL to a primary web page for this party.')
 
@@ -274,25 +271,29 @@ class BasePackage(BaseModel):
         """
         Return an dict of primitive Python types.
         """
-        mapping = attr.asdict(self, dict_factory=dict)
-        if not kwargs.get('exclude_properties'):
-            mapping['purl'] = self.purl
-            mapping['repository_homepage_url'] = self.repository_homepage_url()
-            mapping['repository_download_url'] = self.repository_download_url()
-            mapping['api_data_url'] = self.api_data_url()
+        mapping = attr.asdict(self)
+        mapping['purl'] = self.purl
+        mapping['repository_homepage_url'] = self.repository_homepage_url()
+        mapping['repository_download_url'] = self.repository_download_url()
+        mapping['api_data_url'] = self.api_data_url()
+
         if self.qualifiers:
-            mapping['qualifiers'] = normalize_qualifiers(self.qualifiers, encode=False)
+            mapping['qualifiers'] = normalize_qualifiers(
+                qualifiers=self.qualifiers,
+                encode=False,
+            )
         return mapping
 
     @classmethod
-    def create(cls, ignore_unknown=True, **kwargs):
+    def create(cls, **kwargs):
         """
-        Return a Package built from kwargs.
-        Optionally `ignore_unknown` attributes provided in `kwargs`.
+        Return a Package built from ``kwargs``. Always ignore unknown attributes
+        provided in ``kwargs`` that do not exist as declared attr fields in
+        ``cls``.
         """
         from packagedcode import get_package_class
-        cls = get_package_class(kwargs, default=cls)
-        return super(BasePackage, cls).create(ignore_unknown=ignore_unknown, **kwargs)
+        type_cls = get_package_class(kwargs, default=cls)
+        return super(BasePackage, type_cls).create(**kwargs)
 
 
 @attr.s()
@@ -304,8 +305,10 @@ class DependentPackage(BaseModel):
     purl = String(
         repr=True,
         label='Dependent package URL',
-        help='A compact purl package URL. Typically when there is an unresolved requirement, there is no version. '
-             'If the dependency is resolved, the version should be added to the purl')
+        help='A compact purl package URL. Typically when there is an '
+             'unresolved requirement, there is no version. '
+             'If the dependency is resolved, the version should be added to '
+             'the purl')
 
     requirement = String(
         repr=True,
@@ -345,8 +348,8 @@ class PackageFile(BaseModel):
     path = String(
         label='Path of this installed file',
         help='The path of this installed file either relative to a rootfs '
-            '(typical for system packages) or a path in this scan (typical for '
-             'application packages).',
+             '(typical for system packages) or a path in this scan (typical '
+             'for application packages).',
         repr=True,
     )
 
@@ -453,12 +456,14 @@ class Package(BasePackage):
     license_expression = String(
         label='license expression',
         help='The license expression for this package typically derived '
-             'from its declared license or .')
+             'from its declared license or from some other type-specific '
+             'routine or convention.')
 
     declared_license = String(
         label='declared license',
         help='The declared license mention, tag or text as found in a '
-             'package manifest.')
+             'package manifest. This can be a string, a list or dict of '
+             'strings possibly nested, as found originally in the manifest.')
 
     notice_text = String(
         label='notice text',
@@ -493,7 +498,7 @@ class Package(BasePackage):
 
     extra_data = Mapping(
         label='extra data',
-        help='A Mapping where arbitrary data that is related to the Package can be stored ')
+        help='A mapping of arbitrary extra Package data.')
 
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.type and hasattr(self, 'default_type'):
@@ -599,7 +604,9 @@ class Package(BasePackage):
     def to_dict(self, _detailed=False, **kwargs):
         data = super().to_dict(**kwargs)
         if _detailed:
-            data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
+            data['installed_files'] = [
+                istf.to_dict() for istf in (self.installed_files or [])
+            ]
         else:
             data.pop('installed_files', None)
         return data
@@ -623,11 +630,9 @@ def compute_normalized_license(declared_license):
         # we never fail just for this
         return 'unknown'
 
-
 # Package types
 # NOTE: this is somewhat redundant with extractcode archive handlers
 # yet the purpose and semantics are rather different here
-
 
 
 @attr.s()
@@ -687,6 +692,7 @@ class IvyJar(JavaJar):
     default_type = 'ivy'
     default_primary_language = 'Java'
 
+
 # FIXME: move to bower.py
 @attr.s()
 class BowerPackage(Package):
@@ -738,16 +744,6 @@ class Godep(Package):
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
-
-
-# TODO: enable me
-# @attr.s()
-# class AlpinePackage(Package):
-#     metafiles = ('*.control',)
-#     extensions = ('.apk',)
-#     filetypes = ('debian binary package',)
-#     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
-#     default_type = 'alpine'
 
 
 @attr.s()
@@ -858,6 +854,5 @@ class IsoImagePackage(Package):
 class SquashfsPackage(Package):
     filetypes = ('squashfs',)
     default_type = 'squashfs'
-
 
 # TODO: Add VM images formats(VMDK, OVA, OVF, VDI, etc) and Docker/other containers
