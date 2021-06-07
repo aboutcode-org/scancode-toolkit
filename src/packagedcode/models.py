@@ -87,9 +87,17 @@ class BaseModel(object):
         provided in ``kwargs`` that do not exist as declared attr fields in
         ``cls``.
         """
-        known_attr = attr.fields_dict(cls)
+        known_attr = cls.fields()
         kwargs = {k: v for k, v in kwargs.items() if k in known_attr}
         return cls(**kwargs)
+
+
+    @classmethod
+    def fields(cls):
+        """
+        Return a list of field names defined on this model.
+        """
+        return list(attr.fields_dict(cls))
 
 
 party_person = 'person'
