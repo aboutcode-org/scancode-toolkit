@@ -77,6 +77,7 @@ def generate_indexes(output_path):
             "spdx_license_key": license.spdx_license_key,
             "other_spdx_license_keys": license.other_spdx_license_keys,
             "is_exception": license.is_exception,
+            "is_deprecated": license.is_deprecated,
             "json": f"{key}.json",
             "yml": f"{key}.yml",
             "html": f"{key}.html",
