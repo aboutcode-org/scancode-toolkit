@@ -2133,9 +2133,6 @@ grammar = """
     # (C) 2001-2009, <s>Takuo KITAME, Bart Martens, and  Canonical, LTD</s>
     COPYRIGHT: {<COPYRIGHT> <NNP> <COMPANY>}       #26381
 
-    #Copyright Holders Kevin Vandersloot <kfv101@psu.edu> Erik Johnsson <zaphod@linux.nu>
-    COPYRIGHT: {<COPY> <HOLDER> <NAME>}       #26383
-
     #Copyright (c) 1995, 1996 - Blue Sky Software Corp.
     COPYRIGHT: {<COPYRIGHT2> <DASH> <COMPANY>}       #2639
 
@@ -2300,6 +2297,12 @@ grammar = """
 
     # Copyright (c) 2008 Intel Corporation / Qualcomm Inc.
     COPYRIGHT: {<COPYRIGHT>  <DASH>  <COMPANY>} #copydash-co
+
+    #Copyright Holders Kevin Vandersloot <kfv101@psu.edu> Erik Johnsson <zaphod@linux.nu>
+    COPYRIGHT: {<COPY> <HOLDER> <NAME>}       #83000
+
+    #holder is Tim Hudson (tjh@mincom.oz.au).
+    COPYRIGHT: {<HOLDER> <JUNK> <NAME-EMAIL>}       #83001
 
 #######################################
 # Authors
@@ -2712,6 +2715,7 @@ HOLDERS_PREFIXES = frozenset(set.union(
         'reserved',
         'held',
         'by',
+        'is',
     ])
 ))
 
