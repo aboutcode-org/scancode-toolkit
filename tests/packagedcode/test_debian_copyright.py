@@ -41,7 +41,7 @@ def check_expected_parse_copyright_file(
         simplify_licenses=False
         unique_copyrights=True
 
-    dc = debian_copyright.parse_copyright_file(location=test_loc)
+    dc = debian_copyright.parse_copyright_file(location=test_loc, check_consistency=False)
     declared_license = dc.get_declared_license(
         filter_licenses=filter_licenses,
         skip_debian_packaging=skip_debian_packaging,
@@ -244,7 +244,55 @@ class TestEnhancedDebianCopyright(FileBasedTesting):
         duplicate_paras = edebian_copyright.duplicate_license_paragraphs
         assert len(duplicate_paras) == 1
         duplicate_paras[0].license.name == "GPL-2+"
-  
+
+    def test_get_license_nameless_paras_with_name(self):
+        test_file = self.get_test_loc("crafted_for_tests/test_license_with_names")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        nameless_paras = edebian_copyright.license_nameless_paragraphs
+        assert len(nameless_paras) == 0
+
+    def test_get_license_nameless_paras_without_name(self):
+        test_file = self.get_test_loc("crafted_for_tests/test_license_nameless")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        nameless_paras = edebian_copyright.license_nameless_paragraphs
+        assert len(nameless_paras) == 1
+        
+    def test_is_all_licenses_used_all_used(self):
+        test_file = self.get_test_loc("crafted_for_tests/test_license_with_names")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        assert edebian_copyright.is_all_licenses_used
+
+    def test_is_all_licenses_used_all_not_used(self):
+        test_file = self.get_test_loc("crafted_for_tests/test_all_licenses_not_used")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        assert not edebian_copyright.is_all_licenses_used
+        
+    def test_is_all_licenses_expressions_parsable_case_parsable(self):
+        test_file = self.get_test_loc("crafted_for_tests/test_license_with_names")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        assert edebian_copyright.is_all_licenses_expressions_parsable
+
+    def test_is_all_licenses_expressions_parsable_case_unparsable(self):
+        test_file = self.get_test_loc("crafted_for_tests/test_licenses_unparsable")
+        edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
+        assert not edebian_copyright.is_all_licenses_expressions_parsable
+        
+    def test_consistency_structured_copyright_file_inconsistent(self):
+        test_file = self.get_test_loc("debian-slim-2021-04-07/usr/share/doc/perl-base/copyright")
+        try:
+            debian_copyright.parse_copyright_file(location=test_file, check_consistency=True)
+            self.fail(msg="Exception not raised")
+        except debian_copyright.DebianCopyrightStructureError:
+            pass
+
+    def test_consistency_unstructured_copyright_file(self):
+        test_file = self.get_test_loc("debian-2019-11-15/main/p/pulseaudio/stable_copyright")
+        try:
+            debian_copyright.parse_copyright_file(location=test_file, check_consistency=True)
+            self.fail(msg="Exception not raised")
+        except debian_copyright.DebianCopyrightStructureError:
+            pass
+
     def test_if_structured_copyright_file(self):
         test_file = self.get_test_loc("debian-slim-2021-04-07/usr/share/doc/libhogweed6/copyright")
         content = debian_copyright.unicode_text(test_file)
