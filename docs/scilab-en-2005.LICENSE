@@ -1,0 +1,138 @@
+Important notice : this is a translation of the original license
+written in French
+
+SCILAB License
+
+1- Preface
+
+The aim of this license is to lay down the conditions enabling you to
+use, modify and circulate the SOFTWARE. However, INRIA and ENPC remain
+the authors of the SOFTWARE and so retain property rights and the use
+of all ancillary rights.
+
+2- Definitions
+
+The SOFTWARE is defined as all successive versions of SCILAB software
+and their documentation that have been developed by INRIA and ENPC.
+
+SCILAB DERIVED SOFTWARE is defined as all or part of the SOFTWARE that
+you have modified and/or translated and/or adapted.
+
+SCILAB COMPOSITE SOFTWARE is defined as all or a part of the SOFTWARE
+that you have interfaced with a software, an application package or a
+toolbox of which you are owner or entitled beneficiary.
+
+3- Object and conditions of the SOFTWARE license
+
+   1. INRIA and ENPC authorize you free of charge, to reproduce the
+      SOFTWARE source and/or object code on any present and future
+      support, without restriction, providing the following reference
+      appears in all the copies: Scilab (c)INRIA-ENPC.
+
+   2. INRIA and ENPC authorize you free of charge to correct any bugs,
+      carry out any modifications required for the porting of the
+      SOFTWARE and to carry out any usual functional modification or
+      correction, providing you insert a patch file or you indicate by
+      any other equivalent means the nature and date of the
+      modification or the correction, on the corresponding file(s) of
+      the SOFTWARE.
+
+   3. INRIA and ENPC authorize you free of charge to use the SOFTWARE
+      source and/or object code, without restriction, providing the
+      following reference appears in all the copies: Scilab
+      (c)INRIA-ENPC.
+
+   4. INRIA and ENPC authorize you free of charge to circulate and
+      distribute, free of charge or for a fee, the SOFTWARE source
+      and/or object code, including the SOFTWARE modified in
+      accordance with above-mentioned article 3 b), on any present and
+      future support, providing: * the following reference appears in
+      all the copies: Scilab (c)INRIA-ENPC.  * the SOFTWARE is
+      circulated or distributed under the present license.  * patch
+      files or files containing equivalent means indicating the nature
+      and the date of the modification or the correction to the
+      SOFTWARE file(s) concerned are freely circulated.
+
+4- Object and conditions of the DERIVED SOFTWARE license
+
+   1. INRIA and ENPC authorize you free of charge to reproduce and
+      modify and/or translate and/or adapt all or part of the source
+      and/or the object code of the SOFTWARE, providing a patch file
+      indicating the date and the nature of the modification and/or
+      the translation and/or the adaptation and the name of their
+      author in the SOFTWARE file(s) concerned is inserted. The
+      SOFTWARE thus modified is defined as DERIVED SOFTWARE. The INRIA
+      authorizes you free of charge to use the source and/or object
+      code of the SOFTWARE, without restriction, providing the
+      following reference appears in all the copies: Scilab
+      (c)INRIA-ENPC.
+
+   2. INRIA and ENPC authorize you free of charge to use the SOFTWARE
+      source and/or object code modified according to article 4-a)
+      above, without restriction, providing the following reference
+      appears in all the copies: "Scilab inside (c)INRIA-ENPC".
+
+   3. The INRIA and the ENPC authorize you free of charge to circulate
+      and distribute for no charge, for non-commercial purposes the
+      source and/or object code of DERIVED SOFTWARE on any present and
+      future support, providing: * the reference " Scilab inside
+      (c)INRIA-ENPC " is prominently mentioned; * the DERIVED SOFTWARE
+      is distributed under the present license; * the recipients of
+      the distribution can access the SOFTWARE code source; * the
+      DERIVED SOFTWARE is distributed under a name other than SCILAB.
+
+   4. Any commercial use or circulation of the DERIVED SOFTWARE shall
+      have been previously authorized by INRIA and ENPC.
+
+5- Object and conditions of the license concerning COMPOSITE SOFTWARE
+
+   1. INRIA and ENPC authorize you to reproduce and interface all or
+      part of the SOFTWARE with all or part of other software,
+      application packages or toolboxes of which you are owner or
+      entitled beneficiary in order to obtain COMPOSITE SOFTWARE.
+
+   2. INRIA and ENPC authorize you free, of charge, to use the
+      SOFTWARE source and/or object code included in the COMPOSITE
+      SOFTWARE, without restriction, providing the following statement
+      appears in all the copies: "composite software using Scilab
+      (c)INRIA-ENPC functionality".
+
+   3. INRIA and ENPC authorize you, free of charge, to circulate and
+      distribute for no charge, for purposes other than commercial,
+      the source and/or object code of COMPOSITE SOFTWARE on any
+      present and future support, providing: * the following reference
+      is prominently mentioned: "composite software using Scilab
+      (c)INRIA-ENPC functionality "; * the SOFTWARE included in
+      COMPOSITE SOFTWARE is distributed under the present license ; *
+      recipients of the distribution have access to the SOFTWARE
+      source code; * the COMPOSITE SOFTWARE is distributed under a
+      name other than SCILAB.
+
+   4. Any commercial use or distribution of COMPOSITE SOFTWARE shall
+      have been previously authorized by INRIA and ENPC.
+
+6- Limitation of the warranty
+
+Except when mentioned otherwise in writing, the SOFTWARE is supplied
+as is, with no explicit or implicit warranty, including warranties of
+commercialization or adaptation. You assume all risks concerning the
+quality or the effects of the SOFTWARE and its use. If the SOFTWARE is
+defective, you will bear the costs of all required services,
+corrections or repairs.
+
+7- Consent
+
+When you access and use the SOFTWARE, you are presumed to be aware of
+and to have accepted all the rights and obligations of the present
+license.
+
+8- Binding effect
+
+This license has the binding value of a contract.
+
+You are not responsible for respect of the license by a third party.
+
+9- Applicable law
+
+The present license and its effects are subject to French law and the
+competent French courts.

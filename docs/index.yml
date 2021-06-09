@@ -71,8 +71,9 @@
   html: ac3filter.html
   text: ac3filter.LICENSE
 - license_key: acdl-1.0
-  spdx_license_key: LicenseRef-scancode-acdl-1.0
-  other_spdx_license_keys: []
+  spdx_license_key: CDL-1.0
+  other_spdx_license_keys:
+    - LicenseRef-scancode-acdl-1.0
   is_exception: no
   is_deprecated: no
   json: acdl-1.0.json
@@ -88,6 +89,15 @@
   yml: ace-tao.yml
   html: ace-tao.html
   text: ace-tao.LICENSE
+- license_key: acroname-bdk
+  spdx_license_key: LicenseRef-scancode-acroname-bdk
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: acroname-bdk.json
+  yml: acroname-bdk.yml
+  html: acroname-bdk.html
+  text: acroname-bdk.LICENSE
 - license_key: activestate-community-2012
   spdx_license_key: LicenseRef-scancode-activestate-community-2012
   other_spdx_license_keys: []
@@ -767,6 +777,15 @@
   yml: apafml.yml
   html: apafml.html
   text: apafml.LICENSE
+- license_key: apl-1.1
+  spdx_license_key: LicenseRef-scancode-apl-1.1
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: apl-1.1.json
+  yml: apl-1.1.yml
+  html: apl-1.1.html
+  text: apl-1.1.LICENSE
 - license_key: appfire-eula
   spdx_license_key: LicenseRef-scancode-appfire-eula
   other_spdx_license_keys: []
@@ -803,6 +822,15 @@
   yml: apple-excl.yml
   html: apple-excl.html
   text: apple-excl.LICENSE
+- license_key: apple-mfi-license
+  spdx_license_key: LicenseRef-scancode-apple-mfi-license
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: apple-mfi-license.json
+  yml: apple-mfi-license.yml
+  html: apple-mfi-license.html
+  text: apple-mfi-license.LICENSE
 - license_key: apple-mpeg-4
   spdx_license_key: LicenseRef-scancode-apple-mpeg-4
   other_spdx_license_keys: []
@@ -1732,8 +1760,9 @@
   html: bsd-3-clause-no-change.html
   text: bsd-3-clause-no-change.LICENSE
 - license_key: bsd-3-clause-no-military
-  spdx_license_key: LicenseRef-scancode-bsd-3-clause-no-military
-  other_spdx_license_keys: []
+  spdx_license_key: BSD-3-Clause-No-Military-License
+  other_spdx_license_keys:
+    - LicenseRef-scancode-bsd-3-clause-no-military
   is_exception: no
   is_deprecated: no
   json: bsd-3-clause-no-military.json
@@ -2001,6 +2030,15 @@
   yml: bsd-original-uc.yml
   html: bsd-original-uc.html
   text: bsd-original-uc.LICENSE
+- license_key: bsd-original-voices
+  spdx_license_key: LicenseRef-scancode-bsd-original-voices
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: bsd-original-voices.json
+  yml: bsd-original-voices.yml
+  html: bsd-original-voices.html
+  text: bsd-original-voices.LICENSE
 - license_key: bsd-original
   spdx_license_key: BSD-4-Clause
   other_spdx_license_keys: []
@@ -2157,6 +2195,15 @@
   yml: bsl-1.1.yml
   html: bsl-1.1.html
   text: bsl-1.1.LICENSE
+- license_key: bsla-no-advert
+  spdx_license_key: LicenseRef-scancode-bsla-no-advert
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: bsla-no-advert.json
+  yml: bsla-no-advert.yml
+  html: bsla-no-advert.html
+  text: bsla-no-advert.LICENSE
 - license_key: bsla
   spdx_license_key: LicenseRef-scancode-bsla
   other_spdx_license_keys: []
@@ -3130,6 +3177,15 @@
   yml: cockroachdb-use-grant-for-bsl-1.1.yml
   html: cockroachdb-use-grant-for-bsl-1.1.html
   text: cockroachdb-use-grant-for-bsl-1.1.LICENSE
+- license_key: code-credit-license-1.0.1
+  spdx_license_key: LicenseRef-scancode-code-credit-license-1.0.1
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: code-credit-license-1.0.1.json
+  yml: code-credit-license-1.0.1.yml
+  html: code-credit-license-1.0.1.html
+  text: code-credit-license-1.0.1.LICENSE
 - license_key: codeguru-permissions
   spdx_license_key: LicenseRef-scancode-codeguru-permissions
   other_spdx_license_keys: []
@@ -3671,7 +3727,7 @@
   html: dco-1.1.html
   text: dco-1.1.LICENSE
 - license_key: dejavu-font
-  spdx_license_key:
+  spdx_license_key: LicenseRef-scancode-dejavu-font
   other_spdx_license_keys: []
   is_exception: no
   is_deprecated: yes
@@ -4426,6 +4482,15 @@
   yml: epo-osl-2005.1.yml
   html: epo-osl-2005.1.html
   text: epo-osl-2005.1.LICENSE
+- license_key: eric-glass
+  spdx_license_key: LicenseRef-scancode-eric-glass
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: eric-glass.json
+  yml: eric-glass.yml
+  html: eric-glass.html
+  text: eric-glass.LICENSE
 - license_key: erlangpl-1.1
   spdx_license_key: ErlPL-1.1
   other_spdx_license_keys: []
@@ -5021,6 +5086,15 @@
   yml: gcc-linking-exception-2.0.yml
   html: gcc-linking-exception-2.0.html
   text: gcc-linking-exception-2.0.LICENSE
+- license_key: gco-v3.0
+  spdx_license_key: LicenseRef-scancode-gco-v3.0
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: gco-v3.0.json
+  yml: gco-v3.0.yml
+  html: gco-v3.0.html
+  text: gco-v3.0.LICENSE
 - license_key: gdcl
   spdx_license_key: LicenseRef-scancode-gdcl
   other_spdx_license_keys: []
@@ -5068,7 +5142,8 @@
   text: generic-tos.LICENSE
 - license_key: generic-trademark
   spdx_license_key: LicenseRef-scancode-generic-trademark
-  other_spdx_license_keys: []
+  other_spdx_license_keys:
+    - LicenseRef-scancode-trademark-notice
   is_exception: no
   is_deprecated: no
   json: generic-trademark.json
@@ -7538,10 +7613,30 @@
   yml: karl-peterson.yml
   html: karl-peterson.html
   text: karl-peterson.LICENSE
+- license_key: katharos-0.1.0
+  spdx_license_key: LicenseRef-scancode-katharos-0.1.0
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: katharos-0.1.0.json
+  yml: katharos-0.1.0.yml
+  html: katharos-0.1.0.html
+  text: katharos-0.1.0.LICENSE
+- license_key: kde-accepted-gpl
+  spdx_license_key: LicenseRef-scancode-kde-accepted-gpl
+  other_spdx_license_keys:
+    - LicenseRef-KDE-Accepted-GPL
+  is_exception: no
+  is_deprecated: no
+  json: kde-accepted-gpl.json
+  yml: kde-accepted-gpl.yml
+  html: kde-accepted-gpl.html
+  text: kde-accepted-gpl.LICENSE
 - license_key: kde-accepted-lgpl
   spdx_license_key: LicenseRef-scancode-kde-accepted-lgpl
-  other_spdx_license_keys: []
-  is_exception: yes
+  other_spdx_license_keys:
+    - LicenseRef-KDE-Accepted-LGPL
+  is_exception: no
   is_deprecated: no
   json: kde-accepted-lgpl.json
   yml: kde-accepted-lgpl.yml
@@ -7583,6 +7678,16 @@
   yml: kevlin-henney.yml
   html: kevlin-henney.html
   text: kevlin-henney.LICENSE
+- license_key: kfqf-accepted-gpl
+  spdx_license_key: LicenseRef-scancode-kfqf-accepted-gpl
+  other_spdx_license_keys:
+    - LicenseRef-KFQF-Accepted-GPL
+  is_exception: yes
+  is_deprecated: no
+  json: kfqf-accepted-gpl.json
+  yml: kfqf-accepted-gpl.yml
+  html: kfqf-accepted-gpl.html
+  text: kfqf-accepted-gpl.LICENSE
 - license_key: khronos
   spdx_license_key: LicenseRef-scancode-khronos
   other_spdx_license_keys: []
@@ -7904,7 +8009,9 @@
   text: lgpl-3.0-cygwin.LICENSE
 - license_key: lgpl-3.0-linking-exception
   spdx_license_key: LGPL-3.0-linking-exception
-  other_spdx_license_keys: []
+  other_spdx_license_keys:
+    - LicenseRef-scancode-lgpl-3-plus-linking
+    - LicenseRef-scancode-linking-exception-lgpl-3.0
   is_exception: yes
   is_deprecated: no
   json: lgpl-3.0-linking-exception.json
@@ -8049,6 +8156,15 @@
   yml: libpng.yml
   html: libpng.html
   text: libpng.LICENSE
+- license_key: librato-exception
+  spdx_license_key: LicenseRef-scancode-librato-exception
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: librato-exception.json
+  yml: librato-exception.yml
+  html: librato-exception.html
+  text: librato-exception.LICENSE
 - license_key: libselinux-pd
   spdx_license_key: LicenseRef-scancode-libselinux-pd
   other_spdx_license_keys: []
@@ -8843,6 +8959,15 @@
   yml: mit-no-false-attribs.yml
   html: mit-no-false-attribs.html
   text: mit-no-false-attribs.LICENSE
+- license_key: mit-no-trademarks
+  spdx_license_key: LicenseRef-scancode-mit-no-trademarks
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: mit-no-trademarks.json
+  yml: mit-no-trademarks.yml
+  html: mit-no-trademarks.html
+  text: mit-no-trademarks.LICENSE
 - license_key: mit-old-style-no-advert
   spdx_license_key: NTP
   other_spdx_license_keys: []
@@ -10428,6 +10553,15 @@
   yml: nvidia-gov.yml
   html: nvidia-gov.html
   text: nvidia-gov.LICENSE
+- license_key: nvidia-isaac-eula-2019.1
+  spdx_license_key: LicenseRef-scancode-nvidia-isaac-eula-2019.1
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: nvidia-isaac-eula-2019.1.json
+  yml: nvidia-isaac-eula-2019.1.yml
+  html: nvidia-isaac-eula-2019.1.html
+  text: nvidia-isaac-eula-2019.1.LICENSE
 - license_key: nvidia-ngx-eula-2019
   spdx_license_key: LicenseRef-scancode-nvidia-ngx-eula-2019
   other_spdx_license_keys: []
@@ -10446,6 +10580,15 @@
   yml: nvidia-sdk-eula-v0.11.yml
   html: nvidia-sdk-eula-v0.11.html
   text: nvidia-sdk-eula-v0.11.LICENSE
+- license_key: nvidia-video-codec-agreement
+  spdx_license_key: LicenseRef-scancode-nvidia-video-codec-agreement
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: nvidia-video-codec-agreement.json
+  yml: nvidia-video-codec-agreement.yml
+  html: nvidia-video-codec-agreement.html
+  text: nvidia-video-codec-agreement.LICENSE
 - license_key: nvidia
   spdx_license_key: LicenseRef-scancode-nvidia
   other_spdx_license_keys: []
@@ -10798,6 +10941,15 @@
   yml: ogl-uk-3.0.yml
   html: ogl-uk-3.0.html
   text: ogl-uk-3.0.LICENSE
+- license_key: ogl-wpd-3.0
+  spdx_license_key: LicenseRef-scancode-ogl-wpd-3.0
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: ogl-wpd-3.0.json
+  yml: ogl-wpd-3.0.yml
+  html: ogl-wpd-3.0.html
+  text: ogl-wpd-3.0.LICENSE
 - license_key: okl
   spdx_license_key: LicenseRef-scancode-okl
   other_spdx_license_keys: []
@@ -11797,6 +11949,15 @@
   yml: paulo-soares.yml
   html: paulo-soares.html
   text: paulo-soares.LICENSE
+- license_key: paypal-sdk-2013-2016
+  spdx_license_key: LicenseRef-scancode-paypal-sdk-2013-2016
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: paypal-sdk-2013-2016.json
+  yml: paypal-sdk-2013-2016.yml
+  html: paypal-sdk-2013-2016.html
+  text: paypal-sdk-2013-2016.LICENSE
 - license_key: pcre
   spdx_license_key: LicenseRef-scancode-pcre
   other_spdx_license_keys: []
@@ -12989,15 +13150,16 @@
   yml: scea-1.0.yml
   html: scea-1.0.html
   text: scea-1.0.LICENSE
-- license_key: scilab-en
-  spdx_license_key: LicenseRef-scancode-scilba-en
-  other_spdx_license_keys: []
+- license_key: scilab-en-2005
+  spdx_license_key: LicenseRef-scancode-scilab-en
+  other_spdx_license_keys:
+    - LicenseRef-scancode-scilba-en
   is_exception: no
   is_deprecated: no
-  json: scilab-en.json
-  yml: scilab-en.yml
-  html: scilab-en.html
-  text: scilab-en.LICENSE
+  json: scilab-en-2005.json
+  yml: scilab-en-2005.yml
+  html: scilab-en-2005.html
+  text: scilab-en-2005.LICENSE
 - license_key: scola-en
   spdx_license_key: LicenseRef-scancode-scola-en
   other_spdx_license_keys: []
@@ -13412,6 +13574,15 @@
   yml: softsurfer.yml
   html: softsurfer.html
   text: softsurfer.LICENSE
+- license_key: solace-software-eula-2020
+  spdx_license_key: LicenseRef-scancode-solace-software-eula-2020
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: solace-software-eula-2020.json
+  yml: solace-software-eula-2020.yml
+  html: solace-software-eula-2020.html
+  text: solace-software-eula-2020.LICENSE
 - license_key: spark-jive
   spdx_license_key: LicenseRef-scancode-spark-jive
   other_spdx_license_keys: []
@@ -14160,6 +14331,15 @@
   yml: syntext-serna-exception-1.0.yml
   html: syntext-serna-exception-1.0.html
   text: syntext-serna-exception-1.0.LICENSE
+- license_key: synthesis-toolkit
+  spdx_license_key: LicenseRef-scancode-synthesis-toolkit
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: synthesis-toolkit.json
+  yml: synthesis-toolkit.yml
+  html: synthesis-toolkit.html
+  text: synthesis-toolkit.LICENSE
 - license_key: takao-abe
   spdx_license_key: LicenseRef-scancode-takao-abe
   other_spdx_license_keys: []
@@ -14458,10 +14638,10 @@
   html: tpl-1.0.html
   text: tpl-1.0.LICENSE
 - license_key: trademark-notice
-  spdx_license_key: LicenseRef-scancode-trademark-notice
+  spdx_license_key:
   other_spdx_license_keys: []
   is_exception: no
-  is_deprecated: no
+  is_deprecated: yes
   json: trademark-notice.json
   yml: trademark-notice.yml
   html: trademark-notice.html
@@ -14547,6 +14727,15 @@
   yml: tsl-2018.yml
   html: tsl-2018.html
   text: tsl-2018.LICENSE
+- license_key: tsl-2020
+  spdx_license_key: LicenseRef-scancode-tsl-2020
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: tsl-2020.json
+  yml: tsl-2020.yml
+  html: tsl-2020.html
+  text: tsl-2020.LICENSE
 - license_key: tso-license
   spdx_license_key: LicenseRef-scancode-tso-license
   other_spdx_license_keys: []

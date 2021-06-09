@@ -1,0 +1,7 @@
+key: nvidia-video-codec-agreement
+short_name: NVIDIA Video Codec SDK Agreement
+name: NVIDIA Video Codec SDK Agreement
+category: Proprietary Free
+owner: NVIDIA
+homepage_url: https://developer.nvidia.com/nvidia-video-codec-sdk-license-agreement
+spdx_license_key: LicenseRef-scancode-nvidia-video-codec-agreement

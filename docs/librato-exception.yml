@@ -1,0 +1,7 @@
+key: librato-exception
+short_name: Librato Open License 1.0
+name: Librato Open License Version 1.0
+category: Proprietary Free
+owner: solarwinds-librato
+homepage_url: https://github.com/appoptics/appoptics-apm-ruby/blob/db06514031e962d1ffe7fc1a348895dbf2a6d693/LICENSE
+spdx_license_key: LicenseRef-scancode-librato-exception

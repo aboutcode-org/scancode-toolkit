@@ -7,3 +7,5 @@ notes: this is a generic export Trademark and name realted notice. Actual terms 
   related to name use restrictions and no endorsement. This should be used only for rare one-off
   notices.
 spdx_license_key: LicenseRef-scancode-generic-trademark
+other_spdx_license_keys:
+  - LicenseRef-scancode-trademark-notice

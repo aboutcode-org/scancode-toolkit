@@ -22,9 +22,7 @@ standard_notice: |
   See the Mulan PSL v1 for more details.
 ignorable_copyrights:
   - Copyright (c) 2019 name
-  - copyright holder Software Name
 ignorable_holders:
-  - Software Name
   - name
 ignorable_urls:
   - http://license.coscl.org.cn/MulanPSL

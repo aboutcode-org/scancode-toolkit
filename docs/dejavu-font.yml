@@ -5,3 +5,4 @@ name: DejaVu Font License
 category: Permissive
 owner: Unspecified
 notes: this is a composite of a double bitstream.
+spdx_license_key: LicenseRef-scancode-dejavu-font

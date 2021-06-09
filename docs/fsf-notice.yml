@@ -1,7 +1,7 @@
 key: fsf-notice
-short_name: FSF Free Software Notice
-name: Free Software Foundation - Free Software Notice
-category: Copyleft
+short_name: FSF Notice
+name: FSF Notice
+category: Permissive
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.fsf.org/licensing/licenses/
 notes: This notice is commonly seen in L/GPL-licensed FSF and GNU projects as a short additional
