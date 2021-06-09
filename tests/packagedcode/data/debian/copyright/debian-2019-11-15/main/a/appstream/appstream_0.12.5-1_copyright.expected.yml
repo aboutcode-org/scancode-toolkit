@@ -1,13 +1,21 @@
--
-- gpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.1-plus AND (gpl-2.0-plus AND gpl-3.0) AND lgpl-3.0-plus
+- - GPL-2+ and LGPL-2.1+
+  - LGPL-2.1+
+  - GPL-2+
+- ((gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1))
+  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus)
 - |
-  Copyright 2012-2018, Matthias Klumpp <matthias@tenstral.net> Richard Hughes <richard@hughsie.com>
-  Copyright 2012-2018, Matthias Klumpp <matthias@tenstral.net>
-  Copyright 2016-2018, Aleix Pol Gonzalez <aleixpol@kde.org> 2014-2018, Matthias Klumpp <matthias@tenstral.net> 2014, Sune Vuorela <sune@vuorela.dk>
-  Copyright 2012-2018, Matthias Klumpp <matthias@tenstral.net>
-  Copyright 2014-2016, Matthias Klumpp <mak@debian.org>
-  Copyright 2017, Jan Grulich <jgrulich@redhat.com> 2016, Matthias Klumpp <matthias@tenstral.net>
-  Copyright 2014-2016, Richard Hughes <richard@hughsie.com> 2012-2017, Matthias Klumpp <matthias@tenstral.net>
-  Copyright 2016, Richard Hughes <richard@hughsie.com>
-  Copyright 2014-2016, Matthias Klumpp <matthias@tenstral.net> 2014, Richard Hughes <richard@hughsie.com>
-  Copyright 2017, Matthias Klumpp <matthias@tenstral.net> 2016, Lucas Moura <lucas.moura128@gmail.com>
+  2012-2018, Matthias Klumpp <matthias@tenstral.net>
+  Richard Hughes <richard@hughsie.com>
+  2016-2018, Aleix Pol Gonzalez <aleixpol@kde.org>
+  2014-2018, Matthias Klumpp <matthias@tenstral.net>
+  2014, Sune Vuorela <sune@vuorela.dk>
+  2014-2016, Matthias Klumpp <mak@debian.org>
+  2017, Jan Grulich <jgrulich@redhat.com>
+  2016, Matthias Klumpp <matthias@tenstral.net>
+  2014-2016, Richard Hughes <richard@hughsie.com>
+  2012-2017, Matthias Klumpp <matthias@tenstral.net>
+  2016, Richard Hughes <richard@hughsie.com>
+  2014-2016, Matthias Klumpp <matthias@tenstral.net>
+  2014, Richard Hughes <richard@hughsie.com>
+  2017, Matthias Klumpp <matthias@tenstral.net>
+  2016, Lucas Moura <lucas.moura128@gmail.com>
