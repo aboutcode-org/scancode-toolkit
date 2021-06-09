@@ -28,7 +28,7 @@ Ouputs:
 
  - New output format ccsv and doc. ccsv generates a curated list of licence copyright 
    package and URL info for each file of the source scanned. doc format generates 
-   report with consolidated packages and licenses.
+   report with consolidated packages and license(s) and license(s)-url(s).
 
 
 v21.5.11
