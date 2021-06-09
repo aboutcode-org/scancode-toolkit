@@ -1,0 +1,5 @@
+path,type,license_name,license_text_url,copyright,url,package_name,package_version,package_homepage_url
+scan,directory,,,,,cookie-signature,1.0.3,
+scan/json2csv.rb,file,Apache License 2.0,http://www.apache.org/licenses/LICENSE-2.0,Copyright (c) 2017 nexB Inc. and others,"http://nexb.com/, https://github.com/nexB/scancode-toolkit/, http://www.apache.org/licenses/LICENSE-2.0",cookie-signature,1.0.3,
+scan/license,file,GNU General Public License 2.0 or later,http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html,,,cookie-signature,1.0.3,
+scan/package.json,file,MIT License,http://opensource.org/licenses/mit-license.php,Copyright (c) 2012 LearnBoost <tj@learnboost.com>,"https://github.com/visionmedia/node-cookie-signature.git, https://github.com/visionmedia/node-cookie-signature/issues",cookie-signature,1.0.3,
