@@ -884,7 +884,7 @@ class Codebase(object):
             files_count += 1
         else:
             dirs_count += 1
-        size_count += root.size
+        size_count += root.size or 0
 
         return files_count, dirs_count, size_count
 
@@ -1133,9 +1133,9 @@ class Resource(object):
         """
         files_count = dirs_count = size_count = 0
         for child in self.children(codebase):
-            files_count += child.files_count
-            dirs_count += child.dirs_count
-            size_count += child.size_count
+            files_count += child.files_count or 0
+            dirs_count += child.dirs_count or 0
+            size_count += child.size_count or 0
 
             if skip_filtered and child.is_filtered:
                 continue
@@ -1144,7 +1144,7 @@ class Resource(object):
                 files_count += 1
             else:
                 dirs_count += 1
-            size_count += child.size
+            size_count += child.size or 0
 
         self.files_count = files_count
         self.dirs_count = dirs_count
