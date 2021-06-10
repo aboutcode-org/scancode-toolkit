@@ -1055,6 +1055,15 @@ class TestVirtualCodebase(FileBasedTesting):
             ])
         ]
         assert [r.to_dict() for r in codebase.walk()] == expected
+        
+    def test_VirtualCodebase_account_fingerprint_attribute(self):
+        test_file = self.get_test_loc("resource/virtual_codebase/fingerprint_attribute.json")
+        codebase = VirtualCodebase(test_file)
+        resources_fingerprint = [resource.fingerprint for resource in codebase.walk()]
+        assert "e30cf09443e7878dfed3288886e97542" in resources_fingerprint
+        assert None in resources_fingerprint
+        assert codebase.get_resource(0) == codebase.root
+        assert resources_fingerprint.count(None) == 2
 
 
 class TestCodebaseLowestCommonParent(FileBasedTesting):
