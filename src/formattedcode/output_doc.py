@@ -147,7 +147,7 @@ def write_doc(results, output_file):
                     my_string = '\n'.join(map(str, my_list))
                     row_cells[4].text = my_string
     
-    
+    # The below method is from python-docx github project, licensed under MIT license, Copyright ©  2013 Steve Canny, https//github.com/scanny
     def add_hyperlink(paragraph, text, url):
         # This gets access to the document.xml.rels file and gets a new relation id value
         part = paragraph.part
