@@ -1,4 +1,5 @@
 license_expression: warranty-disclaimer
+is_generic: yes
 is_license_notice: yes
 minimum_coverage: 80
 notes: found in AgentPP/AngentPro an SNMP commercial product
