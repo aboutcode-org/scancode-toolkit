@@ -74,15 +74,15 @@ def detect_copyrights(
     Yield tuples of (detection type, detected string, start line, end line)
     detected in the file at ``location``.
 
-    "detection type" is one of : "copyrights", "authors", "holders".
+    "detection type" is one of: "copyrights", "authors", or "holders".
 
     These are included in the yielded tuples based on the values of
     ``copyrights=True``, ``holders=True``, ``authors=True``
 
-    - Include years in copyrights if ``include_years`` is True.
-    - Include trailing "all rights reserved"-style mentions if
+    - Include years in copyrights, if ``include_years`` is True.
+    - Include trailing "all rights reserved"-style mentions, if
       ``include_allrights`` is True.
-    - Strip markup from text if ``demarkup`` is True.
+    - Strip markup from text, if ``demarkup`` is True.
     - Run for up to ``deadline`` seconds and return results found so far.
     """
     from textcode.analysis import numbered_text_lines
