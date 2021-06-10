@@ -5,6 +5,12 @@ vNext
 -----
 
 
+Version 21.6.10
+---------------
+
+- Do not fail if a Codebase file.size is None and not zero
+
+
 Version 21.5.25
 ---------------
 
