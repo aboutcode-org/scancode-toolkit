@@ -1325,6 +1325,13 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         assert "/Users/sesser/code/nexb/scancode-toolkit/samples/README" == resource.path
         assert 1 == codebase.compute_counts()[0]
 
+    def test_VirtualCodebase_can_compute_counts_witrh_null(self):
+        # was failing with 
+        # size_count += child.size
+        # TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
+        test_file = self.get_test_loc("resource/virtual_codebase/node-16-slim.json")
+        codebase = VirtualCodebase(test_file)
+        codebase.compute_counts()
 
 class TestResource(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
