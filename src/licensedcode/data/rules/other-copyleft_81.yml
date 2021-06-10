@@ -1,4 +1,5 @@
 license_expression: other-copyleft
 is_license_text: yes
+is_generic: yes
 notes: See https://groups.csail.mit.edu/mac/ftpdir/scheme-7.4/license.html some variant are
     more permissive
