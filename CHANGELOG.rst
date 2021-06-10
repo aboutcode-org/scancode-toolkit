@@ -9,12 +9,13 @@ Version 21.6.10
 ---------------
 
 - Do not fail if a Codebase file.size is None and not zero
+- Bump pinned dependencies including pkg:pypi/urllib3 for CVE-2021-33503
 
 
 Version 21.5.25
 ---------------
 
-- Fix click-realted bug https://github.com/nexB/scancode-toolkit/issues/2529
+- Fix click-related bug https://github.com/nexB/scancode-toolkit/issues/2529
 - Add tests to run on the latest of every dependency
 
 
