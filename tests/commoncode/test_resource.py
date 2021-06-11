@@ -13,8 +13,6 @@ from os.path import dirname
 from os.path import exists
 from os.path import join
 
-import pytest
-
 from commoncode.fileutils import parent_directory
 from commoncode.testcase import FileBasedTesting
 from commoncode.resource import Codebase
@@ -42,13 +40,16 @@ class TestCodebase(FileBasedTesting):
         ]
         assert [(r.name, r.is_file) for r in results] == expected
 
-    @pytest.mark.xfail(reason='FIXME: a fix for ticket #1422 is needed')
-    def test_Codebase_with_only_ignores_should_not_fail_to_create(self):
+    def test_Codebase_do_not_ignore_by_default_older_sccs_and_rcs_dirs(self):
+        # See https://github.com/nexB/scancode-toolkit/issues/1422
         from commoncode.fileutils import create_dir
         test_codebase = self.get_temp_dir()
         create_dir(join(test_codebase, 'sccs', 'a'))
         create_dir(join(test_codebase, 'rcs', 'b'))
-        Codebase(test_codebase)
+        codebase = Codebase(test_codebase)
+        results = list(codebase.walk(topdown=True, skip_root=True))
+        expected = ['rcs', 'b', 'sccs', 'a']
+        assert [r.name for r in results] == expected
 
     def test_walk_topdown(self):
         test_codebase = self.get_test_loc('resource/codebase')
@@ -1055,7 +1056,7 @@ class TestVirtualCodebase(FileBasedTesting):
             ])
         ]
         assert [r.to_dict() for r in codebase.walk()] == expected
-        
+
     def test_VirtualCodebase_account_fingerprint_attribute(self):
         test_file = self.get_test_loc("resource/virtual_codebase/fingerprint_attribute.json")
         codebase = VirtualCodebase(test_file)
@@ -1350,7 +1351,6 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         # was failing with RecursionError: maximum recursion depth exceeded
         test_file = self.get_test_loc("resource/virtual_codebase/zephyr-binary.json")
         VirtualCodebase(test_file)
-
 
 
 class TestResource(FileBasedTesting):
