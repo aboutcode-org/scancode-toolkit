@@ -1,0 +1,100 @@
+{
+"headers": [
+{
+  "tool_name": "scanpipe",
+  "tool_version": "21.5.12",
+  "notice": "Generated with ScanCode.io and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied.\nNo content created from ScanCode.io should be considered or used as legal advice.\nConsult an Attorney for any legal advice.\nScanCode.io is a free software code scanning tool from nexB Inc. and others\nlicensed under the Apache License version 2.0.\nScanCode is a trademark of nexB Inc.\nVisit https://github.com/nexB/scancode.io for support and download.\n",
+  "uuid": "2f8e9a35-048e-4d9f-ae56-feea8863d6eb",
+  "created_date": "2021-06-10T13:56:44.418Z",
+  "input_files": [
+    "hello_world.tar"
+  ],
+  "runs": [
+    {
+      "pipeline_name": "docker",
+      "description": "A pipeline to analyze a Docker image.",
+      "uuid": "106296b1-6334-4393-9f1a-209459954812",
+      "created_date": "2021-06-10T13:56:44.421302Z",
+      "task_id": "c851f2e7-7cc1-4952-8d93-1cdee4a147bd",
+      "task_start_date": "2021-06-10T13:56:44.434313Z",
+      "task_end_date": "2021-06-10T13:56:44.819773Z",
+      "task_exitcode": 0,
+      "task_output": "",
+      "log": "2021-06-10 13:56:44.43 Pipeline [docker] starting\n2021-06-10 13:56:44.43 Step [extract_images] starting\n2021-06-10 13:56:44.44 Step [extract_images] completed in 0.00 seconds\n2021-06-10 13:56:44.44 Step [extract_layers] starting\n2021-06-10 13:56:44.44 Step [extract_layers] completed in 0.00 seconds\n2021-06-10 13:56:44.45 Step [find_images_linux_distro] starting\n2021-06-10 13:56:44.45 Step [find_images_linux_distro] completed in 0.00 seconds\n2021-06-10 13:56:44.45 Step [collect_images_information] starting\n2021-06-10 13:56:44.45 Step [collect_images_information] completed in 0.00 seconds\n2021-06-10 13:56:44.46 Step [collect_and_create_codebase_resources] starting\n2021-06-10 13:56:44.46 Step [collect_and_create_codebase_resources] completed in 0.01 seconds\n2021-06-10 13:56:44.47 Step [collect_and_create_system_packages] starting\n2021-06-10 13:56:44.47 Step [collect_and_create_system_packages] completed in 0.00 seconds\n2021-06-10 13:56:44.47 Step [tag_uninteresting_codebase_resources] starting\n2021-06-10 13:56:44.48 Step [tag_uninteresting_codebase_resources] completed in 0.00 seconds\n2021-06-10 13:56:44.48 Step [tag_empty_files] starting\n2021-06-10 13:56:44.48 Step [tag_empty_files] completed in 0.00 seconds\n2021-06-10 13:56:44.48 Step [scan_for_application_packages] starting\n2021-06-10 13:56:44.53 Step [scan_for_application_packages] completed in 0.05 seconds\n2021-06-10 13:56:44.54 Step [scan_for_files] starting\n2021-06-10 13:56:44.80 Step [scan_for_files] completed in 0.26 seconds\n2021-06-10 13:56:44.80 Step [analyze_scanned_files] starting\n2021-06-10 13:56:44.81 Step [analyze_scanned_files] completed in 0.00 seconds\n2021-06-10 13:56:44.81 Step [tag_not_analyzed_codebase_resources] starting\n2021-06-10 13:56:44.81 Step [tag_not_analyzed_codebase_resources] completed in 0.00 seconds\n2021-06-10 13:56:44.81 Pipeline completed\n",
+      "execution_time": 0
+    }
+  ],
+  "extra_data": {
+    "images": [
+      {
+        "os": "linux",
+        "tags": [],
+        "author": null,
+        "distro": null,
+        "labels": {},
+        "sha256": null,
+        "comment": null,
+        "created": "2021-03-05T23:25:25.230064203Z",
+        "history": [
+          {
+            "created": "2021-03-05T23:25:25.052495292Z",
+            "created_by": "/bin/sh -c #(nop) COPY file:7bf12aab75c3867a023fe3b8bd6d113d43a4fcc415f3cc27cbcf0fff37b65a02 in / "
+          },
+          {
+            "created": "2021-03-05T23:25:25.230064203Z",
+            "created_by": "/bin/sh -c #(nop)  CMD [\"/hello\"]",
+            "empty_layer": true
+          }
+        ],
+        "variant": null,
+        "image_id": "d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726",
+        "os_version": null,
+        "architecture": "amd64",
+        "image_format": "docker",
+        "config_digest": "sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726",
+        "docker_version": "19.03.12"
+      }
+    ]
+  }
+}],
+"packages": [
+],
+"files": [
+{
+  "for_packages": [],
+  "compliance_alert": "",
+  "path": "/hello_world.tar-extract/f22b99068db93900abe17f7f5e09ec775c2826ecfe9db961fea68293744144bd/hello",
+  "size": 13336,
+  "sha1": "ab2ceef6fe98ef7acd088f5d79034dc859ff0d27",
+  "md5": "773e022bbbd0b4cc88edb6c7d12daf5d",
+  "copyrights": [],
+  "holders": [],
+  "authors": [],
+  "licenses": [],
+  "license_expressions": [],
+  "emails": [],
+  "urls": [
+    {
+      "url": "https://hub.docker.com/",
+      "end_line": 19,
+      "start_line": 19
+    },
+    {
+      "url": "https://docs.docker.com/get-started/",
+      "end_line": 21,
+      "start_line": 21
+    }
+  ],
+  "status": "no-licenses",
+  "type": "file",
+  "extra_data": {},
+  "name": "hello",
+  "extension": "",
+  "programming_language": "",
+  "mime_type": "application/x-executable",
+  "file_type": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped",
+  "is_binary": true,
+  "is_text": false,
+  "is_archive": false
+}]
+}
