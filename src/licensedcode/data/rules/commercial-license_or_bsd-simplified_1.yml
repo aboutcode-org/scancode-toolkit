@@ -1,4 +1,5 @@
 license_expression: commercial-license OR bsd-simplified
+is_generic: yes
 is_license_text: yes
 ignorable_urls:
     - http://www.qt.io/contact-us

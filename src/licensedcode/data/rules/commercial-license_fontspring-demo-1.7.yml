@@ -1,4 +1,5 @@
 license_expression: commercial-license
+is_generic: yes
 is_license_text: yes
 ignorable_emails:
     - support@fontspring.com

@@ -1,4 +1,5 @@
 license_expression: commercial-license
+is_generic: yes
 is_license_text: yes
 ignorable_urls:
     - http://www.redhat.com/legal/open_source_assurance_agreement.html
