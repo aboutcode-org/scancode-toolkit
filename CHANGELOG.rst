@@ -5,6 +5,12 @@ vNext
 -----
 
 
+Version 21.6.11
+---------------
+
+- Do not fail if a Codebase does not have a common shared root
+
+
 Version 21.6.10
 ---------------
 
