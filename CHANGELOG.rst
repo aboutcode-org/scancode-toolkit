@@ -5,6 +5,14 @@ vNext
 -----
 
 
+Version 21.6.11
+---------------
+
+- Do not fail if a Codebase does not have a common shared root #23
+- Consider all Resource attributes when building a VirtualCodebase #23
+- Do not ignore by default sccs and rcs dirs https://github.com/nexB/scancode-toolkit/issues/1422
+
+
 Version 21.6.10
 ---------------
 
