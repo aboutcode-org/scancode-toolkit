@@ -754,6 +754,10 @@ class BasicRule(object):
     # detected immediately after.
     is_license_intro = attr.ib(default=False, repr=False)
 
+    #unknown licenses are the detected texts are highly likely to be a license
+    #text or notice but that cannot be matched to a known named license.
+    is_unknown = attr.ib(default=False, repr=False)
+
     # Is this rule text a false positive when matched exactly? If yes, it will
     # filtered out at the end if matched (unless part of a large match)
     is_false_positive = attr.ib(default=False, repr=False)
@@ -876,6 +880,7 @@ class BasicRule(object):
             self.is_license_reference,
             self.is_license_tag,
             self.is_license_intro,
+            self.is_unknown,
         )
 
         has_license_flags = any(license_flags)
@@ -1009,6 +1014,7 @@ class BasicRule(object):
             'is_license_reference',
             'is_license_tag',
             'is_license_intro',
+            'is_unknown'
             'only_known_words',
         )
 
@@ -1253,6 +1259,7 @@ class Rule(BasicRule):
         self.is_license_tag = data.get('is_license_tag', False)
         self.is_license_reference = data.get('is_license_reference', False)
         self.is_license_intro = data.get('is_license_intro', False)
+        self.is_unknown = data.get('is_unknown', False)
         self.only_known_words = data.get('only_known_words', False)
 
         self.referenced_filenames = data.get('referenced_filenames', []) or []

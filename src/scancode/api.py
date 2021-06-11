@@ -269,6 +269,7 @@ def _licenses_data_from_match(
         matched_rule['is_license_reference'] = match.rule.is_license_reference
         matched_rule['is_license_tag'] = match.rule.is_license_tag
         matched_rule['is_license_intro'] = match.rule.is_license_intro
+        matched_rule['is_unknown'] = match.rule.is_unknwon
         matched_rule['matcher'] = match.matcher
         matched_rule['rule_length'] = match.rule.length
         matched_rule['matched_length'] = match.len()
