@@ -1014,7 +1014,7 @@ class BasicRule(object):
             'is_license_reference',
             'is_license_tag',
             'is_license_intro',
-            'is_unknown'
+            'is_unknown',
             'only_known_words',
         )
 
