@@ -5,3 +5,4 @@ referenced_filenames:
     - toolkit/content/license.html
 ignorable_urls:
     - http://www.mozilla.org/foundation/licensing.html
+is_unknown: yes

@@ -3,3 +3,4 @@ is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://go.microsoft.com/fwlink/?linkid=218949
+is_unknown: yes

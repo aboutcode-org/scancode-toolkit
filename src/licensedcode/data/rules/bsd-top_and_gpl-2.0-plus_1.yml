@@ -6,3 +6,4 @@ notes: this is a franken license composed of parts of a bsd-top and parts of a g
     http://reviser.osdn.jp/Excel_Reviser/_reviser.php.html
 ignorable_urls:
     - http://www.gnu.org/licenses/gpl.html
+is_unknown: yes

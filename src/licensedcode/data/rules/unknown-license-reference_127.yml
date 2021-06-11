@@ -3,3 +3,4 @@ is_license_reference: yes
 relevance: 99
 ignorable_urls:
     - https://tldrlegal.com/license/
+is_unknown: yes

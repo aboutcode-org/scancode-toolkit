@@ -4,3 +4,4 @@ relevance: 100
 referenced_filenames:
     - COPYING
     - COPYING.LIB
+is_unknown: yes

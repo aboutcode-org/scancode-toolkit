@@ -5,3 +5,4 @@ referenced_filenames:
     - LEGAL
 ignorable_urls:
     - http://opendatacommons.org/licenses/odbl/
+is_unknown: yes

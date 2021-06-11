@@ -3,3 +3,4 @@ is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://company.aspose.com/legal/eula
+is_unknown: yes

@@ -5,3 +5,4 @@ minimum_coverage: 50
 notes: this is a rare modified mpl that needs a review
 ignorable_urls:
     - http://gis.foundationcenter.org/licenses/LICENSE-1.0.html
+is_unknown: yes

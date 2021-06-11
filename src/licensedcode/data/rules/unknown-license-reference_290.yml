@@ -3,3 +3,4 @@ is_license_reference: yes
 relevance: 100
 minimum_coverage: 100
 notes: Seen in some VMWare notice. Unclear what they meant with this
+is_unknown: yes

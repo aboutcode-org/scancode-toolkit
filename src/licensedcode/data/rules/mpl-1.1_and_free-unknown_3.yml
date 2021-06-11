@@ -3,3 +3,4 @@ is_license_notice: yes
 minimum_coverage: 75
 ignorable_urls:
     - http://www.mozilla.org/MPL/
+is_unknown: yes

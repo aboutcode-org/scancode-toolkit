@@ -5,3 +5,4 @@ notes: contains several additions that may or may not be a problem wrt. compatib
     AGPL
 ignorable_urls:
     - http://www.gnu.org/licenses
+is_unknown: yes

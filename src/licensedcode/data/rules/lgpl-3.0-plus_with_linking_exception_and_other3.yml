@@ -3,3 +3,4 @@ is_license_notice: yes
 minimum_coverage: 80
 ignorable_urls:
     - http://www.gnu.org/licenses/
+is_unknown: yes

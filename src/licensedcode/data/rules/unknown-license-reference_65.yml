@@ -4,3 +4,4 @@ relevance: 90
 minimum_coverage: 95
 referenced_filenames:
     - main.c
+is_unknown: yes

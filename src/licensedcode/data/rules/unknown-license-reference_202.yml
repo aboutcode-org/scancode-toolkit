@@ -3,3 +3,4 @@ is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - http://microsoft.com/web/webpi/eula/
+is_unknown: yes

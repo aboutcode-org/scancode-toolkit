@@ -7,3 +7,4 @@ notes: |
     See https://raw.githubusercontent.com/PixarAnimationStudios/ruby-jss/master/LICENSE.txt
 ignorable_urls:
     - https://www.apache.org/licenses/LICENSE-2.0
+is_unknown: yes

@@ -3,3 +3,4 @@ is_license_reference: yes
 relevance: 100
 ignorable_urls:
     - https://kusto.blob.core.windows.net/kusto-nuget/EULA-agreement.htm
+is_unknown: yes

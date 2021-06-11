@@ -6,3 +6,4 @@ referenced_filenames:
     - VFS.h
 notes: seen in https://github.com/meh2481/HeartlightPlusPlus/blob/b7e3c081012ef29522bd347701b3b611886bef6c/include/VFS.h
     MIT-licensed but the file name is too common.
+is_unknown: yes

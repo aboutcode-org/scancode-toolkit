@@ -4,3 +4,4 @@ referenced_filenames:
     - /usr/doc/copyright/GPL
     - COPYING
 notes: there is an explicit reference to COPYING in linux, hence a GPL-2.0
+is_unknown: yes

@@ -2,3 +2,4 @@ license_expression: free-unknown
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 99
+is_unknown: yes

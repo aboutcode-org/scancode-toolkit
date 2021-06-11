@@ -5,3 +5,4 @@ referenced_filenames:
     - docs/THIRDPARTY
 ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
+is_unknown: yes

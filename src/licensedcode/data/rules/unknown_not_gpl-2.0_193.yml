@@ -4,3 +4,4 @@ referenced_filenames:
     - COPYING
 notes: Seen in Intel e100 GPL-licensed linux driver... but here there is no license stated and
     when the Intel ref is not there, we cannot conclude to a license.
+is_unknown: yes

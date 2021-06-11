@@ -3,3 +3,4 @@ is_license_reference: yes
 minimum_coverage: 100
 ignorable_urls:
     - http://github.com/Percona/PerconaFT/blob/master/PATENTS
+is_unknown: yes

@@ -10,3 +10,4 @@ ignorable_urls:
 ignorable_emails:
     - dev@sqlmap.org
     - sales@sqlmap.org
+is_unknown: yes

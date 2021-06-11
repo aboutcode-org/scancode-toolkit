@@ -3,3 +3,4 @@ is_license_reference: yes
 relevance: 90
 ignorable_urls:
     - https://raw.githubusercontent.com/mgravell/capnproto-net/master/LICENSE
+is_unknown: yes

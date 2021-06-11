@@ -5,3 +5,4 @@ referenced_filenames:
     - Copyright.txt
 ignorable_urls:
     - http://gdcm.sourceforge.net/Copyright.html
+is_unknown: yes

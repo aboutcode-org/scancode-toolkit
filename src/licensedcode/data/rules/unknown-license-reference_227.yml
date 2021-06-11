@@ -2,3 +2,4 @@ license_expression: unknown-license-reference
 minimum_coverage: 90
 is_license_intro: yes
 relevance: 100
+is_unknown: yes

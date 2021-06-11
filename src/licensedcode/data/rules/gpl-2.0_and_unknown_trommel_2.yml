@@ -5,3 +5,4 @@ referenced_filenames:
 notes: this is reference to a license that is GPL-like but not exactly
 ignorable_emails:
     - permission@sei.cmu.edu
+is_unknown: yes

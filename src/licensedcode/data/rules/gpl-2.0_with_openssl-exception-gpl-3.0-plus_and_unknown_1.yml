@@ -5,3 +5,4 @@ notes: the GPL impact interpretation is uncommon and short of a legal analysis i
     an extra unknown license
 ignorable_urls:
     - http://www.openssl.org/
+is_unknown: yes

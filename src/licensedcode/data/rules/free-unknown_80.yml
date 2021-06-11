@@ -2,3 +2,4 @@ license_expression: free-unknown
 is_license_notice: yes
 relevance: 90
 notes: Seen in gettext
+is_unknown: yes

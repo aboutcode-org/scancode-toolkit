@@ -3,3 +3,4 @@ is_license_reference: yes
 relevance: 70
 ignorable_urls:
     - http://creativecommons.org/ns#DerivativeWorks
+is_unknown: yes

@@ -4,3 +4,4 @@ relevance: 100
 notes: commercial use right are not clear
 ignorable_urls:
     - http://introjs.com/
+is_unknown: yes

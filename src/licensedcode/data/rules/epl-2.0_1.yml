@@ -5,3 +5,4 @@ minimum_coverage: 98
 notes: there is a typo in the text with an EDL reference so the license is unclear
 ignorable_urls:
     - https://www.eclipse.org/legal/epl-2.0
+is_unknown: yes

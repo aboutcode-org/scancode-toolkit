@@ -5,3 +5,4 @@ minimum_coverage: 100
 only_known_words: yes
 referenced_filenames:
     - LICENSE
+is_unknown: yes

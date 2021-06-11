@@ -4,3 +4,4 @@ referenced_filenames:
     - COPYING
     - /usr/doc/copyright/GPL
 notes: Seen in the kernel
+is_unknown: yes

@@ -6,3 +6,4 @@ ignorable_authors:
         Design, Inc., and their contributors
 ignorable_urls:
     - http://www.wu-ftpd.org/license.html
+is_unknown: yes
