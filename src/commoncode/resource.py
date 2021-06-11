@@ -12,6 +12,7 @@ import os
 import posixpath
 import traceback
 import sys
+from pathlib import Path
 
 from collections import deque
 from functools import partial
@@ -1530,7 +1531,7 @@ class VirtualCodebase(Codebase):
         Note: the root path and root Resource must already be in
         `parent_by_path` or else this function does not work.
         """
-        parent_path = parent_directory(path).rstrip('/').rstrip('\\').lstrip("/")
+        parent_path = parent_directory(path).rstrip('/').rstrip('\\').lstrip('/')
         existing_parent = parent_by_path.get(parent_path)
         if existing_parent:
             return existing_parent
@@ -1547,6 +1548,13 @@ class VirtualCodebase(Codebase):
         )
         parent_by_path[parent_path] = parent_resource
         return parent_resource
+
+    def _set_new_root_directory(self, resources_data, new_root_directory_path):
+        for resource_data in resources_data:
+            resource_path = Path(resource_data['path'])
+            new_resource_path = Path(new_root_directory_path)
+            new_resource_path = new_resource_path.joinpath(resource_path)
+            resource_data['path'] = str(new_resource_path)
 
     def _populate(self, scan_data):
         """
@@ -1645,6 +1653,21 @@ class VirtualCodebase(Codebase):
             sample_resource_path = sample_resource_data['path']
             sample_resource_path = sample_resource_path.strip('/')
             root_path = sample_resource_path.split('/')[0]
+
+            # Check to see if the Resources from the scan we received has a common root directory.
+            for resource_data in resources_data:
+                resource_path = resource_data.get('path')
+                resource_path = resource_path.strip('/')
+                resource_root_path = resource_path.split('/')[0]
+                # If not, set a common root directory for all Resources.
+                if resource_root_path != root_path:
+                    self._set_new_root_directory(
+                        resources_data=resources_data,
+                        new_root_directory_path='virtual_root'
+                    )
+                    root_path = 'virtual_root'
+                    break
+
         root_name = root_path
         root_is_file = False
         root_data = self._create_empty_resource_data()
