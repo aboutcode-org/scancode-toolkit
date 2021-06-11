@@ -1591,10 +1591,13 @@ class VirtualCodebase(Codebase):
         if not resources_data:
             raise Exception('Input has no file-level scan results.')
 
-        # We collect the first Resource so we can see what attributes it has and determine
-        # the root path from its path
-        sample_resource_data = resources_data[0]
-
+        # We iterate through all the Resource(s) so that we can build attributes each resource contains
+        
+        sample_resource_data = dict()
+        
+        for resource in resources_data:
+            sample_resource_data.update(resource)
+        
         # Collect the existing attributes of the standard Resource class
         standard_res_attributes = set(f.name for f in attr.fields(Resource))
         # add these properties since they are fields but are serialized
