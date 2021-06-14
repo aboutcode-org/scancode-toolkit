@@ -1467,6 +1467,8 @@ class SpdxRule(Rule):
             )
 
         self.license_expression = expression.render()
+        if "unknown" in self.license_expression:
+            self.is_unknown = True
         self.license_expression_object = expression
         self.is_license_tag = True
         self.is_small = False
