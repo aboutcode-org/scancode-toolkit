@@ -14,7 +14,7 @@ import pytest
 import saneyaml
 
 from commoncode.testcase import FileDrivenTesting
-from scancode.cli_test_utils import streamline_scan
+from scancode.cli_test_utils import streamline_scanned_file
 from scancode.cli_test_utils import run_scan_click
 
 test_env = FileDrivenTesting()
@@ -85,4 +85,4 @@ def load_yaml_results(location):
     with open(location, encoding='utf-8') as res:
         scan_results = res.read()
     scan_results = saneyaml.load(scan_results)
-    return streamline_scan(scan_results, remove_file_date=True)
+    return streamline_scanned_file(scan_results, remove_file_date=True)
