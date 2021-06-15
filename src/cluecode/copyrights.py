@@ -14,13 +14,16 @@ from collections import deque
 from functools import partial
 from time import time
 
-from cluecode import copyrights_hint
+import pygmars
+
 from commoncode.text import toascii
 from commoncode.text import unixlinesep
 
+from cluecode import copyrights_hint
+
 # Tracing flags
 TRACE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT', False)
-# set to 1 to enable nltk deep tracing
+# set to 1 to enable pygmars deep tracing
 TRACE_DEEP = 0
 if os.environ.get('SCANCODE_DEBUG_COPYRIGHT_DEEP'):
     TRACE_DEEP = 1
@@ -50,13 +53,13 @@ The process consists in:
  - prepare and cleanup text
  - identify regions of text that may contain copyright (using hints).
    These are called "candidates".
- - tag the text for parts-of-speech (POS) to identify various copyright
-   statements parts such as dates, companues, names ("named entities"), etc.
-   This is done using NLTK POS tagging.
+ - tag the text to recognize (e.g. lex) parts-of-speech (POS) tags to identify various copyright
+   statements parts such as dates, companies, names ("named entities"), etc.
+   This is done using pygmars which contains a lexer derived from NLTK POS tagger.
  - feed the tagged text to a parsing grammar describing actual copyright
-   statements (also using NLTK)
- - yield copyright statements, holder and authors with start and end line
-   from the parse tree with some post-detection cleanups.
+   statements (also using pygmars) and obtain a parse tree.
+ - Walk the parse tree and yield copyright statements, holder and authors with start
+   and end line from the parse tree with some extra post-detection cleanups.
 """
 
 
@@ -181,9 +184,8 @@ class CopyrightDetector(object):
     """
 
     def __init__(self):
-        import nltk
-        self.tagger = nltk.RegexpTagger(patterns)
-        self.chunker = nltk.RegexpParser(grammar, trace=TRACE_DEEP)
+        self.lexer = pygmars.lex.RegexpLexer(patterns)
+        self.parser = pygmars.parse.RegexpParser(grammar, trace=TRACE_DEEP)
 
     def detect(self,
         numbered_lines,
@@ -207,7 +209,7 @@ class CopyrightDetector(object):
           ``include_allrights`` is True.
         - Strip markup from text if ``demarkup`` is True.
         """
-        from nltk.tree import Tree
+        Tree = pygmars.tree.Tree
         numbered_lines = list(numbered_lines)
         if not numbered_lines:
             return
@@ -226,11 +228,11 @@ class CopyrightDetector(object):
             return
 
         # first, POS tag each token using token regexes
-        tagged_text = self.tagger.tag(tokens)
-        if TRACE: logger_debug('CopyrightDetector:tagged_text: ' + str(tagged_text))
+        lexed_text = self.lexer.lex(tokens)
+        if TRACE: logger_debug('CopyrightDetector:tagged_text: ' + str(lexed_text))
 
         # then build a parse tree based on tagged tokens
-        tree = self.chunker.parse(tagged_text)
+        tree = self.parser.parse(lexed_text)
         if TRACE: logger_debug('CopyrightDetector:parse tree: ' + str(tree))
 
         as_str = partial(CopyrightDetector.as_str, include_allrights=include_allrights)
@@ -1603,7 +1605,7 @@ grammar = """
 #######################################
 
     # All/No/Some Rights Reserved OR  All Rights Are Reserved
-    ALLRIGHTRESERVED: { <NNP|NN|CAPS> <RIGHT> <NNP|NN|CAPS>? <RESERVED>}  #allrightsreserved
+    ALLRIGHTRESERVED: {<NNP|NN|CAPS> <RIGHT> <NNP|NN|CAPS>? <RESERVED>}  #allrightsreserved
 
 
 #######################################
@@ -1654,10 +1656,10 @@ grammar = """
 
     DASHCAPS: {<DASH> <CAPS>}
    # INRIA - CIRAD - INRA
-    COMPANY: { <COMP> <DASHCAPS>+}        #1280
+    COMPANY: {<COMP> <DASHCAPS>+}        #1280
 
     # Project Admins leethomason
-    COMPANY: { <COMP> <MAINT> <NNP>+}        #1281
+    COMPANY: {<COMP> <MAINT> <NNP>+}        #1281
 
     # the Regents of the University of California
     COMPANY: {<BY>? <NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY|NAME|NAME-EMAIL><COMP>?}        #130
@@ -1694,7 +1696,7 @@ grammar = """
     # NNP  NN   NNP    NNP      COMP   COMP')
     COMPANY: {<NNP> <NN> <NNP> <NNP> <COMP>+} #207
 
-    # was:     COMPANY: {<NNP|CAPS> <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <COMP> <COMP>?}        #210
+    # was     COMPANY {<NNP|CAPS> <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <COMP> <COMP>?}        #210
     COMPANY: {<NNP|CAPS>+ <COMP>+}        #210
     COMPANY: {<UNI|NNP> <VAN|OF> <NNP>+ <UNI>?}        #220
     COMPANY: {<NNP>+ <UNI>}        #230
@@ -1767,16 +1769,16 @@ grammar = """
     NAME: {<NAME> <UNI>}        #483
 
     # Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm, Sweden)
-    COMPANY: { <COMPANY> <OF> <COMPANY> <NAME> } #529
+    COMPANY: {<COMPANY> <OF> <COMPANY> <NAME> } #529
 
     # Instituto Nokia de Tecnologia
-    COMPANY: { <COMPANY> <NNP> <OF> <COMPANY>} #    5391
+    COMPANY: {<COMPANY> <NNP> <OF> <COMPANY>} #    5391
 
     # Laboratoire MASI - Institut Blaise Pascal
-    COMPANY: { <COMPANY> <CAPS> <DASH> <COMPANY> <NAME>} #5292
+    COMPANY: {<COMPANY> <CAPS> <DASH> <COMPANY> <NAME>} #5292
 
     # Nara Institute of Science and Technology.
-    COMPANY: { <COMPANY> <OF> <NNP> <CC> <COMPANY> } #5293
+    COMPANY: {<COMPANY> <OF> <NNP> <CC> <COMPANY> } #5293
 
     # Instituto Nokia de Tecnologia - INdT
     COMPANY: {<COMPANY>  <NNP>  <VAN>  <COMPANY>}    #52934
@@ -1800,7 +1802,7 @@ grammar = """
     NAME-YEAR: {<YR-RANGE> <NNP>+ <CAPS>?} #5612
 
     #Academy of Motion Picture Arts and Sciences
-    NAME: { <NAME> <CC> <NNP>} # 561
+    NAME: {<NAME> <CC> <NNP>} # 561
 
     # Adam Weinberger and the GNOME Foundation
     NAME: {<CC> <NN> <COMPANY>} # 565
@@ -1834,12 +1836,12 @@ grammar = """
     NAME: {<NNP> <NAME>}        #710
     NAME: {<CC>? <IN> <NAME|NNP>}        #720
     NAME: {<NAME><UNI>}        #730
-    NAME: { <NAME> <IN> <NNP> <CC|IN>+ <NNP>}        #740
+    NAME: {<NAME> <IN> <NNP> <CC|IN>+ <NNP>}        #740
     # by BitRouter <www.BitRouter.com>
-    NAME: { <BY> <NNP> <URL>}        #741
+    NAME: {<BY> <NNP> <URL>}        #741
 
     # Philippe http//nexb.com joe@nexb.com
-    NAME: { <NNP> <URL> <EMAIL>}        #742
+    NAME: {<NNP> <URL> <EMAIL>}        #742
 
     # Companies
     COMPANY: {<NAME|NAME-EMAIL|NAME-YEAR|NNP>+ <OF> <NN>? <COMPANY|COMP> <NNP>?}        #770
@@ -1965,10 +1967,10 @@ grammar = """
     COMPANY: {<NN> <COMPANY> <CC> <NN> <COMPANY>}      #1414
 
     # by the Massachusetts Institute of Technology
-    COMPANY: { <BY> <COMPANY> <OF> <COMPANY>}  #1415
+    COMPANY: {<BY> <COMPANY> <OF> <COMPANY>}  #1415
 
     # Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.
-    COMPANY: { <NNP> <COMPANY> <OF> <COMPANY> <NNP>} #1416
+    COMPANY: {<NNP> <COMPANY> <OF> <COMPANY> <NNP>} #1416
 
     # Copyright 2007-2010 the original author or authors.
     # Copyright (c) 2007-2010 the original author or authors.
@@ -2093,10 +2095,10 @@ grammar = """
     COPYRIGHT: {<COPY>+ <YR-RANGE> <COPYRIGHT>} #2274
 
     # Copyright (c) 2017 Contributors et.al.
-    COPYRIGHT: { <COPY> <COPY> <YR-RANGE> <CONTRIBUTORS> <OTH> } #2276
+    COPYRIGHT: {<COPY> <COPY> <YR-RANGE> <CONTRIBUTORS> <OTH> } #2276
 
     #Copyright (c) 2020 Contributors as noted in the AUTHORS file
-    COPYRIGHT: { <COPY> <COPY> <YR-RANGE> <CONTRIBUTORS> <NN>* <IN>? <NN>* <CAPS|AUTHS|ATH> <JUNK> }
+    COPYRIGHT: {<COPY> <COPY> <YR-RANGE> <CONTRIBUTORS> <NN>* <IN>? <NN>* <CAPS|AUTHS|ATH> <JUNK> }
 
     # copyrighted by Object Computing, Inc., St. Louis Missouri, Copyright (C) 2002, all rights reserved.
     COPYRIGHT: {<COPYRIGHT> <COPY>+  <YR-RANGE> <ALLRIGHTRESERVED>} #2278
