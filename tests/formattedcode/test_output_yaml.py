@@ -14,7 +14,7 @@ import pytest
 import saneyaml
 
 from commoncode.testcase import FileDrivenTesting
-from scancode.cli_test_utils import streamline_scanned_file
+from scancode.cli_test_utils import cleanup_scan
 from scancode.cli_test_utils import run_scan_click
 
 test_env = FileDrivenTesting()
@@ -58,7 +58,7 @@ def check_yaml_scan(expected_file, result_file, regen=False):
     results from `results_file`. This is convenient for updating tests
     expectations. But use with caution.
     """
-    results = load_yaml_results(result_file)
+    results = load_yaml_results(result_file) or {}
     if regen:
         with open(expected_file, 'w') as reg:
             reg.write(saneyaml.dump(results))
@@ -85,4 +85,4 @@ def load_yaml_results(location):
     with open(location, encoding='utf-8') as res:
         scan_results = res.read()
     scan_results = saneyaml.load(scan_results)
-    return streamline_scanned_file(scan_results, remove_file_date=True)
+    return cleanup_scan(scan_results, remove_file_date=True)

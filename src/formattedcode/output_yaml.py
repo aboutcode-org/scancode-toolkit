@@ -30,7 +30,8 @@ class YamlOutput(OutputPlugin):
             metavar='FILE',
             help='Write scan output as YAML to FILE.',
             help_group=OUTPUT_GROUP,
-            sort_order=20),
+            sort_order=20
+        ),
     ]
 
     def is_enabled(self, output_yaml, **kwargs):
@@ -45,13 +46,5 @@ def write_yaml(results, output_file, **kwargs):
     """
     Write `results` to the `output_file` opened file-like object.
     """
-    close_fd = False
-    try:
-        if isinstance(output_file, str):
-            output_file = open(output_file, 'w')
-            close_fd = True
-        output_file.write(saneyaml.dump(results, indent=4))
-        output_file.write('\n')
-    finally:
-        if close_fd:
-            output_file.close()
+    output_file.write(saneyaml.dump(results, indent=4))
+    output_file.write('\n')
