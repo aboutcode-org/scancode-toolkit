@@ -17,11 +17,11 @@ from scancode_config import scancode_root_dir
 
 
 def run_scan_plain(
-    options, 
-    cwd=None, 
-    test_mode=True, 
-    expected_rc=0, 
-    env=None, 
+    options,
+    cwd=None,
+    test_mode=True,
+    expected_rc=0,
+    env=None,
     retry=True,
 ):
     """
@@ -218,6 +218,22 @@ def load_json_result_from_string(string, remove_file_date=False):
     Load the JSON scan results `string` as UTF-8 JSON.
     """
     scan_results = json.loads(string)
+    # clean new headers attributes
+    streamline_headers(scan_results.get('headers', []))
+    # clean file_level attributes
+    for scanned_file in scan_results['files']:
+        streamline_scanned_file(scanned_file, remove_file_date)
+
+    # TODO: remove sort, this should no longer be needed
+    scan_results['files'].sort(key=lambda x: x['path'])
+    return scan_results
+
+
+def cleanup_scan(scan_results, remove_file_date=False):
+    """
+    Cleanup in place the ``scan_results`` mapping for dates, headers and
+    other variable data that break tests otherwise.
+    """
     # clean new headers attributes
     streamline_headers(scan_results.get('headers', []))
     # clean file_level attributes
