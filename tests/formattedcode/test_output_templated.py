@@ -161,7 +161,7 @@ def test_HtmlOutput_process_codebase_does_not_fail_with_non_ascii_scanned_paths_
 
 
 def test_html_output_can_handle_non_ascii_paths():
-    test_file = test_env.get_test_loc('unicode.json')
+    test_file = test_env.get_test_loc('templated/unicode.json')
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')
     run_scan_click(['--from-json', test_file, '--html', result_file])
 
@@ -173,7 +173,7 @@ def test_html_output_can_handle_non_ascii_paths():
 
 @pytest.mark.scanslow
 def test_custom_html_output_can_handle_non_ascii_paths():
-    test_file = test_env.get_test_loc('unicode.json')
+    test_file = test_env.get_test_loc('templated/unicode.json')
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')
     custom_template = test_env.get_test_loc('templated/sample-template.html')
 
