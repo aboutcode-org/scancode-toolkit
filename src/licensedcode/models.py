@@ -880,7 +880,6 @@ class BasicRule(object):
             self.is_license_reference,
             self.is_license_tag,
             self.is_license_intro,
-            self.is_unknown,
         )
 
         has_license_flags = any(license_flags)

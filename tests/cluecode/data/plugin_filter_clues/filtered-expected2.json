@@ -69,6 +69,7 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "is_unknown": false,
             "matcher": "2-aho",
             "rule_length": 145,
             "matched_length": 145,
