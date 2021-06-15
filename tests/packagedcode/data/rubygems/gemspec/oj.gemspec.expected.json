@@ -77,6 +77,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:gem/oj@::Oj::VERSION",
     "repository_homepage_url": "https://rubygems.org/gems/oj/versions/::Oj::VERSION",
     "repository_download_url": "https://rubygems.org/downloads/oj-::Oj::VERSION.gem",

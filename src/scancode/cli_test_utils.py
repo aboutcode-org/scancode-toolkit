@@ -177,7 +177,8 @@ def check_json_scan(
     results from `results_file`. This is convenient for updating tests
     expectations. But use with caution.
 
-    if `remove_file_date` is True, the file.date attribute is removed.
+    If `remove_file_date` is True, the file.date attribute is removed.
+    If `ignore_headers` is True, the scan headers attribute is removed.
     """
     results = load_json_result(result_file, remove_file_date)
     if regen:
@@ -192,9 +193,8 @@ def check_json_scan(
 
     # NOTE we redump the JSON as a string for a more efficient display of the
     # failures comparison/diff
-    # TODO: remove sort, this should no longer be needed
-    expected = json.dumps(expected, indent=2, sort_keys=True, separators=(',', ': '))
-    results = json.dumps(results, indent=2, sort_keys=True, separators=(',', ': '))
+    expected = json.dumps(expected, indent=2, separators=(',', ': '))
+    results = json.dumps(results, indent=2, separators=(',', ': '))
     assert results == expected
 
 

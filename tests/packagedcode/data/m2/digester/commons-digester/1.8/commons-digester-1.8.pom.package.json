@@ -232,6 +232,7 @@
   "source_packages": [
     "pkg:maven/commons-digester/commons-digester@1.8?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/commons-digester/commons-digester@1.8",
   "repository_homepage_url": "https://repo1.maven.org/maven2/commons-digester/commons-digester/1.8/",
   "repository_download_url": "https://repo1.maven.org/maven2/commons-digester/commons-digester/1.8/commons-digester-1.8.jar",

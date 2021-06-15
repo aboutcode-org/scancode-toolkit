@@ -121,6 +121,7 @@
   "source_packages": [
     "pkg:maven/com.salesforce.argus/argus-webservices@%24%7Bproject.version%7D?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/com.salesforce.argus/argus-webservices@%24%7Bproject.version%7D?type=war",
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/salesforce/argus/argus-webservices/${project.version}/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/salesforce/argus/argus-webservices/${project.version}/argus-webservices-${project.version}.war",

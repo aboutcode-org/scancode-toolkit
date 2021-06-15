@@ -6,7 +6,7 @@
 ################################################################################
 # ScanCode release build script
 # Create, test and publish release archives, wheels and sdists.
-# Use the --test to also run basic somke test of the built archives
+# Use the --test to also run basic smoke tests of the built archives
 #
 ################################################################################
 
@@ -142,6 +142,8 @@ function run_pypi_smoke_tests {
     echo "#### RELEASE TEST: Completed PyPI tests of $archive_to_test with Pythons: $python_dot_versions on OSses: $operating_systems"
 
 }
+
+
 if [ "$CLI_ARGS" == "--test" ]; then
     echo "##########################################################################"
     echo "### TESTING build for Python: $PYTHON_APP_VERSIONS on OS: $OPERATING_SYSTEMS"
@@ -161,12 +163,8 @@ if [ "$CLI_ARGS" == "--test" ]; then
 fi
 
 
-
-
 echo "##########################################################################"
 echo "### BUILDING App for Python: $PYTHON_APP_VERSIONS on OS: $OPERATING_SYSTEMS"
-
-
 
 
 ################################

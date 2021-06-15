@@ -15,7 +15,6 @@ from debian_inspector import debcon
 from packageurl import PackageURL
 
 from commoncode import filetype
-from commoncode.datautils import String
 from packagedcode import models
 
 """
@@ -40,24 +39,16 @@ class DebianPackage(models.Package):
     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
     default_type = 'deb'
 
-    multi_arch = String(
-        label='Multi-Arch',
-        help='Multi-Arch value from status file')
+    @property
+    def multi_arch(self):
+        """
+        Multi-Arch value from a status or spec file.
+        """
+        return self.extra_data.get('multi_arch')
 
-    def to_dict(self, _detailed=False, **kwargs):
-        data = super().to_dict(_detailed=_detailed, **kwargs)
-        if _detailed:
-            #################################################
-            # populate temporary fields
-            data['multi_arch'] = self.multi_arch
-            #################################################
-        else:
-            #################################################
-            # remove temporary fields
-            data.pop('multi_arch', None)
-            #################################################
-
-        return data
+    def set_multi_arch(self, value):
+        if value:
+            self.extra_data['multi_arch'] = value
 
     def populate_installed_files(self, var_lib_dpkg_info_dir):
         """
@@ -235,6 +226,8 @@ def build_package(package_data, distro='debian'):
         ('arch', package_data.get('architecture')),
     ])
 
+    package.set_multi_arch(package_data.get('multi-arch'))
+
     # mapping of top level `status` file items to the Package object field name
     plain_fields = [
         ('description', 'description'),
@@ -243,7 +236,6 @@ def build_package(package_data, distro='debian'):
         ('package', 'name'),
         ('version', 'version'),
         ('maintainer', 'maintainer'),
-        ('multi-arch', 'multi_arch'),
     ]
 
     for source, target in plain_fields:

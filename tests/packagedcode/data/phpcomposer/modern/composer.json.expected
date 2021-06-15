@@ -278,6 +278,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:composer/integration-hub",
     "repository_homepage_url": "https://packagist.org/packages/integration-hub",
     "repository_download_url": null,

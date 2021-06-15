@@ -34,6 +34,7 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:npm/bson",
     "repository_homepage_url": "https://www.npmjs.com/package/bson",
     "repository_download_url": "https://registry.npmjs.org/bson/-/bson-None.tgz",

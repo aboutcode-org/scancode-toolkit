@@ -56,6 +56,7 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
+  "extra_data": {},
   "purl": "pkg:pypi/boolean.py@1.2",
   "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": "https://pypi.org/packages/source/b/boolean.py/boolean.py-1.2.tar.gz",

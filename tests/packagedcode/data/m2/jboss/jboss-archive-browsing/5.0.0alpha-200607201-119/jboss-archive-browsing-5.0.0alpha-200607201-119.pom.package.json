@@ -37,6 +37,7 @@
   "source_packages": [
     "pkg:maven/jboss/jboss-archive-browsing@5.0.0alpha-200607201-119?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/jboss/jboss-archive-browsing@5.0.0alpha-200607201-119",
   "repository_homepage_url": "https://repo1.maven.org/maven2/jboss/jboss-archive-browsing/5.0.0alpha-200607201-119/",
   "repository_download_url": "https://repo1.maven.org/maven2/jboss/jboss-archive-browsing/5.0.0alpha-200607201-119/jboss-archive-browsing-5.0.0alpha-200607201-119.jar",

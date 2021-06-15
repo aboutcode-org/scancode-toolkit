@@ -131,6 +131,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:gem/rubocop@RuboCop::Version::STRING",
     "repository_homepage_url": "https://rubygems.org/gems/rubocop/versions/RuboCop::Version::STRING",
     "repository_download_url": "https://rubygems.org/downloads/rubocop-RuboCop::Version::STRING.gem",
