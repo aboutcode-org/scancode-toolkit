@@ -12,6 +12,11 @@ other_urls:
 ignorable_authors:
     - Eric Young (eay@cryptsoft.com)
     - Tim Hudson (tjh@cryptsoft.com)
+ignorable_copyrights:
+  - holder is Tim Hudson (tjh@cryptsoft.com)
 ignorable_emails:
-    - eay@cryptsoft.com
-    - tjh@cryptsoft.com
+  - eay@cryptsoft.com
+  - tjh@cryptsoft.com
+ignorable_holders:
+  - Tim Hudson
+
