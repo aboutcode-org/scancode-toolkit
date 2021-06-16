@@ -2,19 +2,20 @@
 # Copyright (c) 2010 David Wolever <david@wolever.net>. All rights reserved.
 # originally from https://github.com/wolever/pip2pi
 
-import os
-import re
-import sys
-import shutil
 import atexit
-import tempfile
-import warnings
-import textwrap
 import functools
-from subprocess import check_call
-import pkg_resources
 import glob
 import optparse
+import os
+import re
+import shutil
+import sys
+import tempfile
+import textwrap
+import warnings
+from subprocess import check_call
+
+import pkg_resources
 
 try:
     from html import escape
