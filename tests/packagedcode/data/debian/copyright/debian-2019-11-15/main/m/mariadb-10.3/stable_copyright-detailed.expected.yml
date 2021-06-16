@@ -96,13 +96,13 @@
   AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND other-copyleft AND (gpl-2.0-plus AND gpl-2.0-plus
   AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND public-domain AND bsd-new AND bsd-new AND (lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND bsd-simplified AND (lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.0 AND lgpl-3.0-plus AND lgpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND bsd-simplified AND bsd-simplified
-  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND
-  gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
-  AND fsf-free AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND
-  gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
+  AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.0 AND lgpl-3.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND bsd-simplified AND bsd-simplified AND (lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0
+  AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND
+  gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND fsf-free
+  AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND
+  gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus)
   AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0 AND gpl-2.0
   AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND ((gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0
   AND gpl-1.0-plus) AND bsd-simplified) AND bsd-new AND bsd-new AND (gpl-2.0 AND gpl-2.0 AND

@@ -1,5 +1,6 @@
 -
-- lgpl-2.1-plus AND sun-source AND libpbm AND gpl-2.0-plus AND adrian AND mit
+- lgpl-2.1-plus AND sun-source AND libpbm AND gpl-2.0-plus AND adrian AND mit AND lgpl-2.0-plus
+  AND lgpl-2.0
 - |
   Copyright (c) 2004-2009 Lennart Poettering
   Copyright (c) 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB

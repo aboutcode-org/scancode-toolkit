@@ -5,7 +5,7 @@
   AND openldap-2.8 AND freebsd-doc AND cmu-uc AND nrl-permission AND ietf-trust AND mit-old-style
   AND (mit-no-advert-export-control AND proprietary-license) AND bsd-original-uc AND bsd-original
   AND isc AND rsa-md4 AND rsa-md5 AND rsa-1990 AND mit-with-modification-obligations AND (bsd-simplified
-  OR gpl-2.0-plus) AND (mpl-1.1 OR gpl-1.0-plus) AND gpl-2.0
+  OR gpl-2.0-plus)
 - |
   Copyright (c) 1985-2018 by the Massachusetts Institute of Technology
   copyright MIT, Cygnus Support, Novell, OpenVision Technologies, Oracle, Red Hat, Sun Microsystems, FundsXpress, and others

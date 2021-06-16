@@ -10,8 +10,8 @@
   AND proprietary-license) AND bsd-original-uc AND mit-no-advert-export-control AND bsd-original
   AND mit AND isc AND isc AND other-permissive AND bsd-new AND rsa-md4 AND rsa-md5 AND rsa-1990
   AND mit-with-modification-obligations AND unknown-license-reference AND bsd-new AND unknown-license-reference
-  AND (bsd-simplified OR gpl-2.0-plus) AND (mpl-1.1 OR gpl-1.0-plus) AND gpl-2.0 AND unknown-license-reference
-  AND bsd-new AND bsd-simplified AND unknown-license-reference
+  AND (bsd-simplified OR gpl-2.0-plus) AND unknown-license-reference AND bsd-new AND bsd-simplified
+  AND unknown-license-reference
 - |
   Copyright (c) 1985-2018 by the Massachusetts Institute of Technology
   copyright MIT, Cygnus Support, Novell, OpenVision Technologies, Oracle, Red Hat, Sun Microsystems, FundsXpress, and others

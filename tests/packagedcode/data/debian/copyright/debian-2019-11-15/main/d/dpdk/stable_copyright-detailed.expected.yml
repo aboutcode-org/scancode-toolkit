@@ -13,9 +13,9 @@
   - LGPL-2.1
   - BSD-2-clause
   - BSD-3-clause
-- bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND bsd-simplified AND (bsd-new OR (gpl-2.0
-  AND gpl-2.0 AND gpl-2.0)) AND (bsd-new OR (lgpl-2.1 AND lgpl-2.0-plus AND lgpl-2.1)) AND bsd-simplified
-  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-3.0 AND gpl-3.0) AND gpl-2.0-plus
+- bsd-new AND (gpl-2.0 AND gpl-2.0) AND bsd-simplified AND (bsd-new OR (gpl-2.0 AND gpl-2.0))
+  AND (bsd-new OR (lgpl-2.1 AND lgpl-2.0-plus AND lgpl-2.1)) AND bsd-simplified AND (gpl-2.0
+  AND gpl-2.0) AND (gpl-3.0 AND gpl-3.0) AND gpl-2.0-plus
 - |
   2008-2014 Cisco Systems, Inc.
   2012-2014 6WIND S.A.

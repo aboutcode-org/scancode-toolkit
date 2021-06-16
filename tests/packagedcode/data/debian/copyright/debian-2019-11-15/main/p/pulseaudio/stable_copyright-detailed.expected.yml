@@ -6,13 +6,13 @@
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
   AND mit AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.0 AND lgpl-2.0 AND lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.1-plus AND lgpl-2.1-plus AND gpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND
-  lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND gpl-2.0-plus AND lgpl-2.1-plus AND
+  lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
 - |
   Copyright (c) 2004-2009 Lennart Poettering
   Copyright (c) 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB

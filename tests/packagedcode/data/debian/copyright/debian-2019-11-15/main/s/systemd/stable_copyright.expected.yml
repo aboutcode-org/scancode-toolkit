@@ -4,9 +4,8 @@
   - GPL-2+
   - Expat
   - public-domain
-- (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (cc0-1.0 AND cc0-1.0 AND cc0-1.0)
-  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
-  mit AND public-domain-disclaimer
+- (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND (cc0-1.0 AND cc0-1.0 AND cc0-1.0) AND (gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND mit AND public-domain-disclaimer
 - |
   2008-2015 Kay Sievers <kay@vrfy.org>
   2010-2015 Lennart Poettering

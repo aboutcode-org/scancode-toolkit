@@ -39,13 +39,12 @@
   - BSD-4-Clause
   - LGPL-2.1+
   - GPL-2
-- bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND bsd-new AND unknown-license-reference
+- bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND bsd-new AND (other-permissive AND free-unknown)
   AND bsd-simplified AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-original-voices
-  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND fsf-ap AND bsd-new AND
-  bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-new AND bsd-new
+  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND fsf-ap AND bsd-new AND bsd-simplified
+  AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-new AND bsd-new AND bsd-new
   AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new
   AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new
-  AND bsd-new
 - |
   2005 Bull S.A
   2009 Steinar H. Gunderson <sesse@debian.org>

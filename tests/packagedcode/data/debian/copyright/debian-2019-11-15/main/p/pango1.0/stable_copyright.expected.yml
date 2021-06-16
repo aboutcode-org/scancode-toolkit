@@ -5,9 +5,8 @@
   - LGPL-2+ and ICU
   - ICU
   - TCL
-- (lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0) AND mit-old-style AND ((lgpl-2.0-plus AND gpl-2.0-plus
-  AND lgpl-2.0) AND tcl) AND unicode AND ((lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0) AND
-  x11)
+- (lgpl-2.0-plus AND gpl-2.0-plus) AND mit-old-style AND ((lgpl-2.0-plus AND gpl-2.0-plus) AND
+  tcl) AND unicode AND ((lgpl-2.0-plus AND gpl-2.0-plus) AND x11)
 - |
   1999-2015 Red Hat
   2005-2007 Imendio AB

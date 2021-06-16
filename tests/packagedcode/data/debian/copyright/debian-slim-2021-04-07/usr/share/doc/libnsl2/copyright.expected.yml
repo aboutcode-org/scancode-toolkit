@@ -11,10 +11,10 @@
   - GPL-2+-libtool-exception
   - permissive-autoconf-m4
 - (lgpl-2.1 AND lgpl-3.0-plus AND gpl-1.0-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.1 AND lgpl-2.1) AND bsd-new AND fsf-ap AND fsf-unlimited-no-warranty AND fsf-unlimited-no-warranty
+  AND lgpl-2.1) AND bsd-new AND fsf-ap AND fsf-unlimited-no-warranty AND fsf-unlimited-no-warranty
   AND (gpl-3.0-plus WITH autoconf-simple-exception AND gpl-3.0) AND fsf-free AND (gpl-2.0-plus
-  WITH autoconf-simple-exception-2.0 AND gpl-2.0 AND gpl-2.0) AND x11-xconsortium AND (gpl-2.0-plus
-  WITH libtool-exception-2.0 AND gpl-2.0 AND gpl-2.0) AND fsf-unlimited
+  WITH autoconf-simple-exception-2.0 AND gpl-2.0) AND x11-xconsortium AND (gpl-2.0-plus WITH
+  libtool-exception-2.0 AND gpl-2.0) AND fsf-unlimited
 - |
   2014, 2015, 2017-2018, Thorsten Kukuk
   1996-2015, Free Software Foundation, Inc.
