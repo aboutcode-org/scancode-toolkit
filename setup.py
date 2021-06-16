@@ -3,48 +3,40 @@
 import os
 import sys
 
-from setuptools import setup, find_packages
+from setuptools import setup
+from setuptools import find_packages
 
-os.chdir(os.path.dirname(sys.argv[0]) or ".")
-
-try:
-    long_description = open("README.rst", "U").read()
-except IOError:
-    long_description = "See https://github.com/wolever/pip2pi"
-
-import libpip2pi
-version = ".".join(map(str, libpip2pi.__version__))
 
 setup(
     name="pip2pi",
-    version=version,
+    version="0.9.0",
     url="https://github.com/wolever/pip2pi",
     author="David Wolever",
     author_email="david@wolever.net",
     description="pip2pi builds a PyPI-compatible package repository from pip requirements",
-    long_description=long_description,
+    long_description=open("README.rst").read(),
     maintainer="Md Safiyat Reza",
     maintainer_email="safiyat@voereir.com",
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'dir2pi = libpip2pi.commands:dir2pi',
-            'pip2pi = libpip2pi.commands:pip2pi',
-            'pip2tgz = libpip2pi.commands:pip2tgz',
+            'dir2pi = pip2pi:dir2pi',
+            'pip2pi = pip2pi:pip2pi',
+            'pip2tgz = pip2pi:pip2tgz',
         ],
     },
     python_requires=[">=3.6"],
-    license="BSD",
-    classifiers=[ x.strip() for x in """
-        Development Status :: 4 - Beta
-        Environment :: Console
-        Intended Audience :: Developers
-        Intended Audience :: System Administrators
-        License :: OSI Approved :: BSD License
-        Natural Language :: English
-        Operating System :: OS Independent
-        Programming Language :: Python
-        Topic :: Software Development
-        Topic :: Utilities
-    """.split("\n") if x.strip() ],
+    license="BSD-2-Clause-Views",
+    classifiers=[ 
+        "Development Status :: 4 - Beta",
+        "Environment :: Console",
+        "Intended Audience :: Developers",
+        "Intended Audience :: System Administrators",
+        "License :: OSI Approved :: BSD License",
+        "Natural Language :: English",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Topic :: Software Development",
+        "Topic :: Utilities",
+    ],
 )
