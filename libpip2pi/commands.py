@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: BSD-2-Clause-Views
+# Copyright (c) 2010 David Wolever <david@wolever.net>. All rights reserved.
+# originally from https://github.com/wolever/pip2pi
+
 import os
 import re
 import sys
