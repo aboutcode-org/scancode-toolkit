@@ -25,7 +25,7 @@ setup(
             'pip2tgz = pip2pi:pip2tgz',
         ],
     },
-    python_requires=[">=3.6"],
+    python_requires=">=3.6",
     license="BSD-2-Clause-Views",
     classifiers=[ 
         "Development Status :: 4 - Beta",
