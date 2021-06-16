@@ -2,11 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # SPDX-License-Identifier: BSD-2-Clause-Views AND MIT
-# Copyright (c) nexB Inc.
-# Originally from https://github.com/wolever/pip2pi and modified extensivley
 # Copyright (c) 2010 David Wolever <david@wolever.net>. All rights reserved.
-# Partially derived from pip code
-# Copyright (c) The pip developers
+# originally from https://github.com/wolever/pip2pi
 
 import os
 import re
@@ -14,63 +11,6 @@ import shutil
 
 from html import escape
 from pathlib import Path
-
-"""
-Generate a PyPI simple-like index from a directory of Python wheels and tarballs.
-"""
-
-
-def build_pypi_index(directory, write_index=False):
-    """
-    Using a ``directory`` directory of wheels and sdists, create the a PyPI simple
-    directory index at ``directory``/simple/ populated with the proper PyPI simple
-    index directory structure crafted using symlinks.
-
-    WARNING: The ``directory``/simple/ directory is removed if it exists.
-    """
-
-    directory = Path(directory)
-
-    index_dir = directory / "simple"
-    if index_dir.exists():
-        shutil.rmtree(str(index_dir), ignore_errors=True)
-
-    index_dir.mkdir(parents=True)
-
-    if write_index:
-        simple_html_index = [
-            "<html><head><title>PyPI Simple Index</title>",
-            "<meta name='api-version' value='2' /></head><body>",
-        ]
-
-    package_names = set()
-    for pkg_file in directory.iterdir():
-
-        pkg_filename = pkg_file.name
-
-        if (
-            not pkg_file.is_file()
-            or not pkg_filename.endswith(dist_exts)
-            or pkg_filename.startswith(".")
-        ):
-            continue
-
-        pkg_name = get_package_name_from_filename(pkg_filename)
-        pkg_index_dir = index_dir / pkg_name
-        pkg_index_dir.mkdir(parents=True, exist_ok=True)
-        pkg_indexed_file = pkg_index_dir / pkg_filename
-        link_target = Path("../..") / pkg_filename
-        pkg_indexed_file.symlink_to(link_target)
-
-        if write_index and pkg_name not in package_names:
-            esc_name = escape(pkg_name)
-            simple_html_index.append(f'<a href="{esc_name}/">{esc_name}</a><br/>')
-            package_names.add(pkg_name)
-
-    if write_index:
-        simple_html_index.append("</body></html>")
-        index_html = index_dir / "index.html"
-        index_html.write_text("\n".join(simple_html_index))
 
 """
 name: pip compatibility tags
@@ -190,6 +130,59 @@ def get_package_name_from_filename(filename, normalize=True):
     if normalize:
         name = name.lower().replace('_', '-')
     return name
+
+
+def build_pypi_index(directory, write_index=False):
+    """
+    Using a ``directory`` directory of wheels and sdists, create the a PyPI simple
+    directory index at ``directory``/simple/ populated with the proper PyPI simple
+    index directory structure crafted using symlinks.
+
+    WARNING: The ``directory``/simple/ directory is removed if it exists.
+    """
+
+    directory = Path(directory)
+
+    index_dir = directory / "simple"
+    if index_dir.exists():
+        shutil.rmtree(str(index_dir), ignore_errors=True)
+
+    index_dir.mkdir(parents=True)
+
+    if write_index:
+        simple_html_index = [
+            "<html><head><title>PyPI Simple Index</title>",
+            "<meta name='api-version' value='2' /></head><body>",
+        ]
+
+    package_names = set()
+    for pkg_file in directory.iterdir():
+
+        pkg_filename = pkg_file.name
+
+        if (
+            not pkg_file.is_file()
+            or not pkg_filename.endswith(dist_exts)
+            or pkg_filename.startswith(".")
+        ):
+            continue
+
+        pkg_name = get_package_name_from_filename(pkg_filename)
+        pkg_index_dir = index_dir / pkg_name
+        pkg_index_dir.mkdir(parents=True, exist_ok=True)
+        pkg_indexed_file = pkg_index_dir / pkg_filename
+        link_target = Path("../..") / pkg_filename
+        pkg_indexed_file.symlink_to(link_target)
+
+        if write_index and pkg_name not in package_names:
+            esc_name = escape(pkg_name)
+            simple_html_index.append(f'<a href="{esc_name}/">{esc_name}</a><br/>')
+            package_names.add(pkg_name)
+
+    if write_index:
+        simple_html_index.append("</body></html>")
+        index_html = index_dir / "index.html"
+        index_html.write_text("\n".join(simple_html_index))
 
 
 if __name__ == "__main__":
