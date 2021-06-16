@@ -244,6 +244,11 @@ class Pip2PiOptionParser(optparse.OptionParser):
                 Default: %default
             """))
         self.add_option(
+            '-A', '--absolute-symlink', dest='absolute_symlink',
+            default=False, action='store_true',
+            help='Use absolute path symlink (default is relative path).'
+        )
+        self.add_option(
             '-S', '--no-symlink', dest="use_symlink", action="store_false")
         self.add_option(
             '-v', '--verbose', dest="verbose", action="store_true")
@@ -368,7 +373,10 @@ def _dir2pi(option, argv):
             try_symlink(option, pkg_dir_name, pkgdirpath("simple", pkg_name))
 
         symlink_target = os.path.join(pkg_dir, pkg_basename)
-        symlink_source = os.path.join("../../", pkg_basename)
+        if option.absolute_symlink:
+            symlink_source = os.path.abspath(os.path.join("../../", pkg_basename))
+        else:
+            symlink_source = os.path.join("../../", pkg_basename)
         if option.use_symlink:
             try_symlink(option, symlink_source, symlink_target)
         else:
