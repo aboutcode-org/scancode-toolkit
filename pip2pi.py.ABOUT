@@ -20,9 +20,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'dir2pi = pip2pi:dir2pi',
             'pip2pi = pip2pi:pip2pi',
-            'pip2tgz = pip2pi:pip2tgz',
         ],
     },
     python_requires=">=3.6",
