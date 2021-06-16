@@ -145,7 +145,8 @@ class UnstructuredCopyrightProcessor(DebianDetector):
         dc.detected_copyrights = copyright_detector(location)
 
         content = unicode_text(location)
-        dc.license_matches = get_license_matches(query_string=content)
+        license_matches = get_license_matches(query_string=content)
+        dc.license_matches = remove_unknown_license_intros(license_matches)
 
         return dc
 
@@ -1049,6 +1050,34 @@ def get_license_expression_from_matches(license_matches):
     """
     license_expressions = [match.rule.license_expression for match in license_matches]
     return combine_expressions(license_expressions, unique=False)
+
+
+def remove_unknown_license_intros(license_matches):
+    """
+    Returns a list of LicenseMatch objects after removing unknown license intros from
+    the `license_matches` list of LicenseMatch objects.
+    
+    A common source of unknowns in unstrctured files are many types of license intros
+    which are present to introduce a lot of license texts, and as the license texts are
+    actually present below and in a different query run, it only makes sense to remove
+    known license intros in unstructured license files.
+    """
+    return [
+        license_match
+        for license_match in license_matches
+        if not is_unknown_license_intro(license_match)
+    ]
+
+
+def is_unknown_license_intro(license_match):
+    """
+    Returns True if `license_match` LicenseMatch object is matched completely to a
+    unknown license intro present as a Rule.
+    """
+    if license_match.rule.is_license_intro and license_match.matcher == '2-aho':
+        return True
+    
+    return False
 
 
 def add_unknown_matches(name, text):
