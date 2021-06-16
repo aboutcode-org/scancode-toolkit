@@ -33,9 +33,7 @@ setup(
             'pip2tgz = libpip2pi.commands:pip2tgz',
         ],
     },
-    install_requires=[
-        "pip>=1.1",
-    ],
+    python_requires=[">=3.6"],
     license="BSD",
     classifiers=[ x.strip() for x in """
         Development Status :: 4 - Beta
