@@ -58,6 +58,7 @@ requests==2.25.1
 rpm-inspector-rpm==4.16.1.3.210404
 saneyaml==0.5.2
 setuptools==57.0.0
+setuptools_scm==6.0.1
 six==1.16.0
 sortedcontainers==2.4.0
 soupsieve==2.2.1
