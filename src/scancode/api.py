@@ -238,6 +238,7 @@ def _licenses_data_from_match(
         result['short_name'] = lic.short_name
         result['category'] = lic.category
         result['is_exception'] = lic.is_exception
+        result['is_unknown']=lic.is_unknown
         result['owner'] = lic.owner
         result['homepage_url'] = lic.homepage_url
         result['text_url'] = lic.text_urls[0] if lic.text_urls else ''

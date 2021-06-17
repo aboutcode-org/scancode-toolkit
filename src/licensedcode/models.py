@@ -108,6 +108,7 @@ class License(object):
     # if this is a license exception, the license key this exception applies to
     is_exception = __attrib(default=False)
 
+    is_unknown = __attrib(default=False)
     # SPDX key for SPDX licenses
     spdx_license_key = __attrib(default=None)
     # list of other keys, such as deprecated ones
