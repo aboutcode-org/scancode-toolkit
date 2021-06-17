@@ -6,35 +6,31 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
-from os.path import abspath
-from os.path import basename
-from os.path import dirname
-from os.path import isdir
 import sys
 import uuid
-
 from io import BytesIO
-try:
-    from StringIO import StringIO
-except ImportError:
-    from io import StringIO
+from io import StringIO
 
 from spdx.checksum import Algorithm
 from spdx.creationinfo import Tool
+from spdx.document import ExtractedLicense
 from spdx.document import Document
 from spdx.document import License
-from spdx.document import ExtractedLicense
 from spdx.file import File
 from spdx.package import Package
 from spdx.utils import NoAssert
 from spdx.utils import SPDXNone
 from spdx.version import Version
 
-from formattedcode import FileOptionType
 from commoncode.cliutils import OUTPUT_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.fileutils import file_name
+from commoncode.text import python_safe_name
+from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
+from commoncode.fileutils import parent_directory
+import os
 
 # Tracing flags
 TRACE = False
@@ -65,8 +61,8 @@ _spdx_list_is_patched = False
 
 def _patch_license_list():
     """
-    Patch the SPDX library license list to match the list of ScanCode known SPDX
-    licenses.
+    Patch the SPDX Python library license list to match the list of ScanCode
+    known SPDX licenses.
     """
     global _spdx_list_is_patched
     if not _spdx_list_is_patched:
@@ -80,8 +76,8 @@ def _patch_license_list():
 
 def get_licenses_by_spdx_key(licenses):
     """
-    Return a mapping of {spdx_key: license object} given a sequence of License
-    objects.
+    Return a mapping of {spdx_key: license object} given a ``license`` sequence
+    of License objects.
     """
     spdx_licenses = {}
     for lic in licenses:
@@ -119,16 +115,14 @@ class SpdxTvOutput(OutputPlugin):
         return spdx_tv
 
     def process_codebase(self, codebase, spdx_tv, **kwargs):
-        check_sha1(codebase)
-        files = self.get_files(codebase, **kwargs)
-        header = codebase.get_or_create_current_header()
-        tool_name = header.tool_name
-        tool_version = header.tool_version
-        notice = header.notice
-        input = kwargs.get('input', '')  # NOQA
-
-        write_spdx(
-            spdx_tv, files, tool_name, tool_version, notice, input, as_tagvalue=True)
+        _process_codebase(
+            spdx_plugin=self,
+            codebase=codebase,
+            input_path=kwargs.get('input', ''),
+            output_file=spdx_tv,
+            as_tagvalue=True,
+            **kwargs
+        )
 
 
 @output_impl
@@ -146,16 +140,55 @@ class SpdxRdfOutput(OutputPlugin):
         return spdx_rdf
 
     def process_codebase(self, codebase, spdx_rdf, **kwargs):
-        check_sha1(codebase)
-        files = self.get_files(codebase, **kwargs)
-        header = codebase.get_or_create_current_header()
-        tool_name = header.tool_name
-        tool_version = header.tool_version
-        notice = header.notice
-        input = kwargs.get('input', '')  # NOQA
+        _process_codebase(
+            spdx_plugin=self,
+            codebase=codebase,
+            input_path=kwargs.get('input', ''),
+            output_file=spdx_rdf,
+            as_tagvalue=False,
+            **kwargs
+        )
 
-        write_spdx(
-            spdx_rdf, files, tool_name, tool_version, notice, input, as_tagvalue=False)
+
+def _process_codebase(
+    spdx_plugin,
+    codebase,
+    input_path,
+    output_file,
+    as_tagvalue=True,
+    **kwargs,
+):
+    check_sha1(codebase)
+    files = spdx_plugin.get_files(codebase, **kwargs)
+    header = codebase.get_or_create_current_header()
+    tool_name = header.tool_name
+    tool_version = header.tool_version
+    notice = header.notice
+    package_name = build_package_name(input_path)
+
+    write_spdx(
+        output_file=output_file,
+        files=files,
+        tool_name=tool_name,
+        tool_version=tool_version,
+        notice=notice,
+        package_name=package_name,
+        as_tagvalue=as_tagvalue,
+    )
+
+
+def build_package_name(input_path):
+    """
+    Return a package name built from an ``input_path`` path.
+
+    """
+    if input_path:
+        absinput = absinput = os.path.abspath(input_path)
+        if  os.path.isfile(absinput):
+            input_path = parent_directory(absinput)
+        return python_safe_name(file_name(input_path))
+
+    return 'scancode-toolkit-analyzed-package'
 
 
 def check_sha1(codebase):
@@ -167,32 +200,45 @@ def check_sha1(codebase):
             'WARNING: Files are missing a SHA1 attribute. '
             'Incomplete SPDX document created.',
             err=True,
-            fg='red')
+            fg='red',
+        )
 
 
-def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, as_tagvalue=True):
+def write_spdx(
+    output_file,
+    files,
+    tool_name,
+    tool_version,
+    notice,
+    package_name='',
+    download_location=NoAssert(),
+    as_tagvalue=True,
+):
     """
-    Write scan output as SPDX Tag/value or RDF.
+    Write scan output as SPDX Tag/value to ``output_file`` file-like
+    object using the ``files`` list of scanned file data.
+    Write as RDF XML if ``as_tagvalue`` is False.
+
+    Use the ``notice`` string as a notice included in a document comment.
+    Include the ``tool_name`` and ``tool_version`` to indicate which tool is
+    producing this SPDX document.
+    Use ``package_name`` as a Package name and as a namespace prefix base.
     """
     as_rdf = not as_tagvalue
     _patch_license_list()
-    absinput = abspath(input_file)
 
-    if isdir(absinput):
-        input_path = absinput
-    else:
-        input_path = dirname(absinput)
+    ns_prefix = '_'.join(package_name.lower().split())
 
     doc = Document(Version(2, 1), License.from_identifier('CC0-1.0'))
     doc.comment = notice
-    doc.namespace = f'http://spdx.org/spdxdocs/{basename(input_path)}-{uuid.uuid4()}'
+    doc.namespace = f'http://spdx.org/spdxdocs/{ns_prefix}-{uuid.uuid4()}'
     tool_name = tool_name or 'ScanCode'
-    doc.creation_info.add_creator(Tool(tool_name + ' ' + tool_version))
+    doc.creation_info.add_creator(Tool(f'{tool_name} {tool_version}'))
     doc.creation_info.set_created_now()
 
     package = doc.package = Package(
-        name=basename(input_path),
-        download_location=NoAssert()
+        name=package_name,
+        download_location=download_location
     )
 
     # Use a set of unique copyrights for the package.
@@ -224,7 +270,7 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
 
                 spdx_id = file_license.get('spdx_license_key')
                 if not spdx_id:
-                    spdx_id = 'LicenseRef-scancode-' + license_key
+                    spdx_id = f'LicenseRef-scancode-{license_key}'
                 is_license_ref = spdx_id.lower().startswith('licenseref-')
 
                 if not is_license_ref:
@@ -232,18 +278,22 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
                 else:
                     spdx_license = ExtractedLicense(spdx_id)
                     spdx_license.name = file_license.get('short_name')
-                    comment = ('See details at https://github.com/nexB/scancode-toolkit'
-                               '/blob/develop/src/licensedcode/data/licenses/%s.yml\n' % license_key)
+                    # FIXME: replace this with the licensedb URL
+                    comment = (
+                        f'See details at https://github.com/nexB/scancode-toolkit'
+                        f'/blob/develop/src/licensedcode/data/licenses/{license_key}.yml\n'
+                    )
                     spdx_license.comment = comment
                     text = file_license.get('matched_text')
-                    # always set some text, even if we did not extract the matched text
+                    # always set some text, even if we did not extract the
+                    # matched text
                     if not text:
                         text = comment
                     spdx_license.text = text
                     doc.add_extr_lic(spdx_license)
 
-                # Add licenses in the order they appear in the file. Maintaining the order
-                # might be useful for provenance purposes.
+                # Add licenses in the order they appear in the file. Maintaining
+                # the order might be useful for provenance purposes.
                 file_entry.add_lics(spdx_license)
                 package.add_lics_from_file(spdx_license)
 
@@ -265,8 +315,9 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
 
             package.cr_text.update(file_entry.copyright)
 
-            # Create a text of copyright statements in the order they appear in the file.
-            # Maintaining the order might be useful for provenance purposes.
+            # Create a text of copyright statements in the order they appear in
+            # the file. Maintaining the order might be useful for provenance
+            # purposes.
             file_entry.copyright = '\n'.join(file_entry.copyright) + '\n'
 
         elif file_copyrights is None:
@@ -287,7 +338,7 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
         output_file.write(msg)
 
     # Remove duplicate licenses from the list for the package.
-    unique_licenses = {(l.identifier, l.full_name): l for l in package.licenses_from_files}
+    unique_licenses = {l.identifier: l for l in package.licenses_from_files}
     unique_licenses = list(unique_licenses.values())
     if not len(package.licenses_from_files):
         if all_files_have_no_license:
@@ -296,7 +347,10 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
             package.licenses_from_files = [NoAssert()]
     else:
         # List license identifiers alphabetically for the package.
-        package.licenses_from_files = sorted(unique_licenses, key=lambda x: x.identifier)
+        package.licenses_from_files = sorted(
+            unique_licenses,
+            key=lambda x: x.identifier,
+        )
 
     if len(package.cr_text) == 0:
         if all_files_have_no_copyright:
