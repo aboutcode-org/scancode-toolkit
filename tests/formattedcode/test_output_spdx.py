@@ -65,7 +65,6 @@ def sort_nested(data):
     maptypes = dict, dict
     coltypes = seqtypes + maptypes
 
-
     if isinstance(data, maptypes):
         new_data = []
         for k, v in data.items():
@@ -138,9 +137,25 @@ def load_and_clean_tv(location):
     """
     with io.open(location, encoding='utf-8') as co:
         content = co.read()
-    content = [l for l in content.splitlines(False)
-        if l and l.strip() and not l.startswith(('Creator: ', 'Created: ',))]
-    return '\n'.join(content)
+    lines = []
+    lines_append = lines.append
+
+    dns = 'DocumentNamespace: http://spdx.org/spdxdocs/'
+
+    for line in content.splitlines(False):
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith(('Creator: ', 'Created: ',)):
+            continue
+        if line.startswith(dns):
+            # only keep the left side of
+            # DocumentNamespace: http://spdx.org/spdxdocs/unicode-ea31be0f-16de-4eab-9fc7-4e3bafb753d3
+            line, _, _ = line.partition('-')
+    
+        lines_append(line)
+
+    return '\n'.join(lines)
 
 
 def check_tv_scan(expected_file, result_file, regen=False):
