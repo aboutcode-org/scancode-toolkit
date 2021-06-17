@@ -31,6 +31,7 @@ Outputs:
    the JSON output
  - Add new Debian machine readable copyright output.
  - The CSV output "Resource" column has been renamed to "path".
+ - The SPDX output now has the mandatory DocumentNamespace attribut per SPDX specs #2344
 
 
 Copyright detection:
