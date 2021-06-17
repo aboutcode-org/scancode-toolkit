@@ -27,7 +27,8 @@ def run_scan_plain(
     """
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
     """
-    from commoncode.command import execute2
+
+    from commoncode.command import execute
 
     options = add_windows_extra_timeout(options)
 
@@ -39,7 +40,7 @@ def run_scan_plain(
 
     scmd = u'scancode'
     scan_cmd = os.path.join(scancode_root_dir, scmd)
-    rc, stdout, stderr = execute2(
+    rc, stdout, stderr = execute(
         cmd_loc=scan_cmd,
         args=options,
         cwd=cwd,
@@ -51,7 +52,7 @@ def run_scan_plain(
         time.sleep(1)
         if '--verbose' not in options:
             options.append('--verbose')
-        result = rc, stdout, stderr = execute2(
+        result = rc, stdout, stderr = execute(
             cmd_loc=scan_cmd,
             args=options,
             cwd=cwd,

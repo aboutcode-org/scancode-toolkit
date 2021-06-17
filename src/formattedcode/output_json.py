@@ -99,7 +99,7 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
 
     # Begin wri'w' JSON to `output_file`
     with jsonstreams.Stream(
-        jsonstreams.Type.object,
+        jsonstreams.Type.OBJECT,
         fd=output_file,
         close_fd=close_fd,
         **jsonstreams_kwargs
