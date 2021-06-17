@@ -30,6 +30,7 @@
   "source_packages": [
     "pkg:maven/org.apache.geronimo.genesis/genesis@1.1?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.geronimo.genesis/genesis@1.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/genesis/genesis/1.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/genesis/genesis/1.1/genesis-1.1.jar",

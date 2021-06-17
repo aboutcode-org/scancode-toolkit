@@ -222,6 +222,7 @@
   ],
   "contains_source_code": null,
   "source_packages": [],
+  "extra_data": {},
   "purl": "pkg:pypi/scancode-toolkit@1.5.0",
   "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": "https://pypi.org/packages/source/s/scancode-toolkit/scancode-toolkit-1.5.0.tar.gz",

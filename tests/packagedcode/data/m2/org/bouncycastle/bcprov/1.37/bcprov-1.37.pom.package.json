@@ -30,6 +30,7 @@
   "source_packages": [
     "pkg:maven/org.bouncycastle/bcprov@1.37?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.bouncycastle/bcprov@1.37",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/bouncycastle/bcprov/1.37/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/bouncycastle/bcprov/1.37/bcprov-1.37.jar",

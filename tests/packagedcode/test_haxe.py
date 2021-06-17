@@ -21,25 +21,25 @@ class TestHaxe(PackageTester):
         test_file = self.get_test_loc('haxe/basic/haxelib.json')
         expected_loc = self.get_test_loc('haxe/basic/haxelib.json.expected')
         package = haxe.parse(test_file)
-        self.check_package(package, expected_loc)
+        self.check_package(package, expected_loc, regen=False)
 
     def test_parse_basic2(self):
         test_file = self.get_test_loc('haxe/basic2/haxelib.json')
         expected_loc = self.get_test_loc('haxe/basic2/haxelib.json.expected')
         package = haxe.parse(test_file)
-        self.check_package(package, expected_loc)
+        self.check_package(package, expected_loc, regen=False)
 
     def test_parse_deps(self):
         test_file = self.get_test_loc('haxe/deps/haxelib.json')
         expected_loc = self.get_test_loc('haxe/deps/haxelib.json.expected')
         package = haxe.parse(test_file)
-        self.check_package(package, expected_loc)
+        self.check_package(package, expected_loc, regen=False)
 
     def test_parse_tags(self):
         test_file = self.get_test_loc('haxe/tags/haxelib.json')
         expected_loc = self.get_test_loc('haxe/tags/haxelib.json.expected')
         package = haxe.parse(test_file)
-        self.check_package(package, expected_loc)
+        self.check_package(package, expected_loc, regen=False)
 
     def test_root_dir(self):
         test_file = self.get_test_loc('haxe/tags/haxelib.json')

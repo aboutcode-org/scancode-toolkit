@@ -37,6 +37,7 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:gem/small@0.2",
     "repository_homepage_url": "https://rubygems.org/gems/small/versions/0.2",
     "repository_download_url": "https://rubygems.org/downloads/small-0.2.gem",

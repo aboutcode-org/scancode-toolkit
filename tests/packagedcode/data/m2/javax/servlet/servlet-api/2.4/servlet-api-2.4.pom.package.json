@@ -30,6 +30,7 @@
   "source_packages": [
     "pkg:maven/javax.servlet/servlet-api@2.4?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/javax.servlet/servlet-api@2.4",
   "repository_homepage_url": "https://repo1.maven.org/maven2/javax/servlet/servlet-api/2.4/",
   "repository_download_url": "https://repo1.maven.org/maven2/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar",

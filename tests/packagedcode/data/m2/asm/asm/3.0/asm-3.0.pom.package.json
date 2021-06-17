@@ -30,6 +30,7 @@
   "source_packages": [
     "pkg:maven/asm/asm@3.0?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/asm/asm@3.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/asm/asm/3.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/asm/asm/3.0/asm-3.0.jar",

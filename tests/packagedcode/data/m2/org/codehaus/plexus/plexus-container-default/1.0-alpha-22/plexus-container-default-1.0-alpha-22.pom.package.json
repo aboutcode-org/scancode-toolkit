@@ -63,6 +63,7 @@
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-22?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-22",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-22/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-22/plexus-container-default-1.0-alpha-22.jar",

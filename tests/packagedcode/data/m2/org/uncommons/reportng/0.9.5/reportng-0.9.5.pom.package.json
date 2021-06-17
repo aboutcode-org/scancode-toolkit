@@ -39,6 +39,7 @@
   "source_packages": [
     "pkg:maven/org.uncommons/reportng@0.9.5?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.uncommons/reportng@0.9.5",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/uncommons/reportng/0.9.5/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/uncommons/reportng/0.9.5/reportng-0.9.5.jar",

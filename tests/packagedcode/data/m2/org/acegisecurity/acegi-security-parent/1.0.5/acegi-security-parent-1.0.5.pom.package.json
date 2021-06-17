@@ -250,6 +250,7 @@
   "source_packages": [
     "pkg:maven/org.acegisecurity/acegi-security-parent@1.0.5?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.acegisecurity/acegi-security-parent@1.0.5",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/acegisecurity/acegi-security-parent/1.0.5/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/acegisecurity/acegi-security-parent/1.0.5/acegi-security-parent-1.0.5.jar",

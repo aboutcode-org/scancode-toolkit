@@ -55,6 +55,7 @@
   "source_packages": [
     "pkg:maven/org.apache.maven/maven-profile@2.0.8?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.maven/maven-profile@2.0.8",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-profile/2.0.8/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-profile/2.0.8/maven-profile-2.0.8.jar",

@@ -17,11 +17,11 @@ from scancode_config import scancode_root_dir
 
 
 def run_scan_plain(
-    options, 
-    cwd=None, 
-    test_mode=True, 
-    expected_rc=0, 
-    env=None, 
+    options,
+    cwd=None,
+    test_mode=True,
+    expected_rc=0,
+    env=None,
     retry=True,
 ):
     """
@@ -177,7 +177,8 @@ def check_json_scan(
     results from `results_file`. This is convenient for updating tests
     expectations. But use with caution.
 
-    if `remove_file_date` is True, the file.date attribute is removed.
+    If `remove_file_date` is True, the file.date attribute is removed.
+    If `ignore_headers` is True, the scan headers attribute is removed.
     """
     results = load_json_result(result_file, remove_file_date)
     if regen:
@@ -192,9 +193,8 @@ def check_json_scan(
 
     # NOTE we redump the JSON as a string for a more efficient display of the
     # failures comparison/diff
-    # TODO: remove sort, this should no longer be needed
-    expected = json.dumps(expected, indent=2, sort_keys=True, separators=(',', ': '))
-    results = json.dumps(results, indent=2, sort_keys=True, separators=(',', ': '))
+    expected = json.dumps(expected, indent=2, separators=(',', ': '))
+    results = json.dumps(results, indent=2, separators=(',', ': '))
     assert results == expected
 
 
@@ -218,6 +218,22 @@ def load_json_result_from_string(string, remove_file_date=False):
     Load the JSON scan results `string` as UTF-8 JSON.
     """
     scan_results = json.loads(string)
+    # clean new headers attributes
+    streamline_headers(scan_results.get('headers', []))
+    # clean file_level attributes
+    for scanned_file in scan_results['files']:
+        streamline_scanned_file(scanned_file, remove_file_date)
+
+    # TODO: remove sort, this should no longer be needed
+    scan_results['files'].sort(key=lambda x: x['path'])
+    return scan_results
+
+
+def cleanup_scan(scan_results, remove_file_date=False):
+    """
+    Cleanup in place the ``scan_results`` mapping for dates, headers and
+    other variable data that break tests otherwise.
+    """
     # clean new headers attributes
     streamline_headers(scan_results.get('headers', []))
     # clean file_level attributes

@@ -62,6 +62,7 @@
   "source_packages": [
     "pkg:maven/org.hibernate/hibernate-entitymanager@3.2.1.ga?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.2.1.ga",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.2.1.ga/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.2.1.ga/hibernate-entitymanager-3.2.1.ga.jar",

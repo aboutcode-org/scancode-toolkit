@@ -286,13 +286,13 @@ Or you can run the following if you have `Git <https://git-scm.com/>`_ installed
 Now, by default the files are checked out to the develop branch, but you can jump to any checkpoint
 using the following command::
 
-    git checkout main
+    git checkout develop
 
-Here, ``main`` branch has the latest release of Scancode-Toolkit. You can also check out to any
-of the following:
+Here, ``develop`` branch has the latest release of Scancode-Toolkit. 
+You can also check out to any of the following:
 
-- Branches (Locally created or already present) [Example - ``main``]
-- Tags (essentially version numbers) [Example - ``v21.2.25``, ``v21.6.1``]
+- Branches (Locally created or already present) [Example - ``develop``]
+- Tags (essentially version numbers) [Example - ``v21.6.7``, ``v21.5.31``]
 - Commits (use the shortened commit hash) [Example - ``4502055``, ``f276398``]
 
 

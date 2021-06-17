@@ -159,6 +159,7 @@
   "source_packages": [
     "pkg:maven/org.ajax4jsf/ajax4jsf@1.1.1?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.ajax4jsf/ajax4jsf@1.1.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/ajax4jsf/ajax4jsf/1.1.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/ajax4jsf/ajax4jsf/1.1.1/ajax4jsf-1.1.1.jar",

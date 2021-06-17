@@ -60,6 +60,7 @@
           "source_packages": [
             "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"
           ],
+          "extra_data": {},
           "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
           "repository_homepage_url": null,
           "repository_download_url": null,

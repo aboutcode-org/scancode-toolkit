@@ -106,7 +106,7 @@ def build_package(package_fields):
             converted_fields.update(converted)
 
     # construct the package: we ignore unknown as we added a few technical fields
-    package = AlpinePackage.create(ignore_unknown=True, **converted_fields)
+    package = AlpinePackage.create(**converted_fields)
     return package
 
 # Note handlers MUST accept **kwargs as they also receive the current data

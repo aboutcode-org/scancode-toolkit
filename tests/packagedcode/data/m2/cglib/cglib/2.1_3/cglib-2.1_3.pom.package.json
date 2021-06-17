@@ -39,6 +39,7 @@
   "source_packages": [
     "pkg:maven/cglib/cglib@2.1_3?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/cglib/cglib@2.1_3",
   "repository_homepage_url": "https://repo1.maven.org/maven2/cglib/cglib/2.1_3/",
   "repository_download_url": "https://repo1.maven.org/maven2/cglib/cglib/2.1_3/cglib-2.1_3.jar",

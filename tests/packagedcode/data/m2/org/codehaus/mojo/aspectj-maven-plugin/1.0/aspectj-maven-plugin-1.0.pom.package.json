@@ -125,6 +125,7 @@
   "source_packages": [
     "pkg:maven/org.codehaus.mojo/aspectj-maven-plugin@1.0?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.codehaus.mojo/aspectj-maven-plugin@1.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/aspectj-maven-plugin/1.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/aspectj-maven-plugin/1.0/aspectj-maven-plugin-1.0.jar",

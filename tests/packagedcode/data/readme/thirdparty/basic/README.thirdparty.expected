@@ -28,6 +28,7 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
+  "extra_data": {},
   "purl": "pkg:readme/colorama@0.2.4",
   "repository_homepage_url": null,
   "repository_download_url": null,

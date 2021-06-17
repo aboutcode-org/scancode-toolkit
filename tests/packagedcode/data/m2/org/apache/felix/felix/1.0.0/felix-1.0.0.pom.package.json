@@ -47,6 +47,7 @@
   "source_packages": [
     "pkg:maven/org.apache.felix/felix@1.0.0?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.felix/felix@1.0.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/felix/felix/1.0.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/felix/felix/1.0.0/felix-1.0.0.jar",

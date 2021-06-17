@@ -102,6 +102,7 @@
   "source_packages": [
     "pkg:maven/httpunit/httpunit@1.6.2?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/httpunit/httpunit@1.6.2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/httpunit/httpunit/1.6.2/",
   "repository_download_url": "https://repo1.maven.org/maven2/httpunit/httpunit/1.6.2/httpunit-1.6.2.jar",

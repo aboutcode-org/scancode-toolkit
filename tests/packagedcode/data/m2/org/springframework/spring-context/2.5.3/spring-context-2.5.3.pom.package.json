@@ -134,6 +134,7 @@
   "source_packages": [
     "pkg:maven/org.springframework/spring-context@2.5.3?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.springframework/spring-context@2.5.3",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/springframework/spring-context/2.5.3/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring-context/2.5.3/spring-context-2.5.3.jar",

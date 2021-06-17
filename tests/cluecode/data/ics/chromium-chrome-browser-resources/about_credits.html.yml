@@ -80,6 +80,7 @@ copyrights:
   - Copyright (c) 2008 The Khronos Group Inc.
   - Copyright (c) 1998-2008 The OpenSSL Project
   - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+  - holder is Tim Hudson (tjh@cryptsoft.com)
   - Copyright (c) 2009 The Chromium Authors
   - Copyright 2007 Google Inc.
   - Copyright (c) 2010 The Chromium Authors
@@ -184,6 +185,7 @@ holders:
   - The Khronos Group Inc.
   - The OpenSSL Project
   - Eric Young
+  - Tim Hudson
   - The Chromium Authors
   - Google Inc.
   - The Chromium Authors
@@ -349,6 +351,8 @@ holders_summary:
   - value: The University of Utah and the Regents of the University of California
     count: 1
   - value: Thomas Broyer, Charlie Bozeman and Daniel Veillard
+    count: 1
+  - value: Tim Hudson
     count: 1
   - value: University of Chicago
     count: 1

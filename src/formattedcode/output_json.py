@@ -98,7 +98,12 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
         close_fd = True
 
     # Begin wri'w' JSON to `output_file`
-    with jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, close_fd=close_fd, **jsonstreams_kwargs) as s:
+    with jsonstreams.Stream(
+        jsonstreams.Type.object,
+        fd=output_file,
+        close_fd=close_fd,
+        **jsonstreams_kwargs
+    ) as s:
         # Write headers
         codebase.add_files_count_to_current_header()
         codebase_headers = codebase.get_headers()
