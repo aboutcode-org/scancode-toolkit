@@ -1,8 +1,6 @@
 from regipy.exceptions import RegistryKeyNotFoundException
 from regipy.registry import RegistryHive
 import logbook
-import pdb
-import subprocess
 
 import attr
 
@@ -13,6 +11,23 @@ from packagedcode import models
 logger = logbook.Logger(__name__)
 
 
+MSIINFO_BIN_LOCATION = 'packagedcode_msitools.msiinfo'
+
+
+def get_msiinfo_bin_location():
+    """
+    Return the binary location for msiinfo
+    """
+    from plugincode.location_provider import get_location
+    msiinfo_bin_loc = get_location(MSIINFO_BIN_LOCATION)
+    if not msiinfo_bin_loc:
+        raise Exception(
+            'CRITICAL: msiinfo not provided. '
+            'Unable to continue: you need to install the plugin packagedcode-msitools'
+    )
+    return msiinfo_bin_loc
+
+
 class MsiinfoException(Exception):
     pass
 
@@ -21,7 +36,6 @@ def parse_msiinfo_suminfo_output(output_string):
     """
     Return a dictionary containing information from the output of `msiinfo suminfo`
     """
-    output_string = output_string.decode('utf-8')
     # Split lines by newline and place lines into a list
     output_list = output_string.split('\n')
     results = {}
@@ -39,22 +53,18 @@ def get_msi_info(location):
     Run the command `msiinfo suminfo` on the file at `location` and return the
     results in a dictionary
 
-    This function requires the `msiinfo` package to be installed on the system
+    This function requires the `packagedcode-msiinfo` plugin to be installed on the system
     """
-    # TODO: Use commoncode.command.execute
-    process = execute(
-        [
-            'msiinfo',
+    rc, stdout, stderr = execute(
+        cmd_loc=get_msiinfo_bin_location(),
+        args=[
             'suminfo',
             location,
         ],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
     )
-    stdout, stderr = process.communicate()
     if stderr:
         error_message = f'Error encountered when reading MSI information from {location}: '
-        error_message = error_message + stderr.decode('utf-8')
+        error_message = error_message + stderr
         raise MsiinfoException(error_message)
     return parse_msiinfo_suminfo_output(stdout)
 
