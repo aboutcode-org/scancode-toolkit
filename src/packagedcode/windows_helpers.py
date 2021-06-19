@@ -24,7 +24,7 @@ def get_msiinfo_bin_location():
         raise Exception(
             'CRITICAL: msiinfo not provided. '
             'Unable to continue: you need to install the plugin packagedcode-msitools'
-    )
+        )
     return msiinfo_bin_loc
 
 
@@ -69,6 +69,42 @@ def get_msi_info(location):
     return parse_msiinfo_suminfo_output(stdout)
 
 
+def parse(location):
+    """
+    TODO: get proper package name and version from MSI
+
+    Currently, we use the contents `Subject` field from the msiinfo suminfo
+    results as the package name because it contains the package name most of
+    the time. Getting the version out of the `Subject` string is not
+    straightforward because the format of the string is usually different
+    between different MSIs
+    """
+    info = get_msi_info(location)
+
+    author_name = info.get('Author', '')
+    parties = []
+    if author_name:
+        parties.append(
+            models.Party(
+                type=None,
+                role='author',
+                name=author_name
+            )
+        )
+
+    name = info.get('Subject', '')
+    description = info.get('Comments', '')
+    keywords = info.get('Keywords', '')
+
+    return WindowsMSI(
+        name=name,
+        description=description,
+        parties=parties,
+        keywords=keywords,
+        extra_data=info
+    )
+
+
 @attr.s()
 class WindowsMSI(models.Package):
     metafiles = ()
@@ -83,39 +119,7 @@ class WindowsMSI(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        """
-        TODO: get proper package name and version from MSI
-
-        Currently, we use the contents `Subject` field from the msiinfo suminfo
-        results as the package name because it contains the package name most of
-        the time. Getting the version out of the `Subject` string is not
-        straightforward because the format of the string is usually different
-        between different MSIs
-        """
-        info = get_msi_info(location)
-
-        author_name = info.get('Author', '')
-        parties = []
-        if author_name:
-            parties.append(
-                models.Party(
-                    type=None,
-                    role='author',
-                    name=author_name
-                )
-            )
-
-        name = info.get('Subject', '')
-        description = info.get('Comments', '')
-        keywords = info.get('Keywords', '')
-
-        yield WindowsMSI(
-            name=name,
-            description=description,
-            parties=parties,
-            keywords=keywords,
-            extra_data=info
-        )
+        yield parse(location)
 
 # TODO: Find "boilerplate" files, what are the things that we do not care about, e.g. thumbs.db
 # TODO: check for chocolatey
