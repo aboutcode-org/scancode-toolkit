@@ -123,7 +123,7 @@ def test_can_process_live_scan_for_packages_with_root():
 
 
 def test_output_can_handle_non_ascii_paths():
-    test_file = test_env.get_test_loc('unicode.json')
+    test_file = test_env.get_test_loc('csv/unicode.json')
     result_file = test_env.get_temp_file(extension='csv', file_name='test_csv')
     run_scan_click(['--from-json', test_file, '--csv', result_file])
     with io.open(result_file, encoding='utf-8') as res:

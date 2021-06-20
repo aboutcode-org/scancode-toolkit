@@ -4,12 +4,16 @@ what:
   - holders_summary
 copyrights:
   - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+  - holder is Tim Hudson (tjh@cryptsoft.com)
   - Copyright 2002 Sun Microsystems, Inc.
 holders:
   - Eric Young
+  - Tim Hudson
   - Sun Microsystems, Inc.
 holders_summary:
   - value: Eric Young
     count: 1
   - value: Sun Microsystems, Inc.
+    count: 1
+  - value: Tim Hudson
     count: 1

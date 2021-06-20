@@ -31,6 +31,7 @@ Outputs:
    the JSON output
  - Add new Debian machine readable copyright output.
  - The CSV output "Resource" column has been renamed to "path".
+ - The SPDX output now has the mandatory DocumentNamespace attribut per SPDX specs #2344
 
 
 Copyright detection:
@@ -38,6 +39,11 @@ Copyright detection:
 
  - The data structure in the JSON is now using consistently named attributes as
    opposed to a plain value.
+
+ - The copyright detection speed has been significantly improved with the tests
+   taking roughly 1/2 of the time to run. This is achieved mostly by replacing
+   NLTK with a the minimal and simplified subset we need in a new library named
+   pygmars.
 
 
 Package detection:
