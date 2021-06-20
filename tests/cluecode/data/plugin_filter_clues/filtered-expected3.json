@@ -48,6 +48,7 @@
           "short_name": "PCRE License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "University of Cambridge",
           "homepage_url": "http://www.pcre.org/licence.txt",
           "text_url": "http://www.pcre.org/licence.txt",

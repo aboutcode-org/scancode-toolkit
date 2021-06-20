@@ -29,6 +29,7 @@
           "short_name": "LGPL 2.1",
           "category": "Copyleft Limited",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
           "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",

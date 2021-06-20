@@ -28,6 +28,7 @@
           "short_name": "MIT License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "MIT",
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",

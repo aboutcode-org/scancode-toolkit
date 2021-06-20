@@ -48,6 +48,7 @@
           "short_name": "Apache 1.1",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://apache.org/licenses/LICENSE-1.1",

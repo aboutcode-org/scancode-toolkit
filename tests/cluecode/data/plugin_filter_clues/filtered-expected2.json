@@ -48,6 +48,7 @@
           "short_name": "PyGres License 2.2",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Unspecified",
           "homepage_url": null,
           "text_url": "http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431",
