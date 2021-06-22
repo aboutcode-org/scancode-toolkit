@@ -1,11 +1,10 @@
 -
 - bsd-simplified AND generic-export-compliance AND cc-by-sa-3.0 AND proprietary-license AND
   other-permissive AND mit-no-advert-export-control AND brian-gladman-3-clause AND bsd-new AND
-  unknown-license-reference AND mit AND bsd-2-clause-views AND michigan-disclaimer AND fsf-unlimited-no-warranty
-  AND openldap-2.8 AND freebsd-doc AND cmu-uc AND nrl-permission AND ietf-trust AND mit-old-style
-  AND (mit-no-advert-export-control AND proprietary-license) AND bsd-original-uc AND bsd-original
-  AND isc AND rsa-md4 AND rsa-md5 AND rsa-1990 AND mit-with-modification-obligations AND (bsd-simplified
-  OR gpl-2.0-plus)
+  mit AND bsd-2-clause-views AND michigan-disclaimer AND fsf-unlimited-no-warranty AND openldap-2.8
+  AND freebsd-doc AND cmu-uc AND nrl-permission AND ietf-trust AND mit-old-style AND (mit-no-advert-export-control
+  AND proprietary-license) AND bsd-original-uc AND bsd-original AND isc AND rsa-md4 AND rsa-md5
+  AND rsa-1990 AND mit-with-modification-obligations AND (bsd-simplified OR gpl-2.0-plus)
 - |
   Copyright (c) 1985-2018 by the Massachusetts Institute of Technology
   copyright MIT, Cygnus Support, Novell, OpenVision Technologies, Oracle, Red Hat, Sun Microsystems, FundsXpress, and others
