@@ -33,6 +33,7 @@ from licensedcode.match import LicenseMatch
 from licensedcode.query import Query
 from licensedcode.spans import Span
 from licensedcode.cache import get_index
+from licensedcode.match import set_lines
 
 from textcode.analysis import unicode_text
 
@@ -243,6 +244,8 @@ class StructuredCopyrightProcessor(DebianDetector):
             if unique_copyrights:
                 for copyright in copyright_detection.copyrights:
                     if copyright not in seen_copyrights:
+                        if 'unknown' in copyright:
+                            continue
                         seen_copyrights.add(copyright)
                         declarable_copyrights.append(copyright)
                 continue
@@ -1074,9 +1077,11 @@ def is_unknown_license_intro(license_match):
     Returns True if `license_match` LicenseMatch object is matched completely to a
     unknown license intro present as a Rule.
     """
-    if license_match.rule.is_license_intro and license_match.matcher == '2-aho':
+    if license_match.rule.is_license_intro and (
+        license_match.matcher == '2-aho' or license_match.coverage() == 100
+    ):
         return True
-    
+
     return False
 
 
@@ -1123,7 +1128,9 @@ def add_unknown_matches(name, text):
         query=query_run.query,
     )
 
-    return [match]
+    matches = [match]
+    set_lines(matches, query.line_by_pos)
+    return matches
 
 
 @attr.s(slots=True, repr=False)
@@ -1137,7 +1144,7 @@ class UnknownRule(Rule):
     """
 
     def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = 'debian-unknown-' + self.license_expression
+        self.identifier = 'debian-' + self.license_expression
         expression = self.licensing.parse(self.license_expression)
 
         self.license_expression = expression.render()
