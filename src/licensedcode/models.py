@@ -343,6 +343,10 @@ class License(object):
                 )
             if not lic.owner:
                 error('No owner')
+                
+            if lic.is_unknown:
+                if not "unknown" in lic.name:
+                    error('is_unknown should not be true')
 
             # URLS dedupe and consistency
             if no_dupe_urls:
@@ -923,7 +927,11 @@ class BasicRule(object):
             if not "unknown" in license_expression:
                 yield 'is_unknown rule cannot be true if license does not fall in unknown category.'
 
-
+        if not self.is_unknown:
+            if not license_expression is None:
+                if "unknown" in license_expression:
+                    yield 'is_unknown flag should be set to true.'
+            
         if not is_false_positive:
             if not (0 <= self.relevance <= 100):
                 yield 'Invalid rule relevance. Should be between 0 and 100.'
