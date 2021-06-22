@@ -59,36 +59,41 @@ def check_expected_parse_copyright_file(
     )
 
     parsed = declared_license, license_expression, copyright
+    
+    if isinstance(dc, debian_copyright.UnstructuredCopyrightProcessor):
+        matches = dc.license_matches
+
+    elif isinstance(dc, debian_copyright.StructuredCopyrightProcessor):
+        matches = (
+            ld.license_matches
+            for ld in dc.license_detections
+            if ld.license_matches
+        )
+        matches = chain.from_iterable(matches)
+
+    matches = [lm for lm in matches if 'unknown-license-reference' == lm.rule.license_expression]
+    match_details = list(map(get_match_details, matches))
 
     result = saneyaml.dump(list(parsed))
     if regen:
         with io.open(expected_loc, 'w', encoding='utf-8') as reg:
-            reg.write(result)
+            if 'unknown-license-reference' in license_expression:
+                parsed = declared_license, license_expression, copyright, match_details
+                result = saneyaml.dump(list(parsed))
+                reg.write(result)
+            else:
+               reg.write(result) 
 
     with io.open(expected_loc, encoding='utf-8') as ex:
         expected = ex.read()
 
-    if result != expected or 'unknown' in result:
+    if result != expected or 'unknown-license-reference' in license_expression:
 
-        if isinstance(dc, debian_copyright.UnstructuredCopyrightProcessor):
-            matches = dc.license_matches
-
-        elif isinstance(dc, debian_copyright.StructuredCopyrightProcessor):
-            matches = (
-                ld.license_matches
-                for ld in dc.license_detections
-                if ld.license_matches
-            )
-            matches = chain.from_iterable(matches)
-            matches = [lm for lm in matches if lm]
-
-        match_details = list(map(get_match_details, matches))
-        match_details = saneyaml.dump(match_details)
         expected = '\n'.join([
             'file://' + test_loc,
             'file://' + expected_loc,
             expected,
-            match_details,
+            saneyaml.dump(match_details),
         ])
 
         assert result == expected
@@ -224,6 +229,9 @@ class TestDebianDetector(FileBasedTesting):
 
         matches = debian_copyright.add_unknown_matches(name='foo', text='bar')
         assert len(matches) == 1
+
+        match = matches[0]
+        assert match.matched_text() == "License: foo\n bar"
 
 
 class TestEnhancedDebianCopyright(FileBasedTesting):
