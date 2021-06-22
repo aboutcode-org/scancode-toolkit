@@ -96,7 +96,7 @@ def parse(location):
     description = info.get('Comments', '')
     keywords = info.get('Keywords', '')
 
-    return WindowsMSI(
+    return MsiInstallerPackage(
         name=name,
         description=description,
         parties=parties,
@@ -106,16 +106,11 @@ def parse(location):
 
 
 @attr.s()
-class WindowsMSI(models.Package):
-    metafiles = ()
-    extensions = ('.msi',)
+class MsiInstallerPackage(models.Package):
+    filetypes = ('msi installer',)
     mimetypes = ('application/x-msi',)
-
+    extensions = ('.msi',)
     default_type = 'msi'
-
-    default_web_baseurl = None
-    default_download_baseurl = None
-    default_api_baseurl = None
 
     @classmethod
     def recognize(cls, location):
@@ -162,3 +157,59 @@ def load_registry(location, registry_path='SOFTWARE\\Microsoft\\NET Framework Se
 
         # Create package
         yield Package
+
+
+def report_installed_programs(location, registry_path='SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall'):
+    """
+    Return the installed versions of .NET framework
+
+    If `registry_path` is provided, then we will load Registry entries starting
+    from `registry_path`
+    """
+    registry_hive = RegistryHive(location)
+    if registry_path:
+        try:
+            name_key_entry = registry_hive.get_key(registry_path)
+        except RegistryKeyNotFoundException as ex:
+            logger.debug('Did not find the key: {}'.format(ex))
+            return
+    else:
+        name_key_entry = registry_hive.root
+
+    # Check to see if
+    for entry in registry_hive.recurse_subkeys(name_key_entry):
+        package_info = {}
+        for entry_value in entry.values:
+            if entry_value.name == 'DisplayName':
+                package_info['DisplayName'] = entry_value.value
+            if entry_value.name == 'DisplayVersion':
+                package_info['DisplayVersion'] = entry_value.value
+            if entry_value.name == 'InstallLocation':
+                package_info['InstallLocation'] = entry_value.value
+            if entry_value.name == 'Publisher':
+                package_info['Publisher'] = entry_value.value
+            if entry_value.name == 'URLInfoAbout':
+                package_info['URLInfoAbout'] = entry_value.value
+
+            publisher = package_info.get('Publisher')
+            parties = []
+            if publisher:
+                parties.append(
+                    models.Party(
+                        type=None,
+                        role='publisher',
+                        name=publisher
+                    )
+                )
+
+        # Create package from unintall
+        yield models.Package(
+            name=package_info['DisplayName'],
+            version=package_info['DisplayVersion'],
+            parties=parties,
+            extra_data={
+                'InstallLocation': package_info['InstallLocation']
+            }
+        )
+
+

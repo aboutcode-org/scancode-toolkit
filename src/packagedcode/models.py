@@ -811,14 +811,6 @@ class CabPackage(Package):
 
 
 @attr.s()
-class MsiInstallerPackage(Package):
-    filetypes = ('msi installer',)
-    mimetypes = ('application/x-msi',)
-    extensions = ('.msi',)
-    default_type = 'msi'
-
-
-@attr.s()
 class InstallShieldPackage(Package):
     filetypes = ('installshield',)
     mimetypes = ('application/x-dosexec',)

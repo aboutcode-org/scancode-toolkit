@@ -31,6 +31,7 @@ from packagedcode import readme
 from packagedcode import rpm
 from packagedcode import rubygems
 from packagedcode import win_pe
+from packagedcode import windows_helpers
 
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
@@ -66,7 +67,6 @@ PACKAGE_TYPES = [
     pypi.PythonPackage,
     golang.GolangPackage,
     models.CabPackage,
-    models.MsiInstallerPackage,
     models.InstallShieldPackage,
     models.NSISInstallerPackage,
     nuget.NugetPackage,
@@ -82,6 +82,7 @@ PACKAGE_TYPES = [
     win_pe.WindowsExecutable,
     readme.ReadmePackage,
     build.MetadataBzl,
+    windows_helpers.MsiInstallerPackage,
 ]
 
 PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
