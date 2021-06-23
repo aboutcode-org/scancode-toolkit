@@ -120,7 +120,7 @@ class MsiInstallerPackage(models.Package):
 # TODO: check for chocolatey
 # TODO: Windows appstore
 
-def load_registry(location, registry_path='SOFTWARE\\Microsoft\\NET Framework Setup\\NDP'):
+def report_installed_dotnet_versions(location, registry_path='\\Microsoft\\NET Framework Setup\\NDP'):
     """
     Return the installed versions of .NET framework
 
@@ -137,31 +137,40 @@ def load_registry(location, registry_path='SOFTWARE\\Microsoft\\NET Framework Se
     else:
         name_key_entry = registry_hive.root
 
-    # Check to see if
-    start = 'SOFTWARE\\Microsoft\\NET Framework Setup\\NDP'
     for entry in registry_hive.recurse_subkeys(name_key_entry):
-        full_subdir = start + '\\Full'
-        try:
-            dotnet_info_values = registry_hive.get_key(full_subdir).get_values()
-        except RegistryKeyNotFoundException:
-            # Pass if we cannot find the path with the name and version info
+        # The .NET version can be found in the path whose last segment ends with
+        # `Full`
+        if not entry.path.endswith('\\Full'):
             continue
 
         dotnet_info = {}
-        for dotnet_info_value in dotnet_info_values:
+        for dotnet_info_value in entry.values:
             if dotnet_info_value.name == 'Version':
                 dotnet_info['version'] = dotnet_info_value.value
+            if dotnet_info_value.name == 'InstallPath':
+                dotnet_info['InstallPath'] = dotnet_info_value.value
 
-        if not dotnet_info:
+        version = dotnet_info.get('version')
+        if not version:
             continue
 
+        install_path = dotnet_info.get('InstallPath')
+        extra_data = {}
+        if install_path:
+            extra_data['InstallPath'] = install_path
+
         # Create package
-        yield Package
+        yield models.Package(
+            name='.NET Framework',
+            version=version,
+            extra_data=extra_data,
+        )
 
 
-def report_installed_programs(location, registry_path='SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall'):
+def report_installed_programs(location, registry_path='\\Microsoft\\Windows\\CurrentVersion\\Uninstall'):
     """
-    Return the installed versions of .NET framework
+    Return the installed programs from a Windows registry file. This is done by
+    looking at the entries of the uninstallable programs list.
 
     If `registry_path` is provided, then we will load Registry entries starting
     from `registry_path`
@@ -176,7 +185,7 @@ def report_installed_programs(location, registry_path='SOFTWARE\\Microsoft\\Wind
     else:
         name_key_entry = registry_hive.root
 
-    # Check to see if
+    # Collect Package information and create Package if we have a valid Package name
     for entry in registry_hive.recurse_subkeys(name_key_entry):
         package_info = {}
         for entry_value in entry.values:
@@ -191,25 +200,31 @@ def report_installed_programs(location, registry_path='SOFTWARE\\Microsoft\\Wind
             if entry_value.name == 'URLInfoAbout':
                 package_info['URLInfoAbout'] = entry_value.value
 
-            publisher = package_info.get('Publisher')
-            parties = []
-            if publisher:
-                parties.append(
-                    models.Party(
-                        type=None,
-                        role='publisher',
-                        name=publisher
-                    )
+        name = package_info.get('DisplayName')
+        if not name:
+            continue
+
+        version = package_info.get('DisplayVersion')
+        install_location = package_info.get('InstallLocation')
+        publisher = package_info.get('Publisher')
+
+        parties = []
+        if publisher:
+            parties.append(
+                models.Party(
+                    type=None,
+                    role='publisher',
+                    name=publisher
                 )
+            )
 
-        # Create package from unintall
+        extra_data = {}
+        if install_location:
+            extra_data['InstallLocation'] = install_location
+
         yield models.Package(
-            name=package_info['DisplayName'],
-            version=package_info['DisplayVersion'],
+            name=name,
+            version=version,
             parties=parties,
-            extra_data={
-                'InstallLocation': package_info['InstallLocation']
-            }
+            extra_data=extra_data
         )
-
-
