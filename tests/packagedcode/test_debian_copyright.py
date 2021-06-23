@@ -18,7 +18,6 @@ from commoncode import text
 import saneyaml
 
 from packagedcode import debian_copyright
-from itertools import chain
 
 
 def check_expected_parse_copyright_file(
@@ -59,18 +58,8 @@ def check_expected_parse_copyright_file(
     )
 
     parsed = declared_license, license_expression, copyright
-    
-    if isinstance(dc, debian_copyright.UnstructuredCopyrightProcessor):
-        matches = dc.license_matches
 
-    elif isinstance(dc, debian_copyright.StructuredCopyrightProcessor):
-        matches = (
-            ld.license_matches
-            for ld in dc.license_detections
-            if ld.license_matches
-        )
-        matches = chain.from_iterable(matches)
-
+    matches = dc.license_matches
     matches = [lm for lm in matches if 'unknown-license-reference' == lm.rule.license_expression]
     match_details = list(map(get_match_details, matches))
 

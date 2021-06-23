@@ -11,6 +11,7 @@ import io
 import sys
 from os import environ
 from os import path
+from itertools import chain
 
 import attr
 
@@ -199,6 +200,15 @@ class StructuredCopyrightProcessor(DebianDetector):
             dc.get_consistentcy_errors()
 
         return dc
+
+    @property
+    def license_matches(self):
+        matches = (
+            ld.license_matches
+            for ld in self.license_detections
+            if ld.license_matches
+        )
+        return chain.from_iterable(matches)
 
     def get_declared_license(
         self, filter_licenses=False, skip_debian_packaging=False, *args, **kwargs
