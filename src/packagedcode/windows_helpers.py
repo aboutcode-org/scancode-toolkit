@@ -9,6 +9,7 @@ from packagedcode import models
 
 
 logger = logbook.Logger(__name__)
+TRACE = False
 
 
 MSIINFO_BIN_LOCATION = 'packagedcode_msitools.msiinfo'
@@ -120,6 +121,22 @@ class MsiInstallerPackage(models.Package):
 # TODO: check for chocolatey
 # TODO: Windows appstore
 
+def get_registry_name_key_entry(registry_hive, registry_path):
+    """
+    Given a RegistryHive `registry_hive`, return the name key entry for
+    `registry_path` from `registry_hive`
+
+    Return if the registry path cannot be found.
+    """
+    try:
+        name_key_entry = registry_hive.get_key(registry_path)
+    except RegistryKeyNotFoundException as ex:
+        if TRACE:
+            logger.debug('Did not find the key: {}'.format(ex))
+        return
+    return name_key_entry
+
+
 def report_installed_dotnet_versions(location, registry_path='\\Microsoft\\NET Framework Setup\\NDP'):
     """
     Return the installed versions of .NET framework
@@ -128,14 +145,12 @@ def report_installed_dotnet_versions(location, registry_path='\\Microsoft\\NET F
     from `registry_path`
     """
     registry_hive = RegistryHive(location)
-    if registry_path:
-        try:
-            name_key_entry = registry_hive.get_key(registry_path)
-        except RegistryKeyNotFoundException as ex:
-            logger.debug('Did not find the key: {}'.format(ex))
-            return
-    else:
-        name_key_entry = registry_hive.root
+    name_key_entry = get_registry_name_key_entry(
+        registry_hive=registry_hive,
+        registry_path=registry_path
+    )
+    if not name_key_entry:
+        return
 
     for entry in registry_hive.recurse_subkeys(name_key_entry):
         # The .NET version can be found in the path whose last segment ends with
@@ -176,14 +191,12 @@ def report_installed_programs(location, registry_path='\\Microsoft\\Windows\\Cur
     from `registry_path`
     """
     registry_hive = RegistryHive(location)
-    if registry_path:
-        try:
-            name_key_entry = registry_hive.get_key(registry_path)
-        except RegistryKeyNotFoundException as ex:
-            logger.debug('Did not find the key: {}'.format(ex))
-            return
-    else:
-        name_key_entry = registry_hive.root
+    name_key_entry = get_registry_name_key_entry(
+        registry_hive=registry_hive,
+        registry_path=registry_path
+    )
+    if not name_key_entry:
+        return
 
     # Collect Package information and create Package if we have a valid Package name
     for entry in registry_hive.recurse_subkeys(name_key_entry):
@@ -228,3 +241,17 @@ def report_installed_programs(location, registry_path='\\Microsoft\\Windows\\Cur
             parties=parties,
             extra_data=extra_data
         )
+
+
+@attr.s()
+class InstalledWindowsProgram(models.Package):
+    filetypes = ('SOFTWARE',)
+    mimetypes = ('application/octet-stream',)
+    default_type = 'windows-program'
+
+    @classmethod
+    def recognize(cls, location):
+        for installed_program in report_installed_programs(location):
+            yield installed_program
+        for installed_dotnet in report_installed_dotnet_versions(location):
+            yield installed_dotnet
