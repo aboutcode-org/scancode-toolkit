@@ -345,7 +345,7 @@ class License(object):
                 error('No owner')
                 
             if lic.is_unknown:
-                if not "unknown" in lic.name:
+                if not "unknown" in lic.key:
                     error('is_unknown should not be true')
 
             # URLS dedupe and consistency
