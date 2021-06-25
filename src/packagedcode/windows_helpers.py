@@ -1,8 +1,10 @@
-from regipy.exceptions import RegistryKeyNotFoundException
-from regipy.registry import RegistryHive
-import logbook
+import os
+from pathlib import PureWindowsPath
 
 import attr
+import logbook
+from regipy.exceptions import RegistryKeyNotFoundException
+from regipy.registry import RegistryHive
 
 from commoncode.command import execute
 from packagedcode import models
@@ -174,7 +176,7 @@ def report_installed_dotnet_versions(location, registry_path='\\Microsoft\\NET F
         install_path = dotnet_info.get('InstallPath')
         extra_data = {}
         if install_path:
-            extra_data['InstallPath'] = install_path
+            extra_data['install_location'] = install_path
 
         # Create package
         yield InstalledWindowsProgram(
@@ -235,7 +237,7 @@ def report_installed_programs(location, registry_path='\\Microsoft\\Windows\\Cur
 
         extra_data = {}
         if install_location:
-            extra_data['InstallLocation'] = install_location
+            extra_data['install_location'] = install_location
 
         yield InstalledWindowsProgram(
             name=name,
@@ -243,6 +245,18 @@ def report_installed_programs(location, registry_path='\\Microsoft\\Windows\\Cur
             parties=parties,
             extra_data=extra_data
         )
+
+
+def get_installed_programs(root_dir):
+    windows_reg_files_loc = os.path.join(root_dir, 'Files/Windows/System32/config')
+    if not os.path.exists(windows_reg_files_loc):
+        return
+
+    SOFTWARE_reg_file_loc = os.path.join(windows_reg_files_loc, 'SOFTWARE')
+
+    for installed_program in reg_parse(SOFTWARE_reg_file_loc):
+        installed_program.populate_installed_files(root_dir)
+        yield installed_program
 
 
 def reg_parse(location):
@@ -262,3 +276,26 @@ class InstalledWindowsProgram(models.Package):
     def recognize(cls, location):
         for installed in reg_parse(location):
             yield installed
+
+    def populate_installed_files(self, root_dir):
+        install_location = self.extra_data.get('install_location')
+        if not install_location:
+            return
+
+        # Manipulate install_location to fit extracted Docker image structure
+        install_location = PureWindowsPath(install_location)
+        # Remove leading drive letter ("C:\\") and replace all spaces with underscore
+        install_location_no_root = install_location.relative_to(*install_location.parts[:1])
+        install_location_no_root = str(install_location_no_root)
+        install_location_no_root = install_location_no_root.replace(' ', '_')
+        install_location_in_image = PureWindowsPath(root_dir).joinpath('Files', PureWindowsPath(install_location_no_root))
+
+        installed_files = []
+        for root, _, files in os.walk(install_location_in_image):
+            for file in files:
+                installed_file_path = os.path.join(root, file)
+                installed_files.append(
+                    models.PackageFile(path=installed_file_path)
+                )
+
+        self.installed_files = installed_files
