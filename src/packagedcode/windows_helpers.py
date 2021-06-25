@@ -70,7 +70,7 @@ def get_msi_info(location):
     return parse_msiinfo_suminfo_output(stdout)
 
 
-def parse(location):
+def msi_parse(location):
     """
     TODO: get proper package name and version from MSI
 
@@ -115,7 +115,7 @@ class MsiInstallerPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        yield parse(location)
+        yield msi_parse(location)
 
 # TODO: Find "boilerplate" files, what are the things that we do not care about, e.g. thumbs.db
 # TODO: check for chocolatey
@@ -139,7 +139,9 @@ def get_registry_name_key_entry(registry_hive, registry_path):
 
 def report_installed_dotnet_versions(location, registry_path='\\Microsoft\\NET Framework Setup\\NDP'):
     """
-    Return the installed versions of .NET framework
+    Return the installed versions of .NET framework. The logic to retrieve
+    installed .NET version has been outlined here:
+    https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed
 
     If `registry_path` is provided, then we will load Registry entries starting
     from `registry_path`
@@ -175,7 +177,7 @@ def report_installed_dotnet_versions(location, registry_path='\\Microsoft\\NET F
             extra_data['InstallPath'] = install_path
 
         # Create package
-        yield models.Package(
+        yield InstalledWindowsProgram(
             name='.NET Framework',
             version=version,
             extra_data=extra_data,
@@ -235,12 +237,19 @@ def report_installed_programs(location, registry_path='\\Microsoft\\Windows\\Cur
         if install_location:
             extra_data['InstallLocation'] = install_location
 
-        yield models.Package(
+        yield InstalledWindowsProgram(
             name=name,
             version=version,
             parties=parties,
             extra_data=extra_data
         )
+
+
+def reg_parse(location):
+    for installed_program in report_installed_programs(location):
+        yield installed_program
+    for installed_dotnet in report_installed_dotnet_versions(location):
+        yield installed_dotnet
 
 
 @attr.s()
@@ -251,7 +260,5 @@ class InstalledWindowsProgram(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        for installed_program in report_installed_programs(location):
-            yield installed_program
-        for installed_dotnet in report_installed_dotnet_versions(location):
-            yield installed_dotnet
+        for installed in reg_parse(location):
+            yield installed
