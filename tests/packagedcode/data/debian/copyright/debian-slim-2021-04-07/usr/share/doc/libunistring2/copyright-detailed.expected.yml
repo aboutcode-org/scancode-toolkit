@@ -1,16 +1,33 @@
--
-- lgpl-3.0-plus AND gpl-2.0-plus AND fsf-unlimited AND gpl-2.0-plus AND gpl-1.0-plus WITH autoconf-simple-exception-2.0
-  AND gpl-3.0-plus AND gfdl-1.2-plus AND gpl-3.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND
-  x11-xconsortium AND mit AND gpl-3.0-plus AND lgpl-3.0-plus AND lgpl-3.0-plus AND lgpl-3.0
-  AND lgpl-3.0 AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0 AND gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gfdl-1.2-plus AND gfdl-1.2-plus AND mit AND x11-xconsortium
+- - LGPL-3+ or GPL-2+
+  - FreeSoftware
+  - GPL-2+ with distribution exception
+  - GPL-3+ or GFDL-1.2+
+  - GPL-3+
+  - GPL-2+
+  - GPL-2+
+  - MIT
+  - GPL-3+
+  - LGPL-3+
+  - GPL-3+
+  - GPL-2+
+  - GFDL-1.2+
+  - MIT
+- ((lgpl-3.0-plus AND lgpl-3.0-plus AND lgpl-3.0 AND lgpl-3.0) OR (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0 AND gpl-2.0)) AND fsf-unlimited AND gpl-1.0-plus WITH autoconf-simple-exception-2.0
+  AND ((gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) OR (gfdl-1.2-plus AND gfdl-1.2-plus))
+  AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND x11-xconsortium
+  AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0)
 - |
-  Copyright 1995-2017 Free Software Foundation, Inc.
-  Copyright 1995-2017 Free Software Foundation, Inc.
-  Copyright 1992-2009, Free Software Foundation, Inc.
-  Copyright 2001-2017 Free Software Foundation, Inc.
-  Copyright 1990-2017 Free Software Foundation, Inc.
-  Copyright 1995-2017 Free Software Foundation, Inc.
-  Copyright 1999-2005 Patrice Dumas <dumas@centre-cired.fr> , 1999-2005 Derek Price <derek@ximbiot.com> , 1999-2005 Adrian Aichner <adrian@xemacs.org>
-  Copyright 1994, X Consortium
-  Copyright 2009-2011 Andreas Rottmann <rotty@debian.org> 2017-2020 Jorg Frings-Furst <debian@jff.email>
+  1995-2017 Free Software Foundation, Inc.
+  1995-2017 Free Software Foundation, Inc.
+  1992-2009, Free Software Foundation, Inc.
+  2001-2017 Free Software Foundation, Inc.
+  1990-2017 Free Software Foundation, Inc.
+  1995-2017 Free Software Foundation, Inc.
+  1999-2005 Patrice Dumas <dumas@centre-cired.fr>,
+  1999-2005 Derek Price <derek@ximbiot.com>,
+  1999-2005 Adrian Aichner <adrian@xemacs.org>
+  1994, X Consortium
+  2009-2011 Andreas Rottmann <rotty@debian.org>
+  2017-2020 Jörg Frings-Fürst <debian@jff.email>

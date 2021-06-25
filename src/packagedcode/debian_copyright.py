@@ -20,7 +20,6 @@ from debian_inspector.copyright import CatchAllParagraph
 from debian_inspector.copyright import CopyrightFilesParagraph
 from debian_inspector.copyright import CopyrightLicenseParagraph
 from debian_inspector.copyright import CopyrightHeaderParagraph
-from debian_inspector.copyright import is_machine_readable_copyright
 
 from license_expression import Licensing
 from license_expression import ExpressionError
@@ -75,7 +74,7 @@ def parse_copyright_file(location, check_consistency=False):
     if not location or not location.endswith('copyright'):
         return
 
-    if is_machine_readable_copyright(unicode_text(location)):
+    if EnhancedDebianCopyright.is_machine_readable_copyright(unicode_text(location)):
         dc = StructuredCopyrightProcessor.from_file(
             location=location,
             check_consistency=check_consistency,
@@ -790,6 +789,23 @@ class DebianLicensing:
 @attr.s
 class EnhancedDebianCopyright:    
     debian_copyright = attr.ib()
+
+    @staticmethod
+    def is_machine_readable_copyright(text):
+        """
+        Return True if a text is for a machine-readable copyright format.
+        
+        This extends from debian_inspector.copyright.is_machine_readable_copyright
+        to more cases.
+        """
+        return text and text[:100].lower().startswith((
+            'format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0',
+            'format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0',
+            'format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5',
+            'format: http://svn.debian.org/wsvn/dep/web/deps/dep5',
+            'format: http://dep.debian.net/deps/dep5',
+        ))
+
 
     def get_paragraphs_by_type(self, paragraph_type):
         return [

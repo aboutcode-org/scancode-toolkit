@@ -284,12 +284,12 @@ class TestEnhancedDebianCopyright(FileBasedTesting):
     def test_if_structured_copyright_file(self):
         test_file = self.get_test_loc("debian-slim-2021-04-07/usr/share/doc/libhogweed6/copyright")
         content = debian_copyright.unicode_text(test_file)
-        assert debian_copyright.is_machine_readable_copyright(content)
+        assert debian_copyright.EnhancedDebianCopyright.is_machine_readable_copyright(content)
 
     def test_if_not_structured_copyright_file(self):
         test_file = self.get_test_loc("debian-2019-11-15/main/p/pulseaudio/stable_copyright")
         content = debian_copyright.unicode_text(test_file)
-        assert not debian_copyright.is_machine_readable_copyright(content)
+        assert not debian_copyright.EnhancedDebianCopyright.is_machine_readable_copyright(content)
 
     def test_multiple_blank_lines_is_valid_paragraph(self):
         test_file = self.get_test_loc("debian-slim-gpgv.copyright")
