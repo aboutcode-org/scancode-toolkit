@@ -151,6 +151,10 @@ class UnstructuredCopyrightProcessor(DebianDetector):
 
         return dc
 
+    @property
+    def primary_license(self):
+        return None
+
     def get_declared_license(self, *args, **kwargs):
         return None
 
@@ -188,6 +192,9 @@ class StructuredCopyrightProcessor(DebianDetector):
     # A cached DebianCopyright object built from the copyright file at location
     debian_copyright = attr.ib(default=None)
 
+    # License present in header or 'files: *' paragraph for a structured debian copyright file
+    primary_license = attr.ib(default=None)
+
     @classmethod
     def from_file(cls, location, check_consistency=False):
         """
@@ -204,6 +211,7 @@ class StructuredCopyrightProcessor(DebianDetector):
         dc = cls(location=location, debian_copyright=debian_copyright)
         dc.detect_license()
         dc.detect_copyrights()
+        dc.get_primary_license()
 
         if check_consistency:
             dc.get_consistentcy_errors()
@@ -218,6 +226,19 @@ class StructuredCopyrightProcessor(DebianDetector):
             if ld.license_matches
         )
         return chain.from_iterable(matches)
+
+    def get_primary_license(self):
+        expressions = [
+            ld.license_expression_object
+            for ld in self.license_detections
+            if (ld.license_expression_object != None) and (
+                is_paragraph_primary_license(ld.paragraph) or isinstance(
+                    ld.paragraph, CopyrightHeaderParagraph
+                )
+            )
+        ]
+
+        self.primary_license = dedup_expression(expression=str(combine_expressions(expressions)))
 
     def get_declared_license(
         self, filter_licenses=False, skip_debian_packaging=False, *args, **kwargs

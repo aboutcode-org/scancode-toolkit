@@ -55,8 +55,9 @@ def check_expected_parse_copyright_file(
         skip_debian_packaging=skip_debian_packaging,
         unique_copyrights=unique_copyrights,
     )
+    primary_license = dc.primary_license
 
-    parsed = declared_license, license_expression, copyright
+    parsed = primary_license, declared_license, license_expression, copyright
 
     matches = dc.license_matches
     matches = [lm for lm in matches if 'unknown-license-reference' == lm.rule.license_expression]
