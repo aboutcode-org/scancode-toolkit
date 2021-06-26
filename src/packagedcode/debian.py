@@ -180,12 +180,11 @@ def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **k
                 package.declared_license = dc.get_declared_license(
                     filter_licenses=True,
                     skip_debian_packaging=True,
-                    simplify_licenses=False,
                 )
                 package.license_expression = dc.get_license_expression(
                     filter_licenses=True,
                     skip_debian_packaging=True,
-                    simplify_licenses=False,
+                    simplify_licenses=True,
                 )
                 package.copyright = dc.get_copyright(
                     skip_debian_packaging=True,

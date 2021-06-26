@@ -38,14 +38,13 @@ def check_expected_parse_copyright_file(
     else:
         filter_licenses = True
         skip_debian_packaging = True
-        simplify_licenses = False
+        simplify_licenses = True
         unique_copyrights = True
 
     dc = debian_copyright.parse_copyright_file(location=test_loc, check_consistency=False)
     declared_license = dc.get_declared_license(
         filter_licenses=filter_licenses,
         skip_debian_packaging=skip_debian_packaging,
-        simplify_licenses=simplify_licenses,
     )
     license_expression = dc.get_license_expression(
         filter_licenses=filter_licenses,
