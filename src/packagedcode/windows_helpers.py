@@ -247,23 +247,32 @@ def report_installed_programs(location, registry_path='\\Microsoft\\Windows\\Cur
         )
 
 
-def get_installed_programs(root_dir):
-    windows_reg_files_loc = os.path.join(root_dir, 'Files/Windows/System32/config')
-    if not os.path.exists(windows_reg_files_loc):
-        return
-
-    SOFTWARE_reg_file_loc = os.path.join(windows_reg_files_loc, 'SOFTWARE')
-
-    for installed_program in reg_parse(SOFTWARE_reg_file_loc):
-        installed_program.populate_installed_files(root_dir)
-        yield installed_program
-
-
 def reg_parse(location):
     for installed_program in report_installed_programs(location):
         yield installed_program
     for installed_dotnet in report_installed_dotnet_versions(location):
         yield installed_dotnet
+
+
+def get_installed_programs(root_dir):
+    """
+    Yield InstalledWindowsProgram objects for every detected installed program
+    from Windows registry files in known locations
+    """
+
+    # These paths are relative to a Windows docker image layer root directory
+    software_delta_loc = os.path.join(root_dir, 'Hives', 'Software_Delta')
+    SOFTWARE_reg_file_loc = os.path.join(root_dir, 'Files/Windows/System32/config/SOFTWARE')
+    software_registry_locations = [
+        software_delta_loc,
+        SOFTWARE_reg_file_loc
+    ]
+    for software_registry_loc in software_registry_locations:
+        if not os.path.exists(software_registry_loc):
+            continue
+        for installed_program in reg_parse(software_registry_loc):
+            installed_program.populate_installed_files(root_dir)
+            yield installed_program
 
 
 @attr.s()
