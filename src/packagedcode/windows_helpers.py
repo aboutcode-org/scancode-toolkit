@@ -3,6 +3,7 @@ from pathlib import PureWindowsPath
 
 import attr
 import logbook
+from regipy.exceptions import NoRegistrySubkeysException
 from regipy.exceptions import RegistryKeyNotFoundException
 from regipy.registry import RegistryHive
 
@@ -132,7 +133,7 @@ def get_registry_name_key_entry(registry_hive, registry_path):
     """
     try:
         name_key_entry = registry_hive.get_key(registry_path)
-    except RegistryKeyNotFoundException as ex:
+    except (RegistryKeyNotFoundException, NoRegistrySubkeysException) as ex:
         if TRACE:
             logger.debug('Did not find the key: {}'.format(ex))
         return
