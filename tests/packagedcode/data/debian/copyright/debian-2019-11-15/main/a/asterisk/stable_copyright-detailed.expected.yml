@@ -50,28 +50,13 @@
   - ISC
   - WOL
   - FSFUL
-- (gpl-2.0 AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus
-  AND unknown-license-reference AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
-  AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference) AND fsf-free AND autoconf-simple-exception-2.0
-  AND mit-old-style-no-advert AND gpl-2.0 AND gpl-2.0 AND none AND bsd-original-uc AND gpl-2.0
-  AND tu-berlin AND bsd-new AND bsd-new AND bsd-original AND gpl-2.0-plus AND public-domain
-  AND none AND gpl-2.0 AND public-domain AND other-permissive AND (mit AND (gpl-2.0 AND gpl-1.0-plus
-  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND unknown-license-reference
-  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
-  AND unknown-license-reference)) AND gpl-2.0-plus AND unknown-license-reference AND (bsd-original-uc
-  AND isc AND (gpl-2.0 AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0
-  AND gpl-1.0-plus AND unknown-license-reference AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
-  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference)) AND bsd-original-uc
-  AND bison-exception-2.2 AND bsd-new AND gpl-2.0 AND (wol AND (gpl-2.0 AND gpl-1.0-plus AND
-  gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND unknown-license-reference
-  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
-  AND unknown-license-reference)) AND (lgpl-2.1 OR (gpl-2.0 AND gpl-1.0-plus AND gpl-1.0-plus
-  AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND unknown-license-reference AND
-  gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
-  AND unknown-license-reference)) AND public-domain AND isc AND brian-clapper AND lgpl-2.1 AND
-  mit-0 AND (gpl-2.0 AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0
-  AND gpl-1.0-plus AND unknown-license-reference AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
-  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND unknown-license-reference) AND gpl-2.0
+- gpl-2.0 AND fsf-free AND autoconf-simple-exception-2.0 AND mit-old-style-no-advert AND gpl-2.0
+  AND gpl-2.0 AND none AND bsd-original-uc AND gpl-2.0 AND tu-berlin AND bsd-new AND bsd-new
+  AND bsd-original AND gpl-2.0-plus AND public-domain AND none AND gpl-2.0 AND public-domain
+  AND other-permissive AND (mit AND gpl-2.0) AND gpl-2.0-plus AND public-domain AND (bsd-original-uc
+  AND isc AND gpl-2.0) AND bsd-original-uc AND bison-exception-2.2 AND bsd-new AND gpl-2.0 AND
+  (wol AND gpl-2.0) AND (lgpl-2.1 OR gpl-2.0) AND public-domain AND isc AND brian-clapper AND
+  lgpl-2.1 AND mit-0 AND gpl-2.0 AND gpl-2.0
 - |
   1999-2006, Brett Bryant <bbryant@digium.com>
   1999-2006, Mark Spencer <markster@digium.com>
