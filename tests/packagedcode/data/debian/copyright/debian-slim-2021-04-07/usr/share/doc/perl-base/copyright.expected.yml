@@ -1,3 +1,4 @@
+- (gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)
 - - GPL-1+ or Artistic
   - Expat
   - REGCOMP, and GPL-1+ or Artistic
