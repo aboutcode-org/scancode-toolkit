@@ -8,10 +8,8 @@
   - Public-Domain
   - Artistic
   - GPL-1+
-- (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-3.0 AND gpl-1.0-plus AND
-  gpl-3.0 AND gpl-3.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND isc AND
-  ((artistic-2.0 AND artistic-2.0) OR (gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
-  AND gpl-1.0)) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND artistic-2.0 AND public-domain-disclaimer
+- (gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0 AND gpl-1.0-plus) AND (gpl-3.0-plus AND gpl-3.0) AND
+  isc AND (artistic-2.0 OR (gpl-1.0-plus AND gpl-1.0)) AND gpl-2.0 AND artistic-2.0 AND public-domain-disclaimer
 - |
   1997, Klee Dienes <klee@mit.edu>
   Christoph Lameter <clameter@debian.org>

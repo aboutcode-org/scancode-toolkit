@@ -8,7 +8,7 @@
   - CC-BY-3.0
   - BSD-3-clause
 - (bsd-new AND google-patent-license-golang) AND mit AND bsd-simplified AND mpeg-ssg AND multics
-  AND (apache-2.0 AND apache-2.0) AND bsd-2-clause-views AND cc-by-3.0 AND bsd-new
+  AND apache-2.0 AND bsd-2-clause-views AND cc-by-3.0 AND bsd-new
 - |
   © 2009, 2010, The Go Authors. All rights reserved.
   © 1994-1999 Lucent Technologies Inc. All rights reserved.

@@ -1,6 +1,6 @@
 - - BSD-3-clause
   - GPL-2+
-- bsd-new AND (gpl-2.0-plus AND gpl-2.0-plus)
+- bsd-new AND gpl-2.0-plus
 - |
   2013 Michael Stapelberg
   2006 Red Hat, Inc

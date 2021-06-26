@@ -10,14 +10,11 @@
   - none
   - config-h
   - noderivs
-- (public-domain AND public-domain AND lgpl-2.0 AND lgpl-2.1-plus AND gpl-2.0-plus AND public-domain
-  AND public-domain AND (public-domain AND gpl-2.0-plus AND gpl-3.0-plus) AND public-domain
-  AND public-domain AND public-domain AND public-domain AND public-domain AND lgpl-2.1 AND (epl-2.0
-  OR gpl-2.0-plus OR lgpl-2.1-plus) AND gpl-3.0 AND public-domain AND public-domain) AND public-domain
-  AND public-domain AND (gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.1) AND fsf-unlimited AND (gpl-3.0-plus WITH autoconf-macro-exception AND gpl-3.0)
-  AND fsf-ap AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0-plus AND gpl-2.0) AND public-domain AND (public-domain
-  AND fsf-unlimited AND autoconf-exception-2.0 AND gpl-2.0) AND other-copyleft
+- (public-domain AND lgpl-2.0 AND lgpl-2.1-plus AND gpl-2.0-plus AND (public-domain AND gpl-2.0-plus
+  AND gpl-3.0-plus) AND lgpl-2.1 AND (epl-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus) AND gpl-3.0)
+  AND public-domain AND gpl-2.0-plus AND (lgpl-2.1-plus AND lgpl-2.1) AND fsf-unlimited AND
+  (gpl-3.0-plus WITH autoconf-macro-exception AND gpl-3.0) AND fsf-ap AND (gpl-2.0 AND gpl-2.0-plus)
+  AND (public-domain AND fsf-unlimited AND autoconf-exception-2.0 AND gpl-2.0) AND other-copyleft
 - |
   2006-2018, Lasse Collin
   1999-2008, Igor Pavlov

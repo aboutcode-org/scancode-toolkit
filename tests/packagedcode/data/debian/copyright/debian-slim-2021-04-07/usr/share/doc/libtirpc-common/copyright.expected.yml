@@ -6,7 +6,7 @@
   - PERMISSIVE
   - GPL-2
 - bsd-new AND (other-permissive AND free-unknown) AND bsd-simplified AND bsd-original-voices
-  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND fsf-ap
+  AND (lgpl-2.1-plus AND lgpl-2.1) AND fsf-ap
 - |
   2005 Bull S.A
   1984-2009 Sun Microsystems, Inc.

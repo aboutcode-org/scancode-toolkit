@@ -4,8 +4,8 @@
   - CRYPTOGAMS
   - Unicode-data
   - Xen-interface
-- (gpl-2.0 AND gpl-2.0) AND (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1) AND (gpl-2.0-plus OR mit)
-  AND (bsd-new OR gpl-1.0-plus) AND unicode AND mit
+- gpl-2.0 AND (lgpl-2.1 AND lgpl-2.1-plus) AND (gpl-2.0-plus OR mit) AND (bsd-new OR gpl-1.0-plus)
+  AND unicode AND mit
 - |
   1991-2012 Linus Torvalds and many others
   2011 Lennart Poettering

@@ -2,7 +2,7 @@
   - BSD-2-clause
   - BSD-3-clause
   - CC0-1.0
-- (mpl-2.0 AND mpl-2.0) AND bsd-2-clause-views AND bsd-new AND (cc0-1.0 AND cc0-1.0)
+- mpl-2.0 AND bsd-2-clause-views AND bsd-new AND cc0-1.0
 - |
   2003-2017 Patrick Brunschwig <patrick@enigmail.net>,
   2001-2002 Ramalingam Saravanan <svn@xmlterm.org>

@@ -25,11 +25,11 @@
   - Expat~disclaimer
   - Expat
   - WOL
-- gpl-2.0 AND fsf-free AND autoconf-simple-exception-2.0 AND mit-old-style-no-advert AND gpl-2.0
-  AND none AND bsd-original-uc AND tu-berlin AND bsd-new AND bsd-new AND bsd-original AND gpl-2.0-plus
-  AND public-domain AND other-permissive AND (mit AND gpl-2.0) AND public-domain AND (bsd-original-uc
-  AND isc AND gpl-2.0) AND bison-exception-2.2 AND bsd-new AND (wol AND gpl-2.0) AND (lgpl-2.1
-  OR gpl-2.0) AND isc AND brian-clapper AND lgpl-2.1 AND mit-0
+- gpl-2.0 AND fsf-free AND autoconf-simple-exception-2.0 AND mit-old-style-no-advert AND none
+  AND bsd-original-uc AND tu-berlin AND bsd-new AND bsd-original AND gpl-2.0-plus AND public-domain
+  AND other-permissive AND (mit AND gpl-2.0) AND (bsd-original-uc AND isc AND gpl-2.0) AND bison-exception-2.2
+  AND (wol AND gpl-2.0) AND (lgpl-2.1 OR gpl-2.0) AND isc AND brian-clapper AND lgpl-2.1 AND
+  mit-0
 - |
   1999-2006, Brett Bryant <bbryant@digium.com>
   1999-2006, Mark Spencer <markster@digium.com>

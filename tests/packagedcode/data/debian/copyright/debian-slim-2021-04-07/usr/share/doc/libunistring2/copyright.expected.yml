@@ -7,11 +7,9 @@
   - MIT
   - LGPL-3+
   - GFDL-1.2+
-- ((lgpl-3.0-plus AND lgpl-3.0-plus AND lgpl-3.0 AND lgpl-3.0) OR (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0 AND gpl-2.0)) AND fsf-unlimited AND gpl-1.0-plus WITH autoconf-simple-exception-2.0
-  AND ((gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) OR (gfdl-1.2-plus AND gfdl-1.2-plus))
-  AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0 AND gpl-2.0) AND x11-xconsortium
+- ((lgpl-3.0-plus AND lgpl-3.0) OR (gpl-2.0-plus AND gpl-2.0)) AND fsf-unlimited AND gpl-1.0-plus
+  WITH autoconf-simple-exception-2.0 AND ((gpl-3.0-plus AND gpl-3.0) OR gfdl-1.2-plus) AND (gpl-3.0-plus
+  AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0) AND x11-xconsortium
 - |
   1995-2017 Free Software Foundation, Inc.
   1992-2009, Free Software Foundation, Inc.

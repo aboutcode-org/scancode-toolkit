@@ -1,13 +1,10 @@
 - - Binary redistribution (Intel 1)
   - Binary redistribution (Intel 2)
   - Binary redistribution (Intel 3)
-- intel AND intel AND (intel AND free-unknown AND bsd-new AND bsd-new AND x11-lucent AND standard-ml-nj
-  AND amd-historical AND sunpro AND osf-1990 AND nilsson-historical AND newlib-historical AND
-  bsd-new AND amd-historical AND bsd-new AND bsd-simplified AND bsd-simplified AND bsd-simplified
-  AND x11-hanson AND bsd-simplified AND bsd-new AND delorie-historical AND intel-osl-1993 AND
-  osf-1990 AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-new) AND (bsd-simplified
-  AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-new AND
-  bsd-new AND bsd-new AND newlib-historical AND bsd-new AND bsd-new AND bsd-simplified)
+- intel AND (intel AND free-unknown AND bsd-new AND x11-lucent AND standard-ml-nj AND amd-historical
+  AND sunpro AND osf-1990 AND nilsson-historical AND newlib-historical AND bsd-simplified AND
+  x11-hanson AND delorie-historical AND intel-osl-1993) AND (bsd-simplified AND bsd-new AND
+  newlib-historical)
 - |
   2014, Intel Corporation.
   2014, Intel Corporation

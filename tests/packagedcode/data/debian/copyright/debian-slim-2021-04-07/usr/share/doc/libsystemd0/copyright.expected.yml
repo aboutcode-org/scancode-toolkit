@@ -5,9 +5,8 @@
   - Expat
   - public-domain
   - GPL-2+
-- (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND (cc0-1.0 AND cc0-1.0 AND cc0-1.0) AND (gpl-2.0
-  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (linux-syscall-exception-gpl AND gpl-2.0 AND gpl-2.0
-  AND gpl-2.0) AND mit AND public-domain-disclaimer AND (gpl-2.0-plus AND gpl-2.0-plus)
+- (lgpl-2.1-plus AND lgpl-2.1) AND cc0-1.0 AND gpl-2.0 AND (linux-syscall-exception-gpl AND
+  gpl-2.0) AND mit AND public-domain-disclaimer AND gpl-2.0-plus
 - |
   2008-2015 Kay Sievers <kay@vrfy.org>
   2010-2015 Lennart Poettering

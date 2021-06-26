@@ -1,8 +1,7 @@
 - - GPL-2+ and LGPL-2.1+
   - LGPL-2.1+
   - GPL-2+
-- ((gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)) AND (lgpl-2.1-plus
-  AND lgpl-2.1-plus AND lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus)
+- (gpl-2.0-plus AND (lgpl-2.1-plus AND lgpl-2.1)) AND (lgpl-2.1-plus AND lgpl-2.1) AND gpl-2.0-plus
 - |
   2012-2018, Matthias Klumpp <matthias@tenstral.net>
   Richard Hughes <richard@hughsie.com>

@@ -2,9 +2,8 @@
   - LGPL-2.0 with AOSDL exception
   - Zlib
   - BSD-2-clause
-- (gpl-2.0 AND gpl-1.0-plus AND gpl-2.0 AND gpl-1.0-plus AND lgpl-2.1 WITH openssl-exception-lgpl-2.0-plus)
-  AND (lgpl-2.0-plus AND lgpl-2.0-plus AND gpl-1.0-plus AND lgpl-2.1 WITH openssl-exception-lgpl-2.0-plus)
-  AND (zlib AND zlib) AND bsd-simplified
+- (gpl-2.0 AND gpl-1.0-plus AND lgpl-2.1 WITH openssl-exception-lgpl-2.0-plus) AND (lgpl-2.0-plus
+  AND gpl-1.0-plus AND lgpl-2.1 WITH openssl-exception-lgpl-2.0-plus) AND zlib AND bsd-simplified
 - |
   2007-2015, Apple Inc.
   2007-2013, Apple Inc.
