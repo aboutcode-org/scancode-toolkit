@@ -170,12 +170,12 @@ class UnstructuredCopyrightProcessor(DebianDetector):
             return ['unknown']
 
         detected_expressions = [match.rule.license_expression for match in matches]
-        expression = combine_expressions(detected_expressions, unique=filter_licenses)
+        license_expression = combine_expressions(detected_expressions, unique=filter_licenses)
 
         if simplify_licenses:
-            return dedup_expression(expression=expression)
+            return dedup_expression(license_expression=license_expression)
         else:
-            return expression
+            return license_expression
 
     def get_copyright(self, *args, **kwargs):
         return '\n'.join(self.detected_copyrights)
@@ -238,7 +238,7 @@ class StructuredCopyrightProcessor(DebianDetector):
             )
         ]
 
-        self.primary_license = dedup_expression(expression=str(combine_expressions(expressions)))
+        self.primary_license = dedup_expression(license_expression=str(combine_expressions(expressions)))
 
     def get_declared_license(
         self, filter_licenses=False, skip_debian_packaging=False, *args, **kwargs
@@ -355,13 +355,23 @@ class StructuredCopyrightProcessor(DebianDetector):
         expressions = [
             license_detection.license_expression_object
             for license_detection in license_detections
+            if license_detection.license_expression_object != None
         ]
 
-        expression = str(combine_expressions(expressions, unique=False))
-        if simplify_licenses:
-            return dedup_expression(expression=expression)
+        if expressions:
+            license_expression = str(combine_expressions(expressions, unique=False))
         else:
-            return expression
+            license_matches = list(self.license_matches)
+            if license_matches:
+                license_expression = get_license_expression_from_matches(license_matches)
+            else:
+                msg = f'Debian Copyright file does not have any licenses detected in it. Location: {self.location}'
+                raise NoLicenseFoundError(msg)
+
+        if simplify_licenses:
+            return dedup_expression(license_expression=license_expression)
+        else:
+            return license_expression
 
     @staticmethod
     def filter_duplicate_declared_license(paragraphs):
@@ -1030,8 +1040,8 @@ def get_license_matches(location=None, query_string=None):
     return idx.match(location=location, query_string=query_string)
 
 
-def dedup_expression(expression, licensing=Licensing()):
-    return str(licensing.dedup(expression))
+def dedup_expression(license_expression, licensing=Licensing()):
+    return str(licensing.dedup(license_expression))
 
 
 def clean_debian_comma_logic(exp):
