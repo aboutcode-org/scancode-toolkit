@@ -466,6 +466,9 @@ class StructuredCopyrightProcessor(DebianDetector):
             for _field_name, field_value in extra_data.items():
 
                 license_matches = get_license_matches(query_string=field_value)
+                if not license_matches:
+                    continue
+
                 normalized_expression = get_license_expression_from_matches(
                     license_matches=license_matches,
                 )
