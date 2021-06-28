@@ -616,7 +616,7 @@ class LicenseDetection:
 
     def is_detection_declarable(self):
         """
-        LicenseDetection objects contain both license texts detection in ficense/file/other
+        LicenseDetection objects contain both license texts detection in license/file/other
         paragraphs, and only license detections which are in files paragraph has existing
         `license_expression_object` to report.
         Also, in the case of reporting declared licenses other paragraphs are not reported.

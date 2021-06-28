@@ -211,6 +211,19 @@ build_tests(
 )
 
 
+class TestDebianMiscCopyrightLicenseDetection(FileBasedTesting):
+    # pytestmark = pytest.mark.scanslow
+    test_data_dir = path.join(path.dirname(__file__), 'data')
+
+
+build_tests(
+    test_dir='debian/copyright/debian-misc',
+    prefix='test_debian_misc_parse_copyright_file_',
+    clazz=TestDebianMiscCopyrightLicenseDetection,
+    regen=False,
+)
+
+
 class TestDebianDetector(FileBasedTesting):
     test_data_dir = path.join(path.dirname(__file__), 'data/debian/copyright/')
 
