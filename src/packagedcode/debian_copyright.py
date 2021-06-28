@@ -500,6 +500,14 @@ class StructuredCopyrightProcessor(DebianDetector):
         if edc.other_paragraphs:
             self.consistency_errors.append(CONSISTENCY_ERROR_MESSAGES['other_paras'])
 
+        # Check if atleast one License Paragraph is present
+        if not edc.license_paragraphs:
+            self.consistency_errors.append(CONSISTENCY_ERROR_MESSAGES['no_license_para'])
+
+        # Check if atleast one Files Paragraph is present
+        if not edc.file_paragraphs:
+            self.consistency_errors.append(CONSISTENCY_ERROR_MESSAGES['no_files_para'])
+
         # Check if there are duplicate license paragraphs
         if edc.duplicate_license_paragraphs:
             self.consistency_errors.append(CONSISTENCY_ERROR_MESSAGES['duplicate_license'])
@@ -520,9 +528,11 @@ class StructuredCopyrightProcessor(DebianDetector):
 CONSISTENCY_ERROR_MESSAGES = {
     'unstructured': 'Debian Copyright File is unstructured',
     'other_paras': (
-        'Paragraphs other than Header/File/License paragraphs present in debian copyright file',
+        'Paragraphs other than Header/File/License paragraphs present in structured debian copyright',
         'or there is a formatting issue in a paragraph',
     ),
+    'no_license_para': 'No License paragraphs are present in structured debian copyright file',
+    'no_files_para': 'No Files paragraphs are present in structured debian copyright file',
     'duplicate_license': (
         'Two License Paragraphs having the same License Name present in debian copyright file',
     ),
