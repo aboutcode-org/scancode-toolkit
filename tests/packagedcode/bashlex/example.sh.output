@@ -1,128 +1,85 @@
-'#!/bin/bash\n' Comment.Hashbang
+'#!/bin/bash\n' Comment.Single
 
-'\n'          Text
+'\n'          Text.NewLine
 
-'printf'      Name.Builtin
-' '           Text
+'printf'      Text
+' '           Text.Whitespace
 '"%d %s\\n"'  Literal.String.Double
-' '           Text
-'10'          Literal.Number
-' '           Text
+' '           Text.Whitespace
+'10'          Text
+' '           Text.Whitespace
 '"foo"'       Literal.String.Double
-'\n'          Text
+'\n'          Text.NewLine
 
-'printf'      Name.Builtin
-' '           Text
+'printf'      Text
+' '           Text.Whitespace
 '"%d %s\\n"'  Literal.String.Double
-' '           Text
-'$(('         Keyword
-'10#1'        Literal.Number
-'))'          Keyword
-' '           Text
+' '           Text.Whitespace
+'$((10#1))'   Text
+' '           Text.Whitespace
 '"bar"'       Literal.String.Double
-'\n\n'        Text
+'\n\n'        Text.NewLine
 
-'let'         Name.Builtin
-' '           Text
-'"'           Literal.String.Double
-'m = 10#'     Literal.String.Double
-'${'          Literal.String.Interpol
-'1'           Name.Variable
-':'           Punctuation
-'1'           Name.Variable
-':'           Punctuation
-'2'           Name.Variable
-'}'           Literal.String.Interpol
-'"'           Literal.String.Double
-'\n'          Text
+'let'         Text
+' '           Text.Whitespace
+'"m = 10#${1:1:2}"' Literal.String.Double
+'\n'          Text.NewLine
 
-'echo'        Name.Builtin
-' '           Text
-'$m'          Name.Variable
-'\n\n'        Text
+'echo'        Text
+' '           Text.Whitespace
+'$m'          Text
+'\n\n'        Text.NewLine
 
 'm'           Name.Variable
-'='           Operator
-'$(('         Keyword
-'10#'         Literal.Number
-'${'          Literal.String.Interpol
-'1'           Name.Variable
-':'           Punctuation
-'4'           Name.Variable
-':'           Punctuation
-'3'           Name.Variable
-'}'           Literal.String.Interpol
-' '           Text
-'+'           Operator
-' '           Text
-'10#'         Literal.Number
-'${'          Literal.String.Interpol
-'1'           Name.Variable
-':'           Punctuation
-'1'           Name.Variable
-':'           Punctuation
-'3'           Name.Variable
-'}'           Literal.String.Interpol
-'))'          Keyword
-'\n'          Text
+'='           Operator.Equal
+'$((10#${1:4:3}' Text
+' '           Text.Whitespace
+'+'           Text
+' '           Text.Whitespace
+'10#${1:1:3}))' Text
+'\n'          Text.NewLine
 
-'echo'        Name.Builtin
-' '           Text
-'$m'          Name.Variable
-'\n\n'        Text
+'echo'        Text
+' '           Text.Whitespace
+'$m'          Text
+'\n\n'        Text.NewLine
 
 'm'           Name.Variable
-'='           Operator
-'$(('         Keyword
-'10#'         Literal.Number
-'${'          Literal.String.Interpol
-'1'           Name.Variable
-':'           Punctuation
-'4'           Name.Variable
-':'           Punctuation
-'3'           Name.Variable
-'}'           Literal.String.Interpol
-'))'          Keyword
-'\n'          Text
+'='           Operator.Equal
+'$((10#${1:4:3}))' Text
+'\n'          Text.NewLine
 
-'echo'        Name.Builtin
-' '           Text
-'$m'          Name.Variable
-'\n\n'        Text
+'echo'        Text
+' '           Text.Whitespace
+'$m'          Text
+'\n\n'        Text.NewLine
 
 'm'           Name.Variable
-'='           Operator
-'$(('         Keyword
-'10#'         Literal.Number
-'$1'          Name.Variable
-'))'          Keyword
-'\n'          Text
+'='           Operator.Equal
+'$((10#$1))'  Text
+'\n'          Text.NewLine
 
-'echo'        Name.Builtin
-' '           Text
-'$m'          Name.Variable
-'\n\n'        Text
+'echo'        Text
+' '           Text.Whitespace
+'$m'          Text
+'\n\n'        Text.NewLine
 
 'm'           Name.Variable
-'='           Operator
-'$(('         Keyword
-'10#1'        Literal.Number
-'))'          Keyword
-'\n'          Text
+'='           Operator.Equal
+'$((10#1))'   Text
+'\n'          Text.NewLine
 
-'echo'        Name.Builtin
-' '           Text
-'$m'          Name.Variable
-'\n\n'        Text
+'echo'        Text
+' '           Text.Whitespace
+'$m'          Text
+'\n\n'        Text.NewLine
 
 'm'           Name.Variable
-'='           Operator
-'$(('         Keyword
-'10'          Literal.Number
-'))'          Keyword
-'\n'          Text
+'='           Operator.Equal
+'$((10))'     Text
+'\n'          Text.NewLine
 
-'echo'        Name.Builtin
-' '           Text
-'$m'          Name.Variable
-'\n'          Text
+'echo'        Text
+' '           Text.Whitespace
+'$m'          Text
+'\n'          Text.NewLine

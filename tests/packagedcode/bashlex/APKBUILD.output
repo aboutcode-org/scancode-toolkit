@@ -1,0 +1,3727 @@
+'# Contributor: Natanael Copa <ncopa@alpinelinux.org>\n' Comment.Single
+
+'# Maintainer: Ariadne Conill <ariadne@dereferenced.org>\n' Comment.Single
+
+'pkgname'     Name.Variable
+'='           Operator.Equal
+'gcc'         Text
+'\n'          Text.NewLine
+
+'_pkgbase'    Name.Variable
+'='           Operator.Equal
+'10.3.1'      Text
+'\n'          Text.NewLine
+
+'pkgver'      Name.Variable
+'='           Operator.Equal
+'10.3.1_git20210424' Text
+'\n'          Text.NewLine
+
+'['           Text
+' '           Text.Whitespace
+'"$BOOTSTRAP"' Literal.String.Double
+' '           Text.Whitespace
+'='           Text
+' '           Text.Whitespace
+'"nolibc"'    Literal.String.Double
+' '           Text.Whitespace
+']'           Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'pkgname="gcc-pass2"' Text
+'\n'          Text.NewLine
+
+'['           Text
+' '           Text.Whitespace
+'"$CBUILD"'   Literal.String.Double
+' '           Text.Whitespace
+'!='          Text
+' '           Text.Whitespace
+'"$CHOST"'    Literal.String.Double
+' '           Text.Whitespace
+']'           Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'_cross="-$CARCH"' Text
+' '           Text.Whitespace
+'||'          Text
+' '           Text.Whitespace
+'_cross=""'   Text
+'\n'          Text.NewLine
+
+'['           Text
+' '           Text.Whitespace
+'"$CHOST"'    Literal.String.Double
+' '           Text.Whitespace
+'!='          Text
+' '           Text.Whitespace
+'"$CTARGET"'  Literal.String.Double
+' '           Text.Whitespace
+']'           Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'_target="-$CTARGET_ARCH"' Text
+' '           Text.Whitespace
+'||'          Text
+' '           Text.Whitespace
+'_target=""'  Text
+'\n\n'        Text.NewLine
+
+'pkgname'     Name.Variable
+'='           Operator.Equal
+'"$pkgname$_target"' Literal.String.Double
+'\n'          Text.NewLine
+
+'pkgrel'      Name.Variable
+'='           Operator.Equal
+'2'           Text
+'\n'          Text.NewLine
+
+'pkgdesc'     Name.Variable
+'='           Operator.Equal
+'"The GNU Compiler Collection"' Literal.String.Double
+'\n'          Text.NewLine
+
+'url'         Name.Variable
+'='           Operator.Equal
+'"https://gcc.gnu.org"' Literal.String.Double
+'\n'          Text.NewLine
+
+'arch'        Name.Variable
+'='           Operator.Equal
+'"all"'       Literal.String.Double
+'\n'          Text.NewLine
+
+'license'     Name.Variable
+'='           Operator.Equal
+'"GPL-2.0-or-later LGPL-2.1-or-later"' Literal.String.Double
+'\n'          Text.NewLine
+
+'_gccrel'     Name.Variable
+'='           Operator.Equal
+'$pkgver-r$pkgrel' Text
+'\n'          Text.NewLine
+
+'depends'     Name.Variable
+'='           Operator.Equal
+'"binutils$_target"' Literal.String.Double
+'\n'          Text.NewLine
+
+'makedepends_build' Name.Variable
+'='           Operator.Equal
+'"gcc$_cross g++$_cross bison flex texinfo gawk zip gmp-dev mpfr-dev mpc1-dev zlib-dev"' Literal.String.Double
+'\n'          Text.NewLine
+
+'makedepends_host' Name.Variable
+'='           Operator.Equal
+'"linux-headers gmp-dev mpfr-dev mpc1-dev isl-dev zlib-dev !gettext-dev libucontext-dev"' Literal.String.Double
+'\n'          Text.NewLine
+
+'subpackages' Name.Variable
+'='           Operator.Equal
+'" "'         Literal.String.Double
+'\n'          Text.NewLine
+
+'['           Text
+' '           Text.Whitespace
+'"$CHOST"'    Literal.String.Double
+' '           Text.Whitespace
+'='           Text
+' '           Text.Whitespace
+'"$CTARGET"'  Literal.String.Double
+' '           Text.Whitespace
+']'           Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'subpackages="gcc-doc$_target"' Text
+'\n'          Text.NewLine
+
+'replaces'    Name.Variable
+'='           Operator.Equal
+'"libstdc++ binutils"' Literal.String.Double
+'\n\n'        Text.NewLine
+
+':'           Text
+' '           Text.Whitespace
+'"${LANG_CXX:=true}"' Literal.String.Double
+'\n'          Text.NewLine
+
+':'           Text
+' '           Text.Whitespace
+'"${LANG_D:=true}"' Literal.String.Double
+'\n'          Text.NewLine
+
+':'           Text
+' '           Text.Whitespace
+'"${LANG_OBJC:=true}"' Literal.String.Double
+'\n'          Text.NewLine
+
+':'           Text
+' '           Text.Whitespace
+'"${LANG_GO:=true}"' Literal.String.Double
+'\n'          Text.NewLine
+
+':'           Text
+' '           Text.Whitespace
+'"${LANG_FORTRAN:=true}"' Literal.String.Double
+'\n'          Text.NewLine
+
+':'           Text
+' '           Text.Whitespace
+'"${LANG_ADA:=true}"' Literal.String.Double
+'\n\n'        Text.NewLine
+
+'_libgomp'    Name.Variable
+'='           Operator.Equal
+'true'        Text
+'\n'          Text.NewLine
+
+'_libgcc'     Name.Variable
+'='           Operator.Equal
+'true'        Text
+'\n'          Text.NewLine
+
+'_libatomic'  Name.Variable
+'='           Operator.Equal
+'true'        Text
+'\n'          Text.NewLine
+
+'_libitm'     Name.Variable
+'='           Operator.Equal
+'true'        Text
+'\n\n'        Text.NewLine
+
+'if'          Text
+' '           Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'"$CHOST"'    Literal.String.Double
+' '           Text.Whitespace
+'!='          Text
+' '           Text.Whitespace
+'"$CTARGET"'  Literal.String.Double
+' '           Text.Whitespace
+'];'          Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'if'          Text
+' '           Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'"$BOOTSTRAP"' Literal.String.Double
+' '           Text.Whitespace
+'='           Text
+' '           Text.Whitespace
+'nolibc'      Text
+' '           Text.Whitespace
+'];'          Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'LANG_CXX=false' Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'LANG_ADA=false' Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'_libgcc=false' Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'_builddir="$srcdir/build-cross-pass2"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'else'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'_builddir="$srcdir/build-cross-final"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'fi'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'LANG_OBJC=false' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'LANG_GO=false' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'LANG_FORTRAN=false' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'LANG_D=false' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'_libgomp=false' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'_libatomic=false' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'_libitm=false' Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'# reset target flags (should be set in crosscreate abuild)\n' Comment.Single
+
+'\t'          Text.Whitespace
+'# fixup flags. seems gcc treats CPPFLAGS as global without\n' Comment.Single
+
+'\t'          Text.Whitespace
+'# _FOR_xxx variants. wrap it in CFLAGS and CXXFLAGS.\n' Comment.Single
+
+'\t'          Text.Whitespace
+'export'      Text
+' '           Text.Whitespace
+'CFLAGS="$CPPFLAGS' Text
+' '           Text.Whitespace
+'$CFLAGS"'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'export'      Text
+' '           Text.Whitespace
+'CXXFLAGS="$CPPFLAGS' Text
+' '           Text.Whitespace
+'$CXXFLAGS"'  Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'unset'       Text
+' '           Text.Whitespace
+'CPPFLAGS'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'export'      Text
+' '           Text.Whitespace
+'CFLAGS_FOR_TARGET="' Text
+' '           Text.Whitespace
+'"\n\texport CXXFLAGS_FOR_TARGET="' Literal.String.Double
+' '           Text.Whitespace
+'"\n\texport LDFLAGS_FOR_TARGET="' Literal.String.Double
+' '           Text.Whitespace
+'"\n\n\tSTRIP_FOR_TARGET="' Literal.String.Double
+'$CTARGET-strip"' Text
+'\n'          Text.NewLine
+
+'elif'        Text
+' '           Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'"$CBUILD"'   Literal.String.Double
+' '           Text.Whitespace
+'!='          Text
+' '           Text.Whitespace
+'"$CHOST"'    Literal.String.Double
+' '           Text.Whitespace
+'];'          Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'# fixup flags. seems gcc treats CPPFLAGS as global without\n' Comment.Single
+
+'\t'          Text.Whitespace
+'# _FOR_xxx variants. wrap it in CFLAGS and CXXFLAGS.\n' Comment.Single
+
+'\t'          Text.Whitespace
+'export'      Text
+' '           Text.Whitespace
+'CFLAGS="$CPPFLAGS' Text
+' '           Text.Whitespace
+'$CFLAGS"'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'export'      Text
+' '           Text.Whitespace
+'CXXFLAGS="$CPPFLAGS' Text
+' '           Text.Whitespace
+'$CXXFLAGS"'  Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'unset'       Text
+' '           Text.Whitespace
+'CPPFLAGS'    Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'# reset flags and cc for build\n' Comment.Single
+
+'\t'          Text.Whitespace
+'export'      Text
+' '           Text.Whitespace
+'CC_FOR_BUILD="gcc"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'export'      Text
+' '           Text.Whitespace
+'CXX_FOR_BUILD="g++"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'export'      Text
+' '           Text.Whitespace
+'CFLAGS_FOR_BUILD="' Text
+' '           Text.Whitespace
+'"\n\texport CXXFLAGS_FOR_BUILD="' Literal.String.Double
+' '           Text.Whitespace
+'"\n\texport LDFLAGS_FOR_BUILD="' Literal.String.Double
+' '           Text.Whitespace
+'"\n\texport CFLAGS_FOR_TARGET="' Literal.String.Double
+' '           Text.Whitespace
+'"\n\texport CXXFLAGS_FOR_TARGET="' Literal.String.Double
+' '           Text.Whitespace
+'"\n\texport LDFLAGS_FOR_TARGET="' Literal.String.Double
+' '           Text.Whitespace
+'"\n\n\t# Languages that do not need bootstrapping\n\tLANG_OBJC=false\n\tLANG_GO=false\n\tLANG_FORTRAN=false\n\tLANG_D=false\n\n\tSTRIP_FOR_TARGET=${CROSS_COMPILE}strip\n\t_builddir="' Literal.String.Double
+'$srcdir/build-cross-native"' Text
+'\n'          Text.NewLine
+
+'else'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'STRIP_FOR_TARGET=${CROSS_COMPILE}strip' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'_builddir="$srcdir/build"' Text
+'\n'          Text.NewLine
+
+'fi'          Text
+'\n\n'        Text.NewLine
+
+"# GDC hasn't been ported to PowerPC\n" Comment.Single
+
+'# See libphobos/configure.tgt in GCC sources for supported targets\n' Comment.Single
+
+'# riscv fails with: error: static assert  "unimplemented"\n' Comment.Single
+
+'case'        Text
+' '           Text.Whitespace
+'"$CARCH"'    Literal.String.Double
+' '           Text.Whitespace
+'in'          Text
+'\n'          Text.NewLine
+
+'ppc64le|riscv64)' Text
+'\t'          Text.Whitespace
+'LANG_D=false' Text
+' '           Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'esac'        Text
+'\n\n'        Text.NewLine
+
+'# libitm has TEXTRELs in ARM build, so disable for now\n' Comment.Single
+
+'case'        Text
+' '           Text.Whitespace
+'"$CTARGET_ARCH"' Literal.String.Double
+' '           Text.Whitespace
+'in'          Text
+'\n'          Text.NewLine
+
+'arm*)'       Text
+'\t\t'        Text.Whitespace
+'_libitm=false' Text
+' '           Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'mips*)'      Text
+'\t\t'        Text.Whitespace
+'_libitm=false' Text
+' '           Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'riscv64)'    Text
+'\t'          Text.Whitespace
+'_libitm=false' Text
+' '           Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'esac'        Text
+'\n\n'        Text.NewLine
+
+'# Internal libffi fails to build on MIPS at the moment, need to\n' Comment.Single
+
+'# investigate further.  We disable LANG_GO on mips64 as it requires\n' Comment.Single
+
+'# the internal libffi.\n' Comment.Single
+
+'case'        Text
+' '           Text.Whitespace
+'"$CTARGET_ARCH"' Literal.String.Double
+' '           Text.Whitespace
+'in'          Text
+'\n'          Text.NewLine
+
+'mips*)'      Text
+'\t\t'        Text.Whitespace
+'LANG_GO=false' Text
+' '           Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'esac'        Text
+'\n\n'        Text.NewLine
+
+'# Fortran uses libquadmath if toolchain has __float128\n' Comment.Single
+
+'# currently on x86, x86_64 and ia64\n' Comment.Single
+
+'_libquadmath' Name.Variable
+'='           Operator.Equal
+'$LANG_FORTRAN' Text
+'\n'          Text.NewLine
+
+'case'        Text
+' '           Text.Whitespace
+'"$CTARGET_ARCH"' Literal.String.Double
+' '           Text.Whitespace
+'in'          Text
+'\n'          Text.NewLine
+
+'x86'         Text
+' '           Text.Whitespace
+'|'           Text
+' '           Text.Whitespace
+'x86_64)'     Text
+'\t'          Text.Whitespace
+'_libquadmath=$LANG_FORTRAN' Text
+' '           Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'*)'          Text
+'\t\t'        Text.Whitespace
+'_libquadmath=false' Text
+' '           Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'esac'        Text
+'\n\n'        Text.NewLine
+
+'# libatomic is a dependency for openvswitch\n' Comment.Single
+
+'$_libatomic' Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'subpackages="$subpackages' Text
+' '           Text.Whitespace
+'libatomic::$CTARGET_ARCH"' Text
+'\n'          Text.NewLine
+
+'$_libgcc'    Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'subpackages="$subpackages' Text
+' '           Text.Whitespace
+'libgcc::$CTARGET_ARCH"' Text
+'\n'          Text.NewLine
+
+'$_libquadmath' Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'subpackages="$subpackages' Text
+' '           Text.Whitespace
+'libquadmath::$CTARGET_ARCH"' Text
+'\n'          Text.NewLine
+
+'if'          Text
+' '           Text.Whitespace
+'$_libgomp;'  Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends="$depends' Text
+' '           Text.Whitespace
+'libgomp=$_gccrel"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'subpackages="$subpackages' Text
+' '           Text.Whitespace
+'libgomp::$CTARGET_ARCH"' Text
+'\n'          Text.NewLine
+
+'fi'          Text
+'\n\n'        Text.NewLine
+
+'case'        Text
+' '           Text.Whitespace
+'"$CARCH"'    Literal.String.Double
+' '           Text.Whitespace
+'in'          Text
+'\n'          Text.NewLine
+
+'riscv64)'    Text
+'\n'          Text.NewLine
+
+'LANG_ADA'    Name.Variable
+'='           Operator.Equal
+'false;;'     Text
+'\n'          Text.NewLine
+
+'esac'        Text
+'\n\n'        Text.NewLine
+
+'_languages'  Name.Variable
+'='           Operator.Equal
+'c'           Text
+'\n'          Text.NewLine
+
+'if'          Text
+' '           Text.Whitespace
+'$LANG_CXX;'  Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'subpackages="$subpackages' Text
+' '           Text.Whitespace
+'libstdc++:libcxx:$CTARGET_ARCH' Text
+' '           Text.Whitespace
+'g++$_target:gpp"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'_languages="$_languages,c++"' Text
+'\n'          Text.NewLine
+
+'fi'          Text
+'\n'          Text.NewLine
+
+'if'          Text
+' '           Text.Whitespace
+'$LANG_D;'    Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'subpackages="$subpackages' Text
+' '           Text.Whitespace
+'libgphobos::$CTARGET_ARCH' Text
+' '           Text.Whitespace
+'gcc-gdc$_target:gdc"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'_languages="$_languages,d"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'makedepends_build="$makedepends_build' Text
+' '           Text.Whitespace
+'libucontext-dev"' Text
+'\n'          Text.NewLine
+
+'fi'          Text
+'\n'          Text.NewLine
+
+'if'          Text
+' '           Text.Whitespace
+'$LANG_OBJC;' Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'subpackages="$subpackages' Text
+' '           Text.Whitespace
+'libobjc::$CTARGET_ARCH' Text
+' '           Text.Whitespace
+'gcc-objc$_target:objc"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'_languages="$_languages,objc"' Text
+'\n'          Text.NewLine
+
+'fi'          Text
+'\n'          Text.NewLine
+
+'if'          Text
+' '           Text.Whitespace
+'$LANG_GO;'   Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'subpackages="$subpackages' Text
+' '           Text.Whitespace
+'libgo::$CTARGET_ARCH' Text
+' '           Text.Whitespace
+'gcc-go$_target:go"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'_languages="$_languages,go"' Text
+'\n'          Text.NewLine
+
+'fi'          Text
+'\n'          Text.NewLine
+
+'if'          Text
+' '           Text.Whitespace
+'$LANG_FORTRAN;' Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'subpackages="$subpackages' Text
+' '           Text.Whitespace
+'libgfortran::$CTARGET_ARCH' Text
+' '           Text.Whitespace
+'gfortran$_target:gfortran"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'_languages="$_languages,fortran"' Text
+'\n'          Text.NewLine
+
+'fi'          Text
+'\n'          Text.NewLine
+
+'if'          Text
+' '           Text.Whitespace
+'$LANG_ADA;'  Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'subpackages="$subpackages' Text
+' '           Text.Whitespace
+'libgnat-static:libgnatstatic:$CTARGET_ARCH' Text
+' '           Text.Whitespace
+'libgnat::$CTARGET_ARCH' Text
+' '           Text.Whitespace
+'gcc-gnat$_target:gnat"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'_languages="$_languages,ada"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'"$CBUILD"'   Literal.String.Double
+' '           Text.Whitespace
+'='           Text
+' '           Text.Whitespace
+'"$CTARGET"'  Literal.String.Double
+' '           Text.Whitespace
+']'           Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'makedepends_build="$makedepends_build' Text
+' '           Text.Whitespace
+'gcc-gnat-bootstrap"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'"$CBUILD"'   Literal.String.Double
+' '           Text.Whitespace
+'!='          Text
+' '           Text.Whitespace
+'"$CTARGET"'  Literal.String.Double
+' '           Text.Whitespace
+']'           Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'makedepends_build="$makedepends_build' Text
+' '           Text.Whitespace
+'gcc-gnat'    Text
+' '           Text.Whitespace
+'gcc-gnat$_cross"' Text
+'\n'          Text.NewLine
+
+'fi'          Text
+'\n'          Text.NewLine
+
+'makedepends' Name.Variable
+'='           Operator.Equal
+'"$makedepends_build $makedepends_host"' Literal.String.Double
+'\n\n'        Text.NewLine
+
+'# when using upstream releases, use this URI template\n' Comment.Single
+
+'# https://gcc.gnu.org/pub/gcc/releases/gcc-${_pkgbase:-$pkgver}/gcc-${_pkgbase:-$pkgver}.tar.xz\n' Comment.Single
+
+'#\n'         Comment.Single
+
+'# right now, we are using a git snapshot.\n' Comment.Single
+
+'#\n'         Comment.Single
+
+'# PLEASE submit all patches to gcc to https://gitlab.alpinelinux.org/kaniini/alpine-gcc-patches,\n' Comment.Single
+
+'# so that they can be properly tracked and easily rebased if needed.\n' Comment.Single
+
+'source'      Name.Variable
+'='           Operator.Equal
+'"https://dev.alpinelinux.org/~nenolod/gcc-${pkgver}.tar.xz\n\t0001-posix_memalign.patch\n\t0002-gcc-poison-system-directories.patch\n\t0003-Turn-on-Wl-z-relro-z-now-by-default.patch\n\t0004-Turn-on-D_FORTIFY_SOURCE-2-by-default-for-C-C-ObjC-O.patch\n\t0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch\n\t0006-Enable-Wformat-and-Wformat-security-by-default.patch\n\t0007-Enable-Wtrampolines-by-default.patch\n\t0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch\n\t0009-Ensure-that-msgfmt-doesn-t-encounter-problems-during.patch\n\t0010-Don-t-declare-asprintf-if-defined-as-a-macro.patch\n\t0011-libiberty-copy-PIC-objects-during-build-process.patch\n\t0012-libitm-disable-FORTIFY.patch\n\t0013-libgcc_s.patch\n\t0014-nopie.patch\n\t0015-libffi-use-__linux__-instead-of-__gnu_linux__-for-mu.patch\n\t0016-dlang-update-zlib-binding.patch\n\t0017-dlang-fix-fcntl-on-mips-add-libucontext-dep.patch\n\t0018-ada-fix-shared-linking.patch\n\t0019-build-fix-CXXFLAGS_FOR_BUILD-passing.patch\n\t0020-add-fortify-headers-paths.patch\n\t0021-Alpine-musl-package-provides-libssp_nonshared.a.-We-.patch\n\t0022-DP-Use-push-state-pop-state-for-gold-as-well-when-li.patch\n\t0023-Pure-64-bit-MIPS.patch\n\t0024-use-pure-64-bit-configuration-where-appropriate.patch\n\t0025-always-build-libgcc_eh.a.patch\n\t0026-ada-libgnarl-compatibility-for-musl.patch\n\t0027-ada-musl-support-fixes.patch\n\t0028-gcc-go-Use-_off_t-type-instead-of-_loff_t.patch\n\t0029-gcc-go-Don-t-include-sys-user.h.patch\n\t0030-gcc-go-Fix-ucontext_t-on-PPC64.patch\n\t0031-gcc-go-Fix-handling-of-signal-34-on-musl.patch\n\t0032-gcc-go-Use-int64-type-as-offset-argument-for-mmap.patch\n\t0033-gcc-go-Fix-st_-a-m-c-tim-fields-in-generated-sysinfo.patch\n\t0034-gcc-go-signal-34-is-special-on-musl-libc.patch\n\t0035-gcc-go-Prefer-_off_t-over-_off64_t.patch\n\t0036-gcc-go-undef-SETCONTEXT_CLOBBERS_TLS-in-proc.c.patch\n\t0037-gcc-go-link-to-libucontext.patch\n\t0038-gcc-go-Disable-printing-of-unaccessible-ppc64-struct.patch\n\t0039-CRuntime_Musl-Support-v1.2.0-for-32-bits.patch\n\t0040-configure-Add-enable-autolink-libatomic-use-in-LINK_.patch\n\t0041-Use-generic-errstr.go-implementation-on-musl.patch\n\t"' Literal.String.Double
+'\n\n'        Text.NewLine
+
+'# we build out-of-tree\n' Comment.Single
+
+'_gccdir'     Name.Variable
+'='           Operator.Equal
+'"$srcdir"'   Literal.String.Double
+'/gcc-$pkgver' Text
+'\n'          Text.NewLine
+
+'_gcclibdir'  Name.Variable
+'='           Operator.Equal
+'"/usr/lib/gcc/$CTARGET/${_pkgbase:-$pkgver}"' Literal.String.Double
+'\n'          Text.NewLine
+
+'_gcclibexec' Name.Variable
+'='           Operator.Equal
+'"/usr/libexec/gcc/$CTARGET/${_pkgbase:-$pkgver}"' Literal.String.Double
+'\n\n'        Text.NewLine
+
+'prepare()'   Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'cd'          Text
+' '           Text.Whitespace
+'"$_gccdir"'  Literal.String.Double
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'_err='       Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'for'         Text
+' '           Text.Whitespace
+'i'           Text
+' '           Text.Whitespace
+'in'          Text
+' '           Text.Whitespace
+'$source;'    Text
+' '           Text.Whitespace
+'do'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'case'        Text
+' '           Text.Whitespace
+'"$i"'        Literal.String.Double
+' '           Text.Whitespace
+'in'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'*.patch)'    Text
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'msg'         Text
+' '           Text.Whitespace
+'"Applying $i"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'patch'       Text
+' '           Text.Whitespace
+'-p1'         Text
+' '           Text.Whitespace
+'-i'          Text
+' '           Text.Whitespace
+'"$srcdir"'   Literal.String.Double
+'/$i'         Text
+' '           Text.Whitespace
+'||'          Text
+' '           Text.Whitespace
+'_err="$_err' Text
+' '           Text.Whitespace
+'$i"'         Text
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'esac'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'done'        Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'if'          Text
+' '           Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'-n'          Text
+' '           Text.Whitespace
+'"$_err"'     Literal.String.Double
+' '           Text.Whitespace
+'];'          Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'error'       Text
+' '           Text.Whitespace
+'"The following patches failed:"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'for'         Text
+' '           Text.Whitespace
+'i'           Text
+' '           Text.Whitespace
+'in'          Text
+' '           Text.Whitespace
+'$_err;'      Text
+' '           Text.Whitespace
+'do'          Text
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"  $i"'      Literal.String.Double
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'done'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'return'      Text
+' '           Text.Whitespace
+'1'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'fi'          Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'${_pkgbase:-$pkgver}' Text
+' '           Text.Whitespace
+'>'           Text
+' '           Text.Whitespace
+'gcc/BASE-VER' Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'build()'     Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'local'       Text
+' '           Text.Whitespace
+'_arch_configure=' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'local'       Text
+' '           Text.Whitespace
+'_libc_configure=' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'local'       Text
+' '           Text.Whitespace
+'_cross_configure=' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'local'       Text
+' '           Text.Whitespace
+'_bootstrap_configure=' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'local'       Text
+' '           Text.Whitespace
+'_symvers='   Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'cd'          Text
+' '           Text.Whitespace
+'"$_gccdir"'  Literal.String.Double
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'case'        Text
+' '           Text.Whitespace
+'"$CTARGET"'  Literal.String.Double
+' '           Text.Whitespace
+'in'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'aarch64-*-*-*)' Text
+'\t\t'        Text.Whitespace
+'_arch_configure="--with-arch=armv8-a' Text
+' '           Text.Whitespace
+'--with-abi=lp64";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'armv5-*-*-*eabi)' Text
+'\t'          Text.Whitespace
+'_arch_configure="--with-arch=armv5te' Text
+' '           Text.Whitespace
+'--with-tune=arm926ej-s' Text
+' '           Text.Whitespace
+'--with-float=soft' Text
+' '           Text.Whitespace
+'--with-abi=aapcs-linux";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'armv6-*-*-*eabihf)' Text
+'\t'          Text.Whitespace
+'_arch_configure="--with-arch=armv6zk' Text
+' '           Text.Whitespace
+'--with-tune=arm1176jzf-s' Text
+' '           Text.Whitespace
+'--with-fpu=vfp' Text
+' '           Text.Whitespace
+'--with-float=hard' Text
+' '           Text.Whitespace
+'--with-abi=aapcs-linux";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'armv7-*-*-*eabihf)' Text
+'\t'          Text.Whitespace
+'_arch_configure="--with-arch=armv7-a' Text
+' '           Text.Whitespace
+'--with-tune=generic-armv7-a' Text
+' '           Text.Whitespace
+'--with-fpu=vfpv3-d16' Text
+' '           Text.Whitespace
+'--with-float=hard' Text
+' '           Text.Whitespace
+'--with-abi=aapcs-linux' Text
+' '           Text.Whitespace
+'--with-mode=thumb";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mips-*-*-*)' Text
+'\t\t'        Text.Whitespace
+'_arch_configure="--with-arch=mips32' Text
+' '           Text.Whitespace
+'--with-mips-plt' Text
+' '           Text.Whitespace
+'--with-float=soft' Text
+' '           Text.Whitespace
+'--with-abi=32";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mips64-*-*-*)' Text
+'\t\t'        Text.Whitespace
+'_arch_configure="--with-arch=mips3' Text
+' '           Text.Whitespace
+'--with-tune=mips64' Text
+' '           Text.Whitespace
+'--with-mips-plt' Text
+' '           Text.Whitespace
+'--with-float=soft' Text
+' '           Text.Whitespace
+'--with-abi=64";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mips64el-*-*-*)' Text
+'\t\t'        Text.Whitespace
+'_arch_configure="--with-arch=mips3' Text
+' '           Text.Whitespace
+'--with-tune=mips64' Text
+' '           Text.Whitespace
+'--with-mips-plt' Text
+' '           Text.Whitespace
+'--with-float=soft' Text
+' '           Text.Whitespace
+'--with-abi=64";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mipsel-*-*-*)' Text
+'\t\t'        Text.Whitespace
+'_arch_configure="--with-arch=mips32' Text
+' '           Text.Whitespace
+'--with-mips-plt' Text
+' '           Text.Whitespace
+'--with-float=soft' Text
+' '           Text.Whitespace
+'--with-abi=32";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'powerpc-*-*-*)' Text
+'\t\t'        Text.Whitespace
+'_arch_configure="--enable-secureplt' Text
+' '           Text.Whitespace
+'--enable-decimal-float=no";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'powerpc64*-*-*-*)' Text
+'\t'          Text.Whitespace
+'_arch_configure="--with-abi=elfv2' Text
+' '           Text.Whitespace
+'--enable-secureplt' Text
+' '           Text.Whitespace
+'--enable-decimal-float=no' Text
+' '           Text.Whitespace
+'--enable-targets=powerpcle-linux";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'i486-*-*-*)' Text
+'\t\t'        Text.Whitespace
+'_arch_configure="--with-arch=i486' Text
+' '           Text.Whitespace
+'--with-tune=generic' Text
+' '           Text.Whitespace
+'--enable-cld";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'i586-*-*-*)' Text
+'\t\t'        Text.Whitespace
+'_arch_configure="--with-arch=i586' Text
+' '           Text.Whitespace
+'--with-tune=generic' Text
+' '           Text.Whitespace
+'--enable-cld";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'s390x-*-*-*)' Text
+'\t\t'        Text.Whitespace
+'_arch_configure="--with-arch=z196' Text
+' '           Text.Whitespace
+'--with-tune=zEC12' Text
+' '           Text.Whitespace
+'--with-zarch' Text
+' '           Text.Whitespace
+'--with-long-double-128' Text
+' '           Text.Whitespace
+'--enable-decimal-float";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'riscv64-*-*-*)' Text
+'\t\t'        Text.Whitespace
+'_arch_configure="--with-arch=rv64gc' Text
+' '           Text.Whitespace
+'--with-abi=lp64d' Text
+' '           Text.Whitespace
+'--enable-autolink-libatomic";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'esac'        Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'case'        Text
+' '           Text.Whitespace
+'"$CTARGET_ARCH"' Literal.String.Double
+' '           Text.Whitespace
+'in'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mips*)'      Text
+'\t'          Text.Whitespace
+'_hash_style_configure="--with-linker-hash-style=sysv"' Text
+' '           Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'*)'          Text
+'\t'          Text.Whitespace
+'_hash_style_configure="--with-linker-hash-style=gnu"' Text
+' '           Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'esac'        Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'case'        Text
+' '           Text.Whitespace
+'"$CTARGET_LIBC"' Literal.String.Double
+' '           Text.Whitespace
+'in'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'musl)'       Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'# musl does not support mudflap, or libsanitizer\n' Comment.Single
+
+'\t\t'        Text.Whitespace
+'# libmpx uses secure_getenv and struct _libc_fpstate not present in musl\n' Comment.Single
+
+'\t\t'        Text.Whitespace
+"# alpine musl provides libssp_nonshared.a, so we don't need libssp either\n" Comment.Single
+
+'\t\t'        Text.Whitespace
+'_libc_configure="--disable-libssp' Text
+' '           Text.Whitespace
+'--disable-libmpx' Text
+' '           Text.Whitespace
+'--disable-libmudflap' Text
+' '           Text.Whitespace
+'--disable-libsanitizer"' Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'_symvers="--disable-symvers"' Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'export'      Text
+' '           Text.Whitespace
+'libat_cv_have_ifunc=no' Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'esac'        Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'"$CBUILD"'   Literal.String.Double
+' '           Text.Whitespace
+'!='          Text
+' '           Text.Whitespace
+'"$CHOST"'    Literal.String.Double
+'   '         Text.Whitespace
+']'           Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'_cross_configure="--disable-bootstrap"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'"$CHOST"'    Literal.String.Double
+'  '          Text.Whitespace
+'!='          Text
+' '           Text.Whitespace
+'"$CTARGET"'  Literal.String.Double
+' '           Text.Whitespace
+']'           Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'_cross_configure="--disable-bootstrap' Text
+' '           Text.Whitespace
+'--with-sysroot=$CBUILDROOT"' Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'case'        Text
+' '           Text.Whitespace
+'"$BOOTSTRAP"' Literal.String.Double
+' '           Text.Whitespace
+'in'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'nolibc)'     Text
+'\t'          Text.Whitespace
+'_bootstrap_configure="--with-newlib' Text
+' '           Text.Whitespace
+'--disable-shared' Text
+' '           Text.Whitespace
+'--enable-threads=no"' Text
+' '           Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'*)'          Text
+'\t'          Text.Whitespace
+'_bootstrap_configure="--enable-shared' Text
+' '           Text.Whitespace
+'--enable-threads' Text
+' '           Text.Whitespace
+'--enable-tls"' Text
+' '           Text.Whitespace
+';;'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'esac'        Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'$_libgomp'   Text
+'\t'          Text.Whitespace
+'||'          Text
+' '           Text.Whitespace
+'_bootstrap_configure="$_bootstrap_configure' Text
+' '           Text.Whitespace
+'--disable-libgomp"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'$_libatomic' Text
+'\t'          Text.Whitespace
+'||'          Text
+' '           Text.Whitespace
+'_bootstrap_configure="$_bootstrap_configure' Text
+' '           Text.Whitespace
+'--disable-libatomic"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'$_libitm'    Text
+'\t'          Text.Whitespace
+'||'          Text
+' '           Text.Whitespace
+'_bootstrap_configure="$_bootstrap_configure' Text
+' '           Text.Whitespace
+'--disable-libitm"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'$_libquadmath' Text
+'\t'          Text.Whitespace
+'||'          Text
+' '           Text.Whitespace
+'_arch_configure="$_arch_configure' Text
+' '           Text.Whitespace
+'--disable-libquadmath"' Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'msg'         Text
+' '           Text.Whitespace
+'"Building the following:"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'""'          Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"  CBUILD=$CBUILD"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"  CHOST=$CHOST"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"  CTARGET=$CTARGET"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"  CTARGET_ARCH=$CTARGET_ARCH"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"  CTARGET_LIBC=$CTARGET_LIBC"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"  languages=$_languages"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"  arch_configure=$_arch_configure"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"  libc_configure=$_libc_configure"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"  cross_configure=$_cross_configure"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"  bootstrap_configure=$_bootstrap_configure"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"\thash_style_configure=$_hash_style_configure"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'""'          Literal.String.Double
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'export'      Text
+' '           Text.Whitespace
+'CFLAGS="$CFLAGS' Text
+' '           Text.Whitespace
+'-O2"'        Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$_builddir"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'cd'          Text
+' '           Text.Whitespace
+'"$_builddir"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'"$_gccdir"'  Literal.String.Double
+'/configure'  Text
+' '           Text.Whitespace
+'--prefix=/usr' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--mandir=/usr/share/man' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--infodir=/usr/share/info' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--build=${CBUILD}' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--host=${CHOST}' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--target=${CTARGET}' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--with-pkgversion="Alpine' Text
+' '           Text.Whitespace
+'$pkgver"'    Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--enable-checking=release' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--disable-fixed-point' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--disable-libstdcxx-pch' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--disable-multilib' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--disable-nls' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--disable-werror' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'$_symvers'   Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--enable-__cxa_atexit' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--enable-default-pie' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--enable-default-ssp' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--enable-cloog-backend' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--enable-languages=$_languages' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'$_arch_configure' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'$_libc_configure' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'$_cross_configure' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'$_bootstrap_configure' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'--with-system-zlib' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'$_hash_style_configure' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'make'        Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'package()'   Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'cd'          Text
+' '           Text.Whitespace
+'"$_builddir"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'make'        Text
+' '           Text.Whitespace
+'-j1'         Text
+' '           Text.Whitespace
+'DESTDIR="$pkgdir"' Text
+' '           Text.Whitespace
+'install'     Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'ln'          Text
+' '           Text.Whitespace
+'-s'          Text
+' '           Text.Whitespace
+'gcc'         Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/bin/cc' Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'# we dont support gcj -static\n' Comment.Single
+
+'\t'          Text.Whitespace
+'# and saving 35MB is not bad.\n' Comment.Single
+
+'\t'          Text.Whitespace
+'find'        Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+' '           Text.Whitespace
+'\\('         Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libgtkpeer.a' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libgjsmalsa.a' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libgij.a'    Text
+' '           Text.Whitespace
+'\\)'         Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'-delete'     Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'# strip debug info from some static libs\n' Comment.Single
+
+'\t'          Text.Whitespace
+'find'        Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+' '           Text.Whitespace
+'\\('         Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libgfortran.a' Text
+' '           Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libobjc.a'   Text
+' '           Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libgomp.a'   Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libgphobos.a' Text
+' '           Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libgdruntime.a' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libmudflap.a' Text
+' '           Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libmudflapth.a' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libgcc.a'    Text
+' '           Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libgcov.a'   Text
+' '           Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libquadmath.a' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libitm.a'    Text
+' '           Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libgo.a'     Text
+' '           Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libcaf\\*.a' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libatomic.a' Text
+' '           Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libasan.a'   Text
+' '           Text.Whitespace
+'-o'          Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'libtsan.a'   Text
+' '           Text.Whitespace
+'\\)'         Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'-a'          Text
+' '           Text.Whitespace
+'-type'       Text
+' '           Text.Whitespace
+'f'           Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'-exec'       Text
+' '           Text.Whitespace
+'${STRIP_FOR_TARGET}' Text
+' '           Text.Whitespace
+'-g'          Text
+' '           Text.Whitespace
+'{}'          Text
+' '           Text.Whitespace
+'+'           Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'if'          Text
+' '           Text.Whitespace
+'$_libgomp;'  Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgomp.spec' Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibdir' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'fi'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'if'          Text
+' '           Text.Whitespace
+'$_libitm;'   Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libitm.spec' Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibdir' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'fi'          Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'# remove ffi\n' Comment.Single
+
+'\t'          Text.Whitespace
+'rm'          Text
+' '           Text.Whitespace
+'-f'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libffi*' Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/share/man/man3/ffi*' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'find'        Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+"'ffi*.h'"    Literal.String.Single
+' '           Text.Whitespace
+'-delete'     Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'local'       Text
+' '           Text.Whitespace
+'gdblib=${_target:+$CTARGET/}lib' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'if'          Text
+' '           Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'-d'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/$gdblib/' Text
+' '           Text.Whitespace
+'];'          Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'for'         Text
+' '           Text.Whitespace
+'i'           Text
+' '           Text.Whitespace
+'in'          Text
+' '           Text.Whitespace
+'$(find'      Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/$gdblib/' Text
+' '           Text.Whitespace
+'-type'       Text
+' '           Text.Whitespace
+'f'           Text
+' '           Text.Whitespace
+'-maxdepth'   Text
+' '           Text.Whitespace
+'1'           Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'"*-gdb.py"'  Literal.String.Double
+');'          Text
+' '           Text.Whitespace
+'do'          Text
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/share/gdb/python/auto-load/usr/$gdblib' Text
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$i"'        Literal.String.Double
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/share/gdb/python/auto-load/usr/$gdblib/' Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'done'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'fi'          Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'# move ada runtime libs\n' Comment.Single
+
+'\t'          Text.Whitespace
+'if'          Text
+' '           Text.Whitespace
+'$LANG_ADA;'  Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'for'         Text
+' '           Text.Whitespace
+'i'           Text
+' '           Text.Whitespace
+'in'          Text
+' '           Text.Whitespace
+'$(find'      Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibdir/adalib/' Text
+' '           Text.Whitespace
+'-type'       Text
+' '           Text.Whitespace
+'f'           Text
+' '           Text.Whitespace
+'-maxdepth'   Text
+' '           Text.Whitespace
+'1'           Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'"libgna*.so"' Literal.String.Double
+');'          Text
+' '           Text.Whitespace
+'do'          Text
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$i"'        Literal.String.Double
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'ln'          Text
+' '           Text.Whitespace
+'-s'          Text
+' '           Text.Whitespace
+'../../../../${i##*/}' Text
+' '           Text.Whitespace
+'$i'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'done'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'for'         Text
+' '           Text.Whitespace
+'i'           Text
+' '           Text.Whitespace
+'in'          Text
+' '           Text.Whitespace
+'$(find'      Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibdir/adalib/' Text
+' '           Text.Whitespace
+'-type'       Text
+' '           Text.Whitespace
+'f'           Text
+' '           Text.Whitespace
+'-maxdepth'   Text
+' '           Text.Whitespace
+'1'           Text
+' '           Text.Whitespace
+'-name'       Text
+' '           Text.Whitespace
+'"libgna*.a"' Literal.String.Double
+');'          Text
+' '           Text.Whitespace
+'do'          Text
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$i"'        Literal.String.Double
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'ln'          Text
+' '           Text.Whitespace
+'-s'          Text
+' '           Text.Whitespace
+'../../../../${i##*/}' Text
+' '           Text.Whitespace
+'$i'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'done'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'fi'          Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'if'          Text
+' '           Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'"$CHOST"'    Literal.String.Double
+' '           Text.Whitespace
+'!='          Text
+' '           Text.Whitespace
+'"$CTARGET"'  Literal.String.Double
+' '           Text.Whitespace
+'];'          Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'# cross-gcc: remove any files that would conflict with the\n' Comment.Single
+
+'\t\t'        Text.Whitespace
+'# native gcc package\n' Comment.Single
+
+'\t\t'        Text.Whitespace
+'rm'          Text
+' '           Text.Whitespace
+'-rf'         Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/bin/cc' Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/include' Text
+' '           Text.Whitespace
+'"${pkgdir:?}"' Literal.String.Double
+'/usr/share'  Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+"# libcc1 does not depend on target, don't ship it\n" Comment.Single
+
+'\t\t'        Text.Whitespace
+'rm'          Text
+' '           Text.Whitespace
+'-rf'         Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libcc1.so*' Text
+'\n\n'        Text.NewLine
+
+'\t\t'        Text.Whitespace
+'# fixup gcc library symlinks to be linker scripts so\n' Comment.Single
+
+'\t\t'        Text.Whitespace
+'# linker finds the libs from relocated sysroot\n' Comment.Single
+
+'\t\t'        Text.Whitespace
+'for'         Text
+' '           Text.Whitespace
+'so'          Text
+' '           Text.Whitespace
+'in'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/"$CTARGET"/lib/*.so;' Text
+' '           Text.Whitespace
+'do'          Text
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'if'          Text
+' '           Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'-h'          Text
+' '           Text.Whitespace
+'"$so"'       Literal.String.Double
+' '           Text.Whitespace
+'];'          Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t\t\t\t'    Text.Whitespace
+'local'       Text
+' '           Text.Whitespace
+'_real=$(basename' Text
+' '           Text.Whitespace
+'"$(readlink "' Literal.String.Double
+'$so")")'     Text
+'\n'          Text.NewLine
+
+'\t\t\t\t'    Text.Whitespace
+'rm'          Text
+' '           Text.Whitespace
+'-f'          Text
+' '           Text.Whitespace
+'"$so"'       Literal.String.Double
+'\n'          Text.NewLine
+
+'\t\t\t\t'    Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"GROUP ($_real)"' Literal.String.Double
+' '           Text.Whitespace
+'>'           Text
+' '           Text.Whitespace
+'"$so"'       Literal.String.Double
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'fi'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'done'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'else'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'# add c89/c99 wrapper scripts\n' Comment.Single
+
+'\t\t'        Text.Whitespace
+'cat'         Text
+' '           Text.Whitespace
+'>"$pkgdir"/usr/bin/c89' Text
+' '           Text.Whitespace
+"<<'EOF'"     Text
+'\n'          Text.NewLine
+
+'#!/bin/sh\n' Comment.Single
+
+'_flavor'     Name.Variable
+'='           Operator.Equal
+'"-std=c89"'  Literal.String.Double
+'\n'          Text.NewLine
+
+'for'         Text
+' '           Text.Whitespace
+'opt;'        Text
+' '           Text.Whitespace
+'do'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'case'        Text
+' '           Text.Whitespace
+'"$opt"'      Literal.String.Double
+' '           Text.Whitespace
+'in'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'-ansi|-std=c89|-std=iso9899:1990)' Text
+' '           Text.Whitespace
+'_flavor="";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'-std=*)'     Text
+' '           Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"$(basename $0) called with non ANSI/ISO C option $opt"' Literal.String.Double
+' '           Text.Whitespace
+'>&2'         Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'exit'        Text
+' '           Text.Whitespace
+'1;;'         Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'esac'        Text
+'\n'          Text.NewLine
+
+'done'        Text
+'\n'          Text.NewLine
+
+'exec'        Text
+' '           Text.Whitespace
+'gcc'         Text
+' '           Text.Whitespace
+'$_flavor'    Text
+' '           Text.Whitespace
+'${1+"$@"}'   Text
+'\n'          Text.NewLine
+
+'EOF'         Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'cat'         Text
+' '           Text.Whitespace
+'>"$pkgdir"/usr/bin/c99' Text
+' '           Text.Whitespace
+"<<'EOF'"     Text
+'\n'          Text.NewLine
+
+'#!/bin/sh\n' Comment.Single
+
+'_flavor'     Name.Variable
+'='           Operator.Equal
+'"-std=c99"'  Literal.String.Double
+'\n'          Text.NewLine
+
+'for'         Text
+' '           Text.Whitespace
+'opt;'        Text
+' '           Text.Whitespace
+'do'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'case'        Text
+' '           Text.Whitespace
+'"$opt"'      Literal.String.Double
+' '           Text.Whitespace
+'in'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'-std=c99|-std=iso9899:1999)' Text
+' '           Text.Whitespace
+'_flavor="";;' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'-std=*)'     Text
+' '           Text.Whitespace
+'echo'        Text
+' '           Text.Whitespace
+'"$(basename $0) called with non ISO C99 option $opt"' Literal.String.Double
+' '           Text.Whitespace
+'>&2'         Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'exit'        Text
+' '           Text.Whitespace
+'1;;'         Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'esac'        Text
+'\n'          Text.NewLine
+
+'done'        Text
+'\n'          Text.NewLine
+
+'exec'        Text
+' '           Text.Whitespace
+'gcc'         Text
+' '           Text.Whitespace
+'$_flavor'    Text
+' '           Text.Whitespace
+'${1+"$@"}'   Text
+'\n'          Text.NewLine
+
+'EOF'         Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'chmod'       Text
+' '           Text.Whitespace
+'755'         Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/bin/c?9' Text
+'\n\n'        Text.NewLine
+
+'\t\t'        Text.Whitespace
+'# install lto plugin so regular binutils may use it\n' Comment.Single
+
+'\t\t'        Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/bfd-plugins' Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'ln'          Text
+' '           Text.Whitespace
+'-s'          Text
+' '           Text.Whitespace
+'/$_gcclibexec/liblto_plugin.so' Text
+' '           Text.Whitespace
+'"$pkgdir/usr/lib/bfd-plugins/"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'fi'          Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'libatomic()' Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="GCC' Text
+' '           Text.Whitespace
+'Atomic'      Text
+' '           Text.Whitespace
+'library"'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends='    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'replaces="gcc"' Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/${_target:+$CTARGET/}lib/libatomic.so.*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'libcxx()'    Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="GNU' Text
+' '           Text.Whitespace
+'C++'         Text
+' '           Text.Whitespace
+'standard'    Text
+' '           Text.Whitespace
+'runtime'     Text
+' '           Text.Whitespace
+'library"'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends='    Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'if'          Text
+' '           Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'"$CHOST"'    Literal.String.Double
+' '           Text.Whitespace
+'='           Text
+' '           Text.Whitespace
+'"$CTARGET"'  Literal.String.Double
+' '           Text.Whitespace
+'];'          Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'# verify that we are using clock_gettime rather than doing direct syscalls\n' Comment.Single
+
+'\t\t'        Text.Whitespace
+'# so we dont break 32 bit arches due to time64.\n' Comment.Single
+
+'\t\t'        Text.Whitespace
+'nm'          Text
+' '           Text.Whitespace
+'-D'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libstdc++.so.*' Text
+' '           Text.Whitespace
+'|'           Text
+' '           Text.Whitespace
+'grep'        Text
+' '           Text.Whitespace
+'clock_gettime' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'fi'          Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/${_target:+$CTARGET/}lib/libstdc++.so.*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'gpp()'       Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="GNU' Text
+' '           Text.Whitespace
+'C++'         Text
+' '           Text.Whitespace
+'standard'    Text
+' '           Text.Whitespace
+'library'     Text
+' '           Text.Whitespace
+'and'         Text
+' '           Text.Whitespace
+'compiler"'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends="libstdc++=$_gccrel' Text
+' '           Text.Whitespace
+'gcc=$_gccrel' Text
+' '           Text.Whitespace
+'libc-dev"'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir/$_gcclibexec"' Literal.String.Double
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin'    Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/${_target:+$CTARGET/}include' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/${_target:+$CTARGET/}lib' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir/$_gcclibexec/cc1plus"' Literal.String.Double
+' '           Text.Whitespace
+'"$subpkgdir/$_gcclibexec/"' Literal.String.Double
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/${_target:+$CTARGET/}lib/*++*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/${_target:+$CTARGET/}lib/' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/${_target:+$CTARGET/}include/c++' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/${_target:+$CTARGET/}include/' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/bin/*++' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'libobjc()'   Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="GNU' Text
+' '           Text.Whitespace
+'Objective-C' Text
+' '           Text.Whitespace
+'runtime"'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'replaces="objc"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends='    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/${_target:+$CTARGET/}lib/libobjc.so.*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'objc()'      Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="GNU' Text
+' '           Text.Whitespace
+'Objective-C"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'replaces="gcc"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends="libc-dev' Text
+' '           Text.Whitespace
+'gcc=$_gccrel' Text
+' '           Text.Whitespace
+'libobjc=$_gccrel"' Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir/$_gcclibexec"' Literal.String.Double
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibdir/include' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir/$_gcclibexec/cc1obj"' Literal.String.Double
+' '           Text.Whitespace
+'"$subpkgdir/$_gcclibexec/"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibdir/include/objc' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibdir/include/' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libobjc.so' Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libobjc.a' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'libgcc()'    Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="GNU' Text
+' '           Text.Whitespace
+'C'           Text
+' '           Text.Whitespace
+'compiler'    Text
+' '           Text.Whitespace
+'runtime'     Text
+' '           Text.Whitespace
+'libraries"'  Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends='    Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/${_target:+$CTARGET/}lib/libgcc_s.so.*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'libgomp()'   Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="GCC' Text
+' '           Text.Whitespace
+'shared-memory' Text
+' '           Text.Whitespace
+'parallel'    Text
+' '           Text.Whitespace
+'programming' Text
+' '           Text.Whitespace
+'API'         Text
+' '           Text.Whitespace
+'library"'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends='    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'replaces="gcc"' Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/${_target:+$CTARGET/}lib/libgomp.so.*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'libgphobos()' Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="D'  Text
+' '           Text.Whitespace
+'programming' Text
+' '           Text.Whitespace
+'language'    Text
+' '           Text.Whitespace
+'standard'    Text
+' '           Text.Whitespace
+'library'     Text
+' '           Text.Whitespace
+'for'         Text
+' '           Text.Whitespace
+'GCC"'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends='    Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgdruntime.so.*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgphobos.so.*' Text
+'  '          Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'gdc()'       Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="GCC-based' Text
+' '           Text.Whitespace
+'D'           Text
+' '           Text.Whitespace
+'language'    Text
+' '           Text.Whitespace
+'compiler"'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends="gcc=$_gccrel' Text
+' '           Text.Whitespace
+'libgphobos=$_gccrel' Text
+' '           Text.Whitespace
+'musl-dev"'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends="$depends' Text
+' '           Text.Whitespace
+'libucontext-dev"' Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir/$_gcclibexec"' Literal.String.Double
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibdir/include/d/' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+"# Copy: The installed '.d' files, the static lib, the binary itself\n" Comment.Single
+
+'\t'          Text.Whitespace
+"# The shared libs are part of 'libgphobos' so one can run program\n" Comment.Single
+
+'\t'          Text.Whitespace
+'# without installing the compiler\n' Comment.Single
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir/$_gcclibexec/d21"' Literal.String.Double
+' '           Text.Whitespace
+'"$subpkgdir/$_gcclibexec/"' Literal.String.Double
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibdir/include/d/*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibdir/include/d/' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgdruntime.a' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgphobos.a' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgphobos.spec' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/bin/$CTARGET-gdc' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin/'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/bin/gdc' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n\n'      Text.NewLine
+
+'libgo()'     Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="Go' Text
+' '           Text.Whitespace
+'runtime'     Text
+' '           Text.Whitespace
+'library'     Text
+' '           Text.Whitespace
+'for'         Text
+' '           Text.Whitespace
+'GCC"'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends='    Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgo.so.*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'go()'        Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="Go' Text
+' '           Text.Whitespace
+'support'     Text
+' '           Text.Whitespace
+'for'         Text
+' '           Text.Whitespace
+'GCC"'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends="gcc=$_gccrel' Text
+' '           Text.Whitespace
+'libgo=$_gccrel' Text
+' '           Text.Whitespace
+'!go"'        Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibexec' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/go' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/bin/*gccgo' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin/'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/bin/*go' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/bin/*gofmt' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibexec/go1' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibexec/' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibexec/cgo' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibexec/' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibexec/buildid' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibexec/' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibexec/test2json' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibexec/' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibexec/vet' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibexec/' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgo.a' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgo.so' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgobegin.a' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgolibbegin.a' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'libgfortran()' Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="Fortran' Text
+' '           Text.Whitespace
+'runtime'     Text
+' '           Text.Whitespace
+'library'     Text
+' '           Text.Whitespace
+'for'         Text
+' '           Text.Whitespace
+'GCC"'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends='    Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgfortran.so.*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'libquadmath()' Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'replaces="gcc"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="128-bit' Text
+' '           Text.Whitespace
+'math'        Text
+' '           Text.Whitespace
+'library'     Text
+' '           Text.Whitespace
+'for'         Text
+' '           Text.Whitespace
+'GCC"'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends='    Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libquadmath.so.*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'gfortran()'  Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="GNU' Text
+' '           Text.Whitespace
+'Fortran'     Text
+' '           Text.Whitespace
+'Compiler"'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends="gcc=$_gccrel' Text
+' '           Text.Whitespace
+'libgfortran=$_gccrel"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'$_libquadmath' Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'depends="$depends' Text
+' '           Text.Whitespace
+'libquadmath=$_gccrel"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'replaces="gcc"' Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibexec' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibdir' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/bin/*gfortran' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin/'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgfortran.a' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgfortran.so' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'if'          Text
+' '           Text.Whitespace
+'$_libquadmath;' Text
+' '           Text.Whitespace
+'then'        Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libquadmath.a' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libquadmath.so' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t\t'      Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'fi'          Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibdir/finclude' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibdir/' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibexec/f951' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibexec' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgfortran.spec' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibdir' Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'libgnat()'   Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="GNU' Text
+' '           Text.Whitespace
+'Ada'         Text
+' '           Text.Whitespace
+'runtime'     Text
+' '           Text.Whitespace
+'shared'      Text
+' '           Text.Whitespace
+'libraries"'  Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends='    Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgna*.so' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'libgnatstatic()' Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="GNU' Text
+' '           Text.Whitespace
+'Ada'         Text
+' '           Text.Whitespace
+'static'      Text
+' '           Text.Whitespace
+'libraries"'  Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends='    Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/lib/libgna*.a' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/lib/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'gnat()'      Text
+' '           Text.Whitespace
+'{'           Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'pkgdesc="Ada' Text
+' '           Text.Whitespace
+'support'     Text
+' '           Text.Whitespace
+'for'         Text
+' '           Text.Whitespace
+'GCC"'        Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'depends="gcc=$_gccrel"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'provides="$pkgname-gnat-bootstrap"' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'['           Text
+' '           Text.Whitespace
+'"$CHOST"'    Literal.String.Double
+' '           Text.Whitespace
+'='           Text
+' '           Text.Whitespace
+'"$CTARGET"'  Literal.String.Double
+' '           Text.Whitespace
+']'           Text
+' '           Text.Whitespace
+'&&'          Text
+' '           Text.Whitespace
+'depends="$depends' Text
+' '           Text.Whitespace
+'libgnat=$_gccrel"' Text
+'\n\n'        Text.NewLine
+
+'\t'          Text.Whitespace
+'mkdir'       Text
+' '           Text.Whitespace
+'-p'          Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibexec' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibdir' Text
+' '           Text.Whitespace
+'\\'          Text
+'\n'          Text.NewLine
+
+'\t\t'        Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin'    Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibexec/*gnat*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibexec/' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/$_gcclibdir/*ada*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/$_gcclibdir/' Text
+'\n'          Text.NewLine
+
+'\t'          Text.Whitespace
+'mv'          Text
+' '           Text.Whitespace
+'"$pkgdir"'   Literal.String.Double
+'/usr/bin/*gnat*' Text
+' '           Text.Whitespace
+'"$subpkgdir"' Literal.String.Double
+'/usr/bin/'   Text
+'\n'          Text.NewLine
+
+'}'           Text
+'\n\n'        Text.NewLine
+
+'sha512sums'  Name.Variable
+'='           Operator.Equal
+'"0ef281e6633b8bef7ce24d1448ec7b96aef66e414f90821a9a021dcd98eca8895d217d9d95b70fd9c96113689cd026aec951edc356462e439a9350edb4009df6  gcc-10.3.1_git20210424.tar.xz\nd1e10db83a04c02d99f9f6ce03f949b83ccd013674773dcb08992c604048df6a08bf9bd16f74e3c60ea85fd861fb08c1fa9fe17c304af9bfc9a032b81f1ac9eb  0001-posix_memalign.patch\na77c7ebd994b5780cc5209f33ace24fc4d04353638dcdb14af192b0be5b0e5be397218ddba40e577af889a267af1aa69c1def474207a6661a37c3f5c15002bcb  0002-gcc-poison-system-directories.patch\n108ad63f61e61f627a75613605962021c08bbde584f3c0507d6a07c6112487847ce89699d1d80efb9201c4eab3440ba66f2eeb781bd259fdfc9c87b3baee1e27  0003-Turn-on-Wl-z-relro-z-now-by-default.patch\ndc28895223fe7ce531648225da3cd15e20c26a9be0248fdd66f11efb153647776bdbe8109097d87a087c4443e809a0d425848bdeae1442135c52a13bdd06ef75  0004-Turn-on-D_FORTIFY_SOURCE-2-by-default-for-C-C-ObjC-O.patch\nce7a5f243072284e767510083c57250dd5f1dcdcae102cf1ecbb06f36ea286b00b1f84dc32e5fdb76bac77b52ef3e4e650cff7cc0d14d94487a40ca9d5605bbd  0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch\nf5458adfd23f51fa54fb690ec322552d7cadc3afa5773e13e73832c56832854ff14a73ff480c9990731ce929c5a4df35bc20247239268221b9af40ba37331228  0006-Enable-Wformat-and-Wformat-security-by-default.patch\n2601b0de5fe402cdd9a3d87c2a3e959154c2ee413989db21fbc232f169b20d94807a1f89ff5ebb650a143d59b4b48187b338832d8de577fa47bfdd1b76313114  0007-Enable-Wtrampolines-by-default.patch\n3eedfe70c85d963845a658444d8692792a34af8b5e0fa800991bf1e0e2c9ff3196c50f11a284cfaca5d48b4c78b614febf38339918c7fa7a7f4723a1f6bdad16  0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch\n6a4b6843cb27b560ac4327b17718806bac4b602903f696222617148a52e9918144648cc45642293beb7c8fd48eba325c115e1dcaa4adec85e1caff0ea33d2a8a  0009-Ensure-that-msgfmt-doesn-t-encounter-problems-during.patch\naf174250b4fbcc3664bed51d919695511b538f2f3b65532383591f511bede3d13a1ade29aea66598d6df17f2e931a2d171f01c4e7008b4f468cfb13dc5f2b4cf  0010-Don-t-declare-asprintf-if-defined-as-a-macro.patch\naabac76659e3fa96fa7b4ee2571672c840c3dd37314f16516038d3934333a42b20442a967afce5a35a326685c3c8ef384fc97dc8f4dae57479038f5431e33c19  0011-libiberty-copy-PIC-objects-during-build-process.patch\n36702acf0c9b34adb0b23b74167e5358c706246cc88ce569d4462555bb48288d5d633298aa447ef023c6f75de86dfa7d4ebbf3c43593e1279837ebd47061be0f  0012-libitm-disable-FORTIFY.patch\n79912633ee707c60c66abf6ee16159db3357e4e75d4254f7f38cbc0119c2adfcfa2b8c6b1df3885526d68e49f88e2a0c87969a784ed8a1025a680a4f18acd06c  0013-libgcc_s.patch\nc8c6f4e967afb5d4a9eccd917f6338a61547cc2fabbf56b25e27220b4f3c85f5002477bf2f9d05a911185cee8dcba3a12d3ad24c0d7b1d3b67a3a53bfea702c6  0014-nopie.patch\nd8d8556a6192d7695e1aeb1e64bf98a02b068c427442dd9c23d2b9a863c504e577f35e0890b5f0a184c687ce9315cecff3d2e0bb82f19531a493efb72b54cfe7  0015-libffi-use-__linux__-instead-of-__gnu_linux__-for-mu.patch\nb3fb29187561fef84b6eb0b35a582c79833203f689e5bf884146cd9a71ec407e0e3b27b0bd4953143d00879ce32331e92741e1c7229ca291ebf13dfd8f5d409c  0016-dlang-update-zlib-binding.patch\n2a03683d5e00cc65f8ebc83638953dff89981069943169874df03f4f3a22348b960780250d9240505acf5b1bfbe154d57d14f310f29a94b76404f50611da9000  0017-dlang-fix-fcntl-on-mips-add-libucontext-dep.patch\n3df60839e5337fccdd228ebf753fb0dbf672aefca5f3f16329b99c813b907f44e1ce4948ce7f692dca316eb307b83ae9f5028cf1875eb3c9fee85b2dee7bfe83  0018-ada-fix-shared-linking.patch\nbd60be22341b508b4b5cb66eb48723d0f48770745352c60cfe146efa4d18ec58cccbb37f85b98dc0432e52bb5dc8dc1f28b3a3ca50d1ca6db68eb38df970e5aa  0019-build-fix-CXXFLAGS_FOR_BUILD-passing.patch\n333f9c7a1935dc4f29783fa31c254bda6339c30ee770eb30d585ac422cd0f69701b5d988f9493471e4c83cf20937050f33320852a83ed6dfb2e739ee3539ca0e  0020-add-fortify-headers-paths.patch\n053b0339936cc0469e8708ccc086fa1dabe8572199530e1e78a93551340dd35467a07273e19d2cbc7fe915b7a5bdf95c128718ba0518b67b9668ef0316b7aa06  0021-Alpine-musl-package-provides-libssp_nonshared.a.-We-.patch\n7b3d849cdbdee5855918db4114de8f989ec5d612cddc7551eb63ca2878e69e3566353bbfafa9205a161ffd51c5aedd367de6ad82cd5ebf6cb28c716a8d447bb5  0022-DP-Use-push-state-pop-state-for-gold-as-well-when-li.patch\n6b3c0fa81cebaf32948657bddaac99024f45c2fc19ac8bc504f3773b6458099b9907e310e162952973bdd41c9fc011e7a50bc8fa86cc0ebec9dd4c69830a012b  0023-Pure-64-bit-MIPS.patch\nda634721fa9cba18e4f527b2cdbe6896c0251ce43865c6fbf29a7281d766c3a8f98e2ddd345b801c25b7ceb85880150ae9cc422aa8891b1fc28a3dc40bcd3114  0024-use-pure-64-bit-configuration-where-appropriate.patch\n64b58a273993224f93c68cddfacc1b3da6b0900b2983f27f8db39b4375afa97cce564739c8fc320666821f6de526e54acbc4920c7e16612303b3d25aed34d5f1  0025-always-build-libgcc_eh.a.patch\n6004be7d683993c175f819e1d62767b6ca2b80643917bb584ffffe2aee9fd5ad9745f91651ad5d1d00aed390e7346262b5c28bec356efd9ff1c85e4b54bcfe2e  0026-ada-libgnarl-compatibility-for-musl.patch\n7a3ce107cc55356ac46f3a217eea1cf9cdddd43fd3fede048a26e5da2280f0af9f806392942d2896a0f841ca0b0b0eaceb4e20f09edee7a743b515d3553fc8b3  0027-ada-musl-support-fixes.patch\n0cd8303456ec5479942970679352fe8bcd259b8b04bffba458545abdfac87163a8fb8e55c3aa505c516af8fd0a1bfb5f2ee4c6027ec9bcb0b0d3564469a18e23  0028-gcc-go-Use-_off_t-type-instead-of-_loff_t.patch\n6cc82829bb8bf8ffb473e4f2f9c2f657a4078290fc7c3208d199c0b07c2c3a7575a0c423e52fc02fd96c81158ab2e7ad33ccb651523ba80e00dee9e503d19c6d  0029-gcc-go-Don-t-include-sys-user.h.patch\n868e0cf5d32412c557d7835e03eb23621745179e77c87d69b810f8ec968cf80606cb5cb8085e5e125f08e809d5e3ff50c4de869d94caca5f4257669237a29b92  0030-gcc-go-Fix-ucontext_t-on-PPC64.patch\n257814e2dc39bf01dedc3efe9f50029bdc230e112a0e739d0547896212b87bcdb9d40d4632a237137c91e2d9605b2256ebd45ee005920a5c4e401e699ce69f46  0031-gcc-go-Fix-handling-of-signal-34-on-musl.patch\n0e33205e6ef0b58d12eb80d3fd6ce7361e9e3a86ba2ae781745133be1f0fea6a1e95fd58331765f6bb599f4ad355224c954db4fbaf804b9e4c0ea01dbaae1638  0032-gcc-go-Use-int64-type-as-offset-argument-for-mmap.patch\nbb1e3bbea65644435134910e04b8d4de27642026371b19f4faf51b90e32af08e7181b3198e936b3626cba2126f8f9182ce39f6b8c8849b6b27f56a1c45e4f8c5  0033-gcc-go-Fix-st_-a-m-c-tim-fields-in-generated-sysinfo.patch\n0758417ab682ee6d4b75f1ba2d0c1f568e115a16625eb664066c1862178a43ae717396c5d61a355a08fc01929041abebbf33bc58176a0b78ab384aba7d2ed8ba  0034-gcc-go-signal-34-is-special-on-musl-libc.patch\nd0b132d1bb9a455af23829a9da4ff89c27eff3f642e2280712667753d552fc214424470cad4cecd0ae39052553b6a22d7dc7a20eebfd1cb976d98552b00b9dcd  0035-gcc-go-Prefer-_off_t-over-_off64_t.patch\na21844975ff13317ed7985b5f5b257a0bc1dd961360b6a6f36bf52151b8edf5ecf38fbdd47cb2c28c13ed3dfbf4ca112d91d81373fd3e2c5992aba35296645af  0036-gcc-go-undef-SETCONTEXT_CLOBBERS_TLS-in-proc.c.patch\n0217263fc1fcfbde92fcebfc626b2cf0ba30e704b4fbe5a11f55d9ca5b579cceac3ba9ec45e7f53cd8805678b69fb6e5ab1295e67938b9c83f82e44ddebd0a85  0037-gcc-go-link-to-libucontext.patch\n8a90ce84d493bfcdcad4cb1a02a320dca18e8178e717451087501b059ca00ab8f6b73d628bcb3f49c5c6702b7222b063d3c0803d093e2c6f58820b6aa578969e  0038-gcc-go-Disable-printing-of-unaccessible-ppc64-struct.patch\na3e7362fa95d5ffa56b0d8ea73f6f8e867409ae3b85d041aa0591dba093c5bb1d30f3294151c5142e8d1df91f4d138e9f4484009b8a675c8fc3b754a34c7648e  0039-CRuntime_Musl-Support-v1.2.0-for-32-bits.patch\ndc7a8f6dc885dc34229128a716531b375ec4e8247a8522adb623c5a6b39db60ff471436b360a25f0310ee16fe1a6ec85ff64398cbae2677534626972ac01db22  0040-configure-Add-enable-autolink-libatomic-use-in-LINK_.patch\n046bfe95d6de9df148e6c410b5d23a49c488ab41d95e599fc381a2b7d190e6d7d99de59fa8cd8c3a711ee2310426f3cdcd323cf887c8d11543e119d205659b6a  0041-Use-generic-errstr.go-implementation-on-musl.patch"' Literal.String.Double
+'\n'          Text.NewLine

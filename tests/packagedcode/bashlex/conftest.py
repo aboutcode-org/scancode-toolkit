@@ -21,16 +21,30 @@ from pathlib import Path
 
 import pytest
 
-import pygments.lexers
 from pygments.token import Error
 
 
+def pytest_collect_file(parent, path):
+    if str(path).endswith(('.sh', 'APKBUILD',)):
+        return LexerTestFile.from_parent(parent, fspath=path)
+
+
+class LexerTestFile(pytest.File):
+
+    def collect(self):
+        yield LexerSeparateTestItem.from_parent(self, name='')
+
+
 def pytest_addoption(parser):
-    parser.addoption('--update-goldens', action='store_true',
-                     help='reset golden master benchmarks')
+    parser.addoption(
+        '--update-goldens',
+        action='store_true',
+        help='reset golden master benchmarks',
+    )
 
 
 class LexerTestItem(pytest.Item):
+
     def __init__(self, name, parent):
         super().__init__(name, parent)
         self.lexer = Path(str(self.fspath)).parent.name
@@ -46,14 +60,16 @@ class LexerTestItem(pytest.Item):
                 yield ''
 
     def runtest(self):
-        lexer = pygments.lexers.get_lexer_by_name(self.lexer)
+        from packagedcode import bashlex
+        lexer = bashlex.BashShellLexer()
         tokens = lexer.get_tokens(self.input)
         self.actual = '\n'.join(self._prettyprint_tokens(tokens)).rstrip('\n') + '\n'
         if not self.config.getoption('--update-goldens'):
             assert self.actual == self.expected
 
     def _test_file_rel_path(self):
-        return Path(str(self.fspath)).relative_to(Path(__file__).parent.parent)
+        pth = Path(str(self.fspath)).relative_to(Path(__file__).parent.parent)
+        return pth
 
     def _prunetraceback(self, excinfo):
         excinfo.traceback = excinfo.traceback.cut(__file__).filter()
@@ -84,7 +100,6 @@ class LexerSeparateTestItem(LexerTestItem):
 
     def __init__(self, name, parent):
         super().__init__(name, parent)
-
         self.input = self.fspath.read_text('utf-8')
         output_path = self.fspath + '.output'
         if output_path.check():
@@ -95,32 +110,6 @@ class LexerSeparateTestItem(LexerTestItem):
     def overwrite(self):
         output_path = self.fspath + '.output'
         output_path.write_text(self.actual, encoding='utf-8')
-
-
-class LexerInlineTestItem(LexerTestItem):
-    allow_errors = True
-
-    def __init__(self, name, parent):
-        super().__init__(name, parent)
-
-        content = self.fspath.read_text('utf-8')
-        content, _, self.expected = content.partition('\n---tokens---\n')
-        if content.startswith('---input---\n'):
-            content = '\n' + content
-        self.comment, _, self.input = content.rpartition('\n---input---\n')
-        if not self.input.endswith('\n'):
-            self.input += '\n'
-        self.comment = self.comment.strip()
-
-    def overwrite(self):
-        with self.fspath.open('w', encoding='utf-8') as f:
-            f.write(self.comment)
-            if self.comment:
-                f.write('\n\n')
-            f.write('---input---\n')
-            f.write(self.input)
-            f.write('\n---tokens---\n')
-            f.write(self.actual)
 
 
 def pytest_runtest_teardown(item, nextitem):
