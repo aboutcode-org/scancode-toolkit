@@ -178,11 +178,10 @@ def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **k
             dc = debian_copyright.parse_copyright_file(copyright_location)
             if dc:
                 package.declared_license = dc.get_declared_license(
-                    filter_licenses=True,
+                    filter_duplicates=True,
                     skip_debian_packaging=True,
                 )
                 package.license_expression = dc.get_license_expression(
-                    filter_licenses=True,
                     skip_debian_packaging=True,
                     simplify_licenses=True,
                 )

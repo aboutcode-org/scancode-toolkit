@@ -31,23 +31,22 @@ def check_expected_parse_copyright_file(
     at `expected_loc` location. Regen the expected file if `regen` is True.
     """
     if with_details:
-        filter_licenses = False
+        filter_duplicates = False
         skip_debian_packaging = False
         simplify_licenses = False
         unique_copyrights = False
     else:
-        filter_licenses = True
+        filter_duplicates = True
         skip_debian_packaging = True
         simplify_licenses = True
         unique_copyrights = True
 
     dc = debian_copyright.parse_copyright_file(location=test_loc, check_consistency=False)
     declared_license = dc.get_declared_license(
-        filter_licenses=filter_licenses,
+        filter_duplicates=filter_duplicates,
         skip_debian_packaging=skip_debian_packaging,
     )
     license_expression = dc.get_license_expression(
-        filter_licenses=filter_licenses,
         skip_debian_packaging=skip_debian_packaging,
         simplify_licenses=simplify_licenses,
     )

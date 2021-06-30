@@ -160,7 +160,6 @@ class UnstructuredCopyrightProcessor(DebianDetector):
 
     def get_license_expression(
         self,
-        filter_licenses=False,
         simplify_licenses=False,
         *args, **kwargs
     ):
@@ -170,7 +169,7 @@ class UnstructuredCopyrightProcessor(DebianDetector):
             return ['unknown']
 
         detected_expressions = [match.rule.license_expression for match in matches]
-        license_expression = combine_expressions(detected_expressions, unique=filter_licenses)
+        license_expression = combine_expressions(detected_expressions, unique=False)
 
         if simplify_licenses:
             return dedup_expression(license_expression=license_expression)
@@ -241,7 +240,7 @@ class StructuredCopyrightProcessor(DebianDetector):
         self.primary_license = dedup_expression(license_expression=str(combine_expressions(expressions)))
 
     def get_declared_license(
-        self, filter_licenses=False, skip_debian_packaging=False, *args, **kwargs
+        self, filter_duplicates=False, skip_debian_packaging=False, *args, **kwargs
     ):
         """
         Return a list of declared license strings built from the available license detections.
@@ -260,10 +259,12 @@ class StructuredCopyrightProcessor(DebianDetector):
                 if not is_paragraph_debian_packaging(para)
             ]
 
-        if filter_licenses:
-            declarable_paragraphs = self.filter_duplicate_declared_license(declarable_paragraphs)
+        declared_licenses = [paragraph.license.name for paragraph in declarable_paragraphs]
 
-        return [paragraph.license.name for paragraph in declarable_paragraphs]
+        if filter_duplicates:
+            return filter_duplicate_strings(declared_licenses)
+        else:
+            return declared_licenses
 
     def get_copyright(self, skip_debian_packaging=False, unique_copyrights=False, *args, **kwarg):
         """
@@ -325,7 +326,6 @@ class StructuredCopyrightProcessor(DebianDetector):
 
     def get_license_expression(
         self,
-        filter_licenses=False,
         skip_debian_packaging=False,
         simplify_licenses=False,
         *args, **kwargs
@@ -349,9 +349,6 @@ class StructuredCopyrightProcessor(DebianDetector):
                 if not is_paragraph_debian_packaging(license_detection.paragraph)
             ]
 
-        if filter_licenses:
-            license_detections = self.filter_duplicate_license_detections(license_detections)
-
         expressions = [
             license_detection.license_expression_object
             for license_detection in license_detections
@@ -372,41 +369,6 @@ class StructuredCopyrightProcessor(DebianDetector):
             return dedup_expression(license_expression=license_expression)
         else:
             return license_expression
-
-    @staticmethod
-    def filter_duplicate_declared_license(paragraphs):
-        """
-        Return a list of paragraphs without declared license repetitions.
-        """
-        filtered = []
-        seen = set()
-
-        for paragraph in paragraphs:
-            license_name = paragraph.license.name
-            if license_name not in seen:
-                seen.add(license_name)
-                filtered.append(paragraph)
-
-        return filtered
-
-    @staticmethod
-    def filter_duplicate_license_detections(license_detections):
-        """
-        Return a list of paragraphs without declared license repetitions.
-        """
-        filtered_license_detection = []
-        seen = set()
-
-        for license_detection in license_detections:
-            if hasattr(license_detection.paragraph, 'license'):
-                license_name = license_detection.paragraph.license.name
-                if license_name not in seen:
-                    seen.add(license_name)
-                    filtered_license_detection.append(license_detection)
-            elif isinstance(license_detection.paragraph, CatchAllParagraph):
-                filtered_license_detection.append(license_detection)
-
-        return filtered_license_detection
 
     def detect_license(self):
         """
@@ -1048,6 +1010,17 @@ def get_license_matches(location=None, query_string=None):
 
     idx = cache.get_index()
     return idx.match(location=location, query_string=query_string)
+
+def filter_duplicate_strings(strings):
+        seen = set()
+        filtered = []
+
+        for string in strings:
+            if string not in seen:
+                seen.add(string)
+                filtered.append(string)
+
+        return filtered
 
 
 def dedup_expression(license_expression, licensing=Licensing()):
