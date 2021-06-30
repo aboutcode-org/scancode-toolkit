@@ -1,16 +1,22 @@
 """
 Minimal lexer for POSIX and Bash shells.
-Derived from pygments.lexers.shell
-copyright: Copyright 2006-2021 by the Pygments team, see AUTHORS.
+Derived from pygments.lexers.shell and significantly modified
+copyright: Copyright 2006-2021 by the Pygments team, see bashlex.py.AUTHORS.
 SPDX-License-Identifier: BSD-2-Clause
 """
 
+from pygments.lexer import bygroups
+from pygments.lexer import include
+from pygments.lexer import RegexLexer
 
-from pygments.lexer import Lexer, RegexLexer, do_insertions, bygroups, \
-    include, default, this, using, words
-from pygments.token import Punctuation, \
-    Text, Comment, Operator, Keyword, Name, String, Number, Generic
-
+from pygments.token import Comment
+from pygments.token import Keyword
+from pygments.token import Name
+from pygments.token import Number
+from pygments.token import Operator
+from pygments.token import Punctuation
+from pygments.token import String
+from pygments.token import Text
 
 
 class BashLexer(RegexLexer):
@@ -38,7 +44,7 @@ class BashLexer(RegexLexer):
             (r'\$\(', Keyword, 'paren'),
             (r'\$\{#?', String.Interpol, 'curly'),
             (r'\$[a-zA-Z_]\w*', Name.Variable),  # user variable
-            (r'\$(?:\d+|[#$?!_*@-])', Name.Variable),      # builtin
+            (r'\$(?:\d+|[#$?!_*@-])', Name.Variable),  # builtin
             (r'\$', Text),
         ],
         'basic': [

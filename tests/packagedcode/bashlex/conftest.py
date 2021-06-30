@@ -1,19 +1,20 @@
 """
-    Generated lexer tests
-    ~~~~~~~~~~~~~~~~~~~~~
+Generated lexer tests
+~~~~~~~~~~~~~~~~~~~~~
 
-    Checks that lexers output the expected tokens for each sample
-    under snippets/ and examplefiles/.
+Checks that lexers output the expected tokens for each sample
+under snippets/ and examplefiles/.
 
-    After making a change, rather than updating the samples manually,
-    run `pytest --update-goldens <changed file>`.
+After making a change, rather than updating the samples manually,
+run `pytest --update-goldens <changed file>`.
 
-    To add a new sample, create a new file matching this pattern.
-    The directory must match the alias of the lexer to be used.
-    Populate only the input, then just `--update-goldens`.
+To add a new sample, create a new file matching this pattern.
+The directory must match the alias of the lexer to be used.
+Populate only the input, then just `--update-goldens`.
 
-    :copyright: Copyright 2006-2021 by the Pygments team, see AUTHORS.
-    :license: BSD, see LICENSE for details.
+Derived from Pygments testsuite for pygments.lexers.shell and significantly modified
+copyright: Copyright 2006-2021 by the Pygments team, see bashlex.py.AUTHORS.
+SPDX-License-Identifier: BSD-2-Clause
 """
 
 from pathlib import Path
