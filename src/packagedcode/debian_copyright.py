@@ -285,7 +285,7 @@ class StructuredCopyrightProcessor(DebianDetector):
             if unique_copyrights:
                 for copyright in copyright_detection.copyrights:
                     if copyright not in seen_copyrights:
-                        if 'unknown' in copyright:
+                        if 'unknown' in copyright or 'none' in copyright:
                             continue
                         seen_copyrights.add(copyright)
                         declarable_copyrights.append(copyright)
