@@ -173,6 +173,7 @@ def get_licenses(location, min_score=0,
     detected_expressions = []
     unknown_expressions = []
     unknown_licenses=[]
+
     matches = idx.match(
         location=location, min_score=min_score, deadline=deadline, **kwargs)
 
@@ -180,23 +181,22 @@ def get_licenses(location, min_score=0,
     match = None
     for match in matches:
         qspans.append(match.qspan)
-
-        if "unknown" in match.rule.license_expression:  # TODO: use is_unknwon flag instead
-            unknown_expressions.append(match.rule.license_expression)
-            unknown_licenses.extend(_licenses_data_from_match(
-                match=match,
-                include_text=include_text,
-                license_text_diagnostics=license_text_diagnostics,
-                license_url_template=license_url_template))
-        else:
-            detected_expressions.append(match.rule.license_expression)
-            detected_licenses.extend(
-                 _licenses_data_from_match(
+        
+        matched_license=[]
+        matched_license.extend(
+            _licenses_data_from_match(
                 match=match,
                 include_text=include_text,
                 license_text_diagnostics=license_text_diagnostics,
                 license_url_template=license_url_template)
-            )
+        )
+        
+        if "unknown" in match.rule.license_expression:  #TODO: use is_unknown flag instead
+            unknown_expressions.append(match.rule.license_expression)
+            unknown_licenses.extend(matched_license)
+        else:
+            detected_expressions.append(match.rule.license_expression)
+            detected_licenses.extend(matched_license)
    
     percentage_of_license_text = 0
     if match:

@@ -44,7 +44,6 @@ class LicenseScanner(ScanPlugin):
         ('unknown_licenses', attr.ib(default=attr.Factory(list))),
         ('license_expressions', attr.ib(default=attr.Factory(list))),
         ('unknown_license_expressions', attr.ib(default=attr.Factory(list))),
-        ('spdx_license_expressions', attr.ib(default=attr.Factory(list))),
         ('percentage_of_license_text', attr.ib(default=0)),
     ])
 
