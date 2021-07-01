@@ -88,7 +88,10 @@ def parse_copyright_file(location, check_consistency=False):
         )
 
     if check_consistency and dc.consistency_errors:
-        msg = f'Debian Copyright file in not consistent, because of the following: {dc.consistency_errors}'
+        msg = (
+            f'Debian Copyright file in not consistent, because of the following:'
+            f' {dc.consistency_errors}'
+        )
         raise DebianCopyrightStructureError(msg)
 
     if TRACE:
@@ -155,7 +158,7 @@ class UnstructuredCopyrightProcessor(DebianDetector):
         dc = cls(location=location)
 
         if check_consistency:
-            dc.consistency_errors.append(CONSISTENCY_ERROR_MESSAGES['unstructured'])
+            dc.consistency_errors.append('Debian Copyright File is unstructured')
 
         dc.detected_copyrights = copyright_detector(location)
 
@@ -249,13 +252,14 @@ class StructuredCopyrightProcessor(DebianDetector):
             return
 
         debian_copyright=DebianCopyright.from_file(location)
+        edc = EnhancedDebianCopyright(debian_copyright=debian_copyright)
         dc = cls(location=location, debian_copyright=debian_copyright)
         dc.detect_license()
         dc.detect_copyrights()
         dc.get_primary_license()
 
         if check_consistency:
-            dc.get_consistentcy_errors()
+            dc.consistentcy_errors = edc.get_consistentcy_errors()
 
         return dc
 
@@ -518,57 +522,6 @@ class StructuredCopyrightProcessor(DebianDetector):
                 )
 
         return license_detections
-
-    def get_consistentcy_errors(self):
-
-        edc = EnhancedDebianCopyright(debian_copyright=self.debian_copyright)
-
-        # Check if other paragraphs are present
-        if edc.other_paragraphs:
-            self.consistency_errors.append(CONSISTENCY_ERROR_MESSAGES['other_paras'])
-
-        # Check if atleast one License Paragraph is present
-        if not edc.license_paragraphs:
-            self.consistency_errors.append(CONSISTENCY_ERROR_MESSAGES['no_license_para'])
-
-        # Check if atleast one Files Paragraph is present
-        if not edc.file_paragraphs:
-            self.consistency_errors.append(CONSISTENCY_ERROR_MESSAGES['no_files_para'])
-
-        # Check if there are duplicate license paragraphs
-        if edc.duplicate_license_paragraphs:
-            self.consistency_errors.append(CONSISTENCY_ERROR_MESSAGES['duplicate_license'])
-
-        # Check if there are Files/Header/License paragraphs without License names
-        if edc.license_nameless_paragraphs:
-            self.consistency_errors.append(CONSISTENCY_ERROR_MESSAGES['license_nameless'])
-
-        # Check if all the Licenses in License paragraphs are used
-        if not edc.is_all_licenses_used:
-            self.consistency_errors.append(CONSISTENCY_ERROR_MESSAGES['licenses_unused'])
-
-        # Check if all the License Expressions are parsable and consistent
-        if not edc.is_all_licenses_expressions_parsable:
-            self.consistency_errors.append(CONSISTENCY_ERROR_MESSAGES['unparsable_expressions'])
-
-
-CONSISTENCY_ERROR_MESSAGES = {
-    'unstructured': 'Debian Copyright File is unstructured',
-    'other_paras': (
-        'Paragraphs other than Header/File/License paragraphs present in structured debian copyright',
-        'or there is a formatting issue in a paragraph',
-    ),
-    'no_license_para': 'No License paragraphs are present in structured debian copyright file',
-    'no_files_para': 'No Files paragraphs are present in structured debian copyright file',
-    'duplicate_license': (
-        'Two License Paragraphs having the same License Name present in debian copyright file',
-    ),
-    'license_nameless': 'Paragraphs without license names present in debian copyright file',
-    'licenses_unused': (
-        'Some of the License Paragraphs are not referenced in Files/Header paragraphs',
-    ),
-    'unparsable_expressions': 'Some license expressions present in paragraphs are not valid',
-}
 
 
 class NoLicenseFoundError(Exception):
@@ -1057,6 +1010,49 @@ class EnhancedDebianCopyright:
                 license_expressions.append(paragraph.license.name)
 
         return license_expressions
+
+    def get_consistentcy_errors(self):
+        
+        consistency_errors = []
+
+        if self.other_paragraphs:
+            consistency_errors.append((
+                'Paragraphs other than Header/File/License paragraphs present in structured'
+                'debian copyright or there is a formatting issue in a paragraph'
+            ))
+
+        if not self.license_paragraphs:
+            consistency_errors.append(
+                'No License paragraphs are present in structured debian copyright file'
+            )
+
+        if not self.file_paragraphs:
+            consistency_errors.append(
+                'No Files paragraphs are present in structured debian copyright file'
+            )
+
+        if self.duplicate_license_paragraphs:
+            consistency_errors.append((
+                'Two License Paragraphs having the same License Name present in'
+                'debian copyright file'
+            ))
+
+        if self.license_nameless_paragraphs:
+            consistency_errors.append(
+                'Paragraphs without license names present in debian copyright file'
+            )
+
+        if not self.is_all_licenses_used:
+            consistency_errors.append(
+                'Some of the License Paragraphs are not referenced in Files/Header paragraphs'
+            )
+
+        if not self.is_all_licenses_expressions_parsable:
+            consistency_errors.append(
+                 'Some license expressions present in paragraphs are not valid'
+            )
+
+        return consistency_errors
 
 
 def copyright_detector(location):
