@@ -23,12 +23,11 @@
   - GPL-3+
   - GPL-2
   - Expat~SunSoft
-- agpl-3+ AND agpl-3.0-plus AND bsd-new AND (agpl-3.0-plus AND gpl-3.0-plus)
+- (agpl-3.0 AND agpl-3.0-plus) AND agpl-3.0-plus AND bsd-new AND (agpl-3.0-plus AND gpl-3.0-plus)
   AND lgpl-2.1 AND lgpl-2.1-plus AND freetype AND gpl-1.0-plus AND agpl-3.0 WITH ps-or-pdf-font-exception-20170817
   AND fsf-free AND gpl-2.0-plus AND (gpl-2.0 AND gpl-1.0-plus) AND zlib AND sunsoft AND mit
-  AND ((lgpl-2.1 AND public-domain) AND public-domain) AND apache-2.0 AND (apache-2.0 AND agpl-3+)
-  AND afpl-9.0 AND isc AND other-permissive AND x11-opengroup AND public-domain AND x11-lucent
-  AND libpbm
+  AND ((lgpl-2.1 AND public-domain) AND public-domain) AND apache-2.0 AND afpl-9.0 AND isc AND
+  other-permissive AND x11-opengroup AND public-domain AND x11-lucent AND libpbm
 - |
   1986, Eric Gisin
   1989, Berthold K.P. Horn

@@ -727,6 +727,13 @@ class DebianLicensing:
             debian_expression = self.licensing.parse(cleaned)
             if self.debian_expression_can_be_substituted(debian_expression):
                 normalized_expression = debian_expression.subs(self.substitutions)
+            else:
+                text = f'License: {cleaned}'
+                matches = get_license_matches(query_string=text)
+                if matches:
+                    normalized_expression = get_license_expression_from_matches(
+                        license_matches=matches,
+                    )
 
         except ExpressionError:
             # If Expression fails to parse we lookup exact string matches in License paras
