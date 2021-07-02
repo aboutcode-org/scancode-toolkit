@@ -1,3 +1,4 @@
+- apache-2.0
 - - Apache-2.0
   - Apache-2.0 and BSD-3-clause-Cambridge
   - PCRE
@@ -20,9 +21,9 @@
   - Custom
 - apache-2.0 AND (apache-2.0 AND bsd-new) AND bsd-new AND ((gpl-3.0-plus AND gpl-2.0 AND gpl-3.0)
   OR bison-exception-2.2) AND bsd-unchanged AND (apache-2.0 AND (apache-2.0 AND hs-regexp))
-  AND bsd-simplified-darwin AND (apache-2.0 AND unknown-license-reference) AND (apache-2.0 AND
-  (x11-keith-packard AND historical)) AND (apache-2.0 AND zeusbench) AND (apache-2.0 OR (gpl-2.0-plus
-  AND gpl-2.0)) AND mit
+  AND bsd-simplified-darwin AND (apache-2.0 AND public-domain) AND (apache-2.0 AND (x11-keith-packard
+  AND historical)) AND (apache-2.0 AND zeusbench) AND (apache-2.0 OR (gpl-2.0-plus AND gpl-2.0))
+  AND mit
 - |
   Copyright 2019 The Apache Software Foundation
   2019 The Apache Software Foundation
