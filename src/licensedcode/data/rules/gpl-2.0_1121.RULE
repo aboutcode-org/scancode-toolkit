@@ -1,0 +1,43 @@
+is distributed under the GNU General Public License version 2
+ and is also available under alternative licenses negotiated directly
+ with . If you obtained under the GPL, then the GPL
+ applies to all loadable modules used on your system as well,
+ except as defined below. The GPL (version 2) is included in this
+ source tree in the file COPYING.
+ .
+ This package also includes various components that are not part of
+ itself; these components are in the 'contrib' directory
+ and its subdirectories. These components are also distributed under the
+ GPL version 2 as well.
+ .
+ holds copyright
+ and/or sufficient licenses to all components of the
+ package, and therefore can grant, at its sole discretion, the ability
+ for companies, individuals, or organizations to create proprietary or
+ Open Source (even if not GPL) modules which may be dynamically linked at
+ runtime with the portions of which fall under our
+ copyright/license umbrella, or are distributed under more flexible
+ licenses than GPL.
+ .
+ If you wish to use our code in other GPL programs, don't worry --
+ there is no requirement that you provide the same exception in your
+ GPL'd products (although if you've written a module for we
+ would strongly encourage you to make the same exception that we do).
+ .
+ Specific permission is also granted to link and distribute the resulting binary files.
+ .
+ In addition, It is our belief that applications using these protocols to
+ manage or control an instance do not have to be licensed
+ under the GPL or a compatible license, as we believe these protocols
+ do not create a 'derivative work' as referred to in the GPL. However,
+ should any court or other judiciary body find that these protocols do
+ fall under the terms of the GPL, then we hereby grant you a license to
+ use these protocols in combination with in external
+ applications licensed under any license you wish.
+ .
+ The name and logos are trademarks owned by 
+ and use of them is subject to our trademark licensing policies. If you
+ wish to use these trademarks for purposes other than simple
+ redistribution of source code obtained from , you
+ should contact our licensing department to determine the necessary
+ steps you must take.

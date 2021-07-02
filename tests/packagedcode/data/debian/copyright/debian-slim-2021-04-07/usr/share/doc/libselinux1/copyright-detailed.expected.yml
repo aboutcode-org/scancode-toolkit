@@ -1,5 +1,6 @@
 -
-- selinux-nsa-declaration-1.0 AND gpl-2.0 AND lgpl-2.1-plus
+-
+- selinux-nsa-declaration-1.0 AND gpl-2.0 AND lgpl-2.1-plus AND gpl-2.0
 - |
   Copyright 2004 Red Hat, Inc., James Morris <jmorris@redhat.com>
   (c) 2005, 2006, Manoj Srivastava <srivasta@debian.org>
