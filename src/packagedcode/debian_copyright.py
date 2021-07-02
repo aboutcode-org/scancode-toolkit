@@ -651,8 +651,13 @@ class DebianLicensing:
     we can use to parse the license declaration in each of the paragraphs.
     """
     licensing = attr.ib()
+
+    # A mapping of License key to list of LicenseMatch objects
     license_matches_by_symbol = attr.ib()
-    # A mapping of 
+
+    # A mapping of LicenseSymbols to LicenseExpression objects
+    # LicenseSymbol.key is the license name for the and the LicenseExpression is created
+    # by combining LicenseMatch objects for license detections on the license text 
     substitutions = attr.ib()
 
     # List of license name strings that could not be parsed
@@ -704,7 +709,8 @@ class DebianLicensing:
 
         try:
             debian_expression = self.licensing.parse(cleaned)
-            normalized_expression = debian_expression.subs(self.substitutions)
+            if self.debian_expression_can_be_substituted(debian_expression):
+                normalized_expression = debian_expression.subs(self.substitutions)
 
         except ExpressionError:
             # If Expression fails to parse we lookup exact string matches in License paras
@@ -717,13 +723,13 @@ class DebianLicensing:
                     license_matches=matches_unparsable_expression,
                 )
 
-            else:
-                # Case where expression is not parsable and the same expression is not present in
-                # the license paragraphs
-                matches = add_unknown_matches(name=exp, text=None)
-                normalized_expression = get_license_expression_from_matches(
-                    license_matches=matches
-                )
+        if normalized_expression == None:
+            # Case where expression is not parsable and the same expression is not present in
+            # the license paragraphs
+            matches = add_unknown_matches(name=exp, text=None)
+            normalized_expression = get_license_expression_from_matches(
+                license_matches=matches
+            )
 
         return LicenseDetection(
             paragraph=paragraph,
@@ -836,6 +842,27 @@ class DebianLicensing:
 
         return symbols, unparsable_expressions
 
+    def debian_expression_can_be_substituted(self, debian_expression):
+        """
+        Return True if all the license keys in the debian_expression is:
+        1. either present in one of the License paragraphs, OR
+        2. is a common debian license key. (One of common_licenses)
+        Otherwise, return False.
+        """
+        all_keys = []
+        all_keys.extend(list(self.license_matches_by_symbol.keys()))
+        all_keys.extend(list(common_licenses.keys()))
+
+        expression_keys = self.licensing.license_keys(debian_expression)
+
+        for key in expression_keys:
+            if key in all_keys:
+                continue
+
+            return False
+
+        return True
+
 
 @attr.s
 class EnhancedDebianCopyright:    
@@ -856,7 +883,6 @@ class EnhancedDebianCopyright:
             'format: http://svn.debian.org/wsvn/dep/web/deps/dep5',
             'format: http://dep.debian.net/deps/dep5',
         ))
-
 
     def get_paragraphs_by_type(self, paragraph_type):
         return [
