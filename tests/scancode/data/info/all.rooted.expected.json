@@ -23,7 +23,9 @@
       "path": "basic.tgz",
       "type": "directory",
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -36,7 +38,9 @@
       "path": "basic.tgz/basic",
       "type": "directory",
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -49,7 +53,9 @@
       "path": "basic.tgz/basic/dbase.fdt",
       "type": "file",
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -62,7 +68,9 @@
       "path": "basic.tgz/basic/dir",
       "type": "directory",
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -75,7 +83,9 @@
       "path": "basic.tgz/basic/dir/e.tar",
       "type": "file",
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -88,7 +98,9 @@
       "path": "basic.tgz/basic/dir/subdir",
       "type": "directory",
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -101,7 +113,9 @@
       "path": "basic.tgz/basic/dir/subdir/a.aif",
       "type": "file",
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -114,7 +128,9 @@
       "path": "basic.tgz/basic/dir2",
       "type": "directory",
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -127,7 +143,9 @@
       "path": "basic.tgz/basic/dir2/subdir",
       "type": "directory",
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -176,9 +194,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "bsd-original-uc"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 4.83,
       "copyrights": [
         {
@@ -221,7 +241,9 @@
       "path": "basic.tgz/basic/dir2/subdir/config.conf",
       "type": "file",
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -313,9 +335,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "gpl-2.0 OR bsd-new"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 19.01,
       "copyrights": [
         {

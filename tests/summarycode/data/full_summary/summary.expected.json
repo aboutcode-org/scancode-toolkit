@@ -3070,7 +3070,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -3101,7 +3103,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -3132,7 +3136,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -3199,9 +3205,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "lgpl-2.1-plus"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 79.62,
       "copyrights": [
         {
@@ -3280,9 +3288,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "cc-by-2.5"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 19.72,
       "copyrights": [
         {
@@ -3367,9 +3377,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "lgpl-2.1-plus"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 78.62,
       "copyrights": [
         {
@@ -3412,7 +3424,9 @@
       "is_source": true,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -3449,7 +3463,9 @@
       "is_source": true,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -3522,9 +3538,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "lgpl-2.1-plus"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 78.12,
       "copyrights": [
         {
@@ -3567,7 +3585,9 @@
       "is_source": true,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -3604,7 +3624,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -3635,7 +3657,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -3702,9 +3726,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "zlib"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 42.86,
       "copyrights": [
         {
@@ -3783,9 +3809,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "zlib"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 69.57,
       "copyrights": [
         {
@@ -3864,9 +3892,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "zlib"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 20.34,
       "copyrights": [
         {
@@ -3945,9 +3975,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "cc0-1.0"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 100.0,
       "copyrights": [],
       "holders": [],
@@ -4014,9 +4046,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "artistic-2.0"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0.07,
       "copyrights": [],
       "holders": [],
@@ -6898,7 +6932,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -6929,7 +6965,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -7033,9 +7071,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "gpl-2.0-plus WITH ada-linking-exception"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 94.12,
       "copyrights": [
         {
@@ -7114,9 +7154,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "zlib"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 42.86,
       "copyrights": [
         {
@@ -7195,9 +7237,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "zlib"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 40.0,
       "copyrights": [
         {
@@ -7276,9 +7320,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "zlib"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 50.0,
       "copyrights": [
         {
@@ -7321,7 +7367,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -7352,7 +7400,9 @@
       "is_source": true,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [
         {
@@ -7431,9 +7481,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "boost-1.0"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 88.89,
       "copyrights": [
         {
@@ -7476,7 +7528,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -7543,9 +7597,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "zlib"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 50.38,
       "copyrights": [
         {
@@ -7594,7 +7650,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -7661,9 +7719,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "zlib"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 44.44,
       "copyrights": [
         {
@@ -7742,9 +7802,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "zlib"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 50.0,
       "copyrights": [
         {
@@ -7787,7 +7849,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -7854,9 +7918,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "mit-old-style"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 79.78,
       "copyrights": [
         {
@@ -7935,9 +8001,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "zlib"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 84.21,
       "copyrights": [
         {
@@ -8016,9 +8084,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "zlib"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 37.5,
       "copyrights": [
         {
@@ -8097,9 +8167,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "zlib"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 20.34,
       "copyrights": [
         {

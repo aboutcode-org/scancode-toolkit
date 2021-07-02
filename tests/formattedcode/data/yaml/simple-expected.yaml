@@ -38,7 +38,9 @@ files:
     is_source: no
     is_script: no
     licenses: []
+    unknown_licenses: []
     license_expressions: []
+    unknown_license_expressions: []
     percentage_of_license_text: '0'
     copyrights: []
     holders: []
@@ -67,7 +69,9 @@ files:
     is_source: yes
     is_script: no
     licenses: []
+    unknown_licenses: []
     license_expressions: []
+    unknown_license_expressions: []
     percentage_of_license_text: '0'
     copyrights:
       - value: Copyright (c) 2000 ACME, Inc.

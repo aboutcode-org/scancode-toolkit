@@ -59,9 +59,11 @@
           "matched_text": "foo bar this that license: LGPL-2.1 bar"
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "lgpl-2.1"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 44.44,
       "scan_errors": []
     }

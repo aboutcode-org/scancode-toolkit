@@ -33,12 +33,12 @@
       "sha256": "408dfe8f9a70ea7bc9feaa9f77fb731ada0c26dc39008fdc5ead52d0442c656f",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": null,
+      "programming_language": "verilog",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
-      "is_source": false,
+      "is_source": true,
       "is_script": false,
       "licenses": [
         {
@@ -77,9 +77,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "pcre"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 100.0,
       "copyrights": [],
       "holders": [],

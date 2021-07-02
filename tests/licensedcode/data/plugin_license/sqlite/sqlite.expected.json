@@ -21,7 +21,9 @@
       "path": "sqlite.tgz",
       "type": "directory",
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "scan_errors": []
     },
@@ -4926,6 +4928,7 @@
           "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "blessing",
         "blessing",
@@ -5064,6 +5067,7 @@
         "blessing",
         "blessing"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 36.67,
       "scan_errors": []
     }

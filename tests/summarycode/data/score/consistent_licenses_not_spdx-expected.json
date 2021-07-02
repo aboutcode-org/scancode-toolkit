@@ -48,7 +48,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -119,9 +121,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "mit-xfig"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 68.07,
       "copyrights": [],
       "holders": [],
@@ -156,7 +160,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -197,7 +203,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -268,9 +276,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "mit-xfig"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 100.0,
       "copyrights": [],
       "holders": [],

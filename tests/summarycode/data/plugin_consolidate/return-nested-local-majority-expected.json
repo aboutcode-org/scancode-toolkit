@@ -23,7 +23,7 @@
     {
       "type": "holders",
       "identifier": "apache_foundation_software_1",
-      "consolidated_license_expression": "apache-2.0 AND unknown-license-reference",
+      "consolidated_license_expression": "apache-2.0  AND unknown-license-reference",
       "consolidated_holders": [
         "The Apache Software Foundation"
       ],
@@ -75,7 +75,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -107,7 +109,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -141,41 +145,6 @@
       "is_source": false,
       "is_script": false,
       "licenses": [
-        {
-          "key": "unknown-license-reference",
-          "score": 11.0,
-          "name": "Unknown License file reference",
-          "short_name": "Unknown License reference",
-          "category": "Unstated License",
-          "is_exception": false,
-          "owner": "Unspecified",
-          "homepage_url": null,
-          "text_url": "",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
-          "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-          "start_line": 2,
-          "end_line": 2,
-          "matched_rule": {
-            "identifier": "license-intro_2.RULE",
-            "license_expression": "unknown-license-reference",
-            "licenses": [
-              "unknown-license-reference"
-            ],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": true,
-            "matcher": "2-aho",
-            "rule_length": 2,
-            "matched_length": 2,
-            "match_coverage": 100.0,
-            "rule_relevance": 11
-          }
-        },
         {
           "key": "apache-2.0",
           "score": 100.0,
@@ -212,9 +181,48 @@
           }
         }
       ],
+      "unknown_licenses": [
+        {
+          "key": "unknown-license-reference",
+          "score": 11.0,
+          "name": "Unknown License file reference",
+          "short_name": "Unknown License reference",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
+          "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "license-intro_2.RULE",
+            "license_expression": "unknown-license-reference",
+            "licenses": [
+              "unknown-license-reference"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": true,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          }
+        }
+      ],
       "license_expressions": [
-        "unknown-license-reference",
         "apache-2.0"
+      ],
+      "unknown_license_expressions": [
+        "unknown-license-reference"
       ],
       "percentage_of_license_text": 45.45,
       "copyrights": [
@@ -262,41 +270,6 @@
       "is_script": false,
       "licenses": [
         {
-          "key": "unknown-license-reference",
-          "score": 11.0,
-          "name": "Unknown License file reference",
-          "short_name": "Unknown License reference",
-          "category": "Unstated License",
-          "is_exception": false,
-          "owner": "Unspecified",
-          "homepage_url": null,
-          "text_url": "",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
-          "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-          "start_line": 2,
-          "end_line": 2,
-          "matched_rule": {
-            "identifier": "license-intro_2.RULE",
-            "license_expression": "unknown-license-reference",
-            "licenses": [
-              "unknown-license-reference"
-            ],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": true,
-            "matcher": "2-aho",
-            "rule_length": 2,
-            "matched_length": 2,
-            "match_coverage": 100.0,
-            "rule_relevance": 11
-          }
-        },
-        {
           "key": "apache-2.0",
           "score": 100.0,
           "name": "Apache License 2.0",
@@ -332,9 +305,48 @@
           }
         }
       ],
+      "unknown_licenses": [
+        {
+          "key": "unknown-license-reference",
+          "score": 11.0,
+          "name": "Unknown License file reference",
+          "short_name": "Unknown License reference",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
+          "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "license-intro_2.RULE",
+            "license_expression": "unknown-license-reference",
+            "licenses": [
+              "unknown-license-reference"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": true,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          }
+        }
+      ],
       "license_expressions": [
-        "unknown-license-reference",
         "apache-2.0"
+      ],
+      "unknown_license_expressions": [
+        "unknown-license-reference"
       ],
       "percentage_of_license_text": 45.45,
       "copyrights": [
@@ -381,7 +393,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -486,10 +500,12 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "gpl-1.0-plus",
         "gpl-2.0"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 44.44,
       "copyrights": [
         {
@@ -536,41 +552,6 @@
       "is_script": false,
       "licenses": [
         {
-          "key": "unknown-license-reference",
-          "score": 11.0,
-          "name": "Unknown License file reference",
-          "short_name": "Unknown License reference",
-          "category": "Unstated License",
-          "is_exception": false,
-          "owner": "Unspecified",
-          "homepage_url": null,
-          "text_url": "",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
-          "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-          "start_line": 2,
-          "end_line": 2,
-          "matched_rule": {
-            "identifier": "license-intro_2.RULE",
-            "license_expression": "unknown-license-reference",
-            "licenses": [
-              "unknown-license-reference"
-            ],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": true,
-            "matcher": "2-aho",
-            "rule_length": 2,
-            "matched_length": 2,
-            "match_coverage": 100.0,
-            "rule_relevance": 11
-          }
-        },
-        {
           "key": "apache-2.0",
           "score": 100.0,
           "name": "Apache License 2.0",
@@ -606,9 +587,48 @@
           }
         }
       ],
+      "unknown_licenses": [
+        {
+          "key": "unknown-license-reference",
+          "score": 11.0,
+          "name": "Unknown License file reference",
+          "short_name": "Unknown License reference",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
+          "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "license-intro_2.RULE",
+            "license_expression": "unknown-license-reference",
+            "licenses": [
+              "unknown-license-reference"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": true,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          }
+        }
+      ],
       "license_expressions": [
-        "unknown-license-reference",
         "apache-2.0"
+      ],
+      "unknown_license_expressions": [
+        "unknown-license-reference"
       ],
       "percentage_of_license_text": 45.45,
       "copyrights": [

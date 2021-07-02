@@ -48,7 +48,9 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -119,9 +121,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "mit"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 80.9,
       "copyrights": [],
       "holders": [],
@@ -192,9 +196,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "mit"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 64.4,
       "copyrights": [
         {
@@ -277,9 +283,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "mit"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 1.83,
       "copyrights": [],
       "holders": [],

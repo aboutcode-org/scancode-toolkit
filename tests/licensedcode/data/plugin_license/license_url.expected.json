@@ -21,7 +21,9 @@
       "path": "license_url",
       "type": "directory",
       "licenses": [],
+      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "scan_errors": []
     },
@@ -65,9 +67,11 @@
           }
         }
       ],
+      "unknown_licenses": [],
       "license_expressions": [
         "apache-1.0"
       ],
+      "unknown_license_expressions": [],
       "percentage_of_license_text": 97.61,
       "scan_errors": []
     }
