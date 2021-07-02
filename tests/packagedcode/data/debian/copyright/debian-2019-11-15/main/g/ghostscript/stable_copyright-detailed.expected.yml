@@ -1,4 +1,3 @@
-- None
 - - AGPL-3+
   - BSD-3-Clause~Adobe
   - AGPL-3+
@@ -57,13 +56,20 @@
   - FTL
   - ZLIB
   - ISC
-- agpl-3+ AND bsd-new AND agpl-3+ AND lgpl-2.1 AND freetype AND gpl-1.0-plus AND gpl-1.0-plus
-  AND agpl-3.0 WITH ps-or-pdf-font-exception-20170817 AND gpl-1.0-plus AND gpl-1.0-plus AND
-  fsf-free AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0-plus AND zlib AND bsd-new AND bsd-new
-  AND sunsoft AND mit AND ((lgpl-2.1 AND public-domain) AND public-domain) AND apache-2.0 AND
-  apache-2.0 AND agpl-3+ AND isc AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0-plus AND other-permissive AND x11-opengroup AND public-domain
-  AND gpl-1.0-plus AND x11-lucent AND libpbm AND zlib AND gpl-3.0-plus AND gpl-1.0-plus
+- agpl-3+ AND (agpl-3.0-plus AND agpl-3.0-plus) AND agpl-3.0-plus AND bsd-new
+  AND agpl-3+ AND (agpl-3.0-plus AND gpl-3.0-plus) AND lgpl-2.1 AND lgpl-2.1-plus
+  AND freetype AND freetype AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
+  AND agpl-3.0 WITH ps-or-pdf-font-exception-20170817 AND (agpl-3.0-plus AND gpl-3.0-plus) AND
+  gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND fsf-free AND gpl-2.0-plus
+  AND (gpl-1.0-plus AND gpl-1.0-plus) AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0-plus AND
+  (gpl-2.0 AND gpl-1.0-plus AND gpl-1.0-plus) AND zlib AND bsd-new AND bsd-new AND sunsoft AND
+  mit AND ((lgpl-2.1 AND public-domain) AND public-domain) AND apache-2.0 AND (apache-2.0 AND
+  agpl-3+) AND apache-2.0 AND apache-2.0 AND agpl-3+ AND
+  afpl-9.0 AND isc AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0-plus AND other-permissive AND x11-opengroup AND public-domain AND gpl-1.0-plus
+  AND gpl-1.0-plus AND x11-lucent AND libpbm AND zlib AND gpl-3.0-plus AND gpl-3.0-plus AND
+  gpl-1.0-plus
 - |
   1986, Eric Gisin
   1989, Berthold K.P. Horn

@@ -26,16 +26,19 @@
   - public-domain
   - Apache-2.0 with GPL exception
   - GPL-3+ with Bison exception
-- (gpl-2.0 AND gpl-1.0-plus AND other-copyleft) AND (gpl-2.0 AND openssl-exception-gpl-3.0-plus
-  AND gpl-1.0-plus AND other-copyleft) AND gpl-2.0-plus AND (gpl-2.0-plus AND autoconf-simple-exception-2.0
-  AND gpl-1.0-plus AND other-copyleft AND gpl-2.0) AND (gpl-3.0-plus AND gpl-1.0-plus AND autoconf-simple-exception
-  AND other-copyleft AND gpl-3.0) AND (gpl-3.0-plus WITH libtool-exception-2.0 AND gpl-1.0-plus
-  AND other-copyleft AND gpl-2.0) AND (lgpl-2.0-plus AND libtool-exception-2.0 AND gpl-2.0-plus
-  AND lgpl-2.1-plus AND gpl-2.0 AND other-copyleft AND lgpl-2.0) AND (lgpl-2.1 AND lgpl-2.1-plus
-  AND other-copyleft) AND ((lgpl-2.1 AND lgpl-2.1-plus AND other-copyleft) AND bsd-new) AND
-  mit AND bsd-simplified AND bsd-new AND zlib AND isc AND fsf-unlimited AND fsf-free AND fsf-unlimited-no-warranty
+- (gpl-2.0 AND gpl-1.0-plus AND other-copyleft) AND (gpl-1.0-plus AND other-copyleft AND gpl-2.0)
+  AND (gpl-2.0 AND openssl-exception-gpl-3.0-plus AND gpl-1.0-plus AND other-copyleft) AND gpl-2.0-plus
+  AND (gpl-2.0-plus AND autoconf-simple-exception-2.0 AND gpl-1.0-plus AND other-copyleft AND
+  gpl-2.0) AND (gpl-3.0-plus AND gpl-1.0-plus AND autoconf-simple-exception AND other-copyleft
+  AND gpl-3.0) AND (gpl-1.0-plus AND other-copyleft AND gpl-3.0) AND (gpl-3.0-plus WITH libtool-exception-2.0
+  AND gpl-1.0-plus AND other-copyleft AND gpl-2.0) AND (lgpl-2.0-plus AND libtool-exception-2.0
+  AND gpl-2.0-plus AND lgpl-2.1-plus AND gpl-2.0 AND other-copyleft AND lgpl-2.0) AND (gpl-2.0
+  AND other-copyleft AND lgpl-2.0) AND (lgpl-2.1 AND lgpl-2.1-plus AND other-copyleft) AND ((lgpl-2.1
+  AND lgpl-2.1-plus AND other-copyleft) AND bsd-new) AND mit AND (x11-xconsortium AND public-domain)
+  AND bsd-simplified AND bsd-new AND zlib AND isc AND fsf-unlimited AND fsf-free AND fsf-unlimited-no-warranty
   AND fsf-ap AND bzip2-libbzip-2010 AND public-domain AND x11-tiff AND (apache-2.0 AND gpl-1.0-plus)
-  AND (gpl-3.0-plus AND bison-exception-2.2 AND gpl-1.0-plus AND other-copyleft AND gpl-3.0)
+  AND (gpl-1.0-plus AND apache-2.0) AND (gpl-3.0-plus AND bison-exception-2.2 AND gpl-1.0-plus
+  AND other-copyleft AND gpl-3.0)
 - |
   1998-2015, Sourcefire, Inc.
   2002-2007, Tomasz Kojm <tkojm@clamav.net>

@@ -13,8 +13,9 @@
   - BSD-3-Clause
   - same-as-rest-of-p11kit
   - BSD-3-Clause
-- bsd-new AND fsf-unlimited-no-warranty AND bsd-new AND bsd-new AND isc AND (isc AND ibm-dhcp)
-  AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND free-unknown
+- bsd-new AND fsf-unlimited-no-warranty AND bsd-new AND bsd-new AND mit AND isc AND (isc AND
+  ibm-dhcp) AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND free-unknown
+  AND free-unknown
 - |
   2011 Collabora Ltd.
   2004, 2005, 2007, 2008, 2012, 2013 Stefan Walter

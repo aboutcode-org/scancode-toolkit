@@ -283,15 +283,22 @@ class StructuredCopyrightProcessor(DebianDetector):
         A primary license in a debian copyright file is the license in the Header
         paragraph or the `Files: *` paragraph.
         """
-        expressions = [
-            ld.license_expression_object
-            for ld in self.license_detections
-            if (ld.license_expression_object != None) and (
-                is_paragraph_primary_license(ld.paragraph) or isinstance(
+        expressions = []
+        has_header_license = False
+        has_primary_license = False
+        
+        for ld in self.license_detections:
+            if ld.license_expression_object != None:
+                if not has_header_license and isinstance(
                     ld.paragraph, CopyrightHeaderParagraph
-                )
-            )
-        ]
+                ):
+                    expressions.append(ld.license_expression_object)
+                    has_header_license = True
+                if not has_primary_license and is_paragraph_primary_license(
+                    ld.paragraph
+                ):
+                    expressions.append(ld.license_expression_object)
+                    has_primary_license = True
 
         self.primary_license = dedup_expression(
             license_expression=str(combine_expressions(expressions))
@@ -456,18 +463,18 @@ class StructuredCopyrightProcessor(DebianDetector):
 
         header_paragraph = edebian_copyright.header_paragraph
         if header_paragraph.license.name:
-            license_detection = self.get_license_detection(
+            header_license_detections = self.get_license_detections(
                 paragraph=header_paragraph,
                 debian_licensing=debian_licensing,
             )
-            license_detections.append(license_detection)
+            license_detections.extend(header_license_detections)
 
         for file_paragraph in edebian_copyright.file_paragraphs:
-            license_detection = self.get_license_detection(
+            files_license_detections = self.get_license_detections(
                 paragraph=file_paragraph,
                 debian_licensing=debian_licensing,
             )
-            license_detections.append(license_detection)
+            license_detections.extend(files_license_detections)
 
         license_detections.extend(
             self.detect_license_in_other_paras(other_paras=edebian_copyright.other_paragraphs)
@@ -476,18 +483,27 @@ class StructuredCopyrightProcessor(DebianDetector):
         self.license_detections = license_detections
 
     @staticmethod
-    def get_license_detection(paragraph, debian_licensing):
+    def get_license_detections(paragraph, debian_licensing):
         """
         Return a LicenseDetection object from header/files paras in structured
         debian copyright file.
         
         `debian_licensing` is a DebianLicensing object.
         """
+        license_detections = []
+
         name = paragraph.license.name
         if not name:
-            return get_license_detection_from_nameless_paragraph(paragraph=paragraph)
+            license_detections.append(
+                get_license_detection_from_nameless_paragraph(paragraph=paragraph)
+            )
+            return license_detections
 
-        return debian_licensing.get_license_detection(paragraph)
+        license_detections.append(debian_licensing.get_license_detection(paragraph))
+        extra_license_detections = get_license_detections_from_extra_data(paragraph)
+        if extra_license_detections:
+            license_detections.extend(extra_license_detections)
+        return license_detections
 
     @staticmethod
     def detect_license_in_other_paras(other_paras):
@@ -1329,12 +1345,49 @@ class UnknownRule(Rule):
         raise NotImplementedError
 
 
+def get_license_detections_from_extra_data(paragraph):
+    license_detections = []
+    if paragraph.comment:
+        license_detection = get_license_detection_from_extra_data(
+            query_string=paragraph.comment.text,
+            paragraph=paragraph,
+        )
+        if license_detection:
+            license_detections.append(license_detection)
+
+    if paragraph.extra_data:
+        for _field_name, field_value in paragraph.extra_data.items():
+            license_detection = get_license_detection_from_extra_data(
+                query_string=field_value,
+                paragraph=paragraph,
+            )
+            if license_detection:
+                license_detections.append(license_detection)
+
+    return license_detections
+
+
+def get_license_detection_from_extra_data(query_string, paragraph):
+    matches = remove_known_license_intros(
+        get_license_matches(query_string=query_string)
+    )
+    if matches:
+        normalized_expression = get_license_expression_from_matches(
+            license_matches=matches
+        )
+        return LicenseDetection(
+            paragraph=paragraph,
+            license_expression_object=normalized_expression,
+            license_matches=matches,
+        )
+
+
 def get_license_detection_from_nameless_paragraph(paragraph):
     """
     Return a LicenseDetection object built from any paragraph without a license name.
     """
     assert not paragraph.license.name
-    matches = get_license_matches(paragraph.license.text)
+    matches = get_license_matches(query_string=paragraph.license.text)
 
     if not matches:
         matches = add_unknown_matches(name=None, text=paragraph.license.text)

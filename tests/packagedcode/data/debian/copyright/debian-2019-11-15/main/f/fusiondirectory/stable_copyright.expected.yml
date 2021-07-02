@@ -8,10 +8,10 @@
   - GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause
   - GPL-3+
   - LGPL-2.1+
-- (gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND bsd-new AND (lgpl-3.0-plus AND gpl-2.0-plus)
-  AND public-domain AND mit AND bsd-original AND ((gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0)
-  OR (gpl-3.0-plus AND gpl-2.0-plus) OR (lgpl-2.1-plus AND lgpl-2.1) OR (lgpl-3.0-plus AND gpl-2.0-plus)
-  OR mit OR bsd-new OR bsd-original)
+- (gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND free-unknown AND bsd-new AND (lgpl-3.0-plus
+  AND gpl-2.0-plus) AND public-domain AND gpl-2.0-plus AND mit AND bsd-original AND ((gpl-2.0-plus
+  AND gpl-1.0-plus AND gpl-2.0) OR (gpl-3.0-plus AND gpl-2.0-plus) OR (lgpl-2.1-plus AND lgpl-2.1)
+  OR (lgpl-3.0-plus AND gpl-2.0-plus) OR mit OR bsd-new OR bsd-original)
 - |
   2011-2016, FusionDirectory
   2011-2017, FusionDirectory
