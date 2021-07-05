@@ -336,9 +336,13 @@ def get_holders_consolidated_components(codebase):
             if child.license_expressions:
                 license_expression = combine_expressions(child.license_expressions)
                 if license_expression:
-                    child.extra_data['normalized_license_expression'] = license_expression
-                    child.save(codebase)
-
+                    if "unknown" in license_expression:
+                      child.extra_data['normalized_unknown_license_expression'] = license_expression
+                      child.save(codebase)
+                    else:
+                      child.extra_data['normalized_license_expression'] = license_expression
+                      child.save(codebase)
+                
             if child.holders:
                 holders = process_holders(h['value'] for h in child.holders)
                 if holders:
@@ -383,6 +387,7 @@ def create_consolidated_components(resource, codebase, holder_key):
     given resource and holder key
     """
     license_expressions = []
+    unknown_expressions = []
     holder = None
     resources = []
     for r in resource.walk(codebase):
@@ -390,8 +395,11 @@ def create_consolidated_components(resource, codebase, holder_key):
             if not (normalized_holder.key == holder_key):
                 continue
             normalized_license_expression = r.extra_data.get('normalized_license_expression')
+            normalized_unknown_license_expression = r.extra_data.get('normalized_unknown_license_expression')
             if normalized_license_expression:
                 license_expressions.append(normalized_license_expression)
+            if normalized_unknown_license_expression:
+                unknown_expressions.append(normalized_unknown_license_expression)
             if not holder:
                 holder = normalized_holder
             resources.append(r)
@@ -404,6 +412,7 @@ def create_consolidated_components(resource, codebase, holder_key):
 
     c = Consolidation(
         core_license_expression=combine_expressions(license_expressions),
+        other_license_expression=combine_expressions(unknown_expressions),
         core_holders=[holder],
         files_count=len([r for r in resources if r.is_file]),
         resources=resources,

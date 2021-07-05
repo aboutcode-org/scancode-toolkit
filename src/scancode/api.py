@@ -191,7 +191,7 @@ def get_licenses(location, min_score=0,
                 license_url_template=license_url_template)
         )
         
-        if "unknown" in match.rule.license_expression:  #TODO: use is_unknown flag instead
+        if "unknown" in match.rule.license_expression:
             unknown_expressions.append(match.rule.license_expression)
             unknown_licenses.extend(matched_license)
         else:
@@ -208,8 +208,8 @@ def get_licenses(location, min_score=0,
     detected_spdx_expressions = []
     return dict([
         ('licenses', detected_licenses),
-        ('unknown_licenses', unknown_licenses),
         ('license_expressions', detected_expressions),
+        ('unknown_licenses', unknown_licenses),
         ('unknown_license_expressions', unknown_expressions),
         ('spdx_license_expressions', detected_spdx_expressions),
         ('percentage_of_license_text', percentage_of_license_text),

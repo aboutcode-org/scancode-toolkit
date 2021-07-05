@@ -57,10 +57,10 @@
           }
         }
       ],
-      "unknown_licenses": [],
       "license_expressions": [
         "mit"
       ],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 4.05,
       "packages": [

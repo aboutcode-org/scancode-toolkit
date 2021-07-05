@@ -77,10 +77,10 @@
           }
         }
       ],
-      "unknown_licenses": [],
       "license_expressions": [
         "apache-1.1"
       ],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 92.44,
       "copyrights": [

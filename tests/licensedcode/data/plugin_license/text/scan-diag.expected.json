@@ -138,10 +138,10 @@
           "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
         }
       ],
-      "unknown_licenses": [],
       "license_expressions": [
         "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
       ],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 100.0,
       "scan_errors": []
@@ -187,10 +187,10 @@
           "matched_text": "and distribution of this file, with or without modification, are\npermitted in any medium without [royalties] provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any"
         }
       ],
-      "unknown_licenses": [],
       "license_expressions": [
         "fsf-ap"
       ],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 91.43,
       "scan_errors": []

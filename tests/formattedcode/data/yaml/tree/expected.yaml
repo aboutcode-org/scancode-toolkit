@@ -39,8 +39,8 @@ files:
     is_source: yes
     is_script: no
     licenses: []
-    unknown_licenses: []
     license_expressions: []
+    unknown_licenses: []
     unknown_license_expressions: []
     percentage_of_license_text: '0'
     copyrights:
@@ -76,8 +76,8 @@ files:
     is_source: yes
     is_script: no
     licenses: []
-    unknown_licenses: []
     license_expressions: []
+    unknown_licenses: []
     unknown_license_expressions: []
     percentage_of_license_text: '0'
     copyrights:
@@ -113,8 +113,8 @@ files:
     is_source: yes
     is_script: no
     licenses: []
-    unknown_licenses: []
     license_expressions: []
+    unknown_licenses: []
     unknown_license_expressions: []
     percentage_of_license_text: '0'
     copyrights:
@@ -150,8 +150,8 @@ files:
     is_source: no
     is_script: no
     licenses: []
-    unknown_licenses: []
     license_expressions: []
+    unknown_licenses: []
     unknown_license_expressions: []
     percentage_of_license_text: '0'
     copyrights: []
@@ -181,8 +181,8 @@ files:
     is_source: yes
     is_script: no
     licenses: []
-    unknown_licenses: []
     license_expressions: []
+    unknown_licenses: []
     unknown_license_expressions: []
     percentage_of_license_text: '0'
     copyrights:
@@ -218,8 +218,8 @@ files:
     is_source: yes
     is_script: no
     licenses: []
-    unknown_licenses: []
     license_expressions: []
+    unknown_licenses: []
     unknown_license_expressions: []
     percentage_of_license_text: '0'
     copyrights:
@@ -255,8 +255,8 @@ files:
     is_source: yes
     is_script: no
     licenses: []
-    unknown_licenses: []
     license_expressions: []
+    unknown_licenses: []
     unknown_license_expressions: []
     percentage_of_license_text: '0'
     copyrights:
@@ -292,8 +292,8 @@ files:
     is_source: yes
     is_script: no
     licenses: []
-    unknown_licenses: []
     license_expressions: []
+    unknown_licenses: []
     unknown_license_expressions: []
     percentage_of_license_text: '0'
     copyrights:

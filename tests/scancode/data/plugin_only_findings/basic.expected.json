@@ -76,10 +76,10 @@
           }
         }
       ],
-      "unknown_licenses": [],
       "license_expressions": [
         "bsd-original-uc"
       ],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 4.83,
       "copyrights": [
@@ -202,10 +202,10 @@
           }
         }
       ],
-      "unknown_licenses": [],
       "license_expressions": [
         "gpl-2.0 OR bsd-new"
       ],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 19.01,
       "copyrights": [

@@ -280,11 +280,11 @@
         "Cosmin Truta"
       ],
       "consolidated_copyright": "Copyright (c) Cosmin Truta",
-      "core_license_expression": "zlib AND unknown-license-reference",
+      "core_license_expression": "zlib",
       "core_holders": [
         "Cosmin Truta"
       ],
-      "other_license_expression": null,
+      "other_license_expression": "unknown-license-reference",
       "other_holders": [],
       "files_count": 3
     },

@@ -23,12 +23,12 @@
     {
       "type": "holders",
       "identifier": "apache_foundation_software_1",
-      "consolidated_license_expression": "apache-2.0  AND unknown-license-reference",
+      "consolidated_license_expression": "apache-2.0",
       "consolidated_holders": [
         "The Apache Software Foundation"
       ],
       "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
-      "core_license_expression": "unknown-license-reference AND apache-2.0",
+      "core_license_expression": "apache-2.0",
       "core_holders": [
         "The Apache Software Foundation"
       ],
@@ -75,8 +75,8 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
-      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
@@ -109,8 +109,8 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
-      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
@@ -181,6 +181,9 @@
           }
         }
       ],
+      "license_expressions": [
+        "apache-2.0"
+      ],
       "unknown_licenses": [
         {
           "key": "unknown-license-reference",
@@ -217,9 +220,6 @@
             "rule_relevance": 11
           }
         }
-      ],
-      "license_expressions": [
-        "apache-2.0"
       ],
       "unknown_license_expressions": [
         "unknown-license-reference"
@@ -305,6 +305,9 @@
           }
         }
       ],
+      "license_expressions": [
+        "apache-2.0"
+      ],
       "unknown_licenses": [
         {
           "key": "unknown-license-reference",
@@ -341,9 +344,6 @@
             "rule_relevance": 11
           }
         }
-      ],
-      "license_expressions": [
-        "apache-2.0"
       ],
       "unknown_license_expressions": [
         "unknown-license-reference"
@@ -393,8 +393,8 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
-      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
@@ -500,11 +500,11 @@
           }
         }
       ],
-      "unknown_licenses": [],
       "license_expressions": [
         "gpl-1.0-plus",
         "gpl-2.0"
       ],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 44.44,
       "copyrights": [
@@ -587,6 +587,9 @@
           }
         }
       ],
+      "license_expressions": [
+        "apache-2.0"
+      ],
       "unknown_licenses": [
         {
           "key": "unknown-license-reference",
@@ -623,9 +626,6 @@
             "rule_relevance": 11
           }
         }
-      ],
-      "license_expressions": [
-        "apache-2.0"
       ],
       "unknown_license_expressions": [
         "unknown-license-reference"

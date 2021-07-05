@@ -77,10 +77,10 @@
           }
         }
       ],
-      "unknown_licenses": [],
       "license_expressions": [
         "pygres-2.2"
       ],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 69.38,
       "copyrights": [

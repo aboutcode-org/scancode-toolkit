@@ -90,8 +90,8 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
-      "unknown_licenses": [],
       "license_expressions": [],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
@@ -162,10 +162,10 @@
           }
         }
       ],
-      "unknown_licenses": [],
       "license_expressions": [
         "apache-2.0"
       ],
+      "unknown_licenses": [],
       "unknown_license_expressions": [],
       "percentage_of_license_text": 36.36,
       "copyrights": [],

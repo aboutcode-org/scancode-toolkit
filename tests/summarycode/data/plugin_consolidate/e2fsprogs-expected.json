@@ -672,11 +672,11 @@
         "Free Software Foundation, Inc. Michel Robitaille"
       ],
       "consolidated_copyright": "Copyright (c) Free Software Foundation, Inc. Michel Robitaille",
-      "core_license_expression": "free-unknown",
+      "core_license_expression": null,
       "core_holders": [
         "Free Software Foundation, Inc. Michel Robitaille"
       ],
-      "other_license_expression": null,
+      "other_license_expression": "free-unknown",
       "other_holders": [],
       "files_count": 1
     },
@@ -688,11 +688,11 @@
         "Free Software Foundation, Inc."
       ],
       "consolidated_copyright": "Copyright (c) Free Software Foundation, Inc.",
-      "core_license_expression": "(fsf-unlimited-no-warranty AND fsf-unlimited AND (gpl-1.0-plus AND lgpl-2.0-plus) AND gpl-2.0-plus WITH autoconf-simple-exception-2.0) AND fsf-free AND ((gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert) AND gpl-2.0 AND lgpl-2.0) AND (gpl-3.0-plus WITH autoconf-simple-exception AND free-unknown) AND fsf-unlimited AND (gpl-2.0-plus WITH libtool-exception-2.0 AND gpl-3.0-plus WITH libtool-exception-2.0 AND gpl-3.0-plus) AND (gpl-2.0-plus AND free-unknown) AND lgpl-2.0-plus AND (gpl-1.0-plus AND gpl-2.0) AND gpl-2.0-plus AND (lgpl-2.0-plus AND gpl-2.0-plus WITH bison-exception-2.0) AND free-unknown",
+      "core_license_expression": "(fsf-unlimited-no-warranty AND fsf-unlimited AND (gpl-1.0-plus AND lgpl-2.0-plus) AND gpl-2.0-plus WITH autoconf-simple-exception-2.0) AND fsf-free AND ((gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert) AND gpl-2.0 AND lgpl-2.0) AND fsf-unlimited AND (gpl-2.0-plus WITH libtool-exception-2.0 AND gpl-3.0-plus WITH libtool-exception-2.0 AND gpl-3.0-plus) AND lgpl-2.0-plus AND (gpl-1.0-plus AND gpl-2.0) AND gpl-2.0-plus AND (lgpl-2.0-plus AND gpl-2.0-plus WITH bison-exception-2.0)",
       "core_holders": [
         "Free Software Foundation, Inc."
       ],
-      "other_license_expression": null,
+      "other_license_expression": "(gpl-3.0-plus WITH autoconf-simple-exception AND free-unknown) AND (gpl-2.0-plus AND free-unknown) AND free-unknown",
       "other_holders": [],
       "files_count": 63
     },
@@ -1136,11 +1136,11 @@
         "Theodore Ts'o"
       ],
       "consolidated_copyright": "Copyright (c) Theodore Ts'o",
-      "core_license_expression": "gpl-2.0 AND gpl-1.0-plus AND ((gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert) AND mit-old-style-no-advert AND bsd-new) AND (gpl-1.0-plus AND gpl-2.0) AND lgpl-2.0 AND bsd-new AND gpl-2.0-plus AND latex2e AND tso-license AND lgpl-2.1-plus AND (lgpl-2.0 AND gpl-1.0-plus) AND isc AND (lgpl-2.0 AND mit-with-modification-obligations) AND (gpl-1.0-plus AND mit-with-modification-obligations) AND free-unknown AND other-permissive",
+      "core_license_expression": "gpl-2.0 AND gpl-1.0-plus AND ((gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert) AND mit-old-style-no-advert AND bsd-new) AND (gpl-1.0-plus AND gpl-2.0) AND lgpl-2.0 AND bsd-new AND gpl-2.0-plus AND latex2e AND tso-license AND lgpl-2.1-plus AND (lgpl-2.0 AND gpl-1.0-plus) AND isc AND (lgpl-2.0 AND mit-with-modification-obligations) AND (gpl-1.0-plus AND mit-with-modification-obligations) AND other-permissive",
       "core_holders": [
         "Theodore Ts'o"
       ],
-      "other_license_expression": null,
+      "other_license_expression": "free-unknown",
       "other_holders": [],
       "files_count": 272
     },
