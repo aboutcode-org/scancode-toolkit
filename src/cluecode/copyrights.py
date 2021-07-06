@@ -11,10 +11,13 @@ import os
 import re
 import sys
 from collections import deque
-from functools import partial
 from time import time
 
-import pygmars
+import attr
+from pygmars import lex
+from pygmars import parse
+from pygmars import Token
+from pygmars import tree
 
 from commoncode.text import toascii
 from commoncode.text import unixlinesep
@@ -23,12 +26,15 @@ from cluecode import copyrights_hint
 
 # Tracing flags
 TRACE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT', False)
+
 # set to 1 to enable pygmars deep tracing
 TRACE_DEEP = 0
 if os.environ.get('SCANCODE_DEBUG_COPYRIGHT_DEEP'):
     TRACE_DEEP = 1
 
 TRACE_TOK = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT_TOKEN', False)
+
+VALIDATE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT_VALIDATE', False)
 
 
 # Tracing flags
@@ -89,21 +95,27 @@ def detect_copyrights(
     - Run for up to ``deadline`` seconds and return results found so far.
     """
     from textcode.analysis import numbered_text_lines
+
     numbered_lines = numbered_text_lines(location, demarkup=demarkup)
     numbered_lines = list(numbered_lines)
+
     if TRACE:
-        numbered_lines = list(numbered_lines)
+        logger_debug('detect_copyrights: numbered_lines')
         for nl in numbered_lines:
-            logger_debug('numbered_line:', repr(nl))
+            logger_debug('  numbered_line:', repr(nl))
 
     yield from detect_copyrights_from_lines(
-        numbered_lines,
+        numbered_lines=numbered_lines,
         copyrights=copyrights,
         holders=holders,
         authors=authors,
         include_years=include_years,
         include_allrights=include_allrights,
-        deadline=deadline)
+        deadline=deadline,
+    )
+
+
+DETECTOR = None
 
 
 def detect_copyrights_from_lines(
@@ -117,7 +129,7 @@ def detect_copyrights_from_lines(
 ):
     """
     Yield tuples of (detection type, detected string, start line, end line)
-    detected in a ``numbered_lines`` sequence of tuples of (line numer, text)
+    detected in a ``numbered_lines`` sequence of tuples of (line number, text)
 
     "detection type" is one of : "copyrights", "authors", "holders".
 
@@ -133,21 +145,28 @@ def detect_copyrights_from_lines(
     if not numbered_lines:
         return
 
-    detector = CopyrightDetector()
+    global DETECTOR
+    if not DETECTOR:
+        DETECTOR = detector = CopyrightDetector()
+    else:
+        detector = DETECTOR
 
     candidate_lines_groups = candidate_lines(numbered_lines)
     if TRACE:
         candidate_lines_groups = list(candidate_lines_groups)
         logger_debug(
             f'detect_copyrights_from_lines: ALL groups of candidate '
-            f'lines collected: {len(candidate_lines_groups)}')
+            f'lines collected: {len(candidate_lines_groups)}',
+        )
 
     for candidates in candidate_lines_groups:
         if TRACE:
             from pprint import pformat
             can = pformat(candidates, width=160)
             logger_debug(
-                f' detect_copyrights_from_lines: processing candidates group:\n{can}')
+                f' detect_copyrights_from_lines: processing candidates group:\n'
+                f'  {can}'
+            )
 
         detections = detector.detect(
             numbered_lines=candidates,
@@ -163,8 +182,12 @@ def detect_copyrights_from_lines(
             logger_debug(f' detect_copyrights_from_lines: {detections}')
 
         for detection in detections:
-            # tuple of type, string, start, end
-            yield detection
+            yield (
+                detection.type,
+                detection.value,
+                detection.start_line,
+                detection.end_line,
+            )
 
         if time() > deadline:
             break
@@ -174,18 +197,14 @@ def detect_copyrights_from_lines(
 ################################################################################
 
 
-# simple tokenization: spaces and some punctuation
-splitter = re.compile('[\\t =;]+').split
-
-
 class CopyrightDetector(object):
     """
     Detect copyrights and authors.
     """
 
     def __init__(self):
-        self.lexer = pygmars.lex.RegexpLexer(patterns)
-        self.parser = pygmars.parse.RegexpParser(grammar, trace=TRACE_DEEP)
+        self.lexer = lex.Lexer(patterns)
+        self.parser = parse.Parser(grammar, trace=TRACE_DEEP, validate=VALIDATE)
 
     def detect(self,
         numbered_lines,
@@ -196,8 +215,8 @@ class CopyrightDetector(object):
         include_allrights=False,
     ):
         """
-        Yield tuples of (detection type, detected string, start line, end line)
-        detected in a ``numbered_lines`` sequence of tuples of (line numer, text)
+        Yield Detection objects detected in a ``numbered_lines`` sequence of
+        tuples of (line number, text).
 
         "detection type" is one of : "copyrights", "authors", "holders".
 
@@ -209,33 +228,26 @@ class CopyrightDetector(object):
           ``include_allrights`` is True.
         - Strip markup from text if ``demarkup`` is True.
         """
-        Tree = pygmars.tree.Tree
         numbered_lines = list(numbered_lines)
         if not numbered_lines:
             return
-        start_line = numbered_lines[0][0]
-        end_line = numbered_lines[-1][0]
 
-        if TRACE: logger_debug(f'CopyrightDetector:numbered_lines: {numbered_lines}')
+        if TRACE: logger_debug(f'CopyrightDetector: numbered_lines: {numbered_lines}')
 
-        tokens = self.get_tokens(numbered_lines)
+        tokens = list(get_tokens(numbered_lines))
 
-        if TRACE:
-            tokens = list(tokens)
-            logger_debug(f'CopyrightDetector:tokens: {tokens}')
+        if TRACE: logger_debug(f'CopyrightDetector: initial tokens: {tokens}')
 
         if not tokens:
             return
 
         # first, POS tag each token using token regexes
-        lexed_text = self.lexer.lex(tokens)
-        if TRACE: logger_debug('CopyrightDetector:tagged_text: ' + str(lexed_text))
+        lexed_text = list(self.lexer.lex_tokens(tokens))
+        if TRACE: logger_debug(f'CopyrightDetector: lexed tokens: {lexed_text}')
 
-        # then build a parse tree based on tagged tokens
-        tree = self.parser.parse(lexed_text)
-        if TRACE: logger_debug('CopyrightDetector:parse tree: ' + str(tree))
-
-        as_str = partial(CopyrightDetector.as_str, include_allrights=include_allrights)
+        # then build a parse parse_tree based on tagged tokens
+        parse_tree = self.parser.parse(lexed_text)
+        if TRACE: logger_debug(f'CopyrightDetector: parse_tree: {parse_tree}')
 
         non_copyright_labels = frozenset()
         if not include_years:
@@ -262,105 +274,136 @@ class CopyrightDetector(object):
             'HOLDER', 'AUTHOR',
         ])
 
-        # then walk the parse tree, collecting copyrights, years and authors
-        for tree_node in tree:
-            if not isinstance(tree_node, Tree):
+        # then walk the parse parse_tree, collecting copyrights, years and authors
+        for tree_node in parse_tree:
+            if not isinstance(tree_node, tree.Tree):
                 continue
 
-            node_text = as_str(tree_node, ignores=non_copyright_labels)
-            if TRACE: logger_debug('detect:node_text:', node_text)
+                if TRACE: logger_debug(f'CopyrightDetector: parse_tree node: {tree_node}')
 
-            tree_node_label = tree_node.label()
+            tree_node_label = tree_node.label
 
-            if 'COPYRIGHT' in tree_node_label:
-                if TRACE:
-                    logger_debug(f'CopyrightDetector.detect: tree node: {tree_node}')
-                if node_text and node_text.strip():
-                    refined = refine_copyright(node_text)
-                    # checking for junk is a last resort
-                    if refined and refined.lower() not in COPYRIGHTS_JUNK:
+            if (copyrights or holders) and 'COPYRIGHT' in tree_node_label:
+                copyrght = Detection.from_node(
+                    node=tree_node,
+                    type='copyrights',
+                    ignores=non_copyright_labels,
+                    include_allrights=include_allrights,
+                    refiner=refine_copyright,
+                    junk=COPYRIGHTS_JUNK,
+                )
+                if TRACE: logger_debug(f'CopyrightDetector: detection: {copyrght}')
 
-                        if copyrights:
-                            if TRACE:
-                                logger_debug(
-                                    'CopyrightDetector.detect: detected copyrights:',
-                                    refined, start_line, end_line,
-                                )
-                            yield 'copyrights', refined, start_line, end_line
+                if copyrght:
+                    if copyrights:
 
-                        if holders:
-                            # by default with strip email and urls from holders
-                            holder = as_str(tree_node, ignores=non_holder_labels)
-                            refined_holder = refine_holder(holder)
+                        yield copyrght
 
-                            if not refined_holder:
-                                # ... if we have no holder, we try again, this
-                                # time keeping email and URLs for holders using
-                                # "non_holder_labels_mini"
-                                holder = as_str(tree_node, ignores=non_holder_labels_mini)
-                                refined_holder = refine_holder(holder)
+                    if holders:
+                        # By default we strip email and urls from holders ....
+                        holder = Detection.from_node(
+                            node=tree_node,
+                            type='holders',
+                            ignores=non_holder_labels,
+                            refiner=refine_holder,
+                        )
 
-                            if refined_holder:
-                                yield 'holders', refined_holder, start_line, end_line
-                                if TRACE:
-                                    logger_debug(
-                                        'CopyrightDetector: detected holders:',
-                                        refined_holder, start_line, end_line
-                                    )
+                        if not holder:
+                            # ... but if we have no holder, we try again and
+                            # this time we keep email and URLs for holders using
+                            # "non_holder_labels_mini" as an ignores label set
+                            holder = Detection.from_node(
+                                node=tree_node,
+                                type='holders',
+                                ignores=non_holder_labels_mini,
+                                refiner=refine_holder,
+                            )
+
+                        if holder:
+                            if TRACE: logger_debug(f'CopyrightDetector: holders: {holder}')
+                            yield holder
 
             elif authors and tree_node_label == 'AUTHOR':
-                node_text = as_str(tree_node, ignores=non_authors_labels)
+                author = Detection.from_node(
+                    node=tree_node,
+                    type='authors',
+                    ignores=non_authors_labels,
+                    include_allrights=False,
+                    refiner=refine_author,
+                    junk=AUTHORS_JUNK,
+                )
 
-                refined_auth = refine_author(node_text)
-                if refined_auth and refined_auth.lower() not in AUTHORS_JUNK:
-                    if TRACE: logger_debug(
-                        'CopyrightDetector: detected authors:',
-                        refined_auth, start_line, end_line
-                    )
-                    yield 'authors', refined_auth, start_line, end_line
+                if author:
+                    if TRACE: logger_debug(f'CopyrightDetector: detected authors: {author}')
+                    yield author
 
-    def get_tokens(self, numbered_lines):
-        """
-        Return an iterable of tokens build from a ``numbered_lines`` sequence of
-        tuples of (line number, text).
-        """
-        tokens = []
-        tokens_append = tokens.append
 
-        for _line_number, line in numbered_lines:
-            if TRACE_TOK:
-                logger_debug('  get_tokens:  bare line: ' + repr(line))
+def get_tokens(numbered_lines, splitter=re.compile('[\\t =;]+').split):
+    """
+    Return an iterable of pygmars.Token built from a ``numbered_lines`` iterable
+    of tuples of (line number, text).
 
-            line = prepare_text_line(line)
+    We perform a simple tokenization on spaces, tabs and some punctuation =;
+    """
+    for start_line, line in numbered_lines:
+        if TRACE_TOK:
+            logger_debug('  get_tokens: bare line: ' + repr(line))
 
-            if TRACE_TOK:
-                logger_debug('  get_tokens:preped line: ' + repr(line))
-
-            for tok in splitter(line):
-                # strip trailing single quotes and ignore empties
-                tok = tok.strip("' ")
-                # strip trailing colons: why?
-                tok = tok.rstrip(':').strip()
-                # strip leading @: : why?
-                tok = tok.lstrip('@').strip()
-                if tok and tok not in (':',):
-                    tokens_append(tok)
+        line = prepare_text_line(line)
 
         if TRACE_TOK:
-            logger_debug('  get_tokens:tokens: ' + repr(tokens))
-            logger_debug('  get_tokens: ALL tokens collected')
-        return tokens
+            logger_debug('  get_tokens: preped line: ' + repr(line))
+
+        pos = 0
+        for tok in splitter(line):
+            # FIXME: strip trailing single quotes and ignore empties
+            tok = tok.strip("' ")
+            # FIXME: strip trailing colons: why?
+            tok = tok.rstrip(':').strip()
+            # FIXME: strip leading @: : why?
+            tok = tok.lstrip('@').strip()
+            # FIXME: why?
+            if tok and tok != ':':
+                yield Token(value=tok, start_line=start_line, pos=pos)
+                pos += 1
+
+
+@attr.s
+class Detection:
+    """
+    Represent a "copyrights" or "authors" detection with a start and end line.
+    """
+    value = attr.ib()
+    type = attr.ib()
+    start_line = attr.ib()
+    end_line = attr.ib()
 
     @classmethod
-    def as_str(cls, node, ignores=frozenset(), include_allrights=False):
+    def from_node(
+        cls,
+        node,
+        type,  # NOQA
+        ignores=frozenset(),
+        include_allrights=False,
+        refiner=None,
+        junk=frozenset(),
+    ):
         """
-        Return a parse tree node as a space-normalized string.
-        Optionally filters node labels provided in the ignores set.
+        Return a Detection object from a pygmars.tree.Tree ``node`` with a
+        space-normalized string value or None.
+        Use the provided ``type`` (such as "copyrights")
+        Filter ``node`` Tokens with a type found in the ``ignores`` set of
+        ignorable token types.
+        Include trailing "All rights reserved" if ``include_allrights`` is True.
+        Apply the ``refiner`` callable function to the detection string.
+        Return None if the value exists in the ``junk`` strings set.
         """
 
         if ignores:
-            leaves = [(text, label) for text, label in node.leaves()
-                      if label not in ignores]
+            leaves = [
+                token for token in node.leaves()
+                if token.label not in ignores
+            ]
         else:
             leaves = node.leaves()
 
@@ -370,31 +413,45 @@ class CopyrightDetector(object):
             filtered = leaves
         else:
             filtered = []
-            for text, label in leaves:
-                # pop ALL RIGHT RESERVED if there
-                if (label == 'RESERVED' and
-                        len(filtered) >= 2 and
-                        filtered[-1][1] == 'RIGHT' and
-                        filtered[-2][1] in ('NN', 'CAPS', 'NNP')):
 
-                    filtered = filtered[:-2]
+            for token in leaves:
+                # FIXME: this should operate on the tree and not on the leaves
+                # ALLRIGHTRESERVED: <NNP|NN|CAPS> <RIGHT> <NNP|NN|CAPS>? <RESERVED>
 
+                # This pops ALL RIGHT RESERVED py finding it backwards from RESERVED
+                if token.label == 'RESERVED':
+                    if (
+                        len(filtered) >= 2
+                        and filtered[-1].label == 'RIGHT'
+                        and filtered[-2].label in ('NN', 'CAPS', 'NNP')
+                    ):
+                        filtered = filtered[:-2]
+                    elif (
+                        len(filtered) >= 3
+                        and filtered[-1].label in ('NN', 'CAPS', 'NNP')
+                        and filtered[-2].label == 'RIGHT'
+                        and filtered[-3].label in ('NN', 'CAPS', 'NNP')
+                    ):
+                        filtered = filtered[:-3]
                 else:
-                    filtered.append((text, label))
+                    filtered.append(token)
 
-        node_string = ' '.join(t for t, _ in filtered)
-        return ' '.join(node_string.split())
+        node_string = ' '.join(t.value for t in filtered)
+        node_string = ' '.join(node_string.split())
+        if refiner:
+            node_string = refiner(node_string)
+
+        if node_string and node_string.lower() not in junk:
+            return cls(
+                value=node_string,
+                type=type,
+                start_line=filtered[0].start_line,
+                end_line=filtered[-1].start_line,
+            )
 
 ################################################################################
-# POS TAGGING AND CHUNKING
+# LEXING AND PARSING
 ################################################################################
-
-############################################################################
-############################################################################
-# NOTE: IN THE PAST PATTERNS WERE COMPACT AND HARD TO READ!!!
-# USE SIMPLER PATTERNS AS NEEDED: The focus must be on readability!!!
-############################################################################
-############################################################################
 
 
 _YEAR = (r'('
@@ -1574,6 +1631,13 @@ patterns = [
     # Code variable names including snake case
     (r'^.*(_.*)+$', 'JUNK'),
 
+    # !$?
+    (r'^\!\$\?$', 'JUNK'),
+
+    # things composed only of non-word letters (e.g. junk punctuations)
+    # but keeping _ ? and () as parts of words
+    (r'^[^\w\?()]{2,10}$', 'JUNK'),
+
     ############################################################################
     # catch all other as Nouns
     ############################################################################
@@ -1583,6 +1647,8 @@ patterns = [
 ]
 
 # Comments in the Grammar are lines that start with #
+# End of line commenst are rules descriptions.
+# One rule per line.
 grammar = """
 
 #######################################
@@ -2444,7 +2510,7 @@ grammar = """
 
 
 #######################################
-# Last resort catch all ending with allrights
+# Last resort catch all ending with ALLRIGHTRESERVED
 #######################################
 
     COPYRIGHT: {<COMPANY><COPY>+<ALLRIGHTRESERVED>}        #99900
@@ -2466,6 +2532,8 @@ def refine_copyright(c):
     Refine a detected copyright string.
     FIXME: the grammar should not allow this to happen.
     """
+    if not c:
+        return
     c = ' '.join(c.split())
     c = strip_some_punct(c)
     # this catches trailing slashes in URL for consistency
@@ -2490,6 +2558,8 @@ def refine_holder(h):
     Refine a detected holder.
     FIXME: the grammar should not allow this to happen.
     """
+    if not h:
+        return
     # handle the acse where "all right reserved" is in the middle and the
     # company name contains the word all.
     if 'reserved' in h.lower():
@@ -2513,6 +2583,8 @@ def refine_author(a):
     Refine a detected author.
     FIXME: the grammar should not allow this to happen.
     """
+    if not a:
+        return
     # FIXME: we could consider to split comma separated lists such as
     # gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
     a = refine_names(a, prefixes=AUTHORS_PREFIXES)
@@ -3157,7 +3229,7 @@ def candidate_lines(numbered_lines):
             logger_debug(
                 f'# candidate_lines: evaluating line: {numbered_line!r}')
 
-        line_number, line = numbered_line
+        _line_number, line = numbered_line
 
         # FIXME: we should get the prepared text from here and return
         # effectively pre-preped lines... but the prep taking place here is
