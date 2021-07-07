@@ -905,6 +905,10 @@ patterns = [
     # JUNK from binary
     (r'^x1b|1H$', 'JUNK'),
 
+    # JUNK as camel case with a single hump such as in "processingInfo"
+    (r'^[a-z]{3,10}[A-Z][a-z]{3,10}$', 'JUNK'),
+
+
     ############################################################################
     # Nouns and proper Nouns
     ############################################################################
@@ -1052,6 +1056,7 @@ patterns = [
     (r'^Mode$', 'NN'),
     (r'^Modified$', 'NN'),
     (r'^Mouse$', 'NN'),
+    (r'^Module$', 'NN'),
     (r'^Natural$', 'NN'),
     (r'^New$', 'NN'),
     (r'^NEWS$', 'NN'),
@@ -3206,6 +3211,9 @@ def is_end_of_statement(chars_only_line):
     )
 
 
+has_trailing_year = re.compile(r'(?:19\d\d|20[0-4]\d)+$').findall
+
+
 def candidate_lines(numbered_lines):
     """
     Yield groups of candidate line lists where each list element is a tuple of
@@ -3270,16 +3278,21 @@ def candidate_lines(numbered_lines):
                 logger_debug('   candidate_lines: line is <s></s>candidate')
 
         elif in_copyright > 0:
+            # these are a sign that the copyrights continue after
+            # a possibly empty line
+            # see https://github.com/nexB/scancode-toolkit/issues/1565
+            # if these are no present we treat empty lines... as empty!
             if (
                 (not chars_only)
                 and (
                     not previous_chars.endswith((
                         'copyright',
                         'copyrights',
-                        'copyrightsby',
-                        'copyrightby',
+                        'and',
+                        'by',
                     ))
                 )
+                and not has_trailing_year(previous_chars)
             ):
 
                 # completely empty or only made of punctuations
@@ -3381,7 +3394,7 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     If ``dedeb`` is True, remove "Debian" <s> </s> markup tags seen in
     older copyright files.
 
-    If ``to_ascii`` convert the text to ASCiI characters.
+    If ``to_ascii`` convert the text to ASCII characters.
     """
     # remove some junk in man pages: \(co
     line = (line
