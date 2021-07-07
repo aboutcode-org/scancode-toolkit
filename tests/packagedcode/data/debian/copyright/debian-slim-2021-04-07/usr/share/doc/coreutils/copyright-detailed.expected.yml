@@ -1,5 +1,8 @@
 -
-- gpl-3.0-plus AND bsd-new AND isc AND fsf-unlimited AND gfdl-1.2-plus
+-
+- gpl-3.0-plus AND bsd-new AND gpl-3.0-plus AND bsd-new AND gpl-3.0-plus AND gpl-3.0-plus AND
+  isc AND fsf-unlimited AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus
+  AND gfdl-1.2-plus AND gpl-3.0-plus
 - |
   Copyright (c) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
   Copyright (c) 1990, 1993, 1994 The Regents of the University of California

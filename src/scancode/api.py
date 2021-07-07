@@ -173,7 +173,8 @@ def get_licenses(location, min_score=0,
     detected_expressions = []
 
     matches = idx.match(
-        location=location, min_score=min_score, deadline=deadline, **kwargs)
+        location=location, min_score=min_score, deadline=deadline, **kwargs
+    )
 
     qspans = []
     match = None

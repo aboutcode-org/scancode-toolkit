@@ -120,7 +120,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "Copyright 2013 Jiri Pirko <jiri@resnulli.us>",
-    "license_expression": "lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1",
+    "license_expression": "lgpl-2.1-plus AND lgpl-2.1",
     "declared_license": [
       "LGPL-2.1+"
     ],

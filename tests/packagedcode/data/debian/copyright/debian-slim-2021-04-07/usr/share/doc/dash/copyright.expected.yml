@@ -1,3 +1,4 @@
+- bsd-new
 - - BSD-3-Clause
   - FSFULLR
   - FSFUL
@@ -6,8 +7,8 @@
   - GPL-2+ or BSD-3-clause
   - public-domain
   - GPL-2+
-- bsd-new AND fsf-unlimited-no-warranty AND fsf-free AND bsd-new AND (x11-xconsortium AND public-domain)
-  AND ((gpl-2.0-plus AND gpl-2.0-plus) OR bsd-new) AND public-domain AND (gpl-2.0-plus AND gpl-2.0-plus)
+- bsd-new AND fsf-unlimited-no-warranty AND fsf-free AND (x11-xconsortium AND public-domain)
+  AND (gpl-2.0-plus OR bsd-new) AND public-domain AND gpl-2.0-plus
 - |
   1989-1994 The Regents of the University of California. All rights reserved.
   1997 Christos Zoulas. All rights reserved.

@@ -1,0 +1,11 @@
+License: The main library is licensed under GNU Lesser
+General Public License (LGPL) version 2.1+, are licenced under the GNU General Public License version 3+.  The
+ bindings use the same license as the respective underlying library,
+i.e. LGPLv2.1+ for the main library and GPLv3+ for 
+
+However to be able to use and link against a program needs to be
+available under a license compatible with LGPLv3+ or GPLv2+ since GnuTLS
+requires which requires is dual licensed
+LGPLv3+ or GPLv2+. Starting with is needed, too. It also
+is dual licensed LGPLv3+ or GPLv2+ ( earlier
+version were LGPLv3+ only.)

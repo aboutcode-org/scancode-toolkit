@@ -1,6 +1,7 @@
+- gpl-2.0-plus
 - - GPL-2+
   - LGPL-2.1+
-- (gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus)
+- gpl-2.0-plus AND lgpl-2.1-plus
 - |
   1999-2018 Philip Kendall and others
   1987-2001 Free Software Foundation, Inc.

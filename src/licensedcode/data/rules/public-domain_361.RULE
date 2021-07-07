@@ -1,0 +1,35 @@
+ This imagemap module started as a port of the original imagemap.c
+ written by Rob McCool (11/13/93 robm@ncsa.uiuc.edu).
+ This version includes the mapping algorithms found in version 1.3
+ of imagemap.c.
+ .
+ Contributors to this code include:
+ .
+ Kevin Hughes, kevinh@pulua.hcc.hawaii.edu
+ .
+ Eric Haines, erich@eye.com
+ "macmartinized" polygon code copyright 1992 by Eric Haines, erich@eye.com
+ .
+ Randy Terbush, randy@zyzzyva.com
+ port to Apache module format, "base_uri" and support for relative URLs
+ .
+ James H. Cloos, Jr., cloos@jhcloos.com
+ Added point datatype, using code in NCSA's version 1.8 imagemap.c
+ program, as distributed with version 1.4.1 of their server.
+ The point code is originally added by Craig Milo Rogers, Rogers@ISI.Edu
+ .
+ Nathan Kurz, nate@tripod.com
+ Rewrite/reorganization.  New handling of default, base and relative URLs.
+ New Configuration directives:
+    ImapMenu {none, formatted, semiformatted, unformatted}
+    ImapDefault {error, nocontent, referer, menu, URL}
+    ImapBase {map, referer, URL}
+ Support for creating non-graphical menu added.  (backwards compatible):
+    Old:  directive URL [x,y ...]
+    New:  directive URL "Menu text" [x,y ...]
+     or:  directive URL x,y ... "Menu text"
+ Map format and menu concept courtesy Joshua Bell, jsbell@acs.ucalgary.ca.
+ .
+ Mark Cox, mark@ukweb.com, Allow relative URLs even when no base specified
+
+

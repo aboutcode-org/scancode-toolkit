@@ -1,3 +1,4 @@
+- None
 - - LGPL-2.1+
   - LGPL-2.1
   - LGPL-2.1+
@@ -24,12 +25,12 @@
   - permissive-configure
   - permissive-fsf
   - permissive-makefile-in
-- (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1 AND lgpl-3.0-plus
-  AND gpl-1.0-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)
-  AND bsd-new AND fsf-ap AND fsf-unlimited-no-warranty AND fsf-unlimited-no-warranty AND (gpl-3.0-plus
-  WITH autoconf-simple-exception AND gpl-3.0) AND fsf-free AND (gpl-2.0-plus WITH autoconf-simple-exception-2.0
-  AND gpl-2.0 AND gpl-2.0) AND x11-xconsortium AND (gpl-2.0-plus WITH libtool-exception-2.0
-  AND gpl-2.0 AND gpl-2.0) AND fsf-unlimited AND fsf-ap
+- (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1 AND lgpl-3.0-plus AND gpl-1.0-plus
+  AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND bsd-new AND fsf-ap AND
+  fsf-unlimited-no-warranty AND fsf-unlimited-no-warranty AND (gpl-3.0-plus WITH autoconf-simple-exception
+  AND gpl-3.0) AND fsf-free AND (gpl-2.0-plus WITH autoconf-simple-exception-2.0 AND gpl-2.0)
+  AND x11-xconsortium AND (gpl-2.0-plus WITH libtool-exception-2.0 AND gpl-2.0) AND fsf-unlimited
+  AND fsf-ap
 - |
   2020, Aurelien Jarno
   2014, 2015, 2017-2018, Thorsten Kukuk

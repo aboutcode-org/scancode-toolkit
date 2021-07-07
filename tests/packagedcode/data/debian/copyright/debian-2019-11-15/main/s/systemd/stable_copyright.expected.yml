@@ -1,12 +1,11 @@
+- lgpl-2.1-plus AND lgpl-2.1
 - - LGPL-2.1+
   - CC0-1.0
   - GPL-2
   - GPL-2+
   - Expat
   - public-domain
-- (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (cc0-1.0 AND cc0-1.0 AND cc0-1.0)
-  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
-  mit AND public-domain-disclaimer
+- (lgpl-2.1-plus AND lgpl-2.1) AND cc0-1.0 AND gpl-2.0 AND gpl-2.0-plus AND mit AND public-domain-disclaimer
 - |
   2008-2015 Kay Sievers <kay@vrfy.org>
   2010-2015 Lennart Poettering
@@ -41,7 +40,6 @@
   2008 Red Hat, Inc.
   2008 Ian Kent <raven@themaw.net>
   2012 Josh Triplett <josh@joshtriplett.org>
-  none
   2003-2012 Kay Sievers <kay@vrfy.org>
   2003-2004 Greg Kroah-Hartman <greg@kroah.com>
   2004 Chris Friesen <chris_friesen@sympatico.ca>

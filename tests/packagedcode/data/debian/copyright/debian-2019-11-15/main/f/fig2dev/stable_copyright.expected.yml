@@ -1,9 +1,9 @@
+- mit-xfig
 - - xfig
   - GPL-2+
   - MIT
   - GPL-3
-- mit-xfig AND (gpl-2.0-plus AND gpl-2.0-plus) AND mit-old-style-no-advert AND (gpl-3.0 AND
-  gpl-3.0-plus AND gpl-3.0 AND gpl-3.0)
+- mit-xfig AND gpl-2.0-plus AND mit-old-style-no-advert AND (gpl-3.0 AND gpl-3.0-plus)
 - |
   Copyright (c) 1991-1999 by Micah Beck
   Parts Copyright (c) 1985-1988 by Supoj Sutanthavibul

@@ -13,7 +13,7 @@ commoncode==21.6.11
 cryptography==3.4.7
 debian-inspector==21.5.25
 dparse==0.5.1
-extractcode==21.6.1
+extractcode==21.6.2
 extractcode-7z==16.5.210531
 extractcode-libarchive==3.5.1.210531
 fasteners==0.16
@@ -30,7 +30,7 @@ jaraco.functools==3.3.0
 javaproperties==0.8.0
 Jinja2==3.0.1
 jsonstreams==0.6.0
-license-expression==1.2
+license-expression==21.6.14
 lxml==4.6.3
 MarkupSafe==2.0.1
 more-itertools==8.8.0
@@ -58,6 +58,7 @@ requests==2.25.1
 rpm-inspector-rpm==4.16.1.3.210404
 saneyaml==0.5.2
 setuptools==57.0.0
+setuptools_scm==6.0.1
 six==1.16.0
 sortedcontainers==2.4.0
 soupsieve==2.2.1
