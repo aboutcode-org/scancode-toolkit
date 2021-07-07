@@ -1,13 +1,25 @@
 -
-- (gpl-2.0-plus AND gpl-3.0-plus) AND gpl-3.0 AND gpl-1.0-plus AND gpl-3.0-plus AND gcc-exception-3.1
-  AND unknown-license-reference AND bsd-new AND uoi-ncsa AND mit AND (mit OR commercial-license)
-  AND gfdl-1.2 AND gpl-2.0 AND lgpl-2.0-plus AND lgpl-2.1-plus AND public-domain AND sunpro
-  AND gpl-2.0-plus AND artistic-1.0 AND (artistic-perl-1.0 OR gpl-1.0-plus) AND zlib AND d-zlib
-  AND gpl-3.0-plus WITH gcc-exception-3.1 AND gfdl-1.3-plus AND lgpl-2.1 AND lgpl-3.0-plus AND
-  lgpl-3.0 AND other-permissive AND bsla-no-advert AND bsla AND bsd-original-uc AND flex-2.5
-  AND (gpl-3.0 AND gpl-2.0 AND lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus AND other-copyleft
-  AND other-permissive) AND x11-lucent AND amd-historical AND osf-1990 AND nilsson-historical
-  AND newlib-historical AND bsd-simplified AND x11-hanson AND intel-osl-1993 AND hs-regexp
+-
+- gpl-3.0-plus AND gpl-3.0-plus WITH gcc-exception-3.1 AND bsd-new AND uoi-ncsa AND mit AND
+  (mit OR commercial-license) AND gfdl-1.2 AND gcc-exception-3.1 AND gpl-2.0 AND lgpl-2.0-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND public-domain AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND sunpro AND bsd-new AND gpl-2.0-plus AND (artistic-perl-1.0 OR gpl-1.0)
+  AND zlib AND d-zlib AND mit AND gpl-3.0-plus WITH gcc-exception-3.1 AND gpl-3.0-plus WITH
+  gcc-exception-3.1 AND gfdl-1.3-plus AND lgpl-2.1-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND
+  lgpl-2.1-plus AND gpl-2.0-plus AND gpl-3.0-plus AND (gpl-3.0 AND lgpl-2.1) AND lgpl-2.1-plus
+  AND lgpl-2.1 AND gpl-3.0-plus AND lgpl-2.1-plus AND (lgpl-3.0 AND gpl-3.0) AND (gpl-3.0 AND
+  lgpl-2.1 AND lgpl-3.0) AND (gpl-3.0 AND lgpl-2.1 AND lgpl-3.0) AND (lgpl-2.0 AND gpl-3.0)
+  AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-2.0 AND (gpl-3.0 AND lgpl-2.1) AND (gpl-2.0-plus
+  AND gpl-3.0-plus) AND lgpl-2.1-plus AND lgpl-2.1 AND (lgpl-2.1 AND lgpl-3.0 AND gpl-3.0) AND
+  (lgpl-2.1 AND lgpl-3.0) AND lgpl-2.1-plus AND lgpl-2.0-plus AND gpl-3.0-plus AND gpl-2.0-plus
+  AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-2.0-plus AND (lgpl-2.0-plus AND gpl-1.0-plus) AND
+  bsla-no-advert AND bsla AND bsd-original-uc AND bsd-new AND bsd-original-uc AND flex-2.5 AND
+  bsd-original-uc AND (gpl-3.0 AND gpl-2.0 AND lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus
+  AND other-copyleft AND other-permissive) AND x11-lucent AND amd-historical AND sunpro AND
+  osf-1990 AND nilsson-historical AND newlib-historical AND bsd-new AND amd-historical AND bsd-new
+  AND bsd-simplified AND bsd-simplified AND bsd-simplified AND x11-hanson AND bsd-simplified
+  AND bsd-new AND lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.0-plus AND intel-osl-1993
+  AND osf-1990 AND hs-regexp AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-new
 - |
   Copyright (c) 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019
   Copyright (c) 2009-2014 by the LLVM contributors

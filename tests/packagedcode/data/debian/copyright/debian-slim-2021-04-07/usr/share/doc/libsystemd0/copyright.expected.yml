@@ -1,3 +1,4 @@
+- lgpl-2.1-plus AND lgpl-2.1
 - - LGPL-2.1+
   - CC0-1.0
   - GPL-2
@@ -5,9 +6,8 @@
   - Expat
   - public-domain
   - GPL-2+
-- (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (cc0-1.0 AND cc0-1.0 AND cc0-1.0)
-  AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (linux-syscall-exception-gpl AND gpl-2.0
-  AND gpl-2.0 AND gpl-2.0) AND mit AND public-domain-disclaimer AND (gpl-2.0-plus AND gpl-2.0-plus)
+- (lgpl-2.1-plus AND lgpl-2.1) AND cc0-1.0 AND gpl-2.0 AND (linux-syscall-exception-gpl AND
+  gpl-2.0) AND mit AND public-domain-disclaimer AND gpl-2.0-plus
 - |
   2008-2015 Kay Sievers <kay@vrfy.org>
   2010-2015 Lennart Poettering
@@ -59,7 +59,6 @@
   1999-2000 Maxim Krasnyansky <max_mk@yahoo.com>
   2015-2019 Jason A. Donenfeld <Jason@zx2c4.com>
   2012 Josh Triplett <josh@joshtriplett.org>
-  none
   2003-2012 Kay Sievers <kay@vrfy.org>
   2003-2004 Greg Kroah-Hartman <greg@kroah.com>
   2004 Chris Friesen <chris_friesen@sympatico.ca>

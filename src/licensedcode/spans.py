@@ -27,8 +27,7 @@
 # those of the authors and should not be interpreted as representing official
 # policies, either expressed or implied, of Matt Chaput.
 
-
-from collections import Set
+from collections.abc import Set
 from itertools import count
 from itertools import groupby
 

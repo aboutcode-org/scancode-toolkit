@@ -1,3 +1,4 @@
+- bsd-new AND google-patent-license-golang
 - - Go
   - X11
   - Go
@@ -24,8 +25,8 @@
 - (bsd-new AND google-patent-license-golang) AND mit AND (bsd-new AND google-patent-license-golang)
   AND (bsd-new AND google-patent-license-golang) AND (bsd-new AND google-patent-license-golang)
   AND bsd-simplified AND (bsd-new AND google-patent-license-golang) AND (bsd-new AND google-patent-license-golang)
-  AND mpeg-ssg AND multics AND (apache-2.0 AND apache-2.0) AND bsd-2-clause-views AND cc-by-3.0
-  AND bsd-new AND (bsd-new AND google-patent-license-golang)
+  AND sunpro AND mpeg-ssg AND multics AND (apache-2.0 AND apache-2.0) AND bsd-2-clause-views
+  AND cc-by-3.0 AND cc-by-3.0 AND bsd-new AND (bsd-new AND google-patent-license-golang)
 - |
   © 2009, 2010, The Go Authors. All rights reserved.
   © 1994-1999 Lucent Technologies Inc. All rights reserved.
