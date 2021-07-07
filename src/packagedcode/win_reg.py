@@ -1,124 +1,47 @@
+#
+# Copyright (c) nexB Inc. and others. All rights reserved.
+# ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
+#
+
 import os
+from pathlib import Path
 from pathlib import PureWindowsPath
 
 import attr
-import logbook
-from regipy.exceptions import NoRegistrySubkeysException
-from regipy.exceptions import RegistryKeyNotFoundException
-from regipy.registry import RegistryHive
+try:
+    from regipy.exceptions import NoRegistrySubkeysException
+    from regipy.exceptions import RegistryKeyNotFoundException
+    from regipy.registry import RegistryHive
+except ImportError:
+    pass
 
-from commoncode.command import execute
 from packagedcode import models
 
 
-logger = logbook.Logger(__name__)
+# Tracing flags
 TRACE = False
 
 
-MSIINFO_BIN_LOCATION = 'packagedcode_msitools.msiinfo'
-
-
-def get_msiinfo_bin_location():
-    """
-    Return the binary location for msiinfo
-    """
-    from plugincode.location_provider import get_location
-    msiinfo_bin_loc = get_location(MSIINFO_BIN_LOCATION)
-    if not msiinfo_bin_loc:
-        raise Exception(
-            'CRITICAL: msiinfo not provided. '
-            'Unable to continue: you need to install the plugin packagedcode-msitools'
-        )
-    return msiinfo_bin_loc
-
-
-class MsiinfoException(Exception):
+def logger_debug(*args):
     pass
 
 
-def parse_msiinfo_suminfo_output(output_string):
-    """
-    Return a dictionary containing information from the output of `msiinfo suminfo`
-    """
-    # Split lines by newline and place lines into a list
-    output_list = output_string.split('\n')
-    results = {}
-    # Partition lines by the leftmost ":", use the string to the left of ":" as
-    # the key and use the string to the right of ":" as the value
-    for output in output_list:
-        key, _, value = output.partition(':')
-        if key:
-            results[key] = value.strip()
-    return results
+if TRACE:
+    import sys
+    import logging
 
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
-def get_msi_info(location):
-    """
-    Run the command `msiinfo suminfo` on the file at `location` and return the
-    results in a dictionary
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, str)
+                                     and a or repr(a) for a in args))
 
-    This function requires the `packagedcode-msiinfo` plugin to be installed on the system
-    """
-    rc, stdout, stderr = execute(
-        cmd_loc=get_msiinfo_bin_location(),
-        args=[
-            'suminfo',
-            location,
-        ],
-    )
-    if stderr:
-        error_message = f'Error encountered when reading MSI information from {location}: '
-        error_message = error_message + stderr
-        raise MsiinfoException(error_message)
-    return parse_msiinfo_suminfo_output(stdout)
-
-
-def msi_parse(location):
-    """
-    TODO: get proper package name and version from MSI
-
-    Currently, we use the contents `Subject` field from the msiinfo suminfo
-    results as the package name because it contains the package name most of
-    the time. Getting the version out of the `Subject` string is not
-    straightforward because the format of the string is usually different
-    between different MSIs
-    """
-    info = get_msi_info(location)
-
-    author_name = info.get('Author', '')
-    parties = []
-    if author_name:
-        parties.append(
-            models.Party(
-                type=None,
-                role='author',
-                name=author_name
-            )
-        )
-
-    name = info.get('Subject', '')
-    description = info.get('Comments', '')
-    keywords = info.get('Keywords', '')
-
-    return MsiInstallerPackage(
-        name=name,
-        description=description,
-        parties=parties,
-        keywords=keywords,
-        extra_data=info
-    )
-
-
-@attr.s()
-class MsiInstallerPackage(models.Package):
-    filetypes = ('msi installer',)
-    mimetypes = ('application/x-msi',)
-    extensions = ('.msi',)
-    default_type = 'msi'
-
-    @classmethod
-    def recognize(cls, location):
-        yield msi_parse(location)
 
 # TODO: Find "boilerplate" files, what are the things that we do not care about, e.g. thumbs.db
 # TODO: check for chocolatey
@@ -135,7 +58,7 @@ def get_registry_name_key_entry(registry_hive, registry_path):
         name_key_entry = registry_hive.get_key(registry_path)
     except (RegistryKeyNotFoundException, NoRegistrySubkeysException) as ex:
         if TRACE:
-            logger.debug('Did not find the key: {}'.format(ex))
+            logger_debug('Did not find the key: {}'.format(ex))
         return
     return name_key_entry
 
@@ -278,8 +201,6 @@ def get_installed_programs(root_dir):
 
 @attr.s()
 class InstalledWindowsProgram(models.Package):
-    filetypes = ('SOFTWARE',)
-    mimetypes = ('application/octet-stream',)
     default_type = 'windows-program'
 
     @classmethod
@@ -298,7 +219,7 @@ class InstalledWindowsProgram(models.Package):
         install_location_no_root = install_location.relative_to(*install_location.parts[:1])
         install_location_no_root = str(install_location_no_root)
         install_location_no_root = install_location_no_root.replace(' ', '_')
-        install_location_in_image = PureWindowsPath(root_dir).joinpath('Files', PureWindowsPath(install_location_no_root))
+        install_location_in_image = Path(root_dir).joinpath('Files', PureWindowsPath(install_location_no_root))
 
         installed_files = []
         for root, _, files in os.walk(install_location_in_image):
