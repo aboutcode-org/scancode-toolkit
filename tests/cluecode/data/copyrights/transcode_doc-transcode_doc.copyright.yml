@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Thomas Ostreich
     count: 1
+# the O in Ostreich is an Unicode Ö LATIN CAPITAL LETTER O WITH DIAERESIS 
+# Hex code point 00D6

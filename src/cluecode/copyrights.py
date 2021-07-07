@@ -204,7 +204,7 @@ class CopyrightDetector(object):
     """
 
     def __init__(self):
-        self.lexer = lex.Lexer(patterns)
+        self.lexer = lex.Lexer(patterns, re_flags=re.UNICODE)
         self.parser = parse.Parser(grammar, trace=TRACE_DEEP, validate=VALIDATE)
 
     def detect(self,
@@ -243,7 +243,7 @@ class CopyrightDetector(object):
             return
 
         # first, POS tag each token using token regexes
-        lexed_text = list(self.lexer.lex_tokens(tokens))
+        lexed_text = list(self.lexer.lex_tokens(tokens, trace=TRACE_DEEP))
         if TRACE: logger_debug(f'CopyrightDetector: lexed tokens: {lexed_text}')
 
         # then build a parse parse_tree based on tagged tokens
@@ -339,7 +339,7 @@ class CopyrightDetector(object):
                     yield author
 
 
-def get_tokens(numbered_lines, splitter=re.compile('[\\t =;]+').split):
+def get_tokens(numbered_lines, to_ascii=True, splitter=re.compile('[\\t =;]+').split):
     """
     Return an iterable of pygmars.Token built from a ``numbered_lines`` iterable
     of tuples of (line number, text).
@@ -350,7 +350,7 @@ def get_tokens(numbered_lines, splitter=re.compile('[\\t =;]+').split):
         if TRACE_TOK:
             logger_debug('  get_tokens: bare line: ' + repr(line))
 
-        line = prepare_text_line(line)
+        line = prepare_text_line(line, to_ascii=to_ascii)
 
         if TRACE_TOK:
             logger_debug('  get_tokens: preped line: ' + repr(line))
@@ -1661,6 +1661,9 @@ patterns = [
     # things composed only of non-word letters (e.g. junk punctuations)
     # but keeping _ ? and () as parts of words
     (r'^[^\w\?()]{2,10}$', 'JUNK'),
+
+    # Plain proper nouns including unicode such as László Németh
+    (r'^(:?[A-Z][^\W_]+)\.?$', 'NNP'),
 
     ############################################################################
     # catch all other as Nouns
@@ -3470,6 +3473,8 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         .replace('\xc2', '')
         .replace('\\xc2', '')
 
+        # mojibake of EF BF BD aka. REPLACEMENT CHARACTER
+        .replace('�', ' ')
         # not really a dash: an emdash
         .replace('–', '-')
 
@@ -3517,8 +3522,8 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         # replace ('
         .replace('("', ' ')
         # some trailing garbage ')
-        .replace(u"')", ' ')
-        .replace(u"],", ' ')
+        .replace("')", ' ')
+        .replace("],", ' ')
     )
     # note that we do not replace the debian tag by a space:  we remove it
     line = strip_markup(line, dedeb=dedeb)
@@ -3546,6 +3551,9 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     # strip verbatim back slash and comment signs again at both ends of a line
     # FIXME: this is done at the start of this function already
     line = line.strip('\\/*#%;')
+    
+    # unicode punctuations
+    line = line.strip('•')
 
     # normalize spaces
     line = ' '.join(line.split())
