@@ -157,6 +157,10 @@ def _report_installed_programs(registry_tree):
                 package_info['publisher'] = value
             if name == 'URLInfoAbout':
                 package_info['homepage_url'] = value
+            if name == 'DisplayIcon':
+                package_info['DisplayIcon'] = value
+            if name == 'UninstallString':
+                package_info['UninstallString'] = value
 
         name = package_info.get('name')
         if not name:
@@ -166,6 +170,8 @@ def _report_installed_programs(registry_tree):
         homepage_url = package_info.get('homepage_url')
         install_location = package_info.get('install_location')
         publisher = package_info.get('publisher')
+        display_icon = package_info.get('DisplayIcon')
+        uninstall_string = package_info.get('UninstallString')
 
         parties = []
         if publisher:
@@ -177,13 +183,18 @@ def _report_installed_programs(registry_tree):
                 )
             )
 
+        known_program_files = []
+        if display_icon:
+            known_program_files.append(display_icon)
+        if uninstall_string:
+            known_program_files.append(uninstall_string)
+
         extra_data = {}
         if install_location:
             extra_data['install_location'] = install_location
+        if known_program_files:
+            extra_data['known_program_files'] = known_program_files
 
-        # TODO: report installed files from "DisplayIcon" and "UninstallString",
-        # they may be placed in different locations than the install location of
-        # the program
         yield InstalledWindowsProgram(
             name=name,
             version=version,
@@ -194,6 +205,10 @@ def _report_installed_programs(registry_tree):
 
 
 def reg_parse(location):
+    """
+    Yield InstalledWindowsPrograms from `location` using
+    `report_installed_programs` and `report_installed_dotnet_versions`
+    """
     for installed_program in report_installed_programs(location):
         yield installed_program
     for installed_dotnet in report_installed_dotnet_versions(location):
@@ -205,9 +220,7 @@ def get_installed_packages(root_dir, is_container=True):
     Yield InstalledWindowsProgram objects for every detected installed program
     from Windows registry files in known locations
     """
-
     # These paths are relative to a Windows docker image layer root directory
-    # TODO: have a way
     if is_container:
         software_registry_locations = [
             os.path.join(root_dir, 'Hives', 'Software_Delta'),
@@ -215,14 +228,37 @@ def get_installed_packages(root_dir, is_container=True):
         ]
     else:
         # TODO: Add support for virtual machines
-        #
         raise Exception('Unsuported file system type')
+
     for software_registry_loc in software_registry_locations:
         if not os.path.exists(software_registry_loc):
             continue
         for installed_program in reg_parse(software_registry_loc):
             installed_program.populate_installed_files(root_dir)
             yield installed_program
+
+
+def remove_drive_letter(path):
+    """
+    Given a Windows path string, remove the leading drive letter and return the
+    path string as a POSIX-styled path.
+    """
+    # Remove leading drive letter ("C:\\")
+    path = PureWindowsPath(path)
+    path_no_drive_letter = path.relative_to(*path.parts[:1])
+    # POSIX-ize the path
+    posixed_path = path_no_drive_letter.as_posix()
+    return posixed_path
+
+
+def create_absolute_installed_file_path(root_dir, file_path):
+    """
+    Return an absolute path to `file_path` given the root directory path at
+    `root_dir`
+    """
+    file_path = remove_drive_letter(file_path)
+    # Append the install location to the path string `root_dir`
+    return Path(root_dir).joinpath(file_path)
 
 
 @attr.s()
@@ -234,30 +270,30 @@ class InstalledWindowsProgram(models.Package):
         for installed in reg_parse(location):
             yield installed
 
-    def populate_installed_files(self, root_dir=None):
+    def populate_installed_files(self, root_dir):
         install_location = self.extra_data.get('install_location')
-        if not install_location:
+        if not install_location or not os.path.exists(install_location):
             return
 
-        # Remove leading drive letter ("C:\\")
-        install_location = PureWindowsPath(install_location)
-        install_location_no_root = install_location.relative_to(*install_location.parts[:1])
-        # POSIX-ize the path
-        install_location_no_root_posix = install_location_no_root.as_posix()
+        absolute_install_location = create_absolute_installed_file_path(install_location)
+        installed_files = []
+        for root, _, files in os.walk(absolute_install_location):
+            for file in files:
+                installed_file_path = os.path.join(root, file)
+                installed_files.append(
+                    models.PackageFile(path=installed_file_path)
+                )
 
-        if not root_dir:
-            self.installed_files = [
-                models.PackageFile(path=install_location_no_root_posix)
-            ]
-        else:
-            install_location = Path(root_dir).joinpath(install_location_no_root_posix)
+        known_program_files = self.extra_data.get('known_program_files', [])
+        for known_program_file_path in known_program_files:
+            absolute_known_program_file_path = create_absolute_installed_file_path(
+                root_dir=root_dir,
+                file_path=known_program_file_path,
+            )
+            if not os.path.exists(absolute_known_program_file_path):
+                continue
+            installed_files.append(
+                models.PackageFile(path=absolute_known_program_file_path)
+            )
 
-            installed_files = []
-            for root, _, files in os.walk(install_location):
-                for file in files:
-                    installed_file_path = os.path.join(root, file)
-                    installed_files.append(
-                        models.PackageFile(path=installed_file_path)
-                    )
-
-            self.installed_files = installed_files
+        self.installed_files = installed_files
