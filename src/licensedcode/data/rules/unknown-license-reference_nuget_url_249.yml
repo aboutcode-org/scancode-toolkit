@@ -1,6 +1,6 @@
 license_expression: unknown-license-reference
 is_license_reference: yes
+is_unknown: yes
 relevance: 100
 ignorable_urls:
     - https://gitlab.com/czubehead/csharp-aes/blob/master/LICENSE
-is_unknown: yes

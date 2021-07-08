@@ -1,7 +1,7 @@
 license_expression: unknown-license-reference
 is_license_notice: yes
+is_unknown: yes
 minimum_coverage: 80
 relevance: 100
 referenced_filenames:
     - LICENSE
-is_unknown: yes

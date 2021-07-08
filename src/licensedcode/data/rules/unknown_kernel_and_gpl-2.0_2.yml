@@ -1,7 +1,7 @@
 license_expression: gpl-2.0 AND free-unknown
 is_license_notice: yes
+is_unknown: yes
 referenced_filenames:
     - /usr/doc/copyright/GPL
     - COPYING
 notes: there is an explicit reference to COPYING in linux, hence a GPL-2.0
-is_unknown: yes

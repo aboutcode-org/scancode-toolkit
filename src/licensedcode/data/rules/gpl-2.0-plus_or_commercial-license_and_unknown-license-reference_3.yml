@@ -1,5 +1,6 @@
 license_expression: (gpl-2.0-plus OR commercial-license) AND unknown-license-reference
 is_license_notice: yes
+is_unknown: yes
 relevance: 100
 ignorable_copyrights:
     - (c) 2006-2020 Bernardo Damele Assumpcao Guimaraes, Miroslav Stampar
@@ -10,4 +11,3 @@ ignorable_urls:
 ignorable_emails:
     - dev@sqlmap.org
     - sales@sqlmap.org
-is_unknown: yes

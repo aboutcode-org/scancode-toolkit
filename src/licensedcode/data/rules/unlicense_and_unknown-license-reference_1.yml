@@ -1,6 +1,6 @@
 license_expression: unlicense AND unknown-license-reference
 is_license_notice: yes
+is_unknown: yes
 relevance: 100
 ignorable_urls:
     - http://unlicense.org/
-is_unknown: yes

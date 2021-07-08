@@ -1,5 +1,5 @@
 license_expression: unknown-license-reference AND jam
 is_license_reference: yes
+is_unknown: yes
 referenced_filenames:
     - jam.c
-is_unknown: yes

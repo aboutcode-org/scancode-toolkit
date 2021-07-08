@@ -1,5 +1,5 @@
 license_expression: mit AND free-unknown
 is_license_notice: yes
+is_unknown: yes
 referenced_filenames:
     - LICENSE
-is_unknown: yes

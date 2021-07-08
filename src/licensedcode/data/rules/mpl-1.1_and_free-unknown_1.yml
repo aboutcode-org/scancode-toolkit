@@ -1,6 +1,6 @@
 license_expression: mpl-1.1 AND free-unknown
 is_license_notice: yes
+is_unknown: yes
 minimum_coverage: 75
 ignorable_urls:
     - http://www.mozilla.org/MPL/
-is_unknown: yes

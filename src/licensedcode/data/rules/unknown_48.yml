@@ -1,6 +1,6 @@
 license_expression: free-unknown
 is_license_reference: yes
+is_unknown: yes
 relevance: 70
 ignorable_urls:
     - http://creativecommons.org/ns#Distribution
-is_unknown: yes

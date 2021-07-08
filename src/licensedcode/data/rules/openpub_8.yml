@@ -1,5 +1,6 @@
 license_expression: openpub AND free-unknown
 is_license_text: yes
+is_unknown: yes
 relevance: 85
 notes: modified
 ignorable_authors:
@@ -9,4 +10,3 @@ ignorable_urls:
     - http://www.opencontent.org/openpub
 ignorable_emails:
     - opal@opencontent.org
-is_unknown: yes

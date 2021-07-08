@@ -1,5 +1,5 @@
 license_expression: gpl-2.0 AND unknown-license-reference
 is_license_notice: yes
+is_unknown: yes
 relevance: 100
 notes: found in Android bionic
-is_unknown: yes

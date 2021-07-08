@@ -1,6 +1,6 @@
 license_expression: unknown-license-reference
 is_license_reference: yes
+is_unknown: yes
 relevance: 90
 ignorable_urls:
     - https://raw.githubusercontent.com/mgravell/capnproto-net/master/LICENSE
-is_unknown: yes

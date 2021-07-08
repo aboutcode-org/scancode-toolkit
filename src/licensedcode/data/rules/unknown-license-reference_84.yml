@@ -1,6 +1,6 @@
 license_expression: unknown-license-reference
 is_license_reference: yes
+is_unknown: yes
 relevance: 100
 ignorable_urls:
     - https://www.microsoft.com/en-us/kinectforwindows/develop/sdk-eula.aspx
-is_unknown: yes

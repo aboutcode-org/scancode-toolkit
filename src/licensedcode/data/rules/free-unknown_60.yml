@@ -1,9 +1,9 @@
 license_expression: free-unknown
 is_license_text: yes
+is_unknown: yes
 relevance: 100
 ignorable_authors:
     - the WU-FTPD Development Group, the Washington University at Saint Louis, Berkeley Software
         Design, Inc., and their contributors
 ignorable_urls:
     - http://www.wu-ftpd.org/license.html
-is_unknown: yes

@@ -1,5 +1,6 @@
 license_expression: free-unknown
 is_license_notice: yes
+is_unknown: yes
 minimum_coverage: 99
 notes: |
     this is a rare modified Apache 2.0 license from PIXAR, reported as
@@ -7,4 +8,3 @@ notes: |
     See https://raw.githubusercontent.com/PixarAnimationStudios/ruby-jss/master/LICENSE.txt
 ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
-is_unknown: yes
