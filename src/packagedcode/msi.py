@@ -86,7 +86,9 @@ def get_msi_info(location):
     Run the command `msiinfo suminfo` on the file at `location` and return the
     results in a dictionary
 
-    This function requires the `packagedcode-msiinfo` plugin to be installed on the system
+    This function requires `msiinfo` to be installed on the system, either by
+    installing the `packagedcode-msiinfo` plugin or by installing `msitools`
+    through a package manager.
     """
     rc, stdout, stderr = execute(
         cmd_loc=get_msiinfo_bin_location(),
@@ -102,9 +104,16 @@ def get_msi_info(location):
     return parse_msiinfo_suminfo_output(stdout)
 
 
-def get_version_from_subject_line(subject):
+def get_version_from_subject_line(subject_line):
+    """
+    Return a version number from `subject_line`
+
+    `subject_line` is the `Subject` field from the output of
+    `msiinfo suminfo <msi installer file>`. This string sometimes contains
+    the version number of the package contained in the MSI installer.
+    """
     for pattern in VERSION_PATTERNS_REGEX():
-        version = re.search(pattern, subject)
+        version = re.search(pattern, subject_line)
         if version:
             v = version.group(0)
             # prefix with v space
@@ -113,19 +122,11 @@ def get_version_from_subject_line(subject):
             return v
 
 
-def msi_parse(location):
+def create_package_from_msiinfo_results(msiinfo_results):
     """
-    TODO: get proper package name and version from MSI
-
-    Currently, we use the contents `Subject` field from the msiinfo suminfo
-    results as the package name because it contains the package name most of
-    the time. Getting the version out of the `Subject` string is not
-    straightforward because the format of the string is usually different
-    between different MSIs
+    Return an MsiInstallerPackage from the dictionary `msiinfo_results`
     """
-    info = get_msi_info(location)
-
-    author_name = info.get('Author', '')
+    author_name = msiinfo_results.get('Author', '')
     parties = []
     if author_name:
         parties.append(
@@ -136,11 +137,16 @@ def msi_parse(location):
             )
         )
 
-    subject = info.get('Subject', '')
+    # Currently, we use the contents `Subject` field from the msiinfo suminfo
+    # results as the package name because it contains the package name most of
+    # the time. Getting the version out of the `Subject` string is not
+    # straightforward because the format of the string is usually different
+    # between different MSIs
+    subject = msiinfo_results.get('Subject', '')
     name = subject
     version = get_version_from_subject_line(subject)
-    description = info.get('Comments', '')
-    keywords = info.get('Keywords', '')
+    description = msiinfo_results.get('Comments', '')
+    keywords = msiinfo_results.get('Keywords', '')
 
     return MsiInstallerPackage(
         name=name,
@@ -148,8 +154,16 @@ def msi_parse(location):
         description=description,
         parties=parties,
         keywords=keywords,
-        extra_data=info
+        extra_data=msiinfo_results
     )
+
+
+def msi_parse(location):
+    """
+    Return an MsiInstallerPackage from `location`
+    """
+    info = get_msi_info(location)
+    return create_package_from_msiinfo_results(info)
 
 
 @attr.s()

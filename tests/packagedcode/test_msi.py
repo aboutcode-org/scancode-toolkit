@@ -9,7 +9,10 @@
 
 import os
 
-from packagedcode.msi import msi_parse
+from packagedcode.models import Party
+from packagedcode.msi import create_package_from_msiinfo_results
+from packagedcode.msi import MsiInstallerPackage
+from packagedcode.msi import parse_msiinfo_suminfo_output
 
 from packages_test_utils import PackageTester
 
@@ -17,8 +20,44 @@ from packages_test_utils import PackageTester
 class TestMsi(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_msi_parse_7z(self):
-        test_file = self.get_test_loc('msi/7z1900-x64.msi')
-        expected_loc = self.get_test_loc('msi/7z1900-x64.msi.expected')
-        package = msi_parse(test_file)
-        self.check_package(package, expected_loc, regen=False)
+    python_3_9_5_add_to_path_results = {
+        'Title': 'Installation Database',
+        'Subject': 'Python 3.9.5 Add to Path (64-bit)',
+        'Author': 'Python Software Foundation',
+        'Keywords': 'Installer',
+        'Comments': 'This installer database contains the logic and data required to install Python 3.9.5 Add to Path (64-bit).',
+        'Template': 'x64;1033',
+        'Revision number (UUID)': '{33F421A1-6B08-4919-A6AB-62A429A0E739}',
+        'Created': 'Mon May  3 10:41:02 2021',
+        'Last saved': 'Mon May  3 10:41:02 2021',
+        'Version': '300 (12c)',
+        'Source': '10 (a)',
+        'Application': 'Windows Installer XML Toolset (3.11.1.2318)',
+        'Security': '2 (2)'
+    }
+
+    def test_msi_parse_msiinfo_suminfo_output(self):
+        test_file = self.get_test_loc('msi/python-add-to-path-msiinfo-results.txt')
+        expected_loc = self.get_test_loc('msi/python-add-to-path-msiinfo-results.expected')
+        with open(test_file) as f:
+            msiinfo_results = f.read()
+        result = parse_msiinfo_suminfo_output(msiinfo_results)
+        self.assertEqual(result, self.python_3_9_5_add_to_path_results)
+
+    def test_msi_create_package_from_msiinfo_results(self):
+        result = create_package_from_msiinfo_results(self.python_3_9_5_add_to_path_results)
+        expected = MsiInstallerPackage(
+            name='Python 3.9.5 Add to Path (64-bit)',
+            version='v 3.9.5',
+            description='This installer database contains the logic and data required to install Python 3.9.5 Add to Path (64-bit).',
+            parties=[
+                Party(
+                    type=None,
+                    role='author',
+                    name='Python Software Foundation'
+                )
+            ],
+            keywords='Installer',
+            extra_data=self.python_3_9_5_add_to_path_results
+        )
+        self.assertEqual(result, expected)
