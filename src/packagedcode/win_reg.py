@@ -226,6 +226,9 @@ def get_installed_packages(root_dir, is_container=True):
             os.path.join(root_dir, 'Hives', 'Software_Delta'),
             os.path.join(root_dir, 'Files/Windows/System32/config/SOFTWARE')
         ]
+        # We are setting the root to be the `Files` directory, since this
+        # directory represents the root `C:\` drive of a Windows installation
+        root_dir = os.path.join(root_dir, 'Files')
     else:
         # TODO: Add support for virtual machines
         raise Exception('Unsuported file system type')
@@ -258,7 +261,7 @@ def create_absolute_installed_file_path(root_dir, file_path):
     """
     file_path = remove_drive_letter(file_path)
     # Append the install location to the path string `root_dir`
-    return Path(root_dir).joinpath(file_path)
+    return str(Path(root_dir).joinpath(file_path))
 
 
 @attr.s()
@@ -272,17 +275,21 @@ class InstalledWindowsProgram(models.Package):
 
     def populate_installed_files(self, root_dir):
         install_location = self.extra_data.get('install_location')
-        if not install_location or not os.path.exists(install_location):
+        if not install_location:
             return
 
-        absolute_install_location = create_absolute_installed_file_path(install_location)
+        absolute_install_location = create_absolute_installed_file_path(
+            root_dir=root_dir,
+            file_path=install_location
+        )
+        if not os.path.exists(absolute_install_location):
+            return
+
         installed_files = []
         for root, _, files in os.walk(absolute_install_location):
             for file in files:
                 installed_file_path = os.path.join(root, file)
-                installed_files.append(
-                    models.PackageFile(path=installed_file_path)
-                )
+                installed_files.append(installed_file_path)
 
         known_program_files = self.extra_data.get('known_program_files', [])
         for known_program_file_path in known_program_files:
@@ -290,10 +297,9 @@ class InstalledWindowsProgram(models.Package):
                 root_dir=root_dir,
                 file_path=known_program_file_path,
             )
-            if not os.path.exists(absolute_known_program_file_path):
+            if (not os.path.exists(absolute_known_program_file_path)
+                    or absolute_known_program_file_path in installed_files):
                 continue
-            installed_files.append(
-                models.PackageFile(path=absolute_known_program_file_path)
-            )
+            installed_files.append(absolute_known_program_file_path)
 
-        self.installed_files = installed_files
+        self.installed_files = [models.PackageFile(path=path) for path in installed_files]
