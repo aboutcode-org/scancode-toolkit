@@ -31,6 +31,7 @@ TRACE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT', False)
 TRACE_DEEP = 0
 if os.environ.get('SCANCODE_DEBUG_COPYRIGHT_DEEP'):
     TRACE_DEEP = 1
+    TRACE = False
 
 TRACE_TOK = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT_TOKEN', False)
 
@@ -1163,6 +1164,9 @@ patterns = [
     (r'^Engine\.$', 'NN'),
     (r'^While$', 'NN'),
 
+    # alone this is not enough for an NNP
+    (r'^Free$', 'NN'),
+
     # Hours/Date/Day/Month text references
     (r'^am$', 'NN'),
     (r'^pm$', 'NN'),
@@ -1736,7 +1740,7 @@ grammar = """
     COMPANY: {<BY>? <NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY|NAME|NAME-EMAIL><COMP>?}        #130
 
    # Free Software Foundation, Inc.
-    COMPANY: {<NNP> <NNP> <COMP> <COMP>}       #135
+    COMPANY: {<NN|NNP> <NNP> <COMP> <COMP>}       #135
 
    #  Mediatrix Telecom, inc. <ericb@mediatrix.com>
     COMPANY: {<NNP>+ <COMP> <EMAIL>}       #136
@@ -2667,6 +2671,7 @@ COPYRIGHTS_SUFFIXES = frozenset([
     'author',
     'all',
     'some',
+    'and'
 ])
 
 # Set of statements that get detected and are junk/false positive
@@ -3404,15 +3409,14 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     )
     line = remove_printf_format_codes(' ', line)
 
-    # un common comment line prefixes
+    # less common comment line prefixes
     line = remove_comment_markers(' ', line)
     line = remove_man_comment_markers(' ', line)
 
     line = (line
-        # C and C++ style markers
-        .replace('^//', ' ')
+        # C and C++ style comment markers
         .replace('/*', ' ').replace('*/', ' ')
-
+        .strip().strip('/*#')
         # un common pipe chars in some ascii art
         .replace('|', ' ')
 
