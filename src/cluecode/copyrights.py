@@ -909,6 +909,7 @@ patterns = [
     # JUNK as camel case with a single hump such as in "processingInfo"
     (r'^[a-z]{3,10}[A-Z][a-z]{3,10}$', 'JUNK'),
 
+    (r'^\$?Guid$', 'JUNK'), 
 
     ############################################################################
     # Nouns and proper Nouns
