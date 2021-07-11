@@ -186,21 +186,21 @@
         {
           "value": "Copyright (c) 1993 The Regents of the University of California",
           "start_line": 22,
-          "end_line": 23
+          "end_line": 22
         }
       ],
       "holders": [
         {
           "value": "The Regents of the University of California",
           "start_line": 22,
-          "end_line": 23
+          "end_line": 22
         }
       ],
       "authors": [
         {
           "value": "the University of California, Berkeley and its contributors",
           "start_line": 35,
-          "end_line": 37
+          "end_line": 36
         }
       ],
       "emails": [

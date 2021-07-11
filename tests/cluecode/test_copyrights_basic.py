@@ -119,7 +119,7 @@ class TestTextPreparation(FileBasedTesting):
         ]
 
         result = list(copyrights_module.candidate_lines(enumerate(lines, 1)))
-        assert result == expected 
+        assert result == expected
 
     def test_is_candidates_should_not_select_line_with_bare_full_year(self):
         line = '2012'
@@ -250,16 +250,16 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_company_lines_name_in_java(self):
         test_file = self.get_test_loc('copyrights_basic/company_name_in_java-9_java.java')
         expected = [
-            (u'Copyright (c) 2008-2011 Company Name Incorporated', 2, 3)
+            (u'Copyright (c) 2008-2011 Company Name Incorporated', 2, 2)
         ]
         check_detection_with_lines(expected, test_file)
 
     def test_copyright_lines_03e16f6c_0(self):
         test_file = self.get_test_loc('copyrights_basic/03e16f6c_0-e_f_c.0')
         expected = [
-            (u'Copyright (c) 1997 Microsoft Corp.', 31, 37),
-            (u'Copyright (c) 1997 Microsoft Corp.', 31, 37),
-            (u'Copyright (c) 1997 Microsoft', 61, 63)
+            (u'Copyright (c) 1997 Microsoft Corp.', 31, 31),
+            (u'Copyright (c) 1997 Microsoft Corp.', 35, 35),
+            (u'Copyright (c) 1997 Microsoft', 61, 61)
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -268,16 +268,16 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         # could be either Wisekey or OISTE Foundation.
         test_file = self.get_test_loc('copyrights_basic/3a3b02ce_0-a_b_ce.0')
         expected = [
-            (u'Copyright (c) 2005, OU OISTE Foundation', 31, 37),
-            (u'Copyright (c) 2005, OU OISTE Foundation', 31, 37),
+            (u'Copyright (c) 2005, OU OISTE Foundation', 31, 31),
+            (u'Copyright (c) 2005, OU OISTE Foundation', 35, 35),
         ]
         check_detection_with_lines(expected, test_file)
 
     def test_copyright_lines_boost_vector(self):
         test_file = self.get_test_loc('copyrights_basic/vector50.hpp')
         expected = [
-            (u'Copyright (c) 2005 Arkadiy Vertleyb', 2, 3),
-            (u'Copyright (c) 2005 Peder Holt', 2, 3),
+            (u'Copyright (c) 2005 Arkadiy Vertleyb', 2, 2),
+            (u'Copyright (c) 2005 Peder Holt', 3, 3),
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -305,14 +305,14 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_isc(self):
         test_file = self.get_test_loc('copyrights_basic/isc-c.c')
         expected = [
-            (u'Copyright (c) 1998-2000 The Internet Software Consortium', 2, 3)
+            (u'Copyright (c) 1998-2000 The Internet Software Consortium', 3, 3)
         ]
         check_detection_with_lines(expected, test_file)
 
     def test_copyright_lines_sample_py(self):
         test_file = self.get_test_loc('copyrights_basic/sample_py-py.py')
         expected = [
-            (u'COPYRIGHT 2006 ABC', 6, 7)
+            (u'COPYRIGHT 2006 ABC', 6, 6)
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -326,7 +326,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_abc_loss_of_holder_c(self):
         test_file = self.get_test_loc('copyrights_basic/abc_loss_of_holder_c-c.c')
         expected = [
-            (u'copyright abc 2001', 1, 2)
+            (u'copyright abc 2001', 1, 1)
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -334,8 +334,8 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights_basic/abiword_common.copyright')
         expected = [
             (u'Copyright (c) 1998- AbiSource, Inc. & Co.', 15, 17),
-            (u'Copyright (c) 2009 Masayuki Hatta', 41, 42),
-            (u'Copyright (c) 2009 Patrik Fimml <patrik@fimml.at>', 41, 42),
+            (u'Copyright (c) 2009 Masayuki Hatta', 41, 41),
+            (u'Copyright (c) 2009 Patrik Fimml <patrik@fimml.at>', 42, 42),
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -349,14 +349,14 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_activefieldattribute_cs(self):
         test_file = self.get_test_loc('copyrights_basic/activefieldattribute_cs-ActiveFieldAttribute_cs.cs')
         expected = [
-            (u'Copyright 2009 - Thomas Hansen thomas@ra-ajax.org', 3, 5)
+            (u'Copyright 2009 - Thomas Hansen thomas@ra-ajax.org', 3, 4)
         ]
         check_detection_with_lines(expected, test_file)
 
     def test_copyright_lines_addr_c(self):
         test_file = self.get_test_loc('copyrights_basic/addr_c-addr_c.c')
         expected = [
-            (u'Copyright 1999 Cornell University', 3, 4),
+            (u'Copyright 1999 Cornell University', 4, 4),
             (u'Copyright 2000 Jon Doe', 5, 5)
         ]
         check_detection_with_lines(expected, test_file)
@@ -364,7 +364,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_adler_inflate_c(self):
         test_file = self.get_test_loc('copyrights_basic/adler_inflate_c-inflate_c.c')
         expected = [
-            (u'Not copyrighted 1992 by Mark Adler', 1, 2)
+            (u'Not copyrighted 1992 by Mark Adler', 1, 1)
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -378,7 +378,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_andre_darcy(self):
         test_file = self.get_test_loc('copyrights_basic/andre_darcy-c.c')
         expected = [
-            (u'Copyright (c) 1995, Pascal Andre (andre@via.ecp.fr)', 2, 6),
+            (u'Copyright (c) 1995, Pascal Andre (andre@via.ecp.fr)', 5, 6),
             (u"copyright 1997, 1998, 1999 by D'Arcy J.M. Cain (darcy@druid.net)", 25, 26)
         ]
         check_detection_with_lines(expected, test_file)
@@ -387,7 +387,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights_basic/android_c-c.c')
         expected = [
             (u'Copyright (c) 2009 The Android Open Source Project', 2, 2),
-            (u'Copyright 2003-2005 Colin Percival', 23, 24)
+            (u'Copyright 2003-2005 Colin Percival', 23, 23)
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -413,7 +413,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         expected = [
             (u'Copyright (c) 2000 Atheros Communications, Inc.', 2, 2),
             (u'Copyright (c) 2001 Atheros Communications, Inc.', 3, 3),
-            (u'Copyright (c) 1994-1997 by Intel Corporation', 8, 11)
+            (u'Copyright (c) 1994-1997 by Intel Corporation', 10, 11)
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -434,19 +434,19 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_babkin_txt(self):
         test_file = self.get_test_loc('copyrights_basic/babkin_txt.txt')
         expected = [
-            (u'Copyright (c) North', 1, 5),
-            (u'Copyright (c) South', 1, 5),
-            (u'Copyright (c) 2001 by the TTF2PT1 project', 1, 5),
-            (u'Copyright (c) 2001 by Sergey Babkin', 1, 5),
+            (u'Copyright (c) North', 1, 1),
+            (u'Copyright (c) South', 2, 2),
+            (u'Copyright (c) 2001 by the TTF2PT1 project', 4, 4),
+            (u'Copyright (c) 2001 by Sergey Babkin', 5, 5),
         ]
         check_detection_with_lines(expected, test_file)
 
     def test_copyright_lines_blender_debian(self):
         test_file = self.get_test_loc('copyrights_basic/blender_debian-blender.copyright')
         expected = [
-            (u'Copyright (c) 2002-2008 Blender Foundation', 9, 11),
-            (u'Copyright (c) 2004-2005 Masayuki Hatta <mhatta@debian.org>', 31, 35),
-            (u'(c) 2005-2007 Florian Ernst <florian@debian.org>', 31, 35),
-            (u'(c) 2007-2008 Cyril Brulebois <kibi@debian.org>', 31, 35),
+            (u'Copyright (c) 2002-2008 Blender Foundation', 9, 9),
+            (u'Copyright (c) 2004-2005 Masayuki Hatta <mhatta@debian.org>', 31, 31),
+            (u'(c) 2005-2007 Florian Ernst <florian@debian.org>', 32, 32),
+            (u'(c) 2007-2008 Cyril Brulebois <kibi@debian.org>', 33, 33),
         ]
         check_detection_with_lines(expected, test_file)

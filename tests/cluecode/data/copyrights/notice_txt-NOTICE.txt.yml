@@ -7,7 +7,7 @@ copyrights:
   - Copyright (c) OSGi Alliance (2000, 2009)
   - Copyright (c) 2000-2005 INRIA, France Telecom
   - (c) 1999-2003
-  - (c) 2001-2004
+  - (c) 2001-2004 http://ws.apache.org/axis2
   - Copyright (c) 2004, Didier Donsez
   - (c) 2001-2004 http://commons.apache.org/logging
   - (c) 1999-2003. http://xml.apache.org/dist/LICENSE.txt
@@ -19,6 +19,7 @@ holders:
   - The Knopflerfish Project
   - OSGi Alliance
   - INRIA, France Telecom
+  - http://ws.apache.org/axis2
   - Didier Donsez
   - http://commons.apache.org/logging
   - http://xml.apache.org/dist/LICENSE.txt
@@ -37,6 +38,8 @@ holders_summary:
   - value: The Knopflerfish Project
     count: 1
   - value: http://commons.apache.org/logging
+    count: 1
+  - value: http://ws.apache.org/axis2
     count: 1
   - value: http://xerces.apache.org
     count: 1

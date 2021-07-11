@@ -420,14 +420,14 @@
         {
           "value": "Copyright 2005, JBoss Inc., and individual contributors",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "holders": [
         {
           "value": "JBoss Inc., and individual contributors",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "authors": [],
@@ -507,21 +507,21 @@
         {
           "value": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "holders": [
         {
           "value": "Brian Goetz and Tim Peierls",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "authors": [
         {
           "value": "Bela Ban",
-          "start_line": 9,
-          "end_line": 11
+          "start_line": 10,
+          "end_line": 10
         }
       ],
       "is_legal": false,
@@ -600,14 +600,14 @@
         {
           "value": "Copyright 2010, Red Hat, Inc. and individual contributors",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "holders": [
         {
           "value": "Red Hat, Inc. and individual contributors",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "authors": [],
@@ -649,7 +649,7 @@
         {
           "value": "Bela Ban",
           "start_line": 4,
-          "end_line": 5
+          "end_line": 4
         }
       ],
       "is_legal": false,
@@ -690,7 +690,7 @@
         {
           "value": "Bela Ban",
           "start_line": 3,
-          "end_line": 4
+          "end_line": 3
         }
       ],
       "is_legal": false,
@@ -769,14 +769,14 @@
         {
           "value": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "holders": [
         {
           "value": "Red Hat Middleware LLC, and individual contributors",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "authors": [],
@@ -817,8 +817,8 @@
       "authors": [
         {
           "value": "Bela Ban",
-          "start_line": 1,
-          "end_line": 4
+          "start_line": 3,
+          "end_line": 3
         }
       ],
       "is_legal": false,
@@ -967,14 +967,14 @@
         {
           "value": "Copyright (c) 1995-2011 Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -1141,14 +1141,14 @@
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -1305,7 +1305,7 @@
         {
           "value": "name' Isaac Z.",
           "start_line": 16,
-          "end_line": 18
+          "end_line": 17
         }
       ],
       "is_legal": false,
@@ -1580,14 +1580,14 @@
         {
           "value": "Copyright (c) 1995-2011 Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -1667,14 +1667,14 @@
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Jean-loup Gailly and Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -1754,14 +1754,14 @@
         {
           "value": "Copyright (c) 1995-2012 Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -1836,14 +1836,14 @@
         {
           "value": "Copyright (c) 2004 by Henrik Ravn",
           "start_line": 14,
-          "end_line": 16
+          "end_line": 14
         }
       ],
       "holders": [
         {
           "value": "Henrik Ravn",
           "start_line": 14,
-          "end_line": 16
+          "end_line": 14
         }
       ],
       "authors": [],
@@ -2059,7 +2059,7 @@
         {
           "value": "Gilles Vollant",
           "start_line": 12,
-          "end_line": 15
+          "end_line": 12
         }
       ],
       "is_legal": false,
@@ -2173,14 +2173,14 @@
         {
           "value": "Copyright (c) 1995-2008 Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -2260,14 +2260,14 @@
         {
           "value": "Copyright (c) 2003 Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -2388,7 +2388,7 @@
       "holders": [
         {
           "value": "Christian Michelsen Research AS Advanced Computing",
-          "start_line": 3,
+          "start_line": 4,
           "end_line": 5
         }
       ],
@@ -2556,14 +2556,14 @@
         {
           "value": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -2643,14 +2643,14 @@
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
