@@ -49,7 +49,7 @@ publicsuffix2==2.20191221
 pyahocorasick==1.4.2
 pycparser==2.20
 Pygments==2.9.0
-pygmars==0.6.0b1
+pygmars==0.7.0b2
 pymaven-patch==0.3.0
 pyparsing==2.4.7
 PyYAML==5.4.1
