@@ -72,7 +72,8 @@ def extract_unicode_strings(buf, n=3):
 
 def extract_strings(buf, n=3):
     """
-    Yield unicode strings (ASCII and UTF-16-LE encoded ASCII) from a buf string of binary data.
+    Yield unicode strings (ASCII and UTF-16-LE encoded ASCII) from a buf string
+    of binary data.
 
     :param buf: A bytestring.
     :type buf: str
