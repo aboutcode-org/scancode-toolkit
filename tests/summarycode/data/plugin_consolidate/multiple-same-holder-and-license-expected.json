@@ -173,11 +173,11 @@
         {
           "value": "Copyright (c) IBM Corp.",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         },
         {
           "value": "Copyright (c) IBM Corp.",
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 2
         }
       ],
@@ -185,11 +185,11 @@
         {
           "value": "IBM Corp.",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         },
         {
           "value": "IBM Corp.",
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 2
         }
       ],
@@ -303,11 +303,11 @@
         {
           "value": "Copyright (c) IBM Corp.",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         },
         {
           "value": "Copyright (c) IBM Corp.",
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 2
         }
       ],
@@ -315,11 +315,11 @@
         {
           "value": "IBM Corp.",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         },
         {
           "value": "IBM Corp.",
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 2
         }
       ],
