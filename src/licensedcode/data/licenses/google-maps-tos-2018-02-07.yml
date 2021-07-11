@@ -1,0 +1,10 @@
+key: google-maps-tos-2018-02-07
+short_name: Google Maps Platform ToS 2018-02-07
+name: Google Maps Platform Terms of Service 2018-02-07
+category: Proprietary Free
+owner: Google
+homepage_url: https://cloud.google.com/maps-platform/terms
+spdx_license_key: LicenseRef-scancode-google-maps-tos-2018-02-07
+text_urls:
+    - https://developers.google.com/maps/terms-20180207
+minimum_coverage: 90
