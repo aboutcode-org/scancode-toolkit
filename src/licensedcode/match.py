@@ -355,8 +355,8 @@ class LicenseMatch(object):
 
     def qcontains_stopwords(self):
         """
-        Return True if this match query contains stopwords between its start and end
-        in the query. Stopwords are never match by construction.
+        Return True if this match query contains stopwords between its start and
+        end in the query. Stopwords are never matched by construction.
         """
         # The query side of the match may not be contiguous and may contain
         # unmatched stopword tokens.
@@ -1159,7 +1159,7 @@ def filter_if_only_known_words_rule(matches):
     discarded = []
 
     for match in matches:
-        if not match.rule.only_known_words:
+        if not (match.rule.only_known_words or match.rule.is_small):
             kept.append(match)
             continue
 

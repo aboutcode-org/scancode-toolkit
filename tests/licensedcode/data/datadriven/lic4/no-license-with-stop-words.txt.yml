@@ -1,0 +1,3 @@
+notes: nothing should be detected here
+ as "License a Private" should NOT match "license Private"
+ as there is a stopword inside and this is a short rule.
