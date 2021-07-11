@@ -16,6 +16,7 @@ from commoncode import filetype
 from packageurl import PackageURL
 
 from packagedcode import models
+from packagedcode.utils import combine_expressions
 
 TRACE = False
 
@@ -39,16 +40,16 @@ See https://dart.dev/tools/pub/pubspec
 """
 
 """
-TODO: license is only in a LICENSE file
-     https://dart.dev/tools/pub/publishing#preparing-to-publish
+TODO:
+- license is only in a LICENSE file
+  https://dart.dev/tools/pub/publishing#preparing-to-publish
 
-Deps need to be fleshed out
+- Deps need to be fleshed out
 
-API is limited and only retuns all versions of a package
-
-See https://pub.dev/feed.atom
-See https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md
-See https://dart.dev/tools/pub/publishing#important-files
+API is limited and only returns all versions of a package
+    See https://pub.dev/feed.atom
+    See https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md
+    See https://dart.dev/tools/pub/publishing#important-files
 """
 
 
@@ -58,7 +59,7 @@ class PubspecPackage(models.Package):
     extensions = ('.yaml',)
     default_type = 'pubspec'
     default_primary_language = 'dart'
-    default_web_baseurl = 'https://pub.dev/documentation'
+    default_web_baseurl = 'https://pub.dev/packages'
     default_download_baseurl = 'https://pub.dartlang.org/packages'
     default_api_baseurl = 'https://pub.dev/api/packages'
 
@@ -67,19 +68,44 @@ class PubspecPackage(models.Package):
         yield parse(location)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
-        # https://pub.dev/documentation/http/0.13.3/
-        return f'{baseurl}/{self.name}/{self.version}'
+        return f'{baseurl}/{self.name}/versions/{self.version}'
 
     def repository_download_url(self, baseurl=default_download_baseurl):
-        # https://pub.dartlang.org/packages/http/versions/0.13.3.tar.gz
-        # May resolve to https://storage.googleapis.com/pub-packages/packages/http-0.13.2.tar.gz
+        # A URL should be in the form of:
+        # https://pub.dartlang.org/packages/url_launcher/versions/6.0.9.tar.gz
+        # And it may resolve to:
+        # https://storage.googleapis.com/pub-packages/packages/http-0.13.2.tar.gz
         # as seen in the pub.dev web pages
         return f'{baseurl}/{self.name}/versions/{self.version}.tar.gz'
 
     def api_data_url(self, baseurl=default_api_baseurl):
         return f'{baseurl}/{self.name}'
 
-    # TODO: override def compute_normalized_license(self):
+    def compute_normalized_license(self):
+        return compute_normalized_license(self.declared_license)
+
+
+def compute_normalized_license(declared_license, location):
+    """
+    Return a normalized license expression string detected from a list of
+    declared license items.
+
+    The specification for pub demands to have a LICENSE file side-by-side and
+    nothing else. See https://dart.dev/tools/pub/publishing#preparing-to-publish
+    """
+    # FIXME: we need a location to find the FILE file
+    # Approach:
+    # Find the LICENSE file
+    # detect on the text
+    # combine all expressions
+
+    if not declared_license:
+        return
+
+    detected_licenses = []
+
+    if detected_licenses:
+        return combine_expressions(detected_licenses)
 
 
 def parse(location):
@@ -101,25 +127,28 @@ def is_pubspec(location):
     return filetype.is_file(location) and location.endswith('pubspec.yaml')
 
 
-def collect_deps(pubspec_data, dependency_field_name, is_runtime=True):
+def collect_deps(data, dependency_field_name, is_runtime=True, is_optional=False):
     """
-    Yield DependentPackage found in the ``dependency_field_name`` of
-    ``pubspec_data``
+    Yield DependentPackage found in the ``dependency_field_name`` of ``data``
     """
 
-    # TODO: these can be more complex https://dart.dev/tools/pub/dependencies#dependency-sources
+    # TODO: these can be more complex for SDKs
+    # https://dart.dev/tools/pub/dependencies#dependency-sources
 
-    dependencies = pubspec_data.get(dependency_field_name) or {}
-    for dep_name, dep_version in dependencies.items():
-        purl = PackageURL(type='pubspec', name=dep_name).to_string()
-        dependency = models.DependentPackage(
-            purl=purl,
-            requirement=dep_version,
+    dependencies = data.get(dependency_field_name) or {}
+    for name, version in dependencies.items():
+        purl = PackageURL(type='pubspec', name=name)
+        if version.replace('.', '').isdigit():
+            # version is pinned exactly
+            purl.version = version
+
+        yield models.DependentPackage(
+            purl=purl.to_string(),
+            requirement=version,
             scope=dependency_field_name,
             is_runtime=is_runtime,
-            is_optional=False,
+            is_optional=is_runtime,
         )
-        yield dependency
 
 
 def build_package(pubspec_data):
@@ -133,22 +162,26 @@ def build_package(pubspec_data):
     declared_license = pubspec_data.get('license')
     vcs_url = pubspec_data.get('repository')
 
-    # TODO: use these
+    # TODO: use these in extra data?
     # issue_tracker_url = pubspec_data.get('issue_tracker')
     # documentation_url = pubspec_data.get('documentation')
 
-    # this sis some kind of SDK dep
+    # Author and authors are deprecated
+    # author = pubspec_data.get('author')
+    # authors = pubspec_data.get('authors') or []
+
+    # TODO: this is some kind of SDK dep
     # environment = pubspec_data.get('environment')
 
-    # author and authors are deprecated
-        #     author = pubspec_data.get('author')
-    #     authors = pubspec_data.get('authors') or []
+    # FIXME: what to do with these?
+    # dependencies_overrides = pubspec_get('dependencies_overrides')
 
     package_dependencies = []
     dependencies = collect_deps(
         pubspec_data,
         'dependencies',
         is_runtime=True,
+        is_optional=False,
     )
     package_dependencies.extend(dependencies)
 
@@ -156,11 +189,9 @@ def build_package(pubspec_data):
         pubspec_data,
         'dev_dependencies',
         is_runtime=False,
+        is_optional=True,
     )
     package_dependencies.extend(dev_dependencies)
-
-    # FIXME: what to do with these?
-    # dependencies_overrides = pubspec_get('dependencies_overrides')
 
     package = PubspecPackage(
         name=name,
@@ -169,7 +200,7 @@ def build_package(pubspec_data):
         description=description,
         declared_license=declared_license,
         homepage_url=homepage_url,
-        dependencies=package_dependencies
+        dependencies=package_dependencies,
     )
     return package
 
