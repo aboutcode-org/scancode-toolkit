@@ -9,6 +9,7 @@
 
 import logging
 import sys
+import warnings
 
 import attr
 import saneyaml
@@ -58,8 +59,8 @@ See https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md
 
 @attr.s()
 class PubspecPackage(models.Package):
-    metafiles = ('pubspec.yaml',)
-    extensions = ('.yaml',)
+    metafiles = ('pubspec.yaml', 'pubspec.lock',)
+    extensions = ('.yaml', '.lock',)
     default_type = 'pubspec'
     default_primary_language = 'dart'
     default_web_baseurl = 'https://pub.dev/packages'
@@ -68,7 +69,10 @@ class PubspecPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        yield parse_pub(location)
+        if is_pubspec_yaml(location):
+            yield parse_pub(location)
+        elif is_pubspec_lock(location):
+            yield parse_lock(location)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return f'{baseurl}/{self.name}/versions/{self.version}'
@@ -116,7 +120,7 @@ def parse_pub(location, compute_normalized_license=False):
     Return a PubspecPackage constructed from the pubspec.yaml file at ``location``
     or None.
     """
-    if not is_pubspec(location):
+    if not is_pubspec_yaml(location):
         return
     with open(location) as inp:
         package_data = saneyaml.load(inp.read())
@@ -127,44 +131,172 @@ def parse_pub(location, compute_normalized_license=False):
     return package
 
 
-def is_pubspec(location):
+def file_endswith(location, endswith):
     """
-    Check if the file is a yaml file or not
+    Check if the file at ``location`` ends with ``endswith`` string or tuple.
     """
-    return filetype.is_file(location) and location.endswith('pubspec.yaml')
+    return filetype.is_file(location) and location.endswith(endswith)
+
+
+def is_pubspec_yaml(location):
+    return file_endswith(location, 'pubspec.yaml')
+
+
+def is_pubspec_lock(location):
+    return file_endswith(location, 'pubspec.lock')
+
+
+def parse_lock(location):
+    """
+    Yield PubspecPackages dependencies constructed from the pubspec.lock file at
+    ``location``.
+    """
+    if not is_pubspec_lock(location):
+        return
+
+    with open(location) as inp:
+        locks_data = saneyaml.load(inp.read())
+
+    return PubspecPackage(dependencies=list(collect_locks(locks_data)))
+
+
+def collect_locks(locks_data):
+    """
+    Yield DependentPackage from locks data
+
+    The general form is
+        packages:
+          _fe_analyzer_shared:
+            dependency: transitive
+            description:
+              name: _fe_analyzer_shared
+              url: "https://pub.dartlang.org"
+            source: hosted
+            version: "22.0.0"
+        sdks:
+          dart: ">=2.12.0 <3.0.0"
+    """
+    # FIXME: we treat all as nno optioanl for now
+    sdks = locks_data.get('sdks') or {}
+    for name, version in sdks.items():
+        dep = build_dep(
+            name,
+            version,
+            scope='sdk',
+            is_runtime=True,
+            is_optional=False,
+        )
+        yield dep
+
+    packages = locks_data.get('packages') or {}
+    for name, details in packages.items():
+        version = details.get('version')
+
+        # FIXME: see  https://github.com/dart-lang/pub/blob/2a08832e0b997ff92de65571b6d79a9b9099faa0/lib/src/lock_file.dart#L344
+        #     transitive, direct main, direct dev, direct overridden.
+        # they do not map exactly to the pubspec scopes since transitive can be
+        # either main or dev
+        scope = details.get('dependency')
+        if scope == 'direct dev':
+            is_runtime = False
+        else:
+            is_runtime = True
+
+        desc = details.get('description') or {}
+        known_desc = isinstance(desc, dict)
+
+        # issue a warning for unknown data structure
+        warn = False
+        if not known_desc:
+            if not (isinstance(desc, str) and desc == 'flutter'):
+                warn = True
+        else:
+            dname = desc.get('name')
+            durl = desc.get('url')
+            dsource = details.get('source')
+
+            if (
+                (dname and dname != name)
+                or (durl and durl != 'https://pub.dartlang.org')
+                or (dsource and dsource not in ['hosted', 'sdk', ])
+            ):
+                warn = True
+
+        if warn:
+            warnings.warn(
+                f'Dart pubspec.locks with unsupported external repo '
+                f'description or source: {details}',
+                stacklevel=1,
+            )
+
+        dep = build_dep(
+            name,
+            version,
+            scope=scope,
+            is_runtime=is_runtime,
+            is_optional=False,
+        )
+        yield dep
 
 
 def collect_deps(data, dependency_field_name, is_runtime=True, is_optional=False):
     """
-    Yield DependentPackage found in the ``dependency_field_name`` of ``data``
+    Yield DependentPackage found in the ``dependency_field_name`` of ``data``.
+    Use is_runtime and is_optional in created DependentPackage.
+
+    The shape of the data is:
+        dependencies:
+          path: 1.7.0
+          meta: ^1.2.4
+          yaml: ^3.1.0
+
+        environment:
+          sdk: '>=2.12.0 <3.0.0'
+    """
+    # TODO: these can be more complex for SDKs
+    # https://dart.dev/tools/pub/dependencies#dependency-sources
+    dependencies = data.get(dependency_field_name) or {}
+    for name, version in dependencies.items():
+        dep = build_dep(
+            name,
+            version,
+            scope=dependency_field_name,
+            is_runtime=is_runtime,
+            is_optional=is_optional,
+        )
+        yield dep
+
+
+def build_dep(name, version, scope, is_runtime=True, is_optional=False):
+    """
+    Return DependentPackage from the provided data.
     """
 
     # TODO: these can be more complex for SDKs
     # https://dart.dev/tools/pub/dependencies#dependency-sources
 
-    dependencies = data.get(dependency_field_name) or {}
-    for name, version in dependencies.items():
-        if isinstance(version, dict) and 'sdk' in version:
-            # {'sdk': 'flutter'} type of deps....
-            # which is a wart that we keep as a requiremnet
-            version = ', '.join(': '.join([k, str(v)]) for k, v in version.items())
+    if isinstance(version, dict) and 'sdk' in version:
+        # {'sdk': 'flutter'} type of deps....
+        # which is a wart that we keep as a requiremnet
+        version = ', '.join(': '.join([k, str(v)]) for k, v in version.items())
 
-        if version.replace('.', '').isdigit():
-            # version is pinned exactly if it is only made of dots and digits
-            purl = PackageURL(type='pubspec', name=name, version=version)
-            is_resolved = True
-        else:
-            purl = PackageURL(type='pubspec', name=name)
-            is_resolved = False
+    if version.replace('.', '').isdigit():
+        # version is pinned exactly if it is only made of dots and digits
+        purl = PackageURL(type='pubspec', name=name, version=version)
+        is_resolved = True
+    else:
+        purl = PackageURL(type='pubspec', name=name)
+        is_resolved = False
 
-        yield models.DependentPackage(
-            purl=purl.to_string(),
-            requirement=version,
-            scope=dependency_field_name,
-            is_runtime=is_runtime,
-            is_optional=is_optional,
-            is_resolved=is_resolved,
-        )
+    dep = models.DependentPackage(
+        purl=purl.to_string(),
+        requirement=version,
+        scope=scope,
+        is_runtime=is_runtime,
+        is_optional=is_optional,
+        is_resolved=is_resolved,
+    )
+    return dep
 
 
 def build_package(pubspec_data):

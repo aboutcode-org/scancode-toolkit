@@ -30,6 +30,8 @@ class PackageTester(testcase.FileBasedTesting):
         """
         manifest_loc = self.get_test_loc(manifest_loc, must_exist=True)
         package = package_function(manifest_loc)
+        if not package:
+            raise Exception(f'Failed to parse package: {manifest_loc}')
         return self.check_package(package, expected_loc, regen)
 
     def check_package(self, package, expected_loc, regen=False):
@@ -97,7 +99,6 @@ def get_test_files(location, test_file_suffix):
         for file_name in files:
             if not file_name.endswith(test_file_suffix):
                 continue
-            print(f'Found {file_name}')
 
             file_path = os.path.join(base_dir, file_name)
             file_path = file_path.replace(location, '', 1)
