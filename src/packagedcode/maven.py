@@ -7,7 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import io
 import logging
 import os.path
 from os.path import dirname
@@ -20,6 +19,7 @@ from lxml import etree
 from packageurl import PackageURL
 from pymaven import artifact
 from pymaven import pom
+from pymaven.pom import strip_namespace
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -30,8 +30,6 @@ from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import VCS_URLS
 from textcode import analysis
 from typecode import contenttype
-from pymaven.pom import strip_namespace
-
 
 TRACE = False
 
@@ -46,6 +44,7 @@ if TRACE:
 Support Maven2 POMs.
 Attempts to resolve Maven properties when possible.
 """
+
 
 @attr.s()
 class MavenPomPackage(models.Package):
@@ -275,7 +274,7 @@ class MavenPom(pom.Pom):
 
         if location:
             try:
-                with io.open(location, encoding='utf-8') as fh:
+                with open(location) as fh:
                     xml_text = fh.read()
             except UnicodeDecodeError as _a:
                 xml_text = analysis.unicode_text(location)
@@ -511,6 +510,8 @@ class MavenPom(pom.Pom):
             version = self._replace_properties(version, properties)
             required = not optional
             resolved_dep = (group, artifact, version,), required
+            # we craft a scope prefix for these
+            scope = f'dependencyManagement'
             if scope in self.dependencies:
                 scope_deps = self._dependencies[scope]
                 # TODO: Check we don't insert duplicates
@@ -835,7 +836,7 @@ def is_pom(location):
     if T.is_text:
 
         # check the POM version in the first 150 lines
-        with io.open(location, 'rb') as pom:
+        with open(location, 'rb') as pom:
             for n, line in enumerate(pom):
                 if n > 150:
                     break
@@ -932,6 +933,9 @@ def get_dependencies(pom):
             # pymaven whart
             if dversion == 'latest.release':
                 dversion = None
+
+            is_resolved = dversion and not any(c in dversion for c in '$[,]')
+
             dqualifiers = {}
             # FIXME: this is missing from the original Pom parser
             # classifier = dep.get('classifier')
@@ -941,23 +945,35 @@ def get_dependencies(pom):
             # packaging = dep.get('type')
             # if packaging and packaging != 'jar':
             #     qualifiers['packaging'] = packaging
-            dep_id = models.PackageURL(
-                type='maven',
-                namespace=dgroup_id,
-                name=dartifact_id,
-                qualifiers=dqualifiers or None)
+
+            if is_resolved:
+                dpurl = models.PackageURL(
+                    type='maven',
+                    namespace=dgroup_id,
+                    name=dartifact_id,
+                    version=dversion,
+                    qualifiers=dqualifiers or None,
+                )
+            else:
+                dpurl = models.PackageURL(
+                    type='maven',
+                    namespace=dgroup_id,
+                    name=dartifact_id,
+                    qualifiers=dqualifiers or None,
+                )
+
             # TODO: handle dependency management and pom type
-            is_runtime = scope in ('runtime', 'compile', 'system', 'provided')
-            is_optional = bool(scope in ('test',) or not drequired)
-            if scope not in (('runtime', 'compile', 'system', 'provided', 'test')):
-                is_runtime = True
+            is_runtime = scope in ('runtime', 'system', 'provided')
+            is_optional = bool(scope in ('test', 'compile',) or not drequired)
+
             dep_pack = models.DependentPackage(
-                purl=str(dep_id),
+                purl=str(dpurl),
                 requirement=dversion,
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=False)
+                is_resolved=is_resolved,
+            )
             dependencies.append(dep_pack)
 
     return dependencies
@@ -1061,7 +1077,6 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
 
     scm = pom.scm or {}
     vcs_url, code_view_url = build_vcs_and_code_view_urls(scm)
-
 
     # FIXME: there are still other data to map in a Package
     package = MavenPomPackage(

@@ -83,6 +83,68 @@
         "version": "3.8.2",
         "required": true
       }
+    ],
+    "dependencyManagement": [
+      {
+        "group_id": "org.apache.maven.doxia",
+        "artifact_id": "doxia-sink-api",
+        "version": "1.0-alpha-10",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven.doxia",
+        "artifact_id": "doxia-core",
+        "version": "1.0-alpha-10",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven.doxia",
+        "artifact_id": "doxia-module-apt",
+        "version": "1.0-alpha-10",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven.doxia",
+        "artifact_id": "doxia-module-fml",
+        "version": "1.0-alpha-10",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven.doxia",
+        "artifact_id": "doxia-module-xdoc",
+        "version": "1.0-alpha-10",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven.doxia",
+        "artifact_id": "doxia-module-xhtml",
+        "version": "1.0-alpha-10",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven.doxia",
+        "artifact_id": "doxia-decoration-model",
+        "version": "1.0-alpha-10",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-container-default",
+        "version": "1.0-alpha-30",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-i18n",
+        "version": "1.0-beta-7",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-utils",
+        "version": "1.4.5",
+        "required": true
+      }
     ]
   }
 }
