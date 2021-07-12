@@ -43,13 +43,16 @@ See https://dart.dev/tools/pub/pubspec
 TODO:
 - license is only in a LICENSE file
   https://dart.dev/tools/pub/publishing#preparing-to-publish
+See https://dart.dev/tools/pub/publishing#important-files
 
-- Deps need to be fleshed out
+API has theses URLs:
+is limited and only returns all versions of a package
+- feeds https://pub.dev/feed.atom
+- all packages, paginated: https://pub.dev/api/packages
+- one package, all version: https://pub.dev/api/packages/painter
+- one version: https://pub.dev/api/packages/painter/versions/0.3.1
 
-API is limited and only returns all versions of a package
-    See https://pub.dev/feed.atom
-    See https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md
-    See https://dart.dev/tools/pub/publishing#important-files
+See https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md
 """
 
 
@@ -65,7 +68,7 @@ class PubspecPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        yield parse(location)
+        yield parse_pub(location)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return f'{baseurl}/{self.name}/versions/{self.version}'
@@ -79,13 +82,13 @@ class PubspecPackage(models.Package):
         return f'{baseurl}/{self.name}/versions/{self.version}.tar.gz'
 
     def api_data_url(self, baseurl=default_api_baseurl):
-        return f'{baseurl}/{self.name}'
+        return f'{baseurl}/{self.name}/versions/{self.version}'
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
 
 
-def compute_normalized_license(declared_license, location):
+def compute_normalized_license(declared_license, location=None):
     """
     Return a normalized license expression string detected from a list of
     declared license items.
@@ -108,7 +111,7 @@ def compute_normalized_license(declared_license, location):
         return combine_expressions(detected_licenses)
 
 
-def parse(location):
+def parse_pub(location, compute_normalized_license=False):
     """
     Return a PubspecPackage constructed from the pubspec.yaml file at ``location``
     or None.
@@ -117,7 +120,11 @@ def parse(location):
         return
     with open(location) as inp:
         package_data = saneyaml.load(inp.read())
-    return build_package(package_data)
+
+    package = build_package(package_data)
+    if package and compute_normalized_license:
+        package.compute_normalized_license()
+    return package
 
 
 def is_pubspec(location):
@@ -137,17 +144,26 @@ def collect_deps(data, dependency_field_name, is_runtime=True, is_optional=False
 
     dependencies = data.get(dependency_field_name) or {}
     for name, version in dependencies.items():
-        purl = PackageURL(type='pubspec', name=name)
+        if isinstance(version, dict) and 'sdk' in version:
+            # {'sdk': 'flutter'} type of deps....
+            # which is a wart that we keep as a requiremnet
+            version = ', '.join(': '.join([k, str(v)]) for k, v in version.items())
+
         if version.replace('.', '').isdigit():
-            # version is pinned exactly
-            purl.version = version
+            # version is pinned exactly if it is only made of dots and digits
+            purl = PackageURL(type='pubspec', name=name, version=version)
+            is_resolved = True
+        else:
+            purl = PackageURL(type='pubspec', name=name)
+            is_resolved = False
 
         yield models.DependentPackage(
             purl=purl.to_string(),
             requirement=version,
             scope=dependency_field_name,
             is_runtime=is_runtime,
-            is_optional=is_runtime,
+            is_optional=is_optional,
+            is_resolved=is_resolved,
         )
 
 
@@ -161,20 +177,22 @@ def build_package(pubspec_data):
     homepage_url = pubspec_data.get('homepage')
     declared_license = pubspec_data.get('license')
     vcs_url = pubspec_data.get('repository')
-
-    # TODO: use these in extra data?
-    # issue_tracker_url = pubspec_data.get('issue_tracker')
-    # documentation_url = pubspec_data.get('documentation')
+    download_url = pubspec_data.get('archive_url')
 
     # Author and authors are deprecated
-    # author = pubspec_data.get('author')
-    # authors = pubspec_data.get('authors') or []
+    authors = []
+    author = pubspec_data.get('author')
+    if author:
+        authors.append(author)
+    authors.extend(pubspec_data.get('authors') or [])
 
-    # TODO: this is some kind of SDK dep
-    # environment = pubspec_data.get('environment')
-
-    # FIXME: what to do with these?
-    # dependencies_overrides = pubspec_get('dependencies_overrides')
+    parties = []
+    for auth  in authors:
+        parties.append(models.Party(
+            type=models.party_person,
+            role='author',
+            name=auth
+        ))
 
     package_dependencies = []
     dependencies = collect_deps(
@@ -193,14 +211,41 @@ def build_package(pubspec_data):
     )
     package_dependencies.extend(dev_dependencies)
 
+    env_dependencies = collect_deps(
+        pubspec_data,
+        'environment',
+        is_runtime=True,
+        is_optional=False,
+    )
+    package_dependencies.extend(env_dependencies)
+
+    extra_data = {}
+
+    def add_to_extra_if_present(_key):
+        _value = pubspec_data.get(_key)
+        if _value:
+            extra_data[_key] = _value
+
+    add_to_extra_if_present('issue_tracker')
+    add_to_extra_if_present('documentation')
+    add_to_extra_if_present('dependencies_overrides')
+    add_to_extra_if_present('executables')
+    add_to_extra_if_present('publish_to')
+
     package = PubspecPackage(
         name=name,
         version=version,
         vcs_url=vcs_url,
         description=description,
         declared_license=declared_license,
+        parties=parties,
         homepage_url=homepage_url,
         dependencies=package_dependencies,
+        extra_data=extra_data,
     )
+
+    if not download_url:
+        package.download_url = package.repository_download_url()
+
     return package
 
