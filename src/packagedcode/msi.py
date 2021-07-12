@@ -16,6 +16,7 @@ import attr
 
 from commoncode.command import execute
 from commoncode.command import find_in_path
+from commoncode.system import on_linux
 from commoncode.version import VERSION_PATTERNS_REGEX
 from packagedcode import models
 
@@ -175,4 +176,5 @@ class MsiInstallerPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        yield msi_parse(location)
+        if on_linux:
+            yield msi_parse(location)

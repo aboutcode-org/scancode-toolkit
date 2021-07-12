@@ -10,6 +10,9 @@
 import json
 import os
 
+import pytest
+
+from commoncode.system import on_linux
 from packagedcode.models import PackageFile
 from packagedcode.win_reg import create_absolute_installed_file_path
 from packagedcode.win_reg import get_installed_packages
@@ -20,6 +23,7 @@ from packagedcode.win_reg import remove_drive_letter
 from packages_test_utils import PackageTester
 
 
+@pytest.mark.skipif(not on_linux, reason='We only configure regipy for use on Linux')
 class TestWinReg(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 

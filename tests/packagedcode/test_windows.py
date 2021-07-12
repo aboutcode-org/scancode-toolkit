@@ -7,7 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import json
 import os
 
 from packagedcode.windows import parse
@@ -15,7 +14,7 @@ from packagedcode.windows import parse
 from packages_test_utils import PackageTester
 
 
-class TestWinReg(PackageTester):
+class TestWindows(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_windows_mum_parse(self):

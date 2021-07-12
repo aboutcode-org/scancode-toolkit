@@ -36,6 +36,8 @@ if TRACE:
 @attr.s()
 class MicrosoftUpdateManifestPackage(models.Package):
     extensions = ('.mum',)
+    filetypes = ('xml 1.0 document',)
+    mimetypes = ('text/xml',)
 
     default_type = 'windows-update'
 
@@ -53,7 +55,7 @@ def parse_mum(location):
     if not location.endswith('.mum'):
         return
     with open(location , 'rb') as loc:
-        return  xmltodict.parse(loc)
+        return xmltodict.parse(loc)
 
 
 def parse(location):

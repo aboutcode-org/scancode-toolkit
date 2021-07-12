@@ -9,6 +9,10 @@
 
 import os
 
+import pytest
+
+from commoncode.system import on_linux
+
 from packagedcode.models import Party
 from packagedcode.msi import create_package_from_msiinfo_results
 from packagedcode.msi import MsiInstallerPackage
@@ -17,6 +21,7 @@ from packagedcode.msi import parse_msiinfo_suminfo_output
 from packages_test_utils import PackageTester
 
 
+@pytest.mark.skipif(not on_linux, reason='msiinfo only runs on Linux')
 class TestMsi(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
