@@ -19,7 +19,7 @@ from time import time
 
 from intbitset import intbitset
 
-from licensedcode import SMALL_RULE
+from licensedcode import SMALL_RULE, match_unknown
 from licensedcode.legalese import common_license_words
 from licensedcode import match
 from licensedcode import match_aho
@@ -27,6 +27,7 @@ from licensedcode import match_hash
 from licensedcode import match_seq
 from licensedcode import match_set
 from licensedcode import match_spdx_lid
+from licensedcode import match_unknown
 from licensedcode.dmp import match_blocks as match_blocks_dmp
 from licensedcode.seq import match_blocks as match_blocks_seq
 from licensedcode import query
@@ -128,6 +129,7 @@ class LicenseIndex(object):
         'rules_automaton',
         'fragments_automaton',
         'starts_automaton',
+        'unknown_ngrams',
 
         'regular_rids',
         'false_positive_rids',
@@ -136,7 +138,7 @@ class LicenseIndex(object):
         'optimized',
     )
 
-    def __init__(self, rules=None, _legalese=common_license_words, _spdx_tokens=frozenset()):
+    def __init__(self, rules=None, _legalese=common_license_words, _spdx_tokens=frozenset(), _unknown_ngram_length=7):
         """
         Initialize the index with an iterable of Rule objects.
         `_legalese` is a set of common license-specific words aka. legalese
@@ -185,6 +187,7 @@ class LicenseIndex(object):
         self.rules_automaton = match_aho.get_automaton()
         self.fragments_automaton = USE_AHO_FRAGMENTS and match_aho.get_automaton()
         self.starts_automaton = USE_RULE_STARTS and match_aho.get_automaton()
+        self.unknown_ngrams = match_aho.get_automaton()
 
         # disjunctive sets of rule ids: regular and false positive
 
@@ -206,7 +209,7 @@ class LicenseIndex(object):
                 logger_debug('LicenseIndex: building index.')
             # index all and optimize
             self._add_rules(
-                rules, _legalese=_legalese, _spdx_tokens=_spdx_tokens)
+                rules, _legalese=_legalese, _spdx_tokens=_spdx_tokens, _unknown_ngram_length=_unknown_ngram_length)
 
             if TRACE_TOKEN_DOC_FREQ:
                 logger_debug('LicenseIndex: token, frequency')
@@ -222,7 +225,7 @@ class LicenseIndex(object):
                       '%(duration)f seconds.' % locals())
                 self._print_index_stats()
 
-    def _add_rules(self, rules, _legalese=common_license_words, _spdx_tokens=frozenset()):
+    def _add_rules(self, rules, _legalese=common_license_words, _spdx_tokens=frozenset(), _unknown_ngram_length=7):
         """
         Add a list of Rule objects to the index and constructs optimized and
         immutable index structures.
@@ -358,6 +361,12 @@ class LicenseIndex(object):
             rid_by_hash[rule_hash] = rid
             regular_rids_add(rid)
 
+            match_unknown.add_ngrams(
+                automaton=self.unknown_ngrams,
+                tids=rule_token_ids,
+                rule_length=rule.length,
+                unknown_ngram_length=_unknown_ngram_length,
+            )
             # Some rules cannot be matched as a sequence are "weak" rules
             if not is_weak:
                 approx_matchable_rids_add(rid)
