@@ -225,8 +225,8 @@ Package: pods
 --------------------------------------------
 Package: pubspec
   class: packagedcode.pubspec:PubspecPackage
-  metafiles: pubspec.yaml
-  extensions: .yaml
+  metafiles: pubspec.yaml, pubspec.lock
+  extensions: .yaml, .lock
 
 --------------------------------------------
 Package: pypi
