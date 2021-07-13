@@ -91,20 +91,44 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/junit/junit",
+      "purl": "pkg:maven/junit/junit@3.8.1",
       "requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven/maven-plugin-api",
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0.1",
       "requirement": "2.0.1",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-project@2.0.1",
+      "requirement": "2.0.1",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-8",
+      "requirement": "1.0-alpha-8",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.0.5",
+      "requirement": "1.0.5",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

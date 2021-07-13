@@ -59,32 +59,32 @@
       "purl": "pkg:maven/com.idega.block.platform/com.idega.core",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/com.idega.block.platform/com.idega.block.media",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/itextpdf/itext-paulo",
       "requirement": "${itextpdf-itext-paulo-version}",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
+      "is_runtime": false,
+      "is_optional": true,
       "is_resolved": false
     },
     {
       "purl": "pkg:maven/itext/itext-xml",
       "requirement": "${itext-itext-xml-version}",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
+      "is_runtime": false,
+      "is_optional": true,
       "is_resolved": false
     }
   ],

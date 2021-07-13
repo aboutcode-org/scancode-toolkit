@@ -75,6 +75,38 @@
         "version": "Camden.SR5",
         "required": true
       }
+    ],
+    "dependencyManagement": [
+      {
+        "group_id": "com.myco.foo.bar.baz",
+        "artifact_id": "baz-bar",
+        "version": "1.0",
+        "required": true
+      },
+      {
+        "group_id": "com.myco.foo",
+        "artifact_id": "common-dependencies",
+        "version": "1.1",
+        "required": true
+      },
+      {
+        "group_id": "org.springframework.boot",
+        "artifact_id": "spring-boot-dependencies",
+        "version": "1.4.2.RELEASE",
+        "required": true
+      },
+      {
+        "group_id": "org.springframework.boot",
+        "artifact_id": "spring-boot-starter",
+        "version": "1.4.2.RELEASE",
+        "required": true
+      },
+      {
+        "group_id": "org.springframework.cloud",
+        "artifact_id": "spring-cloud-dependencies",
+        "version": "Camden.SR5",
+        "required": true
+      }
     ]
   }
 }

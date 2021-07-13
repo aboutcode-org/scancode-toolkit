@@ -84,5 +84,230 @@
       "url": "http://repository.codehaus.org"
     }
   ],
-  "dependencies": {}
+  "dependencies": {
+    "dependencyManagement": [
+      {
+        "group_id": "org.jboss.seam",
+        "artifact_id": "jboss-seam",
+        "version": "2.2.0.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.seam",
+        "artifact_id": "jboss-seam-ioc",
+        "version": "2.2.0.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.seam",
+        "artifact_id": "jboss-seam-mail",
+        "version": "2.2.0.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.seam",
+        "artifact_id": "jboss-seam-pdf",
+        "version": "2.2.0.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.seam",
+        "artifact_id": "jboss-seam-remoting",
+        "version": "2.2.0.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.seam",
+        "artifact_id": "jboss-seam-resteasy",
+        "version": "2.2.0.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.seam",
+        "artifact_id": "jboss-seam-ui",
+        "version": "2.2.0.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.seam",
+        "artifact_id": "jboss-seam-debug",
+        "version": "2.2.0.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.seam",
+        "artifact_id": "jboss-seam-excel",
+        "version": "2.2.0.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.seam",
+        "artifact_id": "jboss-seam-jul",
+        "version": "2.2.0.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.richfaces.framework",
+        "artifact_id": "richfaces-api",
+        "version": "3.3.1.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.richfaces.framework",
+        "artifact_id": "richfaces-impl",
+        "version": "3.3.1.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.richfaces.ui",
+        "artifact_id": "richfaces-ui",
+        "version": "3.3.1.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.jbpm",
+        "artifact_id": "jbpm-jpdl",
+        "version": "3.2.2",
+        "required": true
+      },
+      {
+        "group_id": "jboss",
+        "artifact_id": "jboss-cache",
+        "version": "1.4.1.SP9",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.resteasy",
+        "artifact_id": "resteasy-jaxrs",
+        "version": "1.1-RC2",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.resteasy",
+        "artifact_id": "resteasy-jaxb-provider",
+        "version": "1.1-RC2",
+        "required": true
+      },
+      {
+        "group_id": "org.hibernate",
+        "artifact_id": "hibernate-core",
+        "version": "3.3.1.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.hibernate",
+        "artifact_id": "hibernate-search",
+        "version": "3.1.1.GA",
+        "required": true
+      },
+      {
+        "group_id": "javax.transaction",
+        "artifact_id": "jta",
+        "version": "1.1",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.groovy",
+        "artifact_id": "groovy-all",
+        "version": "1.6.3",
+        "required": true
+      },
+      {
+        "group_id": "org.drools",
+        "artifact_id": "drools-core",
+        "version": "5.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.el",
+        "artifact_id": "jboss-el",
+        "version": "1.0_02.CR4",
+        "required": true
+      },
+      {
+        "group_id": "org.tuckey",
+        "artifact_id": "urlrewritefilter",
+        "version": "3.1.0",
+        "required": true
+      },
+      {
+        "group_id": "org.richfaces.samples",
+        "artifact_id": "glassX",
+        "version": "3.3.1.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.richfaces.samples",
+        "artifact_id": "darkX",
+        "version": "3.3.1.GA",
+        "required": true
+      },
+      {
+        "group_id": "org.drools",
+        "artifact_id": "drools-api",
+        "version": "5.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.hibernate",
+        "artifact_id": "hibernate-commons-annotations",
+        "version": "3.3.0.ga",
+        "required": true
+      },
+      {
+        "group_id": "org.antlr",
+        "artifact_id": "antlr",
+        "version": "3.2",
+        "required": true
+      },
+      {
+        "group_id": "org.antlr",
+        "artifact_id": "antlr-runtime",
+        "version": "3.2",
+        "required": true
+      },
+      {
+        "group_id": "commons-digester",
+        "artifact_id": "commons-digester",
+        "version": "1.8.1",
+        "required": true
+      },
+      {
+        "group_id": "commons-lang",
+        "artifact_id": "commons-lang",
+        "version": "2.3",
+        "required": true
+      },
+      {
+        "group_id": "com.h2database",
+        "artifact_id": "h2",
+        "version": "1.1.118",
+        "required": true
+      },
+      {
+        "group_id": "mysql",
+        "artifact_id": "mysql-connector-java",
+        "version": "5.1.10",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.openejb",
+        "artifact_id": "openejb-core",
+        "version": "3.1.2",
+        "required": true
+      },
+      {
+        "group_id": "junit",
+        "artifact_id": "junit",
+        "version": "4.7",
+        "required": true
+      },
+      {
+        "group_id": "org.testng",
+        "artifact_id": "testng",
+        "version": "5.9",
+        "required": true
+      }
+    ]
+  }
 }
