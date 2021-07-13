@@ -151,7 +151,6 @@ def build_tests(
     """
     assert issubclass(clazz, PackageTester)
 
-    print('test_dir', test_dir)
     # loop through all items and attach a test method to our test class
     for test_file_path in get_test_files(test_dir, test_file_suffix):
         test_name = test_method_prefix + text.python_safe_name(test_file_path)
