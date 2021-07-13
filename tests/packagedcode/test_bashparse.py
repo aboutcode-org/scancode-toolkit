@@ -7,12 +7,86 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+from functools import partial
 import os.path
 
+from commoncode import text
 from packagedcode import bashparse
 from packagedcode.bashparse import ShellVariable
 
+from packages_test_utils import check_result_equals_expected_json
+from packages_test_utils import get_test_files
 from packages_test_utils import PackageTester
+
+test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+
+def create_test_function(test_file_loc, tested_function, test_name, regen=False):
+    """
+    Return a test function closed on test arguments to run
+    `tested_function(test_file_loc)`.
+    """
+
+    def test_package(self):
+        test_loc = self.get_test_loc(test_file_loc, must_exist=True)
+        result = tested_function(test_loc)
+        check_result_equals_expected_json(
+            result=result,
+            expected_loc=test_loc + '-expected.json',
+            regen=regen,
+        )
+
+    test_package.__name__ = test_name
+    return test_package
+
+
+def build_tests(
+    test_dir,
+    test_file_suffix,
+    clazz,
+    tested_function,
+    test_method_prefix,
+    regen=False,
+):
+    """
+    Dynamically build test methods from files in ``test_dir`` ending with
+    ``test_file_suffix`` and attach a test method to the ``clazz`` test class.
+
+    For each method:
+    - run ``tested_function`` with a test file with``test_file_suffix``
+      ``tested_function`` should return a JSON-serializable object.
+    - set the name prefixed with ``test_method_prefix``.
+    - check that a test expected file named <test_file_name>-expected.json`
+      has content matching the results of the ``tested_function`` returned value.
+    """
+    assert issubclass(clazz, PackageTester)
+
+    # loop through all items and attach a test method to our test class
+    for test_file_path in get_test_files(test_dir, test_file_suffix):
+        test_name = test_method_prefix + text.python_safe_name(test_file_path)
+        test_file_loc = os.path.join(test_dir, test_file_path)
+
+        test_method = create_test_function(
+            test_file_loc=test_file_loc,
+            tested_function=tested_function,
+            test_name=test_name,
+            regen=regen,
+        )
+        setattr(clazz, test_name, test_method)
+
+
+class TestBashParserDatadriven(PackageTester):
+    test_data_dir = test_data_dir
+
+
+build_tests(
+    test_dir=os.path.join(test_data_dir, 'bashparse'),
+    test_file_suffix='.sh',
+    clazz=TestBashParserDatadriven,
+    tested_function=lambda loc: list(bashparse.collect_shell_variables(loc, resolve=True)),
+    test_method_prefix='test_collect_shell_variables_',
+    regen=False,
+)
 
 
 def clean_spaces(s):
@@ -132,7 +206,7 @@ foo=bar
 baz=$foo
 bez=${baz}
 '''
-        result , errors = bashparse.collect_shell_variables_from_text(text)
+        result, errors = bashparse.collect_shell_variables_from_text(text)
         expected = [
             ShellVariable(name='foo', value='bar'),
             ShellVariable(name='baz', value='$foo'),
@@ -143,7 +217,7 @@ bez=${baz}
         expected = []
         assert errors == expected
 
-        result , errors = bashparse.collect_shell_variables_from_text(text, resolve=True)
+        result, errors = bashparse.collect_shell_variables_from_text(text, resolve=True)
         expected = [
             ShellVariable(name='foo', value='bar'),
             ShellVariable(name='baz', value='bar'),
@@ -154,8 +228,44 @@ bez=${baz}
         expected = []
         assert errors == expected
 
+    def test_collect_shell_variables_from_text_can_parse_single_quoted_vars(self):
+        text = "\nlicense='AGPL3'"
+        result, errors = bashparse.collect_shell_variables_from_text(text)
+        expected = [ShellVariable(name='license', value='AGPL3')]
+        assert result == expected
+        expected = []
+        assert errors == expected
+
+    def test_collect_shell_variables_from_text_can_parse_trailing_comments(self):
+        text = '\noptions="!check" # out of disk space (>35GB)'
+        result, errors = bashparse.collect_shell_variables_from_text(text)
+        expected = [ShellVariable(name='options', value='!check')]
+        assert result == expected
+        expected = []
+        assert errors == expected
+
+    def test_collect_shell_variables_from_text_can_parse_combo_single_quote_and_trailing_comments(self):
+        text = '''
+arch="x86_64 ppc64le aarch64"
+options="!check" # out of disk space (>35GB)
+license='AGPL3'
+pkgusers="mongodb"
+options='!baz' # out of disk space (>35GB)
+'''
+        result, errors = bashparse.collect_shell_variables_from_text(text)
+        expected = [
+            ShellVariable(name='arch', value='x86_64 ppc64le aarch64'),
+            ShellVariable(name='options', value='!check'),
+            ShellVariable(name='license', value='AGPL3'),
+            ShellVariable(name='pkgusers', value='mongodb'),
+            ShellVariable(name='options', value='!baz'),
+        ]
+        assert result == expected
+        expected = []
+        assert errors == expected
+
     def test_collect_shell_variables_from_text_simple(self):
-        result , errors = bashparse.collect_shell_variables_from_text(TEST_TEXT1)
+        result, errors = bashparse.collect_shell_variables_from_text(TEST_TEXT1)
         expected = [
             ShellVariable(name='_pkgbase', value='10.3.1'),
             ShellVariable(name='pkgver', value='10.3.1_git20210424'),

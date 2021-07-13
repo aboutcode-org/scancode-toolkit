@@ -1,0 +1,19 @@
+[
+  {
+    "EAPI": "7",
+    "MY_PV": "",
+    "MY_P": "-",
+    "DESCRIPTION": "Featureful client/server network backup suite",
+    "HOMEPAGE": "https://www.bacula.org/",
+    "SRC_URI": "mirror://sourceforge/bacula/-.tar.gz",
+    "LICENSE": "AGPL-3",
+    "SLOT": "0",
+    "KEYWORDS": "amd64 ppc ~sparc x86",
+    "IUSE": "acl bacula-clientonly bacula-nodir bacula-nosd +batch-insert examples ipv6 logwatch mysql postgres qt5 readline +sqlite ssl static tcpd vim-syntax X",
+    "DEPEND": "\n\t!bacula-clientonly? (\n\t\t!bacula-nodir? ( virtual/mta )\n\t\tpostgres? ( dev-db/postgresql:=[threads] )\n\t\tmysql? ( || ( dev-db/mysql-connector-c dev-db/mariadb-connector-c ) )\n\t\tsqlite? ( dev-db/sqlite:3 )\n\t)\n\tdev-libs/gmp:0\n\tqt5? (\n\t\tdev-qt/qtcore:5\n\t\tdev-qt/qtgui:5\n\t\tdev-qt/qtwidgets:5\n\t\tdev-qt/qtsvg:5\n\t\tx11-libs/qwt:6\n\t)\n\tlogwatch? ( sys-apps/logwatch )\n\treadline? ( sys-libs/readline:0 )\n\tstatic? (\n\t\tdev-libs/lzo[static-libs]\n\t\tsys-libs/ncurses:=[static-libs]\n\t\tsys-libs/zlib[static-libs]\n\t\tacl? ( virtual/acl[static-libs(+)] )\n\t\tssl? ( dev-libs/openssl:0=[static-libs] )\n\t)\n\t!static? (\n\t\tdev-libs/lzo\n\t\tsys-libs/ncurses:=\n\t\tsys-libs/zlib\n\t\tacl? ( virtual/acl )\n\t\tssl? ( dev-libs/openssl:0= )\n\t)\n\ttcpd? ( >=sys-apps/tcp-wrappers-7.6 )\n",
+    "RDEPEND": "!bacula-clientonly?(!bacula-nodir?(virtual/mta)postgres?(dev-db/postgresql:=[threads])mysql?(||(dev-db/mysql-connector-cdev-db/mariadb-connector-c))sqlite?(dev-db/sqlite:3))dev-libs/gmp:0qt5?(dev-qt/qtcore:5dev-qt/qtgui:5dev-qt/qtwidgets:5dev-qt/qtsvg:5x11-libs/qwt:6)logwatch?(sys-apps/logwatch)readline?(sys-libs/readline:0)static?(dev-libs/lzo[static-libs]sys-libs/ncurses:=[static-libs]sys-libs/zlib[static-libs]acl?(virtual/acl[static-libs(+)])ssl?(dev-libs/openssl:0=[static-libs]))!static?(dev-libs/lzosys-libs/ncurses:=sys-libs/zlibacl?(virtual/acl)ssl?(dev-libs/openssl:0=))tcpd?(>=sys-apps/tcp-wrappers-7.6)acct-user/baculaacct-group/bacula!bacula-clientonly?(!bacula-nosd?(app-arch/mt-stsys-block/mtx))vim-syntax?(||(app-editors/vimapp-editors/gvim))",
+    "REQUIRED_USE": "\n\t!bacula-clientonly? ( ^^ ( mysql postgres sqlite ) )\n\tstatic? ( bacula-clientonly )\n",
+    "S": "/-"
+  },
+  []
+]

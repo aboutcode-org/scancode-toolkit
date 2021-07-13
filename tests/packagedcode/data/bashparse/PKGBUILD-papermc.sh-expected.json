@@ -1,0 +1,25 @@
+[
+  {
+    "pkgname": "papermc",
+    "_pkgver": "1.17.1",
+    "_build": "100",
+    "_license_commit": "40b3461",
+    "pkgver": "1.17.1+b100",
+    "pkgrel": "3",
+    "pkgdesc": "Next generation of Minecraft server, compatible with Spigot plugins and offering uncompromising performance",
+    "arch": "('any')",
+    "url": "https://papermc.io/",
+    "license": "('custom')",
+    "depends": "('java-runtime-headless>=8'",
+    "optdepends": "(\"tar:",
+    "conflicts": "('papermc-git')",
+    "backup": "('etc/conf.d/papermc')",
+    "install": "papermc.install",
+    "source": "(papermc.1.17.1+b100.jar::https://papermc.io/api/v1/paper/1.17.1/100/download",
+    "noextract": "(papermc.1.17.1+b100.jar)",
+    "sha512sums": "('34366f0d5e116c011e2ff2dba884b3c5dda6444e0fb28115bc5e12ee839551a77ade8bc174939ecb8f818fc0eca65aa478d87f0b9082b894efbd587909dbfbb8'",
+    "_game": "papermc",
+    "_server_root": "/srv/papermc"
+  },
+  []
+]

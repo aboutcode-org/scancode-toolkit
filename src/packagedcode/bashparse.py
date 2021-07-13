@@ -161,11 +161,13 @@ def dequote(token):
 def collect_shell_variables(location, resolve=False):
     """
     Return a tuple of (variables, errors) from collecting top-level variables
-    defined in bash script at ``location``.
+    defined in bash script at ``location``. ``variables`` is a mapping of {name:
+    value} and ``errors`` a list of error message strings.
     """
     with open(location) as inp:
         text = inp.read()
-    return collect_shell_variables_from_text(text, resolve)
+    vrs, errs = collect_shell_variables_from_text(text, resolve)
+    return {v.name: v.value for v in vrs}, errs
 
 
 def collect_shell_variables_from_text(text, resolve=False):
