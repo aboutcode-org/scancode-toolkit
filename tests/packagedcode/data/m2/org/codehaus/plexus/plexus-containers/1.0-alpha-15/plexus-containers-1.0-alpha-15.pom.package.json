@@ -27,12 +27,36 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/junit/junit",
+      "purl": "pkg:maven/junit/junit@3.8.1",
       "requirement": "3.8.1",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-classworlds@1.2-alpha-6",
+      "requirement": "1.2-alpha-6",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api@1.0-alpha-15",
+      "requirement": "1.0-alpha-15",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.3",
+      "requirement": "1.3",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

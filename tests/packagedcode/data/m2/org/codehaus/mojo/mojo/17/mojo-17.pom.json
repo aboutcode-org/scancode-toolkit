@@ -120,5 +120,20 @@
       "url": "http://snapshots.repository.codehaus.org"
     }
   ],
-  "dependencies": {}
+  "dependencies": {
+    "dependencyManagement": [
+      {
+        "group_id": "org.apache.maven",
+        "artifact_id": "maven-plugin-api",
+        "version": "2.0",
+        "required": true
+      },
+      {
+        "group_id": "junit",
+        "artifact_id": "junit",
+        "version": "3.8.2",
+        "required": true
+      }
+    ]
+  }
 }

@@ -30,9 +30,9 @@
       "purl": "pkg:maven/org.apache.maven.surefire/surefire-api",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     }
   ],
   "contains_source_code": null,

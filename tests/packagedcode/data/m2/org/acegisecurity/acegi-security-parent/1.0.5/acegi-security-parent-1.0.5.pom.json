@@ -327,6 +327,50 @@
         "version": "3.8.1",
         "required": true
       }
+    ],
+    "dependencyManagement": [
+      {
+        "group_id": "org.springframework",
+        "artifact_id": "spring-core",
+        "version": "1.2.9",
+        "required": true
+      },
+      {
+        "group_id": "org.springframework",
+        "artifact_id": "spring-mock",
+        "version": "1.2.9",
+        "required": true
+      },
+      {
+        "group_id": "org.springframework",
+        "artifact_id": "spring-remoting",
+        "version": "1.2.9",
+        "required": true
+      },
+      {
+        "group_id": "org.springframework",
+        "artifact_id": "spring-web",
+        "version": "1.2.9",
+        "required": true
+      },
+      {
+        "group_id": "org.springframework",
+        "artifact_id": "spring-jdbc",
+        "version": "1.2.9",
+        "required": true
+      },
+      {
+        "group_id": "org.springframework",
+        "artifact_id": "spring-support",
+        "version": "1.2.9",
+        "required": true
+      },
+      {
+        "group_id": "log4j",
+        "artifact_id": "log4j",
+        "version": "1.2.9",
+        "required": false
+      }
     ]
   }
 }

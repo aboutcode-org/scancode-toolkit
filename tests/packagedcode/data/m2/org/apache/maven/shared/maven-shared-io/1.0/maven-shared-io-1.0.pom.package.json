@@ -35,60 +35,60 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/easymock/easymock",
+      "purl": "pkg:maven/easymock/easymock@1.2_Java1.3",
       "requirement": "1.2_Java1.3",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven/maven-artifact",
+      "purl": "pkg:maven/org.apache.maven/maven-artifact@2.0.2",
       "requirement": "2.0.2",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven/maven-artifact-manager",
+      "purl": "pkg:maven/org.apache.maven/maven-artifact-manager@2.0.2",
       "requirement": "2.0.2",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-api",
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-api@1.0-alpha-6",
       "requirement": "1.0-alpha-6",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.2",
       "requirement": "1.2",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-9",
       "requirement": "1.0-alpha-9",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven/maven-plugin-api",
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0",
       "requirement": "2.0",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

@@ -197,6 +197,26 @@
         "version": "2.0.1",
         "required": true
       }
+    ],
+    "dependencyManagement": [
+      {
+        "group_id": "org.apache.maven",
+        "artifact_id": "maven-project",
+        "version": "2.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-container-default",
+        "version": "1.0-alpha-8",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-utils",
+        "version": "1.0.5",
+        "required": true
+      }
     ]
   }
 }
