@@ -31,24 +31,22 @@ def check_expected_parse_copyright_file(
     at `expected_loc` location. Regen the expected file if `regen` is True.
     """
     if with_details:
-        filter_licenses=False
-        skip_debian_packaging=False
-        simplify_licenses=False
-        unique_copyrights=False
+        filter_duplicates = False
+        skip_debian_packaging = False
+        simplify_licenses = False
+        unique_copyrights = False
     else:
-        filter_licenses=True
-        skip_debian_packaging=True
-        simplify_licenses=False
-        unique_copyrights=True
+        filter_duplicates = True
+        skip_debian_packaging = True
+        simplify_licenses = True
+        unique_copyrights = True
 
-    dc = debian_copyright.parse_copyright_file(location=test_loc)
+    dc = debian_copyright.parse_copyright_file(location=test_loc, check_consistency=False)
     declared_license = dc.get_declared_license(
-        filter_licenses=filter_licenses,
+        filter_duplicates=filter_duplicates,
         skip_debian_packaging=skip_debian_packaging,
-        simplify_licenses=simplify_licenses,
     )
     license_expression = dc.get_license_expression(
-        filter_licenses=filter_licenses,
         skip_debian_packaging=skip_debian_packaging,
         simplify_licenses=simplify_licenses,
     )
@@ -56,26 +54,61 @@ def check_expected_parse_copyright_file(
         skip_debian_packaging=skip_debian_packaging,
         unique_copyrights=unique_copyrights,
     )
+    primary_license = dc.primary_license
 
-    parsed = declared_license, license_expression, copyright
-    
+    parsed = primary_license, declared_license, license_expression, copyright
+
+    matches = dc.license_matches
+    matches = [lm for lm in matches if 'unknown-license-reference' == lm.rule.license_expression]
+    match_details = list(map(get_match_details, matches))
+
     result = saneyaml.dump(list(parsed))
     if regen:
         with io.open(expected_loc, 'w', encoding='utf-8') as reg:
-            reg.write(result)
+            if 'unknown-license-reference' in license_expression:
+                parsed = declared_license, license_expression, copyright, match_details
+                result = saneyaml.dump(list(parsed))
+                reg.write(result)
+            else:
+               reg.write(result) 
 
     with io.open(expected_loc, encoding='utf-8') as ex:
         expected = ex.read()
 
-    if result != expected:
+    if result != expected or 'unknown-license-reference' in license_expression:
 
         expected = '\n'.join([
             'file://' + test_loc,
             'file://' + expected_loc,
-            expected
+            expected,
+            saneyaml.dump(match_details),
         ])
 
         assert result == expected
+
+
+def get_match_details(match):
+    """
+    Return a mapping of match details for LicenseMatch ``match``.
+    """
+    details = {}
+    details['score'] = match.score()
+    details['start_line'] = match.start_line
+    details['end_line'] = match.end_line
+    details['matcher'] = match.matcher
+    details['rule_length'] = match.rule.length
+    details['matched_length'] = match.len()
+    details['match_coverage'] = match.coverage()
+    details['rule_relevance'] = match.rule.relevance
+    details['identifier'] = match.rule.identifier
+    details['license_expression'] = match.rule.license_expression
+    details['is_license_text'] = match.rule.is_license_text
+    details['is_license_notice'] = match.rule.is_license_notice
+    details['is_license_reference'] = match.rule.is_license_reference
+    details['is_license_tag'] = match.rule.is_license_tag
+    details['is_license_intro'] = match.rule.is_license_intro
+    details['matched_text'] = match.matched_text(whole_lines=False, highlight=True)
+    return details
 
 
 def relative_walk(dir_path):
@@ -177,18 +210,34 @@ build_tests(
 )
 
 
+class TestDebianMiscCopyrightLicenseDetection(FileBasedTesting):
+    # pytestmark = pytest.mark.scanslow
+    test_data_dir = path.join(path.dirname(__file__), 'data')
+
+
+build_tests(
+    test_dir='debian/copyright/debian-misc',
+    prefix='test_debian_misc_parse_copyright_file_',
+    clazz=TestDebianMiscCopyrightLicenseDetection,
+    regen=False,
+)
+
+
 class TestDebianDetector(FileBasedTesting):
     test_data_dir = path.join(path.dirname(__file__), 'data/debian/copyright/')
 
     def test_add_unknown_matches(self):
-        
-        matches = debian_copyright.add_unknown_matches(name='foo',text='bar')
+
+        matches = debian_copyright.add_unknown_matches(name='foo', text='bar')
         assert len(matches) == 1
-        
+
+        match = matches[0]
+        assert match.matched_text() == "License: foo\n bar"
+
 
 class TestEnhancedDebianCopyright(FileBasedTesting):
     test_data_dir = path.join(path.dirname(__file__), 'data/debian/copyright/')
-    
+
     def test_is_paragraph_debian_packaging(self):
         test_file = self.get_test_loc("debian-slim-2021-04-07/usr/share/doc/libhogweed6/copyright")
         edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
@@ -208,14 +257,14 @@ class TestEnhancedDebianCopyright(FileBasedTesting):
         assert header_para.license.name == "LGPL-3+ or GPL-2+"
         assert header_para.upstream_name.value == "Nettle"
         assert header_para.source.text == "http://www.lysator.liu.se/~nisse/nettle/"
-    
+
     def test_get_files_paras(self):
         test_file = self.get_test_loc("debian-2019-11-15/main/c/cryptsetup/stable_copyright")
         edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
         files_paras = edebian_copyright.file_paragraphs
         assert len(files_paras) == 15
         assert files_paras[1].license.name == "GPL-2+"
-        
+
     def test_get_license_paras(self):
         test_file = self.get_test_loc("debian-2019-11-15/main/c/cryptsetup/stable_copyright")
         edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
@@ -229,7 +278,6 @@ class TestEnhancedDebianCopyright(FileBasedTesting):
         paras_with_license = edebian_copyright.paragraphs_with_license_text
         assert isinstance(paras_with_license[0], debian_copyright.CopyrightHeaderParagraph)
         assert isinstance(paras_with_license[1], debian_copyright.CopyrightFilesParagraph)
-        
 
     def test_get_other_paras(self):
         test_file = self.get_test_loc("crafted_for_tests/test_other_paras")
@@ -237,23 +285,23 @@ class TestEnhancedDebianCopyright(FileBasedTesting):
         other_paras = edebian_copyright.other_paragraphs
         assert len(other_paras) == 1
         assert other_paras[0].extra_data["unknown"].text == "Example of other paras."
-        
+
     def test_get_duplicate_license_paras(self):
         test_file = self.get_test_loc("crafted_for_tests/test_duplicate_license_para_name")
         edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
         duplicate_paras = edebian_copyright.duplicate_license_paragraphs
         assert len(duplicate_paras) == 1
         duplicate_paras[0].license.name == "GPL-2+"
-  
+
     def test_if_structured_copyright_file(self):
         test_file = self.get_test_loc("debian-slim-2021-04-07/usr/share/doc/libhogweed6/copyright")
         content = debian_copyright.unicode_text(test_file)
-        assert debian_copyright.is_machine_readable_copyright(content)
+        assert debian_copyright.EnhancedDebianCopyright.is_machine_readable_copyright(content)
 
     def test_if_not_structured_copyright_file(self):
         test_file = self.get_test_loc("debian-2019-11-15/main/p/pulseaudio/stable_copyright")
         content = debian_copyright.unicode_text(test_file)
-        assert not debian_copyright.is_machine_readable_copyright(content)
+        assert not debian_copyright.EnhancedDebianCopyright.is_machine_readable_copyright(content)
 
     def test_multiple_blank_lines_is_valid_paragraph(self):
         test_file = self.get_test_loc("debian-slim-gpgv.copyright")

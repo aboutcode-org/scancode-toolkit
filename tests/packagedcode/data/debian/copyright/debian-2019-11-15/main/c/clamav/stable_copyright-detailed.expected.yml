@@ -1,3 +1,4 @@
+- gpl-2.0 AND gpl-1.0-plus AND other-copyleft
 - - GPL-2
   - GPL-2 with OpenSSL exception
   - GPL-2+
@@ -37,22 +38,30 @@
   - BSD-2-clause
   - BSD-3-clause
   - Zlib
-- (gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0
-  AND openssl-exception-gpl-3.0-plus AND gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
-  AND autoconf-simple-exception-2.0 AND gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0)
-  AND (gpl-3.0-plus AND gpl-1.0-plus AND autoconf-simple-exception AND gpl-1.0-plus AND other-copyleft
-  AND gpl-3.0 AND gpl-3.0) AND (gpl-3.0-plus WITH libtool-exception-2.0 AND gpl-1.0-plus AND
-  other-copyleft AND gpl-2.0 AND gpl-2.0) AND (lgpl-2.0-plus AND libtool-exception-2.0 AND gpl-2.0-plus
-  AND lgpl-2.1-plus AND gpl-2.0 AND other-copyleft AND gpl-2.0 AND lgpl-2.0) AND (lgpl-2.1 AND
-  lgpl-2.1-plus AND lgpl-2.1-plus AND other-copyleft AND lgpl-2.1 AND lgpl-2.1) AND ((lgpl-2.1
-  AND lgpl-2.1-plus AND lgpl-2.1-plus AND other-copyleft AND lgpl-2.1 AND lgpl-2.1) AND bsd-new)
-  AND mit AND mit AND bsd-simplified AND bsd-simplified AND bsd-new AND bsd-new AND bsd-new
-  AND zlib AND zlib AND isc AND fsf-unlimited AND fsf-free AND fsf-unlimited-no-warranty AND
-  fsf-ap AND fsf-ap AND bzip2-libbzip-2010 AND (public-domain AND public-domain) AND public-domain
-  AND public-domain AND x11-tiff AND (public-domain AND public-domain) AND (apache-2.0 AND gpl-1.0-plus
-  AND apache-2.0 AND apache-2.0 AND gpl-1.0-plus AND apache-2.0 AND apache-2.0) AND (gpl-3.0-plus
-  AND bison-exception-2.2 AND gpl-1.0-plus AND other-copyleft AND gpl-3.0 AND gpl-3.0)
+- (gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0) AND (gpl-1.0-plus
+  AND other-copyleft AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND openssl-exception-gpl-3.0-plus
+  AND gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0) AND (gpl-1.0-plus AND other-copyleft
+  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-1.0-plus AND other-copyleft
+  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-1.0-plus AND other-copyleft
+  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND autoconf-simple-exception-2.0 AND gpl-1.0-plus
+  AND other-copyleft AND gpl-2.0 AND gpl-2.0) AND (gpl-1.0-plus AND other-copyleft AND gpl-2.0
+  AND gpl-2.0) AND (gpl-3.0-plus AND gpl-1.0-plus AND autoconf-simple-exception AND gpl-1.0-plus
+  AND other-copyleft AND gpl-3.0 AND gpl-3.0) AND (gpl-1.0-plus AND other-copyleft AND gpl-3.0
+  AND gpl-3.0) AND (gpl-3.0-plus WITH libtool-exception-2.0 AND gpl-1.0-plus AND other-copyleft
+  AND gpl-2.0 AND gpl-2.0) AND (gpl-1.0-plus AND other-copyleft AND gpl-2.0 AND gpl-2.0) AND
+  (lgpl-2.0-plus AND libtool-exception-2.0 AND gpl-2.0-plus AND lgpl-2.1-plus AND gpl-2.0 AND
+  other-copyleft AND gpl-2.0 AND lgpl-2.0) AND (gpl-2.0 AND other-copyleft AND gpl-2.0 AND lgpl-2.0)
+  AND (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1-plus AND other-copyleft AND lgpl-2.1) AND ((lgpl-2.1
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND other-copyleft AND lgpl-2.1) AND bsd-new) AND mit
+  AND (x11-xconsortium AND public-domain) AND mit AND bsd-simplified AND bsd-simplified AND
+  bsd-new AND bsd-new AND bsd-new AND zlib AND zlib AND isc AND fsf-unlimited AND fsf-free AND
+  fsf-unlimited-no-warranty AND fsf-ap AND fsf-ap AND bzip2-libbzip-2010 AND (public-domain
+  AND public-domain) AND public-domain AND public-domain AND x11-tiff AND (public-domain AND
+  public-domain) AND (apache-2.0 AND gpl-1.0-plus AND apache-2.0 AND apache-2.0 AND gpl-1.0-plus
+  AND apache-2.0 AND apache-2.0) AND (gpl-1.0-plus AND apache-2.0 AND apache-2.0 AND gpl-1.0-plus
+  AND apache-2.0 AND apache-2.0) AND (gpl-3.0-plus AND bison-exception-2.2 AND gpl-1.0-plus
+  AND other-copyleft AND gpl-3.0 AND gpl-3.0) AND (gpl-1.0-plus AND other-copyleft AND gpl-3.0
+  AND gpl-3.0)
 - |
   1998-2015, Sourcefire, Inc.
   2002-2007, Tomasz Kojm <tkojm@clamav.net>

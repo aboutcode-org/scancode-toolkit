@@ -561,6 +561,9 @@ class LicenseMatch(object):
         side effects as the caching depends on which index instance is being
         used and this index can change during testing.
         """
+        if TRACE_MATCHED_TEXT:
+            logger_debug(f'LicenseMatch.matched_text: self.query: {self.query}')
+
         query = self.query
         if not query:
             # TODO: should we raise an exception instead???
@@ -1619,10 +1622,17 @@ def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=Fal
     end_pos = 0
     last_pos = 0
     for real_pos, tok in enumerate(tokens):
+        if TRACE_MATCHED_TEXT_DETAILS:
+            logger_debug('reportable_tokens: processing', real_pos, tok)
+
         # ignore tokens outside the matched lines range
         if tok.line_num < start_line:
+            if TRACE_MATCHED_TEXT_DETAILS:
+                logger_debug('  tok.line_num < start_line:', tok.line_num, '<', start_line)
             continue
         if tok.line_num > end_line:
+            if TRACE_MATCHED_TEXT_DETAILS:
+                logger_debug('  tok.line_num > end_line', tok.line_num, '>', end_line)
             break
         if TRACE_MATCHED_TEXT_DETAILS:
             logger_debug('reportable_tokens:', real_pos, tok)
@@ -1719,6 +1729,9 @@ def get_full_matched_text(
     """
     if TRACE_MATCHED_TEXT:
         logger_debug('get_full_matched_text:  match:', match)
+        logger_debug('get_full_matched_text:  location:', location)
+        logger_debug('get_full_matched_text:  query_string :', query_string)
+
     assert location or query_string
     assert idx
     # Create and process a stream of Tokens

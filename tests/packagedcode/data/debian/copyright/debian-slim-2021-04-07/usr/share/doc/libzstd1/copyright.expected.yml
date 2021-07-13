@@ -1,9 +1,10 @@
+- bsd-new AND gpl-2.0
 - - BSD-3-clause and GPL-2
   - zlib
   - Expat
   - GPL-2
   - BSD-3-clause
-- (bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0)) AND zlib AND mit
+- (bsd-new AND gpl-2.0) AND zlib AND mit
 - |
   2013-2018, Yann Collet
   2016, Przemyslaw Skibinski

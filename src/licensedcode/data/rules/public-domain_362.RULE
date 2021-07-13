@@ -1,0 +1,20 @@
+ File lacks copyright and licensing, but contains the comment
+ "Conversion routines derived from code by guido@sienanet.it" which
+ might be interpreted as a copyright holder not granting a license.
+ More likely, however, the header file is considered non-copyrightable
+ header with merely a remark about origin of inspiration:
+ .
+  * File was introduced in Asterisk 0.1.1 (according to git sources),
+    together with file format_wav_gsm.c containing same comment but
+    also explicit copyright and licensing:
+    <https://github.com/asterisk/asterisk/commit/0ed94773>.
+ .
+  * Asterisk 0.1.1 was released in 1999 (according to git sources),
+    at about which time Guido Giorgetti <guido@sienanet.it> released
+    audio-related Delphi 3 code as "Freeware":
+    <http://delphi.icm.edu.pl/authors/a0002451.htm>
+    <http://delphi.icm.edu.pl/ftp/d30free/tmsgvoc.zip>
+    <http://torry.net/vcl/comms/voice/tmsgvoc.zip>.
+ .
+ See also <https://issues.asterisk.org/jira/browse/ASTERISK-24172>.
+

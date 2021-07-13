@@ -3,8 +3,6 @@ what:
   - copyrights
   - authors
 copyrights:
-  - Copyright (c) All Rights Are Reserved. Chungjungwon . Iotacoffee.Com
+  - Copyright (c) Chungjungwon . Iotacoffee.Com
 holders:
   - Chungjungwon . Iotacoffee.Com
-expected_failures:
-  - holders
