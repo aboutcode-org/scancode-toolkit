@@ -29,6 +29,7 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
+    "installed_files": [],
     "extra_data": {
       "install_location": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\"
     },

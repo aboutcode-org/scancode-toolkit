@@ -20,6 +20,7 @@ from packagedcode.win_reg import _report_installed_dotnet_versions
 from packagedcode.win_reg import _report_installed_programs
 from packagedcode.win_reg import remove_drive_letter
 
+from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import PackageTester
 
 
@@ -32,16 +33,18 @@ class TestWinReg(PackageTester):
         expected_loc = self.get_test_loc('win_reg/SOFTWARE-dotnet-installation.expected')
         with open(test_file) as f:
             software_registry_entries = json.load(f)
-        packages = _report_installed_dotnet_versions(software_registry_entries)
-        self.check_packages(packages, expected_loc, regen=False)
+        results = [p.to_dict(_detailed=True)
+            for p in _report_installed_dotnet_versions(software_registry_entries)]
+        check_result_equals_expected_json(results, expected_loc, regen=False)
 
     def test_win_reg__report_installed_programs(self):
         test_file = self.get_test_loc('win_reg/SOFTWARE-registry-entries.json')
         expected_loc = self.get_test_loc('win_reg/SOFTWARE-installed-programs.expected')
         with open(test_file) as f:
             software_registry_entries = json.load(f)
-        packages = _report_installed_programs(software_registry_entries)
-        self.check_packages(packages, expected_loc, regen=False)
+        results = [p.to_dict(_detailed=True)
+            for p in _report_installed_programs(software_registry_entries)]
+        check_result_equals_expected_json(results, expected_loc, regen=False)
 
     def test_win_reg_remove_drive_letter(self):
         test_path = 'C:\\Users\\Test\\Desktop'
@@ -63,11 +66,5 @@ class TestWinReg(PackageTester):
         # Ensure only one program is detected
         self.assertEqual(len(results), 1)
         result = results[0]
-        # Check to see if the resulting InstalledProgramFile was created properly
-        self.check_package(result, expected_loc, regen=False)
-        expected_installed_files = [
-            PackageFile(path=os.path.join(test_root_dir, 'Files/Program Files/Test/Test.exe')),
-            PackageFile(path=os.path.join(test_root_dir, 'Files/Program Files/Test/Uninstall.exe')),
-            PackageFile(path=os.path.join(test_root_dir, 'Files/Program Files/Test/Test.dat')),
-        ]
-        self.assertEqual(sorted(result.installed_files), sorted(expected_installed_files))
+        result = result.to_dict(_detailed=True)
+        check_result_equals_expected_json(result, expected_loc, regen=False)

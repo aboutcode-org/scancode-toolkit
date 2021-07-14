@@ -224,7 +224,7 @@ def get_installed_packages(root_dir, is_container=True):
     if is_container:
         software_registry_locations = [
             os.path.join(root_dir, 'Hives', 'Software_Delta'),
-            os.path.join(root_dir, 'Files/Windows/System32/config/SOFTWARE')
+            os.path.join(root_dir, 'Files', 'Windows', 'System32', 'config', 'SOFTWARE')
         ]
         # We are setting the root to be the `Files` directory, since this
         # directory represents the root `C:\` drive of a Windows installation
@@ -236,9 +236,9 @@ def get_installed_packages(root_dir, is_container=True):
     for software_registry_loc in software_registry_locations:
         if not os.path.exists(software_registry_loc):
             continue
-        for installed_program in reg_parse(software_registry_loc):
-            installed_program.populate_installed_files(root_dir)
-            yield installed_program
+        for package in reg_parse(software_registry_loc):
+            package.populate_installed_files(root_dir)
+            yield package
 
 
 def remove_drive_letter(path):
