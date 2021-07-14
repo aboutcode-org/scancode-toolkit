@@ -39,7 +39,7 @@ class BashShellLexer(RegexLexer):
             include('data'),
         ],
         'basic': [
-            (r'#.*\n', Comment.Single),
+            (r'#.*$', Comment.Single),
             # variable declaration and assignment
             (r'^(\b\w+)(\+?=)', bygroups(Name.Variable, Operator.Equal)),
 

@@ -38,7 +38,8 @@ normality==2.2.2
 packageurl-python==0.9.4
 packaging==20.9
 patch==1.16
-parameter_expansion==0.2.0
+#parameter_expansion==0.2.0
+parameter-expansion-patched==0.2.1b1
 pdfminer.six==20201018
 pefile==2021.5.24
 pip==21.1.2
@@ -50,7 +51,7 @@ publicsuffix2==2.20191221
 pyahocorasick==1.4.2
 pycparser==2.20
 Pygments==2.9.0
-pygmars==0.7.0b2
+pygmars==0.7.0b3
 pymaven-patch==0.3.0
 pyparsing==2.4.7
 PyYAML==5.4.1

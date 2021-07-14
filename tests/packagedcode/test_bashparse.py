@@ -7,7 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from functools import partial
 import os.path
 
 from commoncode import text
@@ -113,43 +112,44 @@ gnat() {
 
         result = [str(t) for t in bashparse.get_tokens(text)]
         expected = [
-            "Token('\\n', 'TOKEN-TEXT-NEWLINE', 1, 0)",
-            "Token('# Contributor: Natanael Copa <ncopa@alpinelinux.org>\\n', 'TOKEN-COMMENT-SINGLE', 2, 1)",
-            "Token('pkgname', 'TOKEN-NAME-VARIABLE', 3, 54)",
-            "Token('=', 'TOKEN-OPERATOR-EQUAL', 3, 61)",
-            "Token('gcc', 'TOKEN-TEXT', 3, 62)",
-            "Token('\\n\\n', 'TOKEN-TEXT-NEWLINE', 3, 65)",
-            "Token('pkgname', 'TOKEN-NAME-VARIABLE', 5, 67)",
-            "Token('=', 'TOKEN-OPERATOR-EQUAL', 5, 74)",
-            'Token(\'"$pkgname$_target"\', \'TOKEN-LITERAL-STRING-DOUBLE\', 5, 75)',
-            "Token('\\n', 'TOKEN-TEXT-NEWLINE', 5, 93)",
-            "Token('foo', 'TOKEN-NAME-VARIABLE', 6, 94)",
-            "Token('=', 'TOKEN-OPERATOR-EQUAL', 6, 97)",
-            "Token('bar', 'TOKEN-TEXT', 6, 98)",
-            "Token('\\n', 'TOKEN-TEXT-NEWLINE', 6, 101)",
-            "Token('baz', 'TOKEN-NAME-VARIABLE', 7, 102)",
-            "Token('=', 'TOKEN-OPERATOR-EQUAL', 7, 105)",
-            "Token('$foo', 'TOKEN-TEXT', 7, 106)",
-            "Token('\\n', 'TOKEN-TEXT-NEWLINE', 7, 110)",
-            "Token('bez', 'TOKEN-NAME-VARIABLE', 8, 111)",
-            "Token('=', 'TOKEN-OPERATOR-EQUAL', 8, 114)",
-            "Token('${foo}', 'TOKEN-TEXT', 8, 115)",
-            "Token('\\n', 'TOKEN-TEXT-NEWLINE', 8, 121)",
-            "Token('gnat()', 'TOKEN-TEXT', 9, 122)",
-            "Token(' ', 'TOKEN-TEXT-WHITESPACE', 9, 128)",
-            "Token('{', 'TOKEN-TEXT', 9, 129)",
-            "Token('\\n', 'TOKEN-TEXT-NEWLINE', 9, 130)",
-            "Token('    ', 'TOKEN-TEXT-WHITESPACE', 10, 131)",
-            'Token(\'pkgdesc="Ada\', \'TOKEN-TEXT\', 10, 135)',
-            "Token(' ', 'TOKEN-TEXT-WHITESPACE', 10, 147)",
-            "Token('support', 'TOKEN-TEXT', 10, 148)",
-            "Token(' ', 'TOKEN-TEXT-WHITESPACE', 10, 155)",
-            "Token('for', 'TOKEN-TEXT', 10, 156)",
-            "Token(' ', 'TOKEN-TEXT-WHITESPACE', 10, 159)",
-            'Token(\'GCC"\', \'TOKEN-TEXT\', 10, 160)',
-            "Token('\\n', 'TOKEN-TEXT-NEWLINE', 10, 164)",
-            "Token('}', 'TOKEN-TEXT', 11, 165)",
-            "Token('\\n', 'TOKEN-TEXT-NEWLINE', 11, 166)",
+            "Token('\\n', 'TEXT-NEWLINE', 1, 0)",
+            "Token('# Contributor: Natanael Copa <ncopa@alpinelinux.org>', 'COMMENT-SINGLE', 2, 1)",
+            "Token('\\n', 'TEXT-NEWLINE', 2, 53)",
+            "Token('pkgname', 'NAME-VARIABLE', 3, 54)",
+            "Token('=', 'OPERATOR-EQUAL', 3, 61)",
+            "Token('gcc', 'TEXT', 3, 62)",
+            "Token('\\n\\n', 'TEXT-NEWLINE', 3, 65)",
+            "Token('pkgname', 'NAME-VARIABLE', 5, 67)",
+            "Token('=', 'OPERATOR-EQUAL', 5, 74)",
+            'Token(\'"$pkgname$_target"\', \'LITERAL-STRING-DOUBLE\', 5, 75)',
+            "Token('\\n', 'TEXT-NEWLINE', 5, 93)",
+            "Token('foo', 'NAME-VARIABLE', 6, 94)",
+            "Token('=', 'OPERATOR-EQUAL', 6, 97)",
+            "Token('bar', 'TEXT', 6, 98)",
+            "Token('\\n', 'TEXT-NEWLINE', 6, 101)",
+            "Token('baz', 'NAME-VARIABLE', 7, 102)",
+            "Token('=', 'OPERATOR-EQUAL', 7, 105)",
+            "Token('$foo', 'TEXT', 7, 106)",
+            "Token('\\n', 'TEXT-NEWLINE', 7, 110)",
+            "Token('bez', 'NAME-VARIABLE', 8, 111)",
+            "Token('=', 'OPERATOR-EQUAL', 8, 114)",
+            "Token('${foo}', 'TEXT', 8, 115)",
+            "Token('\\n', 'TEXT-NEWLINE', 8, 121)",
+            "Token('gnat()', 'TEXT', 9, 122)",
+            "Token(' ', 'TEXT-WHITESPACE', 9, 128)",
+            "Token('{', 'TEXT', 9, 129)",
+            "Token('\\n', 'TEXT-NEWLINE', 9, 130)",
+            "Token('    ', 'TEXT-WHITESPACE', 10, 131)",
+            'Token(\'pkgdesc="Ada\', \'TEXT\', 10, 135)',
+            "Token(' ', 'TEXT-WHITESPACE', 10, 147)",
+            "Token('support', 'TEXT', 10, 148)",
+            "Token(' ', 'TEXT-WHITESPACE', 10, 155)",
+            "Token('for', 'TEXT', 10, 156)",
+            "Token(' ', 'TEXT-WHITESPACE', 10, 159)",
+            'Token(\'GCC"\', \'TEXT\', 10, 160)',
+            "Token('\\n', 'TEXT-NEWLINE', 10, 164)",
+            "Token('}', 'TEXT', 11, 165)",
+            "Token('\\n', 'TEXT-NEWLINE', 11, 166)",
         ]
 
         assert result == expected
@@ -183,19 +183,19 @@ bez=${foo}
 
         result = [str(t) for t in bashparse.get_tokens(text)]
         expected = [
-            "Token('\\n', 'TOKEN-TEXT-NEWLINE', 1, 0)",
-            "Token('foo', 'TOKEN-NAME-VARIABLE', 2, 1)",
-            "Token('=', 'TOKEN-OPERATOR-EQUAL', 2, 4)",
-            "Token('bar', 'TOKEN-TEXT', 2, 5)",
-            "Token('\\n', 'TOKEN-TEXT-NEWLINE', 2, 8)",
-            "Token('baz', 'TOKEN-NAME-VARIABLE', 3, 9)",
-            "Token('=', 'TOKEN-OPERATOR-EQUAL', 3, 12)",
-            "Token('$foo', 'TOKEN-TEXT', 3, 13)",
-            "Token('\\n', 'TOKEN-TEXT-NEWLINE', 3, 17)",
-            "Token('bez', 'TOKEN-NAME-VARIABLE', 4, 18)",
-            "Token('=', 'TOKEN-OPERATOR-EQUAL', 4, 21)",
-            "Token('${foo}', 'TOKEN-TEXT', 4, 22)",
-            "Token('\\n', 'TOKEN-TEXT-NEWLINE', 4, 28)",
+            "Token('\\n', 'TEXT-NEWLINE', 1, 0)",
+            "Token('foo', 'NAME-VARIABLE', 2, 1)",
+            "Token('=', 'OPERATOR-EQUAL', 2, 4)",
+            "Token('bar', 'TEXT', 2, 5)",
+            "Token('\\n', 'TEXT-NEWLINE', 2, 8)",
+            "Token('baz', 'NAME-VARIABLE', 3, 9)",
+            "Token('=', 'OPERATOR-EQUAL', 3, 12)",
+            "Token('$foo', 'TEXT', 3, 13)",
+            "Token('\\n', 'TEXT-NEWLINE', 3, 17)",
+            "Token('bez', 'NAME-VARIABLE', 4, 18)",
+            "Token('=', 'OPERATOR-EQUAL', 4, 21)",
+            "Token('${foo}', 'TEXT', 4, 22)",
+            "Token('\\n', 'TEXT-NEWLINE', 4, 28)",
         ]
 
         assert result == expected
@@ -244,13 +244,42 @@ bez=${baz}
         expected = []
         assert errors == expected
 
+    def test_collect_shell_variables_from_text_as_dict_does_not_munge_spaces_on_expand(self):
+        text = """
+pkgname=cairo
+pkgver=1.16.0
+depends=
+depends_dev="fontconfig-dev freetype-dev libxrender-dev pixman-dev
+    xcb-util-dev libxext-dev $pkgname-tools"
+makedepends="$depends_dev zlib-dev expat-dev glib-dev libpng-dev autoconf automake libtool"
+subpackages="$pkgname-dev $pkgname-doc $pkgname-gobject $pkgname-tools $pkgname-dbg"
+source="https://cairographics.org/releases/cairo-$pkgver.tar.xz
+"""
+        result, errors = bashparse.collect_shell_variables_from_text_as_dict(text, resolve=True)
+        expected = []
+        assert errors == expected
+        expected = {
+            'depends_dev': 
+                'fontconfig-dev freetype-dev libxrender-dev pixman-dev\n    '
+                'xcb-util-dev libxext-dev cairo-tools',
+            'makedepends': 
+                'fontconfig-dev freetype-dev libxrender-dev pixman-dev\n    '
+                'xcb-util-dev libxext-dev cairo-tools zlib-dev expat-dev '
+                'glib-dev libpng-dev autoconf automake libtool',
+            'pkgname': 'cairo',
+            'pkgver': '1.16.0',
+            'subpackages': 'cairo-dev cairo-doc cairo-gobject cairo-tools cairo-dbg',
+        }
+        assert result == expected
+
     def test_collect_shell_variables_from_text_can_parse_combo_single_quote_and_trailing_comments(self):
         text = '''
 arch="x86_64 ppc64le aarch64"
 options="!check" # out of disk space (>35GB)
 license='AGPL3'
 pkgusers="mongodb"
-options='!baz' # out of disk space (>35GB)
+option2s='!baz' # out of disk space (>35GB)
+options=duplicate
 '''
         result, errors = bashparse.collect_shell_variables_from_text(text)
         expected = [
@@ -258,15 +287,17 @@ options='!baz' # out of disk space (>35GB)
             ShellVariable(name='options', value='!check'),
             ShellVariable(name='license', value='AGPL3'),
             ShellVariable(name='pkgusers', value='mongodb'),
-            ShellVariable(name='options', value='!baz'),
+            ShellVariable(name='option2s', value='!baz'),
+            ShellVariable(name='options', value='duplicate'),
         ]
         assert result == expected
-        expected = []
+        expected = ['Duplicate variable name: options: duplicate']
         assert errors == expected
 
     def test_collect_shell_variables_from_text_simple(self):
         result, errors = bashparse.collect_shell_variables_from_text(TEST_TEXT1)
         expected = [
+            ShellVariable(name='pkgname', value='gcc'),
             ShellVariable(name='_pkgbase', value='10.3.1'),
             ShellVariable(name='pkgver', value='10.3.1_git20210424'),
             ShellVariable(name='pkgname', value='$pkgname$_target'),
@@ -283,8 +314,8 @@ options='!baz' # out of disk space (>35GB)
             ShellVariable(name='source', value='https://dev.alpinelinux.org/~nenolod/gcc-${pkgver}.tar.xz\n    0001-posix_memalign.patch\n    '),
             ShellVariable(name='sha512sums', value='0ef281e6633b8bef7ce24d1448ec7b96aef66e414f90821a9  gcc-10.3.1_git20210424.tar.xz\nd1e10db83a04c02d99f9f6ce03f9  0001-posix_memalign.patch\n'),
         ]
-        assert errors == []
         assert result == expected
+        assert errors == ['Duplicate variable name: pkgname: $pkgname$_target']
 
 
 TEST_TEXT1 = '''
@@ -322,17 +353,17 @@ d1e10db83a04c02d99f9f6ce03f9  0001-posix_memalign.patch
 '''
 
 EXPECTED_SIMPLE = '''Tree('ROOT', [
-/TOKEN-TEXT-NEWLINE, # Contributor: Natanael Copa <ncopa@alpinelinux.org>
-/TOKEN-COMMENT-SINGLE, pkgname/TOKEN-NAME-VARIABLE, =/TOKEN-OPERATOR-EQUAL, gcc/TOKEN-TEXT, Tree('SHELL-VARIABLE', [
+/TEXT-NEWLINE, # Contributor: Natanael Copa <ncopa@alpinelinux.org>/COMMENT-SINGLE, Tree('SHELL-VARIABLE', [
+/TEXT-NEWLINE, pkgname/NAME-VARIABLE, =/OPERATOR-EQUAL, gcc/TEXT]), Tree('SHELL-VARIABLE', [
 
-/TOKEN-TEXT-NEWLINE, pkgname/TOKEN-NAME-VARIABLE, =/TOKEN-OPERATOR-EQUAL, "$pkgname$_target"/TOKEN-LITERAL-STRING-DOUBLE]), Tree('SHELL-VARIABLE', [
-/TOKEN-TEXT-NEWLINE, pkgrel/TOKEN-NAME-VARIABLE, =/TOKEN-OPERATOR-EQUAL, 2/TOKEN-TEXT]), Tree('SHELL-VARIABLE', [
-/TOKEN-TEXT-NEWLINE, license/TOKEN-NAME-VARIABLE, =/TOKEN-OPERATOR-EQUAL, "GPL-2.0-or-later
- LGPL-2.1-or-later"/TOKEN-LITERAL-STRING-DOUBLE]),
-/TOKEN-TEXT-NEWLINE,     /TOKEN-TEXT-WHITESPACE, license="GPL-2.0-or-later/TOKEN-TEXT,
-/TOKEN-TEXT-NEWLINE,      /TOKEN-TEXT-WHITESPACE, LGPL-2.1-or-later"/TOKEN-TEXT,
+/TEXT-NEWLINE, pkgname/NAME-VARIABLE, =/OPERATOR-EQUAL, "$pkgname$_target"/LITERAL-STRING-DOUBLE]), Tree('SHELL-VARIABLE', [
+/TEXT-NEWLINE, pkgrel/NAME-VARIABLE, =/OPERATOR-EQUAL, 2/TEXT]), Tree('SHELL-VARIABLE', [
+/TEXT-NEWLINE, license/NAME-VARIABLE, =/OPERATOR-EQUAL, "GPL-2.0-or-later
+ LGPL-2.1-or-later"/LITERAL-STRING-DOUBLE]),
+/TEXT-NEWLINE,     /TEXT-WHITESPACE, license="GPL-2.0-or-later/TEXT,
+/TEXT-NEWLINE,      /TEXT-WHITESPACE, LGPL-2.1-or-later"/TEXT,
 
-/TOKEN-TEXT-NEWLINE, gnat()/TOKEN-TEXT,  /TOKEN-TEXT-WHITESPACE, {/TOKEN-TEXT,
-/TOKEN-TEXT-NEWLINE,     /TOKEN-TEXT-WHITESPACE, pkgdesc="Ada/TOKEN-TEXT,  /TOKEN-TEXT-WHITESPACE, support/TOKEN-TEXT,  /TOKEN-TEXT-WHITESPACE, for/TOKEN-TEXT,  /TOKEN-TEXT-WHITESPACE, GCC"/TOKEN-TEXT,
-/TOKEN-TEXT-NEWLINE, }/TOKEN-TEXT,
-/TOKEN-TEXT-NEWLINE])'''
+/TEXT-NEWLINE, gnat()/TEXT,  /TEXT-WHITESPACE, {/TEXT,
+/TEXT-NEWLINE,     /TEXT-WHITESPACE, pkgdesc="Ada/TEXT,  /TEXT-WHITESPACE, support/TEXT,  /TEXT-WHITESPACE, for/TEXT,  /TEXT-WHITESPACE, GCC"/TEXT,
+/TEXT-NEWLINE, }/TEXT,
+/TEXT-NEWLINE])'''

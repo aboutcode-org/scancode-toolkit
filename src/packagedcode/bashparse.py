@@ -50,13 +50,13 @@ if TRACE:
 variables_grammar = '''
 
 # variable like: \\n pkgname="gcc  compiler"
-SHELL-VARIABLE:  <TOKEN-TEXT-NEWLINE> <TOKEN-NAME-VARIABLE> <TOKEN-OPERATOR-EQUAL> <TOKEN-LITERAL-STRING-DOUBLE|TOKEN-LITERAL-STRING-SINGLE>
+SHELL-VARIABLE:  (?:<TEXT-NEWLINE>|^) <NAME-VARIABLE> <OPERATOR-EQUAL> <LITERAL-STRING-DOUBLE|LITERAL-STRING-SINGLE>
 
-# with the TOKEN-TEXT-NEWLINE at the start we ensure we get only things that
+# with the TEXT-NEWLINE at the start we ensure we get only things that
 # start on a new line, e.g. should be top level rather than inside a function
 
 # variable like: \\n pkgname=gcc \\n
-SHELL-VARIABLE:  <TOKEN-TEXT-NEWLINE> <TOKEN-NAME-VARIABLE> <TOKEN-OPERATOR-EQUAL> <TOKEN-TEXT>
+SHELL-VARIABLE:  (?:<TEXT-NEWLINE>) <NAME-VARIABLE> <OPERATOR-EQUAL> <TEXT>
 '''
 
 
@@ -84,7 +84,7 @@ class ShellVariable:
         # removes space nodes
         filtered = [
             token for token in node.leaves()
-            if token.label not in ('TOKEN-TEXT-NEWLINE', 'TOKEN-TEXT-WHITESPACE',)
+            if token.label not in ('TEXT-NEWLINE', 'TEXT-WHITESPACE',)
         ]
         # we should be left with three elements
         assert len(filtered) == 3, f'Unknown ShellVaribale node: {node}'
@@ -102,7 +102,7 @@ class ShellVariable:
         errors = []
         for var in variables:
             if var.name in seen:
-                errors.append(f'Duplicate varibale name: {var.name}: {var.value}')
+                errors.append(f'Duplicate variable name: {var.name}: {var.value}')
             else:
                 seen.add(var.name)
         return errors
@@ -128,7 +128,10 @@ class ShellVariable:
                 environment[var.name] = var.value
                 continue
             try:
+                
                 expanded = pe.expand(var.value, env=environment)
+                if ' ' in var.value and ' ' not in expanded:
+                    errors.append(f'Expasion munged value: {var.value}')
                 if TRACE:
                     logger_debug(
                         f'Resolved variable: {var} to: {expanded} with envt: {environment} ')
@@ -148,8 +151,8 @@ def dequote(token):
     Return a token value stripped from quotes based on its token label.
     """
     quote_style_by_token_label = {
-        'TOKEN-LITERAL-STRING-DOUBLE':'"',
-        'TOKEN-LITERAL-STRING-SINGLE': "'",
+        'LITERAL-STRING-DOUBLE':'"',
+        'LITERAL-STRING-SINGLE': "'",
     }
     qs = quote_style_by_token_label.get(token.label)
     if qs:
@@ -166,6 +169,15 @@ def collect_shell_variables(location, resolve=False):
     """
     with open(location) as inp:
         text = inp.read()
+    return collect_shell_variables_from_text_as_dict(text, resolve)
+
+
+def collect_shell_variables_from_text_as_dict(text, resolve=False):
+    """
+    Return a tuple of (variables, errors) from collecting top-level variables
+    defined in bash script ``text`` string. ``variables`` is a mapping of {name:
+    value} and ``errors`` a list of error message strings.
+    """
     vrs, errs = collect_shell_variables_from_text(text, resolve)
     return {v.name: v.value for v in vrs}, errs
 
@@ -173,7 +185,8 @@ def collect_shell_variables(location, resolve=False):
 def collect_shell_variables_from_text(text, resolve=False):
     """
     Return a tuple of (variables, errors) from collecting top-level variables
-    defined in bash script ``text`` string.
+    defined in bash script ``text`` string.``variables`` is a list of
+    ShellVariable objects and ``errors`` a list of error message strings.
     """
     parse_tree = parse_shell(text)
     variables = []
@@ -188,10 +201,8 @@ def collect_shell_variables_from_text(text, resolve=False):
         if TRACE: logger_debug(f'   variable: {variable}')
         if variable:
             variables.append(variable)
-
-    errors = []
+    errors = ShellVariable.validate(variables)
     if resolve:
-        errors = ShellVariable.validate(variables)
         variables, rerrors = ShellVariable.resolve(variables)
         errors.extend(rerrors)
     return variables, errors
@@ -225,3 +236,11 @@ def parse_shell(text, grammar=variables_grammar, trace=TRACE, validate=VALIDATE)
         logger_debug(f'parse_shell: parse_tree: {parse_tree}')
 
     return parse_tree
+
+
+if __name__ == '__main__':
+    import json
+    import sys
+    test_file = sys.argv[1]
+    results, errs = collect_shell_variables(test_file, resolve=True)
+    print(json.dumps(dict(variables=results, errors=errs), indent=2))
