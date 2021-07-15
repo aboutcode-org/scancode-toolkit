@@ -83,6 +83,18 @@ starlark_rule_types = [
 ]
 
 
+def check_rule_name_ending(rule_name):
+    """
+    Return True if `rule_name` ends with a rule type from `starlark_rule_types`
+
+    Return False otherwise
+    """
+    for rule_type in starlark_rule_types:
+        if rule_name.endswith(rule_type):
+            return True
+    return False
+
+
 @attr.s()
 class StarlarkManifestPackage(BaseBuildManifestPackage):
     @classmethod
@@ -103,9 +115,12 @@ class StarlarkManifestPackage(BaseBuildManifestPackage):
                     or isinstance(statement, ast.Call)
                     or isinstance(statement, ast.Assign)
                     and isinstance(statement.value, ast.Call)
-                    and isinstance(statement.value.func, ast.Name)
-                    and statement.value.func.id.endswith(starlark_rule_types)):
+                    and isinstance(statement.value.func, ast.Name)):
                 rule_name = statement.value.func.id
+                # Ensure that we are only creating packages from the proper
+                # build rules
+                if not check_rule_name_ending(rule_name):
+                    continue
                 # Process the rule arguments
                 args = {}
                 for kw in statement.value.keywords:
