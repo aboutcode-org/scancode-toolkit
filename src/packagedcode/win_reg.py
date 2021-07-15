@@ -316,4 +316,4 @@ class InstalledWindowsProgram(models.Package):
                 continue
             installed_files.append(relative_known_file_path)
 
-        self.installed_files = [models.PackageFile(path=path) for path in installed_files]
+        self.installed_files = [models.PackageFile(path=path) for path in sorted(installed_files)]

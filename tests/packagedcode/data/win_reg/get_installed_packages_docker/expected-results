@@ -38,6 +38,14 @@
   "source_packages": [],
   "installed_files": [
     {
+      "path": "Program Files/Test/Test.dat",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null
+    },
+    {
       "path": "Program Files/Test/Test.exe",
       "size": 0,
       "sha1": null,
@@ -47,14 +55,6 @@
     },
     {
       "path": "Program Files/Test/Uninstall.exe",
-      "size": 0,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null
-    },
-    {
-      "path": "Program Files/Test/Test.dat",
       "size": 0,
       "sha1": null,
       "md5": null,
