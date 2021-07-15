@@ -276,10 +276,10 @@ def parse(location):
     infos = pe_info(location)
 
     version = get_first(
-        infos, 
-        'Full Version', 
-        'ProductVersion', 
-        'FileVersion', 
+        infos,
+        'Full Version',
+        'ProductVersion',
+        'FileVersion',
         'Assembly Version',
     )
     release_date = get_first(infos, 'BuildDate')
@@ -289,9 +289,9 @@ def parse(location):
         release_date = release_date.replace('/', '-')
 
     name = get_first(
-        infos, 
-        'ProductName', 
-        'OriginalFilename', 
+        infos,
+        'ProductName',
+        'OriginalFilename',
         'InternalName',
     )
     copyr = get_first(infos, 'LegalCopyright')

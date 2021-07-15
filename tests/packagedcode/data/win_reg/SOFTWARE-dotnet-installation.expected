@@ -1,0 +1,41 @@
+[
+  {
+    "type": "windows-program",
+    "namespace": null,
+    "name": "Microsoft .NET Framework",
+    "version": "4.8.04084",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "installed_files": [],
+    "extra_data": {
+      "install_location": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\"
+    },
+    "purl": "pkg:windows-program/Microsoft%20.NET%20Framework@4.8.04084",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]
