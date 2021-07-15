@@ -13,65 +13,12 @@ from commoncode import text
 from packagedcode import bashparse
 from packagedcode.bashparse import ShellVariable
 
+from packages_test_utils  import build_tests
 from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import get_test_files
 from packages_test_utils import PackageTester
 
 test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-
-def create_test_function(test_file_loc, tested_function, test_name, regen=False):
-    """
-    Return a test function closed on test arguments to run
-    `tested_function(test_file_loc)`.
-    """
-
-    def test_package(self):
-        test_loc = self.get_test_loc(test_file_loc, must_exist=True)
-        result = tested_function(test_loc)
-        check_result_equals_expected_json(
-            result=result,
-            expected_loc=test_loc + '-expected.json',
-            regen=regen,
-        )
-
-    test_package.__name__ = test_name
-    return test_package
-
-
-def build_tests(
-    test_dir,
-    test_file_suffix,
-    clazz,
-    tested_function,
-    test_method_prefix,
-    regen=False,
-):
-    """
-    Dynamically build test methods from files in ``test_dir`` ending with
-    ``test_file_suffix`` and attach a test method to the ``clazz`` test class.
-
-    For each method:
-    - run ``tested_function`` with a test file with``test_file_suffix``
-      ``tested_function`` should return a JSON-serializable object.
-    - set the name prefixed with ``test_method_prefix``.
-    - check that a test expected file named <test_file_name>-expected.json`
-      has content matching the results of the ``tested_function`` returned value.
-    """
-    assert issubclass(clazz, PackageTester)
-
-    # loop through all items and attach a test method to our test class
-    for test_file_path in get_test_files(test_dir, test_file_suffix):
-        test_name = test_method_prefix + text.python_safe_name(test_file_path)
-        test_file_loc = os.path.join(test_dir, test_file_path)
-
-        test_method = create_test_function(
-            test_file_loc=test_file_loc,
-            tested_function=tested_function,
-            test_name=test_name,
-            regen=regen,
-        )
-        setattr(clazz, test_name, test_method)
 
 
 class TestBashParserDatadriven(PackageTester):
@@ -259,10 +206,10 @@ source="https://cairographics.org/releases/cairo-$pkgver.tar.xz
         expected = []
         assert errors == expected
         expected = {
-            'depends_dev': 
+            'depends_dev':
                 'fontconfig-dev freetype-dev libxrender-dev pixman-dev\n    '
                 'xcb-util-dev libxext-dev cairo-tools',
-            'makedepends': 
+            'makedepends':
                 'fontconfig-dev freetype-dev libxrender-dev pixman-dev\n    '
                 'xcb-util-dev libxext-dev cairo-tools zlib-dev expat-dev '
                 'glib-dev libpng-dev autoconf automake libtool',

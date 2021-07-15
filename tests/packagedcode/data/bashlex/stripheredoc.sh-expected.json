@@ -1,0 +1,16 @@
+[
+  "(0, Token.Text, 'cat')",
+  "(3, Token.Text.Whitespace, ' ')",
+  "(4, Token.Text, '<<-EOF')",
+  "(10, Token.Text.NewLine, '\\n')",
+  "(11, Token.Text.Whitespace, '  ')",
+  "(13, Token.Text, 'Hello')",
+  "(18, Token.Text.Whitespace, ' ')",
+  "(19, Token.Text, 'world')",
+  "(24, Token.Text.Whitespace, ' ')",
+  "(25, Token.Text, '$PATH')",
+  "(30, Token.Text.NewLine, '\\n')",
+  "(31, Token.Text.Whitespace, '  ')",
+  "(33, Token.Text, 'EOF')",
+  "(36, Token.Text.NewLine, '\\n')"
+]

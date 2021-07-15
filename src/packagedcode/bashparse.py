@@ -46,18 +46,32 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 #
-# a pygmars minimal grammar to collect bash/shell variables
 variables_grammar = '''
 
-# variable like: \\n pkgname="gcc  compiler"
-SHELL-VARIABLE:  (?:<TEXT-NEWLINE>|^) <NAME-VARIABLE> <OPERATOR-EQUAL> <LITERAL-STRING-DOUBLE|LITERAL-STRING-SINGLE>
+# A simple and minimal pygmars grammar to collect bash/shell variables.
+# This collects variables like: pkgname="gcc  compiler" or pkgname=gcc .
 
-# with the TEXT-NEWLINE at the start we ensure we get only things that
-# start on a new line, e.g. should be top level rather than inside a function
+# With the TEXT-NEWLINE (not captured) at the start we ensure we get only things
+# that start on a new line, e.g. that should be top level variable declaration
+# rather than inside a function.
 
-# variable like: \\n pkgname=gcc \\n
-SHELL-VARIABLE:  (?:<TEXT-NEWLINE>) <NAME-VARIABLE> <OPERATOR-EQUAL> <TEXT>
+SHELL-VARIABLE:  (?:<TEXT-NEWLINE>|^) <NAME-VARIABLE> <OPERATOR-EQUAL> <LITERAL-STRING-DOUBLE | LITERAL-STRING-SINGLE | TEXT>
 '''
+
+
+def collect_shell_variables(location, resolve=False):
+    """
+    Return a tuple of (``shell variables``, ``errors``) from collecting top-level
+    variables defined in bash script at ``location``.
+
+    ``shell variables`` is a mapping of {name: value}
+    ``errors`` a list of error message strings.
+
+    Optionally ``resolve`` the variables with limited shell expansion.
+    """
+    with open(location) as inp:
+        text = inp.read()
+    return collect_shell_variables_from_text_as_dict(text, resolve)
 
 
 @attr.s
@@ -128,7 +142,7 @@ class ShellVariable:
                 environment[var.name] = var.value
                 continue
             try:
-                
+
                 expanded = pe.expand(var.value, env=environment)
                 if ' ' in var.value and ' ' not in expanded:
                     errors.append(f'Expasion munged value: {var.value}')
@@ -159,17 +173,6 @@ def dequote(token):
         return token.value.strip(qs)
     else:
         return token.value
-
-
-def collect_shell_variables(location, resolve=False):
-    """
-    Return a tuple of (variables, errors) from collecting top-level variables
-    defined in bash script at ``location``. ``variables`` is a mapping of {name:
-    value} and ``errors`` a list of error message strings.
-    """
-    with open(location) as inp:
-        text = inp.read()
-    return collect_shell_variables_from_text_as_dict(text, resolve)
 
 
 def collect_shell_variables_from_text_as_dict(text, resolve=False):
