@@ -34,52 +34,52 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/org.hibernate/hibernate",
+      "purl": "pkg:maven/org.hibernate/hibernate@3.2.6.ga",
       "requirement": "3.2.6.ga",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.hibernate/hibernate-annotations",
+      "purl": "pkg:maven/org.hibernate/hibernate-annotations@3.3.1.GA",
       "requirement": "3.3.1.GA",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.hibernate/hibernate-commons-annotations",
+      "purl": "pkg:maven/org.hibernate/hibernate-commons-annotations@3.0.0.ga",
       "requirement": "3.0.0.ga",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.hibernate/ejb3-persistence",
+      "purl": "pkg:maven/org.hibernate/ejb3-persistence@1.0.1.GA",
       "requirement": "1.0.1.GA",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-logging/commons-logging",
+      "purl": "pkg:maven/commons-logging/commons-logging@1.0.4",
       "requirement": "1.0.4",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javassist/javassist",
+      "purl": "pkg:maven/javassist/javassist@3.4.GA",
       "requirement": "3.4.GA",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

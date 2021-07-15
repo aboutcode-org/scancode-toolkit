@@ -30,17 +30,17 @@
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-core",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-core",
@@ -48,7 +48,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     }
   ],
   "contains_source_code": null,

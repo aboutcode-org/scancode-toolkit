@@ -140,12 +140,12 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/junit/junit",
+      "purl": "pkg:maven/junit/junit@3.8.1",
       "requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

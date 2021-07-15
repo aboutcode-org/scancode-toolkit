@@ -223,6 +223,12 @@ Package: pods
   extensions: .podspec
 
 --------------------------------------------
+Package: pubspec
+  class: packagedcode.pubspec:PubspecPackage
+  metafiles: pubspec.yaml, pubspec.lock
+  extensions: .yaml, .lock
+
+--------------------------------------------
 Package: pypi
   class: packagedcode.pypi:PythonPackage
   metafiles: *setup.py, *setup.cfg, PKG-INFO, METADATA, *.whl, *.egg, *requirements*.txt, *requirements*.pip, *requirements*.in, *Pipfile.lock, conda.yml, *setup.cfg, tox.ini

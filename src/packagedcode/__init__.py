@@ -27,6 +27,7 @@ from packagedcode import npm
 from packagedcode import nuget
 from packagedcode import opam
 from packagedcode import phpcomposer
+from packagedcode import pubspec
 from packagedcode import pypi
 from packagedcode import readme
 from packagedcode import rpm
@@ -86,6 +87,7 @@ PACKAGE_TYPES = [
     build.MetadataBzl,
     msi.MsiInstallerPackage,
     windows.MicrosoftUpdateManifestPackage,
+    pubspec.PubspecPackage,
 ]
 
 PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}

@@ -1,3 +1,4 @@
+- (gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)
 - - GPL-1+ or Artistic
   - Expat
   - REGCOMP, and GPL-1+ or Artistic
@@ -31,19 +32,29 @@
   - REGCOMP
   - HSIEH-DERIVATIVE
   - HSIEH-BSD
-- ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND mit AND (regexp AND
-  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))) AND gpl-3.0-plus WITH
-  bison-exception-2.2 AND unicode-dfs-2015 AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
-  AND artistic-perl-1.0)) AND unicode-dfs-2015) AND bzip2-libbzip-2010 AND zlib AND (artistic-2.0
-  AND artistic-perl-1.0) AND ((gpl-2.0-plus AND gpl-2.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (mit OR (gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND fsf-ap
-  AND bsd-new AND (cc0-1.0 AND cc0-1.0) AND other-permissive AND (((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND bsd-original) AND (((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND bsd-new) AND bsd-new AND (public-domain AND public-domain
-  AND public-domain AND public-domain) AND other-copyleft AND ((gpl-1.0-plus AND gpl-1.0) OR
-  (artistic-2.0 AND artistic-perl-1.0) OR artistic-dist-1.0) AND artistic-dist-1.0 AND ((artistic-2.0
-  AND artistic-perl-1.0) OR (gpl-1.0-plus AND gpl-1.0) OR artistic-dist-1.0) AND (((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND mit)
+- ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR
+  artistic-perl-1.0) AND mit AND (regexp AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
+  artistic-perl-1.0))) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND gpl-3.0-plus WITH bison-exception-2.2
+  AND unicode-dfs-2015 AND unicode AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND unicode-dfs-2015) AND (gpl-1.0-plus OR artistic-1.0) AND bzip2-libbzip-2010 AND zlib AND
+  (artistic-2.0 AND artistic-perl-1.0) AND artistic-2.0 AND ((gpl-2.0-plus AND gpl-2.0) OR (artistic-2.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-2.0-plus) AND (mit OR (gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (mit OR gpl-1.0-plus OR artistic-perl-1.0)
+  AND ((artistic-perl-1.0 OR gpl-1.0-plus) AND historical) AND fsf-ap AND (artistic-2.0 AND
+  public-domain AND (artistic-2.0 AND public-domain-disclaimer)) AND bsd-new AND ((gpl-1.0-plus
+  OR artistic-perl-1.0) AND public-domain) AND cc0-1.0 AND (cc0-1.0 OR openssl-ssleay OR apache-2.0)
+  AND (agpl-3.0 AND (artistic-perl-1.0 OR gpl-1.0-plus)) AND other-permissive AND (((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND bsd-original) AND (bsd-new AND other-permissive
+  AND (artistic-perl-1.0 OR gpl-1.0-plus)) AND (artistic-perl-1.0 AND (gpl-1.0-plus OR artistic-perl-1.0))
+  AND ((artistic-perl-1.0 OR gpl-1.0-plus) AND (gpl-1.0-plus OR artistic-perl-1.0)) AND (((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND bsd-new) AND ((artistic-perl-1.0
+  OR gpl-1.0-plus) AND bsd-new) AND (warranty-disclaimer AND (gpl-1.0-plus OR artistic-perl-1.0))
+  AND (artistic-2.0 AND gpl-1.0-plus) AND artistic-1.0 AND public-domain AND (artistic-2.0 AND
+  public-domain-disclaimer) AND other-copyleft AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND artistic-perl-1.0) OR artistic-dist-1.0) AND (artistic-2.0 AND (gpl-1.0-plus OR artistic-perl-1.0))
+  AND artistic-dist-1.0 AND ((artistic-2.0 AND artistic-perl-1.0) OR (gpl-1.0-plus AND gpl-1.0)
+  OR artistic-dist-1.0) AND (artistic-2.0 AND public-domain) AND (((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-2.0 AND artistic-perl-1.0)) AND mit)
 - |
   Perl is Copyright (C) 1987-2021 by Larry Wall and others. All rights reserved.
   Copyright (c) 1996-2006, Nick Ing-Simmons
@@ -87,7 +98,6 @@
   Copyright (C) 2000-01, 2002 Novell, Inc. All Rights Reserved.
   Copyright (C) 1993-2015 by Charles Bailey and others.
   Copyright (C) 1993 Eric Young - see README for more details
-  unknown
   2002 - 2009 Jos Boumans <kane@cpan.org>. All rights reserved.
   This package has the same copyright and license as the perl core:
   Copyright (C) 1993, 1994, 1995, 1996, 1997, 1998, 1999,
@@ -210,7 +220,6 @@
   Copyright (c) 1996 by Eryq. All rights reserved.
   Copyright (c) 1999,2001 by ZeeGee Software Inc. All rights reserved.
   Copyright 2003 by Fergal Daly <fergal@esatclear.ie>.
-  none
   To the extent possible under law, 唐鳳 has waived all copyright and related
   or neighboring rights to L<Test-use-ok>
   Copyright 1997 - 2001 Damian Conway. All Rights Reserved.

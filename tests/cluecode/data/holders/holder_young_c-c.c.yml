@@ -3,6 +3,10 @@ what:
   - holders_summary
 holders:
   - Eric Young
+  - Tim Hudson
 holders_summary:
   - value: Eric Young
     count: 1
+  - value: Tim Hudson
+    count: 1
+

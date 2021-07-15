@@ -1,3 +1,4 @@
+- gpl-2.0 AND gpl-1.0-plus
 - - GPL-2
   - GPL-2+
   - GPL-verbatim
@@ -17,14 +18,12 @@
   - GPL-3+
   - MIT/X11
   - Artistic
-- (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND other-copyleft AND public-domain AND bsd-new
-  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND bsd-simplified AND (lgpl-2.0
-  AND lgpl-3.0-plus AND lgpl-2.0) AND fsf-free AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND ((gpl-2.0
-  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) AND bsd-simplified) AND zlib AND gpl-3.0-plus
-  WITH bison-exception-2.2 AND gpl-2.0-plus WITH bison-exception-2.2 AND stlport-4.5 AND ((gpl-2.0
-  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (gpl-3.0-plus AND gpl-3.0-plus) AND (x11-xconsortium AND public-domain)
+- (gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus AND gpl-2.0 AND gpl-1.0-plus) AND gpl-2.0 AND
+  other-copyleft AND public-domain AND bsd-new AND (lgpl-2.1-plus AND lgpl-2.1) AND bsd-simplified
+  AND (lgpl-2.0 AND lgpl-3.0-plus) AND fsf-free AND lgpl-2.0-plus AND ((gpl-2.0 AND gpl-1.0-plus)
+  AND bsd-simplified) AND zlib AND gpl-3.0-plus WITH bison-exception-2.2 AND gpl-2.0-plus WITH
+  bison-exception-2.2 AND stlport-4.5 AND ((gpl-2.0 AND gpl-1.0-plus) OR (artistic-2.0 AND artistic-perl-1.0))
+  AND gpl-3.0-plus AND (x11-xconsortium AND public-domain)
 - |
   2000-2016, Oracle and/or its affiliates. All rights reserved.
   2008-2013 Monty Program AB
@@ -55,7 +54,6 @@
   2006-2008 MySQL AB
   2008-2009 Sun Microsystems, Inc
   2009, 2013, Monty Program Ab
-  none
   2013, Spaempresarial - Brazil, Roberto Spadim
   2008, Roland Bouman
   2011 Kristian Nielsen and Monty Program Ab

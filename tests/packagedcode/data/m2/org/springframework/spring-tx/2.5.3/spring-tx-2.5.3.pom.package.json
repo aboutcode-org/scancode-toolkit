@@ -42,84 +42,84 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/aopalliance/aopalliance",
+      "purl": "pkg:maven/aopalliance/aopalliance@1.0",
       "requirement": "1.0",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-logging/commons-logging",
+      "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
       "requirement": "1.1.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.experlog/xapool",
+      "purl": "pkg:maven/com.experlog/xapool@1.5.0",
       "requirement": "1.5.0",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/jotm/jotm",
+      "purl": "pkg:maven/jotm/jotm@2.0.10",
       "requirement": "2.0.10",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-aop",
+      "purl": "pkg:maven/org.springframework/spring-aop@2.5.3",
       "requirement": "2.5.3",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-beans",
+      "purl": "pkg:maven/org.springframework/spring-beans@2.5.3",
       "requirement": "2.5.3",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-context",
+      "purl": "pkg:maven/org.springframework/spring-context@2.5.3",
       "requirement": "2.5.3",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.springframework/spring-core",
+      "purl": "pkg:maven/org.springframework/spring-core@2.5.3",
       "requirement": "2.5.3",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.resource/connector-api",
+      "purl": "pkg:maven/javax.resource/connector-api@1.5",
       "requirement": "1.5",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.transaction/jta",
+      "purl": "pkg:maven/javax.transaction/jta@1.1",
       "requirement": "1.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

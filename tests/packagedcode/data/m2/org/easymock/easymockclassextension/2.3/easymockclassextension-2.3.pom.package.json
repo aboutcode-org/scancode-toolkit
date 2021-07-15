@@ -34,36 +34,36 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/org.easymock/easymock",
+      "purl": "pkg:maven/org.easymock/easymock@2.3",
       "requirement": "2.3",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/cglib/cglib-nodep",
+      "purl": "pkg:maven/cglib/cglib-nodep@2.1_3",
       "requirement": "2.1_3",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.objenesis/objenesis",
+      "purl": "pkg:maven/org.objenesis/objenesis@1.1",
       "requirement": "1.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/junit/junit",
+      "purl": "pkg:maven/junit/junit@4.4",
       "requirement": "4.4",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

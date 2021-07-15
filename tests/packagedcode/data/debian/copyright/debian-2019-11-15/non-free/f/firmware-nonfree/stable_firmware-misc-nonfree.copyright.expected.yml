@@ -1,3 +1,4 @@
+- None
 - - BSD (3Com)
   - Permissive (Advansys)
   - BSD (Agere)
@@ -30,11 +31,8 @@
   - BSD (Ikanos)
   - Binary redistribution (Conexant)
 - 3com-microcode AND bsd-simplified-source AND agere-bsd AND isc AND proprietary-license AND
-  other-permissive AND linux-openib AND proprietary-license AND bsd-simplified-source AND proprietary-license
-  AND isc AND isc AND proprietary-license AND bsd-new AND isc AND proprietary-license AND proprietary-license
-  AND intel AND intel AND proprietary-license AND bsd-original AND mit AND proprietary-license
-  AND ralink-firmware AND proprietary-license AND proprietary-license AND proprietary-license
-  AND proprietary-license AND ralink-firmware AND (bsd-new AND proprietary-license) AND proprietary-license
+  other-permissive AND linux-openib AND bsd-new AND intel AND bsd-original AND mit AND ralink-firmware
+  AND (bsd-new AND proprietary-license)
 - |
   1999-2004, 3Com Corporation
   1995-2000, Advanced System Products, Inc.

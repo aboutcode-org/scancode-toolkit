@@ -1,6 +1,7 @@
+- gpl-2.0-plus
 - - GPL-2+
   - AFL-2.1
-- (gpl-2.0-plus AND gpl-2.0-plus) AND (afl-2.1 AND afl-2.1)
+- gpl-2.0-plus AND afl-2.1
 - |
   2000-2004 Ola Lundqvist <opal@debian.org>
   2004-2011 sean finney <seanius@debian.org>

@@ -153,3 +153,17 @@ class TestPlugins(PackageTester):
         expected_file = self.get_test_loc('plugin/mum-package-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False)
+
+    def test_package_command_scan_pubspec_package(self):
+        test_dir = self.get_test_loc('pubspec/specs/authors-pubspec.yaml')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin/pubspec-expected.json', must_exist=False)
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False)
+
+    def test_package_command_scan_pubspec_lock_package(self):
+        test_dir = self.get_test_loc('pubspec/locks/dart-pubspec.lock')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin/pubspec-lock-expected.json', must_exist=False)
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False)

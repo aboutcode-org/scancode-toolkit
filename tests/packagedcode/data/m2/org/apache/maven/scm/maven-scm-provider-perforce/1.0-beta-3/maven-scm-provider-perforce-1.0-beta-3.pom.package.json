@@ -27,12 +27,12 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/regexp/regexp",
+      "purl": "pkg:maven/regexp/regexp@1.3",
       "requirement": "1.3",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

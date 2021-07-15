@@ -1,9 +1,10 @@
+- bsd-new
 - - BSD-3-Clause
   - permissive-like-automake-output
   - ISC
   - ISC+IBM
   - same-as-rest-of-p11kit
-- bsd-new AND fsf-unlimited-no-warranty AND isc AND (isc AND ibm-dhcp) AND free-unknown
+- bsd-new AND fsf-unlimited-no-warranty AND mit AND isc AND (isc AND ibm-dhcp) AND free-unknown
 - |
   2011 Collabora Ltd.
   2004, 2005, 2007, 2008, 2012, 2013 Stefan Walter

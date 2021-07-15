@@ -1,4 +1,4 @@
-t: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: AppStream
 Upstream-Contact: Matthias Klumpp <matthias@tenstral.net>
 Source: https://www.freedesktop.org/wiki/Distributions/AppStream/

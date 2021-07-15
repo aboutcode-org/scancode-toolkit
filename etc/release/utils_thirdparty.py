@@ -975,7 +975,7 @@ class Sdist(Distribution):
     @classmethod
     def from_filename(cls, filename):
         """
-        Return a sdist object built from a filename.
+        Return a Sdist object built from a filename.
         Raise an exception if this is not a valid sdist filename
         """
         name_ver = None
@@ -1048,12 +1048,12 @@ class Wheel(Distribution):
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     """
 
-    wheel_file_re = re.compile(
+    get_wheel_from_filename = re.compile(
         r"""^(?P<namever>(?P<name>.+?)-(?P<ver>.*?))
         ((-(?P<build>\d[^-]*?))?-(?P<pyvers>.+?)-(?P<abis>.+?)-(?P<plats>.+?)
         \.whl)$""",
         re.VERBOSE
-    )
+    ).match
 
     build = attr.ib(
         type=str,
@@ -1092,7 +1092,7 @@ class Wheel(Distribution):
         Return a wheel object built from a filename.
         Raise an exception if this is not a valid wheel filename
         """
-        wheel_info = cls.wheel_file_re.match(filename)
+        wheel_info = cls.get_wheel_from_filename(filename)
         if not wheel_info:
             raise InvalidDistributionFilename(filename)
 

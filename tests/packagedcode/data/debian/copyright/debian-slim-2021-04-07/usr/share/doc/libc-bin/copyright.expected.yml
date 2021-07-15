@@ -1,7 +1,8 @@
 -
-- lgpl-2.1-plus AND gpl-2.0-plus AND bsd-new AND unknown-license-reference AND historical AND
-  isc AND carnegie-mellon-contributors AND inner-net-2.0 AND lgpl-2.0-plus AND other-permissive
-  AND ietf AND hs-regexp AND pcre AND sunpro
+-
+- lgpl-2.1-plus AND gpl-2.0-plus AND bsd-new AND historical AND isc AND carnegie-mellon-contributors
+  AND inner-net-2.0 AND lgpl-2.0-plus AND other-permissive AND ietf AND hs-regexp AND pcre AND
+  sunpro
 - |
   Copyright (c) 1991-2015 Free Software Foundation, Inc.
   Copyright (c) 1991-2015 Free Software Foundation, Inc.

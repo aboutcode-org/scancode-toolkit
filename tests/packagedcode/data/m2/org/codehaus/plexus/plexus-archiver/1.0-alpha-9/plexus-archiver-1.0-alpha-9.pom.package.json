@@ -42,36 +42,36 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.1",
       "requirement": "1.4.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-15",
       "requirement": "1.0-alpha-15",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api@1.0-alpha-15",
       "requirement": "1.0-alpha-15",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-io",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-io@1.0-alpha-1",
       "requirement": "1.0-alpha-1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

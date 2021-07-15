@@ -1,3 +1,4 @@
+- zlib
 - - zlib/libpng
   - zlib/libpng
   - LGPL-2+
@@ -5,8 +6,8 @@
   - LGPL-2+
   - zlib/libpng
   - LGPL-2+
-- zlib AND zlib AND (lgpl-2.0-plus AND gpl-2.0-plus AND lgpl-2.0) AND unlicense AND (lgpl-2.0-plus
-  AND gpl-2.0-plus AND lgpl-2.0)
+- zlib AND zlib AND (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0) AND unlicense
+  AND (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0)
 - |
   1997-2016 Sam Lantinga <slouken@libsdl.org>
   1997-2016 Sam Lantinga <slouken@libsdl.org>

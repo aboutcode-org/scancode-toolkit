@@ -54,5 +54,68 @@
       "url": "http://people.apache.org/maven-snapshot-repository"
     }
   ],
-  "dependencies": {}
+  "dependencies": {
+    "dependencyManagement": [
+      {
+        "group_id": "org.openqa.selenium.server",
+        "artifact_id": "selenium-server-coreless",
+        "version": "0.9.1",
+        "required": true
+      },
+      {
+        "group_id": "org.openqa.selenium.server",
+        "artifact_id": "selenium-server",
+        "version": "0.9.1",
+        "required": true
+      },
+      {
+        "group_id": "org.openqa.selenium.core",
+        "artifact_id": "selenium-core",
+        "version": "0.8.3-SNAPSHOT",
+        "required": true
+      },
+      {
+        "group_id": "org.openqa.selenium.ide",
+        "artifact_id": "selenium-ide",
+        "version": "0.8.1-SNAPSHOT",
+        "required": true
+      },
+      {
+        "group_id": "ant",
+        "artifact_id": "ant",
+        "version": "1.6.5",
+        "required": true
+      },
+      {
+        "group_id": "jetty",
+        "artifact_id": "org.mortbay.jetty",
+        "version": "5.1.10",
+        "required": true
+      },
+      {
+        "group_id": "commons-logging",
+        "artifact_id": "commons-logging",
+        "version": "1.0.4",
+        "required": true
+      },
+      {
+        "group_id": "javax.servlet",
+        "artifact_id": "servlet-api",
+        "version": "2.4",
+        "required": true
+      },
+      {
+        "group_id": "rhino",
+        "artifact_id": "js",
+        "version": "1.6R2",
+        "required": true
+      },
+      {
+        "group_id": "junit",
+        "artifact_id": "junit",
+        "version": "3.8.1",
+        "required": true
+      }
+    ]
+  }
 }

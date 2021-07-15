@@ -1,0 +1,13 @@
+License: The main library is licensed under GNU Lesser
+General Public License (LGPL) version 2.1+, Gnutls Extra (which is currently
+just the openssl wrapper library), build system, testsuite and commandline
+utilities are licenced under the GNU General Public License version 3+.  The
+Guile bindings use the same license as the respective underlying library,
+i.e. LGPLv2.1+ for the main library and GPLv3+ for Gnutls extra.
+
+However to be able to use and link against libgnutls a program needs to be
+available under a license compatible with LGPLv3+ or GPLv2+ since GnuTLS
+requires nettle which requires GMP. GMP (>= 6.0.0) is dual licensed
+LGPLv3+ or GPLv2+. Starting with 3.5.7 libunistring is needed, too. It also
+is dual licensed LGPLv3+ or GPLv2+ (libunistring 0.9.7 and above, earlier
+version were LGPLv3+ only.)

@@ -10,7 +10,7 @@ minimum_coverage: 80
 ignorable_copyrights:
     - (c) 2004 Mihnea Stoenescu
     - (c) Todd C. Miller
-    - Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi> , Timo Rinne <tri@iki.fi>
+    - Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi> , Timo Rinne <tri@iki.fi> ,Espoo, Finland
     - Copyright (c) 1995,1999 Theo de Raadt
     - Copyright (c) 1998 Todd C. Miller
     - Copyright (c) 2000 Andre Lucas
@@ -35,7 +35,7 @@ ignorable_holders:
     - Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez
         Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
     - Simon Tatham
-    - Tatu Ylonen , Timo Rinne
+    - Tatu Ylonen , Timo Rinne ,Espoo, Finland
     - Theo de Raadt
     - Todd C. Miller
 ignorable_emails:

@@ -27,12 +27,12 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.1",
       "requirement": "1.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

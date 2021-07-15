@@ -66,6 +66,20 @@
         "version": "3.8.1",
         "required": true
       }
+    ],
+    "dependencyManagement": [
+      {
+        "group_id": "org.slf4j",
+        "artifact_id": "slf4j-api",
+        "version": "1.4.2",
+        "required": true
+      },
+      {
+        "group_id": "log4j",
+        "artifact_id": "log4j",
+        "version": "1.2.13",
+        "required": true
+      }
     ]
   }
 }

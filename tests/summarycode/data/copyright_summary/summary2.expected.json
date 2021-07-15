@@ -60,11 +60,11 @@
         {
           "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others",
           "start_line": 44,
-          "end_line": 46
+          "end_line": 45
         },
         {
           "value": "copyright Sun Microsystems Inc.",
-          "start_line": 44,
+          "start_line": 46,
           "end_line": 46
         }
       ],
@@ -72,11 +72,11 @@
         {
           "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others",
           "start_line": 44,
-          "end_line": 46
+          "end_line": 45
         },
         {
           "value": "Sun Microsystems Inc.",
-          "start_line": 44,
+          "start_line": 46,
           "end_line": 46
         }
       ],

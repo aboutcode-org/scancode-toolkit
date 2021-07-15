@@ -1569,18 +1569,40 @@ def get_ignorables(text_file, verbose=False):
     if verbose:
         print(f'  Found emails: {emails}')
 
-    ignorables = dict(
-        ignorable_copyrights=sorted(copyrights),
-        ignorable_holders=sorted(holders),
-        ignorable_authors=sorted(authors),
-        ignorable_urls=sorted(urls),
-        ignorable_emails=sorted(emails),
-    )
+    ignorables = build_ignorables_mapping(
+        copyrights, holders, authors, urls, emails)
 
-    ignorables = {k: v for k, v in sorted(ignorables.items()) if v}
     if verbose:
         print(f'  Found ignorables: {ignorables}')
     return ignorables
+
+
+def get_normalized_ignorables(licensish):
+    """
+    Return a sorted mapping of ignorables built from a licensish Rule or License.
+    """
+    return build_ignorables_mapping(
+        copyrights=licensish.ignorable_copyrights,
+        holders=licensish.ignorable_holders,
+        authors=licensish.ignorable_authors,
+        urls=licensish.ignorable_urls,
+        emails=licensish.ignorable_emails,
+    )
+
+
+def build_ignorables_mapping(copyrights, holders, authors, urls, emails):
+    """
+    Return a sorted mapping of ignorables built from lists of ignorable clues.
+    """
+    ignorables = dict(
+        ignorable_copyrights=sorted(copyrights or []),
+        ignorable_holders=sorted(holders or []),
+        ignorable_authors=sorted(authors or []),
+        ignorable_urls=sorted(urls or []),
+        ignorable_emails=sorted(emails or []),
+    )
+
+    return {k: v for k, v in sorted(ignorables.items()) if v}
 
 
 def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):

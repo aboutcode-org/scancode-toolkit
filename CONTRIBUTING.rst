@@ -22,7 +22,7 @@ with your name and email::
     Signed-off-by: Jane Doe <developer@example.com>
 
 Please try to write a good commit message, see `good commit message wiki
-<https://github.com/nexB/aboutcode/wiki/Writing-good-commit-messages>`_ for
+<https://aboutcode.readthedocs.io/en/latest/contributing/writing_good_commit_messages.html>` for
 details. In particular use the imperative for your commit subject: think that
 you are giving an order to the codebase to update itself.
 
