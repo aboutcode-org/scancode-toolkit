@@ -38,7 +38,7 @@
   "source_packages": [],
   "installed_files": [
     {
-      "path": "/home/jono/nexb/src/scancode-toolkit/tests/packagedcode/data/win_reg/get_installed_packages_docker/layer/Files/Program Files/Test/Test.exe",
+      "path": "Program Files/Test/Test.exe",
       "size": 0,
       "sha1": null,
       "md5": null,
@@ -46,7 +46,7 @@
       "sha512": null
     },
     {
-      "path": "/home/jono/nexb/src/scancode-toolkit/tests/packagedcode/data/win_reg/get_installed_packages_docker/layer/Files/Program Files/Test/Uninstall.exe",
+      "path": "Program Files/Test/Uninstall.exe",
       "size": 0,
       "sha1": null,
       "md5": null,
@@ -54,7 +54,7 @@
       "sha512": null
     },
     {
-      "path": "/home/jono/nexb/src/scancode-toolkit/tests/packagedcode/data/win_reg/get_installed_packages_docker/layer/Files/Program Files/Test/Test.dat",
+      "path": "Program Files/Test/Test.dat",
       "size": 0,
       "sha1": null,
       "md5": null,

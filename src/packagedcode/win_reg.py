@@ -264,6 +264,18 @@ def create_absolute_installed_file_path(root_dir, file_path):
     return str(Path(root_dir).joinpath(file_path))
 
 
+def create_relative_file_path(file_path, root_dir):
+    """
+    Return a subpath of `file_path` that is relative to `root_dir`
+
+    >>> file_path = '/home/test/example/foo.txt'
+    >>> root_dir = '/home/test/'
+    >>> create_relative_file_path(file_path, root_dir)
+    'example/foo.txt'
+    """
+    return str(Path(file_path).relative_to(root_dir))
+
+
 @attr.s()
 class InstalledWindowsProgram(models.Package):
     default_type = 'windows-program'
@@ -288,18 +300,20 @@ class InstalledWindowsProgram(models.Package):
         installed_files = []
         for root, _, files in os.walk(absolute_install_location):
             for file in files:
-                installed_file_path = os.path.join(root, file)
-                installed_files.append(installed_file_path)
+                installed_file_location = os.path.join(root, file)
+                relative_installed_file_path = create_relative_file_path(installed_file_location, root_dir)
+                installed_files.append(relative_installed_file_path)
 
         known_program_files = self.extra_data.get('known_program_files', [])
         for known_program_file_path in known_program_files:
-            absolute_known_program_file_path = create_absolute_installed_file_path(
+            known_program_file_location = create_absolute_installed_file_path(
                 root_dir=root_dir,
                 file_path=known_program_file_path,
             )
-            if (not os.path.exists(absolute_known_program_file_path)
-                    or absolute_known_program_file_path in installed_files):
+            relative_known_file_path = create_relative_file_path(known_program_file_location, root_dir)
+            if (not os.path.exists(known_program_file_location)
+                    or relative_known_file_path in installed_files):
                 continue
-            installed_files.append(absolute_known_program_file_path)
+            installed_files.append(relative_known_file_path)
 
         self.installed_files = [models.PackageFile(path=path) for path in installed_files]
