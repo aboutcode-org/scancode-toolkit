@@ -163,38 +163,44 @@ def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **k
     """
 
     base_status_file_loc = os.path.join(root_dir, 'var/lib/dpkg/status')
-    if not os.path.exists(base_status_file_loc):
-        return
+    base_statusd_loc = os.path.join(root_dir, 'var/lib/dpkg/status.d/')
 
-    var_lib_dpkg_info_dir = os.path.join(root_dir, 'var/lib/dpkg/info/')
+    if os.path.exists(base_status_file_loc):
+        var_lib_dpkg_info_dir = os.path.join(root_dir, 'var/lib/dpkg/info/')
 
-    # guard from recursive import
-    from packagedcode import debian_copyright
+        # guard from recursive import
+        from packagedcode import debian_copyright
 
-    for package in parse_status_file(base_status_file_loc, distro=distro):
-        package.populate_installed_files(var_lib_dpkg_info_dir)
-        if detect_licenses:
-            copyright_location = package.get_copyright_file_path(root_dir)
-            dc = debian_copyright.parse_copyright_file(copyright_location)
-            if dc:
-                package.declared_license = dc.get_declared_license(
-                    filter_duplicates=True,
-                    skip_debian_packaging=True,
-                )
-                package.license_expression = dc.get_license_expression(
-                    skip_debian_packaging=True,
-                    simplify_licenses=True,
-                )
-                package.copyright = dc.get_copyright(
-                    skip_debian_packaging=True,
-                    unique_copyrights=True,
-                )
+        for package in parse_status_file(base_status_file_loc, distro=distro):
+            package.populate_installed_files(var_lib_dpkg_info_dir)
+            if detect_licenses:
+                copyright_location = package.get_copyright_file_path(root_dir)
+                dc = debian_copyright.parse_copyright_file(copyright_location)
+                if dc:
+                    package.declared_license = dc.get_declared_license(
+                        filter_duplicates=True,
+                        skip_debian_packaging=True,
+                    )
+                    package.license_expression = dc.get_license_expression(
+                        skip_debian_packaging=True,
+                        simplify_licenses=True,
+                    )
+                    package.copyright = dc.get_copyright(
+                        skip_debian_packaging=True,
+                        unique_copyrights=True,
+                    )
+            yield package
 
-        yield package
+    elif os.path.exists(base_statusd_loc):
+        for root, dirs, files in os.walk(base_statusd_loc):
+            for f in files:
+                status_file_loc = os.path.join(root, f)
+                for package in parse_status_file(status_file_loc, distro=distro):
+                    yield package
 
 
 def is_debian_status_file(location):
-    return filetype.is_file(location) and location.endswith('/status')
+    return filetype.is_file(location) #and location.endswith('/status')
 
 
 def parse_status_file(location, distro='debian'):
