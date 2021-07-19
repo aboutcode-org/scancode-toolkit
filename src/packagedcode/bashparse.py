@@ -43,35 +43,85 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args), flush=True)
 
 #
-variables_grammar = '''
-
 # A simple and minimal pygmars grammar to collect bash/shell variables.
-# This collects variables like: pkgname="gcc  compiler" or pkgname=gcc .
+variables_grammar = (
 
-# With the TEXT-NEWLINE (not captured) at the start we ensure we get only things
-# that start on a new line, e.g. that should be top level variable declaration
-# rather than inside a function.
+    'SHELL-ARRAY: '
+        '<ARRAYSEP-START>'
+            '<TEXT-WS| TEXT-WS-LF | COMMENT |LITERAL-STRING-DOUBLE | LITERAL-STRING-SINGLE | TEXT>+'
+        '<ARRAYSEP-END>'
+        ' # An array'
+    '\n'
 
-SHELL-VARIABLE:  (?:<TEXT-NEWLINE>|^) <NAME-VARIABLE> <OPERATOR-EQUAL> <LITERAL-STRING-DOUBLE | LITERAL-STRING-SINGLE | TEXT>
-'''
+    # This collects variables like: pkgname="gcc  compiler" or pkgname=gcc .
+    # With the TEXT-WS-LF (newline) (not captured) at the start we ensure we get
+    # only things that start on a new line, e.g. that should be top level
+    # variable declaration rather than inside a function.
+    'SHELL-VARIABLE: '
+        '(?:<TEXT-WS-LF>|^)'
+        '<NAME-VARIABLE>'
+        '<OPERATOR-EQUAL>'
+        '<LITERAL-STRING-DOUBLE | LITERAL-STRING-SINGLE | TEXT | SHELL-ARRAY>'
+        ' # A Shell variable'
+
+)
 
 
-def collect_shell_variables(location, resolve=False):
+def collect_shell_variables(location, resolve=False, needed_variables=None):
     """
-    Return a tuple of (``shell variables``, ``errors``) from collecting top-level
-    variables defined in bash script at ``location``.
+    Return a tuple of (``shell variables``, ``errors``) from collecting top-
+    level variables defined in bash script at ``location``.
 
     ``shell variables`` is a mapping of {name: value}
     ``errors`` a list of error message strings.
 
-    Optionally ``resolve`` the variables with limited shell expansion.
+    Optionally ``resolve`` the variables with emulated shell parameter
+    expansion. If the set ``needed_variables`` is provided, only return
+    variables with a named present in this set and only report errors for
+    variables with a name listed in this set.
     """
     with open(location) as inp:
         text = inp.read()
-    return collect_shell_variables_from_text_as_dict(text, resolve)
+
+    return collect_shell_variables_from_text_as_dict(
+        text=text,
+        resolve=resolve,
+        needed_variables=needed_variables,
+    )
+
+#
+# Convenience functions on parse tree labels
+
+
+def is_shell_variable(node):
+    return node.label.startswith('SHELL-VARIABLE')
+
+
+def is_array(node):
+    return node.label.startswith('SHELL-ARRAY')
+
+
+def is_array_sep(node):
+    return node.label.startswith('ARRAYSEP')
+
+
+def is_whitespace(node):
+    return node.label.startswith('TEXT-WS')
+
+
+def is_comment(node):
+    return node.label.startswith('COMMENT')
+
+
+def is_ignorable(node):
+    return is_whitespace(node) or is_comment(node)
+
+
+def is_decoration(node):
+    return is_ignorable(node) or is_array_sep(node)
 
 
 @attr.s
@@ -79,12 +129,16 @@ class ShellVariable:
 
     name = attr.ib()
     value = attr.ib()
+    is_array = attr.ib(default=False, repr=False)
 
     def is_resolved(self):
         """
         Return True if this variable is fully resolved and does not need further
         shell expansion.
         """
+        if self.is_array:
+            for item in self.value:
+                return not any(c in item for c in '${}')
         return not any(c in self.value for c in '${}')
 
     @classmethod
@@ -92,72 +146,125 @@ class ShellVariable:
         """
         Return a ShellVariable built from a parse tree node or None.
         """
-        if 'SHELL-VARIABLE' not in node.label:
+        if not is_shell_variable(node):
             return
 
-        # removes space nodes
-        filtered = [
-            token for token in node.leaves()
-            if token.label not in ('TEXT-NEWLINE', 'TEXT-WHITESPACE',)
-        ]
-        # we should be left with three elements
-        assert len(filtered) == 3, f'Unknown ShellVaribale node: {node}'
-        name_token, _equal, value_token = filtered
-        value = dequote(value_token)
-        return cls(name=name_token.value, value=value)
+        # removes space nodes and comment nodes
+        content = [n for n in node if not is_ignorable(n)]
+
+        # we should be left with three elements: name = value
+        assert len(content) == 3, f'Unknown shell assignment syntax: {content}'
+        name_token , _equal_token , value_token = content
+
+        if is_array(value_token):
+            array = True
+            items = [
+                i for i in value_token.leaves()
+                if not is_decoration(i)
+            ]
+            value = [dequote(vt) for vt in items]
+        else:
+            # a plain value string
+            array = False
+
+            value = dequote(value_token)
+        sv = cls(name=name_token.value, value=value, is_array=array)
+        return sv
 
     @classmethod
     def validate(cls, variables):
         """
-        Return a list of error messrage if some variables in a ``variables``
+        Return a list of error message if some variables in a ``variables``
         list of ShellVariable are not valid.
         """
-        seen = set()
+        seen = dict()
         errors = []
         for var in variables:
+            # check for duplicate names, but these could be redefinitions
             if var.name in seen:
-                errors.append(f'Duplicate variable name: {var.name}: {var.value}')
+                errors.append(
+                    f'Duplicate variable name: {var.name!r} value: {var.value!r} '
+                    f'existing value: {seen[var.name]!r}'
+
+                )
             else:
-                seen.add(var.name)
+                seen[var.name] = var.value
         return errors
 
     @classmethod
-    def resolve(cls, variables):
+    def resolve(cls, variables, needed_variables=None):
         """
-        Resolve each variables in a ``variables`` list of ShellVariable.
-        Return a tuple of (list with updated variables, list of error messages).
+        Resolve each variables in a ``variables`` list of ShellVariable. Return
+        a tuple of (list with updated variables, list of error messages). Do not
+        report errors for variable with a name listed in the
+        ``needed_variables`` set if provided.
         """
+
+        def reportable(v):
+            if needed_variables:
+                return v.name in needed_variables
+            return True
 
         # mapping of variables that we use for resolution
         # the mappings and values are updated as resolution progresses
         environment = {}
         errors = []
         for var in variables:
-            if not environment:
-                if not var.is_resolved():
-                    errors.append(f'Unresolvable first variable: {var}')
-                environment[var.name] = var.value
-                continue
-            if var.is_resolved():
-                environment[var.name] = var.value
-                continue
-            try:
 
-                expanded = pe.expand(var.value, env=environment)
-                if ' ' in var.value and ' ' not in expanded:
-                    errors.append(f'Expasion munged value: {var.value}')
+            if not environment:
+                if reportable(var) and not var.is_resolved():
+                    errors.append(f'Unresolvable first variable: {var}')
+
+                if not var.is_array:
+                    # we do not know how to expand an array
+                    environment[var.name] = var.value
+                continue
+
+            if var.is_resolved():
+                if not var.is_array:
+                    # we do not know how to expand an array
+                    environment[var.name] = var.value
+                continue
+
+            try:
+                if var.is_array:
+                    expanded = []
+                    for item in var.value:
+                        exp = pe.expand(item, env=environment)
+                        if reportable(var) and ' ' in item and ' ' not in expanded:
+                            errors.append(f'Expansion munged spaces in value: {item}')
+                        expanded.append(exp)
+                else:
+                    expanded = pe.expand(var.value, env=environment)
+                    if reportable(var) and ' ' in var.value and ' ' not in expanded:
+                        errors.append(f'Expansion munged spaces in value: {var.value}')
+
                 if TRACE:
                     logger_debug(
-                        f'Resolved variable: {var} to: {expanded} with envt: {environment} ')
+                        f'Resolved variable: {var} to: {expanded} '
+                        f'with envt: {environment} '
+                    )
+
                 var.value = expanded
-                environment[var.name] = expanded
-                if not var.is_resolved():
+
+                if not var.is_array:
+                    # we do not know how to expand an array
+                    environment[var.name] = expanded
+
+                if reportable(var) and not var.is_resolved():
                     errors.append(
-                        f'Partially resolved variable: {var} envt: {environment}')
+                        f'Partially resolved variable: {var} envt: '
+                        f'{environment}'
+                    )
+
             except Exception as e:
-                errors.append(f'Failed to expand variable: {var} error: {e}')
+                if reportable(var):
+                    errors.append(f'Failed to expand variable: {var} error: {e}')
 
         return variables, errors
+
+    def to_dict(self):
+        return {self.name: self.value}
 
 
 def dequote(token):
@@ -169,33 +276,45 @@ def dequote(token):
         'LITERAL-STRING-SINGLE': "'",
     }
     qs = quote_style_by_token_label.get(token.label)
-    if qs:
-        return token.value.strip(qs)
-    else:
-        return token.value
+    s = token.value
+    if qs and s.startswith(qs) and s.endswith(qs):
+        return s[1:-1]
+    return s
 
 
-def collect_shell_variables_from_text_as_dict(text, resolve=False):
+def collect_shell_variables_from_text_as_dict(text, resolve=False, needed_variables=None):
     """
     Return a tuple of (variables, errors) from collecting top-level variables
     defined in bash script ``text`` string. ``variables`` is a mapping of {name:
     value} and ``errors`` a list of error message strings.
+
+    Optionally ``resolve`` the variables with emulated shell parameter
+    expansion. If the set ``needed_variables`` is provided, only return
+    variables with a named present in this set and only report errors for
+    variables with a name listed in this set.
     """
-    vrs, errs = collect_shell_variables_from_text(text, resolve)
+    vrs, errs = collect_shell_variables_from_text(text, resolve, needed_variables)
     return {v.name: v.value for v in vrs}, errs
 
 
-def collect_shell_variables_from_text(text, resolve=False):
+def collect_shell_variables_from_text(text, resolve=False, needed_variables=None):
     """
     Return a tuple of (variables, errors) from collecting top-level variables
     defined in bash script ``text`` string.``variables`` is a list of
     ShellVariable objects and ``errors`` a list of error message strings.
+
+    Optionally ``resolve`` the variables with emulated shell parameter
+    expansion. If the set ``needed_variables`` is provided, only return
+    variables with a named present in this set and only report errors for
+    variables with a name listed in this set.
     """
     parse_tree = parse_shell(text)
     variables = []
     # then walk the parse parse_tree to get variables
     for node in parse_tree:
-        if TRACE: logger_debug(f'collect_shell_variables: parse_tree node: {node}')
+        if TRACE:
+            logger_debug(f'collect_shell_variables: parse_tree node: {node}')
+
         if not isinstance(node, tree.Tree):
             if TRACE: logger_debug(f'   skipped: {node}')
             continue
@@ -206,8 +325,10 @@ def collect_shell_variables_from_text(text, resolve=False):
             variables.append(variable)
     errors = ShellVariable.validate(variables)
     if resolve:
-        variables, rerrors = ShellVariable.resolve(variables)
+        variables, rerrors = ShellVariable.resolve(variables, needed_variables)
         errors.extend(rerrors)
+    if needed_variables:
+        variables = [v for v in variable if v.name in needed_variables]
     return variables, errors
 
 
@@ -220,7 +341,7 @@ def get_tokens(text):
     return list(Token.from_pygments_tokens(pygtokens))
 
 
-def parse_shell(text, grammar=variables_grammar, trace=TRACE, validate=VALIDATE):
+def parse_shell(text, grammar=variables_grammar, loop=1, trace=TRACE, validate=VALIDATE):
     """
     Return a pygmars parse Tree built from a ``text`` string.
     """
@@ -231,19 +352,27 @@ def parse_shell(text, grammar=variables_grammar, trace=TRACE, validate=VALIDATE)
         grammar=grammar,
         trace=trace,
         validate=validate,
+        loop=loop,
     )
+
+    if TRACE:
+        tokens = list(tokens)
+        logger_debug(f'parse_shell: parsing tokens #: {len(tokens)}')
+
+    if TRACE:
+        logger_debug(f'parse_shell: calling parser.parse')
 
     parse_tree = parser.parse(tokens)
 
     if TRACE:
-        logger_debug(f'parse_shell: parse_tree: {parse_tree}')
+        logger_debug(f'parse_shell: got parse_tree: {parse_tree}')
 
     return parse_tree
 
 
 if __name__ == '__main__':
     import json
-    import sys
+    import sys  # NOQA
     test_file = sys.argv[1]
     results, errs = collect_shell_variables(test_file, resolve=True)
     print(json.dumps(dict(variables=results, errors=errs), indent=2))

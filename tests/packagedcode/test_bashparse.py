@@ -9,13 +9,10 @@
 
 import os.path
 
-from commoncode import text
 from packagedcode import bashparse
 from packagedcode.bashparse import ShellVariable
 
 from packages_test_utils  import build_tests
-from packages_test_utils import check_result_equals_expected_json
-from packages_test_utils import get_test_files
 from packages_test_utils import PackageTester
 
 test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -59,44 +56,44 @@ gnat() {
 
         result = [str(t) for t in bashparse.get_tokens(text)]
         expected = [
-            "Token('\\n', 'TEXT-NEWLINE', 1, 0)",
-            "Token('# Contributor: Natanael Copa <ncopa@alpinelinux.org>', 'COMMENT-SINGLE', 2, 1)",
-            "Token('\\n', 'TEXT-NEWLINE', 2, 53)",
-            "Token('pkgname', 'NAME-VARIABLE', 3, 54)",
-            "Token('=', 'OPERATOR-EQUAL', 3, 61)",
-            "Token('gcc', 'TEXT', 3, 62)",
-            "Token('\\n\\n', 'TEXT-NEWLINE', 3, 65)",
-            "Token('pkgname', 'NAME-VARIABLE', 5, 67)",
-            "Token('=', 'OPERATOR-EQUAL', 5, 74)",
-            'Token(\'"$pkgname$_target"\', \'LITERAL-STRING-DOUBLE\', 5, 75)',
-            "Token('\\n', 'TEXT-NEWLINE', 5, 93)",
-            "Token('foo', 'NAME-VARIABLE', 6, 94)",
-            "Token('=', 'OPERATOR-EQUAL', 6, 97)",
-            "Token('bar', 'TEXT', 6, 98)",
-            "Token('\\n', 'TEXT-NEWLINE', 6, 101)",
-            "Token('baz', 'NAME-VARIABLE', 7, 102)",
-            "Token('=', 'OPERATOR-EQUAL', 7, 105)",
-            "Token('$foo', 'TEXT', 7, 106)",
-            "Token('\\n', 'TEXT-NEWLINE', 7, 110)",
-            "Token('bez', 'NAME-VARIABLE', 8, 111)",
-            "Token('=', 'OPERATOR-EQUAL', 8, 114)",
-            "Token('${foo}', 'TEXT', 8, 115)",
-            "Token('\\n', 'TEXT-NEWLINE', 8, 121)",
-            "Token('gnat()', 'TEXT', 9, 122)",
-            "Token(' ', 'TEXT-WHITESPACE', 9, 128)",
-            "Token('{', 'TEXT', 9, 129)",
-            "Token('\\n', 'TEXT-NEWLINE', 9, 130)",
-            "Token('    ', 'TEXT-WHITESPACE', 10, 131)",
-            'Token(\'pkgdesc="Ada\', \'TEXT\', 10, 135)',
-            "Token(' ', 'TEXT-WHITESPACE', 10, 147)",
-            "Token('support', 'TEXT', 10, 148)",
-            "Token(' ', 'TEXT-WHITESPACE', 10, 155)",
-            "Token('for', 'TEXT', 10, 156)",
-            "Token(' ', 'TEXT-WHITESPACE', 10, 159)",
-            'Token(\'GCC"\', \'TEXT\', 10, 160)',
-            "Token('\\n', 'TEXT-NEWLINE', 10, 164)",
-            "Token('}', 'TEXT', 11, 165)",
-            "Token('\\n', 'TEXT-NEWLINE', 11, 166)",
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=1, pos=0)",
+            "Token(value='# Contributor: Natanael Copa <ncopa@alpinelinux.org>', label='COMMENT', start_line=2, pos=1)",
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=2, pos=53)",
+            "Token(value='pkgname', label='NAME-VARIABLE', start_line=3, pos=54)",
+            "Token(value='=', label='OPERATOR-EQUAL', start_line=3, pos=61)",
+            "Token(value='gcc', label='TEXT', start_line=3, pos=62)",
+            "Token(value='\\n\\n', label='TEXT-WS-LF', start_line=3, pos=65)",
+            "Token(value='pkgname', label='NAME-VARIABLE', start_line=5, pos=67)",
+            "Token(value='=', label='OPERATOR-EQUAL', start_line=5, pos=74)",
+            'Token(value=\'"$pkgname$_target"\', label=\'LITERAL-STRING-DOUBLE\', start_line=5, pos=75)',
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=5, pos=93)",
+            "Token(value='foo', label='NAME-VARIABLE', start_line=6, pos=94)",
+            "Token(value='=', label='OPERATOR-EQUAL', start_line=6, pos=97)",
+            "Token(value='bar', label='TEXT', start_line=6, pos=98)",
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=6, pos=101)",
+            "Token(value='baz', label='NAME-VARIABLE', start_line=7, pos=102)",
+            "Token(value='=', label='OPERATOR-EQUAL', start_line=7, pos=105)",
+            "Token(value='$foo', label='TEXT', start_line=7, pos=106)",
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=7, pos=110)",
+            "Token(value='bez', label='NAME-VARIABLE', start_line=8, pos=111)",
+            "Token(value='=', label='OPERATOR-EQUAL', start_line=8, pos=114)",
+            "Token(value='${foo}', label='TEXT', start_line=8, pos=115)",
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=8, pos=121)",
+            "Token(value='gnat()', label='TEXT', start_line=9, pos=122)",
+            "Token(value=' ', label='TEXT-WS', start_line=9, pos=128)",
+            "Token(value='{', label='TEXT', start_line=9, pos=129)",
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=9, pos=130)",
+            "Token(value='    ', label='TEXT-WS', start_line=10, pos=131)",
+            'Token(value=\'pkgdesc="Ada\', label=\'TEXT\', start_line=10, pos=135)',
+            "Token(value=' ', label='TEXT-WS', start_line=10, pos=147)",
+            "Token(value='support', label='TEXT', start_line=10, pos=148)",
+            "Token(value=' ', label='TEXT-WS', start_line=10, pos=155)",
+            "Token(value='for', label='TEXT', start_line=10, pos=156)",
+            "Token(value=' ', label='TEXT-WS', start_line=10, pos=159)",
+            'Token(value=\'GCC"\', label=\'TEXT\', start_line=10, pos=160)',
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=10, pos=164)",
+            "Token(value='}', label='TEXT', start_line=11, pos=165)",
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=11, pos=166)",
         ]
 
         assert result == expected
@@ -130,19 +127,19 @@ bez=${foo}
 
         result = [str(t) for t in bashparse.get_tokens(text)]
         expected = [
-            "Token('\\n', 'TEXT-NEWLINE', 1, 0)",
-            "Token('foo', 'NAME-VARIABLE', 2, 1)",
-            "Token('=', 'OPERATOR-EQUAL', 2, 4)",
-            "Token('bar', 'TEXT', 2, 5)",
-            "Token('\\n', 'TEXT-NEWLINE', 2, 8)",
-            "Token('baz', 'NAME-VARIABLE', 3, 9)",
-            "Token('=', 'OPERATOR-EQUAL', 3, 12)",
-            "Token('$foo', 'TEXT', 3, 13)",
-            "Token('\\n', 'TEXT-NEWLINE', 3, 17)",
-            "Token('bez', 'NAME-VARIABLE', 4, 18)",
-            "Token('=', 'OPERATOR-EQUAL', 4, 21)",
-            "Token('${foo}', 'TEXT', 4, 22)",
-            "Token('\\n', 'TEXT-NEWLINE', 4, 28)",
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=1, pos=0)",
+            "Token(value='foo', label='NAME-VARIABLE', start_line=2, pos=1)",
+            "Token(value='=', label='OPERATOR-EQUAL', start_line=2, pos=4)",
+            "Token(value='bar', label='TEXT', start_line=2, pos=5)",
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=2, pos=8)",
+            "Token(value='baz', label='NAME-VARIABLE', start_line=3, pos=9)",
+            "Token(value='=', label='OPERATOR-EQUAL', start_line=3, pos=12)",
+            "Token(value='$foo', label='TEXT', start_line=3, pos=13)",
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=3, pos=17)",
+            "Token(value='bez', label='NAME-VARIABLE', start_line=4, pos=18)",
+            "Token(value='=', label='OPERATOR-EQUAL', start_line=4, pos=21)",
+            "Token(value='${foo}', label='TEXT', start_line=4, pos=22)",
+            "Token(value='\\n', label='TEXT-WS-LF', start_line=4, pos=28)",
         ]
 
         assert result == expected
@@ -200,7 +197,7 @@ depends_dev="fontconfig-dev freetype-dev libxrender-dev pixman-dev
     xcb-util-dev libxext-dev $pkgname-tools"
 makedepends="$depends_dev zlib-dev expat-dev glib-dev libpng-dev autoconf automake libtool"
 subpackages="$pkgname-dev $pkgname-doc $pkgname-gobject $pkgname-tools $pkgname-dbg"
-source="https://cairographics.org/releases/cairo-$pkgver.tar.xz
+source="https://cairographics.org/releases/cairo-$pkgver.tar.xz"
 """
         result, errors = bashparse.collect_shell_variables_from_text_as_dict(text, resolve=True)
         expected = []
@@ -215,6 +212,7 @@ source="https://cairographics.org/releases/cairo-$pkgver.tar.xz
                 'glib-dev libpng-dev autoconf automake libtool',
             'pkgname': 'cairo',
             'pkgver': '1.16.0',
+            'source': 'https://cairographics.org/releases/cairo-1.16.0.tar.xz',
             'subpackages': 'cairo-dev cairo-doc cairo-gobject cairo-tools cairo-dbg',
         }
         assert result == expected
@@ -238,7 +236,7 @@ options=duplicate
             ShellVariable(name='options', value='duplicate'),
         ]
         assert result == expected
-        expected = ['Duplicate variable name: options: duplicate']
+        expected = ["Duplicate variable name: 'options' value: 'duplicate' existing value: '!check'"]
         assert errors == expected
 
     def test_collect_shell_variables_from_text_simple(self):
@@ -262,7 +260,7 @@ options=duplicate
             ShellVariable(name='sha512sums', value='0ef281e6633b8bef7ce24d1448ec7b96aef66e414f90821a9  gcc-10.3.1_git20210424.tar.xz\nd1e10db83a04c02d99f9f6ce03f9  0001-posix_memalign.patch\n'),
         ]
         assert result == expected
-        assert errors == ['Duplicate variable name: pkgname: $pkgname$_target']
+        assert errors == ["Duplicate variable name: 'pkgname' value: '$pkgname$_target' existing value: 'gcc'"]
 
 
 TEST_TEXT1 = '''
@@ -299,18 +297,54 @@ d1e10db83a04c02d99f9f6ce03f9  0001-posix_memalign.patch
 
 '''
 
-EXPECTED_SIMPLE = '''Tree('ROOT', [
-/TEXT-NEWLINE, # Contributor: Natanael Copa <ncopa@alpinelinux.org>/COMMENT-SINGLE, Tree('SHELL-VARIABLE', [
-/TEXT-NEWLINE, pkgname/NAME-VARIABLE, =/OPERATOR-EQUAL, gcc/TEXT]), Tree('SHELL-VARIABLE', [
-
-/TEXT-NEWLINE, pkgname/NAME-VARIABLE, =/OPERATOR-EQUAL, "$pkgname$_target"/LITERAL-STRING-DOUBLE]), Tree('SHELL-VARIABLE', [
-/TEXT-NEWLINE, pkgrel/NAME-VARIABLE, =/OPERATOR-EQUAL, 2/TEXT]), Tree('SHELL-VARIABLE', [
-/TEXT-NEWLINE, license/NAME-VARIABLE, =/OPERATOR-EQUAL, "GPL-2.0-or-later
- LGPL-2.1-or-later"/LITERAL-STRING-DOUBLE]),
-/TEXT-NEWLINE,     /TEXT-WHITESPACE, license="GPL-2.0-or-later/TEXT,
-/TEXT-NEWLINE,      /TEXT-WHITESPACE, LGPL-2.1-or-later"/TEXT,
-
-/TEXT-NEWLINE, gnat()/TEXT,  /TEXT-WHITESPACE, {/TEXT,
-/TEXT-NEWLINE,     /TEXT-WHITESPACE, pkgdesc="Ada/TEXT,  /TEXT-WHITESPACE, support/TEXT,  /TEXT-WHITESPACE, for/TEXT,  /TEXT-WHITESPACE, GCC"/TEXT,
-/TEXT-NEWLINE, }/TEXT,
-/TEXT-NEWLINE])'''
+EXPECTED_SIMPLE = '''(label='ROOT', children=(
+  (label='TEXT-WS-LF', value='\\n')
+  (label='COMMENT', value='# Contributor: Natanael Copa <ncopa@alpinelinux.org>')
+    (label='SHELL-VARIABLE', children=(
+    (label='TEXT-WS-LF', value='\\n')
+    (label='NAME-VARIABLE', value='pkgname')
+    (label='OPERATOR-EQUAL', value='=')
+    (label='TEXT', value='gcc')
+  ))
+    (label='SHELL-VARIABLE', children=(
+    (label='TEXT-WS-LF', value='\\n\\n')
+    (label='NAME-VARIABLE', value='pkgname')
+    (label='OPERATOR-EQUAL', value='=')
+    (label='LITERAL-STRING-DOUBLE', value='"$pkgname$_target"')
+  ))
+    (label='SHELL-VARIABLE', children=(
+    (label='TEXT-WS-LF', value='\\n')
+    (label='NAME-VARIABLE', value='pkgrel')
+    (label='OPERATOR-EQUAL', value='=')
+    (label='TEXT', value='2')
+  ))
+    (label='SHELL-VARIABLE', children=(
+    (label='TEXT-WS-LF', value='\\n')
+    (label='NAME-VARIABLE', value='license')
+    (label='OPERATOR-EQUAL', value='=')
+    (label='LITERAL-STRING-DOUBLE', value='"GPL-2.0-or-later\\n LGPL-2.1-or-later"')
+  ))
+  (label='TEXT-WS-LF', value='\\n')
+  (label='TEXT-WS', value='    ')
+  (label='TEXT', value='license="GPL-2.0-or-later')
+  (label='TEXT-WS-LF', value='\\n')
+  (label='TEXT-WS', value='     ')
+  (label='TEXT', value='LGPL-2.1-or-later"')
+  (label='TEXT-WS-LF', value='\\n\\n')
+  (label='TEXT', value='gnat()')
+  (label='TEXT-WS', value=' ')
+  (label='TEXT', value='{')
+  (label='TEXT-WS-LF', value='\\n')
+  (label='TEXT-WS', value='    ')
+  (label='TEXT', value='pkgdesc="Ada')
+  (label='TEXT-WS', value=' ')
+  (label='TEXT', value='support')
+  (label='TEXT-WS', value=' ')
+  (label='TEXT', value='for')
+  (label='TEXT-WS', value=' ')
+  (label='TEXT', value='GCC"')
+  (label='TEXT-WS-LF', value='\\n')
+  (label='TEXT', value='}')
+  (label='TEXT-WS-LF', value='\\n')
+))
+'''

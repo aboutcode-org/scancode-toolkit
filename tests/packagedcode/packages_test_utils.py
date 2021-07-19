@@ -93,6 +93,7 @@ def get_test_files(location, test_file_suffix):
     Walk directory at ``location`` and yield location-relative paths to test
     files matching ``test_file_suffix``).
     """
+    assert os.path.exists(location), f'Missing location: {location!r}'
 
     # NOTE we do not use commoncode here as we want NO files spkipped for testing
     for base_dir, _dirs, files in os.walk(location):

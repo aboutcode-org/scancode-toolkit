@@ -12,12 +12,22 @@ from pygments.lexer import (
 )
 
 from pygments.token import (
+    Token,
     Text,
     Comment,
     Operator,
     Name,
     String,
 )
+
+# White spaces
+WS = Text.WS  # NOQA
+# new lines
+LF = WS.LF
+
+ArrayStart = Token.ArraySep.Start
+ArrayEnd = Token.ArraySep.End
+Equal = Operator.Equal  # NOQA
 
 
 class BashShellLexer(RegexLexer):
@@ -39,20 +49,18 @@ class BashShellLexer(RegexLexer):
             include('data'),
         ],
         'basic': [
-            (r'#.*$', Comment.Single),
+            (r'#.*$', Comment),
             # variable declaration and assignment
-            (r'^(\b\w+)(\+?=)', bygroups(Name.Variable, Operator.Equal)),
-
+            (r'^(\b\w+)(\+?=)', bygroups(Name.Variable, Equal)),
         ],
         'data': [
+            (r'\(', ArrayStart),
+            (r'\)', ArrayEnd),
+            # (?s) is re.DOTALL e.g. across lines
             (r'(?s)"(\\.|[^"])*"', String.Double),
-            (r'"', String.Double.Start, 'string'),
             (r"(?s)'(\\.|[^'])*'", String.Single),
-            (r'\n+', Text.NewLine),
-            (r'\s+', Text.Whitespace),
+            (r'\n+', LF),
+            (r'\s+', WS),
             (r'\S+', Text),
-        ],
-        'string': [
-            (r'"', String.Double.End, '#pop'),
         ],
     }

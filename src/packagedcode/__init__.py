@@ -168,7 +168,7 @@ def get_package_instance(scan_data):
     klas = get_package_class(scan_data)
     existing_fields = attr.fields_dict(klas)
 
-    extra_data = scan_data.get('extra_data')
+    extra_data = scan_data.get('extra_data', {}) or {}
     package_data = {}
 
     for key, value in scan_data.items():
