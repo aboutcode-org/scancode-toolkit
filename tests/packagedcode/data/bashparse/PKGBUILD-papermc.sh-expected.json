@@ -33,6 +33,7 @@
       "etc/conf.d/papermc"
     ],
     "install": "papermc.install",
+    "source": "",
     "noextract": [
       "papermc.1.17.1+b100.jar"
     ],

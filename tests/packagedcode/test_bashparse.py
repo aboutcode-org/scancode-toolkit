@@ -180,6 +180,28 @@ bez=${baz}
         expected = []
         assert errors == expected
 
+    def test_collect_shell_variables_from_text_can_parse_var_at_start(self):
+        text = "foo=bar"
+        result, errors = bashparse.collect_shell_variables_from_text(text)
+        expected = [
+            ShellVariable(name='foo', value='bar'),
+        ]
+        assert result == expected
+        expected = []
+        assert errors == expected
+
+    def test_collect_shell_variables_from_text_can_parse_empty_var(self):
+        text = "foo=\nbar=baz\nlicense=\n"
+        result, errors = bashparse.collect_shell_variables_from_text(text)
+        expected = [
+            ShellVariable(name='foo', value=''),
+            ShellVariable(name='bar', value='baz'),
+            ShellVariable(name='license', value=''),
+        ]
+        assert result == expected
+        expected = []
+        assert errors == expected
+
     def test_collect_shell_variables_from_text_can_parse_trailing_comments(self):
         text = '\noptions="!check" # out of disk space (>35GB)'
         result, errors = bashparse.collect_shell_variables_from_text(text)
@@ -203,6 +225,7 @@ source="https://cairographics.org/releases/cairo-$pkgver.tar.xz"
         expected = []
         assert errors == expected
         expected = {
+            'depends': '',
             'depends_dev':
                 'fontconfig-dev freetype-dev libxrender-dev pixman-dev\n    '
                 'xcb-util-dev libxext-dev cairo-tools',

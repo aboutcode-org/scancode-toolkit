@@ -43,7 +43,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args), flush=True)
+        logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 #
 # A simple and minimal pygmars grammar to collect bash/shell variables.
@@ -66,6 +66,15 @@ variables_grammar = (
         '<OPERATOR-EQUAL>'
         '<LITERAL-STRING-DOUBLE | LITERAL-STRING-SINGLE | TEXT | SHELL-ARRAY>'
         ' # A Shell variable'
+
+    '\n'
+
+    'EMPTY-SHELL-VARIABLE: '
+        '(?:<TEXT-WS-LF>|^)'
+        '<NAME-VARIABLE>'
+        '<OPERATOR-EQUAL>'
+        '(?:<TEXT-WS-LF>?|$)'
+        ' # Am empty Shell variable'
 
 )
 
@@ -98,6 +107,10 @@ def collect_shell_variables(location, resolve=False, needed_variables=None):
 
 def is_shell_variable(node):
     return node.label.startswith('SHELL-VARIABLE')
+
+
+def is_empty_shell_variable(node):
+    return node.label.startswith('EMPTY-SHELL-VARIABLE')
 
 
 def is_array(node):
@@ -146,14 +159,26 @@ class ShellVariable:
         """
         Return a ShellVariable built from a parse tree node or None.
         """
+
+        def get_content(_node, _length):
+            _content = [n for n in _node if not is_ignorable(n)]
+            assert len(_content) == _length, (
+                f'Unknown shell assignment syntax: {_node}'
+            )
+            return _content
+
+        if is_empty_shell_variable(node):
+            # removes space nodes and comment nodes
+            content = get_content(node, 2)
+            # we should be left with two elements: name=
+            name_token , _equal_token = content
+            return cls(name=name_token.value, value='', is_array=False)
+
         if not is_shell_variable(node):
             return
 
-        # removes space nodes and comment nodes
-        content = [n for n in node if not is_ignorable(n)]
-
+        content = get_content(node, 3)
         # we should be left with three elements: name = value
-        assert len(content) == 3, f'Unknown shell assignment syntax: {content}'
         name_token , _equal_token , value_token = content
 
         if is_array(value_token):
@@ -323,12 +348,16 @@ def collect_shell_variables_from_text(text, resolve=False, needed_variables=None
         if TRACE: logger_debug(f'   variable: {variable}')
         if variable:
             variables.append(variable)
+
     errors = ShellVariable.validate(variables)
+
     if resolve:
         variables, rerrors = ShellVariable.resolve(variables, needed_variables)
         errors.extend(rerrors)
+
     if needed_variables:
-        variables = [v for v in variable if v.name in needed_variables]
+        variables = [v for v in variables if v.name in needed_variables]
+
     return variables, errors
 
 
