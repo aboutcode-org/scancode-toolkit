@@ -197,23 +197,29 @@ class ShellVariable:
         return sv
 
     @classmethod
-    def validate(cls, variables):
+    def validate(cls, variables, needed_variables=None):
         """
         Return a list of error message if some variables in a ``variables``
         list of ShellVariable are not valid.
         """
+
+        def reportable(v):
+            if needed_variables:
+                return v.name in needed_variables
+            return True
+
         seen = dict()
         errors = []
         for var in variables:
             # check for duplicate names, but these could be redefinitions
-            if var.name in seen:
-                errors.append(
-                    f'Duplicate variable name: {var.name!r} value: {var.value!r} '
-                    f'existing value: {seen[var.name]!r}'
-
-                )
-            else:
-                seen[var.name] = var.value
+            if reportable(var):
+                if var.name in seen:
+                    errors.append(
+                        f'Duplicate variable name: {var.name!r} value: {var.value!r} '
+                        f'existing value: {seen[var.name]!r}'
+                    )
+                else:
+                    seen[var.name] = var.value
         return errors
 
     @classmethod
@@ -349,7 +355,7 @@ def collect_shell_variables_from_text(text, resolve=False, needed_variables=None
         if variable:
             variables.append(variable)
 
-    errors = ShellVariable.validate(variables)
+    errors = ShellVariable.validate(variables, needed_variables)
 
     if resolve:
         variables, rerrors = ShellVariable.resolve(variables, needed_variables)

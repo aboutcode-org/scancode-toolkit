@@ -262,6 +262,25 @@ options=duplicate
         expected = ["Duplicate variable name: 'options' value: 'duplicate' existing value: '!check'"]
         assert errors == expected
 
+    def test_collect_shell_variables_from_text_filters_on_needed_variables(self):
+        text = '''
+arch="x86_64"
+options="foo"
+license='AGPL3'
+options=duplicate
+'''
+
+        result, errors = bashparse.collect_shell_variables_from_text(
+            text=text,
+            needed_variables=set(['license']),
+        )
+        expected = [
+            ShellVariable(name='license', value='AGPL3'),
+        ]
+        assert result == expected
+        expected = []
+        assert errors == expected
+
     def test_collect_shell_variables_from_text_simple(self):
         result, errors = bashparse.collect_shell_variables_from_text(TEST_TEXT1)
         expected = [
