@@ -63,7 +63,6 @@ FILTERS = dict(
     is_license_tag=LicenseFilter(min_coverage=100),
     is_license_reference=LicenseFilter(min_score=50, min_coverage=100),
     is_license_intro=LicenseFilter(min_score=100, min_coverage=100),
-    is_unknown=LicenseFilter(min_score=100, min_coverage=100),
 )
 
 
@@ -82,7 +81,6 @@ def is_good_license(detected_license):
         ('is_license_reference', rule['is_license_reference']),
         ('is_license_tag', rule['is_license_tag']),
         ('is_license_intro', rule['is_license_intro']),
-        ('is_unknown', rule['is_unknown']),
     ])
     matched = False
     for match_type, mval in match_types.items():

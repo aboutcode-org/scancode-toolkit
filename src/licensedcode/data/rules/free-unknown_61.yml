@@ -1,6 +1,5 @@
 license_expression: free-unknown
 is_license_notice: yes
-is_unknown: yes
 relevance: 90
 ignorable_urls:
     - http://www.opensource.org/licenses

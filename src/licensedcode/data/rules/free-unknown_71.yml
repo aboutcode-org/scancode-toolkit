@@ -1,6 +1,5 @@
 license_expression: free-unknown
 is_license_reference: yes
-is_unknown: yes
 referenced_filenames:
     - COPYING.DJ
 notes: typically for GPL

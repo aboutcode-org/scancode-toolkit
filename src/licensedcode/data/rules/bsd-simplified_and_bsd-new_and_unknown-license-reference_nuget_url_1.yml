@@ -1,6 +1,5 @@
 license_expression: bsd-simplified AND bsd-new AND unknown-license-reference
 is_license_reference: yes
-is_unknown: yes
 relevance: 90
 ignorable_urls:
     - https://raw.github.com/editorconfig/editorconfig-core/master/LICENSE

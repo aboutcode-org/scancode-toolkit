@@ -760,10 +760,6 @@ class BasicRule(object):
     # detected immediately after.
     is_license_intro = attr.ib(default=False, repr=False)
 
-    #unknown licenses are the detected texts are highly likely to be a license
-    #text or notice but that cannot be matched to a known named license.
-    is_unknown = attr.ib(default=False, repr=False)
-
     # Is this rule text a false positive when matched exactly? If yes, it will
     # filtered out at the end if matched (unless part of a large match)
     is_false_positive = attr.ib(default=False, repr=False)
@@ -872,6 +868,10 @@ class BasicRule(object):
 
             self.license_expression = expression.render()
             self.license_expression_object = expression
+    
+    @property
+    def has_unknown(self):
+        return self.license_expression and 'unknown' in self.license_expression
 
     def validate(self, licensing=None):
         """
@@ -923,15 +923,6 @@ class BasicRule(object):
         if not (0 <= self.minimum_coverage <= 100):
             yield 'Invalid rule minimum_coverage. Should be between 0 and 100.'
 
-        if self.is_unknown:
-            if not "unknown" in license_expression:
-                yield 'is_unknown rule cannot be true if license does not fall in unknown category.'
-
-        if not self.is_unknown:
-            if not license_expression is None:
-                if "unknown" in license_expression:
-                    yield 'is_unknown flag should be set to true.'
-            
         if not is_false_positive:
             if not (0 <= self.relevance <= 100):
                 yield 'Invalid rule relevance. Should be between 0 and 100.'
@@ -1028,7 +1019,6 @@ class BasicRule(object):
             'is_license_reference',
             'is_license_tag',
             'is_license_intro',
-            'is_unknown',
             'only_known_words',
         )
 
@@ -1273,7 +1263,6 @@ class Rule(BasicRule):
         self.is_license_tag = data.get('is_license_tag', False)
         self.is_license_reference = data.get('is_license_reference', False)
         self.is_license_intro = data.get('is_license_intro', False)
-        self.is_unknown = data.get('is_unknown', False)
         self.only_known_words = data.get('only_known_words', False)
 
         self.referenced_filenames = data.get('referenced_filenames', []) or []
@@ -1481,8 +1470,6 @@ class SpdxRule(Rule):
             )
 
         self.license_expression = expression.render()
-        if "unknown" in self.license_expression:
-            self.is_unknown = True
         self.license_expression_object = expression
         self.is_license_tag = True
         self.is_small = False

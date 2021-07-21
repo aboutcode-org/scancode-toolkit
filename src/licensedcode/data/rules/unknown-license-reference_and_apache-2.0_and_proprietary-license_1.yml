@@ -1,6 +1,5 @@
 license_expression: unknown-license-reference AND apache-2.0 AND proprietary-license
 is_license_notice: yes
-is_unknown: yes
 relevance: 99
 referenced_filenames:
     - LICENSE

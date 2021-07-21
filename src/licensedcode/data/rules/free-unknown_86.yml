@@ -1,6 +1,5 @@
 license_expression: free-unknown AND other-permissive
 is_license_notice: yes
-is_unknown: yes
 minimum_coverage: 90
 referenced_filenames:
     - Copyright.txt

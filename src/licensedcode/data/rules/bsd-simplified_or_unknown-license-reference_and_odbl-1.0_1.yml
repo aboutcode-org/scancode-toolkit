@@ -1,6 +1,5 @@
 license_expression: (bsd-simplified OR unknown-license-reference) AND odbl-1.0
 is_license_notice: yes
-is_unknown: yes
 relevance: 95
 referenced_filenames:
     - LEGAL
