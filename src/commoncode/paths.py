@@ -26,7 +26,7 @@ to OS-safe paths and to POSIX paths.
 # Build OS-portable and safer paths
 
 
-def safe_path(path, posix=False):
+def safe_path(path, posix=False, preserve_spaces=False):
     """
     Convert `path` to a safe and portable POSIX path usable on multiple OSes.
     The returned path is an ASCII-only byte string, resolved for relative
@@ -34,6 +34,8 @@ def safe_path(path, posix=False):
 
     The `path` is treated as a POSIX path if `posix` is True or as a Windows
     path with blackslash separators otherwise.
+
+    If `preserve_spaces` is True, then the spaces in `path` will not be replaced.
     """
     # if the path is UTF, try to use unicode instead
     if not isinstance(path, str):
@@ -50,7 +52,7 @@ def safe_path(path, posix=False):
     _pathmod, path_sep = path_handlers(path, posix)
 
     segments = [s.strip() for s in path.split(path_sep) if s.strip()]
-    segments = [portable_filename(s) for s in segments]
+    segments = [portable_filename(s, preserve_spaces=preserve_spaces) for s in segments]
 
     if not segments:
         return '_'
@@ -133,12 +135,16 @@ def resolve(path, posix=True):
 
 
 legal_punctuation = r"!\#$%&\(\)\+,\-\.;\=@\[\]_\{\}\~"
+legal_spaces = r" "
 legal_chars = r'A-Za-z0-9' + legal_punctuation
+legal_chars_inc_spaces = legal_chars + legal_spaces
 illegal_chars_re = r'[^' + legal_chars + r']'
+illegal_chars_exc_spaces_re = r'[^' + legal_chars_inc_spaces + r']'
 replace_illegal_chars = re.compile(illegal_chars_re).sub
+replace_illegal_chars_exc_spaces = re.compile(illegal_chars_exc_spaces_re).sub
 
 
-def portable_filename(filename):
+def portable_filename(filename, preserve_spaces=False):
     """
     Return a new name for `filename` that is portable across operating systems.
 
@@ -156,13 +162,18 @@ def portable_filename(filename):
 
     Also inspired by Werkzeug:
     https://raw.githubusercontent.com/pallets/werkzeug/8c2d63ce247ba1345e1b9332a68ceff93b2c07ab/werkzeug/utils.py
+
+    If `preserve_spaces` is True, then spaces in `filename` will not be replaced.
     """
     filename = toascii(filename, translit=True)
 
     if not filename:
         return '_'
 
-    filename = replace_illegal_chars('_', filename)
+    if preserve_spaces:
+        filename = replace_illegal_chars_exc_spaces('_', filename)
+    else:
+        filename = replace_illegal_chars('_', filename)
 
     # these are illegal both upper and lowercase and with or without an extension
     # we insert an underscore after the base name.
