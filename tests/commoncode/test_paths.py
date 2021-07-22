@@ -127,6 +127,10 @@ class TestPortablePath(TestCase):
         expected = 'A___file__with_Spaces.mov'
         assert paths.portable_filename("A:\\ file/ with Spaces.mov") == expected
 
+        # Test `preserve_spaces` option. Spaces should not be replaced
+        expected = 'Program Files (x86)'
+        assert paths.portable_filename("Program Files (x86)", preserve_spaces=True) == expected
+
         # Unresolved relative paths will be treated as a single filename. Use
         # resolve instead if you want to resolve paths:
         expected = '___.._.._etc_passwd'
