@@ -1,8 +1,8 @@
 Release notes
 =============
 
-vNext
------
+Version 21.7.23
+---------------
 
 - Add preserve_spaces argument in commoncode.paths.portable_filename.
   This argument will prevent the replacement of spaces in filenames.
