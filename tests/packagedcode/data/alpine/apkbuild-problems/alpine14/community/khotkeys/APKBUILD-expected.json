@@ -1,0 +1,54 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "khotkeys",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Key Accelerator Application",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0 AND lgpl-2.0-plus",
+  "declared_license": "GPL-2.0-only AND LGPL-2.0-or-later",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/$_rel/plasma/5.22.0/khotkeys-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "khotkeys-5.22.0.tar.xz",
+        "sha512": "722e6d67cd1c131c1ee56dd348e4305ae6d8a408ddbaf188bcbccbb5107a6c9e64cf93605165613b2830cfbeb5d0396c9987901bf029fa36f63a47d60b28ae24"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://download.kde.org/$_rel/plasma/5.22.0/khotkeys-5.22.0.tar.xz"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/khotkeys@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

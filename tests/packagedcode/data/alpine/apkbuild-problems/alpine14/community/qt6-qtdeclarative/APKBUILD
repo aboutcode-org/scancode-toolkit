@@ -1,0 +1,53 @@
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=qt6-qtdeclarative
+pkgver=6.1.1
+pkgrel=0
+pkgdesc="Classes for QML and JavaScript languages"
+url="https://qt.io/"
+arch="all"
+license="LGPL-2.1-only AND LGPL-3.0-only AND GPL-3.0-only AND Qt-GPL-exception-1.0"
+depends_dev="
+	qt6-qtbase-dev
+	vulkan-headers
+	"
+makedepends="$depends_dev
+	cmake
+	perl
+	"
+subpackages="$pkgname-dev"
+options="!check" # No tests
+builddir="$srcdir/qtdeclarative-everywhere-src-${pkgver/_/-}"
+
+case $pkgver in
+	*_alpha*|*_beta*|*_rc*) _rel=development_releases;;
+	*) _rel=official_releases;;
+esac
+
+source="https://download.qt.io/$_rel/qt/${pkgver%.*}/${pkgver/_/-}/submodules/qtdeclarative-everywhere-src-${pkgver/_/-}.tar.xz"
+
+_qt6_prefix=/usr/lib/qt6
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr
+	cmake --build build
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+dev() {
+	default_dev
+
+	find "$pkgdir"/"$_qt6_prefix"/bin/ -type f -not -name "qmlscene" | while read -r f; do
+		file=$(basename $f)
+		amove "${_qt6_prefix#/}"/bin/$file
+	done
+}
+
+
+sha512sums="
+20a229e86f5e207f8e82e4dc97c5aabe97889d43dd87c4848021f7f186e719893a3c7e0a04edd9955172c1c081efba731942dbcaca12fe4a5e80d258c921691e  qtdeclarative-everywhere-src-6.1.1.tar.xz
+"

@@ -1,0 +1,55 @@
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=qt5-qtdeclarative
+pkgver=5.15.2
+pkgrel=0
+pkgdesc="Qt5 - QtDeclarative component"
+# Broken on armhf, upstream bug report https://bugreports.qt.io/browse/QTBUG-65246
+arch="all"
+url="https://www.qt.io/developers/"
+license="LGPL-2.1-only AND LGPL-3.0-only AND GPL-3.0-only AND Qt-GPL-exception-1.0"
+makedepends="qt5-qtbase-dev python3 vulkan-headers"
+subpackages="$pkgname-dev $pkgname-dbg"
+builddir="$srcdir/qtdeclarative-everywhere-src-$pkgver"
+
+case $pkgver in
+	*_beta*|*_rc*) _rel=development_releases;;
+	*) _rel=official_releases;;
+esac
+
+source="https://download.qt.io/$_rel/qt/${pkgver%.*}/$pkgver/submodules/qtdeclarative-everywhere-src-$pkgver.tar.xz
+	qt-musl-stackbottom.patch
+	"
+
+_qt5_prefix=/usr/lib/qt5
+
+build() {
+	# HACK so calls to "python" get what we want
+	ln -s /usr/bin/python3 python
+	export PATH="$(pwd):$PATH"
+
+	qmake-qt5
+	make
+}
+
+check() {
+	make check
+}
+
+package() {
+	make install INSTALL_ROOT="$pkgdir"
+
+	mkdir -p "$pkgdir"/usr/bin/
+	for i in "$pkgdir"/"$_qt5_prefix"/bin/*; do
+		ln -s ../lib/qt5/bin/${i##*/} "$pkgdir"/usr/bin/${i##*/}-qt5
+	done
+
+	# Drop QMAKE_PRL_BUILD_DIR because reference the build dir
+	find "$pkgdir/usr/lib" -type f -name '*.prl' \
+		-exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+
+	install -d "$pkgdir"/usr/share/licenses
+	ln -s /usr/share/licenses/qt5-base "$pkgdir"/usr/share/licenses/$pkgname
+}
+
+sha512sums="a084e4ace0d6868668c95f1b62598a7dd0f455bfb0943ac8956802d7041436686f20c7ccdde7d6fd6c4b8173c936dd8600cf3b87bf8575f55514edfbb51111d3  qtdeclarative-everywhere-src-5.15.2.tar.xz
+235091cc1da51c31165a99932c95543d999c0f21b2c6b4318306b647662d420f88d7270ec21db7417fe9f8d87bfa3e5f01b6465c3542da024dd1623ef0a87681  qt-musl-stackbottom.patch"

@@ -1,0 +1,54 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "parole",
+  "version": "1.0.5-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Media player for the Xfce desktop",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0-plus",
+  "declared_license": "GPL-2.0-or-later",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://archive.xfce.org/src/apps/parole/$_branch/parole-1.0.5.tar.bz2"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "parole-1.0.5.tar.bz2",
+        "sha512": "458b042752919d4dd1bfdaceda2b281b07a3094d986a99ec2ff51c12b7ca32adba6ce67ecb67e9ab70bdf83cfa22f8b5027054e2c3a3cf71d50ec8b98eeb24df"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://archive.xfce.org/src/apps/parole/$_branch/parole-1.0.5.tar.bz2"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/parole@1.0.5-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

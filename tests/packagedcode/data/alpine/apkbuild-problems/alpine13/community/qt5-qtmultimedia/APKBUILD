@@ -1,0 +1,40 @@
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=qt5-qtmultimedia
+pkgver=5.15.2
+pkgrel=0
+pkgdesc="Qt5 - Multimedia support"
+url="https://www.qt.io/developers/"
+arch="all !armhf" # armhf blocked by qt5-qtdeclarative
+license="LGPL-2.1-only AND LGPL-3.0-only AND GPL-3.0-only AND Qt-GPL-exception-1.0"
+makedepends="qt5-qtbase-dev qt5-qtdeclarative-dev alsa-lib-dev libxv-dev
+	gstreamer-dev gst-plugins-base-dev"
+subpackages="$pkgname-dev"
+builddir="$srcdir/qtmultimedia-everywhere-src-$pkgver"
+
+case $pkgver in
+	*_beta*|*_rc*) _rel=development_releases;;
+	*) _rel=official_releases;;
+esac
+
+source="https://download.qt.io/$_rel/qt/${pkgver%.*}/$pkgver/submodules/qtmultimedia-everywhere-src-$pkgver.tar.xz"
+
+build() {
+	qmake-qt5
+	make
+}
+
+check() {
+	make check
+}
+package() {
+	make INSTALL_ROOT="$pkgdir" install
+
+	# Drop QMAKE_PRL_BUILD_DIR because reference the build dir
+	find "$pkgdir/usr/lib" -type f -name '*.prl' \
+		-exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+
+	install -d "$pkgdir"/usr/share/licenses
+	ln -s /usr/share/licenses/qt5-base "$pkgdir"/usr/share/licenses/$pkgname
+}
+
+sha512sums="be58e6934976b04707399f8525dd5d50f73e0539efd1a76c2f9868e35e6f136e0991652df5d46350a9ac39d24313353e4aa826131f268a95e458e57279f448bd  qtmultimedia-everywhere-src-5.15.2.tar.xz"

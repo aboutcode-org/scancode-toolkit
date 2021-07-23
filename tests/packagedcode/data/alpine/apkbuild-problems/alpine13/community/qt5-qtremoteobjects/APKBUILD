@@ -1,0 +1,41 @@
+# Contributor: Francesco Colista <fcolista@alpinelinux.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=qt5-qtremoteobjects
+pkgver=5.15.2
+pkgrel=0
+pkgdesc="Qt Remote Objects (QtRO) is an inter-process communication (IPC) module developed for Qt"
+url="https://www.qt.io/developers/"
+arch="all"
+license="(LGPL-2.0-or-later OR GPL-3.0-only OR GPL-2.0-or-later) AND Qt-GPL-exception-1.0"
+makedepends="qt5-qtbase-dev"
+subpackages="$pkgname-dev"
+options="!check" # No tests
+builddir="$srcdir/qtremoteobjects-everywhere-src-$pkgver"
+
+case $pkgver in
+	*_beta*|*_rc*) _rel=development_releases;;
+	*) _rel=official_releases;;
+esac
+
+source="https://download.qt.io/$_rel/qt/${pkgver%.*}/$pkgver/submodules/qtremoteobjects-everywhere-src-$pkgver.tar.xz"
+
+build() {
+	qmake-qt5
+	make
+}
+
+check() {
+	make check
+}
+
+package() {
+	make INSTALL_ROOT="$pkgdir" install
+
+	# Drop QMAKE_PRL_BUILD_DIR because reference the build dir
+	find "$pkgdir/usr/lib" -type f -name '*.prl' \
+		-exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+
+	install -d "$pkgdir"/usr/share/licenses
+	ln -s /usr/share/licenses/qt5-base "$pkgdir"/usr/share/licenses/$pkgname
+}
+sha512sums="1cce1b6128f283fe8930e1e58b9620459c50b203a39607e9bcde8423930da08e5c70e7effaf64d2690f463cc7b37cfc67fb6c0ac89e27df3a57007aee1d5233d  qtremoteobjects-everywhere-src-5.15.2.tar.xz"

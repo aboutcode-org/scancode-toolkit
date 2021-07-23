@@ -1,0 +1,54 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "plasma-pa",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Plasma applet for audio volume management using PulseAudio",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "lgpl-2.1 OR (lgpl-3.0 AND gpl-2.0)",
+  "declared_license": "LGPL-2.1-only OR LGPL-3.0-only AND GPL-2.0-only",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-pa-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "plasma-pa-5.22.0.tar.xz",
+        "sha512": "4791943ea7d44c0798d6d87553a70f9a9d3f5cc9cca729ef07af15ba3dc0e908ce1de370dd347bea602207eccc06b43700c84e22b1894009711b79e9675182e1"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-pa-5.22.0.tar.xz"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/plasma-pa@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

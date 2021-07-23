@@ -1,0 +1,8 @@
+key: ttyp0
+short_name: TTYP0
+name: TTYP0
+category: Permissive
+owner: Uwe Waldmann
+homepage_url: https://people.mpi-inf.mpg.de/~uwe/misc/uw-ttyp0/
+spdx_license_key: LicenseRef-scancode-ttyp0
+minimum_coverage: 70

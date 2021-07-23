@@ -1,0 +1,81 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "ruby",
+  "version": "2.7.3-r1",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "An object-oriented language for quick and easy programming",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "ruby AND bsd-simplified AND mit",
+  "declared_license": "Ruby AND BSD-2-Clause AND MIT",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.3.tar.gz"
+      },
+      {
+        "file_name": "rubygems-avoid-platform-specific-gems.patch",
+        "url": null
+      },
+      {
+        "file_name": "test_insns-lower-recursion-depth.patch",
+        "url": null
+      },
+      {
+        "file_name": "fix-get_main_stack.patch",
+        "url": null
+      },
+      {
+        "file_name": "remove-broken-autoconf-section.patch",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "ruby-2.7.3.tar.gz",
+        "sha512": "1d036d08016351e8f9e7506a6abaf490fe226cf2ff9c2f9df582b57bff22a960dbaf271a8a167ac09f864613b9b8b14191bb79f8a6900ad5ca24131ecf571d54"
+      },
+      {
+        "file_name": "rubygems-avoid-platform-specific-gems.patch",
+        "sha512": "a142199140fa711a64717429e9069fd2082319abaf4b129f561db374b3bc16e2a90cc4c849b5d28334505d1c71fed242aef3c44d983da3513d239dcb778673a5"
+      },
+      {
+        "file_name": "test_insns-lower-recursion-depth.patch",
+        "sha512": "43c1fc80f0dcb4f24d891478889808583da90dc9e0df74c3b1cf41253c13a0d416d2b7ae17e7d53ac1238340a845b088f0fe20324a79905cc6b950b3dcfa4ac6"
+      },
+      {
+        "file_name": "fix-get_main_stack.patch",
+        "sha512": "3ffc034c01110ee5531265333ca5ee8d61d08131843fe3004c5b34c88c9c1b32cb4ed89574f393177c8bd526e9c15da61ab344f93adf07b9148c561ee19e2eb5"
+      },
+      {
+        "file_name": "remove-broken-autoconf-section.patch",
+        "sha512": "89d4b012ccb46805bf104e44360749a1a745572068778a383491acddd172213fae8239109f95e458c67a16f22f6dcee2ed4cc626cb07a2dc8d36b514912f5bc3"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/ruby@2.7.3-r1",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

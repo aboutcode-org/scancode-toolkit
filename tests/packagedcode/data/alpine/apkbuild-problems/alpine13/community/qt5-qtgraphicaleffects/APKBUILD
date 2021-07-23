@@ -1,0 +1,39 @@
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=qt5-qtgraphicaleffects
+pkgver=5.15.2
+pkgrel=0
+pkgdesc="Qt5 - QtGraphicalEffects component"
+url="https://www.qt.io/developers/"
+arch="all !armhf" # armhf blocked by qt5-qtdeclarative
+license="LGPL-2.1-only AND LGPL-3.0-only AND GPL-3.0-only AND Qt-GPL-exception-1.0"
+makedepends="qt5-qtbase-dev qt5-qtdeclarative-dev"
+builddir="$srcdir/qtgraphicaleffects-everywhere-src-$pkgver"
+
+case $pkgver in
+	*_beta*|*_rc*) _rel=development_releases;;
+	*) _rel=official_releases;;
+esac
+
+source="https://download.qt.io/$_rel/qt/${pkgver%.*}/$pkgver/submodules/qtgraphicaleffects-everywhere-src-$pkgver.tar.xz"
+
+build() {
+	qmake-qt5
+	make
+}
+
+check() {
+	make check
+}
+
+package() {
+	make install INSTALL_ROOT="$pkgdir"
+
+	# Drop QMAKE_PRL_BUILD_DIR because reference the build dir
+	find "$pkgdir/usr/lib" -type f -name '*.prl' \
+		-exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+
+	install -d "$pkgdir"/usr/share/licenses
+	ln -s /usr/share/licenses/qt5-base "$pkgdir"/usr/share/licenses/$pkgname
+}
+
+sha512sums="1620a4daa6f2afc13b84752fa92f6d603aea1f7c796a239691b271a455d6887bba87a9a07edbfe008045f051c3e71fc6e22fc337d146c1793e923cfeb20e897d  qtgraphicaleffects-everywhere-src-5.15.2.tar.xz"

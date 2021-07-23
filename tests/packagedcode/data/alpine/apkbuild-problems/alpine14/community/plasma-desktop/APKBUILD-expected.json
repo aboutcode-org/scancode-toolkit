@@ -1,0 +1,54 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "plasma-desktop",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "KDE Plasma Desktop",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0 AND lgpl-2.1",
+  "declared_license": "GPL-2.0-only AND LGPL-2.1-only",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-desktop-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "plasma-desktop-5.22.0.tar.xz",
+        "sha512": "b2799e196079519e2e3da27d6d41f2b9f606a1e703d3edb1a6c16fb74fc5d2a7d9452872cb70a3f3e8f699fb7951a9f178370744fd9989e1624294401d83d3ba"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-desktop-5.22.0.tar.xz"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/plasma-desktop@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

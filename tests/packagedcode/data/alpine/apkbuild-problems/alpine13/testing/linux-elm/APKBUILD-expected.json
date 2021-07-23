@@ -1,0 +1,78 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "linux-elm",
+  "version": "5.10.7-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Linux latest stable kernel for elm chromebooks",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0",
+  "declared_license": "GPL-2.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "linux-5.10.tar.xz",
+        "sha512": "95bc137d0cf9148da6a9d1f1a878698dc27b40f68e22c597544010a6c591ce1b256f083489d3ff45ff77753289b535135590194d88ef9f007d0ddab3d74de70e"
+      },
+      {
+        "file_name": "patch-5.10.7.xz",
+        "sha512": "2f82b0065c2751c5e9dfcf50d6e1d7f1aaf933aba63aede310c6f847114cac2c65d98f1f9dab9481b8a03ded8f95a3e565c279b9b8b935ce810db2349db701cb"
+      },
+      {
+        "file_name": "config-elm.aarch64",
+        "sha512": "bef1bf90894e6e6f979a238055d4a4679a280d762202b1bb080acc7afb6128428a53bf09d7f97a628ff371ff724475421f347a054ec4b551f4afcc1296f219df"
+      },
+      {
+        "file_name": "kernel.its.elm",
+        "sha512": "2b999f151dac0dcfe9021ff67059753641b647dcfa08aace1449c8df5ecbbd363616d525c301dfccb533499b7f0bc1138746b5bf24c78624e2497836e8c0f127"
+      },
+      {
+        "file_name": "fix-mmc1-speed.patch",
+        "sha512": "65c57a6d9a5bd5b6ec8798d1c46091bb72377ed1349b66e9a0a1a50ffa077f044f2bfdd30eab974c9c9774fc62d8dd5020a38432d108fce7f4fc1ed6648ea703"
+      },
+      {
+        "file_name": "fix-spi-nor-max-frequency.patch",
+        "sha512": "9e17fb96b81590da0f9b0917ddd2b9d195bab5cde2a4e7feb19991c50a8ac8e4502445715153ced8666e5b6575137c1d49899bb0ae9ab4505ed8f1ff7e569269"
+      },
+      {
+        "file_name": "fix-mmc-order.patch",
+        "sha512": "00e7afdab1dc89a6e0426829685d85cebb98fb95cb13a253d01326fd22f78ddf792bbe3b5be4c9bc93784f1fa93f87f604a4b6c6710660319db6f2e35dd09835"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/linux-elm@5.10.7-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

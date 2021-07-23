@@ -1,0 +1,78 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "discover",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "KDE Plasma resources management GUI",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "lgpl-2.0-plus AND (gpl-2.0 OR gpl-3.0) AND gfdl-1.2",
+  "declared_license": "LGPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only) AND GFDL-1.2-only",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/$_rel/plasma/5.22.0/discover-5.22.0.tar.xz"
+      },
+      {
+        "file_name": "0001-Add-support-for-Alpine-Linux-apk-backend.patch",
+        "url": null
+      },
+      {
+        "file_name": "alpine-appstream-data.json",
+        "url": null
+      },
+      {
+        "file_name": "alpine-linux-logo-icon.png",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "discover-5.22.0.tar.xz",
+        "sha512": "0612ef86b1a49ea06da9a89e5ef537d34d80ad3c9b748d1e91e6e574670eb545094eb52e858747567c82b0d13a064fb27a8378d1eda3059fb1e1958ad30df945"
+      },
+      {
+        "file_name": "0001-Add-support-for-Alpine-Linux-apk-backend.patch",
+        "sha512": "40019b59c8ad5523ccf64313bf03efb354e8c81074733e62b6a778a3c0dbb699f5d6ba3ee8c950b484fee40bf21c82a5608aa2b0e30bad989fdcf557aa68b583"
+      },
+      {
+        "file_name": "alpine-appstream-data.json",
+        "sha512": "f9f73888f8e20b317987da55028bd578de854fb34293466d1bc5deb82e32dc164916f724411de64a42235ecda37205d3f1ba26621ed7ab710b94273acce34aa3"
+      },
+      {
+        "file_name": "alpine-linux-logo-icon.png",
+        "sha512": "0766668630cb14f58c840ebdda8b76bd1dec98b4dd61469677d4ad6eb4966809a25dbec2a846502cad0391df5b6ca9d692bb857a6fa203b61a52e6ac044cfbf4"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "\n\thttps://download.kde.org/$_rel/plasma/5.22.0/discover-5.22.0.tar.xz\n\t0001-Add-support-for-Alpine-Linux-apk-backend.patch\n\talpine-appstream-data.json\n\talpine-linux-logo-icon.png\n\t"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/discover@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

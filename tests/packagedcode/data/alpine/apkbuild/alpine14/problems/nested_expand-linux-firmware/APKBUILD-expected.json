@@ -1,0 +1,81 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "linux-firmware",
+  "version": "20210511-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "firmware files for linux",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "unknown",
+  "declared_license": "custom:multiple",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20210511.tar.gz"
+      },
+      {
+        "file_name": "BCM43430A1.hcd.e7fd1669",
+        "url": "https://github.com/RPi-Distro/bluez-firmware/raw/e7fd166981ab4bb9a36c2d1500205a078a35714d/broadcom/BCM43430A1.hcd"
+      },
+      {
+        "file_name": "BCM4345C0.hcd.e7fd1669",
+        "url": "https://github.com/RPi-Distro/bluez-firmware/raw/e7fd166981ab4bb9a36c2d1500205a078a35714d/broadcom/BCM4345C0.hcd"
+      },
+      {
+        "file_name": "BCM43430B0.hcd.e7fd1669",
+        "url": "https://github.com/RPi-Distro/bluez-firmware/raw/e7fd166981ab4bb9a36c2d1500205a078a35714d/broadcom/BCM43430B0.hcd"
+      },
+      {
+        "file_name": "BCM4345C5.hcd.e7fd1669",
+        "url": "https://github.com/RPi-Distro/bluez-firmware/raw/e7fd166981ab4bb9a36c2d1500205a078a35714d/broadcom/BCM4345C5.hcd"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "linux-firmware-20210511.tar.gz",
+        "sha512": "f282bdcd0e62f446a3c859876319ae2fb4b2e129022a4b2b1ced45f38c8b192ccb07a4480ff4d41ed8fc13c0a38bf0c0d5a5d98515a1750d655db5d919c6af8c"
+      },
+      {
+        "file_name": "BCM43430A1.hcd.e7fd1669",
+        "sha512": "355c940b4fd597101c332207678fd28154d7e7a90cb374b1fdf230d2061bf979af0209c5a423fca8d23ddb3d95abec741e7dd651da7f0aaa97459ed4fe4d2355"
+      },
+      {
+        "file_name": "BCM4345C0.hcd.e7fd1669",
+        "sha512": "1707c2955ceac3e6fc4b1edb8965c871dcfab21ce85cc617de67d7e6f3d6f9b93ee5a8a202de6b20f7b43d1462668287a8569786146cadf5e0268058d2524a9c"
+      },
+      {
+        "file_name": "BCM43430B0.hcd.e7fd1669",
+        "sha512": "c8b943bfeffa54ce1687ca69884e9d56efd28d5ea1dbef660915a80c3e036a8675e7d4299102c32006193e4895367654bb67e2d08e66d7803f396eee7e3dfbd6"
+      },
+      {
+        "file_name": "BCM4345C5.hcd.e7fd1669",
+        "sha512": "eac7428befa36952542e19d3c4a5fa96e1cb3a56c3b00770534909fb0d8caf503a42368175e715e1de58e50cfbd2b4c8ea5a26af3bd546cbbaf8d2c12457a628"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/linux-firmware@20210511-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

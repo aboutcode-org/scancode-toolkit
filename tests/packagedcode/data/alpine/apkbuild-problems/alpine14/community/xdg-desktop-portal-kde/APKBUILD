@@ -1,0 +1,51 @@
+# Contributor: Rasmus Thomsen <oss@cogitri.dev>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=xdg-desktop-portal-kde
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="A backend implementation for xdg-desktop-portal that is using Qt/KDE"
+# armhf blocked by extra-cmake-modules
+# s390x blocked by rust and pipewire
+arch="all !armhf !s390x"
+arch="$arch !mips !mips64 !s390x" # xdg-desktop-portal->flatpak->polkit
+url="https://phabricator.kde.org/source/xdg-desktop-portal-kde"
+license="LGPL-2.0-or-later"
+depends="xdg-desktop-portal"
+makedepends="
+	cups-dev
+	extra-cmake-modules
+	glib-dev
+	kcoreaddons-dev
+	kdeclarative-dev
+	kio-dev
+	kirigami2-dev
+	kwayland-dev
+	libepoxy-dev
+	pipewire-dev
+	plasma-framework-dev
+	plasma-wayland-protocols
+	qt5-qtbase-dev
+	"
+subpackages="$pkgname-lang"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/xdg-desktop-portal-kde-$pkgver.tar.xz"
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="
+9016790fc08d1e57e60dea0d0cbfe9e1226170d6b22b61f74904ca8123f43b7475512fd0a6feacf1705bfb3d5aab50c220e4e64120568ec898d7c7c0d2bf54ad  xdg-desktop-portal-kde-5.22.0.tar.xz
+"

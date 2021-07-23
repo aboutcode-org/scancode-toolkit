@@ -1,0 +1,59 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=kscreen
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="KDE's screen management software"
+# armhf blocked by qt5-qtdeclarative
+# s390x blocked by kconfigwidgets
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="GPL-2.0-or-later AND LGPL-2.1-or-later"
+depends="hicolor-icon-theme"
+makedepends="
+	extra-cmake-modules
+	kcmutils-dev
+	kconfig-dev
+	kconfigwidgets-dev
+	kdbusaddons-dev
+	kdeclarative-dev
+	kglobalaccel-dev
+	ki18n-dev
+	kiconthemes-dev
+	kwidgetsaddons-dev
+	kxmlgui-dev
+	libkscreen-dev
+	plasma-framework-dev
+	qt5-qtbase-dev
+	qt5-qtsensors-dev
+	"
+checkdepends="xvfb-run"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/kscreen-$pkgver.tar.xz"
+subpackages="$pkgname-lang"
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	# kscreen-kded-configtest is broken
+	CTEST_OUTPUT_ON_FAILURE=TRUE xvfb-run ctest -E "kscreen-kded-configtest"
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="
+00212bed49d079f5c318f374604a03e8dcdc128638666b3d5486230494e8fa980e279fda9380f3b0d818e3f1d0878dbe792b84a3a06f8ef1a2dcf9ff775731c9  kscreen-5.22.0.tar.xz
+"

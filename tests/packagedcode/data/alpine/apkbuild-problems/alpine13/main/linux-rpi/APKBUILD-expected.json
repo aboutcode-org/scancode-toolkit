@@ -1,0 +1,126 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "linux-rpi",
+  "version": "5.10.36-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Linux kernel with Raspberry Pi patches",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0",
+  "declared_license": "GPL-2.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
+      },
+      {
+        "file_name": null,
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.10.36.xz"
+      },
+      {
+        "file_name": null,
+        "url": "https://dev.alpinelinux.org/archive/rpi-patches/rpi-5.10.36-alpine.patch"
+      },
+      {
+        "file_name": "config-changes-rpi.armhf",
+        "url": null
+      },
+      {
+        "file_name": "config-changes-rpi.armv7",
+        "url": null
+      },
+      {
+        "file_name": "config-changes-rpi.aarch64",
+        "url": null
+      },
+      {
+        "file_name": "config-changes-rpi2.armhf",
+        "url": null
+      },
+      {
+        "file_name": "config-changes-rpi2.armv7",
+        "url": null
+      },
+      {
+        "file_name": "config-changes-rpi4.armv7",
+        "url": null
+      },
+      {
+        "file_name": "config-changes-rpi4.aarch64",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "linux-5.10.tar.xz",
+        "sha512": "95bc137d0cf9148da6a9d1f1a878698dc27b40f68e22c597544010a6c591ce1b256f083489d3ff45ff77753289b535135590194d88ef9f007d0ddab3d74de70e"
+      },
+      {
+        "file_name": "patch-5.10.36.xz",
+        "sha512": "badb51b4b3a163d67df9d7c77218b46ac69d8445eaa20db28529eb6594d525f14a27e87c4a174b96bed2b17f901928a15b6f982f00d5423c3719b9b49f2d6173"
+      },
+      {
+        "file_name": "rpi-5.10.36-alpine.patch",
+        "sha512": "fa520ea620a2ce6cc6701878d692abd558be160c46500559c76f4935389c3f80906481a6fb2b62bf2ec5486ee6ce6c760dc6c5fb253e8225ed2dcdedfeecfdf4"
+      },
+      {
+        "file_name": "config-changes-rpi.armhf",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      },
+      {
+        "file_name": "config-changes-rpi.armv7",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      },
+      {
+        "file_name": "config-changes-rpi.aarch64",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      },
+      {
+        "file_name": "config-changes-rpi2.armhf",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      },
+      {
+        "file_name": "config-changes-rpi2.armv7",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      },
+      {
+        "file_name": "config-changes-rpi4.armv7",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      },
+      {
+        "file_name": "config-changes-rpi4.aarch64",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz\n\thttps://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.10.36.xz\n\thttps://dev.alpinelinux.org/archive/rpi-patches/rpi-5.10.36-alpine.patch\n\n\tconfig-changes-rpi.armhf\n\tconfig-changes-rpi.armv7\n\tconfig-changes-rpi.aarch64\n\tconfig-changes-rpi2.armhf\n\tconfig-changes-rpi2.armv7\n\tconfig-changes-rpi4.armv7\n\tconfig-changes-rpi4.aarch64\n\t"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/linux-rpi@5.10.36-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

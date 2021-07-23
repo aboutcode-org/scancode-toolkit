@@ -1,0 +1,64 @@
+# Contributor: Valery Kartel <valery.kartel@gmail.com>
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+pkgname=cmake
+pkgver=3.20.3
+pkgrel=0
+pkgdesc="Cross-platform, open-source make system"
+url="https://www.cmake.org/"
+arch="all"
+license="BSD-3-Clause"
+makedepends="bzip2-dev curl-dev expat-dev libarchive-dev linux-headers
+	libuv-dev ncurses-dev rhash-dev xz-dev zlib-dev py3-sphinx"
+options="!check"
+checkdepends="file musl-utils"
+subpackages="$pkgname-doc $pkgname-bash-completion
+	"
+case $pkgver in
+*.*.*.*) _v=v${pkgver%.*.*};;
+*.*.*) _v=v${pkgver%.*};;
+esac
+
+source="https://www.cmake.org/files/$_v/cmake-$pkgver.tar.gz
+	patch-adjust-lib64.patch
+	"
+
+_parallel_opt() {
+	local i n
+	for i in $MAKEOPTS; do
+		case "$i" in
+			-j*) n=${i#-j};;
+		esac;
+	done
+	[ -n "$n" ] && echo "--parallel $n"
+}
+
+build() {
+	# jsoncpp needs cmake to build so to avoid recursive build
+	# dependency, we use the bundled version of jsoncpp.
+	# Do NOT remove --no-system-jsoncpp unless you consulted
+	# maintainer
+	./bootstrap \
+		--prefix=/usr \
+		--mandir=/share/man \
+		--datadir=/share/$pkgname \
+		--docdir=/share/doc/$pkgname \
+		--sphinx-man \
+		--system-libs \
+		--no-system-jsoncpp \
+		$(_parallel_opt)
+	make
+}
+
+check() {
+	CTEST_OUTPUT_ON_FAILURE=TRUE bin/ctest
+}
+
+package() {
+	cd $startdir/src/$pkgname-$pkgver
+	make DESTDIR="$pkgdir" install
+}
+
+sha512sums="
+ed2b8b04c759c4f7c5c363be33bf08e6677c710c1f937050a378ab5539136b919531e1c927b117b3d8d68d4bb613de8d92a3d4d50f3ab3bc98355febca779a1b  cmake-3.20.3.tar.gz
+87051601dda49894a1631156bf63aaa79fcf7cb7bb6705712889b9012d87d2f11d2707a1d729223b180668ad61f22b16893658e9777beee330c7e9a90e7421e6  patch-adjust-lib64.patch
+"

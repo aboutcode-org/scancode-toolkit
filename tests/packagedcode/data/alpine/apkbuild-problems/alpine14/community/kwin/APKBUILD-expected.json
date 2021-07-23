@@ -1,0 +1,54 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "kwin",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "An easy to use, but flexible, composited Window Manager",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0-plus AND (gpl-2.0 OR gpl-3.0) AND lgpl-2.1",
+  "declared_license": "GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only) AND LGPL-2.1-only",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kwin-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "kwin-5.22.0.tar.xz",
+        "sha512": "eccd6d674a6ab7820de8f7765b25b55e8554ea5ddc21af90f189789856a047dc4468ced4a897b2e94c084ebb7e85f114e75cb7e63253497d36c76c2b228eb471"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kwin-5.22.0.tar.xz"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/kwin@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

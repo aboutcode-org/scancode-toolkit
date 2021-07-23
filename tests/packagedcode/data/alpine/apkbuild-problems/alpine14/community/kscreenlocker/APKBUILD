@@ -1,0 +1,77 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=kscreenlocker
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="Library and components for secure lock screen architecture"
+# armhf blocked by extra-cmake-modules
+# s390x, mips64 blocked by kdeclarative-dev, kcmutils-dev, ktextwidgets-dev, kxmlgui-dev
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only)"
+depends="
+	elogind
+	linux-pam
+	"
+depends_dev="
+	elogind-dev
+	kcmutils-dev
+	kcrash-dev
+	kdeclarative-dev
+	kglobalaccel-dev
+	ki18n-dev
+	kidletime-dev
+	knotifications-dev
+	ktextwidgets-dev
+	kwayland-dev
+	kwindowsystem-dev
+	kxmlgui-dev
+	layer-shell-qt-dev
+	libseccomp-dev
+	linux-pam-dev
+	qt5-qtbase-dev
+	qt5-qtx11extras-dev
+	solid-dev
+	xcb-util-keysyms-dev
+	"
+makedepends="$depends_dev
+	extra-cmake-modules
+	"
+checkdepends="xvfb-run"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/kscreenlocker-$pkgver.tar.xz
+	kde.pam
+	kde-np.pam
+	"
+subpackages="$pkgname-dev $pkgname-lang"
+options="!check" # Requires running loginctl
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE xvfb-run ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+
+	install -D -m644 "$srcdir"/kde.pam "$pkgdir"/etc/pam.d/kde
+	install -m644 "$srcdir"/kde-np.pam "$pkgdir"/etc/pam.d/kde-np
+}
+
+sha512sums="
+8a9be9993d889ea47a8ec3f77c47e19d1cb44ee390d1c2ad702260a633fa60d01637a11a36de642cf37aefc190d1dfd2a8c614dee87cb8e8837f0144fbc56d42  kscreenlocker-5.22.0.tar.xz
+56e87d02d75c4a8cc4ed183faed416fb4972e7f223b8759959c0f5da32e11e657907a1df279d62a44a6a174f5aca8b2ac66a5f3325c5deb92011bcf71eed74c3  kde.pam
+565265485dd7466b77966d75a56766216b8bcc187c95a997e531e9481cf50ddbe576071eb0e334421202bcab19aa6de6b93e042447ca4797a24bf97e1d053ffd  kde-np.pam
+"

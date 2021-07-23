@@ -1,0 +1,35 @@
+# Contributor: Francesco Colista <fcolista@alpinelinux.org>
+# Maintainer: Francesco Colista <fcolista@alpinelinux.org>
+pkgname=ubuntu-archive-keyring
+pkgver=2016.05.13.1
+_pkgver=${pkgver%.*}${pkgver//*./-}
+pkgrel=1
+pkgdesc="GnuPG archive keys of the Debian archive"
+url="https://packages.debian.org/sid/debian-archive-keyring"
+arch="noarch"
+license="GPL"
+depends="gnupg"
+makedepends="tar xz"
+options="!check" # upstream doesn't have a test suite.
+subpackages="$pkgname-doc"
+source="http://ftp.debian.org/debian/pool/main/u/ubuntu-keyring/${pkgname}_${_pkgver}_all.deb"
+
+unpack() {
+	cd "$srcdir"
+	for i in $source; do
+		case $i in
+			*.deb) ar x ${i##*/} || return 1 ;;
+		esac
+	done
+}
+
+build() {
+	return 0
+}
+
+package() {
+	mkdir -p "$pkgdir"
+	tar -xJf "$srcdir"/data.tar.xz -C "$pkgdir"/
+}
+
+sha512sums="8234457c379d2a3d0524e5ab5abf806aa8c49806ec863e7fd1d95a63c2b32ccbcaf2375e186de3bd0611b1d8f227d4ee03428d63f30f5b45597036fd5d5a0a56  ubuntu-archive-keyring_2016.05.13-1_all.deb"

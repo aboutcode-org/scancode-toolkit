@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "stdx-allocator",
+  "version": "3.1.0_beta2-r1",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Extracted std.experimental.allocator for usage via DUB",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "boost-1.0",
+  "declared_license": "BSL-1.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://github.com/dlang-community/stdx-allocator/archive/v3.1.0-beta.2/stdx-allocator-3.1.0-beta.2.tar.gz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "stdx-allocator-3.1.0-beta.2.tar.gz",
+        "sha512": "74089666471ca23df66ace2c3d57e828fe7282344c1a0f9e14c0db13b8d842d3f60385181a3a8953fd193a1dbf6ca6828a561306636ab05c6ebe952b97993cfe"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/stdx-allocator@3.1.0_beta2-r1",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

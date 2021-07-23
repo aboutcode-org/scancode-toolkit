@@ -1,0 +1,102 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "mpd",
+  "version": "0.22.3-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Music daemon that plays MP3, FLAC, Ogg Vorbis files and Audio CDs",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0-plus",
+  "declared_license": "GPL-2.0-or-later",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://www.musicpd.org/download/mpd/$_branch/mpd-0.22.3.tar.xz"
+      },
+      {
+        "file_name": "stacksize.patch",
+        "url": null
+      },
+      {
+        "file_name": "mpd.initd",
+        "url": null
+      },
+      {
+        "file_name": "mpd.confd",
+        "url": null
+      },
+      {
+        "file_name": "libcdio-paranoia-version.patch",
+        "url": null
+      },
+      {
+        "file_name": "remove-avahi-test.patch",
+        "url": null
+      },
+      {
+        "file_name": "disable-time-test.patch",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "mpd-0.22.3.tar.xz",
+        "sha512": "deeafbe1a95f777fa4f9f355293a648a3f7121fae8e299c92dbd43d821319ffa4182c558cb0691f65e90f243428cec2cf14f64e9572bc72fc6a2af0fd9c0cd60"
+      },
+      {
+        "file_name": "stacksize.patch",
+        "sha512": "f60f6f3e921d20732c1a4c31a97f28660b43fd649e767d6c39661b6a90145231a79ad3f740ae0d706380b245ad040e98b661a513463c54cea161d1f64fc261e0"
+      },
+      {
+        "file_name": "mpd.initd",
+        "sha512": "8547f685adf3cdc7b2aab7bedeed8c72242011c6f1e01750415ac21eba5ecf6b416239f527adbc904f72439c5d476249148cfb89965e33de1be69421e02c18e0"
+      },
+      {
+        "file_name": "mpd.confd",
+        "sha512": "41b2467f5b03f5c4dd7003cd5f56f6cfc1f67af7a9aa2538d70360f839625222bdd0c4b04c33e8cd52eeecfc354da3ca22f5aaab8aee357a5774aaf3503594e7"
+      },
+      {
+        "file_name": "libcdio-paranoia-version.patch",
+        "sha512": "1a8bc5ec04c75c2aa240d607dfb2790e57126299dd5449cd71d3ea1cdf00951d546bc58ecc4003e062c02a82c9879e1ac6e89c3ad4cdefe3adcde217df9c07ad"
+      },
+      {
+        "file_name": "remove-avahi-test.patch",
+        "sha512": "b888b8d033e7752ce48cc47c116d1265f77d8b2ec42fb4587839afe901ae1392731524f18520888ae1fa654ac9a742e46b309e9450cf403d6077012947f746c5"
+      },
+      {
+        "file_name": "disable-time-test.patch",
+        "sha512": "4352009b1b0f9ffb19c51d476539656f2fe0ab9e34cd4a7ba65c1397d155cc408bb08da96d6ecf8f798a9af615da7662f8d1bf44ab35e9522177da44ba59fbf2"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://www.musicpd.org/download/mpd/$_branch/mpd-0.22.3.tar.xz\n\tstacksize.patch\n\tmpd.initd\n\tmpd.confd\n\tlibcdio-paranoia-version.patch\n\tremove-avahi-test.patch\n\tdisable-time-test.patch\n\t"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/mpd@0.22.3-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

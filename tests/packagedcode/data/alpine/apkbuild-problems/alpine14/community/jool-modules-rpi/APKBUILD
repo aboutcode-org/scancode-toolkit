@@ -1,0 +1,99 @@
+# Contributor: Jakub Jirutka <jakub@jirutka.cz>
+# Maintainer: Jakub Jirutka <jakub@jirutka.cz>
+
+# Jool version
+# Keep _ver in sync with community/jool-tools!
+# When changing _ver we *must* bump _rel!
+_name=jool-modules
+_ver=4.1.5
+_rel=0
+
+# For custom kernels set $FLAVOR.
+_flavor="$FLAVOR"
+_extra_flavors=""
+if [ -z "$FLAVOR" ]; then
+	_flavor="rpi"
+	case $CARCH in
+		armhf | armv7) _extra_flavors="rpi2";;
+	esac
+fi
+
+# Kernel version
+# Keep in sync with main/linux-rpi!
+_kpkg=linux-$_flavor
+_kver=5.10.43
+_krel=0
+_kpkgver="$_kver-r$_krel"
+
+pkgname=$_name-$_flavor
+pkgver=$_kver
+pkgrel=$(( $_krel + $_rel ))
+pkgdesc="SIIT and NAT64 for Linux (kernel modules for linux-$_flavor)"
+url="https://jool.mx"
+arch="armhf armv7 aarch64"
+license="GPL-2.0-or-later"
+depends="$_kpkg=$_kpkgver"
+makedepends="$_kpkg-dev=$_kpkgver linux-headers"
+install_if="$_kpkg=$_kpkgver jool-tools"
+source="https://github.com/NICMx/Jool/releases/download/v$_ver/jool-$_ver.tar.gz"
+builddir="$srcdir/jool-$_ver"
+options="!check"  # no tests provided
+
+for _f in $_extra_flavors; do
+	makedepends="$makedepends linux-$_f-dev=$_kpkgver"
+	subpackages="$subpackages $_name-$_f:_extra"
+done
+
+prepare() {
+	default_prepare
+
+	if [ -z "$FLAVOR" ]; then
+		(	. "$startdir"/../../main/linux-$_flavor/APKBUILD
+			[ "$_kver" != "$pkgver" ] && die "please update _kver to $pkgver"
+			[ "$_krel" != "$pkgrel" ] && die "please update _krel to $pkgrel"
+			return 0
+		)
+	fi
+
+	local flavor; for flavor in $_flavor $_extra_flavors; do
+		cp -r "$builddir" "$srcdir"/$flavor
+	done
+}
+
+build() {
+	unset LDFLAGS
+
+	local flavor; for flavor in $_flavor $_extra_flavors; do
+		# building common first appears to fix a parallell build issue.
+		make -C "$srcdir"/"$flavor"/src/mod/common \
+			MODULES_DIR="/lib/modules/$_kver-$_krel-$flavor"
+		make -C "$srcdir"/"$flavor"/src/mod \
+			MODULES_DIR="/lib/modules/$_kver-$_krel-$flavor"
+	done
+}
+
+package() {
+	_modules_install "$_flavor" "$pkgdir"
+}
+
+_extra() {
+	local flavor=${subpkgname##*-}
+	depends="linux-$flavor=$_kpkgver"
+	install_if="linux-$flavor=$_kpkgver jool-tools"
+	pkgdesc="SIIT and NAT64 for Linux (kernel modules for linux-$flavor)"
+
+	_modules_install "$flavor" "$subpkgdir"
+}
+
+_modules_install() {
+	local flavor="$1"
+	local destdir="$2"
+
+	make -C "$srcdir"/$flavor/src/mod modules_install \
+		MODULES_DIR=/lib/modules/$_kver-$_krel-$flavor \
+		INSTALL_MOD_PATH="$destdir"
+}
+
+sha512sums="
+b1ddd4738ac3c2af607ca6cf298f949f087436b01d5b168d3f3496ba6f1586014958a348393c172599d9c5d42ba2e6e097895ef45db27e2759c89118a3ba33c9  jool-4.1.5.tar.gz
+"

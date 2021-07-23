@@ -1,0 +1,119 @@
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=qt5-qttools
+pkgver=5.15.2
+pkgrel=0
+pkgdesc="Qt5 - QtTool components"
+url="https://www.qt.io/developers/"
+arch="all"
+license="(LGPL-2.0-or-later OR GPL-3.0-only OR GPL-2.0-or-later) AND Qt-GPL-exception-1.0 AND GFDL-1.3-or-later"
+makedepends="qt5-qtbase-dev vulkan-headers clang-dev"
+subpackages="$pkgname-static $pkgname-dev qt5-assistant:_assistant qt5-qdbusviewer:_dbusviewer"
+builddir="$srcdir/qttools-everywhere-src-$pkgver"
+
+case $pkgver in
+	*_beta*|*_rc*) _rel=development_releases;;
+	*) _rel=official_releases;;
+esac
+
+source="https://download.qt.io/$_rel/qt/${pkgver%.*}/$pkgver/submodules/qttools-everywhere-src-$pkgver.tar.xz
+	assistant-qt5.desktop
+	designer-qt5.desktop
+	linguist-qt5.desktop
+	qdbusviewer-qt5.desktop
+	"
+
+_qt5_prefix=/usr/lib/qt5
+
+build() {
+	qmake-qt5
+	make
+}
+
+package() {
+	make install INSTALL_ROOT="$pkgdir"
+
+	# -qt5 symlinks
+	mkdir -p "$pkgdir"/usr/bin/
+	for i in "$pkgdir"/"$_qt5_prefix"/bin/*; do
+		ln -s ../lib/qt5/bin/${i##*/} "$pkgdir"/usr/bin/${i##*/}-qt5
+	done
+
+	for i in $source; do
+		case $i in
+		*.desktop) install -Dm644 "$srcdir"/$i \
+			"$pkgdir"/usr/share/applications/$i ;;
+		esac
+	done
+
+	# icons
+	install -m644 -p -D src/assistant/assistant/images/assistant.png \
+		"$pkgdir"/usr/share/icons/hicolor/32x32/apps/assistant-qt5.png
+	install -m644 -p -D src/assistant/assistant/images/assistant-128.png \
+		"$pkgdir"/usr/share/icons/hicolor/128x128/apps/assistant-qt5.png
+	install -m644 -p -D src/designer/src/designer/images/designer.png \
+		"$pkgdir"/usr/share/icons/hicolor/32x32/apps/designer-qt5.png
+	install -m644 -p -D src/qdbus/qdbusviewer/images/qdbusviewer.png \
+		"$pkgdir"/usr/share/icons/hicolor/32x32/apps/qdbusviewer-qt5.png
+	install -m644 -p -D src/qdbus/qdbusviewer/images/qdbusviewer-128.png \
+		"$pkgdir"/usr/share/icons/hicolor/128x128/apps/qdbusviewer-qt5.png
+	# linguist icons
+	for icon in src/linguist/linguist/images/icons/linguist-*-32.png ; do
+		size=$(echo ${icon##*/} | cut -d- -f2)
+	    install -p -m644 -D $icon \
+		"$pkgdir"/usr/share/icons/hicolor/"$size"x"$size"/apps/linguist.png
+	done
+
+	# Drop QMAKE_PRL_BUILD_DIR because reference the build dir
+	find "$pkgdir/usr/lib" -type f -name '*.prl' \
+		-exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+
+	install -d "$pkgdir"/usr/share/licenses
+	ln -s /usr/share/licenses/qt5-base "$pkgdir"/usr/share/licenses/$pkgname
+}
+
+_mv_files() {
+	local i
+	for i in "$@"; do
+		mkdir -p "$subpkgdir"/${i%/*}
+		mv "$pkgdir"/$i "$subpkgdir"/$i
+	done
+}
+
+dev() {
+	default_dev
+	cd "$pkgdir"
+	for i in designer lconvert linguist lrelease lupdate pixeltool \
+		qhelpgenerator; do
+
+		_mv_files $_qt5_prefix/bin/$i usr/bin/$i-qt5
+	done
+	_mv_files \
+		usr/share/applications/designer* \
+		usr/share/applications/linguist* \
+		usr/share/icons/hicolor/*/apps/designer* \
+		usr/share/icons/hicolor/*/apps/linguist*
+}
+
+_assistant() {
+	pkgdesc="Documentation browser for Qt5"
+	cd "$pkgdir"
+	_mv_files usr/bin/assistant* \
+		$_qt5_prefix/bin/assistant \
+		usr/share/applications/*assistant* \
+		usr/share/icons/hicolor/*/apps/assistant*
+}
+
+_dbusviewer() {
+	pkgdesc="D-Bus debugger and viewer"
+	cd "$pkgdir"
+	_mv_files usr/bin/qdbusviewer* \
+		$_qt5_prefix/bin/qdbusviewer \
+		usr/share/applications/qdbusviewer* \
+		usr/share/icons/hicolor/*/apps/qdbusviewer*
+}
+
+sha512sums="3bd32a302af6e81cd5d4eb07d60c5ef233f1ca7af1aae180c933ac28fafffce28c6c868eb032108747937ea951d6d4f0df5516841bc65d22c529207147533a8b  qttools-everywhere-src-5.15.2.tar.xz
+d566c5284854855541df7177b23f491d96f5064b571e899a44f1d4fcf8bbf1223590b05b1954278dc6f3f56341c917f5b846594c5bd2215b6a859224038d8ad2  assistant-qt5.desktop
+72d9a2235a60c4ae05ba8395d473fe0b42c12e584da619dadb112eb67ba33a85fe0dab6c185d98112d7b25d3eeacaf02f7ef4731742e50c17eacc54c383661b3  designer-qt5.desktop
+b6d8a672d19eed39ab868ff6fc880f255da94acb9e1e84f5905c0f3b9b6055547e8a706492973692c06dc23d35ce77622fc13efc11adf21b62c3baf4ef5ab2ad  linguist-qt5.desktop
+dddcc8c945dcbaf834e8aa8f42fd6df8d6e257e673a256cfd4affed7caf119502dffe6864262d353e8c2e234296cd091279f120ab9502f1b323e20ae3c3dc709  qdbusviewer-qt5.desktop"

@@ -1,0 +1,70 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "ufw",
+  "version": "0.36-r3",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Uncomplicated CLI tool managing a netfilter firewall",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-3.0-plus",
+  "declared_license": "GPL-3.0-or-later",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://launchpad.net/ufw/$(echo 0.36|cut -c1-4)/0.36/+download/ufw-0.36.tar.gz"
+      },
+      {
+        "file_name": "ufw.initd",
+        "url": null
+      },
+      {
+        "file_name": "fix-lib_path.patch",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "ufw-0.36.tar.gz",
+        "sha512": "b32d7f79f43c203149c48b090ee0d063df78fcf654344ee11066a7363e799a62b046758ffe02b8bd15121545ac2a6b61df21fe56f8b810319fe4dd562cbdadb3"
+      },
+      {
+        "file_name": "ufw.initd",
+        "sha512": "b0405525a22bfa70f656ec3685a0aa509645d52771465a3fc068e789cd4bbf86e8409cb4021200794729dcba3c10c99d5c2ba06ae91eca9e3b942a407525e6d5"
+      },
+      {
+        "file_name": "fix-lib_path.patch",
+        "sha512": "1f3f884f219dad9f2a8eaa1c02d90e82ac1646910c5a30b37cd70fc228f885aa147ef00b6e45d30bc0bdd7f2f19bc8f4db1fe0b63917ee013c07ab953744006a"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://launchpad.net/ufw/$(echo 0.36|cut -c1-4)/0.36/+download/ufw-0.36.tar.gz\n\tufw.initd\n\tfix-lib_path.patch\n\t"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/ufw@0.36-r3",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

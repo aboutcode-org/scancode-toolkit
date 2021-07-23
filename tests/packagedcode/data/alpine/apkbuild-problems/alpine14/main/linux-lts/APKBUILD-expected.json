@@ -1,0 +1,186 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "linux-lts",
+  "version": "5.10.43-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Linux lts kernel",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0",
+  "declared_license": "GPL-2.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
+      },
+      {
+        "file_name": "0002-powerpc-config-defang-gcc-check-for-stack-protector-.patch",
+        "url": null
+      },
+      {
+        "file_name": "0007-pci-hotplug-declare-IDT-bridge-as-hotpluggabl-bridge.patch",
+        "url": null
+      },
+      {
+        "file_name": "0008-pci-spr2803-quirk-to-fix-class-ID.patch",
+        "url": null
+      },
+      {
+        "file_name": "ampere-mt-jade.patch",
+        "url": null
+      },
+      {
+        "file_name": "config-lts.aarch64",
+        "url": null
+      },
+      {
+        "file_name": "config-lts.armv7",
+        "url": null
+      },
+      {
+        "file_name": "config-lts.x86",
+        "url": null
+      },
+      {
+        "file_name": "config-lts.x86_64",
+        "url": null
+      },
+      {
+        "file_name": "config-lts.ppc64le",
+        "url": null
+      },
+      {
+        "file_name": "config-lts.s390x",
+        "url": null
+      },
+      {
+        "file_name": "config-lts.mips64",
+        "url": null
+      },
+      {
+        "file_name": "config-virt.aarch64",
+        "url": null
+      },
+      {
+        "file_name": "config-virt.armv7",
+        "url": null
+      },
+      {
+        "file_name": "config-virt.ppc64le",
+        "url": null
+      },
+      {
+        "file_name": "config-virt.x86",
+        "url": null
+      },
+      {
+        "file_name": "config-virt.x86_64",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "linux-5.10.tar.xz",
+        "sha512": "95bc137d0cf9148da6a9d1f1a878698dc27b40f68e22c597544010a6c591ce1b256f083489d3ff45ff77753289b535135590194d88ef9f007d0ddab3d74de70e"
+      },
+      {
+        "file_name": "0002-powerpc-config-defang-gcc-check-for-stack-protector-.patch",
+        "sha512": "d19365fe94431008768c96a2c88955652f70b6df6677457ee55ee95246a64fdd2c6fed9b3bef37c29075178294a7fc91f148ead636382530ebfa822be4ad8c2f"
+      },
+      {
+        "file_name": "0007-pci-hotplug-declare-IDT-bridge-as-hotpluggabl-bridge.patch",
+        "sha512": "ca5aafac37e0b5f3fcbaf801e12f98beb58ffaf1d8c88f76caff22b059831869b4094e7fdcb6d6860422d6b2d036e072caff460e1feb84bd04d10740ad56265b"
+      },
+      {
+        "file_name": "0008-pci-spr2803-quirk-to-fix-class-ID.patch",
+        "sha512": "cbe85cf34e8420c91d2276c2d2aa0ab5023af68e57a1fa613f073f16a76766c67f585eda71c28f232bd0625e0dc8275a9eddc95f49409205dc0dbcc28c9fac1c"
+      },
+      {
+        "file_name": "ampere-mt-jade.patch",
+        "sha512": "16b2d5b0255b37075ba894fc797673d633395907ce0b93400c5a8bd05b512b5cd040b91000fa41f9240d42afc664a69206597d1e3f754a1aa64b9be21a67f5c6"
+      },
+      {
+        "file_name": "config-lts.aarch64",
+        "sha512": "1ee7883eec2c1cad009f480b9dc162bf0d44e102f86ad39f18cc75a1dcd0b83478565ba6e318ca301a21f5c3d51f8df33c6c9a5def7a2803e116554c7537d18f"
+      },
+      {
+        "file_name": "config-lts.armv7",
+        "sha512": "e9acae08bfbbdf1227544c7e635232a7037d945f0bc6cc316361092a18f0a8cc1326979bed7b948d5284d25d3e0ade77d2a04494933886d5c4b37d5aae1c8427"
+      },
+      {
+        "file_name": "config-lts.x86",
+        "sha512": "fd4e6ecfa98a7f74a384089b07802f40f30a70300cd466b30a5343b3594cf20679ac6c4f80ea815987ce1deff92d75039d6692ba9e3ad85035878e2a360d43eb"
+      },
+      {
+        "file_name": "config-lts.x86_64",
+        "sha512": "f370f92e35a8815229e52eec5a5e9c4d15ab01c8e7afa13e9672b6b1d1e0eaeb1379347fe92ae172d61bb749d5ebe53dee2c4f1a3062b144befc3a7339502bb0"
+      },
+      {
+        "file_name": "config-lts.ppc64le",
+        "sha512": "46b44a0dc3ceb85f081bc04bacfab12f9e5e701eeeff89281af8123a2061afb4012194c9d5c5365c1391c95bdcdc12e641436458000c6b145024072e676c9eec"
+      },
+      {
+        "file_name": "config-lts.s390x",
+        "sha512": "b0aa02a11f6f8d88b83d8a615d0fa182e8033bc1543e94099030dd777d9930876ab1b3b4ffee60cf4efda92860a9755f939226c5b5bec69317a47284866dea55"
+      },
+      {
+        "file_name": "config-lts.mips64",
+        "sha512": "06148ae8d49127dd17a3b5cbe8e09bb4e3b95a85a9b372d6a2753a59c1c9caf5639dce865f3bab36da58c8fdcebe52483d7b0c785fdf15e3b71d6fc59c61c6c6"
+      },
+      {
+        "file_name": "config-virt.aarch64",
+        "sha512": "a31345f835aa93066f3b98328ed07a5301ffb0d22d5affe258f569ba5da0776bd61bf38c6bfcf028100c81700f5c8d732b207e933ba947ccfb7517f9f475b88c"
+      },
+      {
+        "file_name": "config-virt.armv7",
+        "sha512": "b4799566dbb0ea7813647c965937c72a40afe60e535a29fb94b8343170e2272c73c27c68568ab296bb6351dfdedd28d0bc2e0000e378afe9c90d7a20a2cc86b5"
+      },
+      {
+        "file_name": "config-virt.ppc64le",
+        "sha512": "a795ab637ba2d84da8f1475bbac4600b59370c277b788fd58b3b28cb3dccf3d3d19b0d5196d915ccfb46c95a2ee20b4626401ee3ee05a54ee17c59bef963142e"
+      },
+      {
+        "file_name": "config-virt.x86",
+        "sha512": "00aef9f7f596be069eba7b5c3ed23d2b057a35d8c9d3b0d54f562a3460302583164baade001f971c9deb16fd8b7bdd36bdc1e7aa0a1fbed75dc55a1f3e3e8e4f"
+      },
+      {
+        "file_name": "config-virt.x86_64",
+        "sha512": "bf8bf531cc6fd1d2d80eda1129b67bd28a7f04c7e893d6ef4d52dcd5f9bcc9b9e712efe205f0f6b2d32a8a23e19670e9498a636e6dc4e9b6f920e1ee253582b7"
+      },
+      {
+        "file_name": "patch-5.10.43.xz",
+        "sha512": "fb1e6d753de74058fa0ce19f5e00b0f9edbe7538a755e322a7b9e05f5436aed9f61cfdbafe5fc5de187b5c486258d0a4441e16c55906003341ef658328cc044e"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz\n\t0002-powerpc-config-defang-gcc-check-for-stack-protector-.patch\n\n\t0007-pci-hotplug-declare-IDT-bridge-as-hotpluggabl-bridge.patch\n\t0008-pci-spr2803-quirk-to-fix-class-ID.patch\n\tampere-mt-jade.patch\n\n\tconfig-lts.aarch64\n\tconfig-lts.armv7\n\tconfig-lts.x86\n\tconfig-lts.x86_64\n\tconfig-lts.ppc64le\n\tconfig-lts.s390x\n\tconfig-lts.mips64\n\n\tconfig-virt.aarch64\n\tconfig-virt.armv7\n\tconfig-virt.ppc64le\n\tconfig-virt.x86\n\tconfig-virt.x86_64\n\t"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/linux-lts@5.10.43-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

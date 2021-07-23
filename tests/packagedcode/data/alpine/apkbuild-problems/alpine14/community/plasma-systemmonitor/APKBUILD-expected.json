@@ -1,0 +1,54 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "plasma-systemmonitor",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "An application for monitoring system resources",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0",
+  "declared_license": "LicenseRef-KDE-Accepted-GPL AND LicenseRef-KDE-Accepted-LGPL AND CC0-1.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-systemmonitor-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "plasma-systemmonitor-5.22.0.tar.xz",
+        "sha512": "e1a8995660b440fb9af4b18737e45df7cb91995b9cbd75e947649b93c9654b9d28d16341ee2e2ed9fc6fa8e9645dfcf1a4e0d54500fed13a6fc013ad992e3970"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-systemmonitor-5.22.0.tar.xz"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/plasma-systemmonitor@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

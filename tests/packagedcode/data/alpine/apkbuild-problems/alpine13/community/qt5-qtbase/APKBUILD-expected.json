@@ -1,0 +1,62 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "qt5-qtbase",
+  "version": "5.15.2-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Qt5 - QtBase components",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "lgpl-2.1 AND lgpl-3.0 AND gpl-3.0 AND qt-gpl-exception-1.0",
+  "declared_license": "LGPL-2.1-only AND LGPL-3.0-only AND GPL-3.0-only AND Qt-GPL-exception-1.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.qt.io/$_rel/qt/5.15/5.15.2/submodules/qtbase-everywhere-src-5.15.2.tar.xz"
+      },
+      {
+        "file_name": "qt-musl-iconv-no-bom.patch",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "qtbase-everywhere-src-5.15.2.tar.xz",
+        "sha512": "a549bfaf867d746ff744ab224eb65ac1bdcdac7e8457dfa379941b2b225a90442fcfc1e1175b9afb1f169468f8130b7ab917c67be67156520a4bfb5c92d304f9"
+      },
+      {
+        "file_name": "qt-musl-iconv-no-bom.patch",
+        "sha512": "7d68421a14f0259535c977d8a521c98918193c107b76ac664571b12f5b0d7588a0d0e1297af412a26753a393b21f3f44c3274fa8ab5bc87f03705a3a03acb444"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://download.qt.io/$_rel/qt/5.15/5.15.2/submodules/qtbase-everywhere-src-5.15.2.tar.xz\n\tqt-musl-iconv-no-bom.patch\n\t"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/qt5-qtbase@5.15.2-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

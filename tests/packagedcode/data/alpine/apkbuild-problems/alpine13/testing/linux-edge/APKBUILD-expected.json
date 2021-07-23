@@ -1,0 +1,86 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "linux-edge",
+  "version": "5.10.7-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Linux latest stable kernel",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0",
+  "declared_license": "GPL-2.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "linux-5.10.tar.xz",
+        "sha512": "95bc137d0cf9148da6a9d1f1a878698dc27b40f68e22c597544010a6c591ce1b256f083489d3ff45ff77753289b535135590194d88ef9f007d0ddab3d74de70e"
+      },
+      {
+        "file_name": "patch-5.10.7.xz",
+        "sha512": "2f82b0065c2751c5e9dfcf50d6e1d7f1aaf933aba63aede310c6f847114cac2c65d98f1f9dab9481b8a03ded8f95a3e565c279b9b8b935ce810db2349db701cb"
+      },
+      {
+        "file_name": "config-edge.aarch64",
+        "sha512": "3ce6de8c2a9e67a6f5ebee32eaf48eba06aa6bdaacc75c22c58f1b26101f446c81534a85c4c036dfc396b6d85ce73947fc9af8779377c506472bd376f7bc7d2e"
+      },
+      {
+        "file_name": "config-edge.armhf",
+        "sha512": "952f1130ea06d9a1b3f6cb15ad546e1acf66901af0a4a5ba7b90319bfad42d0bfbd9e0110b2be86fe5769db3d3d056364ceeaaaebc5fe7df6ae6cb33f7cde0bb"
+      },
+      {
+        "file_name": "config-edge.armv7",
+        "sha512": "0b72c762d3d00effcf720468d3f60a55d450a1fa602567845771bf47e9d36218f6f1794a6d44a29e932f3d511d8e0f7592e03079555be8edbabf9ff1fd705db4"
+      },
+      {
+        "file_name": "config-edge.x86_64",
+        "sha512": "9667a72be0b8e88d88a7c7113ac4239e614ddc23085d048a621616e59743e5d7fc41a66e25ac6bb1e36a12137915cd3114201f467b17995e5917129ccfa3c052"
+      },
+      {
+        "file_name": "config-edge-virt.aarch64",
+        "sha512": "bd7e5ea763ce449d5d27ffa890e97e4b87a4d006f124fd63b4e641a64d1b4a8ef01068ed1d21d0d019f7f0c673cfe8f38187a939c53d9867fe7261735e94e98c"
+      },
+      {
+        "file_name": "config-edge-virt.armv7",
+        "sha512": "78c225327c17024a70d519b6edc9c9a15967be84d6f6da707e51cb3e16a8eeb3ceb421af749455291443613a88b1f99278e3d24a22a330f0873636f45796c024"
+      },
+      {
+        "file_name": "config-edge-virt.x86_64",
+        "sha512": "87cf8449b6c8b995495c776ea0e2d6d18b4b7a80d44d57abd71a7bb7dd7e5954574a0179e51d991c94c876c03f6fac7962c2f864d6137efdf0a73c6727ab0839"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/linux-edge@5.10.7-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

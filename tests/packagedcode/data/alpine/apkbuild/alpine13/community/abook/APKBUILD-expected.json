@@ -1,0 +1,57 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "abook",
+  "version": "0.6.1-r5",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Text-based addressbook designed for use with Mutt",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0-plus",
+  "declared_license": "GPL-2.0-or-later",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "http://abook.sourceforge.net/devel/abook-0.6.1.tar.gz"
+      },
+      {
+        "file_name": "gcc6.patch",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "abook-0.6.1.tar.gz",
+        "sha512": "993895ef2fd6d98d50db610699f8f0a28112778065ac56484373eb814afd8ab7371201fc21506c090514f4b29570ec229dc62c606ab068301152567e2c47fe66"
+      },
+      {
+        "file_name": "gcc6.patch",
+        "sha512": "21ab6475512ea9baae1a6509749628d6b610e96e77c64139d09697d272d66556875058e91c9b948c4ebaf65795a97d8532bae25e5d7e71cc4a20af49897cd867"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/abook@0.6.1-r5",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

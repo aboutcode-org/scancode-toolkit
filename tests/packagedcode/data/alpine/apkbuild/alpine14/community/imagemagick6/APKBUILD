@@ -1,0 +1,208 @@
+# Contributor: Łukasz Jendrysik <scadu@yandex.com>
+# Contributor: Carlo Landmeter <clandmeter@alpinelinux.org>
+# Maintainer: Jakub Jirutka <jakub@jirutka.cz>
+pkgname=imagemagick6
+_pkgname=ImageMagick6
+pkgver=6.9.11.55
+_pkgver=${pkgver%.*}-${pkgver##*.}
+_abiver=${pkgname#imagemagick}
+pkgrel=0
+pkgdesc="A collection of tools and libraries for many image formats (legacy version $_abiver)"
+url="https://www.imagemagick.org/"
+arch="all"
+license="Apache-2.0"
+options="libtool"
+depends_dev="!${pkgname%$_abiver}-dev"
+makedepends="fontconfig-dev freetype-dev ghostscript-dev lcms2-dev
+	libjpeg-turbo-dev libpng-dev libtool libxml2-dev tiff-dev
+	zlib-dev"
+
+case "$CARCH" in
+	s390x) ;;
+	mips*) options="!check" ;;
+	*) makedepends="$makedepends librsvg-dev" ;;
+esac
+
+checkdepends="freetype fontconfig ghostscript ghostscript-fonts lcms2 graphviz"
+subpackages="$pkgname-doc $pkgname-dev $pkgname-c++:_cxx $pkgname-libs"
+source="$_pkgname-$_pkgver.tar.gz::https://github.com/ImageMagick/ImageMagick6/archive/$_pkgver.tar.gz"
+builddir="$srcdir/$_pkgname-$_pkgver"
+
+# secfixes:
+#   6.9.11.42-r0:
+#     - CVE-2020-29599
+#   6.9.11.35-r0:
+#     - CVE-2020-27560
+#   6.9.11.9-r0:
+#     - CVE-2020-19667
+#   6.9.10.80-r0:
+#     - CVE-2019-19952
+#   6.9.10.55-r0:
+#     - CVE-2019-13454
+#   6.9.10.53-r0:
+#     - CVE-2019-13391
+#     - CVE-2019-13311
+#     - CVE-2019-13310
+#     - CVE-2019-13309
+#     - CVE-2019-13308
+#     - CVE-2019-13307
+#     - CVE-2019-13306
+#     - CVE-2019-13305
+#     - CVE-2019-13304
+#     - CVE-2019-13303
+#     - CVE-2019-13302
+#     - CVE-2019-13301
+#     - CVE-2019-13300
+#     - CVE-2019-13299
+#     - CVE-2019-13298
+#     - CVE-2019-13297
+#     - CVE-2019-13296
+#     - CVE-2019-13295
+#     - CVE-2019-13137
+#     - CVE-2019-13136
+#     - CVE-2019-13135
+#     - CVE-2019-13134
+#     - CVE-2019-13133
+#   6.9.10.43-r0:
+#     - CVE-2019-19949
+#     - CVE-2019-19948
+#     - CVE-2019-14981
+#     - CVE-2019-14980
+#     - CVE-2019-11598
+#     - CVE-2019-11597
+#     - CVE-2019-11472
+#   6.9.10.37-r0:
+#     - CVE-2019-10649
+#     - CVE-2019-10650
+#     - CVE-2019-7175
+#     - CVE-2019-7395
+#     - CVE-2019-7396
+#     - CVE-2019-7397
+#     - CVE-2019-7398
+#     - CVE-2019-9956
+#     - CVE-2018-12599
+#     - CVE-2018-12600
+#     - CVE-2018-13153
+#     - CVE-2018-14434
+#     - CVE-2018-14435
+#     - CVE-2018-14436
+#     - CVE-2018-14437
+#     - CVE-2018-14551
+#     - CVE-2018-15607
+#     - CVE-2018-16329
+#     - CVE-2018-16412
+#     - CVE-2018-16413
+#     - CVE-2018-16640
+#     - CVE-2018-16642
+#     - CVE-2018-16643
+#     - CVE-2018-16644
+#     - CVE-2018-16645
+#     - CVE-2018-16749
+#     - CVE-2018-16750
+#     - CVE-2018-17965
+#     - CVE-2018-17966
+#     - CVE-2018-17967
+#     - CVE-2018-18016
+#     - CVE-2018-18024
+#     - CVE-2018-18025
+#     - CVE-2018-18544
+#     - CVE-2018-20467
+#     - CVE-2018-5246
+#     - CVE-2018-5247
+#     - CVE-2018-5357
+#     - CVE-2018-5358
+#     - CVE-2018-6405
+#     - CVE-2018-7443
+#     - CVE-2018-7470
+#     - CVE-2018-8804
+#     - CVE-2018-8960
+#     - CVE-2018-9133
+#     - CVE-2018-9135
+
+prepare() {
+	default_prepare
+
+	if [ "${pkgver%%.*}" != "$_abiver" ]; then
+		error "This abuild is for major version $_abiver, but pkgver=$pkgver!"
+		return 1
+	fi
+}
+
+build() {
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--program-suffix="-$_abiver" \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/share/man \
+		--infodir=/usr/share/info \
+		--disable-docs \
+		--disable-static \
+		--with-threads \
+		--without-x \
+		--without-perl \
+		--with-tiff \
+		--with-png \
+		--with-rsvg \
+		--with-gslib \
+		--with-gs-font-dir=/usr/share/fonts/Type1 \
+		--with-modules \
+		--with-xml
+	make
+}
+
+check() {
+	make check
+}
+
+package() {
+	make -j1 DESTDIR="$pkgdir" install
+
+	if [ ! -e "$pkgdir"/usr/lib/libMagickCore-$_abiver.Q16.so ]; then
+		error "Has ABI verision changed? (current is $_abiver)"
+		return 1
+	fi
+
+	# We cannot let abuild delete the *.la files due to we need *.la
+	# for the modules.
+	rm "$pkgdir"/usr/lib/*.la
+
+	find "$pkgdir" -name '.packlist' -o -name 'perllocal.pod' \
+		-o -name '*.bs' -delete
+
+	install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
+
+dev() {
+	default_dev
+
+	cd "$subpkgdir"
+
+	mkdir -p ./usr/bin
+	mv "$pkgdir"/usr/bin/*-config-$_abiver ./usr/bin/
+
+	cd ./usr/bin
+	local f; for f in *; do
+		ln -s $f ${f%-$_abiver}
+	done
+}
+
+libs() {
+	default_libs
+
+	cd "$subpkgdir"
+
+	mv "$pkgdir"/etc .
+	mv "$pkgdir"/usr/lib/* ./usr/lib/
+	mv "$pkgdir"/usr/share ./usr/
+}
+
+_cxx() {
+	pkgdesc="ImageMagick Magick++ library (C++ bindings)"
+
+	mkdir -p "$subpkgdir"/usr/lib
+	mv "$pkgdir"/usr/lib/libMagick++*.so.* "$subpkgdir"/usr/lib/
+}
+
+sha512sums="908aefdb997e82d26eaecfc3ee575c583c42405eaa690378873ef42beca227b281e5ce30943821f597689552e68221858281974f88ccf20eff8527965086a442  ImageMagick6-6.9.11-55.tar.gz"

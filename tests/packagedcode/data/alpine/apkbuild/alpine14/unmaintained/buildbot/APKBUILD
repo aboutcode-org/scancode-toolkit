@@ -1,0 +1,56 @@
+# Contributor: Carlo Landmeter <clandmeter@gmail.com>
+# Maintainer: Francesco Colista <fcolista@alpinelinux.org>
+pkgname=buildbot
+pkgver=1.6.0
+pkgrel=0
+pkgdesc="Continuous integration testing framework"
+url="http://buildbot.net/"
+arch="noarch"
+license="GPL-2.0"
+depends="python2 py-twisted py-simplejson py2-sqlalchemy
+	py2-pysqlite py-jinja2 py2-sqlalchemy-migrate
+	py-dateutil py-setuptools"
+depends_dev=""
+makedepends="python2-dev"
+install="${pkgname}.pre-install"
+BUILDBOT_USER=buildbot
+BUILDBOT_GROUP=buildbot
+pkgusers="$BUILDBOT_USER"
+pkggroups="$BUILDBOT_GROUP"
+subpackages="$pkgname-openrc"
+source="https://files.pythonhosted.org/packages/source/${pkgname:0:1}/$pkgname/$pkgname-${pkgver/_/}.tar.gz
+	buildmaster.initd
+	buildmaster.confd"
+
+builddir="$srcdir"/$pkgname-${pkgver/_/}
+
+check() {
+	cd "$builddir"
+	python2 setup.py check
+}
+
+prepare() {
+	default_prepare
+}
+
+build() {
+	cd "$builddir"
+	python2 setup.py build
+}
+
+package() {
+	cd "$builddir"
+	python2 setup.py install --prefix=/usr --root="$pkgdir"
+	install -D -m 755 \
+	        "$srcdir"/buildmaster.initd \
+	        "$pkgdir"/etc/init.d/buildmaster
+	install -D -m 644 \
+	        "$srcdir"/buildmaster.confd \
+	        "$pkgdir"/etc/conf.d/buildmaster
+	install -d -o $BUILDBOT_USER -g $BUILDBOT_GROUP \
+	        "$pkgdir"/var/lib/buildmaster
+}
+
+sha512sums="1d54bf5b0932b8bb21e0c6a8b8545eccfa48af56dd751d97ab9f8540c0e1735dc98871b33616ba66467f7ca78d2c54c3d6666264784d236097659f3f4d1fd5f0  buildbot-1.6.0.tar.gz
+2e65d22f1b94433ba11839fb3434d072f9ff8132396b03fdcdb3b437778679d1699534296fbb851d2661a3a7a0bce4ef1f94c49e7910419557e4055f2ed1a4d5  buildmaster.initd
+d9339c30d3a92e92b41b0e3139ec89ecbd1460b0e4ee6c6fe2560c4307b2eb3f29b838c2f2312b9c7049bd95eaf652d09039227c691af805bc25a36999ec1840  buildmaster.confd"

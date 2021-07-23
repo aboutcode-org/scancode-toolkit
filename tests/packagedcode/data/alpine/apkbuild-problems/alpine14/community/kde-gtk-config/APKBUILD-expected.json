@@ -1,0 +1,54 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "kde-gtk-config",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "GTK2 and GTK3 Configurator for KDE",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "(gpl-2.0 AND lgpl-2.1) OR lgpl-3.0",
+  "declared_license": "GPL-2.0 AND LGPL-2.1-only OR LGPL-3.0-only",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kde-gtk-config-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "kde-gtk-config-5.22.0.tar.xz",
+        "sha512": "8e0b41523dbfab3677065354c1cbc60b81dee081ea893331fd5f473da21b8db04313bdac793a354d3b0ee895f9e4996a39556932d99e4919fb6fc0aaef9ef233"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kde-gtk-config-5.22.0.tar.xz"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/kde-gtk-config@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

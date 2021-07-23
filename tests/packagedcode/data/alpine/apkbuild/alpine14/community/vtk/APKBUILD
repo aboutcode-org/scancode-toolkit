@@ -1,0 +1,70 @@
+# Maintainer: Marian Buschsieweke <marian.buschsieweke@ovgu.de>
+# Contributor: Marian Buschsieweke <marian.buschsieweke@ovgu.de>
+pkgname=vtk
+pkgver=9.0.1
+pkgrel=5
+pkgdesc="A software system for 3D computer graphics, image processing and visualization"
+url="https://vtk.org/"
+# Other arches blocked by pdal
+arch="x86_64 x86 aarch64 ppc64le"
+license="BSD-3-Clause"
+depends_dev="
+	boost-dev
+	doxygen
+	ffmpeg-dev
+	gdal-dev
+	glew-dev
+	jpeg-dev
+	libexecinfo-dev
+	libpng-dev
+	libxml2-dev
+	openmpi-dev
+	pdal-dev
+	qt5-qtbase-dev
+	qt5-qttools-dev
+	qt5-qtx11extras-dev
+	sqlite-dev
+	tk-dev
+	unixodbc-dev
+	zlib-dev
+	"
+makedepends="$depends_dev
+	cmake
+	"
+subpackages="$pkgname-doc $pkgname-dev"
+source="
+	https://www.vtk.org/files/release/${pkgver%.*}/VTK-$pkgver.tar.gz
+	https://www.vtk.org/files/release/${pkgver%.*}/VTKData-$pkgver.tar.gz
+	https://www.vtk.org/files/release/${pkgver%.*}/VTKLargeData-$pkgver.tar.gz
+	fix-build.patch
+	"
+builddir="$srcdir/VTK-$pkgver"
+options="!check" # No unit tests provided
+
+build() {
+	cmake -B build \
+		-Wno-dev \
+		-DCMAKE_SKIP_INSTALL_RPATH=ON \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DBUILD_SHARED_LIBS=ON \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DBUILD_DOCUMENTATION=OFF \
+		-DVTK_USE_FFMPEG_ENCODER=ON \
+		-DModule_vtkIOPDAL=ON \
+		-DVTK_USE_LARGE_DATA=ON \
+		-DVTK_QT_VERSION="5" \
+		-DVTK_PYTHON_VERSION="3" \
+		-DVTK_CUSTOM_LIBRARY_SUFFIX="" \
+		-DVTK_INSTALL_INCLUDE_DIR=include/vtk \
+		-DCMAKE_BUILD_TYPE=None
+	cmake --build build
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="eb2508e2409ad302cc5db65282a9c1ff4477ac8a93e0fee898ad8f0974d72decc7d5d444dc825a3c2f7952ebf59853616097ebe0d134649cab0d49a9619065bf  VTK-9.0.1.tar.gz
+2fc418a6e15bd4e30ce181bb209c39666982645dbdbe2d6491683497662b72712689e58cf54b7af91865d0e3d0cb3f9ab66606b02964d57bf88d769d292dd938  VTKData-9.0.1.tar.gz
+b3303d633f063a6f3bfcc61b441f445611ff7cff6f006c77d8452eb5a3af89a18b2a1201a2dbd230af085b9e45b9abb70319d2f41db0f1e19c632286e7b02ec2  VTKLargeData-9.0.1.tar.gz
+c814628a7ce9e1015cb02d4c9ad7ae7c6ad6d5d83b553f0c484414744488e4d0fa313924b4fd0f579a363352832347035147d1be3aca6f6a4885b6f9a1590b9e  fix-build.patch"

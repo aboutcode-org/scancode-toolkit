@@ -1,0 +1,250 @@
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+
+_flavor=lts
+pkgname=linux-${_flavor}
+pkgver=5.10.38
+case $pkgver in
+	*.*.*)	_kernver=${pkgver%.*};;
+	*.*) _kernver=$pkgver;;
+esac
+pkgrel=0
+pkgdesc="Linux lts kernel"
+url="https://www.kernel.org"
+depends="mkinitfs"
+_depends_dev="perl gmp-dev elfutils-dev bash flex bison"
+makedepends="$_depends_dev sed installkernel bc linux-headers linux-firmware-any openssl-dev
+	diffutils findutils"
+options="!strip"
+_config=${config:-config-lts.${CARCH}}
+install=
+source="https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/linux-$_kernver.tar.xz
+	0002-powerpc-config-defang-gcc-check-for-stack-protector-.patch
+
+	0007-pci-hotplug-declare-IDT-bridge-as-hotpluggabl-bridge.patch
+	0008-pci-spr2803-quirk-to-fix-class-ID.patch
+	ampere-mt-jade.patch
+
+	config-lts.aarch64
+	config-lts.armv7
+	config-lts.x86
+	config-lts.x86_64
+	config-lts.ppc64le
+	config-lts.s390x
+	config-lts.mips64
+
+	config-virt.aarch64
+	config-virt.armv7
+	config-virt.ppc64le
+	config-virt.x86
+	config-virt.x86_64
+	"
+subpackages="$pkgname-dev:_dev:$CBUILD_ARCH"
+_flavors=
+for _i in $source; do
+	case $_i in
+	config-*.$CARCH)
+		_f=${_i%.$CARCH}
+		_f=${_f#config-}
+		_flavors="$_flavors ${_f}"
+		if [ "linux-$_f" != "$pkgname" ]; then
+			subpackages="$subpackages linux-${_f}::$CBUILD_ARCH linux-${_f}-dev:_dev:$CBUILD_ARCH"
+		fi
+		;;
+	esac
+done
+
+if [ "${pkgver%.0}" = "$pkgver" ]; then
+	source="$source
+	https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/patch-$pkgver.xz"
+fi
+arch="all !armhf"
+license="GPL-2.0"
+
+_carch=${CARCH}
+case "$_carch" in
+aarch64*) _carch="arm64" ;;
+arm*) _carch="arm" ;;
+mips*) _carch="mips" ;;
+ppc*) _carch="powerpc" ;;
+s390*) _carch="s390" ;;
+esac
+
+# secfixes:
+#   5.10.4-r0:
+#     - CVE-2020-29568
+#     - CVE-2020-29569
+
+prepare() {
+	local _patch_failed=
+	cd "$srcdir"/linux-$_kernver
+	if [ "$_kernver" != "$pkgver" ]; then
+		msg "Applying patch-$pkgver.xz"
+		unxz -c < "$srcdir"/patch-$pkgver.xz | patch -p1 -N
+	fi
+
+	# first apply patches in specified order
+	for i in $source; do
+		case $i in
+		*.patch)
+			msg "Applying $i..."
+			if ! patch -s -p1 -N -i "$srcdir"/$i; then
+				echo $i >>failed
+				_patch_failed=1
+			fi
+			;;
+		esac
+	done
+
+	if ! [ -z "$_patch_failed" ]; then
+		error "The following patches failed:"
+		cat failed
+		return 1
+	fi
+
+	# remove localversion from patch if any
+	rm -f localversion*
+	oldconfig
+}
+
+oldconfig() {
+	for i in $_flavors; do
+		local _config=config-$i.${CARCH}
+		local _builddir="$srcdir"/build-$i.$CARCH
+		mkdir -p "$_builddir"
+		echo "-$pkgrel-$i" > "$_builddir"/localversion-alpine \
+			|| return 1
+
+		cp "$srcdir"/$_config "$_builddir"/.config
+		make -C "$srcdir"/linux-$_kernver \
+			O="$_builddir" \
+			ARCH="$_carch" \
+			listnewconfig oldconfig
+	done
+}
+
+build() {
+	unset LDFLAGS
+	export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
+	for i in $_flavors; do
+		cd "$srcdir"/build-$i.$CARCH
+		make ARCH="$_carch" CC="${CC:-gcc}" \
+			KBUILD_BUILD_VERSION="$((pkgrel + 1 ))-Alpine"
+	done
+}
+
+_package() {
+	local _buildflavor="$1" _outdir="$2"
+	local _abi_release=${pkgver}-${pkgrel}-${_buildflavor}
+	export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
+
+	cd "$srcdir"/build-$_buildflavor.$CARCH
+	# modules_install seems to regenerate a defect Modules.symvers on s390x. Work
+	# around it by backing it up and restore it after modules_install
+	cp Module.symvers Module.symvers.backup
+
+	mkdir -p "$_outdir"/boot "$_outdir"/lib/modules
+
+	local _install
+	case "$CARCH" in
+		arm*|aarch64) _install="zinstall dtbs_install";;
+		*) _install=install;;
+	esac
+
+	make -j1 modules_install $_install \
+		ARCH="$_carch" \
+		INSTALL_MOD_PATH="$_outdir" \
+		INSTALL_PATH="$_outdir"/boot \
+		INSTALL_DTBS_PATH="$_outdir/boot/dtbs-$_buildflavor"
+
+	cp Module.symvers.backup Module.symvers
+
+	rm -f "$_outdir"/lib/modules/${_abi_release}/build \
+		"$_outdir"/lib/modules/${_abi_release}/source
+	rm -rf "$_outdir"/lib/firmware
+
+	install -D include/config/kernel.release \
+		"$_outdir"/usr/share/kernel/$_buildflavor/kernel.release
+}
+
+# main flavor installs in $pkgdir
+package() {
+	depends="$depends linux-firmware-any"
+
+	_package lts "$pkgdir"
+}
+
+# subflavors install in $subpkgdir
+virt() {
+	_package virt "$subpkgdir"
+}
+
+_dev() {
+	local _flavor=$(echo $subpkgname | sed -E 's/(^linux-|-dev$)//g')
+	local _abi_release=${pkgver}-${pkgrel}-$_flavor
+	# copy the only the parts that we really need for build 3rd party
+	# kernel modules and install those as /usr/src/linux-headers,
+	# simlar to what ubuntu does
+	#
+	# this way you dont need to install the 300-400 kernel sources to
+	# build a tiny kernel module
+	#
+	pkgdesc="Headers and script for third party modules for $_flavor kernel"
+	depends="$_depends_dev"
+	local dir="$subpkgdir"/usr/src/linux-headers-${_abi_release}
+	export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
+
+	# first we import config, run prepare to set up for building
+	# external modules, and create the scripts
+	mkdir -p "$dir"
+	cp "$srcdir"/config-$_flavor.${CARCH} "$dir"/.config
+	echo "-$pkgrel-$_flavor" > "$dir"/localversion-alpine
+
+	make -j1 -C "$srcdir"/linux-$_kernver O="$dir" ARCH="$_carch" \
+		syncconfig prepare modules_prepare scripts
+
+	# remove the stuff that points to real sources. we want 3rd party
+	# modules to believe this is the soruces
+	rm "$dir"/Makefile "$dir"/source
+
+	# copy the needed stuff from real sources
+	#
+	# this is taken from ubuntu kernel build script
+	# http://kernel.ubuntu.com/git/ubuntu/ubuntu-zesty.git/tree/debian/rules.d/3-binary-indep.mk
+	cd "$srcdir"/linux-$_kernver
+	find .  -path './include/*' -prune \
+		-o -path './scripts/*' -prune -o -type f \
+		\( -name 'Makefile*' -o -name 'Kconfig*' -o -name 'Kbuild*' -o \
+		   -name '*.sh' -o -name '*.pl' -o -name '*.lds' -o -name 'Platform' \) \
+		-print | cpio -pdm "$dir"
+
+	cp -a scripts include "$dir"
+
+	find $(find arch -name include -type d -print) -type f \
+		| cpio -pdm "$dir"
+
+	install -Dm644 "$srcdir"/build-$_flavor.$CARCH/Module.symvers \
+		"$dir"/Module.symvers
+
+	mkdir -p "$subpkgdir"/lib/modules/${_abi_release}
+	ln -sf /usr/src/linux-headers-${_abi_release} \
+		"$subpkgdir"/lib/modules/${_abi_release}/build
+}
+
+sha512sums="95bc137d0cf9148da6a9d1f1a878698dc27b40f68e22c597544010a6c591ce1b256f083489d3ff45ff77753289b535135590194d88ef9f007d0ddab3d74de70e  linux-5.10.tar.xz
+d19365fe94431008768c96a2c88955652f70b6df6677457ee55ee95246a64fdd2c6fed9b3bef37c29075178294a7fc91f148ead636382530ebfa822be4ad8c2f  0002-powerpc-config-defang-gcc-check-for-stack-protector-.patch
+ca5aafac37e0b5f3fcbaf801e12f98beb58ffaf1d8c88f76caff22b059831869b4094e7fdcb6d6860422d6b2d036e072caff460e1feb84bd04d10740ad56265b  0007-pci-hotplug-declare-IDT-bridge-as-hotpluggabl-bridge.patch
+cbe85cf34e8420c91d2276c2d2aa0ab5023af68e57a1fa613f073f16a76766c67f585eda71c28f232bd0625e0dc8275a9eddc95f49409205dc0dbcc28c9fac1c  0008-pci-spr2803-quirk-to-fix-class-ID.patch
+16b2d5b0255b37075ba894fc797673d633395907ce0b93400c5a8bd05b512b5cd040b91000fa41f9240d42afc664a69206597d1e3f754a1aa64b9be21a67f5c6  ampere-mt-jade.patch
+39daef6a804030cef728b2825b5979eeba46755f32de15c89544c11e4809bf23d018357bc50c654b5e8f013e9f34ea3bd078d23ce9feb790975775f0ac669591  config-lts.aarch64
+8c9746919125ed22f29c6f29923fad1b35e75636ac2f0d64889bbe7a9a2efe3292529703916cbe82b43fc9336b93b66b7ade98ed029d105f0a8c891f2667ce39  config-lts.armv7
+f9a26097e89763e0de0c2b27a3c603c029f645170227086ce5c5fb91812a97a81f4baea8513f625845e5140581a35f2708d85502162d3fec187e34032662bf86  config-lts.x86
+66bbcbeb44e3ffd2b1d062a416e3a68f798dd1d45003cd6a9279ede8486a344240107e868844fa9e1a2a6012861cb0ed94ac43b88b2dd246c74d287fa9720185  config-lts.x86_64
+2af054e26f338fb5634aff4e51a3435a5545a2caaf8db1f982d8a619bc3ba644180c53d04bdbf157eae316e089f54101fc753f899d44ae55d13e79194e87ccb0  config-lts.ppc64le
+be3a2394dd157444c51caf28bb507dda4c655568218cb378fd99348711933af4f844b12a56b1e2d2f6963e0dd02152d18a9c937bf748a6ea9b62d39b3ecbc397  config-lts.s390x
+958516966bd172dc293a08bfea4da2c9bc0064c8b5ce7f9790c7afe83497b57013d56df422c7aec1cb618b04a5bd6be29f3046eb366db99b0eae3c2e8db1d730  config-lts.mips64
+d161d930d556b9f83aba1975800b2afb794b015187b8222d8a2e05c9eea191f615da52fde1e330a67f1b0a7822a4e33553c5cee982dab907472490fca257cfc2  config-virt.aarch64
+6fd9c2e7949ff278d21ea7feecf7da65eeb01b901f79a5e0e548e63bc5f1a8915f1b22ec7acc7a050abda1d7059302e3a93dd35b9d139cb8382352f5bc42e8d2  config-virt.armv7
+018cfa22e53690b8649f646659dfa2108650acc476057cfb20f023c8332765407d42f543a2ff841035f678da6605e0e7f8e1c383edb508693d9a23de0e214b56  config-virt.ppc64le
+00e8f614094d0f9a5270cdbedccda3dd55cc03f3045e9c0b1a6d5de91595cc204a960a57cd274da7c3708521b1dedcfa333f81ecf23198fb29165247aad74b24  config-virt.x86
+105d8f70e497f9ccb66533ddea7e591a3a2cbbe9ae3f73e168b03e783efb07ddb085af8904d7a83404bf90c3c55d5b45b557f99ef906afbff286df19df311519  config-virt.x86_64
+3829c94628b30d2bf76c667f7be1331c07f4a0aec1949f5299d65935429eafda1d2fc317ff582baeb7a5e7b3af5a3d80823616d1b77819aec9e88850c32f01eb  patch-5.10.38.xz"

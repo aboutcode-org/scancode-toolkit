@@ -1,0 +1,356 @@
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+pkgname=gcc6
+pkgver=6.4.0
+_ver=${pkgver%%.*}
+pkgname="$pkgname"
+pkgrel=12 # Update java-gcj-compat _gccpkgrel so it matchs!
+pkgdesc="The GNU Compiler Collection"
+url="https://gcc.gnu.org/"
+arch="all !mips !mips64" # FTBFS on mips
+license="GPL LGPL"
+_gccrel=$pkgver-r$pkgrel
+depends="binutils isl"
+makedepends_build="gcc$_cross g++$_cross bison flex texinfo gawk zip gmp-dev mpfr-dev mpc1-dev zlib-dev"
+makedepends_host="linux-headers gmp-dev mpfr-dev mpc1-dev isl-dev zlib-dev !gettext-dev"
+subpackages="$pkgname-doc"
+
+STRIP_FOR_TARGET=${CROSS_COMPILE}strip
+_builddir="$srcdir/build"
+
+_languages="c,c++,java"
+subpackages="$subpackages libstdc++6:libcxx:$CTARGET_ARCH g++6:gpp"
+subpackages="$subpackages libgcj6:libgcj:$CTARGET_ARCH gcc6-java:java"
+makedepends="$makedepends_build $makedepends_host"
+
+source="https://gcc.gnu.org/pub/gcc/releases/gcc-${_pkgbase:-$pkgver}/gcc-${_pkgbase:-$pkgver}.tar.xz
+	https://sourceware.org/pub/java/ecj-4.9.jar
+
+	001_all_default-ssp-strong.patch
+	002_all_default-relro.patch
+	003_all_default-fortify-source.patch
+	005_all_default-as-needed.patch
+	011_all_default-warn-format-security.patch
+	012_all_default-warn-trampolines.patch
+	020_all_msgfmt-libstdc++-link.patch
+	050_all_libiberty-asprintf.patch
+	051_all_libiberty-pic.patch
+	053_all_libitm-no-fortify-source.patch
+	067_all_gcc-poison-system-directories.patch
+	090_all_pr55930-dependency-tracking.patch
+
+	201-cilkrts.patch
+	203-libgcc_s.patch
+	204-linux_libc_has_function.patch
+	205-nopie.patch
+	207-static-pie.patch
+
+	libgcc-always-build-gcceh.a.patch
+	gcc-4.9-musl-fortify.patch
+	gcc-6.1-musl-libssp.patch
+	boehm-gc-musl.patch
+	boehm-gc-musl-mips.patch
+	gcc-pure64.patch
+	fix-gcj-stdgnu14-link.patch
+	fix-gcj-musl.patch
+	fix-gcj-iconv-musl.patch
+	fix-gcj-arm-thumb.patch
+
+	gcc-4.8-build-args.patch
+	fix-cxxflags-passing.patch
+
+	300-main-gcc-add-musl-s390x-dynamic-linker.patch
+	310-build-gcj-s390x.patch
+	320-libffi-gnulinux.patch
+
+	fix-rs6000-pie.patch
+	fix-linux-header-use-in-libgcc.patch
+	gcc-pure64-mips.patch
+	fix-ppc64le-coercion-r261621.patch
+	0017-pr93402.patch
+	isl-0.22.patch
+	"
+
+sonameprefix="$pkgname:"
+
+# we build out-of-tree
+_gccdir="$srcdir"/gcc-${_pkgbase:-$pkgver}
+_gcclibdir=/usr/lib/gcc/${CTARGET}/$pkgver
+_gcclibexec=/usr/libexec/gcc/${CTARGET}/$pkgver
+
+prepare() {
+	cd "$_gccdir"
+
+	_err=
+	for i in $source; do
+		case "$i" in
+		*.patch)
+			msg "Applying $i"
+			patch -p1 -F3 -i "$srcdir"/$i || _err="$_err $i"
+			;;
+		esac
+	done
+
+	if [ -n "$_err" ]; then
+		error "The following patches failed:"
+		for i in $_err; do
+			echo "  $i"
+		done
+		return 1
+	fi
+
+	# see https://gcc.gnu.org/ml/java/2008-04/msg00027.html
+	mv "$srcdir"/ecj-*.jar ecj.jar
+
+	echo ${pkgver} > gcc/BASE-VER
+}
+
+build() {
+	local _arch_configure=
+	local _libc_configure=
+	local _bootstrap_configure=
+	local _symvers=
+
+	cd "$_gccdir"
+
+	case "$CTARGET" in
+	aarch64-*-*-*)		_arch_configure="--with-arch=armv8-a --with-abi=lp64";;
+	armv5-*-*-*eabi)	_arch_configure="--with-arch=armv5te --with-tune=arm926ej-s --with-float=soft --with-abi=aapcs-linux";;
+	armv6-*-*-*eabihf)	_arch_configure="--with-arch=armv6zk --with-tune=arm1176jzf-s --with-fpu=vfp --with-float=hard --with-abi=aapcs-linux";;
+	armv7-*-*-*eabihf)	_arch_configure="--with-arch=armv7-a --with-tune=generic-armv7-a --with-fpu=vfpv3-d16 --with-float=hard --with-abi=aapcs-linux --with-mode=thumb";;
+	mips-*-*-*)		_arch_configure="--with-arch=mips32 --with-mips-plt --with-float=soft --with-abi=32";;
+	mips64-*-*-*)		_arch_configure="--with-arch=mips3 --with-tune=mips64 --with-mips-plt --with-float=soft --with-abi=64";;
+	mips64el-*-*-*)		_arch_configure="--with-arch=mips3 --with-tune=mips64 --with-mips-plt --with-float=soft --with-abi=64";;
+	mipsel-*-*-*)		_arch_configure="--with-arch=mips32 --with-mips-plt --with-float=soft --with-abi=32";;
+	powerpc-*-*-*)		_arch_configure="--enable-secureplt --enable-decimal-float=no";;
+	powerpc64*-*-*-*)	_arch_configure="--with-abi=elfv2 --enable-secureplt --enable-decimal-float=no --enable-targets=powerpcle-linux";;
+	i486-*-*-*)		_arch_configure="--with-arch=i486 --with-tune=generic --enable-cld";;
+	i586-*-*-*)		_arch_configure="--with-arch=i586 --with-tune=generic --enable-cld";;
+	s390x-*-*-*)		_arch_configure="--with-arch=z196 --with-tune=zEC12 --with-zarch --with-long-double-128 --enable-decimal-float";;
+	esac
+
+	case "$CTARGET_ARCH" in
+	mips*)	_hash_style_configure="--with-linker-hash-style=sysv" ;;
+	*)	_hash_style_configure="--with-linker-hash-style=gnu" ;;
+	esac
+
+	case "$CTARGET_LIBC" in
+	musl)
+		# musl does not support mudflap, or libsanitizer
+		# libmpx uses secure_getenv and struct _libc_fpstate not present in musl
+		# alpine musl provides libssp_nonshared.a, so we don't need libssp either
+		_libc_configure="--disable-libssp --disable-libmpx --disable-libmudflap --disable-libsanitizer"
+		_symvers="--disable-symvers"
+		export libat_cv_have_ifunc=no
+		;;
+	esac
+
+	_bootstrap_configure="--enable-shared --enable-threads --enable-tls"
+
+	msg "Building the following:"
+	echo ""
+	echo "  CBUILD=$CBUILD"
+	echo "  CHOST=$CHOST"
+	echo "  CTARGET=$CTARGET"
+	echo "  CTARGET_ARCH=$CTARGET_ARCH"
+	echo "  CTARGET_LIBC=$CTARGET_LIBC"
+	echo "  languages=$_languages"
+	echo "  arch_configure=$_arch_configure"
+	echo "  libc_configure=$_libc_configure"
+	echo "  bootstrap_configure=$_bootstrap_configure"
+	echo "  hash_style_configure=$_hash_style_configure"
+	echo ""
+
+	mkdir -p "$_builddir"
+	cd "$_builddir"
+	"$_gccdir"/configure --prefix=/usr \
+		--mandir=/usr/share/man \
+		--infodir=/usr/share/info \
+		--build=${CBUILD} \
+		--host=${CHOST} \
+		--target=${CTARGET} \
+		--program-suffix="-$_ver" \
+		--with-pkgversion="Alpine ${pkgver}" \
+		--enable-checking=release \
+		--disable-bootstrap \
+		--disable-fixed-point \
+		--disable-libstdcxx-pch \
+		--disable-multilib \
+		--disable-nls \
+		--disable-werror \
+		--disable-libatomic \
+		--disable-libgomp \
+		--disable-libitm \
+		--disable-libquadmath \
+		$_symvers \
+		--enable-__cxa_atexit \
+		--enable-default-pie \
+		--enable-cloog-backend \
+		--enable-version-specific-runtime-libs \
+		--enable-languages=$_languages \
+		$_arch_configure \
+		$_libc_configure \
+		$_bootstrap_configure \
+		--with-system-zlib \
+		--with-jvm-root=/usr/lib/jvm/java-1.5-gcj \
+		$_hash_style_configure
+	make
+}
+
+package() {
+	cd "$_builddir"
+	make -j1 DESTDIR="${pkgdir}" install
+
+	ln -s gcc-$_ver "$pkgdir"/usr/bin/cc-$_ver
+
+	# we dont support gcj -static
+	# and saving 35MB is not bad.
+	find "$pkgdir" -name libgcj.a -o -name libgtkpeer.a \
+		-o -name libgjsmalsa.a -o -name libgcj-tools.a \
+		-o -name libjvm.a -o -name libgij.a -o -name libgcj_bc.a \
+		-o -name libjavamath.a \
+		| xargs rm -f
+
+	# strip debug info from some static libs
+	${STRIP_FOR_TARGET} -g `find "$pkgdir" \( -name \
+		-o -name libmudflap.a -o -name libmudflapth.a \
+		-o -name libgcc.a -o -name libgcov.a \
+		-o -name libitm.a -o -name libcaf\*.a \
+		-o -name libasan.a -o -name libtsan.a \) \
+		-a -type f`
+
+	sed -i -e 's/lib: /&%{static:%eJava programs cannot be linked statically}/' \
+		"$pkgdir"/$_gcclibdir/libgcj.spec
+
+	# avoid conlict with gcc
+	mv "$pkgdir"/usr/lib/libcc1* "$pkgdir"/$_gcclibdir/
+
+	# remove ffi
+	rm -f "$pkgdir"/usr/lib/libffi* "$pkgdir"/usr/share/man/man3/ffi*
+	find "$pkgdir" -name 'ffi*.h' | xargs rm -f
+
+	# remove conflicting files
+	rm -f "$pkgdir"/usr/lib/gcc/${CHOST}/lib/libgcc_s.so* \
+		"$pkgdir"/usr/lib/libgcc_s.so*
+
+	local gdblib=${CTARGET}lib
+	for i in $(find "$pkgdir"/usr/$gdblib/ -type f -maxdepth 1 -name "*-gdb.py" ); do
+		mkdir -p "$pkgdir"/usr/share/gdb/python/auto-load/usr/$gdblib
+		mv "$i" "$pkgdir"/usr/share/gdb/python/auto-load/usr/$gdblib/
+	done
+}
+
+libcxx() {
+	pkgdesc="GNU C++ standard runtime library"
+	depends=
+
+	mkdir -p "$subpkgdir"/$_gcclibdir
+	mv "$pkgdir"/$_gcclibdir/libstdc++.so.* "$subpkgdir"/$_gcclibdir/
+}
+
+gpp() {
+	pkgdesc="GNU C++ standard library and compiler"
+	depends="libstdc++=$_gccrel gcc=$_gccrel libc-dev"
+	mkdir -p "$subpkgdir/$_gcclibexec" \
+		"$subpkgdir"/usr/bin \
+		"$subpkgdir"/$_gcclibdir/include
+
+	mv "$pkgdir/$_gcclibexec/cc1plus" "$subpkgdir/$_gcclibexec/"
+
+	mv "$pkgdir"/$_gcclibdir/*++* "$subpkgdir"/$_gcclibdir/
+	mv "$pkgdir"/$_gcclibdir/include/c++ "$subpkgdir"/$_gcclibdir/include/
+	mv "$pkgdir"/usr/bin/*++* "$subpkgdir"/usr/bin/
+}
+
+java() {
+	pkgdesc="Java support for GCC"
+	depends="zlib-dev gcc6=$_gccrel libgcj6=$_gccrel"
+
+	mkdir -p "$subpkgdir"/usr/bin "$subpkgdir"/usr/lib "$subpkgdir"/$_gcclibdir/
+	cd "$pkgdir"/usr/bin
+	mv gcj-$_ver gcj-dbtool-$_ver gjavah-$_ver gcjh-$_ver jcf-dump-$_ver "$subpkgdir"/usr/bin/
+	cd "$pkgdir"
+	for i in $(find usr/ -name ecj1 -o -name jc1 -o -name jvgenmain); do
+		mkdir -p "$subpkgdir"/${i%/*}
+		mv "$pkgdir"/$i "$subpkgdir"/$i
+	done
+	for i in "$pkgdir"/$_gcclibdir/libgcj*.so; do
+		if [ -L "$i" ]; then
+			mv "$i" "$subpkgdir"/usr/lib/
+		fi
+	done
+	mv "$pkgdir"/$_gcclibdir/libgij.so \
+		"$pkgdir"/$_gcclibdir/libgcj.spec \
+		"$subpkgdir"/$_gcclibdir/
+}
+
+libgcj() {
+	pkgdesc="Java runtime library for gcc"
+	depends=
+
+	mkdir -p "$subpkgdir"/usr/bin
+	cd "$pkgdir"/usr/bin
+	mv aot-compile-$_ver gappletviewer-$_ver gc-analyze-$_ver gij-$_ver \
+		gjar-$_ver gjarsigner-$_ver gkeytool-$_ver gnative2ascii-$_ver gorbd-$_ver \
+		grmic-$_ver grmid-$_ver grmiregistry-$_ver gserialver-$_ver \
+		gtnameserv-$_ver jv-convert-$_ver rebuild-gcj-db-$_ver \
+		"$subpkgdir"/usr/bin/
+	cd "$pkgdir"
+	for i in $(find usr/lib -name jc1 -o -name jvgenmain); do
+		mkdir -p "$subpkgdir"/${i%/*}
+		mv "$pkgdir"/$i "$subpkgdir"/$i
+	done
+	mkdir -p "$subpkgdir"/$_gcclibdir
+	mv "$pkgdir"/$_gcclibdir/gcj-* \
+		"$pkgdir"/$_gcclibdir/logging.properties \
+		"$pkgdir"/$_gcclibdir/security \
+		"$subpkgdir"/$_gcclibdir
+
+	mv "$pkgdir"/$_gcclibdir/libgcj_bc.so \
+		"$pkgdir"/$_gcclibdir/libgcj*.so.* \
+		"$pkgdir"/$_gcclibdir/libgij.so.* \
+		"$subpkgdir"/usr/lib
+
+	mkdir -p "$subpkgdir"/usr/share/
+	mv "$pkgdir"/usr/share/java "$subpkgdir"/usr/share/
+}
+
+sha512sums="02c60e54527c7adf584798d5251f8a0b80c93d5deafce82501b2c28e6692e0bd783927bbfc4bc527a863c0cccc025150a34740a9e29badb02d4b48e56a8aba90  gcc-6.4.0.tar.xz
+28f8c6fdbcb19e950b1d0bafb3bcc7a8cba87bc673aa6027cece116599cdee80f0cf5e95a1440544890239f5c754e8a93ab46d9daedd937faef445d7ea33b226  ecj-4.9.jar
+a1335adc2fbee98e36c4437ff2587771b98ed4180726779020f65039498235626a411cdb0100dbd20cd19d12f0d94f9a21af179ff624676c28cead9d60598b5d  001_all_default-ssp-strong.patch
+e36e95b81489163abd6fe9d58f7867bdca43e61143afacbfb17f4698c0b16ec5fd0061d8fab7b2ae615540bebd721c2e2227f80401b4e7fc253da9da62e6b513  002_all_default-relro.patch
+f86466c62b8291fac46f9c250c7ad8fa5ab7b1cce2504442fd07ddc4543665b317ae28951f244e39aba29aeaf3fff252ec4f6a147aa16adb2b7aed747dd89188  003_all_default-fortify-source.patch
+6c15983d90b50106ef7a306be73e4ea93607c1e45ab5e0c386f24366869360b194c47b42c5cb1ec81e6975e486e78b7007a96bbc14fe625a98ed440e67bede10  005_all_default-as-needed.patch
+3398386dd1e079d6545dd9799adc799c6b80e3984fac6899d0e1a7ee21b66d0c7e53cddf17a65d590c883db750f9f79aaedd857355a8b9f7fb9476c906237919  011_all_default-warn-format-security.patch
+9adb0d2b9b67dd957df6c609b8714c7c078efb52cd88770905c37c67827be8fc83d1125037b9c29d77db21ce78756aa2bb0bacdb0b98d869ac126da76a298e21  012_all_default-warn-trampolines.patch
+d35a3ac7e13a4446921a90e1ff3eec1079840c845f9d523c868e24ae21f94cf69ba041de5341ebef96432a6f57598e223381d4286e8fb8baaa25906707f29fbd  020_all_msgfmt-libstdc++-link.patch
+840070a3c423e6206aaa6e63e1d9a0fcd6efd53626cd1240a193f0b60aa5d84216acc4a2a4fa8bce74549b07e6a316b01d638f20cea13dc62473491a302fb3d6  050_all_libiberty-asprintf.patch
+0a0bc72b9366158f5d23fff1928e756fdd212433bac6ab1f00d632f241382820db8db5d475ddf11ea020eaf7e2e71b12fb9b1c3c870cf84adf6c2b16f15aabca  051_all_libiberty-pic.patch
+e7a2eb1b1870e199d6fd753d065781575656fa12baa264f96c5d179689d88c31b8a3f92a5dae96088c05e96aa2bda138364ad7dbcc79e1819a102f192cbb7bab  053_all_libitm-no-fortify-source.patch
+e87da18aa7ab92b02b06168658c63b42a6c73a08fad2a30f81ef6296100fdbe3c3a91548fd0cb24eaf591e862bb08e4b67249bc4b977b07da33523aee0c686bc  067_all_gcc-poison-system-directories.patch
+4a328d1e1a56c20166307edcfa322068915784d9c08025b7f81cf69714da48fc266b6d34f77b9135c2f10da830d9df408276a1b78d1fd218637c2823506593c2  090_all_pr55930-dependency-tracking.patch
+ef052d0c3c9642fcb5ed570069c5a49c8ef523c47ac8ce3f201a801766f72ae4ff7c3725a70ee66e52c0fb559621e35fe0cf5b88b901d71ceadd381f49653a08  201-cilkrts.patch
+808e206f5e107084156fba333d4e091dcbd62f5d7756142bc292d4b0a52619f8c2aaca3617defc2f5b6552ba0439aebd33f4141329d88eab6ddf2dd637d92c08  203-libgcc_s.patch
+fc0de05b36613b732a0222ea005c90653c6a40d6761b6894af2419272f4e74875f37e26af33a9b9940669ef89269c44c46d17ca5bcd54b5cd1176e5eaf2992c1  204-linux_libc_has_function.patch
+98473bcaa77903a223ca9b0d2087c0921b287a2816d308cc32c8fe009e6cbf5dd1ae7fba27794ab8d9c09e117fe534413d91a464d1218474fc123ce0adfdc2c1  205-nopie.patch
+3287d5b443bea8ec64132bcabe869c738ae98ea8f1a86df1c5d18c927f8816edbfcefeefc47792dbbb2bcacf50319af00e01b3735d34525913b64350770ad453  207-static-pie.patch
+d08d7ead2de0429e5c9055d5b029ec2be9a8c821d22cecaf9b51f633652c493333f98963d9267fa2fa63850c50ae5eefd5f59e5910ec10d20044dac082182a8b  libgcc-always-build-gcceh.a.patch
+600fe5098dc54edaa9808fd5717af9dec058953f9ad37d49cfba1db4f7e9a7a8f02019342f75157fc575946fa693259422184de27b7ecc8386d9f3ecc0f7cc5d  gcc-4.9-musl-fortify.patch
+dbe0ee917fc7668571722364ab7c806731e3a31e8bfa30b4941b28b16b877d2a32b4a3897ef533399a28f82d43cac9b28e92de0493f0e779046db56584e07fa4  gcc-6.1-musl-libssp.patch
+bda845a6aa1854d2c883910b115f79ccfa93dfc2b5eac69a3a236d83eb34cadc140731d616ffc24698c7abc8878dd15f231bcc5119f1860e575a120b311706c7  boehm-gc-musl.patch
+c3afce4ce61c8de4e8dc3844516950a993ee6256323cf6e6aa1cc2b0ad9fa34f2a8da3eb73a4a48b2fd5968f41e582f68ef7281ee7c1d5c78724cee8e21990af  boehm-gc-musl-mips.patch
+fa62556719449caec6b2b434355bfbcaa5ae55ffe017b3e1f827f66a2aae21b79c571ee7a4ce723ea69169bc3a6447e73650991a200cc372adf2f102677518d7  gcc-pure64.patch
+2253941f3d19b6d08801d3782f5f5ed56c3b73fbc9d3561a8f01c702963ac4fab91599c686076e7081eb6a80c37ccd33591ae978996d6eee1dc0ce0f1c50259a  fix-gcj-stdgnu14-link.patch
+f89ddeb21bc8f97e6a850a6b70b4501a8f3e49a4bc8cc82897488decda5d98ad01cb7f6c8b392d452e9579924a523bc75da6e0648c1c976d42e40af48b10343b  fix-gcj-musl.patch
+54d67cc008b735e47771314171930c5d8b8f5f5dc97fcf4214824c105c808f3e75d22d5a4fdf5068ed0457fa0d46c60cfb442e276259a4a5e9b8722a027d18e6  fix-gcj-iconv-musl.patch
+4b35b83d5524123c6a87dc4581ad25de499caf288ac10684769369619a92626b6f13d05f7c0e606d5fc01b4df9a40d34698d708c38ac8aa6f60d7d00aa371dba  fix-gcj-arm-thumb.patch
+abe9aaf9aa956058d0386a4396a511d176a46bb3906b90e952383646cdc158cbeb0a5dc616a1ccb1ca7d49fd0b5e351532aa15a3b13362abbf1ca4266f54a687  gcc-4.8-build-args.patch
+35d6d59f0b7b968f282f56767c9e0823a7bdc5aa0d450aca50fbd802649a7ca608b47671244a3faa208a9b0d6832cabb5a22724157dc817b2c0ad63d09f93282  fix-cxxflags-passing.patch
+4b4a0ff306a8ef34ff6e3284fbfca869012164a47ba7cb099085c1dd03e6ca0cdd462f82710e08c9a02895adc7484e4c5eef17b5aa264cf5d978fe8ad78eea93  300-main-gcc-add-musl-s390x-dynamic-linker.patch
+385bc2fa50204f678964e5148c6170f572701dab920fbec8301f505bda34d182cde0adb7da042fee71719e12fb59f59181897f9b1bb4f4716ff59aad46ca1998  310-build-gcj-s390x.patch
+f4ef08454e28c8732db69115e4998ec153399e8d229dd27f923dbdcf57b68128a65640d026cc7f45b58ba8764ab1eb575d4eb6d6dfc550a87a183f8b94e76181  320-libffi-gnulinux.patch
+01c71cd5881fc07ea3b9b980697e89b3ca0fe98502958ceafc3fca18b2604c844e2f457feab711baf8e03f00a5383b0e38aac7eb954034e306f43d4a37f165ed  fix-rs6000-pie.patch
+34a818d5be67eb1f34e44a80b83c28a9b9c17d37fc9fac639f490d6bb5b53ebe3318140d09c236a17d7c98f5a7792ae3d6cefccda8067a5e942d6305b9d1f87c  fix-linux-header-use-in-libgcc.patch
+86be3338cc9c33089608bc4c5e3b7918c4e500a345c338f361b18c342119a6ed69af5495d72950de7106d760f003528b46ad14795e805f8a3331e206dcb234e3  gcc-pure64-mips.patch
+aae9d510326bed6eca0b1f680d2caf64dd804e73fb9d726c8932faa845c07e1be6ab12920972d8fb80a33dafedcaafca71487b0eaf10e6d5fa7deb853926b933  fix-ppc64le-coercion-r261621.patch
+0e20a5717c20ddc1d9f00276453b0abb4868adff0496604ad7d5b766a1028181c09c2061c5648bcfd4cb29dca7048cc866d2f27c013d82c2440164f17eac685d  0017-pr93402.patch
+8c46436ca6ff75d68186e6aeeb16addee7bf2502c4295b86f71ab3dc9d58540cc5cf8723bee69b3aeae07cde0c725a19fbe69c1110a23549331b5b0b250fd31f  isl-0.22.patch"

@@ -1,0 +1,98 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "linux-octeon",
+  "version": "5.4.70-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Linux lts kernel (for Octeon)",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0",
+  "declared_license": "GPL-2.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
+      },
+      {
+        "file_name": "octeon-rd_name.patch",
+        "url": null
+      },
+      {
+        "file_name": "octeon-disable-devicetree-deprecation-warning.patch",
+        "url": null
+      },
+      {
+        "file_name": "ubnt-e200-sdio-underclock.patch",
+        "url": null
+      },
+      {
+        "file_name": "kvm-fallthrough.patch",
+        "url": null
+      },
+      {
+        "file_name": "config-octeon.mips64",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "linux-5.4.tar.xz",
+        "sha512": "9f60f77e8ab972b9438ac648bed17551c8491d6585a5e85f694b2eaa4c623fbc61eb18419b2656b6795eac5deec0edaa04547fc6723fbda52256bd7f3486898f"
+      },
+      {
+        "file_name": "octeon-rd_name.patch",
+        "sha512": "39d145b7afd3297d9572e7c37eb40b58c3b0d7f30cc361bdf6c89e6bb54a6072f79dea979f4b4fc24d06fe06c406d10949cbf79d373e1ba82514a2f1bb0a6255"
+      },
+      {
+        "file_name": "octeon-disable-devicetree-deprecation-warning.patch",
+        "sha512": "a2c0d901188570ebba6917b727cdb4823bda5dbe29a559ed2055db21b4f5dd4990f623b94f07072bcbf69647f250afb52d1771d706bdc072e2cfb00003e257b4"
+      },
+      {
+        "file_name": "ubnt-e200-sdio-underclock.patch",
+        "sha512": "c227cd4a0c9712a75d62211becb8591fccd15a93ae4483835f1ec69aabca51aaf8254c37e6315bbd5a08b1f521b369269bfe973700eb993ec6a629b7167e75f7"
+      },
+      {
+        "file_name": "kvm-fallthrough.patch",
+        "sha512": "7dde2a2d5c7bfd06a2482da2cc9477d106fbeaf563d696cf32c2455fd9dff0c1efb69b1ddab7ef030fd2e3cb9f0774b0355d739d1ae848697e08121e617aaa9e"
+      },
+      {
+        "file_name": "config-octeon.mips64",
+        "sha512": "b6e122adc2595a0b69f8eebca2380f4dc1e5e895bf49e9616bf7d24fc47fade577c016540119b1ff02738e42b3af9dc8a9787321c74876afab58b6b9ae9f00c5"
+      },
+      {
+        "file_name": "patch-5.4.70.xz",
+        "sha512": "a87fffe500b7f0355fe49077b4d80359b31e0721d824ba95135ba851d1b1b747ea9dfd0bc15e6133bc93132df60c4ca9ee99830acb0309866f02f9c88b7784f9"
+      }
+    ],
+    "apkbuild_variable_resolution_errors": [
+      {
+        "source": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz\n\tocteon-rd_name.patch\n\tocteon-disable-devicetree-deprecation-warning.patch\n\tubnt-e200-sdio-underclock.patch\n\tkvm-fallthrough.patch\n\n\tconfig-octeon.mips64\n\t"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/linux-octeon@5.4.70-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}
