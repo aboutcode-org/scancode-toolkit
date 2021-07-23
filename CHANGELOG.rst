@@ -4,6 +4,9 @@ Release notes
 vNext
 -----
 
+- Add preserve_spaces argument in commoncode.paths.portable_filename.
+  This argument will prevent the replacement of spaces in filenames.
+
 
 Version 21.6.11
 ---------------
@@ -32,7 +35,7 @@ Version 21.5.12
 
 - Add new function to find a command or shared object file in the PATH (e.g. in
   environment variables). See commoncode.command.find_in_path()
-- Add new simplified the commoncode.command.execute() function. 
+- Add new simplified the commoncode.command.execute() function.
 - Add support for Python 3.10
 - Update tests to cope with Python 3.6 bug https://bugs.python.org/issue26919
 - Adopt latest skeleton with configure scripts updates
