@@ -505,11 +505,20 @@ class LicenseIndex(object):
                 logger_debug('  MATCHED QUERY TEXT:', qt)
                 logger_debug('  MATCHED RULE TEXT:', it)
 
-    def get_spdx_id_matches(self, query, from_spdx_id_lines=True, **kwargs):
+    def get_spdx_id_matches(
+        self,
+        query,
+        from_spdx_id_lines=True,
+        expression_symbols=None,
+        **kwargs,
+    ):
         """
         Matching strategy for SPDX-Licensed-Identifier style of expressions. If
         `from_spdx_id_lines` is True detect only in the SPDX license identifier
         lines found in the query. Otherwise use the whole query for detection.
+
+        Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol}
+        if provided. Otherwise use the standard SPDX license symbols.
         """
         matches = []
 
@@ -533,6 +542,7 @@ class LicenseIndex(object):
                 idx=self,
                 query_run=query_run,
                 text=detectable_text,
+                expression_symbols=expression_symbols,
             )
 
             if spdx_match:
@@ -762,6 +772,7 @@ class LicenseIndex(object):
         query_string=None,
         min_score=0,
         as_expression=False,
+        expression_symbols=None,
         approximate=True,
         deadline=sys.maxsize,
         _skip_hash_match=False,
@@ -776,6 +787,9 @@ class LicenseIndex(object):
 
         If `as_expression` is True, treat the whole text as a single SPDX
         license expression and use only expression matching.
+
+        Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol}
+        if provided. Otherwise use the standard SPDX license symbols mapping.
 
         If `approximate` is True, perform approximate matching as a last
         matching step. Otherwise, only do hash, exact and expression matching.
@@ -813,9 +827,14 @@ class LicenseIndex(object):
                 match.set_lines(matches, qry.line_by_pos)
                 return matches
 
-        # TODO: add matching to degenerated expressions with custom symbols
+
+        get_spdx_id_matches = partial(
+            self.get_spdx_id_matches, 
+            expression_symbols=expression_symbols,
+        )
+
         if as_expression:
-            matches = self.get_spdx_id_matches(qry, from_spdx_id_lines=False)
+            matches = get_spdx_id_matches(qry,from_spdx_id_lines=False)
             match.set_lines(matches, qry.line_by_pos)
             return matches
 
@@ -826,10 +845,12 @@ class LicenseIndex(object):
         else:
             approx = self.get_approximate_matches
 
+
+
         matchers = [
             # matcher, include_low in post-matching remaining matchable check
             (self.get_exact_matches, False, 'aho'),
-            (self.get_spdx_id_matches, True, 'spdx_lid'),
+            (get_spdx_id_matches, True, 'spdx_lid'),
         ]
 
         if approximate:
@@ -841,17 +862,25 @@ class LicenseIndex(object):
                 logger_debug()
                 logger_debug('matching with matcher:', matcher_name)
 
-            matched = matcher(qry, matched_qspans=already_matched_qspans,
-                              existing_matches=matches, deadline=deadline)
+            matched = matcher(
+                qry, 
+                matched_qspans=already_matched_qspans,
+                existing_matches=matches, 
+                deadline=deadline,
+            )
+
             if TRACE:
                 self.debug_matches(
-                    matches=matched, message='matched with: ' + matcher_name,
-                    location=location, query_string=query_string)  # , with_text, query)
+                    matches=matched, 
+                    message='matched with: ' + matcher_name,
+                    location=location, 
+                    query_string=query_string,
+                )
 
             matched = match.merge_matches(matched)
             matches.extend(matched)
 
-            # subtract whole text matched if this is long enough
+            # Subtract whole text matched if this is long enough
             for m in matched:
                 if (m.rule.is_license_text
                     and m.rule.length > 120
@@ -859,10 +888,10 @@ class LicenseIndex(object):
                 ):
                     qry.subtract(m.qspan)
 
-            # check if we have some matchable left do not match futher if we do
+            # Check if we have some matchable left do not match futher if we do
             # not need to collect qspans matched exactly e.g. with coverage 100%
             # this coverage check is because we have provision to match
-            # fragments (unused for now)
+            # fragments (unused for now).
 
             already_matched_qspans.extend(
                 m.qspan for m in matched if m.coverage() == 100)
