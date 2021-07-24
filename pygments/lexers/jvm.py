@@ -1735,7 +1735,7 @@ class JasminLexer(RegexLexer):
                      r'inner|interface|limit|set|signature|stack)\b', text,
                      re.MULTILINE):
             score += 0.6
-        return score
+        return min(score, 1.0)
 
 
 class SarlLexer(RegexLexer):
