@@ -22,6 +22,7 @@ from packagedcode import golang
 from packagedcode import haxe
 from packagedcode import maven
 from packagedcode import models
+from packagedcode import msi
 from packagedcode import npm
 from packagedcode import nuget
 from packagedcode import opam
@@ -32,6 +33,8 @@ from packagedcode import readme
 from packagedcode import rpm
 from packagedcode import rubygems
 from packagedcode import win_pe
+from packagedcode import windows
+
 
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
@@ -67,7 +70,6 @@ PACKAGE_TYPES = [
     pypi.PythonPackage,
     golang.GolangPackage,
     models.CabPackage,
-    models.MsiInstallerPackage,
     models.InstallShieldPackage,
     models.NSISInstallerPackage,
     nuget.NugetPackage,
@@ -83,6 +85,8 @@ PACKAGE_TYPES = [
     win_pe.WindowsExecutable,
     readme.ReadmePackage,
     build.MetadataBzl,
+    msi.MsiInstallerPackage,
+    windows.MicrosoftUpdateManifestPackage,
     pubspec.PubspecPackage,
 ]
 
