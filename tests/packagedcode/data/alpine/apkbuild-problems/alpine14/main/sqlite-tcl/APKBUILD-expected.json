@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://www.sqlite.org/2021/sqlite-autoconf-3355$_d.tar.gz"
+        "url": "https://www.sqlite.org/2021/sqlite-autoconf-3350500.tar.gz"
       }
     ],
     "checksums": [
       {
         "file_name": "sqlite-autoconf-3350500.tar.gz",
         "sha512": "039af796f79fc4517be0bd5ba37886264d49da309e234ae6fccdb488ef0109ed2b917fc3e6c1fc7224dff4f736824c653aaf8f0a37550c5ebc14d035cb8ac737"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://www.sqlite.org/2021/sqlite-autoconf-3355$_d.tar.gz"
       }
     ]
   },

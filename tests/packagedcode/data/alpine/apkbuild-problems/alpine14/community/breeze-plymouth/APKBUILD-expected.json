@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/breeze-plymouth-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/breeze-plymouth-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "breeze-plymouth-5.22.0.tar.xz",
         "sha512": "a6c58e4f303767af201397279b48dddb3addc4c6f793ed22eb3af50d0e99bafa387410f86444c45f61e12618153bce321eb32f40288d7e478953357ecab47a32"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/breeze-plymouth-5.22.0.tar.xz"
       }
     ]
   },

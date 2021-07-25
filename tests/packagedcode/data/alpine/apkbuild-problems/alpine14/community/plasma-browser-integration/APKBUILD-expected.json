@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-browser-integration-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-browser-integration-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-browser-integration-5.22.0.tar.xz",
         "sha512": "0b8ad95830261fe823c98a12fa5aa2832b64d2754585d05db413314f3e2617426ade0a3c71df46143514b97448bf74b15c805a6e5512ab0f95cb734d56911811"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-browser-integration-5.22.0.tar.xz"
       }
     ]
   },

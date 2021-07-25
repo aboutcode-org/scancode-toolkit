@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://archive.xfce.org/src/apps/parole/$_branch/parole-1.0.5.tar.bz2"
+        "url": "https://archive.xfce.org/src/apps/parole/1.0/parole-1.0.5.tar.bz2"
       }
     ],
     "checksums": [
       {
         "file_name": "parole-1.0.5.tar.bz2",
         "sha512": "458b042752919d4dd1bfdaceda2b281b07a3094d986a99ec2ff51c12b7ca32adba6ce67ecb67e9ab70bdf83cfa22f8b5027054e2c3a3cf71d50ec8b98eeb24df"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://archive.xfce.org/src/apps/parole/$_branch/parole-1.0.5.tar.bz2"
       }
     ]
   },

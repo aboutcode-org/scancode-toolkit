@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/layer-shell-qt-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/layer-shell-qt-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "layer-shell-qt-5.22.0.tar.xz",
         "sha512": "7ec410925349894a9312ba5de08fe5ccf7d94ac295a39e256ffc5d46d76482f67d1f0b579d76796f9c194ac4f9f0d58d4a997afe5060fb3c746629d70bbd1047"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/layer-shell-qt-5.22.0.tar.xz"
       }
     ]
   },

@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-systemmonitor-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-systemmonitor-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-systemmonitor-5.22.0.tar.xz",
         "sha512": "e1a8995660b440fb9af4b18737e45df7cb91995b9cbd75e947649b93c9654b9d28d16341ee2e2ed9fc6fa8e9645dfcf1a4e0d54500fed13a6fc013ad992e3970"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-systemmonitor-5.22.0.tar.xz"
       }
     ]
   },

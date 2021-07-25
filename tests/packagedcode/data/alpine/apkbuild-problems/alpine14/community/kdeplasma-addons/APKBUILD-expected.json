@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kdeplasma-addons-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kdeplasma-addons-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "kdeplasma-addons-5.22.0.tar.xz",
         "sha512": "027b54c290011ad0b031515a744ce7ad1b18734054f892c119eddce744078b838583b6125014419c05dea3ba97207b095a487ede0d3e03e2df34d16fe189a543"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kdeplasma-addons-5.22.0.tar.xz"
       }
     ]
   },

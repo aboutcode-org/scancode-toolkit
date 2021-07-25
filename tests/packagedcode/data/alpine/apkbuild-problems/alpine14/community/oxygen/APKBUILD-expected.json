@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/oxygen-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/oxygen-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "oxygen-5.22.0.tar.xz",
         "sha512": "b3a29245780c8cdbd8531d6ea91d15363ad9633ec89b3112a32c8d0909f9c6c33dd69a3f6eca5de5a74e583dbee4649cd034c85df5c1cfea32cb8e8e5e6d5731"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/oxygen-5.22.0.tar.xz"
       }
     ]
   },

@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/powerdevil-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/powerdevil-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "powerdevil-5.22.0.tar.xz",
         "sha512": "02e2bbbb763b130a22dca307a580f7f68f0cef2fb0f9d57c8a877897b22d368165f28e9182ff9dc71259595f9c74cf5d030e1e701ec0431d3c567cac0c967803"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/powerdevil-5.22.0.tar.xz"
       }
     ]
   },

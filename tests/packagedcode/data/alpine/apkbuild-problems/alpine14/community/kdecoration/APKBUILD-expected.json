@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kdecoration-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kdecoration-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "kdecoration-5.22.0.tar.xz",
         "sha512": "435e90dc984bb7bf1e94672e6f56455f9265a0baf7dcca0da4655c88e008f4e1eb788b106edb5fce8153e6239c1d6d924c60e4804e5c02ef843e1201e432963b"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kdecoration-5.22.0.tar.xz"
       }
     ]
   },

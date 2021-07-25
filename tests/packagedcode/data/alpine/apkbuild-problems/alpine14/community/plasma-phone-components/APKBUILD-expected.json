@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-phone-components-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-phone-components-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-phone-components-5.22.0.tar.xz",
         "sha512": "eba189d461286b5d64992386d8d2c98bd717aec6bb54a6c1b1b215e74166100239dcbf1c5b82261284770237536b2586f4c29d851209e2a39b07e3630de76d1f"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-phone-components-5.22.0.tar.xz"
       }
     ]
   },

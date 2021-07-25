@@ -32,7 +32,7 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://www.cmake.org/files/$_v/cmake-3.20.3.tar.gz"
+        "url": "https://www.cmake.org/files/v3.20/cmake-3.20.3.tar.gz"
       },
       {
         "file_name": "patch-adjust-lib64.patch",
@@ -47,11 +47,6 @@
       {
         "file_name": "patch-adjust-lib64.patch",
         "sha512": "87051601dda49894a1631156bf63aaa79fcf7cb7bb6705712889b9012d87d2f11d2707a1d729223b180668ad61f22b16893658e9777beee330c7e9a90e7421e6"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://www.cmake.org/files/$_v/cmake-3.20.3.tar.gz\n\tpatch-adjust-lib64.patch\n\t"
       }
     ]
   },

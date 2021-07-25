@@ -32,7 +32,7 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.10.tar.xz"
       },
       {
         "file_name": "0002-powerpc-config-defang-gcc-check-for-stack-protector-.patch",
@@ -171,11 +171,6 @@
       {
         "file_name": "patch-5.10.43.xz",
         "sha512": "fb1e6d753de74058fa0ce19f5e00b0f9edbe7538a755e322a7b9e05f5436aed9f61cfdbafe5fc5de187b5c486258d0a4441e16c55906003341ef658328cc044e"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz\n\t0002-powerpc-config-defang-gcc-check-for-stack-protector-.patch\n\n\t0007-pci-hotplug-declare-IDT-bridge-as-hotpluggabl-bridge.patch\n\t0008-pci-spr2803-quirk-to-fix-class-ID.patch\n\tampere-mt-jade.patch\n\n\tconfig-lts.aarch64\n\tconfig-lts.armv7\n\tconfig-lts.x86\n\tconfig-lts.x86_64\n\tconfig-lts.ppc64le\n\tconfig-lts.s390x\n\tconfig-lts.mips64\n\n\tconfig-virt.aarch64\n\tconfig-virt.armv7\n\tconfig-virt.ppc64le\n\tconfig-virt.x86\n\tconfig-virt.x86_64\n\t"
       }
     ]
   },

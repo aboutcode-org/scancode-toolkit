@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/breeze-grub-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/breeze-grub-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "breeze-grub-5.22.0.tar.xz",
         "sha512": "7acbac9b242211d82a0d9f0e2922d0be7bfdebce0749a22fc0488cf9bd77bbfc4f8e1eff072aad2c507c7454b4c920b3d14eab3215590bb23b5f854e04136d78"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/breeze-grub-5.22.0.tar.xz"
       }
     ]
   },

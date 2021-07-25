@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-nm-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-nm-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-nm-5.22.0.tar.xz",
         "sha512": "5fea3c71bba5481b363abba0ced6a546a3384225f57166c4fcba9f370f89f3a3b0bb98320239e61733c496ed17230fa38b0bcaeae927206f113976467f116a43"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-nm-5.22.0.tar.xz"
       }
     ]
   },

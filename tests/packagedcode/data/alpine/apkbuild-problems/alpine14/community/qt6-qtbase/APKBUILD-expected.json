@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.qt.io/$_rel/qt/6.1/6.1.1/submodules/qtbase-everywhere-src-6.1.1.tar.xz"
+        "url": "https://download.qt.io/official_releases/qt/6.1/6.1.1/submodules/qtbase-everywhere-src-6.1.1.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "qtbase-everywhere-src-6.1.1.tar.xz",
         "sha512": "fd374d17b1b6861e01ab40be4ba683ad7aa62989688504ebf2f3e1ec0a67658460e807cc8b106093730900cd6db7e15507c8e4eb9a35e239d2ead1cf06b2325b"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.qt.io/$_rel/qt/6.1/6.1.1/submodules/qtbase-everywhere-src-6.1.1.tar.xz"
       }
     ]
   },

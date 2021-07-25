@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-sdk-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-sdk-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-sdk-5.22.0.tar.xz",
         "sha512": "84be9a4bab8ef0eb8a6e9445b1bc74c6d8d460b657b9b2f1260b2444e3f9f95de6044f097aa2fac4f31308168f1d0130bcb65acaf896fd849f4a6e248c6c7c3d"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-sdk-5.22.0.tar.xz"
       }
     ]
   },

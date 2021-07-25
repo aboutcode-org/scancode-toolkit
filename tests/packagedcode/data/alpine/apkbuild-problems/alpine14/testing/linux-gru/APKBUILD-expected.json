@@ -32,7 +32,7 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.12.tar.xz"
       }
     ],
     "checksums": [
@@ -59,11 +59,6 @@
       {
         "file_name": "fix-rk3399-mmc-order.patch",
         "sha512": "9ee86c1b793b0b605720412d276ef7e79766c2d86d3ac1371cd3dce94ed87652310a8938e3a5d0b4ca56c7d46eccb1a52e3f5177844b8ca3f27a9a1f09fec7f6"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
       }
     ]
   },

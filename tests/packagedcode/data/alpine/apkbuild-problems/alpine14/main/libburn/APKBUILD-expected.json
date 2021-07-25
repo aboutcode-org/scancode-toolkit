@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "http://files.libburnia-project.org/releases/libburn-1.5.4$_pver.tar.gz"
+        "url": "http://files.libburnia-project.org/releases/libburn-1.5.4.tar.gz"
       }
     ],
     "checksums": [
       {
         "file_name": "libburn-1.5.4.tar.gz",
         "sha512": "dd7b14093e62e2c02011955c24e01d70ed78969b14faf7e5a63c0da97a80c438b628922532eb135af7dea8ee7c7b83554b3354160306dad852ce5bf6eb1d5ac9"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "http://files.libburnia-project.org/releases/libburn-1.5.4$_pver.tar.gz"
       }
     ]
   },

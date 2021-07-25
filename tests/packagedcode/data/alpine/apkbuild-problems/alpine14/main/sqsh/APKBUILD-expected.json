@@ -32,7 +32,7 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://downloads.sourceforge.net/project/sqsh/sqsh/sqsh-$_v/sqsh-2.5.16.1.tgz"
+        "url": "https://downloads.sourceforge.net/project/sqsh/sqsh/sqsh-2.5/sqsh-2.5.16.1.tgz"
       },
       {
         "file_name": "tds-version.patch",
@@ -55,11 +55,6 @@
       {
         "file_name": "freetds-1.2.patch",
         "sha512": "563bb6805025f2560b0c0bae4528e3ee54d17598c51669848f988d2948dc45b177412d5113259d2af5509ab77ae70e5dfdb4e0eebe9fe5252293d9b57f325934"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://downloads.sourceforge.net/project/sqsh/sqsh/sqsh-$_v/sqsh-2.5.16.1.tgz\n\ttds-version.patch\n\tfreetds-1.2.patch\n\t"
       }
     ]
   },

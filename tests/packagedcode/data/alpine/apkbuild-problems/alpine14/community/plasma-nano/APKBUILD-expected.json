@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-nano-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-nano-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-nano-5.22.0.tar.xz",
         "sha512": "6f594ba2ba26b0a8d62c3144172dfbcf1e48a3bded45b3bd340d0ca93474f37ee69bfc74d943b04c3df929592fc4e8b39ed940841d556b56d827f78252f892ac"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-nano-5.22.0.tar.xz"
       }
     ]
   },

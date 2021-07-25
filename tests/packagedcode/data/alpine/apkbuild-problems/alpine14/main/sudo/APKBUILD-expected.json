@@ -21,7 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "unknown",
+  "license_expression": "unknown-license-reference AND isc",
   "declared_license": "custom ISC",
   "notice_text": null,
   "root_path": null,
@@ -32,7 +32,7 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://www.sudo.ws/dist/sudo-$_realver.tar.gz"
+        "url": "https://www.sudo.ws/dist/sudo-1.9.6p1.tar.gz"
       },
       {
         "file_name": "fix-cross-compile.patch",
@@ -55,11 +55,6 @@
       {
         "file_name": "SIGUNUSED.patch",
         "sha512": "03a2cef9fcc26cc2711edb5928c945fcf214b22139bb88d77538d25f3bfd144d17b6c9dabb1e01960ac1697d83b3452397a5ef4c7d0e68ea72548a631b212e6d"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://www.sudo.ws/dist/sudo-$_realver.tar.gz\n\tfix-cross-compile.patch\n\tSIGUNUSED.patch\n\t"
       }
     ]
   },

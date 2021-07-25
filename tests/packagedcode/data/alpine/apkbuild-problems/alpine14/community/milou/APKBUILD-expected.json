@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/milou-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/milou-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "milou-5.22.0.tar.xz",
         "sha512": "a6a479d68d9efbb9be06c137e39a26635aabcb78ad569c25d018b10dbe79b3c7dddd8d1c5396ebf49fd7d08eb96cba3e75db8c4ad4048940cd31fb9175bcce26"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/milou-5.22.0.tar.xz"
       }
     ]
   },

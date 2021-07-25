@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/libkscreen-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/libkscreen-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "libkscreen-5.22.0.tar.xz",
         "sha512": "beb4ec7f2cb3fea0dc503c4205fd7181f646a6d17c33197e51d343c55537dbc045069f6cae46d0de0602b8a09efe6b3577aaade09c976e91ee4aa6f00ff98722"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/libkscreen-5.22.0.tar.xz"
       }
     ]
   },

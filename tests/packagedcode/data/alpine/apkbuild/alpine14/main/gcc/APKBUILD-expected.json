@@ -21,7 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "gpl-2.0-plus OR lgpl-2.1-plus",
+  "license_expression": "gpl-2.0-plus AND lgpl-2.1-plus",
   "declared_license": "GPL-2.0-or-later LGPL-2.1-or-later",
   "notice_text": null,
   "root_path": null,

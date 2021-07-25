@@ -32,7 +32,7 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.12.tar.xz"
       }
     ],
     "checksums": [
@@ -63,11 +63,6 @@
       {
         "file_name": "fix-mmc-order.patch",
         "sha512": "00e7afdab1dc89a6e0426829685d85cebb98fb95cb13a253d01326fd22f78ddf792bbe3b5be4c9bc93784f1fa93f87f604a4b6c6710660319db6f2e35dd09835"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
       }
     ]
   },

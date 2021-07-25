@@ -32,7 +32,7 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.10.tar.xz"
       },
       {
         "file_name": null,
@@ -111,11 +111,6 @@
       {
         "file_name": "config-changes-rpi4.aarch64",
         "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz\n\thttps://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.10.43.xz\n\thttps://dev.alpinelinux.org/archive/rpi-patches/rpi-5.10.43-alpine.patch\n\n\tconfig-changes-rpi.armhf\n\tconfig-changes-rpi.armv7\n\tconfig-changes-rpi.aarch64\n\tconfig-changes-rpi2.armhf\n\tconfig-changes-rpi2.armv7\n\tconfig-changes-rpi4.armv7\n\tconfig-changes-rpi4.aarch64\n\t"
       }
     ]
   },

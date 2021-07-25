@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/ksshaskpass-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/ksshaskpass-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "ksshaskpass-5.22.0.tar.xz",
         "sha512": "918c098c877fc48e6809e498e81b0ab1968371f58f1f89af65a45fb817829f8d44666c1fee4b84cae8a1f114b59698e48da683bc452151db57df0f2e4063fb3c"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/ksshaskpass-5.22.0.tar.xz"
       }
     ]
   },

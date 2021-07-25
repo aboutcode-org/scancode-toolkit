@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/libksysguard-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/libksysguard-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "libksysguard-5.22.0.tar.xz",
         "sha512": "87630a8d62ec172e57fc15b51221b66536e74aa8999cc1a2749738ded16922a3c89cd13697b7168ac84af3eee7a03a49afba164b3ce51a33c8900648b9377f2e"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/libksysguard-5.22.0.tar.xz"
       }
     ]
   },

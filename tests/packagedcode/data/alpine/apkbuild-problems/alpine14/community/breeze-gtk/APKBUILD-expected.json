@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/breeze-gtk-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/breeze-gtk-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "breeze-gtk-5.22.0.tar.xz",
         "sha512": "61ce15452173577d397e79ca131cf6cf150388d3972cac91f73e1aff9209a1a9475feccfb6dbc0e5a877e539e1c2a44cc7635e4f874e031e76f09cc4b49120c5"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/breeze-gtk-5.22.0.tar.xz"
       }
     ]
   },

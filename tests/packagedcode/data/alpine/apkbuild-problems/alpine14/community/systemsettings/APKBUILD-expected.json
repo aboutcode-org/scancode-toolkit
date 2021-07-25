@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/systemsettings-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/systemsettings-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "systemsettings-5.22.0.tar.xz",
         "sha512": "30b9e0150508d6c15dda61814436cec0bd941f7a70614c890c1b275f3290e5f696db088a7d7715e42a97c9b7c98d9d23cde49e1aff14caede48d0e96186c4912"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/systemsettings-5.22.0.tar.xz"
       }
     ]
   },

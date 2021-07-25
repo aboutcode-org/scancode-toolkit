@@ -32,7 +32,7 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://www.musicpd.org/download/mpd/$_branch/mpd-0.22.8.tar.xz"
+        "url": "https://www.musicpd.org/download/mpd/0.22/mpd-0.22.8.tar.xz"
       },
       {
         "file_name": "stacksize.patch",
@@ -87,11 +87,6 @@
       {
         "file_name": "disable-time-test.patch",
         "sha512": "4352009b1b0f9ffb19c51d476539656f2fe0ab9e34cd4a7ba65c1397d155cc408bb08da96d6ecf8f798a9af615da7662f8d1bf44ab35e9522177da44ba59fbf2"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://www.musicpd.org/download/mpd/$_branch/mpd-0.22.8.tar.xz\n\tstacksize.patch\n\tmpd.initd\n\tmpd.confd\n\tlibcdio-paranoia-version.patch\n\tremove-avahi-test.patch\n\tdisable-time-test.patch\n\t"
       }
     ]
   },

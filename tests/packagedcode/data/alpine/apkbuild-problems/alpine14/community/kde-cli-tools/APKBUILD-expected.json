@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kde-cli-tools-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kde-cli-tools-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "kde-cli-tools-5.22.0.tar.xz",
         "sha512": "6905a29e4700c045de1e04975d001835c1cc26a6999cfd20459d0a8ff0123974bd0c5fd7931de3ac7355420a294f066479f2056d56ae4d2280daa5be753a9fe3"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kde-cli-tools-5.22.0.tar.xz"
       }
     ]
   },

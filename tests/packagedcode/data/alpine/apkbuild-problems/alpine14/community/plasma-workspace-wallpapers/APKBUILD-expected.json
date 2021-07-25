@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-workspace-wallpapers-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-workspace-wallpapers-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-workspace-wallpapers-5.22.0.tar.xz",
         "sha512": "494fe7220b961ea6223f1fe66a3c8305418b12da07b08b94de96be2528f08a67bc5e5114899ce86f8a4ef0ca22a4450852bf3e92850a4b1fac85c3986dd2f1f4"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-workspace-wallpapers-5.22.0.tar.xz"
       }
     ]
   },

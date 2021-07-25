@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-integration-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-integration-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-integration-5.22.0.tar.xz",
         "sha512": "0383d3c014c294c31e2dac3ef299288a6c67aeaec3e3367784add413c38edb16c96552fe315a4b77ded516c9e8efe246ae49dd98ab42efa13476dcafffe91315"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-integration-5.22.0.tar.xz"
       }
     ]
   },

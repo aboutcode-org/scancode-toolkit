@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kwallet-pam-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kwallet-pam-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "kwallet-pam-5.22.0.tar.xz",
         "sha512": "4f82b59c28879df3113c8d67171a50cb4c76728413c242749e5cce92d896f2139436263d07672fc4f2e98d457a7755a9901ddd3257a6c21ac088d24fec0b2026"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kwallet-pam-5.22.0.tar.xz"
       }
     ]
   },

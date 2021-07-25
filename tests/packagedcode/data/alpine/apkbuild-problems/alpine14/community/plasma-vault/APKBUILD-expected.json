@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-vault-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-vault-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-vault-5.22.0.tar.xz",
         "sha512": "176090b62310683fd6b44edf9205858bf55cb6eef43f6c351db85dfed5601c15ef20fd760632c1217100a1c5cb7473ba90ebaf7de6b25ed884212ff0257e8cbe"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-vault-5.22.0.tar.xz"
       }
     ]
   },

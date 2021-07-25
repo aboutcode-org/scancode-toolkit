@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-thunderbolt-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-thunderbolt-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-thunderbolt-5.22.0.tar.xz",
         "sha512": "33cb92c07a212eb4c20faf8d0caf6a39f73326173c6765820a28562ce76480f1dc876a7f9411357bdd9bad6c4f3259e6a56416ccd0690ea9bcb81aa84088fe51"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-thunderbolt-5.22.0.tar.xz"
       }
     ]
   },

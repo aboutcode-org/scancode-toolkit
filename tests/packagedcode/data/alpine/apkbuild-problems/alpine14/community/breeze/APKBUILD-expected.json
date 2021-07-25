@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/breeze-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/breeze-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "breeze-5.22.0.tar.xz",
         "sha512": "6ac6557dba04ea8546ba19a535e6209967d96f0ad6d1f4b653c1eee020db8af47787f510f885570b2c19a9b419e43fa4a4c9d06ed03d353d0e99d877b77def0b"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/breeze-5.22.0.tar.xz"
       }
     ]
   },

@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kwrited-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kwrited-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "kwrited-5.22.0.tar.xz",
         "sha512": "810d79d7a916339a3bf4014863af5f6f0884cdfdecb9768d5daefee53fb19c7ef3897c838feef085e26b8dfa80fba80b14c41e9f337c623e5dd86c2de89ef297"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kwrited-5.22.0.tar.xz"
       }
     ]
   },

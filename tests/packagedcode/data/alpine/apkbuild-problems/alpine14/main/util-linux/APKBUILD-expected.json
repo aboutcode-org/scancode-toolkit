@@ -21,8 +21,8 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "(gpl-3.0-plus AND gpl-2.0-plus AND gpl-2.0 AND lgpl-2.0-plus AND lgpl-2.1-plus AND bsd-new AND bsd-original-uc AND public-domain) AND unknown",
-  "declared_license": "GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND LGPL-2.1-or-later AND BSD-3-Clause AND BSD-4-Clause-UC AND Public-Domain",
+  "license_expression": "gpl-3.0-plus AND gpl-2.0-plus AND gpl-2.0 AND lgpl-2.1-plus AND bsd-new AND bsd-original-uc AND public-domain",
+  "declared_license": "GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND\n\tLGPL-2.1-or-later AND BSD-3-Clause AND BSD-4-Clause-UC AND Public-Domain",
   "notice_text": null,
   "root_path": null,
   "dependencies": [],
@@ -32,7 +32,7 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://www.kernel.org/pub/linux/utils/util-linux/v$_v/util-linux-2.37.tar.xz"
+        "url": "https://www.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-2.37.tar.xz"
       },
       {
         "file_name": "ttydefaults.h",
@@ -63,11 +63,6 @@
       {
         "file_name": "rfkill.initd",
         "sha512": "c4e7ba6d257496c99934add2ca532db16fb070ea2367554587c9fb4e24ab1d80b8ba3fd0fd4fdd5ef1374c3ec6414007369b292ee334ef23171d0232ef709db2"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://www.kernel.org/pub/linux/utils/util-linux/v$_v/util-linux-2.37.tar.xz\n\tttydefaults.h\n\trfkill.confd\n\trfkill.initd\n\t"
       }
     ]
   },

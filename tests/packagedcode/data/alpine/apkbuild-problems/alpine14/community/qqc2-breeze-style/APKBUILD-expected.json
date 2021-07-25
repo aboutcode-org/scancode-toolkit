@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/qqc2-breeze-style-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/qqc2-breeze-style-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "qqc2-breeze-style-5.22.0.tar.xz",
         "sha512": "7e16a6d6b90fb69623c26151468b3a70331b756c39a839a2da3804b0fc5ee3eb62ac4d3606beba2714680506dabbf93737ae5df70557e86a038c6a0a240d53ca"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/qqc2-breeze-style-5.22.0.tar.xz"
       }
     ]
   },

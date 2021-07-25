@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/drkonqi-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/drkonqi-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "drkonqi-5.22.0.tar.xz",
         "sha512": "4b4fb1277584f5200a08c866c74d7caafcb72af2527504cf569558a2ee9ae0ded6fd43020006936b0e969b8a3649a007866865d142da939407c0a34e2ef37796"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/drkonqi-5.22.0.tar.xz"
       }
     ]
   },

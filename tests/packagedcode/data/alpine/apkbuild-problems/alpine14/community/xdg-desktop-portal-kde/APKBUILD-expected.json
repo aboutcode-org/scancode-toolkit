@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/xdg-desktop-portal-kde-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/xdg-desktop-portal-kde-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "xdg-desktop-portal-kde-5.22.0.tar.xz",
         "sha512": "9016790fc08d1e57e60dea0d0cbfe9e1226170d6b22b61f74904ca8123f43b7475512fd0a6feacf1705bfb3d5aab50c220e4e64120568ec898d7c7c0d2bf54ad"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/xdg-desktop-portal-kde-5.22.0.tar.xz"
       }
     ]
   },

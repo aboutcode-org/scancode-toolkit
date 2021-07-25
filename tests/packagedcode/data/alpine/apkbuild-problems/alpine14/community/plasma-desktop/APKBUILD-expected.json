@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-desktop-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-desktop-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-desktop-5.22.0.tar.xz",
         "sha512": "b2799e196079519e2e3da27d6d41f2b9f606a1e703d3edb1a6c16fb74fc5d2a7d9452872cb70a3f3e8f699fb7951a9f178370744fd9989e1624294401d83d3ba"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-desktop-5.22.0.tar.xz"
       }
     ]
   },

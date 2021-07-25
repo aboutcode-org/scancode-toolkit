@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kwin-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kwin-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "kwin-5.22.0.tar.xz",
         "sha512": "eccd6d674a6ab7820de8f7765b25b55e8554ea5ddc21af90f189789856a047dc4468ced4a897b2e94c084ebb7e85f114e75cb7e63253497d36c76c2b228eb471"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kwin-5.22.0.tar.xz"
       }
     ]
   },

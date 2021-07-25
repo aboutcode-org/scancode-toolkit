@@ -32,7 +32,7 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/discover-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/discover-5.22.0.tar.xz"
       },
       {
         "file_name": "0001-Add-support-for-Alpine-Linux-apk-backend.patch",
@@ -63,11 +63,6 @@
       {
         "file_name": "alpine-linux-logo-icon.png",
         "sha512": "0766668630cb14f58c840ebdda8b76bd1dec98b4dd61469677d4ad6eb4966809a25dbec2a846502cad0391df5b6ca9d692bb857a6fa203b61a52e6ac044cfbf4"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "\n\thttps://download.kde.org/$_rel/plasma/5.22.0/discover-5.22.0.tar.xz\n\t0001-Add-support-for-Alpine-Linux-apk-backend.patch\n\talpine-appstream-data.json\n\talpine-linux-logo-icon.png\n\t"
       }
     ]
   },

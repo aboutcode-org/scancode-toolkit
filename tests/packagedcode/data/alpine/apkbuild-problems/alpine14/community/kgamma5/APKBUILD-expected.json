@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kgamma5-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kgamma5-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "kgamma5-5.22.0.tar.xz",
         "sha512": "45ad2eebb17b92d32d968cc7abd700b43439ac37e46cbf5a536d323a405325d4030882ce63dddbc7781c1409ae484489f17eaa21faad49fdb809c31d49b12118"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kgamma5-5.22.0.tar.xz"
       }
     ]
   },

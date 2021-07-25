@@ -1,0 +1,4 @@
+declared_license: BSD-3-Clause AND BSL-1.0 AND ( Artistic-1.0 OR GPL-2.0-or-later ) AND NCSA
+  AND MIT
+license_expression: bsd-new AND boost-1.0 AND (artistic-1.0 OR gpl-2.0-plus) AND uoi-ncsa AND
+  mit

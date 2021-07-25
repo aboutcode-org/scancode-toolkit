@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kwayland-server-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kwayland-server-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "kwayland-server-5.22.0.tar.xz",
         "sha512": "aea5aa7ffecb1c085f733aaf5d4f16fa01c11264ab1e3717c1fed51f9937c3a99cf505664021749c8b203ae1c6b804d856efd9389ec7b26bc90887b3f57aba59"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kwayland-server-5.22.0.tar.xz"
       }
     ]
   },

@@ -32,15 +32,15 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.documentfoundation.org/libreoffice/src/$_v/libreoffice-6.4.6.2.tar.xz"
+        "url": "https://download.documentfoundation.org/libreoffice/src/6.4.6/libreoffice-6.4.6.2.tar.xz"
       },
       {
         "file_name": null,
-        "url": "https://download.documentfoundation.org/libreoffice/src/$_v/libreoffice-dictionaries-6.4.6.2.tar.xz"
+        "url": "https://download.documentfoundation.org/libreoffice/src/6.4.6/libreoffice-dictionaries-6.4.6.2.tar.xz"
       },
       {
         "file_name": null,
-        "url": "https://download.documentfoundation.org/libreoffice/src/$_v/libreoffice-translations-6.4.6.2.tar.xz"
+        "url": "https://download.documentfoundation.org/libreoffice/src/6.4.6/libreoffice-translations-6.4.6.2.tar.xz"
       },
       {
         "file_name": null,
@@ -271,11 +271,6 @@
       {
         "file_name": "gcc10.patch",
         "sha512": "4a390cd19553b1f58549e58503803297f714b021807073980ba009e4b712c986249a3fac71185a3c079e4360fdb6c6482ff47e6b20a51df3572f65e0ac4d69e7"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.documentfoundation.org/libreoffice/src/$_v/libreoffice-6.4.6.2.tar.xz\n\thttps://download.documentfoundation.org/libreoffice/src/$_v/libreoffice-dictionaries-6.4.6.2.tar.xz\n\thttps://download.documentfoundation.org/libreoffice/src/$_v/libreoffice-translations-6.4.6.2.tar.xz\n\thttps://dev-www.libreoffice.org/src/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip\n\thttps://dev-www.libreoffice.org/src/3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip\n\thttps://dev-www.libreoffice.org/src/35c94d2df8893241173de1d16b6034c0-swingExSrc.zip\n\thttps://dev-www.libreoffice.org/src/39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip\n\thttps://dev-www.libreoffice.org/src/3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip\n\thttps://dev-www.libreoffice.org/src/798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip\n\thttps://dev-www.libreoffice.org/src/8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip\n\thttps://dev-www.libreoffice.org/src/97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip\n\thttps://dev-www.libreoffice.org/src/ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip\n\thttps://dev-www.libreoffice.org/src/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip\n\thttps://dev-www.libreoffice.org/src/beeca87be45ec87d241ddd0e1bad80c1-bsh-2.0b6-src.zip\n\thttps://dev-www.libreoffice.org/src/commons-logging-1.2-src.tar.gz\n\thttps://dev-www.libreoffice.org/src/d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip\n\thttps://dev-www.libreoffice.org/src/db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip\n\thttps://dev-www.libreoffice.org/src/eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip\n\thttps://dev-www.libreoffice.org/src/f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip\n\thttps://dev-www.libreoffice.org/src/lxml-4.1.1.tgz\n\thttps://dev-www.libreoffice.org/src/pdfium-3963.tar.bz2\n\thttps://dev-www.libreoffice.org/src/QR-Code-generator-1.4.0.tar.gz\n\thttps://dev-www.libreoffice.org/extern/185d60944ea767075d27247c3162b3bc-unowinreg.dll\n\thttps://dev-www.libreoffice.org/extern/884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf\n\n\tlinux-musl.patch\n\tfix-execinfo.patch\n\tdisable-liborcus-unittest.patch\n\tmusl-stacksize.patch\n\tmusl-libintl.patch\n\tgcc10.patch\n\t"
       }
     ]
   },

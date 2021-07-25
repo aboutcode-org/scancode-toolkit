@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/polkit-kde-agent-1-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/polkit-kde-agent-1-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "polkit-kde-agent-1-5.22.0.tar.xz",
         "sha512": "4c93eef0451d7e55c7eaee92c653f75f245426945e622227e78b22b550cf5524f0ac316ad914b4fc66a2e4e6db47d7f788f353ec1b1b8aa29e7c2e1bbe2b609e"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/polkit-kde-agent-1-5.22.0.tar.xz"
       }
     ]
   },

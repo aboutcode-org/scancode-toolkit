@@ -32,7 +32,7 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-workspace-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-workspace-5.22.0.tar.xz"
       },
       {
         "file_name": "0001-fix-kcmfontinst-install-destination.patch",
@@ -47,11 +47,6 @@
       {
         "file_name": "0001-fix-kcmfontinst-install-destination.patch",
         "sha512": "23ae68ad8b70e5709f8e185d021d552990a6be5b252e8358cdd7aa3834bf79afb2b2a9970bf33a0bd5a7801591e635f8490c8458ae8d24d636fc64d607bb3159"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-workspace-5.22.0.tar.xz\n\t0001-fix-kcmfontinst-install-destination.patch\n\t"
       }
     ]
   },

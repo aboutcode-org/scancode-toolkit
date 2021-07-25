@@ -31,8 +31,8 @@
   "extra_data": {
     "sources": [
       {
-        "file_name": "kamailio-5.4.5$_suffix.tar.gz",
-        "url": "https://github.com/kamailio/kamailio/archive/$_gitcommit.tar.gz"
+        "file_name": "kamailio-5.4.5.tar.gz",
+        "url": "https://github.com/kamailio/kamailio/archive/5.4.5.tar.gz"
       },
       {
         "file_name": "kamailio.initd",
@@ -47,11 +47,6 @@
       {
         "file_name": "kamailio.initd",
         "sha512": "0c87bfb78481568c03e603049eb8597a90d24ae2941fc81694181b2326fa9db89fbddaaa3cf08c7bc2f5fa0e7ffac4cf4e2d010d08c4faa6cf6df98593432539"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "kamailio-5.4.5$_suffix.tar.gz::https://github.com/kamailio/kamailio/archive/$_gitcommit.tar.gz\n\tkamailio.initd\n\t"
       }
     ]
   },

@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kwayland-integration-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kwayland-integration-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "kwayland-integration-5.22.0.tar.xz",
         "sha512": "337ec281dd0ce7791d93af123ef1e5bd476328c91edc28df514c87c714b27d0f6a739b55f11e1dbf3ce0f6826ab437f404639b116644234086b855b748ff71d9"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kwayland-integration-5.22.0.tar.xz"
       }
     ]
   },

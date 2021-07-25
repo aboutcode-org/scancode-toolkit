@@ -32,7 +32,7 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.12.tar.xz"
       }
     ],
     "checksums": [
@@ -67,11 +67,6 @@
       {
         "file_name": "config-edge-virt.x86_64",
         "sha512": "36af3a69f4b25c85c5807c8bdd81f6c0203aee9c6f9c33fe297532bb5129d280f11c696d9c70bc94b4a1f4bca94910c9711c135add9e61acdaa777ac14cafa4c"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$_kernver.tar.xz"
       }
     ]
   },

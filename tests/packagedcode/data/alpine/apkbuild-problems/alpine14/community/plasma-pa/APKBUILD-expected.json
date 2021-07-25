@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-pa-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-pa-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-pa-5.22.0.tar.xz",
         "sha512": "4791943ea7d44c0798d6d87553a70f9a9d3f5cc9cca729ef07af15ba3dc0e908ce1de370dd347bea602207eccc06b43700c84e22b1894009711b79e9675182e1"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-pa-5.22.0.tar.xz"
       }
     ]
   },

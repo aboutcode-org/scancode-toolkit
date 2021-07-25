@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/bluedevil-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/bluedevil-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "bluedevil-5.22.0.tar.xz",
         "sha512": "2fd736347f6144da38c9e53f1bdcb3946b9a6950f8ee2ee3e2663b306fa87fe02e8472266bb7830090835c71a3d14b5965753eadd049dc1b431993ddffd8736a"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/bluedevil-5.22.0.tar.xz"
       }
     ]
   },

@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-disks-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-disks-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-disks-5.22.0.tar.xz",
         "sha512": "c8e4df1d87199936736f31b5e10985d7319fccefe24434d669746ca0f17fb7cc1c015f51bd5fbd115aab5ad275773020936e78c46e895ef15fdeec88d38e8012"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-disks-5.22.0.tar.xz"
       }
     ]
   },

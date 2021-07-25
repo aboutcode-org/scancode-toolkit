@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kinfocenter-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kinfocenter-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "kinfocenter-5.22.0.tar.xz",
         "sha512": "ae5754d8c0054b35f78c14e54177480df9271dfcea80d72ecf8da7d89ea5dc9ff57964d88ab64cc15811cf4a15ffe0e5a7b4e186c5a1c1385167d1bc0653fdf1"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kinfocenter-5.22.0.tar.xz"
       }
     ]
   },

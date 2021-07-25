@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-firewall-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-firewall-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "plasma-firewall-5.22.0.tar.xz",
         "sha512": "500324331383c9aff899dbf9c78ec76c5ca468b1a06603b30d72763b88ed8f538b1c9d4cbae1e8b5777d0b1073710806db81601637d80f0fbead1471724cc5f5"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/plasma-firewall-5.22.0.tar.xz"
       }
     ]
   },

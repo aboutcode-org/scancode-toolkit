@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/sddm-kcm-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/sddm-kcm-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "sddm-kcm-5.22.0.tar.xz",
         "sha512": "240e6182c9fd15fedad73542c86dd9d910c79042163de800ea4e63b923c8fa5607f1a632b75ca2624463060877e8147b92350789b8236a58a781b18566fed7b1"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/sddm-kcm-5.22.0.tar.xz"
       }
     ]
   },

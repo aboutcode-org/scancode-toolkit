@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kmenuedit-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kmenuedit-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "kmenuedit-5.22.0.tar.xz",
         "sha512": "005982c2deeec0624e90d590253e5df42bfa86c8550a203ae6ad06160449ffe47fdd11b42c2602f54ebcd9cc10a936793cba55cab768da6c8b27462475b7641d"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kmenuedit-5.22.0.tar.xz"
       }
     ]
   },

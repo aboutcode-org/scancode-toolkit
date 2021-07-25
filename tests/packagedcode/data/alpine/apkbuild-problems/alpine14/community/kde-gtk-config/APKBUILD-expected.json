@@ -32,18 +32,13 @@
     "sources": [
       {
         "file_name": null,
-        "url": "https://download.kde.org/$_rel/plasma/5.22.0/kde-gtk-config-5.22.0.tar.xz"
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kde-gtk-config-5.22.0.tar.xz"
       }
     ],
     "checksums": [
       {
         "file_name": "kde-gtk-config-5.22.0.tar.xz",
         "sha512": "8e0b41523dbfab3677065354c1cbc60b81dee081ea893331fd5f473da21b8db04313bdac793a354d3b0ee895f9e4996a39556932d99e4919fb6fc0aaef9ef233"
-      }
-    ],
-    "apkbuild_variable_resolution_errors": [
-      {
-        "source": "https://download.kde.org/$_rel/plasma/5.22.0/kde-gtk-config-5.22.0.tar.xz"
       }
     ]
   },
