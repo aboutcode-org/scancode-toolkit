@@ -75,6 +75,10 @@ class TestWinPePeInfo(FileBasedTesting):
         test_file = self.get_test_loc('win_pe/clfs.sys.mui')
         self.check_win_pe(test_file, regen=False)
 
+    def test_win_pe_crypt32_dll_mun(self):
+        test_file = self.get_test_loc('win_pe/crypt32.dll.mun')
+        self.check_win_pe(test_file, regen=False)
+
 
 class TestWinPeParseToPackage(TestWinPePeInfo):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

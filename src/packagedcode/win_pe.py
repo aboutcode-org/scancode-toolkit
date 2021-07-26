@@ -224,7 +224,7 @@ def pe_info(location):
 @attr.s()
 class WindowsExecutable(models.Package):
     metafiles = ()
-    extensions = ('.exe', '.dll', '.mui')
+    extensions = ('.exe', '.dll', '.mui', '.mun')
     filetypes = ('pe32', 'for ms windows',)
     mimetypes = ('application/x-dosexec',)
 
