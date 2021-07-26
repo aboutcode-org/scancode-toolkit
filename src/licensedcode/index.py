@@ -48,15 +48,21 @@ TRACE_APPROX_CANDIDATES = False
 TRACE_APPROX_MATCHES = False
 TRACE_INDEXING_PERF = False
 TRACE_TOKEN_DOC_FREQ = False
+TRACE_SPDX_LID = False
 
 
 def logger_debug(*args):
     pass
 
 
-if (TRACE
-    or TRACE_APPROX or TRACE_APPROX_CANDIDATES or TRACE_APPROX_MATCHES
-    or TRACE_INDEXING_PERF):
+if (
+    TRACE
+    or TRACE_APPROX
+    or TRACE_APPROX_CANDIDATES
+    or TRACE_APPROX_MATCHES
+    or TRACE_INDEXING_PERF
+    or TRACE_SPDX_LID
+):
 
     use_print = True
 
@@ -537,6 +543,12 @@ class LicenseIndex(object):
         for query_run, detectable_text in qrs_and_texts:
             if not query_run.matchables:
                 continue
+            if TRACE_SPDX_LID:
+                logger_debug(
+                    'get_spdx_id_matches:',
+                    'query_run:', query_run,
+                    'detectable_text:', detectable_text,
+                )
 
             spdx_match = match_spdx_lid.spdx_id_match(
                 idx=self,
@@ -827,14 +839,13 @@ class LicenseIndex(object):
                 match.set_lines(matches, qry.line_by_pos)
                 return matches
 
-
         get_spdx_id_matches = partial(
-            self.get_spdx_id_matches, 
+            self.get_spdx_id_matches,
             expression_symbols=expression_symbols,
         )
 
         if as_expression:
-            matches = get_spdx_id_matches(qry,from_spdx_id_lines=False)
+            matches = get_spdx_id_matches(qry, from_spdx_id_lines=False)
             match.set_lines(matches, qry.line_by_pos)
             return matches
 
@@ -844,8 +855,6 @@ class LicenseIndex(object):
             approx = self.get_fragments_matches
         else:
             approx = self.get_approximate_matches
-
-
 
         matchers = [
             # matcher, include_low in post-matching remaining matchable check
@@ -863,17 +872,17 @@ class LicenseIndex(object):
                 logger_debug('matching with matcher:', matcher_name)
 
             matched = matcher(
-                qry, 
+                qry,
                 matched_qspans=already_matched_qspans,
-                existing_matches=matches, 
+                existing_matches=matches,
                 deadline=deadline,
             )
 
             if TRACE:
                 self.debug_matches(
-                    matches=matched, 
+                    matches=matched,
                     message='matched with: ' + matcher_name,
-                    location=location, 
+                    location=location,
                     query_string=query_string,
                 )
 

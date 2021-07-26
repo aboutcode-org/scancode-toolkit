@@ -69,7 +69,10 @@ def spdx_id_match(idx, query_run, text, expression_symbols=None):
     if TRACE:
         logger_debug('spdx_id_match: start:', 'text:', text, 'query_run:', query_run)
 
+    # matching proper
     expression_str = get_spdx_expression(text, expression_symbols=expression_symbols)
+    if not expression_str:
+        return
 
     match_len = len(query_run)
     match_start = query_run.start
