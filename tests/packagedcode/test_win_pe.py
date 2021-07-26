@@ -79,6 +79,22 @@ class TestWinPePeInfo(FileBasedTesting):
         test_file = self.get_test_loc('win_pe/crypt32.dll.mun')
         self.check_win_pe(test_file, regen=False)
 
+    def test_win_pe_stdole2_tlb(self):
+        test_file = self.get_test_loc('win_pe/stdole2.tlb')
+        self.check_win_pe(test_file, regen=False)
+
+    def test_win_pe_tbs_sys(self):
+        test_file = self.get_test_loc('win_pe/tbs.sys')
+        self.check_win_pe(test_file, regen=False)
+
+    def test_win_pe_Windows_AI_winmd(self):
+        test_file = self.get_test_loc('win_pe/Windows.AI.winmd')
+        self.check_win_pe(test_file, regen=False)
+
+    def test_win_pe_chcp_com(self):
+        test_file = self.get_test_loc('win_pe/chcp.com')
+        self.check_win_pe(test_file, regen=False)
+
 
 class TestWinPeParseToPackage(TestWinPePeInfo):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
