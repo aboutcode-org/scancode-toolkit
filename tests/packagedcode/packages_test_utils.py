@@ -93,6 +93,7 @@ def get_test_files(location, test_file_suffix):
     Walk directory at ``location`` and yield location-relative paths to test
     files matching ``test_file_suffix``).
     """
+    assert os.path.exists(location), f'Missing location: {location!r}'
 
     # NOTE we do not use commoncode here as we want NO files spkipped for testing
     for base_dir, _dirs, files in os.walk(location):
@@ -107,61 +108,59 @@ def get_test_files(location, test_file_suffix):
 
 
 def create_test_function(
-    manifest_loc,
-    package_function,
+    test_file_loc,
+    tested_function,
     test_name,
-    expected_loc,
     regen=False,
 ):
     """
     Return a test function closed on test arguments to run
-    `tested_function(manifest_loc)`.
+    `tested_function(test_file_loc)`.
     """
 
-    def test_package(self):
-        self.check_package_parse(
-            package_function=package_function,
-            manifest_loc=manifest_loc,
-            expected_loc=expected_loc,
+    def test_proper(self):
+        test_loc = self.get_test_loc(test_file_loc, must_exist=True)
+        result = tested_function(test_loc)
+        check_result_equals_expected_json(
+            result=result,
+            expected_loc=test_loc + '-expected.json',
             regen=regen,
         )
 
-    test_package.__name__ = test_name
-    return test_package
+    test_proper.__name__ = test_name
+    return test_proper
 
 
 def build_tests(
     test_dir,
-    clazz,
-    test_method_prefix,
-    package_function,
     test_file_suffix,
+    clazz,
+    tested_function,
+    test_method_prefix,
     regen=False,
 ):
     """
-    Dynamically build test methods from package manifest file in ``test_dir``
-    and attach a test method to the ``clazz`` test subclass of PackageTester.
+    Dynamically build test methods from files in ``test_dir`` ending with
+    ``test_file_suffix`` and attach a test method to the ``clazz`` test class.
 
     For each method:
-    - run ``package_function`` with a manifest test file with``test_file_suffix``
-      ``package_function`` should return a Package object.
+    - run ``tested_function`` with a test file with``test_file_suffix``
+      ``tested_function`` should return a JSON-serializable object.
     - set the name prefixed with ``test_method_prefix``.
-    - check that a test expected file named `test_file_name-expected.json`
-      has content matching the results of the ``package_function`` run.
+    - check that a test expected file named <test_file_name>-expected.json`
+      has content matching the results of the ``tested_function`` returned value.
     """
     assert issubclass(clazz, PackageTester)
 
-    print('test_dir', test_dir)
     # loop through all items and attach a test method to our test class
     for test_file_path in get_test_files(test_dir, test_file_suffix):
         test_name = test_method_prefix + text.python_safe_name(test_file_path)
-        manifest_loc = os.path.join(test_dir, test_file_path)
+        test_file_loc = os.path.join(test_dir, test_file_path)
 
         test_method = create_test_function(
-            manifest_loc=manifest_loc,
-            package_function=package_function,
+            test_file_loc=test_file_loc,
+            tested_function=tested_function,
             test_name=test_name,
-            expected_loc=manifest_loc + '-expected.json',
             regen=regen,
         )
         setattr(clazz, test_name, test_method)

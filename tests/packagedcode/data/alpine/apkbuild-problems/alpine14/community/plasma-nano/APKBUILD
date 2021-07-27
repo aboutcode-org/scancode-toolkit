@@ -1,0 +1,47 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=plasma-nano
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="A minimal Plasma shell package intended for embedded devices"
+# armhf blocked by extra-cmake-modules
+# s390x blocked by plasma-framework
+arch="all !armhf !s390x !mips64"
+url="https://invent.kde.org/kde/plasma-nano"
+license="GPL-2.0-or-later AND LGPL-2.1-or-later"
+depends="qt5-qtvirtualkeyboard"
+makedepends="
+	extra-cmake-modules
+	kwayland-dev
+	kwindowsystem-dev
+	plasma-framework-dev
+	qt5-qtbase-dev
+	qt5-qtdeclarative-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/plasma-nano-$pkgver.tar.xz"
+options="!check" # No tests
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+sha512sums="
+6f594ba2ba26b0a8d62c3144172dfbcf1e48a3bded45b3bd340d0ca93474f37ee69bfc74d943b04c3df929592fc4e8b39ed940841d556b56d827f78252f892ac  plasma-nano-5.22.0.tar.xz
+"

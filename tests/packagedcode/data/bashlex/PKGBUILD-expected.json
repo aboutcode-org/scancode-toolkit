@@ -1,0 +1,2413 @@
+[
+  {
+    "pos": 0,
+    "type": [
+      "Comment"
+    ],
+    "value": "# Maintainer: Gordian Edenhofer <gordian.edenhofer@gmail.com>"
+  },
+  {
+    "pos": 61,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 63,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "pkgname"
+  },
+  {
+    "pos": 70,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 71,
+    "type": [
+      "Text"
+    ],
+    "value": "papermc"
+  },
+  {
+    "pos": 78,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 79,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "_pkgver"
+  },
+  {
+    "pos": 86,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 87,
+    "type": [
+      "Text"
+    ],
+    "value": "1.17.1"
+  },
+  {
+    "pos": 93,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 94,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "_build"
+  },
+  {
+    "pos": 100,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 101,
+    "type": [
+      "Text"
+    ],
+    "value": "100"
+  },
+  {
+    "pos": 104,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 105,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "_license_commit"
+  },
+  {
+    "pos": 120,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 121,
+    "type": [
+      "Text"
+    ],
+    "value": "40b3461"
+  },
+  {
+    "pos": 128,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 129,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "pkgver"
+  },
+  {
+    "pos": 135,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 136,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${_pkgver}+b${_build}\""
+  },
+  {
+    "pos": 159,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 160,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "pkgrel"
+  },
+  {
+    "pos": 166,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 167,
+    "type": [
+      "Text"
+    ],
+    "value": "3"
+  },
+  {
+    "pos": 168,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 169,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "pkgdesc"
+  },
+  {
+    "pos": 176,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 177,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"Next generation of Minecraft server, compatible with Spigot plugins and offering uncompromising performance\""
+  },
+  {
+    "pos": 286,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 287,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "arch"
+  },
+  {
+    "pos": 291,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 292,
+    "type": [
+      "ArraySep",
+      "Start"
+    ],
+    "value": "("
+  },
+  {
+    "pos": 293,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'any'"
+  },
+  {
+    "pos": 298,
+    "type": [
+      "ArraySep",
+      "End"
+    ],
+    "value": ")"
+  },
+  {
+    "pos": 299,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 300,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "url"
+  },
+  {
+    "pos": 303,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 304,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"https://papermc.io/\""
+  },
+  {
+    "pos": 325,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 326,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "license"
+  },
+  {
+    "pos": 333,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 334,
+    "type": [
+      "ArraySep",
+      "Start"
+    ],
+    "value": "("
+  },
+  {
+    "pos": 335,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'custom'"
+  },
+  {
+    "pos": 343,
+    "type": [
+      "ArraySep",
+      "End"
+    ],
+    "value": ")"
+  },
+  {
+    "pos": 344,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 345,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "depends"
+  },
+  {
+    "pos": 352,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 353,
+    "type": [
+      "ArraySep",
+      "Start"
+    ],
+    "value": "("
+  },
+  {
+    "pos": 354,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'java-runtime-headless>=8'"
+  },
+  {
+    "pos": 380,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 381,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'tmux'"
+  },
+  {
+    "pos": 387,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 388,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'sudo'"
+  },
+  {
+    "pos": 394,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 395,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'bash'"
+  },
+  {
+    "pos": 401,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 402,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'awk'"
+  },
+  {
+    "pos": 407,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 408,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'sed'"
+  },
+  {
+    "pos": 413,
+    "type": [
+      "ArraySep",
+      "End"
+    ],
+    "value": ")"
+  },
+  {
+    "pos": 414,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 415,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "optdepends"
+  },
+  {
+    "pos": 425,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 426,
+    "type": [
+      "ArraySep",
+      "Start"
+    ],
+    "value": "("
+  },
+  {
+    "pos": 427,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"tar: needed in order to create world backups\""
+  },
+  {
+    "pos": 473,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 474,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 475,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"netcat: required in order to suspend an idle server\""
+  },
+  {
+    "pos": 528,
+    "type": [
+      "ArraySep",
+      "End"
+    ],
+    "value": ")"
+  },
+  {
+    "pos": 529,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 530,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "conflicts"
+  },
+  {
+    "pos": 539,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 540,
+    "type": [
+      "ArraySep",
+      "Start"
+    ],
+    "value": "("
+  },
+  {
+    "pos": 541,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'papermc-git'"
+  },
+  {
+    "pos": 554,
+    "type": [
+      "ArraySep",
+      "End"
+    ],
+    "value": ")"
+  },
+  {
+    "pos": 555,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 556,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "backup"
+  },
+  {
+    "pos": 562,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 563,
+    "type": [
+      "ArraySep",
+      "Start"
+    ],
+    "value": "("
+  },
+  {
+    "pos": 564,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'etc/conf.d/papermc'"
+  },
+  {
+    "pos": 584,
+    "type": [
+      "ArraySep",
+      "End"
+    ],
+    "value": ")"
+  },
+  {
+    "pos": 585,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 586,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 593,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 594,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgname}.install\""
+  },
+  {
+    "pos": 614,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 615,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "source"
+  },
+  {
+    "pos": 621,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 622,
+    "type": [
+      "ArraySep",
+      "Start"
+    ],
+    "value": "("
+  },
+  {
+    "pos": 623,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"papermc.${pkgver}.jar\""
+  },
+  {
+    "pos": 646,
+    "type": [
+      "Text"
+    ],
+    "value": "::\"https://papermc.io/api/v1/paper/${_pkgver}/${_build}/download\""
+  },
+  {
+    "pos": 711,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 712,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 713,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"papermc-backup.service\""
+  },
+  {
+    "pos": 737,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 738,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 739,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"papermc-backup.timer\""
+  },
+  {
+    "pos": 761,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 762,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 763,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"papermc.service\""
+  },
+  {
+    "pos": 780,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 781,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 782,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"papermc.conf\""
+  },
+  {
+    "pos": 796,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 797,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 798,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"papermc.sh\""
+  },
+  {
+    "pos": 810,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 811,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 812,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"papermc.tmpfiles\""
+  },
+  {
+    "pos": 830,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 831,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 832,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"papermc.sysusers\""
+  },
+  {
+    "pos": 850,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 851,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 852,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"LICENSE_${pkgver}.md\""
+  },
+  {
+    "pos": 874,
+    "type": [
+      "Text"
+    ],
+    "value": "::\"https://raw.githubusercontent.com/PaperMC/Paper/${_license_commit}/LICENSE.md\")"
+  },
+  {
+    "pos": 956,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 957,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "noextract"
+  },
+  {
+    "pos": 966,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 967,
+    "type": [
+      "ArraySep",
+      "Start"
+    ],
+    "value": "("
+  },
+  {
+    "pos": 968,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"papermc.${pkgver}.jar\""
+  },
+  {
+    "pos": 991,
+    "type": [
+      "ArraySep",
+      "End"
+    ],
+    "value": ")"
+  },
+  {
+    "pos": 992,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 993,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "sha512sums"
+  },
+  {
+    "pos": 1003,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 1004,
+    "type": [
+      "ArraySep",
+      "Start"
+    ],
+    "value": "("
+  },
+  {
+    "pos": 1005,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'34366f0d5e116c011e2ff2dba884b3c5dda6444e0fb28115bc5e12ee839551a77ade8bc174939ecb8f818fc0eca65aa478d87f0b9082b894efbd587909dbfbb8'"
+  },
+  {
+    "pos": 1135,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 1136,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "            "
+  },
+  {
+    "pos": 1148,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'a4fcc9f28436c0163e9414f2793fcbd4f6ea74772230cdff4a628246eae2a8008688b3dfb94d433f8f0887cd7eea3fe43ce25f9d5812d46e62179ff315b62895'"
+  },
+  {
+    "pos": 1278,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 1279,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "            "
+  },
+  {
+    "pos": 1291,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'51c5345155e8640d4f1eaef0c8cfb890ae46063f2d4e7a0fe181ad4c8ff7b96fea88b0f9fc74031d589dfd61602f37b440f183ca1859835930fe69d37508cd42'"
+  },
+  {
+    "pos": 1421,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 1422,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "            "
+  },
+  {
+    "pos": 1434,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'f29c4044d9e3cc5ab137c21f7e62399b36d7e1f777d5558a39f7b4a01de75bdf2de0b8678e424accc03934ca7db9ebb6a22c78c8c4497759287dd55e1c3eb456'"
+  },
+  {
+    "pos": 1564,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 1565,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "            "
+  },
+  {
+    "pos": 1577,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'fe268d7380f881229100700b1d4f4897904a630aa65b0b06bba08be5d5918f208d497e01fc5306deecd5d93a78cfdb7e9c7f1c3b910b3a414ce9af186a05224d'"
+  },
+  {
+    "pos": 1707,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 1708,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "            "
+  },
+  {
+    "pos": 1720,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'bb0633de2da12b0f9e8c9ba29ef61c91785e9e6fb65f7712d60cf99d2045a38321073b78d7a7e1b34078e5627acbe42e8f3ad7164bbf6eef27dbbb3c5d41d748'"
+  },
+  {
+    "pos": 1850,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 1851,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "            "
+  },
+  {
+    "pos": 1863,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'c40cba5dfbf5af5d206cd42fa2b43f2321b481f83ab79c9ce4eaa76f204abab48ff2d8b8526a1a3d82636be97f18596d4343b0efc72a7082642e4af8d1b561c5'"
+  },
+  {
+    "pos": 1993,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 1994,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "            "
+  },
+  {
+    "pos": 2006,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'115fe7213d7edd0e3159607a31b28edb6e6b3bd1d454d516973e38c8cf0b803275c2c4e59b29e2260561270d931c71bad134046535e5add309e0a8d055cde0ff'"
+  },
+  {
+    "pos": 2136,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2137,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "            "
+  },
+  {
+    "pos": 2149,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'8621db1c6355b4467081ae1860a78a910c1ab3e50c8b1d71a70d701cca46131933c5d8d1352d42e0d79f75bd40e73e4fc825b9fb5be80326ef65c115244aa9df'"
+  },
+  {
+    "pos": 2279,
+    "type": [
+      "ArraySep",
+      "End"
+    ],
+    "value": ")"
+  },
+  {
+    "pos": 2280,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 2282,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "_game"
+  },
+  {
+    "pos": 2287,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 2288,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"papermc\""
+  },
+  {
+    "pos": 2297,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2298,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "_server_root"
+  },
+  {
+    "pos": 2310,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 2311,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"/srv/papermc\""
+  },
+  {
+    "pos": 2325,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 2327,
+    "type": [
+      "Text"
+    ],
+    "value": "package()"
+  },
+  {
+    "pos": 2336,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2337,
+    "type": [
+      "Text"
+    ],
+    "value": "{"
+  },
+  {
+    "pos": 2338,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2339,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2340,
+    "type": [
+      "Text"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 2347,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2348,
+    "type": [
+      "Text"
+    ],
+    "value": "-Dm644"
+  },
+  {
+    "pos": 2354,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2355,
+    "type": [
+      "Text"
+    ],
+    "value": "${_game}.conf"
+  },
+  {
+    "pos": 2368,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "              "
+  },
+  {
+    "pos": 2382,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/etc/conf.d/${_game}\""
+  },
+  {
+    "pos": 2413,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2414,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2415,
+    "type": [
+      "Text"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 2422,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2423,
+    "type": [
+      "Text"
+    ],
+    "value": "-Dm755"
+  },
+  {
+    "pos": 2429,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2430,
+    "type": [
+      "Text"
+    ],
+    "value": "${_game}.sh"
+  },
+  {
+    "pos": 2441,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "                "
+  },
+  {
+    "pos": 2457,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/usr/bin/${_game}\""
+  },
+  {
+    "pos": 2485,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2486,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2487,
+    "type": [
+      "Text"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 2494,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2495,
+    "type": [
+      "Text"
+    ],
+    "value": "-Dm644"
+  },
+  {
+    "pos": 2501,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2502,
+    "type": [
+      "Text"
+    ],
+    "value": "${_game}.service"
+  },
+  {
+    "pos": 2518,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "           "
+  },
+  {
+    "pos": 2529,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/usr/lib/systemd/system/${_game}.service\""
+  },
+  {
+    "pos": 2580,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2581,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2582,
+    "type": [
+      "Text"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 2589,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2590,
+    "type": [
+      "Text"
+    ],
+    "value": "-Dm644"
+  },
+  {
+    "pos": 2596,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2597,
+    "type": [
+      "Text"
+    ],
+    "value": "${_game}-backup.service"
+  },
+  {
+    "pos": 2620,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "    "
+  },
+  {
+    "pos": 2624,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/usr/lib/systemd/system/${_game}-backup.service\""
+  },
+  {
+    "pos": 2682,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2683,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2684,
+    "type": [
+      "Text"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 2691,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2692,
+    "type": [
+      "Text"
+    ],
+    "value": "-Dm644"
+  },
+  {
+    "pos": 2698,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2699,
+    "type": [
+      "Text"
+    ],
+    "value": "${_game}-backup.timer"
+  },
+  {
+    "pos": 2720,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "      "
+  },
+  {
+    "pos": 2726,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/usr/lib/systemd/system/${_game}-backup.timer\""
+  },
+  {
+    "pos": 2782,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2783,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2784,
+    "type": [
+      "Text"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 2791,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2792,
+    "type": [
+      "Text"
+    ],
+    "value": "-Dm644"
+  },
+  {
+    "pos": 2798,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2799,
+    "type": [
+      "Text"
+    ],
+    "value": "${_game}.sysusers"
+  },
+  {
+    "pos": 2816,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "          "
+  },
+  {
+    "pos": 2826,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/usr/lib/sysusers.d/${_game}.conf\""
+  },
+  {
+    "pos": 2870,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2871,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2872,
+    "type": [
+      "Text"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 2879,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2880,
+    "type": [
+      "Text"
+    ],
+    "value": "-Dm644"
+  },
+  {
+    "pos": 2886,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2887,
+    "type": [
+      "Text"
+    ],
+    "value": "${_game}.tmpfiles"
+  },
+  {
+    "pos": 2904,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "          "
+  },
+  {
+    "pos": 2914,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/usr/lib/tmpfiles.d/${_game}.conf\""
+  },
+  {
+    "pos": 2958,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2959,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2960,
+    "type": [
+      "Text"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 2967,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2968,
+    "type": [
+      "Text"
+    ],
+    "value": "-Dm644"
+  },
+  {
+    "pos": 2974,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2975,
+    "type": [
+      "Text"
+    ],
+    "value": "${_game}.${pkgver}.jar"
+  },
+  {
+    "pos": 2997,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "     "
+  },
+  {
+    "pos": 3002,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/${_server_root}/${_game}.${pkgver}.jar\""
+  },
+  {
+    "pos": 3052,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3053,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3054,
+    "type": [
+      "Text"
+    ],
+    "value": "ln"
+  },
+  {
+    "pos": 3056,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3057,
+    "type": [
+      "Text"
+    ],
+    "value": "-s"
+  },
+  {
+    "pos": 3059,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3060,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${_game}.${pkgver}.jar\""
+  },
+  {
+    "pos": 3084,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3085,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}${_server_root}/${_game}_server.jar\""
+  },
+  {
+    "pos": 3131,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 3133,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3134,
+    "type": [
+      "Comment"
+    ],
+    "value": "# Link the log files"
+  },
+  {
+    "pos": 3154,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3155,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3156,
+    "type": [
+      "Text"
+    ],
+    "value": "mkdir"
+  },
+  {
+    "pos": 3161,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3162,
+    "type": [
+      "Text"
+    ],
+    "value": "-p"
+  },
+  {
+    "pos": 3164,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3165,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/var/log/\""
+  },
+  {
+    "pos": 3185,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3186,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3187,
+    "type": [
+      "Text"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 3194,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3195,
+    "type": [
+      "Text"
+    ],
+    "value": "-dm2755"
+  },
+  {
+    "pos": 3202,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3203,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/${_server_root}/logs\""
+  },
+  {
+    "pos": 3235,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3236,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3237,
+    "type": [
+      "Text"
+    ],
+    "value": "ln"
+  },
+  {
+    "pos": 3239,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3240,
+    "type": [
+      "Text"
+    ],
+    "value": "-s"
+  },
+  {
+    "pos": 3242,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3243,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${_server_root}/logs\""
+  },
+  {
+    "pos": 3265,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3266,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/var/log/${_game}\""
+  },
+  {
+    "pos": 3294,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 3296,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3297,
+    "type": [
+      "Comment"
+    ],
+    "value": "# Give the group write permissions and set user or group ID on execution"
+  },
+  {
+    "pos": 3369,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3370,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3371,
+    "type": [
+      "Text"
+    ],
+    "value": "chmod"
+  },
+  {
+    "pos": 3376,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3377,
+    "type": [
+      "Text"
+    ],
+    "value": "g+ws"
+  },
+  {
+    "pos": 3381,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3382,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}${_server_root}\""
+  },
+  {
+    "pos": 3408,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 3410,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3411,
+    "type": [
+      "Text"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 3418,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3419,
+    "type": [
+      "Text"
+    ],
+    "value": "-D"
+  },
+  {
+    "pos": 3421,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3422,
+    "type": [
+      "Text"
+    ],
+    "value": "./LICENSE_${pkgver}.md"
+  },
+  {
+    "pos": 3444,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3445,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/usr/share/licenses/${pkgname}/LICENSE\""
+  },
+  {
+    "pos": 3494,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3495,
+    "type": [
+      "Text"
+    ],
+    "value": "}"
+  },
+  {
+    "pos": 3496,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  }
+]

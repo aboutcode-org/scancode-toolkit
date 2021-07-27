@@ -28,11 +28,19 @@ class TestPubspecDatadriven(PackageTester):
         check_result_equals_expected_json(result, expected_loc, regen=False)
 
 
+def pub_tester(location,):
+    return pubspec.parse_pub(location).to_dict()
+
+
+def lock_tester(location,):
+    return pubspec.parse_lock(location).to_dict()
+
+
 build_tests(
     test_dir=os.path.join(test_data_dir, 'pubspec/specs'),
     clazz=TestPubspecDatadriven,
     test_method_prefix='test_pubspec_yaml',
-    package_function=pubspec.parse_pub,
+    tested_function=pub_tester,
     test_file_suffix='pubspec.yaml',
     regen=False,
 )
@@ -41,7 +49,7 @@ build_tests(
     test_dir=os.path.join(test_data_dir, 'pubspec/locks'),
     clazz=TestPubspecDatadriven,
     test_method_prefix='test_pubspec_lock',
-    package_function=pubspec.parse_lock,
+    tested_function=lock_tester,
     test_file_suffix='pubspec.lock',
     regen=False,
 )

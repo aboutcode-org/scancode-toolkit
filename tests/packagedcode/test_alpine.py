@@ -10,12 +10,16 @@
 import os.path
 
 from packagedcode import alpine
+
+from packages_test_utils  import build_tests
 from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import PackageTester
 
+test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-class TestAlpinePackage(PackageTester):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+class TestAlpineInstalledPackage(PackageTester):
+    test_data_dir = test_data_dir
 
     def test_parse_alpine_installed_db_small(self):
         test_installed = self.get_test_loc('alpine/small-installed/installed')
@@ -38,3 +42,38 @@ class TestAlpinePackage(PackageTester):
         expected = test_installed + '-expected.json'
         check_result_equals_expected_json(result, expected, regen=False)
 
+
+def apkbuild_tester(location):
+    return alpine.parse_apkbuild(location, strict=True).to_dict()
+
+
+class TestAlpineApkbuildDatadriven(PackageTester):
+    test_data_dir = test_data_dir
+
+
+build_tests(
+    test_dir=os.path.join(test_data_dir, 'alpine/apkbuild'),
+    clazz=TestAlpineApkbuildDatadriven,
+    test_method_prefix='test_',
+    tested_function=apkbuild_tester,
+    test_file_suffix='APKBUILD',
+    regen=False,
+)
+
+
+def apkbuild_problems_tester(location):
+    return alpine.parse_apkbuild(location, strict=True).to_dict()
+
+
+class TestAlpineApkbuildProblemsDatadriven(PackageTester):
+    test_data_dir = test_data_dir
+
+
+build_tests(
+    test_dir=os.path.join(test_data_dir, 'alpine/apkbuild-problems'),
+    clazz=TestAlpineApkbuildProblemsDatadriven,
+    test_method_prefix='test_',
+    tested_function=apkbuild_problems_tester,
+    test_file_suffix='APKBUILD',
+    regen=False,
+)

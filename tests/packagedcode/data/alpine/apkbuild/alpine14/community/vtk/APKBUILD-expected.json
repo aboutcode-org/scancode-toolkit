@@ -1,0 +1,73 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "vtk",
+  "version": "9.0.1-r5",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "A software system for 3D computer graphics, image processing and visualization",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "bsd-new",
+  "declared_license": "BSD-3-Clause",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://www.vtk.org/files/release/9.0/VTK-9.0.1.tar.gz"
+      },
+      {
+        "file_name": null,
+        "url": "https://www.vtk.org/files/release/9.0/VTKData-9.0.1.tar.gz"
+      },
+      {
+        "file_name": null,
+        "url": "https://www.vtk.org/files/release/9.0/VTKLargeData-9.0.1.tar.gz"
+      },
+      {
+        "file_name": "fix-build.patch",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "VTK-9.0.1.tar.gz",
+        "sha512": "eb2508e2409ad302cc5db65282a9c1ff4477ac8a93e0fee898ad8f0974d72decc7d5d444dc825a3c2f7952ebf59853616097ebe0d134649cab0d49a9619065bf"
+      },
+      {
+        "file_name": "VTKData-9.0.1.tar.gz",
+        "sha512": "2fc418a6e15bd4e30ce181bb209c39666982645dbdbe2d6491683497662b72712689e58cf54b7af91865d0e3d0cb3f9ab66606b02964d57bf88d769d292dd938"
+      },
+      {
+        "file_name": "VTKLargeData-9.0.1.tar.gz",
+        "sha512": "b3303d633f063a6f3bfcc61b441f445611ff7cff6f006c77d8452eb5a3af89a18b2a1201a2dbd230af085b9e45b9abb70319d2f41db0f1e19c632286e7b02ec2"
+      },
+      {
+        "file_name": "fix-build.patch",
+        "sha512": "c814628a7ce9e1015cb02d4c9ad7ae7c6ad6d5d83b553f0c484414744488e4d0fa313924b4fd0f579a363352832347035147d1be3aca6f6a4885b6f9a1590b9e"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/vtk@9.0.1-r5",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

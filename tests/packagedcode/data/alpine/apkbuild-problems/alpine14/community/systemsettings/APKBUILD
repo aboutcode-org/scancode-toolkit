@@ -1,0 +1,64 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=systemsettings
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="Plasma system manager for hardware, software, and workspaces"
+# armhf blocked by qt5-qtdeclarative
+# s390x blocked by libksysguard
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="GPL-2.0-or-later"
+depends="kirigami2"
+makedepends="
+	extra-cmake-modules
+	kactivities-dev
+	kactivities-stats-dev
+	kcmutils-dev
+	kconfig-dev
+	kcrash-dev
+	kdbusaddons-dev
+	kdeclarative-dev
+	kdoctools-dev
+	khtml-dev
+	ki18n-dev
+	kiconthemes-dev
+	kio-dev
+	kirigami2-dev
+	kitemviews-dev
+	kpackage-dev
+	kservice-dev
+	kwidgetsaddons-dev
+	kwindowsystem-dev
+	kxmlgui-dev
+	plasma-workspace-dev
+	qt5-qtbase-dev
+	qt5-qtdeclarative-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/systemsettings-$pkgver.tar.xz"
+subpackages="$pkgname-doc $pkgname-lang"
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+sha512sums="
+30b9e0150508d6c15dda61814436cec0bd941f7a70614c890c1b275f3290e5f696db088a7d7715e42a97c9b7c98d9d23cde49e1aff14caede48d0e96186c4912  systemsettings-5.22.0.tar.xz
+"

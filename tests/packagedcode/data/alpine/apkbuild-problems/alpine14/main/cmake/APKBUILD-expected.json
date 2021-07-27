@@ -1,0 +1,57 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "cmake",
+  "version": "3.20.3-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Cross-platform, open-source make system",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "bsd-new",
+  "declared_license": "BSD-3-Clause",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://www.cmake.org/files/v3.20/cmake-3.20.3.tar.gz"
+      },
+      {
+        "file_name": "patch-adjust-lib64.patch",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "cmake-3.20.3.tar.gz",
+        "sha512": "ed2b8b04c759c4f7c5c363be33bf08e6677c710c1f937050a378ab5539136b919531e1c927b117b3d8d68d4bb613de8d92a3d4d50f3ab3bc98355febca779a1b"
+      },
+      {
+        "file_name": "patch-adjust-lib64.patch",
+        "sha512": "87051601dda49894a1631156bf63aaa79fcf7cb7bb6705712889b9012d87d2f11d2707a1d729223b180668ad61f22b16893658e9777beee330c7e9a90e7421e6"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/cmake@3.20.3-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

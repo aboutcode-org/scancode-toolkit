@@ -1,0 +1,48 @@
+# Contributor: Ashton Spencer <aspec.451@gmail.com>
+# Maintainer: Jeff Bilyk <jbilyk@gmail.com>
+pkgname=sqsh
+pkgver=2.5.16.1
+case $pkgver in
+*.*.*.*) _v=${pkgver%.*.*};;
+*.*.*) _v=${pkgver%.*};;
+*) _v=$pkgver;;
+esac
+pkgrel=4
+pkgdesc="Sybase iSQL replacement"
+url="http://www.sqsh.org"
+arch="all"
+license="GPL"
+makedepends="freetds-dev readline-dev ncurses-dev"
+subpackages="$pkgname-doc"
+source="https://downloads.sourceforge.net/project/sqsh/sqsh/sqsh-$_v/sqsh-$pkgver.tgz
+	tds-version.patch
+	freetds-1.2.patch
+	"
+
+prepare() {
+	default_prepare
+	update_config_sub
+}
+
+builddir="$srcdir"/$pkgname-$_v
+build() {
+	SYBASE=/usr
+	export SYBASE
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/share/doc \
+		--with-readline
+	make
+}
+
+package() {
+	make DESTDIR="$pkgdir" install
+	make DESTDIR="$pkgdir" install.man
+}
+
+sha512sums="d011d413f5a21059e1b043c75f0a15ea29d10972b59ea980ebcb010b1b0e16eb377a66d21ba4f3ea4433c4deac5ba80b1af7e858129a306a6611de32da48981c  sqsh-2.5.16.1.tgz
+f73696f016e6a0f3c8f4020ba79b7dc9618c1958872dbb531e31c1b2709d7d7af227a3206b466bda932d8319443c838f6b05042b79b50560a9de842502274798  tds-version.patch
+563bb6805025f2560b0c0bae4528e3ee54d17598c51669848f988d2948dc45b177412d5113259d2af5509ab77ae70e5dfdb4e0eebe9fe5252293d9b57f325934  freetds-1.2.patch"

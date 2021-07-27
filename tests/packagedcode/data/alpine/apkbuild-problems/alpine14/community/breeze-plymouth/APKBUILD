@@ -1,0 +1,38 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=breeze-plymouth
+pkgver=5.22.0
+pkgrel=0
+arch="all !armhf" # armhf blocked by extra-cmake-modules
+url="https://kde.org/"
+pkgdesc="Breeze theme for Plymouth"
+license="GPL-2.0-or-later"
+depends="plymouth"
+makedepends="
+	extra-cmake-modules
+	plymouth-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/breeze-plymouth-$pkgver.tar.xz"
+options="!check" # No tests
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DDISTRO_NAME="$(grep PRETTY_NAME /etc/os-release | awk -F  = '{ print $2 }')" \
+		-DDISTRO_VERSION="$(grep VERSION_ID /etc/os-release | awk -F  = '{ print $2 }')"
+	cmake --build build
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="
+a6c58e4f303767af201397279b48dddb3addc4c6f793ed22eb3af50d0e99bafa387410f86444c45f61e12618153bce321eb32f40288d7e478953357ecab47a32  breeze-plymouth-5.22.0.tar.xz
+"

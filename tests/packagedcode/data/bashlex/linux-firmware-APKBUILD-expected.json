@@ -1,0 +1,5420 @@
+[
+  {
+    "pos": 0,
+    "type": [
+      "Comment"
+    ],
+    "value": "# Contributor: Oliver Smith <ollieparanoid@postmarketos.org>"
+  },
+  {
+    "pos": 60,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 61,
+    "type": [
+      "Comment"
+    ],
+    "value": "# Maintainer: Natanael Copa <ncopa@alpinelinux.org>"
+  },
+  {
+    "pos": 112,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 113,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "pkgname"
+  },
+  {
+    "pos": 120,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 121,
+    "type": [
+      "Text"
+    ],
+    "value": "linux-firmware"
+  },
+  {
+    "pos": 135,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 136,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "pkgver"
+  },
+  {
+    "pos": 142,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 143,
+    "type": [
+      "Text"
+    ],
+    "value": "20210511"
+  },
+  {
+    "pos": 151,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 152,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "pkgrel"
+  },
+  {
+    "pos": 158,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 159,
+    "type": [
+      "Text"
+    ],
+    "value": "0"
+  },
+  {
+    "pos": 160,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 161,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "pkgdesc"
+  },
+  {
+    "pos": 168,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 169,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"firmware files for linux\""
+  },
+  {
+    "pos": 195,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 196,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "url"
+  },
+  {
+    "pos": 199,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 200,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary\""
+  },
+  {
+    "pos": 282,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 283,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "arch"
+  },
+  {
+    "pos": 287,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 288,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"all\""
+  },
+  {
+    "pos": 293,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 294,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "license"
+  },
+  {
+    "pos": 301,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 302,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"custom:multiple\""
+  },
+  {
+    "pos": 319,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 320,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "makedepends"
+  },
+  {
+    "pos": 331,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 332,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"libarchive-tools\""
+  },
+  {
+    "pos": 350,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 351,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "provides"
+  },
+  {
+    "pos": 359,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 360,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"linux-firmware-any\""
+  },
+  {
+    "pos": 380,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 381,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "provider_priority"
+  },
+  {
+    "pos": 398,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 399,
+    "type": [
+      "Text"
+    ],
+    "value": "1"
+  },
+  {
+    "pos": 400,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 401,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "options"
+  },
+  {
+    "pos": 408,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 409,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"!strip !check !archcheck !tracedeps !spdx\""
+  },
+  {
+    "pos": 452,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 454,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "_rpi_bt"
+  },
+  {
+    "pos": 461,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 462,
+    "type": [
+      "Text"
+    ],
+    "value": "e7fd166981ab4bb9a36c2d1500205a078a35714d"
+  },
+  {
+    "pos": 502,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 504,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "source"
+  },
+  {
+    "pos": 510,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 511,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-$pkgver.tar.gz\n\tBCM43430A1.hcd.${_rpi_bt::8}::https://github.com/RPi-Distro/bluez-firmware/raw/$_rpi_bt/broadcom/BCM43430A1.hcd\n\tBCM4345C0.hcd.${_rpi_bt::8}::https://github.com/RPi-Distro/bluez-firmware/raw/$_rpi_bt/broadcom/BCM4345C0.hcd\n\tBCM43430B0.hcd.${_rpi_bt::8}::https://github.com/RPi-Distro/bluez-firmware/raw/$_rpi_bt/broadcom/BCM43430B0.hcd\n\tBCM4345C5.hcd.${_rpi_bt::8}::https://github.com/RPi-Distro/bluez-firmware/raw/$_rpi_bt/broadcom/BCM4345C5.hcd\""
+  },
+  {
+    "pos": 1075,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 1077,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "_builddir"
+  },
+  {
+    "pos": 1086,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 1087,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$srcdir\""
+  },
+  {
+    "pos": 1096,
+    "type": [
+      "Text"
+    ],
+    "value": "/$pkgname-$pkgver"
+  },
+  {
+    "pos": 1113,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 1115,
+    "type": [
+      "Comment"
+    ],
+    "value": "# Put /lib/firmware/* folders in subpackages"
+  },
+  {
+    "pos": 1159,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 1160,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "_folders"
+  },
+  {
+    "pos": 1168,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 1169,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"3com acenic adaptec advansys amd amd-ucode amdgpu ar3k ath10k ath11k\n\tath6k ath9k_htc atmel atusb av7110 bnx2 bnx2x brcm cadence cavium cis cpia2\n\tcxgb3 cxgb4 cypress dabusb dpaa2 dsp56k e100 edgeport emi26 emi62 ene-ub6250\n\tess go7007 i915 imx inside-secure intel isci kaweth keyspan keyspan_pda korg\n\tlibertas liquidio matrox mediatek mellanox meson microchip moxa mrvl mwl8k\n\tmwlwifi myricom netronome nvidia ositech qca qcom qed qlogic r128 radeon\n\trockchip rsi rtl8192e rtl_bt rtl_nic rtlwifi rtw88 rtw89 sb16 silabs slicoss\n\tsun sxg tehuti ti ti-connectivity ti-keystone tigon ttusb-budget ueagle-atm\n\tvicam vxge yam yamaha\""
+  },
+  {
+    "pos": 1800,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 1802,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "subpackages"
+  },
+  {
+    "pos": 1813,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 1814,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$pkgname-other::noarch $pkgname-none::noarch\""
+  },
+  {
+    "pos": 1860,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 1861,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "depends"
+  },
+  {
+    "pos": 1868,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 1869,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"linux-firmware-other=$pkgver-r$pkgrel\""
+  },
+  {
+    "pos": 1908,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 1909,
+    "type": [
+      "Text"
+    ],
+    "value": "for"
+  },
+  {
+    "pos": 1912,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 1913,
+    "type": [
+      "Text"
+    ],
+    "value": "i"
+  },
+  {
+    "pos": 1914,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 1915,
+    "type": [
+      "Text"
+    ],
+    "value": "in"
+  },
+  {
+    "pos": 1917,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 1918,
+    "type": [
+      "Text"
+    ],
+    "value": "$_folders;"
+  },
+  {
+    "pos": 1928,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 1929,
+    "type": [
+      "Text"
+    ],
+    "value": "do"
+  },
+  {
+    "pos": 1931,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 1932,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 1933,
+    "type": [
+      "Text"
+    ],
+    "value": "subpackages=\"$pkgname-$i:_folder:noarch"
+  },
+  {
+    "pos": 1972,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 1973,
+    "type": [
+      "Text"
+    ],
+    "value": "$subpackages\""
+  },
+  {
+    "pos": 1986,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 1987,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 1988,
+    "type": [
+      "Text"
+    ],
+    "value": "depends=\"$pkgname-$i=$pkgver-r$pkgrel"
+  },
+  {
+    "pos": 2025,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2026,
+    "type": [
+      "Text"
+    ],
+    "value": "$depends\""
+  },
+  {
+    "pos": 2035,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2036,
+    "type": [
+      "Text"
+    ],
+    "value": "done"
+  },
+  {
+    "pos": 2040,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2041,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "subpackages"
+  },
+  {
+    "pos": 2052,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 2053,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"amd-ucode::noarch $subpackages\""
+  },
+  {
+    "pos": 2085,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 2087,
+    "type": [
+      "Text"
+    ],
+    "value": "package()"
+  },
+  {
+    "pos": 2096,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2097,
+    "type": [
+      "Text"
+    ],
+    "value": "{"
+  },
+  {
+    "pos": 2098,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2099,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2100,
+    "type": [
+      "Text"
+    ],
+    "value": "cd"
+  },
+  {
+    "pos": 2102,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2103,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${_builddir}\""
+  },
+  {
+    "pos": 2117,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2118,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2119,
+    "type": [
+      "Text"
+    ],
+    "value": "make"
+  },
+  {
+    "pos": 2123,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2124,
+    "type": [
+      "Text"
+    ],
+    "value": "DESTDIR=\"${pkgdir}\""
+  },
+  {
+    "pos": 2143,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2144,
+    "type": [
+      "Text"
+    ],
+    "value": "FIRMWAREDIR=\"/lib/firmware\""
+  },
+  {
+    "pos": 2171,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2172,
+    "type": [
+      "Text"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 2179,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 2181,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2182,
+    "type": [
+      "Comment"
+    ],
+    "value": "# add compat links for pre-5.0 kernel"
+  },
+  {
+    "pos": 2219,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2220,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2221,
+    "type": [
+      "Text"
+    ],
+    "value": "ln"
+  },
+  {
+    "pos": 2223,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2224,
+    "type": [
+      "Text"
+    ],
+    "value": "-s"
+  },
+  {
+    "pos": 2226,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2227,
+    "type": [
+      "Text"
+    ],
+    "value": "brcmfmac43455-sdio.raspberrypi,3-model-b-plus.txt"
+  },
+  {
+    "pos": 2276,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2277,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$pkgdir\""
+  },
+  {
+    "pos": 2286,
+    "type": [
+      "Text"
+    ],
+    "value": "/lib/firmware/brcm/brcmfmac43455-sdio.txt"
+  },
+  {
+    "pos": 2327,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2328,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2329,
+    "type": [
+      "Text"
+    ],
+    "value": "ln"
+  },
+  {
+    "pos": 2331,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2332,
+    "type": [
+      "Text"
+    ],
+    "value": "-s"
+  },
+  {
+    "pos": 2334,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2335,
+    "type": [
+      "Text"
+    ],
+    "value": "brcmfmac43430-sdio.raspberrypi,3-model-b.txt"
+  },
+  {
+    "pos": 2379,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "      "
+  },
+  {
+    "pos": 2385,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$pkgdir\""
+  },
+  {
+    "pos": 2394,
+    "type": [
+      "Text"
+    ],
+    "value": "/lib/firmware/brcm/brcmfmac43430-sdio.txt"
+  },
+  {
+    "pos": 2435,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 2437,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2438,
+    "type": [
+      "Text"
+    ],
+    "value": "local"
+  },
+  {
+    "pos": 2443,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2444,
+    "type": [
+      "Text"
+    ],
+    "value": "fw;"
+  },
+  {
+    "pos": 2447,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2448,
+    "type": [
+      "Text"
+    ],
+    "value": "for"
+  },
+  {
+    "pos": 2451,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2452,
+    "type": [
+      "Text"
+    ],
+    "value": "fw"
+  },
+  {
+    "pos": 2454,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2455,
+    "type": [
+      "Text"
+    ],
+    "value": "in"
+  },
+  {
+    "pos": 2457,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2458,
+    "type": [
+      "Text"
+    ],
+    "value": "$source;"
+  },
+  {
+    "pos": 2466,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2467,
+    "type": [
+      "Text"
+    ],
+    "value": "do"
+  },
+  {
+    "pos": 2469,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2470,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 2472,
+    "type": [
+      "Text"
+    ],
+    "value": "local"
+  },
+  {
+    "pos": 2477,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2478,
+    "type": [
+      "Text"
+    ],
+    "value": "_f=${fw%::*}"
+  },
+  {
+    "pos": 2490,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2491,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 2493,
+    "type": [
+      "Text"
+    ],
+    "value": "case"
+  },
+  {
+    "pos": 2497,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2498,
+    "type": [
+      "Text"
+    ],
+    "value": "$_f"
+  },
+  {
+    "pos": 2501,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2502,
+    "type": [
+      "Text"
+    ],
+    "value": "in"
+  },
+  {
+    "pos": 2504,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2505,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 2507,
+    "type": [
+      "Text"
+    ],
+    "value": "*.hcd*)"
+  },
+  {
+    "pos": 2514,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2515,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t\t"
+  },
+  {
+    "pos": 2518,
+    "type": [
+      "Text"
+    ],
+    "value": "install"
+  },
+  {
+    "pos": 2525,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2526,
+    "type": [
+      "Text"
+    ],
+    "value": "-Dm"
+  },
+  {
+    "pos": 2529,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2530,
+    "type": [
+      "Text"
+    ],
+    "value": "644"
+  },
+  {
+    "pos": 2533,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2534,
+    "type": [
+      "Text"
+    ],
+    "value": "$srcdir/$_f"
+  },
+  {
+    "pos": 2545,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2546,
+    "type": [
+      "Text"
+    ],
+    "value": "\\"
+  },
+  {
+    "pos": 2547,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2548,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t\t\t"
+  },
+  {
+    "pos": 2552,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$pkgdir\""
+  },
+  {
+    "pos": 2561,
+    "type": [
+      "Text"
+    ],
+    "value": "/lib/firmware/brcm/\"${_f%.*}\""
+  },
+  {
+    "pos": 2590,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2591,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t\t"
+  },
+  {
+    "pos": 2594,
+    "type": [
+      "Text"
+    ],
+    "value": ";;"
+  },
+  {
+    "pos": 2596,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2597,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 2599,
+    "type": [
+      "Text"
+    ],
+    "value": "esac"
+  },
+  {
+    "pos": 2603,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2604,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2605,
+    "type": [
+      "Text"
+    ],
+    "value": "done"
+  },
+  {
+    "pos": 2609,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 2611,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2612,
+    "type": [
+      "Text"
+    ],
+    "value": "rm"
+  },
+  {
+    "pos": 2614,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2615,
+    "type": [
+      "Text"
+    ],
+    "value": "-f"
+  },
+  {
+    "pos": 2617,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2618,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}/usr/lib/firmware/{Makefile,README,configure,GPL-3}\""
+  },
+  {
+    "pos": 2680,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 2682,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2683,
+    "type": [
+      "Text"
+    ],
+    "value": "find"
+  },
+  {
+    "pos": 2687,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2688,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"${pkgdir}\""
+  },
+  {
+    "pos": 2699,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2700,
+    "type": [
+      "Text"
+    ],
+    "value": "\\("
+  },
+  {
+    "pos": 2702,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2703,
+    "type": [
+      "Text"
+    ],
+    "value": "-name"
+  },
+  {
+    "pos": 2708,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2709,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'*.S'"
+  },
+  {
+    "pos": 2714,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2715,
+    "type": [
+      "Text"
+    ],
+    "value": "-or"
+  },
+  {
+    "pos": 2718,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2719,
+    "type": [
+      "Text"
+    ],
+    "value": "-name"
+  },
+  {
+    "pos": 2724,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2725,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'*.asm'"
+  },
+  {
+    "pos": 2732,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2733,
+    "type": [
+      "Text"
+    ],
+    "value": "-or"
+  },
+  {
+    "pos": 2736,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2737,
+    "type": [
+      "Text"
+    ],
+    "value": "\\"
+  },
+  {
+    "pos": 2738,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2739,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 2741,
+    "type": [
+      "Text"
+    ],
+    "value": "-name"
+  },
+  {
+    "pos": 2746,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2747,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'*.c'"
+  },
+  {
+    "pos": 2752,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2753,
+    "type": [
+      "Text"
+    ],
+    "value": "-or"
+  },
+  {
+    "pos": 2756,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2757,
+    "type": [
+      "Text"
+    ],
+    "value": "-name"
+  },
+  {
+    "pos": 2762,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2763,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'*.h'"
+  },
+  {
+    "pos": 2768,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2769,
+    "type": [
+      "Text"
+    ],
+    "value": "-or"
+  },
+  {
+    "pos": 2772,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2773,
+    "type": [
+      "Text"
+    ],
+    "value": "-name"
+  },
+  {
+    "pos": 2778,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2779,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'*.pl'"
+  },
+  {
+    "pos": 2785,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2786,
+    "type": [
+      "Text"
+    ],
+    "value": "-or"
+  },
+  {
+    "pos": 2789,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2790,
+    "type": [
+      "Text"
+    ],
+    "value": "\\"
+  },
+  {
+    "pos": 2791,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2792,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "                "
+  },
+  {
+    "pos": 2808,
+    "type": [
+      "Text"
+    ],
+    "value": "-name"
+  },
+  {
+    "pos": 2813,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2814,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'Makefile'"
+  },
+  {
+    "pos": 2824,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2825,
+    "type": [
+      "Text"
+    ],
+    "value": "\\)"
+  },
+  {
+    "pos": 2827,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2828,
+    "type": [
+      "Text"
+    ],
+    "value": "-exec"
+  },
+  {
+    "pos": 2833,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2834,
+    "type": [
+      "Text"
+    ],
+    "value": "rm"
+  },
+  {
+    "pos": 2836,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2837,
+    "type": [
+      "Text"
+    ],
+    "value": "--"
+  },
+  {
+    "pos": 2839,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2840,
+    "type": [
+      "Text"
+    ],
+    "value": "{}"
+  },
+  {
+    "pos": 2842,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2843,
+    "type": [
+      "Text"
+    ],
+    "value": "\\;"
+  },
+  {
+    "pos": 2845,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2846,
+    "type": [
+      "Text"
+    ],
+    "value": "}"
+  },
+  {
+    "pos": 2847,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 2849,
+    "type": [
+      "Text"
+    ],
+    "value": "_folder()"
+  },
+  {
+    "pos": 2858,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2859,
+    "type": [
+      "Text"
+    ],
+    "value": "{"
+  },
+  {
+    "pos": 2860,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2861,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2862,
+    "type": [
+      "Text"
+    ],
+    "value": "local"
+  },
+  {
+    "pos": 2867,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2868,
+    "type": [
+      "Text"
+    ],
+    "value": "folder=${subpkgname##linux-firmware-}"
+  },
+  {
+    "pos": 2905,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2906,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2907,
+    "type": [
+      "Text"
+    ],
+    "value": "pkgdesc=\"firmware"
+  },
+  {
+    "pos": 2924,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2925,
+    "type": [
+      "Text"
+    ],
+    "value": "files"
+  },
+  {
+    "pos": 2930,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2931,
+    "type": [
+      "Text"
+    ],
+    "value": "for"
+  },
+  {
+    "pos": 2934,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2935,
+    "type": [
+      "Text"
+    ],
+    "value": "linux"
+  },
+  {
+    "pos": 2940,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2941,
+    "type": [
+      "ArraySep",
+      "Start"
+    ],
+    "value": "("
+  },
+  {
+    "pos": 2942,
+    "type": [
+      "Text"
+    ],
+    "value": "$folder"
+  },
+  {
+    "pos": 2949,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 2950,
+    "type": [
+      "Text"
+    ],
+    "value": "folder)\""
+  },
+  {
+    "pos": 2958,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2959,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2960,
+    "type": [
+      "Text"
+    ],
+    "value": "depends=\"\""
+  },
+  {
+    "pos": 2970,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 2971,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 2972,
+    "type": [
+      "Text"
+    ],
+    "value": "provides=\"linux-firmware-any\""
+  },
+  {
+    "pos": 3001,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3002,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3003,
+    "type": [
+      "Text"
+    ],
+    "value": "provider_priority="
+  },
+  {
+    "pos": 3021,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 3023,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3024,
+    "type": [
+      "Comment"
+    ],
+    "value": "# Move /lib/firmware/$folder (case insensitive)"
+  },
+  {
+    "pos": 3071,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3072,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3073,
+    "type": [
+      "Text"
+    ],
+    "value": "mkdir"
+  },
+  {
+    "pos": 3078,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3079,
+    "type": [
+      "Text"
+    ],
+    "value": "-p"
+  },
+  {
+    "pos": 3081,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3082,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$subpkgdir/lib/firmware\""
+  },
+  {
+    "pos": 3107,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3108,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3109,
+    "type": [
+      "Text"
+    ],
+    "value": "mv"
+  },
+  {
+    "pos": 3111,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3112,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$(find \""
+  },
+  {
+    "pos": 3121,
+    "type": [
+      "Text"
+    ],
+    "value": "$pkgdir/lib/firmware\""
+  },
+  {
+    "pos": 3142,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3143,
+    "type": [
+      "Text"
+    ],
+    "value": "-iname"
+  },
+  {
+    "pos": 3149,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3150,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$folder\""
+  },
+  {
+    "pos": 3159,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3160,
+    "type": [
+      "Text"
+    ],
+    "value": "-type"
+  },
+  {
+    "pos": 3165,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3166,
+    "type": [
+      "Text"
+    ],
+    "value": "d)\""
+  },
+  {
+    "pos": 3169,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3170,
+    "type": [
+      "Text"
+    ],
+    "value": "\\"
+  },
+  {
+    "pos": 3171,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3172,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 3174,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$subpkgdir/lib/firmware\""
+  },
+  {
+    "pos": 3199,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3200,
+    "type": [
+      "Text"
+    ],
+    "value": "}"
+  },
+  {
+    "pos": 3201,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 3203,
+    "type": [
+      "Text"
+    ],
+    "value": "other()"
+  },
+  {
+    "pos": 3210,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3211,
+    "type": [
+      "Text"
+    ],
+    "value": "{"
+  },
+  {
+    "pos": 3212,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3213,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3214,
+    "type": [
+      "Comment"
+    ],
+    "value": "# Requires subfolders to be split in subpackages"
+  },
+  {
+    "pos": 3262,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3263,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3264,
+    "type": [
+      "Text"
+    ],
+    "value": "local"
+  },
+  {
+    "pos": 3269,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3270,
+    "type": [
+      "Text"
+    ],
+    "value": "leftover=\"\""
+  },
+  {
+    "pos": 3281,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3282,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3283,
+    "type": [
+      "Text"
+    ],
+    "value": "local"
+  },
+  {
+    "pos": 3288,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3289,
+    "type": [
+      "Text"
+    ],
+    "value": "i"
+  },
+  {
+    "pos": 3290,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3291,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3292,
+    "type": [
+      "Text"
+    ],
+    "value": "for"
+  },
+  {
+    "pos": 3295,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3296,
+    "type": [
+      "Text"
+    ],
+    "value": "i"
+  },
+  {
+    "pos": 3297,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3298,
+    "type": [
+      "Text"
+    ],
+    "value": "in"
+  },
+  {
+    "pos": 3300,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3301,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$pkgdir\""
+  },
+  {
+    "pos": 3310,
+    "type": [
+      "Text"
+    ],
+    "value": "/lib/firmware/*;"
+  },
+  {
+    "pos": 3326,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3327,
+    "type": [
+      "Text"
+    ],
+    "value": "do"
+  },
+  {
+    "pos": 3329,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3330,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 3332,
+    "type": [
+      "Text"
+    ],
+    "value": "["
+  },
+  {
+    "pos": 3333,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3334,
+    "type": [
+      "Text"
+    ],
+    "value": "-d"
+  },
+  {
+    "pos": 3336,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3337,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$i\""
+  },
+  {
+    "pos": 3341,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3342,
+    "type": [
+      "Text"
+    ],
+    "value": "]"
+  },
+  {
+    "pos": 3343,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3344,
+    "type": [
+      "Text"
+    ],
+    "value": "&&"
+  },
+  {
+    "pos": 3346,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3347,
+    "type": [
+      "Text"
+    ],
+    "value": "leftover=\"$leftover"
+  },
+  {
+    "pos": 3366,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3367,
+    "type": [
+      "Text"
+    ],
+    "value": "$(basename"
+  },
+  {
+    "pos": 3377,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3378,
+    "type": [
+      "Text"
+    ],
+    "value": "$i)\""
+  },
+  {
+    "pos": 3382,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3383,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3384,
+    "type": [
+      "Text"
+    ],
+    "value": "done"
+  },
+  {
+    "pos": 3388,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3389,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3390,
+    "type": [
+      "Text"
+    ],
+    "value": "if"
+  },
+  {
+    "pos": 3392,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3393,
+    "type": [
+      "Text"
+    ],
+    "value": "["
+  },
+  {
+    "pos": 3394,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3395,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$leftover\""
+  },
+  {
+    "pos": 3406,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3407,
+    "type": [
+      "Text"
+    ],
+    "value": "!="
+  },
+  {
+    "pos": 3409,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3410,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"\""
+  },
+  {
+    "pos": 3412,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3413,
+    "type": [
+      "Text"
+    ],
+    "value": "];"
+  },
+  {
+    "pos": 3415,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3416,
+    "type": [
+      "Text"
+    ],
+    "value": "then"
+  },
+  {
+    "pos": 3420,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3421,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 3423,
+    "type": [
+      "Text"
+    ],
+    "value": "local"
+  },
+  {
+    "pos": 3428,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3429,
+    "type": [
+      "Text"
+    ],
+    "value": "fixed"
+  },
+  {
+    "pos": 3434,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3435,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 3437,
+    "type": [
+      "Text"
+    ],
+    "value": "error"
+  },
+  {
+    "pos": 3442,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3443,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"Not all subfolders have been moved to subpackages!\""
+  },
+  {
+    "pos": 3495,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3496,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 3498,
+    "type": [
+      "Text"
+    ],
+    "value": "error"
+  },
+  {
+    "pos": 3503,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3504,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"Fix this by adjusting _folders as follows:\""
+  },
+  {
+    "pos": 3548,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3549,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 3551,
+    "type": [
+      "Text"
+    ],
+    "value": "fixed=\"$(echo"
+  },
+  {
+    "pos": 3564,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3565,
+    "type": [
+      "Text"
+    ],
+    "value": "$_folders$leftover"
+  },
+  {
+    "pos": 3583,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3584,
+    "type": [
+      "Text"
+    ],
+    "value": "|"
+  },
+  {
+    "pos": 3585,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3586,
+    "type": [
+      "Text"
+    ],
+    "value": "tr"
+  },
+  {
+    "pos": 3588,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3589,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\" \""
+  },
+  {
+    "pos": 3592,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3593,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"\\n\""
+  },
+  {
+    "pos": 3597,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3598,
+    "type": [
+      "Text"
+    ],
+    "value": "|"
+  },
+  {
+    "pos": 3599,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3600,
+    "type": [
+      "Text"
+    ],
+    "value": "tr"
+  },
+  {
+    "pos": 3602,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3603,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'[A-Z]'"
+  },
+  {
+    "pos": 3610,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3611,
+    "type": [
+      "Literal",
+      "String",
+      "Single"
+    ],
+    "value": "'[a-z]'"
+  },
+  {
+    "pos": 3618,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3619,
+    "type": [
+      "Text"
+    ],
+    "value": "|"
+  },
+  {
+    "pos": 3620,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3621,
+    "type": [
+      "Text"
+    ],
+    "value": "sort)\""
+  },
+  {
+    "pos": 3627,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3628,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 3630,
+    "type": [
+      "Text"
+    ],
+    "value": "echo"
+  },
+  {
+    "pos": 3634,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3635,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"_folders=\\\"$(printf \""
+  },
+  {
+    "pos": 3657,
+    "type": [
+      "Text"
+    ],
+    "value": "$fixed\""
+  },
+  {
+    "pos": 3664,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3665,
+    "type": [
+      "Text"
+    ],
+    "value": "|"
+  },
+  {
+    "pos": 3666,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3667,
+    "type": [
+      "Text"
+    ],
+    "value": "tr"
+  },
+  {
+    "pos": 3669,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3670,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"\\n\""
+  },
+  {
+    "pos": 3674,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3675,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\" \""
+  },
+  {
+    "pos": 3678,
+    "type": [
+      "ArraySep",
+      "End"
+    ],
+    "value": ")"
+  },
+  {
+    "pos": 3679,
+    "type": [
+      "Text"
+    ],
+    "value": "\\\"\""
+  },
+  {
+    "pos": 3682,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3683,
+    "type": [
+      "Text"
+    ],
+    "value": "|"
+  },
+  {
+    "pos": 3684,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3685,
+    "type": [
+      "Text"
+    ],
+    "value": "fold"
+  },
+  {
+    "pos": 3689,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3690,
+    "type": [
+      "Text"
+    ],
+    "value": "-s"
+  },
+  {
+    "pos": 3692,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3693,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t\t"
+  },
+  {
+    "pos": 3695,
+    "type": [
+      "Text"
+    ],
+    "value": "return"
+  },
+  {
+    "pos": 3701,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3702,
+    "type": [
+      "Text"
+    ],
+    "value": "1"
+  },
+  {
+    "pos": 3703,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3704,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3705,
+    "type": [
+      "Text"
+    ],
+    "value": "fi"
+  },
+  {
+    "pos": 3707,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 3709,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3710,
+    "type": [
+      "Comment"
+    ],
+    "value": "# Move /lib/firmware (which doesn't have subfolders now)"
+  },
+  {
+    "pos": 3766,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3767,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3768,
+    "type": [
+      "Text"
+    ],
+    "value": "pkgdesc=\"firmware"
+  },
+  {
+    "pos": 3785,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3786,
+    "type": [
+      "Text"
+    ],
+    "value": "files"
+  },
+  {
+    "pos": 3791,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3792,
+    "type": [
+      "Text"
+    ],
+    "value": "for"
+  },
+  {
+    "pos": 3795,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3796,
+    "type": [
+      "Text"
+    ],
+    "value": "linux"
+  },
+  {
+    "pos": 3801,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3802,
+    "type": [
+      "ArraySep",
+      "Start"
+    ],
+    "value": "("
+  },
+  {
+    "pos": 3803,
+    "type": [
+      "Text"
+    ],
+    "value": "uncategorized)\""
+  },
+  {
+    "pos": 3818,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3819,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3820,
+    "type": [
+      "Text"
+    ],
+    "value": "depends=\"\""
+  },
+  {
+    "pos": 3830,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3831,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3832,
+    "type": [
+      "Text"
+    ],
+    "value": "provides=\"linux-firmware-any\""
+  },
+  {
+    "pos": 3861,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3862,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3863,
+    "type": [
+      "Text"
+    ],
+    "value": "provider_priority="
+  },
+  {
+    "pos": 3881,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3882,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3883,
+    "type": [
+      "Text"
+    ],
+    "value": "mkdir"
+  },
+  {
+    "pos": 3888,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3889,
+    "type": [
+      "Text"
+    ],
+    "value": "-p"
+  },
+  {
+    "pos": 3891,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3892,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$subpkgdir\""
+  },
+  {
+    "pos": 3904,
+    "type": [
+      "Text"
+    ],
+    "value": "/"
+  },
+  {
+    "pos": 3905,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3906,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3907,
+    "type": [
+      "Text"
+    ],
+    "value": "mv"
+  },
+  {
+    "pos": 3909,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3910,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$pkgdir\""
+  },
+  {
+    "pos": 3919,
+    "type": [
+      "Text"
+    ],
+    "value": "/lib"
+  },
+  {
+    "pos": 3923,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3924,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$subpkgdir\""
+  },
+  {
+    "pos": 3936,
+    "type": [
+      "Text"
+    ],
+    "value": "/"
+  },
+  {
+    "pos": 3937,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3938,
+    "type": [
+      "Text"
+    ],
+    "value": "}"
+  },
+  {
+    "pos": 3939,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 3941,
+    "type": [
+      "Text"
+    ],
+    "value": "none()"
+  },
+  {
+    "pos": 3947,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 3948,
+    "type": [
+      "Text"
+    ],
+    "value": "{"
+  },
+  {
+    "pos": 3949,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3950,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3951,
+    "type": [
+      "Comment"
+    ],
+    "value": "# dummy package with no firmware"
+  },
+  {
+    "pos": 3983,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 3984,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 3985,
+    "type": [
+      "Text"
+    ],
+    "value": "pkgdesc=\"Empty"
+  },
+  {
+    "pos": 3999,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4000,
+    "type": [
+      "Text"
+    ],
+    "value": "linux"
+  },
+  {
+    "pos": 4005,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4006,
+    "type": [
+      "Text"
+    ],
+    "value": "firwmare"
+  },
+  {
+    "pos": 4014,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4015,
+    "type": [
+      "Text"
+    ],
+    "value": "package"
+  },
+  {
+    "pos": 4022,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4023,
+    "type": [
+      "Text"
+    ],
+    "value": "for"
+  },
+  {
+    "pos": 4026,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4027,
+    "type": [
+      "Text"
+    ],
+    "value": "those"
+  },
+  {
+    "pos": 4032,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4033,
+    "type": [
+      "Text"
+    ],
+    "value": "who"
+  },
+  {
+    "pos": 4036,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4037,
+    "type": [
+      "Text"
+    ],
+    "value": "does"
+  },
+  {
+    "pos": 4041,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4042,
+    "type": [
+      "Text"
+    ],
+    "value": "not"
+  },
+  {
+    "pos": 4045,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4046,
+    "type": [
+      "Text"
+    ],
+    "value": "need"
+  },
+  {
+    "pos": 4050,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4051,
+    "type": [
+      "Text"
+    ],
+    "value": "any"
+  },
+  {
+    "pos": 4054,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4055,
+    "type": [
+      "Text"
+    ],
+    "value": "firmware\""
+  },
+  {
+    "pos": 4064,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4065,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4066,
+    "type": [
+      "Text"
+    ],
+    "value": "provider_priority="
+  },
+  {
+    "pos": 4084,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4085,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4086,
+    "type": [
+      "Text"
+    ],
+    "value": "provides=\"linux-firmware-any\""
+  },
+  {
+    "pos": 4115,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4116,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4117,
+    "type": [
+      "Text"
+    ],
+    "value": "depends="
+  },
+  {
+    "pos": 4125,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4126,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4127,
+    "type": [
+      "Text"
+    ],
+    "value": "mkdir"
+  },
+  {
+    "pos": 4132,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4133,
+    "type": [
+      "Text"
+    ],
+    "value": "-p"
+  },
+  {
+    "pos": 4135,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4136,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$subpkgdir\""
+  },
+  {
+    "pos": 4148,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4149,
+    "type": [
+      "Text"
+    ],
+    "value": "}"
+  },
+  {
+    "pos": 4150,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 4152,
+    "type": [
+      "Text"
+    ],
+    "value": "ucode()"
+  },
+  {
+    "pos": 4159,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4160,
+    "type": [
+      "Text"
+    ],
+    "value": "{"
+  },
+  {
+    "pos": 4161,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4162,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4163,
+    "type": [
+      "Text"
+    ],
+    "value": "pkgdesc=\"Microcode"
+  },
+  {
+    "pos": 4181,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4182,
+    "type": [
+      "Text"
+    ],
+    "value": "update"
+  },
+  {
+    "pos": 4188,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4189,
+    "type": [
+      "Text"
+    ],
+    "value": "files"
+  },
+  {
+    "pos": 4194,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4195,
+    "type": [
+      "Text"
+    ],
+    "value": "for"
+  },
+  {
+    "pos": 4198,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4199,
+    "type": [
+      "Text"
+    ],
+    "value": "AMD"
+  },
+  {
+    "pos": 4202,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4203,
+    "type": [
+      "Text"
+    ],
+    "value": "CPUs\""
+  },
+  {
+    "pos": 4208,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4209,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4210,
+    "type": [
+      "Text"
+    ],
+    "value": "provider_priority="
+  },
+  {
+    "pos": 4228,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4229,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4230,
+    "type": [
+      "Text"
+    ],
+    "value": "provides="
+  },
+  {
+    "pos": 4239,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4240,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4241,
+    "type": [
+      "Text"
+    ],
+    "value": "depends="
+  },
+  {
+    "pos": 4249,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 4251,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4252,
+    "type": [
+      "Comment"
+    ],
+    "value": "# build ported from Arch Linux's PKGBUILD"
+  },
+  {
+    "pos": 4293,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4294,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4295,
+    "type": [
+      "Text"
+    ],
+    "value": "mkdir"
+  },
+  {
+    "pos": 4300,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4301,
+    "type": [
+      "Text"
+    ],
+    "value": "-p"
+  },
+  {
+    "pos": 4303,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4304,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$subpkgdir\""
+  },
+  {
+    "pos": 4316,
+    "type": [
+      "Text"
+    ],
+    "value": "/boot"
+  },
+  {
+    "pos": 4321,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4322,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4323,
+    "type": [
+      "Text"
+    ],
+    "value": "mkdir"
+  },
+  {
+    "pos": 4328,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4329,
+    "type": [
+      "Text"
+    ],
+    "value": "-p"
+  },
+  {
+    "pos": 4331,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4332,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$builddir\""
+  },
+  {
+    "pos": 4343,
+    "type": [
+      "Text"
+    ],
+    "value": "/kernel/x86/microcode"
+  },
+  {
+    "pos": 4364,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4365,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4366,
+    "type": [
+      "Text"
+    ],
+    "value": "cat"
+  },
+  {
+    "pos": 4369,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4370,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$pkgdir\""
+  },
+  {
+    "pos": 4379,
+    "type": [
+      "Text"
+    ],
+    "value": "/lib/firmware/amd-ucode/microcode_amd*.bin"
+  },
+  {
+    "pos": 4421,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4422,
+    "type": [
+      "Text"
+    ],
+    "value": ">"
+  },
+  {
+    "pos": 4423,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4424,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$builddir\""
+  },
+  {
+    "pos": 4435,
+    "type": [
+      "Text"
+    ],
+    "value": "/kernel/x86/microcode/AuthenticAMD.bin"
+  },
+  {
+    "pos": 4473,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4474,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4475,
+    "type": [
+      "Text"
+    ],
+    "value": "["
+  },
+  {
+    "pos": 4476,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4477,
+    "type": [
+      "Text"
+    ],
+    "value": "-n"
+  },
+  {
+    "pos": 4479,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4480,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$SOURCE_DATE_EPOCH\""
+  },
+  {
+    "pos": 4500,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4501,
+    "type": [
+      "Text"
+    ],
+    "value": "]"
+  },
+  {
+    "pos": 4502,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4503,
+    "type": [
+      "Text"
+    ],
+    "value": "&&"
+  },
+  {
+    "pos": 4505,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4506,
+    "type": [
+      "Text"
+    ],
+    "value": "touch"
+  },
+  {
+    "pos": 4511,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4512,
+    "type": [
+      "Text"
+    ],
+    "value": "-d"
+  },
+  {
+    "pos": 4514,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4515,
+    "type": [
+      "Text"
+    ],
+    "value": "@$SOURCE_DATE_EPOCH"
+  },
+  {
+    "pos": 4534,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4535,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$builddir\""
+  },
+  {
+    "pos": 4546,
+    "type": [
+      "Text"
+    ],
+    "value": "/kernel/x86/microcode/AuthenticAMD.bin"
+  },
+  {
+    "pos": 4584,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4585,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t"
+  },
+  {
+    "pos": 4586,
+    "type": [
+      "Text"
+    ],
+    "value": "cd"
+  },
+  {
+    "pos": 4588,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4589,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$builddir\""
+  },
+  {
+    "pos": 4600,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4601,
+    "type": [
+      "Text"
+    ],
+    "value": "&&"
+  },
+  {
+    "pos": 4603,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4604,
+    "type": [
+      "Text"
+    ],
+    "value": "echo"
+  },
+  {
+    "pos": 4608,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4609,
+    "type": [
+      "Text"
+    ],
+    "value": "kernel/x86/microcode/AuthenticAMD.bin"
+  },
+  {
+    "pos": 4646,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4647,
+    "type": [
+      "Text"
+    ],
+    "value": "|"
+  },
+  {
+    "pos": 4648,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4649,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t  "
+  },
+  {
+    "pos": 4652,
+    "type": [
+      "Text"
+    ],
+    "value": "bsdtar"
+  },
+  {
+    "pos": 4658,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4659,
+    "type": [
+      "Text"
+    ],
+    "value": "--uid"
+  },
+  {
+    "pos": 4664,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4665,
+    "type": [
+      "Text"
+    ],
+    "value": "0"
+  },
+  {
+    "pos": 4666,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4667,
+    "type": [
+      "Text"
+    ],
+    "value": "--gid"
+  },
+  {
+    "pos": 4672,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4673,
+    "type": [
+      "Text"
+    ],
+    "value": "0"
+  },
+  {
+    "pos": 4674,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4675,
+    "type": [
+      "Text"
+    ],
+    "value": "-cnf"
+  },
+  {
+    "pos": 4679,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4680,
+    "type": [
+      "Text"
+    ],
+    "value": "-"
+  },
+  {
+    "pos": 4681,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4682,
+    "type": [
+      "Text"
+    ],
+    "value": "-T"
+  },
+  {
+    "pos": 4684,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4685,
+    "type": [
+      "Text"
+    ],
+    "value": "-"
+  },
+  {
+    "pos": 4686,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4687,
+    "type": [
+      "Text"
+    ],
+    "value": "|"
+  },
+  {
+    "pos": 4688,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4689,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "\t  "
+  },
+  {
+    "pos": 4692,
+    "type": [
+      "Text"
+    ],
+    "value": "bsdtar"
+  },
+  {
+    "pos": 4698,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4699,
+    "type": [
+      "Text"
+    ],
+    "value": "--null"
+  },
+  {
+    "pos": 4705,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4706,
+    "type": [
+      "Text"
+    ],
+    "value": "-cf"
+  },
+  {
+    "pos": 4709,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4710,
+    "type": [
+      "Text"
+    ],
+    "value": "-"
+  },
+  {
+    "pos": 4711,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4712,
+    "type": [
+      "Text"
+    ],
+    "value": "--format=newc"
+  },
+  {
+    "pos": 4725,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4726,
+    "type": [
+      "Text"
+    ],
+    "value": "@-"
+  },
+  {
+    "pos": 4728,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4729,
+    "type": [
+      "Text"
+    ],
+    "value": ">"
+  },
+  {
+    "pos": 4730,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4731,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"$subpkgdir\""
+  },
+  {
+    "pos": 4743,
+    "type": [
+      "Text"
+    ],
+    "value": "/boot/amd-ucode.img"
+  },
+  {
+    "pos": 4762,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 4763,
+    "type": [
+      "Text"
+    ],
+    "value": "}"
+  },
+  {
+    "pos": 4764,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 4766,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "sha512sums"
+  },
+  {
+    "pos": 4776,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 4777,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"f282bdcd0e62f446a3c859876319ae2fb4b2e129022a4b2b1ced45f38c8b192ccb07a4480ff4d41ed8fc13c0a38bf0c0d5a5d98515a1750d655db5d919c6af8c  linux-firmware-20210511.tar.gz\n355c940b4fd597101c332207678fd28154d7e7a90cb374b1fdf230d2061bf979af0209c5a423fca8d23ddb3d95abec741e7dd651da7f0aaa97459ed4fe4d2355  BCM43430A1.hcd.e7fd1669\n1707c2955ceac3e6fc4b1edb8965c871dcfab21ce85cc617de67d7e6f3d6f9b93ee5a8a202de6b20f7b43d1462668287a8569786146cadf5e0268058d2524a9c  BCM4345C0.hcd.e7fd1669\nc8b943bfeffa54ce1687ca69884e9d56efd28d5ea1dbef660915a80c3e036a8675e7d4299102c32006193e4895367654bb67e2d08e66d7803f396eee7e3dfbd6  BCM43430B0.hcd.e7fd1669\neac7428befa36952542e19d3c4a5fa96e1cb3a56c3b00770534909fb0d8caf503a42368175e715e1de58e50cfbd2b4c8ea5a26af3bd546cbbaf8d2c12457a628  BCM4345C5.hcd.e7fd1669\""
+  },
+  {
+    "pos": 5553,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  }
+]

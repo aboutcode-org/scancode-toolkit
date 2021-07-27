@@ -1,0 +1,39 @@
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+pkgname=lua-lustache
+_rockname=lustache
+pkgver=1.3.1
+_pkgver=$pkgver-0
+pkgrel=3
+pkgdesc="Logic-less {{mustache}} templates with Lua"
+url="http://olivinelabs.com/lustache/"
+arch="noarch"
+license="MIT"
+depends="lua"
+provides="$pkgname-common=$pkgver-r$pkgrel"  # for backward compatibility
+replaces="$pkgname-common"  # for backward compatibility
+source="$pkgname-$pkgver.tar.gz::https://github.com/Olivine-Labs/$_rockname/archive/v$_pkgver.tar.gz"
+builddir="$srcdir/$_rockname-$_pkgver"
+
+_luaversions="5.1 5.2 5.3 5.4"
+for _v in $_luaversions; do
+	provides="$provides lua$_v-${pkgname#lua-}=$pkgver-r$pkgrel"  # for backward compatibility
+done
+
+prepare() {
+	default_prepare
+
+	find "$builddir"/src -type f -exec chmod 644 {} +
+}
+
+package() {
+	local lmod_dir="$pkgdir/usr/share/lua/common"
+	local rockdir="$pkgdir/usr/lib/luarocks/rocks-common/$_rockname/$_pkgver"
+
+	mkdir -p "$lmod_dir"
+	cp -r "$builddir"/src/* "$lmod_dir"/
+
+	mkdir -p "$rockdir"
+	echo 'rock_manifest = {}' > "$rockdir"/rock_manifest
+}
+
+sha512sums="f1ba0bdd38e60957df1995f32a73a16d1b430072af4e14cce530345c74d542021223c0ef41b0f997f88d762bb194fff7119701cd289e16e3e38dfe3f10d0d9d8  lua-lustache-1.3.1.tar.gz"
