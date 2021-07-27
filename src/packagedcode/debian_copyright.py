@@ -1149,8 +1149,8 @@ def clean_debian_comma_logic(exp):
     a parsable license expression.
 
     For example:
-    >>> clean_debian_comma_logic(`lgpl-3 or gpl-2, and apache-2.0`)
-    '(lgpl-3 or gpl-2) and apache-2.0'
+    >>> clean_debian_comma_logic('lgpl-3 or gpl-2, and apache-2.0')
+    '(lgpl-3 or gpl-2) and (apache-2.0)'
     """
     subexps = []
     while ', and' in exp:
