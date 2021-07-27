@@ -9,6 +9,8 @@
 
 import os.path
 
+import pygmars
+
 from packagedcode import bashparse
 from packagedcode.bashparse import ShellVariable
 
@@ -22,6 +24,13 @@ class TestBashParserDatadriven(PackageTester):
     test_data_dir = test_data_dir
 
 
+def tree_to_dict(o):
+    if isinstance(o, pygmars.Token):
+        return dict(label=o.label, value=o.value, start_line=o.start_line, pos=o.pos)
+    elif isinstance(o, pygmars.tree.Tree):
+        return {o.label: [tree_to_dict(child) for child in o]}
+
+
 build_tests(
     test_dir=os.path.join(test_data_dir, 'bashparse'),
     test_file_suffix='.sh',
@@ -30,11 +39,6 @@ build_tests(
     test_method_prefix='test_collect_shell_variables_',
     regen=False,
 )
-
-
-def clean_spaces(s):
-    lines = (l.rstrip() for l in s.splitlines())
-    return '\n'.join(lines)
 
 
 class TestBashParser(PackageTester):
@@ -54,48 +58,163 @@ gnat() {
 }
 '''
 
-        result = [str(t) for t in bashparse.get_tokens(text)]
         expected = [
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=1, pos=0)",
-            "Token(value='# Contributor: Natanael Copa <ncopa@alpinelinux.org>', label='COMMENT', start_line=2, pos=1)",
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=2, pos=53)",
-            "Token(value='pkgname', label='NAME-VARIABLE', start_line=3, pos=54)",
-            "Token(value='=', label='OPERATOR-EQUAL', start_line=3, pos=61)",
-            "Token(value='gcc', label='TEXT', start_line=3, pos=62)",
-            "Token(value='\\n\\n', label='TEXT-WS-LF', start_line=3, pos=65)",
-            "Token(value='pkgname', label='NAME-VARIABLE', start_line=5, pos=67)",
-            "Token(value='=', label='OPERATOR-EQUAL', start_line=5, pos=74)",
-            'Token(value=\'"$pkgname$_target"\', label=\'LITERAL-STRING-DOUBLE\', start_line=5, pos=75)',
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=5, pos=93)",
-            "Token(value='foo', label='NAME-VARIABLE', start_line=6, pos=94)",
-            "Token(value='=', label='OPERATOR-EQUAL', start_line=6, pos=97)",
-            "Token(value='bar', label='TEXT', start_line=6, pos=98)",
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=6, pos=101)",
-            "Token(value='baz', label='NAME-VARIABLE', start_line=7, pos=102)",
-            "Token(value='=', label='OPERATOR-EQUAL', start_line=7, pos=105)",
-            "Token(value='$foo', label='TEXT', start_line=7, pos=106)",
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=7, pos=110)",
-            "Token(value='bez', label='NAME-VARIABLE', start_line=8, pos=111)",
-            "Token(value='=', label='OPERATOR-EQUAL', start_line=8, pos=114)",
-            "Token(value='${foo}', label='TEXT', start_line=8, pos=115)",
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=8, pos=121)",
-            "Token(value='gnat()', label='TEXT', start_line=9, pos=122)",
-            "Token(value=' ', label='TEXT-WS', start_line=9, pos=128)",
-            "Token(value='{', label='TEXT', start_line=9, pos=129)",
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=9, pos=130)",
-            "Token(value='    ', label='TEXT-WS', start_line=10, pos=131)",
-            'Token(value=\'pkgdesc="Ada\', label=\'TEXT\', start_line=10, pos=135)',
-            "Token(value=' ', label='TEXT-WS', start_line=10, pos=147)",
-            "Token(value='support', label='TEXT', start_line=10, pos=148)",
-            "Token(value=' ', label='TEXT-WS', start_line=10, pos=155)",
-            "Token(value='for', label='TEXT', start_line=10, pos=156)",
-            "Token(value=' ', label='TEXT-WS', start_line=10, pos=159)",
-            'Token(value=\'GCC"\', label=\'TEXT\', start_line=10, pos=160)',
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=10, pos=164)",
-            "Token(value='}', label='TEXT', start_line=11, pos=165)",
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=11, pos=166)",
+            {'label': 'TEXT-WS-LF',
+             'pos': 0,
+             'start_line': 1,
+             'value': '\n'},
+            {'label': 'COMMENT',
+             'pos': 1,
+             'start_line': 2,
+             'value': '# Contributor: Natanael Copa <ncopa@alpinelinux.org>'},
+            {'label': 'TEXT-WS-LF',
+             'pos': 53,
+             'start_line': 2,
+             'value': '\n'},
+            {'label': 'NAME-VARIABLE',
+             'pos': 54,
+             'start_line': 3,
+             'value': 'pkgname'},
+            {'label': 'OPERATOR-EQUAL',
+             'pos': 61,
+             'start_line': 3,
+             'value': '='},
+            {'label': 'TEXT',
+             'pos': 62,
+             'start_line': 3,
+             'value': 'gcc'},
+            {'label': 'TEXT-WS-LF',
+             'pos': 65,
+             'start_line': 3,
+             'value': '\n'
+                      '\n'},
+            {'label': 'NAME-VARIABLE',
+             'pos': 67,
+             'start_line': 5,
+             'value': 'pkgname'},
+            {'label': 'OPERATOR-EQUAL',
+             'pos': 74,
+             'start_line': 5,
+             'value': '='},
+            {'label': 'LITERAL-STRING-DOUBLE',
+             'pos': 75,
+             'start_line': 5,
+             'value': '"$pkgname$_target"'},
+            {'label': 'TEXT-WS-LF',
+             'pos': 93,
+             'start_line': 5,
+             'value': '\n'},
+            {'label': 'NAME-VARIABLE',
+             'pos': 94,
+             'start_line': 6,
+             'value': 'foo'},
+            {'label': 'OPERATOR-EQUAL',
+             'pos': 97,
+             'start_line': 6,
+             'value': '='},
+            {'label': 'TEXT',
+             'pos': 98,
+             'start_line': 6,
+             'value': 'bar'},
+            {'label': 'TEXT-WS-LF',
+             'pos': 101,
+             'start_line': 6,
+             'value': '\n'},
+            {'label': 'NAME-VARIABLE',
+             'pos': 102,
+             'start_line': 7,
+             'value': 'baz'},
+            {'label': 'OPERATOR-EQUAL',
+             'pos': 105,
+             'start_line': 7,
+             'value': '='},
+            {'label': 'TEXT',
+             'pos': 106,
+             'start_line': 7,
+             'value': '$foo'},
+            {'label': 'TEXT-WS-LF',
+             'pos': 110,
+             'start_line': 7,
+             'value': '\n'},
+            {'label': 'NAME-VARIABLE',
+             'pos': 111,
+             'start_line': 8,
+             'value': 'bez'},
+            {'label': 'OPERATOR-EQUAL',
+             'pos': 114,
+             'start_line': 8,
+             'value': '='},
+            {'label': 'TEXT',
+             'pos': 115,
+             'start_line': 8,
+             'value': '${foo}'},
+            {'label': 'TEXT-WS-LF',
+             'pos': 121,
+             'start_line': 8,
+             'value': '\n'},
+            {'label': 'TEXT',
+             'pos': 122,
+             'start_line': 9,
+             'value': 'gnat()'},
+            {'label': 'TEXT-WS',
+             'pos': 128,
+             'start_line': 9,
+             'value': ' '},
+            {'label': 'TEXT',
+             'pos': 129,
+             'start_line': 9,
+             'value': '{'},
+            {'label': 'TEXT-WS-LF',
+             'pos': 130,
+             'start_line': 9,
+             'value': '\n'},
+            {'label': 'TEXT-WS',
+             'pos': 131,
+             'start_line': 10,
+             'value': '    '},
+            {'label': 'TEXT',
+             'pos': 135,
+             'start_line': 10,
+             'value': 'pkgdesc="Ada'},
+            {'label': 'TEXT-WS',
+             'pos': 147,
+             'start_line': 10,
+             'value': ' '},
+            {'label': 'TEXT',
+             'pos': 148,
+             'start_line': 10,
+             'value': 'support'},
+            {'label': 'TEXT-WS',
+             'pos': 155,
+             'start_line': 10,
+             'value': ' '},
+            {'label': 'TEXT',
+             'pos': 156,
+             'start_line': 10,
+             'value': 'for'},
+            {'label': 'TEXT-WS',
+             'pos': 159,
+             'start_line': 10,
+             'value': ' '},
+            {'label': 'TEXT',
+             'pos': 160,
+             'start_line': 10,
+             'value': 'GCC"'},
+            {'label': 'TEXT-WS-LF',
+             'pos': 164,
+             'start_line': 10,
+             'value': '\n'},
+            {'label': 'TEXT',
+             'pos': 165,
+             'start_line': 11,
+             'value': '}'},
+            {'label': 'TEXT-WS-LF',
+             'pos': 166,
+             'start_line': 11,
+             'value': '\n'},
         ]
 
+        result = [tree_to_dict(o) for o in bashparse.get_tokens(text)]
         assert result == expected
 
     def test_parse_shell_with_variables_grammar_can_parse(self):
@@ -115,8 +234,8 @@ gnat() {
 }
 '''
 
-        result = repr(bashparse.parse_shell(text))
-        assert clean_spaces(result) == clean_spaces(EXPECTED_SIMPLE)
+        result = tree_to_dict(bashparse.parse_shell(text))
+        assert result == EXPECTED_SIMPLE
 
     def test_get_tokens_simple(self):
         text = '''
@@ -125,23 +244,62 @@ baz=$foo
 bez=${foo}
 '''
 
-        result = [str(t) for t in bashparse.get_tokens(text)]
         expected = [
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=1, pos=0)",
-            "Token(value='foo', label='NAME-VARIABLE', start_line=2, pos=1)",
-            "Token(value='=', label='OPERATOR-EQUAL', start_line=2, pos=4)",
-            "Token(value='bar', label='TEXT', start_line=2, pos=5)",
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=2, pos=8)",
-            "Token(value='baz', label='NAME-VARIABLE', start_line=3, pos=9)",
-            "Token(value='=', label='OPERATOR-EQUAL', start_line=3, pos=12)",
-            "Token(value='$foo', label='TEXT', start_line=3, pos=13)",
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=3, pos=17)",
-            "Token(value='bez', label='NAME-VARIABLE', start_line=4, pos=18)",
-            "Token(value='=', label='OPERATOR-EQUAL', start_line=4, pos=21)",
-            "Token(value='${foo}', label='TEXT', start_line=4, pos=22)",
-            "Token(value='\\n', label='TEXT-WS-LF', start_line=4, pos=28)",
+            {'label': 'TEXT-WS-LF',
+             'pos': 0,
+             'start_line': 1,
+             'value': '\n'},
+            {'label': 'NAME-VARIABLE',
+             'pos': 1,
+             'start_line': 2,
+             'value': 'foo'},
+            {'label': 'OPERATOR-EQUAL',
+             'pos': 4,
+             'start_line': 2,
+             'value': '='},
+            {'label': 'TEXT',
+             'pos': 5,
+             'start_line': 2,
+             'value': 'bar'},
+            {'label': 'TEXT-WS-LF',
+             'pos': 8,
+             'start_line': 2,
+             'value': '\n'},
+            {'label': 'NAME-VARIABLE',
+             'pos': 9,
+             'start_line': 3,
+             'value': 'baz'},
+            {'label': 'OPERATOR-EQUAL',
+             'pos': 12,
+             'start_line': 3,
+             'value': '='},
+            {'label': 'TEXT',
+             'pos': 13,
+             'start_line': 3,
+             'value': '$foo'},
+            {'label': 'TEXT-WS-LF',
+             'pos': 17,
+             'start_line': 3,
+             'value': '\n'},
+            {'label': 'NAME-VARIABLE',
+             'pos': 18,
+             'start_line': 4,
+             'value': 'bez'},
+            {'label': 'OPERATOR-EQUAL',
+             'pos': 21,
+             'start_line': 4,
+             'value': '='},
+            {'label': 'TEXT',
+             'pos': 22,
+             'start_line': 4,
+             'value': '${foo}'},
+            {'label': 'TEXT-WS-LF',
+             'pos': 28,
+             'start_line': 4,
+             'value': '\n'},
         ]
 
+        result = [tree_to_dict(o) for o in bashparse.get_tokens(text)]
         assert result == expected
 
     def test_collect_shell_variables_from_text_can_resolve(self):
@@ -339,54 +497,168 @@ d1e10db83a04c02d99f9f6ce03f9  0001-posix_memalign.patch
 
 '''
 
-EXPECTED_SIMPLE = '''(label='ROOT', children=(
-  (label='TEXT-WS-LF', value='\\n')
-  (label='COMMENT', value='# Contributor: Natanael Copa <ncopa@alpinelinux.org>')
-    (label='SHELL-VARIABLE', children=(
-    (label='TEXT-WS-LF', value='\\n')
-    (label='NAME-VARIABLE', value='pkgname')
-    (label='OPERATOR-EQUAL', value='=')
-    (label='TEXT', value='gcc')
-  ))
-    (label='SHELL-VARIABLE', children=(
-    (label='TEXT-WS-LF', value='\\n\\n')
-    (label='NAME-VARIABLE', value='pkgname')
-    (label='OPERATOR-EQUAL', value='=')
-    (label='LITERAL-STRING-DOUBLE', value='"$pkgname$_target"')
-  ))
-    (label='SHELL-VARIABLE', children=(
-    (label='TEXT-WS-LF', value='\\n')
-    (label='NAME-VARIABLE', value='pkgrel')
-    (label='OPERATOR-EQUAL', value='=')
-    (label='TEXT', value='2')
-  ))
-    (label='SHELL-VARIABLE', children=(
-    (label='TEXT-WS-LF', value='\\n')
-    (label='NAME-VARIABLE', value='license')
-    (label='OPERATOR-EQUAL', value='=')
-    (label='LITERAL-STRING-DOUBLE', value='"GPL-2.0-or-later\\n LGPL-2.1-or-later"')
-  ))
-  (label='TEXT-WS-LF', value='\\n')
-  (label='TEXT-WS', value='    ')
-  (label='TEXT', value='license="GPL-2.0-or-later')
-  (label='TEXT-WS-LF', value='\\n')
-  (label='TEXT-WS', value='     ')
-  (label='TEXT', value='LGPL-2.1-or-later"')
-  (label='TEXT-WS-LF', value='\\n\\n')
-  (label='TEXT', value='gnat()')
-  (label='TEXT-WS', value=' ')
-  (label='TEXT', value='{')
-  (label='TEXT-WS-LF', value='\\n')
-  (label='TEXT-WS', value='    ')
-  (label='TEXT', value='pkgdesc="Ada')
-  (label='TEXT-WS', value=' ')
-  (label='TEXT', value='support')
-  (label='TEXT-WS', value=' ')
-  (label='TEXT', value='for')
-  (label='TEXT-WS', value=' ')
-  (label='TEXT', value='GCC"')
-  (label='TEXT-WS-LF', value='\\n')
-  (label='TEXT', value='}')
-  (label='TEXT-WS-LF', value='\\n')
-))
-'''
+EXPECTED_SIMPLE = {
+'ROOT': [{'label': 'TEXT-WS-LF',
+          'pos': 0,
+          'start_line': 1,
+          'value': '\n'},
+         {'label': 'COMMENT',
+          'pos': 1,
+          'start_line': 2,
+          'value': '# Contributor: Natanael Copa <ncopa@alpinelinux.org>'},
+         {'SHELL-VARIABLE': [{'label': 'TEXT-WS-LF',
+                              'pos': 53,
+                              'start_line': 2,
+                              'value': '\n'},
+                             {'label': 'NAME-VARIABLE',
+                              'pos': 54,
+                              'start_line': 3,
+                              'value': 'pkgname'},
+                             {'label': 'OPERATOR-EQUAL',
+                              'pos': 61,
+                              'start_line': 3,
+                              'value': '='},
+                             {'label': 'TEXT',
+                              'pos': 62,
+                              'start_line': 3,
+                              'value': 'gcc'}]},
+         {'SHELL-VARIABLE': [{'label': 'TEXT-WS-LF',
+                              'pos': 65,
+                              'start_line': 3,
+                              'value': '\n'
+                                       '\n'},
+                             {'label': 'NAME-VARIABLE',
+                              'pos': 67,
+                              'start_line': 5,
+                              'value': 'pkgname'},
+                             {'label': 'OPERATOR-EQUAL',
+                              'pos': 74,
+                              'start_line': 5,
+                              'value': '='},
+                             {'label': 'LITERAL-STRING-DOUBLE',
+                              'pos': 75,
+                              'start_line': 5,
+                              'value': '"$pkgname$_target"'}]},
+         {'SHELL-VARIABLE': [{'label': 'TEXT-WS-LF',
+                              'pos': 93,
+                              'start_line': 5,
+                              'value': '\n'},
+                             {'label': 'NAME-VARIABLE',
+                              'pos': 94,
+                              'start_line': 6,
+                              'value': 'pkgrel'},
+                             {'label': 'OPERATOR-EQUAL',
+                              'pos': 100,
+                              'start_line': 6,
+                              'value': '='},
+                             {'label': 'TEXT',
+                              'pos': 101,
+                              'start_line': 6,
+                              'value': '2'}]},
+         {'SHELL-VARIABLE': [{'label': 'TEXT-WS-LF',
+                              'pos': 102,
+                              'start_line': 6,
+                              'value': '\n'},
+                             {'label': 'NAME-VARIABLE',
+                              'pos': 103,
+                              'start_line': 7,
+                              'value': 'license'},
+                             {'label': 'OPERATOR-EQUAL',
+                              'pos': 110,
+                              'start_line': 7,
+                              'value': '='},
+                             {'label': 'LITERAL-STRING-DOUBLE',
+                              'pos': 111,
+                              'start_line': 7,
+                              'value': '"GPL-2.0-or-later\n'
+                                       ' LGPL-2.1-or-later"'}]},
+         {'label': 'TEXT-WS-LF',
+          'pos': 148,
+          'start_line': 8,
+          'value': '\n'},
+         {'label': 'TEXT-WS',
+          'pos': 149,
+          'start_line': 9,
+          'value': '    '},
+         {'label': 'TEXT',
+          'pos': 153,
+          'start_line': 9,
+          'value': 'license="GPL-2.0-or-later'},
+         {'label': 'TEXT-WS-LF',
+          'pos': 178,
+          'start_line': 9,
+          'value': '\n'},
+         {'label': 'TEXT-WS',
+          'pos': 179,
+          'start_line': 10,
+          'value': '     '},
+         {'label': 'TEXT',
+          'pos': 184,
+          'start_line': 10,
+          'value': 'LGPL-2.1-or-later"'},
+         {'label': 'TEXT-WS-LF',
+          'pos': 202,
+          'start_line': 10,
+          'value': '\n'
+                   '\n'},
+         {'label': 'TEXT',
+          'pos': 204,
+          'start_line': 12,
+          'value': 'gnat()'},
+         {'label': 'TEXT-WS',
+          'pos': 210,
+          'start_line': 12,
+          'value': ' '},
+         {'label': 'TEXT',
+          'pos': 211,
+          'start_line': 12,
+          'value': '{'},
+         {'label': 'TEXT-WS-LF',
+          'pos': 212,
+          'start_line': 12,
+          'value': '\n'},
+         {'label': 'TEXT-WS',
+          'pos': 213,
+          'start_line': 13,
+          'value': '    '},
+         {'label': 'TEXT',
+          'pos': 217,
+          'start_line': 13,
+          'value': 'pkgdesc="Ada'},
+         {'label': 'TEXT-WS',
+          'pos': 229,
+          'start_line': 13,
+          'value': ' '},
+         {'label': 'TEXT',
+          'pos': 230,
+          'start_line': 13,
+          'value': 'support'},
+         {'label': 'TEXT-WS',
+          'pos': 237,
+          'start_line': 13,
+          'value': ' '},
+         {'label': 'TEXT',
+          'pos': 238,
+          'start_line': 13,
+          'value': 'for'},
+         {'label': 'TEXT-WS',
+          'pos': 241,
+          'start_line': 13,
+          'value': ' '},
+         {'label': 'TEXT',
+          'pos': 242,
+          'start_line': 13,
+          'value': 'GCC"'},
+         {'label': 'TEXT-WS-LF',
+          'pos': 246,
+          'start_line': 13,
+          'value': '\n'},
+         {'label': 'TEXT',
+          'pos': 247,
+          'start_line': 14,
+          'value': '}'},
+         {'label': 'TEXT-WS-LF',
+          'pos': 248,
+          'start_line': 14,
+          'value': '\n'}],
+}
