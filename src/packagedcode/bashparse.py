@@ -369,7 +369,7 @@ def collect_shell_variables_from_text(text, resolve=False, needed_variables=None
 
 def get_tokens(text):
     """
-    Return a Tokens from ``text``.
+    Return a Tokens list from ``text``.
     """
     lexer = BashShellLexer()
     pygtokens = lexer.get_tokens_unprocessed(text)
