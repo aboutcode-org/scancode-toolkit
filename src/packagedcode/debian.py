@@ -199,19 +199,14 @@ def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **k
                     yield package
 
 
-def is_debian_status_file(location):
-    return filetype.is_file(location) #and location.endswith('/status')
-
-
 def parse_status_file(location, distro='debian'):
     """
     Yield Debian Package objects from a dpkg `status` file or None.
     """
     if not os.path.exists(location):
         raise FileNotFoundError('[Errno 2] No such file or directory: {}'.format(repr(location)))
-    if not is_debian_status_file(location):
-        return
-
+    if not filetype.is_file(location):
+        raise Exception(f'Location is not a file: {location}')
     for debian_pkg_data in debcon.get_paragraphs_data_from_file(location):
         yield build_package(debian_pkg_data, distro)
 
