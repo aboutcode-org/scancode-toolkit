@@ -24,6 +24,25 @@ Breaking API changes:
    multiple manifests for a single package instance.
 
 
+Copyright detection:
+~~~~~~~~~~~~~~~~~~~~
+
+ - The data structure in the JSON is now using consistently named attributes as
+   opposed to a plain value.
+
+
+Package detection:
+~~~~~~~~~~~~~~~~~~
+
+ - Add support for OpenWRT packages.
+ - Add support for Yocto/BitBake .bb recipes.
+ - Add support to track installed files for each Package type.
+
+
+v21.7.28 
+---------
+
+
 Outputs:
 ~~~~~~~~
 
@@ -37,22 +56,27 @@ Outputs:
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
 
- - The data structure in the JSON is now using consistently named attributes as
-   opposed to a plain value.
-
  - The copyright detection speed has been significantly improved with the tests
    taking roughly 1/2 of the time to run. This is achieved mostly by replacing
    NLTK with a the minimal and simplified subset we need in a new library named
    pygmars.
 
+License detection:
+~~~~~~~~~~~~~~~~~~~
+
+ - Add new licenses: njow tracking 1763 licenses
+ - Add new license detection rules: now tracking 29475 license detection rules
+ - Improve license expression parsing and processing
+
 
 Package detection:
 ~~~~~~~~~~~~~~~~~~
 
- - Add support for OpenWRT packages.
- - Add support for Yocto/BitBake .bb recipes.
+ - The Debian packages declared license detection has been significantly improved.
  - The Alpine packages declared license detection has been significantly improved.
- - Add support to track installed files for each Package type.
+ - Add new support for shell parsing and Alpine packages APKBUILD data collection.
+ - Add new support for various Windows packages detection using multiple
+   techniques including MSI, Windows registry and several more.
 
 
 v21.6.7
