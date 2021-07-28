@@ -167,3 +167,45 @@ class TestPlugins(PackageTester):
         expected_file = self.get_test_loc('plugin/pubspec-lock-expected.json', must_exist=False)
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False)
+
+    def test_package_command_scan_mui(self):
+        test_dir = self.get_test_loc('win_pe/clfs.sys.mui')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin/mui-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False)
+
+    def test_package_command_scan_mun(self):
+        test_dir = self.get_test_loc('win_pe/crypt32.dll.mun')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin/mun-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False)
+
+    def test_package_command_scan_com(self):
+        test_dir = self.get_test_loc('win_pe/chcp.com')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin/com-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False)
+
+    def test_package_command_scan_tlb(self):
+        test_dir = self.get_test_loc('win_pe/stdole2.tlb')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin/tlb-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False)
+
+    def test_package_command_scan_sys(self):
+        test_dir = self.get_test_loc('win_pe/tbs.sys')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin/sys-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False)
+
+    def test_package_command_scan_winmd(self):
+        test_dir = self.get_test_loc('win_pe/Windows.AI.winmd')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin/winmd-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False)

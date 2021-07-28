@@ -273,6 +273,6 @@ Package: windows-update
 --------------------------------------------
 Package: winexe
   class: packagedcode.win_pe:WindowsExecutable
-  extensions: .exe, .dll
+  extensions: .exe, .dll, .mui, .mun, .com, .winmd, .sys, .tlb
   filetypes: pe32, for ms windows
 
