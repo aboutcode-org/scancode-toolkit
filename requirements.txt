@@ -9,12 +9,12 @@ cffi==1.14.5
 chardet==4.0.0
 click==8.0.1
 colorama==0.4.4
-commoncode==21.6.11
+commoncode==21.7.23
 construct==2.10.67
 cryptography==3.4.7
 debian-inspector==21.5.25
 dparse==0.5.1
-extractcode==21.6.2
+extractcode==21.7.23
 extractcode-7z==16.5.210531
 extractcode-libarchive==3.5.1.210531
 fasteners==0.16
