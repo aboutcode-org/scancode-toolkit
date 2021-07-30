@@ -1,0 +1,19 @@
+license_expression: info-zip-2009-01
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 99
+notes: |
+    Seen in Info-zip this note:
+    *  MacBinaryIII.h
+    *
+    *  Copyright 1997 Christopher Evans (cevans@poppybank.com)
+    *
+    *  Basic encoding and decoding of Macintosh files to the
+    *  MacBinary III spec.
+
+    * This source is copyrighted by Christopher Evans (cevans@poppybank.com)
+    * (available at ftp://ftp.lazerware.com/MacBinaryIII_src_C.sit
+    * homepage of Leonard Rosenthol  leonardr@netcom.com)
+
+     This copyright note does not contain any usage terms.  So, we assume
+     that this code is freely reusable until we are proved wrong...

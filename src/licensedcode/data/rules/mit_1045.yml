@@ -1,0 +1,6 @@
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+notes: in x11
+ignorable_urls:
+    - http://www.opensource.org/licenses/mit-license.php

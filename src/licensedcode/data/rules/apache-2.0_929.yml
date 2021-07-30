@@ -1,0 +1,4 @@
+license_expression: apache-2.0
+is_license_reference: yes
+relevance: 100
+notes: Seen in  https://github.com/swagger-api/swagger-codegen/blob/ca9a00261f08f024dd19fa45c9ff2098fed67451/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java#L6980

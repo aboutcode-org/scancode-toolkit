@@ -1,0 +1,6 @@
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYRIGHT.MIT
+notes: Seen in https://github.com/Wind4/vlmcsd/blob/65228e5c7916acd947ffb53be18abadafbc1be56/src/tap-windows.h
