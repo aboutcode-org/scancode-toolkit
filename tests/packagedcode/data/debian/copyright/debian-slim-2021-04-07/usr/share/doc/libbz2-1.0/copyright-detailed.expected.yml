@@ -1,8 +1,9 @@
-- bzip2-libbzip-2010
-- - BSD-variant
+primary_license: bzip2-libbzip-2010
+declared_license:
+  - BSD-variant
   - GPL-2
-- bzip2-libbzip-2010 AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)
-- |
+license_expression: bzip2-libbzip-2010 AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)
+copyright: |
   1996-2010 Julian R Seward <jseward@bzip.org>
   2018 Nicolas Boulenguez <nicolas.boulenguez@free.fr>
   2012-2015 Santiago Ruano Rincón <santiago@debian.org>
@@ -10,3 +11,98 @@
   2004-2011 Anibal Monsalve Salazar <anibal@debian.org>
   1999-2002 Philippe Troin <phil@fifi.org>
   1997-1999 Anthony Fok <foka@debian.org>
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 30
+    matcher: 1-hash
+    rule_length: 233
+    matched_length: 233
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bzip2-libbzip-2010.LICENSE
+    license_expression: bzip2-libbzip-2010
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions
+      are met:
+
+      1. Redistributions of source code must retain the above copyright
+         notice, this list of conditions and the following disclaimer.
+
+      2. The origin of this software must not be misrepresented; you must
+         not claim that you wrote the original software.  If you use this
+         software in a product, an acknowledgment in the product
+         documentation would be appreciated but is not required.
+
+      3. Altered source versions must be plainly marked as such, and must
+         not be misrepresented as being the original software.
+
+      4. The name of the author may not be used to endorse or promote
+         products derived from this software without specific prior written
+         permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
+      OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+      DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+      GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_561.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2'
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 2-aho
+    rule_length: 7
+    matched_length: 7
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_660.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: the GNU General Public License version 2
+  - score: '100.0'
+    start_line: 2
+    end_line: 2
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_621.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: usr/share/common-licenses/GPL-2.

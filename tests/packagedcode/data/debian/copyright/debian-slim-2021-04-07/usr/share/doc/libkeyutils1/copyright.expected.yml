@@ -1,5 +1,145 @@
-- gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0
-- - GPL-2+
+primary_license: gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0
+declared_license:
+  - GPL-2+
   - LGPL-2+
-- (gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.0)
-- 2005-2018, Red Hat <http://www.redhat.com/>
+license_expression: (gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.0)
+copyright: 2005-2018, Red Hat <http://www.redhat.com/>
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_22.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 12
+    matcher: 2-aho
+    rule_length: 102
+    matched_length: 102
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_119.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software: you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation, either version 2 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program. If not, see <http://www.gnu.org/licenses/>.
+  - score: '100.0'
+    start_line: 14
+    end_line: 14
+    matcher: 2-aho
+    rule_length: 5
+    matched_length: 5
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_33.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: the GNU General Public License
+  - score: '100.0'
+    start_line: 15
+    end_line: 15
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_621.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: usr/share/common-licenses/GPL-2
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0-plus_61.RULE
+    license_expression: lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: lgpl-2+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 12
+    matcher: 2-aho
+    rule_length: 105
+    matched_length: 105
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0-plus_184.RULE
+    license_expression: lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software: you can redistribute it and/or modify
+      it under the terms of the GNU Lesser General Public License as published by
+      the Free Software Foundation, either version 2 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+      GNU Lesser General Public License for more details.
+
+      You should have received a copy of the GNU Lesser General Public License
+      along with this program. If not, see <http://www.gnu.org/licenses/>.
+  - score: '100.0'
+    start_line: 14
+    end_line: 15
+    matcher: 2-aho
+    rule_length: 20
+    matched_length: 20
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0_155.RULE
+    license_expression: lgpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      The complete text of the GNU Lesser General Public License
+      can be found in /usr/share/common-licenses/LGPL-2

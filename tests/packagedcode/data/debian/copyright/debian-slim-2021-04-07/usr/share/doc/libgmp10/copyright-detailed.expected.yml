@@ -1,5 +1,134 @@
--
--
-- (lgpl-3.0-plus OR gpl-2.0-plus) AND lgpl-2.1-plus AND lgpl-3.0 AND gpl-2.0 AND gpl-3.0 AND
-  gfdl-1.1-plus AND lgpl-2.1-plus
-- Copyright 1991, 1996, 1999, 2000, 2007 Free Software Foundation, Inc.
+primary_license:
+declared_license:
+license_expression: (lgpl-3.0-plus OR gpl-2.0-plus) AND lgpl-2.1-plus AND lgpl-3.0 AND gpl-2.0
+  AND gpl-3.0 AND gfdl-1.1-plus AND lgpl-2.1-plus
+copyright: Copyright 1991, 1996, 1999, 2000, 2007 Free Software Foundation, Inc.
+matches:
+  - score: '100.0'
+    start_line: '19'
+    end_line: 41
+    matcher: 2-aho
+    rule_length: 149
+    matched_length: 149
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-3.0-plus_or_gpl-2.0-plus_8.RULE
+    license_expression: lgpl-3.0-plus OR gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "The GNU MP Library is free software; you can redistribute it and/or modify\n\
+      \ it under the terms of either:\n \n   * the GNU Lesser General Public License as published\
+      \ by the Free\n     Software Foundation; either version 3 of the License, or (at your\n\
+      \     option) any later version.\n \n or\n \n   * the GNU General Public License as published\
+      \ by the Free Software\n     Foundation; either version 2 of the License, or (at your\
+      \ option) any\n     later version.\n \n or both in parallel, as here.\n \n The GNU MP\
+      \ Library is distributed in the hope that it will be useful, but\n WITHOUT ANY WARRANTY;\
+      \ without even the implied warranty of MERCHANTABILITY\n or FITNESS FOR A PARTICULAR PURPOSE.\
+      \  See the GNU General Public License\n for more details.\n \n You should have received\
+      \ copies of the GNU General Public License and the\n GNU Lesser General Public License\
+      \ along with the GNU MP Library.  If not,\n see https://www.gnu.org/licenses/."
+  - score: '100.0'
+    start_line: 44
+    end_line: 44
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_83_1.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: The GNU Lesser General Public License
+  - score: '100.0'
+    start_line: 44
+    end_line: 44
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-3.0_41.RULE
+    license_expression: lgpl-3.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: usr/share/common-licenses/LGPL-3.
+  - score: '88.0'
+    start_line: 45
+    end_line: 45
+    matcher: 2-aho
+    rule_length: 16
+    matched_length: 16
+    match_coverage: '100.0'
+    rule_relevance: 88
+    identifier: gpl-2.0_1124.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: The GNU General Public License v2 text is contained in /usr/share/common-licenses/GPL-2.
+  - score: '88.0'
+    start_line: 46
+    end_line: 46
+    matcher: 2-aho
+    rule_length: 16
+    matched_length: 16
+    match_coverage: '100.0'
+    rule_relevance: 88
+    identifier: gpl-3.0_395.RULE
+    license_expression: gpl-3.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: The GNU General Public License v3 text is contained in /usr/share/common-licenses/GPL-3.
+  - score: '100.0'
+    start_line: 52
+    end_line: 55
+    matcher: 2-aho
+    rule_length: 38
+    matched_length: 38
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gfdl-1.1-plus_32.RULE
+    license_expression: gfdl-1.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      The documentation is released under the GNU Free Documentation License
+       (GFDL) and it has cover texts.  As such, it has been determined not to
+       meet the Debian Free Software Guidelines, and is not shipped in the
+       debian packages.
+  - score: '100.0'
+    start_line: 57
+    end_line: 58
+    matcher: 2-aho
+    rule_length: 18
+    matched_length: 18
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_300.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      is covered either by the LGPL, or
+       under the GNU General Public License /usr/share/common-licenses/GPL.

@@ -1,5 +1,6 @@
-- gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0
-- - GPL-2+
+primary_license: gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0
+declared_license:
+  - GPL-2+
   - GPL-2+
   - GPL-2
   - BSD-2-clause
@@ -8,10 +9,11 @@
   - GPL-2+
   - GPL-2
   - BSD-2-clause
-- (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND bsd-simplified AND (public-domain
-  AND other-permissive AND public-domain AND public-domain AND public-domain) AND public-domain
-- |
+license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND bsd-simplified
+  AND (public-domain AND other-permissive AND public-domain AND public-domain AND public-domain)
+  AND public-domain
+copyright: |
   Copyright © 1994 Ian Murdock <imurdock@debian.org>
   Copyright © 1994 Matt Welsh <mdw@sunsite.unc.edu>
   Copyright © 1994 Carl Streeter <streeter@cae.wisc.edu>
@@ -83,3 +85,266 @@
   Copyright © 2012 Carsten Hey <carsten@debian.org>
   Copyright © 2014 Nir Soffer <nirs@hyperms.com>
   Copyright © 1993 Colin Plumb
+matches:
+  - score: '70.0'
+    start_line: 2
+    end_line: 2
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 70
+    identifier: public-domain_bare_words.RULE
+    license_expression: public-domain
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: public domain.
+  - score: '100.0'
+    start_line: 3
+    end_line: 4
+    matcher: 2-aho
+    rule_length: 9
+    matched_length: 9
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: other-permissive_277.RULE
+    license_expression: other-permissive
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      May be used and distributed
+      freely for any purpose.
+  - score: '100.0'
+    start_line: 6
+    end_line: 6
+    matcher: 2-aho
+    rule_length: 5
+    matched_length: 5
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_346.RULE
+    license_expression: public-domain
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: also placed in public domain.
+  - score: '100.0'
+    start_line: 7
+    end_line: 8
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_348.RULE
+    license_expression: public-domain
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      also placed in the Public
+      Domain.
+  - score: '100.0'
+    start_line: 11
+    end_line: 11
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_347.RULE
+    license_expression: public-domain
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: placed in public domain as well.
+  - score: '100.0'
+    start_line: 2
+    end_line: 4
+    matcher: 2-aho
+    rule_length: 26
+    matched_length: 26
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_303.RULE
+    license_expression: public-domain
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This code was
+      written by Colin Plumb in 1993, no copyright is claimed.
+      This code is in the public domain; do with it what you wish.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_22.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 12
+    matcher: 2-aho
+    rule_length: 94
+    matched_length: 94
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_286.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 2 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program.
+  - score: '100.0'
+    start_line: 11
+    end_line: 12
+    matcher: 2-aho
+    rule_length: 23
+    matched_length: 23
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_36.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      You should have received a copy of the GNU General Public License
+      along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  - score: '100.0'
+    start_line: 1
+    end_line: 2
+    matcher: 2-aho
+    rule_length: 22
+    matched_length: 22
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_1092.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian systems, the complete text of the GNU General Public License
+      can be found in ‘/usr/share/common-licenses/GPL-2’
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_561.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2'
+  - score: '100.0'
+    start_line: 1
+    end_line: 11
+    matcher: 1-hash
+    rule_length: 92
+    matched_length: 92
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_1119.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This is free software; you can redistribute it and/or modify
+      it under the terms of version 2 of the GNU General Public
+      License version 2 as published by the Free Software Foundation.
+
+      This is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  - score: '99.45'
+    start_line: 1
+    end_line: 20
+    matcher: 3-seq
+    rule_length: 183
+    matched_length: 182
+    match_coverage: '99.45'
+    rule_relevance: 100
+    identifier: bsd-simplified_52.RULE
+    license_expression: bsd-simplified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions
+      are met:
+      1. Redistributions of source code must retain the above copyright
+         notice, this list of conditions and the following disclaimer.
+      2. Redistributions in binary form must reproduce the above copyright
+         notice, this list of conditions and the following disclaimer in the
+         documentation and/or other materials provided with the distribution.
+
+      THIS SOFTWARE IS PROVIDED BY AUTHORS AND CONTRIBUTORS ``AS IS'' AND
+      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE
+      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+      SUCH DAMAGE.
