@@ -185,8 +185,15 @@ function backup_previous_release {
     fi
 }
 
+
+function clean_egg_info {
+	rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
+}
+
+
 function clean_build {
     rm -rf build dist thirdparty PYTHON_EXECUTABLE SCANCODE_DEV_MODE
+    clean_egg_info
 }
 
 backup_previous_release
@@ -213,12 +220,15 @@ bin/pip install $QUIET -r etc/release/requirements.txt
 ################################
 echo " "
 echo "## RELEASE: Building a wheel and a source distribution"
+clean_egg_info
 bin/python setup.py $QUIET sdist bdist_wheel
 
 mv dist release/pypi
 
+
 echo " "
 echo "## RELEASE: Building a mini wheel and a source distribution"
+clean_egg_info
 mv setup.cfg setup-full.cfg
 cp setup-mini.cfg setup.cfg
 rm -rf build
@@ -227,6 +237,7 @@ mv setup-full.cfg setup.cfg
 
 cp dist/* release/pypi/
 
+clean_egg_info
 echo "## RELEASE: full and mini, wheel and source distribution(s) built and ready for PyPI upload"
 find release -ls
 
