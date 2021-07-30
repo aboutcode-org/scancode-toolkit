@@ -211,6 +211,11 @@ def reg_parse(location):
     """
     for installed_program in report_installed_programs(location):
         yield installed_program
+    for installed_program in report_installed_programs(
+        location,
+        registry_path='\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall'
+    ):
+        yield installed_program
     for installed_dotnet in report_installed_dotnet_versions(location):
         yield installed_dotnet
 
