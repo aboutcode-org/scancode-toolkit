@@ -226,9 +226,6 @@ def get_installed_packages(root_dir, is_container=True):
             os.path.join(root_dir, 'Hives', 'Software_Delta'),
             os.path.join(root_dir, 'Files', 'Windows', 'System32', 'config', 'SOFTWARE')
         ]
-        # We are setting the root to be the `Files` directory, since this
-        # directory represents the root `C:\` drive of a Windows installation
-        root_dir = os.path.join(root_dir, 'Files')
     else:
         # TODO: Add support for virtual machines
         raise Exception('Unsuported file system type')
@@ -237,7 +234,7 @@ def get_installed_packages(root_dir, is_container=True):
         if not os.path.exists(software_registry_loc):
             continue
         for package in reg_parse(software_registry_loc):
-            package.populate_installed_files(root_dir)
+            package.populate_installed_files(root_dir, is_container=is_container)
             yield package
 
 
@@ -285,10 +282,20 @@ class InstalledWindowsProgram(models.Package):
         for installed in reg_parse(location):
             yield installed
 
-    def populate_installed_files(self, root_dir):
+    def populate_installed_files(self, root_dir, is_container=False):
         install_location = self.extra_data.get('install_location')
         if not install_location:
             return
+
+        if is_container:
+            original_root_dir = root_dir
+            # If we are getting installed files from `root_dir` that is a
+            # Windows Docker layer path, we are setting the root to be the
+            # `Files` directory, since this directory represents the root `C:\`
+            # drive of a Windows installation.
+            # e.g. given a Windows Docker layer named `windows_docker_layer_id`,
+            # the files are stored in the subdirectory `windows_docker_layer_id/Files`
+            root_dir = os.path.join(root_dir, 'Files')
 
         absolute_install_location = create_absolute_installed_file_path(
             root_dir=root_dir,
@@ -301,7 +308,16 @@ class InstalledWindowsProgram(models.Package):
         for root, _, files in os.walk(absolute_install_location):
             for file in files:
                 installed_file_location = os.path.join(root, file)
-                relative_installed_file_path = create_relative_file_path(installed_file_location, root_dir)
+                if is_container:
+                    relative_installed_file_path = create_relative_file_path(
+                        file_path=installed_file_location,
+                        root_dir=original_root_dir
+                    )
+                else:
+                    relative_installed_file_path = create_relative_file_path(
+                        file_path=installed_file_location,
+                        root_dir=root_dir
+                    )
                 installed_files.append(relative_installed_file_path)
 
         known_program_files = self.extra_data.get('known_program_files', [])
@@ -310,7 +326,16 @@ class InstalledWindowsProgram(models.Package):
                 root_dir=root_dir,
                 file_path=known_program_file_path,
             )
-            relative_known_file_path = create_relative_file_path(known_program_file_location, root_dir)
+            if is_container:
+                relative_known_file_path = create_relative_file_path(
+                    file_path=known_program_file_location,
+                    root_dir=original_root_dir
+                )
+            else:
+                relative_known_file_path = create_relative_file_path(
+                    file_path=known_program_file_location,
+                    root_dir=root_dir
+                )
             if (not os.path.exists(known_program_file_location)
                     or relative_known_file_path in installed_files):
                 continue
