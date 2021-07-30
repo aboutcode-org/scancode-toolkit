@@ -15,12 +15,11 @@
   - GPL
   - Zlib
   - BSD-3-Clause
-- (gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0
-  AND gpl-1.0-plus AND gfdl-1.2 AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-1.0-plus
-  AND gfdl-1.2 AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0-plus
-  AND gpl-1.0-plus AND gpl-2.0) AND (zlib AND (gpl-1.0-plus AND gpl-1.0-plus AND gfdl-1.2 AND
-  gpl-2.0 AND gpl-1.0-plus)) AND (gpl-1.0-plus AND zlib) AND ssleay-windows AND public-domain
-  AND bsd-new AND mit-old-style-no-advert
+- (gpl-1.0-plus AND gpl-2.0) AND (gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-1.0-plus AND
+  gpl-2.0) AND (gpl-2.0 AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-1.0-plus AND
+  gpl-2.0-plus AND gpl-2.0) AND (zlib AND (gpl-1.0-plus AND gpl-1.0-plus AND gfdl-1.2 AND gpl-2.0
+  AND gpl-1.0-plus)) AND (gpl-1.0-plus AND zlib) AND ssleay-windows AND public-domain AND bsd-new
+  AND mit-old-style-no-advert
 - |
   2002-2016 Henrik Størner <henrik@hswn.dk>
   2005-2007 Henrik Størner <henrik@hswn.dk>
