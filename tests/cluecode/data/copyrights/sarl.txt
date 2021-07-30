@@ -1,0 +1,5 @@
+Copyright (C) 2010-2020 Oryx Embedded SARL.
+
+
+
+@copyright Copyright (c) 2010-2013 S.A.R.L Ether Création (http://www.ethercreation.com)
