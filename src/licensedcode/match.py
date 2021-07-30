@@ -33,6 +33,7 @@ TRACE_FILTER_SPURIOUS_SINGLE_TOKEN = False
 TRACE_FILTER_SPURIOUS = False
 TRACE_FILTER_RULE_MIN_COVERAGE = False
 TRACE_FILTER_LOW_SCORE = False
+TRACE_FILTER_UNKNOWN_WORDS = False
 TRACE_SET_LINES = False
 
 TRACE_MATCHED_TEXT = False
@@ -58,13 +59,15 @@ if (TRACE
     or TRACE_FILTER_SHORT
     or TRACE_FILTER_RULE_MIN_COVERAGE
     or TRACE_FILTER_LOW_SCORE
+    or TRACE_FILTER_UNKNOWN_WORDS
     or TRACE_SET_LINES
     or TRACE_MATCHED_TEXT
-    or TRACE_MATCHED_TEXT_DETAILS):
+    or TRACE_MATCHED_TEXT_DETAILS
+):
 
     use_print = True
     if use_print:
-        printer = print
+        prn = print
     else:
         import logging
         import sys
@@ -72,21 +75,20 @@ if (TRACE
         # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
         logging.basicConfig(stream=sys.stdout)
         logger.setLevel(logging.DEBUG)
-        printer = logger.debug
+        prn = logger.debug
 
     def logger_debug(*args):
-        return printer(' '.join(isinstance(a, str) and a or repr(a)
-                                     for a in args))
+        return prn(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
-    def _debug_print_matched_query_text(match, query, extras=5):
+    def _debug_print_matched_query_text(match, extras=5):
         """
         Print a matched query text including `extras` tokens before and after
         the match. Used for debugging license matches.
         """
-        # create a fake new match with extra tokens before and after
+        # Create a fake new match with extra tokens before and after
         new_match = match.combine(match)
         new_qstart = max([0, match.qstart - extras])
-        new_qend = min([match.qend + extras, len(query.tokens)])
+        new_qend = min([match.qend + extras, len(match.query.tokens)])
         new_qspan = Span(new_qstart, new_qend)
         new_match.qspan = new_qspan
 
@@ -117,8 +119,18 @@ class LicenseMatch(object):
         'matcher', 'start_line', 'end_line', 'query',
     )
 
-    def __init__(self, rule, qspan, ispan, hispan=None, query_run_start=0,
-                 matcher='', start_line=0, end_line=0, query=None):
+    def __init__(
+        self,
+        rule,
+        qspan,
+        ispan,
+        hispan=None,
+        query_run_start=0,
+        matcher='',
+        start_line=0,
+        end_line=0,
+        query=None,
+    ):
         """
         Create a new match from:
          - rule: matched Rule object
@@ -570,19 +582,20 @@ class LicenseMatch(object):
             # this case should never exist except for tests!
             return u''
 
-        if whole_lines and query.has_long_lines:
+        if whole_lines and (query.has_long_lines or query.is_binary):
             whole_lines = False
 
         return u''.join(get_full_matched_text(
-            self,
+            match=self,
             location=query.location,
             query_string=query.query_string,
             idx=query.idx,
             whole_lines=whole_lines,
             highlight=highlight,
             highlight_matched=highlight_matched,
-            highlight_not_matched=highlight_not_matched, _usecache=_usecache)
-        ).rstrip()
+            highlight_not_matched=highlight_not_matched, 
+            _usecache=_usecache
+        )).rstrip()
 
 
 def set_lines(matches, line_by_pos):
@@ -1152,19 +1165,29 @@ def filter_if_only_known_words_rule(matches):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a `matches` list of LicenseMatch by removing
-    matches to rules with the "only_known_words" attribute set to True and that
-    contain unknown words in their matched range.
+    matches to rules with the "only_known_words" attribute set to True or "small
+    rules" and that contain unknown words in their matched range.
     """
     kept = []
     discarded = []
 
     for match in matches:
-        if not (match.rule.only_known_words or match.rule.is_small):
-            kept.append(match)
-            continue
 
-        if match.qrange() != match.qmagnitude() or match.qcontains_stopwords():
-            if TRACE_FILTER_LOW_SCORE: logger_debug('    ==> DISCARDING small score:', match)
+        if (match.rule.only_known_words
+            and (
+                match.qrange() != match.qmagnitude()
+                or match.qcontains_stopwords()
+            )
+         ):
+            if TRACE_FILTER_UNKNOWN_WORDS:
+                logger_debug(
+                    '    ==> DISCARDING small unknown words:', match,
+                    'is_small', match.rule.is_small,
+                    'qrange', match.qrange(),
+                    'qmagnitude', match.qmagnitude(),
+                    'qcontains_stopwords', match.qcontains_stopwords()
+                )
+                _debug_print_matched_query_text(match)
 
             # we have unknown tokens in the matched range
             discarded.append(match)
@@ -1233,8 +1256,9 @@ def filter_spurious_single_token(matches, query=None, unknown_count=5,
             if p in shorts_and_digits:
                 before += 1
         if before < unknown_count:
-            if trace: logger_debug('    ==> !!! NOT DISCARDING spurious_single_token, not enough before:', match, before)
-            if trace: _debug_print_matched_query_text(match, query, extras=unknown_count, logger_debug=logger_debug)
+            if trace:
+                logger_debug('    ==> !!! NOT DISCARDING spurious_single_token, not enough before:', match, before)
+                _debug_print_matched_query_text(match, extras=unknown_count)
             kept.append(match)
             continue
 
@@ -1244,12 +1268,14 @@ def filter_spurious_single_token(matches, query=None, unknown_count=5,
                 after += 1
 
         if after >= unknown_count:
-            if trace: logger_debug('    ==> DISCARDING spurious_single_token:', match)
-            if trace: _debug_print_matched_query_text(match, query, extras=unknown_count, logger_debug=logger_debug)
+            if trace:
+                logger_debug('    ==> DISCARDING spurious_single_token:', match)
+                _debug_print_matched_query_text(match, extras=unknown_count)
             discarded.append(match)
         else:
-            if trace: logger_debug('    ==> !!! NOT DISCARDING spurious_single_token, not enough after:', match, before, after)
-            if trace: _debug_print_matched_query_text(match, query, extras=unknown_count, logger_debug=logger_debug)
+            if trace:
+                logger_debug('    ==> !!! NOT DISCARDING spurious_single_token, not enough after:', match, before, after)
+                _debug_print_matched_query_text(match, extras=unknown_count)
             kept.append(match)
     return kept, discarded
 
@@ -1528,7 +1554,7 @@ def _tokenize_matched_text(location, query_string, dictionary):
             # Determine if a token is is_known in the license index or not. This
             # is essential as we need to realign the query-time tokenization
             # with the full text to report proper matches.
-            if is_text and token_str and token_str.strip():  
+            if is_text and token_str and token_str.strip():
 
                 # we retokenize using the query tokenizer:
                 # 1. to lookup for is_known tokens in the index dictionary
@@ -1596,7 +1622,13 @@ def _tokenize_matched_text(location, query_string, dictionary):
                 )
 
 
-def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=False):
+def reportable_tokens(
+    tokens,
+    match_qspan,
+    start_line,
+    end_line,
+    whole_lines=False,
+):
     """
     Yield Tokens from a `tokens` iterable of Token objects (built from a query-
     side scanned file or string) that are inside a `match_qspan` matched Span
@@ -1702,10 +1734,13 @@ def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=Fal
 
 def get_full_matched_text(
     match,
-    location=None, query_string=None,
+    location=None,
+    query_string=None,
     idx=None,
     whole_lines=False,
-    highlight=True, highlight_matched=u'%s', highlight_not_matched=u'[%s]',
+    highlight=True,
+    highlight_matched=u'%s',
+    highlight_not_matched=u'[%s]',
     stopwords=STOPWORDS,
     _usecache=True,
 ):
@@ -1738,10 +1773,17 @@ def get_full_matched_text(
     if not _usecache:
         # for testing only, reset cache on each call
         tokens = tokenize_matched_text(
-            location, query_string, dictionary=idx.dictionary, _cache={})
+            location=location,
+            query_string=query_string,
+            dictionary=idx.dictionary,
+            _cache={},
+        )
     else:
         tokens = tokenize_matched_text(
-            location, query_string, dictionary=idx.dictionary)
+            location=location,
+            query_string=query_string,
+            dictionary=idx.dictionary,
+        )
 
     if TRACE_MATCHED_TEXT:
         tokens = list(tokens)
@@ -1752,7 +1794,12 @@ def get_full_matched_text(
         print()
 
     tokens = reportable_tokens(
-        tokens, match.qspan, match.start_line, match.end_line, whole_lines=whole_lines)
+        tokens=tokens,
+        match_qspan=match.qspan,
+        start_line=match.start_line,
+        end_line=match.end_line,
+        whole_lines=whole_lines,
+    )
 
     if TRACE_MATCHED_TEXT:
         tokens = list(tokens)
