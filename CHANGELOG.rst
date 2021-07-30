@@ -4,8 +4,12 @@ Changelog
 v21.x.x (next, future)
 -----------------------
 
-Breaking API changes:
-~~~~~~~~~~~~~~~~~~~~~
+Important API changes:
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - The data structure of the JSON output is now versioned and the next version
+   is available with a new command line option. We are also documenting a new
+   and clear API policy and backward compatibility policy.
 
  - The data structure of the JSON output has changed for copyrights, authors
    and holders: we now use proper name for attributes and not a generic "value".
@@ -39,8 +43,22 @@ Package detection:
  - Add support to track installed files for each Package type.
 
 
-v21.7.28 
+v21.7.30
 ---------
+
+This is a minor release with several bug fixes, major performance improvements
+and support for new and improved package formats
+
+
+Many thanks to every contributors that made this possible and in particular:
+
+- Abhigya Verma @abhi27-web
+- Ayan Sinha Mahapatra @AyanSinhaMahapatra
+- Dennis Clark @DennisClark
+- Jono Yang @JonoYang
+- Mayur Agarwal @mrmayurgithub 
+- Philippe Ombredanne @pombredanne
+- Pierre Tardy @tardyp
 
 
 Outputs:
@@ -50,7 +68,7 @@ Outputs:
    the JSON output
  - Add new Debian machine readable copyright output.
  - The CSV output "Resource" column has been renamed to "path".
- - The SPDX output now has the mandatory DocumentNamespace attribut per SPDX specs #2344
+ - The SPDX output now has the mandatory DocumentNamespace attribute per SPDX specs #2344
 
 
 Copyright detection:
@@ -64,9 +82,9 @@ Copyright detection:
 License detection:
 ~~~~~~~~~~~~~~~~~~~
 
- - Add new licenses: njow tracking 1763 licenses
+ - Add new licenses: now tracking 1763 licenses
  - Add new license detection rules: now tracking 29475 license detection rules
- - Improve license expression parsing and processing
+ - We have also improved license expression parsing and processing
 
 
 Package detection:
@@ -74,9 +92,11 @@ Package detection:
 
  - The Debian packages declared license detection has been significantly improved.
  - The Alpine packages declared license detection has been significantly improved.
- - Add new support for shell parsing and Alpine packages APKBUILD data collection.
- - Add new support for various Windows packages detection using multiple
+ - There is new support for shell parsing and Alpine packages APKBUILD data collection.
+ - There is new support for various Windows packages detection using multiple
    techniques including MSI, Windows registry and several more.
+ - There is new support for Distroless Debian-like installed packages.
+ - There is new support for Dart Pub package manifests.
 
 
 v21.6.7
