@@ -17,10 +17,7 @@ from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.query import Query
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
-
-
 
 
 def check_result_equals_expected_json(result, expected, regen=False):
@@ -141,7 +138,6 @@ class TestQueryWithSingleRun(IndexTesting):
             None, 0, None
         ]
         assert result == expected
-
 
     def test_Query_tokenize_from_string(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
