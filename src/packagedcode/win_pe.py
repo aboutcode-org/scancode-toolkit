@@ -225,14 +225,22 @@ def pe_info(location):
 class WindowsExecutable(models.Package):
     metafiles = ()
     extensions = (
-        '.exe*',
-        '.dll*',
-        '.mui*',
-        '.mun*',
-        '.com*',
-        '.winmd*',
-        '.sys*',
-        '.tlb*',
+        '.exe',
+        '.dll',
+        '.mui',
+        '.mun',
+        '.com',
+        '.winmd',
+        '.sys',
+        '.tlb',
+        '.exe_*',
+        '.dll_*',
+        '.mui_*',
+        '.mun_*',
+        '.com_*',
+        '.winmd_*',
+        '.sys_*',
+        '.tlb_*',
     )
     filetypes = ('pe32', 'for ms windows',)
     mimetypes = ('application/x-dosexec',)

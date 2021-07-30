@@ -227,19 +227,38 @@ def get_installed_packages(root_dir, is_container=True):
     """
     # These paths are relative to a Windows docker image layer root directory
     if is_container:
-        software_registry_locations = [
-            os.path.join(root_dir, 'Hives', 'Software_Delta'),
-            os.path.join(root_dir, 'Files', 'Windows', 'System32', 'config', 'SOFTWARE')
-        ]
+        hives_software_delta_loc = os.path.join(root_dir, 'Hives', 'Software_Delta')
+        files_software_loc = os.path.join(
+            root_dir,
+            'Files',
+            'Windows',
+            'System32',
+            'config',
+            'SOFTWARE'
+        )
+        utilityvm_software_loc = os.path.join(
+            root_dir,
+            'UtilityVM',
+            'Files',
+            'Windows',
+            'System32',
+            'config',
+            'SOFTWARE'
+        )
+        root_prefixes_by_software_registry_locations = {
+            hives_software_delta_loc: 'Files',
+            files_software_loc: 'Files',
+            utilityvm_software_loc: os.path.join('UtilityVM', 'Files')
+        }
     else:
         # TODO: Add support for virtual machines
         raise Exception('Unsuported file system type')
 
-    for software_registry_loc in software_registry_locations:
+    for software_registry_loc, root_prefix in root_prefixes_by_software_registry_locations.items():
         if not os.path.exists(software_registry_loc):
             continue
         for package in reg_parse(software_registry_loc):
-            package.populate_installed_files(root_dir, is_container=is_container)
+            package.populate_installed_files(root_dir, root_prefix=root_prefix)
             yield package
 
 
@@ -266,7 +285,7 @@ def create_absolute_installed_file_path(root_dir, file_path):
     return str(Path(root_dir).joinpath(file_path))
 
 
-def create_relative_file_path(file_path, root_dir):
+def create_relative_file_path(file_path, root_dir, root_prefix=''):
     """
     Return a subpath of `file_path` that is relative to `root_dir`
 
@@ -274,8 +293,19 @@ def create_relative_file_path(file_path, root_dir):
     >>> root_dir = '/home/test/'
     >>> create_relative_file_path(file_path, root_dir)
     'example/foo.txt'
+
+    If there is a `root_prefix`, then it is prepended to the resulting
+    relative file path.
+
+    >>> file_path = '/home/test/example/foo.txt'
+    >>> root_dir = '/home/test/'
+    >>> create_relative_file_path(file_path, root_dir, 'prefix')
+    'prefix/example/foo.txt'
     """
-    return str(Path(file_path).relative_to(root_dir))
+    relative_file_path = str(Path(file_path).relative_to(root_dir))
+    if root_prefix:
+        return os.path.join(root_prefix, relative_file_path)
+    return relative_file_path
 
 
 @attr.s()
@@ -287,20 +317,18 @@ class InstalledWindowsProgram(models.Package):
         for installed in reg_parse(location):
             yield installed
 
-    def populate_installed_files(self, root_dir, is_container=False):
+    def populate_installed_files(self, root_dir, root_prefix=''):
         install_location = self.extra_data.get('install_location')
         if not install_location:
             return
 
-        if is_container:
-            original_root_dir = root_dir
-            # If we are getting installed files from `root_dir` that is a
-            # Windows Docker layer path, we are setting the root to be the
-            # `Files` directory, since this directory represents the root `C:\`
-            # drive of a Windows installation.
-            # e.g. given a Windows Docker layer named `windows_docker_layer_id`,
-            # the files are stored in the subdirectory `windows_docker_layer_id/Files`
-            root_dir = os.path.join(root_dir, 'Files')
+        if root_prefix:
+            # The rootfs location of a Docker image layer can be in a
+            # subdirectory of the layer directory (where `root_dir` is the path
+            # to the layer directory), so we append `root_prefix` (where prefix
+            # is relative to the file paths within the Docker image layer's
+            # rootfs files) to `root_dir`
+            root_dir = os.path.join(root_dir, root_prefix)
 
         absolute_install_location = create_absolute_installed_file_path(
             root_dir=root_dir,
@@ -313,16 +341,11 @@ class InstalledWindowsProgram(models.Package):
         for root, _, files in os.walk(absolute_install_location):
             for file in files:
                 installed_file_location = os.path.join(root, file)
-                if is_container:
-                    relative_installed_file_path = create_relative_file_path(
-                        file_path=installed_file_location,
-                        root_dir=original_root_dir
-                    )
-                else:
-                    relative_installed_file_path = create_relative_file_path(
-                        file_path=installed_file_location,
-                        root_dir=root_dir
-                    )
+                relative_installed_file_path = create_relative_file_path(
+                    file_path=installed_file_location,
+                    root_dir=root_dir,
+                    root_prefix=root_prefix
+                )
                 installed_files.append(relative_installed_file_path)
 
         known_program_files = self.extra_data.get('known_program_files', [])
@@ -331,16 +354,11 @@ class InstalledWindowsProgram(models.Package):
                 root_dir=root_dir,
                 file_path=known_program_file_path,
             )
-            if is_container:
-                relative_known_file_path = create_relative_file_path(
-                    file_path=known_program_file_location,
-                    root_dir=original_root_dir
-                )
-            else:
-                relative_known_file_path = create_relative_file_path(
-                    file_path=known_program_file_location,
-                    root_dir=root_dir
-                )
+            relative_known_file_path = create_relative_file_path(
+                file_path=known_program_file_location,
+                root_dir=root_dir,
+                root_prefix=root_prefix
+            )
             if (not os.path.exists(known_program_file_location)
                     or relative_known_file_path in installed_files):
                 continue
