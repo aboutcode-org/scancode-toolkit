@@ -582,7 +582,7 @@ class LicenseMatch(object):
             # this case should never exist except for tests!
             return u''
 
-        if whole_lines and (query.has_long_lines or query.is_binary):
+        if whole_lines and query.has_long_lines:
             whole_lines = False
 
         return u''.join(get_full_matched_text(
