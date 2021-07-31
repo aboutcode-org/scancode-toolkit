@@ -68,7 +68,9 @@ class JavaLexer(RegexLexer):
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
             (r'(\.)((?:[^\W\d]|\$)[\w$]*)', bygroups(Punctuation,
                                                      Name.Attribute)),
-            (r'^\s*([^\W\d]|\$)[\w$]*:', Name.Label),
+            (r'^(\s*)(default)(:)', bygroups(Text, Keyword, Punctuation)),
+            (r'^(\s*)((?:[^\W\d]|\$)[\w$]*)(:)', bygroups(Text, Name.Label,
+                                                          Punctuation)),
             (r'([^\W\d]|\$)[\w$]*', Name),
             (r'([0-9][0-9_]*\.([0-9][0-9_]*)?|'
              r'\.[0-9][0-9_]*)'
