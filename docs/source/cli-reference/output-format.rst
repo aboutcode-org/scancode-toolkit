@@ -29,8 +29,6 @@ following options.
     others. Scancode Workbench and other applications that use Scancode Result data as input accept
     only the ``json`` format.
 
-    .. include::  /rst_snippets/note_snippets/output_json_notdef.rst
-
     The following code performs a scan on the samples directory, and publishes the results in
     ``json`` format::
 

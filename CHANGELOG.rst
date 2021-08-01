@@ -43,6 +43,28 @@ Package detection:
  - Add support to track installed files for each Package type.
 
 
+v21.8.1
+---------
+
+This is a minor bug fix release primarily for Windows installation.
+There is no feature change.
+
+Installation:
+~~~~~~~~~~~~~~~~~~
+
+- Application installation on Windows works again. This fixes #2610
+- We now build and test app bundles on all supported Python versions: 3.6 to 3.9
+
+
+Thank you to @gunaztar for reporting the #2610 bug
+
+Documentation:
+~~~~~~~~~~~~~~~~~~
+
+- Documentation is updated to reference supported Python versions 3.6 to 3.9
+
+
+
 v21.7.30
 ---------
 

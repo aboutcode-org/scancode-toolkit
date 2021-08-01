@@ -3,54 +3,51 @@
 Plugin Architecture
 ===================
 
-Notes: this is the initial design for ScanCode plugins. The actual architecture evolved and is
-different.
-
 Abstract:
 ---------
 
-This project’s purpose is to create a decoupled plugin architecture for scancode such that it can
-handle plugins at different stages of a scan and can be coupled at runtime. These stages would be
+The purpose of plugins is to create a decoupled architecture such that ScanCode can
+support extensibility at different stages of a scan. These stages are:
 
-* Pre - scan: Before starting the scan
+* Pre-scan: Before starting the scan proper, such as plugins to handle
+  extraction of different archive types or instructions on how to handle certain
+  types of files, or to collect filetypes. These plugins process a whole codebase
+  at once.
 
-E.g Plugins to handle extraction of different archive types or instructions on how to handle
-certain types of files.
+* Scan proper: plugins to scan a file e.g. collect data and evidece from the
+  files. These plugins process one file at a teim and can do a whole codebase
+  pass once all files are scanned.
 
-* Scan proper: During the scan
+* Post-scan: After the scan, e.g plugins for summarization and other aggregated
+  operation once all scans are completed. These plugins process a whole codebase
+  at once.
 
-E.g Plugins to add more options for the scan, maybe to ignore certain files or add some
-command line arguments, create new scans (alternative or as a dependency for further scanning) etc.
+* Output and output filter: plugins for output creation and filtering such as
+  formatting or converting output to other formats (such as json, spdx, csv,
+  yaml). These plugins process a whole codebase at once.
 
-* Post - scan: After the scan
-
-E.g Plugins for output deduction, formatting or converting output to other formats
-(such as json, spdx, csv, xml, etc.)
-
-Upside of building a pluggable system would be to allow easier additions and rare modifications
-to code, without having to really fiddle around with core codebase. This will also provide a level
-of abstraction between the plugins and scancode so that any erroneous plugin would not affect the
-functioning of scancode as a whole.
 
 Description:
 ------------
 
-This project aims at making scancode a “pluggable” system, where new functionalities can be added
-to scancode at runtime as “plugins”. These plugins can be hooked into scancode using some
-predefined hooks. I would consider pluggy as the way to go for a plugin management system.
+This project aims at making scancode a “pluggable” system, where new
+functionalities can be added to scancode at runtime as “plugins”. These plugins
+can be hooked into scancode using some predefined hooks. I would consider pluggy
+as the way to go for a plugin management system.
 
 Why pluggy?
 ^^^^^^^^^^^
 
-Pluggy is well documented and maintained regularly, and has proved its worth in projects such as
-py.test. Pluggy relies on hook specifications and hook implementations (callbacks) instead of the
-conventional subclassing approach which may encourage tight-coupling in the overlying framework.
-Basically a hook specification contains method signatures (no code), these are defined by the
-application. A hook implementation contains definitions for methods declared in the corresponding
-hook specification implemented by a plugin.
+Pluggy is well documented and maintained regularly, and has proved its worth in
+projects such as pytest. Pluggy relies on hook specifications and hook
+implementations (callbacks) instead of the conventional subclassing approach
+which may encourage tight-coupling in the overlying framework. Basically a hook
+specification contains method signatures (no code), these are defined by the
+application. A hook implementation contains definitions for methods declared in
+the corresponding hook specification implemented by a plugin.
 
-As mentioned in the abstract, the plugin architecture will have 3 hook specifications (can be
-increased if required)
+As mentioned in the abstract, the plugin architecture will have 3 hook
+specifications (can be increased if required)
 
 1. Pre - scan hook
 ^^^^^^^^^^^^^^^^^^

@@ -63,14 +63,14 @@ Scancode-Toolkit can be installed in 3 different methods.
 
 .. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
-#. The :ref:`newcomer_scan_codebase` section helps you with configuring your virtual environment,
-   installing Scancode and performing a basic scan, and subsequently visualize the results.
+#. The :ref:`newcomer_scan_codebase` section helps you with configuring and
+   installing Scancode and performing a basic scan, then visualize the results.
 
-#. The :ref:`newcomer_scancode_tips` section helps you customize the scan according to your
-   requirements, and better understand the advanced features you can use.
+#. The :ref:`newcomer_scancode_tips` section helps you customize the scan
+   according to your requirements, and better understand advanced features.
 
-#. The :ref:`newcomer_all_tutorials` is essentially an exhaustive list of all Tutorials and
-   How To's with a brief description.
+#. The :ref:`newcomer_all_tutorials` is an exhaustive directory of all Tutorials
+   and How To's with a brief description.
 
 
 .. _newcomer_before:
@@ -301,10 +301,10 @@ The sections in this page cover the following:
 
 You can contribute to the following Open Issues on documentation.
 
-#. `Issues with label Documentation <https://github.com/nexB/scancode-toolkit/issues?q=is%3Aopen+is%3Aissue+label%3Adocumentation>`_
+#. `First Timers Only Issues List <https://github.com/nexB/scancode-toolkit/issues/1826>`_
 #. `Documentation Inconsistencies Tracker <https://github.com/nexB/scancode-toolkit/issues/1813>`_
 #. `ScanCode Toolkit Documentation Roadmap <https://github.com/nexB/scancode-toolkit/issues/1824>`_
-#. `First Timers Only Issues List <https://github.com/nexB/scancode-toolkit/issues/1826>`_
+#. `Issues with label Documentation <https://github.com/nexB/scancode-toolkit/issues?q=is%3Aopen+is%3Aissue+label%3Adocumentation>`_
 
 .. note::
 
@@ -313,6 +313,7 @@ You can contribute to the following Open Issues on documentation.
 Also, consider contributing to other Aboutcode Project Documentations, as they need more support.
 
 .. _newcomer_gsoc_gsod:
+
 
 Participate in GSoC/GSoD
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -325,12 +326,15 @@ If you want to participate in any of the two programs:
 Then:
 
 #. Keep an eye out for Application Timelines.
-#. Solve multiple of these :ref:`good_first_issue` to demonstrate your skills, and improve your
-   chances of selection.
+#. Solve multiple of these :ref:`good_first_issue` to demonstrate your skills,
+   and improve your chances of selection.
 #. Refer the Projects Ideas list for details on tentative projects.
 
      - :ref:`GSoC2019`
      - :ref:`GSoD2019`
+     - :ref:`GSoC2020`
+     - :ref:`GSoC2021`
+     - :ref:`GSoD2021`
 
 #. Remain active in Gitter and talk with the organization mentors well ahead of the deadlines.
 #. Select projects according to your skills and finalize project proposals.
