@@ -12,8 +12,7 @@
 
 # Supported current app Python version and OS
 # one archive or installer is built for each python x OS combo
-PYTHON_APP_VERSION="36"
-PYTHON_APP_DOT_VERSION="3.6"
+PYTHON_APP_DOT_VERSIONS="3.6 3.7 3.8 3.9"
 
 PYTHON_PYPI_TESTS_DOT_VERSIONS="3.6 3.7 3.8 3.9"
 
@@ -50,14 +49,18 @@ function run_app_smoke_tests {
     #
     # Arguments:
     #   operating_system: One of windows, linux or macos
+    #   python_app_dot_version: the python version to test (no dot)
 
     operating_system=$1
+    python_app_dot_version=$2
+    # remove dots
+    python_app_version=${python_app_dot_version/./}
 
     echo " "
-    echo "### Testing app on OS: $operating_system"
-    archive_to_test=$(ls -1 -R release/archives/ | grep "$PYTHON_APP_VERSION-$operating_system")
+    echo "### Testing app with Python $python_app_dot_version on OS: $operating_system"
+    archive_to_test=$(ls -1 -R release/archives/ | grep "$python_app_version-$operating_system")
 
-    echo "#### Testing $archive_to_test with Python $PYTHON_APP_DOT_VERSION on OS: $operating_system"
+    echo "#### Testing $archive_to_test with Python $python_app_dot_version on OS: $operating_system"
 
     # Check checksum of archive and script since it transits through file.io
     sha_arch=$(sha256sum release/archives/$archive_to_test | awk '{ print $1 }')
@@ -77,12 +80,12 @@ function run_app_smoke_tests {
         --interpreter cpython \
         --architecture x86_64 \
         --check-period 5 \
-        --version $PYTHON_APP_DOT_VERSION \
+        --version $python_app_dot_version \
         --platform $operating_system \
         --archive-file $archive_file \
         --command "python scancode_release_tests.py app $archive_to_test $sha_arch $sha_py"
 
-    echo "#### RELEASE TEST: Completed App tests of $archive_to_test with Python $PYTHON_APP_DOT_VERSION on OS: $operating_system"
+    echo "#### RELEASE TEST: Completed App tests of $archive_to_test with Python $python_app_dot_version on OS: $operating_system"
 }
 
 
@@ -91,15 +94,14 @@ function run_pypi_smoke_tests {
     # the selected Python and operating system remotely using Azure
     #
     # Arguments:
-    #   dist: One of whl for wheel, or tar.gz for sdist
+    #   archive_to_test: The naem of a wheel file or tar.gz  sdist file
     #   python_dot_versions:  run with these Python version as in "3.6 3.7"
     #   operating_systems: run on these operating_systems as in "windows linux macos"
 
-    dist=$1
+    archive_to_test=$1
     python_dot_versions=$2
     operating_systems=$3
 
-    archive_to_test=$(ls -1 -R release/pypi | grep "$dist")
     echo " "
     echo "### Testing $archive_to_test with Pythons: $python_dot_versions on OSses: $operating_systems"
 
@@ -115,7 +117,7 @@ function run_pypi_smoke_tests {
 
     tar -tvf $archive_file
 
-    echo "#### Remote test command: python scancode_release_tests.py pypi $archive_to_test $sha_arch $sha_py"
+    echo "#### Remote test command: python scancode_release_tests.py pypi archive_to_test:$archive_to_test sha_arch:$sha_arch sha_py:$sha_py"
 
     # build options for Python versions and OS
     ver_opts=" "
@@ -146,17 +148,21 @@ function run_pypi_smoke_tests {
 
 if [ "$CLI_ARGS" == "--test" ]; then
     echo "##########################################################################"
-    echo "### TESTING build for Python: $PYTHON_APP_VERSIONS on OS: $OPERATING_SYSTEMS"
+    echo "### TESTING build for Python: $PYTHON_APP_DOT_VERSIONS on OS: $OPERATING_SYSTEMS"
     for operating_system in $OPERATING_SYSTEMS
         do
-        run_app_smoke_tests $operating_system
+        for pyver in $PYTHON_APP_DOT_VERSIONS
+            do
+            run_app_smoke_tests $operating_system $pyver
+        done
     done
 
     echo "##########################################################################"
     echo "### TESTING PyPI archives for Python: $PYTHON_PYPI_TESTS_DOT_VERSIONS on OS: $OPERATING_SYSTEMS"
-    run_pypi_smoke_tests .whl "$PYTHON_PYPI_TESTS_DOT_VERSIONS" "$OPERATING_SYSTEMS"
-    run_pypi_smoke_tests .tar.gz "$PYTHON_PYPI_TESTS_DOT_VERSIONS" "$OPERATING_SYSTEMS"
-
+    for archive in $(find release/pypi/ -type f -printf "%f\n")
+        do
+        run_pypi_smoke_tests $archive "$PYTHON_PYPI_TESTS_DOT_VERSIONS" "$OPERATING_SYSTEMS"
+    done
     set +e
     set +x
     exit
@@ -252,11 +258,15 @@ function build_app_archive {
     # Arguments:
     #   operating_system: only include wheels for this operating_system. 
     #                     One of windows, linux or macos
+    #   python_app_dot_version: the python version to build (with dot)
 
     operating_system=$1
+    python_app_dot_version=$2
+    # remove dots
+    python_app_version=${python_app_dot_version/./}
 
     echo " "
-    echo "## RELEASE: Building archive for Python $PYTHON_APP_VERSION on operating system: $operating_system"
+    echo "## RELEASE: Building archive for Python $python_app_version on operating system: $operating_system"
 
     clean_build
     mkdir -p thirdparty
@@ -264,17 +274,17 @@ function build_app_archive {
     if [ "$operating_system" == "windows" ]; then
         # create a zip only on Windows
         formats=zip
-        echo -n "py 3.6">PYTHON_EXECUTABLE
+        echo -n "py -$python_app_dot_version">PYTHON_EXECUTABLE
     else
         formats=xztar
-        echo -n "python3.6">PYTHON_EXECUTABLE
+        echo -n "python$python_app_dot_version">PYTHON_EXECUTABLE
     fi
 
     # 1. Collect thirdparty deps only for the subset for this Python/operating_system
     bin/python etc/release/fetch_requirements.py \
         --requirements-file=requirements.txt \
         --thirdparty-dir=thirdparty \
-        --python-version=$PYTHON_APP_VERSION \
+        --python-version=$python_app_version \
         --operating-system=$operating_system \
         --with-about
 
@@ -283,7 +293,7 @@ function build_app_archive {
     # This is hackish and we should instead use our own archiving code that
     # would take a distutils manifest-like input
     bin/python setup.py $QUIET sdist --formats=$formats 
-    bin/python etc/release/scancode_rename_archives.py dist/ _py$PYTHON_APP_VERSION-$operating_system
+    bin/python etc/release/scancode_rename_archives.py dist/ _py$python_app_version-$operating_system
     mkdir -p release/archives
     mv dist/* release/archives/
 }
@@ -321,7 +331,10 @@ function build_source_archive {
 # build the app combos on the current App Python
 for operating_system in $OPERATING_SYSTEMS
     do
-    build_app_archive $operating_system
+    for pyver in $PYTHON_APP_DOT_VERSIONS
+        do
+        build_app_archive $operating_system $pyver
+    done
 done
 
 build_source_archive
