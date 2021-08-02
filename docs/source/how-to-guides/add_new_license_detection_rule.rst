@@ -59,6 +59,6 @@ More (advanced) rules options:
 - if no license should be detected for your .RULE text, do not add a license expression,
   just add a ``notes`` field.
 
-- Each rules needs have one flag such as is_license_notice. See the 
+- Each rules needs have one flag such as is_license_notice. See the
   ``src/licensedcode/models.py`` directory for a list of all possible values and
   other options.

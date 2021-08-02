@@ -1,7 +1,8 @@
 Comprehensive Installation
 ==========================
 
-There are 4 main ways you can install ScanCode.
+
+There are four main ways to install ScanCode.
 
 - :ref:`app_install`
 
@@ -63,17 +64,22 @@ ScanCode needs a Python 3.6+ interpreter; We support all Python versions from
 
     For Ubuntu, it is ``sudo apt install python3-dev``
 
-    - On Ubuntu 14, 16, 18 and 20 run:
-      ``sudo apt install python-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev libpopt0``
+    - On Ubuntu 14, 16, 18 and 20 run::
 
-    - On Debian and Debian-based distros run:
-      ``sudo apt-get install python3-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-devlibpopt0``
+          sudo apt install python-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev libpopt0
 
-    - On RPM-based distros run:
-      ``sudo yum install python3.6-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devellibpopt0``
+    - On Debian and Debian-based distros run::
 
-    - On Fedora 22 and later run:
-      ``sudo dnf install python3.6-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs libpopt0``
+          sudo apt-get install python3-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-devlibpopt0
+
+    - On RPM-based distros run::
+
+          sudo yum install python3.6-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devellibpopt0
+
+    - On Fedora 22 and later run::
+
+          sudo dnf install python3.6-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs libpopt0
+
 
     If these packages are not available from your package manager, you must
     compile them  from sources.
@@ -280,7 +286,7 @@ using the following command::
 
     git checkout develop
 
-Here, ``develop`` branch has the latest release of Scancode-Toolkit. 
+Here, ``develop`` branch has the latest release of Scancode-Toolkit.
 You can also check out to any of the following:
 
 - Branches (Locally created or already present) [Example - ``develop``]
@@ -332,7 +338,7 @@ The steps are:
 
     /usr/bin/python3 -m venv .
 
-For more information on Python virtualenv, visit this 
+For more information on Python virtualenv, visit this
 `page <https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv>`_.
 
 #. Activate the virtual environment you just created::

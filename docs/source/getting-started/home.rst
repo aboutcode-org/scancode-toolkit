@@ -19,14 +19,19 @@ is often much harder to accomplish than it should be because:
 ScanCode tries to address these issues by offering:
 
 - A simple command line approach that runs on Windows, Linux, and macOS
-- A comprehensive code scanner that can detect origin and license information in codebase files, including binaries
-- A comprehensive set of package manifests and lockfile parsers to report direct and pinned dependencies
-- Your choice of JSON or other output formats (YAML, SPDX, HTML, CSV) for integration with other tools
+- A comprehensive code scanner that can detect origin and license information in
+  codebase files, including binaries
+- A comprehensive set of package manifests and lockfile parsers to report direct
+  and pinned dependencies
+- Your choice of JSON or other output formats (YAML, SPDX, HTML, CSV) for
+  integration with other tools
 - Well-tested, easy to hack, and well-documented code
 - A plugin system for easily adding new Functionality to Scans.
 - Extensive documentation and support.
-- We release of the code and reference data under permissive licenses (Apache 2.0 and CC-BY-4.0)
-- ScanCode.io to assemble scripted and specialied code analysis pipelines with a web-based analysis server
+- We release of the code and reference data under permissive licenses (Apache
+  2.0 and CC-BY-4.0)
+- ScanCode.io to assemble scripted and specialied code analysis pipelines with
+  a web-based analysis server
 - ScanCode workbench for desktop-based scans visualization
 
 ScanCode is recognized as the industry leading engine for license and copyright
@@ -43,7 +48,7 @@ ScanCode detects and normalizes origin, dependencies, licensing and other
 related information in your code:
 
 - by parsing package manifests and dependencies lock files to a normalized
-  metadata model and assigning each an identifying `Package URL 
+  metadata model and assigning each an identifying `Package URL
   <https://github.com/package-url/purl-spec>`_,
 
 - by detecting license tags, notices and texts in text and binaries using the

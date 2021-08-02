@@ -154,8 +154,7 @@ ScanCode Versions
 ^^^^^^^^^^^^^^^^^
 
 #. You can see all Scancode Toolkit versions on the `GitHub release page <https://github.com/nexB/scancode-toolkit/releases>`_.
-#. Refer :ref:`whats_new_this_release` to know more about the latest release.
-#. You can also refer the `CHANGELOG <https://github.com/nexB/scancode-toolkit/blob/develop/CHANGELOG.rst>`_ for more information on specific releases.
+#. Read the `CHANGELOG <https://github.com/nexB/scancode-toolkit/blob/develop/CHANGELOG.rst>`_ for more information on specific releases.
 #. If you want to use/test a specific version of Scancode Toolkit, you can follow the instructions
    in :ref:`source_code_install` docs.
 
@@ -239,12 +238,7 @@ To determine where to contribute, you can refer:
 #. ScanCode Toolkit tracks issues via the `GitHub Issue tracker <https://github.com/nexB/scancode-toolkit/issues>`_
 #. Broad `milestones <https://github.com/nexB/scancode-toolkit/milestones>`_ for upcoming versions are also maintained.
 
-And documentation related to contributing code can be referred at :ref:`contrib_code_dev`. The main
-sections are:
-
-#. :ref:`contrib_code_conven`
-#. :ref:`scancode_toolkit_developement_running_tests`
-#. :ref:`contrib_dev_pip_and_configure`
+And documentation related to contributing code can be referred at :ref:`contrib_code_dev`.
 
 .. _newcomer_good_first_issue:
 
@@ -332,9 +326,6 @@ Then:
 
      - :ref:`GSoC2019`
      - :ref:`GSoD2019`
-     - :ref:`GSoC2020`
-     - :ref:`GSoC2021`
-     - :ref:`GSoD2021`
 
 #. Remain active in Gitter and talk with the organization mentors well ahead of the deadlines.
 #. Select projects according to your skills and finalize project proposals.

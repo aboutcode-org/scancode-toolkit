@@ -9,7 +9,7 @@ TL;DR:
 - Source code and runtime data are in the /src/ directory.
 - Test code and test data are in the /tests/ directory.
 - Datasets (inluding licenses) and test data are in /data/ sub-directories.
-- We use DCO signoff in commit messages, like Linux does. 
+- We use DCO signoff in commit messages, like Linux does.
 - Porting ScanCode to other OS (FreeBSD is supported, etc.) is possible. Enter an issue for help.
 
 See `CONTRIBUTING.rst <https://github.com/nexB/scancode-toolkit/blob/master/CONTRIBUTING.rst>`_
@@ -45,7 +45,7 @@ new features, we add tests. See existing test code for examples which form also
 a good specification for the supported features.
 
 The tests should pass on Linux 64 bits, Windows 64 bits and on
-macOS 10.14 and up. We maintain multiple CI loops with Azure (all OSes) 
+macOS 10.14 and up. We maintain multiple CI loops with Azure (all OSes)
 at https://dev.azure.com/nexB/scancode-toolkit/_build and Appveyor (Windows) at
 https://ci.appveyor.com/project/nexB/scancode-toolkit .
 
@@ -53,12 +53,10 @@ https://ci.appveyor.com/project/nexB/scancode-toolkit .
 Several tests are data-driven and use data files as test input and sometimes
 data files as test expectation (in this case using either JSON or YAML files);
 a large number of copyright, license and package manifest parsing tests are such
-data-driven tests. 
-
+data-driven tests.
 
 
 .. _scancode_toolkit_development_running_tests:
-
 
 Running tests
 -------------
@@ -120,7 +118,7 @@ Thirdparty libraries and dependencies management
 
 ScanCode uses the ``configure`` and ``configure.bat`` scripts to install a
 `virtualenv <https://virtualenv.pypa.io/en/stable/>`_ , install required
-packaged dependencies using  `setuptools <https://github.com/pypa/setuptools>`_ 
+packaged dependencies using  `setuptools <https://github.com/pypa/setuptools>`_
 and such that ScanCode can be installed in a repeatable and consistent manner on
 all OSes and Python versions.
 
@@ -141,16 +139,16 @@ store it in the Git repo in the ``etc/thirdparty`` directory.
 We bundle pre-built bundled native binaries as plugins which are installed as
 wheels. These binaries are organized by OS and architecture; they ensure that
 ScanCode works out of the box either using a checkout or a download, without
-needing a compiler and toolchain to be installed. 
+needing a compiler and toolchain to be installed.
 
 The corresponding source code and build scripts for all for the
-pre-built binaries are stored in a separate repository at 
+pre-built binaries are stored in a separate repository at
 https://github.com/nexB/scancode-plugins
 
 ScanCode app archives should not require network access for installation or
-configuration of its third-party libraries and dependencies. To enable this, 
+configuration of its third-party libraries and dependencies. To enable this,
 we store bundled thirdparty components and  libraries in the ``thirdparty``
-directory of released app archives; this is done at build time. 
+directory of released app archives; this is done at build time.
 These dependencies are stored as pre-built wheels. These wheels are sometimes
 built by us when there is no wheel available upstream on PyPI. We store all
 these prebuilt wheels with corresponding .ABOUT and .LICENSE files in
@@ -159,7 +157,7 @@ for download at  https://thirdparty.aboutcode.org/pypi/
 
 Because this is used by the configure script, all the thirdparty dependencies
 used in ScanCode MUST be available there first. Therefore adding a new
-dependency means requesting a merge/PR in 
+dependency means requesting a merge/PR in
 https://github.com/nexB/thirdparty-packages/ first that contains all the
 recursive dependencies.
 
