@@ -67,6 +67,13 @@ def test_license_option_reports_license_texts_diag_long_lines():
     test_loc = test_env.get_test_loc('plugin_license/text_long_lines/scan-diag.expected.json')
     check_json_scan(test_loc, result_file, regen=False)
 
+def test_license_match_reference():
+    test_dir = test_env.get_test_loc('plugin_license/license_reference/scan', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = ['--license', '--license-text', '--license-text-diagnostics', '--strip-root', test_dir, '--json', result_file, '--verbose']
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/license_reference/scan-ref.expected.json')
+    check_json_scan(test_loc, result_file, regen=False)
 
 def test_reindex_licenses_works():
     args = ['--reindex-licenses']

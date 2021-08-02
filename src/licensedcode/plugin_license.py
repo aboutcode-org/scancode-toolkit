@@ -160,9 +160,12 @@ def match_reference_license(resource, codebase):
     return resource
 
 def find_reference_file(location,referenced_filename):
+    """
+    Searches for the referenced filename in the same directory and 
+    returns the found location
+    """
     file_name=referenced_filename
     par_dir=fileutils.parent_directory(location)
-
     for root, dirs, files in os.walk(par_dir):
       if file_name in files:
          path_file = os.path.join(root,file_name)
