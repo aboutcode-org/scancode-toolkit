@@ -43,7 +43,7 @@ Package detection:
  - Add support to track installed files for each Package type.
 
 
-v21.8.1
+v21.8.4
 ---------
 
 This is a minor bug fix release primarily for Windows installation.
