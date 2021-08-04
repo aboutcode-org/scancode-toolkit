@@ -14,6 +14,7 @@ import os
 
 from commoncode import fileutils
 from commoncode.cliutils import PluggableCommandLineOption
+from licensedcode.models import BasicRule, License
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from commoncode.cliutils import MISC_GROUP
@@ -118,7 +119,11 @@ class LicenseScanner(ScanPlugin):
             license_text_diagnostics=license_text_diagnostics,
             license_url_template=license_url_template
         )
+
     def process_codebase(self, codebase, **kwargs):
+        
+        if codebase.has_single_resource:
+            return
 
         for resource in codebase.walk(topdown=False):
             match_reference_license(resource,codebase)
@@ -128,36 +133,36 @@ def match_reference_license(resource, codebase):
     """
     Find instances for any licenses in referenced filenames
     """
+
+    if not resource.is_file:
+        return
+
     licenses = resource.licenses
     license_expressions = resource.license_expressions
     if not licenses:
         return 
 
     location = resource.location
-    
     from licensedcode import cache
     from scancode.api import get_licenses
     idx = cache.get_index()
     matches = idx.match(
         location=location, min_score=0)
-    
-    modified = False
 
     for match in matches:
         ref_files=match.rule.referenced_filenames
         if len(ref_files) != 0:
             for i in range(len(ref_files)):
                 if not ref_files[i].startswith('usr/share/common-licenses'):
-                 new_loc=find_reference_file(location,ref_files[i])
-                 if new_loc != None:
-                   new_lic=get_licenses(new_loc, min_score=0)
-                   licenses.extend(new_lic['licenses'])
-                   license_expressions.extend(new_lic['license_expressions'])
-                   modified = True
-
-    if modified:
-        codebase.save_resource(resource)
+                    new_loc=find_reference_file(location,ref_files[i])
+                    if new_loc:
+                        new_lic=get_licenses(new_loc, min_score=0)
+                        licenses.extend(new_lic['licenses'])
+                        license_expressions.extend(new_lic['license_expressions'])
+                   
+    codebase.save_resource(resource)
     return resource
+
 
 def find_reference_file(location,referenced_filename):
     """
@@ -171,4 +176,3 @@ def find_reference_file(location,referenced_filename):
          path_file = os.path.join(root,file_name)
          return path_file
         
-    return None

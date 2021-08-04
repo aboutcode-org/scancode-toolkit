@@ -20,7 +20,7 @@
   ],
   "files": [
     {
-      "path": "LICENCE",
+      "path": "LICENSE",
       "type": "file",
       "licenses": [
         {
@@ -72,7 +72,7 @@
       "licenses": [
         {
           "key": "unknown-license-reference",
-          "score": 90.0,
+          "score": 27.0,
           "name": "Unknown License file reference",
           "short_name": "Unknown License reference",
           "category": "Unstated License",
@@ -85,26 +85,26 @@
           "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
           "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
           "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-          "start_line": 1,
-          "end_line": 1,
+          "start_line": 34,
+          "end_line": 34,
           "matched_rule": {
-            "identifier": "unknown-license-reference_39.RULE",
+            "identifier": "unknown-license-reference_25.RULE",
             "license_expression": "unknown-license-reference",
             "licenses": [
               "unknown-license-reference"
             ],
             "is_license_text": false,
             "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
             "is_license_intro": false,
-            "matcher": "1-hash",
-            "rule_length": 10,
-            "matched_length": 10,
+            "matcher": "2-aho",
+            "rule_length": 5,
+            "matched_length": 5,
             "match_coverage": 100.0,
-            "rule_relevance": 90
+            "rule_relevance": 27
           },
-          "matched_text": "For licensing information, see the file 'LICENCE' in this directory."
+          "matched_text": "license\": \"SEE LICENSE IN LICENSE."
         },
         {
           "key": "mit",
@@ -146,7 +146,7 @@
         "unknown-license-reference",
         "mit"
       ],
-      "percentage_of_license_text": 100.0,
+      "percentage_of_license_text": 0.2,
       "scan_errors": []
     }
   ]
