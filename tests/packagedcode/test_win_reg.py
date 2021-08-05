@@ -62,9 +62,5 @@ class TestWinReg(PackageTester):
     def test_win_reg_get_installed_packages(self):
         test_root_dir = self.get_test_loc('win_reg/get_installed_packages_docker/layer')
         expected_loc = self.get_test_loc('win_reg/get_installed_packages_docker/expected-results')
-        results = list(get_installed_packages(test_root_dir))
-        # Ensure only one program is detected
-        self.assertEqual(len(results), 1)
-        result = results[0]
-        result = result.to_dict(_detailed=True)
-        check_result_equals_expected_json(result, expected_loc, regen=False)
+        results = list(p.to_dict(_detailed=True) for p in get_installed_packages(test_root_dir))
+        check_result_equals_expected_json(results, expected_loc, regen=False)
