@@ -1,4 +1,42 @@
--
--
-- intel
-- Copyright (c) 2008, Intel Corporation
+primary_license:
+declared_license:
+license_expression: intel
+copyright: Copyright (c) 2008, Intel Corporation
+matches:
+  - score: '95.0'
+    start_line: 8
+    end_line: 46
+    matcher: 2-aho
+    rule_length: 268
+    matched_length: 268
+    match_coverage: '100.0'
+    rule_relevance: 95
+    identifier: intel_2.RULE
+    license_expression: intel
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution.  \n \n Redistribution and use in binary form, without modification,\
+      \ are\n permitted provided that the following conditions are met:\n \n  * Redistributions\
+      \ must reproduce the above copyright notice and the\n    following disclaimer in the documentation\
+      \ and/or other materials\n    provided with the distribution.\n \n  * Neither the name\
+      \ of Intel Corporation nor the names of its\n    suppliers may be used to endorse or promote\
+      \ products derived from\n    this software without specific prior written permission.\n\
+      \ \n  * No reverse engineering, decompilation, or disassembly of this\n    software is\
+      \ permitted.\n \n Limited patent license.\n \n Intel Corporation grants a world-wide,\
+      \ royalty-free, non-exclusive\n license under patents it now or hereafter owns or controls\
+      \ to make,\n have made, use, import, offer to sell and sell (“Utilize”) this\n software,\
+      \ but solely to the extent that any such patent is necessary\n to Utilize the software\
+      \ alone.  The patent license shall not apply to\n any combinations which include this\
+      \ software.  No hardware per se is\n licensed hereunder.\n \n DISCLAIMER.  \n \n THIS\
+      \ SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n \"AS IS\" AND ANY EXPRESS\
+      \ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR\n A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n\
+      \ OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS OR SERVICES; LOSS OF USE,\n DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\
+      \ CAUSED AND ON ANY\n THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."

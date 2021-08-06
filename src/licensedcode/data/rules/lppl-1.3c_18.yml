@@ -1,0 +1,6 @@
+license_expression: lppl-1.3c
+is_license_notice: yes
+relevance: 99
+notes: See in https://github.com/plk/biblatex
+ignorable_urls:
+    - https://www.latex-project.org/lppl.txt

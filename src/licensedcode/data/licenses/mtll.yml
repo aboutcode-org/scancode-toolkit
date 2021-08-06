@@ -10,4 +10,7 @@ notes: |
     several ways. It is Free, but GPL-incompatible.
 spdx_license_key: MTLL
 ignorable_authors:
-    - permission, please contact Indiana University Advanced Research & Technology
+- at the University of Notre Dame, the Pervasive Technology Labs at Indiana University, and
+  Dresden University of Technology
+- permission, please contact Indiana University Advanced Research & Technology
+

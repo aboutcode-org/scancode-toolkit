@@ -1,0 +1,6 @@
+license_expression: polyform-noncommercial-1.0.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+  - https://polyformproject.org/licenses/noncommercial/1.0.0
+

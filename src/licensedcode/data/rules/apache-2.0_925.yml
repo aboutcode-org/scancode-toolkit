@@ -1,0 +1,7 @@
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+notes: seen in  https://raw.githubusercontent.com/swagger-api/swagger-codegen/v3.0.25/samples/composed/html2/index.html
+    was incorrectly detected as "apache-2.0 OR mit"
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0

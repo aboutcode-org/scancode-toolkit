@@ -1,6 +1,46 @@
--
--
-- gpl-2.0-plus AND gpl-1.0-plus
-- |
+primary_license:
+declared_license:
+license_expression: gpl-2.0-plus AND gpl-1.0-plus
+copyright: |
   copyrighted by the Free Software Foundation, Inc.
   Copyright (c) 1995-2011 Software in the Public Interest
+matches:
+  - score: '100.0'
+    start_line: 17
+    end_line: 25
+    matcher: 2-aho
+    rule_length: 79
+    matched_length: 79
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_90.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This program is free software; you can redistribute it and/or modify\n it\
+      \ under the terms of the GNU General Public License as published by\n the Free Software\
+      \ Foundation; either version 2 of the License, or\n (at your option) any later version.\n\
+      \ \n This program is distributed in the hope that it will be useful,\n but WITHOUT ANY\
+      \ WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR\
+      \ PURPOSE.  See the\n GNU General Public License for more details."
+  - score: '100.0'
+    start_line: 27
+    end_line: 28
+    matcher: 2-aho
+    rule_length: 23
+    matched_length: 23
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_10.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian GNU/Linux systems, the complete text of the GNU General
+       Public License can be found in `/usr/share/common-licenses/GPL'.

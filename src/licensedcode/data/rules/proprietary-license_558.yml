@@ -1,0 +1,16 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: Seen in https://www.accellera.org/images/about/policies/SystemC_Open_Source_License_v3.3.pdf
+ignorable_authors:
+  - through the Accellera working group process
+ignorable_copyrights:
+  - (c) 1996- current
+  - Copyright (c) 1996- current year here by all Contributors
+ignorable_emails:
+  - info@accellera.org
+ignorable_holders:
+  - here by all Contributors
+ignorable_urls:
+  - http://www.accellera.org/
+

@@ -1,0 +1,19 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 99
+referenced_filenames:
+    - COPYING
+notes: |
+    Seen in Info-Zip with a
+     Copyright 1989 Samuel H. Smith;  All rights reserved
+    Relicensed to Info-Zip terms per Info-Zip documentation
+
+    Regarding the first stipulation, Mr. Smith was tracked down in southern
+    California some years back [Samuel H. Smith, The Tool Shop; as of mid-
+    May 1994, (213) 851-9969 (voice), (213) 887-2127(?) (subscription BBS),
+    71150.2731@compuserve.com]:
+
+    "He says that he thought that whoever contacted him understood that
+     he has no objection to the Info-ZIP group's inclusion of his code.
+     His primary concern is that it remain freely distributable, he said."

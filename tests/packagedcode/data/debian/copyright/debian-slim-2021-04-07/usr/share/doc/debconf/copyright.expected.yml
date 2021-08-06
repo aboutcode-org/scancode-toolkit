@@ -1,7 +1,8 @@
-- bsd-simplified
-- - BSD-2-clause
-- bsd-simplified
-- |
+primary_license: bsd-simplified
+declared_license:
+  - BSD-2-clause
+license_expression: bsd-simplified
+copyright: |
   1999-2010 Joey Hess <joeyh@debian.org>
   2003 Tomohiro KUBOTA <kubota@debian.org>
   2004-2010 Colin Watson <cjwatson@debian.org>
@@ -21,3 +22,40 @@
   2003 Petter Reinholdtsen <pere@hungry.com>
   2005 Sylvain Ferriol <Sylvain.Ferriol@imag.fr>
   2005-2010 Joey Hess <joeyh@debian.org>
+matches:
+  - score: '99.45'
+    start_line: 1
+    end_line: 20
+    matcher: 3-seq
+    rule_length: 183
+    matched_length: 182
+    match_coverage: '99.45'
+    rule_relevance: 100
+    identifier: bsd-simplified_52.RULE
+    license_expression: bsd-simplified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions
+      are met:
+      1. Redistributions of source code must retain the above copyright
+         notice, this list of conditions and the following disclaimer.
+      2. Redistributions in binary form must reproduce the above copyright
+         notice, this list of conditions and the following disclaimer in the
+         documentation and/or other materials provided with the distribution.
+
+      THIS SOFTWARE IS PROVIDED BY AUTHORS AND CONTRIBUTORS ``AS IS'' AND
+      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE
+      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+      SUCH DAMAGE.

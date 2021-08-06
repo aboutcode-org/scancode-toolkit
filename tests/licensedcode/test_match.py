@@ -1412,6 +1412,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             '--enable-lzma --enable-decklink --enable-zlib',
 
             'libswresample license: GPL version 3 or later',
+
             '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
             '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
             '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
@@ -1426,6 +1427,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             '--enable-lzma --enable-decklink --enable-zlib',
 
             'libswscale license: GPL version 3 or later',
+
             '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
             '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
             '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
@@ -1441,7 +1443,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
             'libavutil license: GPL version 3 or later',
 
-            'This software is derived from the GNU GPL XviD codec (1.3.0).'
+            'This software is derived from the GNU GPL XviD codec (1.3.0).',
         ]
 
         self.check_matched_texts(

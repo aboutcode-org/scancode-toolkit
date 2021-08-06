@@ -1,0 +1,7 @@
+license_expression: apache-2.0 AND proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: See in Firebase iOS SDK
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - https://firebase.google.com/terms

@@ -1,11 +1,13 @@
-- bsd-new
-- - BSD-3-Clause
+primary_license: bsd-new
+declared_license:
+  - BSD-3-Clause
   - permissive-like-automake-output
   - ISC
   - ISC+IBM
   - same-as-rest-of-p11kit
-- bsd-new AND fsf-unlimited-no-warranty AND mit AND isc AND (isc AND ibm-dhcp) AND free-unknown
-- |
+license_expression: bsd-new AND fsf-unlimited-no-warranty AND mit AND isc AND (isc AND ibm-dhcp)
+  AND free-unknown
+copyright: |
   2011 Collabora Ltd.
   2004, 2005, 2007, 2008, 2012, 2013 Stefan Walter
   2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019 Red Hat, Inc.
@@ -33,3 +35,220 @@
   2012 Rosetta Contributors and Canonical Ltd 2012
   Eerik Uusi-Illikainen https://launchpad.net/~ekiuusi-4, 2012
   Timo Jyrinki <timo.jyrinki@iki.fi>, 2012
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 8
+    matcher: 1-hash
+    rule_length: 64
+    matched_length: 64
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-unlimited-no-warranty.RULE
+    license_expression: fsf-unlimited-no-warranty
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This file is free software; as a special exception the author gives
+        unlimited permission to copy and/or distribute it, with or without
+        modifications, as long as this notice is preserved.
+
+        This file is distributed in the hope that it will be useful, but
+        WITHOUT ANY WARRANTY, to the extent permitted by law; without even
+        the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+        PURPOSE.  */
+  - score: '100.0'
+    start_line: 1
+    end_line: 11
+    matcher: 1-hash
+    rule_length: 110
+    matched_length: 110
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: isc_20.RULE
+    license_expression: isc
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission to use, copy, modify, and/or distribute this software for any
+      purpose with or without fee is hereby granted, provided that the above
+      copyright notice and this permission notice appear in all copies.
+
+      THE SOFTWARE IS PROVIDED "AS IS" AND ISC DISCLAIMS ALL WARRANTIES WITH
+      REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+      AND FITNESS.  IN NO EVENT SHALL ISC BE LIABLE FOR ANY SPECIAL, DIRECT,
+      INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+      LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE
+      OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+      PERFORMANCE OF THIS SOFTWARE.
+  - score: '100.0'
+    start_line: 3
+    end_line: 14
+    matcher: 2-aho
+    rule_length: 113
+    matched_length: 113
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: isc_9.RULE
+    license_expression: isc
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission to use, copy, modify, and distribute this software for any
+      purpose with or without fee is hereby granted, provided that the above
+      copyright notice and this permission notice appear in all copies.
+
+      THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
+      ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
+      OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
+      CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+      DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+      PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+      ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+      SOFTWARE.
+  - score: '100.0'
+    start_line: '19'
+    end_line: 38
+    matcher: 2-aho
+    rule_length: 203
+    matched_length: 203
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: ibm-dhcp.LICENSE
+    license_expression: ibm-dhcp
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      International Business Machines, Inc. (hereinafter called IBM) grants
+      permission under its copyrights to use, copy, modify, and distribute this
+      Software with or without fee, provided that the above copyright notice and
+      all paragraphs of this notice appear in all copies, and that the name of IBM
+      not be used in connection with the marketing of any product incorporating
+      the Software or modifications thereof, without specific, written prior
+      permission.
+
+      To the extent it has a right to do so, IBM grants an immunity from suit
+      under its patents, if any, for the use, sale or manufacture of products to
+      the extent that such products are used for performing Domain Name System
+      dynamic updates in TCP/IP networks by means of the Software.  No immunity is
+      granted for any product per se or for any other function of any product.
+
+      THE SOFTWARE IS PROVIDED "AS IS", AND IBM DISCLAIMS ALL WARRANTIES,
+      INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+      PARTICULAR PURPOSE.  IN NO EVENT SHALL IBM BE LIABLE FOR ANY SPECIAL,
+      DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
+      OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
+      IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
+  - score: '76.15'
+    start_line: 1
+    end_line: 2
+    matcher: 3-seq
+    rule_length: 11
+    matched_length: 11
+    match_coverage: '100.0'
+    rule_relevance: 90
+    identifier: free-unknown_79.RULE
+    license_expression: free-unknown
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This file is distributed under the same license as the [p11]-[kit]
+      package.
+  - score: '100.0'
+    start_line: 1
+    end_line: 23
+    matcher: 1-hash
+    rule_length: 213
+    matched_length: 213
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_19.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions
+      are met:
+      1. Redistributions of source code must retain the above copyright
+         notice, this list of conditions and the following disclaimer.
+      2. Redistributions in binary form must reproduce the above copyright
+         notice, this list of conditions and the following disclaimer in the
+         documentation and/or other materials provided with the distribution.
+      3. Neither the name of the University nor the names of its contributors
+         may be used to endorse or promote products derived from this software
+         without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+      SUCH DAMAGE.
+  - score: '80.0'
+    start_line: 12
+    end_line: 21
+    matcher: 2-aho
+    rule_length: 86
+    matched_length: 86
+    match_coverage: '100.0'
+    rule_relevance: 80
+    identifier: mit_17.RULE
+    license_expression: mit
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person
+      * obtaining a copy of this software and associated documentation files
+      * (the "Software"), to deal in the Software without restriction,
+      * including without limitation the rights to use, copy, modify, merge,
+      * publish, distribute, sublicense, and/or sell copies of the Software,
+      * and to permit persons to whom the Software is furnished to do so,
+      * subject to the following conditions:
+      *
+      * The above copyright notice and this permission notice shall be
+      * included in all copies or substantial portions of the Software.
+  - score: '82.5'
+    start_line: 1
+    end_line: 2
+    matcher: 3-seq
+    rule_length: 12
+    matched_length: 11
+    match_coverage: '91.67'
+    rule_relevance: 90
+    identifier: free-unknown_80.RULE
+    license_expression: free-unknown
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This file is distributed under the same license as the
+      [debian] [files] [of] [the] [p11]-[kit] package.

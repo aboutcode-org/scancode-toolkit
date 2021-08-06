@@ -1,0 +1,6 @@
+license_expression: isc
+is_license_notice: yes
+relevance: 100
+notes: Seen in ptyprocess-0.6.0
+ignorable_urls:
+    - http://opensource.org/licenses/isc-license.txt
