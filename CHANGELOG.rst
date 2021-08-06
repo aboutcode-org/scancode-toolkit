@@ -43,6 +43,25 @@ Package detection:
  - Add support to track installed files for each Package type.
 
 
+License detection:
+~~~~~~~~~~~~~~~~~~~
+
+- Unknown licenses have a new flag "is_unknown" to identify them
+  beyond just the naming convention of having "unknown" as part of their name.
+
+- Rules that match at least one unknown license have a flag "has_unknown" set
+  in the returned match results.
+
+
+Many thanks to every contributors that made this possible and in particular:
+
+- Akanksha Garg @akugarg
+- Ayan Sinha Mahapatra @AyanSinhaMahapatra
+- Jono Yang @JonoYang
+- Philippe Ombredanne @pombredanne
+
+
+
 v21.8.4
 ---------
 
