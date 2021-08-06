@@ -67,12 +67,17 @@ CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
 ################################
 # scancode-specific: Thirdparty package locations and index handling
-# Do we have thirdparty/files? use the mit.LICENSE as a proxy
-if [[ -f "$CFG_ROOT_DIR/thirdparty/mit.LICENSE" ]]; then
-    LINKS=$CFG_ROOT_DIR/thirdparty
+if [[ "$PYPI_LINKS" == "" ]]; then
+    # Do we have thirdparty/files? use the mit.LICENSE as a proxy
+    if [[ -f "$CFG_ROOT_DIR/thirdparty/mit.LICENSE" ]]; then
+        LINKS=$CFG_ROOT_DIR/thirdparty
+    else
+        LINKS=https://thirdparty.aboutcode.org/pypi
+    fi
 else
-    LINKS=https://thirdparty.aboutcode.org/pypi
+    LINKS=$PYPI_LINKS
 fi
+
 PIP_EXTRA_ARGS="--no-index --find-links $LINKS"
 ################################
 
