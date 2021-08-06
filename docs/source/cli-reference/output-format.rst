@@ -177,6 +177,7 @@ following options.
               "short_name": "MIT Old Style",
               "category": "Permissive",
               "is_exception": false,
+              "is_unknown": false,
               "owner": "MIT",
               "homepage_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
               "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
