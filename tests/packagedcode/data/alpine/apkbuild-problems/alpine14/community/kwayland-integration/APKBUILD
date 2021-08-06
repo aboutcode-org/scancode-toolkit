@@ -1,0 +1,41 @@
+# Contributor: Bhushan Shah <bshah@kde.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=kwayland-integration
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="KWayland integration"
+url="https://kde.org/plasma-desktop/"
+arch="all !armhf" # armhf blocked by extra-cmake-modules
+license="LGPL-2.1-only OR LGPL-3.0-only"
+depends="kglobalaccel"
+makedepends="
+	extra-cmake-modules
+	kguiaddons-dev
+	kidletime-dev
+	kwayland-dev
+	kwindowsystem-dev
+	qt5-qtbase-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/kwayland-integration-$pkgver.tar.xz"
+options="!check" # Broken
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="
+337ec281dd0ce7791d93af123ef1e5bd476328c91edc28df514c87c714b27d0f6a739b55f11e1dbf3ce0f6826ab437f404639b116644234086b855b748ff71d9  kwayland-integration-5.22.0.tar.xz
+"

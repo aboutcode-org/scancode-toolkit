@@ -1,0 +1,1395 @@
+[
+    {
+        "subkey_name": "v4.0",
+        "path": "\\Microsoft\\NET Framework Setup\\NDP\\CDF\\v4.0",
+        "timestamp": "2021-06-05T00:07:27.475624+00:00",
+        "values_count": 5,
+        "values": [
+            {
+                "name": "HttpNamespaceReservationInstalled",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "NetTcpPortSharingInstalled",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "NonHttpActivationInstalled",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "SMSvcHostPath",
+                "value": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "WMIInstalled",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "CDF",
+        "path": "\\Microsoft\\NET Framework Setup\\NDP\\CDF",
+        "timestamp": "2019-12-07T09:15:14.299770+00:00",
+        "values_count": 0,
+        "values": [],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "1033",
+        "path": "\\Microsoft\\NET Framework Setup\\NDP\\v4\\Client\\1033",
+        "timestamp": "2019-12-07T09:15:14.299770+00:00",
+        "values_count": 6,
+        "values": [
+            {
+                "name": "CBS",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Install",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Release",
+                "value": 528372,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Servicing",
+                "value": 0,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "TargetVersion",
+                "value": "4.0.0",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Version",
+                "value": "4.8.04084",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "Client",
+        "path": "\\Microsoft\\NET Framework Setup\\NDP\\v4\\Client",
+        "timestamp": "2021-06-05T00:07:27.475624+00:00",
+        "values_count": 7,
+        "values": [
+            {
+                "name": "CBS",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Install",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallPath",
+                "value": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Release",
+                "value": 528372,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Servicing",
+                "value": 0,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "TargetVersion",
+                "value": "4.0.0",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Version",
+                "value": "4.8.04084",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "1033",
+        "path": "\\Microsoft\\NET Framework Setup\\NDP\\v4\\Full\\1033",
+        "timestamp": "2019-12-07T09:15:14.284198+00:00",
+        "values_count": 6,
+        "values": [
+            {
+                "name": "CBS",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Install",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Release",
+                "value": 528372,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Servicing",
+                "value": 0,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "TargetVersion",
+                "value": "4.0.0",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Version",
+                "value": "4.8.04084",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "Full",
+        "path": "\\Microsoft\\NET Framework Setup\\NDP\\v4\\Full",
+        "timestamp": "2021-06-05T00:07:27.475624+00:00",
+        "values_count": 7,
+        "values": [
+            {
+                "name": "CBS",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Install",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallPath",
+                "value": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Release",
+                "value": 528372,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Servicing",
+                "value": 0,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "TargetVersion",
+                "value": "4.0.0",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Version",
+                "value": "4.8.04084",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "v4",
+        "path": "\\Microsoft\\NET Framework Setup\\NDP\\v4",
+        "timestamp": "2019-12-07T09:15:14.284198+00:00",
+        "values_count": 0,
+        "values": [],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "Client",
+        "path": "\\Microsoft\\NET Framework Setup\\NDP\\v4.0\\Client",
+        "timestamp": "2019-12-07T09:15:14.284198+00:00",
+        "values_count": 2,
+        "values": [
+            {
+                "name": "Install",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Version",
+                "value": "4.0.0.0",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "v4.0",
+        "path": "\\Microsoft\\NET Framework Setup\\NDP\\v4.0",
+        "timestamp": "2019-12-07T09:15:14.284198+00:00",
+        "values_count": 1,
+        "values": [
+            {
+                "name": "(default)",
+                "value": "deprecated",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "NDP",
+        "path": "\\Microsoft\\NET Framework Setup\\NDP",
+        "timestamp": "2019-12-07T09:15:14.284198+00:00",
+        "values_count": 0,
+        "values": [],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "OS Integration",
+        "path": "\\Microsoft\\NET Framework Setup\\OS Integration",
+        "timestamp": "2019-12-07T09:15:14.284198+00:00",
+        "values_count": 1,
+        "values": [
+            {
+                "name": "v4",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "NET Framework Setup",
+        "path": "\\Microsoft\\NET Framework Setup",
+        "timestamp": "2019-12-07T09:15:14.284198+00:00",
+        "values_count": 0,
+        "values": [],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "{351016A7-AED4-4824-8D2E-2F9ED497CF77}",
+        "path": "\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{351016A7-AED4-4824-8D2E-2F9ED497CF77}",
+        "timestamp": "2021-06-09T16:10:33.110762+00:00",
+        "values_count": 24,
+        "values": [
+            {
+                "name": "AuthorizedCDFPrefix",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Comments",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Contact",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayVersion",
+                "value": "3.9.5150.0",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpLink",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpTelephone",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallDate",
+                "value": "20210609",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallLocation",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallSource",
+                "value": "C:\\ProgramData\\Package Cache\\{351016A7-AED4-4824-8D2E-2F9ED497CF77}v3.9.5150.0\\",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "ModifyPath",
+                "value": "MsiExec.exe /I{351016A7-AED4-4824-8D2E-2F9ED497CF77}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Publisher",
+                "value": "Python Software Foundation",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Readme",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Size",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "EstimatedSize",
+                "value": 16612,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "SystemComponent",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "UninstallString",
+                "value": "MsiExec.exe /I{351016A7-AED4-4824-8D2E-2F9ED497CF77}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLInfoAbout",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLUpdateInfo",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMajor",
+                "value": 3,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMinor",
+                "value": 9,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "WindowsInstaller",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Version",
+                "value": 50926622,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Language",
+                "value": 1033,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayName",
+                "value": "Python 3.9.5 Tcl/Tk Support (64-bit)",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "{420E50F6-A8E8-4098-A321-7DF6B3C3BA82}",
+        "path": "\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{420E50F6-A8E8-4098-A321-7DF6B3C3BA82}",
+        "timestamp": "2021-06-09T16:10:18.626452+00:00",
+        "values_count": 24,
+        "values": [
+            {
+                "name": "AuthorizedCDFPrefix",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Comments",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Contact",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayVersion",
+                "value": "3.9.5150.0",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpLink",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpTelephone",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallDate",
+                "value": "20210609",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallLocation",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallSource",
+                "value": "C:\\ProgramData\\Package Cache\\{420E50F6-A8E8-4098-A321-7DF6B3C3BA82}v3.9.5150.0\\",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "ModifyPath",
+                "value": "MsiExec.exe /I{420E50F6-A8E8-4098-A321-7DF6B3C3BA82}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Publisher",
+                "value": "Python Software Foundation",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Readme",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Size",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "EstimatedSize",
+                "value": 732,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "SystemComponent",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "UninstallString",
+                "value": "MsiExec.exe /I{420E50F6-A8E8-4098-A321-7DF6B3C3BA82}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLInfoAbout",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLUpdateInfo",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMajor",
+                "value": 3,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMinor",
+                "value": 9,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "WindowsInstaller",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Version",
+                "value": 50926622,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Language",
+                "value": 1033,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayName",
+                "value": "Python 3.9.5 Utility Scripts (64-bit)",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "{6504EEE5-2172-4D34-A76D-0372356396B4}",
+        "path": "\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{6504EEE5-2172-4D34-A76D-0372356396B4}",
+        "timestamp": "2021-06-09T16:10:34.877106+00:00",
+        "values_count": 24,
+        "values": [
+            {
+                "name": "AuthorizedCDFPrefix",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Comments",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Contact",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayVersion",
+                "value": "3.9.5150.0",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpLink",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpTelephone",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallDate",
+                "value": "20210609",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallLocation",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallSource",
+                "value": "C:\\ProgramData\\Package Cache\\{6504EEE5-2172-4D34-A76D-0372356396B4}v3.9.5150.0\\",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "ModifyPath",
+                "value": "MsiExec.exe /I{6504EEE5-2172-4D34-A76D-0372356396B4}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Publisher",
+                "value": "Python Software Foundation",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Readme",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Size",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "EstimatedSize",
+                "value": 40,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "SystemComponent",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "UninstallString",
+                "value": "MsiExec.exe /I{6504EEE5-2172-4D34-A76D-0372356396B4}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLInfoAbout",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLUpdateInfo",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMajor",
+                "value": 3,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMinor",
+                "value": 9,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "WindowsInstaller",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Version",
+                "value": 50926622,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Language",
+                "value": 1033,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayName",
+                "value": "Python 3.9.5 Add to Path (64-bit)",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "{843C07B6-040E-4E83-B244-5383247D70AB}",
+        "path": "\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{843C07B6-040E-4E83-B244-5383247D70AB}",
+        "timestamp": "2021-06-09T16:10:08.485746+00:00",
+        "values_count": 24,
+        "values": [
+            {
+                "name": "AuthorizedCDFPrefix",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Comments",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Contact",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayVersion",
+                "value": "3.9.5150.0",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpLink",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpTelephone",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallDate",
+                "value": "20210609",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallLocation",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallSource",
+                "value": "C:\\ProgramData\\Package Cache\\{843C07B6-040E-4E83-B244-5383247D70AB}v3.9.5150.0\\",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "ModifyPath",
+                "value": "MsiExec.exe /I{843C07B6-040E-4E83-B244-5383247D70AB}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Publisher",
+                "value": "Python Software Foundation",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Readme",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Size",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "EstimatedSize",
+                "value": 1624,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "SystemComponent",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "UninstallString",
+                "value": "MsiExec.exe /I{843C07B6-040E-4E83-B244-5383247D70AB}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLInfoAbout",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLUpdateInfo",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMajor",
+                "value": 3,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMinor",
+                "value": 9,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "WindowsInstaller",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Version",
+                "value": 50926622,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Language",
+                "value": 1033,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayName",
+                "value": "Python 3.9.5 Executables (64-bit)",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "{AEE58901-97A1-422A-B964-4FD9BF3327B8}",
+        "path": "\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{AEE58901-97A1-422A-B964-4FD9BF3327B8}",
+        "timestamp": "2021-06-09T16:10:07.516984+00:00",
+        "values_count": 24,
+        "values": [
+            {
+                "name": "AuthorizedCDFPrefix",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Comments",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Contact",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayVersion",
+                "value": "3.9.5150.0",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpLink",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpTelephone",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallDate",
+                "value": "20210609",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallLocation",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallSource",
+                "value": "C:\\ProgramData\\Package Cache\\{AEE58901-97A1-422A-B964-4FD9BF3327B8}v3.9.5150.0\\",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "ModifyPath",
+                "value": "MsiExec.exe /I{AEE58901-97A1-422A-B964-4FD9BF3327B8}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Publisher",
+                "value": "Python Software Foundation",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Readme",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Size",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "EstimatedSize",
+                "value": 1504,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "SystemComponent",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "UninstallString",
+                "value": "MsiExec.exe /I{AEE58901-97A1-422A-B964-4FD9BF3327B8}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLInfoAbout",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLUpdateInfo",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMajor",
+                "value": 3,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMinor",
+                "value": 9,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "WindowsInstaller",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Version",
+                "value": 50926622,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Language",
+                "value": 1033,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayName",
+                "value": "Python 3.9.5 Development Libraries (64-bit)",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "{F4DC18F4-6323-4BE8-A322-38268831BC24}",
+        "path": "\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{F4DC18F4-6323-4BE8-A322-38268831BC24}",
+        "timestamp": "2021-06-09T16:10:17.032632+00:00",
+        "values_count": 24,
+        "values": [
+            {
+                "name": "AuthorizedCDFPrefix",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Comments",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Contact",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayVersion",
+                "value": "3.9.5150.0",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpLink",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpTelephone",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallDate",
+                "value": "20210609",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallLocation",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallSource",
+                "value": "C:\\ProgramData\\Package Cache\\{F4DC18F4-6323-4BE8-A322-38268831BC24}v3.9.5150.0\\",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "ModifyPath",
+                "value": "MsiExec.exe /I{F4DC18F4-6323-4BE8-A322-38268831BC24}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Publisher",
+                "value": "Python Software Foundation",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Readme",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Size",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "EstimatedSize",
+                "value": 27552,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "SystemComponent",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "UninstallString",
+                "value": "MsiExec.exe /I{F4DC18F4-6323-4BE8-A322-38268831BC24}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLInfoAbout",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLUpdateInfo",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMajor",
+                "value": 3,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMinor",
+                "value": 9,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "WindowsInstaller",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Version",
+                "value": 50926622,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Language",
+                "value": 1033,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayName",
+                "value": "Python 3.9.5 Standard Library (64-bit)",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "{FBB6299D-CB58-4177-B6A0-63BFB1C8C3AE}",
+        "path": "\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{FBB6299D-CB58-4177-B6A0-63BFB1C8C3AE}",
+        "timestamp": "2021-06-09T16:10:05.595166+00:00",
+        "values_count": 24,
+        "values": [
+            {
+                "name": "AuthorizedCDFPrefix",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Comments",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Contact",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayVersion",
+                "value": "3.9.5150.0",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpLink",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "HelpTelephone",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallDate",
+                "value": "20210609",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallLocation",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "InstallSource",
+                "value": "C:\\ProgramData\\Package Cache\\{FBB6299D-CB58-4177-B6A0-63BFB1C8C3AE}v3.9.5150.0\\",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "ModifyPath",
+                "value": "MsiExec.exe /I{FBB6299D-CB58-4177-B6A0-63BFB1C8C3AE}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Publisher",
+                "value": "Python Software Foundation",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Readme",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "Size",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "EstimatedSize",
+                "value": 4404,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "SystemComponent",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "UninstallString",
+                "value": "MsiExec.exe /I{FBB6299D-CB58-4177-B6A0-63BFB1C8C3AE}",
+                "value_type": "REG_EXPAND_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLInfoAbout",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "URLUpdateInfo",
+                "value": 0,
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMajor",
+                "value": 3,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "VersionMinor",
+                "value": 9,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "WindowsInstaller",
+                "value": 1,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Version",
+                "value": 50926622,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "Language",
+                "value": 1033,
+                "value_type": "REG_DWORD",
+                "is_corrupted": false
+            },
+            {
+                "name": "DisplayName",
+                "value": "Python 3.9.5 Core Interpreter (64-bit)",
+                "value_type": "REG_SZ",
+                "is_corrupted": false
+            }
+        ],
+        "actual_path": null
+    },
+    {
+        "subkey_name": "Uninstall",
+        "path": "\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+        "timestamp": "2021-06-09T16:10:34.877106+00:00",
+        "values_count": 0,
+        "values": [],
+        "actual_path": null
+    }
+]

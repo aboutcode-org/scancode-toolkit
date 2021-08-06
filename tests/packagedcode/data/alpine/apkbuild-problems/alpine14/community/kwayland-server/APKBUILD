@@ -1,0 +1,45 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=kwayland-server
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="Wayland Server Components built on KDE Frameworks"
+arch="all !armhf" # armhf blocked by qt5-qtdeclarative
+url="https://kde.org/plasma-desktop/"
+license="GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only) AND LGPL-2.1-only"
+depends_dev="
+	kwayland-dev
+	plasma-wayland-protocols
+	qt5-qtbase-dev
+	"
+makedepends="$depends_dev
+	doxygen
+	extra-cmake-modules
+	linux-headers
+	qt5-qttools-dev
+	wayland-protocols
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/kwayland-server-$pkgver.tar.xz"
+subpackages="$pkgname-dev $pkgname-dbg"
+options="!check" # Requires running wayland compositor
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DBUILD_QCH=ON
+	cmake --build build
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+sha512sums="
+aea5aa7ffecb1c085f733aaf5d4f16fa01c11264ab1e3717c1fed51f9937c3a99cf505664021749c8b203ae1c6b804d856efd9389ec7b26bc90887b3f57aba59  kwayland-server-5.22.0.tar.xz
+"

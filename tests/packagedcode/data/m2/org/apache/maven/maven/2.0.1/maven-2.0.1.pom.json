@@ -210,6 +210,44 @@
         "version": "3.8.1",
         "required": true
       }
+    ],
+    "dependencyManagement": [
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-container-default",
+        "version": "1.0-alpha-9",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-utils",
+        "version": "1.0.5",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven.wagon",
+        "artifact_id": "wagon-provider-api",
+        "version": "1.0-alpha-5",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven.wagon",
+        "artifact_id": "wagon-ssh",
+        "version": "1.0-alpha-5",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven.wagon",
+        "artifact_id": "wagon-file",
+        "version": "1.0-alpha-5",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven.wagon",
+        "artifact_id": "wagon-http-lightweight",
+        "version": "1.0-alpha-5",
+        "required": true
+      }
     ]
   }
 }

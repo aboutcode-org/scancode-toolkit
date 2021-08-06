@@ -42,36 +42,36 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/relaxngDatatype/relaxngDatatype",
+      "purl": "pkg:maven/relaxngDatatype/relaxngDatatype@20020414",
       "requirement": "20020414",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.sun.xml.bind/jaxb-impl",
+      "purl": "pkg:maven/com.sun.xml.bind/jaxb-impl@2.1.11",
       "requirement": "2.1.11",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.sun.xml.bind/jaxb-xjc",
+      "purl": "pkg:maven/com.sun.xml.bind/jaxb-xjc@2.1.11",
       "requirement": "2.1.11",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.sun.xsom/xsom",
+      "purl": "pkg:maven/com.sun.xsom/xsom@20081112",
       "requirement": "20081112",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

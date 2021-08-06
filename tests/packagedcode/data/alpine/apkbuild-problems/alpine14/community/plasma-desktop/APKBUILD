@@ -1,0 +1,102 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=plasma-desktop
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="KDE Plasma Desktop"
+# s390x, mips, mips64 blocked by ibus
+# armhf blocked by qt5-qtdeclarative
+arch="all !s390x !armhf !mips !mips64"
+url='https://kde.org/plasma-desktop/'
+license="GPL-2.0-only AND LGPL-2.1-only"
+depends="
+	accountsservice
+	font-noto-emoji
+	ibus-emoji
+	kirigami2
+	plasma-workspace
+	qqc2-desktop-style
+	setxkbmap
+	"
+makedepends="
+	attica-dev
+	baloo-dev
+	eudev-dev
+	extra-cmake-modules
+	fontconfig-dev
+	ibus-dev
+	kaccounts-integration-dev
+	kactivities-dev
+	kactivities-stats-dev
+	kauth-dev
+	kcmutils-dev
+	kcodecs-dev
+	kconfig-dev
+	kdbusaddons-dev
+	kdeclarative-dev
+	kdelibs4support-dev
+	kdoctools-dev
+	kemoticons-dev
+	kglobalaccel-dev
+	ki18n-dev
+	kitemmodels-dev
+	knewstuff-dev
+	knotifications-dev
+	knotifyconfig-dev
+	kpeople-dev
+	krunner-dev
+	kwallet-dev
+	kwin-dev
+	libxcursor-dev
+	libxi-dev
+	libxkbfile-dev
+	plasma-framework-dev
+	plasma-workspace-dev
+	qt5-qtbase-dev
+	qt5-qtdeclarative-dev
+	qt5-qtsvg-dev
+	qt5-qtx11extras-dev
+	xf86-input-evdev-dev
+	xf86-input-libinput-dev
+	xf86-input-synaptics-dev
+	"
+checkdepends="xvfb-run iso-codes"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/plasma-desktop-$pkgver.tar.xz"
+subpackages="$pkgname-doc $pkgname-lang knetattach"
+options="!check" # Requires running dbus
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE xvfb-run ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+
+	rm "$pkgdir"/usr/bin/knetattach
+	rm "$pkgdir"/usr/share/applications/org.kde.knetattach.desktop
+}
+
+knetattach() {
+	pkgdesc="Wizard which makes it easier to integrate network resources with the Plasma Desktop"
+	depends="kdelibs4support"
+
+	cd "$builddir"/build/knetattach
+	DESTDIR="$subpkgdir" make install
+}
+sha512sums="
+b2799e196079519e2e3da27d6d41f2b9f606a1e703d3edb1a6c16fb74fc5d2a7d9452872cb70a3f3e8f699fb7951a9f178370744fd9989e1624294401d83d3ba  plasma-desktop-5.22.0.tar.xz
+"

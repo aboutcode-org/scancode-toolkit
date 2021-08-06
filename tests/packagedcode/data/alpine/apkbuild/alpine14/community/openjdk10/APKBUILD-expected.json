@@ -1,0 +1,145 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "openjdk10",
+  "version": "10.0.2_p13-r3",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Oracle OpenJDK 10",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "classpath-exception-2.0",
+  "declared_license": "GPL-2.0-with-classpath-exception",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": "jdk-10.0.2+13.tar.gz",
+        "url": "https://github.com/openjdk/jdk10u/archive/jdk-10.0.2+13.tar.gz"
+      },
+      {
+        "file_name": "build.patch",
+        "url": null
+      },
+      {
+        "file_name": "aarch64.patch",
+        "url": null
+      },
+      {
+        "file_name": "ppc64le.patch",
+        "url": null
+      },
+      {
+        "file_name": "make-4.3.patch",
+        "url": null
+      },
+      {
+        "file_name": "fix-bootjdk-check.patch",
+        "url": null
+      },
+      {
+        "file_name": "gcc10-compilation-fix.patch",
+        "url": null
+      },
+      {
+        "file_name": "JDK-8245051.patch",
+        "url": null
+      },
+      {
+        "file_name": "JDK-8241296.patch",
+        "url": null
+      },
+      {
+        "file_name": "HelloWorld.java",
+        "url": null
+      },
+      {
+        "file_name": "TestECDSA.java",
+        "url": null
+      },
+      {
+        "file_name": "TestCryptoLevel.java",
+        "url": null
+      },
+      {
+        "file_name": "Alpine_Bug_10126.java",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "jdk-10.0.2+13.tar.gz",
+        "sha512": "8d8e47006308d9a794090f1051a4f1fad1eabe609736e9039f29a60a9593d6c415759d607ee4557cceb18d6ce76b30d6d186b9453525fd4a2e6d158848cfd30c"
+      },
+      {
+        "file_name": "build.patch",
+        "sha512": "ae8740c9a61c458986375a605294fa5b262772c43c5a520373b186da983be4d9407cf7bd33d3cd906fd3e1b1cb4481a74c8123fbd262d54506edefc859265fef"
+      },
+      {
+        "file_name": "aarch64.patch",
+        "sha512": "6825ddfad1b61f7ffdebfb7189243d7f2d5c75e0b656b36c439b001c030b1d441dad22eb1b6ad4495ed208f72aac2e1cbde3a1cdee77b89b27d557695b851e66"
+      },
+      {
+        "file_name": "ppc64le.patch",
+        "sha512": "0cc8e06ef66ee3a982fc14ad0189d897f1de7fa3e5a741363906495ace06e329f2207ef1dcc84c08af1a1a58aed1c93c25d084552920f3def96920ef7ac39f9b"
+      },
+      {
+        "file_name": "make-4.3.patch",
+        "sha512": "2d7e829830f43d1c1849183a558dbfb108cd9750c1d6da4ebb7b9afdfa111e5a5ff63936f67f97f9317780a4f8e0e4c3d75c929746314254dc0b06f68b7480ec"
+      },
+      {
+        "file_name": "fix-bootjdk-check.patch",
+        "sha512": "0a08b2198f059be9bdc1c19571c53e6be24d81a36888f5fe251de34709b29ccfb4e17e293aa1d5d6310160ee41f673b1028dbf50332d4be5364f1c15fa87a6b9"
+      },
+      {
+        "file_name": "gcc10-compilation-fix.patch",
+        "sha512": "33964c1f7834826c96695f759587ea889966dfa11d52b94d1e70ef88c600b837f7fa1588764f6f52e6198682e5e675723254b891d6916dc45c14111b234cdf81"
+      },
+      {
+        "file_name": "JDK-8245051.patch",
+        "sha512": "a41008618734c87e512eae60dfd217a8eb9fa08ab416852aae1ceb8ae57ef7f943a9090f190ba275722d71687a8531e791d68eb29d2ad1a0e88cc2539dec9877"
+      },
+      {
+        "file_name": "JDK-8241296.patch",
+        "sha512": "4282a77485139f67bb45f58c129109346fd35b4eaf4dc8927ea45c8348e9c49b7a3d29c9bd83ff7f53fedbca45bb4d7a75e217e89d295e66305043caeb44ce54"
+      },
+      {
+        "file_name": "HelloWorld.java",
+        "sha512": "d1767dddd8e0956e25c0f77ed45c6fc86a1191bae1704a6dc33be490fd20eaa50461fe5c2a3349512059d555651e2eb41437dd3c1096c351e8ee68b4534a2579"
+      },
+      {
+        "file_name": "TestECDSA.java",
+        "sha512": "27e91edef89d26c0c5b9a813e2045f8d2b348745a506ae37b34b660fa7093da9a4e0e676ea41dc4a5c901bce02e5304d95e90f68d6c99cbf461b2da40a7a9853"
+      },
+      {
+        "file_name": "TestCryptoLevel.java",
+        "sha512": "b02dff8d549f88317bb4c741a9e269e8d59eef990197d085388fc49c7423a4eb9367dbe1e02bffb10e7862f5980301eb58d4494e177d0e8f60af6b05c7fbbe60"
+      },
+      {
+        "file_name": "Alpine_Bug_10126.java",
+        "sha512": "cc466f64fcc8762cf6e3c1f5739be6425209b27aa58acff4e7eb126003d61fa18266f0e79e57e9d84224654010185ab45dc0a8043543dea227258458a00a1eb1"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/openjdk10@10.0.2_p13-r3",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

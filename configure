@@ -45,9 +45,11 @@ CLEANABLE="
     .eggs
     pip-selfcheck.json
     src/scancode_toolkit.egg-info
+    src/scancode_toolkit_mini.egg-info
     SCANCODE_DEV_MODE
     man
     Scripts"
+
 
 # extra  arguments passed to pip
 PIP_EXTRA_ARGS=" "

@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "xdg-desktop-portal-kde",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "A backend implementation for xdg-desktop-portal that is using Qt/KDE",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "lgpl-2.0-plus",
+  "declared_license": "LGPL-2.0-or-later",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/stable/plasma/5.22.0/xdg-desktop-portal-kde-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "xdg-desktop-portal-kde-5.22.0.tar.xz",
+        "sha512": "9016790fc08d1e57e60dea0d0cbfe9e1226170d6b22b61f74904ca8123f43b7475512fd0a6feacf1705bfb3d5aab50c220e4e64120568ec898d7c7c0d2bf54ad"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/xdg-desktop-portal-kde@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

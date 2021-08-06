@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "qt6-qtbase",
+  "version": "6.1.1-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "A cross-platform application and UI framework",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "lgpl-2.1 AND lgpl-3.0 AND gpl-3.0 AND qt-gpl-exception-1.0",
+  "declared_license": "LGPL-2.1-only AND LGPL-3.0-only AND GPL-3.0-only AND Qt-GPL-exception-1.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.qt.io/official_releases/qt/6.1/6.1.1/submodules/qtbase-everywhere-src-6.1.1.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "qtbase-everywhere-src-6.1.1.tar.xz",
+        "sha512": "fd374d17b1b6861e01ab40be4ba683ad7aa62989688504ebf2f3e1ec0a67658460e807cc8b106093730900cd6db7e15507c8e4eb9a35e239d2ead1cf06b2325b"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/qt6-qtbase@6.1.1-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

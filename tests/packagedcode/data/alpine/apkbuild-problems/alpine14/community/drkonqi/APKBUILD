@@ -1,0 +1,60 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=drkonqi
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="The KDE crash handler"
+# armhf blocked by extra-cmake-modules
+# s390x blocked by kconfigwidgets
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="GPL-2.0-or-later"
+makedepends="
+	extra-cmake-modules
+	kcompletion-dev
+	kconfigwidgets-dev
+	kcoreaddons-dev
+	kcrash-dev
+	ki18n-dev
+	kidletime-dev
+	kio-dev
+	kjobwidgets-dev
+	knotifications-dev
+	kservice-dev
+	kwallet-dev
+	kwidgetsaddons-dev
+	kxmlrpcclient-dev
+	qt5-qtbase-dev
+	qt5-qtx11extras-dev
+	syntax-highlighting-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/drkonqi-$pkgver.tar.xz"
+subpackages="$pkgname-lang"
+options="!check" # Broken
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DBUILD_TESTING=OFF # Broken
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="
+4b4fb1277584f5200a08c866c74d7caafcb72af2527504cf569558a2ee9ae0ded6fd43020006936b0e969b8a3649a007866865d142da939407c0a34e2ef37796  drkonqi-5.22.0.tar.xz
+"

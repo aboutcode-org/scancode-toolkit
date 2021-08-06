@@ -27,28 +27,28 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-20",
       "requirement": "1.0-alpha-20",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-collections/commons-collections",
+      "purl": "pkg:maven/commons-collections/commons-collections@2.0",
       "requirement": "2.0",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/velocity/velocity",
+      "purl": "pkg:maven/velocity/velocity@1.4",
       "requirement": "1.4",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

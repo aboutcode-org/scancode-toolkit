@@ -1,0 +1,31 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=nymphcast-client
+pkgver=0.1_alpha4
+pkgrel=0
+# mips64 blocked by nymphcast
+arch="all !mips64"
+url="http://nyanko.ws/product_nymphcast.php"
+pkgdesc="Test client for nymphcast"
+license="BSD-3-Clause"
+depends="avahi"
+makedepends="
+	nymphcast-dev
+	qt5-qtbase-dev
+	"
+source="$pkgname-${pkgver/_/-}.tar.gz::https://github.com/MayaPosch/NymphCast/archive/v${pkgver/_/-}.tar.gz"
+options="!check" # No tests
+builddir="$srcdir/NymphCast-${pkgver/_/-}"
+
+build() {
+	cd player/NymphCastPlayer
+	qmake-qt5
+	make
+}
+
+package() {
+	cd player/NymphCastPlayer
+	install -Dm755 NymphCastPlayer "$pkgdir"/usr/bin/NymphCastPlayer
+}
+
+sha512sums="8032f2a520508be1ce26e9c16eb3a61f43a6ac0b9c792873a5520627e035bf14684aa87d7900da15028b190a4bbddbab8d15a9a7bdc6e9c36888aed50e63d819  nymphcast-client-0.1-alpha4.tar.gz"

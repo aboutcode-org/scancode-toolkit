@@ -1,0 +1,137 @@
+# Contributor: Oliver Smith <ollieparanoid@postmarketos.org>
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+pkgname=linux-firmware
+pkgver=20201218
+pkgrel=0
+pkgdesc="firmware files for linux"
+url="https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary"
+arch="all"
+license="custom:multiple"
+makedepends="libarchive-tools"
+provides="linux-firmware-any"
+provider_priority=1
+options="!strip !check !archcheck !tracedeps !spdx"
+
+_rpi_bt=fff76cb15527c435ce99a9787848eacd6288282c
+
+source="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-$pkgver.tar.gz
+	BCM43430A1.hcd.${_rpi_bt::8}::https://github.com/RPi-Distro/bluez-firmware/raw/$_rpi_bt/broadcom/BCM43430A1.hcd
+	BCM4345C0.hcd.${_rpi_bt::8}::https://github.com/RPi-Distro/bluez-firmware/raw/$_rpi_bt/broadcom/BCM4345C0.hcd
+	"
+
+_builddir="$srcdir"/$pkgname-$pkgver
+
+# Put /lib/firmware/* folders in subpackages
+_folders="3com acenic adaptec advansys amd amd-ucode amdgpu ar3k ath10k ath11k
+	ath6k ath9k_htc atmel atusb av7110 bnx2 bnx2x brcm cadence cavium cis cpia2
+	cxgb3 cxgb4 cypress dabusb dpaa2 dsp56k e100 edgeport emi26 emi62 ene-ub6250
+	ess go7007 i915 imx inside-secure intel isci kaweth keyspan keyspan_pda korg
+	libertas liquidio matrox mediatek mellanox meson microchip moxa mrvl mwl8k
+	mwlwifi myricom netronome nvidia ositech qca qcom qed qlogic r128 radeon
+	rockchip rsi rtl8192e rtl_bt rtl_nic rtlwifi rtw88 sb16 slicoss sun sxg tehuti
+	ti ti-connectivity ti-keystone tigon ttusb-budget ueagle-atm vicam vxge yam
+	yamaha"
+
+subpackages="$pkgname-other::noarch $pkgname-none::noarch"
+depends="linux-firmware-other=$pkgver-r$pkgrel"
+for i in $_folders; do
+	subpackages="$pkgname-$i:_folder:noarch $subpackages"
+	depends="$pkgname-$i=$pkgver-r$pkgrel $depends"
+done
+subpackages="amd-ucode::noarch $subpackages"
+
+package() {
+	cd "${_builddir}"
+	make DESTDIR="${pkgdir}" FIRMWAREDIR="/lib/firmware" install
+
+	# add compat links for pre-5.0 kernel
+	ln -s brcmfmac43455-sdio.raspberrypi,3-model-b-plus.txt "$pkgdir"/lib/firmware/brcm/brcmfmac43455-sdio.txt
+	ln -s brcmfmac43430-sdio.raspberrypi,3-model-b.txt      "$pkgdir"/lib/firmware/brcm/brcmfmac43430-sdio.txt
+
+	# https://gitlab.alpinelinux.org/alpine/aports/issues/11408
+	ln -s brcmfmac43430-sdio.raspberrypi,3-model-b.txt      "$pkgdir"/lib/firmware/brcm/brcmfmac43430-sdio.raspberrypi,model-zero-w.txt
+
+
+	local fw; for fw in $source; do
+		local _f=${fw%::*}
+		case $_f in
+		*.hcd*)
+			install -Dm 644 $srcdir/$_f \
+				"$pkgdir"/lib/firmware/brcm/"${_f%.*}"
+			;;
+		esac
+	done
+
+	rm -f "${pkgdir}/usr/lib/firmware/{Makefile,README,configure,GPL-3}"
+
+	find "${pkgdir}" \( -name '*.S' -or -name '*.asm' -or \
+		-name '*.c' -or -name '*.h' -or -name '*.pl' -or \
+                -name 'Makefile' \) -exec rm -- {} \;
+}
+
+_folder() {
+	local folder=${subpkgname##linux-firmware-}
+	pkgdesc="firmware files for linux ($folder folder)"
+	depends=""
+	provides="linux-firmware-any"
+	provider_priority=
+
+	# Move /lib/firmware/$folder (case insensitive)
+	mkdir -p "$subpkgdir/lib/firmware"
+	mv "$(find "$pkgdir/lib/firmware" -iname "$folder" -type d)" \
+		"$subpkgdir/lib/firmware"
+}
+
+other() {
+	# Requires subfolders to be split in subpackages
+	local leftover=""
+	local i
+	for i in "$pkgdir"/lib/firmware/*; do
+		[ -d "$i" ] && leftover="$leftover $(basename $i)"
+	done
+	if [ "$leftover" != "" ]; then
+		local fixed
+		error "Not all subfolders have been moved to subpackages!"
+		error "Fix this by adjusting _folders as follows:"
+		fixed="$(echo $_folders$leftover | tr " " "\n" | tr '[A-Z]' '[a-z]' | sort)"
+		echo "_folders=\"$(printf "$fixed" | tr "\n" " ")\"" | fold -s
+		return 1
+	fi
+
+	# Move /lib/firmware (which doesn't have subfolders now)
+	pkgdesc="firmware files for linux (uncategorized)"
+	depends=""
+	provides="linux-firmware-any"
+	provider_priority=
+	mkdir -p "$subpkgdir"/
+	mv "$pkgdir"/lib "$subpkgdir"/
+}
+
+none() {
+	# dummy package with no firmware
+	pkgdesc="Empty linux firwmare package for those who does not need any firmware"
+	provider_priority=
+	provides="linux-firmware-any"
+	depends=
+	mkdir -p "$subpkgdir"
+}
+
+ucode() {
+	pkgdesc="Microcode update files for AMD CPUs"
+	provider_priority=
+	provides=
+	depends=
+
+	# build ported from Arch Linux's PKGBUILD
+	mkdir -p "$subpkgdir"/boot
+	mkdir -p "$builddir"/kernel/x86/microcode
+	cat "$pkgdir"/lib/firmware/amd-ucode/microcode_amd*.bin > "$builddir"/kernel/x86/microcode/AuthenticAMD.bin
+	[ -n "$SOURCE_DATE_EPOCH" ] && touch -d @$SOURCE_DATE_EPOCH "$builddir"/kernel/x86/microcode/AuthenticAMD.bin
+	cd "$builddir" && echo kernel/x86/microcode/AuthenticAMD.bin |
+	  bsdtar --uid 0 --gid 0 -cnf - -T - |
+	  bsdtar --null -cf - --format=newc @- > "$subpkgdir"/boot/amd-ucode.img
+}
+
+sha512sums="2685640759a316561b948f96e6fc49ffe9543cb300c282876e6d6880d1c0f8114360f1f50ed2688d7d97a4a0a966fc7ecb887702ae3c77c3a63d703096115f9e  linux-firmware-20201218.tar.gz
+a7b37bce092367125e390017bb0329c3b7f8fa891cf30d422ee73ce53d0592d4ff0fc2e2a94a87eefb641d5dd8631fae1cc46664224dea987ca04b68a8af8519  BCM43430A1.hcd.fff76cb1
+a52fdb876131affa85b39434d619580c0e1605094992ffa3bb321af387dd79739736842dea9ffa759e6658aecde40eda6b06d93dbb58234a4b126b756c28521e  BCM4345C0.hcd.fff76cb1"

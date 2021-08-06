@@ -1,0 +1,557 @@
+[
+  {
+    "pos": 0,
+    "type": [
+      "Comment"
+    ],
+    "value": "#!/bin/bash"
+  },
+  {
+    "pos": 11,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 13,
+    "type": [
+      "Text"
+    ],
+    "value": "printf"
+  },
+  {
+    "pos": 19,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 20,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"%d %s\\n\""
+  },
+  {
+    "pos": 29,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 30,
+    "type": [
+      "Text"
+    ],
+    "value": "10"
+  },
+  {
+    "pos": 32,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 33,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"foo\""
+  },
+  {
+    "pos": 38,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 39,
+    "type": [
+      "Text"
+    ],
+    "value": "printf"
+  },
+  {
+    "pos": 45,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 46,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"%d %s\\n\""
+  },
+  {
+    "pos": 55,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 56,
+    "type": [
+      "Text"
+    ],
+    "value": "$((10#1))"
+  },
+  {
+    "pos": 65,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 66,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"bar\""
+  },
+  {
+    "pos": 71,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 73,
+    "type": [
+      "Text"
+    ],
+    "value": "let"
+  },
+  {
+    "pos": 76,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 77,
+    "type": [
+      "Literal",
+      "String",
+      "Double"
+    ],
+    "value": "\"m = 10#${1:1:2}\""
+  },
+  {
+    "pos": 94,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 95,
+    "type": [
+      "Text"
+    ],
+    "value": "echo"
+  },
+  {
+    "pos": 99,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 100,
+    "type": [
+      "Text"
+    ],
+    "value": "$m"
+  },
+  {
+    "pos": 102,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 104,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "m"
+  },
+  {
+    "pos": 105,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 106,
+    "type": [
+      "Text"
+    ],
+    "value": "$((10#${1:4:3}"
+  },
+  {
+    "pos": 120,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 121,
+    "type": [
+      "Text"
+    ],
+    "value": "+"
+  },
+  {
+    "pos": 122,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 123,
+    "type": [
+      "Text"
+    ],
+    "value": "10#${1:1:3}))"
+  },
+  {
+    "pos": 136,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 137,
+    "type": [
+      "Text"
+    ],
+    "value": "echo"
+  },
+  {
+    "pos": 141,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 142,
+    "type": [
+      "Text"
+    ],
+    "value": "$m"
+  },
+  {
+    "pos": 144,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 146,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "m"
+  },
+  {
+    "pos": 147,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 148,
+    "type": [
+      "Text"
+    ],
+    "value": "$((10#${1:4:3}))"
+  },
+  {
+    "pos": 164,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 165,
+    "type": [
+      "Text"
+    ],
+    "value": "echo"
+  },
+  {
+    "pos": 169,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 170,
+    "type": [
+      "Text"
+    ],
+    "value": "$m"
+  },
+  {
+    "pos": 172,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 174,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "m"
+  },
+  {
+    "pos": 175,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 176,
+    "type": [
+      "Text"
+    ],
+    "value": "$((10#$1))"
+  },
+  {
+    "pos": 186,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 187,
+    "type": [
+      "Text"
+    ],
+    "value": "echo"
+  },
+  {
+    "pos": 191,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 192,
+    "type": [
+      "Text"
+    ],
+    "value": "$m"
+  },
+  {
+    "pos": 194,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 196,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "m"
+  },
+  {
+    "pos": 197,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 198,
+    "type": [
+      "Text"
+    ],
+    "value": "$((10#1))"
+  },
+  {
+    "pos": 207,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 208,
+    "type": [
+      "Text"
+    ],
+    "value": "echo"
+  },
+  {
+    "pos": 212,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 213,
+    "type": [
+      "Text"
+    ],
+    "value": "$m"
+  },
+  {
+    "pos": 215,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n\n"
+  },
+  {
+    "pos": 217,
+    "type": [
+      "Name",
+      "Variable"
+    ],
+    "value": "m"
+  },
+  {
+    "pos": 218,
+    "type": [
+      "Operator",
+      "Equal"
+    ],
+    "value": "="
+  },
+  {
+    "pos": 219,
+    "type": [
+      "Text"
+    ],
+    "value": "$((10))"
+  },
+  {
+    "pos": 226,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 227,
+    "type": [
+      "Text"
+    ],
+    "value": "echo"
+  },
+  {
+    "pos": 231,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 232,
+    "type": [
+      "Text"
+    ],
+    "value": "$m"
+  },
+  {
+    "pos": 234,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  }
+]

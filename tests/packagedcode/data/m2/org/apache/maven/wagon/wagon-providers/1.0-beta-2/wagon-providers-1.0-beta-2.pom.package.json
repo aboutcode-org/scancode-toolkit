@@ -32,15 +32,31 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-api",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-ssh-common@1.0-beta-2",
+      "requirement": "1.0-beta-2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-ssh-common-test@1.0-beta-2",
+      "requirement": "1.0-beta-2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

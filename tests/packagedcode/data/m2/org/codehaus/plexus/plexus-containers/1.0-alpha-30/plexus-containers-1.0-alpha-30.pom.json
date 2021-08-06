@@ -45,6 +45,26 @@
         "version": "3.8.1",
         "required": true
       }
+    ],
+    "dependencyManagement": [
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-classworlds",
+        "version": "1.2-alpha-9",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-utils",
+        "version": "1.4.5",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-component-api",
+        "version": "1.0-alpha-30",
+        "required": true
+      }
     ]
   }
 }

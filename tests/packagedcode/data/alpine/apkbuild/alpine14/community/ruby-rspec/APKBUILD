@@ -1,0 +1,43 @@
+# Contributor: Jakub Jirutka <jakub@jirutka.cz>
+# Maintainer: Jakub Jirutka <jakub@jirutka.cz>
+pkgname=ruby-rspec
+_gemname=${pkgname#ruby-}
+pkgver=3.10.0
+pkgrel=0
+pkgdesc="Behaviour Driven Development for Ruby"
+url="http://rspec.info/"
+arch="noarch"
+license="MIT"
+depends="ruby
+	ruby-rspec-core~=${pkgver%.*}
+	ruby-rspec-expectations~=${pkgver%.*}
+	ruby-rspec-mocks~=${pkgver%.*}"
+options="!check"  # no tests provided
+source="$pkgname-$pkgver.tar.gz::https://github.com/rspec/$_gemname/archive/v$pkgver.tar.gz
+	gemspec.patch"
+builddir="$srcdir/$_gemname-$pkgver"
+
+build() {
+	cd "$builddir"
+	gem build $_gemname.gemspec
+}
+
+package() {
+	local gemdir="$pkgdir/$(ruby -e 'puts Gem.default_dir')"
+
+	cd "$builddir"
+	gem install --local \
+		--install-dir "$gemdir" \
+		--ignore-dependencies \
+		--no-document \
+		--verbose \
+		$_gemname
+
+	# Clean-up...
+	rm -r "$gemdir"/cache \
+		"$gemdir"/build_info \
+		"$gemdir"/doc
+}
+
+sha512sums="afc2b04d0cfbe26d5f485c3d22e68a95394d5f0e3be44849562d565bd87eba9157f8ee9e1faee9ad22b7572906d17db242913036b9960f5d3871c7df5140629c  ruby-rspec-3.10.0.tar.gz
+f554eef881574e68532dd6c9edeb6b8ad172ac707f7518134378e1099a40ada959c6c770514aab13a6345343113594208be0e42044803c0c2cde3adde00c5520  gemspec.patch"
