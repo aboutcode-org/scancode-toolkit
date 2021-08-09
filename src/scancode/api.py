@@ -171,6 +171,7 @@ def get_licenses(location, min_score=0,
 
     detected_licenses = []
     detected_expressions = []
+    ref_filenames=[]
 
     matches = idx.match(
         location=location, min_score=min_score, deadline=deadline, **kwargs
@@ -180,6 +181,10 @@ def get_licenses(location, min_score=0,
     match = None
     for match in matches:
         qspans.append(match.qspan)
+
+        ref_files = match.rule.referenced_filenames
+        if len(ref_files)!=0:
+            ref_filenames.extend(ref_files)
 
         detected_expressions.append(match.rule.license_expression)
 
@@ -204,6 +209,7 @@ def get_licenses(location, min_score=0,
         ('license_expressions', detected_expressions),
         ('spdx_license_expressions', detected_spdx_expressions),
         ('percentage_of_license_text', percentage_of_license_text),
+        ('referenced_filenames', ref_filenames),
     ])
 
 

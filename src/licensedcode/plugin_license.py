@@ -43,6 +43,7 @@ class LicenseScanner(ScanPlugin):
         ('licenses', attr.ib(default=attr.Factory(list))),
         ('license_expressions', attr.ib(default=attr.Factory(list))),
         ('percentage_of_license_text', attr.ib(default=0)),
+        ('referenced_filenames', attr.ib(default=attr.Factory(list))),
     ])
 
     sort_order = 2
