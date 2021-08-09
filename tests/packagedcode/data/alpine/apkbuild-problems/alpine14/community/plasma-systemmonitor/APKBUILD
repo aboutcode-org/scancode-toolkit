@@ -1,0 +1,55 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=plasma-systemmonitor
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="An application for monitoring system resources"
+# armhf blocked by extra-cmake-modules
+# s390x blocked by libksysguard
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="LicenseRef-KDE-Accepted-GPL AND LicenseRef-KDE-Accepted-LGPL AND CC0-1.0"
+depends="kirigami2"
+makedepends="
+	extra-cmake-modules
+	kconfig-dev
+	kdbusaddons-dev
+	kdeclarative-dev
+	kglobalaccel-dev
+	ki18n-dev
+	kio-dev
+	kitemmodels-dev
+	knewstuff-dev
+	kservice-dev
+	libksysguard-dev
+	qt5-qtbase-dev
+	qt5-qtdeclarative-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/plasma-systemmonitor-$pkgver.tar.xz"
+subpackages="$pkgname-lang"
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	# ksystemstatstest is broken
+	CTEST_OUTPUT_ON_FAILURE=TRUE ctest -E "ksystemstatstest"
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+sha512sums="
+e1a8995660b440fb9af4b18737e45df7cb91995b9cbd75e947649b93c9654b9d28d16341ee2e2ed9fc6fa8e9645dfcf1a4e0d54500fed13a6fc013ad992e3970  plasma-systemmonitor-5.22.0.tar.xz
+"

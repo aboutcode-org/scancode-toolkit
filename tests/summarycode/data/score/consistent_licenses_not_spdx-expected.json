@@ -90,6 +90,7 @@
           "short_name": "MIT Xfig Variant",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Xfig Project",
           "homepage_url": "http://www.xfig.org",
           "text_url": "",
@@ -111,6 +112,7 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 81,
             "matched_length": 81,
@@ -164,7 +166,7 @@
         {
           "value": "Alexander Plavinski <alexander.plavinski@invision.de>",
           "start_line": 6,
-          "end_line": 8
+          "end_line": 6
         }
       ],
       "is_legal": false,
@@ -239,6 +241,7 @@
           "short_name": "MIT Xfig Variant",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Xfig Project",
           "homepage_url": "http://www.xfig.org",
           "text_url": "",
@@ -260,6 +263,7 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "1-hash",
             "rule_length": 81,
             "matched_length": 81,

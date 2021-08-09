@@ -108,6 +108,8 @@ class License(object):
     # if this is a license exception, the license key this exception applies to
     is_exception = __attrib(default=False)
 
+    # if the license falls in unknwon category then this flag should be set to true
+    is_unknown = __attrib(default=False)
     # SPDX key for SPDX licenses
     spdx_license_key = __attrib(default=None)
     # list of other keys, such as deprecated ones
@@ -341,6 +343,10 @@ class License(object):
                 )
             if not lic.owner:
                 error('No owner')
+
+            if lic.is_unknown:
+                if not "unknown" in lic.key:
+                    error('is_unknown should not be true')
 
             # URLS dedupe and consistency
             if no_dupe_urls:
@@ -862,6 +868,15 @@ class BasicRule(object):
 
             self.license_expression = expression.render()
             self.license_expression_object = expression
+
+    @property
+    def has_unknown(self):
+        """
+        Return True if any of this rule licenses is an unknown license.
+        """
+        # TODO: consider using the license_expression_object and the is_unknown
+        # license flag instead
+        return self.license_expression and 'unknown' in self.license_expression
 
     def validate(self, licensing=None):
         """
@@ -1569,18 +1584,40 @@ def get_ignorables(text_file, verbose=False):
     if verbose:
         print(f'  Found emails: {emails}')
 
-    ignorables = dict(
-        ignorable_copyrights=sorted(copyrights),
-        ignorable_holders=sorted(holders),
-        ignorable_authors=sorted(authors),
-        ignorable_urls=sorted(urls),
-        ignorable_emails=sorted(emails),
-    )
+    ignorables = build_ignorables_mapping(
+        copyrights, holders, authors, urls, emails)
 
-    ignorables = {k: v for k, v in sorted(ignorables.items()) if v}
     if verbose:
         print(f'  Found ignorables: {ignorables}')
     return ignorables
+
+
+def get_normalized_ignorables(licensish):
+    """
+    Return a sorted mapping of ignorables built from a licensish Rule or License.
+    """
+    return build_ignorables_mapping(
+        copyrights=licensish.ignorable_copyrights,
+        holders=licensish.ignorable_holders,
+        authors=licensish.ignorable_authors,
+        urls=licensish.ignorable_urls,
+        emails=licensish.ignorable_emails,
+    )
+
+
+def build_ignorables_mapping(copyrights, holders, authors, urls, emails):
+    """
+    Return a sorted mapping of ignorables built from lists of ignorable clues.
+    """
+    ignorables = dict(
+        ignorable_copyrights=sorted(copyrights or []),
+        ignorable_holders=sorted(holders or []),
+        ignorable_authors=sorted(authors or []),
+        ignorable_urls=sorted(urls or []),
+        ignorable_emails=sorted(emails or []),
+    )
+
+    return {k: v for k, v in sorted(ignorables.items()) if v}
 
 
 def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):

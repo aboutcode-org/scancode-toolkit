@@ -3,8 +3,10 @@ is_license_text: yes
 relevance: 100
 ignorable_copyrights:
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+    - holder is Tim Hudson (tjh@cryptsoft.com)
 ignorable_holders:
     - Eric Young
+    - Tim Hudson
 ignorable_authors:
     - Eric Young (eay@cryptsoft.com)
     - Tim Hudson (tjh@cryptsoft.com)

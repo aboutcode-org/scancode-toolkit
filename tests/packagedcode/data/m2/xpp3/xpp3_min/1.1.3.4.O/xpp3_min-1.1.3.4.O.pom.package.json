@@ -30,6 +30,7 @@
   "source_packages": [
     "pkg:maven/xpp3/xpp3_min@1.1.3.4.O?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/xpp3/xpp3_min@1.1.3.4.O",
   "repository_homepage_url": "https://repo1.maven.org/maven2/xpp3/xpp3_min/1.1.3.4.O/",
   "repository_download_url": "https://repo1.maven.org/maven2/xpp3/xpp3_min/1.1.3.4.O/xpp3_min-1.1.3.4.O.jar",

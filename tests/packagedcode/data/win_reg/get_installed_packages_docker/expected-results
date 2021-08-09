@@ -1,0 +1,154 @@
+[
+  {
+    "type": "windows-program",
+    "namespace": null,
+    "name": "Test",
+    "version": "0.0.1",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": null,
+    "release_date": null,
+    "parties": [
+      {
+        "type": "organization",
+        "role": "publisher",
+        "name": "Test Publisher",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "installed_files": [
+      {
+        "path": "Files/Program Files/Test/Test.dat",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "Files/Program Files/Test/Test.exe",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "Files/Program Files/Test/Uninstall.exe",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      }
+    ],
+    "extra_data": {
+      "install_location": "C:\\Program Files\\Test\\",
+      "known_program_files": [
+        "C:\\Program Files\\Test\\Test.exe",
+        "C:\\Program Files\\Test\\Uninstall.exe"
+      ]
+    },
+    "purl": "pkg:windows-program/Test@0.0.1",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null
+  },
+  {
+    "type": "windows-program",
+    "namespace": null,
+    "name": "Test2",
+    "version": "0.0.1",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": null,
+    "release_date": null,
+    "parties": [
+      {
+        "type": "organization",
+        "role": "publisher",
+        "name": "Test Publisher",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "installed_files": [
+      {
+        "path": "Files/Program Files (x86)/Test2/Test2.dat",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "Files/Program Files (x86)/Test2/Test2.exe",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "Files/Program Files (x86)/Test2/Uninstall.exe",
+        "size": 0,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      }
+    ],
+    "extra_data": {
+      "install_location": "C:\\Program Files (x86)\\Test2\\",
+      "known_program_files": [
+        "C:\\Program Files (x86)\\Test2\\Test2.exe",
+        "C:\\Program Files (x86)\\Test2\\Uninstall.exe"
+      ]
+    },
+    "purl": "pkg:windows-program/Test2@0.0.1",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

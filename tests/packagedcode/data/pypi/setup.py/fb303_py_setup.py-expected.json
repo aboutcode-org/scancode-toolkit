@@ -48,6 +48,7 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
+  "extra_data": {},
   "purl": "pkg:pypi/thrift-fb303@0.10.0",
   "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": "https://pypi.org/packages/source/t/thrift_fb303/thrift_fb303-0.10.0.tar.gz",

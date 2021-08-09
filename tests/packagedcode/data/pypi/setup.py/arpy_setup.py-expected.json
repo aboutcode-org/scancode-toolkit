@@ -38,6 +38,7 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
+  "extra_data": {},
   "purl": "pkg:pypi/arpy@0.1.1",
   "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
   "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",

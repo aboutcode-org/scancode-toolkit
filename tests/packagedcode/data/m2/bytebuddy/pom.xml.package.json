@@ -42,26 +42,83 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/com.google.code.findbugs/annotations",
+      "purl": "pkg:maven/com.google.code.findbugs/annotations@3.0.1u2",
       "requirement": "3.0.1u2",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.projectlombok/lombok",
+      "purl": "pkg:maven/org.projectlombok/lombok@1.16.16",
       "requirement": "1.16.16",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/org.ow2.asm/asm@5.2",
+      "requirement": "5.2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/org.ow2.asm/asm-commons@5.2",
+      "requirement": "5.2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/org.ow2.asm/asm-util@5.2",
+      "requirement": "5.2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/org.ow2.asm/asm-analysis@5.2",
+      "requirement": "5.2",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/junit/junit@4.12",
+      "requirement": "4.12",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/org.mockito/mockito-core@2.7.22",
+      "requirement": "2.7.22",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:maven/com.google.android/android@4.1.1.4",
+      "requirement": "4.1.1.4",
+      "scope": "dependencymanagement",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/net.bytebuddy/byte-buddy-parent@1.7.1-SNAPSHOT?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/net.bytebuddy/byte-buddy-parent@1.7.1-SNAPSHOT",
   "repository_homepage_url": "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.1-SNAPSHOT/",
   "repository_download_url": "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.1-SNAPSHOT/byte-buddy-parent-1.7.1-SNAPSHOT.jar",

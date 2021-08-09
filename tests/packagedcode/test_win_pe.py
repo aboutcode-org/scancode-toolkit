@@ -37,48 +37,63 @@ class TestWinPePeInfo(FileBasedTesting):
 
     def test_win_pe_ctypes_test_pyd(self):
         test_file = self.get_test_loc('win_pe/_ctypes_test.pyd')
-        expected_file = self.get_test_loc('win_pe/_ctypes_test.pyd.expected.json')
-        self.check_win_pe(test_file, expected_file)
+        self.check_win_pe(test_file, regen=False)
 
     def test_win_pe_euc_jp_so(self):
         test_file = self.get_test_loc('win_pe/euc-jp.so')
-        expected_file = self.get_test_loc('win_pe/euc-jp.so.expected.json')
-        self.check_win_pe(test_file, expected_file)
+        self.check_win_pe(test_file, regen=False)
 
     def test_win_pe_file_exe(self):
         test_file = self.get_test_loc('win_pe/file.exe')
-        expected_file = self.get_test_loc('win_pe/file.exe.expected.json')
-        self.check_win_pe(test_file, expected_file)
+        self.check_win_pe(test_file, regen=False)
 
     def test_win_pe_libiconv2_dll(self):
         test_file = self.get_test_loc('win_pe/libiconv2.dll')
-        expected_file = self.get_test_loc('win_pe/libiconv2.dll.expected.json')
-        self.check_win_pe(test_file, expected_file)
+        self.check_win_pe(test_file, regen=False)
 
     def test_win_pe_libintl3_dll(self):
         test_file = self.get_test_loc('win_pe/libintl3.dll')
-        expected_file = self.get_test_loc('win_pe/libintl3.dll.expected.json')
-        self.check_win_pe(test_file, expected_file)
+        self.check_win_pe(test_file, regen=False)
 
     def test_win_pe_microsoft_practices_enterpriselibrary_caching_dll(self):
         test_file = self.get_test_loc('win_pe/Microsoft.Practices.EnterpriseLibrary.Caching.dll')
-        expected_file = self.get_test_loc('win_pe/Microsoft.Practices.EnterpriseLibrary.Caching.dll.expected.json')
-        self.check_win_pe(test_file, expected_file)
+        self.check_win_pe(test_file, regen=False)
 
     def test_win_pe_tre4_dll(self):
         test_file = self.get_test_loc('win_pe/tre4.dll')
-        expected_file = self.get_test_loc('win_pe/tre4.dll.expected.json')
-        self.check_win_pe(test_file, expected_file)
+        self.check_win_pe(test_file, regen=False)
 
     def test_win_pe_zlib1_dll(self):
         test_file = self.get_test_loc('win_pe/zlib1.dll')
-        expected_file = self.get_test_loc('win_pe/zlib1.dll.expected.json')
-        self.check_win_pe(test_file, expected_file)
+        self.check_win_pe(test_file, regen=False)
 
     def test_win_pe_Moq_Silverlight_dll(self):
         test_file = self.get_test_loc('win_pe/Moq.Silverlight.dll')
-        expected_file = self.get_test_loc('win_pe/Moq.Silverlight.dll.expected.json')
-        self.check_win_pe(test_file, expected_file)
+        self.check_win_pe(test_file, regen=False)
+
+    def test_win_pe_clfs_sys_mui(self):
+        test_file = self.get_test_loc('win_pe/clfs.sys.mui')
+        self.check_win_pe(test_file, regen=False)
+
+    def test_win_pe_crypt32_dll_mun(self):
+        test_file = self.get_test_loc('win_pe/crypt32.dll.mun')
+        self.check_win_pe(test_file, regen=False)
+
+    def test_win_pe_stdole2_tlb(self):
+        test_file = self.get_test_loc('win_pe/stdole2.tlb')
+        self.check_win_pe(test_file, regen=False)
+
+    def test_win_pe_tbs_sys(self):
+        test_file = self.get_test_loc('win_pe/tbs.sys')
+        self.check_win_pe(test_file, regen=False)
+
+    def test_win_pe_Windows_AI_winmd(self):
+        test_file = self.get_test_loc('win_pe/Windows.AI.winmd')
+        self.check_win_pe(test_file, regen=False)
+
+    def test_win_pe_chcp_com(self):
+        test_file = self.get_test_loc('win_pe/chcp.com')
+        self.check_win_pe(test_file, regen=False)
 
 
 class TestWinPeParseToPackage(TestWinPePeInfo):

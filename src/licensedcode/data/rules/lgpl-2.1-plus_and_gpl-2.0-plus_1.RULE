@@ -1,0 +1,8 @@
+The first, the library (librarian and headers) is distributed under
+the LGPL version 2.1 (or at you're discretion any later version of
+this license).  Please see the file COPYING.LIB for full details.
+
+The second part are the utilities (files in util/).  These are
+distributed under the terms of the GPL, version 2.0 (or at you're
+discretion any later version of this license).  Please see the file
+COPYING.UTILS for full details.

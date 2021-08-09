@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "ubuntu-archive-keyring",
+  "version": "2016.05.13.1-r1",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "GnuPG archive keys of the Debian archive",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-1.0-plus",
+  "declared_license": "GPL",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "http://ftp.debian.org/debian/pool/main/u/ubuntu-keyring/ubuntu-archive-keyring_2016.05.132016.05.13.1_all.deb"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "ubuntu-archive-keyring_2016.05.13-1_all.deb",
+        "sha512": "8234457c379d2a3d0524e5ab5abf806aa8c49806ec863e7fd1d95a63c2b32ccbcaf2375e186de3bd0611b1d8f227d4ee03428d63f30f5b45597036fd5d5a0a56"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/ubuntu-archive-keyring@2016.05.13.1-r1",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

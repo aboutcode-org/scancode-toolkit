@@ -1,0 +1,111 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=kwin
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="An easy to use, but flexible, composited Window Manager"
+# armhf blocked by qt5-qtdeclarative
+# s390x blocked by kscreenlocker
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only) AND LGPL-2.1-only"
+depends="
+	kirigami2
+	qt5-qtmultimedia
+	qt5-qtwayland
+	xwayland
+	"
+depends_dev="
+	breeze-dev
+	eudev-dev
+	fontconfig-dev
+	kactivities-dev
+	kcmutils-dev
+	kcompletion-dev
+	kconfig-dev
+	kconfigwidgets-dev
+	kcoreaddons-dev
+	kcrash-dev
+	kdeclarative-dev
+	kdecoration-dev
+	kglobalaccel-dev
+	ki18n-dev
+	kiconthemes-dev
+	kidletime-dev
+	kinit-dev
+	kio-dev
+	knewstuff-dev
+	knotifications-dev
+	kpackage-dev
+	krunner-dev
+	kscreenlocker-dev
+	kservice-dev
+	ktextwidgets-dev
+	kwayland-dev
+	kwayland-server-dev
+	kwidgetsaddons-dev
+	kwindowsystem-dev
+	kxmlgui-dev
+	lcms2-dev
+	libdrm-dev
+	libepoxy-dev
+	libinput-dev
+	libqaccessibilityclient-dev
+	libxi-dev
+	libxkbcommon-dev
+	mesa-dev
+	mesa-gbm
+	pipewire-dev
+	plasma-framework-dev
+	qt5-qtbase-dev
+	qt5-qtdeclarative-dev
+	qt5-qtscript-dev
+	qt5-qtsensors-dev
+	qt5-qtx11extras-dev
+	wayland-dev
+	xcb-util-cursor-dev
+	xcb-util-image-dev
+	xcb-util-wm-dev
+	"
+makedepends="$depends_dev
+	extra-cmake-modules
+	kdoctools-dev
+	qt5-qttools-dev
+	"
+checkdepends="xvfb-run"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/kwin-$pkgver.tar.xz"
+subpackages="$pkgname-dev $pkgname-doc $pkgname-lang $pkgname-dbg"
+options="!check" # Broken
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE xvfb-run ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+
+	# We don't ship systemd
+	rm -r "$pkgdir"/usr/lib/systemd
+
+	# kwin_wayland has CAP_SYS_NICE set. Because of this, libdbus doesn't trust the
+	# environment and ignores it, causing for example keyboard shortcuts to not work
+	# Remove CAP_SYS_NICE from kwin_wayland to make them work again
+	setcap -r "$pkgdir"/usr/bin/kwin_wayland
+}
+sha512sums="
+eccd6d674a6ab7820de8f7765b25b55e8554ea5ddc21af90f189789856a047dc4468ced4a897b2e94c084ebb7e85f114e75cb7e63253497d36c76c2b228eb471  kwin-5.22.0.tar.xz
+"

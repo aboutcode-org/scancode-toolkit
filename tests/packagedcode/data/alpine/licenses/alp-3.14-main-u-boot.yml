@@ -1,0 +1,4 @@
+declared_license: GPL-2.0-or-later OFL-1.1 BSD-2-Clause BSD-3-Clause eCos-2.0 IBM-pibs ISC LGPL-2.0-only
+  LGPL-2.1-only X11
+license_expression: gpl-2.0-plus AND ofl-1.1 AND bsd-simplified AND bsd-new AND gpl-2.0-plus
+  WITH ecos-exception-2.0 AND ibm-pibs AND isc AND lgpl-2.0 AND lgpl-2.1 AND x11-xconsortium

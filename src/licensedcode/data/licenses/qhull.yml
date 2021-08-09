@@ -8,9 +8,11 @@ spdx_license_key: Qhull
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/Qhull
 ignorable_copyrights:
-    - Qhull, Copyright (c) 1993-2003
+    - Qhull, Copyright (c) 1993-2003 The National Science and Technology Research Center for Computation
+     and Visualization of Geometric Structures (The Geometry Center) University of Minnesota
 ignorable_holders:
-    - Qhull
+    - Qhull, The National Science and Technology Research Center for Computation and Visualization
+      of Geometric Structures (The Geometry Center) University of Minnesota
 ignorable_urls:
     - http://www.qhull.org/
 ignorable_emails:

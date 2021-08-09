@@ -54,6 +54,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:npm/pahub@0.4.0",
     "repository_homepage_url": "https://www.npmjs.com/package/pahub",
     "repository_download_url": "https://registry.npmjs.org/pahub/-/pahub-0.4.0.tgz",

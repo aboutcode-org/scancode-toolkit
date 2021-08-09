@@ -30,6 +30,7 @@
   "source_packages": [
     "pkg:maven/commons-logging/commons-logging@1.0?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/commons-logging/commons-logging@1.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.0/commons-logging-1.0.jar",

@@ -30,15 +30,16 @@
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven/maven-repository-metadata@2.0.4?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.maven/maven-repository-metadata@2.0.4",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-repository-metadata/2.0.4/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-repository-metadata/2.0.4/maven-repository-metadata-2.0.4.jar",

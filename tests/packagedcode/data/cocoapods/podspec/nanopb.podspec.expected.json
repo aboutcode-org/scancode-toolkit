@@ -45,6 +45,7 @@
   "source_packages": [
     "https://github.com/nanopb/nanopb.git"
   ],
+  "extra_data": {},
   "purl": "pkg:pods/nanopb@1.30905.0",
   "repository_homepage_url": "https://cocoapods.org/pods/nanopb",
   "repository_download_url": "https://github.com/nanopb/nanopb/archive/1.30905.0.zip",

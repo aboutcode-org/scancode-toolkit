@@ -47,6 +47,7 @@
           "short_name": "BSD-Original-UC",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Regents of the University of California",
           "homepage_url": "ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change",
           "text_url": "http://www.xfree86.org/3.3.6/COPYRIGHT2.html",
@@ -68,6 +69,7 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 243,
             "matched_length": 243,
@@ -84,21 +86,21 @@
         {
           "value": "Copyright (c) 1993 The Regents of the University of California",
           "start_line": 22,
-          "end_line": 23
+          "end_line": 22
         }
       ],
       "holders": [
         {
           "value": "The Regents of the University of California",
           "start_line": 22,
-          "end_line": 23
+          "end_line": 22
         }
       ],
       "authors": [
         {
           "value": "the University of California, Berkeley and its contributors",
           "start_line": 35,
-          "end_line": 37
+          "end_line": 36
         }
       ],
       "packages": [],
@@ -134,6 +136,7 @@
           "short_name": "GPL 2.0",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
@@ -156,6 +159,7 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 50,
             "matched_length": 50,
@@ -170,6 +174,7 @@
           "short_name": "BSD-3-Clause",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Regents of the University of California",
           "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
           "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
@@ -192,6 +197,7 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 50,
             "matched_length": 50,

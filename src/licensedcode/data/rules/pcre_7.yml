@@ -1,0 +1,4 @@
+license_expression: pcre
+is_license_reference: yes
+ignorable_urls:
+    - ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/

@@ -1,0 +1,81 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "unicode-character-database",
+  "version": "13.0.0-r1",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Unicode Character Database",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "unicode-dfs-2015",
+  "declared_license": "Unicode-DFS-2015",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": "UCD-13.0.0.zip",
+        "url": "http://www.unicode.org/Public/zipped/13.0.0/UCD.zip"
+      },
+      {
+        "file_name": "Unihan-13.0.0.zip",
+        "url": "http://www.unicode.org/Public/zipped/13.0.0/Unihan.zip"
+      },
+      {
+        "file_name": "emoji-sequences-13.0.txt",
+        "url": "http://www.unicode.org/Public/emoji/13.0/emoji-sequences.txt"
+      },
+      {
+        "file_name": "emoji-zwj-sequences-13.0.txt",
+        "url": "http://www.unicode.org/Public/emoji/13.0/emoji-zwj-sequences.txt"
+      },
+      {
+        "file_name": "emoji-test-13.0.txt",
+        "url": "http://www.unicode.org/Public/emoji/13.0/emoji-test.txt"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "UCD-13.0.0.zip",
+        "sha512": "aed6d06c370dd87bc5713e19ff4cde47b065b76a18149194fa843e4efc5269f749ec8905cad9132d3b803ab621a46e372052b8f3c3e9b6a65afa6516b0f2b4f2"
+      },
+      {
+        "file_name": "Unihan-13.0.0.zip",
+        "sha512": "87238202b5da069ab1bbc4672d86c6fd0711e354fb17f53b0b4152850c56c0fa09e6e45820ae52d49756b25fe696518ceaa34cbfe5366ff60688c9a5c3a2d5be"
+      },
+      {
+        "file_name": "emoji-sequences-13.0.txt",
+        "sha512": "65f4fdaf6f2038d34f645220a0306036244dba69aeba0a44939584c18ad8e0488cb612f07e17cdb1ffea3d8d2fe3e54ed2e134855c3dc615730fd14cd297a9a3"
+      },
+      {
+        "file_name": "emoji-zwj-sequences-13.0.txt",
+        "sha512": "a0b04ca2732acd33c7ea9a2929ef5d60080dfeb4b1b452e853486e57663518773af4e863b239dd2bd6f5e78ce2a7e828898757ca4adc82134da370111c3e0272"
+      },
+      {
+        "file_name": "emoji-test-13.0.txt",
+        "sha512": "6da82936f1eb92e5d31a4e815204e17119011408d746c60c3ecd700c8039389d7c790c8ea6b8ec2828aadd863b923f0d3861a42a1f6b5ecdbbb19d2f5f81ea56"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/unicode-character-database@13.0.0-r1",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

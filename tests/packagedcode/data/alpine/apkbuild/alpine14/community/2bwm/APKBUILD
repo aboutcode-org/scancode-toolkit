@@ -1,0 +1,28 @@
+# Contributor: prspkt <prspkt@protonmail.com>
+# Maintainer: prspkt <prspkt@protonmail.com>
+pkgname=2bwm
+pkgver=0.3
+pkgrel=0
+pkgdesc="Fast floating window manager"
+url="https://github.com/venam/2bwm"
+arch="all"
+license="ISC"
+makedepends="libxcb-dev xcb-util-keysyms-dev xcb-util-wm-dev xcb-util-xrm-dev"
+options="!check" # no test suite
+subpackages="$pkgname-doc"
+source="$pkgname-$pkgver.tar.gz::https://github.com/venam/2bwm/archive/v$pkgver.tar.gz"
+
+prepare() {
+	default_prepare
+	sed -i Makefile -e "/CFLAGS/{s/+=-Os /+=/}"
+}
+
+build() {
+	make
+}
+
+package() {
+	make PREFIX=/usr DESTDIR="$pkgdir" install
+}
+
+sha512sums="088a97e5245287890c72e2b0685f7348a4cc0fd49582893b7ce7a081f80a4d7454a3c0eadf4609589314351ded02fd8b75548019b782e797350ad5db5c939f92  2bwm-0.3.tar.gz"

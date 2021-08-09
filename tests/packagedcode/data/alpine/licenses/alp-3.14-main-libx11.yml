@@ -1,0 +1,3 @@
+declared_license: custom:XFREE86
+license_expression: mit AND x11-xconsortium AND x11-keith-packard AND historical AND x11-opengroup
+  AND other-permissive

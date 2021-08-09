@@ -11,13 +11,19 @@ from unittest.case import TestCase
 
 from licensedcode import seq
 
+"""
+This is testing the sequence matching internals using sequences of integers. The
+texts are there for reference and sanity and are not use directly in the tests.
+"""
+
 
 class TestSeq(TestCase):
 
     def test_find_longest_match_seq(self):
 
         # true len = 409
-        a = [33, 747, 1551, 119, 33, 1205, 2175, 2837, 119, 84, 3, 21, 54, 5801,
+        a = [
+        33, 747, 1551, 119, 33, 1205, 2175, 2837, 119, 84, 3, 21, 54, 5801,
         4, 5789, 5, 11, 13, 9, 69, 18, 2, 42, 5867, 12, 5824, 5802, 46, 14, 0,
         74, 33, 53, 4, 5, 84, 53, 265, 7, 39, 94, 5813, 4, 5856, 7, 38, 4, 140,
         296, 12, 120, 46, 14, 474, 5974, 12, 338, 3, 0, 167, 4, 0, 2837, 349,
@@ -41,16 +47,22 @@ class TestSeq(TestCase):
         9516, 56, 592, 1112, 30, 3, 1409, 17, 723, 34, 301, 1, 1991, 4, 159,
         1409, 58, 55, 3805, 10, 478, 790, 2121, 18, 0, 2564,
 
-        0, 2567, 2298, 6, 6670, 2103, 10248, 2179, 4107, 910, 5, 72, 17, 412,
-        17, 8, 5878, 5, 53, 8, 97, 76, 6165, 8, 438, 18, 5, 7770, 26, 162, 555,
-        230, 936, 4, 8, 1537, 5, 7770, 12, 3479, 30, 8, 97, 8176, 947, 10, 2567,
-        7, 755, 3670, 3723, 3716]
+            0, 2567, 2298, 6, 6670, 2103, 10248, 2179, 4107, 910,
+            5, 72, 17, 412, 17, 8, 5878, 5, 53, 8,
+            97, 76, 6165, 8, 438, 18, 5, 7770, 26, 162,
+            555, 230, 936, 4, 8, 1537, 5, 7770, 12, 3479,
+            30, 8, 97, 8176, 947, 10, 2567, 7, 755, 3670,
+            3723, 3716
+        ]
 
         a_357 = [
-        0, 2567, 2298, 6, 6670, 2103, 10248, 2179, 4107, 910, 5, 72, 17, 412,
-        17, 8, 5878, 5, 53, 8, 97, 76, 6165, 8, 438, 18, 5, 7770, 26, 162, 555,
-        230, 936, 4, 8, 1537, 5, 7770, 12, 3479, 30, 8, 97, 8176, 947, 10, 2567,
-        7, 755, 3670, 3723, 3716 ]
+            0, 2567, 2298, 6, 6670, 2103, 10248, 2179, 4107, 910,
+            5, 72, 17, 412, 17, 8, 5878, 5, 53, 8,
+            97, 76, 6165, 8, 438, 18, 5, 7770, 26, 162,
+            555, 230, 936, 4, 8, 1537, 5, 7770, 12, 3479,
+            30, 8, 97, 8176, 947, 10, 2567, 7, 755, 3670,
+            3723, 3716
+        ]
 
         ato = '''
         copyright 1996 david org copyright 2008 miller openbsd org permission to
@@ -90,6 +102,8 @@ class TestSeq(TestCase):
         stuff if we meet some day and you think this stuff is worth it you can
         buy me a beer in return poul henning kamp'''
 
+        assert len(a) == len(ato.split())
+
         ato_357 = [
         'the', 'beer', 'ware', 'license', 'revision', '42', 'phk', 'login',
         'dk', 'wrote', 'this', 'file', 'as', 'long', 'as', 'you', 'retain',
@@ -110,15 +124,26 @@ class TestSeq(TestCase):
             407, 408]
         )
 
+        assert len(matchables) == len(a_357) == len(ato_357) == 52
+
         b = [
-        0, 2567, 2298, 6, 6670, 2103, 10248, 2179, 13406, 4107, 910, 5, 72, 17,
-        412, 17, 8, 5878, 5, 53, 8, 97, 76, 6165, 8, 438, 18, 5, 7770, 26, 162,
-        555, 230, 936, 4, 8, 1537, 5, 7770, 12, 3479, 30, 8, 97, 8176, 947, 10,
-        2567, 7, 755, 3670, 3723, 3716]
+            0, 2567, 2298, 6, 6670, 2103, 10248, 2179,
+
+            # this is an extra token in b only (not in a), at bpos: 9=8
+            13406,
+
+            4107, 910,
+
+            5, 72, 17, 412, 17, 8, 5878, 5, 53, 8,
+            97, 76, 6165, 8, 438, 18, 5, 7770, 26, 162,
+            555, 230, 936, 4, 8, 1537, 5, 7770, 12, 3479,
+            30, 8, 97, 8176, 947, 10, 2567, 7, 755, 3670,
+            3723, 3716,
+        ]
 
         # this is mapping of high token ids in b to a list of positions
         # for instance, 10248 is the 'phk' token and is found at position 6 in b
-        # and 7770 is stuff and oudn in two places
+        # and 7770 is stuff and found in two places
         b2j = {
             10248: [6],
             6670: [4],
@@ -135,5 +160,15 @@ class TestSeq(TestCase):
         b_start = 0
         b_end = 53
 
-        tests = seq.find_longest_match(a, b, a_start, len(a), b_start, b_end, b2j, len_good, matchables)
+        tests = seq.find_longest_match(
+            a=a,
+            b=b,
+            alo=a_start,
+            ahi=len(a),
+            blo=b_start,
+            bhi=b_end,
+            b2j=b2j,
+            len_good=len_good,
+            matchables=matchables,
+        )
         assert tests == seq.Match(a=357, b=0, size=8)

@@ -700,18 +700,19 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/junit/junit",
+      "purl": "pkg:maven/junit/junit@3.8.1",
       "requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/commons-collections/commons-collections@3.2?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/commons-collections/commons-collections@3.2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/3.2/",
   "repository_download_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar",

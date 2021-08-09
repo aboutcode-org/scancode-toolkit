@@ -20,7 +20,6 @@ from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
 
-
 # Tracing flags
 TRACE = False
 TRACE_FP = False
@@ -152,6 +151,7 @@ class Text(object):
 
         self.key = fp
 
+
 def summarize_copyrights(texts, _detector=CopyrightDetector()):
     """
     Return a summarized list of mapping of {value:string, count:int} given a
@@ -168,10 +168,16 @@ def summarize_copyrights(texts, _detector=CopyrightDetector()):
             summary_texts.append(text)
         else:
             # FIXME: redetect to strip year should not be needed!!
-            statements_without_years = _detector.detect([(1, text)], copyrights=True,
-                holders=False, authors=False, include_years=False)
+            statements_without_years = _detector.detect(
+                [(1, text)],
+                copyrights=True,
+                holders=False,
+                authors=False,
+                include_years=False,
+            )
 
-            for _type, copyr, _start, _end in statements_without_years:
+            for detection in statements_without_years:
+                copyr = detection.value
                 summary_texts.append(Text(copyr, copyr))
     counter = summarize(summary_texts)
     if no_detection_counter:
@@ -505,7 +511,7 @@ COMMON_NAMES = {
 }
 
 # Remove everything except letters and numbers
-_keep_only_chars = re.compile('[_\\W]+', re.UNICODE).sub # NOQA
+_keep_only_chars = re.compile('[_\\W]+', re.UNICODE).sub  # NOQA
 
 
 def keep_only_chars(s):

@@ -4,11 +4,13 @@ what:
   - holders_summary
 copyrights:
   - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+  - holder is Tim Hudson (tjh@cryptsoft.com)
   - Copyright (c) 1998-2000 The OpenSSL Project
   - Copyright 2002 Sun Microsystems, Inc.
   - Copyright 2005 Nokia
 holders:
   - Eric Young
+  - Tim Hudson
   - The OpenSSL Project
   - Sun Microsystems, Inc.
   - Nokia
@@ -20,4 +22,6 @@ holders_summary:
   - value: Sun Microsystems, Inc.
     count: 1
   - value: The OpenSSL Project
+    count: 1
+  - value: Tim Hudson
     count: 1

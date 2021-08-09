@@ -30,105 +30,105 @@
       "purl": "pkg:maven/dom4j/dom4j",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/jdom/jdom",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/joda-time/joda-time",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/com.megginson.sax/xml-writer",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/stax/stax",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.codehaus.woodstox/wstx-asl",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/stax/stax-api",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/xom/xom",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/xpp3/xpp3_min",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/cglib/cglib-nodep",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.codehaus.jettison/jettison",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/junit/junit",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/jmock/jmock",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/oro/oro",
@@ -136,7 +136,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/commons-lang/commons-lang",
@@ -144,13 +144,14 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/com.thoughtworks.xstream/xstream@1.2.2?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/com.thoughtworks.xstream/xstream@1.2.2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.2.2/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.2.2/xstream-1.2.2.jar",

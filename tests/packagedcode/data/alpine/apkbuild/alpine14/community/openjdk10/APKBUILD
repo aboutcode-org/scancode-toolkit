@@ -1,0 +1,311 @@
+# Contributor: Simon Frankenberger <simon-alpine@fraho.eu>
+# Maintainer: Simon Frankenberger <simon-alpine@fraho.eu>
+pkgname=openjdk10
+pkgver=10.0.2_p13
+_pkgver=${pkgver/_p/+}
+pkgrel=3
+pkgdesc="Oracle OpenJDK 10"
+provider_priority=10
+url="https://hg.openjdk.java.net/jdk-updates/jdk10u"
+# oracle dropped support for 32 bit
+# no bootstrap JDK on mips
+arch="all !x86 !armhf !armv7 !mips !mips64"
+license="GPL-2.0-with-classpath-exception"
+makedepends="autoconf
+	bash
+	gawk
+	grep
+	make
+	openjdk9-jdk
+	zip
+	alsa-lib-dev
+	cups-dev
+	elfutils-dev
+	fontconfig-dev
+	freetype-dev
+	giflib-dev
+	lcms2-dev
+	libexecinfo-dev
+	libffi-dev
+	libjpeg-turbo-dev
+	libx11-dev
+	libxext-dev
+	libxrender-dev
+	libxt-dev
+	libxtst-dev
+	linux-headers
+	zlib-dev"
+depends="$pkgname-jmods $pkgname-demos $pkgname-doc $pkgname-jdk" # for the virtual openjdk10 package
+subpackages="$pkgname-jmods:_jmods:noarch
+	$pkgname-demos:_demos:noarch
+	$pkgname-doc:_doc:noarch
+	$pkgname-jre:_jre
+	$pkgname-src:_src:noarch
+	$pkgname-jre-headless:_jre_headless
+	$pkgname-jdk:_jdk"
+source="jdk-$_pkgver.tar.gz::https://github.com/openjdk/jdk10u/archive/jdk-$_pkgver.tar.gz
+
+	build.patch
+	aarch64.patch
+	ppc64le.patch
+	make-4.3.patch
+	fix-bootjdk-check.patch
+	gcc10-compilation-fix.patch
+	JDK-8245051.patch
+	JDK-8241296.patch
+
+	HelloWorld.java
+	TestECDSA.java
+	TestCryptoLevel.java
+	Alpine_Bug_10126.java
+"
+builddir="$srcdir/jdk10u-jdk-${_pkgver/+/-}"
+
+_java_home="/usr/lib/jvm/java-10-openjdk"
+
+ldpath="$_java_home/lib:$_java_home/lib/jli:$_java_home/lib/server"
+sonameprefix="$pkgname:"
+
+# enable running the JTReg tests in check?
+# see comment in that function for explanation
+_run_jtreg=${_run_jtreg:-0}
+if [ $_run_jtreg -ne 0 ]; then
+	makedepends="$makedepends java-jtreg"
+	checkdepends="$checkdepends ttf-freefont xvfb-run"
+fi
+
+prepare() {
+	default_prepare
+
+	# update autoconf files to detect alpine
+	update_config_sub
+	update_config_guess
+
+	# remove not compilable module (hotspot jdk.hotspot.agent)
+	# this needs libthread_db which is only provided by glibc
+	#
+	# haven't found any way to disable this module so just remove it.
+	rm -r src/jdk.hotspot.agent
+}
+
+build() {
+	if [ $_run_jtreg -ne 0 ]; then
+		_with_jtreg="--with-jtreg=/usr/share/java/jtreg"
+	else
+		_with_jtreg="--with-jtreg=no"
+	fi
+
+	# CFLAGS, CXXFLAGS and LDFLAGS are ignored as shown by a warning
+	# in the output of ./configure unless used like such:
+	#  --with-extra-cflags="$CFLAGS"
+	#  --with-extra-cxxflags="$CXXFLAGS"
+	#  --with-extra-ldflags="$LDFLAGS"
+	# See also paragraph "Configure Control Variables" from "common/doc/building.md"
+	# shellcheck disable=2097 disable=2098
+	CFLAGS='' CXXFLAGS='' LDFLAGS='' \
+		bash ./configure \
+		--openjdk-target=$CHOST \
+		--prefix="$_java_home" \
+		--sysconfdir=/etc \
+		--mandir=/usr/share/man \
+		--infodir=/usr/share/info \
+		--localstatedir=/var \
+		--with-extra-cflags="$CFLAGS" \
+		--with-extra-cxxflags="$CXXFLAGS" \
+		--with-extra-ldflags="$LDFLAGS" \
+		--with-zlib=system \
+		--with-libjpeg=system \
+		--with-giflib=system \
+		--with-libpng=system \
+		--with-lcms=system \
+		--with-jobs=${JOBS:-4} \
+		--with-test-jobs=${JOBS:-4} \
+		--with-native-debug-symbols=none \
+		$_with_jtreg \
+		--disable-warnings-as-errors \
+		--disable-precompiled-headers \
+		--enable-dtrace=no \
+		--with-jvm-variants=server \
+		--with-debug-level=release \
+		--with-version-pre= \
+		--with-version-opt="alpine-r$pkgrel" \
+		--with-version-build=${_pkgver#*+} \
+		--with-vendor-name="Alpine" \
+		--with-vendor-url="https://alpinelinux.org/" \
+		--with-vendor-bug-url="https://gitlab.alpinelinux.org/alpine/aports/issues" \
+		--with-vendor-vm-bug-url="https://gitlab.alpinelinux.org/alpine/aports/issues"
+	MAKEFLAGS='' make jdk-image
+}
+
+check() {
+	local _java_bin="./build/*-normal-server-release/images/jdk/bin"
+
+	# 1) compile and run a simple hello world
+	$_java_bin/javac -d . "$srcdir"/HelloWorld.java
+	$_java_bin/java HelloWorld
+
+	# 2) compile and run a testcase for unlimited policy
+	$_java_bin/javac -d . "$srcdir"/TestCryptoLevel.java
+	$_java_bin/java -cp . --add-opens java.base/javax.crypto=ALL-UNNAMED TestCryptoLevel
+
+	# 3) compile and run a testcase for ECDSA signatures
+	$_java_bin/javac -d . "$srcdir"/TestECDSA.java
+	$_java_bin/java TestECDSA
+
+	# 4) compile and run testcase for bug 10126
+	$_java_bin/javac -d . "$srcdir"/Alpine_Bug_10126.java
+	$_java_bin/java Alpine_Bug_10126
+
+	# run the gtest unittest suites
+	MAKEFLAGS='' make test-hotspot-gtest
+
+	# The jtreg tests take very, very long to finish and show some failures (9 - 12 on my machine, varying between runs)
+	# I think these are not critical and can be safely ignored.
+	# As the tests take too long, they are disabled by default.
+	# When updating this aport please let them run at least once on your machine to see if the failure count changes.
+	if [ $_run_jtreg -ne 0 ]; then
+		_logfile=$( mktemp -p "$builddir" )
+		MAKEFLAGS='' xvfb-run make \
+			run-test-tier1 \
+			run-test-tier2 \
+			run-test-tier3 \
+			| tee "$_logfile"
+		msg "---------------------------------------"
+		msg "The build log can be found at $_logfile"
+		# abort the build so you may take a look at the logfile
+		false
+		return 1
+	fi
+}
+
+package() {
+	mkdir -p "$pkgdir/$_java_home"
+	cp -r build/*-normal-server-release/images/jdk/* "$pkgdir/$_java_home"
+}
+
+_jmods() {
+	pkgdesc="Oracle OpenJDK 10 (jmods)"
+	depends=""
+	_fromroot="$pkgdir/$_java_home"
+	_toroot="$subpkgdir/$_java_home"
+
+	mkdir -p "$_toroot"
+	mv "$_fromroot/jmods" "$_toroot"
+}
+
+_demos() {
+	pkgdesc="Oracle OpenJDK 10 (demos)"
+	depends=""
+	_fromroot="$pkgdir/$_java_home"
+	_toroot="$subpkgdir/$_java_home"
+
+	mkdir -p "$_toroot"
+	mv "$_fromroot/demo" "$_toroot"
+}
+
+_doc() {
+	pkgdesc="Oracle OpenJDK 10 (Documentation)"
+	depends=""
+	_fromroot="$pkgdir/$_java_home"
+	_toroot="$subpkgdir/$_java_home"
+
+	mkdir -p "$_toroot"
+
+	# handle man
+	mv "$_fromroot/man" "$_toroot"
+}
+
+_jre() {
+	pkgdesc="Oracle OpenJDK 10 (JRE)"
+	depends="$pkgname-jre-headless"
+	provides=java-jre
+	_fromroot="$pkgdir/$_java_home"
+	_toroot="$subpkgdir/$_java_home"
+
+	mkdir -p "$_toroot/lib"
+	mv "$_fromroot/lib/libawt_xawt.so" \
+		"$_fromroot/lib/libfontmanager.so" \
+		"$_fromroot/lib/libjavajpeg.so" \
+		"$_fromroot/lib/libjawt.so" \
+		"$_fromroot/lib/libjsoundalsa.so" \
+		"$_fromroot/lib/liblcms.so" \
+		"$_fromroot/lib/libsplashscreen.so" \
+		"$_toroot/lib"
+}
+
+_src() {
+	pkgdesc="Oracle OpenJDK 10 (sources)"
+	depends="$pkgname-jre-headless"
+	mkdir -p "$subpkgdir/$_java_home"/lib
+	mv "$pkgdir"/$_java_home/lib/src.zip \
+		"$subpkgdir"/$_java_home/lib/
+}
+
+_jre_headless() {
+	pkgdesc="Oracle OpenJDK 10 (JRE headless)"
+	depends="java-common java-cacerts"
+	provides=java-jre-headless
+	_fromroot="$pkgdir/$_java_home"
+	_toroot="$subpkgdir/$_java_home"
+
+	mkdir -p "$_toroot"
+	mv "$_fromroot/lib" "$_toroot"
+
+	mkdir -p "$_toroot/bin"
+	for i in appletviewer \
+		idlj \
+		java \
+		jjs \
+		jrunscript \
+		keytool \
+		orbd \
+		pack200 \
+		rmid \
+		rmiregistry \
+		servertool \
+		tnameserv \
+		unpack200; do
+		mv "$_fromroot/bin/$i" "$_toroot/bin/$i"
+	done
+
+	mv "$_fromroot/legal"              "$_toroot"
+	mv "$_fromroot/conf"               "$_toroot"
+	mv "$_fromroot/release"            "$_toroot"
+	cp "$builddir/ASSEMBLY_EXCEPTION"  "$_toroot"
+	cp "$builddir/LICENSE"             "$_toroot"
+	cp "$builddir/README"              "$_toroot"
+
+	# symlink to shared cacerts store
+	rm "$_toroot/lib/security/cacerts"
+	ln -sf /etc/ssl/certs/java/cacerts \
+		"$_toroot/lib/security/cacerts"
+
+	# symlink for java-common to work (expects jre in $_java_home/jre)
+	ln -sf . "$_toroot/jre"
+}
+
+_jdk() {
+	pkgdesc="Oracle OpenJDK 10 (JDK)"
+	depends="$pkgname-jre"
+	provides=java-jdk
+	_fromroot="$pkgdir/$_java_home"
+	_toroot="$subpkgdir/$_java_home"
+
+	mkdir -p "$_toroot"
+	mv "$_fromroot/bin" "$_toroot"
+	mv "$_fromroot/include" "$_toroot"
+}
+
+sha512sums="8d8e47006308d9a794090f1051a4f1fad1eabe609736e9039f29a60a9593d6c415759d607ee4557cceb18d6ce76b30d6d186b9453525fd4a2e6d158848cfd30c  jdk-10.0.2+13.tar.gz
+ae8740c9a61c458986375a605294fa5b262772c43c5a520373b186da983be4d9407cf7bd33d3cd906fd3e1b1cb4481a74c8123fbd262d54506edefc859265fef  build.patch
+6825ddfad1b61f7ffdebfb7189243d7f2d5c75e0b656b36c439b001c030b1d441dad22eb1b6ad4495ed208f72aac2e1cbde3a1cdee77b89b27d557695b851e66  aarch64.patch
+0cc8e06ef66ee3a982fc14ad0189d897f1de7fa3e5a741363906495ace06e329f2207ef1dcc84c08af1a1a58aed1c93c25d084552920f3def96920ef7ac39f9b  ppc64le.patch
+2d7e829830f43d1c1849183a558dbfb108cd9750c1d6da4ebb7b9afdfa111e5a5ff63936f67f97f9317780a4f8e0e4c3d75c929746314254dc0b06f68b7480ec  make-4.3.patch
+0a08b2198f059be9bdc1c19571c53e6be24d81a36888f5fe251de34709b29ccfb4e17e293aa1d5d6310160ee41f673b1028dbf50332d4be5364f1c15fa87a6b9  fix-bootjdk-check.patch
+33964c1f7834826c96695f759587ea889966dfa11d52b94d1e70ef88c600b837f7fa1588764f6f52e6198682e5e675723254b891d6916dc45c14111b234cdf81  gcc10-compilation-fix.patch
+a41008618734c87e512eae60dfd217a8eb9fa08ab416852aae1ceb8ae57ef7f943a9090f190ba275722d71687a8531e791d68eb29d2ad1a0e88cc2539dec9877  JDK-8245051.patch
+4282a77485139f67bb45f58c129109346fd35b4eaf4dc8927ea45c8348e9c49b7a3d29c9bd83ff7f53fedbca45bb4d7a75e217e89d295e66305043caeb44ce54  JDK-8241296.patch
+d1767dddd8e0956e25c0f77ed45c6fc86a1191bae1704a6dc33be490fd20eaa50461fe5c2a3349512059d555651e2eb41437dd3c1096c351e8ee68b4534a2579  HelloWorld.java
+27e91edef89d26c0c5b9a813e2045f8d2b348745a506ae37b34b660fa7093da9a4e0e676ea41dc4a5c901bce02e5304d95e90f68d6c99cbf461b2da40a7a9853  TestECDSA.java
+b02dff8d549f88317bb4c741a9e269e8d59eef990197d085388fc49c7423a4eb9367dbe1e02bffb10e7862f5980301eb58d4494e177d0e8f60af6b05c7fbbe60  TestCryptoLevel.java
+cc466f64fcc8762cf6e3c1f5739be6425209b27aa58acff4e7eb126003d61fa18266f0e79e57e9d84224654010185ab45dc0a8043543dea227258458a00a1eb1  Alpine_Bug_10126.java"

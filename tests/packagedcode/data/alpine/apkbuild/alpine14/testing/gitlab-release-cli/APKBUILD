@@ -1,0 +1,30 @@
+# Contributor: Olliver Schinagl <oliver@schinagl.nl>
+# Maintainer: Olliver Schinagl <oliver@schinagl.nl>
+pkgname="gitlab-release-cli"
+pkgver="0.3.0"
+pkgrel=1
+pkgdesc="GitLab Release command-line tool"
+url="http://ibmswtpm.sourceforge.net/ibmswtpm2.html"
+license="MIT"
+arch="all"
+makedepends="go"
+options="!check"  # No selftest available
+subpackages="${pkgname}-doc"
+source="https://gitlab.com/gitlab-org/release-cli/-/archive/v${pkgver}/release-cli-v${pkgver}.tar.bz2"
+builddir="${srcdir}/${pkgname##gitlab-}-v${pkgver}"
+
+build() {
+	make build
+}
+
+package() {
+	install -D -m 0755 "${builddir}/bin/release-cli" \
+	        "${pkgdir}/usr/bin/release-cli"
+
+	for _doc in "${builddir}/docs/"*; do
+		install -D -m 0644 "${_doc}" \
+		        "${pkgdir}/usr/share/doc/${pkgname}/${_doc##*/}"
+	done
+}
+
+sha512sums="01debcf63e016fe00ec68c298807bff80fde46fd62fb378638c23812c61303c609217ac4520297b2fcaa3ac5fa7b1011872540df6c5962b5eeb023528459cfa1  release-cli-v0.3.0.tar.bz2"

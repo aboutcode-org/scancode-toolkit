@@ -45,6 +45,7 @@
   "source_packages": [
     "https://github.com/alizainprasla/swiftlib.git"
   ],
+  "extra_data": {},
   "purl": "pkg:pods/SwiftLib@0.0.1",
   "repository_homepage_url": "https://cocoapods.org/pods/SwiftLib",
   "repository_download_url": "https://github.com/alizainprasla/swiftlib/archive/0.0.1.zip",

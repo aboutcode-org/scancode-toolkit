@@ -148,6 +148,7 @@
           "short_name": "Unknown License reference",
           "category": "Unstated License",
           "is_exception": false,
+          "is_unknown": true,
           "owner": "Unspecified",
           "homepage_url": null,
           "text_url": "",
@@ -169,6 +170,7 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": true,
+            "has_unknown": true,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
@@ -183,6 +185,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -204,6 +207,7 @@
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -221,14 +225,14 @@
         {
           "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "holders": [
         {
           "value": "The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "authors": [],
@@ -268,6 +272,7 @@
           "short_name": "Unknown License reference",
           "category": "Unstated License",
           "is_exception": false,
+          "is_unknown": true,
           "owner": "Unspecified",
           "homepage_url": null,
           "text_url": "",
@@ -289,6 +294,7 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": true,
+            "has_unknown": true,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
@@ -303,6 +309,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -324,6 +331,7 @@
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -341,14 +349,14 @@
         {
           "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "holders": [
         {
           "value": "The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "authors": [],
@@ -422,6 +430,7 @@
           "short_name": "GPL 1.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
@@ -443,6 +452,7 @@
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -457,6 +467,7 @@
           "short_name": "GPL 2.0",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
@@ -478,6 +489,7 @@
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -495,14 +507,14 @@
         {
           "value": "Copyright (c) IBM Corp.",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "holders": [
         {
           "value": "IBM Corp.",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "authors": [],
@@ -542,6 +554,7 @@
           "short_name": "Unknown License reference",
           "category": "Unstated License",
           "is_exception": false,
+          "is_unknown": true,
           "owner": "Unspecified",
           "homepage_url": null,
           "text_url": "",
@@ -563,6 +576,7 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": true,
+            "has_unknown": true,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
@@ -577,6 +591,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -598,6 +613,7 @@
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -615,14 +631,14 @@
         {
           "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "holders": [
         {
           "value": "The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "authors": [],

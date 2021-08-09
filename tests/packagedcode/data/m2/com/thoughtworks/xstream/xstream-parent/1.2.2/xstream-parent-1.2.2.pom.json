@@ -62,5 +62,104 @@
     }
   ],
   "plugin_repositories": [],
-  "dependencies": {}
+  "dependencies": {
+    "dependencyManagement": [
+      {
+        "group_id": "commons-io",
+        "artifact_id": "commons-io",
+        "version": "1.3",
+        "required": true
+      },
+      {
+        "group_id": "commons-lang",
+        "artifact_id": "commons-lang",
+        "version": "2.1",
+        "required": true
+      },
+      {
+        "group_id": "cglib",
+        "artifact_id": "cglib-nodep",
+        "version": "2.1_3",
+        "required": true
+      },
+      {
+        "group_id": "dom4j",
+        "artifact_id": "dom4j",
+        "version": "1.6.1",
+        "required": true
+      },
+      {
+        "group_id": "jdom",
+        "artifact_id": "jdom",
+        "version": "1.0",
+        "required": true
+      },
+      {
+        "group_id": "joda-time",
+        "artifact_id": "joda-time",
+        "version": "1.2.1",
+        "required": true
+      },
+      {
+        "group_id": "com.megginson.sax",
+        "artifact_id": "xml-writer",
+        "version": "0.2",
+        "required": true
+      },
+      {
+        "group_id": "stax",
+        "artifact_id": "stax",
+        "version": "1.2.0",
+        "required": true
+      },
+      {
+        "group_id": "stax",
+        "artifact_id": "stax-api",
+        "version": "1.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.woodstox",
+        "artifact_id": "wstx-asl",
+        "version": "3.2.0",
+        "required": true
+      },
+      {
+        "group_id": "xom",
+        "artifact_id": "xom",
+        "version": "1.1",
+        "required": true
+      },
+      {
+        "group_id": "xpp3",
+        "artifact_id": "xpp3_min",
+        "version": "1.1.3.4.O",
+        "required": true
+      },
+      {
+        "group_id": "oro",
+        "artifact_id": "oro",
+        "version": "2.0.8",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.jettison",
+        "artifact_id": "jettison",
+        "version": "1.0-RC1",
+        "required": true
+      },
+      {
+        "group_id": "junit",
+        "artifact_id": "junit",
+        "version": "3.8.1",
+        "required": true
+      },
+      {
+        "group_id": "jmock",
+        "artifact_id": "jmock",
+        "version": "1.0.1",
+        "required": true
+      }
+    ]
+  }
 }

@@ -14,3 +14,10 @@ cc_binary(
         "//lib:hello-time",
     ],
 )
+
+filegroup(
+    name = "package-srcs",
+    srcs = glob(["**"]),
+    tags = ["automanaged"],
+    visibility = ["//visibility:private"],
+)

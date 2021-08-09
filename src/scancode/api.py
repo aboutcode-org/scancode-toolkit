@@ -173,7 +173,8 @@ def get_licenses(location, min_score=0,
     detected_expressions = []
 
     matches = idx.match(
-        location=location, min_score=min_score, deadline=deadline, **kwargs)
+        location=location, min_score=min_score, deadline=deadline, **kwargs
+    )
 
     qspans = []
     match = None
@@ -238,6 +239,7 @@ def _licenses_data_from_match(
         result['short_name'] = lic.short_name
         result['category'] = lic.category
         result['is_exception'] = lic.is_exception
+        result['is_unknown'] = lic.is_unknown
         result['owner'] = lic.owner
         result['homepage_url'] = lic.homepage_url
         result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
@@ -269,6 +271,7 @@ def _licenses_data_from_match(
         matched_rule['is_license_reference'] = match.rule.is_license_reference
         matched_rule['is_license_tag'] = match.rule.is_license_tag
         matched_rule['is_license_intro'] = match.rule.is_license_intro
+        matched_rule['has_unknown'] = match.rule.has_unknown
         matched_rule['matcher'] = match.matcher
         matched_rule['rule_length'] = match.rule.length
         matched_rule['matched_length'] = match.len()

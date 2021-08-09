@@ -27,18 +27,19 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/xml-apis/xml-apis",
+      "purl": "pkg:maven/xml-apis/xml-apis@1.0.b2",
       "requirement": "1.0.b2",
       "scope": "relocation",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/xml-apis/xml-apis@2.0.2?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/xml-apis/xml-apis@2.0.2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/xml-apis/xml-apis/2.0.2/",
   "repository_download_url": "https://repo1.maven.org/maven2/xml-apis/xml-apis/2.0.2/xml-apis-2.0.2.jar",

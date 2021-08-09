@@ -110,9 +110,9 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
 
         test_pkg = debian.DebianPackage(
             name='libatk-adaptor',
-            multi_arch='same',
             qualifiers={'arch':'amd64'}
         )
+        test_pkg.set_multi_arch('same')
 
         assert test_pkg.get_list_of_installed_files(test_info_dir) == []
 
@@ -123,9 +123,9 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
 
         test_pkg = debian.DebianPackage(
             name='libatk-adaptor',
-            multi_arch='same',
             qualifiers={'arch':'amd64'}
         )
+        test_pkg.set_multi_arch('same')
 
         expected = [
              models.PackageFile('/usr/lib/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop', md5='34900bd11562f427776ed2c05ba6002d'),
@@ -146,9 +146,9 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
 
         test_pkg = debian.DebianPackage(
             name='fonts-sil-abyssinica',
-            multi_arch='foreign',
             qualifiers={'arch':'amd64'}
         )
+        test_pkg.set_multi_arch('foreign')
 
         expected = [
             models.PackageFile('/usr/share/bug/fonts-sil-abyssinica/presubj', md5='7faf213b3c06e818b9976cc2ae5af51a'),

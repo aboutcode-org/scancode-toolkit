@@ -1,0 +1,63 @@
+# Contributor: Jon Ong <jonongjs@rottenmage.com>
+# Maintainer: Andy Li <andy@onthewings.net>
+pkgname=haxe
+pkgver=3.4.7
+_versuffix=
+pkgrel=1
+pkgdesc="Cross-platform toolkit and programming language"
+url="https://haxe.org"
+arch="all !x86 !armhf !armv7 !mips !mips64"
+license="GPL MIT LGPL" # http://haxe.org/foundation/open-source.html
+makedepends="ocaml-camlp4-dev ocaml neko-dev zlib-dev pcre-dev"
+options="!strip"
+subpackages="$pkgname-doc"
+
+# haxelib and ocamllibs are git submodules in the haxe repo.
+# To get the commits, run `git submodule status`.
+_haxelib_rev="a494d8be523e26fcf875e2c33915808dc221e17a"
+_ocamllibs_rev="ab5be31c6dd1fcd761c2ba16c5d767bcf6792490"
+source="$pkgname-$pkgver.tar.gz::https://github.com/HaxeFoundation/haxe/archive/$pkgver$_versuffix.tar.gz
+	haxelib-$_haxelib_rev.tar.gz::https://github.com/HaxeFoundation/haxelib/archive/$_haxelib_rev.tar.gz
+	ocamllibs-$_ocamllibs_rev.tar.gz::https://github.com/HaxeFoundation/ocamllibs/archive/$_ocamllibs_rev.tar.gz
+	haxe.sh
+	"
+builddir="$srcdir/$pkgname-$pkgver$_versuffix"
+
+build() {
+	cd "$builddir"
+
+	rmdir libs extra/haxelib_src
+	mv "$srcdir"/haxelib-$_haxelib_rev extra/haxelib_src
+	mv "$srcdir"/ocamllibs-$_ocamllibs_rev libs
+
+	# Workaround to make it build with ocaml >=4.06.
+	export OCAMLPARAM="safe-string=0,_"
+
+	# Check to see if ocamlopt exists. If not, bytecompile everything.
+	command -v ocamlopt && make -j1 || make -j1 BYTECODE=1
+	make -j1 tools
+
+	unset OCAMLPARAM
+}
+
+check() {
+	cd "$builddir"
+
+	./haxe -version
+	./haxelib version
+}
+
+package() {
+	cd "$builddir"
+
+	install -d "$pkgdir"/usr/bin/ "$pkgdir"/usr/share/haxe/
+	install -m 755 haxe haxelib "$pkgdir"/usr/bin/
+	cp -rf std "$pkgdir"/usr/share/$pkgname/
+	install -Dm 644 extra/LICENSE.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.txt
+	install -Dm 644 "$srcdir/haxe.sh" "$pkgdir/etc/profile.d/haxe.sh"
+}
+
+sha512sums="5b15018b714922aa362aeb9eab672ed76d32db73d06a0d976d14445bcd644661f2ff397016c41bdc2d092c513ad1458f3b377ca040c6c293f5d0711fdd6ba26d  haxe-3.4.7.tar.gz
+549d8eead2236a60747acc50a88129e587d52f7408342f657965d4f2faf638d62fd556f0d0d23a122ef03ee7164b966d6234f35dc81c1cebd703e254e2f57265  haxelib-a494d8be523e26fcf875e2c33915808dc221e17a.tar.gz
+4aa501389bde4a9bef8e2e571dc012ccab10b98c3c37903ab5a262c2a9bec57fa4bee936222397c484ecefe917f28e98f6513bf83007cf89434f93e80ccc9d23  ocamllibs-ab5be31c6dd1fcd761c2ba16c5d767bcf6792490.tar.gz
+c756571769bcdb0d7040b44b3d486e445c56a01a8d23d26f668be19b8d147e9f324166f004872d04e912f329e45ad821672a0a365df4ba27fb1dc22bb34130a3  haxe.sh"

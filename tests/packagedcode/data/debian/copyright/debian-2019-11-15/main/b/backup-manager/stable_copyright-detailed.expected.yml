@@ -1,8 +1,47 @@
--
-- gpl-2.0-plus AND gpl-2.0
-- |
+primary_license:
+declared_license:
+license_expression: gpl-2.0-plus AND gpl-2.0
+copyright: |
   Copyright 2003-2010 Alexis Sukrieh
   Copyright 2005 Alexis Sukrieh Debianization
   Copyright 2005-2009 Alexis Sukrieh
   Copyright 2009-2012 Sven Joachim
   Copyright 2011-2012 Georgios M. Zarkadas
+matches:
+  - score: '100.0'
+    start_line: 18
+    end_line: 23
+    matcher: 2-aho
+    rule_length: 43
+    matched_length: 43
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_434.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "License:\n \n This program is free software; you can redistribute it and/or\n\
+      \ modify it under the terms of the GNU General Public License\n as published by the Free\
+      \ Software Foundation; either version 2\n of the License, or (at your option) any later\
+      \ version."
+  - score: '100.0'
+    start_line: 25
+    end_line: 26
+    matcher: 2-aho
+    rule_length: 24
+    matched_length: 24
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_1120.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian systems, the complete text of the GNU General Public
+       License version 2 can be found in `/usr/share/common-licenses/GPL-2`.

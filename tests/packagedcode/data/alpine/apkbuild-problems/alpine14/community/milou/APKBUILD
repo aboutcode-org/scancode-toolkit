@@ -1,0 +1,50 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=milou
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="A dedicated search application built on top of Baloo"
+# armhf blocked by qt5-qtdeclarative
+# s390x blocked by kdeclarative
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only) AND (LGPL-2.1-only OR LGPL-3.0-only)"
+makedepends="
+	extra-cmake-modules
+	kcoreaddons-dev
+	kdeclarative-dev
+	ki18n-dev
+	kitemmodels-dev
+	krunner-dev
+	kservice-dev
+	plasma-framework-dev
+	qt5-qtbase-dev
+	qt5-qtdeclarative-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/milou-$pkgver.tar.xz"
+subpackages="$pkgname-lang"
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+sha512sums="
+a6a479d68d9efbb9be06c137e39a26635aabcb78ad569c25d018b10dbe79b3c7dddd8d1c5396ebf49fd7d08eb96cba3e75db8c4ad4048940cd31fb9175bcce26  milou-5.22.0.tar.xz
+"

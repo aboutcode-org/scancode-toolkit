@@ -27,26 +27,27 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/org.apache.ant/ant",
+      "purl": "pkg:maven/org.apache.ant/ant@1.7.0",
       "requirement": "1.7.0",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.jcraft/jsch",
+      "purl": "pkg:maven/com.jcraft/jsch@0.1.29",
       "requirement": "0.1.29",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.ant/ant-jsch@1.7.0?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.ant/ant-jsch@1.7.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jsch/1.7.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jsch/1.7.0/ant-jsch-1.7.0.jar",

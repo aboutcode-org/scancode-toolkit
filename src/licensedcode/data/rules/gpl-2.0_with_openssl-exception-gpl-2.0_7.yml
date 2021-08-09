@@ -1,0 +1,4 @@
+license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
+is_license_notice: yes
+relevance: 100
+notes: Seen in monit at https://bitbucket.org/tildeslash/monit/src/7b8f180bdb1732620e07c62f939fb2d0e7c68c0f/COPYING?at=master

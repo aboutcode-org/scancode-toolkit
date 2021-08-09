@@ -1,0 +1,16 @@
+subdirectory is a collection of software from several sources.
+Each file may have its own copyright/license that is embedded in the source 
+file.
+
+This list documents those licenses which are more restrictive than
+a BSD-like license or require the copyright notice
+to be duplicated in documentation and/or other materials associated with
+the distribution.  Certain licenses documented here only apply to
+specific targets.  Certain clauses only apply if you are building the
+code as part of your binary.
+
+Note that this list may omit certain licenses that
+only pertain to the copying/modifying of the individual source code. 
+If you are distributing the source code, then you do not need to
+worry about these omitted licenses, so long as you do not modify the
+copyright information already in place.

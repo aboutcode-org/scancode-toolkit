@@ -54,6 +54,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:golang/github.com/alecthomas/sample",
     "repository_homepage_url": "https://pkg.go.dev/github.com/alecthomas/sample",
     "repository_download_url": null,

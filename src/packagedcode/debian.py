@@ -15,7 +15,6 @@ from debian_inspector import debcon
 from packageurl import PackageURL
 
 from commoncode import filetype
-from commoncode.datautils import String
 from packagedcode import models
 
 """
@@ -40,24 +39,16 @@ class DebianPackage(models.Package):
     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
     default_type = 'deb'
 
-    multi_arch = String(
-        label='Multi-Arch',
-        help='Multi-Arch value from status file')
+    @property
+    def multi_arch(self):
+        """
+        Multi-Arch value from a status or spec file.
+        """
+        return self.extra_data.get('multi_arch')
 
-    def to_dict(self, _detailed=False, **kwargs):
-        data = super().to_dict(_detailed=_detailed, **kwargs)
-        if _detailed:
-            #################################################
-            # populate temporary fields
-            data['multi_arch'] = self.multi_arch
-            #################################################
-        else:
-            #################################################
-            # remove temporary fields
-            data.pop('multi_arch', None)
-            #################################################
-
-        return data
+    def set_multi_arch(self, value):
+        if value:
+            self.extra_data['multi_arch'] = value
 
     def populate_installed_files(self, var_lib_dpkg_info_dir):
         """
@@ -172,40 +163,40 @@ def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **k
     """
 
     base_status_file_loc = os.path.join(root_dir, 'var/lib/dpkg/status')
-    if not os.path.exists(base_status_file_loc):
-        return
+    base_statusd_loc = os.path.join(root_dir, 'var/lib/dpkg/status.d/')
 
-    var_lib_dpkg_info_dir = os.path.join(root_dir, 'var/lib/dpkg/info/')
+    if os.path.exists(base_status_file_loc):
+        var_lib_dpkg_info_dir = os.path.join(root_dir, 'var/lib/dpkg/info/')
 
-    # guard from recursive import
-    from packagedcode import debian_copyright
+        # guard from recursive import
+        from packagedcode import debian_copyright
 
-    for package in parse_status_file(base_status_file_loc, distro=distro):
-        package.populate_installed_files(var_lib_dpkg_info_dir)
-        if detect_licenses:
-            copyright_location = package.get_copyright_file_path(root_dir)
-            dc = debian_copyright.parse_copyright_file(copyright_location)
-            if dc:
-                package.declared_license = dc.get_declared_license(
-                    filter_licenses=True,
-                    skip_debian_packaging=True,
-                    simplify_licenses=False,
-                )
-                package.license_expression = dc.get_license_expression(
-                    filter_licenses=True,
-                    skip_debian_packaging=True,
-                    simplify_licenses=False,
-                )
-                package.copyright = dc.get_copyright(
-                    skip_debian_packaging=True,
-                    unique_copyrights=True,
-                )
+        for package in parse_status_file(base_status_file_loc, distro=distro):
+            package.populate_installed_files(var_lib_dpkg_info_dir)
+            if detect_licenses:
+                copyright_location = package.get_copyright_file_path(root_dir)
+                dc = debian_copyright.parse_copyright_file(copyright_location)
+                if dc:
+                    package.declared_license = dc.get_declared_license(
+                        filter_duplicates=True,
+                        skip_debian_packaging=True,
+                    )
+                    package.license_expression = dc.get_license_expression(
+                        skip_debian_packaging=True,
+                        simplify_licenses=True,
+                    )
+                    package.copyright = dc.get_copyright(
+                        skip_debian_packaging=True,
+                        unique_copyrights=True,
+                    )
+            yield package
 
-        yield package
-
-
-def is_debian_status_file(location):
-    return filetype.is_file(location) and location.endswith('/status')
+    elif os.path.exists(base_statusd_loc):
+        for root, dirs, files in os.walk(base_statusd_loc):
+            for f in files:
+                status_file_loc = os.path.join(root, f)
+                for package in parse_status_file(status_file_loc, distro=distro):
+                    yield package
 
 
 def parse_status_file(location, distro='debian'):
@@ -214,9 +205,8 @@ def parse_status_file(location, distro='debian'):
     """
     if not os.path.exists(location):
         raise FileNotFoundError('[Errno 2] No such file or directory: {}'.format(repr(location)))
-    if not is_debian_status_file(location):
-        return
-
+    if not filetype.is_file(location):
+        raise Exception(f'Location is not a file: {location}')
     for debian_pkg_data in debcon.get_paragraphs_data_from_file(location):
         yield build_package(debian_pkg_data, distro)
 
@@ -235,6 +225,8 @@ def build_package(package_data, distro='debian'):
         ('arch', package_data.get('architecture')),
     ])
 
+    package.set_multi_arch(package_data.get('multi-arch'))
+
     # mapping of top level `status` file items to the Package object field name
     plain_fields = [
         ('description', 'description'),
@@ -243,7 +235,6 @@ def build_package(package_data, distro='debian'):
         ('package', 'name'),
         ('version', 'version'),
         ('maintainer', 'maintainer'),
-        ('multi-arch', 'multi_arch'),
     ]
 
     for source, target in plain_fields:
