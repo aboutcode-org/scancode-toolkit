@@ -1,0 +1,11 @@
+key: ttcl
+short_name: TCL
+name: The Talis Community License
+category: Permissive
+owner: Open Knowledge Foundation
+spdx_license_key: LicenseRef-scancode-ttcl
+homepage_url: https://opendefinition.org/licenses/tcl/
+text_urls: 
+  - https://web.archive.org/web/20130923083859/http://tdnarchive.capita-libraries.co.uk/tcl
+ignorable_urls:
+  - http://tdnarchive.capita-libraries.co.uk/tcl
