@@ -65,6 +65,7 @@
             "licenses": [
               "pcre"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,

@@ -91,6 +91,7 @@
             "licenses": [
               "apache-1.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -160,6 +161,7 @@
             "licenses": [
               "apache-1.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -229,6 +231,7 @@
             "licenses": [
               "ja-sig"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -266,6 +269,9 @@
             "license_expression": "apache-2.0",
             "licenses": [
               "apache-2.0"
+            ],
+            "referenced_filenames": [
+              "NOTICE"
             ],
             "is_license_text": false,
             "is_license_notice": true,
@@ -339,6 +345,7 @@
               "linux-syscall-exception-gpl",
               "linux-openib"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -379,6 +386,7 @@
               "linux-syscall-exception-gpl",
               "linux-openib"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -419,6 +427,7 @@
               "linux-syscall-exception-gpl",
               "linux-openib"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -488,6 +497,7 @@
             "licenses": [
               "ja-sig"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -525,6 +535,9 @@
             "license_expression": "apache-2.0",
             "licenses": [
               "apache-2.0"
+            ],
+            "referenced_filenames": [
+              "NOTICE"
             ],
             "is_license_text": false,
             "is_license_notice": true,

@@ -148,6 +148,7 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,

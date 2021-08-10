@@ -339,6 +339,7 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
@@ -425,6 +426,7 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
@@ -511,6 +513,7 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
@@ -597,6 +600,7 @@
             "licenses": [
               "lgpl-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -717,6 +721,7 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -842,6 +847,7 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
@@ -928,6 +934,7 @@
             "licenses": [
               "gpl-1.0-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,

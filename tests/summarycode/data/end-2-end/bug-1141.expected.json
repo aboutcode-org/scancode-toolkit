@@ -310,6 +310,7 @@
             "licenses": [
               "gpl-3.0-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
@@ -539,6 +540,7 @@
             "licenses": [
               "gpl-2.0-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
