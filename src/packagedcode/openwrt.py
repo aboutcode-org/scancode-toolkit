@@ -1,24 +1,10 @@
-#
+
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# SPDX-License-Identifier: Apache-2.0 AND CC-BY-4.0
-#
-# Visit https://aboutcode.org and https://github.com/nexB/scancode-toolkit for
-# support and download. ScanCode is a trademark of nexB Inc.
-#
-# The ScanCode software is licensed under the Apache License version 2.0.
-# The ScanCode open data is licensed under CC-BY-4.0.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
 
 import logging
@@ -30,13 +16,13 @@ from debut.deps import parse_depends
 from debut.deps import VersionedRelationship
 from packageurl import PackageURL
 
+from commoncode import archive
 from commoncode import filetype
 from commoncode import fileutils
 from commoncode.datautils import List
+from commoncode.fileutils import as_posixpath
 from packagedcode import models
 from packagedcode.utils import combine_expressions
-from commoncode import archive
-from commoncode.fileutils import as_posixpath
 
 """
 Handle OpenWRT packages. These are highly similar to the Debian packages and use
@@ -136,7 +122,10 @@ class OpenwrtPackage(models.Package):
                 directories.add(os.path.dirname(path))
 
         # skip directories when possible
-        installed_files = [f for f in sorted(installed_files) if f.path not in directories]
+        installed_files = [
+            f for f in sorted(installed_files)
+            if f.path not in directories
+        ]
 
         return installed_files
 
@@ -187,13 +176,21 @@ def parse(location):
         opkg_dir = fileutils.parent_directory(location)
         rootfs_dir = fileutils.parent_directory(fileutils.parent_directory(opkg_dir))
         openwrt_version = get_openwrt_version(rootfs_dir)
-        for package  in get_installed_packages(opkg_dir=opkg_dir, openwrt_version=openwrt_version, detect_licenses=False):
+
+        installed_package = get_installed_packages(
+            opkg_dir=opkg_dir,
+            openwrt_version=openwrt_version,
+            detect_licenses=False,
+        )
+
+        for package  in installed_package:
             yield package
 
 
 def get_openwrt_version(rootfs_dir):
     """
-    Return an openwrt version string  or None
+    Return an openwrt version string or None given a ``rootfs_dir`` rootfs
+    directory.
     """
     # modern
     #     /etc/openwrt_release
@@ -217,10 +214,15 @@ def get_openwrt_version(rootfs_dir):
     return
 
 
-def get_installed_packages(opkg_dir, openwrt_version=None, detect_licenses=False, **kwargs):
+def get_installed_packages(
+    opkg_dir,
+    openwrt_version=None,
+    detect_licenses=False,
+    **kwargs,
+):
     """
-    Given a directory to a /usr/lib/opkg dir, yield installed OpenwrtPackage (s) for the
-    optional `openwrt_version`.
+    Given a directory to a /usr/lib/opkg dir, yield installed OpenwrtPackage (s)
+    for the optional `openwrt_version`.
     """
 
     base_status_file_loc = os.path.join(opkg_dir, 'status')
@@ -229,7 +231,11 @@ def get_installed_packages(opkg_dir, openwrt_version=None, detect_licenses=False
 
     usr_lib_opkg_info_dir = os.path.join(opkg_dir, 'info')
 
-    for package in parse_status_file(base_status_file_loc, openwrt_version=openwrt_version):
+    installed_packages = parse_status_file(
+        location=base_status_file_loc,
+        openwrt_version=openwrt_version,
+    )
+    for package in installed_packages:
         package.populate_installed_files(usr_lib_opkg_info_dir)
         if detect_licenses:
             package.license_expression = package.compute_normalized_license()
@@ -241,7 +247,8 @@ def parse_status_file(location, openwrt_version=None, installed_only=True):
     Yield OpenwrtPackage objects from an opkg `status` file or None.
     """
     if not os.path.exists(location):
-        raise FileNotFoundError('[Errno 2] No such file or directory: {}'.format(repr(location)))
+        raise FileNotFoundError(f'[Errno 2] No such file or directory: {location!r}')
+
     if not is_status_file(location):
         return
 
@@ -258,7 +265,7 @@ def parse_status_file(location, openwrt_version=None, installed_only=True):
 
 def build_package(package_data, openwrt_version=None):
     """
-    Return an OpenwrtPackage object from a package_data mapping (from an opkg
+    Return an OpenwrtPackage object from a ``package_data`` mapping (from an opkg
     status file) or None.
     """
     package = OpenwrtPackage(
@@ -300,7 +307,10 @@ def build_package(package_data, openwrt_version=None):
             namespace=package.namespace,
             name=package.name,
             version=package.version,
-            qualifiers=dict(type='source', vcs_url=f'https://github.com/openwrt/openwrt/blob/master/{source}'),
+            qualifiers=dict(
+                type='source',
+                vcs_url=f'https://github.com/openwrt/openwrt/blob/master/{source}',
+            ),
             subpath='package/utils/util-linux'
         ).to_string()
         package.source_packages = [source_pkg_purl]
@@ -341,6 +351,7 @@ def get_dependencies(depends, openwrt_version=None):
         return []
     dep_pkgs = []
     root_rel = parse_depends(depends)
+
     for rel in root_rel.relationships:
         req = None
         purl = PackageURL(
@@ -446,7 +457,8 @@ def compute_normalized_license(declared_license):
         return
 
     if isinstance(declared_license, str):
-        # we have a single string which should be mostly an SPDX-like license expression
+        # we have a single string which should be mostly an SPDX-like license
+        # expression
         lic = declared_license
         license_files = []
     else:
@@ -456,7 +468,7 @@ def compute_normalized_license(declared_license):
     primary_expression = get_license_expression(lic)
 
     for _licfile in license_files:
-        # TODO: do somthing with these files
+        # TODO: do something with these files
         pass
 
     return primary_expression
@@ -464,8 +476,8 @@ def compute_normalized_license(declared_license):
 
 def get_ipk_control_content(location):
     """
-    Return the text content of an extracted control file from the .ipk file at
-    location or None.
+    Return the text content of a control file extracted from the .ipk file at
+    ``location`` or None.
     """
     if not is_ipk(location):
         return
