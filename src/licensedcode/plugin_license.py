@@ -10,11 +10,9 @@
 from functools import partial
 
 import attr
-import os
 
 from commoncode import fileutils
 from commoncode.cliutils import PluggableCommandLineOption
-from licensedcode.models import BasicRule, License
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from commoncode.cliutils import MISC_GROUP
@@ -131,9 +129,8 @@ class LicenseScanner(ScanPlugin):
 
 def match_reference_license(resource, codebase):
     """
-    Find instances for any licenses in referenced filenames
+    Return the updated license matches having reference to another files
     """
-
     if not resource.is_file:
         return
 
@@ -142,37 +139,35 @@ def match_reference_license(resource, codebase):
     if not licenses:
         return 
 
-    location = resource.location
-    from licensedcode import cache
-    from scancode.api import get_licenses
-    idx = cache.get_index()
-    matches = idx.match(
-        location=location, min_score=0)
+    referenced_licenses = []
+    referenced_license_expressions = []
+    referenced_filenames = []
+    
+    for license in licenses:
+        referenced_files = license['matched_rule']['referenced_filenames']
+        for referenced_filename in referenced_files:
+            if not referenced_filename in referenced_filenames:
+                referenced_filenames.append(referenced_filename)
+                
+    for referenced_filename in referenced_filenames:
+        new_resource = find_reference_licenses(referenced_filename=referenced_filename, resource=resource, codebase=codebase)
+        if new_resource:
+            referenced_licenses.extend(new_resource.licenses)
+            referenced_license_expressions.extend(new_resource.license_expressions)
 
-    for match in matches:
-        ref_files=match.rule.referenced_filenames
-        if len(ref_files) != 0:
-            for i in range(len(ref_files)):
-                if not ref_files[i].startswith('usr/share/common-licenses'):
-                    new_loc=find_reference_file(location,ref_files[i])
-                    if new_loc:
-                        new_lic=get_licenses(new_loc, min_score=0)
-                        licenses.extend(new_lic['licenses'])
-                        license_expressions.extend(new_lic['license_expressions'])
-                   
+    licenses.extend(referenced_licenses)
+    license_expressions.extend(referenced_license_expressions)
     codebase.save_resource(resource)
     return resource
 
 
-def find_reference_file(location,referenced_filename):
+def find_reference_licenses(referenced_filename, resource, codebase, **kwargs):
     """
-    Searches for the referenced filename in the same directory and 
-    returns the found location
+    Return the resource object for matching referenced-filename given a resource in codebase
     """
-    file_name=referenced_filename
-    par_dir=fileutils.parent_directory(location)
-    for root, dirs, files in os.walk(par_dir):
-      if file_name in files:
-         path_file = os.path.join(root,file_name)
-         return path_file
-        
+    parent = resource.parent(codebase)
+    
+    for child in parent.children(codebase):
+        path = child.path
+        if path.endswith(referenced_filename) or fileutils.file_base_name(child.path) == referenced_filename:
+            return child

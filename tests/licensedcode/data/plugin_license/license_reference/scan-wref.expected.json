@@ -30,6 +30,7 @@
           "short_name": "Unknown License reference",
           "category": "Unstated License",
           "is_exception": false,
+          "is_unknown": true,
           "owner": "Unspecified",
           "homepage_url": null,
           "text_url": "",
@@ -46,11 +47,15 @@
             "licenses": [
               "unknown-license-reference"
             ],
+            "referenced_filenames": [
+              "LICENSE"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": true,
             "matcher": "2-aho",
             "rule_length": 5,
             "matched_length": 5,

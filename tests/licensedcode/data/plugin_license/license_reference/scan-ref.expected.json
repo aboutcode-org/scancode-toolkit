@@ -30,6 +30,7 @@
           "short_name": "MIT License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "MIT",
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
@@ -46,11 +47,13 @@
             "licenses": [
               "mit"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "1-hash",
             "rule_length": 10,
             "matched_length": 10,
@@ -77,6 +80,7 @@
           "short_name": "Unknown License reference",
           "category": "Unstated License",
           "is_exception": false,
+          "is_unknown": true,
           "owner": "Unspecified",
           "homepage_url": null,
           "text_url": "",
@@ -93,11 +97,15 @@
             "licenses": [
               "unknown-license-reference"
             ],
+            "referenced_filenames": [
+              "LICENSE"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": true,
             "matcher": "2-aho",
             "rule_length": 5,
             "matched_length": 5,
@@ -113,6 +121,7 @@
           "short_name": "MIT License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "MIT",
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
@@ -129,17 +138,20 @@
             "licenses": [
               "mit"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "1-hash",
             "rule_length": 10,
             "matched_length": 10,
             "match_coverage": 100.0,
             "rule_relevance": 100
-          }
+          },
+          "matched_text": "that is licensed under [MIT](http://opensource.org/licenses/MIT)."
         }
       ],
       "license_expressions": [
