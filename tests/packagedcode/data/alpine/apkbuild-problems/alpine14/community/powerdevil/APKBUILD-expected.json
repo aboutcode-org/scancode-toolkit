@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "powerdevil",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Manages the power consumption settings of a Plasma Shell",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0-plus AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0)",
+  "declared_license": "GPL-2.0-or-later AND LGPL-2.0-or-later AND (LGPL-2.1-only OR LGPL-3.0-only)",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/stable/plasma/5.22.0/powerdevil-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "powerdevil-5.22.0.tar.xz",
+        "sha512": "02e2bbbb763b130a22dca307a580f7f68f0cef2fb0f9d57c8a877897b22d368165f28e9182ff9dc71259595f9c74cf5d030e1e701ec0431d3c567cac0c967803"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/powerdevil@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

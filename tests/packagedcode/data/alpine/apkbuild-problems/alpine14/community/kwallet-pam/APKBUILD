@@ -1,0 +1,41 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=kwallet-pam
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="KWallet PAM integration"
+# armhf blocked by extra-cmake-modules
+# s390x blocked by kwallet
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="LGPL-2.1-or-later"
+makedepends="
+	extra-cmake-modules
+	kwallet-dev
+	libgcrypt-dev
+	linux-pam-dev
+	socat
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/kwallet-pam-$pkgver.tar.xz"
+options="!check" # No tests available
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="
+4f82b59c28879df3113c8d67171a50cb4c76728413c242749e5cce92d896f2139436263d07672fc4f2e98d457a7755a9901ddd3257a6c21ac088d24fec0b2026  kwallet-pam-5.22.0.tar.xz
+"

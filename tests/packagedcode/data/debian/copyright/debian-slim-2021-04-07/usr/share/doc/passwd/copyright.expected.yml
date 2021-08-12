@@ -1,9 +1,89 @@
--
-- bsd-new AND tcp-wrappers AND gpl-2.0-plus
-- |
+primary_license:
+declared_license:
+license_expression: bsd-new AND tcp-wrappers AND gpl-2.0-plus
+copyright: |
   copyright 1988 - 1994, Julianne Frances Haugh
   copyright 1997 - 2001, Marek Michalkiewicz
   copyright 2001 - 2004, Andrzej Krzysztofowicz
   copyright 2000 - 2007, Tomasz Kloczko
   Copyright 1995 by Wietse Venema
   Copyright (c) 1992-2003 Free Software Foundation, Inc.
+matches:
+  - score: '97.18'
+    start_line: 20
+    end_line: 42
+    matcher: 2-aho
+    rule_length: 207
+    matched_length: 207
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_67.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n 3. Neither\
+      \ the name of [Julianne] F. [Haugh] nor the names of its contributors\n    may be used\
+      \ to endorse or promote products derived from this software\n    without specific prior\
+      \ written permission.\n \n THIS SOFTWARE IS PROVIDED BY [JULIE] [HAUGH] AND CONTRIBUTORS\
+      \ ``AS IS'' AND\n ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n\
+      \ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.\
+      \  IN NO EVENT SHALL [JULIE] [HAUGH] OR CONTRIBUTORS BE LIABLE\n FOR ANY DIRECT, INDIRECT,\
+      \ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED\
+      \ TO, PROCUREMENT OF SUBSTITUTE GOODS\n OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\
+      \ BUSINESS INTERRUPTION)\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\
+      \ STRICT\n LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n\
+      \ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 72
+    end_line: 85
+    matcher: 2-aho
+    rule_length: 88
+    matched_length: 88
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: tcp-wrappers_3.RULE
+    license_expression: tcp-wrappers
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Individual files\n * may be covered by other copyrights (as noted in the\
+      \ file itself.)\n *\n * This material was originally written and compiled by Wietse Venema\
+      \ at\n * Eindhoven University of Technology, The Netherlands, in 1990, 1991,\n * 1992,\
+      \ 1993, 1994 and 1995.\n *\n * Redistribution and use in source and binary forms are permitted\n\
+      \ * provided that this entire copyright notice is duplicated in all such\n * copies. \
+      \ \n *\n * This software is provided \"as is\" and without any expressed or implied\n\
+      \ * warranties, including, without limitation, the implied warranties of\n * merchantibility\
+      \ and fitness for any particular purpose."
+  - score: '100.0'
+    start_line: 92
+    end_line: 103
+    matcher: 2-aho
+    rule_length: 100
+    matched_length: 100
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_749.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This program is free software; you can redistribute it and/or modify\n  \
+      \  it under the terms of the GNU General Public License as published by\n    the Free\
+      \ Software Foundation; either version 2, or (at your option)\n    any later version.\n\
+      \ \n    This program is distributed in the hope that it will be useful,\n    but WITHOUT\
+      \ ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR\
+      \ A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n \n\
+      \    On Debian GNU/Linux systems, the complete text of the GNU General Public\n    License\
+      \ can be found in '/usr/share/common-licenses/GPL-2'"

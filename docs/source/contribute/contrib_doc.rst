@@ -18,7 +18,7 @@ That will create an ``/scancode-toolkit`` directory in your working directory.
 Now you can install the dependencies in a virtualenv::
 
     cd scancode-toolkit
-    virtualenv -p /usr/bin/python3.6 docs-venv
+    virtualenv -p /usr/bin/python3 docs-venv
     source docs-venv/bin/activate
 
 Now, the following prerequisites are installed

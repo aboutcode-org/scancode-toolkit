@@ -620,11 +620,14 @@ class Package(BasePackage):
         return data
 
 
-def compute_normalized_license(declared_license):
+def compute_normalized_license(declared_license, expression_symbols=None):
     """
     Return a normalized license_expression string from the ``declared_license``.
     Return 'unknown' if there is a declared license but it cannot be detected
     (including on errors) and return None if there is no declared license.
+
+    Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol}
+    if provided. Otherwise use the standard SPDX license symbols.
     """
 
     if not declared_license:
@@ -632,7 +635,10 @@ def compute_normalized_license(declared_license):
 
     from packagedcode import licensing
     try:
-        return licensing.get_normalized_expression(declared_license)
+        return licensing.get_normalized_expression(
+            query_string=declared_license,
+            expression_symbols=expression_symbols
+        )
     except Exception:
         # FIXME: add logging
         # we never fail just for this
@@ -808,14 +814,6 @@ class CabPackage(Package):
     mimetypes = ('application/vnd.ms-cab-compressed',)
     extensions = ('.cab',)
     default_type = 'cab'
-
-
-@attr.s()
-class MsiInstallerPackage(Package):
-    filetypes = ('msi installer',)
-    mimetypes = ('application/x-msi',)
-    extensions = ('.msi',)
-    default_type = 'msi'
 
 
 @attr.s()

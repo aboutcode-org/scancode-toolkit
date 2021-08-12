@@ -1,0 +1,71 @@
+# Contributor: Kevin Daudt <kdaudt@alpinelinux.org>
+# Maintainer: Kevin Daudt <kdaudt@alpinelinux.org>
+pkgname=darktable
+pkgver=3.4.0
+pkgrel=0
+pkgdesc="an open source photography workflow application and raw developer"
+url="https://www.darktable.org/"
+arch="x86_64 aarch64"
+license="GPL-3.0-or-later"
+depends="dbus:org.freedesktop.Secrets"
+makedepends="
+	cmake
+	colord-dev
+	colord-gtk-dev
+	cups-dev
+	curl-dev
+	exiv2-dev
+	gtk+3.0-dev
+	intltool
+	libjpeg-turbo-dev
+	json-glib-dev
+	lcms2-dev
+	lensfun-dev
+	flickcurl-dev
+	libgphoto2-dev
+	librsvg-dev
+	libsecret-dev
+	libwebp-dev
+	libxml2-dev
+	libxml2-utils
+	libxslt
+	lua5.3-dev
+	openexr-dev
+	openjpeg-dev
+	pugixml-dev
+	sqlite-dev
+	tiff-dev"
+ldpath="/usr/lib/$pkgname"
+subpackages="$pkgname-dbg $pkgname-doc $pkgname-lang"
+options="!check" # Dependencies missing
+source="https://github.com/darktable-org/darktable/releases/download/release-${pkgver/_/}/darktable-${pkgver/_/.}.tar.xz
+	fix-ifunc-multiarch.patch
+	fix-cmake-none.patch
+	aarch64-include-xmmintrin-if-sse-defined.patch
+	"
+
+prepare() {
+	default_prepare
+	mkdir -p build
+}
+
+build() {
+	cd "$builddir/build"
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DBUILD_SHARED_LIBS=True \
+		-DCMAKE_BUILD_TYPE=None \
+		-DBINARY_PACKAGE_BUILD=ON \
+		..
+	make
+}
+
+package() {
+	cd "$builddir/build"
+	make DESTDIR="$pkgdir" install
+}
+
+sha512sums="b0a1e58f9af4007b22bacd7c61c75bdd036db9b1bbb6bd0ed785759d1a7a5a095a49a2a68c1555c661c4fff2549fcd35d2db2d9d4c16fc035bb37939804c749f  darktable-3.4.0.tar.xz
+bbb665f06b21a75f34a82f26d9e7421281445843b392871d1f851c7b73eabc862bbe43525b669a67429a22fea63bb03ca90b8a1d200d62a52907946ffcd9a7e3  fix-ifunc-multiarch.patch
+74a47de2820e34d5c4ac53adbc557be908f73c06ab7e978429b22a5decb9c974871f5a83a23dd4fe6a7c13bc54de65ef004776efda8aad3f38d27fb35c0bd2c6  fix-cmake-none.patch
+b756b9d6c007580b5030c90bc64bbc70154ebabf2d54312a7af61274962cc2d3ec3b8c68def07072e113c492b3caee490dff6021576f1075db654057605e31d1  aarch64-include-xmmintrin-if-sse-defined.patch"

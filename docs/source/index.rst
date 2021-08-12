@@ -94,7 +94,6 @@ Miscellaneous Documents
    :maxdepth: 2
 
    misc/index
-   license
 
 
 Discussion Documents

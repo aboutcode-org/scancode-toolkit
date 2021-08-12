@@ -1,0 +1,7 @@
+license_expression: sleepycat
+is_license_notice: yes
+relevance: 100
+ignorable_emails:
+    - berkeleydb-info_us@oracle.com
+ignorable_urls:
+    - http://www.oracle.com/technology/software/products/berkeley-db/db/index.html

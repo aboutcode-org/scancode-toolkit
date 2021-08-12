@@ -1,0 +1,20 @@
+# Maintainer: Rasmus Thomsen <oss@cogitri.dev>
+pkgname=hunspell-de-de
+pkgver=20170112
+_pkgver="${pkgver:0:4}-${pkgver:4:2}-${pkgver:6:2}"
+pkgrel=0
+pkgdesc="German (Germany) hunspell dictionaries"
+url="https://extensions.libreoffice.org/extensions/german-de-de-frami-dictionaries"
+arch="noarch"
+license="GPL-3.0-only"
+makedepends="unzip"
+options="!check" # no tests available
+source="$pkgname-$pkgver.zip::https://sourceforge.net/projects/aoo-extensions/files/1075/15/dict-de_de-frami_$_pkgver.oxt/download"
+builddir="$srcdir"
+
+package() {
+	install -d "$pkgdir"/usr/share/hunspell
+	install -m644 de_DE_frami/de_DE_frami.aff "$pkgdir"/usr/share/hunspell/de_DE.aff
+	install -m644 de_DE_frami/de_DE_frami.dic "$pkgdir"/usr/share/hunspell/de_DE.dic
+}
+sha512sums="f44d30c875335f52674ea91557c716eb2c9917e7bd170372c8994d8d58e948ef2b68f004d93f175173ffad4a17a1920c69eaffe915668e0c4dc5fee7f8abcc6e  hunspell-de-de-20170112.zip"

@@ -1,0 +1,38 @@
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+pkgname=libburn
+pkgver=1.5.4
+_ver=${pkgver%_p*}
+if [ "$_ver" != "$pkgver" ]; then
+	_pver=".pl${pkgver##*_p}"
+fi
+pkgrel=0
+pkgdesc="Library for reading, mastering and writing optical discs"
+url="http://libburnia-project.org/"
+arch="all"
+license="GPL-2.0-or-later"
+makedepends="linux-headers"
+subpackages="$pkgname-dev $pkgname-doc"
+source="http://files.libburnia-project.org/releases/libburn-${_ver}$_pver.tar.gz"
+
+prepare() {
+	default_prepare
+	update_config_sub
+}
+
+build() {
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--disable-static
+	make
+}
+
+check() {
+	make check
+}
+package() {
+	make -j1 DESTDIR="$pkgdir" install
+}
+
+sha512sums="dd7b14093e62e2c02011955c24e01d70ed78969b14faf7e5a63c0da97a80c438b628922532eb135af7dea8ee7c7b83554b3354160306dad852ce5bf6eb1d5ac9  libburn-1.5.4.tar.gz"

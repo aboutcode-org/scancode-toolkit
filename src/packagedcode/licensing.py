@@ -46,14 +46,20 @@ def matches_have_unknown(matches, licensing):
             return True
 
 
-def get_normalized_expression(query_string, try_as_expression=True, approximate=True):
+def get_normalized_expression(
+    query_string, 
+    try_as_expression=True, 
+    approximate=True,
+    expression_symbols=None,
+):
     """
     Given a text `query_string` return a single detected license expression.
     `query_string` is typically the value of a license field as found in package
     manifests.
 
     If `try_as_expression` is True try first to parse this as a license
-    expression.
+    expression using the ``expression_symbols`` mapping of {lowered key:
+    LicenseSymbol} if provided. Otherwise use the standard SPDX license symbols.
 
     If `approximate` is True, also include approximate license detection as
     part of the matching procedure.
@@ -80,6 +86,7 @@ def get_normalized_expression(query_string, try_as_expression=True, approximate=
             matches = idx.match(
                 query_string=query_string,
                 as_expression=True,
+                expression_symbols=expression_symbols,
             )
             if matches_have_unknown(matches, licensing):
                 # rematch also if we have unknowns
@@ -141,7 +148,8 @@ def get_normalized_expression(query_string, try_as_expression=True, approximate=
             raise Exception(
                 'Inconsistent package.declared_license: text with multiple "queries".'
                 'Please report this issue to the scancode-toolkit team.\n'
-                f'{query_string}')
+                f'{query_string}'
+            )
 
     query_len = len(query.tokens)
     matched_qspans = [m.qspan for m in matches]

@@ -1,0 +1,12 @@
+about_resource: bashlex.py
+attribute: yes
+copyright: Copyright (c) the Pygments team
+description: This is an enhanced Bash lexer derived from Pygments lexers
+download_url: https://files.pythonhosted.org/packages/ba/6e/7a7c13c21d8a4a7f82ccbfe257a045890d4dbf18c023f985f565f97393e3/Pygments-2.9.0.tar.gz
+homepage_url: http://pygments.org/
+license_expression: bsd-simplified
+name: bashlex.py
+notice_file: bashlex.py.NOTICE
+package_url: pkg:generic/bashlex.py
+primary_language: Python
+notes: this is a derived and heavily modified Pygments bash lexer

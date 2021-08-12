@@ -1,0 +1,55 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=kactivitymanagerd
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="System service to manage user's activities and track the usage patterns"
+# armhf blocked by qt5-qtdeclarative
+# s390x, mips64 blocked by kxmlgui, kio
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="GPL-2.0-only OR GPL-3.0-only"
+depends="qt5-qtbase-sqlite"
+makedepends="
+	boost-dev
+	extra-cmake-modules
+	kconfig-dev
+	kcoreaddons-dev
+	kdbusaddons-dev
+	kglobalaccel-dev
+	ki18n-dev
+	kio-dev
+	kwindowsystem-dev
+	kxmlgui-dev
+	qt5-qtbase-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/kactivitymanagerd-$pkgver.tar.xz"
+subpackages="$pkgname-lang"
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+
+	# We don't ship systemd
+	rm -r "$pkgdir"/usr/lib/systemd
+}
+sha512sums="
+5f5e2ed9207a7a427f10cd0ee0e9083d56a742c0e3b93d30dd7df55db7da3609479c48261b020d7ac1178c60dfbdc0ddda6b518296f5386264b3a83be6d47396  kactivitymanagerd-5.22.0.tar.xz
+"

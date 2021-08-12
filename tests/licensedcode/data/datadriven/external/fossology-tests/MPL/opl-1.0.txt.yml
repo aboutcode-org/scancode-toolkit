@@ -3,7 +3,5 @@ license_expressions:
   - mpl-1.1
   - mpl-1.1
   - open-public
-  - unknown-license-reference
-  - unknown
-  - unknown
-notes: this is an mpl-1.1 deruvative... very rare.
+  - warranty-disclaimer
+notes: this is an mpl-1.1 derivative which is very rare.

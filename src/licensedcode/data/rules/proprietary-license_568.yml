@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: BSD-looking but not really it See https://github.com/Joan93/MasterThesis/blob/275ee8c6fcd5b0883540f629e2755ab524904a73/openwsn/openwsn-fw/bsp/boards/samr21_xpro/drivers/src/cm0plus_interrupt.c
+    for exmaple

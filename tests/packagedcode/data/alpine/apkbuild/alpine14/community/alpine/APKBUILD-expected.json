@@ -1,0 +1,57 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "alpine",
+  "version": "2.24-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Text-based email client, friendly for novices but powerful",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "apache-2.0",
+  "declared_license": "Apache-2.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": "alpine-2.24.tar.gz",
+        "url": "https://repo.or.cz/alpine.git/snapshot/3165f59b344fb4d56d161541f294754d56bcb372.tar.gz"
+      },
+      {
+        "file_name": "0001-ssl_unix-fix-server-name-validation.patch",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "alpine-2.24.tar.gz",
+        "sha512": "648618fd965fd600ee5d870cfcb87aeb5792311236c5b476f337d2202c460db5c37c5d170430c177cd4ab7c806eff10ee1c327c5ada9253f7d07b6a54442a6d3"
+      },
+      {
+        "file_name": "0001-ssl_unix-fix-server-name-validation.patch",
+        "sha512": "5e10289f292139bf576e40bda0f3539d62024309650473a2fdbb281e5d7691cc4c1d3d21f78615e2c900766eddba076f512d92f60d4fbb61e1683f35cba185aa"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/alpine@2.24-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

@@ -1,0 +1,87 @@
+# Maintainer: Leonardo Arena <rnalrd@alpinelinux.org>
+
+# rtpengine version
+_ver=9.0.1.10
+_rel=0
+
+# kernel version
+_kver=5.10.43
+_krel=0
+
+_kpkgver="$_kver-r$_krel"
+
+# for custom kernels set $FLAVOR
+_extra_flavors=
+if [ -z "$FLAVOR" ]; then
+	_flavor=lts
+	case $CARCH in
+	x86|x86_64|armv7|aarch64) _extra_flavors="virt";;
+	esac
+else
+	_flavor=$FLAVOR
+fi
+_kpkg=linux-$_flavor
+
+pkgname=rtpengine-$_flavor
+pkgver=$_kver
+pkgrel=$(($_rel + $_krel))
+
+pkgdesc="Kernel module for rtpengine"
+url="https://github.com/sipwise/rtpengine"
+arch="all !armhf"
+license="GPL-3.0-only"
+makedepends="linux-$_flavor-dev=$_kpkgver"
+install_if="rtpengine linux-$_flavor=$_kpkgver"
+options="!check"
+source="$pkgname-$_ver.tar.gz::https://github.com/sipwise/rtpengine/archive/mr$_ver.tar.gz"
+builddir="$srcdir"/rtpengine-mr$_ver
+
+for f in $_extra_flavors; do
+        makedepends="$makedepends linux-$f-dev=$_kpkgver"
+        subpackages="$subpackages rtpengine-$f:_extra"
+done
+
+prepare() {
+        default_prepare
+        if [ -z "$FLAVOR" ]; then
+                (       . "$startdir"/../../main/linux-"$_flavor"/APKBUILD
+                        [ "$_kver" != "$pkgver" ] && die "please update _kver to $pkgver"
+                        [ "$_krel" != "$pkgrel" ] && die "please update _krel to $pkgrel"
+                        return 0
+                )
+        fi
+        local flavor=
+        for flavor in $_flavor $_extra_flavors; do
+                cp -r "$builddir" "$srcdir/$flavor"
+        done
+}
+
+build() {
+        unset LDFLAGS
+        local flavor= kabi=
+        for flavor in $_flavor $_extra_flavors; do
+                kabi="$_kver-$_krel-$flavor"
+                make -C "$srcdir/$flavor"/kernel-module \
+                        KSRC=/lib/modules/"$kabi"/build
+        done
+}
+
+package() {
+        local kabi="$_kver-$_krel-$_flavor"
+        install -Dm644 "$srcdir/$_flavor"/kernel-module/xt_RTPENGINE.ko \
+                "$pkgdir/lib/modules/$kabi/extra/xt_RTPENGINE.ko"
+}
+
+_extra() {
+        flavor=${subpkgname##*-}
+        depends="linux-$flavor=$_kpkgver"
+        install_if="rtpengine linux-$flavor=$_kpkgver"
+        pkgdesc="$flavour kernel modules for rtpengine"
+        local kabi="$_kver-$_krel-$flavor"
+        install -Dm644 "$srcdir"/virt/kernel-module/xt_RTPENGINE.ko \
+                "$subpkgdir/lib/modules/$kabi/extra/xt_RTPENGINE.ko"
+}
+
+sha512sums="
+ee870f0cc1f3a2b860dcb9a0e8519c535c5fc82efc2ef75022e3f09bcc75df2d9024390f474765d5a711ee1e0af90441764649f14c98d1c8b3ab2e93ab7423da  rtpengine-lts-9.0.1.10.tar.gz
+"

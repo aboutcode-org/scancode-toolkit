@@ -60,14 +60,14 @@ def find(location, patterns):
         loc = pformat(location)
         logger_debug('find(location=%(loc)r,\n  patterns=%(patterns)r)' % locals())
 
-    for lineno, line in analysis.numbered_text_lines(location, demarkup=False):
+    for line_number, line in analysis.numbered_text_lines(location, demarkup=False):
         for key, pattern in patterns:
             for match in pattern.findall(line):
 
                 if TRACE:
                     logger_debug('find: yielding match: key=%(key)r, '
                           'match=%(match)r,\n    line=%(line)r' % locals())
-                yield key, toascii(match), line, lineno
+                yield key, toascii(match), line, line_number
 
 
 def unique_filter(matches):
@@ -75,11 +75,11 @@ def unique_filter(matches):
     Iterate over matches and yield unique matches.
     """
     uniques = set()
-    for key, match, line, lineno in matches:
+    for key, match, line, line_number in matches:
         if (key, match,) in uniques:
             continue
         uniques.add((key, match,))
-        yield key, match, line, lineno
+        yield key, match, line, line_number
 
 
 def apply_filters(matches, *filters):
@@ -88,8 +88,8 @@ def apply_filters(matches, *filters):
     matches iterable.
 
     A filter must accept a single arg: an iterable of tuples of (key, match,
-    line, lineno) and must return an iterable of tuples of (key, match, line,
-    lineno).
+    line, line_number) and must return an iterable of tuples of (key, match, line,
+    line_number).
     """
     for filt in filters:
         matches = filt(matches)
@@ -105,12 +105,12 @@ def build_regex_filter(pattern):
     def re_filt(matches):
         if TRACE:
             logger_debug('re_filt: pattern="{}"'.format(pattern))
-        for key, match, line, lineno in matches:
+        for key, match, line, line_number in matches:
             if matcher(match):
                 if TRACE:
                     logger_debug('re_filt: filtering match: "{}"'.format(match))
                 continue
-            yield key, match, line, lineno
+            yield key, match, line, line_number
 
     matcher = re.compile(pattern, re.UNICODE | re.IGNORECASE).match
     return re_filt
@@ -126,8 +126,8 @@ def emails_regex():
 
 def find_emails(location, unique=True):
     """
-    Yield emails found in file at location.
-    Only return unique items if unique is True.
+    Yield an iterable of (email, line_number) found in file at ``location``.
+    Only return unique items if ``unique`` is True.
     """
     patterns = [('emails', emails_regex(),)]
     matches = find(location, patterns)
@@ -141,8 +141,8 @@ def find_emails(location, unique=True):
     if unique:
         filters += (unique_filter,)
     matches = apply_filters(matches, *filters)
-    for _key, email, _line, lineno in matches:
-        yield email, lineno
+    for _key, email, _line, line_number in matches:
+        yield email, line_number
 
 
 def junk_email_domains_filter(matches):
@@ -151,11 +151,11 @@ def junk_email_domains_filter(matches):
     common uninteresting domains have been removed, such as local, non public
     or example.com emails.
     """
-    for key, email, line, lineno in matches:
+    for key, email, line, line_number in matches:
         domain = email.split('@')[-1]
         if not is_good_host(domain):
             continue
-        yield key, email, line, lineno
+        yield key, email, line, line_number
 
 
 def uninteresting_emails_filter(matches):
@@ -163,11 +163,11 @@ def uninteresting_emails_filter(matches):
     Given an iterable of emails matches, return an iterable where common
     uninteresting emails have been removed.
     """
-    for key, email, line, lineno in matches:
+    for key, email, line, line_number in matches:
         good_email = finder_data.classify_email(email)
         if not good_email:
             continue
-        yield key, email, line, lineno
+        yield key, email, line, line_number
 
 # TODO: consider: http://www.regexguru.com/2008/11/detecting-urls-in-a-block-of-text/
 # TODO: consider: http://blog.codinghorror.com/the-problem-with-urls/
@@ -199,8 +199,8 @@ INVALID_URLS_PATTERN = '((?:' + schemes + ')://([$%*/_])+)'
 
 def find_urls(location, unique=True):
     """
-    Yield urls found in file at `location`.
-    Only return unique items if unique is True.
+    Yield an iterable of (url, line_number) found in file at ``location``.
+    Only return unique items if ``unique`` is True.
     `location` can be a list of strings for testing.
     """
     patterns = [('urls', urls_regex(),)]
@@ -225,11 +225,11 @@ def find_urls(location, unique=True):
         filters += (unique_filter,)
 
     matches = apply_filters(matches, *filters)
-    for _key, url, _line, lineno in matches:
+    for _key, url, _line, line_number in matches:
         if TRACE_URL:
-            logger_debug('find_urls: lineno:', lineno, '_line:', repr(_line),
+            logger_debug('find_urls: line_number:', line_number, '_line:', repr(_line),
                          'type(url):', type(url), 'url:', repr(url))
-        yield str(url), lineno
+        yield str(url), line_number
 
 
 EMPTY_URLS = set(['https', 'http', 'ftp', 'www', ])
@@ -239,13 +239,13 @@ def empty_urls_filter(matches):
     """
     Given an iterable of URL matches, return an iterable without empty URLs.
     """
-    for key, match, line, lineno in matches:
+    for key, match, line, line_number in matches:
         junk = match.lower().strip(string.punctuation).strip()
         if not junk or junk in EMPTY_URLS:
             if TRACE:
                 logger_debug('empty_urls_filter: filtering match: %(match)r' % locals())
             continue
-        yield key, match, line, lineno
+        yield key, match, line, line_number
 
 
 def verbatim_crlf_url_cleaner(matches):
@@ -255,11 +255,11 @@ def verbatim_crlf_url_cleaner(matches):
     a URL have been removed.
     """
     # FIXME: when is this possible and could happen?
-    for key, url, line, lineno in matches:
+    for key, url, line, line_number in matches:
         if not url.endswith('/'):
             url = url.replace('\n', '')
             url = url.replace('\r', '')
-        yield key, url, line, lineno
+        yield key, url, line, line_number
 
 
 def end_of_url_cleaner(matches):
@@ -268,7 +268,7 @@ def end_of_url_cleaner(matches):
     commonly found at the end of a URL are removed.
     This is not entirely correct, but works practically.
     """
-    for key, url, line, lineno in matches:
+    for key, url, line, line_number in matches:
         if not url.endswith('/'):
             url = url.replace(u'&lt;', u'<')
             url = url.replace(u'&gt;', u'>')
@@ -283,7 +283,7 @@ def end_of_url_cleaner(matches):
             url = url.split(u']')[0]
             url = url.split(u'"')[0]
             url = url.split(u"'")[0]
-        yield key, url, line, lineno
+        yield key, url, line, line_number
 
 
 non_standard_urls_prefix = ('git@',)
@@ -301,10 +301,10 @@ def scheme_adder(matches):
     """
     Add a fake http:// scheme if there was none.
     """
-    for key, match, line, lineno in matches:
+    for key, match, line, line_number in matches:
         if is_filterable(match):
             match = add_fake_scheme(match)
-        yield key, match, line, lineno
+        yield key, match, line, line_number
 
 
 def add_fake_scheme(url):
@@ -328,7 +328,7 @@ def user_pass_cleaning_filter(matches):
     Given an iterable of URL matches, return an iterable where user and
     password are removed from the URLs host.
     """
-    for key, match, line, lineno in matches:
+    for key, match, line, line_number in matches:
         if is_filterable(match):
             host, _domain = url_host_domain(match)
             if not host:
@@ -339,7 +339,7 @@ def user_pass_cleaning_filter(matches):
             if '@' in host:
                 # strips any user/pass
                 host = host.split(u'@')[-1]
-        yield key, match, line, lineno
+        yield key, match, line, line_number
 
 
 DEFAULT_PORTS = {
@@ -393,7 +393,7 @@ def canonical_url_cleaner(matches):
     Given an iterable of URL matches, return an iterable where URLs have been
     canonicalized.
     """
-    for key, match, line, lineno in matches:
+    for key, match, line, line_number in matches:
         if is_filterable(match):
             canonical = canonical_url(match)
             if TRACE:
@@ -401,7 +401,7 @@ def canonical_url_cleaner(matches):
                       'match=%(match)r, canonical=%(canonical)r' % locals())
             match = canonical
         if match:
-            yield key, match , line, lineno
+            yield key, match , line, line_number
 
 
 IP_V4_RE = '^(\\d{1,3}\\.){0,3}\\d{1,3}$'
@@ -521,7 +521,7 @@ def junk_url_hosts_filter(matches):
     common uninteresting hosts or domains have been removed, such as local,
     non public or example.com URLs.
     """
-    for key, match, line, lineno in matches:
+    for key, match, line, line_number in matches:
         if is_filterable(match):
             host, domain = url_host_domain(match)
             if not is_good_host(host):
@@ -535,7 +535,7 @@ def junk_url_hosts_filter(matches):
                     logger_debug('junk_url_hosts_filter: ''!is_good_host:%(domain)r '
                           'and !is_ip:%(host)r: %(match)r' % locals())
                 continue
-        yield key, match, line, lineno
+        yield key, match, line, line_number
 
 
 def junk_urls_filter(matches):
@@ -544,13 +544,13 @@ def junk_urls_filter(matches):
     common uninteresting URLs, or uninteresting URL hosts or domains have been
     removed, such as local, non public or example.com URLs.
     """
-    for key, match, line, lineno in matches:
+    for key, match, line, line_number in matches:
         good_url = finder_data.classify_url(match)
         if not good_url:
             if TRACE:
                 logger_debug('junk_url_filter: %(match)r' % locals())
             continue
-        yield key, match, line, lineno
+        yield key, match, line, line_number
 
 
 def find_pattern(location, pattern, unique=False):
@@ -563,5 +563,5 @@ def find_pattern(location, pattern, unique=False):
     matches = find(location, [(None, pattern,)])
     if unique:
         matches = unique_filter(matches)
-    for _key, match , _line, lineno in matches:
-        yield match, lineno
+    for _key, match , _line, line_number in matches:
+        yield match, line_number

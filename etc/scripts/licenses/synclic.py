@@ -26,6 +26,7 @@ from commoncode import fetch
 from commoncode import fileutils
 
 import licensedcode
+from licensedcode import models
 from licensedcode.models import load_licenses
 from licensedcode.models import License
 
@@ -76,6 +77,7 @@ class ScanCodeLicenses(object):
                     lic.notes = clean_text(lic.notes)
 
                 if updated:
+                    models.update_ignorables(lic, verbose=False)
                     lic.dump()
 
         for lics in [self.by_key, self.non_english_by_key]:
@@ -174,6 +176,7 @@ class ExternalLicensesSource(object):
             try:
                 with io.open(lic.text_file, 'w', encoding='utf-8')as tf:
                     tf.write(text)
+                models.update_ignorables(lic, verbose=False)
                 lic.dump()
                 licenses.append(lic)
             except:
@@ -546,7 +549,7 @@ class DejaSource(ExternalLicensesSource):
         # instead each part of the combo
         dejacode_special_composites = set([
               'intel-bsd-special',
-              #'newlib-subdirectory',
+              # 'newlib-subdirectory',
             ])
         is_component_license = mapping.get('is_component_license') or False
 
@@ -816,8 +819,8 @@ EXTERNAL_LICENSE_SYNCHRONIZATION_SOURCES = {
 
 
 def merge_licenses(
-    scancode_license, 
-    external_license, 
+    scancode_license,
+    external_license,
     updatable_attributes,
     from_spdx=False,
 ):
@@ -948,7 +951,7 @@ def merge_licenses(
         # on difference, the other license wins
         if scancode_value != external_value:
             # unless we have SPDX ids
-            if attrib== 'spdx_license_key' and external_value.startswith('LicenseRef-scancode'):
+            if attrib == 'spdx_license_key' and external_value.startswith('LicenseRef-scancode'):
                 update_external(attrib, scancode_value, external_value)
             else:
                 update_scancode(attrib, scancode_value, external_value)
@@ -1138,10 +1141,14 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
 
     # finally write changes in place for updates and news
     for k in updated_in_scancode | added_to_scancode:
-        scancodes_by_key[k].dump()
+        lic = scancodes_by_key[k]
+        models.update_ignorables(lic, verbose=False)
+        lic.dump()
 
     for k in updated_in_external | added_to_external:
-        externals_by_key[k].dump()
+        lic = externals_by_key[k]
+        # models.update_ignorables(lic, verbose=False)
+        lic.dump()
 
 # TODO: at last: print report of incorrect OTHER licenses to submit
 # updates eg. make API calls to DejaCode to create or update

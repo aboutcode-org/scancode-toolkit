@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "faac",
+  "version": "1.30-r1",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "FAAC is an AAC audio encoder.",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-3.0-plus",
+  "declared_license": "GPL-3.0-or-later",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": "faac-1.30.tar.gz",
+        "url": "https://github.com/knik0/faac/archive/1_30.tar.gz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "faac-1.30.tar.gz",
+        "sha512": "8582cd580dba2a347d15dc4fab42020d7120d0552c54ab74cfaf59ba1b270abb94c67e39d42459a14cbc6e98f3fd00cbda589e1b4f0c7278e41bdef6ae7b6554"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/faac@1.30-r1",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

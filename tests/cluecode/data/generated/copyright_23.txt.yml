@@ -3,8 +3,6 @@ what:
   - copyrights
   - authors
 copyrights:
-  - Iotacoffee.Com 2011 Copyright (c) All Rights Are Reserved
+  - Iotacoffee.Com 2011 Copyright (c)
 holders:
   - Iotacoffee.Com
-expected_failures:
-  - holders

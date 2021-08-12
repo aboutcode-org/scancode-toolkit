@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "pnmixer",
+  "version": "0.7.2-r1",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "PNMixer is a simple mixer application designed to run in system tray.",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-1.0-plus",
+  "declared_license": "GPL",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": "pnmixer-0.7.2.tar.gz",
+        "url": "https://github.com/nicklan/pnmixer/archive/v0.7.2.tar.gz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "pnmixer-0.7.2.tar.gz",
+        "sha512": "0d3991a470817458089039586ab55889abfc0c9d44d1009ab00ab0755932ec0697543a7a744ffd83ea834b8ceb27e111b314cdafdb97f1c687b5f2f974996437"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/pnmixer@0.7.2-r1",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

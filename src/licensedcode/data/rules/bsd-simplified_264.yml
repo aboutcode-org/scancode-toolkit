@@ -1,0 +1,4 @@
+license_expression: bsd-simplified
+is_license_text: yes
+minimum_coverage: 90
+notes: Found in Debian Copyright Files, note that the disclaimer is missing, but is present elsewhere in the file.

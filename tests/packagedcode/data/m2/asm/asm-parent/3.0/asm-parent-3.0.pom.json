@@ -55,5 +55,44 @@
   "distribution_management": {},
   "repositories": [],
   "plugin_repositories": [],
-  "dependencies": {}
+  "dependencies": {
+    "dependencyManagement": [
+      {
+        "group_id": "asm",
+        "artifact_id": "asm",
+        "version": "3.0",
+        "required": true
+      },
+      {
+        "group_id": "asm",
+        "artifact_id": "asm-tree",
+        "version": "3.0",
+        "required": true
+      },
+      {
+        "group_id": "asm",
+        "artifact_id": "asm-analysis",
+        "version": "3.0",
+        "required": true
+      },
+      {
+        "group_id": "asm",
+        "artifact_id": "asm-commons",
+        "version": "3.0",
+        "required": true
+      },
+      {
+        "group_id": "asm",
+        "artifact_id": "asm-util",
+        "version": "3.0",
+        "required": true
+      },
+      {
+        "group_id": "asm",
+        "artifact_id": "asm-xml",
+        "version": "3.0",
+        "required": true
+      }
+    ]
+  }
 }

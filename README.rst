@@ -120,8 +120,7 @@ Installation
 ============
 
 Before installing ScanCode make sure that you have installed the prerequisites
-properly. This means installing Python (Python 3.6 or higher is required.
-When installing the app tarball or zip, only Python 3.6 is supported for now).
+properly. This means installing Python (Python 3.6 or higher is required).
 
 See `prerequisites <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#prerequisites>`_
 for detailed information on the support platforms and Python versions.

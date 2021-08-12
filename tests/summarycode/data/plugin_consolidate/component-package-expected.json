@@ -205,6 +205,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -221,11 +222,13 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -242,14 +245,14 @@
         {
           "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "holders": [
         {
           "value": "The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "authors": [],
@@ -289,6 +292,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -305,11 +309,13 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -326,14 +332,14 @@
         {
           "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "holders": [
         {
           "value": "The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "authors": [],
@@ -373,6 +379,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -389,11 +396,13 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -410,14 +419,14 @@
         {
           "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "holders": [
         {
           "value": "The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "authors": [],
@@ -457,6 +466,7 @@
           "short_name": "LGPL 2.0",
           "category": "Copyleft Limited",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/lgpl-2.0.html",
@@ -473,11 +483,13 @@
             "licenses": [
               "lgpl-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -494,14 +506,14 @@
         {
           "value": "Copyright (c) nexB, Inc.",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "holders": [
         {
           "value": "nexB, Inc.",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "authors": [],
@@ -575,6 +587,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -591,11 +604,13 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 4,
             "matched_length": 4,
@@ -612,14 +627,14 @@
         {
           "value": "Copyright (c) The Apache Software",
           "start_line": 4,
-          "end_line": 5
+          "end_line": 4
         }
       ],
       "holders": [
         {
           "value": "The Apache Software",
           "start_line": 4,
-          "end_line": 5
+          "end_line": 4
         }
       ],
       "authors": [],
@@ -698,6 +713,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -714,11 +730,13 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -735,14 +753,14 @@
         {
           "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "holders": [
         {
           "value": "The Apache Software Foundation",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "authors": [],
@@ -782,6 +800,7 @@
           "short_name": "GPL 1.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
@@ -798,11 +817,13 @@
             "licenses": [
               "gpl-1.0-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 7,
             "matched_length": 7,
@@ -819,14 +840,14 @@
         {
           "value": "copyright (c) 2017 IBM Corp.",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "holders": [
         {
           "value": "IBM Corp.",
           "start_line": 1,
-          "end_line": 2
+          "end_line": 1
         }
       ],
       "authors": [],

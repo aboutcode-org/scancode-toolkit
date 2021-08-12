@@ -1,5 +1,96 @@
--
-- selinux-nsa-declaration-1.0 AND gpl-2.0 AND lgpl-2.1-plus
-- |
+primary_license:
+declared_license:
+license_expression: selinux-nsa-declaration-1.0 AND gpl-2.0 AND lgpl-2.1-plus AND gpl-2.0
+copyright: |
   Copyright 2004 Red Hat, Inc., James Morris <jmorris@redhat.com>
   (c) 2005, 2006, Manoj Srivastava <srivasta@debian.org>
+matches:
+  - score: '100.0'
+    start_line: 7
+    end_line: 27
+    matcher: 2-aho
+    rule_length: 153
+    matched_length: 153
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: selinux-nsa-declaration-1.0.LICENSE
+    license_expression: selinux-nsa-declaration-1.0
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This library (libselinux) is public domain software, i.e. not copyrighted.\n\
+      \ \n Warranty Exclusion\n ------------------\n You agree that this software is a\n non-commercially\
+      \ developed program that may contain \"bugs\" (as that\n term is used in the industry)\
+      \ and that it may not function as intended.\n The software is licensed \"as is\". NSA\
+      \ makes no, and hereby expressly\n disclaims all, warranties, express, implied, statutory,\
+      \ or otherwise\n with respect to the software, including noninfringement and the implied\n\
+      \ warranties of merchantability and fitness for a particular purpose.\n \n Limitation\
+      \ of Liability\n -----------------------\n In no event will NSA be liable for any damages,\
+      \ including loss of data,\n lost profits, cost of cover, or other special, incidental,\n\
+      \ consequential, direct or indirect damages arising from the software or\n the use thereof,\
+      \ however caused and on any theory of liability. This\n limitation will apply even if\
+      \ NSA has been advised of the possibility\n of such damage. You acknowledge that this\
+      \ is a reasonable allocation of\n risk."
+  - score: '100.0'
+    start_line: 32
+    end_line: 33
+    matcher: 2-aho
+    rule_length: 11
+    matched_length: 11
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_929.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      distributed underthe terms of the GNU General Public License,
+        version 2.
+  - score: '100.0'
+    start_line: 38
+    end_line: 50
+    matcher: 2-aho
+    rule_length: 92
+    matched_length: 92
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_201.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "distributed under\n the terms of the GNU Lesser General Public License as\
+      \ published by the\n Free Software Foundation; either version 2.1 of the License, or (at\n\
+      \ your option) any later version.\n \n You should have received a copy of the GNU Lesser\
+      \ General Public\n License along with the GNU C Library; if not, write to\n         Free\
+      \ Software Foundation, Inc., 51 Franklin St, Fifth Floor,\n         Boston, MA 02110-1301,\
+      \ USA.\n \n \n On Debian systems, the complete text of the GNU Library\n General Public\
+      \ License can be found in `/usr/share/common-licenses/LGPL-2.1'."
+  - score: '100.0'
+    start_line: 56
+    end_line: 65
+    matcher: 2-aho
+    rule_length: 78
+    matched_length: 78
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_930.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "distributed under the terms of the GNU\n General Public License, version\
+      \ 2.\n \n On Debian GNU/Linux systems, the complete text of the GNU General\n Public License\
+      \ can be found in `/usr/share/common-licenses/GPL-2'.\n \n     A copy of the GNU General\
+      \ Public License is also available at\n     <URL:http://www.gnu.org/copyleft/gpl.html>.\
+      \  You may also obtain\n     it by writing to the Free Software Foundation, Inc., 51 Franklin\n\
+      \     St, Fifth Floor, Boston, MA 02110-1301, USA."

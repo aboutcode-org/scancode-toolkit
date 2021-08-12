@@ -1,0 +1,67 @@
+# Maintainer: Carlo Landmeter <clandmeter@alpinelinux.org>
+# Contributor: Łukasz Jendrysik <scadu@yandex.com>
+pkgname=sqlite-tcl
+pkgver=3.35.5
+pkgrel=0
+pkgdesc="Sqlite Tcl Extension Architecture (TEA)"
+url="https://www.sqlite.org/"
+arch="all"
+license="Public-Domain"
+makedepends="readline-dev tcl-dev sqlite-dev libtool autoconf automake"
+subpackages="$pkgname-doc"
+options="!check" # no testsuite from upstream
+
+# compute _ver
+_a=${pkgver%%.*}
+_b=${pkgver#$_a.}
+_b=${_b%%.*}
+_c=${pkgver#$_a.$_b.}
+_c=${_c%%.*}
+case $pkgver in
+	*.*.*.*)_d=${pkgver##*.};;
+	*.*.*)	_d=0;;
+esac
+[ $_b -lt 10 ] && _b=0$_b
+[ $_c -lt 10 ] && _c=0$_c
+[ $_d -lt 10 ] && _d=0$_d
+_ver=${_a}${_b}${_c}$_d
+
+# these variables depend on _ver being set
+source="https://www.sqlite.org/2021/sqlite-autoconf-$_ver.tar.gz"
+builddir="$srcdir/sqlite-autoconf-$_ver/tea"
+
+prepare() {
+	default_prepare
+
+	if [ -f "$startdir"/../sqlite/APKBUILD ]; then
+		(
+		_tclver=$pkgver
+		. "$startdir"/../sqlite/APKBUILD
+		if [ "$_tclver" != "$pkgver" ]; then
+			die "sqlite version mismatch ($_tclver != $pkgver)"
+		fi
+		)
+	fi
+}
+
+build() {
+	./configure \
+		--build="$CBUILD" \
+		--host="$CHOST" \
+		--prefix=/usr \
+		--with-system-sqlite \
+		--enable-threads
+	make
+}
+
+check() {
+	make check
+}
+
+package() {
+	make DESTDIR="$pkgdir" install
+	install -Dm644 license.terms \
+		"$pkgdir"/usr/share/licenses/$pkgname/license.terms
+}
+
+sha512sums="039af796f79fc4517be0bd5ba37886264d49da309e234ae6fccdb488ef0109ed2b917fc3e6c1fc7224dff4f736824c653aaf8f0a37550c5ebc14d035cb8ac737  sqlite-autoconf-3350500.tar.gz"

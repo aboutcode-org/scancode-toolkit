@@ -8,10 +8,11 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+import itertools
+
 import click
 
 import utils_thirdparty
-import itertools
 
 
 @click.command()
@@ -63,6 +64,15 @@ import itertools
     is_flag=True,
     help='Fetch only the corresponding source distributions.',
 )
+@click.option('-u', '--remote-links-url',
+    type=str,
+    metavar='URL',
+    default=utils_thirdparty.REMOTE_LINKS_URL,
+    show_default=True,
+    help='URL to a PyPI-like links web site. '
+         'Or local path to a directory with wheels.',
+)
+
 @click.help_option('-h', '--help')
 def fetch_requirements(
     requirements_file,
@@ -73,6 +83,7 @@ def fetch_requirements(
     with_about,
     allow_unpinned,
     only_sources,
+    remote_links_url=utils_thirdparty.REMOTE_LINKS_URL,
 ):
     """
     Fetch and save to THIRDPARTY_DIR all the required wheels for pinned
@@ -82,7 +93,9 @@ def fetch_requirements(
     Also fetch the corresponding .ABOUT, .LICENSE and .NOTICE files together
     with a virtualenv.pyz app.
 
-    Use exclusively our remote repository (and not PyPI).
+    Use exclusively wheel not from PyPI but rather found in the PyPI-like link
+    repo ``remote_links_url`` if this is a URL. Treat this ``remote_links_url``
+    as a local directory path to a wheels directory if this is not a a URL.
     """
 
     # fetch wheels
@@ -93,23 +106,28 @@ def fetch_requirements(
     if not only_sources:
         envs = itertools.product(python_versions, operating_systems)
         envs = (utils_thirdparty.Environment.from_pyver_and_os(pyv, os) for pyv, os in envs)
+
         for env, reqf in itertools.product(envs, requirements_files):
+            
             for package, error in utils_thirdparty.fetch_wheels(
                 environment=env,
                 requirements_file=reqf,
                 allow_unpinned=allow_unpinned,
                 dest_dir=thirdparty_dir,
+                remote_links_url=remote_links_url,
             ):
                 if error:
                     print('Failed to fetch wheel:', package, ':', error)
 
     # optionally fetch sources
     if with_sources or only_sources:
+
         for reqf in requirements_files:
             for package, error in utils_thirdparty.fetch_sources(
                 requirements_file=reqf,
                 allow_unpinned=allow_unpinned,
                 dest_dir=thirdparty_dir,
+                remote_links_url=remote_links_url,
             ):
                 if error:
                     print('Failed to fetch source:', package, ':', error)

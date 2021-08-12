@@ -8,9 +8,9 @@ spdx_license_key: LicenseRef-scancode-infonode-1.1
 other_urls:
     - http://www.nnl.se/html/english/index.html
 ignorable_copyrights:
-    - Copyright (c) 2004 NNL Technology
+    - Copyright (c) 2004 NNL Technology AB, www.nnl.se
 ignorable_holders:
-    - NNL Technology
+    - NNL Technology AB, www.nnl.se
 ignorable_urls:
     - http://proguard.sourceforge.net/
     - http://www.nnl.se/

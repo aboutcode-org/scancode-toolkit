@@ -1,0 +1,55 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=kde-gtk-config
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="GTK2 and GTK3 Configurator for KDE"
+# armhf blocked by qt5-qtdeclarative
+# s390x blocked by kcmutils
+arch="all !armhf !s390x !mips64"
+url="https://invent.kde.org/plasma/kde-gtk-config"
+license="GPL-2.0 AND LGPL-2.1-only OR LGPL-3.0-only"
+depends="gsettings-desktop-schemas"
+makedepends="
+	extra-cmake-modules
+	gsettings-desktop-schemas-dev
+	gtk+2.0-dev
+	gtk+3.0-dev
+	karchive-dev
+	kcmutils-dev
+	kconfigwidgets-dev
+	kdecoration-dev
+	ki18n-dev
+	kiconthemes-dev
+	kio-dev
+	knewstuff-dev
+	qt5-qtbase-dev
+	qt5-qtsvg-dev
+	sassc
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/kde-gtk-config-$pkgver.tar.xz"
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+sha512sums="
+8e0b41523dbfab3677065354c1cbc60b81dee081ea893331fd5f473da21b8db04313bdac793a354d3b0ee895f9e4996a39556932d99e4919fb6fc0aaef9ef233  kde-gtk-config-5.22.0.tar.xz
+"

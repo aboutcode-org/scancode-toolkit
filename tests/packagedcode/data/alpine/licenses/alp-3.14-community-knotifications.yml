@@ -1,0 +1,3 @@
+declared_license: BSD-3-Clause AND LGPL-2.0-or-later AND LGPL-2.0-only AND (LGPL-2.1-only OR
+  LGPL-3.0-only)
+license_expression: bsd-new AND lgpl-2.0-plus AND lgpl-2.0 AND (lgpl-2.1 OR lgpl-3.0)

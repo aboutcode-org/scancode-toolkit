@@ -660,6 +660,7 @@
           "short_name": "LGPL 2.1 or later",
           "category": "Copyleft Limited",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
@@ -676,11 +677,13 @@
             "licenses": [
               "lgpl-2.1-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 125,
             "matched_length": 125,
@@ -697,14 +700,14 @@
         {
           "value": "Copyright 2005, JBoss Inc., and individual contributors",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "holders": [
         {
           "value": "JBoss Inc., and individual contributors",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "authors": [],
@@ -773,6 +776,7 @@
           "short_name": "CC-BY-2.5",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Creative Commons",
           "homepage_url": "http://creativecommons.org/licenses/by/2.5/",
           "text_url": "http://creativecommons.org/licenses/by/2.5/legalcode",
@@ -789,11 +793,13 @@
             "licenses": [
               "cc-by-2.5"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 14,
             "matched_length": 14,
@@ -810,21 +816,21 @@
         {
           "value": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "holders": [
         {
           "value": "Brian Goetz and Tim Peierls",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "authors": [
         {
           "value": "Bela Ban",
-          "start_line": 9,
-          "end_line": 11
+          "start_line": 10,
+          "end_line": 10
         }
       ],
       "packages": [],
@@ -892,6 +898,7 @@
           "short_name": "LGPL 2.1 or later",
           "category": "Copyleft Limited",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
@@ -908,11 +915,13 @@
             "licenses": [
               "lgpl-2.1-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 125,
             "matched_length": 125,
@@ -929,14 +938,14 @@
         {
           "value": "Copyright 2010, Red Hat, Inc. and individual contributors",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "holders": [
         {
           "value": "Red Hat, Inc. and individual contributors",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "authors": [],
@@ -1006,7 +1015,7 @@
         {
           "value": "Bela Ban",
           "start_line": 4,
-          "end_line": 5
+          "end_line": 4
         }
       ],
       "packages": [],
@@ -1075,7 +1084,7 @@
         {
           "value": "Bela Ban",
           "start_line": 3,
-          "end_line": 4
+          "end_line": 3
         }
       ],
       "packages": [],
@@ -1143,6 +1152,7 @@
           "short_name": "LGPL 2.1 or later",
           "category": "Copyleft Limited",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
@@ -1159,11 +1169,13 @@
             "licenses": [
               "lgpl-2.1-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 125,
             "matched_length": 125,
@@ -1180,14 +1192,14 @@
         {
           "value": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "holders": [
         {
           "value": "Red Hat Middleware LLC, and individual contributors",
           "start_line": 3,
-          "end_line": 5
+          "end_line": 3
         }
       ],
       "authors": [],
@@ -1256,8 +1268,8 @@
       "authors": [
         {
           "value": "Bela Ban",
-          "start_line": 1,
-          "end_line": 4
+          "start_line": 3,
+          "end_line": 3
         }
       ],
       "packages": [],
@@ -1467,6 +1479,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -1483,11 +1496,15 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
@@ -1540,14 +1557,14 @@
         {
           "value": "Copyright (c) 1995-2011 Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -1616,6 +1633,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -1632,11 +1650,13 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 144,
             "matched_length": 144,
@@ -1765,6 +1785,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -1781,11 +1802,15 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
@@ -1838,14 +1863,14 @@
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -1914,6 +1939,7 @@
           "short_name": "CC0-1.0",
           "category": "Public Domain",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Creative Commons",
           "homepage_url": "http://creativecommons.org/publicdomain/zero/1.0/",
           "text_url": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
@@ -1930,11 +1956,13 @@
             "licenses": [
               "cc0-1.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "3-seq",
             "rule_length": 975,
             "matched_length": 967,
@@ -2015,6 +2043,7 @@
           "short_name": "Artistic 2.0",
           "category": "Copyleft Limited",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Perl Foundation",
           "homepage_url": "http://www.perlfoundation.org/",
           "text_url": "https://www.perlfoundation.org/artistic_license_2_0",
@@ -2031,11 +2060,13 @@
             "licenses": [
               "artistic-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -2054,7 +2085,7 @@
         {
           "value": "name' Isaac Z.",
           "start_line": 16,
-          "end_line": 18
+          "end_line": 17
         }
       ],
       "packages": [
@@ -5177,6 +5208,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -5194,11 +5226,13 @@
               "gpl-2.0-plus",
               "ada-linking-exception"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 176,
             "matched_length": 176,
@@ -5213,6 +5247,7 @@
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
@@ -5230,11 +5265,13 @@
               "gpl-2.0-plus",
               "ada-linking-exception"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 176,
             "matched_length": 176,
@@ -5327,6 +5364,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -5343,11 +5381,15 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
@@ -5400,14 +5442,14 @@
         {
           "value": "Copyright (c) 1995-2011 Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -5476,6 +5518,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -5492,11 +5535,15 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
@@ -5513,14 +5560,14 @@
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Jean-loup Gailly and Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -5589,6 +5636,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -5605,11 +5653,15 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
@@ -5626,14 +5678,14 @@
         {
           "value": "Copyright (c) 1995-2012 Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -5772,14 +5824,14 @@
         {
           "value": "Copyright (c) 2004 by Henrik Ravn",
           "start_line": 14,
-          "end_line": 16
+          "end_line": 14
         }
       ],
       "holders": [
         {
           "value": "Henrik Ravn",
           "start_line": 14,
-          "end_line": 16
+          "end_line": 14
         }
       ],
       "authors": [],
@@ -5848,6 +5900,7 @@
           "short_name": "Boost 1.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -5864,11 +5917,15 @@
             "licenses": [
               "boost-1.0"
             ],
+            "referenced_filenames": [
+              "LICENSE_1_0.txt"
+            ],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 32,
             "matched_length": 32,
@@ -6024,6 +6081,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -6040,11 +6098,13 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 132,
             "matched_length": 132,
@@ -6075,7 +6135,7 @@
         {
           "value": "Gilles Vollant",
           "start_line": 12,
-          "end_line": 15
+          "end_line": 12
         }
       ],
       "packages": [],
@@ -6206,6 +6266,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -6222,11 +6283,15 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
@@ -6243,14 +6308,14 @@
         {
           "value": "Copyright (c) 1995-2008 Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -6319,6 +6384,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -6335,11 +6401,15 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
@@ -6356,14 +6426,14 @@
         {
           "value": "Copyright (c) 2003 Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Mark Adler",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -6495,6 +6565,7 @@
           "short_name": "MIT Old Style",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "MIT",
           "homepage_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
           "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
@@ -6511,11 +6582,13 @@
             "licenses": [
               "mit-old-style"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 71,
             "matched_length": 71,
@@ -6538,7 +6611,7 @@
       "holders": [
         {
           "value": "Christian Michelsen Research AS Advanced Computing",
-          "start_line": 3,
+          "start_line": 4,
           "end_line": 5
         }
       ],
@@ -6608,6 +6681,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -6624,11 +6698,13 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 144,
             "matched_length": 144,
@@ -6721,6 +6797,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -6737,11 +6814,15 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
@@ -6794,14 +6875,14 @@
         {
           "value": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -6870,6 +6951,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -6886,11 +6968,15 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
@@ -6943,14 +7029,14 @@
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "holders": [
         {
           "value": "Jean-loup Gailly",
           "start_line": 2,
-          "end_line": 3
+          "end_line": 2
         }
       ],
       "authors": [],

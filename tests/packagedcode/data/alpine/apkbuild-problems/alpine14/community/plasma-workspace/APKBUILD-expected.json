@@ -1,0 +1,57 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "plasma-workspace",
+  "version": "5.22.0-r2",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "KDE Plasma Workspace",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "(gpl-2.0 OR gpl-3.0) AND lgpl-2.1-plus AND gpl-2.0-plus AND mit AND lgpl-2.1 AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0) AND lgpl-2.0",
+  "declared_license": "(GPL-2.0-only OR GPL-3.0-only) AND LGPL-2.1-or-later AND GPL-2.0-or-later AND MIT AND LGPL-2.1-only AND LGPL-2.0-or-later AND (LGPL-2.1-only OR LGPL-3.0-only) AND LGPL-2.0-only",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-workspace-5.22.0.tar.xz"
+      },
+      {
+        "file_name": "0001-fix-kcmfontinst-install-destination.patch",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "plasma-workspace-5.22.0.tar.xz",
+        "sha512": "fb57dde0ae5f774cb782ab305a526ce22404972197d531a2c5e6972eb6400d57b99a7ce397fd417c0c42c8de58f4c06d9e9771b64eb94f501987da910054f4af"
+      },
+      {
+        "file_name": "0001-fix-kcmfontinst-install-destination.patch",
+        "sha512": "23ae68ad8b70e5709f8e185d021d552990a6be5b252e8358cdd7aa3834bf79afb2b2a9970bf33a0bd5a7801591e635f8490c8458ae8d24d636fc64d607bb3159"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/plasma-workspace@5.22.0-r2",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

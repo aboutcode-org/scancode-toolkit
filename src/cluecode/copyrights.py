@@ -11,10 +11,13 @@ import os
 import re
 import sys
 from collections import deque
-from functools import partial
 from time import time
 
-import pygmars
+import attr
+from pygmars import lex
+from pygmars import parse
+from pygmars import Token
+from pygmars import tree
 
 from commoncode.text import toascii
 from commoncode.text import unixlinesep
@@ -23,12 +26,16 @@ from cluecode import copyrights_hint
 
 # Tracing flags
 TRACE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT', False)
+
 # set to 1 to enable pygmars deep tracing
 TRACE_DEEP = 0
 if os.environ.get('SCANCODE_DEBUG_COPYRIGHT_DEEP'):
     TRACE_DEEP = 1
+    TRACE = False
 
 TRACE_TOK = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT_TOKEN', False)
+
+VALIDATE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT_VALIDATE', False)
 
 
 # Tracing flags
@@ -89,21 +96,27 @@ def detect_copyrights(
     - Run for up to ``deadline`` seconds and return results found so far.
     """
     from textcode.analysis import numbered_text_lines
+
     numbered_lines = numbered_text_lines(location, demarkup=demarkup)
     numbered_lines = list(numbered_lines)
+
     if TRACE:
-        numbered_lines = list(numbered_lines)
+        logger_debug('detect_copyrights: numbered_lines')
         for nl in numbered_lines:
-            logger_debug('numbered_line:', repr(nl))
+            logger_debug('  numbered_line:', repr(nl))
 
     yield from detect_copyrights_from_lines(
-        numbered_lines,
+        numbered_lines=numbered_lines,
         copyrights=copyrights,
         holders=holders,
         authors=authors,
         include_years=include_years,
         include_allrights=include_allrights,
-        deadline=deadline)
+        deadline=deadline,
+    )
+
+
+DETECTOR = None
 
 
 def detect_copyrights_from_lines(
@@ -117,7 +130,7 @@ def detect_copyrights_from_lines(
 ):
     """
     Yield tuples of (detection type, detected string, start line, end line)
-    detected in a ``numbered_lines`` sequence of tuples of (line numer, text)
+    detected in a ``numbered_lines`` sequence of tuples of (line number, text)
 
     "detection type" is one of : "copyrights", "authors", "holders".
 
@@ -133,21 +146,28 @@ def detect_copyrights_from_lines(
     if not numbered_lines:
         return
 
-    detector = CopyrightDetector()
+    global DETECTOR
+    if not DETECTOR:
+        DETECTOR = detector = CopyrightDetector()
+    else:
+        detector = DETECTOR
 
     candidate_lines_groups = candidate_lines(numbered_lines)
     if TRACE:
         candidate_lines_groups = list(candidate_lines_groups)
         logger_debug(
             f'detect_copyrights_from_lines: ALL groups of candidate '
-            f'lines collected: {len(candidate_lines_groups)}')
+            f'lines collected: {len(candidate_lines_groups)}',
+        )
 
     for candidates in candidate_lines_groups:
         if TRACE:
             from pprint import pformat
             can = pformat(candidates, width=160)
             logger_debug(
-                f' detect_copyrights_from_lines: processing candidates group:\n{can}')
+                f' detect_copyrights_from_lines: processing candidates group:\n'
+                f'  {can}'
+            )
 
         detections = detector.detect(
             numbered_lines=candidates,
@@ -163,8 +183,12 @@ def detect_copyrights_from_lines(
             logger_debug(f' detect_copyrights_from_lines: {detections}')
 
         for detection in detections:
-            # tuple of type, string, start, end
-            yield detection
+            yield (
+                detection.type,
+                detection.value,
+                detection.start_line,
+                detection.end_line,
+            )
 
         if time() > deadline:
             break
@@ -174,18 +198,14 @@ def detect_copyrights_from_lines(
 ################################################################################
 
 
-# simple tokenization: spaces and some punctuation
-splitter = re.compile('[\\t =;]+').split
-
-
 class CopyrightDetector(object):
     """
     Detect copyrights and authors.
     """
 
     def __init__(self):
-        self.lexer = pygmars.lex.RegexpLexer(patterns)
-        self.parser = pygmars.parse.RegexpParser(grammar, trace=TRACE_DEEP)
+        self.lexer = lex.Lexer(patterns)
+        self.parser = parse.Parser(grammar, trace=TRACE_DEEP, validate=VALIDATE)
 
     def detect(self,
         numbered_lines,
@@ -196,8 +216,8 @@ class CopyrightDetector(object):
         include_allrights=False,
     ):
         """
-        Yield tuples of (detection type, detected string, start line, end line)
-        detected in a ``numbered_lines`` sequence of tuples of (line numer, text)
+        Yield Detection objects detected in a ``numbered_lines`` sequence of
+        tuples of (line number, text).
 
         "detection type" is one of : "copyrights", "authors", "holders".
 
@@ -209,33 +229,26 @@ class CopyrightDetector(object):
           ``include_allrights`` is True.
         - Strip markup from text if ``demarkup`` is True.
         """
-        Tree = pygmars.tree.Tree
         numbered_lines = list(numbered_lines)
         if not numbered_lines:
             return
-        start_line = numbered_lines[0][0]
-        end_line = numbered_lines[-1][0]
 
-        if TRACE: logger_debug(f'CopyrightDetector:numbered_lines: {numbered_lines}')
+        if TRACE: logger_debug(f'CopyrightDetector: numbered_lines: {numbered_lines}')
 
-        tokens = self.get_tokens(numbered_lines)
+        tokens = list(get_tokens(numbered_lines))
 
-        if TRACE:
-            tokens = list(tokens)
-            logger_debug(f'CopyrightDetector:tokens: {tokens}')
+        if TRACE: logger_debug(f'CopyrightDetector: initial tokens: {tokens}')
 
         if not tokens:
             return
 
         # first, POS tag each token using token regexes
-        lexed_text = self.lexer.lex(tokens)
-        if TRACE: logger_debug('CopyrightDetector:tagged_text: ' + str(lexed_text))
+        lexed_text = list(self.lexer.lex_tokens(tokens))
+        if TRACE: logger_debug(f'CopyrightDetector: lexed tokens: {lexed_text}')
 
-        # then build a parse tree based on tagged tokens
-        tree = self.parser.parse(lexed_text)
-        if TRACE: logger_debug('CopyrightDetector:parse tree: ' + str(tree))
-
-        as_str = partial(CopyrightDetector.as_str, include_allrights=include_allrights)
+        # then build a parse parse_tree based on tagged tokens
+        parse_tree = self.parser.parse(lexed_text)
+        if TRACE: logger_debug(f'CopyrightDetector: parse_tree: {parse_tree}')
 
         non_copyright_labels = frozenset()
         if not include_years:
@@ -262,105 +275,136 @@ class CopyrightDetector(object):
             'HOLDER', 'AUTHOR',
         ])
 
-        # then walk the parse tree, collecting copyrights, years and authors
-        for tree_node in tree:
-            if not isinstance(tree_node, Tree):
+        # then walk the parse parse_tree, collecting copyrights, years and authors
+        for tree_node in parse_tree:
+            if not isinstance(tree_node, tree.Tree):
                 continue
 
-            node_text = as_str(tree_node, ignores=non_copyright_labels)
-            if TRACE: logger_debug('detect:node_text:', node_text)
+                if TRACE: logger_debug(f'CopyrightDetector: parse_tree node: {tree_node}')
 
-            tree_node_label = tree_node.label()
+            tree_node_label = tree_node.label
 
-            if 'COPYRIGHT' in tree_node_label:
-                if TRACE:
-                    logger_debug(f'CopyrightDetector.detect: tree node: {tree_node}')
-                if node_text and node_text.strip():
-                    refined = refine_copyright(node_text)
-                    # checking for junk is a last resort
-                    if refined and refined.lower() not in COPYRIGHTS_JUNK:
+            if (copyrights or holders) and 'COPYRIGHT' in tree_node_label:
+                copyrght = Detection.from_node(
+                    node=tree_node,
+                    type='copyrights',
+                    ignores=non_copyright_labels,
+                    include_allrights=include_allrights,
+                    refiner=refine_copyright,
+                    junk=COPYRIGHTS_JUNK,
+                )
+                if TRACE: logger_debug(f'CopyrightDetector: detection: {copyrght}')
 
-                        if copyrights:
-                            if TRACE:
-                                logger_debug(
-                                    'CopyrightDetector.detect: detected copyrights:',
-                                    refined, start_line, end_line,
-                                )
-                            yield 'copyrights', refined, start_line, end_line
+                if copyrght:
+                    if copyrights:
 
-                        if holders:
-                            # by default with strip email and urls from holders
-                            holder = as_str(tree_node, ignores=non_holder_labels)
-                            refined_holder = refine_holder(holder)
+                        yield copyrght
 
-                            if not refined_holder:
-                                # ... if we have no holder, we try again, this
-                                # time keeping email and URLs for holders using
-                                # "non_holder_labels_mini"
-                                holder = as_str(tree_node, ignores=non_holder_labels_mini)
-                                refined_holder = refine_holder(holder)
+                    if holders:
+                        # By default we strip email and urls from holders ....
+                        holder = Detection.from_node(
+                            node=tree_node,
+                            type='holders',
+                            ignores=non_holder_labels,
+                            refiner=refine_holder,
+                        )
 
-                            if refined_holder:
-                                yield 'holders', refined_holder, start_line, end_line
-                                if TRACE:
-                                    logger_debug(
-                                        'CopyrightDetector: detected holders:',
-                                        refined_holder, start_line, end_line
-                                    )
+                        if not holder:
+                            # ... but if we have no holder, we try again and
+                            # this time we keep email and URLs for holders using
+                            # "non_holder_labels_mini" as an ignores label set
+                            holder = Detection.from_node(
+                                node=tree_node,
+                                type='holders',
+                                ignores=non_holder_labels_mini,
+                                refiner=refine_holder,
+                            )
+
+                        if holder:
+                            if TRACE: logger_debug(f'CopyrightDetector: holders: {holder}')
+                            yield holder
 
             elif authors and tree_node_label == 'AUTHOR':
-                node_text = as_str(tree_node, ignores=non_authors_labels)
+                author = Detection.from_node(
+                    node=tree_node,
+                    type='authors',
+                    ignores=non_authors_labels,
+                    include_allrights=False,
+                    refiner=refine_author,
+                    junk=AUTHORS_JUNK,
+                )
 
-                refined_auth = refine_author(node_text)
-                if refined_auth and refined_auth.lower() not in AUTHORS_JUNK:
-                    if TRACE: logger_debug(
-                        'CopyrightDetector: detected authors:',
-                        refined_auth, start_line, end_line
-                    )
-                    yield 'authors', refined_auth, start_line, end_line
+                if author:
+                    if TRACE: logger_debug(f'CopyrightDetector: detected authors: {author}')
+                    yield author
 
-    def get_tokens(self, numbered_lines):
-        """
-        Return an iterable of tokens build from a ``numbered_lines`` sequence of
-        tuples of (line number, text).
-        """
-        tokens = []
-        tokens_append = tokens.append
 
-        for _line_number, line in numbered_lines:
-            if TRACE_TOK:
-                logger_debug('  get_tokens:  bare line: ' + repr(line))
+def get_tokens(numbered_lines, splitter=re.compile('[\\t =;]+').split):
+    """
+    Return an iterable of pygmars.Token built from a ``numbered_lines`` iterable
+    of tuples of (line number, text).
 
-            line = prepare_text_line(line)
+    We perform a simple tokenization on spaces, tabs and some punctuation =;
+    """
+    for start_line, line in numbered_lines:
+        if TRACE_TOK:
+            logger_debug('  get_tokens: bare line: ' + repr(line))
 
-            if TRACE_TOK:
-                logger_debug('  get_tokens:preped line: ' + repr(line))
-
-            for tok in splitter(line):
-                # strip trailing single quotes and ignore empties
-                tok = tok.strip("' ")
-                # strip trailing colons: why?
-                tok = tok.rstrip(':').strip()
-                # strip leading @: : why?
-                tok = tok.lstrip('@').strip()
-                if tok and tok not in (':',):
-                    tokens_append(tok)
+        line = prepare_text_line(line)
 
         if TRACE_TOK:
-            logger_debug('  get_tokens:tokens: ' + repr(tokens))
-            logger_debug('  get_tokens: ALL tokens collected')
-        return tokens
+            logger_debug('  get_tokens: preped line: ' + repr(line))
+
+        pos = 0
+        for tok in splitter(line):
+            # FIXME: strip trailing single quotes and ignore empties
+            tok = tok.strip("' ")
+            # FIXME: strip trailing colons: why?
+            tok = tok.rstrip(':').strip()
+            # FIXME: strip leading @: : why?
+            tok = tok.lstrip('@').strip()
+            # FIXME: why?
+            if tok and tok != ':':
+                yield Token(value=tok, start_line=start_line, pos=pos)
+                pos += 1
+
+
+@attr.s
+class Detection:
+    """
+    Represent a "copyrights" or "authors" detection with a start and end line.
+    """
+    value = attr.ib()
+    type = attr.ib()
+    start_line = attr.ib()
+    end_line = attr.ib()
 
     @classmethod
-    def as_str(cls, node, ignores=frozenset(), include_allrights=False):
+    def from_node(
+        cls,
+        node,
+        type,  # NOQA
+        ignores=frozenset(),
+        include_allrights=False,
+        refiner=None,
+        junk=frozenset(),
+    ):
         """
-        Return a parse tree node as a space-normalized string.
-        Optionally filters node labels provided in the ignores set.
+        Return a Detection object from a pygmars.tree.Tree ``node`` with a
+        space-normalized string value or None.
+        Use the provided ``type`` (such as "copyrights")
+        Filter ``node`` Tokens with a type found in the ``ignores`` set of
+        ignorable token types.
+        Include trailing "All rights reserved" if ``include_allrights`` is True.
+        Apply the ``refiner`` callable function to the detection string.
+        Return None if the value exists in the ``junk`` strings set.
         """
 
         if ignores:
-            leaves = [(text, label) for text, label in node.leaves()
-                      if label not in ignores]
+            leaves = [
+                token for token in node.leaves()
+                if token.label not in ignores
+            ]
         else:
             leaves = node.leaves()
 
@@ -370,31 +414,45 @@ class CopyrightDetector(object):
             filtered = leaves
         else:
             filtered = []
-            for text, label in leaves:
-                # pop ALL RIGHT RESERVED if there
-                if (label == 'RESERVED' and
-                        len(filtered) >= 2 and
-                        filtered[-1][1] == 'RIGHT' and
-                        filtered[-2][1] in ('NN', 'CAPS', 'NNP')):
 
-                    filtered = filtered[:-2]
+            for token in leaves:
+                # FIXME: this should operate on the tree and not on the leaves
+                # ALLRIGHTRESERVED: <NNP|NN|CAPS> <RIGHT> <NNP|NN|CAPS>? <RESERVED>
 
+                # This pops ALL RIGHT RESERVED py finding it backwards from RESERVED
+                if token.label == 'RESERVED':
+                    if (
+                        len(filtered) >= 2
+                        and filtered[-1].label == 'RIGHT'
+                        and filtered[-2].label in ('NN', 'CAPS', 'NNP')
+                    ):
+                        filtered = filtered[:-2]
+                    elif (
+                        len(filtered) >= 3
+                        and filtered[-1].label in ('NN', 'CAPS', 'NNP')
+                        and filtered[-2].label == 'RIGHT'
+                        and filtered[-3].label in ('NN', 'CAPS', 'NNP')
+                    ):
+                        filtered = filtered[:-3]
                 else:
-                    filtered.append((text, label))
+                    filtered.append(token)
 
-        node_string = ' '.join(t for t, _ in filtered)
-        return ' '.join(node_string.split())
+        node_string = ' '.join(t.value for t in filtered)
+        node_string = ' '.join(node_string.split())
+        if refiner:
+            node_string = refiner(node_string)
+
+        if node_string and node_string.lower() not in junk:
+            return cls(
+                value=node_string,
+                type=type,
+                start_line=filtered[0].start_line,
+                end_line=filtered[-1].start_line,
+            )
 
 ################################################################################
-# POS TAGGING AND CHUNKING
+# LEXING AND PARSING
 ################################################################################
-
-############################################################################
-############################################################################
-# NOTE: IN THE PAST PATTERNS WERE COMPACT AND HARD TO READ!!!
-# USE SIMPLER PATTERNS AS NEEDED: The focus must be on readability!!!
-############################################################################
-############################################################################
 
 
 _YEAR = (r'('
@@ -848,6 +906,12 @@ patterns = [
     # JUNK from binary
     (r'^x1b|1H$', 'JUNK'),
 
+    # JUNK as camel case with a single hump such as in "processingInfo"
+    (r'^[a-z]{3,10}[A-Z][a-z]{3,10}$', 'JUNK'),
+
+    (r'^\$?Guid$', 'JUNK'), 
+    (r'^Small$', 'NN'), 
+
     ############################################################################
     # Nouns and proper Nouns
     ############################################################################
@@ -995,6 +1059,7 @@ patterns = [
     (r'^Mode$', 'NN'),
     (r'^Modified$', 'NN'),
     (r'^Mouse$', 'NN'),
+    (r'^Module$', 'NN'),
     (r'^Natural$', 'NN'),
     (r'^New$', 'NN'),
     (r'^NEWS$', 'NN'),
@@ -1100,6 +1165,12 @@ patterns = [
     (r'^Create$', 'NN'),
     (r'^Engine\.$', 'NN'),
     (r'^While$', 'NN'),
+    (r'^Review', 'NN'),
+    (r'^Help', 'NN'),
+    (r'^Web', 'NN'),
+
+    # alone this is not enough for an NNP
+    (r'^Free$', 'NN'),
 
     # Hours/Date/Day/Month text references
     (r'^am$', 'NN'),
@@ -1234,34 +1305,34 @@ patterns = [
     (r'^LIMITED[,\.]??$', 'COMP'),
 
     # Caps company suffixes
-    (r'^INC\.?,?\)?$', 'COMP'),
-    (r'^INCORPORATED\.?,?\)?$', 'COMP'),
-    (r'^CORP\.?,?\)?$', 'COMP'),
-    (r'^CORPORATION\.?,?\)?$', 'COMP'),
-    (r'^FOUNDATION\.?,?$', 'COMP'),
-    (r'^GROUP\.?,?$', 'COMP'),
-    (r'^COMPANY\.?,?$', 'COMP'),
-    (r'^\(tm\).?$', 'COMP'),
-    (r'^[Ff]orum\.?,?', 'COMP'),
+    (r'^INC[\.,\)]*$', 'COMP'),
+    (r'^INCORPORATED[\.,\)]*$', 'COMP'),
+    (r'^CORP[\.,\)]*$', 'COMP'),
+    (r'^CORPORATION[\.,\)]*$', 'COMP'),
+    (r'^FOUNDATION[\.,\)]*$', 'COMP'),
+    (r'^GROUP[\.,\)]*$', 'COMP'),
+    (r'^COMPANY[\.,\)]*$', 'COMP'),
+    (r'^\(tm\)[\.,]?$', 'COMP'),
+    (r'^[Ff]orum[\.,\)]*', 'COMP'),
 
     # company suffix
-    (r'^[Cc]orp\.?,?\)?$', 'COMP'),
-    (r'^[Cc]orp(oration|\.,?)?\)?$', 'COMP'),
-    (r'^[Cc][oO]\.,?$', 'COMP'),
-    (r'^[Cc]orporations?\.?,?$', 'COMP'),
-    (r'^[Ff]oundation\.?,?$', 'COMP'),
-    (r'^[Aa]lliance\.?,?$', 'COMP'),
+    (r'^[Cc]orp[\.,\)]*$', 'COMP'),
+    (r'^[Cc]orporation[\.,\)]*$', 'COMP'),
+    (r'^[Cc][oO][\.,\)]*$', 'COMP'),
+    (r'^[Cc]orporations?[\.,\)]*$', 'COMP'),
+    (r'^[Cc]onsortium[\.,\)]*$', 'COMP'),
+
+    (r'^[Ff]oundation[\.,\)]*$', 'COMP'),
+    (r'^[Aa]lliance[\.,\)]*$', 'COMP'),
     (r'^Working$', 'COMP'),
-    (r'^[Gg]roup\.?,?$', 'COMP'),
-    (r'^[Tt]echnology\.?,?$', 'COMP'),
-    (r'^[Tt]echnologies\.?,?$', 'COMP'),
-    (r'^[Cc]ommunity\.?,?$', 'COMP'),
-    (r'^[Cc]ommunities\.?,?$', 'COMP'),
-    (r'^[Mm]icrosystems\.?,?$', 'COMP'),
-    (r'^[Pp]rojects?\.?,?$', 'COMP'),
-    (r'^[Tt]eams?\.?$', 'COMP'),
-    (r'^[Tt]ech\.?,?$', 'COMP'),
-    (r"^Limited'?\.?,?$", 'COMP'),
+    (r'^[Gg]roup[\.,\)]*$', 'COMP'),
+    (r'^[Tt]echnolog(y|ies)[\.,\)]*$', 'COMP'),
+    (r'^[Cc]ommunit(y|ies)[\.,\)]*$', 'COMP'),
+    (r'^[Mm]icrosystems[\.,\)]*$', 'COMP'),
+    (r'^[Pp]rojects?[\.,\)]*,?$', 'COMP'),
+    (r'^[Tt]eams?[\.,\)]*$', 'COMP'),
+    (r'^[Tt]ech[\.,\)]*$', 'COMP'),
+    (r"^Limited'?[\.,\)]*$", 'COMP'),
 
     # company suffix : LLC, LTD, LLP followed by one extra char
     (r'^[Ll][Tt][Dd]\.?,?$', 'COMP'),
@@ -1273,7 +1344,8 @@ patterns = [
 
     # company suffix : SA, SAS, AG, AB, AS, CO, labs followed by a dot
     (r'^(S\.?A\.?S?|Sas|sas|A\/S|AG,?|AB|Labs?|[Cc][Oo]|Research|Center|INRIA|Societe)\.?$', 'COMP'),
-
+    # French SARL 
+    (r'^(SARL|S\.A\.R\.L\.)[\.,\)]*$', 'COMP'),
     # company suffix : AS: this is frequent beyond Norway.
     (r'^AS.$', 'COMP'),
     (r'^AS', 'CAPS'),
@@ -1293,11 +1365,13 @@ patterns = [
     # (dutch and belgian) company suffix
     (r'^[Bb]\.?[Vv]\.?|BVBA$', 'COMP'),
     # university
-    (r'^\(?[Uu]niv(?:[.]|ersit(?:y|e|at?|ad?))\)?\.?$', 'UNI'),
+    (r'^\(?[Uu]niv(?:[.]|ersit(?:y|e|at?|ad?))[\.,\)]*$', 'UNI'),
     (r'^UNIVERSITY$', 'UNI'),
     (r'^College$', 'UNI'),
     # Academia/ie
     (r'^[Ac]cademi[ae]s?$', 'UNI'),
+    # Academia/ie
+    (r'^[Ac]cademy[\.,\)]*$', 'UNI'),
 
     # institutes
     (r'INSTITUTE', 'COMP'),
@@ -1544,11 +1618,11 @@ patterns = [
     # URLS such as <(http://fedorahosted.org/lohit)> or ()
     (r'[<\(]https?:.*[>\)]', 'URL'),
     # URLS such as ibm.com without a scheme
-    (r'\s?[a-z0-9A-Z\-\.\_]+\.([Cc][Oo][Mm]|[Nn][Ee][Tt]|[Oo][Rr][Gg]|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|nl|au|biz)\s?\.?$', 'URL2'),
+    (r'\s?[a-z0-9A-Z\-\.\_]+\.([Cc][Oo][Mm]|[Nn][Ee][Tt]|[Oo][Rr][Gg]|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|se|nl|au|biz)\s?\.?$', 'URL2'),
     # TODO: add more extensions: there are so main TLD these days!
     # URL wrapped in () or <>
-    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|nl|au|biz)\s?[\.\)>]+$', 'URL'),
-    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|nl|au|biz)[\.\)>]?$', 'URL'),
+    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz)\s?[\.\)>]+$', 'URL'),
+    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz)[\.\)>]?$', 'URL'),
     # derived from regex in cluecode.finder
     (r'<?a?.(href)?.('
      r'(?:http|ftp|sftp)s?://[^\s<>\[\]"]+'
@@ -1574,6 +1648,13 @@ patterns = [
     # Code variable names including snake case
     (r'^.*(_.*)+$', 'JUNK'),
 
+    # !$?
+    (r'^\!\$\?$', 'JUNK'),
+
+    # things composed only of non-word letters (e.g. junk punctuations)
+    # but keeping _ ? and () as parts of words
+    (r'^[^\w\?()]{2,10}$', 'JUNK'),
+
     ############################################################################
     # catch all other as Nouns
     ############################################################################
@@ -1583,6 +1664,8 @@ patterns = [
 ]
 
 # Comments in the Grammar are lines that start with #
+# End of line commenst are rules descriptions.
+# One rule per line.
 grammar = """
 
 #######################################
@@ -1665,7 +1748,7 @@ grammar = """
     COMPANY: {<BY>? <NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY|NAME|NAME-EMAIL><COMP>?}        #130
 
    # Free Software Foundation, Inc.
-    COMPANY: {<NNP> <NNP> <COMP> <COMP>}       #135
+    COMPANY: {<NN|NNP> <NNP> <COMP> <COMP>}       #135
 
    #  Mediatrix Telecom, inc. <ericb@mediatrix.com>
     COMPANY: {<NNP>+ <COMP> <EMAIL>}       #136
@@ -1685,7 +1768,7 @@ grammar = """
     # Commonwealth Scientific and Industrial Research Organisation (CSIRO)
     COMPANY: {<NNP> <NNP> <CC> <NNP> <COMP> <NNP> <CAPS>}
 
-    COMPANY: {<NNP> <CC> <NNP> <COMP> <NNP>?}        #200
+    COMPANY: {<NNP> <CC> <NNP> <COMP> <NNP>*}        #200
 
     # Android Open Source Project, 3Dfx Interactive, Inc.
     COMPANY: {<NN>? <NN> <NNP> <COMP>}        #205
@@ -1696,8 +1779,14 @@ grammar = """
     # NNP  NN   NNP    NNP      COMP   COMP')
     COMPANY: {<NNP> <NN> <NNP> <NNP> <COMP>+} #207
 
-    # was     COMPANY {<NNP|CAPS> <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <COMP> <COMP>?}        #210
-    COMPANY: {<NNP|CAPS>+ <COMP>+}        #210
+    #  Massachusetts Institute of Technology
+    COMPANY: {<NNP> <COMP|COMPANY> <OF> <NNP>+}        #208
+
+    COMPANY: {<NNP|CAPS>+ <COMP|COMPANY>+}        #210
+
+    # University of Southern California, Information Sciences Institute (ISI)
+    COMPANY: {<UNI> <OF> <COMPANY> <CAPS>?}        #211
+
     COMPANY: {<UNI|NNP> <VAN|OF> <NNP>+ <UNI>?}        #220
     COMPANY: {<NNP>+ <UNI>}        #230
     COMPANY: {<UNI> <OF> <NN|NNP>}        #240
@@ -1705,6 +1794,9 @@ grammar = """
 
     # University of Southern California, Information Sciences Institute (ISI)
     COMPANY: {<COMPANY> <COMPANY> <CAPS>} #251
+
+    # University of Technology
+    COMPANY: {<UNI>  <OF>  <COMP|COMPANY>} #252
 
     # GNOME i18n Project for Vietnamese
     COMPANY: {<CAPS> <NN> <COMP> <NN> <NNP>} #253
@@ -1859,6 +1951,9 @@ grammar = """
     COMPANY: {<URL|URL2>}        #830
 
     COMPANY: {<COMPANY> <COMP|COMPANY>}        #840
+
+    # the Software and Component Technologies group of Trimble Navigation, Ltd.
+    COMPANY: {<COMPANY> <OF> <COMP|COMPANY>}        #840.1
 
     # University Corporation for Advanced Internet Development, Inc.
     COMPANY: {<UNI> <COMPANY>}        #845
@@ -2444,7 +2539,7 @@ grammar = """
 
 
 #######################################
-# Last resort catch all ending with allrights
+# Last resort catch all ending with ALLRIGHTRESERVED
 #######################################
 
     COPYRIGHT: {<COMPANY><COPY>+<ALLRIGHTRESERVED>}        #99900
@@ -2466,6 +2561,8 @@ def refine_copyright(c):
     Refine a detected copyright string.
     FIXME: the grammar should not allow this to happen.
     """
+    if not c:
+        return
     c = ' '.join(c.split())
     c = strip_some_punct(c)
     # this catches trailing slashes in URL for consistency
@@ -2490,6 +2587,8 @@ def refine_holder(h):
     Refine a detected holder.
     FIXME: the grammar should not allow this to happen.
     """
+    if not h:
+        return
     # handle the acse where "all right reserved" is in the middle and the
     # company name contains the word all.
     if 'reserved' in h.lower():
@@ -2513,6 +2612,8 @@ def refine_author(a):
     Refine a detected author.
     FIXME: the grammar should not allow this to happen.
     """
+    if not a:
+        return
     # FIXME: we could consider to split comma separated lists such as
     # gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
     a = refine_names(a, prefixes=AUTHORS_PREFIXES)
@@ -2590,6 +2691,7 @@ COPYRIGHTS_SUFFIXES = frozenset([
     'author',
     'all',
     'some',
+    'and'
 ])
 
 # Set of statements that get detected and are junk/false positive
@@ -2699,6 +2801,7 @@ COPYRIGHTS_JUNK = frozenset([
     'copyright 2003 m. y.',
     'copyright 2001 m. y. name',
     'copyright 2001 m. y.',
+    'copyright help center',
 ])
 
 ################################################################################
@@ -3134,6 +3237,9 @@ def is_end_of_statement(chars_only_line):
     )
 
 
+has_trailing_year = re.compile(r'(?:19\d\d|20[0-4]\d)+$').findall
+
+
 def candidate_lines(numbered_lines):
     """
     Yield groups of candidate line lists where each list element is a tuple of
@@ -3157,7 +3263,7 @@ def candidate_lines(numbered_lines):
             logger_debug(
                 f'# candidate_lines: evaluating line: {numbered_line!r}')
 
-        line_number, line = numbered_line
+        _line_number, line = numbered_line
 
         # FIXME: we should get the prepared text from here and return
         # effectively pre-preped lines... but the prep taking place here is
@@ -3198,16 +3304,21 @@ def candidate_lines(numbered_lines):
                 logger_debug('   candidate_lines: line is <s></s>candidate')
 
         elif in_copyright > 0:
+            # these are a sign that the copyrights continue after
+            # a possibly empty line
+            # see https://github.com/nexB/scancode-toolkit/issues/1565
+            # if these are no present we treat empty lines... as empty!
             if (
                 (not chars_only)
                 and (
                     not previous_chars.endswith((
                         'copyright',
                         'copyrights',
-                        'copyrightsby',
-                        'copyrightby',
+                        'and',
+                        'by',
                     ))
                 )
+                and not has_trailing_year(previous_chars)
             ):
 
                 # completely empty or only made of punctuations
@@ -3309,7 +3420,7 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     If ``dedeb`` is True, remove "Debian" <s> </s> markup tags seen in
     older copyright files.
 
-    If ``to_ascii`` convert the text to ASCiI characters.
+    If ``to_ascii`` convert the text to ASCII characters.
     """
     # remove some junk in man pages: \(co
     line = (line
@@ -3319,15 +3430,14 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     )
     line = remove_printf_format_codes(' ', line)
 
-    # un common comment line prefixes
+    # less common comment line prefixes
     line = remove_comment_markers(' ', line)
     line = remove_man_comment_markers(' ', line)
 
     line = (line
-        # C and C++ style markers
-        .replace('^//', ' ')
+        # C and C++ style comment markers
         .replace('/*', ' ').replace('*/', ' ')
-
+        .strip().strip('/*#')
         # un common pipe chars in some ascii art
         .replace('|', ' ')
 
