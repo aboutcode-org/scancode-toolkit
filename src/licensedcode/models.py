@@ -1473,6 +1473,36 @@ class SpdxRule(Rule):
         raise NotImplementedError
 
 
+@attr.s(slots=True, repr=False)
+class UnknownRule(Rule):
+    """
+    A specialized rule object that is used for the special case of unknown license
+    detection.
+    Since we may have an infinite possible number of unknown licenses and these
+    are not backed by a traditional rule text file, we use this class to handle
+    the specifics of these how rules are built at matching time: one rule
+    is created for each detected unknown license.
+    """
+
+    def __attrs_post_init__(self, *args, **kwargs):
+        self.identifier = f'unknown-license-identifier: ' 
+        self.license_expression = 'unknown-license'
+        expression = self.licensing.parse(self.license_expression)
+
+        self.is_unknown = True
+        self.license_expression_object = expression
+        self.is_license_notice = True
+        self.is_small = False
+        self.relevance = 100
+        self.has_stored_relevance = True
+
+    def load(self):
+        raise NotImplementedError
+
+    def dump(self):
+        raise NotImplementedError
+
+
 def _print_rule_stats():
     """
     Print rules statistics.

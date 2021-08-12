@@ -19,7 +19,8 @@ from time import time
 
 from intbitset import intbitset
 
-from licensedcode import SMALL_RULE, match_unknown
+from licensedcode import SMALL_RULE
+from licensedcode import match_unknown
 from licensedcode.legalese import common_license_words
 from licensedcode import match
 from licensedcode import match_aho
@@ -32,6 +33,7 @@ from licensedcode.dmp import match_blocks as match_blocks_dmp
 from licensedcode.seq import match_blocks as match_blocks_seq
 from licensedcode import query
 from licensedcode import tokenize
+from licensedcode.spans import Span
 
 """
 Main license index construction, query processing and matching entry points for
@@ -883,6 +885,25 @@ class LicenseIndex(object):
             # break if deadline has passed
             if time() > deadline:
                 break
+        
+        # refining matches without filtering false positives
+        matches, _discarded = match.refine_matches(
+            matches=matches,
+            idx=self,
+            query=qry,
+            min_score=min_score,
+            filter_false_positive=False,
+            merge=True,
+        )
+
+        original_qspan = Span(0, len(qry.tokens)-1)
+        matched_qspans = [m.qspan for m in matches]
+        matched_qspan = Span()
+        matched_qspan.union(*matched_qspans)
+        unmatched_qspan = original_qspan.difference(matched_qspan)
+        
+        for subspan in unmatched_qspan.subspans():
+            query_run = query.QueryRun(query=qry, start=subspan.start, end=subspan.end)
 
         if not matches:
             return []

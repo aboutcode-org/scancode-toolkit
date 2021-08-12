@@ -8,6 +8,9 @@
 #
 
 from licensedcode import tokenize
+from licensedcode.match import LicenseMatch
+from licensedcode.models import UnknownRule
+from licensedcode.spans import Span
 """
 Matching strategy for unknown matching using ngrams.
 """
@@ -49,17 +52,23 @@ def add_ngrams(automaton, tids, rule_length, unknown_ngram_length=7):
         automaton.add_word(ngram, ngram)
 
 
-def unknown_match(idx, query_run, automaton, unknown_ngram_length=7, **kwargs):
+def match_unknowns(idx, query_run, automaton, unknown_ngram_length=7, **kwargs):
     """
     Return a list of unknown LicenseMatch by matching the `query_run` against
     the `automaton` and `idx` index.
     """
-    matches = list(get_matches(
+    matches = get_matches(
         qtokens=query_run.tokens,
         qbegin=query_run.start,
         automaton=automaton,
         unknown_ngram_length=unknown_ngram_length,
-    ))
+    )
+
+    qspans = (Span(qstart, qend) for qstart, qend, matched_ngram in matches)
+    qspan = Span().union(*qspans)
+    ispan = Span(0, len(qspan))
+    rule = UnknownRule()
+
     return matches
 
 
