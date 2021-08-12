@@ -677,6 +677,7 @@
             "licenses": [
               "lgpl-2.1-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
@@ -792,6 +793,7 @@
             "licenses": [
               "cc-by-2.5"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
@@ -913,6 +915,7 @@
             "licenses": [
               "lgpl-2.1-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
@@ -1166,6 +1169,7 @@
             "licenses": [
               "lgpl-2.1-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
@@ -1492,6 +1496,9 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
@@ -1607,6 +1614,7 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -1721,6 +1729,9 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
+            ],
+            "referenced_filenames": [
+              "zlib.h"
             ],
             "is_license_text": false,
             "is_license_notice": false,
@@ -1837,6 +1848,7 @@
             "licenses": [
               "cc0-1.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -1940,6 +1952,7 @@
             "licenses": [
               "artistic-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -5105,6 +5118,7 @@
               "gpl-2.0-plus",
               "ada-linking-exception"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
@@ -5143,6 +5157,7 @@
               "gpl-2.0-plus",
               "ada-linking-exception"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
@@ -5257,6 +5272,9 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
+            ],
+            "referenced_filenames": [
+              "zlib.h"
             ],
             "is_license_text": false,
             "is_license_notice": false,
@@ -5373,6 +5391,9 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
@@ -5487,6 +5508,9 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
+            ],
+            "referenced_filenames": [
+              "zlib.h"
             ],
             "is_license_text": false,
             "is_license_notice": false,
@@ -5749,6 +5773,9 @@
             "licenses": [
               "boost-1.0"
             ],
+            "referenced_filenames": [
+              "LICENSE_1_0.txt"
+            ],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
@@ -5927,6 +5954,7 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -6111,6 +6139,9 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
@@ -6225,6 +6256,9 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
+            ],
+            "referenced_filenames": [
+              "zlib.h"
             ],
             "is_license_text": false,
             "is_license_notice": false,
@@ -6404,6 +6438,7 @@
             "licenses": [
               "mit-old-style"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -6519,6 +6554,7 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -6634,6 +6670,9 @@
             "licenses": [
               "zlib"
             ],
+            "referenced_filenames": [
+              "zlib.h"
+            ],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
@@ -6748,6 +6787,9 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
+            ],
+            "referenced_filenames": [
+              "zlib.h"
             ],
             "is_license_text": false,
             "is_license_notice": false,

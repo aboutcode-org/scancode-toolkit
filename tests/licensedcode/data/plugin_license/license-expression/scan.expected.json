@@ -45,6 +45,7 @@
             "licenses": [
               "apache-1.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -95,6 +96,7 @@
               "linux-syscall-exception-gpl",
               "linux-openib"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -134,6 +136,7 @@
               "linux-syscall-exception-gpl",
               "linux-openib"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -173,6 +176,7 @@
               "linux-syscall-exception-gpl",
               "linux-openib"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,

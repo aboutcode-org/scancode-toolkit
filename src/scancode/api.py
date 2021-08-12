@@ -266,6 +266,7 @@ def _licenses_data_from_match(
         matched_rule['identifier'] = match.rule.identifier
         matched_rule['license_expression'] = match.rule.license_expression
         matched_rule['licenses'] = match.rule.license_keys()
+        matched_rule['referenced_filenames'] = match.rule.referenced_filenames
         matched_rule['is_license_text'] = match.rule.is_license_text
         matched_rule['is_license_notice'] = match.rule.is_license_notice
         matched_rule['is_license_reference'] = match.rule.is_license_reference

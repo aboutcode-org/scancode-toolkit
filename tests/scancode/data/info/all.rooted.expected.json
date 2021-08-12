@@ -164,6 +164,7 @@
             "licenses": [
               "bsd-original-uc"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -267,6 +268,10 @@
               "gpl-2.0",
               "bsd-new"
             ],
+            "referenced_filenames": [
+              "COPYING",
+              "README"
+            ],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
@@ -304,6 +309,10 @@
             "licenses": [
               "gpl-2.0",
               "bsd-new"
+            ],
+            "referenced_filenames": [
+              "COPYING",
+              "README"
             ],
             "is_license_text": false,
             "is_license_notice": true,
