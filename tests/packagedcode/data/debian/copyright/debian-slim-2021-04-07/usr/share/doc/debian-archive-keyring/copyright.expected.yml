@@ -1,4 +1,34 @@
--
--
-- gpl-2.0-plus
-- Copyright (c) 2006 Michael Vogt <mvo@debian.org>
+primary_license:
+declared_license:
+license_expression: gpl-2.0-plus
+copyright: Copyright (c) 2006 Michael Vogt <mvo@debian.org>
+matches:
+  - score: '90.0'
+    start_line: 6
+    end_line: 26
+    matcher: 3-seq
+    rule_length: 162
+    matched_length: 162
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_306.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "The keys in the keyrings don't fall under any copyright.  Everything\n else\
+      \ in the package is covered by the GNU GPL.\n \n Debian support files [Copyright] ([C])\
+      \ [2006] [Michael] [Vogt] <[mvo]@[debian].[org]> \n [based] [on] [the] [debian]-[keyring]\
+      \ [package] [maintained] [by] [James] [Troup] \n \n [Debian] [support] [files] for debian-archive-keyring\
+      \ are free software; you\n can redistribute them and/or modify them under the terms of\
+      \ the GNU\n General Public License as published by the Free Software Foundation;\n either\
+      \ version 2, or (at your option) any later version.\n \n Debian support files for debian-archive-keyring\
+      \ are distributed in the\n hope that they will be useful, but WITHOUT ANY WARRANTY; without\
+      \ even\n the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR\n PURPOSE.\
+      \  See the GNU General Public License for more details.\n \n You should have received\
+      \ a copy of the GNU General Public License with\n your Debian system, in /usr/share/common-licenses/GPL,\
+      \ or with the\n Debian GNU debian-archive-keyring source package as the file COPYING.\n\
+      \ If not, write to the Free Software Foundation, Inc., 51 Franklin Street,\n Fifth Floor,\
+      \ Boston, MA 02110-1301 USA."

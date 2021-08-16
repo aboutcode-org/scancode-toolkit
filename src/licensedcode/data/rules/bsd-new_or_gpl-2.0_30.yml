@@ -5,3 +5,5 @@ notes: this is also rarely seen with the bsd-simplified license, hence the lower
 referenced_filenames:
     - LICENSE
     - COPYING
+notes: this is used sometimes with a bsd-new and sometimes with a 
+ bsd-simplified and is both long enough and vaguely defined

@@ -1,0 +1,7 @@
+license_expression: gpl-2.0 WITH font-exception-gpl OR ofl-1.1
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - GPL.txt
+    - OFL.txt
+notes: Seen in https://sourceforge.net/projects/linuxlibertine/files/linuxlibertine/5.3.0/LinLibertineTTF_5.3.0_2012_07_02.tgz/download

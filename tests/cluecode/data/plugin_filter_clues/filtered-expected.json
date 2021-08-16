@@ -48,6 +48,7 @@
           "short_name": "Apache 1.1",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://apache.org/licenses/LICENSE-1.1",
@@ -64,11 +65,13 @@
             "licenses": [
               "apache-1.1"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "3-seq",
             "rule_length": 367,
             "matched_length": 367,

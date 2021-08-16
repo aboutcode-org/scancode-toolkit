@@ -1,7 +1,54 @@
--
--
-- public-domain AND bsd-unmodified
-- |
+primary_license:
+declared_license:
+license_expression: public-domain AND bsd-unmodified
+copyright: |
   (c) Joey Hess <joeyh@debian.org>
   (c) Jason Gunthorpe <jgg@debian.org>
   copyrighted (c) 2000-2009 by Randolph Chung <tausq@debian.org>
+matches:
+  - score: '100.0'
+    start_line: 17
+    end_line: 17
+    matcher: 2-aho
+    rule_length: 5
+    matched_length: 5
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_282.RULE
+    license_expression: public-domain
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: derived portions are public domain)
+  - score: '100.0'
+    start_line: 22
+    end_line: 41
+    matcher: 2-aho
+    rule_length: 183
+    matched_length: 183
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-unmodified_4.RULE
+    license_expression: bsd-unmodified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n \n THIS\
+      \ SOFTWARE IS PROVIDED BY THE AUTHORS AND CONTRIBUTORS ``AS IS'' AND\n ANY EXPRESS OR\
+      \ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR\
+      \ OR CONTRIBUTORS BE LIABLE\n FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS\n OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER\
+      \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n LIABILITY, OR TORT\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n OUT OF THE USE OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE."

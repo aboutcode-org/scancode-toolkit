@@ -47,6 +47,7 @@
           "short_name": "BSD-Original-UC",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Regents of the University of California",
           "homepage_url": "ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change",
           "text_url": "http://www.xfree86.org/3.3.6/COPYRIGHT2.html",
@@ -63,11 +64,13 @@
             "licenses": [
               "bsd-original-uc"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 243,
             "matched_length": 243,
@@ -134,6 +137,7 @@
           "short_name": "GPL 2.0",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
@@ -151,11 +155,16 @@
               "gpl-2.0",
               "bsd-new"
             ],
+            "referenced_filenames": [
+              "COPYING",
+              "README"
+            ],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 50,
             "matched_length": 50,
@@ -170,6 +179,7 @@
           "short_name": "BSD-3-Clause",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Regents of the University of California",
           "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
           "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
@@ -187,11 +197,16 @@
               "gpl-2.0",
               "bsd-new"
             ],
+            "referenced_filenames": [
+              "COPYING",
+              "README"
+            ],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 50,
             "matched_length": 50,

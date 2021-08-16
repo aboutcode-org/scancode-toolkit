@@ -62,7 +62,7 @@
     </style>
   </head>
   <body>
-    <p> Scanned with ScanCode version {{ version }} </p>
+    <p> Scanned with ScanCode </p>
     {% if files.license_copyright %}
     <table>
       <caption>Copyrights and Licenses Information</caption>
@@ -104,7 +104,6 @@
           <th>type</th>
           <th>name</th>
           <th>extension</th>
-          <th>date</th>
           <th>size</th>
           <th>sha1</th>
           <th>md5</th>
@@ -127,7 +126,6 @@
               <td>{{ row.type }}</td>
               <td>{{ row.name }}</td>
               <td>{{ row.extension }}</td>
-              <td>{{ row.date }}</td>
               <td>{{ row.size }}</td>
               <td>{{ row.sha1 }}</td>
               <td>{{ row.md5 }}</td>
@@ -142,6 +140,106 @@
               <td>{{ row.is_source }}</td>
               <td>{{ row.is_script }}</td>
             </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <table>
+      <caption>Holders</caption>
+      <thead>
+        <tr>
+          <th>path</th>
+          <th>holder</th>
+          <th>start</th>
+          <th>end</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for path, row in files.infos.items() %}
+        {% if row.holders %}
+        {% for data in row.holders %}
+        <tr>
+          <td>{{ path }}</td>
+          <td>{{ data.value }}</td>
+          <td>{{ data.start_line }}</td>
+          <td>{{ data.end_line }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+    <table>
+      <caption>Authors</caption>
+      <thead>
+        <tr>
+          <th>path</th>
+          <th>Author</th>
+          <th>start</th>
+          <th>end</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for path, row in files.infos.items() %}
+        {% if row.authors %}
+        {% for data in row.authors %}
+        <tr>
+          <td>{{ path }}</td>
+          <td>{{ data.value }}</td>
+          <td>{{ data.start_line }}</td>
+          <td>{{ data.end_line }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+    <table>
+      <caption>Emails</caption>
+      <thead>
+        <tr>
+          <th>path</th>
+          <th>email</th>
+          <th>start</th>
+          <th>end</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for path, row in files.infos.items() %}
+        {% if row.emails %}
+        {% for data in row.emails %}
+        <tr>
+          <td>{{ path }}</td>
+          <td>{{ data.email |urlize(target='_blank') }}</td>
+          <td>{{ data.start_line }}</td>
+          <td>{{ data.end_line }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+    <table>
+      <caption>Urls</caption>
+      <thead>
+        <tr>
+          <th>path</th>
+          <th>url</th>
+          <th>start</th>
+          <th>end</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for path, row in files.infos.items() %}
+        {% if row.urls %}
+        {% for data in row.urls %}
+        <tr>
+          <td>{{ path }}</td>
+          <td>{{ data.url |urlize(target='_blank') }}</td>
+          <td>{{ data.start_line }}</td>
+          <td>{{ data.end_line }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
         {% endfor %}
       </tbody>
     </table>

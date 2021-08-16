@@ -1,0 +1,7 @@
+license_expression: bsd-new AND gpl-2.0 AND gfdl-1.2
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.Xiph
+    - COPYING.GPL
+    - COPYING.FDL

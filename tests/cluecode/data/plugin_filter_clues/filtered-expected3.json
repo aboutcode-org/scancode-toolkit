@@ -48,6 +48,7 @@
           "short_name": "PCRE License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "University of Cambridge",
           "homepage_url": "http://www.pcre.org/licence.txt",
           "text_url": "http://www.pcre.org/licence.txt",
@@ -64,11 +65,13 @@
             "licenses": [
               "pcre"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "1-hash",
             "rule_length": 303,
             "matched_length": 303,

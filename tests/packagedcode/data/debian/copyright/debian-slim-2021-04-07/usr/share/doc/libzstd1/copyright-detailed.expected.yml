@@ -1,5 +1,6 @@
-- bsd-new AND gpl-2.0
-- - BSD-3-clause and GPL-2
+primary_license: bsd-new AND gpl-2.0
+declared_license:
+  - BSD-3-clause and GPL-2
   - zlib
   - zlib
   - zlib
@@ -9,9 +10,9 @@
   - Expat
   - GPL-2
   - BSD-3-clause
-- (bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)) AND zlib AND zlib AND mit AND (bsd-new AND
-  (gpl-2.0 AND gpl-2.0 AND gpl-2.0)) AND mit
-- |
+license_expression: (bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)) AND zlib AND zlib AND mit
+  AND (bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)) AND mit
+copyright: |
   2013-2018, Yann Collet
   2016, Przemyslaw Skibinski
   2016-2018, Facebook, Inc.
@@ -20,3 +21,169 @@
   2003-2008, Yuta Mori
   2016-present, Yann Collet, Facebook, Inc.
   2015-2016 Kevin Murray <spam@kdmurray.id.au>
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 15
+    matcher: 1-hash
+    rule_length: 132
+    matched_length: 132
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: zlib_81.RULE
+    license_expression: zlib
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This software is provided 'as-is', without any express or implied
+      warranty. In no event will the authors be held liable for any damages
+      arising from the use of this software.
+
+      Permission is granted to anyone to use this software for any purpose,
+      including commercial applications, and to alter it and redistribute it
+      freely, subject to the following restrictions:
+
+      1. The origin of this software must not be misrepresented; you must not
+         claim that you wrote the original software. If you use this software
+         in a product, an acknowledgement in the product documentation would be
+         appreciated but is not required.
+      2. Altered source versions must be plainly marked as such, and must not be
+         misrepresented as being the original software.
+      3. This notice may not be removed or altered from any source distribution.
+  - score: '100.0'
+    start_line: 1
+    end_line: '19'
+    matcher: 1-hash
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person obtaining
+      a copy of this software and associated documentation files (the
+      "Software"), to deal in the Software without restriction, including
+      without limitation the rights to use, copy, modify, merge, publish,
+      distribute, sublicense, and/or sell copies of the Software, and to
+      permit persons to whom the Software is furnished to do so, subject to
+      the following conditions:
+
+      The above copyright notice and this permission notice shall be
+      included in all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+      BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+      ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+      CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+      SOFTWARE.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_561.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2'
+  - score: '100.0'
+    start_line: 1
+    end_line: 12
+    matcher: 2-aho
+    rule_length: 101
+    matched_length: 101
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_259.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License, v2, as
+      published by the Free Software Foundation
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License along
+      with this program; if not, write to the Free Software Foundation, Inc.,
+      51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+  - score: '100.0'
+    start_line: 14
+    end_line: 15
+    matcher: 2-aho
+    rule_length: 24
+    matched_length: 24
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_1120.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian systems, the complete text of the GNU General Public
+      License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+  - score: '99.52'
+    start_line: 1
+    end_line: 21
+    matcher: 3-seq
+    rule_length: 207
+    matched_length: 206
+    match_coverage: '99.52'
+    rule_relevance: 100
+    identifier: bsd-new_222.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are met:
+          * Redistributions of source code must retain the above copyright
+            notice, this list of conditions and the following disclaimer.
+          * Redistributions in binary form must reproduce the above copyright
+            notice, this list of conditions and the following disclaimer in the
+            documentation and/or other materials provided with the distribution.
+          * Neither the name of [cereal] nor the
+            names of its contributors may be used to endorse or promote products
+            derived from this software without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+      DISCLAIMED. IN NO EVENT SHALL [RANDOLPH] [VOORHIES] OR [SHANE] [GRANT] BE LIABLE FOR ANY
+      DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+      (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+      LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+      (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

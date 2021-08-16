@@ -1,0 +1,20 @@
+key: google-analytics-tos-2019
+short_name: Google Analytics Terms of Service 2019
+name: Google Analytics Terms of Service 2019
+category: Proprietary Free
+owner: Google
+homepage_url: https://marketingplatform.google.com/about/analytics/terms/us/
+spdx_license_key: LicenseRef-scancode-google-analytics-tos-2019
+other_urls:
+    - http://www.google.com/analytics
+    - http://www.google.com/privacy.html
+    - https://support.google.com/analytics/#topic=3544906
+ignorable_urls:
+  - http://www.google.com/analytics
+  - http://www.google.com/analytics/policies
+  - http://www.google.com/analytics/policies/
+  - http://www.google.com/policies/privacy/partners
+  - https://support.google.com/marketingplatform/answer/9047313
+  - https://www.google.com/analytics/terms
+  - https://www.google.com/policies/privacy
+
