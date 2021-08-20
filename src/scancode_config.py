@@ -74,7 +74,7 @@ def _create_dir(location):
 
 # in case package is not installed or we do not have setutools/pkg_resources
 # on hand fall back to this version
-__version__ = '21.8.4'
+__version__ = '21.8.21'
 try:
     from pkg_resources import get_distribution, DistributionNotFound
     try:
