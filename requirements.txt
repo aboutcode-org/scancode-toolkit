@@ -79,3 +79,6 @@ wcwidth==0.2.5
 webencodings==0.5.1
 xmltodict==0.12.0
 zipp==3.4.1
+pyelftools==0.27
+compiledcode==2.1.0
+
