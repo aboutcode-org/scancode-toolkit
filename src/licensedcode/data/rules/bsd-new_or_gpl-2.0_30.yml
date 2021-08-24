@@ -1,0 +1,9 @@
+license_expression: bsd-new OR gpl-2.0
+is_license_notice: yes
+relevance: 99
+notes: this is also rarely seen with the bsd-simplified license, hence the lowered relevance 
+referenced_filenames:
+    - LICENSE
+    - COPYING
+notes: this is used sometimes with a bsd-new and sometimes with a 
+ bsd-simplified and is both long enough and vaguely defined

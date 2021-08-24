@@ -1,10 +1,102 @@
-- gpl-2.0 AND gpl-2.0-plus
-- - GPL-2
+primary_license: gpl-2.0 AND gpl-2.0-plus
+declared_license:
+  - GPL-2
   - GPL-2
   - BSD-3-clause
   - GPL-2
-- (gpl-2.0 AND gpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0-plus) AND bsd-new
-- |
+license_expression: (gpl-2.0 AND gpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0-plus) AND bsd-new
+copyright: |
   2002-2010, Chris Lawrence <lawrencc@debian.org>
   2005-2011, Canonical Ltd.
   2002-2009, Chris Lawrence <lawrencc@debian.org>
+matches:
+  - score: '99.53'
+    start_line: 1
+    end_line: 23
+    matcher: 3-seq
+    rule_length: 213
+    matched_length: 212
+    match_coverage: '99.53'
+    rule_relevance: 100
+    identifier: bsd-new_205.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions
+      are met:
+      1. Redistributions of source code must retain the above copyright
+         notice, this list of conditions and the following disclaimer.
+      2. Redistributions in binary form must reproduce the above copyright
+         notice, this list of conditions and the following disclaimer in the
+         documentation and/or other materials provided with the distribution.
+      3. Neither the name of the author nor the names of [other] contributors
+         may be used to endorse or promote products derived from this software
+         without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS''
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+      THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+      PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS
+      BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+      BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+      OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+      IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_561.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2'
+  - score: '89.21'
+    start_line: 1
+    end_line: '19'
+    matcher: 3-seq
+    rule_length: 139
+    matched_length: 124
+    match_coverage: '89.21'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_612.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it
+      and/or modify it under the terms of the GNU General Public
+      License as published by the Free Software Foundation;
+      [version] [2] [dated] [June] [1991].
+
+      This program is distributed in the hope that it will be
+      useful, but WITHOUT ANY WARRANTY; without even the implied
+      warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+      PURPOSE.  See the GNU General Public License for more
+      details.
+
+      You should have received a copy of the GNU General Public
+      License along with this [package]; if not, write to the Free
+      Software Foundation, Inc., 51 Franklin [St], Fifth Floor,
+      Boston, MA  02110-1301 USA
+
+      On Debian systems, the full text of the GNU General Public
+      License version 2 can be found in the file
+      `/usr/share/common-licenses/GPL-2'.

@@ -1,12 +1,13 @@
-- lgpl-2.1 AND lgpl-3.0-plus
-- - LGPL-2.1
+primary_license: lgpl-2.1 AND lgpl-3.0-plus
+declared_license:
   - LGPL-2.1
   - LGPL-2.1
   - LGPL-2.1
   - LGPL-2.1
-- (lgpl-2.1 AND lgpl-3.0-plus) AND (lgpl-2.1 AND lgpl-3.0-plus) AND (lgpl-2.1 AND lgpl-3.0-plus)
-  AND (lgpl-2.1 AND lgpl-3.0-plus)
-- |
+  - LGPL-2.1
+license_expression: (lgpl-2.1 AND lgpl-3.0-plus) AND (lgpl-2.1 AND lgpl-3.0-plus) AND (lgpl-2.1
+  AND lgpl-3.0-plus) AND (lgpl-2.1 AND lgpl-3.0-plus)
+copyright: |
   2012 Paul Moore <pmoore@redhat.com>
   2012 Ashley Lai <adlai@us.ibm.com>
   2012 Corey Bryant <coreyb@linux.vnet.ibm.com>
@@ -15,3 +16,50 @@
   2013 Vitaly Shukela <vi0oss@gmail.com>
   2006 Bob Jenkins <bob_jenkins@burtleburtle.net>
   2012 Kees Cook <kees@debian.org>
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_38.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: lgpl-2.1'
+  - score: '80.15'
+    start_line: 1
+    end_line: 14
+    matcher: 3-seq
+    rule_length: 136
+    matched_length: 109
+    match_coverage: '80.15'
+    rule_relevance: 100
+    identifier: lgpl-3.0-plus_96.RULE
+    license_expression: lgpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This library is free software; you can redistribute it and/or modify it
+      under the terms [of] [version] [2].[1] of the GNU Lesser General Public License as
+      published by the Free Software Foundation.
+
+      This library is distributed in the hope that it will be useful, but WITHOUT
+      ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+      FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License
+      for more details.
+
+      You should have received a copy of the GNU Lesser General Public License
+      along with this library; if not, see <http://www.gnu.org/licenses>.
+
+      On Debian systems, the [complete] text of the GNU Lesser General
+      Public License [can] [be] [found] [in] "/usr/share/common-licenses/LGPL-

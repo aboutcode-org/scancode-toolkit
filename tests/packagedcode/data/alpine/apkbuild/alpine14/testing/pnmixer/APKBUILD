@@ -1,0 +1,28 @@
+# Maintainer: Taner Tas <taner76@gmail.com>
+pkgname=pnmixer
+pkgver=0.7.2
+pkgrel=1
+pkgdesc="PNMixer is a simple mixer application designed to run in system tray."
+url="https://github.com/nicklan/pnmixer"
+arch="all"
+license="GPL"
+makedepends="cmake gettext gtk+2.0-dev alsa-lib-dev libnotify-dev"
+install=""
+subpackages="$pkgname-doc $pkgname-lang"
+source="${pkgname}-${pkgver}.tar.gz::https://github.com/nicklan/pnmixer/archive/v${pkgver/_/-}.tar.gz"
+options="!check"
+builddir="${srcdir}/${pkgname}-${pkgver/_/-}"
+build() {
+	cd "$builddir"
+	cmake . \
+	-DCMAKE_BUILD_TYPE=None \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+	-DWITH_GTK3=OFF
+	make
+}
+
+package() {
+	cd "$builddir"
+	make DESTDIR="$pkgdir" install
+}
+sha512sums="0d3991a470817458089039586ab55889abfc0c9d44d1009ab00ab0755932ec0697543a7a744ffd83ea834b8ceb27e111b314cdafdb97f1c687b5f2f974996437  pnmixer-0.7.2.tar.gz"

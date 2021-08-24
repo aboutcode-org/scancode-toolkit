@@ -84,68 +84,68 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/commons-logging/commons-logging",
+      "purl": "pkg:maven/commons-logging/commons-logging@1.0.4",
       "requirement": "1.0.4",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-collections/commons-collections",
+      "purl": "pkg:maven/commons-collections/commons-collections@2.1",
       "requirement": "2.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.hibernate/hibernate",
+      "purl": "pkg:maven/org.hibernate/hibernate@3.2.0.cr3",
       "requirement": "3.2.0.cr3",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/net.sf.hibernate/hibernate",
+      "purl": "pkg:maven/net.sf.hibernate/hibernate@2.1.8",
       "requirement": "2.1.8",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.servlet/servlet-api",
+      "purl": "pkg:maven/javax.servlet/servlet-api@2.4",
       "requirement": "2.4",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/junit/junit",
+      "purl": "pkg:maven/junit/junit@3.8.1",
       "requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/httpunit/httpunit",
+      "purl": "pkg:maven/httpunit/httpunit@1.6",
       "requirement": "1.6",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-httpclient/commons-httpclient",
+      "purl": "pkg:maven/commons-httpclient/commons-httpclient@3.0.1",
       "requirement": "3.0.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

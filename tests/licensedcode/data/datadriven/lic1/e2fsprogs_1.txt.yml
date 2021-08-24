@@ -1,5 +1,4 @@
 license_expressions:
-  - gpl-1.0-plus
-  - bsd-new
+  - gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit
   - gpl-2.0
   - lgpl-2.0

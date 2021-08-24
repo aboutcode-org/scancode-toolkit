@@ -1,0 +1,24 @@
+key: google-maps-tos-2018-02-07
+short_name: Google Maps Platform ToS 2018-02-07
+name: Google Maps Platform Terms of Service 2018-02-07
+category: Proprietary Free
+owner: Google
+homepage_url: https://cloud.google.com/maps-platform/terms
+spdx_license_key: LicenseRef-scancode-google-maps-tos-2018-02-07
+text_urls:
+    - https://developers.google.com/maps/terms-20180207
+minimum_coverage: 90
+ignorable_authors:
+  - the U.S. Department of State. Remove
+ignorable_copyrights:
+  - (c) Google Australia Pty Ltd.
+ignorable_holders:
+  - Google Australia Pty Ltd.
+ignorable_urls:
+  - http://developers.google.com/maps/maps-api-list
+  - http://developers.google.com/maps/terms
+  - http://www.google.com/intl/en/about/company/software-principles.html
+  - http://www.google.com/policies/privacy
+  - https://developers.google.com/products/
+  - https://www.google.com/maps
+

@@ -1,0 +1,121 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "linux-rpi",
+  "version": "5.10.43-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Linux kernel with Raspberry Pi patches",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0",
+  "declared_license": "GPL-2.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.10.tar.xz"
+      },
+      {
+        "file_name": null,
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.10.43.xz"
+      },
+      {
+        "file_name": null,
+        "url": "https://dev.alpinelinux.org/archive/rpi-patches/rpi-5.10.43-alpine.patch"
+      },
+      {
+        "file_name": "config-changes-rpi.armhf",
+        "url": null
+      },
+      {
+        "file_name": "config-changes-rpi.armv7",
+        "url": null
+      },
+      {
+        "file_name": "config-changes-rpi.aarch64",
+        "url": null
+      },
+      {
+        "file_name": "config-changes-rpi2.armhf",
+        "url": null
+      },
+      {
+        "file_name": "config-changes-rpi2.armv7",
+        "url": null
+      },
+      {
+        "file_name": "config-changes-rpi4.armv7",
+        "url": null
+      },
+      {
+        "file_name": "config-changes-rpi4.aarch64",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "linux-5.10.tar.xz",
+        "sha512": "95bc137d0cf9148da6a9d1f1a878698dc27b40f68e22c597544010a6c591ce1b256f083489d3ff45ff77753289b535135590194d88ef9f007d0ddab3d74de70e"
+      },
+      {
+        "file_name": "patch-5.10.43.xz",
+        "sha512": "fb1e6d753de74058fa0ce19f5e00b0f9edbe7538a755e322a7b9e05f5436aed9f61cfdbafe5fc5de187b5c486258d0a4441e16c55906003341ef658328cc044e"
+      },
+      {
+        "file_name": "rpi-5.10.43-alpine.patch",
+        "sha512": "7f9c39158ac6c8852edbc71366bad1dc211184440a3a4447cc2e62ca05bd980c928c0ad7dda638e0e4977fc223c17f97d29f0317173e975612a9902ba237b73c"
+      },
+      {
+        "file_name": "config-changes-rpi.armhf",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      },
+      {
+        "file_name": "config-changes-rpi.armv7",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      },
+      {
+        "file_name": "config-changes-rpi.aarch64",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      },
+      {
+        "file_name": "config-changes-rpi2.armhf",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      },
+      {
+        "file_name": "config-changes-rpi2.armv7",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      },
+      {
+        "file_name": "config-changes-rpi4.armv7",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      },
+      {
+        "file_name": "config-changes-rpi4.aarch64",
+        "sha512": "13612ed26f486a4053dc61a1d376cccf21b57f96e9359d3f3b1897458fb96dde24dfcd32f15eeec2a60e5246044d67df2d84b215b2dbb082495b08e872c735c9"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/linux-rpi@5.10.43-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

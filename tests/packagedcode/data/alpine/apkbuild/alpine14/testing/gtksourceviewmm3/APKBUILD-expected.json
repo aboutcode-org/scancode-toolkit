@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "gtksourceviewmm3",
+  "version": "3.21.3-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "C++ wrapper for the gtksourceview widget library",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "lgpl-2.1-plus",
+  "declared_license": "LGPL-2.1-or-later",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.gnome.org/sources/gtksourceviewmm/3.21/gtksourceviewmm-3.21.3.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "gtksourceviewmm-3.21.3.tar.xz",
+        "sha512": "bae4b1fc0792fee136b3be5a2514d29cc4ddc1e7ca663c090e5c15a693475fd6c80f081dd7972e53aa1a74f4ae85bc00d71438b7fb0a89d714a3e423cb5228ef"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/gtksourceviewmm3@3.21.3-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

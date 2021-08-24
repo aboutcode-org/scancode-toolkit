@@ -1,0 +1,4 @@
+license_expression: bsd-new
+is_license_text: yes
+relevance: 100
+notes: seen in https://github.com/MegEngine/MegEngine/blob/af62cf6f051255a9f9b9789b2c917ac13ae5f10e/dnn/src/x86/simd_macro/sse_helper_typedef.h#L1

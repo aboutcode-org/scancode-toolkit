@@ -4,8 +4,12 @@ Changelog
 v21.x.x (next, future)
 -----------------------
 
-Breaking API changes:
-~~~~~~~~~~~~~~~~~~~~~
+Important API changes:
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - The data structure of the JSON output is now versioned and the next version
+   is available with a new command line option. We are also documenting a new
+   and clear API policy and backward compatibility policy.
 
  - The data structure of the JSON output has changed for copyrights, authors
    and holders: we now use proper name for attributes and not a generic "value".
@@ -23,6 +27,83 @@ Breaking API changes:
    that contains each package instance that can be aggregating data from
    multiple manifests for a single package instance.
 
+ - The data structure for HTML output has been changed to include emails and urls under the 
+   "infos" object. Now HTML template will output holders, authors, emails, and 
+   urls into separate tables like "licenses" and "copyrights".
+
+Copyright detection:
+~~~~~~~~~~~~~~~~~~~~
+
+ - The data structure in the JSON is now using consistently named attributes as
+   opposed to a plain value.
+
+
+Package detection:
+~~~~~~~~~~~~~~~~~~
+
+ - Add support for OpenWRT packages.
+ - Add support for Yocto/BitBake .bb recipes.
+ - Add support to track installed files for each Package type.
+
+
+License detection:
+~~~~~~~~~~~~~~~~~~~
+
+- Unknown licenses have a new flag "is_unknown" to identify them
+  beyond just the naming convention of having "unknown" as part of their name.
+
+- Rules that match at least one unknown license have a flag "has_unknown" set
+  in the returned match results.
+
+
+Many thanks to every contributors that made this possible and in particular:
+
+- Akanksha Garg @akugarg
+- Ayan Sinha Mahapatra @AyanSinhaMahapatra
+- Jono Yang @JonoYang
+- Philippe Ombredanne @pombredanne
+
+
+
+v21.8.4
+---------
+
+This is a minor bug fix release primarily for Windows installation.
+There is no feature change.
+
+Installation:
+~~~~~~~~~~~~~~~~~~
+
+- Application installation on Windows works again. This fixes #2610
+- We now build and test app bundles on all supported Python versions: 3.6 to 3.9
+
+
+Thank you to @gunaztar for reporting the #2610 bug
+
+Documentation:
+~~~~~~~~~~~~~~~~~~
+
+- Documentation is updated to reference supported Python versions 3.6 to 3.9
+
+
+
+v21.7.30
+---------
+
+This is a minor release with several bug fixes, major performance improvements
+and support for new and improved package formats
+
+
+Many thanks to every contributors that made this possible and in particular:
+
+- Abhigya Verma @abhi27-web
+- Ayan Sinha Mahapatra @AyanSinhaMahapatra
+- Dennis Clark @DennisClark
+- Jono Yang @JonoYang
+- Mayur Agarwal @mrmayurgithub 
+- Philippe Ombredanne @pombredanne
+- Pierre Tardy @tardyp
+
 
 Outputs:
 ~~~~~~~~
@@ -31,28 +112,35 @@ Outputs:
    the JSON output
  - Add new Debian machine readable copyright output.
  - The CSV output "Resource" column has been renamed to "path".
- - The SPDX output now has the mandatory DocumentNamespace attribut per SPDX specs #2344
+ - The SPDX output now has the mandatory DocumentNamespace attribute per SPDX specs #2344
 
 
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
-
- - The data structure in the JSON is now using consistently named attributes as
-   opposed to a plain value.
 
  - The copyright detection speed has been significantly improved with the tests
    taking roughly 1/2 of the time to run. This is achieved mostly by replacing
    NLTK with a the minimal and simplified subset we need in a new library named
    pygmars.
 
+License detection:
+~~~~~~~~~~~~~~~~~~~
+
+ - Add new licenses: now tracking 1763 licenses
+ - Add new license detection rules: now tracking 29475 license detection rules
+ - We have also improved license expression parsing and processing
+
 
 Package detection:
 ~~~~~~~~~~~~~~~~~~
 
- - Add support for OpenWRT packages.
- - Add support for Yocto/BitBake .bb recipes.
+ - The Debian packages declared license detection has been significantly improved.
  - The Alpine packages declared license detection has been significantly improved.
- - Add support to track installed files for each Package type.
+ - There is new support for shell parsing and Alpine packages APKBUILD data collection.
+ - There is new support for various Windows packages detection using multiple
+   techniques including MSI, Windows registry and several more.
+ - There is new support for Distroless Debian-like installed packages.
+ - There is new support for Dart Pub package manifests.
 
 
 v21.6.7

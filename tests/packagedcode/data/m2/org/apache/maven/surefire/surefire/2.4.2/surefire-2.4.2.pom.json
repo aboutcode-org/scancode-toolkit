@@ -92,6 +92,26 @@
         "version": "1.0.1",
         "required": true
       }
+    ],
+    "dependencyManagement": [
+      {
+        "group_id": "org.apache.maven.surefire",
+        "artifact_id": "surefire-api",
+        "version": "2.4.2",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven.surefire",
+        "artifact_id": "surefire-booter",
+        "version": "2.4.2",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-utils",
+        "version": "1.4.9",
+        "required": true
+      }
     ]
   }
 }

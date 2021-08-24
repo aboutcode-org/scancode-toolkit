@@ -1,0 +1,39 @@
+# Contributor: Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
+# Maintainer: ScrumpyJack <scrumpyjack@st.ilet.to>
+pkgname=abook
+pkgver=0.6.1
+_ver=${pkgver/_pre/pre}
+pkgrel=5
+pkgdesc="Text-based addressbook designed for use with Mutt"
+url="http://abook.sourceforge.net"
+license="GPL-2.0-or-later"
+arch="all"
+makedepends="ncurses-dev readline-dev automake autoconf gettext-dev"
+subpackages="$pkgname-doc $pkgname-lang"
+source="http://$pkgname.sourceforge.net/devel/$pkgname-${_ver}.tar.gz
+	gcc6.patch"
+
+builddir="$srcdir"/$pkgname-$_ver
+prepare() {
+	default_prepare
+	aclocal && automake --add-missing && autoconf -v
+	sed 's/0.18/0.20/g' -i po/Makefile.in.in
+}
+
+build() {
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/share/man \
+		--localstatedir=/var
+	make
+}
+
+package() {
+	make DESTDIR="$pkgdir" install
+}
+
+sha512sums="993895ef2fd6d98d50db610699f8f0a28112778065ac56484373eb814afd8ab7371201fc21506c090514f4b29570ec229dc62c606ab068301152567e2c47fe66  abook-0.6.1.tar.gz
+21ab6475512ea9baae1a6509749628d6b610e96e77c64139d09697d272d66556875058e91c9b948c4ebaf65795a97d8532bae25e5d7e71cc4a20af49897cd867  gcc6.patch"

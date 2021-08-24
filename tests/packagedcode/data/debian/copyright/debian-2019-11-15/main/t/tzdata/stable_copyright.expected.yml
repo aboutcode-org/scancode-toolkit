@@ -1,4 +1,21 @@
--
--
-- public-domain
--
+primary_license:
+declared_license:
+license_expression: public-domain
+copyright:
+matches:
+  - score: '100.0'
+    start_line: 9
+    end_line: 9
+    matcher: 2-aho
+    rule_length: 5
+    matched_length: 5
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_285.RULE
+    license_expression: public-domain
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: is in the public domain.

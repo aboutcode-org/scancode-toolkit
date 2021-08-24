@@ -1,4 +1,156 @@
--
--
-- broadcom-proprietary
--
+primary_license:
+declared_license:
+license_expression: broadcom-proprietary
+copyright:
+matches:
+  - score: '100.0'
+    start_line: 4
+    end_line: 207
+    matcher: 2-aho
+    rule_length: 1764
+    matched_length: 1764
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: broadcom-proprietary_1.RULE
+    license_expression: broadcom-proprietary
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "SOFTWARE LICENSE AGREEMENT\n \n Unless you and Broadcom Corporation (“Broadcom”)\
+      \ execute a separate written\n software license agreement governing use of the accompanying\
+      \ software, this\n software is licensed to you under the terms of this Software License\
+      \ Agreement\n (“Agreement”).\n \n ANY USE, REPRODUCTION OR DISTRIBUTION OF THE SOFTWARE\
+      \ CONSTITUTES YOUR\n ACCEPTANCE OF THIS AGREEMENT.\n \n 1.\tDEFINITIONS.\n \n 1.1.\t“Broadcom\
+      \ Product” means any of the proprietary integrated circuit\n product(s) sold by Broadcom\
+      \ with which the Software was designed to be used, or\n their successors.\n \n 1.2.\t\
+      “Licensee” means you or if you are accepting on behalf of an entity\n then the entity\
+      \ and its affiliates exercising rights under, and complying with\n all of the terms of\
+      \ this Agreement.\n \n 1.3.\t“Software” shall mean that software made available by Broadcom\
+      \ to\n Licensee in binary code form with this Agreement.\n \n 2.\tLICENSE GRANT; OWNERSHIP\n\
+      \ \n 2.1.\tLicense Grants.  Subject to the terms and conditions of this Agreement,\n Broadcom\
+      \ hereby grants to Licensee a non-exclusive, non-transferable,\n royalty-free license\
+      \ (i) to use and integrate the Software in conjunction with\n any other software; and\
+      \ (ii) to reproduce and distribute the Software complete,\n unmodified and as provided\
+      \ by Broadcom, and only for use with a Broadcom\n Product.\n \n 2.2.\tRestriction on Modification.\
+      \  Licensee may not make any modifications\n to the Software.\n \n 2.3.\tRestriction on\
+      \ Distribution.  Licensee shall only distribute the\n Software under the terms of this\
+      \ Agreement and a copy of this Agreement\n accompanies such distribution.\n \n 2.4.\t\
+      Proprietary Notices.  Licensee shall not remove, efface or obscure any\n copyright or\
+      \ trademark notices from the Software.  Licensee shall include\n reproductions of the\
+      \ Broadcom copyright notice with each copy of the Software,\n except where such Software\
+      \ is embedded in a manner not readily accessible to\n the end user.  Licensee acknowledges\
+      \ that any symbols, trademarks, tradenames,\n and service marks adopted by Broadcom to\
+      \ identify the Software belong to\n Broadcom and that Licensee shall have no rights therein.\n\
+      \ \n 2.5.\tOwnership.  Broadcom shall retain all right, title and interest,\n including\
+      \ all intellectual property rights, in and to the Software.  Licensee\n hereby covenants\
+      \ that it will not assert any claim that the Software created by\n or for Broadcom infringe\
+      \ any intellectual property right owned or controlled by\n Licensee; provided however,\
+      \ the foregoing shall not apply in case the Agreement\n is terminated.\n \n 2.6.\tNo Other\
+      \ Rights Granted; Restrictions.  Apart from the license rights\n expressly set forth in\
+      \ this Agreement, Broadcom does not grant and Licensee\n does not receive any ownership\
+      \ right, title or interest nor any security\n interest or other interest in any intellectual\
+      \ property rights relating to the\n Software, nor in any copy of any part of the foregoing.\
+      \  No license is granted\n to Licensee in any human readable code of the Software (source\
+      \ code). Licensee\n shall not (i) use, license, sell or otherwise distribute the Software\
+      \ except as\n provided in this Agreement, (ii) attempt to modify in any way, reverse\n\
+      \ engineer, decompile or disassemble any portion of the Software; or (iii) use\n the Software\
+      \ or other material in violation of any applicable law or\n regulation, including but\
+      \ not limited to any regulatory agency, such as FCC,\n rules.\n \n 3.\tNO WARRANTY OR\
+      \ SUPPORT\n \n 3.1.\tNo Warranty. THE SOFTWARE IS OFFERED “AS IS,” AND BROADCOM GRANTS\
+      \ AND\n LICENSEE RECEIVES NO WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, BY STATUTE,\n\
+      \ COMMUNICATION OR CONDUCT WITH LICENSEE, OR OTHERWISE.  BROADCOM SPECIFICALLY\n DISCLAIMS\
+      \ ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A SPECIFIC\n PURPOSE OR NONINFRINGEMENT\
+      \ CONCERNING THE SOFTWARE OR ANY UPGRADES TO OR\n DOCUMENTATION FOR THE SOFTWARE.  WITHOUT\
+      \ LIMITATION OF THE ABOVE, BROADCOM\n GRANTS NO WARRANTY THAT THE SOFTWARE IS ERROR-FREE\
+      \ OR WILL OPERATE WITHOUT\n INTERRUPTION, AND GRANTS NO WARRANTY REGARDING ITS USE OR\
+      \ THE RESULTS THEREFROM\n INCLUDING, WITHOUT LIMITATION, ITS CORRECTNESS, ACCURACY OR\
+      \ RELIABILITY.\n \n 3.2.\tNo Support.  Nothing in this agreement shall obligate Broadcom\
+      \ to\n provide any support for the Software. Broadcom may, but shall be under no\n obligation\
+      \ to, correct any defects in the Software and/or provide updates to\n licensees of the\
+      \ Software.  Licensee shall make reasonable efforts to promptly\n report to Broadcom any\
+      \ defects it finds in the Software, as an aid to creating\n improved revisions of the\
+      \ Software.\n \n 3.3.\tDangerous Applications.  The Software is not designed, intended,\
+      \ or\n certified for use in components of systems intended for the operation of\n weapons,\
+      \ weapons systems, nuclear installations, means of mass transportation,\n aviation, life-support\
+      \ computers or equipment (including resuscitation\n equipment and surgical implants),\
+      \ pollution control, hazardous substances\n management, or for any other dangerous application\
+      \ in which the failure of the\n Software could create a situation where personal injury\
+      \ or death may occur. \n Licensee understands that use of the Software in such applications\
+      \ is fully at\n the risk of Licensee.\n \n 4.\tTERM AND TERMINATION\n \n 4.1.\tTermination.\
+      \  This Agreement will automatically terminate if Licensee\n fails to comply with any\
+      \ of the terms and conditions hereof. In such event,\n Licensee must destroy all copies\
+      \ of the Software and all of its component\n parts.\n \n 4.2.\tEffect Of Termination.\
+      \  Upon any termination of this Agreement, the\n rights and licenses granted to Licensee\
+      \ under this Agreement shall immediately\n terminate.\n \n 4.3.\tSurvival.  The rights\
+      \ and obligations under this Agreement which by\n their nature should survive termination\
+      \ will remain in effect after expiration\n or termination of this Agreement.\n \n 5.\t\
+      CONFIDENTIALITY\n \n 5.1.\tObligations.  Licensee acknowledges and agrees that any documentation\n\
+      \ relating to the Software, and any other information (if such other information\n is\
+      \ identified as confidential or should be recognized as confidential under the\n circumstances)\
+      \ provided to Licensee by Broadcom hereunder (collectively,\n “Confidential Information”)\
+      \ constitute the confidential and proprietary\n information of Broadcom, and that Licensee’s\
+      \ protection thereof is an essential\n condition to Licensee’s use and possession of the\
+      \ Software.  Licensee shall\n retain all Confidential Information in strict confidence\
+      \ and not disclose it to\n any third party or use it in any way except under a written\
+      \ agreement with\n terms and conditions at least as protective as the terms of this Section.\n\
+      \ Licensee will exercise at least the same amount of diligence in preserving the\n secrecy\
+      \ of the Confidential Information as it uses in preserving the secrecy of\n its own most\
+      \ valuable confidential information, but in no event less than\n reasonable diligence.\
+      \  Information shall not be considered Confidential\n Information if and to the extent\
+      \ that it: (i) was in the public domain at the\n time it was disclosed or has entered\
+      \ the public domain through no fault of\n Licensee; (ii) was known to Licensee, without\
+      \ restriction, at the time of\n disclosure as proven by the files of Licensee in existence\
+      \ at the time of\n disclosure; or (iii) becomes known to Licensee, without restriction,\
+      \ from a\n source other than Broadcom without breach of this Agreement by Licensee and\n\
+      \ otherwise not in violation of Broadcom’s rights.\n \n 5.2.\tReturn of Confidential Information.\
+      \  Notwithstanding the foregoing, all\n documents and other tangible objects containing\
+      \ or representing Broadcom\n Confidential Information and all copies thereof which are\
+      \ in the possession of\n Licensee shall be and remain the property of Broadcom, and shall\
+      \ be promptly\n returned to Broadcom upon written request by Broadcom or upon termination\
+      \ of\n this Agreement.\n \n 6.\tLIMITATION OF LIABILITY TO THE MAXIMUM EXTENT PERMITTED\
+      \ BY LAW, IN NO\n EVENT SHALL BROADCOM OR ANY OF BROADCOM’S LICENSORS HAVE ANY LIABILITY\
+      \ FOR ANY\n INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES, HOWEVER CAUSED AND\
+      \ ON\n ANY THEORY OF LIABILITY, WHETHER FOR BREACH OF CONTRACT, TORT (INCLUDING\n NEGLIGENCE)\
+      \ OR OTHERWISE, ARISING OUT OF THIS AGREEMENT, INCLUDING BUT NOT\n LIMITED TO LOSS OF\
+      \ PROFITS, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE\n POSSIBILITY OF SUCH DAMAGES. IN\
+      \ NO EVENT WILL BROADCOM’S LIABILITY WHETHER IN\n CONTRACT, TORT (INCLUDING NEGLIGENCE),\
+      \ OR OTHERWISE, EXCEED THE AMOUNT PAID BY\n LICENSEE FOR SOFTWARE UNDER THIS AGREEMENT.\
+      \  THESE LIMITATIONS SHALL APPLY\n NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF\
+      \ ANY LIMITED REMEDY.\n \n 7.\tMISCELLANEOUS\n \n 7.1.\tExport Regulations. YOU UNDERSTAND\
+      \ AND AGREE THAT THE SOFTWARE IS\n SUBJECT TO UNITED STATES AND OTHER APPLICABLE EXPORT-RELATED\
+      \ LAWS AND\n REGULATIONS AND THAT YOU MAY NOT EXPORT, RE-EXPORT OR TRANSFER THE SOFTWARE\
+      \ OR\n ANY DIRECT PRODUCT OF THE SOFTWARE EXCEPT AS PERMITTED UNDER THOSE LAWS.\n WITHOUT\
+      \ LIMITING THE FOREGOING, EXPORT, RE-EXPORT OR TRANSFER OF THE SOFTWARE\n TO CUBA, IRAN,\
+      \ NORTH KOREA, SUDAN AND SYRIA IS PROHIBITED.\n \n 7.2\tAssignment. This Agreement shall\
+      \ be binding upon and inure to the\n benefit of the parties and their respective successors\
+      \ and assigns, provided,\n however that Licensee may not assign this Agreement or any\
+      \ rights or obligation\n hereunder, directly or indirectly, by operation of law or otherwise,\
+      \ without\n the prior written consent of Broadcom, and any such attempted assignment shall\n\
+      \ be void.  Notwithstanding the foregoing, Licensee may assign this Agreement to\n a successor\
+      \ to all or substantially all of its business or assets to which this\n Agreement relates\
+      \ that is not a competitor of Broadcom.\n \n 7.3.\tGoverning Law; Venue.  This Agreement\
+      \ shall be governed by the laws of\n California without regard to any conflict-of-laws\
+      \ rules, and the United Nations\n Convention on Contracts for the International Sale of\
+      \ Goods is hereby excluded.\n The sole jurisdiction and venue for actions related to the\
+      \ subject matter\n hereof shall be the state and federal courts located in the County\
+      \ of Orange,\n California, and both parties hereby consent to such jurisdiction and venue.\n\
+      \ \n 7.4.\tSeverability.  All terms and provisions of this Agreement shall, if\n possible,\
+      \ be construed in a manner which makes them valid, but in the event any\n term or provision\
+      \ of this Agreement is found by a court of competent\n jurisdiction to be illegal or unenforceable,\
+      \ the validity or enforceability of\n the remainder of this Agreement shall not be affected\
+      \ if the illegal or\n unenforceable provision does not materially affect the intent of\
+      \ this\n Agreement.  If the illegal or unenforceable provision materially affects the\n\
+      \ intent of the parties to this Agreement, this Agreement shall become\n terminated.\n\
+      \ \n 7.5.\tEquitable Relief.  Licensee hereby acknowledges that its breach of this\n Agreement\
+      \ would cause irreparable harm and significant injury to Broadcom that\n may be difficult\
+      \ to ascertain and that a remedy at law would be inadequate.\n Accordingly, Licensee agrees\
+      \ that Broadcom shall have the right to seek and\n obtain immediate injunctive relief\
+      \ to enforce obligations under the Agreement\n in addition to any other rights and remedies\
+      \ it may have.\n \n 7.6.\tWaiver.  The waiver of, or failure to enforce, any breach or\
+      \ default\n hereunder shall not constitute the waiver of any other or subsequent breach\
+      \ or\n default.\n \n 7.7.\tEntire Agreement.  This Agreement sets forth the entire Agreement\n\
+      \ between the parties and supersedes any and all prior proposals, agreements and\n representations\
+      \ between them, whether written or oral concerning the Software.\n This Agreement may\
+      \ be changed only by mutual agreement of the parties in\n writing."

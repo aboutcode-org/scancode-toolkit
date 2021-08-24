@@ -1,0 +1,7 @@
+* Do not distribute modified versions without my permission.
+     * Do not remove or alter this notice or any other copyright notice.
+     * If you use this in your own program you must distribute source code.
+     * Do not use any of this in a commercial product.
+  See the accompanying file "COPYING" in UnZip source and binary distributions
+  for further information.  This code is NOT used unless USE_SMITH_CODE is
+  explicitly defined (==> COPYRIGHT_CLEAN is not defined).

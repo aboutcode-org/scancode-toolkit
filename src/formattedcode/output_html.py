@@ -155,8 +155,6 @@ def generate_output(results, version, template):
     LICENSES = 'licenses'
     COPYRIGHTS = 'copyrights'
     PACKAGES = 'packages'
-    URLS = 'urls'
-    EMAILS = 'emails'
 
     # Create a flattened data dict keyed by path
     for scanned_file in results:
@@ -197,7 +195,7 @@ def generate_output(results, version, template):
         # denormalizing the list here??
         converted_infos[path] = {}
         for name, value in scanned_file.items():
-            if name in (LICENSES, PACKAGES, COPYRIGHTS, EMAILS, URLS):
+            if name in (LICENSES, PACKAGES, COPYRIGHTS):
                 continue
             converted_infos[path][name] = value
 

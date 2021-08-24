@@ -293,6 +293,7 @@
           "short_name": "GPL 3.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
@@ -309,11 +310,13 @@
             "licenses": [
               "gpl-3.0-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "1-hash",
             "rule_length": 102,
             "matched_length": 102,
@@ -520,6 +523,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -536,11 +540,13 @@
             "licenses": [
               "gpl-2.0-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 102,
             "matched_length": 102,

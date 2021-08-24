@@ -22,8 +22,6 @@ are considering, what the long-term goals are.
 
 - :ref:`roadmap`
 - `Milestones <https://github.com/nexB/scancode-toolkit/milestones>`_
-- `v3.1 <https://github.com/nexB/scancode-toolkit/milestone/11>`_
-- `v3.2 <https://github.com/nexB/scancode-toolkit/milestone/12>`_
 - `Documentation Roadmap <https://github.com/nexB/scancode-toolkit/issues/1824>`_
 
 .. _good_first_issue:

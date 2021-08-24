@@ -7,15 +7,13 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import io
 from os import path
 from os import walk
 
-from debian_inspector.copyright import DebianCopyright
-
+import saneyaml
 from commoncode.testcase import FileBasedTesting
 from commoncode import text
-import saneyaml
+from debian_inspector.copyright import DebianCopyright
 
 from packagedcode import debian_copyright
 
@@ -41,50 +39,58 @@ def check_expected_parse_copyright_file(
         simplify_licenses = True
         unique_copyrights = True
 
-    dc = debian_copyright.parse_copyright_file(location=test_loc, check_consistency=False)
+    dc = debian_copyright.parse_copyright_file(
+        location=test_loc,
+        check_consistency=False,
+    )
+
     declared_license = dc.get_declared_license(
         filter_duplicates=filter_duplicates,
         skip_debian_packaging=skip_debian_packaging,
     )
+
     license_expression = dc.get_license_expression(
         skip_debian_packaging=skip_debian_packaging,
         simplify_licenses=simplify_licenses,
-    )
-    copyright = dc.get_copyright(
+    ).strip()
+
+    copyrght = dc.get_copyright(
         skip_debian_packaging=skip_debian_packaging,
         unique_copyrights=unique_copyrights,
-    )
+    ).strip()
+
     primary_license = dc.primary_license
 
-    parsed = primary_license, declared_license, license_expression, copyright
+    match_details = list(map(get_match_details, dc.license_matches))
 
-    matches = dc.license_matches
-    matches = [lm for lm in matches if 'unknown-license-reference' == lm.rule.license_expression]
-    match_details = list(map(get_match_details, matches))
+    results = {
+        'primary_license': primary_license,
+        'declared_license': declared_license,
+        'license_expression': license_expression,
+        'copyright': copyrght,
+        'matches': match_details,
+    }
 
-    result = saneyaml.dump(list(parsed))
     if regen:
-        with io.open(expected_loc, 'w', encoding='utf-8') as reg:
-            if 'unknown-license-reference' in license_expression:
-                parsed = declared_license, license_expression, copyright, match_details
-                result = saneyaml.dump(list(parsed))
-                reg.write(result)
-            else:
-               reg.write(result) 
+        expected = results
+        with open(expected_loc, 'w') as res:
+            res.write(saneyaml.dump(results))
+    else:
+        with open(expected_loc) as ex:
+            expected = saneyaml.load(ex.read())
 
-    with io.open(expected_loc, encoding='utf-8') as ex:
-        expected = ex.read()
+    if (
+        saneyaml.dump(results) != saneyaml.dump(expected)
+        or 'unknown-license-reference' in license_expression
+    ):
 
-    if result != expected or 'unknown-license-reference' in license_expression:
-
-        expected = '\n'.join([
+        expected = [
             'file://' + test_loc,
             'file://' + expected_loc,
             expected,
-            saneyaml.dump(match_details),
-        ])
+        ]
 
-        assert result == expected
+        assert saneyaml.dump([results]) == saneyaml.dump(expected)
 
 
 def get_match_details(match):
@@ -92,14 +98,14 @@ def get_match_details(match):
     Return a mapping of match details for LicenseMatch ``match``.
     """
     details = {}
-    details['score'] = match.score()
-    details['start_line'] = match.start_line
-    details['end_line'] = match.end_line
+    details['score'] = str(match.score())
+    details['start_line'] = str(match.start_line)
+    details['end_line'] = str(match.end_line)
     details['matcher'] = match.matcher
-    details['rule_length'] = match.rule.length
-    details['matched_length'] = match.len()
-    details['match_coverage'] = match.coverage()
-    details['rule_relevance'] = match.rule.relevance
+    details['rule_length'] = str(match.rule.length)
+    details['matched_length'] = str(match.len())
+    details['match_coverage'] = str(match.coverage())
+    details['rule_relevance'] = str(match.rule.relevance)
     details['identifier'] = match.rule.identifier
     details['license_expression'] = match.rule.license_expression
     details['is_license_text'] = match.rule.is_license_text
@@ -107,7 +113,7 @@ def get_match_details(match):
     details['is_license_reference'] = match.rule.is_license_reference
     details['is_license_tag'] = match.rule.is_license_tag
     details['is_license_intro'] = match.rule.is_license_intro
-    details['matched_text'] = match.matched_text(whole_lines=False, highlight=True)
+    details['matched_text'] = match.matched_text(whole_lines=False, highlight=True).strip()
     return details
 
 
@@ -139,7 +145,11 @@ def create_test_function(
     # closure on the test params
     def test_func(self):
         check_expected_parse_copyright_file(
-            test_loc, expected_loc, with_details=with_details, regen=regen)
+            test_loc,
+            expected_loc,
+            with_details=with_details,
+            regen=regen,
+        )
 
     # set a proper function name to display in reports and use in discovery
     if isinstance(test_name, bytes):
@@ -291,7 +301,7 @@ class TestEnhancedDebianCopyright(FileBasedTesting):
         edebian_copyright = debian_copyright.EnhancedDebianCopyright(debian_copyright=DebianCopyright.from_file(test_file))
         duplicate_paras = edebian_copyright.duplicate_license_paragraphs
         assert len(duplicate_paras) == 1
-        duplicate_paras[0].license.name == "GPL-2+"
+        assert duplicate_paras[0].license.name == "GPL-2+"
 
     def test_if_structured_copyright_file(self):
         test_file = self.get_test_loc("debian-slim-2021-04-07/usr/share/doc/libhogweed6/copyright")

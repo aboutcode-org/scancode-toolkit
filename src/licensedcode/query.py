@@ -198,7 +198,7 @@ class Query(object):
         # True if the query is binary
         self.is_binary = False
 
-        # kown token ids array
+        # known token ids array
         self.tokens = []
 
         # index of known position -> line number where the pos is the list index

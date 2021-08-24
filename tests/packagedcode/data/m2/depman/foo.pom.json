@@ -1,0 +1,163 @@
+{
+  "model_version": "4.0.0",
+  "group_id": "org.jboss.shrinkwrap.resolver",
+  "artifact_id": "shrinkwrap-resolver-bom",
+  "version": "3.0.1",
+  "classifier": null,
+  "packaging": "pom",
+  "parent": {},
+  "name": "ShrinkWrap Resolver Bill of Materials",
+  "description": "Centralized dependencyManagement for the ShrinkWrap Resolver Project",
+  "inception_year": null,
+  "url": "http://www.jboss.org/shrinkwrap",
+  "organization_name": null,
+  "organization_url": null,
+  "licenses": [
+    {
+      "name": "Apache License, Version 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+      "comments": null,
+      "distribution": null
+    }
+  ],
+  "developers": [
+    {
+      "id": "jboss.org",
+      "name": "JBoss.org Community",
+      "email": null,
+      "url": null,
+      "organization": "JBoss.org",
+      "organization_url": "http://www.jboss.org",
+      "roles": []
+    }
+  ],
+  "contributors": [],
+  "modules": [],
+  "mailing_lists": [],
+  "scm": {
+    "connection": "scm:git:git://github.com/shrinkwrap/shrinkwrap.git",
+    "developer_connection": null,
+    "url": "https://github.com/shrinkwrap/shrinkwrap",
+    "tag": "3.0.1"
+  },
+  "issue_management": {},
+  "ci_management": {},
+  "distribution_management": {
+    "download_url": null,
+    "site": {},
+    "repository": {
+      "id": "jboss-releases-repository",
+      "name": "JBoss Releases Repository",
+      "url": "${jboss.releases.repo.url}"
+    },
+    "snapshot_repository": {
+      "id": "jboss-snapshots-repository",
+      "name": "JBoss Snapshots Repository",
+      "url": "${jboss.snapshots.repo.url}"
+    }
+  },
+  "repositories": [],
+  "plugin_repositories": [],
+  "dependencies": {
+    "import": [
+      {
+        "group_id": "org.apache.maven",
+        "artifact_id": "maven",
+        "version": "3.3.9",
+        "required": true
+      }
+    ],
+    "dependencyManagement": [
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-api",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-spi",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-api-maven",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-spi-maven",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-impl-maven",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-api-maven-archive",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-impl-maven-archive",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-depchain",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-gradle-depchain",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-maven-plugin",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-api-gradle-embedded-archive",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-impl-gradle-embedded-archive",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-api-maven-embedded",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.jboss.shrinkwrap.resolver",
+        "artifact_id": "shrinkwrap-resolver-impl-maven-embedded",
+        "version": "3.0.1",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven",
+        "artifact_id": "maven",
+        "version": "3.3.9",
+        "required": true
+      }
+    ]
+  }
+}

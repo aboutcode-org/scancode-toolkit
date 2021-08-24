@@ -29,6 +29,7 @@
           "short_name": "LGPL 2.1",
           "category": "Copyleft Limited",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
           "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
@@ -45,11 +46,13 @@
             "licenses": [
               "lgpl-2.1"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 4,
             "matched_length": 4,

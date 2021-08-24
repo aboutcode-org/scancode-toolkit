@@ -1,0 +1,111 @@
+[
+  {
+    "pos": 0,
+    "type": [
+      "Text"
+    ],
+    "value": "cat"
+  },
+  {
+    "pos": 3,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 4,
+    "type": [
+      "Text"
+    ],
+    "value": "<<-EOF"
+  },
+  {
+    "pos": 10,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 11,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "  "
+  },
+  {
+    "pos": 13,
+    "type": [
+      "Text"
+    ],
+    "value": "Hello"
+  },
+  {
+    "pos": 18,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 19,
+    "type": [
+      "Text"
+    ],
+    "value": "world"
+  },
+  {
+    "pos": 24,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": " "
+  },
+  {
+    "pos": 25,
+    "type": [
+      "Text"
+    ],
+    "value": "$PATH"
+  },
+  {
+    "pos": 30,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  },
+  {
+    "pos": 31,
+    "type": [
+      "Text",
+      "WS"
+    ],
+    "value": "  "
+  },
+  {
+    "pos": 33,
+    "type": [
+      "Text"
+    ],
+    "value": "EOF"
+  },
+  {
+    "pos": 36,
+    "type": [
+      "Text",
+      "WS",
+      "LF"
+    ],
+    "value": "\n"
+  }
+]

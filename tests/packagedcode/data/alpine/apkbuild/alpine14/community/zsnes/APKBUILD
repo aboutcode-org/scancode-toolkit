@@ -1,0 +1,62 @@
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+pkgname=zsnes
+pkgver=1.51
+pkgrel=11
+pkgdesc="Super Nintendo emulator"
+url="http://www.zsnes.com/"
+arch="x86"
+license="GPL-2.0"
+makedepends="sdl-dev libpng-dev ncurses-dev mesa-dev automake autoconf nasm"
+subpackages="$pkgname-doc"
+source="https://downloads.sourceforge.net/sourceforge/zsnes/zsnes151src.tar.bz2
+	$pkgname.desktop
+	zsnes.patch
+	zsnes-1.51-CC-quotes.patch
+	zsnes-1.51-depbuild.patch
+	zsnes-libpng15.patch
+	zsnes_icon.png
+	zsnes-1.51-gcc-10.patch
+	"
+
+builddir="$srcdir/${pkgname}_${pkgver%.*}_${pkgver#*.}"
+
+prepare() {
+	default_prepare
+
+	update_config_sub
+	cd "$builddir"/src
+	aclocal && autoconf
+}
+
+build() {
+	cd "$builddir"/src
+	CFLAGS="$CFLAGS -no-pie -fcommon" \
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--mandir=/usr/share/man \
+		x_libraries=/usr/lib \
+		force_arch=i586 \
+		--enable-release
+	make makefile.dep
+	make
+}
+
+package() {
+	cd "$builddir"/src
+	make DESTDIR="$pkgdir" install
+	install -Dm644 "$srcdir"/zsnes.desktop \
+		"$pkgdir"/usr/share/applications/zsnes.desktop
+	install -Dm644 "$srcdir"/zsnes_icon.png \
+		"$pkgdir"/usr/share/pixmaps/zsnes_icon.png
+	mv "$pkgdir"/usr/man "$pkgdir"/usr/share
+}
+sha512sums="b10373cf81b201a33dc60c728431d4f69d36de31fcf6f137b623ea206a2998f722dcd6132daec1d0bf14a05ae52f3ee9ecee4334517039be554db85c9f7b8274  zsnes151src.tar.bz2
+2a6462596b62c0bfc381f3ce63df3bbcc7724cea3514a8efc77cc8e544bcacdf4d169b245ef36c8e692564371446425e6eb2074f637c8408ca2c92e2c4717868  zsnes.desktop
+30cf826e1a818f16c82d4f45e3b90c9a3a9ea47638b31e92879d8d97c5b4db9271e62b6d7966b58c5c2fbdf964345224ddcacee877ef4d8e3f0df252a13dbee6  zsnes.patch
+ff6ad20827b2b6346a68a1c07e67761d71e0f7777e1c213d93c6c9e08a71839ee4d17edcf93e4bc277b25df99a665378cdc3a0ff3542102a0597de614bb0e800  zsnes-1.51-CC-quotes.patch
+0f119725ad0b4d361c0cd34e9e8d9321c82c36395fee472405b0564a379d51b7b4c4a7e0a7d9dc2591ba947fbd633e3ce4ef5d9ca60c4a98c96d7f4dd05bc8ae  zsnes-1.51-depbuild.patch
+84d554e6422c28646b8a4c89048d0abe2062f90feaad1512e8e780acc8d438eecd65d88dd222fd94d434303d73f6633cf0a79a98b14f43b765c6a74cad010ec7  zsnes-libpng15.patch
+50a3392de384f3279ec2c8aa0d7e4cedca4b0ff0b8dc6b1b265a84d8e5d91589b23fa52ae0f083c93e638ee9a785b2f18636de6146145dc09d13174bef2511f6  zsnes_icon.png
+2c8759b6963cf5765234c513c80b0e6abc9a007d58f299bb91c34d33d8d13675affaa8828835bd1fe272dc81d8d85a17553ff4f2ca7d29e0de4fc96dc3b0dddb  zsnes-1.51-gcc-10.patch"

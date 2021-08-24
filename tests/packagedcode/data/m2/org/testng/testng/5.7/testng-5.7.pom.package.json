@@ -34,36 +34,36 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/ant/ant",
+      "purl": "pkg:maven/ant/ant@1.6.5",
       "requirement": "1.6.5",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/junit/junit",
+      "purl": "pkg:maven/junit/junit@3.8.1",
       "requirement": "3.8.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/qdox/qdox",
+      "purl": "pkg:maven/qdox/qdox@1.6.1",
       "requirement": "1.6.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.beanshell/bsh",
+      "purl": "pkg:maven/org.beanshell/bsh@2.0b4",
       "requirement": "2.0b4",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

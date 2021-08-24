@@ -16,13 +16,12 @@ Prerequisites
 -------------
 
 Before installing ScanCode make sure you have  installed these prerequisites.
-The main one is a Python interpreter.
-Python 3.6 is required for the standard installation.
+The main one is to have Python installed version 3.6, 3.7, 3.8 or 3.9.
 
 - For Linux(Ubuntu): ``sudo apt install python3.6-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev``
-- For MacOS: Install Python 3.6.8 from https://www.python.org/ftp/python/3.6.8/python-3.6.8-macosx10.9.pkg
-- For Windows: Install Python 3.6.8 from https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe
-- For FreeBSD: (this ineeds to be documented)
+- For MacOS: Install Python 3.x from https://www.python.org/
+- For Windows: Install Python 3.x from https://www.python.org/  using the 64 bits amd64 variant
+- For FreeBSD: (this needs to be documented)
 
 Refer `Prerequisites <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#prerequisites>`_
 for detailed information on all different operating systems and Python versions.
@@ -46,9 +45,9 @@ Use a release download and install as an application
 Advanced installation: pip install a Python PyPI package
 --------------------------------------------------------
 
-- Create a virtual environment for Python 3.6 (of higher) and activate it::
+- Create a virtual environment for Python 3.x and activate it::
 
-    virtualenv -p /usr/bin/python3.6 venv-scancode && source venv-scancode/bin/activate
+    virtualenv -p python3 venv-scancode && source venv-scancode/bin/activate
 
 - Run ``pip install scancode-toolkit[full]``
 

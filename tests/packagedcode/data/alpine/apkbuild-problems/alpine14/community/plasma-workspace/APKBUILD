@@ -1,0 +1,112 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=plasma-workspace
+pkgver=5.22.0
+pkgrel=2
+pkgdesc="KDE Plasma Workspace"
+# armhf blocked by kirigami2
+# s390x blocked by kactivitymanagerd
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="(GPL-2.0-only OR GPL-3.0-only) AND LGPL-2.1-or-later AND GPL-2.0-or-later AND MIT AND LGPL-2.1-only AND LGPL-2.0-or-later AND (LGPL-2.1-only OR LGPL-3.0-only) AND LGPL-2.0-only"
+depends="
+	kactivitymanagerd
+	kded
+	kinit
+	kio-extras
+	kirigami2
+	kquickcharts
+	kwin
+	milou
+	plasma-integration
+	qt5-qtquickcontrols
+	qt5-qttools
+	qtchooser
+	tzdata
+	"
+depends_dev="
+	appstream-dev
+	baloo-dev
+	gpsd-dev
+	iso-codes-dev
+	kactivities-stats-dev
+	kcmutils-dev
+	kcoreaddons-dev
+	kcrash-dev
+	kdbusaddons-dev
+	kdeclarative-dev
+	kded-dev
+	kdelibs4support-dev
+	kdesu-dev
+	kglobalaccel-dev
+	kholidays-dev
+	ki18n-dev
+	kidletime-dev
+	kitemmodels-dev
+	kjsembed-dev
+	knewstuff-dev
+	knotifyconfig-dev
+	kpackage-dev
+	kpeople-dev
+	krunner-dev
+	kscreenlocker-dev
+	ktexteditor-dev
+	ktextwidgets-dev
+	kuserfeedback-dev
+	kwallet-dev
+	kwayland-dev
+	kwin-dev
+	layer-shell-qt-dev
+	libkscreen-dev
+	libksysguard-dev
+	networkmanager-qt-dev
+	phonon-dev
+	plasma-framework-dev
+	prison-dev
+	zlib-dev
+	"
+makedepends="$depends_dev
+	extra-cmake-modules
+	kdoctools-dev
+	libxtst-dev
+	"
+checkdepends="xvfb-run"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/plasma-workspace-$pkgver.tar.xz
+	0001-fix-kcmfontinst-install-destination.patch
+	"
+subpackages="$pkgname-dev $pkgname-libs $pkgname-doc $pkgname-lang"
+replaces="plasma-desktop<5.22"
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DPLASMA_WAYLAND_DEFAULT_SESSION=TRUE
+	cmake --build build
+}
+
+check() {
+	cd build
+	# nightcolortest requires running dbus
+	# testdesktop, lookandfeel-kcmTest, test_kio_fonts, servicerunnertest systemtraymodeltest are broken
+	# tst_triangleFilter requires plasma-workspace to be installed
+	# locationsrunnertest requires a running Wayland environment
+	CTEST_OUTPUT_ON_FAILURE=TRUE xvfb-run ctest -E "(nightcolortest|testdesktop|lookandfeel-kcmTest|test_kio_fonts|servicerunnertest|systemtraymodeltest|tst_triangleFilter|locationsrunnertest)"
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+
+	# We don't ship systemd
+	rm -r "$pkgdir"/usr/lib/systemd
+}
+sha512sums="
+fb57dde0ae5f774cb782ab305a526ce22404972197d531a2c5e6972eb6400d57b99a7ce397fd417c0c42c8de58f4c06d9e9771b64eb94f501987da910054f4af  plasma-workspace-5.22.0.tar.xz
+23ae68ad8b70e5709f8e185d021d552990a6be5b252e8358cdd7aa3834bf79afb2b2a9970bf33a0bd5a7801591e635f8490c8458ae8d24d636fc64d607bb3159  0001-fix-kcmfontinst-install-destination.patch
+"

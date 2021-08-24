@@ -1,0 +1,13 @@
+Title: Installation Database
+Subject: Python 3.9.5 Add to Path (64-bit)
+Author: Python Software Foundation
+Keywords: Installer
+Comments: This installer database contains the logic and data required to install Python 3.9.5 Add to Path (64-bit).
+Template: x64;1033
+Revision number (UUID): {33F421A1-6B08-4919-A6AB-62A429A0E739}
+Created: Mon May  3 10:41:02 2021
+Last saved: Mon May  3 10:41:02 2021
+Version: 300 (12c)
+Source: 10 (a)
+Application: Windows Installer XML Toolset (3.11.1.2318)
+Security: 2 (2)
