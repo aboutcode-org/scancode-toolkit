@@ -1,0 +1,40 @@
+The Balloon Open Hardware License (BOHL)
+Version 0.2 For Discussion
+The Text of this License is Copyright (c) 2006 2007 iTechnic Ltd
+Permission is granted to copy this license unmodified and use it to protect Open Hardware
+Designs.
+
+Preamble
+This license agreement covers hardware designed, manufactured and distributed on an open basis.
+The license outlines the Terms and Conditions placed on the use of the design. When licensing
+Open Hardware it is important to note that there is a significant distinction between Open
+Hardware and Open Software particularly with respect to both the design process and the
+replication process.
+Firstly the design and replication of hardware is different because there are intermediate steps in
+the processes that are valuable in their own right. Secondly the process of replication can involve
+considerable time, cost and expertise. For these reasons it is not appropriate to simply transfer
+licenses that have validity in the software domain (such as the GPL) to the hardware domain.
+This license is intended to establish an Open Design approach in the hardware domain while
+building in practical safeguards, which are necessary for the design and manufacture of hardware,
+where manufacturers take a financial and legal risk when replicating Open Hardware and where
+the physical product must conform to approvals if its sale is to be legal. It is also important to
+protect designers from issues of liability particularly as many designers may be working as
+individuals and therefore not protected by an employer.
+The license is written to apply to any type of hardware produced using an Open Hardware design
+process. It has originated from the Balloon Project (www.balloonboard.org) but the license can be
+freely applied to any Open Hardware.
+In order to augment the text of the license it is accompanied by Notes and Appendices. The
+notes help to provide interpretation and guidance within the text of the license and the
+appendices contain more detailed discussions about the operation of the license and detail the
+types of Manufacturing Information and Design Documentation that might be provided as a part
+of any Open Hardware Design. The notes do not form part of the License but are intended to
+clarify the intention of the license. The Appendices are intended to provide uniformity to the way
+that hardware designs are released and managed when using this license.
+{Notes occur in the text of the License between curly brackets and in italics}
+
+Purpose
+The purpose of this license is to protect the designers of the hardware from any form of litigation
+resulting from its design, manufacture, distribution or use. 
+It is also the purpose of this license to ensure that the design remains Open in the sense detailed
+in the license and that manufacturers, distributors, and users are obliged to adhere to the Open
+principles of the design and to protect their rights to access the design as specified in the license. 
