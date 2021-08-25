@@ -516,7 +516,7 @@ patterns = [
     # COPYRIGHT
     ############################################################################
 
-    # first some exceptions
+    # some exceptions
 
     # NOT a copyright Copyright.txt : treat as NN
     (r'^Copyright\.txt$', 'NN'),
@@ -580,6 +580,10 @@ patterns = [
     ############################################################################
     # JUNK are things to ignore
     ############################################################################
+
+    # path with trailing year-like are NOT a year as in
+    # Landroid/icu/impl/IDNA2003 : treat as JUNK
+    (r'^[^\\/]+[\\/][^\\/]+[\\/].*$', 'JUNK'),
 
     # Combo of many (3+) letters and punctuations groups without spaces is likely junk
     # "AEO>>,o>>'!xeoI?o?O1/4thuA/"
