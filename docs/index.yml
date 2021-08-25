@@ -11256,6 +11256,15 @@
   yml: openssh.yml
   html: openssh.html
   text: openssh.LICENSE
+- license_key: openssl-exception-agpl-3.0-monit
+  spdx_license_key: LicenseRef-scancode-openssl-exception-agpl-3.0-monit
+  other_spdx_license_keys: []
+  is_exception: yes
+  is_deprecated: no
+  json: openssl-exception-agpl-3.0-monit.json
+  yml: openssl-exception-agpl-3.0-monit.yml
+  html: openssl-exception-agpl-3.0-monit.html
+  text: openssl-exception-agpl-3.0-monit.LICENSE
 - license_key: openssl-exception-agpl-3.0-plus
   spdx_license_key: LicenseRef-scancode-openssl-exception-agpl-3.0-plus
   other_spdx_license_keys: []
@@ -14754,6 +14763,15 @@
   yml: ttf2pt1.yml
   html: ttf2pt1.html
   text: ttf2pt1.LICENSE
+- license_key: ttyp0
+  spdx_license_key: LicenseRef-scancode-ttyp0
+  other_spdx_license_keys: []
+  is_exception: no
+  is_deprecated: no
+  json: ttyp0.json
+  yml: ttyp0.yml
+  html: ttyp0.html
+  text: ttyp0.LICENSE
 - license_key: tu-berlin-2.0
   spdx_license_key: TU-Berlin-2.0
   other_spdx_license_keys: []

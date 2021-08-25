@@ -9,9 +9,13 @@ text_urls:
   - http://www.openssl.org/source/license.html
 other_urls:
   - http://h71000.www7.hp.com/doc/83final/ba554_90007/apcs02.html
+ignorable_copyrights:
+  - holder is Tim Hudson (tjh@cryptsoft.com)
 ignorable_authors:
   - Eric Young (eay@cryptsoft.com)
   - Tim Hudson (tjh@cryptsoft.com)
+ignorable_holders:
+  - Tim Hudson
 ignorable_emails:
   - eay@cryptsoft.com
   - tjh@cryptsoft.com

@@ -1,7 +1,7 @@
 key: openssl-exception-gpl-2.0-plus
 short_name: OpenSSL exception to GPL 2.0 or later
 name: OpenSSL exception to GPL 2.0 or later
-category: Copyleft Limited
+category: Copyleft
 owner: magnumripper
 homepage_url: https://github.com/magnumripper/JohnTheRipper/blob/1.8.0/doc/LICENSE
 is_exception: yes

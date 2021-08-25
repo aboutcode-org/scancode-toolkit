@@ -78,6 +78,7 @@
         "ordering": true,
         "info": true,
         "infoCallback": function(settings, start, end, max, total, pre) {
+          let show_active_link = ' (<a id="toggle-deprecated" href="#">show deprecated</a>)';
           let show_deprecated_link = ' (<a id="toggle-deprecated" href="#">show deprecated</a>)';
           return pre.replace(/entries/g, "licenses") + show_deprecated_link;
         },
