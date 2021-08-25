@@ -1,3 +1,4 @@
 license_expressions:
   - lgpl-2.0-plus WITH wxwindows-exception-3.1
-  - agpl-1.0-plus
+  - lgpl-2.0-plus WITH wxwindows-exception-3.1
+

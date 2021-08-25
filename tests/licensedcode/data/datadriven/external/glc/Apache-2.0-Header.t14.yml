@@ -6,3 +6,5 @@ notes: |
   originally expected to be detected as Apache-2.0
   with coverage of 68.8
   Example: https://github.com/donnemartin/saws
+expected_failure: yes
+
