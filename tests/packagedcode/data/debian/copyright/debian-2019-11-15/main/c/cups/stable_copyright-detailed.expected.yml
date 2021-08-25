@@ -8,8 +8,8 @@ declared_license:
   - LGPL-2.0 with AOSDL exception
   - Zlib
 license_expression: (gpl-2.0 AND gpl-1.0-plus AND gpl-2.0 AND gpl-1.0-plus AND lgpl-2.1 WITH
-  openssl-exception-lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus AND gpl-1.0-plus AND
-  lgpl-2.1 WITH openssl-exception-lgpl-2.0-plus) AND (zlib AND zlib) AND bsd-simplified
+  openssl-exception-lgpl-2.0-plus) AND (gpl-2.0 AND lgpl-2.0-plus AND lgpl-2.0 AND gpl-1.0-plus
+  AND lgpl-2.1 WITH openssl-exception-lgpl-2.0-plus) AND (zlib AND zlib) AND bsd-simplified
 copyright: |
   2007-2015, Apple Inc.
   2007-2013, Apple Inc.
@@ -146,28 +146,25 @@ matches:
 
       a. [Apple] [Inc]. explicitly allows the compilation and
       distribution of
-  - score: '59.7'
+  - score: '97.06'
     start_line: 1
-    end_line: 6
+    end_line: 3
     matcher: 3-seq
-    rule_length: 67
-    matched_length: 40
-    match_coverage: '59.7'
+    rule_length: 34
+    matched_length: 33
+    match_coverage: '97.06'
     rule_relevance: 100
-    identifier: lgpl-2.0-plus_16.RULE
-    license_expression: lgpl-2.0-plus
+    identifier: gpl-2.0_439.RULE
+    license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify it
-      under the terms of the GNU Library General Public License as published
+      This program is free software; you can redistribute it and/or modify it
+      under the [terms] of the GNU [Library] General Public License as published
       by the Free Software Foundation, version 2 of the License.
-
-      [The] [full] [text] [of] [the] [LGPL] [is] [distributed] [as] in
-      /usr/share/common-licenses/LGPL-2
   - score: '75.0'
     start_line: 5
     end_line: 5
@@ -184,6 +181,22 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: LGPL
+  - score: '100.0'
+    start_line: 6
+    end_line: 6
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0_37.RULE
+    license_expression: lgpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: LGPL-2
   - score: '100.0'
     start_line: 22
     end_line: 22

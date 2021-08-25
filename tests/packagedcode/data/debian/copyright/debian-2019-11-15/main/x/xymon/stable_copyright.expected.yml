@@ -11,8 +11,8 @@ declared_license:
   - GPL
   - Zlib
 license_expression: (gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-1.0-plus) AND (gpl-2.0-plus
-  AND gpl-1.0-plus AND gpl-2.0) AND (zlib AND (gpl-1.0-plus AND gfdl-1.2 AND gpl-2.0)) AND (gpl-1.0-plus
-  AND zlib) AND ssleay-windows AND public-domain AND bsd-new AND mit-old-style-no-advert
+  AND gpl-1.0-plus) AND (zlib AND (gpl-1.0-plus AND gpl-2.0)) AND (gpl-1.0-plus AND zlib) AND
+  ssleay-windows AND public-domain AND bsd-new AND mit-old-style-no-advert
 copyright: |
   2002-2016 Henrik Størner <henrik@hswn.dk>
   2005-2011 Henrik Størner
@@ -292,28 +292,28 @@ matches:
       On Debian GNU/Linux systems, [the] [complete] [text] [of] [the] [GNU] [General]
       [Public] [License] [version] [2] [can] [be] [found] [in]
       `/usr/share/common-licenses/GPL-
-  - score: '75.68'
+  - score: '67.5'
     start_line: 1
     end_line: 7
     matcher: 3-seq
-    rule_length: 37
-    matched_length: 28
-    match_coverage: '75.68'
+    rule_length: 40
+    matched_length: 27
+    match_coverage: '67.5'
     rule_relevance: 100
-    identifier: gpl-2.0_1009.RULE
-    license_expression: gpl-2.0
+    identifier: gpl-2.0-plus_66.RULE
+    license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      the GNU General Public License ([GPL]),
+      GNU General Public License (GPL),
       [either] [version] [2] [of] [the] [License], [or] ([at] [your] [option]) [any] [later]
       [version].
 
-      On Debian GNU/[Linux] systems, the complete text of the GNU General
-      Public License [version] [2] can be found in
+      [On] [Debian] [GNU]/[Linux] systems, the complete text of the GNU General
+      Public License version 2 can be found in
       `/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
     start_line: 1
@@ -347,27 +347,6 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: is released under the GNU General Public License (GPL).
-  - score: '59.38'
-    start_line: 1
-    end_line: 5
-    matcher: 3-seq
-    rule_length: 32
-    matched_length: '19'
-    match_coverage: '59.38'
-    rule_relevance: 100
-    identifier: gfdl-1.2_7.RULE
-    license_expression: gfdl-1.2
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      under the GNU [General] [Public] License ([GPL]).
-
-      On Debian GNU/Linux systems, the complete text of [the] [latest] [version]
-      [of] [the] [GNU] [General] [Public] License [version] [can] [be] [found] in
-      `/usr/share/common-licenses/
   - score: '62.16'
     start_line: 1
     end_line: 5

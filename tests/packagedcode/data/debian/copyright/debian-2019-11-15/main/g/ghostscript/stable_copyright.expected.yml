@@ -24,12 +24,11 @@ declared_license:
   - GPL-3+
   - GPL-2
   - Expat~SunSoft
-license_expression: (agpl-3.0 AND agpl-3.0-plus) AND agpl-3.0-plus AND bsd-new AND (agpl-3.0-plus
-  AND gpl-3.0-plus) AND lgpl-2.1 AND lgpl-2.1-plus AND freetype AND gpl-1.0-plus AND agpl-3.0
-  WITH ps-or-pdf-font-exception-20170817 AND fsf-free AND gpl-2.0-plus AND (gpl-2.0 AND gpl-1.0-plus)
-  AND zlib AND sunsoft AND mit AND ((lgpl-2.1 AND public-domain) AND public-domain) AND apache-2.0
-  AND afpl-9.0 AND isc AND other-permissive AND x11-opengroup AND public-domain AND x11-lucent
-  AND libpbm
+license_expression: (agpl-3.0 AND agpl-3.0-plus) AND agpl-3.0-plus AND bsd-new AND lgpl-2.1
+  AND lgpl-2.1-plus AND freetype AND gpl-1.0-plus AND agpl-3.0 WITH ps-or-pdf-font-exception-20170817
+  AND fsf-free AND gpl-2.0-plus AND (gpl-2.0 AND gpl-1.0-plus) AND zlib AND sunsoft AND mit
+  AND ((lgpl-2.1 AND public-domain) AND public-domain) AND apache-2.0 AND afpl-9.0 AND isc AND
+  other-permissive AND x11-opengroup AND public-domain AND x11-lucent AND libpbm
 copyright: |
   1986, Eric Gisin
   1989, Berthold K.P. Horn
@@ -1780,25 +1779,25 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: GPL Ghostscript
-  - score: '88.89'
+  - score: '97.56'
     start_line: 1
     end_line: 5
     matcher: 3-seq
-    rule_length: 45
+    rule_length: 41
     matched_length: 40
-    match_coverage: '88.89'
+    match_coverage: '97.56'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_9.RULE
-    license_expression: gpl-3.0-plus
+    identifier: agpl-3.0-plus_113.RULE
+    license_expression: agpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      GPL [Ghostscript] is free software;
+      is free software;
        you can redistribute it and/or modify
-       it under the terms the GNU [Affero] General Public License
+       it under the terms the GNU Affero General Public License
        as published by the Free Software Foundation,
        either version 3 of the License, or (at your option) any later version.
   - score: '33.0'
@@ -1839,15 +1838,15 @@ matches:
        By continuing to use, modify, or distribute this file
        you indicate that you have read the license
        and understand and accept it fully.
-  - score: '64.06'
+  - score: '63.64'
     start_line: 1
     end_line: 8
     matcher: 3-seq
-    rule_length: 64
-    matched_length: 41
-    match_coverage: '64.06'
+    rule_length: 66
+    matched_length: 42
+    match_coverage: '63.64'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_448.RULE
+    identifier: gpl-1.0-plus_447.RULE
     license_expression: gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -1856,7 +1855,7 @@ matches:
     is_license_intro: no
     matched_text: |
       Everyone is granted permission
-       to copy, modify and redistribute [GNU] [Ghostscript],
+       to copy, modify and redistribute GNU [Ghostscript],
        [but] [only] [under] [the] [conditions]
        [described] [in] [the] [GNU] General Public License.
        A copy of this license is supposed to have been given to you
@@ -1903,36 +1902,36 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: GPL Ghostscript
-  - score: '88.89'
+  - score: '97.56'
     start_line: 1
     end_line: 5
     matcher: 3-seq
-    rule_length: 45
+    rule_length: 41
     matched_length: 40
-    match_coverage: '88.89'
+    match_coverage: '97.56'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_9.RULE
-    license_expression: gpl-3.0-plus
+    identifier: agpl-3.0-plus_113.RULE
+    license_expression: agpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      GPL [Ghostscript] is free software;
+      is free software;
        you can redistribute it and/or modify it
-       under the terms the GNU [Affero] General Public License
+       under the terms the GNU Affero General Public License
        as published by the Free Software Foundation,
        either version 3 of the License, or (at your option) any later version.
-  - score: '64.06'
+  - score: '75.76'
     start_line: 1
     end_line: 8
     matcher: 3-seq
-    rule_length: 64
-    matched_length: 41
-    match_coverage: '64.06'
+    rule_length: 66
+    matched_length: 50
+    match_coverage: '75.76'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_448.RULE
+    identifier: gpl-1.0-plus_447.RULE
     license_expression: gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -1942,21 +1941,21 @@ matches:
     matched_text: |
       Everyone is granted permission
        to copy, modify and redistribute [this] [software],
-       [but] [only] [under] [the] [conditions]
-       [described] [in] [the] [GNU] General Public License.
+       but only under the conditions
+       described in the GNU General Public License.
        A copy of this license is supposed to have been given to you
        along with [this] [software]
        so you can know your rights and responsibilities.
        It should be in a file named COPYING.
-  - score: '64.06'
+  - score: '75.76'
     start_line: 1
     end_line: 8
     matcher: 3-seq
-    rule_length: 64
-    matched_length: 41
-    match_coverage: '64.06'
+    rule_length: 66
+    matched_length: 50
+    match_coverage: '75.76'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_448.RULE
+    identifier: gpl-1.0-plus_447.RULE
     license_expression: gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -1966,21 +1965,21 @@ matches:
     matched_text: |
       Everyone is granted permission
        to copy, modify and redistribute [this] [software],
-       [but] [only] [under] [the] [conditions]
-       [described] [in] [the] [GNU] General Public License.
+       but only under the conditions
+       described in the GNU General Public License.
        A copy of this license is supposed to have been given to you
        along with [this] [software]
        so you can know your rights and responsibilities.
        It should be in a file named COPYING.
-  - score: '87.5'
+  - score: '98.48'
     start_line: 3
     end_line: 12
     matcher: 3-seq
-    rule_length: 64
-    matched_length: 56
-    match_coverage: '87.5'
+    rule_length: 66
+    matched_length: 65
+    match_coverage: '98.48'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_448.RULE
+    identifier: gpl-1.0-plus_447.RULE
     license_expression: gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -1990,8 +1989,8 @@ matches:
     matched_text: |
       Everyone is granted permission
        to copy, modify and redistribute [Ghostscript],
-       [but] [only] [under] [the] [conditions]
-       [described] [in] [the] [GNU] General Public License.
+       but only under the conditions
+       described in the GNU General Public License.
        A copy of this license is supposed to have been given to you
        along with [Ghostscript]
        so you can know your rights and responsibilities.
@@ -2303,15 +2302,15 @@ matches:
        under the terms of the GNU General Public License
        as published by the Free Software Foundation;
        either version 2 of the License, or (at your option) any later version.
-  - score: '64.06'
+  - score: '75.76'
     start_line: 1
     end_line: 8
     matcher: 3-seq
-    rule_length: 64
-    matched_length: 41
-    match_coverage: '64.06'
+    rule_length: 66
+    matched_length: 50
+    match_coverage: '75.76'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_448.RULE
+    identifier: gpl-1.0-plus_447.RULE
     license_expression: gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -2321,8 +2320,8 @@ matches:
     matched_text: |
       Everyone is granted permission
        to copy, modify and redistribute [this] [software],
-       [but] [only] [under] [the] [conditions]
-       [described] [in] [the] [GNU] General Public License.
+       but only under the conditions
+       described in the GNU General Public License.
        A copy of this license is supposed to have been given to you
        along with [this] [software]
        so you can know your rights and responsibilities.

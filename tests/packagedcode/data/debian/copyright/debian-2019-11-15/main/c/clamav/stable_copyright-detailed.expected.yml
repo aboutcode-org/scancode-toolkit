@@ -703,15 +703,15 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: usr/share/common-licenses/GPL-2'.
-  - score: '58.02'
+  - score: '59.49'
     start_line: 1
     end_line: 6
     matcher: 3-seq
-    rule_length: 81
+    rule_length: 79
     matched_length: 47
-    match_coverage: '58.02'
+    match_coverage: '59.49'
     rule_relevance: 100
-    identifier: lgpl-2.0-plus_50.RULE
+    identifier: lgpl-2.0-plus_77.RULE
     license_expression: lgpl-2.0-plus
     is_license_text: no
     is_license_notice: yes

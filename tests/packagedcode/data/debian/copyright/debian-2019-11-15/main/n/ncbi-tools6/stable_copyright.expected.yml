@@ -8,8 +8,7 @@ declared_license:
   - Expat
   - GPL-2+
 license_expression: (public-domain AND us-govt-public-domain) AND boost-1.0 AND (mit-old-style-no-advert
-  AND mit-veillard-variant AND proprietary-license) AND public-domain AND flex-2.5 AND mit AND
-  gpl-2.0-plus
+  AND proprietary-license) AND public-domain AND flex-2.5 AND mit AND gpl-2.0-plus
 copyright: |
   1996-2017 NCBI
   2006 John Maddock
@@ -175,27 +174,6 @@ matches:
       [original] [MIT] [software]. M.I.T. makes no representations about the
       suitability of this software for any purpose.  It is provided "as is"
       without express or implied warranty.
-  - score: '24.29'
-    start_line: 12
-    end_line: 16
-    matcher: 3-seq
-    rule_length: 70
-    matched_length: 17
-    match_coverage: '24.29'
-    rule_relevance: 100
-    identifier: mit-veillard-variant.LICENSE
-    license_expression: mit-veillard-variant
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      express or implied [warranty].
-
-      [THIS] [SOFTWARE] [IS] [PROVIDED] ``[AS] [IS]'' [AND] [WITHOUT] [ANY] [EXPRESS] [OR] [IMPLIED]
-      WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
-      MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
   - score: '100.0'
     start_line: 23
     end_line: 29

@@ -270,15 +270,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2+'
-  - score: '97.81'
+  - score: '94.41'
     start_line: 1
     end_line: 17
     matcher: 3-seq
-    rule_length: 137
-    matched_length: 134
-    match_coverage: '97.81'
+    rule_length: 143
+    matched_length: 135
+    match_coverage: '94.41'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_28.RULE
+    identifier: gpl-2.0-plus_811.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -297,7 +297,7 @@ matches:
       GNU [Library] General Public License for more details.
 
       You should have received a copy of the GNU [Library] General Public License
-      along with this [program]; if not, write to the Free Software
+      along with this program; if not, write to the Free Software
       Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
 
       On Debian GNU/Linux systems, the complete text of the GNU [Library]
@@ -423,15 +423,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2'
-  - score: '93.38'
+  - score: '99.22'
     start_line: 1
     end_line: 17
     matcher: 3-seq
-    rule_length: 136
+    rule_length: 128
     matched_length: 127
-    match_coverage: '93.38'
+    match_coverage: '99.22'
     rule_relevance: 100
-    identifier: gpl-2.0_54.RULE
+    identifier: gpl-2.0_129.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes

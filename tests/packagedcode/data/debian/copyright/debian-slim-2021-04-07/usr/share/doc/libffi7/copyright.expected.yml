@@ -132,19 +132,19 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: usr/share/common-licenses/GPL'.
-  - score: '66.35'
+  - score: '66.0'
     start_line: 79
     end_line: 79
     matcher: 3-seq
-    rule_length: 17
+    rule_length: 16
     matched_length: 12
-    match_coverage: '70.59'
-    rule_relevance: 94
-    identifier: gpl_50.RULE
+    match_coverage: '75.0'
+    rule_relevance: 88
+    identifier: gpl-1.0-plus_450.RULE
     license_expression: gpl-1.0-plus
     is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
+    is_license_notice: no
+    is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
     matched_text: and is licensed under the GPL, see `/usr/share/common-licenses/GPL'.

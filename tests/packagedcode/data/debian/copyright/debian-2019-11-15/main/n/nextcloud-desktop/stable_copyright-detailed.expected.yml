@@ -30,10 +30,10 @@ license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0 
   AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1
   AND lgpl-2.1) AND public-domain-disclaimer AND bsd-new AND (lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1) AND (mit
-  AND mit) AND ijg AND (apache-2.0 AND lgpl-2.1) AND (mit AND mit) AND boost-1.0 AND ((gpl-3.0
-  AND gpl-3.0 AND gpl-1.0-plus AND gpl-1.0-plus AND other-copyleft AND gpl-1.0-plus AND gpl-3.0
-  AND gpl-3.0) OR (lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1)) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0)
+  AND mit) AND unknown-license-reference AND (apache-2.0 AND lgpl-2.1) AND (mit AND mit) AND
+  boost-1.0 AND ((gpl-3.0 AND gpl-3.0 AND gpl-1.0-plus AND gpl-1.0-plus AND other-copyleft AND
+  gpl-1.0-plus AND gpl-3.0 AND gpl-3.0) OR (lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1))
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0)
 copyright: |
   2006, Alexander Neundorf <neundorf@kde.org>
   2006, Andreas Schneider <asn@cryptomilk.org>
@@ -106,15 +106,15 @@ copyright: |
   2014, Daniel Molkentin <daniel@molkentin.de>
   2006-2012, Andreas Schneider <asn@cryptomilk.org>
 matches:
-  - score: '84.4'
+  - score: '85.59'
     start_line: 1
     end_line: 14
     matcher: 3-seq
-    rule_length: 109
-    matched_length: 92
-    match_coverage: '84.4'
+    rule_length: 111
+    matched_length: 95
+    match_coverage: '85.59'
     rule_relevance: 100
-    identifier: apache-2.0_922.RULE
+    identifier: apache-2.0_231.RULE
     license_expression: apache-2.0
     is_license_text: no
     is_license_notice: yes
@@ -134,7 +134,7 @@ matches:
       See the License for the specific language governing permissions and
       limitations under the License.
 
-      [On] [Debian] [systems] a [full] [copy] [of] [the] [LGPL] [2].[1] [can] [be] [found] [at]
+      On Debian systems a [full] [copy] [of] [the] [LGPL] [2].[1] [can] [be] [found] [at]
       /usr/share/common-licenses/Apache-2.0
   - score: '100.0'
     start_line: 13
@@ -227,24 +227,46 @@ matches:
       FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
       ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
       DEALINGS IN THE SOFTWARE.
-  - score: '23.68'
-    start_line: '19'
-    end_line: 20
-    matcher: 3-seq
-    rule_length: 38
-    matched_length: 9
-    match_coverage: '23.68'
+  - score: '100.0'
+    start_line: 1
+    end_line: 24
+    matcher: 5-unknown
+    rule_length: 164
+    matched_length: 164
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: ijg_10.RULE
-    license_expression: ijg
+    identifier: debian-unknown-license-reference
+    license_expression: unknown-license-reference
     is_license_text: no
-    is_license_notice: yes
+    is_license_notice: no
     is_license_reference: no
-    is_license_tag: no
+    is_license_tag: yes
     is_license_intro: no
     matched_text: |
-      AGREE
-      TO BE BOUND BY THE TERMS OF [THIS] LICENSE.
+      License: cc-by-3.0
+       Creative Commons Legal Code
+
+      Attribution 3.0 Unported
+
+      CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE
+      LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN
+      ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS
+      INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES
+      REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR
+      DAMAGES RESULTING FROM ITS USE.
+
+      License
+
+      THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
+      COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY
+      COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS
+      AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+
+      BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE
+      TO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY
+      BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS
+      CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND
+      CONDITIONS.
   - score: '100.0'
     start_line: 1
     end_line: 1

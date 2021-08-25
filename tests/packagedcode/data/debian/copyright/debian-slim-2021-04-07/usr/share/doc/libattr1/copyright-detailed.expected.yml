@@ -3,7 +3,7 @@ declared_license:
   - GPL-2+
   - LGPL-2+
 license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0)
-  AND (gpl-1.0-plus AND gpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.1-plus AND
+  AND (gpl-1.0-plus AND gpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND
   lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1)
 copyright: |
   Copyright © 2000-2007 Silicon Graphics, Inc.
@@ -121,16 +121,16 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2+'
-  - score: '99.05'
+  - score: '99.06'
     start_line: 1
     end_line: 12
     matcher: 3-seq
-    rule_length: 105
-    matched_length: 104
-    match_coverage: '99.05'
+    rule_length: 106
+    matched_length: 105
+    match_coverage: '99.06'
     rule_relevance: 100
-    identifier: lgpl-2.0-plus_184.RULE
-    license_expression: lgpl-2.0-plus
+    identifier: lgpl-2.1-plus_62.RULE
+    license_expression: lgpl-2.1-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -139,7 +139,7 @@ matches:
     matched_text: |
       This program is free software: you can redistribute it and/or modify it
       under the terms of the GNU Lesser General Public License as published by
-      the Free Software Foundation, either version 2.[1] of the License, or
+      the Free Software Foundation, either version 2.1 of the License, or
       (at your option) any later version.
 
       This program is distributed in the hope that it will be useful,
