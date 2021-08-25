@@ -68,13 +68,12 @@ def get_query_spdx_lines_test_method(test_loc , expected_loc, regen=False):
         qry = Query(location=test_loc, idx=idx)
         results = [list(l) for l in qry.spdx_lines]
         if regen:
-            wmode = 'w'
-            with open(expected_loc, wmode) as ef:
+            with open(expected_loc, 'w') as ef:
                 json.dump(results, ef, indent=2)
             expected = results
         else:
-            with open(expected_loc, 'rb') as ef:
-                expected = json.load(ef, encoding='utf-8')
+            with open(expected_loc) as ef:
+                expected = json.load(ef)
 
         assert results == expected
 
