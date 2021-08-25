@@ -1,4 +1,4 @@
-primary_license: gpl-2.0 AND gpl-2.0-plus
+primary_license: gpl-2.0 AND gpl-3.0-plus
 declared_license:
   - GPL-2
   - CC-BY-SA-3.0
@@ -16,7 +16,7 @@ declared_license:
   - Apache-2.0
   - CC-BY-SA-3.0
   - DejaVu-License
-license_expression: (gpl-2.0 AND gpl-2.0-plus) AND cc-by-sa-3.0 AND (cc-by-sa-3.0 AND gpl-2.0)
+license_expression: (gpl-2.0 AND gpl-3.0-plus) AND cc-by-sa-3.0 AND (cc-by-sa-3.0 AND gpl-2.0)
   AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1) AND boost-1.0 AND (lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1) AND bsd-new AND (bitstream AND bitstream)
   AND (apache-2.0 AND apache-2.0 AND apache-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus
@@ -59,15 +59,15 @@ matches:
     matched_length: 111
     match_coverage: '88.1'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_38.RULE
-    license_expression: gpl-2.0-plus
+    identifier: gpl-3.0-plus_323.RULE
+    license_expression: gpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify
+      This package is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License [2] as published by
       the Free Software Foundation.
 
@@ -80,7 +80,7 @@ matches:
       along with this program. If not, see <http://www.gnu.org/licenses/>
 
       On Debian systems, the complete text of the GNU General
-      Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+      Public License version [2] can be found in "/usr/share/common-licenses/GPL-
   - score: '100.0'
     start_line: 1
     end_line: 1
@@ -778,15 +778,15 @@ matches:
       dealings in this Font Software without prior written authorization
       from Tavmjong Bah. For further information, contact: tavmjong @ free
        fr.
-  - score: '65.52'
+  - score: '95.0'
     start_line: 1
     end_line: 3
     matcher: 3-seq
-    rule_length: 29
+    rule_length: '19'
     matched_length: '19'
-    match_coverage: '65.52'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: cc-by-sa-3.0_32.RULE
+    identifier: cc-by-sa-3.0_62.RULE
     license_expression: cc-by-sa-3.0
     is_license_text: no
     is_license_notice: yes
@@ -794,8 +794,8 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is licensed under the Creative Commons
-      Attribution-[Share] [Alike] 3.0 Unported license.
+      licensed under [the] Creative Commons
+      Attribution-Share Alike 3.0 Unported license.
       (http://creativecommons.org/licenses/by-sa/3.0/)
   - score: '100.0'
     start_line: 8

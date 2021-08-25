@@ -342,15 +342,15 @@ matches:
       INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
       STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '96.49'
+  - score: '94.07'
     start_line: 1
     end_line: 26
     matcher: 3-seq
-    rule_length: 228
-    matched_length: 220
-    match_coverage: '96.49'
+    rule_length: 236
+    matched_length: 222
+    match_coverage: '94.07'
     rule_relevance: 100
-    identifier: bsd-original_27.RULE
+    identifier: bsd-original_16.RULE
     license_expression: bsd-original
     is_license_text: yes
     is_license_notice: no
@@ -369,15 +369,15 @@ matches:
           and/or other materials provided with the distribution.
         - All advertising materials mentioning features or use of this software must
           display the following acknowledgement: “This product includes software
-          developed by [the] <[author](s)>.”
-        - Neither the name of [the] [author](s) [nor] [the] [names] [of] [this] [program]'s
-          [contributors] may be used to endorse or promote products derived from this
+          developed by the <[author](s)>.”
+        - Neither the name of the [author](s) [nor] [the] [names] [of] [this] [program]'s
+          contributors may be used to endorse or promote products derived from this
           software without specific prior written permission.
 
       THIS SOFTWARE IS PROVIDED BY THE [AUTHOR](S) “AS IS” AND ANY EXPRESS OR IMPLIED
       WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
       MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
-      EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+      EVENT SHALL THE [REGENTS] OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
       INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
       LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
       OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF

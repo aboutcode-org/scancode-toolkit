@@ -3,8 +3,8 @@ declared_license:
 license_expression: free-unknown AND proprietary-license AND proprietary-license AND openssl-ssleay
   AND openssl-ssleay AND openssl-ssleay AND zlib AND zlib AND public-domain AND bsd-new AND
   gary-s-brown AND other-permissive AND public-domain AND isc AND public-domain AND bsd-unmodified
-  AND (gpl-2.0 OR bsd-new) AND (gpl-2.0 OR bsd-new) AND bsd-original AND bsd-new AND bsd-new
-  AND isc
+  AND (gpl-2.0 OR bsd-new) AND (gpl-2.0 OR bsd-new) AND bsd-new AND bsd-new AND bsd-new AND
+  isc
 copyright: |
   Copyright (c) 2013-2017 Qualcomm Technologies, Inc.
   Copyright (c) 2013-2017 Qualcomm Technologies, Inc.
@@ -470,16 +470,16 @@ matches:
         * license.
         *
         * See README and COPYING for more details.
-  - score: '90.17'
+  - score: '99.06'
     start_line: 613
     end_line: 635
     matcher: 3-seq
-    rule_length: 234
+    rule_length: 213
     matched_length: 211
-    match_coverage: '90.17'
+    match_coverage: '99.06'
     rule_relevance: 100
-    identifier: bsd-original_6.RULE
-    license_expression: bsd-original
+    identifier: bsd-new_68.RULE
+    license_expression: bsd-new
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -494,14 +494,14 @@ matches:
         * 2. Redistributions in binary form must reproduce the above copyright
         *    notice, this list of conditions and the following disclaimer in the
         *    documentation and/or other materials provided with the distribution.
-        * 3. Neither the name of the [copyright] [holder] nor the names of contributors
+        * 3. Neither the name of the copyright holder nor the names of contributors
         *    may be used to endorse or promote products derived from this software
         *    without specific prior written permission.
         *
-        * THIS SOFTWARE IS PROVIDED BY THE AUTHOR(S) AND CONTRIBUTORS ``AS IS'' AND
+        * THIS SOFTWARE IS PROVIDED BY THE AUTHOR(S) AND [CONTRIBUTORS] ``AS IS'' AND
         * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
         * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-        * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR(S) OR CONTRIBUTORS BE LIABLE
+        * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR(S) OR [CONTRIBUTORS] BE LIABLE
         * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
         * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
         * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
