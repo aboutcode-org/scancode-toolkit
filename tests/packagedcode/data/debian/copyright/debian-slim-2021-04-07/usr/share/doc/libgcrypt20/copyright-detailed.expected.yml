@@ -5,7 +5,7 @@ license_expression: gpl-1.0-plus AND public-domain AND fsf-unlimited-no-warranty
   lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0-plus AND ((gpl-2.0
   AND lgpl-2.1-plus) AND other-permissive) AND bsd-new AND bsd-new AND (bsd-new OR gpl-1.0-plus)
   AND x11-xconsortium AND public-domain AND public-domain AND ocb-open-source-2013 AND ocb-open-source-2013
-  AND gpl-2.0-plus
+  AND ocb-open-source-2013 AND ocb-open-source-2013 AND gpl-2.0-plus
 copyright: |
   Copyright (c) 1989,1991-2019 Free Software Foundation, Inc.
   Copyright (c) 1994 X Consortium
@@ -469,6 +469,42 @@ matches:
     matched_text: |
       OCB is covered by several patents but may be used freely by most
          software.
+  - score: '100.0'
+    start_line: 459
+    end_line: 466
+    matcher: 2-aho
+    rule_length: 55
+    matched_length: 55
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: ocb-open-source-2013_8.RULE
+    license_expression: ocb-open-source-2013
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "License 1 — License for Open-Source Software Implementations of OCB\n   \
+      \              (Jan 9, 2013)\n \n     Under this license, you are authorized to make,\
+      \ use, and\n     distribute open-source software implementations of OCB. This\n     license\
+      \ terminates for you if you sue someone over their\n     open-source software implementation\
+      \ of OCB claiming that you have\n     a patent covering their implementation."
+  - score: '100.0'
+    start_line: 470
+    end_line: 470
+    matcher: 2-aho
+    rule_length: 8
+    matched_length: 8
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: ocb-open-source-2013_6.RULE
+    license_expression: ocb-open-source-2013
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: License for Open Source Software Implementations of OCB
   - score: '96.98'
     start_line: 475
     end_line: 540
