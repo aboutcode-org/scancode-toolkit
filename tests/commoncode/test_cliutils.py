@@ -10,39 +10,12 @@ import os
 
 import click
 click.disable_unicode_literals_warning = True
-
-from click.termui import progressbar
 from click.testing import CliRunner
 
 from commoncode.testcase import FileDrivenTesting
 from commoncode.cliutils import fixed_width_file_name
 from commoncode.cliutils import GroupedHelpCommand
 from commoncode.cliutils import PluggableCommandLineOption
-
-
-class TestUtils(FileDrivenTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-    def test_click_progressbar_with_labels(self):
-
-        # test related to https://github.com/mitsuhiko/click/issues/406
-        @click.command()
-        def mycli():
-            """Sample cmd with progress bar"""
-            click.echo('Start')
-            with progressbar(range(10), label='xyz') as it:
-                for _ in it:
-                    pass
-            click.echo('End')
-
-        runner = CliRunner()
-        result = runner.invoke(mycli)
-        assert result.exit_code == 0
-        expected = '''Start
-xyz
-End
-'''
-        assert result.output == expected
 
 
 class TestFixedWidthFilename(FileDrivenTesting):
@@ -139,10 +112,10 @@ class TestGroupedHelpCommand(FileDrivenTesting):
 
         @click.command(name='scan', cls=GroupedHelpCommand)
         @click.option(
-            '--opt', 
-            is_flag=True, 
+            '--opt',
+            is_flag=True,
             help='Help text for option',
-            help_group=CORE_GROUP, 
+            help_group=CORE_GROUP,
             cls=PluggableCommandLineOption,
         )
         def scan(opt):
