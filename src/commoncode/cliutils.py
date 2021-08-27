@@ -152,7 +152,34 @@ Try the '--help' option for help on options and arguments.'''
                     formatter.write_dl(sorted_records)
 
 
-class EnhancedProgressBar(ProgressBar):
+# overriden and copied from Click to work around Click woes for
+# https://github.com/nexB/scancode-toolkit/issues/2583
+class DebuggedProgressBar(ProgressBar):
+
+    # overriden and copied from Click to work around Click woes for
+    # https://github.com/nexB/scancode-toolkit/issues/2583
+    def make_step(self, n_steps):
+        # always increment
+        self.pos += n_steps or 1
+        super(DebuggedProgressBar, self).make_step(n_steps)
+
+    # overriden and copied from Click to work around Click woes for
+    # https://github.com/nexB/scancode-toolkit/issues/2583
+    def generator(self):
+        if self.is_hidden:
+            yield from self.iter
+        else:
+            for rv in self.iter:
+                self.current_item = rv
+                self.update(1)
+                self.render_progress()
+                yield rv
+
+            self.finish()
+            self.render_progress()
+
+
+class EnhancedProgressBar(DebuggedProgressBar):
     """
     Enhanced progressbar ensuring that nothing is displayed when the bar is hidden.
     """
@@ -205,17 +232,29 @@ BAR_WIDTH = 20
 BAR_SEP_LEN = len(' ')
 
 
-def progressmanager(iterable=None, length=None, label=None, show_eta=True,
-                    show_percent=None, show_pos=True, item_show_func=None,
-                    fill_char='#', empty_char='-', bar_template=None,
-                    info_sep=' ', width=BAR_WIDTH, file=None, color=None,  # NOQA
-                    verbose=False):
-
+def progressmanager(
+    iterable=None,
+    length=None,
+    fill_char='#',
+    empty_char='-',
+    bar_template=None,
+    info_sep=' ',
+    show_eta=False,
+    show_percent=False,
+    show_pos=True,
+    item_show_func=None,
+    label=None,
+    file=None,
+    color=None,  # NOQA
+    update_min_steps=0,
+    width=BAR_WIDTH,
+    verbose=False,
+):
     """
     Return an iterable context manager showing progress as a progress bar
     (default) or item-by-item log (if verbose is True) while iterating.
 
-    Its arguments are similar to Click.termui.progressbar with these new
+    It's arguments are similar to Click.termui.progressbar with these new
     arguments added at the end of the signature:
 
     :param verbose:  if True, display a progress log. Otherwise, a progress bar.
@@ -224,14 +263,27 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
         progress_class = ProgressLogger
     else:
         progress_class = EnhancedProgressBar
-        bar_template = ('[%(bar)s]' + ' ' + '%(info)s'
-                        if bar_template is None else bar_template)
-
-    return progress_class(iterable=iterable, length=length,
-            show_eta=show_eta, show_percent=show_percent, show_pos=show_pos,
-            item_show_func=item_show_func, fill_char=fill_char,
-            empty_char=empty_char, bar_template=bar_template, info_sep=info_sep,
-            file=file, label=label, width=width, color=color)
+        bar_template = (
+            '[%(bar)s]' + ' ' + '%(info)s'
+            if bar_template is None else bar_template
+        )
+    return progress_class(
+        iterable=iterable,
+        length=length,
+        fill_char=fill_char,
+        empty_char=empty_char,
+        bar_template=bar_template,
+        info_sep=info_sep,
+        show_eta=show_eta,
+        show_percent=show_percent,
+        show_pos=show_pos,
+        item_show_func=item_show_func,
+        label=label,
+        file=file,
+        color=color,
+        update_min_steps=update_min_steps,
+        width=width,
+    )
 
 
 def fixed_width_file_name(path, max_length=25):
@@ -414,7 +466,6 @@ class PluggableCommandLineOption(click.Option):
     def get_help_record(self, ctx):
         if not self.hidden:
             return click.Option.get_help_record(self, ctx)
-
 
 
 def validate_option_dependencies(ctx):
