@@ -9,7 +9,7 @@ cffi==1.14.5
 chardet==4.0.0
 click==8.0.1
 colorama==0.4.4
-commoncode==21.7.23
+commoncode==21.8.27
 construct==2.10.67
 cryptography==3.4.7
 debian-inspector==21.5.25
