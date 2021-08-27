@@ -130,7 +130,7 @@ class LicenseScanner(ScanPlugin):
 def match_reference_license(resource, codebase):
     """
     Return the ``resource`` Resource updating and saving it in place, after adding new
-    icense matches (licenses and license_expressions) following their Rule
+    license matches (licenses and license_expressions) following their Rule
     ``referenced_filenames`` if any. Return None if this is not a file Resource.
     """
     if not resource.is_file:
