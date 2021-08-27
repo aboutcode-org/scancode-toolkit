@@ -953,6 +953,10 @@ class BasicRule(object):
                     except InvalidRule as e:
                         yield f'Failed to parse and validate license_expression: {e}'
 
+            if self.referenced_filenames:
+                if len(set(self.referenced_filenames)) != len(self.referenced_filenames):
+                    yield 'referenced_filenames cannot contain duplicates.'
+
     def license_keys(self, unique=True):
         """
         Return a list of license keys for this rule.
