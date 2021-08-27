@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "libksysguard",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "KDE system monitor library",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "lgpl-2.1-plus AND (gpl-2.0 OR gpl-3.0)",
+  "declared_license": "LGPL-2.1-or-later AND (GPL-2.0-only OR GPL-3.0-only)",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/stable/plasma/5.22.0/libksysguard-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "libksysguard-5.22.0.tar.xz",
+        "sha512": "87630a8d62ec172e57fc15b51221b66536e74aa8999cc1a2749738ded16922a3c89cd13697b7168ac84af3eee7a03a49afba164b3ce51a33c8900648b9377f2e"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/libksysguard@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

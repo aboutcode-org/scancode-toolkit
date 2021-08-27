@@ -90,6 +90,7 @@
           "short_name": "MIT License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "MIT",
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
@@ -106,11 +107,13 @@
             "licenses": [
               "mit"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "1-hash",
             "rule_length": 161,
             "matched_length": 161,
@@ -198,6 +201,7 @@
           "short_name": "MIT License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "MIT",
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
@@ -214,11 +218,13 @@
             "licenses": [
               "mit"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
@@ -237,7 +243,7 @@
         {
           "value": "Alexander Plavinski <alexander.plavinski@invision.de>",
           "start_line": 6,
-          "end_line": 8
+          "end_line": 6
         }
       ],
       "is_legal": false,
@@ -312,6 +318,7 @@
           "short_name": "MIT License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "MIT",
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
@@ -328,11 +335,13 @@
             "licenses": [
               "mit"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "1-spdx-id",
             "rule_length": 4,
             "matched_length": 4,

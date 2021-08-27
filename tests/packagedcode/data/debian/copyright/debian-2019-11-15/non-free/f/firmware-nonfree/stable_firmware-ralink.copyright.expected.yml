@@ -1,5 +1,49 @@
--
-- gpl-2.0-plus AND gpl-2.0
-- |
+primary_license:
+declared_license:
+license_expression: gpl-2.0-plus AND gpl-2.0
+copyright: |
   Copyright 2006-2009 Bastian Blank <waldi@debian.org>
   Copyright 2009 Ben Hutchings <ben@decadent.org.uk>
+matches:
+  - score: '100.0'
+    start_line: 6
+    end_line: 20
+    matcher: 2-aho
+    rule_length: 114
+    matched_length: 114
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_68.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "License:\n \n     This package is free software; you can redistribute it\
+      \ and/or modify\n     it under the terms of the GNU General Public License as published\
+      \ by\n     the Free Software Foundation; either version 2 of the License, or\n     (at\
+      \ your option) any later version.\n \n     This package is distributed in the hope that\
+      \ it will be useful,\n     but WITHOUT ANY WARRANTY; without even the implied warranty\
+      \ of\n     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n     GNU General\
+      \ Public License for more details.\n \n     You should have received a copy of the GNU\
+      \ General Public License\n     along with this package; if not, write to the Free Software\n\
+      \     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA"
+  - score: '100.0'
+    start_line: 22
+    end_line: 23
+    matcher: 2-aho
+    rule_length: 24
+    matched_length: 24
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_1120.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian systems, the complete text of the GNU General
+       Public License version 2 can be found in `/usr/share/common-licenses/GPL-2'.

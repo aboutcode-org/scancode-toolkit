@@ -1,0 +1,7 @@
+license_expression: unknown
+is_license_notice: yes
+relevance: 100
+notes: This looks like an apache but is unknown and has a dead link. See https://github.com/seungyongshim/lsbeat/blob/5dada3b7a697ef3b248e57f61421e950a58382d6/LICENSE.txt
+ignorable_urls:
+  - http://www.mirero.co.kr/licenses/LICENSE-1.0
+

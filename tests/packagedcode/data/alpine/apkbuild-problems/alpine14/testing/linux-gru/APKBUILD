@@ -1,0 +1,241 @@
+# Maintainer: Milan P. Stanić <mps@arvanta.net>
+
+_flavor=gru
+pkgname=linux-${_flavor}
+# NOTE: this kernel is intended for testing
+# please resist urge to upgrade it blindly
+pkgver=5.12.10
+case $pkgver in
+	*.*.*)	_kernver=${pkgver%.*};;
+	*.*) _kernver=$pkgver;;
+esac
+pkgrel=0
+pkgdesc="Linux latest stable kernel for gru chromebooks"
+url="https://www.kernel.org"
+_depends_dev="perl gmp-dev elfutils-dev bash flex bison"
+makedepends="$_depends_dev sed installkernel bc linux-headers linux-firmware-any openssl-dev
+	diffutils findutils vboot-utils uboot-tools dtc"
+options="!strip"
+_config=${config:-config-gru.${CARCH}}
+#install=
+
+#subpackages="$pkgname-dev:_dev:$CBUILD_ARCH"
+source="https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/linux-$_kernver.tar.xz"
+case $pkgver in
+	*.*.0)	source="$source";;
+	*.*.*)	source="$source
+	https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/patch-$pkgver.xz" ;;
+esac
+
+	source="$source
+	config-gru.aarch64
+	kernel.its.gru
+	fix-gru-analogix_dp_core.patch
+	fix-rk3399-mmc-order.patch
+	"
+
+arch="aarch64"
+license="GPL-2.0"
+
+_flavors=
+for _i in $source; do
+	case $_i in
+	config-*.$CARCH)
+		_f=${_i%.$CARCH}
+		_f=${_f#config-}
+		_flavors="$_flavors ${_f}"
+		if [ "linux-$_f" != "$pkgname" ]; then
+			subpackages="$subpackages linux-${_f}::$CBUILD_ARCH linux-${_f}-dev:_dev:$CBUILD_ARCH"
+		fi
+		;;
+	esac
+done
+
+_carch=${CARCH}
+case "$_carch" in
+aarch64*) _carch="arm64" ;;
+arm*) _carch="arm" ;;
+esac
+
+prepare() {
+	local _patch_failed=
+	cd "$srcdir"/linux-$_kernver
+	case $pkgver in
+		*.*.0);;
+		*)
+		msg "Applying patch-$pkgver.xz"
+		unxz -c < "$srcdir"/patch-$pkgver.xz | patch -p1 -N ;;
+	esac
+
+	# first apply patches in specified order
+	for i in $source; do
+		case $i in
+		*.patch)
+			msg "Applying $i..."
+			if ! patch -s -p1 -N -i "$srcdir"/$i; then
+				echo $i >>failed
+				_patch_failed=1
+			fi
+			;;
+		esac
+	done
+
+	if ! [ -z "$_patch_failed" ]; then
+		error "The following patches failed:"
+		cat failed
+		return 1
+	fi
+
+	# remove localversion from patch if any
+	rm -f localversion*
+	oldconfig
+}
+
+oldconfig() {
+	for i in $_flavors; do
+		local _config=config-$i.${CARCH}
+		local _builddir="$srcdir"/build-$i.$CARCH
+		mkdir -p "$_builddir"
+		echo "-$pkgrel-$i" > "$_builddir"/localversion-alpine \
+			|| return 1
+
+		cp "$srcdir"/$_config "$_builddir"/.config
+		make -C "$srcdir"/linux-$_kernver \
+			O="$_builddir" \
+			ARCH="$_carch" \
+			listnewconfig oldconfig
+	done
+}
+
+build() {
+	unset LDFLAGS
+	export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
+	for i in $_flavors; do
+		cd "$srcdir"/build-$i.$CARCH
+		make ARCH="$_carch" CC="${CC:-gcc}" \
+			KBUILD_BUILD_VERSION="$((pkgrel + 1 ))-Alpine"
+	done
+}
+
+_package() {
+	local _buildflavor="$1" _outdir="$2"
+	local _abi_release=${pkgver}-${pkgrel}-${_buildflavor}
+	export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
+
+	cd "$srcdir"/build-$_buildflavor.$CARCH
+	# modules_install seems to regenerate a defect Modules.symvers on s390x. Work
+	# around it by backing it up and restore it after modules_install
+	cp Module.symvers Module.symvers.backup
+
+	mkdir -p "$_outdir"/boot "$_outdir"/lib/modules
+
+	local _install
+	case "$CARCH" in
+		arm*|aarch64) _install="zinstall dtbs_install";;
+		*) _install=install;;
+	esac
+
+	make -j1 modules_install $_install \
+		ARCH="$_carch" \
+		INSTALL_MOD_PATH="$_outdir" \
+		INSTALL_PATH="$_outdir"/boot \
+		INSTALL_DTBS_PATH="$_outdir/boot/dtbs-$_buildflavor"
+
+	cp Module.symvers.backup Module.symvers
+
+	rm -f "$_outdir"/lib/modules/${_abi_release}/build \
+		"$_outdir"/lib/modules/${_abi_release}/source
+	rm -rf "$_outdir"/lib/firmware
+
+	install -D include/config/kernel.release \
+		"$_outdir"/usr/share/kernel/$_buildflavor/kernel.release
+}
+
+# main flavor installs in $pkgdir
+package() {
+
+	_package gru "$pkgdir"
+	local _builddir="$srcdir"/build-$_flavor.$CARCH
+	cd $_builddir
+	cp $srcdir/kernel.its.gru .
+	mkimage -D "-I dts -O dtb -p 2048" -f kernel.its.gru vmlinux.uimg
+
+	dd if=/dev/zero of=bootloader.bin bs=512 count=1
+	echo "console=tty1 earlyprintk=tty1 init=/sbin/init root=PARTUUID=%U/PARTNROFF=1 rootwait rw noinitrd loglevel=7" > cmdline
+	vbutil_kernel \
+		--pack $pkgdir/boot/vmlinux.kpart-$pkgver-$pkgrel-$_flavor \
+		--version 1 \
+		--vmlinuz vmlinux.uimg \
+		--arch aarch64 \
+		--keyblock /usr/share/vboot/devkeys/kernel.keyblock \
+		--signprivate kernel_data_key.vbprivk \
+		--signprivate /usr/share/vboot/devkeys/kernel_data_key.vbprivk \
+		--config cmdline \
+		--bootloader bootloader.bin
+
+	rm cmdline bootloader.bin
+	rm $pkgdir/boot/vmlinuz-gru
+	cd $pkgdir/boot
+	ln -s vmlinux.kpart-$pkgver-$pkgrel-$_flavor vmlinux.kpart
+}
+
+_dev() {
+	local _flavor=$(echo $subpkgname | sed -E 's/(^linux-|-dev$)//g')
+	local _abi_release=${pkgver}-${pkgrel}-$_flavor
+	# copy the only the parts that we really need for build 3rd party
+	# kernel modules and install those as /usr/src/linux-headers,
+	# simlar to what ubuntu does
+	#
+	# this way you dont need to install the 300-400 kernel sources to
+	# build a tiny kernel module
+	#
+	pkgdesc="Headers and script for third party modules for $_flavor kernel"
+	depends="$_depends_dev"
+	local dir="$subpkgdir"/usr/src/linux-headers-${_abi_release}
+	export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
+
+	# first we import config, run prepare to set up for building
+	# external modules, and create the scripts
+	mkdir -p "$dir"
+	cp "$srcdir"/config-$_flavor.${CARCH} "$dir"/.config
+	echo "-$pkgrel-$_flavor" > "$dir"/localversion-alpine
+
+	make -j1 -C "$srcdir"/linux-$_kernver O="$dir" ARCH="$_carch" \
+		syncconfig prepare modules_prepare scripts
+
+	# remove the stuff that points to real sources. we want 3rd party
+	# modules to believe this is the soruces
+	rm "$dir"/Makefile "$dir"/source
+
+	# copy the needed stuff from real sources
+	#
+	# this is taken from ubuntu kernel build script
+	# http://kernel.ubuntu.com/git/ubuntu/ubuntu-zesty.git/tree/debian/rules.d/3-binary-indep.mk
+	cd "$srcdir"/linux-$_kernver
+	find .  -path './include/*' -prune \
+		-o -path './scripts/*' -prune -o -type f \
+		\( -name 'Makefile*' -o -name 'Kconfig*' -o -name 'Kbuild*' -o \
+		   -name '*.sh' -o -name '*.pl' -o -name '*.lds' -o -name 'Platform' \) \
+		-print | cpio -pdm "$dir"
+
+	cp -a scripts include "$dir"
+
+	find $(find arch -name include -type d -print) -type f \
+		| cpio -pdm "$dir"
+
+	install -Dm644 "$srcdir"/build-$_flavor.$CARCH/Module.symvers \
+		"$dir"/Module.symvers
+
+	mkdir -p "$subpkgdir"/lib/modules/${_abi_release}
+	ln -sf /usr/src/linux-headers-${_abi_release} \
+		"$subpkgdir"/lib/modules/${_abi_release}/build
+}
+
+sha512sums="
+be03b6fee1d1ea8087b09874d27c0a602c0b04fd90ad38b975bd2c8455a07e83c29b56814aaf1389e82305fae0e4c2d1701075a7f0a7295dd28149f967ec5b3d  linux-5.12.tar.xz
+df9e2b7ff789a5f92354ff046f06b92ff9e3c2eabe59e7cc806ca6372fba10555c84bf1074176beda22058fc1dcf95abec8f86e201cdb243d8df200fd2991b1f  patch-5.12.10.xz
+4b5917ba168e6e076f4be2f3ae3a8d0e2387cfdf73c39bcd7688614bdfd16860911b6ea7cc3d9b00ff659f6720958c6b61a031e8bc3aacb018e14ee9aff6468b  config-gru.aarch64
+b5a2fbc0560201b4ec1d21e890cc5290c58d0544105a5bfabfe04e76bdf54b64dc07076c40414cedb38b12687cf1ae3f773ecfcac02e3d1edd84f6ef80c951da  kernel.its.gru
+476188e5a6967fe061293a6d5b540158869f7f09eba3b0eb651bb7948003c050aa7e419c90f3135316f2ce8c1bb4a411bd3c82cde85dddbf17d971c5198893fe  fix-gru-analogix_dp_core.patch
+9ee86c1b793b0b605720412d276ef7e79766c2d86d3ac1371cd3dce94ed87652310a8938e3a5d0b4ca56c7d46eccb1a52e3f5177844b8ca3f27a9a1f09fec7f6  fix-rk3399-mmc-order.patch
+"

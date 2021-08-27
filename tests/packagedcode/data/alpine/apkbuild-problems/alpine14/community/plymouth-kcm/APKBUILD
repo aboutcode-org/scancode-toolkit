@@ -1,0 +1,54 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=plymouth-kcm
+pkgver=5.22.0
+pkgrel=0
+# armhf blocked by extra-cmake-modules
+# s390x blocked by knewstuff
+arch="all !armhf !s390x !mips64"
+url="https://invent.kde.org/plasma/plymouth-kcm"
+pkgdesc="KCM to manage the Plymouth (Boot) theme"
+license="GPL-2.0-or-later"
+depends="plymouth"
+makedepends="
+	extra-cmake-modules
+	karchive-dev
+	kcmutils
+	kconfig-dev
+	kconfigwidgets-dev
+	kdeclarative-dev
+	ki18n-dev
+	kio-dev
+	knewstuff-dev
+	plymouth-dev
+	qt5-qtbase-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/plymouth-kcm-$pkgver.tar.xz"
+subpackages="$pkgname-lang"
+options="!check" # No tests
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="
+608ae68550cf7514a16d47c8a6564badca2b620182ec2a08490a596396899e25d2bc38c0181b0359c5281d35ea8f7e498c45d1d895e20dc7504b6c933a27f850  plymouth-kcm-5.22.0.tar.xz
+"

@@ -1,0 +1,32 @@
+# Contributor: Rasmus Thomsen <oss@cogitri.dev>
+# Maintainer: Rasmus Thomsen <oss@cogitri.dev>
+pkgname=stdx-allocator
+pkgver=3.1.0_beta2
+_betanum=${pkgver/${pkgver%beta*}/}
+_pkgver=${pkgver/_$_betanum/}
+_verstring=$_pkgver-${_betanum/ta/ta.}
+pkgrel=1
+pkgdesc="Extracted std.experimental.allocator for usage via DUB"
+url="https://github.com/dlang-community/stdx-allocator"
+arch="x86_64 aarch64" # ldc
+license="BSL-1.0"
+makedepends="meson ldc ldc-runtime mir-core-dev"
+subpackages="$pkgname-dev"
+options="!check" # region.d(759) failing
+source="https://github.com/dlang-community/stdx-allocator/archive/v$_verstring/stdx-allocator-$_verstring.tar.gz"
+builddir="$srcdir/stdx-allocator-$_verstring"
+
+build() {
+	abuild-meson . output
+	meson compile ${JOBS:+-j ${JOBS}} -C output
+}
+
+check() {
+	meson test --no-rebuild -v -C output
+}
+
+package() {
+	DESTDIR="$pkgdir" meson install --no-rebuild -C output
+}
+
+sha512sums="74089666471ca23df66ace2c3d57e828fe7282344c1a0f9e14c0db13b8d842d3f60385181a3a8953fd193a1dbf6ca6828a561306636ab05c6ebe952b97993cfe  stdx-allocator-3.1.0-beta.2.tar.gz"

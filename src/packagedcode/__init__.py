@@ -7,6 +7,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import attr
+
 from packagedcode import about
 from packagedcode import bitbake
 from packagedcode import bower
@@ -21,15 +23,19 @@ from packagedcode import golang
 from packagedcode import haxe
 from packagedcode import maven
 from packagedcode import models
+from packagedcode import msi
 from packagedcode import npm
 from packagedcode import nuget
 from packagedcode import opam
 from packagedcode import phpcomposer
+from packagedcode import pubspec
 from packagedcode import pypi
 from packagedcode import readme
 from packagedcode import rpm
 from packagedcode import rubygems
 from packagedcode import win_pe
+from packagedcode import windows
+
 
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
@@ -66,7 +72,6 @@ PACKAGE_TYPES = [
     pypi.PythonPackage,
     golang.GolangPackage,
     models.CabPackage,
-    models.MsiInstallerPackage,
     models.InstallShieldPackage,
     models.NSISInstallerPackage,
     nuget.NugetPackage,
@@ -82,6 +87,9 @@ PACKAGE_TYPES = [
     win_pe.WindowsExecutable,
     readme.ReadmePackage,
     build.MetadataBzl,
+    msi.MsiInstallerPackage,
+    windows.MicrosoftUpdateManifestPackage,
+    pubspec.PubspecPackage,
 ]
 
 PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
@@ -128,20 +136,111 @@ def get_package_class(scan_data, default=models.Package):
     return ptype_class or default
 
 
-_props = frozenset([
-    'api_data_url',
-    'repository_download_url',
-    'purl',
-    'repository_homepage_url']
-)
-
-
-def get_package_instance(scan_data, properties=_props):
+def get_package_instance(scan_data):
     """
-    Given a `scan_data` native Python mapping representing a Package, return a
-    Package object instance.
+    Return a Package instance re-built from a mapping of ``scan_data`` native
+    Python data that has the structure of a scan. Known attributes that store a
+    list of objects are also "rehydrated" (such as models.Party).
+
+    The Package instance will use the Package subclass that supports the
+    provided package "type" when possible or the base Package class otherwise.
+
+    Unknown attributes provided in ``scan_data`` that do not exist as fields in
+    the Package class are kept as items in the Package.extra_data mapping.
+    An Exception is raised if an "unknown attribute" name already exists as
+    a Package.extra_data key.
     """
-    # remove computed properties from attributes
-    scan_data = {k: v for k, v in scan_data.items() if k not in properties}
+    # TODO: consider using a proper library for this such as cattrs,
+    # marshmallow, etc. or use the field type that we declare.
+
+    # Each of these are lists of class instances tracked here, which are stored
+    # as a list of mappings in scanc_data
+    list_field_types_by_name = {
+        'parties': models.Party,
+        'dependencies': models.DependentPackage,
+        'installed_files': models.PackageFile,
+    }
+
+    # these are computed attributes serialized on a package
+    # that should not be recreated when serializing
+    computed_attributes = set([
+        'purl',
+        'repository_homepage_url',
+        'repository_download_url',
+        'api_data_url'
+    ])
+
+    # re-hydrate lists of typed objects
     klas = get_package_class(scan_data)
-    return klas(**scan_data)
+    existing_fields = attr.fields_dict(klas)
+
+    extra_data = scan_data.get('extra_data', {}) or {}
+    package_data = {}
+
+    for key, value in scan_data.items():
+        if not value or key in computed_attributes:
+            continue
+
+        field = existing_fields.get(key)
+
+        if not field:
+            if key not in extra_data:
+                # keep unknown field as extra data
+                extra_data[key] = value
+                continue
+            else:
+                raise Exception(
+                    f'Invalid scan_data with duplicated key: {key}={value!r} '
+                    f'present both as attribute AND as extra_data: '
+                    f'{key}={extra_data[key]!r}'
+                )
+
+        list_field_type = list_field_types_by_name.get(key)
+        if not list_field_type:
+            # this is a plain known field
+            package_data[key] = value
+            continue
+
+        # Since we have a list_field_type, value must be a list of mappings:
+        # we transform it in a list of objects.
+
+        if not isinstance(value, list):
+            raise Exception(
+                f'Invalid scan_data with unknown data structure. '
+                f'Expected the value to be a list of dicts and not a '
+                f'{type(value)!r} for {key}={value!r}'
+            )
+
+        objects = list(_build_objects_list(values=value, klass=list_field_type))
+        package_data[key] = objects
+
+    return klas(**package_data)
+
+
+def _build_objects_list(values, klass):
+    """
+    Yield ``klass`` objects built from a ``values`` list of mappings.
+    """
+    # Since we have a list_field_type, value must be a list of mappings:
+    # we transform it in a list of objects.
+
+    if not isinstance(values, list):
+        raise Exception(
+            f'Invalid scan_data with unknown data structure. '
+            f'Expected the value to be a list of dicts and not a '
+            f'{type(values)!r} for {values!r}'
+        )
+
+    for val in values:
+        if not val:
+            continue
+
+        if not isinstance(val, dict):
+            raise Exception(
+                f'Invalid scan_data with unknown data structure. '
+                f'Expected the value to be a mapping for and not a '
+                f'{type(val)!r} for {values!r}'
+            )
+
+        yield klass.create(**val)
+

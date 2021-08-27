@@ -1,0 +1,76 @@
+# Contributor: Łukasz Jendrysik <scadu@yandex.com>
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Ariadne Conill <ariadne@dereferenced.org>
+pkgname=audacious-plugins
+pkgver=4.0.5
+pkgrel=0
+pkgdesc="A playlist-oriented media player with multiple interfaces (plugins)"
+url="https://audacious-media-player.org/"
+arch="all !s390x"
+license="BSD-2-Clause AND BSD-3-Clause AND ISC AND GPL-2.0-only AND GPL-2.0-or-later AND GPL-3.0-only AND GPL-3.0-or-later"
+depends="audacious"
+install_if="audacious=$pkgver"
+makedepends="
+	dbus-glib-dev
+	audacious-dev>=${pkgver%.*}
+	libxml2-dev
+	mpg123-dev
+	libcdio-dev
+	libcdio-paranoia-dev
+	libcddb-dev
+	libxcomposite-dev
+	libsamplerate-dev
+	libcue-dev
+	libmms-dev
+	libsndfile-dev
+	libnotify-dev
+	libogg-dev
+	libvorbis-dev
+	ffmpeg-dev
+	alsa-lib-dev
+	pulseaudio-dev
+	faad2-dev
+	neon-dev
+	curl-dev
+	wavpack-dev
+	lame-dev
+	flac-dev
+	sdl-dev
+	automake
+	autoconf
+	"
+subpackages="$pkgname-dbg $pkgname-lang"
+source="http://distfiles.audacious-media-player.org/audacious-plugins-$pkgver.tar.bz2"
+options="!check" # No test suite (or any plans for one)
+
+case "$CTARGET_ARCH" in
+	arm*|aarch64) _qtglspectrum="--disable-qtglspectrum" ;;
+	*) _qtglspectrum="--enable-qtglspectrum" ;;
+esac
+
+prepare() {
+	default_prepare
+
+	update_config_sub
+	update_config_guess
+}
+
+build() {
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/share/man \
+		--infodir=/usr/share/info \
+		--disable-gtk \
+		--enable-qt \
+		$_qtglspectrum
+	make
+}
+
+package() {
+	DESTDIR="$pkgdir" make install
+}
+
+sha512sums="90ab2edbfc797fa835aae9937b5f478a0ca575f31c443d9e8ba7394e1615f605beb417372872874c94d4f804dba7bea9fbae2078e162178386683d8a3e36c108  audacious-plugins-4.0.5.tar.bz2"

@@ -38,119 +38,120 @@
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-core",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-i18n",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-velocity",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-velocity@1.1.7",
       "requirement": "1.1.7",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.velocity/velocity",
+      "purl": "pkg:maven/org.apache.velocity/velocity@1.5",
       "requirement": "1.5",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-decoration-model",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
-      "purl": "pkg:maven/commons-collections/commons-collections",
+      "purl": "pkg:maven/commons-collections/commons-collections@3.2",
       "requirement": "3.2",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-apt",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-fml",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-xdoc",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-module-xhtml",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
-      "purl": "pkg:maven/htmlunit/htmlunit",
+      "purl": "pkg:maven/htmlunit/htmlunit@1.9",
       "requirement": "1.9",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.doxia/doxia-site-renderer@1.0-alpha-10?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.maven.doxia/doxia-site-renderer@1.0-alpha-10",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0-alpha-10/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0-alpha-10/doxia-site-renderer-1.0-alpha-10.jar",

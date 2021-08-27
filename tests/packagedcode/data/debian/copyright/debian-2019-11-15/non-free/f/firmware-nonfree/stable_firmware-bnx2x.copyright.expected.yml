@@ -1,5 +1,44 @@
--
-- proprietary-license AND other-permissive
-- |
+primary_license:
+declared_license:
+license_expression: proprietary-license AND other-permissive
+copyright: |
   Copyright (c) 2007-2010 Broadcom Corporation
   Copyright (c) 2007-2009 Broadcom Corporation
+matches:
+  - score: '33.0'
+    start_line: 6
+    end_line: 7
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 33
+    identifier: proprietary_30.RULE
+    license_expression: proprietary-license
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      derived from proprietary unpublished
+       source code,
+  - score: '100.0'
+    start_line: 9
+    end_line: 11
+    matcher: 2-aho
+    rule_length: 23
+    matched_length: 23
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: other-permissive_66.RULE
+    license_expression: other-permissive
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted for the distribution of this firmware data
+       in hexadecimal or equivalent format, provided this copyright notice is
+       accompanying it.

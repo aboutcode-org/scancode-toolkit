@@ -85,6 +85,32 @@
         "version": "3.8.2",
         "required": true
       }
+    ],
+    "dependencyManagement": [
+      {
+        "group_id": "org.apache.maven.doxia",
+        "artifact_id": "doxia-sink-api",
+        "version": "1.0-alpha-9",
+        "required": true
+      },
+      {
+        "group_id": "org.apache.maven.doxia",
+        "artifact_id": "doxia-core",
+        "version": "1.0-alpha-9",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-container-default",
+        "version": "1.0-alpha-30",
+        "required": true
+      },
+      {
+        "group_id": "org.codehaus.plexus",
+        "artifact_id": "plexus-utils",
+        "version": "1.4.5",
+        "required": true
+      }
     ]
   }
 }

@@ -9,7 +9,6 @@
 
 import json
 import os
-from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
@@ -18,10 +17,7 @@ from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.query import Query
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
-
-
 
 
 def check_result_equals_expected_json(result, expected, regen=False):
@@ -142,7 +138,6 @@ class TestQueryWithSingleRun(IndexTesting):
             None, 0, None
         ]
         assert result == expected
-
 
     def test_Query_tokenize_from_string(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
@@ -773,14 +768,3 @@ class TestQueryWithFullIndex(FileBasedTesting):
         idx = cache.get_index()
         assert len(Query(location1, idx=idx).query_runs) == 17
         assert len(Query(location2, idx=idx).query_runs) == 15
-
-    def test_Query_tokens_by_line_behaves_the_same_on_various_python_2(self):
-        location = self.get_test_loc('query/query_lines/yahoo-eula.txt')
-        idx = cache.get_index()
-        query = Query(location, idx=idx)
-        tbl = list(query.tokens_by_line())
-        # inject the actual token string for sanity
-        tbt = idx.tokens_by_tid
-        results = [[[i, i and tbt[i] or i] for i in line] for line in tbl]
-        expected = self.get_test_loc('query/query_lines/yahoo-eula.txt.json')
-        check_result_equals_expected_json(results, expected, regen=False)

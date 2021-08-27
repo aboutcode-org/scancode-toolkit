@@ -1,0 +1,28 @@
+# Maintainer: Dylan Van Assche <me@dylanvanassche.be>
+# Contributor: Dylan Van Assche <me@dylanvanassche.be>
+pkgname=feedbackd-device-themes
+pkgver=0_git20210126
+pkgrel=0
+pkgdesc="Feedbackd device themes for different devices"
+url="https://source.puri.sm/Librem5/feedbackd-device-themes"
+arch="all"
+license="GPL-3.0-or-later"
+makedepends="meson json-glib-dev"
+source="https://source.puri.sm/Librem5/feedbackd-device-themes/-/archive/v0.0.${pkgver#0_git}/feedbackd-device-themes-v0.0.${pkgver#0_git}.tar.gz"
+builddir="$srcdir/$pkgname-v0.0.${pkgver#0_git}"
+
+build() {
+	abuild-meson \
+		-Dgtk_doc=false \
+		. output
+}
+
+check() {
+	meson test --no-rebuild -v -C output
+}
+
+package() {
+	DESTDIR="$pkgdir" meson install --no-rebuild -C output
+}
+
+sha512sums="feb9390a025748b37319162d5e8b6cec353ea58e7339806c1e971a7d2a2168af381bfcfebc40b7319aa2ce688bfc7fcbf406218cb97c271c5e1d352b27691748  feedbackd-device-themes-v0.0.20210126.tar.gz"

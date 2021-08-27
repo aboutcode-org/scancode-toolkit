@@ -30,41 +30,41 @@
       "purl": "pkg:maven/org.apache.maven/maven-repository-metadata",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-api",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-file",
@@ -72,21 +72,22 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     },
     {
-      "purl": "pkg:maven/easymock/easymock",
+      "purl": "pkg:maven/easymock/easymock@1.2_Java1.3",
       "requirement": "1.2_Java1.3",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven/maven-artifact-manager@2.0.7?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.maven/maven-artifact-manager@2.0.7",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.jar",

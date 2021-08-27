@@ -1,0 +1,31 @@
+# Contributor: Sheila Aman <sheila@vulpine.house>
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+pkgname=perl-socket-getaddrinfo
+_pkgreal=Socket-GetAddrInfo
+pkgver=0.22
+pkgrel=3
+pkgdesc="Perl interface for get{addr,name}info(3)"
+url="https://metacpan.org/release/Socket-GetAddrInfo/"
+arch="noarch"
+license="GPL-1.0-or-later OR Artistic-1.0-Perl"
+depends="perl-extutils-cchecker"
+makedepends="perl-dev perl-module-build"
+subpackages="$pkgname-doc"
+source="https://cpan.metacpan.org/authors/id/P/PE/PEVANS/$_pkgreal-$pkgver.tar.gz"
+builddir="$srcdir/$_pkgreal-$pkgver"
+
+build() {
+	PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+	make
+}
+
+check() {
+	make test
+}
+
+package() {
+	make DESTDIR="$pkgdir" install
+	find "$pkgdir" -name .packlist -name perllocal.pod -delete
+}
+
+sha512sums="3117ad5931dd116f45afa041b7aad4506382c4359b67e61564affba6f34fe14db5dbe0dc0a1bf4c0b680847bda58958604907ff0339d500728b44301cf1fe554  Socket-GetAddrInfo-0.22.tar.gz"

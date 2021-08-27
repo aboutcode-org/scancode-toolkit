@@ -1,0 +1,20 @@
+name: 'mock_name'
+version: 1.1.0
+description: mock description
+author: Mock Author <mock.author@workiva.com>
+homepage: https://github.com/Workiva/mock_name
+publish_to: https://pub.workiva.org
+
+environment:
+  sdk: '>=1.23.0 <2.0.0'
+
+executables:
+  abide:
+
+dependencies:
+  yaml: ^2.1.12
+  args:  '>=0.13.0 <2.0.0'
+  resource: ^2.1.2
+
+dev_dependencies:
+  mockito: ^0.11.0

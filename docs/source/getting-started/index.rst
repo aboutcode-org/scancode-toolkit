@@ -7,7 +7,6 @@
    home
    install
    ide-config
-   whats-new
    newcomer
 
 ..

@@ -27,34 +27,35 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/org.apache.maven/maven-model",
+      "purl": "pkg:maven/org.apache.maven/maven-model@2.0.1",
       "requirement": "2.0.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven/maven-profile@2.0.1?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.maven/maven-profile@2.0.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-profile/2.0.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-profile/2.0.1/maven-profile-2.0.1.jar",

@@ -1,0 +1,213 @@
+# Contributor: Łukasz Jendrysik <scadu@yandex.com>
+# Contributor: Carlo Landmeter <clandmeter@alpinelinux.org>
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+pkgname=imagemagick
+_pkgname=ImageMagick
+pkgver=7.0.11.13
+pkgrel=0
+_pkgver=${pkgver%.*}-${pkgver##*.}
+_abiver=7
+pkgdesc="Collection of tools and libraries for many image formats"
+url="https://imagemagick.org/"
+arch="all"
+license="ImageMagick"
+options="libtool"
+makedepends="
+	chrpath
+	fontconfig-dev
+	freetype-dev
+	ghostscript-dev
+	lcms2-dev
+	libheif-dev
+	libjpeg-turbo-dev
+	libpng-dev
+	libtool
+	libwebp-dev
+	libx11-dev
+	libxext-dev
+	libxml2-dev
+	perl-dev
+	tiff-dev
+	zlib-dev
+	"
+
+case "$CARCH" in
+	s390x) ;;
+	mips*) options="$options !check" ;;
+	*) makedepends="$makedepends librsvg-dev" ;;
+esac
+
+checkdepends="freetype fontconfig ghostscript ghostscript-fonts lcms2 graphviz"
+subpackages="
+	$pkgname-doc
+	$pkgname-static
+	$pkgname-dev
+	$pkgname-c++:_cxx
+	$pkgname-libs
+	$pkgname-perlmagick:_perlmagick
+	$pkgname-perlmagick-doc:_perlmagick_doc
+	"
+source="https://download.imagemagick.org/ImageMagick/download/ImageMagick-$_pkgver.tar.xz
+	disable-avaraging-tests.patch
+	"
+builddir="$srcdir/$_pkgname-$_pkgver"
+
+# secfixes:
+#   7.0.11.1-r0:
+#     - CVE-2021-20241
+#     - CVE-2021-20243
+#     - CVE-2021-20244
+#     - CVE-2021-20245
+#     - CVE-2021-20246
+#     - CVE-2021-20309
+#     - CVE-2021-20310
+#     - CVE-2021-20311
+#     - CVE-2021-20312
+#     - CVE-2021-20313
+#   7.0.10.57-r0:
+#     - CVE-2021-20176
+#   7.0.10.42-r0:
+#     - CVE-2020-29599
+#   7.0.10.35-r0:
+#     - CVE-2020-27560
+#   7.0.10.18-r0:
+#     - CVE-2020-13902
+#   7.0.10.8-r0:
+#     - CVE-2020-19667
+#   7.0.10.0-r0:
+#     - CVE-2020-10251
+#   7.0.9.7-r0:
+#     - CVE-2019-19952
+#   7.0.8.62-r0:
+#     - CVE-2019-17547
+#   7.0.8.56-r0:
+#     - CVE-2019-17541
+#     - CVE-2019-17540
+#     - CVE-2019-14981
+#     - CVE-2019-13454
+#   7.0.8.53-r0:
+#     - CVE-2019-13391
+#     - CVE-2019-13311
+#     - CVE-2019-13310
+#     - CVE-2019-13309
+#     - CVE-2019-13308
+#     - CVE-2019-13307
+#     - CVE-2019-13306
+#     - CVE-2019-13305
+#     - CVE-2019-13304
+#     - CVE-2019-13303
+#     - CVE-2019-13302
+#     - CVE-2019-13301
+#     - CVE-2019-13300
+#     - CVE-2019-13299
+#     - CVE-2019-13298
+#     - CVE-2019-13297
+#     - CVE-2019-13296
+#     - CVE-2019-13295
+#     - CVE-2019-13137
+#     - CVE-2019-13136
+#     - CVE-2019-13135
+#     - CVE-2019-13134
+#     - CVE-2019-13133
+#   7.0.8.44-r0:
+#     - CVE-2019-19949
+#     - CVE-2019-19948
+#     - CVE-2019-16713
+#     - CVE-2019-16712
+#     - CVE-2019-16711
+#     - CVE-2019-15141
+#     - CVE-2019-15140
+#     - CVE-2019-15139
+#     - CVE-2019-14980
+#     - CVE-2019-11598
+#     - CVE-2019-11597
+#     - CVE-2019-11472
+#   7.0.8.38-r0:
+#     - CVE-2019-9956
+#     - CVE-2019-16710
+#     - CVE-2019-16709
+#     - CVE-2019-16708
+#     - CVE-2019-10650
+#     - CVE-2019-10649
+
+build() {
+	case "$CARCH" in
+		s390x) ;;
+		*) _conf_args="--with-rsvg" ;;
+	esac
+
+	# fix doc dir, Gentoo bug 91911
+	sed -i -e \
+		's:DOCUMENTATION_PATH="$DATA_DIR/doc/$DOCUMENTATION_RELATIVE_PATH":DOCUMENTATION_PATH="/usr/share/doc/imagemagick":g' \
+		configure
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/share/man \
+		--infodir=/usr/share/info \
+		--enable-static \
+		--disable-openmp \
+		--with-threads \
+		--with-x \
+		--with-tiff \
+		--with-png \
+		--with-webp \
+		--with-gslib \
+		--with-gs-font-dir=/usr/share/fonts/Type1 \
+		--with-heic \
+		--with-modules \
+		--with-xml \
+		--with-perl \
+		--with-perl-options="PREFIX=/usr INSTALLDIRS=vendor" \
+		$_conf_args
+	make
+}
+
+check() {
+	make check
+}
+
+package() {
+	make -j1 DESTDIR="$pkgdir" install
+	if ! [ -e "$pkgdir"/usr/lib/libMagickCore-$_abiver.Q16HDRI.so ]; then
+		error "Has ABI verision changed? (current is $_abiver)"
+		return 1
+	fi
+
+	# we cannot let abuild delete the *.la files due to we need *.la
+	# for the modules
+	rm "$pkgdir"/usr/lib/*.la
+
+	find "$pkgdir" \( -name '.packlist' -o -name 'perllocal.pod' \
+		-o -name '*.bs' \) -delete
+}
+
+_cxx() {
+	pkgdesc="ImageMagick Magick++ library (C++ bindings)"
+	mkdir -p "$subpkgdir"/usr/lib
+	mv "$pkgdir"/usr/lib/libMagick++*.so.* "$subpkgdir"/usr/lib/
+}
+
+_perlmagick() {
+	pkgdesc="PerlMagick Perl Modules for ImageMagick"
+	mkdir -p "$subpkgdir"/usr/lib
+	mv "$pkgdir"/usr/lib/perl5 "$subpkgdir"/usr/lib/
+	# Strip all the rpath that include /home
+	scanelf --recursive --rpath "$subpkgdir" | awk '/home/{print $3;}' | xargs chrpath -d
+#	chrpath -d "$subpkgdir"/usr/lib/perl5/vendor_perl/auto/Image/Magick/Q16HDRI/Q16HDRI.so
+#	chrpath -d "$subpkgdir"/usr/lib/perl5/vendor_perl/auto/Image/Magick/Magick.so
+}
+
+_perlmagick_doc() {
+	pkgdesc="PerlMagick Perl Module Documentation for ImageMagick"
+	mkdir -p "$subpkgdir"
+	cd "$builddir"/PerlMagick
+	make -j1 DESTDIR="$subpkgdir" doc_vendor_install
+}
+
+sha512sums="
+8b5fe1ad06ca3af752454f67f53a066842668832bbd4efede35c515449cd2b970e6f7f23e716928ba598f89a7ec020bd988cc392196c89117586fb97a48e1d9e  ImageMagick-7.0.11-13.tar.xz
+58afb2da075a6208b6a990ff297b3a827d260687c3355198a8b4d987e1596c0b0cd78aff6f0be0e1896e537fbe44a3d467473183f5f149664ea6e6fb3d3291a9  disable-avaraging-tests.patch
+"

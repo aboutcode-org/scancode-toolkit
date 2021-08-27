@@ -64,6 +64,7 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
+  "extra_data": {},
   "purl": "pkg:cargo/clippy@0.0.212",
   "repository_homepage_url": "https://crates.io/crates/clippy",
   "repository_download_url": "https://crates.io/api/v1/crates/clippy/0.0.212/download",

@@ -22,7 +22,7 @@ with your name and email::
     Signed-off-by: Jane Doe <developer@example.com>
 
 Please try to write a good commit message, see `good commit message wiki
-<https://github.com/nexB/aboutcode/wiki/Writing-good-commit-messages>`_ for
+<https://aboutcode.readthedocs.io/en/latest/contributing/writing_good_commit_messages.html>` for
 details. In particular use the imperative for your commit subject: think that
 you are giving an order to the codebase to update itself.
 
@@ -134,25 +134,34 @@ To set up ScanCode for local development:
 
    Run this command to configure ScanCode::
 
-        ./configure
+        ./configure --dev
 
    On Windows use instead::
 
-        configure 
+        configure --dev
 
-   Then run this: `source bin/activate` or `. bin/activate` 
-   (or run `bin\\activate` on Windows)
+   Then activate the virtual environment::
+
+        source bin/activate
+
+        or
+
+        . bin/activate
+
+   On Windows use::
+
+        Scripts\activate
 
    When you create a new terminal/shell to work on ScanCode rerun the activate step.
 
    When you pull new code from git, rerun ./configure
-   
+
 
 5. Now you can make your code changes in your local clone.
    Please create new unit tests for your code. We love tests!
 
 6. When you are done with your changes, run all the tests.
-   Use this command:: 
+   Use this command::
 
         py.test
 
@@ -162,25 +171,25 @@ To set up ScanCode for local development:
 
    If you are running this on a RedHat based OS you may come across this
    failure::
-   
+
        OSError: libbz2.so.1.0: cannot open shared object file: No such file or directory
- 
+
    Try creating a symbolic link to libbz2.so.1.0 to solve this issue::
 
        locate libbz2.so.1.0
        cd <resulting libbz2.so directory>
        sudo ln -s <your version of libbz2.so> libbz2.so.1.0
-      
+
    See `this issue <https://github.com/nexB/scancode-toolkit/issues/443>`_ for more information.
 
 7. Check the status of your local repository before commit, regarding files changed::
-    
+
     git status
 
 
 8. Commit your changes and push your branch to your GitHub fork::
 
-    git add <file-changed-1> <file-changed-2> <file-changed-3> 
+    git add <file-changed-1> <file-changed-2> <file-changed-3>
     git commit -m "Your detailed description of your changes." --signoff
     git push <repository-alias-name> name-of-your-bugfix-or-feature
 
@@ -196,7 +205,7 @@ create a pull request. You can add new commits to your branch as needed.
 For merging, your request would need to:
 
 1. Include unit tests that are passing (run ``py.test``).
-2. Update documentation as needed for new API, functionality etc. 
+2. Update documentation as needed for new API, functionality etc.
 3. Add a note to ``CHANGELOG.rst`` about the changes.
 4. Add your name to ``AUTHORS.rst``.
 

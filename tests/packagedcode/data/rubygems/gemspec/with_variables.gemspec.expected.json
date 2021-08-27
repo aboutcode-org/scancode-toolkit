@@ -117,6 +117,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:gem/ProviderDSL::GemDescription::NAME@ProviderDSL::GemDescription::VERSION",
     "repository_homepage_url": "https://rubygems.org/gems/ProviderDSL::GemDescription::NAME/versions/ProviderDSL::GemDescription::VERSION",
     "repository_download_url": "https://rubygems.org/downloads/ProviderDSL::GemDescription::NAME-ProviderDSL::GemDescription::VERSION.gem",

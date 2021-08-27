@@ -1,0 +1,4 @@
+license_expression: public-domain
+is_license_notice: yes
+minimum_coverage: 100
+notes: Seen in debian copyright file for liblzma.

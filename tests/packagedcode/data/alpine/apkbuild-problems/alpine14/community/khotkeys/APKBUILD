@@ -1,0 +1,55 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=khotkeys
+pkgver=5.22.0
+pkgrel=0
+# armhf blocked by extra-cmake-modules
+# s390x blocked by libksysguard
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+pkgdesc="Key Accelerator Application"
+license="GPL-2.0-only AND LGPL-2.0-or-later"
+makedepends="
+	extra-cmake-modules
+	kcmutils-dev
+	kdbusaddons-dev
+	kdelibs4support-dev
+	kdoctools-dev
+	kglobalaccel-dev
+	ki18n-dev
+	kio-dev
+	kxmlgui-dev
+	plasma-framework-dev
+	plasma-workspace-dev
+	qt5-qtbase-dev
+	qt5-qtx11extras-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/khotkeys-$pkgver.tar.xz"
+subpackages="$pkgname-doc $pkgname-lang $pkgname-dev"
+options="!check" # No tests
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="
+722e6d67cd1c131c1ee56dd348e4305ae6d8a408ddbaf188bcbccbb5107a6c9e64cf93605165613b2830cfbeb5d0396c9987901bf029fa36f63a47d60b28ae24  khotkeys-5.22.0.tar.xz
+"

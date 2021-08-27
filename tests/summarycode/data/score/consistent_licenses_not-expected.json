@@ -125,6 +125,7 @@
           "short_name": "MIT License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "MIT",
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
@@ -141,11 +142,13 @@
             "licenses": [
               "mit"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
@@ -164,7 +167,7 @@
         {
           "value": "Alexander Plavinski <alexander.plavinski@invision.de>",
           "start_line": 6,
-          "end_line": 8
+          "end_line": 6
         }
       ],
       "is_legal": false,
@@ -239,6 +242,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -255,11 +259,13 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "1-spdx-id",
             "rule_length": 6,
             "matched_length": 6,

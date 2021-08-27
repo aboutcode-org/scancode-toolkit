@@ -81,6 +81,50 @@
         "version": "1.16.16",
         "required": true
       }
+    ],
+    "dependencyManagement": [
+      {
+        "group_id": "org.ow2.asm",
+        "artifact_id": "asm",
+        "version": "5.2",
+        "required": true
+      },
+      {
+        "group_id": "org.ow2.asm",
+        "artifact_id": "asm-commons",
+        "version": "5.2",
+        "required": true
+      },
+      {
+        "group_id": "org.ow2.asm",
+        "artifact_id": "asm-util",
+        "version": "5.2",
+        "required": true
+      },
+      {
+        "group_id": "org.ow2.asm",
+        "artifact_id": "asm-analysis",
+        "version": "5.2",
+        "required": true
+      },
+      {
+        "group_id": "junit",
+        "artifact_id": "junit",
+        "version": "4.12",
+        "required": true
+      },
+      {
+        "group_id": "org.mockito",
+        "artifact_id": "mockito-core",
+        "version": "2.7.22",
+        "required": true
+      },
+      {
+        "group_id": "com.google.android",
+        "artifact_id": "android",
+        "version": "4.1.1.4",
+        "required": true
+      }
     ]
   }
 }

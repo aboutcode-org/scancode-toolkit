@@ -29,7 +29,7 @@ sequence detections.
 """
 
 
-def make_validation_test(rule, test_name):
+def make_validation_test(rule, test_name, regen=False):
     """
     Build and return a test function closing on tests arguments.
     """
@@ -45,7 +45,7 @@ def make_validation_test(rule, test_name):
 
         def closure_test_function(*args, **kwargs):
             check_rule_or_license_can_be_self_detected_exactly(rule)
-            check_ignorable_clues(rule)
+            check_ignorable_clues(rule, regen=regen)
 
     closure_test_function.__name__ = test_name
     closure_test_function.funcname = test_name
@@ -120,38 +120,29 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
 
 def check_ignorable_clues(licensish, regen=False, verbose=False):
     """
-    Validate that all current ignorable clues declared in a `licensish` License
+    Validate that all expected ignorable clues declared in a `licensish` License
     or Rule object are properly detected in that rule text file. Optionally
-    regen the new_ignorables and updates the .yml files.
+    regen the ignorables and updates the License or Rule .yml data file.
     """
-    new_ignorables = models.get_ignorables(
-        text_file=licensish.text_file,
-    )
+    result = models.get_ignorables(text_file=licensish.text_file)
+
     if verbose:
         print()
-        print('new_ignorables')
-        pprint(new_ignorables)
+        print('result')
+        pprint(result)
 
     if regen:
-        models.set_ignorables(licensish, new_ignorables , verbose=verbose)
+        models.set_ignorables(licensish, result , verbose=verbose)
         licensish.dump()
 
-    current = dict(
-        ignorable_copyrights=sorted(licensish.ignorable_copyrights or []),
-        ignorable_holders=sorted(licensish.ignorable_holders or []),
-        ignorable_authors=sorted(licensish.ignorable_authors or []),
-        ignorable_urls=sorted(licensish.ignorable_urls or []),
-        ignorable_emails=sorted(licensish.ignorable_emails or []),
-    )
-
-    current = dict([(k, v) for k, v in sorted(current.items()) if v])
+    expected = models.get_normalized_ignorables(licensish)
 
     if verbose:
-        print('current')
-        pprint(current)
+        print('expected')
+        pprint(expected)
 
     try:
-        assert current == new_ignorables
+        assert result == expected
     except:
         # On failure, we compare again to get additional failure details such as
         # a clickable text_file path.
@@ -160,16 +151,16 @@ def check_ignorable_clues(licensish, regen=False, verbose=False):
         if not data_file:
             data_file = licensish.text_file.replace('.LICENSE', '.yml')
 
-        new_ignorables['files'] = [
+        result['files'] = [
             f'file://{data_file}',
             f'file://{licensish.text_file}',
         ]
 
         # This assert will always fail and provide a more detailed failure trace
-        assert saneyaml.dump(new_ignorables) == saneyaml.dump(current)
+        assert saneyaml.dump(result) == saneyaml.dump(expected)
 
 
-def build_validation_tests(rules, test_classes):
+def build_validation_tests(rules, test_classes, regen=False):
     """
     Dynamically build an individual test method for each rule texts in a
     ``rules`` iterable of Rule objects then attach the test methods to the
@@ -199,6 +190,7 @@ def build_validation_tests(rules, test_classes):
                 test_method = make_validation_test(
                     rule=rule,
                     test_name=test_name,
+                    regen=regen,
                 )
                 setattr(cls, test_name, test_method)
 
@@ -244,7 +236,8 @@ build_validation_tests(
         TestValidateLicenseExtended3,
         TestValidateLicenseExtended4,
         TestValidateLicenseExtended5,
-     ]
+     ],
+    regen=False,
 )
 
 del _rules

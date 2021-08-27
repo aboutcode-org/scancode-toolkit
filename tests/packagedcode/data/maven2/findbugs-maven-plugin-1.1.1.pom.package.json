@@ -63,50 +63,51 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/org.apache.maven/maven-artifact",
+      "purl": "pkg:maven/org.apache.maven/maven-artifact@2.0.4",
       "requirement": "2.0.4",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl",
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl@2.0.4",
       "requirement": "2.0.4",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api",
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api@2.0.4",
       "requirement": "2.0.4",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven.doxia/doxia-core",
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-core@1.0-alpha-8",
       "requirement": "1.0-alpha-8",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/net.sourceforge.findbugs/findbugs",
+      "purl": "pkg:maven/net.sourceforge.findbugs/findbugs@1.2.0",
       "requirement": "1.2.0",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/1.1.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/1.1.1/findbugs-maven-plugin-1.1.1.jar",

@@ -1,0 +1,31 @@
+# Contributor: Rasmus Thomsen <oss@cogitri.dev>
+# Maintainer: Rasmus Thomsen <oss@cogitri.dev>
+pkgname=dcontainers
+pkgver=0.8.0_alpha19
+_alphanum=${pkgver/${pkgver%alpha*}/}
+_pkgver=${pkgver/_$_alphanum/}
+_verstring=$_pkgver-${_alphanum/ha/ha.}
+pkgrel=1
+pkgdesc="Containers backed by std.experimental.allocator"
+url="https://github.com/dlang-community/containers"
+arch="x86_64 aarch64" # ldc
+license="BSL-1.0"
+makedepends="meson ldc ldc-runtime stdx-allocator-dev"
+subpackages="$pkgname-dev"
+source="https://github.com/dlang-community/containers/archive/v$_verstring/containers-$_verstring.tar.gz"
+builddir="$srcdir/containers-$_verstring"
+
+build() {
+	abuild-meson . output
+	meson compile ${JOBS:+-j ${JOBS}} -C output
+}
+
+check() {
+	meson test --no-rebuild -v -C output
+}
+
+package() {
+	DESTDIR="$pkgdir" meson install --no-rebuild -C output
+}
+
+sha512sums="ef415e2bf7829e05c458cee0e41b6fc5768805a8dee332fb6a01a72e1e723f240f183cd1fd5ed74848cc4ea860b0746dca1c5dee13d37f819f0025da99098c4a  containers-0.8.0-alpha.19.tar.gz"

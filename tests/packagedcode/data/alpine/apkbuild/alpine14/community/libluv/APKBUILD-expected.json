@@ -1,0 +1,65 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "libluv",
+  "version": "1.36.0.0-r2",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Bare libuv bindings for lua",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "apache-2.0",
+  "declared_license": "Apache-2.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://github.com/luvit/luv/releases/download/1.36.0-0/luv-1.36.0-0.tar.gz"
+      },
+      {
+        "file_name": "cmake-use-pkgconfig.patch",
+        "url": null
+      },
+      {
+        "file_name": "lua_unsigned-typedef.patch",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "luv-1.36.0-0.tar.gz",
+        "sha512": "9972d82bacdcf528d95047f3f2cfbceb523f6d6f5782e577b24cdd25f1292df745d3fb116b6fbd376d797df47c378ad25d5b673044d9ab5678af6e5fef5eca49"
+      },
+      {
+        "file_name": "cmake-use-pkgconfig.patch",
+        "sha512": "ba68d920e11d107febe458fbe4887288c8915fc3a56c4742bb577650b4e74e0428a364e1321b68ee47f17a157e1bd304a8777bd294a8f2baefcaf541fdf5170b"
+      },
+      {
+        "file_name": "lua_unsigned-typedef.patch",
+        "sha512": "53ba683e3c97e0ebc1b3b864c1fcf16a073802fb52bca923a21aa556d1ebdaf5d78e2b4629d8f9d00f03cbf0efceeac8b7f4e1c4c98618175c51ca69d2122b22"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/libluv@1.36.0.0-r2",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

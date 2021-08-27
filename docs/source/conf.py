@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'ScanCode-Toolkit'
-copyright = '2019 ScanCode-Toolkit.org'
-author = 'ScanCode-Toolkit.org'
+copyright = 'nexB Inc. and others.'
+author = 'AboutCode.org authors and contributors'
 
 
 # -- General configuration ---------------------------------------------------

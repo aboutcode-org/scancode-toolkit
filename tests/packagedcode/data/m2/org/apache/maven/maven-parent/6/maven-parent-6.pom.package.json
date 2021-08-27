@@ -325,6 +325,7 @@
   "source_packages": [
     "pkg:maven/org.apache.maven/maven-parent@6?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.maven/maven-parent@6",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-parent/6/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-parent/6/maven-parent-6.jar",

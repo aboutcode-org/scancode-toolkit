@@ -5,10 +5,12 @@ what:
 copyrights:
   - Copyright (c) 1998-2006 The OpenSSL Project
   - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+  - holder is Tim Hudson (tjh@cryptsoft.com)
   - Copyright 2002 Sun Microsystems, Inc.
 holders:
   - The OpenSSL Project
   - Eric Young
+  - Tim Hudson
   - Sun Microsystems, Inc.
 holders_summary:
   - value: Eric Young
@@ -16,4 +18,6 @@ holders_summary:
   - value: Sun Microsystems, Inc.
     count: 1
   - value: The OpenSSL Project
+    count: 1
+  - value: Tim Hudson
     count: 1

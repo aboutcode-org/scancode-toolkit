@@ -1,0 +1,50 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=plasma-vault
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="Plasma applet and services for creating encrypted vaults"
+# armhf blocked by extra-cmake-modules
+# s390x blocked by libksysguard
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="(GPL-2.0-only OR GPL-3.0-only) AND (LGPL-2.1-only AND LGPL-3.0-only)"
+makedepends="
+	extra-cmake-modules
+	kactivities-dev
+	kconfig-dev
+	kconfigwidgets-dev
+	kcoreaddons-dev
+	kdbusaddons-dev
+	ki18n-dev
+	kio-dev
+	kwidgetsaddons-dev
+	libksysguard-dev
+	networkmanager-qt-dev
+	plasma-framework-dev
+	qt5-qtbase-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/plasma-vault-$pkgver.tar.xz"
+subpackages="$pkgname-lang"
+options="!check" # No tests
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="
+176090b62310683fd6b44edf9205858bf55cb6eef43f6c351db85dfed5601c15ef20fd760632c1217100a1c5cb7473ba90ebaf7de6b25ed884212ff0257e8cbe  plasma-vault-5.22.0.tar.xz
+"

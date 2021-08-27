@@ -1,0 +1,73 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "linux-elm",
+  "version": "5.12.10-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Linux latest stable kernel for elm chromebooks",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0",
+  "declared_license": "GPL-2.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.12.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "linux-5.12.tar.xz",
+        "sha512": "be03b6fee1d1ea8087b09874d27c0a602c0b04fd90ad38b975bd2c8455a07e83c29b56814aaf1389e82305fae0e4c2d1701075a7f0a7295dd28149f967ec5b3d"
+      },
+      {
+        "file_name": "patch-5.12.10.xz",
+        "sha512": "df9e2b7ff789a5f92354ff046f06b92ff9e3c2eabe59e7cc806ca6372fba10555c84bf1074176beda22058fc1dcf95abec8f86e201cdb243d8df200fd2991b1f"
+      },
+      {
+        "file_name": "config-elm.aarch64",
+        "sha512": "5d0fe10b27d22eaa8218baaeec260fe2c1f0ca938fb279636bb7902bda9ce2ba40752fb6933f0ad3e39fe3853b0d6cdf391f6f6fca71325d3606d2568b732a88"
+      },
+      {
+        "file_name": "kernel.its.elm",
+        "sha512": "112af92af4a3f61867ffc20076d057845aa8c9139e58153d0c88f4d7185d9a9628fa79d4edfa8855f095fb70d257bfbd7c4573a7431d4b17706415b411a50775"
+      },
+      {
+        "file_name": "fix-mmc1-speed.patch",
+        "sha512": "65c57a6d9a5bd5b6ec8798d1c46091bb72377ed1349b66e9a0a1a50ffa077f044f2bfdd30eab974c9c9774fc62d8dd5020a38432d108fce7f4fc1ed6648ea703"
+      },
+      {
+        "file_name": "fix-spi-nor-max-frequency.patch",
+        "sha512": "9e17fb96b81590da0f9b0917ddd2b9d195bab5cde2a4e7feb19991c50a8ac8e4502445715153ced8666e5b6575137c1d49899bb0ae9ab4505ed8f1ff7e569269"
+      },
+      {
+        "file_name": "fix-mmc-order.patch",
+        "sha512": "00e7afdab1dc89a6e0426829685d85cebb98fb95cb13a253d01326fd22f78ddf792bbe3b5be4c9bc93784f1fa93f87f604a4b6c6710660319db6f2e35dd09835"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/linux-elm@5.12.10-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

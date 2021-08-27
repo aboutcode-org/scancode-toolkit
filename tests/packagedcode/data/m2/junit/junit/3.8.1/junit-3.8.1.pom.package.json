@@ -45,6 +45,7 @@
   "source_packages": [
     "pkg:maven/junit/junit@3.8.1?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/junit/junit@3.8.1",
   "repository_homepage_url": "https://repo1.maven.org/maven2/junit/junit/3.8.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar",
