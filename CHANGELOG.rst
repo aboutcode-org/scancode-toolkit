@@ -1,6 +1,13 @@
 Release notes
 =============
 
+Version 21.8.27
+---------------
+
+- Ensure that the progressbar displays a counter correctly.
+  This is a fix for https://github.com/nexB/scancode-toolkit/issues/2583
+
+
 Version 21.7.23
 ---------------
 
