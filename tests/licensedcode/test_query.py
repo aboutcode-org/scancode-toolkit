@@ -768,20 +768,3 @@ class TestQueryWithFullIndex(FileBasedTesting):
         idx = cache.get_index()
         assert len(Query(location1, idx=idx).query_runs) == 17
         assert len(Query(location2, idx=idx).query_runs) == 15
-
-    def test_Query_tokens_by_line_behaves_the_same_on_various_pythons(self):
-        # ensure that we have a consistent behavior wrt. to tokenization across
-        # all the Pythin implementations we run on. In particular this test may
-        # fail if the token sorting order is not strictly the same on all OSes.
-        # It may also fail when new licenses and rules are introdcued which
-        # would be suffling the token id assignments since this is using the
-        # live index on purpose.
-        location = self.get_test_loc('query/query_lines/yahoo-eula.txt')
-        idx = cache.get_index()
-        query = Query(location, idx=idx)
-        tbl = list(query.tokens_by_line())
-        # inject the actual token string for sanity
-        tbt = idx.tokens_by_tid
-        results = [[[i, i and tbt[i] or i] for i in line] for line in tbl]
-        expected = self.get_test_loc('query/query_lines/yahoo-eula.txt.json')
-        check_result_equals_expected_json(results, expected, regen=False)

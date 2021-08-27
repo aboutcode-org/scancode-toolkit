@@ -9,6 +9,10 @@
 
 import os
 
+from click.testing import Result
+from licensedcode.plugin_license import find_referenced_resource, match_reference_license
+from licensedcode.plugin_license import get_referenced_filenames
+
 import pytest
 
 from commoncode.testcase import FileDrivenTesting
@@ -66,6 +70,66 @@ def test_license_option_reports_license_texts_diag_long_lines():
     run_scan_click(args)
     test_loc = test_env.get_test_loc('plugin_license/text_long_lines/scan-diag.expected.json')
     check_json_scan(test_loc, result_file, regen=False)
+
+
+def test_license_match_reference():
+    test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/scan-ref', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = ['--license', '--license-text', '--license-text-diagnostics', '--strip-root', test_dir, '--json', result_file, '--verbose']
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/license_reference/scan-ref.expected.json')
+    check_json_scan(test_loc, result_file, regen=False)
+
+
+def test_license_match_without_reference():
+    test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/scan-without-ref', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = ['--license', '--license-text', '--license-text-diagnostics', '--strip-root', test_dir, '--json', result_file, '--verbose']
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/license_reference/scan-wref.expected.json')
+    check_json_scan(test_loc, result_file, regen=False)
+
+
+def test_get_referenced_filenames():
+    license_matches = [
+        {'matched_rule': {'referenced_filenames' : ['LICENSE.txt','COPYING']}},
+        {'matched_rule': {'referenced_filenames' : ['COPYING','LICENSE.txt']}},
+        {'matched_rule': {'referenced_filenames' : ['copying']}},
+        {'matched_rule': {'referenced_filenames' : []}},
+    ]
+    expected = ['LICENSE.txt','COPYING','copying']
+    assert get_referenced_filenames(license_matches) == expected
+
+
+def test_find_referenced_resource():
+    # Setup: Create a new scan to use for a virtual codebase
+    test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/scan-ref', copy=True)
+    scan_loc = test_env.get_temp_file('json')
+    args = ['--license', '--license-text', '--license-text-diagnostics', test_dir, '--json', scan_loc]
+    run_scan_click(args)
+
+    # test proper
+    from commoncode.resource import VirtualCodebase        
+    codebase = VirtualCodebase(scan_loc)
+    resource = codebase.get_resource_from_path('scan-ref/license-notice.txt')
+    result = find_referenced_resource(referenced_filename='LICENSE',resource=resource, codebase=codebase)
+    assert result.path == 'scan-ref/LICENSE'
+
+
+def test_match_reference_license():
+    # Setup: Create a new scan to use for a virtual codebase
+    test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/scan-ref', copy=True)
+    scan_loc = test_env.get_temp_file('json')
+    args = ['--license', '--license-text', '--license-text-diagnostics', test_dir, '--json', scan_loc]
+    run_scan_click(args)
+
+    # test proper
+    from commoncode.resource import VirtualCodebase        
+    codebase = VirtualCodebase(scan_loc)
+    resource = codebase.get_resource_from_path('scan-ref/license-notice.txt')
+    assert len(resource.licenses) == 2
+    result = match_reference_license(resource=resource, codebase=codebase)
+    assert len(result.licenses) == 3
 
 
 def test_reindex_licenses_works():

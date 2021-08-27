@@ -11,6 +11,7 @@ from functools import partial
 
 import attr
 
+from commoncode import fileutils
 from commoncode.cliutils import PluggableCommandLineOption
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
@@ -116,3 +117,73 @@ class LicenseScanner(ScanPlugin):
             license_text_diagnostics=license_text_diagnostics,
             license_url_template=license_url_template
         )
+
+    def process_codebase(self, codebase, **kwargs):
+        
+        if codebase.has_single_resource:
+            return
+
+        for resource in codebase.walk(topdown=False):
+            match_reference_license(resource,codebase)
+
+
+def match_reference_license(resource, codebase):
+    """
+    Return the ``resource`` Resource updating and saving it in place, after adding new
+    license matches (licenses and license_expressions) following their Rule
+    ``referenced_filenames`` if any. Return None if this is not a file Resource.
+    """
+    if not resource.is_file:
+        return
+
+    licenses = resource.licenses
+    license_expressions = resource.license_expressions
+    if not licenses:
+        return 
+
+    referenced_licenses = []
+    referenced_license_expressions = []
+    referenced_filenames = get_referenced_filenames(licenses)
+    modified = False
+                
+    for referenced_filename in referenced_filenames:
+        new_resource = find_referenced_resource(referenced_filename=referenced_filename, resource=resource, codebase=codebase)
+        if new_resource:
+            modified = True
+            referenced_licenses.extend(new_resource.licenses)
+            referenced_license_expressions.extend(new_resource.license_expressions)
+
+    licenses.extend(referenced_licenses)
+    license_expressions.extend(referenced_license_expressions)
+    
+    if modified:
+        codebase.save_resource(resource)
+    return resource
+
+
+def get_referenced_filenames(license_matches):
+    """
+    Return a list of unique referenced filenames found in the rules of a list of ``license_matches``
+    """
+    referenced_filenames = []
+    for license_match in license_matches:
+        referenced_files = license_match['matched_rule']['referenced_filenames']
+        for referenced_filename in referenced_files:
+            if not referenced_filename in referenced_filenames:
+                referenced_filenames.append(referenced_filename)
+    
+    return referenced_filenames
+
+
+def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
+    """
+    Return a Resource matching the ``referenced_filename`` path or filename given a ``resource`` in ``codebase``.
+    Return None if the ``referenced_filename`` cannot be found in the same directory as the base ``resource``.
+    ``referenced_filename`` is the path or filename referenced in a LicenseMatch of ``resource``,
+    """
+    parent = resource.parent(codebase)
+    
+    for child in parent.children(codebase):
+        path = child.path
+        if path.endswith(referenced_filename) or fileutils.file_base_name(child.path) == referenced_filename:
+            return child

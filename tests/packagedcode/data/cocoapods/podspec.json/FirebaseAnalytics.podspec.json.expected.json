@@ -1,0 +1,46 @@
+{
+  "type": "pods",
+  "namespace": null,
+  "name": "FirebaseAnalytics",
+  "version": "8.1.1",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Objective-C",
+  "description": "Firebase Analytics for iOS. Firebase Analytics is a free, out-of-the-box analytics solution that inspires actionable insights based on app usage and user engagement.",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "organization",
+      "role": "owner",
+      "name": "Google, Inc.",
+      "email": null,
+      "url": null
+    }
+  ],
+  "keywords": [],
+  "homepage_url": "https://firebase.google.com/features/analytics/",
+  "download_url": "https://dl.google.com/firebase/ios/analytics/19ed8dba01e90708/FirebaseAnalytics-8.1.1.tar.gz",
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": {
+    "http": "https://dl.google.com/firebase/ios/analytics/19ed8dba01e90708/FirebaseAnalytics-8.1.1.tar.gz"
+  },
+  "copyright": null,
+  "license_expression": "unknown",
+  "declared_license": "Copyright 2021 Google Copyright",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {},
+  "purl": "pkg:pods/FirebaseAnalytics@8.1.1",
+  "repository_homepage_url": "https://cocoapods.org/pods/FirebaseAnalytics",
+  "repository_download_url": "https://firebase.google.com/features/analytics//archive/8.1.1.zip",
+  "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/e/2/1/FirebaseAnalytics/8.1.1/FirebaseAnalytics.podspec.json"
+}
