@@ -90,7 +90,12 @@ def check_expected_parse_copyright_file(
             expected,
         ]
 
-        assert saneyaml.dump([results]) == saneyaml.dump(expected)
+        results = saneyaml.dump([results])
+        results = results.replace(
+            'unknown-license-reference',
+            'unknown-license-reference should not be detected',
+        )
+        assert results == saneyaml.dump(expected)
 
 
 def get_match_details(match):
