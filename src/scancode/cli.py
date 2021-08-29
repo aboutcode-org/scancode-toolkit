@@ -94,6 +94,7 @@ def print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
     click.echo('ScanCode version ' + scancode_config.__version__)
+    click.echo('ScanCode Data-format version ' + scancode_config.__output_format_version__)
     ctx.exit()
 
 
@@ -249,6 +250,13 @@ def validate_depth(ctx, param, value):
         'the starting directory. Use 0 for no scan depth limit.',
     help_group=cliutils.CORE_GROUP, sort_order=301, cls=PluggableCommandLineOption)
 
+@click.option('--next-data-format',
+    is_flag=True,
+    help='Output the next experimental data format, for JSON and YAML output.'
+         'See CHANGELOG for more details on the changes in this experimental data format.',
+    help_group=cliutils.OUTPUT_GROUP, sort_order=28, cls=PluggableCommandLineOption)
+
+
 @click.help_option('-h', '--help',
     help_group=cliutils.DOC_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
@@ -337,6 +345,7 @@ def scancode(
     verbose,
     max_depth,
     from_json,
+    next_data_format,
     timing,
     max_in_memory,
     test_mode,
@@ -439,6 +448,7 @@ def scancode(
             quiet=quiet,
             verbose=verbose,
             max_depth=max_depth,
+            next_data_format=next_data_format,
             timing=timing,
             max_in_memory=max_in_memory,
             test_mode=test_mode,
@@ -474,6 +484,7 @@ def scancode(
 def run_scan(
     input,  # NOQA
     from_json=False,
+    next_data_format=False,
     strip_root=False,
     full_root=False,
     max_in_memory=10000,
@@ -580,6 +591,7 @@ def run_scan(
         quiet=quiet,
         verbose=verbose,
         from_json=from_json,
+        next_data_format=next_data_format,
         timing=timing,
         max_in_memory=max_in_memory,
         test_mode=test_mode,
@@ -828,6 +840,7 @@ def run_scan(
         cle.start_timestamp = start_timestamp
         cle.tool_name = 'scancode-toolkit'
         cle.tool_version = scancode_config.__version__
+        cle.output_format_version = scancode_config.__output_format_version__
         cle.notice = notice
         cle.options = pretty_params or {}
 
