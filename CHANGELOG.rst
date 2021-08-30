@@ -1,6 +1,13 @@
 Release notes
 =============
 
+Version 21.8.31
+---------------
+
+- Add an attribute to the header for scancode output format versioning.
+  This is for https://github.com/nexB/scancode-toolkit/issues/2653
+
+
 Version 21.8.27
 ---------------
 
