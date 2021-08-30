@@ -154,6 +154,7 @@ class Header(object):
     notice = String(default='', help='Notice text for this tool.')
     start_timestamp = String(help='Start timestamp for this header.')
     end_timestamp = String(help='End timestamp for this header.')
+    output_format_version = String(help='Version for the scancode output data format, such as v1.1 .')
     duration = String(help='Scan duration in seconds.')
     message = String(help='Message text.')
     errors = List(help='List of error messages.')
@@ -175,6 +176,7 @@ class Header(object):
             'notice',
             'start_timestamp',
             'end_timestamp',
+            'output_format_version',
             'duration',
             'message',
             'errors',
