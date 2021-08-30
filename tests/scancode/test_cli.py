@@ -134,7 +134,7 @@ def test_scan_info_does_collect_info():
     args = ['--info', '--strip-root', test_dir, '--json', result_file]
     run_scan_click(args)
     expected = test_env.get_test_loc('info/basic.expected.json')
-    check_json_scan(expected, result_file, regen=False)
+    check_json_scan(expected, result_file, regen=False, ignore_headers=True)
 
 
 def test_scan_info_does_collect_info_with_root():
@@ -142,7 +142,7 @@ def test_scan_info_does_collect_info_with_root():
     result_file = test_env.get_temp_file('json')
     run_scan_click(['--info', test_dir, '--json', result_file])
     expected = test_env.get_test_loc('info/basic.rooted.expected.json')
-    check_json_scan(expected, result_file, regen=False)
+    check_json_scan(expected, result_file, regen=False, ignore_headers=True)
 
 
 def test_scan_info_returns_full_root():
@@ -177,7 +177,7 @@ def test_scan_info_returns_does_not_strip_root_with_single_file():
     args = ['--info', '--strip-root', test_file, '--json', result_file]
     run_scan_click(args)
     expected = test_env.get_test_loc('single/iproute.expected.json')
-    check_json_scan(expected, result_file, remove_file_date=True, regen=False)
+    check_json_scan(expected, result_file, remove_file_date=True, regen=False, ignore_headers=True)
 
 
 @pytest.mark.scanslow
@@ -186,7 +186,7 @@ def test_scan_info_license_copyrights():
     result_file = test_env.get_temp_file('json')
     args = ['--info', '--license', '--copyright', '--strip-root', test_dir, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('info/all.expected.json'), result_file, regen=False)
+    check_json_scan(test_env.get_test_loc('info/all.expected.json'), result_file, regen=False, ignore_headers=True)
 
 
 def test_scan_noinfo_license_copyrights_with_root():
@@ -195,7 +195,7 @@ def test_scan_noinfo_license_copyrights_with_root():
     args = ['--email', '--url', '--license', '--copyright', test_dir, '--json', result_file]
     run_scan_click(args)
     expected = test_env.get_test_loc('info/all.rooted.expected.json')
-    check_json_scan(expected, result_file, regen=False)
+    check_json_scan(expected, result_file, regen=False, ignore_headers=True)
 
 
 def test_scan_email_url_info():
@@ -204,7 +204,7 @@ def test_scan_email_url_info():
     args = ['--email', '--url', '--info', '--strip-root', test_dir, '--json', result_file]
     run_scan_click(args)
     expected = test_env.get_test_loc('info/email_url_info.expected.json')
-    check_json_scan(expected, result_file, regen=False)
+    check_json_scan(expected, result_file, regen=False, ignore_headers=True)
 
 
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_keep_trucking_with_json():
@@ -213,7 +213,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_keep_tru
     args = ['--copyright', '--strip-root', test_file, '--json', result_file]
     result = run_scan_click(args, expected_rc=0)
     expected = test_env.get_test_loc('failing/patchelf.expected.json')
-    check_json_scan(expected, result_file, regen=False)
+    check_json_scan(expected, result_file, regen=False, ignore_headers=True)
     assert 'Some files failed to scan' not in result.output
     assert 'patchelf.pdf' not in result.output
 
@@ -393,7 +393,7 @@ def check_scan_does_not_fail_when_scanning_unicode_files_and_paths(verbosity):
     elif on_windows:
         expected = 'unicodepath/unicodepath.expected-win.json' + verbosity
 
-    check_json_scan(test_env.get_test_loc(expected), result_file, remove_file_date=True, regen=False)
+    check_json_scan(test_env.get_test_loc(expected), result_file, remove_file_date=True, regen=False, ignore_headers=True)
     return results
 
 
@@ -477,7 +477,7 @@ def test_scan_can_return_matched_license_text():
     result_file = test_env.get_temp_file('json')
     args = ['--license', '--license-text', '--strip-root', test_file, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc(expected_file), result_file, regen=False)
+    check_json_scan(test_env.get_test_loc(expected_file), result_file, regen=False, ignore_headers=True)
 
 
 @pytest.mark.skipif(on_windows, reason='This test cannot run on windows as these are not legal file names.')
@@ -491,7 +491,7 @@ def test_scan_can_handle_weird_file_names():
     # Some info vary on each OS
     # See https://github.com/nexB/scancode-toolkit/issues/438 for details
     expected = 'weird_file_name/expected-posix.json'
-    check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
+    check_json_scan(test_env.get_test_loc(expected), result_file, regen=False, ignore_headers=True)
 
 
 @pytest.mark.skipif(on_macos_14_or_higher or on_windows,
@@ -516,7 +516,7 @@ def test_scan_can_handle_non_utf8_file_names_on_posix():
     elif on_windows:
         expected = 'non_utf8/expected-win.json'
 
-    check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
+    check_json_scan(test_env.get_test_loc(expected), result_file, regen=False, ignore_headers=True)
 
 
 def test_scan_can_run_from_other_directory():
@@ -526,7 +526,7 @@ def test_scan_can_run_from_other_directory():
     work_dir = os.path.dirname(result_file)
     args = ['-ci', '--strip-root', test_file, '--json', result_file]
     run_scan_plain(args, cwd=work_dir)
-    check_json_scan(test_env.get_test_loc(expected_file), result_file, remove_file_date=True, regen=False)
+    check_json_scan(test_env.get_test_loc(expected_file), result_file, remove_file_date=True, regen=False, ignore_headers=True)
 
 
 def test_scan_logs_errors_messages_not_verbosely_on_stderr():
@@ -640,7 +640,7 @@ def test_scan_does_scan_php_composer():
     expected_file = test_env.get_test_loc('composer/composer.expected.json')
     result_file = test_env.get_temp_file('results.json')
     run_scan_click(['--package', test_file, '--json', result_file])
-    check_json_scan(expected_file, result_file, regen=False)
+    check_json_scan(expected_file, result_file, regen=False, ignore_headers=True)
 
 
 def test_scan_does_scan_rpm():
@@ -648,7 +648,7 @@ def test_scan_does_scan_rpm():
     expected_file = test_env.get_test_loc('rpm/fping-2.4-0.b2.rhfc1.dag.i386.rpm.expected.json')
     result_file = test_env.get_temp_file('results.json')
     run_scan_click(['--package', test_file, '--json', result_file])
-    check_json_scan(expected_file, result_file, regen=False)
+    check_json_scan(expected_file, result_file, regen=False, ignore_headers=True)
 
 
 def test_scan_cli_help(regen=False):

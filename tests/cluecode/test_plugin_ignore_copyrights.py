@@ -37,11 +37,11 @@ class TestIgnoreCopyrights(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_ignore_copyrights/holders.expected.json')
         run_scan_click(['-c', '--ignore-copyright-holder', 'Regents', '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False, ignore_headers=True)
 
     def test_ignore_authors(self):
         test_dir = self.extract_test_tar('plugin_ignore_copyrights/basic.tgz')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_ignore_copyrights/authors.expected.json')
         run_scan_click(['-c', '--ignore-author', 'Berkeley', '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False, ignore_headers=True)

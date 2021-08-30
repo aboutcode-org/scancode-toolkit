@@ -33,4 +33,4 @@ def test_is_licensing_works():
         test_dir, '--json-pp', result_file, '--verbose']
     run_scan_click(args)
     check_json_scan(test_env.get_test_loc('plugin_license_text/scan.expected.json'),
-                    result_file, remove_file_date=True, regen=False)
+                    result_file, remove_file_date=True, regen=False, ignore_headers=True)
