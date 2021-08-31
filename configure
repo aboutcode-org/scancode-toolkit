@@ -11,7 +11,7 @@ set -e
 #set -x
 
 ################################
-# A configuration script to set things up: 
+# A configuration script to set things up:
 # create a virtualenv and install or update thirdparty packages.
 # Source this script for initial configuration
 # Use configure --help for details
@@ -50,9 +50,11 @@ VIRTUALENV_PYZ_URL=https://bootstrap.pypa.io/virtualenv.pyz
 CFG_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
+# Find packages from the local thirdparty directory or from pypi
+PIP_EXTRA_ARGS="--find-links $CFG_ROOT_DIR/thirdparty"
 
 ################################
-# Set the quiet flag to empty if not defined 
+# Set the quiet flag to empty if not defined
 if [[ "$CFG_QUIET" == "" ]]; then
     CFG_QUIET=" "
 fi
@@ -63,7 +65,7 @@ fi
 # Use environment variables or a file if available.
 # Otherwise the latest Python by default.
 if [[ "$PYTHON_EXECUTABLE" == "" ]]; then
-    # check for a file named PYTHON_EXECUTABLE 
+    # check for a file named PYTHON_EXECUTABLE
     if [ -f "$CFG_ROOT_DIR/PYTHON_EXECUTABLE" ]; then
         PYTHON_EXECUTABLE=$(cat "$CFG_ROOT_DIR/PYTHON_EXECUTABLE")
     else

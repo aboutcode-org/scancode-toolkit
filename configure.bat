@@ -48,6 +48,12 @@ set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
 
 
 @rem ################################
+@rem # Thirdparty package locations and index handling
+set "PIP_EXTRA_ARGS=--find-links %CFG_ROOT_DIR%\thirdparty"
+@rem ################################
+
+
+@rem ################################
 @rem # Set the quiet flag to empty if not defined
 if not defined CFG_QUIET (
     set "CFG_QUIET= "
