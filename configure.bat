@@ -24,8 +24,8 @@
 @rem ################################
 
 @rem # Requirement arguments passed to pip and used by default or with --dev.
-set "REQUIREMENTS=--editable ."
-set "DEV_REQUIREMENTS=--editable .[testing]"
+set "REQUIREMENTS=--editable . --constraint requirements.txt"
+set "DEV_REQUIREMENTS=--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
 
 @rem # where we create a virtualenv
 set "VIRTUALENV_DIR=tmp"
@@ -49,7 +49,12 @@ set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
 
 @rem ################################
 @rem # Thirdparty package locations and index handling
-set "PIP_EXTRA_ARGS=--find-links %CFG_ROOT_DIR%\thirdparty"
+if exist ""%CFG_ROOT_DIR%\requirements.txt"" if exist ""%CFG_ROOT_DIR%\requirements-dev.txt"" (
+    set "INDEX_ARG= --no-index"
+) else (
+    set "INDEX_ARG= "
+)
+set "PIP_EXTRA_ARGS=--find-links %CFG_ROOT_DIR%\thirdparty --find-links https://thirdparty.aboutcode.org/pypi" & %INDEX_ARG%
 @rem ################################
 
 

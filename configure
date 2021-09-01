@@ -26,8 +26,8 @@ CLI_ARGS=$1
 ################################
 
 # Requirement arguments passed to pip and used by default or with --dev.
-REQUIREMENTS="--editable ."
-DEV_REQUIREMENTS="--editable .[testing]"
+REQUIREMENTS="--editable . --constraint requirements.txt"
+DEV_REQUIREMENTS="--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
 
 # where we create a virtualenv
 VIRTUALENV_DIR=tmp
@@ -50,8 +50,12 @@ VIRTUALENV_PYZ_URL=https://bootstrap.pypa.io/virtualenv.pyz
 CFG_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
-# Find packages from the local thirdparty directory or from pypi
-PIP_EXTRA_ARGS="--find-links $CFG_ROOT_DIR/thirdparty"
+# Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
+PIP_EXTRA_ARGS="--find-links $CFG_ROOT_DIR/thirdparty --find-links https://thirdparty.aboutcode.org/pypi"
+
+if [[ -f "$CFG_ROOT_DIR/requirements.txt" ]] && [[ -f "$CFG_ROOT_DIR/requirements-dev.txt" ]]; then
+    PIP_EXTRA_ARGS+=" --no-index"
+fi
 
 ################################
 # Set the quiet flag to empty if not defined
