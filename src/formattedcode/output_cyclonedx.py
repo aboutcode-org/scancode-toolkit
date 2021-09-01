@@ -16,10 +16,23 @@ from datetime import datetime
 from enum import Enum
 from formattedcode import FileOptionType
 import json
-from typing import List
+import re
+from typing import List,FrozenSet
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 import uuid
+
+
+def _get_list_of_known_spdx_license_ids() -> FrozenSet[str]:
+    """load all SPDX Ids known to ScanCode
+       this will also load scancode licenserefs, so we filter those
+    """
+    from licensedcode.models import get_all_spdx_keys, load_licenses
+    spdx_keys = filter(lambda x: "LicenseRef" not in x,
+                       get_all_spdx_keys(load_licenses(with_deprecated=True)))
+    return frozenset(spdx_keys)
+
+spdx_ids = _get_list_of_known_spdx_license_ids()
 
 hash_type_mapping = {
     'md5': 'MD5',
@@ -91,6 +104,7 @@ class CycloneDxComponent():
     description: str = attr.ib(default=None)
     purl: str = attr.ib(default=None)
     hashes: List[CycloneDxHashObject] = attr.ib(factory=list)
+    licenses: List[CycloneDxLicenseEntry] = attr.ib(factory=list)
     externalReferences: List[CycloneDxExternalRef] = attr.ib(factory=list)
     type: CycloneDxComponentType = attr.ib(
         default=CycloneDxComponentType.LIBRARY)
@@ -106,7 +120,6 @@ class CycloneDxBom():
     version: int = attr.ib(init=False, default=1)
     metadata: CycloneDxMetadata = attr.ib(default=CycloneDxMetadata())
     components: List[CycloneDxComponent] = attr.ib(factory=list)
-
 
 def get_tool_header(version: str) -> dict:
     return {
@@ -132,9 +145,28 @@ def get_external_ref_from_key(package: dict, key: str) -> CycloneDxExternalRef:
     type = url_type_mapping[key]
     if url is not None and type is not None:
         return CycloneDxExternalRef(url=url, type=type)
-
     return None
 
+url_pattern = re.compile(r"^(https?://)?[^\s/$.?#].[^\s]*$")
+
+def get_licenses(package: dict)->List[CycloneDxLicenseEntry]:
+    licenses = [CycloneDxLicenseEntry(None, package.get("license_expression"))]
+    declared_license = package["declared_license"]
+    if isinstance(declared_license, list):
+        for entry in declared_license:
+            click.echo(entry)
+            if isinstance(entry, str):
+                lic = CycloneDxLicense()
+                # if our license key is in our list of known spdx ids, set as id
+                if entry in spdx_ids:
+                    lic.id = entry
+                # if we match this regex it is safe to assume we are dealing with a URL
+                elif entry is not None and url_pattern.match(entry):
+                    lic.url = entry
+                else:
+                    lic.name = entry
+                licenses.append(CycloneDxLicenseEntry(license=lic))
+    return licenses
 
 
 def get_external_refs(package: dict)->List[CycloneDxExternalRef]:
@@ -215,6 +247,12 @@ def build_bom(codebase) -> CycloneDxBom:
 
     return bom
 
+def truncate_none_or_empty_values(obj) -> dict:
+    """gets a dict from an object and drops all items
+     that have keys which are either None or an empty list """
+    predicate = lambda el: not (el is None or isinstance(el, list) and len(el)==0)
+    obj_dict = { k : v for k,v in vars(obj).items() if predicate(v) }
+    return obj_dict
 
 def write_results(bom, output_file, cyclonedx_flavor: CycloneDxFlavor, **kwargs):
 
@@ -223,19 +261,21 @@ def write_results(bom, output_file, cyclonedx_flavor: CycloneDxFlavor, **kwargs)
         output_file = open(output_file, 'w')
         close_fd = True
 
-    json.dump(bom, output_file, default=vars)
+    json.dump(bom, output_file, default=truncate_none_or_empty_values)
 
 
 def generate_component_list(codebase, **kwargs) -> List[CycloneDxComponent]:
     files = OutputPlugin.get_files(codebase, **kwargs)
     components = []
     for file in files:
-        for package in file["packages"]:
+        for package in file.get("packages", []):
             hashes = get_hashes_list(package)
             refs = get_external_refs(package)
+            licenses = get_licenses(package)
 
             components.append(CycloneDxComponent(
                 name=package.get("name"), version=package.get("version"),
                 group=package.get("namespace"), purl=package.get("purl"),
-                hashes=hashes, externalReferences=refs))
+                description=package.get("description"),
+                hashes=hashes, licenses=licenses, externalReferences=refs))
     return components
