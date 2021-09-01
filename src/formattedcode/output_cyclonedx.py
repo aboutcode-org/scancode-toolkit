@@ -115,27 +115,35 @@ def get_tool_header(version: str) -> dict:
         "version": version
     }
 
+#maps ScanCode URL attributes to CycloneDx external reference types
+url_type_mapping = {
+    "homepage_url": "website",
+    "download_url": "distribution",
+    "bug_tracking_url": "issue-tracker",
+    "code_view_url": "other",
+    "vcs_url": "vcs",
+    "repository_homepage_url": "website",
+    "repository_download_url": "distribution",
+    "api_data_url": "bom"
+}
+
+def get_external_ref_from_key(package: dict, key: str) -> CycloneDxExternalRef:
+    url = package.get(key)
+    type = url_type_mapping[key]
+    if url is not None and type is not None:
+        return CycloneDxExternalRef(url=url, type=type)
+
+    return None
+
+
+
 def get_external_refs(package: dict)->List[CycloneDxExternalRef]:
     ext_refs = []
 
-    url = package.get("repository_homepage_url")
-    if url is not None:
-        ext_refs.append(
-            CycloneDxExternalRef(url=url, type="website")
-        )
-
-    url = package.get("repository_download_url")
-    if url is not None:
-        ext_refs.append(
-            CycloneDxExternalRef(url=url, type="distribution")
-        )
-
-    url = package.get("api_data_url")
-    if url is not None:
-        ext_refs.append(
-            CycloneDxExternalRef(url=url, type="bom")
-        )
-
+    for key in url_type_mapping:
+        ref = get_external_ref_from_key(package, key)
+        if ref is not None:
+            ext_refs.append(ref)
     return ext_refs
 
 def get_hashes_list(package: dict) -> List[CycloneDxHashObject]:
@@ -143,7 +151,7 @@ def get_hashes_list(package: dict) -> List[CycloneDxHashObject]:
     for alg in hash_type_mapping:
         if alg in package:
             digest = package[alg]
-            if alg is not None:
+            if alg is not None and digest is not None:
                 hashes.append(CycloneDxHashObject(
                     hash_type_mapping[alg], digest))
     return hashes
@@ -154,8 +162,6 @@ Output plugin to write scan results in CycloneDX format.
 For additional information on the format,
 please see https://cyclonedx.org/specification/overview/
 """
-
-
 @ output_impl
 class CycloneDxOutput(OutputPlugin):
     options = [
