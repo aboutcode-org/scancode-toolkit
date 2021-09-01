@@ -79,6 +79,8 @@ __version__ = '21.8.4'
 # See https://github.com/nexB/scancode-toolkit/issues/2653 for more information
 # on the data format version
 __output_format_version__ = '1.1'
+__future_output_format_version__ = '1.1'
+
 
 try:
     from pkg_resources import get_distribution, DistributionNotFound
