@@ -289,6 +289,7 @@ def check_jsonlines_scan(
     result_file,
     regen=False,
     remove_file_date=False,
+    ignore_headers=False,
 ):
     """
     Check the scan result_file JSON Lines results against the expected_file
@@ -311,6 +312,10 @@ def check_jsonlines_scan(
         expected = json.load(res)
 
     streamline_jsonlines_scan(expected, remove_file_date)
+    
+    if ignore_headers:
+        results[0].pop('headers', None)
+        expected[0].pop('headers', None)
 
     expected = json.dumps(expected, indent=2, separators=(',', ': '))
     results = json.dumps(results, indent=2, separators=(',', ': '))

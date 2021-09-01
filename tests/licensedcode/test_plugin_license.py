@@ -78,7 +78,7 @@ def test_license_match_reference():
     args = ['--license', '--license-text', '--license-text-diagnostics', '--strip-root', test_dir, '--json', result_file, '--verbose']
     run_scan_click(args)
     test_loc = test_env.get_test_loc('plugin_license/license_reference/scan-ref.expected.json')
-    check_json_scan(test_loc, result_file, regen=False)
+    check_json_scan(test_loc, result_file, regen=False, ignore_headers=True)
 
 
 def test_license_match_without_reference():
@@ -87,7 +87,7 @@ def test_license_match_without_reference():
     args = ['--license', '--license-text', '--license-text-diagnostics', '--strip-root', test_dir, '--json', result_file, '--verbose']
     run_scan_click(args)
     test_loc = test_env.get_test_loc('plugin_license/license_reference/scan-wref.expected.json')
-    check_json_scan(test_loc, result_file, regen=False)
+    check_json_scan(test_loc, result_file, regen=False, ignore_headers=True)
 
 
 def test_get_referenced_filenames():
