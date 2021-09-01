@@ -334,6 +334,14 @@ def validate_depth(ctx, param, value):
          'are stored. (By default temporary files are deleted when a scan is '
          'completed.)',
     help_group=cliutils.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
+
+@click.option(
+    "--check-version/--no-check-version",
+    help="Whether to check for new versions. Defaults to true.",
+    default=True,
+    # not yet supported in Click 6.7 but added in PluggableCommandLineOption
+    hidden=True,
+    help_group=cliutils.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
 def scancode(
     ctx,
     input,  # NOQA
@@ -352,6 +360,7 @@ def scancode(
     test_slow_mode,
     test_error_mode,
     keep_temp_files,
+    check_version,
     echo_func=echo_stderr,
     *args,
     **kwargs,
@@ -464,10 +473,11 @@ def scancode(
         )
 
         # check for updates
-        from scancode.outdated import check_scancode_version
-        outdated = check_scancode_version()
-        if not quiet and outdated:
-            echo_stderr(outdated, fg='yellow')
+        if check_version:
+            from scancode.outdated import check_scancode_version
+            outdated = check_scancode_version()
+            if not quiet and outdated:
+                echo_stderr(outdated, fg='yellow')
 
     except click.UsageError as e:
         # this will exit

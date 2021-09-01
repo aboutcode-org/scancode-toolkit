@@ -243,6 +243,7 @@ def get_package_columns(_columns=set()):
 
     # some extra columns for components
     extra_columns = [
+        'purl',
         'components',
         'owner_name',
         'reference_notes',

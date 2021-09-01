@@ -36,6 +36,29 @@ if TRACE:
                                      for a in args))
 
 
+def get_license_matches(location=None, query_string=None):
+    """
+    Returns a sequence of LicenseMatch objects wit license detections for the
+    `query_string` or the file at `location`.
+    """
+    if not query_string:
+        return []
+    from licensedcode import cache
+
+    idx = cache.get_index()
+    return idx.match(location=location, query_string=query_string)
+
+
+def get_license_expression_from_matches(license_matches):
+    """
+    Craft a license expression from a list of LicenseMatch objects.
+    """
+    from packagedcode.utils import combine_expressions
+    
+    license_expressions = [match.rule.license_expression for match in license_matches]
+    return combine_expressions(license_expressions, unique=False)
+
+
 def matches_have_unknown(matches, licensing):
     """
     Return True if any of the LicenseMatch in `matches` has an unknown license.

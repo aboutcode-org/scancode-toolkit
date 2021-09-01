@@ -27,6 +27,8 @@ from licensedcode.spans import Span
 from licensedcode.cache import get_index
 from licensedcode.match import set_lines
 from packagedcode.utils import combine_expressions
+from packagedcode.licensing import get_license_matches
+from packagedcode.licensing import get_license_expression_from_matches
 from textcode.analysis import unicode_text
 
 """
@@ -1129,19 +1131,6 @@ def copyright_detector(location):
         return copyrights
 
 
-def get_license_matches(location=None, query_string=None):
-    """
-    Returns a sequence of LicenseMatch objects wit license detections for the
-    `query_string` or the file at `location`.
-    """
-    if not query_string:
-        return []
-    from licensedcode import cache
-
-    idx = cache.get_index()
-    return idx.match(location=location, query_string=query_string)
-
-
 def filter_duplicate_strings(strings):
     """
     Given a list of strings, return only the unique strings, preserving order.
@@ -1251,14 +1240,6 @@ def clean_expression(text):
         cleaned_text = text.replace(source, target)
 
     return cleaned_text
-
-
-def get_license_expression_from_matches(license_matches):
-    """
-    Craft a license expression from a list of LicenseMatch objects.
-    """
-    license_expressions = [match.rule.license_expression for match in license_matches]
-    return combine_expressions(license_expressions, unique=False)
 
 
 def remove_known_license_intros(license_matches):
