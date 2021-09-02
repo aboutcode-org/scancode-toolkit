@@ -22,6 +22,7 @@ from os.path import join
 
 import attr
 import saneyaml
+from license_expression import ExpressionError
 from license_expression import Licensing
 
 from commoncode.fileutils import copyfile
@@ -560,7 +561,7 @@ def validate_rules(rules, licenses_by_key, with_text=False):
                 if rule.data_file:
                     message.append(f'    file://{rule.data_file}')
                 if with_text:
-                    txt = rule.text()[:50].strip()
+                    txt = rule.text()[:100].strip()
                     message.append(f'       {txt}...')
         raise InvalidRule('\n'.join(message))
 
@@ -950,8 +951,8 @@ class BasicRule(object):
                 if licensing:
                     try:
                         licensing.parse(license_expression, validate=True, simple=True)
-                    except InvalidRule as e:
-                        yield f'Failed to parse and validate license_expression: {e}'
+                    except ExpressionError as e:
+                        yield f'Failed to parse and validate license_expression: {license_expression} with error: {e}'
 
             if self.referenced_filenames:
                 if len(set(self.referenced_filenames)) != len(self.referenced_filenames):
@@ -1289,7 +1290,7 @@ class Rule(BasicRule):
 
         return self
 
-    def compute_relevance(self, _threshold=18.0):
+    def compute_relevance(self, _threshold=18.0, _ignore_stored_relevance=False):
         """
         Compute and set the `relevance` attribute for this rule. The relevance
         is a float between 0 and 100 where 100 means highly relevant and 0 means
@@ -1314,7 +1315,11 @@ class Rule(BasicRule):
         The current threshold is 18 words.
         """
 
-        if self.has_stored_relevance:
+        if (
+            self.has_stored_relevance 
+            and not _ignore_stored_relevance
+            and not self.relevance !=100
+        ):
             return
 
         if (isinstance(self, SpdxRule)
@@ -1324,15 +1329,18 @@ class Rule(BasicRule):
         ):
             # use the default max relevance of 100
             self.relevance = 100
-
-        relevance_of_one_word = round((1 / _threshold) * 100, 2)
-        length = self.length
-        if length >= _threshold:
-            # general case
-            self.relevance = 100
+            self.has_stored_relevance = True
         else:
-            computed = int(length * relevance_of_one_word)
-            self.relevance = min([100, computed])
+            relevance_of_one_word = round((1 / _threshold) * 100, 2)
+            length = self.length
+            if length >= _threshold:
+                # general case
+                self.relevance = 100
+                self.has_stored_relevance = False
+            else:
+                computed = int(length * relevance_of_one_word)
+                self.relevance = min([100, computed])
+                self.has_stored_relevance = True
 
     def rule_dir(self):
         """
