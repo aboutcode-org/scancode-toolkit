@@ -226,6 +226,9 @@ def cli(licenses_file):
 
         rulerec = models.Rule(**rd)
 
+        # force recomputing relevance to remove stored relevance for longrules
+        rulerec.compute_relevance(_threshold=18.0, _ignore_stored_relevance=True)
+
         rulerec.data_file = base_loc + '.yml'
         rulerec.text_file = base_loc + '.RULE'
 
