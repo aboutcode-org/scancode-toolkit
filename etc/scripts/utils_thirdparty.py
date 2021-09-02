@@ -894,14 +894,20 @@ class Distribution(NameVer):
         classifiers = raw_data.get_all('Classifier') or []
 
         declared_license = [raw_data['License']] + [c for c in classifiers if c.startswith('License')]
+        license_expression = compute_normalized_license_expression(declared_license)
         other_classifiers = [c for c in classifiers if not c.startswith('License')]
 
+        holder = raw_data['Author']
+        holder_contact=raw_data['Author-email']
+        copyright = f'Copyright {holder} <{holder_contact}>'
         pkginfo_data = dict(
             name=raw_data['Name'],
             declared_license=declared_license,
             version=raw_data['Version'],
             description=raw_data['Summary'],
             homepage_url=raw_data['Home-page'],
+            copyright=copyright,
+            license_expression=license_expression,
             holder=raw_data['Author'],
             holder_contact=raw_data['Author-email'],
             keywords=raw_data['Keywords'],
@@ -2938,3 +2944,25 @@ def find_problems(
                 print(f'   Missing checksums in file://{abpth}')
 
     check_about(dest_dir=dest_dir)
+
+
+def compute_normalized_license_expression(declared_licenses):
+    if not declared_licenses:
+        return
+
+    from packagedcode import licensing
+    from packagedcode.utils import combine_expressions
+
+    detected_licenses = []
+    for declared in declared_licenses:
+        try:
+            license_expression = licensing.get_normalized_expression(
+                query_string=declared
+            )
+        except Exception:
+            return 'unknown'
+        if not license_expression:
+            continue
+        detected_licenses.append(license_expression)
+    if detected_licenses:
+        return combine_expressions(detected_licenses)
