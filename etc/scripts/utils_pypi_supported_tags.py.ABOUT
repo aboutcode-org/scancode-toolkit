@@ -1,0 +1,17 @@
+about_resource: utils_pypi_supported_tags.py
+
+type: github
+namespace: pypa
+name: warehouse
+version: 37a83dd342d9e3b3ab4f6bde47ca30e6883e2c4d
+subpath: warehouse/forklift/legacy.py
+
+package_url: pkg:github/pypa/warehouse@37a83dd342d9e3b3ab4f6bde47ca30e6883e2c4d#warehouse/forklift/legacy.py
+
+download_url: https://github.com/pypa/warehouse/blob/37a83dd342d9e3b3ab4f6bde47ca30e6883e2c4d/warehouse/forklift/legacy.py
+copyright: Copyright (c) The warehouse developers
+homepage_url: https://warehouse.readthedocs.io
+license_expression: apache-2.0
+notes: Wheel platform checking copied and heavily modified on 2020-12-24 from
+ warehouse. This contains the basic functions to check if a wheel file name is
+ would be supported for uploading to PyPI.
