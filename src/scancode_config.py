@@ -72,9 +72,11 @@ def _create_dir(location):
 # current installation location. This is where the source code and static data
 # lives.
 
+
 # in case package is not installed or we do not have setutools/pkg_resources
 # on hand fall back to this version
 __version__ = '21.8.4'
+
 try:
     from pkg_resources import get_distribution, DistributionNotFound
     try:
@@ -87,6 +89,9 @@ except ImportError:
 system_temp_dir = tempfile.gettempdir()
 scancode_src_dir = dirname(__file__)
 scancode_root_dir = dirname(scancode_src_dir)
+
+# 
+SPDX_license_list_version = '3.14'
 
 ################################################################################
 # USAGE MODE FLAGS
