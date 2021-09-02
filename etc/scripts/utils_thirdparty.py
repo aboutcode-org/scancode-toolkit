@@ -899,7 +899,8 @@ class Distribution(NameVer):
 
         holder = raw_data['Author']
         holder_contact=raw_data['Author-email']
-        copyright = f'Copyright {holder} <{holder_contact}>'
+        copyright = f'Copyright (c) {holder} <{holder_contact}>'
+
         pkginfo_data = dict(
             name=raw_data['Name'],
             declared_license=declared_license,
@@ -908,8 +909,8 @@ class Distribution(NameVer):
             homepage_url=raw_data['Home-page'],
             copyright=copyright,
             license_expression=license_expression,
-            holder=raw_data['Author'],
-            holder_contact=raw_data['Author-email'],
+            holder=holder,
+            holder_contact=holder_contact,
             keywords=raw_data['Keywords'],
             classifiers=other_classifiers,
         )
@@ -2949,20 +2950,9 @@ def find_problems(
 def compute_normalized_license_expression(declared_licenses):
     if not declared_licenses:
         return
-
-    from packagedcode import licensing
-    from packagedcode.utils import combine_expressions
-
-    detected_licenses = []
-    for declared in declared_licenses:
-        try:
-            license_expression = licensing.get_normalized_expression(
-                query_string=declared
-            )
-        except Exception:
-            return 'unknown'
-        if not license_expression:
-            continue
-        detected_licenses.append(license_expression)
-    if detected_licenses:
-        return combine_expressions(detected_licenses)
+    try:
+        from packagedcode import pypi
+        return pypi.compute_normalized_license(declared_licenses)
+    except ImportError:
+        # Scancode is not installed, we join all license strings and return it
+        return ' '.join(declared_licenses)

@@ -1,0 +1,8 @@
+about_resource: gen_pypi_simple.py
+name: gen_pypi_simple.py
+license_expression: bsd-2-clause-views and mit
+copyright: Copyright (c) nexB Inc.
+   Copyright (c) 2010 David Wolever <david@wolever.net>
+   Copyright (c) The pip developers
+notes: Originally from https://github.com/wolever/pip2pi and modified extensivley
+ Also partially derived from pip code

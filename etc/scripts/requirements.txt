@@ -1,0 +1,12 @@
+aboutcode_toolkit
+github-release-retry2
+attrs
+commoncode
+click
+requests
+saneyaml
+romp
+pip
+setuptools
+twine
+wheel
