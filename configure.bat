@@ -49,11 +49,6 @@ set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
 
 @rem ################################
 @rem # Thirdparty package locations and index handling
-if exist ""%CFG_ROOT_DIR%\requirements.txt"" if exist ""%CFG_ROOT_DIR%\requirements-dev.txt"" (
-    set "INDEX_ARG= --no-index"
-) else (
-    set "INDEX_ARG= "
-)
 set "PIP_EXTRA_ARGS=--find-links %CFG_ROOT_DIR%\thirdparty --find-links https://thirdparty.aboutcode.org/pypi" & %INDEX_ARG%
 @rem ################################
 
@@ -69,6 +64,7 @@ if not defined CFG_QUIET (
 @rem # Main command line entry point
 set CFG_DEV_MODE=0
 set "CFG_REQUIREMENTS=%REQUIREMENTS%"
+set "NO_INDEX=--no-index"
 
 if "%1" EQU "--help"   (goto cli_help)
 if "%1" EQU "--clean"  (goto clean)
@@ -76,11 +72,17 @@ if "%1" EQU "--dev"    (
     set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
     set CFG_DEV_MODE=1
 )
+if "%1" EQU "--init"   (
+    set "NO_INDEX= "
+)
 if "%1" EQU "--python" (
     echo "The --python option is now DEPRECATED. Use the PYTHON_EXECUTABLE environment"
     echo "variable instead. Run configure --help for details."
     exit /b 0
 )
+
+set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS% %NO_INDEX%"
+
 
 @rem ################################
 @rem # find a proper Python to run
@@ -170,10 +172,14 @@ exit /b 0
     echo "  usage: configure [options]"
     echo " "
     echo The default is to configure for regular use. Use --dev for development.
+    echo Use the --init option if starting a new project and the project
+    echo dependencies are not available on thirdparty.aboutcode.org/pypi/
+    echo and requirements.txt and/or requirements-dev.txt has not been generated.
     echo " "
     echo The options are:
     echo " --clean: clean built and installed files and exit."
     echo " --dev:   configure the environment for development."
+    echo " --init:  pull dependencies from PyPI. Used when first setting up a project."
     echo " --help:  display this help message and exit."
     echo " "
     echo By default, the python interpreter version found in the path is used.
