@@ -53,34 +53,48 @@ class LicenseScanner(ScanPlugin):
             is_flag=True,
             help='Scan <input> for licenses.',
             help_group=SCAN_GROUP,
-            sort_order=10),
+            sort_order=10,
+        ),
 
         PluggableCommandLineOption(('--license-score',),
             type=int, default=0, show_default=True,
             required_options=['license'],
             help='Do not return license matches with a score lower than this score. '
                  'A number between 0 and 100.',
-            help_group=SCAN_OPTIONS_GROUP),
+            help_group=SCAN_OPTIONS_GROUP,
+        ),
 
         PluggableCommandLineOption(('--license-text',),
             is_flag=True,
             required_options=['license'],
             help='Include the detected licenses matched text.',
-            help_group=SCAN_OPTIONS_GROUP),
+            help_group=SCAN_OPTIONS_GROUP,
+        ),
 
         PluggableCommandLineOption(('--license-text-diagnostics',),
             is_flag=True,
             required_options=['license_text'],
             help='In the matched license text, include diagnostic highlights '
                  'surrounding with square brackets [] words that are not matched.',
-            help_group=SCAN_OPTIONS_GROUP),
+            help_group=SCAN_OPTIONS_GROUP,
+        ),
 
         PluggableCommandLineOption(('--license-url-template',),
             default=SCANCODE_LICENSEDB_URL, show_default=True,
             required_options=['license'],
             help='Set the template URL used for the license reference URLs. '
                  'Curly braces ({}) are replaced by the license key.',
-            help_group=SCAN_OPTIONS_GROUP),
+            help_group=SCAN_OPTIONS_GROUP,
+        ),
+
+        PluggableCommandLineOption(
+            ('--unknown-licenses',),
+            is_flag=True,
+            required_options=['license'],
+            help='[EXPERIMENTAL] Detect unknown licenses and follow license '
+                 'references such as "See license in file COPYING".',
+            help_group=SCAN_OPTIONS_GROUP,
+        ),
 
         PluggableCommandLineOption(
             ('--reindex-licenses',),
@@ -88,7 +102,8 @@ class LicenseScanner(ScanPlugin):
             is_flag=True, is_eager=True,
             callback=reindex_licenses,
             help='Check the license index cache and reindex if needed and exit.',
-            help_group=MISC_GROUP)
+            help_group=MISC_GROUP,
+        )
     ]
 
     def is_enabled(self, license, **kwargs):  # NOQA
@@ -96,7 +111,8 @@ class LicenseScanner(ScanPlugin):
 
     def setup(self, **kwargs):
         """
-        This is a cache warmup such that child process inherit from this.
+        This is a cache warmup such that child process inherit from the
+        loaded index.
         """
         from licensedcode.cache import populate_cache
         populate_cache()
@@ -118,13 +134,20 @@ class LicenseScanner(ScanPlugin):
             license_url_template=license_url_template
         )
 
-    def process_codebase(self, codebase, **kwargs):
-        
-        if codebase.has_single_resource:
-            return
+    def process_codebase(self, codebase, unknown_licenses, **kwargs):
+        """
+        Post process the codebase to further detect unknown licenses and follow
+        license references to other files.
 
-        for resource in codebase.walk(topdown=False):
-            match_reference_license(resource,codebase)
+        This is an EXPERIMENTAL feature for now.
+        """
+        if unknown_licenses:
+            if codebase.has_single_resource:
+                return
+
+            for resource in codebase.walk(topdown=False):
+                # follow license references to other files
+                match_reference_license(resource, codebase)
 
 
 def match_reference_license(resource, codebase):

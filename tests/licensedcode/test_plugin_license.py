@@ -145,7 +145,7 @@ def test_scan_license_with_url_template():
              test_dir, '--json-pp', result_file]
     test_loc = test_env.get_test_loc('plugin_license/license_url.expected.json')
     run_scan_click(args)
-    check_json_scan(test_loc, result_file)
+    check_json_scan(test_loc, result_file, regen=False)
 
 
 @pytest.mark.scanslow
