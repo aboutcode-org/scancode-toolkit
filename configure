@@ -30,12 +30,12 @@ REQUIREMENTS="--editable . --constraint requirements.txt"
 DEV_REQUIREMENTS="--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
 
 # where we create a virtualenv
-VIRTUALENV_DIR=tmp
+VIRTUALENV_DIR=venv
 
 # Cleanable files and directories with the --clean option
 CLEANABLE="
     build
-	tmp"
+	venv"
 
 # extra  arguments passed to pip
 PIP_EXTRA_ARGS=" "

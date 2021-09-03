@@ -74,7 +74,7 @@ To generate requirements.txt:
 
 .. code-block:: bash
 
-    python etc/scripts/gen_requirements.py -s tmp/lib/python<version>/site-packages/
+    python etc/scripts/gen_requirements.py -s venv/lib/python<version>/site-packages/
 
 Replace \<version\> with the version number of the Python being used.
 
@@ -82,8 +82,8 @@ To generate requirements-dev.txt after requirements.txt has been generated:
 
 .. code-block:: bash
     ./configure --dev
-    source tmp/bin/activate
-    python etc/scripts/gen_requirements_dev.py -s tmp/lib/python<version>/site-packages/
+    source venv/bin/activate
+    python etc/scripts/gen_requirements_dev.py -s venv/lib/python<version>/site-packages/
 
 Collecting and generating ABOUT files for dependencies
 ------------------------------------------------------

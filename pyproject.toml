@@ -33,10 +33,11 @@ norecursedirs = [
    "Scripts",
    "thirdparty",
    "tmp",
+   "venv",
    "tests/data",
    ".eggs"
 ]
-    
+
 python_files = "*.py"
 
 python_classes = "Test"

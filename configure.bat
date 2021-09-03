@@ -28,10 +28,10 @@ set "REQUIREMENTS=--editable . --constraint requirements.txt"
 set "DEV_REQUIREMENTS=--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
 
 @rem # where we create a virtualenv
-set "VIRTUALENV_DIR=tmp"
+set "VIRTUALENV_DIR=venv"
 
 @rem # Cleanable files and directories to delete with the --clean option
-set "CLEANABLE=build tmp"
+set "CLEANABLE=build venv"
 
 @rem # extra  arguments passed to pip
 set "PIP_EXTRA_ARGS= "

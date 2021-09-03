@@ -19,4 +19,4 @@ python:
 install: ./configure --dev
 
 # Scripts to run at script stage
-script: tmp/bin/pytest
+script: venv/bin/pytest
