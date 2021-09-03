@@ -2,13 +2,13 @@ key: opubl-1.0
 short_name: Open Publication License v1.0
 name: Open Publication License v1.0
 spdx_license_key: OPUBL-1.0
+category: Free Restricted
+owner: David Wiley
+homepage_url: http://opencontent.org/openpub/
 other_urls:
-    - http://opencontent.org/openpub/
+    - http://works.opencontent.org/
+    - https://opencontent.org/openpub/
     - https://www.debian.org/opl
     - https://www.ctan.org/license/opl
 ignorable_urls:
-    - http://works.opencontent.org/
     - http://www.opencontent.org/openpub
-ignorable_emails:
-    - opal-request@opencontent.org
-    - opal@opencontent.org
