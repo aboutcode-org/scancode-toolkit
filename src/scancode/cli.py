@@ -94,7 +94,7 @@ def print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
     click.echo('ScanCode version ' + scancode_config.__version__)
-    click.echo('SPDX License list version ' + scancode_config.SPDX_license_list_version)
+    click.echo('SPDX License list version ' + scancode_config.spdx_license_list_version)
     ctx.exit()
 
 
@@ -841,7 +841,7 @@ def run_scan(
         cle.tool_version = scancode_config.__version__
         cle.notice = notice
         cle.options = pretty_params or {}
-        cle.extra_data['SPDX-license-list-version'] = scancode_config.SPDX_license_list_version
+        cle.extra_data['spdx_license_list_version'] = scancode_config.spdx_license_list_version
 
         # TODO: this is weird: may be the timings should NOT be stored on the
         # codebase, since they exist in abstract of it??

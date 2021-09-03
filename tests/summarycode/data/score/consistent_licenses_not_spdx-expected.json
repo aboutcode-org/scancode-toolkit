@@ -15,6 +15,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 3
       }
     }
@@ -85,7 +86,7 @@
       "licenses": [
         {
           "key": "mit-xfig",
-          "score": 90.0,
+          "score": 100.0,
           "name": "MIT Xfig Variant",
           "short_name": "MIT Xfig Variant",
           "category": "Permissive",
@@ -118,7 +119,7 @@
             "rule_length": 81,
             "matched_length": 81,
             "match_coverage": 100.0,
-            "rule_relevance": 90
+            "rule_relevance": 100
           }
         }
       ],
@@ -237,7 +238,7 @@
       "licenses": [
         {
           "key": "mit-xfig",
-          "score": 90.0,
+          "score": 100.0,
           "name": "MIT Xfig Variant",
           "short_name": "MIT Xfig Variant",
           "category": "Permissive",
@@ -270,7 +271,7 @@
             "rule_length": 81,
             "matched_length": 81,
             "match_coverage": 100.0,
-            "rule_relevance": 90
+            "rule_relevance": 100
           }
         }
       ],

@@ -6,6 +6,7 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+import os
 import sys
 import uuid
 from io import BytesIO
@@ -25,12 +26,12 @@ from spdx.version import Version
 from commoncode.cliutils import OUTPUT_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.fileutils import file_name
+from commoncode.fileutils import parent_directory
 from commoncode.text import python_safe_name
 from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from commoncode.fileutils import parent_directory
-import os
+import scancode_config
 
 # Tracing flags
 TRACE = False
@@ -49,8 +50,9 @@ if TRACE or TRACE_DEEP:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str)
-                                     and a or repr(a) for a in args))
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
 
 """
 Output plugins to write scan results in SPDX format.
@@ -228,10 +230,13 @@ def write_spdx(
     _patch_license_list()
 
     ns_prefix = '_'.join(package_name.lower().split())
-
-    doc = Document(Version(2, 1), License.from_identifier('CC0-1.0'))
-    doc.comment = notice
-    doc.namespace = f'http://spdx.org/spdxdocs/{ns_prefix}-{uuid.uuid4()}'
+    comment = notice + f'\nSPDX License List: {scancode_config.spdx_license_list_version}'
+    doc = Document(
+        version=Version(2, 1),
+        data_license=License.from_identifier('CC0-1.0'),
+        comment=notice,
+        namespace=f'http://spdx.org/spdxdocs/{ns_prefix}-{uuid.uuid4()}',
+    )
     tool_name = tool_name or 'ScanCode'
     doc.creation_info.add_creator(Tool(f'{tool_name} {tool_version}'))
     doc.creation_info.set_created_now()

@@ -91,7 +91,7 @@ scancode_src_dir = dirname(__file__)
 scancode_root_dir = dirname(scancode_src_dir)
 
 # 
-SPDX_license_list_version = '3.14'
+spdx_license_list_version = '3.14'
 
 ################################################################################
 # USAGE MODE FLAGS
