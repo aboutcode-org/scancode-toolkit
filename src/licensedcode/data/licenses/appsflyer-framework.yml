@@ -1,0 +1,12 @@
+key: appsflyer-framework
+short_name: AppsFlyer Framework License
+name: AppsFlyer Framework License
+category: Proprietary Free
+owner: AppsFlyer
+homepage_url: https://github.com/AppsFlyerSDK/AppsFlyerFramework/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-appsflyer-framework
+ignorable_urls:
+    - https://www.appsflyer.com/gdpr/dpa.pdf
+    - https://www.appsflyer.com/privacy-policy
+ignorable_emails:
+    - support@appsflyer.com

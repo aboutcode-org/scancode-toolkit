@@ -1,0 +1,8 @@
+key: ms-windows-os-2018
+short_name: MS Windows OS 2018
+name: Microsoft Windows Operating System License 2019
+category: Commercial
+owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-windows-os-2018
+other_urls:
+    - https://github.com/nexB/scancode-toolkit/files/6909005/license.zip

@@ -1,0 +1,8 @@
+key: cups-apple-os-exception
+short_name: CUPS Apple OS Exception to GPL and LGPL
+name: CUPS Apple OS Exception to GPL and LGPL
+category: Copyleft Limited
+owner: Easy Software Products
+homepage_url: https://opensource.apple.com/source/cups/cups-91/LICENSE.txt.auto.html
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-cups-apple-os-exception
