@@ -66,19 +66,24 @@ set CFG_DEV_MODE=0
 set "CFG_REQUIREMENTS=%REQUIREMENTS%"
 set "NO_INDEX=--no-index"
 
-if "%1" EQU "--help"   (goto cli_help)
-if "%1" EQU "--clean"  (goto clean)
-if "%1" EQU "--dev"    (
-    set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
-    set CFG_DEV_MODE=1
-)
-if "%1" EQU "--init"   (
-    set "NO_INDEX= "
-)
-if "%1" EQU "--python" (
-    echo "The --python option is now DEPRECATED. Use the PYTHON_EXECUTABLE environment"
-    echo "variable instead. Run configure --help for details."
-    exit /b 0
+:again
+if not "%1" == "" (
+    if "%1" EQU "--help"   (goto cli_help)
+    if "%1" EQU "--clean"  (goto clean)
+    if "%1" EQU "--dev"    (
+        set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
+        set CFG_DEV_MODE=1
+    )
+    if "%1" EQU "--init"   (
+        set "NO_INDEX= "
+    )
+    if "%1" EQU "--python" (
+        echo "The --python option is now DEPRECATED. Use the PYTHON_EXECUTABLE environment"
+        echo "variable instead. Run configure --help for details."
+        exit /b 0
+    )
+    shift
+    goto again
 )
 
 set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS% %NO_INDEX%"

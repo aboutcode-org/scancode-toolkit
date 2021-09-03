@@ -164,12 +164,18 @@ CFG_DEV_MODE=0
 CFG_REQUIREMENTS=$REQUIREMENTS
 NO_INDEX="--no-index"
 
-case "$CLI_ARGS" in
-    --help)    cli_help;;
-    --clean)   clean;;
-    --dev)     CFG_REQUIREMENTS="$DEV_REQUIREMENTS" && CFG_DEV_MODE=1;;
-    --init)    NO_INDEX="";;
-esac
+# We are using getopts to parse option arguments that start with "-"
+while getopts :-: optchar; do
+    case "${optchar}" in
+        -)
+            case "${OPTARG}" in
+                help  ) cli_help;;
+                clean ) clean;;
+                dev   ) CFG_REQUIREMENTS="$DEV_REQUIREMENTS" && CFG_DEV_MODE=1;;
+                init  ) NO_INDEX="";;
+            esac;;
+    esac
+done
 
 PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS $NO_INDEX"
 
