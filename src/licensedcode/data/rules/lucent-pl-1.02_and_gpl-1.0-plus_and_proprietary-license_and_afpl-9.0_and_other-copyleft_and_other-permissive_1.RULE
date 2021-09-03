@@ -1,0 +1,20 @@
+Lucent Public License, Version 1.02, reproduced below,
+with the following notable exceptions:
+
+1. No right is granted to create derivative works of or
+   to redistribute (other than with the Plan 9 Operating System)
+   the screen imprinter fonts identified in subdirectory
+   /lib/font/bit/lucida and printer fonts (Lucida Sans Unicode, Lucida
+   Sans Italic, Lucida Sans Demibold, Lucida Typewriter, Lucida Sans
+   Typewriter83), identified in subdirectory /sys/lib/postscript/font.
+   These directories contain material copyrights by B&H Inc. and Y&Y Inc.
+
+2. The printer fonts identified in subdirectory /sys/lib/ghostscript/font
+   are subject to the GNU GPL, reproduced in the file /LICENSE.gpl.
+
+3. The ghostscript program in the subdirectory /sys/src/cmd/gs is
+   covered by the Aladdin Free Public License, reproduced in the file
+   /LICENSE.afpl.
+
+Other, less notable exceptions are marked in the file tree with
+COPYING, COPYRIGHT, or LICENSE files.

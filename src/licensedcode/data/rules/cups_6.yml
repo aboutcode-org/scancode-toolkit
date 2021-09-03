@@ -1,0 +1,5 @@
+license_expression: cups
+is_license_notice: yes
+referenced_filenames:
+    - /usr/share/common-licenses/GPL-2
+notes: GPL-2.0 with AOSDL exception seen in CUPS also with LGPL

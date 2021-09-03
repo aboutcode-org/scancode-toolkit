@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_notice: yes
+notes: https://github.com/steinbergmedia/vst3sdk/blob/master/LICENSE.txt
+ignorable_urls:
+    - http://www.steinberg.net/en/company/developers.html
