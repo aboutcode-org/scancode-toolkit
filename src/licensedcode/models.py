@@ -1290,9 +1290,24 @@ class Rule(BasicRule):
 
         return self
 
-    def compute_relevance(self, _threshold=18.0, _ignore_stored_relevance=False):
+    def compute_relevance(self, _threshold=18.0):
         """
         Compute and set the `relevance` attribute for this rule. The relevance
+        is a float between 0 and 100 where 100 means highly relevant and 0 means
+        not relevant at all.
+
+        The current threshold is 18 words.
+        """
+        computed = self.compute_theoritical_relevance(_threshold=_threshold)
+        if self.has_stored_relevance:
+            if self.relevance == computed:
+                self.has_stored_relevance = False
+        else:
+            self.relevance = computed
+
+    def compute_theoritical_relevance(self, _threshold=18.0):
+        """
+        Compute and return the theoritical `relevance` for this rule. The relevance
         is a float between 0 and 100 where 100 means highly relevant and 0 means
         not relevant at all.
 
@@ -1314,33 +1329,18 @@ class Rule(BasicRule):
 
         The current threshold is 18 words.
         """
-
-        if (
-            self.has_stored_relevance 
-            and not _ignore_stored_relevance
-            and not self.relevance !=100
-        ):
-            return
-
-        if (isinstance(self, SpdxRule)
-            # false positive rules with no license: they do not
-            # have licenses and their matches are never returned
-            or self.is_false_positive
-        ):
+        # false positive rules with no license and their matches are never returned
+        if isinstance(self, SpdxRule) or self.is_false_positive:
             # use the default max relevance of 100
-            self.relevance = 100
-            self.has_stored_relevance = True
+            return 100
+
+        elif self.length >= _threshold:
+            return 100
+
         else:
             relevance_of_one_word = round((1 / _threshold) * 100, 2)
-            length = self.length
-            if length >= _threshold:
-                # general case
-                self.relevance = 100
-                self.has_stored_relevance = False
-            else:
-                computed = int(length * relevance_of_one_word)
-                self.relevance = min([100, computed])
-                self.has_stored_relevance = True
+            computed = int(self.length * relevance_of_one_word)
+            return  min([100, computed])
 
     def rule_dir(self):
         """
