@@ -1299,17 +1299,20 @@ class Rule(BasicRule):
         The current threshold is 18 words.
         """
         computed = self.compute_theoritical_relevance(_threshold=_threshold)
-        if self.has_stored_relevance:
-            if self.relevance == computed:
-                self.has_stored_relevance = False
-        else:
+
+        if not self.relevance:
             self.relevance = computed
+        elif self.relevance == computed:
+            self.has_stored_relevance = False
+        else:
+            if not self.has_stored_relevance:
+                self.has_stored_relevance = True
 
     def compute_theoritical_relevance(self, _threshold=18.0):
         """
-        Compute and return the theoritical `relevance` for this rule. The relevance
-        is a float between 0 and 100 where 100 means highly relevant and 0 means
-        not relevant at all.
+        Compute and return the theoritical `relevance` for this rule. The
+        relevance is a float between 0 and 100 where 100 means highly relevant
+        and 0 means not relevant at all.
 
         For instance a match to the "gpl" or the "cpol" words have a fairly low
         relevance as they are a weak indication of an actual license and could

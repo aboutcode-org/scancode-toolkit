@@ -385,14 +385,33 @@ class TestRule(FileBasedTesting):
         assert rule.relevance == 100
         assert rule.has_stored_relevance
 
-    def test_compute_relevance_updates_stored_relevance_for_short_rules(self):
-        rule = models.Rule(stored_text='abcd ' * 18, license_expression='public-domain')
+    def test_compute_relevance_does_not_update_stored_relevance_for_short_rules(self):
+        rule = models.Rule(stored_text='abcd ' * 17, license_expression='public-domain')
         rule.relevance = 100
         rule.has_stored_relevance = False
         rule.length = 17
         rule.compute_relevance()
         assert rule.relevance == 100
         assert rule.has_stored_relevance
+
+    def test_compute_relevance_does_update_stored_relevance_for_short_rules(self):
+        rule = models.Rule(stored_text='abcd ' * 17, license_expression='public-domain')
+        rule.relevance = 94
+        rule.has_stored_relevance = True
+        rule.length = 17
+        rule.compute_relevance()
+        assert rule.relevance == 94
+        assert not rule.has_stored_relevance
+
+    def test_compute_relevance_does_not_update_stored_relevance_for_short_rules_if_computed_differs(self):
+        rule = models.Rule(stored_text='abcd ' * 16, license_expression='public-domain')
+        rule.relevance = 94
+        rule.has_stored_relevance = True
+        rule.length = 16
+        rule.compute_relevance()
+        assert rule.relevance == 94
+        assert rule.has_stored_relevance
+
 
     def test_compute_relevance_is_hundred_for_false_positive(self):
         rule = models.Rule(stored_text='1', license_expression='public-domain')
