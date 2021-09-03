@@ -4,14 +4,15 @@ name: Open Publication License v1.0
 category: Permissive
 owner: OpenContent
 homepage_url: http://opencontent.org/openpub/
-spdx_license_key: LicenseRef-scancode-openpub
+spdx_license_key: OPUBL-1.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-openpub
 text_urls:
-    - http://opencontent.org/openpub/
+    - https://opencontent.org/openpub/
 other_urls:
-    - http://www.opencontent.org/openpub/
-ignorable_urls:
     - http://works.opencontent.org/
+    - https://opencontent.org/openpub/
+    - https://www.debian.org/opl
+    - https://www.ctan.org/license/opl
+ignorable_urls:
     - http://www.opencontent.org/openpub
-ignorable_emails:
-    - opal-request@opencontent.org
-    - opal@opencontent.org
