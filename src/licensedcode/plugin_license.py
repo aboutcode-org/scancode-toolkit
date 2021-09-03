@@ -11,14 +11,36 @@ from functools import partial
 
 import attr
 
-from commoncode import fileutils
-from commoncode.cliutils import PluggableCommandLineOption
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from commoncode.cliutils import MISC_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from commoncode.cliutils import SCAN_GROUP
+from commoncode.fileutils import file_name
 from scancode.api import SCANCODE_LICENSEDB_URL
+
+
+TRACE = True
+
+def logger_debug(*args): pass
+
+
+if TRACE:
+    use_print = True
+    if use_print:
+        prn = print
+    else:
+        import logging
+        import sys
+        logger = logging.getLogger(__name__)
+        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+        logging.basicConfig(stream=sys.stdout)
+        logger.setLevel(logging.DEBUG)
+        prn = logger.debug
+
+    def logger_debug(*args):
+        return prn(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 def reindex_licenses(ctx, param, value):
@@ -119,71 +141,85 @@ class LicenseScanner(ScanPlugin):
         )
 
     def process_codebase(self, codebase, **kwargs):
-        
+
         if codebase.has_single_resource:
             return
 
-        for resource in codebase.walk(topdown=False):
-            match_reference_license(resource,codebase)
+        for resource in codebase.walk():
+            if TRACE:
+                license_expressions_before = list(resource.license_expressions)
+            modified = add_referenced_filenames_license_matches(resource, codebase)
+            if TRACE and modified:
+                license_expressions_after = list(resource.license_expressions)
+                logger_debug(
+                    f'add_referenced_filenames_license_matches: Modfied:',
+                    f'{resource} with license_expressions:\n'
+                    f'before: {license_expressions_before}\n'
+                    f'after : {license_expressions_after}'
+                )
 
 
-def match_reference_license(resource, codebase):
+def add_referenced_filenames_license_matches(resource, codebase):
     """
-    Return the ``resource`` Resource updating and saving it in place, after adding new
-    license matches (licenses and license_expressions) following their Rule
-    ``referenced_filenames`` if any. Return None if this is not a file Resource.
+    Return an updated ``resource`` saving it in place, after adding new license
+    matches (licenses and license_expressions) following their Rule
+    ``referenced_filenames`` if any. Return None if ``resource`` is not a file
+    Resource or was not updated.
     """
     if not resource.is_file:
         return
 
-    licenses = resource.licenses
+    license_matches = resource.licenses
+    if not license_matches:
+        return
+
     license_expressions = resource.license_expressions
-    if not licenses:
-        return 
 
-    referenced_licenses = []
-    referenced_license_expressions = []
-    referenced_filenames = get_referenced_filenames(licenses)
     modified = False
-                
-    for referenced_filename in referenced_filenames:
-        new_resource = find_referenced_resource(referenced_filename=referenced_filename, resource=resource, codebase=codebase)
-        if new_resource:
-            modified = True
-            referenced_licenses.extend(new_resource.licenses)
-            referenced_license_expressions.extend(new_resource.license_expressions)
 
-    licenses.extend(referenced_licenses)
-    license_expressions.extend(referenced_license_expressions)
-    
+    for referenced_filename in get_referenced_filenames(license_matches):
+        referenced_resource = find_referenced_resource(
+            referenced_filename=referenced_filename,
+            resource=resource,
+            codebase=codebase,
+        )
+
+        if referenced_resource and referenced_resource.licenses:
+            modified = True
+            # TODO: we should hint that these matches were defererenced from
+            # following a referenced filename
+            license_matches.extend(referenced_resource.licenses)
+            license_expressions.extend(referenced_resource.license_expressions)
+
     if modified:
         codebase.save_resource(resource)
-    return resource
+        return resource
 
 
 def get_referenced_filenames(license_matches):
     """
-    Return a list of unique referenced filenames found in the rules of a list of ``license_matches``
+    Return a list of unique referenced filenames found in the rules of a list of
+    ``license_matches``
     """
-    referenced_filenames = []
+    unique_filenames = []
     for license_match in license_matches:
-        referenced_files = license_match['matched_rule']['referenced_filenames']
-        for referenced_filename in referenced_files:
-            if not referenced_filename in referenced_filenames:
-                referenced_filenames.append(referenced_filename)
-    
-    return referenced_filenames
+        for filename in license_match['matched_rule']['referenced_filenames']:
+            if filename not in unique_filenames:
+                unique_filenames.append(filename)
+
+    return unique_filenames
 
 
 def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
     """
-    Return a Resource matching the ``referenced_filename`` path or filename given a ``resource`` in ``codebase``.
-    Return None if the ``referenced_filename`` cannot be found in the same directory as the base ``resource``.
-    ``referenced_filename`` is the path or filename referenced in a LicenseMatch of ``resource``,
+    Return a Resource matching the ``referenced_filename`` path or filename
+    given a ``resource`` in ``codebase``. Return None if the
+    ``referenced_filename`` cannot be found in the same directory as the base
+    ``resource``. ``referenced_filename`` is the path or filename referenced in
+    a LicenseMatch of ``resource``,
     """
-    parent = resource.parent(codebase)
-    
-    for child in parent.children(codebase):
-        path = child.path
-        if path.endswith(referenced_filename) or fileutils.file_base_name(child.path) == referenced_filename:
+    # this can be a path
+    ref_filename = file_name(referenced_filename)
+    for child in resource.parent(codebase).children(codebase):
+        if child.name == ref_filename:
             return child
