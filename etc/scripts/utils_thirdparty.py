@@ -814,7 +814,11 @@ class Distribution(NameVer):
         return f'--hash=sha256:{self.sha256}'
 
     def get_license_keys(self):
-        return LICENSING.license_keys(self.license_expression, unique=True, simple=True)
+        try:
+            keys = LICENSING.license_keys(self.license_expression, unique=True, simple=True)
+        except license_expression.ExpressionParseError:
+            return ['unknown']
+        return keys
 
     def fetch_license_files(self, dest_dir=THIRDPARTY_DIR):
         """

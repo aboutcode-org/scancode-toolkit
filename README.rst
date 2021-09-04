@@ -89,6 +89,14 @@ To generate requirements-dev.txt after requirements.txt has been generated:
     ./configure --init --dev
     python etc/scripts/gen_requirements_dev.py -s venv/lib/python<version>/site-packages/
 
+Note: on Windows, the ``site-packages`` directory is located at ``venv\Lib\site-packages\``
+
+.. code-block:: bash
+
+    python .\\etc\\scripts\\gen_requirements.py -s .\\venv\\Lib\\site-packages\\
+    .\configure --init --dev
+    python .\\etc\\scripts\\gen_requirements_dev.py -s .\\venv\\Lib\\site-packages\\
+
 Collecting and generating ABOUT files for dependencies
 ------------------------------------------------------
 
@@ -117,6 +125,45 @@ upload them to thirdparty.aboutcode.org/pypi by placing the wheels and ABOUT
 files from the thirdparty directory to the pypi directory at
 https://github.com/nexB/thirdparty-packages
 
+
+Usage after project initialization
+----------------------------------
+
+Once the ``requirements.txt`` and ``requirements-dev.txt`` has been generated
+and the project dependencies and their ABOUT files have been uploaded to
+thirdparty.aboutcode.org/pypi, you can configure the project without using the
+``--init`` option.
+
+If the virtual env for the project becomes polluted, or you would like to remove
+it, use the ``--clean`` option:
+
+.. code-block:: bash
+
+    ./configure --clean
+
+Then you can run ``./configure`` again to set up the project virtual environment.
+
+To set up the project for development use:
+
+.. code-block:: bash
+
+    ./configure --dev
+
+To update the project dependencies (adding, removing, updating packages, etc.),
+update the dependencies in ``setup.cfg``, then run:
+
+.. code-block:: bash
+
+    ./configure --clean # Remove existing virtual environment
+    ./configure --init # Create project virtual environment, pull in new dependencies
+    source venv/bin/activate # Ensure virtual environment is activated
+    python etc/scripts/gen_requirements.py -s venv/lib/python<version>/site-packages/ # Regenerate requirements.txt
+    python etc/scripts/gen_requirements_dev.py -s venv/lib/python<version>/site-packages/ # Regenerate requirements-dev.txt
+    pip install -r etc/scripts/requirements.txt # Install dependencies needed by etc/scripts/bootstrap.py
+    python etc/scripts/bootstrap.py -r requirements.txt -r requirements-dev.txt --with-deps # Collect dependency wheels and their ABOUT files
+
+Ensure that the generated ABOUT files are valid, then take the dependency wheels
+and ABOUT files and upload them to thirdparty.aboutcode.org/pypi.
 
 Release Notes
 =============
