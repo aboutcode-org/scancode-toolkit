@@ -39,6 +39,7 @@ Customizing
 You typically want to perform these customizations:
 
 - remove or update the src/README.rst and tests/README.rst files
+- set project info and dependencies in setup.cfg
 - check the configure and configure.bat defaults
 
 Initializing a project
@@ -118,7 +119,15 @@ https://github.com/nexB/thirdparty-packages
 
 
 Release Notes
--------------
+=============
 
-- 2021-05-11: adopt new configure scripts from ScanCode TK that allows correct
-  configuration of which Python version is used.
+- 2021-09-03:
+    - ``configure`` now requires pinned dependencies via the use of ``requirements.txt`` and ``requirements-dev.txt``
+    - ``configure`` can now accept multiple options at once
+    - Add utility scripts from scancode-toolkit/etc/release/ for use in generating project files
+    - Rename virtual environment directory from ``tmp`` to ``venv``
+    - Update README.rst with instructions for generating ``requirements.txt`` and ``requirements-dev.txt``,
+      as well as collecting dependencies as wheels and generating ABOUT files for them.
+
+- 2021-05-11:
+    - Adopt new configure scripts from ScanCode TK that allows correct configuration of which Python version is used.
