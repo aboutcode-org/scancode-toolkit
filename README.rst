@@ -70,6 +70,10 @@ requirements-dev.txt files.
 
 Ensure the virtual environment is enabled.
 
+.. code-block:: bash
+
+    source venv/bin/activate
+
 To generate requirements.txt:
 
 .. code-block:: bash
@@ -82,11 +86,16 @@ To generate requirements-dev.txt after requirements.txt has been generated:
 
 .. code-block:: bash
     ./configure --init --dev
-    source venv/bin/activate
     python etc/scripts/gen_requirements_dev.py -s venv/lib/python<version>/site-packages/
 
 Collecting and generating ABOUT files for dependencies
 ------------------------------------------------------
+
+Ensure that the dependencies used by ``etc/scripts/bootstrap.py`` are installed:
+
+.. code-block:: bash
+
+    pip install -r etc/scripts/requirements.txt
 
 Once we have requirements.txt and requirements-dev.txt, we can fetch the project
 dependencies as wheels and generate ABOUT files for them:
