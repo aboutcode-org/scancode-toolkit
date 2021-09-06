@@ -14,6 +14,7 @@ import os
 from commoncode.testcase import FileDrivenTesting
 from formattedcode.output_cyclonedx import *
 from scancode.cli_test_utils import run_scan_click
+from xml.etree import ElementTree as ET
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -22,6 +23,10 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 def load_json_from_test_location(test_location):
     with open(test_location, "r") as input_stream:
         return json.load(input_stream)
+
+
+def load_xml_from_test_location(test_location):
+    return ET.parse(test_location)
 
 
 def test_can_encode_component():
@@ -109,4 +114,13 @@ def test_cyclonedx_json():
 
 
 def test_cyclonedx_xml():
-    pass
+    """verify components and dependencies are serialized correctly"""
+    test_dir = test_env.get_test_loc('cyclonedx/simple')
+    result_file = test_env.get_temp_file('cyclonedx')
+    args = ['-p', test_dir, '--cyclonedx', result_file]
+    run_scan_click(args)
+    expected_file = test_env.get_test_loc('cyclonedx/expected.xml')
+    result = load_xml_from_test_location(result_file)
+    expected = load_xml_from_test_location(expected_file)
+    assert result.getroot().get("components") == expected.getroot().get("components")
+    assert result.getroot().get("dependencies") == expected.getroot().get("dependencies")

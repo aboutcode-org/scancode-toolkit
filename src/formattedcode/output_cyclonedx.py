@@ -8,19 +8,21 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import attr
 import click
-from commoncode.cliutils import PluggableCommandLineOption
-from commoncode.cliutils import OUTPUT_GROUP
-from datetime import datetime
-from enum import Enum
-from formattedcode import FileOptionType
 import json
 import re
-from typing import FrozenSet, List, Tuple
-from plugincode.output import output_impl
-from plugincode.output import OutputPlugin
 import uuid
+from datetime import datetime
+from enum import Enum
+from xml.etree import ElementTree as ET
+
+import attr
+from commoncode.cliutils import OUTPUT_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from formattedcode import FileOptionType
+from plugincode.output import OutputPlugin
+from plugincode.output import output_impl
+from typing import FrozenSet, List, Tuple
 
 
 def _get_set_of_known_licenses_and_spdx_license_ids() -> Tuple[List, FrozenSet[str]]:
@@ -33,6 +35,7 @@ def _get_set_of_known_licenses_and_spdx_license_ids() -> Tuple[List, FrozenSet[s
                        get_all_spdx_keys(licenses))
     return (licenses, frozenset(spdx_keys))
 
+
 known_licenses, spdx_ids = _get_set_of_known_licenses_and_spdx_license_ids()
 
 hash_type_mapping = {
@@ -42,21 +45,25 @@ hash_type_mapping = {
     'sha512': 'SHA-512',
 }
 
+
 @attr.s
 class CycloneDxLicense:
     id: str = attr.ib(default=None)
     name: str = attr.ib(default=None)
     url: str = attr.ib(default=None)
 
+
 @attr.s
 class CycloneDxLicenseEntry:
     license: CycloneDxLicense = attr.ib(default=None)
     expression: str = attr.ib(default=None)
 
+
 @attr.s
 class CycloneDxAttribute:
     name: str = attr.ib()
     value: str = attr.ib()
+
 
 @attr.s
 class CycloneDxMetadata():
@@ -65,15 +72,17 @@ class CycloneDxMetadata():
     tools: List[dict] = attr.ib(factory=list)
     properties: List[CycloneDxAttribute] = attr.ib(factory=list)
 
+
 @attr.s
 class CycloneDxHashObject():
     alg: str = attr.ib()
     content: str = attr.ib()
 
+
 @attr.s
 class CycloneDxExternalRef:
     url: str = attr.ib()
-    type: str = attr.ib(validator=attr.validators.in_(["vcs", "issue-tracker","website",
+    type: str = attr.ib(validator=attr.validators.in_(["vcs", "issue-tracker", "website",
                                                        "advisories", "bom", "mailing-list", "social", "chat",
                                                        "documentation", "support", "distribution", "license",
                                                        "build-meta", "build-system", "other"]))
@@ -91,10 +100,12 @@ class CycloneDxComponentType(str, Enum):
     FIRMWARE = "firmware"
     FILE = "file"
 
+
 class CycloneDxComponentScope(str, Enum):
     REQUIRED = "required"
     OPTIONAL = "optional"
     EXCLUDED = "excluded"
+
 
 @attr.s
 class CycloneDxComponent():
@@ -112,12 +123,14 @@ class CycloneDxComponent():
     type: CycloneDxComponentType = attr.ib(
         default=CycloneDxComponentType.LIBRARY)
     properties: List[CycloneDxAttribute] = attr.ib(factory=list)
-    scope: CycloneDxComponentScope  = attr.ib(default=CycloneDxComponentScope.REQUIRED)
+    scope: CycloneDxComponentScope = attr.ib(default=CycloneDxComponentScope.REQUIRED)
+
 
 @attr.s
 class CycloneDxDependency:
     ref: str = attr.ib()
     dependsOn: str = attr.ib(factory=list)
+
 
 @attr.s
 class CycloneDxBom():
@@ -130,6 +143,7 @@ class CycloneDxBom():
     components: List[CycloneDxComponent] = attr.ib(factory=list)
     dependencies: List[CycloneDxDependency] = attr.ib(factory=list)
 
+
 def get_tool_header(version: str) -> dict:
     return {
         "vendor": "nexB Inc.",
@@ -137,12 +151,14 @@ def get_tool_header(version: str) -> dict:
         "version": version
     }
 
+
 def get_external_ref_from_key(package: dict, key: str) -> CycloneDxExternalRef:
     url = package.get(key)
     type = url_type_mapping[key]
     if url is not None and type is not None:
         return CycloneDxExternalRef(url=url, type=type)
     return None
+
 
 def get_license_entry_from_license_expression(license_expression: str) \
         -> CycloneDxLicenseEntry:
@@ -155,22 +171,23 @@ def get_license_entry_from_license_expression(license_expression: str) \
 
     license = known_licenses.get(license_expression)
     if license is not None:
-        #attempt to set either official OSI URL or any license text URL
+        # attempt to set either official OSI URL or any license text URL
         url = license.osi_url
         if license.text_urls:
             url = license.text_urls[0]
         lic = CycloneDxLicense(id=license.spdx_license_key,
                                name=license.name,
-                               url = url)
+                               url=url)
         return CycloneDxLicenseEntry(license=lic, expression=None)
     else:
         return CycloneDxLicenseEntry(license=None, expression=license_expression)
+
 
 url_pattern = re.compile(r"^(https?://)?[^\s/$.?#].[^\s]*$")
 
 
 def get_license_entry_from_declared_license(declared_license) \
-    -> CycloneDxLicenseEntry:
+        -> CycloneDxLicenseEntry:
     lic = CycloneDxLicense()
     if isinstance(declared_license, str):
         # if license key is in list of known spdx ids, set as id
@@ -191,10 +208,11 @@ def get_license_entry_from_declared_license(declared_license) \
         lic.url = declared_license.get("url")
     return CycloneDxLicenseEntry(license=lic, expression=None)
 
-def get_licenses(package: dict)->List[CycloneDxLicenseEntry]:
+
+def get_licenses(package: dict) -> List[CycloneDxLicenseEntry]:
     """map all license data for a package entry to
     a list of CycloneDX Licenses"""
-    #store previously encountered IDs to identify duplicates
+    # store previously encountered IDs to identify duplicates
     seen_ids = set()
 
     lic_expr = package.get("license_expression")
@@ -229,7 +247,8 @@ def get_licenses(package: dict)->List[CycloneDxLicenseEntry]:
 
     return licenses
 
-#maps ScanCode URL attributes to CycloneDx external reference types
+
+# maps ScanCode URL attributes to CycloneDx external reference types
 url_type_mapping = {
     "homepage_url": "website",
     "download_url": "distribution",
@@ -242,7 +261,7 @@ url_type_mapping = {
 }
 
 
-def get_external_refs(package: dict)->List[CycloneDxExternalRef]:
+def get_external_refs(package: dict) -> List[CycloneDxExternalRef]:
     ext_refs = []
 
     for key in url_type_mapping:
@@ -267,7 +286,7 @@ def get_author_from_parties(parties: List[dict]) -> str:
     if parties is not None:
         try:
             # assume there can only ever be one author and get that with next()
-            author = next(filter(lambda p: p.get("role")=="author" ,parties))
+            author = next(filter(lambda p: p.get("role") == "author", parties))
             return ' '.join(filter(None, (author.get("name"),
                                           author.get("email"),
                                           author.get("url"))))
@@ -280,6 +299,8 @@ Output plugin to write scan results in CycloneDX format.
 For additional information on the format,
 please see https://cyclonedx.org/specification/overview/
 """
+
+
 @output_impl
 class CycloneDxOutput(OutputPlugin):
     options = [
@@ -339,7 +360,7 @@ def generate_dependencies_list(dep_map, comp_map) -> List[CycloneDxDependency]:
     if len(comp_map) == 0:
         return None
 
-    #holds a mapping of type purl -> list(purl)
+    # holds a mapping of type purl -> list(purl)
     dependencies = {}
 
     for purl in dep_map:
@@ -363,11 +384,12 @@ def generate_dependencies_list(dep_map, comp_map) -> List[CycloneDxDependency]:
         )
     )
 
+
 def merge_components(existing: CycloneDxComponent, new: CycloneDxComponent):
     """merges two components and returns a new component"""
 
-    #helper that merges lists avoiding duplicate entries
-    merge_lists = lambda x,y: x.extend([item for item in y if item not in x])
+    # helper that merges lists avoiding duplicate entries
+    merge_lists = lambda x, y: x.extend([item for item in y if item not in x])
 
     if existing.author is None:
         existing.author = new.author
@@ -398,6 +420,7 @@ def merge_components(existing: CycloneDxComponent, new: CycloneDxComponent):
     elif new.properties is not None:
         merge_lists(existing.properties, new.properties)
 
+
 def generate_component_list(packages) -> List[CycloneDxComponent]:
     ref_component_map = {}
     components = []
@@ -413,7 +436,7 @@ def generate_component_list(packages) -> List[CycloneDxComponent]:
             author=author, copyright=package.get("copyright"),
             description=package.get("description"),
             hashes=hashes, licenses=licenses, externalReferences=refs,
-            bom_ref= purl)
+            bom_ref=purl)
         if purl not in ref_component_map.keys():
             components.append(component)
             ref_component_map[purl] = component
@@ -447,7 +470,6 @@ def build_bom(codebase) -> CycloneDxBom:
     dependencies = generate_dependencies_list(dep_map, comp_map)
 
     bom = CycloneDxBom(components=components, metadata=bom_metadata, dependencies=dependencies)
-
     return bom
 
 
@@ -456,14 +478,15 @@ def truncate_none_or_empty_values(obj) -> dict:
      that have keys which are either None, an empty list or an empty dict"""
     predicate = lambda el: not (el is None or
                                 (isinstance(el, list) or isinstance(el, dict))
-                                and len(el)==0)
-    obj_dict = { k : v for k,v in vars(obj).items() if predicate(v) }
+                                and len(el) == 0)
+    obj_dict = {k: v for k, v in vars(obj).items() if predicate(v)}
     return obj_dict
 
 
 class CycloneDxEncoder(json.JSONEncoder):
     """Custom encoder that removes fields which are either empty or None.
        Additionally renames the `bom_ref` field to `bom-ref` for output"""
+
     def default(self, o) -> str:
         dict_repr = truncate_none_or_empty_values(o)
         if "bom_ref" in dict_repr:
@@ -476,9 +499,133 @@ def write_results_json(bom, output_file):
     json.dump(bom, output_file, indent=2, sort_keys=False, cls=CycloneDxEncoder)
 
 
+class XmlSerializer():
+
+    def __init__(self, bom: CycloneDxBom):
+        self.bom = bom
+
+    def _add_text_element_if_not_none(self, parent: ET.Element, name: str, value: str):
+        # serialize enums by referencing their value
+        if isinstance(value, Enum):
+            value = value.value
+        if value is not None:
+            ET.SubElement(parent, name).text = value
+
+    def _get_root_element(self) -> ET.Element:
+        bom_element = ET.Element('bom', {
+            'xmlns': "http://cyclonedx.org/schema/bom/1.3",
+            'version': '1',
+            'serialNumber': self.bom.serialNumber
+        })
+        return bom_element
+
+    def _get_tool_element(self) -> ET.Element:
+        tool = ET.Element("tool")
+        bom_tool = self.bom.metadata.tools[0]
+        ET.SubElement(tool, 'vendor').text = bom_tool["vendor"]
+        ET.SubElement(tool, 'name').text = bom_tool["name"]
+        ET.SubElement(tool, 'version').text = bom_tool["version"]
+        return tool
+
+    def _get_hash_element(self, hash: CycloneDxHashObject):
+        hash_el = ET.Element("hash", {"alg": hash.alg})
+        hash_el.text = hash.content
+        return hash_el
+
+    def _get_external_ref(self, ref: CycloneDxExternalRef):
+        ext_ref_el = ET.Element("reference", {"type": ref.type})
+        self._add_text_element_if_not_none(ext_ref_el, 'url', ref.url)
+        self._add_text_element_if_not_none(ext_ref_el, 'comment', ref.comment)
+        if ref.hashes:
+            hashes = ET.SubElement(ext_ref_el, "hashes")
+            for hash in component.hashes:
+                hashes.append(self._get_hash_element(hash))
+        return ext_ref_el
+
+    def _get_component_element(self, component: CycloneDxComponent) -> ET.Element:
+        #exit early if we don't at least have name, version and bom-ref
+        if component.bom_ref is None or component.name is None \
+                or component.version is None:
+            click.echo("Suppressed component")
+            return None
+
+        el = ET.Element('component', {"type": component.type.value,
+                                      "bom-ref": component.bom_ref})
+        ET.SubElement(el, 'name').text = component.name
+        ET.SubElement(el, 'version').text = component.version
+
+        self._add_text_element_if_not_none(el, "description", component.description)
+        self._add_text_element_if_not_none(el, "copyright", component.copyright)
+        self._add_text_element_if_not_none(el, "group", component.group)
+        self._add_text_element_if_not_none(el, "author", component.author)
+        self._add_text_element_if_not_none(el, "scope", component.scope)
+        self._add_text_element_if_not_none(el, "purl", component.purl)
+
+        hashes = ET.SubElement(el, "hashes")
+        for hash in component.hashes:
+            hashes.append(self._get_hash_element(hash))
+
+        licenses = ET.SubElement(el, "licenses")
+        for license_entry in component.licenses:
+            if license_entry.license is not None:
+                lic = license_entry.license
+                lic_el = ET.Element("license")
+                if lic.id is not None:
+                    self._add_text_element_if_not_none(lic_el, 'id', lic.id)
+                else:
+                    self._add_text_element_if_not_none(lic_el, 'name', lic.name)
+                self._add_text_element_if_not_none(lic_el, 'url', lic.url)
+                licenses.append(lic_el)
+            elif license_entry.expression is not None:
+                expr_el = ET.Element("expression")
+                expr_el.text = license_entry.expression
+                licenses.append(expr_el)
+
+        ext_refs = ET.SubElement(el, "externalReferences")
+        for external_ref in iter(filter(None, component.externalReferences)):
+            ext_refs.append(self._get_external_ref(external_ref))
+        return el
+
+    def _build_metadata_element(self, bom: ET.Element) -> ET.Element:
+        metadata = ET.SubElement(bom, 'metadata')
+        bom_metadata = self.bom.metadata
+        ET.SubElement(metadata, 'timestamp').text = bom_metadata.timestamp
+        tools = ET.SubElement(metadata, 'tools')
+        tools.append(self._get_tool_element())
+        return bom
+
+    def _build_components_element(self, bom: ET.Element) -> ET.Element:
+        components = ET.SubElement(bom, "components")
+        for component in self.bom.components:
+            comp_el = self._get_component_element(component)
+            if comp_el is not None:
+                components.append(comp_el)
+        return bom
+
+    def _build_dependencies_element(self, bom: ET.Element) -> ET.Element:
+        deps = ET.SubElement(bom, "dependencies")
+        for dependency in self.bom.dependencies:
+            if dependency.ref is None:
+                click.echo("Suppressed dependency")
+                continue
+            dep_el = ET.Element("dependency", {"ref": dependency.ref})
+            for entry in dependency.dependsOn:
+                ET.SubElement(dep_el, 'dependency', {"ref": entry})
+            deps.append(dep_el)
+        return bom
+
+    def get_serialized_output(self):
+        root_element = self._get_root_element()
+        root_element = self._build_metadata_element(root_element)
+        root_element = self._build_components_element(root_element)
+        root_element = self._build_dependencies_element(root_element)
+        return '<?xml version="1.0" encoding="UTF-8"?>' + ET.tostring(root_element, "unicode")
+
+
 def write_results_xml(bom, output_file):
-    """TODO: map to xml"""
-    pass
+    serializer = XmlSerializer(bom)
+    output = serializer.get_serialized_output()
+    output_file.write(output)
 
 
 def write_results(bom, output_file, output_json: bool = True):
