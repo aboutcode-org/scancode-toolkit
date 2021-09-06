@@ -363,6 +363,8 @@ def generate_dependencies_list(dep_map, comp_map) -> List[CycloneDxDependency]:
     # holds a mapping of type purl -> list(purl)
     dependencies = {}
 
+    resolved_scopes = {}
+
     for purl in dep_map:
         for dependency in dep_map[purl]:
             if dependency.get("is_resolved"):
@@ -375,6 +377,12 @@ def generate_dependencies_list(dep_map, comp_map) -> List[CycloneDxDependency]:
                     dependency, candidates)
                 if resolved_dependency is not None:
                     _set_key_or_append(dependencies, purl, resolved_dependency.bom_ref)
+                    _set_key_or_append(resolved_scopes, purl, dependency.get("is_optional"))
+
+    for purl in resolved_scopes:
+        if all(resolved_scopes[purl]):
+            comp_map[purl].scope=CycloneDxComponentScope.OPTIONAL
+
 
     return list(
         map(
@@ -546,7 +554,6 @@ class XmlSerializer():
         #exit early if we don't at least have name, version and bom-ref
         if component.bom_ref is None or component.name is None \
                 or component.version is None:
-            click.echo("Suppressed component")
             return None
 
         el = ET.Element('component', {"type": component.type.value,
@@ -606,7 +613,6 @@ class XmlSerializer():
         deps = ET.SubElement(bom, "dependencies")
         for dependency in self.bom.dependencies:
             if dependency.ref is None:
-                click.echo("Suppressed dependency")
                 continue
             dep_el = ET.Element("dependency", {"ref": dependency.ref})
             for entry in dependency.dependsOn:
