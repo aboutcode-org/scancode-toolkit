@@ -1,0 +1,39 @@
+name: CI About Files
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.7]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Configure VirtualEnv
+        run: ./configure --dev
+
+      - name: Activate VirtualEnv
+        run: source bin/activate
+
+      #- name: Check About Files in thirdparty
+      #  run: ./bin/about check thirdparty/
+
+      - name: Check About Files in thirdparty
+        run: ./bin/about check src/
+
+      - name: Check About Files in thirdparty
+        run: ./bin/about check etc/
+
+      - name: Check About Files in thirdparty
+        run: ./bin/about check scancode-toolkit.ABOUT
