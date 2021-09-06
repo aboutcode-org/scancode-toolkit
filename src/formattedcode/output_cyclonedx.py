@@ -17,22 +17,22 @@ from enum import Enum
 from formattedcode import FileOptionType
 import json
 import re
-from typing import List,FrozenSet
+from typing import FrozenSet, List, Tuple
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 import uuid
 
-
-def _get_list_of_known_spdx_license_ids() -> FrozenSet[str]:
-    """load all SPDX Ids known to ScanCode
+def _get_set_of_known_licenses_and_spdx_license_ids() -> Tuple[List, FrozenSet[str]]:
+    """load all licenses and all SPDX Ids known to ScanCode
        this will also load scancode licenserefs, so we filter those
     """
     from licensedcode.models import get_all_spdx_keys, load_licenses
+    licenses = load_licenses(with_deprecated=True)
     spdx_keys = filter(lambda x: "LicenseRef" not in x,
-                       get_all_spdx_keys(load_licenses(with_deprecated=True)))
-    return frozenset(spdx_keys)
+                       get_all_spdx_keys(licenses))
+    return (licenses, frozenset(spdx_keys))
 
-spdx_ids = _get_list_of_known_spdx_license_ids()
+known_licenses, spdx_ids = _get_set_of_known_licenses_and_spdx_license_ids()
 
 hash_type_mapping = {
     'md5': 'MD5',
@@ -40,11 +40,6 @@ hash_type_mapping = {
     'sha256': 'SHA-256',
     'sha512': 'SHA-512',
 }
-
-
-class CycloneDxFlavor(Enum):
-    XML = 0
-    JSON = 1
 
 @attr.s
 class CycloneDxLicense:
@@ -128,6 +123,89 @@ def get_tool_header(version: str) -> dict:
         "version": version
     }
 
+def get_external_ref_from_key(package: dict, key: str) -> CycloneDxExternalRef:
+    url = package.get(key)
+    type = url_type_mapping[key]
+    if url is not None and type is not None:
+        return CycloneDxExternalRef(url=url, type=type)
+    return None
+
+def get_license_entry_from_license_expression(license_expression: str) \
+        -> CycloneDxLicenseEntry:
+    """query our list of known licenses to see if we can resolve
+    the license_expression to a single entry"""
+    license = known_licenses.get(license_expression)
+    if license is not None:
+        #attempt to set either official OSI URL or any license text URL
+        url = license.osi_url
+        if license.text_urls:
+            url = license.text_urls[0]
+        lic = CycloneDxLicense(id=license.spdx_license_key,
+                               name=license.name,
+                               url = url)
+        return CycloneDxLicenseEntry(license=lic, expression=None)
+    else:
+        return CycloneDxLicenseEntry(license=None, expression=license_expression)
+
+url_pattern = re.compile(r"^(https?://)?[^\s/$.?#].[^\s]*$")
+
+
+def get_license_entry_from_declared_license(declared_license) \
+    -> CycloneDxLicenseEntry:
+    lic = CycloneDxLicense()
+    if isinstance(declared_license, str):
+        # if license key is in list of known spdx ids, set as id
+        if declared_license in spdx_ids:
+            lic.id = declared_license
+        # if we match this regex assume we are dealing with a URL
+        elif declared_license is not None and url_pattern.match(declared_license):
+            lic.url = declared_license
+        else:
+            lic.name = declared_license
+    # some declared_license entries are also expressed as dicts
+    elif isinstance(declared_license, dict):
+        lic_type = declared_license.get("type")
+        if lic_type in spdx_ids:
+            lic.id = lic_type
+        else:
+            lic.name = lic_type
+        lic.url = declared_license.get("url")
+    return CycloneDxLicenseEntry(license=lic, expression=None)
+
+def get_licenses(package: dict)->List[CycloneDxLicenseEntry]:
+    """map all license data for a package entry to
+    a list of CycloneDX Licenses"""
+    #store previously encountered IDs to identify duplicates
+    seen_ids = set()
+
+    lic_expr = package.get("license_expression")
+    entry = get_license_entry_from_license_expression(lic_expr)
+    if entry.license is not None:
+        seen_ids.add(entry.license.id)
+    licenses = [entry]
+
+    declared_license = package["declared_license"]
+    if isinstance(declared_license, list):
+        for entry in declared_license:
+            lic_entry = get_license_entry_from_declared_license(entry)
+            id = lic_entry.license.id if lic_entry.license is not None else None
+            if id in seen_ids:
+                click.echo(f"Skipping duplicate entry for {id}")
+                continue
+            else:
+                seen_ids.add(id)
+                licenses.append(lic_entry)
+    else:
+        lic_entry = get_license_entry_from_declared_license(declared_license)
+        id = lic_entry.license.id if lic_entry.license is not None else None
+        if id in seen_ids:
+            click.echo(f"Skipping duplicate entry for {id}")
+        else:
+            seen_ids.add(id)
+            licenses.append(lic_entry)
+
+    return licenses
+
 #maps ScanCode URL attributes to CycloneDx external reference types
 url_type_mapping = {
     "homepage_url": "website",
@@ -139,35 +217,6 @@ url_type_mapping = {
     "repository_download_url": "distribution",
     "api_data_url": "bom"
 }
-
-def get_external_ref_from_key(package: dict, key: str) -> CycloneDxExternalRef:
-    url = package.get(key)
-    type = url_type_mapping[key]
-    if url is not None and type is not None:
-        return CycloneDxExternalRef(url=url, type=type)
-    return None
-
-url_pattern = re.compile(r"^(https?://)?[^\s/$.?#].[^\s]*$")
-
-def get_licenses(package: dict)->List[CycloneDxLicenseEntry]:
-    licenses = [CycloneDxLicenseEntry(None, package.get("license_expression"))]
-    declared_license = package["declared_license"]
-    if isinstance(declared_license, list):
-        for entry in declared_license:
-            click.echo(entry)
-            if isinstance(entry, str):
-                lic = CycloneDxLicense()
-                # if our license key is in our list of known spdx ids, set as id
-                if entry in spdx_ids:
-                    lic.id = entry
-                # if we match this regex it is safe to assume we are dealing with a URL
-                elif entry is not None and url_pattern.match(entry):
-                    lic.url = entry
-                else:
-                    lic.name = entry
-                licenses.append(CycloneDxLicenseEntry(license=lic))
-    return licenses
-
 
 def get_external_refs(package: dict)->List[CycloneDxExternalRef]:
     ext_refs = []
@@ -188,6 +237,8 @@ def get_hashes_list(package: dict) -> List[CycloneDxHashObject]:
                     hash_type_mapping[alg], digest))
     return hashes
 
+def get_author(package: dict) -> str:
+    pass
 
 """
 Output plugin to write scan results in CycloneDX format.
@@ -210,7 +261,8 @@ class CycloneDxOutput(OutputPlugin):
         return output_cyclonedx
 
     def process_codebase(self, codebase, output_cyclonedx, **kwargs):
-        return super().process_codebase(codebase, output_cyclonedx, **kwargs)
+        bom = build_bom(codebase)
+        write_results(bom, output_cyclonedx, output_json=False)
 
 
 @ output_impl
@@ -230,8 +282,7 @@ class CycloneDxJsonOutput(OutputPlugin):
 
     def process_codebase(self, codebase, output_cyclonedx_json, **kwargs):
         bom = build_bom(codebase)
-        write_results(bom, output_file=output_cyclonedx_json,
-                      cyclonedx_flavor=CycloneDxFlavor.JSON, **kwargs)
+        write_results(bom, output_file=output_cyclonedx_json)
 
 
 def build_bom(codebase) -> CycloneDxBom:
@@ -247,6 +298,7 @@ def build_bom(codebase) -> CycloneDxBom:
 
     return bom
 
+
 def truncate_none_or_empty_values(obj) -> dict:
     """gets a dict from an object and drops all items
      that have keys which are either None or an empty list """
@@ -254,15 +306,25 @@ def truncate_none_or_empty_values(obj) -> dict:
     obj_dict = { k : v for k,v in vars(obj).items() if predicate(v) }
     return obj_dict
 
-def write_results(bom, output_file, cyclonedx_flavor: CycloneDxFlavor, **kwargs):
 
+def write_results_json(bom, output_file):
+    json.dump(bom, output_file, default=truncate_none_or_empty_values)
+
+
+def write_results_xml(bom, output_file):
+    """TODO: map to xml"""
+    pass
+
+
+def write_results(bom, output_file, output_json: bool = True):
     close_fd = False
     if isinstance(output_file, str):
         output_file = open(output_file, 'w')
         close_fd = True
-
-    json.dump(bom, output_file, default=truncate_none_or_empty_values)
-
+    if output_json:
+        write_results_json(bom, output_file)
+    else:
+        write_results_xml(bom, output_file)
 
 def generate_component_list(codebase, **kwargs) -> List[CycloneDxComponent]:
     files = OutputPlugin.get_files(codebase, **kwargs)

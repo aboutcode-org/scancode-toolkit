@@ -12,7 +12,7 @@ import os
 
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
-from formattedcode.output_cyclonedx import get_hashes_list
+from formattedcode.output_cyclonedx import get_hashes_list, _get_set_of_known_licenses_and_spdx_license_ids
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -20,6 +20,11 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 def test_cyclonedx_xml():
     pass
+
+
+def test_can_load_spdx_ids():
+    licenses, spdx_keys = _get_set_of_known_licenses_and_spdx_license_ids()
+    assert len(spdx_keys) > 0
 
 
 def test_can_get_hashes_from_package():
