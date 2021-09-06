@@ -1,0 +1,26 @@
+[
+  {
+    "pkgname": "linux-firmware",
+    "pkgver": "20210511",
+    "pkgrel": "0",
+    "pkgdesc": "firmware files for linux",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "arch": "all",
+    "license": "custom:multiple",
+    "makedepends": "libarchive-tools",
+    "provides": "linux-firmware-any",
+    "provider_priority": "1",
+    "options": "!strip !check !archcheck !tracedeps !spdx",
+    "_rpi_bt": "e7fd166981ab4bb9a36c2d1500205a078a35714d",
+    "source": "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20210511.tar.gz\n\tBCM43430A1.hcd.e7fd1669::https://github.com/RPi-Distro/bluez-firmware/raw/e7fd166981ab4bb9a36c2d1500205a078a35714d/broadcom/BCM43430A1.hcd\n\tBCM4345C0.hcd.e7fd1669::https://github.com/RPi-Distro/bluez-firmware/raw/e7fd166981ab4bb9a36c2d1500205a078a35714d/broadcom/BCM4345C0.hcd\n\tBCM43430B0.hcd.e7fd1669::https://github.com/RPi-Distro/bluez-firmware/raw/e7fd166981ab4bb9a36c2d1500205a078a35714d/broadcom/BCM43430B0.hcd\n\tBCM4345C5.hcd.e7fd1669::https://github.com/RPi-Distro/bluez-firmware/raw/e7fd166981ab4bb9a36c2d1500205a078a35714d/broadcom/BCM4345C5.hcd",
+    "_builddir": "$srcdir",
+    "_folders": "3com acenic adaptec advansys amd amd-ucode amdgpu ar3k ath10k ath11k\n\tath6k ath9k_htc atmel atusb av7110 bnx2 bnx2x brcm cadence cavium cis cpia2\n\tcxgb3 cxgb4 cypress dabusb dpaa2 dsp56k e100 edgeport emi26 emi62 ene-ub6250\n\tess go7007 i915 imx inside-secure intel isci kaweth keyspan keyspan_pda korg\n\tlibertas liquidio matrox mediatek mellanox meson microchip moxa mrvl mwl8k\n\tmwlwifi myricom netronome nvidia ositech qca qcom qed qlogic r128 radeon\n\trockchip rsi rtl8192e rtl_bt rtl_nic rtlwifi rtw88 rtw89 sb16 silabs slicoss\n\tsun sxg tehuti ti ti-connectivity ti-keystone tigon ttusb-budget ueagle-atm\n\tvicam vxge yam yamaha",
+    "subpackages": "amd-ucode::noarch linux-firmware-other::noarch linux-firmware-none::noarch",
+    "depends": "linux-firmware-other=20210511-r0",
+    "sha512sums": "f282bdcd0e62f446a3c859876319ae2fb4b2e129022a4b2b1ced45f38c8b192ccb07a4480ff4d41ed8fc13c0a38bf0c0d5a5d98515a1750d655db5d919c6af8c  linux-firmware-20210511.tar.gz\n355c940b4fd597101c332207678fd28154d7e7a90cb374b1fdf230d2061bf979af0209c5a423fca8d23ddb3d95abec741e7dd651da7f0aaa97459ed4fe4d2355  BCM43430A1.hcd.e7fd1669\n1707c2955ceac3e6fc4b1edb8965c871dcfab21ce85cc617de67d7e6f3d6f9b93ee5a8a202de6b20f7b43d1462668287a8569786146cadf5e0268058d2524a9c  BCM4345C0.hcd.e7fd1669\nc8b943bfeffa54ce1687ca69884e9d56efd28d5ea1dbef660915a80c3e036a8675e7d4299102c32006193e4895367654bb67e2d08e66d7803f396eee7e3dfbd6  BCM43430B0.hcd.e7fd1669\neac7428befa36952542e19d3c4a5fa96e1cb3a56c3b00770534909fb0d8caf503a42368175e715e1de58e50cfbd2b4c8ea5a26af3bd546cbbaf8d2c12457a628  BCM4345C5.hcd.e7fd1669"
+  },
+  [
+    "Duplicate variable name: 'subpackages' value: 'amd-ucode::noarch $subpackages' existing value: '$pkgname-other::noarch $pkgname-none::noarch'",
+    "Partially resolved variable: ShellVariable(name='_builddir', value='$srcdir') envt: {'pkgname': 'linux-firmware', 'pkgver': '20210511', 'pkgrel': '0', 'pkgdesc': 'firmware files for linux', 'url': 'https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary', 'arch': 'all', 'license': 'custom:multiple', 'makedepends': 'libarchive-tools', 'provides': 'linux-firmware-any', 'provider_priority': '1', 'options': '!strip !check !archcheck !tracedeps !spdx', '_rpi_bt': 'e7fd166981ab4bb9a36c2d1500205a078a35714d', 'source': 'https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20210511.tar.gz\\n\\tBCM43430A1.hcd.e7fd1669::https://github.com/RPi-Distro/bluez-firmware/raw/e7fd166981ab4bb9a36c2d1500205a078a35714d/broadcom/BCM43430A1.hcd\\n\\tBCM4345C0.hcd.e7fd1669::https://github.com/RPi-Distro/bluez-firmware/raw/e7fd166981ab4bb9a36c2d1500205a078a35714d/broadcom/BCM4345C0.hcd\\n\\tBCM43430B0.hcd.e7fd1669::https://github.com/RPi-Distro/bluez-firmware/raw/e7fd166981ab4bb9a36c2d1500205a078a35714d/broadcom/BCM43430B0.hcd\\n\\tBCM4345C5.hcd.e7fd1669::https://github.com/RPi-Distro/bluez-firmware/raw/e7fd166981ab4bb9a36c2d1500205a078a35714d/broadcom/BCM4345C5.hcd', '_builddir': '$srcdir'}"
+  ]
+]

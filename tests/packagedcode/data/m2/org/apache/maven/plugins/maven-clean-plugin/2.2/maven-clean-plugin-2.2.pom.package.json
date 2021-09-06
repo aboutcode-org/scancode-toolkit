@@ -35,50 +35,51 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/org.apache.maven/maven-project",
+      "purl": "pkg:maven/org.apache.maven/maven-project@2.0",
       "requirement": "2.0",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven/maven-plugin-api",
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0",
       "requirement": "2.0",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven.shared/file-management",
+      "purl": "pkg:maven/org.apache.maven.shared/file-management@1.2",
       "requirement": "1.2",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.1",
       "requirement": "1.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness",
+      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness@1.1",
       "requirement": "1.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.plugins/maven-clean-plugin@2.2?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.maven.plugins/maven-clean-plugin@2.2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.2/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.2/maven-clean-plugin-2.2.jar",

@@ -16,27 +16,48 @@ from commoncode.system import on_windows
 from scancode_config import scancode_root_dir
 
 
-def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None, retry=True):
+def run_scan_plain(
+    options,
+    cwd=None,
+    test_mode=True,
+    expected_rc=0,
+    env=None,
+    retry=True,
+):
     """
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
     """
-    from commoncode.command import execute2
+
+    from commoncode.command import execute
 
     options = add_windows_extra_timeout(options)
 
     if test_mode and '--test-mode' not in options:
         options.append('--test-mode')
 
+    if not env:
+        env = dict(os.environ)
+
     scmd = u'scancode'
     scan_cmd = os.path.join(scancode_root_dir, scmd)
-    rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd, env=env)
+    rc, stdout, stderr = execute(
+        cmd_loc=scan_cmd,
+        args=options,
+        cwd=cwd,
+        env=env,
+    )
 
     if retry and rc != expected_rc:
         # wait and rerun in verbose mode to get more in the output
         time.sleep(1)
         if '--verbose' not in options:
             options.append('--verbose')
-        result = rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd, env=env)
+        result = rc, stdout, stderr = execute(
+            cmd_loc=scan_cmd,
+            args=options,
+            cwd=cwd,
+            env=env,
+        )
 
     if rc != expected_rc:
         opts = get_opts(options)
@@ -55,7 +76,14 @@ stderr:
     return rc, stdout, stderr
 
 
-def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env=None, retry=True):
+def run_scan_click(
+    options,
+    monkeypatch=None,
+    test_mode=True,
+    expected_rc=0,
+    env=None,
+    retry=True,
+):
     """
     Run a scan as a Click-controlled subprocess
     If monkeypatch is provided, a tty with a size (80, 43) is mocked.
@@ -75,13 +103,16 @@ def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env
         monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
         monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
 
+    if not env:
+        env = dict(os.environ)
+
     runner = CliRunner()
 
     result = runner.invoke(cli.scancode, options, catch_exceptions=False, env=env)
     if retry and result.exit_code != expected_rc:
         if on_windows:
             # wait and rerun in verbose mode to get more in the output
-           time.sleep(1)
+            time.sleep(1)
         if '--verbose' not in options:
             options.append('--verbose')
         result = runner.invoke(cli.scancode, options, catch_exceptions=False, env=env)
@@ -132,7 +163,13 @@ def remove_windows_extra_timeout(scancode_options, timeout=WINDOWS_CI_TIMEOUT):
             del scancode_options['--timeout']
 
 
-def check_json_scan(expected_file, result_file, regen=False, remove_file_date=False, ignore_headers=False):
+def check_json_scan(
+    expected_file,
+    result_file,
+    regen=False,
+    remove_file_date=False,
+    ignore_headers=False
+):
     """
     Check the scan `result_file` JSON results against the `expected_file`
     expected JSON results.
@@ -141,7 +178,8 @@ def check_json_scan(expected_file, result_file, regen=False, remove_file_date=Fa
     results from `results_file`. This is convenient for updating tests
     expectations. But use with caution.
 
-    if `remove_file_date` is True, the file.date attribute is removed.
+    If `remove_file_date` is True, the file.date attribute is removed.
+    If `ignore_headers` is True, the scan headers attribute is removed.
     """
     results = load_json_result(result_file, remove_file_date)
     if regen:
@@ -156,10 +194,9 @@ def check_json_scan(expected_file, result_file, regen=False, remove_file_date=Fa
 
     # NOTE we redump the JSON as a string for a more efficient display of the
     # failures comparison/diff
-    # TODO: remove sort, this should no longer be needed
-    expected = json.dumps(expected, indent=2, sort_keys=True, separators=(',', ': '))
-    results = json.dumps(results, indent=2, sort_keys=True, separators=(',', ': '))
-    assert expected == results
+    expected = json.dumps(expected, indent=2, separators=(',', ': '))
+    results = json.dumps(results, indent=2, separators=(',', ': '))
+    assert results == expected
 
 
 def load_json_result(location, remove_file_date=False):
@@ -182,6 +219,22 @@ def load_json_result_from_string(string, remove_file_date=False):
     Load the JSON scan results `string` as UTF-8 JSON.
     """
     scan_results = json.loads(string)
+    # clean new headers attributes
+    streamline_headers(scan_results.get('headers', []))
+    # clean file_level attributes
+    for scanned_file in scan_results['files']:
+        streamline_scanned_file(scanned_file, remove_file_date)
+
+    # TODO: remove sort, this should no longer be needed
+    scan_results['files'].sort(key=lambda x: x['path'])
+    return scan_results
+
+
+def cleanup_scan(scan_results, remove_file_date=False):
+    """
+    Cleanup in place the ``scan_results`` mapping for dates, headers and
+    other variable data that break tests otherwise.
+    """
     # clean new headers attributes
     streamline_headers(scan_results.get('headers', []))
     # clean file_level attributes
@@ -216,22 +269,27 @@ def streamline_headers(headers):
         hle.pop('start_timestamp', None)
         hle.pop('end_timestamp', None)
         hle.pop('duration', None)
-        header= hle.get('options', {})
+        header = hle.get('options', {})
         header.pop('--verbose', None)
         streamline_errors(hle['errors'])
 
 
 def streamline_scanned_file(scanned_file, remove_file_date=False):
     """
-    Modify the `scanned_file` mapping for a file in scan results in place to make
-    it easier to test.
+    Modify the `scanned_file` mapping for a file in scan results in place to
+    make it easier to test.
     """
     streamline_errors(scanned_file.get('scan_errors', []))
     if remove_file_date:
         scanned_file.pop('date', None)
 
 
-def check_jsonlines_scan(expected_file, result_file, regen=False, remove_file_date=False):
+def check_jsonlines_scan(
+    expected_file,
+    result_file,
+    regen=False,
+    remove_file_date=False,
+):
     """
     Check the scan result_file JSON Lines results against the expected_file
     expected JSON results, which is a list of mappings, one per line. If regen
@@ -256,7 +314,7 @@ def check_jsonlines_scan(expected_file, result_file, regen=False, remove_file_da
 
     expected = json.dumps(expected, indent=2, separators=(',', ': '))
     results = json.dumps(results, indent=2, separators=(',', ': '))
-    assert expected == results
+    assert results == expected
 
 
 def streamline_jsonlines_scan(scan_result, remove_file_date=False):

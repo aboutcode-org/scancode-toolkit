@@ -1,5 +1,25 @@
--
-- lgpl-2.0 AND lgpl-2.0-plus AND unknown
-- |
+primary_license:
+declared_license:
+license_expression: lgpl-2.0
+copyright: |
   Copyright (c) 1999, 2001 by Andries Brouwer
   Copyright (c) 1999, 2000, 2003 by Theodore Ts'o
+matches:
+  - score: '100.0'
+    start_line: 15
+    end_line: '19'
+    matcher: 2-aho
+    rule_length: 42
+    matched_length: 42
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0_24.RULE
+    license_expression: lgpl-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "You are free to distribute this software under the terms of the GNU\n Lesser\
+      \ (Library) General Public License.\n \n On Debian systems, the complete text of the GNU\
+      \ Lesser (Library)\n General Public License can be found in /usr/share/common-licenses/LGPL-2."

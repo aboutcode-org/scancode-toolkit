@@ -1,0 +1,159 @@
+# Contributor: Sören Tempel <soeren+alpine@soeren-tempel.net>
+# Contributor: Leonardo Arena <rnalrd@alpinelinux.org>
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+pkgname=util-linux
+pkgver=2.37
+
+case $pkgver in
+	*.*.*) _v=${pkgver%.*};;
+	*.*) _v=$pkgver;;
+esac
+
+pkgrel=0
+pkgdesc="Random collection of Linux utilities"
+url="https://git.kernel.org/cgit/utils/util-linux/util-linux.git"
+arch="all"
+license="GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
+	LGPL-2.1-or-later AND BSD-3-Clause AND BSD-4-Clause-UC AND Public-Domain"
+depends="blkid setpriv findmnt mcookie hexdump lsblk sfdisk cfdisk partx flock logger uuidgen"
+makedepends_build="autoconf automake libtool"
+makedepends_host="zlib-dev ncurses-dev linux-headers libcap-ng-dev"
+options="suid"
+source="https://www.kernel.org/pub/linux/utils/util-linux/v$_v/util-linux-$pkgver.tar.xz
+	ttydefaults.h
+	rfkill.confd
+	rfkill.initd
+	"
+subpackages="$pkgname-doc $pkgname-dev $pkgname-bash-completion:bashcomp:noarch $pkgname-openrc
+	libblkid:_mv_lib
+	libfdisk:_mv_lib
+	libmount:_mv_lib
+	libsmartcols:_mv_lib
+	libuuid:_mv_lib
+
+	lsblk:_mv_bin
+	blkid:_mv_bin
+	cfdisk:_mv_bin
+	findmnt:_mv_bin
+	hexdump:_mv_bin
+	mcookie:_mv_bin
+	partx:_mv_bin
+	setpriv:_mv_bin
+	sfdisk:_mv_bin
+	flock:_mv_bin
+	logger:_mv_bin
+	uuidgen:_mv_bin
+	"
+if [ -z "$BOOTSTRAP" ]; then
+	makedepends_host="$makedepends_host linux-pam-dev python3-dev libeconf-dev"
+	subpackages="$subpackages py3-libmount:_py3 runuser:_mv_bin"
+	_bootstrap_config="--enable-runuser --with-python=3 --with-econf"
+else
+	_bootstrap_config="--without-python --without-econf"
+fi
+makedepends="$makedepends_build $makedepends_host"
+
+prepare() {
+	default_prepare
+
+	cp "$srcdir"/ttydefaults.h include/
+	libtoolize --force && aclocal -I m4 && autoconf \
+		&& automake --add-missing
+}
+
+build() {
+	# login utils are provided by shadow (with PAM) or busybox (no PAM) --nenolod
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--with-sysroot=$CBUILDROOT \
+		--prefix=/usr \
+		--disable-chfn-chsh \
+		--enable-raw \
+		--disable-uuidd \
+		--disable-nls \
+		--disable-tls \
+		--disable-kill \
+		--disable-login \
+		--disable-last \
+		--disable-sulogin \
+		--disable-su \
+		--with-vendordir=/usr/lib \
+		$_bootstrap_config
+	make
+}
+
+package() {
+	make -j1 DESTDIR="$pkgdir" -C "$builddir" install
+	# use pkg-config
+	install -D -m755 "$srcdir"/rfkill.initd "$pkgdir"/etc/init.d/rfkill
+	install -D -m644 "$srcdir"/rfkill.confd "$pkgdir"/etc/conf.d/rfkill
+}
+
+_mv_bin() {
+	local _bin=$subpkgname
+	pkgdesc="$_bin from util-linux"
+	depends=
+	case "$_bin" in
+		blkid) pkgdesc="Block device identification tool from util-linux";;
+		sfdisk) pkgdesc="Partition table manipulator from util-linux";;
+		cfdisk) pkgdesc="Curses based partition table manipulator from util-linux";;
+		setpriv) pkgdesc="Run a program with different Linux privilege settings";;
+		runuser) pkgdesc="Run a program with substitute user and group ID";;
+		flock) pkgdesc="File locker from util-linux";;
+		logger) pkgdesc="Logger from util-linux";;
+		uuidgen) pkgdesc="UUID generator from util-linux";;
+		*);;
+	esac
+	local _path; for _path in usr/bin usr/sbin bin sbin; do
+		if [ -e "$pkgdir"/$_path/$_bin ]; then
+			mkdir -p "$subpkgdir"/$_path
+			mv "$pkgdir"/$_path/$_bin "$subpkgdir"/$_path/
+			return 0
+		fi
+	done
+	return 1
+}
+
+_mv_lib() {
+	local _lib="$subpkgname"
+	depends=
+	case "$_lib" in
+		libuuid) pkgdesc="DCE compatible Universally Unique Identifier library";;
+		libblkid) pkgdesc="Block device identification library from util-linux";;
+		libmount) pkgdesc="Block device identification library from util-linux";;
+		libsmartcols) pkgdesc="Formatting library for ls-like programs.";;
+		libfdisk) pkgdesc="Partitioning library for fdisk-like programs";;
+	esac
+	mkdir -p "$subpkgdir"/lib
+	mv "$pkgdir"/lib/$_lib.so.* "$subpkgdir"/lib/
+}
+
+dev() {
+	depends_dev="$depends_dev util-linux=$pkgver-r$pkgrel"
+	default_dev
+}
+
+bashcomp() {
+	pkgdesc="Bash completions for $pkgname"
+	depends=""
+	install_if="$pkgname=$pkgver-r$pkgrel bash-completion"
+
+	mkdir -p "$subpkgdir"/usr/share/
+	mv "$pkgdir"/usr/share/bash-completion \
+		"$subpkgdir"/usr/share/
+}
+
+_py3() {
+	pkgdesc="python3 bindings to libmount"
+	depends=
+	mkdir -p "$subpkgdir"/usr/lib
+	mv "$pkgdir"/usr/lib/python* "$subpkgdir"/usr/lib/
+}
+
+sha512sums="
+84cf1df46165f286caa1a1204b335dc1fc826a8e1d52a817c28eb80ef19734eccd6efdfb078e87ade9e4381a9102e59d4df83e9bb100e4c73aff2aa4bfb85615  util-linux-2.37.tar.xz
+876bb9041eca1b2cca1e9aac898f282db576f7860aba690a95c0ac629d7c5b2cdeccba504dda87ff55c2a10b67165985ce16ca41a0694a267507e1e0cafd46d9  ttydefaults.h
+401d2ccbdbfb0ebd573ac616c1077e2c2b79ff03e9221007759d8ac25eb522c401f705abbf7daac183d5e8017982b8ec5dd0a5ebad39507c5bb0a9f31f04ee97  rfkill.confd
+c4e7ba6d257496c99934add2ca532db16fb070ea2367554587c9fb4e24ab1d80b8ba3fd0fd4fdd5ef1374c3ec6414007369b292ee334ef23171d0232ef709db2  rfkill.initd
+"

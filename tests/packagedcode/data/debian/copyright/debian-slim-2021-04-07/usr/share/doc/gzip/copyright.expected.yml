@@ -1,0 +1,133 @@
+primary_license: gpl-3.0-plus AND gpl-1.0-plus
+declared_license:
+  - GPL-3+
+  - GFDL-1.3+-no-invariant
+  - FSF-manpages
+license_expression: (gpl-3.0-plus AND gpl-1.0-plus) AND gfdl-1.2-plus AND latex2e
+copyright: |
+  1999-2016 Free Software Foundation, Inc.
+  1992-1993 Jean-loup Gailly and Mark Adler
+  1999-2016 Free Software Foundation, Inc. http://fsf.org/
+  1992-1993 Jean-loup Gailly
+  1998-2016 Free Software Foundation, Inc.
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_92.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-3+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 12
+    matcher: 2-aho
+    rule_length: 99
+    matched_length: 99
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_8.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 3, or (at your option)
+      any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  - score: '100.0'
+    start_line: 14
+    end_line: 15
+    matcher: 2-aho
+    rule_length: 23
+    matched_length: 23
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_10.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian GNU/Linux systems, the complete text of the GNU General
+      Public License can be found in `/usr/share/common-licenses/GPL-
+  - score: '80.72'
+    start_line: 1
+    end_line: 8
+    matcher: 3-seq
+    rule_length: 83
+    matched_length: 67
+    match_coverage: '80.72'
+    rule_relevance: 100
+    identifier: gfdl-1.2-plus_11.RULE
+    license_expression: gfdl-1.2-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is granted to copy, distribute and/or modify this document
+      under the terms of the GNU Free Documentation License, Version 1.[3] or
+      any later version published by the Free Software Foundation; with no
+      Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+      Texts.
+
+      [On] [Debian] GNU/[Linux] systems, the complete text of the GNU Free Documentation
+      License can be found in `/usr/share/common-licenses/GFDL-
+  - score: '85.0'
+    start_line: 1
+    end_line: 18
+    matcher: 1-hash
+    rule_length: 138
+    matched_length: 138
+    match_coverage: '100.0'
+    rule_relevance: 85
+    identifier: latex2e_8.RULE
+    license_expression: latex2e
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is granted to make and distribute verbatim copies of
+      this manual provided the copyright notice and this permission notice
+      are preserved on all copies.
+
+      Permission is granted to process this file through troff and print the
+      results, provided the printed document carries copying permission
+      notice identical to this one except for the removal of this paragraph
+      (this paragraph not being relevant to the printed manual).
+
+      Permission is granted to copy and distribute modified versions of this
+      manual under the conditions for verbatim copying, provided that the entire
+      resulting derived work is distributed under the terms of a permission
+      notice identical to this one.
+
+      Permission is granted to copy and distribute translations of this manual
+      into another language, under the above conditions for modified versions,
+      except that this permission notice may be stated in a translation approved
+      by the Foundation.

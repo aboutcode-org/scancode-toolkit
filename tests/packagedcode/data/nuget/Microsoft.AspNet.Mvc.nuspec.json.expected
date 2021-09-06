@@ -43,6 +43,7 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
+  "extra_data": {},
   "purl": "pkg:nuget/Microsoft.AspNet.Mvc@6.0.0-beta7",
   "repository_homepage_url": "https://www.nuget.org/packages/Microsoft.AspNet.Mvc/6.0.0-beta7",
   "repository_download_url": "https://www.nuget.org/api/v2/package/Microsoft.AspNet.Mvc/6.0.0-beta7",

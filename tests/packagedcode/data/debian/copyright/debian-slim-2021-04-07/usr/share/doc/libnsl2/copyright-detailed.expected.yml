@@ -1,0 +1,534 @@
+primary_license: None
+declared_license:
+  - LGPL-2.1+
+  - LGPL-2.1
+  - LGPL-2.1+
+  - BSD-3-clause
+  - permissive-fsf
+  - permissive-makefile-in
+  - permissive-autoconf-m4-no-warranty
+  - GPL-3+-autoconf-exception
+  - permissive-configure
+  - GPL-2+-autoconf-exception
+  - MIT
+  - GPL-2+-libtool-exception
+  - permissive-autoconf-m4
+  - permissive-fsf
+  - BSD-3-clause
+  - GPL-2+-autoconf-exception
+  - GPL-2+-libtool-exception
+  - GPL-3+-autoconf-exception
+  - LGPL-2.1
+  - LGPL-2.1+
+  - MIT
+  - permissive-autoconf-m4
+  - permissive-autoconf-m4-no-warranty
+  - permissive-configure
+  - permissive-fsf
+  - permissive-makefile-in
+license_expression: (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1 AND lgpl-3.0-plus
+  AND gpl-1.0-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND bsd-new
+  AND fsf-ap AND fsf-unlimited-no-warranty AND fsf-unlimited-no-warranty AND (gpl-3.0-plus WITH
+  autoconf-simple-exception AND gpl-3.0) AND fsf-free AND (gpl-2.0-plus WITH autoconf-simple-exception-2.0
+  AND gpl-2.0) AND x11-xconsortium AND (gpl-2.0-plus WITH libtool-exception-2.0 AND gpl-2.0)
+  AND fsf-unlimited AND fsf-ap
+copyright: |
+  2020, Aurelien Jarno
+  2014, 2015, 2017-2018, Thorsten Kukuk
+  1996-2015, Free Software Foundation, Inc.
+  2010, Oracle America, Inc.
+  1994-1996, 1999-2002, 2004-2016 Free Software Foundation, Inc.
+  1994-2020 Free Software Foundation, Inc.
+  1996-2017 Free Software Foundation, Inc.
+  1992-2018 Free Software Foundation, Inc.
+  1992-1996, 1998-2012 Free Software Foundation, Inc.
+  1999-2017 Free Software Foundation, Inc.
+  1994 X Consortium
+  1996-2015 Free Software Foundation, Inc.
+  1995-2020 Free Software Foundation, Inc.
+  1995-1997, 2000-2007, 2009-2010 Ulrich Drepper
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 26
+    matcher: 1-hash
+    rule_length: 214
+    matched_length: 214
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_591.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are
+      met:
+
+          * Redistributions of source code must retain the above copyright
+            notice, this list of conditions and the following disclaimer.
+          * Redistributions in binary form must reproduce the above
+            copyright notice, this list of conditions and the following
+            disclaimer in the documentation and/or other materials
+            provided with the distribution.
+          * Neither the name of the "Oracle America, Inc." nor the names of its
+            contributors may be used to endorse or promote products derived
+            from this software without specific prior written permission.
+
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+        "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+        LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+        FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+        COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+        INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+        GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+        INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+        WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+        NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 1
+    end_line: 17
+    matcher: 2-aho
+    rule_length: 141
+    matched_length: 141
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_with_autoconf-simple-exception-2.0_10.RULE
+    license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 2, or (at your option)
+      any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+      As a special exception to the GNU General Public License, if you
+      distribute this file as part of a program that contains a
+      configuration script generated by Autoconf, you may include it under
+      the same distribution terms that you use for the rest of that program.
+  - score: '100.0'
+    start_line: '19'
+    end_line: 20
+    matcher: 2-aho
+    rule_length: 24
+    matched_length: 24
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_1120.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian systems, the complete text of the GNU General Public License
+      version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+  - score: '86.47'
+    start_line: 1
+    end_line: 17
+    matcher: 3-seq
+    rule_length: 170
+    matched_length: 147
+    match_coverage: '86.47'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_with_libtool-exception-2.0_6.RULE
+    license_expression: gpl-2.0-plus WITH libtool-exception-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      GNU Libtool is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 2 of the License, or
+      (at your option) any later version.
+
+      As a special exception to the GNU General Public License,
+      if you distribute this file as part of a program or library that
+      is built using GNU Libtool, you may include this file under the
+      same distribution terms that you use for the rest of that program.
+
+      GNU Libtool is distributed in the hope that it will be useful, but
+      WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+      General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  - score: '100.0'
+    start_line: '19'
+    end_line: 20
+    matcher: 2-aho
+    rule_length: 24
+    matched_length: 24
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_1120.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian systems, the complete text of the GNU General Public License
+      version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+  - score: '100.0'
+    start_line: 1
+    end_line: '19'
+    matcher: 2-aho
+    rule_length: 162
+    matched_length: 162
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_with_autoconf-simple-exception_1.RULE
+    license_expression: gpl-3.0-plus WITH autoconf-simple-exception
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This file is free software; you can redistribute it and/or modify it
+      under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 3 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful, but
+      WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+      General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program; if not, see <http://www.gnu.org/licenses/>.
+
+      As a special exception to the GNU General Public License, if you
+      distribute this file as part of a program that contains a
+      configuration script generated by Autoconf, you may include it under
+      the same distribution terms that you use for the rest of that
+      program.  This Exception is an additional permission under section 7
+      of the GNU General Public License, version 3 ("GPLv3").
+  - score: '100.0'
+    start_line: 21
+    end_line: 22
+    matcher: 2-aho
+    rule_length: 24
+    matched_length: 24
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0_394.RULE
+    license_expression: gpl-3.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian systems, the complete text of the GNU General Public License
+      Version 3 can be found in `/usr/share/common-licenses/GPL-3'.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_38.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: lgpl-2.1'
+  - score: '53.85'
+    start_line: 1
+    end_line: 14
+    matcher: 3-seq
+    rule_length: 130
+    matched_length: 70
+    match_coverage: '53.85'
+    rule_relevance: 100
+    identifier: lgpl-3.0-plus_173.RULE
+    license_expression: lgpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      is free software: you can redistribute it and/or
+      modify it under the terms of the GNU Lesser General Public License
+      [in] [version] [2].[1] as published by the Free Software Foundation.
+
+      [This] [library] is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See [the]
+      [GNU] [General] [Public] [License] [for] [more] [details].
+
+      [You] [should] [have] [received] a [copy] [of] [the] [GNU] [General] [Public] [License]
+      [along] [with] [this] [program].  [If] [not], [see] <[http]://[www].[gnu].[org]/[licenses]/>.
+
+      [On] [Debian] [systems], [the] [complete] [text] [of] the GNU Lesser General Public
+      License [version] [2].[1] can be found in "/usr/share/common-licenses/LGPL-
+  - score: '100.0'
+    start_line: 10
+    end_line: 11
+    matcher: 2-aho
+    rule_length: 23
+    matched_length: 23
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_35.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      You should have received a copy of the GNU General Public License
+      along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  - score: '100.0'
+    start_line: 13
+    end_line: 14
+    matcher: 2-aho
+    rule_length: 27
+    matched_length: 27
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_293.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian systems, the complete text of the GNU Lesser General Public
+      License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_108.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: lgpl-2.1+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 13
+    matcher: 2-aho
+    rule_length: 112
+    matched_length: 112
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_56.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      The GNU C Library is free software; you can redistribute it and/or
+      modify it under the terms of the GNU Lesser General Public
+      License as published by the Free Software Foundation; either
+      version 2.1 of the License, or (at your option) any later version.
+
+      The GNU C Library is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+      Lesser General Public License for more details.
+
+      You should have received a copy of the GNU Lesser General Public
+      License along with the GNU C Library; if not, see
+      <http://www.gnu.org/licenses/>.
+  - score: '100.0'
+    start_line: 15
+    end_line: 16
+    matcher: 2-aho
+    rule_length: 27
+    matched_length: 27
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_293.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian systems, the complete text of the GNU Lesser General Public
+      License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
+  - score: '100.0'
+    start_line: 1
+    end_line: 21
+    matcher: 1-hash
+    rule_length: 201
+    matched_length: 201
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: x11-xconsortium_2.RULE
+    license_expression: x11-xconsortium
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person obtaining a copy
+      of this software and associated documentation files (the "Software"), to
+      deal in the Software without restriction, including without limitation the
+      rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+      sell copies of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be included in
+      all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+      X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+      AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-
+      TION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+      Except as contained in this notice, the name of the X Consortium shall not
+      be used in advertising or otherwise to promote the sale, use or other deal-
+      ings in this Software without prior written authorization from the X Consor-
+      tium.
+  - score: '100.0'
+    start_line: 1
+    end_line: 3
+    matcher: 1-hash
+    rule_length: 29
+    matched_length: 29
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-unlimited.LICENSE
+    license_expression: fsf-unlimited
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This file is free software; the Free Software Foundation gives
+      unlimited permission to copy and/or distribute it, with or without
+      modifications, as long as this notice is preserved.
+  - score: '100.0'
+    start_line: 1
+    end_line: 8
+    matcher: 1-hash
+    rule_length: 63
+    matched_length: 63
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-unlimited-no-warranty.LICENSE
+    license_expression: fsf-unlimited-no-warranty
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This file is free software; the Free Software Foundation
+      gives unlimited permission to copy and/or distribute it,
+      with or without modifications, as long as this notice is preserved.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+      even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+      PARTICULAR PURPOSE.
+  - score: '100.0'
+    start_line: 1
+    end_line: 2
+    matcher: 1-hash
+    rule_length: 18
+    matched_length: 18
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-free.LICENSE
+    license_expression: fsf-free
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This configure script is free software; the Free Software Foundation
+      gives unlimited permission to copy, distribute and modify it.
+  - score: '100.0'
+    start_line: 1
+    end_line: 4
+    matcher: 1-hash
+    rule_length: 35
+    matched_length: 35
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-ap.LICENSE
+    license_expression: fsf-ap
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Copying and distribution of this file, with or without modification,
+      are permitted in any medium without royalty provided the copyright
+      notice and this notice are preserved.  This file is offered as-is,
+      without any warranty.
+  - score: '100.0'
+    start_line: 1
+    end_line: 8
+    matcher: 1-hash
+    rule_length: 64
+    matched_length: 64
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-unlimited-no-warranty_2.RULE
+    license_expression: fsf-unlimited-no-warranty
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This Makefile.in is free software; the Free Software Foundation
+      gives unlimited permission to copy and/or distribute it,
+      with or without modifications, as long as this notice is preserved.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+      even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+      PARTICULAR PURPOSE.

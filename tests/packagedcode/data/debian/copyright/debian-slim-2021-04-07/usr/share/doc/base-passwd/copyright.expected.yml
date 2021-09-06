@@ -1,0 +1,80 @@
+primary_license: gpl-2.0
+declared_license:
+  - GPL-2
+  - public-domain
+license_expression: gpl-2.0 AND public-domain
+copyright: |
+  Copyright 1999-2002 Wichert Akkerman <wichert@deephackmode.org>
+  Copyright 2002, 2003, 2004 Colin Watson <cjwatson@debian.org>
+  PD; Originally written by Ian Murdock <imurdock@debian.org> and
+  Bruce Perens <bruce@pixar.com>.
+  Copyright 2001, 2002 Joey Hess
+  Copyright 2002, 2003, 2004, 2005, 2007 Colin Watson
+  Copyright 2007 David Mandelberg
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_561.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2'
+  - score: '100.0'
+    start_line: 1
+    end_line: 2
+    matcher: 2-aho
+    rule_length: 7
+    matched_length: 7
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_660.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      the GNU General Public
+      License version 2
+  - score: '100.0'
+    start_line: 2
+    end_line: 2
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_621.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: usr/share/common-licenses/GPL-2.
+  - score: '99.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 99
+    identifier: pypi_public_domain.RULE
+    license_expression: public-domain
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: public-domain'

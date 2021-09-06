@@ -1,0 +1,4 @@
+license_expression: bsd-new
+is_license_text: yes
+relevance: 100
+notes: A truncated bsd-new missing parts of the disclaimer See in https://github.com/gweis/isodate/blob/27cebc56a0f6a900eeb897512879d545095f410b/src/isodate/duration.py

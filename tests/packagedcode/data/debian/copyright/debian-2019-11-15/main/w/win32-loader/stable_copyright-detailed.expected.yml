@@ -1,5 +1,86 @@
-- GPL-3+
-- gpl-3.0 AND gpl-3.0-plus AND unknown
-- |
+primary_license: gpl-3.0-plus AND gpl-3.0
+declared_license:
+  - GPL-3+
+license_expression: gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0
+copyright: |
   2007, 2008, 2009 Robert Millan <rmh@debian.org>
   2010, 2011, 2016
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_92.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-3+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 12
+    matcher: 2-aho
+    rule_length: 102
+    matched_length: 102
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_290.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software: you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation, either version 3 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  - score: '100.0'
+    start_line: 14
+    end_line: 15
+    matcher: 2-aho
+    rule_length: 7
+    matched_length: 7
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0_378.RULE
+    license_expression: gpl-3.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      the GNU General Public License
+      version 3
+  - score: '33.0'
+    start_line: 15
+    end_line: 15
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 33
+    identifier: gpl-3.0_93.RULE
+    license_expression: gpl-3.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: usr/share/common-licenses/GPL-3'.

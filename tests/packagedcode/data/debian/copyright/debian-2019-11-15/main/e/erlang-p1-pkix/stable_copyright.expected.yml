@@ -1,6 +1,54 @@
-- Apache-2.0
-- apache-2.0 AND unknown
-- |
+primary_license: apache-2.0
+declared_license:
+  - Apache-2.0
+license_expression: apache-2.0
+copyright: |
   2002-2019 ProcessOne
   2018-2019 Evgeny Khramtsov <ekhramtsov@process-one.net>
-  2018-2019 Philipp Huebner <debalance@debian.org>
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: apache-2.0_65.RULE
+    license_expression: apache-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: apache-2.0'
+  - score: '100.0'
+    start_line: 1
+    end_line: 14
+    matcher: 1-hash
+    rule_length: 109
+    matched_length: 109
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: apache-2.0_845.RULE
+    license_expression: apache-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+
+      On Debian systems, the complete text of the Apache version 2.0 license
+      can be found in "/usr/share/common-licenses/Apache-2.0".

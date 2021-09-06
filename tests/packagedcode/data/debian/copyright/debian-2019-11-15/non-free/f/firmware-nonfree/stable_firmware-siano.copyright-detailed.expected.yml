@@ -1,3 +1,36 @@
--
-- unknown
-- Copyright (c) 2005-2014 Siano Mobile Silicon Ltd.
+primary_license:
+declared_license:
+license_expression: bsd-new
+copyright: Copyright (c) 2005-2014 Siano Mobile Silicon Ltd.
+matches:
+  - score: '97.98'
+    start_line: 9
+    end_line: 34
+    matcher: 3-seq
+    rule_length: '194'
+    matched_length: '194'
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_1006.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution. Redistribution and use in binary form, without\n modification,\
+      \ are permitted provided that the following conditions are\n met:\n \n * Redistributions\
+      \ must reproduce the above copyright notice and the\n following disclaimer in the documentation\
+      \ and/or other materials\n provided with the distribution.\n \n * Neither the name of\
+      \ [Siano] [Mobile] [Silicon] [Ltd]. nor the names of its\n suppliers may be used to endorse\
+      \ or promote products derived from this\n software without specific prior written permission.\n\
+      \ \n * No reverse engineering, decompilation, or disassembly of this software\n is permitted.\n\
+      \ \n DISCLAIMER. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND\n CONTRIBUTORS\
+      \ \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,\n BUT NOT LIMITED TO, THE\
+      \ IMPLIED WARRANTIES OF MERCHANTABILITY AND\n FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.\
+      \ IN NO EVENT SHALL THE\n COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\n\
+      \ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n NOT LIMITED\
+      \ TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF\n USE, DATA, OR PROFITS; OR\
+      \ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\n ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\
+      \ STRICT LIABILITY, OR TORT\n (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\
+      \ OF THE USE OF\n THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE"

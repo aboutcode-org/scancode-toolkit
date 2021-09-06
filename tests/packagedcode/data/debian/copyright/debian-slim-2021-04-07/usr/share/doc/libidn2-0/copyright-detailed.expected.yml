@@ -1,0 +1,257 @@
+primary_license: gpl-3.0-plus
+declared_license:
+  - GPL-3+
+  - LGPL-3+ or GPL-2+
+  - GPL-3+
+  - GPL-3+
+  - Unicode
+  - GPL-3+
+  - GPL-2+
+  - LGPL-3+
+  - Unicode
+license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND ((lgpl-3.0-plus AND lgpl-3.0-plus AND
+  lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND (gpl-3.0-plus AND gpl-3.0-plus) AND
+  (gpl-3.0-plus AND gpl-3.0-plus) AND (unicode AND unicode)
+copyright: |
+  Copyright (C) 2011-2014 Simon Josefsson
+  Copyright (C) 2011-2014 Simon Josefsson
+  Copyright (C) 2001-2011 Free Software Foundation, Inc.
+  Copyright (c) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011 Simon Josefsson
+  Copyright (c) 2001, 2002 Nikos Mavrogiannopoulos
+  Copyright (c) 1998 Michael Zucchi
+  Copyright (c) 1991-2010 Unicode, Inc.
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_92.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-3+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 15
+    matcher: 1-hash
+    rule_length: 128
+    matched_length: 128
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_288.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software: you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation, either version 3 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+      On Debian GNU/Linux systems, the complete text of the GNU General Public
+      License version 3 can be found in /usr/share/common-licenses/GPL-3.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_22.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 15
+    matcher: 1-hash
+    rule_length: 128
+    matched_length: 128
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_740.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 2 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+      On Debian GNU/Linux systems, the complete text of the GNU General Public
+      License version 2 can be found in /usr/share/common-licenses/GPL-2.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-3.0-plus_166.RULE
+    license_expression: lgpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: lgpl-3+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 12
+    matcher: 2-aho
+    rule_length: 104
+    matched_length: 104
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-3.0-plus_4.RULE
+    license_expression: lgpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software: you can redistribute it and/or modify
+      it under the terms of the GNU Lesser General Public License as published
+      by the Free Software Foundation, either version 3 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU Lesser General Public License
+      along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  - score: '72.31'
+    start_line: 1
+    end_line: 15
+    matcher: 3-seq
+    rule_length: 130
+    matched_length: 94
+    match_coverage: '72.31'
+    rule_relevance: 100
+    identifier: lgpl-3.0-plus_167.RULE
+    license_expression: lgpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      is free software: you can redistribute it and/or modify
+      it under the terms of the GNU Lesser General Public License as published
+      by the Free Software Foundation, either version 3 of the License, or
+      (at your option) any later version.
+
+      This [program] is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See [the]
+      [GNU] [General] [Public] [License] [for] [more] [details].
+
+      [You] [should] [have] [received] a [copy] [of] the GNU Lesser General Public License
+      [along] [with] [this] [program].  [If] [not], [see] <[http]://[www].[gnu].[org]/[licenses]/>.
+
+      [On] [Debian] [GNU]/[Linux] [systems], [the] [complete] [text] of the GNU Lesser General
+      Public License version 3 can be found in /usr/share/common-licenses/LGPL-3.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 2-aho
+    rule_length: 13
+    matched_length: 13
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: unicode_14.RULE
+    license_expression: unicode
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: For terms of use, see http://www.unicode.org/terms_of_use.html
+  - score: '100.0'
+    start_line: 2
+    end_line: 34
+    matcher: 2-aho
+    rule_length: 306
+    matched_length: 306
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: unicode_17.RULE
+    license_expression: unicode
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Distributed
+      under the Terms of Use in http://www.unicode.org/copyright.html.
+
+      Permission is hereby granted, free of charge, to any person obtaining
+      a copy of the Unicode data files and any associated documentation
+      (the "Data Files") or Unicode software and any associated
+      documentation (the "Software") to deal in the Data Files or Software
+      without restriction, including without limitation the rights to use,
+      copy, modify, merge, publish, distribute, and/or sell copies of the
+      Data Files or Software, and to permit persons to whom the Data Files
+      or Software are furnished to do so, provided that (a) the above
+      copyright notice(s) and this permission notice appear with all copies
+      of the Data Files or Software, (b) both the above copyright notice(s)
+      and this permission notice appear in associated documentation, and
+      (c) there is clear notice in each modified Data File or in the
+      Software as well as in the documentation associated with the Data
+      File(s) or Software that the data or software has been modified.
+
+      THE DATA FILES AND SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF
+      ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+      WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+      NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT SHALL THE
+      COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE BE LIABLE FOR ANY
+      CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY
+      DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+      WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+      ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
+      OF THE DATA FILES OR SOFTWARE.
+
+      Except as contained in this notice, the name of a copyright holder
+      shall not be used in advertising or otherwise to promote the sale,
+      use or other dealings in these Data Files or Software without prior
+      written authorization of the copyright holder.

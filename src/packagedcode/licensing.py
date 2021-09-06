@@ -36,6 +36,29 @@ if TRACE:
                                      for a in args))
 
 
+def get_license_matches(location=None, query_string=None):
+    """
+    Returns a sequence of LicenseMatch objects wit license detections for the
+    `query_string` or the file at `location`.
+    """
+    if not query_string:
+        return []
+    from licensedcode import cache
+
+    idx = cache.get_index()
+    return idx.match(location=location, query_string=query_string)
+
+
+def get_license_expression_from_matches(license_matches):
+    """
+    Craft a license expression from a list of LicenseMatch objects.
+    """
+    from packagedcode.utils import combine_expressions
+    
+    license_expressions = [match.rule.license_expression for match in license_matches]
+    return combine_expressions(license_expressions, unique=False)
+
+
 def matches_have_unknown(matches, licensing):
     """
     Return True if any of the LicenseMatch in `matches` has an unknown license.
@@ -46,14 +69,20 @@ def matches_have_unknown(matches, licensing):
             return True
 
 
-def get_normalized_expression(query_string, try_as_expression=True, approximate=True):
+def get_normalized_expression(
+    query_string, 
+    try_as_expression=True, 
+    approximate=True,
+    expression_symbols=None,
+):
     """
     Given a text `query_string` return a single detected license expression.
     `query_string` is typically the value of a license field as found in package
     manifests.
 
     If `try_as_expression` is True try first to parse this as a license
-    expression.
+    expression using the ``expression_symbols`` mapping of {lowered key:
+    LicenseSymbol} if provided. Otherwise use the standard SPDX license symbols.
 
     If `approximate` is True, also include approximate license detection as
     part of the matching procedure.
@@ -80,6 +109,7 @@ def get_normalized_expression(query_string, try_as_expression=True, approximate=
             matches = idx.match(
                 query_string=query_string,
                 as_expression=True,
+                expression_symbols=expression_symbols,
             )
             if matches_have_unknown(matches, licensing):
                 # rematch also if we have unknowns
@@ -141,7 +171,8 @@ def get_normalized_expression(query_string, try_as_expression=True, approximate=
             raise Exception(
                 'Inconsistent package.declared_license: text with multiple "queries".'
                 'Please report this issue to the scancode-toolkit team.\n'
-                f'{query_string}')
+                f'{query_string}'
+            )
 
     query_len = len(query.tokens)
     matched_qspans = [m.qspan for m in matches]

@@ -1,0 +1,23 @@
+{
+  "Full Version": null,
+  "ProductVersion": "10.0.18362.1256",
+  "FileVersion": "10.0.18362.1256 (WinBuild.160101.0800)",
+  "Assembly Version": null,
+  "BuildDate": null,
+  "ProductName": "Microsoft\u00ae Windows\u00ae Operating System",
+  "OriginalFilename": "Clfs.Sys.MUI",
+  "InternalName": "clfs.sys",
+  "License": null,
+  "LegalCopyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+  "LegalTrademarks": null,
+  "LegalTrademarks1": null,
+  "LegalTrademarks2": null,
+  "LegalTrademarks3": null,
+  "FileDescription": "Common Log File System Driver",
+  "Comments": null,
+  "CompanyName": "Microsoft Corporation",
+  "Company": null,
+  "URL": null,
+  "WWW": null,
+  "extra_data": {}
+}

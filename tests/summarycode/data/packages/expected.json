@@ -57,6 +57,7 @@
         "source_packages": [
           "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
         ],
+        "extra_data": {},
         "purl": "pkg:maven/aopalliance/aopalliance@1.0",
         "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
         "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
@@ -116,6 +117,7 @@
         "dependencies": [],
         "contains_source_code": null,
         "source_packages": [],
+        "extra_data": {},
         "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
         "repository_homepage_url": null,
         "repository_download_url": null,
@@ -656,6 +658,7 @@
         ],
         "contains_source_code": null,
         "source_packages": [],
+        "extra_data": {},
         "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
         "repository_homepage_url": "https://www.npmjs.com/package/@ionic/app-scripts",
         "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
@@ -737,6 +740,7 @@
           "source_packages": [
             "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
           ],
+          "extra_data": {},
           "purl": "pkg:maven/aopalliance/aopalliance@1.0",
           "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
           "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
@@ -815,6 +819,7 @@
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
+          "extra_data": {},
           "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
           "repository_homepage_url": null,
           "repository_download_url": null,
@@ -1368,6 +1373,7 @@
           ],
           "contains_source_code": null,
           "source_packages": [],
+          "extra_data": {},
           "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
           "repository_homepage_url": "https://www.npmjs.com/package/@ionic/app-scripts",
           "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",

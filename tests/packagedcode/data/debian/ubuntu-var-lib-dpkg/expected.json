@@ -451,7 +451,9 @@
         "sha512": null
       }
     ],
-    "multi_arch": "foreign",
+    "extra_data": {
+      "multi_arch": "foreign"
+    },
     "purl": "pkg:deb/ubuntu/base-files@11ubuntu5?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -637,7 +639,9 @@
         "sha512": null
       }
     ],
-    "multi_arch": "foreign",
+    "extra_data": {
+      "multi_arch": "foreign"
+    },
     "purl": "pkg:deb/ubuntu/base-passwd@3.5.47?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -863,7 +867,9 @@
         "sha512": null
       }
     ],
-    "multi_arch": "foreign",
+    "extra_data": {
+      "multi_arch": "foreign"
+    },
     "purl": "pkg:deb/ubuntu/bash@5.0-6ubuntu1?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -912,7 +918,9 @@
     "contains_source_code": null,
     "source_packages": [],
     "installed_files": [],
-    "multi_arch": "foreign",
+    "extra_data": {
+      "multi_arch": "foreign"
+    },
     "purl": "pkg:deb/ubuntu/tar@1.30%2Bdfsg-7?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,

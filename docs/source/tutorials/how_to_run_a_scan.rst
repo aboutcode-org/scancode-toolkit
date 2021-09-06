@@ -8,7 +8,7 @@ by default with Scancode.
 Prerequisites
 -------------
 
-Refer to the :ref:`install` installation guide.
+Refer to the :ref:'install' installation guide.
 
 
 Looking into Files

@@ -44,6 +44,7 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:gem/mecab-ruby@0.99",
     "repository_homepage_url": "https://rubygems.org/gems/mecab-ruby/versions/0.99",
     "repository_download_url": "https://rubygems.org/downloads/mecab-ruby-0.99.gem",

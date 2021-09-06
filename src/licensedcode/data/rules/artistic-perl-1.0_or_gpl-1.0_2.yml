@@ -1,0 +1,6 @@
+license_expression: artistic-perl-1.0 OR gpl-1.0
+is_license_notice: yes
+minimum_coverage: 90
+referenced_filenames:
+    - /usr/share/common-licenses/Artistic
+    - /usr/share/coomon-licenses/GPL

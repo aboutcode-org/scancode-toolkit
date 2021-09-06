@@ -1,0 +1,65 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "buildbot",
+  "version": "1.6.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Continuous integration testing framework",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0",
+  "declared_license": "GPL-2.0",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://files.pythonhosted.org/packages/source/b/buildbot/buildbot-1.6.0.tar.gz"
+      },
+      {
+        "file_name": "buildmaster.initd",
+        "url": null
+      },
+      {
+        "file_name": "buildmaster.confd",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "buildbot-1.6.0.tar.gz",
+        "sha512": "1d54bf5b0932b8bb21e0c6a8b8545eccfa48af56dd751d97ab9f8540c0e1735dc98871b33616ba66467f7ca78d2c54c3d6666264784d236097659f3f4d1fd5f0"
+      },
+      {
+        "file_name": "buildmaster.initd",
+        "sha512": "2e65d22f1b94433ba11839fb3434d072f9ff8132396b03fdcdb3b437778679d1699534296fbb851d2661a3a7a0bce4ef1f94c49e7910419557e4055f2ed1a4d5"
+      },
+      {
+        "file_name": "buildmaster.confd",
+        "sha512": "d9339c30d3a92e92b41b0e3139ec89ecbd1460b0e4ee6c6fe2560c4307b2eb3f29b838c2f2312b9c7049bd95eaf652d09039227c691af805bc25a36999ec1840"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/buildbot@1.6.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

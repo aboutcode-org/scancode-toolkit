@@ -4,4 +4,5 @@ short_name: license-file-reference
 name: license-file-reference
 category: Unstated License
 owner: Unspecified
+is_unknown: yes
 notes: this was known before as "see-license" and is now unknown-license-reference

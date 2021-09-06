@@ -109,19 +109,34 @@ def test_custom_format_with_custom_filename_fails_for_directory():
     result_file = test_env.get_temp_file('html')
     args = ['--info', '--custom-template', test_dir, '--custom-output', result_file, test_dir]
     result = run_scan_click(args, expected_rc=2)
-    assert 'Invalid value for "--custom-template": Path' in result.output
+    assert 'Invalid value for "--custom-template":' in normalize_quotes(result.output)
 
+def normalize_quotes(s):
+    return s.replace("'", '"')
+
+@pytest.mark.scanslow
+def test_scan_custom_html_output_for_a_directory():
+    test_dir = test_env.get_test_loc('templated/tree/scan/')
+    custom_template = test_env.get_test_loc('templated/sample-template.html')
+    expected_file = test_env.get_test_loc('templated/tree/expected.html')
+    result_file = test_env.get_temp_file('html')
+    args = ['-clip', '--strip-root', '--custom-template', custom_template, '--custom-output', result_file, test_dir]
+    run_scan_click(args)
+    results = open(result_file).read()
+    expected = open(expected_file).read()
+    assert expected == results
 
 @pytest.mark.scanslow
 def test_custom_format_with_custom_filename():
     test_dir = test_env.get_test_loc('templated/simple')
     custom_template = test_env.get_test_loc('templated/sample-template.html')
+    expected_file = test_env.get_test_loc('templated/simple-expected.html')
     result_file = test_env.get_temp_file('html')
-    args = ['--info', '--custom-template', custom_template, '--custom-output', result_file, test_dir]
+    args = ['-clip', '--custom-template', custom_template, '--custom-output', result_file, test_dir]
     run_scan_click(args)
     results = open(result_file).read()
-    assert 'Custom Template' in results
-    assert __version__ in results
+    expected = open(expected_file).read()
+    assert expected == results
 
 
 @pytest.mark.scanslow
@@ -158,7 +173,7 @@ def test_HtmlOutput_process_codebase_does_not_fail_with_non_ascii_scanned_paths_
 
 
 def test_html_output_can_handle_non_ascii_paths():
-    test_file = test_env.get_test_loc('unicode.json')
+    test_file = test_env.get_test_loc('templated/unicode.json')
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')
     run_scan_click(['--from-json', test_file, '--html', result_file])
 
@@ -170,7 +185,7 @@ def test_html_output_can_handle_non_ascii_paths():
 
 @pytest.mark.scanslow
 def test_custom_html_output_can_handle_non_ascii_paths():
-    test_file = test_env.get_test_loc('unicode.json')
+    test_file = test_env.get_test_loc('templated/unicode.json')
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')
     custom_template = test_env.get_test_loc('templated/sample-template.html')
 

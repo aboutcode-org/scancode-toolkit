@@ -1,0 +1,487 @@
+# Contributor: Jens Staal <staal1978@gmail.com>
+# Contributor: Timo Teräs <timo.teras@iki.fi>
+# Maintainer: Timo Teräs <timo.teras@iki.fi>
+pkgname=libreoffice
+pkgver=6.4.6.2
+pkgrel=11
+pkgdesc="LibreOffice - Meta package for the full office suite"
+url="https://www.libreoffice.org/"
+arch="all !s390x !mips !mips64"
+license="MPL-2.0"
+makedepends="
+	apache-ant
+	apr-dev
+	autoconf
+	automake
+	bison
+	bluez-dev
+	boost-dev
+	cairo-dev
+	clucene-dev
+	coreutils
+	cppunit-dev
+	cups-dev
+	doxygen
+	findutils
+	flex
+	freetype-dev
+	glew-dev
+	glm-dev
+	glu-dev
+	gperf
+	gpgme-dev
+	gst-plugins-base-dev
+	gstreamer-dev
+	gtk+3.0-dev
+	harfbuzz-dev
+	hunspell-dev
+	hyphen-dev
+	icu
+	icu-dev
+	junit
+	lcms2-dev
+	libabw-dev
+	libcdr-dev
+	libcmis-dev
+	libe-book-dev
+	libepubgen-dev
+	libetonyek-dev
+	libexttextcat-dev
+	libfreehand-dev
+	libjpeg-turbo-dev
+	libmspub-dev
+	libmwaw-dev
+	libnumbertext-dev
+	libodfgen-dev
+	liborcus-dev
+	libpagemaker-dev
+	libqxp-dev
+	libstaroffice-dev
+	libvisio-dev
+	libwpd-dev
+	libwpg-dev
+	libwps-dev
+	libxml2-utils
+	libxrandr-dev
+	libxrender-dev
+	libxslt-dev
+	libzmf-dev
+	mariadb-dev
+	mdds-dev
+	mythes-dev
+	neon-dev
+	npapi-sdk
+	nss-dev
+	openjdk8
+	openldap-dev
+	openssl-dev
+	perl
+	perl-archive-zip
+	poppler-dev
+	postgresql-dev
+	py3-setuptools
+	python3-dev
+	redland-dev
+	sed
+	tar
+	ucpp
+	unixodbc-dev
+	vigra-dev
+	xmlsec-dev
+	zip
+	"
+# GNU sed is needed for in i18npool/CustomTarget_localedata.mk
+subpackages="$pkgname-common $pkgname-base $pkgname-calc $pkgname-draw
+	$pkgname-gnome $pkgname-impress $pkgname-math $pkgname-connector-postgres $pkgname-writer
+	$pkgname-sdk $pkgname-sdk-doc:sdk_doc libreofficekit"
+depends="$pkgname-base $pkgname-calc $pkgname-common $pkgname-draw $pkgname-impress $pkgname-math
+	$pkgname-connector-postgres $pkgname-writer libreofficekit"
+_addsrcurl="https://dev-www.libreoffice.org/src"
+case $pkgver in
+	*.*.*.*) _v=${pkgver%.*};;
+	*.*.*) _v=$pkgver;;
+esac
+
+# grep LIBXMLSEC_TARBALL download.lst
+source="https://download.documentfoundation.org/libreoffice/src/$_v/libreoffice-$pkgver.tar.xz
+	https://download.documentfoundation.org/libreoffice/src/$_v/libreoffice-dictionaries-$pkgver.tar.xz
+	https://download.documentfoundation.org/libreoffice/src/$_v/libreoffice-translations-$pkgver.tar.xz
+	$_addsrcurl/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip
+	$_addsrcurl/3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip
+	$_addsrcurl/35c94d2df8893241173de1d16b6034c0-swingExSrc.zip
+	$_addsrcurl/39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip
+	$_addsrcurl/3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip
+	$_addsrcurl/798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip
+	$_addsrcurl/8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip
+	$_addsrcurl/97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip
+	$_addsrcurl/ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip
+	$_addsrcurl/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip
+	$_addsrcurl/beeca87be45ec87d241ddd0e1bad80c1-bsh-2.0b6-src.zip
+	$_addsrcurl/commons-logging-1.2-src.tar.gz
+	$_addsrcurl/d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip
+	$_addsrcurl/db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip
+	$_addsrcurl/eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip
+	$_addsrcurl/f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip
+	$_addsrcurl/lxml-4.1.1.tgz
+	$_addsrcurl/pdfium-3963.tar.bz2
+	$_addsrcurl/QR-Code-generator-1.4.0.tar.gz
+	https://dev-www.libreoffice.org/extern/185d60944ea767075d27247c3162b3bc-unowinreg.dll
+	https://dev-www.libreoffice.org/extern/884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf
+
+	linux-musl.patch
+	fix-execinfo.patch
+	disable-liborcus-unittest.patch
+	musl-stacksize.patch
+	musl-libintl.patch
+	gcc10.patch
+	"
+
+# secfixes:
+#   6.3.1.2-r0:
+#     - CVE-2019-9854
+#     - CVE-2019-9855
+#   6.3.0.4-r0:
+#     - CVE-2019-9850
+#     - CVE-2019-9851
+#     - CVE-2019-9852
+#   6.2.5.2-r0:
+#     - CVE-2019-9848
+#     - CVE-2019-9849
+
+add_lang() {
+	local pkglang="${3:-$1}"
+	subpackages="$subpackages $pkgname-lang-$1:_lang_$1"
+	languages="$languages ${pkglang/_/-}"
+	eval "_lang_$1() { pkgdesc=\"LibreOffice - $2 language pack\"; depends=\"\"; _split lang_${pkglang}; }"
+}
+
+add_lang af "Afrikaans"
+add_lang am "Amharic"
+add_lang ar "Arabic"
+add_lang as "Assamese"
+add_lang ast "Asturian"
+add_lang be "Belarusian"
+add_lang bg "Bulgarian"
+add_lang bn "Bengali"
+add_lang bn_in "Bengali (India)" bn_IN
+add_lang bo "Tibetan"
+add_lang br "Breton"
+add_lang brx "Bodo"
+add_lang bs "Bosnian"
+add_lang ca "Catalan"
+add_lang ca_valencia "Catalan (Valencian)"
+add_lang cs "Czech"
+add_lang cy "Welsh (Cymraeg)"
+add_lang da "Danish"
+add_lang de "German"
+add_lang dgo "Dogri proper"
+add_lang dz "Dzongkha"
+add_lang el "Greek"
+add_lang en_gb "English (UK)" en_GB
+add_lang en_us "English (US)" en_US
+add_lang en_za "English (South Africa)" en_ZA
+add_lang eo "Esperanto"
+add_lang es "Spanish"
+add_lang et "Estonian"
+add_lang eu "Basque"
+add_lang fa "Persian (Farsi)"
+add_lang fi "Finnish"
+add_lang fr "French"
+add_lang ga "Irish"
+add_lang gd "Scottish Gaelic"
+add_lang gl "Galician"
+add_lang gu "Gujarati"
+add_lang gug "GuaranÃ­ (Paraguay)"
+add_lang he "Hebrew"
+add_lang hi "Hindi"
+add_lang hr "Croatian"
+add_lang hu "Hungarian"
+add_lang id "Indonesian"
+add_lang is "Icelandic"
+add_lang it "Italian"
+add_lang ja "Japanese"
+add_lang ka "Georgian"
+add_lang kk "Kazakh"
+add_lang km "Khmer"
+add_lang kmr_latn "Kurmanji Kurdish (Latin)" kmr_Latn
+add_lang kn "Kannada"
+add_lang ko "Korean"
+add_lang kok "Konkani"
+add_lang ks "Kashmiri"
+add_lang lb "Luxembourgish"
+add_lang lo "Lao"
+add_lang lt "Lithuanian"
+add_lang lv "Latvian"
+add_lang mai "Maithili"
+add_lang mk "Macedonian"
+add_lang ml "Malayalam"
+add_lang mn "Mongolian"
+add_lang mni "Meithei (Manipuri)"
+add_lang mr "Marathi"
+add_lang my "Burmese"
+add_lang nb "Norwegian (Bokmal)"
+add_lang ne "Nepali"
+add_lang nl "Dutch"
+add_lang nn "Nynorsk"
+add_lang nr "Ndebele (South)"
+add_lang nso "Northern Sotho"
+add_lang oc "Occitan"
+add_lang om "Oromo"
+add_lang or "Oriya"
+add_lang pa_in "Punjabi (India)" pa_IN
+add_lang pl "Polish"
+add_lang pt "Portuguese"
+add_lang pt_br "Portuguese (Brazil)" pt_BR
+add_lang ro "Romanian"
+add_lang ru "Russian"
+add_lang rw "Kinyarwanda"
+add_lang sa_in "Sanskrit (India)" sa_IN
+add_lang sat "Santali"
+add_lang sd "Sindhi"
+add_lang si "Sinhala"
+add_lang sid "Sidamo"
+add_lang sk "Slovak"
+add_lang sl "Slovenian"
+add_lang sq "Albanian"
+add_lang sr "Serbian"
+add_lang sr_latn "Serbian (Latin)" sr_Latn
+add_lang ss "Swati"
+add_lang st "Southern Sotho"
+add_lang sv "Swedish"
+add_lang sw_tz "Swahili (Tanzania)" sw_TZ
+add_lang ta "Tamil"
+add_lang te "Telugu"
+add_lang tg "Tajik"
+add_lang th "Thai"
+add_lang tn "Tswana"
+add_lang tr "Turkish"
+add_lang ts "Tsonga"
+add_lang tt "Tatar"
+add_lang ug "Uyghur"
+add_lang uk "Ukrainian"
+add_lang uz "Uzbek"
+add_lang ve "Venda"
+add_lang vi "Vietnamese"
+add_lang xh "Xhosa"
+add_lang zh_cn "Simplified Chinese (Peoples Republic of China)" zh_CN
+add_lang zh_tw "Traditional Chinese (Taiwan)" zh_TW
+add_lang zu "Zulu"
+
+
+# help abuild find shared objects in rpath
+ldpath="/usr/lib/libreoffice/program:/usr/lib/libreoffice/ure/lib/"
+
+unpack() {
+	if [ -z "${force:-}" ]; then
+		verify
+		initdcheck
+	fi
+	mkdir -p "$srcdir"
+	msg "Unpacking sources..."
+
+	local u
+	for u in $source; do
+		local s="$SRCDEST/$(filename_from_uri $u)"
+		case $s in
+		*/libreoffice-*.tar.xz)
+			msg "Unpacking $s..."
+			unxz -c "$s" | tar -C "$srcdir" -x ;;
+		esac
+	done
+}
+
+prepare() {
+	default_prepare
+	NOCONFIGURE=1 ./autogen.sh
+}
+
+build() {
+	# boost-1.59
+	export CPPFLAGS="$CPPFLAGS -DBOOST_ERROR_CODE_HEADER_ONLY -DBOOST_SYSTEM_NO_DEPRECATED"
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/share/man \
+		--infodir=/usr/share/info \
+		--localstatedir=/var \
+		--with-vendor="Alpine Linux" \
+		--disable-online-update \
+		--disable-fetch-external \
+		--disable-dependency-tracking \
+		--enable-release-build \
+		--enable-split-app-modules \
+		--enable-python=system \
+		--with-alloc=system \
+		--with-tls=nss \
+		--with-system-libs \
+		--with-system-dicts \
+		--with-system-ucpp \
+		--with-external-dict-dir=/usr/share/hunspell \
+		--with-external-hyph-dir=/usr/share/hyphen \
+		--with-external-tar="$srcdir" \
+		--with-lang="$languages" \
+		--with-jdk-home="/usr/lib/jvm/java-1.8-openjdk" \
+		--with-ant-home="/usr/share/java/apache-ant" \
+		--without-system-jars \
+		--without-system-qrcodegen \
+		--without-junit \
+		--without-fonts \
+		--without-system-sane \
+		--without-myspell-dicts \
+		--disable-firebird-sdbc \
+		--disable-coinmp \
+		--disable-lpsolve \
+		--enable-gtk3
+	# adding '-isystem /usr/include' make things break with gcc6
+	# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=823145
+	sed -i -e 's:-isystem /usr/include[^/]::g' config_host.mk
+
+	make build-nocheck
+	# build libreofficekit
+	cd libreofficekit && make
+}
+
+package() {
+	make DESTDIR="$pkgdir"/../all distro-pack-install
+}
+
+_split() {
+	local i
+	grep "^[^% ]" $builddir/file-lists/${1}_list.txt | sort -u | while IFS= read -r i; do
+		[ "$i" ] || continue
+		dirname="$(dirname $i)"
+		[ -d "$subpkgdir/$dirname" ] || install -dm755 "$subpkgdir/$dirname"
+		mv "$pkgdir"/../all/"$i" "$subpkgdir"/"$i"
+	done
+}
+
+base() {
+	pkgdesc="LibreOffice - Database frontend"
+	depends="libreoffice-common"
+	_split base
+
+	mkdir -p "$subpkgdir"/usr/lib/libreoffice/share/xdg
+	mv "$pkgdir"/../all/usr/lib/libreoffice/share/xdg/base.desktop "$subpkgdir"/usr/lib/libreoffice/share/xdg
+}
+
+calc() {
+	pkgdesc="LibreOffice - Spreadsheet"
+	depends="libreoffice-common"
+	_split calc
+
+	mkdir -p "$subpkgdir"/usr/lib/libreoffice/share/xdg
+	mv "$pkgdir"/../all/usr/lib/libreoffice/share/xdg/calc.desktop "$subpkgdir"/usr/lib/libreoffice/share/xdg
+}
+
+common() {
+	pkgdesc="LibreOffice - Common files"
+	depends="libreoffice-lang-en_us"
+	_split common
+
+	# The .desktop files for each app should be in the corrosponding subpackage
+	mkdir -p "$pkgdir"/../all/usr/lib/libreoffice/share/xdg
+	mv "$subpkgdir"/usr/lib/libreoffice/share/xdg/ "$pkgdir"/../all/usr/lib/libreoffice/share/
+	mkdir -p "$subpkgdir"/usr/lib/libreoffice/share/xdg
+	mv \
+		"$pkgdir"/../all/usr/lib/libreoffice/share/xdg/startcenter.desktop \
+		"$pkgdir"/../all/usr/lib/libreoffice/share/xdg/xsltfilter.desktop \
+		"$subpkgdir"/usr/lib/libreoffice/share/xdg/
+}
+
+draw() {
+	pkgdesc="LibreOffice - Drawing application"
+	depends="libreoffice-common"
+	_split draw
+
+	mkdir -p "$subpkgdir"/usr/lib/libreoffice/share/xdg
+	mv "$pkgdir"/../all/usr/lib/libreoffice/share/xdg/draw.desktop "$subpkgdir"/usr/lib/libreoffice/share/xdg
+}
+
+gnome() {
+	pkgdesc="LibreOffice - GNOME integration"
+	depends="libreoffice-common"
+	_split gnome
+}
+
+impress() {
+	pkgdesc="LibreOffice - Presentation application"
+	depends="libreoffice-common"
+	_split impress
+
+	mkdir -p "$subpkgdir"/usr/lib/libreoffice/share/xdg
+	mv "$pkgdir"/../all/usr/lib/libreoffice/share/xdg/impress.desktop "$subpkgdir"/usr/lib/libreoffice/share/xdg
+}
+
+libreofficekit() {
+	mkdir -p "$subpkgdir"/usr/include
+	cp -a "$builddir"/include/LibreOfficeKit "$subpkgdir"/usr/include
+}
+
+math() {
+	pkgdesc="LibreOffice - Equation editor"
+	depends="libreoffice-common"
+	_split math
+
+	mkdir -p "$subpkgdir"/usr/lib/libreoffice/share/xdg
+	mv "$pkgdir"/../all/usr/lib/libreoffice/share/xdg/math.desktop "$subpkgdir"/usr/lib/libreoffice/share/xdg
+}
+
+postgres() {
+	pkgdesc="LibreOffice - Connector for PostgreSQL database"
+	depends="libreoffice-base"
+	_split postgresql
+}
+
+writer() {
+	pkgdesc="LibreOffice - Word Processor"
+	depends="libreoffice-common"
+	_split writer
+
+	mkdir -p "$subpkgdir"/usr/lib/libreoffice/share/xdg
+	mv "$pkgdir"/../all/usr/lib/libreoffice/share/xdg/writer.desktop "$subpkgdir"/usr/lib/libreoffice/share/xdg
+}
+
+sdk() {
+	pkgdesc="LibreOffice - SDK"
+	depends="libreoffice-common"
+	_split sdk
+}
+
+sdk_doc() {
+	pkgdesc="LibreOffice - SDK documentation"
+	depends="libreoffice-common"
+	_split sdk_doc
+}
+
+sha512sums="377675494d4422c4d9363fe3857a8587e38f6ccd39aebec9c23337aa3a88cb2526608b8d0bcb27985ed8f821a98ca541dad4b48d69db441bcb27e9fb81beb9ba  libreoffice-6.4.6.2.tar.xz
+5522f2aeca53a30eaadc6c94316e7d16cbb627d5d715ec16defa1be97e7e7cff6ae16568d6f0c7dfbe69029fa757a422c24bbfa03331c11f821659d9ed3f35ca  libreoffice-dictionaries-6.4.6.2.tar.xz
+6bbf6d35cfdd94515a15e0c61aacbaec872af4fb007616556a26d9891cc104976b09ddfff835af3193a287d9ce50531c9f7f2371785140b813db16a6d3ec4797  libreoffice-translations-6.4.6.2.tar.xz
+a231eba4a1baca11766ef292ab45e302081115477fe23018652882923308856835cf8c9ecba61a5cf22543474ccef3136965d794a90c9e4e9e6dcc21f9af6e1a  17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip
+9fe106bbdb55365f589246e5a0d10bbe9b35224132b66a1823dc6361633a67f2acc0e8c393dc7ed70d086858d16d242b8806b8b2184c98e3d20d0be85bed9c44  3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip
+4a48f1e32907fb2dee601cda3cd7a0d7198b2d51f2a572b647f1e93f901fd511eef3567676e52dfb1723a2cdfbc01f2015ca0bb22903b0bc1476dd618cc9aa8a  35c94d2df8893241173de1d16b6034c0-swingExSrc.zip
+a7c3044a0a7c67881f78eddc4b3faf05e29b20755a59cdbb9a0a49bd21be5aaa95d4ea5eaabdd6f005a421981fb7c55fee590d4c9592fe363ba27ae590652bd4  39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip
+8eaa9eed3bff16a16483d0754756c181089eb705ea34ded7f9f6db90a591cbce3f0551f28d097bd2f44de813cb818720c430e79e516939e0398b72bf4614f4cd  3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip
+ec5ae23c8fe2f5efc377f7a9665039afadf28b4d8f2791379296766a5fbc9a3bf7548f9b0e3b3b07762229ec733a92ccbb69791ee0318c9c6f78f8e847253d3f  798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip
+12ab17a4db3f7c834b21e59ff6f6f6456630d8626db7fb908867b20204295d4fba8969e79a3694ca66cb24e9f0e5a0fa4b9d2d3f748691b7f93985f9e666ce5f  8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip
+17ba9d2c0376fb7326d53bb1e3796610176a1af426d1b9073b5f7cf06c93d865e585c495e75c52fb8e426d7c453e751356a9ca9a54dc821ddadb6c8160ed5ba6  97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip
+58c1aa3965bf3a5f5d0facb67a5e42cec04e3f74e59cd7348ea2a9f6d9cafdce5552677c6b6d9c4cf2b31f52751695f2e53b2cee658e5f2eacb1393534a53c0e  ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip
+654d2408c11349c90ae7d80b0c1997ee831004bc4ee36a706a0d8a84617fd0f82a97c5b45ab2388d60085afaec59a02eada007a8a1e14c3b366cabd36b7607ec  ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip
+a04eca6a57807358bd4f8d017a2eeaa58403ef51fab11fc46ab089113a0ff5f66aaa793d3fc57b484334cbf51ed388a90d8d72d1e5819c8248cc0113ac928a77  beeca87be45ec87d241ddd0e1bad80c1-bsh-2.0b6-src.zip
+9f3761184950f2f13e85d8bc447709ab8be631dfd231b4f053f8147468db1bf71fb116ddba95e39f4afc4cf28c742e07d40c7a637f28004a60dc13935f9609f9  commons-logging-1.2-src.tar.gz
+71164f5e052db4fc16d1eb6ceb66d2b483d4912d874e371399047761e1d82e95d14288be5a7952c40f0ce39366f0706e726720e6e7171a00ce7bb55632cbf10c  d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip
+4476024e7f307617719714fbf0999409aa11d730bc316f833bb6627d1b83abb42460417be588c193ecb49d6b926dd1f411934d8a8abebe00a3e85c0047dad0a6  db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip
+9091d3628d9c75c068507537afc9e10bfb79c1abfd36ad697af3d592a1cc049ba6640f665bfc53cc520b6a26c21d70b0275106843444b441484c2178f2784743  eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip
+c1a15ebbfe817ec79d4b3f1c97d096bf8511737d7d35d97302856ccfb3de14a1cd16bd31000415d9ab24bbd9ef770d37855cee4b819ff0e8fca2f2766920a114  f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip
+9542e5206f9b2f9e072c52ef8e6cf44d1aaae8ae3e7ca7e820c1fac12e716503308ccb3cebc52155b4c93799f3ebca247781fc491524d004378bd26f5cddb9d1  lxml-4.1.1.tgz
+b4f47cf210314de3ab5a7cfb913ea6109894d3c6bd6ac0d3aed3629e6bf733ef0f6af122bd8b8a475389fe2a28f7eae66c07a22b80a7c142c1075b2e5aa8ff90  pdfium-3963.tar.bz2
+314a757bfdf9a38bcf07fd7a0103d28a2d1dd7311b8234761304efeef7bfdb740db78ab01e6b67e99a28d523cc2be9c1073b2de9d65e853d191c3dad19af56d0  QR-Code-generator-1.4.0.tar.gz
+854b8ae29b57b40ba6bb6ff66e723a0e8dad053fcc2849f0ad763cd8a31352f4aeba9636fd4e3f0f2a0cd985a6f49b4261b9ace68d6be821ed42cfa7a73eb13c  185d60944ea767075d27247c3162b3bc-unowinreg.dll
+ce7e23e750f2c6f7ff2e590cc8941caa18eaae2727c9ca31313ab72ab19278055bd9393d38b0b5b685594e2f04ee15cb83b3bbb25d09665fe7383d7f26bf2ae8  884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf
+d5e4b5cc2b1528d474dc60e4f9c65f679c199dcf48495b4bef8187edaccf13cfaf2be667344f303cd3a19d46bbc99b0014656c6eb4d20739e87d46bd62ac48ca  linux-musl.patch
+417ad2849ff9e189ec0247bbd5fe241988e6377a17a0842013eebf1879627fb520408ce97088827eaff8b4c37b702c9946bde2799d2ac61fac6f040ad078de8f  fix-execinfo.patch
+121827c1eaa0d09a8ccc757e18c7306fef0b8a22335a1910606d1a59891b8ae33fbe85581baa8b2da79dafd27d952d89c4402f0ffb37cb4f702418d50abf0c90  disable-liborcus-unittest.patch
+9abb0b14b7c408705569f26f6ed6519630ee7b98ff9c959eb53bb5efec6c08cae906f3c82943aee21098ab09c6caf58443a0dbe347d7dc5c8b6637f3665abca2  musl-stacksize.patch
+d99d074e89e2713a3b6a56fa60d9d989ca6eefc8884ccbf88cb16c7b09da6dde4ba4ebc6a4d8408b61a08088df7cb1bcda60738f91e5569179fc45d7e9b901a3  musl-libintl.patch
+4a390cd19553b1f58549e58503803297f714b021807073980ba009e4b712c986249a3fac71185a3c079e4360fdb6c6482ff47e6b20a51df3572f65e0ac4d69e7  gcc10.patch"

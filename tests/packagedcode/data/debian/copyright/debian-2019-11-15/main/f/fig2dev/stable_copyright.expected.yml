@@ -1,11 +1,11 @@
-- |
-  xfig
-  GPL-2+
-  MIT
-  GPL-3
-- gpl-2.0-plus AND gpl-3.0 AND gpl-3.0-plus AND mit AND mit-old-style-no-advert AND mit-xfig
-  AND unknown
-- |
+primary_license: mit-xfig
+declared_license:
+  - xfig
+  - GPL-2+
+  - MIT
+  - GPL-3
+license_expression: mit-xfig AND gpl-2.0-plus AND mit-old-style-no-advert AND (gpl-3.0 AND gpl-3.0-plus)
+copyright: |
   Copyright (c) 1991-1999 by Micah Beck
   Parts Copyright (c) 1985-1988 by Supoj Sutanthavibul
   Parts Copyright (c) 1988 by Conrad Kwok
@@ -24,13 +24,179 @@
   Parts Copyright (c) 2002-2006 by Martin Kroeker
   Parts Copyright (c) 2004-2008 by Eugene Ressler
   Parts Copyright (c) 2014-2018 by Thomas Loimer
-  1999-2018 Roland Rosenfeld <roland@debian.org>
-  2010 Steve Langasek <vorlon@debian.org>
-  1998-1999 Edward Betts <edward@debian.org>
-  1997-1998 Enrique Zanardi <ezanardi@molec1.dfis.ull.es
-  1998 Christian Meder <meder@isr.uni-stuttgart.de>
-  1998 Paul Slootman <paul@debian.org>
-  1997 joost witteveen <joostje@debian.org>
   Copyright (C) 2006 Michael Pfeiffer -- p3fff@web.de
   Copyright, 1987, Massachusetts Institute of Technology
   Copyright (C) 1997, 2003-2004, 2006-2007, 2009-2015 Free Software Foundation, Inc.
+matches:
+  - score: '87.78'
+    start_line: 1
+    end_line: 8
+    matcher: 3-seq
+    rule_length: 81
+    matched_length: 79
+    match_coverage: '97.53'
+    rule_relevance: 90
+    identifier: mit-xfig_1.RULE
+    license_expression: mit-xfig
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Any party obtaining a copy of these files is granted, free of charge, a
+      full and unrestricted irrevocable, world-wide, paid up, royalty-free,
+      nonexclusive right and license to deal in this software and documentation
+      files (the "Software"), including without limitation the rights to use,
+      copy, modify, merge, publish distribute, sublicense and/or sell copies of
+      the Software, and to permit persons who receive copies from any such
+      party to do so, with the only requirement being that [the] [above] [copyright]
+      [and] [this] [permission] notice remain intact.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_22.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2+'
+  - score: '89.93'
+    start_line: 1
+    end_line: 16
+    matcher: 3-seq
+    rule_length: 139
+    matched_length: 125
+    match_coverage: '89.93'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_612.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License [version] [2] [or] [3] as
+      published by the Free Software Foundation.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program; if not, write to the Free Software Foundation,
+      Inc., 51 Franklin [St], Fifth Floor, Boston, MA 02110-1301, USA.
+
+      On Debian systems, the full text of the GNU General Public
+      License version 2 can be found in the file
+      `/usr/share/common-licenses/GPL-2'.
+  - score: '100.0'
+    start_line: 1
+    end_line: 9
+    matcher: 1-hash
+    rule_length: 96
+    matched_length: 96
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit-old-style-no-advert_3.RULE
+    license_expression: mit-old-style-no-advert
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission to use, copy, modify, distribute, and sell this software and its
+      documentation for any purpose is hereby granted without fee, provided that
+      the above copyright notice appear in all copies and that both that
+      copyright notice and this permission notice appear in supporting
+      documentation, and that the name of M.I.T. not be used in advertising or
+      publicity pertaining to distribution of the software without specific,
+      written prior permission.  M.I.T. makes no representations about the
+      suitability of this software for any purpose.  It is provided "as is"
+      without express or implied warranty.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0_rdesc_1.RULE
+    license_expression: gpl-3.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-3'
+  - score: '100.0'
+    start_line: 1
+    end_line: 9
+    matcher: 2-aho
+    rule_length: 79
+    matched_length: 79
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_96.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software: you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 3 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+  - score: '100.0'
+    start_line: 11
+    end_line: 12
+    matcher: 2-aho
+    rule_length: 7
+    matched_length: 7
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0_378.RULE
+    license_expression: gpl-3.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      the GNU General Public
+      License version 3
+  - score: '33.0'
+    start_line: 13
+    end_line: 13
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 33
+    identifier: gpl-3.0_93.RULE
+    license_expression: gpl-3.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: usr/share/common-licenses/GPL-3'.

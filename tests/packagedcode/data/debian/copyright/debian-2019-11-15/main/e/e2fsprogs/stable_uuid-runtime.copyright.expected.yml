@@ -1,3 +1,37 @@
--
-- bsd-new AND unknown AND warranty-disclaimer
-- Copyright (c) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 by Theodore Ts'o
+primary_license:
+declared_license:
+license_expression: bsd-new
+copyright: Copyright (c) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 by Theodore Ts'o
+matches:
+  - score: '100.0'
+    start_line: 15
+    end_line: 39
+    matcher: 2-aho
+    rule_length: 210
+    matched_length: 210
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_117.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, and the entire permission\
+      \ notice in its entirety,\n    including the disclaimer of warranties.\n 2. Redistributions\
+      \ in binary form must reproduce the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer in the\n    documentation and/or other materials provided\
+      \ with the distribution.\n 3. The name of the author may not be used to endorse or promote\n\
+      \    products derived from this software without specific prior\n    written permission.\n\
+      \ \n THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED\n WARRANTIES, INCLUDING,\
+      \ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\n OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\
+      \ PURPOSE, ALL OF\n WHICH ARE HEREBY DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE\n LIABLE\
+      \ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\n CONSEQUENTIAL DAMAGES\
+      \ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT\n OF SUBSTITUTE GOODS OR SERVICES; LOSS\
+      \ OF USE, DATA, OR PROFITS; OR\n BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY\
+      \ OF\n LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n (INCLUDING NEGLIGENCE\
+      \ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE\n USE OF THIS SOFTWARE, EVEN IF NOT ADVISED\
+      \ OF THE POSSIBILITY OF SUCH\n DAMAGE."

@@ -1,0 +1,32 @@
+# Contributor: Drew DeVault <sir@cmpwn.com>
+# Maintainer: Drew DeVault <sir@cmpwn.com>
+pkgname=py3-cssselect2
+_pyname=cssselect2
+pkgver=0.4.1
+pkgrel=1
+pkgdesc="CSS selectors for Python ElementTree"
+url="https://pypi.org/projects/cssselect2/"
+arch="noarch"
+license="BSD-3-Clause"
+depends="py3-tinycss2"
+checkdepends="py3-pytest py3-pytest-cov py3-pytest-isort py3-pytest-flake8"
+_pypiprefix="${_pyname%${_pyname#?}}"
+source="
+	https://files.pythonhosted.org/packages/source/$_pypiprefix/$_pyname/$_pyname-$pkgver.tar.gz
+"
+builddir="$srcdir"/$_pyname-$pkgver
+options="!check" # upstream tests are broken
+
+build() {
+	python3 setup.py build
+}
+
+check() {
+	pytest
+}
+
+package() {
+	python3 setup.py install --prefix=/usr --root="$pkgdir"
+}
+
+sha512sums="feafeec3dbe3157ee452d94cd391a09cfcb48ca8bd1563c117c77c9ceb01102c4989611ede39e433ec25d3ddda98a94c4589ccb290b79c729683e673763b42ac  cssselect2-0.4.1.tar.gz"

@@ -42,58 +42,59 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/javax.mail/mail",
+      "purl": "pkg:maven/javax.mail/mail@1.4",
       "requirement": "1.4",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.jms/jms",
+      "purl": "pkg:maven/javax.jms/jms@1.1",
       "requirement": "1.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.sun.jdmk/jmxtools",
+      "purl": "pkg:maven/com.sun.jdmk/jmxtools@1.2.1",
       "requirement": "1.2.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.sun.jmx/jmxri",
+      "purl": "pkg:maven/com.sun.jmx/jmxri@1.2.1",
       "requirement": "1.2.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/oro/oro",
+      "purl": "pkg:maven/oro/oro@2.0.8",
       "requirement": "2.0.8",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/junit/junit",
+      "purl": "pkg:maven/junit/junit@3.8.1",
       "requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/log4j/log4j@1.2.15?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/log4j/log4j@1.2.15",
   "repository_homepage_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/",
   "repository_download_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.jar",

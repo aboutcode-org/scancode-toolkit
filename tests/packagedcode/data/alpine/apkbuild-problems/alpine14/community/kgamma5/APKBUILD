@@ -1,0 +1,47 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=kgamma5
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="Adjust your monitor's gamma settings"
+# armhf blocked by extra-cmake-modules
+# s390x blocked by kconfigwidgets
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="GPL-2.0-or-later"
+makedepends="
+	extra-cmake-modules
+	kconfig-dev
+	kconfigwidgets-dev
+	kdoctools-dev
+	ki18n-dev
+	qt5-qtbase-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/kgamma5-$pkgver.tar.xz"
+subpackages="$pkgname-doc $pkgname-lang"
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="
+45ad2eebb17b92d32d968cc7abd700b43439ac37e46cbf5a536d323a405325d4030882ce63dddbc7781c1409ae484489f17eaa21faad49fdb809c31d49b12118  kgamma5-5.22.0.tar.xz
+"

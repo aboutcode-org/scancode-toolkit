@@ -1,0 +1,108 @@
+primary_license: bsd-new
+declared_license:
+  - BSD-3-clause
+  - BSD-3-clause
+  - GPL-2+
+  - GPL-2+
+  - GPL-2+
+  - GPL-2+
+  - BSD-3-clause
+license_expression: bsd-new AND bsd-new AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+copyright: |
+  2013 Michael Stapelberg
+  2013 Michael Stapelberg <stapelberg@debian.org>
+  2006 Red Hat, Inc
+  2008 Canonical Ltd
+  2000,2001 Henrique de Moraes Holschuh <hmh@debian.org>
+  1997-2005 Miquel van Smoorenburg <miquels@cistron.nl>
+  Members of the pkg-sysvinit project
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_22.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 16
+    matcher: 1-hash
+    rule_length: 134
+    matched_length: 134
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_737.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 2, or (at your option)
+      any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License along
+      with this program; if not, write to the Free Software Foundation,
+      Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+      On Debian systems, the complete text of the GNU General Public License
+      version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
+  - score: '97.5'
+    start_line: 4
+    end_line: 27
+    matcher: 3-seq
+    rule_length: 200
+    matched_length: '195'
+    match_coverage: '97.5'
+    rule_relevance: 100
+    identifier: bsd-new_238.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are met:
+
+          * Redistributions of source code must retain the above copyright
+            notice, this list of conditions and the following disclaimer.
+
+          * Redistributions in binary form must reproduce the above copyright
+            notice, this list of conditions and the following disclaimer in the
+            documentation and/or other materials provided with the distribution.
+
+          * Neither the name of [Michael] [Stapelberg] [nor] [the]
+            [names] [of] contributors may be used to endorse or promote products
+            derived from this software without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY [Michael] [Stapelberg] ''AS IS'' AND ANY
+      EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+      DISCLAIMED. IN NO EVENT SHALL [Michael] [Stapelberg] BE LIABLE FOR ANY
+      DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+      (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+      LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+      (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

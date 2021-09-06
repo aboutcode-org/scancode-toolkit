@@ -1,0 +1,141 @@
+{
+  "type": "pypi",
+  "namespace": null,
+  "name": null,
+  "version": null,
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Python",
+  "description": null,
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": "24931cad8ca14fb20d62933a3be5a0544d1dc47f4c3bce54f17ce74037fc7c23",
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": null,
+  "declared_license": null,
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [
+    {
+      "purl": "pkg:pypi/functools32@3.2.3.post2",
+      "requirement": "==3.2.3.post2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:pypi/urllib3@1.24.2",
+      "requirement": "==1.24.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:pypi/alabaster@0.7.12",
+      "requirement": "==0.7.12",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:pypi/attrs@19.3.0",
+      "requirement": "==19.3.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:pypi/certifi@2019.9.11",
+      "requirement": "==2019.9.11",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:pypi/markupsafe@1.1.1",
+      "requirement": "==1.1.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:pypi/packaging@19.2",
+      "requirement": "==19.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:pypi/parver@0.2.0",
+      "requirement": "==0.2.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:pypi/pkginfo@1.5.0.1",
+      "requirement": "==1.5.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:pypi/pygments@2.4.2",
+      "requirement": "==2.4.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:pypi/six@1.12.0",
+      "requirement": "==1.12.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:pypi/toml@0.10.0",
+      "requirement": "==0.10.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    },
+    {
+      "purl": "pkg:pypi/wheel@0.32.3",
+      "requirement": "==0.32.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true
+    }
+  ],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {},
+  "purl": null,
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

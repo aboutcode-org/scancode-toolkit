@@ -1,8 +1,134 @@
--
-- bsd-new AND unknown AND x11-fsf AND x11-xconsortium
-- |
+primary_license:
+declared_license:
+license_expression: x11-fsf AND x11-xconsortium AND bsd-new
+copyright: |
   Copyright (c) 1998-2018 Free Software Foundation, Inc.
   Copyright (c) 2001 by Pradeep Padala
   Copyright (c) 1994 X Consortium
   Copyright (c) 1980, 1991, 1992, 1993 The Regents of the University of California
   Copyright 1996-2018 by Thomas E. Dickey
+matches:
+  - score: '100.0'
+    start_line: 23
+    end_line: 45
+    matcher: 2-aho
+    rule_length: '199'
+    matched_length: '199'
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: x11-fsf.LICENSE
+    license_expression: x11-fsf
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Permission is hereby granted, free of charge, to any person obtaining a\n\
+      \ copy of this software and associated documentation files (the\n \"Software\"), to deal\
+      \ in the Software without restriction, including\n without limitation the rights to use,\
+      \ copy, modify, merge, publish,\n distribute, distribute with modifications, sublicense,\
+      \ and/or sell\n copies of the Software, and to permit persons to whom the Software is\n\
+      \ furnished to do so, subject to the following conditions:\n \n The above copyright notice\
+      \ and this permission notice shall be included\n in all copies or substantial portions\
+      \ of the Software.\n \n THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\
+      \ EXPRESS\n OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n MERCHANTABILITY,\
+      \ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\n IN NO EVENT SHALL THE ABOVE\
+      \ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\n DAMAGES OR OTHER LIABILITY, WHETHER IN\
+      \ AN ACTION OF CONTRACT, TORT OR\n OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH\
+      \ THE SOFTWARE OR\n THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n \n Except as contained\
+      \ in this notice, the name(s) of the above copyright\n holders shall not be used in advertising\
+      \ or otherwise to promote the\n sale, use or other dealings in this Software without prior\
+      \ written\n authorization."
+  - score: '100.0'
+    start_line: 50
+    end_line: 70
+    matcher: 2-aho
+    rule_length: 201
+    matched_length: 201
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: x11-xconsortium_2.RULE
+    license_expression: x11-xconsortium
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Permission is hereby granted, free of charge, to any person obtaining a copy\n\
+      \ of this software and associated documentation files (the \"Software\"), to\n deal in\
+      \ the Software without restriction, including without limitation the\n rights to use,\
+      \ copy, modify, merge, publish, distribute, sublicense, and/or\n sell copies of the Software,\
+      \ and to permit persons to whom the Software is\n furnished to do so, subject to the following\
+      \ conditions:\n \n The above copyright notice and this permission notice shall be included\
+      \ in\n all copies or substantial portions of the Software.\n \n THE SOFTWARE IS PROVIDED\
+      \ \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n IMPLIED, INCLUDING BUT NOT LIMITED\
+      \ TO THE WARRANTIES OF MERCHANTABILITY,\n FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\
+      \  IN NO EVENT SHALL THE\n X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\
+      \ WHETHER IN\n AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-\n\
+      \ TION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n \n Except as\
+      \ contained in this notice, the name of the X Consortium shall not\n be used in advertising\
+      \ or otherwise to promote the sale, use or other deal-\n ings in this Software without\
+      \ prior written authorization from the X Consor-\n tium."
+  - score: '100.0'
+    start_line: 76
+    end_line: 98
+    matcher: 2-aho
+    rule_length: 213
+    matched_length: 213
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_19.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n 3. Neither\
+      \ the name of the University nor the names of its contributors\n    may be used to endorse\
+      \ or promote products derived from this software\n    without specific prior written permission.\n\
+      \ \n THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\n ANY EXPRESS\
+      \ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS\
+      \ OR CONTRIBUTORS BE LIABLE\n FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS\n OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER\
+      \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n LIABILITY, OR TORT\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n OUT OF THE USE OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE."
+  - score: '97.49'
+    start_line: 105
+    end_line: 127
+    matcher: 3-seq
+    rule_length: '199'
+    matched_length: '194'
+    match_coverage: '97.49'
+    rule_relevance: 100
+    identifier: x11-fsf.LICENSE
+    license_expression: x11-fsf
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Permission is hereby granted, free of charge, to any person obtaining a\n\
+      \ copy of this software and associated documentation files (the\n \"Software\"), to deal\
+      \ in the Software without restriction, including\n without limitation the rights to use,\
+      \ copy, modify, merge, publish,\n distribute, sublicense, and/or sell copies of the Software,\
+      \ and to\n permit persons to whom the Software is furnished to do so, subject to\n the\
+      \ following conditions:\n \n The above copyright notice and this permission notice shall\
+      \ be included\n in all copies or substantial portions of the Software.\n \n THE SOFTWARE\
+      \ IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\n OR IMPLIED, INCLUDING\
+      \ BUT NOT LIMITED TO THE WARRANTIES OF\n MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE\
+      \ AND NONINFRINGEMENT.\n IN NO EVENT SHALL THE ABOVE [LISTED] [COPYRIGHT] [HOLDER](S)\
+      \ BE LIABLE FOR ANY\n CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\n\
+      \ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\n SOFTWARE OR THE\
+      \ USE OR OTHER DEALINGS IN THE SOFTWARE.\n \n Except as contained in this notice, the\
+      \ name(s) of the above copyright\n holders shall not be used in advertising or otherwise\
+      \ to promote the\n sale, use or other dealings in this Software without prior written\n\
+      \ authorization."

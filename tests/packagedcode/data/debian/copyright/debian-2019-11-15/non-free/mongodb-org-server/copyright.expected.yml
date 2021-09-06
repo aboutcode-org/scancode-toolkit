@@ -1,5 +1,24 @@
--
-- mongodb-sspl-1.0 AND unknown
-- |
+primary_license:
+declared_license:
+license_expression: mongodb-sspl-1.0
+copyright: |
   Copyright 2009 10gen
   (c) 2009, Kristina Chodorow <kristina@10gen.com>
+matches:
+  - score: '100.0'
+    start_line: 18
+    end_line: 23
+    matcher: 2-aho
+    rule_length: 28
+    matched_length: 28
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mongodb-sspl-1.0_9.RULE
+    license_expression: mongodb-sspl-1.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "License:\n \n     SSPL\n \n The Debian packaging is (C) 2009, Kristina Chodorow\
+      \ <kristina@10gen.com> and\n is licensed under the SSPL, see `https://www.mongodb.com/licensing/server-side-public-license'."

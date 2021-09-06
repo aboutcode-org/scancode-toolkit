@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "ksshaskpass",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "ssh-add helper that uses kwallet and kpassworddialog",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0-plus",
+  "declared_license": "GPL-2.0-or-later",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/stable/plasma/5.22.0/ksshaskpass-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "ksshaskpass-5.22.0.tar.xz",
+        "sha512": "918c098c877fc48e6809e498e81b0ab1968371f58f1f89af65a45fb817829f8d44666c1fee4b84cae8a1f114b59698e48da683bc452151db57df0f2e4063fb3c"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/ksshaskpass@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

@@ -1,3 +1,64 @@
--
-- info-zip-2009-01 AND unknown AND unknown-license-reference
-- Copyright (c) 1990-2009 Info-ZIP.
+primary_license:
+declared_license:
+license_expression: info-zip-2009-01
+copyright: Copyright (c) 1990-2009 Info-ZIP.
+matches:
+  - score: '99.24'
+    start_line: 15
+    end_line: 76
+    matcher: 3-seq
+    rule_length: 521
+    matched_length: 521
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: info-zip-2009-01.LICENSE
+    license_expression: info-zip-2009-01
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This is version 2009-Jan-02 of the Info-ZIP license.\n The definitive version\
+      \ of this document should be available at\n ftp://ftp.info-zip.org/pub/infozip/license.html\
+      \ indefinitely and\n a copy at http://www.info-zip.org/pub/infozip/license.html.\n \n\
+      \ \n Copyright (c) 1990-2009 Info-ZIP.  All rights reserved.\n \n For the purposes of\
+      \ this copyright and license, \"Info-ZIP\" is defined as\n the following set of individuals:\n\
+      \ \n    Mark Adler, John Bush, Karl Davis, Harald Denker, Jean-Michel Dubois,\n    Jean-loup\
+      \ Gailly, Hunter Goatley, Ed Gordon, Ian Gorman, Chris Herborth,\n    Dirk Haase, Greg\
+      \ Hartwig, Robert Heath, Jonathan Hudson, Paul Kienitz,\n    David Kirschbaum, Johnny\
+      \ Lee, Onno van der Linden, Igor Mandrichenko,\n    Steve P. Miller, Sergio Monesi, Keith\
+      \ Owens, George Petrov, Greg Roelofs,\n    Kai Uwe Rommel, Steve Salisbury, Dave Smith,\
+      \ Steven M. Schweda,\n    Christian Spieler, Cosmin Truta, Antoine Verheijen, Paul von\
+      \ Behren,\n    Rich Wales, Mike White.\n \n This software is provided \"as is,\" without\
+      \ warranty of any kind, express\n or implied.  In no event shall Info-ZIP or its contributors\
+      \ be held liable\n for any direct, indirect, incidental, special or consequential damages\n\
+      \ arising out of the use of or inability to use this software.\n \n Permission is granted\
+      \ to anyone to use this software for any purpose,\n including commercial applications,\
+      \ and to alter it and redistribute it\n freely, subject to the above disclaimer and the\
+      \ following restrictions:\n \n     [1]. Redistributions of source code (in whole or in\
+      \ part) must retain\n        the above copyright notice, definition, disclaimer, and this\
+      \ list\n        of conditions.\n \n     [2]. Redistributions in binary form (compiled\
+      \ executables and libraries)\n        must reproduce the above copyright notice, definition,\
+      \ disclaimer,\n        and this list of conditions in documentation and/or other materials\n\
+      \        provided with the distribution.  Additional documentation is not needed\n   \
+      \     for executables where a command line license option provides these and\n       \
+      \ a note regarding this option is in the executable's startup banner.  The\n        sole\
+      \ exception to this condition is redistribution of a standard\n        UnZipSFX binary\
+      \ (including SFXWiz) as part of a self-extracting archive;\n        that is permitted\
+      \ without inclusion of this license, as long as the\n        normal SFX banner has not\
+      \ been removed from the binary or disabled.\n \n     [3]. Altered versions--including,\
+      \ but not limited to, ports to new operating\n        systems, existing ports with new\
+      \ graphical interfaces, versions with\n        modified or added functionality, and dynamic,\
+      \ shared, or static library\n        versions not from Info-ZIP--must be plainly marked\
+      \ as such and must not\n        be misrepresented as being the original source or, if\
+      \ binaries,\n        compiled from the original source.  Such altered versions also must\
+      \ not\n        be misrepresented as being Info-ZIP releases--including, but not\n    \
+      \    limited to, labeling of the altered versions with the names \"Info-ZIP\"\n      \
+      \  (or any variation thereof, including, but not limited to, different\n        capitalizations),\
+      \ \"Pocket UnZip,\" \"WiZ\" or \"MacZip\" without the\n        explicit permission of\
+      \ Info-ZIP.  Such altered versions are further\n        prohibited from misrepresentative\
+      \ use of the Zip-Bugs or Info-ZIP\n        e-mail addresses or the Info-ZIP URL(s), such\
+      \ as to imply Info-ZIP\n        will provide support for the altered versions.\n \n  \
+      \   [4]. Info-ZIP retains the right to use the names \"Info-ZIP,\" \"Zip,\" \"UnZip,\"\
+      \n        \"UnZipSFX,\" \"WiZ,\" \"Pocket UnZip,\" \"Pocket Zip,\" and \"MacZip\" for\
+      \ its\n        own source and binary releases."

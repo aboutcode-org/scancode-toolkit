@@ -1,0 +1,47 @@
+primary_license:
+declared_license:
+license_expression: gpl-2.0-plus
+copyright: copyright 1997, 1998, 1999 Jason Gunthorpe and others
+matches:
+  - score: '100.0'
+    start_line: 4
+    end_line: 4
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_374.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv2+'
+  - score: '100.0'
+    start_line: 6
+    end_line: 22
+    matcher: 2-aho
+    rule_length: 141
+    matched_length: 141
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_736.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This program is free software; you can redistribute it and/or modify\n  \
+      \   it under the terms of the GNU General Public License as published by\n     the Free\
+      \ Software Foundation; either version 2 of the License, or\n     (at your option) any\
+      \ later version.\n \n     This program is distributed in the hope that it will be useful,\n\
+      \     but WITHOUT ANY WARRANTY; without even the implied warranty of\n     MERCHANTABILITY\
+      \ or FITNESS FOR A PARTICULAR PURPOSE.  See the\n     GNU General Public License for more\
+      \ details.\n \n     You should have received a copy of the GNU General Public License\n\
+      \     along with this program; if not, write to the Free Software\n     Foundation, Inc.,\
+      \ 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.\n \n See /usr/share/common-licenses/GPL-2,\
+      \ or\n <http://www.gnu.org/copyleft/gpl.txt> for the terms of the latest version\n of\
+      \ the GNU General Public License."

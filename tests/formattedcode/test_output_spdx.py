@@ -65,7 +65,6 @@ def sort_nested(data):
     maptypes = dict, dict
     coltypes = seqtypes + maptypes
 
-
     if isinstance(data, maptypes):
         new_data = []
         for k, v in data.items():
@@ -138,9 +137,25 @@ def load_and_clean_tv(location):
     """
     with io.open(location, encoding='utf-8') as co:
         content = co.read()
-    content = [l for l in content.splitlines(False)
-        if l and l.strip() and not l.startswith(('Creator: ', 'Created: ',))]
-    return '\n'.join(content)
+    lines = []
+    lines_append = lines.append
+
+    dns = 'DocumentNamespace: http://spdx.org/spdxdocs/'
+
+    for line in content.splitlines(False):
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith(('Creator: ', 'Created: ',)):
+            continue
+        if line.startswith(dns):
+            # only keep the left side of
+            # DocumentNamespace: http://spdx.org/spdxdocs/unicode-ea31be0f-16de-4eab-9fc7-4e3bafb753d3
+            line, _, _ = line.partition('-')
+    
+        lines_append(line)
+
+    return '\n'.join(lines)
 
 
 def check_tv_scan(expected_file, result_file, regen=False):
@@ -319,7 +334,7 @@ def test_spdx_rdf_with_empty_scan():
 
 @pytest.mark.scanslow
 def test_output_spdx_rdf_can_handle_non_ascii_paths():
-    test_file = test_env.get_test_loc('unicode.json')
+    test_file = test_env.get_test_loc('spdx/unicode.json')
     result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
     run_scan_click(['--from-json', test_file, '--spdx-rdf', result_file])
     with io.open(result_file, encoding='utf-8') as res:
@@ -328,7 +343,7 @@ def test_output_spdx_rdf_can_handle_non_ascii_paths():
 
 
 def test_output_spdx_tv_can_handle_non_ascii_paths():
-    test_file = test_env.get_test_loc('unicode.json')
+    test_file = test_env.get_test_loc('spdx/unicode.json')
     result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
     run_scan_click(['--from-json', test_file, '--spdx-tv', result_file])
     with io.open(result_file, encoding='utf-8') as res:

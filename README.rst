@@ -6,7 +6,11 @@ A typical software project often reuses hundreds of third-party packages.
 License and origin information is not always easy to find and not normalized:
 ScanCode discovers and normalizes this data for you.
 
-Read more about ScanCode here: `scancode-toolkit.readthedocs.io <https://scancode-toolkit.readthedocs.io/en/latest/>`_.
+Read more about ScanCode here: `scancode-toolkit.readthedocs.io 
+<https://scancode-toolkit.readthedocs.io/en/latest/>`_.
+
+Check out the code at https://github.com/nexB/scancode-toolkit
+
 
 Why use ScanCode?
 =================
@@ -25,8 +29,10 @@ Why use ScanCode?
   `RedHat Fabric8 analytics <https://github.com/fabric8-analytics>`_,
   and many more.
 
-- ScanCode detects licenses, copyrights, package manifests, direct
-  dependencies, and more both in **source code** and **binary** files.
+- ScanCode detects licenses, copyrights, package manifests, direct dependencies,
+  and more both in **source code** and **binary** files and is considered as the
+  best-in-class and reference tool in this domain, re-used as the core tools for
+  software composition data collection by several open source tools.
 
 - ScanCode provides the **most accurate license detection engine** and does a
   full comparison (also known as diff or red line comparison) between a database
@@ -37,14 +43,12 @@ Why use ScanCode?
   new and improved scanners, data summarization, package manifest parsers, and
   new outputs.
 
-- You can save your scan results as **JSON, HTML, CSV or SPDX**. And you can use the
-  companion `ScanCode workbench GUI app <https://github.com/nexB/scancode-workbench>`_
-  to review and display scan results, statistics and graphics.
+- You can save your scan results as **JSON, HTML, CSV or SPDX** or create your
+  own format with Jinja templates.
 
 - You can also organize and run ScanCode server-side with the
-  companion `ScanCode.io web app <https://github.com/nexB/scancodeio>`_
-  to organize and store multiple scan projects including scripting scanning piplines.
-
+  companion `ScanCode.io web app <https://github.com/nexB/scancode.io>`_
+  to organize and store multiple scan projects including scripted scanning pipelines.
 
 - ScanCode is **actively maintained**, has a **growing users and contributors
   community**.
@@ -53,6 +57,20 @@ Why use ScanCode?
 
 - ScanCode has an extensive and growing documentation.
 
+- ScanCode can process these packages, build manifest and lockfile formats to extract metadata:
+  Alpine packages, BUCK files, ABOUT files, Android apps, Autotools, Bazel, 
+  JavaScript Bower, Java Axis, MS Cab, Rust Cargo, Chef Chrome apps, 
+  PHP Composer and composer.lock, Conda, CPAN, Debian, Apple dmg,
+  Java EAR, WAR, JAR, FreeBSD packages, Rubygems gemspec, Gemfile and Gemfile.lock, 
+  Go modules, Haxe packages, InstallShield installers, iOS apps, ISO images, 
+  Apache IVY, JBoss Sar, R CRAN, Apache Maven, Meteor, Mozilla extensions, 
+  MSI installers, JavaScript npm packages, package-lock.json, yarn.lock, 
+  NSIS Installers, NugGet, OPam, Cocoapods, Python PyPI setup.py, setup.cfg, and 
+  several related lockfile formats, semi structured README
+  files such as README.android, README.chromium, README.facebook, README.google,
+  README.thirdparty, RPMs, Shell Archives, Squashfs images, Java WAR, Windows executables.
+
+
 See our `roadmap <https://scancode-toolkit.readthedocs.io/en/latest/contribute/roadmap.html>`_
 for upcoming features.
 
@@ -60,22 +78,14 @@ for upcoming features.
 Build and tests status
 ======================
 
-+-------+--------------+-----------------+--------------+
-|Branch | **Coverage** | **Linux/macOS** | **Windows**  |
-+=======+==============+=================+==============+
-|Master | |master-cov| | |master-posix|  | |master-win| |
-+-------+--------------+-----------------+--------------+
-|Develop| |devel-cov|  | |devel-posix|   | |devel-win|  |
-+-------+--------------+-----------------+--------------+
+We run tests on multiple CIs to ensure a good platform compabitility and on
+multiple version of Windows, Linux and macOS.
 
-Documentation Build
--------------------
-
-+--------+--------------+
-|Version | **RTD Build**|
-+========+==============+
-| Latest | |docs-rtd|   |
-+--------+--------------+
++--------------+--------------+--------------+
+| **Appveyor** | **Azure**    | **RTD Build**|
++==============+==============+==============+
+| |appveyor|   |    |azure|   | |docs-rtd|   |
++--------------+--------------+--------------+
 
 
 Documentation
@@ -110,7 +120,8 @@ Installation
 ============
 
 Before installing ScanCode make sure that you have installed the prerequisites
-properly. This means installing Python (Python 3.6+ is required).
+properly. This means installing Python (Python 3.6 or higher is required).
+
 See `prerequisites <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#prerequisites>`_
 for detailed information on the support platforms and Python versions.
 
@@ -215,26 +226,13 @@ See the NOTICE file and the .ABOUT files that document the origin and license of
 the third-party code used in ScanCode for more details.
 
 
-.. |master-cov| image:: https://codecov.io/gh/nexB/scancode-toolkit/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/nexB/scancode-toolkit/branch/master
-    :alt: Master branch test coverage (Linux)
-.. |devel-cov| image:: https://codecov.io/gh/nexB/scancode-toolkit/branch/develop/graph/badge.svg
-    :target: https://codecov.io/gh/nexB/scancode-toolkit/branch/develop
-    :alt: Develop branch test coverage (Linux)
-
-.. |master-posix| image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=master
+.. |appveyor| image:: https://ci.appveyor.com/api/projects/status/4webymu0l2ip8utr?svg=true
     :target: https://travis-ci.org/nexB/scancode-toolkit
-    :alt: Linux Master branch tests status
-.. |devel-posix| image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=develop
-    :target: https://travis-ci.org/nexB/scancode-toolkit
-    :alt: Linux Develop branch tests status
+    :alt: Appveyor tests status (Windows)
 
-.. |master-win| image:: https://ci.appveyor.com/api/projects/status/4webymu0l2ip8utr/branch/master?png=true
-    :target: https://ci.appveyor.com/project/nexB/scancode-toolkit
-    :alt: Windows Master branch tests status
-.. |devel-win| image:: https://ci.appveyor.com/api/projects/status/4webymu0l2ip8utr/branch/develop?png=true
-    :target: https://ci.appveyor.com/project/nexB/scancode-toolkit
-    :alt: Windows Develop branch tests status
+.. |azure| image:: https://dev.azure.com/nexB/scancode-toolkit/_apis/build/status/nexB.scancode-toolkit?branchName=develop
+    :target: https://dev.azure.com/nexB/scancode-toolkit/_build/latest?definitionId=1&branchName=develop
+    :alt: Azure tests status (Linux, macOS, Windows)
 
 .. |docs-rtd| image:: https://readthedocs.org/projects/scancode-toolkit/badge/?version=latest
     :target: https://scancode-toolkit.readthedocs.io/en/latest/?badge=latest

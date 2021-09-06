@@ -35,74 +35,75 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/org.apache.maven/maven-plugin-api",
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api@2.0.6",
       "requirement": "2.0.6",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven/maven-project",
+      "purl": "pkg:maven/org.apache.maven/maven-project@2.0.7",
       "requirement": "2.0.7",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven/maven-archiver",
+      "purl": "pkg:maven/org.apache.maven/maven-archiver@2.3",
       "requirement": "2.3",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-archiver",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-archiver@1.0-alpha-9",
       "requirement": "1.0-alpha-9",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-io",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-io@1.0-alpha-1",
       "requirement": "1.0-alpha-1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-lang/commons-lang",
+      "purl": "pkg:maven/commons-lang/commons-lang@2.1",
       "requirement": "2.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.9",
       "requirement": "1.4.9",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness",
+      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness@1.1",
       "requirement": "1.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.plugins/maven-jar-plugin@2.2?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.maven.plugins/maven-jar-plugin@2.2",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.2/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.2/maven-jar-plugin-2.2.jar",

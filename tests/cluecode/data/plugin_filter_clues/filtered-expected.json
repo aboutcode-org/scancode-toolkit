@@ -28,7 +28,6 @@
       "base_name": "LICENSE",
       "extension": "",
       "size": 2861,
-      "date": "2021-02-26",
       "sha1": "c4d6f133413f1ea9d3c436fb797f9060c8640c04",
       "md5": "55a970437979ffe95e7b8ee6e51abb0c",
       "sha256": "ebdef41bf0f5bd7d378e4f76052e02156ce1c80ce67f89209b018a3fca8a071c",
@@ -49,6 +48,7 @@
           "short_name": "Apache 1.1",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://apache.org/licenses/LICENSE-1.1",
@@ -65,11 +65,13 @@
             "licenses": [
               "apache-1.1"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "3-seq",
             "rule_length": 367,
             "matched_length": 367,
@@ -86,35 +88,35 @@
         {
           "value": "Copyright (c) The Eclipse Foundation https://eclipse.org",
           "start_line": 2,
-          "end_line": 5
+          "end_line": 3
         },
         {
           "value": "Copyright (c) The Eclipse Foundation https://eclipse.org",
           "start_line": 41,
-          "end_line": 44
+          "end_line": 42
         }
       ],
       "holders": [
         {
           "value": "The Eclipse Foundation",
           "start_line": 2,
-          "end_line": 5
+          "end_line": 2
         },
         {
           "value": "The Eclipse Foundation",
           "start_line": 41,
-          "end_line": 44
+          "end_line": 41
         }
       ],
       "authors": [
         {
           "value": "John Doe",
-          "start_line": 2,
+          "start_line": 5,
           "end_line": 5
         },
         {
           "value": "John Doe",
-          "start_line": 41,
+          "start_line": 44,
           "end_line": 44
         }
       ],

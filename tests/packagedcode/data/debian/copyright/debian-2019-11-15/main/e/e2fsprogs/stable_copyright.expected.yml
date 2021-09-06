@@ -1,6 +1,8 @@
--
-- bsd-new AND gpl-2.0 AND lgpl-2.0 AND lgpl-2.1 AND mit-old-style-no-advert AND ntp-0 AND unknown
-- |
+primary_license:
+declared_license:
+license_expression: (gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert) AND (gpl-2.0
+  AND lgpl-2.0) AND ntp-0 AND bsd-new
+copyright: |
   Copyright (c) 2003-2007 Theodore Ts'o <tytso@mit.edu>
   Copyright (c) 1997-2003 Yann Dirson <dirson@debian.org>
   Copyright (c) 2001 Alcove <http://www.alcove.com/>
@@ -8,3 +10,103 @@
   Copyright (c) 1995-1996 Michael Nonweiler <mrn20@cam.ac.uk>
   Copyright (c) 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 by Theodore Ts'o
   Copyright 1987 by the Student Information Processing Board of the Massachusetts Institute of Technology
+matches:
+  - score: '98.28'
+    start_line: 17
+    end_line: 22
+    matcher: 3-seq
+    rule_length: 58
+    matched_length: 57
+    match_coverage: '98.28'
+    rule_relevance: 100
+    identifier: gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_2.RULE
+    license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This package, the EXT2 [filesystem] utilities, are made available under
+       the GNU General Public License version 2, with the exception of the
+       [lib]/[ext2fs] [and] [lib]/[e2p] libraries, which are made available under the
+       GNU Library General Public License Version 2, the [lib]/[uuid] library
+       which is made available under a BSD-style license and the [lib]/[et] [and]
+       [lib]/[ss] libraries which are made available under an MIT-style license.
+  - score: '100.0'
+    start_line: 27
+    end_line: 30
+    matcher: 2-aho
+    rule_length: 43
+    matched_length: 43
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_and_lgpl-2.0_4.RULE
+    license_expression: gpl-2.0 AND lgpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian GNU systems, the complete text of the GNU General Public
+       License can be found in `/usr/share/common-licenses/GPL-2'.  The
+       complete text of the GNU Library General Public License can be found
+       in '/usr/share/common-licenses/LGPL-2'.
+  - score: '100.0'
+    start_line: 38
+    end_line: 45
+    matcher: 2-aho
+    rule_length: 83
+    matched_length: 83
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: ntp-0.LICENSE
+    license_expression: ntp-0
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission to use, copy, modify, and distribute this software and
+          its documentation for any purpose is hereby granted, provided that
+          the names of M.I.T. and the M.I.T. S.I.P.B. not be used in
+          advertising or publicity pertaining to distribution of the software
+          without specific, written prior permission.  M.I.T. and the
+          M.I.T. S.I.P.B. make no representations about the suitability of
+          this software for any purpose.  It is provided "as is" without
+          express or implied warranty.
+  - score: '100.0'
+    start_line: 49
+    end_line: 73
+    matcher: 2-aho
+    rule_length: 210
+    matched_length: 210
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_117.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n    modification,\
+      \ are permitted provided that the following conditions\n    are met:\n    1. Redistributions\
+      \ of source code must retain the above copyright\n       notice, and the entire permission\
+      \ notice in its entirety,\n       including the disclaimer of warranties.\n    2. Redistributions\
+      \ in binary form must reproduce the above copyright\n       notice, this list of conditions\
+      \ and the following disclaimer in the\n       documentation and/or other materials provided\
+      \ with the distribution.\n    3. The name of the author may not be used to endorse or\
+      \ promote\n       products derived from this software without specific prior\n       written\
+      \ permission.\n \n    THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED\n\
+      \    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\n    OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE, ALL OF\n    WHICH ARE HEREBY DISCLAIMED.  IN NO\
+      \ EVENT SHALL THE AUTHOR BE\n    LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\
+      \ EXEMPLARY, OR\n    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT\n\
+      \    OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\n    BUSINESS\
+      \ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\n    LIABILITY, WHETHER IN CONTRACT,\
+      \ STRICT LIABILITY, OR TORT\n    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\
+      \ OUT OF THE\n    USE OF THIS SOFTWARE, EVEN IF NOT ADVISED OF THE POSSIBILITY OF SUCH\n\
+      \    DAMAGE."

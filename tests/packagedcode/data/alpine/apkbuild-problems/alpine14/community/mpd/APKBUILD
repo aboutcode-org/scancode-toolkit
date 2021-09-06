@@ -1,0 +1,125 @@
+# Contributor: Leo <thinkabit.ukim@gmail.com>
+# Contributor: Łukasz Jendrysik <scadu@yandex.com>
+# Contributor: Sebastian Wicki <gandro@gmx.net>
+# Contributor: Sören Tempel <soeren+alpine@soeren-tempel.net>
+# Maintainer: Carlo Landmeter <clandmeter@alpinelinux.org>
+pkgname=mpd
+pkgver=0.22.8
+case $pkgver in
+*.*.*) _branch=${pkgver%.*};;
+*.*) _branch=$pkgver;;
+esac
+pkgrel=2
+pkgdesc="Music daemon that plays MP3, FLAC, Ogg Vorbis files and Audio CDs"
+url="https://musicpd.org"
+pkgusers="mpd"
+pkggroups="mpd audio"
+arch="all"
+license="GPL-2.0-or-later"
+makedepends="
+	alsa-lib-dev
+	avahi-dev
+	boost-dev
+	curl-dev
+	expat-dev
+	faad2-dev
+	ffmpeg-dev
+	flac-dev
+	glib-dev
+	icu-dev
+	jack-dev
+	lame-dev
+	libao-dev
+	libcap
+	libcdio-paranoia-dev
+	libid3tag-dev
+	libmad-dev
+	libmodplug-dev
+	libmpdclient-dev
+	libnfs-dev
+	libogg-dev
+	libsamplerate-dev
+	libshout-dev
+	libvorbis-dev
+	meson
+	opus-dev
+	pulseaudio-dev
+	py3-attrs
+	py3-sphinx
+	samba-dev
+	soxr-dev
+	wavpack-dev
+	"
+checkdepends="gtest-dev gtest"
+install="$pkgname.pre-install"
+subpackages="$pkgname-doc $pkgname-dbg $pkgname-openrc"
+source="https://www.musicpd.org/download/mpd/$_branch/mpd-$pkgver.tar.xz
+	stacksize.patch
+	mpd.initd
+	mpd.confd
+	libcdio-paranoia-version.patch
+	remove-avahi-test.patch
+	disable-time-test.patch
+	"
+
+# secfixes:
+#   0:
+#     - CVE-2020-7465
+#     - CVE-2020-7466
+
+build() {
+	abuild-meson \
+		-Dshout=enabled \
+		-Dopus=enabled \
+		-Dmodplug=enabled \
+		-Dnfs=enabled \
+		-Dsmbclient=enabled \
+		-Dffmpeg=enabled \
+		-Dlibmpdclient=enabled \
+		-Dcdio_paranoia=enabled \
+		-Dzeroconf=avahi \
+		-Dtest=true \
+		-Ddocumentation=enabled \
+		-Dwavpack=enabled \
+		. output
+	meson compile ${JOBS:+-j ${JOBS}} -C output
+}
+
+check() {
+	meson test --no-rebuild -v -C output
+}
+
+package() {
+	DESTDIR="$pkgdir" meson install --no-rebuild -C output
+
+	# mpd attempts to configure real-time scheduling on linux
+	# add the capability which allows doing that
+	# see: https://www.musicpd.org/doc/html/user.html#real-time-scheduling
+	setcap cap_sys_nice+ep "$pkgdir"/usr/bin/mpd
+
+	# provide a config that works by default
+	install -d "$pkgdir"/etc
+	sed	-e 's:\#user.*:user\t\t"mpd":' \
+		-e 's:\#log_file.*:log_file\t\t"syslog":' \
+		doc/mpdconf.example > "$pkgdir"/etc/mpd.conf
+	install -m755 -D "$srcdir"/$pkgname.initd \
+		"$pkgdir"/etc/init.d/$pkgname
+	install -m644 -D "$srcdir"/$pkgname.confd \
+		"$pkgdir"/etc/conf.d/$pkgname
+	install -d -g audio -o mpd -m775 \
+		"$pkgdir"/var/run/mpd \
+		"$pkgdir"/var/log/mpd \
+		"$pkgdir"/var/lib/mpd \
+		"$pkgdir"/var/lib/mpd/playlists \
+		"$pkgdir"/var/lib/mpd/music
+}
+
+sha512sums="
+54b381e6d4e6113cd170ca7afbb671bef4ababb4de80a80504fe951f53aaf66269c123b7923112ab40291e069fa27457936227204cc84b42cf44aac1721c0d0d  mpd-0.22.8.tar.xz
+f60f6f3e921d20732c1a4c31a97f28660b43fd649e767d6c39661b6a90145231a79ad3f740ae0d706380b245ad040e98b661a513463c54cea161d1f64fc261e0  stacksize.patch
+8547f685adf3cdc7b2aab7bedeed8c72242011c6f1e01750415ac21eba5ecf6b416239f527adbc904f72439c5d476249148cfb89965e33de1be69421e02c18e0  mpd.initd
+41b2467f5b03f5c4dd7003cd5f56f6cfc1f67af7a9aa2538d70360f839625222bdd0c4b04c33e8cd52eeecfc354da3ca22f5aaab8aee357a5774aaf3503594e7  mpd.confd
+1a8bc5ec04c75c2aa240d607dfb2790e57126299dd5449cd71d3ea1cdf00951d546bc58ecc4003e062c02a82c9879e1ac6e89c3ad4cdefe3adcde217df9c07ad  libcdio-paranoia-version.patch
+b888b8d033e7752ce48cc47c116d1265f77d8b2ec42fb4587839afe901ae1392731524f18520888ae1fa654ac9a742e46b309e9450cf403d6077012947f746c5  remove-avahi-test.patch
+4352009b1b0f9ffb19c51d476539656f2fe0ab9e34cd4a7ba65c1397d155cc408bb08da96d6ecf8f798a9af615da7662f8d1bf44ab35e9522177da44ba59fbf2  disable-time-test.patch
+"

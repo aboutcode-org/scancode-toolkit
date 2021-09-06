@@ -146,20 +146,24 @@ def fetch_wheels(
     requirements_file='requirements.txt',
     allow_unpinned=False,
     dest_dir=THIRDPARTY_DIR,
+    remote_links_url=REMOTE_LINKS_URL,
 ):
     """
-    Download all of the wheel of packages listed in the `requirements_file`
-    requirements file into `dest_dir` directory.
+    Download all of the wheel of packages listed in the ``requirements_file``
+    requirements file into ``dest_dir`` directory.
 
-    Only get wheels for the `environment` Enviromnent constraints. If the
-    provided `environment` is None then the current Python interpreter
+    Only get wheels for the ``environment`` Enviromnent constraints. If the
+    provided ``environment`` is None then the current Python interpreter
     environment is used implicitly.
 
-    Only accept pinned requirements (e.g. with a version) unless allow_unpinned
-    is True.
+    Only accept pinned requirements (e.g. with a version) unless
+    ``allow_unpinned`` is True.
 
-    Use direct downloads from our remote repo exclusively.
-    Yield tuples of (PypiPackage, error) where is None on success
+    Use exclusively direct downloads from a remote repo  at URL
+    ``remote_links_url``. If ``remote_links_url`` is a path, use this as a
+    directory of links instead of a URL.
+
+    Yield tuples of (PypiPackage, error) where is None on success.
     """
     missed = []
 
@@ -171,6 +175,7 @@ def fetch_wheels(
     rrp = list(get_required_remote_packages(
         requirements_file=requirements_file,
         force_pinned=force_pinned,
+        remote_links_url=remote_links_url,
     ))
 
     fetched_filenames = set()
@@ -182,7 +187,11 @@ def fetch_wheels(
 
         else:
             fetched_filename = package.fetch_wheel(
-                environment=environment, fetched_filenames=fetched_filenames, dest_dir=dest_dir)
+                environment=environment,
+                fetched_filenames=fetched_filenames,
+                dest_dir=dest_dir,
+            )
+
             if fetched_filename:
                 fetched_filenames.add(fetched_filename)
                 error = None
@@ -208,16 +217,20 @@ def fetch_sources(
     requirements_file='requirements.txt',
     allow_unpinned=False,
     dest_dir=THIRDPARTY_DIR,
+    remote_links_url=REMOTE_LINKS_URL,
 ):
     """
-    Download all of the dependent package sources listed in the `requirement`
-    requirements file into `dest_dir` directory.
+    Download all of the dependent package sources listed in the
+    ``requirements_file`` requirements file into ``dest_dir`` destination
+    directory.
 
-    Use direct downloads to achieve this (not pip download). Use only the
-    packages found in our remote repo.
+    Use direct downloads to achieve this (not pip download). Use exclusively the
+    packages found from a remote repo at URL ``remote_links_url``. If
+    ``remote_links_url`` is a path, use this as a directory of links instead of
+    a URL.
 
-    Only accept pinned requirements (e.g. with a version) unless allow_unpinned
-    is True.
+    Only accept pinned requirements (e.g. with a version) unless
+    ``allow_unpinned`` is True.
 
     Yield tuples of (PypiPackage, error message) for each package where error
     message will empty on success.
@@ -232,6 +245,7 @@ def fetch_sources(
     rrp = list(get_required_remote_packages(
         requirements_file=requirements_file,
         force_pinned=force_pinned,
+        remote_links_url=remote_links_url,
     ))
 
     for name, version, package in rrp:
@@ -975,7 +989,7 @@ class Sdist(Distribution):
     @classmethod
     def from_filename(cls, filename):
         """
-        Return a sdist object built from a filename.
+        Return a Sdist object built from a filename.
         Raise an exception if this is not a valid sdist filename
         """
         name_ver = None
@@ -1048,12 +1062,12 @@ class Wheel(Distribution):
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     """
 
-    wheel_file_re = re.compile(
+    get_wheel_from_filename = re.compile(
         r"""^(?P<namever>(?P<name>.+?)-(?P<ver>.*?))
         ((-(?P<build>\d[^-]*?))?-(?P<pyvers>.+?)-(?P<abis>.+?)-(?P<plats>.+?)
         \.whl)$""",
         re.VERBOSE
-    )
+    ).match
 
     build = attr.ib(
         type=str,
@@ -1092,7 +1106,7 @@ class Wheel(Distribution):
         Return a wheel object built from a filename.
         Raise an exception if this is not a valid wheel filename
         """
-        wheel_info = cls.wheel_file_re.match(filename)
+        wheel_info = cls.get_wheel_from_filename(filename)
         if not wheel_info:
             raise InvalidDistributionFilename(filename)
 
@@ -1297,7 +1311,7 @@ class PypiPackage(NameVer):
     @classmethod
     def packages_from_many_paths_or_urls(cls, paths_or_urls):
         """
-        Yield PypiPackages built from a list of of paths or URLs.
+        Yield PypiPackages built from a list of paths or URLs.
         """
         dists = cls.get_dists(paths_or_urls)
         dists = NameVer.sorted(dists)
@@ -1366,19 +1380,30 @@ class PypiPackage(NameVer):
 
         raise Exception(f'More than one PypiPackage with {name}=={version}')
 
-    def fetch_wheel(self, environment=None, fetched_filenames=None, dest_dir=THIRDPARTY_DIR):
+    def fetch_wheel(
+        self,
+        environment=None,
+        fetched_filenames=None,
+        dest_dir=THIRDPARTY_DIR,
+    ):
         """
-        Download a binary wheel of this package matching the `environment`
-        Enviromnent constraints into `dest_dir` directory.
+        Download a binary wheel of this package matching the ``environment``
+        Enviromnent constraints into ``dest_dir`` directory.
 
         Return the wheel filename if it was fetched, None otherwise.
 
-        If the provided `environment` is None then the current Python
-        interpreter environment is used implicitly.
+        If the provided ``environment`` is None then the current Python
+        interpreter environment is used implicitly. Do not refetch wheel if
+        their name is in a provided ``fetched_filenames`` set.
         """
         fetched_wheel_filename = None
-        fetched_filenames = fetched_filenames if fetched_filenames is not None else set()
+        if fetched_filenames is not None:
+            fetched_filenames = fetched_filenames
+        else:
+            fetched_filenames = set()
+
         for wheel in self.get_supported_wheels(environment):
+
             if wheel.filename not in fetched_filenames:
                 fetch_and_save_path_or_url(
                     filename=wheel.filename,
@@ -2272,20 +2297,34 @@ def get_required_packages(required_name_versions):
     return remote_packages, pypi_packages
 
 
-def get_required_remote_packages(requirements_file='requirements.txt', force_pinned=True):
+def get_required_remote_packages(
+    requirements_file='requirements.txt',
+    force_pinned=True,
+    remote_links_url=REMOTE_LINKS_URL,
+):
     """
     Yield tuple of (name, version, PypiPackage) for packages listed in the
-    `requirements_file` requirements file and found in our remote repo exclusively.
+    `requirements_file` requirements file and found in the PyPI-like link repo
+    ``remote_links_url`` if this is a URL. Treat this ``remote_links_url`` as a
+    local directory path to a wheels directory if this is not a a URL.
     """
     required_name_versions = load_requirements(
-        requirements_file=requirements_file, force_pinned=force_pinned)
+        requirements_file=requirements_file,
+        force_pinned=force_pinned,
+    )
 
-    remote_repo = get_remote_repo()
+    if remote_links_url.startswith('https://'):
+        repo = get_remote_repo(remote_links_url=remote_links_url)
+    else:
+        # a local path
+        assert os.path.exists(remote_links_url)
+        repo = get_local_repo(directory=remote_links_url)
+
     for name, version in required_name_versions:
         if version:
-            yield name, version, remote_repo.get_package(name, version)
+            yield name, version, repo.get_package(name, version)
         else:
-            yield name, version, remote_repo.get_latest_version(name)
+            yield name, version, repo.get_latest_version(name)
 
 
 def update_requirements(name, version=None, requirements_file='requirements.txt'):
@@ -2685,12 +2724,20 @@ def get_romp_pyos_options(
     python_versions=PYTHON_VERSIONS,
     operating_systems=PLATFORMS_BY_OS,
 ):
-    python_dot_versions = ['.'.join(pv) for pv in python_versions]
-    pyos_options = sorted(set(itertools.chain.from_iterable(
-        ('--version', ver) for ver in python_dot_versions)))
+    """
+    Return a list of CLI options for romp
+    For example:
+    >>> expected = ['--version', '3.6', '--version', '3.7', '--version', '3.8',
+    ... '--version', '3.9', '--platform', 'linux', '--platform', 'macos',
+    ... '--platform', 'windows']
+    >>> assert get_romp_pyos_options() == expected
+    """
+    python_dot_versions = ['.'.join(pv) for pv in sorted(set(python_versions))]
+    pyos_options = list(itertools.chain.from_iterable(
+        ('--version', ver) for ver in python_dot_versions))
 
-    pyos_options += sorted(set(itertools.chain.from_iterable(
-        ('--platform' , plat) for plat in operating_systems)))
+    pyos_options += list(itertools.chain.from_iterable(
+        ('--platform' , plat) for plat in sorted(set(operating_systems))))
 
     return pyos_options
 

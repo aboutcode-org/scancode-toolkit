@@ -1,8 +1,86 @@
-- |
-  Expat
-  GPL-2+
-- gpl-2.0-plus AND mit AND unknown
-- |
-  Microsoft Corporation
-  2016 Fabian Wolff <fabi.wolff@arcor.de>
-  2011 Michael Tautschnig <mt@debian.org>
+primary_license: mit
+declared_license:
+  - Expat
+license_expression: mit
+copyright: Microsoft Corporation
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 17
+    matcher: 1-hash
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person obtaining a copy of
+      this software and associated documentation files (the ""Software""), to deal in
+      the Software without restriction, including without limitation the rights to
+      use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+      of the Software, and to permit persons to whom the Software is furnished to do
+      so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be included in all
+      copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+      SOFTWARE.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_22.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2+'
+  - score: '98.41'
+    start_line: 1
+    end_line: 15
+    matcher: 3-seq
+    rule_length: 126
+    matched_length: 124
+    match_coverage: '98.41'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_38.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 2 of the License, or
+      (at your option) any later version.
+
+      This package is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program. If not, see <http://www.gnu.org/licenses/>
+
+      On Debian systems, the complete text of the GNU General
+      Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".

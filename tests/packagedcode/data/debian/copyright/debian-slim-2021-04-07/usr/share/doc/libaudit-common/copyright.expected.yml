@@ -1,0 +1,122 @@
+primary_license: gpl-2.0
+declared_license:
+  - GPL-2
+  - LGPL-2.1
+license_expression: gpl-2.0 AND (lgpl-2.1 AND lgpl-2.0-plus AND lgpl-2.1-plus)
+copyright: |
+  2012-2016 Steve Grubb <sgrubb@redhat.com>
+  2006-2012 Rik Faith
+  2007-2009 Marc Alexamder Lehmann
+  2005-2008 Steve Grubb <sgrubb@redhat.com>
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_38.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: lgpl-2.1'
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0-plus_189.RULE
+    license_expression: lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: released under LGPL
+  - score: '100.0'
+    start_line: 4
+    end_line: 4
+    matcher: 2-aho
+    rule_length: 7
+    matched_length: 7
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_82.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: usr/share/common-licenses/LGPL-2.1
+  - score: '100.0'
+    start_line: 5
+    end_line: 5
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_83_1.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: the GNU Lesser General Public License.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_561.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2'
+  - score: '100.0'
+    start_line: 1
+    end_line: 15
+    matcher: 1-hash
+    rule_length: 124
+    matched_length: 124
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_1031.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This package is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License version 2,
+      as published by the Free Software Foundation.
+
+      This package is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this package; if not, write to the Free Software
+      Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+      On Debian systems, the complete text of the GNU General
+      Public License can be found in `/usr/share/common-licenses/GPL-1'.

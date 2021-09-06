@@ -6,9 +6,9 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 
-from debut.copyright import CopyrightFilesParagraph
-from debut.copyright import CopyrightHeaderParagraph
-from debut.copyright import DebianCopyright
+from debian_inspector.copyright import CopyrightFilesParagraph
+from debian_inspector.copyright import CopyrightHeaderParagraph
+from debian_inspector.copyright import DebianCopyright
 from license_expression import Licensing
 
 from commoncode.cliutils import PluggableCommandLineOption

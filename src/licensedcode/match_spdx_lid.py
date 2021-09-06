@@ -55,30 +55,24 @@ if TRACE or os.environ.get('SCANCODE_DEBUG_LICENSE'):
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
-
 MATCH_SPDX_ID = '1-spdx-id'
 
 
-def spdx_id_match(idx, query_run, text):
+def spdx_id_match(idx, query_run, text, expression_symbols=None):
     """
     Return one LicenseMatch by matching the `text` as an SPDX license expression
     using the `query_run` positions and `idx` index for support.
-    """
-    from licensedcode.cache import get_spdx_symbols
-    from licensedcode.cache import get_unknown_spdx_symbol
 
+    Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol} if
+    provided. Otherwise use the standard SPDX license symbols.
+    """
     if TRACE:
         logger_debug('spdx_id_match: start:', 'text:', text, 'query_run:', query_run)
 
-    licensing = Licensing()
-    symbols_by_spdx = get_spdx_symbols()
-    unknown_symbol = get_unknown_spdx_symbol()
-
-    _prefix, exp_text = prepare_text(text)
-    expression = get_expression(exp_text, licensing, symbols_by_spdx, unknown_symbol)
-    if expression is None:
+    # matching proper
+    expression_str = get_spdx_expression(text, expression_symbols=expression_symbols)
+    if not expression_str:
         return
-    expression_str = expression.render()
 
     match_len = len(query_run)
     match_start = query_run.start
@@ -95,7 +89,8 @@ def spdx_id_match(idx, query_run, text):
         # spdx-license-identifier: this may be wrong too, if the line was
         # not padded originally with this tag
         stored_text=text,
-        length=match_len)
+        length=match_len,
+    )
 
     # build match from parsed expression
     # collect match start and end: e.g. the whole text
@@ -108,17 +103,56 @@ def spdx_id_match(idx, query_run, text):
     hispan = Span(p for p, t in enumerate(matched_tokens) if t < len_legalese)
 
     match = LicenseMatch(
-        rule=rule, qspan=qspan, ispan=ispan, hispan=hispan,
+        rule=rule,
+        qspan=qspan,
+        ispan=ispan,
+        hispan=hispan,
         query_run_start=match_start,
-        matcher=MATCH_SPDX_ID, query=query_run.query
+        matcher=MATCH_SPDX_ID,
+        query=query_run.query,
     )
     return match
 
 
-def get_expression(text, licensing, spdx_symbols, unknown_symbol):
+def get_spdx_expression(text, expression_symbols=None):
     """
-    Return an Expression object by parsing the `text` string using
-    the `licensing` reference Licensing.
+    Return a matched license expression string or None by matching the
+    ``text`` as an SPDX license expression.
+
+    Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol} if
+    provided. Otherwise use the standard SPDX license symbols.
+
+    This is used to handle cases of mixed standard SPDX and non-standard SPDX-
+    like symbols used for instance in some package manifests.
+    """
+    from licensedcode.cache import get_spdx_symbols
+    from licensedcode.cache import get_unknown_spdx_symbol
+
+    licensing = Licensing()
+    if not expression_symbols:
+        expression_symbols = get_spdx_symbols()
+
+    unknown_symbol = get_unknown_spdx_symbol()
+    _prefix, exp_text = prepare_text(text)
+
+    expression = get_expression(
+        text=exp_text,
+        licensing=licensing,
+        expression_symbols=expression_symbols,
+        unknown_symbol=unknown_symbol,
+    )
+    if expression is None:
+        return
+    return expression.render()
+
+
+def get_expression(text, licensing, expression_symbols, unknown_symbol):
+    """
+    Return an Expression object by parsing the `text` string using the
+    ``licensing`` reference Licensing.
+
+    Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol} if
+    provided. Otherwise use the standard SPDX license symbols.
 
     Note that an expression is ALWAYS returned: if the parsing fails or some
     other error happens somehow, this function returns instead a bare
@@ -129,12 +163,23 @@ def get_expression(text, licensing, spdx_symbols, unknown_symbol):
         return
     expression = None
     try:
-        expression = _parse_expression(text, licensing, spdx_symbols, unknown_symbol)
+        expression = _parse_expression(
+            text=text,
+            licensing=licensing,
+            expression_symbols=expression_symbols,
+            unknown_symbol=unknown_symbol,
+        )
     except Exception:
         try:
-            # try to parse again using a lenient recovering parsing process
-            # such as for plain space or comma-separated list of licenses (e.g. UBoot)
-            expression = _reparse_invalid_expression(text, licensing, spdx_symbols, unknown_symbol)
+            # Try to parse again using a lenient recovering parsing process such
+            # as for plain space or comma-separated list of licenses (e.g.
+            # UBoot)
+            expression = _reparse_invalid_expression(
+                text=text,
+                licensing=licensing,
+                expression_symbols=expression_symbols,
+                unknown_symbol=unknown_symbol,
+            )
         except Exception:
             pass
 
@@ -143,9 +188,6 @@ def get_expression(text, licensing, spdx_symbols, unknown_symbol):
     return expression
 
 
-# TODO: use me??: this is NOT used at all for now because too complex for a too
-# small benefit: only ecos-2.0 has ever been see in the wild in U-Boot
-# identifiers
 # Some older SPDX ids are deprecated and therefore no longer referenced in
 # licenses so we track them here. This maps the old SPDX key to a scancode
 # expression.
@@ -176,11 +218,14 @@ def get_old_expressions_subs_table(licensing):
     return OLD_SPDX_EXCEPTION_LICENSES_SUBS
 
 
-def _parse_expression(text, licensing, spdx_symbols, unknown_symbol):
+def _parse_expression(text, licensing, expression_symbols, unknown_symbol):
     """
     Return an Expression object by parsing the `text` string using the
-    `licensing` reference Licensing. Return None or raise an exception on
+    ``licensing`` reference Licensing. Return None or raise an exception on
     errors.
+
+    Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol} if
+    provided. Otherwise use the standard SPDX license symbols.
     """
     if not text:
         return
@@ -200,14 +245,14 @@ def _parse_expression(text, licensing, spdx_symbols, unknown_symbol):
     symbols_table = {}
 
     def _get_matching_symbol(_symbol):
-        return spdx_symbols.get(_symbol.key.lower(), unknown_symbol)
+        return expression_symbols.get(_symbol.key.lower(), unknown_symbol)
 
     for symbol in licensing.license_symbols(updated, unique=True, decompose=False):
         if isinstance(symbol, LicenseWithExceptionSymbol):
             # we have two symbols:make a a new symbo, from that
             new_with = LicenseWithExceptionSymbol(
-                _get_matching_symbol(symbol.license_symbol),
-                _get_matching_symbol(symbol.exception_symbol)
+                license_symbol=_get_matching_symbol(symbol.license_symbol),
+                exception_symbol=_get_matching_symbol(symbol.exception_symbol)
             )
 
             symbols_table[symbol] = new_with
@@ -218,14 +263,23 @@ def _parse_expression(text, licensing, spdx_symbols, unknown_symbol):
     return symbolized
 
 
-def _reparse_invalid_expression(text, licensing, spdx_symbols, unknown_symbol):
+def _reparse_invalid_expression(
+    text,
+    licensing,
+    expression_symbols,
+    unknown_symbol
+):
     """
     Return an Expression object by parsing the `text` string using the
     `licensing` reference Licensing.
+
     Make a best attempt at parsing eventually ignoring some of the syntax.
     The `text` string is assumed to be an invalid non-parseable expression.
 
     Any keyword and parens will be ignored.
+
+    Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol} if
+    provided. Otherwise use the standard SPDX license symbols.
 
     Note that an expression is ALWAYS returned: if the parsing fails or some
     other error happens somehow, this function returns instead a bare
@@ -236,11 +290,14 @@ def _reparse_invalid_expression(text, licensing, spdx_symbols, unknown_symbol):
 
     results = licensing.simple_tokenizer(text)
     # filter tokens to keep only symbols and keywords
-    tokens = [r.value for r in results if isinstance(r.value, (LicenseSymbol, Keyword))]
+    tokens = [
+        r.value for r in results
+        if isinstance(r.value, (LicenseSymbol, Keyword))
+    ]
 
-    # here we have a mix of keywords and symbols that does not parse correctly
-    # this could be because of some imbalance or any kind of other reasons. We ignore any parens or
-    # keyword and track if we have keywords or parens
+    # Here we have a mix of keywords and symbols that does not parse correctly.
+    # This could be because of some imbalance or any kind of other reasons. We
+    # ignore any parens or keyword and track if we have keywords or parens
     has_keywords = False
     has_symbols = False
     filtered_tokens = []
@@ -266,7 +323,8 @@ def _reparse_invalid_expression(text, licensing, spdx_symbols, unknown_symbol):
         joined_as = ' OR '
 
     expression_text = joined_as.join(s.key for s in filtered_tokens)
-    expression = _parse_expression(expression_text, licensing, spdx_symbols, unknown_symbol)
+    expression = _parse_expression(
+        expression_text, licensing, expression_symbols, unknown_symbol)
 
     # this is more than just a u-boot-style list of license keys
     if has_keywords:
@@ -279,8 +337,8 @@ def _reparse_invalid_expression(text, licensing, spdx_symbols, unknown_symbol):
 
 def prepare_text(text):
     """
-    Return a 2-tuple of (`prefix`, `expression_text`) built from `text` where the
-    `expression_text` is prepared to be suitable for SPDX license identifier
+    Return a 2-tuple of (`prefix`, `expression_text`) built from `text` where
+    the `expression_text` is prepared to be suitable for SPDX license identifier
     detection stripped from leading and trailing punctuations, normalized for
     spaces and separateed from an SPDX-License-Identifier `prefix`.
     """
@@ -291,8 +349,8 @@ def prepare_text(text):
 
 def clean_text(text):
     """
-    Return a text suitable for SPDX license identifier detection cleaned
-    from certain leading and trailing punctuations and normalized for spaces.
+    Return a text suitable for SPDX license identifier detection cleaned from
+    certain leading and trailing punctuations and normalized for spaces.
     """
     text = ' '.join(text.split())
     punctuation_spaces = "!\"#$%&'*,-./:;<=>?@[\\]^_`{|}~\t\r\n "
@@ -322,8 +380,8 @@ def split_spdx_lid(text):
     if there is an SPDX license identifier where the first item contains the
     "SPDX license identifier" text proper and the second item contains the
     remainder of the line (expected to be a license expression). Otherwise
-    return a 2-tuple where the first item is None and the second item contains the
-    orignal text.
+    return a 2-tuple where the first item is None and the second item contains
+    the orignal text.
     """
     segments = _split_spdx_lid(text)
     expression = segments[-1]

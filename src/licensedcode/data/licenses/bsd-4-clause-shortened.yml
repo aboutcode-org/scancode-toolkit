@@ -6,3 +6,6 @@ owner: Regents of the University of California
 spdx_license_key: BSD-4-Clause-Shortened
 other_urls:
     - https://metadata.ftp-master.debian.org/changelogs//main/a/arpwatch/arpwatch_2.1a15-7_copyright
+ignorable_authors:
+  - the University of California, Lawrence Berkeley Laboratory and its contributors
+

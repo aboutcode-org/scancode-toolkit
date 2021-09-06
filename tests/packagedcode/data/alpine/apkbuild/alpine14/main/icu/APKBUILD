@@ -1,0 +1,79 @@
+# Contributor: Sergey Lukin <sergej.lukin@gmail.com>
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+#
+# TODO: After 3.13 is released, change data-packaging to "archive" and split
+# data into multiple variants (English-only, all, ...).
+pkgname=icu
+pkgver=67.1
+pkgrel=2
+pkgdesc="International Components for Unicode library"
+url="http://site.icu-project.org/"
+arch="all"
+license="MIT ICU Unicode-TOU"
+subpackages="$pkgname-static $pkgname-dev $pkgname-doc $pkgname-libs $pkgname-data::noarch"
+depends_dev="$pkgname=$pkgver-r$pkgrel"
+checkdepends="diffutils python3"
+source="https://github.com/unicode-org/icu/releases/download/release-${pkgver//./-}/icu4c-${pkgver//./_}-src.tgz"
+builddir="$srcdir"/icu/source
+
+# secfixes:
+#   65.1-r1:
+#     - CVE-2020-10531
+#   57.1-r1:
+#     - CVE-2016-6293
+#   58.1-r1:
+#     - CVE-2016-7415
+#   58.2-r2:
+#     - CVE-2017-7867
+#     - CVE-2017-7868
+
+# Failing tests on ARMv7
+case "$CARCH" in
+	armv7) options="!check";;
+esac
+
+build() {
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--with-data-packaging=library \
+		--disable-samples \
+		--enable-static \
+		--mandir=/usr/share/man
+	mkdir -p data/out # work around for s390x build issue
+	make
+}
+
+check() {
+	make check
+}
+
+package() {
+	make -j1 DESTDIR="$pkgdir" install
+	chmod +x "$pkgdir"/usr/bin/icu-config
+	install -Dm644 "$srcdir"/icu/license.html \
+		"$pkgdir"/usr/share/licenses/icu/license.html
+}
+
+static() {
+	pkgdesc="$pkgname static libraries"
+	mkdir -p "$subpkgdir"/usr/lib
+	mv "$pkgdir"/usr/lib/*.a "$subpkgdir"/usr/lib/
+}
+
+libs() {
+	default_libs
+	replaces="icu"
+}
+
+data() {
+	pkgdesc="ICU data in a .dat package file"
+	local majorver=${pkgver%%.*}
+
+	install -Dm644 "$builddir"/data/in/icudt${majorver}l.dat \
+		"$subpkgdir"/usr/share/icu/$pkgver/icudt${majorver}l.dat
+}
+
+sha512sums="4779f1ce1ca7976f6fad6768853ea8c540da54d11509e3b6cfd864a04b5f2db1c3d4b546387f91ad02fb90804525bc37d2543173f0d705d6ca11dc6f2b7640a8  icu4c-67_1-src.tgz"

@@ -39,6 +39,7 @@ Options:
     --json FILE             Write scan output as compact JSON to FILE.
     --json-pp FILE          Write scan output as pretty-printed JSON to FILE.
     --json-lines FILE       Write scan output as JSON Lines to FILE.
+    --yaml FILE             Write scan output as YAML to FILE.
     --csv FILE              Write scan output as CSV to FILE.
     --html FILE             Write scan output as HTML to FILE.
     --custom-output FILE    Write scan output to FILE formatted with the custom
@@ -126,7 +127,8 @@ Options:
     --quiet                  Do not print summary or progress.
     --verbose                Print progress as file-by-file path instead of a
                              progress bar. Print verbose scan counters.
-    --from-json              Load codebase from an existing JSON scan
+    --from-json              Load codebase from one or more <input> JSON scan
+                             file(s).
     --max-in-memory INTEGER  Maximum number of files and directories scan details
                              kept in memory during a scan. Additional files and
                              directories scan details above this number are cached
@@ -160,6 +162,5 @@ Options:
 
       scancode --json-pp - --license --package  samples
 
-  Note: when you run scancode, a progress bar is displayed with a counter of
-  the number of files processed. Use --verbose to display file-by-file
-  progress.
+  Note: when you run scancode, a progress bar is displayed with a counter of the
+  number of files processed. Use --verbose to display file-by-file progress.

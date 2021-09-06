@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "lua-lustache",
+  "version": "1.3.1-r3",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Logic-less {{mustache}} templates with Lua",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "mit",
+  "declared_license": "MIT",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": "lua-lustache-1.3.1.tar.gz",
+        "url": "https://github.com/Olivine-Labs/lustache/archive/v1.3.1-0.tar.gz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "lua-lustache-1.3.1.tar.gz",
+        "sha512": "f1ba0bdd38e60957df1995f32a73a16d1b430072af4e14cce530345c74d542021223c0ef41b0f997f88d762bb194fff7119701cd289e16e3e38dfe3f10d0d9d8"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/lua-lustache@1.3.1-r3",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

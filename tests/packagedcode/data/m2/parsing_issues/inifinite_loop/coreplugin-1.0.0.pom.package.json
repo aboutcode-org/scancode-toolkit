@@ -30,6 +30,7 @@
   "source_packages": [
     "pkg:maven/net.sourceforge.findbugs/coreplugin@1.0.0?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/net.sourceforge.findbugs/coreplugin@1.0.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/net/sourceforge/findbugs/coreplugin/1.0.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/net/sourceforge/findbugs/coreplugin/1.0.0/coreplugin-1.0.0.jar",

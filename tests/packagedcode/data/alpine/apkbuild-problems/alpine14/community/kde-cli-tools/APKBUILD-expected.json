@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "kde-cli-tools",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Tools based on KDE Frameworks 5 to better interact with the system",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "(gpl-2.0 OR gpl-3.0) AND gpl-2.0-plus AND gpl-2.0 AND lgpl-2.1",
+  "declared_license": "(GPL-2.0-only OR GPL-3.0-only) AND GPL-2.0-or-later AND GPL-2.0-only AND LGPL-2.1-only",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kde-cli-tools-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "kde-cli-tools-5.22.0.tar.xz",
+        "sha512": "6905a29e4700c045de1e04975d001835c1cc26a6999cfd20459d0a8ff0123974bd0c5fd7931de3ac7355420a294f066479f2056d56ae4d2280daa5be753a9fe3"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/kde-cli-tools@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

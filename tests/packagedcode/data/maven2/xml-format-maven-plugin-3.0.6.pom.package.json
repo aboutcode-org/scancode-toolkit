@@ -30,63 +30,64 @@
       "purl": "pkg:maven/junit/junit",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.hamcrest/hamcrest-core",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.mockito/mockito-core",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven.plugin-tools/maven-plugin-annotations",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
-      "purl": "pkg:maven/org.dom4j/dom4j",
+      "purl": "pkg:maven/org.dom4j/dom4j@2.0.1",
       "requirement": "2.0.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6",
   "repository_homepage_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/",
   "repository_download_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/xml-format-maven-plugin-3.0.6.jar",

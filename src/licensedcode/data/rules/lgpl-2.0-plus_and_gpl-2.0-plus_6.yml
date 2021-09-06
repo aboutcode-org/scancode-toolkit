@@ -1,0 +1,7 @@
+license_expression: lgpl-2.0-plus AND gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.LGPL
+    - COPYING.GPL
+notes: the AND measn OR here in this context

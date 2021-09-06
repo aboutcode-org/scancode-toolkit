@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "plasma-vault",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Plasma applet and services for creating encrypted vaults",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "(gpl-2.0 OR gpl-3.0) AND (lgpl-2.1 AND lgpl-3.0)",
+  "declared_license": "(GPL-2.0-only OR GPL-3.0-only) AND (LGPL-2.1-only AND LGPL-3.0-only)",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/stable/plasma/5.22.0/plasma-vault-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "plasma-vault-5.22.0.tar.xz",
+        "sha512": "176090b62310683fd6b44edf9205858bf55cb6eef43f6c351db85dfed5601c15ef20fd760632c1217100a1c5cb7473ba90ebaf7de6b25ed884212ff0257e8cbe"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/plasma-vault@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

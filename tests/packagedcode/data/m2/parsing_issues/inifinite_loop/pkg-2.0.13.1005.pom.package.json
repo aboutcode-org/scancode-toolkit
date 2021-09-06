@@ -30,6 +30,7 @@
   "source_packages": [
     "pkg:maven/org.jvnet.updatecenter2/pkg@%24%7Bversion%7D?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.jvnet.updatecenter2/pkg@%24%7Bversion%7D",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/jvnet/updatecenter2/pkg/${version}/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/jvnet/updatecenter2/pkg/${version}/pkg-${version}.jar",

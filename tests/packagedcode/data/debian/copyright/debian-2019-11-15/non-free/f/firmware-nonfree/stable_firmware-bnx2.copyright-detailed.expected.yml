@@ -1,3 +1,24 @@
--
-- other-permissive AND proprietary-license AND unknown
-- Copyright (c) 2004 - 2010 Broadcom Corporation
+primary_license:
+declared_license:
+license_expression: free-unknown
+copyright: Copyright (c) 2004 - 2010 Broadcom Corporation
+matches:
+  - score: '87.5'
+    start_line: 4
+    end_line: 9
+    matcher: 3-seq
+    rule_length: 35
+    matched_length: 35
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: free-unknown_43.RULE
+    license_expression: free-unknown
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This file contains firmware data derived from proprietary unpublished\n source\
+      \ code, Copyright ([c]) [2004] - [2010] [Broadcom] [Corporation].\n \n Permission is hereby\
+      \ granted for the distribution of this firmware data\n in hexadecimal or equivalent format,\
+      \ provided this copyright notice is\n accompanying it."

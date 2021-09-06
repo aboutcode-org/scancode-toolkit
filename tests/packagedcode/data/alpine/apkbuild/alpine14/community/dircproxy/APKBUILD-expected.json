@@ -1,0 +1,81 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "dircproxy",
+  "version": "1.2.0_rc-r2",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "IRC proxy server designed for people who use IRC from lots of different workstations or clients",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0-plus",
+  "declared_license": "GPL-2.0-or-later",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": "dircproxy-1_2_0-BETA.tar.gz",
+        "url": "https://github.com/w8tvi/dircproxy/archive/RELEASE-1_2_0-BETA.tar.gz"
+      },
+      {
+        "file_name": "fix-gcc4-issue.patch",
+        "url": null
+      },
+      {
+        "file_name": "fix-segfault.patch",
+        "url": null
+      },
+      {
+        "file_name": "fix-issue54-1.patch",
+        "url": null
+      },
+      {
+        "file_name": "fix-issue54-2.patch",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "dircproxy-1_2_0-BETA.tar.gz",
+        "sha512": "9a720823cba52b1e3670a2ef76578f952e07275d7455f7609eff7d88bcb89f8c3098e9d517266efd19f84b3adf3163a3359b4113e253bd5c5bdbb36597a333c8"
+      },
+      {
+        "file_name": "fix-gcc4-issue.patch",
+        "sha512": "182c1907317e669bb9f2f410c683a8ce4682ad29b3caa07548b7e126f66b85f3e1f8ad258d5a90b017f21b5e03be1aa2480c5919be25ae40b4debb6b8740e93e"
+      },
+      {
+        "file_name": "fix-segfault.patch",
+        "sha512": "906556a5a64670bb25394a424be281f90018c255b0dccb21f0805724899977d4041482c584f1aeb022d6acf56d5c0ab65065123bb045a2e7eb56674026be7fb4"
+      },
+      {
+        "file_name": "fix-issue54-1.patch",
+        "sha512": "66624cc8be5c891ccd3591397608ccdbe5b8496928ab77220214ef02a10433fe7d6b67a4abbfb36b60dd8a198581814ec2485b88778c2f1c14089d0b0246c66e"
+      },
+      {
+        "file_name": "fix-issue54-2.patch",
+        "sha512": "517b67297d51d4327aabb0054eb5bac1a15bf26a45091517d27998e861555e5320573f315ea4d2a719387d9a30482ebf3e58d731048f78a63ecba8b4c2664fe2"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/dircproxy@1.2.0_rc-r2",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

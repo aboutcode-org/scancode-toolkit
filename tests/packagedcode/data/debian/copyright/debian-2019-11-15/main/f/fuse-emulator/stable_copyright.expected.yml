@@ -1,11 +1,98 @@
-- |
-  GPL-2+
-  LGPL-2.1+
-- gpl-2.0-plus AND lgpl-2.1-plus
-- |
+primary_license: gpl-2.0-plus
+declared_license:
+  - GPL-2+
+  - LGPL-2.1+
+license_expression: gpl-2.0-plus AND lgpl-2.1-plus
+copyright: |
   1999-2018 Philip Kendall and others
   1987-2001 Free Software Foundation, Inc.
   2003 Philip Kendall
   2003-2006 Shay Green
   2000-2002 David Olofson
-  2010-2013,2015-2019 Alberto Garcia <berto@igalia.com>
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_22.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 11
+    matcher: 1-hash
+    rule_length: 91
+    matched_length: 91
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_655.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 2 of the License, or (at
+      your option) any later version.
+
+      This program is distributed in the hope that it will be useful, but
+      WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+      On Debian systems, the complete text of the license can be found in
+      the file /usr/share/common-licenses/GPL-2
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_108.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: lgpl-2.1+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 11
+    matcher: 1-hash
+    rule_length: 94
+    matched_length: 94
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_202.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This module is free software; you can redistribute it and/or modify
+      it under the terms of the GNU Lesser General Public License as
+      published by the Free Software Foundation; either version 2.1 of the
+      License, or (at your option) any later version.
+
+      This module is distributed in the hope that it will be useful, but
+      WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+      On Debian systems, the complete text of the license can be found in
+      the file /usr/share/common-licenses/LGPL-2.1

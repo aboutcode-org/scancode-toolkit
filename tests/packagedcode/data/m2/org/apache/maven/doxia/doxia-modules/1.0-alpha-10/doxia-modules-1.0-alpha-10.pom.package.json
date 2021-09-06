@@ -30,17 +30,17 @@
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-core",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api",
       "requirement": null,
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-core",
@@ -48,13 +48,14 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": null
     }
   ],
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.doxia/doxia-modules@1.0-alpha-10?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.maven.doxia/doxia-modules@1.0-alpha-10",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia-modules/1.0-alpha-10/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia-modules/1.0-alpha-10/doxia-modules-1.0-alpha-10.jar",

@@ -1,54 +1,53 @@
 Comprehensive Installation
 ==========================
 
-There are 4 main ways you can install ScanCode.
+
+There are four main ways to install ScanCode.
 
 - :ref:`app_install`
 
-    The recommended method for installing ScanCode is Downloading the latest release as an
-    application and then configure and use directly. This is easy because no knowledge of pip/git
-    or other developer tools is necessary.
+    The recommended method is to download the latest application release as an
+    application and then configure and use directly. No knowledge of pip/git or
+    other developer tools is necessary.
 
 - :ref:`docker_install`
 
-    An alternative to installing the latest Scancode Toolkit release natively is to build
-    a Docker image from the included Dockerfile. This is easy because the only prerequisite
+    An alternative to installing the latest Scancode Toolkit release natively is
+    to build a Docker image from the included Dockerfile. The only prerequisite
     is a working Docker installation.
 
 - :ref:`source_code_install`
 
-    You can download/clone the source code repository via git/GitHub and then run a configure script
-    to install ScanCode.
+    You can clone the git source code repository and then run a configure script
+    to configure and install ScanCode.
 
 - :ref:`pip_install`
 
-    To use ScanCode as a library in your application, you can install it via ``pip``. This is
-    recommended for developers/users familiar with Package managers/virtualenv.
+    To use ScanCode as a library in your application, you can install it via
+    ``pip``. This is recommended for developers/users familiar with Python.
 
 ----
 
 Before Installing
 -----------------
 
-- ScanCode supports Python 3.6 and higher and is tested on Linux, Mac, and Windows.
-- ScanCode supports Python 3.6, 3.7, 3.8. and 3.9 when installed from ``pip``.
-- When installing as an application from a release archive, Python 3.6 is required.
-
-Make sure Python is installed first.
+- ScanCode requires a Python version 3.6, 3.7, 3.8. or 3.9 and is
+  tested on Linux, macOS, and Windows. It should work fine on FreeBSD.
 
 
 System Requirements
 ^^^^^^^^^^^^^^^^^^^
 
 - Hardware : ScanCode will run best with a modern X86 processor and at least 4GB
-  of RAM and 500MB of disk.
+  of RAM and 500MB of disk. These are bare minimum requirements.
 
 - Supported operating systems: ScanCode should run on these 64-bit OSes running
   X86_64 processors:
 
     #. Linux: on recent 64-bit Linux distributions,
     #. Mac: on recent 64-bit macOS (10.14 and up),
-    #. Windows: on Windows 7 and up,
+    #. Windows: on Windows 10 and up,
+    #. FreeBSD,
 
 
 .. _install_prerequisites:
@@ -56,44 +55,42 @@ System Requirements
 Prerequisites
 ^^^^^^^^^^^^^
 
-ScanCode needs a Python 3.6 interpreter when installed as an application.
+ScanCode needs a Python 3.6+ interpreter; We support all Python versions from
+3.6 to 3.9.
 
 - **On Linux**:
 
-    Use your package manager to install ``python3.6`` (*Recommended*).
+    Use your package manager to install ``python3``.
 
-    For ubuntu, it is ``sudo apt install python3.6-dev``
+    For Ubuntu, it is ``sudo apt install python3-dev``
 
-    - On Ubuntu 14, 16, 18 and 20 run:
-      ``sudo apt install python3.6-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev libpopt0``
+    - On Ubuntu 14, 16, 18 and 20 run::
 
-    - On Debian and Debian-based distros run:
-      ``sudo apt-get install python3.6-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-devlibpopt0``
+          sudo apt install python-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev libpopt0
 
-    - On RPM-based distros run:
-      ``sudo yum install python3.6-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devellibpopt0``
+    - On Debian and Debian-based distros run::
 
-    - On Fedora 22 and later run:
-      ``sudo dnf install python3.6-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs libpopt0``
+          sudo apt-get install python3-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-devlibpopt0
+
+    - On RPM-based distros run::
+
+          sudo yum install python3.6-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devellibpopt0
+
+    - On Fedora 22 and later run::
+
+          sudo dnf install python3.6-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs libpopt0
+
 
     If these packages are not available from your package manager, you must
     compile them  from sources.
 
 - **On Mac**:
 
-    Download and install Python from this url:
-
-    - Python 3.6.8: https://www.python.org/ftp/python/3.6.8/python-3.6.8-macosx10.6.pkg
+    Download and install Python 3.6 or higher from https://www.python.org/
 
 - **On Windows**:
 
-    Download and install Python from this url:
-
-    - Python 3.6.8: https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe
-
-        Add python to PATH, as ScanCode uses the python from PATH. The last Python you install
-        registers itself in the environment is the default, if you select the "Add to PATH" option
-        while installing.
+    Download and install Python 3.6 or higher from https://www.python.org/
 
     .. Note::
 
@@ -104,15 +101,15 @@ ScanCode needs a Python 3.6 interpreter when installed as an application.
 
 .. Note::
 
-    ScanCode comes with packaged with all dependencies, and so apart from downloading it as an
-    application, only Python has to be downloaded and installed separately.
+    ScanCode app archives come with packaged with all required dependencies except
+    for Python that has to be downloaded and installed separately.
 
 ----
 
 .. _app_install:
 
 Installation as an Application: Downloading Releases
-----------------------------------------------------
+-----------------------------------------------------
 
 Installation on Linux and Mac
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -120,12 +117,12 @@ Installation on Linux and Mac
 Get the Scancode Toolkit tarball archive of a specific version and your
 operating system by going to the `project releases page <https://github.com/nexB/scancode-toolkit/releases/>`_
 
-For example, Version 21.3.31 archive can be obtained from
-`Toolkit release 21.3.31 <https://github.com/nexB/scancode-toolkit/releases/tag/v21.3.31>`_
+For example, Version 21.8.1 archive can be obtained from
+`Toolkit release 21.8.1 <https://github.com/nexB/scancode-toolkit/releases/tag/v21.8.1>`_
 under assets options. Download the archive for your operating systen and extract
 the archive from command line::
 
-    tar -xvf scancode-toolkit-21.3.31_py36-linux.tar.xz
+    tar -xvf scancode-toolkit-21.8.1_py39-linux.tar.xz
 
 
 Or, on Linux, right click and select "Extract Here".
@@ -176,8 +173,9 @@ Installation on Windows 10
 
 - A new 'Command Prompt'pops up.
 
-- In this window (aka a 'command prompt'), type 'cd' followed by a space and then Right-click in
-  this window and select Paste. This will paste the path where you extracted ScanCode::
+- In this window (aka a 'command prompt'), type 'cd' followed by a space and
+  then Right-click in this window and select Paste. This will paste the path you
+  copied before and is where you extracted ScanCode::
 
     cd path/to/extracted_ScanCode
 
@@ -197,15 +195,12 @@ Installation on Windows 10
 - The installation is complete.
 
 
-This uses the default Python present in the PATH environment variable i.e. the last Python
-installed registers itself in the environment as the default. 
-
-
 Un-installation
 ^^^^^^^^^^^^^^^
 
 - Delete the directory in which you extracted ScanCode.
-- Delete any temporary files created in your system temp directory under a ScanCode directory.
+- Delete any temporary files created in your system temp and user temp directory
+  under a scanCode-prefixed directory.
 
 ----
 
@@ -218,11 +213,14 @@ Installation via Docker:
 You can install Scancode Toolkit by building a Docker image from the included Dockerfile.
 The prerequisite is a working `docker installation <https://docs.docker.com/engine/install/>`_.
 
+
 Download the ScanCode-Toolkit Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Either download the Source Code for one of the releases ( :ref:`app_install` ) and unzip it.
-- Or git clone the latest ( :ref:`source_code_install` ) Source Code.
+- Either download the Source Code for one of the releases ( :ref:`app_install` )
+  and unzip it.
+- Or ``git clone https://github.com/nexB/scancode-toolkit`` to get the latest
+  ( :ref:`source_code_install` ) Source Code.
 
 
 Build the Docker image
@@ -261,7 +259,7 @@ those after will be forwarded to scancode.
 .. _source_code_install:
 
 Installation from Source Code: Git Clone
-----------------------------------------
+-----------------------------------------
 
 You can also download the Scancode Toolkit Source Code and build from it yourself. This is how you
 would want to do it if:
@@ -286,13 +284,13 @@ Or you can run the following if you have `Git <https://git-scm.com/>`_ installed
 Now, by default the files are checked out to the develop branch, but you can jump to any checkpoint
 using the following command::
 
-    git checkout main
+    git checkout develop
 
-Here, ``main`` branch has the latest release of Scancode-Toolkit. You can also check out to any
-of the following:
+Here, ``develop`` branch has the latest release of Scancode-Toolkit.
+You can also check out to any of the following:
 
-- Branches (Locally created or already present) [Example - ``main``]
-- Tags (essentially version numbers) [Example - ``v21.2.25``, ``v21.3.31``]
+- Branches (Locally created or already present) [Example - ``develop``]
+- Tags (essentially version numbers) [Example - ``v21.8.1``, ``v21.5.31``]
 - Commits (use the shortened commit hash) [Example - ``4502055``, ``f276398``]
 
 
@@ -319,6 +317,12 @@ On Windows:
 
 Now you are ready to use the freshly configured scancode-toolkit.
 
+.. NOTE::
+
+    For use in development, run instead ``configure --dev``. If your face
+    issues while configuring a previous version, ``configure --clean`` to
+    clean and reset your enviroment. You will need to run ``configure`` again.
+
 
 ----
 
@@ -327,25 +331,30 @@ Now you are ready to use the freshly configured scancode-toolkit.
 Installation as a library: via ``pip``
 --------------------------------------
 
-ScanCode can be installed using ``pip``, the default Python Package Manager. The steps are:
+ScanCode can be installed using ``pip``, the default Python Package Manager.
+The steps are:
 
-#. Create a Python 3.6 Virtual Environment::
+#. Create a Python virtual environment::
 
-    virtualenv -p /usr/bin/python3.6 venv-scancode
+    /usr/bin/python3 -m venv .
 
-For more information on Python virtualenv, visit this `page <https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv>`_.
+For more information on Python virtualenv, visit this
+`page <https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv>`_.
 
-#. Activate the Virtual Environment you just created::
+#. Activate the virtual environment you just created::
 
-    source venv-scancode/bin/activate
+    source bin/activate
 
-#. Run ``pip install scancode-toolkit`` to install the latest version of Scancode.
+#. Run ``pip install --upgraded pip setuptools wheel`` to install the latest
+   versions of base utilities.
+
+#. Run ``pip install scancode-toolkit`` to install the latest version of ScanCode.
 
 .. NOTE::
 
     For advanced usage, ``scancode-toolkit-mini`` is an alternative package with
     no default dependencies on pre-built binaries. This may come handy for some
-    special use cases such as packaging for a Linux of FreeBSD distro.
+    special use cases such as packaging for a Linux or FreeBSD distro.
 
 
 To uninstall, run ``pip uninstall scancode-toolkit``.
