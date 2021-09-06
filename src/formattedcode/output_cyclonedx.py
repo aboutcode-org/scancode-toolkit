@@ -473,7 +473,7 @@ class CycloneDxEncoder(json.JSONEncoder):
 
 
 def write_results_json(bom, output_file):
-    json.dump(bom, output_file, sort_keys=False, cls=CycloneDxEncoder)
+    json.dump(bom, output_file, indent=2, sort_keys=False, cls=CycloneDxEncoder)
 
 
 def write_results_xml(bom, output_file):
