@@ -8,6 +8,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import json
 import os
 
 from commoncode.testcase import FileDrivenTesting
@@ -16,6 +17,11 @@ from scancode.cli_test_utils import run_scan_click
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+
+def load_json_from_test_location(test_location):
+    with open(test_location, "r") as input_stream:
+        return json.load(input_stream)
 
 
 def test_can_encode_component():
@@ -89,6 +95,18 @@ def test_cyclonedx_json():
     result_file = test_env.get_temp_file('cyclonedx')
     args = ['-p', test_dir, '--cyclonedx-json', result_file]
     run_scan_click(args)
+    expected_file = test_env.get_test_loc('cyclonedx/expected.json')
+
+    result = load_json_from_test_location(result_file)
+    expected = load_json_from_test_location(expected_file)
+
+    # remove time-variant data from scope of comparison
+    del result["metadata"]
+    del expected["metadata"]
+    del result["serialNumber"]
+    del expected["serialNumber"]
+    assert result == expected
+
 
 def test_cyclonedx_xml():
     pass

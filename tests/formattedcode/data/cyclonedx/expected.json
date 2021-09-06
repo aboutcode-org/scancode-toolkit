@@ -1,0 +1,122 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.3",
+  "serialNumber": "urn:uuid:8feae4a5-8e03-4abc-824a-ba48e3678c4e",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2021-09-06T17:01:07Z",
+    "tools": [
+      {
+        "vendor": "nexB Inc.",
+        "name": "scancode-toolkit",
+        "version": "21.8.4"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "npm",
+      "version": "2.13.5",
+      "author": "Isaac Z. Schlueter i@izs.me http://blog.izs.me",
+      "description": "a package manager for JavaScript",
+      "purl": "pkg:npm/npm@2.13.5",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "a124386bce4a90506f28ad4b1d1a804a17baaf32"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Artistic-2.0",
+            "name": "Artistic License 2.0",
+            "url": "https://www.perlfoundation.org/artistic_license_2_0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "url": "https://docs.npmjs.com/",
+          "type": "website"
+        },
+        {
+          "url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
+          "type": "distribution"
+        },
+        {
+          "url": "http://github.com/npm/npm/issues",
+          "type": "issue-tracker"
+        },
+        {
+          "url": "git+https://github.com/npm/npm.git@fc7bbf03e39cc48a8924b90696d28345a6a90f3c",
+          "type": "vcs"
+        },
+        {
+          "url": "https://www.npmjs.com/package/npm",
+          "type": "website"
+        },
+        {
+          "url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
+          "type": "distribution"
+        },
+        {
+          "url": "https://registry.npmjs.org/npm/2.13.5",
+          "type": "bom"
+        }
+      ],
+      "type": "library",
+      "scope": "required",
+      "bom-ref": "pkg:npm/npm@2.13.5"
+    },
+    {
+      "name": "abbrev",
+      "version": "1.0.7",
+      "author": "Isaac Z. Schlueter i@izs.me",
+      "description": "Like ruby's abbrev module, but in js",
+      "purl": "pkg:npm/abbrev@1.0.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "name": "ISC License",
+            "url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.7.tgz",
+          "type": "distribution"
+        },
+        {
+          "url": "http://github.com/isaacs/abbrev-js",
+          "type": "vcs"
+        },
+        {
+          "url": "https://www.npmjs.com/package/abbrev",
+          "type": "website"
+        },
+        {
+          "url": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.7.tgz",
+          "type": "distribution"
+        },
+        {
+          "url": "https://registry.npmjs.org/abbrev/1.0.7",
+          "type": "bom"
+        }
+      ],
+      "type": "library",
+      "scope": "required",
+      "bom-ref": "pkg:npm/abbrev@1.0.7"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:npm/npm@2.13.5",
+      "dependsOn": [
+        "pkg:npm/abbrev@1.0.7"
+      ]
+    }
+  ]
+}
