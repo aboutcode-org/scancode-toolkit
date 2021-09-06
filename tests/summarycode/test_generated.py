@@ -86,5 +86,5 @@ class TestGeneratedCode(FileBasedTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('generated/cli.expected.json')
         run_scan_click(['--generated', '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False, ignore_headers=True)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 

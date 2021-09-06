@@ -53,7 +53,6 @@ def make_test_function(test_name, test_dir, expected_file, regen=False):
             result_file,
             remove_file_date=True,
             regen=regen,
-            ignore_headers=True,
         )
 
     test_name = 'test_license_clarity_score_%(test_name)s' % locals()

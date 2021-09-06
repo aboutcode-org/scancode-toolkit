@@ -28,7 +28,7 @@ def test_jsonlines():
     expected = test_env.get_test_loc('json/simple-expected.jsonlines')
     check_jsonlines_scan(
         test_env.get_test_loc(expected), result_file,
-        remove_file_date=True, regen=False, ignore_headers=True)
+        remove_file_date=True, regen=False)
 
 
 def test_jsonlines_with_timing():

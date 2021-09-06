@@ -29,4 +29,4 @@ class TestFacet(FileDrivenTesting):
             '--facet', 'data=*.json',
             '--facet', 'docs=*/docs/*',
             '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False, ignore_headers=True)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
