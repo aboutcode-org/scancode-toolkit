@@ -21,7 +21,7 @@ from licensedcode.models import load_rules
 LICENSES_FIELDNAMES = [
     'key', 'short_name', 'name', 'category', 'owner',  'text', 'words_count', 'notes',
     'minimum_coverage', 'homepage_url', 'is_exception', 'language', 'is_unknown',
-    'spdx_license_key', 'text_urls', 'other_urls', 'standard_notice',
+    'spdx_license_key', 'reference_url', 'text_urls', 'other_urls', 'standard_notice',
     'license_filename', 'faq_url', 'ignorable_authors',
     'ignorable_copyrights', 'ignorable_holders', 'ignorable_urls', 'ignorable_emails',
     'osi_license_key', 'osi_url', 'other_spdx_license_keys',
@@ -37,48 +37,44 @@ RULES_FIELDNAMES = [
 ]
 
 
-def write_data_to_csv(data, output_csv, fieldnames):
-    
-    with open(output_csv,'w',encoding='utf-8-sig',newline='') as f:
-        w = csv.DictWriter(f,fieldnames=fieldnames)
-        w.writeheader()
+SCANCODE_LICENSEDB_URL = 'https://scancode-licensedb.aboutcode.org/{}'
 
+
+def write_data_to_csv(data, output_csv, fieldnames):
+
+    with open(output_csv, 'w') as f:
+        w = csv.DictWriter(f, fieldnames=fieldnames)
+        w.writeheader()
         for entry in data:
             w.writerow(entry)
 
 
-def filter_by_attribute(data, attribute, expected):
-    
-    filtered_output = []
-    for entry in data:
-        if entry.get(attribute, 'None') == expected:
-            filtered_output.append(entry)
-            
-    return filtered_output
+def filter_by_attribute(data, attribute, required_key):
+    """
+    Filters by attribute, if value is required_key.
+    Example `attribute`: `category`. Example `required_key`: `Permissive`.
+    """
+    return [entry for entry in data if entry.get(attribute, 'None') == required_key]
 
 def flatten_output(data):
 
-    if not isinstance(data, list):
-        return
+    assert isinstance(data, list)
 
     output = []
     for entry in data:
-        if not isinstance(entry, dict):
-            continue
+        assert isinstance(entry, dict)
 
         output_entry = {}
         for key, value in entry.items():
-            entry_value = None
             if value is None:
                 continue
-            elif isinstance(value, list):
-                entry_value = ' '.join(value)
-            elif not isinstance(value, str):
-                entry_value = repr(value)
-            elif not entry_value:
-                entry_value = value
 
-            output_entry[key] = entry_value
+            if isinstance(value, list):
+                value = ' '.join(value)
+            elif not isinstance(value, str):
+                value = repr(value)
+
+            output_entry[key] = value
 
         output.append(output_entry)
 
@@ -103,22 +99,22 @@ def flatten_output(data):
     type=str,
     default=None,
     metavar='STRING',
-    help='An optional filter to only output licenses/rules of this category'
-         '. Example STRING: `permissive`.',
+    help='An optional filter to only output licenses/rules of this category. '
+         'Example STRING: `permissive`.',
     cls=PluggableCommandLineOption,
 )
 @click.option('-k', '--license-key',
     type=str,
     default=None,
     metavar='STRING',
-    help='An optional filter to only output licenses/rules which has this license key.'
+    help='An optional filter to only output licenses/rules which has this license key. '
          'Example STRING: `mit`.',
     cls=PluggableCommandLineOption,
 )
 @click.option('-t', '--with-text',
     is_flag=True,
     default=False,
-    help='Also include the license/rules texts.'
+    help='Also include the license/rules texts (First 200 characters). '
          'Note that this increases the file size significantly.', 
     cls=PluggableCommandLineOption,
 )
@@ -137,23 +133,24 @@ def cli(licenses, rules, category, license_key, with_text):
         for license in licenses_data.values():
             license_data = license.to_dict()
             if with_text:
-                license_data['text'] = license.text
+                license_data['text'] = license.text[:200]
             license_data['is_unknown'] = license.is_unknown
             license_data['words_count'] = len(license.text)
+            license_data['reference_url'] = SCANCODE_LICENSEDB_URL.format(license.key)
             licenses_output.append(license_data)
             
         if category:
             licenses_output = filter_by_attribute(
                 data=licenses_output,
                 attribute='category',
-                expected=category
+                required_key=category
             )
         
         if license_key:
             licenses_output = filter_by_attribute(
                 data=licenses_output,
                 attribute='key',
-                expected=license_key,
+                required_key=license_key,
             )
             
         licenses_output = flatten_output(data=licenses_output)
@@ -167,7 +164,7 @@ def cli(licenses, rules, category, license_key, with_text):
             rule_data['identifier'] = rule.identifier
             rule_data['referenced_filenames'] = rule.referenced_filenames
             if with_text:
-                rule_data['text'] = rule.text()
+                rule_data['text'] = rule.text()[:200]
             rule_data['has_unknown'] = rule.has_unknown
             rule_data['words_count'] = len(rule.text())
             try:
@@ -180,14 +177,14 @@ def cli(licenses, rules, category, license_key, with_text):
             rules_output = filter_by_attribute(
                 data=rules_output,
                 attribute='category',
-                expected=category
+                required_key=category,
             )
 
         if license_key:
             rules_output = filter_by_attribute(
                 data=rules_output,
                 attribute='license_expression',
-                expected=license_key,
+                required_key=license_key,
             )
         
         rules_output = flatten_output(rules_output)
