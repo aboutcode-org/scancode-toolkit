@@ -22,6 +22,7 @@ from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 import uuid
 
+
 def _get_set_of_known_licenses_and_spdx_license_ids() -> Tuple[List, FrozenSet[str]]:
     """load all licenses and all SPDX Ids known to ScanCode
        this will also load scancode licenserefs, so we filter those
@@ -49,7 +50,7 @@ class CycloneDxLicense:
 
 @attr.s
 class CycloneDxLicenseEntry:
-    license: CycloneDxLicense = attr.ib()
+    license: CycloneDxLicense = attr.ib(default=None)
     expression: str = attr.ib(default=None)
 
 @attr.s
@@ -90,12 +91,14 @@ class CycloneDxComponentType(str, Enum):
     FIRMWARE = "firmware"
     FILE = "file"
 
-
 @attr.s
 class CycloneDxComponent():
     name: str = attr.ib()
     version: str = attr.ib()
-    group: str = attr.ib()
+    bom_ref: str = attr.ib(default=None)
+    group: str = attr.ib(default=None)
+    copyright: str = attr.ib(default=None)
+    author: str = attr.ib(default=None)
     description: str = attr.ib(default=None)
     purl: str = attr.ib(default=None)
     hashes: List[CycloneDxHashObject] = attr.ib(factory=list)
@@ -104,7 +107,6 @@ class CycloneDxComponent():
     type: CycloneDxComponentType = attr.ib(
         default=CycloneDxComponentType.LIBRARY)
     properties: List[CycloneDxAttribute] = attr.ib(factory=list)
-
 
 @attr.s
 class CycloneDxBom():
@@ -190,7 +192,6 @@ def get_licenses(package: dict)->List[CycloneDxLicenseEntry]:
             lic_entry = get_license_entry_from_declared_license(entry)
             id = lic_entry.license.id if lic_entry.license is not None else None
             if id in seen_ids:
-                click.echo(f"Skipping duplicate entry for {id}")
                 continue
             else:
                 seen_ids.add(id)
@@ -198,9 +199,7 @@ def get_licenses(package: dict)->List[CycloneDxLicenseEntry]:
     else:
         lic_entry = get_license_entry_from_declared_license(declared_license)
         id = lic_entry.license.id if lic_entry.license is not None else None
-        if id in seen_ids:
-            click.echo(f"Skipping duplicate entry for {id}")
-        else:
+        if id not in seen_ids:
             seen_ids.add(id)
             licenses.append(lic_entry)
 
@@ -218,6 +217,7 @@ url_type_mapping = {
     "api_data_url": "bom"
 }
 
+
 def get_external_refs(package: dict)->List[CycloneDxExternalRef]:
     ext_refs = []
 
@@ -226,6 +226,7 @@ def get_external_refs(package: dict)->List[CycloneDxExternalRef]:
         if ref is not None:
             ext_refs.append(ref)
     return ext_refs
+
 
 def get_hashes_list(package: dict) -> List[CycloneDxHashObject]:
     hashes = []
@@ -237,15 +238,25 @@ def get_hashes_list(package: dict) -> List[CycloneDxHashObject]:
                     hash_type_mapping[alg], digest))
     return hashes
 
-def get_author(package: dict) -> str:
-    pass
+
+def get_author_from_parties(parties: List[dict]) -> str:
+    if parties is not None:
+        try:
+            # assume there can only ever be one author and get that with next()
+            author = next(filter(lambda p: p.get("role")=="author" ,parties))
+            return ' '.join(filter(None, (author.get("name"),
+                                          author.get("email"),
+                                          author.get("url"))))
+        except StopIteration:
+            return None
+
 
 """
 Output plugin to write scan results in CycloneDX format.
 For additional information on the format,
 please see https://cyclonedx.org/specification/overview/
 """
-@ output_impl
+@output_impl
 class CycloneDxOutput(OutputPlugin):
     options = [
         PluggableCommandLineOption(('--cyclonedx', 'output_cyclonedx',),
@@ -265,7 +276,7 @@ class CycloneDxOutput(OutputPlugin):
         write_results(bom, output_cyclonedx, output_json=False)
 
 
-@ output_impl
+@output_impl
 class CycloneDxJsonOutput(OutputPlugin):
     options = [
         PluggableCommandLineOption(('--cyclonedx-json', 'output_cyclonedx_json',),
@@ -307,8 +318,19 @@ def truncate_none_or_empty_values(obj) -> dict:
     return obj_dict
 
 
+class CycloneDxEncoder(json.JSONEncoder):
+    """Custom encoder that removes fields which are either empty or None.
+       Additionally renames the `bom_ref` field to `bom-ref` for output"""
+    def default(self, o) -> str:
+        dict_repr = truncate_none_or_empty_values(o)
+        if "bom_ref" in dict_repr:
+            dict_repr["bom-ref"] = dict_repr["bom_ref"]
+            del dict_repr["bom_ref"]
+        return dict_repr
+
+
 def write_results_json(bom, output_file):
-    json.dump(bom, output_file, default=truncate_none_or_empty_values)
+    json.dump(bom, output_file, sort_keys=False, cls=CycloneDxEncoder)
 
 
 def write_results_xml(bom, output_file):
@@ -334,10 +356,13 @@ def generate_component_list(codebase, **kwargs) -> List[CycloneDxComponent]:
             hashes = get_hashes_list(package)
             refs = get_external_refs(package)
             licenses = get_licenses(package)
-
+            author = get_author_from_parties(package.get("parties"))
+            purl = package.get("purl")
             components.append(CycloneDxComponent(
                 name=package.get("name"), version=package.get("version"),
-                group=package.get("namespace"), purl=package.get("purl"),
+                group=package.get("namespace"), purl=purl,
+                author=author, copyright=package.get("copyright"),
                 description=package.get("description"),
-                hashes=hashes, licenses=licenses, externalReferences=refs))
+                hashes=hashes, licenses=licenses, externalReferences=refs,
+                bom_ref= purl))
     return components

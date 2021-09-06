@@ -11,20 +11,64 @@
 import os
 
 from commoncode.testcase import FileDrivenTesting
+from formattedcode.output_cyclonedx import *
 from scancode.cli_test_utils import run_scan_click
-from formattedcode.output_cyclonedx import get_hashes_list, _get_set_of_known_licenses_and_spdx_license_ids
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def test_cyclonedx_xml():
-    pass
+def test_can_encode_component():
+    purl = "pkg:generic/test@1"
+    hashes = [CycloneDxHashObject(alg="MD5", content="not-a-hash")]
+    licenses = [
+        CycloneDxLicenseEntry(expression="MIT or Apache-2.0"),
+        CycloneDxLicenseEntry(license=CycloneDxLicense(id="MIT"))
+    ]
+    component = CycloneDxComponent(name="test", version="1", purl=purl,
+                                   bom_ref=purl, hashes=hashes, licenses=licenses)
+    json_repr = CycloneDxEncoder().encode(component)
+    expected_json_repr = '{"name": "test", "version": "1", ' \
+                         '"purl": "pkg:generic/test@1", ' \
+                         '"hashes": [{"alg": "MD5", "content": "not-a-hash"}], ' \
+                         '"licenses": [{"expression": "MIT or Apache-2.0"}, ' \
+                         '{"license": {"id": "MIT"}}], ' \
+                         '"type": "library", "bom-ref": "pkg:generic/test@1"}'
+    assert json_repr == expected_json_repr
 
 
-def test_can_load_spdx_ids():
-    licenses, spdx_keys = _get_set_of_known_licenses_and_spdx_license_ids()
-    assert len(spdx_keys) > 0
+def test_get_author_from_parties():
+    parties = [
+        {
+            "type": "person",
+            "role": "author",
+            "name": "the author"
+        }
+    ]
+    author = get_author_from_parties(parties)
+    assert author == "the author"
+
+
+def test_get_author_from_parties_default_none():
+    parties = [
+        {
+            "type": "person",
+            "role": "maintainer",
+            "name": "the maintainer"
+        }
+    ]
+    assert get_author_from_parties(parties) is None
+
+
+def test_get_licenses_from_package():
+    package = {
+        "license_expression": "mit",
+        "declared_license": ["MIT"]
+    }
+    licenses = get_licenses(package)
+    # check if duplicate entries are removed
+    assert len(licenses) == 1
+    assert licenses[0].license.id == "MIT"
 
 
 def test_can_get_hashes_from_package():
@@ -45,3 +89,6 @@ def test_cyclonedx_json():
     result_file = test_env.get_temp_file('cyclonedx')
     args = ['-p', test_dir, '--cyclonedx-json', result_file]
     run_scan_click(args)
+
+def test_cyclonedx_xml():
+    pass
