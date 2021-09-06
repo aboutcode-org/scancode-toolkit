@@ -253,9 +253,9 @@ def validate_depth(ctx, param, value):
 
 @click.option('--future-format',
     is_flag=True,
-    help='Output the next experimental data format, for JSON and YAML output.'
-         'See CHANGELOG for more details on the changes in this experimental data format.',
-    help_group=cliutils.OUTPUT_CONTROL_GROUP, sort_order=28, cls=PluggableCommandLineOption)
+    help='Output the future data format, for JSON and YAML output. '
+         'See CHANGELOG for more details on the changes in this future data format.',
+    help_group=cliutils.OUTPUT_CONTROL_GROUP, cls=PluggableCommandLineOption)
 
 
 @click.help_option('-h', '--help',
