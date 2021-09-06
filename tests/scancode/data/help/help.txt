@@ -71,9 +71,6 @@ Options:
 
   output control:
     --full-root      Report full, absolute paths.
-    --future-format  Output the future data format, for JSON and YAML
-                     output. See CHANGELOG for more details on the changes in this
-                     future data format.
     --strip-root     Strip the root directory segment of all paths. The default is
                      to always include the last directory segment of the scanned
                      path such that all paths have a common root directory.

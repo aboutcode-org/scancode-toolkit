@@ -95,7 +95,6 @@ def print_version(ctx, param, value):
         return
     click.echo('ScanCode version ' + scancode_config.__version__)
     click.echo('Output Format version ' + scancode_config.__output_format_version__)
-    click.echo('Future Output Format version ' + scancode_config.__future_output_format_version__)
     ctx.exit()
 
 
@@ -251,13 +250,6 @@ def validate_depth(ctx, param, value):
         'the starting directory. Use 0 for no scan depth limit.',
     help_group=cliutils.CORE_GROUP, sort_order=301, cls=PluggableCommandLineOption)
 
-@click.option('--future-format',
-    is_flag=True,
-    help='Output the future data format, for JSON and YAML output. '
-         'See CHANGELOG for more details on the changes in this future data format.',
-    help_group=cliutils.OUTPUT_CONTROL_GROUP, cls=PluggableCommandLineOption)
-
-
 @click.help_option('-h', '--help',
     help_group=cliutils.DOC_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
@@ -354,7 +346,6 @@ def scancode(
     verbose,
     max_depth,
     from_json,
-    future_format,
     timing,
     max_in_memory,
     test_mode,
@@ -458,7 +449,6 @@ def scancode(
             quiet=quiet,
             verbose=verbose,
             max_depth=max_depth,
-            future_format=future_format,
             timing=timing,
             max_in_memory=max_in_memory,
             test_mode=test_mode,
@@ -495,7 +485,6 @@ def scancode(
 def run_scan(
     input,  # NOQA
     from_json=False,
-    future_format=False,
     strip_root=False,
     full_root=False,
     max_in_memory=10000,
@@ -602,7 +591,6 @@ def run_scan(
         quiet=quiet,
         verbose=verbose,
         from_json=from_json,
-        future_format=future_format,
         timing=timing,
         max_in_memory=max_in_memory,
         test_mode=test_mode,
