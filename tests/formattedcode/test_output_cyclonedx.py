@@ -85,7 +85,7 @@ def test_can_get_hashes_from_package():
 
 
 def test_cyclonedx_json():
-    test_dir = test_env.get_test_loc('json/simple')
+    test_dir = test_env.get_test_loc('cyclonedx/simple')
     result_file = test_env.get_temp_file('cyclonedx')
     args = ['-p', test_dir, '--cyclonedx-json', result_file]
     run_scan_click(args)

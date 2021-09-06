@@ -91,6 +91,11 @@ class CycloneDxComponentType(str, Enum):
     FIRMWARE = "firmware"
     FILE = "file"
 
+class CycloneDxComponentScope(str, Enum):
+    REQUIRED = "required"
+    OPTIONAL = "optional"
+    EXCLUDED = "excluded"
+
 @attr.s
 class CycloneDxComponent():
     name: str = attr.ib()
@@ -107,6 +112,12 @@ class CycloneDxComponent():
     type: CycloneDxComponentType = attr.ib(
         default=CycloneDxComponentType.LIBRARY)
     properties: List[CycloneDxAttribute] = attr.ib(factory=list)
+    scope: CycloneDxComponentScope  = attr.ib(default=CycloneDxComponentScope.REQUIRED)
+
+@attr.s
+class CycloneDxDependency:
+    ref: str = attr.ib()
+    dependsOn: str = attr.ib(factory=list)
 
 @attr.s
 class CycloneDxBom():
@@ -117,6 +128,7 @@ class CycloneDxBom():
     version: int = attr.ib(init=False, default=1)
     metadata: CycloneDxMetadata = attr.ib(default=CycloneDxMetadata())
     components: List[CycloneDxComponent] = attr.ib(factory=list)
+    dependencies: List[CycloneDxDependency] = attr.ib(factory=list)
 
 def get_tool_header(version: str) -> dict:
     return {
@@ -136,6 +148,11 @@ def get_license_entry_from_license_expression(license_expression: str) \
         -> CycloneDxLicenseEntry:
     """query our list of known licenses to see if we can resolve
     the license_expression to a single entry"""
+
+    # exit early if we don't have a valid license_expression
+    if license_expression is None:
+        return None
+
     license = known_licenses.get(license_expression)
     if license is not None:
         #attempt to set either official OSI URL or any license text URL
@@ -182,26 +199,33 @@ def get_licenses(package: dict)->List[CycloneDxLicenseEntry]:
 
     lic_expr = package.get("license_expression")
     entry = get_license_entry_from_license_expression(lic_expr)
-    if entry.license is not None:
-        seen_ids.add(entry.license.id)
-    licenses = [entry]
+    if entry is not None:
+        licenses = [entry]
+        if entry.license is not None:
+            seen_ids.add(entry.license.id)
+    else:
+        licenses = []
 
     declared_license = package["declared_license"]
     if isinstance(declared_license, list):
         for entry in declared_license:
             lic_entry = get_license_entry_from_declared_license(entry)
+            if lic_entry is None:
+                continue
             id = lic_entry.license.id if lic_entry.license is not None else None
-            if id in seen_ids:
+            if id in seen_ids or id is None:
                 continue
             else:
                 seen_ids.add(id)
-                licenses.append(lic_entry)
+                if lic_entry is not None:
+                    licenses.append(lic_entry)
     else:
         lic_entry = get_license_entry_from_declared_license(declared_license)
-        id = lic_entry.license.id if lic_entry.license is not None else None
-        if id not in seen_ids:
-            seen_ids.add(id)
-            licenses.append(lic_entry)
+        if lic_entry is not None:
+            id = lic_entry.license.id if lic_entry.license is not None else None
+            if id not in seen_ids and id is not None:
+                seen_ids.add(id)
+                licenses.append(lic_entry)
 
     return licenses
 
@@ -296,6 +320,109 @@ class CycloneDxJsonOutput(OutputPlugin):
         write_results(bom, output_file=output_cyclonedx_json)
 
 
+def _get_dependency_candidate(dependency, candidates):
+    if len(candidates) == 1:
+        return list(candidates.values())[0]
+    else:
+        return None
+
+
+def _set_key_or_append(dictionary: dict, key, value):
+    if key in dictionary:
+        dictionary[key].append(value)
+    else:
+        dictionary[key] = [value]
+
+
+def generate_dependencies_list(dep_map, comp_map) -> List[CycloneDxDependency]:
+    # return early if we have no components to operate on
+    if len(comp_map) == 0:
+        return None
+
+    #holds a mapping of type purl -> list(purl)
+    dependencies = {}
+
+    for purl in dep_map:
+        for dependency in dep_map[purl]:
+            if dependency.get("is_resolved"):
+                _set_key_or_append(dependencies, purl, dependency.get("purl"))
+            else:
+                candidates = dict(filter(
+                    lambda item: item[0] and item[0].startswith(dependency["purl"]),
+                    comp_map.items()))
+                resolved_dependency = _get_dependency_candidate(
+                    dependency, candidates)
+                if resolved_dependency is not None:
+                    _set_key_or_append(dependencies, purl, resolved_dependency.bom_ref)
+
+    return list(
+        map(
+            lambda entry:
+            CycloneDxDependency(ref=entry[0], dependsOn=entry[1]),
+            dependencies.items()
+        )
+    )
+
+def merge_components(existing: CycloneDxComponent, new: CycloneDxComponent):
+    """merges two components and returns a new component"""
+
+    #helper that merges lists avoiding duplicate entries
+    merge_lists = lambda x,y: x.extend([item for item in y if item not in x])
+
+    if existing.author is None:
+        existing.author = new.author
+
+    if existing.copyright is None:
+        existing.copyright = new.author
+
+    if existing.description is None:
+        existing.description = new.description
+
+    if existing.licenses is None:
+        existing.licenses = new.licenses
+    elif new.licenses is not None:
+        merge_lists(existing.licenses, new.licenses)
+
+    if existing.externalReferences is None:
+        existing.externalReferences = new.externalReferences
+    elif new.externalReferences is not None:
+        merge_lists(existing.externalReferences, new.externalReferences)
+
+    if existing.hashes is None:
+        existing.hashes = new.hashes
+    elif new.hashes is not None:
+        merge_lists(existing.hashes, new.hashes)
+
+    if existing.properties is None:
+        existing.properties = new.properties
+    elif new.properties is not None:
+        merge_lists(existing.properties, new.properties)
+
+def generate_component_list(packages) -> List[CycloneDxComponent]:
+    ref_component_map = {}
+    components = []
+    for package in packages:
+        hashes = get_hashes_list(package)
+        refs = get_external_refs(package)
+        licenses = get_licenses(package)
+        author = get_author_from_parties(package.get("parties"))
+        purl = package.get("purl")
+        component = CycloneDxComponent(
+            name=package.get("name"), version=package.get("version"),
+            group=package.get("namespace"), purl=purl,
+            author=author, copyright=package.get("copyright"),
+            description=package.get("description"),
+            hashes=hashes, licenses=licenses, externalReferences=refs,
+            bom_ref= purl)
+        if purl not in ref_component_map.keys():
+            components.append(component)
+            ref_component_map[purl] = component
+        else:
+            merge_components(ref_component_map[purl], component)
+
+    return components
+
+
 def build_bom(codebase) -> CycloneDxBom:
     # TODO: find out if we can always expect that header to be present
     scancode_header = codebase.get_headers()[0]
@@ -304,16 +431,32 @@ def build_bom(codebase) -> CycloneDxBom:
 
     tool_header = get_tool_header(scancode_version)
     bom_metadata = CycloneDxMetadata(tools=[tool_header])
-    bom = CycloneDxBom(components=generate_component_list(
-        codebase), metadata=bom_metadata)
+
+    files = OutputPlugin.get_files(codebase)
+
+    # get all packages that are not None
+    packages = [package for file in files for package in file.get("packages")]
+    # associate dependency relationship by purl of dependent package
+    dep_map = dict([(package.get("purl"), package.get("dependencies"))
+                    for package in packages])
+
+    components = generate_component_list(packages)
+    # associate components by purl
+    comp_map = dict(map(lambda c: (c.purl, c), components))
+
+    dependencies = generate_dependencies_list(dep_map, comp_map)
+
+    bom = CycloneDxBom(components=components, metadata=bom_metadata, dependencies=dependencies)
 
     return bom
 
 
 def truncate_none_or_empty_values(obj) -> dict:
     """gets a dict from an object and drops all items
-     that have keys which are either None or an empty list """
-    predicate = lambda el: not (el is None or isinstance(el, list) and len(el)==0)
+     that have keys which are either None, an empty list or an empty dict"""
+    predicate = lambda el: not (el is None or
+                                (isinstance(el, list) or isinstance(el, dict))
+                                and len(el)==0)
     obj_dict = { k : v for k,v in vars(obj).items() if predicate(v) }
     return obj_dict
 
@@ -347,22 +490,3 @@ def write_results(bom, output_file, output_json: bool = True):
         write_results_json(bom, output_file)
     else:
         write_results_xml(bom, output_file)
-
-def generate_component_list(codebase, **kwargs) -> List[CycloneDxComponent]:
-    files = OutputPlugin.get_files(codebase, **kwargs)
-    components = []
-    for file in files:
-        for package in file.get("packages", []):
-            hashes = get_hashes_list(package)
-            refs = get_external_refs(package)
-            licenses = get_licenses(package)
-            author = get_author_from_parties(package.get("parties"))
-            purl = package.get("purl")
-            components.append(CycloneDxComponent(
-                name=package.get("name"), version=package.get("version"),
-                group=package.get("namespace"), purl=purl,
-                author=author, copyright=package.get("copyright"),
-                description=package.get("description"),
-                hashes=hashes, licenses=licenses, externalReferences=refs,
-                bom_ref= purl))
-    return components
