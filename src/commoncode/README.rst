@@ -129,7 +129,7 @@ https://github.com/nexB/thirdparty-packages
 Usage after project initialization
 ----------------------------------
 
-Once the ``requirements.txt`` and ``requirements-dev.txt`` has been generated
+Once the ``requirements.txt`` and ``requirements-dev.txt`` have been generated
 and the project dependencies and their ABOUT files have been uploaded to
 thirdparty.aboutcode.org/pypi, you can configure the project without using the
 ``--init`` option.
