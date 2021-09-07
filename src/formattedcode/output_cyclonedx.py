@@ -487,7 +487,9 @@ def truncate_none_or_empty_values(obj) -> dict:
     predicate = lambda el: not (el is None or
                                 (isinstance(el, list) or isinstance(el, dict))
                                 and len(el) == 0)
-    obj_dict = {k: v for k, v in vars(obj).items() if predicate(v)}
+    if hasattr(obj, '__dict__'):
+        obj = vars(obj)
+    obj_dict = {k: v for k, v in obj.items() if predicate(v)}
     return obj_dict
 
 

@@ -95,6 +95,29 @@ def test_can_get_hashes_from_package():
         assert hash_entry.content is not None
 
 
+def test_get_tool_header():
+    test_version = "0"
+    expected = {
+        "name": "scancode-toolkit",
+        "vendor": "nexB Inc.",
+        "version": test_version
+    }
+    actual = get_tool_header(test_version)
+    assert actual == expected
+
+
+def test_truncate_none_or_empty_values():
+    original = {
+        "a": None,
+        "b": [],
+        "c": "c",
+        "d": {}
+    }
+    expected = {"c": "c"}
+    actual = truncate_none_or_empty_values(original)
+    assert actual == expected
+
+
 def test_cyclonedx_json():
     test_dir = test_env.get_test_loc('cyclonedx/simple')
     result_file = test_env.get_temp_file('cyclonedx')
