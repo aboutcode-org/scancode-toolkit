@@ -77,11 +77,6 @@ if not "%1" == "" (
     if "%1" EQU "--init"   (
         set "NO_INDEX= "
     )
-    if "%1" EQU "--python" (
-        echo "The --python option is now DEPRECATED. Use the PYTHON_EXECUTABLE environment"
-        echo "variable instead. Run configure --help for details."
-        exit /b 0
-    )
     shift
     goto again
 )

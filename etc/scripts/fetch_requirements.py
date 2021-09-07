@@ -5,7 +5,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/nexB/skeleton for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 import itertools
@@ -108,7 +108,7 @@ def fetch_requirements(
         envs = (utils_thirdparty.Environment.from_pyver_and_os(pyv, os) for pyv, os in envs)
 
         for env, reqf in itertools.product(envs, requirements_files):
-            
+
             for package, error in utils_thirdparty.fetch_wheels(
                 environment=env,
                 requirements_file=reqf,

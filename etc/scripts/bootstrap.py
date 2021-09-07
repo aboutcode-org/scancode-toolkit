@@ -5,7 +5,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/nexB/skeleton for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -84,7 +84,7 @@ def bootstrap(
     OS(s) defaulting to all supported combinations. Create or fetch .ABOUT and
     .LICENSE files.
 
-    Optionally ignore version specifiers and use the ``--latest-version`` 
+    Optionally ignore version specifiers and use the ``--latest-version``
     of everything.
 
     Sources and wheels are fetched with attempts first from PyPI, then our remote repository.
@@ -172,7 +172,7 @@ def bootstrap(
         (PypiPackage(name, version), envt)
         for name, version, envt in name_version_envt_to_build
     ]
-    
+
     print(f'==> BUILDING #{len(packages_and_envts_to_build)} MISSING WHEELS')
 
     package_envts_not_built, wheel_filenames_built = utils_thirdparty.build_missing_wheels(
