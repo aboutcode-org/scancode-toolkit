@@ -37,6 +37,10 @@ Copyright detection:
  - The data structure in the JSON is now using consistently named attributes as
    opposed to a plain value.
 
+Outputs:
+~~~~~~~~
+ - Add new outputs for the CycloneDx format.
+   The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
 
 Package detection:
 ~~~~~~~~~~~~~~~~~~
