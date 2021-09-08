@@ -5,8 +5,8 @@ license_expression: mit
 copyright: 2015 Daniel Roesler <diafygi@gmail.com>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 18
+    start_line: 16
+    end_line: 33
     matcher: 1-hash
     rule_length: 161
     matched_length: 161

@@ -39,8 +39,8 @@ copyright: |
   2016, Lucas Moura <lucas.moura128@gmail.com>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 67
+    end_line: 67
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -54,15 +54,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2+'
-  - score: '98.41'
-    start_line: 1
-    end_line: 15
+  - score: '99.21'
+    start_line: 68
+    end_line: 82
     matcher: 3-seq
     rule_length: 126
-    matched_length: 124
-    match_coverage: '98.41'
+    matched_length: 125
+    match_coverage: '99.21'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_38.RULE
+    identifier: gpl-2.0-plus_839.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -70,7 +70,7 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify
+      This package is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation; either version 2 of the License, or
       (at your option) any later version.
@@ -81,13 +81,13 @@ matches:
       GNU General Public License for more details.
 
       You should have received a copy of the GNU General Public License
-      along with this program. If not, see <http://www.gnu.org/licenses/>
+      along with this program. If not, see <[http]://www.gnu.org/licenses/>
 
       On Debian systems, the complete text of the GNU General
       Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 84
+    end_line: 84
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -102,8 +102,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-2.1+'
   - score: '100.0'
-    start_line: 1
-    end_line: 12
+    start_line: 85
+    end_line: 96
     matcher: 2-aho
     rule_length: 106
     matched_length: 106
@@ -130,8 +130,8 @@ matches:
       You should have received a copy of the GNU Lesser General Public License
       along with this library.  If not, see <http://www.gnu.org/licenses/>.
   - score: '100.0'
-    start_line: 14
-    end_line: 15
+    start_line: 98
+    end_line: 99
     matcher: 2-aho
     rule_length: 27
     matched_length: 27

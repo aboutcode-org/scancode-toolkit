@@ -11,8 +11,8 @@ copyright: |
   2019 Samuel Henrique <samueloph@debian.org>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 18
+    start_line: 16
+    end_line: 33
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
