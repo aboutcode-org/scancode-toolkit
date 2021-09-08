@@ -438,18 +438,24 @@ def generate_component_list(packages) -> List[CycloneDxComponent]:
         licenses = get_licenses(package)
         author = get_author_from_parties(package.get("parties"))
         purl = package.get("purl")
-        component = CycloneDxComponent(
-            name=package.get("name"), version=package.get("version"),
-            group=package.get("namespace"), purl=purl,
-            author=author, copyright=package.get("copyright"),
-            description=package.get("description"),
-            hashes=hashes, licenses=licenses, externalReferences=refs,
-            bom_ref=purl)
-        if purl not in ref_component_map.keys():
-            components.append(component)
-            ref_component_map[purl] = component
-        else:
-            merge_components(ref_component_map[purl], component)
+
+        name = package.get("name")
+        version = package.get("version")
+        #if we don't have at least the required name and version we skip the component
+        if name is not None and version is not None:
+            component = CycloneDxComponent(
+                name=package.get("name"), version=package.get("version"),
+                group=package.get("namespace"), purl=purl,
+                author=author, copyright=package.get("copyright"),
+                description=package.get("description"),
+                hashes=hashes, licenses=licenses, externalReferences=refs,
+                bom_ref=purl)
+
+            if purl not in ref_component_map.keys():
+                components.append(component)
+                ref_component_map[purl] = component
+            else:
+                merge_components(ref_component_map[purl], component)
 
     return components
 
@@ -612,7 +618,13 @@ class XmlSerializer():
         return bom
 
     def _build_dependencies_element(self, bom: ET.Element) -> ET.Element:
+        dependencies = self.bom.dependencies
+        # exit early
+        if dependencies is None:
+            return bom
+
         deps = ET.SubElement(bom, "dependencies")
+
         for dependency in self.bom.dependencies:
             if dependency.ref is None:
                 continue

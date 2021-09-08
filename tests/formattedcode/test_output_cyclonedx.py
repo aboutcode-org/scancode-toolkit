@@ -44,7 +44,8 @@ def test_can_encode_component():
                          '"hashes": [{"alg": "MD5", "content": "not-a-hash"}], ' \
                          '"licenses": [{"expression": "MIT or Apache-2.0"}, ' \
                          '{"license": {"id": "MIT"}}], ' \
-                         '"type": "library", "bom-ref": "pkg:generic/test@1"}'
+                         '"type": "library", "scope": "required", ' \
+                         '"bom-ref": "pkg:generic/test@1"}'
     assert json_repr == expected_json_repr
 
 
