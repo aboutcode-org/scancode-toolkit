@@ -26,16 +26,16 @@ CLI_ARGS=$1
 ################################
 
 # Requirement arguments passed to pip and used by default or with --dev.
-REQUIREMENTS="--editable ."
-DEV_REQUIREMENTS="--editable .[testing]"
+REQUIREMENTS="--editable . --constraint requirements.txt"
+DEV_REQUIREMENTS="--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
 
 # where we create a virtualenv
-VIRTUALENV_DIR=tmp
+VIRTUALENV_DIR=venv
 
 # Cleanable files and directories with the --clean option
 CLEANABLE="
     build
-	tmp"
+	venv"
 
 # extra  arguments passed to pip
 PIP_EXTRA_ARGS=" "
@@ -50,8 +50,9 @@ VIRTUALENV_PYZ_URL=https://bootstrap.pypa.io/virtualenv.pyz
 CFG_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
-# Find packages from the local thirdparty directory or from pypi
-PIP_EXTRA_ARGS="--find-links $CFG_ROOT_DIR/thirdparty"
+# Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
+PIP_EXTRA_ARGS="--find-links $CFG_ROOT_DIR/thirdparty --find-links https://thirdparty.aboutcode.org/pypi"
+
 
 ################################
 # Set the quiet flag to empty if not defined
@@ -80,10 +81,14 @@ cli_help() {
     echo "  usage: ./configure [options]"
     echo
     echo The default is to configure for regular use. Use --dev for development.
+    echo Use the --init option if starting a new project and the project
+    echo dependencies are not available on thirdparty.aboutcode.org/pypi/
+    echo and requirements.txt and/or requirements-dev.txt has not been generated.
     echo
     echo The options are:
     echo " --clean: clean built and installed files and exit."
     echo " --dev:   configure the environment for development."
+    echo " --init:  pull dependencies from PyPI. Used when first setting up a project."
     echo " --help:  display this help message and exit."
     echo
     echo By default, the python interpreter version found in the path is used.
@@ -157,12 +162,22 @@ install_packages() {
 # Main command line entry point
 CFG_DEV_MODE=0
 CFG_REQUIREMENTS=$REQUIREMENTS
+NO_INDEX="--no-index"
 
-case "$CLI_ARGS" in
-    --help)    cli_help;;
-    --clean)   clean;;
-    --dev)     CFG_REQUIREMENTS="$DEV_REQUIREMENTS" && CFG_DEV_MODE=1;;
-esac
+# We are using getopts to parse option arguments that start with "-"
+while getopts :-: optchar; do
+    case "${optchar}" in
+        -)
+            case "${OPTARG}" in
+                help  ) cli_help;;
+                clean ) clean;;
+                dev   ) CFG_REQUIREMENTS="$DEV_REQUIREMENTS" && CFG_DEV_MODE=1;;
+                init  ) NO_INDEX="";;
+            esac;;
+    esac
+done
+
+PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS $NO_INDEX"
 
 create_virtualenv "$VIRTUALENV_DIR"
 install_packages "$CFG_REQUIREMENTS"

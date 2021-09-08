@@ -12,6 +12,7 @@
 /Lib
 /pip-selfcheck.json
 /tmp
+/venv
 .Python
 /include
 /Include

@@ -24,14 +24,14 @@
 @rem ################################
 
 @rem # Requirement arguments passed to pip and used by default or with --dev.
-set "REQUIREMENTS=--editable ."
-set "DEV_REQUIREMENTS=--editable .[testing]"
+set "REQUIREMENTS=--editable . --constraint requirements.txt"
+set "DEV_REQUIREMENTS=--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
 
 @rem # where we create a virtualenv
-set "VIRTUALENV_DIR=tmp"
+set "VIRTUALENV_DIR=venv"
 
 @rem # Cleanable files and directories to delete with the --clean option
-set "CLEANABLE=build tmp"
+set "CLEANABLE=build venv"
 
 @rem # extra  arguments passed to pip
 set "PIP_EXTRA_ARGS= "
@@ -49,7 +49,7 @@ set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
 
 @rem ################################
 @rem # Thirdparty package locations and index handling
-set "PIP_EXTRA_ARGS=--find-links %CFG_ROOT_DIR%\thirdparty"
+set "PIP_EXTRA_ARGS=--find-links %CFG_ROOT_DIR%\thirdparty --find-links https://thirdparty.aboutcode.org/pypi" & %INDEX_ARG%
 @rem ################################
 
 
@@ -64,18 +64,25 @@ if not defined CFG_QUIET (
 @rem # Main command line entry point
 set CFG_DEV_MODE=0
 set "CFG_REQUIREMENTS=%REQUIREMENTS%"
+set "NO_INDEX=--no-index"
 
-if "%1" EQU "--help"   (goto cli_help)
-if "%1" EQU "--clean"  (goto clean)
-if "%1" EQU "--dev"    (
-    set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
-    set CFG_DEV_MODE=1
+:again
+if not "%1" == "" (
+    if "%1" EQU "--help"   (goto cli_help)
+    if "%1" EQU "--clean"  (goto clean)
+    if "%1" EQU "--dev"    (
+        set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
+        set CFG_DEV_MODE=1
+    )
+    if "%1" EQU "--init"   (
+        set "NO_INDEX= "
+    )
+    shift
+    goto again
 )
-if "%1" EQU "--python" (
-    echo "The --python option is now DEPRECATED. Use the PYTHON_EXECUTABLE environment"
-    echo "variable instead. Run configure --help for details."
-    exit /b 0
-)
+
+set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS% %NO_INDEX%"
+
 
 @rem ################################
 @rem # find a proper Python to run
@@ -165,10 +172,14 @@ exit /b 0
     echo "  usage: configure [options]"
     echo " "
     echo The default is to configure for regular use. Use --dev for development.
+    echo Use the --init option if starting a new project and the project
+    echo dependencies are not available on thirdparty.aboutcode.org/pypi/
+    echo and requirements.txt and/or requirements-dev.txt has not been generated.
     echo " "
     echo The options are:
     echo " --clean: clean built and installed files and exit."
     echo " --dev:   configure the environment for development."
+    echo " --init:  pull dependencies from PyPI. Used when first setting up a project."
     echo " --help:  display this help message and exit."
     echo " "
     echo By default, the python interpreter version found in the path is used.
