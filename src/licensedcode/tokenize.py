@@ -8,8 +8,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from itertools import islice
 from binascii import crc32
+from itertools import islice
 import re
 
 from licensedcode.stopwords import STOPWORDS
@@ -22,22 +22,32 @@ for queries and rules texts.
 """
 
 
-def query_lines(location=None, query_string=None, strip=True):
+def query_lines(location=None, query_string=None, strip=True, start_line=1):
     """
     Return an iterable of tuples (line number, text line) given a file at
     `location` or a `query string`. Include empty lines.
+    Line numbers start at ``start_line`` which is 1-based by default.
     """
     # TODO: OPTIMIZE: tokenizing line by line may be rather slow
     # we could instead get lines and tokens at once in a batch?
     numbered_lines = []
     if location:
-        numbered_lines = numbered_text_lines(location, demarkup=False)
+        numbered_lines = numbered_text_lines(
+            location, 
+            demarkup=False,
+            start_line=start_line,
+        )
+
     elif query_string:
         if strip:
             keepends = False
         else:
             keepends = True
-        numbered_lines = enumerate(query_string.splitlines(keepends), 1)
+
+        numbered_lines = enumerate(
+            query_string.splitlines(keepends), 
+            start_line,
+        )
 
     for line_number, line in numbered_lines:
         if strip:
