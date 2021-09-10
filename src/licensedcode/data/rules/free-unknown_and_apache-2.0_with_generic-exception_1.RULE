@@ -1,0 +1,12 @@
+See COPYING.YARA. The GPL exception has been granted by upstream in
+ https://bugzilla.clamav.net/show_bug.cgi?id=11336:
+  Steven Morgan 2015-07-21 23:02:01 CEST
+  The Apache 2 license notification for YARA is in the file COPYING.YARA,
+  similar to what we do for bzip2 and at least 9 other third party components
+  included in ClamAV. We also maintain the Apache v2 license header within the
+  YARA source code files as well as noting that the file is modified. We also
+  intend to write a GPL exclusion, as is done for OpenSSL. We believe these to
+  be sufficient indicators of which licenses apply to which source files.
+ .
+ On Debian systems, the full text of the Apache License, Version 2.0 can be
+ found in the file `/usr/share/common-licenses/Apache-2.0'.

@@ -1,0 +1,8 @@
+license_expression: cc-by-4.0 AND ofl-1.1 AND mit
+is_license_notice: yes
+notes: https://raw.githubusercontent.com/django/django/main/docs/_theme/djangodocs/static/fontawesome/LICENSE.txt
+ignorable_urls:
+    - https://creativecommons.org/licenses/by/4.0
+    - https://fontawesome.com/license
+    - https://opensource.org/licenses/MIT
+    - https://scripts.sil.org/OFL

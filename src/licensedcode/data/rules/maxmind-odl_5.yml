@@ -1,0 +1,8 @@
+license_expression: maxmind-odl
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) MaxMind, Inc.
+ignorable_holders:
+    - MaxMind, Inc.
+ignorable_urls:
+    - http://maxmind.com/

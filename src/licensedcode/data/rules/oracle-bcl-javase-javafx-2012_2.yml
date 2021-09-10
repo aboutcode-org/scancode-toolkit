@@ -1,0 +1,4 @@
+license_expression: oracle-bcl-javase-javafx-2012
+is_license_notice: yes
+ignorable_urls:
+    - https://www.oracle.com/technetwork/java/javase/documentation/bcl-for-java-se-397068.pdf
