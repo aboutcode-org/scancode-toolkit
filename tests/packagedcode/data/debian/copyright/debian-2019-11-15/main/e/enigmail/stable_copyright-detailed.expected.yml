@@ -22,8 +22,8 @@ copyright: |
   2013-2017 Daniel Kahn Gillmor <dkg@fifthhorseman.net>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 38
+    end_line: 38
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -38,8 +38,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: mpl-2.0'
   - score: '100.0'
-    start_line: 1
-    end_line: 373
+    start_line: 39
+    end_line: 411
     matcher: 1-hash
     rule_length: 2363
     matched_length: 2363
@@ -427,8 +427,8 @@ matches:
        This Source Code Form is "Incompatible With Secondary Licenses", as
        defined by the Mozilla Public License, v. 2.0.
   - score: '100.0'
-    start_line: 1
-    end_line: 28
+    start_line: 414
+    end_line: 441
     matcher: 1-hash
     rule_length: 215
     matched_length: 215
@@ -471,8 +471,8 @@ matches:
       official policies, either expressed or implied, of the Mozilla
       Foundation.
   - score: '99.04'
-    start_line: 3
-    end_line: 27
+    start_line: 446
+    end_line: 470
     matcher: 3-seq
     rule_length: 207
     matched_length: 207
@@ -512,8 +512,8 @@ matches:
       ARISING IN ANY  WAY OUT OF THE USE  OF THIS SOFTWARE, EVEN IF  ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 472
+    end_line: 472
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -528,8 +528,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: cc0-1.0'
   - score: '100.0'
-    start_line: 1
-    end_line: 9
+    start_line: 473
+    end_line: 481
     matcher: 1-hash
     rule_length: 81
     matched_length: 81

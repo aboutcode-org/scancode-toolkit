@@ -40,8 +40,8 @@ copyright: |
   2005-2010 Joey Hess <joeyh@debian.org>
 matches:
   - score: '99.45'
-    start_line: 1
-    end_line: 20
+    start_line: 59
+    end_line: 78
     matcher: 3-seq
     rule_length: 183
     matched_length: 182

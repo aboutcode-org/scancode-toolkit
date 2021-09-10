@@ -10,8 +10,8 @@ copyright: |
   2018-2019 Philipp Huebner <debalance@debian.org>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 14
+    end_line: 14
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -26,8 +26,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: apache-2.0'
   - score: '100.0'
-    start_line: 1
-    end_line: 14
+    start_line: 15
+    end_line: 28
     matcher: 1-hash
     rule_length: 109
     matched_length: 109

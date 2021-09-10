@@ -26,7 +26,7 @@
       "licenses": [
         {
           "key": "unknown-license-reference",
-          "score": 27.0,
+          "score": 100.0,
           "name": "Unknown License file reference",
           "short_name": "Unknown License reference",
           "category": "Unstated License",
@@ -61,7 +61,7 @@
             "rule_length": 5,
             "matched_length": 5,
             "match_coverage": 100.0,
-            "rule_relevance": 27
+            "rule_relevance": 100
           },
           "matched_text": "license\": \"SEE LICENSE IN LICENSE."
         }

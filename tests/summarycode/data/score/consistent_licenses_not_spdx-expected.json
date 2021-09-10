@@ -86,7 +86,7 @@
       "licenses": [
         {
           "key": "mit-xfig",
-          "score": 100.0,
+          "score": 90.0,
           "name": "MIT Xfig Variant",
           "short_name": "MIT Xfig Variant",
           "category": "Permissive",
@@ -119,7 +119,7 @@
             "rule_length": 81,
             "matched_length": 81,
             "match_coverage": 100.0,
-            "rule_relevance": 100
+            "rule_relevance": 90
           }
         }
       ],
@@ -238,7 +238,7 @@
       "licenses": [
         {
           "key": "mit-xfig",
-          "score": 100.0,
+          "score": 90.0,
           "name": "MIT Xfig Variant",
           "short_name": "MIT Xfig Variant",
           "category": "Permissive",
@@ -271,7 +271,7 @@
             "rule_length": 81,
             "matched_length": 81,
             "match_coverage": 100.0,
-            "rule_relevance": 100
+            "rule_relevance": 90
           }
         }
       ],

@@ -1,4 +1,4 @@
-primary_license: (gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)
+primary_license: (gpl-1.0-plus AND gpl-1.0) OR artistic-perl-1.0
 declared_license:
   - GPL-1+ or Artistic
   - GPL-1+ or Artistic
@@ -223,227 +223,233 @@ declared_license:
   - CC0-1.0
   - RRA-KEEP-THIS-NOTICE
   - Artistic-dist
-license_expression: ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND
-  (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0)
-  AND mit AND (regexp AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND gpl-3.0-plus WITH bison-exception-2.2 AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0)
-  AND mit AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND unicode-dfs-2015
-  AND unicode AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND unicode-dfs-2015) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND mit AND ((gpl-1.0-plus AND
-  gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
-  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR
-  (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
-  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
-  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND bzip2-libbzip-2010 AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND zlib AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND
-  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR
-  artistic-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND
-  (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND (artistic-2.0 AND artistic-perl-1.0)
-  AND artistic-2.0 AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-2.0-plus AND gpl-2.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-2.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND
-  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR
-  artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
-  OR artistic-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-2.0-plus AND gpl-2.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-2.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND (mit OR (gpl-1.0-plus AND
-  gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (mit OR gpl-1.0-plus OR artistic-perl-1.0)
-  AND (mit OR (gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((artistic-perl-1.0 OR gpl-1.0-plus)
-  AND historical) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND
-  (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND
-  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR
-  artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND fsf-ap
-  AND mit AND mit AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND
-  (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-2.0 AND public-domain AND (artistic-2.0
-  AND public-domain-disclaimer)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND bsd-new
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
-  OR artistic-perl-1.0) AND mit AND mit AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
-  OR artistic-perl-1.0) AND public-domain) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+license_expression: ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND mit AND (regexp AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0))) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  gpl-3.0-plus WITH bison-exception-2.2 AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND mit AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND unicode-dfs-2015 AND unicode
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
   AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND (cc0-1.0
-  AND cc0-1.0) AND (cc0-1.0 OR openssl-ssleay OR apache-2.0) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (agpl-3.0 AND (artistic-perl-1.0
-  OR gpl-1.0-plus)) AND other-permissive AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0)
-  AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND bsd-original)
-  AND (bsd-new AND other-permissive AND (artistic-perl-1.0 OR gpl-1.0-plus)) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND unicode-dfs-2015 AND unicode AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND ((artistic-perl-1.0 OR gpl-1.0-plus) AND (artistic-perl-1.0 OR gpl-1.0-plus))
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
-  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND unicode-dfs-2015) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  mit AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND bzip2-libbzip-2010 AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND zlib AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  (artistic-perl-1.0 AND artistic-perl-1.0) AND artistic-2.0 AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-2.0-plus AND gpl-2.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-2.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-2.0-plus AND gpl-2.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-2.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  (mit OR (gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (mit
+  OR gpl-1.0-plus OR artistic-perl-1.0) AND (mit OR (gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (mit OR artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND ((artistic-perl-1.0 OR gpl-1.0-plus) AND historical) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND fsf-ap AND mit AND mit
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 AND public-domain AND
+  (artistic-2.0 AND public-domain-disclaimer)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND bsd-new AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND mit AND mit AND ((gpl-1.0-plus AND gpl-1.0) OR
+  (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus OR artistic-perl-1.0) AND public-domain) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND (cc0-1.0 AND cc0-1.0) AND cc0-1.0 AND ((gpl-1.0-plus AND gpl-1.0) OR
+  (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0)
+  AND other-permissive AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
+  (((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND bsd-original)
+  AND (bsd-new AND (gpl-1.0-plus OR artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND unicode-dfs-2015 AND unicode
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND ((artistic-perl-1.0 OR gpl-1.0-plus) AND (gpl-1.0-plus OR artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND
   artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
-  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 AND (gpl-1.0-plus OR artistic-perl-1.0)) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((artistic-perl-1.0
-  OR gpl-1.0-plus) AND (gpl-1.0-plus OR artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
-  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND bsd-new) AND ((artistic-perl-1.0 OR gpl-1.0-plus) AND bsd-new) AND ((gpl-1.0-plus AND
-  gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
-  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (warranty-disclaimer AND (gpl-1.0-plus OR artistic-perl-1.0)) AND
-  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-2.0
-  AND gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND (artistic-2.0 AND artistic-perl-1.0) AND artistic-1.0
-  AND bsd-new AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
   AND ((artistic-perl-1.0 OR gpl-1.0-plus) AND (artistic-perl-1.0 OR gpl-1.0-plus)) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND (artistic-2.0 AND artistic-perl-1.0) AND artistic-1.0
-  AND (public-domain AND public-domain AND public-domain AND public-domain) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus OR artistic-perl-1.0) AND public-domain)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-2.0
-  AND public-domain-disclaimer) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND
-  artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND fsf-ap
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
-  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0))
-  AND ((gpl-1.0-plus OR artistic-perl-1.0) AND public-domain) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
-  OR artistic-perl-1.0) AND other-copyleft AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND (((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND bsd-new) AND ((artistic-perl-1.0 OR gpl-1.0-plus)
+  AND bsd-new) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
   AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
-  OR (artistic-2.0 AND artistic-perl-1.0) OR artistic-dist-1.0) AND (artistic-2.0 AND (gpl-1.0-plus
-  OR artistic-perl-1.0)) AND artistic-dist-1.0 AND artistic-2.0 AND ((artistic-2.0 AND artistic-perl-1.0)
-  OR (gpl-1.0-plus AND gpl-1.0) OR artistic-dist-1.0) AND (artistic-2.0 AND public-domain AND
-  artistic-2.0) AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0 AND artistic-perl-1.0)) AND
-  mit) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-2.0
-  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND (artistic-perl-1.0 AND artistic-perl-1.0) AND
+  artistic-1.0 AND bsd-new AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND ((artistic-perl-1.0 OR gpl-1.0-plus) AND (artistic-perl-1.0 OR
+  gpl-1.0-plus)) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  (artistic-perl-1.0 AND artistic-perl-1.0) AND artistic-perl-1.0 AND (public-domain AND public-domain
+  AND public-domain AND public-domain) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND ((gpl-1.0-plus OR artistic-perl-1.0) AND public-domain) AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-2.0 AND public-domain-disclaimer)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND fsf-ap AND ((gpl-1.0-plus
+  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
+  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
+  OR artistic-perl-1.0) AND public-domain) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
+  OR artistic-perl-1.0) AND other-copyleft AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0) OR artistic-dist-1.0) AND (artistic-perl-1.0
+  OR artistic-dist-1.0 OR gpl-1.0-plus) AND artistic-dist-1.0 AND artistic-dist-1.0 AND ((artistic-perl-1.0
+  AND artistic-perl-1.0) OR (gpl-1.0-plus AND gpl-1.0) OR artistic-dist-1.0) AND (artistic-dist-1.0
+  OR gpl-1.0-plus) AND (((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
+  AND mit) AND (gpl-1.0-plus OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
 copyright: |
   Perl is Copyright (C) 1987-2021 by Larry Wall and others. All rights reserved.
   Copyright (c) 1996-2006, Nick Ing-Simmons
@@ -789,8 +795,8 @@ copyright: |
   or licensing information.
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 2025
+    end_line: 2025
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -805,8 +811,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-2.1'
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 2026
+    end_line: 2027
     matcher: 1-hash
     rule_length: 25
     matched_length: 25
@@ -823,8 +829,8 @@ matches:
       On Debian GNU/Linux systems, the complete text of the LGPL 2.1
       license can be found in `/usr/share/common-licenses/LGPL-2.1'.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 2029
+    end_line: 2029
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -839,8 +845,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-1+'
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 2030
+    end_line: 2031
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -857,8 +863,8 @@ matches:
       On Debian GNU/Linux systems, the complete text of the GNU General
       Public License can be found in `/usr/share/common-licenses/GPL-1'.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 2033
+    end_line: 2033
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -873,8 +879,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 2034
+    end_line: 2036
     matcher: 1-hash
     rule_length: 27
     matched_length: 27
@@ -891,16 +897,16 @@ matches:
       On Debian GNU/Linux systems, the complete text of version 2 of
       the GNU General Public License can be found in
       `/usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+  - score: '99.0'
+    start_line: 2038
+    end_line: 2038
     matcher: 1-hash
     rule_length: 2
     matched_length: 2
     match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: artistic-2.0_26.RULE
-    license_expression: artistic-2.0
+    rule_relevance: 99
+    identifier: artistic-perl-1.0_26.RULE
+    license_expression: artistic-perl-1.0
     is_license_text: no
     is_license_notice: no
     is_license_reference: no
@@ -908,8 +914,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: artistic'
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 2039
+    end_line: 2040
     matcher: 1-hash
     rule_length: 21
     matched_length: 21
@@ -926,8 +932,8 @@ matches:
       On Debian GNU/Linux systems, the complete text of the
       Artistic Licence can be found in `/usr/share/common-licenses/Artistic'.
   - score: '100.0'
-    start_line: 1
-    end_line: 182
+    start_line: 2043
+    end_line: 2224
     matcher: 1-hash
     rule_length: 1351
     matched_length: 1351
@@ -1124,8 +1130,8 @@ matches:
       INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE
       OF THE PACKAGE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 30
+    start_line: 2227
+    end_line: 2256
     matcher: 2-aho
     rule_length: 233
     matched_length: 233
@@ -1170,8 +1176,8 @@ matches:
        NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
        SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 15
+    start_line: 2262
+    end_line: 2276
     matcher: 1-hash
     rule_length: 132
     matched_length: 132
@@ -1201,8 +1207,8 @@ matches:
           misrepresented as being the original software.
        3. This notice may not be removed or altered from any source distribution.
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 2279
+    end_line: 2295
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -1234,8 +1240,8 @@ matches:
       FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
       DEALINGS IN THE SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 2298
+    end_line: 2320
     matcher: 1-hash
     rule_length: 213
     matched_length: 213
@@ -1273,8 +1279,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '96.49'
-    start_line: 1
-    end_line: 27
+    start_line: 2323
+    end_line: 2349
     matcher: 1-hash
     rule_length: 220
     matched_length: 220
@@ -1316,8 +1322,8 @@ matches:
       OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
       EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '99.78'
-    start_line: 2
-    end_line: 56
+    start_line: 2353
+    end_line: 2407
     matcher: 3-seq
     rule_length: 464
     matched_length: 463
@@ -1387,8 +1393,8 @@ matches:
            use or other dealings in these Data Files or Software without
            prior written authorization of the copyright holder.
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 2410
+    end_line: 2432
     matcher: 1-hash
     rule_length: 207
     matched_length: 207
@@ -1426,8 +1432,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 2435
+    end_line: 2457
     matcher: 1-hash
     rule_length: 213
     matched_length: 213
@@ -1465,8 +1471,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 13
+    start_line: 2460
+    end_line: 2472
     matcher: 1-hash
     rule_length: 88
     matched_length: 88
@@ -1494,8 +1500,8 @@ matches:
        3. Altered versions must be plainly marked as such, and must not
                be misrepresented as being the original software.
   - score: '100.0'
-    start_line: 1
-    end_line: 5
+    start_line: 2475
+    end_line: 2479
     matcher: 1-hash
     rule_length: 43
     matched_length: 43
@@ -1515,8 +1521,8 @@ matches:
       redistribute modified versions of this code with the name "Text::Tabs"
       unless it passes the unmodified Text::Tabs test suite.
   - score: '90.0'
-    start_line: 1
-    end_line: 2
+    start_line: 2482
+    end_line: 2483
     matcher: 1-hash
     rule_length: '19'
     matched_length: '19'
@@ -1533,8 +1539,8 @@ matches:
       Everyone is permitted to copy and distribute verbatim copies
       of this license document, but changing it is not allowed.
   - score: '100.0'
-    start_line: 4
-    end_line: 4
+    start_line: 2489
+    end_line: 2489
     matcher: 2-aho
     rule_length: 5
     matched_length: 5
@@ -1549,8 +1555,8 @@ matches:
     is_license_intro: no
     matched_text: placed in the public domain.
   - score: '100.0'
-    start_line: 9
-    end_line: 9
+    start_line: 2494
+    end_line: 2494
     matcher: 2-aho
     rule_length: 5
     matched_length: 5
@@ -1565,8 +1571,8 @@ matches:
     is_license_intro: no
     matched_text: is in the public domain,
   - score: '70.0'
-    start_line: 10
-    end_line: 10
+    start_line: 2495
+    end_line: 2495
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -1581,8 +1587,8 @@ matches:
     is_license_intro: no
     matched_text: public-domain
   - score: '70.0'
-    start_line: '19'
-    end_line: '19'
+    start_line: 2504
+    end_line: 2504
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -1597,8 +1603,8 @@ matches:
     is_license_intro: no
     matched_text: public  domain
   - score: '100.0'
-    start_line: 1
-    end_line: 25
+    start_line: 2508
+    end_line: 2532
     matcher: 1-hash
     rule_length: 208
     matched_length: 208
@@ -1638,8 +1644,8 @@ matches:
       This special exception was added by the Free Software Foundation in
       version 2.2 of Bison.
   - score: '100.0'
-    start_line: 1
-    end_line: 16
+    start_line: 2535
+    end_line: 2550
     matcher: 1-hash
     rule_length: 121
     matched_length: 121
@@ -1670,8 +1676,8 @@ matches:
          in the creation of the content, though an attribution to the author
          is not necessary.
   - score: '99.0'
-    start_line: 4
-    end_line: 29
+    start_line: 2556
+    end_line: 2581
     matcher: 2-aho
     rule_length: 217
     matched_length: 217
@@ -1712,8 +1718,8 @@ matches:
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 2583
+    end_line: 2583
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -1727,15 +1733,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: cc0-1.0'
-  - score: '99.38'
-    start_line: 1
-    end_line: 120
-    matcher: 3-seq
-    rule_length: 975
-    matched_length: 969
-    match_coverage: '99.38'
+  - score: '100.0'
+    start_line: 2584
+    end_line: 2703
+    matcher: 1-hash
+    rule_length: 970
+    matched_length: 970
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: cc0-1.0_116.RULE
+    identifier: cc0-1.0_155.RULE
     license_expression: cc0-1.0
     is_license_text: yes
     is_license_notice: no
@@ -1743,7 +1749,7 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      of Purpose
+      Statatement of Purpose
 
       The laws of most jurisdictions throughout the world automatically confer
       exclusive Copyright and Related Rights (defined below) upon the creator
@@ -1864,8 +1870,8 @@ matches:
          a party to this document and has no duty or obligation with respect
          to this CC0 or use of the Work.
   - score: '100.0'
-    start_line: 1
-    end_line: 4
+    start_line: 2710
+    end_line: 2713
     matcher: 1-hash
     rule_length: 35
     matched_length: 35
@@ -1884,8 +1890,8 @@ matches:
       this notice are preserved.  This file is offered as-is, without any
       warranty.
   - score: '100.0'
-    start_line: 1
-    end_line: 125
+    start_line: 2716
+    end_line: 2840
     matcher: 1-hash
     rule_length: 946
     matched_length: 946
@@ -2025,8 +2031,8 @@ matches:
 
                                       The End
   - score: '100.0'
-    start_line: 1
-    end_line: 8
+    start_line: 22
+    end_line: 29
     matcher: 2-aho
     rule_length: 49
     matched_length: 49
@@ -2049,8 +2055,8 @@ matches:
 
          b) the "Artistic License" which comes with Perl.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 49
+    end_line: 49
     matcher: 1-hash
     rule_length: 10
     matched_length: 10
@@ -2065,8 +2071,8 @@ matches:
     is_license_intro: no
     matched_text: This file is a part of Perl itself, licensed as above.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 56
+    end_line: 56
     matcher: 1-hash
     rule_length: 10
     matched_length: 10
@@ -2081,8 +2087,8 @@ matches:
     is_license_intro: no
     matched_text: This file is a part of Perl itself, licensed as above.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 64
+    end_line: 64
     matcher: 1-hash
     rule_length: 10
     matched_length: 10
@@ -2097,8 +2103,8 @@ matches:
     is_license_intro: no
     matched_text: This file is a part of Perl itself, licensed as above.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 74
+    end_line: 74
     matcher: 2-aho
     rule_length: 10
     matched_length: 10
@@ -2113,8 +2119,8 @@ matches:
     is_license_intro: no
     matched_text: This file is a part of Perl itself, licensed as above.
   - score: '100.0'
-    start_line: 4
-    end_line: 5
+    start_line: 105
+    end_line: 106
     matcher: 2-aho
     rule_length: 23
     matched_length: 23
@@ -2131,8 +2137,8 @@ matches:
       You may distribute under the terms of either the GNU General Public
        License or the Artistic License, as specified in the README file.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 118
+    end_line: 119
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2149,8 +2155,8 @@ matches:
       This program is free software; you may redistribute it
       and/or modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 3
-    end_line: 3
+    start_line: 147
+    end_line: 147
     matcher: 2-aho
     rule_length: 13
     matched_length: 13
@@ -2165,8 +2171,8 @@ matches:
     is_license_intro: no
     matched_text: For terms of use, see http://www.unicode.org/terms_of_use.html
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 157
+    end_line: 159
     matcher: 1-hash
     rule_length: 40
     matched_length: 40
@@ -2183,15 +2189,15 @@ matches:
       This library is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself, either Perl version 5.10.0 or,
       at your option, any later version of Perl 5 you may have available.
-  - score: '95.0'
-    start_line: 1
-    end_line: 2
-    matcher: 3-seq
-    rule_length: 20
+  - score: '100.0'
+    start_line: 167
+    end_line: 168
+    matcher: 1-hash
+    rule_length: '19'
     matched_length: '19'
-    match_coverage: '95.0'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_47.RULE
     license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -2202,8 +2208,8 @@ matches:
       This module is free software; you can redistribute and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 175
+    end_line: 176
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2220,8 +2226,8 @@ matches:
       This program is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 183
+    end_line: 183
     matcher: 1-hash
     rule_length: 11
     matched_length: 11
@@ -2236,8 +2242,8 @@ matches:
     is_license_intro: no
     matched_text: All files are licensed under the same terms as Perl itself.
   - score: '90.91'
-    start_line: 1
-    end_line: 1
+    start_line: '190'
+    end_line: '190'
     matcher: 1-hash
     rule_length: 10
     matched_length: 10
@@ -2252,8 +2258,8 @@ matches:
     is_license_intro: no
     matched_text: The [PerlUi] class is licensed under the same terms as Perl itself.
   - score: '91.67'
-    start_line: 1
-    end_line: 1
+    start_line: '198'
+    end_line: '198'
     matcher: 1-hash
     rule_length: 11
     matched_length: 11
@@ -2268,8 +2274,8 @@ matches:
     is_license_intro: no
     matched_text: The [Symbian] port is licensed under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 4
-    end_line: 5
+    start_line: 208
+    end_line: 209
     matcher: 2-aho
     rule_length: 15
     matched_length: 15
@@ -2286,8 +2292,8 @@ matches:
       It is assumed that the test code is licensed under the same terms
       as Perl.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 223
+    end_line: 224
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -2304,8 +2310,8 @@ matches:
       You may distribute under the terms of either the GNU General Public
       License or the Artistic License, as specified in the README file.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 233
+    end_line: 234
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2322,8 +2328,8 @@ matches:
       This program is free software; you may redistribute it
       and/or modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 241
+    end_line: 242
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -2340,8 +2346,8 @@ matches:
       You may distribute under the terms of either the GNU General Public
       License or the Artistic License, as specified in the README file.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 249
+    end_line: 250
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -2358,8 +2364,8 @@ matches:
       This is free software; you can redistribute it and/or modify it under the same
       terms as the Perl 5 programming language system itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 257
+    end_line: 258
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -2376,8 +2382,8 @@ matches:
       You may distribute under the terms of either the GNU General Public
       License or the Artistic License, as specified in the README file.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 267
+    end_line: 268
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -2394,8 +2400,8 @@ matches:
       You may distribute under the terms of either the GNU General Public
       License or the Artistic License, as specified in the README file.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 275
+    end_line: 275
     matcher: 1-hash
     rule_length: 10
     matched_length: 10
@@ -2409,25 +2415,27 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: This file is a part of Perl itself, licensed as above.
-  - score: '73.33'
-    start_line: 3
-    end_line: 3
-    matcher: 3-seq
-    rule_length: 15
-    matched_length: 11
-    match_coverage: '73.33'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
+  - score: '99.0'
+    start_line: 309
+    end_line: 310
+    matcher: 1-hash
+    rule_length: 24
+    matched_length: 24
+    match_coverage: '100.0'
+    rule_relevance: 99
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_52.RULE
     license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: It is assumed that [they] [are] licensed under the same terms as Perl
+    matched_text: |
+      There is no copyright or license information in these distributions.
+      It is assumed that they are licensed under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 316
+    end_line: 317
     matcher: 1-hash
     rule_length: '19'
     matched_length: '19'
@@ -2444,8 +2452,8 @@ matches:
       This library is free software; you may redistribute and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 330
+    end_line: 330
     matcher: 1-hash
     rule_length: 12
     matched_length: 12
@@ -2460,14 +2468,14 @@ matches:
     is_license_intro: no
     matched_text: This package has the same copyright and license as the perl core.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 336
+    end_line: 337
+    matcher: 1-hash
+    rule_length: 16
+    matched_length: 16
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_44.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
@@ -2475,33 +2483,17 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      under the
+      This module is free software, you may distribute it under the
       same terms as Perl itself.
   - score: '100.0'
-    start_line: 2
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
+    start_line: 345
+    end_line: 347
+    matcher: 1-hash
+    rule_length: 31
+    matched_length: 31
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_20.RULE
-    license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: under the same terms as Perl
-  - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_43.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
@@ -2509,11 +2501,30 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      under the
+      This is free software.  You may modify and/or redistribute this
+      code under the same terms as Perl 5.10 itself, or, at your option,
+      any later version of Perl 5.
+  - score: '100.0'
+    start_line: 355
+    end_line: 356
+    matcher: 1-hash
+    rule_length: 16
+    matched_length: 16
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_44.RULE
+    license_expression: gpl-1.0-plus OR artistic-perl-1.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This module is free software.  You may distribute it under the
       same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 362
+    end_line: 363
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2530,8 +2541,8 @@ matches:
       This program is free software; you can redistribute it
       and/or modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 382
+    end_line: 383
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2548,8 +2559,8 @@ matches:
       This program is free software; you can redistribute it
       and/or modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 395
+    end_line: 396
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2566,8 +2577,8 @@ matches:
       This library is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 402
+    end_line: 403
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2584,24 +2595,24 @@ matches:
       This program is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 411
+    end_line: 411
+    matcher: 1-hash
+    rule_length: 11
+    matched_length: 11
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_42.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl itself.
+    matched_text: You may redistribute this under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 419
+    end_line: 420
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -2618,8 +2629,8 @@ matches:
       This is free software; you can redistribute it and/or modify it under
       the same terms as the Perl 5 programming language system itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 431
+    end_line: 432
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -2636,8 +2647,8 @@ matches:
       This is free software; you can redistribute it and/or modify it under
       the same terms as the Perl 5 programming language system itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 439
+    end_line: 440
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -2654,8 +2665,8 @@ matches:
       This is free software; you can redistribute it and/or modify it under
       the same terms as the Perl 5 programming language system itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 447
+    end_line: 448
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -2672,8 +2683,8 @@ matches:
       This is free software; you can redistribute it and/or modify it under
       the same terms as the Perl 5 programming language system itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 454
+    end_line: 455
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2690,8 +2701,8 @@ matches:
       This program is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 465
+    end_line: 466
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2708,8 +2719,8 @@ matches:
       This program is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 475
+    end_line: 476
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2726,8 +2737,8 @@ matches:
       This program is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 484
+    end_line: 485
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2744,8 +2755,8 @@ matches:
       This library is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 494
+    end_line: 495
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2762,8 +2773,8 @@ matches:
       This library is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 502
+    end_line: 503
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2780,8 +2791,8 @@ matches:
       This library is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 509
+    end_line: 510
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2798,8 +2809,8 @@ matches:
       This library is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 516
+    end_line: 517
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -2816,8 +2827,8 @@ matches:
       This program is free software; you can redistribute it and/or modify it
       under the terms of the the Artistic License (2.0).
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 524
+    end_line: 525
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2834,8 +2845,8 @@ matches:
       This program is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 531
+    end_line: 532
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2852,8 +2863,8 @@ matches:
       This library is free software. You can redistribute it
       and/or modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 7
+    start_line: 539
+    end_line: 545
     matcher: 1-hash
     rule_length: 61
     matched_length: 61
@@ -2875,8 +2886,8 @@ matches:
       Free Software Foundation, or (3) any later version of the GNU General
       Public License.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 553
+    end_line: 554
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -2893,14 +2904,14 @@ matches:
       This is free software; you can redistribute it and/or modify it under
       the same terms as the Perl 5 programming language system itself.
   - score: '100.0'
-    start_line: 9
-    end_line: 11
+    start_line: 561
+    end_line: 570
     matcher: 2-aho
-    rule_length: 25
-    matched_length: 25
+    rule_length: 70
+    matched_length: 70
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_14.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_41.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
@@ -2908,12 +2919,19 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
+      There are no copyright or license notices in this distribution. It
+      is assumed that the copyright and license of Perl itself applies here
+      as well.
+
+      This is supported by the README of the separate CPAN distribution at
+      <https://metacpan.org/release/ExtUtils-Constant>, which states:
+
       You may distribute this work under the terms of either the GNU General
       Public License or the Artistic License, as specified in perl's README
       file.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 578
+    end_line: 579
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2930,8 +2948,8 @@ matches:
       This library is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 585
+    end_line: 586
     matcher: 1-hash
     rule_length: '19'
     matched_length: '19'
@@ -2948,8 +2966,8 @@ matches:
       This is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 600
+    end_line: 601
     matcher: 1-hash
     rule_length: '19'
     matched_length: '19'
@@ -2966,8 +2984,8 @@ matches:
       This library is free software; you may redistribute and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 609
+    end_line: 610
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -2984,8 +3002,8 @@ matches:
       This library is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 618
+    end_line: 619
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -3002,8 +3020,8 @@ matches:
       This is free software; you can redistribute it and/or modify it under
       the same terms as the Perl 5 programming language system itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 628
+    end_line: 629
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3020,8 +3038,8 @@ matches:
       This program is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 5
+    start_line: 636
+    end_line: 640
     matcher: 1-hash
     rule_length: 47
     matched_length: 47
@@ -3041,8 +3059,8 @@ matches:
       Foundation; either version 2 of the License, or (at your option) any
       later version.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 647
+    end_line: 648
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -3059,8 +3077,8 @@ matches:
       This is free software; you can redistribute it and/or modify it under
       the same terms as the Perl 5 programming language system itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 655
+    end_line: 656
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3077,8 +3095,8 @@ matches:
       This program is free software; you can redistribute it
       and/or modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 663
+    end_line: 664
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3095,8 +3113,8 @@ matches:
       This program is free software; you can redistribute
       it and/or modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 673
+    end_line: 674
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3113,8 +3131,8 @@ matches:
       This program is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 681
+    end_line: 682
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3131,8 +3149,8 @@ matches:
       This library is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 690
+    end_line: 691
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3149,8 +3167,8 @@ matches:
       This library is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 698
+    end_line: 699
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -3167,8 +3185,8 @@ matches:
       You may distribute under the terms of either the GNU General Public License
       or the Artistic License, as specified in the LICENCE file.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 706
+    end_line: 707
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3185,8 +3203,8 @@ matches:
       This library is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 717
+    end_line: 718
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3203,8 +3221,8 @@ matches:
       This program is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 724
+    end_line: 725
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3221,8 +3239,8 @@ matches:
       This program is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 732
+    end_line: 734
     matcher: 1-hash
     rule_length: 37
     matched_length: 37
@@ -3239,26 +3257,27 @@ matches:
       This software is released under the MIT license cited below.  Additionally,
       when this software is distributed with Perl Kit, Version 5, you may also
       redistribute it and/or modify it under the same terms as Perl itself.
-  - score: '66.67'
-    start_line: 2
-    end_line: 2
-    matcher: 3-seq
-    rule_length: 15
-    matched_length: 10
-    match_coverage: '66.67'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+  - score: '99.0'
+    start_line: 748
+    end_line: 749
+    matcher: 1-hash
+    rule_length: 21
+    matched_length: 21
+    match_coverage: '100.0'
+    rule_relevance: 99
+    identifier: mit_or_artistic-perl-1.0_or_gpl-1.0-plus_1.RULE
+    license_expression: mit OR artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: It is assumed that [these] [translations] [are] licensed under the same terms
-      as
+    matched_text: |
+      It is assumed that these translations are licensed under the same terms as
+      the rest of the Locale-Maketext-Simple distribution.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 755
+    end_line: 756
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3275,8 +3294,8 @@ matches:
       This library is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 5
+    start_line: 763
+    end_line: 767
     matcher: 2-aho
     rule_length: 34
     matched_length: 34
@@ -3296,8 +3315,8 @@ matches:
       You may copy and distribute this program under the same terms as
       Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 775
+    end_line: 776
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3314,8 +3333,8 @@ matches:
       This library is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 784
+    end_line: 785
     matcher: 2-aho
     rule_length: 20
     matched_length: 20
@@ -3332,8 +3351,8 @@ matches:
       This library is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 9
-    end_line: 18
+    start_line: 792
+    end_line: 801
     matcher: 2-aho
     rule_length: 87
     matched_length: 87
@@ -3358,8 +3377,8 @@ matches:
        OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",
        WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 809
+    end_line: 810
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3376,8 +3395,8 @@ matches:
       This library is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 817
+    end_line: 818
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3394,8 +3413,8 @@ matches:
       This module is free software. It may be used, redistributed
       and/or modified under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 825
+    end_line: 825
     matcher: 1-hash
     rule_length: 11
     matched_length: 11
@@ -3410,8 +3429,8 @@ matches:
     is_license_intro: no
     matched_text: This module is released under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 832
+    end_line: 833
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3428,8 +3447,8 @@ matches:
       This library is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 840
+    end_line: 841
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -3446,8 +3465,8 @@ matches:
       This is free software; you can redistribute it and/or modify it under
       the same terms as the Perl 5 programming language system itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 848
+    end_line: 850
     matcher: 2-aho
     rule_length: 18
     matched_length: 18
@@ -3465,8 +3484,8 @@ matches:
       you can redistribute it and/or modify it under the same terms
       as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 857
+    end_line: 858
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3483,8 +3502,8 @@ matches:
       This library is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 866
+    end_line: 867
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3501,8 +3520,8 @@ matches:
       This program is free software; you may redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 875
+    end_line: 876
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3519,8 +3538,8 @@ matches:
       This program is free software; you may redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 919
+    end_line: 920
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3537,8 +3556,8 @@ matches:
       This program is free software; you may redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 927
+    end_line: 928
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3555,8 +3574,8 @@ matches:
       This library is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 935
+    end_line: 936
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3572,25 +3591,30 @@ matches:
     matched_text: |
       This library is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
-  - score: '11.0'
-    start_line: 9
-    end_line: 9
+  - score: '100.0'
+    start_line: 950
+    end_line: 954
     matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+    rule_length: 34
+    matched_length: 34
     match_coverage: '100.0'
-    rule_relevance: 11
-    identifier: artistic-2.0_18.RULE
-    license_expression: artistic-2.0
+    rule_relevance: 100
+    identifier: artistic-perl-1.0_12.RULE
+    license_expression: artistic-perl-1.0
     is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
+    is_license_notice: yes
+    is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: Artistic License.
+    matched_text: |
+      The license notice in the document is:
+
+       When included as an integrated part of the Standard Distribution
+       of Perl or of its documentation (printed or otherwise), this works is
+       covered under Perl's Artistic License.
   - score: '100.0'
-    start_line: 12
-    end_line: 16
+    start_line: 957
+    end_line: 961
     matcher: 2-aho
     rule_length: 56
     matched_length: 56
@@ -3610,8 +3634,8 @@ matches:
        see fit.  A simple comment in the code giving credit to the FAQ would
        be courteous but is not required.
   - score: '100.0'
-    start_line: 20
-    end_line: 22
+    start_line: 965
+    end_line: 967
     matcher: 2-aho
     rule_length: 39
     matched_length: 39
@@ -3629,8 +3653,8 @@ matches:
        examples in all the perlfaq documents are in the public domain. Use
        them as you see fit (and at your own risk with no warranty from anyone).
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 975
+    end_line: 977
     matcher: 2-aho
     rule_length: 18
     matched_length: 18
@@ -3648,8 +3672,8 @@ matches:
       you can redistribute it and/or modify it under the same terms
       as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 984
+    end_line: 985
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3666,8 +3690,8 @@ matches:
       This program is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 992
+    end_line: 993
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3684,8 +3708,8 @@ matches:
       This program is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1008
+    end_line: 1009
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3702,14 +3726,14 @@ matches:
       This program is free software; you may redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1029
+    end_line: 1030
+    matcher: 1-hash
+    rule_length: 18
+    matched_length: 18
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_40.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
@@ -3717,11 +3741,11 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      under
+      This software is free software and can be modified and distributed under
       the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1037
+    end_line: 1038
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3738,8 +3762,8 @@ matches:
       This module is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1045
+    end_line: 1046
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3756,8 +3780,8 @@ matches:
       This program is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1054
+    end_line: 1055
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3774,8 +3798,8 @@ matches:
       This program is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1063
+    end_line: 1064
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3792,8 +3816,8 @@ matches:
       This program is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1072
+    end_line: 1073
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3810,8 +3834,8 @@ matches:
       This program is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1080
+    end_line: 1081
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3828,8 +3852,8 @@ matches:
       This program is free software; you can redistribute it
       and/or modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1096
+    end_line: 1097
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3846,14 +3870,14 @@ matches:
       This program is free software; you can redistribute it
       and/or modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1104
+    end_line: 1105
     matcher: 2-aho
-    rule_length: 15
-    matched_length: 15
+    rule_length: '19'
+    matched_length: '19'
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_6.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
@@ -3861,11 +3885,11 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      you can redistribute it and/or modify it
+      This documentation is free; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 4
-    end_line: 8
+    start_line: 1107
+    end_line: 1111
     matcher: 2-aho
     rule_length: 53
     matched_length: 53
@@ -3885,8 +3909,8 @@ matches:
       or for profit as you see fit.  A simple comment in the code giving
       credit would be courteous but is not required.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1119
+    end_line: 1120
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3903,8 +3927,8 @@ matches:
       This program is free software; you can redistribute it
       and/or modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1126
+    end_line: 1127
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3920,27 +3944,28 @@ matches:
     matched_text: |
       This program is free software; you can redistribute it
       and/or modify it under the same terms as Perl itself.
-  - score: '12.7'
-    start_line: 2
-    end_line: 3
-    matcher: 3-seq
-    rule_length: 63
-    matched_length: 8
-    match_coverage: '12.7'
+  - score: '100.0'
+    start_line: 1138
+    end_line: 1140
+    matcher: 1-hash
+    rule_length: 29
+    matched_length: 29
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: cc0-1.0_or_openssl-ssleay_or_apache-2.0_6.RULE
-    license_expression: cc0-1.0 OR openssl-ssleay OR apache-2.0
+    identifier: cc0-1.0_154.RULE
+    license_expression: cc0-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      http://creativecommons.org/publicdomain/zero/1.0/
-      [and] [the] [full] license
+      The file links to http://creativecommons.org/publicdomain/zero/1.0/
+      and the full license text as retrieved from there can be found at the
+      end of this file.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1148
+    end_line: 1149
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -3956,53 +3981,35 @@ matches:
     matched_text: |
       This module is free software. It may be used, redistributed and/or
       modified under the same terms as Perl itself.
-  - score: '11.84'
-    start_line: 2
-    end_line: 5
-    matcher: 3-seq
-    rule_length: 76
-    matched_length: 9
-    match_coverage: '11.84'
-    rule_relevance: 100
-    identifier: agpl-3.0_209.RULE
-    license_expression: agpl-3.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      notices this [distribution].
-
-      [This] [library] [is] [free] [software]; [you] [may] redistribute and/or modify it
-      under the
-  - score: '100.0'
-    start_line: 4
-    end_line: 5
-    matcher: 2-aho
-    rule_length: '19'
-    matched_length: '19'
+  - score: '99.0'
+    start_line: 1156
+    end_line: 1159
+    matcher: 1-hash
+    rule_length: 26
+    matched_length: 26
     match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    rule_relevance: 99
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_38.RULE
+    license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
+      There are no copyright notices this distribution.
+
       This library is free software; you may redistribute and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 20
-    matched_length: 20
+    start_line: 1180
+    end_line: 1184
+    matcher: 1-hash
+    rule_length: 33
+    matched_length: 33
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_37.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
@@ -4012,9 +4019,12 @@ matches:
     matched_text: |
       This program is free software; you may redistribute it and/or modify
       it under the same terms as Perl itself.
+      ----------------------------------------
+      These distributions include no copyright notices but have
+      the same explicit licensing information.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1191
+    end_line: 1192
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -4031,14 +4041,14 @@ matches:
       This is free software; you can redistribute it and/or modify it under
       the same terms as the Perl 5 programming language system itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
+    start_line: 1198
+    end_line: 1199
+    matcher: 1-hash
+    rule_length: 15
+    matched_length: 15
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_20.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_35.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
@@ -4046,61 +4056,45 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      under the same
+      This module is free software, you may distribute it under the same
       terms as Perl.
-  - score: '84.86'
-    start_line: 2
-    end_line: 2
-    matcher: 3-seq
-    rule_length: 6
-    matched_length: 6
+  - score: '99.0'
+    start_line: 1208
+    end_line: 1208
+    matcher: 2-aho
+    rule_length: 7
+    matched_length: 7
     match_coverage: '100.0'
     rule_relevance: 99
-    identifier: bsd-new_242.RULE
+    identifier: bsd-new_1065.RULE
     license_expression: bsd-new
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: is licensed under the BSD-[like] license
-  - score: '11.0'
-    start_line: 2
-    end_line: 2
+    matched_text: is licensed under the BSD-like license
+  - score: '70.0'
+    start_line: 1209
+    end_line: 1210
     matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+    rule_length: '19'
+    matched_length: '19'
     match_coverage: '100.0'
-    rule_relevance: 11
-    identifier: other-permissive_16.RULE
-    license_expression: other-permissive
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: BSD-like
-  - score: '73.33'
-    start_line: 3
-    end_line: 4
-    matcher: 3-seq
-    rule_length: 15
-    matched_length: 11
-    match_coverage: '73.33'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    rule_relevance: 70
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_34.RULE
+    license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      It is assumed that the [other] [parts] [are] licensed under the same
-      terms as
+      It is assumed that the other parts are licensed under the same
+      terms as the rest of the distribution.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1218
+    end_line: 1219
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4117,8 +4111,8 @@ matches:
       This module is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1226
+    end_line: 1226
     matcher: 2-aho
     rule_length: 13
     matched_length: 13
@@ -4133,8 +4127,8 @@ matches:
     is_license_intro: no
     matched_text: For terms of use, see http://www.unicode.org/terms_of_use.html
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1236
+    end_line: 1237
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4151,15 +4145,15 @@ matches:
       This module is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 6
-    end_line: 7
+    start_line: 1248
+    end_line: 1252
     matcher: 2-aho
-    rule_length: 20
-    matched_length: 20
+    rule_length: 40
+    matched_length: 40
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_17.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_32.RULE
+    license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -4168,27 +4162,12 @@ matches:
     matched_text: |
       This module is free software; you may redistribute it and/or modify it
       under the same terms as Perl itself.
-  - score: '80.0'
-    start_line: 9
-    end_line: 10
-    matcher: 3-seq
-    rule_length: 10
-    matched_length: 8
-    match_coverage: '80.0'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_30.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      licensed under the same terms
-      as Perl itself
+
+      The "Perl for Win32" source code was licensed under the same terms
+      as Perl itself and contained this copyright notice:
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1262
+    end_line: 1263
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4205,8 +4184,8 @@ matches:
       This module is free software. It may be used, redistributed
       and/or modified under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1271
+    end_line: 1272
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4223,8 +4202,8 @@ matches:
       This module is free software. It may be used, redistributed
       and/or modified under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1279
+    end_line: 1280
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4241,8 +4220,8 @@ matches:
       This program is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1288
+    end_line: 1289
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4259,8 +4238,8 @@ matches:
       This library is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1297
+    end_line: 1298
     matcher: 2-aho
     rule_length: 20
     matched_length: 20
@@ -4277,8 +4256,26 @@ matches:
       This library is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1300
+    end_line: 1301
+    matcher: 2-aho
+    rule_length: 11
+    matched_length: 11
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_31.RULE
+    license_expression: gpl-1.0-plus OR artistic-perl-1.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Perl 5
+      Porters, which was released under the same license terms.
+  - score: '100.0'
+    start_line: 1308
+    end_line: 1309
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4295,8 +4292,8 @@ matches:
       This module is free software. It may be used, redistributed
       and/or modified under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1315
+    end_line: 1316
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -4313,8 +4310,8 @@ matches:
       This is free software; you can redistribute it and/or modify it under
       the same terms as the Perl 5 programming language system itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1324
+    end_line: 1325
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4330,43 +4327,27 @@ matches:
     matched_text: |
       This library is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
-  - score: '15.0'
-    start_line: 1
-    end_line: 1
-    matcher: 3-seq
-    rule_length: 40
-    matched_length: 6
-    match_coverage: '15.0'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_perl5_2.RULE
-    license_expression: artistic-perl-1.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: You can redistribute and/or modify
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1332
+    end_line: 1333
+    matcher: 1-hash
+    rule_length: 15
+    matched_length: 15
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
-    license_expression: gpl-1.0-plus OR artistic-perl-1.0
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_48.RULE
+    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      under the same terms
+      You can redistribute and/or modify this document under the same terms
       as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1340
+    end_line: 1341
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4382,15 +4363,15 @@ matches:
     matched_text: |
       This program is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
-  - score: '34.85'
-    start_line: 1
-    end_line: 5
-    matcher: 3-seq
-    rule_length: 66
-    matched_length: 23
-    match_coverage: '34.85'
+  - score: '100.0'
+    start_line: 1349
+    end_line: 1350
+    matcher: 2-aho
+    rule_length: 20
+    matched_length: 20
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_2.RULE
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
     license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -4400,28 +4381,28 @@ matches:
     matched_text: |
       This program is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
-
-      [The] [atmark]() [implementation]: [Copyright] [2001], [Lincoln] [Stein] <[lstein]@[cshl].[org]>.
-      [This] [module] is distributed under
   - score: '100.0'
-    start_line: 5
-    end_line: 5
+    start_line: 1353
+    end_line: 1355
     matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    rule_length: 27
+    matched_length: 27
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
-    license_expression: gpl-1.0-plus OR artistic-perl-1.0
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_46.RULE
+    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl itself.
+    matched_text: |
+      This module is distributed under the same terms as Perl itself.
+      Feel free to use, modify and redistribute it as long as you retain
+      the correct attribution.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1361
+    end_line: 1361
     matcher: 1-hash
     rule_length: 12
     matched_length: 12
@@ -4436,8 +4417,8 @@ matches:
     is_license_intro: no
     matched_text: This package has the same copyright and license as the perl core.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1368
+    end_line: 1369
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4454,24 +4435,24 @@ matches:
       This program is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1375
+    end_line: 1375
+    matcher: 1-hash
+    rule_length: 12
+    matched_length: 12
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl itself.
+    matched_text: This document may be distributed under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1382
+    end_line: 1383
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4488,24 +4469,24 @@ matches:
       This program is free software; you may redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1390
+    end_line: 1390
+    matcher: 1-hash
+    rule_length: 11
+    matched_length: 11
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_29.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as perl itself.
+    matched_text: This program is distributed under the same terms as perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1397
+    end_line: 1398
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4522,8 +4503,8 @@ matches:
       This module is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1409
+    end_line: 1410
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4540,8 +4521,8 @@ matches:
       This program is free software; you may redistribute it and/or
       modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1417
+    end_line: 1418
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4558,44 +4539,31 @@ matches:
       This program is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 4
-    end_line: 5
+    start_line: 1427
+    end_line: 1433
     matcher: 2-aho
-    rule_length: 20
-    matched_length: 20
+    rule_length: 56
+    matched_length: 56
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_and_bsd-new_2.RULE
+    license_expression: (artistic-perl-1.0 OR gpl-1.0-plus) AND bsd-new
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      This program is free software; you can redistribute it and/or modify
+      The main license applies to most of the code:
+
+       This program is free software; you can redistribute it and/or modify
        it under the same terms as Perl itself.
-  - score: '90.91'
-    start_line: 7
-    end_line: 8
-    matcher: 3-seq
-    rule_length: 10
-    matched_length: 10
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_763.RULE
-    license_expression: bsd-new
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      licensed
-      under the terms of the "BSD-3-clause-[GENERIC]" license
+
+      but portions of it have been taken from a BSD variant and are licensed
+      under the terms of the "BSD-3-clause-GENERIC" license included in this file.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1456
+    end_line: 1457
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4611,15 +4579,15 @@ matches:
     matched_text: |
       This library is free software; you can redistribute it and/or modify it
       under the same terms as Perl itself.
-  - score: '95.0'
-    start_line: 1
-    end_line: 2
-    matcher: 3-seq
-    rule_length: 20
+  - score: '100.0'
+    start_line: 1467
+    end_line: 1468
+    matcher: 2-aho
+    rule_length: '19'
     matched_length: '19'
-    match_coverage: '95.0'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_45.RULE
     license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -4630,56 +4598,62 @@ matches:
       This program is free software; you can redistribute it and/or modify
       it under the same terms as Perl
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
+    start_line: 1476
+    end_line: 1477
+    matcher: 1-hash
+    rule_length: 22
+    matched_length: 22
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_20.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl
+    matched_text: |
+      You may redistribute only under the same terms as Perl 5, as specified
+      in the README file that comes with the distribution.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
+    start_line: 1487
+    end_line: 1488
+    matcher: 1-hash
+    rule_length: 22
+    matched_length: 22
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_20.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl
+    matched_text: |
+      You may redistribute only under the same terms as Perl 5, as specified
+      in the README file that comes with the distribution.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
+    start_line: 1497
+    end_line: 1498
+    matcher: 1-hash
+    rule_length: 22
+    matched_length: 22
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_20.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl
+    matched_text: |
+      You may redistribute only under the same terms as Perl 5, as specified
+      in the README file that comes with the distribution.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1517
+    end_line: 1518
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -4696,44 +4670,27 @@ matches:
       You may distribute under the terms of either the GNU General Public
       License or the Artistic License, as specified in the README file.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 8
-    matched_length: 8
+    start_line: 1527
+    end_line: 1529
+    matcher: 1-hash
+    rule_length: 30
+    matched_length: 30
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: warranty-disclaimer_50.RULE
-    license_expression: warranty-disclaimer
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_44.RULE
+    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      provided "as is" without express
-      or implied warranty.
-  - score: '75.0'
-    start_line: 2
-    end_line: 3
-    matcher: 3-seq
-    rule_length: 20
-    matched_length: 15
-    match_coverage: '75.0'
-    rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
-    license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      It may be used, redistributed and/or modified
+      This package is free software and is provided "as is" without express
+      or implied warranty.  It may be used, redistributed and/or modified
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1539
+    end_line: 1540
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4750,8 +4707,8 @@ matches:
       This program is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1547
+    end_line: 1548
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4768,44 +4725,8 @@ matches:
       This program is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 1-hash
-    rule_length: 23
-    matched_length: 23
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      You may distribute under the terms of either the GNU General Public
-      License or the Artistic License, as specified in the README file.
-  - score: '80.0'
-    start_line: 1
-    end_line: 2
-    matcher: 3-seq
-    rule_length: 15
-    matched_length: 12
-    match_coverage: '80.0'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      It is assumed that [this]
-      [distribution] is licensed under the same terms as Perl
-  - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1556
+    end_line: 1557
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -4822,14 +4743,50 @@ matches:
       You may distribute under the terms of either the GNU General Public
       License or the Artistic License, as specified in the README file.
   - score: '95.0'
-    start_line: 1
-    end_line: 2
-    matcher: 3-seq
-    rule_length: 20
-    matched_length: '19'
-    match_coverage: '95.0'
+    start_line: 1566
+    end_line: 1567
+    matcher: 1-hash
+    rule_length: 21
+    matched_length: 21
+    match_coverage: '100.0'
+    rule_relevance: 95
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_42.RULE
+    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      There is no license information included. It is assumed that this
+      distribution is licensed under the same terms as Perl itself.
+  - score: '100.0'
+    start_line: 1574
+    end_line: 1575
+    matcher: 1-hash
+    rule_length: 23
+    matched_length: 23
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      You may distribute under the terms of either the GNU General Public
+      License or the Artistic License, as specified in the README file.
+  - score: '100.0'
+    start_line: 1582
+    end_line: 1583
+    matcher: 1-hash
+    rule_length: '19'
+    matched_length: '19'
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_49.RULE
     license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -4840,8 +4797,8 @@ matches:
       This program is free software; you can redistribute and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1590
+    end_line: 1591
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4857,15 +4814,15 @@ matches:
     matched_text: |
       This program is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
-  - score: '80.0'
-    start_line: 3
-    end_line: 4
-    matcher: 3-seq
-    rule_length: 15
-    matched_length: 12
-    match_coverage: '80.0'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
+  - score: '95.0'
+    start_line: 1598
+    end_line: 1600
+    matcher: 1-hash
+    rule_length: 29
+    matched_length: 29
+    match_coverage: '100.0'
+    rule_relevance: 95
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_41.RULE
     license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -4873,27 +4830,28 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      It is assumed that [it] is licensed under
-      the same terms as Perl
-  - score: '80.0'
-    start_line: 2
-    end_line: 2
-    matcher: 3-seq
+      There is no license information included that clearly applies to the
+      whole of this distribution. It is assumed that it is licensed under
+      the same terms as Perl itself.
+  - score: '95.0'
+    start_line: 1609
+    end_line: 1609
+    matcher: 1-hash
     rule_length: 15
-    matched_length: 12
-    match_coverage: '80.0'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
+    matched_length: 15
+    match_coverage: '100.0'
+    rule_relevance: 95
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_40.RULE
     license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: It is assumed that [this] [file] is licensed under the same terms as Perl
+    matched_text: It is assumed that this file is licensed under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1616
+    end_line: 1617
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -4910,40 +4868,27 @@ matches:
       You may distribute under the terms of either the GNU General Public
       License or the Artistic License, as specified in the README file.
   - score: '100.0'
-    start_line: 4
-    end_line: 4
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+    start_line: 1624
+    end_line: 1626
+    matcher: 1-hash
+    rule_length: 11
+    matched_length: 11
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: artistic-2.0_26.RULE
-    license_expression: artistic-2.0
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_25.RULE
+    license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
-    is_license_notice: no
+    is_license_notice: yes
     is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License:     Artistic/'
-  - score: '50.0'
-    start_line: 4
-    end_line: 4
-    matcher: 2-aho
-    rule_length: 1
-    matched_length: 1
-    match_coverage: '100.0'
-    rule_relevance: 50
-    identifier: gpl_bare_word_only.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text: GPL
+    matched_text: |
+      The license in the file is specified as
+
+       License:     Artistic/GPL
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1633
+    end_line: 1634
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -4960,8 +4905,8 @@ matches:
       This program is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '90.0'
-    start_line: 2
-    end_line: 2
+    start_line: 1641
+    end_line: 1641
     matcher: 2-aho
     rule_length: 3
     matched_length: 3
@@ -4975,31 +4920,15 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: the artistic license.
-  - score: '80.0'
-    start_line: 3
-    end_line: 3
-    matcher: 3-seq
-    rule_length: 15
-    matched_length: 12
-    match_coverage: '80.0'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: It is assumed that [it] is licensed under the same terms as Perl
-  - score: '80.0'
-    start_line: 2
-    end_line: 3
-    matcher: 3-seq
-    rule_length: 15
-    matched_length: 12
-    match_coverage: '80.0'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
+  - score: '95.0'
+    start_line: 1661
+    end_line: 1662
+    matcher: 1-hash
+    rule_length: 22
+    matched_length: 22
+    match_coverage: '100.0'
+    rule_relevance: 95
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_39.RULE
     license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -5007,11 +4936,29 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      it is assumed that [this] [file] is licensed under the same terms
-      as Perl
+      There is no license information in this distribution.
+      It is assumed that it is licensed under the same terms as Perl itself.
+  - score: '95.0'
+    start_line: 1670
+    end_line: 1671
+    matcher: 2-aho
+    rule_length: 17
+    matched_length: 17
+    match_coverage: '100.0'
+    rule_relevance: 95
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_38.RULE
+    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      As above, it is assumed that this file is licensed under the same terms
+      as Perl itself.
   - score: '100.0'
-    start_line: 11
-    end_line: 12
+    start_line: 1679
+    end_line: 1680
     matcher: 2-aho
     rule_length: 20
     matched_length: 20
@@ -5028,15 +4975,15 @@ matches:
       This library is free software; you can redistribute it and/or
        modify it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 20
-    matched_length: 20
+    start_line: 1687
+    end_line: 1689
+    matcher: 1-hash
+    rule_length: 40
+    matched_length: 40
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_23.RULE
+    license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -5044,80 +4991,11 @@ matches:
     is_license_intro: no
     matched_text: |
       This library is free software; you can redistribute it and/or modify
-      it under the same terms as Perl itself,
+      it under the same terms as Perl itself, either Perl version 5.8.7 or,
+      at your option, any later version of Perl 5 you may have available.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 1-hash
-    rule_length: 20
-    matched_length: 20
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This library is free software; you can redistribute it and/or modify
-      it under the same terms as Perl itself.
-  - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 1-hash
-    rule_length: 23
-    matched_length: 23
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      You may distribute under the terms of either the GNU General Public
-      License or the Artistic License, as specified in the README file.
-  - score: '90.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: artistic-1.0_11.RULE
-    license_expression: artistic-1.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: the Artistic License.
-  - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 1-hash
-    rule_length: 23
-    matched_length: 23
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      You may distribute under the terms of either the GNU General Public
-      License or the Artistic License, as specified in the README file.
-  - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1696
+    end_line: 1697
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -5134,8 +5012,78 @@ matches:
       This library is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1705
+    end_line: 1706
+    matcher: 1-hash
+    rule_length: 23
+    matched_length: 23
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      You may distribute under the terms of either the GNU General Public
+      License or the Artistic License, as specified in the README file.
+  - score: '99.0'
+    start_line: 1712
+    end_line: 1712
+    matcher: 1-hash
+    rule_length: 8
+    matched_length: 8
+    match_coverage: '100.0'
+    rule_relevance: 99
+    identifier: artistic-perl-1.0_7.RULE
+    license_expression: artistic-perl-1.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: This program is distributed under the Artistic License.
+  - score: '100.0'
+    start_line: 1723
+    end_line: 1724
+    matcher: 1-hash
+    rule_length: 23
+    matched_length: 23
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      You may distribute under the terms of either the GNU General Public
+      License or the Artistic License, as specified in the README file.
+  - score: '100.0'
+    start_line: 1734
+    end_line: 1735
+    matcher: 1-hash
+    rule_length: 20
+    matched_length: 20
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This library is free software; you can redistribute it and/or modify
+      it under the same terms as Perl itself.
+  - score: '100.0'
+    start_line: 1742
+    end_line: 1743
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -5152,30 +5100,30 @@ matches:
       This program is free software; you can redistribute it and/or modify
       it under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1761
+    end_line: 1761
+    matcher: 1-hash
+    rule_length: 12
+    matched_length: 12
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl itself.
+    matched_text: This document may be distributed under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1768
+    end_line: 1769
+    matcher: 1-hash
+    rule_length: 14
+    matched_length: 14
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_28.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
@@ -5183,17 +5131,17 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      under the same terms as Perl
+      You can use and redistribute this document under the same terms as Perl
       itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1778
+    end_line: 1779
     matcher: 2-aho
-    rule_length: 15
-    matched_length: 15
+    rule_length: '19'
+    matched_length: '19'
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_6.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
@@ -5201,11 +5149,11 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      you can redistribute it and/or modify it
+      This documentation is free; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 4
-    end_line: 8
+    start_line: 1781
+    end_line: 1785
     matcher: 2-aho
     rule_length: 56
     matched_length: 56
@@ -5225,8 +5173,8 @@ matches:
       see fit. A simple comment in the code giving credit to the FAQ would
       be courteous but is not required.
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 1794
+    end_line: 1796
     matcher: 1-hash
     rule_length: 39
     matched_length: 39
@@ -5244,56 +5192,56 @@ matches:
       examples in all the perlfaq documents are in the public domain. Use
       them as you see fit (and at your own risk with no warranty from anyone).
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1805
+    end_line: 1805
+    matcher: 1-hash
+    rule_length: 12
+    matched_length: 12
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl itself.
+    matched_text: This document may be distributed under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1814
+    end_line: 1814
+    matcher: 1-hash
+    rule_length: 12
+    matched_length: 12
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl itself.
+    matched_text: This document may be distributed under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1821
+    end_line: 1821
+    matcher: 1-hash
+    rule_length: 12
+    matched_length: 12
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl itself.
+    matched_text: This document may be distributed under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1836
+    end_line: 1837
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -5310,14 +5258,14 @@ matches:
       This program is free software; you can redistribute it and/or modify it under
       the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1844
+    end_line: 1845
     matcher: 2-aho
-    rule_length: 15
-    matched_length: 15
+    rule_length: '19'
+    matched_length: '19'
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_6.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
@@ -5325,11 +5273,11 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      you can redistribute it and/or modify it
+      This documentation is free; you can redistribute it and/or modify it
       under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 4
-    end_line: 8
+    start_line: 1847
+    end_line: 1851
     matcher: 2-aho
     rule_length: 53
     matched_length: 53
@@ -5349,56 +5297,56 @@ matches:
       as you see fit.  A simple comment in the code giving credit would be
       courteous but is not required.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1861
+    end_line: 1861
+    matcher: 1-hash
+    rule_length: 12
+    matched_length: 12
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl itself.
+    matched_text: This document may be distributed under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1868
+    end_line: 1868
+    matcher: 1-hash
+    rule_length: 12
+    matched_length: 12
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl itself.
+    matched_text: This document may be distributed under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1875
+    end_line: 1875
+    matcher: 1-hash
+    rule_length: 12
+    matched_length: 12
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_19.RULE
+    identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
     license_expression: gpl-1.0-plus OR artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the same terms as Perl itself.
+    matched_text: This document may be distributed under the same terms as Perl itself.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 1891
+    end_line: 1892
     matcher: 1-hash
     rule_length: 20
     matched_length: 20
@@ -5414,114 +5362,101 @@ matches:
     matched_text: |
       This program is free software; you can redistribute it and/or
       modify it under the same terms as Perl itself.
-  - score: '21.28'
-    start_line: 17
-    end_line: '19'
-    matcher: 3-seq
-    rule_length: 47
-    matched_length: 10
-    match_coverage: '21.28'
+  - score: '100.0'
+    start_line: '1913'
+    end_line: '1928'
+    matcher: 2-aho
+    rule_length: 103
+    matched_length: 103
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: artistic-2.0_4.RULE
-    license_expression: artistic-2.0
+    identifier: artistic-perl-1.0_or_artistic-dist-1.0_or_gpl-1.0-plus_2.RULE
+    license_expression: artistic-perl-1.0 OR artistic-dist-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      the "Artistic License" which comes with Perl, [or]
+      You may distribute the files contained in this distribution
+      under the terms of either
 
-         [b]) the "Artistic License"
-  - score: '57.14'
-    start_line: 21
-    end_line: 26
-    matcher: 3-seq
-    rule_length: 49
-    matched_length: 28
-    match_coverage: '57.14'
-    rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_17.RULE
-    license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      the GNU General Public License as published by the Free
+         a) the "Artistic License" which comes with Perl, or
+
+         b) the "Artistic License" which comes with dist, or
+
+         c) the GNU General Public License as published by the Free
          Software Foundation; either version 1, or (at your option) any
-         later version ([see] [the] [file] "[Copying]" [that] [comes] [with] [the]
-         [Perl] [distribution]).
+         later version (see the file "Copying" that comes with the
+         Perl distribution).
 
-      [The] [full] [text] [of] the "Artistic License" which comes with
-  - score: '83.33'
-    start_line: 2
-    end_line: 2
-    matcher: 3-seq
-    rule_length: 5
-    matched_length: 5
+      The full text of the "Artistic License" which comes with dist
+      differs slightly from the one that is in /usr/share/common-licenses
+      on Debian systems, and can be found later in this file under the
+      "Artistic-dist" tag.
+  - score: '100.0'
+    start_line: '1942'
+    end_line: '1944'
+    matcher: 2-aho
+    rule_length: 21
+    matched_length: 21
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: artistic-2.0_31.RULE
-    license_expression: artistic-2.0
+    identifier: artistic-dist-1.0_3.RULE
+    license_expression: artistic-dist-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: licensed under the [modified] Artistic license
-  - score: '11.0'
-    start_line: 6
-    end_line: 6
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 11
-    identifier: artistic-2.0_18.RULE
-    license_expression: artistic-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Artistic License.
+    matched_text: |
+      This subdirectory contains unmodified 'dist' code that is
+      licensed under the modified Artistic license detailed below
+      under the "Artistic-dist" tag.
   - score: '100.0'
-    start_line: 18
-    end_line: 18
+    start_line: '1969'
+    end_line: '1993'
     matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
+    rule_length: 212
+    matched_length: 212
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: public-domain_298.RULE
-    license_expression: public-domain
+    identifier: artistic-dist-1.0_or_gpl-1.0-plus_1.RULE
+    license_expression: artistic-dist-1.0 OR gpl-1.0-plus
     is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
+    is_license_notice: yes
+    is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: in the Public Domain--
-  - score: '11.0'
-    start_line: 27
-    end_line: 27
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 11
-    identifier: artistic-2.0_18.RULE
-    license_expression: artistic-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Artistic license.
+    matched_text: |
+      dist is distributed under a modified version of the Perl Artistic License.
+       Clause 7 of this modified license as contained in dist-3.0-pl60 provides:
+
+         7. You may reuse parts of this Package in your own programs, provided
+         that you explicitly state where you got them from, in the source code
+         (and, left to your courtesy, in the documentation), duplicating
+         all the associated copyright notices and disclaimers. Besides
+         your changes, if any, must be clearly marked as such. Parts reused
+         that way will no longer fall under this license if, and only if,
+         the name of your program(s) have no immediate connection with the
+         name of the Package itself or its associated programs.  You may then
+         apply whatever restrictions you wish on the reused parts or choose
+         to place them in the Public Domain--this will apply only within the
+         context of your package.
+
+       In accordance with this clause, the versions of these units
+       contained here are made available under the same terms as the
+       rest of the units.
+
+      It is assumed that the above relicensing also applies to all files in
+      the other subdirectories that are declared to be licensed under the
+      same modified Artistic license.
+
+      The modified license can be found later in this file under the
+      "Artistic-dist" tag.
   - score: '100.0'
-    start_line: 1
-    end_line: 8
+    start_line: 2000
+    end_line: 2007
     matcher: 1-hash
     rule_length: 49
     matched_length: 49
@@ -5543,21 +5478,23 @@ matches:
             version, or
 
          b) the "Artistic License" which comes with Perl.
-  - score: '55.0'
-    start_line: 2
-    end_line: 3
-    matcher: 3-seq
-    rule_length: 20
-    matched_length: 11
-    match_coverage: '55.0'
-    rule_relevance: 100
-    identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
-    license_expression: gpl-1.0-plus OR artistic-perl-1.0
+  - score: '95.0'
+    start_line: 2020
+    end_line: 2023
+    matcher: 2-aho
+    rule_length: 26
+    matched_length: 26
+    match_coverage: '100.0'
+    rule_relevance: 95
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_36.RULE
+    license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      redistributed
-      and/or modified under the same terms as Perl itself.
+      may be redistributed
+      and/or modified under the same terms as Perl itself. It is assumed that
+      other contributors have placed their contributions under a compatible
+      license.

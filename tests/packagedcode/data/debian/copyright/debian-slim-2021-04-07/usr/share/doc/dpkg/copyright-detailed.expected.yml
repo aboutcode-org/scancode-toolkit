@@ -1,4 +1,4 @@
-primary_license: gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0
+primary_license: gpl-2.0-plus AND gpl-2.0
 declared_license:
   - GPL-2+
   - GPL-2+
@@ -9,10 +9,9 @@ declared_license:
   - GPL-2+
   - GPL-2
   - BSD-2-clause
-license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND bsd-simplified
-  AND (public-domain AND other-permissive AND public-domain AND public-domain AND public-domain)
-  AND public-domain
+license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND bsd-simplified AND (public-domain AND other-permissive
+  AND public-domain AND public-domain AND public-domain) AND public-domain
 copyright: |
   Copyright © 1994 Ian Murdock <imurdock@debian.org>
   Copyright © 1994 Matt Welsh <mdw@sunsite.unc.edu>
@@ -87,8 +86,8 @@ copyright: |
   Copyright © 1993 Colin Plumb
 matches:
   - score: '70.0'
-    start_line: 2
-    end_line: 2
+    start_line: 102
+    end_line: 102
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -103,8 +102,8 @@ matches:
     is_license_intro: no
     matched_text: public domain.
   - score: '100.0'
-    start_line: 3
-    end_line: 4
+    start_line: 103
+    end_line: 104
     matcher: 2-aho
     rule_length: 9
     matched_length: 9
@@ -121,8 +120,8 @@ matches:
       May be used and distributed
       freely for any purpose.
   - score: '100.0'
-    start_line: 6
-    end_line: 6
+    start_line: 106
+    end_line: 106
     matcher: 2-aho
     rule_length: 5
     matched_length: 5
@@ -137,8 +136,8 @@ matches:
     is_license_intro: no
     matched_text: also placed in public domain.
   - score: '100.0'
-    start_line: 7
-    end_line: 8
+    start_line: 107
+    end_line: 108
     matcher: 2-aho
     rule_length: 6
     matched_length: 6
@@ -155,8 +154,8 @@ matches:
       also placed in the Public
       Domain.
   - score: '100.0'
-    start_line: 11
-    end_line: 11
+    start_line: 111
+    end_line: 111
     matcher: 2-aho
     rule_length: 6
     matched_length: 6
@@ -171,8 +170,8 @@ matches:
     is_license_intro: no
     matched_text: placed in public domain as well.
   - score: '100.0'
-    start_line: 2
-    end_line: 4
+    start_line: 118
+    end_line: 120
     matcher: 2-aho
     rule_length: 26
     matched_length: 26
@@ -190,8 +189,8 @@ matches:
       written by Colin Plumb in 1993, no copyright is claimed.
       This code is in the public domain; do with it what you wish.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 127
+    end_line: 127
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -206,14 +205,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 12
-    matcher: 2-aho
-    rule_length: 94
-    matched_length: 94
+    start_line: 128
+    end_line: 139
+    matcher: 1-hash
+    rule_length: 102
+    matched_length: 102
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_286.RULE
+    identifier: gpl-2.0-plus_860.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -232,34 +231,16 @@ matches:
       GNU General Public License for more details.
 
       You should have received a copy of the GNU General Public License
-      along with this program.
-  - score: '100.0'
-    start_line: 11
-    end_line: 12
-    matcher: 2-aho
-    rule_length: 23
-    matched_length: 23
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-1.0-plus_36.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      You should have received a copy of the GNU General Public License
       along with this program.  If not, see <https://www.gnu.org/licenses/>.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 22
-    matched_length: 22
+    start_line: 141
+    end_line: 143
+    matcher: 1-hash
+    rule_length: 31
+    matched_length: 31
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_1092.RULE
+    identifier: gpl-2.0_1299.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: no
@@ -268,10 +249,11 @@ matches:
     is_license_intro: no
     matched_text: |
       On Debian systems, the complete text of the GNU General Public License
-      can be found in ‘/usr/share/common-licenses/GPL-2’
+      can be found in ‘/usr/share/common-licenses/GPL-2’ or in the dpkg source
+      as the file ‘COPYING’.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 145
+    end_line: 145
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -286,8 +268,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2'
   - score: '100.0'
-    start_line: 1
-    end_line: 11
+    start_line: 146
+    end_line: 156
     matcher: 1-hash
     rule_length: 92
     matched_length: 92
@@ -313,8 +295,8 @@ matches:
       You should have received a copy of the GNU General Public License
       along with this program.  If not, see <https://www.gnu.org/licenses/>.
   - score: '99.45'
-    start_line: 1
-    end_line: 20
+    start_line: 159
+    end_line: 178
     matcher: 3-seq
     rule_length: 183
     matched_length: 182

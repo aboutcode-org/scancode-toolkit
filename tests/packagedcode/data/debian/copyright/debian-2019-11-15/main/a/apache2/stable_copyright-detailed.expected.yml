@@ -27,14 +27,13 @@ declared_license:
   - BSD-3-clause-Cambridge
   - Custom
   - Expat
-license_expression: (apache-2.0 AND apache-2.0 AND apache-2.0) AND ((apache-2.0 AND apache-2.0
-  AND apache-2.0) AND bsd-new) AND bsd-new AND ((gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0)
-  OR bison-exception-2.2) AND bsd-unchanged AND ((apache-2.0 AND apache-2.0 AND apache-2.0)
-  AND (apache-2.0 AND hs-regexp)) AND (apache-2.0 AND apache-2.0 AND apache-2.0) AND bsd-simplified-darwin
-  AND ((apache-2.0 AND apache-2.0 AND apache-2.0) AND public-domain) AND ((apache-2.0 AND apache-2.0
-  AND apache-2.0) AND (x11-keith-packard AND historical)) AND ((apache-2.0 AND apache-2.0 AND
-  apache-2.0) AND zeusbench) AND ((apache-2.0 AND apache-2.0 AND apache-2.0) OR (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0)) AND mit AND (apache-2.0 AND apache-2.0 AND apache-2.0)
+license_expression: (apache-2.0 AND apache-2.0) AND ((apache-2.0 AND apache-2.0) AND bsd-new)
+  AND bsd-new AND ((gpl-3.0-plus AND gpl-3.0-plus) OR bison-exception-2.2) AND bsd-unchanged
+  AND ((apache-2.0 AND apache-2.0) AND (apache-2.0 AND hs-regexp)) AND (apache-2.0 AND apache-2.0)
+  AND bsd-simplified-darwin AND ((apache-2.0 AND apache-2.0) AND public-domain) AND ((apache-2.0
+  AND apache-2.0) AND (x11-keith-packard AND historical)) AND ((apache-2.0 AND apache-2.0) AND
+  zeusbench) AND ((apache-2.0 AND apache-2.0) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND mit AND
+  (apache-2.0 AND apache-2.0)
 copyright: |
   Copyright 2019 The Apache Software Foundation
   2019 The Apache Software Foundation
@@ -79,13 +78,13 @@ matches:
     matched_text: 'License: apache-2.0'
   - score: '100.0'
     start_line: 72
-    end_line: 85
-    matcher: 2-aho
-    rule_length: 119
-    matched_length: 119
+    end_line: 88
+    matcher: 1-hash
+    rule_length: 145
+    matched_length: 145
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: apache-2.0_663.RULE
+    identifier: apache-2.0_971.RULE
     license_expression: apache-2.0
     is_license_text: no
     is_license_notice: yes
@@ -107,22 +106,7 @@ matches:
       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
       See the License for the specific language governing permissions and
       limitations under the License.
-  - score: '100.0'
-    start_line: 87
-    end_line: 88
-    matcher: 2-aho
-    rule_length: 26
-    matched_length: 26
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: apache-2.0_664.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
+
       On Debian systems, the full text of the Apache Software License version 2 can
       be found in the file `/usr/share/common-licenses/Apache-2.0'.
   - score: '100.0'
@@ -148,6 +132,9 @@ matches:
         exemplary, or consequential damaged (including, but not limited to,
         procurement of substitute good or services; loss of use, data, or profits;
         or business interruption) however caused and on theory of liability.  Whether
+        in contract, strict liability or tort (including negligence or otherwise)
+        arising in any way out of the use of this software, even if advised of the
+        possibility of such damage
   - score: '100.0'
     start_line: 118
     end_line: 142
@@ -177,6 +164,18 @@ matches:
          * Neither the name of the University of Cambridge nor the names of its
            contributors may be used to endorse or promote products derived from
            this software without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+      POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
     start_line: 172
     end_line: '191'
@@ -192,7 +191,27 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text:
+    matched_text: |
+      Permission to use, copy, modify, distribute, and sell this software
+      and its documentation for any purpose is hereby granted without
+      fee, provided that the above copyright notice appear in all copies
+      and that both that copyright notice and this permission notice
+      appear in supporting documentation, and that the name of Carnegie
+      Mellon University not be used in advertising or publicity
+      pertaining to distribution of the software without specific,
+      written prior permission.  Carnegie Mellon University makes no
+      representations about the suitability of this software for any
+      purpose.  It is provided "as is" without express or implied
+      warranty.
+
+      CARNEGIE MELLON UNIVERSITY DISCLAIMS ALL WARRANTIES WITH REGARD TO
+      THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+      AND FITNESS, IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY BE LIABLE
+      FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+      WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+      AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
+      OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+      SOFTWARE.
   - score: '100.0'
     start_line: '197'
     end_line: 206
@@ -208,7 +227,17 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text:
+    matched_text: |
+      Permission to use, copy, modify, and distribute this material
+      for any purpose and without fee is hereby granted, provided
+      that the above copyright notice and this permission notice
+      appear in all copies, and that the name of Bellcore not be
+      used in advertising or publicity pertaining to this
+      material without the specific, prior written permission
+      of an authorized representative of Bellcore.  BELLCORE
+      MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY
+      OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",
+      WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
   - score: '100.0'
     start_line: 209
     end_line: 209
@@ -225,15 +254,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-3+'
-  - score: '100.0'
+  - score: '99.0'
     start_line: 210
-    end_line: 218
-    matcher: 2-aho
-    rule_length: 79
-    matched_length: 79
+    end_line: 222
+    matcher: 1-hash
+    rule_length: 105
+    matched_length: 105
     match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_96.RULE
+    rule_relevance: 99
+    identifier: gpl-3.0-plus_483.RULE
     license_expression: gpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -250,22 +279,7 @@ matches:
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more details.
-  - score: '100.0'
-    start_line: 220
-    end_line: 222
-    matcher: 2-aho
-    rule_length: 26
-    matched_length: 26
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0_403.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
+
       On Debian systems, the full text of the GNU General Public
       License version 2 can be found in the file
       `/usr/share/common-licenses/GPL-3'.
@@ -287,13 +301,13 @@ matches:
     matched_text: 'License: gpl-2+'
   - score: '100.0'
     start_line: 225
-    end_line: 233
-    matcher: 2-aho
-    rule_length: 79
-    matched_length: 79
+    end_line: 237
+    matcher: 1-hash
+    rule_length: 105
+    matched_length: 105
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_90.RULE
+    identifier: gpl-2.0-plus_986.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -310,22 +324,7 @@ matches:
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more details.
-  - score: '100.0'
-    start_line: 235
-    end_line: 237
-    matcher: 2-aho
-    rule_length: 26
-    matched_length: 26
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_1141.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
+
       On Debian systems, the full text of the GNU General Public
       License version 2 can be found in the file
       `/usr/share/common-licenses/GPL-2'.
@@ -415,15 +414,18 @@ matches:
       DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
       OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
       HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-  - score: '95.56'
+      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+      SUCH DAMAGE.
+  - score: '100.0'
     start_line: 306
     end_line: 309
-    matcher: 3-seq
-    rule_length: 45
-    matched_length: 43
-    match_coverage: '95.56'
+    matcher: 2-aho
+    rule_length: 47
+    matched_length: 47
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: apache-2.0_44.RULE
+    identifier: apache-2.0_1021.RULE
     license_expression: apache-2.0
     is_license_text: no
     is_license_notice: yes
@@ -431,10 +433,10 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      This software was submitted by Cisco Systems to the Apache [Software] [Foundation] in July
+      This software was submitted by Cisco Systems to the Apache Software Foundation in July
       1997.  Future revisions and derivatives of this source code must
       acknowledge Cisco Systems as the original contributor of this module.
-      All other licensing and usage conditions are those of the Apache
+      All other licensing and usage conditions are those of the Apache Software Foundation.
   - score: '100.0'
     start_line: 317
     end_line: 335
@@ -470,15 +472,15 @@ matches:
       sources, credits must appear in the documentation.
 
       4. This notice may not be removed or altered.
-  - score: '99.52'
+  - score: '100.0'
     start_line: 370
     end_line: 391
-    matcher: 3-seq
+    matcher: 1-hash
     rule_length: 208
-    matched_length: 207
-    match_coverage: '99.52'
+    matched_length: 208
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-unchanged_1.RULE
+    identifier: bsd-unchanged_4.RULE
     license_expression: bsd-unchanged
     is_license_text: yes
     is_license_notice: no
@@ -496,7 +498,7 @@ matches:
          notice, this list of conditions and the following disclaimer in the
          documentation and/or other materials provided with the distribution.
       3. The name of the author may not be used to endorse or promote products
-         derived from this software [withough] specific prior written permission
+         derived from this software withough specific prior written permission
 
       THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
       IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES

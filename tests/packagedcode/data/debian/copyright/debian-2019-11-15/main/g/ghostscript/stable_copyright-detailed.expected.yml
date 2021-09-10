@@ -58,20 +58,18 @@ declared_license:
   - FTL
   - ZLIB
   - ISC
-license_expression: (agpl-3.0 AND agpl-3.0-plus) AND (agpl-3.0-plus AND agpl-3.0-plus) AND agpl-3.0-plus
-  AND bsd-new AND (agpl-3.0 AND agpl-3.0-plus) AND (agpl-3.0-plus AND agpl-3.0-plus) AND lgpl-2.1
-  AND lgpl-2.1-plus AND freetype AND freetype AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
-  AND gpl-1.0-plus AND agpl-3.0 WITH ps-or-pdf-font-exception-20170817 AND (agpl-3.0-plus AND
-  agpl-3.0-plus) AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND fsf-free
-  AND gpl-2.0-plus AND (gpl-1.0-plus AND gpl-1.0-plus) AND gpl-1.0-plus AND gpl-1.0-plus AND
-  gpl-2.0-plus AND (gpl-2.0 AND gpl-1.0-plus AND gpl-1.0-plus) AND zlib AND bsd-new AND bsd-new
-  AND sunsoft AND mit AND ((lgpl-2.1 AND public-domain) AND public-domain) AND apache-2.0 AND
-  apache-2.0 AND apache-2.0 AND apache-2.0 AND (agpl-3.0 AND agpl-3.0-plus) AND afpl-9.0 AND
-  isc AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0-plus AND other-permissive AND x11-opengroup AND public-domain AND gpl-1.0-plus
-  AND gpl-1.0-plus AND x11-lucent AND libpbm AND zlib AND gpl-3.0-plus AND gpl-3.0-plus AND
-  gpl-1.0-plus
+license_expression: (agpl-3.0 AND agpl-3.0-plus) AND agpl-3.0-plus AND agpl-3.0-plus AND bsd-new
+  AND (agpl-3.0 AND agpl-3.0-plus) AND agpl-3.0-plus AND lgpl-2.1 AND lgpl-2.1 AND freetype
+  AND freetype AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND ghostscript-1988 AND agpl-3.0
+  WITH ps-or-pdf-font-exception-20170817 AND agpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
+  AND gpl-1.0-plus AND gpl-1.0-plus AND fsf-free AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
+  AND gpl-1.0-plus AND (gpl-1.0-plus OR cups) AND gpl-2.0-plus AND gpl-2.0-plus AND zlib AND
+  bsd-new AND bsd-new AND sunsoft AND mit AND public-domain AND apache-2.0 AND apache-2.0 AND
+  apache-2.0 AND apache-2.0 AND (agpl-3.0 AND agpl-3.0-plus) AND afpl-9.0 AND isc AND gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND other-permissive
+  AND x11-opengroup AND other-permissive AND gpl-1.0-plus AND gpl-1.0-plus AND x11-lucent-variant
+  AND ghostpdl-permissive AND zlib AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus
 copyright: |
   1986, Eric Gisin
   1989, Berthold K.P. Horn
@@ -138,15 +136,15 @@ copyright: |
   2009-2019, Jonas Smedegaard <dr@jones.dk>
   2010, Kenshi Muto <kmuto@debian.org>
 matches:
-  - score: '88.21'
-    start_line: 1
-    end_line: 6
-    matcher: 3-seq
+  - score: '100.0'
+    start_line: 173
+    end_line: 178
+    matcher: 1-hash
     rule_length: 42
-    matched_length: 39
-    match_coverage: '92.86'
-    rule_relevance: 95
-    identifier: agpl-3.0_with_ps-or-pdf-font-exception-20170817_3.RULE
+    matched_length: 42
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: agpl-3.0_with_ps-or-pdf-font-exception-20170817_4.RULE
     license_expression: agpl-3.0 WITH ps-or-pdf-font-exception-20170817
     is_license_text: no
     is_license_notice: yes
@@ -155,23 +153,23 @@ matches:
     is_license_intro: no
     matched_text: |
       As a special exception,
-      permission is granted to include [this] [font] [program]
+      permission is granted to include this font program
       in a Postscript or PDF file that consists of a document
       that contains text to be displayed or printed using this font,
       regardless of the conditions or license
       applying to the document itself.
-  - score: '18.18'
-    start_line: 1
-    end_line: 5
-    matcher: 3-seq
-    rule_length: '198'
+  - score: '95.0'
+    start_line: 294
+    end_line: 298
+    matcher: 1-hash
+    rule_length: 36
     matched_length: 36
-    match_coverage: '18.18'
-    rule_relevance: 100
-    identifier: sunsoft_1.RULE
+    match_coverage: '100.0'
+    rule_relevance: 95
+    identifier: sunsoft_3.RULE
     license_expression: sunsoft
-    is_license_text: yes
-    is_license_notice: no
+    is_license_text: no
+    is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
@@ -181,50 +179,37 @@ matches:
       in advertising or otherwise to promote
       the sale, use or other dealings in this Software
       without written authorization from SunSoft Inc.
-  - score: '16.67'
-    start_line: 3
-    end_line: 4
-    matcher: 3-seq
-    rule_length: 30
-    matched_length: 5
-    match_coverage: '16.67'
+  - score: '100.0'
+    start_line: 309
+    end_line: 313
+    matcher: 1-hash
+    rule_length: 32
+    matched_length: 32
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.1_and_public-domain2.RULE
-    license_expression: lgpl-2.1 AND public-domain
+    identifier: public-domain_383.RULE
+    license_expression: public-domain
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      therefore [is] [not] covered
-      by the [Ghostscript] [copyright] [or] license:
-  - score: '90.0'
-    start_line: 5
-    end_line: 5
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: public-domain_108.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: it is in the public domain.
+      This file, unlike the rest of Ghostscript,
+      consists entirely of information copied from public sources.
+      It therefore is not covered
+      by the Ghostscript copyright or license:
+      it is in the public domain.
   - score: '100.0'
-    start_line: 1
-    end_line: 4
+    start_line: 448
+    end_line: 451
     matcher: 1-hash
     rule_length: 25
     matched_length: 25
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: public-domain_358.RULE
-    license_expression: public-domain
+    identifier: other-permissive_358.RULE
+    license_expression: other-permissive
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -236,8 +221,8 @@ matches:
       so long as modified versions are marked as such
       and copyright notices are not removed.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 497
+    end_line: 497
     matcher: 1-hash
     rule_length: 2
     matched_length: 2
@@ -252,8 +237,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl'
   - score: '100.0'
-    start_line: 1
-    end_line: 850
+    start_line: 501
+    end_line: 1350
     matcher: 1-hash
     rule_length: 5374
     matched_length: 5374
@@ -1118,8 +1103,8 @@ matches:
       and how to apply and follow the GNU AGPL,
       see <http://www.gnu.org/licenses/>.
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 1371
+    end_line: 1373
     matcher: 1-hash
     rule_length: 18
     matched_length: 18
@@ -1137,8 +1122,8 @@ matches:
       the Free Software Foundation gives unlimited permission
       to copy, distribute and modify it.
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 1376
+    end_line: 1398
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -1175,15 +1160,15 @@ matches:
       WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
       ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
       OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  - score: '96.3'
-    start_line: 1
-    end_line: 23
-    matcher: 3-seq
-    rule_length: 156
-    matched_length: 156
+  - score: '100.0'
+    start_line: 1401
+    end_line: 1423
+    matcher: 1-hash
+    rule_length: 162
+    matched_length: 162
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: mit_71.RULE
+    identifier: mit_1062.RULE
     license_expression: mit
     is_license_text: yes
     is_license_notice: no
@@ -1209,14 +1194,14 @@ matches:
       EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
       THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
       AND NONINFRINGEMENT.
-      IN NO EVENT SHALL [SUNSOFT], [INC]. [OR] [ITS] [PARENT] [COMPANY] BE LIABLE
+      IN NO EVENT SHALL SUNSOFT, INC. OR ITS PARENT COMPANY BE LIABLE
       FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
       WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
       ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
       OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 1426
+    end_line: 1442
     matcher: 1-hash
     rule_length: 124
     matched_length: 124
@@ -1248,8 +1233,8 @@ matches:
       The above copyright notice and this permission notice shall be included
       in all copies or substantial portions of the Software.
   - score: '99.0'
-    start_line: 1
-    end_line: 20
+    start_line: 1445
+    end_line: 1464
     matcher: 1-hash
     rule_length: 138
     matched_length: 138
@@ -1283,16 +1268,16 @@ matches:
       WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
       ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
       OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  - score: '57.14'
-    start_line: 1
-    end_line: 5
-    matcher: 3-seq
-    rule_length: 56
+  - score: '100.0'
+    start_line: 1467
+    end_line: 1471
+    matcher: 1-hash
+    rule_length: 32
     matched_length: 32
-    match_coverage: '57.14'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: libpbm.LICENSE
-    license_expression: libpbm
+    identifier: ghostpdl-permissive.LICENSE
+    license_expression: ghostpdl-permissive
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -1304,16 +1289,16 @@ matches:
       for any purpose and without fee is hereby granted.
       This software is provided "as is"
       without express or implied warranty.
-  - score: '88.17'
-    start_line: 1
-    end_line: 12
-    matcher: 3-seq
-    rule_length: 93
+  - score: '100.0'
+    start_line: 1474
+    end_line: 1485
+    matcher: 1-hash
+    rule_length: 82
     matched_length: 82
-    match_coverage: '88.17'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: x11-lucent_1.RULE
-    license_expression: x11-lucent
+    identifier: x11-lucent-variant.LICENSE
+    license_expression: x11-lucent-variant
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -1333,8 +1318,8 @@ matches:
       CONCERNING THE MERCHANTABILITY OF THIS SOFTWARE OR ITS FITNESS
       FOR ANY PARTICULAR PURPOSE.
   - score: '100.0'
-    start_line: 1
-    end_line: 32
+    start_line: 1488
+    end_line: 1519
     matcher: 1-hash
     rule_length: 213
     matched_length: 213
@@ -1381,8 +1366,8 @@ matches:
       ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
       EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 37
+    start_line: 1522
+    end_line: 1558
     matcher: 1-hash
     rule_length: 213
     matched_length: 213
@@ -1433,15 +1418,15 @@ matches:
       (INCLUDING NEGLIGENCE OR OTHERWISE)
       ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
       EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '98.4'
-    start_line: 1
-    end_line: 180
-    matcher: 3-seq
-    rule_length: 939
-    matched_length: 924
-    match_coverage: '98.4'
+  - score: '100.0'
+    start_line: 1561
+    end_line: 1740
+    matcher: 1-hash
+    rule_length: 928
+    matched_length: 928
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: freetype.LICENSE
+    identifier: freetype_13.RULE
     license_expression: freetype
     is_license_text: yes
     is_license_notice: no
@@ -1628,10 +1613,10 @@ matches:
          Discusses bugs, as well as engine internals, design issues,
          specific licenses, porting, etc.
 
-      Our home page can be found at
+      Our home page can be found at https://www.freetype.org
   - score: '100.0'
-    start_line: 1
-    end_line: 20
+    start_line: 1743
+    end_line: 1762
     matcher: 1-hash
     rule_length: 132
     matched_length: 132
@@ -1666,8 +1651,8 @@ matches:
        3. This notice may not be removed or altered
           from any source distribution.
   - score: '100.0'
-    start_line: 1
-    end_line: 15
+    start_line: 1765
+    end_line: 1779
     matcher: 1-hash
     rule_length: 111
     matched_length: 111
@@ -1697,8 +1682,8 @@ matches:
       ARISING OUT OF OR IN CONNECTION WITH
       THE USE OR PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 73
+    end_line: 73
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -1713,8 +1698,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: agpl-'
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 73
+    end_line: 73
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -1728,31 +1713,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: agpl-3+
-  - score: '90.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+  - score: '100.0'
+    start_line: 68
+    end_line: 72
+    matcher: 1-hash
+    rule_length: 44
+    matched_length: 44
     match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: agpl-3.0-plus_143.RULE
-    license_expression: agpl-3.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: GPL Ghostscript
-  - score: '92.68'
-    start_line: 1
-    end_line: 5
-    matcher: 3-seq
-    rule_length: 41
-    matched_length: 38
-    match_coverage: '92.68'
     rule_relevance: 100
-    identifier: agpl-3.0-plus_113.RULE
+    identifier: agpl-3.0-plus_247.RULE
     license_expression: agpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -1760,14 +1729,14 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      free software;
-       you can redistribute and/or modify [them]
+      GhostPDL and GPL Ghostscript are free software;
+       you can redistribute and/or modify them
        under the terms of the GNU Affero General Public License
        as published by the Free Software Foundation,
        either version 3 of the License, or (at your option) any later version.
   - score: '90.0'
-    start_line: 2
-    end_line: 2
+    start_line: 76
+    end_line: 76
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -1782,8 +1751,8 @@ matches:
     is_license_intro: no
     matched_text: GPL Ghostscript,
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 91
+    end_line: 91
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -1798,8 +1767,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: agpl-'
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 91
+    end_line: 91
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -1813,31 +1782,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: agpl-3+
-  - score: '90.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+  - score: '100.0'
+    start_line: 86
+    end_line: 90
+    matcher: 1-hash
+    rule_length: 42
+    matched_length: 42
     match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: agpl-3.0-plus_143.RULE
-    license_expression: agpl-3.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: GPL Ghostscript
-  - score: '97.56'
-    start_line: 1
-    end_line: 5
-    matcher: 3-seq
-    rule_length: 41
-    matched_length: 40
-    match_coverage: '97.56'
     rule_relevance: 100
-    identifier: agpl-3.0-plus_113.RULE
+    identifier: agpl-3.0-plus_244.RULE
     license_expression: agpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -1845,30 +1798,33 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software;
+      GPL Ghostscript is free software;
        you can redistribute it and/or modify
        it under the terms the GNU Affero General Public License
        as published by the Free Software Foundation,
        either version 3 of the License, or (at your option) any later version.
-  - score: '33.0'
-    start_line: 2
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
+  - score: '100.0'
+    start_line: 96
+    end_line: 98
+    matcher: 1-hash
+    rule_length: 23
+    matched_length: 23
     match_coverage: '100.0'
-    rule_relevance: 33
-    identifier: lgpl_35.RULE
-    license_expression: lgpl-2.1-plus
+    rule_relevance: 100
+    identifier: lgpl-2.1_311.RULE
+    license_expression: lgpl-2.1
     is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
+    is_license_notice: yes
+    is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: GNU Lesser General Public License (LGPL),
+    matched_text: |
+      is free software and can be used
+       under the terms of the GNU Lesser General Public License (LGPL),
+       Version 2.1 (February 1999).
   - score: '100.0'
-    start_line: 1
-    end_line: 6
+    start_line: 121
+    end_line: 126
     matcher: 1-hash
     rule_length: 49
     matched_length: 49
@@ -1888,79 +1844,63 @@ matches:
        By continuing to use, modify, or distribute this file
        you indicate that you have read the license
        and understand and accept it fully.
-  - score: '63.64'
-    start_line: 1
-    end_line: 8
-    matcher: 3-seq
-    rule_length: 66
-    matched_length: 42
-    match_coverage: '63.64'
-    rule_relevance: 100
-    identifier: gpl-1.0-plus_447.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Everyone is granted permission
-       to copy, modify and redistribute GNU [Ghostscript],
-       [but] [only] [under] [the] [conditions]
-       [described] [in] [the] [GNU] General Public License.
-       A copy of this license is supposed to have been given to you
-       along with [this] [software]
-       so you can know your rights and responsibilities.
-       It should be in a file named COPYING.
-  - score: '64.06'
-    start_line: 1
-    end_line: 8
-    matcher: 3-seq
-    rule_length: 64
-    matched_length: 41
-    match_coverage: '64.06'
-    rule_relevance: 100
-    identifier: gpl-1.0-plus_448.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Everyone is granted permission
-       to copy, modify and redistribute [Ghostscript],
-       [but] [only] [under] [the] [conditions]
-       [described] [in] [the] [Ghostscript] General Public License.
-       A copy of this license is supposed to have been given to you
-       along with [this] [software]
-       so you can know your rights and responsibilities.
-       It should be in a file named COPYING.
-  - score: '90.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+  - score: '100.0'
+    start_line: 135
+    end_line: 142
+    matcher: 1-hash
+    rule_length: 54
+    matched_length: 54
     match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: agpl-3.0-plus_143.RULE
-    license_expression: agpl-3.0-plus
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_464.RULE
+    license_expression: gpl-1.0-plus
     is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
+    is_license_notice: yes
+    is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: GPL Ghostscript
-  - score: '97.56'
-    start_line: 1
-    end_line: 5
-    matcher: 3-seq
-    rule_length: 41
-    matched_length: 40
-    match_coverage: '97.56'
+    matched_text: |
+      Everyone is granted permission
+       to copy, modify and redistribute GNU Ghostscript,
+       but only under the conditions
+       described in the GNU General Public License.
+       A copy of this license is supposed to have been given to you
+       along with this software
+       so you can know your rights and responsibilities.
+       It should be in a file named COPYING.
+  - score: '100.0'
+    start_line: 151
+    end_line: 158
+    matcher: 1-hash
+    rule_length: 53
+    matched_length: 53
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: agpl-3.0-plus_113.RULE
+    identifier: ghostscript-1988_4.RULE
+    license_expression: ghostscript-1988
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Everyone is granted permission
+       to copy, modify and redistribute Ghostscript,
+       but only under the conditions
+       described in the Ghostscript General Public License.
+       A copy of this license is supposed to have been given to you
+       along with this software
+       so you can know your rights and responsibilities.
+       It should be in a file named COPYING.
+  - score: '100.0'
+    start_line: 167
+    end_line: 171
+    matcher: 1-hash
+    rule_length: 42
+    matched_length: 42
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: agpl-3.0-plus_244.RULE
     license_expression: agpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -1968,20 +1908,20 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software;
+      GPL Ghostscript is free software;
        you can redistribute it and/or modify it
        under the terms the GNU Affero General Public License
        as published by the Free Software Foundation,
        either version 3 of the License, or (at your option) any later version.
-  - score: '75.76'
-    start_line: 1
-    end_line: 8
-    matcher: 3-seq
-    rule_length: 66
-    matched_length: 50
-    match_coverage: '75.76'
+  - score: '100.0'
+    start_line: 183
+    end_line: '190'
+    matcher: 1-hash
+    rule_length: 54
+    matched_length: 54
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_447.RULE
+    identifier: gpl-1.0-plus_463.RULE
     license_expression: gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -1990,22 +1930,22 @@ matches:
     is_license_intro: no
     matched_text: |
       Everyone is granted permission
-       to copy, modify and redistribute [this] [software],
+       to copy, modify and redistribute this software,
        but only under the conditions
        described in the GNU General Public License.
        A copy of this license is supposed to have been given to you
-       along with [this] [software]
+       along with this software
        so you can know your rights and responsibilities.
        It should be in a file named COPYING.
-  - score: '75.76'
-    start_line: 1
-    end_line: 8
-    matcher: 3-seq
-    rule_length: 66
-    matched_length: 50
-    match_coverage: '75.76'
+  - score: '100.0'
+    start_line: 201
+    end_line: 208
+    matcher: 1-hash
+    rule_length: 54
+    matched_length: 54
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_447.RULE
+    identifier: gpl-1.0-plus_463.RULE
     license_expression: gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -2014,22 +1954,22 @@ matches:
     is_license_intro: no
     matched_text: |
       Everyone is granted permission
-       to copy, modify and redistribute [this] [software],
+       to copy, modify and redistribute this software,
        but only under the conditions
        described in the GNU General Public License.
        A copy of this license is supposed to have been given to you
-       along with [this] [software]
+       along with this software
        so you can know your rights and responsibilities.
        It should be in a file named COPYING.
-  - score: '98.48'
-    start_line: 3
-    end_line: 12
-    matcher: 3-seq
-    rule_length: 66
-    matched_length: 65
-    match_coverage: '98.48'
+  - score: '100.0'
+    start_line: 225
+    end_line: 234
+    matcher: 2-aho
+    rule_length: 69
+    matched_length: 69
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_447.RULE
+    identifier: gpl-1.0-plus_537.RULE
     license_expression: gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -2038,19 +1978,19 @@ matches:
     is_license_intro: no
     matched_text: |
       Everyone is granted permission
-       to copy, modify and redistribute [Ghostscript],
+       to copy, modify and redistribute Ghostscript,
        but only under the conditions
        described in the GNU General Public License.
        A copy of this license is supposed to have been given to you
-       along with [Ghostscript]
+       along with Ghostscript
        so you can know your rights and responsibilities.
-       It should be in a file named COPYING [or] [COPYLEFT].
+       It should be in a file named COPYING or COPYLEFT.
        Among other things,
        the copyright notice and this notice must be preserved on all copies.
   - score: '100.0'
-    start_line: 13
-    end_line: 13
-    matcher: 2-aho
+    start_line: 236
+    end_line: 236
+    matcher: 1-hash
     rule_length: 10
     matched_length: 10
     match_coverage: '100.0'
@@ -2063,78 +2003,54 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: This code is subject to the GNU General Public License
-  - score: '50.0'
-    start_line: 4
-    end_line: 5
-    matcher: 3-seq
-    rule_length: 22
-    matched_length: 11
-    match_coverage: '50.0'
-    rule_relevance: 100
-    identifier: gpl-1.0-plus_358.RULE
-    license_expression: gpl-1.0-plus
+  - score: '99.0'
+    start_line: 243
+    end_line: 251
+    matcher: 1-hash
+    rule_length: 74
+    matched_length: 74
+    match_coverage: '100.0'
+    rule_relevance: 99
+    identifier: gpl-1.0-plus_or_cups_1.RULE
+    license_expression: gpl-1.0-plus OR cups
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      and distributed [freely]
+      Distribution and use rights are outlined in the file "LICENSE.txt"
+       which should have been included with this file. [...]
+       .
+       This code and any derivative of it may be used and distributed freely
        under the terms of the GNU General Public License
-  - score: '79.17'
-    start_line: 1
-    end_line: 3
-    matcher: 3-seq
-    rule_length: 24
-    matched_length: '19'
-    match_coverage: '79.17'
-    rule_relevance: 100
-    identifier: gpl-2.0_404.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      may be distributed [and]/[or] [modified]
-       under the terms of the GNU General Public License
-       as published by the Free Software Foundation (
-  - score: '85.0'
-    start_line: 3
-    end_line: 3
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 85
-    identifier: gpl-1.0-plus_351.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: the "GPL");
-  - score: '90.0'
-    start_line: 4
-    end_line: 4
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: gpl-1.0-plus_350.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: of the GPL,
+       when used with GNU Ghostscript or its derivatives.
+       Use of the code (or any derivative of it)
+       with software other than GNU GhostScript (or its derivatives)
+       is governed by the CUPS license agreement.
   - score: '100.0'
-    start_line: 1
-    end_line: 10
+    start_line: 262
+    end_line: 265
+    matcher: 1-hash
+    rule_length: 39
+    matched_length: 39
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_1037.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program may be distributed and/or modified
+       under the terms of the GNU General Public License
+       as published by the Free Software Foundation (the "GPL");
+       either version 2 of the GPL, or (at your option) any later version.
+  - score: '100.0'
+    start_line: 320
+    end_line: 329
     matcher: 1-hash
     rule_length: 72
     matched_length: 72
@@ -2159,8 +2075,8 @@ matches:
        You may obtain a copy of the License
        at <http://www.apache.org/licenses/LICENSE-2.0>
   - score: '100.0'
-    start_line: 1
-    end_line: 4
+    start_line: 338
+    end_line: 341
     matcher: 1-hash
     rule_length: 22
     matched_length: 22
@@ -2179,8 +2095,8 @@ matches:
        you may not use this file
        except in compliance with the License.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 352
+    end_line: 352
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -2195,8 +2111,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: agpl-'
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 352
+    end_line: 352
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -2211,8 +2127,8 @@ matches:
     is_license_intro: no
     matched_text: agpl-3+
   - score: '90.0'
-    start_line: 2
-    end_line: 2
+    start_line: 350
+    end_line: 350
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -2227,8 +2143,8 @@ matches:
     is_license_intro: no
     matched_text: AFPL Ghostscript,
   - score: '100.0'
-    start_line: 1
-    end_line: 5
+    start_line: 363
+    end_line: 367
     matcher: 1-hash
     rule_length: 39
     matched_length: 39
@@ -2248,8 +2164,8 @@ matches:
        as published by the Free Software Foundation;
        either version 2, or (at your option) any later version.
   - score: '100.0'
-    start_line: 1
-    end_line: 5
+    start_line: 375
+    end_line: 379
     matcher: 1-hash
     rule_length: 42
     matched_length: 42
@@ -2269,8 +2185,8 @@ matches:
        as published by the Free Software Foundation;
        either version 2 of the License, or (at your option) any later version.
   - score: '100.0'
-    start_line: 1
-    end_line: 5
+    start_line: 390
+    end_line: 394
     matcher: 1-hash
     rule_length: 42
     matched_length: 42
@@ -2290,8 +2206,8 @@ matches:
        as published by the Free Software Foundation;
        either version 2 of the License, or (at your option) any later version.
   - score: '100.0'
-    start_line: 1
-    end_line: 5
+    start_line: 402
+    end_line: 406
     matcher: 1-hash
     rule_length: 42
     matched_length: 42
@@ -2311,8 +2227,8 @@ matches:
        as published by the Free Software Foundation;
        either version 2 of the License, or (at your option) any later version.
   - score: '100.0'
-    start_line: 1
-    end_line: 5
+    start_line: 412
+    end_line: 416
     matcher: 1-hash
     rule_length: 42
     matched_length: 42
@@ -2332,8 +2248,8 @@ matches:
        as published by the Free Software Foundation;
        either version 2 of the License, or (at your option) any later version.
   - score: '100.0'
-    start_line: 1
-    end_line: 5
+    start_line: 422
+    end_line: 426
     matcher: 1-hash
     rule_length: 42
     matched_length: 42
@@ -2352,15 +2268,15 @@ matches:
        under the terms of the GNU General Public License
        as published by the Free Software Foundation;
        either version 2 of the License, or (at your option) any later version.
-  - score: '75.76'
-    start_line: 1
-    end_line: 8
-    matcher: 3-seq
-    rule_length: 66
-    matched_length: 50
-    match_coverage: '75.76'
+  - score: '100.0'
+    start_line: 458
+    end_line: 465
+    matcher: 1-hash
+    rule_length: 54
+    matched_length: 54
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_447.RULE
+    identifier: gpl-1.0-plus_463.RULE
     license_expression: gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -2369,16 +2285,16 @@ matches:
     is_license_intro: no
     matched_text: |
       Everyone is granted permission
-       to copy, modify and redistribute [this] [software],
+       to copy, modify and redistribute this software,
        but only under the conditions
        described in the GNU General Public License.
        A copy of this license is supposed to have been given to you
-       along with [this] [software]
+       along with this software
        so you can know your rights and responsibilities.
        It should be in a file named COPYING.
   - score: '100.0'
-    start_line: 1
-    end_line: 5
+    start_line: 488
+    end_line: 492
     matcher: 1-hash
     rule_length: 39
     matched_length: 39

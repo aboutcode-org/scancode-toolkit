@@ -52,16 +52,17 @@ declared_license:
   - ISC
   - WOL
   - FSFUL
-license_expression: gpl-2.0 AND gpl-2.0 AND gpl-3.0 AND fsf-free AND autoconf-simple-exception-2.0
-  AND gpl-2.0-plus AND mit-old-style-no-advert AND gpl-2.0 AND gpl-1.0-plus AND gpl-2.0 AND
-  gpl-1.0-plus AND unknown AND bsd-original-uc AND gpl-2.0 AND free-unknown AND tu-berlin AND
-  bsd-new AND bsd-new AND bsd-original AND gpl-2.0-plus AND public-domain AND unknown AND public-domain
-  AND gpl-2.0 AND (gpl-1.0-plus AND lgpl-2.0-plus AND gpl-1.0-plus) AND public-domain AND other-permissive
-  AND (mit AND gpl-2.0) AND gpl-2.0-plus AND gpl-2.0-plus AND public-domain AND (bsd-original-uc
-  AND isc AND gpl-2.0) AND gpl-3.0 AND bsd-original-uc AND bison-exception-2.2 AND gpl-3.0-plus
-  AND bsd-new AND gpl-2.0 AND gpl-1.0-plus AND (wol AND gpl-2.0) AND gpl-3.0 AND (lgpl-2.1 OR
-  gpl-2.0) AND lgpl-2.0-plus AND (gpl-3.0 AND lgpl-2.0-plus) AND public-domain AND isc AND brian-clapper
-  AND lgpl-2.1 AND lgpl-2.0-plus AND mit-0 AND mit AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus
+license_expression: gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND fsf-free AND autoconf-simple-exception-2.0
+  AND gpl-2.0-plus AND mit-old-style-no-advert AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND
+  gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND unknown AND bsd-original-uc AND gpl-2.0 AND free-unknown
+  AND tu-berlin AND bsd-new AND bsd-new AND bsd-original AND gpl-2.0-plus AND public-domain
+  AND unknown AND public-domain AND gpl-2.0 AND gpl-2.0-plus AND public-domain AND other-permissive
+  AND (mit AND gpl-2.0) AND gpl-2.0-plus AND gpl-2.0-plus AND other-permissive AND (bsd-original-uc
+  AND isc AND gpl-2.0) AND gpl-2.0 AND bsd-original-uc AND bison-exception-2.2 AND gpl-3.0-plus
+  AND bsd-new AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND (wol AND gpl-2.0) AND gpl-2.0 AND
+  (lgpl-2.1 OR gpl-2.0) AND lgpl-2.1 AND (gpl-2.0 OR lgpl-2.0-plus) AND public-domain AND isc
+  AND brian-clapper AND lgpl-2.1 AND gpl-2.0 AND lgpl-2.0-plus AND mit-0 AND mit AND gpl-2.0
+  AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus
 copyright: |
   1999-2006, Brett Bryant <bbryant@digium.com>
   1999-2006, Mark Spencer <markster@digium.com>
@@ -153,11 +154,9 @@ copyright: |
   2005, 2007-2008, Tzafrir Cohen <tzafrir.cohen@xorcom.com>
   None
   None
-
   Mark Roberts <mark@manumark.de>
   Michael Labuschke <michael@labuschke.de>
   None
-
   2003-2006, Tilghman Lesher
   2005-2006, BJ Weschke <bweschke@btwtech.com>
   2006, Digium, Inc.
@@ -226,20 +225,22 @@ matches:
     matched_text: This file is in the public domain, so clarified as of
   - score: '100.0'
     start_line: 296
-    end_line: 296
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
+    end_line: 297
+    matcher: 1-hash
+    rule_length: 13
+    matched_length: 13
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: public-domain_205.RULE
-    license_expression: public-domain
+    identifier: public-domain-disclaimer_73.RULE
+    license_expression: public-domain-disclaimer
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: released into public domain
+    matched_text: |
+      This code is released into public domain without any warranty of any
+      kind.
   - score: '100.0'
     start_line: 314
     end_line: 314
@@ -264,8 +265,8 @@ matches:
     matched_length: 9
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: public-domain_357.RULE
-    license_expression: public-domain
+    identifier: other-permissive_357.RULE
+    license_expression: other-permissive
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -580,15 +581,15 @@ matches:
       THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '99.18'
+  - score: '100.0'
     start_line: 638
     end_line: 665
-    matcher: 3-seq
-    rule_length: 243
-    matched_length: 241
-    match_coverage: '99.18'
+    matcher: 1-hash
+    rule_length: 242
+    matched_length: 242
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-original-uc_3.RULE
+    identifier: bsd-original-uc_30.RULE
     license_expression: bsd-original-uc
     is_license_text: yes
     is_license_notice: no
@@ -609,7 +610,7 @@ matches:
          software must display the following acknowledgement: This product
          includes software developed by the University of California,
          Berkeley and its contributors.
-      4. Neither the name of the University nor the names of [itscontributors]
+      4. Neither the name of the University nor the names of itscontributors
          may be used to endorse or promote products derived from this
          software without specific prior written permission.
 
@@ -807,25 +808,26 @@ matches:
     is_license_reference: no
     is_license_tag: yes
     is_license_intro: no
-    matched_text:
-  - score: '63.64'
+    matched_text: GPL-2
+  - score: '100.0'
     start_line: 89
     end_line: 91
-    matcher: 3-seq
-    rule_length: 33
-    matched_length: 21
-    match_coverage: '63.64'
+    matcher: 1-hash
+    rule_length: 28
+    matched_length: 28
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0_290.RULE
-    license_expression: gpl-3.0
+    identifier: gpl-2.0_1333.RULE
+    license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      distributed under the terms of the GNU
-       [General] Public License Version [2]. See the LICENSE file at the top of
+      This program is free software, distributed under the terms of the GNU
+       General Public License Version 2. See the LICENSE file at the top of
+       the source tree.
   - score: '100.0'
     start_line: 104
     end_line: 107
@@ -845,38 +847,73 @@ matches:
       This program is free software; you can redistribute it and/or modify it
        under the terms of the GNU General Public License as published by the
        Free Software Foundation; either version 2, or (at your option) any
+       later version.
+  - score: '80.0'
+    start_line: 145
+    end_line: 145
+    matcher: 1-hash
+    rule_length: 10
+    matched_length: 10
+    match_coverage: '100.0'
+    rule_relevance: 80
+    identifier: gpl-2.0_1153.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Version of license not mentioned.  Assumed to be version 2.
   - score: '100.0'
     start_line: 141
     end_line: 142
     matcher: 2-aho
-    rule_length: 9
-    matched_length: 9
+    rule_length: 10
+    matched_length: 10
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl_125.RULE
+    identifier: gpl-1.0-plus_469.RULE
     license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      distributed under the terms of the GNU
+       General Public License
+  - score: '80.0'
+    start_line: 168
+    end_line: 168
+    matcher: 1-hash
+    rule_length: 10
+    matched_length: 10
+    match_coverage: '100.0'
+    rule_relevance: 80
+    identifier: gpl-2.0_1153.RULE
+    license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text: under the terms of the GNU
+    matched_text: Version of license not mentioned.  Assumed to be version 2.
   - score: '100.0'
     start_line: 165
     end_line: 165
-    matcher: 2-aho
-    rule_length: 9
-    matched_length: 9
+    matcher: 1-hash
+    rule_length: 10
+    matched_length: 10
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl_125.RULE
+    identifier: gpl-1.0-plus_469.RULE
     license_expression: gpl-1.0-plus
     is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
+    is_license_notice: yes
+    is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text:
+    matched_text: Distributed under the terms of the GNU General Public License
   - score: '100.0'
     start_line: 178
     end_line: 178
@@ -912,6 +949,7 @@ matches:
       This software is furnished under an open source license and may be used
        and copied only in accordance with the terms of this license. The text
        of the license may generally be found in the root directory of this
+       installation in the COPYING file.
   - score: '100.0'
     start_line: 247
     end_line: 247
@@ -929,8 +967,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: none'
   - score: '100.0'
-    start_line: 248
-    end_line: 266
+    start_line: 249
+    end_line: 267
     matcher: 1-hash
     rule_length: 145
     matched_length: 145
@@ -964,53 +1002,29 @@ matches:
 
       See also <https://issues.asterisk.org/jira/browse/ASTERISK-24172>.
   - score: '100.0'
-    start_line: 280
-    end_line: 281
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+    start_line: 277
+    end_line: 284
+    matcher: 1-hash
+    rule_length: 69
+    matched_length: 69
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl_72.RULE
-    license_expression: gpl-1.0-plus
+    identifier: gpl-2.0-plus_848.RULE
+    license_expression: gpl-2.0-plus
     is_license_text: no
-    is_license_notice: no
+    is_license_notice: yes
     is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text:
-  - score: '75.0'
-    start_line: 281
-    end_line: 281
-    matcher: 2-aho
-    rule_length: 1
-    matched_length: 1
-    match_coverage: '100.0'
-    rule_relevance: 75
-    identifier: lgpl_bare_single_word.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text:
-  - score: '50.0'
-    start_line: 283
-    end_line: 283
-    matcher: 2-aho
-    rule_length: 1
-    matched_length: 1
-    match_coverage: '100.0'
-    rule_relevance: 50
-    identifier: gpl_bare_word_only.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text:
+    matched_text: |
+      Have you intended for that package to be released under a Free
+       > Software license (basically: one that allows distribution and
+       > modification)? If so, could you please provide a version of that
+       > source package licensed under some standard free software license
+       > (GPL? LGPL? MIT?)
+       .
+       Thank you for your trouble. I intended the software to be free. GPL is
+       fine. Please add the appropriate text to the file for me, in my name.
   - score: '100.0'
     start_line: 324
     end_line: 327
@@ -1030,24 +1044,26 @@ matches:
       This program is free software; you can redistribute it and/or modify it
        under the terms of the GNU General Public License as published by the
        Free Software Foundation; either version 2 of the License, or (at your
-  - score: '63.64'
+       option) any later version.
+  - score: '100.0'
     start_line: 341
     end_line: 343
-    matcher: 3-seq
-    rule_length: 33
-    matched_length: 21
-    match_coverage: '63.64'
+    matcher: 1-hash
+    rule_length: 28
+    matched_length: 28
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0_290.RULE
-    license_expression: gpl-3.0
+    identifier: gpl-2.0_1333.RULE
+    license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      distributed under the terms of the GNU
-       [General] Public License Version [2]. See the LICENSE file at the top of
+      This program is free software, distributed under the terms of the GNU
+       General Public License Version 2. See the LICENSE file at the top of
+       the source tree.
   - score: '100.0'
     start_line: 356
     end_line: 359
@@ -1067,90 +1083,111 @@ matches:
       This program is free software: you can redistribute it and/or modify it
        under the terms of the GNU General Public License as published by the
        Free Software Foundation, either version 3 of the License, or (at your
-  - score: '90.0'
+       option) any later version.
+  - score: '80.0'
+    start_line: 381
+    end_line: 381
+    matcher: 1-hash
+    rule_length: 10
+    matched_length: 10
+    match_coverage: '100.0'
+    rule_relevance: 80
+    identifier: gpl-2.0_1153.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Version of license not mentioned.  Assumed to be version 2.
+  - score: '100.0'
     start_line: 378
     end_line: 378
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+    matcher: 1-hash
+    rule_length: 8
+    matched_length: 8
     match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: gpl_70.RULE
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_470.RULE
     license_expression: gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text:
-  - score: '63.64'
+    matched_text: you may use this source under GPL terms!
+  - score: '100.0'
     start_line: 387
     end_line: 389
-    matcher: 3-seq
-    rule_length: 33
-    matched_length: 21
-    match_coverage: '63.64'
+    matcher: 1-hash
+    rule_length: 28
+    matched_length: 28
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0_290.RULE
-    license_expression: gpl-3.0
+    identifier: gpl-2.0_1333.RULE
+    license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      distributed under the terms of the GNU
-       [General] Public License Version [2]. See the LICENSE file at the top of
-  - score: '99.0'
-    start_line: 401
-    end_line: 401
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+      This program is free software, distributed under the terms of the GNU
+       General Public License Version 2. See the LICENSE file at the top of
+       the source tree.
+  - score: '90.0'
+    start_line: 402
+    end_line: 402
+    matcher: 1-hash
+    rule_length: 12
+    matched_length: 12
     match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: lgpl_33.RULE
-    license_expression: lgpl-2.0-plus
+    rule_relevance: 90
+    identifier: lgpl-2.1_384.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Version of LGPL license not mentioned.  Assumed to be version 2.1.
+  - score: '100.0'
+    start_line: 395
+    end_line: 399
+    matcher: 1-hash
+    rule_length: 39
+    matched_length: 39
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_or_lgpl-2.0-plus_1.RULE
+    license_expression: gpl-2.0 OR lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software, distributed under the terms of the GNU
+       General Public License Version 2. See the LICENSE file at the top of
+       the source tree.
+       .
+       This version may be optionally licenced under the GNU LGPL licence.
+  - score: '80.0'
+    start_line: 430
+    end_line: 430
+    matcher: 2-aho
+    rule_length: 10
+    matched_length: 10
+    match_coverage: '100.0'
+    rule_relevance: 80
+    identifier: gpl-2.0_1153.RULE
+    license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text: LGPL license
-  - score: '63.64'
-    start_line: 395
-    end_line: 397
-    matcher: 3-seq
-    rule_length: 33
-    matched_length: 21
-    match_coverage: '63.64'
-    rule_relevance: 100
-    identifier: gpl-3.0_290.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      distributed under the terms of the GNU
-       [General] Public License Version [2]. See the LICENSE file at the top of
-  - score: '100.0'
-    start_line: 399
-    end_line: 399
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl_48.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text:
+    matched_text: Version of license not mentioned.  Assumed to be version 2.
   - score: '100.0'
     start_line: 426
     end_line: 427
@@ -1166,36 +1203,56 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: This program is free software, distributed under the terms of
+    matched_text: |
+      This program is free software, distributed under the terms of
+       the GNU Lesser (Library) General Public License
   - score: '100.0'
     start_line: 435
     end_line: 436
     matcher: 2-aho
-    rule_length: 10
-    matched_length: 10
+    rule_length: 12
+    matched_length: 12
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: mit_723.RULE
+    identifier: mit_1064.RULE
     license_expression: mit
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: freely distributable under the terms of an MIT-style
-  - score: '100.0'
-    start_line: 458
-    end_line: 458
-    matcher: 2-aho
-    rule_length: 9
-    matched_length: 9
+    matched_text: |
+      Prototype is freely distributable under the terms of an MIT-style
+       license.
+  - score: '80.0'
+    start_line: 461
+    end_line: 461
+    matcher: 1-hash
+    rule_length: 10
+    matched_length: 10
     match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl_125.RULE
-    license_expression: gpl-1.0-plus
+    rule_relevance: 80
+    identifier: gpl-2.0_1153.RULE
+    license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text:
+    matched_text: Version of license not mentioned.  Assumed to be version 2.
+  - score: '100.0'
+    start_line: 458
+    end_line: 458
+    matcher: 1-hash
+    rule_length: 10
+    matched_length: 10
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_469.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Distributed under the terms of the GNU General Public License

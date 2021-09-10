@@ -6,8 +6,9 @@ declared_license:
   - Binary redistribution (Qualcomm Atheros)
   - Binary redistribution (Qualcomm Atheros)
   - Binary redistribution (Qualcomm Atheros)
-license_expression: intel AND (clear-bsd AND isc AND bsd-no-mod AND gpl-2.0-plus AND ecos-exception-2.0
-  AND mit) AND proprietary-license AND proprietary-license AND proprietary-license
+license_expression: stmicroelectronics-linux-firmware AND (clear-bsd AND isc AND bsd-no-mod
+  AND gpl-2.0-plus WITH ecos-exception-2.0 AND mit) AND qca-linux-firmware AND qca-linux-firmware
+  AND qca-linux-firmware
 copyright: |
   2008-2010, Atheros Communications, Inc.
   1998-2002, Red Hat, Inc.
@@ -46,16 +47,16 @@ copyright: |
   2015-2016, The Android Open Source Project
   2015, Qualcomm Atheros, Inc.
 matches:
-  - score: '86.25'
-    start_line: 3
-    end_line: 37
+  - score: '96.74'
+    start_line: 12
+    end_line: 46
     matcher: 3-seq
-    rule_length: 293
-    matched_length: 266
-    match_coverage: '90.78'
-    rule_relevance: 95
-    identifier: intel_3.RULE
-    license_expression: intel
+    rule_length: 276
+    matched_length: 267
+    match_coverage: '96.74'
+    rule_relevance: 100
+    identifier: stmicroelectronics-linux-firmware.LICENSE
+    license_expression: stmicroelectronics-linux-firmware
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -70,24 +71,24 @@ matches:
         following disclaimer in the documentation and/or other materials
         provided with the distribution.
 
-      * Neither the name of [Atheros] [Communications], Inc. nor the names of
+      * Neither the name of [Atheros] [Communications], [Inc]. nor the names of
         its suppliers may be used to endorse or promote products derived
         from this software without specific prior written permission.
 
       * No reverse engineering, decompilation, or disassembly of this
         software is permitted.
 
-      Limited patent license.  [Atheros] [Communications], Inc. grants a
+      Limited patent license.  [Atheros] [Communications], [Inc]. grants a
       world-wide, royalty-free, non-exclusive license under patents it
       now or hereafter owns or controls to make, have made, use, import,
       offer to sell and sell ("Utilize") this software, but solely to
       the extent that any such patent is necessary to Utilize the software
-      [in] [conjunction] [with] [an] [Atheros] [Chipset]. The patent license shall not
+      in conjunction with an [Atheros] Chipset. The patent license shall not
       apply to any other combinations which include this software. No
       hardware per se is licensed hereunder.
 
-      DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
-      CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+      DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS [AND]
+      [CONTRIBUTORS] "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
       BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
       FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
       THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
@@ -98,8 +99,8 @@ matches:
       TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
       USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '99.15'
-    start_line: 3
-    end_line: 31
+    start_line: 57
+    end_line: 85
     matcher: 3-seq
     rule_length: 233
     matched_length: 233
@@ -143,8 +144,8 @@ matches:
       OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
       IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 33
-    end_line: 43
+    start_line: 87
+    end_line: 97
     matcher: 2-aho
     rule_length: 112
     matched_length: 112
@@ -170,8 +171,8 @@ matches:
       ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
       OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
-    start_line: 45
-    end_line: 74
+    start_line: 99
+    end_line: 128
     matcher: 2-aho
     rule_length: 231
     matched_length: 231
@@ -216,40 +217,25 @@ matches:
       OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGES.
   - score: '100.0'
-    start_line: 76
-    end_line: 78
+    start_line: 130
+    end_line: 142
     matcher: 2-aho
-    rule_length: 37
-    matched_length: 37
+    rule_length: 138
+    matched_length: 138
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_409.RULE
-    license_expression: gpl-2.0-plus
+    identifier: gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
+    license_expression: gpl-2.0-plus WITH ecos-exception-2.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify it under
+      eCos is free software; you can redistribute it and/or modify it under
       the terms of the GNU General Public License as published by the Free
       Software Foundation; either version 2 or (at your option) any later version.
-  - score: '100.0'
-    start_line: 80
-    end_line: 88
-    matcher: 2-aho
-    rule_length: 100
-    matched_length: 100
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: ecos-exception-2.0.LICENSE
-    license_expression: ecos-exception-2.0
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
+
       As a special exception, if other files instantiate templates or use macros
       or inline functions from this file, or you compile this file and link it
       with other works to produce a work based on this file, this file does not
@@ -260,8 +246,8 @@ matches:
       This exception does not invalidate any other reasons why a work based on
       this file might be covered by the GNU General Public License.
   - score: '100.0'
-    start_line: 90
-    end_line: 107
+    start_line: 144
+    end_line: 161
     matcher: 2-aho
     rule_length: 161
     matched_length: 161
@@ -293,16 +279,16 @@ matches:
       CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
       TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
       SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  - score: '99.21'
-    start_line: 3
-    end_line: 46
-    matcher: 3-seq
-    rule_length: 382
-    matched_length: 379
-    match_coverage: '99.21'
+  - score: '100.0'
+    start_line: 205
+    end_line: 248
+    matcher: 2-aho
+    rule_length: 388
+    matched_length: 388
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: proprietary-license_327.RULE
-    license_expression: proprietary-license
+    identifier: qca-linux-firmware.LICENSE
+    license_expression: qca-linux-firmware
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -310,21 +296,21 @@ matches:
     is_license_intro: no
     matched_text: |
       Redistribution. Reproduction and redistribution in binary form, without
-      modification, for use solely in conjunction with a [Qualcomm] [Atheros], [Inc].
+      modification, for use solely in conjunction with a Qualcomm Atheros, Inc.
       chipset, is permitted provided that the following conditions are met:
 
         • Redistributions must reproduce the above copyright notice and the following
           disclaimer in the documentation and/or other materials provided with the
           distribution.
 
-        • Neither the name of [Qualcomm] [Atheros], [Inc]. nor the names of its suppliers
+        • Neither the name of Qualcomm Atheros, Inc. nor the names of its suppliers
           may be used to endorse or promote products derived from this Software
           without specific prior written permission.
 
         • No reverse engineering, decompilation, or disassembly of this Software is
           permitted.
 
-      Limited patent license. [Qualcomm] [Atheros], [Inc]. (“Licensor”) grants you
+      Limited patent license. Qualcomm Atheros, Inc. (“Licensor”) grants you
       (“Licensee”) a limited, worldwide, royalty-free, non-exclusive license under
       the Patents to make, have made, use, import, offer to sell and sell the
       Software. No hardware per se is licensed hereunder.

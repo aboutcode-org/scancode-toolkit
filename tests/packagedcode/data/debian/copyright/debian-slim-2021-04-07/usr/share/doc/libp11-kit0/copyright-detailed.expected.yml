@@ -16,7 +16,7 @@ declared_license:
   - BSD-3-Clause
 license_expression: bsd-new AND fsf-unlimited-no-warranty AND bsd-new AND bsd-new AND mit AND
   isc AND (isc AND ibm-dhcp) AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND
-  bsd-new AND free-unknown AND free-unknown
+  bsd-new AND bsd-new AND free-unknown
 copyright: |
   2011 Collabora Ltd.
   2004, 2005, 2007, 2008, 2012, 2013 Stefan Walter
@@ -49,8 +49,8 @@ copyright: |
   Timo Jyrinki <timo.jyrinki@iki.fi>, 2012
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 8
+    start_line: 17
+    end_line: 24
     matcher: 1-hash
     rule_length: 64
     matched_length: 64
@@ -73,8 +73,8 @@ matches:
         the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
         PURPOSE.  */
   - score: '100.0'
-    start_line: 1
-    end_line: 11
+    start_line: 61
+    end_line: 71
     matcher: 1-hash
     rule_length: 110
     matched_length: 110
@@ -100,8 +100,8 @@ matches:
       OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
       PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
-    start_line: 3
-    end_line: 14
+    start_line: 80
+    end_line: 91
     matcher: 2-aho
     rule_length: 113
     matched_length: 113
@@ -128,8 +128,8 @@ matches:
       ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
       SOFTWARE.
   - score: '100.0'
-    start_line: '19'
-    end_line: 38
+    start_line: 96
+    end_line: 115
     matcher: 2-aho
     rule_length: 203
     matched_length: 203
@@ -164,8 +164,8 @@ matches:
       OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
       IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
   - score: '76.15'
-    start_line: 1
-    end_line: 2
+    start_line: 160
+    end_line: 161
     matcher: 3-seq
     rule_length: 11
     matched_length: 11
@@ -182,8 +182,8 @@ matches:
       This file is distributed under the same license as the [p11]-[kit]
       package.
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 165
+    end_line: 187
     matcher: 1-hash
     rule_length: 213
     matched_length: 213
@@ -221,8 +221,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '80.0'
-    start_line: 12
-    end_line: 21
+    start_line: 46
+    end_line: 55
     matcher: 2-aho
     rule_length: 86
     matched_length: 86
@@ -246,16 +246,16 @@ matches:
       *
       * The above copyright notice and this permission notice shall be
       * included in all copies or substantial portions of the Software.
-  - score: '82.5'
-    start_line: 1
-    end_line: 2
-    matcher: 3-seq
-    rule_length: 12
-    matched_length: 11
-    match_coverage: '91.67'
-    rule_relevance: 90
-    identifier: free-unknown_80.RULE
-    license_expression: free-unknown
+  - score: '100.0'
+    start_line: 151
+    end_line: 152
+    matcher: 1-hash
+    rule_length: 17
+    matched_length: 17
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_1043.RULE
+    license_expression: bsd-new
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -263,4 +263,4 @@ matches:
     is_license_intro: no
     matched_text: |
       This file is distributed under the same license as the
-      [debian] [files] [of] [the] [p11]-[kit] package.
+      debian files of the p11-kit package.
