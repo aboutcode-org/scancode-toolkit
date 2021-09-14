@@ -1,0 +1,2209 @@
+primary_license:
+declared_license:
+license_expression: gpl-3.0-plus AND gpl-3.0-plus WITH gcc-exception-3.1 AND bsd-new AND uoi-ncsa
+  AND mit AND (mit OR commercial-license) AND gfdl-1.2 AND gcc-exception-3.1 AND gpl-2.0 AND
+  lgpl-2.0-plus AND lgpl-2.1-plus AND public-domain AND sunpro AND gpl-2.0-plus AND (artistic-perl-1.0
+  OR gpl-1.0) AND zlib AND d-zlib AND gfdl-1.3-plus AND (gpl-3.0 AND lgpl-2.1) AND (lgpl-3.0
+  AND gpl-3.0) AND (gpl-3.0 AND lgpl-2.1 AND lgpl-3.0) AND (lgpl-2.0 AND gpl-3.0) AND gpl-1.0-plus
+  AND (gpl-2.0-plus AND gpl-3.0-plus) AND (lgpl-2.1 AND lgpl-3.0 AND gpl-3.0) AND (lgpl-2.1
+  AND lgpl-3.0) AND (lgpl-2.0-plus AND gpl-1.0-plus) AND bsla-no-advert AND bsla AND bsd-original-uc
+  AND flex-2.5 AND (gpl-3.0 AND gpl-2.0 AND lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus
+  AND other-copyleft AND other-permissive) AND x11-lucent AND amd-historical AND osf-1990 AND
+  nilsson-historical AND newlib-historical AND bsd-simplified AND x11-hanson AND intel-osl-1993
+  AND hs-regexp
+copyright: |
+  Copyright (c) 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019
+  Copyright (c) 2009-2014 by the LLVM contributors
+  Copyright (c) 1996-2003 Red Hat, Inc.
+  Copyright (c) 2009 Free Software Foundation, Inc. <http://fsf.org/>
+  Copyright (c) 2010 Free Software Foundation, Inc.
+  Copyright 2001 by Stephen L. Moshier <moshier@na-net.ornl.gov>
+  Copyright (c) 2001 Stephen L. Moshier <moshier@na-net.ornl.gov>
+  Copyright (c) 1997, 1999 Free Software Foundation, Inc.
+  Copyright (c) 1997, 1999, 2002, 2004 Free Software Foundation, Inc.
+  Copyright 1984, 1991 by Stephen L. Moshier Adapted
+  Copyright (c) 1993 by Sun Microsystems, Inc.
+  Copyright (c) 2009 The Go Authors
+  Copyright (c) 2004-2007 David Friedman
+  Vincenzo Ampolo, Michael Parrot, Iain Buclaw, (c) 2009, 2010
+  Copyright (c) 1999-2010 by Digital Mars
+  (c) 1995-2004 Jean-loup Gailly and Mark Adler
+  Copyright (c) 2004-2005 by Digital Mars, www.digitalmars.com
+  Copyright (c) 2015-2017 Free Software Foundation, Inc.
+  Copyright (c) 2008-2017 Free Software Foundation, Inc.
+  Copyright (c) 2007-2019 Free Software Foundation, Inc.
+  Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2012, 2013 Free Software Foundation, Inc.
+  Copyright (c) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+  Copyright (c) 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+  Copyright (c) 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 by University of Ulm
+  Copyright (c) 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+  Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+  Copyright (c) 2001-2019 Free Software Foundation, Inc.
+  Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+  Copyright (c) 2008, 2009, 2010 Free Software Foundation, Inc.
+  Copyright (c) 2012 Free Software Foundation, Inc.
+  Copyright (c) 2009, 2010 Free Software Foundation, Inc.
+  Copyright (c) 2001-2019 Free Software Foundation, Inc.
+  Copyright (c) 2001-2019 Free Software Foundation, Inc.
+  Copyright (c) 2001-2019 Free Software Foundation, Inc.
+  Copyright (c) 2005-2015 Free Software Foundation, Inc. Mix
+  Copyright (c) 2001-2018 Free Software Foundation, Inc.
+  Copyright (c) 2001-2019 Free Software Foundation, Inc. Mix
+  Copyright (c) 2008, 2009, 2010 Free Software Foundation, Inc.
+  Copyright (c) 2005-2014 Free Software Foundation, Inc. Mix
+  Copyright (c) 2005-2018 Free Software Foundation, Inc. Mix
+  Copyright (c) 1999-2006 Ralf S. Engelschall <rse@gnu.org>
+  Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+  Copyright (c) 2005-2019 Free Software Foundation, Inc.
+  Copyright (c) 2010, 2011, 2012, 2013 Free Software Foundation, Inc.
+  Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+  Copyright (c) 1990 The Regents of the University of California
+  Copyright (c) 1990 The Regents of the University of California
+  Copyright (c) 1981, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994 The Regents of the University of California
+  Copyright (c) 1988, 1990, 1993 Regents of the University of California
+  Copyright (c) 1982, 1986, 1989, 1991, 1993, 1994 The Regents of the University of California
+  (c) UNIX System Laboratories, Inc.
+  Copyright (c) 1987, 1988, 2000 Regents of the University of California
+  Copyright 2001 Red Hat, Inc.
+  Copyright (c) 1991 by AT&T.
+  Copyright 1989, 1990 Advanced Micro Devices, Inc.
+  Copyright (c) 1993 C.W. Sandmann
+  (c) Copyright 1992 Eric Backus
+  Copyright (c) 1993 by Sun Microsystems, Inc.
+  (c) Copyright 1986 HEWLETT-PACKARD COMPANY
+  Copyright (c) 2001 Hans-Peter Nilsson
+  Copyright (c) 1999, 2000, 2001, 2002 Stephane Carrez (stcarrez@nerim.fr)
+  Copyright (c) 2001 Christopher G. Demetriou
+  Copyright 2002 SuperH, Inc.
+  Copyright (c) 1999 Kungliga Tekniska Hgskolan (Royal Institute of Technology, Stockholm, Sweden)
+  Copyright (c) 2000, 2001 Alexey Zelkin <phantom@FreeBSD.org>
+  Copyright (c) 1997 by Andrey A. Chernov, Moscow, Russia
+  Copyright (c) 1997-2002 FreeBSD Project
+  Copyright (c) 1984,2000 S.L. Moshier
+  Copyright (c) 1999 Citrus Project
+  Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+  Copyright (c) 1991 DJ Delorie
+  Copyright (c) 1990-1999, 2000, 2001 Free Software Foundation, Inc.
+  Copyright (c) 1996 Xavier Leroy (Xavier.Leroy@inria.fr)
+  Copyright (c) 1993 Intel Corporation
+  (c) Copyright 1986 HEWLETT-PACKARD COMPANY
+  Copyright 1992, 1993, 1994 Henry Spencer
+  Copyright (c) 2001 Mike Barcroft <mike@FreeBSD.org>
+  Copyright (c) 1999, 2000 Konstantin Chuguev
+  Copyright (c) 2003, Artem B. Bityuckiy, SoftMine Corporation
+  Copyright (c) 1994, 1997, 2001, 2002, 2003, 2004 Red Hat Incorporated
+matches:
+  - score: '99.24'
+    start_line: 83
+    end_line: 99
+    matcher: 3-seq
+    rule_length: 131
+    matched_length: 131
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_354.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "is free software; you can redistribute it and/or modify it under\n the terms\
+      \ of the GNU General Public License as published by the Free\n Software Foundation; either\
+      \ version 3, or (at your option) any later\n version.\n \n [GCC] is distributed in the\
+      \ hope that it will be useful, but WITHOUT ANY\n WARRANTY; without even the implied warranty\
+      \ of MERCHANTABILITY or\n FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public\
+      \ License\n for more details.\n \n Files that have exception clauses are licensed under\
+      \ the terms of the\n GNU General Public License; either version 3, or (at your option)\
+      \ any\n later version.\n \n On Debian GNU/Linux systems, the complete text of the GNU\
+      \ General\n Public License is in `/usr/share/common-licenses/GPL', version 3 of this\n\
+      \ license in `/usr/share/common-licenses/GPL-3'."
+  - score: '100.0'
+    start_line: 101
+    end_line: 103
+    matcher: 2-aho
+    rule_length: 32
+    matched_length: 32
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_with_gcc-exception-3.1_18.RULE
+    license_expression: gpl-3.0-plus WITH gcc-exception-3.1
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      The following runtime libraries are licensed under the terms of the
+       GNU General Public License (v3 or later) with version 3.1 of the GCC
+       Runtime Library Exception (included in this file):
+  - score: '100.0'
+    start_line: 123
+    end_line: 149
+    matcher: 2-aho
+    rule_length: 203
+    matched_length: 203
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_98.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions are\n met:\n \n     (1) Redistributions\
+      \ of source code must retain the above copyright\n     notice, this list of conditions\
+      \ and the following disclaimer. \n \n     (2) Redistributions in binary form must reproduce\
+      \ the above copyright\n     notice, this list of conditions and the following disclaimer\
+      \ in\n     the documentation and/or other materials provided with the\n     distribution.\
+      \  \n     \n     (3) The name of the author may not be used to\n     endorse or promote\
+      \ products derived from this software without\n     specific prior written permission.\n\
+      \ \n THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR\n IMPLIED WARRANTIES,\
+      \ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n WARRANTIES OF MERCHANTABILITY AND FITNESS\
+      \ FOR A PARTICULAR PURPOSE ARE\n DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\
+      \ ANY DIRECT,\n INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n (INCLUDING,\
+      \ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\n SERVICES; LOSS OF USE, DATA,\
+      \ OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\
+      \ WHETHER IN CONTRACT,\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\
+      \ ARISING\n IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE\n POSSIBILITY\
+      \ OF SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 167
+    end_line: '192'
+    matcher: 2-aho
+    rule_length: 224
+    matched_length: 224
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: uoi-ncsa_9.RULE
+    license_expression: uoi-ncsa
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Permission is hereby granted, free of charge, to any person obtaining a copy\
+      \ of\n this software and associated documentation files (the \"Software\"), to deal with\n\
+      \ the Software without restriction, including without limitation the rights to\n use,\
+      \ copy, modify, merge, publish, distribute, sublicense, and/or sell copies\n of the Software,\
+      \ and to permit persons to whom the Software is furnished to do\n so, subject to the following\
+      \ conditions:\n \n     * Redistributions of source code must retain the above copyright\
+      \ notice,\n       this list of conditions and the following disclaimers.\n \n     * Redistributions\
+      \ in binary form must reproduce the above copyright notice,\n       this list of conditions\
+      \ and the following disclaimers in the\n       documentation and/or other materials provided\
+      \ with the distribution.\n \n     * Neither the names of the LLVM Team, University of\
+      \ Illinois at\n       Urbana-Champaign, nor the names of its contributors may be used\
+      \ to\n       endorse or promote products derived from this Software without specific\n\
+      \       prior written permission.\n \n THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY\
+      \ OF ANY KIND, EXPRESS OR\n IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\
+      \ FITNESS\n FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\n CONTRIBUTORS\
+      \ OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n LIABILITY, WHETHER\
+      \ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n OUT OF OR IN CONNECTION\
+      \ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH THE\n SOFTWARE."
+  - score: '100.0'
+    start_line: '194'
+    end_line: 210
+    matcher: 2-aho
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Permission is hereby granted, free of charge, to any person obtaining a copy\n\
+      \ of this software and associated documentation files (the \"Software\"), to deal\n in\
+      \ the Software without restriction, including without limitation the rights\n to use,\
+      \ copy, modify, merge, publish, distribute, sublicense, and/or sell\n copies of the Software,\
+      \ and to permit persons to whom the Software is\n furnished to do so, subject to the following\
+      \ conditions:\n \n The above copyright notice and this permission notice shall be included\
+      \ in\n all copies or substantial portions of the Software.\n \n THE SOFTWARE IS PROVIDED\
+      \ \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n IMPLIED, INCLUDING BUT NOT LIMITED\
+      \ TO THE WARRANTIES OF MERCHANTABILITY,\n FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\
+      \ IN NO EVENT SHALL THE\n AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES\
+      \ OR OTHER\n LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n\
+      \ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n THE SOFTWARE."
+  - score: '82.2'
+    start_line: 213
+    end_line: 234
+    matcher: 3-seq
+    rule_length: '191'
+    matched_length: 157
+    match_coverage: '82.2'
+    rule_relevance: 100
+    identifier: mit_or_commercial-option.RULE
+    license_expression: mit OR commercial-license
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "licensed [under] [the] [following] [terms]:\n \n     [libffi] - [Copyright]\
+      \ ([c]) [1996]-[2003]  [Red] [Hat], [Inc].\n \n     Permission is hereby granted, free\
+      \ of charge, to any person obtaining\n     a copy of this software and associated documentation\
+      \ files (the\n     ``Software''), to deal in the Software without restriction, including\n\
+      \     without limitation the rights to use, copy, modify, merge, publish,\n     distribute,\
+      \ sublicense, and/or sell copies of the Software, and to\n     permit persons to whom\
+      \ the Software is furnished to do so, subject to\n     the following conditions:\n \n\
+      \     The above copyright notice and this permission notice shall be included\n     in\
+      \ all copies or substantial portions of the Software.\n \n     THE SOFTWARE IS PROVIDED\
+      \ ``AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS\n     OR IMPLIED, INCLUDING BUT NOT\
+      \ LIMITED TO THE WARRANTIES OF\n     MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE\
+      \ AND NONINFRINGEMENT.\n     IN NO EVENT SHALL [CYGNUS] [SOLUTIONS] BE LIABLE FOR ANY\
+      \ CLAIM, DAMAGES OR\n     OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,\n\
+      \     ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\n     OTHER\
+      \ DEALINGS IN THE SOFTWARE."
+  - score: '100.0'
+    start_line: 237
+    end_line: 239
+    matcher: 2-aho
+    rule_length: 32
+    matched_length: 32
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gfdl-1.2_7.RULE
+    license_expression: gfdl-1.2
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      The documentation is licensed under the GNU Free Documentation License (v1.2).
+       On Debian GNU/Linux systems, the complete text of this license is in
+       `/usr/share/common-licenses/GFDL-1.2'.
+  - score: '100.0'
+    start_line: 242
+    end_line: 313
+    matcher: 2-aho
+    rule_length: 512
+    matched_length: 512
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gcc-exception-3.1.LICENSE
+    license_expression: gcc-exception-3.1
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "GCC RUNTIME LIBRARY EXCEPTION\n \n Version 3.1, 31 March 2009\n \n Copyright\
+      \ (C) 2009 Free Software Foundation, Inc. <http://fsf.org/>\n \n Everyone is permitted\
+      \ to copy and distribute verbatim copies of this\n license document, but changing it is\
+      \ not allowed.\n \n This GCC Runtime Library Exception (\"Exception\") is an additional\n\
+      \ permission under section 7 of the GNU General Public License, version\n 3 (\"GPLv3\"\
+      ). It applies to a given file (the \"Runtime Library\") that\n bears a notice placed by\
+      \ the copyright holder of the file stating that\n the file is governed by GPLv3 along\
+      \ with this Exception.\n \n When you use GCC to compile a program, GCC may combine portions\
+      \ of\n certain GCC header files and runtime libraries with the compiled\n program. The\
+      \ purpose of this Exception is to allow compilation of\n non-GPL (including proprietary)\
+      \ programs to use, in this way, the\n header files and runtime libraries covered by this\
+      \ Exception.\n \n 0. Definitions.\n \n A file is an \"Independent Module\" if it either\
+      \ requires the Runtime\n Library for execution after a Compilation Process, or makes use\
+      \ of an\n interface provided by the Runtime Library, but is not otherwise based\n on the\
+      \ Runtime Library.\n \n \"GCC\" means a version of the GNU Compiler Collection, with or\
+      \ without\n modifications, governed by version 3 (or a specified later version) of\n the\
+      \ GNU General Public License (GPL) with the option of using any\n subsequent versions\
+      \ published by the FSF.\n \n \"GPL-compatible Software\" is software whose conditions\
+      \ of propagation,\n modification and use would permit combination with GCC in accord with\n\
+      \ the license of GCC.\n \n \"Target Code\" refers to output from any compiler for a real\
+      \ or virtual\n target processor architecture, in executable form or suitable for\n input\
+      \ to an assembler, loader, linker and/or execution\n phase. Notwithstanding that, Target\
+      \ Code does not include data in any\n format that is used as a compiler intermediate representation,\
+      \ or used\n for producing a compiler intermediate representation.\n \n The \"Compilation\
+      \ Process\" transforms code entirely represented in\n non-intermediate languages designed\
+      \ for human-written code, and/or in\n Java Virtual Machine byte code, into Target Code.\
+      \ Thus, for example,\n use of source code generators and preprocessors need not be considered\n\
+      \ part of the Compilation Process, since the Compilation Process can be\n understood as\
+      \ starting with the output of the generators or\n preprocessors.\n \n A Compilation Process\
+      \ is \"Eligible\" if it is done using GCC, alone or\n with other GPL-compatible software,\
+      \ or if it is done without using any\n work based on GCC. For example, using non-GPL-compatible\
+      \ Software to\n optimize any GCC intermediate representations would not qualify as an\n\
+      \ Eligible Compilation Process.\n \n 1. Grant of Additional Permission.\n \n You have\
+      \ permission to propagate a work of Target Code formed by\n combining the Runtime Library\
+      \ with Independent Modules, even if such\n propagation would otherwise violate the terms\
+      \ of GPLv3, provided that\n all Target Code was generated by Eligible Compilation Processes.\
+      \ You\n may then convey such a combination under terms of your choice,\n consistent with\
+      \ the licensing of the Independent Modules.\n \n 2. No Weakening of GCC Copyleft.\n \n\
+      \ The availability of this Exception does not imply any general\n presumption that third-party\
+      \ software is unaffected by the copyleft\n requirements of the license of GCC."
+  - score: '7.81'
+    start_line: 324
+    end_line: 325
+    matcher: 3-seq
+    rule_length: 64
+    matched_length: 5
+    match_coverage: '7.81'
+    rule_relevance: 100
+    identifier: gpl-2.0_443.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      the GNU [Library] General Public
+       License
+  - score: '72.73'
+    start_line: 325
+    end_line: 331
+    matcher: 3-seq
+    rule_length: 77
+    matched_length: 56
+    match_coverage: '72.73'
+    rule_relevance: 100
+    identifier: lgpl-2.0-plus_402.RULE
+    license_expression: lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "as published by the Free Software Foundation; either\n version 2 of the License,\
+      \ or (at your option) any later version.\n \n [Libiberty] is distributed in the hope that\
+      \ it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n\
+      \ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n Library General\
+      \ Public License for more details."
+  - score: '100.0'
+    start_line: 338
+    end_line: 346
+    matcher: 2-aho
+    rule_length: 82
+    matched_length: 82
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_34.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This library is free software; you can redistribute it and/or\n     modify\
+      \ it under the terms of the GNU Lesser General Public\n     License as published by the\
+      \ Free Software Foundation; either\n     version 2.1 of the License, or (at your option)\
+      \ any later version.\n \n     This library is distributed in the hope that it will be\
+      \ useful,\n     but WITHOUT ANY WARRANTY; without even the implied warranty of\n     MERCHANTABILITY\
+      \ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n     Lesser General Public License\
+      \ for more details."
+  - score: '100.0'
+    start_line: 356
+    end_line: 364
+    matcher: 2-aho
+    rule_length: 82
+    matched_length: 82
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_34.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This library is free software; you can redistribute it and/or\n     modify\
+      \ it under the terms of the GNU Lesser General Public\n     License as published by the\
+      \ Free Software Foundation; either\n     version 2.1 of the License, or (at your option)\
+      \ any later version.\n \n     This library is distributed in the hope that it will be\
+      \ useful,\n     but WITHOUT ANY WARRANTY; without even the implied warranty of\n     MERCHANTABILITY\
+      \ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n     Lesser General Public License\
+      \ for more details."
+  - score: '97.56'
+    start_line: 374
+    end_line: 382
+    matcher: 3-seq
+    rule_length: 82
+    matched_length: 80
+    match_coverage: '97.56'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_34.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Library is free software; you can redistribute it and/or\n    modify it under\
+      \ the terms of the GNU Lesser General Public\n    License as published by the Free Software\
+      \ Foundation; either\n    version 2.1 of the License, or (at your option) any later version.\n\
+      \ \n    [The] [GNU] [C] Library is distributed in the hope that it will be useful,\n \
+      \   but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY\
+      \ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n    Lesser General Public License\
+      \ for more details."
+  - score: '70.0'
+    start_line: 387
+    end_line: 387
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 70
+    identifier: public-domain_bare_words.RULE
+    license_expression: public-domain
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Public domain.
+  - score: '97.56'
+    start_line: 395
+    end_line: 403
+    matcher: 3-seq
+    rule_length: 82
+    matched_length: 80
+    match_coverage: '97.56'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_34.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Library is free software; you can redistribute it and/or\n    modify it under\
+      \ the terms of the GNU Lesser General Public\n    License as published by the Free Software\
+      \ Foundation; either\n    version 2.1 of the License, or (at your option) any later version.\n\
+      \ \n    [The] [GNU] [C] Library is distributed in the hope that it will be useful,\n \
+      \   but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY\
+      \ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n    Lesser General Public License\
+      \ for more details."
+  - score: '100.0'
+    start_line: 410
+    end_line: 418
+    matcher: 2-aho
+    rule_length: 82
+    matched_length: 82
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_34.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This library is free software; you can redistribute it and/or\n     modify\
+      \ it under the terms of the GNU Lesser General Public\n     License as published by the\
+      \ Free Software Foundation; either\n     version 2.1 of the License, or (at your option)\
+      \ any later version.\n \n     This library is distributed in the hope that it will be\
+      \ useful,\n     but WITHOUT ANY WARRANTY; without even the implied warranty of\n     MERCHANTABILITY\
+      \ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n     Lesser General Public License\
+      \ for more details."
+  - score: '100.0'
+    start_line: 424
+    end_line: 427
+    matcher: 2-aho
+    rule_length: 25
+    matched_length: 25
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: sunpro.LICENSE
+    license_expression: sunpro
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Developed at SunPro, a Sun Microsystems, Inc. business.
+        * Permission to use, copy, modify, and distribute this
+        * software is freely granted, provided that this notice
+        * is preserved.
+  - score: '100.0'
+    start_line: 434
+    end_line: 458
+    matcher: 2-aho
+    rule_length: 212
+    matched_length: 212
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_166.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions are\n met:\n \n    * Redistributions\
+      \ of source code must retain the above copyright\n notice, this list of conditions and\
+      \ the following disclaimer.\n    * Redistributions in binary form must reproduce the above\n\
+      \ copyright notice, this list of conditions and the following disclaimer\n in the documentation\
+      \ and/or other materials provided with the\n distribution.\n    * Neither the name of\
+      \ Google Inc. nor the names of its\n contributors may be used to endorse or promote products\
+      \ derived from\n this software without specific prior written permission.\n \n THIS SOFTWARE\
+      \ IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n \"AS IS\" AND ANY EXPRESS OR\
+      \ IMPLIED WARRANTIES, INCLUDING, BUT NOT\n LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR\n A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n\
+      \ OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS OR SERVICES; LOSS OF USE,\n DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\
+      \ CAUSED AND ON ANY\n THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 473
+    end_line: 480
+    matcher: 2-aho
+    rule_length: 75
+    matched_length: 75
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_812.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This program is free software; you can redistribute it and/or modify\n it\
+      \ under the terms of the GNU General Public License as published by\n the Free Software\
+      \ Foundation; either version 2 of the License, or\n (at your option) any later version.\n\
+      \ \n On Debian GNU/Linux systems, the complete text of the GNU General\n Public License\
+      \ is in `/usr/share/common-licenses/GPL', version 2 of this\n license in `/usr/share/common-licenses/GPL-2'."
+  - score: '100.0'
+    start_line: 490
+    end_line: 495
+    matcher: 2-aho
+    rule_length: 46
+    matched_length: 46
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: artistic-perl-1.0_or_gpl-1.0_2.RULE
+    license_expression: artistic-perl-1.0 OR gpl-1.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "License for redistribution is by either the Artistic License or\n the GNU\
+      \ General Public License (v1).\n \n On Debian GNU/Linux systems, the complete text of\
+      \ the GNU General\n Public License is in `/usr/share/common-licenses/GPL', the Artistic\n\
+      \ license in `/usr/share/common-licenses/Artistic'."
+  - score: '100.0'
+    start_line: 503
+    end_line: 517
+    matcher: 2-aho
+    rule_length: 132
+    matched_length: 132
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: zlib.LICENSE
+    license_expression: zlib
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This software is provided 'as-is', without any express or implied\n   warranty.\
+      \  In no event will the authors be held liable for any damages\n   arising from the use\
+      \ of this software.\n \n   Permission is granted to anyone to use this software for any\
+      \ purpose,\n   including commercial applications, and to alter it and redistribute it\n\
+      \   freely, subject to the following restrictions:\n \n   1. The origin of this software\
+      \ must not be misrepresented; you must not\n      claim that you wrote the original software.\
+      \ If you use this software\n      in a product, an acknowledgment in the product documentation\
+      \ would be\n      appreciated but is not required.\n   2. Altered source versions must\
+      \ be plainly marked as such, and must not be\n      misrepresented as being the original\
+      \ software.\n   3. This notice may not be removed or altered from any source distribution."
+  - score: '100.0'
+    start_line: 529
+    end_line: 545
+    matcher: 2-aho
+    rule_length: 138
+    matched_length: 138
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: d-zlib.LICENSE
+    license_expression: d-zlib
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This software is provided 'as-is', without any express or implied\n warranty.\
+      \ In no event will the authors be held liable for any damages\n arising from the use of\
+      \ this software.\n \n Permission is granted to anyone to use this software for any purpose,\n\
+      \ including commercial applications, and to alter it and redistribute it\n freely, in\
+      \ both source and binary form, subject to the following\n restrictions:\n \n  o  The origin\
+      \ of this software must not be misrepresented; you must not\n     claim that you wrote\
+      \ the original software. If you use this software\n     in a product, an acknowledgment\
+      \ in the product documentation would be\n     appreciated but is not required.\n  o  Altered\
+      \ source versions must be plainly marked as such, and must not\n     be misrepresented\
+      \ as being the original software.\n  o  This notice may not be removed or altered from\
+      \ any source\n     distribution."
+  - score: '100.0'
+    start_line: 557
+    end_line: 574
+    matcher: 2-aho
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Permission is hereby granted, free of charge, to any person obtaining a\n\
+      \    copy of this software and associated documentation files\n    (the \"Software\"),\
+      \ to deal in the Software without restriction, including\n    without limitation the rights\
+      \ to use, copy, modify, merge, publish,\n    distribute, sublicense, and/or sell copies\
+      \ of the Software, and to\n    permit persons to whom the Software is furnished to do\
+      \ so, subject to\n    the following conditions:\n \n    The above copyright notice and\
+      \ this permission notice shall be included\n    in all copies or substantial portions\
+      \ of the Software.\n \n    THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY\
+      \ KIND, EXPRESS\n    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n    MERCHANTABILITY,\
+      \ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\n    IN NO EVENT SHALL THE AUTHORS\
+      \ OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\n    DAMAGES OR OTHER LIABILITY, WHETHER\
+      \ IN AN ACTION OF CONTRACT, TORT OR\n    OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\
+      \ WITH THE SOFTWARE OR THE\n    USE OR OTHER DEALINGS IN THE SOFTWARE."
+  - score: '100.0'
+    start_line: 581
+    end_line: 598
+    matcher: 2-aho
+    rule_length: 144
+    matched_length: 144
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_with_gcc-exception-3.1_10.RULE
+    license_expression: gpl-3.0-plus WITH gcc-exception-3.1
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This file is free software; you can redistribute it and/or modify it\n  \
+      \  under the terms of the GNU General Public License as published by the\n    Free Software\
+      \ Foundation; either version 3, or (at your option) any\n    later version.\n \n    This\
+      \ file is distributed in the hope that it will be useful, but\n    WITHOUT ANY WARRANTY;\
+      \ without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR\
+      \ PURPOSE.  See the GNU\n    General Public License for more details.\n \n    Under Section\
+      \ 7 of GPL version 3, you are granted additional\n    permissions described in the GCC\
+      \ Runtime Library Exception, version\n    3.1, as published by the Free Software Foundation.\n\
+      \ \n    You should have received a copy of the GNU General Public License and\n    a copy\
+      \ of the GCC Runtime Library Exception along with this program;\n    see the files COPYING3\
+      \ and COPYING.RUNTIME respectively.  If not, see\n    <http://www.gnu.org/licenses/>."
+  - score: '58.14'
+    start_line: 606
+    end_line: 618
+    matcher: 3-seq
+    rule_length: 129
+    matched_length: 75
+    match_coverage: '58.14'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_with_gcc-exception-3.1_14.RULE
+    license_expression: gpl-3.0-plus WITH gcc-exception-3.1
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "is free software; you can redistribute it and/or modify\n it under the terms\
+      \ of the GNU General Public License as published by\n the Free Software Foundation; either\
+      \ version 3, or (at your option)\n any later version.\n \n [GNU] [Modula]-[2] is distributed\
+      \ in the hope that it will be useful, but\n WITHOUT ANY WARRANTY; without even the implied\
+      \ warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n General\
+      \ Public License for more details.\n \n [gcc]/[gm2]/**/*.[texi]:\n [Copyright] ([C]) [2000],\
+      \ [2001], [2002], [2003], [2004], [2005], [2006], [2007], [2008], [2009], [2010],\n [2011],\
+      \ [2012], [2012], [2013] Free Software Foundation,"
+  - score: '100.0'
+    start_line: 620
+    end_line: 623
+    matcher: 2-aho
+    rule_length: 46
+    matched_length: 46
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gfdl-1.3-plus_4.RULE
+    license_expression: gfdl-1.3-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is granted to copy, distribute and/or modify this document
+       under the terms of the GNU Free Documentation License, Version 1.3 or
+       any later version published by the Free Software Foundation; with no
+       Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+  - score: '83.81'
+    start_line: 629
+    end_line: 644
+    matcher: 3-seq
+    rule_length: 105
+    matched_length: 88
+    match_coverage: '83.81'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_251.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This library is free software; you can redistribute it and/or\n modify it\
+      \ under the terms of the GNU Lesser General Public\n License as published by the Free\
+      \ Software Foundation; either\n version 2.1 of the License, or (at your option) any later\
+      \ version.\n \n This library is distributed in the hope that it will be useful,\n but\
+      \ WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS\
+      \ FOR A PARTICULAR PURPOSE.  See the GNU\n Lesser General Public License for more details.\n\
+      \ \n [gcc]/[gm2]/[ulm]-[lib]-[gm2]:\n [Copyright] ([C]) [2004], [2005], [2006], [2007],\
+      \ [2008], [2009], [2010]\n               [Free] [Software] [Foundation], [Inc].\n \n [GNU]\
+      \ [Modula]-[2] [is] [free] [software]; [you] [can] [redistribute] [it] [and]/[or] [modify]\
+      \ [it] [under]\n [the] [terms] of the GNU General Public License"
+  - score: '100.0'
+    start_line: 643
+    end_line: 646
+    matcher: 2-aho
+    rule_length: 37
+    matched_length: 37
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_111.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      is free software; you can redistribute it and/or modify it under
+       the terms of the GNU General Public License as published by the Free
+       Software Foundation; either version 3, or (at your option) any later
+       version.
+  - score: '100.0'
+    start_line: 661
+    end_line: 669
+    matcher: 2-aho
+    rule_length: 82
+    matched_length: 82
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_34.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This library is free software; you can redistribute it and/or\n modify it\
+      \ under the terms of the GNU Lesser General Public\n License as published by the Free\
+      \ Software Foundation; either\n version 2.1 of the License, or (at your option) any later\
+      \ version.\n \n This library is distributed in the hope that it will be useful,\n but\
+      \ WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS\
+      \ FOR A PARTICULAR PURPOSE.  See the GNU\n Lesser General Public License for more details."
+  - score: '100.0'
+    start_line: 675
+    end_line: 683
+    matcher: 2-aho
+    rule_length: 82
+    matched_length: 82
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_34.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This library is free software; you can redistribute it and/or\n modify it\
+      \ under the terms of the GNU Lesser General Public\n License as published by the Free\
+      \ Software Foundation; either\n version 2.1 of the License, or (at your option) any later\
+      \ version.\n \n This library is distributed in the hope that it will be useful,\n but\
+      \ WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS\
+      \ FOR A PARTICULAR PURPOSE.  See the GNU\n Lesser General Public License for more details."
+  - score: '96.05'
+    start_line: 705
+    end_line: 713
+    matcher: 3-seq
+    rule_length: 76
+    matched_length: 73
+    match_coverage: '96.05'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_287.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "GNU [Modula]-[2] is free software; you can redistribute it and/or modify\n\
+      \ it under the terms of the GNU General Public License as published by\n the Free Software\
+      \ Foundation; either version [3], or (at your option)\n any later version.\n \n GNU [Modula]-[2]\
+      \ is distributed in the hope that it will be useful, but\n WITHOUT ANY WARRANTY; without\
+      \ even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\
+      \  See the GNU\n General Public License for more details."
+  - score: '96.05'
+    start_line: 728
+    end_line: 736
+    matcher: 3-seq
+    rule_length: 76
+    matched_length: 73
+    match_coverage: '96.05'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_287.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "GNU [Modula]-[2] is free software; you can redistribute it and/or modify\
+      \ it under\n the terms of the GNU General Public License as published by the Free\n Software\
+      \ Foundation; either version [3], or (at your option) any later\n version.\n \n GNU [Modula]-[2]\
+      \ is distributed in the hope that it will be useful, but WITHOUT ANY\n WARRANTY; without\
+      \ even the implied warranty of MERCHANTABILITY or\n FITNESS FOR A PARTICULAR PURPOSE.\
+      \  See the GNU General Public License\n for more details."
+  - score: '95.0'
+    start_line: 739
+    end_line: 739
+    matcher: 2-aho
+    rule_length: 16
+    matched_length: 16
+    match_coverage: '100.0'
+    rule_relevance: 95
+    identifier: gpl-3.0_and_lgpl-2.1_1.RULE
+    license_expression: gpl-3.0 AND lgpl-2.1
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: This has a mix of licenses, both LGPL-2.1 and GPL-3.0, plus the apparently
+  - score: '100.0'
+    start_line: 757
+    end_line: 765
+    matcher: 2-aho
+    rule_length: 82
+    matched_length: 82
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_34.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This library is free software; you can redistribute it and/or\n modify it\
+      \ under the terms of the GNU Lesser General Public\n License as published by the Free\
+      \ Software Foundation; either\n version 2.1 of the License, or (at your option) any later\
+      \ version.\n \n This library is distributed in the hope that it will be useful,\n but\
+      \ WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS\
+      \ FOR A PARTICULAR PURPOSE.  See the GNU\n Lesser General Public License for more details."
+  - score: '97.3'
+    start_line: 771
+    end_line: 779
+    matcher: 3-seq
+    rule_length: 72
+    matched_length: 72
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_353.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "is free software; you can redistribute it and/or modify it under\n the terms\
+      \ of the GNU General Public License as published by the Free\n Software Foundation; either\
+      \ version 3, or (at your option) any later\n version.\n \n [GNU] [Modula]-[2] is distributed\
+      \ in the hope that it will be useful, but WITHOUT ANY\n WARRANTY; without even the implied\
+      \ warranty of MERCHANTABILITY or\n FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General\
+      \ Public License\n for more details."
+  - score: '100.0'
+    start_line: 785
+    end_line: 793
+    matcher: 2-aho
+    rule_length: 82
+    matched_length: 82
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_34.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This library is free software; you can redistribute it and/or\n modify it\
+      \ under the terms of the GNU Lesser General Public\n License as published by the Free\
+      \ Software Foundation; either\n version 2.1 of the License, or (at your option) any later\
+      \ version.\n \n This library is distributed in the hope that it will be useful,\n but\
+      \ WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS\
+      \ FOR A PARTICULAR PURPOSE.  See the GNU\n Lesser General Public License for more details."
+  - score: '50.0'
+    start_line: 797
+    end_line: 797
+    matcher: 2-aho
+    rule_length: 9
+    matched_length: 9
+    match_coverage: '100.0'
+    rule_relevance: 50
+    identifier: lgpl-3.0_AND_gpl-3.0_3.RULE
+    license_expression: lgpl-3.0 AND gpl-3.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: mix of GPL-3.0 and LGPL-3.0
+  - score: '55.0'
+    start_line: 801
+    end_line: 801
+    matcher: 2-aho
+    rule_length: 10
+    matched_length: 10
+    match_coverage: '100.0'
+    rule_relevance: 55
+    identifier: gpl-3.0_and_lgpl-2.1_and_lgpl-3.0_1.RULE
+    license_expression: gpl-3.0 AND lgpl-2.1 AND lgpl-3.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: mix of GPL-3.0 and LGPL-2.1/3
+  - score: '55.0'
+    start_line: 805
+    end_line: 805
+    matcher: 2-aho
+    rule_length: 10
+    matched_length: 10
+    match_coverage: '100.0'
+    rule_relevance: 55
+    identifier: gpl-3.0_and_lgpl-2.1_and_lgpl-3.0_1.RULE
+    license_expression: gpl-3.0 AND lgpl-2.1 AND lgpl-3.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: mix of GPL-3.0 and LGPL-2.1/3
+  - score: '50.0'
+    start_line: 809
+    end_line: 809
+    matcher: 2-aho
+    rule_length: 9
+    matched_length: 9
+    match_coverage: '100.0'
+    rule_relevance: 50
+    identifier: lgpl-2.0_and_gpl-3.0_1.RULE
+    license_expression: lgpl-2.0 AND gpl-3.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Mix of LGPL-2.1 and GPL-3.0.
+  - score: '100.0'
+    start_line: 812
+    end_line: 812
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_89.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: GPL-3+
+  - score: '87.88'
+    start_line: 815
+    end_line: 821
+    matcher: 3-seq
+    rule_length: 66
+    matched_length: 58
+    match_coverage: '87.88'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_447.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Everyone is granted permission to copy, modify and redistribute
+       ;; GNU Emacs, [but] [only] [under] [the] [conditions] [described] [in] [the]
+       ;; [GNU] [Emacs] General Public License.   A copy of this license is
+       ;; supposed to have been given to you along with [GNU] [Emacs] so you
+       ;; can know your rights and responsibilities.  It should be in a
+       ;; file named COPYING.  Among other things, the copyright notice
+       ;; and this notice must be preserved on all copies.
+  - score: '7.81'
+    start_line: 816
+    end_line: 817
+    matcher: 3-seq
+    rule_length: 64
+    matched_length: 5
+    match_coverage: '7.81'
+    rule_relevance: 100
+    identifier: gpl-2.0_443.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      the
+       ;; GNU [Emacs] General Public License.
+  - score: '44.0'
+    start_line: 826
+    end_line: 826
+    matcher: 2-aho
+    rule_length: 8
+    matched_length: 8
+    match_coverage: '100.0'
+    rule_relevance: 44
+    identifier: gpl-3.0_and_lgpl-2.1_2.RULE
+    license_expression: gpl-3.0 AND lgpl-2.1
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Mix of GPL-3 and LGPL-2.1.
+  - score: '38.0'
+    start_line: 830
+    end_line: 830
+    matcher: 2-aho
+    rule_length: 7
+    matched_length: 7
+    match_coverage: '100.0'
+    rule_relevance: 38
+    identifier: gpl-2.0-plus_and_gpl-3.0-plus_3.RULE
+    license_expression: gpl-2.0-plus AND gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Mix of GPL-2+ and GPL-3+
+  - score: '100.0'
+    start_line: 837
+    end_line: 845
+    matcher: 2-aho
+    rule_length: 82
+    matched_length: 82
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_34.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This library is free software; you can redistribute it and/or\n modify it\
+      \ under the terms of the GNU Lesser General Public\n License as published by the Free\
+      \ Software Foundation; either\n version 2.1 of the License, or (at your option) any later\
+      \ version.\n \n This library is distributed in the hope that it will be useful,\n but\
+      \ WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS\
+      \ FOR A PARTICULAR PURPOSE.  See the GNU\n Lesser General Public License for more details."
+  - score: '55.0'
+    start_line: 849
+    end_line: 849
+    matcher: 2-aho
+    rule_length: 10
+    matched_length: 10
+    match_coverage: '100.0'
+    rule_relevance: 55
+    identifier: lgpl-2.1_and_lgpl-3.0_and_gpl-3.0_1.RULE
+    license_expression: lgpl-2.1 AND lgpl-3.0 AND gpl-3.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Mix of LGPL-2.1, LGPL-3 and GPL-3.
+  - score: '44.0'
+    start_line: 853
+    end_line: 853
+    matcher: 2-aho
+    rule_length: 8
+    matched_length: 8
+    match_coverage: '100.0'
+    rule_relevance: 44
+    identifier: lgpl-2.1_and_lgpl-3.0_1.RULE
+    license_expression: lgpl-2.1 AND lgpl-3.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Mix of LGPL-2.1 and LGPL-3.
+  - score: '100.0'
+    start_line: 857
+    end_line: 857
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_108.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPL-2.1+'
+  - score: '98.78'
+    start_line: 858
+    end_line: 866
+    matcher: 3-seq
+    rule_length: 81
+    matched_length: 81
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0-plus_40.RULE
+    license_expression: lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This library is free software; you can redistribute it and/or
+        modify it under the terms of the GNU Library General Public
+        License as published by the Free Software Foundation; either
+        version 2.[1] of the License, or (at your option) any later version.
+        .
+        This library is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+        Library General Public License for more details.
+  - score: '97.3'
+    start_line: 872
+    end_line: 880
+    matcher: 3-seq
+    rule_length: 72
+    matched_length: 72
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_353.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "is free software; you can redistribute it and/or modify it under\n the terms\
+      \ of the GNU General Public License as published by the Free\n Software Foundation; either\
+      \ version 3, or (at your option) any later\n version.\n \n [GNU] [Modula]-[2] is distributed\
+      \ in the hope that it will be useful, but WITHOUT ANY\n WARRANTY; without even the implied\
+      \ warranty of MERCHANTABILITY or\n FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General\
+      \ Public License\n for more details."
+  - score: '14.04'
+    start_line: 879
+    end_line: 883
+    matcher: 3-seq
+    rule_length: 57
+    matched_length: 8
+    match_coverage: '14.04'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_413.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "the GNU General Public License\n [for] [more] [details].\n \n [libgm2]/[libcor]/:\n\
+      \ [Copyright] ([C]) [2005]-[2019] Free Software Foundation,"
+  - score: '97.3'
+    start_line: 886
+    end_line: 894
+    matcher: 3-seq
+    rule_length: 72
+    matched_length: 72
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_353.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "is free software; you can redistribute it and/or modify\n it under the terms\
+      \ of the GNU General Public License as published by\n the Free Software Foundation; either\
+      \ version 3, or (at your option)\n any later version.\n \n [GNU] [Modula]-[2] is distributed\
+      \ in the hope that it will be useful, but\n WITHOUT ANY WARRANTY; without even the implied\
+      \ warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n General\
+      \ Public License for more details."
+  - score: '97.3'
+    start_line: 899
+    end_line: 907
+    matcher: 3-seq
+    rule_length: 72
+    matched_length: 72
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_353.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "is free software; you can redistribute it and/or modify it under\n the terms\
+      \ of the GNU General Public License as published by the Free\n Software Foundation; either\
+      \ version 3, or (at your option) any later\n version.\n \n [GNU] [Modula]-[2] is distributed\
+      \ in the hope that it will be useful, but WITHOUT ANY\n WARRANTY; without even the implied\
+      \ warranty of MERCHANTABILITY or\n FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General\
+      \ Public License\n for more details."
+  - score: '96.05'
+    start_line: 913
+    end_line: 921
+    matcher: 3-seq
+    rule_length: 76
+    matched_length: 73
+    match_coverage: '96.05'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_287.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "GNU [Modula]-[2] is free software; you can redistribute it and/or modify\n\
+      \ it under the terms of the GNU General Public License as published by\n the Free Software\
+      \ Foundation; either version [3], or (at your option)\n any later version.\n \n GNU [Modula]-[2]\
+      \ is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without\
+      \ even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\
+      \  See the\n GNU General Public License for more details."
+  - score: '100.0'
+    start_line: 947
+    end_line: 953
+    matcher: 2-aho
+    rule_length: 66
+    matched_length: 66
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0-plus_and_gpl-1.0-plus_2.RULE
+    license_expression: lgpl-2.0-plus AND gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Parts of this work are licensed under the terms of the GNU General\n Public\
+      \ License. On Debian systems, the complete text of this license\n can be found in /usr/share/common-licenses/GPL.\n\
+      \ \n Parts of this work are licensed under the terms of the GNU Library\n General Public\
+      \ License. On Debian systems, the complete text of this\n license be found in /usr/share/common-licenses/LGPL."
+  - score: '100.0'
+    start_line: 962
+    end_line: 972
+    matcher: 2-aho
+    rule_length: 99
+    matched_length: 99
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsla-no-advert.LICENSE
+    license_expression: bsla-no-advert
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms are permitted\n provided\
+      \ that the above copyright notice and this paragraph are\n duplicated in all such forms\
+      \ and that any documentation,\n and other materials related to such distribution and use\
+      \ \n acknowledge that the software was developed\n by the University of California, Berkeley.\
+      \  The name of the\n University may not be used to endorse or promote products derived\n\
+      \ from this software without specific prior written permission.\n THIS SOFTWARE IS PROVIDED\
+      \ ``AS IS'' AND WITHOUT ANY EXPRESS OR\n IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION,\
+      \ THE IMPLIED\n WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE."
+  - score: '100.0'
+    start_line: 979
+    end_line: 989
+    matcher: 2-aho
+    rule_length: 101
+    matched_length: 101
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsla.LICENSE
+    license_expression: bsla
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms are permitted
+       provided that the above copyright notice and this paragraph are
+       duplicated in all such forms and that any documentation,
+       advertising materials, and other materials related to such
+       distribution and use acknowledge that the software was developed
+       by the University of California, Berkeley.  The name of the
+       University may not be used to endorse or promote products derived
+       from this software without specific prior written permission.
+       THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+       IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+       WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  - score: '100.0'
+    start_line: 997
+    end_line: 1023
+    matcher: 2-aho
+    rule_length: 243
+    matched_length: 243
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-original-uc_3.RULE
+    license_expression: bsd-original-uc
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n 3. All\
+      \ advertising materials mentioning features or use of this software\n    must display\
+      \ the following acknowledgement:\n      This product includes software developed by the\
+      \ University of\n      California, Berkeley and its contributors.\n 4. Neither the name\
+      \ of the University nor the names of its contributors\n    may be used to endorse or promote\
+      \ products derived from this software\n    without specific prior written permission.\n\
+      \ \n THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\n ANY EXPRESS\
+      \ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS\
+      \ OR CONTRIBUTORS BE LIABLE\n FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS\n OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER\
+      \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n LIABILITY, OR TORT\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n OUT OF THE USE OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 1030
+    end_line: 1052
+    matcher: 2-aho
+    rule_length: 213
+    matched_length: 213
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_19.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n 3. Neither\
+      \ the name of the University nor the names of its contributors\n    may be used to endorse\
+      \ or promote products derived from this software\n    without specific prior written permission.\n\
+      \ \n THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\n ANY EXPRESS\
+      \ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS\
+      \ OR CONTRIBUTORS BE LIABLE\n FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS\n OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER\
+      \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n LIABILITY, OR TORT\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n OUT OF THE USE OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 1064
+    end_line: 1090
+    matcher: 2-aho
+    rule_length: 243
+    matched_length: 243
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-original-uc_3.RULE
+    license_expression: bsd-original-uc
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n 3. All\
+      \ advertising materials mentioning features or use of this software\n    must display\
+      \ the following acknowledgement:\n      This product includes software developed by the\
+      \ University of\n      California, Berkeley and its contributors.\n 4. Neither the name\
+      \ of the University nor the names of its contributors\n    may be used to endorse or promote\
+      \ products derived from this software\n    without specific prior written permission.\n\
+      \ \n THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\n ANY EXPRESS\
+      \ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS\
+      \ OR CONTRIBUTORS BE LIABLE\n FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS\n OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER\
+      \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n LIABILITY, OR TORT\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n OUT OF THE USE OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 1097
+    end_line: 1109
+    matcher: 2-aho
+    rule_length: 122
+    matched_length: 122
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: flex-2.5_6.RULE
+    license_expression: flex-2.5
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms are permitted
+       provided that: (1) source distributions retain this entire copyright
+       notice and comment, and (2) distributions including binaries display
+       the following acknowledgement:  ``This product includes software
+       developed by the University of California, Berkeley and its contributors''
+       in the documentation or other materials provided with the distribution
+       and in all advertising materials mentioning features or use of this
+       software. Neither the name of the University nor the names of its
+       contributors may be used to endorse or promote products derived
+       from this software without specific prior written permission.
+       THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+       IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+       WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  - score: '61.0'
+    start_line: 1117
+    end_line: 1117
+    matcher: 2-aho
+    rule_length: 11
+    matched_length: 11
+    match_coverage: '100.0'
+    rule_relevance: 61
+    identifier: bsd-original-uc.RULE
+    license_expression: bsd-original-uc
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+  - score: '100.0'
+    start_line: 1127
+    end_line: 1129
+    matcher: 2-aho
+    rule_length: 21
+    matched_length: 21
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0_and_gpl-2.0_and_lgpl-3.0-plus_and_other-copyleft_and_other-permissive_1.RULE
+    license_expression: gpl-3.0 AND gpl-2.0 AND lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus
+      AND other-copyleft AND other-permissive
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This software is a copyrighted work licensed under the terms of the
+       Cygwin license.  Please consult the file "CYGWIN_LICENSE" for
+       details.
+  - score: '100.0'
+    start_line: 1137
+    end_line: 1146
+    matcher: 2-aho
+    rule_length: 93
+    matched_length: 93
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: x11-lucent.RULE
+    license_expression: x11-lucent
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Permission to use, copy, modify, and distribute this software for any\n purpose\
+      \ without fee is hereby granted, provided that this entire notice\n is included in all\
+      \ copies of any software which is or includes a copy\n or modification of this software\
+      \ and in all copies of the supporting\n documentation for such software.\n \n THIS SOFTWARE\
+      \ IS BEING PROVIDED \"AS IS\", WITHOUT ANY EXPRESS OR IMPLIED\n WARRANTY.  IN PARTICULAR,\
+      \ NEITHER THE AUTHOR NOR AT&T MAKES ANY\n REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING\
+      \ THE MERCHANTABILITY\n OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE."
+  - score: '100.0'
+    start_line: 1152
+    end_line: 1163
+    matcher: 2-aho
+    rule_length: 98
+    matched_length: 98
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: amd-historical_1.RULE
+    license_expression: amd-historical
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This software is the property of Advanced Micro Devices, Inc  (AMD)  which\n\
+      \ specifically  grants the user the right to modify, use and distribute this\n software\
+      \ provided this notice is not removed or altered.  All other rights\n are reserved by\
+      \ AMD.\n \n AMD MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH REGARD TO THIS\n\
+      \ SOFTWARE.  IN NO EVENT SHALL AMD BE LIABLE FOR INCIDENTAL OR CONSEQUENTIAL\n DAMAGES\
+      \ IN CONNECTION WITH OR ARISING FROM THE FURNISHING, PERFORMANCE, OR\n USE OF THIS SOFTWARE.\n\
+      \ \n So that all may benefit from your experience, please report  any  problems\n or \
+      \ suggestions about this software"
+  - score: '100.0'
+    start_line: 1191
+    end_line: 1194
+    matcher: 2-aho
+    rule_length: 25
+    matched_length: 25
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: sunpro.LICENSE
+    license_expression: sunpro
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Developed at SunPro, a Sun Microsystems, Inc. business.\n Permission to use,\
+      \ copy, modify, and distribute this\n software is freely granted, provided that this notice\
+      \ \n is preserved."
+  - score: '100.0'
+    start_line: 1200
+    end_line: 1209
+    matcher: 2-aho
+    rule_length: 88
+    matched_length: 88
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: osf-1990_3.RULE
+    license_expression: osf-1990
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      To anyone who acknowledges that this file is provided "AS IS"
+       without any express or implied warranty:
+           permission to use, copy, modify, and distribute this file
+       for any purpose is hereby granted without fee, provided that
+       the above copyright notice and this notice appears in all
+       copies, and that the name of Hewlett-Packard Company not be
+       used in advertising or publicity pertaining to distribution
+       of the software without specific, written prior permission.
+       Hewlett-Packard Company makes no representations about the
+       suitability of this software for any purpose.
+  - score: '100.0'
+    start_line: 1215
+    end_line: 1222
+    matcher: 2-aho
+    rule_length: 55
+    matched_length: 55
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: nilsson-historical.LICENSE
+    license_expression: nilsson-historical
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Permission to use, copy, modify, and distribute this software is\n freely\
+      \ granted, provided that the above copyright notice, this notice\n and the following disclaimer\
+      \ are preserved with no changes.\n \n THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT\
+      \ ANY EXPRESS OR\n IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED\n WARRANTIES\
+      \ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n PURPOSE."
+  - score: '100.0'
+    start_line: 1228
+    end_line: 1236
+    matcher: 2-aho
+    rule_length: 92
+    matched_length: 92
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: newlib-historical.LICENSE
+    license_expression: newlib-historical
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      The authors hereby grant permission to use, copy, modify, distribute,
+       and license this software and its documentation for any purpose, provided
+       that existing copyright notices are retained in all copies and that this
+       notice is included verbatim in any distributions. No written agreement,
+       license, or royalty fee is required for any of the authorized uses.
+       Modifications to this software may be copyrighted by their authors
+       and need not follow the licensing terms described here, provided that
+       the new terms are clearly indicated on the first page of each file where
+       they apply.
+  - score: '100.0'
+    start_line: 1243
+    end_line: 1263
+    matcher: 2-aho
+    rule_length: 203
+    matched_length: 203
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_98.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n 3. The\
+      \ name of the author may not be used to endorse or promote products\n    derived from\
+      \ this software without specific prior written permission.\n \n THIS SOFTWARE IS PROVIDED\
+      \ BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR\n IMPLIED WARRANTIES, INCLUDING, BUT NOT\
+      \ LIMITED TO, THE IMPLIED WARRANTIES\n OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\
+      \ PURPOSE ARE DISCLAIMED.\n IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,\n\
+      \ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n NOT LIMITED\
+      \ TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n DATA, OR PROFITS; OR\
+      \ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n THEORY OF LIABILITY, WHETHER IN CONTRACT,\
+      \ STRICT LIABILITY, OR TORT\n (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\
+      \ OF THE USE OF\n THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  - score: '95.0'
+    start_line: 1269
+    end_line: 1280
+    matcher: 2-aho
+    rule_length: 95
+    matched_length: 95
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: amd-historical4.RULE
+    license_expression: amd-historical
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This software is the property of [SuperH], Inc ([SuperH]) which specifically\n\
+      \ grants the user the right to modify, use and distribute this software\n provided this\
+      \ notice is not removed or altered.  All other rights are\n reserved by [SuperH].\n \n\
+      \ [SUPERH] MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH REGARD TO\n THIS SOFTWARE.\
+      \  IN NO EVENT SHALL [SUPERH] BE LIABLE FOR INDIRECT, SPECIAL, \n INCIDENTAL OR CONSEQUENTIAL\
+      \ DAMAGES IN CONNECTION WITH OR ARISING FROM\n THE FURNISHING, PERFORMANCE, OR USE OF\
+      \ THIS SOFTWARE.\n \n So that all may benefit from your experience, please report any\
+      \ problems\n or suggestions about this software to the"
+  - score: '100.0'
+    start_line: 1295
+    end_line: 1320
+    matcher: 2-aho
+    rule_length: 212
+    matched_length: 212
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_933.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n \n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n \n 2. Redistributions in binary form must reproduce\
+      \ the above copyright\n    notice, this list of conditions and the following disclaimer\
+      \ in the\n    documentation and/or other materials provided with the distribution.\n \n\
+      \ 3. Neither the name of KTH nor the names of its contributors may be\n    used to endorse\
+      \ or promote products derived from this software without\n    specific prior written permission.\n\
+      \ \n THIS SOFTWARE IS PROVIDED BY KTH AND ITS CONTRIBUTORS ``AS IS'' AND ANY\n EXPRESS\
+      \ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR\n PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL KTH OR ITS\
+      \ CONTRIBUTORS BE\n LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\n\
+      \ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n SUBSTITUTE GOODS\
+      \ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\n BUSINESS INTERRUPTION) HOWEVER CAUSED\
+      \ AND ON ANY THEORY OF LIABILITY,\n WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\
+      \ NEGLIGENCE OR\n OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN\
+      \ IF\n ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 1327
+    end_line: 1346
+    matcher: 2-aho
+    rule_length: 183
+    matched_length: 183
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-simplified_27.RULE
+    license_expression: bsd-simplified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n \n THIS\
+      \ SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND\n ANY EXPRESS OR IMPLIED\
+      \ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR\
+      \ OR CONTRIBUTORS BE LIABLE\n FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS\n OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER\
+      \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n LIABILITY, OR TORT\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n OUT OF THE USE OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 1353
+    end_line: 1372
+    matcher: 2-aho
+    rule_length: 181
+    matched_length: 181
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-simplified_newlib3.RULE
+    license_expression: bsd-simplified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n \n THIS\
+      \ SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND\n ANY EXPRESS OR IMPLIED WARRANTIES,\
+      \ INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS\
+      \ FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS\
+      \ BE LIABLE\n FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n\
+      \ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n OR SERVICES;\
+      \ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER CAUSED AND ON ANY\
+      \ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n LIABILITY, OR TORT (INCLUDING NEGLIGENCE\
+      \ OR OTHERWISE) ARISING IN ANY WAY\n OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\
+      \ OF THE POSSIBILITY OF\n SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 1379
+    end_line: 1398
+    matcher: 2-aho
+    rule_length: 183
+    matched_length: 183
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-simplified_27.RULE
+    license_expression: bsd-simplified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n \n THIS\
+      \ SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND\n ANY EXPRESS OR IMPLIED\
+      \ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR\
+      \ OR CONTRIBUTORS BE LIABLE\n FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS\n OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER\
+      \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n LIABILITY, OR TORT\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n OUT OF THE USE OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE."
+  - score: '85.71'
+    start_line: 1402
+    end_line: 1415
+    matcher: 3-seq
+    rule_length: 105
+    matched_length: 90
+    match_coverage: '85.71'
+    rule_relevance: 100
+    identifier: x11-hanson_1.RULE
+    license_expression: x11-hanson
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Author:  S. [L]. [Moshier].\n \n [Copyright] ([c]) [1984],[2000] S.[L]. [Moshier]\n\
+      \ \n Permission to use, copy, modify, and distribute this software for any\n purpose without\
+      \ fee is hereby granted, provided that this entire notice\n is included in all copies\
+      \ of any software which is or includes a copy\n or modification of this software and in\
+      \ all copies of the supporting\n documentation for such software.\n \n THIS SOFTWARE IS\
+      \ BEING PROVIDED \"AS IS\", WITHOUT ANY EXPRESS OR IMPLIED\n WARRANTY.  IN PARTICULAR,\
+      \  THE AUTHOR MAKES NO REPRESENTATION\n OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY\
+      \ OF THIS\n SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE."
+  - score: '100.0'
+    start_line: 1422
+    end_line: 1441
+    matcher: 2-aho
+    rule_length: 183
+    matched_length: 183
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-simplified_27.RULE
+    license_expression: bsd-simplified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n \n THIS\
+      \ SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND\n ANY EXPRESS OR IMPLIED\
+      \ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR\
+      \ OR CONTRIBUTORS BE LIABLE\n FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS\n OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER\
+      \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n LIABILITY, OR TORT\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n OUT OF THE USE OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 1448
+    end_line: 1468
+    matcher: 2-aho
+    rule_length: 200
+    matched_length: 200
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_76.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n 3. The\
+      \ name of the author may not be used to endorse or promote products\n    derived from\
+      \ this software without specific prior written permission.\n \n THIS SOFTWARE IS PROVIDED\
+      \ ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,\n INCLUDING, BUT NOT LIMITED TO, THE\
+      \ IMPLIED WARRANTIES OF MERCHANTABILITY\n AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.\
+      \  IN NO EVENT SHALL\n THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\n\
+      \ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,\n PROCUREMENT OF\
+      \ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;\n OR BUSINESS INTERRUPTION)\
+      \ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\n WHETHER IN CONTRACT, STRICT LIABILITY,\
+      \ OR TORT (INCLUDING NEGLIGENCE OR\n OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\
+      \ SOFTWARE, EVEN IF\n ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  - score: '27.0'
+    start_line: 1482
+    end_line: 1482
+    matcher: 2-aho
+    rule_length: 5
+    matched_length: 5
+    match_coverage: '100.0'
+    rule_relevance: 27
+    identifier: lgpl_39.RULE
+    license_expression: lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Free Software Foundation LGPL License (*-
+  - score: '100.0'
+    start_line: 1489
+    end_line: 1502
+    matcher: 2-aho
+    rule_length: 123
+    matched_length: 123
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_12.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "The GNU C Library is free software; you can redistribute it and/or\n    modify\
+      \ it under the terms of the GNU Lesser General Public\n    License as published by the\
+      \ Free Software Foundation; either\n    version 2.1 of the License, or (at your option)\
+      \ any later version.\n \n    The GNU C Library is distributed in the hope that it will\
+      \ be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n   \
+      \ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n    Lesser General\
+      \ Public License for more details.\n \n    You should have received a copy of the GNU\
+      \ Lesser General Public\n    License along with the GNU C Library; if not, write to the\
+      \ Free\n    Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA\n    02110-1301\
+      \ USA"
+  - score: '99.0'
+    start_line: 1504
+    end_line: 1504
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 99
+    identifier: lgpl_33.RULE
+    license_expression: lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: LGPL License (
+  - score: '100.0'
+    start_line: 1508
+    end_line: 1516
+    matcher: 2-aho
+    rule_length: 81
+    matched_length: 81
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0-plus_339.RULE
+    license_expression: lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This program is free software; you can redistribute it and/or\n modify it\
+      \ under the terms of the GNU Library General Public License\n as published by the Free\
+      \ Software Foundation; either version 2\n of the License, or (at your option) any later\
+      \ version.\n                                                      \n This program is distributed\
+      \ in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied\
+      \ warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n GNU Library\
+      \ General Public License for more details."
+  - score: '100.0'
+    start_line: 1522
+    end_line: 1544
+    matcher: 2-aho
+    rule_length: 209
+    matched_length: 209
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: intel-osl-1993.LICENSE
+    license_expression: intel-osl-1993
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Intel hereby grants you permission to copy, modify, and distribute this\n\
+      \ software and its documentation.  Intel grants this permission provided\n that the above\
+      \ copyright notice appears in all copies and that both the\n copyright notice and this\
+      \ permission notice appear in supporting\n documentation.  In addition, Intel grants this\
+      \ permission provided that\n you prominently mark as \"not part of the original\" any\
+      \ modifications\n made to this software or documentation, and that the name of Intel\n\
+      \ Corporation not be used in advertising or publicity pertaining to\n distribution of\
+      \ the software or the documentation without specific,\n written prior permission.\n \n\
+      \ Intel Corporation provides this AS IS, WITHOUT ANY WARRANTY, EXPRESS OR\n IMPLIED, INCLUDING,\
+      \ WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY\n OR FITNESS FOR A PARTICULAR PURPOSE.\
+      \  Intel makes no guarantee or\n representations regarding the use of, or the results\
+      \ of the use of,\n the software and documentation in terms of correctness, accuracy,\n\
+      \ reliability, currentness, or otherwise; and you rely on the software,\n documentation\
+      \ and results solely at your own risk.\n \n IN NO EVENT SHALL INTEL BE LIABLE FOR ANY\
+      \ LOSS OF USE, LOSS OF BUSINESS,\n LOSS OF PROFITS, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL\
+      \ DAMAGES\n OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM\n PAID\
+      \ TO INTEL FOR THE PRODUCT LICENSED HEREUNDER."
+  - score: '100.0'
+    start_line: 1550
+    end_line: 1559
+    matcher: 2-aho
+    rule_length: 88
+    matched_length: 88
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: osf-1990_3.RULE
+    license_expression: osf-1990
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      To anyone who acknowledges that this file is provided "AS IS"
+       without any express or implied warranty:
+           permission to use, copy, modify, and distribute this file
+       for any purpose is hereby granted without fee, provided that
+       the above copyright notice and this notice appears in all
+       copies, and that the name of Hewlett-Packard Company not be
+       used in advertising or publicity pertaining to distribution
+       of the software without specific, written prior permission.
+       Hewlett-Packard Company makes no representations about the
+       suitability of this software for any purpose.
+  - score: '100.0'
+    start_line: 1564
+    end_line: 1582
+    matcher: 2-aho
+    rule_length: 147
+    matched_length: 147
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: hs-regexp.LICENSE
+    license_expression: hs-regexp
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This software is not subject to any license of the American Telephone\n and\
+      \ Telegraph Company or of the Regents of the University of California.\n \n Permission\
+      \ is granted to anyone to use this software for any purpose on\n any computer system,\
+      \ and to alter it and redistribute it, subject\n to the following restrictions:\n \n 1.\
+      \ The author is not responsible for the consequences of use of this\n    software, no\
+      \ matter how awful, even if they arise from flaws in it.\n \n 2. The origin of this software\
+      \ must not be misrepresented, either by\n    explicit claim or by omission.  Since few\
+      \ users ever read sources,\n    credits must appear in the documentation.\n \n 3. Altered\
+      \ versions must be plainly marked as such, and must not be\n    misrepresented as being\
+      \ the original software.  Since few users\n    ever read sources, credits must appear\
+      \ in the documentation.\n \n 4. This notice may not be removed or altered."
+  - score: '100.0'
+    start_line: 1589
+    end_line: 1608
+    matcher: 2-aho
+    rule_length: 183
+    matched_length: 183
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-simplified_27.RULE
+    license_expression: bsd-simplified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n \n THIS\
+      \ SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND\n ANY EXPRESS OR IMPLIED\
+      \ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR\
+      \ OR CONTRIBUTORS BE LIABLE\n FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS\n OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER\
+      \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n LIABILITY, OR TORT\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n OUT OF THE USE OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 1615
+    end_line: 1634
+    matcher: 2-aho
+    rule_length: 183
+    matched_length: 183
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-simplified_27.RULE
+    license_expression: bsd-simplified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n \n THIS\
+      \ SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND\n ANY EXPRESS OR IMPLIED\
+      \ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR\
+      \ OR CONTRIBUTORS BE LIABLE\n FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS\n OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER\
+      \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n LIABILITY, OR TORT\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n OUT OF THE USE OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 1643
+    end_line: 1662
+    matcher: 2-aho
+    rule_length: 183
+    matched_length: 183
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-simplified_27.RULE
+    license_expression: bsd-simplified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n modification,\
+      \ are permitted provided that the following conditions\n are met:\n 1. Redistributions\
+      \ of source code must retain the above copyright\n    notice, this list of conditions\
+      \ and the following disclaimer.\n 2. Redistributions in binary form must reproduce the\
+      \ above copyright\n    notice, this list of conditions and the following disclaimer in\
+      \ the\n    documentation and/or other materials provided with the distribution.\n \n THIS\
+      \ SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND\n ANY EXPRESS OR IMPLIED\
+      \ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR\
+      \ OR CONTRIBUTORS BE LIABLE\n FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS\n OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER\
+      \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n LIABILITY, OR TORT\
+      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n OUT OF THE USE OF THIS SOFTWARE,\
+      \ EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE."
+  - score: '100.0'
+    start_line: 1674
+    end_line: 1697
+    matcher: 2-aho
+    rule_length: 205
+    matched_length: 205
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_983.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without \n modification,\
+      \ are permitted provided that the following conditions are met: \n \n     Redistributions\
+      \ of source code must retain the above copyright \n     notice, this list of conditions\
+      \ and the following disclaimer.\n \n     Redistributions in binary form must reproduce\
+      \ the above copyright\n     notice, this list of conditions and the following disclaimer\
+      \ in the\n     documentation and/or other materials provided with the distribution.\n\
+      \ \n     The name of Red Hat Incorporated may not be used to endorse \n     or promote\
+      \ products derived from this software without specific \n     prior written permission.\n\
+      \ \n THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" \n\
+      \ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE \n IMPLIED\
+      \ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\n DISCLAIMED.\
+      \  IN NO EVENT SHALL RED HAT INCORPORATED BE LIABLE FOR ANY\n DIRECT, INDIRECT, INCIDENTAL,\
+      \ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT\
+      \ OF SUBSTITUTE GOODS OR SERVICES;\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\
+      \ HOWEVER CAUSED AND \n ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\
+      \ OR TORT\n (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n\
+      \ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."

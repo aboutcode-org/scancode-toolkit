@@ -1,0 +1,1959 @@
+primary_license:
+declared_license:
+license_expression: (lgpl-2.1-plus AND gpl-3.0-plus AND (lgpl-3.0-plus AND gpl-2.0-plus)) AND
+  lgpl-2.1-plus AND gpl-3.0-plus AND gfdl-1.1-plus AND gfdl-1.3-plus AND (lgpl-2.0-plus AND
+  lgpl-3.0 AND gpl-1.0-plus AND gpl-3.0 AND gfdl-1.3) AND lgpl-3.0-plus AND gpl-2.0-plus AND
+  lgpl-2.0-plus AND gpl-3.0 AND (bsd-new OR gpl-1.0-plus) AND bsd-simplified AND public-domain
+  AND isc AND cc0-1.0 AND mit AND apache-2.0 AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus
+  OR gpl-2.0-plus) AND bsd-new
+copyright: |
+  Copyright (c) 2000-2019 Free Software Foundation, Inc.
+  Copyright (c) 2004-2015 Free Software Foundation, Inc.
+  Copyright (c) 2002 Andrew McDonald <andrew@mcdonald.org.uk>
+  Copyright (c) 2001-2021 Free Software Foundation, Inc.
+  Copyright (c) 2001-2021 Nikos Mavrogiannopoulos
+  Copyright (c) 2011-2016, Andy Polyakov
+  Copyright (c) 2000, 2001 Markus Friedl
+  Copyright (c) 2008 Alexander von Gernler
+  Copyright Mike Hamburg
+  Copyright/License Copyright (c) 1996,1999 by Internet Software Consortium
+  Copyright (c) 2016 Wrymouth Innovation Ltd
+  Copyright 2011-2016 The Pkcs11Interop Project
+  Copyright (c) 2009-2020 Free Software Foundation, Inc. Comment Debian
+  Copyright 2017 Red Hat, Inc.
+  Copyright 2016 Nikos Mavrogiannopoulos Comment On Debian
+  Copyright 2016 Google Inc. Comment On Debian
+  Copyright 2016 Google Inc. 2017 Red Hat, Inc. Comment On Debian
+  Copyright 2017 Tim Ruehsen
+  Copyright 2017 Nikos Mavrogiannopoulos
+  Copyright 2017 Nikos Mavrogiannopoulos 2019 Tom Vrancken (dev@tomvrancken.nl)
+  Copyright 2020 Dmitry Baryshkov
+  Copyright 2011 Katholieke Universiteit Leuven 2011, 2013, 2018 Niels Moller 2018 Red Hat, Inc. 2019 Dmitry Eremin-Solenikov
+  Copyright 2018 Dmitry Eremin-Solenikov
+  Copyright 2017 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
+  Copyright 2013 Red Hat
+  Copyright 2013, 2014 Red Hat
+  Copyright 2013 2017 Red Hat 2008 Free Software Foundation, Inc.
+  Copyright 2002 Niels Moller 2014 Red Hat
+  Copyright 2001 Niels Moller
+  Copyright 2001, 2011 Niels Moller
+  Copyright 2005, 2014 Niels Moller
+  Copyright 2013 Niels Moller 2013 Red Hat
+  Copyright 2015 Dmitry Eremin-Solenikov 2012 Nikos Mavrogiannopoulos, Niels Moller
+  Copyright 2012 Nikos Mavrogiannopoulos, Niels Moller
+  Copyright 2001, 2002 Niels Moller
+  Copyright 2016 Dmitry Eremin-Solenikov
+  Copyright 2010 Niels Moller
+  Copyright 2013-2015 Dmitry Eremin-Solenikov Comment
+  Copyright 2015 Dmitry Eremin-Solenikov
+  Copyright 2017 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
+  Copyright 2015 Dmity Eremin-Solenikov 2013 Niels Moller
+  Copyright 2018 Dmitry Eremin-Solenikov
+  Copyright 2015, 2016 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com> 2009-2012 Aleksey Kravchenko <rhash.admin@gmail.com>
+  Copyright 2015-2015 Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
+  Copyright 2009-2012 Aleksey Kravchenko <rhash.admin@gmail.com>
+  Copyright 2017 Red Hat
+  Copyright 1995-2017 Free Software Foundation, Inc.
+  Copyright 2011-2019 Free Software Foundation, Inc. 2019 Red Hat, Inc
+  Copyright 2014-2020 Red Hat, Inc
+  Copyright 2014-2018 Nikos Mavrogiannopoulos
+  Copyright 2019 Nikos Mavrogiannopoulos
+  Copyright 2016-2019 Tim Kosse 2019 Nikos Mavrogiannopoulos
+  Copyright 2016 Tim Kosse
+  Copyright 2016-2017 Red Hat, Inc.
+  Copyright 2020 Red Hat, Inc.
+  Copyright 2008-2014 Free Software Foundation, Inc.
+  Copyright 2004-2016 Free Software Foundation, Inc. 2016 2017 Red Hat, Inc.
+  Copyright 2020 Red Hat, Inc.
+  Copyright 2014-2018 Nikos Mavrogiannopoulos 2018 2020 Red Hat, Inc.
+  Copyright 2004-2016 Free Software Foundation, Inc. 2013 Adam Sampson <ats@offog.org> 2016-2019 Red Hat, Inc.
+  Copyright 2004-2015 Free Software Foundation, Inc. 2013 Adam Sampson <ats@offog.org> 2015 Red Hat, Inc
+  Copyright 2015 Red Hat, Inc. 2019 Nikos Mavrogiannopoulos
+  Copyright 2017-2019 Red Hat, Inc.
+  Copyright 2017-2020 Red Hat, Inc.
+  Copyright 2004-2012 Free Software Foundation, Inc. 2017-2019 Red Hat, Inc.
+  Copyright 2019 Tim Ruhsen
+  Copyright 2019 Tom Vrancken (dev@tomvrancken.nl)
+  Copyright 2019 Canonical, Ltd.
+  Copyright 2020 Pierre Ossman for Cendio AB
+  Copyright 2019 Red Hat, Inc.
+  Copyright 2004-2012 Free Software Foundation, Inc. 2013 Adam Sampson <ats@offog.org> 2019 Free Software Foundation, Inc.
+  Copyright 2018 Dmitry Eremin-Solenikov 2016 Red Hat, Inc.
+  Copyright 2017 Karl Tarbe
+  Copyright 2018 Dmitry Eremin-Solenikov 2004-2006, 2010, 2012 Free Software Foundation, Inc.
+  Copyright 2021 Steffen Jaeckel
+  Copyright 2016 Thomas Klute
+  Copyright 2009-2019, Ben Hoyt
+matches:
+  - score: '100.0'
+    start_line: 221
+    end_line: 233
+    matcher: 2-aho
+    rule_length: 134
+    matched_length: 134
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_and_gpl-3.0-plus_and_lgpl-3.0-plus_and_gpl-2.0-plus_2.RULE
+    license_expression: lgpl-2.1-plus AND gpl-3.0-plus AND (lgpl-3.0-plus AND gpl-2.0-plus)
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "License: The main library is licensed under GNU Lesser\n General Public License\
+      \ (LGPL) version 2.1+, Gnutls Extra (which is currently\n just the openssl wrapper library),\
+      \ build system, testsuite and commandline\n utilities are licenced under the GNU General\
+      \ Public License version 3+.  The\n Guile bindings use the same license as the respective\
+      \ underlying library,\n i.e. LGPLv2.1+ for the main library and GPLv3+ for Gnutls extra.\n\
+      \ \n However to be able to use and link against libgnutls a program needs to be\n available\
+      \ under a license compatible with LGPLv3+ or GPLv2+ since GnuTLS\n requires nettle which\
+      \ requires GMP. GMP (>= 6.0.0) is dual licensed\n LGPLv3+ or GPLv2+. Starting with 3.5.7\
+      \ libunistring is needed, too. It also\n is dual licensed LGPLv3+ or GPLv2+ (libunistring\
+      \ 0.9.7 and above, earlier\n version were LGPLv3+ only.)"
+  - score: '100.0'
+    start_line: 244
+    end_line: 255
+    matcher: 2-aho
+    rule_length: 106
+    matched_length: 106
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_257.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      The GnuTLS is free software; you can redistribute it and/or
+        * modify it under the terms of the GNU Lesser General Public License
+        * as published by the Free Software Foundation; either version 2.1 of
+        * the License, or (at your option) any later version.
+        *
+        * This library is distributed in the hope that it will be useful, but
+        * WITHOUT ANY WARRANTY; without even the implied warranty of
+        * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+        * Lesser General Public License for more details.
+        *
+        * You should have received a copy of the GNU Lesser General Public License
+        * along with this program.  If not, see <http://www.gnu.org/licenses/>
+  - score: '92.52'
+    start_line: 265
+    end_line: 280
+    matcher: 3-seq
+    rule_length: 107
+    matched_length: 99
+    match_coverage: '92.52'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_57.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "is free software: you can redistribute it and/or modify\n  * it under the\
+      \ terms of the GNU General Public License as published by\n  * the Free Software Foundation,\
+      \ either version 3 of the License, or\n  * (at your option) any later version.\n  *\n\
+      \  * [GnuTLS]-[extra] is distributed in the hope that it will be useful,\n  * but WITHOUT\
+      \ ANY WARRANTY; without even the implied warranty of\n  * MERCHANTABILITY or FITNESS FOR\
+      \ A PARTICULAR PURPOSE.  See the\n  * GNU General Public License for more details.\n \
+      \ *\n  * You should have received a copy of the GNU General Public License\n  * along\
+      \ with this program.  If not, see <http://www.gnu.org/licenses/>.\n  */\n --------------------\n\
+      \ \n [The] [documentation] [is] [distributed] [under] [the] [terms] [of] [the] GNU"
+  - score: '100.0'
+    start_line: 280
+    end_line: 281
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gfdl-1.1-plus_10.RULE
+    license_expression: gfdl-1.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      GNU Free
+       Documentation License (
+  - score: '100.0'
+    start_line: 286
+    end_line: 291
+    matcher: 2-aho
+    rule_length: 60
+    matched_length: 60
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gfdl-1.3-plus.RULE
+    license_expression: gfdl-1.3-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is granted to copy, distribute and/or modify this
+            document under the terms of the GNU Free Documentation License,
+            Version 1.3 or any later version published by the Free Software
+            Foundation; with no Invariant Sections, no Front-Cover Texts, and
+            no Back-Cover Texts.  A copy of the license is included in the
+            section entitled "GNU Free Documentation License".
+  - score: '100.0'
+    start_line: 321
+    end_line: 327
+    matcher: 2-aho
+    rule_length: 77
+    matched_length: 77
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0-plus_and_lgpl-3.0_and_gpl-1.0-plus_and_gpl-3.0_and_gfdl-1.3_1.RULE
+    license_expression: lgpl-2.0-plus AND lgpl-3.0 AND gpl-1.0-plus AND gpl-3.0 AND gfdl-1.3
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian GNU/Linux systems, the complete text of the latest version of
+       the GNU Lesser General Public License can be found in
+       `/usr/share/common-licenses/LGPL' v3 of the license in
+       `/usr/share/common-licenses/LGPL-3'; the GNU General Public License can
+       be found in `/usr/share/common-licenses/GPL' (version 3 in
+       /usr/share/common-licenses/GPL-3) The GNU Free Documentation
+       License is available under /usr/share/common-licenses/GFDL-1.3.
+  - score: '100.0'
+    start_line: 336
+    end_line: 337
+    matcher: 2-aho
+    rule_length: 13
+    matched_length: 13
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_173.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      under
+       the GNU Lesser General Public License (LGPL) version 2.1 or later.
+  - score: '100.0'
+    start_line: 340
+    end_line: 340
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-3.0-plus_123.RULE
+    license_expression: lgpl-3.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: distributed under a LGPLv3+
+  - score: '90.0'
+    start_line: 340
+    end_line: 340
+    matcher: 2-aho
+    rule_length: 1
+    matched_length: 1
+    match_coverage: '100.0'
+    rule_relevance: 90
+    identifier: gpl-2.0-plus_bare_single_word.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: GPLv2+
+  - score: '5.0'
+    start_line: 341
+    end_line: 341
+    matcher: 2-aho
+    rule_length: 1
+    matched_length: 1
+    match_coverage: '100.0'
+    rule_relevance: 5
+    identifier: lgpl-3.0-plus_14.RULE
+    license_expression: lgpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: LGPLv3+
+  - score: '90.0'
+    start_line: 342
+    end_line: 342
+    matcher: 2-aho
+    rule_length: 1
+    matched_length: 1
+    match_coverage: '100.0'
+    rule_relevance: 90
+    identifier: gpl-2.0-plus_bare_single_word.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: GPLv2+
+  - score: '100.0'
+    start_line: 347
+    end_line: 347
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl_48.RULE
+    license_expression: lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: GNU LGPL
+  - score: '100.0'
+    start_line: 349
+    end_line: 349
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0_379.RULE
+    license_expression: gpl-3.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: GNU GPL version 3.
+  - score: '100.0'
+    start_line: 370
+    end_line: 402
+    matcher: 2-aho
+    rule_length: 252
+    matched_length: 252
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_or_gpl-1.0-plus_7.RULE
+    license_expression: bsd-new OR gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+       # modification, are permitted provided that the following conditions
+       # are met:
+       #
+       #     * Redistributions of source code must retain copyright notices,
+       #      this list of conditions and the following disclaimer.
+       #
+       #     * Redistributions in binary form must reproduce the above
+       #      copyright notice, this list of conditions and the following
+       #      disclaimer in the documentation and/or other materials
+       #      provided with the distribution.
+       #
+       #     * Neither the name of the Andy Polyakov nor the names of its
+       #      copyright holder and contributors may be used to endorse or
+       #      promote products derived from this software without specific
+       #      prior written permission.
+       #
+       # ALTERNATIVELY, provided that this notice is retained in full, this
+       # product may be distributed under the terms of the GNU General Public
+       # License (GPL), in which case the provisions of the GPL apply INSTEAD OF
+       # those given above.
+       #
+       # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS
+       # "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+       # LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+       # A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+       # OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+       # SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+       # LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+       # DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+       # THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+       # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+       # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 417
+    end_line: 435
+    matcher: 2-aho
+    rule_length: 179
+    matched_length: 179
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-simplified_8.RULE
+    license_expression: bsd-simplified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+        * modification, are permitted provided that the following conditions
+        * are met:
+        * 1. Redistributions of source code must retain the above copyright
+        *    notice, this list of conditions and the following disclaimer.
+        * 2. Redistributions in binary form must reproduce the above copyright
+        *    notice, this list of conditions and the following disclaimer in the
+        *    documentation and/or other materials provided with the distribution.
+        *
+        * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+        * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+        * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+        * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+        * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+        * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+        * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+        * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+        * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '99.0'
+    start_line: 446
+    end_line: 447
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 99
+    identifier: pypi_public_domain.RULE
+    license_expression: public-domain
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: |
+      License:
+        Public domain.
+  - score: '100.0'
+    start_line: 458
+    end_line: 469
+    matcher: 2-aho
+    rule_length: 113
+    matched_length: 113
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: isc_9.RULE
+    license_expression: isc
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission to use, copy, modify, and distribute this software for any
+        * purpose with or without fee is hereby granted, provided that the above
+        * copyright notice and this permission notice appear in all copies.
+        *
+        * THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
+        * ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
+        * OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
+        * CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+        * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+        * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+        * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+        * SOFTWARE.
+  - score: '99.69'
+    start_line: 476
+    end_line: 504
+    matcher: 3-seq
+    rule_length: 975
+    matched_length: 972
+    match_coverage: '99.69'
+    rule_relevance: 100
+    identifier: cc0-1.0_116.RULE
+    license_expression: cc0-1.0
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "License: CC0 [license]\n   Statement of Purpose\n \n   The laws of most jurisdictions\
+      \ throughout the world automatically confer exclusive Copyright and Related Rights (defined\
+      \ below) upon the creator and subsequent owner(s) (each and all, an \"owner\") of an original\
+      \ work of authorship and/or a database (each, a \"Work\").\n \n   Certain owners wish\
+      \ to permanently relinquish those rights to a Work for the purpose of contributing to\
+      \ a commons of creative, cultural and scientific works (\"Commons\") that the public can\
+      \ reliably and without fear of later claims of infringement build upon, modify, incorporate\
+      \ in other works, reuse and redistribute as freely as possible in any form whatsoever\
+      \ and for any purposes, including without limitation commercial purposes. These owners\
+      \ may contribute to the Commons to promote the ideal of a free culture and the further\
+      \ production of creative, cultural and scientific works, or to gain reputation or greater\
+      \ distribution for their Work in part through the use and efforts of others.\n \n   For\
+      \ these and/or other purposes and motivations, and without any expectation of additional\
+      \ consideration or compensation, the person associating CC0 with a Work (the \"Affirmer\"\
+      ), to the extent that he or she is an owner of Copyright and Related Rights in the Work,\
+      \ voluntarily elects to apply CC0 to the Work and publicly distribute the Work under its\
+      \ terms, with knowledge of his or her Copyright and Related Rights in the Work and the\
+      \ meaning and intended legal effect of CC0 on those rights.\n \n   1. Copyright and Related\
+      \ Rights. A Work made available under CC0 may be protected by copyright and related or\
+      \ neighboring rights (\"Copyright and Related Rights\"). Copyright and Related Rights\
+      \ include, but are not limited to, the following:\n \n       the right to reproduce, adapt,\
+      \ distribute, perform, display, communicate, and translate a Work;\n       moral rights\
+      \ retained by the original author(s) and/or performer(s);\n       publicity and privacy\
+      \ rights pertaining to a person's image or likeness depicted in a Work;\n       rights\
+      \ protecting against unfair competition in regards to a Work, subject to the limitations\
+      \ in paragraph 4(a), below;\n       rights protecting the extraction, dissemination, use\
+      \ and reuse of data in a Work;\n       database rights (such as those arising under Directive\
+      \ 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal\
+      \ protection of databases, and under any national implementation thereof, including any\
+      \ amended or successor version of such directive); and\n       other similar, equivalent\
+      \ or corresponding rights throughout the world based on applicable law or treaty, and\
+      \ any national implementations thereof.\n \n   2. Waiver. To the greatest extent permitted\
+      \ by, but not in contravention of, applicable law, Affirmer hereby overtly, fully, permanently,\
+      \ irrevocably and unconditionally waives, abandons, and surrenders all of Affirmer's Copyright\
+      \ and Related Rights and associated claims and causes of action, whether now known or\
+      \ unknown (including existing as well as future claims and causes of action), in the Work\
+      \ (i) in all territories worldwide, (ii) for the maximum duration provided by applicable\
+      \ law or treaty (including future time extensions), (iii) in any current or future medium\
+      \ and for any number of copies, and (iv) for any purpose whatsoever, including without\
+      \ limitation commercial, advertising or promotional purposes (the \"Waiver\"). Affirmer\
+      \ makes the Waiver for the benefit of each member of the public at large and to the detriment\
+      \ of Affirmer's heirs and successors, fully intending that such Waiver shall not be subject\
+      \ to revocation, rescission, cancellation, termination, or any other legal or equitable\
+      \ action to disrupt the quiet enjoyment of the Work by the public as contemplated by Affirmer's\
+      \ express Statement of Purpose.\n \n   3. Public License Fallback. Should any part of\
+      \ the Waiver for any reason be judged legally invalid or ineffective under applicable\
+      \ law, then the Waiver shall be preserved to the maximum extent permitted taking into\
+      \ account Affirmer's express Statement of Purpose. In addition, to the extent the Waiver\
+      \ is so judged Affirmer hereby grants to each affected person a royalty-free, non transferable,\
+      \ non sublicensable, non exclusive, irrevocable and unconditional license to exercise\
+      \ Affirmer's Copyright and Related Rights in the Work (i) in all territories worldwide,\
+      \ (ii) for the maximum duration provided by applicable law or treaty (including future\
+      \ time extensions), (iii) in any current or future medium and for any number of copies,\
+      \ and (iv) for any purpose whatsoever, including without limitation commercial, advertising\
+      \ or promotional purposes (the \"License\"). The License shall be deemed effective as\
+      \ of the date CC0 was applied by Affirmer to the Work. Should any part of the License\
+      \ for any reason be judged legally invalid or ineffective under applicable law, such partial\
+      \ invalidity or ineffectiveness shall not invalidate the remainder of the License, and\
+      \ in such case Affirmer hereby affirms that he or she will not (i) exercise any of his\
+      \ or her remaining Copyright and Related Rights in the Work or (ii) assert any associated\
+      \ claims and causes of action with respect to the Work, in either case contrary to Affirmer's\
+      \ express Statement of Purpose.\n \n   4. Limitations and Disclaimers.\n \n       No trademark\
+      \ or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise\
+      \ affected by this document.\n       Affirmer offers the Work as-is and makes no representations\
+      \ or warranties of any kind concerning the Work, express, implied, statutory or otherwise,\
+      \ including without limitation warranties of title, merchantability, fitness for a particular\
+      \ purpose, non infringement, or the absence of latent or other defects, accuracy, or the\
+      \ present or absence of errors, whether or not discoverable, all to the greatest extent\
+      \ permissible under applicable law.\n       Affirmer disclaims responsibility for clearing\
+      \ rights of other persons that may apply to the Work or any use thereof, including without\
+      \ limitation any person's Copyright and Related Rights in the Work. Further, Affirmer\
+      \ disclaims responsibility for obtaining any necessary consents, permissions or other\
+      \ rights required for any use of the Work.\n       Affirmer understands and acknowledges\
+      \ that Creative Commons is not a party to this document and has no duty or obligation\
+      \ with respect to this CC0 or use of the Work."
+  - score: '100.0'
+    start_line: 510
+    end_line: 510
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit_437.RULE
+    license_expression: mit
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: Expat'
+  - score: '100.0'
+    start_line: 511
+    end_line: 527
+    matcher: 2-aho
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Permission is hereby granted, free of charge, to any person obtaining a\n\
+      \  copy of this software and associated documentation files (the \"Software\"),\n  to\
+      \ deal in the Software without restriction, including without limitation\n  the rights\
+      \ to use, copy, modify, merge, publish, distribute, sublicense,\n  and/or sell copies\
+      \ of the Software, and to permit persons to whom the\n  Software is furnished to do so,\
+      \ subject to the following conditions:\n \n  The above copyright notice and this permission\
+      \ notice shall be included\n  in all copies or substantial portions of the Software.\n\
+      \ \n  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n \
+      \ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n  FITNESS\
+      \ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL\n  THE AUTHORS OR COPYRIGHT\
+      \ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR\n  OTHER LIABILITY, WHETHER IN AN ACTION\
+      \ OF CONTRACT, TORT OR OTHERWISE,\n  ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE\
+      \ OR THE USE OR\n  OTHER DEALINGS IN THE SOFTWARE."
+  - score: '93.16'
+    start_line: 533
+    end_line: 548
+    matcher: 3-seq
+    rule_length: 109
+    matched_length: 109
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: apache-2.0_922.RULE
+    license_expression: apache-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Licensed under the Apache License, Version 2.0 (the "License");
+        *  you may not use this file except in compliance with the License.
+        *  You may obtain a copy of the License at
+        *
+        *      http://www.apache.org/licenses/LICENSE-2.0
+        *
+        *  Unless required by applicable law or agreed to in writing, software
+        *  distributed under the License is distributed on an "AS IS" BASIS,
+        *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        *  See the License for the specific language governing permissions and
+        *  limitations under the License.
+       [X]-[Comment]: [Written] [originally] [for] [the] [Pkcs11Interop] [project] [by]:
+        [Jaroslav] [IMRICH] <[jimrich]@[jimrich].[sk]>
+       License: Apache-2.0
+        On Debian systems the complete text of the license can be found in
+        /usr/share/common-licenses/Apache-2.0
+  - score: '22.0'
+    start_line: 556
+    end_line: 556
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '100.0'
+    start_line: 564
+    end_line: 566
+    matcher: 2-aho
+    rule_length: 24
+    matched_length: 24
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: apache-2.0_921.RULE
+    license_expression: apache-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      License: Apache-2.0
+        On Debian systems the complete text of the license can be found in
+        /usr/share/common-licenses/Apache-2.0
+  - score: '100.0'
+    start_line: 572
+    end_line: 585
+    matcher: 2-aho
+    rule_length: 104
+    matched_length: 104
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: apache-2.0_923.RULE
+    license_expression: apache-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Comment: On Debian systems the complete license text is available in
+        /usr/share/common-licenses/Apache-2.0
+       License
+        # Licensed under the Apache License, Version 2.0 (the "License");
+        # you may not use this file except in compliance with the License.
+        # You may obtain a copy of the License at
+        #
+        #      http://www.apache.org/licenses/LICENSE-2.0
+        #
+        # Unless required by applicable law or agreed to in writing, software
+        # distributed under the License is distributed on an "AS IS" BASIS,
+        # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        # See the License for the specific language governing permissions and
+        # limitations under the License.
+  - score: '100.0'
+    start_line: 591
+    end_line: 604
+    matcher: 2-aho
+    rule_length: 104
+    matched_length: 104
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: apache-2.0_923.RULE
+    license_expression: apache-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Comment: On Debian systems the complete license text is available in
+        /usr/share/common-licenses/Apache-2.0
+       License
+        # Licensed under the Apache License, Version 2.0 (the "License");
+        # you may not use this file except in compliance with the License.
+        # You may obtain a copy of the License at
+        #
+        #      http://www.apache.org/licenses/LICENSE-2.0
+        #
+        # Unless required by applicable law or agreed to in writing, software
+        # distributed under the License is distributed on an "AS IS" BASIS,
+        # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        # See the License for the specific language governing permissions and
+        # limitations under the License.
+  - score: '100.0'
+    start_line: 610
+    end_line: 611
+    matcher: 2-aho
+    rule_length: 18
+    matched_length: 18
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: apache-2.0_919.RULE
+    license_expression: apache-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Comment: On Debian systems the complete license text is available in
+        /usr/share/common-licenses/Apache-2.0
+  - score: '100.0'
+    start_line: 612
+    end_line: 614
+    matcher: 2-aho
+    rule_length: 24
+    matched_length: 24
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: apache-2.0_921.RULE
+    license_expression: apache-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      License: Apache-2.0
+        On Debian systems the complete text of the license can be found in
+        /usr/share/common-licenses/Apache-2.0
+  - score: '100.0'
+    start_line: 619
+    end_line: 619
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit_437.RULE
+    license_expression: mit
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: Expat'
+  - score: '100.0'
+    start_line: 620
+    end_line: 636
+    matcher: 2-aho
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person obtaining a
+        * copy of this software and associated documentation files (the "Software"),
+        * to deal in the Software without restriction, including without limitation
+        * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+        * and/or sell copies of the Software, and to permit persons to whom the
+        * Software is furnished to do so, subject to the following conditions:
+        *
+        * The above copyright notice and this permission notice shall be included in
+        * all copies or substantial portions of the Software.
+        *
+        * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+        * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+        * DEALINGS IN THE SOFTWARE.
+  - score: '100.0'
+    start_line: 645
+    end_line: 645
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit_437.RULE
+    license_expression: mit
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: Expat'
+  - score: '100.0'
+    start_line: 646
+    end_line: 662
+    matcher: 2-aho
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person obtaining a
+        * copy of this software and associated documentation files (the "Software"),
+        * to deal in the Software without restriction, including without limitation
+        * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+        * and/or sell copies of the Software, and to permit persons to whom the
+        * Software is furnished to do so, subject to the following conditions:
+        *
+        * The above copyright notice and this permission notice shall be included in
+        * all copies or substantial portions of the Software.
+        *
+        * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+        * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+        * DEALINGS IN THE SOFTWARE.
+  - score: '100.0'
+    start_line: 667
+    end_line: 667
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit_437.RULE
+    license_expression: mit
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: Expat'
+  - score: '100.0'
+    start_line: 668
+    end_line: 684
+    matcher: 2-aho
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person obtaining a
+        * copy of this software and associated documentation files (the "Software"),
+        * to deal in the Software without restriction, including without limitation
+        * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+        * and/or sell copies of the Software, and to permit persons to whom the
+        * Software is furnished to do so, subject to the following conditions:
+        *
+        * The above copyright notice and this permission notice shall be included in
+        * all copies or substantial portions of the Software.
+        *
+        * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+        * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+        * DEALINGS IN THE SOFTWARE.
+  - score: '16.0'
+    start_line: 688
+    end_line: 688
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 16
+    identifier: lgpl-2.1-plus_299.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv2.1+'
+  - score: '22.0'
+    start_line: 695
+    end_line: 695
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 699
+    end_line: 699
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '100.0'
+    start_line: 705
+    end_line: 705
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit_437.RULE
+    license_expression: mit
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: Expat'
+  - score: '100.0'
+    start_line: 706
+    end_line: 723
+    matcher: 2-aho
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person obtaining a
+        copy of this software and associated documentation files (the
+        "Software"), to deal in the Software without restriction, including
+        without limitation the rights to use, copy, modify, merge, publish,
+        distribute, sublicense, and/or sell copies of the Software, and to
+        permit persons to whom the Software is furnished to do so, subject to
+        the following conditions:
+        .
+        The above copyright notice and this permission notice shall be included
+        in all copies or substantial portions of the Software.
+        .
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+        OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+        IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+        CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+        TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+        SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  - score: '22.0'
+    start_line: 729
+    end_line: 729
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 735
+    end_line: 735
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 741
+    end_line: 741
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 745
+    end_line: 745
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 749
+    end_line: 749
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 753
+    end_line: 753
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 759
+    end_line: 759
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 764
+    end_line: 764
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 768
+    end_line: 768
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 772
+    end_line: 772
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 776
+    end_line: 776
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 780
+    end_line: 780
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 785
+    end_line: 785
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 789
+    end_line: 789
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 794
+    end_line: 794
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 799
+    end_line: 799
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 803
+    end_line: 803
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 808
+    end_line: 808
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '100.0'
+    start_line: 809
+    end_line: 826
+    matcher: 2-aho
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person obtaining a
+        * copy of this software and associated documentation files (the
+        * "Software"), to deal in the Software without restriction, including
+        * without limitation the rights to use, copy, modify, merge, publish,
+        * distribute, sublicense, and/or sell copies of the Software, and to
+        * permit persons to whom the Software is furnished to do so, subject to
+        * the following conditions:
+        *
+        * The above copyright notice and this permission notice shall be included
+        * in all copies or substantial portions of the Software.
+        *
+        * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+        * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+        * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+        * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+        * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+        * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  - score: '100.0'
+    start_line: 838
+    end_line: 855
+    matcher: 2-aho
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person obtaining a
+        * copy of this software and associated documentation files (the
+        * "Software"), to deal in the Software without restriction, including
+        * without limitation the rights to use, copy, modify, merge, publish,
+        * distribute, sublicense, and/or sell copies of the Software, and to
+        * permit persons to whom the Software is furnished to do so, subject to
+        * the following conditions:
+        *
+        * The above copyright notice and this permission notice shall be included
+        * in all copies or substantial portions of the Software.
+        *
+        * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+        * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+        * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+        * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+        * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+        * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  - score: '97.17'
+    start_line: 864
+    end_line: 877
+    matcher: 3-seq
+    rule_length: 106
+    matched_length: 103
+    match_coverage: '97.17'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_257.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      GnuTLS.
+        *
+        * [Libgcrypt] is free software; you can redistribute it and/or modify
+        * it under the terms of the GNU Lesser General Public License as
+        * published by the Free Software Foundation; either version 2.1 of
+        * the License, or (at your option) any later version.
+        *
+        * [Libgcrypt] is distributed in the hope that it will be useful,
+        * but WITHOUT ANY WARRANTY; without even the implied warranty of
+        * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        * GNU Lesser General Public License for more details.
+        *
+        * You should have received a copy of the GNU Lesser General Public
+        * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+  - score: '22.0'
+    start_line: 880
+    end_line: 880
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '22.0'
+    start_line: 884
+    end_line: 884
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 22
+    identifier: lgpl-3.0_AND_gpl-3.0_4.RULE
+    license_expression: lgpl-3.0-plus AND gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv3+_or_GPLv2+'
+  - score: '100.0'
+    start_line: 885
+    end_line: 907
+    matcher: 2-aho
+    rule_length: 141
+    matched_length: 141
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-3.0-plus_or_gpl-2.0-plus_5.RULE
+    license_expression: lgpl-3.0-plus OR gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      is free software: you can redistribute it and/or
+        *  modify it under the terms of either:
+        *
+        *    * the GNU Lesser General Public License as published by the Free
+        *      Software Foundation; either version 3 of the License, or (at your
+        *      option) any later version.
+        *
+        *  or
+        *
+        *    * the GNU General Public License as published by the Free
+        *      Software Foundation; either version 2 of the License, or (at your
+        *      option) any later version.
+        *
+        *  or both in parallel, as here.
+        *
+        *  This program is distributed in the hope that it will be useful,
+        *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+        *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+        *  General Public License for more details.
+        *
+        *  You should have received copies of the GNU General Public License and
+        *  the GNU Lesser General Public License along with this program.  If
+        *  not, see http://www.gnu.org/licenses/.
+  - score: '100.0'
+    start_line: 927
+    end_line: 927
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 940
+    end_line: 940
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 945
+    end_line: 945
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 949
+    end_line: 949
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 954
+    end_line: 954
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 964
+    end_line: 964
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '16.0'
+    start_line: 968
+    end_line: 968
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 16
+    identifier: lgpl-2.1-plus_299.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv2.1+'
+  - score: '100.0'
+    start_line: 972
+    end_line: 972
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 978
+    end_line: 978
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 983
+    end_line: 983
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 988
+    end_line: 988
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 993
+    end_line: 993
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 999
+    end_line: 999
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1006
+    end_line: 1006
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1011
+    end_line: 1011
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1015
+    end_line: 1015
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1019
+    end_line: 1019
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1024
+    end_line: 1024
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1028
+    end_line: 1028
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1032
+    end_line: 1032
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1036
+    end_line: 1036
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '16.0'
+    start_line: 1040
+    end_line: 1040
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 16
+    identifier: lgpl-2.1-plus_299.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: LGPLv2.1+'
+  - score: '100.0'
+    start_line: 1047
+    end_line: 1047
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1052
+    end_line: 1052
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1056
+    end_line: 1056
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1061
+    end_line: 1061
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1065
+    end_line: 1065
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '100.0'
+    start_line: 1069
+    end_line: 1069
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0-plus_112.RULE
+    license_expression: gpl-3.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPLv3+'
+  - score: '98.59'
+    start_line: 1074
+    end_line: 1097
+    matcher: 3-seq
+    rule_length: 210
+    matched_length: 210
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_1007.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      License: BSD-3-Clause
+        [All] [rights] [reserved].
+        .
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+            * Redistributions of source code must retain the above copyright
+              notice, this list of conditions and the following disclaimer.
+            * Redistributions in binary form must reproduce the above copyright
+              notice, this list of conditions and the following disclaimer in the
+              documentation and/or other materials provided with the distribution.
+            * Neither the name of Ben Hoyt nor the names of its contributors
+              may be used to endorse or promote products derived from this software
+              without specific prior written permission.
+        .
+        THIS SOFTWARE IS PROVIDED BY BEN HOYT ''AS IS'' AND ANY
+        EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+        WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL BEN HOYT BE LIABLE FOR ANY
+        DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+        (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+        LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+        ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+        SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

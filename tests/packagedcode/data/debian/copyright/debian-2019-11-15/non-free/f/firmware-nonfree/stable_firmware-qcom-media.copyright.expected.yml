@@ -1,0 +1,612 @@
+primary_license:
+declared_license:
+license_expression: free-unknown AND proprietary-license AND openssl-ssleay AND zlib AND public-domain
+  AND bsd-new AND gary-s-brown AND other-permissive AND isc AND bsd-unmodified AND (gpl-2.0
+  OR bsd-new)
+copyright: |
+  Copyright (c) 2013-2017 Qualcomm Technologies, Inc.
+  Copyright (c) 2013-2017 Qualcomm Technologies, Inc.
+  Copyright (c) 1998-2011 The OpenSSL Project
+  Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+  holder is Tim Hudson (tjh@cryptsoft.com)
+  Copyright (c) 1995-2005 Jean-loup Gailly
+  Copyright (c) 1995-2009 Mark Adler
+  Copyright (c) 1995-2003, 2010 Mark Adler
+  Copyright (c) 1995-2005 Jean-loup Gailly and Mark Adler
+  Copyright (c) 2004-2006 Qualphone, Inc.
+  Copyright 2000 Aaron D. Gifford
+  COPYRIGHT (c) 1986 Gary S. Brown
+  Copyright (c) 2003-2005, Jouni Malinen <jkmaline@cc.hut.fi>
+  Copyright (c) 2003-2005, Jouni Malinen <jkmaline@cc.hut.fi>
+  Copyright 1998, 2000 Aaron D. Gifford
+  Copyright (c) 2000-2001, Aaron D. Gifford
+  Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+  Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+matches:
+  - score: '50.0'
+    start_line: 54
+    end_line: 54
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 50
+    identifier: free-unknown_88.RULE
+    license_expression: free-unknown
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: open source license
+  - score: '16.0'
+    start_line: 86
+    end_line: 87
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 16
+    identifier: proprietary_36.RULE
+    license_expression: proprietary-license
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      confidential and
+         proprietary
+  - score: '44.44'
+    start_line: 231
+    end_line: 234
+    matcher: 3-seq
+    rule_length: 32
+    matched_length: 32
+    match_coverage: '100.0'
+    rule_relevance: 50
+    identifier: proprietary-license_557.RULE
+    license_expression: proprietary-license
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      is a trademark of [Qualcomm] [Incorporated], registered in the
+       United States and other countries. All [Qualcomm] [Incorporated] trademarks are used
+       with permission. Other products and brand names may be trademarks or registered
+       trademarks of their respective owners.
+  - score: '98.28'
+    start_line: 237
+    end_line: 244
+    matcher: 3-seq
+    rule_length: 58
+    matched_length: 57
+    match_coverage: '98.28'
+    rule_relevance: 100
+    identifier: openssl-ssleay_42.RULE
+    license_expression: openssl-ssleay
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "LICENSE [ISSUES]\n   ==============\n \n   The OpenSSL toolkit stays under\
+      \ a dual license, i.e. both the conditions of\n   the OpenSSL License and the original\
+      \ SSLeay license apply to the toolkit.\n   See below for the actual license texts. Actually\
+      \ both licenses are BSD-style\n   Open Source licenses. In case of any license issues\
+      \ related to OpenSSL\n   please contact openssl-core@openssl.org."
+  - score: '100.0'
+    start_line: 246
+    end_line: 246
+    matcher: 2-aho
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: openssl-ssleay_2.RULE
+    license_expression: openssl-ssleay
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: OpenSSL License
+  - score: '100.0'
+    start_line: 252
+    end_line: 360
+    matcher: 2-aho
+    rule_length: 799
+    matched_length: 799
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: openssl-ssleay_34.RULE
+    license_expression: openssl-ssleay
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Redistribution and use in source and binary forms, with or without\n  * modification,\
+      \ are permitted provided that the following conditions\n  * are met:\n  *\n  * 1. Redistributions\
+      \ of source code must retain the above copyright\n  *    notice, this list of conditions\
+      \ and the following disclaimer.\n  *\n  * 2. Redistributions in binary form must reproduce\
+      \ the above copyright\n  *    notice, this list of conditions and the following disclaimer\
+      \ in\n  *    the documentation and/or other materials provided with the\n  *    distribution.\n\
+      \  *\n  * 3. All advertising materials mentioning features or use of this\n  *    software\
+      \ must display the following acknowledgment:\n  *    \"This product includes software\
+      \ developed by the OpenSSL Project\n  *    for use in the OpenSSL Toolkit. (http://www.openssl.org/)\"\
+      \n  *\n  * 4. The names \"OpenSSL Toolkit\" and \"OpenSSL Project\" must not be used to\n\
+      \  *    endorse or promote products derived from this software without\n  *    prior written\
+      \ permission. For written permission, please contact\n  *    openssl-core@openssl.org.\n\
+      \  *\n  * 5. Products derived from this software may not be called \"OpenSSL\"\n  *  \
+      \  nor may \"OpenSSL\" appear in their names without prior written\n  *    permission\
+      \ of the OpenSSL Project.\n  *\n  * 6. Redistributions of any form whatsoever must retain\
+      \ the following\n  *    acknowledgment:\n  *    \"This product includes software developed\
+      \ by the OpenSSL Project\n  *    for use in the OpenSSL Toolkit (http://www.openssl.org/)\"\
+      \n  *\n  * THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY\n  * EXPRESSED\
+      \ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n  * IMPLIED WARRANTIES OF\
+      \ MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n  * PURPOSE ARE DISCLAIMED.  IN NO EVENT\
+      \ SHALL THE OpenSSL PROJECT OR\n  * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\
+      \ INCIDENTAL,\n  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n  * NOT\
+      \ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n  * LOSS OF USE, DATA, OR\
+      \ PROFITS; OR BUSINESS INTERRUPTION)\n  * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\
+      \ WHETHER IN CONTRACT,\n  * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n\
+      \  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\n  * OF THE POSSIBILITY\
+      \ OF SUCH DAMAGE.\n  * ====================================================================\n\
+      \  *\n  * This product includes cryptographic software written by Eric Young\n  * (eay@cryptsoft.com).\
+      \  This product includes software written by Tim\n  * Hudson (tjh@cryptsoft.com).\n  *\n\
+      \  */\n \n  Original SSLeay License\n  -----------------------\n \n /* Copyright (C) 1995-1998\
+      \ Eric Young (eay@cryptsoft.com)\n  * All rights reserved.\n  *\n  * This package is an\
+      \ SSL implementation written\n  * by Eric Young (eay@cryptsoft.com).\n  * The implementation\
+      \ was written so as to conform with Netscapes SSL.\n  *\n  * This library is free for\
+      \ commercial and non-commercial use as long as\n  * the following conditions are aheared\
+      \ to.  The following conditions\n  * apply to all code found in this distribution, be\
+      \ it the RC4, RSA,\n  * lhash, DES, etc., code; not just the SSL code.  The SSL documentation\n\
+      \  * included with this distribution is covered by the same copyright terms\n  * except\
+      \ that the holder is Tim Hudson (tjh@cryptsoft.com).\n  *\n  * Copyright remains Eric\
+      \ Young's, and as such any Copyright notices in\n  * the code are not to be removed.\n\
+      \  * If this package is used in a product, Eric Young should be given attribution\n  *\
+      \ as the author of the parts of the library used.\n  * This can be in the form of a textual\
+      \ message at program startup or\n  * in documentation (online or textual) provided with\
+      \ the package.\n  *\n  * Redistribution and use in source and binary forms, with or without\n\
+      \  * modification, are permitted provided that the following conditions\n  * are met:\n\
+      \  * 1. Redistributions of source code must retain the copyright\n  *    notice, this\
+      \ list of conditions and the following disclaimer.\n  * 2. Redistributions in binary form\
+      \ must reproduce the above copyright\n  *    notice, this list of conditions and the following\
+      \ disclaimer in the\n  *    documentation and/or other materials provided with the distribution.\n\
+      \  * 3. All advertising materials mentioning features or use of this software\n  *   \
+      \ must display the following acknowledgement:\n  *    \"This product includes cryptographic\
+      \ software written by\n  *     Eric Young (eay@cryptsoft.com)\"\n  *    The word 'cryptographic'\
+      \ can be left out if the rouines from the library\n  *    being used are not cryptographic\
+      \ related :-).\n  * 4. If you include any Windows specific code (or a derivative thereof)\
+      \ from\n  *    the apps directory (application code) you must include an acknowledgement:\n\
+      \  *    \"This product includes software written by Tim Hudson (tjh@cryptsoft.com)\"\n\
+      \  *\n  * THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND\n  * ANY EXPRESS OR IMPLIED\
+      \ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n  * IMPLIED WARRANTIES OF MERCHANTABILITY\
+      \ AND FITNESS FOR A PARTICULAR PURPOSE\n  * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR\
+      \ OR CONTRIBUTORS BE LIABLE\n  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
+      \ OR CONSEQUENTIAL\n  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
+      \ GOODS\n  * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n \
+      \ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n  * LIABILITY,\
+      \ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n  * OUT OF THE USE OF\
+      \ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n  * SUCH DAMAGE.\n  *\n  * The\
+      \ licence and distribution terms for any publically available version or\n  * derivative\
+      \ of this code cannot be changed.  i.e. this code cannot simply be\n  * copied and put\
+      \ under another distribution licence\n  * [including the GNU Public Licence.]"
+  - score: '100.0'
+    start_line: 371
+    end_line: 371
+    matcher: 2-aho
+    rule_length: 12
+    matched_length: 12
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: zlib_5.RULE
+    license_expression: zlib
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: For conditions of distribution and use, see copyright notice in zlib.h
+  - score: '100.0'
+    start_line: 380
+    end_line: 396
+    matcher: 2-aho
+    rule_length: 144
+    matched_length: 144
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: zlib_17.RULE
+    license_expression: zlib
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "This software is provided 'as-is', without any express or implied\n   warranty.\
+      \  In no event will the authors be held liable for any damages\n   arising from the use\
+      \ of this software.\n \n   Permission is granted to anyone to use this software for any\
+      \ purpose,\n   including commercial applications, and to alter it and redistribute it\n\
+      \   freely, subject to the following restrictions:\n \n   1. The origin of this software\
+      \ must not be misrepresented; you must not\n      claim that you wrote the original software.\
+      \ If you use this software\n      in a product, an acknowledgment in the product documentation\
+      \ would be\n      appreciated but is not required.\n   2. Altered source versions must\
+      \ be plainly marked as such, and must not be\n      misrepresented as being the original\
+      \ software.\n   3. This notice may not be removed or altered from any source distribution.\n\
+      \   Jean-loup Gailly        Mark Adler\n   jloup@gzip.org          madler@alumni.caltech.edu"
+  - score: '100.0'
+    start_line: 413
+    end_line: 415
+    matcher: 2-aho
+    rule_length: 26
+    matched_length: 26
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_303.RULE
+    license_expression: public-domain
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This code was
+        * written by Colin Plumb in 1993, no copyright is claimed.
+        * This code is in the public domain; do with it what you wish.
+  - score: '100.0'
+    start_line: 439
+    end_line: 461
+    matcher: 2-aho
+    rule_length: 213
+    matched_length: 213
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_68.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+        * modification, are permitted provided that the following conditions
+        * are met:
+        * 1. Redistributions of source code must retain the above copyright
+        *    notice, this list of conditions and the following disclaimer.
+        * 2. Redistributions in binary form must reproduce the above copyright
+        *    notice, this list of conditions and the following disclaimer in the
+        *    documentation and/or other materials provided with the distribution.
+        * 3. Neither the name of the copyright holder nor the names of contributors
+        *    may be used to endorse or promote products derived from this software
+        *    without specific prior written permission.
+        *
+        * THIS SOFTWARE IS PROVIDED BY THE AUTHOR(S) AND CONTRIBUTOR(S) ``AS IS'' AND
+        * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+        * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR(S) OR CONTRIBUTOR(S) BE LIABLE
+        * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+        * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+        * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+        * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+        * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+        * SUCH DAMAGE.
+  - score: '88.0'
+    start_line: 469
+    end_line: 470
+    matcher: 2-aho
+    rule_length: 16
+    matched_length: 16
+    match_coverage: '100.0'
+    rule_relevance: 88
+    identifier: gary-s-brown.LICENSE
+    license_expression: gary-s-brown
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      You may use this program, or
+        *  code or tables extracted from it, as desired without restriction.
+  - score: '100.0'
+    start_line: 514
+    end_line: 519
+    matcher: 2-aho
+    rule_length: 74
+    matched_length: 74
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: other-permissive_105.RULE
+    license_expression: other-permissive
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      I retain copyright in this code but I encourage its free use provided
+          that I don't carry any responsibility for the results. I am especially
+          happy to see it used in free and open source software. If you do use
+          it I would appreciate an acknowledgement of its origin in the code or
+          the product that results and I would also appreciate knowing a liitle
+          about the use to which it is being put.
+  - score: '100.0'
+    start_line: 531
+    end_line: 531
+    matcher: 2-aho
+    rule_length: 7
+    matched_length: 7
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_177.RULE
+    license_expression: public-domain
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: This code is in the public domain.
+  - score: '61.68'
+    start_line: 533
+    end_line: 539
+    matcher: 3-seq
+    rule_length: 107
+    matched_length: 66
+    match_coverage: '61.68'
+    rule_relevance: 100
+    identifier: isc_28.RULE
+    license_expression: isc
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+        * INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO
+        * EVENT SHALL [LANDON] [CURT] [NOLL] BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+        * CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF
+        * USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+        * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+        * PERFORMANCE OF THIS SOFTWARE.
+  - score: '100.0'
+    start_line: 549
+    end_line: 549
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_298.RULE
+    license_expression: public-domain
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: IN THE PUBLIC DOMAIN
+  - score: '61.96'
+    start_line: 551
+    end_line: 564
+    matcher: 3-seq
+    rule_length: 184
+    matched_length: 114
+    match_coverage: '61.96'
+    rule_relevance: 100
+    identifier: bsd-unmodified_1.RULE
+    license_expression: bsd-unmodified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      unmodified [version] [is] [available] [at]:
+        *    [ftp]://[ftp].[funet].[fi]/[pub]/[crypt]/[hash]/[sha]/[sha1].[c]
+        *
+        * THIS SOFTWARE IS PROVIDED BY THE AUTHOR(S) AND CONTRIBUTORS ``AS IS'' AND
+        * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+        * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR(S) OR CONTRIBUTORS BE LIABLE
+        * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+        * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+        * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+        * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+        * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+        * SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 580
+    end_line: 587
+    matcher: 2-aho
+    rule_length: 50
+    matched_length: 50
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_or_bsd-new_aes_1.RULE
+    license_expression: gpl-2.0 OR bsd-new
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+        * it under the terms of the GNU General Public License version 2 as
+        * published by the Free Software Foundation.
+        *
+        * Alternatively, this software may be distributed under the terms of BSD
+        * license.
+        *
+        * See README and COPYING for more details.
+  - score: '100.0'
+    start_line: 594
+    end_line: 601
+    matcher: 2-aho
+    rule_length: 50
+    matched_length: 50
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_or_bsd-new_aes_1.RULE
+    license_expression: gpl-2.0 OR bsd-new
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+        * it under the terms of the GNU General Public License version 2 as
+        * published by the Free Software Foundation.
+        *
+        * Alternatively, this software may be distributed under the terms of BSD
+        * license.
+        *
+        * See README and COPYING for more details.
+  - score: '99.06'
+    start_line: 613
+    end_line: 635
+    matcher: 3-seq
+    rule_length: 213
+    matched_length: 211
+    match_coverage: '99.06'
+    rule_relevance: 100
+    identifier: bsd-new_68.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+        * modification, are permitted provided that the following conditions
+        * are met:
+        * 1. Redistributions of source code must retain the above copyright
+        *    notice, this list of conditions and the following disclaimer.
+        * 2. Redistributions in binary form must reproduce the above copyright
+        *    notice, this list of conditions and the following disclaimer in the
+        *    documentation and/or other materials provided with the distribution.
+        * 3. Neither the name of the copyright holder nor the names of contributors
+        *    may be used to endorse or promote products derived from this software
+        *    without specific prior written permission.
+        *
+        * THIS SOFTWARE IS PROVIDED BY THE AUTHOR(S) AND [CONTRIBUTORS] ``AS IS'' AND
+        * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+        * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR(S) OR [CONTRIBUTORS] BE LIABLE
+        * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+        * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+        * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+        * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+        * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+        * SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 646
+    end_line: 668
+    matcher: 2-aho
+    rule_length: 213
+    matched_length: 213
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_68.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+       * modification, are permitted provided that the following conditions
+       * are met:
+       * 1. Redistributions of source code must retain the above copyright
+       * notice, this list of conditions and the following disclaimer.
+       * 2. Redistributions in binary form must reproduce the above copyright
+       * notice, this list of conditions and the following disclaimer in the
+       * documentation and/or other materials provided with the distribution.
+       * 3. Neither the name of the copyright holder nor the names of contributors
+       * may be used to endorse or promote products derived from this software
+       * without specific prior written permission.
+       *
+       * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTOR(S) "AS IS" AND
+       * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+       * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+       * ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTOR(S) BE LIABLE
+       * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+       * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+       * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+       * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+       * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+       * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+       * SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 677
+    end_line: 697
+    matcher: 2-aho
+    rule_length: 200
+    matched_length: 200
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_76.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+        * modification, are permitted provided that the following conditions
+        * are met:
+        * 1. Redistributions of source code must retain the above copyright
+        * notice, this list of conditions and the following disclaimer.
+        * 2. Redistributions in binary form must reproduce the above copyright
+        * notice, this list of conditions and the following disclaimer in the
+        * documentation and/or other materials provided with the distribution.
+        * 3. The name of the author may not be used to endorse or promote products
+        * derived from this software without specific prior written permission.
+        *
+        * THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+        * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+        * AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+        * THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+        * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+        * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+        * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+        * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+        * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+        * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 705
+    end_line: 715
+    matcher: 2-aho
+    rule_length: 111
+    matched_length: 111
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: isc_14.RULE
+    license_expression: isc
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission to use, copy, modify, and distribute this software for any
+        * purpose with or without fee is hereby granted, provided that the above
+        * copyright notice and this permission notice appear in all copies.
+        *
+        * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+        * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+        * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+        * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+        * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+        * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+        * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.

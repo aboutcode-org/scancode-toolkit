@@ -1,0 +1,246 @@
+primary_license: gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0
+declared_license:
+  - GPL-2+
+  - LGPL-2+
+license_expression: (gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-1.0-plus AND gpl-2.0)
+  AND (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1)
+copyright: |
+  Copyright © 2000-2007 Silicon Graphics, Inc.
+  Copyright © 2001-2003,2006-2007,2009 Andreas Gruenbacher
+  Copyright © 2001-2005 Silicon Graphics, Inc.
+  Copyright © 2002,2003,2006-2007,2009 Andreas Gruenbacher
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_22.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 12
+    matcher: 2-aho
+    rule_length: 94
+    matched_length: 94
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_286.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software: you can redistribute it and/or modify it
+      under the terms of the GNU General Public License as published by
+      the Free Software Foundation, either version 2 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program.
+  - score: '100.0'
+    start_line: 11
+    end_line: 12
+    matcher: 2-aho
+    rule_length: 23
+    matched_length: 23
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_36.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      You should have received a copy of the GNU General Public License
+      along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 2-aho
+    rule_length: 5
+    matched_length: 5
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_33.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: the GNU General Public License
+  - score: '100.0'
+    start_line: 2
+    end_line: 2
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_621.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: usr/share/common-licenses/GPL-2'.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0-plus_61.RULE
+    license_expression: lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: lgpl-2+'
+  - score: '99.06'
+    start_line: 1
+    end_line: 12
+    matcher: 3-seq
+    rule_length: 106
+    matched_length: 105
+    match_coverage: '99.06'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_62.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software: you can redistribute it and/or modify it
+      under the terms of the GNU Lesser General Public License as published by
+      the Free Software Foundation, either version 2.1 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU Lesser General Public License for more details.
+
+      You should have received a copy of the GNU Lesser General Public License
+      along with this program.  If not, see <[https]://www.gnu.org/licenses/>.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_83_1.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: the GNU Lesser General Public License
+  - score: '61.0'
+    start_line: 2
+    end_line: 2
+    matcher: 2-aho
+    rule_length: 11
+    matched_length: 11
+    match_coverage: '100.0'
+    rule_relevance: 61
+    identifier: lgpl-2.1_292.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: can be found in '/usr/share/common-licenses/LGPL-2.1'.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 2-aho
+    rule_length: 5
+    matched_length: 5
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_33.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: the GNU General Public License
+  - score: '100.0'
+    start_line: 2
+    end_line: 2
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_621.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: usr/share/common-licenses/GPL-2'.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_83_1.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: the GNU Lesser General Public License
+  - score: '61.0'
+    start_line: 2
+    end_line: 2
+    matcher: 2-aho
+    rule_length: 11
+    matched_length: 11
+    match_coverage: '100.0'
+    rule_relevance: 61
+    identifier: lgpl-2.1_292.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: can be found in '/usr/share/common-licenses/LGPL-2.1'.

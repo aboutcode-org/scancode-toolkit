@@ -1,0 +1,436 @@
+primary_license: lgpl-2.1 AND lgpl-2.1-plus
+declared_license:
+  - LGPL-2.1
+  - MIT
+  - Beerware
+  - public-domain-solardiz
+  - BSD-3-Clause
+  - Unicode-DFS-2015
+  - Apache-2.0
+  - BSD-2-Clause
+  - Apache-2.0 or LGPL-2.1
+  - GPL-2+
+license_expression: (lgpl-2.1 AND lgpl-2.1-plus) AND mit AND beerware AND public-domain AND
+  bsd-new AND unicode AND apache-2.0 AND bsd-simplified AND (apache-2.0 OR (lgpl-2.1 AND lgpl-2.1-plus))
+copyright: |
+  (c) 2001-2018 Dovecot authors
+  (c) 2004-2006 Andrey Panin <pazke@donpac.ru>
+  (c) 2005 Jelmer Vernooij <jelmer@samba.org>
+  (c) 2011-2016 Florian Zeitz <florob@babelmonkeys.de>
+  (c) 2007 Dmitry Butskoy <dmitry@butskoy.name>
+  (C) 2006 Simon L Jackson
+  (c) 2015-2017 Dovecot Oy
+  Poul-Henning Kamp <phk@login.dknet.dk>
+  (c) Copyright 1997-2005 Simon Tatham
+  N/A
+  Copyright (C) 1995, 1996, 1997, and 1998 WIDE Project.
+  Copyright (C) 2005, 2007 Olivier Gay <olivier.gay@a3.epfl.ch>
+  (c) 2016-2017 Josef 'Jeff' Sipek <jeffpc@josefsipek.net>
+  (c) 2004 Andrey Panin <pazke@donpac.ru>
+  (c) 2003 Joshua Goodall <joshua@roughtrade.net>
+  (c) 2005 Vaclav Haisman <v.haisman@sh.cvut.cz>
+  Copyright (C) 1991-2007 Unicode, Inc.
+  Copyright (c) 2001, Dr Martin Porter
+  Copyright (c) 2002, Richard Boulton.
+  Apache Software Foundation
+  (c) 2005, Jacques Savoy.
+  Copyright 2010 Lennart Poettering
+  (C) 2003-2006 Ben van Klinken and the CLucene Team
+  (c) 2002-2018 Stephan Bosch <stephan@rename-it.nl>
+  (c) 2002-2018 Dovecot authors
+matches:
+  - score: '100.0'
+    start_line: 1
+    end_line: 4
+    matcher: 1-hash
+    rule_length: 52
+    matched_length: 52
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: beerware_1.RULE
+    license_expression: beerware
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      THE BEER-WARE LICENSE" (Revision 42):
+      <phk@login.dknet.dk> wrote this file.  As long as you retain this notice you
+      can do whatever you want with this stuff. If we meet some day, and you think
+      this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
+  - score: '100.0'
+    start_line: 1
+    end_line: 2
+    matcher: 2-aho
+    rule_length: 5
+    matched_length: 5
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_45.RULE
+    license_expression: public-domain
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      placed in the
+      public domain.
+  - score: '100.0'
+    start_line: 1
+    end_line: 17
+    matcher: 1-hash
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person obtaining a
+      copy of this software and associated documentation files (the "Software"),
+      to deal in the Software without restriction, including without limitation
+      the rights to use, copy, modify, merge, publish, distribute, sublicense,
+      and/or sell copies of the Software, and to permit persons to whom the
+      Software is furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be included in
+      all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+      FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+      DEALINGS IN THE SOFTWARE.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_38.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: lgpl-2.1'
+  - score: '100.0'
+    start_line: 1
+    end_line: 13
+    matcher: 2-aho
+    rule_length: 117
+    matched_length: 117
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_239.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This library is free software; you can redistribute it and/or
+      modify it under the terms of the GNU Lesser General Public
+      License as published by the Free Software Foundation; either
+      version 2.1 of the License, or (at your option) any later version.
+
+      This library is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+      Lesser General Public License for more details.
+
+      You should have received a copy of the GNU Lesser General Public
+      License along with this library; if not, write to the Free Software
+      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+  - score: '100.0'
+    start_line: 15
+    end_line: 15
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_83_1.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: the GNU Lesser General Public License
+  - score: '100.0'
+    start_line: 16
+    end_line: 16
+    matcher: 2-aho
+    rule_length: 7
+    matched_length: 7
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_82.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: usr/share/common-licenses/LGPL-2.1.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: apache-2.0_65.RULE
+    license_expression: apache-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: apache-2.0'
+  - score: '96.4'
+    start_line: 1
+    end_line: 14
+    matcher: 3-seq
+    rule_length: 111
+    matched_length: 107
+    match_coverage: '96.4'
+    rule_relevance: 100
+    identifier: apache-2.0_231.RULE
+    license_expression: apache-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+
+      On Debian systems, the [full] text of the Apache License, Version 2.0 can be
+      found [at] /usr/share/common-licenses/Apache-2.0.
+  - score: '100.0'
+    start_line: 3
+    end_line: 25
+    matcher: 2-aho
+    rule_length: 213
+    matched_length: 213
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_19.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions
+      are met:
+      1. Redistributions of source code must retain the above copyright
+         notice, this list of conditions and the following disclaimer.
+      2. Redistributions in binary form must reproduce the above copyright
+         notice, this list of conditions and the following disclaimer in the
+         documentation and/or other materials provided with the distribution.
+      3. Neither the name of the University nor the names of its contributors
+         may be used to endorse or promote products derived from this software
+         without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+      SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 1
+    end_line: 20
+    matcher: 1-hash
+    rule_length: 185
+    matched_length: 185
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-simplified_16.RULE
+    license_expression: bsd-simplified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are met:
+
+      1. Redistributions of source code must retain the above copyright notice, this
+         list of conditions and the following disclaimer.
+
+      2. Redistributions in binary form must reproduce the above copyright notice,
+         this list of conditions and the following disclaimer in the documentation
+         and/or other materials provided with the distribution.
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+      DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+      SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+      CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+      OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+      OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 1
+    end_line: 1
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_22.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2+'
+  - score: '100.0'
+    start_line: 1
+    end_line: 13
+    matcher: 2-aho
+    rule_length: 113
+    matched_length: 113
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_420.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 2 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License along
+      with this program; if not, write to the Free Software Foundation, Inc.,
+      51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+  - score: '100.0'
+    start_line: 15
+    end_line: 15
+    matcher: 2-aho
+    rule_length: 7
+    matched_length: 7
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_660.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: the GNU General Public License version 2
+  - score: '100.0'
+    start_line: 16
+    end_line: 16
+    matcher: 2-aho
+    rule_length: 6
+    matched_length: 6
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_621.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: usr/share/common-licenses/GPL-2.
+  - score: '100.0'
+    start_line: 1
+    end_line: 33
+    matcher: 2-aho
+    rule_length: 299
+    matched_length: 299
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: unicode_35.RULE
+    license_expression: unicode
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Distributed under the
+      Terms of Use in http://www.unicode.org/copyright.html.
+
+      Permission is hereby granted, free of charge, to any person obtaining a copy
+      of the Unicode data files and any associated documentation (the "Data Files")
+      or Unicode software and any associated documentation (the "Software") to deal
+      in the Data Files or Software without restriction, including without limitation
+      the rights to use, copy, modify, merge, publish, distribute, and/or sell copies
+      of the Data Files or Software, and to permit persons to whom the Data Files or
+      Software are furnished to do so, provided that
+
+      (a) this copyright and permission notice appear with all copies of the Data
+          Files or Software,
+      (b) this copyright and permission notice appear in associated documentation,
+          and
+      (c) there is clear notice in each modified Data File or in the Software as
+          well as in the documentation associated with the Data File(s) or Software
+          that the data or software has been modified.
+
+      THE DATA FILES AND SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+      KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD
+      PARTY RIGHTS. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN
+      THIS NOTICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL
+      DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+      WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
+      OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THE DATA FILES OR
+      SOFTWARE.
+
+      Except as contained in this notice, the name of a copyright holder shall not
+      be used in advertising or otherwise to promote the sale, use or other dealings
+      in these Data Files or Software without prior written authorization of the
+      copyright holder.

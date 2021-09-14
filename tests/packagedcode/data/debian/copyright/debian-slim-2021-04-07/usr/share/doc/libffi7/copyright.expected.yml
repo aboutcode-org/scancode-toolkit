@@ -1,0 +1,150 @@
+primary_license:
+declared_license:
+license_expression: mit AND gpl-2.0-plus AND gpl-1.0-plus
+copyright: |
+  Copyright (c) 1996-2011 Red Hat, Inc.
+  Copyright (c) 1996-2011 Anthony Green
+  Copyright (c) 1996-2010 Free Software Foundation, Inc
+  Copyright (c) 2003, 2004, 2006, 2007, 2008 Kaz Kojima
+  Copyright (c) 2010, 2011, Plausible Labs Cooperative, Inc.
+  Copyright (c) 2010 CodeSourcery
+  Copyright (c) 1998 Andreas Schwab
+  Copyright (c) 2000 Hewlett Packard Company
+  Copyright (c) 2009 Bradley Smith
+  Copyright (c) 2008 David Daney
+  Copyright (c) 2004 Simon Posnjak
+  Copyright (c) 2005 Axis Communications AB
+  Copyright (c) 1998 Cygnus Solutions
+  Copyright (c) 2004 Renesas Technology
+  Copyright (c) 2002, 2007 Bo Thorsen <bo@suse.de>
+  Copyright (c) 2002 Ranjit Mathew
+  Copyright (c) 2002 Roger Sayle
+  Copyright (c) 2000, 2007 Software AG
+  Copyright (c) 2003 Jakub Jelinek
+  Copyright (c) 2000, 2001 John Hornkvist
+  Copyright (c) 1998 Geoffrey Keating
+  Copyright (c) 2008 Bjorn Konig
+  Copyright (c) 1996-2010 Red Hat, Inc and others
+  (c) 2008, 2011 Matthias Klose <doko@debian.org>
+matches:
+  - score: '100.0'
+    start_line: 42
+    end_line: 59
+    matcher: 2-aho
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: "Permission is hereby granted, free of charge, to any person obtaining\n \
+      \    a copy of this software and associated documentation files (the\n     ``Software''),\
+      \ to deal in the Software without restriction, including\n     without limitation the\
+      \ rights to use, copy, modify, merge, publish,\n     distribute, sublicense, and/or sell\
+      \ copies of the Software, and to\n     permit persons to whom the Software is furnished\
+      \ to do so, subject to\n     the following conditions:\n \n     The above copyright notice\
+      \ and this permission notice shall be included\n     in all copies or substantial portions\
+      \ of the Software.\n \n     THE SOFTWARE IS PROVIDED ``AS IS'', WITHOUT WARRANTY OF ANY\
+      \ KIND,\n     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n   \
+      \  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\n     IN NO\
+      \ EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\n     CLAIM, DAMAGES\
+      \ OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\n     TORT OR OTHERWISE, ARISING\
+      \ FROM, OUT OF OR IN CONNECTION WITH THE\n     SOFTWARE OR THE USE OR OTHER DEALINGS IN\
+      \ THE SOFTWARE."
+  - score: '100.0'
+    start_line: 62
+    end_line: 66
+    matcher: 2-aho
+    rule_length: 51
+    matched_length: 51
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_35.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is granted to copy, distribute and/or modify this document
+           under the terms of the GNU General Public License as published by the
+           Free Software Foundation; either version 2, or (at your option) any
+           later version.  A copy of the license is included in the
+           section entitled ``GNU General Public License''.
+  - score: '100.0'
+    start_line: 69
+    end_line: 73
+    matcher: 2-aho
+    rule_length: 51
+    matched_length: 51
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_35.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is granted to copy, distribute and/or modify this document
+         under the terms of the GNU General Public License as published by the
+         Free Software Foundation; either version 2, or (at your option) any
+         later version.  A copy of the license is included in the
+         section entitled ``GNU General Public License''.
+  - score: '19.35'
+    start_line: 75
+    end_line: 76
+    matcher: 3-seq
+    rule_length: 31
+    matched_length: 6
+    match_coverage: '19.35'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_636.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      of the GNU General
+         Public License
+  - score: '100.0'
+    start_line: 76
+    end_line: 76
+    matcher: 2-aho
+    rule_length: 5
+    matched_length: 5
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_424.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: usr/share/common-licenses/GPL'.
+  - score: '66.0'
+    start_line: 79
+    end_line: 79
+    matcher: 3-seq
+    rule_length: 16
+    matched_length: 12
+    match_coverage: '75.0'
+    rule_relevance: 88
+    identifier: gpl-1.0-plus_450.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: and is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
