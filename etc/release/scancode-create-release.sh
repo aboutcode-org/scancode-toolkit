@@ -21,6 +21,8 @@ PYTHON_APP_DOT_VERSIONS="3.6 3.7 3.8 3.9"
 
 PYTHON_PYPI_TESTS_DOT_VERSIONS="3.6 3.7 3.8 3.9"
 
+PYPI_LINKS=https://thirdparty.aboutcode.org/pypi
+
 OPERATING_SYSTEMS="linux macos windows"
 
 QUIET=""
@@ -272,9 +274,9 @@ function build_app_archive {
         mkdir -p thirdparty
 
         if [ "$operating_system" == "windows" ]; then
-            echo -n "py -$python_app_dot_version">PYTHON_EXECUTABLE
+            echo -n "py -$python_app_dot_version" > PYTHON_EXECUTABLE
         else
-            echo -n "python$python_app_dot_version">PYTHON_EXECUTABLE
+            echo -n "python$python_app_dot_version" > PYTHON_EXECUTABLE
         fi
 
         # 1. Collect thirdparty deps only for the subset for this Python/operating_system
@@ -339,7 +341,7 @@ if [ "$CLI_ARGS" != "--continue" ]; then
 
     echo "## RELEASE: Clean and configure, then regen license index"
     ./configure --clean
-    PYPI_LINKS=$PYPI_LINKS ./configure --local 
+    ./configure --local 
     source bin/activate
     scancode --reindex-licenses
 

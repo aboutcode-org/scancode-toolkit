@@ -172,11 +172,20 @@ def fetch_wheels(
     else:
         force_pinned = False
 
-    rrp = list(get_required_remote_packages(
-        requirements_file=requirements_file,
-        force_pinned=force_pinned,
-        remote_links_url=remote_links_url,
-    ))
+    try:
+        rrp = list(get_required_remote_packages(
+            requirements_file=requirements_file,
+            force_pinned=force_pinned,
+            remote_links_url=remote_links_url,
+        ))
+    except Exception as e:
+        raise Exception(
+            dict(
+                requirements_file=requirements_file,
+                force_pinned=force_pinned,
+                remote_links_url=remote_links_url,
+            )
+        ) from e
 
     fetched_filenames = set()
     for name, version, package in rrp:
@@ -211,6 +220,7 @@ def fetch_wheels(
             print(f'Missed package {nv} in remote repo, has only:')
             for pv in rr.get_versions(n):
                 print('  ', pv)
+        raise Exception('Missed some packages in remote repo')
 
 
 def fetch_sources(
@@ -261,6 +271,8 @@ def fetch_sources(
             fetched = package.fetch_sdist(dest_dir=dest_dir)
             error = f'Failed to fetch' if not fetched else None
             yield package, error
+    if missed:
+        raise Exception(f'Missing source packages in {remote_links_url}', missed)
 
 ################################################################################
 #
@@ -2317,7 +2329,7 @@ def get_required_remote_packages(
         repo = get_remote_repo(remote_links_url=remote_links_url)
     else:
         # a local path
-        assert os.path.exists(remote_links_url)
+        assert os.path.exists(remote_links_url), f'Path does not exist: {remote_links_url}'
         repo = get_local_repo(directory=remote_links_url)
 
     for name, version in required_name_versions:
