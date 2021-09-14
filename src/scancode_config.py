@@ -77,6 +77,14 @@ def _create_dir(location):
 # on hand fall back to this version
 __version__ = '21.8.4'
 
+# See https://github.com/nexB/scancode-toolkit/issues/2653 for more information
+# on the data format version
+__output_format_version__ = '1.0.0'
+
+# 
+spdx_license_list_version = '3.14'
+
+
 try:
     from pkg_resources import get_distribution, DistributionNotFound
     try:
@@ -89,9 +97,6 @@ except ImportError:
 system_temp_dir = tempfile.gettempdir()
 scancode_src_dir = dirname(__file__)
 scancode_root_dir = dirname(scancode_src_dir)
-
-# 
-spdx_license_list_version = '3.14'
 
 ################################################################################
 # USAGE MODE FLAGS

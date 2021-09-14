@@ -168,7 +168,7 @@ def check_json_scan(
     result_file,
     regen=False,
     remove_file_date=False,
-    ignore_headers=False
+    check_headers=False,
 ):
     """
     Check the scan `result_file` JSON results against the `expected_file`
@@ -179,7 +179,7 @@ def check_json_scan(
     expectations. But use with caution.
 
     If `remove_file_date` is True, the file.date attribute is removed.
-    If `ignore_headers` is True, the scan headers attribute is removed.
+    If `check_headers` is True, the scan headers attribute is not removed.
     """
     results = load_json_result(result_file, remove_file_date)
     if regen:
@@ -188,7 +188,7 @@ def check_json_scan(
 
     expected = load_json_result(expected_file, remove_file_date)
 
-    if ignore_headers:
+    if not check_headers:
         results.pop('headers', None)
         expected.pop('headers', None)
 
@@ -289,6 +289,7 @@ def check_jsonlines_scan(
     result_file,
     regen=False,
     remove_file_date=False,
+    check_headers=False,
 ):
     """
     Check the scan result_file JSON Lines results against the expected_file
@@ -311,6 +312,10 @@ def check_jsonlines_scan(
         expected = json.load(res)
 
     streamline_jsonlines_scan(expected, remove_file_date)
+    
+    if not check_headers:
+        results[0].pop('headers', None)
+        expected[0].pop('headers', None)
 
     expected = json.dumps(expected, indent=2, separators=(',', ': '))
     results = json.dumps(results, indent=2, separators=(',', ': '))
