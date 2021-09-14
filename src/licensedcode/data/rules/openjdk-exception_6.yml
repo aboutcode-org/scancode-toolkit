@@ -1,4 +1,5 @@
 license_expression: openjdk-exception
 is_license_reference: yes
+relevance: 100
 ignorable_urls:
     - http://openjdk.java.net/legal/assembly-exception.html

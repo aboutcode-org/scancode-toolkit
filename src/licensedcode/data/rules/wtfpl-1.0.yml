@@ -1,4 +1,5 @@
 license_expression: wtfpl-1.0
 is_license_reference: yes
+relevance: 100
 ignorable_urls:
     - http://cvs.windowmaker.org/co.php/wm/COPYING.WTFPL

@@ -1,4 +1,5 @@
 license_expression: ms-rsl
 is_license_reference: yes
+relevance: 100
 ignorable_urls:
     - http://www.microsoft.com/resources/sharedsource/referencesourcelicense.mspx
