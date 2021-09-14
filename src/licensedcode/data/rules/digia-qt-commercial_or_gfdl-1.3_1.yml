@@ -1,0 +1,7 @@
+license_expression: digia-qt-commercial OR gfdl-1.3
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://qt.digia.com/contact-us
+    - http://qt.digia.com/licensing
+    - https://www.gnu.org/copyleft/fdl.html

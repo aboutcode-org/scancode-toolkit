@@ -1,0 +1,10 @@
+license_expression: qt-commercial-1.1 OR lgpl-2.1 WITH qt-company-exception-lgpl-2.1 OR lgpl-3.0
+    WITH qt-company-exception-lgpl-2.1
+is_license_notice: yes
+relevance: 100
+notes: Qt is available under a choice of licenses. This is a common choice
+ignorable_urls:
+    - http://www.qt.io/contact-us
+    - http://www.qt.io/terms-conditions
+    - https://www.gnu.org/licenses/lgpl.html
+    - https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
