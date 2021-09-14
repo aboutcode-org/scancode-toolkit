@@ -1,0 +1,5 @@
+license_expression: zlib
+is_license_text: yes
+ignorable_emails:
+    - jloup@gzip.org
+    - madler@alumni.caltech.edu
