@@ -357,16 +357,16 @@ matches:
     matched_text: |
       This file has been put in the public domain.
       You can do whatever you want with this file.
-  - score: '100.0'
+  - score: '55.0'
     start_line: 120
     end_line: 120
     matcher: 1-hash
     rule_length: 10
     matched_length: 10
     match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: unknown-license-reference_356.RULE
-    license_expression: unknown-license-reference
+    rule_relevance: 55
+    identifier: public-domain_356.RULE
+    license_expression: public-domain
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
