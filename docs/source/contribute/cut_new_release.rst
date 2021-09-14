@@ -1,8 +1,17 @@
 How to cut a new release:
 =========================
 
+Update version
+--------------
+
 - Run bumpversion with major, minor or patch to bump the version in
-  ``setup.cfg`` and ``src/scancode_config.py``
+  ``setup.cfg`` and ``src/scancode_config.py``. Note that this is CalVer.
+
+- If scancode output data format is changed, increment manually the major, minor or patch
+  to bump the version in ``src/scancode_config.py``. Note that this is SemVer.
+
+Tag and publish
+---------------
 
 - Update the CHANGELOG.rst
 
@@ -22,6 +31,9 @@ How to cut a new release:
 - Draft a new release in GitHub, using the previous release blurb as a base. Highlight new and
   noteworthy changes from the CHANGELOG.rst.
 
+Create Release on GitHub
+------------------------
+
 - Run ``etc/release/scancode_release.sh`` locally.
 
 - Upload the release archives created in the ``dist/`` directory to the GitHub release page.
@@ -32,6 +44,9 @@ How to cut a new release:
 - test the downloads.
 
 - publish the release on GitHub
+
+Upload wheels to pypi and Test
+------------------------------
 
 - then build and publish the released wheel on Pypi. For this you need your own Pypi credentials
   (and get authorized to publish Pypi release: ask @pombredanne) and you need to have the ``twine``

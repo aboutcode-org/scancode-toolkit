@@ -94,6 +94,7 @@ def print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
     click.echo('ScanCode version ' + scancode_config.__version__)
+    click.echo('Output Format version ' + scancode_config.__output_format_version__)
     ctx.exit()
 
 
@@ -838,6 +839,7 @@ def run_scan(
         cle.start_timestamp = start_timestamp
         cle.tool_name = 'scancode-toolkit'
         cle.tool_version = scancode_config.__version__
+        cle.output_format_version = scancode_config.__output_format_version__
         cle.notice = notice
         cle.options = pretty_params or {}
 
