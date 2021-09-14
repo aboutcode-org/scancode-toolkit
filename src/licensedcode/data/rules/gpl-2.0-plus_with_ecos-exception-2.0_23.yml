@@ -1,0 +1,6 @@
+license_expression: gpl-2.0-plus WITH ecos-exception-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://sources.redhat.com/ecos/license-overview.html
+    - https://www.gnu.org/copyleft/gpl.html

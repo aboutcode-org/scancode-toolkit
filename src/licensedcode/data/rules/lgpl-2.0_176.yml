@@ -1,0 +1,6 @@
+license_expression: lgpl-2.0
+is_license_reference: yes
+relevance: 100
+notes: text url LGPL 2
+ignorable_urls:
+    - https://www.gnu.org/licenses/old-licenses/lgpl-2.0.txt

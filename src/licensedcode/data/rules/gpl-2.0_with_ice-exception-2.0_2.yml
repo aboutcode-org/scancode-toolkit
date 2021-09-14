@@ -1,0 +1,8 @@
+license_expression: gpl-2.0 WITH ice-exception-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://mumble.sourceforge.net/
+    - http://orca-robotics.sourceforge.net/
+    - https://www.apache.org/licenses/LICENSE-2.0.html
+    - https://www.gnu.org/licenses

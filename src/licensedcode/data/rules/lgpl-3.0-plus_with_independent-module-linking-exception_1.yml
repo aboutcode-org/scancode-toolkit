@@ -1,0 +1,6 @@
+license_expression: lgpl-3.0-plus WITH independent-module-linking-exception
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_urls:
+    - https://www.gnu.org/licenses/
