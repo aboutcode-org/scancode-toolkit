@@ -8,7 +8,8 @@
         "--license": true,
         "--license-text": true,
         "--license-text-diagnostics": true,
-        "--strip-root": true
+        "--strip-root": true,
+        "--unknown-licenses": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
@@ -76,7 +77,7 @@
       "licenses": [
         {
           "key": "unknown-license-reference",
-          "score": 27.0,
+          "score": 100.0,
           "name": "Unknown License file reference",
           "short_name": "Unknown License reference",
           "category": "Unstated License",
@@ -111,7 +112,7 @@
             "rule_length": 5,
             "matched_length": 5,
             "match_coverage": 100.0,
-            "rule_relevance": 27
+            "rule_relevance": 100
           },
           "matched_text": "license\": \"SEE LICENSE IN LICENSE."
         },

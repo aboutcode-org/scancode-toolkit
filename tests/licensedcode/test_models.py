@@ -385,13 +385,22 @@ class TestRule(FileBasedTesting):
         assert rule.relevance == 100
         assert rule.has_stored_relevance
 
-    def test_compute_relevance_does_not_update_stored_relevance_for_short_rules(self):
+    def test_compute_relevance_does_not_update_stored_relevance(self):
         rule = models.Rule(stored_text='abcd ' * 17, license_expression='public-domain')
         rule.relevance = 100
-        rule.has_stored_relevance = False
+        rule.has_stored_relevance = True
         rule.length = 17
         rule.compute_relevance()
         assert rule.relevance == 100
+        assert rule.has_stored_relevance
+
+    def test_compute_relevance_does_not_update_stored_relevance_for_short_rules(self):
+        rule = models.Rule(stored_text='abcd ' * 17, license_expression='public-domain')
+        rule.relevance = 99
+        rule.has_stored_relevance = True
+        rule.length = 18
+        rule.compute_relevance()
+        assert rule.relevance == 99
         assert rule.has_stored_relevance
 
     def test_compute_relevance_does_update_stored_relevance_for_short_rules(self):

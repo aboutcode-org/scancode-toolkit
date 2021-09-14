@@ -144,7 +144,7 @@
       "licenses": [
         {
           "key": "unknown-license-reference",
-          "score": 100.0,
+          "score": 50.0,
           "name": "Unknown License file reference",
           "short_name": "Unknown License reference",
           "category": "Unstated License",
@@ -177,7 +177,7 @@
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 100
+            "rule_relevance": 50
           }
         },
         {
@@ -270,7 +270,7 @@
       "licenses": [
         {
           "key": "unknown-license-reference",
-          "score": 100.0,
+          "score": 50.0,
           "name": "Unknown License file reference",
           "short_name": "Unknown License reference",
           "category": "Unstated License",
@@ -303,7 +303,7 @@
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 100
+            "rule_relevance": 50
           }
         },
         {
@@ -556,7 +556,7 @@
       "licenses": [
         {
           "key": "unknown-license-reference",
-          "score": 100.0,
+          "score": 50.0,
           "name": "Unknown License file reference",
           "short_name": "Unknown License reference",
           "category": "Unstated License",
@@ -589,7 +589,7 @@
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 100
+            "rule_relevance": 50
           }
         },
         {
