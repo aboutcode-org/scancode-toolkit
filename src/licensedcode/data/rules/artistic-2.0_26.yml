@@ -1,4 +1,5 @@
 license_expression: artistic-2.0
-is_license_tag: yes
+is_license_notice: yes
 relevance: 100
-notes: tag as documented in the Module-Build pod
+referenced_filenames:
+    - /usr/share/common-licenses/Artistic
