@@ -46,13 +46,10 @@ def test_can_encode_component():
     )
     json_repr = CycloneDxEncoder().encode(component)
     expected_json_repr = (
-        '{"name": "test", "version": "1", '
-        '"purl": "pkg:generic/test@1", '
-        '"hashes": [{"alg": "MD5", "content": "not-a-hash"}], '
-        '"licenses": [{"expression": "MIT or Apache-2.0"}, '
-        '{"license": {"id": "MIT"}}], '
-        '"type": "library", "scope": "required", '
-        '"bom-ref": "pkg:generic/test@1"}'
+        '{"name": "test", "version": "1", "bom-ref": "pkg:generic/test@1", "type": '
+        '"library", "scope": "required", "purl": "pkg:generic/test@1", "hashes": '
+        '[{"alg": "MD5", "content": "not-a-hash"}], "licenses": [{"expression": "MIT '
+        'or Apache-2.0"}, {"license": {"id": "MIT"}}]}'
     )
     assert json_repr == expected_json_repr
 
