@@ -1044,6 +1044,8 @@ patterns = [
     (r'^JMagnetic$', 'NN'),
     (r'^Joint$', 'NN'),
     (r'^Jsunittest$', 'NN'),
+    (r'^List$', 'NN'),
+    (r'^Set$', 'NN'),
     (r'^Last$', 'NN'),
     (r'^LAW', 'NN'),
     (r'^Legal$', 'NN'),
