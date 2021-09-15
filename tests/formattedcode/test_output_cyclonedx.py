@@ -14,7 +14,7 @@ import os
 from commoncode.testcase import FileDrivenTesting
 from formattedcode.output_cyclonedx import *
 from scancode.cli_test_utils import run_scan_click
-from xml.etree import ElementTree as ET
+from lxml import etree
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -26,7 +26,7 @@ def load_json_from_test_location(test_location):
 
 
 def load_xml_from_test_location(test_location):
-    return ET.parse(test_location)
+    return etree.parse(test_location)
 
 
 def test_can_encode_component():

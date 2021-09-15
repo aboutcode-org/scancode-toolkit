@@ -8,15 +8,16 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import attr
 import click
 import json
 import re
 import uuid
 from datetime import datetime
 from enum import Enum
-from xml.etree import ElementTree as ET
+from lxml import etree
 
-import attr
+
 from commoncode.cliutils import OUTPUT_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
 from formattedcode import FileOptionType
@@ -520,54 +521,54 @@ class XmlSerializer():
     def __init__(self, bom: CycloneDxBom):
         self.bom = bom
 
-    def _add_text_element_if_not_none(self, parent: ET.Element, name: str, value: str):
+    def _add_text_element_if_not_none(self, parent: etree.Element, name: str, value: str):
         # serialize enums by referencing their value
         if isinstance(value, Enum):
             value = value.value
         if value is not None:
-            ET.SubElement(parent, name).text = value
+            etree.SubElement(parent, name).text = value
 
-    def _get_root_element(self) -> ET.Element:
-        bom_element = ET.Element('bom', {
+    def _get_root_element(self) -> etree.Element:
+        bom_element = etree.Element('bom', {
             'xmlns': "http://cyclonedx.org/schema/bom/1.3",
             'version': '1',
             'serialNumber': self.bom.serialNumber
         })
         return bom_element
 
-    def _get_tool_element(self) -> ET.Element:
-        tool = ET.Element("tool")
+    def _get_tool_element(self) -> etree.Element:
+        tool = etree.Element("tool")
         bom_tool = self.bom.metadata.tools[0]
-        ET.SubElement(tool, 'vendor').text = bom_tool["vendor"]
-        ET.SubElement(tool, 'name').text = bom_tool["name"]
-        ET.SubElement(tool, 'version').text = bom_tool["version"]
+        etree.SubElement(tool, 'vendor').text = bom_tool["vendor"]
+        etree.SubElement(tool, 'name').text = bom_tool["name"]
+        etree.SubElement(tool, 'version').text = bom_tool["version"]
         return tool
 
     def _get_hash_element(self, hash: CycloneDxHashObject):
-        hash_el = ET.Element("hash", {"alg": hash.alg})
+        hash_el = etree.Element("hash", {"alg": hash.alg})
         hash_el.text = hash.content
         return hash_el
 
     def _get_external_ref(self, ref: CycloneDxExternalRef):
-        ext_ref_el = ET.Element("reference", {"type": ref.type})
+        ext_ref_el = etree.Element("reference", {"type": ref.type})
         self._add_text_element_if_not_none(ext_ref_el, 'url', ref.url)
         self._add_text_element_if_not_none(ext_ref_el, 'comment', ref.comment)
         if ref.hashes:
-            hashes = ET.SubElement(ext_ref_el, "hashes")
+            hashes = etree.SubElement(ext_ref_el, "hashes")
             for hash in component.hashes:
                 hashes.append(self._get_hash_element(hash))
         return ext_ref_el
 
-    def _get_component_element(self, component: CycloneDxComponent) -> ET.Element:
+    def _get_component_element(self, component: CycloneDxComponent) -> etree.Element:
         #exit early if we don't at least have name, version and bom-ref
         if component.bom_ref is None or component.name is None \
                 or component.version is None:
             return None
 
-        el = ET.Element('component', {"type": component.type.value,
+        el = etree.Element('component', {"type": component.type.value,
                                       "bom-ref": component.bom_ref})
-        ET.SubElement(el, 'name').text = component.name
-        ET.SubElement(el, 'version').text = component.version
+        etree.SubElement(el, 'name').text = component.name
+        etree.SubElement(el, 'version').text = component.version
 
         self._add_text_element_if_not_none(el, "description", component.description)
         self._add_text_element_if_not_none(el, "copyright", component.copyright)
@@ -576,15 +577,15 @@ class XmlSerializer():
         self._add_text_element_if_not_none(el, "scope", component.scope)
         self._add_text_element_if_not_none(el, "purl", component.purl)
 
-        hashes = ET.SubElement(el, "hashes")
+        hashes = etree.SubElement(el, "hashes")
         for hash in component.hashes:
             hashes.append(self._get_hash_element(hash))
 
-        licenses = ET.SubElement(el, "licenses")
+        licenses = etree.SubElement(el, "licenses")
         for license_entry in component.licenses:
             if license_entry.license is not None:
                 lic = license_entry.license
-                lic_el = ET.Element("license")
+                lic_el = etree.Element("license")
                 if lic.id is not None:
                     self._add_text_element_if_not_none(lic_el, 'id', lic.id)
                 else:
@@ -592,45 +593,45 @@ class XmlSerializer():
                 self._add_text_element_if_not_none(lic_el, 'url', lic.url)
                 licenses.append(lic_el)
             elif license_entry.expression is not None:
-                expr_el = ET.Element("expression")
+                expr_el = etree.Element("expression")
                 expr_el.text = license_entry.expression
                 licenses.append(expr_el)
 
-        ext_refs = ET.SubElement(el, "externalReferences")
+        ext_refs = etree.SubElement(el, "externalReferences")
         for external_ref in iter(filter(None, component.externalReferences)):
             ext_refs.append(self._get_external_ref(external_ref))
         return el
 
-    def _build_metadata_element(self, bom: ET.Element) -> ET.Element:
-        metadata = ET.SubElement(bom, 'metadata')
+    def _build_metadata_element(self, bom: etree.Element) -> etree.Element:
+        metadata = etree.SubElement(bom, 'metadata')
         bom_metadata = self.bom.metadata
-        ET.SubElement(metadata, 'timestamp').text = bom_metadata.timestamp
-        tools = ET.SubElement(metadata, 'tools')
+        etree.SubElement(metadata, 'timestamp').text = bom_metadata.timestamp
+        tools = etree.SubElement(metadata, 'tools')
         tools.append(self._get_tool_element())
         return bom
 
-    def _build_components_element(self, bom: ET.Element) -> ET.Element:
-        components = ET.SubElement(bom, "components")
+    def _build_components_element(self, bom: etree.Element) -> etree.Element:
+        components = etree.SubElement(bom, "components")
         for component in self.bom.components:
             comp_el = self._get_component_element(component)
             if comp_el is not None:
                 components.append(comp_el)
         return bom
 
-    def _build_dependencies_element(self, bom: ET.Element) -> ET.Element:
+    def _build_dependencies_element(self, bom: etree.Element) -> etree.Element:
         dependencies = self.bom.dependencies
         # exit early
         if dependencies is None:
             return bom
 
-        deps = ET.SubElement(bom, "dependencies")
+        deps = etree.SubElement(bom, "dependencies")
 
         for dependency in self.bom.dependencies:
             if dependency.ref is None:
                 continue
-            dep_el = ET.Element("dependency", {"ref": dependency.ref})
+            dep_el = etree.Element("dependency", {"ref": dependency.ref})
             for entry in dependency.dependsOn:
-                ET.SubElement(dep_el, 'dependency', {"ref": entry})
+                etree.SubElement(dep_el, 'dependency', {"ref": entry})
             deps.append(dep_el)
         return bom
 
@@ -639,7 +640,10 @@ class XmlSerializer():
         root_element = self._build_metadata_element(root_element)
         root_element = self._build_components_element(root_element)
         root_element = self._build_dependencies_element(root_element)
-        return '<?xml version="1.0" encoding="UTF-8"?>' + ET.tostring(root_element, "unicode")
+        xml_metatag = '<?xml version="1.0" encoding="UTF-8"?>'
+        return xml_metatag + etree.tostring(root_element,
+                                            encoding='unicode',
+                                            pretty_print=True)
 
 
 def write_results_xml(bom, output_file):
