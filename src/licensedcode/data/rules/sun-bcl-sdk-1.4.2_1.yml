@@ -1,0 +1,8 @@
+license_expression: sun-bcl-sdk-1.4.2
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright 2003, Sun Microsystems, Inc.
+ignorable_holders:
+    - Sun Microsystems, Inc.
+ignorable_urls:
+    - http://www.sun.com/policies/trademarks

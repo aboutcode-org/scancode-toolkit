@@ -1,0 +1,8 @@
+license_expression: agpl-3.0 AND other-copyleft
+is_license_notice: yes
+relevance: 100
+notes: See https://github.com/sugarcrm/Tidbit/blob/master/LICENSE
+ignorable_urls:
+    - https://www.gnu.org/licenses
+ignorable_emails:
+    - contact@sugarcrm.com

@@ -1,0 +1,13 @@
+key: cc-by-nc-sa-3.0-igo
+short_name: CC-BY-NC-SA-3.0-IGO
+name: Creative Commons Attribution Non Commercial Share Alike 3.0 IGO
+spdx_license_key: CC-BY-NC-SA-3.0-IGO
+category: Source-available
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by-nc-sa/3.0/igo/
+text_urls:
+    - https://creativecommons.org/licenses/by-nc-sa/3.0/igo/legalcode
+other_urls:
+    - https://creativecommons.org/licenses/by-nc-sa/3.0/igo/legalcode
+ignorable_urls:
+    - https://creativecommons.org/

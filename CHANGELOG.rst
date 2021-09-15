@@ -7,53 +7,69 @@ v21.x.x (next, future)
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
- - The data structure of the JSON output is now versioned and the next version
-   is available with a new command line option. We are also documenting a new
-   and clear API policy and backward compatibility policy.
+- The data structure of the JSON output is now versioned and the next version
+  is available with a new command line option. We are also documenting a new
+  and clear API policy and backward compatibility policy.
 
- - The data structure of the JSON output has changed for copyrights, authors
-   and holders: we now use proper name for attributes and not a generic "value".
+- The data structure of the JSON output has changed for copyrights, authors
+  and holders: we now use proper name for attributes and not a generic "value".
 
- - The data structure of the JSON output has changed for licenses: we now
-   return match details once for each matched license expression rather than
-   once for each license in a matched expression. There is a new top-level
-   "licenses" attributes that contains the data details for each detected
-   licenses only once. This data can contain the reference license text
-   as an option.
+- The data structure of the JSON output has changed for licenses: we now
+  return match details once for each matched license expression rather than
+  once for each license in a matched expression. There is a new top-level
+  "licenses" attributes that contains the data details for each detected
+  licenses only once. This data can contain the reference license text
+  as an option.
 
- - The data structure of the JSON output has changed for packages: we now
-   return "package_manifests" package information at the manifest file-level
-   rather than "packages". There is a a new top-level "packages" attribute
-   that contains each package instance that can be aggregating data from
-   multiple manifests for a single package instance.
+- The data structure of the JSON output has changed for packages: we now
+  return "package_manifests" package information at the manifest file-level
+  rather than "packages". There is a a new top-level "packages" attribute
+  that contains each package instance that can be aggregating data from
+  multiple manifests for a single package instance.
 
- - The data structure for HTML output has been changed to include emails and urls under the 
-   "infos" object. Now HTML template will output holders, authors, emails, and 
-   urls into separate tables like "licenses" and "copyrights".
+- The data structure for HTML output has been changed to include emails and urls under the 
+  "infos" object. Now HTML template will output holders, authors, emails, and 
+  urls into separate tables like "licenses" and "copyrights".
 
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
 
- - The data structure in the JSON is now using consistently named attributes as
-   opposed to a plain value.
+- The data structure in the JSON is now using consistently named attributes as
+  opposed to a plain value.
+- Several copyright detection bugs have been fixed. 
 
 
 Package detection:
 ~~~~~~~~~~~~~~~~~~
 
- - Add support for OpenWRT packages.
- - Add support for Yocto/BitBake .bb recipes.
- - Add support to track installed files for each Package type.
+- Add support for OpenWRT packages.
+- Add support for Yocto/BitBake .bb recipes.
+- Add support to track installed files for each Package type.
+- Debian copyright license detection has been significantly improved with new
+  license detection rules.
 
 
 License detection:
 ~~~~~~~~~~~~~~~~~~~
+
+- There have been XXX new licenses added, YYY new license detection rules added
+  and ZZZ updated license or rules.
+
+- Several license detection bugs have fixed.
+
+- The SPDX license list 3.14 is now supported. We also include the version
+  of the SPDX license list in the ScanCode JSON and SPDX outputs, as well as
+  display it with the --version command line option.
 
 - Unknown licenses have a new flag "is_unknown" to identify them
   beyond just the naming convention of having "unknown" as part of their name.
 
 - Rules that match at least one unknown license have a flag "has_unknown" set
   in the returned match results.
+  
+- There is a new experimental command line option "--unknown-licenses" to
+  detect unknown licenses and follow license references such as "See license in
+  file COPYING". The actual data structure for this new option is evolving.
 
 
 Many thanks to every contributors that made this possible and in particular:
@@ -62,7 +78,6 @@ Many thanks to every contributors that made this possible and in particular:
 - Ayan Sinha Mahapatra @AyanSinhaMahapatra
 - Jono Yang @JonoYang
 - Philippe Ombredanne @pombredanne
-
 
 
 v21.8.4

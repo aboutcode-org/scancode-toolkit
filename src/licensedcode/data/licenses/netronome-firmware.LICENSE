@@ -1,0 +1,63 @@
+Agilio(r) Firmware License Agreement (the "AGREEMENT")
+
+BY INSTALLING OR USING IN ANY MANNER THE SOFTWARE THAT ACCOMPANIES THIS
+AGREEMENT (THE "SOFTWARE") YOU (THE "LICENSEE") ACKNOWLEDGE TO BE BOUND
+BY ALL OF THE TERMS OF THIS AGREEMENT.
+
+LICENSE GRANT. Subject to the terms and conditions set forth herein,
+Netronome Systems, Inc. ("NETRONOME") hereby grants LICENSEE a non-
+exclusive license to use, reproduce and distribute the SOFTWARE
+exclusively in object form.
+
+Restrictions. LICENSEE agrees that, (a) unless explicitly provided by
+NETRONOME, the source code of the SOFTWARE is not being provided to
+LICENSEE and is confidential and proprietary to NETRONOME and that
+LICENSEE has no right to access or use such source code. Accordingly,
+LICENSEE agrees that it shall not cause or permit the disassembly,
+decompilation or reverse engineering of the SOFTWARE or otherwise attempt
+to gain access to the source code for the SOFTWARE; and (b) LICENSEE
+agrees that it shall not subject the SOFTWARE in whole or in part, to the
+terms of any software license that requires, as a condition of use,
+modification and/or distribution that the source code of the SOFTWARE, or
+the SOFTWARE be i) disclosed or distributed in source code form; ii)
+licensed for the purpose of making derivative works of the source code of
+the SOFTWARE; or iii) redistribution of the source code of the SOFTWARE
+at no charge.
+
+DISCLAIMER OF ALL WARRANTIES. THE SOFTWARE IS PROVIDED "AS IS" AND WITH
+ALL FAULTS AND NETRONOME AND ITS LICENSORS HEREBY DISCLAIM ALL EXPRESS OR
+IMPLIED WARRANTIES OF ANY KIND, INCLUDING, WITHOUT LIMITATION, ANY
+WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT AND FITNESS FOR A
+PARTICULAR PURPOSE.
+
+LIMITATIONS OF LIABILITY. EXCEPT WHERE PROHIBITED BY LAW, IN NO EVENT
+SHALL NETRONOME OR ANY OTHER PARTY INVOLVED IN THE CREATION, PRODUCTION,
+OR DELIVERY OF THE SOFTWARE BE LIABLE FOR ANY LOSS OF PROFITS, DATA, USE
+OF THE SOFTWARE, DOCUMENTATION OR EQUIPMENT, OR FOR ANY SPECIAL,
+INCIDENTAL, CONSEQUENTIAL, EXEMPLARY, PUNITIVE, MULTIPLE OR OTHER
+DAMAGES, ARISING FROM OR IN CONNECTION WITH THE SOFTWARE EVEN IF
+NETRONOME OR ITS LICENSORS HAVE BEEN MADE AWARE OF THE POSSIBILITY OF
+SUCH DAMAGES AND NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY
+LIMITED REMEDY.
+
+EXPORT COMPLIANCE. LICENSEE shall not use or export or transmit the
+SOFTWARE, directly or indirectly, to any restricted countries or in any
+other manner that would violate any applicable US and other export
+control and other regulations and laws as shall from time to time govern
+the delivery, license and use of technology, including without limitation
+the Export Administration Act of 1979, as amended, and any regulations
+issued thereunder.
+
+PROHIBITION OF SOFTWARE USE IN HIGH RISK ACTIVITIES AND LIFE
+SUPPORT APPLICATIONS. The SOFTWARE is not designed, manufactured or
+intended for use as on-line control equipment in hazardous environments
+requiring fail-safe performance, such as in the operation of nuclear
+facilities, aircraft navigation or communications systems, air traffic
+control, life support systems, human implantation or any other
+application where product failure could lead to loss of life or
+catastrophic property damage or weapons systems, in which the failure of
+the SOFTWARE could lead directly to death, personal injury, or severe
+physical or environmental damage ("High Risk Activities"). Accordingly
+NETRONOME and, where applicable, NETRONOME'S third party licensors
+specifically disclaim any express or implied warranty of fitness for High
+Risk Activities.

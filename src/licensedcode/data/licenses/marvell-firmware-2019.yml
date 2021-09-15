@@ -1,0 +1,7 @@
+key: marvell-firmware-2019
+short_name: Marvell Firmware License 2019
+name: Marvell Firmware License 2019
+category: Proprietary Free
+owner: Marvell
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.Marvell
+spdx_license_key: LicenseRef-scancode-marvell-firmware-2019

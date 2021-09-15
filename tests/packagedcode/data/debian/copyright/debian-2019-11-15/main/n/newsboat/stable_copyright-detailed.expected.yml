@@ -9,8 +9,8 @@ declared_license:
   - Boost-1.0
   - GPL-2
   - GPL-2+
-license_expression: mit AND mit AND boost-1.0 AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND
-  gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0)
+license_expression: mit AND mit AND boost-1.0 AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0
+  AND gpl-2.0)
 copyright: |
   2015-2018, Alexander Batischev <eual.jp@gmail.com>
   2006-2010, Andreas Krennmair <ak@synflood.at>
@@ -21,8 +21,8 @@ copyright: |
   2007-2014, Nico Golde <nion@debian.org>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 30
+    end_line: 46
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -54,8 +54,8 @@ matches:
       FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
       DEALINGS IN THE SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 22
+    start_line: 49
+    end_line: 70
     matcher: 1-hash
     rule_length: 208
     matched_length: 208
@@ -92,8 +92,8 @@ matches:
       ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
       DEALINGS IN THE SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 72
+    end_line: 72
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -108,14 +108,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2'
   - score: '100.0'
-    start_line: 1
-    end_line: 3
-    matcher: 2-aho
-    rule_length: 31
-    matched_length: 31
+    start_line: 73
+    end_line: 78
+    matcher: 1-hash
+    rule_length: 59
+    matched_length: 59
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_396.RULE
+    identifier: gpl-2.0_1296.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes
@@ -125,44 +125,13 @@ matches:
     matched_text: |
       This program is free software; you can redistribute it and/or modify it
       under the terms of the GNU General Public License as published by the
-      Free Software Foundation; version 2
+      Free Software Foundation; version 2 dated June, 1991.
+
+      On Debian systems, the complete text of version 2 of the GNU General
+      Public License can be found in '/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
-    start_line: 5
-    end_line: 6
-    matcher: 2-aho
-    rule_length: 8
-    matched_length: 8
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_836.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      version 2 of the GNU General
-      Public License
-  - score: '100.0'
-    start_line: 6
-    end_line: 6
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 80
+    end_line: 80
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -177,15 +146,15 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 3
-    matcher: 2-aho
-    rule_length: 31
-    matched_length: 31
+    start_line: 81
+    end_line: 87
+    matcher: 1-hash
+    rule_length: 66
+    matched_length: 66
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_396.RULE
-    license_expression: gpl-2.0
+    identifier: gpl-2.0-plus_985.RULE
+    license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -194,38 +163,8 @@ matches:
     matched_text: |
       This program is free software; you can redistribute it and/or modify it
       under the terms of the GNU General Public License as published by the
-      Free Software Foundation; version 2
-  - score: '100.0'
-    start_line: 6
-    end_line: 7
-    matcher: 2-aho
-    rule_length: 8
-    matched_length: 8
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_836.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      version 2 of the GNU General
-      Public License
-  - score: '100.0'
-    start_line: 7
-    end_line: 7
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2'.
+      Free Software Foundation; version 2 dated June, 1991, or (at your
+      option) any later version.
+
+      On Debian systems, the complete text of version 2 of the GNU General
+      Public License can be found in '/usr/share/common-licenses/GPL-2'.

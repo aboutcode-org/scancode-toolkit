@@ -94,7 +94,8 @@ def print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
     click.echo('ScanCode version ' + scancode_config.__version__)
-    click.echo('Output Format version ' + scancode_config.__output_format_version__)
+    click.echo('ScanCode Output Format version ' + scancode_config.__output_format_version__)
+    click.echo('SPDX License list version ' + scancode_config.spdx_license_list_version)
     ctx.exit()
 
 
@@ -195,15 +196,15 @@ def validate_depth(ctx, param, value):
     default=1,
     metavar='INT',
     help='Set the number of parallel processes to use. '
-         'Disable parallel processing if 0. Also disable threading if -1. ''[default: 1]',
+         'Disable parallel processing if 0. Also disable threading if -1. [default: 1]',
     help_group=cliutils.CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
 @click.option('--timeout',
     type=float,
     default=DEFAULT_TIMEOUT,
     metavar='<secs>',
-    help='Stop an unfinished file scan after a timeout in seconds.  '
-         '[default: %d seconds]' % DEFAULT_TIMEOUT,
+    help='Stop an unfinished file scan after a timeout in seconds. '
+         f'[default: {DEFAULT_TIMEOUT} seconds]',
     help_group=cliutils.CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
 @click.option('--quiet',
@@ -842,6 +843,7 @@ def run_scan(
         cle.output_format_version = scancode_config.__output_format_version__
         cle.notice = notice
         cle.options = pretty_params or {}
+        cle.extra_data['spdx_license_list_version'] = scancode_config.spdx_license_list_version
 
         # TODO: this is weird: may be the timings should NOT be stored on the
         # codebase, since they exist in abstract of it??

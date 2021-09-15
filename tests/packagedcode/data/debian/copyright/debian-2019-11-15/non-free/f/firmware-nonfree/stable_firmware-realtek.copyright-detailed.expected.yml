@@ -8,8 +8,8 @@ copyright: |
   2009-2010, Realtek Semiconductor Corporation
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 9
+    end_line: 11
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -27,8 +27,8 @@ matches:
       data in hexadecimal or equivalent format, provided this copyright
       notice is accompanying it.
   - score: '93.72'
-    start_line: 3
-    end_line: 38
+    start_line: 18
+    end_line: 53
     matcher: 3-seq
     rule_length: 293
     matched_length: 293

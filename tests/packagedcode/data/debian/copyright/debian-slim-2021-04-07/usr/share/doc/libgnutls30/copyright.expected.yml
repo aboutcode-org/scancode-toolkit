@@ -138,34 +138,30 @@ matches:
         *
         * You should have received a copy of the GNU Lesser General Public License
         * along with this program.  If not, see <http://www.gnu.org/licenses/>
-  - score: '98.0'
+  - score: '92.52'
     start_line: 265
-    end_line: 276
+    end_line: 280
     matcher: 3-seq
-    rule_length: 98
-    matched_length: 98
-    match_coverage: '100.0'
+    rule_length: 107
+    matched_length: 99
+    match_coverage: '92.52'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_27.RULE
+    identifier: gpl-3.0-plus_57.RULE
     license_expression: gpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: |
-      is free software: you can redistribute it and/or modify
-        * it under the terms of the GNU General Public License as published by
-        * the Free Software Foundation, either version 3 of the License, or
-        * (at your option) any later version.
-        *
-        * [GnuTLS]-[extra] is distributed in the hope that it will be useful,
-        * but WITHOUT ANY WARRANTY; without even the implied warranty of
-        * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-        * GNU General Public License for more details.
-        *
-        * You should have received a copy of the GNU General Public License
-        * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    matched_text: "is free software: you can redistribute it and/or modify\n  * it under the\
+      \ terms of the GNU General Public License as published by\n  * the Free Software Foundation,\
+      \ either version 3 of the License, or\n  * (at your option) any later version.\n  *\n\
+      \  * [GnuTLS]-[extra] is distributed in the hope that it will be useful,\n  * but WITHOUT\
+      \ ANY WARRANTY; without even the implied warranty of\n  * MERCHANTABILITY or FITNESS FOR\
+      \ A PARTICULAR PURPOSE.  See the\n  * GNU General Public License for more details.\n \
+      \ *\n  * You should have received a copy of the GNU General Public License\n  * along\
+      \ with this program.  If not, see <http://www.gnu.org/licenses/>.\n  */\n --------------------\n\
+      \ \n [The] [documentation] [is] [distributed] [under] [the] [terms] [of] [the] GNU"
   - score: '100.0'
     start_line: 280
     end_line: 281

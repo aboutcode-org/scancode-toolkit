@@ -1,0 +1,7 @@
+key: binary-linux-firmware
+short_name: Binary-Only Linux Firmware License
+name: Binary-Only Linux Firmware License
+category: Proprietary Free
+owner: Unspecified
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/
+spdx_license_key: LicenseRef-scancode-binary-linux-firmware

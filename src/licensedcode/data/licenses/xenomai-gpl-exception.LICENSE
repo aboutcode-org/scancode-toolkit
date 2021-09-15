@@ -1,0 +1,21 @@
+As a special exception to the following license, the Xenomai
+project gives permission for additional uses of the header files
+contained in this directory.
+
+The exception is that, if you include these header files unmodified to
+produce application programs executing in user-space that use
+Xenomai services by normal Xenomai system calls, this does not
+by itself cause the resulting executable to be covered by the GNU
+General Public License. This is merely considered normal use of the
+Xenomai system, and does not fall under the heading of "derived
+work".
+
+This exception does not however invalidate any other reasons why the
+executable file might be covered by the GNU General Public License. In
+any case, this exception never applies when the application code is
+built as a static or dynamically loadable portion of the Linux kernel.
+
+This exception applies only to the code released by the Xenomai
+project under the name Xenomai and bearing this exception notice.
+If you copy code from other sources into a copy of Xenomai, the
+exception does not apply to the code that you add in this way.

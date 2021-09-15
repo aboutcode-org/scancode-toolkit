@@ -1,0 +1,7 @@
+This program is released under the GNU General Public License (GPL),
+ version 2, with the explicit exemption that linking with the OpenSSL
+ libraries is permitted.
+
+ On Debian GNU/Linux systems, the complete text of the GNU General
+ Public License version 2 can be found in
+ `/usr/share/common-licenses/GPL-2'.

@@ -1,4 +1,4 @@
-primary_license: gpl-1.0-plus AND gpl-2.0
+primary_license: gpl-2.0 WITH openssl-exception-gpl-2.0
 declared_license:
   - GPL-2 with OpenSSL exception
   - GPL-2 with OpenSSL exception
@@ -16,11 +16,10 @@ declared_license:
   - GPL
   - Zlib
   - BSD-3-Clause
-license_expression: (gpl-1.0-plus AND gpl-2.0) AND (gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0 AND
-  gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND
-  gpl-1.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (zlib AND (gpl-1.0-plus AND gpl-1.0-plus AND
-  gfdl-1.2 AND gpl-2.0 AND gpl-1.0-plus)) AND (gpl-1.0-plus AND zlib) AND ssleay-windows AND
-  public-domain AND bsd-new AND mit-old-style-no-advert
+license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0 AND gpl-2.0 WITH openssl-exception-gpl-2.0
+  AND (gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
+  (zlib AND (gpl-1.0-plus AND gpl-1.0-plus)) AND (gpl-1.0-plus AND zlib) AND ssleay-windows
+  AND public-domain AND bsd-new AND mit-old-style-no-advert
 copyright: |
   2002-2016 Henrik Størner <henrik@hswn.dk>
   2005-2007 Henrik Størner <henrik@hswn.dk>
@@ -38,15 +37,15 @@ copyright: |
   1998, 2000 by the Massachusetts Institute of Technology.
   2004 by Daniel Stenberg et al
 matches:
-  - score: '99.56'
-    start_line: 3
-    end_line: 60
-    matcher: 3-seq
-    rule_length: 452
-    matched_length: 450
-    match_coverage: '99.56'
+  - score: '100.0'
+    start_line: 43
+    end_line: 100
+    matcher: 2-aho
+    rule_length: 453
+    matched_length: 453
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: ssleay-windows.LICENSE
+    identifier: ssleay-windows_8.RULE
     license_expression: ssleay-windows
     is_license_text: yes
     is_license_notice: no
@@ -60,7 +59,7 @@ matches:
       The implementation was written so as to conform with Netscapes SSL.
 
       This library is free for commercial and non-commercial use as long as
-      the following conditions are [adhered] to.  The following conditions
+      the following conditions are adhered to.  The following conditions
       apply to all code found in this distribution, be it the RC4, RSA,
       lhash, DES, etc., code; not just the SSL code.  The SSL documentation
       included with this distribution is covered by the same copyright terms
@@ -89,7 +88,7 @@ matches:
          must display the following acknowledgement:
          "This product includes cryptographic software written by
           Eric Young (eay@cryptsoft.com)"
-         The word 'cryptographic' can be left out if the [routines] from the library
+         The word 'cryptographic' can be left out if the routines from the library
          being used are not cryptographic related :-).
 
       4. If you include any Windows specific code (or a derivative thereof) from
@@ -111,10 +110,10 @@ matches:
       The licence and distribution terms for any publically available version or
       derivative of this code cannot be changed.  i.e. this code cannot simply be
       copied and put under another distribution licence
-      [including the GNU [General] Public Licence.]
+      [including the GNU General Public Licence.]
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 105
+    end_line: 105
     matcher: 2-aho
     rule_length: 3
     matched_length: 3
@@ -129,8 +128,8 @@ matches:
     is_license_intro: no
     matched_text: 100% Public Domain,
   - score: '100.0'
-    start_line: 1
-    end_line: 11
+    start_line: 116
+    end_line: 126
     matcher: 1-hash
     rule_length: 96
     matched_length: 96
@@ -155,48 +154,32 @@ matches:
       M.I.T. makes no representations about the suitability of
       this software for any purpose.  It is provided "as is"
       without express or implied warranty.
-  - score: '49.91'
-    start_line: 1
-    end_line: 1
-    matcher: 3-seq
-    rule_length: 11
-    matched_length: 9
-    match_coverage: '81.82'
-    rule_relevance: 61
-    identifier: gpl_86.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: is released under the GNU General Public License (GPL),
-  - score: '75.68'
-    start_line: 1
-    end_line: 7
-    matcher: 3-seq
-    rule_length: 37
-    matched_length: 28
-    match_coverage: '75.68'
+  - score: '100.0'
+    start_line: 129
+    end_line: 135
+    matcher: 1-hash
+    rule_length: 51
+    matched_length: 51
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_1009.RULE
-    license_expression: gpl-2.0
+    identifier: gpl-2.0_with_openssl-exception-gpl-2.0_9.RULE
+    license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      the GNU General Public License ([GPL]),
-      [version] [2], [with] [the] [explicit] [exemption] [that] [linking] [with] [the] [OpenSSL]
-      [libraries] [is] [permitted].
+      This program is released under the GNU General Public License (GPL),
+      version 2, with the explicit exemption that linking with the OpenSSL
+      libraries is permitted.
 
-      On Debian GNU/[Linux] systems, the complete text of the GNU General
-      Public License [version] [2] can be found in
+      On Debian GNU/Linux systems, the complete text of the GNU General
+      Public License version 2 can be found in
       `/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 137
+    end_line: 137
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -210,31 +193,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2'
-  - score: '49.91'
-    start_line: 1
-    end_line: 1
-    matcher: 3-seq
-    rule_length: 11
-    matched_length: 9
-    match_coverage: '81.82'
-    rule_relevance: 61
-    identifier: gpl_86.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: is released under the GNU General Public License (GPL),
-  - score: '75.68'
-    start_line: 1
-    end_line: 6
-    matcher: 3-seq
-    rule_length: 37
-    matched_length: 28
-    match_coverage: '75.68'
+  - score: '100.0'
+    start_line: 138
+    end_line: 143
+    matcher: 1-hash
+    rule_length: 39
+    matched_length: 39
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_1009.RULE
+    identifier: gpl-2.0_1151.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes
@@ -242,15 +209,15 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      the GNU General Public License ([GPL]),
-      [version] [2].
+      This program is released under the GNU General Public License (GPL),
+      version 2.
 
-      On Debian GNU/[Linux] systems, the complete text of the GNU General
-      Public License [version] [2] can be found in
+      On Debian GNU/Linux systems, the complete text of the GNU General
+      Public License version 2 can be found in
       `/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 145
+    end_line: 145
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -264,31 +231,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2+'
-  - score: '49.91'
-    start_line: 1
-    end_line: 1
-    matcher: 3-seq
-    rule_length: 11
-    matched_length: 9
-    match_coverage: '81.82'
-    rule_relevance: 61
-    identifier: gpl_86.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: is released under the GNU General Public License (GPL),
-  - score: '71.79'
-    start_line: 1
-    end_line: 7
-    matcher: 3-seq
-    rule_length: 39
-    matched_length: 28
-    match_coverage: '71.79'
+  - score: '100.0'
+    start_line: 146
+    end_line: 152
+    matcher: 1-hash
+    rule_length: 50
+    matched_length: 50
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_2.RULE
+    identifier: gpl-2.0-plus_841.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -296,39 +247,16 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      the GNU General Public License ([GPL]),
+      This program is released under the GNU General Public License (GPL),
       either version 2 of the License, or (at your option) any later
       version.
 
-      On Debian GNU/Linux systems, [the] [complete] [text] [of] [the] [GNU] [General]
-      [Public] [License] [version] [2] [can] [be] [found] [in]
-      `/usr/share/common-licenses/GPL-
-  - score: '75.68'
-    start_line: 1
-    end_line: 7
-    matcher: 3-seq
-    rule_length: 37
-    matched_length: 28
-    match_coverage: '75.68'
-    rule_relevance: 100
-    identifier: gpl-2.0_1009.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      the GNU General Public License ([GPL]),
-      [either] [version] [2] [of] [the] [License], [or] ([at] [your] [option]) [any] [later]
-      [version].
-
-      On Debian GNU/[Linux] systems, the complete text of the GNU General
-      Public License [version] [2] can be found in
+      On Debian GNU/Linux systems, the complete text of the GNU General
+      Public License version 2 can be found in
       `/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 154
+    end_line: 154
     matcher: 1-hash
     rule_length: 2
     matched_length: 2
@@ -342,83 +270,30 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl'
-  - score: '49.91'
-    start_line: 1
-    end_line: 1
-    matcher: 3-seq
-    rule_length: 11
-    matched_length: 9
-    match_coverage: '81.82'
-    rule_relevance: 61
-    identifier: gpl_86.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: is released under the GNU General Public License (GPL).
-  - score: '59.38'
-    start_line: 1
-    end_line: 5
-    matcher: 3-seq
-    rule_length: 32
-    matched_length: '19'
-    match_coverage: '59.38'
-    rule_relevance: 100
-    identifier: gfdl-1.2_7.RULE
-    license_expression: gfdl-1.2
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      under the GNU [General] [Public] License ([GPL]).
-
-      On Debian GNU/Linux systems, the complete text of [the] [latest] [version]
-      [of] [the] [GNU] [General] [Public] License [version] [can] [be] [found] in
-      `/usr/share/common-licenses/
-  - score: '62.16'
-    start_line: 1
-    end_line: 5
-    matcher: 3-seq
-    rule_length: 37
-    matched_length: 23
-    match_coverage: '62.16'
-    rule_relevance: 100
-    identifier: gpl-2.0_1009.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      the GNU General Public License ([GPL]).
-
-      On Debian GNU/[Linux] [systems], [the] [complete] [text] [of] [the] [latest] [version]
-      of the GNU General Public License [version] can be found in
-      `/usr/share/common-licenses/GPL'.
-  - score: '90.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: gpl-1.0-plus_350.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: of the GPL
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 155
+    end_line: 159
+    matcher: 1-hash
+    rule_length: 39
+    matched_length: 39
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-1.0-plus_465.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is released under the GNU General Public License (GPL).
+
+      On Debian GNU/Linux systems, the complete text of the latest version
+      of the GNU General Public License version can be found in
+      `/usr/share/common-licenses/GPL'.
+  - score: '100.0'
+    start_line: 163
+    end_line: 179
     matcher: 1-hash
     rule_length: 132
     matched_length: 132
@@ -450,8 +325,8 @@ matches:
 
       3. This notice may not be removed or altered from any source distribution.
   - score: '100.0'
-    start_line: 1
-    end_line: 26
+    start_line: 182
+    end_line: 207
     matcher: 1-hash
     rule_length: 213
     matched_length: 213
@@ -492,34 +367,20 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '100.0'
-    start_line: 3
-    end_line: 3
+    start_line: 35
+    end_line: 36
     matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+    rule_length: 12
+    matched_length: 12
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl_bare_gnu_gpl.RULE
-    license_expression: gpl-1.0-plus
+    identifier: gpl-1.0-plus_and_zlib_1.RULE
+    license_expression: gpl-1.0-plus AND zlib
     is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
+    is_license_notice: yes
+    is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: GNU GPL."
-  - score: '100.0'
-    start_line: 3
-    end_line: 3
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: zlib_7.RULE
-    license_expression: zlib
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: zlib license
+    matched_text: |
+      released under
+      the GNU GPL." and then shows the zlib license text.

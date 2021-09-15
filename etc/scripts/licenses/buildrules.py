@@ -226,6 +226,9 @@ def cli(licenses_file):
 
         rulerec = models.Rule(**rd)
 
+        # force recomputing relevance to remove junk stored relevance for long rules
+        rulerec.compute_relevance(_threshold=18.0)
+
         rulerec.data_file = base_loc + '.yml'
         rulerec.text_file = base_loc + '.RULE'
 
@@ -234,10 +237,13 @@ def cli(licenses_file):
         if rule_tokens in rules_tokens:
             print('Skipping already added rule with text for:', base_name)
         else:
+            print('Adding new rule:')
+            print('  file://' + rulerec.data_file)
+            print('  file://' + rulerec.text_file,)
             rules_tokens.add(rule_tokens)
+            rulerec.dump()
             models.update_ignorables(rulerec, verbose=False)
             rulerec.dump()
-            print('Rule added:', 'file://' + rulerec.data_file, '\n', 'file://' + rulerec.text_file,)
 
 
 if __name__ == '__main__':

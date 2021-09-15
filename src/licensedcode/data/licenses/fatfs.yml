@@ -1,0 +1,7 @@
+key: fatfs
+short_name: FatFs License
+name: FatFs License
+category: Permissive
+owner: ELM-ChaN
+homepage_url: http://elm-chan.org/fsw/ff/doc/appnote.html#license
+spdx_license_key: LicenseRef-scancode-fatfs

@@ -1,0 +1,5 @@
+library is released  under LGPL
+so that it may be linked with 3rd party software.
+
+On Debian systems, refer to /usr/share/common-licenses/LGPL-2.1
+for the complete text of the GNU Lesser General Public License.

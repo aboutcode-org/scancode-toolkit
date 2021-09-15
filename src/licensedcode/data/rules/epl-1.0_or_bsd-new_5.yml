@@ -1,0 +1,5 @@
+license_expression: epl-1.0 OR bsd-new
+is_license_notice: yes
+ignorable_urls:
+    - http://udig.refractions.net/files/bsd3-v10.html
+    - http://www.eclipse.org/legal/epl-v10.html

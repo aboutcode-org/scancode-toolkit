@@ -1,0 +1,50 @@
+* Provided that these terms and disclaimer and all copyright notices
+* are retained or reproduced in an accompanying document, permission
+* is granted to deal in this work without restriction, including un_
+* limited rights to use, publicly perform, distribute, sell, modify,
+* merge, give away, or sublicence.
+*
+* This work is provided "AS IS" and WITHOUT WARRANTY of any kind, to
+* the utmost extent permitted by applicable law, neither express nor
+* implied; without malicious intent or gross negligence. In no event
+* may a licensor, author or contributor be held liable for indirect,
+* direct, other damage, loss, or other issues arising in any way out
+* of dealing in the work, even if advised of the possibility of such
+* damage or existence of a defect, except proven that it results out
+* of said person's immediate fault when using the work as intended.
+*/
+
+I_N_S_T_R_U_C_T_I_O_N_S_:_
+To apply the template() specify the years of copyright (separated by
+comma, not as a range), the legal names of the copyright holders, and
+the real names of the authors if different. Avoid adding text.
+
+R_A_T_I_O_N_A_L_E_:_
+This licence is apt for any kind of work (such as source code, fonts,
+documentation, graphics, sound etc.) and the preferred terms for work
+added to MirBSD. It has been drafted as universally usable equivalent
+of the "historic permission notice"   adapted to Europen law because
+in some (droit d'auteur) countries authors cannot disclaim all liabi_
+lities. Compliance to DFSG   1.1 is ensured, and GPLv2 compatibility
+is asserted unless advertising clauses are used. The MirOS Licence is
+certified to conform to OKD    1.0 and OSD    1.9, and qualifies as a
+Free Software    and also Free Documentation    licence and is inclu_
+ded in some relevant lists .
+
+We believe you are not liable for work inserted which is intellectual
+property of third parties, if you were not aware of the fact, act ap_
+propriately as soon as you become aware of that problem, seek an ami_
+cable solution for all parties, and never knowingly distribute a work
+without being authorised to do so by its licensors.
+
+R_E_F_E_R_E_N_C_E_S_:_
+_ also at http://mirbsd.de/MirOS-Licence
+_ http://www.opensource.org/licenses/historical.php
+_ http://www.debian.org/social_contract#guidelines
+_ http://www.opendefinition.org/1.0
+_ http://www.opensource.org/docs/osd
+_ https://www.gnu.org/philosophy/free-sw.html
+_ https://www.gnu.org/philosophy/free-doc.html
+_ http://www.ifross.de/ifross_html/lizenzcenter.html
+_ http://www.opendefinition.org/licenses
+_ http://opensource.org/licenses/miros.html

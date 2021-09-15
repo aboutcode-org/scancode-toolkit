@@ -1,4 +1,4 @@
-primary_license: lgpl-2.0-plus AND gpl-2.0-plus
+primary_license: lgpl-2.0-plus
 declared_license:
   - LGPL-2+
   - Example
@@ -16,11 +16,11 @@ declared_license:
   - LGPL-2+
   - TCL
   - Unicode
-license_expression: (lgpl-2.0-plus AND gpl-2.0-plus) AND mit-old-style AND (lgpl-2.0-plus AND
-  gpl-2.0-plus) AND (lgpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.0-plus AND gpl-2.0-plus) AND
-  ((lgpl-2.0-plus AND gpl-2.0-plus) AND tcl) AND (lgpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.0-plus
-  AND gpl-2.0-plus) AND unicode AND ((lgpl-2.0-plus AND gpl-2.0-plus) AND x11) AND (lgpl-2.0-plus
-  AND gpl-2.0-plus)
+license_expression: (lgpl-2.0-plus AND lgpl-2.0-plus) AND other-permissive AND (lgpl-2.0-plus
+  AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus)
+  AND ((lgpl-2.0-plus AND lgpl-2.0-plus) AND tcl) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND
+  (lgpl-2.0-plus AND lgpl-2.0-plus) AND unicode AND ((lgpl-2.0-plus AND lgpl-2.0-plus) AND x11)
+  AND (lgpl-2.0-plus AND lgpl-2.0-plus)
 copyright: |
   1999-2015 Red Hat
   2005-2007 Imendio AB
@@ -64,28 +64,28 @@ copyright: |
   1997-2002 International Business Machines Corporation and others
   2018 Google
 matches:
-  - score: '49.5'
-    start_line: 1
-    end_line: 3
-    matcher: 3-seq
-    rule_length: 54
-    matched_length: 27
-    match_coverage: '50.0'
-    rule_relevance: 99
-    identifier: mit-old-style_23.RULE
-    license_expression: mit-old-style
+  - score: '100.0'
+    start_line: 85
+    end_line: 87
+    matcher: 1-hash
+    rule_length: 28
+    matched_length: 28
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: other-permissive_324.RULE
+    license_expression: other-permissive
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      Permission to use, copy, modify, distribute, and sell this [example]
+      Permission to use, copy, modify, distribute, and sell this example
       for any purpose is hereby granted without fee.
       It is provided "as is" without express or implied warranty.
   - score: '100.0'
-    start_line: 1
-    end_line: 27
+    start_line: 90
+    end_line: 116
     matcher: 1-hash
     rule_length: 239
     matched_length: 239
@@ -127,8 +127,8 @@ matches:
       All trademarks and registered trademarks mentioned herein are the property
       of their respective owners.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 118
+    end_line: 118
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -142,43 +142,43 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2+'
-  - score: '95.05'
-    start_line: 1
-    end_line: 12
-    matcher: 3-seq
-    rule_length: 101
-    matched_length: 96
-    match_coverage: '95.05'
+  - score: '100.0'
+    start_line: 119
+    end_line: 130
+    matcher: 1-hash
+    rule_length: 106
+    matched_length: 106
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_808.RULE
-    license_expression: gpl-2.0-plus
+    identifier: lgpl-2.0-plus_529.RULE
+    license_expression: lgpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or
-      modify it under the terms of the GNU [Lesser] General Public
+      This library is free software; you can redistribute it and/or
+      modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2 of the License, or (at your option) any later version.
 
-      This [library] is distributed in the hope that it will be useful,
+      This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-      [Lesser] General Public License for more details.
+      Lesser General Public License for more details.
 
-      On Debian systems, the complete text of the GNU [Lesser] General Public
-      License [version] [2] can be found in "/usr/share/common-licenses/
-  - score: '99.41'
-    start_line: 1
-    end_line: 39
-    matcher: 3-seq
-    rule_length: 341
+      On Debian systems, the complete text of the GNU Lesser General Public
+      License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
+  - score: '100.0'
+    start_line: 133
+    end_line: 171
+    matcher: 1-hash
+    rule_length: 339
     matched_length: 339
-    match_coverage: '99.41'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: tcl_1.RULE
+    identifier: tcl_14.RULE
     license_expression: tcl
     is_license_text: yes
     is_license_notice: no
@@ -225,15 +225,15 @@ matches:
       the authors grant the U.S. Government and others acting in its behalf
       permission to use and distribute the software in accordance with the
       terms specified in this license.
-  - score: '95.26'
-    start_line: 1
-    end_line: 51
-    matcher: 3-seq
-    rule_length: 443
+  - score: '100.0'
+    start_line: 174
+    end_line: 224
+    matcher: 1-hash
+    rule_length: 422
     matched_length: 422
-    match_coverage: '95.26'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: unicode_10.RULE
+    identifier: unicode_57.RULE
     license_expression: unicode
     is_license_text: yes
     is_license_notice: no

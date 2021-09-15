@@ -1,4 +1,5 @@
 license_expression: inno-setup
 is_license_reference: yes
+relevance: 100
 ignorable_urls:
     - http://www.jrsoftware.org/files/is/license.txt

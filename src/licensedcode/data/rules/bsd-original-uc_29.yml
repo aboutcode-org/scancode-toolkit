@@ -1,0 +1,5 @@
+license_expression: bsd-original-uc
+is_license_text: yes
+minimum_coverage: 95
+ignorable_authors:
+    - the University of California, Lawrence Berkeley Laboratory

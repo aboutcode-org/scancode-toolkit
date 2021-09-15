@@ -1,0 +1,16 @@
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+* Redistribution of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+* Redistribution in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+* If redistribution is done as a part of a compilation that has a
+more restrictive license (such as the GPL), then the fact that 
+has a less restrictive license must be made clear to the recipient.
+ For example, a line like (include bracketed text if  is
+modified): "This compilation includes [a modification of] 
+whose [original] code has a less-restrictive license than the entire
+compilation." should appear in a suitable place in the COPYING and/or
+LICENSE file.

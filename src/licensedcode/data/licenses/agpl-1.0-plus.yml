@@ -24,4 +24,5 @@ ignorable_holders:
   - Affero Inc.
   - Affero, Inc.
   - Free Software Foundation, Inc.
+minimum_coverage: 80
 

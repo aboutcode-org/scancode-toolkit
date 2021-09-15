@@ -1,0 +1,9 @@
+key: cc-by-sa-3.0-de
+short_name: Creative Commons Attribution Share Alike 3.0 Germany
+name: Creative Commons Attribution Share Alike 3.0 Germany
+spdx_license_key: CC-BY-SA-3.0-DE
+other_urls:
+    - https://creativecommons.org/licenses/by-sa/3.0/de/legalcode
+ignorable_urls:
+    - https://creativecommons.org/
+    - https://creativecommons.org/compatiblelicenses

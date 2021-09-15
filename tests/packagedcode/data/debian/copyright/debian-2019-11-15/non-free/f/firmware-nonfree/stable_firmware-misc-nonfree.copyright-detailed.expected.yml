@@ -35,11 +35,11 @@ declared_license:
   - BSD (Ikanos)
   - Binary redistribution (Conexant)
   - Binary redistribution (Intel)
-license_expression: 3com-microcode AND bsd-simplified-source AND agere-bsd AND isc AND proprietary-license
-  AND other-permissive AND linux-openib AND proprietary-license AND bsd-simplified-source AND
-  proprietary-license AND isc AND isc AND proprietary-license AND bsd-new AND isc AND proprietary-license
-  AND proprietary-license AND intel AND intel AND proprietary-license AND bsd-original AND mit
-  AND proprietary-license AND ralink-firmware AND proprietary-license AND proprietary-license
+license_expression: 3com-microcode AND bsd-simplified-source AND agere-bsd AND x11-acer AND
+  ctl-linux-firmware AND other-permissive AND linux-openib AND proprietary-license AND bsd-simplified-source
+  AND proprietary-license AND isc AND isc AND proprietary-license AND bsd-new AND isc AND proprietary-license
+  AND proprietary-license AND intel AND intel AND nxp-firmware-patent AND bsd-original AND mit
+  AND moxa-linux-firmware AND ralink-firmware AND proprietary-license AND proprietary-license
   AND intel AND proprietary-license AND proprietary-license AND ralink-firmware AND other-permissive
   AND other-permissive AND (bsd-new AND proprietary-license) AND proprietary-license
 copyright: |
@@ -81,8 +81,8 @@ copyright: |
   2006, Ikanos Communications, Inc.
 matches:
   - score: '100.0'
-    start_line: 3
-    end_line: 30
+    start_line: 11
+    end_line: 38
     matcher: 2-aho
     rule_length: 264
     matched_length: 264
@@ -125,8 +125,8 @@ matches:
       EMBODIED IN ANY OTHER 3COM HARDWARE OR SOFTWARE EITHER SOLELY OR IN
       COMBINATION WITH THE 3c990img.h MICROCODE SOFTWARE
   - score: '100.0'
-    start_line: 3
-    end_line: 6
+    start_line: 46
+    end_line: 49
     matcher: 2-aho
     rule_length: 30
     matched_length: 30
@@ -145,8 +145,8 @@ matches:
       code retain the above copyright notice and this comment without
       modification.
   - score: '100.0'
-    start_line: 1
-    end_line: 37
+    start_line: 56
+    end_line: 92
     matcher: 1-hash
     rule_length: 296
     matched_length: 296
@@ -197,16 +197,16 @@ matches:
       LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
       OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
       DAMAGE.
-  - score: '99.0'
-    start_line: 1
-    end_line: 13
+  - score: '100.0'
+    start_line: 97
+    end_line: 109
     matcher: 1-hash
     rule_length: 112
     matched_length: 112
     match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: isc_53.RULE
-    license_expression: isc
+    rule_relevance: 100
+    identifier: x11-acer.LICENSE
+    license_expression: x11-acer
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -227,15 +227,15 @@ matches:
       TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
       PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
-    start_line: 3
-    end_line: 46
+    start_line: 116
+    end_line: 159
     matcher: 2-aho
     rule_length: 364
     matched_length: 364
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: proprietary-license_336.RULE
-    license_expression: proprietary-license
+    identifier: ctl-linux-firmware.LICENSE
+    license_expression: ctl-linux-firmware
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -287,8 +287,8 @@ matches:
       EMBODIED IN ANY OTHER CTL HARDWARE OR SOFTWARE WHETHER SOLELY OR IN
       COMBINATION WITH THIS SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 164
+    end_line: 166
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -306,8 +306,8 @@ matches:
       data in hexadecimal or equivalent format, provided this copyright
       notice is accompanying it.
   - score: '100.0'
-    start_line: 3
-    end_line: 23
+    start_line: 173
+    end_line: '193'
     matcher: 2-aho
     rule_length: 143
     matched_length: 143
@@ -343,8 +343,8 @@ matches:
       CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       SOFTWARE.
   - score: '100.0'
-    start_line: 3
-    end_line: 26
+    start_line: 200
+    end_line: 223
     matcher: 2-aho
     rule_length: '199'
     matched_length: '199'
@@ -383,8 +383,8 @@ matches:
       TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
       USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 4
+    start_line: 228
+    end_line: 231
     matcher: 1-hash
     rule_length: 30
     matched_length: 30
@@ -403,8 +403,8 @@ matches:
       code retain the above copyright notice and this comment without
       modification.
   - score: '100.0'
-    start_line: 1
-    end_line: 12
+    start_line: 236
+    end_line: 247
     matcher: 1-hash
     rule_length: 120
     matched_length: 120
@@ -431,8 +431,8 @@ matches:
       ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
       OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 13
+    start_line: 252
+    end_line: 264
     matcher: 1-hash
     rule_length: 112
     matched_length: 112
@@ -460,8 +460,8 @@ matches:
       TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
       PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 13
+    start_line: 269
+    end_line: 281
     matcher: 1-hash
     rule_length: 112
     matched_length: 112
@@ -489,8 +489,8 @@ matches:
       TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
       PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 8
+    start_line: 286
+    end_line: 293
     matcher: 1-hash
     rule_length: 75
     matched_length: 75
@@ -513,8 +513,8 @@ matches:
       useful, but WITHOUT ANY WARRANTY; without even the implied warranty
       of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   - score: '100.0'
-    start_line: 3
-    end_line: 26
+    start_line: 300
+    end_line: 323
     matcher: 2-aho
     rule_length: 211
     matched_length: 211
@@ -553,8 +553,8 @@ matches:
       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
       EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 12
+    start_line: 328
+    end_line: 339
     matcher: 1-hash
     rule_length: 112
     matched_length: 112
@@ -581,8 +581,8 @@ matches:
       NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
       WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 7
+    start_line: 344
+    end_line: 350
     matcher: 1-hash
     rule_length: 75
     matched_length: 75
@@ -604,8 +604,8 @@ matches:
       useful, but WITHOUT ANY WARRANTY; without even the implied warranty
       of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   - score: '100.0'
-    start_line: 1
-    end_line: 9
+    start_line: 355
+    end_line: 363
     matcher: 1-hash
     rule_length: 73
     matched_length: 73
@@ -629,8 +629,8 @@ matches:
       WARRANTIES OF MERCHANTABILITY, SUPPORT, AND FITNESS FOR A PARTICULAR
       PURPOSE AND NON-INFRINGEMENT.
   - score: '95.0'
-    start_line: 3
-    end_line: 36
+    start_line: 370
+    end_line: 403
     matcher: 2-aho
     rule_length: 268
     matched_length: 268
@@ -679,15 +679,15 @@ matches:
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
       SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 3
-    end_line: 46
+    start_line: 414
+    end_line: 457
     matcher: 2-aho
     rule_length: 382
     matched_length: 382
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: proprietary-license_327.RULE
-    license_expression: proprietary-license
+    identifier: nxp-firmware-patent.LICENSE
+    license_expression: nxp-firmware-patent
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -739,8 +739,8 @@ matches:
       TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
       USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 26
+    start_line: 462
+    end_line: 487
     matcher: 1-hash
     rule_length: 233
     matched_length: 233
@@ -781,8 +781,8 @@ matches:
       IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
   - score: '98.77'
-    start_line: 3
-    end_line: '19'
+    start_line: 494
+    end_line: 510
     matcher: 3-seq
     rule_length: 161
     matched_length: 161
@@ -814,15 +814,15 @@ matches:
       OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
       OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 16
+    start_line: 515
+    end_line: 530
     matcher: 1-hash
     rule_length: 142
     matched_length: 142
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: proprietary-license_326.RULE
-    license_expression: proprietary-license
+    identifier: moxa-linux-firmware.LICENSE
+    license_expression: moxa-linux-firmware
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -846,8 +846,8 @@ matches:
          business, using any other license.
       5. Moxa(r) is worldwide registered trademark.
   - score: '100.0'
-    start_line: 3
-    end_line: 38
+    start_line: 537
+    end_line: 572
     matcher: 2-aho
     rule_length: 297
     matched_length: 297
@@ -898,8 +898,8 @@ matches:
       USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
       DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 577
+    end_line: 577
     matcher: 1-hash
     rule_length: 8
     matched_length: 8
@@ -914,8 +914,8 @@ matches:
     is_license_intro: no
     matched_text: All firmware components are redistributable in binary form.
   - score: '100.0'
-    start_line: 1
-    end_line: 127
+    start_line: 582
+    end_line: 708
     matcher: 1-hash
     rule_length: 952
     matched_length: 952
@@ -1057,8 +1057,8 @@ matches:
       restrictions or regulations.  This LICENSE may only be modified in
       writing signed by an authorized officer of NVIDIA.
   - score: '100.0'
-    start_line: 3
-    end_line: 40
+    start_line: 719
+    end_line: 756
     matcher: 2-aho
     rule_length: 303
     matched_length: 303
@@ -1111,8 +1111,8 @@ matches:
       USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
       DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 8
+    start_line: 761
+    end_line: 768
     matcher: 1-hash
     rule_length: 75
     matched_length: 75
@@ -1135,8 +1135,8 @@ matches:
       useful, but WITHOUT ANY WARRANTY; without even the implied warranty
       of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   - score: '100.0'
-    start_line: 3
-    end_line: 38
+    start_line: 775
+    end_line: 810
     matcher: 2-aho
     rule_length: 297
     matched_length: 297
@@ -1187,8 +1187,8 @@ matches:
       USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
       DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 815
+    end_line: 817
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -1206,8 +1206,8 @@ matches:
       data in hexadecimal or equivalent format, provided this copyright
       notice is accompanying it.
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 822
+    end_line: 824
     matcher: 1-hash
     rule_length: 23
     matched_length: 23
@@ -1225,8 +1225,8 @@ matches:
       data in hexadecimal or equivalent format, provided this copyright
       notice is accompanying it.
   - score: '100.0'
-    start_line: 1
-    end_line: 33
+    start_line: 829
+    end_line: 861
     matcher: 1-hash
     rule_length: 266
     matched_length: 266
@@ -1274,8 +1274,8 @@ matches:
       PROPRIETARY RIGHT) EMBODIED IN ANY OTHER IKANOS HARDWARE OR SOFTWARE
       EITHER SOLELY OR IN COMBINATION WITH THIS SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 7
+    start_line: 865
+    end_line: 871
     matcher: 1-hash
     rule_length: 75
     matched_length: 75
@@ -1297,8 +1297,8 @@ matches:
       useful, but WITHOUT ANY WARRANTY; without even the implied warranty
       of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   - score: '100.0'
-    start_line: 3
-    end_line: 38
+    start_line: 876
+    end_line: 911
     matcher: 2-aho
     rule_length: 295
     matched_length: 295

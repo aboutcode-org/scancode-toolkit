@@ -1,0 +1,13 @@
+license_expression: lucent-pl-1.02 AND gpl-1.0-plus AND proprietary-license AND afpl-9.0 AND
+    other-copyleft AND other-permissive
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.gpl
+    - LICENSE.afpl
+    - COPYING
+    - COPYRIGHT
+    - LICENSE
+ignorable_copyrights:
+    - copyrights by B&H Inc. and Y&Y Inc.
+ignorable_holders:
+    - B&H Inc. and Y&Y Inc.

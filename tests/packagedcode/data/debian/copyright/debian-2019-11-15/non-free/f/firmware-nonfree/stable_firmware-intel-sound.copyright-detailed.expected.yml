@@ -7,8 +7,8 @@ license_expression: intel AND intel AND (intel AND free-unknown AND bsd-new AND 
   x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND osf-1990 AND nilsson-historical
   AND newlib-historical AND bsd-new AND amd-historical AND bsd-new AND bsd-simplified AND bsd-simplified
   AND bsd-simplified AND x11-hanson AND bsd-simplified AND bsd-new AND delorie-historical AND
-  intel-osl-1993 AND osf-1990 AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-new)
-  AND (bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified
+  intel-osl-1993 AND osf-1990 AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-new
+  AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified
   AND bsd-new AND bsd-new AND bsd-new AND newlib-historical AND bsd-new AND bsd-new AND bsd-simplified)
 copyright: |
   2014, Intel Corporation.
@@ -23,8 +23,8 @@ copyright: |
   1993, 2014-15, Intel Corporation
 matches:
   - score: '100.0'
-    start_line: 3
-    end_line: 38
+    start_line: 11
+    end_line: 46
     matcher: 2-aho
     rule_length: 295
     matched_length: 295
@@ -75,8 +75,8 @@ matches:
       USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
       DAMAGE.
   - score: '95.0'
-    start_line: 3
-    end_line: 37
+    start_line: 53
+    end_line: 87
     matcher: 2-aho
     rule_length: 268
     matched_length: 268
@@ -126,8 +126,8 @@ matches:
       ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
   - score: '95.0'
-    start_line: 3
-    end_line: 37
+    start_line: 101
+    end_line: 135
     matcher: 2-aho
     rule_length: 268
     matched_length: 268
@@ -177,8 +177,8 @@ matches:
       ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 43
-    end_line: 45
+    start_line: 141
+    end_line: 143
     matcher: 2-aho
     rule_length: 37
     matched_length: 37
@@ -196,8 +196,8 @@ matches:
       file.  Unless otherwise noted in the body of the source file(s), the following copyright
       notices will apply to the contents of the newlib subdirectory:
   - score: '100.0'
-    start_line: 51
-    end_line: 60
+    start_line: 149
+    end_line: 158
     matcher: 2-aho
     rule_length: 103
     matched_length: 103
@@ -222,8 +222,8 @@ matches:
       the BSD License and may only be used or replicated with the express
       permission of Red Hat, Inc.
   - score: '100.0'
-    start_line: 67
-    end_line: 88
+    start_line: 165
+    end_line: 186
     matcher: 2-aho
     rule_length: 212
     matched_length: 212
@@ -260,8 +260,8 @@ matches:
       ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
       OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 96
-    end_line: 105
+    start_line: '194'
+    end_line: 203
     matcher: 2-aho
     rule_length: 93
     matched_length: 93
@@ -286,8 +286,8 @@ matches:
       REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY
       OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
   - score: '100.0'
-    start_line: 114
-    end_line: 131
+    start_line: 212
+    end_line: 229
     matcher: 2-aho
     rule_length: 151
     matched_length: 151
@@ -320,8 +320,8 @@ matches:
       ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
       THIS SOFTWARE.
   - score: '100.0'
-    start_line: 138
-    end_line: 149
+    start_line: 236
+    end_line: 247
     matcher: 2-aho
     rule_length: 98
     matched_length: 98
@@ -348,8 +348,8 @@ matches:
       So that all may benefit from your experience, please report  any  problems
       or  suggestions about this software
   - score: '100.0'
-    start_line: 168
-    end_line: 170
+    start_line: 266
+    end_line: 268
     matcher: 2-aho
     rule_length: 25
     matched_length: 25
@@ -367,8 +367,8 @@ matches:
       Permission to use, copy, modify, and distribute this
       software is freely granted, provided that this notice is preserved.
   - score: '100.0'
-    start_line: 176
-    end_line: 185
+    start_line: 274
+    end_line: 283
     matcher: 2-aho
     rule_length: 88
     matched_length: 88
@@ -393,8 +393,8 @@ matches:
       Hewlett-Packard Company makes no representations about the
       suitability of this software for any purpose.
   - score: '100.0'
-    start_line: '191'
-    end_line: '198'
+    start_line: 289
+    end_line: 296
     matcher: 2-aho
     rule_length: 55
     matched_length: 55
@@ -417,8 +417,8 @@ matches:
       WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
       PURPOSE.
   - score: '100.0'
-    start_line: 204
-    end_line: 212
+    start_line: 302
+    end_line: 310
     matcher: 2-aho
     rule_length: 92
     matched_length: 92
@@ -442,8 +442,8 @@ matches:
       the new terms are clearly indicated on the first page of each file where
       they apply.
   - score: '100.0'
-    start_line: 219
-    end_line: 239
+    start_line: 317
+    end_line: 337
     matcher: 2-aho
     rule_length: 203
     matched_length: 203
@@ -479,8 +479,8 @@ matches:
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
       THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '95.0'
-    start_line: 245
-    end_line: 256
+    start_line: 343
+    end_line: 354
     matcher: 2-aho
     rule_length: 95
     matched_length: 95
@@ -507,8 +507,8 @@ matches:
       So that all may benefit from your experience, please report any problems
       or suggestions about this software to the
   - score: '100.0'
-    start_line: 271
-    end_line: 296
+    start_line: 369
+    end_line: 394
     matcher: 2-aho
     rule_length: 212
     matched_length: 212
@@ -549,8 +549,8 @@ matches:
       OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
       ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 303
-    end_line: 322
+    start_line: 401
+    end_line: 420
     matcher: 2-aho
     rule_length: 183
     matched_length: 183
@@ -585,8 +585,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '100.0'
-    start_line: 329
-    end_line: 348
+    start_line: 427
+    end_line: 446
     matcher: 2-aho
     rule_length: 181
     matched_length: 181
@@ -621,8 +621,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '100.0'
-    start_line: 355
-    end_line: 374
+    start_line: 453
+    end_line: 472
     matcher: 2-aho
     rule_length: 183
     matched_length: 183
@@ -656,15 +656,15 @@ matches:
       LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
-  - score: '85.71'
-    start_line: 378
-    end_line: 391
-    matcher: 3-seq
-    rule_length: 105
-    matched_length: 90
-    match_coverage: '85.71'
-    rule_relevance: 100
-    identifier: x11-hanson_1.RULE
+  - score: '99.0'
+    start_line: 480
+    end_line: 489
+    matcher: 2-aho
+    rule_length: 89
+    matched_length: 89
+    match_coverage: '100.0'
+    rule_relevance: 99
+    identifier: x11-hanson2.RULE
     license_expression: x11-hanson
     is_license_text: yes
     is_license_notice: no
@@ -672,10 +672,6 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      Author:  S. [L]. [Moshier].
-
-      [Copyright] ([c]) [1984],[2000] S.[L]. [Moshier]
-
       Permission to use, copy, modify, and distribute this software for any
       purpose without fee is hereby granted, provided that this entire notice
       is included in all copies of any software which is or includes a copy
@@ -687,8 +683,8 @@ matches:
       OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY OF THIS
       SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
   - score: '100.0'
-    start_line: 398
-    end_line: 417
+    start_line: 496
+    end_line: 515
     matcher: 2-aho
     rule_length: 183
     matched_length: 183
@@ -723,8 +719,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '100.0'
-    start_line: 424
-    end_line: 444
+    start_line: 522
+    end_line: 542
     matcher: 2-aho
     rule_length: 200
     matched_length: 200
@@ -760,8 +756,8 @@ matches:
       OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
       ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 450
-    end_line: 455
+    start_line: 548
+    end_line: 553
     matcher: 2-aho
     rule_length: 45
     matched_length: 45
@@ -782,8 +778,8 @@ matches:
       This file is distributed WITHOUT ANY WARRANTY; without even the implied
       warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   - score: '100.0'
-    start_line: 465
-    end_line: 487
+    start_line: 563
+    end_line: 585
     matcher: 2-aho
     rule_length: 209
     matched_length: 209
@@ -821,8 +817,8 @@ matches:
       OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM
       PAID TO INTEL FOR THE PRODUCT LICENSED HEREUNDER.
   - score: '100.0'
-    start_line: 493
-    end_line: 502
+    start_line: 591
+    end_line: 600
     matcher: 2-aho
     rule_length: 88
     matched_length: 88
@@ -847,8 +843,8 @@ matches:
       Hewlett-Packard Company makes no representations about the
       suitability of this software for any purpose.
   - score: '100.0'
-    start_line: 511
-    end_line: 530
+    start_line: 609
+    end_line: 628
     matcher: 2-aho
     rule_length: 183
     matched_length: 183
@@ -883,8 +879,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '100.0'
-    start_line: 537
-    end_line: 556
+    start_line: 635
+    end_line: 654
     matcher: 2-aho
     rule_length: 183
     matched_length: 183
@@ -919,8 +915,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '100.0'
-    start_line: 565
-    end_line: 584
+    start_line: 663
+    end_line: 682
     matcher: 2-aho
     rule_length: 183
     matched_length: 183
@@ -955,8 +951,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '100.0'
-    start_line: 595
-    end_line: 617
+    start_line: 693
+    end_line: 715
     matcher: 2-aho
     rule_length: 213
     matched_length: 213
@@ -994,8 +990,8 @@ matches:
         ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
         POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 20
+    start_line: 723
+    end_line: 742
     matcher: 2-aho
     rule_length: 179
     matched_length: 179
@@ -1010,162 +1006,18 @@ matches:
     is_license_intro: no
     matched_text: |
       Redistribution and use in source and binary forms, with or without
-         modification, are permitted provided that the following conditions
-         are met:
-         1. Redistributions of source code must retain the above copyright
-            notice, this list of conditions and the following disclaimer.
-         2. Redistributions in binary form must reproduce the above copyright
-            notice, this list of conditions and the following disclaimer in the
-            documentation and/or other materials provided with the distribution.
-       .
-       THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
-         ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-         IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-         ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE
-         FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-         DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-         OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-         HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-         LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-         OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-         SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 27
-    end_line: 46
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_27.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-         modification, are permitted provided that the following conditions
-         are met:
-         1. Redistributions of source code must retain the above copyright
-            notice, this list of conditions and the following disclaimer.
-         2. Redistributions in binary form must reproduce the above copyright
-            notice, this list of conditions and the following disclaimer in the
-            documentation and/or other materials provided with the distribution.
-       .
-       THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-         ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-         IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-         ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
-         FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-         DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-         OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-         HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-         LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-         OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-         SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 53
-    end_line: 72
-    matcher: 2-aho
-    rule_length: 181
-    matched_length: 181
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_newlib3.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-         modification, are permitted provided that the following conditions
-         are met:
-         1. Redistributions of source code must retain the above copyright
-            notice, this list of conditions and the following disclaimer.
-         2. Redistributions in binary form must reproduce the above copyright
-            notice, this list of conditions and the following disclaimer in the
-            documentation and/or other materials provided with the distribution.
-       .
-       THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
-         ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-         IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-         ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-         FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-         DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-         OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-         HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-         LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-         OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-         SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 79
-    end_line: 98
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_newlib5.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-         modification, are permitted provided that the following conditions
-         are met:
-         1. Redistributions of source code must retain the above copyright
-            notice, this list of conditions and the following disclaimer.
-         2. Redistributions in binary form must reproduce the above copyright
-            notice, this list of conditions and the following disclaimer in the
-            documentation and/or other materials provided with the distribution.
-       .
-       THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-         ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-         IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-         ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-         FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-         DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-         OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-         HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-         LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-         OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-         SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 105
-    end_line: 124
-    matcher: 2-aho
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_27.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
         modification, are permitted provided that the following conditions
         are met:
         1. Redistributions of source code must retain the above copyright
-        notice, this list of conditions and the following disclaimer.
+           notice, this list of conditions and the following disclaimer.
         2. Redistributions in binary form must reproduce the above copyright
-        notice, this list of conditions and the following disclaimer in the
-        documentation and/or other materials provided with the distribution.
-       .
-        THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+           notice, this list of conditions and the following disclaimer in the
+           documentation and/or other materials provided with the distribution.
+
+        THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
         ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
         IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-        ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+        ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE
         FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
         DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
         OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
@@ -1174,15 +1026,15 @@ matches:
         OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
         SUCH DAMAGE.
   - score: '100.0'
-    start_line: 132
-    end_line: 153
+    start_line: 749
+    end_line: 768
     matcher: 2-aho
-    rule_length: 203
-    matched_length: 203
+    rule_length: 183
+    matched_length: 183
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-new_183.RULE
-    license_expression: bsd-new
+    identifier: bsd-simplified_27.RULE
+    license_expression: bsd-simplified
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -1197,30 +1049,28 @@ matches:
         2. Redistributions in binary form must reproduce the above copyright
            notice, this list of conditions and the following disclaimer in the
            documentation and/or other materials provided with the distribution.
-        3. The name of the company may not be used to endorse or promote
-           products derived from this software without specific prior written
-           permission.
-       .
-        THIS SOFTWARE IS PROVIDED BY ARM LTD ``AS IS'' AND ANY EXPRESS OR IMPLIED
-        WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-        MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-        IN NO EVENT SHALL ARM LTD BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-        SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-        TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-        PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-        LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-        NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-        SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+        THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+        ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+        ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+        OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+        HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+        OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+        SUCH DAMAGE.
   - score: '100.0'
-    start_line: 159
-    end_line: 184
+    start_line: 775
+    end_line: 794
     matcher: 2-aho
-    rule_length: 213
-    matched_length: 213
+    rule_length: 181
+    matched_length: 181
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-new_412.RULE
-    license_expression: bsd-new
+    identifier: bsd-simplified_newlib3.RULE
+    license_expression: bsd-simplified
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -1228,110 +1078,35 @@ matches:
     is_license_intro: no
     matched_text: |
       Redistribution and use in source and binary forms, with or without
-       modification, are permitted provided that the following conditions are
-       met:
-       .
-       1.  Redistributions source code must retain the above copyright notice,
-       this list of conditions and the following disclaimer.
-       .
-       2.  Redistributions in binary form must reproduce the above copyright
-       notice, this list of conditions and the following disclaimer in the
-       documentation and/or other materials provided with the distribution.
-       .
-       3.  Neither the name of Xilinx nor the names of its contributors may be
-       used to endorse or promote products derived from this software without
-       specific prior written permission.
-       .
-       THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS "AS
-       IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
-       TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-       PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-       HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-       SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-       TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-       PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-       LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-       SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: '192'
-    end_line: 219
-    matcher: 2-aho
-    rule_length: 213
-    matched_length: 213
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_517.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and  use in source  and binary forms, with  or without
-        modification,  are permitted provided  that the  following conditions
+        modification, are permitted provided that the following conditions
         are met:
-       .
-           Redistributions  of source  code must  retain the  above copyright
+        1. Redistributions of source code must retain the above copyright
            notice, this list of conditions and the following disclaimer.
-       .
-           Redistributions in binary form  must reproduce the above copyright
-           notice, this  list of conditions  and the following  disclaimer in
-           the  documentation  and/or   other  materials  provided  with  the
-           distribution.
-       .
-           Neither the  name of Texas Instruments Incorporated  nor the names
-           of its  contributors may  be used to  endorse or  promote products
-           derived  from   this  software  without   specific  prior  written
-           permission.
-       .
-        THIS SOFTWARE  IS PROVIDED BY THE COPYRIGHT  HOLDERS AND CONTRIBUTORS
-        "AS IS"  AND ANY  EXPRESS OR IMPLIED  WARRANTIES, INCLUDING,  BUT NOT
-        LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-        A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT
-        OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-        SPECIAL,  EXEMPLARY,  OR CONSEQUENTIAL  DAMAGES  (INCLUDING, BUT  NOT
-        LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-        DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-        THEORY OF  LIABILITY, WHETHER IN CONTRACT, STRICT  LIABILITY, OR TORT
-        (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        2. Redistributions in binary form must reproduce the above copyright
+           notice, this list of conditions and the following disclaimer in the
+           documentation and/or other materials provided with the distribution.
+
+        THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
+        ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+        ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+        OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+        HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+        OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+        SUCH DAMAGE.
   - score: '100.0'
-    start_line: 225
-    end_line: 233
+    start_line: 801
+    end_line: 820
     matcher: 2-aho
-    rule_length: 92
-    matched_length: 92
+    rule_length: 183
+    matched_length: 183
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: newlib-historical.LICENSE
-    license_expression: newlib-historical
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The authors hereby grant permission to use, copy, modify, distribute,
-       and license this software and its documentation for any purpose, provided
-       that existing copyright notices are retained in all copies and that this
-       notice is included verbatim in any distributions. No written agreement,
-       license, or royalty fee is required for any of the authorized uses.
-       Modifications to this software may be copyrighted by their authors
-       and need not follow the licensing terms described here, provided that
-       the new terms are clearly indicated on the first page of each file where
-       they apply.
-  - score: '100.0'
-    start_line: 240
-    end_line: 260
-    matcher: 2-aho
-    rule_length: 211
-    matched_length: 211
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_979.RULE
-    license_expression: bsd-new
+    identifier: bsd-simplified_newlib5.RULE
+    license_expression: bsd-simplified
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -1339,69 +1114,28 @@ matches:
     is_license_intro: no
     matched_text: |
       Redistribution and use in source and binary forms, with or without
-       modification, are permitted provided that the following conditions are met:
-        * Redistributions of source code must retain the above copyright notice, this
-          list of conditions and the following disclaimer.
-        * Redistributions in binary form must reproduce the above copyright notice,
-          this list of conditions and the following disclaimer in the documentation
-          and/or other materials provided with the distribution.
-        * Neither the name of Adapteva nor the names of its contributors may be used
-          to endorse or promote products derived from this software without specific
-          prior written permission.
-       .
-       THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-       ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-       WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-       DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-       FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-       DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-       SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-       CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-       OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        modification, are permitted provided that the following conditions
+        are met:
+        1. Redistributions of source code must retain the above copyright
+           notice, this list of conditions and the following disclaimer.
+        2. Redistributions in binary form must reproduce the above copyright
+           notice, this list of conditions and the following disclaimer in the
+           documentation and/or other materials provided with the distribution.
+
+        THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+        ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+        ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+        OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+        HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+        OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+        SUCH DAMAGE.
   - score: '100.0'
-    start_line: 267
-    end_line: 290
-    matcher: 2-aho
-    rule_length: 218
-    matched_length: 218
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_410.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-       modification, are permitted provided that the following conditions
-       are met:
-       .
-          o Redistributions of source code must retain the above copyright
-            notice, this list of conditions and the following disclaimer.
-          o Redistributions in binary form must reproduce the above copyright
-            notice, this list of conditions and the following disclaimer in the
-            documentation and/or other materials provided with the distribution.
-          o Neither the name of Altera Corporation nor the names of its
-            contributors may be used to endorse or promote products derived from
-            this software without specific prior written permission.
-       .
-       THIS SOFTWARE IS PROVIDED BY ALTERA CORPORATION, THE COPYRIGHT HOLDER,
-       AND ITS CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-       INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
-       AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
-       THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-       INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-       BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
-       OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-       ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
-       TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
-       USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 297
-    end_line: 316
+    start_line: 827
+    end_line: 846
     matcher: 2-aho
     rule_length: 183
     matched_length: 183
@@ -1419,15 +1153,15 @@ matches:
        modification, are permitted provided that the following conditions
        are met:
        1. Redistributions of source code must retain the above copyright
-          notice, this list of conditions and the following disclaimer.
+       notice, this list of conditions and the following disclaimer.
        2. Redistributions in binary form must reproduce the above copyright
-          notice, this list of conditions and the following disclaimer in the
-          documentation and/or other materials provided with the distribution.
-       .
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+
        THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
        ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-       ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+       ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
        OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
@@ -1435,3 +1169,265 @@ matches:
        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
        OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
        SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 854
+    end_line: 875
+    matcher: 2-aho
+    rule_length: 203
+    matched_length: 203
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_183.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+       modification, are permitted provided that the following conditions
+       are met:
+       1. Redistributions of source code must retain the above copyright
+          notice, this list of conditions and the following disclaimer.
+       2. Redistributions in binary form must reproduce the above copyright
+          notice, this list of conditions and the following disclaimer in the
+          documentation and/or other materials provided with the distribution.
+       3. The name of the company may not be used to endorse or promote
+          products derived from this software without specific prior written
+          permission.
+
+       THIS SOFTWARE IS PROVIDED BY ARM LTD ``AS IS'' AND ANY EXPRESS OR IMPLIED
+       WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+       MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+       IN NO EVENT SHALL ARM LTD BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+       SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+       TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+       PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+       LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+       SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 881
+    end_line: 906
+    matcher: 2-aho
+    rule_length: 213
+    matched_length: 213
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_412.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are
+      met:
+
+      1.  Redistributions source code must retain the above copyright notice,
+      this list of conditions and the following disclaimer.
+
+      2.  Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+
+      3.  Neither the name of Xilinx nor the names of its contributors may be
+      used to endorse or promote products derived from this software without
+      specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS "AS
+      IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+      TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+      PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+      HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+      SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+      TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+      PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+      LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 914
+    end_line: 941
+    matcher: 2-aho
+    rule_length: 213
+    matched_length: 213
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_517.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and  use in source  and binary forms, with  or without
+       modification,  are permitted provided  that the  following conditions
+       are met:
+
+          Redistributions  of source  code must  retain the  above copyright
+          notice, this list of conditions and the following disclaimer.
+
+          Redistributions in binary form  must reproduce the above copyright
+          notice, this  list of conditions  and the following  disclaimer in
+          the  documentation  and/or   other  materials  provided  with  the
+          distribution.
+
+          Neither the  name of Texas Instruments Incorporated  nor the names
+          of its  contributors may  be used to  endorse or  promote products
+          derived  from   this  software  without   specific  prior  written
+          permission.
+
+       THIS SOFTWARE  IS PROVIDED BY THE COPYRIGHT  HOLDERS AND CONTRIBUTORS
+       "AS IS"  AND ANY  EXPRESS OR IMPLIED  WARRANTIES, INCLUDING,  BUT NOT
+       LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+       A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT
+       OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+       SPECIAL,  EXEMPLARY,  OR CONSEQUENTIAL  DAMAGES  (INCLUDING, BUT  NOT
+       LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+       DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+       THEORY OF  LIABILITY, WHETHER IN CONTRACT, STRICT  LIABILITY, OR TORT
+       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 947
+    end_line: 955
+    matcher: 2-aho
+    rule_length: 92
+    matched_length: 92
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: newlib-historical.LICENSE
+    license_expression: newlib-historical
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      The authors hereby grant permission to use, copy, modify, distribute,
+      and license this software and its documentation for any purpose, provided
+      that existing copyright notices are retained in all copies and that this
+      notice is included verbatim in any distributions. No written agreement,
+      license, or royalty fee is required for any of the authorized uses.
+      Modifications to this software may be copyrighted by their authors
+      and need not follow the licensing terms described here, provided that
+      the new terms are clearly indicated on the first page of each file where
+      they apply.
+  - score: '100.0'
+    start_line: 962
+    end_line: 982
+    matcher: 2-aho
+    rule_length: 211
+    matched_length: 211
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_979.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are met:
+       * Redistributions of source code must retain the above copyright notice, this
+         list of conditions and the following disclaimer.
+       * Redistributions in binary form must reproduce the above copyright notice,
+         this list of conditions and the following disclaimer in the documentation
+         and/or other materials provided with the distribution.
+       * Neither the name of Adapteva nor the names of its contributors may be used
+         to endorse or promote products derived from this software without specific
+         prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+      DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+      SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+      CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+      OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+      OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 989
+    end_line: 1012
+    matcher: 2-aho
+    rule_length: 218
+    matched_length: 218
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_410.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions
+      are met:
+
+         o Redistributions of source code must retain the above copyright
+           notice, this list of conditions and the following disclaimer.
+         o Redistributions in binary form must reproduce the above copyright
+           notice, this list of conditions and the following disclaimer in the
+           documentation and/or other materials provided with the distribution.
+         o Neither the name of Altera Corporation nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY ALTERA CORPORATION, THE COPYRIGHT HOLDER,
+      AND ITS CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+      INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+      AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+      THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+      BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+      OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+      TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+      USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 1019
+    end_line: 1038
+    matcher: 2-aho
+    rule_length: 183
+    matched_length: 183
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-simplified_27.RULE
+    license_expression: bsd-simplified
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions
+      are met:
+      1. Redistributions of source code must retain the above copyright
+         notice, this list of conditions and the following disclaimer.
+      2. Redistributions in binary form must reproduce the above copyright
+         notice, this list of conditions and the following disclaimer in the
+         documentation and/or other materials provided with the distribution.
+
+      THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+      SUCH DAMAGE.

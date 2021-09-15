@@ -1,0 +1,15 @@
+key: altermime
+short_name: alterMIME License
+name: alterMIME License
+category: Copyleft Limited
+owner: Paul L Daniels
+homepage_url: https://pldaniels.com/altermime/
+spdx_license_key: LicenseRef-scancode-altermime
+other_urls:
+    - https://pldaniels.com/altermime/altermime-0.3.11.tar.gz
+ignorable_copyrights:
+    - Copyright (c) 2000 P.L.Daniels
+ignorable_holders:
+    - P.L.Daniels
+ignorable_emails:
+    - pldaniels@pldaniels.com

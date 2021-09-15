@@ -1,4 +1,4 @@
-primary_license: gpl-3.0-plus AND gpl-3.0
+primary_license: gpl-3.0-plus
 declared_license:
   - GPL-3+
   - CC0-1.0
@@ -19,11 +19,11 @@ declared_license:
   - CC0-1.0
   - CC-BY-SA-3.0
   - CC-BY-SA-4.0
-license_expression: (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND (cc0-1.0 AND cc0-1.0) AND
-  (gpl-2.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND cc-by-sa-3.0
-  AND (lgpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.0-plus
-  AND gpl-2.0-plus) AND (lgpl-2.0-plus AND gpl-2.0-plus) AND (apache-2.0 AND apache-2.0) AND
-  (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0) AND (cc-by-sa-4.0 AND cc-by-sa-4.0)
+license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND (cc0-1.0 AND cc0-1.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND cc-by-sa-3.0 AND (lgpl-2.0-plus
+  AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus)
+  AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (apache-2.0 AND apache-2.0) AND (gpl-3.0-plus AND
+  gpl-3.0-plus) AND (cc-by-sa-4.0 AND cc-by-sa-4.0)
 copyright: |
   2009-2018 Igalia S.L
   2002 Jorn Baayen
@@ -73,8 +73,8 @@ copyright: |
   Jakub Steiner
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 93
+    end_line: 93
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -88,15 +88,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: apache-2.0'
-  - score: '94.59'
-    start_line: 1
-    end_line: 14
-    matcher: 3-seq
-    rule_length: 111
-    matched_length: 105
-    match_coverage: '94.59'
+  - score: '100.0'
+    start_line: 94
+    end_line: 107
+    matcher: 1-hash
+    rule_length: 107
+    matched_length: 107
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: apache-2.0_231.RULE
+    identifier: apache-2.0_949.RULE
     license_expression: apache-2.0
     is_license_text: no
     is_license_notice: yes
@@ -108,7 +108,7 @@ matches:
       you may not use this file except in compliance with the License.
       You may obtain a copy of the License at
 
-           [https]://www.apache.org/licenses/LICENSE-2.0
+           https://www.apache.org/licenses/LICENSE-2.0
 
       Unless required by applicable law or agreed to in writing, software
       distributed under the License is distributed on an "AS-IS" BASIS,
@@ -116,11 +116,11 @@ matches:
       See the License for the specific language governing permissions and
       limitations under the License.
 
-      On Debian systems a [copy] of the Apache License, Version 2.0 can be
+      On Debian systems a copy of the Apache License, Version 2.0 can be
       found in /usr/share/common-licenses/Apache-2.0
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 109
+    end_line: 109
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -134,16 +134,16 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2+'
-  - score: '97.62'
-    start_line: 1
-    end_line: 15
-    matcher: 3-seq
+  - score: '100.0'
+    start_line: 110
+    end_line: 124
+    matcher: 1-hash
     rule_length: 126
-    matched_length: 123
-    match_coverage: '97.62'
+    matched_length: 126
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_321.RULE
-    license_expression: gpl-3.0-plus
+    identifier: gpl-2.0-plus_839.RULE
+    license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -152,7 +152,7 @@ matches:
     matched_text: |
       This package is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version [2] of the License, or
+      the Free Software Foundation; either version 2 of the License, or
       (at your option) any later version.
 
       This package is distributed in the hope that it will be useful,
@@ -164,10 +164,10 @@ matches:
       along with this program. If not, see <https://www.gnu.org/licenses/>
 
       On Debian systems, the complete text of the GNU General
-      Public License version [2] can be found in "/usr/share/common-licenses/GPL-
+      Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 126
+    end_line: 126
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -182,14 +182,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-3+'
   - score: '100.0'
-    start_line: 1
-    end_line: 12
-    matcher: 2-aho
-    rule_length: 102
-    matched_length: 102
+    start_line: 127
+    end_line: 141
+    matcher: 1-hash
+    rule_length: 126
+    matched_length: 126
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_60.RULE
+    identifier: gpl-3.0-plus_385.RULE
     license_expression: gpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -209,27 +209,12 @@ matches:
 
       You should have received a copy of the GNU General Public License
       along with this program.  If not, see <https://www.gnu.org/licenses/>.
-  - score: '100.0'
-    start_line: 14
-    end_line: 15
-    matcher: 2-aho
-    rule_length: 24
-    matched_length: 24
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0_394.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
+
       On Debian systems, the complete text of the GNU General
       Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 143
+    end_line: 143
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -243,37 +228,37 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2+'
-  - score: '95.05'
-    start_line: 1
-    end_line: 12
-    matcher: 3-seq
-    rule_length: 101
-    matched_length: 96
-    match_coverage: '95.05'
+  - score: '100.0'
+    start_line: 144
+    end_line: 155
+    matcher: 1-hash
+    rule_length: 106
+    matched_length: 106
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_808.RULE
-    license_expression: gpl-2.0-plus
+    identifier: lgpl-2.0-plus_457.RULE
+    license_expression: lgpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or
-      modify it under the terms of the GNU [Library] General Public
+      This library is free software; you can redistribute it and/or
+      modify it under the terms of the GNU Library General Public
       License as published by the Free Software Foundation; either
       version 2 of the License, or (at your option) any later version.
 
-      This [library] is distributed in the hope that it will be useful,
+      This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-      [Lesser] General Public License for more details.
+      Lesser General Public License for more details.
 
-      On Debian systems, the complete text of the GNU [Library] General Public
-      License [version] [2] can be found in "/usr/share/common-licenses/
+      On Debian systems, the complete text of the GNU Library General Public
+      License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 157
+    end_line: 157
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -287,27 +272,27 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: cc0-1.0'
-  - score: '58.33'
-    start_line: 21
-    end_line: 22
-    matcher: 3-seq
-    rule_length: 24
-    matched_length: 14
-    match_coverage: '58.33'
+  - score: '100.0'
+    start_line: 178
+    end_line: 179
+    matcher: 2-aho
+    rule_length: 22
+    matched_length: 22
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: cc0-1.0_101.RULE
+    identifier: cc0-1.0_162.RULE
     license_expression: cc0-1.0
     is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
+    is_license_notice: no
+    is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      1.0 Universal
+      The complete text of the Creative Commons 0 1.0 Universal
       can be found in `/usr/share/common-licenses/CC0-1.0'.
   - score: '97.8'
-    start_line: 1
-    end_line: 307
+    start_line: 182
+    end_line: 488
     matcher: 3-seq
     rule_length: 3137
     matched_length: 3068
@@ -629,8 +614,8 @@ matches:
       License; this License is not intended to restrict the license of any
       rights under applicable law.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 491
+    end_line: 491
     matcher: 2-aho
     rule_length: 8
     matched_length: 8
@@ -645,8 +630,8 @@ matches:
     is_license_intro: no
     matched_text: http://creativecommons.org/licenses/by-sa/4.0/
   - score: '99.82'
-    start_line: 3
-    end_line: 424
+    start_line: 493
+    end_line: 914
     matcher: 3-seq
     rule_length: 2762
     matched_length: 2757

@@ -1,0 +1,9 @@
+key: yale-cas
+short_name: Yale CAS License
+name: Yale CAS License
+category: Permissive
+owner: Yale University
+homepage_url: https://github.com/apereo/cas/blob/6e29bc0001e3c304375efc5f8cbb04918d8f8691/docs/cas-server-documentation/protocol/CAS-Protocol-V2-Specification.md#appendix-d-cas-license
+spdx_license_key: LicenseRef-scancode-yale-cas
+ignorable_authors:
+    - Yale University

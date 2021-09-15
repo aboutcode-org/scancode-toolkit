@@ -1,4 +1,4 @@
-primary_license: gpl-2.0 AND gpl-1.0-plus AND lgpl-2.1 WITH openssl-exception-lgpl-2.0-plus
+primary_license: cups
 declared_license:
   - GPL-2.0 with AOSDL exception
   - LGPL-2.0 with AOSDL exception
@@ -7,9 +7,7 @@ declared_license:
   - GPL-2.0 with AOSDL exception
   - LGPL-2.0 with AOSDL exception
   - Zlib
-license_expression: (gpl-2.0 AND gpl-1.0-plus AND gpl-2.0 AND gpl-1.0-plus AND lgpl-2.1 WITH
-  openssl-exception-lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus AND gpl-1.0-plus AND
-  lgpl-2.1 WITH openssl-exception-lgpl-2.0-plus) AND (zlib AND zlib) AND bsd-simplified
+license_expression: cups AND cups AND (zlib AND zlib) AND bsd-simplified
 copyright: |
   2007-2015, Apple Inc.
   2007-2013, Apple Inc.
@@ -21,8 +19,8 @@ copyright: |
   1997-2007, Easy Software Products
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 26
+    end_line: 48
     matcher: 1-hash
     rule_length: 183
     matched_length: 183
@@ -60,15 +58,15 @@ matches:
       ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
       OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 3
-    matcher: 2-aho
-    rule_length: 34
-    matched_length: 34
+    start_line: 51
+    end_line: 107
+    matcher: 1-hash
+    rule_length: 355
+    matched_length: 355
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_51.RULE
-    license_expression: gpl-2.0
+    identifier: cups_6.RULE
+    license_expression: cups
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -78,151 +76,136 @@ matches:
       This program is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation, version 2 of the License.
-  - score: '27.0'
-    start_line: 5
-    end_line: 5
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 27
-    identifier: gpl-1.0-plus_30.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: full text of the GPL
-  - score: '100.0'
-    start_line: 6
-    end_line: 6
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2
-  - score: '100.0'
-    start_line: 22
-    end_line: 22
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl_bare_gnu_gpl.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: GNU GPL.
-  - score: '19.88'
-    start_line: 50
-    end_line: 53
-    matcher: 3-seq
-    rule_length: 43
-    matched_length: 9
-    match_coverage: '20.93'
-    rule_relevance: 95
-    identifier: lgpl-2.1_with_openssl-exception-lgpl-2.0-plus_1.RULE
-    license_expression: lgpl-2.1 WITH openssl-exception-lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      License Exception;
 
-      a. [Apple] [Inc]. explicitly allows the compilation and
-      distribution of
-  - score: '59.7'
-    start_line: 1
-    end_line: 6
-    matcher: 3-seq
-    rule_length: 67
-    matched_length: 40
-    match_coverage: '59.7'
+      The full text of the GPL is distributed as in
+      /usr/share/common-licenses/GPL-2 on Debian systems.
+
+      In addition, as the copyright holder of CUPS, Apple Inc. grants
+      the following special exception:
+
+           1. Apple Operating System Development License Exception;
+
+      a. Software that is developed by any person or entity
+      for an Apple Operating System ("Apple OS-Developed
+      Software"), including but not limited to Apple and
+      third party printer drivers, filters, and backends
+      for an Apple Operating System, that is linked to the
+      CUPS imaging library or based on any sample filters
+      or backends provided with CUPS shall not be
+      considered to be a derivative work or collective work
+      based on the CUPS program and is exempt from the
+      mandatory source code release clauses of the GNU GPL.
+      You may therefore distribute linked combinations of
+      the CUPS imaging library with Apple OS-Developed
+      Software without releasing the source code of the
+      Apple OS-Developed Software. You may also use sample
+      filters and backends provided with CUPS to develop
+      Apple OS-Developed Software without releasing the
+      source code of the Apple OS-Developed Software.
+
+      b. An Apple Operating System means any operating system
+      software developed and/or marketed by Apple Computer,
+      Inc., including but not limited to all existing
+      releases and versions of Apple's Darwin, Mac OS X,
+      and Mac OS X Server products and all follow-on
+      releases and future versions thereof.
+
+      c. This exception is only available for Apple
+      OS-Developed Software and does not apply to software
+      that is distributed for use on other operating
+      systems.
+
+      d. All CUPS software that falls under this license
+      exception have the following text at the top of each
+      source file:
+
+      This file is subject to the Apple OS-Developed
+      Software exception.
+
+           2. OpenSSL Toolkit License Exception;
+
+      a. Apple Inc. explicitly allows the compilation and
+      distribution of the CUPS software with the OpenSSL
+      Toolkit.
+
+      No developer is required to provide these exceptions in a
+      derived work.
+  - score: '100.0'
+    start_line: 110
+    end_line: 166
+    matcher: 1-hash
+    rule_length: 356
+    matched_length: 356
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.0-plus_16.RULE
-    license_expression: lgpl-2.0-plus
+    identifier: cups_4.RULE
+    license_expression: cups
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify it
+      This program is free software; you can redistribute it and/or modify it
       under the terms of the GNU Library General Public License as published
       by the Free Software Foundation, version 2 of the License.
 
-      [The] [full] [text] [of] [the] [LGPL] [is] [distributed] [as] in
-      /usr/share/common-licenses/LGPL-2
-  - score: '75.0'
-    start_line: 5
-    end_line: 5
-    matcher: 2-aho
-    rule_length: 1
-    matched_length: 1
-    match_coverage: '100.0'
-    rule_relevance: 75
-    identifier: lgpl_bare_single_word.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: LGPL
-  - score: '100.0'
-    start_line: 22
-    end_line: 22
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl_bare_gnu_gpl.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: GNU GPL.
-  - score: '19.88'
-    start_line: 50
-    end_line: 53
-    matcher: 3-seq
-    rule_length: 43
-    matched_length: 9
-    match_coverage: '20.93'
-    rule_relevance: 95
-    identifier: lgpl-2.1_with_openssl-exception-lgpl-2.0-plus_1.RULE
-    license_expression: lgpl-2.1 WITH openssl-exception-lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      License Exception;
+      The full text of the LGPL is distributed as in
+      /usr/share/common-licenses/LGPL-2 on Debian systems.
 
-      a. [Apple] [Inc]. explicitly allows the compilation and
-      distribution of
+      In addition, as the copyright holder of CUPS, Apple Inc. grants
+      the following special exception:
+
+           1. Apple Operating System Development License Exception;
+
+      a. Software that is developed by any person or entity
+      for an Apple Operating System ("Apple OS-Developed
+      Software"), including but not limited to Apple and
+      third party printer drivers, filters, and backends
+      for an Apple Operating System, that is linked to the
+      CUPS imaging library or based on any sample filters
+      or backends provided with CUPS shall not be
+      considered to be a derivative work or collective work
+      based on the CUPS program and is exempt from the
+      mandatory source code release clauses of the GNU GPL.
+      You may therefore distribute linked combinations of
+      the CUPS imaging library with Apple OS-Developed
+      Software without releasing the source code of the
+      Apple OS-Developed Software. You may also use sample
+      filters and backends provided with CUPS to develop
+      Apple OS-Developed Software without releasing the
+      source code of the Apple OS-Developed Software.
+
+      b. An Apple Operating System means any operating system
+      software developed and/or marketed by Apple Computer,
+      Inc., including but not limited to all existing
+      releases and versions of Apple's Darwin, Mac OS X,
+      and Mac OS X Server products and all follow-on
+      releases and future versions thereof.
+
+      c. This exception is only available for Apple
+      OS-Developed Software and does not apply to software
+      that is distributed for use on other operating
+      systems.
+
+      d. All CUPS software that falls under this license
+      exception have the following text at the top of each
+      source file:
+
+      This file is subject to the Apple OS-Developed
+      Software exception.
+
+           2. OpenSSL Toolkit License Exception;
+
+      a. Apple Inc. explicitly allows the compilation and
+      distribution of the CUPS software with the OpenSSL
+      Toolkit.
+
+      No developer is required to provide these exceptions in a
+      derived work.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 169
+    end_line: 169
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -237,8 +220,8 @@ matches:
     is_license_intro: no
     matched_text: zlib License
   - score: '100.0'
-    start_line: 3
-    end_line: 20
+    start_line: 171
+    end_line: 188
     matcher: 2-aho
     rule_length: 132
     matched_length: 132

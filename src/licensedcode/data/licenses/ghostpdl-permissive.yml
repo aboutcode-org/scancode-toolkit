@@ -1,0 +1,7 @@
+key: ghostpdl-permissive
+short_name: Ghostpdl Permissive
+name: Ghostpdl Permissive
+category: Permissive
+owner: Washington State University
+homepage_url: http://git.ghostscript.com/?p=ghostpdl.git;a=blob;f=devices/gdev4693.c;h=7e7307776d6bc0e18b89fc0e8f972513bb257f46;hb=HEAD
+spdx_license_key: LicenseRef-scancode-ghostpdl-permissive

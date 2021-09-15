@@ -4,6 +4,7 @@ license_expressions:
   - bsd-new
   - bsd-new
   - bsd-new
+  - bsd-x11
   - bsd-new
   - bsd-new
   - bsd-new
@@ -11,8 +12,7 @@ license_expressions:
   - bsd-new
   - bsd-new
   - bsd-new
-  - bsd-new
-  - bsd-new
+  - bsd-x11
   - bsd-new
   - bsd-new
   - bsd-new
@@ -22,3 +22,5 @@ notes: |
   https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/Net-SNMP.t1
   originally expected to be detected as Net-SNMP
   with coverage of 100.0
+expected_failure: yes
+

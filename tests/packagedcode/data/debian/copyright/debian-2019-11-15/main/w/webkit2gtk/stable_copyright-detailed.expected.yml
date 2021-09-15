@@ -30,11 +30,10 @@ declared_license:
   - Apache-2.0
   - ISC
 license_expression: bsd-simplified AND bsd-simplified AND bsd-new AND mit AND (gpl-3.0-plus
-  AND gpl-3.0-plus) AND (lgpl-2.0-plus AND lgpl-2.1-plus) AND (lgpl-2.1 AND lgpl-2.1-plus AND
-  lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND x11 AND ((mpl-1.1 AND mpl-1.1) OR (gpl-2.0-plus
-  AND gpl-2.0-plus) OR (lgpl-2.1-plus AND lgpl-2.1-plus)) AND public-domain AND (apache-2.0
-  AND apache-2.0 AND apache-2.0) AND (bsd-new AND boost-1.0) AND isc AND (lgpl-2.0 AND lgpl-2.1-plus)
-  AND (lgpl-2.0-plus AND lgpl-2.1-plus)
+  AND gpl-3.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus
+  AND lgpl-2.1-plus) AND x11 AND ((mpl-1.1 AND mpl-1.1) OR (gpl-2.0-plus AND gpl-2.0-plus) OR
+  (lgpl-2.1-plus AND lgpl-2.1-plus)) AND public-domain AND (apache-2.0 AND apache-2.0) AND (bsd-new
+  AND boost-1.0) AND isc AND (lgpl-2.0 AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus)
 copyright: |
   © 2002-2019 Apple Inc. and others
   © 2002-2014 Apple Inc. and others
@@ -57,8 +56,8 @@ copyright: |
   © 2014-2019 Alberto Garcia <berto@igalia.com>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 1015
+    end_line: 1017
     matcher: 1-hash
     rule_length: 26
     matched_length: 26
@@ -76,8 +75,8 @@ matches:
       claimed.
       This code is in the public domain; do with it what you wish.
   - score: '100.0'
-    start_line: 1
-    end_line: 20
+    start_line: 1045
+    end_line: 1064
     matcher: 1-hash
     rule_length: 183
     matched_length: 183
@@ -111,15 +110,15 @@ matches:
       OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '99.53'
-    start_line: 1
-    end_line: 25
-    matcher: 3-seq
-    rule_length: 213
-    matched_length: 213
+  - score: '100.0'
+    start_line: 1067
+    end_line: 1091
+    matcher: 1-hash
+    rule_length: 214
+    matched_length: 214
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-new_684.RULE
+    identifier: bsd-new_1071.RULE
     license_expression: bsd-new
     is_license_text: yes
     is_license_notice: no
@@ -137,7 +136,7 @@ matches:
          notice, this list of conditions and the following disclaimer
          in the documentation and/or other materials provided with the
          distribution.
-      3. Neither the name of [Ericsson] nor the names of its contributors
+      3. Neither the name of Ericsson nor the names of its contributors
          may be used to endorse or promote products derived from this
          software without specific prior written permission.
 
@@ -153,8 +152,8 @@ matches:
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: '19'
+    start_line: 1094
+    end_line: 1112
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -188,8 +187,8 @@ matches:
       CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 24
+    start_line: 1115
+    end_line: 1138
     matcher: 1-hash
     rule_length: 202
     matched_length: 202
@@ -228,8 +227,8 @@ matches:
       OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
       THE SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1140
+    end_line: 1140
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -243,16 +242,16 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2'
-  - score: '84.04'
-    start_line: 1
-    end_line: 10
-    matcher: 3-seq
-    rule_length: 94
-    matched_length: 79
-    match_coverage: '84.04'
+  - score: '100.0'
+    start_line: 1141
+    end_line: 1150
+    matcher: 1-hash
+    rule_length: 81
+    matched_length: 81
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.1-plus_202.RULE
-    license_expression: lgpl-2.1-plus
+    identifier: lgpl-2.0-plus_527.RULE
+    license_expression: lgpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -260,7 +259,7 @@ matches:
     is_license_intro: no
     matched_text: |
       This module is free software; you can redistribute it and/or modify
-      it under the terms of the GNU Lesser General Public License [version] [2]
+      it under the terms of the GNU Lesser General Public License version 2
       as published by the Free Software Foundation.
 
       This module is distributed in the hope that it will be useful, but
@@ -270,8 +269,8 @@ matches:
       On Debian systems, the complete text of the license can be found in
       the file /usr/share/common-licenses/LGPL-2
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1152
+    end_line: 1152
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -285,16 +284,16 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2+'
-  - score: '97.87'
-    start_line: 1
-    end_line: 11
-    matcher: 3-seq
-    rule_length: 94
+  - score: '100.0'
+    start_line: 1153
+    end_line: 1163
+    matcher: 1-hash
+    rule_length: 92
     matched_length: 92
-    match_coverage: '97.87'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.1-plus_202.RULE
-    license_expression: lgpl-2.1-plus
+    identifier: lgpl-2.0-plus_526.RULE
+    license_expression: lgpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -313,8 +312,8 @@ matches:
       On Debian systems, the complete text of the license can be found in
       the file /usr/share/common-licenses/LGPL-2
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1165
+    end_line: 1165
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -328,16 +327,16 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2.1'
-  - score: '85.11'
-    start_line: 1
-    end_line: 10
-    matcher: 3-seq
-    rule_length: 94
-    matched_length: 80
-    match_coverage: '85.11'
+  - score: '100.0'
+    start_line: 1166
+    end_line: 1175
+    matcher: 1-hash
+    rule_length: 83
+    matched_length: 83
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.1-plus_202.RULE
-    license_expression: lgpl-2.1-plus
+    identifier: lgpl-2.1_382.RULE
+    license_expression: lgpl-2.1
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -345,8 +344,8 @@ matches:
     is_license_intro: no
     matched_text: |
       This module is free software; you can redistribute it and/or modify
-      it under the terms of the GNU Lesser General Public License [version]
-      [2].[1] as published by the Free Software Foundation.
+      it under the terms of the GNU Lesser General Public License version
+      2.1 as published by the Free Software Foundation.
 
       This module is distributed in the hope that it will be useful, but
       WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -355,26 +354,8 @@ matches:
       On Debian systems, the complete text of the license can be found in
       the file /usr/share/common-licenses/LGPL-2.1
   - score: '100.0'
-    start_line: 2
-    end_line: 3
-    matcher: 2-aho
-    rule_length: 9
-    matched_length: 9
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1_282.RULE
-    license_expression: lgpl-2.1
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      the GNU Lesser General Public License version
-      2.1
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1177
+    end_line: 1177
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -389,8 +370,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-2.1+'
   - score: '100.0'
-    start_line: 1
-    end_line: 11
+    start_line: 1178
+    end_line: 1188
     matcher: 1-hash
     rule_length: 94
     matched_length: 94
@@ -416,8 +397,8 @@ matches:
       On Debian systems, the complete text of the license can be found in
       the file /usr/share/common-licenses/LGPL-2.1
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1190
+    end_line: 1190
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -432,8 +413,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 11
+    start_line: 1191
+    end_line: 1201
     matcher: 1-hash
     rule_length: 91
     matched_length: 91
@@ -459,8 +440,8 @@ matches:
       On Debian systems, the complete text of the license can be found in
       the file /usr/share/common-licenses/GPL-2
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1203
+    end_line: 1203
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -474,15 +455,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-3+'
-  - score: '93.0'
-    start_line: 1
-    end_line: 12
-    matcher: 3-seq
+  - score: '100.0'
+    start_line: 1204
+    end_line: 1215
+    matcher: 1-hash
     rule_length: 100
-    matched_length: 93
-    match_coverage: '93.0'
+    matched_length: 100
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_234.RULE
+    identifier: gpl-3.0-plus_508.RULE
     license_expression: gpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -500,11 +481,11 @@ matches:
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
       General Public License for more details.
 
-      On Debian systems, the complete text of the license [can] [be] [found] [in]
-      [the] [file] /usr/share/common-licenses/GPL-
+      On Debian systems, the complete text of the license can be found in
+      the file /usr/share/common-licenses/GPL-3
   - score: '100.0'
-    start_line: 1
-    end_line: 24
+    start_line: 1218
+    end_line: 1241
     matcher: 1-hash
     rule_length: 225
     matched_length: 225
@@ -543,8 +524,8 @@ matches:
       use or other dealings in this Software without prior written
       authorization of the copyright holder.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1243
+    end_line: 1243
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -559,8 +540,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: mpl-1.1'
   - score: '100.0'
-    start_line: 1
-    end_line: 467
+    start_line: 1244
+    end_line: 1710
     matcher: 1-hash
     rule_length: 3690
     matched_length: 3690
@@ -1042,8 +1023,8 @@ matches:
            use the text of this Exhibit A rather than the text found in the
            Original Code Source Code for Your Modifications.]
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1712
+    end_line: 1712
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -1058,40 +1039,26 @@ matches:
     is_license_intro: no
     matched_text: 'License: apache-2.0'
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
+    start_line: 1713
+    end_line: 1714
+    matcher: 1-hash
+    rule_length: 25
+    matched_length: 25
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: apache-2.0_392.RULE
+    identifier: apache-2.0_1018.RULE
     license_expression: apache-2.0
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text: the Apache license version 2
+    matched_text: |
+      On Debian systems, the full text of the Apache license version 2 can
+      be found in the file `/usr/share/common-licenses/Apache-2.0'.
   - score: '100.0'
-    start_line: 2
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Apache-2.0'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 13
+    start_line: 1717
+    end_line: 1729
     matcher: 1-hash
     rule_length: 111
     matched_length: 111
@@ -1119,8 +1086,8 @@ matches:
       TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
       PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 9
+    end_line: 9
     matcher: 2-aho
     rule_length: 3
     matched_length: 3

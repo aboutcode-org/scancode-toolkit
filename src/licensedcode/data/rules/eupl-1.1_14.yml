@@ -1,0 +1,6 @@
+license_expression: eupl-1.1
+is_license_notice: yes
+referenced_filenames:
+    - LICENCE.txt
+ignorable_urls:
+    - http://joinup.ec.europa.eu/software/page/eupl

@@ -1,0 +1,9 @@
+key: ncbi
+short_name: NCBI Public Domain Notice
+name: NCBI Public Domain Notice
+category: Public Domain
+owner: NCBI
+homepage_url: https://github.com/ncbi/ngs/blob/master/LICENSE#L8
+spdx_license_key: LicenseRef-scancode-ncbi
+other_urls:
+    - https://blast.ncbi.nlm.nih.gov/Blast.cgi
