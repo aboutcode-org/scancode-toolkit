@@ -26,6 +26,13 @@ Important API changes:
    rather than "packages". There is a a new top-level "packages" attribute
    that contains each package instance that can be aggregating data from
    multiple manifests for a single package instance.
+   
+Ouputs:
+~~~~~~~
+
+ - New output format ccsv and doc. ccsv generates a curated list of licence copyright 
+   package and URL info for each file of the source scanned. doc format generates 
+   report with consolidated packages and license(s) and license(s)-url(s).
 
  - The data structure for HTML output has been changed to include emails and urls under the 
    "infos" object. Now HTML template will output holders, authors, emails, and 

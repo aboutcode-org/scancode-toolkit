@@ -74,6 +74,8 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
                               FILE.
       --json-lines FILE       Write scan output as JSON Lines to FILE.
       --csv FILE              Write scan output as CSV to FILE.
+      --ccsv FILE             Write scan output as CCSV to FILE.
+      --doc FILE              Write scan output as DOC to FILE.
       --html FILE             Write scan output as HTML to FILE.
       --custom-output FILE    Write scan output to FILE formatted with the
                               custom Jinja template file.
@@ -328,6 +330,28 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
       options:
         help_group: output formats, name: csv: --csv
           help: Write scan output as CSV to FILE.
+      doc: None
+
+    --------------------------------------------   
+    Plugin: scancode_output:ccsv  class: formattedcode.output_ccsv:CcsvOutput
+      codebase_attributes:
+      resource_attributes:
+      sort_order: 100
+      required_plugins:
+      options:
+        help_group: output formats, name: ccsv: --ccsv
+          help: Write scan output as CCSV to FILE.
+      doc: None
+
+    --------------------------------------------
+	Plugin: scancode_output:doc  class: formattedcode.output_doc:DocOutput
+      codebase_attributes:
+      resource_attributes:
+      sort_order: 100
+      required_plugins:
+      options:
+        help_group: output formats, name: doc: --doc
+          help: Write scan output as DOC to FILE.
       doc: None
 
     --------------------------------------------

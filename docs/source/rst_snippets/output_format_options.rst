@@ -10,6 +10,10 @@ All Scan Output Options
 
 --csv FILE              Write scan output as CSV to FILE.
 
+--ccsv FILE             Write scan output as CCSV to FILE.
+
+--doc FILE             Write scan output as DOC to FILE.
+
 --html FILE             Write scan output as HTML to FILE.
 
 --custom-output         Write scan output to FILE formatted with the
