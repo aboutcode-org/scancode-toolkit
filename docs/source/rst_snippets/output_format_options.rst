@@ -31,8 +31,8 @@ All Scan Output Options
 --html-app FILE         Write scan output as a mini HTML
                         application to FILE.
 
---cyclonedx FILE        Write scan output as a CycloneDx 1.3 BOM in XML format to FILE
+--cyclonedx FILE        Write scan output as a CycloneDx 1.3 BOM in pretty-printed JSON format to FILE
 
---cyclonedx-json FILE   Write scan output as a CycloneDx 1.3 BOM in pretty-printed JSON format to FILE
+--cyclonedx-xml FILE   Write scan output as a CycloneDx 1.3 BOM in pretty-printed XML format to FILE
 
 .. include::  /rst_snippets/warning_snippets/output_htmlapp_dep.rst

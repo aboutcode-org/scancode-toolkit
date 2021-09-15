@@ -305,27 +305,7 @@ please see https://cyclonedx.org/specification/overview/
 @output_impl
 class CycloneDxOutput(OutputPlugin):
     options = [
-        PluggableCommandLineOption(('--cyclonedx', 'output_cyclonedx',),
-                                   type=FileOptionType(
-                                       mode='w', encoding='utf-8', lazy=True),
-                                   metavar='FILE',
-                                   help='Write scan output in CycloneDX format to FILE.',
-                                   help_group=OUTPUT_GROUP,
-                                   sort_order=70),
-    ]
-
-    def is_enabled(self, output_cyclonedx, **kwargs):
-        return output_cyclonedx
-
-    def process_codebase(self, codebase, output_cyclonedx, **kwargs):
-        bom = build_bom(codebase)
-        write_results(bom, output_cyclonedx, output_json=False)
-
-
-@output_impl
-class CycloneDxJsonOutput(OutputPlugin):
-    options = [
-        PluggableCommandLineOption(('--cyclonedx-json', 'output_cyclonedx_json',),
+        PluggableCommandLineOption(('--cyclonedx', 'output_cyclonedx_json',),
                                    type=FileOptionType(
                                        mode='w', encoding='utf-8', lazy=True),
                                    metavar='FILE',
@@ -339,7 +319,27 @@ class CycloneDxJsonOutput(OutputPlugin):
 
     def process_codebase(self, codebase, output_cyclonedx_json, **kwargs):
         bom = build_bom(codebase)
-        write_results(bom, output_file=output_cyclonedx_json)
+        write_results(bom, output_cyclonedx_json)
+
+
+@output_impl
+class CycloneDxXmlOutput(OutputPlugin):
+    options = [
+        PluggableCommandLineOption(('--cyclonedx-xml', 'output_cyclonedx_xml',),
+                                   type=FileOptionType(
+                                       mode='w', encoding='utf-8', lazy=True),
+                                   metavar='FILE',
+                                   help='Write scan output in CycloneDX XML format to FILE.',
+                                   help_group=OUTPUT_GROUP,
+                                   sort_order=70),
+    ]
+
+    def is_enabled(self, output_cyclonedx_xml, **kwargs):
+        return output_cyclonedx_xml
+
+    def process_codebase(self, codebase, output_cyclonedx_xml, **kwargs):
+        bom = build_bom(codebase)
+        write_results(bom, output_file=output_cyclonedx_xml, output_json=False)
 
 
 def _get_dependency_candidate(dependency, candidates):
@@ -640,7 +640,7 @@ class XmlSerializer():
         root_element = self._build_metadata_element(root_element)
         root_element = self._build_components_element(root_element)
         root_element = self._build_dependencies_element(root_element)
-        xml_metatag = '<?xml version="1.0" encoding="UTF-8"?>'
+        xml_metatag = '<?xml version="1.0" encoding="UTF-8"?>\n'
         return xml_metatag + etree.tostring(root_element,
                                             encoding='unicode',
                                             pretty_print=True)
@@ -661,3 +661,5 @@ def write_results(bom, output_file, output_json: bool = True):
         write_results_json(bom, output_file)
     else:
         write_results_xml(bom, output_file)
+    if close_fd:
+        output_file.close()

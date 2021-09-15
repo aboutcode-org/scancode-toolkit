@@ -586,17 +586,19 @@ Comparing Different ``json`` Output Formats
     that can't process ScanCode's native JSON output, but do support CycloneDx BOMs.
 
     To run an example scan on the test resources try:
-    ``./scancode --package --cyclonedx=bom.xml tests/formattedcode/data/cyclonedx/simple``
+    ``./scancode --package --cyclonedx=bom.json tests/formattedcode/data/cyclonedx/simple``
+
+    If you prefer XML output over JSON, please have a look at the ``--cyclonedx-xml`` option instead
 
 ____
 
-``--cyclonedx-json FILE``
+``--cyclonedx-xml FILE``
 -------------------------
 
-    This option allows outputting CycloneDx BOMs in JSON instead of XML format
+    This option allows outputting CycloneDx BOMs in XML format instead of JSON
 
     To run an example scan on the test resources try:
-    ``./scancode --package --cyclonedx-json=bom.json tests/formattedcode/data/cyclonedx/simple``
+    ``./scancode --package --cyclonedx-xml=bom.xml tests/formattedcode/data/cyclonedx/simple``
 
 ____
 

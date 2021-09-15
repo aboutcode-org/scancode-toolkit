@@ -122,7 +122,7 @@ def test_truncate_none_or_empty_values():
 def test_cyclonedx_json():
     test_dir = test_env.get_test_loc('cyclonedx/simple')
     result_file = test_env.get_temp_file('cyclonedx')
-    args = ['-p', test_dir, '--cyclonedx-json', result_file]
+    args = ['-p', test_dir, '--cyclonedx', result_file]
     run_scan_click(args)
     expected_file = test_env.get_test_loc('cyclonedx/expected.json')
 
@@ -141,7 +141,7 @@ def test_cyclonedx_xml():
     """verify components and dependencies are serialized correctly"""
     test_dir = test_env.get_test_loc('cyclonedx/simple')
     result_file = test_env.get_temp_file('cyclonedx')
-    args = ['-p', test_dir, '--cyclonedx', result_file]
+    args = ['-p', test_dir, '--cyclonedx-xml', result_file]
     run_scan_click(args)
     expected_file = test_env.get_test_loc('cyclonedx/expected.xml')
     result = load_xml_from_test_location(result_file)
