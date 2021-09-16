@@ -1044,6 +1044,8 @@ patterns = [
     (r'^JMagnetic$', 'NN'),
     (r'^Joint$', 'NN'),
     (r'^Jsunittest$', 'NN'),
+    (r'^List$', 'NN'),
+    (r'^Set$', 'NN'),
     (r'^Last$', 'NN'),
     (r'^LAW', 'NN'),
     (r'^Legal$', 'NN'),
@@ -2215,7 +2217,7 @@ grammar = """
     COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>  <NNP>} #22792
 
     # Copyright (c) 2017 odahcam
-    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN> <ALLRIGHTRESERVED>?} #22793
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <ALLRIGHTRESERVED>?} #22793
 
     # Licensed material of Foobar Company, All Rights Reserved, (C) 2005
     COPYRIGHT: {<COMPANY>  <ALLRIGHTRESERVED>  <COPYRIGHT>} #22794

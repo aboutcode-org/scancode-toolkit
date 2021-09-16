@@ -61,11 +61,6 @@ jobs:
                 bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_detection_datadriven_external.py
 
-              license_validate_basic: |
-                bin/pytest -n 3 -vvs --test-suite=validate \
-                  tests/licensedcode/test_detection_validate.py \
-                  -k TestValidateLicenseBasic
-
               license_validate_ext_1: |
                 bin/pytest -n 3 -vvs --test-suite=validate \
                   tests/licensedcode/test_detection_validate.py \
