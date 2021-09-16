@@ -389,14 +389,16 @@ def generate_dependencies_list(dep_map, comp_map) -> List[CycloneDxDependency]:
         return None
 
     # holds a mapping of type purl -> list(purl)
-    dependencies = {}
+    dependencies_by_dependant = {}
 
     resolved_scopes = {}
 
     for purl in dep_map:
         for dependency in dep_map[purl]:
             if dependency.get('is_resolved'):
-                _set_key_or_append(dependencies, purl, dependency.get('purl'))
+                _set_key_or_append(
+                    dependencies_by_dependant, purl, dependency.get('purl')
+                )
             else:
                 candidates = dict(
                     filter(
@@ -406,7 +408,9 @@ def generate_dependencies_list(dep_map, comp_map) -> List[CycloneDxDependency]:
                 )
                 resolved_dependency = _get_dependency_candidate(dependency, candidates)
                 if resolved_dependency is not None:
-                    _set_key_or_append(dependencies, purl, resolved_dependency.bom_ref)
+                    _set_key_or_append(
+                        dependencies_by_dependant, purl, resolved_dependency.bom_ref
+                    )
                     _set_key_or_append(
                         resolved_scopes, purl, dependency.get('is_optional')
                     )
@@ -418,7 +422,7 @@ def generate_dependencies_list(dep_map, comp_map) -> List[CycloneDxDependency]:
     return list(
         map(
             lambda entry: CycloneDxDependency(ref=entry[0], dependsOn=entry[1]),
-            dependencies.items(),
+            dependencies_by_dependant.items(),
         )
     )
 
@@ -426,7 +430,12 @@ def generate_dependencies_list(dep_map, comp_map) -> List[CycloneDxDependency]:
 def merge_components(existing: CycloneDxComponent, new: CycloneDxComponent):
     """
     Merges a new component with an existing component in-place
+    First verify that both components have the same purl,
+    raise an exception of type ValueError if they don't
     """
+
+    if existing.purl != new.purl:
+        raise ValueError("Merging is only allowed for components with identical purls!")
 
     # helper that merges lists avoiding duplicate entries
     merge_lists = lambda x, y: x.extend([item for item in y if item not in x])
@@ -462,7 +471,7 @@ def merge_components(existing: CycloneDxComponent, new: CycloneDxComponent):
 
 
 def generate_component_list(packages) -> List[CycloneDxComponent]:
-    ref_component_map = {}
+    components_by_purl = {}
     components = []
     for package in packages:
         hashes = get_hashes_list(package)
@@ -488,19 +497,21 @@ def generate_component_list(packages) -> List[CycloneDxComponent]:
                 externalReferences=refs,
                 bom_ref=purl,
             )
-
-            if purl not in ref_component_map.keys():
+            # since it is used as a bom-ref the purl has to be unique, merge duplicates
+            if purl not in components_by_purl.keys():
                 components.append(component)
-                ref_component_map[purl] = component
+                components_by_purl[purl] = component
             else:
-                merge_components(ref_component_map[purl], component)
+                merge_components(components_by_purl[purl], component)
 
     return components
 
 
 def build_bom(codebase) -> CycloneDxBom:
-    # TODO: find out if we can always expect that header to be present
-    scancode_header = codebase.get_headers()[0]
+    # we only retain the scancode-toolkit header in the CycloneDx output
+    scancode_header = next(
+        (h for h in codebase.get_headers() if h.get('tool_name') == 'scancode-toolkit')
+    )
 
     scancode_version = scancode_header.get('tool_version')
 
@@ -518,9 +529,9 @@ def build_bom(codebase) -> CycloneDxBom:
 
     components = generate_component_list(packages)
     # associate components by purl
-    comp_map = dict(map(lambda c: (c.purl, c), components))
+    componenty_by_purl = dict(map(lambda c: (c.purl, c), components))
 
-    dependencies = generate_dependencies_list(dep_map, comp_map)
+    dependencies = generate_dependencies_list(dep_map, componenty_by_purl)
 
     bom = CycloneDxBom(
         components=components, metadata=bom_metadata, dependencies=dependencies
