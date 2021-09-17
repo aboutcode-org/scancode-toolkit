@@ -600,6 +600,9 @@ patterns = [
     # parens such as (1) or (a) is a sign of junk but of course NOT (c)
     (r'^\(([abdefghi\d]|ii|iii)\)$', 'JUNK'),
 
+    # Single uppercase letters followed by a period
+    (r'^[A-Z]\.$', 'JUNK'),
+
     # found in crypto certificates and LDAP
     (r'^O=$', 'JUNK'),
     (r'^OU=?$', 'JUNK'),
