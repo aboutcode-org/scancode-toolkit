@@ -1140,6 +1140,7 @@ patterns = [
     (r'^The$', 'NN'),
     (r'^THE', 'NN'),
     (r'^These$', 'NN'),
+    (r'^[tT]here$', 'NN'),
     (r'^This$', 'NN'),
     (r'^THIS$', 'NN'),
     (r'^Those$', 'NN'),
