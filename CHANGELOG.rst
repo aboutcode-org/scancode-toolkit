@@ -1,8 +1,9 @@
 Changelog
 =========
 
-v21.x.x (next, future)
+31.0.0 (next, future)
 -----------------------
+
 
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -27,9 +28,9 @@ Important API changes:
   that contains each package instance that can be aggregating data from
   multiple manifests for a single package instance.
 
-- The data structure for HTML output has been changed to include emails and urls under the 
-  "infos" object. Now HTML template will output holders, authors, emails, and 
-  urls into separate tables like "licenses" and "copyrights".
+- The data structure for HTML output has been changed to include emails and
+  urls under the  "infos" object. Now HTML template will output holders,
+  authors, emails, and urls into separate tables like "licenses" and "copyrights".
 
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
@@ -45,8 +46,47 @@ Package detection:
 - Add support for OpenWRT packages.
 - Add support for Yocto/BitBake .bb recipes.
 - Add support to track installed files for each Package type.
+
+
+Outputs:
+~~~~~~~~
+
+- There is a new CycloneDX output.
+
+30.0.0 - 2021-09-19
+--------------------
+
+This is a major release with new features, and several bug fixes and improvements
+
+We have droped using calendar-based versions and are now switched back to semver.
+We also have introduced a new JSON format version based on semver to version
+the JSON output format data structure.
+
+
+Outputs:
+~~~~~~~~
+
+- The SPDX output now has the mandatory ids attribute per SPDX spec. And we support
+  SPDX 2.2
+- There is a new CycloneDX output.
+
+
+Package detection:
+~~~~~~~~~~~~~~~~~~
+
+- The Debian packages declared license detection in machine readable copyright files
+  and unstructured copyright has been significantly improved with the tracking of 
+  the detection start and end line of a license match. This is not yet exposed outside
+  of tests.
+
 - Debian copyright license detection has been significantly improved with new
   license detection rules.
+
+
+Copyright detection:
+~~~~~~~~~~~~~~~~~~~~
+
+- The copyright detection accuracy has been improved and several bugs fixed.
 
 
 License detection:
@@ -66,10 +106,21 @@ License detection:
 
 - Rules that match at least one unknown license have a flag "has_unknown" set
   in the returned match results.
-  
-- There is a new experimental command line option "--unknown-licenses" to
-  detect unknown licenses and follow license references such as "See license in
-  file COPYING". The actual data structure for this new option is evolving.
+
+- Experimental: License detection can now "follow" license mentions that reference another
+  file such as "see license in COPYING". Use the the new --unknown-licenses command line
+  option to test this new feature. It will evolve significantly
+
+
+
+Miscellaneous
+~~~~~~~~~~~~~~~
+
+- Add "--no-check-version" CLI option to scancode to bypass live new version
+  check on PyPI
+
+- We now display again the command line progressbar counters correctly.
+
 
 
 Many thanks to every contributors that made this possible and in particular:
@@ -78,6 +129,13 @@ Many thanks to every contributors that made this possible and in particular:
 - Ayan Sinha Mahapatra @AyanSinhaMahapatra
 - Jono Yang @JonoYang
 - Philippe Ombredanne @pombredanne
+- John Horan
+- Yunus
+- Hesa
+- Mirko
+- Helio
+- Rainer Bieniek
+
 
 
 v21.8.4
