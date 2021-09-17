@@ -1,0 +1,7 @@
+#
+# SPDX-FileCopyrightText: Copyright 2019-2021 Test Inc.
+# SPDX-FileCopyrightText: Copyright (c) SOIM
+#
+# SPDX-License-Identifier: GPL-3.0
+
+import os
