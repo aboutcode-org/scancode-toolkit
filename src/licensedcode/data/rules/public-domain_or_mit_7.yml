@@ -1,0 +1,5 @@
+license_expression: public-domain OR mit
+is_license_notice: yes
+notes: Seen in JSONCPP
+ignorable_urls:
+    - http://en.wikipedia.org/wiki/MIT_License
