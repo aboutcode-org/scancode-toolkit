@@ -1,0 +1,8 @@
+license_expression: proprietary-license
+is_license_text: yes
+minimum_coverage: 95
+notes: Based on the MIT with material and problematic changes. Seen in https://github.com/wellnotme/TUSC/blob/0cbe3141a7a879e1b1648e981f04470fc0fd4de3/reshade-shaders/Shaders/FakeMotionBlur.fx#L6
+    and a few other places. It says "with restriction including without limitation the rights"
+    instead of "without restriction including without limitation the rights" in a standard MIT.
+    Since there is no way to know if this is a bona fide typo or some intentianal change this
+    is reported as proprietary for now.
