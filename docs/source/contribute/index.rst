@@ -10,4 +10,5 @@
    roadmap
    gsoc17_final_report
    gsoc19_final_report
+   gsoc21_final_report
    long_running_issues
