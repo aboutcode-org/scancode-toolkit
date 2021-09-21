@@ -39,13 +39,6 @@ def _get_set_of_known_licenses_and_spdx_license_ids() -> Tuple[List, FrozenSet[s
 
 known_licenses, spdx_ids = _get_set_of_known_licenses_and_spdx_license_ids()
 
-cdx_hash_types_by_scancode_hash = {
-    'md5': 'MD5',
-    'sha1': 'SHA-1',
-    'sha256': 'SHA-256',
-    'sha512': 'SHA-512',
-}
-
 
 @attr.s
 class CycloneDxLicense:
@@ -56,9 +49,99 @@ class CycloneDxLicense:
 
 @attr.s
 class CycloneDxLicenseEntry:
+    @classmethod
+    def from_declared_license(cls, declared_license) -> 'CycloneDxLicenseEntry':
+        lic = CycloneDxLicense()
+        if isinstance(declared_license, str):
+            # if license key is in list of known spdx ids, set as id
+            if declared_license in spdx_ids:
+                lic.id = declared_license
+            # if we match this regex assume we are dealing with a URL
+            elif declared_license is not None and url_pattern.match(declared_license):
+                lic.url = declared_license
+            else:
+                lic.name = declared_license
+        # some declared_license entries are also expressed as dicts
+        elif isinstance(declared_license, dict):
+            lic_type = declared_license.get('type')
+            if lic_type in spdx_ids:
+                lic.id = lic_type
+            else:
+                lic.name = lic_type
+            lic.url = declared_license.get('url')
+        return CycloneDxLicenseEntry(license=lic, expression=None)
+
+
+    @classmethod
+    def from_license_expression(
+            cls, license_expression: str,
+    ) -> Optional['CycloneDxLicenseEntry']:
+        """
+        Return Optional[CycloneDxLicenseEntry] built from a license_expression
+        Attempt to resolve `license_expression` to a CycloneDxLicense
+        if that fails, set it as `expression`
+        if `license_expression`is None, return None
+        """
+
+        # exit early if we don't have a valid license_expression
+        if license_expression is None:
+            return None
+
+        license = known_licenses.get(license_expression)
+        if license is not None:
+            # attempt to set either official OSI URL or any license text URL
+            url = license.osi_url
+            if license.text_urls:
+                url = license.text_urls[0]
+            lic = CycloneDxLicense(id=license.spdx_license_key, name=license.name, url=url)
+            return CycloneDxLicenseEntry(license=lic, expression=None)
+        else:
+            return CycloneDxLicenseEntry(license=None, expression=license_expression)
+
     license: CycloneDxLicense = attr.ib(default=None)
     expression: str = attr.ib(default=None)
 
+
+    @classmethod
+    def from_package(cls, package: dict) -> List['CycloneDxLicenseEntry']:
+        """
+        Return a list of CycloneDxLicenseEntry instances built from package data
+        Attempt to map `license_expression` and `declared_license` data to CycloneDx format
+        """
+        # store previously encountered IDs to identify duplicates
+        seen_ids = set()
+
+        lic_expr = package.get("license_expression")
+        entry = CycloneDxLicenseEntry.from_license_expression(lic_expr)
+        if entry is not None:
+            licenses = [entry]
+            if entry.license is not None:
+                seen_ids.add(entry.license.id)
+        else:
+            licenses = []
+
+        declared_license = package["declared_license"]
+        if isinstance(declared_license, list):
+            for entry in declared_license:
+                lic_entry = CycloneDxLicenseEntry.from_declared_license(entry)
+                if lic_entry is None:
+                    continue
+                id = lic_entry.license.id if lic_entry.license is not None else None
+                if id in seen_ids or id is None:
+                    continue
+                else:
+                    seen_ids.add(id)
+                    if lic_entry is not None:
+                        licenses.append(lic_entry)
+        else:
+            lic_entry = CycloneDxLicenseEntry.from_declared_license(declared_license)
+            if lic_entry is not None:
+                id = lic_entry.license.id if lic_entry.license is not None else None
+                if id not in seen_ids and id is not None:
+                    seen_ids.add(id)
+                    licenses.append(lic_entry)
+
+        return licenses
 
 @attr.s
 class CycloneDxAttribute:
@@ -75,12 +158,43 @@ class CycloneDxMetadata:
 
 @attr.s
 class CycloneDxHashObject:
+    __cdx_hash_types_by_scancode_hash = {
+        'md5': 'MD5',
+        'sha1': 'SHA-1',
+        'sha256': 'SHA-256',
+        'sha512': 'SHA-512',
+    }
+    @classmethod
+    def from_package(cls, package: dict) -> List['CycloneDxHashObject']:
+        hashes = []
+        for scancode_alg, cyclonedx_alg in cls.__cdx_hash_types_by_scancode_hash.items():
+            digest = package.get(scancode_alg)
+            if digest:
+                hashes.append(CycloneDxHashObject(alg=cyclonedx_alg, content=digest))
+        return hashes
     alg: str = attr.ib()
     content: str = attr.ib()
 
 
+def _get_external_ref_from_key(package: dict, key: str) -> 'CycloneDxExternalRef':
+    url = package.get(key)
+    type = url_type_mapping[key]
+    if url is not None and type is not None:
+        return CycloneDxExternalRef(url=url, type=type)
+    return None
+
+
 @attr.s
 class CycloneDxExternalRef:
+    @classmethod
+    def from_package(cls, package: dict) -> List['CycloneDxExternalRef']:
+        ext_refs = []
+        for key in url_type_mapping:
+            ref = _get_external_ref_from_key(package, key)
+            if ref is not None:
+                ext_refs.append(ref)
+        return ext_refs
+
     url: str = attr.ib()
     reference_types = frozenset(
         [
@@ -125,6 +239,43 @@ class CycloneDxComponentScope(str, Enum):
 
 @attr.s
 class CycloneDxComponent:
+    @classmethod
+    def from_packages(cls, packages) -> List['CycloneDxComponent']:
+        components_by_purl = {}
+        components = []
+        for package in packages:
+            hashes = CycloneDxHashObject.from_package(package)
+            refs = CycloneDxExternalRef.from_package(package)
+            licenses = CycloneDxLicenseEntry.from_package(package)
+            author = get_author_from_parties(package.get('parties'))
+            purl = package.get('purl')
+
+            name = package.get('name')
+            version = package.get('version')
+            # if we don't have at least the required name and version we skip the component
+            if name is not None and version is not None:
+                component = CycloneDxComponent(
+                    name=package.get('name'),
+                    version=package.get('version'),
+                    group=package.get('namespace'),
+                    purl=purl,
+                    author=author,
+                    copyright=package.get('copyright'),
+                    description=package.get('description'),
+                    hashes=hashes,
+                    licenses=licenses,
+                    externalReferences=refs,
+                    bom_ref=purl,
+                )
+                # since it is used as a bom-ref the purl has to be unique, merge duplicates
+                if purl not in components_by_purl.keys():
+                    components.append(component)
+                    components_by_purl[purl] = component
+                else:
+                    merge_components(components_by_purl[purl], component)
+
+        return components
+
     name: str = attr.ib()
     version: str = attr.ib()
     bom_ref: str = attr.ib(default=None)
@@ -149,6 +300,38 @@ class CycloneDxDependency:
 
 @attr.s
 class CycloneDxBom:
+    @classmethod
+    def from_codebase(cls, codebase) -> 'CycloneDxBom':
+        # we only retain the scancode-toolkit header in the CycloneDx output
+        scancode_header = next(
+            (h for h in codebase.get_headers() if h.get('tool_name') == 'scancode-toolkit')
+        )
+
+        scancode_version = scancode_header.get('tool_version')
+
+        tool_header = get_tool_header(scancode_version)
+        bom_metadata = CycloneDxMetadata(tools=[tool_header])
+
+        files = OutputPlugin.get_files(codebase)
+
+        # get all packages that are not None
+        packages = [package for file in files for package in file.get('packages')]
+        # associate dependency relationship by purl of dependent package
+        dep_map = dict(
+            [(package.get('purl'), package.get('dependencies')) for package in packages]
+        )
+
+        components = CycloneDxComponent.from_packages(packages)
+        # associate components by purl
+        componenty_by_purl = dict(map(lambda c: (c.purl, c), components))
+
+        dependencies = generate_dependencies_list(dep_map, componenty_by_purl)
+
+        bom = CycloneDxBom(
+            components=components, metadata=bom_metadata, dependencies=dependencies
+        )
+        return bom
+
     bomFormat: str = attr.ib(init=False, default='CycloneDX')
     specVersion: str = attr.ib(init=False, default='1.3')
     serialNumber: str = attr.ib(init=False, default='urn:uuid:' + str(uuid.uuid4()))
@@ -162,104 +345,7 @@ def get_tool_header(version: str) -> dict:
     return {'vendor': 'nexB Inc.', 'name': 'scancode-toolkit', 'version': version}
 
 
-def get_external_ref_from_key(package: dict, key: str) -> CycloneDxExternalRef:
-    url = package.get(key)
-    type = url_type_mapping[key]
-    if url is not None and type is not None:
-        return CycloneDxExternalRef(url=url, type=type)
-    return None
-
-
-def get_license_entry_from_license_expression(
-    license_expression: str,
-) -> Optional[CycloneDxLicenseEntry]:
-    """
-    Return Optional[CycloneDxLicenseEntry] built from a license_expression
-    Attempt to resolve `license_expression` to a CycloneDxLicense
-    if that fails, set it as `expression`
-    if `license_expression`is None, return None
-    """
-
-    # exit early if we don't have a valid license_expression
-    if license_expression is None:
-        return None
-
-    license = known_licenses.get(license_expression)
-    if license is not None:
-        # attempt to set either official OSI URL or any license text URL
-        url = license.osi_url
-        if license.text_urls:
-            url = license.text_urls[0]
-        lic = CycloneDxLicense(id=license.spdx_license_key, name=license.name, url=url)
-        return CycloneDxLicenseEntry(license=lic, expression=None)
-    else:
-        return CycloneDxLicenseEntry(license=None, expression=license_expression)
-
-
 url_pattern = re.compile(r"^(https?://)?[^\s/$.?#].[^\s]*$")
-
-
-def get_license_entry_from_declared_license(declared_license) -> CycloneDxLicenseEntry:
-    lic = CycloneDxLicense()
-    if isinstance(declared_license, str):
-        # if license key is in list of known spdx ids, set as id
-        if declared_license in spdx_ids:
-            lic.id = declared_license
-        # if we match this regex assume we are dealing with a URL
-        elif declared_license is not None and url_pattern.match(declared_license):
-            lic.url = declared_license
-        else:
-            lic.name = declared_license
-    # some declared_license entries are also expressed as dicts
-    elif isinstance(declared_license, dict):
-        lic_type = declared_license.get('type')
-        if lic_type in spdx_ids:
-            lic.id = lic_type
-        else:
-            lic.name = lic_type
-        lic.url = declared_license.get('url')
-    return CycloneDxLicenseEntry(license=lic, expression=None)
-
-
-def get_licenses(package: dict) -> List[CycloneDxLicenseEntry]:
-    """
-    Return a list of CycloneDxLicenseEntry instances built from package data
-    Attempt to map `license_expression` and `declared_license` data to CycloneDx format
-    """
-    # store previously encountered IDs to identify duplicates
-    seen_ids = set()
-
-    lic_expr = package.get("license_expression")
-    entry = get_license_entry_from_license_expression(lic_expr)
-    if entry is not None:
-        licenses = [entry]
-        if entry.license is not None:
-            seen_ids.add(entry.license.id)
-    else:
-        licenses = []
-
-    declared_license = package["declared_license"]
-    if isinstance(declared_license, list):
-        for entry in declared_license:
-            lic_entry = get_license_entry_from_declared_license(entry)
-            if lic_entry is None:
-                continue
-            id = lic_entry.license.id if lic_entry.license is not None else None
-            if id in seen_ids or id is None:
-                continue
-            else:
-                seen_ids.add(id)
-                if lic_entry is not None:
-                    licenses.append(lic_entry)
-    else:
-        lic_entry = get_license_entry_from_declared_license(declared_license)
-        if lic_entry is not None:
-            id = lic_entry.license.id if lic_entry.license is not None else None
-            if id not in seen_ids and id is not None:
-                seen_ids.add(id)
-                licenses.append(lic_entry)
-
-    return licenses
 
 
 # maps ScanCode URL attributes to CycloneDx external reference types
@@ -273,28 +359,6 @@ url_type_mapping = {
     'repository_download_url': 'distribution',
     'api_data_url': 'bom',
 }
-
-
-def get_external_refs(package: dict) -> List[CycloneDxExternalRef]:
-    ext_refs = []
-
-    for key in url_type_mapping:
-        ref = get_external_ref_from_key(package, key)
-        if ref is not None:
-            ext_refs.append(ref)
-    return ext_refs
-
-
-def get_hashes_list(package: dict) -> List[CycloneDxHashObject]:
-    hashes = []
-    for alg in cdx_hash_types_by_scancode_hash:
-        if alg in package:
-            digest = package[alg]
-            if alg is not None and digest is not None:
-                hashes.append(
-                    CycloneDxHashObject(cdx_hash_types_by_scancode_hash[alg], digest)
-                )
-    return hashes
 
 
 def get_author_from_parties(parties: List[dict]) -> str:
@@ -337,7 +401,7 @@ class CycloneDxOutput(OutputPlugin):
         return output_cyclonedx_json
 
     def process_codebase(self, codebase, output_cyclonedx_json, **kwargs):
-        bom = build_bom(codebase)
+        bom = CycloneDxBom.from_codebase(codebase)
         write_results(bom, output_cyclonedx_json)
 
 
@@ -365,7 +429,7 @@ class CycloneDxXmlOutput(OutputPlugin):
         return output_cyclonedx_xml
 
     def process_codebase(self, codebase, output_cyclonedx_xml, **kwargs):
-        bom = build_bom(codebase)
+        bom = CycloneDxBom.from_codebase(codebase)
         write_results(bom, output_file=output_cyclonedx_xml, output_json=False)
 
 
@@ -468,75 +532,6 @@ def merge_components(existing: CycloneDxComponent, new: CycloneDxComponent):
         existing.properties = new.properties
     elif new.properties is not None:
         merge_lists(existing.properties, new.properties)
-
-
-def generate_component_list(packages) -> List[CycloneDxComponent]:
-    components_by_purl = {}
-    components = []
-    for package in packages:
-        hashes = get_hashes_list(package)
-        refs = get_external_refs(package)
-        licenses = get_licenses(package)
-        author = get_author_from_parties(package.get('parties'))
-        purl = package.get('purl')
-
-        name = package.get('name')
-        version = package.get('version')
-        # if we don't have at least the required name and version we skip the component
-        if name is not None and version is not None:
-            component = CycloneDxComponent(
-                name=package.get('name'),
-                version=package.get('version'),
-                group=package.get('namespace'),
-                purl=purl,
-                author=author,
-                copyright=package.get('copyright'),
-                description=package.get('description'),
-                hashes=hashes,
-                licenses=licenses,
-                externalReferences=refs,
-                bom_ref=purl,
-            )
-            # since it is used as a bom-ref the purl has to be unique, merge duplicates
-            if purl not in components_by_purl.keys():
-                components.append(component)
-                components_by_purl[purl] = component
-            else:
-                merge_components(components_by_purl[purl], component)
-
-    return components
-
-
-def build_bom(codebase) -> CycloneDxBom:
-    # we only retain the scancode-toolkit header in the CycloneDx output
-    scancode_header = next(
-        (h for h in codebase.get_headers() if h.get('tool_name') == 'scancode-toolkit')
-    )
-
-    scancode_version = scancode_header.get('tool_version')
-
-    tool_header = get_tool_header(scancode_version)
-    bom_metadata = CycloneDxMetadata(tools=[tool_header])
-
-    files = OutputPlugin.get_files(codebase)
-
-    # get all packages that are not None
-    packages = [package for file in files for package in file.get('packages')]
-    # associate dependency relationship by purl of dependent package
-    dep_map = dict(
-        [(package.get('purl'), package.get('dependencies')) for package in packages]
-    )
-
-    components = generate_component_list(packages)
-    # associate components by purl
-    componenty_by_purl = dict(map(lambda c: (c.purl, c), components))
-
-    dependencies = generate_dependencies_list(dep_map, componenty_by_purl)
-
-    bom = CycloneDxBom(
-        components=components, metadata=bom_metadata, dependencies=dependencies
-    )
-    return bom
 
 
 def truncate_none_or_empty_values(obj) -> dict:

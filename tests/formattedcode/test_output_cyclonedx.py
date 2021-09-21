@@ -67,7 +67,7 @@ def test_get_author_from_parties_default_none():
 
 def test_get_licenses_from_package():
     package = {'license_expression': 'mit', 'declared_license': ['MIT']}
-    licenses = get_licenses(package)
+    licenses = CycloneDxLicenseEntry.from_package(package)
     # check if duplicate entries are removed
     assert len(licenses) == 1
     assert licenses[0].license.id == 'MIT'
@@ -81,7 +81,7 @@ def test_can_get_hashes_from_package():
         'sha512': 'f385a335b20e0bd933b3d59abc41e9b05f4333db6cd948b579b2562'
         + 'd617a6fa35e13ffa0c2eceae031afcf73c5fb7e1660fade207ddf2a0e312e006eb115e9b0',
     }
-    hashes = get_hashes_list(package=package)
+    hashes = CycloneDxHashObject.from_package(package=package)
     assert len(hashes) == 4
     for hash_entry in hashes:
         assert hash_entry.content is not None
