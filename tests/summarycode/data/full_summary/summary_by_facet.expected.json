@@ -5,6 +5,7 @@
       "options": {
         "input": "<path>",
         "--copyright": true,
+        "--email": true,
         "--facet": [
           "dev=*.java",
           "dev=*.cs",
