@@ -121,6 +121,7 @@ Miscellaneous
 
 - We now display again the command line progressbar counters correctly.
 
+- Fix bug in summarization
 
 
 Many thanks to every contributors that made this possible and in particular:
@@ -129,13 +130,22 @@ Many thanks to every contributors that made this possible and in particular:
 - Ayan Sinha Mahapatra @AyanSinhaMahapatra
 - Jono Yang @JonoYang
 - Philippe Ombredanne @pombredanne
-- John Horan
-- Yunus
-- Hesa
-- Mirko
-- Helio
-- Rainer Bieniek
-
+- John M. Horan @johnmhoran
+- Yunus Rahbar @yns88
+- Henrik Sandklef @hesa
+- Armijn Hemel @armijnhemel 
+- Nishchith Shetty @inishchith 
+- Soim Kim @soimkim
+- Bryan Sutula @sutula
+- dyh @yunhua-deng
+- Mikko Murto @mmurto
+- mapelpapel @mapelpapel
+- Rainer Bieniek @rbieniek 
+- gunaztar @gunaztar
+- Siddhant Khare @Siddhant-K-code
+- Dennis Clark @DennisClark
+- Chin-Yeung Li @chinyeungli
+- Helio Chissini de Castro @heliocastro
 
 
 v21.8.4
