@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 2018, 1-sim.aero
+ignorable_holders:
+    - 1-sim.aero
