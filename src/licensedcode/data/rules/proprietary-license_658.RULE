@@ -1,0 +1,35 @@
+Redistribution in source and binary forms, with or without modification, are not permitted.
+The use of this code in course or binary form is permitted under the following conditions:
+1.  The copyright holders have been notified of the use of SASL in a commercial project, 
+and have given their agreement. The code is to be used with a special notice provided below.
+2.  The code is used in a free project which is distributed for free use with no limitation 
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The original SASL code has been made available by the contributors who have all agreed in a 
+written legal form to donate their code to the copyright holders.
+Use of SASL in any commercial or free project must retain the following copyright notice for
+end user.
+
+ANY USE OF THIS CODE CONSTITUTES ACCEPTANCE OF THE TERMS OF THE COPYRIGHT NOTICE.
+The current software uses the SASL library. Redistribution in source and binary forms, with 
+or without modification, are not permitted.
+
+Copyright (c) 2018, 1-sim.aero
+All rights reserved.
+
+SASL copyright holders are not responsible in any event for malfunction, unavailability, 
+incompatibility or other problems that might occur while using the end product which uses 
+SASL in conjunction with any other software. SASL copyright holders are not liable for any 
+properties for any end product which uses SASL.
+
+END OF COPYRIGHT NOTICE
