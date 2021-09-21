@@ -15,7 +15,7 @@
       <name>npm</name>
       <version>2.13.5</version>
       <description>a package manager for JavaScript</description>
-      <author>Isaac Z. Schlueter i@izs.me http://blog.izs.me</author>
+      <author>Isaac Z. Schlueter</author>
       <scope>required</scope>
       <purl>pkg:npm/npm@2.13.5</purl>
       <hashes>
@@ -55,7 +55,7 @@
       <name>abbrev</name>
       <version>1.0.7</version>
       <description>Like ruby's abbrev module, but in js</description>
-      <author>Isaac Z. Schlueter i@izs.me</author>
+      <author>Isaac Z. Schlueter</author>
       <scope>required</scope>
       <purl>pkg:npm/abbrev@1.0.7</purl>
       <hashes/>

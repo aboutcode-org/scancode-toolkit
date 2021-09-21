@@ -55,9 +55,10 @@ def test_can_encode_component():
 
 
 def test_get_author_from_parties():
-    parties = [{'type': 'person', 'role': 'author', 'name': 'the author'}]
+    parties = [{'type': 'person', 'role': 'author', 'name': 'author a'},
+               {'type': 'person', 'role': 'author', 'name': 'author b'}]
     author = get_author_from_parties(parties)
-    assert author == 'the author'
+    assert author.splitlines() == ["author a", "author b"]
 
 
 def test_get_author_from_parties_default_none():

@@ -20,7 +20,7 @@
       "bom-ref": "pkg:npm/npm@2.13.5",
       "type": "library",
       "scope": "required",
-      "author": "Isaac Z. Schlueter i@izs.me http://blog.izs.me",
+      "author": "Isaac Z. Schlueter",
       "description": "a package manager for JavaScript",
       "purl": "pkg:npm/npm@2.13.5",
       "hashes": [
@@ -75,7 +75,7 @@
       "bom-ref": "pkg:npm/abbrev@1.0.7",
       "type": "library",
       "scope": "required",
-      "author": "Isaac Z. Schlueter i@izs.me",
+      "author": "Isaac Z. Schlueter",
       "description": "Like ruby's abbrev module, but in js",
       "purl": "pkg:npm/abbrev@1.0.7",
       "licenses": [

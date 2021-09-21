@@ -30,10 +30,15 @@ def _get_set_of_known_licenses_and_spdx_license_ids() -> Tuple[List, FrozenSet[s
     """load all licenses and all SPDX Ids known to ScanCode
     this will also load scancode licenserefs, so we filter those
     """
-    from licensedcode.models import get_all_spdx_keys, load_licenses
+    from licensedcode.cache import get_licenses_db
 
-    licenses = load_licenses(with_deprecated=True)
-    spdx_keys = filter(lambda x: 'LicenseRef' not in x, get_all_spdx_keys(licenses))
+    licenses = get_licenses_db()
+    spdx_keys = filter(lambda id: id is not None,
+                        map(
+                           lambda license: license.spdx_license_key,
+                           licenses.values()
+                       )
+                    )
     return (licenses, frozenset(spdx_keys))
 
 
@@ -87,10 +92,12 @@ class CycloneDxLicenseEntry:
         if license_expression is None:
             return None
 
+        from scancode.api import SCANCODE_LICENSEDB_URL
+
         license = known_licenses.get(license_expression)
         if license is not None:
-            # attempt to set either official OSI URL or any license text URL
-            url = license.osi_url
+            # set ScanCode license DB URL as fallback
+            url = SCANCODE_LICENSEDB_URL.format(license.key)
             if license.text_urls:
                 url = license.text_urls[0]
             lic = CycloneDxLicense(id=license.spdx_license_key, name=license.name, url=url)
@@ -363,16 +370,19 @@ url_type_mapping = {
 
 def get_author_from_parties(parties: List[dict]) -> str:
     if parties is not None:
-        try:
-            # assume there can only ever be one author and get that with next()
-            author = next(filter(lambda p: p.get('role') == 'author', parties))
-            return ' '.join(
-                filter(
-                    None, (author.get('name'), author.get('email'), author.get('url'))
-                )
+        # get all entries with role author and join their names
+        authors = list(
+            filter(
+                lambda p: p.get('role') == 'author' and p.get('name') is not None, parties
             )
-        except StopIteration:
-            return None
+        )
+        # only return joined string if there is at least one author
+        if authors:
+            return '\n'.join(
+                map(lambda author: author.get("name"), authors)
+            )
+    return None
+
 
 
 @output_impl
