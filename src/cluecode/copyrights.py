@@ -617,7 +617,7 @@ patterns = [
     (r'^Agreement$', 'JUNK'),
     (r'^Usage$', 'JUNK'),
     (r'^Please$', 'JUNK'),
-    (r'^Based$', 'JUNK'),
+    (r'^\(?Based$', 'JUNK'),
     (r'^Upstream$', 'JUNK'),
     (r'^Files?$', 'JUNK'),
     (r'^Filename:?$', 'JUNK'),
@@ -1140,6 +1140,7 @@ patterns = [
     (r'^The$', 'NN'),
     (r'^THE', 'NN'),
     (r'^These$', 'NN'),
+    (r'^[tT]here$', 'NN'),
     (r'^This$', 'NN'),
     (r'^THIS$', 'NN'),
     (r'^Those$', 'NN'),
@@ -2217,7 +2218,8 @@ grammar = """
     COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>  <NNP>} #22792
 
     # Copyright (c) 2017 odahcam
-    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <ALLRIGHTRESERVED>?} #22793
+    # or Copyright (c) 2019-2021, Open source contributors.
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <CONTRIBUTORS>? <ALLRIGHTRESERVED>?} #22793
 
     # Licensed material of Foobar Company, All Rights Reserved, (C) 2005
     COPYRIGHT: {<COMPANY>  <ALLRIGHTRESERVED>  <COPYRIGHT>} #22794
