@@ -287,7 +287,7 @@ def _licenses_data_from_match(
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 
-def get_package_info(location, **kwargs):
+def get_package_manifest_info(location, **kwargs):
     """
     Return a mapping of package manifest information detected in the
     file at `location`.
@@ -295,11 +295,14 @@ def get_package_info(location, **kwargs):
     Note that all exceptions are caught if there are any errors while parsing a
     package manifest.
     """
-    from packagedcode.recognize import recognize_packages
+    from packagedcode.recognize import recognize_package_manifests
     try:
-        recognized_packages = recognize_packages(location)
-        if recognized_packages:
-            return dict(packages=[package.to_dict() for package in recognized_packages])
+        recognized_package_manifests = recognize_package_manifests(location)
+        if recognized_package_manifests:
+            return dict(package_manifests=[
+                package_manifest.to_dict()
+                for package_manifest in recognized_package_manifests
+            ])
     except Exception as e:
         if TRACE:
             logger.error('get_package_info: {}: Exception: {}'.format(location, e))
@@ -310,7 +313,7 @@ def get_package_info(location, **kwargs):
             # attention: we are swallowing ALL exceptions here!
             pass
 
-    return dict(packages=[])
+    return dict(package_manifests=[])
 
 
 def get_file_info(location, **kwargs):

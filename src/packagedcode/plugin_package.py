@@ -50,7 +50,7 @@ class PackageScanner(ScanPlugin):
     """
 
     resource_attributes = {}
-    resource_attributes['packages'] = attr.ib(default=attr.Factory(list), repr=False)
+    resource_attributes['package_manifests'] = attr.ib(default=attr.Factory(list), repr=False)
 
     sort_order = 6
 
@@ -78,8 +78,8 @@ class PackageScanner(ScanPlugin):
         """
         Return a scanner callable to scan a Resource for packages.
         """
-        from scancode.api import get_package_info
-        return get_package_info
+        from scancode.api import get_package_manifest_info
+        return get_package_manifest_info
 
     def process_codebase(self, codebase, **kwargs):
         """
@@ -102,8 +102,8 @@ def set_packages_root(resource, codebase):
     if not resource.is_file:
         return
 
-    packages = resource.packages
-    if not packages:
+    package_manifests = resource.package_manifests
+    if not package_manifests:
         return
     # NOTE: we are dealing with a single file therefore there should be only be
     # a single package detected. But some package manifests can document more
@@ -111,8 +111,8 @@ def set_packages_root(resource, codebase):
     # or multiple sub package (with "%package") in an RPM .spec file.
 
     modified = False
-    for package in packages:
-        package_instance = get_package_instance(package)
+    for package_manifest in package_manifests:
+        package_instance = get_package_instance(package_manifest)
         package_root = package_instance.get_package_root(resource, codebase)
         if not package_root:
             # this can happen if we scan a single resource that is a package package
@@ -120,7 +120,7 @@ def set_packages_root(resource, codebase):
         # What if the target resource (e.g. a parent) is the root and we are in stripped root mode?
         if package_root.is_root and codebase.strip_root:
             continue
-        package['root_path'] = package_root.path
+        package_manifest['root_path'] = package_root.path
         modified = True
 
     if modified:

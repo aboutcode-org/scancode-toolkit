@@ -155,7 +155,7 @@ def summarize_codebase(codebase, keep_details, **kwargs):
         ('holders', holder_summarizer),
         ('authors', author_summarizer),
         ('programming_language', language_summarizer),
-        ('packages', package_summarizer),
+        ('package_manifests', package_summarizer),
     ]
 
     # find which attributes are available for summarization by checking the root
@@ -438,53 +438,53 @@ def summarize_codebase_by_facet(codebase, **kwargs):
     if TRACE: logger_debug('codebase summary_by_facet:', final_summaries)
 
 
-def add_files(packages, resource):
+def add_files(package_manifests, resource):
     """
-    Update in-place every package mapping in the `packages` list by updating or
-    creatig the the "files" attribute from the `resource`. Yield back the
-    packages.
+    Update in-place every package mapping in the `package_manifests` list
+    by updating or creatig the the "files" attribute from the `resource`.
+    Yield back the package_manifests.
     """
-    for package in packages:
-        files = package['files'] = package.get('files') or []
+    for package_manifest in package_manifests:
+        files = package_manifest['files'] = package_manifest.get('files') or []
         fil = resource.to_dict(skinny=True)
         if fil not in files:
             files.append(fil)
-        yield package
+        yield package_manifest
 
 
 def package_summarizer(resource, children, keep_details=False):
     """
-    Populate a packages summary list of packages mappings.
+    Populate a package_manifests summary list of package_manifests mappings.
 
     Note: `keep_details` is never used, as we are not keeping details of
-    packages as this has no value.
+    package_manifests as this has no value.
     """
-    packages = []
+    package_manifests = []
 
     # Collect current data
-    current_packages = getattr(resource, 'packages') or []
+    current_package_manifests = getattr(resource, 'package_manifests') or []
 
-    if TRACE_LIGHT and current_packages:
+    if TRACE_LIGHT and current_package_manifests:
         from packagedcode.models import Package
-        packs = [Package.create(**p) for p in current_packages]
+        packs = [Package.create(**p) for p in current_package_manifests]
         logger_debug('package_summarizer: for:', resource,
-                     'current_packages are:', packs)
+                     'current_package_manifests are:', packs)
 
-    current_packages = add_files(current_packages, resource)
-    packages.extend(current_packages)
+    current_package_manifests = add_files(current_package_manifests, resource)
+    package_manifests.extend(current_package_manifests)
 
-    if TRACE_LIGHT and packages:
+    if TRACE_LIGHT and package_manifests:
         logger_debug()
         from packagedcode.models import Package  # NOQA
-        packs = [Package.create(**p) for p in packages]
+        packs = [Package.create(**p) for p in package_manifests]
         logger_debug('package_summarizer: for:', resource,
-                     'packages are:', packs)
+                     'package_manifests are:', packs)
 
-    # Collect direct children packages summary
+    # Collect direct children package_manifests summary
     for child in children:
-        child_summaries = get_resource_summary(child, key='packages', as_attribute=False) or []
-        packages.extend(child_summaries)
+        child_summaries = get_resource_summary(child, key='package_manifests', as_attribute=False) or []
+        package_manifests.extend(child_summaries)
 
     # summarize proper
-    set_resource_summary(resource, key='packages', value=packages, as_attribute=False)
-    return packages
+    set_resource_summary(resource, key='package_manifests', value=package_manifests, as_attribute=False)
+    return package_manifests

@@ -98,21 +98,21 @@ class ConsolidatedComponent(object):
 
 
 @attr.s
-class ConsolidatedPackage(object):
-    package = attr.ib()
+class ConsolidatedPackageManifest(object):
+    package_manifest = attr.ib()
     consolidation = attr.ib()
 
     def to_dict(self, **kwargs):
-        package = self.package.to_dict()
-        package.update(self.consolidation.to_dict())
-        return package
+        package_manifest = self.package_manifest.to_dict()
+        package_manifest.update(self.consolidation.to_dict())
+        return package_manifest
 
 
 @post_scan_impl
 class Consolidator(PostScanPlugin):
     """
     A ScanCode post-scan plugin to return consolidated components and consolidated
-    packages for different types of codebase summarization.
+    package_manifests for different types of codebase summarization.
 
     A consolidated component is a group of Resources that have the same origin.
     Currently, a ConsolidatedComponent is created for each detected copyright holder
@@ -127,7 +127,7 @@ class Consolidator(PostScanPlugin):
     """
     codebase_attributes = dict(
         consolidated_components=attr.ib(default=attr.Factory(list)),
-        consolidated_packages=attr.ib(default=attr.Factory(list))
+        consolidated_package_manifests=attr.ib(default=attr.Factory(list))
     )
 
     resource_attributes = dict(
@@ -140,9 +140,10 @@ class Consolidator(PostScanPlugin):
         PluggableCommandLineOption(('--consolidate',),
             is_flag=True, default=False,
             help='Group resources by Packages or license and copyright holder and '
-                 'return those groupings as a list of consolidated packages and '
+                 'return those groupings as a list of consolidated package_manifests and '
                  'a list of consolidated components. '
-                 'This requires the scan to have/be run with the copyright, license, and package options active',
+                 'This requires the scan to have/be run with the copyright, license, and '
+                 'package options active',
             help_group=POST_SCAN_GROUP
         )
     ]
@@ -151,12 +152,12 @@ class Consolidator(PostScanPlugin):
         return consolidate
 
     def process_codebase(self, codebase, **kwargs):
-        # Collect ConsolidatedPackages and ConsolidatedComponents
+        # Collect ConsolidatedPackageManifests and ConsolidatedComponents
         # TODO: Have a "catch-all" Component for the things that we haven't grouped
         consolidations = []
         root = codebase.root
-        if hasattr(root, 'packages') and hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
-            consolidations.extend(get_consolidated_packages(codebase))
+        if hasattr(root, 'package_manifests') and hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
+            consolidations.extend(get_consolidated_package_manifests(codebase))
         if hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
             consolidations.extend(get_holders_consolidated_components(codebase))
 
@@ -166,24 +167,24 @@ class Consolidator(PostScanPlugin):
         # Sort consolidations by holders for consistent ordering before enumeration
         consolidations = sorted(consolidations, key=lambda c: '_'.join(h.key for h in c.consolidation.core_holders))
 
-        # Add ConsolidatedPackages and ConsolidatedComponents to top-level codebase attributes
-        codebase.attributes.consolidated_packages = consolidated_packages = []
+        # Add ConsolidatedPackageManifests and ConsolidatedComponents to top-level codebase attributes
+        codebase.attributes.consolidated_package_manifests = consolidated_package_manifests = []
         codebase.attributes.consolidated_components = consolidated_components = []
         identifier_counts = Counter()
         for index, c in enumerate(consolidations, start=1):
             # Skip consolidation if it does not have any Files
             if c.consolidation.files_count == 0:
                 continue
-            if isinstance(c, ConsolidatedPackage):
+            if isinstance(c, ConsolidatedPackageManifest):
                 # We use the purl as the identifier for ConsolidatedPackages
-                purl = c.package.purl
+                purl = c.package_manifest.purl
                 identifier_counts[purl] += 1
                 identifier = python_safe_name('{}_{}'.format(purl, identifier_counts[purl]))
                 c.consolidation.identifier = identifier
                 for resource in c.consolidation.resources:
                     resource.consolidated_to.append(identifier)
                     resource.save(codebase)
-                consolidated_packages.append(c.to_dict())
+                consolidated_package_manifests.append(c.to_dict())
             elif isinstance(c, ConsolidatedComponent):
                 consolidation_identifier = c.consolidation.identifier
                 if consolidation_identifier:
@@ -218,20 +219,20 @@ class Consolidator(PostScanPlugin):
             resource.save(codebase)
 
 
-def get_consolidated_packages(codebase):
+def get_consolidated_package_manifests(codebase):
     """
-    Yield a ConsolidatedPackage for each detected package in the codebase
+    Yield a ConsolidatedPackageManifest for each detected package_manifest in the codebase
     """
     for resource in codebase.walk(topdown=False):
-        for package_data in resource.packages:
-            package = get_package_instance(package_data)
-            package_root = package.get_package_root(resource, codebase)
+        for package_manifest_data in resource.package_manifests:
+            package_manifest = get_package_instance(package_manifest_data)
+            package_root = package_manifest.get_package_root(resource, codebase)
             package_root.extra_data['package_root'] = True
             package_root.save(codebase)
-            is_build_file = isinstance(package, BaseBuildManifestPackage)
-            package_resources = list(package.get_package_resources(package_root, codebase))
-            package_license_expression = package.license_expression
-            package_copyright = package.copyright
+            is_build_file = isinstance(package_manifest, BaseBuildManifestPackage)
+            package_resources = list(package_manifest.get_package_resources(package_root, codebase))
+            package_license_expression = package_manifest.license_expression
+            package_copyright = package_manifest.copyright
 
             package_holders = []
             if package_copyright:
@@ -273,14 +274,14 @@ def get_consolidated_packages(codebase):
                 resources=package_resources,
             )
             if is_build_file:
-                c.identifier = package.name
+                c.identifier = package_manifest.name
                 yield ConsolidatedComponent(
                     type='build',
                     consolidation=c
                 )
             else:
-                yield ConsolidatedPackage(
-                    package=package,
+                yield ConsolidatedPackageManifest(
+                    package_manifest=package_manifest,
                     consolidation=c
                 )
 
