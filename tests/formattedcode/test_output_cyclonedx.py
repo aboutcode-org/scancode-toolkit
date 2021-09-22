@@ -88,6 +88,30 @@ def test_can_get_hashes_from_package():
         assert hash_entry.content is not None
 
 
+def test_get_extref_from_license_id():
+    license_ref = "LicenseRef-scancode-ac3filter"
+
+    from scancode.api import SCANCODE_LICENSEDB_URL
+    expected_url = SCANCODE_LICENSEDB_URL.format(license_ref[len(spdx_licenseref_prefix):])
+
+    ref = CycloneDxExternalRef.from_licenseref_id(license_ref)
+    assert ref.type == "license" and ref.url == expected_url
+
+    assert CycloneDxExternalRef.from_licenseref_id(None) is None
+    assert CycloneDxExternalRef.from_licenseref_id("some_other_string") is None
+
+
+def test_component_has_extrefs_for_licenses():
+    license_ref = "LicenseRef-scancode-ac3filter"
+
+    lic = CycloneDxLicenseEntry(license=CycloneDxLicense(id=license_ref))
+    comp = CycloneDxComponent(name="test", version="test", licenses=[lic])
+    comp._add_license_refs()
+
+    ref = CycloneDxExternalRef.from_licenseref_id(license_ref)
+    assert ref in comp.externalReferences
+
+
 def test_get_tool_header():
     test_version = '0'
     expected = {

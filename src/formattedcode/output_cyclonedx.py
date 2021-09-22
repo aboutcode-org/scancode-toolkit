@@ -43,7 +43,7 @@ def _get_set_of_known_licenses_and_spdx_license_ids() -> Tuple[List, FrozenSet[s
 
 
 known_licenses, spdx_ids = _get_set_of_known_licenses_and_spdx_license_ids()
-
+spdx_licenseref_prefix = "LicenseRef-scancode-"
 
 @attr.s
 class CycloneDxLicense:
@@ -105,10 +105,6 @@ class CycloneDxLicenseEntry:
         else:
             return CycloneDxLicenseEntry(license=None, expression=license_expression)
 
-    license: CycloneDxLicense = attr.ib(default=None)
-    expression: str = attr.ib(default=None)
-
-
     @classmethod
     def from_package(cls, package: dict) -> List['CycloneDxLicenseEntry']:
         """
@@ -150,6 +146,10 @@ class CycloneDxLicenseEntry:
 
         return licenses
 
+    license: CycloneDxLicense = attr.ib(default=None)
+    expression: str = attr.ib(default=None)
+
+
 @attr.s
 class CycloneDxAttribute:
     name: str = attr.ib()
@@ -183,21 +183,41 @@ class CycloneDxHashObject:
     content: str = attr.ib()
 
 
-def _get_external_ref_from_key(package: dict, key: str) -> 'CycloneDxExternalRef':
-    url = package.get(key)
-    type = url_type_mapping[key]
-    if url is not None and type is not None:
-        return CycloneDxExternalRef(url=url, type=type)
-    return None
-
-
 @attr.s
 class CycloneDxExternalRef:
+    @classmethod
+    def _get_external_ref_from_key(cls, package: dict, key: str) -> 'CycloneDxExternalRef':
+        url = package.get(key)
+        type = url_type_mapping[key]
+        if url is not None and type is not None:
+            return CycloneDxExternalRef(url=url, type=type)
+        return None
+
+    @classmethod
+    def from_licenseref_id(cls, id: str) -> Optional['CycloneDxExternalRef']:
+        """
+        Returns an external reference to a license URL for LicenseRef-scancode-* license
+        or none if the input is not a LicenseRef
+        Expect a scancode SPDX LicenseRef as input
+        and build a CycloneDxExternalRef from it
+        """
+
+        if id is None or not id.startswith(spdx_licenseref_prefix):
+            return None
+
+        from scancode.api import SCANCODE_LICENSEDB_URL
+
+        scancode_id = id[len(spdx_licenseref_prefix):]
+        url = SCANCODE_LICENSEDB_URL.format(scancode_id)
+        comment = f"Information about scancode spdx license {id}"
+
+        return CycloneDxExternalRef(url=url, type="license", comment=comment)
+
     @classmethod
     def from_package(cls, package: dict) -> List['CycloneDxExternalRef']:
         ext_refs = []
         for key in url_type_mapping:
-            ref = _get_external_ref_from_key(package, key)
+            ref = cls._get_external_ref_from_key(package, key)
             if ref is not None:
                 ext_refs.append(ref)
         return ext_refs
@@ -274,6 +294,7 @@ class CycloneDxComponent:
                     externalReferences=refs,
                     bom_ref=purl,
                 )
+
                 # since it is used as a bom-ref the purl has to be unique, merge duplicates
                 if purl not in components_by_purl.keys():
                     components.append(component)
@@ -282,6 +303,25 @@ class CycloneDxComponent:
                     merge_components(components_by_purl[purl], component)
 
         return components
+
+
+    def _add_license_refs(self):
+        """
+        Build CycloneDxExternalRef entries for scancode SPDX LicenseRefs
+        Modify the component in-place
+        """
+        licenses = filter(None, map(lambda lic: lic.license, self.licenses))
+        license_ids = map(lambda lic: lic.id, licenses)
+        licenseref_ids = filter(
+            lambda lic_id: lic_id is not None and lic_id.startswith("LicenseRef-scancode-"),
+            license_ids
+        )
+
+        for licenseref_id in licenseref_ids:
+            ref = CycloneDxExternalRef.from_licenseref_id(licenseref_id)
+            if ref:
+                self.externalReferences.append(ref)
+
 
     name: str = attr.ib()
     version: str = attr.ib()
