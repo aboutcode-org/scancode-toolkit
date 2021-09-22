@@ -203,7 +203,7 @@
         "count": 1
       }
     ],
-    "packages": [
+    "package_manifests": [
       {
         "type": "npm",
         "namespace": null,
@@ -3076,7 +3076,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 26,
       "dirs_count": 9,
       "size_count": 58647,
@@ -3107,7 +3107,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 7,
       "dirs_count": 1,
       "size_count": 4227,
@@ -3138,7 +3138,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 7,
       "dirs_count": 0,
       "size_count": 4227,
@@ -3222,7 +3222,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3312,7 +3312,7 @@
           "end_line": 10
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3396,7 +3396,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3433,7 +3433,7 @@
           "end_line": 4
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3470,7 +3470,7 @@
           "end_line": 3
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3554,7 +3554,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3591,7 +3591,7 @@
           "end_line": 3
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3622,7 +3622,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3653,7 +3653,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 3,
       "dirs_count": 0,
       "size_count": 1896,
@@ -3739,7 +3739,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3823,7 +3823,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3909,7 +3909,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3981,7 +3981,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4059,7 +4059,7 @@
           "end_line": 17
         }
       ],
-      "packages": [
+      "package_manifests": [
         {
           "type": "npm",
           "namespace": null,
@@ -6935,7 +6935,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 13,
       "dirs_count": 5,
       "size_count": 7951,
@@ -6966,7 +6966,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 2054,
@@ -7090,7 +7090,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7176,7 +7176,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7262,7 +7262,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7348,7 +7348,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7379,7 +7379,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 863,
@@ -7422,7 +7422,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7508,7 +7508,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7539,7 +7539,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 1774,
@@ -7629,7 +7629,7 @@
           "end_line": 12
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7660,7 +7660,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 353,
@@ -7746,7 +7746,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7832,7 +7832,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7863,7 +7863,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 649,
@@ -7947,7 +7947,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8031,7 +8031,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8117,7 +8117,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8203,7 +8203,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

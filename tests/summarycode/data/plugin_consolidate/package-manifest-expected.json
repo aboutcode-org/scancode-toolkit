@@ -21,7 +21,7 @@
     }
   ],
   "consolidated_components": [],
-  "consolidated_packages": [
+  "consolidated_package_manifests": [
     {
       "type": "npm",
       "namespace": null,
@@ -96,7 +96,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "pkg_npm_test_package_0_0_1_1"
       ],
@@ -171,7 +171,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [
+      "package_manifests": [
         {
           "type": "npm",
           "namespace": null,

@@ -50,7 +50,7 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    packages: []
+    package_manifests: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -85,7 +85,7 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    packages: []
+    package_manifests: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -120,7 +120,7 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    packages: []
+    package_manifests: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -149,7 +149,7 @@ files:
     copyrights: []
     holders: []
     authors: []
-    packages: []
+    package_manifests: []
     files_count: 4
     dirs_count: '0'
     size_count: 361
@@ -184,7 +184,7 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    packages: []
+    package_manifests: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -219,7 +219,7 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    packages: []
+    package_manifests: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -254,7 +254,7 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    packages: []
+    package_manifests: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -289,7 +289,7 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    packages: []
+    package_manifests: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'

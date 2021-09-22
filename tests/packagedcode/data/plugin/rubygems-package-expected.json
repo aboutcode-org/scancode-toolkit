@@ -22,7 +22,7 @@
     {
       "path": "m2r-2.1.0.gem",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "gem",
           "namespace": null,
@@ -201,7 +201,7 @@
     {
       "path": "m2r-2.1.0.gem.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     }
   ]

@@ -22,13 +22,13 @@
     {
       "path": "DESCRIPTION.rst",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "METADATA",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "pypi",
           "namespace": null,
@@ -90,7 +90,7 @@
     {
       "path": "PKG-INFO",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "pypi",
           "namespace": null,
@@ -143,7 +143,7 @@
     {
       "path": "Pipfile.lock",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "pypi",
           "namespace": null,
@@ -323,7 +323,7 @@
     {
       "path": "atomicwrites-1.2.1-py2.py3-none-any.whl",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "pypi",
           "namespace": null,
@@ -387,7 +387,7 @@
     {
       "path": "metadata.json",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "chef",
           "namespace": null,
@@ -430,7 +430,7 @@
     {
       "path": "requirements.txt",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "pypi",
           "namespace": null,
@@ -498,7 +498,7 @@
     {
       "path": "setup.py",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "pypi",
           "namespace": null,

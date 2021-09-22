@@ -22,7 +22,7 @@
     {
       "path": "authors-pubspec.yaml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     }
   ]

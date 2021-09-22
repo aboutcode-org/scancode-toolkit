@@ -66,7 +66,7 @@
       "files_count": 1
     }
   ],
-  "consolidated_packages": [
+  "consolidated_package_manifests": [
     {
       "type": "npm",
       "namespace": null,
@@ -149,7 +149,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [],
       "files_count": 8,
       "dirs_count": 3,
@@ -181,7 +181,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "demo_1"
       ],
@@ -215,7 +215,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [
+      "package_manifests": [
         {
           "type": "buck",
           "namespace": null,
@@ -286,7 +286,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "apache_foundation_software_1",
         "inc_nexb_1"
@@ -374,7 +374,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -461,7 +461,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -548,7 +548,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -635,7 +635,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "inc_nexb_1"
       ],
@@ -669,7 +669,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "pkg_npm_test_package_0_0_1_1"
       ],
@@ -756,7 +756,7 @@
         }
       ],
       "authors": [],
-      "packages": [
+      "package_manifests": [
         {
           "type": "npm",
           "namespace": null,
@@ -882,7 +882,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "pkg_npm_test_package_0_0_1_1"
       ],
@@ -969,7 +969,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "pkg_npm_test_package_0_0_1_1"
       ],

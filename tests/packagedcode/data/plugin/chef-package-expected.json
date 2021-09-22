@@ -22,7 +22,7 @@
     {
       "path": "metadata.json",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "chef",
           "namespace": null,
@@ -82,7 +82,7 @@
     {
       "path": "metadata.rb",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "chef",
           "namespace": null,

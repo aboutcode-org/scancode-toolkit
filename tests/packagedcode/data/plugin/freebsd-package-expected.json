@@ -22,7 +22,7 @@
     {
       "path": "+COMPACT_MANIFEST",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "freebsd",
           "namespace": null,

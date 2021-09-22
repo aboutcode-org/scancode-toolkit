@@ -20,7 +20,7 @@
     {
       "path": "composer.json",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "composer",
           "namespace": "laravel",

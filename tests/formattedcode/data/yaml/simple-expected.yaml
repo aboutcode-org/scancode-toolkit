@@ -43,7 +43,7 @@ files:
     copyrights: []
     holders: []
     authors: []
-    packages: []
+    package_manifests: []
     files_count: 1
     dirs_count: '0'
     size_count: 55
@@ -78,7 +78,7 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    packages: []
+    package_manifests: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'

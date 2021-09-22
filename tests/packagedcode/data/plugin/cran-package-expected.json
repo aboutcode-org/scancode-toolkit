@@ -22,7 +22,7 @@
     {
       "path": "DESCRIPTION",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     }
   ]

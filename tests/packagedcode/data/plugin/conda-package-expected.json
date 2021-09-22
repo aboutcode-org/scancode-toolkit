@@ -22,25 +22,25 @@
     {
       "path": "info",
       "type": "directory",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract",
       "type": "directory",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract/recipe",
       "type": "directory",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract/recipe/meta.yaml",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "conda",
           "namespace": null,

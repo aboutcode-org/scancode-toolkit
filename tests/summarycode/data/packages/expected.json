@@ -18,7 +18,7 @@
     }
   ],
   "summary": {
-    "packages": [
+    "package_manifests": [
       {
         "type": "maven",
         "namespace": "aopalliance",
@@ -677,31 +677,31 @@
     {
       "path": "scan",
       "type": "directory",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "scan/aopalliance",
       "type": "directory",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "scan/aopalliance/aopalliance",
       "type": "directory",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "scan/aopalliance/aopalliance/1.0",
       "type": "directory",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "aopalliance",
@@ -759,19 +759,19 @@
     {
       "path": "scan/freebsd",
       "type": "directory",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "scan/freebsd/basic",
       "type": "directory",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "scan/freebsd/basic/+COMPACT_MANIFEST",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "freebsd",
           "namespace": null,
@@ -838,13 +838,13 @@
     {
       "path": "scan/scoped1",
       "type": "directory",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "scan/scoped1/package.json",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "npm",
           "namespace": "@ionic",

@@ -22,7 +22,7 @@
     {
       "path": "package.json",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "npm",
           "namespace": null,

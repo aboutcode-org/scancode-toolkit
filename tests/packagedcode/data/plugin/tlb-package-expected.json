@@ -22,7 +22,7 @@
     {
       "path": "stdole2.tlb",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "winexe",
           "namespace": null,

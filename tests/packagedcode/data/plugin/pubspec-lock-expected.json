@@ -22,7 +22,7 @@
     {
       "path": "dart-pubspec.lock",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     }
   ]

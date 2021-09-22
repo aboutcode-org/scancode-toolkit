@@ -41,30 +41,6 @@
   ],
   "consolidated_components": [
     {
-      "type": "build",
-      "identifier": "minizip_1",
-      "consolidated_license_expression": "info-zip-2009-01 AND zlib",
-      "consolidated_holders": [
-        "Even Rouault",
-        "Gilles Vollant",
-        "Gilles Vollant, Even Rouault, Mathias Svensson",
-        "Info-ZIP.",
-        "Mathias Svensson"
-      ],
-      "consolidated_copyright": "Copyright (c) Even Rouault, Gilles Vollant, Gilles Vollant, Even Rouault, Mathias Svensson, Info-ZIP., Mathias Svensson",
-      "core_license_expression": null,
-      "core_holders": [],
-      "other_license_expression": "info-zip-2009-01 AND zlib",
-      "other_holders": [
-        "Gilles Vollant, Even Rouault, Mathias Svensson",
-        "Even Rouault",
-        "Gilles Vollant",
-        "Info-ZIP.",
-        "Mathias Svensson"
-      ],
-      "files_count": 22
-    },
-    {
       "type": "holders",
       "identifier": "adler_and_gailly_jean_loup_mark_1",
       "consolidated_license_expression": "zlib",
@@ -433,7 +409,7 @@
       "files_count": 10
     }
   ],
-  "consolidated_packages": [],
+  "consolidated_package_manifests": [],
   "files": [
     {
       "path": "zlib-1.2.11",
@@ -7162,8 +7138,7 @@
         "even_rouault_1",
         "gilles_vollant_1",
         "info_zip_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 22,
       "dirs_count": 0,
@@ -7196,9 +7171,7 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7230,9 +7203,7 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7264,9 +7235,7 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7374,8 +7343,7 @@
         }
       ],
       "consolidated_to": [
-        "gilles_vollant_1",
-        "minizip_1"
+        "gilles_vollant_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7444,9 +7412,7 @@
       ],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7497,8 +7463,7 @@
         }
       ],
       "consolidated_to": [
-        "gilles_vollant_1",
-        "minizip_1"
+        "gilles_vollant_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7566,8 +7531,7 @@
       ],
       "consolidated_to": [
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7635,8 +7599,7 @@
       ],
       "consolidated_to": [
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7704,8 +7667,7 @@
       ],
       "consolidated_to": [
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7773,8 +7735,7 @@
       ],
       "consolidated_to": [
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7807,9 +7768,7 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7898,8 +7857,7 @@
       "consolidated_to": [
         "even_rouault_1",
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7959,9 +7917,7 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8010,9 +7966,7 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8096,8 +8050,7 @@
       "consolidated_to": [
         "even_rouault_1",
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -8130,9 +8083,7 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8206,9 +8157,7 @@
           "end_line": 4
         }
       ],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8282,9 +8231,7 @@
           "end_line": 4
         }
       ],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8462,8 +8409,7 @@
         "even_rouault_1",
         "gilles_vollant_1",
         "info_zip_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -8578,8 +8524,7 @@
       "consolidated_to": [
         "even_rouault_1",
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -8662,8 +8607,7 @@
       ],
       "consolidated_to": [
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -8767,8 +8711,7 @@
       ],
       "consolidated_to": [
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,

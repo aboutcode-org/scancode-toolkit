@@ -22,7 +22,7 @@
     {
       "path": "apipkg.ABOUT",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "about",
           "namespace": null,
@@ -75,13 +75,13 @@
     {
       "path": "apipkg.ABOUT-expected",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "appdirs.ABOUT",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "about",
           "namespace": null,
@@ -134,7 +134,7 @@
     {
       "path": "appdirs.ABOUT-expected",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     }
   ]

@@ -53,7 +53,7 @@
       "files_count": 1
     }
   ],
-  "consolidated_packages": [],
+  "consolidated_package_manifests": [],
   "files": [
     {
       "path": "report-subdirectory-with-minority-origin",
@@ -80,7 +80,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -167,7 +167,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -254,7 +254,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -341,7 +341,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -375,7 +375,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_omega_1"
       ],
@@ -462,7 +462,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_omega_1"
       ],

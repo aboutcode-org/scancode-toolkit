@@ -22,7 +22,7 @@
     {
       "path": "Castle.Core.nuspec",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "nuget",
           "namespace": null,

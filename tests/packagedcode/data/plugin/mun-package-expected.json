@@ -22,7 +22,7 @@
     {
       "path": "crypt32.dll.mun",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "winexe",
           "namespace": null,

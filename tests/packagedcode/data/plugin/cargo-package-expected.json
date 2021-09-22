@@ -22,7 +22,7 @@
     {
       "path": "Cargo.toml",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "cargo",
           "namespace": null,

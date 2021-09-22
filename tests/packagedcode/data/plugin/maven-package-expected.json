@@ -22,25 +22,25 @@
     {
       "path": "activemq-camel-pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "activemq-camel-pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "activemq-camel-pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "adarwin-1.0.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "adarwin",
@@ -85,19 +85,19 @@
     {
       "path": "adarwin-1.0.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "adarwin-1.0.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "ant-jai-1.7.0.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "org.apache.ant",
@@ -167,19 +167,19 @@
     {
       "path": "ant-jai-1.7.0.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "ant-jai-1.7.0.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "ant-jsch-1.7.0.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "org.apache.ant",
@@ -241,19 +241,19 @@
     {
       "path": "ant-jsch-1.7.0.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "ant-jsch-1.7.0.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "aopalliance-1.0.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "aopalliance",
@@ -311,19 +311,19 @@
     {
       "path": "aopalliance-1.0.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "aopalliance-1.0.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "bcel-5.1.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "bcel",
@@ -368,19 +368,19 @@
     {
       "path": "bcel-5.1.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "bcel-5.1.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "classworlds-1.1-alpha-2.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "classworlds",
@@ -454,19 +454,19 @@
     {
       "path": "classworlds-1.1-alpha-2.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "classworlds-1.1-alpha-2.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "commons-fileupload-1.0.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "commons-fileupload",
@@ -578,19 +578,19 @@
     {
       "path": "commons-fileupload-1.0.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "commons-fileupload-1.0.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "commons-validator-1.2.0.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "commons-validator",
@@ -916,37 +916,37 @@
     {
       "path": "commons-validator-1.2.0.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "commons-validator-1.2.0.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "dbwebx_pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "dbwebx_pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "dbwebx_pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "easyconf-0.9.0.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "easyconf",
@@ -1172,19 +1172,19 @@
     {
       "path": "easyconf-0.9.0.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "easyconf-0.9.0.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "findbugs-maven-plugin-1.1.1.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "org.codehaus.mojo",
@@ -1306,109 +1306,109 @@
     {
       "path": "findbugs-maven-plugin-1.1.1.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "findbugs-maven-plugin-1.1.1.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "fna2_pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "fna2_pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "fna2_pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "fna_pom_project.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "fna_pom_project.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "fna_pom_project.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "foo-pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "foo-pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "foo-pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "gero_pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "gero_pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "gero_pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "idega_pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "idega_pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "idega_pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "jrecordbind-2.3.4.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "it.assist.jrecordbind",
@@ -1501,37 +1501,37 @@
     {
       "path": "jrecordbind-2.3.4.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "jrecordbind-2.3.4.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "log4j-pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "log4j-pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "log4j-pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "logback-access.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "ch.qos.logback",
@@ -1624,19 +1624,19 @@
     {
       "path": "logback-access.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "logback-access.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "plexus-interactivity-api-1.0-alpha-4.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "org.codehaus.plexus",
@@ -1799,19 +1799,19 @@
     {
       "path": "plexus-interactivity-api-1.0-alpha-4.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "plexus-interactivity-api-1.0-alpha-4.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "pom.xml",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "ur.urwerk.test.modules",
@@ -1856,73 +1856,73 @@
     {
       "path": "pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "proper_pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "proper_pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "proper_pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "rel_pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "rel_pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "rel_pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "sea_pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "sea_pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "sea_pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "specs-1.3.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "org.apache.geronimo.specs",
@@ -1976,19 +1976,19 @@
     {
       "path": "specs-1.3.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "specs-1.3.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "spring-2.5.4.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "org.springframework",
@@ -2569,19 +2569,19 @@
     {
       "path": "spring-2.5.4.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "spring-2.5.4.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "spring-orm-2.5.3.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "org.springframework",
@@ -2770,19 +2770,19 @@
     {
       "path": "spring-orm-2.5.3.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "spring-orm-2.5.3.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "spring-webmvc-2.5.3.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "org.springframework",
@@ -3019,19 +3019,19 @@
     {
       "path": "spring-webmvc-2.5.3.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "spring-webmvc-2.5.3.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "startup-trigger-plugin-0.1.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "org.jvnet.hudson.plugins",
@@ -3093,73 +3093,73 @@
     {
       "path": "startup-trigger-plugin-0.1.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "startup-trigger-plugin-0.1.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "uni_pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "uni_pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "uni_pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "urwerky_pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "urwerky_pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "urwerky_pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "webre_pom.xml",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "webre_pom.xml.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "webre_pom.xml.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "xml-format-maven-plugin-3.0.6.pom",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "maven",
           "namespace": "au.com.acegi",
@@ -3261,13 +3261,13 @@
     {
       "path": "xml-format-maven-plugin-3.0.6.pom.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
       "path": "xml-format-maven-plugin-3.0.6.pom.package.json",
       "type": "file",
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     }
   ]

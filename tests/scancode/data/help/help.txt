@@ -73,10 +73,10 @@ Options:
                                     is not treated as findings).
 
   output control:
-    --full-root      Report full, absolute paths.
-    --strip-root     Strip the root directory segment of all paths. The default is
-                     to always include the last directory segment of the scanned
-                     path such that all paths have a common root directory.
+    --full-root   Report full, absolute paths.
+    --strip-root  Strip the root directory segment of all paths. The default is to
+                  always include the last directory segment of the scanned path
+                  such that all paths have a common root directory.
 
   pre-scan:
     --ignore <pattern>         Ignore files matching <pattern>.
@@ -89,10 +89,10 @@ Options:
   post-scan:
     --consolidate            Group resources by Packages or license and copyright
                              holder and return those groupings as a list of
-                             consolidated packages and a list of consolidated
-                             components. This requires the scan to have/be run
-                             with the copyright, license, and package options
-                             active
+                             consolidated package_manifests and a list of
+                             consolidated components. This requires the scan to
+                             have/be run with the copyright, license, and package
+                             options active
     --filter-clues           Filter redundant duplicated clues already contained
                              in detected license and copyright texts and notices.
     --is-license-text        Set the "is_license_text" flag to true for files that

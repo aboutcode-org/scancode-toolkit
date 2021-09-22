@@ -230,7 +230,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -445,7 +445,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -552,7 +552,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -712,7 +712,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -834,7 +834,7 @@
           "end_line": 10
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -950,7 +950,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -1019,7 +1019,7 @@
           "end_line": 4
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -1088,7 +1088,7 @@
           "end_line": 3
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -1204,7 +1204,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -1273,7 +1273,7 @@
           "end_line": 3
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -1336,7 +1336,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -1399,7 +1399,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -1533,7 +1533,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -1649,7 +1649,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -1767,7 +1767,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -1871,7 +1871,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -1981,7 +1981,7 @@
           "end_line": 17
         }
       ],
-      "packages": [
+      "package_manifests": [
         {
           "type": "npm",
           "namespace": null,
@@ -4889,7 +4889,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -5036,7 +5036,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -5192,7 +5192,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -5310,7 +5310,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -5428,7 +5428,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -5546,7 +5546,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -5609,7 +5609,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -5692,7 +5692,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -5810,7 +5810,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -5873,7 +5873,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -5995,7 +5995,7 @@
           "end_line": 12
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -6058,7 +6058,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -6176,7 +6176,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -6294,7 +6294,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -6357,7 +6357,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -6473,7 +6473,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -6589,7 +6589,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -6707,7 +6707,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {
@@ -6825,7 +6825,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "summary": {
         "license_expressions": [
           {

@@ -54,7 +54,7 @@
       "files_count": 1
     }
   ],
-  "consolidated_packages": [],
+  "consolidated_package_manifests": [],
   "files": [
     {
       "path": "return-nested-local-majority",
@@ -81,7 +81,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [],
       "files_count": 4,
       "dirs_count": 2,
@@ -113,7 +113,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -239,7 +239,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -365,7 +365,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -399,7 +399,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -525,7 +525,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -651,7 +651,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],

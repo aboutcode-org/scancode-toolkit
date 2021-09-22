@@ -22,7 +22,7 @@
     {
       "path": "chcp.com",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "winexe",
           "namespace": null,

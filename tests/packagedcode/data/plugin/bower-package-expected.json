@@ -22,7 +22,7 @@
     {
       "path": "bower.json",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "bower",
           "namespace": null,

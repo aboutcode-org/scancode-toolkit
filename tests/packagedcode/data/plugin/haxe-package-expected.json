@@ -22,7 +22,7 @@
     {
       "path": "haxelib.json",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "haxe",
           "namespace": null,

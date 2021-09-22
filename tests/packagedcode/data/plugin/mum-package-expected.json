@@ -22,7 +22,7 @@
     {
       "path": "test.mum",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "windows-update",
           "namespace": null,

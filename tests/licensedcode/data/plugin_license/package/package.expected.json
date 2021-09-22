@@ -65,7 +65,7 @@
         "mit"
       ],
       "percentage_of_license_text": 4.05,
-      "packages": [
+      "package_manifests": [
         {
           "type": "npm",
           "namespace": null,

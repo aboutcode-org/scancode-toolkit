@@ -37,7 +37,7 @@
       "files_count": 2
     }
   ],
-  "consolidated_packages": [],
+  "consolidated_package_manifests": [],
   "files": [
     {
       "path": "multiple-same-holder-and-license",
@@ -64,7 +64,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -200,7 +200,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -336,7 +336,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],

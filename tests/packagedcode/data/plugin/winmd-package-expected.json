@@ -22,7 +22,7 @@
     {
       "path": "Windows.AI.winmd",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "winexe",
           "namespace": null,

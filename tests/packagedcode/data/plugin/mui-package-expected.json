@@ -22,7 +22,7 @@
     {
       "path": "clfs.sys.mui",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "winexe",
           "namespace": null,

@@ -1161,7 +1161,7 @@
       "files_count": 1
     }
   ],
-  "consolidated_packages": [],
+  "consolidated_package_manifests": [],
   "files": [
     {
       "path": "e2fsprogs-1.45.4",
