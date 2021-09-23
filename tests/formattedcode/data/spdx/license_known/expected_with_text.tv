@@ -1,8 +1,10 @@
 # Document Information
-SPDXVersion: SPDX-2.1
+SPDXVersion: SPDX-2.2
 DataLicense: CC0-1.0
+DocumentNamespace: http://spdx.org/spdxdocs/scan
+DocumentName: SPDX Document created by ScanCode Toolkit
+LicenseListVersion: 3.14
 SPDXID: SPDXRef-DOCUMENT
-DocumentNamespace: http://spdx.org/spdxdocs/scan-8f1122d0-e528-466c-a22e-04bc0b174984
 DocumentComment: <text>Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
 OR CONDITIONS OF ANY KIND, either express or implied. No content created from
 ScanCode should be considered or used as legal advice. Consult an Attorney
@@ -12,6 +14,7 @@ Visit https://github.com/nexB/scancode-toolkit/ for support and download.</text>
 # Creation Info
 # Package
 PackageName: scan
+SPDXID: SPDXRef-001
 PackageDownloadLocation: NOASSERTION
 PackageVerificationCode: 517c26f04b5a3edaaa0c17bf1a6571953209e209
 PackageLicenseDeclared: NOASSERTION
@@ -21,12 +24,14 @@ PackageLicenseInfoFromFiles: CC0-1.0
 PackageCopyrightText: NONE
 # File
 FileName: ./scan/apache-2.0.LICENSE
+SPDXID: SPDXRef-2
 FileChecksum: SHA1: 2b8b815229aa8a61e483fb4ba0588b8b6c491890
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: Apache-2.0
 FileCopyrightText: NONE
 # File
 FileName: ./scan/cc0-1.0.LICENSE
+SPDXID: SPDXRef-3
 FileChecksum: SHA1: 172444e7c137eb5cd3cae530aca0879c90f7fada
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: CC0-1.0

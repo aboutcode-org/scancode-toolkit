@@ -112,6 +112,14 @@ def test_can_call_run_scan_as_a_function():
     assert not results['headers'][0]['errors']
 
 
+def test_run_scan_includes_outdated_in_extra():
+    from scancode.cli import run_scan
+    test_dir = test_env.get_test_loc('license', copy=True)
+    rc, results = run_scan(test_dir, outdated='out of date', return_results=True)
+    assert rc
+    assert results['headers'][0]['extra_data']['OUTDATED'] == 'out of date'
+
+
 def test_usage_and_help_return_a_correct_script_name_on_all_platforms():
     result = run_scan_click(['--help'])
     assert 'Usage: scancode [OPTIONS]' in result.output

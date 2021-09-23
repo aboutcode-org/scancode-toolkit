@@ -439,6 +439,14 @@ def scancode(
         cliutils.validate_option_dependencies(ctx)
         pretty_params = get_pretty_params(ctx, generic_paths=test_mode)
 
+        # warn for outdated version and/or check for updates
+        from scancode.outdated import check_scancode_version_locally
+        outdated = check_scancode_version_locally()
+
+        if not outdated and check_version:
+            from scancode.outdated import check_scancode_version_remotely
+            outdated = check_scancode_version_remotely()
+
         # run proper
         success, _results = run_scan(
             input=input,
@@ -459,17 +467,14 @@ def scancode(
             pretty_params=pretty_params,
             # results are saved to file, no need to get them back in a cli context
             return_results=False,
-            echo_func=echo_stderr,
+            echo_func=echo_func,
+            outdated=outdated,
             *args,
             **kwargs
         )
 
-        # check for updates
-        if check_version:
-            from scancode.outdated import check_scancode_version
-            outdated = check_scancode_version()
-            if not quiet and outdated:
-                echo_stderr(outdated, fg='yellow')
+        if not quiet and outdated:
+            echo_stderr(outdated, fg='yellow')
 
     except click.UsageError as e:
         # this will exit
@@ -503,6 +508,7 @@ def run_scan(
     test_error_mode=False,
     pretty_params=None,
     plugin_options=plugin_options,
+    outdated=None,
     *args,
     **kwargs
 ):
@@ -844,6 +850,8 @@ def run_scan(
         cle.notice = notice
         cle.options = pretty_params or {}
         cle.extra_data['spdx_license_list_version'] = scancode_config.spdx_license_list_version
+        if outdated:
+            cle.extra_data['OUTDATED'] = outdated
 
         # TODO: this is weird: may be the timings should NOT be stored on the
         # codebase, since they exist in abstract of it??

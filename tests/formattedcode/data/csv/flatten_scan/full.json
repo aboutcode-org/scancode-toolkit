@@ -26,7 +26,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 39,
       "dirs_count": 12,
       "size_count": 1189824,
@@ -69,7 +69,7 @@
           "end_line": 4
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -101,7 +101,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -133,7 +133,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 28103,
@@ -165,7 +165,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [
+      "package_manifests": [
         {
           "type": "tarball",
           "namespace": null,
@@ -227,7 +227,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 14,
       "dirs_count": 2,
       "size_count": 241228,
@@ -324,7 +324,7 @@
           "end_line": 94
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -405,7 +405,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -437,7 +437,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 5,
       "dirs_count": 0,
       "size_count": 54552,
@@ -526,7 +526,7 @@
           "end_line": 22
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -596,7 +596,7 @@
           "end_line": 196
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -673,7 +673,7 @@
           "end_line": 5
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -732,7 +732,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -813,7 +813,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -845,7 +845,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 7,
       "dirs_count": 0,
       "size_count": 152090,
@@ -934,7 +934,7 @@
           "end_line": 20
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1022,7 +1022,7 @@
           "end_line": 12
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1105,7 +1105,7 @@
           "end_line": 20
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1143,7 +1143,7 @@
       ],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1187,7 +1187,7 @@
           "end_line": 232
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1264,7 +1264,7 @@
           "end_line": 20
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1382,7 +1382,7 @@
           "end_line": 1695
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1414,7 +1414,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 6,
       "dirs_count": 1,
       "size_count": 28741,
@@ -1446,7 +1446,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1523,7 +1523,7 @@
           "end_line": 7
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1600,7 +1600,7 @@
           "end_line": 7
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1632,7 +1632,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [
+      "package_manifests": [
         {
           "type": "npm",
           "namespace": null,
@@ -1778,7 +1778,7 @@
           "end_line": 10
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1837,7 +1837,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1951,7 +1951,7 @@
           "end_line": 27
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1983,7 +1983,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 16,
       "dirs_count": 5,
       "size_count": 268762,
@@ -2054,7 +2054,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -2147,7 +2147,7 @@
           "end_line": 40
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -2244,7 +2244,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -2332,7 +2332,7 @@
           "end_line": 27
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -2403,7 +2403,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -2474,7 +2474,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -2506,7 +2506,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 13594,
@@ -2603,7 +2603,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -2635,7 +2635,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 4,
       "dirs_count": 0,
       "size_count": 14257,
@@ -2679,7 +2679,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -2756,7 +2756,7 @@
           "end_line": 5
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -2815,7 +2815,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -2892,7 +2892,7 @@
           "end_line": 58
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -2924,7 +2924,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 16413,
@@ -3032,7 +3032,7 @@
           "end_line": 180
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3064,7 +3064,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 23223,
@@ -3135,7 +3135,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3206,7 +3206,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3238,7 +3238,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 9994,
@@ -3315,7 +3315,7 @@
           "end_line": 7
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3347,7 +3347,7 @@
       "authors": [],
       "emails": [],
       "urls": [],
-      "packages": [],
+      "package_manifests": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

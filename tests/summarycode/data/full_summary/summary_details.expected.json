@@ -12,6 +12,7 @@
         "--summary-with-details": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -202,7 +203,8 @@
         "value": "GAS",
         "count": 1
       }
-    ]
+    ],
+    "package_manifests": []
   },
   "files": [
     {
@@ -413,7 +415,8 @@
             "value": "GAS",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 26,
       "dirs_count": 9,
@@ -520,7 +523,8 @@
             "value": "Java",
             "count": 7
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 7,
       "dirs_count": 1,
@@ -627,7 +631,8 @@
             "value": "Java",
             "count": 7
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 7,
       "dirs_count": 0,
@@ -743,7 +748,8 @@
             "value": "Java",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -865,7 +871,8 @@
             "value": "Java",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -981,7 +988,8 @@
             "value": "Java",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1050,7 +1058,8 @@
             "value": "Java",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1119,7 +1128,8 @@
             "value": "Java",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1235,7 +1245,8 @@
             "value": "Java",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1304,7 +1315,8 @@
             "value": "Java",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1367,7 +1379,8 @@
             "value": null,
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1446,7 +1459,8 @@
             "value": "C",
             "count": 3
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 3,
       "dirs_count": 0,
@@ -1564,7 +1578,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1680,7 +1695,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1798,7 +1814,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1902,7 +1919,8 @@
             "value": null,
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -4857,6 +4875,12 @@
             "value": null,
             "count": 1
           }
+        ],
+        "package_manifests": [
+          {
+            "value": "pkg:npm/npm@2.13.5",
+            "count": 1
+          }
         ]
       },
       "files_count": 0,
@@ -5004,7 +5028,8 @@
             "value": "GAS",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 13,
       "dirs_count": 5,
@@ -5067,7 +5092,8 @@
             "value": null,
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 1,
       "dirs_count": 0,
@@ -5223,7 +5249,8 @@
             "value": null,
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5341,7 +5368,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5459,7 +5487,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5577,7 +5606,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5648,7 +5678,8 @@
             "value": "C#",
             "count": 2
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 2,
       "dirs_count": 0,
@@ -5723,7 +5754,8 @@
             "value": "C#",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5841,7 +5873,8 @@
             "value": "C#",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5904,7 +5937,8 @@
             "value": "GAS",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 1,
       "dirs_count": 0,
@@ -6026,7 +6060,8 @@
             "value": "GAS",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -6089,7 +6124,8 @@
             "value": "C",
             "count": 2
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 2,
       "dirs_count": 0,
@@ -6207,7 +6243,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -6325,7 +6362,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -6388,7 +6426,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 1,
       "dirs_count": 0,
@@ -6504,7 +6543,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -6620,7 +6660,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -6738,7 +6779,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -6856,7 +6898,8 @@
             "value": "C",
             "count": 1
           }
-        ]
+        ],
+        "package_manifests": []
       },
       "files_count": 0,
       "dirs_count": 0,

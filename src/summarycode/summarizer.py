@@ -19,7 +19,6 @@ from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
 
-
 # Tracing flags
 TRACE = False
 TRACE_LIGHT = False
@@ -279,6 +278,7 @@ def summarize_values(values, attribute):
         holders=summarize_holders,
         authors=summarize_holders,
         programming_language=summarize_languages,
+        package_manifests=summarize_package_manifests,
     )
     return value_summarizers_by_attr[attribute](values)
 
@@ -328,7 +328,7 @@ def summarize_codebase_key_files(codebase, **kwargs):
         'authors',
         'programming_language',
         # 'packages',
-    ])  
+    ])
     summarizable_attributes = [k for k in summarizable_attributes
         if k in really_summarizable_attributes]
 
@@ -480,11 +480,28 @@ def package_summarizer(resource, children, keep_details=False):
         logger_debug('package_summarizer: for:', resource,
                      'package_manifests are:', packs)
 
-    # Collect direct children package_manifests summary
-    for child in children:
-        child_summaries = get_resource_summary(child, key='package_manifests', as_attribute=False) or []
-        package_manifests.extend(child_summaries)
+    package_urls = []
+    for package_manifest in package_manifests:
+        purl = package_manifest.get('purl')
+        if purl:
+            package_urls.append(purl)
 
     # summarize proper
-    set_resource_summary(resource, key='package_manifests', value=package_manifests, as_attribute=False)
-    return package_manifests
+    packages_counter = summarize_package_manifests(package_urls)
+    summarized = sorted_counter(packages_counter)
+    set_resource_summary(
+        resource=resource,
+        key='package_manifests',
+        value=summarized,
+        as_attribute=keep_details,
+    )
+
+    return summarized
+
+
+def summarize_package_manifests(package_urls):
+    """
+    Given a list of package urls, return a mapping of {expression: count
+    of occurences}
+    """
+    return Counter(package_urls)
