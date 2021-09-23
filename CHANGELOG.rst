@@ -1,15 +1,12 @@
 Changelog
 =========
 
-v21.x.x (next, future)
+31.0.0 (next, roadmap)
 -----------------------
+
 
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-- The data structure of the JSON output is now versioned and the next version
-  is available with a new command line option. We are also documenting a new
-  and clear API policy and backward compatibility policy.
 
 - The data structure of the JSON output has changed for copyrights, authors
   and holders: we now use proper name for attributes and not a generic "value".
@@ -17,8 +14,8 @@ Important API changes:
 - The data structure of the JSON output has changed for licenses: we now
   return match details once for each matched license expression rather than
   once for each license in a matched expression. There is a new top-level
-  "licenses" attributes that contains the data details for each detected
-  licenses only once. This data can contain the reference license text
+  "license_references" attributes that contains the data details for each
+  detected licenses only once. This data can contain the reference license text
   as an option.
 
 - The data structure of the JSON output has changed for packages: we now
@@ -27,9 +24,9 @@ Important API changes:
   that contains each package instance that can be aggregating data from
   multiple manifests for a single package instance.
 
-- The data structure for HTML output has been changed to include emails and urls under the 
-  "infos" object. Now HTML template will output holders, authors, emails, and 
-  urls into separate tables like "licenses" and "copyrights".
+- The data structure for HTML output has been changed to include emails and
+  urls under the  "infos" object. Now HTML template will output holders,
+  authors, emails, and urls into separate tables like "licenses" and "copyrights".
 
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
@@ -39,45 +36,176 @@ Copyright detection:
 - Several copyright detection bugs have been fixed. 
 
 
+License detection:
+~~~~~~~~~~~~~~~~~~~
+
+- There have been significant license detection rules and licenses updates:
+
+  - XX new licenses have been added, 
+  - XX existing license metadata have been updated,
+  - XXXX new license detection rules have been added, and
+  - XXXX existing license rules have been updated.
+
+
 Package detection:
 ~~~~~~~~~~~~~~~~~~
 
-- Add support for OpenWRT packages.
-- Add support for Yocto/BitBake .bb recipes.
-- Add support to track installed files for each Package type.
+- We now support new package manifest formats:
+  - OpenWRT packages.
+  - Yocto/BitBake .bb recipes.
+
+- We now support track the files of Package types.
+
+
+Outputs:
+~~~~~~~~
+
+- There is a new CycloneDX 1.2 output as XML and JSON.
+
+
+
+30.0.0 - 2021-09-23
+--------------------
+
+This is a major release with new features, and several bug fixes and
+improvements including major updates to the license detection.
+
+We have droped using calendar-based versions and are now switched back to semver
+versioning. To ensure that there is no ambiguity, the new major version has been
+updated from 21 to 30. The primary reason is that calver was not helping
+integrators to track major version changes like semver does.
+
+We also have introduced a new JSON output format version based on semver to
+version the JSON output format data structure and have documented the new
+versioning approach.
+
+
+Package detection:
+~~~~~~~~~~~~~~~~~~
+
+- The Debian packages declared license detection in machine readable copyright
+  files and unstructured copyright has been significantly improved with the
+  tracking of the detection start and end line of a license match. This is not
+  yet exposed outside of tests but has been essential to help improve detection.
+
 - Debian copyright license detection has been significantly improved with new
   license detection rules.
+
+- Support for Windows packages has been improved (and in particular the handling
+  of Windows packages detection in the Windows registry).
+
+- Support for Cocoapod packages has been significantly revamped and is now
+  working as expected.
+
+- Support for PyPI packages has been refined, in particular package descriptions.
+
+
+
+Copyright detection:
+~~~~~~~~~~~~~~~~~~~~
+
+- The copyright detection accuracy has been improved and several bugs have been
+  fixed.
 
 
 License detection:
 ~~~~~~~~~~~~~~~~~~~
 
-- There have been XXX new licenses added, YYY new license detection rules added
-  and ZZZ updated license or rules.
+There have been some significant updates in license detection. We now track
+34,164 license and license notices:
+
+  - 84 new licenses have been added, 
+  - 34 existing license metadata have been updated,
+  - 2765 new license detection rules have been added, and
+  - 2041 existing license rules have been updated.
+
 
 - Several license detection bugs have fixed.
 
-- The SPDX license list 3.14 is now supported. We also include the version
-  of the SPDX license list in the ScanCode JSON and SPDX outputs, as well as
-  display it with the --version command line option.
+- The SPDX license list 3.14 is now supported and has been synced with the
+  licensedb. We also include the version of the SPDX license list in the
+  ScanCode YAML, JSON and the SPDX outputs, as well as display it with the
+  "--version" command line option.
 
-- Unknown licenses have a new flag "is_unknown" to identify them
-  beyond just the naming convention of having "unknown" as part of their name.
+- Unknown licenses have a new flag "is_unknown" in their metadata to identify
+  them explicitly. Before that we were just relying on the naming convention of
+  having "unknown" as part of a license key.
 
 - Rules that match at least one unknown license have a flag "has_unknown" set
-  in the returned match results.
-  
-- There is a new experimental command line option "--unknown-licenses" to
-  detect unknown licenses and follow license references such as "See license in
-  file COPYING". The actual data structure for this new option is evolving.
+  and returned in the match results.
+
+- Experimental: License detection can now "follow" license mentions that
+  reference another file such as "see license in COPYING" where we can relate
+  this mention to the actual license detected in the COPYING file. Use the new
+  "--unknown-licenses" command line option to test this new feature.
+  This feature will evolve significantly in the next version(s).
 
 
-Many thanks to every contributors that made this possible and in particular:
+Outputs:
+~~~~~~~~
+
+- The SPDX output now has the mandatory ids attribute per SPDX spec. And we
+  support SPDX 2.2 and SPDX license list 3.14.
+
+
+Miscellaneous
+~~~~~~~~~~~~~~~
+
+- There is a new "--no-check-version" CLI option to scancode to bypass live,
+  remote outdated version check on PyPI
+
+- The scan results and the CLI now display an outdated version warning when
+  the installed ScanCode version is older than 90 days. This is to warn users
+  that they are relying on outdated, likely buggy, insecure and inaccurate scan
+  results and encourage them to update to a newer version. This is made entirely
+  locally based on date comparisons.
+
+- We now display again the command line progressbar counters correctly.
+
+- A bug has been fixed in summarization.
+
+- Generated code detection has been improved with several new keywords.
+
+
+Thank you!
+~~~~~~~~~~~~
+
+Many thanks to the many contributors that made this release possible and in
+particular:
 
 - Akanksha Garg @akugarg
+- Armijn Hemel @armijnhemel 
 - Ayan Sinha Mahapatra @AyanSinhaMahapatra
+- Bryan Sutula @sutula
+- Chin-Yeung Li @chinyeungli
+- Dennis Clark @DennisClark
+- dyh @yunhua-deng
+- Dr. Frank Heimes @FrankHeimes 
+- gunaztar @gunaztar
+- Helio Chissini de Castro @heliocastro
+- Henrik Sandklef @hesa
+- Jiyeong Seok @dd-jy
+- John M. Horan @johnmhoran
 - Jono Yang @JonoYang
+- Joseph Heck @heckj
+- Luis Villa @tieguy
+- Konrad Weihmann @priv-kweihmann
+- mapelpapel @mapelpapel
+- Maximilian Huber @maxhbr
+- Michael Herzog @mjherzog
+- MMarwedel @MMarwedel
+- Mikko Murto @mmurto
+- Nishchith Shetty @inishchith 
+- Peter Gardfjäll @petergardfjall
 - Philippe Ombredanne @pombredanne
+- Rainer Bieniek @rbieniek 
+- Roshan Thomas @Thomshan
+- Sadhana @s4-2
+- Sarita Singh @itssingh
+- Siddhant Khare @Siddhant-K-code
+- Soim Kim @soimkim
+- Thorsten Godau @tgodau
+- Yunus Rahbar @yns88
 
 
 v21.8.4

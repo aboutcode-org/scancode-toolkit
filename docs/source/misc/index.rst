@@ -7,3 +7,4 @@
    faq
    support
    perf_report
+   versioning

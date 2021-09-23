@@ -5,7 +5,7 @@
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
-##
+# #
 # This code was in part derived from the pip library:
 # Copyright (c) 2008-2014 The pip developers (see outdated.NOTICE file)
 #
@@ -39,7 +39,18 @@ from requests.exceptions import ConnectionError
 
 from scancode_config import scancode_cache_dir
 from scancode_config import __version__ as scancode_version
+from scancode_config import __release_date__ as scancode_release_date
 from scancode import lockfile
+
+"""
+Utilities to check if the installed version of ScanCode is out of date.
+The check is done either:
+- locally based on elapsed time of 90 days
+- remotely based on an API check for PyPI releases at the Python Software
+  Foundation PyPI.org. At most once a week
+
+This code is based on a pip module and heavilty modified for use here.
+"""
 
 SELFCHECK_DATE_FMT = "%Y-%m-%dT%H:%M:%SZ"
 
@@ -56,7 +67,26 @@ def total_seconds(td):
         return val / 10 ** 6
 
 
-class VersionCheckState(object):
+def is_outdated(release_date):
+    """
+    Return True if 90 days have passed since `release_date` datetime object.
+
+    For example:
+
+    >>> release_date = datetime.datetime(2020, 9, 23)
+    >>> is_outdated(release_date)
+    True
+    >>> release_date =  datetime.datetime.utcnow()
+    >>> is_outdated(release_date)
+    False
+    """
+    current_time = datetime.datetime.utcnow()
+    seconds_since_last_check = total_seconds(current_time - release_date)
+    ninety_days = 90 * 24 * 60 * 60
+    return seconds_since_last_check > ninety_days
+
+
+class VersionCheckState:
 
     def __init__(self):
         self.statefile_path = path.join(
@@ -81,8 +111,48 @@ class VersionCheckState(object):
                           separators=(',', ':'))
 
 
-def check_scancode_version(
+def build_outdated_message(installed_version, release_date, newer_version=''):
+    """
+    Return a message about outdated version for display.
+    """
+    rel_date, _, _ = release_date.isoformat().partition('T')
+
+    newer_version = newer_version or ''
+    newer_version = newer_version.strip()
+    if newer_version:
+        newer_version = f'{newer_version} '
+
+    msg = (
+        'WARNING: Outdated ScanCode Toolkit version! '
+        f'You are using an outdated version of ScanCode Toolkit: {installed_version} '
+        f'released on: {rel_date}. '
+        f'A new version {newer_version}is available with important '
+        f'improvements including bug and security fixes, updated license, '
+        f'copyright and package detection, and improved scanning accuracy. '
+        'Please download and install the latest version of ScanCode. '
+        'Visit https://github.com/nexB/scancode-toolkit/releases for details.'
+    )
+    return msg
+
+
+def check_scancode_version_locally(
     installed_version=scancode_version,
+    release_date=scancode_release_date,
+):
+    """
+    Return a message to display if outdated or None. Work offline, without a
+    PyPI remote check.
+    """
+    if is_outdated(release_date):
+        return build_outdated_message(
+            installed_version=installed_version,
+            release_date=release_date,
+        )
+
+
+def check_scancode_version_remotely(
+    installed_version=scancode_version,
+    release_date=scancode_release_date,
     new_version_url='https://pypi.org/pypi/scancode-toolkit/json',
     force=False,
 ):
@@ -92,10 +162,33 @@ def check_scancode_version(
     State is stored in the scancode_cache_dir. If `force` is True, redo a PyPI
     remote check.
     """
-    installed_version = packaging_version.parse(installed_version)
-    latest_version = None
-    msg = None
+    newer_version = fetch_newer_version(
+        installed_version=installed_version,
+        new_version_url=new_version_url,
+        force=force,
+    )
+    if newer_version:
+        return build_outdated_message(
+                installed_version=installed_version,
+                release_date=release_date,
+                newer_version=newer_version,
+            )
 
+
+def fetch_newer_version(
+    installed_version=scancode_version,
+    new_version_url='https://pypi.org/pypi/scancode-toolkit/json',
+    force=False,
+):
+    """
+    Return a version string if there is an updated version of scancode-toolkit
+    newer than the installed version and available on PyPI. Return None
+    otherwise.
+    Limit the frequency of update checks to once per week.
+    State is stored in the scancode_cache_dir.
+    If `force` is True, redo a PyPI remote check.
+    """
+    installed_version = packaging_version.parse(installed_version)
     try:
         state = VersionCheckState()
 
@@ -117,7 +210,7 @@ def check_scancode_version(
         # Refresh the version if we need to or just see if we need to warn
         if latest_version is None:
             try:
-                latest_version = get_latest_version(new_version_url)
+                latest_version = fetch_latest_version(new_version_url)
                 state.save(latest_version, current_time)
             except Exception:
                 # save an empty version to avoid checking more than once a week
@@ -126,18 +219,9 @@ def check_scancode_version(
 
         latest_version = packaging_version.parse(latest_version)
 
-        outdated_msg = ('WARNING: '
-            'You are using ScanCode Toolkit version %s, however the newer '
-            'version %s is available.\nYou should download and install the '
-            'latest version of ScanCode with bug and security fixes and the '
-            'latest license detection data for accurate scanning.\n'
-            'Visit https://github.com/nexB/scancode-toolkit/releases for details.'
-            % (installed_version, latest_version)
-        )
-
-        # Our git version string is not PEP 440 compliant, and thus improperly parsed via
-        # most 3rd party version parsers. We handle this case by pulling out the "base"
-        # release version by split()-ting on "post".
+        # Our git version string is not PEP 440 compliant, and thus improperly
+        # parsed via most 3rd party version parsers. We handle this case by
+        # pulling out the "base" release version by split()-ting on "post".
         #
         # For example, "3.1.2.post351.850399ba3" becomes "3.1.2"
         if isinstance(installed_version, packaging_version.LegacyVersion):
@@ -148,14 +232,14 @@ def check_scancode_version(
         # Determine if our latest_version is older
         if (installed_version < latest_version
         and installed_version.base_version != latest_version.base_version):
-            return outdated_msg
+            return str(latest_version)
 
     except Exception:
         msg = 'There was an error while checking for the latest version of ScanCode'
         logger.debug(msg, exc_info=True)
 
 
-def get_latest_version(new_version_url='https://pypi.org/pypi/scancode-toolkit/json'):
+def fetch_latest_version(new_version_url='https://pypi.org/pypi/scancode-toolkit/json'):
     """
     Fetch `new_version_url` and return the latest version of scancode as a
     string.
@@ -168,12 +252,12 @@ def get_latest_version(new_version_url='https://pypi.org/pypi/scancode-toolkit/j
     try:
         response = requests.get(new_version_url, **requests_args)
     except (ConnectionError) as e:
-        logger.debug('get_latest_version: Download failed for %(url)r' % locals())
+        logger.debug('fetch_latest_version: Download failed for %(url)r' % locals())
         raise
 
     status = response.status_code
     if status != 200:
-        msg = 'get_latest_version: Download failed for %(url)r with %(status)r' % locals()
+        msg = 'fetch_latest_version: Download failed for %(url)r with %(status)r' % locals()
         logger.debug(msg)
         raise Exception(msg)
 

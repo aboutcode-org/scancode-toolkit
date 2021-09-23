@@ -12,7 +12,9 @@ import json
 import os
 import time
 
+import saneyaml
 from commoncode.system import on_windows
+
 from scancode_config import scancode_root_dir
 
 
@@ -192,11 +194,12 @@ def check_json_scan(
         results.pop('headers', None)
         expected.pop('headers', None)
 
-    # NOTE we redump the JSON as a string for a more efficient display of the
-    # failures comparison/diff
-    expected = json.dumps(expected, indent=2, separators=(',', ': '))
-    results = json.dumps(results, indent=2, separators=(',', ': '))
-    assert results == expected
+    # NOTE we redump the JSON as a YAML string for easier display of
+    # the failures comparison/diff
+    if results != expected:
+        expected = saneyaml.dump(expected)
+        results = saneyaml.dump(results)
+        assert results == expected
 
 
 def load_json_result(location, remove_file_date=False):
@@ -312,7 +315,7 @@ def check_jsonlines_scan(
         expected = json.load(res)
 
     streamline_jsonlines_scan(expected, remove_file_date)
-    
+
     if not check_headers:
         results[0].pop('headers', None)
         expected[0].pop('headers', None)

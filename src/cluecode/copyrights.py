@@ -1591,7 +1591,7 @@ patterns = [
     (r'^[A-Z]+[.][A-Z][a-z]+[,]?$', 'NNP'),
 
     # proper noun with apostrophe ': D'Orleans, D'Arcy, T'so, Ts'o
-    (r"^[A-Z][[a-z]?['][A-Z]?[a-z]+[,.]?$", 'NNP'),
+    (r"^[A-Z][a-z]?['][A-Z]?[a-z]+[,.]?$", 'NNP'),
 
     # proper noun with apostrophe ': d'Itri
     (r"^[a-z]['][A-Z]?[a-z]+[,\.]?$", 'NNP'),

@@ -12,7 +12,7 @@ import pytest
 from scancode import outdated
 
 
-def test_get_latest_version():
+def test_fetch_latest_version():
     from unittest import mock
     pypi_mock_releases = {
         'releases': {
@@ -30,6 +30,7 @@ def test_get_latest_version():
             '3.0.0': [],
         }
     }
+
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
@@ -38,19 +39,19 @@ def test_get_latest_version():
             json=jget,
             status_code=200
         )
-        result = outdated.get_latest_version()
+        result = outdated.fetch_latest_version()
         assert result == '3.0.2'
 
 
-def test_get_latest_version_fails_on_http_error():
+def test_fetch_latest_version_fails_on_http_error():
     from unittest import mock
     with mock.patch('requests.get') as mock_get:
         mock_get.return_value = mock.Mock(status_code=400)
         with pytest.raises(Exception):
-            outdated.get_latest_version()
+            outdated.fetch_latest_version()
 
 
-def test_get_latest_version_ignore_rc_versions():
+def test_fetch_latest_version_ignore_rc_versions():
     from unittest import mock
     pypi_mock_releases = {
         'releases': {
@@ -62,6 +63,7 @@ def test_get_latest_version_ignore_rc_versions():
             '2.9.0rc3': [],
         }
     }
+
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
@@ -70,11 +72,11 @@ def test_get_latest_version_ignore_rc_versions():
             json=jget,
             status_code=200
         )
-        result = outdated.get_latest_version()
+        result = outdated.fetch_latest_version()
         assert result == '2.2.1'
 
 
-def test_check_scancode_version():
+def test_fetch_newer_version():
     from unittest import mock
     pypi_mock_releases = {
         'releases': {
@@ -88,6 +90,7 @@ def test_check_scancode_version():
             '42.5.1': [],
         }
     }
+
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
@@ -96,14 +99,39 @@ def test_check_scancode_version():
             json=jget,
             status_code=200
         )
-        expected1 = 'You are using ScanCode Toolkit version'
-        expected2 = 'however the newer version 42.5.1 is available'
-        result = outdated.check_scancode_version(force=True)
-        assert expected1 in result
-        assert expected2 in result
+        assert outdated.fetch_newer_version(force=True) == '42.5.1'
 
 
-def test_check_scancode_version_no_new_version():
+def test_check_scancode_version_remotely():
+    from unittest import mock
+    pypi_mock_releases = {
+        'releases': {
+            '2.0.0': [],
+            '2.0.0rc3': [],
+            '2.0.1': [],
+            '2.1.0': [],
+            '3.4.1': [],
+            '22.1': [],
+            '30.9.0rc3': [],
+            '42.5.1': [],
+        }
+    }
+
+    def jget(*args, **kwargs):
+        return pypi_mock_releases
+
+    with mock.patch('requests.get') as mock_get:
+        mock_get.return_value = mock.Mock(
+            json=jget,
+            status_code=200
+        )
+
+        result = outdated.check_scancode_version_remotely(force=True)
+        assert result.startswith('WARNING: Outdated ScanCode')
+        assert 'A new version 42.5.1 is available' in result
+
+
+def test_fetch_newer_version_no_new_version():
     from unittest import mock
     pypi_mock_releases = {
         'releases': {
@@ -115,6 +143,7 @@ def test_check_scancode_version_no_new_version():
             '3.9.0rc3': [],
         }
     }
+
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
@@ -123,11 +152,11 @@ def test_check_scancode_version_no_new_version():
             json=jget,
             status_code=200
         )
-        result = outdated.check_scancode_version(force=True)
-        assert not result
+        assert not outdated.fetch_newer_version(force=True)
+        assert not outdated.check_scancode_version_remotely(force=True)
 
 
-def test_check_scancode_version_local_git_version():
+def test_fetch_newer_version_local_git_version():
     from unittest import mock
     pypi_mock_releases = {
         'releases': {
@@ -139,6 +168,7 @@ def test_check_scancode_version_local_git_version():
             '3.1.2': [],
         }
     }
+
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
@@ -147,5 +177,15 @@ def test_check_scancode_version_local_git_version():
             json=jget,
             status_code=200
         )
-        result = outdated.check_scancode_version(installed_version='3.1.2.post351.850399bc3', force=True)
+
+        result = outdated.fetch_newer_version(
+            installed_version='3.1.2.post351.850399bc3',
+            force=True,
+        )
+        assert not result
+
+        result = outdated.check_scancode_version_remotely(
+            installed_version='3.1.2.post351.850399bc3',
+            force=True,
+        )
         assert not result
