@@ -6,6 +6,8 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+
+import datetime
 import errno
 import os
 from os.path import abspath
@@ -75,15 +77,17 @@ def _create_dir(location):
 
 # in case package is not installed or we do not have setutools/pkg_resources
 # on hand fall back to this version
-__version__ = '21.8.4'
+__version__ = '30.0.0'
+
+# used to warn user when the version is out of date
+__release_date__ = datetime.datetime(2021, 9, 23)
 
 # See https://github.com/nexB/scancode-toolkit/issues/2653 for more information
 # on the data format version
 __output_format_version__ = '1.0.0'
 
-# 
+#
 spdx_license_list_version = '3.14'
-
 
 try:
     from pkg_resources import get_distribution, DistributionNotFound
