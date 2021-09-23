@@ -365,15 +365,28 @@ def get_description(metainfo, location=None):
 
 def clean_description(description):
     """
-    Return a cleaned description, removing extra leading whitespaces.
+    Return a cleaned description text, removing extra leading whitespaces if
+    needed. Some metadata formats padd each description line with 8 spaces. Some
+    do not. We check first and cleanup if needed.
     """
-    desc_lines = []
-    for line in (description or '').strip().splitlines(False):
-        if line.startswith(' ' * 8):
-            line = line[8:]
-        desc_lines.append(line)
+    # TODO: verify what is the impact of Description-Content-Type: if any
+    description = description or ''
+    description = description.strip()
+    lines = description.splitlines(False)
 
-    return '\n'.join(desc_lines)
+    space_padding = ' ' * 8
+
+    # we need cleaning if any of the first two lines starts with 8 spaces
+    need_cleaning = any(l.startswith(space_padding) for l in lines[:2])
+    if not need_cleaning:
+        return description
+
+    cleaned_lines = [
+        line[8:] if line.startswith(space_padding) else line
+        for line in lines
+    ]
+
+    return '\n'.join(cleaned_lines)
 
 
 def get_legacy_description(location):
