@@ -172,7 +172,13 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              click_versions: for clk_ver in 8.0.1 7.1.2 7.1.1 7.1 6.7; do pip install click==$clk_ver; scancode -i samples/ -n3 --json foo.json; scancode -i --verbose samples/ -n3 --json foo.json; done
+              click_versions: |
+                for clk_ver in 8.0.1 7.1.2 7.1.1 7.1 6.7; 
+                 do
+                  bin/pip install click==$clk_ver;
+                  bin/scancode -i samples/ -n3 --json foo.json; 
+                  bin/scancode -i --verbose samples/ -n3 --json foo.json; 
+                 done
 
 
 
