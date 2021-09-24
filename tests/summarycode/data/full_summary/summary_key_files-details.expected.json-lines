@@ -14,6 +14,7 @@
           "--summary-key-files": true
         },
         "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+        "output_format_version": "1.0.0",
         "message": null,
         "errors": [],
         "extra_data": {
@@ -29,10 +30,6 @@
         {
           "value": "zlib",
           "count": 12
-        },
-        {
-          "value": null,
-          "count": 5
         },
         {
           "value": "lgpl-2.1-plus",
@@ -195,10 +192,6 @@
           "count": 7
         },
         {
-          "value": null,
-          "count": 4
-        },
-        {
           "value": "C#",
           "count": 2
         },
@@ -213,10 +206,6 @@
     "summary_of_key_files": {
       "license_expressions": [
         {
-          "value": null,
-          "count": 1
-        },
-        {
           "value": "artistic-2.0",
           "count": 1
         },
@@ -225,34 +214,15 @@
           "count": 1
         }
       ],
-      "copyrights": [
-        {
-          "value": null,
-          "count": 3
-        }
-      ],
-      "holders": [
-        {
-          "value": null,
-          "count": 3
-        }
-      ],
+      "copyrights": [],
+      "holders": [],
       "authors": [
-        {
-          "value": null,
-          "count": 2
-        },
         {
           "value": "name' Isaac Z.",
           "count": 1
         }
       ],
-      "programming_language": [
-        {
-          "value": null,
-          "count": 3
-        }
-      ]
+      "programming_language": []
     }
   },
   {

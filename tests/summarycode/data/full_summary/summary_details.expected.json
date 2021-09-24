@@ -28,10 +28,6 @@
         "count": 12
       },
       {
-        "value": null,
-        "count": 5
-      },
-      {
         "value": "lgpl-2.1-plus",
         "count": 3
       },
@@ -192,10 +188,6 @@
         "count": 7
       },
       {
-        "value": null,
-        "count": 4
-      },
-      {
         "value": "C#",
         "count": 2
       },
@@ -203,8 +195,7 @@
         "value": "GAS",
         "count": 1
       }
-    ],
-    "packages": []
+    ]
   },
   "files": [
     {
@@ -238,10 +229,6 @@
           {
             "value": "zlib",
             "count": 12
-          },
-          {
-            "value": null,
-            "count": 5
           },
           {
             "value": "lgpl-2.1-plus",
@@ -404,10 +391,6 @@
             "count": 7
           },
           {
-            "value": null,
-            "count": 4
-          },
-          {
             "value": "C#",
             "count": 2
           },
@@ -415,8 +398,7 @@
             "value": "GAS",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 26,
       "dirs_count": 9,
@@ -452,10 +434,6 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
-            "count": 3
-          },
-          {
             "value": "lgpl-2.1-plus",
             "count": 3
           },
@@ -523,8 +501,7 @@
             "value": "Java",
             "count": 7
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 7,
       "dirs_count": 1,
@@ -560,10 +537,6 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
-            "count": 3
-          },
-          {
             "value": "lgpl-2.1-plus",
             "count": 3
           },
@@ -631,8 +604,7 @@
             "value": "Java",
             "count": 7
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 7,
       "dirs_count": 0,
@@ -748,8 +720,7 @@
             "value": "Java",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -871,8 +842,7 @@
             "value": "Java",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -988,8 +958,7 @@
             "value": "Java",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1058,8 +1027,7 @@
             "value": "Java",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1128,8 +1096,7 @@
             "value": "Java",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1245,8 +1212,7 @@
             "value": "Java",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1315,8 +1281,7 @@
             "value": "Java",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1379,8 +1344,7 @@
             "value": null,
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1459,8 +1423,7 @@
             "value": "C",
             "count": 3
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 3,
       "dirs_count": 0,
@@ -1578,8 +1541,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1695,8 +1657,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1814,8 +1775,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -1919,8 +1879,7 @@
             "value": null,
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -4875,12 +4834,6 @@
             "value": null,
             "count": 1
           }
-        ],
-        "packages": [
-          {
-            "value": "pkg:npm/npm@2.13.5",
-            "count": 1
-          }
         ]
       },
       "files_count": 0,
@@ -4919,10 +4872,6 @@
           {
             "value": "zlib",
             "count": 9
-          },
-          {
-            "value": null,
-            "count": 1
           },
           {
             "value": "boost-1.0",
@@ -5021,15 +4970,10 @@
             "count": 2
           },
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "GAS",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 13,
       "dirs_count": 5,
@@ -5087,13 +5031,7 @@
             "count": 1
           }
         ],
-        "programming_language": [
-          {
-            "value": null,
-            "count": 1
-          }
-        ],
-        "packages": []
+        "programming_language": []
       },
       "files_count": 1,
       "dirs_count": 0,
@@ -5249,8 +5187,7 @@
             "value": null,
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5368,8 +5305,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5487,8 +5423,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5606,8 +5541,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5643,10 +5577,6 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "boost-1.0",
             "count": 1
           }
@@ -5678,8 +5608,7 @@
             "value": "C#",
             "count": 2
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 2,
       "dirs_count": 0,
@@ -5754,8 +5683,7 @@
             "value": "C#",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5873,8 +5801,7 @@
             "value": "C#",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5937,8 +5864,7 @@
             "value": "GAS",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 1,
       "dirs_count": 0,
@@ -6060,8 +5986,7 @@
             "value": "GAS",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -6124,8 +6049,7 @@
             "value": "C",
             "count": 2
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 2,
       "dirs_count": 0,
@@ -6243,8 +6167,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -6362,8 +6285,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -6426,8 +6348,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 1,
       "dirs_count": 0,
@@ -6543,8 +6464,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -6660,8 +6580,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -6779,8 +6698,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -6898,8 +6816,7 @@
             "value": "C",
             "count": 1
           }
-        ],
-        "packages": []
+        ]
       },
       "files_count": 0,
       "dirs_count": 0,
