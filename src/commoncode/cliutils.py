@@ -267,7 +267,8 @@ def progressmanager(
             '[%(bar)s]' + ' ' + '%(info)s'
             if bar_template is None else bar_template
         )
-    return progress_class(
+
+    kwargs = dict(
         iterable=iterable,
         length=length,
         fill_char=fill_char,
@@ -281,9 +282,20 @@ def progressmanager(
         label=label,
         file=file,
         color=color,
-        update_min_steps=update_min_steps,
         width=width,
     )
+
+    # Check if we have an "update_min_steps" argument that was introduced in
+    # Click 8. See https://github.com/pallets/click/pull/1698
+    # Note that we use this argument on Click 8 in order to fix a regression
+    # that this same PR introduced by Click and tracked originally at
+    # https://github.com/nexB/scancode-toolkit/issues/2583
+    # Here we create a dummy progress_class and then for the attribute presence.
+    pb = progress_class([])
+    if hasattr(pb, 'update_min_steps'):
+        kwargs['update_min_steps'] = update_min_steps
+
+    return progress_class(**kwargs)
 
 
 def fixed_width_file_name(path, max_length=25):
