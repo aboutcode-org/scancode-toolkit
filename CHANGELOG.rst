@@ -1,6 +1,17 @@
 Release notes
 =============
 
+Version 30.0.0 (2021-09-24)
+------------------------------
+
+- Switch back from clamver to semver.
+- Adopt latest skeleton. The default virtualenv directory is now venv and no
+  longer tmp
+- Fix issue with Click progressbar API #23 that prohibited to use all supported
+  Click versions. Since Click is widely used that was a frequent source of
+  installation conflicts.
+
+
 Version 21.8.31
 ---------------
 
