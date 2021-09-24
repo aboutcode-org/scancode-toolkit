@@ -64,6 +64,22 @@ Outputs:
 
 
 
+30.0.1 - 2021-09-24
+--------------------
+
+This is a minor bug fix release for these bugs:
+
+- https://github.com/nexB/scancode-toolkit/issues/2713
+- https://github.com/nexB/scancode-toolkit/issues/2713
+
+We now correctly work with all supported Click versions. 
+
+Thank you to:
+- Konstantin Kochin @vznncv
+- Thomas Druez @tdruez 
+
+
+
 30.0.0 - 2021-09-23
 --------------------
 
@@ -204,6 +220,7 @@ particular:
 - Sarita Singh @itssingh
 - Siddhant Khare @Siddhant-K-code
 - Soim Kim @soimkim
+- Thomas Druez @tdruez 
 - Thorsten Godau @tgodau
 - Yunus Rahbar @yns88
 
