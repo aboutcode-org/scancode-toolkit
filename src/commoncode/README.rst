@@ -16,7 +16,6 @@ To install this package use::
     pip install commoncode
 
 
-
 Alternatively, to set up a development environment::
 
     source configure --dev
