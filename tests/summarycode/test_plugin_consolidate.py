@@ -122,7 +122,7 @@ class TestConsolidate(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/zlib-expected.json')
         run_scan_click(['--from-json', scan_loc, '--consolidate', '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=True, remove_file_date=True)
+        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
     def test_consolidate_e2fsprogs(self):
         scan_loc = self.get_test_loc('plugin_consolidate/e2fsprogs.json')

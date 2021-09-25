@@ -12,6 +12,7 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -20,6 +21,7 @@
       }
     }
   ],
+  "packages": [],
   "files": [
     {
       "path": "basic.tgz/basic/dir2/subdir/bcopy.s",
