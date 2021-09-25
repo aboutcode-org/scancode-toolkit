@@ -50,7 +50,9 @@ class PackageScanner(ScanPlugin):
     """
 
     resource_attributes = {}
+    codebase_attributes = {}
     resource_attributes['package_manifests'] = attr.ib(default=attr.Factory(list), repr=False)
+    codebase_attributes['packages'] = attr.ib(default=attr.Factory(list), repr=False)
 
     sort_order = 6
 
@@ -91,6 +93,21 @@ class PackageScanner(ScanPlugin):
 
         for resource in codebase.walk(topdown=False):
             set_packages_root(resource, codebase)
+
+        summarize_codebase_package_manifests(codebase, **kwargs)
+
+
+def summarize_codebase_package_manifests(codebase, **kwargs):
+    """
+    Summarize codebase by package manifests.
+    """
+    package_manifests = []
+
+    for resource in codebase.walk(topdown=False):
+        if resource.package_manifests:
+            package_manifests.extend(resource.package_manifests)
+
+    codebase.attributes.packages.extend(package_manifests)
 
 
 def set_packages_root(resource, codebase):
