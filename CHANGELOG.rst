@@ -64,12 +64,30 @@ Outputs:
 
 
 
+30.1.0 - 2021-09-25
+--------------------
+
+This is a bug fix release for these bugs:
+
+- https://github.com/nexB/scancode-toolkit/issues/2717
+
+We now return the package in the summaries as before.
+
+There is also a minor API change: we no longer return a count of "null" empty
+values in the summaries for license, copyrights, etc.
+
+
+Thank you to:
+- Thomas Druez @tdruez 
+
+
+
 30.0.1 - 2021-09-24
 --------------------
 
 This is a minor bug fix release for these bugs:
 
-- https://github.com/nexB/scancode-toolkit/issues/2713
+- https://github.com/nexB/commoncode/issues/31
 - https://github.com/nexB/scancode-toolkit/issues/2713
 
 We now correctly work with all supported Click versions. 
