@@ -17,6 +17,7 @@
         "--summary-key-files": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -27,10 +28,6 @@
   ],
   "summary": {
     "license_expressions": [
-      {
-        "value": null,
-        "count": 2
-      },
       {
         "value": "gpl-2.0-plus",
         "count": 1
@@ -72,10 +69,6 @@
     ],
     "programming_language": [
       {
-        "value": null,
-        "count": 2
-      },
-      {
         "value": "C",
         "count": 2
       }
@@ -85,38 +78,14 @@
   "summary_of_key_files": {
     "license_expressions": [
       {
-        "value": null,
-        "count": 1
-      },
-      {
         "value": "gpl-3.0-plus",
         "count": 1
       }
     ],
-    "copyrights": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ],
-    "holders": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ],
-    "authors": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ],
-    "programming_language": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ]
+    "copyrights": [],
+    "holders": [],
+    "authors": [],
+    "programming_language": []
   },
   "files": [
     {
