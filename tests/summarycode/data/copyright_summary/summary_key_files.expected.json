@@ -150,10 +150,6 @@
         "count": 7
       },
       {
-        "value": null,
-        "count": 2
-      },
-      {
         "value": "C#",
         "count": 2
       },
@@ -164,30 +160,10 @@
     ]
   },
   "summary_of_key_files": {
-    "copyrights": [
-      {
-        "value": null,
-        "count": 1
-      }
-    ],
-    "holders": [
-      {
-        "value": null,
-        "count": 1
-      }
-    ],
-    "authors": [
-      {
-        "value": null,
-        "count": 1
-      }
-    ],
-    "programming_language": [
-      {
-        "value": null,
-        "count": 1
-      }
-    ]
+    "copyrights": [],
+    "holders": [],
+    "authors": [],
+    "programming_language": []
   },
   "files": [
     {

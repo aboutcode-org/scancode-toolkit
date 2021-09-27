@@ -29,10 +29,6 @@
         "count": 12
       },
       {
-        "value": null,
-        "count": 5
-      },
-      {
         "value": "lgpl-2.1-plus",
         "count": 3
       },
@@ -193,10 +189,6 @@
         "count": 7
       },
       {
-        "value": null,
-        "count": 4
-      },
-      {
         "value": "C#",
         "count": 2
       },
@@ -209,10 +201,6 @@
   "summary_of_key_files": {
     "license_expressions": [
       {
-        "value": null,
-        "count": 1
-      },
-      {
         "value": "artistic-2.0",
         "count": 1
       },
@@ -221,34 +209,15 @@
         "count": 1
       }
     ],
-    "copyrights": [
-      {
-        "value": null,
-        "count": 3
-      }
-    ],
-    "holders": [
-      {
-        "value": null,
-        "count": 3
-      }
-    ],
+    "copyrights": [],
+    "holders": [],
     "authors": [
-      {
-        "value": null,
-        "count": 2
-      },
       {
         "value": "name' Isaac Z.",
         "count": 1
       }
     ],
-    "programming_language": [
-      {
-        "value": null,
-        "count": 3
-      }
-    ]
+    "programming_language": []
   },
   "files": [
     {
