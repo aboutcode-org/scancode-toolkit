@@ -18,7 +18,79 @@
       }
     }
   ],
-  "packages": [],
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "busboy",
+      "version": "0.2.14",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "A streaming parser for HTML form data for node.js",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Brian White",
+          "email": "mscdex@mscdex.net",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "uploads",
+        "forms",
+        "multipart",
+        "form-data"
+      ],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "git+http://github.com/mscdex/busboy.git",
+      "copyright": null,
+      "license_expression": "mit",
+      "declared_license": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/mscdex/busboy/raw/master/LICENSE"
+        }
+      ],
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [
+        {
+          "purl": "pkg:npm/dicer",
+          "requirement": "0.2.5",
+          "scope": "dependencies",
+          "is_runtime": true,
+          "is_optional": false,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:npm/readable-stream",
+          "requirement": "1.1.x",
+          "scope": "dependencies",
+          "is_runtime": true,
+          "is_optional": false,
+          "is_resolved": false
+        }
+      ],
+      "contains_source_code": null,
+      "source_packages": [],
+      "extra_data": {},
+      "purl": "pkg:npm/busboy@0.2.14",
+      "repository_homepage_url": "https://www.npmjs.com/package/busboy",
+      "repository_download_url": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
+      "api_data_url": "https://registry.npmjs.org/busboy/0.2.14"
+    }
+  ],
   "files": [
     {
       "path": "package.json",

@@ -87,14 +87,14 @@ class PackageScanner(ScanPlugin):
         """
         Set the package root given a package "type".
         """
+        create_packages_from_manifests(codebase, **kwargs)
+
         if codebase.has_single_resource:
             # What if we scanned a single file and we do not have a root proper?
             return
 
         for resource in codebase.walk(topdown=False):
             set_packages_root(resource, codebase)
-
-        create_packages_from_manifests(codebase, **kwargs)
 
 
 def create_packages_from_manifests(codebase, **kwargs):
