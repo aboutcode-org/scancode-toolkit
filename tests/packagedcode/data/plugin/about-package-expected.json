@@ -168,12 +168,6 @@
       "scan_errors": []
     },
     {
-      "path": "apipkg.ABOUT-expected",
-      "type": "file",
-      "package_manifests": [],
-      "scan_errors": []
-    },
-    {
       "path": "appdirs.ABOUT",
       "type": "file",
       "package_manifests": [
@@ -224,12 +218,6 @@
           "api_data_url": null
         }
       ],
-      "scan_errors": []
-    },
-    {
-      "path": "appdirs.ABOUT-expected",
-      "type": "file",
-      "package_manifests": [],
       "scan_errors": []
     }
   ]

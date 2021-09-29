@@ -80,8 +80,8 @@ class PackageScanner(ScanPlugin):
         """
         Return a scanner callable to scan a Resource for packages.
         """
-        from scancode.api import get_package_manifest_info
-        return get_package_manifest_info
+        from scancode.api import get_package_manifests
+        return get_package_manifests
 
     def process_codebase(self, codebase, **kwargs):
         """
@@ -94,12 +94,12 @@ class PackageScanner(ScanPlugin):
         for resource in codebase.walk(topdown=False):
             set_packages_root(resource, codebase)
 
-        summarize_codebase_package_manifests(codebase, **kwargs)
+        create_packages_from_manifests(codebase, **kwargs)
 
 
-def summarize_codebase_package_manifests(codebase, **kwargs):
+def create_packages_from_manifests(codebase, **kwargs):
     """
-    Summarize codebase by package manifests.
+    Create package instances from package manifests present in the codebase.
     """
     package_manifests = []
 

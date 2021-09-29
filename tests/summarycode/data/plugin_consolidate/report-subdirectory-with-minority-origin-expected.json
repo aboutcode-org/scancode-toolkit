@@ -56,7 +56,7 @@
       "files_count": 1
     }
   ],
-  "consolidated_package_manifests": [],
+  "consolidated_packages": [],
   "files": [
     {
       "path": "report-subdirectory-with-minority-origin",

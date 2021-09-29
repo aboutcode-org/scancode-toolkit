@@ -99,18 +99,6 @@
   ],
   "consolidated_components": [
     {
-      "type": "build",
-      "identifier": "demo_1",
-      "consolidated_license_expression": null,
-      "consolidated_holders": [],
-      "consolidated_copyright": "Copyright (c) ",
-      "core_license_expression": null,
-      "core_holders": [],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
-    },
-    {
       "type": "holders",
       "identifier": "apache_foundation_software_1",
       "consolidated_license_expression": "apache-2.0",
@@ -125,6 +113,38 @@
       "other_license_expression": null,
       "other_holders": [],
       "files_count": 3
+    },
+    {
+      "type": "holders",
+      "identifier": "apache_software_1",
+      "consolidated_license_expression": "apache-2.0",
+      "consolidated_holders": [
+        "The Apache Software"
+      ],
+      "consolidated_copyright": "Copyright (c) The Apache Software",
+      "core_license_expression": "apache-2.0",
+      "core_holders": [
+        "The Apache Software"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
+    },
+    {
+      "type": "holders",
+      "identifier": "corp_ibm_1",
+      "consolidated_license_expression": "gpl-1.0-plus",
+      "consolidated_holders": [
+        "IBM Corp."
+      ],
+      "consolidated_copyright": "Copyright (c) IBM Corp.",
+      "core_license_expression": "gpl-1.0-plus",
+      "core_holders": [
+        "IBM Corp."
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
     },
     {
       "type": "holders",
@@ -143,63 +163,7 @@
       "files_count": 1
     }
   ],
-  "consolidated_package_manifests": [
-    {
-      "type": "npm",
-      "namespace": null,
-      "name": "test-package",
-      "version": "0.0.1",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "JavaScript",
-      "description": null,
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": "apache-2.0",
-      "declared_license": [
-        "apache-2.0"
-      ],
-      "notice_text": null,
-      "root_path": "component-package-build/package",
-      "dependencies": [],
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {},
-      "purl": "pkg:npm/test-package@0.0.1",
-      "repository_homepage_url": "https://www.npmjs.com/package/test-package",
-      "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
-      "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
-      "identifier": "pkg_npm_test_package_0_0_1_1",
-      "consolidated_license_expression": "apache-2.0 AND gpl-1.0-plus",
-      "consolidated_holders": [
-        "IBM Corp.",
-        "The Apache Software",
-        "The Apache Software Foundation"
-      ],
-      "consolidated_copyright": "Copyright (c) IBM Corp., The Apache Software, The Apache Software Foundation",
-      "core_license_expression": "apache-2.0",
-      "core_holders": [],
-      "other_license_expression": "apache-2.0 AND gpl-1.0-plus",
-      "other_holders": [
-        "The Apache Software Foundation",
-        "The Apache Software",
-        "IBM Corp."
-      ],
-      "files_count": 3
-    }
-  ],
+  "consolidated_packages": [],
   "files": [
     {
       "path": "component-package-build",
@@ -259,9 +223,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
-      "consolidated_to": [
-        "demo_1"
-      ],
+      "consolidated_to": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 261,
@@ -330,9 +292,7 @@
           "api_data_url": null
         }
       ],
-      "consolidated_to": [
-        "demo_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -748,7 +708,8 @@
       "authors": [],
       "package_manifests": [],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "apache_software_1",
+        "corp_ibm_1"
       ],
       "files_count": 3,
       "dirs_count": 0,
@@ -874,7 +835,7 @@
         }
       ],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "apache_software_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -960,9 +921,7 @@
       ],
       "authors": [],
       "package_manifests": [],
-      "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1048,7 +1007,7 @@
       "authors": [],
       "package_manifests": [],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "corp_ibm_1"
       ],
       "files_count": 0,
       "dirs_count": 0,

@@ -166,31 +166,31 @@ def compute_license_score(codebase):
 
 def get_declared_license_keys(codebase):
     """
-    Return a list of declared license keys found in package_manifests and key files.
+    Return a list of declared license keys found in packages and key files.
     """
     return (
         get_declared_license_keys_in_key_files(codebase) +
-        get_declared_license_keys_in_package_manifests(codebase)
+        get_declared_license_keys_in_packages(codebase)
     )
 
 
-def get_declared_license_keys_in_package_manifests(codebase):
+def get_declared_license_keys_in_packages(codebase):
     """
-    Return a list of declared license keys found in package_manifests.
+    Return a list of declared license keys found in packages.
 
     A package manifest (such as Maven POM file or an npm package.json file)
     contains structured declared license information. This is further normalized
     as a license_expression. We extract the list of licenses from the normalized
     license expressions.
     """
-    package_manifests = chain.from_iterable(
-        getattr(res, 'package_manifests', []) or []
+    packages = chain.from_iterable(
+        getattr(res, 'packages', []) or []
         for res in codebase.walk(topdown=True))
 
     licensing = Licensing()
     detected_good_licenses = []
-    for package_manifest in package_manifests:
-        expression = package_manifest.get('license_expression')
+    for package in packages:
+        expression = package.get('license_expression')
         if expression:
             exp = licensing.parse(
                 expression, validate=False, strict=False, simple=True)

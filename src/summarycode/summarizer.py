@@ -112,7 +112,7 @@ def summarize_codebase(codebase, keep_details, **kwargs):
         ('holders', holder_summarizer),
         ('authors', author_summarizer),
         ('programming_language', language_summarizer),
-        ('package_manifests', package_summarizer),
+        ('packages', package_summarizer),
     ]
 
     # find which attributes are available for summarization by checking the root
@@ -232,7 +232,7 @@ SUMMARIZABLE_ATTRS = set([
     'holders',
     'authors',
     'programming_language',
-    # 'package_manifests',
+    # 'packages',
 ])
 
 
@@ -293,7 +293,7 @@ def summarize_codebase_key_files(codebase, **kwargs):
     summarizables = codebase.attributes.summary.keys()
     if TRACE: logger_debug('summarizables:', summarizables)
 
-    # TODO: we cannot summarize package_manifests with "key files" for now
+    # TODO: we cannot summarize packages with "key files" for now
     summarizables = [k for k in summarizables if k in SUMMARIZABLE_ATTRS]
 
     # create one counter for each summarized attribute
@@ -408,53 +408,53 @@ def summarize_codebase_by_facet(codebase, **kwargs):
     if TRACE: logger_debug('codebase summary_by_facet:', final_summaries)
 
 
-def add_files(package_manifests, resource):
+def add_files(packages, resource):
     """
-    Update in-place every package mapping in the `package_manifests` list
-    by updating or creatig the the "files" attribute from the `resource`.
-    Yield back the package_manifests.
+    Update in-place every package mapping in the `packages` list by updating or
+    creating the the "files" attribute from the `resource`. Yield back the
+    packages.
     """
-    for package_manifest in package_manifests:
-        files = package_manifest['files'] = package_manifest.get('files') or []
+    for package in packages:
+        files = package['files'] = package.get('files') or []
         fil = resource.to_dict(skinny=True)
         if fil not in files:
             files.append(fil)
-        yield package_manifest
+        yield package
 
 
 def package_summarizer(resource, children, keep_details=False):
     """
-    Populate a package_manifests summary list of package_manifests mappings.
+    Populate a packages summary list of packages mappings.
 
     Note: `keep_details` is never used, as we are not keeping details of
-    package_manifests as this has no value.
+    packages as this has no value.
     """
-    package_manifests = []
+    packages = []
 
     # Collect current data
-    current_package_manifests = getattr(resource, 'package_manifests') or []
+    current_packages = getattr(resource, 'packages') or []
 
-    if TRACE_LIGHT and current_package_manifests:
+    if TRACE_LIGHT and current_packages:
         from packagedcode.models import Package
-        packs = [Package.create(**p) for p in current_package_manifests]
+        packs = [Package.create(**p) for p in current_packages]
         logger_debug('package_summarizer: for:', resource,
-                     'current_package_manifests are:', packs)
+                     'current_packages are:', packs)
 
-    current_package_manifests = add_files(current_package_manifests, resource)
-    package_manifests.extend(current_package_manifests)
+    current_packages = add_files(current_packages, resource)
+    packages.extend(current_packages)
 
-    if TRACE_LIGHT and package_manifests:
+    if TRACE_LIGHT and packages:
         logger_debug()
         from packagedcode.models import Package  # NOQA
-        packs = [Package.create(**p) for p in package_manifests]
+        packs = [Package.create(**p) for p in packages]
         logger_debug('package_summarizer: for:', resource,
-                     'package_manifests are:', packs)
+                     'packages are:', packs)
 
-    # Collect direct children package_manifests summary
+    # Collect direct children packages summary
     for child in children:
-        child_summaries = get_resource_summary(child, key='package_manifests', as_attribute=False) or []
-        package_manifests.extend(child_summaries)
+        child_summaries = get_resource_summary(child, key='packages', as_attribute=False) or []
+        packages.extend(child_summaries)
 
     # summarize proper
-    set_resource_summary(resource, key='package_manifests', value=package_manifests, as_attribute=False)
-    return package_manifests
+    set_resource_summary(resource, key='packages', value=packages, as_attribute=False)
+    return packages
