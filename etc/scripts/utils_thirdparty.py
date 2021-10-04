@@ -693,7 +693,8 @@ class Distribution(NameVer):
                     return False
 
             if TRACE: print(f'Saving ABOUT (and NOTICE) files for: {self}')
-            with open(location, 'w') as fo:
+            wmode = 'wb' if isinstance(content, bytes) else 'w'
+            with open(location, wmode, encoding="utf-8") as fo:
                 fo.write(content)
             return True
 
@@ -725,6 +726,8 @@ class Distribution(NameVer):
             if os.path.exists(about_path):
                 with open(about_path) as fi:
                     about_data = saneyaml.load(fi.read())
+                    if not about_data:
+                        return False
             else:
                 return False
         else:
@@ -1842,7 +1845,7 @@ class Cache:
         if not os.path.exists(cached):
             content = get_file_content(path_or_url=path_or_url, as_text=as_text)
             wmode = 'w' if as_text else 'wb'
-            with open(cached, wmode) as fo:
+            with open(cached, wmode, encoding="utf-8") as fo:
                 fo.write(content)
             return content
         else:
@@ -1854,7 +1857,7 @@ class Cache:
         """
         cached = os.path.join(self.directory, filename)
         wmode = 'wb' if isinstance(content, bytes) else 'w'
-        with open(cached, wmode) as fo:
+        with open(cached, wmode, encoding="utf-8") as fo:
             fo.write(content)
 
 
@@ -2362,7 +2365,7 @@ def update_requirements(name, version=None, requirements_file='requirements.txt'
         updated_name_versions = sorted(updated_name_versions)
         nvs = '\n'.join(f'{name}=={version}' for name, version in updated_name_versions)
 
-        with open(requirements_file, 'w') as fo:
+        with open(requirements_file, 'w', encoding="utf-8") as fo:
             fo.write(nvs)
 
 
@@ -2380,7 +2383,7 @@ def hash_requirements(dest_dir=THIRDPARTY_DIR, requirements_file='requirements.t
             raise Exception(f'Missing required package {name}=={version}')
         hashed.append(package.specifier_with_hashes)
 
-    with open(requirements_file, 'w') as fo:
+    with open(requirements_file, 'w', encoding="utf-8") as fo:
         fo.write('\n'.join(hashed))
 
 ################################################################################
