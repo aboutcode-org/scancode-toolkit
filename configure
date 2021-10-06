@@ -127,7 +127,7 @@ create_virtualenv() {
             VIRTUALENV_PYZ="$CFG_ROOT_DIR/etc/thirdparty/virtualenv.pyz"
         else
             VIRTUALENV_PYZ="$CFG_ROOT_DIR/$VENV_DIR/virtualenv.pyz"
-            wget -O "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL"
+            wget -O "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL" 2>/dev/null || curl -o  "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL"
         fi
 
         $PYTHON_EXECUTABLE "$VIRTUALENV_PYZ" \
