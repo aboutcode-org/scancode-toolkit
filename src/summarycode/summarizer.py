@@ -411,7 +411,7 @@ def summarize_codebase_by_facet(codebase, **kwargs):
 def add_files(packages, resource):
     """
     Update in-place every package mapping in the `packages` list by updating or
-    creatig the the "files" attribute from the `resource`. Yield back the
+    creating the the "files" attribute from the `resource`. Yield back the
     packages.
     """
     for package in packages:

@@ -8,6 +8,9 @@ Changelog
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+- Main package API function `get_package_infos` is now deprecated, and is replaced by
+  `get_package_manifests`.
+
 - The data structure of the JSON output has changed for copyrights, authors
   and holders: we now use proper name for attributes and not a generic "value".
 
@@ -54,7 +57,14 @@ Package detection:
   - OpenWRT packages.
   - Yocto/BitBake .bb recipes.
 
-- We now support track the files of Package types.
+- Major changes in packages detection and reporting, codebase-level attribute `packages`
+  with one or more package_manifests and files for the packages will be reported.
+  The specific changes made are:
+
+  - The resource level attribute `packages` has been renamed to `package_manifests`,
+    as these are really package manifests that are being detected.
+  - A new codebase level attribute `packages` has been added which contains package
+    instances created from package_manifests detected in the codebase.
 
 
 Outputs:
@@ -62,6 +72,16 @@ Outputs:
 
 - There is a new CycloneDX 1.2 output as XML and JSON.
 
+
+Output version
+--------------
+
+Scancode Data Output Version is now 2.0.0.
+
+Changes:
+
+- rename resource level attribute `packages` to `package_manifests`.
+- add codebase level attribute `packages`.
 
 
 30.1.0 - 2021-09-25

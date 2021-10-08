@@ -26,6 +26,7 @@
       }
     }
   ],
+  "packages": [],
   "summary": {
     "license_expressions": [
       {
@@ -72,8 +73,7 @@
         "value": "C",
         "count": 2
       }
-    ],
-    "packages": []
+    ]
   },
   "summary_of_key_files": {
     "license_expressions": [
@@ -113,7 +113,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -150,7 +150,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -187,7 +187,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -224,7 +224,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -302,7 +302,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [
         "core"
       ],
@@ -341,7 +341,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [
         "core"
       ],
@@ -380,7 +380,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -417,7 +417,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -454,7 +454,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -544,7 +544,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [
         "core"
       ],
@@ -595,7 +595,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [
         "core"
       ],
