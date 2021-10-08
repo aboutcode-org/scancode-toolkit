@@ -49,7 +49,11 @@ set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
 
 @rem ################################
 @rem # Thirdparty package locations and index handling
-set "PIP_EXTRA_ARGS=--find-links %CFG_ROOT_DIR%\thirdparty --find-links https://thirdparty.aboutcode.org/pypi" & %INDEX_ARG%
+if exist ""%CFG_ROOT_DIR%\thirdparty"" (
+    set "PIP_EXTRA_ARGS=--find-links %CFG_ROOT_DIR%\thirdparty "
+)
+
+set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS% --find-links https://thirdparty.aboutcode.org/pypi" & %INDEX_ARG%
 @rem ################################
 
 
