@@ -51,7 +51,10 @@ CFG_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
 # Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
-PIP_EXTRA_ARGS="--find-links $CFG_ROOT_DIR/thirdparty --find-links https://thirdparty.aboutcode.org/pypi"
+if [ -f "$CFG_ROOT_DIR/thirdparty" ]; then
+    PIP_EXTRA_ARGS="--find-links $CFG_ROOT_DIR/thirdparty "
+fi
+PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS --find-links https://thirdparty.aboutcode.org/pypi"
 
 
 ################################

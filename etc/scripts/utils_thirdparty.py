@@ -24,13 +24,14 @@ import urllib
 import attr
 import license_expression
 import packageurl
-import utils_pip_compatibility_tags
-import utils_pypi_supported_tags
 import requests
 import saneyaml
+import utils_pip_compatibility_tags
+import utils_pypi_supported_tags
 
 from commoncode import fileutils
 from commoncode.hash import multi_checksums
+from commoncode.text import python_safe_name
 from packaging import tags as packaging_tags
 from packaging import version as packaging_version
 from utils_requirements import load_requirements
@@ -172,11 +173,20 @@ def fetch_wheels(
     else:
         force_pinned = False
 
-    rrp = list(get_required_remote_packages(
-        requirements_file=requirements_file,
-        force_pinned=force_pinned,
-        remote_links_url=remote_links_url,
-    ))
+    try:
+        rrp = list(get_required_remote_packages(
+            requirements_file=requirements_file,
+            force_pinned=force_pinned,
+            remote_links_url=remote_links_url,
+        ))
+    except Exception as e:
+        raise Exception(
+            dict(
+                requirements_file=requirements_file,
+                force_pinned=force_pinned,
+                remote_links_url=remote_links_url,
+            )
+        ) from e
 
     fetched_filenames = set()
     for name, version, package in rrp:
@@ -211,6 +221,7 @@ def fetch_wheels(
             print(f'Missed package {nv} in remote repo, has only:')
             for pv in rr.get_versions(n):
                 print('  ', pv)
+        raise Exception('Missed some packages in remote repo')
 
 
 def fetch_sources(
@@ -261,6 +272,8 @@ def fetch_sources(
             fetched = package.fetch_sdist(dest_dir=dest_dir)
             error = f'Failed to fetch' if not fetched else None
             yield package, error
+    if missed:
+        raise Exception(f'Missing source packages in {remote_links_url}', missed)
 
 ################################################################################
 #
@@ -693,8 +706,7 @@ class Distribution(NameVer):
                     return False
 
             if TRACE: print(f'Saving ABOUT (and NOTICE) files for: {self}')
-            wmode = 'wb' if isinstance(content, bytes) else 'w'
-            with open(location, wmode, encoding="utf-8") as fo:
+            with open(location, 'w') as fo:
                 fo.write(content)
             return True
 
@@ -905,8 +917,8 @@ class Distribution(NameVer):
         other_classifiers = [c for c in classifiers if not c.startswith('License')]
 
         holder = raw_data['Author']
-        holder_contact=raw_data['Author-email']
-        copyright = f'Copyright (c) {holder} <{holder_contact}>'
+        holder_contact = raw_data['Author-email']
+        copyright_statement = f'Copyright (c) {holder} <{holder_contact}>'
 
         pkginfo_data = dict(
             name=raw_data['Name'],
@@ -914,7 +926,7 @@ class Distribution(NameVer):
             version=raw_data['Version'],
             description=raw_data['Summary'],
             homepage_url=raw_data['Home-page'],
-            copyright=copyright,
+            copyright=copyright_statement,
             license_expression=license_expression,
             holder=holder,
             holder_contact=holder_contact,
@@ -1845,7 +1857,7 @@ class Cache:
         if not os.path.exists(cached):
             content = get_file_content(path_or_url=path_or_url, as_text=as_text)
             wmode = 'w' if as_text else 'wb'
-            with open(cached, wmode, encoding="utf-8") as fo:
+            with open(cached, wmode) as fo:
                 fo.write(content)
             return content
         else:
@@ -1857,7 +1869,7 @@ class Cache:
         """
         cached = os.path.join(self.directory, filename)
         wmode = 'wb' if isinstance(content, bytes) else 'w'
-        with open(cached, wmode, encoding="utf-8") as fo:
+        with open(cached, wmode) as fo:
             fo.write(content)
 
 
@@ -2331,7 +2343,7 @@ def get_required_remote_packages(
         repo = get_remote_repo(remote_links_url=remote_links_url)
     else:
         # a local path
-        assert os.path.exists(remote_links_url)
+        assert os.path.exists(remote_links_url), f'Path does not exist: {remote_links_url}'
         repo = get_local_repo(directory=remote_links_url)
 
     for name, version in required_name_versions:
@@ -2365,7 +2377,7 @@ def update_requirements(name, version=None, requirements_file='requirements.txt'
         updated_name_versions = sorted(updated_name_versions)
         nvs = '\n'.join(f'{name}=={version}' for name, version in updated_name_versions)
 
-        with open(requirements_file, 'w', encoding="utf-8") as fo:
+        with open(requirements_file, 'w') as fo:
             fo.write(nvs)
 
 
@@ -2383,7 +2395,7 @@ def hash_requirements(dest_dir=THIRDPARTY_DIR, requirements_file='requirements.t
             raise Exception(f'Missing required package {name}=={version}')
         hashed.append(package.specifier_with_hashes)
 
-    with open(requirements_file, 'w', encoding="utf-8") as fo:
+    with open(requirements_file, 'w') as fo:
         fo.write('\n'.join(hashed))
 
 ################################################################################
@@ -2961,5 +2973,6 @@ def compute_normalized_license_expression(declared_licenses):
         from packagedcode import pypi
         return pypi.compute_normalized_license(declared_licenses)
     except ImportError:
-        # Scancode is not installed, we join all license strings and return it
-        return ' '.join(declared_licenses)
+        # Scancode is not installed, clean and join all the licenses
+        lics = [python_safe_name(l).lower() for l in declared_licenses]
+        return ' AND '.join(lics).lower()
