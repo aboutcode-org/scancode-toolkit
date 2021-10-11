@@ -2965,7 +2965,6 @@ def find_problems(
 
     check_about(dest_dir=dest_dir)
 
-
 def compute_normalized_license_expression(declared_licenses):
     if not declared_licenses:
         return
