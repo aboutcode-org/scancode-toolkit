@@ -1,0 +1,7 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. Seen in https://github.com/Armoured-Egg-Official/SkyblockCF/blob/a3b13448c878bfc7b2df005941c32e198191c0af/LICENSE#L7
+    and a few other places. It says "with restriction including without limitation the rights"
+    instead of "without restriction including without limitation the rights" in a standard MIT.
+    Since there is no way to know if this is a bona fide typo or some intentianal change this
+    is reported as proprietary for now.

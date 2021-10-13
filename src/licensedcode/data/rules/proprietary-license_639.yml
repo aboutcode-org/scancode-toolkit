@@ -1,0 +1,3 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://github.com/lkankowski/arduino-multi-relay/blob/63f15957c28ebf657145d5f283d0dc2d3b4fcaf7/LICENSE.md
