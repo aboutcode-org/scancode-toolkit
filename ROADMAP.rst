@@ -19,7 +19,8 @@ Is this for SCIO or SCTK? Likely a bit a both.
 2. Package files.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Get the package files for each package
+Reporting the set of package files for each package instance is important as
+it allows to naturally group these together in one unit.
 
 
 3. Go to two-level reporting of detections to provide more effective detections
