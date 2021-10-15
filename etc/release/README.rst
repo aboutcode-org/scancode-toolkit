@@ -1,26 +1,8 @@
-This directory contains the tools to:
-
-- manage a directory of thirdparty Python package source, wheels and metadata: 
-  pin, build, update, document and publish to a PyPI-like repo (GitHub release)
-
-- build and publish scancode releases as wheel, sources and OS-specific bundles.
-
+This directory contains the tools to manage a directory of thirdparty Python
+package source, wheels and metadata pin, build, update, document and publish to
+a PyPI-like repo (GitHub release).
 
 NOTE: These are tested to run ONLY on Linux.
-
-
-Release scripts
-===============
-
- * **scancode-create-release.sh**: This is the main script to build the release
-   archives for scancode-toolkit (wheels, sdists, tarball, installers). It may
-   optional call **scancode-release-tests.sh** to run minimal smoke tests on the
-   built release archives.
-
- * **test_-*.sh**: various test scripts for installation and release, launched when
-   running scancode-create-release --test
-
- * TODO: scancode_publish.sh: use this to publish the built releases scancode-toolkit
 
 
 Thirdparty packages management scripts
