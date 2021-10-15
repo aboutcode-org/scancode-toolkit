@@ -4,7 +4,7 @@
 #
 
 # ScanCode release test script
-# This script testss the installation of scancode from a wheel using the public PyPI
+# This script tests the installation of scancode from a wheel using the public PyPI
 
 set -e
 
