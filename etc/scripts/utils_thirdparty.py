@@ -2927,7 +2927,7 @@ def fetch_package_wheel(name, version, environment, dest_dir=THIRDPARTY_DIR):
 
 def check_about(dest_dir=THIRDPARTY_DIR):
     try:
-        subprocess.check_output(f'venv/bin/about check {dest_dir}'.split())
+        subprocess.check_output(f'about check {dest_dir}'.split())
     except subprocess.CalledProcessError as cpe:
         print()
         print('Invalid ABOUT files:')
