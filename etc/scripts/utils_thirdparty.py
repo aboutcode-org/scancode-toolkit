@@ -5,7 +5,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/nexB/skeleton for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 from collections import defaultdict
@@ -24,13 +24,14 @@ import urllib
 import attr
 import license_expression
 import packageurl
-import utils_pip_compatibility_tags
-import utils_pypi_supported_tags
 import requests
 import saneyaml
+import utils_pip_compatibility_tags
+import utils_pypi_supported_tags
 
 from commoncode import fileutils
 from commoncode.hash import multi_checksums
+from commoncode.text import python_safe_name
 from packaging import tags as packaging_tags
 from packaging import version as packaging_version
 from utils_requirements import load_requirements
@@ -742,6 +743,8 @@ class Distribution(NameVer):
             if os.path.exists(about_path):
                 with open(about_path) as fi:
                     about_data = saneyaml.load(fi.read())
+                    if not about_data:
+                        return False
             else:
                 return False
         else:
@@ -831,7 +834,11 @@ class Distribution(NameVer):
         return f'--hash=sha256:{self.sha256}'
 
     def get_license_keys(self):
-        return LICENSING.license_keys(self.license_expression, unique=True, simple=True)
+        try:
+            keys = LICENSING.license_keys(self.license_expression, unique=True, simple=True)
+        except license_expression.ExpressionParseError:
+            return ['unknown']
+        return keys
 
     def fetch_license_files(self, dest_dir=THIRDPARTY_DIR):
         """
@@ -911,7 +918,12 @@ class Distribution(NameVer):
         classifiers = raw_data.get_all('Classifier') or []
 
         declared_license = [raw_data['License']] + [c for c in classifiers if c.startswith('License')]
+        license_expression = compute_normalized_license_expression(declared_license)
         other_classifiers = [c for c in classifiers if not c.startswith('License')]
+
+        holder = raw_data['Author']
+        holder_contact = raw_data['Author-email']
+        copyright_statement = f'Copyright (c) {holder} <{holder_contact}>'
 
         pkginfo_data = dict(
             name=raw_data['Name'],
@@ -919,8 +931,10 @@ class Distribution(NameVer):
             version=raw_data['Version'],
             description=raw_data['Summary'],
             homepage_url=raw_data['Home-page'],
-            holder=raw_data['Author'],
-            holder_contact=raw_data['Author-email'],
+            copyright=copyright_statement,
+            license_expression=license_expression,
+            holder=holder,
+            holder_contact=holder_contact,
             keywords=raw_data['Keywords'],
             classifiers=other_classifiers,
         )
@@ -2918,7 +2932,7 @@ def fetch_package_wheel(name, version, environment, dest_dir=THIRDPARTY_DIR):
 
 def check_about(dest_dir=THIRDPARTY_DIR):
     try:
-        subprocess.check_output(f'bin/about check {dest_dir}'.split())
+        subprocess.check_output(f'about check {dest_dir}'.split())
     except subprocess.CalledProcessError as cpe:
         print()
         print('Invalid ABOUT files:')
@@ -2955,3 +2969,14 @@ def find_problems(
                 print(f'   Missing checksums in file://{abpth}')
 
     check_about(dest_dir=dest_dir)
+
+def compute_normalized_license_expression(declared_licenses):
+    if not declared_licenses:
+        return
+    try:
+        from packagedcode import pypi
+        return pypi.compute_normalized_license(declared_licenses)
+    except ImportError:
+        # Scancode is not installed, clean and join all the licenses
+        lics = [python_safe_name(l).lower() for l in declared_licenses]
+        return ' AND '.join(lics).lower()

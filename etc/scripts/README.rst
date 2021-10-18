@@ -61,7 +61,7 @@ The sequence of commands to run are:
     ./configure --dev
     python etc/release/gen_requirements_dev.py --site-packages-dir <path to site-packages dir>
 
-* You can optionally install or update extra dev requirements after the 
+* You can optionally install or update extra dev requirements after the
   ./configure step such that these are included in the generated dev
   requirements.
 
@@ -96,7 +96,7 @@ Scripts
   remotely. Dependent wheels are optionally included. Requires Azure credentials
   and tokens if building wheels remotely on multiple operatin systems.
 
-* **fix_thirdparty.py** will fix a thirdparty directory with a best effort to 
+* **fix_thirdparty.py** will fix a thirdparty directory with a best effort to
   add missing wheels, sources archives, create or fetch or fix .ABOUT, .NOTICE
   and .LICENSE files. Requires Azure credentials and tokens if requesting the
   build of missing wheels remotely on multiple operatin systems.
@@ -136,9 +136,8 @@ etc/thirdparty
   essential for the installation to work.
 
 
-Other files 
+Other files
 ===========
 
 The other files and scripts are test, support and utility modules used by the
 main scripts documented here.
- 
