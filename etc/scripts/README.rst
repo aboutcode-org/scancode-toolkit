@@ -1,10 +1,6 @@
-This directory contains the tools to:
-
-- manage a directory of thirdparty Python package source, wheels and metadata:
-  pin, build, update, document and publish to a PyPI-like repo (GitHub release)
-
-- build and publish scancode releases as wheel, sources and OS-specific bundles.
-
+This directory contains the tools to manage a directory of thirdparty Python
+package source, wheels and metadata pin, build, update, document and publish to
+a PyPI-like repo (GitHub release).
 
 NOTE: These are tested to run ONLY on Linux.
 
@@ -38,7 +34,7 @@ Scripts
 ~~~~~~~
 
 **gen_requirements.py**: create/update requirements files from currently
-  installed requirements.
+  installed requirements. 
 
 **gen_requirements_dev.py** does the same but can subtract the main requirements
   to get extra requirements used in only development.

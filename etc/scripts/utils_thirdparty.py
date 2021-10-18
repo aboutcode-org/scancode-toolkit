@@ -87,13 +87,14 @@ The processing is organized around these key objects:
 TRACE = False
 
 # Supported environments
-PYTHON_VERSIONS = '36', '37', '38', '39',
+PYTHON_VERSIONS = '36', '37', '38', '39', '310'
 
 ABIS_BY_PYTHON_VERSION = {
     '36':['cp36', 'cp36m'],
     '37':['cp37', 'cp37m'],
     '38':['cp38', 'cp38m'],
     '39':['cp39', 'cp39m'],
+    '310':['cp310', 'cp310m'],
 }
 
 PLATFORMS_BY_OS = {
@@ -102,6 +103,7 @@ PLATFORMS_BY_OS = {
         'manylinux1_x86_64',
         'manylinux2014_x86_64',
         'manylinux2010_x86_64',
+        'manylinux_2_12_x86_64',
     ],
     'macos': [
         'macosx_10_6_intel', 'macosx_10_6_x86_64',
@@ -112,6 +114,9 @@ PLATFORMS_BY_OS = {
         'macosx_10_13_intel', 'macosx_10_13_x86_64',
         'macosx_10_14_intel', 'macosx_10_14_x86_64',
         'macosx_10_15_intel', 'macosx_10_15_x86_64',
+        'macosx_10_15_x86_64',
+        'macosx_11_0_x86_64',
+        # 'macosx_11_0_arm64',
     ],
     'windows': [
         'win_amd64',
