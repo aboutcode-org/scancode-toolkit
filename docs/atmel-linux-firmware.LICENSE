@@ -1,0 +1,34 @@
+REDISTRIBUTION: Permission is hereby granted by Atmel Corporation (Atmel), free
+of any license fees, to any person obtaining a copy of this firmware (the
+"Software"), to install, reproduce, copy and distribute copies, in binary form,
+in hexadecimal or equivalent formats, of the Software and to permit persons to
+whom the Software is provided to do the same, subject to the following
+conditions:
+
+* Any redistribution of the Software must reproduce the above copyright notice,
+  this license notice, and the following disclaimers and notices in the
+  documentation and/or other materials provided with the Software.
+
+* Neither the name of Atmel Corporation, its products nor the names of its
+  suppliers may be used to endorse or promote products derived from this
+  Software without specific prior written permission.
+
+* All matters arising out of or in connection with this License and/or Software
+  shall be governed by California law and the parties agree to the exclusive
+  jurisdiction of the Californian courts to decide all disputes arising.
+
+* The licensee shall defend and indemnify Atmel against any and all claims,
+  costs, losses and damages (including reasonable legal fees) incurred by tme
+  arising out of any claim relating to the Software due to the licensee’s use or
+  sub-licensing of the Software
+
+DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

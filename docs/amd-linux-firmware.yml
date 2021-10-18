@@ -1,0 +1,7 @@
+key: amd-linux-firmware
+short_name: AMD Linux Firmware License
+name: AMD Linux Firmware License
+category: Proprietary Free
+owner: Advanced Micro Devices
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.radeon
+spdx_license_key: LicenseRef-scancode-amd-linux-firmware

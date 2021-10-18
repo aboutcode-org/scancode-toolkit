@@ -5,4 +5,5 @@ category: Unstated License
 owner: Unspecified
 notes: This is something that clearly ressembles a license in an SPDX license expression but
   is not conclusively an SPDX license ID.
+is_unknown: yes
 spdx_license_key: LicenseRef-scancode-unknown-spdx

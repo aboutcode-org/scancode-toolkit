@@ -1,0 +1,111 @@
+Terms of Use
+AppsFlyer Ltd. (“AppsFlyer” or “us”, “our”, “we”) provides a software development kit which allows the tracking of mobile application use, installations and downloads (the “Service(s)”). These Terms of use (this “Agreement”) govern your access and use of the Services, and any code provided by AppsFlyer. “You”/”Company” means any third party that uses the Service.
+
+Please read this Agreement carefully. You must accept this Agreement prior to using the Service or any code provided by AppsFlyer. By downloading or installing the AppsFlyer code or using the Service, you signify your assent to this Agreement. Changes may be made to this Agreement from time to time. We will make reasonable commercial efforts to notify you of any material updates to this Agreement. Notwithstanding the foregoing, your continued use of the Service will be deemed acceptance to amended or updated Terms. As such, you should check frequently to see if we have updated this Agreement. If you do not agree to any terms or conditions of this Agreement, please do not use the Service.
+
+1. Services. Subject to the terms and conditions hereof, during the Term (as defined below) AppsFlyer shall provide Company with the Services on a non-exclusive basis solely for Company’s own internal uses and, for this purpose, Company shall integrate the code provided by AppsFlyer, including AppsFlyer’s SDK, tracking links and APIs (collectively, the “Code”), into Company’s own proprietary mobile application (Company’s “Application”).
+
+2. Registration. In order to use the Services, Company will be required to register with AppsFlyer and open an account. Company must provide all information necessary for the registration process. Company represents and warrants that all such information shall be accurate and complete. Company shall keep such information up-to-date. Company shall immediately notify AppsFlyer if there is any change in such information or security breach of the account.
+
+3. Restrictions.
+
+3.1. Except as set forth expressly herein or as permitted by the Services, Company shall not, and shall not permit any third party, to (a) reverse engineer or attempt to find the underlying code of the Services; (b) modify the Services, or insert any code or product, or in any other way manipulate the Services in any way; (c) modify the Code in any way without AppsFlyer’s prior written consent; (d) sublicense, sell, or distribute the Code or bypass any security measure of AppsFlyer with respect to the Services; (e) distribute the Code on a stand-alone basis; or (f) use the Services except for Company’s own internal purposes.
+
+3.2. To the extent any of the restrictions set forth above are not enforceable under applicable law, Company shall inform AppsFlyer in writing prior to engaging in any of the applicable activities.
+
+4. Warranties.
+
+4.1. Mutual Warranties. Each party represents and warrants that (a) it is duly organized under applicable law and has sufficient authority to enter into this Agreement and that, (b) the execution and performance under this Agreement does not conflict with any contractual obligations such party has to any third party.
+
+4.2. AppsFlyer Warranties. AppsFlyer represents and warrants that the Services (a) do not, to the best of its knowledge, infringe the intellectual property rights of any third party, (b) do not contain any defamatory, libelous, obscene or otherwise offensive material, (c) comply with all applicable law and regulations (provided, that with respect to data provided by Company to AppsFlyer, AppsFlyer’s compliance with applicable law is subject to Company’s full compliance with applicable law with respect to such data, including its transfer to, and processing by, AppsFlyer), (d) do not collect, use or transfer the data of end users except pursuant to the terms of this Agreement or for the provision of the Services, and (e) do not to the best of its knowledge contain any worms, viruses, spyware, adware or other malicious or intrusive software.
+
+4.3. Company Warranties. Company represents and warrants that its Application and Data (a) do not, to the best of its knowledge, infringe the intellectual property rights of any third party, (b) do not contain any defamatory, libelous, obscene or otherwise offensive material, (c) comply with all applicable law and regulations, including applicable data protection law, (d) do not collect, use or transfer the data of end users in any manner not clearly and accurately disclosed pursuant to a privacy policy that complies with applicable law and regulations, and (e) do not contain any worms, viruses, spyware, adware or other malicious or intrusive software and (f) provides to its users a clear description of its use of the data, including its transfer to, and processing by, AppsFlyer.
+
+5. Intellectual Property. Company shall have all right, title and interest in its Application. AppsFlyer shall have all right, title and interest in the Code and the Services, and all software that provides the Services. If Company provides AppsFlyer with any feedback regarding the Code and/or the Services, AppsFlyer may use all such feedback without restriction. Nothing herein shall be interpreted to provide Company any rights in the Code or the Services except the limited right to use the Code and receive the Service as set forth herein.
+
+6. Payment. AppsFlyer offers several pricing plans, and Company must choose a pricing plan prior to downloading and using the Services. If required by law, Company must add applicable VAT to the amounts payable under such pricing plan. Company shall make payment to AppsFlyer without deduction for and free and clear of any taxes and government charges. Amounts are due and payable within 10 days of AppsFlyer’s issuance of the applicable invoice. Late payments shall bear interest at the rate of 12% per annum. If Company pays using a third party payment processor or credit card, AppsFlyer accepts no responsibility or liability for the actions, omissions or privacy policies of the third party payment processor.
+
+7. Data, Privacy, Retention and Restricted Data.
+
+7.1. The Services enable the Company to collect and track data concerning the characteristics and activities of Application end users as long as the Code is installed (“Data”). Company owns, and retains all right, title and interest in Data. Company may modify the categories of Data collected by the Service through configuration of the Services. Accordingly, to the extent the Services are configured as such, Data may contain personally-identifiable information. AppsFlyer shall not transfer Data to third parties except as set forth in this Agreement or as directed by Company. Company represents and warrants that Company is permitted to collect, use and transfer Data through the Services.
+
+7.2. Any personally identifiable information or Personal Data, as such term is defined under the EU General Data Protection Regulation 2016/679 (“GDPR” and “Personal Data” respectively) provided to AppsFlyer on Company’s behalf, if any, and the processing thereof, shall be governed under the terms and conditions set forth in the AppsFlyer Data Processing Agreement (“DPA”). A current version of the DPA executed by AppsFlyer is available at https://www.appsflyer.com/gdpr/dpa.pdf, and shall become effective as of May 25 2018. AppsFlyer shall provide prior notification to Company in writing upon any material change to the DPA. The DPA is an integral part of this Agreement. Unless otherwise explicitly agreed in writing by the parties, it is agreed and acknowledged that with respect to any personally-identifiable information and Personal Data included in the Data, Company shall be considered as the Controller and AppsFlyer shall be considered as the Processor (as such terms are defined under the GDPR and the DPA).
+
+7.3. AppsFlyer may use aggregated anonymized data, from time to time, for analytics, improvement of the Services and internal purposes (“Aggregated Data”). Aggregated Data may include data derived from the Company’s Data, provided that Aggregated Data does not contain data solely derived from Company’s Data and does not identify or trace to Company or any of Company’s end users.
+
+7.4. AppsFlyer publishes a privacy policy, as required under applicable law, which describes AppsFlyer’s collection and use of data. A current copy of AppsFlyer’s privacy policy is available at https://www.appsflyer.com/privacy-policy (“Privacy Policy”). AppsFlyer shall provide prior notification to Company in writing upon any material change to the privacy policy.
+
+7.5. AppsFlyer and its agents may process Data outside of the jurisdiction of Company.
+
+7.6. AppsFlyer’ is required by certain third parties (such as advertising networks) to delete data they provide after a specified period of time. As such, AppsFlyer may delete Data provided by such third parties in accordance with its standard data retention policies.
+
+7.7. Company may only provide to AppsFlyer, or otherwise have AppsFlyer (or anyone on its behalf) process, such Data types and parameters which are explicitly permitted under AppsFlyer’s Privacy Policy (“Permitted Controller Personal Data Types and Parameters”, as also defined under the DPA). Solely Company (and not AppsFlyer) shall be liable for any data which is provided or otherwise made available to AppsFlyer or anyone on its behalf in excess of the Permitted Controller Personal Data Types and Parameters (“Excess Data”). AppsFlyer’s obligations under the Agreement or the DPA shall not apply to any such Excess Data.
+
+7.8. Without derogating from any of the obligations of Company hereunder, Company shall not provide to AppsFlyer any data regarding children, or any health, financial, or insurance data or other data subject to specific regulatory or statutory protection regimes, except as may otherwise be expressly agreed in writing between the parties and in accordance with applicable law.
+
+8. Confidentiality.
+
+8.1. In the context of the relationship under this Agreement, either party (a “Disclosing Party”) may disclose to the other party (a “Receiving Party”) certain confidential information regarding its technology and business (“Confidential Information”). AppsFlyer’s Confidential Information includes, among others, the terms and pricing of this Agreement.
+
+8.2. Subject to the terms and conditions of this Agreement, Receiving Party agrees to keep confidential and not disclose or use any Confidential Information except to support its use or provision of the Services. Confidential Information shall not include information that Receiving Party can show (a) was already lawfully known to or independently developed by Receiving Party without access to or use of Confidential Information, (b) was received by Receiving Party from any third party without restrictions, (c) is publicly and generally available, free of confidentiality restrictions; or (d) is required to be disclosed by law, regulation or is requested in the context of a law enforcement investigation, provided that Receiving Party provides Disclosing Party with prompt notice of such requirement and cooperates in order to minimize such requirement. Receiving Party shall restrict disclosure of Confidential Information to those of its employees and contractors with a reasonable need to know such information and which are bound by written confidentiality obligations no less restrictive than those set out herein. Company will not disclose any information regarding the results of any testing or evaluation of the Services to any third party without AppsFlyer’s prior written consent.
+
+8.3. The non-disclosure and non-use obligations set forth in this Section 8 shall survive the termination or expiration of this Agreement for a period of 5 years.
+
+9. Analytics. The Services include the provision of certain reports and analytics regarding the Data (“Analytics”). AppsFlyer makes no warranty that the Analytics provided shall be useful to Company’s business. Company is solely responsible for any actions Company may take based on the Analytics.
+
+10. Support. Company may contact AppsFlyer with regard to support for the Services by sending an email to support@appsflyer.com. AppsFlyer shall provide up to 5 hours of support each month at no additional charge.
+
+11. Service Levels. AppsFlyer shall provide Services in accordance with the service commitments in Appendix B.
+
+12. Indemnification.
+
+12.1. AppsFlyer Indemnification.
+
+12.1.1. AppsFlyer shall defend, indemnify and hold harmless Company (and its affiliates, officers, directors and employees) from and against any and all damages, costs, losses, liabilities or expenses (including court costs and reasonable attorneys’ legal fees) which Company may suffer or incur in connection with any actual claim, demand, action or other proceeding by any third party arising from: (a) any breach of AppsFlyer’s obligations, representations or warranties herein; or (b) a claim that the Code and/or Services infringe the intellectual property rights of a third party. This Section 12.1 sets forth AppsFlyer’s sole obligations and Company’s sole remedies for any claim that the Code and/or Services infringe the intellectual property rights of a third party.
+
+12.1.2. Notwithstanding the foregoing, AppsFlyer shall have no responsibility or liability for any claim to the extent resulting from or arising out of (a) the use of the Code or Services not in compliance with this Agreement or applicable law, (b) the combination of the Code or Services with any code or services not provided by AppsFlyer, (c) the modification of any Code or Services by any party other than AppsFlyer or (d) the use of any Code that is not the most up-to-date Code.
+
+12.1.3. If the Services shall be the subject of an infringement claim, or AppsFlyer reasonably believes that the Services shall be the subject of an infringement claim, AppsFlyer may terminate this Agreement with written notice if modification of the Services to be non-infringing is not reasonably practical.
+
+12.2. Company Indemnification. Company shall defend and indemnify AppsFlyer (and its affiliates, officers, directors and employees) from and against any and all damages, costs, losses, liabilities or expenses (including court costs and attorneys’ fees) which AppsFlyer may suffer or incur in connection with any actual claim, demand, action or other proceeding by any third party arising from: (a) any breach of Company’s obligations, representations or warranties herein; or (b) any use or distribution of the Company’s Application in violation of this Agreement or applicable law or regulations.
+
+12.3. Procedure. The obligations of either party to provide indemnification under this Agreement will be contingent upon the indemnified party (i) providing the indemnifying party with prompt written notice of any claim for which indemnification is sought (provided that the indemnified party’s failure to notify the indemnifying party will not diminish the indemnifying party’s obligations under this Section 12 except to the extent that the indemnifying party is materially prejudiced as a result of such failure), (ii) cooperating fully with the indemnifying party (at the indemnifying party’s expense), and (iii) allowing the indemnifying party to control the defense and settlement of such claim, provided that no settlement may be entered into without the consent of the indemnified party if such settlement would require any action on the part of the indemnified party other than to cease using any allegedly infringing or illegal content or services. Subject to the foregoing, an indemnified party will at all times have the option to participate in any matter or litigation through counsel of its own selection at its own expense.
+
+13. Disclaimer of Warranties. EXCEPT AS EXPRESSLY PROVIDED HEREIN, COMPANY ACCEPTS THE CODE AND SERVICES “AS IS” AND ACKNOWLEDGES THAT APPSFLYER MAKES NO OTHER WARRANTY AND DISCLAIMS ALL IMPLIED AND STATUTORY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT.
+
+14. Limitation of Liability.
+
+14.1. IN NO EVENT SHALL APPSFLYER, ITS DIRECTORS, OFFICERS, AFFILIATES OR AGENTS BE LIABLE FOR ANY CONSEQUENTIAL, INDIRECT, SPECIAL OR PUNITIVE DAMAGES, ARISING OUT OF OR RELATING TO THE SERVICES OR THE ARRANGEMENTS CONTEMPLATED HEREIN.
+
+14.2. EXCEPT FOR INTENTIONAL MISCONDUCT, GROSS NEGLIGENCE, BREACH OF CONFIDENTIALITY, DATA OR PRIVACY OBLIGATIONS AND APPSFLYER’S INDEMNIFICATION OBLIGATIONS FOR INTELLECTUAL PROPERTY INFRINGEMENT (THE “CARVE-OUT CLAIMS”), APPSFLYER’S ENTIRE LIABILITY FOR THE PROVISION OF THE SERVICES OR UNDER ANY PROVISION OF THIS AGREEMENT SHALL NOT EXCEED THE AMOUNT OF PAYMENT RECEIVED BY APPSFLYER FROM COMPANY IN THE 12 MONTHS PRECEDING THE APPLICABLE CLAIM, IN THE AGGREGATE. WITH RESPECT TO THE CARVE-OUT CLAIMS, APPSFLYER’S ENTIRE LIABILITY FOR THE PROVISION OF THE SERVICES OR UNDER ANY PROVISION OF THIS AGREEMENT SHALL NOT EXCEED TWO (2) TIMES THE AMOUNT OF PAYMENT RECEIVED BY APPSFLYER FROM COMPANY IN THE TWELVE (12) MONTHS PRECEDING THE APPLICABLE CLAIM, IN THE AGGREGATE.
+
+15. Term and Termination.
+
+15.1. The term of this Agreement shall commence as of the day you accept this Agreement or, if earlier, the date that you integrate the Code into an Application and shall continue in effect for a period of twelve (12) months (the “Initial Term”); provided that if Company selects the “Basic Pay-Per-Use” package, as shown on AppsFlyer’s website, this Agreement shall be in effect on a month-to-month basis. Following the Initial Term, this Agreement shall automatically renew for subsequent terms of twelve (12) months each (each a “Renewal Term” and together with the Initial Term, the “Term”), unless one of the parties notifies the other party of its intention not to renew the Agreement at least 45 days prior to the commencement of any Renewal Term.
+
+15.2. Either party may terminate this Agreement with written notice if it has reason to believe that the other Party is in material breach of this Agreement, and such breach is not cured within 30 days from the receipt of written notice of such breach. In addition, either party shall have the right to terminate this Agreement upon 30 days’ written notice to the other party pursuant to section 5.3 of the DPA.
+
+15.3. This agreement is based on a reasonable and fair use of the Services. Notwithstanding anything to the contrary herein, any use that is not aligned with such fair use may be overcharged or terminated immediately by AppsFlyer.
+
+15.4. Upon any termination or expiration of this Agreement, AppsFlyer will cease providing the Services. In the event of any termination (a) Company will not be entitled to any refunds of any nonrefundable fees, (b) any outstanding balance for Services rendered through the date of termination will be immediately due and payable in full, and (c) Company’s historical data will be available for download through AppsFlyer’s standard user interface for a period of 30 days. Any obligations of the Parties that by their nature are intended to survive the termination or expiration of this Agreement, including the obligations of the Parties in Sections 3 – 9 and 12 – 15 of this Agreement, shall survive any termination thereof.
+
+16. Publicity. During the Term, AppsFlyer may refer to Company as a customer of AppsFlyer, including by displaying Company’s name and logo on AppsFlyer’s website and other marketing materials.
+
+17. Miscellaneous.
+
+17.1. This Agreement represents the entire agreement between the parties regarding the subject matter hereof and supersedes any and all other agreements between the parties, whether written or oral, regarding the subject matter hereof. For clarity, the provisions of this Agreement supersede any earlier non-disclosure or confidentiality agreements between the parties. Except as expressly set forth herein, this Agreement may not be modified or amended except in a writing executed by both parties.
+
+17.2. All waivers must be in writing. A waiver of any default hereunder or of any of the terms and conditions of this Agreement shall not be deemed to be a continuing waiver or a waiver of any other default or of any other term or condition, but shall apply solely to the instance to which such waiver is directed. AppsFlyer may provide Company with notices required hereunder by contacting Company at any email address Company provided, including in its registration information.
+
+17.3. Neither Party may assign any of its rights and obligations under this Agreement without the prior written consent of the other Party, such consent not to be required in the event of an assignment by one of the Parties to a purchaser of all or substantially all of the assignor’s assets or share capital. The assignor shall provide the other Party with written notice of the assignment. Assignment in violation of the foregoing shall be void.
+
+17.4. If any part of this Agreement shall be invalid or unenforceable, such part shall be interpreted to give the maximum force possible to such terms as possible under applicable law, and such invalidity or unenforceability shall not affect the validity or enforceability of any other part or provision of this Agreement which shall remain in full force and effect.
+17.5. This Agreement shall be governed by the laws of the State of New York, and the competent courts in the city of New York shall have exclusive jurisdiction to hear any disputes arising hereunder.
+
+Appendix A: Fees and Services
+
+[PACKAGE OF SERVICES TO BE CHOSEN BY COMPANY]
+
+Appendix B: Service Levels
+
+AppsFlyer service commitments do not include downtime to extent resulting from: previously scheduled maintenance and events beyond AppsFlyer’s reasonable control, such as any down time (a) caused by outages to any public Internet backbones, networks or servers, (b) caused by any failures of Company’s Application, equipment, systems or local access services, or (c) strikes, riots, insurrection, fires, floods, explosions, war, governmental action, labor conditions, earthquakes or natural disasters.

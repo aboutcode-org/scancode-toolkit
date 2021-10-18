@@ -11,6 +11,7 @@ notes: |
 spdx_license_key: OpenSSL
 text_urls:
   - http://www.openssl.org/source/license.html
+  - https://www.openssl.org/source/license-openssl-ssleay.txt
 faq_url: http://www.openssl.org/support/faq.html
 minimum_coverage: 70
 ignorable_copyrights:

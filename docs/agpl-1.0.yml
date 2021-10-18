@@ -10,6 +10,7 @@ other_spdx_license_keys:
 text_urls:
   - http://www.affero.org/oagpl.html
 faq_url: http://www.affero.org/oagf.html
+minimum_coverage: 75
 ignorable_copyrights:
   - Copyright (c) 2002 Affero Inc.
   - copyright (c) 1989, 1991 Free Software Foundation, Inc.

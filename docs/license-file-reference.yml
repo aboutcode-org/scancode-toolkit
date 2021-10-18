@@ -5,3 +5,4 @@ name: license-file-reference
 category: Unstated License
 owner: Unspecified
 notes: this was known before as "see-license" and is now unknown-license-reference
+is_unknown: yes
