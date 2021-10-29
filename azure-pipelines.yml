@@ -27,7 +27,7 @@ jobs:
       parameters:
           job_name: macos1014_cpython
           image_name: macos-10.14
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
               all: venv/bin/pytest -n 2 -vvs
 
