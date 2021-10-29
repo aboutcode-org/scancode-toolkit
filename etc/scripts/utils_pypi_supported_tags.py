@@ -82,11 +82,7 @@ def is_supported_platform_tag(platform_tag):
     if platform_tag in _allowed_platforms:
         return True
     m = _macosx_platform_re.match(platform_tag)
-    if (
-        m
-        and m.group("major") in _macosx_major_versions
-        and m.group("arch") in _macosx_arches
-    ):
+    if m and m.group("major") in _macosx_major_versions and m.group("arch") in _macosx_arches:
         return True
     m = _manylinux_platform_re.match(platform_tag)
     if m and m.group("arch") in _manylinux_arches:

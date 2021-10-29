@@ -14,13 +14,14 @@ import utils_thirdparty
 
 
 @click.command()
-
-@click.option('-d', '--thirdparty-dir',
+@click.option(
+    "-d",
+    "--thirdparty-dir",
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
     required=True,
-    help='Path to the thirdparty directory to check.',
+    help="Path to the thirdparty directory to check.",
 )
-@click.help_option('-h', '--help')
+@click.help_option("-h", "--help")
 def check_thirdparty_dir(thirdparty_dir):
     """
     Check a thirdparty directory for problems.
@@ -28,5 +29,5 @@ def check_thirdparty_dir(thirdparty_dir):
     utils_thirdparty.find_problems(dest_dir=thirdparty_dir)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     check_thirdparty_dir()

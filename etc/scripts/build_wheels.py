@@ -14,55 +14,67 @@ import utils_thirdparty
 
 
 @click.command()
-
-@click.option('-n', '--name',
+@click.option(
+    "-n",
+    "--name",
     type=str,
-    metavar='PACKAGE_NAME',
+    metavar="PACKAGE_NAME",
     required=True,
-    help='Python package name to add or build.',
+    help="Python package name to add or build.",
 )
-@click.option('-v', '--version',
+@click.option(
+    "-v",
+    "--version",
     type=str,
     default=None,
-    metavar='VERSION',
-    help='Python package version to add or build.',
+    metavar="VERSION",
+    help="Python package version to add or build.",
 )
-@click.option('-d', '--thirdparty-dir',
+@click.option(
+    "-d",
+    "--thirdparty-dir",
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
-    metavar='DIR',
+    metavar="DIR",
     default=utils_thirdparty.THIRDPARTY_DIR,
     show_default=True,
-    help='Path to the thirdparty directory where wheels are built.',
+    help="Path to the thirdparty directory where wheels are built.",
 )
-@click.option('-p', '--python-version',
+@click.option(
+    "-p",
+    "--python-version",
     type=click.Choice(utils_thirdparty.PYTHON_VERSIONS),
-    metavar='PYVER',
+    metavar="PYVER",
     default=utils_thirdparty.PYTHON_VERSIONS,
     show_default=True,
     multiple=True,
-    help='Python version to use for this build.',
+    help="Python version to use for this build.",
 )
-@click.option('-o', '--operating-system',
+@click.option(
+    "-o",
+    "--operating-system",
     type=click.Choice(utils_thirdparty.PLATFORMS_BY_OS),
-    metavar='OS',
+    metavar="OS",
     default=tuple(utils_thirdparty.PLATFORMS_BY_OS),
     multiple=True,
     show_default=True,
-    help='OS to use for this build: one of linux, mac or windows.',
+    help="OS to use for this build: one of linux, mac or windows.",
 )
-@click.option('--build-remotely',
+@click.option(
+    "--build-remotely",
     is_flag=True,
-    help='Build missing wheels remotely.',
+    help="Build missing wheels remotely.",
 )
-@click.option('--with-deps',
+@click.option(
+    "--with-deps",
     is_flag=True,
-    help='Also include all dependent wheels.',
+    help="Also include all dependent wheels.",
 )
-@click.option('--verbose',
+@click.option(
+    "--verbose",
     is_flag=True,
-    help='Provide verbose output.',
+    help="Provide verbose output.",
 )
-@click.help_option('-h', '--help')
+@click.help_option("-h", "--help")
 def build_wheels(
     name,
     version,
@@ -93,5 +105,5 @@ def build_wheels(
     )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     build_wheels()
