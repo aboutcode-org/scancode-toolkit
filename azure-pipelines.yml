@@ -9,17 +9,9 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: ubuntu16_cpython
-          image_name: ubuntu-16.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
-          test_suites:
-              all: venv/bin/pytest -vvs
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
           job_name: ubuntu18_cpython
           image_name: ubuntu-18.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pytest -n 2 -vvs
 
@@ -27,7 +19,7 @@ jobs:
       parameters:
           job_name: ubuntu20_cpython
           image_name: ubuntu-20.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pytest -n 2 -vvs
 
@@ -35,7 +27,7 @@ jobs:
       parameters:
           job_name: macos1014_cpython
           image_name: macos-10.14
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pytest -n 2 -vvs
 
@@ -43,7 +35,7 @@ jobs:
       parameters:
           job_name: macos1015_cpython
           image_name: macos-10.15
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pytest -n 2 -vvs
 
@@ -51,7 +43,7 @@ jobs:
       parameters:
           job_name: win2016_cpython
           image_name: vs2017-win2016
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs
 
@@ -59,6 +51,6 @@ jobs:
       parameters:
           job_name: win2019_cpython
           image_name: windows-2019
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs
