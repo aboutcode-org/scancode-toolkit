@@ -29,13 +29,9 @@ if TRACE:
 # TODO: Override get_package_resource so it returns the Resource that the ABOUT file is describing
 
 @attr.s()
-class AboutPackage(models.Package, models.PackageManifest):
-    file_patterns = ('*.ABOUT',)
-    default_type = 'about'
+class AboutPackage(models.Package):
 
-    @classmethod
-    def recognize(cls, location):
-        yield parse(location)
+    default_type = 'about'
 
     def get_package_root(self, manifest_resource, codebase):
         about_resource = self.extra_data.get('about_resource')
@@ -47,53 +43,55 @@ class AboutPackage(models.Package, models.PackageManifest):
         return manifest_resource
 
 
-def is_about_file(location):
-    return (filetype.is_file(location)
-            and location.lower().endswith(('.about',)))
+@attr.s()
+class Aboutfile(AboutPackage, models.PackageManifest):
 
+    file_patterns = ('*.ABOUT',)
+    extensions = ('.ABOUT',)
+    manifest_type = 'aboutfile'
 
-def parse(location):
-    """
-    Return a Package object from an ABOUT file or None.
-    """
-    if not is_about_file(location):
-        return
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location) and location.lower().endswith(('.about',)))
 
-    with io.open(location, encoding='utf-8') as loc:
-        package_data = saneyaml.load(loc.read())
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = saneyaml.load(loc.read())
 
-    return build_package(package_data)
+        name = package_data.get('name')
+        # FIXME: having no name may not be a problem See #1514
+        if not name:
+            return
 
+        version = package_data.get('version')
+        homepage_url = package_data.get('home_url') or package_data.get('homepage_url')
+        download_url = package_data.get('download_url')
+        declared_license = package_data.get('license_expression')
+        copyright_statement = package_data.get('copyright')
 
-def build_package(package_data):
-    """
-    Return a Package built from `package_data` obtained by an ABOUT file.
-    """
-    name = package_data.get('name')
-    # FIXME: having no name may not be a problem See #1514
-    if not name:
-        return
+        owner = package_data.get('owner')
+        if not isinstance(owner, str):
+            owner = repr(owner)
+        parties = [models.Party(type=models.party_person, name=owner, role='owner')]
 
-    version = package_data.get('version')
-    homepage_url = package_data.get('home_url') or package_data.get('homepage_url')
-    download_url = package_data.get('download_url')
-    declared_license = package_data.get('license_expression')
-    copyright_statement = package_data.get('copyright')
+        about_package = cls(
+            type='about',
+            name=name,
+            version=version,
+            declared_license=declared_license,
+            copyright=copyright_statement,
+            parties=parties,
+            homepage_url=homepage_url,
+            download_url=download_url,
+        )
 
-    owner = package_data.get('owner')
-    if not isinstance(owner, str):
-        owner = repr(owner)
-    parties = [models.Party(type=models.party_person, name=owner, role='owner')]
-
-    about_package = AboutPackage(
-        type='about',
-        name=name,
-        version=version,
-        declared_license=declared_license,
-        copyright=copyright_statement,
-        parties=parties,
-        homepage_url=homepage_url,
-        download_url=download_url,
-    )
-    about_package.extra_data['about_resource'] = package_data.get('about_resource')
-    return about_package
+        about_package.extra_data['about_resource'] = package_data.get('about_resource')
+        yield about_package

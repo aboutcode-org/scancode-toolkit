@@ -5,8 +5,9 @@ Package: METADATA.bzl
 
 --------------------------------------------
 Package: about
-  class: packagedcode.about:AboutPackage
+  class: packagedcode.about:Aboutfile
   file_patterns: *.ABOUT
+  extensions: .ABOUT
 
 --------------------------------------------
 Package: android

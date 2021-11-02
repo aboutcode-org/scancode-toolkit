@@ -50,7 +50,7 @@ PACKAGE_MANIFEST_TYPES = [
     models.JBossSar,
     models.Axis2Mar,
 
-    about.AboutPackage,
+    about.Aboutfile,
     npm.NpmPackage,
     phpcomposer.PHPComposerPackage,
     haxe.HaxePackage,
