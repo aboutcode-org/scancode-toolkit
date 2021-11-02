@@ -34,7 +34,7 @@ if TRACE:
 
 
 @attr.s()
-class GolangPackage(models.Package):
+class GolangPackage(models.Package, models.PackageManifest):
     file_patterns = ('go.mod', 'go.sum')
     default_type = 'golang'
     default_primary_language = 'Go'

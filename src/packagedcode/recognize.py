@@ -59,7 +59,7 @@ def recognize_package_manifests(location):
                 for recognized in package_manifest_type.recognize(location):
                     if TRACE:
                         logger_debug(
-                            'recognize_packages: metafile matching: recognized:',
+                            'recognize_package_manifests: metafile matching: recognized:',
                             recognized,
                         )
                     if recognized and not recognized.license_expression:
@@ -73,8 +73,8 @@ def recognize_package_manifests(location):
 
                         if TRACE:
                             logger_debug(
-                                'recognize_packages: recognized.license_expression:',
-                                recognized.license_expression,
+                                'recognize_package_manifests: recognized.license_expression:',
+                                recognized.license_expression
                             )
                     recognized_package_manifests.append(recognized)
                 return recognized_package_manifests
@@ -83,7 +83,9 @@ def recognize_package_manifests(location):
                 # build a plain package if recognize is not yet implemented
                 recognized = package_manifest_type()
                 if TRACE:
-                    logger_debug('recognize_packages: recognized', recognized)
+                    logger_debug(
+                        'recognize_package_manifests: NotImplementedError: recognized', recognized
+                    )
 
                 recognized_package_manifests.append(recognized)
 
@@ -92,4 +94,6 @@ def recognize_package_manifests(location):
 
             return recognized_package_manifests
 
-        if TRACE: logger_debug('recognize_packages: no match for type:', package_manifest_type)
+        if TRACE: logger_debug(
+            'recognize_package_manifests: no match for type:', package_manifest_type
+        )

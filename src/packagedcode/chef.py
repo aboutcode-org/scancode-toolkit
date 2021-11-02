@@ -38,7 +38,7 @@ if TRACE:
 
 
 @attr.s()
-class ChefPackage(models.Package):
+class ChefPackage(models.Package, models.PackageManifest):
     file_patterns = ('metadata.json', 'metadata.rb')
     filetypes = ('.tgz',)
     mimetypes = ('application/x-tar',)

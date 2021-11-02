@@ -39,7 +39,7 @@ README_MAPPING = {
 
 
 @attr.s()
-class ReadmePackage(models.Package):
+class ReadmePackage(models.Package, models.PackageManifest):
     file_patterns = (
         'README.android',
         'README.chromium',

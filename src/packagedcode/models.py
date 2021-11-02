@@ -777,7 +777,7 @@ class PackageManifest:
 
 
 @attr.s()
-class JavaJar(Package):
+class JavaJar(Package, PackageManifest):
     file_patterns = ('META-INF/MANIFEST.MF',)
     extensions = ('.jar',)
     filetypes = ('java archive ', 'zip archive',)
@@ -787,7 +787,7 @@ class JavaJar(Package):
 
 
 @attr.s()
-class JavaWar(Package):
+class JavaWar(Package, PackageManifest):
     file_patterns = ('WEB-INF/web.xml',)
     extensions = ('.war',)
     filetypes = ('java archive ', 'zip archive',)
@@ -797,7 +797,7 @@ class JavaWar(Package):
 
 
 @attr.s()
-class JavaEar(Package):
+class JavaEar(Package, PackageManifest):
     file_patterns = ('META-INF/application.xml', 'META-INF/ejb-jar.xml')
     extensions = ('.ear',)
     filetypes = ('java archive ', 'zip archive',)
@@ -807,7 +807,7 @@ class JavaEar(Package):
 
 
 @attr.s()
-class Axis2Mar(Package):
+class Axis2Mar(Package, PackageManifest):
     """Apache Axis2 module"""
     file_patterns = ('META-INF/module.xml',)
     extensions = ('.mar',)
@@ -818,7 +818,7 @@ class Axis2Mar(Package):
 
 
 @attr.s()
-class JBossSar(Package):
+class JBossSar(Package, PackageManifest):
     file_patterns = ('META-INF/jboss-service.xml',)
     extensions = ('.sar',)
     filetypes = ('java archive ', 'zip archive',)
@@ -836,7 +836,7 @@ class IvyJar(JavaJar):
 
 # FIXME: move to bower.py
 @attr.s()
-class BowerPackage(Package):
+class BowerPackage(Package, PackageManifest):
     file_patterns = ('bower.json',)
     default_type = 'bower'
     default_primary_language = 'JavaScript'
@@ -847,7 +847,7 @@ class BowerPackage(Package):
 
 
 @attr.s()
-class MeteorPackage(Package):
+class MeteorPackage(Package, PackageManifest):
     file_patterns = ('package.js',)
     default_type = 'meteor'
     default_primary_language = 'JavaScript'
@@ -858,7 +858,7 @@ class MeteorPackage(Package):
 
 
 @attr.s()
-class CpanModule(Package):
+class CpanModule(Package, PackageManifest):
     file_patterns = (
         '*.pod',
         '*.pm',
@@ -877,7 +877,7 @@ class CpanModule(Package):
 # TODO: refine me: Go packages are a mess but something is emerging
 # TODO: move to and use godeps.py
 @attr.s()
-class Godep(Package):
+class Godep(Package, PackageManifest):
     file_patterns = ('Godeps',)
     default_type = 'golang'
     default_primary_language = 'Go'
@@ -888,7 +888,7 @@ class Godep(Package):
 
 
 @attr.s()
-class AndroidApp(Package):
+class AndroidApp(Package, PackageManifest):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.apk',)
@@ -898,7 +898,7 @@ class AndroidApp(Package):
 
 # see http://tools.android.com/tech-docs/new-build-system/aar-formats
 @attr.s()
-class AndroidLibrary(Package):
+class AndroidLibrary(Package, PackageManifest):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     # note: Apache Axis also uses AAR extensions for plain Jars.
@@ -909,7 +909,7 @@ class AndroidLibrary(Package):
 
 
 @attr.s()
-class MozillaExtension(Package):
+class MozillaExtension(Package, PackageManifest):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.xpi',)
@@ -918,7 +918,7 @@ class MozillaExtension(Package):
 
 
 @attr.s()
-class ChromeExtension(Package):
+class ChromeExtension(Package, PackageManifest):
     filetypes = ('data',)
     mimetypes = ('application/octet-stream',)
     extensions = ('.crx',)
@@ -927,7 +927,7 @@ class ChromeExtension(Package):
 
 
 @attr.s()
-class IOSApp(Package):
+class IOSApp(Package, PackageManifest):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.ipa',)
@@ -936,7 +936,7 @@ class IOSApp(Package):
 
 
 @attr.s()
-class CabPackage(Package):
+class CabPackage(Package, PackageManifest):
     filetypes = ('microsoft cabinet',)
     mimetypes = ('application/vnd.ms-cab-compressed',)
     extensions = ('.cab',)
@@ -944,7 +944,7 @@ class CabPackage(Package):
 
 
 @attr.s()
-class InstallShieldPackage(Package):
+class InstallShieldPackage(Package, PackageManifest):
     filetypes = ('installshield',)
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
@@ -952,7 +952,7 @@ class InstallShieldPackage(Package):
 
 
 @attr.s()
-class NSISInstallerPackage(Package):
+class NSISInstallerPackage(Package, PackageManifest):
     filetypes = ('nullsoft installer',)
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
@@ -960,7 +960,7 @@ class NSISInstallerPackage(Package):
 
 
 @attr.s()
-class SharPackage(Package):
+class SharPackage(Package, PackageManifest):
     filetypes = ('posix shell script',)
     mimetypes = ('text/x-shellscript',)
     extensions = ('.sha', '.shar', '.bin',)
@@ -968,7 +968,7 @@ class SharPackage(Package):
 
 
 @attr.s()
-class AppleDmgPackage(Package):
+class AppleDmgPackage(Package, PackageManifest):
     filetypes = ('zlib compressed',)
     mimetypes = ('application/zlib',)
     extensions = ('.dmg', '.sparseimage',)
@@ -976,7 +976,7 @@ class AppleDmgPackage(Package):
 
 
 @attr.s()
-class IsoImagePackage(Package):
+class IsoImagePackage(Package, PackageManifest):
     filetypes = ('iso 9660 cd-rom', 'high sierra cd-rom',)
     mimetypes = ('application/x-iso9660-image',)
     extensions = ('.iso', '.udf', '.img',)
@@ -984,7 +984,7 @@ class IsoImagePackage(Package):
 
 
 @attr.s()
-class SquashfsPackage(Package):
+class SquashfsPackage(Package, PackageManifest):
     filetypes = ('squashfs',)
     default_type = 'squashfs'
 

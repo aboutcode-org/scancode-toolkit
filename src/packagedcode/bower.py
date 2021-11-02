@@ -30,7 +30,7 @@ if TRACE:
 
 
 @attr.s()
-class BowerPackage(models.Package):
+class BowerPackage(models.Package, models.PackageManifest):
     file_patterns = ('bower.json', '.bower.json')
     default_type = 'bower'
 

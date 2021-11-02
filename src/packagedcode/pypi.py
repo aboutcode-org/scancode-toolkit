@@ -68,7 +68,7 @@ if TRACE:
 
 
 @attr.s()
-class PythonPackage(models.Package):
+class PythonPackage(models.Package, models.PackageManifest):
     file_patterns = (
         '*setup.py',
         '*setup.cfg',

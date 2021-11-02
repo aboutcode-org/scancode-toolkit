@@ -29,7 +29,7 @@ if TRACE:
 # TODO: Override get_package_resource so it returns the Resource that the ABOUT file is describing
 
 @attr.s()
-class AboutPackage(models.Package):
+class AboutPackage(models.Package, models.PackageManifest):
     file_patterns = ('*.ABOUT',)
     default_type = 'about'
 

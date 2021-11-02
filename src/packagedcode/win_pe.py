@@ -222,7 +222,7 @@ def pe_info(location):
 
 
 @attr.s()
-class WindowsExecutable(models.Package):
+class WindowsExecutable(models.Package, models.PackageManifest):
     file_patterns = ()
     extensions = (
         '.exe',

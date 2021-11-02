@@ -34,7 +34,7 @@ if TRACE:
 
 
 @attr.s()
-class RustCargoCrate(models.Package):
+class RustCargoCrate(models.Package, models.PackageManifest):
     file_patterns = ('Cargo.toml', 'Cargo.lock')
     default_type = 'cargo'
     default_primary_language = 'Rust'

@@ -48,7 +48,7 @@ if TRACE:
 
 
 @attr.s()
-class HaxePackage(models.Package):
+class HaxePackage(models.Package, models.PackageManifest):
     file_patterns = ('haxelib.json',)
     filetypes = tuple()
     mimetypes = tuple()

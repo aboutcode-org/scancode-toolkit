@@ -34,7 +34,7 @@ if TRACE:
 
 
 @attr.s()
-class MicrosoftUpdateManifestPackage(models.Package):
+class MicrosoftUpdateManifestPackage(models.Package, models.PackageManifest):
     extensions = ('.mum',)
     filetypes = ('xml 1.0 document',)
     mimetypes = ('text/xml',)

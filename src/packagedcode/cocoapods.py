@@ -43,7 +43,7 @@ if TRACE:
 
 
 @attr.s()
-class CocoapodsPackage(models.Package):
+class CocoapodsPackage(models.Package, models.PackageManifest):
     metafiles = (
         '*.podspec',
         '*podfile.lock',

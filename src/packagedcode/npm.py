@@ -54,7 +54,7 @@ if TRACE:
 
 
 @attr.s()
-class NpmPackage(models.Package):
+class NpmPackage(models.Package, models.PackageManifest):
     # TODO: add new lock files and yarn lock files
     file_patterns = (
         'package.json',

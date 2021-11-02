@@ -44,7 +44,7 @@ if TRACE:
 
 
 @attr.s()
-class CondaPackage(models.Package):
+class CondaPackage(models.Package, models.PackageManifest):
     file_patterns = ('meta.yaml', 'META.yml',)
     default_type = 'conda'
     default_web_baseurl = None

@@ -34,7 +34,7 @@ if TRACE:
 
 
 @attr.s()
-class FreeBSDPackage(models.Package):
+class FreeBSDPackage(models.Package, models.PackageManifest):
     file_patterns = ('+COMPACT_MANIFEST',)
     default_type = 'freebsd'
 

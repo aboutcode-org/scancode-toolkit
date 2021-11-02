@@ -58,7 +58,7 @@ See https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md
 
 
 @attr.s()
-class PubspecPackage(models.Package):
+class PubspecPackage(models.Package, models.PackageManifest):
     file_patterns = ('pubspec.yaml', 'pubspec.lock',)
     extensions = ('.yaml', '.lock',)
     default_type = 'pubspec'

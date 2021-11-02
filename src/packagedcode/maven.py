@@ -47,7 +47,7 @@ Attempts to resolve Maven properties when possible.
 
 
 @attr.s()
-class MavenPomPackage(models.Package):
+class MavenPomPackage(models.Package, models.PackageManifest):
     file_patterns = ('*.pom', 'pom.xml',)
     extensions = ('.pom',)
     default_type = 'maven'

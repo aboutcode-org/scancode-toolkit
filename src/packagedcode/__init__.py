@@ -102,15 +102,16 @@ PACKAGE_MANIFESTS_BY_TYPE = {
 if len(PACKAGE_MANIFESTS_BY_TYPE) != len(PACKAGE_MANIFEST_TYPES):
     seen_types = {}
     for pmt in PACKAGE_MANIFEST_TYPES:
-        assert pmt.default_type
-        seen = seen_types.get(pmt.default_type)
+        manifest = pmt()
+        assert manifest.package_manifest_type
+        seen = seen_types.get(manifest.package_manifest_type)
         if seen:
             msg = ('Invalid duplicated packagedcode.Package types: '
                    '"{}:{}" and "{}:{}" have the same type.'
-                  .format(pmt.default_type, pmt.__name__, seen.default_type, seen.__name__,))
+                  .format(manifest.package_manifest_type, manifest.__name__, seen.package_manifest_type, seen.__name__,))
             raise Exception(msg)
         else:
-            seen_types[pmt.default_type] = pmt
+            seen_types[manifest.package_manifest_type] = manifest
 
 
 def get_package_class(scan_data, default=models.Package):

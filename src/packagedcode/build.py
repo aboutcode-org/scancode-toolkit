@@ -38,7 +38,7 @@ gradle, Buck, Bazel, Pants, etc.
 
 
 @attr.s()
-class BaseBuildManifestPackage(models.Package):
+class BaseBuildManifestPackage(models.Package, models.PackageManifest):
     file_patterns = tuple()
 
     @classmethod

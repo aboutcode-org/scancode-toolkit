@@ -47,7 +47,7 @@ if TRACE:
 
 
 @attr.s()
-class PHPComposerPackage(models.Package):
+class PHPComposerPackage(models.Package, models.PackageManifest):
     file_patterns = (
         'composer.json',
         'composer.lock',

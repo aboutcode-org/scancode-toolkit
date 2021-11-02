@@ -219,7 +219,6 @@ Package: opam
 --------------------------------------------
 Package: pods
   class: packagedcode.cocoapods:CocoapodsPackage
-  file_patterns: *.podspec, *podfile.lock, *.podspec.json
   extensions: .podspec, .lock
 
 --------------------------------------------

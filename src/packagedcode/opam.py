@@ -32,7 +32,7 @@ if TRACE:
 
 
 @attr.s()
-class OpamPackage(models.Package):
+class OpamPackage(models.Package, models.PackageManifest):
     file_patterns = ('*opam',)
     extensions = ('.opam',)
     default_type = 'opam'
