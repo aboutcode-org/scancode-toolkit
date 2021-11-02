@@ -38,7 +38,7 @@ from packagedcode import windows
 
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
-PACKAGE_TYPES = [
+PACKAGE_MANIFEST_TYPES = [
     rpm.RpmPackage,
     debian.DebianPackage,
 
@@ -90,21 +90,27 @@ PACKAGE_TYPES = [
     pubspec.PubspecPackage,
 ]
 
-PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
-
+PACKAGE_MANIFESTS_BY_TYPE = {
+    (
+        cls.package_manifest_type
+        if isinstance(cls, models.PackageManifest)
+        else cls.default_type
+    ): cls
+    for cls in PACKAGE_MANIFEST_TYPES
+}
 # We cannot have two package classes with the same type
-if len(PACKAGES_BY_TYPE) != len(PACKAGE_TYPES):
+if len(PACKAGE_MANIFESTS_BY_TYPE) != len(PACKAGE_MANIFEST_TYPES):
     seen_types = {}
-    for pt in PACKAGE_TYPES:
-        assert pt.default_type
-        seen = seen_types.get(pt.default_type)
+    for pmt in PACKAGE_MANIFEST_TYPES:
+        assert pmt.default_type
+        seen = seen_types.get(pmt.default_type)
         if seen:
             msg = ('Invalid duplicated packagedcode.Package types: '
                    '"{}:{}" and "{}:{}" have the same type.'
-                  .format(pt.default_type, pt.__name__, seen.default_type, seen.__name__,))
+                  .format(pmt.default_type, pmt.__name__, seen.default_type, seen.__name__,))
             raise Exception(msg)
         else:
-            seen_types[pt.default_type] = pt
+            seen_types[pmt.default_type] = pmt
 
 
 def get_package_class(scan_data, default=models.Package):
@@ -130,7 +136,7 @@ def get_package_class(scan_data, default=models.Package):
     if not ptype:
         # basic type for default package types
         return default
-    ptype_class = PACKAGES_BY_TYPE.get(ptype)
+    ptype_class = PACKAGE_MANIFESTS_BY_TYPE.get(ptype)
     return ptype_class or default
 
 

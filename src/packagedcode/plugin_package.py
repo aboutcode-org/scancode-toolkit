@@ -18,13 +18,13 @@ from commoncode.cliutils import DOC_GROUP
 from commoncode.cliutils import SCAN_GROUP
 
 from packagedcode import get_package_instance
-from packagedcode import PACKAGE_TYPES
+from packagedcode import PACKAGE_MANIFEST_TYPES
 
 
 def print_packages(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    for package_cls in sorted(PACKAGE_TYPES, key=lambda pc: (pc.default_type)):
+    for package_cls in sorted(PACKAGE_MANIFEST_TYPES, key=lambda pc: (pc.default_type)):
         click.echo('--------------------------------------------')
         click.echo('Package: {self.default_type}'.format(self=package_cls))
         click.echo(

@@ -7,7 +7,9 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import fnmatch
 import logging
+import os
 import sys
 
 import attr
@@ -23,9 +25,16 @@ from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.datautils import TriBoolean
 
+from commoncode import filetype
+from commoncode.fileutils import file_name
+from commoncode.fileutils import splitext_name
+from typecode import contenttype
+
+
 """
-Data models for package information and dependencies, abstracting the
-differences existing between package formats and tools.
+Data models for package information and dependencies, and also data models
+for package manifests for abstracting the differences existing between
+package formats and tools.
 
 A package has a somewhat fuzzy definition and is code that can be consumed and
 provisioned by a package manager or can be installed.
@@ -44,29 +53,53 @@ Structured package information are found in multiple places:
 There are collectively named "manifests" in ScanCode.
 
 We handle package information at two levels:
-1.- package information collected in a "manifest" at a file level
-2.- aggregated package information based on "manifest" at a directory or archive
-level (or in some rarer cases file level)
+
+1. package manifest information collected in a "manifest" at a file level
+2. package instances at the codebase level, where a package instance contains
+   one or more package manifests, and files for that package.
 
 The second requires the first to be computed.
-The schema for these two is the same.
+
+Class Hierarchy:
+
+Base Classes: (Classes to be inherited)
+
+- Package:
+    Base Data class with package data
+- PackageManifest:
+    Mixin class with manifest specific data and methods
+- PackageInstance:
+    Mixin class with package instance specific data and methods
+
+- Package Ecosystem: (Classes which would have object instances)
+
+- EcosystemPackage(Package):
+    A class with ecosystem specific data (and data specific methods)
+- EcosystemPackageManifest(EcosystemPackage, PackageManifest):
+    A class that overides and implements package manifest methods for that ecosystem
+- EcosystemPackageInstance(EcosystemPackage, PackageInstance):
+    A class that overrides and implements package instance methods for that ecosystem
 """
 
-TRACE = False
+SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
+TRACE = False or SCANCODE_DEBUG_PACKAGE_API
 
 def logger_debug(*args):
     pass
 
-
 logger = logging.getLogger(__name__)
 
 if TRACE:
+    import logging
+
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+
+    logger_debug = print
 
 
 class BaseModel(object):
@@ -386,7 +419,9 @@ class PackageFile(BaseModel):
 @attr.s()
 class Package(BasePackage):
     """
-    A package object as represented by its manifest data.
+    A package object as represented by either data from one of its different types of
+    package manifests or that of a package instance created from one or more of these
+    package manifests, and files for that package.
     """
 
     # Optional. Public default type for a package class.
@@ -564,8 +599,8 @@ class Package(BasePackage):
 
     @staticmethod
     def is_ignored_package_resource(resource, codebase):
-        from packagedcode import PACKAGE_TYPES
-        return any(pt.ignore_resource(resource, codebase) for pt in PACKAGE_TYPES)
+        from packagedcode import PACKAGE_MANIFEST_TYPES
+        return any(pt.ignore_resource(resource, codebase) for pt in PACKAGE_MANIFEST_TYPES)
 
     def compute_normalized_license(self):
         """
@@ -644,6 +679,97 @@ def compute_normalized_license(declared_license, expression_symbols=None):
         # FIXME: add logging
         # we never fail just for this
         return 'unknown'
+
+
+class PackageManifest:
+    """
+    A mixin for package manifest that can be recognized.
+
+    Subclasses must extend a Package subclass for a given ecosystem.
+    """
+
+    # class-level attributes used to recognize a package
+    filetypes = tuple()
+    mimetypes = tuple()
+    extensions = tuple()
+
+    # list of known file_patterns for a package manifest type
+    file_patterns = tuple()
+
+    # Package manifest type within a package ecosystem
+    manifest_type = None
+
+    @property
+    def package_manifest_type(self):
+        """
+        A tuple unique across package manifests, created from the default package type
+        and the manifest type.
+        """
+        return self.default_type, self.manifest_type
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+
+        Sub-classes should override to implement their own manifest recognition.
+        """
+        if not filetype.is_file(location):
+            return
+
+        filename = file_name(location)
+
+        file_patterns = cls.file_patterns
+        if any(fnmatch.fnmatchcase(filename, metaf) for metaf in file_patterns):
+            return True
+
+        T = contenttype.get_type(location)
+        ftype = T.filetype_file.lower()
+        mtype = T.mimetype_file
+
+        _base_name, extension = splitext_name(location, is_file=True)
+        extension = extension.lower()
+
+        if TRACE:
+            logger_debug(
+                'is_manifest: ftype:', ftype, 'mtype:', mtype,
+                'pygtype:', T.filetype_pygment,
+                'fname:', filename, 'ext:', extension,
+            )
+
+        type_matched = False
+        if cls.filetypes:
+            type_matched = any(t in ftype for t in cls.filetypes)
+
+        mime_matched = False
+        if cls.mimetypes:
+            mime_matched = any(m in mtype for m in cls.mimetypes)
+
+        extension_matched = False
+        extensions = cls.extensions
+        if extensions:
+            extensions = (e.lower() for e in extensions)
+            extension_matched = any(
+                fnmatch.fnmatchcase(extension, ext_pat)
+                for ext_pat in extensions
+            )
+
+        if type_matched and mime_matched and extension_matched:
+            return True
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file at `location`
+        pointing to a package archive, manifest or similar.
+
+        Sub-classes should override to implement their own package recognition and creation.
+ 
+        This should be called on the file at `location` only if `is_manifest` function
+        of the same class returns True.
+        """
+        raise NotImplementedError
+
 
 # Package types
 # NOTE: this is somewhat redundant with extractcode archive handlers
