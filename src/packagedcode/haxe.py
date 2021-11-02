@@ -49,7 +49,7 @@ if TRACE:
 
 @attr.s()
 class HaxePackage(models.Package):
-    metafiles = ('haxelib.json',)
+    file_patterns = ('haxelib.json',)
     filetypes = tuple()
     mimetypes = tuple()
     default_type = 'haxe'

@@ -40,7 +40,7 @@ README_MAPPING = {
 
 @attr.s()
 class ReadmePackage(models.Package):
-    metafiles = (
+    file_patterns = (
         'README.android',
         'README.chromium',
         'README.facebook',

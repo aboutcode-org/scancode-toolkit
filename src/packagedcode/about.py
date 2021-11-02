@@ -30,7 +30,7 @@ if TRACE:
 
 @attr.s()
 class AboutPackage(models.Package):
-    metafiles = ('*.ABOUT',)
+    file_patterns = ('*.ABOUT',)
     default_type = 'about'
 
     @classmethod

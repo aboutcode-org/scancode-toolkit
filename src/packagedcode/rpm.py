@@ -117,7 +117,7 @@ class EVR(namedtuple('EVR', 'epoch version release')):
 
 @attr.s()
 class RpmPackage(models.Package):
-    metafiles = ('*.spec',)
+    file_patterns = ('*.spec',)
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)

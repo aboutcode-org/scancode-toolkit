@@ -56,7 +56,7 @@ if TRACE:
 @attr.s()
 class NpmPackage(models.Package):
     # TODO: add new lock files and yarn lock files
-    metafiles = (
+    file_patterns = (
         'package.json',
         'npm-shrinkwrap.json',
         'package-lock.json',

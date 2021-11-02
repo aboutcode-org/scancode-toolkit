@@ -48,7 +48,7 @@ Attempts to resolve Maven properties when possible.
 
 @attr.s()
 class MavenPomPackage(models.Package):
-    metafiles = ('*.pom', 'pom.xml',)
+    file_patterns = ('*.pom', 'pom.xml',)
     extensions = ('.pom',)
     default_type = 'maven'
     default_primary_language = 'Java'

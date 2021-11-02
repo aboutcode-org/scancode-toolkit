@@ -51,7 +51,7 @@ if TRACE:
 
 @attr.s()
 class RubyGem(models.Package):
-    metafiles = ('metadata.gz-extract', '*.gemspec', 'Gemfile', 'Gemfile.lock',)
+    file_patterns = ('metadata.gz-extract', '*.gemspec', 'Gemfile', 'Gemfile.lock',)
     filetypes = ('.tar', 'tar archive',)
     mimetypes = ('application/x-tar',)
     extensions = ('.gem',)

@@ -69,7 +69,7 @@ if TRACE:
 
 @attr.s()
 class PythonPackage(models.Package):
-    metafiles = (
+    file_patterns = (
         '*setup.py',
         '*setup.cfg',
         'PKG-INFO',

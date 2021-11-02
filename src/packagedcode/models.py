@@ -160,8 +160,9 @@ class BasePackage(BaseModel):
     filetypes = tuple()
     mimetypes = tuple()
     extensions = tuple()
+
     # list of known metafiles for a package type
-    metafiles = []
+    file_patterns = tuple()
 
     # Optional. Public default web base URL for package homepages of this
     # package type on the default repository.
@@ -651,7 +652,7 @@ def compute_normalized_license(declared_license, expression_symbols=None):
 
 @attr.s()
 class JavaJar(Package):
-    metafiles = ('META-INF/MANIFEST.MF',)
+    file_patterns = ('META-INF/MANIFEST.MF',)
     extensions = ('.jar',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip',)
@@ -661,7 +662,7 @@ class JavaJar(Package):
 
 @attr.s()
 class JavaWar(Package):
-    metafiles = ('WEB-INF/web.xml',)
+    file_patterns = ('WEB-INF/web.xml',)
     extensions = ('.war',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
@@ -671,7 +672,7 @@ class JavaWar(Package):
 
 @attr.s()
 class JavaEar(Package):
-    metafiles = ('META-INF/application.xml', 'META-INF/ejb-jar.xml')
+    file_patterns = ('META-INF/application.xml', 'META-INF/ejb-jar.xml')
     extensions = ('.ear',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
@@ -682,7 +683,7 @@ class JavaEar(Package):
 @attr.s()
 class Axis2Mar(Package):
     """Apache Axis2 module"""
-    metafiles = ('META-INF/module.xml',)
+    file_patterns = ('META-INF/module.xml',)
     extensions = ('.mar',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
@@ -692,7 +693,7 @@ class Axis2Mar(Package):
 
 @attr.s()
 class JBossSar(Package):
-    metafiles = ('META-INF/jboss-service.xml',)
+    file_patterns = ('META-INF/jboss-service.xml',)
     extensions = ('.sar',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
@@ -702,7 +703,7 @@ class JBossSar(Package):
 
 @attr.s()
 class IvyJar(JavaJar):
-    metafiles = ('ivy.xml',)
+    file_patterns = ('ivy.xml',)
     default_type = 'ivy'
     default_primary_language = 'Java'
 
@@ -710,7 +711,7 @@ class IvyJar(JavaJar):
 # FIXME: move to bower.py
 @attr.s()
 class BowerPackage(Package):
-    metafiles = ('bower.json',)
+    file_patterns = ('bower.json',)
     default_type = 'bower'
     default_primary_language = 'JavaScript'
 
@@ -721,7 +722,7 @@ class BowerPackage(Package):
 
 @attr.s()
 class MeteorPackage(Package):
-    metafiles = ('package.js',)
+    file_patterns = ('package.js',)
     default_type = 'meteor'
     default_primary_language = 'JavaScript'
 
@@ -732,7 +733,7 @@ class MeteorPackage(Package):
 
 @attr.s()
 class CpanModule(Package):
-    metafiles = (
+    file_patterns = (
         '*.pod',
         '*.pm',
         'MANIFEST',
@@ -751,7 +752,7 @@ class CpanModule(Package):
 # TODO: move to and use godeps.py
 @attr.s()
 class Godep(Package):
-    metafiles = ('Godeps',)
+    file_patterns = ('Godeps',)
     default_type = 'golang'
     default_primary_language = 'Go'
 

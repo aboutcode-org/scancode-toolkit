@@ -31,7 +31,7 @@ if TRACE:
 
 @attr.s()
 class BowerPackage(models.Package):
-    metafiles = ('bower.json', '.bower.json')
+    file_patterns = ('bower.json', '.bower.json')
     default_type = 'bower'
 
     @classmethod

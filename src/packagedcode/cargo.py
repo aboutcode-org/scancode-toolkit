@@ -35,7 +35,7 @@ if TRACE:
 
 @attr.s()
 class RustCargoCrate(models.Package):
-    metafiles = ('Cargo.toml', 'Cargo.lock')
+    file_patterns = ('Cargo.toml', 'Cargo.lock')
     default_type = 'cargo'
     default_primary_language = 'Rust'
     default_web_baseurl = 'https://crates.io'

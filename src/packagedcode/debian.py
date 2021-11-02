@@ -33,7 +33,7 @@ if TRACE:
 
 @attr.s()
 class DebianPackage(models.Package):
-    metafiles = ('*.control',)
+    file_patterns = ('*.control',)
     extensions = ('.deb',)
     filetypes = ('debian binary package',)
     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)

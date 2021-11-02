@@ -35,7 +35,7 @@ if TRACE:
 
 @attr.s()
 class FreeBSDPackage(models.Package):
-    metafiles = ('+COMPACT_MANIFEST',)
+    file_patterns = ('+COMPACT_MANIFEST',)
     default_type = 'freebsd'
 
     @classmethod

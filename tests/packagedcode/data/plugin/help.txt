@@ -1,12 +1,12 @@
 --------------------------------------------
 Package: METADATA.bzl
   class: packagedcode.build:MetadataBzl
-  metafiles: METADATA.bzl
+  file_patterns: METADATA.bzl
 
 --------------------------------------------
 Package: about
   class: packagedcode.about:AboutPackage
-  metafiles: *.ABOUT
+  file_patterns: *.ABOUT
 
 --------------------------------------------
 Package: android
@@ -23,29 +23,29 @@ Package: android-lib
 --------------------------------------------
 Package: autotools
   class: packagedcode.build:AutotoolsPackage
-  metafiles: configure, configure.ac
+  file_patterns: configure, configure.ac
 
 --------------------------------------------
 Package: axis2
   class: packagedcode.models:Axis2Mar
-  metafiles: META-INF/module.xml
+  file_patterns: META-INF/module.xml
   extensions: .mar
   filetypes: java archive , zip archive
 
 --------------------------------------------
 Package: bazel
   class: packagedcode.build:BazelPackage
-  metafiles: BUILD
+  file_patterns: BUILD
 
 --------------------------------------------
 Package: bower
   class: packagedcode.bower:BowerPackage
-  metafiles: bower.json, .bower.json
+  file_patterns: bower.json, .bower.json
 
 --------------------------------------------
 Package: buck
   class: packagedcode.build:BuckPackage
-  metafiles: BUCK
+  file_patterns: BUCK
 
 --------------------------------------------
 Package: cab
@@ -56,12 +56,12 @@ Package: cab
 --------------------------------------------
 Package: cargo
   class: packagedcode.cargo:RustCargoCrate
-  metafiles: Cargo.toml, Cargo.lock
+  file_patterns: Cargo.toml, Cargo.lock
 
 --------------------------------------------
 Package: chef
   class: packagedcode.chef:ChefPackage
-  metafiles: metadata.json, metadata.rb
+  file_patterns: metadata.json, metadata.rb
   filetypes: .tgz
 
 --------------------------------------------
@@ -73,24 +73,24 @@ Package: chrome
 --------------------------------------------
 Package: composer
   class: packagedcode.phpcomposer:PHPComposerPackage
-  metafiles: composer.json, composer.lock
+  file_patterns: composer.json, composer.lock
   extensions: .json, .lock
 
 --------------------------------------------
 Package: conda
   class: packagedcode.conda:CondaPackage
-  metafiles: meta.yaml, META.yml
+  file_patterns: meta.yaml, META.yml
 
 --------------------------------------------
 Package: cpan
   class: packagedcode.models:CpanModule
-  metafiles: *.pod, *.pm, MANIFEST, Makefile.PL, META.yml, META.json, *.meta, dist.ini
+  file_patterns: *.pod, *.pm, MANIFEST, Makefile.PL, META.yml, META.json, *.meta, dist.ini
   extensions: .tar.gz
 
 --------------------------------------------
 Package: deb
   class: packagedcode.debian:DebianPackage
-  metafiles: *.control
+  file_patterns: *.control
   extensions: .deb
   filetypes: debian binary package
 
@@ -103,31 +103,31 @@ Package: dmg
 --------------------------------------------
 Package: ear
   class: packagedcode.models:JavaEar
-  metafiles: META-INF/application.xml, META-INF/ejb-jar.xml
+  file_patterns: META-INF/application.xml, META-INF/ejb-jar.xml
   extensions: .ear
   filetypes: java archive , zip archive
 
 --------------------------------------------
 Package: freebsd
   class: packagedcode.freebsd:FreeBSDPackage
-  metafiles: +COMPACT_MANIFEST
+  file_patterns: +COMPACT_MANIFEST
 
 --------------------------------------------
 Package: gem
   class: packagedcode.rubygems:RubyGem
-  metafiles: metadata.gz-extract, *.gemspec, Gemfile, Gemfile.lock
+  file_patterns: metadata.gz-extract, *.gemspec, Gemfile, Gemfile.lock
   extensions: .gem
   filetypes: .tar, tar archive
 
 --------------------------------------------
 Package: golang
   class: packagedcode.golang:GolangPackage
-  metafiles: go.mod, go.sum
+  file_patterns: go.mod, go.sum
 
 --------------------------------------------
 Package: haxe
   class: packagedcode.haxe:HaxePackage
-  metafiles: haxelib.json
+  file_patterns: haxelib.json
 
 --------------------------------------------
 Package: installshield
@@ -150,34 +150,34 @@ Package: iso
 --------------------------------------------
 Package: ivy
   class: packagedcode.models:IvyJar
-  metafiles: ivy.xml
+  file_patterns: ivy.xml
   extensions: .jar
   filetypes: java archive , zip archive
 
 --------------------------------------------
 Package: jar
   class: packagedcode.models:JavaJar
-  metafiles: META-INF/MANIFEST.MF
+  file_patterns: META-INF/MANIFEST.MF
   extensions: .jar
   filetypes: java archive , zip archive
 
 --------------------------------------------
 Package: jboss
   class: packagedcode.models:JBossSar
-  metafiles: META-INF/jboss-service.xml
+  file_patterns: META-INF/jboss-service.xml
   extensions: .sar
   filetypes: java archive , zip archive
 
 --------------------------------------------
 Package: maven
   class: packagedcode.maven:MavenPomPackage
-  metafiles: *.pom, pom.xml
+  file_patterns: *.pom, pom.xml
   extensions: .pom
 
 --------------------------------------------
 Package: meteor
   class: packagedcode.models:MeteorPackage
-  metafiles: package.js
+  file_patterns: package.js
 
 --------------------------------------------
 Package: mozilla
@@ -194,7 +194,7 @@ Package: msi
 --------------------------------------------
 Package: npm
   class: packagedcode.npm:NpmPackage
-  metafiles: package.json, npm-shrinkwrap.json, package-lock.json, yarn.lock
+  file_patterns: package.json, npm-shrinkwrap.json, package-lock.json, yarn.lock
   extensions: .tgz
 
 --------------------------------------------
@@ -206,43 +206,43 @@ Package: nsis
 --------------------------------------------
 Package: nuget
   class: packagedcode.nuget:NugetPackage
-  metafiles: [Content_Types].xml, *.nuspec
+  file_patterns: [Content_Types].xml, *.nuspec
   extensions: .nupkg
   filetypes: zip archive, microsoft ooxml
 
 --------------------------------------------
 Package: opam
   class: packagedcode.opam:OpamPackage
-  metafiles: *opam
+  file_patterns: *opam
   extensions: .opam
 
 --------------------------------------------
 Package: pods
   class: packagedcode.cocoapods:CocoapodsPackage
-  metafiles: *.podspec, *podfile.lock, *.podspec.json
+  file_patterns: *.podspec, *podfile.lock, *.podspec.json
   extensions: .podspec, .lock
 
 --------------------------------------------
 Package: pubspec
   class: packagedcode.pubspec:PubspecPackage
-  metafiles: pubspec.yaml, pubspec.lock
+  file_patterns: pubspec.yaml, pubspec.lock
   extensions: .yaml, .lock
 
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:PythonPackage
-  metafiles: *setup.py, *setup.cfg, PKG-INFO, METADATA, *.whl, *.egg, *requirements*.txt, *requirements*.pip, *requirements*.in, *Pipfile.lock, conda.yml, *setup.cfg, tox.ini
+  file_patterns: *setup.py, *setup.cfg, PKG-INFO, METADATA, *.whl, *.egg, *requirements*.txt, *requirements*.pip, *requirements*.in, *Pipfile.lock, conda.yml, *setup.cfg, tox.ini
   extensions: .egg, .whl, .pyz, .pex
 
 --------------------------------------------
 Package: readme
   class: packagedcode.readme:ReadmePackage
-  metafiles: README.android, README.chromium, README.facebook, README.google, README.thirdparty
+  file_patterns: README.android, README.chromium, README.facebook, README.google, README.thirdparty
 
 --------------------------------------------
 Package: rpm
   class: packagedcode.rpm:RpmPackage
-  metafiles: *.spec
+  file_patterns: *.spec
   extensions: .rpm, .srpm, .mvl, .vip
   filetypes: rpm 
 
@@ -260,7 +260,7 @@ Package: squashfs
 --------------------------------------------
 Package: war
   class: packagedcode.models:JavaWar
-  metafiles: WEB-INF/web.xml
+  file_patterns: WEB-INF/web.xml
   extensions: .war
   filetypes: java archive , zip archive
 

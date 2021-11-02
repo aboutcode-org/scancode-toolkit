@@ -33,7 +33,7 @@ if TRACE:
 
 @attr.s()
 class OpamPackage(models.Package):
-    metafiles = ('*opam',)
+    file_patterns = ('*opam',)
     extensions = ('.opam',)
     default_type = 'opam'
     default_primary_language = 'Ocaml'

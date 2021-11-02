@@ -42,7 +42,7 @@ if TRACE:
 
 @attr.s()
 class NugetPackage(models.Package):
-    metafiles = ('[Content_Types].xml', '*.nuspec',)
+    file_patterns = ('[Content_Types].xml', '*.nuspec',)
     filetypes = ('zip archive', 'microsoft ooxml',)
     mimetypes = ('application/zip', 'application/octet-stream',)
     extensions = ('.nupkg',)

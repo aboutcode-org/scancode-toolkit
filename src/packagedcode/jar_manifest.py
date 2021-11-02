@@ -29,7 +29,7 @@ See https://github.com/shevek/jdiagnostics/blob/master/src/main/java/org/anarres
 
 @attr.s()
 class JavaArchive(Package):
-    metafiles = ('META-INF/MANIFEST.MF',)
+    file_patterns = ('META-INF/MANIFEST.MF',)
     extensions = ('.jar', '.war', '.ear')
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip',)

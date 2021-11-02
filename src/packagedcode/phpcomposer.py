@@ -48,7 +48,7 @@ if TRACE:
 
 @attr.s()
 class PHPComposerPackage(models.Package):
-    metafiles = (
+    file_patterns = (
         'composer.json',
         'composer.lock',
     )

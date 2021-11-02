@@ -39,7 +39,7 @@ gradle, Buck, Bazel, Pants, etc.
 
 @attr.s()
 class BaseBuildManifestPackage(models.Package):
-    metafiles = tuple()
+    file_patterns = tuple()
 
     @classmethod
     def recognize(cls, location):
@@ -68,12 +68,12 @@ class BaseBuildManifestPackage(models.Package):
         if not filetype.is_file(location):
             return False
         fn = fileutils.file_name(location)
-        return any(fn == mf for mf in cls.metafiles)
+        return any(fn == mf for mf in cls.file_patterns)
 
 
 @attr.s()
 class AutotoolsPackage(BaseBuildManifestPackage):
-    metafiles = ('configure', 'configure.ac',)
+    file_patterns = ('configure', 'configure.ac',)
     default_type = 'autotools'
 
 
@@ -175,19 +175,19 @@ class StarlarkManifestPackage(BaseBuildManifestPackage):
 
 @attr.s()
 class BazelPackage(StarlarkManifestPackage):
-    metafiles = ('BUILD',)
+    file_patterns = ('BUILD',)
     default_type = 'bazel'
 
 
 @attr.s()
 class BuckPackage(StarlarkManifestPackage):
-    metafiles = ('BUCK',)
+    file_patterns = ('BUCK',)
     default_type = 'buck'
 
 
 @attr.s()
 class MetadataBzl(BaseBuildManifestPackage):
-    metafiles = ('METADATA.bzl',)
+    file_patterns = ('METADATA.bzl',)
     # TODO: Not sure what the default type should be, change this to something
     # more appropriate later
     default_type = 'METADATA.bzl'

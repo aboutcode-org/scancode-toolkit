@@ -223,7 +223,7 @@ def pe_info(location):
 
 @attr.s()
 class WindowsExecutable(models.Package):
-    metafiles = ()
+    file_patterns = ()
     extensions = (
         '.exe',
         '.dll',

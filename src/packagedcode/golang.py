@@ -35,7 +35,7 @@ if TRACE:
 
 @attr.s()
 class GolangPackage(models.Package):
-    metafiles = ('go.mod', 'go.sum')
+    file_patterns = ('go.mod', 'go.sum')
     default_type = 'golang'
     default_primary_language = 'Go'
     default_web_baseurl = 'https://pkg.go.dev'
