@@ -85,14 +85,6 @@ class TestRecognize(FileBasedTesting):
         packages = recognize_package_manifests(test_file)
         assert not packages
 
-    def test_recognize_cpan_manifest_as_plain_package(self):
-        test_file = self.get_test_loc('cpan/MANIFEST')
-        try:
-            recognize_package_manifests(test_file)
-            self.fail('Exception not raised')
-        except NotImplementedError:
-            pass
-
     def test_recognize_maven_dot_pom(self):
         test_file = self.get_test_loc('m2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.pom')
         packages = recognize_package_manifests(test_file)
@@ -165,7 +157,6 @@ class TestRecognize(FileBasedTesting):
         assert packages
         assert isinstance(packages[0], bower.BowerPackage)
 
-    @expectedFailure
     def test_recognize_cpan(self):
         test_file = self.get_test_loc('cpan/MANIFEST')
         packages = recognize_package_manifests(test_file)
