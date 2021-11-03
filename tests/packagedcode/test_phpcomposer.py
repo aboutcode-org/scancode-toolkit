@@ -35,44 +35,53 @@ class TestPHPcomposer(PackageTester):
                     ('Jordi Boggiano', 'Developer', 'j.boggiano@seld.be', 'http://seld.be')
         ]
         assert list(phpcomposer.parse_person(test)) == expected
+
+    def test_is_manifest_php_composer_json(self):
+        test_file = self.get_test_loc('phpcomposer/a-timer/composer.json')
+        assert phpcomposer.PHPComposerJSON.is_manifest(test_file)
+
     def test_parse_atimer(self):
         test_file = self.get_test_loc('phpcomposer/a-timer/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/a-timer/composer.json.expected')
-        packages = phpcomposer.parse(test_file)
+        packages = phpcomposer.PHPComposerJSON.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
     def test_parse_framework(self):
         test_file = self.get_test_loc('phpcomposer/framework/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/framework/composer.json.expected')
-        packages = phpcomposer.parse(test_file)
+        packages = phpcomposer.PHPComposerJSON.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
     def test_parse_slim(self):
         test_file = self.get_test_loc('phpcomposer/slim/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/slim/composer.json.expected')
-        packages = phpcomposer.parse(test_file)
+        packages = phpcomposer.PHPComposerJSON.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
     def test_parse_modern(self):
         test_file = self.get_test_loc('phpcomposer/modern/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/modern/composer.json.expected')
-        packages = phpcomposer.parse(test_file)
+        packages = phpcomposer.PHPComposerJSON.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
     def test_parse_fake_license1(self):
         test_file = self.get_test_loc('phpcomposer/fake/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/fake/composer.json.expected')
-        packages = phpcomposer.parse(test_file)
+        packages = phpcomposer.PHPComposerJSON.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
     def test_parse_fake_license2(self):
         test_file = self.get_test_loc('phpcomposer/fake2/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/fake2/composer.json.expected')
-        packages = phpcomposer.parse(test_file)
+        packages = phpcomposer.PHPComposerJSON.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)
+
+    def test_is_manifest_php_composer_lock(self):
+        test_file = self.get_test_loc('phpcomposer/composer.lock')
+        assert phpcomposer.PHPComposerLock.is_manifest(test_file)
 
     def test_parse_composer_lock(self):
         test_file = self.get_test_loc('phpcomposer/composer.lock')
         expected_loc = self.get_test_loc('phpcomposer/composer.lock-expected.json')
-        packages = phpcomposer.parse(test_file)
+        packages = phpcomposer.PHPComposerLock.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)

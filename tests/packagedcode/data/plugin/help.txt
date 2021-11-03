@@ -73,9 +73,15 @@ Package: chrome
 
 --------------------------------------------
 Package: composer
-  class: packagedcode.phpcomposer:PHPComposerPackage
-  file_patterns: composer.json, composer.lock
-  extensions: .json, .lock
+  class: packagedcode.phpcomposer:PHPComposerJSON
+  file_patterns: composer.json
+  extensions: .json
+
+--------------------------------------------
+Package: composer
+  class: packagedcode.phpcomposer:PHPComposerLock
+  file_patterns: composer.lock
+  extensions: .lock
 
 --------------------------------------------
 Package: conda

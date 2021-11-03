@@ -47,12 +47,8 @@ if TRACE:
 
 
 @attr.s()
-class PHPComposerPackage(models.Package, models.PackageManifest):
-    file_patterns = (
-        'composer.json',
-        'composer.lock',
-    )
-    extensions = ('.json', '.lock',)
+class PHPComposerPackage(models.Package):
+    
     mimetypes = ('application/json',)
 
     default_type = 'composer'
@@ -60,11 +56,6 @@ class PHPComposerPackage(models.Package, models.PackageManifest):
     default_web_baseurl = 'https://packagist.org'
     default_download_baseurl = None
     default_api_baseurl = 'https://packagist.org/p'
-
-    @classmethod
-    def recognize(cls, location):
-        for package in parse(location):
-            yield package
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -87,6 +78,157 @@ class PHPComposerPackage(models.Package, models.PackageManifest):
         Per https://getcomposer.org/doc/04-schema.md#license this is an expression
         """
         return compute_normalized_license(self.declared_license)
+
+
+@attr.s()
+class PHPComposerJSON(PHPComposerPackage, models.PackageManifest):
+
+    file_patterns = (
+        'composer.json',
+    )
+    extensions = ('.json',)
+    manifest_type = 'composerjson'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.json'
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+
+        Note that this is NOT exactly the packagist .json format (all are closely related of
+        course but have important (even if minor) differences.
+        """
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc)
+
+        yield cls.build_package_manifest(package_data)
+
+    @classmethod
+    def build_package_manifest(cls, package_data):
+        
+        # A composer.json without name and description is not a usable PHP
+        # composer package. Name and description fields are required but
+        # only for published packages:
+        # https://getcomposer.org/doc/04-schema.md#name
+        # We want to catch both published and non-published packages here.
+        # Therefore, we use "private-package-without-a-name" as a package name if
+        # there is no name.
+
+        ns_name = package_data.get('name')
+        is_private = False
+        if not ns_name:
+            ns = None
+            name = 'private-package-without-a-name'
+            is_private = True
+        else:
+            ns, _, name = ns_name.rpartition('/')
+
+        package = PHPComposerPackage(
+            namespace=ns,
+            name=name,
+        )
+
+        # mapping of top level composer.json items to the Package object field name
+        plain_fields = [
+            ('version', 'version'),
+            ('description', 'summary'),
+            ('keywords', 'keywords'),
+            ('homepage', 'homepage_url'),
+        ]
+
+        for source, target in plain_fields:
+            value = package_data.get(source)
+            if isinstance(value, str):
+                value = value.strip()
+                if value:
+                    setattr(package, target, value)
+
+        # mapping of top level composer.json items to a function accepting as
+        # arguments the composer.json element value and returning an iterable of
+        # key, values Package Object to update
+        field_mappers = [
+            ('authors', author_mapper),
+            ('license', partial(licensing_mapper, is_private=is_private)),
+            ('support', support_mapper),
+            ('require', partial(_deps_mapper, scope='require', is_runtime=True)),
+            ('require-dev', partial(_deps_mapper, scope='require-dev', is_optional=True)),
+            ('provide', partial(_deps_mapper, scope='provide', is_runtime=True)),
+            ('conflict', partial(_deps_mapper, scope='conflict', is_runtime=True, is_optional=True)),
+            ('replace', partial(_deps_mapper, scope='replace', is_runtime=True, is_optional=True)),
+            ('suggest', partial(_deps_mapper, scope='suggest', is_runtime=True, is_optional=True)),
+            ('source', source_mapper),
+            ('dist', dist_mapper)
+        ]
+
+        for source, func in field_mappers:
+            logger.debug('parse: %(source)r, %(func)r' % locals())
+            value = package_data.get(source)
+            if value:
+                if isinstance(value, str):
+                    value = value.strip()
+                if value:
+                    func(value, package)
+        # Parse vendor from name value
+        vendor_mapper(package)
+        return package
+
+@attr.s()
+class PHPComposerLock(PHPComposerPackage, models.PackageManifest):
+
+    file_patterns = (
+        'composer.lock',
+    )
+    extensions = ('.lock',)
+    manifest_type = 'composerlock'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.lock'
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+
+        Note that this is NOT exactly the packagist .json format (all are closely related of
+        course but have important (even if minor) differences.
+        """
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc)
+        
+        packages = [
+            PHPComposerJSON.build_package_manifest(p)
+            for p in package_data.get('packages', [])
+        ]
+        packages_dev = [
+            PHPComposerJSON.build_package_manifest(p)
+            for p in package_data.get('packages-dev', [])
+        ]
+
+        required_deps = [
+            build_dep_package(p, scope='require', is_runtime=True, is_optional=False)
+            for p in packages
+        ]
+        required_dev_deps = [
+            build_dep_package(p, scope='require-dev', is_runtime=False, is_optional=True)
+            for p in packages_dev
+        ]
+
+        yield PHPComposerPackage(dependencies=required_deps + required_dev_deps)
+
+        for package in packages + packages_dev:
+            yield package
 
 
 def compute_normalized_license(declared_license):
@@ -119,103 +261,6 @@ def compute_normalized_license(declared_license):
     if detected_licenses:
         # build a proper license expression: the defaultfor composer is OR
         return combine_expressions(detected_licenses, 'OR')
-
-
-def is_phpcomposer_json(location):
-    return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.json'
-
-
-def is_phpcomposer_lock(location):
-    return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.lock'
-
-
-def parse(location):
-    """
-    Yield Package objects from a composer.json or composer.lock file. Note that
-    this is NOT exactly the packagist .json format (all are closely related of
-    course but have important (even if minor) differences.
-    """
-    if is_phpcomposer_json(location):
-        with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc)
-        yield build_package_from_json(package_data)
-
-    elif is_phpcomposer_lock(location):
-        with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc)
-        for package in build_packages_from_lock(package_data):
-            yield package
-
-
-def build_package_from_json(package_data):
-    """
-    Return a composer Package object from a package data mapping or None.
-    """
-    # A composer.json without name and description is not a usable PHP
-    # composer package. Name and description fields are required but
-    # only for published packages:
-    # https://getcomposer.org/doc/04-schema.md#name
-    # We want to catch both published and non-published packages here.
-    # Therefore, we use "private-package-without-a-name" as a package name if
-    # there is no name.
-
-    ns_name = package_data.get('name')
-    is_private = False
-    if not ns_name:
-        ns = None
-        name = 'private-package-without-a-name'
-        is_private = True
-    else:
-        ns, _, name = ns_name.rpartition('/')
-
-    package = PHPComposerPackage(
-        namespace=ns,
-        name=name,
-    )
-
-    # mapping of top level composer.json items to the Package object field name
-    plain_fields = [
-        ('version', 'version'),
-        ('description', 'summary'),
-        ('keywords', 'keywords'),
-        ('homepage', 'homepage_url'),
-    ]
-
-    for source, target in plain_fields:
-        value = package_data.get(source)
-        if isinstance(value, str):
-            value = value.strip()
-            if value:
-                setattr(package, target, value)
-
-    # mapping of top level composer.json items to a function accepting as
-    # arguments the composer.json element value and returning an iterable of
-    # key, values Package Object to update
-    field_mappers = [
-        ('authors', author_mapper),
-        ('license', partial(licensing_mapper, is_private=is_private)),
-        ('support', support_mapper),
-        ('require', partial(_deps_mapper, scope='require', is_runtime=True)),
-        ('require-dev', partial(_deps_mapper, scope='require-dev', is_optional=True)),
-        ('provide', partial(_deps_mapper, scope='provide', is_runtime=True)),
-        ('conflict', partial(_deps_mapper, scope='conflict', is_runtime=True, is_optional=True)),
-        ('replace', partial(_deps_mapper, scope='replace', is_runtime=True, is_optional=True)),
-        ('suggest', partial(_deps_mapper, scope='suggest', is_runtime=True, is_optional=True)),
-        ('source', source_mapper),
-        ('dist', dist_mapper)
-    ]
-
-    for source, func in field_mappers:
-        logger.debug('parse: %(source)r, %(func)r' % locals())
-        value = package_data.get(source)
-        if value:
-            if isinstance(value, str):
-                value = value.strip()
-            if value:
-                func(value, package)
-    # Parse vendor from name value
-    vendor_mapper(package)
-    return package
 
 
 def licensing_mapper(licenses, package, is_private=False):
@@ -372,16 +417,3 @@ def build_dep_package(package, scope, is_runtime, is_optional):
         is_resolved=True,
     )
 
-
-def build_packages_from_lock(package_data):
-    """
-    Yield composer Package objects from a package data mapping that originated
-    from a composer.lock file
-    """
-    packages = [build_package_from_json(p) for p in package_data.get('packages', [])]
-    packages_dev = [build_package_from_json(p) for p in package_data.get('packages-dev', [])]
-    required_deps = [build_dep_package(p, scope='require', is_runtime=True, is_optional=False) for p in packages]
-    required_dev_deps = [build_dep_package(p, scope='require-dev', is_runtime=False, is_optional=True) for p in packages_dev]
-    yield PHPComposerPackage(dependencies=required_deps + required_dev_deps)
-    for package in packages + packages_dev:
-        yield package
