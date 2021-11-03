@@ -194,8 +194,20 @@ Package: msi
 
 --------------------------------------------
 Package: npm
-  class: packagedcode.npm:NpmPackage
-  file_patterns: package.json, npm-shrinkwrap.json, package-lock.json, yarn.lock
+  class: packagedcode.npm:NPMPackageJSON
+  file_patterns: package.json
+  extensions: .tgz
+
+--------------------------------------------
+Package: npm
+  class: packagedcode.npm:NPMPackageLockJSON
+  file_patterns: npm-shrinkwrap.json, package-lock.json
+  extensions: .tgz
+
+--------------------------------------------
+Package: npm
+  class: packagedcode.npm:NPMYarnLockJSON
+  file_patterns: yarn.lock
   extensions: .tgz
 
 --------------------------------------------

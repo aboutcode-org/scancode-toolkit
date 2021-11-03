@@ -54,26 +54,14 @@ if TRACE:
 
 
 @attr.s()
-class NpmPackage(models.Package, models.PackageManifest):
+class NpmPackage(models.Package):
     # TODO: add new lock files and yarn lock files
-    file_patterns = (
-        'package.json',
-        'npm-shrinkwrap.json',
-        'package-lock.json',
-        'yarn.lock',
-    )
-    extensions = ('.tgz',)
     mimetypes = ('application/x-tar',)
     default_type = 'npm'
     default_primary_language = 'JavaScript'
     default_web_baseurl = 'https://www.npmjs.com/package'
     default_download_baseurl = 'https://registry.npmjs.org'
     default_api_baseurl = 'https://registry.npmjs.org'
-
-    @classmethod
-    def recognize(cls, location):
-        for package in parse(location):
-            yield package
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -94,6 +82,386 @@ class NpmPackage(models.Package, models.PackageManifest):
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
+
+
+@attr.s()
+class NPMPackageJSON(NpmPackage, models.PackageManifest):
+
+    file_patterns = ('package.json',)
+    extensions = ('.tgz',)
+    manifest_type = 'packagejson'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'package.json')
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc)
+        
+        name = package_data.get('name')
+        version = package_data.get('version')
+        homepage = package_data.get('homepage', '')
+
+        if not name:
+            # a package.json without name and version is not a usable npm package
+            # FIXME: raise error?
+            return
+
+        if isinstance(homepage, list):
+            if homepage:
+                homepage = homepage[0]
+            else:
+                homepage = ''
+        namespace, name = split_scoped_package_name(name)
+        package = NpmPackage(
+            namespace=namespace or None,
+            name=name,
+            version=version or None,
+            description=package_data.get('description', '').strip() or None,
+            homepage_url=homepage.strip() or None,
+        )
+        vcs_revision = package_data.get('gitHead') or None
+
+        # mapping of top level package.json items to a function accepting as
+        # arguments the package.json element value and returning an iterable of (key,
+        # values) to update on a package
+        field_mappers = [
+            ('author', partial(party_mapper, party_type='author')),
+            ('contributors', partial(party_mapper, party_type='contributor')),
+            ('maintainers', partial(party_mapper, party_type='maintainer')),
+
+            ('dependencies', partial(deps_mapper, field_name='dependencies')),
+            ('devDependencies', partial(deps_mapper, field_name='devDependencies')),
+            ('peerDependencies', partial(deps_mapper, field_name='peerDependencies')),
+            ('optionalDependencies', partial(deps_mapper, field_name='optionalDependencies')),
+            ('bundledDependencies', bundle_deps_mapper),
+            ('repository', partial(vcs_repository_mapper, vcs_revision=vcs_revision)),
+            ('keywords', keywords_mapper,),
+            ('bugs', bugs_mapper),
+            ('dist', dist_mapper),
+        ]
+
+        for source, func in field_mappers:
+            if TRACE: logger.debug('parse: %(source)r, %(func)r' % locals())
+            value = package_data.get(source) or None
+            if value:
+                if isinstance(value, str):
+                    value = value.strip()
+                if value:
+                    func(value, package)
+
+        if not package.download_url:
+            # Only add a synthetic download URL if there is none from the dist mapping.
+            dnl_url = npm_download_url(package.namespace, package.name, package.version)
+            package.download_url = dnl_url.strip()
+
+        # licenses are a tad special with many different data structures
+        lic = package_data.get('license')
+        lics = package_data.get('licenses')
+        package = licenses_mapper(lic, lics, package)
+        if TRACE:
+            declared_license = package.declared_license
+            logger.debug(
+                'parse: license: {lic} licenses: {lics} '
+                'declared_license: {declared_license}'.format(locals()))
+
+        yield package
+
+
+@attr.s()
+class NPMPackageLockJSON(NpmPackage, models.PackageManifest):
+
+    file_patterns = (
+        'npm-shrinkwrap.json',
+        'package-lock.json',
+    )
+    extensions = ('.tgz',)
+    manifest_type = 'packagelockjson'
+
+    @staticmethod
+    def is_package_lock(location):
+        return (filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'package-lock.json')
+
+    @staticmethod
+    def is_npm_shrinkwrap(location):
+        return (filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'npm-shrinkwrap.json')
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return cls.is_package_lock(location) or cls.is_npm_shrinkwrap(location)
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc)
+
+        packages = []
+        dev_packages = []
+        for dependency, values in package_data.get('dependencies', {}).items():
+            is_dev = values.get('dev', False)
+            dep_deps = []
+            namespace = None
+            name = dependency
+            if '/' in dependency:
+                namespace, _slash, name = dependency.partition('/')
+            # Handle the case where an entry in `dependencies` from a
+            # package-lock.json file has `requires`
+            for dep, dep_req in values.get('requires', {}).items():
+                purl = PackageURL(type='npm', name=dep, version=dep_req).to_string()
+                if is_dev:
+                    dep_deps.append(
+                        models.DependentPackage(
+                            purl=purl,
+                            scope='requires-dev',
+                            requirement=dep_req,
+                            is_runtime=False,
+                            is_optional=True,
+                            is_resolved=True,
+                        )
+                    )
+                else:
+                    dep_deps.append(
+                        models.DependentPackage(
+                            purl=purl,
+                            scope='requires',
+                            requirement=dep_req,
+                            is_runtime=True,
+                            is_optional=False,
+                            is_resolved=True,
+                        )
+                    )
+
+            # Handle the case where an entry in `dependencies` from a
+            # npm-shrinkwrap.json file has `dependencies`
+            for dep, dep_values in values.get('dependencies', {}).items():
+                dep_version = dep_values.get('version')
+                requirement = None
+                split_requirement = dep_values.get('from', '').rsplit('@')
+                if len(split_requirement) == 2:
+                    # requirement is in the form of "abbrev@>=1.0.0 <2.0.0", so we just want what is right of @
+                    _, requirement = split_requirement
+                dep_deps.append(
+                    models.DependentPackage(
+                        purl=PackageURL(
+                            type='npm',
+                            name=dep,
+                            version=dep_version,
+                        ).to_string(),
+                        scope='dependencies',
+                        requirement=requirement,
+                        is_runtime=True,
+                        is_optional=False,
+                        is_resolved=True,
+                    )
+                )
+
+            p = cls(
+                namespace=namespace,
+                name=name,
+                version=values.get('version'),
+                download_url=values.get('resolved'),
+                dependencies=dep_deps,
+            )
+            if is_dev:
+                dev_packages.append(p)
+            else:
+                packages.append(p)
+
+        package_deps = []
+        for package in packages:
+            package_deps.append(
+                models.DependentPackage(
+                    purl=package.purl,
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                )
+            )
+
+        dev_package_deps = []
+        for dev_package in dev_packages:
+            dev_package_deps.append(
+                models.DependentPackage(
+                    purl=dev_package.purl,
+                    scope='dependencies-dev',
+                    is_runtime=False,
+                    is_optional=True,
+                    is_resolved=True,
+                )
+            )
+
+        yield cls(
+            name=package_data.get('name'),
+            version=package_data.get('version'),
+            dependencies=package_deps + dev_package_deps,
+        )
+
+        for package in packages + dev_packages:
+            yield package
+
+
+@attr.s()
+class NPMYarnLockJSON(NpmPackage, models.PackageManifest):
+
+    file_patterns = ('yarn.lock',)
+    extensions = ('.tgz',)
+    manifest_type = 'yarnlock'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'yarn.lock')
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        with io.open(location, encoding='utf-8') as yarn_lock_lines:
+
+            packages = []
+            packages_reqs = []
+            current_package_data = {}
+            dependencies = False
+            for line in yarn_lock_lines:
+                # Check if this is not an empty line or comment
+                if line.strip() and not line.startswith('#'):
+                    if line.startswith(' '):
+                        if not dependencies:
+                            if line.strip().startswith('version'):
+                                current_package_data['version'] = line.partition('version')[2].strip().strip('\"')
+                            elif line.strip().startswith('resolved'):
+                                current_package_data['download_url'] = line.partition('resolved')[2].strip().strip('\"')
+                            elif line.strip().startswith('dependencies'):
+                                dependencies = True
+                            else:
+                                continue
+                        else:
+                            split_line = line.strip().split()
+                            if len(split_line) == 2:
+                                k, v = split_line
+                                # Remove leading and following quotation marks on values
+                                v = v[1:-1]
+                                if 'dependencies' in current_package_data:
+                                    current_package_data['dependencies'].append((k, v))
+                                else:
+                                    current_package_data['dependencies'] = [(k, v)]
+                    else:
+                        dependencies = False
+                        # Clean up dependency name and requirement strings
+                        line = line.strip().replace('\"', '').replace(':', '')
+                        split_line_for_name_req = line.split(',')
+                        dep_names_and_reqs = defaultdict(list)
+                        for segment in split_line_for_name_req:
+                            segment = segment.strip()
+                            dep_name_and_req = segment.rsplit('@', 1)
+                            dep, req = dep_name_and_req
+                            dep_names_and_reqs[dep].append(req)
+                        # We should only have one key `dep_names_and_reqs`, where it is the
+                        # current dependency we are looking at
+                        if len(dep_names_and_reqs.keys()) == 1:
+                            dep, req = list(dep_names_and_reqs.items())[0]
+                            if '@' in dep and '/' in dep:
+                                namespace, name = dep.split('/')
+                                current_package_data['namespace'] = namespace
+                                current_package_data['name'] = name
+                            else:
+                                current_package_data['name'] = dep
+                            current_package_data['requirement'] = ', '.join(req)
+                else:
+                    deps = []
+                    if current_package_data:
+                        for dep, req in current_package_data.get('dependencies', []):
+                            deps.append(
+                                models.DependentPackage(
+                                    purl=PackageURL(type='npm', name=dep).to_string(),
+                                    scope='dependencies',
+                                    requirement=req,
+                                    is_runtime=True,
+                                    is_optional=False,
+                                    is_resolved=True,
+                                )
+                            )
+                        packages.append(
+                            cls(
+                                namespace=current_package_data.get('namespace'),
+                                name=current_package_data.get('name'),
+                                version=current_package_data.get('version'),
+                                download_url=current_package_data.get('download_url'),
+                                dependencies=deps
+                            )
+                        )
+                        packages_reqs.append(current_package_data.get('requirement'))
+                        current_package_data = {}
+
+            # Add the last element if it's not already added
+            if current_package_data:
+                for dep, req in current_package_data.get('dependencies', []):
+                    deps.append(
+                        models.DependentPackage(
+                            purl=PackageURL(type='npm', name=dep).to_string(),
+                            scope='dependencies',
+                            requirement=req,
+                            is_runtime=True,
+                            is_optional=False,
+                            is_resolved=True,
+                        )
+                    )
+                packages.append(
+                    cls(
+                        namespace=current_package_data.get('namespace'),
+                        name=current_package_data.get('name'),
+                        version=current_package_data.get('version'),
+                        download_url=current_package_data.get('download_url'),
+                        dependencies=deps
+                    )
+                )
+                packages_reqs.append(current_package_data.get('requirement'))
+
+            packages_dependencies = []
+            for package, requirement in zip(packages, packages_reqs):
+                packages_dependencies.append(
+                    models.DependentPackage(
+                        purl=PackageURL(
+                            type='npm',
+                            name=package.name,
+                            version=package.version
+                        ).to_string(),
+                        requirement=requirement,
+                        scope='dependencies',
+                        is_runtime=True,
+                        is_optional=False,
+                        is_resolved=True,
+                    )
+                )
+
+            yield cls(dependencies=packages_dependencies)
+            for package in packages:
+                yield package
 
 
 def compute_normalized_license(declared_license):
@@ -212,123 +580,6 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
     if version:
         version = '/' + version
     return '{registry}/{ns_name}{version}'.format(**locals())
-
-
-def is_package_json(location):
-    return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'package.json')
-
-
-def is_package_lock(location):
-    return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'package-lock.json')
-
-
-def is_npm_shrinkwrap(location):
-    return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'npm-shrinkwrap.json')
-
-
-def is_yarn_lock(location):
-    return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'yarn.lock')
-
-
-def parse(location):
-    """
-    Return a Package object from a package.json file or None.
-    """
-    if is_package_json(location):
-        with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc)
-        yield build_package(package_data)
-
-    if is_package_lock(location) or is_npm_shrinkwrap(location):
-        with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc)
-        for package in build_packages_from_lockfile(package_data):
-            yield package
-
-    if is_yarn_lock(location):
-        with io.open(location, encoding='utf-8') as loc:
-            for package in build_packages_from_yarn_lock(loc):
-                yield package
-
-
-def build_package(package_data):
-    """
-    Return a Package object from a package_data mapping (from a package.json or
-    similar) or None.
-    """
-
-    name = package_data.get('name')
-    version = package_data.get('version')
-    homepage = package_data.get('homepage', '')
-
-    if not name:
-        # a package.json without name and version is not a usable npm package
-        # FIXME: raise error?
-        return
-
-    if isinstance(homepage, list):
-        if homepage:
-            homepage = homepage[0]
-        else:
-            homepage = ''
-    namespace, name = split_scoped_package_name(name)
-    package = NpmPackage(
-        namespace=namespace or None,
-        name=name,
-        version=version or None,
-        description=package_data.get('description', '').strip() or None,
-        homepage_url=homepage.strip() or None,
-    )
-    vcs_revision = package_data.get('gitHead') or None
-
-    # mapping of top level package.json items to a function accepting as
-    # arguments the package.json element value and returning an iterable of (key,
-    # values) to update on a package
-    field_mappers = [
-        ('author', partial(party_mapper, party_type='author')),
-        ('contributors', partial(party_mapper, party_type='contributor')),
-        ('maintainers', partial(party_mapper, party_type='maintainer')),
-
-        ('dependencies', partial(deps_mapper, field_name='dependencies')),
-        ('devDependencies', partial(deps_mapper, field_name='devDependencies')),
-        ('peerDependencies', partial(deps_mapper, field_name='peerDependencies')),
-        ('optionalDependencies', partial(deps_mapper, field_name='optionalDependencies')),
-        ('bundledDependencies', bundle_deps_mapper),
-        ('repository', partial(vcs_repository_mapper, vcs_revision=vcs_revision)),
-        ('keywords', keywords_mapper,),
-        ('bugs', bugs_mapper),
-        ('dist', dist_mapper),
-    ]
-
-    for source, func in field_mappers:
-        if TRACE: logger.debug('parse: %(source)r, %(func)r' % locals())
-        value = package_data.get(source) or None
-        if value:
-            if isinstance(value, str):
-                value = value.strip()
-            if value:
-                func(value, package)
-
-    if not package.download_url:
-        # Only add a synthetic download URL if there is none from the dist mapping.
-        dnl_url = npm_download_url(package.namespace, package.name, package.version)
-        package.download_url = dnl_url.strip()
-
-    # licenses are a tad special with many different data structures
-    lic = package_data.get('license')
-    lics = package_data.get('licenses')
-    package = licenses_mapper(lic, lics, package)
-    if TRACE:
-        declared_license = package.declared_license
-        logger.debug(
-            'parse: license: {lic} licenses: {lics} '
-            'declared_license: {declared_license}'.format(locals()))
-
-    return package
 
 
 def is_scoped_package(name):
@@ -807,239 +1058,3 @@ def keywords_mapper(keywords, package):
 
     package.keywords = keywords
     return package
-
-
-def build_packages_from_lockfile(package_data):
-    """
-    Yield `NpmPackage`s from a parsed package-lock.json or npm-shrinkwrap.json
-    file
-    """
-    packages = []
-    dev_packages = []
-    for dependency, values in package_data.get('dependencies', {}).items():
-        is_dev = values.get('dev', False)
-        dep_deps = []
-        namespace = None
-        name = dependency
-        if '/' in dependency:
-            namespace, _slash, name = dependency.partition('/')
-        # Handle the case where an entry in `dependencies` from a
-        # package-lock.json file has `requires`
-        for dep, dep_req in values.get('requires', {}).items():
-            purl = PackageURL(type='npm', name=dep, version=dep_req).to_string()
-            if is_dev:
-                dep_deps.append(
-                    models.DependentPackage(
-                        purl=purl,
-                        scope='requires-dev',
-                        requirement=dep_req,
-                        is_runtime=False,
-                        is_optional=True,
-                        is_resolved=True,
-                    )
-                )
-            else:
-                dep_deps.append(
-                    models.DependentPackage(
-                        purl=purl,
-                        scope='requires',
-                        requirement=dep_req,
-                        is_runtime=True,
-                        is_optional=False,
-                        is_resolved=True,
-                    )
-                )
-
-        # Handle the case where an entry in `dependencies` from a
-        # npm-shrinkwrap.json file has `dependencies`
-        for dep, dep_values in values.get('dependencies', {}).items():
-            dep_version = dep_values.get('version')
-            requirement = None
-            split_requirement = dep_values.get('from', '').rsplit('@')
-            if len(split_requirement) == 2:
-                # requirement is in the form of "abbrev@>=1.0.0 <2.0.0", so we just want what is right of @
-                _, requirement = split_requirement
-            dep_deps.append(
-                models.DependentPackage(
-                    purl=PackageURL(
-                        type='npm',
-                        name=dep,
-                        version=dep_version,
-                    ).to_string(),
-                    scope='dependencies',
-                    requirement=requirement,
-                    is_runtime=True,
-                    is_optional=False,
-                    is_resolved=True,
-                )
-            )
-
-        p = NpmPackage(
-            namespace=namespace,
-            name=name,
-            version=values.get('version'),
-            download_url=values.get('resolved'),
-            dependencies=dep_deps,
-        )
-        if is_dev:
-            dev_packages.append(p)
-        else:
-            packages.append(p)
-
-    package_deps = []
-    for package in packages:
-        package_deps.append(
-            models.DependentPackage(
-                purl=package.purl,
-                scope='dependencies',
-                is_runtime=True,
-                is_optional=False,
-                is_resolved=True,
-            )
-        )
-
-    dev_package_deps = []
-    for dev_package in dev_packages:
-        dev_package_deps.append(
-            models.DependentPackage(
-                purl=dev_package.purl,
-                scope='dependencies-dev',
-                is_runtime=False,
-                is_optional=True,
-                is_resolved=True,
-            )
-        )
-
-    yield NpmPackage(
-        name=package_data.get('name'),
-        version=package_data.get('version'),
-        dependencies=package_deps + dev_package_deps,
-    )
-
-    for package in packages + dev_packages:
-        yield package
-
-
-def build_packages_from_yarn_lock(yarn_lock_lines):
-    """
-    Yield `NpmPackage`s from a list of lines of a yarn.lock file
-    """
-    packages = []
-    packages_reqs = []
-    current_package_data = {}
-    dependencies = False
-    for line in yarn_lock_lines:
-        # Check if this is not an empty line or comment
-        if line.strip() and not line.startswith('#'):
-            if line.startswith(' '):
-                if not dependencies:
-                    if line.strip().startswith('version'):
-                        current_package_data['version'] = line.partition('version')[2].strip().strip('\"')
-                    elif line.strip().startswith('resolved'):
-                        current_package_data['download_url'] = line.partition('resolved')[2].strip().strip('\"')
-                    elif line.strip().startswith('dependencies'):
-                        dependencies = True
-                    else:
-                        continue
-                else:
-                    split_line = line.strip().split()
-                    if len(split_line) == 2:
-                        k, v = split_line
-                        # Remove leading and following quotation marks on values
-                        v = v[1:-1]
-                        if 'dependencies' in current_package_data:
-                            current_package_data['dependencies'].append((k, v))
-                        else:
-                            current_package_data['dependencies'] = [(k, v)]
-            else:
-                dependencies = False
-                # Clean up dependency name and requirement strings
-                line = line.strip().replace('\"', '').replace(':', '')
-                split_line_for_name_req = line.split(',')
-                dep_names_and_reqs = defaultdict(list)
-                for segment in split_line_for_name_req:
-                    segment = segment.strip()
-                    dep_name_and_req = segment.rsplit('@', 1)
-                    dep, req = dep_name_and_req
-                    dep_names_and_reqs[dep].append(req)
-                # We should only have one key `dep_names_and_reqs`, where it is the
-                # current dependency we are looking at
-                if len(dep_names_and_reqs.keys()) == 1:
-                    dep, req = list(dep_names_and_reqs.items())[0]
-                    if '@' in dep and '/' in dep:
-                        namespace, name = dep.split('/')
-                        current_package_data['namespace'] = namespace
-                        current_package_data['name'] = name
-                    else:
-                        current_package_data['name'] = dep
-                    current_package_data['requirement'] = ', '.join(req)
-        else:
-            deps = []
-            if current_package_data:
-                for dep, req in current_package_data.get('dependencies', []):
-                    deps.append(
-                        models.DependentPackage(
-                            purl=PackageURL(type='npm', name=dep).to_string(),
-                            scope='dependencies',
-                            requirement=req,
-                            is_runtime=True,
-                            is_optional=False,
-                            is_resolved=True,
-                        )
-                    )
-                packages.append(
-                    NpmPackage(
-                        namespace=current_package_data.get('namespace'),
-                        name=current_package_data.get('name'),
-                        version=current_package_data.get('version'),
-                        download_url=current_package_data.get('download_url'),
-                        dependencies=deps
-                    )
-                )
-                packages_reqs.append(current_package_data.get('requirement'))
-                current_package_data = {}
-
-    # Add the last element if it's not already added
-    if current_package_data:
-        for dep, req in current_package_data.get('dependencies', []):
-            deps.append(
-                models.DependentPackage(
-                    purl=PackageURL(type='npm', name=dep).to_string(),
-                    scope='dependencies',
-                    requirement=req,
-                    is_runtime=True,
-                    is_optional=False,
-                    is_resolved=True,
-                )
-            )
-        packages.append(
-            NpmPackage(
-                namespace=current_package_data.get('namespace'),
-                name=current_package_data.get('name'),
-                version=current_package_data.get('version'),
-                download_url=current_package_data.get('download_url'),
-                dependencies=deps
-            )
-        )
-        packages_reqs.append(current_package_data.get('requirement'))
-
-    packages_dependencies = []
-    for package, requirement in zip(packages, packages_reqs):
-        packages_dependencies.append(
-            models.DependentPackage(
-                purl=PackageURL(
-                    type='npm',
-                    name=package.name,
-                    version=package.version
-                ).to_string(),
-                requirement=requirement,
-                scope='dependencies',
-                is_runtime=True,
-                is_optional=False,
-                is_resolved=True,
-            )
-        )
-
-    yield NpmPackage(dependencies=packages_dependencies)
-    for package in packages:
-        yield package

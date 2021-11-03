@@ -861,6 +861,7 @@ class MeteorPackage(Package, PackageManifest):
 class CpanModule(Package, PackageManifest):
     file_patterns = (
         '*.pod',
+        # TODO: .pm is not a package manifest
         '*.pm',
         'MANIFEST',
         'Makefile.PL',

@@ -51,7 +51,9 @@ PACKAGE_MANIFEST_TYPES = [
     models.Axis2Mar,
 
     about.Aboutfile,
-    npm.NpmPackage,
+    npm.NPMPackageJSON,
+    npm.NPMPackageLockJSON,
+    npm.NPMYarnLockJSON,
     phpcomposer.PHPComposerPackage,
     haxe.HaxePackage,
     cargo.RustCargoCrate,
