@@ -53,7 +53,7 @@ class JavaLexer(RegexLexer):
             (r'@[^\W\d][\w.]*', Name.Decorator),
             (r'(abstract|const|enum|extends|final|implements|native|private|'
              r'protected|public|sealed|static|strictfp|super|synchronized|throws|'
-             r'transient|volatile)\b', Keyword.Declaration),
+             r'transient|volatile|yield)\b', Keyword.Declaration),
             (r'(boolean|byte|char|double|float|int|long|short|void)\b',
              Keyword.Type),
             (r'(package)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
