@@ -1,92 +1,94 @@
-{
-  "type": "opam",
-  "namespace": null,
-  "name": "bap-elf",
-  "version": "1.0.0",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Ocaml",
-  "description": "BAP ELF parser and loader written in native OCaml",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "BAP Team",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "maintainer",
-      "name": null,
-      "email": "Ivan Gotovchits <ivg@ieee.org>",
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": "https://github.com/BinaryAnalysisPlatform/bap/",
-  "download_url": "https://github.com/BinaryAnalysisPlatform/bap/archive/v1.0.0.tar.gz",
-  "size": null,
-  "sha1": null,
-  "md5": "07dce66dd871e448652d8885283c6631",
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": "https://github.com/BinaryAnalysisPlatform/bap/issues",
-  "code_view_url": null,
-  "vcs_url": "git://github.com/BinaryAnalysisPlatform/bap/",
-  "copyright": null,
-  "license_expression": "mit",
-  "declared_license": "MIT",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:opam/ocaml",
-      "requirement": "",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/bap-std",
-      "requirement": "= 1.0.0",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/bap-dwarf",
-      "requirement": "= 1.0.0",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/camlp4",
-      "requirement": "",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/bitstring",
-      "requirement": "< 3.0.0",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:opam/bap-elf@1.0.0",
-  "repository_homepage_url": "https://opam.ocaml.org/packages/bap-elf",
-  "repository_download_url": null,
-  "api_data_url": "https://github.com/ocaml/opam-repository/blob/master/packages/bap-elf/bap-elf.1.0.0/opam"
-}
+[  
+  {
+    "type": "opam",
+    "namespace": null,
+    "name": "bap-elf",
+    "version": "1.0.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ocaml",
+    "description": "BAP ELF parser and loader written in native OCaml",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "BAP Team",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": null,
+        "email": "Ivan Gotovchits <ivg@ieee.org>",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/BinaryAnalysisPlatform/bap/",
+    "download_url": "https://github.com/BinaryAnalysisPlatform/bap/archive/v1.0.0.tar.gz",
+    "size": null,
+    "sha1": null,
+    "md5": "07dce66dd871e448652d8885283c6631",
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": "https://github.com/BinaryAnalysisPlatform/bap/issues",
+    "code_view_url": null,
+    "vcs_url": "git://github.com/BinaryAnalysisPlatform/bap/",
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": "MIT",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:opam/ocaml",
+        "requirement": "",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/bap-std",
+        "requirement": "= 1.0.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/bap-dwarf",
+        "requirement": "= 1.0.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/camlp4",
+        "requirement": "",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/bitstring",
+        "requirement": "< 3.0.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:opam/bap-elf@1.0.0",
+    "repository_homepage_url": "https://opam.ocaml.org/packages/bap-elf",
+    "repository_download_url": null,
+    "api_data_url": "https://github.com/ocaml/opam-repository/blob/master/packages/bap-elf/bap-elf.1.0.0/opam"
+  }
+]

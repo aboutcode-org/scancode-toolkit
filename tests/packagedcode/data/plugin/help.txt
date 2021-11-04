@@ -239,7 +239,7 @@ Package: nuget
 
 --------------------------------------------
 Package: opam
-  class: packagedcode.opam:OpamPackage
+  class: packagedcode.opam:OpamFile
   file_patterns: *opam
   extensions: .opam
 

@@ -14,6 +14,7 @@ import re
 import attr
 from packageurl import PackageURL
 
+from commoncode import filetype
 from packagedcode import models
 
 
@@ -32,18 +33,13 @@ if TRACE:
 
 
 @attr.s()
-class OpamPackage(models.Package, models.PackageManifest):
-    file_patterns = ('*opam',)
-    extensions = ('.opam',)
+class OpamPackage(models.Package):
+
     default_type = 'opam'
     default_primary_language = 'Ocaml'
     default_web_baseurl = 'https://opam.ocaml.org/packages'
     default_download_baseurl = None
     default_api_baseurl = 'https://github.com/ocaml/opam-repository/blob/master/packages'
-
-    @classmethod
-    def recognize(cls, location):
-        yield parse(location)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -58,96 +54,99 @@ class OpamPackage(models.Package, models.PackageManifest):
             return '{}/{}/{}.{}/opam'.format(baseurl, self.name, self.name, self.version)
 
 
-def is_opam(location):
-    return location.endswith('opam')
+@attr.s()
+class OpamFile(OpamPackage, models.PackageManifest):
 
+    file_patterns = ('*opam',)
+    extensions = ('.opam',)
+    manifest_type = 'opamfile'
 
-def parse(location):
-    """
-    Return a Package object from a opam file or None.
-    """
-    if not is_opam(location):
-        return
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return filetype.is_file(location) and location.endswith('opam')
 
-    opams = parse_opam(location)
-    return build_opam_package(opams)
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        opams = parse_opam(location)
 
-
-def build_opam_package(opams):
-    """
-    Return a Package from a opam file or None.
-    """
-    package_dependencies = []
-    deps = opams.get('depends') or []
-    for dep in deps:
-        package_dependencies.append(
-            models.DependentPackage(
-                purl=dep.purl,
-                requirement=dep.version,
-                scope='dependency',
-                is_runtime=True,
-                is_optional=False,
-                is_resolved=False,
+        package_dependencies = []
+        deps = opams.get('depends') or []
+        for dep in deps:
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=dep.purl,
+                    requirement=dep.version,
+                    scope='dependency',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=False,
+                )
             )
+
+        name = opams.get('name')
+        version = opams.get('version')
+        homepage_url = opams.get('homepage')
+        download_url = opams.get('src')
+        vcs_url = opams.get('dev-repo')
+        bug_tracking_url = opams.get('bug-reports')
+        declared_license = opams.get('license')
+        sha1 = opams.get('sha1')
+        md5 = opams.get('md5')
+        sha256 = opams.get('sha256')
+        sha512 = opams.get('sha512')
+
+        short_desc = opams.get('synopsis') or ''
+        long_desc = opams.get('description') or ''
+        if long_desc == short_desc:
+            long_desc = None
+        descriptions = [d for d in (short_desc, long_desc) if d and d.strip()]
+        description = '\n'.join(descriptions)
+
+        parties = []
+        authors = opams.get('authors') or []
+        for author in authors:
+            parties.append(
+                models.Party(
+                    type=models.party_person,
+                    name=author,
+                    role='author'
+                )
+            )
+        maintainers = opams.get('maintainer') or []
+        for maintainer in maintainers:
+            parties.append(
+                models.Party(
+                    type=models.party_person,
+                    email=maintainer,
+                    role='maintainer'
+                )
+            )
+
+        package = cls(
+            name=name,
+            version=version,
+            vcs_url=vcs_url,
+            homepage_url=homepage_url,
+            download_url=download_url,
+            sha1=sha1,
+            md5=md5,
+            sha256=sha256,
+            sha512=sha512,
+            bug_tracking_url=bug_tracking_url,
+            declared_license=declared_license,
+            description=description,
+            parties=parties,
+            dependencies=package_dependencies
         )
 
-    name = opams.get('name')
-    version = opams.get('version')
-    homepage_url = opams.get('homepage')
-    download_url = opams.get('src')
-    vcs_url = opams.get('dev-repo')
-    bug_tracking_url = opams.get('bug-reports')
-    declared_license = opams.get('license')
-    sha1 = opams.get('sha1')
-    md5 = opams.get('md5')
-    sha256 = opams.get('sha256')
-    sha512 = opams.get('sha512')
-
-    short_desc = opams.get('synopsis') or ''
-    long_desc = opams.get('description') or ''
-    if long_desc == short_desc:
-        long_desc = None
-    descriptions = [d for d in (short_desc, long_desc) if d and d.strip()]
-    description = '\n'.join(descriptions)
-
-    parties = []
-    authors = opams.get('authors') or []
-    for author in authors:
-        parties.append(
-            models.Party(
-                type=models.party_person,
-                name=author,
-                role='author'
-            )
-        )
-    maintainers = opams.get('maintainer') or []
-    for maintainer in maintainers:
-        parties.append(
-            models.Party(
-                type=models.party_person,
-                email=maintainer,
-                role='maintainer'
-            )
-        )
-
-    package = OpamPackage(
-        name=name,
-        version=version,
-        vcs_url=vcs_url,
-        homepage_url=homepage_url,
-        download_url=download_url,
-        sha1=sha1,
-        md5=md5,
-        sha256=sha256,
-        sha512=sha512,
-        bug_tracking_url=bug_tracking_url,
-        declared_license=declared_license,
-        description=description,
-        parties=parties,
-        dependencies=package_dependencies
-    )
-
-    return package
+        yield package
 
 """
 Example:- 

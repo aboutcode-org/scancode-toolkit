@@ -62,7 +62,7 @@ PACKAGE_MANIFEST_TYPES = [
     cocoapods.CocoapodsPodspec,
     cocoapods.CocoapodsPodfileLock,
     cocoapods.CocoapodsPodspecJSON,
-    opam.OpamPackage,
+    opam.OpamFile,
     models.MeteorPackage,
     bower.BowerPackage,
     freebsd.FreeBSDPackage,
