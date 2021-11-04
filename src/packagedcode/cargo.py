@@ -34,17 +34,13 @@ if TRACE:
 
 
 @attr.s()
-class RustCargoCrate(models.Package, models.PackageManifest):
+class RustCargoCrate(models.Package):
     file_patterns = ('Cargo.toml', 'Cargo.lock')
     default_type = 'cargo'
     default_primary_language = 'Rust'
     default_web_baseurl = 'https://crates.io'
     default_download_baseurl = 'https://crates.io/api/v1'
     default_api_baseurl = 'https://crates.io/api/v1'
-
-    @classmethod
-    def recognize(cls, location):
-        yield parse(location)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -63,43 +59,94 @@ class RustCargoCrate(models.Package, models.PackageManifest):
             return '{}/crates/{}'.format(baseurl, self.name)
 
 
-def parse(location):
-    """
-    Return a Package object from a Cargo.toml/Cargo.lock file.
-    """
-    handlers = {'cargo.toml': build_cargo_toml_package, 'cargo.lock': build_cargo_lock_package}
-    filename = filetype.is_file(location) and fileutils.file_name(location).lower()
-    handler = handlers.get(filename)
-    if handler:
-        return handler and handler(toml.load(location, _dict=dict))
+@attr.s()
+class RustCargoToml(RustCargoCrate, models.PackageManifest):
+
+    file_patterns = ('Cargo.toml',)
+    extensions = ('.json',)
+    manifest_type = 'cargotoml'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'cargo.toml')
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        package_data = toml.load(location, _dict=dict)
+
+        core_package_data = package_data.get('package', {})
+        name = core_package_data.get('name')
+        version = core_package_data.get('version')
+        description = core_package_data.get('description')
+        if description:
+            description = description.strip()
+
+        authors = core_package_data.get('authors')
+        parties = list(party_mapper(authors, party_role='author'))
+
+        declared_license = core_package_data.get('license')
+
+        package = cls(
+            name=name,
+            version=version,
+            description=description,
+            parties=parties,
+            declared_license=declared_license
+        )
+
+        yield package
 
 
-def build_cargo_toml_package(package_data):
-    """
-    Return a Package object from a Cargo.toml package data mapping or None.
-    """
+@attr.s()
+class RustCargoLock(RustCargoCrate, models.PackageManifest):
 
-    core_package_data = package_data.get('package', {})
-    name = core_package_data.get('name')
-    version = core_package_data.get('version')
-    description = core_package_data.get('description')
-    if description:
-        description = description.strip()
+    file_patterns = ('Cargo.lock',)
+    extensions = ('.lock',)
+    manifest_type = 'cargolock'
 
-    authors = core_package_data.get('authors')
-    parties = list(party_mapper(authors, party_role='author'))
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'cargo.lock')
 
-    declared_license = core_package_data.get('license')
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        package_data = toml.load(location, _dict=dict)
 
-    package = RustCargoCrate(
-        name=name,
-        version=version,
-        description=description,
-        parties=parties,
-        declared_license=declared_license
-    )
-
-    return package
+        package_dependencies = []
+        core_package_data = package_data.get('package', [])
+        for dep in core_package_data:
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='crates',
+                        name=dep.get('name'),
+                        version=dep.get('version')
+                    ).to_string(),
+                    requirement=dep.get('version'),
+                    scope='dependency',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                )
+            )
+        
+        yield cls(dependencies=package_dependencies)
 
 
 def party_mapper(party, party_role):
@@ -159,29 +206,3 @@ person_parser = re.compile(
 person_parser_no_name = re.compile(
     r'(?P<email><([^>]+)>)?'
 ).match
-
-
-def build_cargo_lock_package(package_data):
-    """
-    Return a Package object from a Cargo.lock package data mapping or None.
-    """
-
-    package_dependencies = []
-    core_package_data = package_data.get('package', [])
-    for dep in core_package_data:
-        package_dependencies.append(
-            models.DependentPackage(
-                purl=PackageURL(
-                    type='crates',
-                    name=dep.get('name'),
-                    version=dep.get('version')
-                ).to_string(),
-                requirement=dep.get('version'),
-                scope='dependency',
-                is_runtime=True,
-                is_optional=False,
-                is_resolved=True,
-            )
-        )
-    
-    return RustCargoCrate(dependencies=package_dependencies)

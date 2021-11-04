@@ -56,8 +56,15 @@ Package: cab
 
 --------------------------------------------
 Package: cargo
-  class: packagedcode.cargo:RustCargoCrate
-  file_patterns: Cargo.toml, Cargo.lock
+  class: packagedcode.cargo:RustCargoToml
+  file_patterns: Cargo.toml
+  extensions: .json
+
+--------------------------------------------
+Package: cargo
+  class: packagedcode.cargo:RustCargoLock
+  file_patterns: Cargo.lock
+  extensions: .lock
 
 --------------------------------------------
 Package: chef
