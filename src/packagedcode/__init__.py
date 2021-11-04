@@ -64,7 +64,7 @@ PACKAGE_MANIFEST_TYPES = [
     cocoapods.CocoapodsPodspecJSON,
     opam.OpamFile,
     models.MeteorPackage,
-    bower.BowerPackage,
+    bower.BowerJSON,
     freebsd.FreeBSDPackage,
     models.CpanModule,
     rubygems.RubyGem,

@@ -40,8 +40,9 @@ Package: bazel
 
 --------------------------------------------
 Package: bower
-  class: packagedcode.bower:BowerPackage
+  class: packagedcode.bower:BowerJSON
   file_patterns: bower.json, .bower.json
+  extensions: .json
 
 --------------------------------------------
 Package: buck
