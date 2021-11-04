@@ -30,9 +30,9 @@ class TestMatchSeq(FileBasedTesting):
 
         rule_text = u'''
             Copyright
-            THIS IS FROM {{THE OLD CODEHAUS}} AND CONTRIBUTORS
-            IN NO EVENT SHALL {{THE OLD CODEHAUS}} OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE {{POSSIBILITY OF NEW SUCH}} DAMAGE
+            THIS IS FROM [[THE OLD CODEHAUS]] AND CONTRIBUTORS
+            IN NO EVENT SHALL [[THE OLD CODEHAUS]] OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE [[POSSIBILITY OF NEW SUCH]] DAMAGE
         '''
 
         rule = Rule(stored_text=rule_text, license_expression='test')

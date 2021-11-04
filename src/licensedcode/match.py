@@ -35,6 +35,7 @@ TRACE_FILTER_RULE_MIN_COVERAGE = False
 TRACE_FILTER_LOW_SCORE = False
 TRACE_FILTER_UNKNOWN_WORDS = False
 TRACE_SET_LINES = False
+TRACE_KEY_PHRASES = False
 
 TRACE_MATCHED_TEXT = False
 TRACE_MATCHED_TEXT_DETAILS = False
@@ -1389,6 +1390,44 @@ def filter_already_matched_matches(matches, query):
     return kept, discarded
 
 
+def filter_key_phrase_spans(matches):
+    """
+    Return a filtered list of kept LicenseMatch matches and a list of
+    discardable matches by removing all matches that do not contain all key
+    phrases required by the rule.
+    """
+    kept = []
+    discarded = []
+
+    for match in matches:
+        has_key_phrases = True
+        unknown_by_pos = match.query.unknowns_by_pos
+        stopwords_by_pos = match.query.stopwords_by_pos
+
+        for key_phrase_span in match.rule.key_phrase_spans:
+            if key_phrase_span not in match.ispan:
+                has_key_phrases = False
+                break
+
+            # Do not check the last span position of a key phrase
+            # since unknown and stop is a number of words after a given span position
+            # and we would not care for what unknown words show up after a key phrase ends
+            key_phrase_spans_minus_last_position = Span(key_phrase_span.start, key_phrase_span.end - 1)
+
+            for qpos, ipos in zip(match.qspan, match.ispan):
+                if ipos in key_phrase_span:
+                    if qpos in unknown_by_pos or qpos in stopwords_by_pos:
+                        has_key_phrases = False
+                        break
+
+        if has_key_phrases:
+            kept.append(match)
+        else:
+            discarded.append(match)
+
+    return kept, discarded
+
+
 def refine_matches(
     matches,
     idx,
@@ -1484,6 +1523,10 @@ def refine_matches(
         matches, discarded = filter_low_score(matches, min_score=min_score)
         all_discarded.extend(discarded)
         _log(matches, discarded, 'HIGH ENOUGH SCORE')
+
+    matches, discarded = filter_key_phrase_spans(matches)
+    all_discarded.extend(discarded)
+    _log(matches, discarded, 'KEY PHRASES')
 
     if merge:
         matches = merge_matches(matches)

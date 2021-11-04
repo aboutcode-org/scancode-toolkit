@@ -19,6 +19,7 @@ from os.path import abspath
 from os.path import dirname
 from os.path import exists
 from os.path import join
+import re
 
 import attr
 import saneyaml
@@ -33,6 +34,10 @@ from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
 from licensedcode.tokenize import index_tokenizer
+from licensedcode.tokenize import key_phrase_tokenizer
+from licensedcode.tokenize import KEY_PHRASE_OPEN
+from licensedcode.tokenize import KEY_PHRASE_CLOSE
+from licensedcode.spans import Span
 from textcode.analysis import numbered_text_lines
 
 """
@@ -820,6 +825,8 @@ class BasicRule(object):
     # for SPDX license expression dynamic rules or testing
     stored_text = attr.ib(default=None, repr=False)
 
+    key_phrase_spans = attr.ib(default=[], repr=False)
+
     # These attributes are computed upon text loading or setting the thresholds
     ###########################################################################
 
@@ -1170,6 +1177,35 @@ class Rule(BasicRule):
 
         self.length = length
         self.compute_relevance()
+
+    def key_phrases(self):
+        """
+        Return an iterable of Spans marking the positions of phrases that must
+        be present for this rule to be a valid match.
+        """
+        key_phrase_spans = []
+
+        key_phrase_iterator = key_phrase_tokenizer(self.text())
+        key_phrase_index = 0
+        for token in key_phrase_iterator:
+            if token.startswith(KEY_PHRASE_OPEN):
+                span_positions = []
+
+                # keep appending key phrase until we hit KEY_PHRASE_CLOSE
+                for key_phrase in key_phrase_iterator:
+                    if key_phrase.endswith(KEY_PHRASE_CLOSE):
+                        break
+                    span_positions.append(key_phrase_index)
+                    key_phrase_index += 1
+
+                if span_positions:
+                    key_phrase_spans.append(Span(span_positions))
+            else:
+                key_phrase_index += 1
+
+        # yield a span for each recorded key phrase
+        for key_phrase_span in key_phrase_spans:
+            yield key_phrase_span
 
     def compute_thresholds(self, small_rule=SMALL_RULE):
         """

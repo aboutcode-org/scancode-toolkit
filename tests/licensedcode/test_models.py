@@ -10,6 +10,8 @@
 import json
 import os
 
+import pytest
+
 from commoncode.testcase import FileBasedTesting
 
 from licensedcode import cache
@@ -17,6 +19,7 @@ from licensedcode import index
 from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.models import rules_data_dir
+from licensedcode.stopwords import STOPWORDS
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -534,3 +537,50 @@ class TestRule(FileBasedTesting):
         rule_dir = self.get_test_loc('models/rule_validate')
         rule = list(models.load_rules(rule_dir))[0]
         assert list(rule.validate()) == []
+
+    def test_key_phrases_yields_spans(self):
+        rule_stored_text = (
+            'This released software is {{released}} by under {{the MIT license}}. '
+            'Which is a license originating at Massachusetts Institute of Technology (MIT).'
+        )
+        rule = models.Rule(license_expression='mit', stored_text=rule_stored_text)
+
+        key_phrases = rule.key_phrases()
+
+        assert list(key_phrases) == [models.Span(4), models.Span(7, 9)]
+
+    def test_key_phrases_ignores_stopwords(self):
+        rule_stored_text = 'The word comma is a stop word so comma does not increase the span position {{MIT license}}.'
+        rule = models.Rule(license_expression='mit', stored_text=rule_stored_text)
+
+        key_phrases = rule.key_phrases()
+
+        assert list(key_phrases) == [models.Span(11, 12)]
+
+    def test_key_phrases_yields_nothing_when_unclosed_key_phrase_markup(self):
+        rule_stored_text = 'This software is {{released by under the MIT license.'
+        rule = models.Rule(license_expression='mit', stored_text=rule_stored_text)
+
+        key_phrases = rule.key_phrases()
+
+        assert list(key_phrases) == []
+
+    def test_key_phrases_yields_spans_without_stop_words(self):
+        rule_stored_text = (
+            'This released software is {{released span}} by under {{the MIT quot license}}. '
+        )
+        rule = models.Rule(license_expression='mit', stored_text=rule_stored_text)
+
+        key_phrases = rule.key_phrases()
+
+        assert list(key_phrases) == [models.Span(4), models.Span(7, 9)]
+
+    def test_key_phrases_does_not_yield_empty_spans(self):
+        rule_stored_text = (
+            'This released software {{comma}} is {{}} by under {{the MIT license}}.'
+        )
+        rule = models.Rule(license_expression='mit', stored_text=rule_stored_text)
+
+        key_phrases = rule.key_phrases()
+
+        assert list(key_phrases) == [models.Span(6, 8)]
