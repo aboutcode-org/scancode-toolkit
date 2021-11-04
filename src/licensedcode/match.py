@@ -35,6 +35,7 @@ TRACE_FILTER_RULE_MIN_COVERAGE = False
 TRACE_FILTER_LOW_SCORE = False
 TRACE_FILTER_UNKNOWN_WORDS = False
 TRACE_SET_LINES = False
+TRACE_KEY_PHRASES = False
 
 TRACE_MATCHED_TEXT = False
 TRACE_MATCHED_TEXT_DETAILS = False
@@ -1389,6 +1390,26 @@ def filter_already_matched_matches(matches, query):
     return kept, discarded
 
 
+def filter_key_phrase_spans(matches):
+    """
+    Return a filtered list of kept LicenseMatch matches and a list of
+    discardable matches by removing all matches that do not contain all key
+    phrases required by the rule.
+    """
+    kept = []
+    discarded = []
+
+    for match in matches:
+        if (match.rule.key_phrase_spans and not all(
+                key_phrase_span in match.ispan for key_phrase_span in match.rule.key_phrase_spans)):
+            if TRACE_KEY_PHRASES: logger_debug('    ==> DISCARDING MATCH MISSING KEY PHRASES', match)
+            discarded.append(match)
+        else:
+            kept.append(match)
+
+    return kept, discarded
+
+
 def refine_matches(
     matches,
     idx,
@@ -1484,6 +1505,10 @@ def refine_matches(
         matches, discarded = filter_low_score(matches, min_score=min_score)
         all_discarded.extend(discarded)
         _log(matches, discarded, 'HIGH ENOUGH SCORE')
+
+    matches, discarded = filter_key_phrase_spans(matches)
+    all_discarded.extend(discarded)
+    _log(matches, discarded, 'KEY PHRASES')
 
     if merge:
         matches = merge_matches(matches)

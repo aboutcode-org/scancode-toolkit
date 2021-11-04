@@ -820,6 +820,8 @@ class BasicRule(object):
     # for SPDX license expression dynamic rules or testing
     stored_text = attr.ib(default=None, repr=False)
 
+    key_phrase_spans = attr.ib(default=None, repr=False)
+
     # These attributes are computed upon text loading or setting the thresholds
     ###########################################################################
 
