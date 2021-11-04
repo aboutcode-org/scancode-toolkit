@@ -56,7 +56,7 @@ PACKAGE_MANIFEST_TYPES = [
     npm.NPMYarnLockJSON,
     phpcomposer.PHPComposerJSON,
     phpcomposer.PHPComposerLock,
-    haxe.HaxePackage,
+    haxe.HaxelibJSON,
     cargo.RustCargoCrate,
     cocoapods.CocoapodsPodspec,
     cocoapods.CocoapodsPodfileLock,

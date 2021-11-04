@@ -48,18 +48,14 @@ if TRACE:
 
 
 @attr.s()
-class HaxePackage(models.Package, models.PackageManifest):
-    file_patterns = ('haxelib.json',)
+class HaxePackage(models.Package):
+    
     filetypes = tuple()
     mimetypes = tuple()
     default_type = 'haxe'
     default_primary_language = 'Haxe'
     default_web_baseurl = 'https://lib.haxe.org/p/'
     default_download_baseurl = 'https://lib.haxe.org/p/'
-
-    @classmethod
-    def recognize(cls, location):
-        yield parse(location)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -70,6 +66,75 @@ class HaxePackage(models.Package, models.PackageManifest):
 
     def repository_download_url(self, baseurl=default_download_baseurl):
         return haxelib_download_url(self.name, self.version, baseurl=baseurl)
+
+
+@attr.s()
+class HaxelibJSON(HaxePackage, models.PackageManifest):
+
+    file_patterns = ('haxelib.json',)
+    extensions = ('.json',)
+    manifest_type = 'haxlibjson'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'haxelib.json')
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+
+        {
+            "name": "haxelib",
+            "url" : "https://lib.haxe.org/documentation/",
+            "license": "GPL",
+            "tags": ["haxelib", "core"],
+            "description": "The haxelib client",
+            "classPath": "src",
+            "version": "3.4.0",
+            "releasenote": " * Fix password input issue in Windows (#421).\n * ....",
+            "contributors": ["back2dos", "ncannasse", "jason", "Simn", "nadako", "andyli"]
+        }
+        """
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc)
+
+        package = cls(
+            name=package_data.get('name'),
+            version=package_data.get('version'),
+            homepage_url=package_data.get('url'),
+            declared_license=package_data.get('license'),
+            keywords=package_data.get('tags'),
+            description=package_data.get('description'),
+        )
+
+        package.download_url = package.repository_download_url()
+
+        for contrib in package_data.get('contributors', []):
+            party = models.Party(
+                type=models.party_person,
+                name=contrib,
+                role='contributor',
+                url='https://lib.haxe.org/u/{}'.format(contrib))
+            package.parties.append(party)
+
+        for dep_name, dep_version in package_data.get('dependencies', {}).items():
+            dep_version = dep_version and dep_version.strip()
+            is_resolved = bool(dep_version)
+            dep_purl = PackageURL(
+                type='haxe',
+                name=dep_name,
+                version=dep_version
+            ).to_string()
+            dep = models.DependentPackage(purl=dep_purl, is_resolved=is_resolved,)
+            package.dependencies.append(dep)
+
+        yield package
 
 
 def haxelib_homepage_url(name, baseurl='https://lib.haxe.org/p/'):
@@ -95,73 +160,6 @@ def haxelib_download_url(name, version, baseurl='https://lib.haxe.org/p'):
     if name and version:
         baseurl = baseurl.rstrip('/')
         return '{baseurl}/{name}/{version}/download/'.format(**locals())
-
-
-def is_haxelib_json(location):
-    return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'haxelib.json')
-
-
-def parse(location):
-    """
-    Return a Package object from a haxelib.json file or None.
-    """
-    if not is_haxelib_json(location):
-        return
-
-    with io.open(location, encoding='utf-8') as loc:
-        package_data = json.load(loc)
-    return build_package(package_data)
-
-
-def build_package(package_data):
-    """
-    Return a Package object from a package_data mapping (from a
-    haxelib.json or similar) or None.
-    {
-        "name": "haxelib",
-        "url" : "https://lib.haxe.org/documentation/",
-        "license": "GPL",
-        "tags": ["haxelib", "core"],
-        "description": "The haxelib client",
-        "classPath": "src",
-        "version": "3.4.0",
-        "releasenote": " * Fix password input issue in Windows (#421).\n * ....",
-        "contributors": ["back2dos", "ncannasse", "jason", "Simn", "nadako", "andyli"]
-    }
-
-    """
-    package = HaxePackage(
-        name=package_data.get('name'),
-        version=package_data.get('version'),
-        homepage_url=package_data.get('url'),
-        declared_license=package_data.get('license'),
-        keywords=package_data.get('tags'),
-        description=package_data.get('description'),
-    )
-
-    package.download_url = package.repository_download_url()
-
-    for contrib in package_data.get('contributors', []):
-        party = models.Party(
-            type=models.party_person,
-            name=contrib,
-            role='contributor',
-            url='https://lib.haxe.org/u/{}'.format(contrib))
-        package.parties.append(party)
-
-    for dep_name, dep_version in package_data.get('dependencies', {}).items():
-        dep_version = dep_version and dep_version.strip()
-        is_resolved = bool(dep_version)
-        dep_purl = PackageURL(
-            type='haxe',
-            name=dep_name,
-            version=dep_version
-        ).to_string()
-        dep = models.DependentPackage(purl=dep_purl, is_resolved=is_resolved,)
-        package.dependencies.append(dep)
-
-    return package
 
 
 def map_license(package):

@@ -133,8 +133,9 @@ Package: golang
 
 --------------------------------------------
 Package: haxe
-  class: packagedcode.haxe:HaxePackage
+  class: packagedcode.haxe:HaxelibJSON
   file_patterns: haxelib.json
+  extensions: .json
 
 --------------------------------------------
 Package: installshield
