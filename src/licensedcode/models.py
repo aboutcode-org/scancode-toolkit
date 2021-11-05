@@ -19,6 +19,7 @@ from os.path import abspath
 from os.path import dirname
 from os.path import exists
 from os.path import join
+import re
 
 import attr
 import saneyaml
@@ -33,6 +34,7 @@ from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
 from licensedcode.tokenize import index_tokenizer
+from licensedcode.spans import Span
 from textcode.analysis import numbered_text_lines
 
 """
@@ -1117,6 +1119,9 @@ def as_int(num):
     return num
 
 
+key_phrases_pattern = '\\[\\[[\\w\\s]*\\]\\]'
+key_phrases_regex = re.compile(key_phrases_pattern, re.UNICODE)
+
 @attr.s(slots=True)
 class Rule(BasicRule):
     """
@@ -1172,6 +1177,26 @@ class Rule(BasicRule):
 
         self.length = length
         self.compute_relevance()
+
+    def key_phrases(self):
+        """
+        Return an iterable of Spans marking the positions of phrases that must
+        be present in for this rule to be a valid match.
+        """
+        matches = key_phrases_regex.findall(self.text())
+        required_span_token_sets = []
+        for match in matches:
+            required_tokens = list(index_tokenizer(match))
+            required_span_token_sets.append(required_tokens)
+
+        required_span_index_sets = [[] for m in range(len(matches))]
+        for rts_idx, rts in enumerate(self.tokens()):
+            for key_phrases_idx, required_span_tokens in enumerate(required_span_token_sets):
+                if rts in required_span_tokens:
+                    required_span_index_sets[key_phrases_idx].append(rts_idx)
+
+        for required_span_indexes in required_span_index_sets:
+            yield Span(required_span_indexes)
 
     def compute_thresholds(self, small_rule=SMALL_RULE):
         """

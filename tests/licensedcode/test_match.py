@@ -252,12 +252,12 @@ class TestLicenseMatchBasic(FileBasedTesting):
         match = idx.match(query_string=querys)[0]
         assert match.score() < 100
 
-    def test_LicenseMatch_matches_only_when_key_phrases_are_present(self):
+    def test_LicenseMatch_matches_only_when_all_key_phrases_are_present(self):
         text_r1 = (
             'License '
-            'Distributed under the MIT License. See LICENSE for more information.'
+            'Distributed under the [[MIT]] License. See LICENSE for [[more information]].'
             'You can redistribute this file under this or any other license.')
-        r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1, key_phrase_spans=Span(4))
+        r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
         idx = index.LicenseIndex([r1])
 
         querys = (
