@@ -1180,32 +1180,10 @@ class Rule(BasicRule):
 
     def key_phrases(self):
         """
-        Return an iterable of Spans marking the positions of phrases that must
+        Return an iterable of Spans marking the positions of key phrases that must
         be present for this rule to be a valid match.
         """
-        key_phrase_spans = []
-
-        key_phrase_iterator = key_phrase_tokenizer(self.text())
-        key_phrase_index = 0
-        for token in key_phrase_iterator:
-            if token.startswith(KEY_PHRASE_OPEN):
-                span_positions = []
-
-                # keep appending key phrase until we hit KEY_PHRASE_CLOSE
-                for key_phrase in key_phrase_iterator:
-                    if key_phrase.endswith(KEY_PHRASE_CLOSE):
-                        break
-                    span_positions.append(key_phrase_index)
-                    key_phrase_index += 1
-
-                if span_positions:
-                    key_phrase_spans.append(Span(span_positions))
-            else:
-                key_phrase_index += 1
-
-        # yield a span for each recorded key phrase
-        for key_phrase_span in key_phrase_spans:
-            yield key_phrase_span
+        yield from get_key_phrases(self.text())
 
     def compute_thresholds(self, small_rule=SMALL_RULE):
         """
@@ -1684,3 +1662,28 @@ def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):
         if not exists(f'{base_loc}.RULE'):
             return base_loc
         idx += 1
+
+
+def get_key_phrases(text):
+    """
+    Return an iterable of Spans marking the positions of key phrases in the given
+    text string. Words are considered to be key phrases if they are enclosed in the
+    KEY_PHRASE_OPEN and KEY_PHRASE_CLOSE characters.
+    """
+    key_phrase_iterator = key_phrase_tokenizer(text)
+    key_phrase_index = 0
+    for token in key_phrase_iterator:
+        if token.startswith(KEY_PHRASE_OPEN):
+            span_positions = []
+
+            # keep appending key phrase until we hit KEY_PHRASE_CLOSE
+            for key_phrase in key_phrase_iterator:
+                if key_phrase.endswith(KEY_PHRASE_CLOSE):
+                    break
+                span_positions.append(key_phrase_index)
+                key_phrase_index += 1
+
+            if span_positions:
+                yield Span(span_positions)
+        else:
+            key_phrase_index += 1
