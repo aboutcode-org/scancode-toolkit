@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.jenkins.systemgroovy.demo</groupId>
+  <artifactId>parent</artifactId>
+  <name>role-strategy-plugin-slowdown-config</name>
+  <description>Configuration to view slowdown in the plugin</description>
+  <version>1.0-SNAPSHOT</version>
+
+  <developers>
+    <developer>
+      <name>Oleg Nenashev</name>
+      <organization>Jenkins project</organization>
+      <organizationUrl>https://jenkins.io</organizationUrl>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>The MIT License (MIT)</name>
+      <url>http://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <modules>
+    <module>init_scripts</module>
+  </modules>
+
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+
+</project>
