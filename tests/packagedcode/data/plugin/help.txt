@@ -124,7 +124,7 @@ Package: ear
 
 --------------------------------------------
 Package: freebsd
-  class: packagedcode.freebsd:FreeBSDPackage
+  class: packagedcode.freebsd:FreeBSDCompactManifest
   file_patterns: +COMPACT_MANIFEST
 
 --------------------------------------------

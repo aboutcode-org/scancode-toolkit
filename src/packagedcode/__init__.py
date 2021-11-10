@@ -65,7 +65,7 @@ PACKAGE_MANIFEST_TYPES = [
     opam.OpamFile,
     models.MeteorPackage,
     bower.BowerJSON,
-    freebsd.FreeBSDPackage,
+    freebsd.FreeBSDCompactManifest,
     models.CpanModule,
     rubygems.RubyGem,
     models.AndroidApp,

@@ -34,13 +34,9 @@ if TRACE:
 
 
 @attr.s()
-class FreeBSDPackage(models.Package, models.PackageManifest):
+class FreeBSDPackage(models.Package):
     file_patterns = ('+COMPACT_MANIFEST',)
     default_type = 'freebsd'
-
-    @classmethod
-    def recognize(cls, location):
-        yield parse(location)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -48,6 +44,77 @@ class FreeBSDPackage(models.Package, models.PackageManifest):
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
+
+
+@attr.s()
+class FreeBSDCompactManifest(FreeBSDPackage, models.PackageManifest):
+
+    file_patterns = ('+COMPACT_MANIFEST',)
+    manifest_type = 'compactmanifest'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location)
+            and fileutils.file_name(location).lower() == '+compact_manifest')
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        with io.open(location, encoding='utf-8') as loc:
+            freebsd_manifest = saneyaml.load(loc)
+
+        # construct the package
+        package = cls()
+
+        # add freebsd-specific package 'qualifiers'
+        qualifiers = dict([
+            ('arch', freebsd_manifest.get('arch')),
+            ('origin', freebsd_manifest.get('origin')),
+        ])
+        package.qualifiers = qualifiers
+
+        # mapping of top level package.json items to the Package object field name
+        plain_fields = [
+            ('name', 'name'),
+            ('version', 'version'),
+            ('www', 'homepage_url'),
+            ('desc', 'description'),
+            ('categories', 'keywords'),
+        ]
+
+        for source, target in plain_fields:
+            value = freebsd_manifest.get(source)
+            if value:
+                if isinstance(value, str):
+                    value = value.strip()
+                if value:
+                    setattr(package, target, value)
+
+        # mapping of top level +COMPACT_MANIFEST items to a function accepting as
+        # arguments the package.json element value and returning an iterable of key,
+        # values Package Object to update
+        field_mappers = [
+            ('maintainer', maintainer_mapper),
+            ('origin', origin_mapper),
+            ('arch', arch_mapper),
+        ]
+
+        for source, func in field_mappers:
+            logger.debug('parse: %(source)r, %(func)r' % locals())
+            value = freebsd_manifest.get(source) or None
+            if value:
+                func(value, package)
+
+        # license_mapper needs multiple fields
+        license_mapper(freebsd_manifest, package)
+
+        yield package
 
 
 def compute_normalized_license(declared_license):
@@ -76,77 +143,6 @@ def compute_normalized_license(declared_license):
 
     if detected_licenses:
         return combine_expressions(detected_licenses, relation)
-
-
-def is_freebsd_manifest(location):
-    return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == '+compact_manifest')
-
-
-def parse(location):
-    """
-    Return a Package object from a +COMPACT_MANIFEST file or None.
-    """
-    if not is_freebsd_manifest(location):
-        return
-
-    with io.open(location, encoding='utf-8') as loc:
-        freebsd_manifest = saneyaml.load(loc)
-
-    return build_package(freebsd_manifest)
-
-
-def build_package(package_data):
-    """
-    Return a Package object from a package_data mapping (from a
-    +COMPACT_MANIFEST file or similar) or None.
-    """
-    # construct the package
-    package = FreeBSDPackage()
-
-    # add freebsd-specific package 'qualifiers'
-    qualifiers = dict([
-        ('arch', package_data.get('arch')),
-        ('origin', package_data.get('origin')),
-    ])
-    package.qualifiers = qualifiers
-
-    # mapping of top level package.json items to the Package object field name
-    plain_fields = [
-        ('name', 'name'),
-        ('version', 'version'),
-        ('www', 'homepage_url'),
-        ('desc', 'description'),
-        ('categories', 'keywords'),
-    ]
-
-    for source, target in plain_fields:
-        value = package_data.get(source)
-        if value:
-            if isinstance(value, str):
-                value = value.strip()
-            if value:
-                setattr(package, target, value)
-
-    # mapping of top level +COMPACT_MANIFEST items to a function accepting as
-    # arguments the package.json element value and returning an iterable of key,
-    # values Package Object to update
-    field_mappers = [
-        ('maintainer', maintainer_mapper),
-        ('origin', origin_mapper),
-        ('arch', arch_mapper),
-    ]
-
-    for source, func in field_mappers:
-        logger.debug('parse: %(source)r, %(func)r' % locals())
-        value = package_data.get(source) or None
-        if value:
-            func(value, package)
-
-    # license_mapper needs multiple fields
-    license_mapper(package_data, package)
-
-    return package
 
 
 def license_mapper(package_data, package):
