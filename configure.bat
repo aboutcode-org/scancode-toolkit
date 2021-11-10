@@ -160,6 +160,9 @@ if %ERRORLEVEL% neq 0 (
     %CFG_REQUIREMENTS%
 
 @rem # Create junction to bin to have the same directory between linux and windows
+if exist "%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\bin" (
+    rmdir /s /q "%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\bin"
+)
 mklink /J %CFG_ROOT_DIR%\%VIRTUALENV_DIR%\bin %CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts
 
 if %ERRORLEVEL% neq 0 (
