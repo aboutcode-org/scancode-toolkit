@@ -129,9 +129,30 @@ Package: freebsd
 
 --------------------------------------------
 Package: gem
-  class: packagedcode.rubygems:RubyGem
-  file_patterns: metadata.gz-extract, *.gemspec, Gemfile, Gemfile.lock
+  class: packagedcode.rubygems:RubyGemArchive
+  file_patterns: *.gem
   extensions: .gem
+  filetypes: .tar, tar archive
+
+--------------------------------------------
+Package: gem
+  class: packagedcode.rubygems:RubyGemArchiveExtracted
+  file_patterns: metadata.gz-extract
+  extensions: .gz-extract
+  filetypes: .tar, tar archive
+
+--------------------------------------------
+Package: gem
+  class: packagedcode.rubygems:RubyGemSpec
+  file_patterns: *.gemspec
+  extensions: .gemspec
+  filetypes: .tar, tar archive
+
+--------------------------------------------
+Package: gem
+  class: packagedcode.rubygems:RubyGemfileLock
+  file_patterns: Gemfile.lock
+  extensions: .lock
   filetypes: .tar, tar archive
 
 --------------------------------------------

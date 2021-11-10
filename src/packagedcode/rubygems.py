@@ -17,6 +17,7 @@ import saneyaml
 from packageurl import PackageURL
 
 from commoncode import archive
+from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.gemfile_lock import GemfileLockParser
@@ -50,11 +51,9 @@ if TRACE:
 
 
 @attr.s()
-class RubyGem(models.Package, models.PackageManifest):
-    file_patterns = ('metadata.gz-extract', '*.gemspec', 'Gemfile', 'Gemfile.lock',)
+class RubyGem(models.Package):
     filetypes = ('.tar', 'tar archive',)
     mimetypes = ('application/x-tar',)
-    extensions = ('.gem',)
     default_type = 'gem'
     default_primary_language = 'Ruby'
     default_web_baseurl = 'https://rubygems.org/gems/'
@@ -83,32 +82,6 @@ class RubyGem(models.Package, models.PackageManifest):
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
 
-    @classmethod
-    def recognize(cls, location):
-
-        # an unextracted .gen archive
-        if location.endswith('.gem'):
-            yield get_gem_package(location)
-
-        # an extractcode-extracted .gen archive
-        if location.endswith('metadata.gz-extract'):
-            with open(location, 'rb') as met:
-                metadata = met.read()
-            metadata = saneyaml.load(metadata)
-            yield build_rubygem_package(metadata)
-
-        if location.endswith('.gemspec'):
-            yield build_packages_from_gemspec(location)
-
-        if location.endswith('Gemfile'):
-            # TODO: implement me
-            pass
-
-        if location.endswith('Gemfile.lock'):
-            gemfile_lock = GemfileLockParser(location)
-            for package in build_packages_from_gemfile_lock(gemfile_lock):
-                yield package
-
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return rubygems_homepage_url(self.name, self.version, repo=baseurl)
 
@@ -127,6 +100,213 @@ class RubyGem(models.Package, models.PackageManifest):
     @classmethod
     def extra_root_dirs(cls):
         return ['data.tar.gz-extract', 'metadata.gz-extract']
+
+
+@attr.s()
+class RubyGemArchive(RubyGem, models.PackageManifest):
+
+    file_patterns = ('*.gem',)
+    extensions = ('.gem',)
+    manifest_type = 'gemarchive'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location) and location.endswith('.gem'))
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        metadata = get_gem_metadata(location)
+        metadata = saneyaml.load(metadata)
+        yield build_rubygem_package(metadata, download_url=None, package_url=None)
+
+
+@attr.s()
+class RubyGemArchiveExtracted(RubyGem, models.PackageManifest):
+
+    file_patterns = ('metadata.gz-extract',)
+    extensions = ('.gz-extract',)
+    manifest_type = 'gemarchiveextracted'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location) and location.endswith('.gz-extract'))
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        with open(location, 'rb') as met:
+            metadata = met.read()
+        metadata = saneyaml.load(metadata)
+        yield build_rubygem_package(metadata)
+
+
+@attr.s()
+class RubyGemSpec(RubyGem, models.PackageManifest):
+
+    file_patterns = ('*.gemspec',)
+    extensions = ('.gemspec',)
+    manifest_type = 'gemspec'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location) and location.endswith('.gemspec'))
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        gemspec_object = Spec()
+        gemspec_data = gemspec_object.parse_spec(location)
+        
+        name = gemspec_data.get('name')
+        version = gemspec_data.get('version')
+        homepage_url = gemspec_data.get('homepage_url')
+        summary = gemspec_data.get('summary')
+        description = gemspec_data.get('description')
+        if len(summary) > len(description):
+            description = summary
+
+        declared_license = gemspec_data.get('license')
+        if declared_license:
+            declared_license = declared_license.split(',')
+
+        author = gemspec_data.get('author') or []
+        email = gemspec_data.get('email') or []
+        parties = list(party_mapper(author, email))
+
+        package_manifest = cls(
+            name=name,
+            version=version,
+            parties=parties,
+            homepage_url=homepage_url,
+            description=description,
+            declared_license=declared_license
+        )
+
+        dependencies = gemspec_data.get('dependencies', {}) or {}
+        package_dependencies = []
+        for name, version in dependencies.items():
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='gem',
+                        name=name
+                    ).to_string(),
+                    requirement=', '.join(version),
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=False,
+                )
+            )
+        package_manifest.dependencies = package_dependencies
+
+        yield package_manifest
+
+
+@attr.s()
+class RubyGemfile(RubyGem, models.PackageManifest):
+
+    file_patterns = ('Gemfile',)
+    manifest_type = 'gemfile'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location) and location.endswith('Gemfile'))
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        # TODO: Implement me
+        pass
+
+@attr.s()
+class RubyGemfileLock(RubyGem, models.PackageManifest):
+
+    file_patterns = ('Gemfile.lock',)
+    extensions = ('.lock',)
+    manifest_type = 'gemfilelock'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location) and location.endswith('Gemfile.lock'))
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        gemfile_lock = GemfileLockParser(location)
+        package_dependencies = []
+        for _, gem in gemfile_lock.all_gems.items():
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='gem',
+                        name=gem.name,
+                        version=gem.version
+                    ).to_string(),
+                    requirement=', '.join(gem.requirements),
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                )
+            )
+
+        yield cls(dependencies=package_dependencies)
+
+        for _, gem in gemfile_lock.all_gems.items():
+            deps = []
+            for _dep_name, dep in gem.dependencies.items():
+                deps.append(
+                    models.DependentPackage(
+                        purl=PackageURL(
+                            type='gem',
+                            name=dep.name,
+                            version=dep.version
+                        ).to_string(),
+                        requirement=', '.join(dep.requirements),
+                        scope='dependencies',
+                        is_runtime=True,
+                        is_optional=False,
+                        is_resolved=True,
+                    )
+                )
+
+            yield cls(
+                name=gem.name,
+                version=gem.version,
+                dependencies=deps
+            )
 
 
 def compute_normalized_license(declared_license):
@@ -207,18 +387,6 @@ def rubygems_api_url(name, version=None, repo='https://rubygems.org/api'):
     return api_url.format(**locals())
 
 
-def get_gem_package(location, download_url=None, purl=None):
-    """
-    Return a RubyGem Package built from the .gem file at `location` or None.
-    """
-    if not location.endswith('.gem'):
-        return
-
-    metadata = get_gem_metadata(location)
-    metadata = saneyaml.load(metadata)
-    return build_rubygem_package(metadata, download_url, purl)
-
-
 def get_gem_metadata(location):
     """
     Return the string content of the metadata of a .gem archive file at
@@ -278,7 +446,7 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     licenses = gem_data.get('licenses')
     declared_license = licenses_mapper(lic, licenses)
 
-    package = RubyGem(
+    package_manifest = RubyGemArchive(
         name=name,
         description=description,
         homepage_url=gem_data.get('homepage'),
@@ -295,7 +463,7 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     for author in authors:
         if author and author.strip():
             party = models.Party(name=author, role='author')
-            package.parties.append(party)
+            package_manifest.parties.append(party)
 
     # TODO: we have a email that is either a string or a list of string
 
@@ -303,34 +471,34 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     date = gem_data.get('date')
     if date and len(date) >= 10:
         date = date[:10]
-        package.release_date = date[:10]
+        package_manifest.release_date = date[:10]
 
 
     # there are two levels of nesting
     version1 = gem_data.get('version') or {}
     version = version1.get('version') or None
-    package.version = version
-    package.set_purl(package_url)
+    package_manifest.version = version
+    package_manifest.set_purl(package_url)
 
     metadata = gem_data.get('metadata') or {}
     if metadata:
         homepage_url = metadata.get('homepage_uri')
         if homepage_url:
-            if not package.homepage_url:
-                package.homepage_url = homepage_url
-            elif package.homepage_url == homepage_url:
+            if not package_manifest.homepage_url:
+                package_manifest.homepage_url = homepage_url
+            elif package_manifest.homepage_url == homepage_url:
                 pass
             else:
                 # we have both and one is wrong.
                 # we prefer the existing one from the metadata
                 pass
 
-        package.bug_tracking_url = metadata.get('bug_tracking_uri')
+        package_manifest.bug_tracking_url = metadata.get('bug_tracking_uri')
 
         source_code_url = metadata.get('source_code_uri')
         if source_code_url:
-            package.code_view_url = source_code_url
-            # TODO: infer purl and add purl to package.source_packages
+            package_manifest.code_view_url = source_code_url
+            # TODO: infer purl and add purl to package_manifest.source_packages
 
         # not used for now
         #   "changelog_uri"     => "https://example.com/user/bestgemever/CHANGELOG.md",
@@ -341,26 +509,26 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     platform = gem_data.get('platform')
     if platform != 'ruby':
         qualifiers = dict(platform=platform)
-        if not package.qualifiers:
-            package.qualifiers = {}
+        if not package_manifest.qualifiers:
+            package_manifest.qualifiers = {}
 
-        package.qualifiers.update(qualifiers)
+        package_manifest.qualifiers.update(qualifiers)
 
-    package.dependencies = get_dependencies(gem_data.get('dependencies'))
+    package_manifest.dependencies = get_dependencies(gem_data.get('dependencies'))
 
-    if not package.download_url:
-        package.download_url = package.repository_download_url()
+    if not package_manifest.download_url:
+        package_manifest.download_url = package_manifest.repository_download_url()
 
-    if not package.homepage_url:
-        package.homepage_url = package.repository_homepage_url()
+    if not package_manifest.homepage_url:
+        package_manifest.homepage_url = package_manifest.repository_homepage_url()
 
-    return package
+    return package_manifest
 
 
 def licenses_mapper(lic, lics):
     """
     Return a `declared_licenses` list based on the `lic` license and
-    `lics` licenses values found in a package.
+    `lics` licenses values found in a package_manifest.
     """
     declared_licenses = []
     if lic:
@@ -600,59 +768,6 @@ def normalize(gem_data, known_fields=known_fields):
     )
 
 
-def build_packages_from_gemspec(location):
-    """
-    Return RubyGem Package from gemspec file.
-    """
-    gemspec_object = Spec()
-    gemspec_data = gemspec_object.parse_spec(location)
-    
-    name = gemspec_data.get('name')
-    version = gemspec_data.get('version')
-    homepage_url = gemspec_data.get('homepage_url')
-    summary = gemspec_data.get('summary')
-    description = gemspec_data.get('description')
-    if len(summary) > len(description):
-        description = summary
-
-    declared_license = gemspec_data.get('license')
-    if declared_license:
-        declared_license = declared_license.split(',')
-
-    author = gemspec_data.get('author') or []
-    email = gemspec_data.get('email') or []
-    parties = list(party_mapper(author, email))
-
-    package = RubyGem(
-        name=name,
-        version=version,
-        parties=parties,
-        homepage_url=homepage_url,
-        description=description,
-        declared_license=declared_license
-    )
-
-    dependencies = gemspec_data.get('dependencies', {}) or {}
-    package_dependencies = []
-    for name, version in dependencies.items():
-        package_dependencies.append(
-            models.DependentPackage(
-                purl=PackageURL(
-                    type='gem',
-                    name=name
-                ).to_string(),
-                requirement=', '.join(version),
-                scope='dependencies',
-                is_runtime=True,
-                is_optional=False,
-                is_resolved=False,
-            )
-        )
-    package.dependencies = package_dependencies
-
-    return package
-
-
 def party_mapper(author, email):
     """
     Yields a Party object with author and email.
@@ -668,51 +783,3 @@ def party_mapper(author, email):
             type=models.party_person,
             email=person,
             role='email')
-
-
-def build_packages_from_gemfile_lock(gemfile_lock):
-    """
-    Yield RubyGem Packages from a given GemfileLockParser `gemfile_lock`
-    """
-    package_dependencies = []
-    for _, gem in gemfile_lock.all_gems.items():
-        package_dependencies.append(
-            models.DependentPackage(
-                purl=PackageURL(
-                    type='gem',
-                    name=gem.name,
-                    version=gem.version
-                ).to_string(),
-                requirement=', '.join(gem.requirements),
-                scope='dependencies',
-                is_runtime=True,
-                is_optional=False,
-                is_resolved=True,
-            )
-        )
-
-    yield RubyGem(dependencies=package_dependencies)
-
-    for _, gem in gemfile_lock.all_gems.items():
-        deps = []
-        for _dep_name, dep in gem.dependencies.items():
-            deps.append(
-                models.DependentPackage(
-                    purl=PackageURL(
-                        type='gem',
-                        name=dep.name,
-                        version=dep.version
-                    ).to_string(),
-                    requirement=', '.join(dep.requirements),
-                    scope='dependencies',
-                    is_runtime=True,
-                    is_optional=False,
-                    is_resolved=True,
-                )
-            )
-
-        yield RubyGem(
-            name=gem.name,
-            version=gem.version,
-            dependencies=deps
-        )
