@@ -98,7 +98,7 @@ PACKAGE_MANIFEST_TYPES = [
     build.BazelPackage,
     build.BuckPackage,
     build.AutotoolsPackage,
-    conda.CondaPackage,
+    conda.Condayml,
     win_pe.WindowsExecutable,
     readme.ReadmePackage,
     build.MetadataBzl,
