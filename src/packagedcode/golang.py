@@ -11,6 +11,7 @@ import logging
 import attr
 
 from commoncode import fileutils
+from commoncode import filetype
 from packagedcode import go_mod
 from packagedcode import models
 
@@ -34,23 +35,12 @@ if TRACE:
 
 
 @attr.s()
-class GolangPackage(models.Package, models.PackageManifest):
-    file_patterns = ('go.mod', 'go.sum')
+class GolangPackage(models.Package):
     default_type = 'golang'
     default_primary_language = 'Go'
     default_web_baseurl = 'https://pkg.go.dev'
     default_download_baseurl = None
     default_api_baseurl = None
-
-    @classmethod
-    def recognize(cls, location):
-        filename = fileutils.file_name(location).lower()
-        if filename == 'go.mod':
-            gomods = go_mod.parse_gomod(location)
-            yield build_gomod_package(gomods)
-        elif filename == 'go.sum':
-            gosums = go_mod.parse_gosum(location)
-            yield build_gosum_package(gosums)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -61,66 +51,104 @@ class GolangPackage(models.Package, models.PackageManifest):
             return '{}/{}/{}'.format(baseurl, self.namespace, self.name)
 
 
-def build_gomod_package(gomods):
-    """
-    Return a Package object from a go.mod file or None.
-    """
-    package_dependencies = []
-    require = gomods.require or []
-    for gomod in require:
-        package_dependencies.append(
-            models.DependentPackage(
-                purl=gomod.purl(include_version=True),
-                requirement=gomod.version,
-                scope='require',
-                is_runtime=True,
-                is_optional=False,
-                is_resolved=False,
+@attr.s()
+class GoMod(GolangPackage, models.PackageManifest):
+
+    file_patterns = ('go.mod',)
+    extensions = ('.mod',)
+    manifest_type = 'gomod'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        filename = fileutils.file_name(location).lower()
+        return (filetype.is_file(location) and filename == 'go.mod')
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        gomods = go_mod.parse_gomod(location)
+
+        package_dependencies = []
+        require = gomods.require or []
+        for gomod in require:
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=gomod.purl(include_version=True),
+                    requirement=gomod.version,
+                    scope='require',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=False,
+                )
             )
+
+        exclude = gomods.exclude or []
+        for gomod in exclude:
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=gomod.purl(include_version=True),
+                    requirement=gomod.version,
+                    scope='exclude',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=False,
+                )
+            )
+
+        name = gomods.name
+        namespace = gomods.namespace
+        homepage_url = 'https://pkg.go.dev/{}/{}'.format(gomods.namespace, gomods.name)
+        vcs_url = 'https://{}/{}.git'.format(gomods.namespace, gomods.name)
+
+        yield cls(
+            name=name,
+            namespace=namespace,
+            vcs_url=vcs_url,
+            homepage_url=homepage_url,
+            dependencies=package_dependencies
         )
 
-    exclude = gomods.exclude or []
-    for gomod in exclude:
-        package_dependencies.append(
-            models.DependentPackage(
-                purl=gomod.purl(include_version=True),
-                requirement=gomod.version,
-                scope='exclude',
-                is_runtime=True,
-                is_optional=False,
-                is_resolved=False,
+
+@attr.s()
+class GoSum(GolangPackage, models.PackageManifest):
+
+    file_patterns = ('go.sum',)
+    extensions = ('.sum',)
+    manifest_type = 'gosum'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        filename = fileutils.file_name(location).lower()
+        return (filetype.is_file(location) and filename == 'go.sum')
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        gosums = go_mod.parse_gosum(location)
+
+        package_dependencies = []
+        for gosum in gosums:
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=gosum.purl(),
+                    requirement=gosum.version,
+                    scope='dependency',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                )
             )
-        )
 
-    name = gomods.name
-    namespace = gomods.namespace
-    homepage_url = 'https://pkg.go.dev/{}/{}'.format(gomods.namespace, gomods.name)
-    vcs_url = 'https://{}/{}.git'.format(gomods.namespace, gomods.name)
-
-    return GolangPackage(
-        name=name,
-        namespace=namespace,
-        vcs_url=vcs_url,
-        homepage_url=homepage_url,
-        dependencies=package_dependencies
-    )
-
-
-def build_gosum_package(gosums):
-    """
-    Return a Package object from a go.sum file.
-    """
-    package_dependencies = []
-    for gosum in gosums:
-        package_dependencies.append(
-            models.DependentPackage(
-                purl=gosum.purl(),
-                requirement=gosum.version,
-                scope='dependency',
-                is_runtime=True,
-                is_optional=False,
-                is_resolved=True,
-            )
-        )
-
-    return GolangPackage(dependencies=package_dependencies)
+        yield cls(dependencies=package_dependencies)

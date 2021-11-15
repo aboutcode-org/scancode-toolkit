@@ -157,8 +157,15 @@ Package: gem
 
 --------------------------------------------
 Package: golang
-  class: packagedcode.golang:GolangPackage
-  file_patterns: go.mod, go.sum
+  class: packagedcode.golang:GoMod
+  file_patterns: go.mod
+  extensions: .mod
+
+--------------------------------------------
+Package: golang
+  class: packagedcode.golang:GoSum
+  file_patterns: go.sum
+  extensions: .sum
 
 --------------------------------------------
 Package: haxe
