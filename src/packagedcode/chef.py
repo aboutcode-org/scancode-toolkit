@@ -38,8 +38,7 @@ if TRACE:
 
 
 @attr.s()
-class ChefPackage(models.Package, models.PackageManifest):
-    file_patterns = ('metadata.json', 'metadata.rb')
+class ChefPackage(models.Package):
     filetypes = ('.tgz',)
     mimetypes = ('application/x-tar',)
     default_type = 'chef'
@@ -47,10 +46,6 @@ class ChefPackage(models.Package, models.PackageManifest):
     default_web_baseurl = 'https://supermarket.chef.io/cookbooks'
     default_download_baseurl = 'https://supermarket.chef.io/cookbooks'
     default_api_baseurl = 'https://supermarket.chef.io/api/v1'
-
-    @classmethod
-    def recognize(cls, location):
-        yield parse(location)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -88,25 +83,6 @@ def chef_api_url(name, version, registry='https://supermarket.chef.io/api/v1'):
     """
     registry = registry.rstrip('/')
     return '{registry}/cookbooks/{name}/versions/{version}'.format(**locals())
-
-
-def is_metadata_json(location):
-    """
-    Return True if `location` path is for a Chef metadata.json file.
-    The metadata.json is also used in Python installed packages in a 'dist-info'
-    directory.
-    """
-    return (
-        filetype.is_file(location)
-        and fileutils.file_name(location).lower() == 'metadata.json'
-        and not fileutils.file_name(fileutils.parent_directory(location))
-            .lower().endswith('dist-info')
-    )
-
-
-def is_metadata_rb(location):
-    return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'metadata.rb')
 
 
 class ChefMetadataFormatter(Formatter):
@@ -179,25 +155,70 @@ class ChefMetadataFormatter(Formatter):
         json.dump(metadata, outfile)
 
 
-def parse(location):
-    """
-    Return a Package object from a metadata.json file or a metadata.rb file or None.
-    """
-    if is_metadata_json(location):
+@attr.s()
+class MetadataJSON(ChefPackage, models.PackageManifest):
+
+    file_patterns = ('metadata.json',)
+    extensions = ('.json',)
+    manifest_type = 'metadatajson'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if `location` path is for a Chef metadata.json file.
+        The metadata.json is also used in Python installed packages in a 'dist-info'
+        directory.
+        """
+        return (
+            filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'metadata.json'
+            and not fileutils.file_name(fileutils.parent_directory(location))
+                .lower().endswith('dist-info')
+        )
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
-        return build_package(package_data)
+        return build_package(cls, package_data)
 
-    if is_metadata_rb(location):
+
+@attr.s()
+class Metadatarb(ChefPackage, models.PackageManifest):
+
+    file_patterns = ('metadata.rb',)
+    extensions = ('.rb',)
+    manifest_type = 'metadatarb'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if `location` path is for a Chef metadata.json file.
+        The metadata.json is also used in Python installed packages in a 'dist-info'
+        directory.
+        """
+        return (filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'metadata.rb')
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
         with io.open(location, encoding='utf-8') as loc:
             file_contents = loc.read()
         formatted_file_contents = highlight(
             file_contents, RubyLexer(), ChefMetadataFormatter())
         package_data = json.loads(formatted_file_contents)
-        return build_package(package_data)
+        return build_package(cls, package_data)
 
 
-def build_package(package_data):
+def build_package(cls, package_data):
     """
     Return a Package object from a package_data mapping (from a metadata.json or
     similar) or None.
@@ -239,7 +260,7 @@ def build_package(package_data):
             )
         )
 
-    return ChefPackage(
+    yield cls(
         name=name,
         version=version,
         parties=parties,
