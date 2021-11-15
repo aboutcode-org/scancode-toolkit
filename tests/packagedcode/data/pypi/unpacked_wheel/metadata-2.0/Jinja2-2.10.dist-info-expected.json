@@ -1,83 +1,85 @@
-{
-  "type": "pypi",
-  "namespace": null,
-  "name": "Jinja2",
-  "version": "2.10",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Python",
-  "description": "A small but fast and easy to use stand-alone template engine written in pure python.\nJinja2\n~~~~~~\n\nJinja2 is a template engine written in pure Python.  It provides a\n`Django`_ inspired non-XML syntax but supports inline expressions and\nan optional `sandboxed`_ environment.\n\nNutshell\n--------\n\nHere a small example of a Jinja template::\n\n    {% extends 'base.html' %}\n    {% block title %}Memberlist{% endblock %}\n    {% block content %}\n      <ul>\n      {% for user in users %}\n        <li><a href=\"{{ user.url }}\">{{ user.username }}</a></li>\n      {% endfor %}\n      </ul>\n    {% endblock %}\n\nPhilosophy\n----------\n\nApplication logic is for the controller but don't try to make the life\nfor the template designer too hard by giving him too few functionality.\n\nFor more informations visit the new `Jinja2 webpage`_ and `documentation`_.\n\n.. _sandboxed: https://en.wikipedia.org/wiki/Sandbox_(computer_security)\n.. _Django: https://www.djangoproject.com/\n.. _Jinja2 webpage: http://jinja.pocoo.org/\n.. _documentation: http://jinja.pocoo.org/2/documentation/",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Armin Ronacher",
-      "email": "armin.ronacher@active-4.com",
-      "url": null
-    }
-  ],
-  "keywords": [
-    "Development Status :: 5 - Production/Stable",
-    "Environment :: Web Environment",
-    "Intended Audience :: Developers",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 2",
-    "Programming Language :: Python :: 2.6",
-    "Programming Language :: Python :: 2.7",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.3",
-    "Programming Language :: Python :: 3.4",
-    "Programming Language :: Python :: 3.5",
-    "Programming Language :: Python :: 3.6",
-    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-    "Topic :: Text Processing :: Markup :: HTML"
-  ],
-  "homepage_url": "http://jinja.pocoo.org/",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "unknown AND bsd-new",
-  "declared_license": {
-    "license": "BSD",
-    "classifiers": [
-      "License :: OSI Approved :: BSD License"
-    ]
-  },
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:pypi/markupsafe",
-      "requirement": ">=0.23",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "Jinja2",
+    "version": "2.10",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "A small but fast and easy to use stand-alone template engine written in pure python.\nJinja2\n~~~~~~\n\nJinja2 is a template engine written in pure Python.  It provides a\n`Django`_ inspired non-XML syntax but supports inline expressions and\nan optional `sandboxed`_ environment.\n\nNutshell\n--------\n\nHere a small example of a Jinja template::\n\n    {% extends 'base.html' %}\n    {% block title %}Memberlist{% endblock %}\n    {% block content %}\n      <ul>\n      {% for user in users %}\n        <li><a href=\"{{ user.url }}\">{{ user.username }}</a></li>\n      {% endfor %}\n      </ul>\n    {% endblock %}\n\nPhilosophy\n----------\n\nApplication logic is for the controller but don't try to make the life\nfor the template designer too hard by giving him too few functionality.\n\nFor more informations visit the new `Jinja2 webpage`_ and `documentation`_.\n\n.. _sandboxed: https://en.wikipedia.org/wiki/Sandbox_(computer_security)\n.. _Django: https://www.djangoproject.com/\n.. _Jinja2 webpage: http://jinja.pocoo.org/\n.. _documentation: http://jinja.pocoo.org/2/documentation/",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Armin Ronacher",
+        "email": "armin.ronacher@active-4.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Development Status :: 5 - Production/Stable",
+      "Environment :: Web Environment",
+      "Intended Audience :: Developers",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 2.6",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.3",
+      "Programming Language :: Python :: 3.4",
+      "Programming Language :: Python :: 3.5",
+      "Programming Language :: Python :: 3.6",
+      "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+      "Topic :: Software Development :: Libraries :: Python Modules",
+      "Topic :: Text Processing :: Markup :: HTML"
+    ],
+    "homepage_url": "http://jinja.pocoo.org/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "unknown AND bsd-new",
+    "declared_license": {
+      "license": "BSD",
+      "classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ]
     },
-    {
-      "purl": "pkg:pypi/babel",
-      "requirement": ">=0.8",
-      "scope": "i18n",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:pypi/jinja2@2.10",
-  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-  "repository_download_url": "https://pypi.org/packages/source/J/Jinja2/Jinja2-2.10.tar.gz",
-  "api_data_url": "https://pypi.org/pypi/Jinja2/2.10/json"
-}
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/markupsafe",
+        "requirement": ">=0.23",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/babel",
+        "requirement": ">=0.8",
+        "scope": "i18n",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:pypi/jinja2@2.10",
+    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_download_url": "https://pypi.org/packages/source/J/Jinja2/Jinja2-2.10.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/Jinja2/2.10/json"
+  }
+]

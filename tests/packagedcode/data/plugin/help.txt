@@ -291,9 +291,42 @@ Package: pubspec
 
 --------------------------------------------
 Package: pypi
-  class: packagedcode.pypi:PythonPackage
-  file_patterns: *setup.py, *setup.cfg, PKG-INFO, METADATA, *.whl, *.egg, *requirements*.txt, *requirements*.pip, *requirements*.in, *Pipfile.lock, conda.yml, *setup.cfg, tox.ini
-  extensions: .egg, .whl, .pyz, .pex
+  class: packagedcode.pypi:PythonMetadataFile
+  file_patterns: PKG-INFO, METADATA
+
+--------------------------------------------
+Package: pypi
+  class: packagedcode.pypi:PythonBinaryDist
+  file_patterns: *.whl, *.egg
+  extensions: .whl, .egg
+
+--------------------------------------------
+Package: pypi
+  class: packagedcode.pypi:PythonSourceDist
+  file_patterns: *.tar.gz, *.tar.bz2, *.zip
+  extensions: .tar.gz, .tar.bz2, .zip
+
+--------------------------------------------
+Package: pypi
+  class: packagedcode.pypi:PythonSetupPy
+  file_patterns: setup.py
+  extensions: .py
+
+--------------------------------------------
+Package: pypi
+  class: packagedcode.pypi:PythonDependencyFile
+  file_patterns: Pipfile, conda.yml, setup.cfg, tox.ini
+
+--------------------------------------------
+Package: pypi
+  class: packagedcode.pypi:PythonPipfileLock
+  file_patterns: Pipfile.lock
+  extensions: .lock
+
+--------------------------------------------
+Package: pypi
+  class: packagedcode.pypi:PythonRequirementsFile
+  file_patterns: *requirements*.txt, *requirements*.pip, *requirements*.in, requires.txt
 
 --------------------------------------------
 Package: readme
