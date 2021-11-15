@@ -88,7 +88,7 @@ PACKAGE_MANIFEST_TYPES = [
     models.CabPackage,
     models.InstallShieldPackage,
     models.NSISInstallerPackage,
-    nuget.NugetPackage,
+    nuget.Nuspec,
     models.SharPackage,
     models.AppleDmgPackage,
     models.IsoImagePackage,

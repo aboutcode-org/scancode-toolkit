@@ -261,9 +261,9 @@ Package: nsis
 
 --------------------------------------------
 Package: nuget
-  class: packagedcode.nuget:NugetPackage
-  file_patterns: [Content_Types].xml, *.nuspec
-  extensions: .nupkg
+  class: packagedcode.nuget:Nuspec
+  file_patterns: *.nuspec
+  extensions: .nuspec
   filetypes: zip archive, microsoft ooxml
 
 --------------------------------------------
