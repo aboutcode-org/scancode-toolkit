@@ -104,7 +104,8 @@ PACKAGE_MANIFEST_TYPES = [
     build.MetadataBzl,
     msi.MsiInstallerPackage,
     windows.MicrosoftUpdateManifestPackage,
-    pubspec.PubspecPackage,
+    pubspec.PubspecYAML,
+    pubspec.PubspecLock
 ]
 
 PACKAGE_MANIFESTS_BY_TYPE = {

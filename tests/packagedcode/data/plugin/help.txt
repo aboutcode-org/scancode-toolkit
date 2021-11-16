@@ -301,9 +301,15 @@ Package: pods
 
 --------------------------------------------
 Package: pubspec
-  class: packagedcode.pubspec:PubspecPackage
-  file_patterns: pubspec.yaml, pubspec.lock
-  extensions: .yaml, .lock
+  class: packagedcode.pubspec:PubspecYAML
+  file_patterns: pubspec.yaml
+  extensions: .yaml
+
+--------------------------------------------
+Package: pubspec
+  class: packagedcode.pubspec:PubspecLock
+  file_patterns: pubspec.lock
+  extensions: .lock
 
 --------------------------------------------
 Package: pypi

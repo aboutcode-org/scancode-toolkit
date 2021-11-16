@@ -1,493 +1,495 @@
-{
-  "type": "pubspec",
-  "namespace": null,
-  "name": null,
-  "version": null,
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "dart",
-  "description": null,
-  "release_date": null,
-  "parties": [],
-  "keywords": [],
-  "homepage_url": null,
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:pubspec/dart",
-      "requirement": ">=2.12.0 <3.0.0",
-      "scope": "sdk",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pubspec/_fe_analyzer_shared@22.0.0",
-      "requirement": "22.0.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/analyzer@1.7.1",
-      "requirement": "1.7.1",
-      "scope": "direct main",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/args@2.1.1",
-      "requirement": "2.1.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/async@2.7.0",
-      "requirement": "2.7.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/boolean_selector@2.1.0",
-      "requirement": "2.1.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/charcode@1.3.1",
-      "requirement": "1.3.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/cli_util@0.3.2",
-      "requirement": "0.3.2",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/collection@1.15.0",
-      "requirement": "1.15.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/convert@3.0.1",
-      "requirement": "3.0.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/coverage@1.0.3",
-      "requirement": "1.0.3",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/crypto@3.0.1",
-      "requirement": "3.0.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/csslib@0.17.0",
-      "requirement": "0.17.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/dartdoc@1.0.0",
-      "requirement": "1.0.0",
-      "scope": "direct main",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/file@6.1.2",
-      "requirement": "6.1.2",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/frontend_server_client@2.1.0",
-      "requirement": "2.1.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/glob@2.0.1",
-      "requirement": "2.0.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/html@0.15.0",
-      "requirement": "0.15.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/http@0.13.3",
-      "requirement": "0.13.3",
-      "scope": "direct dev",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/http_multi_server@3.0.1",
-      "requirement": "3.0.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/http_parser@4.0.0",
-      "requirement": "4.0.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/io@1.0.2",
-      "requirement": "1.0.2",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/js@0.6.3",
-      "requirement": "0.6.3",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/json_annotation@4.0.1",
-      "requirement": "4.0.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/logging@1.0.1",
-      "requirement": "1.0.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/markdown@4.0.0",
-      "requirement": "4.0.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/matcher@0.12.10",
-      "requirement": "0.12.10",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/meta@1.3.0",
-      "requirement": "1.3.0",
-      "scope": "direct main",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/mime@1.0.0",
-      "requirement": "1.0.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/node_preamble@2.0.1",
-      "requirement": "2.0.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/package_config@2.0.0",
-      "requirement": "2.0.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/path@1.8.0",
-      "requirement": "1.8.0",
-      "scope": "direct main",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/pedantic@1.11.1",
-      "requirement": "1.11.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/pool@1.5.0",
-      "requirement": "1.5.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/pub_dartdoc_data@0.0.0",
-      "requirement": "0.0.0",
-      "scope": "direct main",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/pub_semver@2.0.0",
-      "requirement": "2.0.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/shelf@1.1.4",
-      "requirement": "1.1.4",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/shelf_packages_handler@3.0.0",
-      "requirement": "3.0.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/shelf_static@1.0.0",
-      "requirement": "1.0.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/shelf_web_socket@1.0.1",
-      "requirement": "1.0.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/source_map_stack_trace@2.1.0",
-      "requirement": "2.1.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/source_maps@0.10.10",
-      "requirement": "0.10.10",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/source_span@1.8.1",
-      "requirement": "1.8.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/stack_trace@1.10.0",
-      "requirement": "1.10.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/stream_channel@2.1.0",
-      "requirement": "2.1.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/string_scanner@1.1.0",
-      "requirement": "1.1.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/tar@0.4.0",
-      "requirement": "0.4.0",
-      "scope": "direct dev",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/term_glyph@1.2.0",
-      "requirement": "1.2.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/test@1.17.9",
-      "requirement": "1.17.9",
-      "scope": "direct dev",
-      "is_runtime": false,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/test_api@0.4.1",
-      "requirement": "0.4.1",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/test_core@0.3.29",
-      "requirement": "0.3.29",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/typed_data@1.3.0",
-      "requirement": "1.3.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/vm_service@7.1.0",
-      "requirement": "7.1.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/watcher@1.0.0",
-      "requirement": "1.0.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/web_socket_channel@2.1.0",
-      "requirement": "2.1.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/webkit_inspection_protocol@1.0.0",
-      "requirement": "1.0.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    },
-    {
-      "purl": "pkg:pubspec/yaml@3.1.0",
-      "requirement": "3.1.0",
-      "scope": "transitive",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": null,
-  "repository_homepage_url": "https://pub.dev/packages/None/versions/None",
-  "repository_download_url": "https://pub.dartlang.org/packages/None/versions/None.tar.gz",
-  "api_data_url": "https://pub.dev/api/packages/None/versions/None"
-}
+[
+  {
+    "type": "pubspec",
+    "namespace": null,
+    "name": null,
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "dart",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:pubspec/dart",
+        "requirement": ">=2.12.0 <3.0.0",
+        "scope": "sdk",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pubspec/_fe_analyzer_shared@22.0.0",
+        "requirement": "22.0.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/analyzer@1.7.1",
+        "requirement": "1.7.1",
+        "scope": "direct main",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/args@2.1.1",
+        "requirement": "2.1.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/async@2.7.0",
+        "requirement": "2.7.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/boolean_selector@2.1.0",
+        "requirement": "2.1.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/charcode@1.3.1",
+        "requirement": "1.3.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/cli_util@0.3.2",
+        "requirement": "0.3.2",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/collection@1.15.0",
+        "requirement": "1.15.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/convert@3.0.1",
+        "requirement": "3.0.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/coverage@1.0.3",
+        "requirement": "1.0.3",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/crypto@3.0.1",
+        "requirement": "3.0.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/csslib@0.17.0",
+        "requirement": "0.17.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/dartdoc@1.0.0",
+        "requirement": "1.0.0",
+        "scope": "direct main",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/file@6.1.2",
+        "requirement": "6.1.2",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/frontend_server_client@2.1.0",
+        "requirement": "2.1.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/glob@2.0.1",
+        "requirement": "2.0.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/html@0.15.0",
+        "requirement": "0.15.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/http@0.13.3",
+        "requirement": "0.13.3",
+        "scope": "direct dev",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/http_multi_server@3.0.1",
+        "requirement": "3.0.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/http_parser@4.0.0",
+        "requirement": "4.0.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/io@1.0.2",
+        "requirement": "1.0.2",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/js@0.6.3",
+        "requirement": "0.6.3",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/json_annotation@4.0.1",
+        "requirement": "4.0.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/logging@1.0.1",
+        "requirement": "1.0.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/markdown@4.0.0",
+        "requirement": "4.0.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/matcher@0.12.10",
+        "requirement": "0.12.10",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/meta@1.3.0",
+        "requirement": "1.3.0",
+        "scope": "direct main",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/mime@1.0.0",
+        "requirement": "1.0.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/node_preamble@2.0.1",
+        "requirement": "2.0.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/package_config@2.0.0",
+        "requirement": "2.0.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/path@1.8.0",
+        "requirement": "1.8.0",
+        "scope": "direct main",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/pedantic@1.11.1",
+        "requirement": "1.11.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/pool@1.5.0",
+        "requirement": "1.5.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/pub_dartdoc_data@0.0.0",
+        "requirement": "0.0.0",
+        "scope": "direct main",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/pub_semver@2.0.0",
+        "requirement": "2.0.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/shelf@1.1.4",
+        "requirement": "1.1.4",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/shelf_packages_handler@3.0.0",
+        "requirement": "3.0.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/shelf_static@1.0.0",
+        "requirement": "1.0.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/shelf_web_socket@1.0.1",
+        "requirement": "1.0.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/source_map_stack_trace@2.1.0",
+        "requirement": "2.1.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/source_maps@0.10.10",
+        "requirement": "0.10.10",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/source_span@1.8.1",
+        "requirement": "1.8.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/stack_trace@1.10.0",
+        "requirement": "1.10.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/stream_channel@2.1.0",
+        "requirement": "2.1.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/string_scanner@1.1.0",
+        "requirement": "1.1.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/tar@0.4.0",
+        "requirement": "0.4.0",
+        "scope": "direct dev",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/term_glyph@1.2.0",
+        "requirement": "1.2.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/test@1.17.9",
+        "requirement": "1.17.9",
+        "scope": "direct dev",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/test_api@0.4.1",
+        "requirement": "0.4.1",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/test_core@0.3.29",
+        "requirement": "0.3.29",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/typed_data@1.3.0",
+        "requirement": "1.3.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/vm_service@7.1.0",
+        "requirement": "7.1.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/watcher@1.0.0",
+        "requirement": "1.0.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/web_socket_channel@2.1.0",
+        "requirement": "2.1.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/webkit_inspection_protocol@1.0.0",
+        "requirement": "1.0.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pubspec/yaml@3.1.0",
+        "requirement": "3.1.0",
+        "scope": "transitive",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": null,
+    "repository_homepage_url": "https://pub.dev/packages/None/versions/None",
+    "repository_download_url": "https://pub.dartlang.org/packages/None/versions/None.tar.gz",
+    "api_data_url": "https://pub.dev/api/packages/None/versions/None"
+  }
+]
