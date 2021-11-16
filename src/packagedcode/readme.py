@@ -39,19 +39,8 @@ README_MAPPING = {
 
 
 @attr.s()
-class ReadmePackage(models.Package, models.PackageManifest):
-    file_patterns = (
-        'README.android',
-        'README.chromium',
-        'README.facebook',
-        'README.google',
-        'README.thirdparty',
-    )
+class ReadmePackage(models.Package):
     default_type = 'readme'
-
-    @classmethod
-    def recognize(cls, location):
-        yield parse(location)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -60,9 +49,24 @@ class ReadmePackage(models.Package, models.PackageManifest):
     def compute_normalized_license(self):
         return models.compute_normalized_license(self.declared_license)
 
+@attr.s()
+class ReadmeManifest(ReadmePackage, models.PackageManifest):
 
-def is_readme_manifest(location):
-    return (filetype.is_file(location)
+    file_patterns = (
+        'README.android',
+        'README.chromium',
+        'README.facebook',
+        'README.google',
+        'README.thirdparty',
+    )
+    manifest_type = 'readmemanifest'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location)
             and fileutils.file_name(location).lower() in [
                 'readme.android',
                 'readme.chromium',
@@ -71,35 +75,33 @@ def is_readme_manifest(location):
                 'readme.thirdparty'
             ])
 
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        with open(location, encoding='utf-8') as loc:
+            readme_manifest = loc.read()
 
-def parse(location):
-    """
-    Return a Package object from a README manifest file or None.
-    """
-    if not is_readme_manifest(location):
-        return
+        package = build_package(cls, readme_manifest)
 
-    with open(location, encoding='utf-8') as loc:
-        readme_manifest = loc.read()
+        if not package.name:
+            # If no name was detected for the Package, then we use the basename of
+            # the parent directory as the Package name
+            parent_dir = fileutils.parent_directory(location)
+            parent_dir_basename = fileutils.file_base_name(parent_dir)
+            package.name = parent_dir_basename
 
-    package = build_package(readme_manifest)
-
-    if not package.name:
-        # If no name was detected for the Package, then we use the basename of
-        # the parent directory as the Package name
-        parent_dir = fileutils.parent_directory(location)
-        parent_dir_basename = fileutils.file_base_name(parent_dir)
-        package.name = parent_dir_basename
-
-    return package
+        yield package
 
 
-def build_package(readme_manifest):
+def build_package(cls, readme_manifest):
     """
     Return a Package object from a readme_manifest mapping (from a
     README.chromium file or similar) or None.
     """
-    package = ReadmePackage()
+    package = cls()
 
     for line in readme_manifest.splitlines():
         key, sep, value = line.partition(':')

@@ -100,7 +100,7 @@ PACKAGE_MANIFEST_TYPES = [
     build.AutotoolsPackage,
     conda.Condayml,
     win_pe.WindowsExecutable,
-    readme.ReadmePackage,
+    readme.ReadmeManifest,
     build.MetadataBzl,
     msi.MsiInstallerPackage,
     windows.MicrosoftUpdateManifestPackage,

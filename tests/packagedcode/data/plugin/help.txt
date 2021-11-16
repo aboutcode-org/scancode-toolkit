@@ -346,7 +346,7 @@ Package: pypi
 
 --------------------------------------------
 Package: readme
-  class: packagedcode.readme:ReadmePackage
+  class: packagedcode.readme:ReadmeManifest
   file_patterns: README.android, README.chromium, README.facebook, README.google, README.thirdparty
 
 --------------------------------------------
