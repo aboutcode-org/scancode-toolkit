@@ -21,7 +21,9 @@ class TestRpmBasics(FileBasedTesting):
 
     def test_parse_to_package(self):
         test_file = self.get_test_loc('rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm')
-        package = rpm.parse(test_file)
+        for package_manifest in rpm.RPMManifest.recognize(test_file):
+            break
+
         expected = [
             ('type', 'rpm'),
             ('namespace', None),
@@ -67,7 +69,7 @@ class TestRpmBasics(FileBasedTesting):
             ('repository_download_url', None),
             ('api_data_url', None),
         ]
-        assert list(package.to_dict().items()) == expected
+        assert list(package_manifest.to_dict().items()) == expected
 
     def test_pyrpm_basic(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
@@ -126,10 +128,13 @@ class TestRpmBasics(FileBasedTesting):
         expected = expected._replace(description=None)
         assert rpm.get_rpm_tags(test_file, include_desc=False) == expected
 
-    def test_packagedcode_rpm_tags_and_info_on_non_rpm_file(self):
+    def test_rpm_is_manifest_non_rpm_file(self):
         test_file = self.get_test_loc('rpm/README.txt')
-        assert not rpm.get_rpm_tags(test_file, include_desc=True)
-        assert not rpm.get_rpm_tags(test_file, include_desc=False)
+        assert not rpm.RPMManifest.is_manifest(test_file)
+
+    def test_rpm_is_manifest_rpm_file(self):
+        test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
+        assert rpm.RPMManifest.is_manifest(test_file)
 
 
 def check_json(result, expected_file, regen=False):

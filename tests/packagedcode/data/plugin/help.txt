@@ -357,7 +357,7 @@ Package: readme
 
 --------------------------------------------
 Package: rpm
-  class: packagedcode.rpm:RpmPackage
+  class: packagedcode.rpm:RPMManifest
   file_patterns: *.spec
   extensions: .rpm, .srpm, .mvl, .vip
   filetypes: rpm 

@@ -39,7 +39,7 @@ from packagedcode import windows
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
 PACKAGE_MANIFEST_TYPES = [
-    rpm.RpmPackage,
+    rpm.RPMManifest,
     debian.DebianPackage,
 
     models.JavaJar,
