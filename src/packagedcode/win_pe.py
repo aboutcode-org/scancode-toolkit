@@ -222,26 +222,8 @@ def pe_info(location):
 
 
 @attr.s()
-class WindowsExecutable(models.Package, models.PackageManifest):
-    file_patterns = ()
-    extensions = (
-        '.exe',
-        '.dll',
-        '.mui',
-        '.mun',
-        '.com',
-        '.winmd',
-        '.sys',
-        '.tlb',
-        '.exe_*',
-        '.dll_*',
-        '.mui_*',
-        '.mun_*',
-        '.com_*',
-        '.winmd_*',
-        '.sys_*',
-        '.tlb_*',
-    )
+class WindowsExecutable(models.Package):
+    
     filetypes = ('pe32', 'for ms windows',)
     mimetypes = ('application/x-dosexec',)
 
@@ -250,10 +232,6 @@ class WindowsExecutable(models.Package, models.PackageManifest):
     default_web_baseurl = None
     default_download_baseurl = None
     default_api_baseurl = None
-
-    @classmethod
-    def recognize(cls, location):
-        yield parse(location)
 
 
 def get_first(mapping, *keys):
@@ -279,75 +257,100 @@ def concat(mapping, *keys):
     return '\n'.join(values)
 
 
-def parse(location):
-    """
-    Return a WindowsExecutable package from the file at `location` or None.
-    """
-    if not filetype.is_file(location):
-        return
-
-    T = contenttype.get_type(location)
-    if not T.is_winexe:
-        return
-
-    infos = pe_info(location)
-
-    version = get_first(
-        infos,
-        'Full Version',
-        'ProductVersion',
-        'FileVersion',
-        'Assembly Version',
+@attr.s()
+class WindowsExecutableManifest(WindowsExecutable, models.PackageManifest):
+    extensions = (
+        '.exe',
+        '.dll',
+        '.mui',
+        '.mun',
+        '.com',
+        '.winmd',
+        '.sys',
+        '.tlb',
+        '.exe_*',
+        '.dll_*',
+        '.mui_*',
+        '.mun_*',
+        '.com_*',
+        '.winmd_*',
+        '.sys_*',
+        '.tlb_*',
     )
-    release_date = get_first(infos, 'BuildDate')
-    if release_date:
-        if len(release_date) >= 10:
-            release_date = release_date[:10]
-        release_date = release_date.replace('/', '-')
+    manifest_type = 'winexe'
 
-    name = get_first(
-        infos,
-        'ProductName',
-        'OriginalFilename',
-        'InternalName',
-    )
-    copyr = get_first(infos, 'LegalCopyright')
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        T = contenttype.get_type(location)
+        return (filetype.is_file(location) and T.is_winexe)
 
-    LegalCopyright = copyr,
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        infos = pe_info(location)
 
-    LegalTrademarks = concat(
-        infos,
-        'LegalTrademarks',
-        'LegalTrademarks1',
-        'LegalTrademarks2',
-        'LegalTrademarks3')
-
-    License = get_first(infos, 'License')
-
-    declared_license = {}
-    if LegalCopyright or LegalTrademarks or License:
-        declared_license = dict(
-            LegalCopyright=copyr,
-            LegalTrademarks=LegalTrademarks,
-            License=License
+        version = get_first(
+            infos,
+            'Full Version',
+            'ProductVersion',
+            'FileVersion',
+            'Assembly Version',
         )
+        release_date = get_first(infos, 'BuildDate')
+        if release_date:
+            if len(release_date) >= 10:
+                release_date = release_date[:10]
+            release_date = release_date.replace('/', '-')
 
-    description = concat(infos, 'FileDescription', 'Comments')
+        name = get_first(
+            infos,
+            'ProductName',
+            'OriginalFilename',
+            'InternalName',
+        )
+        copyr = get_first(infos, 'LegalCopyright')
 
-    parties = []
-    cname = get_first(infos, 'CompanyName', 'Company')
+        LegalCopyright = copyr,
 
-    if cname:
-        parties = [Party(type=party_org, role='author', name=cname)]
-    homepage_url = get_first(infos, 'URL', 'WWW')
+        LegalTrademarks = concat(
+            infos,
+            'LegalTrademarks',
+            'LegalTrademarks1',
+            'LegalTrademarks2',
+            'LegalTrademarks3')
 
-    return WindowsExecutable(
-        name=name,
-        version=version,
-        release_date=release_date,
-        copyright=copyr,
-        declared_license=declared_license,
-        description=description,
-        parties=parties,
-        homepage_url=homepage_url,
-    )
+        License = get_first(infos, 'License')
+
+        declared_license = {}
+        if LegalCopyright or LegalTrademarks or License:
+            declared_license = dict(
+                LegalCopyright=copyr,
+                LegalTrademarks=LegalTrademarks,
+                License=License
+            )
+
+        description = concat(infos, 'FileDescription', 'Comments')
+
+        parties = []
+        cname = get_first(infos, 'CompanyName', 'Company')
+
+        if cname:
+            parties = [Party(type=party_org, role='author', name=cname)]
+        homepage_url = get_first(infos, 'URL', 'WWW')
+
+        yield cls(
+            name=name,
+            version=version,
+            release_date=release_date,
+            copyright=copyr,
+            declared_license=declared_license,
+            description=description,
+            parties=parties,
+            homepage_url=homepage_url,
+        )

@@ -11,6 +11,7 @@ import attr
 import xmltodict
 
 from packagedcode import models
+from commoncode import filetype
 
 
 # Tracing flags
@@ -34,66 +35,65 @@ if TRACE:
 
 
 @attr.s()
-class MicrosoftUpdateManifestPackage(models.Package, models.PackageManifest):
+class MicrosoftUpdatePackage(models.Package, models.PackageManifest):
     extensions = ('.mum',)
     filetypes = ('xml 1.0 document',)
     mimetypes = ('text/xml',)
 
     default_type = 'windows-update'
 
+
+@attr.s()
+class MicrosoftUpdateManifest(MicrosoftUpdatePackage, models.PackageManifest):
+
+    manifest_type = 'winupdatemanifest'
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return filetype.is_file(location) and location.endswith('.mum')
+
     @classmethod
     def recognize(cls, location):
-        yield parse(location)
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        with open(location , 'rb') as loc:
+            parsed = xmltodict.parse(loc)
 
+        if TRACE:
+            logger_debug('parsed:', parsed)
+        if not parsed:
+            return
 
-def parse_mum(location):
-    """
-    Return a dictionary of Microsoft Update Manifest (mum) metadata from a .mum
-    file at `location`. Return None if this is not a parsable mum file. Raise
-    Exceptions on errors.
-    """
-    if not location.endswith('.mum'):
-        return
-    with open(location , 'rb') as loc:
-        return xmltodict.parse(loc)
+        assembly = parsed.get('assembly', {})
+        description = assembly.get('@description', '')
+        company = assembly.get('@company', '')
+        copyright = assembly.get('@copyright', '')
+        support_url = assembly.get('@supportInformation', '')
 
+        assembly_identity = assembly.get('assemblyIdentity', {})
+        name = assembly_identity.get('@name', '')
+        version = assembly_identity.get('@version', '')
 
-def parse(location):
-    """
-    Return a MicrosoftUpdateManifestPackage from a .mum XML file at `location`.
-    Return None if this is not a parsable .mum file.
-    """
-    parsed = parse_mum(location)
-    if TRACE:
-        logger_debug('parsed:', parsed)
-    if not parsed:
-        return
-
-    assembly = parsed.get('assembly', {})
-    description = assembly.get('@description', '')
-    company = assembly.get('@company', '')
-    copyright = assembly.get('@copyright', '')
-    support_url = assembly.get('@supportInformation', '')
-
-    assembly_identity = assembly.get('assemblyIdentity', {})
-    name = assembly_identity.get('@name', '')
-    version = assembly_identity.get('@version', '')
-
-    parties = []
-    if company:
-        parties.append(
-            models.Party(
-                name=company,
-                type=models.party_org,
-                role='owner',
+        parties = []
+        if company:
+            parties.append(
+                models.Party(
+                    name=company,
+                    type=models.party_org,
+                    role='owner',
+                )
             )
-        )
 
-    return MicrosoftUpdateManifestPackage(
-        name=name,
-        version=version,
-        description=description,
-        homepage_url=support_url,
-        parties=parties,
-        copyright=copyright,
-    )
+        yield cls(
+            name=name,
+            version=version,
+            description=description,
+            homepage_url=support_url,
+            parties=parties,
+            copyright=copyright,
+        )

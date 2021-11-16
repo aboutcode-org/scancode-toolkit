@@ -99,11 +99,11 @@ PACKAGE_MANIFEST_TYPES = [
     build.BuckPackage,
     build.AutotoolsPackage,
     conda.Condayml,
-    win_pe.WindowsExecutable,
+    win_pe.WindowsExecutableManifest,
     readme.ReadmeManifest,
     build.MetadataBzl,
     msi.MsiInstallerPackage,
-    windows.MicrosoftUpdateManifestPackage,
+    windows.MicrosoftUpdateManifest,
     pubspec.PubspecYAML,
     pubspec.PubspecLock
 ]

@@ -9,7 +9,7 @@
 
 import os
 
-from packagedcode.windows import parse
+from packagedcode import windows
 
 from packages_test_utils import PackageTester
 
@@ -17,8 +17,12 @@ from packages_test_utils import PackageTester
 class TestWindows(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+    def test_gosum_is_manifest(self):
+        test_file = self.get_test_loc('windows/mum/test.mum')
+        assert windows.MicrosoftUpdateManifest.is_manifest(test_file)
+
     def test_windows_mum_parse(self):
         test_file = self.get_test_loc('windows/mum/test.mum')
         expected_loc = self.get_test_loc('windows/mum/test.mum.expected')
-        package = parse(test_file)
-        self.check_package(package, expected_loc, regen=False)
+        package_manifests = windows.MicrosoftUpdateManifest.recognize(test_file)
+        self.check_packages(package_manifests, expected_loc, regen=False)

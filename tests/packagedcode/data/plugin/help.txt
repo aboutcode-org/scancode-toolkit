@@ -382,13 +382,13 @@ Package: war
 
 --------------------------------------------
 Package: windows-update
-  class: packagedcode.windows:MicrosoftUpdateManifestPackage
+  class: packagedcode.windows:MicrosoftUpdateManifest
   extensions: .mum
   filetypes: xml 1.0 document
 
 --------------------------------------------
 Package: winexe
-  class: packagedcode.win_pe:WindowsExecutable
+  class: packagedcode.win_pe:WindowsExecutableManifest
   extensions: .exe, .dll, .mui, .mun, .com, .winmd, .sys, .tlb, .exe_*, .dll_*, .mui_*, .mun_*, .com_*, .winmd_*, .sys_*, .tlb_*
   filetypes: pe32, for ms windows
 
