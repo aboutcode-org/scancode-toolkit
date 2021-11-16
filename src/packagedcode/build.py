@@ -38,12 +38,12 @@ gradle, Buck, Bazel, Pants, etc.
 
 
 @attr.s()
-class BaseBuildManifestPackage(models.Package, models.PackageManifest):
+class BaseBuildManifestPackage(models.Package):
     file_patterns = tuple()
 
     @classmethod
     def recognize(cls, location):
-        if not cls._is_build_manifest(location):
+        if not cls.is_manifest(location):
             return
 
         # we use the parent directory as a name
@@ -63,16 +63,9 @@ class BaseBuildManifestPackage(models.Package, models.PackageManifest):
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
-    @classmethod
-    def _is_build_manifest(cls, location):
-        if not filetype.is_file(location):
-            return False
-        fn = fileutils.file_name(location)
-        return any(fn == mf for mf in cls.file_patterns)
-
 
 @attr.s()
-class AutotoolsPackage(BaseBuildManifestPackage):
+class AutotoolsPackage(BaseBuildManifestPackage, models.PackageManifest):
     file_patterns = ('configure', 'configure.ac',)
     default_type = 'autotools'
 
@@ -96,10 +89,11 @@ def check_rule_name_ending(rule_name):
 
 
 @attr.s()
-class StarlarkManifestPackage(BaseBuildManifestPackage):
+class StarlarkManifestPackage(BaseBuildManifestPackage, models.PackageManifest):
+
     @classmethod
     def recognize(cls, location):
-        if not cls._is_build_manifest(location):
+        if not cls.is_manifest(location):
             return
 
         # Thanks to Starlark being a Python dialect, we can use the `ast`
@@ -186,7 +180,7 @@ class BuckPackage(StarlarkManifestPackage):
 
 
 @attr.s()
-class MetadataBzl(BaseBuildManifestPackage):
+class MetadataBzl(BaseBuildManifestPackage, models.PackageManifest):
     file_patterns = ('METADATA.bzl',)
     # TODO: Not sure what the default type should be, change this to something
     # more appropriate later
@@ -194,7 +188,7 @@ class MetadataBzl(BaseBuildManifestPackage):
 
     @classmethod
     def recognize(cls, location):
-        if not cls._is_build_manifest(location):
+        if not cls.is_manifest(location):
             return
 
         with open(location, 'rb') as f:
