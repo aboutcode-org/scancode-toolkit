@@ -1,8 +1,9 @@
 license_expression: gpl-2.0
-is_license_notice: yes
+is_license_reference: yes
 relevance: 100
 minimum_coverage: 100
-notes: At https://web.archive.org/web/20020809115410/ftp://prep.ai.mit.edu/pub/gnu/GPL the text
-    is a GPL 2.0 license text
+notes:
+  At https://web.archive.org/web/20020809115410/ftp://prep.ai.mit.edu/pub/gnu/GPL the text
+  is a GPL 2.0 license text
 ignorable_urls:
-    - ftp://prep.ai.mit.edu/pub/gnu/GPL
+  - ftp://prep.ai.mit.edu/pub/gnu/GPL
