@@ -1,0 +1,5 @@
+license_expressions:
+  - cc-by-sa-4.0
+  - proprietary-license
+notes: |
+  Proprietary-license is a false-positive.
