@@ -154,9 +154,9 @@ def get_licenses(location, min_score=0,
      - 'license_expressions' with a value that is list of license expression
        strings.
 
-    `minimum_score` is a minimum score threshold from 0 to 100. The default is 0
-    means that all license matches are returned. Otherwise, matches with a score
-    below `minimum_score` are returned.
+    `min_score` is a minimum score threshold from 0 to 100. The default is 0,
+    meaning that all license matches are returned. If specified, matches with a
+    score lower than `minimum_score` are not returned.
 
     If `include_text` is True, matched text is included in the returned
     `licenses` data as well as a file-level `percentage_of_license_text` percentage to
