@@ -144,6 +144,7 @@ Other contributors, listed alphabetically, are:
 * Brian McKenna -- F# lexer
 * Charles McLaughlin -- Puppet lexer
 * Kurt McKee -- Tera Term macro lexer, PostgreSQL updates, MySQL overhaul
+* Joe Eli McIlvain -- Savi lexer
 * Lukas Meuser -- BBCode formatter, Lua lexer
 * Cat Miller -- Pig lexer
 * Paul Miller -- LiveScript lexer
