@@ -1,0 +1,8 @@
+key: openssl-exception-lgpl
+short_name: OpenSSL exception to LGPL
+name: OpenSSL exception to LGPL
+category: Copyleft Limited
+owner: cryptsetup Project
+homepage_url: https://gitlab.com/cryptsetup/cryptsetup/-/blob/master/COPYING.LGPL#L505
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-openssl-exception-lgpl
