@@ -825,7 +825,7 @@ class BasicRule(object):
     # for SPDX license expression dynamic rules or testing
     stored_text = attr.ib(default=None, repr=False)
 
-    key_phrase_spans = attr.ib(default=[], repr=False)
+    key_phrase_spans = attr.ib(default=attr.Factory(list), repr=False)
 
     # These attributes are computed upon text loading or setting the thresholds
     ###########################################################################
@@ -1679,11 +1679,10 @@ def get_key_phrases(text):
             # keep appending key phrase until we hit KEY_PHRASE_CLOSE
             for key_phrase in key_phrase_iterator:
                 if key_phrase.endswith(KEY_PHRASE_CLOSE):
+                    if span_positions:
+                        yield Span(span_positions)
                     break
                 span_positions.append(key_phrase_index)
                 key_phrase_index += 1
-
-            if span_positions:
-                yield Span(span_positions)
         else:
             key_phrase_index += 1
