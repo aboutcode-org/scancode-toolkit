@@ -4,12 +4,15 @@ name: Fraunhofer FDK AAC Codec Library for Android
 category: Copyleft Limited
 owner: Fraunhofer-Gesellschaft
 homepage_url: http://opencore-amr.git.sourceforge.net/git/gitweb.cgi?p=opencore-amr/fdk-aac;a=blob;f=NOTICE
-spdx_license_key: LicenseRef-scancode-fraunhofer-fdk-aac-codec
+spdx_license_key: FDK-AAC
+other_spdx_license_keys:
+    - LicenseRef-scancode-fraunhofer-fdk-aac-codec
 text_urls:
     - http://opencore-amr.git.sourceforge.net/git/gitweb.cgi?p=opencore-amr/fdk-aac;a=blob;f=NOTICE
 other_urls:
-    - amm-info@iis.fraunhofer.de
-    - www.iis.fraunhofer.de/amm
+    - https://fedoraproject.org/wiki/Licensing/FDK-AAC
+    - https://directory.fsf.org/wiki/License:Fdk
+    - http://www.iis.fraunhofer.de/amm
 minimum_coverage: 40
 ignorable_copyrights:
     - (c) Copyright 1995 - 2012 Fraunhofer-Gesellschaft zur Forderung der angewandten Forschung
