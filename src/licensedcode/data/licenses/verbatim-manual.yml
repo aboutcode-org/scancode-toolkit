@@ -9,4 +9,6 @@ other_spdx_license_keys:
     - LicenseRef-scancode-verbatim-manual
 text_urls:
     - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/bpf_helpers_doc.py?h=v5.0-rc4#n202
+other_urls:
+    - https://www.kernel.org/doc/man-pages/licenses.html
 minimum_coverage: 70
