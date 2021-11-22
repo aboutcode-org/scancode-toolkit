@@ -485,6 +485,30 @@ class SpdxSource(ExternalLicensesSource):
         return lic, text
 
 
+dejacode_special_composites = set([
+    'net-snmp',
+    'aes-128-3.0',
+    'agpl-3.0-bacula',
+    'bacula-exception',
+    'componentace-jcraft',
+    'nvidia-cuda-supplement-2020',
+    'dejacode',
+    'ibm-icu',
+    'unicode-icu-58',
+    'info-zip-1997-10',
+    'info-zip-2001-01',
+    'info-zip-2002-02',
+    'info-zip-2003-05',
+    'info-zip-2004-05',
+    'info-zip-2005-02',
+    'info-zip-2007-03',
+    'info-zip-2009-01',
+    'intel-bsd-special',
+    'lgpl-3.0-plus-openssl',
+    'newlib-subdirectory',
+])
+
+
 class DejaSource(ExternalLicensesSource):
     """
     License source for DejaCode licenses fetched through its API.
@@ -557,28 +581,6 @@ class DejaSource(ExternalLicensesSource):
 
         # these licenses are combos of many others and are ignored: we detect
         # instead each part of the combos separately
-        dejacode_special_composites = set([
-            'net-snmp',
-            'aes-128-3.0',
-            'agpl-3.0-bacula',
-            'bacula-exception',
-            'componentace-jcraft',
-            'nvidia-cuda-supplement-2020',
-            'dejacode',
-            'ibm-icu',
-            'unicode-icu-58',
-            'info-zip-1997-10',
-            'info-zip-2001-01',
-            'info-zip-2002-02',
-            'info-zip-2003-05',
-            'info-zip-2004-05',
-            'info-zip-2005-02',
-            'info-zip-2007-03',
-            'info-zip-2009-01',
-            'intel-bsd-special',
-            'lgpl-3.0-plus-openssl',
-            'newlib-subdirectory',
-        ])
         is_combo = key in dejacode_special_composites
         if is_combo:
             if TRACE: print('Skipping DejaCode combo/component license', key)
@@ -1237,6 +1239,8 @@ def cli(license_dir, source, match_text, match_approx, trace, create_ext, commit
         api_url = external_source.api_base_url
         api_key = external_source.api_key
         for elic in added_to_external:
+            if elic.key in dejacode_special_composites:
+                continue
             create_license(api_url, api_key, elic)
 
 
