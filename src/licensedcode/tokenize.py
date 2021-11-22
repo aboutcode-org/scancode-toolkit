@@ -69,13 +69,17 @@ KEY_PHRASE_OPEN = "{{"
 KEY_PHRASE_CLOSE = "}}"
 
 def key_phrase_tokenizer(text, stopwords=STOPWORDS):
+    """
+    Return an iterable of tokens from a unicode query test. It must behave identically as the `index_tokenizer` with the
+    exception that it returns KEY_PHRASE_OPEN and KEY_PHRASE_CLOSE as separate tokens so that they can be used to parse
+    key phrases.
+    """
     if not text:
         return []
     words = key_phrase_splitter(text.lower())
 
     new_words = []
     for word in words:
-        # TODO: Optimize for readability
         if word.startswith(KEY_PHRASE_OPEN):
             new_words.append(KEY_PHRASE_OPEN)
 
