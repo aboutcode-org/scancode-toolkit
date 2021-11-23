@@ -1,4 +1,4 @@
-primary_license: gpl-2.0-plus AND gpl-3.0-plus
+primary_license: gpl-2.0-plus
 declared_license:
   - GPL-2+
   - GPL-2+
@@ -20,9 +20,9 @@ declared_license:
   - GPL-2
   - GPL-2+
   - LGPL-2.1+
-license_expression: (gpl-2.0-plus AND gpl-3.0-plus) AND (gpl-2.0-plus AND gpl-3.0-plus) AND
-  bsd-new AND bsd-simplified AND mit AND mit AND bsd-simplified AND (gpl-2.0-plus AND gpl-3.0-plus)
-  AND (gpl-2.0-plus AND gpl-3.0-plus) AND mit AND bsd-simplified AND bsd-simplified AND bsd-simplified
+license_expression: (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
+  bsd-new AND bsd-simplified AND mit AND mit AND bsd-simplified AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND mit AND bsd-simplified AND bsd-simplified AND bsd-simplified
   AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)
 copyright: |
   2018 Giuseppe Scrivano <gscrivan@redhat.com>
@@ -42,8 +42,8 @@ copyright: |
   2016, Renzo Davoli VirtualSquare
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 21
+    end_line: 21
     matcher: 2-aho
     rule_length: 4
     matched_length: 4
@@ -58,8 +58,8 @@ matches:
     is_license_intro: no
     matched_text: license BSD-2-clause
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 79
+    end_line: 101
     matcher: 1-hash
     rule_length: 213
     matched_length: 213
@@ -96,15 +96,15 @@ matches:
       LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
-  - score: '99.44'
-    start_line: 3
-    end_line: 21
-    matcher: 3-seq
-    rule_length: 177
+  - score: '98.88'
+    start_line: 106
+    end_line: 124
+    matcher: 2-aho
+    rule_length: 176
     matched_length: 176
-    match_coverage: '99.44'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-simplified_29.RULE
+    identifier: bsd-simplified_274.RULE
     license_expression: bsd-simplified
     is_license_text: yes
     is_license_notice: no
@@ -132,8 +132,8 @@ matches:
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
       THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 127
+    end_line: 143
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -165,8 +165,8 @@ matches:
       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
       THE SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 145
+    end_line: 145
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -181,14 +181,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2'
   - score: '100.0'
-    start_line: 3
-    end_line: 5
+    start_line: 148
+    end_line: 150
     matcher: 2-aho
-    rule_length: 9
-    matched_length: 9
+    rule_length: 11
+    matched_length: 11
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_822.RULE
+    identifier: gpl-2.0_1142.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes
@@ -196,18 +196,18 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      licensed under:
+      free software, licensed under:
 
         The GNU General Public License, Version 2,
   - score: '100.0'
-    start_line: 7
-    end_line: 9
+    start_line: 152
+    end_line: 156
     matcher: 2-aho
-    rule_length: 31
-    matched_length: 31
+    rule_length: 59
+    matched_length: 59
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_396.RULE
+    identifier: gpl-2.0_1296.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes
@@ -217,44 +217,12 @@ matches:
     matched_text: |
       This program is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; version 2
+      the Free Software Foundation; version 2 dated June, 1991.
+      On Debian systems, the complete text of version 2 of the GNU General
+      Public License can be found in '/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
-    start_line: 10
-    end_line: 11
-    matcher: 2-aho
-    rule_length: 8
-    matched_length: 8
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_836.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      version 2 of the GNU General
-      Public License
-  - score: '100.0'
-    start_line: 11
-    end_line: 11
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 158
+    end_line: 158
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -268,16 +236,16 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2+'
-  - score: '97.62'
-    start_line: 1
-    end_line: 15
-    matcher: 3-seq
+  - score: '100.0'
+    start_line: 159
+    end_line: 173
+    matcher: 1-hash
     rule_length: 126
-    matched_length: 123
-    match_coverage: '97.62'
+    matched_length: 126
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_321.RULE
-    license_expression: gpl-3.0-plus
+    identifier: gpl-2.0-plus_839.RULE
+    license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -286,7 +254,7 @@ matches:
     matched_text: |
       This package is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version [2] of the License, or
+      the Free Software Foundation; either version 2 of the License, or
       (at your option) any later version.
 
       This package is distributed in the hope that it will be useful,
@@ -298,10 +266,10 @@ matches:
       along with this program. If not, see <https://www.gnu.org/licenses/>
 
       On Debian systems, the complete text of the GNU General
-      Public License version [2] can be found in "/usr/share/common-licenses/GPL-
+      Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 175
+    end_line: 175
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -316,8 +284,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-2.1+'
   - score: '100.0'
-    start_line: 1
-    end_line: 12
+    start_line: 176
+    end_line: 187
     matcher: 2-aho
     rule_length: 106
     matched_length: 106
@@ -344,8 +312,8 @@ matches:
       You should have received a copy of the GNU Lesser General Public License
       along with this library.  If not, see <http://www.gnu.org/licenses/>.
   - score: '100.0'
-    start_line: 14
-    end_line: 15
+    start_line: 189
+    end_line: '190'
     matcher: 2-aho
     rule_length: 27
     matched_length: 27

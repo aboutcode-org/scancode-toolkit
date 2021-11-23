@@ -10,8 +10,8 @@ copyright: |
   2005 sean finney <seanius@debian.org>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 10
+    end_line: 10
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -26,8 +26,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 6
+    start_line: 11
+    end_line: 16
     matcher: 1-hash
     rule_length: 40
     matched_length: 40
@@ -48,8 +48,8 @@ matches:
       Public License Version 2 can be found in
       /usr/share/common-licenses/GPL-2.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 21
+    end_line: 21
     matcher: 2-aho
     rule_length: 12
     matched_length: 12
@@ -64,8 +64,8 @@ matches:
     is_license_intro: no
     matched_text: This document is licensed under the Academic Free License, Version 2.1
   - score: '100.0'
-    start_line: 6
-    end_line: 161
+    start_line: 26
+    end_line: 181
     matcher: 2-aho
     rule_length: 1406
     matched_length: 1406

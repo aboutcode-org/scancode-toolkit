@@ -1,16 +1,21 @@
-The software accompanying this license statement (the “Software”)
- is the property of Moxa Inc. (the “Moxa”), and is protected by
- United States and International Copyright Laws and International
- treaty provisions. No ownership rights are granted by this
- Agreement or possession of the Software. Therefore, you must treat
- the Licensed Software like any other copyrighted material. Your
- rights and obligations in its use are described as follows:
- .
- 1. You may freely redistribute this software under this license.
- 2. You may freely download and use this software on Moxa's device.
- 3. You may not modify or attempt to reverse engineer the software, or
-    make any attempt to change or even examine the source code of the
-    software.
- 4. You may not re-license or sub-license the software to any person or
-    business, using any other license.
- 5. Moxa(r) is worldwide registered trademark.
+This document and translations of it may be copied and furnished to 
+others, and derivative works that comment on or otherwise explain it or 
+assist in its implementation may be prepared, copied, published and 
+distributed, in whole or in part, without restriction of any kind, 
+provided that the above copyright notice and these paragraphs are 
+included on all such copies and derivative works.
+
+This document may not be modified in any way, such as by removing the 
+copyright notice or references to the Companies or other organizations. 
+Further, while these copyright restrictions apply to the written OPML 
+specification, no claim of ownership is made by the Companies to the 
+format it describes. Any party may, for commercial or non-commercial 
+purposes, implement this format without royalty or license fee to the 
+Companies. The limited permissions granted herein are perpetual and will 
+not be revoked by the Companies or their successors or assigns.
+
+This document and the information contained herein is provided on an "AS 
+IS" basis and THE COMPANIES DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE 
+INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED 
+WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.

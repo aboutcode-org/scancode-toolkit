@@ -1,0 +1,9 @@
+license_expression: digia-qt-commercial OR lgpl-3.0 OR gpl-2.0
+is_license_notice: yes
+relevance: 100
+notes: Qt is available under a choice of licenses. This is a common choice in Qt 5.x
+ignorable_urls:
+    - http://qt.digia.com/contact-us
+    - http://qt.digia.com/licensing
+    - https://www.gnu.org/licenses/gpl-2.0.html
+    - https://www.gnu.org/licenses/lgpl.html

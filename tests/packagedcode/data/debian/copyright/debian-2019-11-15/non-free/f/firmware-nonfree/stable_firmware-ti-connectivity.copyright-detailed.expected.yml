@@ -5,8 +5,8 @@ license_expression: proprietary-license
 copyright: 2000-2016, Texas Instruments Incorporated
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 57
+    start_line: 9
+    end_line: 65
     matcher: 1-hash
     rule_length: 434
     matched_length: 434

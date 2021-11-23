@@ -1,0 +1,11 @@
+key: defensive-patent-1.1
+short_name: Defensive Patent License v1.1
+name: Defensive Patent License v1.1
+owner: DPL
+category: Copyleft
+spdx_license_key: LicenseRef-scancode-defensive-patent-1.1
+homepage_url: https://www.defensivepatentlicense.org/
+text_urls:
+    - https://www.defensivepatentlicense.org/license
+ignorable_urls:
+    - http://www.defensivepatentlicense.org/content/frequently-asked-questions#how-can-I-start

@@ -219,8 +219,8 @@ Package: opam
 --------------------------------------------
 Package: pods
   class: packagedcode.cocoapods:CocoapodsPackage
-  metafiles: *.podspec
-  extensions: .podspec
+  metafiles: *.podspec, *podfile.lock, *.podspec.json
+  extensions: .podspec, .lock
 
 --------------------------------------------
 Package: pubspec

@@ -1,0 +1,9 @@
+license_expression: gpl-3.0
+is_license_text: yes
+notes: skinny GPL 3.0 text cut after END OF TERMS AND CONDITIONS
+ignorable_copyrights:
+    - Copyright (c) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ignorable_holders:
+    - Free Software Foundation, Inc.
+ignorable_urls:
+    - https://fsf.org/

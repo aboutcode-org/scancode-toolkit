@@ -1,0 +1,7 @@
+license_expression: mit OR gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+ignorable_urls:
+    - http://www.opensource.org/licenses/mit-license.php
+    - https://www.gnu.org/licenses/gpl.html

@@ -12,6 +12,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 2
       }
     }

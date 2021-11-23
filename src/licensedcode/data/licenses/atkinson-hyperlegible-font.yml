@@ -1,0 +1,11 @@
+key: atkinson-hyperlegible-font
+short_name: Atkinson Hyperlegible Font License
+name: Atkinson Hyperlegible Font License
+category: Permissive
+owner: Braille Institute
+homepage_url: https://www.brailleinstitute.org/wp-content/uploads/2020/11/Atkinson-Hyperlegible-Font-License-2020-1104.pdf
+spdx_license_key: LicenseRef-scancode-atkinson-hyperlegible-font
+ignorable_copyrights:
+    - Copyright Holder. Font Software
+ignorable_holders:
+    - Font Software

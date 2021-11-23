@@ -1,0 +1,4 @@
+Landroid/icu/impl/IDNA2003;->startsWithPrefix(Ljava/lang/StringBuffer;)Z,BLACK
+Landroid/icu/impl/IDNA2003;->toASCIILower(C)C,BLACK
+Landroid/icu/impl/IDNA2003;->toASCIILower(Ljava/lang/CharSequence;)Ljava/lang/StringBuffer;,BLACK
+

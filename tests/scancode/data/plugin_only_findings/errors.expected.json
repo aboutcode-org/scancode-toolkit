@@ -34,6 +34,7 @@
         "Path: errors/many_copyrights.c"
       ],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 1
       }
     }

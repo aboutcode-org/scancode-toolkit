@@ -825,9 +825,37 @@ class LicenseIndex(object):
         )
 
         if TRACE:
-            logger_debug('match: for:', location, 'query:', qry)
+            logger_debug('Index.match: for:', location, 'query:', qry)
+
         if not qry:
             return []
+
+        return self.match_query(
+            qry=qry,
+            min_score=min_score,
+            as_expression=as_expression,
+            expression_symbols=expression_symbols,
+            approximate=approximate,
+            deadline=deadline,
+            _skip_hash_match=_skip_hash_match,
+            **kwargs,
+        )
+
+    def match_query(
+        self,
+        qry,
+        min_score=0,
+        as_expression=False,
+        expression_symbols=None,
+        approximate=True,
+        deadline=sys.maxsize,
+        _skip_hash_match=False,
+        **kwargs,
+    ):
+        """
+        Return a sequence of LicenseMatch by matching the `qry` Query against
+        this index. See Index.match() for arguments documentation.
+        """
 
         whole_query_run = qry.whole_query_run()
         if not whole_query_run or not whole_query_run.matchables:

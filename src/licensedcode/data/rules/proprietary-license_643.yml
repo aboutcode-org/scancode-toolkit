@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. Seen in https://github.com/abellusc/bloombox-api-legacy
+    and a few other places. It says "including with limitation the rights" instead of "including
+    without limitation the rights" in a standard MIT. Since there is no way to know if this
+    is a bona fide typo or some intentianal change this is reported as proprietary for now.

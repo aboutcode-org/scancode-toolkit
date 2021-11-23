@@ -1,0 +1,37 @@
+# order to be recognized.  For example, each of these is fine:
+#
+#   Copyright @copyright{} 1990-2005, 2007-2009 Free Software
+#   Foundation, Inc.
+#
+#   # Copyright (C) 1990-2005, 2007-2009 Free Software
+#   # Foundation, Inc.
+#
+#   /*
+#    * Copyright &copy; 90,2005,2007-2009
+#    * Free Software Foundation, Inc.
+#    */
+#
+# However, the following format is not recognized because the line
+# prefix changes after the first line:
+#
+#   ## Copyright (C) 1990-2005, 2007-2009 Free Software
+#   #  Foundation, Inc.
+#
+# However, any correctly formatted copyright statement following
+# a non-matching copyright statements would be recognized.
+#
+#   2. Its format is "Copyright (C)", then a list of copyright years,
+#      and then the name of the copyright holder.
+#   3. The "(C)" takes one of the following forms or is omitted
+#      entirely:
+#
+#        A. (C)
+#        B. (c)
+#        C. @copyright{}
+#        D. &copy;
+#        E. ©
+#
+#   4. The "Copyright" appears at the beginning of a line, except that it
+#      may be prefixed by any sequence (e.g., a comment) of no more than
+#      5 characters -- including white space.
+

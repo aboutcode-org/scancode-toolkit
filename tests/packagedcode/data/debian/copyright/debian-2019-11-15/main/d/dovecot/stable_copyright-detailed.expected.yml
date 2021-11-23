@@ -73,8 +73,8 @@ copyright: |
   (c) 2002-2018 Dovecot authors
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 4
+    start_line: 32
+    end_line: 35
     matcher: 1-hash
     rule_length: 52
     matched_length: 52
@@ -93,8 +93,8 @@ matches:
       can do whatever you want with this stuff. If we meet some day, and you think
       this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 46
+    end_line: 47
     matcher: 2-aho
     rule_length: 5
     matched_length: 5
@@ -111,8 +111,8 @@ matches:
       placed in the
       public domain.
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 121
+    end_line: 137
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -144,8 +144,8 @@ matches:
       FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
       DEALINGS IN THE SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 139
+    end_line: 139
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -160,8 +160,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-2.1'
   - score: '100.0'
-    start_line: 1
-    end_line: 13
+    start_line: 140
+    end_line: 152
     matcher: 2-aho
     rule_length: 117
     matched_length: 117
@@ -189,8 +189,8 @@ matches:
       License along with this library; if not, write to the Free Software
       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
   - score: '100.0'
-    start_line: 15
-    end_line: 15
+    start_line: 154
+    end_line: 154
     matcher: 2-aho
     rule_length: 6
     matched_length: 6
@@ -205,8 +205,8 @@ matches:
     is_license_intro: no
     matched_text: the GNU Lesser General Public License
   - score: '100.0'
-    start_line: 16
-    end_line: 16
+    start_line: 155
+    end_line: 155
     matcher: 2-aho
     rule_length: 7
     matched_length: 7
@@ -221,8 +221,8 @@ matches:
     is_license_intro: no
     matched_text: usr/share/common-licenses/LGPL-2.1.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 157
+    end_line: 157
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -236,15 +236,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: apache-2.0'
-  - score: '94.5'
-    start_line: 1
-    end_line: 14
-    matcher: 3-seq
+  - score: '100.0'
+    start_line: 158
+    end_line: 171
+    matcher: 1-hash
     rule_length: 109
-    matched_length: 103
-    match_coverage: '94.5'
+    matched_length: 109
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: apache-2.0_847.RULE
+    identifier: apache-2.0_951.RULE
     license_expression: apache-2.0
     is_license_text: no
     is_license_notice: yes
@@ -256,7 +256,7 @@ matches:
       you may not use this file except in compliance with the License.
       You may obtain a copy of the License at
 
-          [http]://www.apache.org/licenses/LICENSE-2.0
+          http://www.apache.org/licenses/LICENSE-2.0
 
       Unless required by applicable law or agreed to in writing, software
       distributed under the License is distributed on an "AS IS" BASIS,
@@ -264,11 +264,11 @@ matches:
       See the License for the specific language governing permissions and
       limitations under the License.
 
-      On Debian systems, the [full] [text] [of] [the] Apache License, Version 2.0 can be
-      found [at] /usr/share/common-licenses/Apache-2.0.
+      On Debian systems, the full text of the Apache License, Version 2.0 can be
+      found at /usr/share/common-licenses/Apache-2.0.
   - score: '100.0'
-    start_line: 3
-    end_line: 25
+    start_line: 176
+    end_line: '198'
     matcher: 2-aho
     rule_length: 213
     matched_length: 213
@@ -306,8 +306,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 20
+    start_line: 201
+    end_line: 220
     matcher: 1-hash
     rule_length: 185
     matched_length: 185
@@ -342,8 +342,8 @@ matches:
       OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 222
+    end_line: 222
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -358,8 +358,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 13
+    start_line: 223
+    end_line: 235
     matcher: 2-aho
     rule_length: 113
     matched_length: 113
@@ -387,8 +387,8 @@ matches:
       with this program; if not, write to the Free Software Foundation, Inc.,
       51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   - score: '100.0'
-    start_line: 15
-    end_line: 15
+    start_line: 237
+    end_line: 237
     matcher: 2-aho
     rule_length: 7
     matched_length: 7
@@ -403,8 +403,8 @@ matches:
     is_license_intro: no
     matched_text: the GNU General Public License version 2
   - score: '100.0'
-    start_line: 16
-    end_line: 16
+    start_line: 238
+    end_line: 238
     matcher: 2-aho
     rule_length: 6
     matched_length: 6
@@ -419,8 +419,8 @@ matches:
     is_license_intro: no
     matched_text: usr/share/common-licenses/GPL-2.
   - score: '100.0'
-    start_line: 1
-    end_line: 33
+    start_line: 241
+    end_line: 273
     matcher: 2-aho
     rule_length: 299
     matched_length: 299

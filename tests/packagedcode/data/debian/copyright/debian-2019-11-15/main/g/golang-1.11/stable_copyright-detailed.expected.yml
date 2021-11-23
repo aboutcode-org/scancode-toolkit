@@ -26,7 +26,7 @@ declared_license:
 license_expression: (bsd-new AND google-patent-license-golang) AND mit AND (bsd-new AND google-patent-license-golang)
   AND (bsd-new AND google-patent-license-golang) AND (bsd-new AND google-patent-license-golang)
   AND bsd-simplified AND (bsd-new AND google-patent-license-golang) AND (bsd-new AND google-patent-license-golang)
-  AND sunpro AND mpeg-ssg AND multics AND (apache-2.0 AND apache-2.0) AND bsd-2-clause-views
+  AND sunpro AND mpeg-ssg AND other-permissive AND (apache-2.0 AND apache-2.0) AND bsd-2-clause-views
   AND cc-by-3.0 AND cc-by-3.0 AND bsd-new AND (bsd-new AND google-patent-license-golang)
 copyright: |
   © 2009, 2010, The Go Authors. All rights reserved.
@@ -60,27 +60,27 @@ copyright: |
   2014 Canonical Ltd
   2014 Tianon Gravi <tianon@debian.org>
 matches:
-  - score: '15.38'
-    start_line: 1
-    end_line: 2
-    matcher: 3-seq
-    rule_length: 104
-    matched_length: 16
-    match_coverage: '15.38'
+  - score: '100.0'
+    start_line: 187
+    end_line: 188
+    matcher: 1-hash
+    rule_length: 17
+    matched_length: 17
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: multics.LICENSE
-    license_expression: multics
+    identifier: other-permissive_292.RULE
+    license_expression: other-permissive
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      Permission to use, copy, and distribute these [images] for any purpose and
+      Permission to use, copy, and distribute these images for any purpose and
       without fee is hereby granted.
   - score: '100.0'
-    start_line: 1
-    end_line: 25
+    start_line: 226
+    end_line: 250
     matcher: 1-hash
     rule_length: 212
     matched_length: 212
@@ -120,8 +120,8 @@ matches:
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 3
-    end_line: 27
+    start_line: 255
+    end_line: 279
     matcher: 2-aho
     rule_length: 212
     matched_length: 212
@@ -161,8 +161,8 @@ matches:
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '95.0'
-    start_line: 29
-    end_line: 42
+    start_line: 281
+    end_line: 294
     matcher: 2-aho
     rule_length: 131
     matched_length: 131
@@ -191,8 +191,8 @@ matches:
       License for this implementation of Go shall terminate as of the date
       such litigation is filed.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 296
+    end_line: 296
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -206,15 +206,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: apache-2.0'
-  - score: '95.41'
-    start_line: 1
-    end_line: 14
-    matcher: 3-seq
-    rule_length: 109
-    matched_length: 104
-    match_coverage: '95.41'
+  - score: '100.0'
+    start_line: 297
+    end_line: 310
+    matcher: 1-hash
+    rule_length: 105
+    matched_length: 105
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: apache-2.0_43.RULE
+    identifier: apache-2.0_1019.RULE
     license_expression: apache-2.0
     is_license_text: no
     is_license_notice: yes
@@ -234,11 +234,11 @@ matches:
       See the License for the specific language governing permissions and
       limitations under the License.
 
-      On Debian systems, the Apache License, Version 2.0 can be found [at]
+      On Debian systems, the Apache License, Version 2.0 can be found at
       /usr/share/common-licenses/Apache-2.0.
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 313
+    end_line: 329
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -270,8 +270,8 @@ matches:
       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
       THE SOFTWARE.
   - score: '100.0'
-    start_line: 5
-    end_line: 24
+    start_line: 336
+    end_line: 355
     matcher: 2-aho
     rule_length: 183
     matched_length: 183
@@ -305,15 +305,15 @@ matches:
       LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
-  - score: '98.06'
-    start_line: 1
-    end_line: '19'
-    matcher: 3-seq
-    rule_length: 155
+  - score: '100.0'
+    start_line: 358
+    end_line: 376
+    matcher: 1-hash
+    rule_length: 152
     matched_length: 152
-    match_coverage: '98.06'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: mpeg-ssg.LICENSE
+    identifier: mpeg-ssg_1.RULE
     license_expression: mpeg-ssg
     is_license_text: yes
     is_license_notice: no
@@ -341,8 +341,8 @@ matches:
       general enough such that they are unavoidable regardless of implementation
       design.
   - score: '97.84'
-    start_line: 1
-    end_line: 327
+    start_line: 379
+    end_line: 705
     matcher: 3-seq
     rule_length: 2737
     matched_length: 2678
@@ -684,8 +684,8 @@ matches:
            are deemed to be included in the License; this License is not
            intended to restrict the license of any rights under applicable law.
   - score: '98.1'
-    start_line: 1
-    end_line: 24
+    start_line: 708
+    end_line: 731
     matcher: 1-hash
     rule_length: 206
     matched_length: 206
@@ -724,8 +724,8 @@ matches:
       of the authors and should not be interpreted as representing official policies,
       either expressed or implied, of
   - score: '100.0'
-    start_line: 3
-    end_line: 6
+    start_line: 171
+    end_line: 174
     matcher: 2-aho
     rule_length: 25
     matched_length: 25
@@ -743,15 +743,15 @@ matches:
       Permission to use, copy, modify, and distribute this
       software is freely granted, provided that this notice
       is preserved.
-  - score: '65.0'
-    start_line: 7
-    end_line: 8
-    matcher: 3-seq
-    rule_length: 20
-    matched_length: 13
-    match_coverage: '65.0'
+  - score: '100.0'
+    start_line: 209
+    end_line: 211
+    matcher: 2-aho
+    rule_length: 17
+    matched_length: 17
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: cc-by-3.0_19.RULE
+    identifier: cc-by-3.0_111.RULE
     license_expression: cc-by-3.0
     is_license_text: no
     is_license_notice: yes
@@ -759,5 +759,6 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      the
+      are covered by the
       Creative Commons Attribution 3.0 <http://creativecommons.org/licenses/by/3.0>
+      license.

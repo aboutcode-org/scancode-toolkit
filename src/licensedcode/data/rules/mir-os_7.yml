@@ -1,0 +1,16 @@
+license_expression: mir-os
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 10
+notes: license text as published by SPDX
+ignorable_urls:
+    - http://mirbsd.de/MirOS-Licence
+    - http://opensource.org/licenses/miros.html
+    - http://www.debian.org/social_contract#guidelines
+    - http://www.ifross.de/ifross_html/lizenzcenter.html
+    - http://www.opendefinition.org/1.0
+    - http://www.opendefinition.org/licenses
+    - http://www.opensource.org/docs/osd
+    - http://www.opensource.org/licenses/historical.php
+    - https://www.gnu.org/philosophy/free-doc.html
+    - https://www.gnu.org/philosophy/free-sw.html

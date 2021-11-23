@@ -1,0 +1,11 @@
+key: qca-linux-firmware
+short_name: QCA Linux Firmware License
+name: QCA Linux Firmware License
+category: Proprietary Free
+owner: Qualcomm Atheros
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.QualcommAtheros_ath10k
+spdx_license_key: LicenseRef-scancode-qca-linux-firmware
+text_urls:
+    - https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.QualcommAtheros_ar3k
+ignorable_urls:
+    - git://git.kernel.org/pub/scm/linux/kernel/git/firmware/

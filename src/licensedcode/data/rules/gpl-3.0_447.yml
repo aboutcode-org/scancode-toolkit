@@ -1,0 +1,7 @@
+license_expression: gpl-3.0
+is_license_text: yes
+relevance: 100
+notes: this text is damaged by some script...
+ignorable_urls:
+    - https://www.gnu.org/licenses/
+    - https://www.gnu.org/philosophy/why-not-lgpl.html

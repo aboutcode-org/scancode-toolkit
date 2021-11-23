@@ -1,0 +1,11 @@
+key: amd-linux-firmware-export
+short_name: AMD Linux Firmware Export License
+name: AMD Linux Firmware Export License
+category: Proprietary Free
+owner: Advanced Micro Devices
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.amd-ucode
+spdx_license_key: LicenseRef-scancode-amd-linux-firmware-export
+text_urls:
+    - https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.amd-sev
+ignorable_urls:
+    - http://www.bis.doc.gov/

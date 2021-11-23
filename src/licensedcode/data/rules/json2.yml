@@ -1,4 +1,5 @@
 license_expression: json
 is_license_text: yes
+relevance: 100
 ignorable_urls:
     - http://www.json.org/license.html

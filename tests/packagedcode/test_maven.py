@@ -214,7 +214,7 @@ class TestMavenMisc(BaseMavenCase):
         manifest_resource = [r for r in codebase.walk() if r.name == 'pom.xml'][0]
         packages = list(maven.MavenPomPackage.recognize(manifest_resource.location))
         assert packages
-        manifest_resource.packages.append(packages[0].to_dict())
+        manifest_resource.package_manifests.append(packages[0].to_dict())
         manifest_resource.save(codebase)
         proot = maven.MavenPomPackage.get_package_root(manifest_resource, codebase)
         assert proot.name == 'activiti-image-generator-7-201802-EA-sources.jar-extract'

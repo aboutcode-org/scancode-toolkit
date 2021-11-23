@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://raw.githubusercontent.com/shendurelab/MIPGEN/4d6c342bbf30db99754509935d11bbb9b19c335e/LICENSE.txt
+ignorable_emails:
+    - license@uw.edu

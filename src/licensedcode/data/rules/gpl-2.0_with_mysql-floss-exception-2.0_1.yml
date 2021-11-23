@@ -1,0 +1,6 @@
+license_expression: gpl-2.0 WITH mysql-floss-exception-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.mysql.com/about/legal/licensing/foss-exception.html
+    - https://www.gnu.org/licenses/old-licenses/gpl-2.0.html

@@ -18,9 +18,12 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "Samsung grants permission to use and redistribute aforementioned firmware\n\
-      \ files for the use with Exynos series devices, but not as part of the Linux\n kernel,\
-      \ or in any other form which would require these files themselves\n to be covered by the\
-      \ terms of the GNU General Public License.\n \n These firmware files are distributed in\
-      \ the hope that they will be\n useful, but WITHOUT ANY WARRANTY; without even the implied\
-      \ warranty\n of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+    matched_text: |
+      Samsung grants permission to use and redistribute aforementioned firmware
+      files for the use with Exynos series devices, but not as part of the Linux
+      kernel, or in any other form which would require these files themselves
+      to be covered by the terms of the GNU General Public License.
+
+      These firmware files are distributed in the hope that they will be
+      useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+      of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

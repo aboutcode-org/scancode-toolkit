@@ -1,0 +1,7 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Seen in https://source.chromium.org/chromium/chromium/src/+/main:third_party/fft2d/LICENSE
+    and http://www.kurims.kyoto-u.ac.jp/~ooura/fft.html Redistribution does not allow modification,
+    in contrast with the notice from the website, so this is a proprietary-license license.
+ignorable_urls:
+    - http://momonga.t.u-tokyo.ac.jp/~ooura/fft.html

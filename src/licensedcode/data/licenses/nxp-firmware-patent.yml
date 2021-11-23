@@ -1,0 +1,9 @@
+key: nxp-firmware-patent
+short_name: NXP Firmware with Patent License
+name: NXP Firmware with Patent License
+category: Proprietary Free
+owner: NXP
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.sdma_firmware
+spdx_license_key: LicenseRef-scancode-nxp-firmware-patent
+ignorable_urls:
+    - git://git.kernel.org/pub/scm/linux/kernel/git/firmware/

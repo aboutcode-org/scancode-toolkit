@@ -13,7 +13,7 @@ jobs:
     - template: etc/ci/azure-posix.yml
       parameters:
           job_name: core_tests
-          image_name: ubuntu-16.04
+          image_name: ubuntu-20.04
           python_versions: ['3.6']
           test_suites:
               misc: |
@@ -61,11 +61,6 @@ jobs:
                 bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_detection_datadriven_external.py
 
-              license_validate_basic: |
-                bin/pytest -n 3 -vvs --test-suite=validate \
-                  tests/licensedcode/test_detection_validate.py \
-                  -k TestValidateLicenseBasic
-
               license_validate_ext_1: |
                 bin/pytest -n 3 -vvs --test-suite=validate \
                   tests/licensedcode/test_detection_validate.py \
@@ -94,6 +89,7 @@ jobs:
               license_cache: |
                 bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_zzzz_cache.py
+
 
     - template: etc/ci/azure-posix.yml
       parameters:
@@ -144,15 +140,6 @@ jobs:
           test_suites:
               all: Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
 
-    - template: etc/ci/azure-posix.yml
-      parameters:
-          job_name: ubuntu16
-          image_name: ubuntu-16.04
-          python_versions: ['3.7', '3.8', '3.9']
-          python_architecture: x64
-          test_suites:
-              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-
 
     - template: etc/ci/azure-posix.yml
       parameters:
@@ -171,6 +158,28 @@ jobs:
           python_architecture: x64
           test_suites:
               all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+
+
+################################################################################
+# Test using many version of Click to work around regressions in API
+################################################################################
+
+
+    - template: etc/ci/azure-posix.yml
+      parameters:
+          job_name: ubuntu20_test_all_supported_click_versions
+          image_name: ubuntu-20.04
+          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          python_architecture: x64
+          test_suites:
+              click_versions: |
+                for clk_ver in 8.0.1 7.1.2 7.1.1 7.1 6.7; 
+                 do
+                  bin/pip install click==$clk_ver;
+                  bin/scancode -i samples/ -n3 --json foo.json; 
+                  bin/scancode -i --verbose samples/ -n3 --json foo.json; 
+                 done
+
 
 
 ################################################################################
@@ -301,7 +310,7 @@ jobs:
 #
 #    - job: Build_release_archive_py3
 #      pool:
-#          vmImage: ubuntu-16.04
+#          vmImage: ubuntu-18.04
 #      steps:
 #          - checkout: self
 #            fetchDepth: 10

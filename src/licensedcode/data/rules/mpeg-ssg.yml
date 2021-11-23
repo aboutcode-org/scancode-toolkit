@@ -1,4 +1,5 @@
 license_expression: mpeg-ssg
 is_license_reference: yes
+relevance: 100
 ignorable_urls:
     - http://www.mpeg.org/MPEG/video/mssg-free-mpeg-software.html

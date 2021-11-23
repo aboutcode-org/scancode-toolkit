@@ -1,0 +1,7 @@
+license_expression: ssleay-windows
+is_license_text: yes
+ignorable_authors:
+    - Tim Hudson (tjh@cryptsoft.com)
+ignorable_emails:
+    - eay@cryptsoft.com
+    - tjh@cryptsoft.com

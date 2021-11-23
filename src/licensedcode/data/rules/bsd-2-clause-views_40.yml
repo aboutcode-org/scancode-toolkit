@@ -1,0 +1,6 @@
+license_expression: bsd-2-clause-views
+is_license_notice: yes
+referenced_filenames:
+    - License.txt
+ignorable_urls:
+    - http://www.freebsd.org/copyright/freebsd-license.html

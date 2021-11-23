@@ -516,7 +516,7 @@ patterns = [
     # COPYRIGHT
     ############################################################################
 
-    # first some exceptions
+    # some exceptions
 
     # NOT a copyright Copyright.txt : treat as NN
     (r'^Copyright\.txt$', 'NN'),
@@ -581,6 +581,10 @@ patterns = [
     # JUNK are things to ignore
     ############################################################################
 
+    # path with trailing year-like are NOT a year as in
+    # Landroid/icu/impl/IDNA2003 : treat as JUNK
+    (r'^[^\\/]+[\\/][^\\/]+[\\/].*$', 'JUNK'),
+
     # Combo of many (3+) letters and punctuations groups without spaces is likely junk
     # "AEO>>,o>>'!xeoI?o?O1/4thuA/"
     # (r'((\w+\W+){3,})+', 'JUNK'),
@@ -613,7 +617,7 @@ patterns = [
     (r'^Agreement$', 'JUNK'),
     (r'^Usage$', 'JUNK'),
     (r'^Please$', 'JUNK'),
-    (r'^Based$', 'JUNK'),
+    (r'^\(?Based$', 'JUNK'),
     (r'^Upstream$', 'JUNK'),
     (r'^Files?$', 'JUNK'),
     (r'^Filename:?$', 'JUNK'),
@@ -1040,6 +1044,8 @@ patterns = [
     (r'^JMagnetic$', 'NN'),
     (r'^Joint$', 'NN'),
     (r'^Jsunittest$', 'NN'),
+    (r'^List$', 'NN'),
+    (r'^Set$', 'NN'),
     (r'^Last$', 'NN'),
     (r'^LAW', 'NN'),
     (r'^Legal$', 'NN'),
@@ -1134,6 +1140,7 @@ patterns = [
     (r'^The$', 'NN'),
     (r'^THE', 'NN'),
     (r'^These$', 'NN'),
+    (r'^[tT]here$', 'NN'),
     (r'^This$', 'NN'),
     (r'^THIS$', 'NN'),
     (r'^Those$', 'NN'),
@@ -1584,7 +1591,7 @@ patterns = [
     (r'^[A-Z]+[.][A-Z][a-z]+[,]?$', 'NNP'),
 
     # proper noun with apostrophe ': D'Orleans, D'Arcy, T'so, Ts'o
-    (r"^[A-Z][[a-z]?['][A-Z]?[a-z]+[,.]?$", 'NNP'),
+    (r"^[A-Z][a-z]?['][A-Z]?[a-z]+[,.]?$", 'NNP'),
 
     # proper noun with apostrophe ': d'Itri
     (r"^[a-z]['][A-Z]?[a-z]+[,\.]?$", 'NNP'),
@@ -2211,7 +2218,8 @@ grammar = """
     COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>  <NNP>} #22792
 
     # Copyright (c) 2017 odahcam
-    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN> <ALLRIGHTRESERVED>?} #22793
+    # or Copyright (c) 2019-2021, Open source contributors.
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <CONTRIBUTORS>? <ALLRIGHTRESERVED>?} #22793
 
     # Licensed material of Foobar Company, All Rights Reserved, (C) 2005
     COPYRIGHT: {<COMPANY>  <ALLRIGHTRESERVED>  <COPYRIGHT>} #22794

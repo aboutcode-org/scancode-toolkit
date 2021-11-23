@@ -27,14 +27,13 @@ declared_license:
   - BSD-3-clause-Cambridge
   - Custom
   - Expat
-license_expression: (apache-2.0 AND apache-2.0 AND apache-2.0) AND ((apache-2.0 AND apache-2.0
-  AND apache-2.0) AND bsd-new) AND bsd-new AND ((gpl-3.0-plus AND gpl-3.0-plus AND gpl-2.0 AND
-  gpl-3.0) OR bison-exception-2.2) AND bsd-unchanged AND ((apache-2.0 AND apache-2.0 AND apache-2.0)
-  AND (apache-2.0 AND hs-regexp)) AND (apache-2.0 AND apache-2.0 AND apache-2.0) AND bsd-simplified-darwin
-  AND ((apache-2.0 AND apache-2.0 AND apache-2.0) AND public-domain) AND ((apache-2.0 AND apache-2.0
-  AND apache-2.0) AND (x11-keith-packard AND historical)) AND ((apache-2.0 AND apache-2.0 AND
-  apache-2.0) AND zeusbench) AND ((apache-2.0 AND apache-2.0 AND apache-2.0) OR (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0)) AND mit AND (apache-2.0 AND apache-2.0 AND apache-2.0)
+license_expression: (apache-2.0 AND apache-2.0) AND ((apache-2.0 AND apache-2.0) AND bsd-new)
+  AND bsd-new AND ((gpl-3.0-plus AND gpl-3.0-plus) OR bison-exception-2.2) AND bsd-unchanged
+  AND ((apache-2.0 AND apache-2.0) AND (apache-2.0 AND hs-regexp)) AND (apache-2.0 AND apache-2.0)
+  AND bsd-simplified-darwin AND ((apache-2.0 AND apache-2.0) AND public-domain) AND ((apache-2.0
+  AND apache-2.0) AND (x11-keith-packard AND historical)) AND ((apache-2.0 AND apache-2.0) AND
+  zeusbench) AND ((apache-2.0 AND apache-2.0) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND mit AND
+  (apache-2.0 AND apache-2.0)
 copyright: |
   Copyright 2019 The Apache Software Foundation
   2019 The Apache Software Foundation
@@ -62,8 +61,8 @@ copyright: |
   2008 Stefan Fritsch
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 71
+    end_line: 71
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -78,14 +77,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: apache-2.0'
   - score: '100.0'
-    start_line: 1
-    end_line: 14
-    matcher: 2-aho
-    rule_length: 119
-    matched_length: 119
+    start_line: 72
+    end_line: 88
+    matcher: 1-hash
+    rule_length: 145
+    matched_length: 145
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: apache-2.0_663.RULE
+    identifier: apache-2.0_971.RULE
     license_expression: apache-2.0
     is_license_text: no
     is_license_notice: yes
@@ -107,27 +106,12 @@ matches:
       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
       See the License for the specific language governing permissions and
       limitations under the License.
-  - score: '100.0'
-    start_line: 16
-    end_line: 17
-    matcher: 2-aho
-    rule_length: 26
-    matched_length: 26
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: apache-2.0_664.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
+
       On Debian systems, the full text of the Apache Software License version 2 can
       be found in the file `/usr/share/common-licenses/Apache-2.0'.
   - score: '100.0'
-    start_line: 4
-    end_line: 13
+    start_line: 94
+    end_line: 103
     matcher: 2-aho
     rule_length: 106
     matched_length: 106
@@ -152,8 +136,8 @@ matches:
         arising in any way out of the use of this software, even if advised of the
         possibility of such damage
   - score: '100.0'
-    start_line: 13
-    end_line: 37
+    start_line: 118
+    end_line: 142
     matcher: 2-aho
     rule_length: 214
     matched_length: 214
@@ -193,8 +177,8 @@ matches:
       ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 27
-    end_line: 46
+    start_line: 172
+    end_line: '191'
     matcher: 2-aho
     rule_length: 168
     matched_length: 168
@@ -229,8 +213,8 @@ matches:
       OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
       SOFTWARE.
   - score: '100.0'
-    start_line: 52
-    end_line: 61
+    start_line: '197'
+    end_line: 206
     matcher: 2-aho
     rule_length: 87
     matched_length: 87
@@ -255,8 +239,8 @@ matches:
       OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",
       WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 209
+    end_line: 209
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -270,15 +254,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-3+'
-  - score: '100.0'
-    start_line: 1
-    end_line: 9
-    matcher: 2-aho
-    rule_length: 79
-    matched_length: 79
+  - score: '99.0'
+    start_line: 210
+    end_line: 222
+    matcher: 1-hash
+    rule_length: 105
+    matched_length: 105
     match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_96.RULE
+    rule_relevance: 99
+    identifier: gpl-3.0-plus_483.RULE
     license_expression: gpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -295,43 +279,13 @@ matches:
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more details.
+
+      On Debian systems, the full text of the GNU General Public
+      License version 2 can be found in the file
+      `/usr/share/common-licenses/GPL-3'.
   - score: '100.0'
-    start_line: 11
-    end_line: 12
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_660.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      the GNU General Public
-      License version 2
-  - score: '33.0'
-    start_line: 13
-    end_line: 13
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 33
-    identifier: gpl-3.0_93.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-3'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 224
+    end_line: 224
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -346,14 +300,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 9
-    matcher: 2-aho
-    rule_length: 79
-    matched_length: 79
+    start_line: 225
+    end_line: 237
+    matcher: 1-hash
+    rule_length: 105
+    matched_length: 105
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_90.RULE
+    identifier: gpl-2.0-plus_986.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -370,43 +324,13 @@ matches:
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more details.
+
+      On Debian systems, the full text of the GNU General Public
+      License version 2 can be found in the file
+      `/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
-    start_line: 11
-    end_line: 12
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_660.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      the GNU General Public
-      License version 2
-  - score: '100.0'
-    start_line: 13
-    end_line: 13
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 33
+    start_line: 240
+    end_line: 272
     matcher: 1-hash
     rule_length: 210
     matched_length: 210
@@ -454,8 +378,8 @@ matches:
 
       Mark Cox, mark@ukweb.com, Allow relative URLs even when no base specified
   - score: '100.0'
-    start_line: 4
-    end_line: 27
+    start_line: 279
+    end_line: 302
     matcher: 2-aho
     rule_length: 217
     matched_length: 217
@@ -493,15 +417,15 @@ matches:
       LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
-  - score: '95.56'
-    start_line: 1
-    end_line: 4
-    matcher: 3-seq
-    rule_length: 45
-    matched_length: 43
-    match_coverage: '95.56'
+  - score: '100.0'
+    start_line: 306
+    end_line: 309
+    matcher: 2-aho
+    rule_length: 47
+    matched_length: 47
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: apache-2.0_44.RULE
+    identifier: apache-2.0_1021.RULE
     license_expression: apache-2.0
     is_license_text: no
     is_license_notice: yes
@@ -509,13 +433,13 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      This software was submitted by Cisco Systems to the Apache [Software] [Foundation] in July
+      This software was submitted by Cisco Systems to the Apache Software Foundation in July
       1997.  Future revisions and derivatives of this source code must
       acknowledge Cisco Systems as the original contributor of this module.
-      All other licensing and usage conditions are those of the Apache
+      All other licensing and usage conditions are those of the Apache Software Foundation.
   - score: '100.0'
-    start_line: 12
-    end_line: 30
+    start_line: 317
+    end_line: 335
     matcher: 2-aho
     rule_length: 148
     matched_length: 148
@@ -548,15 +472,15 @@ matches:
       sources, credits must appear in the documentation.
 
       4. This notice may not be removed or altered.
-  - score: '99.52'
-    start_line: 1
-    end_line: 22
-    matcher: 3-seq
+  - score: '100.0'
+    start_line: 370
+    end_line: 391
+    matcher: 1-hash
     rule_length: 208
-    matched_length: 207
-    match_coverage: '99.52'
+    matched_length: 208
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-unchanged_1.RULE
+    identifier: bsd-unchanged_4.RULE
     license_expression: bsd-unchanged
     is_license_text: yes
     is_license_notice: no
@@ -574,7 +498,7 @@ matches:
          notice, this list of conditions and the following disclaimer in the
          documentation and/or other materials provided with the distribution.
       3. The name of the author may not be used to endorse or promote products
-         derived from this software [withough] specific prior written permission
+         derived from this software withough specific prior written permission
 
       THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
       IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
@@ -587,8 +511,8 @@ matches:
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
       THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 25
+    start_line: 395
+    end_line: 419
     matcher: 1-hash
     rule_length: 214
     matched_length: 214
@@ -628,8 +552,8 @@ matches:
       ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 12
+    start_line: 422
+    end_line: 433
     matcher: 2-aho
     rule_length: 106
     matched_length: 106
@@ -656,8 +580,8 @@ matches:
         This special exception was added by the Free Software Foundation in
         version 2.2 of Bison.  */
   - score: '100.0'
-    start_line: 1
-    end_line: 16
+    start_line: 439
+    end_line: 454
     matcher: 1-hash
     rule_length: 161
     matched_length: 161

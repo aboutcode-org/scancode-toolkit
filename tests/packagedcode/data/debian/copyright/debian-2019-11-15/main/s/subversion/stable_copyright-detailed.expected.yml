@@ -21,9 +21,8 @@ declared_license:
   - Unicode
   - AFL-3
 license_expression: (apache-2.0 AND apache-2.0) AND (bsd-new OR (apache-2.0 AND apache-2.0))
-  AND other-permissive AND bsd-new AND other-copyleft AND (gpl-2.0-plus AND gpl-1.0-plus AND
-  gpl-2.0 AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0) AND afl-3.0 AND (mit AND unicode) AND
-  bsd-simplified AND bsd-new AND bsd-simplified
+  AND other-permissive AND bsd-new AND other-permissive AND (gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0-plus
+  AND gpl-3.0) AND afl-3.0 AND (mit AND unicode) AND bsd-simplified AND bsd-new AND bsd-simplified
 copyright: |
   Apache Software Foundation
   2007 Max Bowsher
@@ -53,8 +52,8 @@ copyright: |
   2010-2014, Salvatore Sanfilippo <anitrez at gmail dot com>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 21
+    end_line: 23
     matcher: 1-hash
     rule_length: 28
     matched_length: 28
@@ -71,27 +70,27 @@ matches:
       Permission to use, copy, modify, and distribute this software
       for any purpose and without fee is hereby granted.  The author
       disclaims all warranties with regard to this software.
-  - score: '20.0'
-    start_line: 1
-    end_line: 2
-    matcher: 3-seq
-    rule_length: 45
-    matched_length: 9
-    match_coverage: '20.0'
+  - score: '100.0'
+    start_line: 33
+    end_line: 34
+    matcher: 1-hash
+    rule_length: 22
+    matched_length: 22
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: other-copyleft_12.RULE
-    license_expression: other-copyleft
+    identifier: other-permissive_323.RULE
+    license_expression: other-permissive
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      Permission is granted to [everyone] [to] [use] and distribute [this] [work],
-      [without] [limitation], modified or unmodified,
+      Permission is granted to everyone to use and distribute this work,
+      without limitation, modified or unmodified, in any way, for any purpose.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 78
+    end_line: 78
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -105,57 +104,27 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2+'
-  - score: '90.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: gpl-1.0-plus_350.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: of the GPL
-  - score: '95.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 95
-    identifier: gpl-2.0_183.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: GPL version 2
   - score: '100.0'
-    start_line: 2
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
+    start_line: 79
+    end_line: 80
+    matcher: 1-hash
+    rule_length: 22
+    matched_length: 22
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
+    identifier: gpl-2.0_1325.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
+    is_license_reference: no
+    is_license_tag: yes
     is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2'.
+    matched_text: |
+      On Debian systems, the complete text of the GPL version 2 license can be
+      found in `/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 82
+    end_line: 82
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -169,27 +138,27 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-3+'
-  - score: '60.0'
-    start_line: 1
-    end_line: 2
-    matcher: 3-seq
-    rule_length: 20
-    matched_length: 12
-    match_coverage: '60.0'
+  - score: '100.0'
+    start_line: 83
+    end_line: 84
+    matcher: 1-hash
+    rule_length: 22
+    matched_length: 22
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0_238.RULE
+    identifier: gpl-3.0_480.RULE
     license_expression: gpl-3.0
     is_license_text: no
-    is_license_notice: yes
+    is_license_notice: no
     is_license_reference: no
-    is_license_tag: no
+    is_license_tag: yes
     is_license_intro: no
     matched_text: |
-      GPL [version] [3] license can be
+      On Debian systems, the complete text of the GPL version 3 license can be
       found in `/usr/share/common-licenses/GPL-3'.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 86
+    end_line: 86
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -204,8 +173,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: apache-2.0'
   - score: '100.0'
-    start_line: 1
-    end_line: 16
+    start_line: 87
+    end_line: 102
     matcher: 1-hash
     rule_length: 119
     matched_length: 119
@@ -236,8 +205,8 @@ matches:
       specific language governing permissions and limitations
       under the License.
   - score: '100.0'
-    start_line: 3
-    end_line: 27
+    start_line: 107
+    end_line: 131
     matcher: 2-aho
     rule_length: 204
     matched_length: 204
@@ -277,8 +246,8 @@ matches:
       OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
       IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 3
-    end_line: 22
+    start_line: 136
+    end_line: 155
     matcher: 2-aho
     rule_length: 183
     matched_length: 183
@@ -313,8 +282,8 @@ matches:
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
       SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 158
+    end_line: 174
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -345,15 +314,15 @@ matches:
       LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
       FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
       DEALINGS IN THE SOFTWARE.
-  - score: '96.15'
-    start_line: 1
-    end_line: 32
-    matcher: 3-seq
-    rule_length: 338
+  - score: '100.0'
+    start_line: 177
+    end_line: 208
+    matcher: 1-hash
+    rule_length: 325
     matched_length: 325
-    match_coverage: '96.15'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: unicode_42.RULE
+    identifier: unicode_56.RULE
     license_expression: unicode
     is_license_text: yes
     is_license_notice: no
@@ -394,8 +363,8 @@ matches:
       registered in some jurisdictions. All other trademarks and registered
       trademarks mentioned herein are the property of their respective owners.
   - score: '100.0'
-    start_line: 1
-    end_line: 186
+    start_line: 211
+    end_line: 396
     matcher: 1-hash
     rule_length: 1623
     matched_length: 1623

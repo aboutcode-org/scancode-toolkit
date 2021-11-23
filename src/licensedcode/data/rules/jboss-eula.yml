@@ -1,4 +1,5 @@
 license_expression: jboss-eula
 is_license_reference: yes
+relevance: 100
 ignorable_urls:
     - http://repository.jboss.org/licenses/jbossorg-eula.txt

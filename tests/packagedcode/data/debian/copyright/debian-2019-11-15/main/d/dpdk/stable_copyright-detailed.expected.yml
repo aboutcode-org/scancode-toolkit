@@ -16,8 +16,8 @@ declared_license:
   - BSD-2-clause
   - BSD-3-clause
 license_expression: bsd-new AND (gpl-2.0 AND gpl-2.0) AND bsd-simplified AND (bsd-new OR (gpl-2.0
-  AND gpl-2.0)) AND (bsd-new OR (lgpl-2.1 AND lgpl-2.0-plus AND lgpl-2.1)) AND bsd-simplified
-  AND (gpl-2.0 AND gpl-2.0) AND (gpl-3.0 AND gpl-3.0) AND gpl-2.0-plus
+  AND gpl-2.0)) AND (bsd-new OR (lgpl-2.1 AND lgpl-2.1)) AND bsd-simplified AND (gpl-2.0 AND
+  gpl-2.0) AND (gpl-3.0 AND gpl-3.0) AND gpl-2.0-plus
 copyright: |
   2008-2014 Cisco Systems, Inc.
   2012-2014 6WIND S.A.
@@ -42,8 +42,8 @@ copyright: |
   2010-2016 Russ Allbery <rra@debian.org>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 66
+    end_line: 66
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -58,8 +58,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2'
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 67
+    end_line: 68
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -75,15 +75,15 @@ matches:
     matched_text: |
       On Debian systems, the complete text of the GNU General
       Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
-  - score: '95.38'
-    start_line: 1
-    end_line: 7
-    matcher: 3-seq
-    rule_length: 65
-    matched_length: 62
-    match_coverage: '95.38'
+  - score: '100.0'
+    start_line: 71
+    end_line: 77
+    matcher: 1-hash
+    rule_length: 66
+    matched_length: 66
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_61.RULE
+    identifier: gpl-2.0-plus_1040.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -91,16 +91,16 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify
+      This package is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation; either version 2 of the License, or
       (at your option) any later version.
 
       On Debian systems, the complete text of the GNU General Public
-      License [version] [2] can be found in "/usr/share/common-licenses/GPL-2".
+      License version 2 can be found in "/usr/share/common-licenses/GPL-2".
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 79
+    end_line: 79
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -115,8 +115,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-3'
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 80
+    end_line: 81
     matcher: 1-hash
     rule_length: 24
     matched_length: 24
@@ -133,8 +133,8 @@ matches:
       On Debian systems, the complete text of the GNU General
       Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 83
+    end_line: 83
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -149,42 +149,26 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-2.1'
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
+    start_line: 84
+    end_line: 85
+    matcher: 1-hash
+    rule_length: 26
+    matched_length: 26
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.0-plus_215.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      the GNU Library General Public
-      License
-  - score: '100.0'
-    start_line: 2
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1_82.RULE
+    identifier: lgpl-2.1_307.RULE
     license_expression: lgpl-2.1
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text: usr/share/common-licenses/LGPL-2.1'.
+    matched_text: |
+      On Debian systems, the complete text of the GNU Library General Public
+      License can be found in the file `/usr/share/common-licenses/LGPL-2.1'.
   - score: '100.0'
-    start_line: 1
-    end_line: 24
+    start_line: 88
+    end_line: 111
     matcher: 1-hash
     rule_length: 185
     matched_length: 185
@@ -223,8 +207,8 @@ matches:
       ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 25
+    start_line: 114
+    end_line: 138
     matcher: 1-hash
     rule_length: 212
     matched_length: 212

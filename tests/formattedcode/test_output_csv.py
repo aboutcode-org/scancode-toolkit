@@ -119,7 +119,7 @@ def test_can_process_live_scan_for_packages_with_root():
     args = ['--package', test_dir, '--csv', result_file]
     run_scan_plain(args)
     expected_file = test_env.get_test_loc('csv/packages/expected.csv')
-    check_csvs(result_file, expected_file)
+    check_csvs(result_file, expected_file, regen=False)
 
 
 def test_output_can_handle_non_ascii_paths():

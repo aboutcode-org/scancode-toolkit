@@ -1,0 +1,3 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://github.com/QuantForever/MarketRiskAnalytics/blob/523d0365ad73384a29872ad2c98d476967fd6f5d/StockPriceSim.py

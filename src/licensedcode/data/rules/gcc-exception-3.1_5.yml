@@ -1,0 +1,6 @@
+license_expression: gcc-exception-3.1
+is_license_reference: yes
+relevance: 99
+notes: See https://www.gnu.org/licenses/exceptions.en.html
+ignorable_urls:
+    - https://www.gnu.org/licenses/gcc-exception.html

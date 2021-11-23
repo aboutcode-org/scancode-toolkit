@@ -3,23 +3,23 @@ declared_license:
   - Proprietary_1
   - Proprietary_2
   - GPL-2+
-license_expression: bsd-new AND broadcom-proprietary AND (gpl-2.0-plus AND gpl-2.0-plus)
+license_expression: proprietary-license AND broadcom-proprietary AND (gpl-2.0-plus AND gpl-2.0-plus)
 copyright: |
   2006, Broadcom Corporation
   2015, Raspberry Pi (Trading) Ltd
   2015 Broadcom Corporation
   2015 Paolo Pisati <paolo.pisati@canonical.com>
 matches:
-  - score: '94.33'
-    start_line: 3
-    end_line: 27
-    matcher: 3-seq
-    rule_length: '194'
-    matched_length: 183
-    match_coverage: '94.33'
+  - score: '100.0'
+    start_line: 21
+    end_line: 45
+    matcher: 2-aho
+    rule_length: 203
+    matched_length: 203
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-new_1006.RULE
-    license_expression: bsd-new
+    identifier: proprietary-license_600.RULE
+    license_expression: proprietary-license
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -30,12 +30,12 @@ matches:
       modification, are permitted provided that the following conditions are
       met:
 
-      * [This] [software] [may] [only] [be] [used] [for] [the] [purposes] [of] [developing] [for],
-        [running] [or] [using] a [Raspberry] [Pi] [device].
+      * This software may only be used for the purposes of developing for,
+        running or using a Raspberry Pi device.
       * Redistributions must reproduce the above copyright notice and the
         following disclaimer in the documentation and/or other materials
         provided with the distribution.
-      * Neither the name of [Broadcom] [Corporation] nor the names of its suppliers
+      * Neither the name of Broadcom Corporation nor the names of its suppliers
         may be used to endorse or promote products derived from this software
         without specific prior written permission.
 
@@ -52,8 +52,8 @@ matches:
       USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
       DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 204
+    start_line: 51
+    end_line: 254
     matcher: 1-hash
     rule_length: 1764
     matched_length: 1764
@@ -201,8 +201,8 @@ matches:
       \ and\nrepresentations between them, whether written or oral concerning the Software.\n\
       This Agreement may be changed only by mutual agreement of the parties in\nwriting."
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 260
+    end_line: 260
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -216,15 +216,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2+'
-  - score: '98.41'
-    start_line: 1
-    end_line: 15
-    matcher: 3-seq
+  - score: '100.0'
+    start_line: 261
+    end_line: 275
+    matcher: 1-hash
     rule_length: 126
-    matched_length: 124
-    match_coverage: '98.41'
+    matched_length: 126
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_38.RULE
+    identifier: gpl-2.0-plus_846.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -232,7 +232,7 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify
+      This package is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation; either version 2 of the License, or
       (at your option) any later version.
