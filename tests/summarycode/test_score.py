@@ -31,7 +31,7 @@ test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def make_test_function(test_name, test_dir, expected_file, regen=True):
+def make_test_function(test_name, test_dir, expected_file, regen=False):
     """
     Build and return a test function closing on tests arguments and the function
     name. Create only a single function for multiple tests (e.g. copyrights and
@@ -65,7 +65,7 @@ def make_test_function(test_name, test_dir, expected_file, regen=True):
     return closure_test_function, test_name
 
 
-def build_tests(test_base_dir, clazz, regen=True):
+def build_tests(test_base_dir, clazz, regen=False):
     """
     Dynamically build test methods from a sequence of CopyrightTest and attach
     these method to the clazz test class.
@@ -96,4 +96,4 @@ class TestLicenseScore(FileDrivenTesting):
     pass
 
 
-build_tests(test_base_dir='score', clazz=TestLicenseScore, regen=True)
+build_tests(test_base_dir='score', clazz=TestLicenseScore, regen=False)
