@@ -228,7 +228,7 @@ class Query(object):
         # index of "known positions" (yes really!) to a number of unknown tokens
         # after that known position. For unknowns at the start, the position is
         # using the magic -1 key
-        self.unknowns_by_pos = defaultdict(int)
+        self.unknowns_by_pos = {}
 
         # Span of "known positions" (yes really!) followed by unknown token(s)
         self.unknowns_span = None
@@ -236,7 +236,7 @@ class Query(object):
         # index of "known positions" (yes really!) to a number of stopword
         # tokens after that known position. For stopwords at the start, the
         # position is using the magic -1 key
-        self.stopwords_by_pos = defaultdict(int)
+        self.stopwords_by_pos = {}
 
         # Span of "known positions" (yes really!) followed by stopwords
         self.stopwords_span = None
@@ -355,12 +355,12 @@ class Query(object):
         """
         unknowns = self.unknowns_by_pos
         # yield anything at the start
-        for _ in range(unknowns[-1]):
+        for _ in range(unknowns.get(-1, 0)):
             yield None
 
         for pos, token in enumerate(self.tokens):
             yield token
-            for _ in range(unknowns[pos]):
+            for _ in range(unknowns.get(pos, 0)):
                 yield None
 
     def tokens_by_line(
@@ -386,11 +386,13 @@ class Query(object):
         # bind frequently called functions to local scope
         line_by_pos_append = self.line_by_pos.append
 
-        self_unknowns_by_pos = self.unknowns_by_pos
+        # we use a defaultdict as a convenience at construction time
+        unknowns_by_pos = defaultdict(int)
         unknowns_pos = set()
         unknowns_pos_add = unknowns_pos.add
 
-        self_stopwords_by_pos = self.stopwords_by_pos
+        # we use a defaultdict as a convenience at construction time
+        stopwords_by_pos = defaultdict(int)
         stopwords_pos = set()
         stopwords_pos_add = stopwords_pos.add
 
@@ -443,11 +445,11 @@ class Query(object):
                             # If we have not yet started globally, then all tokens
                             # seen so far are stopwords and we keep a count of them
                             # in the magic "-1" position.
-                            self_stopwords_by_pos[-1] += 1
+                            stopwords_by_pos[-1] += 1
                         else:
                             # here we have a new unknwon token positioned right after
                             # the current known_pos
-                            self_stopwords_by_pos[known_pos] += 1
+                            stopwords_by_pos[known_pos] += 1
                             stopwords_pos_add(known_pos)
                         # we do not track stopwords, only their position
                         continue
@@ -456,11 +458,11 @@ class Query(object):
                             # If we have not yet started globally, then all tokens
                             # seen so far are unknowns and we keep a count of them
                             # in the magic "-1" position.
-                            self_unknowns_by_pos[-1] += 1
+                            unknowns_by_pos[-1] += 1
                         else:
                             # here we have a new unknwon token positioned right after
                             # the current known_pos
-                            self_unknowns_by_pos[known_pos] += 1
+                            unknowns_by_pos[known_pos] += 1
                             unknowns_pos_add(known_pos)
 
                 line_tokens_append(tid)
@@ -492,11 +494,14 @@ class Query(object):
 
             yield line_tokens
 
-        # finally create a Span of positions followed by unkwnons and another
-        # for positions followed by stopwords used for intersection with the
-        # query span to do the scoring matches correctly
+        # finally update the attributes and create a Span of positions followed
+        # by unkwnons and another for positions followed by stopwords used for
+        # intersection with the query span to do the scoring matches correctly
         self.unknowns_span = Span(unknowns_pos)
         self.stopwords_span = Span(stopwords_pos)
+        # also convert the defaultdicts back to plain discts
+        self.unknowns_by_pos = dict(unknowns_by_pos)
+        self.stopwords_by_pos = dict(stopwords_by_pos)
 
     def tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
         """
@@ -760,14 +765,14 @@ class QueryRun(object):
         unknowns = self.query.unknowns_by_pos
         # yield anything at the start only if this is the first query run
         if self.start == 0:
-            for _ in range(unknowns[-1]):
+            for _ in range(unknowns.get(-1, 0)):
                 yield None
 
         for pos, token in self.tokens_with_pos():
             yield token
             if pos == self.end:
                 break
-            for _ in range(unknowns[pos]):
+            for _ in range(unknowns.get(pos, 0)):
                 yield None
 
     def tokens_with_pos(self):

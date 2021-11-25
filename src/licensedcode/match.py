@@ -386,7 +386,7 @@ class LicenseMatch(object):
             stopwords_pos = qspan & query.stopwords_span
             stopwords_pos = (pos for pos in stopwords_pos if pos != qspe)
             qry_stopxpos = query.stopwords_by_pos
-            return any(qry_stopxpos[pos] for pos in stopwords_pos)
+            return any(qry_stopxpos.get(pos, 0) for pos in stopwords_pos)
 
     def qrange(self):
         """
@@ -1217,8 +1217,12 @@ def filter_low_score(matches, min_score=100):
     return kept, discarded
 
 
-def filter_spurious_single_token(matches, query=None, unknown_count=5,
-                                 trace=TRACE_FILTER_SPURIOUS_SINGLE_TOKEN):
+def filter_spurious_single_token(
+    matches,
+    query=None,
+    unknown_count=5,
+    trace=TRACE_FILTER_SPURIOUS_SINGLE_TOKEN,
+):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a `matches` list of LicenseMatch by removing
@@ -1250,9 +1254,10 @@ def filter_spurious_single_token(matches, query=None, unknown_count=5,
         qend = match.qend
 
         # compute the number of unknown tokens before and after this single
-        # matched position note: unknowns_by_pos is a defaultdict(int),
-        # shorts_and_digits is a set of integers
-        before = unknowns_by_pos[qstart - 1]
+        # matched position note:
+        # - unknowns_by_pos is a dict,
+        # - shorts_and_digits is a set of ints
+        before = unknowns_by_pos.get(qstart - 1, 0)
         for p in range(qstart - 1 - unknown_count, qstart):
             if p in shorts_and_digits:
                 before += 1
@@ -1263,7 +1268,7 @@ def filter_spurious_single_token(matches, query=None, unknown_count=5,
             kept.append(match)
             continue
 
-        after = unknowns_by_pos[qstart]
+        after = unknowns_by_pos.get(qstart, 0)
         for p in range(qend, qend + 1 + unknown_count):
             if p in shorts_and_digits:
                 after += 1
