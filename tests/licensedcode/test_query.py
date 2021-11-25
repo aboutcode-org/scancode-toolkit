@@ -9,6 +9,7 @@
 
 import json
 import os
+from collections import defaultdict
 
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
@@ -395,6 +396,31 @@ class TestQueryWithSingleRun(IndexTesting):
         expected = {-1: 2, 0: 4, 1: 3}
         assert dict(q.unknowns_by_pos) == expected
 
+    def test_query_unknowns_by_pos_and_stopwords_are_not_defaultdic_and_not_changed_on_query(self):
+        idx = index.LicenseIndex(
+            [Rule(stored_text='a is the binary')],
+            _legalese=set(['binary']),
+            _spdx_tokens=set()
+        )
+        q = Query(query_string='binary that was a binary', idx=idx)
+        list(q.tokens_by_line())
+        assert q.unknowns_by_pos == {0: 2}
+        assert q.stopwords_by_pos == {0: 1}
+        
+        assert not isinstance(q.unknowns_by_pos, defaultdict)
+        assert not isinstance(q.stopwords_by_pos, defaultdict)
+
+        try:
+            q.unknowns_by_pos[1]
+            assert q.unknowns_by_pos == {0: 2}
+        except KeyError:
+            pass
+        try:
+            q.stopwords_by_pos[1]
+            assert q.stopwords_by_pos == {0: 1}
+        except KeyError:
+            pass
+
 
 class TestQueryWithMultipleRuns(IndexTesting):
 
@@ -768,3 +794,52 @@ class TestQueryWithFullIndex(FileBasedTesting):
         idx = cache.get_index()
         assert len(Query(location1, idx=idx).query_runs) == 17
         assert len(Query(location2, idx=idx).query_runs) == 15
+
+    def test_match_does_not_change_query_unknown_positions(self):
+        from licensedcode.match import LicenseMatch
+        from licensedcode.spans import Span
+
+        location = self.get_test_loc('query/unknown_positions/lz4.license.txt')
+        idx = cache.get_index()
+        # build a query first
+        qry1 = Query(location, idx=idx)
+        # this has the side effect to populate the unknown
+        txt = u' '.join(f'{i}-{idx.tokens_by_tid[t]}' for i, t in enumerate(qry1.tokens))
+        assert txt == (
+            '0-this 1-repository 2-uses 3-2 4-different 5-licenses '
+            '6-all 7-files 8-in 9-the 10-lib 11-directory 12-use 13-bsd 14-2 15-clause 16-license '
+            '17-all 18-other 19-files 20-use 21-gplv2 22-license 23-unless 24-explicitly 25-stated 26-otherwise '
+            '27-relevant 28-license 29-is 30-reminded 31-at 32-the 33-top 34-of 35-each 36-source 37-file '
+            '38-and 39-with 40-presence 41-of 42-copying 43-or 44-license 45-file 46-in 47-associated 48-directories '
+            '49-this 50-model 51-is 52-selected 53-to 54-emphasize 55-that '
+            '56-files 57-in 58-the 59-lib 60-directory 61-are 62-designed 63-to 64-be 65-included 66-into 67-3rd 68-party 69-applications '
+            '70-while 71-all 72-other 73-files 74-in 75-programs 76-tests 77-or 78-examples '
+            '79-receive 80-more 81-limited 82-attention 83-and 84-support 85-for 86-such 87-scenario'
+        )
+        list(qry1.tokens_by_line())
+        assert qry1.unknowns_by_pos == {}
+
+        # run matching
+        matches = idx.match(location=location)
+        match = matches[0]
+
+        rule = [
+            r for r in idx.rules_by_rid
+            if r.identifier == 'bsd-simplified_and_gpl-2.0_1.RULE'
+        ][0]
+
+        expected = LicenseMatch(
+            matcher='2-aho',
+            rule=rule,
+            qspan=Span(0, 48),
+            ispan=Span(0, 48),
+        )
+
+        assert match == expected
+
+        # check that query unknown by pos is the same and empty
+        qry2 = match.query
+
+        # this was incorrectly returned as {15: 0, 20: 0, 21: 0, 41: 0, 43: 0}
+        # after querying done during matching
+        assert qry2.unknowns_by_pos == {}
