@@ -29,6 +29,7 @@ def validate_wheel_filename_for_pypi(filename):
     an empty list if all tags are supported.
     """
     from utils_thirdparty import Wheel
+
     wheel = Wheel.from_filename(filename)
     return validate_platforms_for_pypi(wheel.platforms)
 

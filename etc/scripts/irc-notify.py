@@ -1,4 +1,3 @@
-
 """
 From: https://raw.githubusercontent.com/gridsync/gridsync/def54f8166089b733d166665fdabcad4cdc526d8/misc/irc-notify.py
 and: https://github.com/gridsync/gridsync
@@ -72,34 +71,34 @@ def appveyor_vars():
     Return a dict of key value carfted from appveyor environment variables.
     """
 
-    appveyor_url = environ.get('APPVEYOR_URL')
-    message_extended = environ.get('APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED')
-    branch = environ.get('APPVEYOR_REPO_BRANCH')
-    author = environ.get('APPVEYOR_REPO_COMMIT_AUTHOR')
-    author_email = environ.get('APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL')
-    timestamp = environ.get('APPVEYOR_REPO_COMMIT_TIMESTAMP')
-    repo_provider = environ.get('APPVEYOR_REPO_PROVIDER')
-    project_name = environ.get('APPVEYOR_PROJECT_NAME')
-    pull_request_title = environ.get('APPVEYOR_PULL_REQUEST_TITLE')
-    build_version = environ.get('APPVEYOR_BUILD_VERSION')
-    commit = environ.get('APPVEYOR_REPO_COMMIT')
-    message = environ.get('APPVEYOR_REPO_COMMIT_MESSAGE')
-    account_name = environ.get('APPVEYOR_ACCOUNT_NAME')
-    pull_request_number = environ.get('APPVEYOR_PULL_REQUEST_NUMBER')
-    repo_name = environ.get('APPVEYOR_REPO_NAME')
+    appveyor_url = environ.get("APPVEYOR_URL")
+    message_extended = environ.get("APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED")
+    branch = environ.get("APPVEYOR_REPO_BRANCH")
+    author = environ.get("APPVEYOR_REPO_COMMIT_AUTHOR")
+    author_email = environ.get("APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL")
+    timestamp = environ.get("APPVEYOR_REPO_COMMIT_TIMESTAMP")
+    repo_provider = environ.get("APPVEYOR_REPO_PROVIDER")
+    project_name = environ.get("APPVEYOR_PROJECT_NAME")
+    pull_request_title = environ.get("APPVEYOR_PULL_REQUEST_TITLE")
+    build_version = environ.get("APPVEYOR_BUILD_VERSION")
+    commit = environ.get("APPVEYOR_REPO_COMMIT")
+    message = environ.get("APPVEYOR_REPO_COMMIT_MESSAGE")
+    account_name = environ.get("APPVEYOR_ACCOUNT_NAME")
+    pull_request_number = environ.get("APPVEYOR_PULL_REQUEST_NUMBER")
+    repo_name = environ.get("APPVEYOR_REPO_NAME")
 
     short_commit = commit[:7]
-    build_url = '{appveyor_url}/project/{account_name}/{project_name}/build/{build_version}'.format(**locals())
-    commit_url = 'https://{repo_provider}.com/{repo_name}/commit/{commit}'.format(**locals())
+    build_url = "{appveyor_url}/project/{account_name}/{project_name}/build/{build_version}".format(
+        **locals()
+    )
+    commit_url = "https://{repo_provider}.com/{repo_name}/commit/{commit}".format(**locals())
 
     vars = dict(
         appveyor_url=appveyor_url,
         account_name=account_name,
         project_name=project_name,
         build_version=build_version,
-
         build_url=build_url,
-
         repo_provider=repo_provider,
         repo_name=repo_name,
         branch=branch,
@@ -110,14 +109,11 @@ def appveyor_vars():
         short_commit=short_commit,
         message=message,
         message_extended=message_extended,
-
         pull_request_title=pull_request_title,
         pull_request_number=pull_request_number,
-
         commit_url=commit_url,
-
-        color_green='\x033',
-        color_red='\x034',
+        color_green="\x033",
+        color_red="\x034",
     )
     return vars
 
@@ -130,17 +126,17 @@ def notify():
 
     channel = sys.argv[1]
     messages = sys.argv[2:]
-    messages = ' '.join(messages)
-    messages = messages.split(',')
+    messages = " ".join(messages)
+    messages = messages.split(",")
     messages = [msg.format(**apvy_vars).strip() for msg in messages]
 
-    irc_username = 'Appveyor'
+    irc_username = "Appveyor"
     irc_nick = irc_username + str(random.randint(1, 9999))
 
     # establish connection
     irc_sock = ssl.wrap_socket(socket.socket(socket.AF_INET, socket.SOCK_STREAM))
-    irc_sock.connect((socket.gethostbyname('chat.freenode.net'), 6697))
-    irc_sock.send('NICK {0}\r\nUSER {0} * 0 :{0}\r\n'.format(irc_username).encode())
+    irc_sock.connect((socket.gethostbyname("chat.freenode.net"), 6697))
+    irc_sock.send("NICK {0}\r\nUSER {0} * 0 :{0}\r\n".format(irc_username).encode())
     irc_file = irc_sock.makefile()
 
     while irc_file:
@@ -148,25 +144,26 @@ def notify():
         print(line.rstrip())
         response = line.split()
 
-        if response[0] == 'PING':
-            irc_file.send('PONG {}\r\n'.format(reponse[1]).encode())
+        if response[0] == "PING":
+            irc_file.send("PONG {}\r\n".format(reponse[1]).encode())
 
-        elif response[1] == '433':
-            irc_sock.send('NICK {}\r\n'.format(irc_nick).encode())
+        elif response[1] == "433":
+            irc_sock.send("NICK {}\r\n".format(irc_nick).encode())
 
-        elif response[1] == '001':
+        elif response[1] == "001":
             time.sleep(5)
             # send notification
             for msg in messages:
-                print('NOTICE #{} :{}'.format(channel, msg))
-                irc_sock.send('NOTICE #{} :{}\r\n'.format(channel, msg).encode())
+                print("NOTICE #{} :{}".format(channel, msg))
+                irc_sock.send("NOTICE #{} :{}\r\n".format(channel, msg).encode())
             time.sleep(5)
             sys.exit()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         notify()
     except:
         import traceback
-        print('ERROR: Failed to send notification: \n' + traceback.format_exc())
+
+        print("ERROR: Failed to send notification: \n" + traceback.format_exc())

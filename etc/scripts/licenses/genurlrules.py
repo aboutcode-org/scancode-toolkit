@@ -28,13 +28,13 @@ def fetch_text(url):
     """
     Fetch and return a temp file from the content at `url`.
     """
-    if 'raw' in url:
+    if "raw" in url:
         fetchable = url
-    elif 'github.com' in url and '/blob/' in url:
-        fetchable = url.replace('/blob/', '/raw/')
+    elif "github.com" in url and "/blob/" in url:
+        fetchable = url.replace("/blob/", "/raw/")
     else:
         fetchable = url
-    print('  Fetching:', fetchable)
+    print("  Fetching:", fetchable)
     return fetch.download_url(fetchable, timeout=120)
 
 
@@ -47,7 +47,7 @@ def get_license_expression(location):
         expressions = [m.rule.license_expression for m in matches]
         return combine_expressions(expressions)
     else:
-        return 'unknown'
+        return "unknown"
 
 
 def get_license_matches(location=None, query_string=None):
@@ -70,7 +70,7 @@ def get_existing_rule(text):
             return match.rule
 
 
-def combine_expressions(expressions, relation='AND', licensing=Licensing()):
+def combine_expressions(expressions, relation="AND", licensing=Licensing()):
     """
     Return a combined license expression string with relation, given a list of
     license expressions strings.
@@ -91,8 +91,8 @@ def combine_expressions(expressions, relation='AND', licensing=Licensing()):
 
     if not isinstance(expressions, (list, tuple)):
         raise TypeError(
-            'expressions should be a list or tuple and not: {}'.format(
-                type(expressions)))
+            "expressions should be a list or tuple and not: {}".format(type(expressions))
+        )
 
     # Remove duplicate element in the expressions list
     expressions = dict((x, True) for x in expressions).keys()
@@ -101,7 +101,7 @@ def combine_expressions(expressions, relation='AND', licensing=Licensing()):
         return expressions[0]
 
     expressions = [licensing.parse(le, simple=True) for le in expressions]
-    if relation == 'OR':
+    if relation == "OR":
         return str(licensing.OR(*expressions))
     else:
         return str(licensing.AND(*expressions))
@@ -113,17 +113,16 @@ def find_rule_base_loc(license_expression):
     rule.
     """
     from licensedcode.models import rules_data_dir
+
     template = (
-        license_expression.lower().strip()
-            .replace(' ', '_')
-            .replace('(', '').replace(')', '')
-            +'_url_{}'
+        license_expression.lower().strip().replace(" ", "_").replace("(", "").replace(")", "")
+        + "_url_{}"
     )
     idx = 1
     while True:
         base_name = template.format(idx)
         base_loc = os.path.join(rules_data_dir, base_name)
-        if not os.path.exists(base_loc + '.RULE'):
+        if not os.path.exists(base_loc + ".RULE"):
             return base_loc
         idx += 1
 
@@ -143,23 +142,23 @@ def gen_rules(urls):
     with open(urls) as uf:
         for i, url in enumerate(uf):
             url = url.strip()
-            if not url or url.startswith('#'):
+            if not url or url.startswith("#"):
                 continue
             if url in seen:
                 continue
             else:
                 seen.add(url)
- 
+
             has_exp = False
-            print('Processing:', i, repr(url))
-            if '|' in url:
-                url, has_exp, license_expression = url.partition('|')
+            print("Processing:", i, repr(url))
+            if "|" in url:
+                url, has_exp, license_expression = url.partition("|")
             if not url:
                 continue
 
             existing = get_existing_rule(url)
             if existing:
-                print('  Rule already exists, skipping')
+                print("  Rule already exists, skipping")
                 continue
 
             if url and not has_exp:
@@ -167,35 +166,35 @@ def gen_rules(urls):
                     fetched = fetch_text(url)
                     license_expression = get_license_expression(fetched)
                 except Exception as e:
-                    print('  Failed:', repr(e))
+                    print("  Failed:", repr(e))
                     errors.append(url)
                     continue
 
             base_loc = find_rule_base_loc(license_expression)
-            data_file = base_loc + '.yml'
-            text_file = base_loc + '.RULE'
-            with open(text_file, 'w') as o:
+            data_file = base_loc + ".yml"
+            text_file = base_loc + ".RULE"
+            with open(text_file, "w") as o:
                 o.write(url)
 
             rule = Rule(
                 license_expression=license_expression,
                 is_license_reference=True,
                 relevance=95,
-                text_file=text_file
+                text_file=text_file,
             )
             rule.data_file = data_file
             rule.dump()
-            print('  Rule added:', rule.identifier)
+            print("  Rule added:", rule.identifier)
 
     if errors:
-        print('Failed to process these URLs:')
+        print("Failed to process these URLs:")
         for r in errors:
             print(r)
 
 
 @click.command()
-@click.argument('urls', type=click.Path(), metavar='FILE')
-@click.help_option('-h', '--help')
+@click.argument("urls", type=click.Path(), metavar="FILE")
+@click.help_option("-h", "--help")
 def cli(urls):
     """
     Create rules from license URLs listed in FILE (one URL per line)
@@ -208,6 +207,5 @@ def cli(urls):
     gen_rules(urls)
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     cli()

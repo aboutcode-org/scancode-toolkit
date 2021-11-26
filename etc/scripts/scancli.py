@@ -34,8 +34,8 @@ def scan(locations, deserialize=False, scancode_root_dir=None):
     if not scancode_root_dir:
         scancode_root_dir = abspath(normpath(__file__))
         scancode_root_dir = dirname(dirname(dirname(scancode_root_dir)))
-    python2 = join(scancode_root_dir, 'bin', 'python')
-    spec = 'popen//python={python2}'.format(**locals())
+    python2 = join(scancode_root_dir, "bin", "python")
+    spec = "popen//python={python2}".format(**locals())
     gateway = execnet.makegateway(spec)  # NOQA
     channel = gateway.remote_exec(scanserv)
 
@@ -57,8 +57,9 @@ def scan(locations, deserialize=False, scancode_root_dir=None):
         yield results
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import sys  # NOQA
+
     args = sys.argv[1:]
     for s in scan(args):
         print(s)

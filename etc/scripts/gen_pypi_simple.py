@@ -45,10 +45,15 @@ get_wheel_from_filename = re.compile(
     r"""^(?P<namever>(?P<name>.+?)-(?P<version>.*?))
     ((-(?P<build>\d[^-]*?))?-(?P<pyvers>.+?)-(?P<abis>.+?)-(?P<plats>.+?)
     \.whl)$""",
-    re.VERBOSE
+    re.VERBOSE,
 ).match
 
-sdist_exts = ".tar.gz", ".tar.bz2", ".zip", ".tar.xz",
+sdist_exts = (
+    ".tar.gz",
+    ".tar.bz2",
+    ".zip",
+    ".tar.xz",
+)
 wheel_ext = ".whl"
 app_ext = ".pyz"
 dist_exts = sdist_exts + (wheel_ext, app_ext)
@@ -98,7 +103,7 @@ def get_package_name_from_filename(filename, normalize=True):
         if not extension or not name_ver:
             raise InvalidDistributionFilename(filename)
 
-        name, _, version = name_ver.rpartition('-')
+        name, _, version = name_ver.rpartition("-")
 
         if not (name and version):
             raise InvalidDistributionFilename(filename)
@@ -110,8 +115,8 @@ def get_package_name_from_filename(filename, normalize=True):
         if not wheel_info:
             raise InvalidDistributionFilename(filename)
 
-        name = wheel_info.group('name')
-        version = wheel_info.group('version')
+        name = wheel_info.group("name")
+        version = wheel_info.group("version")
 
         if not (name and version):
             raise InvalidDistributionFilename(filename)
@@ -120,7 +125,7 @@ def get_package_name_from_filename(filename, normalize=True):
         name_ver, extension, _ = filename.rpartition(".pyz")
 
         if "-" in filename:
-            name, _, version = name_ver.rpartition('-')
+            name, _, version = name_ver.rpartition("-")
         else:
             name = name_ver
 
@@ -128,7 +133,7 @@ def get_package_name_from_filename(filename, normalize=True):
             raise InvalidDistributionFilename(filename)
 
     if normalize:
-        name = name.lower().replace('_', '-')
+        name = name.lower().replace("_", "-")
     return name
 
 
@@ -187,5 +192,6 @@ def build_pypi_index(directory, write_index=False):
 
 if __name__ == "__main__":
     import sys
+
     pkg_dir = sys.argv[1]
     build_pypi_index(pkg_dir)

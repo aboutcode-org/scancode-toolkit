@@ -16,7 +16,7 @@ NOTE: this should use ONLY the standard library and not import anything else.
 """
 
 
-def load_requirements(requirements_file='requirements.txt', force_pinned=True):
+def load_requirements(requirements_file="requirements.txt", force_pinned=True):
     """
     Yield package (name, version) tuples for each requirement in a `requirement`
     file. Every requirement versions must be pinned if `force_pinned` is True.
@@ -36,14 +36,14 @@ def get_required_name_versions(requirement_lines, force_pinned=True):
     """
     for req_line in requirement_lines:
         req_line = req_line.strip()
-        if not req_line or req_line.startswith('#'):
+        if not req_line or req_line.startswith("#"):
             continue
-        if '==' not in req_line and force_pinned:
-            raise Exception(f'Requirement version is not pinned: {req_line}')
+        if "==" not in req_line and force_pinned:
+            raise Exception(f"Requirement version is not pinned: {req_line}")
             name = req_line
             version = None
         else:
-            name, _, version = req_line.partition('==')
+            name, _, version = req_line.partition("==")
             name = name.lower().strip()
             version = version.lower().strip()
         yield name, version
@@ -58,22 +58,22 @@ def parse_requires(requires):
     if not requires:
         return []
 
-    requires = [''.join(r.split()) for r in requires if r and r.strip()]
+    requires = ["".join(r.split()) for r in requires if r and r.strip()]
     return sorted(requires)
 
 
-def lock_requirements(requirements_file='requirements.txt', site_packages_dir=None):
+def lock_requirements(requirements_file="requirements.txt", site_packages_dir=None):
     """
     Freeze and lock current installed requirements and save this to the
     `requirements_file` requirements file.
     """
-    with open(requirements_file, 'w') as fo:
+    with open(requirements_file, "w") as fo:
         fo.write(get_installed_reqs(site_packages_dir=site_packages_dir))
 
 
 def lock_dev_requirements(
-    dev_requirements_file='requirements-dev.txt',
-    main_requirements_file='requirements.txt',
+    dev_requirements_file="requirements-dev.txt",
+    main_requirements_file="requirements.txt",
     site_packages_dir=None,
 ):
     """
@@ -89,8 +89,8 @@ def lock_dev_requirements(
     all_req_nvs = get_required_name_versions(all_req_lines)
     dev_only_req_nvs = {n: v for n, v in all_req_nvs if n not in main_names}
 
-    new_reqs = '\n'.join(f'{n}=={v}' for n, v in sorted(dev_only_req_nvs.items()))
-    with open(dev_requirements_file, 'w') as fo:
+    new_reqs = "\n".join(f"{n}=={v}" for n, v in sorted(dev_only_req_nvs.items()))
+    with open(dev_requirements_file, "w") as fo:
         fo.write(new_reqs)
 
 
@@ -99,5 +99,5 @@ def get_installed_reqs(site_packages_dir):
     Return the installed pip requirements as text found in `site_packages_dir` as a text.
     """
     # Also include these packages in the output with --all: wheel, distribute, setuptools, pip
-    args = ['pip', 'freeze', '--exclude-editable', '--all', '--path', site_packages_dir]
-    return subprocess.check_output(args, encoding='utf-8')
+    args = ["pip", "freeze", "--exclude-editable", "--all", "--path", site_packages_dir]
+    return subprocess.check_output(args, encoding="utf-8")

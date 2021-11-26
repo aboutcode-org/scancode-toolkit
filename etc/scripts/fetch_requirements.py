@@ -16,64 +16,78 @@ import utils_thirdparty
 
 
 @click.command()
-
-@click.option('-r', '--requirements-file',
+@click.option(
+    "-r",
+    "--requirements-file",
     type=click.Path(exists=True, readable=True, path_type=str, dir_okay=False),
-    metavar='FILE',
+    metavar="FILE",
     multiple=True,
-    default=['requirements.txt'],
+    default=["requirements.txt"],
     show_default=True,
-    help='Path to the requirements file to use for thirdparty packages.',
+    help="Path to the requirements file to use for thirdparty packages.",
 )
-@click.option('-d', '--thirdparty-dir',
+@click.option(
+    "-d",
+    "--thirdparty-dir",
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
-    metavar='DIR',
+    metavar="DIR",
     default=utils_thirdparty.THIRDPARTY_DIR,
     show_default=True,
-    help='Path to the thirdparty directory.',
+    help="Path to the thirdparty directory.",
 )
-@click.option('-p', '--python-version',
+@click.option(
+    "-p",
+    "--python-version",
     type=click.Choice(utils_thirdparty.PYTHON_VERSIONS),
-    metavar='INT',
+    metavar="INT",
     multiple=True,
-    default=['36'],
+    default=["36"],
     show_default=True,
-    help='Python version to use for this build.',
+    help="Python version to use for this build.",
 )
-@click.option('-o', '--operating-system',
+@click.option(
+    "-o",
+    "--operating-system",
     type=click.Choice(utils_thirdparty.PLATFORMS_BY_OS),
-    metavar='OS',
+    metavar="OS",
     multiple=True,
-    default=['linux'],
+    default=["linux"],
     show_default=True,
-    help='OS to use for this build: one of linux, mac or windows.',
+    help="OS to use for this build: one of linux, mac or windows.",
 )
-@click.option('-s', '--with-sources',
+@click.option(
+    "-s",
+    "--with-sources",
     is_flag=True,
-    help='Fetch the corresponding source distributions.',
+    help="Fetch the corresponding source distributions.",
 )
-@click.option('-a', '--with-about',
+@click.option(
+    "-a",
+    "--with-about",
     is_flag=True,
-    help='Fetch the corresponding ABOUT and LICENSE files.',
+    help="Fetch the corresponding ABOUT and LICENSE files.",
 )
-@click.option('--allow-unpinned',
+@click.option(
+    "--allow-unpinned",
     is_flag=True,
-    help='Allow requirements without pinned versions.',
+    help="Allow requirements without pinned versions.",
 )
-@click.option('-s', '--only-sources',
+@click.option(
+    "-s",
+    "--only-sources",
     is_flag=True,
-    help='Fetch only the corresponding source distributions.',
+    help="Fetch only the corresponding source distributions.",
 )
-@click.option('-u', '--remote-links-url',
+@click.option(
+    "-u",
+    "--remote-links-url",
     type=str,
-    metavar='URL',
+    metavar="URL",
     default=utils_thirdparty.REMOTE_LINKS_URL,
     show_default=True,
-    help='URL to a PyPI-like links web site. '
-         'Or local path to a directory with wheels.',
+    help="URL to a PyPI-like links web site. " "Or local path to a directory with wheels.",
 )
-
-@click.help_option('-h', '--help')
+@click.help_option("-h", "--help")
 def fetch_requirements(
     requirements_file,
     thirdparty_dir,
@@ -117,7 +131,7 @@ def fetch_requirements(
                 remote_links_url=remote_links_url,
             ):
                 if error:
-                    print('Failed to fetch wheel:', package, ':', error)
+                    print("Failed to fetch wheel:", package, ":", error)
 
     # optionally fetch sources
     if with_sources or only_sources:
@@ -130,7 +144,7 @@ def fetch_requirements(
                 remote_links_url=remote_links_url,
             ):
                 if error:
-                    print('Failed to fetch source:', package, ':', error)
+                    print("Failed to fetch source:", package, ":", error)
 
     if with_about:
         utils_thirdparty.add_fetch_or_update_about_and_license_files(dest_dir=thirdparty_dir)
@@ -141,5 +155,5 @@ def fetch_requirements(
         )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     fetch_requirements()
