@@ -1136,6 +1136,24 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         assert itext == 'license dual bsd gpl'
         assert match.ispan == Span(0, 3)
 
+    @pytest.mark.scanslow
+    def test_spurrious_matches_in_binary_are_filtered(self):
+        idx = cache.get_index()
+        qloc = self.get_test_loc('false_positive/false-positive-in-binaries.zip')
+
+        # Originally we were detecting these spurious license_expressions:
+        #     - apache-2.0 with matched_text: ALv2@ : should be kept
+        #     - lgpl-2.0-plus with matched_text: lGPl~= : invalid
+        #     - gpl-2.0 with matched_text: GPL2\ : invalid
+        # Each have these shared attributes:
+        # - is_license_reference: yes
+        # - rule_length: yes
+        # And we matched with trailing punctuatiosn
+        # And the file has: is_binary: yes
+        matches = idx.match(location=qloc)
+        assert len(matches) == 1
+        assert matches[0].rule.license_expression == 'apache-2.0'
+
 
 class TestRegression(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR

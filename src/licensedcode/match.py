@@ -34,6 +34,7 @@ TRACE_FILTER_SPURIOUS = False
 TRACE_FILTER_RULE_MIN_COVERAGE = False
 TRACE_FILTER_LOW_SCORE = False
 TRACE_FILTER_UNKNOWN_WORDS = False
+TRACE_FILTER_INVALID_BINARY = False
 TRACE_SET_LINES = False
 
 TRACE_MATCHED_TEXT = False
@@ -63,6 +64,7 @@ if (TRACE
     or TRACE_SET_LINES
     or TRACE_MATCHED_TEXT
     or TRACE_MATCHED_TEXT_DETAILS
+    or TRACE_FILTER_INVALID_BINARY
 ):
 
     use_print = True
@@ -110,13 +112,20 @@ class LicenseMatch(object):
     """
     License detection match to a rule with matched query positions and lines and
     matched index positions. Also computes a score for a match. At a high level,
-    a match behaves a bit like a Span and has several similar methods taking
-    into account both the query and index Span.
+    a match behaves a little like a Span and has several similar methods taking
+    into account both the query and index Spans.
     """
 
     __slots__ = (
-        'rule', 'qspan', 'ispan', 'hispan', 'query_run_start',
-        'matcher', 'start_line', 'end_line', 'query',
+        'rule',
+        'qspan',
+        'ispan',
+        'hispan',
+        'query_run_start',
+        'matcher',
+        'start_line',
+        'end_line',
+        'query',
     )
 
     def __init__(
@@ -600,17 +609,25 @@ class LicenseMatch(object):
 
 def set_lines(matches, line_by_pos):
     """
-    Update a `matches` sequence with start and end line given a `line_by_pos`
-    {pos: line} mapping.
+    Update a ``matches`` LicenseMatch sequence with start and end line given a
+    `line_by_pos` {pos: line} mapping.
     """
     # if there is no line_by_pos, do not bother: the lines will stay to zero.
     if line_by_pos:
         for match in matches:
-            match.start_line = line_by_pos[match.qstart]
-            match.end_line = line_by_pos[match.qend]
-            if TRACE_SET_LINES:
-                logger_debug('set_lines: match.start_line :', match.start_line)
-                logger_debug('set_lines: match.end_line :', match.end_line)
+            set_match_lines(match, line_by_pos)
+
+
+def set_match_lines(match, line_by_pos):
+    """
+    Update a `match` single LicenseMatch with start and end line given a
+    `line_by_pos` {pos: line} mapping.
+    """
+    match.start_line = line_by_pos[match.qstart]
+    match.end_line = line_by_pos[match.qend]
+    if TRACE_SET_LINES:
+        logger_debug('set_lines: match.start_line :', match.start_line)
+        logger_debug('set_lines: match.end_line :', match.end_line)
 
 
 def merge_matches(matches, max_dist=None):
@@ -1352,10 +1369,154 @@ def filter_spurious_matches(matches):
     return kept, discarded
 
 
-def filter_false_positive_matches(matches, idx=None):
+def filter_invalid_single_word_matches_in_binaries(matches):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a `matches` list of LicenseMatch by removing
+    matches in binary files considered as invalid under these conditions:
+
+    - the match is for a binary file
+    - the matched rule that has a single word (length 1)
+    - the matched rule has a low relevance, e.g., under 75
+    - the matched text has either:
+      - one or more leading or trailing punctuations (except for +)
+        unless this has a high relevance and the rule is contained as-is
+        in the matched text (considering case)
+      - mixed upper and lower case charcaters (but not a Title case) unless
+        exactly the same mixed case as the rule text
+    """
+    kept = []
+    discarded = []
+
+    for match in matches:
+        rule = match.rule
+        if (
+            rule.length == 1
+            and match.query.is_binary
+            and rule.is_license_reference
+        ):
+            # important otherwise we cannot really get the matched text
+            set_match_lines(match, match.query.line_by_pos)
+            matched_text = match.matched_text(whole_lines=False, highlight=False).strip()
+            rule_text = rule.text().strip()
+
+            if TRACE_FILTER_INVALID_BINARY:
+                logger_debug(
+                    '    ==> POTENTIAL INVALID_BINARY:', match,
+                    'matched_text:', repr(matched_text),
+                    'rule_text:', repr(rule_text)
+                )
+
+            if rule.relevance >= 75:
+                max_diff = 1
+            else:
+                max_diff = 0
+
+            if is_invalid_short_match(matched_text, rule_text, max_diff=max_diff):
+                if TRACE_FILTER_INVALID_BINARY:
+                    logger_debug('    ==> DISCARDING INVALID_BINARY:', match)
+                discarded.append(match)
+                continue
+
+        kept.append(match)
+
+    return kept, discarded
+
+
+def is_invalid_short_match(matched_text, rule_text, max_diff=0):
+    """
+    Return True if the ``matched_text`` given a ``rule_text`` is invalid.
+    ``max_diff`` is the maximum length difference between these two texts
+    considered as OK.
+
+    For example:
+    >>> is_invalid_short_match("gpl", "GPL")
+    False
+    >>> is_invalid_short_match("Gpl", "GPL")
+    False
+    >>> is_invalid_short_match("gPl", "GPL")
+    True
+    >>> is_invalid_short_match("GPL[", "GPL")
+    True
+    >>> is_invalid_short_match("~gpl", "GPL")
+    True
+    >>> is_invalid_short_match("GPL", "gpl")
+    False
+    >>> is_invalid_short_match("Gpl+", "gpl+")
+    False
+    >>> is_invalid_short_match("~gpl", "GPL", max_diff=0)
+    True
+    >>> is_invalid_short_match("~gpl", "GPL", max_diff=1)
+    False
+    >>> is_invalid_short_match("ALv2@", "ALv2", max_diff=1)
+    False
+    >>> is_invalid_short_match("aLv2@", "ALv2", max_diff=1)
+    True
+    >>> is_invalid_short_match("alv2@", "ALv2", max_diff=1)
+    False
+    """
+    if TRACE_FILTER_INVALID_BINARY:
+        logger_debug(
+            '==> is_invalid_short_match:',
+            'matched_text:', repr(matched_text),
+            'rule_text:', repr(rule_text),
+            'max_diff:', max_diff,
+        )
+    if matched_text == rule_text:
+        return False
+
+    # Length differences help decide that this is invalid as the extra chars
+    # will be punctuation by construction
+    diff = len(matched_text) - len(rule_text)
+
+    if diff and diff != max_diff:
+        if TRACE_FILTER_INVALID_BINARY:
+            logger_debug('    ==> is_invalid_short_match:', 'diff:', diff, 'max_diff:', max_diff)
+        return True
+
+    if rule_text.endswith('+'):
+        matched_text = matched_text.rstrip('+')
+        rule_text = rule_text.rstrip('+')
+
+    # Same length, do we have mixed case? or title case?
+    # same case and title case are OK, mixed case not OK.
+    is_title_case = matched_text.istitle()
+
+    if is_title_case:
+        if TRACE_FILTER_INVALID_BINARY:
+            logger_debug(
+                '    ==> is_invalid_short_match:',
+                'is_title_case:', 'matched_text:',
+                matched_text,
+            )
+        return False
+
+    contains_rule = rule_text in matched_text
+
+    is_same_case = (
+        matched_text.lower() == matched_text
+        or matched_text.upper() == matched_text
+    )
+
+    if is_same_case or contains_rule:
+        if TRACE_FILTER_INVALID_BINARY:
+            logger_debug(
+                '    ==> is_invalid_short_match:',
+                'not is_same_case or contains_rule:',
+                'matched_text:', matched_text, rule_text,
+            )
+        return False
+
+    if TRACE_FILTER_INVALID_BINARY:
+        logger_debug('    ==> is_invalid_short_match:', 'INVALID', matched_text)
+
+    return True
+
+
+def filter_false_positive_matches(matches):
+    """
+    Return a filtered list of kept LicenseMatch matches and a list of
+    discardable matches given a ``matches`` list of LicenseMatch by removing
     matches to false positive rules.
     """
     kept = []
@@ -1380,6 +1541,7 @@ def filter_already_matched_matches(matches, query):
     """
     kept = []
     discarded = []
+
     matched_pos = query.matched
     for match in matches:
         # FIXME: do not use internals!!!
@@ -1396,7 +1558,6 @@ def filter_already_matched_matches(matches, query):
 
 def refine_matches(
     matches,
-    idx,
     query=None,
     min_score=0,
     filter_false_positive=True,
@@ -1480,8 +1641,12 @@ def refine_matches(
     all_discarded.extend(discarded)
     _log(matches, discarded, 'ACCEPTABLE IF UNKNOWN WORDS')
 
+    matches, discarded = filter_invalid_single_word_matches_in_binaries(matches)
+    all_discarded.extend(discarded)
+    _log(matches, discarded, 'MORE THAN ONE NON INVALID TOKEN IN BINARY')
+
     if filter_false_positive:
-        matches, discarded = filter_false_positive_matches(matches, idx)
+        matches, discarded = filter_false_positive_matches(matches)
         all_discarded.extend(discarded)
         _log(matches, discarded, 'TRUE POSITIVE')
 
