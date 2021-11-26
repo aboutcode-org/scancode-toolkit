@@ -3089,5 +3089,6 @@ def compute_normalized_license_expression(declared_licenses):
 
         return pypi.compute_normalized_license(declared_licenses)
     except ImportError:
-        # Scancode is not installed, we join all license strings and return it
-        return " ".join(declared_licenses).lower()
+        # Scancode is not installed, clean and join all the licenses
+        lics = [python_safe_name(l).lower() for l in declared_licenses]
+        return " AND ".join(lics).lower()
