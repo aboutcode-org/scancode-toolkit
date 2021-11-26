@@ -1070,7 +1070,11 @@ class BasicRule(object):
         """
         Return the rule text loaded from its text file.
         """
-        if self.text_file and exists(self.text_file):
+        # used for non-file backed rules
+        if self.stored_text:
+            return self.stored_text
+
+        elif self.text_file and exists(self.text_file):
             # IMPORTANT: use the same process as query text loading for symmetry
             numbered_lines = numbered_text_lines(
                 self.text_file,
@@ -1079,9 +1083,6 @@ class BasicRule(object):
             )
             return ''.join(l for _, l in numbered_lines)
 
-        # used for non-file backed rules
-        elif self.stored_text:
-            return self.stored_text
 
         else:
             raise InvalidRule(
