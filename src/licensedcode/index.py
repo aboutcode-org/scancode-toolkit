@@ -578,7 +578,6 @@ class LicenseIndex(object):
 
         matches, _discarded = match.refine_matches(
             matches=matches,
-            idx=self,
             query=query,
             filter_false_positive=False,
             merge=False,
@@ -910,8 +909,8 @@ class LicenseIndex(object):
                 self.debug_matches(
                     matches=matched,
                     message='matched with: ' + matcher_name,
-                    location=location,
-                    query_string=query_string,
+                    location=qry.location,
+                    query_string=qry.query_string,
                 )
 
             matched = match.merge_matches(matched)
@@ -948,12 +947,12 @@ class LicenseIndex(object):
             logger_debug()
             self.debug_matches(
                 matches=matches, message='matches before final merge',
-                location=location, query_string=query_string,
+                location=qry.location,
+                query_string=qry.query_string,
                 with_text=True, qry=qry)
 
         matches, _discarded = match.refine_matches(
             matches=matches,
-            idx=self,
             query=qry,
             min_score=min_score,
             filter_false_positive=True,
@@ -967,8 +966,8 @@ class LicenseIndex(object):
             self.debug_matches(
                 matches=matches,
                 message='final matches',
-                location=location,
-                query_string=query_string ,
+                location=qry.location,
+                query_string=qry.query_string,
                 with_text=True,
                 qry=qry,
             )
