@@ -1,0 +1,50 @@
+parameters:
+    job_name: ''
+    container: ''
+    python_path: ''
+    python_version: ''
+    package_manager: apt-get
+    install_python: ''
+    install_packages: |
+        set -e -x
+        sudo apt-get -y update
+        sudo apt-get -y install \
+            build-essential \
+            xz-utils zlib1g bzip2 libbz2-1.0 tar \
+            sqlite3 libxml2-dev libxslt1-dev \
+            software-properties-common openssl
+    test_suite: ''
+    test_suite_label: ''
+
+
+jobs:
+    - job: ${{ parameters.job_name }}
+
+      pool:
+          vmImage: 'ubuntu-16.04'
+
+      container:
+          image: ${{ parameters.container }}
+          options: '--name ${{ parameters.job_name }} -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 -v /usr/bin/docker:/tmp/docker:ro'
+
+      steps:
+          - checkout: self
+            fetchDepth: 10
+
+          - script: /tmp/docker exec -t -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 -u 0 ${{ parameters.job_name }} $(Build.SourcesDirectory)/etc/ci/install_sudo.sh ${{ parameters.package_manager }}
+            displayName: Install sudo
+
+          - script: ${{ parameters.install_packages }}
+            displayName: Install required packages
+
+          - script: ${{ parameters.install_python }}
+            displayName: 'Install Python ${{ parameters.python_version }}'
+
+          - script: ${{ parameters.python_path }} --version
+            displayName: 'Show Python version'
+
+          - script: PYTHON_EXE=${{ parameters.python_path }} ./configure --dev
+            displayName: 'Run Configure'
+
+          - script: ${{ parameters.test_suite }}
+            displayName: 'Run ${{ parameters.test_suite_label }} tests with py${{ parameters.python_version }} on ${{ parameters.job_name }}'

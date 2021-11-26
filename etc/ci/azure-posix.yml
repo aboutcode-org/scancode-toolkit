@@ -31,6 +31,7 @@ jobs:
             displayName: 'Install Python $(python_version)'
 
           - script: |
+                python --version
                 python3 --version
                 python$(python_version) --version
                 echo "python$(python_version)" > PYTHON_EXECUTABLE

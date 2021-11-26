@@ -1,0 +1,16 @@
+about_resource: macports-ci
+name: macports-ci
+version: c9676e67351a3a519e37437e196cd0ee9c2180b8
+download_url: https://raw.githubusercontent.com/GiovanniBussi/macports-ci/c9676e67351a3a519e37437e196cd0ee9c2180b8/macports-ci
+description: Simplify MacPorts setup on Travis-CI
+homepage_url: https://github.com/GiovanniBussi/macports-ci
+license_expression: mit
+copyright: Copyright (c) Giovanni Bussi
+attribute: yes
+checksum_md5: 5d31d479132502f80acdaed78bed9e23
+checksum_sha1: 74b15643bd1a528d91b4a7c2169c6fc656f549c2
+package_url: pkg:github/giovannibussi/macports-ci@c9676e67351a3a519e37437e196cd0ee9c2180b8#macports-ci
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE
