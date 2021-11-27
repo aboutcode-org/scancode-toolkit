@@ -1,5 +1,5 @@
 license_expression: zlib
 is_license_reference: yes
 relevance: 100
-only_known_words: yes
+continuous: yes
 
