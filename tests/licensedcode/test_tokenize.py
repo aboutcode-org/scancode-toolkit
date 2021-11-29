@@ -464,16 +464,24 @@ class TestTokenizers(FileBasedTesting):
         index_tokens = index_tokenizer(text)
         assert list(key_phrase_tokens) == list(index_tokens)
 
-    def test_key_phrase_tokenizer_returns_key_phrase_markup_as_separate_tokens_for_multiple_token_key_phrases(self):
+    def test_key_phrase_tokenizer_returns_key_phrase_markup_as_tokens_for_multiple_token_key_phrases(self):
         text = 'Redistribution and {{use in binary}} is permitted.'
         assert list(key_phrase_tokenizer(text)) == ['redistribution', 'and', '{{', 'use', 'in', 'binary', '}}', 'is',
                                                     'permitted']
 
-    def test_key_phrase_tokenizer_returns_key_phrase_markup_as_separate_tokens_for_single_token_key_phrase(self):
+    def test_key_phrase_tokenizer_returns_key_phrase_markup_as_tokens_after_newline(self):
+        text = '{{IS_RIGHT\nThis program is distributed under GPL\n}}IS_RIGHT'
+        assert list(key_phrase_tokenizer(text)) == ['{{', 'is', 'right', 'this', 'program', 'is', 'distributed', 'under', 'gpl', '}}', 'is', 'right']
+
+    def test_key_phrase_tokenizer_returns_key_phrase_markup_as_tokens_when_separated_by_space(self):
+        text = 'Redistribution {{ is }} permitted.'
+        assert list(key_phrase_tokenizer(text)) == ['redistribution', '{{', 'is', '}}', 'permitted']
+
+    def test_key_phrase_tokenizer_returns_key_phrase_markup_as_tokens_for_single_token_key_phrase(self):
         text = 'Redistribution {{is}} permitted.'
         assert list(key_phrase_tokenizer(text)) == ['redistribution', '{{', 'is', '}}', 'permitted']
 
-    def test_key_phrase_tokenizer_returns_nested_key_phrase_markup_as_separate_tokens(self):
+    def test_key_phrase_tokenizer_returns_nested_key_phrase_markup_as_tokens(self):
         text = 'Redistribution {{is {{not}} really}} permitted.'
         assert list(key_phrase_tokenizer(text)) == ['redistribution', '{{', 'is', '{{', 'not', '}}', 'really', '}}',
                                                     'permitted']

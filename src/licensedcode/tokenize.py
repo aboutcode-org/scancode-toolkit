@@ -62,7 +62,7 @@ def query_lines(location=None, query_string=None, strip=True, start_line=1):
 query_pattern = '[^_\\W]+\\+?[^_\\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
-key_phrase_pattern = '(?:\\{\\{)?' + query_pattern + '(?:\\}\\})?'
+key_phrase_pattern = '(?:' + query_pattern + '|\\{\\{|\\}\\})'
 key_phrase_splitter = re.compile(key_phrase_pattern, re.UNICODE).findall
 
 KEY_PHRASE_OPEN = "{{"

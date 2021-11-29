@@ -17,7 +17,9 @@ from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
-from licensedcode.models import Rule, get_key_phrases
+from licensedcode.models import get_key_phrases
+from licensedcode.models import InvalidRule
+from licensedcode.models import Rule
 from licensedcode.models import rules_data_dir
 from unittest import TestCase as TestCaseClass
 
@@ -549,6 +551,22 @@ class TestRule(FileBasedTesting):
 
         assert list(key_phrases) == [models.Span(4), models.Span(7, 9)]
 
+    def test_key_phrases_raises_exception_when_markup_is_not_closed(self):
+        rule_stored_text = (
+            'This released software is {{released}} by under {{the MIT license. '
+            'Which is a license originating at Massachusetts Institute of Technology (MIT).'
+        )
+        rule = models.Rule(license_expression='mit', stored_text=rule_stored_text)
+
+        actual_exception = None
+        try:
+            list(rule.key_phrases())
+        except Exception as e:
+            actual_exception = e
+
+        assert isinstance(actual_exception, InvalidRule)
+        assert "Key phrase definition started at token '7' is not closed" == str(actual_exception)
+
 
 class TestGetKeyPhrases(TestCaseClass):
     def test_get_key_phrases_yields_spans(self):
@@ -561,12 +579,17 @@ class TestGetKeyPhrases(TestCaseClass):
 
         assert list(key_phrases) == [models.Span(4), models.Span(7, 9)]
 
-    def test_get_key_phrases_yields_nothing_when_unclosed_key_phrase_markup(self):
+    def test_get_key_phrases_raises_exception_key_phrase_markup_is_not_closed(self):
         text = 'This software is {{released by under the MIT license.'
 
-        key_phrases = get_key_phrases(text)
+        actual_exception = None
+        try:
+            list(get_key_phrases(text))
+        except Exception as e:
+            actual_exception = e
 
-        assert list(key_phrases) == []
+        assert isinstance(actual_exception, InvalidRule)
+        assert "Key phrase definition started at token '3' is not closed" == str(actual_exception)
 
     def test_get_key_phrases_ignores_stopwords_in_positions(self):
         text = 'The word comma is a stop word so comma does not increase the span position {{MIT license}}.'
