@@ -20,6 +20,7 @@ from packagedcode import cocoapods
 from packagedcode import freebsd
 from packagedcode import golang
 from packagedcode import haxe
+from packagedcode import jar_manifest
 from packagedcode import maven
 from packagedcode import models
 from packagedcode import msi
@@ -43,10 +44,11 @@ PACKAGE_MANIFEST_TYPES = [
     debian.DebianPackage,
 
     models.JavaJar,
+    jar_manifest.JavaManifest,
     models.JavaEar,
     models.JavaWar,
     maven.MavenPomPackage,
-    models.IvyJar,
+    jar_manifest.IvyJar,
     models.JBossSar,
     models.Axis2Mar,
 

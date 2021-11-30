@@ -202,9 +202,8 @@ Package: iso
 
 --------------------------------------------
 Package: ivy
-  class: packagedcode.models:IvyJar
+  class: packagedcode.jar_manifest:IvyJar
   file_patterns: ivy.xml
-  extensions: .jar
   filetypes: java archive , zip archive
 
 --------------------------------------------
@@ -212,6 +211,13 @@ Package: jar
   class: packagedcode.models:JavaJar
   file_patterns: META-INF/MANIFEST.MF
   extensions: .jar
+  filetypes: java archive , zip archive
+
+--------------------------------------------
+Package: jar
+  class: packagedcode.jar_manifest:JavaManifest
+  file_patterns: META-INF/MANIFEST.MF
+  extensions: .jar, .war, .ear
   filetypes: java archive , zip archive
 
 --------------------------------------------

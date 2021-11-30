@@ -50,6 +50,7 @@ Structured package information are found in multiple places:
 - in manifest file proper (such as a Maven POM, NPM package.json and many others)
 - in binaries (such as an Elf or LKM, Windows PE or RPM header).
 - in code (JavaDoc tags or Python __copyright__ magic)
+
 There are collectively named "manifests" in ScanCode.
 
 We handle package information at two levels:
@@ -60,25 +61,26 @@ We handle package information at two levels:
 
 The second requires the first to be computed.
 
-Class Hierarchy:
-
-Base Classes: (Classes to be inherited)
+These are case classes to extend:
 
 - Package:
-    Base Data class with package data
+    Base class with shared package attributes and methods.
 - PackageManifest:
-    Mixin class with manifest specific data and methods
+    Mixin class that represents a specific package manifest file.
 - PackageInstance:
-    Mixin class with package instance specific data and methods
+    Mixin class that represents a package that's constructed from one or more
+    package manifests. It also tracks package files.
 
-- Package Ecosystem: (Classes which would have object instances)
+Here is an example of the classes that would need to exist to support a new fictitious
+package type or ecosystem `dummy`.
 
-- EcosystemPackage(Package):
-    A class with ecosystem specific data (and data specific methods)
-- EcosystemPackageManifest(EcosystemPackage, PackageManifest):
-    A class that overides and implements package manifest methods for that ecosystem
-- EcosystemPackageInstance(EcosystemPackage, PackageInstance):
-    A class that overrides and implements package instance methods for that ecosystem
+- DummyPackage(Package):
+    This class provides type wide defaults and basic implementation for type specific methods.
+- DummyManifest(DummyPackage, PackageManifest):
+    This class provides methods to recognize and parse a package manifest file format.
+- DummyPackageInstance(DummyPackage, PackageInstance):
+    This class provides methods to create package instances for one or more manifests and to
+    collect package file paths.
 """
 
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
@@ -685,7 +687,8 @@ class PackageManifest:
     """
     A mixin for package manifest that can be recognized.
 
-    Subclasses must extend a Package subclass for a given ecosystem.
+    When creating a new package manifest, a class should be created that extends
+    both PackageManifest and Package.
     """
 
     # class-level attributes used to recognize a package
@@ -826,25 +829,6 @@ class JBossSar(Package, PackageManifest):
     mimetypes = ('application/java-archive', 'application/zip')
     default_type = 'jboss'
     default_primary_language = 'Java'
-
-
-@attr.s()
-class IvyJar(JavaJar):
-    file_patterns = ('ivy.xml',)
-    default_type = 'ivy'
-    default_primary_language = 'Java'
-
-
-# FIXME: move to bower.py
-@attr.s()
-class BowerPackage(Package, PackageManifest):
-    file_patterns = ('bower.json',)
-    default_type = 'bower'
-    default_primary_language = 'JavaScript'
-
-    @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
 
 
 @attr.s()
