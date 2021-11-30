@@ -43,6 +43,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Maximilian Huber @maxhbr 
 - Michael Herzog @mjherzog
 - Michael Rupprecht @michaelrup
+- Mike Rombout @mrombout
 - Mrinal Paliwal @mnpw
 - nexB Inc. @nexB
 - Nirmal Sarswat @vivonk
