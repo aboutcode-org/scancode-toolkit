@@ -99,14 +99,13 @@ class Nuspec(NugetPackage, models.PackageManifest):
 
     file_patterns = ('*.nuspec',)
     extensions = ('.nuspec',)
-    manifest_type = 'nuspecxml'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith('.nuspec'))
+        return filetype.is_file(location) and location.endswith('.nuspec')
 
     @classmethod
     def recognize(cls, location):

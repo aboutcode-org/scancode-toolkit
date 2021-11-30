@@ -43,11 +43,10 @@ class BowerPackage(models.Package):
 
 
 @attr.s()
-class BowerJSON(BowerPackage, models.PackageManifest):
+class BowerJson(BowerPackage, models.PackageManifest):
 
     file_patterns = ('bower.json', '.bower.json')
     extensions = ('.json',)
-    manifest_type = 'bowerjson'
 
     @classmethod
     def is_manifest(cls, location):

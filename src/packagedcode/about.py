@@ -48,14 +48,13 @@ class Aboutfile(AboutPackage, models.PackageManifest):
 
     file_patterns = ('*.ABOUT',)
     extensions = ('.ABOUT',)
-    manifest_type = 'aboutfile'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.lower().endswith(('.about',)))
+        return filetype.is_file(location) and location.lower().endswith(('.about',))
 
     @classmethod
     def recognize(cls, location):

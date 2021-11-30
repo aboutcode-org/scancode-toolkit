@@ -277,7 +277,6 @@ class WindowsExecutableManifest(WindowsExecutable, models.PackageManifest):
         '.sys_*',
         '.tlb_*',
     )
-    manifest_type = 'winexe'
 
     @classmethod
     def is_manifest(cls, location):
@@ -285,7 +284,7 @@ class WindowsExecutableManifest(WindowsExecutable, models.PackageManifest):
         Return True if the file at ``location`` is likely a manifest of this type.
         """
         T = contenttype.get_type(location)
-        return (filetype.is_file(location) and T.is_winexe)
+        return filetype.is_file(location) and T.is_winexe
 
     @classmethod
     def recognize(cls, location):

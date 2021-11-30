@@ -19,22 +19,22 @@ class TestBower(PackageTester):
 
     def test_is_manifest_bower_json(self):
         test_file = self.get_test_loc('bower/basic/bower.json')
-        assert bower.BowerJSON.is_manifest(test_file)
+        assert bower.BowerJson.is_manifest(test_file)
 
     def test_parse_bower_json_basic(self):
         test_file = self.get_test_loc('bower/basic/bower.json')
-        package = bower.BowerJSON.recognize(test_file)
+        package = bower.BowerJson.recognize(test_file)
         expected_loc = self.get_test_loc('bower/basic/expected.json')
         self.check_packages(package, expected_loc, regen=False)
 
     def test_parse_bower_json_list_of_licenses(self):
         test_file = self.get_test_loc('bower/list-of-licenses/bower.json')
-        package = bower.BowerJSON.recognize(test_file)
+        package = bower.BowerJson.recognize(test_file)
         expected_loc = self.get_test_loc('bower/list-of-licenses/expected.json')
         self.check_packages(package, expected_loc, regen=False)
 
     def test_parse_bower_json_author_objects(self):
         test_file = self.get_test_loc('bower/author-objects/bower.json')
-        package = bower.BowerJSON.recognize(test_file)
+        package = bower.BowerJson.recognize(test_file)
         expected_loc = self.get_test_loc('bower/author-objects/expected.json')
         self.check_packages(package, expected_loc, regen=False)

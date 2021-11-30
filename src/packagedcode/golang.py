@@ -56,7 +56,6 @@ class GoMod(GolangPackage, models.PackageManifest):
 
     file_patterns = ('go.mod',)
     extensions = ('.mod',)
-    manifest_type = 'gomod'
 
     @classmethod
     def is_manifest(cls, location):
@@ -64,7 +63,7 @@ class GoMod(GolangPackage, models.PackageManifest):
         Return True if the file at ``location`` is likely a manifest of this type.
         """
         filename = fileutils.file_name(location).lower()
-        return (filetype.is_file(location) and filename == 'go.mod')
+        return filetype.is_file(location) and filename == 'go.mod'
 
     @classmethod
     def recognize(cls, location):
@@ -120,7 +119,6 @@ class GoSum(GolangPackage, models.PackageManifest):
 
     file_patterns = ('go.sum',)
     extensions = ('.sum',)
-    manifest_type = 'gosum'
 
     @classmethod
     def is_manifest(cls, location):
@@ -128,7 +126,7 @@ class GoSum(GolangPackage, models.PackageManifest):
         Return True if the file at ``location`` is likely a manifest of this type.
         """
         filename = fileutils.file_name(location).lower()
-        return (filetype.is_file(location) and filename == 'go.sum')
+        return filetype.is_file(location) and filename == 'go.sum'
 
     @classmethod
     def recognize(cls, location):

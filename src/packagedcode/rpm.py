@@ -156,11 +156,10 @@ def get_installed_packages(root_dir, detect_licenses=False, **kwargs):
 
 
 @attr.s()
-class RPMManifest(RpmPackage, models.PackageManifest):
+class RpmManifest(RpmPackage, models.PackageManifest):
 
     file_patterns = ('*.spec',)
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
-    manifest_type = 'rpmmanifest'
 
     @classmethod
     def is_manifest(cls, location):

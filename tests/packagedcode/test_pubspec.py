@@ -27,7 +27,7 @@ class TestPubspecDatadriven(PackageTester):
 
     def test_pubspec_yaml_is_manifest(self):
         test_file = self.get_test_loc('pubspec/specs/authors-pubspec.yaml')
-        assert pubspec.PubspecYAML.is_manifest(test_file)
+        assert pubspec.PubspecYaml.is_manifest(test_file)
 
     def test_parse_lock(self):
         test_loc = self.get_test_loc('pubspec/mini-pubspec.lock')
@@ -38,7 +38,7 @@ class TestPubspecDatadriven(PackageTester):
 
 def pub_tester(location,):
     manifests = []
-    for package_manifest in pubspec.PubspecYAML.recognize(location):
+    for package_manifest in pubspec.PubspecYaml.recognize(location):
         manifests.append(package_manifest.to_dict())
     return manifests
 

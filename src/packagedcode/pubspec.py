@@ -107,11 +107,10 @@ def compute_normalized_license(declared_license, location=None):
 
 
 @attr.s()
-class PubspecYAML(PubspecPackage, models.PackageManifest):
+class PubspecYaml(PubspecPackage, models.PackageManifest):
 
     file_patterns = ('pubspec.yaml',)
     extensions = ('.yaml',)
-    manifest_type = 'pubspecyaml'
 
     @classmethod
     def is_manifest(cls, location):
@@ -147,7 +146,6 @@ class PubspecLock(PubspecPackage, models.PackageManifest):
 
     file_patterns = ('pubspec.lock',)
     extensions = ('.lock',)
-    manifest_type = 'pubspeclock'
 
     @classmethod
     def is_manifest(cls, location):

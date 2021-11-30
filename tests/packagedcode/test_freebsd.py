@@ -19,47 +19,47 @@ class TestFreeBSD(PackageTester):
 
     def test_is_manifest_compact_manifest(self):
         test_file = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST')
-        assert freebsd.FreeBSDCompactManifest.is_manifest(test_file)
+        assert freebsd.CompactManifest.is_manifest(test_file)
 
     def test_parse_with_multi_licenses(self):
         test_file = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST')
         expected_loc = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST.expected')
-        package = freebsd.FreeBSDCompactManifest.recognize(test_file)
+        package = freebsd.CompactManifest.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
     def test_parse_with_dual_licenses2(self):
         test_file = self.get_test_loc('freebsd/dual_license2/+COMPACT_MANIFEST')
         expected_loc = self.get_test_loc('freebsd/dual_license2/+COMPACT_MANIFEST.expected')
-        package = freebsd.FreeBSDCompactManifest.recognize(test_file)
+        package = freebsd.CompactManifest.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
     def test_parse_with_dual_licenses(self):
         test_file = self.get_test_loc('freebsd/dual_license/+COMPACT_MANIFEST')
         expected_loc = self.get_test_loc('freebsd/dual_license/+COMPACT_MANIFEST.expected')
-        package = freebsd.FreeBSDCompactManifest.recognize(test_file)
+        package = freebsd.CompactManifest.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
     def test_parse_without_licenses(self):
         test_file = self.get_test_loc('freebsd/no_licenses/+COMPACT_MANIFEST')
         expected_loc = self.get_test_loc('freebsd/no_licenses/+COMPACT_MANIFEST.expected')
-        package = freebsd.FreeBSDCompactManifest.recognize(test_file)
+        package = freebsd.CompactManifest.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
     def test_parse_basic2(self):
         test_file = self.get_test_loc('freebsd/basic2/+COMPACT_MANIFEST')
         expected_loc = self.get_test_loc('freebsd/basic2/+COMPACT_MANIFEST.expected')
-        package = freebsd.FreeBSDCompactManifest.recognize(test_file)
+        package = freebsd.CompactManifest.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
     def test_parse_basic(self):
         test_file = self.get_test_loc('freebsd/basic/+COMPACT_MANIFEST')
         expected_loc = self.get_test_loc('freebsd/basic/+COMPACT_MANIFEST.expected')
-        package = freebsd.FreeBSDCompactManifest.recognize(test_file)
+        package = freebsd.CompactManifest.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
     def test_parse_not_yaml(self):
         test_file = self.get_test_loc('freebsd/not_yaml/+COMPACT_MANIFEST')
         try:
-            freebsd.FreeBSDCompactManifest.recognize(test_file)
+            freebsd.CompactManifest.recognize(test_file)
         except saneyaml.YAMLError as e:
             assert 'while parsing a block node' in str(e)

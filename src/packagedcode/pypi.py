@@ -101,17 +101,16 @@ meta_file_names = 'PKG-INFO', 'METADATA',
 
 
 @attr.s()
-class PythonMetadataFile(PythonPackage, models.PackageManifest):
+class MetadataFile(PythonPackage, models.PackageManifest):
 
     file_patterns = meta_file_names
-    manifest_type = 'pythonmetadata'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith(meta_file_names))
+        return filetype.is_file(location) and location.endswith(meta_file_names)
 
     @classmethod
     def recognize(cls, location):
@@ -160,18 +159,17 @@ bdist_file_suffixes = '.whl', '.egg',
 
 
 @attr.s()
-class PythonBinaryDist(PythonPackage, models.PackageManifest):
+class BinaryDistArchive(PythonPackage, models.PackageManifest):
 
     file_patterns = ('*.whl', '*.egg',)
     extensions = bdist_file_suffixes
-    manifest_type = 'bdistarchive'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith(bdist_file_suffixes))
+        return filetype.is_file(location) and location.endswith(bdist_file_suffixes)
 
     @classmethod
     def recognize(cls, location):
@@ -192,18 +190,17 @@ sdist_file_suffixes = '.tar.gz', '.tar.bz2', '.zip',
 
 
 @attr.s()
-class PythonSourceDist(PythonPackage, models.PackageManifest):
+class SourceDistArchive(PythonPackage, models.PackageManifest):
     # TODO: we are ignoing sdists such as pex, pyz, etc.
     file_patterns = ('*.tar.gz', '*.tar.bz2', '*.zip',)
     extensions = sdist_file_suffixes
-    manifest_type = 'sdistarchive'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith(sdist_file_suffixes))
+        return filetype.is_file(location) and location.endswith(sdist_file_suffixes)
 
     @classmethod
     def recognize(cls, location):
@@ -232,18 +229,17 @@ class PythonSourceDist(PythonPackage, models.PackageManifest):
 
 
 @attr.s()
-class PythonSetupPy(PythonPackage, models.PackageManifest):
+class SetupPy(PythonPackage, models.PackageManifest):
 
     file_patterns = ('setup.py',)
     extensions = ('.py',)
-    manifest_type = 'setupfile'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith('setup.py'))
+        return filetype.is_file(location) and location.endswith('setup.py')
 
     @classmethod
     def recognize(cls, location):
@@ -276,7 +272,7 @@ class PythonSetupPy(PythonPackage, models.PackageManifest):
 
 
 @attr.s()
-class PythonDependencyFile(PythonPackage, models.PackageManifest):
+class DependencyFile(PythonPackage, models.PackageManifest):
 
     file_patterns = (
         'Pipfile',
@@ -284,12 +280,11 @@ class PythonDependencyFile(PythonPackage, models.PackageManifest):
         'setup.cfg',
         'tox.ini',
     )
-    manifest_type = 'dependencyfile'
 
     @classmethod
     def is_manifest(cls, location):
         for file_pattern in cls.file_patterns:
-            if (filetype.is_file(location) and location.endswith(file_pattern)):
+            if filetype.is_file(location) and location.endswith(file_pattern):
                 return True
 
     @classmethod
@@ -312,18 +307,17 @@ class PythonDependencyFile(PythonPackage, models.PackageManifest):
 
 
 @attr.s()
-class PythonPipfileLock(PythonPackage, models.PackageManifest):
+class PipfileLock(PythonPackage, models.PackageManifest):
 
     file_patterns = ('Pipfile.lock',)
     extensions = ('.lock',)
-    manifest_type = 'pipfilelock'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith('Pipfile.lock'))
+        return filetype.is_file(location) and location.endswith('Pipfile.lock')
 
     @classmethod
     def recognize(cls, location):
@@ -350,7 +344,7 @@ class PythonPipfileLock(PythonPackage, models.PackageManifest):
 
 
 @attr.s()
-class PythonRequirementsFile(PythonPackage, models.PackageManifest):
+class RequirementsFile(PythonPackage, models.PackageManifest):
 
     file_patterns = (
         '*requirements*.txt',
@@ -358,7 +352,6 @@ class PythonRequirementsFile(PythonPackage, models.PackageManifest):
         '*requirements*.in',
         'requires.txt',
     )
-    manifest_type = 'requirementsfile'
 
     @classmethod
     def is_manifest(cls, location):

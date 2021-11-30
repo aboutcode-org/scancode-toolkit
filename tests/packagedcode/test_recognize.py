@@ -125,7 +125,7 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('recon/composer.json')
         packages = recognize_package_manifests(test_file)
         assert packages
-        assert isinstance(packages[0], phpcomposer.PHPComposerPackage)
+        assert isinstance(packages[0], phpcomposer.PhpComposerPackage)
 
     def test_recognize_haxe(self):
         test_file = self.get_test_loc('recon/haxelib.json')

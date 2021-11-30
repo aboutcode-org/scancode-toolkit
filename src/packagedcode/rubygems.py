@@ -103,18 +103,17 @@ class RubyGem(models.Package):
 
 
 @attr.s()
-class RubyGemArchive(RubyGem, models.PackageManifest):
+class GemArchive(RubyGem, models.PackageManifest):
 
     file_patterns = ('*.gem',)
     extensions = ('.gem',)
-    manifest_type = 'gemarchive'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith('.gem'))
+        return filetype.is_file(location) and location.endswith('.gem')
 
     @classmethod
     def recognize(cls, location):
@@ -124,22 +123,21 @@ class RubyGemArchive(RubyGem, models.PackageManifest):
         """
         metadata = get_gem_metadata(location)
         metadata = saneyaml.load(metadata)
-        yield build_rubygem_package(metadata, download_url=None, package_url=None)
+        yield build_rubygem_package(cls, metadata, download_url=None, package_url=None)
 
 
 @attr.s()
-class RubyGemArchiveExtracted(RubyGem, models.PackageManifest):
+class GemArchiveExtracted(RubyGem, models.PackageManifest):
 
     file_patterns = ('metadata.gz-extract',)
     extensions = ('.gz-extract',)
-    manifest_type = 'gemarchiveextracted'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith('.gz-extract'))
+        return filetype.is_file(location) and location.endswith('.gz-extract')
 
     @classmethod
     def recognize(cls, location):
@@ -150,22 +148,21 @@ class RubyGemArchiveExtracted(RubyGem, models.PackageManifest):
         with open(location, 'rb') as met:
             metadata = met.read()
         metadata = saneyaml.load(metadata)
-        yield build_rubygem_package(metadata)
+        yield build_rubygem_package(cls, metadata)
 
 
 @attr.s()
-class RubyGemSpec(RubyGem, models.PackageManifest):
+class GemSpec(RubyGem, models.PackageManifest):
 
     file_patterns = ('*.gemspec',)
     extensions = ('.gemspec',)
-    manifest_type = 'gemspec'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith('.gemspec'))
+        return filetype.is_file(location) and location.endswith('.gemspec')
 
     @classmethod
     def recognize(cls, location):
@@ -223,17 +220,16 @@ class RubyGemSpec(RubyGem, models.PackageManifest):
 
 
 @attr.s()
-class RubyGemfile(RubyGem, models.PackageManifest):
+class Gemfile(RubyGem, models.PackageManifest):
 
     file_patterns = ('Gemfile',)
-    manifest_type = 'gemfile'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith('Gemfile'))
+        return filetype.is_file(location) and location.endswith('Gemfile')
 
     @classmethod
     def recognize(cls, location):
@@ -245,18 +241,17 @@ class RubyGemfile(RubyGem, models.PackageManifest):
         pass
 
 @attr.s()
-class RubyGemfileLock(RubyGem, models.PackageManifest):
+class GemfileLock(RubyGem, models.PackageManifest):
 
     file_patterns = ('Gemfile.lock',)
     extensions = ('.lock',)
-    manifest_type = 'gemfilelock'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith('Gemfile.lock'))
+        return filetype.is_file(location) and location.endswith('Gemfile.lock')
 
     @classmethod
     def recognize(cls, location):
@@ -421,7 +416,7 @@ def get_gem_metadata(location):
             fileutils.delete(extract_loc)
 
 
-def build_rubygem_package(gem_data, download_url=None, package_url=None):
+def build_rubygem_package(cls, gem_data, download_url=None, package_url=None):
     """
     Return a Package built from a Gem `gem_data` mapping or None.
     The `gem_data can come from a .gemspec or .gem/gem_data.
@@ -446,7 +441,7 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     licenses = gem_data.get('licenses')
     declared_license = licenses_mapper(lic, licenses)
 
-    package_manifest = RubyGemArchive(
+    package_manifest = cls(
         name=name,
         description=description,
         homepage_url=gem_data.get('homepage'),

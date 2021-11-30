@@ -35,7 +35,6 @@ if TRACE:
 
 @attr.s()
 class RustCargoCrate(models.Package):
-    file_patterns = ('Cargo.toml', 'Cargo.lock')
     default_type = 'cargo'
     default_primary_language = 'Rust'
     default_web_baseurl = 'https://crates.io'
@@ -60,19 +59,17 @@ class RustCargoCrate(models.Package):
 
 
 @attr.s()
-class RustCargoToml(RustCargoCrate, models.PackageManifest):
+class CargoToml(RustCargoCrate, models.PackageManifest):
 
     file_patterns = ('Cargo.toml',)
-    extensions = ('.json',)
-    manifest_type = 'cargotoml'
+    extensions = ('.toml',)
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'cargo.toml')
+        return filetype.is_file(location) and fileutils.file_name(location).lower() == 'cargo.toml'
 
     @classmethod
     def recognize(cls, location):
@@ -106,11 +103,10 @@ class RustCargoToml(RustCargoCrate, models.PackageManifest):
 
 
 @attr.s()
-class RustCargoLock(RustCargoCrate, models.PackageManifest):
+class CargoLock(RustCargoCrate, models.PackageManifest):
 
     file_patterns = ('Cargo.lock',)
     extensions = ('.lock',)
-    manifest_type = 'cargolock'
 
     @classmethod
     def is_manifest(cls, location):

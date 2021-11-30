@@ -85,19 +85,17 @@ class NpmPackage(models.Package):
 
 
 @attr.s()
-class NPMPackageJSON(NpmPackage, models.PackageManifest):
+class PackageJson(NpmPackage, models.PackageManifest):
 
     file_patterns = ('package.json',)
     extensions = ('.tgz',)
-    manifest_type = 'packagejson'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'package.json')
+        return filetype.is_file(location) and fileutils.file_name(location).lower() == 'package.json'
 
     @classmethod
     def recognize(cls, location):
@@ -179,14 +177,13 @@ class NPMPackageJSON(NpmPackage, models.PackageManifest):
 
 
 @attr.s()
-class NPMPackageLockJSON(NpmPackage, models.PackageManifest):
+class PackageLockJson(NpmPackage, models.PackageManifest):
 
     file_patterns = (
         'npm-shrinkwrap.json',
         'package-lock.json',
     )
     extensions = ('.tgz',)
-    manifest_type = 'packagelockjson'
 
     @staticmethod
     def is_package_lock(location):
@@ -321,11 +318,10 @@ class NPMPackageLockJSON(NpmPackage, models.PackageManifest):
 
 
 @attr.s()
-class NPMYarnLockJSON(NpmPackage, models.PackageManifest):
+class YarnLockJson(NpmPackage, models.PackageManifest):
 
     file_patterns = ('yarn.lock',)
     extensions = ('.tgz',)
-    manifest_type = 'yarnlock'
 
     @classmethod
     def is_manifest(cls, location):

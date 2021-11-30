@@ -43,7 +43,7 @@ if TRACE:
 
 
 @attr.s()
-class BaseCocoapodsPackage(models.Package):
+class CocoapodsPackage(models.Package):
     default_type = 'pods'
     default_primary_language = 'Objective-C'
     default_web_baseurl = 'https://cocoapods.org'
@@ -117,18 +117,17 @@ class BaseCocoapodsPackage(models.Package):
 
 
 @attr.s()
-class CocoapodsPodspec(BaseCocoapodsPackage, models.PackageManifest):
+class Podspec(CocoapodsPackage, models.PackageManifest):
 
     file_patterns = ('*.podspec',)
     extensions = ('.podspec',)
-    manifest_type = 'podspec'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith('.podspec'))
+        return filetype.is_file(location) and location.endswith('.podspec')
 
     @classmethod
     def recognize(cls, location):
@@ -177,11 +176,10 @@ class CocoapodsPodspec(BaseCocoapodsPackage, models.PackageManifest):
 
 
 @attr.s()
-class CocoapodsPodfileLock(BaseCocoapodsPackage, models.PackageManifest):
+class PodfileLock(CocoapodsPackage, models.PackageManifest):
 
     file_patterns = ('*podfile.lock',)
     extensions = ('.lock',)
-    manifest_type = 'podfilelock'
 
     @classmethod
     def is_manifest(cls, location):
@@ -264,18 +262,17 @@ class CocoapodsPodfileLock(BaseCocoapodsPackage, models.PackageManifest):
 
 
 @attr.s()
-class CocoapodsPodspecJSON(BaseCocoapodsPackage, models.PackageManifest):
+class PodspecJson(CocoapodsPackage, models.PackageManifest):
 
     file_patterns = ('*.podspec.json',)
     extensions = ('.json',)
-    manifest_type = 'podspecjson'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location) and location.endswith('.podspec.json'))
+        return filetype.is_file(location) and location.endswith('.podspec.json')
 
     @classmethod
     def recognize(cls, location):

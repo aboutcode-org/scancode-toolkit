@@ -59,7 +59,6 @@ class OpamFile(OpamPackage, models.PackageManifest):
 
     file_patterns = ('*opam',)
     extensions = ('.opam',)
-    manifest_type = 'opamfile'
 
     @classmethod
     def is_manifest(cls, location):

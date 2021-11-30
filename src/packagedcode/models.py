@@ -696,16 +696,17 @@ class PackageManifest:
     # list of known file_patterns for a package manifest type
     file_patterns = tuple()
 
-    # Package manifest type within a package ecosystem
-    manifest_type = None
-
     @property
     def package_manifest_type(self):
         """
         A tuple unique across package manifests, created from the default package type
         and the manifest type.
         """
-        return self.default_type, self.manifest_type
+        return self.default_type, self.manifest_type()
+
+    @classmethod
+    def manifest_type(cls):
+        return cls.__module__+"."+cls.__qualname__
 
     @classmethod
     def is_manifest(cls, location):

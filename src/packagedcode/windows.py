@@ -46,8 +46,6 @@ class MicrosoftUpdatePackage(models.Package, models.PackageManifest):
 @attr.s()
 class MicrosoftUpdateManifest(MicrosoftUpdatePackage, models.PackageManifest):
 
-    manifest_type = 'winupdatemanifest'
-
     @classmethod
     def is_manifest(cls, location):
         """

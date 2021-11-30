@@ -156,11 +156,10 @@ class ChefMetadataFormatter(Formatter):
 
 
 @attr.s()
-class MetadataJSON(ChefPackage, models.PackageManifest):
+class MetadataJson(ChefPackage, models.PackageManifest):
 
     file_patterns = ('metadata.json',)
     extensions = ('.json',)
-    manifest_type = 'metadatajson'
 
     @classmethod
     def is_manifest(cls, location):
@@ -192,7 +191,6 @@ class Metadatarb(ChefPackage, models.PackageManifest):
 
     file_patterns = ('metadata.rb',)
     extensions = ('.rb',)
-    manifest_type = 'metadatarb'
 
     @classmethod
     def is_manifest(cls, location):

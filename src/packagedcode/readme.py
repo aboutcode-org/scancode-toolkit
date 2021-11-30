@@ -59,7 +59,6 @@ class ReadmeManifest(ReadmePackage, models.PackageManifest):
         'README.google',
         'README.thirdparty',
     )
-    manifest_type = 'readmemanifest'
 
     @classmethod
     def is_manifest(cls, location):
@@ -73,7 +72,8 @@ class ReadmeManifest(ReadmePackage, models.PackageManifest):
                 'readme.facebook',
                 'readme.google',
                 'readme.thirdparty'
-            ])
+            ]
+        )
 
     @classmethod
     def recognize(cls, location):

@@ -77,7 +77,6 @@ class Condayml(CondaPackage, models.PackageManifest):
 
     file_patterns = ('meta.yaml', 'META.yml',)
     extensions = ('.yml', '.yaml',)
-    manifest_type = 'condayml'
 
     @classmethod
     def is_manifest(cls, location):

@@ -47,10 +47,9 @@ class FreeBSDPackage(models.Package):
 
 
 @attr.s()
-class FreeBSDCompactManifest(FreeBSDPackage, models.PackageManifest):
+class CompactManifest(FreeBSDPackage, models.PackageManifest):
 
     file_patterns = ('+COMPACT_MANIFEST',)
-    manifest_type = 'compactmanifest'
 
     @classmethod
     def is_manifest(cls, location):

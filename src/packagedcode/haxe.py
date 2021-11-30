@@ -69,19 +69,17 @@ class HaxePackage(models.Package):
 
 
 @attr.s()
-class HaxelibJSON(HaxePackage, models.PackageManifest):
+class HaxelibJson(HaxePackage, models.PackageManifest):
 
     file_patterns = ('haxelib.json',)
     extensions = ('.json',)
-    manifest_type = 'haxlibjson'
 
     @classmethod
     def is_manifest(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
-        return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'haxelib.json')
+        return filetype.is_file(location) and fileutils.file_name(location).lower() == 'haxelib.json'
 
     @classmethod
     def recognize(cls, location):

@@ -40,7 +40,7 @@ Package: bazel
 
 --------------------------------------------
 Package: bower
-  class: packagedcode.bower:BowerJSON
+  class: packagedcode.bower:BowerJson
   file_patterns: bower.json, .bower.json
   extensions: .json
 
@@ -57,19 +57,19 @@ Package: cab
 
 --------------------------------------------
 Package: cargo
-  class: packagedcode.cargo:RustCargoToml
+  class: packagedcode.cargo:CargoToml
   file_patterns: Cargo.toml
-  extensions: .json
+  extensions: .toml
 
 --------------------------------------------
 Package: cargo
-  class: packagedcode.cargo:RustCargoLock
+  class: packagedcode.cargo:CargoLock
   file_patterns: Cargo.lock
   extensions: .lock
 
 --------------------------------------------
 Package: chef
-  class: packagedcode.chef:MetadataJSON
+  class: packagedcode.chef:MetadataJson
   file_patterns: metadata.json
   extensions: .json
   filetypes: .tgz
@@ -89,13 +89,13 @@ Package: chrome
 
 --------------------------------------------
 Package: composer
-  class: packagedcode.phpcomposer:PHPComposerJSON
+  class: packagedcode.phpcomposer:ComposerJson
   file_patterns: composer.json
   extensions: .json
 
 --------------------------------------------
 Package: composer
-  class: packagedcode.phpcomposer:PHPComposerLock
+  class: packagedcode.phpcomposer:ComposerLock
   file_patterns: composer.lock
   extensions: .lock
 
@@ -133,33 +133,33 @@ Package: ear
 
 --------------------------------------------
 Package: freebsd
-  class: packagedcode.freebsd:FreeBSDCompactManifest
+  class: packagedcode.freebsd:CompactManifest
   file_patterns: +COMPACT_MANIFEST
 
 --------------------------------------------
 Package: gem
-  class: packagedcode.rubygems:RubyGemArchive
+  class: packagedcode.rubygems:GemArchive
   file_patterns: *.gem
   extensions: .gem
   filetypes: .tar, tar archive
 
 --------------------------------------------
 Package: gem
-  class: packagedcode.rubygems:RubyGemArchiveExtracted
+  class: packagedcode.rubygems:GemArchiveExtracted
   file_patterns: metadata.gz-extract
   extensions: .gz-extract
   filetypes: .tar, tar archive
 
 --------------------------------------------
 Package: gem
-  class: packagedcode.rubygems:RubyGemSpec
+  class: packagedcode.rubygems:GemSpec
   file_patterns: *.gemspec
   extensions: .gemspec
   filetypes: .tar, tar archive
 
 --------------------------------------------
 Package: gem
-  class: packagedcode.rubygems:RubyGemfileLock
+  class: packagedcode.rubygems:GemfileLock
   file_patterns: Gemfile.lock
   extensions: .lock
   filetypes: .tar, tar archive
@@ -178,7 +178,7 @@ Package: golang
 
 --------------------------------------------
 Package: haxe
-  class: packagedcode.haxe:HaxelibJSON
+  class: packagedcode.haxe:HaxelibJson
   file_patterns: haxelib.json
   extensions: .json
 
@@ -246,19 +246,19 @@ Package: msi
 
 --------------------------------------------
 Package: npm
-  class: packagedcode.npm:NPMPackageJSON
+  class: packagedcode.npm:PackageJson
   file_patterns: package.json
   extensions: .tgz
 
 --------------------------------------------
 Package: npm
-  class: packagedcode.npm:NPMPackageLockJSON
+  class: packagedcode.npm:PackageLockJson
   file_patterns: npm-shrinkwrap.json, package-lock.json
   extensions: .tgz
 
 --------------------------------------------
 Package: npm
-  class: packagedcode.npm:NPMYarnLockJSON
+  class: packagedcode.npm:YarnLockJson
   file_patterns: yarn.lock
   extensions: .tgz
 
@@ -283,25 +283,25 @@ Package: opam
 
 --------------------------------------------
 Package: pods
-  class: packagedcode.cocoapods:CocoapodsPodspec
+  class: packagedcode.cocoapods:Podspec
   file_patterns: *.podspec
   extensions: .podspec
 
 --------------------------------------------
 Package: pods
-  class: packagedcode.cocoapods:CocoapodsPodfileLock
+  class: packagedcode.cocoapods:PodfileLock
   file_patterns: *podfile.lock
   extensions: .lock
 
 --------------------------------------------
 Package: pods
-  class: packagedcode.cocoapods:CocoapodsPodspecJSON
+  class: packagedcode.cocoapods:PodspecJson
   file_patterns: *.podspec.json
   extensions: .json
 
 --------------------------------------------
 Package: pubspec
-  class: packagedcode.pubspec:PubspecYAML
+  class: packagedcode.pubspec:PubspecYaml
   file_patterns: pubspec.yaml
   extensions: .yaml
 
@@ -313,41 +313,41 @@ Package: pubspec
 
 --------------------------------------------
 Package: pypi
-  class: packagedcode.pypi:PythonMetadataFile
+  class: packagedcode.pypi:MetadataFile
   file_patterns: PKG-INFO, METADATA
 
 --------------------------------------------
 Package: pypi
-  class: packagedcode.pypi:PythonBinaryDist
+  class: packagedcode.pypi:BinaryDistArchive
   file_patterns: *.whl, *.egg
   extensions: .whl, .egg
 
 --------------------------------------------
 Package: pypi
-  class: packagedcode.pypi:PythonSourceDist
+  class: packagedcode.pypi:SourceDistArchive
   file_patterns: *.tar.gz, *.tar.bz2, *.zip
   extensions: .tar.gz, .tar.bz2, .zip
 
 --------------------------------------------
 Package: pypi
-  class: packagedcode.pypi:PythonSetupPy
+  class: packagedcode.pypi:SetupPy
   file_patterns: setup.py
   extensions: .py
 
 --------------------------------------------
 Package: pypi
-  class: packagedcode.pypi:PythonDependencyFile
+  class: packagedcode.pypi:DependencyFile
   file_patterns: Pipfile, conda.yml, setup.cfg, tox.ini
 
 --------------------------------------------
 Package: pypi
-  class: packagedcode.pypi:PythonPipfileLock
+  class: packagedcode.pypi:PipfileLock
   file_patterns: Pipfile.lock
   extensions: .lock
 
 --------------------------------------------
 Package: pypi
-  class: packagedcode.pypi:PythonRequirementsFile
+  class: packagedcode.pypi:RequirementsFile
   file_patterns: *requirements*.txt, *requirements*.pip, *requirements*.in, requires.txt
 
 --------------------------------------------
@@ -357,7 +357,7 @@ Package: readme
 
 --------------------------------------------
 Package: rpm
-  class: packagedcode.rpm:RPMManifest
+  class: packagedcode.rpm:RpmManifest
   file_patterns: *.spec
   extensions: .rpm, .srpm, .mvl, .vip
   filetypes: rpm 
