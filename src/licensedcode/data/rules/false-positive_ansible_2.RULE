@@ -5,4 +5,4 @@
   # - GPLv3
   # - Apache
   # - CC-BY
-license: {{ license }}
+license: \{\{ license \}\}

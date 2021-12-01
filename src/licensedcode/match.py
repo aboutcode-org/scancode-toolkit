@@ -1410,17 +1410,28 @@ def filter_key_phrase_spans(matches):
         stopwords_by_pos = match.query.stopwords_by_pos
 
         for key_phrase_span in match.rule.key_phrase_spans:
+            # Filter out matches that do not contain key phrase in the ispan
             if key_phrase_span not in match.ispan:
                 has_key_phrases = False
                 break
 
-            # Do not check the last span position of a key phrase
-            # since unknown and stop is a number of words after a given span position
-            # and we would not care for what unknown words show up after a key phrase ends
-            key_phrase_spans_minus_last_position = Span(key_phrase_span.start, key_phrase_span.end - 1)
+            # Filter out matches that do not contain key phrase in the qspan
+            qpos_start = next(qpos for qpos, ipos in zip(match.qspan, match.ispan) if ipos in key_phrase_span)
+            query_key_phrase_span = Span(qpos_start, qpos_start + len(key_phrase_span))
+            if query_key_phrase_span not in match.qspan:
+                has_key_phrases = False
+                break
 
+            # Filter out matches where key phrase in qspan is interrupted by
+            # unknown or stopwords.
+            #
+            # Do not check the last span position of a key phrase since unknown
+            # and stop is a number of words after a given span position and we
+            # would not care for what unknown words show up after a key phrase
+            # ends
+            key_phrase_spans_minus_last_position = Span(key_phrase_span.start, key_phrase_span.end - 1)
             for qpos, ipos in zip(match.qspan, match.ispan):
-                if ipos in key_phrase_span:
+                if ipos in key_phrase_spans_minus_last_position:
                     if qpos in unknown_by_pos or qpos in stopwords_by_pos:
                         has_key_phrases = False
                         break

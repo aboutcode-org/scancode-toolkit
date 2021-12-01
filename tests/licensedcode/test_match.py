@@ -322,8 +322,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
         matches = idx.match(query_string=querys, _skip_hash_match=True)
         assert len(matches) == 1
 
-    @pytest.mark.skip(reason="ispan is too inclusive in this one, I don't know why")
-    def test_LicenseMatch_test(self):
+    def test_LicenseMatch_matches_only_when_key_phrase_is_uninterrupted(self):
         text_r1 = (
             'under the {{Creative Commons Attribution 4.0 International License}} (the "License");'
             'you may not use this file except in compliance with the License.'
@@ -340,15 +339,13 @@ class TestLicenseMatchBasic(FileBasedTesting):
         idx = index.LicenseIndex([r1])
 
         querys = """
-``.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+        This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+        International License (the "License"). You may not use this file except in compliance with the
+        License. A copy of the License is located at http://creativecommons.org/licenses/by-nc-sa/4.0/.
 
-   This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-   International License (the "License"). You may not use this file except in compliance with the
-   License. A copy of the License is located at http://creativecommons.org/licenses/by-nc-sa/4.0/.
-
-   This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-   either express or implied. See the License for the specific language governing permissions and
-   limitations under the License.
+        This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+        either express or implied. See the License for the specific language governing permissions and
+        limitations under the License.
         """
 
         matches = idx.match(query_string=querys, _skip_hash_match=True)
@@ -947,6 +944,31 @@ class TestLicenseMatchFilter(FileBasedTesting):
         assert discarded == [
             match_qspan_intersects_with_unknowns,
             match_qspan_intersects_with_stopwords
+        ]
+
+    def test_filter_key_phrases_discards_matches_where_key_phrase_is_interruped_in_qspan(self):
+        idx = index.LicenseIndex()
+        query = Query(query_string="Lorum ipsum", idx=idx)
+        query.unknowns_by_pos = {}
+        query.stopwords_by_pos = {}
+
+        r1 = Rule(text_file='r1', license_expression='apache-1.1', key_phrase_spans=[Span(12, 14)])
+
+        match_qspan_ispan_same_matching = LicenseMatch(rule=r1, query=query, qspan=Span(10, 15), ispan=Span(10, 15))
+        match_qspan_with_offset_matching = LicenseMatch(rule=r1, query=query, qspan=Span(20, 25), ispan=Span(10, 15))
+        match_qspan_with_offset_not_matching = LicenseMatch(rule=r1, query=query, qspan=Span([20, 21, 22, 23, 25]), ispan=Span(10, 15))
+
+        kept, discarded = filter_key_phrase_spans([
+            match_qspan_ispan_same_matching,
+            match_qspan_with_offset_matching,
+            match_qspan_with_offset_not_matching
+        ])
+        assert kept == [
+            match_qspan_ispan_same_matching,
+            match_qspan_with_offset_matching
+        ]
+        assert discarded == [
+            match_qspan_with_offset_not_matching,
         ]
 
 
