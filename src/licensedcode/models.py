@@ -825,6 +825,8 @@ class BasicRule(object):
     # for SPDX license expression dynamic rules or testing
     stored_text = attr.ib(default=None, repr=False)
 
+    # spans with ispan positions which must be present in the license match for
+    # this rule to be considered a valid match
     key_phrase_spans = attr.ib(default=attr.Factory(list), repr=False)
 
     # These attributes are computed upon text loading or setting the thresholds
