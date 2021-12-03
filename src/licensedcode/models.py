@@ -258,7 +258,7 @@ class License(object):
         """
         try:
             with io.open(self.data_file, encoding='utf-8') as f:
-                data = saneyaml.load(f.read())
+                data = saneyaml.load(f.read(), allow_duplicate_keys=False)
 
             for k, v in data.items():
                 if k == 'minimum_coverage':
@@ -1228,7 +1228,7 @@ class Rule(BasicRule):
         """
         try:
             with io.open(self.data_file, encoding='utf-8') as f:
-                data = saneyaml.load(f.read())
+                data = saneyaml.load(f.read(), allow_duplicate_keys=False)
         except Exception as e:
             print('#############################')
             print('INVALID LICENSE RULE FILE:', f'file://{self.data_file}')
