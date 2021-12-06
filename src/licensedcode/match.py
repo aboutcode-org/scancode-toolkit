@@ -1498,6 +1498,10 @@ def refine_matches(
     all_discarded.extend(discarded)
     _log(matches, discarded, 'GOOD')
 
+    matches, discarded = filter_key_phrase_spans(matches)
+    all_discarded.extend(discarded)
+    _log(matches, discarded, 'KEY PHRASES')
+
     matches = merge_matches(matches)
     if TRACE: logger_debug(' #####refine_matches: before FILTER matches#', len(matches))
     if TRACE_REFINE:
@@ -1539,10 +1543,6 @@ def refine_matches(
         matches, discarded = filter_low_score(matches, min_score=min_score)
         all_discarded.extend(discarded)
         _log(matches, discarded, 'HIGH ENOUGH SCORE')
-
-    matches, discarded = filter_key_phrase_spans(matches)
-    all_discarded.extend(discarded)
-    _log(matches, discarded, 'KEY PHRASES')
 
     if merge:
         matches = merge_matches(matches)
