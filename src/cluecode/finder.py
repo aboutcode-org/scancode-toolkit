@@ -47,43 +47,36 @@ Optionally apply filters to pattern matches.
 """
 
 def common_filter(line):
-	"""
-	Looks for the pattern that are common to both emails and urls
-	"""
-	commons = ["@", ".", ":", "/"]
-	bool = False
-	for pattern in commons:
-		if pattern in list(line):
-			bool = True
-			break
-			
-	return bool
+    """
+    Looks for the pattern that are common to both emails and urls
+    """
+    return any(p in line for p in "@.:/")
 
 
 def find(location, patterns):
-	"""
-	Yield match and matched lines for patterns found in file at location as a
-	tuple of (key, found text, text line). `patterns` is a list of tuples (key,
-	compiled regex).
+    """
+    Yield match and matched lines for patterns found in file at location as a
+    tuple of (key, found text, text line). `patterns` is a list of tuples (key,
+    compiled regex).
 
-	Note: the location can be a list of lines for testing convenience.
-	"""
-	if TRACE:
-		from pprint import pformat
-		loc = pformat(location)
-		logger_debug('find(location=%(loc)r,\n  patterns=%(patterns)r)' % locals())
+    Note: the location can be a list of lines for testing convenience.
+    """
+    if TRACE:
+        from pprint import pformat
+        loc = pformat(location)
+        logger_debug('find(location=%(loc)r,\n  patterns=%(patterns)r)' % locals())
 
-	for line_number, line in analysis.numbered_text_lines(location, demarkup=False):
-		if common_filter(line):
-			for key, pattern in patterns:
-				for match in pattern.findall(line):
+    for line_number, line in analysis.numbered_text_lines(location, demarkup=False):
+        if common_filter(line):
+            for key, pattern in patterns:
+                for match in pattern.findall(line):
 
-					if TRACE:
-						logger_debug('find: yielding match: key=%(key)r, '
-								'match=%(match)r,\n    line=%(line)r' % locals())
-					yield key, toascii(match), line, line_number
-		else:
-			continue
+                    if TRACE:
+                        logger_debug('find: yielding match: key=%(key)r, '
+                                'match=%(match)r,\n    line=%(line)r' % locals())
+                    yield key, toascii(match), line, line_number
+        else:
+            continue
 
 
 def unique_filter(matches):
