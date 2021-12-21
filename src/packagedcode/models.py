@@ -554,16 +554,6 @@ class Package(BasePackage):
             self.primary_language = self.default_primary_language
 
     @classmethod
-    def recognize(cls, location):
-        """
-        Yield one or more Package objects given a file location pointing to a
-        package archive, manifest or similar.
-
-        Sub-classes should override to implement their own package recognition.
-        """
-        raise NotImplementedError
-
-    @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         """
         Return the Resource for the package root given a `manifest_resource`
@@ -709,7 +699,7 @@ class PackageManifest:
 
     @classmethod
     def manifest_type(cls):
-        return cls.__module__+"."+cls.__qualname__
+        return f"{cls.__module__}.{cls.__qualname__}"
 
     @classmethod
     def is_manifest(cls, location):
@@ -764,7 +754,7 @@ class PackageManifest:
     @classmethod
     def recognize(cls, location):
         """
-        Yield one or more Package manifest objects given a file at `location`
+        Yield one or more PackageManifest objects given a file at `location`
         pointing to a package archive, manifest or similar.
 
         Sub-classes should override to implement their own package recognition and creation.
