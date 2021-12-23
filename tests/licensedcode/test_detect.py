@@ -931,9 +931,9 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         matches = idx.match(query_string=querys)
 
         rule = [r for r in idx.rules_by_rid if r.identifier == 'gpl_69.RULE'][0]
-        m1 = LicenseMatch(rule=rule, qspan=Span(0, 7), ispan=Span(0, 7), start_line=1, end_line=1)
-        m2 = LicenseMatch(rule=rule, qspan=Span(8, 15), ispan=Span(0, 7), start_line=2, end_line=2)
-        m3 = LicenseMatch(rule=rule, qspan=Span(16, 23), ispan=Span(0, 7), start_line=3, end_line=3)
+        m1 = LicenseMatch(rule=rule, matcher='2-aho', qspan=Span(0, 7), ispan=Span(0, 7), start_line=1, end_line=1)
+        m2 = LicenseMatch(rule=rule, matcher='2-aho', qspan=Span(8, 15), ispan=Span(0, 7), start_line=2, end_line=2)
+        m3 = LicenseMatch(rule=rule, matcher='2-aho', qspan=Span(16, 23), ispan=Span(0, 7), start_line=3, end_line=3)
         assert matches == [m1, m2, m3]
 
     def test_match_has_correct_line_positions_for_query_with_repeats(self):
@@ -1090,6 +1090,44 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
             'GNU Lesser General Public (LGPL)',
             'GNU Lesser General Public (LGPL)']
         assert results == expected
+
+    def test_match_filtering_discards_overlapping_trailing_matches_by_one_word(self):
+        idx = cache.get_index()
+
+        # "License Python" should not be returned as a second match
+        query1 = '''
+
+        simplejson
+        ----------
+        python-lib/simplejson
+        Made available under the MIT license.
+
+        Python Markdown
+        ---------------
+        python-lib/markdown
+        '''
+
+        matches = idx.match(query_string=query1)
+        assert len(matches) == 1
+        matched_text = matches[0].matched_text(whole_lines=False, _usecache=False)
+        assert matched_text == 'Made available under the MIT license.'
+
+    def test_match_filtering_discards_overlapping_leading_matches_by_one_word(self):
+        idx = cache.get_index()
+        # "apache Licensed" should not be returned as a first match
+        # "License Python" should not be returned as a third match
+        query2 = '''
+        lib/simplejson from Apache
+
+        Licensed under the GPL 2.0 license.
+
+        Python Markdown
+        '''
+
+        matches = idx.match(query_string=query2)
+        assert len(matches) == 1
+        matched_text = matches[0].matched_text(whole_lines=False, _usecache=False)
+        assert matched_text == 'Licensed under the GPL 2.0 license.'
 
 
 class TestMatchBinariesWithFullIndex(FileBasedTesting):

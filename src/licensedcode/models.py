@@ -12,7 +12,6 @@ import shutil
 import traceback
 from collections import Counter
 from collections import defaultdict
-from functools import partial
 from itertools import chain
 from operator import itemgetter
 from os.path import abspath
@@ -68,7 +67,7 @@ CATEGORIES = FOSS_CATEGORIES | OTHER_CATEGORIES
 
 
 @attr.s(slots=True)
-class License(object):
+class License:
     """
     A license consists of these files, where <key> is the license key:
         - <key>.yml : the license data in YAML
@@ -78,68 +77,246 @@ class License(object):
     `src_dir` directory. Key is a lower-case unique ascii string.
     """
 
-    __attrib = partial(attr.ib, repr=False)
+    key = attr.ib(
+        repr=True,
+        metadata=dict(
+            help='Mandatory unique key: this is a lower case string with only '
+            'ASCII characters, digits, underscore or dots.')
+    )
 
-    # mandatory unique key: lower case ASCII characters, digits, underscore and dots.
-    key = attr.ib(repr=True)
+    src_dir = attr.ib(
+        default=licenses_data_dir,
+        repr=False,
+        metadata=dict(
+            help='Internal field pointing to the source directory for this '
+            'license text and data file')
+    )
 
-    src_dir = __attrib(default=licenses_data_dir)
+    is_deprecated = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='Flag set to True if this is a deprecated license. '
+            'The policy is to never delete a license key once attributed. '
+            'Instead it can be marked as deprecated and will be ignored for '
+            'detection. When marking a license as deprecated, add notes '
+            'explaining why this is deprecated. And all license rules must be '
+            'updated accordingly to point to a new license expression.')
+    )
 
-    # if this is a deprecated license, add also notes explaining why
-    is_deprecated = __attrib(default=False)
+    # TODO: this is not yet supported.
+    language = attr.ib(
+        default='en',
+        repr=False,
+        metadata=dict(
+            help='Two-letter ISO 639-1 language code if this license text is '
+            'not in English. See https://en.wikipedia.org/wiki/ISO_639-1 . '
+            'NOTE: each translation of a license text MUST have a different '
+            'license key. By convention, we append the language code to the '
+            'license key')
+        )
 
-    # if this license text is not in English, set this field to a two letter
-    # ISO 639-1 language code https://en.wikipedia.org/wiki/ISO_639-1
-    # NOTE: this is not yet supported.
-    # NOTE: each translation of a license text MUST have a different license key
-    language = __attrib(default='en')
+    short_name = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='Commonly used license short name, often abbreviated.')
+    )
 
-    # commonly used short name, often abbreviated.
-    short_name = __attrib(default=None)
-    # full name.
-    name = __attrib(default=None)
+    name = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='License full name')
+    )
 
-    # Permissive, Copyleft, etc
-    category = __attrib(default=None)
+    category = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='Category for this license. Use "Unstated License" if unknown. '
+            'One of: ' + ', '.join(sorted(CATEGORIES)))
+    )
 
-    owner = __attrib(default=None)
-    homepage_url = __attrib(default=None)
-    notes = __attrib(default=None)
+    owner = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='Required owner or author for this license. '
+            'Use "Unspecified" if unknown.')
+    )
 
-    # if this is a license exception, the license key this exception applies to
-    is_exception = __attrib(default=False)
+    homepage_url = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='Homepage URL for this license')
+    )
 
-    # if the license falls in unknwon category then this flag should be set to true
-    is_unknown = __attrib(default=False)
-    # SPDX key for SPDX licenses
-    spdx_license_key = __attrib(default=None)
-    # list of other keys, such as deprecated ones
-    other_spdx_license_keys = __attrib(default=attr.Factory(list))
-    # OSI License Key
-    osi_license_key = __attrib(default=None)
-    # Various URLs for info
-    text_urls = __attrib(default=attr.Factory(list))
-    osi_url = __attrib(default=None)
-    faq_url = __attrib(default=None)
-    other_urls = __attrib(default=attr.Factory(list))
+    notes = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='Free text notes.')
+    )
 
-    # various alternate keys for this license
-    key_aliases = __attrib(default=attr.Factory(list))
+    # TODO: add the license key(s) this exception applies to
+    is_exception = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='Flag set to True if this is a license exception')
+    )
 
-    minimum_coverage = __attrib(default=0)
-    standard_notice = __attrib(default=None)
+    is_unknown = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='Flag set to True, if this license is for some unknown license')
+    )
 
-    # lists of copuyrights, emails and URLs that can be ignored when detected
-    # in this license as they are part of the license or rule text itself
-    ignorable_copyrights = __attrib(default=attr.Factory(list))
-    ignorable_authors = __attrib(default=attr.Factory(list))
-    ignorable_holders = __attrib(default=attr.Factory(list))
-    ignorable_urls = __attrib(default=attr.Factory(list))
-    ignorable_emails = __attrib(default=attr.Factory(list))
+    spdx_license_key = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='SPDX short form license identifier. '
+            'Use a LicenseRef-scancode-<license key> for licenses not listed in '
+            'the SPDX licenses list')
+    )
 
-    # data file paths and known extensions
-    data_file = __attrib(default=None)
-    text_file = __attrib(default=None)
+    other_spdx_license_keys = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of other SPDX keys, such as the id of a deprecated '
+            'license or alternative LicenseRef identifiers')
+    )
+    osi_license_key = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='OSI License key if available')
+    )
+
+    text_urls = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='Text URL for this license')
+    )
+    osi_url = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='OpenSource.org URL for this license')
+    )
+    faq_url = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='Frequently Asked Questions page URL for this license')
+    )
+    other_urls = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='A list of other interesting URLs for this license')
+    )
+
+    key_aliases = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of alternative license keys for this license')
+    )
+
+    minimum_coverage = attr.ib(
+    default=0,
+    repr=False,
+    metadata=dict(
+        help='Can this rule text be matched only with a minimum coverage e.g., '
+        'when a minimum proportion of tokens have been matched? This is as a '
+        'float between 0 and 100 where 100 means that all tokens must be '
+        'matched and a smaller value means a smaller proportion of matched '
+        'tokens is acceptable. This is computed at indexing time based on '
+        'the length of a rule. Providing a stored value in the rule data '
+        'file overrides this default computed value. For example, a short '
+        'rule such as "MIT license" must be matched with all its words, '
+        'e.g., a 100 minimum_coverage. Otherwise matching only "mit" or '
+        '"license" is not a string enough licensing clue.')
+    )
+
+    standard_notice = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='')
+    )
+
+    ###########################################################################
+    # lists of clues that can be ignored when detected in this license as they
+    # are part of the license or rule text itself
+
+    ignorable_copyrights = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of copyrights that can be ignored when detected in this '
+            'text as they are part of the license or rule text proper and can'
+            'optionally be excluded from the copyrights detection')
+    )
+
+    ignorable_holders = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of holders that can be ignored when detected in this '
+            'text as they are part of the license or rule text proper and can'
+            'optionally be excluded from the holders detection')
+    )
+
+    ignorable_authors = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of authors that can be ignored when detected in this '
+            'text as they are part of the license or rule text proper and can'
+            'optionally be excluded from the authors detection')
+    )
+
+    ignorable_urls = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of holders that can be ignored when detected in this '
+            'text as they are part of the license or rule text proper and can'
+            'optionally be excluded from the holders detection')
+    )
+
+    ignorable_emails = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of emails that can be ignored when detected in this '
+            'text as they are part of the license or rule text proper and can'
+            'optionally be excluded from the emails detection')
+    )
+
+    ###########################################################################
+
+    data_file = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='Path to the YAML data file for this license')
+    )
+
+    text_file = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='Path to the license text file with a .LICENSE extension')
+    )
 
     def __attrs_post_init__(self, *args, **kwargs):
 
@@ -241,7 +418,8 @@ class License(object):
         """
 
         def write(location, byte_string):
-            # we write as binary because rules and licenses texts and data are UTF-8-encoded bytes
+            # we write as binary because rules and licenses texts and data are
+            # UTF-8-encoded bytes
             with io.open(location, 'wb') as of:
                 of.write(byte_string)
 
@@ -343,11 +521,12 @@ class License(object):
                     f'Use one of these valid categories:\n{cats}'
                 )
             if not lic.owner:
-                error('No owner')
+                error('No owner: Use "Unspecified" if not known.')
 
             if lic.is_unknown:
                 if not "unknown" in lic.key:
-                    error('is_unknown should not be true')
+                    error(
+                        'is_unknown is true only for unknown licenses')
 
             # URLS dedupe and consistency
             if no_dupe_urls:
@@ -631,6 +810,15 @@ def get_all_spdx_key_tokens(licenses_db):
             yield token
 
 
+def get_license_tokens():
+    """
+    Yield key license tokens.
+    """
+    yield 'license'
+    yield 'licence'
+    yield 'licensed'
+
+
 def load_rules(rules_data_dir=rules_data_dir):
     """
     Return an iterable of rules loaded from rule files in ``rules_data_dir``.
@@ -709,7 +897,7 @@ def load_rules(rules_data_dir=rules_data_dir):
 
 
 @attr.s(slots=True)
-class BasicRule(object):
+class BasicRule:
     """
     A detection rule object is a text to use for detection and corresponding
     detected licenses and metadata. This is a basic metadata object that does
@@ -721,125 +909,382 @@ class BasicRule(object):
     # FIXME: !!! TWO RULES MAY DIFFER BECAUSE THEY ARE UPDATED BY INDEXING
     ###########
 
-    # optional rule id int typically assigned at indexing time
-    rid = attr.ib(default=None, repr=TRACE_REPR)
+    rid = attr.ib(
+        default=None,
+        repr=TRACE_REPR,
+        metadata=dict(
+            help='Internal rule id number, assigned automatically at indexing '
+            'time')
+    )
 
-    # unique identifier
-    identifier = attr.ib(default=None)
+    identifier = attr.ib(
+        default=None,
+        metadata=dict(
+            help='Unique identifier for this rule, assigned automatically at '
+            'indexing time. It is typically the rule ''text file name such as '
+            '"gpl-2.0_12.RULE" or the license text file name such as '
+            '"gpl-2.0.LICENSE". For dynamically generated rules (such as for '
+            'SPDX identifier expressions, this is a string compued based on the '
+            'expression')
+    )
 
-    # License expression string
-    license_expression = attr.ib(default=None)
+    license_expression = attr.ib(
+        default=None,
+        metadata=dict(
+            help='License expression string to report when this rule is matched '
+            'using the SPDX license expression syntax and ScanCode license keys.')
+    )
 
-    # License expression object, created at build time
-    license_expression_object = attr.ib(default=None, repr=False)
+    license_expression_object = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='license_expression LicenseExpression object, computed and '
+            'cached automatically at creation time from the license_expression '
+            'string.')
+    )
 
-    # An indication of what this rule importance is (e.g. how important is its
-    # text when detected as a licensing clue) as one of several "is_license_xxx"
-    # flags. These flags are mutually exclusive and a license can only have one
-    # of these as "yes"/True.
+    # The is_license_xxx flags below are nn indication of what this rule
+    # importance is (e.g. how important is its text when detected as a licensing
+    # clue) as one of several "is_license_xxx" flags. These flags are mutually
+    # exclusive and a license rule can only have one of these as flags with a
+    # True value.
 
-    # A license full text: this provides the highest level of confidence wrt
-    # detection
-    is_license_text = attr.ib(default=False, repr=False)
+    is_license_text = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='True if this is rule text is a license full text: full texts '
+            'provide the highest level of confidence when detected because they '
+            'are longer and more explicit. Mutually exclusive from any other '
+            'is_license_* flag')
+    )
 
-    # A license notice: this provides a strong confidence wrt detection
-    is_license_notice = attr.ib(default=False, repr=False)
+    is_license_notice = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='True if this is rule text is a license notice: notices '
+            'are explicit texts such as "Licensed under the MIT license" that '
+            'are not actual license texts and provide a strong level of '
+            'confidence when detected because they explicit. Mutually exclusive '
+            'from any other is_license_* flag')
+    )
 
-    # A reference is for a mere short license reference such as its bare name or
-    # a URL that provides a weaker clue when detected
-    is_license_reference = attr.ib(default=False, repr=False)
+    is_license_reference = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='True if this is rule text is a mre reference to a license: '
+            'short license references such as a license bare name or license '
+            'or a URL provide a weaker clue and level of confidence when '
+            'detected because they are shorter and may not always represent a '
+            'clear licensing statment or notice. Mutually exclusive from any other '
+            'is_license_* flag')
+    )
 
-    # A tag is for a structured licensing tag such as a package manifest
-    # metadata or an SPDX license identifier or similar package manifest tags. A
-    # tag provides a strong clue with high confidence when detected even though
-    # it may be very short.
-    is_license_tag = attr.ib(default=False, repr=False)
+    is_license_tag = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='True if this is rule text is for a license tag: tags '
+            'for a structured licensing tag such as a package manifest medata '
+            'or an SPDX license identifier and similar tag conventions used in '
+            'code or documentation. When detected, a tag provides a strong clue '
+            'with high confidence even though it may be very short. '
+            'Mutually exclusive from any other is_license_* flag')
+    )
 
-    # An intro is a short introductory statment that may be placed before an
-    # actual license text, notice or reference. For instance "This file is
-    # licensed under ...". An intro is a weak clue that there some license
-    # afterwards. It should be ignored or merged with the following license
-    # detected immediately after.
-    is_license_intro = attr.ib(default=False, repr=False)
+    is_license_intro = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='True if this is rule text is a license introduction: '
+            'An intro is a short introductory statement placed just before an '
+            'actual license text, notice or reference that it introduces. For '
+            'instance "Licensed under ..." would be an intro text typically '
+            'followed by some license notice. An "intro" is a weak clue that '
+            'there may be some license statement afterwards. It should be '
+            'considered in the context of the detection that it precedes. '
+            'Ideally it should be merged with the license detected immediately '
+            'after. Mutually exclusive from any other is_license_* flag')
+    )
 
-    # Is this rule text a false positive when matched exactly? If yes, it will
-    # filtered out at the end if matched (unless part of a large match)
-    is_false_positive = attr.ib(default=False, repr=False)
+    is_false_positive = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='True if this rule text a false positive when matched exactly '
+            '(ignoring unknown or stopwords) If set, matches to this rule will '
+            'be discarded out at the end of the matching pipeline, except when '
+            'contained in a larger match. When using this flag, a rule can only '
+            'have notes explaining why this is a false positive and no other '
+            'fields. This is useful in some cases when some text looks like a '
+            'license text, notice or tag but is not actually it. '
+            'Mutually exclusive from any other is_license_* flag')
+    )
 
-    # Is this rule text only to be matched with a minimum coverage e.g. a
-    # minimum proportion of tokens as a float between 0 and 100 where 100 means
-    # all tokens must be matched and a smaller value means a smaller propertion
-    # of matched tokens is acceptable. this is computed unless this is provided
-    # here.
-    minimum_coverage = attr.ib(default=0)
-    has_stored_minimum_coverage = attr.ib(default=False, repr=False)
-    # same as minimum_coverage but divided/100
-    _minimum_containment = attr.ib(default=0, repr=False)
+    minimum_coverage = attr.ib(
+        default=0,
+        metadata=dict(
+            help='Can this rule text be matched only with a minimum coverage e.g., '
+            'when a minimum proportion of tokens have been matched? This is as a '
+            'float between 0 and 100 where 100 means that all tokens must be '
+            'matched and a smaller value means a smaller proportion of matched '
+            'tokens is acceptable. This is computed at indexing time based on '
+            'the length of a rule. Providing a stored value in the rule data '
+            'file overrides this default computed value. For example, a short '
+            'rule such as "MIT license" must be matched with all its words, '
+            'e.g., a 100 minimum_coverage. Otherwise matching only "mit" or '
+            '"license" is not a string enough licensing clue.')
+    )
 
-    # Can this rule be matched if there are unknown words in its matched range?
-    # The default is to allow known and unknown words. Unknown words are words
-    # that do not exist in the text of any indexed license or license detection
-    # rule.
-    only_known_words = attr.ib(default=False)
+    has_stored_minimum_coverage = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='Computed flag set to True if the "minimum_coverage" field is stored '
+            'in this rule data file. The default is to have "minimum_coverage" computed'
+            'and not stored.')
+    )
 
-    # what is the relevance of a match to this rule text? a float between 0 and
-    # 100 where 100 means highly relevant and 0 menas not relevant at all.
-    # For instance a match to the "gpl" or the "cpol" words have a fairly low
-    # relevance as they are a weak indication of an actual license and could be
-    # a false positive. In somce cases, this may even be used to discard obvious
-    # false positive matches automatically.
-    relevance = attr.ib(default=100)
-    has_stored_relevance = attr.ib(default=False, repr=False)
+    _minimum_containment = attr.ib(
+        default=0,
+        repr=False,
+        metadata=dict(
+            help='Internal cached field; a float computed from minimum_coverage, '
+            'divided by 100.')
+    )
 
-    # The rule contains a reference to some file name that comtains the text
-    referenced_filenames = attr.ib(default=attr.Factory(list), repr=False)
+    is_continuous = attr.ib(
+        default=False,
+        metadata=dict(
+            help='Can this rule be matched if there are any gaps between matched '
+            'words in its matched range? The default is to allow non-continuous '
+            'approximate matches. Any extra unmatched known or unknown word or '
+            'stopword is considered to break a match continuity.')
+    )
 
-    # optional, free text
-    notes = attr.ib(default=None, repr=False)
+    relevance = attr.ib(
+        default=100,
+        metadata=dict(
+            help='What is the relevance of a match to this rule text? This is a '
+            'float between 0 and 100 where 100 means highly relevant and 0 means '
+            'not relevant at all. For instance a match to the "gpl" or the '
+            '"cpol" words have a fairly low relevance as they are a weak '
+            'indication of an actual license and could be a false positive. '
+            'In some cases, this may even be used to discard obvious false '
+            'positive matches automatically. The default is to consider a rule '
+            'as highly relevant and the relevance is further computed and '
+            'adjusted at indexing time automatically based on the length of a '
+            'rule. This field is to override the computed defaults.')
+    )
 
-    # set to True if the rule is built from a .LICENSE full text
-    is_from_license = attr.ib(default=False, repr=False)
+    has_stored_relevance = attr.ib(
+        default=False,
+        metadata=dict(
+            help='Computed flag set to True if the "relevance" field is stored '
+            'in this rule data file. The default is to have "relevance" computed'
+            'and not stored.')
+    )
 
-    # lists of copuyrights, emails and URLs that can be ignored when detected
-    # in this license as they are part of the license or rule text itself
-    ignorable_copyrights = attr.ib(default=attr.Factory(list), repr=False)
-    ignorable_holders = attr.ib(default=attr.Factory(list), repr=False)
-    ignorable_authors = attr.ib(default=attr.Factory(list), repr=False)
-    ignorable_urls = attr.ib(default=attr.Factory(list), repr=False)
-    ignorable_emails = attr.ib(default=attr.Factory(list), repr=False)
+    referenced_filenames = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of file names of file paths found in the rule text that '
+            'point to a file that contains license text, such as in "See file COPYING"')
+    )
+
+    notes = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='Free text notes. Notes are mandatory for false positive rules.')
+    )
+
+    is_from_license = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='Computed flag set to True if this rule is built from a '
+            '.LICENSE full text.')
+    )
+
+    ###########################################################################
+    # lists of clues that can be ignored when detected in this license as they
+    # are part of the license or rule text itself
+
+    ignorable_copyrights = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of copyrights that can be ignored when detected in this '
+            'text as they are part of the license or rule text proper and can'
+            'optionally be excluded from the copyrights detection')
+    )
+
+    ignorable_holders = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of holders that can be ignored when detected in this '
+            'text as they are part of the license or rule text proper and can'
+            'optionally be excluded from the holders detection')
+    )
+
+    ignorable_authors = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of authors that can be ignored when detected in this '
+            'text as they are part of the license or rule text proper and can'
+            'optionally be excluded from the authors detection')
+    )
+
+    ignorable_urls = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of holders that can be ignored when detected in this '
+            'text as they are part of the license or rule text proper and can'
+            'optionally be excluded from the holders detection')
+    )
+
+    ignorable_emails = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of emails that can be ignored when detected in this '
+            'text as they are part of the license or rule text proper and can'
+            'optionally be excluded from the emails detection')
+    )
 
     ###########################################################################
 
-    # path to the YAML data file for this rule
-    data_file = attr.ib(default=None, repr=False)
+    starts_with_license = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='Computed flag set to True if the rule starts with the word'
+            '"license" or a few similar words')
+    )
 
-    # path to the rule text file
-    text_file = attr.ib(default=None, repr=False)
+    ends_with_license = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='Computed flag set to True if the rule ends with the word'
+            '"license" or a few similar words')
+    )
 
-    # text of this rule for special cases where the rule is not backed by a file:
-    # for SPDX license expression dynamic rules or testing
-    stored_text = attr.ib(default=None, repr=False)
-
-    # These attributes are computed upon text loading or setting the thresholds
     ###########################################################################
 
-    # lengths in tokens
-    length = attr.ib(default=0)
-    min_matched_length = attr.ib(default=0, repr=TRACE_REPR)
+    data_file = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='Path to the YAML data file for this rule')
+    )
 
-    high_length = attr.ib(default=0, repr=TRACE_REPR)
-    min_high_matched_length = attr.ib(default=0, repr=TRACE_REPR)
+    text_file = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='Path to the rule text file with a .RULE extension')
+    )
 
-    # lengths in unique token.
-    length_unique = attr.ib(default=0, repr=TRACE_REPR)
-    min_matched_length_unique = attr.ib(default=0, repr=TRACE_REPR)
+    stored_text = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='Internal field with the text of this rule for special cases '
+            'where the rule is not backed by a file, such as with SPDX license '
+            'identifier expressions dynamically generated rules or testing convenience')
+    )
 
-    high_length_unique = attr.ib(default=0, repr=TRACE_REPR)
-    min_high_matched_length_unique = attr.ib(default=0, repr=TRACE_REPR)
+    # These thresholds attributes are computed upon text loading or calling the
+    # thresholds function explicitly
+    ###########################################################################
 
-    is_small = attr.ib(default=False, repr=TRACE_REPR)
+    length = attr.ib(
+        default=0,
+        metadata=dict(
+            help='Computed length of a rule text in number of tokens aka. words,'
+            'ignoring unknown words and stopwords')
+    )
+    min_matched_length = attr.ib(
+        default=0,
+        repr=TRACE_REPR,
+        metadata=dict(
+            help='Internal computed field representing the minimum matched '
+            'length in tokens for a match to this rule to be considered as valid.')
+    )
 
-    has_computed_thresholds = attr.ib(default=False, repr=False)
+    high_length = attr.ib(
+        default=0,
+        repr=TRACE_REPR,
+        metadata=dict(
+            help='Internal computed field representing the length of higher '
+            'relevance tokens (from the "legalese" list) in this rule text.')
+    )
+
+    min_high_matched_length = attr.ib(
+        default=0,
+        repr=TRACE_REPR,
+        metadata=dict(
+            help='Internal computed field representing the minimum matched '
+            'length in higher relevance tokens (from the "legalese" list) '
+            'for a match to this rule to be considered as valid.')
+    )
+
+    length_unique = attr.ib(
+        default=0,
+        repr=TRACE_REPR,
+        metadata=dict(
+            help='Internal computed field representing the length of unique '
+            'tokens in this rule text.')
+    )
+    min_matched_length_unique = attr.ib(
+        default=0,
+        repr=TRACE_REPR,
+        metadata=dict(
+            help='Internal computed field representing the minimum matched '
+            'length in unique tokens for a match to this rule to be considered '
+            'as valid.')
+    )
+
+    high_length_unique = attr.ib(
+        default=0,
+        repr=TRACE_REPR,
+        metadata=dict(
+            help='Internal computed field representing the length of unique '
+            'higher relevance tokens (from the "legalese" list) in this rule text.')
+    )
+
+    min_high_matched_length_unique = attr.ib(
+        default=0,
+        repr=TRACE_REPR,
+        metadata=dict(
+            help='Internal computed field representing the minimum matched '
+            'length in unique higher relevance tokens (from the "legalese" list) '
+            'for a match to this rule to be considered as valid.')
+    )
+
+    is_small = attr.ib(
+        default=False,
+        repr=TRACE_REPR,
+        metadata=dict(
+            help='Internal computed flag set to True if this rule is "small"')
+    )
+
+    has_computed_thresholds = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='Internal computed flag set to True when the thresholds flag '
+            'above have been computed for this rule')
+    )
 
     def __attrs_post_init__(self, *args, **kwargs):
         self.setup()
@@ -911,6 +1356,9 @@ class BasicRule(object):
         if is_false_positive:
             if not self.notes:
                 yield 'is_false_positive rule must have notes.'
+
+            if self.is_continuous:
+                yield 'is_false_positive rule cannot be is_continuous.'
 
             if has_license_flags:
                 yield 'is_false_positive rule cannot have is_license_* flags.'
@@ -995,7 +1443,7 @@ class BasicRule(object):
             from licensedcode.cache import get_licensing
             licensing = get_licensing()
         parsed = licensing.parse(self.license_expression)
-        return parsed.render(template='{symbol.spdx_license_key}')
+        return parsed.render(template='{symbol.wrapped.spdx_license_key}')
 
     def get_length(self, unique=False):
         return self.length_unique if unique else self.length
@@ -1030,7 +1478,7 @@ class BasicRule(object):
             'is_license_reference',
             'is_license_tag',
             'is_license_intro',
-            'only_known_words',
+            'is_continuous',
         )
 
         for flag in flags:
@@ -1082,7 +1530,6 @@ class BasicRule(object):
                 plain_text=True,
             )
             return ''.join(l for _, l in numbered_lines)
-
 
         else:
             raise InvalidRule(
@@ -1275,7 +1722,7 @@ class Rule(BasicRule):
         self.is_license_tag = data.get('is_license_tag', False)
         self.is_license_reference = data.get('is_license_reference', False)
         self.is_license_intro = data.get('is_license_intro', False)
-        self.only_known_words = data.get('only_known_words', False)
+        self.is_continuous = data.get('is_continuous', False)
 
         self.referenced_filenames = data.get('referenced_filenames', []) or []
 

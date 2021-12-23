@@ -110,7 +110,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
         same_span2 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
         before_after = LicenseMatch(rule=r1, qspan=Span(8, 9), ispan=Span(8, 9))
         touching = LicenseMatch(rule=r1, qspan=Span(7, 7), ispan=Span(7, 7))
-        overlaping = LicenseMatch(rule=r1, qspan=Span(4, 7), ispan=Span(4, 7))
+        overlapping = LicenseMatch(rule=r1, qspan=Span(4, 7), ispan=Span(4, 7))
 
         assert same_span1 == same_span2
         assert same_span1 in same_span2
@@ -127,11 +127,11 @@ class TestLicenseMatchBasic(FileBasedTesting):
         assert contained2 in same_span2
         assert contained2 in contained1
 
-        assert contained2.overlap(overlaping)
+        assert contained2.overlap(overlapping)
 
-        assert overlaping.overlap(contained2)
-        assert overlaping.overlap(same_span1)
-        assert not overlaping.overlap(before_after)
+        assert overlapping.overlap(contained2)
+        assert overlapping.overlap(same_span1)
+        assert not overlapping.overlap(before_after)
 
         assert before_after.is_after(same_span1)
         assert before_after.is_after(touching)
@@ -333,7 +333,7 @@ class TestMergeMatches(FileBasedTesting):
         assert matches == [m2]
         assert discarded == [m1]
 
-    def test_merge_does_not_merge_overlaping_matches_with_same_licensings(self):
+    def test_merge_does_not_merge_overlapping_matches_with_same_licensings(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
 
@@ -360,7 +360,7 @@ class TestMergeMatches(FileBasedTesting):
         assert matches == [overlap, same_span1]
         assert discarded
 
-    def test_filter_overlaping_matches_does_filter_overlaping_matches_with_same_licensings(self):
+    def test_filter_overlapping_matches_does_filter_overlapping_matches_with_same_licensings(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
 
@@ -372,7 +372,7 @@ class TestMergeMatches(FileBasedTesting):
         assert matches == [overlap]
         assert discarded
 
-    def test_filter_contained_matches_prefers_longer_overlaping_matches(self):
+    def test_filter_contained_matches_prefers_longer_overlapping_matches(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
 
@@ -384,7 +384,7 @@ class TestMergeMatches(FileBasedTesting):
         assert matches == [overlap, same_span2]
         assert discarded
 
-    def test_filter_overlapping_matches_prefers_longer_overlaping_matches(self):
+    def test_filter_overlapping_matches_prefers_longer_overlapping_matches(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
 
@@ -754,7 +754,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
 
         assert matches == expected
 
-    def test_filter_contained_matches_matches_filters_matches_does_not_discard_non_overlaping(self):
+    def test_filter_contained_matches_matches_filters_matches_does_not_discard_non_overlapping(self):
         r1 = Rule(text_file='r1', license_expression='apache-1.1')
         r2 = Rule(text_file='r2', license_expression='gpl OR apache-2.0')
         r3 = Rule(text_file='r3', license_expression='gpl')
@@ -773,7 +773,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
         assert result == [m2, m3]
         assert discarded == [m1]
 
-    def test_filter_overlapping_matches_matches_filters_matches_does_not_discard_non_overlaping(self):
+    def test_filter_overlapping_matches_matches_filters_matches_does_not_discard_non_overlapping(self):
         r1 = Rule(text_file='r1', license_expression='apache-1.1')
         r2 = Rule(text_file='r2', license_expression='gpl OR apache-2.0')
         r3 = Rule(text_file='r3', license_expression='gpl')
@@ -865,7 +865,7 @@ class TestLicenseMatchScore(FileBasedTesting):
 
         query_location = self.get_test_loc('stopwords/query.txt')
         matches = idx.match(location=query_location)
-        assert matches == []
+        assert all(m.rule.identifier == 'gpl-1.0.bare.RULE' for m in matches)
 
 
 class TestCollectLicenseMatchTexts(FileBasedTesting):
@@ -1364,7 +1364,6 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             '--enable-libx265 --enable-libxavs --enable-libxvid --enable-libzimg '
             '--enable-lzma --enable-decklink --enable-zlib',
 
-
             '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
             '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
             '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
@@ -1494,7 +1493,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             'You should have received a copy of the GNU General Public License\n'
 
             'along with %s.  If not, see <http://www.gnu.org/licenses/>.\n'
-            
+
             'File formats:\n'
             'D. = Demuxing supported\n'
             '.E = Muxing supported\n'

@@ -1,4 +1,5 @@
 license_expressions:
   - (afl-2.1 OR gpl-2.0) AND gpl-2.0
   - afl-2.1
+  - afl-2.1
   - gpl-2.0

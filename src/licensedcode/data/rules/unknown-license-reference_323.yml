@@ -1,0 +1,6 @@
+license_expression: unknown-license-reference
+is_license_reference: yes
+relevance: 90
+notes: Seen in libmodbus with this note "The functions included in the library have been derived
+    from the Modicon Modbus Protocol Reference Guide which can be obtained from Schneider at
+    www.schneiderautomation.com." and the license is not clear

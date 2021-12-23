@@ -3,9 +3,18 @@ license_expressions:
   - apache-2.0
   - apache-1.1
   - lgpl-2.0-plus
-  - bsd-new
+  - unknown-license-reference
+  - unknown-license-reference
+  - unknown-license-reference
+  - mit
+  - mit
+  - unknown-license-reference
+  - unknown-license-reference
+  - mit
   - unicode
+  - unknown-license-reference
   - mit
 notes: this is a notice listing quite a few licenses, normally referenced elsewhere. There is
   a reference at the bottom to http://web.archive.org/web/20110319085845/http://pixel-mixer.com/cms-icon-set.zip
   which has some permission notice of sorts. This is the notice for OpenRefine from https://github.com/OpenRefine/OpenRefine/blob/aa65bc5c18ea7cd7582572b6d2fb1a7522016e4c/LICENSE.txt
+

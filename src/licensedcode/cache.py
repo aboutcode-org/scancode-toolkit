@@ -172,17 +172,28 @@ def build_index(licenses_db=None, licenses_data_dir=None, rules_data_dir=None):
     from licensedcode.index import LicenseIndex
     from licensedcode.models import get_rules
     from licensedcode.models import get_all_spdx_key_tokens
+    from licensedcode.models import get_license_tokens
     from licensedcode.models import licenses_data_dir as ldd
     from licensedcode.models import rules_data_dir as rdd
     from licensedcode.models import load_licenses
+    from licensedcode.legalese import common_license_words
 
     licenses_data_dir = licenses_data_dir or ldd
     rules_data_dir = rules_data_dir or rdd
 
     licenses_db = licenses_db or load_licenses(licenses_data_dir=licenses_data_dir)
-    spdx_tokens = set(get_all_spdx_key_tokens(licenses_db))
     rules = get_rules(licenses_db=licenses_db, rules_data_dir=rules_data_dir)
-    return LicenseIndex(rules, _spdx_tokens=spdx_tokens)
+
+    legalese = common_license_words
+    spdx_tokens = set(get_all_spdx_key_tokens(licenses_db))
+    license_tokens = set(get_license_tokens())
+
+    return LicenseIndex(
+        rules,
+        _legalese=legalese,
+        _spdx_tokens=spdx_tokens,
+        _license_tokens=license_tokens,
+    )
 
 
 def build_licensing(licenses_db=None):

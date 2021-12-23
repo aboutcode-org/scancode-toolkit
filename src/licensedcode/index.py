@@ -142,11 +142,18 @@ class LicenseIndex(object):
         'optimized',
     )
 
-    def __init__(self, rules=None, _legalese=common_license_words, _spdx_tokens=frozenset()):
+    def __init__(
+        self,
+        rules=None,
+        _legalese=common_license_words,
+        _spdx_tokens=frozenset(),
+        _license_tokens=frozenset(),
+    ):
         """
         Initialize the index with an iterable of Rule objects.
-        `_legalese` is a set of common license-specific words aka. legalese
-        `_spdx_tokens` is a set of tokens used in SPDX license identifiers
+        ``_legalese`` is a set of common license-specific words aka. legalese
+        ``_spdx_tokens`` is a set of tokens used in SPDX license identifiers
+        ``license_tokens`` is a set of "license" tokens used as start or end of a rule
         """
         # total number of unique known tokens
         self.len_tokens = 0
@@ -212,7 +219,11 @@ class LicenseIndex(object):
                 logger_debug('LicenseIndex: building index.')
             # index all and optimize
             self._add_rules(
-                rules, _legalese=_legalese, _spdx_tokens=_spdx_tokens)
+                rules,
+                _legalese=_legalese,
+                _spdx_tokens=_spdx_tokens,
+                _license_tokens=_license_tokens,
+            )
 
             if TRACE_TOKEN_DOC_FREQ:
                 logger_debug('LicenseIndex: token, frequency')
@@ -228,13 +239,20 @@ class LicenseIndex(object):
                       '%(duration)f seconds.' % locals())
                 self._print_index_stats()
 
-    def _add_rules(self, rules, _legalese=common_license_words, _spdx_tokens=frozenset()):
+    def _add_rules(
+        self,
+        rules,
+        _legalese=common_license_words,
+        _spdx_tokens=frozenset(),
+        _license_tokens=frozenset(),
+    ):
         """
         Add a list of Rule objects to the index and constructs optimized and
         immutable index structures.
 
         `_legalese` is a set of common license-specific words aka. legalese
         `_spdx_tokens` is a set of token strings used in SPDX license identifiers
+        ``license_tokens`` is a set of "license" tokens used as start or end of a rule
         """
         if self.optimized:
             raise Exception('Index has been optimized and cannot be updated.')
@@ -242,10 +260,14 @@ class LicenseIndex(object):
         # initial dictionary mapping for known legalese tokens
         ########################################################################
 
-        # FIXME: we should start at 1, and ids are become valid unichr values
+        # FIXME: we should start enumerating at 1 below: token ids then become
+        # valid "unichr" values, making it easier downstream when used in
+        # automatons
 
         self.dictionary = dictionary = {
-            ts: tid for tid, ts in enumerate(sorted(_legalese))}
+            ts: tid for tid, ts in enumerate(sorted(_legalese))
+        }
+
         dictionary_get = dictionary.get
 
         self.len_legalese = len_legalese = len(dictionary)
@@ -288,6 +310,15 @@ class LicenseIndex(object):
         # track all duplicate rules: fail and report dupes at once at the end
         dupe_rules_by_hash = defaultdict(list)
 
+        # create a set of known "license" words used to determine if a rule
+        # starts or ends with a "license" word/token
+        ########################################################################
+        license_tokens = set()
+        for t in _license_tokens:
+            tid = dictionary_get(t)
+            if tid is not None:
+                license_tokens.add(tid)
+
         rules_automaton_add = partial(match_aho.add_sequence,
             automaton=self.rules_automaton, with_duplicates=False)
 
@@ -324,6 +355,7 @@ class LicenseIndex(object):
 
             rule_token_ids = array('h', [])
             tids_by_rid_append(rule_token_ids)
+            rule_token_ids_append = rule_token_ids.append
 
             # A rule is weak if it does not contain at least one legalese word:
             # we consider all rules to be weak until proven otherwise below.
@@ -341,7 +373,7 @@ class LicenseIndex(object):
                 if is_weak and rtid < len_legalese:
                     is_weak = False
 
-                rule_token_ids.append(rtid)
+                rule_token_ids_append(rtid)
 
             # build hashes index and check for duplicates rule texts
             rule_hash = match_hash_index_hash(rule_token_ids)
@@ -364,8 +396,19 @@ class LicenseIndex(object):
             rid_by_hash[rule_hash] = rid
             regular_rids_add(rid)
 
-            # Some rules cannot be matched as a sequence are "weak" rules
-            if not is_weak:
+            # Does the rule starts or ends with a "license" word? We track this
+            # to help disambiguate some overlapping false positive short rules
+            # OPTIMIZED: the last rtid above IS the last token id
+            if license_tokens:
+                if rtid in license_tokens:
+                    rule.ends_with_license=True
+                if rule_token_ids[0] in license_tokens:
+                    rule.starts_with_license=True
+
+            # Some rules that cannot be matched as a sequence are "weak" rules
+            # or can require to be matched only as a continuous sequence of
+            # tokens
+            if not (is_weak or rule.is_continuous):
                 approx_matchable_rids_add(rid)
 
                 ####################
@@ -495,7 +538,7 @@ class LicenseIndex(object):
         logger_debug(message + ':', len(matches))
         if qry:
             # set line early to ease debugging
-            match.set_lines(matches, qry.line_by_pos)
+            match.set_matched_lines(matches, qry.line_by_pos)
 
         if not with_text:
             for m in matches:
@@ -863,7 +906,7 @@ class LicenseIndex(object):
         if not _skip_hash_match:
             matches = match_hash.hash_match(self, whole_query_run)
             if matches:
-                match.set_lines(matches, qry.line_by_pos)
+                match.set_matched_lines(matches, qry.line_by_pos)
                 return matches
 
         get_spdx_id_matches = partial(
@@ -873,7 +916,7 @@ class LicenseIndex(object):
 
         if as_expression:
             matches = get_spdx_id_matches(qry, from_spdx_id_lines=False)
-            match.set_lines(matches, qry.line_by_pos)
+            match.set_matched_lines(matches, qry.line_by_pos)
             return matches
 
         matches = []
@@ -960,7 +1003,7 @@ class LicenseIndex(object):
         )
 
         matches.sort()
-        match.set_lines(matches, qry.line_by_pos)
+        match.set_matched_lines(matches, qry.line_by_pos)
 
         if TRACE:
             self.debug_matches(
