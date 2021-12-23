@@ -5,6 +5,7 @@ Changelog
 -----------------------
 
 
+
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -36,7 +37,9 @@ Copyright detection:
 
 - The data structure in the JSON is now using consistently named attributes as
   opposed to a plain value.
-- Several copyright detection bugs have been fixed. 
+- Several copyright detection bugs have been fixed.
+- French and German copyright detection is improved.
+- Some spurious trailing dots in holders are not stripped.
 
 
 License detection:
@@ -48,6 +51,26 @@ License detection:
   - XX existing license metadata have been updated,
   - XXXX new license detection rules have been added, and
   - XXXX existing license rules have been updated.
+
+- The rule attribute "only_known_words" has been renamed to "is_continuous" and its
+  meaning has been updated and expanded. A rule tagged as "is_continuous" can only
+  be matched if there are no gaps between matched words, be they stopwords, extra
+  unknown or known words. This improves several false positive license detections. 
+
+- When scanning binary files, the detection of single word rules is filtered when
+  surrounded by gibberish or is using mixed case. For instance $#%$GpL$ is a false
+  positive and is no longer reported.
+
+- Several rules we tagged as is_license_notice incorrectly but were references
+  and have been requalified as is_license_reference. All rules made of a single
+  ord have been requalified as is_license_reference if they were not qualified
+  this way.
+
+- Matches to small license rules (with small defined as under 15 words)
+  that are scattered on too many lines are now filtered as false matches.
+
+- Small, two-words matches that overlap the previous or next match by
+  by the word "license" and assimilated are now filtered as false matches.
 
 
 Package detection:
