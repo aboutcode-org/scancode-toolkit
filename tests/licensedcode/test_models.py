@@ -128,7 +128,7 @@ class TestLicense(FileBasedTesting):
                 'No short name',
                 'No name',
                 'No category',
-                'No owner',
+                'No owner: Use "Unspecified" if not known.',
                 'No SPDX license key'],
             'gpl-1.0': [
                 'Unknown license category: GNU Copyleft.\nUse one of these valid categories:\n'
