@@ -1,6 +1,6 @@
-primary_license: (public-domain AND lgpl-2.0 AND lgpl-2.1-plus AND gpl-2.0-plus AND (public-domain
-  AND gpl-2.0-plus AND gpl-3.0-plus) AND lgpl-2.1 AND (epl-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus)
-  AND gpl-3.0) AND public-domain
+primary_license: (public-domain AND lgpl-2.1-plus AND gpl-2.0-plus AND (public-domain AND gpl-2.0-plus
+  AND gpl-3.0-plus) AND (other-permissive AND other-copyleft) AND public-domain-disclaimer AND
+  (lgpl-2.1 AND gpl-2.0 AND gpl-3.0)) AND public-domain
 declared_license:
   - Different licenses apply to different files in this package. Here
   - PD
@@ -29,17 +29,16 @@ declared_license:
   - Autoconf
   - permissive-fsf
   - permissive-nowarranty
-license_expression: (public-domain AND public-domain AND lgpl-2.0 AND lgpl-2.1-plus AND gpl-2.0-plus
-  AND public-domain AND public-domain AND (public-domain AND gpl-2.0-plus AND gpl-3.0-plus)
-  AND public-domain AND public-domain AND public-domain AND public-domain AND public-domain
-  AND lgpl-2.1 AND (epl-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus) AND gpl-3.0 AND public-domain
-  AND public-domain) AND public-domain AND public-domain AND (public-domain AND public-domain)
-  AND public-domain AND (gpl-2.0-plus AND gpl-2.0-plus) AND public-domain AND public-domain
-  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND fsf-unlimited AND (gpl-3.0-plus WITH
-  autoconf-macro-exception AND gpl-3.0) AND fsf-ap AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0-plus
-  AND gpl-2.0) AND public-domain AND public-domain AND public-domain AND public-domain AND public-domain
+license_expression: (public-domain AND public-domain AND lgpl-2.1-plus AND gpl-2.0-plus AND
+  public-domain AND public-domain AND (public-domain AND gpl-2.0-plus AND gpl-3.0-plus) AND
+  public-domain AND public-domain AND (other-permissive AND other-copyleft) AND public-domain-disclaimer
+  AND (lgpl-2.1 AND gpl-2.0 AND gpl-3.0) AND public-domain AND public-domain) AND public-domain
+  AND public-domain AND (public-domain AND public-domain) AND public-domain AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND public-domain AND public-domain AND (lgpl-2.1-plus AND lgpl-2.1-plus)
+  AND fsf-unlimited AND gpl-3.0-plus WITH autoconf-macro-exception AND fsf-ap AND (gpl-2.0 AND
+  gpl-2.0) AND public-domain AND public-domain AND public-domain AND public-domain AND public-domain
   AND public-domain AND fsf-ap AND (public-domain AND fsf-unlimited AND autoconf-exception-2.0
-  AND gpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND other-copyleft AND public-domain
+  AND gpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND other-copyleft AND public-domain
 copyright: |
   2006-2018, Lasse Collin
   1999-2008, Igor Pavlov
@@ -86,8 +85,8 @@ copyright: |
   2009-2012, Jonathan Nieder
 matches:
   - score: '100.0'
-    start_line: 4
-    end_line: 4
+    start_line: 23
+    end_line: 23
     matcher: 2-aho
     rule_length: 5
     matched_length: 5
@@ -102,106 +101,96 @@ matches:
     is_license_intro: no
     matched_text: is in the public domain.
   - score: '100.0'
-    start_line: 6
-    end_line: 7
+    start_line: 25
+    end_line: 26
     matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
+    rule_length: 8
+    matched_length: 8
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: public-domain_305.RULE
+    identifier: public-domain_431.RULE
     license_expression: public-domain
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      command line tools are in the public
+          domain
+  - score: '100.0'
+    start_line: 27
+    end_line: 28
+    matcher: 2-aho
+    rule_length: 9
+    matched_length: 9
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_393.RULE
+    license_expression: lgpl-2.1-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      are in the public
-          domain
+      The getopt_long code is under
+          GNU LGPLv2.1+.
   - score: '100.0'
-    start_line: 9
-    end_line: 9
+    start_line: 31
+    end_line: 32
     matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+    rule_length: 9
+    matched_length: 9
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.0_54.RULE
-    license_expression: lgpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: GNU LGPLv2.
-  - score: '95.0'
-    start_line: 9
-    end_line: 9
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 95
-    identifier: lgpl-2.1-plus_70.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: LGPLv2.1+.
-  - score: '100.0'
-    start_line: 13
-    end_line: 13
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_488.RULE
+    identifier: gpl-2.0-plus_991.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      These scripts and their documentation are
+          under GNU GPLv2+.
+  - score: '100.0'
+    start_line: 35
+    end_line: 36
+    matcher: 2-aho
+    rule_length: 10
+    matched_length: 10
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_428.RULE
+    license_expression: public-domain
+    is_license_text: yes
     is_license_notice: no
     is_license_reference: no
-    is_license_tag: yes
+    is_license_tag: no
     is_license_intro: no
-    matched_text: GNU GPLv2+.
+    matched_text: |
+      documentation files in other directories
+          are in the public domain.
   - score: '100.0'
-    start_line: 17
-    end_line: 17
+    start_line: 38
+    end_line: 38
     matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
+    rule_length: 7
+    matched_length: 7
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: public-domain_305.RULE
+    identifier: public-domain_429.RULE
     license_expression: public-domain
-    is_license_text: no
-    is_license_notice: yes
+    is_license_text: yes
+    is_license_notice: no
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: are in the public domain.
+    matched_text: Translated messages are in the public domain.
   - score: '100.0'
-    start_line: '19'
-    end_line: '19'
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_305.RULE
-    license_expression: public-domain
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: are in the public domain.
-  - score: '100.0'
-    start_line: 21
-    end_line: 22
+    start_line: 40
+    end_line: 41
     matcher: 2-aho
     rule_length: 17
     matched_length: 17
@@ -218,8 +207,8 @@ matches:
       The build system contains public domain files, and files that
           are under GNU GPLv2+ or GNU GPLv3+.
   - score: '100.0'
-    start_line: 26
-    end_line: 26
+    start_line: 45
+    end_line: 45
     matcher: 2-aho
     rule_length: 5
     matched_length: 5
@@ -234,8 +223,8 @@ matches:
     is_license_intro: no
     matched_text: are in the public domain.
   - score: '70.0'
-    start_line: 28
-    end_line: 28
+    start_line: 47
+    end_line: 47
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -250,140 +239,109 @@ matches:
     is_license_intro: no
     matched_text: public domain
   - score: '100.0'
-    start_line: 31
-    end_line: 32
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_128.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      put into
-      the public domain.
-  - score: '70.0'
-    start_line: 32
-    end_line: 32
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 70
-    identifier: public-domain_bare_words.RULE
-    license_expression: public-domain
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: public domain
-  - score: '100.0'
-    start_line: 39
-    end_line: 39
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_311.RULE
-    license_expression: public-domain
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: public domain code
-  - score: '100.0'
-    start_line: 48
+    start_line: 47
     end_line: 48
-    matcher: 2-aho
-    rule_length: 11
-    matched_length: 11
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1_286.RULE
-    license_expression: lgpl-2.1
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'COPYING.LGPLv2.1: GNU Lesser General Public License version 2.1'
-  - score: '50.0'
-    start_line: 49
-    end_line: 50
-    matcher: 3-seq
-    rule_length: 22
-    matched_length: 11
-    match_coverage: '50.0'
-    rule_relevance: 100
-    identifier: epl-2.0_or_gpl-2.0-plus_or_lgpl-2.1-plus_5.RULE
-    license_expression: epl-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      GNU General Public License version 2
-        - [COPYING].[GPLv3]: GNU General Public License version
-  - score: '100.0'
-    start_line: 50
-    end_line: 50
     matcher: 2-aho
     rule_length: 8
     matched_length: 8
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0_381.RULE
-    license_expression: gpl-3.0
+    identifier: other-permissive_and_other-copyleft_4.RULE
+    license_expression: other-permissive AND other-copyleft
     is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
+    is_license_notice: yes
+    is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: 'COPYING.GPLv3: GNU General Public License version 3'
+    matched_text: |
+      files
+          that are under various free software licenses.
   - score: '100.0'
-    start_line: 54
-    end_line: 54
+    start_line: 50
+    end_line: 64
     matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
+    rule_length: 121
+    matched_length: 121
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: public-domain_298.RULE
-    license_expression: public-domain
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: in the public domain
-  - score: '100.0'
-    start_line: 3
-    end_line: 3
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_128.RULE
-    license_expression: public-domain
+    identifier: public-domain-disclaimer_72.RULE
+    license_expression: public-domain-disclaimer
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: put into the public domain,
+    matched_text: |
+      You can do whatever you want with the files that have been put into
+      the public domain. If you find public domain legally problematic,
+      take the previous sentence as a license grant. If you still find
+      the lack of copyright legally problematic, you have too many
+      lawyers.
+
+      As usual, this software is provided "as is", without any warranty.
+
+      If you copy significant amounts of public domain code from XZ Utils
+      into your project, acknowledging this somewhere in your software is
+      polite (especially if it is proprietary, non-free software), but
+      naturally it is not legally required. Here is an example of a good
+      notice to put into "about box" or into documentation:
+
+          This software includes code from XZ Utils <http://tukaani.org/xz/>.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 66
+    end_line: 69
+    matcher: 2-aho
+    rule_length: 37
+    matched_length: 37
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_and_gpl-2.0_and_gpl-3.0_3.RULE
+    license_expression: lgpl-2.1 AND gpl-2.0 AND gpl-3.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      The following license texts are included in the following files:
+        - COPYING.LGPLv2.1: GNU Lesser General Public License version 2.1
+        - COPYING.GPLv2: GNU General Public License version 2
+        - COPYING.GPLv3: GNU General Public License version 3
+  - score: '100.0'
+    start_line: 73
+    end_line: 73
+    matcher: 2-aho
+    rule_length: 12
+    matched_length: 12
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_427.RULE
+    license_expression: public-domain
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: binary wouldn't actually be in the public domain in its entirety
+  - score: '100.0'
+    start_line: 12
+    end_line: 12
+    matcher: 2-aho
+    rule_length: 11
+    matched_length: 11
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_430.RULE
+    license_expression: public-domain
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Most of the source has been put into the public domain,
+  - score: '100.0'
+    start_line: 90
+    end_line: 91
     matcher: 1-hash
     rule_length: 18
     matched_length: 18
@@ -400,8 +358,8 @@ matches:
       This file has been put in the public domain.
       You can do whatever you want with this file.
   - score: '55.0'
-    start_line: 1
-    end_line: 1
+    start_line: 120
+    end_line: 120
     matcher: 1-hash
     rule_length: 10
     matched_length: 10
@@ -416,8 +374,8 @@ matches:
     is_license_intro: no
     matched_text: See the note on AUTHORS, README, and so on above.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 136
+    end_line: 137
     matcher: 1-hash
     rule_length: 18
     matched_length: 18
@@ -434,8 +392,8 @@ matches:
       This file has been put in the public domain.
       You can do whatever you want with this file.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 142
+    end_line: 142
     matcher: 1-hash
     rule_length: 7
     matched_length: 7
@@ -449,30 +407,14 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: Not copyrighted -- provided to the public domain.
-  - score: '22.0'
-    start_line: 1
-    end_line: 1
+  - score: '100.0'
+    start_line: 180
+    end_line: 180
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
     match_coverage: '100.0'
-    rule_relevance: 22
-    identifier: public-domain_355.RULE
-    license_expression: public-domain
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: No copyright to license.
-  - score: '22.0'
-    start_line: 1
-    end_line: 1
-    matcher: 1-hash
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 22
+    rule_relevance: 100
     identifier: public-domain_355.RULE
     license_expression: public-domain
     is_license_text: no
@@ -482,8 +424,24 @@ matches:
     is_license_intro: no
     matched_text: No copyright to license.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 185
+    end_line: 185
+    matcher: 1-hash
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain_355.RULE
+    license_expression: public-domain
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: No copyright to license.
+  - score: '100.0'
+    start_line: '191'
+    end_line: '192'
     matcher: 1-hash
     rule_length: 18
     matched_length: 18
@@ -499,14 +457,14 @@ matches:
     matched_text: |
       This file has been put into the public domain.
       You can do whatever you want with this file.
-  - score: '44.0'
-    start_line: 1
-    end_line: 1
+  - score: '100.0'
+    start_line: 209
+    end_line: 209
     matcher: 1-hash
     rule_length: 8
     matched_length: 8
     match_coverage: '100.0'
-    rule_relevance: 44
+    rule_relevance: 100
     identifier: public-domain_66.RULE
     license_expression: public-domain
     is_license_text: yes
@@ -516,8 +474,8 @@ matches:
     is_license_intro: no
     matched_text: This file is put in the public domain.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 217
+    end_line: 217
     matcher: 1-hash
     rule_length: 7
     matched_length: 7
@@ -532,8 +490,8 @@ matches:
     is_license_intro: no
     matched_text: This file is in the public domain
   - score: '100.0'
-    start_line: 5
-    end_line: 6
+    start_line: 238
+    end_line: 239
     matcher: 2-aho
     rule_length: 18
     matched_length: 18
@@ -550,8 +508,8 @@ matches:
       This file has been put into the public domain.
        # You can do whatever you want with this file.
   - score: '100.0'
-    start_line: 11
-    end_line: 13
+    start_line: 244
+    end_line: 246
     matcher: 2-aho
     rule_length: 29
     matched_length: 29
@@ -569,8 +527,8 @@ matches:
        dnl gives unlimited permission to copy and/or distribute it,
        dnl with or without modifications, as long as this notice is preserved.
   - score: '100.0'
-    start_line: 24
-    end_line: 30
+    start_line: 257
+    end_line: 263
     matcher: 2-aho
     rule_length: 72
     matched_length: 72
@@ -592,8 +550,8 @@ matches:
        # General Public License (GPL) does govern all other use of the material
        # that constitutes the Autoconf program.
   - score: '100.0'
-    start_line: 32
-    end_line: 33
+    start_line: 265
+    end_line: 266
     matcher: 2-aho
     rule_length: 24
     matched_length: 24
@@ -610,8 +568,8 @@ matches:
       On Debian systems, the complete text of the GNU General Public
       License version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 274
+    end_line: 274
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -625,44 +583,32 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2.1+'
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
+  - score: '97.06'
+    start_line: 275
+    end_line: 281
+    matcher: 3-seq
+    rule_length: 66
+    matched_length: 66
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.0-plus_221.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: under the LGPL,
-  - score: '43.75'
-    start_line: 5
-    end_line: 7
-    matcher: 3-seq
-    rule_length: 48
-    matched_length: 21
-    match_coverage: '43.75'
-    rule_relevance: 100
-    identifier: lgpl-2.0-plus_and_lgpl-2.1.RULE
-    license_expression: lgpl-2.0-plus AND lgpl-2.1
+    identifier: lgpl-2.0_and_lgpl-2.1_1.RULE
+    license_expression: lgpl-2.0 AND lgpl-2.1
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      can be found in ‘/usr/share/common-licenses/LGPL-2’
-      [and] [the] [text] [of] [intl]/[COPYING].[LIB]-[2].[1] can be found in
+      The gettext-runtime package is under the LGPL, see files intl/COPYING.LIB-2.0
+      and intl/COPYING.LIB-2.1.
+
+      On Debian systems, the complete text of intl/COPYING.LIB-2.0 from
+      gettext-runtime [0].[12] can be found in ‘/usr/share/common-licenses/LGPL-2’
+      and the text of intl/COPYING.LIB-2.1 can be found in
       ‘/usr/share/common-licenses/LGPL-2.1’.
   - score: '90.0'
-    start_line: 1
-    end_line: 2
+    start_line: 289
+    end_line: 290
     matcher: 1-hash
     rule_length: '19'
     matched_length: '19'
@@ -679,8 +625,8 @@ matches:
       Everyone is permitted to copy and distribute verbatim copies
       of this license document, but changing it is not allowed.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 295
+    end_line: 296
     matcher: 1-hash
     rule_length: 18
     matched_length: 18
@@ -697,8 +643,8 @@ matches:
       The Debian packaging files are in the public domain.
       You may freely use, modify, distribute, and relicense them.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 298
+    end_line: 298
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -713,14 +659,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-2.1+'
   - score: '100.0'
-    start_line: 1
-    end_line: 13
-    matcher: 2-aho
-    rule_length: 114
-    matched_length: 114
+    start_line: 299
+    end_line: 314
+    matcher: 1-hash
+    rule_length: 141
+    matched_length: 141
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.1-plus_269.RULE
+    identifier: lgpl-2.1-plus_344.RULE
     license_expression: lgpl-2.1-plus
     is_license_text: no
     is_license_notice: yes
@@ -741,27 +687,12 @@ matches:
       You should have received a copy of the GNU Lesser General Public License along
       with this program; if not, write to the Free Software Foundation,
       Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
-  - score: '100.0'
-    start_line: 15
-    end_line: 16
-    matcher: 2-aho
-    rule_length: 27
-    matched_length: 27
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1_293.RULE
-    license_expression: lgpl-2.1
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
+
       On Debian systems, the complete text of the GNU Lesser General Public
       License version 2.1 can be found in ‘/usr/share/common-licenses/LGPL-2.1’.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 316
+    end_line: 316
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -775,15 +706,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2'
-  - score: '86.15'
-    start_line: 1
-    end_line: 6
-    matcher: 3-seq
-    rule_length: 65
-    matched_length: 56
-    match_coverage: '86.15'
+  - score: '100.0'
+    start_line: 317
+    end_line: 329
+    matcher: 1-hash
+    rule_length: 106
+    matched_length: 106
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_22.RULE
+    identifier: gpl-2.0_1302.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes
@@ -797,43 +728,16 @@ matches:
       this software for any purpose. It is provided "as is" without express
       or implied warranty. See the GNU General Public License for more
       details.
-  - score: '10.71'
-    start_line: 11
-    end_line: 12
-    matcher: 3-seq
-    rule_length: 56
-    matched_length: 6
-    match_coverage: '10.71'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_767.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      of the GNU General
-      Public License
+
+      Documents produced by doxygen are derivative works derived from the
+      input used in their production; they are not affected by this license.
+
+      On Debian systems, the complete text of the version of the GNU General
+      Public License distributed with Doxygen can be found in
+      ‘/usr/share/common-licenses/GPL-2’.
   - score: '100.0'
-    start_line: 13
-    end_line: 13
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2’.
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 331
+    end_line: 331
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -848,8 +752,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 16
+    start_line: 332
+    end_line: 347
     matcher: 1-hash
     rule_length: 134
     matched_length: 134
@@ -880,17 +784,17 @@ matches:
       On Debian systems, the complete text of the GNU General Public License
       version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
   - score: '100.0'
-    start_line: 1
-    end_line: 25
-    matcher: 2-aho
-    rule_length: 227
-    matched_length: 227
+    start_line: 350
+    end_line: 377
+    matcher: 1-hash
+    rule_length: 251
+    matched_length: 251
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_with_autoconf-macro-exception_4.RULE
+    identifier: gpl-3.0-plus_with_autoconf-macro-exception_6.RULE
     license_expression: gpl-3.0-plus WITH autoconf-macro-exception
-    is_license_text: no
-    is_license_notice: yes
+    is_license_text: yes
+    is_license_notice: no
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
@@ -920,27 +824,12 @@ matches:
       Macro released by the Autoconf Archive. When you make and distribute a
       modified version of the Autoconf Macro, you may extend this special
       exception to the GPL to apply to your modified version as well.
-  - score: '100.0'
-    start_line: 27
-    end_line: 28
-    matcher: 2-aho
-    rule_length: 24
-    matched_length: 24
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0_394.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
+
       On Debian systems, the complete text of the GNU General Public
       License version 3 can be found in ‘/usr/share/common-licenses/GPL-3’.
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 380
+    end_line: 382
     matcher: 1-hash
     rule_length: 29
     matched_length: 29
@@ -958,8 +847,8 @@ matches:
       gives unlimited permission to copy and/or distribute it,
       with or without modifications, as long as this notice is preserved.
   - score: '100.0'
-    start_line: 1
-    end_line: 4
+    start_line: 385
+    end_line: 388
     matcher: 1-hash
     rule_length: 37
     matched_length: 37
@@ -978,24 +867,24 @@ matches:
       notice and this notice are preserved.  This file is offered as-is,
       without warranty of any kind.
   - score: '100.0'
-    start_line: 3
-    end_line: 3
+    start_line: 12
+    end_line: 12
     matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
+    rule_length: 11
+    matched_length: 11
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: public-domain_128.RULE
+    identifier: public-domain_430.RULE
     license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
+    is_license_text: no
+    is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: put into the public domain,
+    matched_text: Most of the source has been put into the public domain,
   - score: '100.0'
-    start_line: 12
-    end_line: 12
+    start_line: 104
+    end_line: 104
     matcher: 2-aho
     rule_length: 5
     matched_length: 5
@@ -1010,8 +899,8 @@ matches:
     is_license_intro: no
     matched_text: are in the public domain.
   - score: '100.0'
-    start_line: 16
-    end_line: 17
+    start_line: 108
+    end_line: 109
     matcher: 2-aho
     rule_length: 5
     matched_length: 5
@@ -1028,8 +917,8 @@ matches:
       are in the public
        domain
   - score: '100.0'
-    start_line: 5
-    end_line: 5
+    start_line: '198'
+    end_line: '198'
     matcher: 2-aho
     rule_length: 4
     matched_length: 4

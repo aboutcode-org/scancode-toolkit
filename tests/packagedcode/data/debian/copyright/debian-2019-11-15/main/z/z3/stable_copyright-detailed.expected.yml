@@ -9,8 +9,8 @@ copyright: |
   2011 Michael Tautschnig <mt@debian.org>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 8
+    end_line: 24
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -42,8 +42,8 @@ matches:
       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 29
+    end_line: 29
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -57,15 +57,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2+'
-  - score: '98.41'
-    start_line: 1
-    end_line: 15
-    matcher: 3-seq
+  - score: '100.0'
+    start_line: 30
+    end_line: 44
+    matcher: 1-hash
     rule_length: 126
-    matched_length: 124
-    match_coverage: '98.41'
+    matched_length: 126
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_38.RULE
+    identifier: gpl-2.0-plus_846.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -73,7 +73,7 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify
+      This package is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation; either version 2 of the License, or
       (at your option) any later version.

@@ -1,5 +1,6 @@
 license_expression: ogc
 is_license_tag: yes
+relevance: 100
 ignorable_copyrights:
     - copyright (https://geoapi.svn.sourceforge.net/svnroot/geoapi/branches/3.0.x/LICENSE.txt)
 ignorable_holders:

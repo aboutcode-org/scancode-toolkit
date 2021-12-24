@@ -1,0 +1,21 @@
+key: accellera-systemc
+short_name: SystemC Open Source License Agreement
+name: SystemC Open Source License Agreement
+category: Permissive
+owner: Accellera
+homepage_url: https://www.accellera.org/images/about/policies/SystemC_Open_Source_License_v3.3.pdf
+spdx_license_key: LicenseRef-scancode-accellera-systemc
+faq_url: https://accellera.org/about/policies-and-procedures
+ignorable_copyrights:
+    - (c) 1996- current year here
+    - (c) 1996- current year here by all Contributors
+    - Copyright (c) 1996- current year here by all Contributors
+ignorable_authors:
+    - through the Accellera working group process
+ignorable_holders:
+    - here
+    - here by all Contributors
+ignorable_urls:
+    - http://www.accellera.org/
+ignorable_emails:
+    - info@accellera.org

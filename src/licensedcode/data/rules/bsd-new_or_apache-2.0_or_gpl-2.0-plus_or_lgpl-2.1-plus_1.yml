@@ -1,0 +1,7 @@
+license_expression: bsd-new OR apache-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus
+is_license_notice: yes
+notes: SecurityVulns.COM
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - http://www.gnu.org/licenses/gpl.txt
+    - http://www.gnu.org/licenses/lgpl.txt

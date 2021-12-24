@@ -1,0 +1,8 @@
+license_expression: gpl-2.0-plus WITH openjdk-exception
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+ignorable_urls:
+    - http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+    - https://www.gnu.org/copyleft/gpl.html

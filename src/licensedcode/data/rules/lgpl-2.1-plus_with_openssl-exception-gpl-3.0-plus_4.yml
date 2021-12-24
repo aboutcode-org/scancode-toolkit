@@ -1,0 +1,5 @@
+license_expression: lgpl-2.1-plus WITH openssl-exception-gpl-3.0-plus
+is_license_notice: yes
+relevance: 95
+minimum_coverage: 80
+notes: This references the LGPL instead of the GPL

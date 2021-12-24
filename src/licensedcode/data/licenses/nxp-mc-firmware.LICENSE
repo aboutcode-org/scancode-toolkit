@@ -1,0 +1,124 @@
+Software License Agreement ("Agreement")
+
+ANY USE, REPRODUCTION, OR DISTRIBUTION OF THE ACCOMPANYING BINARY SOFTWARE
+CONSTITUTES LICENSEE'S ACCEPTANCE OF THE TERMS AND CONDITIONS OF THIS AGREEMENT.
+
+Licensed Software. "Binary Software" means software in binary form specified in
+ANNEX A. Subject to the terms and conditions of this Agreement, NXP USA, Inc.
+("Licensor"), grants to you ("Licensee") a worldwide, non-exclusive, and
+royalty-free license to reproduce and distribute the Binary Software in its
+complete and unmodified binary form as provided by Licensor, for use solely in
+conjunction with a programmable processing unit supplied directly or indirectly
+from Licensor.
+
+Restrictions. Licensee must reproduce the Licensor copyright notice above with
+each binary copy of the Binary Software or in the accompanying documentation.
+Licensee must not reverse engineer, decompile, disassemble or modify in any way
+the Binary Software. Licensee must not use the Binary Software in violation of
+any applicable law or regulation. This Agreement shall automatically terminate
+upon Licensee's breach of any term or condition of this Agreement in which case,
+Licensee shall destroy all copies of the Binary Software. Neither the name of
+Licensor nor the names of its suppliers may be used to endorse or promote
+products derived from this Binary Software without specific prior written
+permission.
+
+Disclaimer. TO THE MAXIMUM EXTENT PERMITTED BY LAW, LICENSOR EXPRESSLY
+DISCLAIMS ANY WARRANTY FOR THE BINARY SOFTWARE. THE BINARY SOFTWARE IS PROVIDED
+"AS IS", WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING
+WITHOUT LIMITATION THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, OR NON-INFRINGEMENT. WITHOUT LIMITING THE GENERALITY OF THE
+FOREGOING, LICENSOR DOES NOT WARRANT THAT THE BINARY SOFTWARE IS ERROR-FREE OR
+WILL OPERATE WITHOUT INTERRUPTION, AND LICENSOR GRANTS NO WARRANTY REGARDING ITS
+USE OR THE RESULTS THEREFROM, INCLUDING ITS CORRECTNESS, ACCURACY, OR
+RELIABILITY.
+
+Limitation of Liability. IN NO EVENT WILL LICENSOR, OR ANY OF LICENSOR'S
+LICENSORS HAVE ANY LIABILITY HEREUNDER FOR ANY INDIRECT, SPECIAL, OR
+CONSEQUENTIAL DAMAGES, HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+FOR BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, ARISING OUT
+OF THIS AGREEMENT, INCLUDING DAMAGES FOR LOSS OF PROFITS, OR THE COST OF
+PROCUREMENT OF SUBSTITUTE GOODS, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES. LICENSOR'S TOTAL LIABILITY FOR ALL COSTS, DAMAGES,
+CLAIMS, OR LOSSES WHATSOEVER ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT
+OR THE BINARY SOFTWARE SUPPLIED UNDER THIS AGREEMENT IS LIMITED TO THE AGGREGATE
+AMOUNT PAID BY LICENSEE TO LICENSOR IN CONNECTION WITH THE BINARY SOFTWARE TO
+WHICH LOSSES OR DAMAGES ARE CLAIMED.
+
+Trade Compliance.  Licensee shall comply with all applicable export and import
+control laws and regulations including but not limited to the US Export
+Administration Regulation (including prohibited party lists issued by other
+federal governments), Catch-all regulations and all national and international
+embargoes. Licensee further agrees that it will not knowingly transfer, divert,
+export or re-export, directly or indirectly, any product, software, including
+software source code, or technology restricted by such regulations or by other
+applicable national regulations, received from Licensor under this Agreement,
+or any direct product of such software or technical data to any person, firm,
+entity, country or destination to which such transfer, diversion, export or
+re-export is restricted or prohibited, without obtaining prior written
+authorization from the applicable competent government authorities to the extent
+required by those laws. Licensee acknowledge that the "restricted encryption
+software" that is subject to the US Export Administration Regulations (EAR), is
+not intended for use by a government end user, as defined in part 772 of the
+EAR. This provision shall survive termination or expiration of this Agreement.
+
+Assignment. Licensee may not assign this Agreement without the prior written
+consent of Licensor. Licensor may assign this Agreement without Licensee's
+consent.
+
+Governing Law. This Agreement will be governed by, construed, and enforced in
+accordance with the laws of the State of Texas, USA, without regard to conflicts
+of laws principles, will apply to all matters relating to this Agreement or the
+Binary Software, and Licensee agrees that any litigation will be subject to the
+exclusive jurisdiction of the state or federal courts Texas, USA. The United
+Nations Convention on Contracts for the International Sale of Goods will not
+apply to this Agreement.
+
+Restrictions, Warranty Disclaimer, Limitation of Liability, Trade Compliance,
+Assignment, Governing Law, and Third Party Terms shall survive termination or
+expiration of this Agreement.
+
+Third Party Terms. The licensed Binary Software includes the following third
+party software for which the following terms apply:
+
+Libfdt - Flat Device Tree manipulation
+Copyright (c) 2006 David Gibson, IBM Corporation
+All rights reserved.
+
+Redistributions must reproduce the above copyright notice, this list of
+conditions and the following disclaimer in the documentation and/or other
+materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+LibElf
+Copyright (c) 2006,2008-2011 Joseph Koshy
+All rights reserved.
+
+Redistributions must reproduce the above copyright notice, this list of
+conditions and the following disclaimer in the documentation and/or other
+materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+ANNEX A
+BINARY SOFTWARE
+Only software in binary form may be provided under this Agreement

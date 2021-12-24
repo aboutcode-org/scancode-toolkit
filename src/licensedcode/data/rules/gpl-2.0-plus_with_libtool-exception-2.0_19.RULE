@@ -1,0 +1,13 @@
+GNU Libtool is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ As a special exception to the GNU General Public License,
+ if you distribute this file as part of a program or library that
+ is built using GNU Libtool, you may include this file under the
+ same distribution terms that you use for the rest of that program.
+ .
+ On Debian systems, the text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.

@@ -1,0 +1,9 @@
+key: ctl-linux-firmware
+short_name: Creative Technology Linux Firmware License
+name: Creative Technology Linux Firmware License
+category: Proprietary Free
+owner: Creative Technology Ltd
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.ca0132
+spdx_license_key: LicenseRef-scancode-ctl-linux-firmware
+ignorable_urls:
+    - http://opensource.org/licenses

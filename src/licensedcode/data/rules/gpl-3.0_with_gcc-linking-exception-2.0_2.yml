@@ -1,0 +1,4 @@
+license_expression: gpl-3.0 WITH gcc-linking-exception-2.0
+is_license_tag: yes
+relevance: 99
+notes: https://github.com/NationalSecurityAgency/ghidra/blob/da94eb86bd2b89c8b0ab9bd89e9f0dc5a3157055/GPL/DemanglerGnu/src/demangler_gnu_v2_24/headers/cp-demangle.h#L2

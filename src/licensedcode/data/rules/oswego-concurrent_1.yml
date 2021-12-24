@@ -1,4 +1,5 @@
 license_expression: oswego-concurrent
 is_license_reference: yes
+relevance: 100
 ignorable_urls:
     - http://g.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html

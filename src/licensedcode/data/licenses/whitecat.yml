@@ -1,0 +1,7 @@
+key: whitecat
+short_name: Whitecat License
+name: Whitecat License
+category: Permissive
+owner: Whitecat
+homepage_url: https://github.com/whitecatboard/Lua-RTOS-ESP32/blob/master/components/mklfs/src/mklfs.c
+spdx_license_key: LicenseRef-scancode-whitecat

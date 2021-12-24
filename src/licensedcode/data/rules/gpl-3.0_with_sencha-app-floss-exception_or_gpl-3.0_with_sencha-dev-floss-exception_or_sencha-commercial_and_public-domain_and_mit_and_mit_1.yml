@@ -1,0 +1,16 @@
+license_expression: (gpl-3.0 WITH sencha-app-floss-exception OR gpl-3.0 WITH sencha-dev-floss-exception
+    OR sencha-commercial) AND (public-domain AND mit AND mit)
+is_license_notice: yes
+relevance: 100
+notes: complex notice for Sencha
+ignorable_urls:
+    - http://code.google.com/p/flexible-js-formatting/
+    - http://www.json.org/js.html
+    - http://www.sencha.com/products/complete-team/license
+    - http://www.sencha.com/products/complete/license
+    - http://www.sencha.com/products/floss-exception.php
+    - http://www.sencha.com/products/touch/license.php
+    - http://www.sencha.com/products/ux-exception.php
+    - http://www.sencha.com/store/touch/license.php
+    - https://github.com/pivotal/jasmine
+    - https://www.gnu.org/licenses/gpl.html

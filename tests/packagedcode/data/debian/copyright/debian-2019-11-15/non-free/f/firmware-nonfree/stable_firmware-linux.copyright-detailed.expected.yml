@@ -20,15 +20,22 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "License:\n \n     This package is free software; you can redistribute it\
-      \ and/or modify\n     it under the terms of the GNU General Public License as published\
-      \ by\n     the Free Software Foundation; either version 2 of the License, or\n     (at\
-      \ your option) any later version.\n \n     This package is distributed in the hope that\
-      \ it will be useful,\n     but WITHOUT ANY WARRANTY; without even the implied warranty\
-      \ of\n     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n     GNU General\
-      \ Public License for more details.\n \n     You should have received a copy of the GNU\
-      \ General Public License\n     along with this package; if not, write to the Free Software\n\
-      \     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA"
+    matched_text: |
+      License:
+
+          This package is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 2 of the License, or
+          (at your option) any later version.
+
+          This package is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
+
+          You should have received a copy of the GNU General Public License
+          along with this package; if not, write to the Free Software
+          Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
   - score: '100.0'
     start_line: 22
     end_line: 23
@@ -46,4 +53,4 @@ matches:
     is_license_intro: no
     matched_text: |
       On Debian systems, the complete text of the GNU General
-       Public License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+      Public License version 2 can be found in `/usr/share/common-licenses/GPL-2'.

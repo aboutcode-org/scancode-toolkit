@@ -7,8 +7,8 @@ declared_license:
   - LGPL-2+
   - zlib/libpng
   - LGPL-2+
-license_expression: zlib AND zlib AND (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND
-  lgpl-2.0) AND unlicense AND (lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0)
+license_expression: zlib AND zlib AND (lgpl-2.0-plus AND lgpl-2.1-plus) AND unlicense AND (lgpl-2.0-plus
+  AND lgpl-2.1-plus)
 copyright: |
   1997-2016 Sam Lantinga <slouken@libsdl.org>
   1997-2016 Sam Lantinga <slouken@libsdl.org>
@@ -22,8 +22,8 @@ copyright: |
   2016, Gianfranco Costamagna <locutusofborg@debian.org>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 22
+    start_line: 33
+    end_line: 54
     matcher: 1-hash
     rule_length: 189
     matched_length: 189
@@ -60,8 +60,8 @@ matches:
       ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
       OTHER DEALINGS IN THE SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 15
+    start_line: 63
+    end_line: 77
     matcher: 1-hash
     rule_length: 132
     matched_length: 132
@@ -91,8 +91,8 @@ matches:
          misrepresented as being the original software.
       3. This notice may not be removed or altered from any source distribution.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 79
+    end_line: 79
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -107,14 +107,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 4
-    matcher: 2-aho
-    rule_length: 44
-    matched_length: 44
+    start_line: 80
+    end_line: 86
+    matcher: 1-hash
+    rule_length: 70
+    matched_length: 70
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.1-plus_17.RULE
+    identifier: lgpl-2.1-plus_419.RULE
     license_expression: lgpl-2.1-plus
     is_license_text: no
     is_license_notice: yes
@@ -126,37 +126,6 @@ matches:
       it under the terms of the GNU Lesser General Public License as published by
       the Free Software Foundation; either version 2.1 of the License, or (at
       your option) any later version.
-  - score: '100.0'
-    start_line: 6
-    end_line: 7
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_83_1.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      the GNU Lesser
-      General Public License
-  - score: '55.0'
-    start_line: 7
-    end_line: 7
-    matcher: 2-aho
-    rule_length: 10
-    matched_length: 10
-    match_coverage: '100.0'
-    rule_relevance: 55
-    identifier: lgpl-2.0_157.RULE
-    license_expression: lgpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: can be found in '/usr/share/common-licenses/LGPL-2'.
+
+      On Debian systems, the complete text of version 2 of the GNU Lesser
+      General Public License can be found in '/usr/share/common-licenses/LGPL-2'.

@@ -1,0 +1,8 @@
+license_expression: gpl-3.0 OR apache-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 70
+notes: found in https://github.com/nexB/scancode-toolkit/issues/508 cloudinit
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - https://www.gnu.org/licenses/

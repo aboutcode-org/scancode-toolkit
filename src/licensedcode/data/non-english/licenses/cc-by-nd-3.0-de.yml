@@ -1,0 +1,8 @@
+key: cc-by-nd-3.0-de
+short_name: Creative Commons Attribution No Derivatives 3.0 Germany
+name: Creative Commons Attribution No Derivatives 3.0 Germany
+spdx_license_key: CC-BY-ND-3.0-DE
+other_urls:
+    - https://creativecommons.org/licenses/by-nd/3.0/de/legalcode
+ignorable_urls:
+    - https://creativecommons.org/

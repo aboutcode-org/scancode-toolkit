@@ -1,3 +1,4 @@
+
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
@@ -129,6 +130,7 @@ def parse(location):
         parse_sdist,
     )
 
+    # FIXME: this does not make sense
     # try all available parser in a well defined order
     for parser in parsers:
         package = parser(location)
@@ -192,22 +194,13 @@ def parse_archive(location):
     if not location or not location.endswith(bdist_file_suffixes):
         return
 
-    metafile = find_archive_metafile(location)
-    if metafile:
-        return parse_metadata(metafile)
-
-
-def find_archive_metafile(location):
-    """
-    Return a Path-like object to a Python metafile found in a Python package egg
-    or wheel archive at ``location`` or None.
-    """
-    zf = zipfile.ZipFile(location)
-    for path in ZipPath(zf).iterdir():
-        if path.name.endswith(meta_dir_suffixes):
+    with zipfile.ZipFile(location) as zf:
+        for path in ZipPath(zf).iterdir():
+            if not path.name.endswith(meta_dir_suffixes):
+                continue
             for metapath in path.iterdir():
                 if metapath.name.endswith(meta_file_names):
-                    return metapath
+                    return parse_metadata(metapath)
 
 
 sdist_file_suffixes = '.tar.gz', '.tar.bz2', '.zip',
@@ -247,11 +240,9 @@ def parse_setup_py(location):
 
     setup_args = get_setup_py_args(location)
 
-    # FIXME: it may be legit to have a name-less package?
+    # it may be legit to have a name-less package?
+    # in anycase we do not want to fail because of that
     package_name = setup_args.get('name')
-    if not package_name:
-        return
-
     urls, other_urls = get_urls(setup_args)
 
     detected_version = setup_args.get('version')
@@ -359,16 +350,43 @@ def get_description(metainfo, location=None):
     # newer metadata versions use the payload for the description
     if hasattr(metainfo, 'get_payload'):
         description = metainfo.get_payload()
+    description = description and description.strip() or None
     if not description:
         # legacymetadata versions use the Description for the description
         description = get_attribute(metainfo, 'Description')
         if not description and location:
             # older metadata versions can use a DESCRIPTION.rst file
-            description = get_legacy_description(
-                fileutils.parent_directory(location))
+            description = get_legacy_description(location=fileutils.parent_directory(location))
 
     summary = get_attribute(metainfo, 'Summary')
+    description = clean_description(description)
     return build_description(summary, description)
+
+
+def clean_description(description):
+    """
+    Return a cleaned description text, removing extra leading whitespaces if
+    needed. Some metadata formats padd each description line with 8 spaces. Some
+    do not. We check first and cleanup if needed.
+    """
+    # TODO: verify what is the impact of Description-Content-Type: if any
+    description = description or ''
+    description = description.strip()
+    lines = description.splitlines(False)
+
+    space_padding = ' ' * 8
+
+    # we need cleaning if any of the first two lines starts with 8 spaces
+    need_cleaning = any(l.startswith(space_padding) for l in lines[:2])
+    if not need_cleaning:
+        return description
+
+    cleaned_lines = [
+        line[8:] if line.startswith(space_padding) else line
+        for line in lines
+    ]
+
+    return '\n'.join(cleaned_lines)
 
 
 def get_legacy_description(location):
@@ -732,7 +750,8 @@ def get_setup_py_args(location):
     for statement in tree.body:
         # We only care about function calls or assignments to functions named
         # `setup` or `main`
-        if not (isinstance(statement, (ast.Expr, ast.Call, ast.Assign))
+        if not (
+            isinstance(statement, (ast.Expr, ast.Call, ast.Assign))
             and isinstance(statement.value, ast.Call)
             and isinstance(statement.value.func, ast.Name)
             # we also look for main as sometimes this is used instead of setup()

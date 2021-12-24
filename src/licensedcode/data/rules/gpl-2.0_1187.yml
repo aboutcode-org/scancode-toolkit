@@ -1,0 +1,9 @@
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 95
+ignorable_urls:
+    - http://www.trolltech.com/products/qt/licensing.html
+    - http://www.trolltech.com/products/qt/opensource.html
+ignorable_emails:
+    - sales@trolltech.com

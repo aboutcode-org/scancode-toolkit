@@ -8,18 +8,68 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 1
       }
+    }
+  ],
+  "packages": [
+    {
+      "type": "rpm",
+      "namespace": null,
+      "name": "fping",
+      "version": "2.4-0.b2.rhfc1.dag",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": "A utility to ping multiple hosts at once.\nfping is a ping-like program which uses the Internet Control Message\nProtocol (ICMP) echo request to determine if a target host is responding.\n\nfping is different from ping in that you can specify any number of hosts\non the command line, or specify a file containing the lists of hosts to\nping. Instead of trying one host until it timeouts or replies, fping will\nsend out a ping packet and move on to the next host in a round-robin fashion.\nIf a host replies, it is noted and removed from the list of hosts to check.\nIf a host does not respond within a certain time limit and/or retry limit it\nwill be considered unreachable.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "vendor",
+          "name": "Dag Apt Repository, http://dag.wieers.com/apt/",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "http://www.fping.com/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "unknown",
+      "declared_license": "distributable",
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"
+      ],
+      "extra_data": {},
+      "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null
     }
   ],
   "files": [
     {
       "path": "fping-2.4-0.b2.rhfc1.dag.i386.rpm",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "rpm",
           "namespace": null,

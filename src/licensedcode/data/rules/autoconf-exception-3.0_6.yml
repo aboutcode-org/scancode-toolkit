@@ -1,0 +1,6 @@
+license_expression: autoconf-exception-3.0
+is_license_reference: yes
+relevance: 100
+notes: See https://www.gnu.org/licenses/exceptions.en.html
+ignorable_urls:
+    - https://www.gnu.org/licenses/autoconf-exception.html

@@ -1,0 +1,14 @@
+license_expression: ofl-1.1
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://abattis.org/cantarell
+    - http://en.wikipedia.org/wiki/Android_(operating_system)
+    - http://en.wikipedia.org/wiki/HTC_Dream
+    - http://fontforge.sf.net/
+    - http://live.gnome.org/CantarellFonts
+    - http://openfontlibrary.org/wiki/Web_font_linking_with_@font-face
+    - http://scripts.sil.org/OFL
+    - http://www.google.com/webfonts
+    - http://www.typedesign.reading.ac.uk/
+    - https://www.gnu.org/licenses/gpl.html

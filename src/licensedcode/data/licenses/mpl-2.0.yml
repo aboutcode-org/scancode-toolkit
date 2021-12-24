@@ -9,6 +9,7 @@ notes: |
     entry is for use when the standard MPL 2.0 is used, as indicated by the
     standard header (Exhibit A but no Exhibit B).
 spdx_license_key: MPL-2.0
+osi_license_key: MPL-2.0
 text_urls:
     - http://www.mozilla.com/MPL/2.0/
     - http://www.mozilla.org/MPL/2.0/
@@ -18,6 +19,6 @@ osi_url: http://opensource.org/licenses/MPL-2.0
 faq_url: http://www.mozilla.org/MPL/2.0/FAQ.html
 other_urls:
     - https://opensource.org/licenses/MPL-2.0
+    - https://www.mozilla.org/MPL/2.0/
 ignorable_urls:
     - http://mozilla.org/MPL/2.0
-osi_license_key: MPL-2.0

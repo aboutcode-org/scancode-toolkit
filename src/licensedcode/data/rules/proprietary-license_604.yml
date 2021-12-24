@@ -1,0 +1,3 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://github.com/self-xdsd/self-core/blob/84ae5e82793c236c6bfbee1dd8f8406eee495f9a/self-core-impl/src/main/java/com/selfxdsd/core/SelfCore.java#L7

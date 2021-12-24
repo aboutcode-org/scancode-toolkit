@@ -1,0 +1,8 @@
+key: xenomai-gpl-exception
+short_name: Xenomai GPL Exception
+name: Xenomai GPL Exception
+category: Copyleft Limited
+owner: Xenomai
+homepage_url: https://source.denx.de/Xenomai/xenomai/blob/master/include/COPYING#L2-22
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-xenomai-gpl-exception

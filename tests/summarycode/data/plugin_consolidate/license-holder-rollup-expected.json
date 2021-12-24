@@ -12,13 +12,16 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 3
       }
     }
   ],
+  "packages": [],
   "consolidated_components": [
     {
       "type": "holders",
@@ -96,7 +99,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [],
       "files_count": 3,
       "dirs_count": 5,
@@ -128,7 +131,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [],
       "files_count": 1,
       "dirs_count": 1,
@@ -160,7 +163,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "omegacom_1"
       ],
@@ -191,7 +194,7 @@
       "licenses": [
         {
           "key": "gpl-1.0-plus",
-          "score": 16.0,
+          "score": 100.0,
           "name": "GNU General Public License 1.0 or later",
           "short_name": "GPL 1.0 or later",
           "category": "Copyleft",
@@ -224,7 +227,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 16
+            "rule_relevance": 100
           }
         },
         {
@@ -286,7 +289,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "omegacom_1"
       ],
@@ -320,7 +323,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [],
       "files_count": 2,
       "dirs_count": 2,
@@ -352,7 +355,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -383,7 +386,7 @@
       "licenses": [
         {
           "key": "gpl-1.0-plus",
-          "score": 16.0,
+          "score": 100.0,
           "name": "GNU General Public License 1.0 or later",
           "short_name": "GPL 1.0 or later",
           "category": "Copyleft",
@@ -416,7 +419,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 16
+            "rule_relevance": 100
           }
         },
         {
@@ -478,7 +481,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -512,7 +515,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_oracle_1"
       ],
@@ -543,7 +546,7 @@
       "licenses": [
         {
           "key": "unknown-license-reference",
-          "score": 11.0,
+          "score": 50.0,
           "name": "Unknown License file reference",
           "short_name": "Unknown License reference",
           "category": "Unstated License",
@@ -576,7 +579,7 @@
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 11
+            "rule_relevance": 50
           }
         },
         {
@@ -638,7 +641,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_oracle_1"
       ],

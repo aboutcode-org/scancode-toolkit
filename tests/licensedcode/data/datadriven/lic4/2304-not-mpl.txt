@@ -1,0 +1,1 @@
+SHELL_CMD_ARG_REGISTER(mpl, &mpl_cmds, " ", cmd_mpl, 1, 1);

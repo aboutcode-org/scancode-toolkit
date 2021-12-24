@@ -12,60 +12,52 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 8
       }
     }
   ],
-  "consolidated_components": [
+  "packages": [
     {
-      "type": "build",
-      "identifier": "demo_1",
-      "consolidated_license_expression": null,
-      "consolidated_holders": [],
-      "consolidated_copyright": "Copyright (c) ",
-      "core_license_expression": null,
-      "core_holders": [],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
+      "type": "buck",
+      "namespace": null,
+      "name": "demo",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": "component-package-build/build",
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [],
+      "extra_data": {},
+      "purl": "pkg:buck/demo",
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null
     },
-    {
-      "type": "holders",
-      "identifier": "apache_foundation_software_1",
-      "consolidated_license_expression": "apache-2.0",
-      "consolidated_holders": [
-        "The Apache Software Foundation"
-      ],
-      "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
-      "core_license_expression": "apache-2.0",
-      "core_holders": [
-        "The Apache Software Foundation"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 3
-    },
-    {
-      "type": "holders",
-      "identifier": "inc_nexb_1",
-      "consolidated_license_expression": "lgpl-2.0",
-      "consolidated_holders": [
-        "nexB, Inc."
-      ],
-      "consolidated_copyright": "Copyright (c) nexB, Inc.",
-      "core_license_expression": "lgpl-2.0",
-      "core_holders": [
-        "nexB, Inc."
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
-    }
-  ],
-  "consolidated_packages": [
     {
       "type": "npm",
       "namespace": null,
@@ -102,26 +94,76 @@
       "purl": "pkg:npm/test-package@0.0.1",
       "repository_homepage_url": "https://www.npmjs.com/package/test-package",
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
-      "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
-      "identifier": "pkg_npm_test_package_0_0_1_1",
-      "consolidated_license_expression": "apache-2.0 AND gpl-1.0-plus",
-      "consolidated_holders": [
-        "IBM Corp.",
-        "The Apache Software",
-        "The Apache Software Foundation"
-      ],
-      "consolidated_copyright": "Copyright (c) IBM Corp., The Apache Software, The Apache Software Foundation",
-      "core_license_expression": "apache-2.0",
-      "core_holders": [],
-      "other_license_expression": "apache-2.0 AND gpl-1.0-plus",
-      "other_holders": [
-        "The Apache Software Foundation",
-        "The Apache Software",
-        "IBM Corp."
-      ],
-      "files_count": 3
+      "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
     }
   ],
+  "consolidated_components": [
+    {
+      "type": "holders",
+      "identifier": "apache_foundation_software_1",
+      "consolidated_license_expression": "apache-2.0",
+      "consolidated_holders": [
+        "The Apache Software Foundation"
+      ],
+      "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
+      "core_license_expression": "apache-2.0",
+      "core_holders": [
+        "The Apache Software Foundation"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 3
+    },
+    {
+      "type": "holders",
+      "identifier": "apache_software_1",
+      "consolidated_license_expression": "apache-2.0",
+      "consolidated_holders": [
+        "The Apache Software"
+      ],
+      "consolidated_copyright": "Copyright (c) The Apache Software",
+      "core_license_expression": "apache-2.0",
+      "core_holders": [
+        "The Apache Software"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
+    },
+    {
+      "type": "holders",
+      "identifier": "corp_ibm_1",
+      "consolidated_license_expression": "gpl-1.0-plus",
+      "consolidated_holders": [
+        "IBM Corp."
+      ],
+      "consolidated_copyright": "Copyright (c) IBM Corp.",
+      "core_license_expression": "gpl-1.0-plus",
+      "core_holders": [
+        "IBM Corp."
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
+    },
+    {
+      "type": "holders",
+      "identifier": "inc_nexb_1",
+      "consolidated_license_expression": "lgpl-2.0",
+      "consolidated_holders": [
+        "nexB, Inc."
+      ],
+      "consolidated_copyright": "Copyright (c) nexB, Inc.",
+      "core_license_expression": "lgpl-2.0",
+      "core_holders": [
+        "nexB, Inc."
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
+    }
+  ],
+  "consolidated_packages": [],
   "files": [
     {
       "path": "component-package-build",
@@ -148,7 +190,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [],
       "files_count": 8,
       "dirs_count": 3,
@@ -180,10 +222,8 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
-      "consolidated_to": [
-        "demo_1"
-      ],
+      "package_manifests": [],
+      "consolidated_to": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 261,
@@ -214,7 +254,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [
+      "package_manifests": [
         {
           "type": "buck",
           "namespace": null,
@@ -252,9 +292,7 @@
           "api_data_url": null
         }
       ],
-      "consolidated_to": [
-        "demo_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -285,7 +323,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "apache_foundation_software_1",
         "inc_nexb_1"
@@ -373,7 +411,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -460,7 +498,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -547,7 +585,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -634,7 +672,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "inc_nexb_1"
       ],
@@ -668,9 +706,10 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "apache_software_1",
+        "corp_ibm_1"
       ],
       "files_count": 3,
       "dirs_count": 0,
@@ -755,7 +794,7 @@
         }
       ],
       "authors": [],
-      "packages": [
+      "package_manifests": [
         {
           "type": "npm",
           "namespace": null,
@@ -796,7 +835,7 @@
         }
       ],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "apache_software_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -881,10 +920,8 @@
         }
       ],
       "authors": [],
-      "packages": [],
-      "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
-      ],
+      "package_manifests": [],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -968,9 +1005,9 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "corp_ibm_1"
       ],
       "files_count": 0,
       "dirs_count": 0,

@@ -593,7 +593,7 @@ class LicenseMatch(object):
             whole_lines=whole_lines,
             highlight=highlight,
             highlight_matched=highlight_matched,
-            highlight_not_matched=highlight_not_matched, 
+            highlight_not_matched=highlight_not_matched,
             _usecache=_usecache
         )).rstrip()
 
@@ -1516,7 +1516,7 @@ class Token(object):
     is_known = attr.ib(default=False)
 
 
-def tokenize_matched_text(location, query_string, dictionary, _cache={}):
+def tokenize_matched_text(location, query_string, dictionary, start_line=1, _cache={}):
     """
     Return a list of Token objects with pos and line number collected from the
     file at `location` or the `query_string` string. `dictionary` is the index
@@ -1524,25 +1524,37 @@ def tokenize_matched_text(location, query_string, dictionary, _cache={}):
 
     NOTE: the _cache={} arg IS A GLOBAL mutable by design.
     """
-    key = location, query_string
+    key = location, query_string, start_line
     cached = _cache.get(key)
     if cached:
         return cached
     # we only cache the last call
     _cache.clear()
     _cache[key] = result = list(
-        _tokenize_matched_text(location, query_string, dictionary))
+        _tokenize_matched_text(
+            location=location,
+            query_string=query_string,
+            dictionary=dictionary,
+            start_line=start_line,
+        )
+    )
     return result
 
 
-def _tokenize_matched_text(location, query_string, dictionary):
+def _tokenize_matched_text(location, query_string, dictionary, start_line=1):
     """
     Yield Token objects with pos and line number collected from the file at
     `location` or the `query_string` string. `dictionary` is the index mapping
     of tokens to token ids.
     """
     pos = 0
-    for line_num, line in query.query_lines(location, query_string, strip=False):
+    qls = query.query_lines(
+        location=location,
+        query_string=query_string,
+        strip=False,
+        start_line=start_line,
+    )
+    for line_num, line in qls:
         if TRACE_MATCHED_TEXT_DETAILS:
             logger_debug('  _tokenize_matched_text:',
                 'line_num:', line_num,
@@ -1776,6 +1788,7 @@ def get_full_matched_text(
             location=location,
             query_string=query_string,
             dictionary=idx.dictionary,
+            start_line=match.query.start_line,
             _cache={},
         )
     else:
@@ -1783,6 +1796,7 @@ def get_full_matched_text(
             location=location,
             query_string=query_string,
             dictionary=idx.dictionary,
+            start_line=match.query.start_line,
         )
 
     if TRACE_MATCHED_TEXT:

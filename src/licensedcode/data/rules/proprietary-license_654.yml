@@ -1,0 +1,3 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/bidorbuy/magento/blob/59f40b6ccda69cac2c103339ffd21d7dc32f5735/lib/Bidorbuy/vendor/com.extremeidea.bidorbuy/storeintegrator-core/core/http/Request.php#L10

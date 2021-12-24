@@ -194,7 +194,7 @@ def flatten_scan(scan, headers):
             collect_keys(url_info, 'url')
             yield url_info
 
-        for package in scanned_file.get('packages', []):
+        for package in scanned_file.get('package_manifests', []):
             flat = flatten_package(package, path)
             collect_keys(flat, 'package')
             yield flat

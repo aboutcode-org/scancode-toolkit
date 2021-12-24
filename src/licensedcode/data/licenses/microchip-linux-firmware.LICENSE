@@ -1,0 +1,37 @@
+REDISTRIBUTION: Permission is hereby granted by Microchip Technology
+Incorporated (Microchip), free of any license fees, to any person obtaining a
+copy of this firmware (the "Software"), to install, reproduce, copy and
+distribute copies, in binary form, hexadecimal or equivalent formats only, the
+Software and to permit persons to whom the Software is provided to do the same,
+subject to the following conditions:
+
+* Any redistribution of the Software must reproduce the above copyright notice,
+  this license notice, and the following disclaimers and notices in the
+  documentation and/or other materials provided with the Software.
+
+* Neither the name of Microchip, its products nor the names of its suppliers
+  may be used to endorse or promote products derived from this Software without
+  specific prior written permission.
+
+* No reverse engineering, decompilation, or disassembly of this Software is
+  permitted.
+
+Limited patent license.  Microchip grants a world-wide, royalty-free,
+non-exclusive, revocable license under any patents that it now has or hereafter
+may have, own or control related to the Software to make, have made, use,
+import, offer to sell and sell ("Utilize") this Software, but solely to the
+extent that any such patent is necessary to Utilize the Software in conjunction
+with Microchip processors. The patent license shall not apply to any other
+combinations which include this Software nor to any other Microchip patents or
+patent rights. No hardware per se is licensed hereunder.
+
+DISCLAIMER: THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

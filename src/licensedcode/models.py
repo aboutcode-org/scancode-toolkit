@@ -22,6 +22,7 @@ from os.path import join
 
 import attr
 import saneyaml
+from license_expression import ExpressionError
 from license_expression import Licensing
 
 from commoncode.fileutils import copyfile
@@ -257,7 +258,7 @@ class License(object):
         """
         try:
             with io.open(self.data_file, encoding='utf-8') as f:
-                data = saneyaml.load(f.read())
+                data = saneyaml.load(f.read(), allow_duplicate_keys=False)
 
             for k, v in data.items():
                 if k == 'minimum_coverage':
@@ -560,7 +561,7 @@ def validate_rules(rules, licenses_by_key, with_text=False):
                 if rule.data_file:
                     message.append(f'    file://{rule.data_file}')
                 if with_text:
-                    txt = rule.text()[:50].strip()
+                    txt = rule.text()[:100].strip()
                     message.append(f'       {txt}...')
         raise InvalidRule('\n'.join(message))
 
@@ -578,7 +579,8 @@ def build_rules_from_licenses(licenses):
                 text_file=text_file,
                 license_expression=license_key,
 
-                has_stored_relevance=False,
+                # a license text is always 100% relevant
+                has_stored_relevance=True,
                 relevance=100,
 
                 has_stored_minimum_coverage=bool(minimum_coverage),
@@ -950,8 +952,8 @@ class BasicRule(object):
                 if licensing:
                     try:
                         licensing.parse(license_expression, validate=True, simple=True)
-                    except InvalidRule as e:
-                        yield f'Failed to parse and validate license_expression: {e}'
+                    except ExpressionError as e:
+                        yield f'Failed to parse and validate license_expression: {license_expression} with error: {e}'
 
             if self.referenced_filenames:
                 if len(set(self.referenced_filenames)) != len(self.referenced_filenames):
@@ -1226,7 +1228,7 @@ class Rule(BasicRule):
         """
         try:
             with io.open(self.data_file, encoding='utf-8') as f:
-                data = saneyaml.load(f.read())
+                data = saneyaml.load(f.read(), allow_duplicate_keys=False)
         except Exception as e:
             print('#############################')
             print('INVALID LICENSE RULE FILE:', f'file://{self.data_file}')
@@ -1313,26 +1315,22 @@ class Rule(BasicRule):
 
         The current threshold is 18 words.
         """
-
-        if self.has_stored_relevance:
-            return
-
-        if (isinstance(self, SpdxRule)
-            # false positive rules with no license: they do not
-            # have licenses and their matches are never returned
-            or self.is_false_positive
-        ):
+        # false positive rules with no license and their matches are never returned
+        if isinstance(self, SpdxRule) or self.is_false_positive:
             # use the default max relevance of 100
             self.relevance = 100
+            self.has_stored_relevance = True
+            return
 
         relevance_of_one_word = round((1 / _threshold) * 100, 2)
-        length = self.length
-        if length >= _threshold:
-            # general case
-            self.relevance = 100
+        computed = int(self.length * relevance_of_one_word)
+        computed_relevance = min([100, computed])
+
+        if self.has_stored_relevance:
+            if self.relevance == computed_relevance:
+                self.has_stored_relevance = False
         else:
-            computed = int(length * relevance_of_one_word)
-            self.relevance = min([100, computed])
+            self.relevance = computed_relevance
 
     def rule_dir(self):
         """

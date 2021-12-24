@@ -1,0 +1,8 @@
+key: tekhvc
+short_name: TekHVC License
+name: TekHVC License
+category: Permissive
+owner: Tektronix
+spdx_license_key: LicenseRef-scancode-tekhvc
+other_urls:
+    - https://www.x.org/releases/individual/lib/libX11-1.7.2.tar.bz2

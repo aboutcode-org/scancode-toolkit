@@ -1,4 +1,3 @@
 license_expression: proprietary-license
 is_license_text: yes
-relevance: 100
-notes: A binary firmware in https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git
+notes: https://raw.githubusercontent.com/eembc/coremark-pro/main/LICENSE.md

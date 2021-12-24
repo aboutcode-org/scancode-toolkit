@@ -11,8 +11,8 @@ declared_license:
   - CC0-1.0
   - BSD-3-clause
 license_expression: (gpl-3.0-plus AND gpl-1.0-plus AND gpl-3.0) AND fsf-unlimited-no-warranty
-  AND (lgpl-2.1-plus AND lgpl-3.0-plus) AND mit AND ((gpl-3.0-plus AND gpl-1.0-plus AND gpl-3.0)
-  OR bsd-new) AND (lgpl-3.0-plus AND lgpl-3.0) AND ietf AND bsd-new AND cc0-1.0
+  AND (lgpl-2.1-plus AND lgpl-3.0-plus AND lgpl-2.1) AND mit AND ((gpl-3.0-plus AND gpl-1.0-plus
+  AND gpl-3.0) OR bsd-new) AND (lgpl-3.0-plus AND lgpl-3.0) AND ietf AND bsd-new AND cc0-1.0
 copyright: |
   1992, 1995-2016, Free Software Foundation, Inc
   1998-2007, 2009, 2012, Free Software Foundation, Inc
@@ -334,15 +334,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2.1+'
-  - score: '88.97'
+  - score: '91.54'
     start_line: 1
     end_line: 16
     matcher: 3-seq
-    rule_length: 136
-    matched_length: 121
-    match_coverage: '88.97'
+    rule_length: 130
+    matched_length: 119
+    match_coverage: '91.54'
     rule_relevance: 100
-    identifier: lgpl-3.0-plus_96.RULE
+    identifier: lgpl-3.0-plus_171.RULE
     license_expression: lgpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -361,11 +361,30 @@ matches:
       Lesser General Public License for more details.
 
       You should have received a copy of the GNU Lesser General Public
-      License along with this [program]; [if] [not], [see] <[https]://www.gnu.org/licenses/>.
+      License along with this program; if not, see <https://www.gnu.org/licenses/>.
 
-      On Debian systems, the full text of the GNU Lesser General Public
-      License version [2].[1] can be found in the file
+      On Debian systems, the [full] text of the GNU Lesser General Public
+      License version [2].[1] [can] [be] [found] [in] [the] [file]
       `/usr/share/common-licenses/LGPL-
+  - score: '100.0'
+    start_line: 14
+    end_line: 16
+    matcher: 2-aho
+    rule_length: 29
+    matched_length: 29
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_294.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian systems, the full text of the GNU Lesser General Public
+      License version 2.1 can be found in the file
+      `/usr/share/common-licenses/LGPL-2.1'.
   - score: '100.0'
     start_line: 1
     end_line: 24

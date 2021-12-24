@@ -6,6 +6,7 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+import os
 import sys
 import uuid
 from io import BytesIO
@@ -25,12 +26,12 @@ from spdx.version import Version
 from commoncode.cliutils import OUTPUT_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.fileutils import file_name
+from commoncode.fileutils import parent_directory
 from commoncode.text import python_safe_name
 from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from commoncode.fileutils import parent_directory
-import os
+import scancode_config
 
 # Tracing flags
 TRACE = False
@@ -49,8 +50,9 @@ if TRACE or TRACE_DEEP:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str)
-                                     and a or repr(a) for a in args))
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
 
 """
 Output plugins to write scan results in SPDX format.
@@ -213,6 +215,8 @@ def write_spdx(
     package_name='',
     download_location=NoAssert(),
     as_tagvalue=True,
+    spdx_version = (2, 2),
+    with_notice_text=False,
 ):
     """
     Write scan output as SPDX Tag/value to ``output_file`` file-like
@@ -228,17 +232,26 @@ def write_spdx(
     _patch_license_list()
 
     ns_prefix = '_'.join(package_name.lower().split())
+    comment = notice + f'\nSPDX License List: {scancode_config.spdx_license_list_version}'
 
-    doc = Document(Version(2, 1), License.from_identifier('CC0-1.0'))
-    doc.comment = notice
-    doc.namespace = f'http://spdx.org/spdxdocs/{ns_prefix}-{uuid.uuid4()}'
+    doc = Document(
+        version=Version(*spdx_version),
+        data_license=License.from_identifier('CC0-1.0'),
+        comment=notice,
+        namespace=f'http://spdx.org/spdxdocs/{ns_prefix}-{uuid.uuid4()}',
+        license_list_version=scancode_config.spdx_license_list_version,
+        name='SPDX Document created by ScanCode Toolkit'
+    )
+
     tool_name = tool_name or 'ScanCode'
     doc.creation_info.add_creator(Tool(f'{tool_name} {tool_version}'))
     doc.creation_info.set_created_now()
 
+    package_id = '001'
     package = doc.package = Package(
         name=package_name,
-        download_location=download_location
+        download_location=download_location,
+        spdx_id=f'SPDXRef-{package_id}',
     )
 
     # Use a set of unique copyrights for the package.
@@ -248,7 +261,7 @@ def write_spdx(
     all_files_have_no_copyright = True
 
     # FIXME: this should walk the codebase instead!!!
-    for file_data in files:
+    for sid, file_data in enumerate(files, 1):
 
         # Skip directories.
         if file_data.get('type') != 'file':
@@ -258,6 +271,7 @@ def write_spdx(
         # SPDX output (with explicit leading './').
         name = './' + file_data.get('path')
         file_entry = File(
+            spdx_id=f'SPDXRef-{sid}',
             name=name,
             chk_sum=Algorithm('SHA1', file_data.get('sha1') or '')
         )

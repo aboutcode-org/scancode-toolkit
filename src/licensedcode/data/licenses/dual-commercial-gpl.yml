@@ -1,0 +1,8 @@
+key: dual-commercial-gpl
+short_name: Dual Commercial-GPL
+name: Dual Commercial-GPL
+category: Copyleft
+owner: MaxLinear
+spdx_license_key: LicenseRef-scancode-dual-commercial-gpl
+ignorable_urls:
+    - http://www.gnu.org/licenses/

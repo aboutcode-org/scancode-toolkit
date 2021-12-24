@@ -71,8 +71,8 @@ copyright: |
   Copyright (C) 2012-2014, Roman Arutyunyan
 matches:
   - score: '100.0'
-    start_line: 3
-    end_line: 23
+    start_line: 110
+    end_line: 130
     matcher: 2-aho
     rule_length: 185
     matched_length: 185
@@ -108,8 +108,8 @@ matches:
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 3
-    end_line: 25
+    start_line: 135
+    end_line: 157
     matcher: 2-aho
     rule_length: 213
     matched_length: 213
@@ -147,8 +147,8 @@ matches:
       OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
       ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 160
+    end_line: 182
     matcher: 1-hash
     rule_length: 213
     matched_length: 213
@@ -186,8 +186,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 185
+    end_line: 201
     matcher: 1-hash
     rule_length: 161
     matched_length: 161

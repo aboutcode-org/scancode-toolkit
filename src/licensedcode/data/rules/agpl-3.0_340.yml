@@ -1,0 +1,7 @@
+license_expression: agpl-3.0
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/balupton/jquery-history/tree/35d2afd33390d1678bb9da669a9bf77cef1a5d06
+ignorable_urls:
+    - http://github.com/balupton/jquery-history/blob/master/COPYING.txt
+    - https://www.gnu.org/licenses/agpl-3.0.html

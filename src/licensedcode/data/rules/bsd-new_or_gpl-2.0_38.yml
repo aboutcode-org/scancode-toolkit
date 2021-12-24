@@ -1,0 +1,7 @@
+license_expression: bsd-new OR gpl-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_urls:
+    - http://opensource.org/licenses/BSD-3-Clause
+    - https://www.gnu.org/licenses/gpl-2.0.html

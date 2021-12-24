@@ -9,8 +9,8 @@ copyright: |
   2016 Simon Spoehel <simon.spoehel@open-infrastructure.net>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 12
+    end_line: 12
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -25,8 +25,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-3+'
   - score: '100.0'
-    start_line: 1
-    end_line: 12
+    start_line: 13
+    end_line: 24
     matcher: 2-aho
     rule_length: 102
     matched_length: 102
@@ -53,8 +53,8 @@ matches:
       You should have received a copy of the GNU General Public License
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
   - score: '100.0'
-    start_line: 14
-    end_line: 14
+    start_line: 26
+    end_line: 26
     matcher: 2-aho
     rule_length: 7
     matched_length: 7
@@ -68,19 +68,19 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: the GNU General Public License version 3
-  - score: '33.0'
-    start_line: 15
-    end_line: 15
+  - score: '100.0'
+    start_line: 27
+    end_line: 27
     matcher: 2-aho
     rule_length: 6
     matched_length: 6
     match_coverage: '100.0'
-    rule_relevance: 33
+    rule_relevance: 100
     identifier: gpl-3.0_93.RULE
     license_expression: gpl-3.0
     is_license_text: no
     is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
+    is_license_reference: yes
+    is_license_tag: no
     is_license_intro: no
     matched_text: usr/share/common-licenses/GPL-3.

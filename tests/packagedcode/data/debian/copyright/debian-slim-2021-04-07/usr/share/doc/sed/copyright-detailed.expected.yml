@@ -19,10 +19,14 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "GNU [sed] is free software; you can redistribute it and/or modify it under\n\
-      \ the terms of the GNU General Public License as published by the Free\n Software Foundation;\
-      \ either version 3, or (at your option) any later\n version.\n \n On Debian GNU/Linux\
-      \ systems you can find a copy of the GPL in\n /usr/share/common-licenses/GPL-3"
+    matched_text: |
+      GNU [sed] is free software; you can redistribute it and/or modify it under
+      the terms of the GNU General Public License as published by the Free
+      Software Foundation; either version 3, or (at your option) any later
+      version.
+
+      On Debian GNU/Linux systems you can find a copy of the GPL in
+      /usr/share/common-licenses/GPL-3
   - score: '96.97'
     start_line: '19'
     end_line: 21
@@ -40,5 +44,5 @@ matches:
     is_license_intro: no
     matched_text: |
       The [sed] info manual is released under the terms of the GNU Free
-       Documentation License as published by the Free Software Foundation;
-       either version 1.3, or (at your option) any later version.
+      Documentation License as published by the Free Software Foundation;
+      either version 1.3, or (at your option) any later version.

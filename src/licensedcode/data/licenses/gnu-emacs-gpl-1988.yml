@@ -1,0 +1,15 @@
+key: gnu-emacs-gpl-1988
+short_name: GNU emacs General Public License 1988
+name: GNU emacs General Public License 1988
+category: Copyleft
+owner: Richard Stallman
+homepage_url: https://www.free-soft.org/gpl_history/emacs_gpl.html
+spdx_license_key: LicenseRef-scancode-gnu-emacs-gpl-1988
+text_urls:
+    - https://www.cs.bham.ac.uk/research/projects/poplog/emacs/COPYING
+ignorable_copyrights:
+    - Copyright (c) 1985, 1987, 1988 Richard M. Stallman
+    - Copyright (c) 1988 Free Software Foundation, Inc.
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - Richard M. Stallman

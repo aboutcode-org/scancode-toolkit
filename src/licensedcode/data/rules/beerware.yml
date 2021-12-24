@@ -1,4 +1,5 @@
 license_expression: beerware
 is_license_reference: yes
+relevance: 100
 ignorable_urls:
     - http://people.freebsd.org/~phk/

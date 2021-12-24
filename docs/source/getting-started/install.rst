@@ -345,7 +345,7 @@ For more information on Python virtualenv, visit this
 
     source bin/activate
 
-#. Run ``pip install --upgraded pip setuptools wheel`` to install the latest
+#. Run ``pip install --upgrade pip setuptools wheel`` to install the latest
    versions of base utilities.
 
 #. Run ``pip install scancode-toolkit`` to install the latest version of ScanCode.

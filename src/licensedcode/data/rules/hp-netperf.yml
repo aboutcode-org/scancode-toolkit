@@ -1,4 +1,5 @@
 license_expression: hp-netperf
 is_license_reference: yes
+relevance: 100
 ignorable_urls:
     - http://www.netperf.org/netperf/training/Netperf.html

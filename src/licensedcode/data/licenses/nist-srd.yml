@@ -1,0 +1,9 @@
+key: nist-srd
+short_name: NIST SRD License
+name: NIST Standard Reference Data License
+category: Permissive
+owner: NIST
+homepage_url: https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications#srd
+spdx_license_key: LicenseRef-scancode-nist-srd
+other_urls:
+    - https://lists.fedorahosted.org/archives/list/legal@lists.fedoraproject.org/thread/LSM6MO6TAHTIDNF5COCA6UWQDHWRF3AH/

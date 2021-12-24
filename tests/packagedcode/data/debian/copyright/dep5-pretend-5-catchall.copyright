@@ -1,0 +1,24 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+License: some
+ foobar
+
+
+
+This is the pre-packaged Debian Linux version of the zlib compression
+
+
+The deflate format used by zlib was defined by Phil Katz.
+
+
+
+ Copyright (C) 1995-1998 Jean-loup Gailly and Mark Adler
+
+
+
+This software is provided 'as-is'
+
+
+
+
+This notice may not be removed or altered from any source distribution.
