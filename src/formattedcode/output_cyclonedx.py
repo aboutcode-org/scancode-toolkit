@@ -8,22 +8,24 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import attr
-import click
 import json
 import re
 import uuid
 from datetime import datetime
 from enum import Enum
-from lxml import etree
 
+import attr
+from lxml import etree
 
 from commoncode.cliutils import OUTPUT_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
 from formattedcode import FileOptionType
 from plugincode.output import OutputPlugin
 from plugincode.output import output_impl
-from typing import FrozenSet, List, Optional, Tuple
+from typing import FrozenSet
+from typing import List
+from typing import Optional
+from typing import Tuple
 
 
 def _get_set_of_known_licenses_and_spdx_license_ids() -> Tuple[List, FrozenSet[str]]:
