@@ -330,6 +330,9 @@ class LicenseIndex(object):
             # "weak" rules can only be matched with an automaton.
             is_weak = True
 
+            # note down any key phrase spans that must be present for the rule to pass through refinement
+            rule.key_phrase_spans = list(rule.key_phrases())
+
             for rts in rule.tokens():
                 rtid = dictionary_get(rts)
                 if rtid is None:
