@@ -122,9 +122,7 @@ def check_rdf_scan(expected_file, result_file, regen=False):
         with io.open(expected_file, 'w', encoding='utf-8') as o:
             json.dump(result, o, indent=2)
     else:
-        with io.open(expected_file, encoding='utf-8') as i:
-            expected = json.load(i)
-            expected = load_and_clean_rdf(result_file)
+        expected = load_and_clean_rdf(expected_file)
 
     assert json.dumps(result, indent=2) == json.dumps(expected, indent=2)
 
