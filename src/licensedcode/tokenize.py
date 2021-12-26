@@ -62,6 +62,38 @@ def query_lines(location=None, query_string=None, strip=True, start_line=1):
 query_pattern = '[^_\\W]+\\+?[^_\\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
+key_phrase_pattern = '(?:' + query_pattern + '|\\{\\{|\\}\\})'
+key_phrase_splitter = re.compile(key_phrase_pattern, re.UNICODE).findall
+
+KEY_PHRASE_OPEN = "{{"
+KEY_PHRASE_CLOSE = "}}"
+
+def key_phrase_tokenizer(text, stopwords=STOPWORDS):
+    """
+    Return an iterable of tokens from a unicode query test. It must behave identically as the `index_tokenizer` with the
+    exception that it returns KEY_PHRASE_OPEN and KEY_PHRASE_CLOSE as separate tokens so that they can be used to parse
+    key phrases.
+    """
+    if not text:
+        return []
+    words = key_phrase_splitter(text.lower())
+
+    new_words = []
+    for word in words:
+        if word.startswith(KEY_PHRASE_OPEN):
+            new_words.append(KEY_PHRASE_OPEN)
+
+        stripped_word = word
+        if stripped_word.startswith(KEY_PHRASE_OPEN):
+            stripped_word = stripped_word[2:]
+        if stripped_word.endswith(KEY_PHRASE_CLOSE):
+            stripped_word = stripped_word[:-2]
+        new_words.append(stripped_word)
+
+        if word.endswith(KEY_PHRASE_CLOSE):
+            new_words.append(KEY_PHRASE_CLOSE)
+
+    return (token for token in new_words if token and token not in stopwords)
 
 def index_tokenizer(text, stopwords=STOPWORDS):
     """

@@ -8,10 +8,12 @@
 #
 
 import io
+import re
 import shutil
 import traceback
 from collections import Counter
 from collections import defaultdict
+from functools import partial
 from itertools import chain
 from operator import itemgetter
 from os.path import abspath
@@ -31,7 +33,11 @@ from commoncode.fileutils import resource_iter
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
+from licensedcode.spans import Span
 from licensedcode.tokenize import index_tokenizer
+from licensedcode.tokenize import key_phrase_tokenizer
+from licensedcode.tokenize import KEY_PHRASE_OPEN
+from licensedcode.tokenize import KEY_PHRASE_CLOSE
 from textcode.analysis import numbered_text_lines
 
 """
@@ -436,7 +442,7 @@ class License:
         """
         try:
             with io.open(self.data_file, encoding='utf-8') as f:
-                data = saneyaml.load(f.read())
+                data = saneyaml.load(f.read(), allow_duplicate_keys=False)
 
             for k, v in data.items():
                 if k == 'minimum_coverage':
@@ -1203,6 +1209,14 @@ class BasicRule:
             'identifier expressions dynamically generated rules or testing convenience')
     )
 
+    key_phrase_spans = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of spans with ispan positions which must be present '
+            'in the license match for this rule to be considered a valid match.') 
+    )
+
     # These thresholds attributes are computed upon text loading or calling the
     # thresholds function explicitly
     ###########################################################################
@@ -1619,6 +1633,13 @@ class Rule(BasicRule):
         self.length = length
         self.compute_relevance()
 
+    def key_phrases(self):
+        """
+        Return an iterable of Spans marking the positions of key phrases that must
+        be present for this rule to be a valid match.
+        """
+        yield from get_key_phrases(self.text())
+
     def compute_thresholds(self, small_rule=SMALL_RULE):
         """
         Compute and set thresholds either considering the occurrence of all
@@ -1676,7 +1697,7 @@ class Rule(BasicRule):
         """
         try:
             with io.open(self.data_file, encoding='utf-8') as f:
-                data = saneyaml.load(f.read())
+                data = saneyaml.load(f.read(), allow_duplicate_keys=False)
         except Exception as e:
             print('#############################')
             print('INVALID LICENSE RULE FILE:', f'file://{self.data_file}')
@@ -2096,3 +2117,32 @@ def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):
         if not exists(f'{base_loc}.RULE'):
             return base_loc
         idx += 1
+
+
+def get_key_phrases(text):
+    """
+    Return an iterable of Spans marking the positions of key phrases in the given
+    text string. Words are considered to be key phrases if they are enclosed in the
+    KEY_PHRASE_OPEN and KEY_PHRASE_CLOSE characters.
+    """
+    key_phrase_iterator = key_phrase_tokenizer(text)
+    key_phrase_index = 0
+    for token in key_phrase_iterator:
+        if token.startswith(KEY_PHRASE_OPEN):
+            span_positions = []
+
+            # keep appending key phrase until we hit KEY_PHRASE_CLOSE
+            for key_phrase in key_phrase_iterator:
+                if key_phrase.endswith(KEY_PHRASE_CLOSE):
+                    break
+                span_positions.append(key_phrase_index)
+                key_phrase_index += 1
+            
+            if not key_phrase.endswith(KEY_PHRASE_CLOSE):
+                span_start_position = span_positions[0] if span_positions else 0
+                raise InvalidRule("Key phrase definition started at token '%d' is not closed" % span_start_position)
+
+            if span_positions:
+                yield Span(span_positions)
+        else:
+            key_phrase_index += 1

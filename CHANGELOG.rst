@@ -52,6 +52,10 @@ License detection:
   - XXXX new license detection rules have been added, and
   - XXXX existing license rules have been updated.
 
+- Key phrases can now be defined in RULEs by surrounding one or more words with
+  `{{` and `}}`. When defined a RULE will only match when the key phrases match
+  exactly.
+
 - The rule attribute "only_known_words" has been renamed to "is_continuous" and its
   meaning has been updated and expanded. A rule tagged as "is_continuous" can only
   be matched if there are no gaps between matched words, be they stopwords, extra

@@ -62,3 +62,7 @@ More (advanced) rules options:
 - Each rules needs have one flag such as is_license_notice. See the
   ``src/licensedcode/models.py`` directory for a list of all possible values and
   other options.
+
+- you can specify key phrases by surrounding one or more words between the `{{`
+  and `}}` tags. Key phrases are words that **must** be matched/present in order
+  for a RULE to be considered a match.

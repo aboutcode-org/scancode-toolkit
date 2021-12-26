@@ -9,11 +9,13 @@
 #
 import os
 
+import pytest
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
 from licensedcode.index import LicenseIndex
 from licensedcode.match import filter_contained_matches
+from licensedcode.match import filter_key_phrase_spans
 from licensedcode.match import filter_overlapping_matches
 from licensedcode.match import get_full_matched_text
 from licensedcode.match import LicenseMatch
@@ -25,6 +27,7 @@ from licensedcode.match import Token
 from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
+from licensedcode.query import Query
 from licensedcode.spans import Span
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -251,6 +254,102 @@ class TestLicenseMatchBasic(FileBasedTesting):
 
         match = idx.match(query_string=querys)[0]
         assert match.score() < 100
+
+    def test_LicenseMatch_matches_only_when_all_key_phrases_are_present(self):
+        text_r1 = (
+            'License '
+            'Distributed under the {{MIT License}}. See LICENSE for more information.'
+            'You can redistribute this file under this or any other license.')
+        r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
+        idx = index.LicenseIndex([r1])
+
+        querys = (
+            'License '
+            'Distributed under the Apache License. See LICENSE for more information.'
+            'You can redistribute this file under this or any other license.')
+
+        matches = idx.match(query_string=querys)
+        assert len(matches) == 0
+
+    def test_LicenseMatch_matches_only_when_all_key_phrases_are_present_in_order(self):
+        text_r1 = (
+            'License '
+            'Distributed under the {{MIT License}}. See LICENSE for more information.'
+            'You can redistribute this file under this or any other license.')
+        r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
+        idx = index.LicenseIndex([r1])
+
+        querys = (
+            'License '
+            'Distributed under the License MIT. See LICENSE for more information.'
+            'You can redistribute this file under this or any other license.')
+
+        matches = idx.match(query_string=querys)
+        assert len(matches) == 0
+
+    def test_LicenseMatch_matches_only_when_key_phrases_are_uninterrupted(self):
+        text_r1 = (
+            'License '
+            'Distributed under the {{MIT License}}. See LICENSE for more information.'
+            'You can redistribute this file under this or any other license.')
+        r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
+        idx = index.LicenseIndex([r1])
+
+        querys = (
+            'See LICENSE for more information, and also you can redistribute this file under this or any other license.'
+            'License '
+            'Distributed under the MIT, Version 2 License. See LICENSE or website for more information.'
+            'You can redistribute this file under this or any other license.'
+        )
+
+        matches = idx.match(query_string=querys)
+        assert len(matches) == 0
+
+    def test_LicenseMatch_matches_aho_with_exact_match(self):
+        text_r1 = (
+            'License '
+            'Distributed under the {{MIT License}}. See LICENSE for more information.'
+            'You can redistribute this file under this or any other license.')
+        r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
+        idx = index.LicenseIndex([r1])
+
+        querys = (
+            'License '
+            'Distributed under the MIT License. See LICENSE for more information.'
+            'You can redistribute this file under this or any other license.'
+        )
+
+        matches = idx.match(query_string=querys, _skip_hash_match=True)
+        assert len(matches) == 1
+
+    def test_LicenseMatch_matches_only_when_key_phrase_is_uninterrupted(self):
+        text_r1 = (
+            'under the {{Creative Commons Attribution 4.0 International License}} (the "License");'
+            'you may not use this file except in compliance with the License.'
+            'You may obtain a copy of the License at'
+            ''
+            '     http://creativecommons.org/licenses/by/4.0'
+            ''
+            'This file is distributed on an "AS IS" BASIS,'
+            'WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.'
+            'See the License for the specific language governing permissions and'
+            'limitations under the License.'
+        )
+        r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
+        idx = index.LicenseIndex([r1])
+
+        querys = """
+        This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+        International License (the "License"). You may not use this file except in compliance with the
+        License. A copy of the License is located at http://creativecommons.org/licenses/by-nc-sa/4.0/.
+
+        This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+        either express or implied. See the License for the specific language governing permissions and
+        limitations under the License.
+        """
+
+        matches = idx.match(query_string=querys, _skip_hash_match=True)
+        assert len(matches) == 0
 
 
 class TestMergeMatches(FileBasedTesting):
@@ -796,6 +895,82 @@ class TestLicenseMatchFilter(FileBasedTesting):
         assert result == [m1]
         assert discarded == [m2]
 
+    def test_filter_key_phrases_keeps_matches_where_key_phrase_spans_is_fully_container_in_ispan(self):
+        idx = index.LicenseIndex()
+        query = Query(query_string="Lorum ipsum", idx=idx)
+
+        r1 = Rule(text_file='r1', license_expression='apache-1.1', key_phrase_spans=[Span(2, 4)])
+
+        match_key_phrase_fully_contained = LicenseMatch(rule=r1, query=query, qspan=Span(0, 5), ispan=Span(0, 5))
+        match_key_phrase_fully_outside = LicenseMatch(rule=r1, query=query, qspan=Span(5, 8), ispan=Span(5, 8))
+        match_key_phrase_partially_contained = LicenseMatch(rule=r1, query=query, qspan=Span(0, 3), ispan=Span(0, 2))
+        match_key_phrase_fully_containing = LicenseMatch(rule=r1, query=query, qspan=Span(3), ispan=Span(3))
+
+        kept, discarded = filter_key_phrase_spans([
+            match_key_phrase_fully_contained,
+            match_key_phrase_fully_outside,
+            match_key_phrase_partially_contained,
+            match_key_phrase_fully_containing
+        ])
+        assert kept == [
+            match_key_phrase_fully_contained
+        ]
+        assert discarded == [
+            match_key_phrase_fully_outside,
+            match_key_phrase_partially_contained,
+            match_key_phrase_fully_containing
+        ]
+
+    def test_filter_key_phrases_discards_matches_where_qspan_intersects_with_unknown_or_stopwords(self):
+        idx = index.LicenseIndex()
+        query = Query(query_string="Lorum ipsum", idx=idx)
+        query.unknowns_by_pos = {12: 1}
+        query.stopwords_by_pos = {23: 1}
+
+        r1 = Rule(text_file='r1', license_expression='apache-1.1', key_phrase_spans=[Span(2, 4)])
+
+        match_key_phrase_fully_contained = LicenseMatch(rule=r1, query=query, qspan=Span(0, 5), ispan=Span(0, 5))
+        match_qspan_intersects_with_unknowns = LicenseMatch(rule=r1, query=query, qspan=Span(10, 15), ispan=Span(0, 5))
+        match_qspan_intersects_with_stopwords = LicenseMatch(rule=r1, query=query, qspan=Span(20, 25), ispan=Span(0, 5))
+
+        kept, discarded = filter_key_phrase_spans([
+            match_key_phrase_fully_contained,
+            match_qspan_intersects_with_unknowns,
+            match_qspan_intersects_with_stopwords,
+        ])
+        assert kept == [
+            match_key_phrase_fully_contained
+        ]
+        assert discarded == [
+            match_qspan_intersects_with_unknowns,
+            match_qspan_intersects_with_stopwords
+        ]
+
+    def test_filter_key_phrases_discards_matches_where_key_phrase_is_interruped_in_qspan(self):
+        idx = index.LicenseIndex()
+        query = Query(query_string="Lorum ipsum", idx=idx)
+        query.unknowns_by_pos = {}
+        query.stopwords_by_pos = {}
+
+        r1 = Rule(text_file='r1', license_expression='apache-1.1', key_phrase_spans=[Span(12, 14)])
+
+        match_qspan_ispan_same_matching = LicenseMatch(rule=r1, query=query, qspan=Span(10, 15), ispan=Span(10, 15))
+        match_qspan_with_offset_matching = LicenseMatch(rule=r1, query=query, qspan=Span(20, 25), ispan=Span(10, 15))
+        match_qspan_with_offset_not_matching = LicenseMatch(rule=r1, query=query, qspan=Span([20, 21, 22, 23, 25]), ispan=Span(10, 15))
+
+        kept, discarded = filter_key_phrase_spans([
+            match_qspan_ispan_same_matching,
+            match_qspan_with_offset_matching,
+            match_qspan_with_offset_not_matching
+        ])
+        assert kept == [
+            match_qspan_ispan_same_matching,
+            match_qspan_with_offset_matching
+        ]
+        assert discarded == [
+            match_qspan_with_offset_not_matching,
+        ]
+
 
 class TestLicenseMatchScore(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
@@ -873,10 +1048,10 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
     def test_get_full_matched_text_base(self):
         rule_text = u'''
-            Copyright {{some copyright}}
-            THIS IS FROM {{THE CODEHAUS}} AND CONTRIBUTORS
-            IN NO EVENT SHALL {{THE CODEHAUS}} OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE {{POSSIBILITY OF SUCH}} DAMAGE
+            Copyright [[some copyright]]
+            THIS IS FROM [[THE CODEHAUS]] AND CONTRIBUTORS
+            IN NO EVENT SHALL [[THE CODEHAUS]] OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE [[POSSIBILITY OF SUCH]] DAMAGE
         '''
 
         rule = Rule(stored_text=rule_text, license_expression='test')
@@ -924,10 +1099,10 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
     def test_get_full_matched_text(self):
         rule_text = u'''
-            Copyright {{some copyright}}
-            THIS IS FROM {{THE CODEHAUS}} AND CONTRIBUTORS
-            IN NO EVENT SHALL {{THE CODEHAUS}} OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE {{POSSIBILITY OF SUCH}} DAMAGE
+            Copyright [[some copyright]]
+            THIS IS FROM [[THE CODEHAUS]] AND CONTRIBUTORS
+            IN NO EVENT SHALL [[THE CODEHAUS]] OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE [[POSSIBILITY OF SUCH]] DAMAGE
         '''
 
         rule = Rule(stored_text=rule_text, license_expression='test')
