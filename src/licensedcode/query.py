@@ -71,13 +71,14 @@ TRACE = False
 TRACE_QR = False
 TRACE_QR_BREAK = False
 TRACE_REPR = False
+TRACE_STOP_AND_UNKNOWN = False
 
 
 def logger_debug(*args):
     pass
 
 
-if TRACE or TRACE_QR or TRACE_QR_BREAK:
+if TRACE or TRACE_QR or TRACE_QR_BREAK or TRACE_STOP_AND_UNKNOWN:
     import sys
 
     use_print = True
@@ -348,21 +349,6 @@ class Query(object):
         all_pos.difference_update(self.matchables)
         return all_pos
 
-    # FIXME: this is not used anywhere except for tests
-    def tokens_with_unknowns(self):
-        """
-        Yield the original tokens stream with unknown tokens represented by None.
-        """
-        unknowns = self.unknowns_by_pos
-        # yield anything at the start
-        for _ in range(unknowns.get(-1, 0)):
-            yield None
-
-        for pos, token in enumerate(self.tokens):
-            yield token
-            for _ in range(unknowns.get(pos, 0)):
-                yield None
-
     def tokens_by_line(
         self,
         location=None,
@@ -414,13 +400,16 @@ class Query(object):
             query_string=query_string,
             start_line=start_line,
         )
-        if TRACE:
+        if TRACE or TRACE_STOP_AND_UNKNOWN:
             logger_debug('tokens_by_line: query lines:')
             qlines = list(qlines)
             for line_num, line in qlines:
                 logger_debug(' ', line_num, ':', line)
 
         for line_num, line in qlines:
+            if TRACE_STOP_AND_UNKNOWN:
+                logger_debug(f'  line: {line_num}: {line!r}')
+
             # keep track of tokens in a line
             line_tokens = []
             line_tokens_append = line_tokens.append
@@ -429,6 +418,11 @@ class Query(object):
             for token in query_tokenizer(line):
                 tid = dic_get(token)
                 is_stopword = token in STOPWORDS
+
+                if TRACE_STOP_AND_UNKNOWN:
+                    logger_debug(
+                        f'    token: {token!r}, tid: {tid}, is_stopword: {is_stopword}')
+
                 if tid is not None and not is_stopword:
                     # this is a known token
                     known_pos += 1
@@ -438,6 +432,11 @@ class Query(object):
                         self_shorts_and_digits_pos_add(known_pos)
                     if line_first_known_pos is None:
                         line_first_known_pos = known_pos
+
+                    if TRACE_STOP_AND_UNKNOWN:
+                        logger_debug(
+                            f'      KNOWN token: known_pos: {known_pos}')
+
                 else:
                     # process STOPWORDS and unknown words
                     if is_stopword:
@@ -446,24 +445,39 @@ class Query(object):
                             # seen so far are stopwords and we keep a count of them
                             # in the magic "-1" position.
                             stopwords_by_pos[-1] += 1
+
+                            if TRACE_STOP_AND_UNKNOWN:
+                                logger_debug(f'      STOPWORD token: known_pos: -1')
                         else:
                             # here we have a new unknwon token positioned right after
                             # the current known_pos
                             stopwords_by_pos[known_pos] += 1
                             stopwords_pos_add(known_pos)
+
+                            if TRACE_STOP_AND_UNKNOWN:
+                                logger_debug(f'      STOPWORD token: known_pos: {known_pos}')
+
                         # we do not track stopwords, only their position
                         continue
                     else:
+                        # this is an UNKNOWN word
                         if not started:
                             # If we have not yet started globally, then all tokens
                             # seen so far are unknowns and we keep a count of them
                             # in the magic "-1" position.
                             unknowns_by_pos[-1] += 1
+
+                            if TRACE_STOP_AND_UNKNOWN:
+                                logger_debug(f'      UNKNOWN token: known_pos: -1')
+
                         else:
                             # here we have a new unknwon token positioned right after
                             # the current known_pos
                             unknowns_by_pos[known_pos] += 1
                             unknowns_pos_add(known_pos)
+
+                            if TRACE_STOP_AND_UNKNOWN:
+                                logger_debug(f'      UNKNOWN token: known_pos: {known_pos}')
 
                 line_tokens_append(tid)
 
@@ -502,6 +516,13 @@ class Query(object):
         # also convert the defaultdicts back to plain discts
         self.unknowns_by_pos = dict(unknowns_by_pos)
         self.stopwords_by_pos = dict(stopwords_by_pos)
+
+        if TRACE_STOP_AND_UNKNOWN:
+            logger_debug(f'  self.unknowns_span: {self.unknowns_span}')
+            logger_debug(f'  self.unknowns_by_pos: {self.unknowns_by_pos}')
+
+            logger_debug(f'  self.stopwords_span: {self.stopwords_span}')
+            logger_debug(f'  self.stopwords_by_pos: {self.stopwords_by_pos}')
 
     def tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
         """
@@ -702,8 +723,13 @@ class QueryRun(object):
     positions inclusive.
     """
     __slots__ = (
-        'query', 'start', 'end', 'len_legalese', 'digit_only_tids',
-        '_low_matchables', '_high_matchables',
+        'query',
+        'start',
+        'end',
+        'len_legalese',
+        'digit_only_tids',
+        '_low_matchables',
+        '_high_matchables',
     )
 
     def __init__(self, query, start, end=None):
@@ -728,14 +754,17 @@ class QueryRun(object):
         return self.end - self.start + 1
 
     def __repr__(self, trace_repr=TRACE_REPR):
+        toks = ''
+        if trace_repr:
+            toks = ', tokens="{tokens}"'
         base = (
             'QueryRun('
-                'start={start}, len={length}, '
-                'start_line={start_line}, end_line={end_line}'
+                'start={start}, '
+                'len={length}, '
+                'start_line={start_line}, '
+                'end_line={end_line}'
+                f'{toks})'
         )
-        if trace_repr:
-            base += ', tokens="{tokens}"'
-        base += ')'
         qdata = self.to_dict(brief=False, comprehensive=True, include_high=False)
         return base.format(**qdata)
 
@@ -755,25 +784,6 @@ class QueryRun(object):
         if self.end is None:
             return []
         return self.query.tokens[self.start: self.end + 1]
-
-    # FIXME: this is not used anywhere except for tests
-    def tokens_with_unknowns(self):
-        """
-        Yield the original token ids stream including unknown tokens
-        (represented by None).
-        """
-        unknowns = self.query.unknowns_by_pos
-        # yield anything at the start only if this is the first query run
-        if self.start == 0:
-            for _ in range(unknowns.get(-1, 0)):
-                yield None
-
-        for pos, token in self.tokens_with_pos():
-            yield token
-            if pos == self.end:
-                break
-            for _ in range(unknowns.get(pos, 0)):
-                yield None
 
     def tokens_with_pos(self):
         return enumerate(self.tokens, self.start)

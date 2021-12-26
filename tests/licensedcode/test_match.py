@@ -9,13 +9,12 @@
 #
 import os
 
-import pytest
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
 from licensedcode.index import LicenseIndex
 from licensedcode.match import filter_contained_matches
-from licensedcode.match import filter_key_phrase_spans
+from licensedcode.match import filter_matches_missing_key_phrases
 from licensedcode.match import filter_overlapping_matches
 from licensedcode.match import get_full_matched_text
 from licensedcode.match import LicenseMatch
@@ -906,7 +905,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
         match_key_phrase_partially_contained = LicenseMatch(rule=r1, query=query, qspan=Span(0, 3), ispan=Span(0, 2))
         match_key_phrase_fully_containing = LicenseMatch(rule=r1, query=query, qspan=Span(3), ispan=Span(3))
 
-        kept, discarded = filter_key_phrase_spans([
+        kept, discarded = filter_matches_missing_key_phrases([
             match_key_phrase_fully_contained,
             match_key_phrase_fully_outside,
             match_key_phrase_partially_contained,
@@ -933,7 +932,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
         match_qspan_intersects_with_unknowns = LicenseMatch(rule=r1, query=query, qspan=Span(10, 15), ispan=Span(0, 5))
         match_qspan_intersects_with_stopwords = LicenseMatch(rule=r1, query=query, qspan=Span(20, 25), ispan=Span(0, 5))
 
-        kept, discarded = filter_key_phrase_spans([
+        kept, discarded = filter_matches_missing_key_phrases([
             match_key_phrase_fully_contained,
             match_qspan_intersects_with_unknowns,
             match_qspan_intersects_with_stopwords,
@@ -958,7 +957,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
         match_qspan_with_offset_matching = LicenseMatch(rule=r1, query=query, qspan=Span(20, 25), ispan=Span(10, 15))
         match_qspan_with_offset_not_matching = LicenseMatch(rule=r1, query=query, qspan=Span([20, 21, 22, 23, 25]), ispan=Span(10, 15))
 
-        kept, discarded = filter_key_phrase_spans([
+        kept, discarded = filter_matches_missing_key_phrases([
             match_qspan_ispan_same_matching,
             match_qspan_with_offset_matching,
             match_qspan_with_offset_not_matching

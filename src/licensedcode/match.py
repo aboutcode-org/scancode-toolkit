@@ -1824,12 +1824,17 @@ def filter_false_positive_matches(
     return kept, discarded
 
 
-def filter_key_phrase_spans(matches):
+def filter_matches_missing_key_phrases(matches):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
-    discardable matches by removing all matches that do not contain all key
-    phrases required by the rule.
+    discardable matches  given a ``matches`` list of LicenseMatch by removing
+    all ``matches`` that do not contain all key phrases defined in their matched
+    rule.
     """
+    # never discard a solo match
+    if len(matches) == 1:
+        return matches, []
+
     kept = []
     discarded = []
 
@@ -1845,8 +1850,14 @@ def filter_key_phrase_spans(matches):
                 break
 
             # Filter out matches that do not contain key phrase in the qspan
-            qpos_start = next(qpos for qpos, ipos in zip(match.qspan, match.ispan) if ipos in key_phrase_span)
-            query_key_phrase_span = Span(qpos_start, qpos_start + len(key_phrase_span))
+            qpos_start = next(
+                qpos for qpos, ipos in zip(match.qspan, match.ispan)
+                if ipos in key_phrase_span
+            )
+            query_key_phrase_span = Span(
+                qpos_start,
+                qpos_start + len(key_phrase_span),
+            )
             if query_key_phrase_span not in match.qspan:
                 has_key_phrases = False
                 break
@@ -1857,10 +1868,14 @@ def filter_key_phrase_spans(matches):
             # Do not check the last span position of a key phrase since unknown
             # and stop is a number of words after a given span position and we
             # would not care for what unknown words show up after a key phrase
-            # ends
-            key_phrase_spans_minus_last_position = Span(key_phrase_span.start, key_phrase_span.end - 1)
+            # ends and these are pinned to the last position
+            key_phrase_span_minus_last_position = Span(
+                key_phrase_span.start,
+                key_phrase_span.end - 1,
+            )
+
             for qpos, ipos in zip(match.qspan, match.ispan):
-                if ipos in key_phrase_spans_minus_last_position:
+                if ipos in key_phrase_span_minus_last_position:
                     if qpos in unknown_by_pos or qpos in stopwords_by_pos:
                         has_key_phrases = False
                         break
@@ -1943,7 +1958,7 @@ def refine_matches(
     all_discarded.extend(discarded)
     _log(matches, discarded, 'GOOD')
 
-    matches, discarded = filter_key_phrase_spans(matches)
+    matches, discarded = filter_matches_missing_key_phrases(matches)
     all_discarded.extend(discarded)
     _log(matches, discarded, 'KEY PHRASES')
 
