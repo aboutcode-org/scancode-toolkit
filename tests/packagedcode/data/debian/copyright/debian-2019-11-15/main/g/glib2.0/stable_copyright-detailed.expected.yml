@@ -132,8 +132,8 @@ matches:
     identifier: apache-2.0_417.RULE
     license_expression: apache-2.0
     is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
+    is_license_notice: no
+    is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
     matched_text: the Apache license
@@ -148,8 +148,8 @@ matches:
     identifier: apache-2.0_176.RULE
     license_expression: apache-2.0
     is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
+    is_license_notice: no
+    is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
     matched_text: |

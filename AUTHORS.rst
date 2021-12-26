@@ -34,6 +34,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Jelmer Vernooĳ @jelmer
 - Jillian Daguil @jdaguil
 - Jiri Popelka @jpopelka
+- Jiyeong Seok @dd-jy
 - Johannes Najjar @joshovi
 - Jose Nazario @paralax
 - Lemo Shi @lemoshi
@@ -43,6 +44,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Maximilian Huber @maxhbr 
 - Michael Herzog @mjherzog
 - Michael Rupprecht @michaelrup
+- Mike Rombout @mrombout
 - Mrinal Paliwal @mnpw
 - nexB Inc. @nexB
 - Nirmal Sarswat @vivonk

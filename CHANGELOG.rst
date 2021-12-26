@@ -49,6 +49,9 @@ License detection:
   - XXXX new license detection rules have been added, and
   - XXXX existing license rules have been updated.
 
+- Key phrases can now be defined in RULEs by surrounding one or more words with
+  `{{` and `}}`. When defined a RULE will only match when the key phrases match
+  exactly.
 
 Package detection:
 ~~~~~~~~~~~~~~~~~~
