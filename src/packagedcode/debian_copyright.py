@@ -371,8 +371,8 @@ class StructuredCopyrightProcessor(DebianDetector):
 
     def get_primary_license(self):
         """
-        Return a license expression string which is the primary license for the
-        debian copyright file.
+        Get a license expression string which is the primary license for the
+        debian copyright file and assign it to `primary_license`.
 
         A primary license in a debian copyright file is the license in the
         Header paragraph or the `Files: *` paragraph.
