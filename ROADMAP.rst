@@ -8,7 +8,7 @@ Top Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There is too much cruft in detected licenses, and we know too much without being
-to distinguish the forrest from the trees. Therefore reporting the primary
+to distinguish the forest from the trees. Therefore reporting the primary
 license detection is important: when we get SC results, we can often
 get 30 license on a single a package and that's a problem.
 It would make the logic of selection the primary license visible
