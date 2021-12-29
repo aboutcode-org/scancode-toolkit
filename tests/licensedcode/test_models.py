@@ -179,7 +179,7 @@ class TestRule(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_create_rule_ignore_punctuation(self):
-        test_rule = models.Rule(stored_text='A one. A {{}}two. A three.')
+        test_rule = models.Rule(stored_text='A one. A two. A three.')
         expected = ['one', 'two', 'three']
         assert list(test_rule.tokens()) == expected
         assert test_rule.length == 3
@@ -282,19 +282,19 @@ class TestRule(FileBasedTesting):
 
     def test_rule_len_is_computed_correctly(self):
         test_text = '''zero one two three
-            four {{gap1}}
+            four gap1
             five six seven eight nine ten'''
         r1 = models.Rule(stored_text=test_text)
         list(r1.tokens())
         assert r1.length == 12
 
     def test_rule_templates_are_ignored(self):
-        test_text = '''{{gap0}}zero one two three{{gap2}}'''
+        test_text = '''gap0 zero one two three gap2'''
         r1 = models.Rule(stored_text=test_text)
         assert list(r1.tokens()) == ['gap0', 'zero', 'one', 'two', 'three', 'gap2']
 
     def test_rule_tokens_are_computed_correctly_ignoring_templates(self):
-        test_text = '''I hereby abandon any{{SAX 2.0 (the)}}, and Release all of {{the SAX 2.0 }}source code of his'''
+        test_text = '''I hereby abandon any SAX 2.0 (the), and Release all of the SAX 2.0 source code of his'''
         rule = models.Rule(stored_text=test_text, license_expression='public-domain')
 
         rule_tokens = list(rule.tokens())

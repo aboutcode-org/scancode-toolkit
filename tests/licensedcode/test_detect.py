@@ -682,9 +682,8 @@ class TestIndexPartialMatch(FileBasedTesting):
         assert itext.split() == expected_itokens
 
     def test_match_can_match_discontinuous_rule_text_1(self):
-        # in this template text there are only 2 tokens between the two templates markers
         test_text = u'''Redistributions in binary form must
-        {{}} reproduce the {{}}above copyright notice'''
+         reproduce the above copyright notice'''
         rule = Rule(stored_text=test_text, license_expression='mylicense')
         idx = MiniLicenseIndex([rule])
 
@@ -700,9 +699,8 @@ class TestIndexPartialMatch(FileBasedTesting):
         assert Span(0, 9) == match.ispan
 
     def test_match_can_match_discontinuous_rule_text_2(self):
-        # in this template there are 3 tokens between the two template markers
         test_text = u'''Redistributions in binary form must
-        {{}} reproduce the stipulated {{}}above copyright notice'''
+        reproduce the stipulated above copyright notice'''
         rule = Rule(stored_text=test_text, license_expression='mylicense')
         idx = MiniLicenseIndex([rule])
 
@@ -719,9 +717,8 @@ class TestIndexPartialMatch(FileBasedTesting):
         assert match.ispan == Span(0, 10)
 
     def test_match_can_match_discontinuous_rule_text_3(self):
-        # in this template there are 4 tokens between the two templates markers
         test_text = u'''Redistributions in binary form must
-        {{}} reproduce as is stipulated {{}}above copyright notice'''
+        reproduce as is stipulated above copyright notice'''
         rule = Rule(stored_text=test_text, license_expression='mylicense')
         idx = MiniLicenseIndex([rule])
 

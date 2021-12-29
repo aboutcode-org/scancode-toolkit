@@ -526,8 +526,8 @@ No part of match        '''
     def test_match_with_templates_with_redundant_tokens_yield_single_exact_match(self):
         from licensedcode_test_utils import query_tokens_with_unknowns  # NOQA
 
-        _stored_text = u'copyright reserved mit is license, {{}} copyright reserved mit is license'
-        #                 0        1  2   3       4               5        6   7  8       9
+        _stored_text = 'copyright reserved mit is license, copyright reserved mit is license'
+        #               0         1        2   3  4        5         6        7   8  9
         license_expression = 'tst'
         rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
         idx = MiniLicenseIndex([rule])
