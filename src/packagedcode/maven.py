@@ -25,7 +25,7 @@ from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.models import Package
-from packagedcode.utils import combine_expressions
+from license_expression import combine_expressions
 from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import VCS_URLS
 from textcode import analysis

@@ -33,7 +33,7 @@ from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import build_description
-from packagedcode.utils import combine_expressions
+from license_expression import combine_expressions
 
 try:
     import importlib.metadata as importlib_metadata

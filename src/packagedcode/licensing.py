@@ -85,7 +85,7 @@ def get_license_expression_from_matches(license_matches):
     """
     Craft a license expression from a list of LicenseMatch objects.
     """
-    from packagedcode.utils import combine_expressions
+    from license_expression import combine_expressions
 
     license_expressions = [
         match.rule.license_expression for match in license_matches
