@@ -21,7 +21,7 @@ from commoncode import fileutils
 from packagedcode import models
 from packagedcode.gemfile_lock import GemfileLockParser
 from packagedcode.spec import Spec
-from license_expression import combine_expressions
+from packagedcode.utils import combine_expressions
 
 
 # TODO: check:

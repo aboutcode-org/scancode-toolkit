@@ -1454,7 +1454,7 @@ class BasicRule:
 
     def spdx_license_expression(self, licensing=None):
         from licensedcode.cache import build_spdx_license_expression
-        return build_spdx_license_expression(self, licensing=licensing)
+        return str(build_spdx_license_expression(self, licensing=licensing))
 
     def get_length(self, unique=False):
         return self.length_unique if unique else self.length

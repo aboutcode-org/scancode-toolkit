@@ -27,7 +27,7 @@ from licensedcode.match import LicenseMatch
 from licensedcode.match import set_matched_lines
 from licensedcode.models import Rule
 from licensedcode.spans import Span
-from license_expression import combine_expressions
+from packagedcode.utils import combine_expressions
 from packagedcode.licensing import get_license_expression_from_matches
 from packagedcode.licensing import get_license_matches
 from packagedcode.licensing import get_license_matches_from_query_string

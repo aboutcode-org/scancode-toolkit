@@ -17,7 +17,7 @@ from commoncode import filetype
 from packageurl import PackageURL
 
 from packagedcode import models
-from license_expression import combine_expressions
+from packagedcode.utils import combine_expressions
 
 TRACE = False
 

@@ -144,7 +144,7 @@ def build_license(scanned_file):
 
     # TODO: use either Debian license symbols or SPDX
     # TODO: convert license expression to Debian style of expressions
-    expression = combine_expressions(license_expressions, unique=False)
+    expression = str(combine_expressions(license_expressions, unique=False))
 
     licenses = scanned_file.get('licenses', [])
     text = '\n'.join(get_texts(licenses))

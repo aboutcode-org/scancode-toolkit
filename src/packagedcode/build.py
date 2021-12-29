@@ -17,7 +17,7 @@ import attr
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
-from license_expression import combine_expressions
+from packagedcode.utils import combine_expressions
 from scancode.api import get_licenses
 
 

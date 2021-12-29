@@ -16,13 +16,13 @@ from datetime import datetime
 from os import path
 
 import attr
-from license_expression import combine_expressions
 from license_expression import LicenseSymbolLike
 from license_expression import Licensing
 from packageurl import PackageURL
 
 from packagedcode import bashparse
 from packagedcode import models
+from packagedcode.utils import combine_expressions
 from textcode.analysis import as_unicode
 
 

@@ -6,7 +6,7 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
-
+# https://github.com/rpminspect/rpminspect-data-fedora/blob/master/licenses/fedora.json
 from collections import namedtuple
 import logging
 import os
