@@ -187,7 +187,7 @@ class LicenseMatch(object):
     query_run_start = attr.ib(
         default=0,
         metadata=dict(
-            help='the starting position of teh the QueryRun where this match '
+            help='Starting position of the QueryRun where this match '
                  'was found.'
             )
     )
@@ -195,7 +195,7 @@ class LicenseMatch(object):
     matcher = attr.ib(
         default='',
         metadata=dict(
-            help='a string indicating which matching procedure this match was '
+            help='A string indicating which matching procedure this match was '
                  'created with. Used for diagnostics, debugging and testing.'
         )
     )
