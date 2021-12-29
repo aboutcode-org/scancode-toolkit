@@ -773,8 +773,9 @@ def set_matched_lines(matches, line_by_pos):
 def merge_matches(matches, max_dist=None, trace=TRACE_MERGE):
     """
     Return a list of merged LicenseMatch matches given a `matches` list of
-    LicenseMatch. Merging is a "lossless" opretaion that combines two or more matches to the same rule and that are in sequence of
-    increasing query and index positions in a single new match.
+    LicenseMatch. Merging is a "lossless" opretaion that combines two or more
+    matches to the same rule and that are in sequence of increasing query and
+    index positions in a single new match.
     """
     # shortcut for single matches
     if len(matches) < 2:
@@ -2552,9 +2553,9 @@ def get_full_matched_text(
     trace=TRACE_MATCHED_TEXT,
 ):
     """
-    Yield unicode strings corresponding to the full matched query text
-    given a query file at `location` or a `query_string`, a `match` LicenseMatch
-    and an `idx` LicenseIndex.
+    Yield unicode strings corresponding to the full matched query text given a
+    ``match`` LicenseMatch detected in an `idx` LicenseIndex given a query file
+    at ``location`` or a ``query_string``.
 
     This contains the full text including punctuations and spaces that are not
     participating in the match proper including leading and trailing punctuations.
@@ -2569,6 +2570,7 @@ def get_full_matched_text(
     enclose an unmatched token sequence in [] square brackets. Punctuation is
     not highlighted.
     """
+
     if trace:
         logger_debug('get_full_matched_text:  match:', match)
         logger_debug('get_full_matched_text:  location:', location)
