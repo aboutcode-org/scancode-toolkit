@@ -1,6 +1,9 @@
 ScanCode IO/TK Roadmap
 ========================
 
+SCIO: ScanCode.io 
+SCTK: ScanCode Toolkit
+
 Top Issues
 ---------------
 
@@ -9,18 +12,25 @@ Top Issues
 
 There is too much cruft in detected licenses. We know too much without being
 to distinguish the forest from the trees. Therefore reporting the primary
-license detection is important: when we get Scan results, we can often
-get 30 license for a single a package and that's a problem.
-It would make the logic of selection the primary license visible
+license detection is important: when we get scan results, we can often
+get 30 licenses for a single a package and this volume is a problem
+even if it is correct and it is technically correct.
+The goal of this improvement is to:
 
-Is this for SCIO or SCTK? Likely a bit a both.
+- combine multiple related license matches in a single license detection
+- in a license detection, expose a primary license expression in addition
+  to the complete, full license expression.
+- make the logic of selection of the primary license visible, at the minimum
+  with a log of combination and primary license selection operations
+
+This is for SCTK first.
 
 
 2. Package files.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Reporting the set of package files for each package instance is important because
-it allows for natural grouping of these in one unit.
+it allows for natural grouping of these in one unit. 
 
 
 3. Go to two-level reporting of detections to provide more effective detections
@@ -68,7 +78,7 @@ Roadmap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - This is closely tied to the primary license detection and should focus
-  on package manifests and key files. And on package first
+  on package manifests and key files. 
 
 
 3. Package files
