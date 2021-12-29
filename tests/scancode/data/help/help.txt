@@ -50,6 +50,8 @@ Options:
     --debian FILE           Write scan output in machine-readable Debian copyright
                             format to FILE.
     --custom-template FILE  Use this Jinja template FILE as a custom template.
+    --cyclonedx FILE        Write scan output in CycloneDX JSON format to FILE.
+    --cyclonedx-xml FILE    Write scan output in CycloneDX XML format to FILE.
     --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
     --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
     --html-app FILE         (DEPRECATED: use the ScanCode Workbench app instead )
