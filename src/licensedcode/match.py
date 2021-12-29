@@ -7,9 +7,11 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+from enum import IntEnum
 from itertools import groupby
 
 import attr
+from attr import validators
 
 from licensedcode import MAX_DIST
 from licensedcode import query
@@ -50,6 +52,7 @@ TRACE_FILTER_NON_CONTINUOUS = False
 TRACE_FILTER_SINGLE_WORD_BINARY = False
 TRACE_SET_LINES = False
 TRACE_KEY_PHRASES = False
+TRACE_REGIONS = True
 
 TRACE_MATCHED_TEXT = False
 TRACE_MATCHED_TEXT_DETAILS = False
@@ -80,6 +83,7 @@ if (TRACE
     or TRACE_MATCHED_TEXT_DETAILS
     or TRACE_FILTER_SINGLE_WORD_BINARY
     or TRACE_KEY_PHRASES
+    or TRACE_REGIONS
 ):
 
     use_print = True
@@ -113,6 +117,22 @@ if (TRACE
         logger_debug(' MATCHED QUERY TEXT with extras')
         qt = new_match.matched_text(whole_lines=False)
         logger_debug(qt)
+
+
+class DiscardReason(IntEnum):
+    NOT_DISCARDED = 0
+    MISSING_KEY_PHRASE = 1
+    BELOW_MIN_COVERAGE = 2
+    SPURIOUS_SINGLE_TOKEN = 3
+    TOO_SHORT = 4
+    SCATTERED_ON_TOO_MANY_LINES = 5
+    INVALID_SINGLE_WORD_IN_BINARY = 6
+    SPURIOUS = 7
+    CONTAINED = 8
+    OVERLAPPING = 9
+    NON_CONTINUOUS = 10
+    FALSE_POSITIVE = 11
+    BELOW_MIN_SCORE = 12
 
 
 @attr.s(slots=True, eq=False, order=False, repr=False)
@@ -195,6 +215,15 @@ class LicenseMatch(object):
         metadata=dict(help='Query object for this match')
     )
 
+    discard_reason = attr.ib(
+        default=DiscardReason.NOT_DISCARDED,
+        validator=validators.in_(DiscardReason),
+        metadata=dict(
+            help='An internal reason code to track why a match was discarded '
+            'e.g., filtered out.'
+        )
+    )
+
     def __repr__(
         self,
         trace_spans=TRACE_REPR_SPAN_DETAILS,
@@ -224,11 +253,17 @@ class LicenseMatch(object):
         spans = spans
         thresh = thresh
         return (
-            f'LicenseMatch: {self.matcher!r}, lines={self.lines()!r}, {rule_id}, '
+            f'LicenseMatch: {self.matcher!r}, '
+            f'lines={self.lines()!r}, '
+            f'{rule_id}, '
             f'{self.rule.license_expression!r}, '
-            f'sc={self.score()!r}, cov={self.coverage()!r}, '
-            f'len={self.len()}, hilen={self.hilen()}, rlen={self.rule.length}, '
-            f'qreg={qreg!r}, ireg={ireg!r}'
+            f'sc={self.score()!r}, '
+            f'cov={self.coverage()!r}, '
+            f'len={self.len()}, '
+            f'hilen={self.hilen()}, '
+            f'rlen={self.rule.length}, '
+            f'qreg={qreg!r}, '
+            f'ireg={ireg!r}'
             f'{thresh}{spans}'
         )
 
@@ -317,13 +352,6 @@ class LicenseMatch(object):
             logger_debug('LicenseMatch.set_lines: match.start_line :', self.start_line)
             logger_debug('LicenseMatch.set_lines: match.end_line :', self.end_line)
 
-    def lines_range(self):
-        """
-        Return the number of lines that this match query regions covers.
-        """
-        # we need to add one because we include both start and end lines
-        return (self.end_line - self.start_line) + 1
-
     @property
     def qstart(self):
         return self.qspan.start
@@ -367,14 +395,16 @@ class LicenseMatch(object):
     def qdistance_to(self, other):
         """
         Return the absolute qspan distance to other match.
-        Touching and overlapping matches have a zero distance.
+        Overlapping matches have a zero distance.
+        Non-overlapping touching matches have a distance of one.
         """
         return self.qspan.distance_to(other.qspan)
 
     def idistance_to(self, other):
         """
         Return the absolute ispan distance from self to other match.
-        Touching and overlapping matches have a zero distance.
+        Overlapping matches have a zero distance.
+        Non-overlapping touching matches have a distance of one.
         """
         return self.ispan.distance_to(other.ispan)
 
@@ -404,7 +434,8 @@ class LicenseMatch(object):
         """
         Return the maximal query length represented by this match start and end
         in the query. This number represents the full extent of the matched
-        query region including matched, unmatched and INCLUDING unknown tokens.
+        query region including matched, unmatched AND unknown tokens, but
+        excluding STOPWORDS.
 
         The magnitude is the same as the length if the match is a contiguous
         match without any unknown token in its range. It will be greater than
@@ -419,7 +450,7 @@ class LicenseMatch(object):
 
         query = self.query
         qspan = self.qspan
-        qmagnitude = self.qrange()
+        qmagnitude = self.qregion_len()
 
         # note: to avoid breaking many tests we check query presence
         if query:
@@ -468,17 +499,36 @@ class LicenseMatch(object):
         without any extra unmatched known or unkwown words, or stopwords.
         """
         return (
-            self.len() == self.qrange() == self.qmagnitude()
+            self.len() == self.qregion_len() == self.qmagnitude()
             and not self.qcontains_stopwords()
         )
 
-    def qrange(self):
+    def qregion(self):
         """
-        Return the maximal query length represented by this match start and end
-        in the query. This number represents the full extent of the matched
-        query region including matched, unmatched but IGNORING unknown tokens.
+        Return the maximal positions Span representing this match from
+        start to end as query positions, including matched and unmatched tokens.
+        """
+        return Span(self.qstart, self.qend)
+
+    def qregion_len(self):
+        """
+        Return the maximal number of positions represented by this match start
+        and end region of query positions including matched and unmatched
+        tokens.
         """
         return self.qspan.magnitude()
+
+    def qregion_lines(self):
+        """
+        Return the maximal lines Span that this match query regions covers.
+        """
+        return Span(self.start_line, self.end_line)
+
+    def qregion_lines_len(self):
+        """
+        Return the maximal number of lines that this match query regions covers.
+        """
+        return self.end_line - self.start_line + 1
 
     def qdensity(self):
         """
@@ -568,6 +618,27 @@ class LicenseMatch(object):
         else:
             newmatcher = self.matcher
 
+        if (
+            self.discard_reason == DiscardReason.NOT_DISCARDED
+            or other.discard_reason == DiscardReason.NOT_DISCARDED
+        ):
+            discard_reason = DiscardReason.NOT_DISCARDED
+
+        elif (
+            self.discard_reason == DiscardReason.MISSING_KEY_PHRASE
+            and other.discard_reason == DiscardReason.MISSING_KEY_PHRASE
+        ):
+            discard_reason = DiscardReason.MISSING_KEY_PHRASE
+
+        elif self.discard_reason == DiscardReason.MISSING_KEY_PHRASE:
+            discard_reason = other.discard_reason
+
+        elif other.discard_reason == DiscardReason.MISSING_KEY_PHRASE:
+            discard_reason = self.discard_reason
+
+        else:
+            discard_reason = self.discard_reason
+
         combined = LicenseMatch(
             rule=self.rule,
             qspan=Span(self.qspan | other.qspan),
@@ -575,7 +646,9 @@ class LicenseMatch(object):
             hispan=Span(self.hispan | other.hispan),
             query_run_start=min(self.query_run_start, other.query_run_start),
             matcher=newmatcher,
-            query=self.query)
+            query=self.query,
+            discard_reason=discard_reason,
+        )
         return combined
 
     def update(self, other):
@@ -588,6 +661,8 @@ class LicenseMatch(object):
         self.hispan = combined.hispan
         self.matcher = combined.matcher
         self.query_run_start = min(self.query_run_start, other.query_run_start)
+        self.matcher = combined.matcher
+        self.discard_reason = combined.discard_reason
         return self
 
     def is_small(self):
@@ -697,10 +772,9 @@ def set_matched_lines(matches, line_by_pos):
 
 def merge_matches(matches, max_dist=None, trace=TRACE_MERGE):
     """
-    Merge matches to the same rule in a sequence of LicenseMatch matches. Return
-    a new list of merged matches if they can be merged. Match sequences that
-    cannot be merged are returned as-is. For being merged two matches must also
-    be in increasing query and index positions.
+    Return a list of merged LicenseMatch matches given a `matches` list of
+    LicenseMatch. Merging is a "lossless" opretaion that combines two or more matches to the same rule and that are in sequence of
+    increasing query and index positions in a single new match.
     """
     # shortcut for single matches
     if len(matches) < 2:
@@ -710,8 +784,11 @@ def merge_matches(matches, max_dist=None, trace=TRACE_MERGE):
     # same rule, sort on start, longer high, longer match, matcher type
     sorter = lambda m: (m.rule.identifier, m.qspan.start, -m.hilen(), -m.len(), m.matcher)
     matches.sort(key=sorter)
-    matches_by_rule = [(rid, list(rule_matches))
-        for rid, rule_matches in groupby(matches, key=lambda m: m.rule.identifier)]
+    matches_by_rule = [
+        (rid, list(rule_matches))
+        for rid, rule_matches
+        in groupby(matches, key=lambda m: m.rule.identifier)
+    ]
 
     if trace:
         print('merge_matches: number of matches to process:', len(matches))
@@ -720,11 +797,14 @@ def merge_matches(matches, max_dist=None, trace=TRACE_MERGE):
         max_dist = MAX_DIST
 
     merged = []
+    merged_extend = merged.extend
+
     for rid, rule_matches in matches_by_rule:
         if trace:
             logger_debug('merge_matches: processing rule:', rid)
 
         rule_length = rule_matches[0].rule.length
+
         # FIXME this is likely too much as we are getting gaps that are often too big
         max_rule_side_dist = min((rule_length // 2) or 1, max_dist)
 
@@ -887,7 +967,7 @@ def merge_matches(matches, max_dist=None, trace=TRACE_MERGE):
 
                 j += 1
             i += 1
-        merged.extend(rule_matches)
+        merged_extend(rule_matches)
     return merged
 
 # FIXME we should consider the length and distance between matches to break
@@ -895,7 +975,11 @@ def merge_matches(matches, max_dist=None, trace=TRACE_MERGE):
 # does not make sense
 
 
-def filter_contained_matches(matches, trace=TRACE_FILTER_CONTAINED):
+def filter_contained_matches(
+    matches,
+    trace=TRACE_FILTER_CONTAINED,
+    reason=DiscardReason.CONTAINED,
+):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a `matches` list of LicenseMatch by removing
@@ -913,9 +997,11 @@ def filter_contained_matches(matches, trace=TRACE_FILTER_CONTAINED):
     discarded = []
     discarded_append = discarded.append
 
+    # NOTE: we do not filter matches in place: sorted creates a copy
     # sort on start, longer high, longer match, matcher type
     sorter = lambda m: (m.qspan.start, -m.hilen(), -m.len(), m.matcher)
     matches = sorted(matches, key=sorter)
+    matches_pop = matches.pop
 
     if trace:
         print('filter_contained_matches: number of matches to process:', len(matches))
@@ -946,6 +1032,7 @@ def filter_contained_matches(matches, trace=TRACE_FILTER_CONTAINED):
                         '    ---> ###filter_contained_matches: matches have a distance: '
                         'NO OVERLAP POSSIBLE -->',
                         'qdist:', current_match.qdistance_to(next_match))
+
                 j += 1
                 break
 
@@ -957,8 +1044,8 @@ def filter_contained_matches(matches, trace=TRACE_FILTER_CONTAINED):
                             '    ---> ###filter_contained_matches: '
                             'next EQUALS current, '
                             'removed next with lower or equal coverage', matches[j])
-                    discarded_append(next_match)
-                    del matches[j]
+
+                    discarded_append(matches_pop(j))
                     continue
                 else:
                     if trace:
@@ -966,8 +1053,7 @@ def filter_contained_matches(matches, trace=TRACE_FILTER_CONTAINED):
                             '    ---> ###filter_contained_matches: '
                             'next EQUALS current, '
                             'removed current with lower coverage', matches[i])
-                    discarded_append(current_match)
-                    del matches[i]
+                    discarded_append(matches_pop(i))
                     i -= 1
                     break
 
@@ -978,8 +1064,7 @@ def filter_contained_matches(matches, trace=TRACE_FILTER_CONTAINED):
                         '    ---> ###filter_contained_matches: '
                         'next CONTAINED in current, '
                         'removed next', matches[j])
-                discarded_append(next_match)
-                del matches[j]
+                discarded_append(matches_pop(j))
                 continue
 
             # remove contained matches the other way
@@ -989,13 +1074,15 @@ def filter_contained_matches(matches, trace=TRACE_FILTER_CONTAINED):
                         '    ---> ###filter_contained_matches: '
                         'current CONTAINED in next, '
                         'removed current', matches[i])
-                discarded_append(current_match)
-                del matches[i]
+                discarded_append(matches_pop(i))
                 i -= 1
                 break
 
             j += 1
         i += 1
+
+    for disc in discarded:
+        disc.discard_reason = reason
 
     return matches, discarded
 
@@ -1004,6 +1091,7 @@ def filter_overlapping_matches(
     matches,
     skip_contiguous_false_positive=True,
     trace=TRACE_FILTER_OVERLAPPING,
+    reason=DiscardReason.OVERLAPPING,
 ):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
@@ -1030,9 +1118,11 @@ def filter_overlapping_matches(
     OVERLAP_LARGE = 0.70
     OVERLAP_EXTRA_LARGE = 0.90
 
+    # NOTE: we do not filter matches in place: sorted creates a copy
     # sort on start, longer high, longer match, matcher type
     sorter = lambda m: (m.qspan.start, -m.hilen(), -m.len(), m.matcher)
     matches = sorted(matches, key=sorter)
+    matches_pop = matches.pop
 
     if trace:
         logger_debug(
@@ -1143,8 +1233,7 @@ def filter_overlapping_matches(
                         'EXTRA_LARGE next included, '
                         'removed shorter next', matches[j])
 
-                discarded_append(next_match)
-                del matches[j]
+                discarded_append(matches_pop(j))
                 continue
 
             if extra_large_current and current_match.len() <= next_match.len():
@@ -1154,8 +1243,7 @@ def filter_overlapping_matches(
                         'EXTRA_LARGE next includes current, '
                         'removed shorter current', matches[i])
 
-                discarded_append(current_match)
-                del matches[i]
+                discarded_append(matches_pop(i))
                 i -= 1
                 break
 
@@ -1166,8 +1254,7 @@ def filter_overlapping_matches(
                         'LARGE next included, '
                         'removed shorter next', matches[j])
 
-                discarded_append(next_match)
-                del matches[j]
+                discarded_append(matches_pop(j))
                 continue
 
             if large_current and current_match.len() <= next_match.len() and current_match.hilen() <= next_match.hilen():
@@ -1177,8 +1264,7 @@ def filter_overlapping_matches(
                         'LARGE next includes '
                         'current, removed shorter current', matches[i])
 
-                discarded_append(current_match)
-                del matches[i]
+                discarded_append(matches_pop(i))
                 i -= 1
                 break
 
@@ -1198,8 +1284,7 @@ def filter_overlapping_matches(
                             'MEDIUM next included with next licensing contained, '
                             'removed next', matches[j],)
 
-                    discarded_append(next_match)
-                    del matches[j]
+                    discarded_append(matches_pop(j))
                     continue
 
                 # case of a single trailing "license foo" nex match overlapping on "license" only
@@ -1216,8 +1301,7 @@ def filter_overlapping_matches(
                             'and current ends_with_license, '
                             'removed next', matches[j],)
 
-                    discarded_append(next_match)
-                    del matches[j]
+                    discarded_append(matches_pop(j))
                     continue
 
                 if (next_match.licensing_contains(current_match)
@@ -1230,8 +1314,7 @@ def filter_overlapping_matches(
                             'MEDIUM next includes current with current licensing contained, '
                             'removed current', matches[i])
 
-                    discarded_append(current_match)
-                    del matches[i]
+                    discarded_append(matches_pop(i))
                     i -= 1
                     break
 
@@ -1251,8 +1334,7 @@ def filter_overlapping_matches(
                             'MEDIUM current, bigger current with next licensing contained, '
                             'removed next', matches[j])
 
-                    discarded_append(next_match)
-                    del matches[j]
+                    discarded_append(matches_pop(j))
                     continue
 
                 if (next_match.licensing_contains(current_match)
@@ -1265,8 +1347,7 @@ def filter_overlapping_matches(
                             'MEDIUM current, bigger next current with current licensing contained, '
                             'removed current', matches[i])
 
-                    discarded_append(current_match)
-                    del matches[i]
+                    discarded_append(matches_pop(i))
                     i -= 1
                     break
 
@@ -1282,8 +1363,7 @@ def filter_overlapping_matches(
                         'SMALL next surrounded, '
                         'removed next', matches[j])
 
-                discarded_append(next_match)
-                del matches[j]
+                discarded_append(matches_pop(j))
                 continue
 
             if (small_current
@@ -1298,8 +1378,7 @@ def filter_overlapping_matches(
                         'SMALL current surrounded, '
                         'removed current', matches[i])
 
-                discarded_append(next_match)
-                del matches[i]
+                discarded_append(matches_pop(i))
                 i -= 1
                 break
 
@@ -1326,8 +1405,7 @@ def filter_overlapping_matches(
                                     'current mostly contained in previous and next, '
                                     'removed current', matches[i])
 
-                            discarded_append(next_match)
-                            del matches[i]
+                            discarded_append(matches_pop(i))
                             i -= 1
                             break
 
@@ -1342,6 +1420,9 @@ def filter_overlapping_matches(
         for m in discarded:
             print('  ', m)
 
+    for disc in discarded:
+        disc.discard_reason = reason
+
     return matches, discarded
 
 
@@ -1352,20 +1433,28 @@ def restore_non_overlapping(matches, discarded):
     these that may have been filtered too agressively.
     """
     all_matched_qspans = Span().union(*(m.qspan for m in matches))
+
     to_keep = []
+    to_keep_append = to_keep.append
+
     to_discard = []
+    to_discard_append = to_discard.append
+
     for disc in merge_matches(discarded):
         if not disc.qspan & all_matched_qspans:
             # keep previously discarded matches that do not intersect at all
-            to_keep.append(disc)
+            to_keep_append(disc)
+            disc.discard_reason = DiscardReason.NOT_DISCARDED
         else:
-            to_discard.append(disc)
+            to_discard_append(disc)
+
     return to_keep, to_discard
 
 
 def filter_below_rule_minimum_coverage(
     matches,
     trace=TRACE_FILTER_RULE_MIN_COVERAGE,
+    reason=DiscardReason.BELOW_MIN_COVERAGE,
 ):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
@@ -1375,12 +1464,16 @@ def filter_below_rule_minimum_coverage(
     from licensedcode.match_seq import MATCH_SEQ
 
     kept = []
+    kept_append = kept.append
     discarded = []
+    discarded_append = discarded.append
+
     for match in matches:
         # always keep exact matches
         if match.matcher != MATCH_SEQ:
-            kept.append(match)
+            kept_append(match)
             continue
+
         if match.coverage() < match.rule.minimum_coverage:
             if trace:
                 logger_debug(
@@ -1388,25 +1481,32 @@ def filter_below_rule_minimum_coverage(
                     type(match.rule.minimum_coverage), ':',
                     repr(match.rule.minimum_coverage),
                     'match:', match)
-            discarded.append(match)
+
+            match.discard_reason = reason
+            discarded_append(match)
         else:
-            kept.append(match)
+            kept_append(match)
+
     return kept, discarded
 
 
 def filter_non_continuous_matches(
     matches,
     trace=TRACE_FILTER_NON_CONTINUOUS,
+    reason=DiscardReason.NON_CONTINUOUS,
 ):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a ``matches`` list of LicenseMatch by removing
     matches to rules that require a continuous match e.g., rules with the
-    "is_continuous" attribute set to True. Continuous means that all words in the
-    matched range must be matched without gaps in between (excluding stopwords).
+    "is_continuous" attribute set to True. Continuous means that all words in
+    the matched range must be matched without gaps in between (excluding
+    stopwords).
     """
     kept = []
+    kept_append = kept.append
     discarded = []
+    discarded_append = discarded.append
 
     for match in matches:
         rule = match.rule
@@ -1420,16 +1520,20 @@ def filter_non_continuous_matches(
                     'match.is_continuous()', match.is_continuous(),
                 )
 
-            discarded.append(match)
+                match.discard_reason = reason
+                discarded_append(match)
         else:
-            kept.append(match)
+            kept_append(match)
+
     return kept, discarded
 
 
 def filter_matches_below_minimum_score(
     matches,
     min_score=100,
-    trace=TRACE_FILTER_BELOW_MIN_SCORE):
+    trace=TRACE_FILTER_BELOW_MIN_SCORE,
+    reason=DiscardReason.BELOW_MIN_SCORE,
+):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a ``matches`` list of LicenseMatch by removing
@@ -1439,14 +1543,20 @@ def filter_matches_below_minimum_score(
         return matches, []
 
     kept = []
+    kept_append = kept.append
     discarded = []
+    discarded_append = discarded.append
+
     for match in matches:
         if match.score() < min_score:
             if trace:
                 logger_debug('    ==> DISCARDING low score:', match)
-            discarded.append(match)
+
+            match.discard_reason = reason
+            discarded_append(match)
         else:
-            kept.append(match)
+            kept_append(match)
+
     return kept, discarded
 
 
@@ -1455,6 +1565,7 @@ def filter_matches_to_spurious_single_token(
     query=None,
     unknown_count=5,
     trace=TRACE_FILTER_SPURIOUS_SINGLE_TOKEN,
+    reason=DiscardReason.SPURIOUS_SINGLE_TOKEN,
 ):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
@@ -1467,20 +1578,25 @@ def filter_matches_to_spurious_single_token(
     composed only of digits.
     """
     from licensedcode.match_seq import MATCH_SEQ
-    kept = []
-    discarded = []
     if not query:
-        return matches, discarded
+        return matches, []
+
+    kept = []
+    kept_append = kept.append
+    discarded = []
+    discarded_append = discarded.append
 
     unknowns_by_pos = query.unknowns_by_pos
     shorts_and_digits = query.shorts_and_digits_pos
+
     for match in matches:
         if not match.len() == 1:
-            kept.append(match)
+            kept_append(match)
             continue
+
         # always keep extact matches
         if match.matcher != MATCH_SEQ:
-            kept.append(match)
+            kept_append(match)
             continue
 
         qstart = match.qstart
@@ -1500,7 +1616,8 @@ def filter_matches_to_spurious_single_token(
                     '    ==> !!! NOT DISCARDING spurious_single_token, '
                     'not enough before:', match, before)
                 _debug_print_matched_query_text(match, extras=unknown_count)
-            kept.append(match)
+
+            kept_append(match)
             continue
 
         after = unknowns_by_pos.get(qstart, 0)
@@ -1512,44 +1629,65 @@ def filter_matches_to_spurious_single_token(
             if trace:
                 logger_debug('    ==> DISCARDING spurious_single_token:', match)
                 _debug_print_matched_query_text(match, extras=unknown_count)
-            discarded.append(match)
+
+            match.discard_reason = reason
+            discarded_append(match)
         else:
             if trace:
                 logger_debug(
                     '    ==> !!! NOT DISCARDING spurious_single_token, '
                     'not enough after:', match, before, after)
                 _debug_print_matched_query_text(match, extras=unknown_count)
-            kept.append(match)
+
+            kept_append(match)
+
     return kept, discarded
 
 
-def filter_too_short_matches(matches, trace=TRACE_FILTER_SHORT):
+def filter_too_short_matches(
+    matches,
+    trace=TRACE_FILTER_SHORT,
+    reason=DiscardReason.TOO_SHORT,
+):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a `matches` list of LicenseMatch by removing
     matches considered as too small to be relevant.
     """
     from licensedcode.match_seq import MATCH_SEQ
+
     kept = []
+    kept_append = kept.append
     discarded = []
+    discarded_append = discarded.append
+
     for match in matches:
         # always keep exact matches
         if match.matcher != MATCH_SEQ:
-            kept.append(match)
+            kept_append(match)
             continue
 
         if match.is_small():
             if trace:
                 logger_debug('    ==> DISCARDING SHORT:', match)
-            discarded.append(match)
+
+            match.discard_reason = reason
+            discarded_append(match)
+
         else:
             if trace:
                 logger_debug('  ===> NOT DISCARDING SHORT:', match)
-            kept.append(match)
+
+            kept_append(match)
+
     return kept, discarded
 
 
-def filter_spurious_matches(matches, trace=TRACE_FILTER_SPURIOUS):
+def filter_spurious_matches(
+    matches,
+    trace=TRACE_FILTER_SPURIOUS,
+    reason=DiscardReason.SPURIOUS,
+):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a `matches` list of LicenseMatch by removing
@@ -1559,19 +1697,23 @@ def filter_spurious_matches(matches, trace=TRACE_FILTER_SPURIOUS):
     tokens are separated by many unmatched tokens.)
     """
     from licensedcode.match_seq import MATCH_SEQ
+
     kept = []
+    kept_append = kept.append
     discarded = []
+    discarded_append = discarded.append
 
     for match in matches:
         # always keep exact matches
         if match.matcher != MATCH_SEQ:
-            kept.append(match)
+            kept_append(match)
             continue
 
         qdens = match.qdensity()
         idens = match.idensity()
         mlen = match.len()
         hilen = match.hilen()
+
         if (mlen < 10 and (qdens < 0.1 or idens < 0.1)):
             if trace:
                 logger_debug('    ==> DISCARDING Spurious1:', match)
@@ -1581,12 +1723,12 @@ def filter_spurious_matches(matches, trace=TRACE_FILTER_SPURIOUS):
             if trace:
                 logger_debug('    ==> DISCARDING Spurious2:', match)
 
-            discarded.append(match)
+            discarded_append(match)
         elif (mlen < 20 and hilen < 5 and (qdens < 0.3 or idens < 0.3)):
             if trace:
                 logger_debug('    ==> DISCARDING Spurious3:', match)
 
-            discarded.append(match)
+            discarded_append(match)
         elif (mlen < 30 and hilen < 8 and (qdens < 0.4 or idens < 0.4)):
             if trace:
                 logger_debug('    ==> DISCARDING Spurious4:', match)
@@ -1596,15 +1738,20 @@ def filter_spurious_matches(matches, trace=TRACE_FILTER_SPURIOUS):
             if trace:
                 logger_debug('    ==> DISCARDING Spurious5:', match)
 
-            discarded.append(match)
+            discarded_append(match)
         else:
-            kept.append(match)
+            kept_append(match)
+
+    for disc in discarded:
+        disc.discard_reason = reason
+
     return kept, discarded
 
 
 def filter_invalid_matches_to_single_word_in_binaries(
     matches,
     trace=TRACE_FILTER_SINGLE_WORD_BINARY,
+    reason=DiscardReason.INVALID_SINGLE_WORD_IN_BINARY,
 ):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
@@ -1622,7 +1769,9 @@ def filter_invalid_matches_to_single_word_in_binaries(
         exactly the same mixed case as the rule text
     """
     kept = []
+    kept_append = kept.append
     discarded = []
+    discarded_append = discarded.append
 
     for match in matches:
         rule = match.rule
@@ -1631,8 +1780,6 @@ def filter_invalid_matches_to_single_word_in_binaries(
             and match.query.is_binary
             and rule.is_license_reference
         ):
-            # important otherwise we cannot really get the matched text
-            match.set_lines(match.query.line_by_pos)
             matched_text = match.matched_text(
                 whole_lines=False,
                 highlight=False,
@@ -1655,10 +1802,11 @@ def filter_invalid_matches_to_single_word_in_binaries(
             if is_invalid_short_match(matched_text, rule_text, max_diff=max_diff):
                 if trace:
                     logger_debug('    ==> DISCARDING INVALID_BINARY:', match)
-                discarded.append(match)
+                discarded_append(match)
+                match.discard_reason = reason
                 continue
 
-        kept.append(match)
+        kept_append(match)
 
     return kept, discarded
 
@@ -1666,6 +1814,7 @@ def filter_invalid_matches_to_single_word_in_binaries(
 def filter_short_matches_scattered_on_too_many_lines(
     matches,
     trace=TRACE_FILTER_SHORT,
+    reason=DiscardReason.SCATTERED_ON_TOO_MANY_LINES,
 ):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
@@ -1678,13 +1827,15 @@ def filter_short_matches_scattered_on_too_many_lines(
         return matches, []
 
     kept = []
+    kept_append = kept.append
     discarded = []
+    discarded_append = discarded.append
+
     for match in matches:
         rule = match.rule
         if rule.is_small:
             matched_len = match.len()
-            match.set_lines(match.query.line_by_pos)
-            lines_range = match.lines_range()
+            qregion_lines_len = match.qregion_lines_len()
 
             # Matches to license tag are special and can be scattered on a few
             # extra lines.
@@ -1692,13 +1843,15 @@ def filter_short_matches_scattered_on_too_many_lines(
                 matched_len += 2
 
             # a match is scattered if it uses more lines than its token length
-            if lines_range > matched_len:
+            if qregion_lines_len > matched_len:
                 if trace: logger_debug('    ==> DISCARDING SCATTERED:', match)
-                discarded.append(match)
+                match.discard_reason = reason
+                discarded_append(match)
                 continue
 
         if trace: logger_debug('  ===> NOT DISCARDING SCATTERED:', match)
-        kept.append(match)
+        kept_append(match)
+
     return kept, discarded
 
 
@@ -1803,6 +1956,7 @@ def is_invalid_short_match(
 def filter_false_positive_matches(
     matches,
     trace=TRACE_REFINE or TRACE_FILTER_FALSE_POSITIVE,
+    reason=DiscardReason.FALSE_POSITIVE,
 ):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
@@ -1810,21 +1964,28 @@ def filter_false_positive_matches(
     matches to false positive rules.
     """
     kept = []
+    kept_append = kept.append
     discarded = []
+    discarded_append = discarded.append
 
     for match in matches:
         if match.rule.is_false_positive:
             if trace:
                 logger_debug('    ==> DISCARDING FALSE POSITIVE:', match)
 
-            discarded.append(match)
-            continue
-        kept.append(match)
+            match.discard_reason = reason
+            discarded_append(match)
+        else:
+            kept_append(match)
 
     return kept, discarded
 
 
-def filter_matches_missing_key_phrases(matches):
+def filter_matches_missing_key_phrases(
+    matches,
+    trace=TRACE_KEY_PHRASES,
+    reason=DiscardReason.MISSING_KEY_PHRASE,
+):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches  given a ``matches`` list of LicenseMatch by removing
@@ -1836,7 +1997,9 @@ def filter_matches_missing_key_phrases(matches):
         return matches, []
 
     kept = []
+    kept_append = kept.append
     discarded = []
+    discarded_append = discarded.append
 
     for match in matches:
         has_key_phrases = True
@@ -1881,11 +2044,91 @@ def filter_matches_missing_key_phrases(matches):
                         break
 
         if has_key_phrases:
-            kept.append(match)
+            if trace:
+                logger_debug('    ==> ALL KEY PHRASES PRESENT:', match)
+
+            kept_append(match)
         else:
-            discarded.append(match)
+            if trace:
+                logger_debug('    ==> SOME KEY PHRASES MISSING:', match)
+
+            match.discard_reason = reason
+            discarded_append(match)
 
     return kept, discarded
+
+
+def get_matching_regions(
+    matches,
+    min_tokens_gap=10,
+    min_lines_gap=3,
+    trace=TRACE_REGIONS,
+):
+    """
+    Return a list of token query position Spans, where each Span represents a
+    region of related LicenseMatch contained that Span given a ``matches`` list
+    of LicenseMatch.
+
+    Matching regions are such that:
+
+    - all matches in the regions are entirely contained in the region Span
+
+    Two consecutive region Spans are such that:
+
+    - there are no overlaping matches between them
+    - there are at least ``min_tokens_gap`` unmatched tokens between them
+    - OR there are at least ``min_lines_gap`` unmatched lines between them
+    """
+    regions = []
+
+    prev_region = None
+    prev_region_lines = None
+    cur_region = None
+    cur_region_lines = None
+
+    for match in matches:
+        if trace:
+            logger_debug('Match:', match)
+        if not prev_region:
+            prev_region = match.qregion()
+            prev_region_lines = match.qregion_lines()
+        else:
+            cur_region = match.qregion()
+            cur_region_lines = match.qregion_lines()
+
+            if trace:
+                logger_debug(
+                    '  prev_region:', prev_region,
+                    'cur_region:', cur_region,
+                    'prev_region.distance_to(cur_region):',
+                    prev_region.distance_to(cur_region),
+                )
+                logger_debug(
+                    '  prev_region_lines:', prev_region_lines,
+                    'cur_region_lines:', cur_region_lines,
+                    'prev_region_lines.distance_to(cur_region_lines):',
+                    prev_region_lines.distance_to(cur_region_lines)
+                )
+
+            if (prev_region.distance_to(cur_region) > min_tokens_gap
+                or prev_region_lines.distance_to(cur_region_lines) > min_lines_gap
+            ):
+
+                regions.append(prev_region)
+
+                prev_region = cur_region
+                prev_region_lines = cur_region_lines
+            else:
+                prev_region = Span(prev_region.start, cur_region.end)
+                prev_region_lines = Span(prev_region_lines.start, cur_region_lines.end)
+
+    if prev_region and prev_region not in regions:
+        regions.append(prev_region)
+
+    if trace:
+        logger_debug('Final regions:', regions,)
+
+    return regions
 
 
 def refine_matches(
@@ -1902,6 +2145,7 @@ def refine_matches(
     discardable matches given a `matches` list of LicenseMatch by removing
     matches that do not mee certain criteria as defined in multiple filters.
     """
+
     if trace_basic:
         logger_debug()
         logger_debug(' #####refine_matches: STARTING matches#', len(matches))
@@ -1909,8 +2153,12 @@ def refine_matches(
         for m in matches:
             logger_debug(m)
 
+    all_discarded = []
+    all_discarded_extend = all_discarded.extend
+
     if merge:
         matches = merge_matches(matches)
+
         if trace_basic:
             logger_debug('     ##### refine_matches: STARTING MERGED_matches#:', len(matches))
 
@@ -1929,39 +2177,40 @@ def refine_matches(
             for m in matches:
                 logger_debug(m)
 
+    set_matched_lines(matches, query.line_by_pos)
+
     # FIXME: we should have only a single loop on all the matches at once!!
     # and not 10's of loops!!!
 
-    all_discarded = []
+    matches, discarded = filter_matches_missing_key_phrases(matches)
+    all_discarded_extend(discarded)
+    _log(matches, discarded, 'HAS KEY PHRASES')
 
     matches, discarded = filter_below_rule_minimum_coverage(matches)
-    all_discarded.extend(discarded)
+    all_discarded_extend(discarded)
     _log(matches, discarded, 'ABOVE MIN COVERAGE')
 
     matches, discarded = filter_matches_to_spurious_single_token(matches, query)
-    all_discarded.extend(discarded)
+    all_discarded_extend(discarded)
     _log(matches, discarded, 'MORE THAN ONE NON SPURIOUS TOKEN')
 
     matches, discarded = filter_too_short_matches(matches)
-    all_discarded.extend(discarded)
+    all_discarded_extend(discarded)
     _log(matches, discarded, 'LONG ENOUGH')
 
     matches, discarded = filter_short_matches_scattered_on_too_many_lines(matches)
-    all_discarded.extend(discarded)
+    all_discarded_extend(discarded)
     _log(matches, discarded, 'ACCEPTABLE IF NOT SHORT SCATTERED')
 
     matches, discarded = filter_invalid_matches_to_single_word_in_binaries(matches)
-    all_discarded.extend(discarded)
+    all_discarded_extend(discarded)
     _log(matches, discarded, 'MORE THAN ONE NON INVALID TOKEN IN BINARY')
 
     matches, discarded = filter_spurious_matches(matches)
-    all_discarded.extend(discarded)
+    all_discarded_extend(discarded)
     _log(matches, discarded, 'GOOD')
 
-    matches, discarded = filter_matches_missing_key_phrases(matches)
-    all_discarded.extend(discarded)
-    _log(matches, discarded, 'KEY PHRASES')
-
+    # TODO: we seem to be always merging?
     matches = merge_matches(matches)
 
     if trace_basic:
@@ -1979,31 +2228,31 @@ def refine_matches(
     if discarded_contained:
         to_keep, discarded_contained = restore_non_overlapping(matches, discarded_contained)
         matches.extend(to_keep)
-        all_discarded.extend(discarded_contained)
+        all_discarded_extend(discarded_contained)
         _log(to_keep, discarded_contained, 'NON CONTAINED REFINED')
 
     if discarded_overlapping:
         to_keep, discarded_overlapping = restore_non_overlapping(matches, discarded_overlapping)
         matches.extend(to_keep)
-        all_discarded.extend(discarded_overlapping)
+        all_discarded_extend(discarded_overlapping)
         _log(to_keep, discarded_overlapping, 'NON OVERLAPPING REFINED')
 
     matches, discarded_contained = filter_contained_matches(matches)
-    all_discarded.extend(discarded_contained)
+    all_discarded_extend(discarded_contained)
     _log(matches, discarded_contained, 'NON CONTAINED')
 
     matches, discarded = filter_non_continuous_matches(matches)
-    all_discarded.extend(discarded)
+    all_discarded_extend(discarded)
     _log(matches, discarded, 'ACCEPTABLE IF CONTINUOUS WORDS')
 
     if filter_false_positive:
         matches, discarded = filter_false_positive_matches(matches)
-        all_discarded.extend(discarded)
+        all_discarded_extend(discarded)
         _log(matches, discarded, 'TRUE POSITIVE')
 
     if min_score:
         matches, discarded = filter_matches_below_minimum_score(matches, min_score=min_score)
-        all_discarded.extend(discarded)
+        all_discarded_extend(discarded)
         _log(matches, discarded, 'HIGH ENOUGH SCORE')
 
     if merge:
@@ -2037,7 +2286,13 @@ class Token(object):
     is_known = attr.ib(default=False)
 
 
-def tokenize_matched_text(location, query_string, dictionary, start_line=1, _cache={}):
+def tokenize_matched_text(
+    location,
+    query_string,
+    dictionary,
+    start_line=1,
+    _cache={},
+):
     """
     Return a list of Token objects with pos and line number collected from the
     file at `location` or the `query_string` string. `dictionary` is the index
@@ -2170,7 +2425,7 @@ def reportable_tokens(
     start_line,
     end_line,
     whole_lines=False,
-    trace=TRACE_MATCHED_TEXT_DETAILS
+    trace=TRACE_MATCHED_TEXT_DETAILS,
 ):
     """
     Yield Tokens from a `tokens` iterable of Token objects (built from a query-

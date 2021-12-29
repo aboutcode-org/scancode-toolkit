@@ -1214,7 +1214,7 @@ class BasicRule:
         repr=False,
         metadata=dict(
             help='List of spans with ispan positions which must be present '
-            'in the license match for this rule to be considered a valid match.') 
+            'in the license match for this rule to be considered a valid match.')
     )
 
     # These thresholds attributes are computed upon text loading or calling the
@@ -2137,7 +2137,7 @@ def get_key_phrases(text):
                     break
                 span_positions.append(key_phrase_index)
                 key_phrase_index += 1
-            
+
             if not key_phrase.endswith(KEY_PHRASE_CLOSE):
                 span_start_position = span_positions[0] if span_positions else 0
                 raise InvalidRule("Key phrase definition started at token '%d' is not closed" % span_start_position)

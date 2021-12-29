@@ -33,7 +33,7 @@ def query_lines(location=None, query_string=None, strip=True, start_line=1):
     numbered_lines = []
     if location:
         numbered_lines = numbered_text_lines(
-            location, 
+            location,
             demarkup=False,
             start_line=start_line,
         )
@@ -45,7 +45,7 @@ def query_lines(location=None, query_string=None, strip=True, start_line=1):
             keepends = True
 
         numbered_lines = enumerate(
-            query_string.splitlines(keepends), 
+            query_string.splitlines(keepends),
             start_line,
         )
 
@@ -67,6 +67,7 @@ key_phrase_splitter = re.compile(key_phrase_pattern, re.UNICODE).findall
 
 KEY_PHRASE_OPEN = "{{"
 KEY_PHRASE_CLOSE = "}}"
+
 
 def key_phrase_tokenizer(text, stopwords=STOPWORDS):
     """
@@ -94,6 +95,7 @@ def key_phrase_tokenizer(text, stopwords=STOPWORDS):
             new_words.append(KEY_PHRASE_CLOSE)
 
     return (token for token in new_words if token and token not in stopwords)
+
 
 def index_tokenizer(text, stopwords=STOPWORDS):
     """

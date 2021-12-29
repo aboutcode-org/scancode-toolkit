@@ -404,9 +404,9 @@ class LicenseIndex(object):
             # OPTIMIZED: the last rtid above IS the last token id
             if license_tokens:
                 if rtid in license_tokens:
-                    rule.ends_with_license=True
+                    rule.ends_with_license = True
                 if rule_token_ids[0] in license_tokens:
-                    rule.starts_with_license=True
+                    rule.starts_with_license = True
 
             # Some rules that cannot be matched as a sequence are "weak" rules
             # or can require to be matched only as a continuous sequence of
@@ -1006,7 +1006,6 @@ class LicenseIndex(object):
         )
 
         matches.sort()
-        match.set_matched_lines(matches, qry.line_by_pos)
 
         if TRACE:
             self.debug_matches(
