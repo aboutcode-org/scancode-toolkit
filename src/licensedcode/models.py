@@ -1631,7 +1631,7 @@ class Rule(BasicRule):
             yield token
 
         self.length = length
-        self.compute_relevance()
+        self.set_relevance()
 
     def key_phrases(self):
         """
@@ -1760,29 +1760,17 @@ class Rule(BasicRule):
 
         return self
 
-    def compute_relevance(self, _threshold=18.0):
+    def set_relevance(self):
         """
-        Compute and set the `relevance` attribute for this rule. The relevance
-        is a float between 0 and 100 where 100 means highly relevant and 0 means
-        not relevant at all.
+        Set the ``relevance`` attribute to a computed value for this rule. The
+        relevance is a float between 0 and 100 where 100 means highly relevant
+        and 0 means not relevant at all.
 
-        For instance a match to the "gpl" or the "cpol" words have a fairly low
-        relevance as they are a weak indication of an actual license and could
-        be a false positive and should therefore be assigned a low relevance. In
-        contrast a match to most or all of the apache-2.0 license text is highly
-        relevant. The Rule relevance is used as the basis to compute a match
-        score.
+        The relevance is computed using this approach:
 
-        The relevance is either pre-defined in the rule YAML data file with the
-        "relevance" attribute or computed base on the rule length here using
-        this approach:
-
-        - false positive rule has 100 relevance.
-        - rule length equal or larger than threshold has 100 relevance
-        - rule length smaller than threshold has 100/threshold relevance rounded
-          down.
-
-        The current threshold is 18 words.
+        - pre-defined, stored relevance is used as-is
+        - false positive or SPDX rules have 100 relevance.
+        - relevance is computed based on the rule length
         """
         # false positive rules with no license and their matches are never returned
         if isinstance(self, SpdxRule) or self.is_false_positive:
@@ -1791,9 +1779,7 @@ class Rule(BasicRule):
             self.has_stored_relevance = True
             return
 
-        relevance_of_one_word = round((1 / _threshold) * 100, 2)
-        computed = int(self.length * relevance_of_one_word)
-        computed_relevance = min([100, computed])
+        computed_relevance = compute_relevance(self.length)
 
         if self.has_stored_relevance:
             if self.relevance == computed_relevance:
@@ -1827,6 +1813,61 @@ class Rule(BasicRule):
         new_text_file = f'{new_base_loc}.RULE'
         shutil.move(self.text_file, new_text_file)
         self.text_file = new_text_file
+
+
+def compute_relevance(length):
+    """
+    Return a computed ``relevance`` given a ``length`` and a threshold.
+    The relevance is a integer between 0 and 100 where 100 means highly
+    relevant and 0 means not relevant at all.
+
+    The relevance is computed base on the rule or detection ``length`` using
+    a relevance schedule based on the ``length``
+
+    For instance a match to the "gpl" or the "cpol" words have a fairly low
+    relevance as they are a weak indication of an actual license and could
+    be a false positive and should therefore be assigned a low relevance. In
+    contrast a match to most or all of the apache-2.0 license text is highly
+    relevant. The relevance is used as the basis to compute a LicenseMatch
+    and LicenseDetection score.
+
+    For example::
+    >>> compute_relevance(0)
+    0
+    >>> compute_relevance(1)
+    5
+    >>> compute_relevance(17)
+    94
+    >>> compute_relevance(18)
+    100
+    >>> compute_relevance(19)
+    100
+    >>> compute_relevance(100)
+    100
+    """
+    if length > 18:
+        return 100
+    return {
+        0: 0,
+        1: 5,
+        2: 11,
+        3: 16,
+        4: 22,
+        5: 27,
+        6: 33,
+        7: 38,
+        8: 44,
+        9: 50,
+        10: 55,
+        11: 61,
+        12: 66,
+        13: 72,
+        14: 77,
+        15: 83,
+        16: 88,
+        17: 94,
+        18: 100,
+    }[length]
 
 
 def compute_thresholds_occurences(

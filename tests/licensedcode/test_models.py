@@ -368,7 +368,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 13
         rule.has_stored_relevance = True
         rule.length = 1000
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 13
         assert rule.has_stored_relevance
 
@@ -377,7 +377,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 100
         rule.has_stored_relevance = True
         rule.length = 18
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
         assert not rule.has_stored_relevance
 
@@ -386,7 +386,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 100
         rule.has_stored_relevance = True
         rule.length = 17
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
         assert rule.has_stored_relevance
 
@@ -395,7 +395,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 100
         rule.has_stored_relevance = True
         rule.length = 17
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
         assert rule.has_stored_relevance
 
@@ -404,7 +404,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 99
         rule.has_stored_relevance = True
         rule.length = 18
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 99
         assert rule.has_stored_relevance
 
@@ -413,7 +413,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 94
         rule.has_stored_relevance = True
         rule.length = 17
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 94
         assert not rule.has_stored_relevance
 
@@ -422,7 +422,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 94
         rule.has_stored_relevance = True
         rule.length = 16
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 94
         assert rule.has_stored_relevance
 
@@ -433,7 +433,7 @@ class TestRule(FileBasedTesting):
         rule.has_stored_relevance = False
         rule.is_false_positive = True
         rule.length = 1000
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
 
     def test_compute_relevance_is_using_rule_length(self):
@@ -443,71 +443,71 @@ class TestRule(FileBasedTesting):
         rule.is_false_positive = False
 
         rule.length = 1000
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
 
         rule.length = 21
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
 
         rule.length = 20
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
 
         rule.length = 18
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
 
         rule.length = 17
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 94
 
         rule.length = 16
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 88
 
         rule.length = 15
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 83
 
         rule.length = 14
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 77
 
         rule.length = 13
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 72
 
         rule.length = 12
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 66
 
         rule.length = 11
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 61
 
         rule.length = 10
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 55
 
         rule.length = 8
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 44
 
         rule.length = 5
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 27
 
         rule.length = 2
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 11
 
         rule.length = 1
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 5
 
         rule.length = 0
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 0
 
     def test_rule_must_have_text(self):
