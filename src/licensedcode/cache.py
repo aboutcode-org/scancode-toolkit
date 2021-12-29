@@ -374,3 +374,19 @@ def get_spdx_symbols(licenses_db=None, check_consistency=SCANCODE_DEV_MODE):
     if licenses_db:
         return build_spdx_symbols(licenses_db)
     return get_cache(check_consistency=check_consistency).spdx_symbols
+
+
+def build_spdx_license_expression(license_expression, licensing=None):
+    """
+    Return an SPDX license expression from a ScanCode ``license_expression``
+    string.
+
+    For example::
+    >>> exp = "mit OR gpl-2.0 with generic-exception"
+    >>> spdx = "MIT OR GPL-2.0-only WITH LicenseRef-scancode-generic-exception"
+    >>> assert build_spdx_license_expression(exp) == spdx
+    """
+    if not licensing:
+        licensing = get_licensing()
+    parsed = licensing.parse(license_expression)
+    return parsed.render(template='{symbol.wrapped.spdx_license_key}')

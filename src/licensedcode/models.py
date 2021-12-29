@@ -1453,11 +1453,8 @@ class BasicRule:
             )
 
     def spdx_license_expression(self, licensing=None):
-        if not licensing:
-            from licensedcode.cache import get_licensing
-            licensing = get_licensing()
-        parsed = licensing.parse(self.license_expression)
-        return parsed.render(template='{symbol.wrapped.spdx_license_key}')
+        from licensedcode.cache import build_spdx_license_expression
+        return build_spdx_license_expression(self, licensing=licensing)
 
     def get_length(self, unique=False):
         return self.length_unique if unique else self.length
