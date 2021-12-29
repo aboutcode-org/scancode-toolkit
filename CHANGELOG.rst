@@ -97,7 +97,8 @@ Package detection:
 Outputs:
 ~~~~~~~~
 
-- There is a new CycloneDX 1.2 output as XML and JSON.
+ - Add new outputs for the CycloneDx format.
+   The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
 
 
 Output version
