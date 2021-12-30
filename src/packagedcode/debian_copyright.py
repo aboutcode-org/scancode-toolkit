@@ -349,7 +349,7 @@ class StructuredCopyrightProcessor(DebianDetector):
         dc = cls(location=location, debian_copyright=debian_copyright)
         dc.detect_license()
         dc.detect_copyrights()
-        dc.get_primary_license()
+        dc.set_primary_license()
 
         if check_consistency:
             dc.consistentcy_errors = edc.get_consistentcy_errors()
@@ -369,10 +369,10 @@ class StructuredCopyrightProcessor(DebianDetector):
         )
         return chain.from_iterable(matches)
 
-    def get_primary_license(self):
+    def set_primary_license(self):
         """
-        Get a license expression string which is the primary license for the
-        debian copyright file and assign it to `primary_license`.
+        Compute and set the primary license expression of this
+        debian copyright file to`primary_license`.
 
         A primary license in a debian copyright file is the license in the
         Header paragraph or the `Files: *` paragraph.
