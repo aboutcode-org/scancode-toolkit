@@ -138,4 +138,4 @@ def combine_expressions(
     Return a combined license expression string with relation, given a sequence of
     license ``expressions`` strings or LicenseExpression objects.
     """
-    return str(le_combine_expressions(expressions, relation, unique, licensing))
+    return expressions and str(le_combine_expressions(expressions, relation, unique, licensing)) or None
