@@ -13,7 +13,6 @@ import shutil
 import traceback
 from collections import Counter
 from collections import defaultdict
-from functools import partial
 from itertools import chain
 from operator import itemgetter
 from os.path import abspath
@@ -240,16 +239,16 @@ class License:
     default=0,
     repr=False,
     metadata=dict(
-        help='Can this rule text be matched only with a minimum coverage e.g., '
+        help='Can this license text be matched only with a minimum coverage e.g., '
         'when a minimum proportion of tokens have been matched? This is as a '
         'float between 0 and 100 where 100 means that all tokens must be '
         'matched and a smaller value means a smaller proportion of matched '
-        'tokens is acceptable. This is computed at indexing time based on '
-        'the length of a rule. Providing a stored value in the rule data '
+        'tokens is acceptable. This is mormally computed at indexing time based on '
+        'the length of a license. Providing a stored value in the license data '
         'file overrides this default computed value. For example, a short '
-        'rule such as "MIT license" must be matched with all its words, '
+        'license notice such as "MIT license" must be matched with all its words, '
         'e.g., a 100 minimum_coverage. Otherwise matching only "mit" or '
-        '"license" is not a string enough licensing clue.')
+        '"license" is not a strong enough licensing clue.')
     )
 
     standard_notice = attr.ib(
@@ -512,12 +511,17 @@ class License:
             by_name[lic.name].append(lic)
             by_short_name[lic.short_name].append(lic)
 
+            if lic.key != lic.key.lower():
+                error('Incorrect license key case. Should be lowercase.')
+
             if not lic.short_name:
                 error('No short name')
             elif len(lic.short_name) > 50:
                 error('short name must be under 50 characters.')
+
             if not lic.name:
                 error('No name')
+
             if not lic.category:
                 error('No category')
             if lic.category and lic.category not in CATEGORIES:
@@ -526,11 +530,12 @@ class License:
                     f'Unknown license category: {lic.category}.\n' +
                     f'Use one of these valid categories:\n{cats}'
                 )
+
             if not lic.owner:
                 error('No owner: Use "Unspecified" if not known.')
 
             if lic.is_unknown:
-                if not "unknown" in lic.key:
+                if not 'unknown' in lic.key:
                     error(
                         'is_unknown is true only for unknown licenses')
 
@@ -581,6 +586,7 @@ class License:
             else:
                 # SPDX license key is now mandatory
                 error('No SPDX license key')
+
             for oslk in lic.other_spdx_license_keys:
                 by_spdx_key[oslk].append(key)
 
@@ -589,6 +595,7 @@ class License:
             k: v for k, v in by_spdx_key.items()
             if len(v) > 1
         }
+
         if multiple_spdx_keys_used:
             for k, lkeys in multiple_spdx_keys_used.items():
                 errors['GLOBAL'].append(
@@ -1042,7 +1049,7 @@ class BasicRule:
             'file overrides this default computed value. For example, a short '
             'rule such as "MIT license" must be matched with all its words, '
             'e.g., a 100 minimum_coverage. Otherwise matching only "mit" or '
-            '"license" is not a string enough licensing clue.')
+            '"license" is not a strong enough licensing clue.')
     )
 
     has_stored_minimum_coverage = attr.ib(
@@ -1411,6 +1418,9 @@ class BasicRule:
             if not license_expression:
                 yield 'Missing license_expression.'
             else:
+                if not has_only_lower_license_keys(license_expression):
+                    yield f'Invalid license_expression: {license_expression} Keys should be lowercase.'
+
                 if licensing:
                     try:
                         licensing.parse(license_expression, validate=True, simple=True)
@@ -1547,6 +1557,16 @@ class BasicRule:
                 f'Inconsistent rule text for: {self.identifier}\n'
                 f'file://{self.text_file}'
             )
+
+
+def has_only_lower_license_keys(license_expression, licensing=Licensing()):
+    """
+    Return True if all license keys of ``license_expression`` are lowercase.
+    """
+    return all(
+        k == k.lower()
+        for k in licensing.license_keys(license_expression, unique=False)
+    )
 
 
 def check_is_list_of_strings(l):
