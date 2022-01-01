@@ -219,37 +219,88 @@ def build_spdx_symbols(licenses_db=None):
     from licensedcode.models import load_licenses
 
     licenses_db = licenses_db or load_licenses()
-    symbols_by_spdx_key = {}
 
-    for lic in licenses_db.values():
+    licenses_by_spdx_key = get_licenses_by_spdx_key(
+        licenses=licenses_db.values(),
+        include_deprecated=False,
+        lowercase_keys=True,
+        include_other_spdx_license_keys=True,
+    )
+
+    return {
+        spdx: LicenseSymbolLike(lic)
+        for spdx, lic in licenses_by_spdx_key.items()
+    }
+
+
+def get_licenses_by_spdx_key(
+    licenses=None,
+    include_deprecated=False,
+    lowercase_keys=True,
+    include_other_spdx_license_keys=False,
+):
+    """
+    Return a mapping of {SPDX license id: License} where license is a License
+    object loaded from a `licenses` list of License or the standard
+    license db if not provided.
+
+    Optionally include deprecated if ``include_deprecated`` is True.
+
+
+    Optionally make the keys lowercase if ``lowercase_keys`` is True.
+
+    Optionally include the license "other_spdx_license_keys" if present and
+    ``include_other_spdx_license_keys`` is True.
+    """
+    from licensedcode.models import load_licenses
+
+    if not licenses:
+        licenses = load_licenses().values()
+
+    licenses_by_spdx_key = {}
+
+    for lic in licenses:
         if not (lic.spdx_license_key or lic.other_spdx_license_keys):
             continue
 
-        symbol = LicenseSymbolLike(lic)
         if lic.spdx_license_key:
-            slk = lic.spdx_license_key.lower()
-            existing = symbols_by_spdx_key.get(slk)
+            slk = lic.spdx_license_key
+            if lowercase_keys:
+                slk = slk.lower()
+            existing = licenses_by_spdx_key.get(slk)
+            if existing and not lic.is_deprecated:
+                key = lic.key
+                # temp hack for wharty ICU key!!
+                if slk not in ('icu', 'ICU',):
+                    raise ValueError(
+                        f'Duplicated SPDX license key: {slk!r} defined in '
+                        f'{key!r} and {existing!r}'
+                    )
 
-            if existing:
-                raise ValueError(
-                    'Duplicated SPDX license key: %(slk)r defined in '
-                    '%(lic)r and %(existing)r' % locals())
+            if (
+                not lic.is_deprecated
+                or (lic.is_deprecated and include_deprecated)
+            ):
+                licenses_by_spdx_key[slk] = lic
 
-            symbols_by_spdx_key[slk] = symbol
+        if include_other_spdx_license_keys:
+            for other_spdx in lic.other_spdx_license_keys:
+                if not other_spdx or not other_spdx.strip():
+                    continue
+                slk = other_spdx
+                if lowercase_keys:
+                    slk = slk.lower()
 
-        for other_spdx in lic.other_spdx_license_keys:
-            if not (other_spdx and other_spdx.strip()):
-                continue
-            slk = other_spdx.lower()
-            existing = symbols_by_spdx_key.get(slk)
+                existing = licenses_by_spdx_key.get(slk)
+                if existing:
+                    raise ValueError(
+                        'Duplicated "other" SPDX license key: {slk!r} defined in '
+                        f'{key!r} and {existing!r}'
+                    )
 
-            if existing:
-                raise ValueError(
-                    'Duplicated "other" SPDX license key: %(slk)r defined '
-                    'in %(lic)r and %(existing)r' % locals())
-            symbols_by_spdx_key[slk] = symbol
+                licenses_by_spdx_key[slk] = lic
 
-    return symbols_by_spdx_key
+    return licenses_by_spdx_key
 
 
 def build_unknown_spdx_symbol(licenses_db=None):
