@@ -26,6 +26,7 @@ from commoncode import fetch
 from commoncode import fileutils
 
 import licensedcode
+from licensedcode.cache import get_licenses_by_spdx_key
 from licensedcode import models
 from licensedcode.models import load_licenses
 from licensedcode.models import License
@@ -84,38 +85,6 @@ class ScanCodeLicenses(object):
             _clean(lics)
 
 
-def get_licenses_by_spdx_key(licenses, include_other=False):
-    """
-    Return a mapping of {spdx_key: license object} given a sequence of License objects.
-    """
-    by_spdx = {}
-    for lic in licenses:
-        if not (lic.spdx_license_key or lic.other_spdx_license_keys):
-            continue
-
-        if lic.spdx_license_key:
-            slk = lic.spdx_license_key.lower()
-            existing = by_spdx.get(slk)
-            if existing and not lic.is_deprecated:
-                key = lic.key
-                # temp hack!!
-                if slk != 'icu':
-                    raise ValueError('Duplicated SPDX license key: %(slk)r defined in %(key)r and %(existing)r' % locals())
-            if not lic.is_deprecated:
-                by_spdx[slk] = lic
-
-        if include_other:
-            for other_spdx in lic.other_spdx_license_keys:
-                if not (other_spdx and other_spdx.strip()):
-                    continue
-                slk = other_spdx.lower()
-                existing = by_spdx.get(slk)
-                if existing:
-                    raise ValueError('Duplicated "other" SPDX license key: %(slk)r defined in %(key)r and %(existing)r' % locals())
-                by_spdx[slk] = lic
-
-    return by_spdx
-
 
 class ExternalLicensesSource(object):
     """
@@ -140,29 +109,30 @@ class ExternalLicensesSource(object):
         `external_base_dir` is the base directory where the License objects are
         dumped as a pair of .LICENSE/.yml files.
         """
-        external_base_dir = realpath(external_base_dir)
-        self.external_base_dir = external_base_dir
-
-        # we use four sub-directories:
-        # we store the original fetched licenses in this directory
-        self.original_dir = os.path.join(external_base_dir, 'original')
-        # we store updated external licenses in this directory
-        self.update_dir = os.path.join(external_base_dir, 'updated')
-        # we store new external licenses in this directory
-        self.new_dir = os.path.join(external_base_dir, 'new')
-
-        self.fetched = False
-        if exists(self.original_dir):
-            # fetch ONLY if the directory is non-existing
-            self.fetched = True
-        else:
-            mkdir(self.original_dir)
-
-        if not exists(self.update_dir):
-            mkdir(self.update_dir)
-
-        if not exists(self.new_dir):
-            mkdir(self.new_dir)
+        if external_base_dir:
+            external_base_dir = realpath(external_base_dir)
+            self.external_base_dir = external_base_dir
+    
+            # we use four sub-directories:
+            # we store the original fetched licenses in this directory
+            self.original_dir = os.path.join(external_base_dir, 'original')
+            # we store updated external licenses in this directory
+            self.update_dir = os.path.join(external_base_dir, 'updated')
+            # we store new external licenses in this directory
+            self.new_dir = os.path.join(external_base_dir, 'new')
+    
+            self.fetched = False
+            if exists(self.original_dir):
+                # fetch ONLY if the directory is non-existing
+                self.fetched = True
+            else:
+                mkdir(self.original_dir)
+    
+            if not exists(self.update_dir):
+                mkdir(self.update_dir)
+    
+            if not exists(self.new_dir):
+                mkdir(self.new_dir)
 
     def get_licenses(self, scancode_licenses=None, **kwargs):
         """
@@ -349,7 +319,36 @@ class SpdxSource(ExternalLicensesSource):
         """
         Yield License objects fetched from the latest SPDX license list. Use the
         latest tagged version or the `commitish` if provided.
-        If skip_oddities is True, some oddities are skipped or handled
+        If ``skip_oddities`` is True, some oddities are skipped or handled
+        specially, such as licenses with a trailing + or foreign language
+        licenses.
+        """
+        for spdx_details in self.fetch_spdx_licenses(
+            commitish=commitish, 
+            skip_oddities=skip_oddities, 
+            from_repo=from_repo,
+        ):
+
+            lic = self.build_license(
+                mapping=spdx_details,
+                scancode_licenses=scancode_licenses,
+                skip_oddities=skip_oddities,
+            )
+
+            if lic:
+                yield lic
+
+    def fetch_spdx_licenses(
+        self,
+        commitish=None,
+        skip_oddities=True,
+        from_repo=SPDX_DEFAULT_REPO,
+    ):
+        """
+        Yield mappings of SPDX License list data fetched from the SPDX license
+        list. Use the latest tagged version or the `commitish` if provided.
+
+        If ``skip_oddities`` is True, some oddities are skipped or handled
         specially, such as licenses with a trailing + or foreign language
         licenses.
         """
@@ -377,15 +376,8 @@ class SpdxSource(ExternalLicensesSource):
                     # Skip the old plus licenses. We use them in
                     # ScanCode, but they are deprecated in SPDX.
                     continue
-                details = json.loads(archive.read(path))
-                lic = self.build_license(
-                    mapping=details,
-                    scancode_licenses=scancode_licenses,
-                    skip_oddities=skip_oddities,
-                )
+                yield json.loads(archive.read(path))
 
-                if lic:
-                    yield lic
 
     def build_license(self, mapping, skip_oddities=True, scancode_licenses=None):
         """
