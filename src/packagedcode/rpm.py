@@ -15,6 +15,7 @@ import sys
 import attr
 from license_expression import Licensing
 
+from commoncode import filetype
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm import RPM
@@ -73,11 +74,6 @@ def get_rpm_tags(location, include_desc=False):
     Return an RPMtags object for the file at location or None.
     Include the long RPM description value if `include_desc` is True.
     """
-    T = typecode.contenttype.get_type(location)
-
-    if 'rpm' not in T.filetype_file.lower():
-        return
-
     with open(location, 'rb') as rpmf:
         rpm = RPM(rpmf)
         tags = {k: v for k, v in rpm.to_dict().items() if k in RPM_TAGS}
@@ -116,9 +112,8 @@ class EVR(namedtuple('EVR', 'epoch version release')):
 
 
 @attr.s()
-class RpmPackage(models.Package):
-    metafiles = ('*.spec',)
-    extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
+class RpmPackage(models.Package, models.PackageManifest):
+
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
 
@@ -127,10 +122,6 @@ class RpmPackage(models.Package):
     default_web_baseurl = None
     default_download_baseurl = None
     default_api_baseurl = None
-
-    @classmethod
-    def recognize(cls, location):
-        yield parse(location)
 
     def compute_normalized_license(self):
         _declared, detected = detect_declared_license(self.declared_license)
@@ -164,82 +155,102 @@ def get_installed_packages(root_dir, detect_licenses=False, **kwargs):
     return rpm_installed.parse_rpm_xmlish(xmlish_loc, detect_licenses=detect_licenses)
 
 
-def parse(location):
-    """
-    Return an RpmPackage object for the file at location or None if
-    the file is not an RPM.
-    """
-    rpm_tags = get_rpm_tags(location, include_desc=True)
-    return build_from_tags(rpm_tags)
+@attr.s()
+class RpmManifest(RpmPackage, models.PackageManifest):
 
+    file_patterns = ('*.spec',)
+    extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
 
-def build_from_tags(rpm_tags):
-    """
-    Return an RpmPackage object from an ``rpm_tags`` RPMtags object.
-    """
-    if TRACE: logger_debug('build_from_tags: rpm_tags', rpm_tags)
-    if not rpm_tags:
-        return
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        T = typecode.contenttype.get_type(location)
+        return (filetype.is_file(location) and 'rpm' in T.filetype_file.lower())
 
-    name = rpm_tags.name
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        rpm_tags = get_rpm_tags(location, include_desc=True)
 
-    try:
-        epoch = rpm_tags.epoch and int(rpm_tags.epoch) or None
-    except ValueError:
-        epoch = None
+        if TRACE: logger_debug('build_from_tags: rpm_tags', rpm_tags)
+        if not rpm_tags:
+            return
 
-    evr = EVR(
-        version=rpm_tags.version or None,
-        release=rpm_tags.release or None,
-        epoch=epoch).to_string()
+        name = rpm_tags.name
 
-    qualifiers = {}
-    os = rpm_tags.os
-    if os and os.lower() != 'linux':
-        qualifiers['os'] = os
+        try:
+            epoch = rpm_tags.epoch and int(rpm_tags.epoch) or None
+        except ValueError:
+            epoch = None
 
-    arch = rpm_tags.arch
-    if arch:
-        qualifiers['arch'] = arch
+        evr = EVR(
+            version=rpm_tags.version or None,
+            release=rpm_tags.release or None,
+            epoch=epoch).to_string()
 
-    source_packages = []
-    if rpm_tags.source_rpm:
-        sepoch, sname, sversion, srel, sarch = nevra.from_name(rpm_tags.source_rpm)
-        src_evr = EVR(sversion, srel, sepoch).to_string()
-        src_qualifiers = {}
-        if sarch:
-            src_qualifiers['arch'] = sarch
+        qualifiers = {}
+        os = rpm_tags.os
+        if os and os.lower() != 'linux':
+            qualifiers['os'] = os
 
-        src_purl = models.PackageURL(
-            type=RpmPackage.default_type,
-            name=sname,
-            version=src_evr,
-            qualifiers=src_qualifiers
-        ).to_string()
+        arch = rpm_tags.arch
+        if arch:
+            qualifiers['arch'] = arch
 
-        if TRACE: logger_debug('build_from_tags: source_rpm', src_purl)
-        source_packages = [src_purl]
+        source_packages = []
+        if rpm_tags.source_rpm:
+            sepoch, sname, sversion, srel, sarch = nevra.from_name(rpm_tags.source_rpm)
+            src_evr = EVR(sversion, srel, sepoch).to_string()
+            src_qualifiers = {}
+            if sarch:
+                src_qualifiers['arch'] = sarch
 
-    parties = []
+            src_purl = models.PackageURL(
+                type=RpmPackage.default_type,
+                name=sname,
+                version=src_evr,
+                qualifiers=src_qualifiers
+            ).to_string()
 
-    # TODO: also use me to craft a namespace!!!
-    # TODO: assign a namepsace to Package URL based on distro names.
-    # CentOS
-    # Fedora Project
-    # OpenMandriva Lx
-    # openSUSE Tumbleweed
-    # Red Hat
+            if TRACE: logger_debug('build_from_tags: source_rpm', src_purl)
+            source_packages = [src_purl]
 
-    if rpm_tags.distribution:
-        parties.append(models.Party(name=rpm_tags.distribution, role='distributor'))
+        parties = []
 
-    if rpm_tags.vendor:
-        parties.append(models.Party(name=rpm_tags.vendor, role='vendor'))
+        # TODO: also use me to craft a namespace!!!
+        # TODO: assign a namepsace to Package URL based on distro names.
+        # CentOS
+        # Fedora Project
+        # OpenMandriva Lx
+        # openSUSE Tumbleweed
+        # Red Hat
 
-    description = build_description(rpm_tags.summary, rpm_tags.description)
+        if rpm_tags.distribution:
+            parties.append(models.Party(name=rpm_tags.distribution, role='distributor'))
 
-    if TRACE:
-        data = dict(
+        if rpm_tags.vendor:
+            parties.append(models.Party(name=rpm_tags.vendor, role='vendor'))
+
+        description = build_description(rpm_tags.summary, rpm_tags.description)
+
+        if TRACE:
+            data = dict(
+                name=name,
+                version=evr,
+                description=description or None,
+                homepage_url=rpm_tags.url or None,
+                parties=parties,
+                declared_license=rpm_tags.license or None,
+                source_packages=source_packages,
+            )
+            logger_debug('build_from_tags: data to create a package:\n', data)
+
+        package = cls(
             name=name,
             version=evr,
             description=description or None,
@@ -248,22 +259,11 @@ def build_from_tags(rpm_tags):
             declared_license=rpm_tags.license or None,
             source_packages=source_packages,
         )
-        logger_debug('build_from_tags: data to create a package:\n', data)
 
-    package = RpmPackage(
-        name=name,
-        version=evr,
-        description=description or None,
-        homepage_url=rpm_tags.url or None,
-        parties=parties,
-        declared_license=rpm_tags.license or None,
-        source_packages=source_packages,
-    )
+        if TRACE:
+            logger_debug('build_from_tags: created package:\n', package)
 
-    if TRACE:
-        logger_debug('build_from_tags: created package:\n', package)
-
-    return package
+        yield package
 
 ############################################################################
 # FIXME: this license detection code is mostly copied from debian_copyright.py and alpine.py

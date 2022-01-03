@@ -1,82 +1,84 @@
-{
-  "type": "haxe",
-  "namespace": null,
-  "name": "haxelib",
-  "version": "3.4.0",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Haxe",
-  "description": "The haxelib client",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "contributor",
-      "name": "back2dos",
-      "email": null,
-      "url": "https://lib.haxe.org/u/back2dos"
-    },
-    {
-      "type": "person",
-      "role": "contributor",
-      "name": "ncannasse",
-      "email": null,
-      "url": "https://lib.haxe.org/u/ncannasse"
-    },
-    {
-      "type": "person",
-      "role": "contributor",
-      "name": "jason",
-      "email": null,
-      "url": "https://lib.haxe.org/u/jason"
-    },
-    {
-      "type": "person",
-      "role": "contributor",
-      "name": "Simn",
-      "email": null,
-      "url": "https://lib.haxe.org/u/Simn"
-    },
-    {
-      "type": "person",
-      "role": "contributor",
-      "name": "nadako",
-      "email": null,
-      "url": "https://lib.haxe.org/u/nadako"
-    },
-    {
-      "type": "person",
-      "role": "contributor",
-      "name": "andyli",
-      "email": null,
-      "url": "https://lib.haxe.org/u/andyli"
-    }
-  ],
-  "keywords": [
-    "haxelib",
-    "core"
-  ],
-  "homepage_url": "https://lib.haxe.org/documentation/",
-  "download_url": "https://lib.haxe.org/p/haxelib/3.4.0/download/",
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "gpl-1.0-plus",
-  "declared_license": "GPL",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:haxe/haxelib@3.4.0",
-  "repository_homepage_url": "https://lib.haxe.org/p/haxelib",
-  "repository_download_url": "https://lib.haxe.org/p/haxelib/3.4.0/download/",
-  "api_data_url": null
-}
+[
+  {
+    "type": "haxe",
+    "namespace": null,
+    "name": "haxelib",
+    "version": "3.4.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Haxe",
+    "description": "The haxelib client",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "contributor",
+        "name": "back2dos",
+        "email": null,
+        "url": "https://lib.haxe.org/u/back2dos"
+      },
+      {
+        "type": "person",
+        "role": "contributor",
+        "name": "ncannasse",
+        "email": null,
+        "url": "https://lib.haxe.org/u/ncannasse"
+      },
+      {
+        "type": "person",
+        "role": "contributor",
+        "name": "jason",
+        "email": null,
+        "url": "https://lib.haxe.org/u/jason"
+      },
+      {
+        "type": "person",
+        "role": "contributor",
+        "name": "Simn",
+        "email": null,
+        "url": "https://lib.haxe.org/u/Simn"
+      },
+      {
+        "type": "person",
+        "role": "contributor",
+        "name": "nadako",
+        "email": null,
+        "url": "https://lib.haxe.org/u/nadako"
+      },
+      {
+        "type": "person",
+        "role": "contributor",
+        "name": "andyli",
+        "email": null,
+        "url": "https://lib.haxe.org/u/andyli"
+      }
+    ],
+    "keywords": [
+      "haxelib",
+      "core"
+    ],
+    "homepage_url": "https://lib.haxe.org/documentation/",
+    "download_url": "https://lib.haxe.org/p/haxelib/3.4.0/download/",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "gpl-1.0-plus",
+    "declared_license": "GPL",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:haxe/haxelib@3.4.0",
+    "repository_homepage_url": "https://lib.haxe.org/p/haxelib",
+    "repository_download_url": "https://lib.haxe.org/p/haxelib/3.4.0/download/",
+    "api_data_url": null
+  }
+]

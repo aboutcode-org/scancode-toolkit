@@ -1,230 +1,232 @@
-{
-  "type": "pypi",
-  "namespace": null,
-  "name": "scancode-toolkit",
-  "version": "1.5.0",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Python",
-  "description": "ScanCode is a tool to scan code for license, copyright and other interesting facts.",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "ScanCode",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [
-    "license",
-    "filetype",
-    "urn",
-    "date",
-    "codec",
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Developers",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 2.7",
-    "Topic :: Utilities"
-  ],
-  "homepage_url": "https://github.com/nexB/scancode-toolkit",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "(((apache-2.0 AND scancode-acknowledgment) AND cc0-1.0) AND unknown) AND apache-2.0 AND (free-unknown AND unknown)",
-  "declared_license": {
-    "license": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
-    "classifiers": [
-      "License :: OSI Approved :: Apache Software License",
-      "License :: OSI Approved :: CC0"
-    ]
-  },
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:pypi/py2-ipaddress",
-      "requirement": "<3.0,>=2.0",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "scancode-toolkit",
+    "version": "1.5.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "ScanCode is a tool to scan code for license, copyright and other interesting facts.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "ScanCode",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "license",
+      "filetype",
+      "urn",
+      "date",
+      "codec",
+      "Development Status :: 4 - Beta",
+      "Intended Audience :: Developers",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 2.7",
+      "Topic :: Utilities"
+    ],
+    "homepage_url": "https://github.com/nexB/scancode-toolkit",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "(((apache-2.0 AND scancode-acknowledgment) AND cc0-1.0) AND unknown) AND apache-2.0 AND (free-unknown AND unknown)",
+    "declared_license": {
+      "license": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
+      "classifiers": [
+        "License :: OSI Approved :: Apache Software License",
+        "License :: OSI Approved :: CC0"
+      ]
     },
-    {
-      "purl": "pkg:pypi/url",
-      "requirement": ">=0.1.4",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/publicsuffix2",
-      "requirement": null,
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/nltk",
-      "requirement": "<3.0.0,>=2.0b4",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/patch",
-      "requirement": "<1.15,>=1.14.2",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/bz2file",
-      "requirement": ">=0.98",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/pyyaml",
-      "requirement": "<4.0,>=3.0",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/beautifulsoup",
-      "requirement": "<4.0.0,>=3.2.0",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/beautifulsoup4",
-      "requirement": "<5.0.0,>=4.3.0",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/html5lib",
-      "requirement": null,
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/six",
-      "requirement": null,
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/pygments",
-      "requirement": "<3.0.0,>=2.0.0",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/pdfminer",
-      "requirement": ">=20140328",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/chardet",
-      "requirement": "<3.0.0,>=2.1.1",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/binaryornot",
-      "requirement": ">=0.4.0",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/click",
-      "requirement": "<5.0.0,>=4.0.0",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/jinja2",
-      "requirement": "<3.0.0,>=2.7.0",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/markupsafe",
-      "requirement": ">=0.23",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/colorama",
-      "requirement": null,
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/about-code-tool",
-      "requirement": ">=0.9.0",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pypi/requests",
-      "requirement": "<3.0.0,>=2.7.0",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:pypi/scancode-toolkit@1.5.0",
-  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-  "repository_download_url": "https://pypi.org/packages/source/s/scancode-toolkit/scancode-toolkit-1.5.0.tar.gz",
-  "api_data_url": "https://pypi.org/pypi/scancode-toolkit/1.5.0/json"
-}
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/py2-ipaddress",
+        "requirement": "<3.0,>=2.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/url",
+        "requirement": ">=0.1.4",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/publicsuffix2",
+        "requirement": null,
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/nltk",
+        "requirement": "<3.0.0,>=2.0b4",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/patch",
+        "requirement": "<1.15,>=1.14.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/bz2file",
+        "requirement": ">=0.98",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/pyyaml",
+        "requirement": "<4.0,>=3.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/beautifulsoup",
+        "requirement": "<4.0.0,>=3.2.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/beautifulsoup4",
+        "requirement": "<5.0.0,>=4.3.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/html5lib",
+        "requirement": null,
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/six",
+        "requirement": null,
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/pygments",
+        "requirement": "<3.0.0,>=2.0.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/pdfminer",
+        "requirement": ">=20140328",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/chardet",
+        "requirement": "<3.0.0,>=2.1.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/binaryornot",
+        "requirement": ">=0.4.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/click",
+        "requirement": "<5.0.0,>=4.0.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/jinja2",
+        "requirement": "<3.0.0,>=2.7.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/markupsafe",
+        "requirement": ">=0.23",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/colorama",
+        "requirement": null,
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/about-code-tool",
+        "requirement": ">=0.9.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/requests",
+        "requirement": "<3.0.0,>=2.7.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:pypi/scancode-toolkit@1.5.0",
+    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_download_url": "https://pypi.org/packages/source/s/scancode-toolkit/scancode-toolkit-1.5.0.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/scancode-toolkit/1.5.0/json"
+  }
+]

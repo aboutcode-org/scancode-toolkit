@@ -1,64 +1,66 @@
-{
-  "type": "pypi",
-  "namespace": null,
-  "name": "boolean.py",
-  "version": "1.2",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Python",
-  "description": "Boolean Algreba",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Sebastian Kraemer",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [
-    "boolean expression",
-    "boolean algebra",
-    "logic",
-    "expression parser",
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Developers",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 2.7",
-    "Programming Language :: Python :: 3",
-    "Topic :: Scientific/Engineering :: Mathematics",
-    "Topic :: Software Development :: Compilers",
-    "Topic :: Software Development :: Libraries",
-    "Topic :: Utilities"
-  ],
-  "homepage_url": "https://github.com/bastikr/boolean.py",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "bsd-new",
-  "declared_license": {
-    "license": "revised BSD license",
-    "classifiers": [
-      "License :: OSI Approved :: BSD License"
-    ]
-  },
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:pypi/boolean.py@1.2",
-  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-  "repository_download_url": "https://pypi.org/packages/source/b/boolean.py/boolean.py-1.2.tar.gz",
-  "api_data_url": "https://pypi.org/pypi/boolean.py/1.2/json"
-}
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "boolean.py",
+    "version": "1.2",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Boolean Algreba",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Sebastian Kraemer",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "boolean expression",
+      "boolean algebra",
+      "logic",
+      "expression parser",
+      "Development Status :: 4 - Beta",
+      "Intended Audience :: Developers",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Topic :: Scientific/Engineering :: Mathematics",
+      "Topic :: Software Development :: Compilers",
+      "Topic :: Software Development :: Libraries",
+      "Topic :: Utilities"
+    ],
+    "homepage_url": "https://github.com/bastikr/boolean.py",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "bsd-new",
+    "declared_license": {
+      "license": "revised BSD license",
+      "classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ]
+    },
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:pypi/boolean.py@1.2",
+    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_download_url": "https://pypi.org/packages/source/b/boolean.py/boolean.py-1.2.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/boolean.py/1.2/json"
+  }
+]

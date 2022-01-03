@@ -1,51 +1,53 @@
-{
-  "type": "nuget",
-  "namespace": null,
-  "name": "Microsoft.AspNet.Mvc",
-  "version": "6.0.0-beta7",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": null,
-  "description": "ASP.NET MVC is a web framework that gives you a powerful, patterns-based way to build dynamic websites and Web APIs. ASP.NET MVC enables a clean separation of concerns and gives you full control over markup.",
-  "release_date": null,
-  "parties": [
-    {
-      "type": null,
-      "role": "author",
-      "name": "Microsoft",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": null,
-      "role": "owner",
-      "name": "Microsoft",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": "http://www.asp.net/",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": "Copyright \u00a9 Microsoft Corporation",
-  "license_expression": "ms-net-library",
-  "declared_license": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:nuget/Microsoft.AspNet.Mvc@6.0.0-beta7",
-  "repository_homepage_url": "https://www.nuget.org/packages/Microsoft.AspNet.Mvc/6.0.0-beta7",
-  "repository_download_url": "https://www.nuget.org/api/v2/package/Microsoft.AspNet.Mvc/6.0.0-beta7",
-  "api_data_url": "https://api.nuget.org/v3/registration3/microsoft.aspnet.mvc/6.0.0-beta7.json"
-}
+[
+  {
+    "type": "nuget",
+    "namespace": null,
+    "name": "Microsoft.AspNet.Mvc",
+    "version": "6.0.0-beta7",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "ASP.NET MVC is a web framework that gives you a powerful, patterns-based way to build dynamic websites and Web APIs. ASP.NET MVC enables a clean separation of concerns and gives you full control over markup.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "author",
+        "name": "Microsoft",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "owner",
+        "name": "Microsoft",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "http://www.asp.net/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": "Copyright \u00a9 Microsoft Corporation",
+    "license_expression": "ms-net-library",
+    "declared_license": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:nuget/Microsoft.AspNet.Mvc@6.0.0-beta7",
+    "repository_homepage_url": "https://www.nuget.org/packages/Microsoft.AspNet.Mvc/6.0.0-beta7",
+    "repository_download_url": "https://www.nuget.org/api/v2/package/Microsoft.AspNet.Mvc/6.0.0-beta7",
+    "api_data_url": "https://api.nuget.org/v3/registration3/microsoft.aspnet.mvc/6.0.0-beta7.json"
+  }
+]

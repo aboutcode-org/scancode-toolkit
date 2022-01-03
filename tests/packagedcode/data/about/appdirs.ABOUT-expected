@@ -1,46 +1,48 @@
-{
-  "type": "about",
-  "namespace": null,
-  "name": "appdirs",
-  "version": "1.4.3",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": null,
-  "description": null,
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "owner",
-      "name": "ActiveState",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": "https://pypi.python.org/pypi/appdirs",
-  "download_url": "https://pypi.python.org/packages/56/eb/810e700ed1349edde4cbdc1b2a21e28cdf115f9faf263f6bbf8447c1abf3/appdirs-1.4.3-py2.py3-none-any.whl#md5=9ed4b51c9611775c3078b3831072e153",
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": "Copyright (c) 2010 ActiveState Software Inc.",
-  "license_expression": "mit",
-  "declared_license": "mit",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {
-    "about_resource": "appdirs-1.4.3-py2.py3-none-any.whl"
-  },
-  "purl": "pkg:about/appdirs@1.4.3",
-  "repository_homepage_url": null,
-  "repository_download_url": null,
-  "api_data_url": null
-}
+[
+  {
+    "type": "about",
+    "namespace": null,
+    "name": "appdirs",
+    "version": "1.4.3",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": null,
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "owner",
+        "name": "ActiveState",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://pypi.python.org/pypi/appdirs",
+    "download_url": "https://pypi.python.org/packages/56/eb/810e700ed1349edde4cbdc1b2a21e28cdf115f9faf263f6bbf8447c1abf3/appdirs-1.4.3-py2.py3-none-any.whl#md5=9ed4b51c9611775c3078b3831072e153",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": "Copyright (c) 2010 ActiveState Software Inc.",
+    "license_expression": "mit",
+    "declared_license": "mit",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {
+      "about_resource": "appdirs-1.4.3-py2.py3-none-any.whl"
+    },
+    "purl": "pkg:about/appdirs@1.4.3",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

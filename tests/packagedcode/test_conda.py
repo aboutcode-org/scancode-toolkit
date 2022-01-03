@@ -27,11 +27,15 @@ class TestConda(PackageTester):
         results = conda.get_yaml_data(test_file)
         assert  list(results.items())[0] == (u'package', dict([(u'name', u'abeona'), (u'version', u'0.45.0')]))
 
+    def test_condayml_is_manifest(self):
+        test_file = self.get_test_loc('conda/meta.yaml')
+        assert conda.Condayml.is_manifest(test_file)
+
     def test_parse(self):
         test_file = self.get_test_loc('conda/meta.yaml')
-        package = conda.parse(test_file)
+        package = conda.Condayml.recognize(test_file)
         expected_loc = self.get_test_loc('conda/meta.yaml.expected.json')
-        self.check_package(package, expected_loc, regen=False)
+        self.check_packages(package, expected_loc, regen=True)
 
     def test_root_dir(self):
         test_file = self.get_test_loc('conda/requests-kerberos-0.8.0-py35_0.tar.bz2-extract/info/recipe.tar-extract/recipe/meta.yaml')
