@@ -3381,7 +3381,7 @@ def candidate_lines(numbered_lines):
 # this catches tags but not does not remove the text inside tags
 remove_tags = re.compile(
     r'<'
-     r'[(--)\?\!\%\/]?'
+     r'[(-\-)\?\!\%\/]?'
      r'[a-gi-vx-zA-GI-VX-Z][a-zA-Z#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]*'
      r'[a-zA-Z0-9#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]+'
     r'\/?>',
