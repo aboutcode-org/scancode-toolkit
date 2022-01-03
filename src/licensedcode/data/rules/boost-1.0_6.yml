@@ -1,7 +1,6 @@
 license_expression: boost-1.0
 is_license_text: yes
 minimum_coverage: 70
-notes: |
- Boost with SPDX seen here https://raw.githubusercontent.com/pocoproject/poco/develop/LICENSE
+notes: Boost with SPDX seen here https://raw.githubusercontent.com/pocoproject/poco/develop/LICENSE
 ignorable_urls:
     - http://spdx.org/licenses/

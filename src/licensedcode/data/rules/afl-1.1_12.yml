@@ -1,0 +1,7 @@
+license_expression: afl-1.1
+is_license_text: yes
+minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright (c) 2002 Lawrence E. Rosen
+ignorable_holders:
+    - Lawrence E. Rosen

@@ -4,5 +4,5 @@ referenced_filenames:
     - LGPL2.1
     - AL2.0
 ignorable_urls:
-    - https://www.apache.org/licenses/
     - http://www.gnu.org/licenses/licenses.html
+    - https://www.apache.org/licenses/

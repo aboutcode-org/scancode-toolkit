@@ -18,8 +18,8 @@ matches:
     start_line: 22
     end_line: 44
     matcher: 1-hash
-    rule_length: '199'
-    matched_length: '199'
+    rule_length: 200
+    matched_length: 200
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: x11-fsf.LICENSE

@@ -3,6 +3,5 @@ is_license_notice: yes
 relevance: 100
 minimum_coverage: 99
 ignorable_urls:
-  - https://raw.githubusercontent.com/gionkunz/chartist-js/master/LICENSE-MIT
-  - https://raw.githubusercontent.com/gionkunz/chartist-js/master/LICENSE-WTFPL
-
+    - https://raw.githubusercontent.com/gionkunz/chartist-js/master/LICENSE-MIT
+    - https://raw.githubusercontent.com/gionkunz/chartist-js/master/LICENSE-WTFPL

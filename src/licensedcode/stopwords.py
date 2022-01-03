@@ -53,8 +53,6 @@ STOPWORDS = frozenset({
     'script',
     'rel',
 
-# debian copyright files <s> tags
-    's',
 
 # comment line markers
     # batch files
@@ -114,7 +112,6 @@ STOPWORDS = frozenset({
     'width',
 
     # seen in Perl PODs
-    'f',
     'head1',
     'head2',
     'head3',

@@ -896,7 +896,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         matches = idx.match(location=query_loc)
         assert len(matches) == 1
         match = matches[0]
-        expected = Span(0, 941) | Span(943, 1723)
+        expected = Span(0, 949)|Span(951, 1739)
         assert match.qspan == expected
         assert match.matcher == match_seq.MATCH_SEQ
 

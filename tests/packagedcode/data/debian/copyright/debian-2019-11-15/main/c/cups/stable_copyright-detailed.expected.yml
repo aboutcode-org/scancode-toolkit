@@ -61,8 +61,8 @@ matches:
     start_line: 51
     end_line: 107
     matcher: 1-hash
-    rule_length: 355
-    matched_length: 355
+    rule_length: 356
+    matched_length: 356
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: cups_6.RULE
@@ -134,8 +134,8 @@ matches:
     start_line: 110
     end_line: 166
     matcher: 1-hash
-    rule_length: 356
-    matched_length: 356
+    rule_length: 357
+    matched_length: 357
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: cups_4.RULE

@@ -275,8 +275,8 @@ matches:
     start_line: 148
     end_line: 169
     matcher: 1-hash
-    rule_length: 204
-    matched_length: 204
+    rule_length: 210
+    matched_length: 210
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: xfree86-1.0_2.RULE
@@ -308,4 +308,4 @@ matches:
       Except as contained in this notice, the name of the copyright holder(s) and
       author(s) shall not be used in advertising or otherwise to promote the sale,
       use or other dealings in this Software without prior written authorization from
-      the copyright holder(s) and author(
+      the copyright holder(s) and author(s).

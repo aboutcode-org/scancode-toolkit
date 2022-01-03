@@ -316,8 +316,8 @@ matches:
     start_line: 240
     end_line: 272
     matcher: 1-hash
-    rule_length: 210
-    matched_length: 210
+    rule_length: 211
+    matched_length: 211
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: public-domain_361.RULE

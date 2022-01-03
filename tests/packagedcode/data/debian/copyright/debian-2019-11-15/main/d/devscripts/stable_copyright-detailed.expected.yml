@@ -266,8 +266,8 @@ matches:
     start_line: 363
     end_line: 551
     matcher: 3-seq
-    rule_length: 1351
-    matched_length: 1350
+    rule_length: 1354
+    matched_length: 1353
     match_coverage: '99.93'
     rule_relevance: 100
     identifier: artistic-2.0_36.RULE
@@ -830,8 +830,8 @@ matches:
     start_line: 610
     end_line: 612
     matcher: 1-hash
-    rule_length: 32
-    matched_length: 32
+    rule_length: 33
+    matched_length: 33
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: public-domain-disclaimer_16.RULE

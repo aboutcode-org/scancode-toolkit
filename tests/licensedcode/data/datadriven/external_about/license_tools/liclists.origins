@@ -1,0 +1,14 @@
+date: 2021-12-30
+download_url: https://raw.githubusercontent.com/rubygems/rubygems/master/lib/rubygems/util/licenses.rb
+date: 2021-12-30
+download_url: https://raw.githubusercontent.com/ehuss/license-exprs/2aa66890f3d822bb9a2fb87afc88f850ebd08a6d/src/spdx.rs
+date: 2021-12-30
+download_url: https://raw.githubusercontent.com/brainhubeu/license-auditor/499b17727d269877cb07663237d3faa7c9a3d150/license/blacklist.js
+date: 2021-12-30
+download_url: https://github.com/brainhubeu/license-auditor/blob/master/license/licenses.js
+date: 2022-01-01
+download_url: https://raw.githubusercontent.com/haskell/cabal/00a2351789a460700a2567eb5ecc42cca0af913f/Cabal/src/Distribution/SPDX/LicenseId.hs
+date: 2022-01-02
+download_url: https://raw.githubusercontent.com/brainhubeu/license-auditor/master/license/licenses.js
+date: 2022-01-03
+download_url: https://raw.githubusercontent.com/NuGet/NuGet.Client/bc11fd124fd87b55532742db2a56f4a324288bcb/src/NuGet.Core/NuGet.Packaging/Licenses/NuGetLicenseData.cs

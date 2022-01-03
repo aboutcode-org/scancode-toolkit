@@ -5,5 +5,4 @@ referenced_filenames:
     - LICENSE.txt
 notes: https://github.com/nexB/scancode-toolkit/issues/2675
 ignorable_urls:
-  - http://opensource.org/licenses/MIT
-
+    - http://opensource.org/licenses/MIT

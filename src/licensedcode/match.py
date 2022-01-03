@@ -17,8 +17,8 @@ from licensedcode import MAX_DIST
 from licensedcode import query
 from licensedcode.spans import Span
 from licensedcode.stopwords import STOPWORDS
-from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import index_tokenizer
+from licensedcode.tokenize import matched_query_text_tokenizer
 
 """
 LicenseMatch data structure and processing.
@@ -52,7 +52,9 @@ TRACE_FILTER_NON_CONTINUOUS = False
 TRACE_FILTER_SINGLE_WORD_BINARY = False
 TRACE_SET_LINES = False
 TRACE_KEY_PHRASES = False
-TRACE_REGIONS = True
+TRACE_REGIONS = False
+TRACE_FILTER_LICENSE_LIST = False
+TRACE_FILTER_LICENSE_LIST_DETAILED = False
 
 TRACE_MATCHED_TEXT = False
 TRACE_MATCHED_TEXT_DETAILS = False
@@ -84,6 +86,8 @@ if (TRACE
     or TRACE_FILTER_SINGLE_WORD_BINARY
     or TRACE_KEY_PHRASES
     or TRACE_REGIONS
+    or TRACE_FILTER_LICENSE_LIST
+    or TRACE_FILTER_LICENSE_LIST_DETAILED
 ):
 
     use_print = True
@@ -133,6 +137,7 @@ class DiscardReason(IntEnum):
     NON_CONTINUOUS = 10
     FALSE_POSITIVE = 11
     BELOW_MIN_SCORE = 12
+    LICENSE_LIST = 13
 
 
 @attr.s(slots=True, eq=False, order=False, repr=False)
@@ -253,10 +258,11 @@ class LicenseMatch(object):
         spans = spans
         thresh = thresh
         return (
-            f'LicenseMatch: {self.matcher!r}, '
-            f'lines={self.lines()!r}, '
-            f'{rule_id}, '
+            f'LicenseMatch: '
             f'{self.rule.license_expression!r}, '
+            f'lines={self.lines()!r}, '
+            f'matcher={self.matcher!r}, '
+            f'rid={rule_id}, '
             f'sc={self.score()!r}, '
             f'cov={self.coverage()!r}, '
             f'len={self.len()}, '
@@ -773,7 +779,7 @@ def set_matched_lines(matches, line_by_pos):
 def merge_matches(matches, max_dist=None, trace=TRACE_MERGE):
     """
     Return a list of merged LicenseMatch matches given a `matches` list of
-    LicenseMatch. Merging is a "lossless" opretaion that combines two or more
+    LicenseMatch. Merging is a "lossless" operation that combines two or more
     matches to the same rule and that are in sequence of increasing query and
     index positions in a single new match.
     """
@@ -984,7 +990,7 @@ def filter_contained_matches(
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a `matches` list of LicenseMatch by removing
-    matche that are contained in larger matches.
+    matches that are contained in larger matches.
 
     For instance a match entirely contained in another bigger match is removed.
     When more than one matched position matches the same license(s), only one
@@ -2132,6 +2138,292 @@ def get_matching_regions(
     return regions
 
 
+# min length for a short sequence of false positives
+MIN_SHORT_FP_LIST_LENGTH = 15
+
+# min proportion of the matches with unique license expression
+MIN_UNIQUE_LICENSES_PROPORTION = 1 / 3
+
+# min length for a long sequence of false positives
+MIN_LONG_FP_LIST_LENGTH = 150
+
+
+def filter_false_positive_license_lists_matches(
+    matches,
+    min_matches=MIN_SHORT_FP_LIST_LENGTH,
+    min_matches_long=MIN_LONG_FP_LIST_LENGTH,
+    min_unique_licenses_proportion=MIN_UNIQUE_LICENSES_PROPORTION,
+    reason=DiscardReason.LICENSE_LIST,
+    trace=TRACE_FILTER_LICENSE_LIST,
+):
+    """
+    Return a filtered list of kept LicenseMatch matches and a list of
+    discardable matches given a `matches` list of LicenseMatch by checking false
+    positive status for matches to lists of licenses ids such as lists of SPDX
+    license ids found in license-related tools code or data files.
+    """
+
+    # do not bother if there are not enough matches
+    len_matches = len(matches)
+    if len_matches < min_matches:
+        return matches, []
+
+    # TODO: adjust arguments based on well-known filenames from SPDX tools
+    # for instance hackage needs 1/6 licenses as
+    # use simplified procedure if there are many matches
+    if len_matches > min_matches_long:
+        if is_list_of_false_positives(
+            matches=matches,
+            min_matches=min_matches_long,
+            min_candidate_proportion=0.95,
+            min_unique_licenses=min_matches_long,
+            min_unique_licenses_proportion=min_unique_licenses_proportion,
+            trace=trace,
+        ):
+
+            if trace:
+                print('filter_false_positive_license_lists_matches: ALL FP!')
+
+            # discard all matches
+            return [], matches
+
+    # other, use detailed procedure where we try to identify sub-sequences
+    # of false positives matches
+
+    if trace:
+        print('filter_false_positive_license_lists_matches: '
+              'number of matches to process:', len_matches)
+        print('initial matches')
+        for m in matches:
+            print('  ', m)
+
+    kept = []
+    kept_append = kept.append
+    kept_extend = kept.extend
+    discarded = []
+    discarded_extend = discarded.extend
+
+    # a list of discardable candidates contiguous matches
+    discardable_candidates = []
+
+    # max distance between two matches
+    max_distance = 10
+
+    for match in matches:
+        if trace:
+            print('  -----------------------------------------------------------')
+            print('  PROCESSING MATCH:', match)
+
+        is_candidate = is_candidate_false_positive(match)
+
+        if is_candidate:
+            if trace: print('  IS CANDIDATE')
+            if not discardable_candidates:
+                if trace: print('    FIRST DISCARDABLE APPEND')
+                discardable_candidates.append(match)
+                continue
+
+            previous = discardable_candidates[-1]
+            is_within_distance = previous.qdistance_to(match) <= max_distance
+            if is_within_distance:
+                if trace: print('    CLOSE ENOUGH:', previous.qdistance_to(match))
+                discardable_candidates.append(match)
+
+            else:
+                if trace: print('    NOT CLOSE ENOUGH:', previous.qdistance_to(match))
+
+                # is_candidate but not close enough
+                if is_list_of_false_positives(discardable_candidates):
+                    if trace: print('      IS FP: EXTEND DISCARD')
+                    discarded_extend(discardable_candidates)
+                else:
+                    if trace: print('      IS NOT FP: EXTEND KEEP')
+                    kept_extend(discardable_candidates)
+
+                if trace: print('    IS NOT FP: NEW FIRST')
+                discardable_candidates.clear()
+                discardable_candidates.append(match)
+
+        else:
+            if trace: print('  NOT CANDIDATE')
+            # not is_candidate:
+            if is_list_of_false_positives(discardable_candidates):
+                if trace: print('      IS FP: EXTEND DISCARD')
+                discarded_extend(discardable_candidates)
+            else:
+                if trace: print('      IS NOT FP: EXTEND KEEP')
+                kept_extend(discardable_candidates)
+
+            if trace: print('    IS NOT CAN: KEEP CURRENT')
+            discardable_candidates.clear()
+            kept_append(match)
+
+    # if we have some left, process them
+    if discardable_candidates:
+
+        if is_list_of_false_positives(discardable_candidates):
+            if trace: print(' left overdiscardable_candidates: is_list_of_false_positives, discarded')
+            discarded_extend(discardable_candidates)
+        else:
+            if trace: print(' left overdiscardable_candidates: NOT is_list_of_false_positives, kept')
+            kept_extend(discardable_candidates)
+
+    for disc in discarded:
+        disc.discard_reason = reason
+
+    if trace:
+        print('filter_false_positive_license_lists_matches: final KEPT matches')
+        for m in kept:
+            print('  ', m)
+        print('filter_false_positive_license_lists_matches: final DISCARDED matches')
+        for m in discarded:
+            print('  ', m)
+
+    return kept, discarded
+
+
+def count_unique_licenses(matches):
+    """
+    Return a count of unique license expression
+    """
+    return len(set(m.rule.license_expression for m in matches))
+
+
+# min number of unique license expression across matches
+MIN_UNIQUE_LICENSES = MIN_SHORT_FP_LIST_LENGTH * MIN_UNIQUE_LICENSES_PROPORTION
+
+# Most matches are on a single line, only a few are not
+# e.g. qregion_lines_len is 1
+
+
+def is_list_of_false_positives(
+    matches,
+    min_matches=MIN_SHORT_FP_LIST_LENGTH,
+    min_unique_licenses=MIN_UNIQUE_LICENSES,
+    min_unique_licenses_proportion=MIN_UNIQUE_LICENSES_PROPORTION,
+    min_candidate_proportion=0,
+    trace=TRACE_FILTER_LICENSE_LIST,
+):
+    """
+    Return True if all LicenseMatch in the ``matches`` list form a proper false
+    positive license list sequence.
+
+    Check that:
+    - there are at least ``min_matches`` matches
+
+    - there is at least ``min_unique_licenses_proportion`` proportion of the
+      matches with unique license expression. If all matches have a unique
+      license expression, then this proportion is "1". If each license
+      expression is repeated three times in the ``matches``, then the proportion
+      is 1/3.
+
+    - if there is not at least ``min_unique_licenses_proportion`` there are at
+      least ``min_unique_licenses`` unique license expressions.
+
+    - there is at least ``min_candidate_proportion`` proportion of matches with
+      "is_candidate_false_positive()" returning True . This is a float between 0
+      and 1. The check is skipped if the value is '0'.
+    """
+    if not matches:
+        return [], []
+
+    len_matches = len(matches)
+
+    is_long_enough_sequence = len_matches >= min_matches
+
+    if trace:
+        print('      ========================================================')
+        print('      is_long_enough_sequence:', is_long_enough_sequence)
+
+    len_unique_licenses = count_unique_licenses(matches)
+    has_enough_licenses = (
+        len_unique_licenses / len_matches > min_unique_licenses_proportion
+    )
+    if trace:
+        print(
+            '      has_enough_licenses:', has_enough_licenses,
+            'min_unique_licenses_proportion:', min_unique_licenses_proportion,
+            'len_unique_licenses', len_unique_licenses,
+            'len_matches:', len_matches,
+            'len(unique_expressions)/len_matches:', len_unique_licenses / len_matches
+        )
+
+    if not has_enough_licenses:
+        if trace:
+            print(
+                '      NOT has_enough_licenses:', has_enough_licenses,
+                'but len_unique_licenses >= min_unique_licenses:',
+                len_unique_licenses, '>=', min_unique_licenses,
+            )
+        has_enough_licenses = len_unique_licenses >= min_unique_licenses
+
+    has_enough_candidates = True
+    if min_candidate_proportion:
+        candidates_count = len([
+            m for m in matches
+            if is_candidate_false_positive(m)
+        ])
+        has_enough_candidates = (
+            (candidates_count / len_matches)
+            > min_candidate_proportion
+        )
+        if trace:
+            print(
+                '      has_enough_candidates:', has_enough_candidates,
+                'min_candidate_proportion:', min_candidate_proportion,
+                'candidates_count:', candidates_count,
+                'len_matches:', len_matches,
+                'candidates_count / len_matches:', candidates_count / len_matches,
+            )
+    else:
+        if trace:
+            print('      has_enough_licenses    :', has_enough_licenses)
+
+    is_fp = (
+        is_long_enough_sequence
+        and has_enough_licenses
+        and has_enough_candidates
+    )
+    if trace:
+        print('      is_list_of_false_positives    :', is_fp)
+        print('      ========================================================')
+
+    return is_fp
+
+
+def is_candidate_false_positive(
+    match,
+    max_length=20,
+    trace=TRACE_FILTER_LICENSE_LIST_DETAILED,
+):
+    """
+    Return True if the ``match`` LicenseMatch is a candidate false positive
+    license list match.
+    """
+    is_candidate = (
+        # only tags or refs,
+        (match.rule.is_license_reference or match.rule.is_license_tag)
+        # but not tags that are SPDX license identifiers
+        and not match.matcher == '1-spdx-id'
+        # exact matches only
+        and match.coverage() == 100
+
+        # not too long
+        and match.len() <= max_length
+    )
+
+    if trace:
+        print('  MATCH:', match)
+        print('  is_candidate_false_positive:', is_candidate,
+              'is_license_reference:', match.rule.is_license_reference,
+              'is_license_tag:', match.rule.is_license_tag,
+              'coverage:', match.coverage(),
+              'match.len():', match.len(), '<=', 'max_length:', max_length,
+              ':', match.len() <= max_length
+          )
+    return is_candidate
+
+
 def refine_matches(
     matches,
     query=None,
@@ -2250,6 +2542,11 @@ def refine_matches(
         matches, discarded = filter_false_positive_matches(matches)
         all_discarded_extend(discarded)
         _log(matches, discarded, 'TRUE POSITIVE')
+
+        # license listings are false positive-like
+        matches, discarded = filter_false_positive_license_lists_matches(matches)
+        all_discarded_extend(discarded)
+        _log(matches, discarded, 'NOT A LICENSE LIST')
 
     if min_score:
         matches, discarded = filter_matches_below_minimum_score(matches, min_score=min_score)

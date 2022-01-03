@@ -7,8 +7,8 @@ matches:
     start_line: 7
     end_line: 332
     matcher: 2-aho
-    rule_length: 2958
-    matched_length: 2958
+    rule_length: 2975
+    matched_length: 2975
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: proprietary-license_521.RULE

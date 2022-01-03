@@ -20,6 +20,7 @@ from time import time
 from intbitset import intbitset
 
 from licensedcode import SMALL_RULE
+from licensedcode import TINY_RULE
 from licensedcode.legalese import common_license_words
 from licensedcode import match
 from licensedcode import match_aho
@@ -362,7 +363,8 @@ class LicenseIndex(object):
             # "weak" rules can only be matched with an automaton.
             is_weak = True
 
-            # note down any key phrase spans that must be present for the rule to pass through refinement
+            # note down any key phrase spans that must be present for the rule
+            # to pass through refinement
             rule.key_phrase_spans = list(rule.key_phrases())
 
             for rts in rule.tokens():
@@ -377,6 +379,8 @@ class LicenseIndex(object):
                     is_weak = False
 
                 rule_token_ids_append(rtid)
+
+            is_tiny = rule.length < TINY_RULE
 
             # build hashes index and check for duplicates rule texts
             rule_hash = match_hash_index_hash(rule_token_ids)
@@ -410,8 +414,18 @@ class LicenseIndex(object):
 
             # Some rules that cannot be matched as a sequence are "weak" rules
             # or can require to be matched only as a continuous sequence of
-            # tokens
-            if not (is_weak or rule.is_continuous):
+            # tokens. This includes, tiny, is_continuous or is_license_reference
+            # rules. We skip adding these to the data structures used for
+            # sequence matching.
+            can_match_as_sequence = not (
+                is_weak
+                or is_tiny
+                or rule.is_continuous
+                or (rule.is_small
+                    and (rule.is_license_reference or rule.is_license_tag))
+            )
+
+            if can_match_as_sequence:
                 approx_matchable_rids_add(rid)
 
                 ####################

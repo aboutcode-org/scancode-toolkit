@@ -7,8 +7,8 @@ matches:
     start_line: 15
     end_line: 76
     matcher: 2-aho
-    rule_length: 525
-    matched_length: 525
+    rule_length: 527
+    matched_length: 527
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: info-zip-2009-01_12.RULE

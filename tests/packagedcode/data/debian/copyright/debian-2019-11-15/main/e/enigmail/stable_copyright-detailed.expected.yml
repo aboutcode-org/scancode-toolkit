@@ -41,8 +41,8 @@ matches:
     start_line: 39
     end_line: 411
     matcher: 1-hash
-    rule_length: 2363
-    matched_length: 2363
+    rule_length: 2371
+    matched_length: 2371
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: mpl-2.0.LICENSE
@@ -531,8 +531,8 @@ matches:
     start_line: 473
     end_line: 481
     matcher: 1-hash
-    rule_length: 81
-    matched_length: 81
+    rule_length: 82
+    matched_length: 82
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: cc0-1.0_99.RULE
