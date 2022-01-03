@@ -1,0 +1,12 @@
+key: snapeda-design-exception-1.0
+short_name: SnapEDA Design Exception 1.0
+name: SnapEDA Design Exception 1.0
+category: Permissive
+owner: SnapEDA
+homepage_url: https://www.snapeda.com/about/terms/
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-snapeda-design-exception-1.0
+faq_url: https://support.snapeda.com/en/articles/2957815-what-is-the-design-exception-1-0
+other_urls:
+    - 'https://support.snapeda.com/en/?q=license '
+    - https://support.snapeda.com/en/articles/2957814-what-is-the-license-for-symbols-and-footprints
