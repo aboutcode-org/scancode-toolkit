@@ -58,14 +58,6 @@ def pytest_addoption(parser):
     group = parser.getgroup('scancode', 'Test suite options for ScanCode')
 
     group.addoption(
-        '--force-py3',
-        dest='force_py3',
-        action='store_true',
-        default=False,
-        help='[DEPRECATED and ignored] Python 3 port is completed.',
-    )
-
-    group.addoption(
         '--test-suite',
         action='store',
         choices=TEST_SUITES,
