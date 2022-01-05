@@ -32,7 +32,7 @@ relevance: 100
 {is_license}: yes
 minimum_coverage: 100
 is_continuous: yes
-notes: Rule based on an SPDX license identifier and name 
+notes: Rule based on an SPDX license identifier and name
 ---
 {text}
 '''
@@ -58,7 +58,6 @@ def cli(output):
         lowercase_keys=False,
         include_other_spdx_license_keys=True,
     )
-    print(list(licenses_by_spdx_key.items())[:10])
 
     spdx_source = synclic.SpdxSource(external_base_dir=None)
     spdx_data = list(spdx_source.fetch_spdx_licenses())

@@ -578,6 +578,16 @@ class DejaSource(ExternalLicensesSource):
             if TRACE: print('Skipping DejaCode combo/component license', key)
             return
 
+        # these licenses are ignored for now for some weirdness
+        dejacode_weird = set([
+            'sun-jta-spec-1.0.1b', # invalid case
+            'sun-jta-spec-1.0.1B',
+        ])
+        is_weird= key in dejacode_weird
+        if is_weird:
+            if TRACE: print('Skipping DejaCode weird license', key)
+            return
+
         deprecated = not mapping.get('is_active')
         if deprecated and key not in scancode_licenses.by_key:
             if TRACE: print('Skipping deprecated license not in ScanCode:', key)
@@ -1150,8 +1160,15 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
         print()
         print('Processing unmatched_scancode_by_key.')
     for lkey, scancode_license in unmatched_scancode_by_key.items():
-        if lkey in set(['here-proprietary']):
+        if lkey in set([
+            'here-proprietary'
+            # these licenses are ignored for now for some weirdness
+            # invalid case
+            'sun-jta-spec-1.0.1b', 
+            'sun-jta-spec-1.0.1B',
+        ]):
             continue
+
         if scancode_license.is_deprecated:
             continue
         external_license = scancode_license.relocate(external_source.new_dir)
