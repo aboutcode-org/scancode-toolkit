@@ -31,7 +31,7 @@ Filtering discards matches based on various heuristics and rules such as:
 
 - containment: a small match is contained in a larger match
 - overlap: based on a level of overlap between matches
-- various spurrious matches rules based on length, required content, etc.
+- various spurious matches rules based on length, required content, etc.
 - false positives
 
 The filter functions are executed in a specific sequence over the list of matches.
@@ -48,7 +48,7 @@ TRACE_FILTER_SPURIOUS = False
 TRACE_FILTER_SHORT = False
 TRACE_FILTER_RULE_MIN_COVERAGE = False
 TRACE_FILTER_BELOW_MIN_SCORE = False
-TRACE_FILTER_SINGLE_WORD_BINARY = False
+TRACE_FILTER_SINGLE_WORD_GIBBERISH = False
 TRACE_SET_LINES = False
 TRACE_KEY_PHRASES = False
 TRACE_REGIONS = False
@@ -81,7 +81,7 @@ if (TRACE
     or TRACE_SET_LINES
     or TRACE_MATCHED_TEXT
     or TRACE_MATCHED_TEXT_DETAILS
-    or TRACE_FILTER_SINGLE_WORD_BINARY
+    or TRACE_FILTER_SINGLE_WORD_GIBBERISH
     or TRACE_KEY_PHRASES
     or TRACE_REGIONS
     or TRACE_FILTER_LICENSE_LIST
@@ -128,7 +128,7 @@ class DiscardReason(IntEnum):
     SPURIOUS_SINGLE_TOKEN = 3
     TOO_SHORT = 4
     SCATTERED_ON_TOO_MANY_LINES = 5
-    INVALID_SINGLE_WORD_IN_BINARY = 6
+    INVALID_SINGLE_WORD_GIBBERISH = 6
     SPURIOUS = 7
     CONTAINED = 8
     OVERLAPPING = 9
@@ -1697,24 +1697,25 @@ def filter_spurious_matches(
     return kept, discarded
 
 
-def filter_invalid_matches_to_single_word_in_binaries(
+def filter_invalid_matches_to_single_word_gibberish(
     matches,
-    trace=TRACE_FILTER_SINGLE_WORD_BINARY,
-    reason=DiscardReason.INVALID_SINGLE_WORD_IN_BINARY,
+    trace=TRACE_FILTER_SINGLE_WORD_GIBBERISH,
+    reason=DiscardReason.INVALID_SINGLE_WORD_GIBBERISH,
 ):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a `matches` list of LicenseMatch by removing
-    matches in binary files considered as invalid under these conditions:
+    gibberish matches considered as invalid under these conditions:
 
-    - the match is for a binary file
-    - the matched rule that has a single word (length 1)
+    - the scanned file is a binary file (we could relax this in the future
+    - the matched rule has a single word (length 1)
+    - the matched rule "is_license_reference: yes"
     - the matched rule has a low relevance, e.g., under 75
     - the matched text has either:
       - one or more leading or trailing punctuations (except for +)
         unless this has a high relevance and the rule is contained as-is
         in the matched text (considering case)
-      - mixed upper and lower case charcaters (but not a Title case) unless
+      - mixed upper and lower case characters (but not a Title case) unless
         exactly the same mixed case as the rule text
     """
     kept = []
@@ -1724,11 +1725,7 @@ def filter_invalid_matches_to_single_word_in_binaries(
 
     for match in matches:
         rule = match.rule
-        if (
-            rule.length == 1
-            and match.query.is_binary
-            and rule.is_license_reference
-        ):
+        if rule.length == 1 and rule.is_license_reference and match.query.is_binary:
             matched_text = match.matched_text(
                 whole_lines=False,
                 highlight=False,
@@ -1738,7 +1735,7 @@ def filter_invalid_matches_to_single_word_in_binaries(
 
             if trace:
                 logger_debug(
-                    '    ==> POTENTIAL INVALID_BINARY:', match,
+                    '    ==> POTENTIAL INVALID GIBBERISH:', match,
                     'matched_text:', repr(matched_text),
                     'rule_text:', repr(rule_text)
                 )
@@ -1750,7 +1747,7 @@ def filter_invalid_matches_to_single_word_in_binaries(
 
             if is_invalid_short_match(matched_text, rule_text, max_diff=max_diff):
                 if trace:
-                    logger_debug('    ==> DISCARDING INVALID_BINARY:', match)
+                    logger_debug('    ==> DISCARDING INVALID GIBBERISH:', match)
                 discarded_append(match)
                 match.discard_reason = reason
                 continue
@@ -1808,7 +1805,7 @@ def is_invalid_short_match(
     matched_text,
     rule_text,
     max_diff=0,
-    trace=TRACE_FILTER_SINGLE_WORD_BINARY,
+    trace=TRACE_FILTER_SINGLE_WORD_GIBBERISH,
 ):
     """
     Return True if the ``matched_text`` given a ``rule_text`` is invalid.
@@ -1841,6 +1838,8 @@ def is_invalid_short_match(
     >>> is_invalid_short_match("alv2@", "ALv2", max_diff=1)
     False
     >>> is_invalid_short_match("gpl) &", "GPL")
+    True
+    >>> is_invalid_short_match("GPLv2(", "GPLv2")
     True
     """
     if trace:
@@ -1973,9 +1972,9 @@ def filter_matches_missing_key_phrases(
             continue
 
         if is_continuous and not match.is_continuous():
-            kept_append(match)
+            discarded_append(match)
             if trace:
-                logger_debug('    ==> KEEPING, IS_CONTINUOUS BUT NOT IS_CONTINUOUS')
+                logger_debug('    ==> DISCARDING, IS_CONTINUOUS BUT NOT IS_CONTINUOUS')
             continue
 
         ispan = match.ispan
@@ -2528,9 +2527,9 @@ def refine_matches(
     all_discarded_extend(discarded)
     _log(matches, discarded, 'ACCEPTABLE IF NOT SHORT SCATTERED')
 
-    matches, discarded = filter_invalid_matches_to_single_word_in_binaries(matches)
+    matches, discarded = filter_invalid_matches_to_single_word_gibberish(matches)
     all_discarded_extend(discarded)
-    _log(matches, discarded, 'MORE THAN ONE NON INVALID TOKEN IN BINARY')
+    _log(matches, discarded, 'MORE THAN ONE NON INVALID GIBBERISH TOKEN')
 
     matches, discarded = filter_spurious_matches(matches)
     all_discarded_extend(discarded)

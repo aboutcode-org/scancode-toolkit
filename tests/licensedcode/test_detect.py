@@ -1019,7 +1019,7 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         assert qtext == expected
         assert match.lines() == (1, 4)
 
-    def test_match_does_not_detect_spurrious_short_apache_rule(self):
+    def test_match_does_not_detect_spurious_short_apache_rule(self):
         idx = cache.get_index()
         querys = u'''
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -1172,7 +1172,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         assert match.ispan == Span(0, 3)
 
     @pytest.mark.scanslow
-    def test_spurrious_matches_in_binary_are_filtered(self):
+    def test_spurious_matches_in_binary_are_filtered(self):
         idx = cache.get_index()
         qloc = self.get_test_loc('false_positive/false-positive-in-binaries.zip')
 

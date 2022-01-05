@@ -1351,7 +1351,8 @@ class TestLicenseMatchScore(FileBasedTesting):
 
         query_location = self.get_test_loc('stopwords/query.txt')
         matches = idx.match(location=query_location)
-        assert matches == []
+        results = [m.rule.identifier for m in matches]
+        assert results == ['gpl-1.0.bare.RULE', 'gpl-1.0.bare.RULE', 'gpl-1.0.bare.RULE']
 
 
 class TestCollectLicenseMatchTexts(FileBasedTesting):

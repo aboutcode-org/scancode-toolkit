@@ -1400,7 +1400,7 @@ def clean_expression(text):
 def remove_known_license_intros(license_matches):
     """
     Return a filtered ``license_matches`` list of LicenseMatch objects removing
-    spurrious matches to license introduction statements (e.g.
+    spurious matches to license introduction statements (e.g.
     `is_license_intro` Rules.)
 
     A common source of false positive license detections in unstructured files
