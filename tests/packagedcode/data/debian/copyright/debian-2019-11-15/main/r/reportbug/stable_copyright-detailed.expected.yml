@@ -1,7 +1,7 @@
--
--
-- reportbug AND gpl-1.0-plus AND reportbug AND gpl-2.0
-- |
+primary_license:
+declared_license:
+license_expression: reportbug AND gpl-1.0-plus AND reportbug AND gpl-2.0
+copyright: |
   Copyright (c) 1999-2006 Chris Lawrence
   Copyright (c) 2008-2019 Sandro Tosi <morph@debian.org>
   Copyright (c) 1996-2000 Christoph Lameter <clameter@debian.org>
@@ -9,3 +9,106 @@
   (c) 2000 Chris Lawrence <lawrencc@debian.org>
   Copyright (c) 2006 Philipp Kern <pkern@debian.org>
   Copyright (c) 2008-2009 Luca Bruno <lethalman88@gmail.com>
+matches:
+  - score: '100.0'
+    start_line: 10
+    end_line: 25
+    matcher: 2-aho
+    rule_length: 124
+    matched_length: 124
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: reportbug_1.RULE
+    license_expression: reportbug
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      License: other
+          # This program is freely distributable per the following license:
+          #
+          #  Permission to use, copy, modify, and distribute this software and its
+          #  documentation for any purpose and without fee is hereby granted,
+          #  provided that the above copyright notice appears in all copies and that
+          #  both that copyright notice and this permission notice appear in
+          #  supporting documentation.
+          #
+          #  I DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL
+          #  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL I
+          #  BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY
+          #  DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+          #  WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+          #  ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+          #  SOFTWARE.
+  - score: '100.0'
+    start_line: 32
+    end_line: 37
+    matcher: 2-aho
+    rule_length: 43
+    matched_length: 43
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl_77.RULE
+    license_expression: gpl-1.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      License: GPL-any
+          # You may freely redistribute, use and modify this software under the terms
+          # of the GNU General Public License.
+          .
+          On Debian systems, the complete text of the GNU General Public License
+          can be found in file "/usr/share/common-licenses/GPL".
+  - score: '100.0'
+    start_line: 43
+    end_line: 58
+    matcher: 2-aho
+    rule_length: 124
+    matched_length: 124
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: reportbug_1.RULE
+    license_expression: reportbug
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      License: other
+          # This program is freely distributable per the following license:
+          #
+          ##  Permission to use, copy, modify, and distribute this software and its
+          ##  documentation for any purpose and without fee is hereby granted,
+          ##  provided that the above copyright notice appears in all copies and that
+          ##  both that copyright notice and this permission notice appear in
+          ##  supporting documentation.
+          ##
+          ##  I DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL
+          ##  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL I
+          ##  BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY
+          ##  DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+          ##  WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+          ##  ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+          ##  SOFTWARE.
+  - score: '100.0'
+    start_line: 61
+    end_line: 61
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_561.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: GPL-2'

@@ -17,6 +17,7 @@
         "--url": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": null,
       "message": null,
       "errors": [],
       "extra_data": {
@@ -32,38 +33,16 @@
         "--json": "<file>"
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 253
       }
     }
   ],
   "consolidated_components": [
-    {
-      "type": "build",
-      "identifier": "minizip_1",
-      "consolidated_license_expression": "info-zip-2009-01 AND zlib",
-      "consolidated_holders": [
-        "Even Rouault",
-        "Gilles Vollant",
-        "Gilles Vollant, Even Rouault, Mathias Svensson",
-        "Info-ZIP.",
-        "Mathias Svensson"
-      ],
-      "consolidated_copyright": "Copyright (c) Even Rouault, Gilles Vollant, Gilles Vollant, Even Rouault, Mathias Svensson, Info-ZIP., Mathias Svensson",
-      "core_license_expression": null,
-      "core_holders": [],
-      "other_license_expression": "info-zip-2009-01 AND zlib",
-      "other_holders": [
-        "Gilles Vollant, Even Rouault, Mathias Svensson",
-        "Even Rouault",
-        "Gilles Vollant",
-        "Info-ZIP.",
-        "Mathias Svensson"
-      ],
-      "files_count": 22
-    },
     {
       "type": "holders",
       "identifier": "adler_and_gailly_jean_loup_mark_1",
@@ -458,7 +437,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -495,7 +474,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -548,7 +527,7 @@
           "end_line": 1230
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "info@winimage.com",
@@ -632,7 +611,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "zlib@gzip.org",
@@ -731,7 +710,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -763,7 +742,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -798,6 +777,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -842,7 +822,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -879,6 +859,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -949,7 +930,7 @@
           "end_line": 111
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "zlib@gzip.org",
@@ -1068,6 +1049,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -1112,7 +1094,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -1146,7 +1128,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -1193,7 +1175,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -1239,7 +1221,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "Osma.Ahvenlampi@hut.fi",
@@ -1282,6 +1264,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -1326,7 +1309,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -1360,7 +1343,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "alain.bonnefoy@icbt.com",
@@ -1408,7 +1391,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -1536,7 +1519,7 @@
           "end_line": 78
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "anisimkov@yahoo.com",
@@ -1660,7 +1643,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -1697,6 +1680,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -1730,6 +1714,7 @@
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
@@ -1781,7 +1766,7 @@
           "end_line": 11
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "sjs@essex.ac.uk",
@@ -1824,6 +1809,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -1857,6 +1843,7 @@
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
@@ -1902,7 +1889,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -1939,6 +1926,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -1972,6 +1960,7 @@
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
@@ -2017,7 +2006,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2057,7 +2046,7 @@
           "end_line": 63
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "anisimkov@yahoo.com",
@@ -2119,6 +2108,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -2152,6 +2142,7 @@
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
@@ -2197,7 +2188,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2234,6 +2225,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -2267,6 +2259,7 @@
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
@@ -2312,7 +2305,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2349,6 +2342,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -2382,6 +2376,7 @@
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
@@ -2427,7 +2422,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2464,6 +2459,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -2497,6 +2493,7 @@
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
@@ -2542,7 +2539,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2579,6 +2576,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -2612,6 +2610,7 @@
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
@@ -2657,7 +2656,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2694,6 +2693,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -2727,6 +2727,7 @@
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
@@ -2772,7 +2773,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2809,6 +2810,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -2842,6 +2844,7 @@
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
           "text_url": "",
@@ -2887,7 +2890,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -2921,7 +2924,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -2953,7 +2956,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -2988,6 +2991,7 @@
           "short_name": "BSD-3-Clause",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Regents of the University of California",
           "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
           "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
@@ -3020,7 +3024,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3052,7 +3056,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -3086,7 +3090,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "breadbox@muppetlabs.com",
@@ -3133,6 +3137,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -3177,7 +3182,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "breadbox@muppetlabs.com",
@@ -3217,7 +3222,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3249,7 +3254,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3281,7 +3286,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -3322,6 +3327,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -3366,7 +3372,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -3403,6 +3409,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -3447,7 +3454,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -3487,7 +3494,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3519,7 +3526,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3551,7 +3558,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -3603,7 +3610,7 @@
           "end_line": 10
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "cosmint@cs.ubbcluj.ro",
@@ -3643,7 +3650,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3687,7 +3694,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "cosmint@cs.ubbcluj.ro",
@@ -3727,7 +3734,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3759,7 +3766,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -3793,7 +3800,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3825,7 +3832,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3857,7 +3864,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3889,7 +3896,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -3933,7 +3940,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -3970,6 +3977,7 @@
           "short_name": "Boost 1.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4014,7 +4022,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -4057,6 +4065,7 @@
           "short_name": "Boost 1.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4101,7 +4110,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -4144,6 +4153,7 @@
           "short_name": "Boost 1.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4188,7 +4198,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -4231,6 +4241,7 @@
           "short_name": "Boost 1.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4275,7 +4286,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -4318,6 +4329,7 @@
           "short_name": "Boost 1.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4362,7 +4374,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -4402,7 +4414,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -4437,6 +4449,7 @@
           "short_name": "Boost 1.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4481,7 +4494,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -4524,6 +4537,7 @@
           "short_name": "Boost 1.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4568,7 +4582,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -4611,6 +4625,7 @@
           "short_name": "Boost 1.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4655,7 +4670,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -4703,6 +4718,7 @@
           "short_name": "Boost 1.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4735,7 +4751,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -4770,6 +4786,7 @@
           "short_name": "Boost 1.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4814,7 +4831,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -4854,7 +4871,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -4891,6 +4908,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -4941,7 +4959,7 @@
           "end_line": 15
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -5006,7 +5024,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5038,7 +5056,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5073,6 +5091,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -5117,7 +5136,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5154,6 +5173,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -5198,7 +5218,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5232,7 +5252,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5267,6 +5287,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -5311,7 +5332,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5348,6 +5369,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -5402,7 +5424,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5439,6 +5461,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -5483,7 +5506,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5517,7 +5540,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5554,6 +5577,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -5608,7 +5632,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "christop@charm.net",
@@ -5668,6 +5692,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -5722,7 +5747,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "christop@charm.net",
@@ -5774,7 +5799,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5806,7 +5831,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5838,7 +5863,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5870,7 +5895,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -5902,7 +5927,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -5939,6 +5964,7 @@
           "short_name": "MIT Old Style",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "MIT",
           "homepage_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
           "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
@@ -5983,7 +6009,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6023,7 +6049,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6055,7 +6081,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6090,6 +6116,7 @@
           "short_name": "Other Permissive Licenses",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "nexB",
           "homepage_url": null,
           "text_url": "",
@@ -6128,7 +6155,7 @@
           "end_line": 13
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "schwardt@sun.ac.za",
@@ -6166,7 +6193,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6209,7 +6236,7 @@
           "end_line": 5
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "schwardt@sun.ac.za",
@@ -6263,7 +6290,7 @@
           "end_line": 5
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "schwardt@sun.ac.za",
@@ -6317,7 +6344,7 @@
           "end_line": 5
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "schwardt@sun.ac.za",
@@ -6360,7 +6387,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6392,7 +6419,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6427,6 +6454,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -6477,7 +6505,7 @@
           "end_line": 11
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6543,6 +6571,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -6597,7 +6626,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "christop@charm.net",
@@ -6653,7 +6682,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6712,7 +6741,7 @@
           "end_line": 11
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6755,7 +6784,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6787,7 +6816,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -6822,6 +6851,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -6876,7 +6906,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "christop@charm.net",
@@ -6940,6 +6970,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -7000,7 +7031,7 @@
           "end_line": 5
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "breadbox@muppetlabs.com",
@@ -7059,7 +7090,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -7102,7 +7133,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -7110,8 +7141,7 @@
         "even_rouault_1",
         "gilles_vollant_1",
         "info_zip_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 22,
       "dirs_count": 0,
@@ -7141,12 +7171,10 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7175,12 +7203,10 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7209,12 +7235,10 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7246,6 +7270,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -7296,7 +7321,7 @@
           "end_line": 35
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -7321,8 +7346,7 @@
         }
       ],
       "consolidated_to": [
-        "gilles_vollant_1",
-        "minizip_1"
+        "gilles_vollant_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7352,7 +7376,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [
+      "package_manifests": [
         {
           "type": "autotools",
           "namespace": null,
@@ -7391,9 +7415,7 @@
       ],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7434,7 +7456,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -7444,8 +7466,7 @@
         }
       ],
       "consolidated_to": [
-        "gilles_vollant_1",
-        "minizip_1"
+        "gilles_vollant_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7497,7 +7518,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -7513,8 +7534,7 @@
       ],
       "consolidated_to": [
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7566,7 +7586,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -7582,8 +7602,7 @@
       ],
       "consolidated_to": [
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7635,7 +7654,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -7651,8 +7670,7 @@
       ],
       "consolidated_to": [
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7704,7 +7722,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -7720,8 +7738,7 @@
       ],
       "consolidated_to": [
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7751,12 +7768,10 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7823,7 +7838,7 @@
           "end_line": 191
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -7845,8 +7860,7 @@
       "consolidated_to": [
         "even_rouault_1",
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -7892,7 +7906,7 @@
           "end_line": 63
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "broonie@sirena.org.uk",
@@ -7906,9 +7920,7 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7948,7 +7960,7 @@
           "end_line": 45
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "broonie@sirena.org.uk",
@@ -7957,9 +7969,7 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8026,7 +8036,7 @@
           "end_line": 169
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -8043,8 +8053,7 @@
       "consolidated_to": [
         "even_rouault_1",
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -8074,12 +8083,10 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8111,6 +8118,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -8143,7 +8151,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -8152,9 +8160,7 @@
           "end_line": 4
         }
       ],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8186,6 +8192,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -8218,7 +8225,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -8227,9 +8234,7 @@
           "end_line": 4
         }
       ],
-      "consolidated_to": [
-        "minizip_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8261,6 +8266,7 @@
           "short_name": "Info-Zip License 2009-01",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "info-zip",
           "homepage_url": "http://www.info-zip.org/",
           "text_url": "ftp://ftp.info-zip.org/pub/infozip/license.html",
@@ -8371,7 +8377,7 @@
           "end_line": 58
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "cryogen@infoserve.net",
@@ -8406,8 +8412,7 @@
         "even_rouault_1",
         "gilles_vollant_1",
         "info_zip_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -8440,6 +8445,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -8504,7 +8510,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -8521,8 +8527,7 @@
       "consolidated_to": [
         "even_rouault_1",
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -8584,7 +8589,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -8605,8 +8610,7 @@
       ],
       "consolidated_to": [
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -8639,6 +8643,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -8693,7 +8698,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -8709,8 +8714,7 @@
       ],
       "consolidated_to": [
         "gilles_vollant_1",
-        "mathias_svensson_1",
-        "minizip_1"
+        "mathias_svensson_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -8740,7 +8744,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -8779,6 +8783,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -8843,7 +8848,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -8882,6 +8887,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -8976,7 +8982,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -9014,7 +9020,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9049,6 +9055,7 @@
           "short_name": "Unknown License reference",
           "category": "Unstated License",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Unspecified",
           "homepage_url": null,
           "text_url": "",
@@ -9093,7 +9100,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -9127,7 +9134,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9159,7 +9166,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9191,7 +9198,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -9232,6 +9239,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -9276,7 +9284,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -9319,6 +9327,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -9363,7 +9372,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -9406,6 +9415,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -9450,7 +9460,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -9484,7 +9494,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9516,7 +9526,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9548,7 +9558,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -9586,7 +9596,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9618,7 +9628,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9650,7 +9660,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9682,7 +9692,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9730,7 +9740,7 @@
           "end_line": 6
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "paag@tid.es",
@@ -9778,7 +9788,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9810,7 +9820,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "info@winimage.com",
@@ -9859,7 +9869,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9891,7 +9901,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9923,7 +9933,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9955,7 +9965,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -9987,7 +9997,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10019,7 +10029,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10051,7 +10061,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10083,7 +10093,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10115,7 +10125,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10159,7 +10169,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -10193,7 +10203,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10225,7 +10235,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10257,7 +10267,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10289,7 +10299,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10321,7 +10331,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10353,7 +10363,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10385,7 +10395,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10417,7 +10427,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10449,7 +10459,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10481,7 +10491,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10513,7 +10523,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10557,7 +10567,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -10591,7 +10601,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10623,7 +10633,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10655,7 +10665,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10687,7 +10697,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10719,7 +10729,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10751,7 +10761,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10783,7 +10793,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10815,7 +10825,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10847,7 +10857,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10891,7 +10901,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -10925,7 +10935,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10957,7 +10967,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -10989,7 +10999,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11021,7 +11031,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11053,7 +11063,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11085,7 +11095,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11117,7 +11127,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11149,7 +11159,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11181,7 +11191,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11225,7 +11235,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -11259,7 +11269,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11291,7 +11301,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11323,7 +11333,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11355,7 +11365,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11387,7 +11397,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11419,7 +11429,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11451,7 +11461,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11483,7 +11493,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11515,7 +11525,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11559,7 +11569,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -11593,7 +11603,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11625,7 +11635,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11657,7 +11667,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11689,7 +11699,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11724,6 +11734,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -11768,7 +11779,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "rbrown64@csc.com.au",
@@ -11808,7 +11819,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -11843,6 +11854,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -11903,7 +11915,7 @@
           "end_line": 35
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -11946,6 +11958,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -11978,6 +11991,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -12023,7 +12037,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -12057,7 +12071,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -12092,7 +12106,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -12144,6 +12158,7 @@
           "short_name": "Peter Deutsch Document License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Peter Deutsch",
           "homepage_url": "http://www.ietf.org/rfc/rfc1952.txt",
           "text_url": "http://www.ietf.org/rfc/rfc1952.txt",
@@ -12188,7 +12203,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "ghost@aladdin.com",
@@ -12267,6 +12282,7 @@
           "short_name": "Peter Deutsch Document License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Peter Deutsch",
           "homepage_url": "http://www.ietf.org/rfc/rfc1952.txt",
           "text_url": "http://www.ietf.org/rfc/rfc1952.txt",
@@ -12311,7 +12327,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "ghost@aladdin.com",
@@ -12390,6 +12406,7 @@
           "short_name": "Peter Deutsch Document License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Peter Deutsch",
           "homepage_url": "http://www.ietf.org/rfc/rfc1952.txt",
           "text_url": "http://www.ietf.org/rfc/rfc1952.txt",
@@ -12440,7 +12457,7 @@
           "end_line": 573
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "gzip@prep.ai.mit.edu",
@@ -12526,7 +12543,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -12558,7 +12575,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -12590,7 +12607,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -12634,7 +12651,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -12671,6 +12688,7 @@
           "short_name": "Public Domain",
           "category": "Public Domain",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Unspecified",
           "homepage_url": "http://www.linfo.org/publicdomain.html",
           "text_url": "",
@@ -12703,7 +12721,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -12738,6 +12756,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -12792,7 +12811,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -12829,6 +12848,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -12883,7 +12903,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -12926,6 +12946,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -12970,7 +12991,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -13013,6 +13034,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -13057,7 +13079,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13094,6 +13116,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -13138,7 +13161,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -13181,6 +13204,7 @@
           "short_name": "Public Domain",
           "category": "Public Domain",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Unspecified",
           "homepage_url": "http://www.linfo.org/publicdomain.html",
           "text_url": "",
@@ -13235,7 +13259,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13272,6 +13296,7 @@
           "short_name": "Public Domain",
           "category": "Public Domain",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Unspecified",
           "homepage_url": "http://www.linfo.org/publicdomain.html",
           "text_url": "",
@@ -13304,7 +13329,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -13339,6 +13364,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -13383,7 +13409,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13420,6 +13446,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -13464,7 +13491,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13501,6 +13528,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -13545,7 +13573,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13582,6 +13610,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -13626,7 +13655,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13663,6 +13692,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -13707,7 +13737,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13744,6 +13774,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -13788,7 +13819,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13825,6 +13856,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -13869,7 +13901,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13906,6 +13938,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -13950,7 +13983,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -13987,6 +14020,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -14031,7 +14065,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14065,7 +14099,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14100,6 +14134,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -14144,7 +14179,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14181,6 +14216,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -14225,7 +14261,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14262,6 +14298,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -14316,7 +14353,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14353,6 +14390,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -14397,7 +14435,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14437,7 +14475,7 @@
           "end_line": 427
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "zinser@zinser.no-ip.info",
@@ -14480,7 +14518,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14512,7 +14550,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14547,6 +14585,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -14591,7 +14630,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14628,6 +14667,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -14672,7 +14712,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14706,7 +14746,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14738,7 +14778,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14770,7 +14810,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14802,7 +14842,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14834,7 +14874,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "eduardo.m.costa@gmail.com",
@@ -14878,7 +14918,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -14913,6 +14953,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -14957,7 +14998,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -14991,7 +15032,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "rw@shadow.org.uk",
@@ -15029,7 +15070,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15067,7 +15108,7 @@
           "end_line": 2
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "m.zinser@gsi.de",
@@ -15105,7 +15146,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15140,6 +15181,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -15172,7 +15214,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15204,7 +15246,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15236,7 +15278,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "jon-net@usa.net",
@@ -15284,7 +15326,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15316,7 +15358,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15348,7 +15390,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15392,7 +15434,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -15426,7 +15468,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15458,7 +15500,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15490,7 +15532,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "alain.bonnefoy@icbt.com",
@@ -15539,7 +15581,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15574,6 +15616,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -15618,7 +15661,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -15655,6 +15698,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -15699,7 +15743,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -15736,6 +15780,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -15780,7 +15825,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "malbrech@eso.org",
@@ -15820,7 +15865,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15855,6 +15900,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -15899,7 +15945,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -15939,7 +15985,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -15974,6 +16020,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -16018,7 +16065,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -16052,7 +16099,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16084,7 +16131,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16116,7 +16163,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16148,7 +16195,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16180,7 +16227,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "cosmint@cs.ubbcluj.ro",
@@ -16229,7 +16276,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16264,6 +16311,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -16308,7 +16356,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -16354,7 +16402,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -16391,6 +16439,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -16446,7 +16495,7 @@
           "end_line": 99
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "zlib@gzip.org",
@@ -16512,7 +16561,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16544,7 +16593,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -16588,7 +16637,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -16631,6 +16680,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -16675,7 +16725,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -16712,6 +16762,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -16756,7 +16807,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -16793,6 +16844,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -16837,7 +16889,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -16874,6 +16926,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -16929,7 +16982,7 @@
           "end_line": 143
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "info@winimage.com",
@@ -17028,6 +17081,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -17083,7 +17137,7 @@
           "end_line": 117
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "info@winimage.com",
@@ -17177,6 +17231,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -17221,7 +17276,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -17272,7 +17327,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -17304,7 +17359,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -17336,7 +17391,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -17374,7 +17429,7 @@
           "end_line": 7
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [],
@@ -17409,6 +17464,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -17453,7 +17509,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [
@@ -17490,6 +17546,7 @@
           "short_name": "ZLIB License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -17534,7 +17591,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "consolidated_to": [

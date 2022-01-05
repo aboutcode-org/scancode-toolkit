@@ -1,0 +1,7 @@
+license_expression: apache-2.0
+is_license_notice: yes
+minimum_coverage: 85
+relevance: 99
+notes: Seen in https://github.com/SparkPost/gosparkpost/blob/5b781faf9f19ed7dbcb7f604c83dec1d0bb9087b/LICENSE
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0.html

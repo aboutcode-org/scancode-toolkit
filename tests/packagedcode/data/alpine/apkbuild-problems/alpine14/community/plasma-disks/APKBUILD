@@ -1,0 +1,56 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=plasma-disks
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="Monitors S.M.A.R.T. capable devices for imminent failure"
+# armhf blocked by qt5-qtdeclarative
+# s390x blocked by solid, kio, kauth and kdeclarative
+arch="all !armhf !s390x !mips64"
+url="https://kde.org/plasma-desktop/"
+license="GPL-2.0-or-later"
+depends="
+	kirigami2
+	smartmontools
+	"
+makedepends="
+	extra-cmake-modules
+	qt5-qtbase-dev
+	kcoreaddons-dev
+	kdbusaddons-dev
+	knotifications-dev
+	ki18n-dev
+	solid-dev
+	kservice-dev
+	kio-dev
+	kauth-dev
+	kdeclarative-dev
+	"
+checkdepends="xvfb-run"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/plasma-disks-$pkgver.tar.xz"
+subpackages="$pkgname-lang"
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE xvfb-run ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+sha512sums="
+c8e4df1d87199936736f31b5e10985d7319fccefe24434d669746ca0f17fb7cc1c015f51bd5fbd115aab5ad275773020936e78c46e895ef15fdeec88d38e8012  plasma-disks-5.22.0.tar.xz
+"

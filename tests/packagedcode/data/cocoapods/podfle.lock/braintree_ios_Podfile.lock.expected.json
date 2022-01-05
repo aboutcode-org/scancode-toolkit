@@ -1,0 +1,127 @@
+[
+  {
+    "type": "pods",
+    "namespace": null,
+    "name": null,
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Objective-C",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:pods/Expecta@1.0.6",
+        "requirement": "1.0.6",
+        "scope": "requires-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pods/InAppSettingsKit@3.1.4",
+        "requirement": "3.1.4",
+        "scope": "requires-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pods/OCMock@3.7.1",
+        "requirement": "3.7.1",
+        "scope": "requires-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pods/OHHTTPStubs@9.0.0",
+        "requirement": "9.0.0",
+        "scope": "requires-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pods/OHHTTPStubs/Core@9.0.0",
+        "requirement": "9.0.0",
+        "scope": "requires-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pods/OHHTTPStubs/Default@9.0.0",
+        "requirement": "9.0.0",
+        "scope": "requires-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pods/OHHTTPStubs/JSON@9.0.0",
+        "requirement": "9.0.0",
+        "scope": "requires-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pods/OHHTTPStubs/NSURLSession@9.0.0",
+        "requirement": "9.0.0",
+        "scope": "requires-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pods/OHHTTPStubs/OHPathHelpers@9.0.0",
+        "requirement": "9.0.0",
+        "scope": "requires-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pods/Specta@1.0.7",
+        "requirement": "1.0.7",
+        "scope": "requires-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:pods/xcbeautify@0.8.1",
+        "requirement": "0.8.1",
+        "scope": "requires-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": null,
+    "repository_homepage_url": "https://cocoapods.org/pods/None",
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

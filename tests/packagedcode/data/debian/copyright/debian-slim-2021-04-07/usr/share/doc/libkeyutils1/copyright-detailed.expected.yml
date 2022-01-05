@@ -1,14 +1,110 @@
-- gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0
-- - GPL-2+
+primary_license: gpl-2.0-plus
+declared_license:
+  - GPL-2+
   - LGPL-2+
   - LGPL-2+
   - GPL-2+
   - LGPL-2+
-- (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.0-plus
-  AND lgpl-2.0) AND (lgpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.0)
-- |
+license_expression: (gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND
+  (lgpl-2.0-plus AND lgpl-2.0-plus)
+copyright: |
   2005-2018, Red Hat <http://www.redhat.com/>
   2005-2018, Red Hat <http://www.redhat.com/>
   2006-2013, Daniel Baumann <mail@daniel-baumann.ch>
   2013, Luk Claes <luk@debian.org>
   2014-2019, Christian Kastner <ckk@debian.org>
+matches:
+  - score: '100.0'
+    start_line: 20
+    end_line: 20
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_22.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2+'
+  - score: '100.0'
+    start_line: 21
+    end_line: 35
+    matcher: 1-hash
+    rule_length: 122
+    matched_length: 122
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_983.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software: you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation, either version 2 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+      The complete text of the GNU General Public License
+      can be found in /usr/share/common-licenses/GPL-2 file.
+  - score: '100.0'
+    start_line: 37
+    end_line: 37
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0-plus_61.RULE
+    license_expression: lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: lgpl-2+'
+  - score: '100.0'
+    start_line: 38
+    end_line: 52
+    matcher: 1-hash
+    rule_length: 126
+    matched_length: 126
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.0-plus_477.RULE
+    license_expression: lgpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software: you can redistribute it and/or modify
+      it under the terms of the GNU Lesser General Public License as published by
+      the Free Software Foundation, either version 2 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+      GNU Lesser General Public License for more details.
+
+      You should have received a copy of the GNU Lesser General Public License
+      along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+      The complete text of the GNU Lesser General Public License
+      can be found in /usr/share/common-licenses/LGPL-2 file.

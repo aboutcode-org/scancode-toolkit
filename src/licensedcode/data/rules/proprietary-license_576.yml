@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 99
+notes: this deceving text looks like an MIT but is stripped from the right to "publish, distribute,
+    sublicense, and/or sell copies". Seen in https://github.com/M4cs/winfetch/blob/8c87b53c350dab6a40e345831987a48a9fd735b6/LICENSE

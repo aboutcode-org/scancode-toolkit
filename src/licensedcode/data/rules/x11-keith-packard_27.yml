@@ -1,0 +1,4 @@
+license_expression: x11-keith-packard
+is_license_text: yes
+relevance: 99
+notes: references Intel instead of Keith Packard. Seen in cairo.

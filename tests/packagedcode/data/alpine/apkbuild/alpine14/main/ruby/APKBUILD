@@ -1,0 +1,353 @@
+# Contributor: Carlo Landmeter <clandmeter@alpinelinux.org>
+# Contributor: Jakub Jirutka <jakub@jirutka.cz>
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+#
+# secfixes:
+#   2.7.3-r0:
+#     - CVE-2021-28965
+#     - CVE-2021-28966
+#   2.7.2-r0:
+#     - CVE-2020-25613
+#   2.6.6-r0:
+#     - CVE-2020-10663
+#     - CVE-2020-10933
+#   2.6.5-r0:
+#     - CVE-2019-16255
+#     - CVE-2019-16254
+#     - CVE-2019-15845
+#     - CVE-2019-16201
+#   2.5.2-r0:
+#     - CVE-2018-16395
+#     - CVE-2018-16396
+#   2.5.1-r0:
+#     - CVE-2017-17742
+#     - CVE-2018-6914
+#     - CVE-2018-8777
+#     - CVE-2018-8778
+#     - CVE-2018-8779
+#     - CVE-2018-8780
+#   2.4.2-r0:
+#     - CVE-2017-0898
+#     - CVE-2017-10784
+#     - CVE-2017-14033
+#     - CVE-2017-14064
+#     - CVE-2017-0899
+#     - CVE-2017-0900
+#     - CVE-2017-0901
+#     - CVE-2017-0902
+#   2.4.3-r0:
+#     - CVE-2017-17405
+#
+pkgname=ruby
+pkgver=2.7.3
+_abiver="${pkgver%.*}.0"
+pkgrel=1
+pkgdesc="An object-oriented language for quick and easy programming"
+url="https://www.ruby-lang.org/"
+arch="all"
+license="Ruby AND BSD-2-Clause AND MIT"
+depends="ca-certificates"
+depends_dev="$pkgname=$pkgver-r$pkgrel gmp-dev libucontext-dev"
+makedepends="$depends_dev zlib-dev openssl-dev gdbm-dev readline-dev
+	libffi-dev coreutils yaml-dev linux-headers autoconf"
+install="$pkgname.post-upgrade"
+subpackages="$pkgname-dbg $pkgname-doc $pkgname-dev
+	$pkgname-bigdecimal
+	$pkgname-etc
+	$pkgname-fiddle
+	$pkgname-gdbm
+	$pkgname-io-console:io_console
+	$pkgname-irb::noarch
+	$pkgname-json
+	$pkgname-minitest::noarch
+	$pkgname-net-telnet:net_telnet:noarch
+	$pkgname-power_assert::noarch
+	$pkgname-rake::noarch
+	$pkgname-rdoc::noarch
+	$pkgname-sdbm
+	$pkgname-test-unit:test_unit:noarch
+	$pkgname-webrick::noarch
+	$pkgname-xmlrpc::noarch
+	$pkgname-libs
+	$pkgname-full::noarch
+	"
+source="https://cache.ruby-lang.org/pub/ruby/${pkgver%.*}/ruby-$pkgver.tar.gz
+	rubygems-avoid-platform-specific-gems.patch
+	test_insns-lower-recursion-depth.patch
+	fix-get_main_stack.patch
+	remove-broken-autoconf-section.patch
+	"
+replaces="ruby-gems"
+
+_gemdir="/usr/lib/ruby/gems/$_abiver"
+_rubydir="/usr/lib/ruby/$_abiver"
+_chost="${CHOST/-alpine-/-}"
+
+case "$CARCH" in
+	x86) _arch="i386";;
+	*) _arch="$CARCH";;
+esac
+
+_bundled_gems=
+for _i in $subpackages; do
+	case "$_i" in
+		*-dev | *-doc | *-libs | *-full:*) continue;;
+		*) _bundled_gems="$_bundled_gems ${_i%%:*}";;
+	esac
+done
+
+prepare() {
+	default_prepare
+	autoconf
+
+	# v2.7.1 - Of all the bootstraptest only test_fiber fails on s390x:
+	# test_fiber.rb bootstraptest.tmp.rb:8: [BUG] vm_call_cfunc: cfp consistency error (0x000003ffb63fefb0, 0x000003ffb42f5f58)
+	case "$CARCH" in
+		s390x)
+			rm bootstraptest/test_fiber.rb ;;
+	esac
+}
+
+build() {
+	# -fomit-frame-pointer makes ruby segfault, see gentoo bug #150413
+	# In many places aliasing rules are broken; play it safe
+	# as it's risky with newer compilers to leave it as it is.
+	export CFLAGS="$CFLAGS -fno-omit-frame-pointer -fno-strict-aliasing"
+	export CPPFLAGS="$CPPFLAGS -fno-omit-frame-pointer -fno-strict-aliasing"
+
+	# Needed for coroutine stuff
+	export LIBS="-lucontext"
+
+	# ruby saves path to install. we want use $PATH
+	export INSTALL=install
+
+	# the configure script does not detect isnan/isinf as macros
+	export ac_cv_func_isnan=yes
+	export ac_cv_func_isinf=yes
+
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/share/man \
+		--infodir=/usr/share/info \
+		--with-sitedir=/usr/local/lib/site_ruby \
+		--with-search-path="/usr/lib/site_ruby/\$(ruby_ver)/$_arch-linux" \
+		--enable-pthread \
+		--disable-rpath \
+		--enable-shared \
+		--with-mantype=man
+	make
+}
+
+check() {
+	make test
+}
+
+package() {
+	make DESTDIR="$pkgdir" install
+
+	install -m 644 -D COPYING "$pkgdir"/usr/share/licenses/$pkgname/COPYING
+
+	# Remove bundled gem bundler; it's provided by a separate aport/package
+	# ruby-bundler.
+	subpkgdir=".trash" _mvgem bundler && rm -Rf .trash
+	rm usr/bin/bundle usr/bin/bundler
+	rm usr/share/man/man1/bundle* usr/share/man/man5/gemfile.5*
+
+	# Remove bundled CA certificates; they are provided by ca-certificates.
+	rm "$pkgdir"/$_rubydir/rubygems/ssl_certs/*/*.pem
+	rmdir "$pkgdir"/$_rubydir/rubygems/ssl_certs/* || true
+
+	rm -Rf "$pkgdir"/$_gemdir/cache/*
+
+	if [ -d "$pkgdir"/usr/local ]; then
+		local f=$(cd "$pkgdir" ; find usr/local -type f)
+		if [ -n "$f" ]; then
+			error "Found files in /usr/local:"
+			echo "$f"
+			return 1
+		fi
+		rm -r "$pkgdir"/usr/local
+	fi
+}
+
+bigdecimal() {
+	pkgdesc="Ruby arbitrary-precision floating point decimal arithmetic"
+	license="Ruby"
+	depends="$pkgname-libs"
+
+	_mvgem bigdecimal
+}
+
+etc() {
+	pkgdesc="Provides access to information typically stored in UNIX /etc directory"
+	license="BSD-2-Clause"
+	depends=""
+
+	_mvgem etc
+}
+
+fiddle() {
+	pkgdesc="A libffi wrapper for Ruby"
+	license="BSD-2-Clause"
+	depends=""
+
+	_mvgem fiddle
+}
+
+gdbm() {
+	pkgdesc="Ruby extension for GNU dbm"
+	license="BSD-2-Clause"
+	depends=""
+
+	_mvgem gdbm
+}
+
+io_console() {
+	pkgdesc="Ruby simple console IO library"
+	license="BSD-2-Clause"
+	depends=""
+
+	_mvgem io-console
+	_mv $_rubydir/io \
+		$_rubydir/$_chost/io/console.so
+}
+
+irb() {
+	pkgdesc="The Interactive Ruby"
+	replaces="$pkgname"
+	depends="$pkgname $pkgname-io-console"
+
+	cd "$pkgdir"
+	_mvgem irb
+	_mv usr/bin/irb
+}
+
+json() {
+	pkgdesc="JSON implementation as a Ruby extension in C"
+	license="Ruby"
+	depends=""
+
+	_mvgem json
+}
+
+minitest() {
+	pkgdesc="Ruby suite of testing facilities"
+	license="MIT"
+	depends="$pkgname"
+
+	_mvgem minitest
+}
+
+net_telnet() {
+	pkgdesc="Telnet client functionality for Ruby"
+	depends="$pkgname-libs"
+
+	_mvgem net-telnet
+}
+
+power_assert() {
+	pkgdesc="Power Assert for Ruby"
+	depends="$pkgname-libs"
+
+	_mvgem power_assert
+}
+
+rake() {
+	pkgdesc="Ruby based make-like utility"
+	license="MIT"
+	depends="$pkgname"
+
+	_mvgem rake
+	_mv usr/bin/rake
+}
+
+rdoc() {
+	pkgdesc="Ruby documentation tool"
+	license="Ruby"
+	depends="$pkgname $pkgname-json $pkgname-io-console"
+
+	_mvgem rdoc
+	_mv usr/bin/ri \
+		usr/bin/rdoc
+}
+
+sdbm() {
+	pkgdesc="A simple file-based key-value store with String keys and values for Ruby"
+	license="BSD-2-Clause"
+	depends=""
+
+	_mvgem sdbm
+}
+
+test_unit() {
+	pkgdesc="An xUnit family unit testing framework for Ruby"
+	license="Ruby PSFL"
+	depends="$pkgname $pkgname-power_assert"
+
+	_mvgem test-unit
+}
+
+webrick() {
+	pkgdesc="HTTP server toolkit for Ruby"
+	license="BSD-2-Clause"
+	depends="$pkgname $pkgname-etc"
+
+	_mvgem webrick
+}
+
+xmlrpc() {
+	pkgdesc="XMLRPC library for Ruby"
+	license="Ruby"
+	depends="$pkgname-libs"
+
+	_mvgem xmlrpc
+}
+
+libs() {
+	pkgdesc="Libraries necessary to run Ruby"
+	depends=""
+
+	mkdir -p "$subpkgdir"/usr
+	mv "$pkgdir"/usr/lib "$subpkgdir"/usr/
+}
+
+full() {
+	pkgdesc="Ruby with all bundled gems"
+	# bundler is bundled since Ruby 2.6, so include it in ruby-full despite
+	# that it's provided by a seprate aport/package.
+	depends="ruby $_bundled_gems ruby-bundler"
+
+	mkdir -p "$subpkgdir"
+}
+
+_mv() {
+	local i; for i in "$@"; do
+		mkdir -p "$subpkgdir"/${i%/*}
+		mv "$pkgdir"/$i "$subpkgdir"/${i%/*}/
+	done
+}
+
+_mvgem() {
+	cd "$pkgdir"
+	local path; for path in ./$_rubydir/$1.rb \
+			./$_rubydir/$1 \
+			./$_rubydir/$_chost/$1 \
+			./$_rubydir/$_chost/$1.so \
+			./$_gemdir/gems/$1-* \
+			./$_gemdir/specifications/$1-* \
+			./$_gemdir/specifications/default/$1-* ; do
+		[ ! -e "$pkgdir/$path" ] || _mv "$path"
+	done
+}
+
+
+sha512sums="
+1d036d08016351e8f9e7506a6abaf490fe226cf2ff9c2f9df582b57bff22a960dbaf271a8a167ac09f864613b9b8b14191bb79f8a6900ad5ca24131ecf571d54  ruby-2.7.3.tar.gz
+a142199140fa711a64717429e9069fd2082319abaf4b129f561db374b3bc16e2a90cc4c849b5d28334505d1c71fed242aef3c44d983da3513d239dcb778673a5  rubygems-avoid-platform-specific-gems.patch
+43c1fc80f0dcb4f24d891478889808583da90dc9e0df74c3b1cf41253c13a0d416d2b7ae17e7d53ac1238340a845b088f0fe20324a79905cc6b950b3dcfa4ac6  test_insns-lower-recursion-depth.patch
+3ffc034c01110ee5531265333ca5ee8d61d08131843fe3004c5b34c88c9c1b32cb4ed89574f393177c8bd526e9c15da61ab344f93adf07b9148c561ee19e2eb5  fix-get_main_stack.patch
+89d4b012ccb46805bf104e44360749a1a745572068778a383491acddd172213fae8239109f95e458c67a16f22f6dcee2ed4cc626cb07a2dc8d36b514912f5bc3  remove-broken-autoconf-section.patch
+"

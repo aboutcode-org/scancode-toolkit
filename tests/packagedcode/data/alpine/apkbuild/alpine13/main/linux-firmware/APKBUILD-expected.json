@@ -1,0 +1,65 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "linux-firmware",
+  "version": "20201218-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "firmware files for linux",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "unknown-license-reference",
+  "declared_license": "custom:multiple",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20201218.tar.gz"
+      },
+      {
+        "file_name": "BCM43430A1.hcd.fff76cb1",
+        "url": "https://github.com/RPi-Distro/bluez-firmware/raw/fff76cb15527c435ce99a9787848eacd6288282c/broadcom/BCM43430A1.hcd"
+      },
+      {
+        "file_name": "BCM4345C0.hcd.fff76cb1",
+        "url": "https://github.com/RPi-Distro/bluez-firmware/raw/fff76cb15527c435ce99a9787848eacd6288282c/broadcom/BCM4345C0.hcd"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "linux-firmware-20201218.tar.gz",
+        "sha512": "2685640759a316561b948f96e6fc49ffe9543cb300c282876e6d6880d1c0f8114360f1f50ed2688d7d97a4a0a966fc7ecb887702ae3c77c3a63d703096115f9e"
+      },
+      {
+        "file_name": "BCM43430A1.hcd.fff76cb1",
+        "sha512": "a7b37bce092367125e390017bb0329c3b7f8fa891cf30d422ee73ce53d0592d4ff0fc2e2a94a87eefb641d5dd8631fae1cc46664224dea987ca04b68a8af8519"
+      },
+      {
+        "file_name": "BCM4345C0.hcd.fff76cb1",
+        "sha512": "a52fdb876131affa85b39434d619580c0e1605094992ffa3bb321af387dd79739736842dea9ffa759e6658aecde40eda6b06d93dbb58234a4b126b756c28521e"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/linux-firmware@20201218-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

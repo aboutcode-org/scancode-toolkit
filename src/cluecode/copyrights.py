@@ -516,7 +516,7 @@ patterns = [
     # COPYRIGHT
     ############################################################################
 
-    # first some exceptions
+    # some exceptions
 
     # NOT a copyright Copyright.txt : treat as NN
     (r'^Copyright\.txt$', 'NN'),
@@ -581,6 +581,10 @@ patterns = [
     # JUNK are things to ignore
     ############################################################################
 
+    # path with trailing year-like are NOT a year as in
+    # Landroid/icu/impl/IDNA2003 : treat as JUNK
+    (r'^[^\\/]+[\\/][^\\/]+[\\/].*$', 'JUNK'),
+
     # Combo of many (3+) letters and punctuations groups without spaces is likely junk
     # "AEO>>,o>>'!xeoI?o?O1/4thuA/"
     # (r'((\w+\W+){3,})+', 'JUNK'),
@@ -613,7 +617,7 @@ patterns = [
     (r'^Agreement$', 'JUNK'),
     (r'^Usage$', 'JUNK'),
     (r'^Please$', 'JUNK'),
-    (r'^Based$', 'JUNK'),
+    (r'^\(?Based$', 'JUNK'),
     (r'^Upstream$', 'JUNK'),
     (r'^Files?$', 'JUNK'),
     (r'^Filename:?$', 'JUNK'),
@@ -1040,6 +1044,8 @@ patterns = [
     (r'^JMagnetic$', 'NN'),
     (r'^Joint$', 'NN'),
     (r'^Jsunittest$', 'NN'),
+    (r'^List$', 'NN'),
+    (r'^Set$', 'NN'),
     (r'^Last$', 'NN'),
     (r'^LAW', 'NN'),
     (r'^Legal$', 'NN'),
@@ -1134,6 +1140,7 @@ patterns = [
     (r'^The$', 'NN'),
     (r'^THE', 'NN'),
     (r'^These$', 'NN'),
+    (r'^[tT]here$', 'NN'),
     (r'^This$', 'NN'),
     (r'^THIS$', 'NN'),
     (r'^Those$', 'NN'),
@@ -1165,6 +1172,9 @@ patterns = [
     (r'^Create$', 'NN'),
     (r'^Engine\.$', 'NN'),
     (r'^While$', 'NN'),
+    (r'^Review', 'NN'),
+    (r'^Help', 'NN'),
+    (r'^Web', 'NN'),
 
     # alone this is not enough for an NNP
     (r'^Free$', 'NN'),
@@ -1302,34 +1312,34 @@ patterns = [
     (r'^LIMITED[,\.]??$', 'COMP'),
 
     # Caps company suffixes
-    (r'^INC\.?,?\)?$', 'COMP'),
-    (r'^INCORPORATED\.?,?\)?$', 'COMP'),
-    (r'^CORP\.?,?\)?$', 'COMP'),
-    (r'^CORPORATION\.?,?\)?$', 'COMP'),
-    (r'^FOUNDATION\.?,?$', 'COMP'),
-    (r'^GROUP\.?,?$', 'COMP'),
-    (r'^COMPANY\.?,?$', 'COMP'),
-    (r'^\(tm\).?$', 'COMP'),
-    (r'^[Ff]orum\.?,?', 'COMP'),
+    (r'^INC[\.,\)]*$', 'COMP'),
+    (r'^INCORPORATED[\.,\)]*$', 'COMP'),
+    (r'^CORP[\.,\)]*$', 'COMP'),
+    (r'^CORPORATION[\.,\)]*$', 'COMP'),
+    (r'^FOUNDATION[\.,\)]*$', 'COMP'),
+    (r'^GROUP[\.,\)]*$', 'COMP'),
+    (r'^COMPANY[\.,\)]*$', 'COMP'),
+    (r'^\(tm\)[\.,]?$', 'COMP'),
+    (r'^[Ff]orum[\.,\)]*', 'COMP'),
 
     # company suffix
-    (r'^[Cc]orp\.?,?\)?$', 'COMP'),
-    (r'^[Cc]orp(oration|\.,?)?\)?$', 'COMP'),
-    (r'^[Cc][oO]\.,?$', 'COMP'),
-    (r'^[Cc]orporations?\.?,?$', 'COMP'),
-    (r'^[Ff]oundation\.?,?$', 'COMP'),
-    (r'^[Aa]lliance\.?,?$', 'COMP'),
+    (r'^[Cc]orp[\.,\)]*$', 'COMP'),
+    (r'^[Cc]orporation[\.,\)]*$', 'COMP'),
+    (r'^[Cc][oO][\.,\)]*$', 'COMP'),
+    (r'^[Cc]orporations?[\.,\)]*$', 'COMP'),
+    (r'^[Cc]onsortium[\.,\)]*$', 'COMP'),
+
+    (r'^[Ff]oundation[\.,\)]*$', 'COMP'),
+    (r'^[Aa]lliance[\.,\)]*$', 'COMP'),
     (r'^Working$', 'COMP'),
-    (r'^[Gg]roup\.?,?$', 'COMP'),
-    (r'^[Tt]echnology\.?,?$', 'COMP'),
-    (r'^[Tt]echnologies\.?,?$', 'COMP'),
-    (r'^[Cc]ommunity\.?,?$', 'COMP'),
-    (r'^[Cc]ommunities\.?,?$', 'COMP'),
-    (r'^[Mm]icrosystems\.?,?$', 'COMP'),
-    (r'^[Pp]rojects?\.?,?$', 'COMP'),
-    (r'^[Tt]eams?\.?$', 'COMP'),
-    (r'^[Tt]ech\.?,?$', 'COMP'),
-    (r"^Limited'?\.?,?$", 'COMP'),
+    (r'^[Gg]roup[\.,\)]*$', 'COMP'),
+    (r'^[Tt]echnolog(y|ies)[\.,\)]*$', 'COMP'),
+    (r'^[Cc]ommunit(y|ies)[\.,\)]*$', 'COMP'),
+    (r'^[Mm]icrosystems[\.,\)]*$', 'COMP'),
+    (r'^[Pp]rojects?[\.,\)]*,?$', 'COMP'),
+    (r'^[Tt]eams?[\.,\)]*$', 'COMP'),
+    (r'^[Tt]ech[\.,\)]*$', 'COMP'),
+    (r"^Limited'?[\.,\)]*$", 'COMP'),
 
     # company suffix : LLC, LTD, LLP followed by one extra char
     (r'^[Ll][Tt][Dd]\.?,?$', 'COMP'),
@@ -1341,7 +1351,8 @@ patterns = [
 
     # company suffix : SA, SAS, AG, AB, AS, CO, labs followed by a dot
     (r'^(S\.?A\.?S?|Sas|sas|A\/S|AG,?|AB|Labs?|[Cc][Oo]|Research|Center|INRIA|Societe)\.?$', 'COMP'),
-
+    # French SARL 
+    (r'^(SARL|S\.A\.R\.L\.)[\.,\)]*$', 'COMP'),
     # company suffix : AS: this is frequent beyond Norway.
     (r'^AS.$', 'COMP'),
     (r'^AS', 'CAPS'),
@@ -1361,11 +1372,13 @@ patterns = [
     # (dutch and belgian) company suffix
     (r'^[Bb]\.?[Vv]\.?|BVBA$', 'COMP'),
     # university
-    (r'^\(?[Uu]niv(?:[.]|ersit(?:y|e|at?|ad?))\)?\.?$', 'UNI'),
+    (r'^\(?[Uu]niv(?:[.]|ersit(?:y|e|at?|ad?))[\.,\)]*$', 'UNI'),
     (r'^UNIVERSITY$', 'UNI'),
     (r'^College$', 'UNI'),
     # Academia/ie
     (r'^[Ac]cademi[ae]s?$', 'UNI'),
+    # Academia/ie
+    (r'^[Ac]cademy[\.,\)]*$', 'UNI'),
 
     # institutes
     (r'INSTITUTE', 'COMP'),
@@ -1578,7 +1591,7 @@ patterns = [
     (r'^[A-Z]+[.][A-Z][a-z]+[,]?$', 'NNP'),
 
     # proper noun with apostrophe ': D'Orleans, D'Arcy, T'so, Ts'o
-    (r"^[A-Z][[a-z]?['][A-Z]?[a-z]+[,.]?$", 'NNP'),
+    (r"^[A-Z][a-z]?['][A-Z]?[a-z]+[,.]?$", 'NNP'),
 
     # proper noun with apostrophe ': d'Itri
     (r"^[a-z]['][A-Z]?[a-z]+[,\.]?$", 'NNP'),
@@ -1612,11 +1625,11 @@ patterns = [
     # URLS such as <(http://fedorahosted.org/lohit)> or ()
     (r'[<\(]https?:.*[>\)]', 'URL'),
     # URLS such as ibm.com without a scheme
-    (r'\s?[a-z0-9A-Z\-\.\_]+\.([Cc][Oo][Mm]|[Nn][Ee][Tt]|[Oo][Rr][Gg]|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|nl|au|biz)\s?\.?$', 'URL2'),
+    (r'\s?[a-z0-9A-Z\-\.\_]+\.([Cc][Oo][Mm]|[Nn][Ee][Tt]|[Oo][Rr][Gg]|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|se|nl|au|biz)\s?\.?$', 'URL2'),
     # TODO: add more extensions: there are so main TLD these days!
     # URL wrapped in () or <>
-    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|nl|au|biz)\s?[\.\)>]+$', 'URL'),
-    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|nl|au|biz)[\.\)>]?$', 'URL'),
+    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz)\s?[\.\)>]+$', 'URL'),
+    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz)[\.\)>]?$', 'URL'),
     # derived from regex in cluecode.finder
     (r'<?a?.(href)?.('
      r'(?:http|ftp|sftp)s?://[^\s<>\[\]"]+'
@@ -1762,7 +1775,7 @@ grammar = """
     # Commonwealth Scientific and Industrial Research Organisation (CSIRO)
     COMPANY: {<NNP> <NNP> <CC> <NNP> <COMP> <NNP> <CAPS>}
 
-    COMPANY: {<NNP> <CC> <NNP> <COMP> <NNP>?}        #200
+    COMPANY: {<NNP> <CC> <NNP> <COMP> <NNP>*}        #200
 
     # Android Open Source Project, 3Dfx Interactive, Inc.
     COMPANY: {<NN>? <NN> <NNP> <COMP>}        #205
@@ -1773,8 +1786,14 @@ grammar = """
     # NNP  NN   NNP    NNP      COMP   COMP')
     COMPANY: {<NNP> <NN> <NNP> <NNP> <COMP>+} #207
 
-    # was     COMPANY {<NNP|CAPS> <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <COMP> <COMP>?}        #210
-    COMPANY: {<NNP|CAPS>+ <COMP>+}        #210
+    #  Massachusetts Institute of Technology
+    COMPANY: {<NNP> <COMP|COMPANY> <OF> <NNP>+}        #208
+
+    COMPANY: {<NNP|CAPS>+ <COMP|COMPANY>+}        #210
+
+    # University of Southern California, Information Sciences Institute (ISI)
+    COMPANY: {<UNI> <OF> <COMPANY> <CAPS>?}        #211
+
     COMPANY: {<UNI|NNP> <VAN|OF> <NNP>+ <UNI>?}        #220
     COMPANY: {<NNP>+ <UNI>}        #230
     COMPANY: {<UNI> <OF> <NN|NNP>}        #240
@@ -1782,6 +1801,9 @@ grammar = """
 
     # University of Southern California, Information Sciences Institute (ISI)
     COMPANY: {<COMPANY> <COMPANY> <CAPS>} #251
+
+    # University of Technology
+    COMPANY: {<UNI>  <OF>  <COMP|COMPANY>} #252
 
     # GNOME i18n Project for Vietnamese
     COMPANY: {<CAPS> <NN> <COMP> <NN> <NNP>} #253
@@ -1936,6 +1958,9 @@ grammar = """
     COMPANY: {<URL|URL2>}        #830
 
     COMPANY: {<COMPANY> <COMP|COMPANY>}        #840
+
+    # the Software and Component Technologies group of Trimble Navigation, Ltd.
+    COMPANY: {<COMPANY> <OF> <COMP|COMPANY>}        #840.1
 
     # University Corporation for Advanced Internet Development, Inc.
     COMPANY: {<UNI> <COMPANY>}        #845
@@ -2193,7 +2218,8 @@ grammar = """
     COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>  <NNP>} #22792
 
     # Copyright (c) 2017 odahcam
-    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN> <ALLRIGHTRESERVED>?} #22793
+    # or Copyright (c) 2019-2021, Open source contributors.
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <CONTRIBUTORS>? <ALLRIGHTRESERVED>?} #22793
 
     # Licensed material of Foobar Company, All Rights Reserved, (C) 2005
     COPYRIGHT: {<COMPANY>  <ALLRIGHTRESERVED>  <COPYRIGHT>} #22794
@@ -2783,6 +2809,7 @@ COPYRIGHTS_JUNK = frozenset([
     'copyright 2003 m. y.',
     'copyright 2001 m. y. name',
     'copyright 2001 m. y.',
+    'copyright help center',
 ])
 
 ################################################################################

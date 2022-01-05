@@ -1,0 +1,12 @@
+license_expression: cups
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright 2007-2013 by Apple Inc.
+    - copyright 2006 by Jelmer Vernooij
+ignorable_holders:
+    - Apple Inc.
+    - Jelmer Vernooij
+ignorable_authors:
+    - Apple Inc.
+ignorable_urls:
+    - http://www.cups.org/

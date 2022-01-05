@@ -1,0 +1,5 @@
+license_expression: ocb-open-source-2013
+is_license_notice: yes
+ignorable_urls:
+    - http://web.cs.ucdavis.edu/~rogaway/ocb/license.htm
+    - http://web.cs.ucdavis.edu/~rogaway/ocb/license1.pdf

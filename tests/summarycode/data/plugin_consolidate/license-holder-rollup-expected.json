@@ -12,13 +12,16 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 3
       }
     }
   ],
+  "packages": [],
   "consolidated_components": [
     {
       "type": "holders",
@@ -96,7 +99,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [],
       "files_count": 3,
       "dirs_count": 5,
@@ -128,7 +131,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [],
       "files_count": 1,
       "dirs_count": 1,
@@ -160,7 +163,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "omegacom_1"
       ],
@@ -191,11 +194,12 @@
       "licenses": [
         {
           "key": "gpl-1.0-plus",
-          "score": 16.0,
+          "score": 100.0,
           "name": "GNU General Public License 1.0 or later",
           "short_name": "GPL 1.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
@@ -212,16 +216,18 @@
             "licenses": [
               "gpl-1.0-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 16
+            "rule_relevance": 100
           }
         },
         {
@@ -231,6 +237,7 @@
           "short_name": "GPL 2.0",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
@@ -247,11 +254,13 @@
             "licenses": [
               "gpl-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -280,7 +289,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "omegacom_1"
       ],
@@ -314,7 +323,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [],
       "files_count": 2,
       "dirs_count": 2,
@@ -346,7 +355,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -377,11 +386,12 @@
       "licenses": [
         {
           "key": "gpl-1.0-plus",
-          "score": 16.0,
+          "score": 100.0,
           "name": "GNU General Public License 1.0 or later",
           "short_name": "GPL 1.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
@@ -398,16 +408,18 @@
             "licenses": [
               "gpl-1.0-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 16
+            "rule_relevance": 100
           }
         },
         {
@@ -417,6 +429,7 @@
           "short_name": "GPL 2.0",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
@@ -433,11 +446,13 @@
             "licenses": [
               "gpl-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -466,7 +481,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -500,7 +515,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_oracle_1"
       ],
@@ -531,11 +546,12 @@
       "licenses": [
         {
           "key": "unknown-license-reference",
-          "score": 11.0,
+          "score": 50.0,
           "name": "Unknown License file reference",
           "short_name": "Unknown License reference",
           "category": "Unstated License",
           "is_exception": false,
+          "is_unknown": true,
           "owner": "Unspecified",
           "homepage_url": null,
           "text_url": "",
@@ -552,16 +568,18 @@
             "licenses": [
               "unknown-license-reference"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": true,
+            "has_unknown": true,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 11
+            "rule_relevance": 50
           }
         },
         {
@@ -571,6 +589,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -587,11 +606,13 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -620,7 +641,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_oracle_1"
       ],

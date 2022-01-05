@@ -42,44 +42,44 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/junit/junit",
+      "purl": "pkg:maven/junit/junit@4.12",
       "requirement": "4.12",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.xerial/sqlite-jdbc",
+      "purl": "pkg:maven/org.xerial/sqlite-jdbc@3.16.1",
       "requirement": "3.16.1",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.microsoft.sqlserver/sqljdbc4",
+      "purl": "pkg:maven/com.microsoft.sqlserver/sqljdbc4@4.0",
       "requirement": "4.0",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.postgresql/postgresql",
+      "purl": "pkg:maven/org.postgresql/postgresql@42.0.0",
       "requirement": "42.0.0",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/mysql/mysql-connector-java",
+      "purl": "pkg:maven/mysql/mysql-connector-java@6.0.6",
       "requirement": "6.0.6",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

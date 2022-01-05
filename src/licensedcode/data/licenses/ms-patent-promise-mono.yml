@@ -1,0 +1,9 @@
+key: ms-patent-promise-mono
+short_name: Microsoft Patent Promise for Mono
+name: Microsoft Patent Promise for Mono
+category: Patent License
+owner: Microsoft
+homepage_url: https://www.mono-project.com/docs/faq/licensing/
+spdx_license_key: LicenseRef-scancode-ms-patent-promise-mono
+text_urls:
+    - https://github.com/mono/mono/blob/main/PATENTS.TXT

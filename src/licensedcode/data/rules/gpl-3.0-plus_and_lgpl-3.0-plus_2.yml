@@ -1,0 +1,8 @@
+license_expression: gpl-3.0-plus AND lgpl-3.0-plus
+is_license_notice: yes
+relevance: 95
+referenced_filenames:
+    - COPYING3
+notes: this is a set of confusing LGPL and GPL mixed references
+ignorable_urls:
+    - https://www.gnu.org/licenses/

@@ -1,0 +1,4 @@
+license_expression: gpl-1.0-plus AND zlib
+is_license_notice: yes
+relevance: 100
+notes: Seen in xymon in Debian

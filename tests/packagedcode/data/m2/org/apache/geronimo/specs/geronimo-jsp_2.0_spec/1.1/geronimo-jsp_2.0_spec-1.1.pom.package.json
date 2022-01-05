@@ -27,12 +27,12 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-servlet_2.4_spec",
+      "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-servlet_2.4_spec@1.1",
       "requirement": "1.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

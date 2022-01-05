@@ -1,0 +1,3 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on some of the MIT wording with material and problematic changes. https://github.com/gkushang/speedItHybrid/blob/d29457ae527627d14f8f72b1865a54e5bb06f86a/src/main/java/com/speeditlab/hybrid/exception/ViewNotFound.java#L7

@@ -1,0 +1,9 @@
+key: pbl-1.0
+short_name: PBL-1.0
+name: Permissive Binary License 1.0
+category: Free Restricted
+owner: ARM
+homepage_url: https://os.mbed.com/licenses/permissive-binary-license/
+spdx_license_key: LicenseRef-scancode-pbl-1.0
+text_urls:
+    - https://os.mbed.com/licenses/permissive-binary-license/

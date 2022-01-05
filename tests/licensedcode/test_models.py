@@ -10,13 +10,18 @@
 import json
 import os
 
+import pytest
+
 from commoncode.testcase import FileBasedTesting
 
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
+from licensedcode.models import get_key_phrases
+from licensedcode.models import InvalidRule
 from licensedcode.models import Rule
 from licensedcode.models import rules_data_dir
+from unittest import TestCase as TestCaseClass
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -365,6 +370,62 @@ class TestRule(FileBasedTesting):
         rule.length = 1000
         rule.compute_relevance()
         assert rule.relevance == 13
+        assert rule.has_stored_relevance
+
+    def test_compute_relevance_changes_stored_relevance_for_long_rules(self):
+        rule = models.Rule(stored_text='abcd ' * 18, license_expression='public-domain')
+        rule.relevance = 100
+        rule.has_stored_relevance = True
+        rule.length = 18
+        rule.compute_relevance()
+        assert rule.relevance == 100
+        assert not rule.has_stored_relevance
+
+    def test_compute_relevance_does_not_change_stored_relevance_for_short_rules(self):
+        rule = models.Rule(stored_text='abcd ' * 18, license_expression='public-domain')
+        rule.relevance = 100
+        rule.has_stored_relevance = True
+        rule.length = 17
+        rule.compute_relevance()
+        assert rule.relevance == 100
+        assert rule.has_stored_relevance
+
+    def test_compute_relevance_does_not_update_stored_relevance(self):
+        rule = models.Rule(stored_text='abcd ' * 17, license_expression='public-domain')
+        rule.relevance = 100
+        rule.has_stored_relevance = True
+        rule.length = 17
+        rule.compute_relevance()
+        assert rule.relevance == 100
+        assert rule.has_stored_relevance
+
+    def test_compute_relevance_does_not_update_stored_relevance_for_short_rules(self):
+        rule = models.Rule(stored_text='abcd ' * 17, license_expression='public-domain')
+        rule.relevance = 99
+        rule.has_stored_relevance = True
+        rule.length = 18
+        rule.compute_relevance()
+        assert rule.relevance == 99
+        assert rule.has_stored_relevance
+
+    def test_compute_relevance_does_update_stored_relevance_for_short_rules(self):
+        rule = models.Rule(stored_text='abcd ' * 17, license_expression='public-domain')
+        rule.relevance = 94
+        rule.has_stored_relevance = True
+        rule.length = 17
+        rule.compute_relevance()
+        assert rule.relevance == 94
+        assert not rule.has_stored_relevance
+
+    def test_compute_relevance_does_not_update_stored_relevance_for_short_rules_if_computed_differs(self):
+        rule = models.Rule(stored_text='abcd ' * 16, license_expression='public-domain')
+        rule.relevance = 94
+        rule.has_stored_relevance = True
+        rule.length = 16
+        rule.compute_relevance()
+        assert rule.relevance == 94
+        assert rule.has_stored_relevance
+
 
     def test_compute_relevance_is_hundred_for_false_positive(self):
         rule = models.Rule(stored_text='1', license_expression='public-domain')
@@ -478,3 +539,89 @@ class TestRule(FileBasedTesting):
         rule_dir = self.get_test_loc('models/rule_validate')
         rule = list(models.load_rules(rule_dir))[0]
         assert list(rule.validate()) == []
+
+    def test_key_phrases_yields_spans(self):
+        rule_stored_text = (
+            'This released software is {{released}} by under {{the MIT license}}. '
+            'Which is a license originating at Massachusetts Institute of Technology (MIT).'
+        )
+        rule = models.Rule(license_expression='mit', stored_text=rule_stored_text)
+
+        key_phrases = rule.key_phrases()
+
+        assert list(key_phrases) == [models.Span(4), models.Span(7, 9)]
+
+    def test_key_phrases_raises_exception_when_markup_is_not_closed(self):
+        rule_stored_text = (
+            'This released software is {{released}} by under {{the MIT license. '
+            'Which is a license originating at Massachusetts Institute of Technology (MIT).'
+        )
+        rule = models.Rule(license_expression='mit', stored_text=rule_stored_text)
+
+        actual_exception = None
+        try:
+            list(rule.key_phrases())
+        except Exception as e:
+            actual_exception = e
+
+        assert isinstance(actual_exception, InvalidRule)
+        assert "Key phrase definition started at token '7' is not closed" == str(actual_exception)
+
+
+class TestGetKeyPhrases(TestCaseClass):
+    def test_get_key_phrases_yields_spans(self):
+        text = (
+            'This released software is {{released}} by under {{the MIT license}}. '
+            'Which is a license originating at Massachusetts Institute of Technology (MIT).'
+        )
+
+        key_phrases = get_key_phrases(text)
+
+        assert list(key_phrases) == [models.Span(4), models.Span(7, 9)]
+
+    def test_get_key_phrases_raises_exception_key_phrase_markup_is_not_closed(self):
+        text = 'This software is {{released by under the MIT license.'
+
+        actual_exception = None
+        try:
+            list(get_key_phrases(text))
+        except Exception as e:
+            actual_exception = e
+
+        assert isinstance(actual_exception, InvalidRule)
+        assert "Key phrase definition started at token '3' is not closed" == str(actual_exception)
+
+    def test_get_key_phrases_ignores_stopwords_in_positions(self):
+        text = 'The word comma is a stop word so comma does not increase the span position {{MIT license}}.'
+
+        key_phrases = get_key_phrases(text)
+
+        assert list(key_phrases) == [models.Span(11, 12)]
+
+    def test_get_key_phrases_yields_spans_without_stop_words(self):
+        text = 'This released software is {{released span}} by under {{the MIT quot license}}.'
+
+        key_phrases = get_key_phrases(text)
+
+        assert list(key_phrases) == [models.Span(4), models.Span(7, 9)]
+
+    def test_get_key_phrases_does_not_yield_empty_spans(self):
+        text = 'This released software {{comma}} is {{}} by under {{the MIT license}}.'
+
+        key_phrases = get_key_phrases(text)
+
+        assert list(key_phrases) == [models.Span(6, 8)]
+
+    def test_get_key_phrases_only_considers_outer_key_phrase_markup(self):
+        text = 'This released {{{software under the MIT}}} license.'
+
+        key_phrases = get_key_phrases(text)
+
+        assert list(key_phrases) == [models.Span(2, 5)]
+
+    def test_get_key_phrases_ignores_nested_key_phrase_markup(self):
+        text = 'This released {{software {{under the}} MIT}} license.'
+
+        key_phrases = get_key_phrases(text)
+
+        assert list(key_phrases) == [models.Span(2, 5)]

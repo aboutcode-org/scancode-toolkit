@@ -37,84 +37,84 @@
       "is_resolved": false
     },
     {
-      "purl": "pkg:maven/javax.servlet/javax.servlet-api",
+      "purl": "pkg:maven/javax.servlet/javax.servlet-api@3.1.0",
       "requirement": "3.1.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.glassfish.jersey.containers/jersey-container-servlet",
+      "purl": "pkg:maven/org.glassfish.jersey.containers/jersey-container-servlet@2.6",
       "requirement": "2.6",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.glassfish.jersey.media/jersey-media-json-jackson",
+      "purl": "pkg:maven/org.glassfish.jersey.media/jersey-media-json-jackson@2.6",
       "requirement": "2.6",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
       "purl": "pkg:maven/com.salesforce.argus/argus-core",
       "requirement": "${project.version}",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
+      "is_runtime": false,
+      "is_optional": true,
       "is_resolved": false
     },
     {
-      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations",
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.3.2",
       "requirement": "2.3.2",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base",
+      "purl": "pkg:maven/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base@2.3.2",
       "requirement": "2.3.2",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider",
+      "purl": "pkg:maven/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider@2.3.2",
       "requirement": "2.3.2",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.glassfish.jersey.core/jersey-common",
+      "purl": "pkg:maven/org.glassfish.jersey.core/jersey-common@2.6",
       "requirement": "2.6",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/io.jsonwebtoken/jjwt",
+      "purl": "pkg:maven/io.jsonwebtoken/jjwt@0.7.0",
       "requirement": "0.7.0",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/junit/junit",
+      "purl": "pkg:maven/junit/junit@4.10",
       "requirement": "4.10",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

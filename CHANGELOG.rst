@@ -1,27 +1,310 @@
 Changelog
 =========
 
-v21.x.x (next, future)
+31.0.0 (next, roadmap)
 -----------------------
 
-Breaking API changes:
-~~~~~~~~~~~~~~~~~~~~~
 
- - The data structure of the JSON output has changed for copyrights, authors
-   and holders: we now use proper name for attributes and not a generic "value".
+Important API changes:
+~~~~~~~~~~~~~~~~~~~~~~~~
 
- - The data structure of the JSON output has changed for licenses: we now
-   return match details once for each matched license expression rather than
-   once for each license in a matched expression. There is a new top-level
-   "licenses" attributes that contains the data details for each detected
-   licenses only once. This data can contain the reference license text
-   as an option.
+- Main package API function `get_package_infos` is now deprecated, and is replaced by
+  `get_package_manifests`.
 
- - The data structure of the JSON output has changed for packages: we now
-   return "package_manifests" package information at the manifest file-level
-   rather than "packages". There is a a new top-level "packages" attribute
-   that contains each package instance that can be aggregating data from
-   multiple manifests for a single package instance.
+- The data structure of the JSON output has changed for copyrights, authors
+  and holders: we now use proper name for attributes and not a generic "value".
+
+- The data structure of the JSON output has changed for licenses: we now
+  return match details once for each matched license expression rather than
+  once for each license in a matched expression. There is a new top-level
+  "license_references" attributes that contains the data details for each
+  detected licenses only once. This data can contain the reference license text
+  as an option.
+
+- The data structure of the JSON output has changed for packages: we now
+  return "package_manifests" package information at the manifest file-level
+  rather than "packages". There is a a new top-level "packages" attribute
+  that contains each package instance that can be aggregating data from
+  multiple manifests for a single package instance.
+
+- The data structure for HTML output has been changed to include emails and
+  urls under the  "infos" object. Now HTML template will output holders,
+  authors, emails, and urls into separate tables like "licenses" and "copyrights".
+
+Copyright detection:
+~~~~~~~~~~~~~~~~~~~~
+
+- The data structure in the JSON is now using consistently named attributes as
+  opposed to a plain value.
+- Several copyright detection bugs have been fixed. 
+
+
+License detection:
+~~~~~~~~~~~~~~~~~~~
+
+- There have been significant license detection rules and licenses updates:
+
+  - XX new licenses have been added, 
+  - XX existing license metadata have been updated,
+  - XXXX new license detection rules have been added, and
+  - XXXX existing license rules have been updated.
+
+- Key phrases can now be defined in RULEs by surrounding one or more words with
+  `{{` and `}}`. When defined a RULE will only match when the key phrases match
+  exactly.
+
+Package detection:
+~~~~~~~~~~~~~~~~~~
+
+- We now support new package manifest formats:
+  - OpenWRT packages.
+  - Yocto/BitBake .bb recipes.
+
+- Major changes in packages detection and reporting, codebase-level attribute `packages`
+  with one or more package_manifests and files for the packages will be reported.
+  The specific changes made are:
+
+  - The resource level attribute `packages` has been renamed to `package_manifests`,
+    as these are really package manifests that are being detected.
+  - A new codebase level attribute `packages` has been added which contains package
+    instances created from package_manifests detected in the codebase.
+
+
+Outputs:
+~~~~~~~~
+
+ - Add new outputs for the CycloneDx format.
+   The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
+
+
+Output version
+--------------
+
+Scancode Data Output Version is now 2.0.0.
+
+Changes:
+
+- rename resource level attribute `packages` to `package_manifests`.
+- add codebase level attribute `packages`.
+
+
+30.1.0 - 2021-09-25
+--------------------
+
+This is a bug fix release for these bugs:
+
+- https://github.com/nexB/scancode-toolkit/issues/2717
+
+We now return the package in the summaries as before.
+
+There is also a minor API change: we no longer return a count of "null" empty
+values in the summaries for license, copyrights, etc.
+
+
+Thank you to:
+- Thomas Druez @tdruez 
+
+
+
+30.0.1 - 2021-09-24
+--------------------
+
+This is a minor bug fix release for these bugs:
+
+- https://github.com/nexB/commoncode/issues/31
+- https://github.com/nexB/scancode-toolkit/issues/2713
+
+We now correctly work with all supported Click versions. 
+
+Thank you to:
+- Konstantin Kochin @vznncv
+- Thomas Druez @tdruez 
+
+
+
+30.0.0 - 2021-09-23
+--------------------
+
+This is a major release with new features, and several bug fixes and
+improvements including major updates to the license detection.
+
+We have droped using calendar-based versions and are now switched back to semver
+versioning. To ensure that there is no ambiguity, the new major version has been
+updated from 21 to 30. The primary reason is that calver was not helping
+integrators to track major version changes like semver does.
+
+We also have introduced a new JSON output format version based on semver to
+version the JSON output format data structure and have documented the new
+versioning approach.
+
+
+Package detection:
+~~~~~~~~~~~~~~~~~~
+
+- The Debian packages declared license detection in machine readable copyright
+  files and unstructured copyright has been significantly improved with the
+  tracking of the detection start and end line of a license match. This is not
+  yet exposed outside of tests but has been essential to help improve detection.
+
+- Debian copyright license detection has been significantly improved with new
+  license detection rules.
+
+- Support for Windows packages has been improved (and in particular the handling
+  of Windows packages detection in the Windows registry).
+
+- Support for Cocoapod packages has been significantly revamped and is now
+  working as expected.
+
+- Support for PyPI packages has been refined, in particular package descriptions.
+
+
+
+Copyright detection:
+~~~~~~~~~~~~~~~~~~~~
+
+- The copyright detection accuracy has been improved and several bugs have been
+  fixed.
+
+
+License detection:
+~~~~~~~~~~~~~~~~~~~
+
+There have been some significant updates in license detection. We now track
+34,164 license and license notices:
+
+  - 84 new licenses have been added, 
+  - 34 existing license metadata have been updated,
+  - 2765 new license detection rules have been added, and
+  - 2041 existing license rules have been updated.
+
+
+- Several license detection bugs have fixed.
+
+- The SPDX license list 3.14 is now supported and has been synced with the
+  licensedb. We also include the version of the SPDX license list in the
+  ScanCode YAML, JSON and the SPDX outputs, as well as display it with the
+  "--version" command line option.
+
+- Unknown licenses have a new flag "is_unknown" in their metadata to identify
+  them explicitly. Before that we were just relying on the naming convention of
+  having "unknown" as part of a license key.
+
+- Rules that match at least one unknown license have a flag "has_unknown" set
+  and returned in the match results.
+
+- Experimental: License detection can now "follow" license mentions that
+  reference another file such as "see license in COPYING" where we can relate
+  this mention to the actual license detected in the COPYING file. Use the new
+  "--unknown-licenses" command line option to test this new feature.
+  This feature will evolve significantly in the next version(s).
+
+
+Outputs:
+~~~~~~~~
+
+- The SPDX output now has the mandatory ids attribute per SPDX spec. And we
+  support SPDX 2.2 and SPDX license list 3.14.
+
+
+Miscellaneous
+~~~~~~~~~~~~~~~
+
+- There is a new "--no-check-version" CLI option to scancode to bypass live,
+  remote outdated version check on PyPI
+
+- The scan results and the CLI now display an outdated version warning when
+  the installed ScanCode version is older than 90 days. This is to warn users
+  that they are relying on outdated, likely buggy, insecure and inaccurate scan
+  results and encourage them to update to a newer version. This is made entirely
+  locally based on date comparisons.
+
+- We now display again the command line progressbar counters correctly.
+
+- A bug has been fixed in summarization.
+
+- Generated code detection has been improved with several new keywords.
+
+
+Thank you!
+~~~~~~~~~~~~
+
+Many thanks to the many contributors that made this release possible and in
+particular:
+
+- Akanksha Garg @akugarg
+- Armijn Hemel @armijnhemel 
+- Ayan Sinha Mahapatra @AyanSinhaMahapatra
+- Bryan Sutula @sutula
+- Chin-Yeung Li @chinyeungli
+- Dennis Clark @DennisClark
+- dyh @yunhua-deng
+- Dr. Frank Heimes @FrankHeimes 
+- gunaztar @gunaztar
+- Helio Chissini de Castro @heliocastro
+- Henrik Sandklef @hesa
+- Jiyeong Seok @dd-jy
+- John M. Horan @johnmhoran
+- Jono Yang @JonoYang
+- Joseph Heck @heckj
+- Luis Villa @tieguy
+- Konrad Weihmann @priv-kweihmann
+- mapelpapel @mapelpapel
+- Maximilian Huber @maxhbr
+- Michael Herzog @mjherzog
+- MMarwedel @MMarwedel
+- Mikko Murto @mmurto
+- Nishchith Shetty @inishchith 
+- Peter Gardfjäll @petergardfjall
+- Philippe Ombredanne @pombredanne
+- Rainer Bieniek @rbieniek 
+- Roshan Thomas @Thomshan
+- Sadhana @s4-2
+- Sarita Singh @itssingh
+- Siddhant Khare @Siddhant-K-code
+- Soim Kim @soimkim
+- Thomas Druez @tdruez 
+- Thorsten Godau @tgodau
+- Yunus Rahbar @yns88
+
+
+v21.8.4
+---------
+
+This is a minor bug fix release primarily for Windows installation.
+There is no feature change.
+
+Installation:
+~~~~~~~~~~~~~~~~~~
+
+- Application installation on Windows works again. This fixes #2610
+- We now build and test app bundles on all supported Python versions: 3.6 to 3.9
+
+
+Thank you to @gunaztar for reporting the #2610 bug
+
+Documentation:
+~~~~~~~~~~~~~~~~~~
+
+- Documentation is updated to reference supported Python versions 3.6 to 3.9
+
+
+
+v21.7.30
+---------
+
+This is a minor release with several bug fixes, major performance improvements
+and support for new and improved package formats
+
+
+Many thanks to every contributors that made this possible and in particular:
+
+- Abhigya Verma @abhi27-web
+- Ayan Sinha Mahapatra @AyanSinhaMahapatra
+- Dennis Clark @DennisClark
+- Jono Yang @JonoYang
+- Mayur Agarwal @mrmayurgithub 
+- Philippe Ombredanne @pombredanne
+- Pierre Tardy @tardyp
 
 
 Outputs:
@@ -31,28 +314,35 @@ Outputs:
    the JSON output
  - Add new Debian machine readable copyright output.
  - The CSV output "Resource" column has been renamed to "path".
- - The SPDX output now has the mandatory DocumentNamespace attribut per SPDX specs #2344
+ - The SPDX output now has the mandatory DocumentNamespace attribute per SPDX specs #2344
 
 
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
-
- - The data structure in the JSON is now using consistently named attributes as
-   opposed to a plain value.
 
  - The copyright detection speed has been significantly improved with the tests
    taking roughly 1/2 of the time to run. This is achieved mostly by replacing
    NLTK with a the minimal and simplified subset we need in a new library named
    pygmars.
 
+License detection:
+~~~~~~~~~~~~~~~~~~~
+
+ - Add new licenses: now tracking 1763 licenses
+ - Add new license detection rules: now tracking 29475 license detection rules
+ - We have also improved license expression parsing and processing
+
 
 Package detection:
 ~~~~~~~~~~~~~~~~~~
 
- - Add support for OpenWRT packages.
- - Add support for Yocto/BitBake .bb recipes.
+ - The Debian packages declared license detection has been significantly improved.
  - The Alpine packages declared license detection has been significantly improved.
- - Add support to track installed files for each Package type.
+ - There is new support for shell parsing and Alpine packages APKBUILD data collection.
+ - There is new support for various Windows packages detection using multiple
+   techniques including MSI, Windows registry and several more.
+ - There is new support for Distroless Debian-like installed packages.
+ - There is new support for Dart Pub package manifests.
 
 
 v21.6.7

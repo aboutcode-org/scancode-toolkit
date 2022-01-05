@@ -1,8 +1,45 @@
--
--
-- gpl-2.0-plus
-- |
+primary_license:
+declared_license:
+license_expression: gpl-2.0-plus
+copyright: |
   Copyright (c) 2000 Roland Bauerschmidt <rb@debian.org>
   Copyright (c) 1997, 1998, 1999 Guy Maor <maor@debian.org>
   Copyright (c) 1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
   portions Copyright (c) 1994 Debian Association, Inc.
+matches:
+  - score: '100.0'
+    start_line: 28
+    end_line: 47
+    matcher: 2-aho
+    rule_length: 143
+    matched_length: 143
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_811.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      and is
+      GPL V2 as well.
+
+          This program is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 2 of the License, or
+          (at your option) any later version.
+
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
+
+          You should have received a copy of the GNU General Public License
+          along with this program; if not, write to the
+          Free Software Foundation, Inc.,
+          51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+
+      On Debian GNU/Linux systems, the complete text of the GNU General
+      Public License can be found in `/usr/share/common-licenses/GPL-2'.

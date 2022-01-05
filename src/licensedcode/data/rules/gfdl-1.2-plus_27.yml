@@ -1,0 +1,6 @@
+license_expression: gfdl-1.2-plus
+is_license_notice: yes
+relevance: 100
+notes: GFDL notice, debian style
+ignorable_urls:
+    - https://www.gnu.org/licenses/

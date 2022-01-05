@@ -1,0 +1,51 @@
+[
+  {
+    "pkgbase": "linux-amd-raven",
+    "_srcname": "linux",
+    "gitver": "v5.4.133",
+    "pkgver": "5.4.v.133",
+    "pkgrel": "1",
+    "arch": [
+      "x86_64"
+    ],
+    "url": "https://www.kernel.org/",
+    "license": [
+      "GPL2"
+    ],
+    "makedepends": [
+      "xmlto",
+      "docbook-xsl",
+      "kmod",
+      "inetutils",
+      "bc",
+      "git",
+      "libelf",
+      "lzop",
+      "gcc>=9.1"
+    ],
+    "options": [
+      "!strip"
+    ],
+    "source": [
+      "git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#tag=v5.4.133",
+      "config.x86_64",
+      "linux-amd-raven.preset",
+      "linux.install",
+      "5010_enable-cpu-optimizations-universal.patch"
+    ],
+    "sha256sums": [
+      "SKIP",
+      "9d33f55ad6670d3337874022328966a1109bb8bd13c6efe89b377f58e94d00a2",
+      "fd220b9f47a86162247b042f06311848678f9acb64b92f716572972f3aeb3d18",
+      "d590e751ab4cf424b78fd0d57e53d187f07401a68c8b468d17a5f39a337dacf0",
+      "63eb599f217729e42dbb0840247412b16b2bd5365725d2488a0256295f71ccda"
+    ],
+    "_kernelname": "-amd-raven",
+    "pkgname": [
+      "linux-amd-raven",
+      "linux-amd-raven-headers",
+      "linux-amd-raven-docs"
+    ]
+  },
+  []
+]

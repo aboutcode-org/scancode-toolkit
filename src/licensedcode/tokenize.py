@@ -8,8 +8,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from itertools import islice
 from binascii import crc32
+from itertools import islice
 import re
 
 from licensedcode.stopwords import STOPWORDS
@@ -22,22 +22,32 @@ for queries and rules texts.
 """
 
 
-def query_lines(location=None, query_string=None, strip=True):
+def query_lines(location=None, query_string=None, strip=True, start_line=1):
     """
     Return an iterable of tuples (line number, text line) given a file at
     `location` or a `query string`. Include empty lines.
+    Line numbers start at ``start_line`` which is 1-based by default.
     """
     # TODO: OPTIMIZE: tokenizing line by line may be rather slow
     # we could instead get lines and tokens at once in a batch?
     numbered_lines = []
     if location:
-        numbered_lines = numbered_text_lines(location, demarkup=False)
+        numbered_lines = numbered_text_lines(
+            location, 
+            demarkup=False,
+            start_line=start_line,
+        )
+
     elif query_string:
         if strip:
             keepends = False
         else:
             keepends = True
-        numbered_lines = enumerate(query_string.splitlines(keepends), 1)
+
+        numbered_lines = enumerate(
+            query_string.splitlines(keepends), 
+            start_line,
+        )
 
     for line_number, line in numbered_lines:
         if strip:
@@ -52,6 +62,38 @@ def query_lines(location=None, query_string=None, strip=True):
 query_pattern = '[^_\\W]+\\+?[^_\\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
+key_phrase_pattern = '(?:' + query_pattern + '|\\{\\{|\\}\\})'
+key_phrase_splitter = re.compile(key_phrase_pattern, re.UNICODE).findall
+
+KEY_PHRASE_OPEN = "{{"
+KEY_PHRASE_CLOSE = "}}"
+
+def key_phrase_tokenizer(text, stopwords=STOPWORDS):
+    """
+    Return an iterable of tokens from a unicode query test. It must behave identically as the `index_tokenizer` with the
+    exception that it returns KEY_PHRASE_OPEN and KEY_PHRASE_CLOSE as separate tokens so that they can be used to parse
+    key phrases.
+    """
+    if not text:
+        return []
+    words = key_phrase_splitter(text.lower())
+
+    new_words = []
+    for word in words:
+        if word.startswith(KEY_PHRASE_OPEN):
+            new_words.append(KEY_PHRASE_OPEN)
+
+        stripped_word = word
+        if stripped_word.startswith(KEY_PHRASE_OPEN):
+            stripped_word = stripped_word[2:]
+        if stripped_word.endswith(KEY_PHRASE_CLOSE):
+            stripped_word = stripped_word[:-2]
+        new_words.append(stripped_word)
+
+        if word.endswith(KEY_PHRASE_CLOSE):
+            new_words.append(KEY_PHRASE_CLOSE)
+
+    return (token for token in new_words if token and token not in stopwords)
 
 def index_tokenizer(text, stopwords=STOPWORDS):
     """

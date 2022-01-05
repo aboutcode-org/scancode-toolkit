@@ -17,19 +17,18 @@
         "--summary-key-files": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 4
       }
     }
   ],
+  "packages": [],
   "summary": {
     "license_expressions": [
-      {
-        "value": null,
-        "count": 2
-      },
       {
         "value": "gpl-2.0-plus",
         "count": 1
@@ -71,51 +70,22 @@
     ],
     "programming_language": [
       {
-        "value": null,
-        "count": 2
-      },
-      {
         "value": "C",
         "count": 2
       }
-    ],
-    "packages": []
+    ]
   },
   "summary_of_key_files": {
     "license_expressions": [
-      {
-        "value": null,
-        "count": 1
-      },
       {
         "value": "gpl-3.0-plus",
         "count": 1
       }
     ],
-    "copyrights": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ],
-    "holders": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ],
-    "authors": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ],
-    "programming_language": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ]
+    "copyrights": [],
+    "holders": [],
+    "authors": [],
+    "programming_language": []
   },
   "files": [
     {
@@ -143,7 +113,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -180,7 +150,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -217,7 +187,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -254,7 +224,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -293,6 +263,7 @@
           "short_name": "GPL 3.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
@@ -309,11 +280,13 @@
             "licenses": [
               "gpl-3.0-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "1-hash",
             "rule_length": 102,
             "matched_length": 102,
@@ -329,7 +302,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [
         "core"
       ],
@@ -368,7 +341,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [
         "core"
       ],
@@ -407,7 +380,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -444,7 +417,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -481,7 +454,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [],
       "is_legal": false,
       "is_manifest": false,
@@ -520,6 +493,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -536,11 +510,13 @@
             "licenses": [
               "gpl-2.0-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 102,
             "matched_length": 102,
@@ -568,7 +544,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [
         "core"
       ],
@@ -619,7 +595,7 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "facets": [
         "core"
       ],

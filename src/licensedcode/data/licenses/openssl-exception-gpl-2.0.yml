@@ -1,7 +1,7 @@
 key: openssl-exception-gpl-2.0
 short_name: OpenSSL exception to GPL 2.0
 name: OpenSSL exception to GPL 2.0
-category: Copyleft Limited
+category: Copyleft
 owner: OpenSSL
 homepage_url: http://www.openssl.org/source/license.html
 notes: this is typically used with GPL 2.0 but sometimes seen with GPL 3.0

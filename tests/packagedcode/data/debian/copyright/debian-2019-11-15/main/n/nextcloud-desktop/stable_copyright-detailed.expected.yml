@@ -1,5 +1,6 @@
-- gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0
-- - GPL-2+
+primary_license: gpl-2.0-plus
+declared_license:
+  - GPL-2+
   - GPL-2+
   - LGPL-2.1+
   - LGPL-2.1+
@@ -24,16 +25,12 @@
   - LGPL-2.1
   - LGPL-2.1+
   - public-domain
-- (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.1 AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1 AND lgpl-2.1)
-  AND public-domain-disclaimer AND bsd-new AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1
-  AND lgpl-2.1) AND (lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1) AND (mit AND mit) AND
-  ijg AND (apache-2.0 AND lgpl-2.1) AND (mit AND mit) AND boost-1.0 AND ((gpl-3.0 AND gpl-3.0
-  AND gpl-1.0-plus AND gpl-1.0-plus AND other-copyleft AND gpl-1.0-plus AND gpl-3.0 AND gpl-3.0)
-  OR (lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1 AND lgpl-2.1)) AND (gpl-2.0-plus AND gpl-2.0-plus AND
-  gpl-1.0-plus AND gpl-2.0 AND gpl-2.0)
-- |
+license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1) AND public-domain-disclaimer
+  AND bsd-new AND (lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1 AND lgpl-2.1) AND (mit AND mit)
+  AND cc-by-3.0 AND (apache-2.0 AND lgpl-2.1) AND (mit AND mit) AND boost-1.0 AND ((gpl-3.0
+  AND gpl-3.0) OR (lgpl-2.1 AND lgpl-2.1)) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus)
+copyright: |
   2006, Alexander Neundorf <neundorf@kde.org>
   2006, Andreas Schneider <asn@cryptomilk.org>
   1997, Bob Jenkins <bob_jenkins@burtleburtle.net>
@@ -104,3 +101,415 @@
   2009-2010, Iowa State University
   2014, Daniel Molkentin <daniel@molkentin.de>
   2006-2012, Andreas Schneider <asn@cryptomilk.org>
+matches:
+  - score: '90.0'
+    start_line: 162
+    end_line: 175
+    matcher: 1-hash
+    rule_length: 106
+    matched_length: 106
+    match_coverage: '100.0'
+    rule_relevance: 90
+    identifier: apache-2.0_and_lgpl-2.1_2.RULE
+    license_expression: apache-2.0 AND lgpl-2.1
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+
+      On Debian systems a full copy of the LGPL 2.1 can be found at
+      /usr/share/common-licenses/Apache-2.0
+  - score: '100.0'
+    start_line: 178
+    end_line: '199'
+    matcher: 1-hash
+    rule_length: 201
+    matched_length: 201
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_942.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions
+      are met:
+
+      1. Redistributions of source code must retain the copyright
+         notice, this list of conditions and the following disclaimer.
+      2. Redistributions in binary form must reproduce the copyright
+         notice, this list of conditions and the following disclaimer in the
+         documentation and/or other materials provided with the distribution.
+      3. The name of the author may not be used to endorse or promote products
+         derived from this software without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+      IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+      OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+      IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+      NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+      DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+      THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+      (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+      THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  - score: '100.0'
+    start_line: 202
+    end_line: 222
+    matcher: 1-hash
+    rule_length: 202
+    matched_length: 202
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: boost-1.0_9.RULE
+    license_expression: boost-1.0
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person or organization
+      obtaining a copy of the software and accompanying documentation covered by
+      this license (the "Software") to use, reproduce, display, distribute,
+      execute, and transmit the Software, and to prepare derivative works of the
+      Software, and to permit third-parties to whom the Software is furnished to
+      do so, all subject to the following:
+
+      The copyright notices in the Software and this entire statement, including
+      the above license grant, this restriction and the following disclaimer,
+      must be included in all copies of the Software, in whole or in part, and
+      all derivative works of the Software, unless such copies or derivative
+      works are solely in the form of machine-executable object code generated by
+      a source language processor.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+      SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+      FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+      ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+      DEALINGS IN THE SOFTWARE.
+  - score: '100.0'
+    start_line: 225
+    end_line: 247
+    matcher: 1-hash
+    rule_length: 159
+    matched_length: 159
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: cc-by-3.0_110.RULE
+    license_expression: cc-by-3.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Creative Commons Legal Code
+
+      Attribution 3.0 Unported
+
+      CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE
+      LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN
+      ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS
+      INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES
+      REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR
+      DAMAGES RESULTING FROM ITS USE.
+
+      License
+
+      THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
+      COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY
+      COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS
+      AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+
+      BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE
+      TO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY
+      BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS
+      CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND
+      CONDITIONS.
+  - score: '100.0'
+    start_line: 250
+    end_line: 250
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit_26.RULE
+    license_expression: mit
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: The MIT License (MIT)
+  - score: '100.0'
+    start_line: 252
+    end_line: 268
+    matcher: 2-aho
+    rule_length: 161
+    matched_length: 161
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: mit.LICENSE
+    license_expression: mit
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Permission is hereby granted, free of charge, to any person obtaining a copy
+      of this software and associated documentation files (the "Software"), to deal
+      in the Software without restriction, including without limitation the rights
+      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+      copies of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be included in all
+      copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+      SOFTWARE.
+  - score: '100.0'
+    start_line: 270
+    end_line: 270
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_22.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2+'
+  - score: '100.0'
+    start_line: 271
+    end_line: 283
+    matcher: 2-aho
+    rule_length: 113
+    matched_length: 113
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_420.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or
+      modify it under the terms of the GNU General Public License
+      as published by the Free Software Foundation; either version 2
+      of the License, or (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program; if not, write to the Free Software Foundation,
+      Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+  - score: '100.0'
+    start_line: 285
+    end_line: 286
+    matcher: 2-aho
+    rule_length: '19'
+    matched_length: '19'
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0-plus_843.RULE
+    license_expression: gpl-2.0-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      On Debian systems a full copy of the GPL 2 can be found at
+      /usr/share/common-licenses/GPL-2
+  - score: '100.0'
+    start_line: 288
+    end_line: 288
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0_rdesc_1.RULE
+    license_expression: gpl-3.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-3'
+  - score: '100.0'
+    start_line: 289
+    end_line: 303
+    matcher: 1-hash
+    rule_length: 121
+    matched_length: 121
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-3.0_417.RULE
+    license_expression: gpl-3.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or
+      modify it under the terms of the GNU General Public License version 3
+      as published by the Free Software Foundation.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+      along with this program; if not, write to the Free Software Foundation,
+      Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+      On Debian systems a full copy of the GPL 3 can be found at
+      /usr/share/common-licenses/GPL-3
+  - score: '100.0'
+    start_line: 305
+    end_line: 305
+    matcher: 1-hash
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_38.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: lgpl-2.1'
+  - score: '100.0'
+    start_line: 306
+    end_line: 314
+    matcher: 1-hash
+    rule_length: 91
+    matched_length: 91
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_313.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This file may be used under the terms of the GNU Lesser General Public
+      License version 2.1 as published by the Free Software Foundation and
+      appearing in the file LICENSE.LGPL included in the packaging of this file.
+      Please review the following information to ensure the GNU Lesser General
+      Public License version 2.1 requirements will be met:
+      http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+
+      On Debian systems a full copy of the LGPL 2.1 can be found at
+      /usr/share/common-licenses/LGPL-2.1
+  - score: '100.0'
+    start_line: 316
+    end_line: 316
+    matcher: 1-hash
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_108.RULE
+    license_expression: lgpl-2.1-plus
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: lgpl-2.1+'
+  - score: '100.0'
+    start_line: 317
+    end_line: 332
+    matcher: 1-hash
+    rule_length: 138
+    matched_length: 138
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: lgpl-2.1_312.RULE
+    license_expression: lgpl-2.1
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This library is free software; you can redistribute it and/or
+      modify it under the terms of the GNU Lesser General Public
+      License as published by the Free Software Foundation; either
+      version 2.1 of the License, or (at your option) any later version.
+
+      This library is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+      Lesser General Public License for more details.
+
+      You should have received a copy of the GNU Lesser General Public
+      License along with this library; if not, write to the Free Software
+      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
+      On Debian systems a full copy of the LGPL 2.1 can be found at
+      /usr/share/common-licenses/LGPL-2.1
+  - score: '100.0'
+    start_line: 335
+    end_line: 337
+    matcher: 1-hash
+    rule_length: 27
+    matched_length: 27
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: public-domain-disclaimer_47.RULE
+    license_expression: public-domain-disclaimer
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This software is in the public domain, furnished "as is", without technical
+      support, and with no warranty, express or implied, as to its usefulness for
+      any purpose.

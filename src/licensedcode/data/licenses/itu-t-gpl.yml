@@ -1,0 +1,9 @@
+key: itu-t-gpl
+short_name: ITU-T General Public License
+name: ITU-T Software Tools General Public License
+category: Copyleft
+owner: ITU - International Telecommunications Union
+homepage_url: https://github.com/openitu/STL/blob/dev/LICENSE.md
+spdx_license_key: LicenseRef-scancode-itu-t-gpl
+ignorable_authors:
+    - the User's Group

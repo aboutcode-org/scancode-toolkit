@@ -17,6 +17,7 @@ ignorable_copyrights:
         University of Illinois
 ignorable_authors:
     - the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign
+    - with support from the University of California, Lawrence Livermore National Laboratory
 ignorable_holders:
     - Kitware Inc. 28 Corporate Drive, Suite 204, Clifton Park, NY, 12065, USA.
     - Los Alamos National Laboratory

@@ -1,0 +1,7 @@
+license_expression: apache-2.0 OR gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+notes: Seen in dulwich.
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0
+    - https://www.gnu.org/licenses/

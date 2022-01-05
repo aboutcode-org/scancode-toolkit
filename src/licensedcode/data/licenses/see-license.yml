@@ -4,4 +4,5 @@ name: See License mention
 category: Unstated License
 owner: Unspecified
 is_deprecated: yes
+is_unknown: yes
 notes: replaced by unknown-license-reference

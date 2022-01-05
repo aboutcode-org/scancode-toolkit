@@ -1,0 +1,10 @@
+license_expression: epl-1.0 OR lgpl-2.1-plus OR gpl-2.0-plus OR apache-2.0 OR bsd-new
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+ignorable_urls:
+    - http://www.apache.org/licenses
+    - http://www.eclipse.org/legal
+    - http://www.opensource.org/licenses/bsd-license.php
+    - https://www.gnu.org/licenses/gpl.html
+    - https://www.gnu.org/licenses/lgpl.html

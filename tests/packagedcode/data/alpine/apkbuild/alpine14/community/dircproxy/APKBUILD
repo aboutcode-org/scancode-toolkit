@@ -1,0 +1,46 @@
+# Contributor: Natanael Copa <ncopa@alpinelinux.org>
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+pkgname=dircproxy
+pkgver=1.2.0_rc
+_status=${pkgver/_rc/-BETA}
+_ver=${_status//./_}
+pkgrel=2
+pkgdesc="IRC proxy server designed for people who use IRC from lots of different workstations or clients"
+url="https://github.com/w8tvi/dircproxy"
+arch="all"
+license="GPL-2.0-or-later"
+makedepends="autoconf automake"
+subpackages="$pkgname-doc"
+source="$pkgname-$_ver.tar.gz::https://github.com/w8tvi/dircproxy/archive/RELEASE-$_ver.tar.gz
+	fix-gcc4-issue.patch
+	fix-segfault.patch
+	fix-issue54-1.patch
+	fix-issue54-2.patch
+	"
+
+builddir="$srcdir/$pkgname-RELEASE-$_ver"
+prepare() {
+	default_prepare
+	./autogen.sh
+}
+
+build() {
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/share/man \
+		--infodir=/usr/share/info
+	make
+}
+
+package() {
+	make DESTDIR="$pkgdir" install
+}
+
+sha512sums="9a720823cba52b1e3670a2ef76578f952e07275d7455f7609eff7d88bcb89f8c3098e9d517266efd19f84b3adf3163a3359b4113e253bd5c5bdbb36597a333c8  dircproxy-1_2_0-BETA.tar.gz
+182c1907317e669bb9f2f410c683a8ce4682ad29b3caa07548b7e126f66b85f3e1f8ad258d5a90b017f21b5e03be1aa2480c5919be25ae40b4debb6b8740e93e  fix-gcc4-issue.patch
+906556a5a64670bb25394a424be281f90018c255b0dccb21f0805724899977d4041482c584f1aeb022d6acf56d5c0ab65065123bb045a2e7eb56674026be7fb4  fix-segfault.patch
+66624cc8be5c891ccd3591397608ccdbe5b8496928ab77220214ef02a10433fe7d6b67a4abbfb36b60dd8a198581814ec2485b88778c2f1c14089d0b0246c66e  fix-issue54-1.patch
+517b67297d51d4327aabb0054eb5bac1a15bf26a45091517d27998e861555e5320573f315ea4d2a719387d9a30482ebf3e58d731048f78a63ecba8b4c2664fe2  fix-issue54-2.patch"

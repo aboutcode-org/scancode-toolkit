@@ -172,6 +172,30 @@ class TestPypiUnpackedSdist(PackageTester):
         expected_loc = self.get_test_loc('pypi/unpacked_sdist/metadata-1.0/PyJPString-0.0.3-subdir-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
+    def test_parse_setup_py_with_name(self):
+        test_file = self.get_test_loc('pypi/setup.py/with_name-setup.py')
+        package = pypi.parse_setup_py(test_file)
+        expected_loc = self.get_test_loc('pypi/setup.py/with_name-setup.py.expected.json', must_exist=False)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_setup_py_without_name(self):
+        test_file = self.get_test_loc('pypi/setup.py/without_name-setup.py')
+        package = pypi.parse_setup_py(test_file)
+        expected_loc = self.get_test_loc('pypi/setup.py/without_name-setup.py.expected.json', must_exist=False)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_get_setup_py_args_with_name(self):
+        test_file = self.get_test_loc('pypi/setup.py/with_name-setup.py')
+        kwargs = pypi.get_setup_py_args(test_file)
+        expected_loc = self.get_test_loc('pypi/setup.py/with_name-setup.py.args.expected.json', must_exist=False)
+        check_result_equals_expected_json(kwargs, expected_loc, regen=False)
+
+    def test_get_setup_py_args_without_name(self):
+        test_file = self.get_test_loc('pypi/setup.py/without_name-setup.py')
+        kwargs = pypi.get_setup_py_args(test_file)
+        expected_loc = self.get_test_loc('pypi/setup.py/without_name-setup.py.args.expected.json', must_exist=False)
+        check_result_equals_expected_json(kwargs, expected_loc, regen=False)
+
     def test_parse_metadata_unpacked_sdist_metadata_v11_1(self):
         test_file = self.get_test_loc('pypi/unpacked_sdist/metadata-1.1/python-mimeparse-1.6.0/PKG-INFO')
         package = pypi.parse_metadata(test_file)

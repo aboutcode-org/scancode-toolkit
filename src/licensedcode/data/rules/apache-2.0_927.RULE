@@ -1,0 +1,3 @@
+* The following code adds default LICENSE (Apache-2.0) for all generators
+ * To use license other than Apache2.0, update the following file:
+ *   modules/swagger-codegen/src/main/resources/_common/LICENSE

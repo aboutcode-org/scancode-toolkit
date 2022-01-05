@@ -1,0 +1,47 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=layer-shell-qt
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="Qt component to allow applications to make use of the Wayland wl-layer-shell protocol"
+# armhf blocked by extra-cmake-modules
+arch="all !armhf"
+url="https://kde.org/plasma-desktop/"
+license="GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only)"
+depends_dev="
+	qt5-qtdeclarative-dev
+	qt5-qtwayland-dev
+	"
+makedepends="$depends_dev
+	extra-cmake-modules
+	wayland-protocols
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/layer-shell-qt-$pkgver.tar.xz"
+subpackages="$pkgname-dev"
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DENABLE_TESTING=ON
+	cmake --build build
+}
+
+check() {
+	cd build
+	CTEST_OUTPUT_ON_FAILURE=TRUE ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="
+7ec410925349894a9312ba5de08fe5ccf7d94ac295a39e256ffc5d46d76482f67d1f0b579d76796f9c194ac4f9f0d58d4a997afe5060fb3c746629d70bbd1047  layer-shell-qt-5.22.0.tar.xz
+"

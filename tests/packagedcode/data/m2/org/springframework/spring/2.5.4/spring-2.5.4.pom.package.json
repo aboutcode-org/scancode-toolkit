@@ -42,524 +42,524 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/aopalliance/aopalliance",
+      "purl": "pkg:maven/aopalliance/aopalliance@1.0",
       "requirement": "1.0",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/asm/asm",
+      "purl": "pkg:maven/asm/asm@2.2.3",
       "requirement": "2.2.3",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/asm/asm-commons",
+      "purl": "pkg:maven/asm/asm-commons@2.2.3",
       "requirement": "2.2.3",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/asm/asm-util",
+      "purl": "pkg:maven/asm/asm-util@2.2.3",
       "requirement": "2.2.3",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/aspectj/aspectjrt",
+      "purl": "pkg:maven/aspectj/aspectjrt@1.5.4",
       "requirement": "1.5.4",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/aspectj/aspectjweaver",
+      "purl": "pkg:maven/aspectj/aspectjweaver@1.5.4",
       "requirement": "1.5.4",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/backport-util-concurrent/backport-util-concurrent",
+      "purl": "pkg:maven/backport-util-concurrent/backport-util-concurrent@3.0",
       "requirement": "3.0",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/c3p0/c3p0",
+      "purl": "pkg:maven/c3p0/c3p0@0.9.1.2",
       "requirement": "0.9.1.2",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/cglib/cglib-nodep",
+      "purl": "pkg:maven/cglib/cglib-nodep@2.1_3",
       "requirement": "2.1_3",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-attributes/commons-attributes-api",
+      "purl": "pkg:maven/commons-attributes/commons-attributes-api@2.2",
       "requirement": "2.2",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-attributes/commons-attributes-compiler",
+      "purl": "pkg:maven/commons-attributes/commons-attributes-compiler@2.2",
       "requirement": "2.2",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-beanutils/commons-beanutils",
+      "purl": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0",
       "requirement": "1.7.0",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-collections/commons-collections",
+      "purl": "pkg:maven/commons-collections/commons-collections@3.2",
       "requirement": "3.2",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-dbcp/commons-dbcp",
+      "purl": "pkg:maven/commons-dbcp/commons-dbcp@1.2.2",
       "requirement": "1.2.2",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-fileupload/commons-fileupload",
+      "purl": "pkg:maven/commons-fileupload/commons-fileupload@1.2",
       "requirement": "1.2",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-httpclient/commons-httpclient",
+      "purl": "pkg:maven/commons-httpclient/commons-httpclient@3.1",
       "requirement": "3.1",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-logging/commons-logging",
+      "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
       "requirement": "1.1.1",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-pool/commons-pool",
+      "purl": "pkg:maven/commons-pool/commons-pool@1.3",
       "requirement": "1.3",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.bea.wlplatform/commonj-twm",
+      "purl": "pkg:maven/com.bea.wlplatform/commonj-twm@1.1",
       "requirement": "1.1",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.experlog/xapool",
+      "purl": "pkg:maven/com.experlog/xapool@1.5.0",
       "requirement": "1.5.0",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.ibatis/ibatis-sqlmap",
+      "purl": "pkg:maven/org.apache.ibatis/ibatis-sqlmap@2.3.0.677",
       "requirement": "2.3.0.677",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.jamonapi/jamon",
+      "purl": "pkg:maven/com.jamonapi/jamon@2.4",
       "requirement": "2.4",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.lowagie/itext",
+      "purl": "pkg:maven/com.lowagie/itext@2.0.7",
       "requirement": "2.0.7",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.oracle.toplink/toplink",
+      "purl": "pkg:maven/com.oracle.toplink/toplink@10.1.3",
       "requirement": "10.1.3",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.oracle/toplink-essentials",
+      "purl": "pkg:maven/com.oracle/toplink-essentials@2.41",
       "requirement": "2.41",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/com.oracle/oc4j",
+      "purl": "pkg:maven/com.oracle/oc4j@1.0",
       "requirement": "1.0",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/freemarker/freemarker",
+      "purl": "pkg:maven/freemarker/freemarker@2.3.12",
       "requirement": "2.3.12",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/groovy/groovy",
+      "purl": "pkg:maven/groovy/groovy@1.5.5",
       "requirement": "1.5.5",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/hessian/hessian",
+      "purl": "pkg:maven/hessian/hessian@3.1.3",
       "requirement": "3.1.3",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/jasperreports/jasperreports",
+      "purl": "pkg:maven/jasperreports/jasperreports@2.0.5",
       "requirement": "2.0.5",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/jexcelapi/jxl",
+      "purl": "pkg:maven/jexcelapi/jxl@2.6.6",
       "requirement": "2.6.6",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/jotm/jotm",
+      "purl": "pkg:maven/jotm/jotm@2.0.10",
       "requirement": "2.0.10",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/jruby/jruby-bin",
+      "purl": "pkg:maven/jruby/jruby-bin@1.0.1",
       "requirement": "1.0.1",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/junit/junit",
+      "purl": "pkg:maven/junit/junit@3.8.1",
       "requirement": "3.8.1",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/log4j/log4j",
+      "purl": "pkg:maven/log4j/log4j@1.2.15",
       "requirement": "1.2.15",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/net.sf.ehcache/ehcache",
+      "purl": "pkg:maven/net.sf.ehcache/ehcache@1.4.1",
       "requirement": "1.4.1",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.axis/axis",
+      "purl": "pkg:maven/org.apache.axis/axis@1.4",
       "requirement": "1.4",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.tiles/tiles-api",
+      "purl": "pkg:maven/org.apache.tiles/tiles-api@2.0.5",
       "requirement": "2.0.5",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.tiles/tiles-core",
+      "purl": "pkg:maven/org.apache.tiles/tiles-core@2.0.5",
       "requirement": "2.0.5",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.apache.tiles/tiles-jsp",
+      "purl": "pkg:maven/org.apache.tiles/tiles-jsp@2.0.5",
       "requirement": "2.0.5",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.beanshell/bsh",
+      "purl": "pkg:maven/org.beanshell/bsh@2.0b4",
       "requirement": "2.0b4",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.hibernate/hibernate",
+      "purl": "pkg:maven/org.hibernate/hibernate@3.2.6.ga",
       "requirement": "3.2.6.ga",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/org.hibernate/hibernate-entitymanager",
+      "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.ga",
       "requirement": "3.3.2.ga",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/poi/poi",
+      "purl": "pkg:maven/poi/poi@3.0.1",
       "requirement": "3.0.1",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/opensymphony/quartz-all",
+      "purl": "pkg:maven/opensymphony/quartz-all@1.6.0",
       "requirement": "1.6.0",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/struts/struts",
+      "purl": "pkg:maven/struts/struts@1.2.9",
       "requirement": "1.2.9",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/taglibs/standard",
+      "purl": "pkg:maven/taglibs/standard@1.1.2",
       "requirement": "1.1.2",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/tomcat/catalina",
+      "purl": "pkg:maven/tomcat/catalina@5.5.23",
       "requirement": "5.5.23",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/velocity/velocity",
+      "purl": "pkg:maven/velocity/velocity@1.5",
       "requirement": "1.5",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/velocity-tools/velocity-tools-generic",
+      "purl": "pkg:maven/velocity-tools/velocity-tools-generic@1.4",
       "requirement": "1.4",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/velocity-tools/velocity-tools-view",
+      "purl": "pkg:maven/velocity-tools/velocity-tools-view@1.4",
       "requirement": "1.4",
       "scope": "compile",
-      "is_runtime": true,
+      "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.activation/activation",
+      "purl": "pkg:maven/javax.activation/activation@1.1",
       "requirement": "1.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.ejb/ejb",
+      "purl": "pkg:maven/javax.ejb/ejb@3.0",
       "requirement": "3.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.faces/jsf-api",
+      "purl": "pkg:maven/javax.faces/jsf-api@1.1",
       "requirement": "1.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.jdo/jdo2-api",
+      "purl": "pkg:maven/javax.jdo/jdo2-api@2.0",
       "requirement": "2.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.jms/jms",
+      "purl": "pkg:maven/javax.jms/jms@1.1",
       "requirement": "1.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.mail/mail",
+      "purl": "pkg:maven/javax.mail/mail@1.4",
       "requirement": "1.4",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.persistence/persistence-api",
+      "purl": "pkg:maven/javax.persistence/persistence-api@1.0",
       "requirement": "1.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.portlet/portlet-api",
+      "purl": "pkg:maven/javax.portlet/portlet-api@1.0",
       "requirement": "1.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.resource/connector-api",
+      "purl": "pkg:maven/javax.resource/connector-api@1.5",
       "requirement": "1.5",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.servlet/jsp-api",
+      "purl": "pkg:maven/javax.servlet/jsp-api@2.0",
       "requirement": "2.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.servlet/jstl",
+      "purl": "pkg:maven/javax.servlet/jstl@1.1.0",
       "requirement": "1.1.0",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.servlet/servlet-api",
+      "purl": "pkg:maven/javax.servlet/servlet-api@2.4",
       "requirement": "2.4",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.transaction/jta",
+      "purl": "pkg:maven/javax.transaction/jta@1.1",
       "requirement": "1.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/javax.xml/jaxrpc-api",
+      "purl": "pkg:maven/javax.xml/jaxrpc-api@1.1",
       "requirement": "1.1",
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

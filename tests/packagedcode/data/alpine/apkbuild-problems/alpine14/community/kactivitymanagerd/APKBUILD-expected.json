@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "kactivitymanagerd",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "System service to manage user's activities and track the usage patterns",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-2.0 OR gpl-3.0",
+  "declared_license": "GPL-2.0-only OR GPL-3.0-only",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/stable/plasma/5.22.0/kactivitymanagerd-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "kactivitymanagerd-5.22.0.tar.xz",
+        "sha512": "5f5e2ed9207a7a427f10cd0ee0e9083d56a742c0e3b93d30dd7df55db7da3609479c48261b020d7ac1178c60dfbdc0ddda6b518296f5386264b3a83be6d47396"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/kactivitymanagerd@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

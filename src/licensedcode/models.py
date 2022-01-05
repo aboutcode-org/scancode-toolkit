@@ -19,9 +19,11 @@ from os.path import abspath
 from os.path import dirname
 from os.path import exists
 from os.path import join
+import re
 
 import attr
 import saneyaml
+from license_expression import ExpressionError
 from license_expression import Licensing
 
 from commoncode.fileutils import copyfile
@@ -32,6 +34,10 @@ from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
 from licensedcode.tokenize import index_tokenizer
+from licensedcode.tokenize import key_phrase_tokenizer
+from licensedcode.tokenize import KEY_PHRASE_OPEN
+from licensedcode.tokenize import KEY_PHRASE_CLOSE
+from licensedcode.spans import Span
 from textcode.analysis import numbered_text_lines
 
 """
@@ -108,6 +114,8 @@ class License(object):
     # if this is a license exception, the license key this exception applies to
     is_exception = __attrib(default=False)
 
+    # if the license falls in unknwon category then this flag should be set to true
+    is_unknown = __attrib(default=False)
     # SPDX key for SPDX licenses
     spdx_license_key = __attrib(default=None)
     # list of other keys, such as deprecated ones
@@ -255,7 +263,7 @@ class License(object):
         """
         try:
             with io.open(self.data_file, encoding='utf-8') as f:
-                data = saneyaml.load(f.read())
+                data = saneyaml.load(f.read(), allow_duplicate_keys=False)
 
             for k, v in data.items():
                 if k == 'minimum_coverage':
@@ -341,6 +349,10 @@ class License(object):
                 )
             if not lic.owner:
                 error('No owner')
+
+            if lic.is_unknown:
+                if not "unknown" in lic.key:
+                    error('is_unknown should not be true')
 
             # URLS dedupe and consistency
             if no_dupe_urls:
@@ -554,7 +566,7 @@ def validate_rules(rules, licenses_by_key, with_text=False):
                 if rule.data_file:
                     message.append(f'    file://{rule.data_file}')
                 if with_text:
-                    txt = rule.text()[:50].strip()
+                    txt = rule.text()[:100].strip()
                     message.append(f'       {txt}...')
         raise InvalidRule('\n'.join(message))
 
@@ -572,7 +584,8 @@ def build_rules_from_licenses(licenses):
                 text_file=text_file,
                 license_expression=license_key,
 
-                has_stored_relevance=False,
+                # a license text is always 100% relevant
+                has_stored_relevance=True,
                 relevance=100,
 
                 has_stored_minimum_coverage=bool(minimum_coverage),
@@ -812,6 +825,10 @@ class BasicRule(object):
     # for SPDX license expression dynamic rules or testing
     stored_text = attr.ib(default=None, repr=False)
 
+    # spans with ispan positions which must be present in the license match for
+    # this rule to be considered a valid match
+    key_phrase_spans = attr.ib(default=attr.Factory(list), repr=False)
+
     # These attributes are computed upon text loading or setting the thresholds
     ###########################################################################
 
@@ -862,6 +879,15 @@ class BasicRule(object):
 
             self.license_expression = expression.render()
             self.license_expression_object = expression
+
+    @property
+    def has_unknown(self):
+        """
+        Return True if any of this rule licenses is an unknown license.
+        """
+        # TODO: consider using the license_expression_object and the is_unknown
+        # license flag instead
+        return self.license_expression and 'unknown' in self.license_expression
 
     def validate(self, licensing=None):
         """
@@ -935,8 +961,12 @@ class BasicRule(object):
                 if licensing:
                     try:
                         licensing.parse(license_expression, validate=True, simple=True)
-                    except InvalidRule as e:
-                        yield f'Failed to parse and validate license_expression: {e}'
+                    except ExpressionError as e:
+                        yield f'Failed to parse and validate license_expression: {license_expression} with error: {e}'
+
+            if self.referenced_filenames:
+                if len(set(self.referenced_filenames)) != len(self.referenced_filenames):
+                    yield 'referenced_filenames cannot contain duplicates.'
 
     def license_keys(self, unique=True):
         """
@@ -970,11 +1000,8 @@ class BasicRule(object):
             )
 
     def spdx_license_expression(self, licensing=None):
-        if not licensing:
-            from licensedcode.cache import get_licensing
-            licensing = get_licensing()
-        parsed = licensing.parse(self.license_expression)
-        return parsed.render(template='{symbol.spdx_license_key}')
+        from licensedcode.cache import build_spdx_license_expression
+        return build_spdx_license_expression(self, licensing=licensing)
 
     def get_length(self, unique=False):
         return self.length_unique if unique else self.length
@@ -1150,6 +1177,13 @@ class Rule(BasicRule):
         self.length = length
         self.compute_relevance()
 
+    def key_phrases(self):
+        """
+        Return an iterable of Spans marking the positions of key phrases that must
+        be present for this rule to be a valid match.
+        """
+        yield from get_key_phrases(self.text())
+
     def compute_thresholds(self, small_rule=SMALL_RULE):
         """
         Compute and set thresholds either considering the occurrence of all
@@ -1207,7 +1241,7 @@ class Rule(BasicRule):
         """
         try:
             with io.open(self.data_file, encoding='utf-8') as f:
-                data = saneyaml.load(f.read())
+                data = saneyaml.load(f.read(), allow_duplicate_keys=False)
         except Exception as e:
             print('#############################')
             print('INVALID LICENSE RULE FILE:', f'file://{self.data_file}')
@@ -1294,26 +1328,22 @@ class Rule(BasicRule):
 
         The current threshold is 18 words.
         """
-
-        if self.has_stored_relevance:
-            return
-
-        if (isinstance(self, SpdxRule)
-            # false positive rules with no license: they do not
-            # have licenses and their matches are never returned
-            or self.is_false_positive
-        ):
+        # false positive rules with no license and their matches are never returned
+        if isinstance(self, SpdxRule) or self.is_false_positive:
             # use the default max relevance of 100
             self.relevance = 100
+            self.has_stored_relevance = True
+            return
 
         relevance_of_one_word = round((1 / _threshold) * 100, 2)
-        length = self.length
-        if length >= _threshold:
-            # general case
-            self.relevance = 100
+        computed = int(self.length * relevance_of_one_word)
+        computed_relevance = min([100, computed])
+
+        if self.has_stored_relevance:
+            if self.relevance == computed_relevance:
+                self.has_stored_relevance = False
         else:
-            computed = int(length * relevance_of_one_word)
-            self.relevance = min([100, computed])
+            self.relevance = computed_relevance
 
     def rule_dir(self):
         """
@@ -1661,3 +1691,32 @@ def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):
         if not exists(f'{base_loc}.RULE'):
             return base_loc
         idx += 1
+
+
+def get_key_phrases(text):
+    """
+    Return an iterable of Spans marking the positions of key phrases in the given
+    text string. Words are considered to be key phrases if they are enclosed in the
+    KEY_PHRASE_OPEN and KEY_PHRASE_CLOSE characters.
+    """
+    key_phrase_iterator = key_phrase_tokenizer(text)
+    key_phrase_index = 0
+    for token in key_phrase_iterator:
+        if token.startswith(KEY_PHRASE_OPEN):
+            span_positions = []
+
+            # keep appending key phrase until we hit KEY_PHRASE_CLOSE
+            for key_phrase in key_phrase_iterator:
+                if key_phrase.endswith(KEY_PHRASE_CLOSE):
+                    break
+                span_positions.append(key_phrase_index)
+                key_phrase_index += 1
+            
+            if not key_phrase.endswith(KEY_PHRASE_CLOSE):
+                span_start_position = span_positions[0] if span_positions else 0
+                raise InvalidRule("Key phrase definition started at token '%d' is not closed" % span_start_position)
+
+            if span_positions:
+                yield Span(span_positions)
+        else:
+            key_phrase_index += 1

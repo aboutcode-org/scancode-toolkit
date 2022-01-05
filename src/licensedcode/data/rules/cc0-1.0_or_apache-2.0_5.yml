@@ -1,0 +1,5 @@
+license_expression: cc0-1.0 OR apache-2.0
+is_license_notice: yes
+ignorable_urls:
+    - https://creativecommons.org/publicdomain/zero/1.0
+    - https://www.apache.org/licenses/LICENSE-2.0

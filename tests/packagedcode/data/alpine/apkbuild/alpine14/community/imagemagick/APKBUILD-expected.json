@@ -1,0 +1,57 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "imagemagick",
+  "version": "7.0.11.13-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Collection of tools and libraries for many image formats",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "imagemagick",
+  "declared_license": "ImageMagick",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.imagemagick.org/ImageMagick/download/ImageMagick-7.0.11-13.tar.xz"
+      },
+      {
+        "file_name": "disable-avaraging-tests.patch",
+        "url": null
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "ImageMagick-7.0.11-13.tar.xz",
+        "sha512": "8b5fe1ad06ca3af752454f67f53a066842668832bbd4efede35c515449cd2b970e6f7f23e716928ba598f89a7ec020bd988cc392196c89117586fb97a48e1d9e"
+      },
+      {
+        "file_name": "disable-avaraging-tests.patch",
+        "sha512": "58afb2da075a6208b6a990ff297b3a827d260687c3355198a8b4d987e1596c0b0cd78aff6f0be0e1896e537fbe44a3d467473183f5f149664ea6e6fb3d3291a9"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/imagemagick@7.0.11.13-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

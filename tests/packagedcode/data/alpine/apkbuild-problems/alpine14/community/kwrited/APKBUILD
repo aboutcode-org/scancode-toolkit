@@ -1,0 +1,41 @@
+# Contributor: Bart Ribbers <bribbers@disroot.org>
+# Maintainer: Bart Ribbers <bribbers@disroot.org>
+pkgname=kwrited
+pkgver=5.22.0
+pkgrel=0
+pkgdesc="KDE daemon listening for wall and write messages"
+arch="all !armhf" # qt5-qtdeclarative-dev  unavilable on armhf
+url="https://kde.org/plasma-desktop/"
+license="GPL-2.0-or-later"
+makedepends="
+	extra-cmake-modules
+	kcoreaddons-dev
+	kdbusaddons-dev
+	ki18n-dev
+	knotifications-dev
+	kpty-dev
+	qt5-qtbase-dev
+	"
+
+case "$pkgver" in
+	*.90*) _rel=unstable;;
+	*) _rel=stable;;
+esac
+source="https://download.kde.org/$_rel/plasma/$pkgver/kwrited-$pkgver.tar.xz"
+options="!check" # No tests available
+
+build() {
+	cmake -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	cmake --build build
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}
+
+sha512sums="
+810d79d7a916339a3bf4014863af5f6f0884cdfdecb9768d5daefee53fb19c7ef3897c838feef085e26b8dfa80fba80b14c41e9f337c623e5dd86c2de89ef297  kwrited-5.22.0.tar.xz
+"

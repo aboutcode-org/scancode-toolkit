@@ -1,0 +1,49 @@
+{
+  "type": "alpine",
+  "namespace": null,
+  "name": "qqc2-breeze-style",
+  "version": "5.22.0-r0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Breeze inspired QQC2 style",
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "kde-accepted-lgpl AND kfqf-accepted-gpl",
+  "declared_license": "LicenseRef-KDE-Accepted-LGPL AND LicenseRef-KFQF-Accepted-GPL",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "extra_data": {
+    "sources": [
+      {
+        "file_name": null,
+        "url": "https://download.kde.org/stable/plasma/5.22.0/qqc2-breeze-style-5.22.0.tar.xz"
+      }
+    ],
+    "checksums": [
+      {
+        "file_name": "qqc2-breeze-style-5.22.0.tar.xz",
+        "sha512": "7e16a6d6b90fb69623c26151468b3a70331b756c39a839a2da3804b0fc5ee3eb62ac4d3606beba2714680506dabbf93737ae5df70557e86a038c6a0a240d53ca"
+      }
+    ]
+  },
+  "purl": "pkg:alpine/qqc2-breeze-style@5.22.0-r0",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

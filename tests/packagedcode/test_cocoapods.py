@@ -45,3 +45,23 @@ class TestCocoaPodspec(PackageTester):
         expected_loc = self.get_test_loc('cocoapods/podspec/SwiftLib.podspec.expected.json')
         packages = cocoapods.parse(test_file)
         self.check_package(packages, expected_loc, regen=False)
+
+
+class TestCocoaPodspecJson(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_cocoapods_can_parse_FirebaseAnalytics(self):
+        test_file = self.get_test_loc('cocoapods/podspec.json/FirebaseAnalytics.podspec.json')
+        expected_loc = self.get_test_loc('cocoapods/podspec.json/FirebaseAnalytics.podspec.json.expected.json')
+        packages = cocoapods.parse(test_file)
+        self.check_package(packages, expected_loc, regen=False)
+
+
+class TestCocoaPodfileLock(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_cocoapods_can_parse_braintree_ios(self):
+        test_file = self.get_test_loc('cocoapods/podfle.lock/braintree_ios_Podfile.lock')
+        expected_loc = self.get_test_loc('cocoapods/podfle.lock/braintree_ios_Podfile.lock.expected.json')
+        packages = cocoapods.parse(test_file)
+        self.check_packages(packages, expected_loc, regen=False)

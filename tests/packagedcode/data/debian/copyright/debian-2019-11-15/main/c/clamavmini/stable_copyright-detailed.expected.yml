@@ -1,0 +1,74 @@
+primary_license: gpl-2.0
+declared_license:
+  - GPL-2
+license_expression: (gpl-2.0 AND gpl-2.0) AND gpl-2.0
+copyright: |
+  1998-2015, Sourcefire, Inc.
+  2002-2007, Tomasz Kojm <tkojm@clamav.net>
+  2006, Sensory Networks, Inc
+  2007-2015, Cisco Systems, Inc
+  2014-2018, Cisco and/or its affiliates
+matches:
+  - score: '100.0'
+    start_line: 24
+    end_line: 24
+    matcher: 1-hash
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_561.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    matched_text: 'License: gpl-2'
+  - score: '100.0'
+    start_line: 25
+    end_line: 32
+    matcher: 1-hash
+    rule_length: 68
+    matched_length: 68
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_121.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License version 2 as
+      published by the Free Software Foundation.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+  - score: '100.0'
+    start_line: 34
+    end_line: 40
+    matcher: 1-hash
+    rule_length: 60
+    matched_length: 60
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: gpl-2.0_1140.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      You should have received a copy of the GNU General Public License
+      along with this program; if not, write to the Free Software
+      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+      MA 02110-1301, USA.
+
+      On Debian systems, the full text of the GNU General Public License
+      version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.

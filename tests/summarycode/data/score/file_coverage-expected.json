@@ -12,9 +12,11 @@
         "--license-clarity-score": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 5
       }
     }
@@ -125,6 +127,7 @@
           "short_name": "MIT License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "MIT",
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
@@ -141,11 +144,13 @@
             "licenses": [
               "mit"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
@@ -239,6 +244,7 @@
           "short_name": "MIT License",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "MIT",
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
@@ -255,11 +261,13 @@
             "licenses": [
               "mit"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "1-spdx-id",
             "rule_length": 4,
             "matched_length": 4,

@@ -1,0 +1,8 @@
+license_expression: unicode
+is_license_text: yes
+ignorable_urls:
+    - http://source.icu-project.org/repos/icu
+    - http://www.unicode.org/Public
+    - http://www.unicode.org/cldr/data
+    - http://www.unicode.org/reports
+    - http://www.unicode.org/utility/trac/browser

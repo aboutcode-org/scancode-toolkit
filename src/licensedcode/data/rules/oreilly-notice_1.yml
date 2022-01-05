@@ -1,0 +1,4 @@
+license_expression: oreilly-notice
+is_license_notice: yes
+ignorable_emails:
+    - permissions@oreilly.com

@@ -1,0 +1,7 @@
+key: atmel-microcontroller
+short_name: Atmel Microcontroller License
+name: Atmel Microcontroller License
+category: Proprietary Free
+owner: Atmel
+homepage_url: https://github.com/Joan93/MasterThesis/blob/275ee8c6fcd5b0883540f629e2755ab524904a73/openwsn/openwsn-fw/bsp/boards/samr21_xpro/drivers/src/cm0plus_interrupt.c
+spdx_license_key: LicenseRef-scancode-atmel-microcontroller

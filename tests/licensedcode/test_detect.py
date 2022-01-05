@@ -1061,8 +1061,8 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         expected = [
               # detected, match.lines(), match.qspan,
             (u'gpl-2.0-plus', (12, 25), Span(46, 155)),
-            (u'fsf-unlimited-no-warranty', (231, 238), Span(944, 1007)),
-            (u'free-unknown', (306, 307), Span(1313, 1335)),
+            (u'fsf-unlimited-no-warranty', (231, 238), Span(945, 1008)),
+            (u'free-unknown', (306, 307), Span(1314, 1336)),
         ]
         self.check_position('positions/automake.pl', expected)
 
@@ -1216,3 +1216,42 @@ class TestRegression(FileBasedTesting):
         matched_rule = matches[0].rule
         assert matched_rule.identifier == 'gpl-2.0-plus_258.RULE'
         assert matched_rule.license_expression == 'gpl-2.0-plus'
+
+    def test_detection_return_correct_mit_not_apache_using_controlled_index(self):
+        # we were incorrectly reporting an Apache using a sequence match
+        # this has been fixed for https://github.com/nexB/scancode-toolkit/issues/2635
+        # the key fix is to privilege the longest rule when two rules are tied
+        # as candidates in set matching
+        from licensedcode import models
+
+        rules_data_dir = self.get_test_loc('detect/apache-vs-mit/index/rules')
+        rules = models.load_rules(rules_data_dir)
+        idx = index.LicenseIndex(rules)
+        expected = ['mit']
+
+        query_location = self.get_test_loc('detect/apache-vs-mit/incorrect.md')
+        matches = idx.match(location=query_location)
+        results = [m.rule.license_expression for m in matches]
+        assert results == expected
+
+        query_location = self.get_test_loc('detect/apache-vs-mit/correct.md')
+        matches = idx.match(location=query_location)
+        results = [m.rule.license_expression for m in matches]
+        assert results == expected
+
+    def test_detection_return_correct_mit_not_apache_using_full_index(self):
+        # we were incorrectly reporting an Apache using a sequence match
+        # this has been fixed in https://github.com/nexB/scancode-toolkit/issues/2635
+
+        idx = cache.get_index()
+        expected = ['mit']
+
+        query_location = self.get_test_loc('detect/apache-vs-mit/incorrect.md')
+        matches = idx.match(location=query_location)
+        results = [m.rule.license_expression for m in matches]
+        assert results == expected
+
+        query_location = self.get_test_loc('detect/apache-vs-mit/correct.md')
+        matches = idx.match(location=query_location)
+        results = [m.rule.license_expression for m in matches]
+        assert results == expected

@@ -1,0 +1,43 @@
+# Contributor: Alex Yam <alex@alexyam.com>
+# Maintainer: Alex Yam <alex@alexyam.com>
+pkgname=gtksourceviewmm3
+pkgver=3.21.3
+pkgrel=0
+arch="all"
+pkgdesc="C++ wrapper for the gtksourceview widget library"
+url="https://developer.gnome.org/gtksourceviewmm/stable/"
+license="LGPL-2.1-or-later"
+makedepends="libtool mm-common gtksourceview-dev"
+subpackages="$pkgname-doc $pkgname-dev"
+source="https://download.gnome.org/sources/gtksourceviewmm/${pkgver%.*}/gtksourceviewmm-$pkgver.tar.xz"
+builddir="$srcdir/${pkgname:0:-1}-$pkgver"
+
+prepare() {
+	default_prepare
+	./autogen.sh
+}
+
+build() {
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr
+	make
+}
+
+check() {
+	make check
+}
+
+package() {
+	make DESTDIR="$pkgdir" install
+}
+
+doc() {
+	default_doc
+	# move /usr/share/devhelp to -doc package
+	# necessary until abuild's doc() detects 'devhelp' as doc
+	# abuild MR: https://gitlab.alpinelinux.org/alpine/abuild/-/merge_requests/87
+	amove /usr/share/devhelp
+}
+sha512sums="bae4b1fc0792fee136b3be5a2514d29cc4ddc1e7ca663c090e5c15a693475fd6c80f081dd7972e53aa1a74f4ae85bc00d71438b7fb0a89d714a3e423cb5228ef  gtksourceviewmm-3.21.3.tar.xz"

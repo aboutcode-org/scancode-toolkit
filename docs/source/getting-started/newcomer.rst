@@ -63,14 +63,14 @@ Scancode-Toolkit can be installed in 3 different methods.
 
 .. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
-#. The :ref:`newcomer_scan_codebase` section helps you with configuring your virtual environment,
-   installing Scancode and performing a basic scan, and subsequently visualize the results.
+#. The :ref:`newcomer_scan_codebase` section helps you with configuring and
+   installing Scancode and performing a basic scan, then visualize the results.
 
-#. The :ref:`newcomer_scancode_tips` section helps you customize the scan according to your
-   requirements, and better understand the advanced features you can use.
+#. The :ref:`newcomer_scancode_tips` section helps you customize the scan
+   according to your requirements, and better understand advanced features.
 
-#. The :ref:`newcomer_all_tutorials` is essentially an exhaustive list of all Tutorials and
-   How To's with a brief description.
+#. The :ref:`newcomer_all_tutorials` is an exhaustive directory of all Tutorials
+   and How To's with a brief description.
 
 
 .. _newcomer_before:
@@ -154,8 +154,7 @@ ScanCode Versions
 ^^^^^^^^^^^^^^^^^
 
 #. You can see all Scancode Toolkit versions on the `GitHub release page <https://github.com/nexB/scancode-toolkit/releases>`_.
-#. Refer :ref:`whats_new_this_release` to know more about the latest release.
-#. You can also refer the `CHANGELOG <https://github.com/nexB/scancode-toolkit/blob/develop/CHANGELOG.rst>`_ for more information on specific releases.
+#. Read the `CHANGELOG <https://github.com/nexB/scancode-toolkit/blob/develop/CHANGELOG.rst>`_ for more information on specific releases.
 #. If you want to use/test a specific version of Scancode Toolkit, you can follow the instructions
    in :ref:`source_code_install` docs.
 
@@ -239,12 +238,7 @@ To determine where to contribute, you can refer:
 #. ScanCode Toolkit tracks issues via the `GitHub Issue tracker <https://github.com/nexB/scancode-toolkit/issues>`_
 #. Broad `milestones <https://github.com/nexB/scancode-toolkit/milestones>`_ for upcoming versions are also maintained.
 
-And documentation related to contributing code can be referred at :ref:`contrib_code_dev`. The main
-sections are:
-
-#. :ref:`contrib_code_conven`
-#. :ref:`scancode_toolkit_developement_running_tests`
-#. :ref:`contrib_dev_pip_and_configure`
+And documentation related to contributing code can be referred at :ref:`contrib_code_dev`.
 
 .. _newcomer_good_first_issue:
 
@@ -301,10 +295,10 @@ The sections in this page cover the following:
 
 You can contribute to the following Open Issues on documentation.
 
-#. `Issues with label Documentation <https://github.com/nexB/scancode-toolkit/issues?q=is%3Aopen+is%3Aissue+label%3Adocumentation>`_
+#. `First Timers Only Issues List <https://github.com/nexB/scancode-toolkit/issues/1826>`_
 #. `Documentation Inconsistencies Tracker <https://github.com/nexB/scancode-toolkit/issues/1813>`_
 #. `ScanCode Toolkit Documentation Roadmap <https://github.com/nexB/scancode-toolkit/issues/1824>`_
-#. `First Timers Only Issues List <https://github.com/nexB/scancode-toolkit/issues/1826>`_
+#. `Issues with label Documentation <https://github.com/nexB/scancode-toolkit/issues?q=is%3Aopen+is%3Aissue+label%3Adocumentation>`_
 
 .. note::
 
@@ -313,6 +307,7 @@ You can contribute to the following Open Issues on documentation.
 Also, consider contributing to other Aboutcode Project Documentations, as they need more support.
 
 .. _newcomer_gsoc_gsod:
+
 
 Participate in GSoC/GSoD
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -325,8 +320,8 @@ If you want to participate in any of the two programs:
 Then:
 
 #. Keep an eye out for Application Timelines.
-#. Solve multiple of these :ref:`good_first_issue` to demonstrate your skills, and improve your
-   chances of selection.
+#. Solve multiple of these :ref:`good_first_issue` to demonstrate your skills,
+   and improve your chances of selection.
 #. Refer the Projects Ideas list for details on tentative projects.
 
      - :ref:`GSoC2019`

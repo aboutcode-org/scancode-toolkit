@@ -1,0 +1,12 @@
+license_expression: gpl-2.0 WITH font-exception-gpl
+is_license_text: yes
+relevance: 99
+minimum_coverage: 98
+notes: Seen in https://sourceforge.net/projects/linuxlibertine/files/linuxlibertine/5.3.0/LinLibertineTTF_5.3.0_2012_07_02.tgz/download
+    this is a modified GPL which is problematic
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

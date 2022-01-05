@@ -1,0 +1,77 @@
+# Contributor: Sören Tempel <soeren+alpine@soeren-tempel.net>
+# Contributor: Łukasz Jendrysik <scadu@yandex.com>
+# Maintainer: Natanael Copa <ncopa@alpinelinux.org>
+pkgname=sudo
+pkgver=1.9.6_p1
+if [ "${pkgver%_*}" != "$pkgver" ]; then
+	_realver=${pkgver%_*}${pkgver#*_}
+else
+	_realver=$pkgver
+fi
+pkgrel=1
+pkgdesc="Give certain users the ability to run some commands as root"
+url="https://www.sudo.ws/sudo/"
+arch="all"
+license="custom ISC"
+makedepends="zlib-dev bash mandoc"
+subpackages="$pkgname-doc $pkgname-dev"
+source="https://www.sudo.ws/dist/sudo-$_realver.tar.gz
+	fix-cross-compile.patch
+	SIGUNUSED.patch
+	"
+options="suid"
+builddir="$srcdir/sudo-$_realver"
+
+# secfixes:
+#   1.9.5p2-r0:
+#     - CVE-2021-3156
+#   1.9.5-r0:
+#     - CVE-2021-23239
+#     - CVE-2021-23240
+#   1.8.31-r0:
+#     - CVE-2019-18634
+#   1.8.28-r0:
+#     - CVE-2019-14287
+#   1.8.20_p2-r0:
+#     - CVE-2017-1000368
+
+build() {
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		--mandir=/usr/share/man \
+		--disable-nls \
+		--enable-pie \
+		--with-env-editor \
+		--with-mdoc \
+		--without-pam \
+		--without-skey \
+		--with-sendmail=/usr/sbin/sendmail \
+		--with-passprompt="[sudo] password for %p: "
+
+	# Workaround until SIGUNUSED.patch is not needed anymore
+	rm lib/util/mksiglist.h lib/util/mksigname.h
+	make -C lib/util DEVEL=1 mksiglist.h mksigname.h
+	make
+}
+
+check() {
+	make check
+}
+
+package() {
+	# the sudo's mkinstalldir script miscreates the leading
+	# path components with bad permissions. fix this.
+	install -d -m0755 "$pkgdir"/var "$pkgdir"/var/db
+	make -j1 DESTDIR="$pkgdir" install
+	rm -rf "$pkgdir"/var/run
+
+	# Exactly the same as /etc/sudoers
+	rm "$pkgdir"/etc/sudoers.dist
+}
+
+sha512sums="632dfe72f04ce9a7a5a7236fcd5c09ce4535e695ced49d24dd848e3a7b1bea7380df44188b9e475af4271069539b5a5816948a98fbb0649ebebaba8b4c4b7745  sudo-1.9.6p1.tar.gz
+f476bb5ac02c3222d3be7eecb828131374e0baf806cc0fd548fb9d4a90f40a848d0ef58851a63ea1d988b720fe259312f3a457ca994ac0e93ed9e16fc72d5234  fix-cross-compile.patch
+03a2cef9fcc26cc2711edb5928c945fcf214b22139bb88d77538d25f3bfd144d17b6c9dabb1e01960ac1697d83b3452397a5ef4c7d0e68ea72548a631b212e6d  SIGUNUSED.patch"

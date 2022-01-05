@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/menahishayan/HomeAssistant-Cupertino-Icons/blob/734b65202915e4d2a8a77072d909d8630e027b1c/LICENSE
+ignorable_authors:
+    - Apple's SF Pro Symbols Viewer

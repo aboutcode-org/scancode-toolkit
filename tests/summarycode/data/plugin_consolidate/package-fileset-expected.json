@@ -12,15 +12,16 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 4
       }
     }
   ],
-  "consolidated_components": [],
-  "consolidated_packages": [
+  "packages": [
     {
       "type": "npm",
       "namespace": null,
@@ -57,22 +58,28 @@
       "purl": "pkg:npm/test-package@0.0.1",
       "repository_homepage_url": "https://www.npmjs.com/package/test-package",
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
-      "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
-      "identifier": "pkg_npm_test_package_0_0_1_1",
+      "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
+    }
+  ],
+  "consolidated_components": [
+    {
+      "type": "holders",
+      "identifier": "apache_foundation_software_1",
       "consolidated_license_expression": "apache-2.0",
       "consolidated_holders": [
         "The Apache Software Foundation"
       ],
       "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
       "core_license_expression": "apache-2.0",
-      "core_holders": [],
-      "other_license_expression": "apache-2.0",
-      "other_holders": [
+      "core_holders": [
         "The Apache Software Foundation"
       ],
-      "files_count": 4
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 3
     }
   ],
+  "consolidated_packages": [],
   "files": [
     {
       "path": "package",
@@ -99,9 +106,9 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "apache_foundation_software_1"
       ],
       "files_count": 4,
       "dirs_count": 0,
@@ -135,6 +142,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -151,11 +159,13 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 4,
             "matched_length": 4,
@@ -171,7 +181,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [
+      "package_manifests": [
         {
           "type": "npm",
           "namespace": null,
@@ -211,9 +221,7 @@
           "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
         }
       ],
-      "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -246,6 +254,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -262,11 +271,13 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -294,9 +305,9 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "apache_foundation_software_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -330,6 +341,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -346,11 +358,13 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -378,9 +392,9 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "apache_foundation_software_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -414,6 +428,7 @@
           "short_name": "Apache 2.0",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -430,11 +445,13 @@
             "licenses": [
               "apache-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -462,9 +479,9 @@
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "apache_foundation_software_1"
       ],
       "files_count": 0,
       "dirs_count": 0,

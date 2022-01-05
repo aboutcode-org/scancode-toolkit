@@ -8,14 +8,20 @@
 # Create, test and publish release archives, wheels and sdists.
 # Use the --test to also run basic smoke tests of the built archives
 #
+# To use a local checkout of https://github.com/nexB/thirdparty-packages/ rather
+# than https://thirdparty.aboutcode.org/ set the variable PYPI_LINKS to point
+# to your thirdparty-packages/pypi local directory (this speeds up the release
+# creation and allow to work mostly offline.
+#
 ################################################################################
 
 # Supported current app Python version and OS
 # one archive or installer is built for each python x OS combo
-PYTHON_APP_VERSION="36"
-PYTHON_APP_DOT_VERSION="3.6"
+PYTHON_APP_DOT_VERSIONS="3.6 3.7 3.8 3.9"
 
 PYTHON_PYPI_TESTS_DOT_VERSIONS="3.6 3.7 3.8 3.9"
+
+PYPI_LINKS=https://thirdparty.aboutcode.org/pypi
 
 OPERATING_SYSTEMS="linux macos windows"
 
@@ -50,39 +56,51 @@ function run_app_smoke_tests {
     #
     # Arguments:
     #   operating_system: One of windows, linux or macos
+    #   python_app_dot_version: the python version to test (no dot)
 
     operating_system=$1
+    python_app_dot_version=$2
+    # remove dots
+    python_app_version=${python_app_dot_version/./}
 
     echo " "
-    echo "### Testing app on OS: $operating_system"
-    archive_to_test=$(ls -1 -R release/archives/ | grep "$PYTHON_APP_VERSION-$operating_system")
+    echo "### Testing app with Python $python_app_dot_version on OS: $operating_system"
 
-    echo "#### Testing $archive_to_test with Python $PYTHON_APP_DOT_VERSION on OS: $operating_system"
+    # check if the tag file exist meaning we have already completed the tests
+    tag_file="scancode-release-tested-for-python-$python_app_dot_version-$operating_system"
+    if [ ! -f $tag_file ]; then
+        archive_to_test=$(ls -1 -R release/archives/ | grep "$python_app_version-$operating_system")
 
-    # Check checksum of archive and script since it transits through file.io
-    sha_arch=$(sha256sum release/archives/$archive_to_test | awk '{ print $1 }')
-    sha_py=$(sha256sum etc/release/scancode_release_tests.py | awk '{ print $1 }')
+        echo "#### Testing $archive_to_test with Python $python_app_dot_version on OS: $operating_system"
 
-    echo "#### Creating a temp archive that contains the tested archive: $archive_file and the test script"
-    archive_file=input.tar.gz
-    tar -czf $archive_file \
-        -C release/archives $archive_to_test \
-        -C ../../etc/release scancode_release_tests.py
+        # Check checksum of archive and script since it transits through file.io
+        sha_arch=$(sha256sum release/archives/$archive_to_test | awk '{ print $1 }')
+        sha_py=$(sha256sum etc/release/scancode_release_tests.py | awk '{ print $1 }')
 
-    tar -tvf $archive_file
+        echo "#### Creating a temp archive that contains the tested archive: $archive_file and the test script"
+        archive_file=input.tar.gz
+        tar -czf $archive_file \
+            -C release/archives $archive_to_test \
+            -C ../../etc/release scancode_release_tests.py
 
-    echo "#### Remote test command: python scancode_release_tests.py app $archive_to_test sha_arch:$sha_arch sha_py:$sha_py"
+        tar -tvf $archive_file
 
-    romp \
-        --interpreter cpython \
-        --architecture x86_64 \
-        --check-period 5 \
-        --version $PYTHON_APP_DOT_VERSION \
-        --platform $operating_system \
-        --archive-file $archive_file \
-        --command "python scancode_release_tests.py app $archive_to_test $sha_arch $sha_py"
+        echo "#### Remote test command: python scancode_release_tests.py app $archive_to_test sha_arch:$sha_arch sha_py:$sha_py"
 
-    echo "#### RELEASE TEST: Completed App tests of $archive_to_test with Python $PYTHON_APP_DOT_VERSION on OS: $operating_system"
+        romp \
+            --interpreter cpython \
+            --architecture x86_64 \
+            --check-period 5 \
+            --version $python_app_dot_version \
+            --platform $operating_system \
+            --archive-file $archive_file \
+            --command "python scancode_release_tests.py app $archive_to_test $sha_arch $sha_py"
+
+        echo "#### RELEASE TEST: Completed App tests of $archive_to_test with Python $python_app_dot_version on OS: $operating_system"
+        touch $tag_file
+    else
+        echo "#### RELEASE TEST: NOT RE-TESTING $archive_to_test with Python $python_app_dot_version on OS: $operating_system"
+    fi
 }
 
 
@@ -91,72 +109,84 @@ function run_pypi_smoke_tests {
     # the selected Python and operating system remotely using Azure
     #
     # Arguments:
-    #   dist: One of whl for wheel, or tar.gz for sdist
+    #   archive_to_test: The naem of a wheel file or tar.gz  sdist file
     #   python_dot_versions:  run with these Python version as in "3.6 3.7"
     #   operating_systems: run on these operating_systems as in "windows linux macos"
 
-    dist=$1
+    archive_to_test=$1
     python_dot_versions=$2
     operating_systems=$3
 
-    archive_to_test=$(ls -1 -R release/pypi | grep "$dist")
+    # check if the tag file exist meaning we have already completed the tests
+    tag_file="scancode-release-pypi-tested-for-$archive_to_test"
+
     echo " "
     echo "### Testing $archive_to_test with Pythons: $python_dot_versions on OSses: $operating_systems"
 
-    # Check checksum of archive and script since it transits through file.io
-    sha_arch=$(sha256sum release/pypi/$archive_to_test | awk '{ print $1 }')
-    sha_py=$(sha256sum etc/release/scancode_release_tests.py | awk '{ print $1 }')
+    if [ ! -f $tag_file ]; then
 
-    echo "#### Creating a temp archive that contains the tested archive: $archive_file and the test script"
-    archive_file=input.tar.gz
-    tar -czf $archive_file \
-        -C release/pypi $archive_to_test \
-        -C ../../etc/release scancode_release_tests.py
+        # Check checksum of archive and script since it transits through file.io
+        sha_arch=$(sha256sum release/pypi/$archive_to_test | awk '{ print $1 }')
+        sha_py=$(sha256sum etc/release/scancode_release_tests.py | awk '{ print $1 }')
 
-    tar -tvf $archive_file
+        echo "#### Creating a temp archive that contains the tested archive: $archive_to_test and the test script: release scancode_release_tests.py"
+        archive_file=input.tar.gz
+        tar -czf $archive_file \
+            -C release/pypi $archive_to_test \
+            -C ../../etc/release scancode_release_tests.py
 
-    echo "#### Remote test command: python scancode_release_tests.py pypi $archive_to_test $sha_arch $sha_py"
+        tar -tvf $archive_file
 
-    # build options for Python versions and OS
-    ver_opts=" "
-    for pdv in $python_dot_versions
-        do
-        ver_opts="$ver_opts --version $pdv"
-    done
+        echo "#### Remote test command: python scancode_release_tests.py pypi archive_to_test:$archive_to_test sha_arch:$sha_arch sha_py:$sha_py"
 
-    os_opts=" "
-    for os in $operating_systems
-        do
-        os_opts="$os_opts --platform $os"
-    done
+        # build options for Python versions and OS
+        ver_opts=" "
+        for pdv in $python_dot_versions
+            do
+            ver_opts="$ver_opts --version $pdv"
+        done
 
-    romp \
-        --interpreter cpython \
-        --architecture x86_64 \
-        --check-period 5 \
-        $ver_opts \
-        $os_opts \
-        --archive-file $archive_file \
-        --command "python scancode_release_tests.py pypi $archive_to_test $sha_arch $sha_py"
+        os_opts=" "
+        for os in $operating_systems
+            do
+            os_opts="$os_opts --platform $os"
+        done
 
-    echo "#### RELEASE TEST: Completed PyPI tests of $archive_to_test with Pythons: $python_dot_versions on OSses: $operating_systems"
+        romp \
+            --interpreter cpython \
+            --architecture x86_64 \
+            --check-period 5 \
+            $ver_opts \
+            $os_opts \
+            --archive-file $archive_file \
+            --command "python scancode_release_tests.py pypi $archive_to_test $sha_arch $sha_py"
+
+        echo "#### RELEASE TEST: Completed PyPI tests of $archive_to_test with Pythons: $python_dot_versions on OSses: $operating_systems"
+        touch $tag_file
+    else
+        echo "#### RELEASE TEST: NOT RE-TESTING Pypi $archive_to_test with Python $python_app_dot_version on OSses: $operating_systems"
+    fi
 
 }
 
 
 if [ "$CLI_ARGS" == "--test" ]; then
     echo "##########################################################################"
-    echo "### TESTING build for Python: $PYTHON_APP_VERSIONS on OS: $OPERATING_SYSTEMS"
+    echo "### TESTING build for Python: $PYTHON_APP_DOT_VERSIONS on OS: $OPERATING_SYSTEMS"
     for operating_system in $OPERATING_SYSTEMS
         do
-        run_app_smoke_tests $operating_system
+        for pyver in $PYTHON_APP_DOT_VERSIONS
+            do
+            run_app_smoke_tests $operating_system $pyver
+        done
     done
 
     echo "##########################################################################"
     echo "### TESTING PyPI archives for Python: $PYTHON_PYPI_TESTS_DOT_VERSIONS on OS: $OPERATING_SYSTEMS"
-    run_pypi_smoke_tests .whl "$PYTHON_PYPI_TESTS_DOT_VERSIONS" "$OPERATING_SYSTEMS"
-    run_pypi_smoke_tests .tar.gz "$PYTHON_PYPI_TESTS_DOT_VERSIONS" "$OPERATING_SYSTEMS"
-
+    for archive in $(find release/pypi/ -type f -printf "%f\n")
+        do
+        run_pypi_smoke_tests $archive "$PYTHON_PYPI_TESTS_DOT_VERSIONS" "$OPERATING_SYSTEMS"
+    done
     set +e
     set +x
     exit
@@ -185,51 +215,47 @@ function backup_previous_release {
     fi
 }
 
-function clean_build {
-    rm -rf build dist thirdparty PYTHON_EXECUTABLE SCANCODE_DEV_MODE
+
+function clean_egg_info {
+	rm -rf .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
 }
 
-backup_previous_release
-clean_build
-mkdir release
 
-echo "## RELEASE: Setup environment"
-
-echo "## RELEASE: Clean and configure, then regen license index"
-./configure --clean
-./configure 
-source bin/activate
-scancode --reindex-licenses
-
-
-
-echo "## RELEASE: Install release requirements"
-# We do not need a full env for releasing
-bin/pip install $QUIET -r etc/release/requirements.txt
-
+function clean_build {
+    rm -rf build dist thirdparty PYTHON_EXECUTABLE SCANCODE_DEV_MODE
+    clean_egg_info
+}
 
 ################################
 # PyPI wheels and sdist: these are not Python version- or OS-dependent
 ################################
-echo " "
-echo "## RELEASE: Building a wheel and a source distribution"
-bin/python setup.py $QUIET sdist bdist_wheel
+function build_wheels {
+    # Build scancode wheels and dist for PyPI
+    # Arguments:
 
-mv dist release/pypi
+    echo " "
+    echo "## RELEASE: Building a wheel and a source distribution"
+    clean_egg_info
+    bin/python setup.py $QUIET sdist bdist_wheel
 
-echo " "
-echo "## RELEASE: Building a mini wheel and a source distribution"
-mv setup.cfg setup-full.cfg
-cp setup-mini.cfg setup.cfg
-rm -rf build
-bin/python setup.py $QUIET sdist bdist_wheel
-mv setup-full.cfg setup.cfg
+    mv dist release/pypi
 
-cp dist/* release/pypi/
+    echo " "
+    echo "## RELEASE: Building a mini wheel and a source distribution"
+    clean_egg_info
+    mv setup.cfg setup-full.cfg
+    cp setup-mini.cfg setup.cfg
+    rm -rf build
+    bin/python setup.py $QUIET sdist bdist_wheel
+    mv setup-full.cfg setup.cfg
 
-echo "## RELEASE: full and mini, wheel and source distribution(s) built and ready for PyPI upload"
-find release -ls
+    cp dist/* release/pypi/
 
+    clean_egg_info
+    echo "## RELEASE: full and mini, wheel and source distribution(s) built and ready for PyPI upload"
+    find release -ls
+
+}
 
 ################################
 # Build OSes and Pythons-specific release archives
@@ -241,40 +267,54 @@ function build_app_archive {
     # Arguments:
     #   operating_system: only include wheels for this operating_system. 
     #                     One of windows, linux or macos
+    #   python_app_dot_version: the python version to build (with dot)
 
     operating_system=$1
+    python_app_dot_version=$2
+    # remove dots
+    python_app_version=${python_app_dot_version/./}
 
     echo " "
-    echo "## RELEASE: Building archive for Python $PYTHON_APP_VERSION on operating system: $operating_system"
-
-    clean_build
-    mkdir -p thirdparty
+    echo "## RELEASE: Building archive for Python $python_app_version on operating system: $operating_system"
 
     if [ "$operating_system" == "windows" ]; then
         # create a zip only on Windows
         formats=zip
-        echo -n "py 3.6">PYTHON_EXECUTABLE
+        formats_ext=.zip
     else
         formats=xztar
-        echo -n "python3.6">PYTHON_EXECUTABLE
+        formats_ext=.tar.xz
     fi
 
-    # 1. Collect thirdparty deps only for the subset for this Python/operating_system
-    bin/python etc/release/fetch_requirements.py \
-        --requirements-file=requirements.txt \
-        --thirdparty-dir=thirdparty \
-        --python-version=$PYTHON_APP_VERSION \
-        --operating-system=$operating_system \
-        --with-about
+    if [ ! -f release/archives/scancode-toolkit-*_py$python_app_version-$operating_system$formats_ext ]; then
+        clean_build
+        mkdir -p thirdparty
 
-    # 2. Create tarball or zip.
-    # For now as a shortcut we use the Python setup.py sdist to create a tarball.
-    # This is hackish and we should instead use our own archiving code that
-    # would take a distutils manifest-like input
-    bin/python setup.py $QUIET sdist --formats=$formats 
-    bin/python etc/release/scancode_rename_archives.py dist/ _py$PYTHON_APP_VERSION-$operating_system
-    mkdir -p release/archives
-    mv dist/* release/archives/
+        if [ "$operating_system" == "windows" ]; then
+            echo -n "py -$python_app_dot_version" > PYTHON_EXECUTABLE
+        else
+            echo -n "python$python_app_dot_version" > PYTHON_EXECUTABLE
+        fi
+
+        # 1. Collect thirdparty deps only for the subset for this Python/operating_system
+        bin/python etc/release/fetch_requirements.py \
+            --requirements-file=requirements.txt \
+            --thirdparty-dir=thirdparty \
+            --python-version=$python_app_version \
+            --operating-system=$operating_system \
+            --with-about \
+            --remote-links-url=$PYPI_LINKS
+
+        # 2. Create tarball or zip.
+        # For now as a shortcut we use the Python setup.py sdist to create a tarball.
+        # This is hackish and we should instead use our own archiving code that
+        # would take a distutils manifest-like input
+        bin/python setup.py $QUIET sdist --formats=$formats 
+        bin/python etc/release/scancode_rename_archives.py dist/ _py$python_app_version-$operating_system
+        mkdir -p release/archives
+        mv dist/* release/archives/
+    fi
+
 }
 
 
@@ -293,7 +333,8 @@ function build_source_archive {
         --requirements-file=requirements.txt \
         --thirdparty-dir=thirdparty \
         --with-about \
-        --only-sources
+        --only-sources \
+        --remote-links-url=$PYPI_LINKS
 
     # 2. Create tarball
     # For now as a shortcut we use the Python setup.py sdist to create a tarball.
@@ -307,10 +348,38 @@ function build_source_archive {
 }
 
 
+if [ "$CLI_ARGS" != "--continue" ]; then
+    echo "############# Reset release creation #############################"
+    backup_previous_release
+    clean_build
+    mkdir release
+
+    echo "## RELEASE: Setup environment"
+
+    echo "## RELEASE: Clean and configure, then regen license index"
+    ./configure --clean
+    ./configure --local 
+    source bin/activate
+    scancode --reindex-licenses
+
+    echo "## RELEASE: Install release requirements"
+    # We do not need a full env for releasing
+    bin/pip install $QUIET -r etc/release/requirements.txt
+else
+    echo "############# Continuing previous release creation #############################"
+fi
+
+
+# wheels
+build_wheels
+
 # build the app combos on the current App Python
 for operating_system in $OPERATING_SYSTEMS
     do
-    build_app_archive $operating_system
+    for pyver in $PYTHON_APP_DOT_VERSIONS
+        do
+        build_app_archive $operating_system $pyver
+    done
 done
 
 build_source_archive
@@ -341,7 +410,6 @@ echo "###  RELEASE is ready for publishing  ###"
 
 # ping on chat and twitter
 # send email
-
 
 set +e
 set +x

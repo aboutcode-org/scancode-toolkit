@@ -1,0 +1,11 @@
+key: cc-by-2.5-au
+short_name: Creative Commons Attribution 2.5 Australia
+name: Creative Commons Attribution 2.5 Australia
+category: Permissive
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by/2.5/au/
+spdx_license_key: CC-BY-2.5-AU
+other_urls:
+    - https://creativecommons.org/licenses/by/2.5/au/legalcode
+ignorable_urls:
+    - https://creativecommons.org/

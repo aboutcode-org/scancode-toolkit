@@ -1,0 +1,36 @@
+key: google-maps-tos-2018-05-01
+short_name: Google Maps Platform ToS 2018-05-01
+name: Google Maps Platform Terms of Service 2018-05-01
+category: Proprietary Free
+owner: Google
+homepage_url: https://cloud.google.com/maps-platform/terms
+spdx_license_key: LicenseRef-scancode-google-maps-tos-2018-05-01
+text_urls:
+    - https://cloud.google.com/maps-platform/terms/index-20180501
+minimum_coverage: 90
+ignorable_authors:
+  - the U.S. Department
+  - the United States Department of State
+ignorable_emails:
+  - legal-notices@google.com
+ignorable_urls:
+  - https://cloud.google.com/maps-platform/pricing/sheet/
+  - https://cloud.google.com/maps-platform/terms
+  - https://cloud.google.com/maps-platform/terms/aup
+  - https://cloud.google.com/maps-platform/terms/maps-controller-terms
+  - https://cloud.google.com/maps-platform/terms/maps-deprecation
+  - https://cloud.google.com/maps-platform/terms/maps-prohibited-territories
+  - https://cloud.google.com/maps-platform/terms/maps-service-terms
+  - https://cloud.google.com/maps-platform/terms/maps-services
+  - https://cloud.google.com/maps-platform/terms/sla
+  - https://cloud.google.com/maps-platform/terms/tssg
+  - https://developers.google.com/maps
+  - https://developers.google.com/maps/terms
+  - https://www.google.com/about/company/user-consent-policy.html
+  - https://www.google.com/dmca.html
+  - https://www.google.com/help/legalnotices_maps.html
+  - https://www.google.com/permissions/geoguidelines.html#geotrademark
+  - https://www.google.com/permissions/geoguidelines.html#geotrademarkpolicy
+  - https://www.google.com/permissions/trademark/brand-terms.html
+  - https://www.google.com/policies/privacy
+

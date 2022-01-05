@@ -1,4 +1,5 @@
 license_expression: biopython
 is_license_reference: yes
+relevance: 100
 ignorable_urls:
     - http://www.biopython.org/DIST/LICENSE

@@ -3,8 +3,8 @@ Overview
 
 .. _explain_how_scancode_works:
 
-How does ScanCode work?
------------------------
+How does ScanCode detect licenses?
+--------------------------------------
 
 For license detection, ScanCode uses a (large) number of license texts and license detection
 'rules' that are compiled in a search index. When scanning, the text of the target file is

@@ -1,0 +1,121 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json": "<file>",
+        "--package": true,
+        "--processes": "-1",
+        "--strip-root": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "spdx_license_list_version": "3.14",
+        "files_count": 1
+      }
+    }
+  ],
+  "packages": [
+    {
+      "type": "windows-update",
+      "namespace": null,
+      "name": "Package_1_for_KB4601060",
+      "version": "10.0.3770.4",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": "Fix for KB4601060",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "organization",
+          "role": "owner",
+          "name": "Microsoft Corporation",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "http://support.microsoft.com/?kbid=4601060",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": "Microsoft Corporation",
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [],
+      "extra_data": {},
+      "purl": "pkg:windows-update/Package_1_for_KB4601060@10.0.3770.4",
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null
+    }
+  ],
+  "files": [
+    {
+      "path": "test.mum",
+      "type": "file",
+      "package_manifests": [
+        {
+          "type": "windows-update",
+          "namespace": null,
+          "name": "Package_1_for_KB4601060",
+          "version": "10.0.3770.4",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "Fix for KB4601060",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "organization",
+              "role": "owner",
+              "name": "Microsoft Corporation",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "http://support.microsoft.com/?kbid=4601060",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": "Microsoft Corporation",
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "purl": "pkg:windows-update/Package_1_for_KB4601060@10.0.3770.4",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
+      "scan_errors": []
+    }
+  ]
+}

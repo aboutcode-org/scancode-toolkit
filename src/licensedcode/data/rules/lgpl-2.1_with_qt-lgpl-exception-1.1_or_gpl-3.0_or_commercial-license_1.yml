@@ -1,0 +1,10 @@
+license_expression: lgpl-2.1 WITH qt-lgpl-exception-1.1 OR gpl-3.0 OR commercial-license
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.LGPL
+    - LGPL_EXCEPTION.txt
+    - LICENSE.GPL
+ignorable_urls:
+    - https://www.gnu.org/copyleft/gpl.html
+    - https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html

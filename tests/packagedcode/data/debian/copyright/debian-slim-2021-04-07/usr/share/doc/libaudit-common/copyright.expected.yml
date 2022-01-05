@@ -1,9 +1,0 @@
-- gpl-2.0
-- - GPL-2
-  - LGPL-2.1
-- gpl-2.0 AND (lgpl-2.1 AND lgpl-2.0-plus AND lgpl-2.1-plus)
-- |
-  2012-2016 Steve Grubb <sgrubb@redhat.com>
-  2006-2012 Rik Faith
-  2007-2009 Marc Alexamder Lehmann
-  2005-2008 Steve Grubb <sgrubb@redhat.com>

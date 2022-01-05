@@ -129,8 +129,8 @@ def build_description(summary, description):
 
 def combine_expressions(expressions, relation='AND', unique=True, licensing=Licensing()):
     """
-    Return a combined license expression string with relation, given a list of
-    license expressions strings.
+    Return a combined license expression string with relation, given a sequence of
+    license ``expressions`` strings or LicenseExpression objects.
 
     For example::
 
@@ -155,13 +155,15 @@ def combine_expressions(expressions, relation='AND', unique=True, licensing=Lice
     if not expressions:
         return
 
+    if not relation and relation.upper() not in ('AND', 'OR',):
+        raise TypeError(f'relation should be one of AND, OR and not: {relation}')
+
     if not isinstance(expressions, (list, tuple)):
-        raise TypeError(
-            'expressions should be a list or tuple and not: {}'.format(
-                type(expressions)))
+        raise TypeError(f'expressions should be a sequence, not: {type(expressions)}')
 
     if unique:
         # Remove duplicate element in the expressions list
+        # and preserve original order
         expressions = list(dict((x, True) for x in expressions).keys())
 
     if len(expressions) == 1:
@@ -170,6 +172,5 @@ def combine_expressions(expressions, relation='AND', unique=True, licensing=Lice
     expressions = [licensing.parse(le, simple=True) for le in expressions]
 
     # licensing.OR or licensing.AND
-    assert relation and relation.upper() in ('AND', 'OR',)
-    relationship = getattr(licensing, relation)
-    return str(relationship(*expressions))
+    combiner = getattr(licensing, relation)
+    return str(combiner(*expressions))

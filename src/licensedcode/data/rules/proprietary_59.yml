@@ -1,5 +1,6 @@
 license_expression: proprietary-license
 is_license_reference: yes
+relevance: 100
 minimum_coverage: 100
 notes: |
     This is an extra clause inserted by Palantir in an Apache license

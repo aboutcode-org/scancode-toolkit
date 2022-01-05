@@ -1,7 +1,7 @@
 key: openssl-exception-gpl-3.0-plus
 short_name: OpenSSL exception to GPL 3.0 or later
 name: OpenSSL exception to GPL 3.0 or later
-category: Copyleft Limited
+category: Copyleft
 owner: Tildeslash
 is_exception: yes
 spdx_license_key: LicenseRef-scancode-openssl-exception-gpl-3.0-plus

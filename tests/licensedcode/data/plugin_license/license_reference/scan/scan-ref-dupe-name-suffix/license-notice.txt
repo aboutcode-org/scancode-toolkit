@@ -1,0 +1,977 @@
+{
+  "preview": true,
+  "name": "mongodb-vscode",
+  "displayName": "MongoDB for VS Code",
+  "description": "Connect to MongoDB and Atlas directly from your VS Code environment, navigate your databases and collections, inspect your schema and use playgrounds to prototype queries and aggregations.",
+  "version": "0.0.0-dev.0",
+  "homepage": "https://github.com/mongodb-js/vscode",
+  "qna": "https://developer.mongodb.com/community/forums/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mongodb-js/vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/mongodb-js/vscode/issues",
+    "email": "vscode@mongodb.com"
+  },
+  "publisher": "mongodb",
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Other"
+  ],
+  "keywords": [
+    "MongoDB",
+    "MongoDB Atlas",
+    "MQL",
+    "Databases"
+  ],
+  "icon": "images/mongodb.png",
+  "galleryBanner": {
+    "color": "#3D4F58",
+    "theme": "dark"
+  },
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "main": "./dist/extension.js",
+  "scripts": {
+    "clean": "rimraf ./out/* ./dist/* ",
+    "lint": "eslint --cache '**/*.{js,ts,tsx}'",
+    "update-grammar": "ts-node ./scripts/update-grammar.ts",
+    "update-snippets": "ts-node ./scripts/update-snippets.ts",
+    "precompile": "npm run clean",
+    "compile": "npm-run-all compile:*",
+    "compile:keyfile": "ts-node ./scripts/generate-keyfile.ts",
+    "compile:resources": "npm run update-grammar && npm run update-snippets",
+    "compile:extension": "tsc -p ./",
+    "compile:extension-bundles": "webpack --mode development",
+    "watch": "npm run compile && npm-run-all -p watch:*",
+    "watch:extension": "npm run compile:extension -- -watch",
+    "watch:extension-bundles": "webpack --mode development --info-verbosity verbose --watch",
+    "pretest": "npm run compile && cross-env MONGODB_VERSION=4.2.3 mongodb-runner start --port=27018",
+    "test": "npm run test-webview && npm run test-extension",
+    "test-extension": "cross-env NODE_OPTIONS=--no-force-async-hooks-checks xvfb-maybe node ./out/test/runTest.js",
+    "test-webview": "jest",
+    "posttest": "mongodb-runner stop --port=27018",
+    "vscode:prepublish": "npm run clean && npm run compile:keyfile && npm run compile:resources && webpack --mode production",
+    "check": "npm run lint && npm run check-dependencies",
+    "check-dependencies": "depcheck --ignores='vscode,keytar,@types/jest,mocha-junit-reporter,mocha-multi,pre-commit,webpack-cli,vscode-languageserver-textdocument,@babel/core'",
+    "package": "npm list --production --parseable --depth=99999 --loglevel=info || true && cross-env NODE_OPTIONS=\"--require ./scripts/no-npm-list-fail.js\" vsce package --githubBranch main",
+    "local-install": "npm run package && code --install-extension ./mongodb-vscode-*.vsix",
+    "check-vsix-size": "ts-node ./scripts/check-vsix-size.ts",
+    "release-draft": "node ./scripts/release-draft.js"
+  },
+  "engines": {
+    "vscode": "^1.58.1",
+    "node": "^14.17.3",
+    "npm": "^7.19.0"
+  },
+  "activationEvents": [
+    "onCommand:mdb.connect",
+    "onCommand:mdb.connectWithURI",
+    "onCommand:mdb.openOverviewPage",
+    "onCommand:mdb.createPlayground",
+    "onCommand:mdb.addConnection",
+    "onCommand:mdb.addConnectionWithURI",
+    "onCommand:mdb.disconnect",
+    "onCommand:mdb.removeConnection",
+    "onCommand:mdb.openMongoDBShell",
+    "onCommand:mdb.saveMongoDBDocument",
+    "onView:mongoDB",
+    "onView:mongoDBConnectionExplorer",
+    "onView:mongoDBPlaygroundsExplorer",
+    "onLanguage:json",
+    "onLanguage:mongodb"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "mongoDB",
+          "title": "MongoDB",
+          "icon": "images/sidebar-leaf.svg"
+        }
+      ]
+    },
+    "views": {
+      "mongoDB": [
+        {
+          "id": "mongoDBConnectionExplorer",
+          "name": "Connections",
+          "when": "config.mdb.showMongoDBConnectionExplorer == true"
+        },
+        {
+          "id": "mongoDBPlaygroundsExplorer",
+          "name": "Playgrounds",
+          "when": "config.mdb.showMongoDBPlaygrounds == true"
+        },
+        {
+          "id": "mongoDBHelpExplorer",
+          "name": "Help and Feedback",
+          "when": "config.mdb.showMongoDBHelpExplorer == true"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "mongoDBConnectionExplorer",
+        "contents": "No connections found.\n[Add Connection](command:mdb.connect)"
+      },
+      {
+        "view": "mongoDBPlaygroundsExplorer",
+        "contents": "No '.mongodb' playground files found in the workspace.\n[Create New Playground](command:mdb.createNewPlaygroundFromPlaygroundExplorer)"
+      }
+    ],
+    "languages": [
+      {
+        "id": "mongodb",
+        "aliases": [
+          "MongoDB",
+          "mongodb"
+        ],
+        "extensions": [
+          ".mongodb"
+        ],
+        "configuration": "./languages/mongodb-language-configuration.json"
+      },
+      {
+        "id": "terraform",
+        "aliases": [
+          "Terraform",
+          "terraform"
+        ],
+        "extensions": [
+          ".tf"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mongodb",
+        "path": "./syntaxes/mongodb.tmLanguage.json",
+        "scopeName": "source.mongodb"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "mongodb",
+        "path": "./snippets/stage-autocompleter.json"
+      },
+      {
+        "language": "terraform",
+        "path": "./snippets/atlas-terraform.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "mdb.connect",
+        "title": "MongoDB: Connect"
+      },
+      {
+        "command": "mdb.connectWithURI",
+        "title": "MongoDB: Connect with Connection String..."
+      },
+      {
+        "command": "mdb.disconnect",
+        "title": "MongoDB: Disconnect"
+      },
+      {
+        "command": "mdb.removeConnection",
+        "title": "MongoDB: Remove Connection..."
+      },
+      {
+        "command": "mdb.openOverviewPage",
+        "title": "MongoDB: Open Overview Page"
+      },
+      {
+        "command": "mdb.openMongoDBShell",
+        "title": "MongoDB: Launch MongoDB Shell"
+      },
+      {
+        "command": "mdb.treeViewOpenMongoDBShell",
+        "title": "Launch MongoDB Shell"
+      },
+      {
+        "command": "mdb.createPlayground",
+        "title": "MongoDB: Create MongoDB Playground"
+      },
+      {
+        "command": "mdb.refreshPlaygrounds",
+        "title": "MongoDB: Refresh Playgrounds List"
+      },
+      {
+        "command": "mdb.refreshPlaygroundsFromTreeView",
+        "title": "Refresh",
+        "icon": {
+          "light": "images/light/refresh.svg",
+          "dark": "images/dark/refresh.svg"
+        }
+      },
+      {
+        "command": "mdb.createNewPlaygroundFromViewAction",
+        "title": "Create MongoDB Playground"
+      },
+      {
+        "command": "mdb.createNewPlaygroundFromOverviewPage",
+        "title": "Create MongoDB Playground"
+      },
+      {
+        "command": "mdb.createNewPlaygroundFromPlaygroundExplorer",
+        "title": "Create MongoDB Playground",
+        "icon": {
+          "light": "images/light/add.svg",
+          "dark": "images/dark/add.svg"
+        }
+      },
+      {
+        "command": "mdb.changeActiveConnection",
+        "title": "MongoDB: Change Active Connection"
+      },
+      {
+        "command": "mdb.runSelectedPlaygroundBlocks",
+        "title": "MongoDB: Run Selected Lines From Playground"
+      },
+      {
+        "command": "mdb.saveMongoDBDocument",
+        "title": "MongoDB: Save Document To MongoDB"
+      },
+      {
+        "command": "mdb.runAllPlaygroundBlocks",
+        "title": "MongoDB: Run All From Playground"
+      },
+      {
+        "command": "mdb.runPlayground",
+        "title": "MongoDB: Run All or Selection From Playground",
+        "icon": {
+          "light": "images/light/play.svg",
+          "dark": "images/dark/play.svg"
+        }
+      },
+      {
+        "command": "mdb.addConnection",
+        "title": "Add MongoDB Connection",
+        "icon": {
+          "light": "images/light/add.svg",
+          "dark": "images/dark/add.svg"
+        }
+      },
+      {
+        "command": "mdb.addConnectionWithURI",
+        "title": "Add MongoDB Connection with Connection String...",
+        "icon": {
+          "light": "images/light/add.svg",
+          "dark": "images/dark/add.svg"
+        }
+      },
+      {
+        "command": "mdb.copyConnectionString",
+        "title": "Copy Connection String"
+      },
+      {
+        "command": "mdb.renameConnection",
+        "title": "Rename Connection..."
+      },
+      {
+        "command": "mdb.treeItemRemoveConnection",
+        "title": "Remove Connection..."
+      },
+      {
+        "command": "mdb.addDatabase",
+        "title": "Add Database...",
+        "icon": {
+          "light": "images/light/plus-circle.svg",
+          "dark": "images/dark/plus-circle.svg"
+        }
+      },
+      {
+        "command": "mdb.searchForDocuments",
+        "title": "Search For Documents...",
+        "icon": {
+          "light": "images/light/search-regular.svg",
+          "dark": "images/dark/search-regular.svg"
+        }
+      },
+      {
+        "command": "mdb.openPlaygroundFromTreeItem",
+        "title": "Open Playground"
+      },
+      {
+        "command": "mdb.connectToConnectionTreeItem",
+        "title": "Connect"
+      },
+      {
+        "command": "mdb.disconnectFromConnectionTreeItem",
+        "title": "Disconnect"
+      },
+      {
+        "command": "mdb.refreshConnection",
+        "title": "Refresh"
+      },
+      {
+        "command": "mdb.copyDatabaseName",
+        "title": "Copy Database Name"
+      },
+      {
+        "command": "mdb.dropDatabase",
+        "title": "Drop Database..."
+      },
+      {
+        "command": "mdb.refreshDatabase",
+        "title": "Refresh"
+      },
+      {
+        "command": "mdb.addCollection",
+        "title": "Add Collection...",
+        "icon": {
+          "light": "images/light/plus-circle.svg",
+          "dark": "images/dark/plus-circle.svg"
+        }
+      },
+      {
+        "command": "mdb.viewCollectionDocuments",
+        "title": "View Documents"
+      },
+      {
+        "command": "mdb.refreshDocumentList",
+        "title": "Refresh",
+        "icon": {
+          "light": "images/light/refresh.svg",
+          "dark": "images/dark/refresh.svg"
+        }
+      },
+      {
+        "command": "mdb.copyCollectionName",
+        "title": "Copy Collection Name"
+      },
+      {
+        "command": "mdb.dropCollection",
+        "title": "Drop Collection..."
+      },
+      {
+        "command": "mdb.refreshCollection",
+        "title": "Refresh"
+      },
+      {
+        "command": "mdb.refreshSchema",
+        "title": "Refresh"
+      },
+      {
+        "command": "mdb.copySchemaFieldName",
+        "title": "Copy Field Name"
+      },
+      {
+        "command": "mdb.refreshIndexes",
+        "title": "Refresh"
+      },
+      {
+        "command": "mdb.createIndexFromTreeView",
+        "title": "Create New Index...",
+        "icon": {
+          "light": "images/light/plus-circle.svg",
+          "dark": "images/dark/plus-circle.svg"
+        }
+      },
+      {
+        "command": "mdb.startStreamLanguageServerLogs",
+        "title": "LSP Inspector: Start Stream LSP Logs"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "mdb.createNewPlaygroundFromViewAction",
+          "when": "view == mongoDBPlaygroundsExplorer"
+        },
+        {
+          "command": "mdb.createNewPlaygroundFromPlaygroundExplorer",
+          "when": "view == mongoDBPlaygroundsExplorer",
+          "group": "navigation@1"
+        },
+        {
+          "command": "mdb.refreshPlaygroundsFromTreeView",
+          "when": "view == mongoDBPlaygroundsExplorer",
+          "group": "navigation@5"
+        },
+        {
+          "command": "mdb.addConnection",
+          "when": "view == mongoDBConnectionExplorer",
+          "group": "navigation@1"
+        },
+        {
+          "command": "mdb.addConnection",
+          "when": "view == mongoDBConnectionExplorer"
+        },
+        {
+          "command": "mdb.addConnectionWithURI",
+          "when": "view == mongoDBConnectionExplorer"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "mdb.addDatabase",
+          "when": "view == mongoDBConnectionExplorer && viewItem == connectedConnectionTreeItem",
+          "group": "inline"
+        },
+        {
+          "command": "mdb.addDatabase",
+          "when": "view == mongoDBConnectionExplorer && viewItem == connectedConnectionTreeItem",
+          "group": "1@1"
+        },
+        {
+          "command": "mdb.refreshConnection",
+          "when": "view == mongoDBConnectionExplorer && viewItem == connectedConnectionTreeItem",
+          "group": "1@2"
+        },
+        {
+          "command": "mdb.treeViewOpenMongoDBShell",
+          "when": "view == mongoDBConnectionExplorer && viewItem == connectedConnectionTreeItem",
+          "group": "2@1"
+        },
+        {
+          "command": "mdb.renameConnection",
+          "when": "view == mongoDBConnectionExplorer && viewItem == connectedConnectionTreeItem",
+          "group": "3@1"
+        },
+        {
+          "command": "mdb.copyConnectionString",
+          "when": "view == mongoDBConnectionExplorer && viewItem == connectedConnectionTreeItem",
+          "group": "4@1"
+        },
+        {
+          "command": "mdb.disconnectFromConnectionTreeItem",
+          "when": "view == mongoDBConnectionExplorer && viewItem == connectedConnectionTreeItem",
+          "group": "5@1"
+        },
+        {
+          "command": "mdb.treeItemRemoveConnection",
+          "when": "view == mongoDBConnectionExplorer && viewItem == connectedConnectionTreeItem",
+          "group": "5@2"
+        },
+        {
+          "command": "mdb.openPlaygroundFromTreeItem",
+          "when": "view == mongoDBPlaygroundsExplorer && viewItem == playgroundsTreeItem",
+          "group": "1@1"
+        },
+        {
+          "command": "mdb.connectToConnectionTreeItem",
+          "when": "view == mongoDBConnectionExplorer && viewItem == disconnectedConnectionTreeItem",
+          "group": "1@1"
+        },
+        {
+          "command": "mdb.renameConnection",
+          "when": "view == mongoDBConnectionExplorer && viewItem == disconnectedConnectionTreeItem",
+          "group": "2@1"
+        },
+        {
+          "command": "mdb.copyConnectionString",
+          "when": "view == mongoDBConnectionExplorer && viewItem == disconnectedConnectionTreeItem",
+          "group": "3@1"
+        },
+        {
+          "command": "mdb.treeItemRemoveConnection",
+          "when": "view == mongoDBConnectionExplorer && viewItem == disconnectedConnectionTreeItem",
+          "group": "4@1"
+        },
+        {
+          "command": "mdb.addCollection",
+          "when": "view == mongoDBConnectionExplorer && viewItem == databaseTreeItem",
+          "group": "inline"
+        },
+        {
+          "command": "mdb.addCollection",
+          "when": "view == mongoDBConnectionExplorer && viewItem == databaseTreeItem",
+          "group": "1@1"
+        },
+        {
+          "command": "mdb.refreshDatabase",
+          "when": "view == mongoDBConnectionExplorer && viewItem == databaseTreeItem",
+          "group": "1@2"
+        },
+        {
+          "command": "mdb.copyDatabaseName",
+          "when": "view == mongoDBConnectionExplorer && viewItem == databaseTreeItem",
+          "group": "2@1"
+        },
+        {
+          "command": "mdb.dropDatabase",
+          "when": "view == mongoDBConnectionExplorer && viewItem == databaseTreeItem",
+          "group": "3@1"
+        },
+        {
+          "command": "mdb.viewCollectionDocuments",
+          "when": "view == mongoDBConnectionExplorer && viewItem == collectionTreeItem",
+          "group": "1@1"
+        },
+        {
+          "command": "mdb.refreshCollection",
+          "when": "view == mongoDBConnectionExplorer && viewItem == collectionTreeItem",
+          "group": "1@2"
+        },
+        {
+          "command": "mdb.copyCollectionName",
+          "when": "view == mongoDBConnectionExplorer && viewItem == collectionTreeItem",
+          "group": "2@1"
+        },
+        {
+          "command": "mdb.dropCollection",
+          "when": "view == mongoDBConnectionExplorer && viewItem == collectionTreeItem",
+          "group": "3@1"
+        },
+        {
+          "command": "mdb.searchForDocuments",
+          "when": "view == mongoDBConnectionExplorer && viewItem == documentListTreeItem",
+          "group": "inline"
+        },
+        {
+          "command": "mdb.refreshDocumentList",
+          "when": "view == mongoDBConnectionExplorer && viewItem == documentListTreeItem",
+          "group": "inline"
+        },
+        {
+          "command": "mdb.viewCollectionDocuments",
+          "when": "view == mongoDBConnectionExplorer && viewItem == documentListTreeItem"
+        },
+        {
+          "command": "mdb.refreshDocumentList",
+          "when": "view == mongoDBConnectionExplorer && viewItem == documentListTreeItem"
+        },
+        {
+          "command": "mdb.searchForDocuments",
+          "when": "view == mongoDBConnectionExplorer && viewItem == documentListTreeItem",
+          "group": "2@1"
+        },
+        {
+          "command": "mdb.refreshSchema",
+          "when": "view == mongoDBConnectionExplorer && viewItem == schemaTreeItem"
+        },
+        {
+          "command": "mdb.copySchemaFieldName",
+          "when": "view == mongoDBConnectionExplorer && viewItem == fieldTreeItem"
+        },
+        {
+          "command": "mdb.createIndexFromTreeView",
+          "when": "view == mongoDBConnectionExplorer && viewItem == indexListTreeItem",
+          "group": "inline"
+        },
+        {
+          "command": "mdb.refreshIndexes",
+          "when": "view == mongoDBConnectionExplorer && viewItem == indexListTreeItem"
+        },
+        {
+          "command": "mdb.createIndexFromTreeView",
+          "when": "view == mongoDBConnectionExplorer && viewItem == indexListTreeItem"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "mdb.runPlayground",
+          "group": "navigation",
+          "when": "editorLangId == mongodb"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "mdb.saveMongoDBDocument",
+          "when": "editorLangId == json"
+        },
+        {
+          "command": "mdb.runSelectedPlaygroundBlocks",
+          "when": "editorLangId == mongodb"
+        },
+        {
+          "command": "mdb.runAllPlaygroundBlocks",
+          "when": "editorLangId == mongodb"
+        },
+        {
+          "command": "mdb.refreshPlaygroundsFromTreeView",
+          "when": "false"
+        },
+        {
+          "command": "mdb.searchForDocuments",
+          "when": "false"
+        },
+        {
+          "command": "mdb.addConnection",
+          "when": "false"
+        },
+        {
+          "command": "mdb.addConnectionWithURI",
+          "when": "false"
+        },
+        {
+          "command": "mdb.createNewPlaygroundFromViewAction",
+          "when": "false"
+        },
+        {
+          "command": "mdb.createNewPlaygroundFromOverviewPage",
+          "when": "false"
+        },
+        {
+          "command": "mdb.createNewPlaygroundFromPlaygroundExplorer",
+          "when": "false"
+        },
+        {
+          "command": "mdb.changeActiveConnection",
+          "when": "false"
+        },
+        {
+          "command": "mdb.copyConnectionString",
+          "when": "false"
+        },
+        {
+          "command": "mdb.renameConnection",
+          "when": "false"
+        },
+        {
+          "command": "mdb.treeItemRemoveConnection",
+          "when": "false"
+        },
+        {
+          "command": "mdb.addDatabase",
+          "when": "false"
+        },
+        {
+          "command": "mdb.openPlaygroundFromTreeItem",
+          "when": "false"
+        },
+        {
+          "command": "mdb.connectToConnectionTreeItem",
+          "when": "false"
+        },
+        {
+          "command": "mdb.treeViewOpenMongoDBShell",
+          "when": "false"
+        },
+        {
+          "command": "mdb.disconnectFromConnectionTreeItem",
+          "when": "false"
+        },
+        {
+          "command": "mdb.refreshConnection",
+          "when": "false"
+        },
+        {
+          "command": "mdb.copyDatabaseName",
+          "when": "false"
+        },
+        {
+          "command": "mdb.dropDatabase",
+          "when": "false"
+        },
+        {
+          "command": "mdb.refreshDatabase",
+          "when": "false"
+        },
+        {
+          "command": "mdb.addCollection",
+          "when": "false"
+        },
+        {
+          "command": "mdb.viewCollectionDocuments",
+          "when": "false"
+        },
+        {
+          "command": "mdb.refreshDocumentList",
+          "when": "false"
+        },
+        {
+          "command": "mdb.copyCollectionName",
+          "when": "false"
+        },
+        {
+          "command": "mdb.dropCollection",
+          "when": "false"
+        },
+        {
+          "command": "mdb.refreshCollection",
+          "when": "false"
+        },
+        {
+          "command": "mdb.refreshSchema",
+          "when": "false"
+        },
+        {
+          "command": "mdb.runPlayground",
+          "when": "false"
+        },
+        {
+          "command": "mdb.createIndexFromTreeView",
+          "when": "false"
+        },
+        {
+          "command": "mdb.refreshIndexes",
+          "when": "false"
+        },
+        {
+          "command": "mdb.copySchemaFieldName",
+          "when": "false"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "mdb.runSelectedPlaygroundBlocks",
+        "key": "ctrl+alt+s",
+        "mac": "cmd+alt+s",
+        "when": "editorLangId == mongodb"
+      },
+      {
+        "command": "mdb.runAllPlaygroundBlocks",
+        "key": "ctrl+alt+r",
+        "mac": "cmd+alt+r",
+        "when": "editorLangId == mongodb"
+      },
+      {
+        "command": "mdb.saveMongoDBDocument",
+        "key": "ctrl+s",
+        "mac": "cmd+s",
+        "when": "editorLangId == json"
+      }
+    ],
+    "capabilities": {
+      "codeLensProvider": {
+        "resolveProvider": "true"
+      }
+    },
+    "configuration": {
+      "title": "MongoDB",
+      "properties": {
+        "mongodbLanguageServer.maxNumberOfProblems": {
+          "scope": "resource",
+          "type": "number",
+          "default": 100,
+          "description": "Controls the maximum number of problems produced by the server."
+        },
+        "mongodbLanguageServer.trace.server": {
+          "scope": "window",
+          "type": "object",
+          "properties": {
+            "verbosity": {
+              "type": "string",
+              "enum": [
+                "off",
+                "messages",
+                "verbose"
+              ],
+              "default": "off",
+              "description": "Controls the verbosity of the trace."
+            },
+            "format": {
+              "type": "string",
+              "enum": [
+                "text",
+                "json"
+              ],
+              "default": "text",
+              "description": "Controls the output format of the trace."
+            }
+          }
+        },
+        "mdb.shell": {
+          "type": "string",
+          "enum": [
+            "mongosh",
+            "mongo"
+          ],
+          "enumDescriptions": [
+            "Use the new mongosh",
+            "Use the legacy mongo shell"
+          ],
+          "default": "mongosh",
+          "description": "The MongoDB shell to use."
+        },
+        "mdb.showMongoDBConnectionExplorer": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show or hide the MongoDB connections view."
+        },
+        "mdb.showMongoDBPlaygrounds": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show or hide the MongoDB playgrounds view."
+        },
+        "mdb.showMongoDBHelpExplorer": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show or hide the help and feedback view."
+        },
+        "mdb.excludeFromPlaygroundsSearch": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Files and folders to exclude while searching for playground in the the current workspace.",
+          "default": [
+            "**/.*",
+            "**/_output/**",
+            "**/bower_components/**",
+            "**/build/**",
+            "**/dist/**",
+            "**/node_modules/**",
+            "**/out/**",
+            "**/output/**",
+            "**/release/**",
+            "**/releases/**",
+            "**/static/**",
+            "**/target/**",
+            "**/third_party/**",
+            "**/vendor/**"
+          ]
+        },
+        "mdb.defaultLimit": {
+          "type": "number",
+          "default": 10,
+          "description": "The number of documents to fetch when viewing documents from a collection."
+        },
+        "mdb.confirmRunAll": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show a confirmation message before running commands in a playground."
+        },
+        "mdb.sendTelemetry": {
+          "type": "boolean",
+          "default": true,
+          "description": "Allow the collection of anonynous diagnostic and usage telemetry data to help improve the product."
+        },
+        "mdb.connectionSaving.hideOptionToChooseWhereToSaveNewConnections": {
+          "type": "boolean",
+          "default": true,
+          "description": "When a connection is added, a prompt is shown that let's the user decide where the new connection should be saved. When this setting is checked, the prompt is not shown and the default connection saving location setting is used."
+        },
+        "mdb.connectionSaving.defaultConnectionSavingLocation": {
+          "type": "string",
+          "enum": [
+            "Workspace",
+            "Global",
+            "Session Only"
+          ],
+          "enumDescriptions": [
+            "Save new connections globally on vscode.",
+            "Save new connections to the active workspace.",
+            "Don't save new connections (connections are lost when the session is closed)."
+          ],
+          "default": "Global",
+          "description": "When the setting that hides the option to choose where to save new connections is checked, this setting sets if and where new connections are saved."
+        },
+        "mdb.useDefaultTemplateForPlayground": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use default template for playground files."
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@babel/parser": "^7.15.0",
+    "@babel/traverse": "^7.15.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@iconify-icons/codicon": "^1.1.18",
+    "@iconify/react": "^1.1.4",
+    "@leafygreen-ui/toggle": "3.0.1",
+    "@mongosh/browser-runtime-electron": "^1.0.4",
+    "@mongosh/i18n": "^1.0.4",
+    "@mongosh/service-provider-server": "^1.0.4",
+    "@mongosh/shell-api": "^1.0.4",
+    "analytics-node": "^3.5.0",
+    "bson": "^4.4.1",
+    "classnames": "^2.3.1",
+    "debug": "^4.3.2",
+    "dotenv": "^8.2.0",
+    "micromatch": "^4.0.4",
+    "mongodb": "addaleax/node-mongodb-native#71d4c39e5c858f49d10e840df626eca4da653e28",
+    "mongodb-cloud-info": "^1.1.2",
+    "mongodb-connection-model": "^21.5.3",
+    "mongodb-data-service": "^21.5.3",
+    "mongodb-js-errors": "^0.5.0",
+    "mongodb-ns": "^2.2.0",
+    "mongodb-schema": "^9.0.0",
+    "numeral": "^2.0.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.1",
+    "ts-log": "^2.2.3",
+    "uuid": "^8.3.2",
+    "vscode-languageclient": "^7.0.0",
+    "vscode-languageserver": "^7.0.0",
+    "vscode-languageserver-textdocument": "^1.0.1",
+    "ws": "^7.4.2"
+  },
+  "devDependencies": {
+    "@types/analytics-node": "^3.1.5",
+    "@types/babel__core": "^7.1.15",
+    "@types/babel__traverse": "^7.14.2",
+    "@types/chai": "^4.2.21",
+    "@types/chai-fs": "^2.0.2",
+    "@types/chai-json-schema": "^1.4.6",
+    "@types/classnames": "^2.3.1",
+    "@types/debug": "^4.1.7",
+    "@types/enzyme": "^3.10.9",
+    "@types/glob": "^7.1.4",
+    "@types/jest": "^26.0.24",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9",
+    "@types/sinon": "^9.0.10",
+    "@types/uuid": "^8.3.1",
+    "@types/vscode": "^1.58.1",
+    "@types/ws": "^7.4.7",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "autoprefixer": "^9.7.5",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "chai-fs": "^2.0.0",
+    "chai-json-schema": "^1.5.1",
+    "chalk": "^4.1.2",
+    "cli-ux": "^5.6.3",
+    "cross-env": "^7.0.3",
+    "css-loader": "^3.4.2",
+    "depcheck": "^1.4.2",
+    "download": "^8.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "eslint": "^6.8.0",
+    "eslint-config-mongodb-js": "^5.0.3",
+    "eslint-plugin-mocha": "^8.0.0",
+    "execa": "^1.0.0",
+    "glob": "^7.1.7",
+    "jest": "^26.5.2",
+    "jest-junit": "^12.2.0",
+    "jest-transform-stub": "^2.0.0",
+    "less": "^3.13.1",
+    "less-loader": "^5.0.0",
+    "meow": "^9.0.0",
+    "mkdirp": "^1.0.4",
+    "mocha": "^8.2.1",
+    "mocha-junit-reporter": "^2.0.0",
+    "mocha-multi": "^1.1.3",
+    "mongodb-ace-autocompleter": "^0.6.0",
+    "mongodb-build-info": "^1.2.0",
+    "mongodb-runner": "^4.8.3",
+    "node-loader": "^0.6.0",
+    "npm-run-all": "^4.1.5",
+    "ora": "^5.4.1",
+    "postcss-loader": "^3.0.0",
+    "pre-commit": "^1.2.2",
+    "semver": "^7.3.5",
+    "sinon": "^9.2.4",
+    "sinon-chai": "^3.7.0",
+    "style-loader": "^1.1.3",
+    "ts-jest": "^26.5.0",
+    "ts-loader": "^8.0.14",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.3.5",
+    "vsce": "^1.96.1",
+    "vscode-test": "^1.6.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.11",
+    "xvfb-maybe": "^0.2.1",
+    "yargs-parser": "^20.2.9"
+  },
+  "precommit": [
+    "check"
+  ]
+}

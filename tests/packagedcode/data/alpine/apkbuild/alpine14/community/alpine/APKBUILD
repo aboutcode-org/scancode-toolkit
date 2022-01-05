@@ -1,0 +1,39 @@
+# Maintainer: Kaarle Ritvanen <kaarle.ritvanen@datakunkku.fi>
+pkgname=alpine
+pkgver=2.24
+pkgrel=0
+_commit=3165f59b344fb4d56d161541f294754d56bcb372
+pkgdesc="Text-based email client, friendly for novices but powerful"
+url="http://alpine.x10host.com/alpine/"
+arch="all"
+license="Apache-2.0"
+makedepends="openldap-dev heimdal-dev ncurses-dev openssl-dev"
+subpackages="$pkgname-dbg $pkgname-doc"
+source="$pkgname-$pkgver.tar.gz::https://repo.or.cz/alpine.git/snapshot/$_commit.tar.gz
+	0001-ssl_unix-fix-server-name-validation.patch
+	"
+builddir="$srcdir/$pkgname-${_commit:0:7}"
+
+# secfixes:
+#   2.23-r0:
+#     - CVE-2020-14929
+
+build() {
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--with-passfile=.pine-pass \
+		--without-tcl \
+		--disable-shared \
+		--with-system-pinerc=/etc/alpine.d/pine.conf \
+		--with-system-fixed-pinerc=/etc/alpine.d/pine.conf.fixed
+	make
+}
+
+package() {
+	make DESTDIR="$pkgdir" install
+}
+
+sha512sums="648618fd965fd600ee5d870cfcb87aeb5792311236c5b476f337d2202c460db5c37c5d170430c177cd4ab7c806eff10ee1c327c5ada9253f7d07b6a54442a6d3  alpine-2.24.tar.gz
+5e10289f292139bf576e40bda0f3539d62024309650473a2fdbb281e5d7691cc4c1d3d21f78615e2c900766eddba076f512d92f60d4fbb61e1683f35cba185aa  0001-ssl_unix-fix-server-name-validation.patch"

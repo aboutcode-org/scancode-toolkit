@@ -1,0 +1,39 @@
+# Contributor: Leo <thinkabit.ukim@gmail.com>
+# Maintainer:
+pkgname=libluv
+_release=0
+pkgver=1.36.0.$_release
+pkgrel=2
+pkgdesc="Bare libuv bindings for lua"
+options="!check" # No testsuite
+url="https://github.com/luvit/luv"
+arch="all"
+license="Apache-2.0"
+makedepends="cmake luajit-dev libuv-dev ninja"
+subpackages="$pkgname-dev"
+source="https://github.com/luvit/luv/releases/download/${pkgver%.*}-$_release/luv-${pkgver%.*}-$_release.tar.gz
+	cmake-use-pkgconfig.patch
+	lua_unsigned-typedef.patch
+	"
+builddir="$srcdir/luv-${pkgver%.*}-$_release"
+
+build() {
+	cmake -B build -G Ninja \
+		-DCMAKE_BUILD_TYPE=None \
+		-DWITH_SHARED_LIBUV=ON \
+		-DLUA_BUILD_TYPE=System \
+		-DBUILD_MODULE=OFF \
+		-DBUILD_SHARED_LIBS=ON \
+		-DBUILD_STATIC_LIBS=OFF \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		.
+	ninja -C build
+}
+
+package() {
+	DESTDIR="$pkgdir" ninja -C build install
+}
+
+sha512sums="9972d82bacdcf528d95047f3f2cfbceb523f6d6f5782e577b24cdd25f1292df745d3fb116b6fbd376d797df47c378ad25d5b673044d9ab5678af6e5fef5eca49  luv-1.36.0-0.tar.gz
+ba68d920e11d107febe458fbe4887288c8915fc3a56c4742bb577650b4e74e0428a364e1321b68ee47f17a157e1bd304a8777bd294a8f2baefcaf541fdf5170b  cmake-use-pkgconfig.patch
+53ba683e3c97e0ebc1b3b864c1fcf16a073802fb52bca923a21aa556d1ebdaf5d78e2b4629d8f9d00f03cbf0efceeac8b7f4e1c4c98618175c51ca69d2122b22  lua_unsigned-typedef.patch"

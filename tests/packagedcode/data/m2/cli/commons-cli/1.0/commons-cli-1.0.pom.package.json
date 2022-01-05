@@ -63,28 +63,28 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:maven/commons-logging/commons-logging",
+      "purl": "pkg:maven/commons-logging/commons-logging@1.0",
       "requirement": "1.0",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/commons-lang/commons-lang",
+      "purl": "pkg:maven/commons-lang/commons-lang@1.0",
       "requirement": "1.0",
       "scope": "compile",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true
     },
     {
-      "purl": "pkg:maven/junit/junit",
+      "purl": "pkg:maven/junit/junit@3.7",
       "requirement": "3.7",
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false
+      "is_resolved": true
     }
   ],
   "contains_source_code": null,

@@ -187,7 +187,7 @@ Package: mozilla
 
 --------------------------------------------
 Package: msi
-  class: packagedcode.models:MsiInstallerPackage
+  class: packagedcode.msi:MsiInstallerPackage
   extensions: .msi
   filetypes: msi installer
 
@@ -219,8 +219,14 @@ Package: opam
 --------------------------------------------
 Package: pods
   class: packagedcode.cocoapods:CocoapodsPackage
-  metafiles: *.podspec
-  extensions: .podspec
+  metafiles: *.podspec, *podfile.lock, *.podspec.json
+  extensions: .podspec, .lock
+
+--------------------------------------------
+Package: pubspec
+  class: packagedcode.pubspec:PubspecPackage
+  metafiles: pubspec.yaml, pubspec.lock
+  extensions: .yaml, .lock
 
 --------------------------------------------
 Package: pypi
@@ -259,8 +265,14 @@ Package: war
   filetypes: java archive , zip archive
 
 --------------------------------------------
+Package: windows-update
+  class: packagedcode.windows:MicrosoftUpdateManifestPackage
+  extensions: .mum
+  filetypes: xml 1.0 document
+
+--------------------------------------------
 Package: winexe
   class: packagedcode.win_pe:WindowsExecutable
-  extensions: .exe, .dll
+  extensions: .exe, .dll, .mui, .mun, .com, .winmd, .sys, .tlb, .exe_*, .dll_*, .mui_*, .mun_*, .com_*, .winmd_*, .sys_*, .tlb_*
   filetypes: pe32, for ms windows
 

@@ -1,0 +1,77 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json": "<file>",
+        "--license": true,
+        "--license-text": true,
+        "--license-text-diagnostics": true,
+        "--strip-root": true,
+        "--unknown-licenses": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "spdx_license_list_version": "3.14",
+        "files_count": 1
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "license-notice.txt",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "unknown-license-reference",
+          "score": 100.0,
+          "name": "Unknown License file reference",
+          "short_name": "Unknown License reference",
+          "category": "Unstated License",
+          "is_exception": false,
+          "is_unknown": true,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
+          "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+          "start_line": 34,
+          "end_line": 34,
+          "matched_rule": {
+            "identifier": "unknown-license-reference_25.RULE",
+            "license_expression": "unknown-license-reference",
+            "licenses": [
+              "unknown-license-reference"
+            ],
+            "referenced_filenames": [
+              "LICENSE"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "has_unknown": true,
+            "matcher": "2-aho",
+            "rule_length": 5,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "license\": \"SEE LICENSE IN LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "unknown-license-reference"
+      ],
+      "percentage_of_license_text": 0.2,
+      "scan_errors": []
+    }
+  ]
+}
