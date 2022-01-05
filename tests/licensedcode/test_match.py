@@ -12,6 +12,7 @@ import os
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
+from licensedcode import models
 from licensedcode.index import LicenseIndex
 from licensedcode.match import filter_contained_matches
 from licensedcode.match import filter_matches_missing_key_phrases
@@ -24,7 +25,6 @@ from licensedcode.match import reportable_tokens
 from licensedcode.match import restore_non_overlapping
 from licensedcode.match import tokenize_matched_text
 from licensedcode.match import Token
-from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode.query import Query
@@ -347,7 +347,8 @@ class TestLicenseMatchBasic(FileBasedTesting):
         querys = (
             'See LICENSE for more information, and also you can redistribute this file under this or any other license.'
             'License '
-            'Distributed under the MIT, a License. See LICENSE or website for more information.'
+            'Distributed under the MIT,       a         License. See LICENSE or website for more information.'
+            #                           ^ stopword ^
             'You can redistribute this file under this or any other license.'
         )
 
@@ -381,48 +382,74 @@ class TestLicenseMatchBasic(FileBasedTesting):
 
     def test_LicenseMatch_matches_only_when_key_phrase_is_uninterrupted(self):
         text_r1 = (
-            'under the {{Creative Commons Attribution 4.0 International License}} (the "License"); '
-            'you may not use this file except in compliance with the License. '
-            'You may obtain a copy of the License at '
-            ''
-            '     http://creativecommons.org/licenses/by/4.0 '
-            ' '
-            'This file is distributed on an "AS IS" BASIS, '
-            'WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. '
-            'See the License for the specific language governing permissions and '
-            'limitations under the License. '
+            'licensed under the '
+            '{{Creative Commons Attribution 4.0  License}} '
+            '(the "License"); '
+            ' this is a license with has several interesting characteristics '
         )
-        r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
+        r1 = Rule(text_file='r1', license_expression='keyphrase', stored_text=text_r1)
 
         text_r2 = (
-            'licensed under the Creative Commons Attribution 4.0  License (the "License"); '
-            'you may not use this file except in compliance with the License. '
-            'You may obtain a copy of the License at '
-            ' '
-            '     http://creativecommons.org/licenses/by/4.0 '
-            ' '
-            'This file is distributed on an "AS IS" BASIS, '
-            'WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. '
-            'See the License for the specific language governing permissions and '
-            'limitations under the License. '
+            'licensed under the '
+            'Creative Commons Attribution 4.0  License '
+            '(the  "License"); '
+            ' this is a license that has several interesting characteristics also '
         )
-        r2 = Rule(text_file='r2', license_expression='gpl', stored_text=text_r2)
+        r2 = Rule(text_file='r2', license_expression='plain', stored_text=text_r2)
 
-        idx = index.LicenseIndex([r1, r2])
+        legalese = set(['licensed', 'license', 'attribution', ])
+        idx = index.LicenseIndex([r1, r2], _legalese=legalese)
 
-        querys = """
-        This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-        International License (the "License"). You may not use this file except in compliance with the
-        License. A copy of the License is located at http://creativecommons.org/licenses/by-nc-sa/4.0/.
+        assert r1.key_phrase_spans == [Span(3, 8)]
+        assert r2.key_phrase_spans == []
 
-        This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-        either express or implied. See the License for the specific language governing permissions and
-        limitations under the License.
-        """
+        # NonCommercial and ShareAlike are "unknown" words here
+        # therefore we should match r2 as as a sequence and not r1 because the
+        # key phrase are interrupted
+        querys = (
+            'This work is '
+            # 0   UW   1
+            'licensed under the '
+            # 2       3      4
+            'Creative Commons Attribution-Share Alike 4.0  License '
+            # 5       6       7           UW    UW    8 9  10
+            '(the "License"). '
+            # 11  12
+            'this is a license that has several interesting characteristics FOO'
+            # 13  14 SW  15    16   17  18      19          20              UW  21
+        )
 
         matches = idx.match(query_string=querys)
+
         assert len(matches) == 1
-        assert matches[0].rule == r2
+        match = matches[0]
+
+        assert match.query.unknowns_by_pos == {0: 1, 7: 2, 20: 1}
+        assert match.qspan == Span(2, 20)
+
+        itokens = [idx.tokens_by_tid[i] for i in match.itokens(idx)]
+        assert itokens == [
+            'licensed',
+            'under',
+            'the',
+            'creative',
+            'commons',
+            'attribution',
+            '4',
+            '0',
+            'license',
+            'the',
+            'license',
+            'this',
+            'is',
+            'license',
+            'that',
+            'has',
+            'several',
+            'interesting',
+            'characteristics',
+        ]
+        assert match.rule == r2
 
 
 class TestMergeMatches(FileBasedTesting):
@@ -1025,25 +1052,38 @@ class TestLicenseMatchFilter(FileBasedTesting):
         idx = index.LicenseIndex()
         query = Query(query_string="Lorum ipsum", idx=idx)
         query.unknowns_by_pos = {}
-        query.stopwords_by_pos = {}
 
-        r1 = Rule(text_file='r1', license_expression='apache-1.1', key_phrase_spans=[Span(12, 14)])
+        r1 = Rule(
+            text_file='r1',
+            license_expression='apache-1.1',
+            key_phrase_spans=[Span(12, 14)],
+        )
 
-        match_qspan_ispan_same_matching = LicenseMatch(rule=r1, query=query, qspan=Span(10, 15), ispan=Span(10, 15))
-        match_qspan_with_offset_matching = LicenseMatch(rule=r1, query=query, qspan=Span(20, 25), ispan=Span(10, 15))
-        match_qspan_with_offset_not_matching = LicenseMatch(rule=r1, query=query, qspan=Span([20, 21, 22, 23, 25]), ispan=Span(10, 15))
+        qspan_ispan_same_pos = LicenseMatch(
+            rule=r1, query=query,
+            qspan=Span(10, 15), ispan=Span(10, 15)
+        )
+        qspan_with_offset = LicenseMatch(
+            rule=r1, query=query,
+            qspan=Span(20, 25), ispan=Span(10, 15)
+        )
+        qspan_non_contiguous = LicenseMatch(
+            rule=r1, query=query,
+            qspan=Span([20, 21, 22, 23, 25]), ispan=Span(10, 15)
+        )
 
         kept, discarded = filter_matches_missing_key_phrases([
-            match_qspan_ispan_same_matching,
-            match_qspan_with_offset_matching,
-            match_qspan_with_offset_not_matching
+            qspan_ispan_same_pos,
+            qspan_with_offset,
+            qspan_non_contiguous
         ])
+
         assert kept == [
-            match_qspan_ispan_same_matching,
-            match_qspan_with_offset_matching
+            qspan_ispan_same_pos,
+            qspan_with_offset
         ]
         assert discarded == [
-            match_qspan_with_offset_not_matching,
+            qspan_non_contiguous,
         ]
 
     def test_get_matching_regions_15_words(self):
@@ -1090,7 +1130,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
         GPLv2
         under both the GPLv2 and Apache 2.0 License
 
-        the under  both the under  foo bar both the under  
+        the under  both the under  foo bar both the under
         GPL v2 license
         This source code is licensed under the MIT
         '''
@@ -1311,7 +1351,7 @@ class TestLicenseMatchScore(FileBasedTesting):
 
         query_location = self.get_test_loc('stopwords/query.txt')
         matches = idx.match(location=query_location)
-        assert all(m.rule.identifier == 'gpl-1.0.bare.RULE' for m in matches)
+        assert matches == []
 
 
 class TestCollectLicenseMatchTexts(FileBasedTesting):

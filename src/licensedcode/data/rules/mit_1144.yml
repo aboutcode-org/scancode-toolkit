@@ -1,0 +1,6 @@
+license_expression: mit
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+ignorable_urls:
+    - http://httpunit.sourceforge.net/doc/license.html

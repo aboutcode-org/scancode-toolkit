@@ -132,7 +132,7 @@ class Span(Set):
         return hash(tuple(self._set))
 
     def __eq__(self, other):
-        return self._set == other._set
+        return isinstance(other, Span) and self._set == other._set
 
     def __and__(self, *others):
         return Span(self._set.intersection(*[o._set for o in others]))

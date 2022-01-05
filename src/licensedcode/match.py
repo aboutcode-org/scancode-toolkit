@@ -48,7 +48,6 @@ TRACE_FILTER_SPURIOUS = False
 TRACE_FILTER_SHORT = False
 TRACE_FILTER_RULE_MIN_COVERAGE = False
 TRACE_FILTER_BELOW_MIN_SCORE = False
-TRACE_FILTER_NON_CONTINUOUS = False
 TRACE_FILTER_SINGLE_WORD_BINARY = False
 TRACE_SET_LINES = False
 TRACE_KEY_PHRASES = False
@@ -79,7 +78,6 @@ if (TRACE
     or TRACE_FILTER_SHORT
     or TRACE_FILTER_RULE_MIN_COVERAGE
     or TRACE_FILTER_BELOW_MIN_SCORE
-    or TRACE_FILTER_NON_CONTINUOUS
     or TRACE_SET_LINES
     or TRACE_MATCHED_TEXT
     or TRACE_MATCHED_TEXT_DETAILS
@@ -125,7 +123,7 @@ if (TRACE
 
 class DiscardReason(IntEnum):
     NOT_DISCARDED = 0
-    MISSING_KEY_PHRASE = 1
+    MISSING_KEY_PHRASES = 1
     BELOW_MIN_COVERAGE = 2
     SPURIOUS_SINGLE_TOKEN = 3
     TOO_SHORT = 4
@@ -477,28 +475,6 @@ class LicenseMatch(object):
 
         return qmagnitude
 
-    def qcontains_stopwords(self):
-        """
-        Return True if this match query contains stopwords between its start and
-        end in the query. Stopwords are never matched by construction.
-        """
-        # The query side of the match may not be contiguous and may contain
-        # unmatched stopword tokens.
-        query = self.query
-        qspan = self.qspan
-
-        # note: to avoid breaking many tests we check query presence
-        if query:
-            qspe = qspan.end
-            # Count stopword tokens that are inside the matched range, ignoring
-            # end position of the query span. This is used to check if there are
-            # stopwords inside a match to a rule that requires continuous match.
-
-            stopwords_pos = qspan & query.stopwords_span
-            stopwords_pos = (pos for pos in stopwords_pos if pos != qspe)
-            qry_stopxpos = query.stopwords_by_pos
-            return any(qry_stopxpos.get(pos, 0) for pos in stopwords_pos)
-
     def is_continuous(self):
         """
         Return True if the all the matched tokens of this match are continuous
@@ -506,7 +482,6 @@ class LicenseMatch(object):
         """
         return (
             self.len() == self.qregion_len() == self.qmagnitude()
-            and not self.qcontains_stopwords()
         )
 
     def qregion(self):
@@ -631,15 +606,15 @@ class LicenseMatch(object):
             discard_reason = DiscardReason.NOT_DISCARDED
 
         elif (
-            self.discard_reason == DiscardReason.MISSING_KEY_PHRASE
-            and other.discard_reason == DiscardReason.MISSING_KEY_PHRASE
+            self.discard_reason == DiscardReason.MISSING_KEY_PHRASES
+            and other.discard_reason == DiscardReason.MISSING_KEY_PHRASES
         ):
-            discard_reason = DiscardReason.MISSING_KEY_PHRASE
+            discard_reason = DiscardReason.MISSING_KEY_PHRASES
 
-        elif self.discard_reason == DiscardReason.MISSING_KEY_PHRASE:
+        elif self.discard_reason == DiscardReason.MISSING_KEY_PHRASES:
             discard_reason = other.discard_reason
 
-        elif other.discard_reason == DiscardReason.MISSING_KEY_PHRASE:
+        elif other.discard_reason == DiscardReason.MISSING_KEY_PHRASES:
             discard_reason = self.discard_reason
 
         else:
@@ -1497,44 +1472,6 @@ def filter_below_rule_minimum_coverage(
     return kept, discarded
 
 
-def filter_non_continuous_matches(
-    matches,
-    trace=TRACE_FILTER_NON_CONTINUOUS,
-    reason=DiscardReason.NON_CONTINUOUS,
-):
-    """
-    Return a filtered list of kept LicenseMatch matches and a list of
-    discardable matches given a ``matches`` list of LicenseMatch by removing
-    matches to rules that require a continuous match e.g., rules with the
-    "is_continuous" attribute set to True. Continuous means that all words in
-    the matched range must be matched without gaps in between (excluding
-    stopwords).
-    """
-    kept = []
-    kept_append = kept.append
-    discarded = []
-    discarded_append = discarded.append
-
-    for match in matches:
-        rule = match.rule
-        if rule.is_continuous and (not match.is_continuous()):
-            if trace:
-                logger_debug(
-                    '    ==> DISCARDING filter_non_continuous_matches:', match,
-                    '\n',
-                    'rule.is_small', rule.is_small,
-                    'rule.is_continuous', rule.is_continuous,
-                    'match.is_continuous()', match.is_continuous(),
-                )
-
-                match.discard_reason = reason
-                discarded_append(match)
-        else:
-            kept_append(match)
-
-    return kept, discarded
-
-
 def filter_matches_below_minimum_score(
     matches,
     min_score=100,
@@ -1576,13 +1513,13 @@ def filter_matches_to_spurious_single_token(
 ):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
-    discardable matches given a `matches` list of LicenseMatch by removing
+    discardable matches given a ``matches`` list of LicenseMatch by removing
     matches to a single token considered as "spurious" matches.
 
     A "spurious" single token match is a match to a single token that is
     surrounded on both sides by at least `unknown_count` tokens that are either
-    unknown tokens, short tokens composed of a single character or tokens
-    composed only of digits.
+    unknown tokens, short tokens composed of a single character, tokens
+    composed only of digits or several punctuations and stopwords.
     """
     from licensedcode.match_seq import MATCH_SEQ
     if not query:
@@ -1725,27 +1662,32 @@ def filter_spurious_matches(
             if trace:
                 logger_debug('    ==> DISCARDING Spurious1:', match)
 
-            discarded.append(match)
+            discarded_append(match)
+
         elif (mlen < 15 and (qdens < 0.2 or idens < 0.2)):
             if trace:
                 logger_debug('    ==> DISCARDING Spurious2:', match)
 
             discarded_append(match)
+
         elif (mlen < 20 and hilen < 5 and (qdens < 0.3 or idens < 0.3)):
             if trace:
                 logger_debug('    ==> DISCARDING Spurious3:', match)
 
             discarded_append(match)
+
         elif (mlen < 30 and hilen < 8 and (qdens < 0.4 or idens < 0.4)):
             if trace:
                 logger_debug('    ==> DISCARDING Spurious4:', match)
 
-            discarded.append(match)
+            discarded_append(match)
+
         elif (qdens < 0.5 or idens < 0.5):
             if trace:
                 logger_debug('    ==> DISCARDING Spurious5:', match)
 
             discarded_append(match)
+
         else:
             kept_append(match)
 
@@ -1898,6 +1840,8 @@ def is_invalid_short_match(
     True
     >>> is_invalid_short_match("alv2@", "ALv2", max_diff=1)
     False
+    >>> is_invalid_short_match("gpl) &", "GPL")
+    True
     """
     if trace:
         logger_debug(
@@ -1991,13 +1935,17 @@ def filter_false_positive_matches(
 def filter_matches_missing_key_phrases(
     matches,
     trace=TRACE_KEY_PHRASES,
-    reason=DiscardReason.MISSING_KEY_PHRASE,
+    reason=DiscardReason.MISSING_KEY_PHRASES,
 ):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches  given a ``matches`` list of LicenseMatch by removing
     all ``matches`` that do not contain all key phrases defined in their matched
     rule.
+    A key phrase must be matched exactly without gaps or unknown words.
+
+    A rule with "is_continuous" set to True is the same as if it's whole text
+    was defined as a keyphrase and is processed here too.
     """
     # never discard a solo match
     if len(matches) == 1:
@@ -2008,59 +1956,142 @@ def filter_matches_missing_key_phrases(
     discarded = []
     discarded_append = discarded.append
 
+    if trace:
+        logger_debug('filter_matches_missing_key_phrases')
+
     for match in matches:
-        has_key_phrases = True
-        unknown_by_pos = match.query.unknowns_by_pos
-        stopwords_by_pos = match.query.stopwords_by_pos
+        if trace:
+            logger_debug('  CHECKING KEY PHRASES for:', match)
 
-        for key_phrase_span in match.rule.key_phrase_spans:
-            # Filter out matches that do not contain key phrase in the ispan
-            if key_phrase_span not in match.ispan:
-                has_key_phrases = False
-                break
+        is_continuous = match.rule.is_continuous
+        ikey_spans = match.rule.key_phrase_spans
 
-            # Filter out matches that do not contain key phrase in the qspan
-            qpos_start = next(
-                qpos for qpos, ipos in zip(match.qspan, match.ispan)
-                if ipos in key_phrase_span
-            )
-            query_key_phrase_span = Span(
-                qpos_start,
-                qpos_start + len(key_phrase_span),
-            )
-            if query_key_phrase_span not in match.qspan:
-                has_key_phrases = False
-                break
-
-            # Filter out matches where key phrase in qspan is interrupted by
-            # unknown or stopwords.
-            #
-            # Do not check the last span position of a key phrase since unknown
-            # and stop is a number of words after a given span position and we
-            # would not care for what unknown words show up after a key phrase
-            # ends and these are pinned to the last position
-            key_phrase_span_minus_last_position = Span(
-                key_phrase_span.start,
-                key_phrase_span.end - 1,
-            )
-
-            for qpos, ipos in zip(match.qspan, match.ispan):
-                if ipos in key_phrase_span_minus_last_position:
-                    if qpos in unknown_by_pos or qpos in stopwords_by_pos:
-                        has_key_phrases = False
-                        break
-
-        if has_key_phrases:
+        if not (ikey_spans or is_continuous):
+            kept_append(match)
             if trace:
-                logger_debug('    ==> ALL KEY PHRASES PRESENT:', match)
+                logger_debug('    ==> KEEPING, NO KEY PHRASES OR IS_CONTINUOUS DEFINED')
+            continue
 
+        if is_continuous and not match.is_continuous():
+            kept_append(match)
+            if trace:
+                logger_debug('    ==> KEEPING, IS_CONTINUOUS BUT NOT IS_CONTINUOUS')
+            continue
+
+        ispan = match.ispan
+        if not is_continuous:
+            if any(ikey_span not in ispan for ikey_span in ikey_spans):
+                if trace:
+                    logger_debug(
+                        '    ==> DISCARDING, KEY PHRASES MISSING',
+                        'ikey_spans:', ikey_spans,
+                        'ispan:', ispan,
+                    )
+                match.discard_reason = reason
+                discarded_append(match)
+                continue
+        else:
+            # use whole ispan in this case
+            ikey_spans = [match.ispan]
+
+        # keep matches as candidate if they contain all key phrase positions in the ispan
+        if trace:
+            print('    CANDIDATE TO KEEP: all ikey_span in match.ispan:', ikey_spans, ispan)
+
+        # discard matches that contain key phrases, but interrupted by
+        # unknown or stop words.
+
+        unknown_by_pos = match.query.unknowns_by_pos
+
+        qstopwords_by_pos = match.query.stopwords_by_pos
+        qstopwords_by_pos_get = qstopwords_by_pos.get
+
+        istopwords_by_pos = match.rule.stopwords_by_pos
+        istopwords_by_pos_get = istopwords_by_pos.get
+
+        # iterate on each key phrase span to ensure that they are continuous
+        # and contain no unknown words on the query side
+
+        is_valid = True
+
+        qspan = match.qspan
+
+        for ikey_span in ikey_spans:
+
+            # check that are no gaps in the key phrase span on the query side
+            # BUT, do not redo the check for is_continuous already checked above
+            if is_continuous:
+                qkey_span = qspan
+            else:
+                qkey_poss = (
+                    qpos for qpos, ipos in zip(qspan, ispan)
+                    if ipos in ikey_span
+                )
+
+                qkey_span = Span(qkey_poss)
+                if len(qkey_span) != qkey_span.magnitude():
+
+                    logger_debug(
+                        '    ==> DISCARDING, KEY PHRASES PRESENT, BUT NOT CONTINUOUS:',
+                        'qkey_span:', qkey_span, 'qpan:', qspan
+                    )
+
+                    is_valid = False
+                    break
+
+            # check that key phrase spans does not contain stop words and does
+            # not contain unknown words
+
+            # NOTE: we do not check the last qkey_span position of a key phrase
+            # since unknown is a number of words after a given span position:
+            # these are pinned to the last position and we would not care for
+            # what unknown or stop words show up after a key phrase ends.
+
+            qkey_span_end = qkey_span.end
+            contains_unknown = any(
+                qpos in unknown_by_pos for qpos in qkey_span
+                if qpos != qkey_span_end
+            )
+
+            if contains_unknown:
+                logger_debug(
+                    '    ==> DISCARDING, KEY PHRASES PRESENT, BUT UNKNOWNS:',
+                    'qkey_span:', qkey_span, 'qpan:', qspan,
+                    'unknown_by_pos:', unknown_by_pos
+                )
+
+                is_valid = False
+                break
+
+            has_same_stopwords_pos = True
+            for qpos, ipos in zip(qspan, ispan):
+                if qpos not in qkey_span or qpos == qkey_span_end:
+                    continue
+
+                if istopwords_by_pos_get(ipos) != qstopwords_by_pos_get(qpos):
+                    has_same_stopwords_pos = False
+                    break
+
+            if not has_same_stopwords_pos:
+                logger_debug(
+                    '    ==> DISCARDING, KEY PHRASES PRESENT, BUT STOPWORDS NOT SAME:',
+                    'qkey_span:', qkey_span, 'qpan:', qspan,
+                    'istopwords_by_pos:', istopwords_by_pos,
+                    'qstopwords_by_pos:', qstopwords_by_pos
+                )
+
+                is_valid = False
+                break
+
+        if is_valid:
+            logger_debug('    ==> KEEPING, KEY PHRASES PRESENT, CONTINUOUS AND NO UNKNOWNS')
             kept_append(match)
         else:
-            if trace:
-                logger_debug('    ==> SOME KEY PHRASES MISSING:', match)
-
             match.discard_reason = reason
             discarded_append(match)
+
+        if trace:
+            print()
 
     return kept, discarded
 
@@ -2445,6 +2476,8 @@ def refine_matches(
     if trace:
         for m in matches:
             logger_debug(m)
+    if not matches:
+        return [], []
 
     all_discarded = []
     all_discarded_extend = all_discarded.extend
@@ -2533,10 +2566,6 @@ def refine_matches(
     matches, discarded_contained = filter_contained_matches(matches)
     all_discarded_extend(discarded_contained)
     _log(matches, discarded_contained, 'NON CONTAINED')
-
-    matches, discarded = filter_non_continuous_matches(matches)
-    all_discarded_extend(discarded)
-    _log(matches, discarded, 'ACCEPTABLE IF CONTINUOUS WORDS')
 
     if filter_false_positive:
         matches, discarded = filter_false_positive_matches(matches)

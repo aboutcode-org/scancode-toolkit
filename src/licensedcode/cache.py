@@ -269,12 +269,11 @@ def get_licenses_by_spdx_key(
                 slk = slk.lower()
             existing = licenses_by_spdx_key.get(slk)
             if existing and not lic.is_deprecated:
-                key = lic.key
                 # temp hack for wharty ICU key!!
                 if slk not in ('icu', 'ICU',):
                     raise ValueError(
                         f'Duplicated SPDX license key: {slk!r} defined in '
-                        f'{key!r} and {existing!r}'
+                        f'{lic.key!r} and {existing!r}'
                     )
 
             if (
@@ -294,8 +293,8 @@ def get_licenses_by_spdx_key(
                 existing = licenses_by_spdx_key.get(slk)
                 if existing:
                     raise ValueError(
-                        'Duplicated "other" SPDX license key: {slk!r} defined in '
-                        f'{key!r} and {existing!r}'
+                        f'Duplicated "other" SPDX license key: {slk!r} defined '
+                        f'in {lic.key!r} and {existing!r}'
                     )
 
                 licenses_by_spdx_key[slk] = lic

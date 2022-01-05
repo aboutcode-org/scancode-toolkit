@@ -1,9 +1,9 @@
 primary_license:
 declared_license:
 license_expression: qti-linux-firmware AND proprietary-license AND openssl-ssleay AND openssl-ssleay
-  AND openssl-ssleay AND zlib AND zlib AND public-domain AND bsd-new AND gary-s-brown AND other-permissive
-  AND public-domain-disclaimer AND public-domain-disclaimer AND (gpl-2.0 OR bsd-new) AND (gpl-2.0
-  OR bsd-new) AND bsd-new AND bsd-new AND bsd-new AND isc
+  AND openssl AND ssleay-windows AND zlib AND zlib AND public-domain AND bsd-new AND gary-s-brown
+  AND other-permissive AND public-domain-disclaimer AND public-domain-disclaimer AND (gpl-2.0
+  OR bsd-new) AND (gpl-2.0 OR bsd-new) AND bsd-new AND bsd-new AND bsd-new AND bsd-new AND isc
 copyright: |
   Copyright (c) 2013-2017 Qualcomm Technologies, Inc.
   Copyright (c) 2013-2017 Qualcomm Technologies, Inc.
@@ -28,8 +28,8 @@ matches:
     start_line: 6
     end_line: 211
     matcher: 2-aho
-    rule_length: 2198
-    matched_length: 2198
+    rule_length: 2208
+    matched_length: 2208
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: qti-linux-firmware.LICENSE
@@ -305,14 +305,14 @@ matches:
     matched_text: OpenSSL License
   - score: '100.0'
     start_line: 252
-    end_line: 360
+    end_line: 299
     matcher: 2-aho
-    rule_length: 799
-    matched_length: 799
+    rule_length: 332
+    matched_length: 332
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: openssl-ssleay_34.RULE
-    license_expression: openssl-ssleay
+    identifier: openssl_1.RULE
+    license_expression: openssl
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -367,16 +367,23 @@ matches:
        * This product includes cryptographic software written by Eric Young
        * (eay@cryptsoft.com).  This product includes software written by Tim
        * Hudson (tjh@cryptsoft.com).
-       *
-       */
-
-       Original SSLeay License
-       -----------------------
-
-      /* Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)
-       * All rights reserved.
-       *
-       * This package is an SSL implementation written
+  - score: '100.0'
+    start_line: 309
+    end_line: 360
+    matcher: 2-aho
+    rule_length: 453
+    matched_length: 453
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: ssleay-windows.LICENSE
+    license_expression: ssleay-windows
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      This package is an SSL implementation written
        * by Eric Young (eay@cryptsoft.com).
        * The implementation was written so as to conform with Netscapes SSL.
        *
@@ -500,8 +507,8 @@ matches:
     start_line: 439
     end_line: 461
     matcher: 2-aho
-    rule_length: 213
-    matched_length: 213
+    rule_length: 217
+    matched_length: 217
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: bsd-new_68.RULE
@@ -604,8 +611,8 @@ matches:
     start_line: 549
     end_line: 564
     matcher: 2-aho
-    rule_length: 139
-    matched_length: 139
+    rule_length: 141
+    matched_length: 141
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: public-domain-disclaimer_67.RULE
@@ -684,8 +691,8 @@ matches:
     start_line: 613
     end_line: 635
     matcher: 2-aho
-    rule_length: 213
-    matched_length: 213
+    rule_length: 215
+    matched_length: 215
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: bsd-new_1040.RULE
@@ -721,16 +728,16 @@ matches:
        * SUCH DAMAGE.
   - score: '100.0'
     start_line: 646
-    end_line: 668
+    end_line: 664
     matcher: 2-aho
-    rule_length: 213
-    matched_length: 213
+    rule_length: 176
+    matched_length: 176
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-new_68.RULE
+    identifier: bsd-new_80.RULE
     license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
+    is_license_text: no
+    is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
@@ -753,6 +760,24 @@ matches:
       * ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTOR(S) BE LIABLE
       * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
       * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+      * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+  - score: '28.5'
+    start_line: 663
+    end_line: 668
+    matcher: 3-seq
+    rule_length: 207
+    matched_length: 59
+    match_coverage: '28.5'
+    rule_relevance: 100
+    identifier: bsd-new_176.RULE
+    license_expression: bsd-new
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
       * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
       * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
       * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY

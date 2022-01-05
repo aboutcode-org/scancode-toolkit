@@ -1053,13 +1053,13 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         # reported as https://github.com/nexB/scancode-toolkit/issues/88
         # note that this test is very sensitive to changes in the licenses data
         # set on purpose. Adding new license and/or frequent tokens will likely make it fail
-        # in thsi case review the new not-frequent tokens that could be involved.
+        # In this case review the new not-frequent tokens that could be involved.
         # eventually update the rule-side Span offset if this looks acceptable
         expected = [
-              # detected, match.lines(), match.qspan,
-            (u'gpl-2.0-plus', (12, 25), Span(46, 155)),
-            (u'fsf-unlimited-no-warranty', (231, 238), Span(945, 1008)),
-            (u'free-unknown', (306, 307), Span(1314, 1336)),
+            # detected, match.lines(), match.qspan,
+            ('gpl-2.0-plus', (12, 25), Span(48, 157)),
+            ('fsf-unlimited-no-warranty', (231, 238), Span(964, 1027)),
+            ('free-unknown', (306, 307), Span(1333, 1355)),
         ]
         self.check_position('positions/automake.pl', expected)
 

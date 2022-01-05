@@ -176,7 +176,6 @@ class Query(object):
         'unknowns_by_pos',
         'unknowns_span',
         'stopwords_by_pos',
-        'stopwords_span',
         'shorts_and_digits_pos',
         'query_runs',
         '_whole_query_run',
@@ -235,12 +234,9 @@ class Query(object):
         self.unknowns_span = None
 
         # index of "known positions" (yes really!) to a number of stopword
-        # tokens after that known position. For stopwords at the start, the
+        # tokens after this known position. For stopwords at the start, the
         # position is using the magic -1 key
         self.stopwords_by_pos = {}
-
-        # Span of "known positions" (yes really!) followed by stopwords
-        self.stopwords_span = None
 
         # set of known positions were there is a short, single letter token or
         # digits-only token
@@ -360,8 +356,7 @@ class Query(object):
         Line numbers start at ``start_line`` which is 1-based by default.
 
         SIDE EFFECT: This populates the query `line_by_pos`, `unknowns_by_pos`,
-        `unknowns_span`, `stopwords_by_pos`, `stopwords_span`,
-        `shorts_and_digits_pos` and `spdx_lines` .
+        `unknowns_span`, `stopwords_by_pos`, `shorts_and_digits_pos` and `spdx_lines` .
         """
         from licensedcode.match_spdx_lid import split_spdx_lid
         from licensedcode.stopwords import STOPWORDS
@@ -512,7 +507,6 @@ class Query(object):
         # by unkwnons and another for positions followed by stopwords used for
         # intersection with the query span to do the scoring matches correctly
         self.unknowns_span = Span(unknowns_pos)
-        self.stopwords_span = Span(stopwords_pos)
         # also convert the defaultdicts back to plain discts
         self.unknowns_by_pos = dict(unknowns_by_pos)
         self.stopwords_by_pos = dict(stopwords_by_pos)
@@ -520,8 +514,6 @@ class Query(object):
         if TRACE_STOP_AND_UNKNOWN:
             logger_debug(f'  self.unknowns_span: {self.unknowns_span}')
             logger_debug(f'  self.unknowns_by_pos: {self.unknowns_by_pos}')
-
-            logger_debug(f'  self.stopwords_span: {self.stopwords_span}')
             logger_debug(f'  self.stopwords_by_pos: {self.stopwords_by_pos}')
 
     def tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):

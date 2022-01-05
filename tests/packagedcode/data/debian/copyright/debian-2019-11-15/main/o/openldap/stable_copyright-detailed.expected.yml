@@ -57,8 +57,8 @@ matches:
     start_line: 41
     end_line: 81
     matcher: 2-aho
-    rule_length: 295
-    matched_length: 295
+    rule_length: 297
+    matched_length: 297
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: openldap-2.8_16.RULE

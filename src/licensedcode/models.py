@@ -34,6 +34,7 @@ from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
 from licensedcode.spans import Span
 from licensedcode.tokenize import index_tokenizer
+from licensedcode.tokenize import index_tokenizer_with_stopwords
 from licensedcode.tokenize import key_phrase_tokenizer
 from licensedcode.tokenize import KEY_PHRASE_OPEN
 from licensedcode.tokenize import KEY_PHRASE_CLOSE
@@ -573,12 +574,12 @@ class License:
             # local text consistency
             text = lic.text
 
-            license_qtokens = tuple(index_tokenizer(text))
-            if not license_qtokens:
+            license_itokens = tuple(index_tokenizer(text))
+            if not license_itokens:
                 info('No license text')
             else:
                 # for global dedupe
-                by_text[license_qtokens].append(f'{key}: TEXT')
+                by_text[license_itokens].append(f'{key}: TEXT')
 
             # SPDX consistency
             if lic.spdx_license_key:
@@ -1074,8 +1075,9 @@ class BasicRule:
         metadata=dict(
             help='Can this rule be matched if there are any gaps between matched '
             'words in its matched range? The default is to allow non-continuous '
-            'approximate matches. Any extra unmatched known or unknown word or '
-            'stopword is considered to break a match continuity.')
+            'approximate matches. Any extra unmatched known or unknown word is '
+            'considered to break a match continuity. This attribute is either '
+            'stored or computed when the whole rule text is a {{key phrase}}.')
     )
 
     relevance = attr.ib(
@@ -1220,8 +1222,10 @@ class BasicRule:
         default=attr.Factory(list),
         repr=False,
         metadata=dict(
-            help='List of spans with ispan positions which must be present '
-            'in the license match for this rule to be considered a valid match.')
+            help='List of spans representing key phrases for this rule. These are Spans '
+            'of rule text position spans that must be present for this rule to be matched. '
+            'Key phrases are enclosed in {{double curly braces}} in the rule text.'
+        )
     )
 
     # These thresholds attributes are computed upon text loading or calling the
@@ -1234,6 +1238,7 @@ class BasicRule:
             help='Computed length of a rule text in number of tokens aka. words,'
             'ignoring unknown words and stopwords')
     )
+
     min_matched_length = attr.ib(
         default=0,
         repr=TRACE_REPR,
@@ -1266,6 +1271,7 @@ class BasicRule:
             help='Internal computed field representing the length of unique '
             'tokens in this rule text.')
     )
+
     min_matched_length_unique = attr.ib(
         default=0,
         repr=TRACE_REPR,
@@ -1305,6 +1311,16 @@ class BasicRule:
         metadata=dict(
             help='Internal computed flag set to True when the thresholds flag '
             'above have been computed for this rule')
+    )
+
+    # TODO: use the actual words and not just a count
+    stopwords_by_pos = attr.ib(
+        default=attr.Factory(dict),
+        repr=False,
+        metadata=dict(
+            help='Index of rule token positions to a number of stopword '
+            'tokens after this position. For stopwords at the start, the '
+            'position is using the magic -1 key.')
     )
 
     def __attrs_post_init__(self, *args, **kwargs):
@@ -1627,13 +1643,14 @@ class Rule(BasicRule):
 
     def tokens(self):
         """
-        Return an iterable of token strings for this rule. Length, relevance and
-        minimum_coverage may be recomputed as a side effect.
-        """
-        length = 0
-        text = self.text()
-        text = text.strip()
+        Return a sequence of token strings for this rule text.
 
+        SIDE EFFECT: Computed attributes such as "length", "relevance",
+        "is_continuous",  "minimum_coverage" and "stopword_by_pos" are
+        recomputed as a side effect.
+        """
+
+        text = self.text().strip()
         # We tag this rule as being a bare URL if it starts with a scheme and is
         # on one line: this is used to determine a matching approach
 
@@ -1643,19 +1660,38 @@ class Rule(BasicRule):
         ):
             self.minimum_coverage = 100
 
-        for token in index_tokenizer(self.text()):
-            length += 1
-            yield token
-
-        self.length = length
+        toks, stopwords_by_pos = index_tokenizer_with_stopwords(text)
+        self.length = len(toks)
+        self.stopwords_by_pos = stopwords_by_pos
         self.set_relevance()
 
-    def key_phrases(self):
+        # set key phrase spans that must be present for the rule
+        # to pass through refinement
+        self.key_phrase_spans = self.build_key_phrase_spans()
+        self._set_continuous()
+
+        return toks
+
+    def _set_continuous(self):
         """
-        Return an iterable of Spans marking the positions of key phrases that must
-        be present for this rule to be a valid match.
+        Set the "is_continuous" flag if this rule must be matched exactly
+        without gaps, stopwords or unknown words. Must run after
+        key_phrase_spans computation.
         """
-        yield from get_key_phrases(self.text())
+        if (
+            not self.is_continuous
+            and self.key_phrase_spans
+            and len(self.key_phrase_spans) == 1
+            and len(self.key_phrase_spans[0]) == self.length
+        ):
+            self.is_continuous = True
+
+    def build_key_phrase_spans(self):
+        """
+        Return a list of Spans marking key phrases token positions of that must
+        be present for this rule to be matched.
+        """
+        return list(get_key_phrase_spans(self.text()))
 
     def compute_thresholds(self, small_rule=SMALL_RULE):
         """
@@ -2177,30 +2213,80 @@ def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):
         idx += 1
 
 
-def get_key_phrases(text):
+def get_key_phrase_spans(text):
     """
-    Return an iterable of Spans marking the positions of key phrases in the given
-    text string. Words are considered to be key phrases if they are enclosed in the
-    KEY_PHRASE_OPEN and KEY_PHRASE_CLOSE characters.
+    Yield Spans of key phrase token positions found in the rule ``text``.
+    Tokens form a key phrase when enclosed in {{double curly braces}}.
+
+    For example:
+
+    >>> text = 'This is enclosed in {{double curly braces}}'
+    >>> #       0    1  2        3    4      5     6
+    >>> x = list(get_key_phrase_spans(text))
+    >>> assert x == [Span(4, 6)], x
+
+    >>> text = 'This is {{enclosed}} a  {{double curly braces}} or not'
+    >>> #       0    1    2          SW   3      4     5        6  7
+    >>> x = list(get_key_phrase_spans(text))
+    >>> assert x == [Span(2), Span(3, 5)], x
+
+    >>> text = 'This {{is}} enclosed a  {{double curly braces}} or not'
+    >>> #       0    1      2        SW   3      4     5        6  7
+    >>> x = list(get_key_phrase_spans(text))
+    >>> assert x == [Span([1]), Span([3, 4, 5])], x
+
+    >>> text = '{{AGPL-3.0  GNU Affero General Public License v3.0}}'
+    >>> #         0    1 2  3   4      5       6      7       8  9
+    >>> x = list(get_key_phrase_spans(text))
+    >>> assert x == [Span(0, 9)], x
+
+    >>> assert list(get_key_phrase_spans('{This}')) == []
+
+    >>> def check_exception(text):
+    ...     try:
+    ...         return list(get_key_phrase_spans(text))
+    ...     except InvalidRule:
+    ...         pass
+
+    >>> check_exception('This {{is')
+    >>> check_exception('This }}is')
+    >>> check_exception('{{This }}is{{')
+    >>> check_exception('This }}is{{')
+    >>> check_exception('{{}}')
+    >>> check_exception('{{This is')
+    >>> check_exception('{{This is{{')
+    >>> check_exception('{{{{This}}}}')
+    >>> check_exception('}}This {{is}}')
+    >>> check_exception('This }} {{is}}')
+    >>> check_exception('{{This}}')
+    [Span(0)]
+    >>> check_exception('{This}')
+    []
+    >>> check_exception('{{{This}}}')
+    [Span(0)]
     """
-    key_phrase_iterator = key_phrase_tokenizer(text)
-    key_phrase_index = 0
-    for token in key_phrase_iterator:
-        if token.startswith(KEY_PHRASE_OPEN):
-            span_positions = []
+    ipos = 0
+    in_key_phrase = False
+    key_phrase = []
+    for token in key_phrase_tokenizer(text):
+        if token == KEY_PHRASE_OPEN:
+            in_key_phrase = True
 
-            # keep appending key phrase until we hit KEY_PHRASE_CLOSE
-            for key_phrase in key_phrase_iterator:
-                if key_phrase.endswith(KEY_PHRASE_CLOSE):
-                    break
-                span_positions.append(key_phrase_index)
-                key_phrase_index += 1
-
-            if not key_phrase.endswith(KEY_PHRASE_CLOSE):
-                span_start_position = span_positions[0] if span_positions else 0
-                raise InvalidRule("Key phrase definition started at token '%d' is not closed" % span_start_position)
-
-            if span_positions:
-                yield Span(span_positions)
+        elif token == KEY_PHRASE_CLOSE:
+            if in_key_phrase:
+                if key_phrase:
+                    yield Span(key_phrase)
+                    key_phrase.clear()
+                else:
+                    raise InvalidRule('Invalid rule with empty key phrase {{}} braces', text)
+                in_key_phrase = False
+            else:
+                raise InvalidRule(f'Invalid rule with dangling key phrase missing closing braces', text)
+            continue
         else:
-            key_phrase_index += 1
+            if in_key_phrase:
+                key_phrase.append(ipos)
+            ipos += 1
+
+    if key_phrase or in_key_phrase:
+        raise InvalidRule(f'Invalid rule with dangling key phrase missing final closing braces', text)
