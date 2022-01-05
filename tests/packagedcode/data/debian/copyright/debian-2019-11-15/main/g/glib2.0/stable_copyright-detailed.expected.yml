@@ -1,7 +1,7 @@
 primary_license:
 declared_license:
 license_expression: lgpl-2.0-plus AND mit AND gpl-2.0-plus AND apache-2.0 AND apache-2.0 AND
-  apache-2.0 AND mit AND mit AND gpl-2.0-plus AND gpl-2.0-plus
+  mit AND mit AND gpl-2.0-plus AND gpl-2.0-plus
 copyright: |
   Copyright (c) 1995-2018 Red Hat, Inc.
   Copyright (c) 2008-2010 Novell, Inc.
