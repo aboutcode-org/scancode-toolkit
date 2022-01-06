@@ -20,7 +20,6 @@ from time import time
 from intbitset import intbitset
 
 from licensedcode import SMALL_RULE
-from licensedcode import match_unknown
 from licensedcode.legalese import common_license_words
 from licensedcode import match
 from licensedcode import match_aho
