@@ -18,20 +18,20 @@ from commoncode.cliutils import DOC_GROUP
 from commoncode.cliutils import SCAN_GROUP
 
 from packagedcode import get_package_instance
-from packagedcode import PACKAGE_TYPES
+from packagedcode import PACKAGE_MANIFEST_TYPES
 
 
 def print_packages(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    for package_cls in sorted(PACKAGE_TYPES, key=lambda pc: (pc.default_type)):
+    for package_cls in sorted(PACKAGE_MANIFEST_TYPES, key=lambda pc: (pc.default_type)):
         click.echo('--------------------------------------------')
         click.echo('Package: {self.default_type}'.format(self=package_cls))
         click.echo(
             '  class: {self.__module__}:{self.__name__}'.format(self=package_cls))
-        if package_cls.metafiles:
-            click.echo('  metafiles: ', nl=False)
-            click.echo(', '.join(package_cls.metafiles))
+        if package_cls.file_patterns:
+            click.echo('  file_patterns: ', nl=False)
+            click.echo(', '.join(package_cls.file_patterns))
         if package_cls.extensions:
             click.echo('  extensions: ', nl=False)
             click.echo(', '.join(package_cls.extensions))

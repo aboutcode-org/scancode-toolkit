@@ -7,8 +7,8 @@ matches:
     start_line: 6
     end_line: 68
     matcher: 2-aho
-    rule_length: 544
-    matched_length: 544
+    rule_length: 545
+    matched_length: 545
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: netronome-firmware.LICENSE

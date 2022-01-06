@@ -1,0 +1,5 @@
+license_expression: cpol-1.02
+is_license_notice: yes
+notes: https://github.com/rdyhalt/Gett.NET/blob/2898011a8e00f4437bea5795e172f8a72aa24438/Gett.NET/GettFile.cs
+ignorable_urls:
+    - http://www.codeproject.com/info/cpol10.aspx

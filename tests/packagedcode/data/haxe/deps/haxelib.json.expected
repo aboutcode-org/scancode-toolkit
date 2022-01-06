@@ -1,74 +1,76 @@
-{
-  "type": "haxe",
-  "namespace": null,
-  "name": "selecthxml",
-  "version": "0.5.1",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Haxe",
-  "description": "Allows type-safe CSS-style selection on Xml objects.",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "contributor",
-      "name": "simn",
-      "email": null,
-      "url": "https://lib.haxe.org/u/simn"
-    },
-    {
-      "type": "person",
-      "role": "contributor",
-      "name": "jason",
-      "email": null,
-      "url": "https://lib.haxe.org/u/jason"
-    }
-  ],
-  "keywords": [
-    "cross",
-    "xml",
-    "utility",
-    "css",
-    "macro"
-  ],
-  "homepage_url": "https://github.com/jasononeil/selecthxml",
-  "download_url": "https://lib.haxe.org/p/selecthxml/0.5.1/download/",
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "unknown",
-  "declared_license": "BSD",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:haxe/tink_core",
-      "requirement": null,
-      "scope": null,
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:haxe/tink_macro@3.23",
-      "requirement": null,
-      "scope": null,
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": true
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:haxe/selecthxml@0.5.1",
-  "repository_homepage_url": "https://lib.haxe.org/p/selecthxml",
-  "repository_download_url": "https://lib.haxe.org/p/selecthxml/0.5.1/download/",
-  "api_data_url": null
-}
+[
+  {
+    "type": "haxe",
+    "namespace": null,
+    "name": "selecthxml",
+    "version": "0.5.1",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Haxe",
+    "description": "Allows type-safe CSS-style selection on Xml objects.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "contributor",
+        "name": "simn",
+        "email": null,
+        "url": "https://lib.haxe.org/u/simn"
+      },
+      {
+        "type": "person",
+        "role": "contributor",
+        "name": "jason",
+        "email": null,
+        "url": "https://lib.haxe.org/u/jason"
+      }
+    ],
+    "keywords": [
+      "cross",
+      "xml",
+      "utility",
+      "css",
+      "macro"
+    ],
+    "homepage_url": "https://github.com/jasononeil/selecthxml",
+    "download_url": "https://lib.haxe.org/p/selecthxml/0.5.1/download/",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "unknown",
+    "declared_license": "BSD",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:haxe/tink_core",
+        "requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:haxe/tink_macro@3.23",
+        "requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:haxe/selecthxml@0.5.1",
+    "repository_homepage_url": "https://lib.haxe.org/p/selecthxml",
+    "repository_download_url": "https://lib.haxe.org/p/selecthxml/0.5.1/download/",
+    "api_data_url": null
+  }
+]

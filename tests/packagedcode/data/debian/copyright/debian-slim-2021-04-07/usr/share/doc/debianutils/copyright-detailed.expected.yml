@@ -30,8 +30,8 @@ matches:
     start_line: 18
     end_line: 161
     matcher: 2-aho
-    rule_length: 1219
-    matched_length: 1219
+    rule_length: 1227
+    matched_length: 1227
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: smail-gpl.LICENSE

@@ -8,6 +8,7 @@
 #
 
 from license_expression import Licensing
+from license_expression import combine_expressions as le_combine_expressions
 
 PLAIN_URLS = (
     'https://',
@@ -127,50 +128,14 @@ def build_description(summary, description):
     return description
 
 
-def combine_expressions(expressions, relation='AND', unique=True, licensing=Licensing()):
+def combine_expressions(
+    expressions, 
+    relation='AND', 
+    unique=True, 
+    licensing=Licensing(),
+):
     """
     Return a combined license expression string with relation, given a sequence of
     license ``expressions`` strings or LicenseExpression objects.
-
-    For example::
-
-        >>> a = 'mit'
-        >>> b = 'gpl'
-        >>> combine_expressions([a, b])
-        'mit AND gpl'
-        >>> assert 'mit' == combine_expressions([a])
-        >>> combine_expressions([])
-        >>> combine_expressions(None)
-        >>> combine_expressions(('gpl', 'mit', 'apache',))
-        'gpl AND mit AND apache'
-        >>> combine_expressions(('gpl', 'mit', 'mit',))
-        'gpl AND mit'
-        >>> combine_expressions(('mit WITH foo', 'gpl', 'mit',))
-        'mit WITH foo AND gpl AND mit'
-        >>> combine_expressions(('gpl', 'mit', 'mit',), relation='OR', unique=False)
-        'gpl OR mit OR mit'
-        >>> combine_expressions(('mit', 'gpl', 'mit',))
-        'mit AND gpl'
     """
-    if not expressions:
-        return
-
-    if not relation and relation.upper() not in ('AND', 'OR',):
-        raise TypeError(f'relation should be one of AND, OR and not: {relation}')
-
-    if not isinstance(expressions, (list, tuple)):
-        raise TypeError(f'expressions should be a sequence, not: {type(expressions)}')
-
-    if unique:
-        # Remove duplicate element in the expressions list
-        # and preserve original order
-        expressions = list(dict((x, True) for x in expressions).keys())
-
-    if len(expressions) == 1:
-        return expressions[0]
-
-    expressions = [licensing.parse(le, simple=True) for le in expressions]
-
-    # licensing.OR or licensing.AND
-    combiner = getattr(licensing, relation)
-    return str(combiner(*expressions))
+    return expressions and str(le_combine_expressions(expressions, relation, unique, licensing)) or None

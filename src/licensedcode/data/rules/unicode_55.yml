@@ -3,9 +3,8 @@ is_license_text: yes
 relevance: 100
 minimum_coverage: 90
 ignorable_copyrights:
-  - Copyright (c) Unicode, Inc.
+    - Copyright (c) Unicode, Inc.
 ignorable_holders:
-  - Unicode, Inc.
+    - Unicode, Inc.
 ignorable_urls:
-  - https://www.unicode.org/copyright.html
-
+    - https://www.unicode.org/copyright.html

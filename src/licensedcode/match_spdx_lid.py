@@ -220,7 +220,7 @@ def get_old_expressions_subs_table(licensing):
 
 def _parse_expression(text, licensing, expression_symbols, unknown_symbol):
     """
-    Return an Expression object by parsing the `text` string using the
+    Return a LicenseExpression object by parsing the `text` string using the
     ``licensing`` reference Licensing. Return None or raise an exception on
     errors.
 

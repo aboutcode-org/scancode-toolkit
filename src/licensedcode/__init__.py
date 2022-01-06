@@ -22,3 +22,5 @@ MIN_MATCH_HIGH_LENGTH = 3
 # rules smaller than this are treated as "small rules"
 SMALL_RULE = 15
 
+# rules smaller than this are treated as "tiny rules"
+TINY_RULE = 6

@@ -1,0 +1,3 @@
+MySQL Connector/J contains exceptions to GPL requirements when linking with other components
+that are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J
+in this distribution for more details.

@@ -7,8 +7,8 @@ matches:
     start_line: 6
     end_line: 62
     matcher: 2-aho
-    rule_length: 537
-    matched_length: 537
+    rule_length: 541
+    matched_length: 541
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: cavium-linux-firmware.LICENSE

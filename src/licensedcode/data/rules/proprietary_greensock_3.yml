@@ -2,4 +2,4 @@ license_expression: proprietary-license
 is_license_reference: yes
 relevance: 90
 ignorable_urls:
-  - http://greensock.com/standard-license
+    - http://greensock.com/standard-license

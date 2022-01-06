@@ -1,0 +1,9 @@
+key: good-boy
+short_name: Good Boy License
+name: Good Boy License
+category: Permissive
+owner: Icons8
+homepage_url: https://icons8.com/good-boy-license
+spdx_license_key: LicenseRef-scancode-good-boy
+text_urls:
+    - https://github.com/icons8/flat-color-icons/blob/master/LICENSE.md

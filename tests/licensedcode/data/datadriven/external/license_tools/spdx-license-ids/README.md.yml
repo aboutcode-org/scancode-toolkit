@@ -1,2 +1,6 @@
 license_expressions:
+  - bsd-zero
+  - adobe-scl
+  - adobe-glyph
+  - afl-1.1
   - cc0-1.0

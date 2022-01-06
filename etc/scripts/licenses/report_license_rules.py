@@ -8,8 +8,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import io
-
 import click
 import csv
 
@@ -103,18 +101,18 @@ def flatten_output(data):
          'Example STRING: `permissive`.',
     cls=PluggableCommandLineOption,
 )
-@click.option('-k', '--license-key',
+@click.option('-k', '--lic-key',
     type=str,
     default=None,
     metavar='STRING',
-    help='An optional filter to only output licenses/rules which has this license key. '
+    help='An optional filter to only output licenses/rules which has this lic key. '
          'Example STRING: `mit`.',
     cls=PluggableCommandLineOption,
 )
 @click.option('-t', '--with-text',
     is_flag=True,
     default=False,
-    help='Also include the license/rules texts (First 200 characters). '
+    help='Also include the lic/rules texts (First 200 characters). '
          'Note that this increases the file size significantly.', 
     cls=PluggableCommandLineOption,
 )
@@ -122,7 +120,7 @@ def flatten_output(data):
 def cli(licenses, rules, category, license_key, with_text):
     """
     Write Licenses/Rules from scancode into a CSV file with all details.
-    Output can be optionally filtered by category/license-key.
+    Output can be optionally filtered by category/lic-key.
     """
     licenses_output = []
     rules_output = []
@@ -130,13 +128,13 @@ def cli(licenses, rules, category, license_key, with_text):
     licenses_data = load_licenses()
 
     if licenses:
-        for license in licenses_data.values():
-            license_data = license.to_dict()
+        for lic in licenses_data.values():
+            license_data = lic.to_dict()
             if with_text:
-                license_data['text'] = license.text[:200]
-            license_data['is_unknown'] = license.is_unknown
-            license_data['words_count'] = len(license.text)
-            license_data['reference_url'] = SCANCODE_LICENSEDB_URL.format(license.key)
+                license_data['text'] = lic.text[:200]
+            license_data['is_unknown'] = lic.is_unknown
+            license_data['words_count'] = len(lic.text)
+            license_data['reference_url'] = SCANCODE_LICENSEDB_URL.format(lic.key)
             licenses_output.append(license_data)
             
         if category:

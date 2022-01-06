@@ -1,1 +1,2 @@
-notes: This test should not detect anything
+license_expressions:
+  - unknown-license-reference

@@ -262,8 +262,8 @@ matches:
     start_line: 146
     end_line: 521
     matcher: 3-seq
-    rule_length: 3346
-    matched_length: 3340
+    rule_length: 3354
+    matched_length: 3348
     match_coverage: '99.82'
     rule_relevance: 100
     identifier: cc-by-sa-3.0_41.RULE

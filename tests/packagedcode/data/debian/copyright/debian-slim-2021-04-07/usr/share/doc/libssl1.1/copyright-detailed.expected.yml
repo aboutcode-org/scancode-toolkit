@@ -8,13 +8,13 @@ copyright: |
   Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
   holder is Tim Hudson (tjh@cryptsoft.com)
 matches:
-  - score: '99.88'
+  - score: '99.89'
     start_line: 10
     end_line: 133
     matcher: 3-seq
-    rule_length: 869
-    matched_length: 868
-    match_coverage: '99.88'
+    rule_length: 870
+    matched_length: 869
+    match_coverage: '99.89'
     rule_relevance: 100
     identifier: openssl-ssleay_37.RULE
     license_expression: openssl-ssleay

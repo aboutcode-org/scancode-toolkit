@@ -670,13 +670,13 @@ matches:
       TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
       USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
       DAMAGE.
-  - score: '68.89'
+  - score: '68.51'
     start_line: 699
     end_line: 719
     matcher: 3-seq
-    rule_length: 180
+    rule_length: 181
     matched_length: 124
-    match_coverage: '68.89'
+    match_coverage: '68.51'
     rule_relevance: 100
     identifier: brian-clapper.LICENSE
     license_expression: brian-clapper

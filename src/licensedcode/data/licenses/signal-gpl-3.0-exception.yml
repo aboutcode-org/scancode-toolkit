@@ -1,0 +1,10 @@
+key: signal-gpl-3.0-exception
+short_name: Signal Exception to GPL 3.0
+name: Signal Exception to GPL 3.0
+category: Copyleft Limited
+owner: signal.org
+homepage_url: https://github.com/signalapp/libsignal-protocol-c/blob/master/README.md#license
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-signal-gpl-3.0-exception
+ignorable_urls:
+    - https://www.mozilla.org/en-US/MPL/2.0

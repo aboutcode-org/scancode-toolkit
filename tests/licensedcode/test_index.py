@@ -524,8 +524,10 @@ No part of match        '''
         assert match.matcher == match_seq.MATCH_SEQ
 
     def test_match_with_templates_with_redundant_tokens_yield_single_exact_match(self):
-        _stored_text = u'copyright reserved mit is license, {{}} copyright reserved mit is license'
-        #                 0        1  2   3       4               5        6   7  8       9
+        from licensedcode_test_utils import query_tokens_with_unknowns  # NOQA
+
+        _stored_text = 'copyright reserved mit is license, copyright reserved mit is license'
+        #               0         1        2   3  4        5         6        7   8  9
         license_expression = 'tst'
         rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
         idx = MiniLicenseIndex([rule])
@@ -539,7 +541,7 @@ No part of match        '''
 
         expected = [None, None, u'copyright', u'reserved', u'mit', u'is', u'license', u'is', None, u'copyright', u'reserved', u'mit', u'is', u'license', None]
         #              0     1            2            3       4      5           6      7      8            9           10      11     12          13     14
-        assert tks_as_str(qry.tokens_with_unknowns()) == expected
+        assert tks_as_str(query_tokens_with_unknowns(qry)) == expected
 
         result = idx.match(query_string=querys)
         assert len(result) == 1

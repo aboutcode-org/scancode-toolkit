@@ -35,7 +35,11 @@ Note: this API is unstable and still evolving.
 """
 
 
-def get_copyrights(location, deadline=sys.maxsize, **kwargs):
+def get_copyrights(
+    location,
+    deadline=sys.maxsize,
+    **kwargs,
+):
     """
     Return a mapping with a single 'copyrights' key with a value that is a list
     of mappings for copyright detected in the file at `location`.
@@ -82,7 +86,13 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
     return results
 
 
-def get_emails(location, threshold=50, test_slow_mode=False, test_error_mode=False, **kwargs):
+def get_emails(
+    location,
+    threshold=50,
+    test_slow_mode=False,
+    test_error_mode=False,
+    **kwargs,
+):
     """
     Return a mapping with a single 'emails' key with a value that is a list of
     mappings for emails detected in the file at `location`.
@@ -141,10 +151,15 @@ DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 SCANCODE_LICENSEDB_URL = 'https://scancode-licensedb.aboutcode.org/{}'
 
 
-def get_licenses(location, min_score=0,
-                 include_text=False, license_text_diagnostics=False,
-                 license_url_template=SCANCODE_LICENSEDB_URL,
-                 deadline=sys.maxsize, **kwargs):
+def get_licenses(
+    location,
+    min_score=0,
+    include_text=False,
+    license_text_diagnostics=False,
+    license_url_template=SCANCODE_LICENSEDB_URL,
+    deadline=sys.maxsize,
+    **kwargs,
+):
     """
     Return a mapping or detected_licenses for licenses detected in the file at
     `location`
@@ -208,8 +223,11 @@ def get_licenses(location, min_score=0,
 
 
 def _licenses_data_from_match(
-        match, include_text=False, license_text_diagnostics=False,
-        license_url_template=SCANCODE_LICENSEDB_URL):
+    match,
+    include_text=False,
+    license_text_diagnostics=False,
+    license_url_template=SCANCODE_LICENSEDB_URL,
+):
     """
     Return a list of "licenses" scan data built from a license match.
     Used directly only internally for testing.
@@ -313,7 +331,7 @@ def _get_package_manifests(location):
 def get_package_info(location, **kwargs):
     """
     Return a mapping of package information detected in the file at `location`.
-    
+
     This API function is DEPRECATED, use `get_package_manifests` instead.
     """
     import warnings
@@ -324,7 +342,7 @@ def get_package_info(location, **kwargs):
     )
 
     recognized_packages = _get_package_manifests(location)
-    
+
     if recognized_packages:
         return dict(packages=[
             packages.to_dict()
@@ -339,7 +357,7 @@ def get_package_manifests(location, **kwargs):
     Return a mapping of package manifest information detected in the file at `location`.
     """
     recognized_package_manifests = _get_package_manifests(location)
-    
+
     if recognized_package_manifests:
         return dict(package_manifests=[
             package_manifests.to_dict()

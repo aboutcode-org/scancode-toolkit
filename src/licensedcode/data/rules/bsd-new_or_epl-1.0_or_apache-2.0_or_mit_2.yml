@@ -1,0 +1,7 @@
+license_expression: bsd-new OR epl-1.0 OR apache-2.0 OR mit
+is_license_notice: yes
+ignorable_urls:
+    - https://opensource.org/licenses/BSD-3-Clause
+    - https://opensource.org/licenses/MIT
+    - https://www.apache.org/licenses/LICENSE-2.0
+    - https://www.eclipse.org/legal/epl-v10.html

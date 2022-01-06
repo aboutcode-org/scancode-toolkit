@@ -1,0 +1,6 @@
+license_expression: gpl-2.0 WITH mysql-linking-exception-2018
+is_license_notice: yes
+referenced_filenames:
+    - EXCEPTIONS-CONNECTOR-J
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl.txt

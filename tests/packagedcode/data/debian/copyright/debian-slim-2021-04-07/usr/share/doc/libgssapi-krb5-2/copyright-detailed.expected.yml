@@ -102,8 +102,8 @@ matches:
     start_line: 41
     end_line: 52
     matcher: 2-aho
-    rule_length: 102
-    matched_length: 102
+    rule_length: 104
+    matched_length: 104
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: generic-export-compliance_3.RULE
@@ -253,8 +253,8 @@ matches:
     start_line: 156
     end_line: 175
     matcher: 2-aho
-    rule_length: 116
-    matched_length: 116
+    rule_length: 117
+    matched_length: 117
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: brian-gladman-3-clause_2.RULE
@@ -488,8 +488,8 @@ matches:
     start_line: 400
     end_line: 427
     matcher: 2-aho
-    rule_length: 204
-    matched_length: 204
+    rule_length: 205
+    matched_length: 205
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: bsd-new_588.RULE
@@ -627,8 +627,8 @@ matches:
     start_line: 511
     end_line: 558
     matcher: 2-aho
-    rule_length: 328
-    matched_length: 328
+    rule_length: 330
+    matched_length: 330
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: openldap-2.8.LICENSE
@@ -1283,8 +1283,8 @@ matches:
     start_line: 1025
     end_line: 1037
     matcher: 2-aho
-    rule_length: 131
-    matched_length: 131
+    rule_length: 132
+    matched_length: 132
     match_coverage: '100.0'
     rule_relevance: 95
     identifier: isc_16.RULE

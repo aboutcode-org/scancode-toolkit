@@ -1,57 +1,59 @@
-{
-  "type": "pypi",
-  "namespace": null,
-  "name": "atomicwrites",
-  "version": "1.2.1",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Python",
-  "description": "===================\npython-atomicwrites\n===================\nAtomic file writes.",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Markus Unterwaditzer",
-      "email": "markus@unterwaditzer.net",
-      "url": null
-    }
-  ],
-  "keywords": [
-    "Programming Language :: Python :: 2",
-    "Programming Language :: Python :: 2.7",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.4",
-    "Programming Language :: Python :: 3.5",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: Implementation :: CPython"
-  ],
-  "homepage_url": "https://github.com/untitaker/python-atomicwrites",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "mit",
-  "declared_license": {
-    "license": "MIT",
-    "classifiers": [
-      "License :: OSI Approved :: MIT License"
-    ]
-  },
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:pypi/atomicwrites@1.2.1",
-  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-  "repository_download_url": "https://pypi.org/packages/source/a/atomicwrites/atomicwrites-1.2.1.tar.gz",
-  "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json"
-}
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "atomicwrites",
+    "version": "1.2.1",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "===================\npython-atomicwrites\n===================\nAtomic file writes.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Markus Unterwaditzer",
+        "email": "markus@unterwaditzer.net",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.4",
+      "Programming Language :: Python :: 3.5",
+      "Programming Language :: Python :: 3.6",
+      "Programming Language :: Python :: Implementation :: CPython"
+    ],
+    "homepage_url": "https://github.com/untitaker/python-atomicwrites",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ]
+    },
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:pypi/atomicwrites@1.2.1",
+    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_download_url": "https://pypi.org/packages/source/a/atomicwrites/atomicwrites-1.2.1.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json"
+  }
+]

@@ -8,6 +8,7 @@ spdx_license_key: LicenseRef-scancode-cpol-1.0
 text_urls:
     - http://www.codeproject.com/info/CPOL.zip
     - http://www.codeproject.com/info/cpol10.aspx
+    - https://web.archive.org/web/20080107184757/https://www.codeproject.com/info/cpol10.aspx
 notes: this license had a short life and was quickly replaced by version 1.02.
  Yet there are some example of usage in the wild.
- 
+minimum_coverage: 95

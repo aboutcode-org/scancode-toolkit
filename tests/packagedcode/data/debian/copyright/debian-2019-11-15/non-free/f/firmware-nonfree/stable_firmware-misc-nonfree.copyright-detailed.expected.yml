@@ -682,8 +682,8 @@ matches:
     start_line: 414
     end_line: 457
     matcher: 2-aho
-    rule_length: 382
-    matched_length: 382
+    rule_length: 384
+    matched_length: 384
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: nxp-firmware-patent.LICENSE
@@ -817,8 +817,8 @@ matches:
     start_line: 515
     end_line: 530
     matcher: 1-hash
-    rule_length: 142
-    matched_length: 142
+    rule_length: 143
+    matched_length: 143
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: moxa-linux-firmware.LICENSE
@@ -917,8 +917,8 @@ matches:
     start_line: 582
     end_line: 708
     matcher: 1-hash
-    rule_length: 952
-    matched_length: 952
+    rule_length: 956
+    matched_length: 956
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: proprietary-license_325.RULE

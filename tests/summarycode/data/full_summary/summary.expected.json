@@ -12,11 +12,11 @@
         "--summary": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.15",
         "files_count": 26
       }
     }
@@ -3954,8 +3954,8 @@
             "is_license_intro": false,
             "has_unknown": false,
             "matcher": "3-seq",
-            "rule_length": 970,
-            "matched_length": 967,
+            "rule_length": 981,
+            "matched_length": 978,
             "match_coverage": 99.69,
             "rule_relevance": 100
           }
@@ -3996,7 +3996,7 @@
       "licenses": [
         {
           "key": "artistic-2.0",
-          "score": 90.0,
+          "score": 100.0,
           "name": "Artistic License 2.0",
           "short_name": "Artistic 2.0",
           "category": "Copyleft Limited",
@@ -4013,7 +4013,7 @@
           "start_line": 198,
           "end_line": 198,
           "matched_rule": {
-            "identifier": "artistic-2.0_28.RULE",
+            "identifier": "artistic-2.0_46.RULE",
             "license_expression": "artistic-2.0",
             "licenses": [
               "artistic-2.0"
@@ -4026,17 +4026,17 @@
             "is_license_intro": false,
             "has_unknown": false,
             "matcher": "2-aho",
-            "rule_length": 3,
-            "matched_length": 3,
+            "rule_length": 4,
+            "matched_length": 4,
             "match_coverage": 100.0,
-            "rule_relevance": 90
+            "rule_relevance": 100
           }
         }
       ],
       "license_expressions": [
         "artistic-2.0"
       ],
-      "percentage_of_license_text": 0.07,
+      "percentage_of_license_text": 0.1,
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -7588,7 +7588,7 @@
       "license_expressions": [
         "zlib"
       ],
-      "percentage_of_license_text": 50.38,
+      "percentage_of_license_text": 50.0,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",

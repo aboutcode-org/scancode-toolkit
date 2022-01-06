@@ -132,7 +132,7 @@ class Span(Set):
         return hash(tuple(self._set))
 
     def __eq__(self, other):
-        return self._set == other._set
+        return isinstance(other, Span) and self._set == other._set
 
     def __and__(self, *others):
         return Span(self._set.intersection(*[o._set for o in others]))
@@ -402,14 +402,17 @@ class Span(Set):
     def distance_to(self, other):
         """
         Return the absolute positive distance from this span to other span.
-        Touching and overlapping spans have a zero distance.
+        Overlapping spans have a zero distance.
+        Non-overlapping touching spans have a distance of one.
 
         For example:
         >>> Span([8, 9]).distance_to(Span([5, 7]))
-        0
+        1
         >>> Span([5, 7]).distance_to(Span([8, 9]))
-        0
+        1
         >>> Span([5, 6]).distance_to(Span([8, 9]))
+        2
+        >>> Span([8, 9]).distance_to(Span([5, 6]))
         2
         >>> Span([5, 7]).distance_to(Span([5, 7]))
         0
@@ -420,9 +423,13 @@ class Span(Set):
         >>> Span([1, 2]).distance_to(Span(range(4, 52)))
         2
         """
-        if self.overlap(other) or self.touch(other):
+        if self.overlap(other):
             return 0
-        elif self.is_before(other):
+
+        if self.touch(other):
+            return 1
+
+        if self.is_before(other):
             return other.start - self.end
         else:
             return self.start - other.end

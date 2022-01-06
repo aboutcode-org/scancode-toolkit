@@ -422,8 +422,8 @@ matches:
     start_line: 241
     end_line: 273
     matcher: 2-aho
-    rule_length: 299
-    matched_length: 299
+    rule_length: 300
+    matched_length: 300
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: unicode_35.RULE

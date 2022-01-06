@@ -126,7 +126,7 @@ def get_matched_spans(positions, matchables):
         qspan = Span(list(range(match_qstart, match_qend)))
         # TODO: this should be optimized?
         # e.g. with not qspan.set.issubset(matchables):
-        if any(p not in matchables for p in qspan):  
+        if any(p not in matchables for p in qspan):
             if TRACE: logger_debug(
                 '   #exact_AHO:get_matched_spans not matchable match:',
                 'any(p not in matchables for p in qspan)',
@@ -186,9 +186,8 @@ def match_fragments(idx, query_run):
         for m in matches:
             print(m)
 
-    # Discard fragments that have any already matched positions in previous matches
-    from licensedcode.match import filter_already_matched_matches
-    matches, _discarded = filter_already_matched_matches(matches, query_run.query)
+    # Discard fragments that have any already matched positions in any previous matches
+    matches, _discarded = filter_already_matched_overlapping_matches(matches, query_run.query)
 
     # Merge matches with a zero max distance, e.g. contiguous or overlapping
     # with matches to the same rule
@@ -237,6 +236,30 @@ def match_fragments(idx, query_run):
     matches = merge_matches(matches)
 
     return frag_matches
+
+
+def filter_already_matched_overlapping_matches(matches, query):
+    """
+    Return a filtered list of kept LicenseMatch matches and a list of
+    discardable matches given a `matches` list of LicenseMatch by removing
+    matches that have at least one position that is already matched in the Query
+    `query`.
+    """
+    kept = []
+    discarded = []
+
+    matched_pos = query.matched
+    for match in matches:
+        # FIXME: do not use internals!!!
+        match_qspan_set = match.qspan._set
+        if match_qspan_set & matched_pos:
+            # discard any match that has any position already matched
+            if TRACE_FRAG: logger_debug('    ==> DISCARDING ALREADY MATCHED:', match)
+            discarded.append(match)
+        else:
+            kept.append(match)
+
+    return kept, discarded
 
 
 def add_start(automaton, tids, rule_identifier, rule_length):

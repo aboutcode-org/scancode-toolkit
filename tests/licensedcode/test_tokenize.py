@@ -213,25 +213,25 @@ class TestTokenizers(FileBasedTesting):
         check_results(result, expected_file, regen=regen)
 
     def test_query_tokenizer_can_split_legacy_templates(self):
-        text = u'abc def \n {{temp}} GHI'
+        text = u'abc def \n temp GHI'
         result = list(query_tokenizer(text))
         expected = [u'abc', u'def', u'temp', u'ghi', ]
         assert result == expected
 
     def test_query_tokenizer_merges_contiguous_gaps(self):
-        text = u'abc{{temp}}{{xzy}}def'
+        text = u'abc temp xzy def'
         result = list(query_tokenizer(text))
         expected = [u'abc', u'temp', u'xzy', u'def']
         assert result == expected
 
     def test_query_tokenizer_handles_empty_legacy_templates(self):
-        text = u'ab{{}}cd'
+        text = u'ab cd'
         expected = [u'ab', u'cd']
         assert list(query_tokenizer(text)) == expected
 
     def test_query_tokenizer_does_not_throw_exception_for_pystache_templates(self):
-        text = u'''Permission to use, copy, modify, and {{ /or : the
-                    text exist without or }} distribute this software...'''
+        text = u'''Permission to use, copy, modify, and  /or : the
+                    text exist without or distribute this software...'''
         assert list(query_tokenizer(text))
 
     def test_query_tokenizer_handles_unicode_text_correctly(self):
@@ -456,22 +456,30 @@ class TestTokenizers(FileBasedTesting):
 
     def test_key_phrase_tokenizer_returns_same_word_tokens_as_index_tokenizer(self):
         """
-        It is important that the `key_phrase_tokenizer` returns the same amount of tokens (excluding key_phrase markup)
-        as the `index_tokenizer` so that they Span positions derived from the tokens line up.
+        It is important that the `key_phrase_tokenizer` returns the same amount
+        of tokens (excluding key_phrase markup) as the `index_tokenizer` so that
+        they Span positions derived from the tokens line up.
         """
         text = 'Redistribution \n\n comma and   use in \n\t binary \xe4r till\xe5tet.'
+
         key_phrase_tokens = key_phrase_tokenizer(text)
         index_tokens = index_tokenizer(text)
+
         assert list(key_phrase_tokens) == list(index_tokens)
 
     def test_key_phrase_tokenizer_returns_key_phrase_markup_as_tokens_for_multiple_token_key_phrases(self):
         text = 'Redistribution and {{use in binary}} is permitted.'
-        assert list(key_phrase_tokenizer(text)) == ['redistribution', 'and', '{{', 'use', 'in', 'binary', '}}', 'is',
-                                                    'permitted']
+        assert list(key_phrase_tokenizer(text)) == [
+            'redistribution', 'and', '{{', 'use', 'in',
+            'binary', '}}', 'is', 'permitted',
+        ]
 
     def test_key_phrase_tokenizer_returns_key_phrase_markup_as_tokens_after_newline(self):
         text = '{{IS_RIGHT\nThis program is distributed under GPL\n}}IS_RIGHT'
-        assert list(key_phrase_tokenizer(text)) == ['{{', 'is', 'right', 'this', 'program', 'is', 'distributed', 'under', 'gpl', '}}', 'is', 'right']
+        assert list(key_phrase_tokenizer(text)) == [
+            '{{', 'is', 'right', 'this', 'program', 'is',
+            'distributed', 'under', 'gpl', '}}', 'is', 'right'
+        ]
 
     def test_key_phrase_tokenizer_returns_key_phrase_markup_as_tokens_when_separated_by_space(self):
         text = 'Redistribution {{ is }} permitted.'
@@ -483,13 +491,17 @@ class TestTokenizers(FileBasedTesting):
 
     def test_key_phrase_tokenizer_returns_nested_key_phrase_markup_as_tokens(self):
         text = 'Redistribution {{is {{not}} really}} permitted.'
-        assert list(key_phrase_tokenizer(text)) == ['redistribution', '{{', 'is', '{{', 'not', '}}', 'really', '}}',
-                                                    'permitted']
+        assert list(key_phrase_tokenizer(text)) == [
+            'redistribution', '{{', 'is', '{{', 'not', '}}',
+            'really', '}}', 'permitted'
+        ]
 
     def test_key_phrase_tokenizer_ignores_invalid_key_phrase_markup(self):
         text = 'Redistribution {{{is not really}}} { {permitted} }, I am {afraid}.'
-        assert list(key_phrase_tokenizer(text)) == ['redistribution', '{{', 'is', 'not', 'really', '}}', 'permitted',
-                                                    'i', 'am', 'afraid']
+        assert list(key_phrase_tokenizer(text)) == [
+            'redistribution', '{{', 'is', 'not', 'really', '}}', 'permitted',
+            'i', 'am', 'afraid'
+        ]
 
 
 class TestNgrams(FileBasedTesting):

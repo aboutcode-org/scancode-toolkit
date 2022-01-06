@@ -20,6 +20,7 @@ from packagedcode import cocoapods
 from packagedcode import freebsd
 from packagedcode import golang
 from packagedcode import haxe
+from packagedcode import jar_manifest
 from packagedcode import maven
 from packagedcode import models
 from packagedcode import msi
@@ -38,73 +39,99 @@ from packagedcode import windows
 
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
-PACKAGE_TYPES = [
-    rpm.RpmPackage,
+PACKAGE_MANIFEST_TYPES = [
+    rpm.RpmManifest,
     debian.DebianPackage,
 
     models.JavaJar,
+    jar_manifest.JavaManifest,
     models.JavaEar,
     models.JavaWar,
     maven.MavenPomPackage,
-    models.IvyJar,
+    jar_manifest.IvyJar,
     models.JBossSar,
     models.Axis2Mar,
 
-    about.AboutPackage,
-    npm.NpmPackage,
-    phpcomposer.PHPComposerPackage,
-    haxe.HaxePackage,
-    cargo.RustCargoCrate,
-    cocoapods.CocoapodsPackage,
-    opam.OpamPackage,
+    about.Aboutfile,
+    npm.PackageJson,
+    npm.PackageLockJson,
+    npm.YarnLockJson,
+    phpcomposer.ComposerJson,
+    phpcomposer.ComposerLock,
+    haxe.HaxelibJson,
+    cargo.CargoToml,
+    cargo.CargoLock,
+    cocoapods.Podspec,
+    cocoapods.PodfileLock,
+    cocoapods.PodspecJson,
+    opam.OpamFile,
     models.MeteorPackage,
-    bower.BowerPackage,
-    freebsd.FreeBSDPackage,
+    bower.BowerJson,
+    freebsd.CompactManifest,
     models.CpanModule,
-    rubygems.RubyGem,
+    rubygems.GemArchive,
+    rubygems.GemArchiveExtracted,
+    rubygems.GemSpec,
+    rubygems.GemfileLock,
     models.AndroidApp,
     models.AndroidLibrary,
     models.MozillaExtension,
     models.ChromeExtension,
     models.IOSApp,
-    pypi.PythonPackage,
-    golang.GolangPackage,
+    pypi.MetadataFile,
+    pypi.BinaryDistArchive,
+    pypi.SourceDistArchive,
+    pypi.SetupPy,
+    pypi.DependencyFile,
+    pypi.PipfileLock,
+    pypi.RequirementsFile,
+    golang.GoMod,
+    golang.GoSum,
     models.CabPackage,
     models.InstallShieldPackage,
     models.NSISInstallerPackage,
-    nuget.NugetPackage,
+    nuget.Nuspec,
     models.SharPackage,
     models.AppleDmgPackage,
     models.IsoImagePackage,
     models.SquashfsPackage,
-    chef.ChefPackage,
+    chef.MetadataJson,
+    chef.Metadatarb,
     build.BazelPackage,
     build.BuckPackage,
     build.AutotoolsPackage,
-    conda.CondaPackage,
-    win_pe.WindowsExecutable,
-    readme.ReadmePackage,
+    conda.Condayml,
+    win_pe.WindowsExecutableManifest,
+    readme.ReadmeManifest,
     build.MetadataBzl,
     msi.MsiInstallerPackage,
-    windows.MicrosoftUpdateManifestPackage,
-    pubspec.PubspecPackage,
+    windows.MicrosoftUpdateManifest,
+    pubspec.PubspecYaml,
+    pubspec.PubspecLock
 ]
 
-PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
-
+PACKAGE_MANIFESTS_BY_TYPE = {
+    (
+        cls.package_manifest_type
+        if isinstance(cls, models.PackageManifest)
+        else cls.default_type
+    ): cls
+    for cls in PACKAGE_MANIFEST_TYPES
+}
 # We cannot have two package classes with the same type
-if len(PACKAGES_BY_TYPE) != len(PACKAGE_TYPES):
+if len(PACKAGE_MANIFESTS_BY_TYPE) != len(PACKAGE_MANIFEST_TYPES):
     seen_types = {}
-    for pt in PACKAGE_TYPES:
-        assert pt.default_type
-        seen = seen_types.get(pt.default_type)
+    for pmt in PACKAGE_MANIFEST_TYPES:
+        manifest = pmt()
+        assert manifest.package_manifest_type
+        seen = seen_types.get(manifest.package_manifest_type)
         if seen:
             msg = ('Invalid duplicated packagedcode.Package types: '
                    '"{}:{}" and "{}:{}" have the same type.'
-                  .format(pt.default_type, pt.__name__, seen.default_type, seen.__name__,))
+                  .format(manifest.package_manifest_type, manifest.__name__, seen.package_manifest_type, seen.__name__,))
             raise Exception(msg)
         else:
-            seen_types[pt.default_type] = pt
+            seen_types[manifest.package_manifest_type] = manifest
 
 
 def get_package_class(scan_data, default=models.Package):
@@ -130,7 +157,7 @@ def get_package_class(scan_data, default=models.Package):
     if not ptype:
         # basic type for default package types
         return default
-    ptype_class = PACKAGES_BY_TYPE.get(ptype)
+    ptype_class = PACKAGE_MANIFESTS_BY_TYPE.get(ptype)
     return ptype_class or default
 
 

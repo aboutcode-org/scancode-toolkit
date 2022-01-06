@@ -3,5 +3,5 @@ is_license_text: yes
 relevance: 100
 notes: http://www.globus.org/toolkit/license.html
 ignorable_urls:
-    - https://www.apache.org/licenses/LICENSE-2.0
     - http://www.globus.org/toolkit/license.html
+    - https://www.apache.org/licenses/LICENSE-2.0

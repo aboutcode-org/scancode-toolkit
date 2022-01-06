@@ -70,11 +70,11 @@ ScanCode needs a Python 3.6+ interpreter; We support all Python versions from
 
     - On Debian and Debian-based distros run::
 
-          sudo apt-get install python3-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-devlibpopt0
+          sudo apt-get install python3-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev libpopt0
 
     - On RPM-based distros run::
 
-          sudo yum install python3.6-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devellibpopt0
+          sudo yum install python3.6-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel libpopt0
 
     - On Fedora 22 and later run::
 

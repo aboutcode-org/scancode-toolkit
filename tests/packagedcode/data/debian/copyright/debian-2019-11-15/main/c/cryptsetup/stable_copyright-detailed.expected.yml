@@ -130,8 +130,8 @@ matches:
     start_line: 103
     end_line: 130
     matcher: 1-hash
-    rule_length: 255
-    matched_length: 255
+    rule_length: 257
+    matched_length: 257
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: gpl-2.0-plus_with_openssl-exception-gpl-3.0-plus_3.RULE
@@ -223,8 +223,8 @@ matches:
     start_line: 152
     end_line: 180
     matcher: 1-hash
-    rule_length: 263
-    matched_length: 263
+    rule_length: 265
+    matched_length: 265
     match_coverage: '100.0'
     rule_relevance: 95
     identifier: lgpl-2.1-plus_with_openssl-exception-gpl-3.0-plus_3.RULE
