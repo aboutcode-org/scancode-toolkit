@@ -8,7 +8,6 @@
 #
 
 from licensedcode import tokenize
-from licensedcode.match import LicenseMatch
 from licensedcode.models import UnknownRule
 from licensedcode.spans import Span
 """
@@ -74,9 +73,9 @@ def match_unknowns(idx, query_run, automaton, unknown_ngram_length=7, **kwargs):
 
 def get_matches(qtokens, qbegin, automaton, unknown_ngram_length=7):
     """
-    Yield tuples of automaton matches positions as (match start, match end, match value) from
-    matching `qtokens` sequence of query token ids starting at the `qbegin` absolute
-    query start position position using the `automaton`.
+    Yield tuples of automaton matches positions as (match start, match end,
+    match value) from matching `qtokens` sequence of query token ids starting at
+    the `qbegin` absolute query start position position using the `automaton`.
     """
     # iterate over matched strings: the matched value is matching ngram
     qtokens = tuple(qtokens)
