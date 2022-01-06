@@ -109,6 +109,8 @@ USE_DMP = False
 # optimized storage we cannot exceed this number of tokens.
 MAX_TOKENS = (2 ** 15) - 1
 
+UNKNOWN_NGRAM_LENGTH = 7
+
 
 class LicenseIndex(object):
     """
@@ -146,7 +148,7 @@ class LicenseIndex(object):
         'optimized',
     )
 
-    def __init__(self, rules=None, _legalese=common_license_words, _spdx_tokens=frozenset(), _unknown_ngram_length=7):
+    def __init__(self, rules=None, _legalese=common_license_words, _spdx_tokens=frozenset()):
         """
         Initialize the index with an iterable of Rule objects.
         `_legalese` is a set of common license-specific words aka. legalese
@@ -217,7 +219,7 @@ class LicenseIndex(object):
                 logger_debug('LicenseIndex: building index.')
             # index all and optimize
             self._add_rules(
-                rules, _legalese=_legalese, _spdx_tokens=_spdx_tokens, _unknown_ngram_length=_unknown_ngram_length)
+                rules, _legalese=_legalese, _spdx_tokens=_spdx_tokens)
 
             if TRACE_TOKEN_DOC_FREQ:
                 logger_debug('LicenseIndex: token, frequency')
@@ -233,7 +235,7 @@ class LicenseIndex(object):
                       '%(duration)f seconds.' % locals())
                 self._print_index_stats()
 
-    def _add_rules(self, rules, _legalese=common_license_words, _spdx_tokens=frozenset(), _unknown_ngram_length=7):
+    def _add_rules(self, rules, _legalese=common_license_words, _spdx_tokens=frozenset()):
         """
         Add a list of Rule objects to the index and constructs optimized and
         immutable index structures.
@@ -376,7 +378,7 @@ class LicenseIndex(object):
                 automaton=self.unknown_ngrams,
                 tids=rule_token_ids,
                 rule_length=rule.length,
-                unknown_ngram_length=_unknown_ngram_length,
+                unknown_ngram_length=UNKNOWN_NGRAM_LENGTH,
             )
             # Some rules cannot be matched as a sequence are "weak" rules
             if not is_weak:
@@ -954,7 +956,7 @@ class LicenseIndex(object):
             # break if deadline has passed
             if time() > deadline:
                 break
-        
+
         # refining matches without filtering false positives
         matches, _discarded = match.refine_matches(
             matches=matches,
@@ -965,12 +967,12 @@ class LicenseIndex(object):
             merge=True,
         )
 
-        original_qspan = Span(0, len(qry.tokens)-1)
+        original_qspan = Span(0, len(qry.tokens) - 1)
         matched_qspans = [m.qspan for m in matches]
         matched_qspan = Span()
         matched_qspan.union(*matched_qspans)
         unmatched_qspan = original_qspan.difference(matched_qspan)
-        
+
         for subspan in unmatched_qspan.subspans():
             query_run = query.QueryRun(query=qry, start=subspan.start, end=subspan.end)
 
