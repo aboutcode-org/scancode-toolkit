@@ -180,8 +180,8 @@ matches:
     start_line: 141
     end_line: 143
     matcher: 2-aho
-    rule_length: 37
-    matched_length: 37
+    rule_length: 38
+    matched_length: 38
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: free-unknown_47.RULE
@@ -781,8 +781,8 @@ matches:
     start_line: 563
     end_line: 585
     matcher: 2-aho
-    rule_length: 209
-    matched_length: 209
+    rule_length: 210
+    matched_length: 210
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: intel-osl-1993.LICENSE

@@ -1,6 +1,9 @@
 {
   "rdf:RDF": {
     "ns1:SpdxDocument": {
+      "ns1:name": {
+        "@rdf:resource": "SPDX Document created by ScanCode Toolkit"
+      },
       "ns1:dataLicense": {
         "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
       },
@@ -19,12 +22,15 @@
             }
           },
           "ns1:fileName": "./test.java",
-          "@rdf:about": "http://www.spdx.org/files#None",
+          "@rdf:about": "http://www.spdx.org/files#SPDXRef-1",
           "ns1:copyrightText": "Copyright 2010, Red Hat, Inc. and individual contributors"
         }
       },
       "ns1:describesPackage": {
         "ns1:Package": {
+          "ns1:Package": {
+            "@rdf:resource": "SPDXRef-001"
+          },
           "ns1:licenseInfoFromFiles": {
             "@rdf:resource": "http://spdx.org/licenses/LGPL-2.1-or-later"
           },
@@ -38,7 +44,7 @@
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           },
           "ns1:hasFile": {
-            "@rdf:resource": "http://www.spdx.org/files#None"
+            "@rdf:resource": "http://www.spdx.org/files#SPDXRef-1"
           },
           "@rdf:about": "http://www.spdx.org/tools#SPDXRef-Package",
           "ns1:copyrightText": "Copyright 2010, Red Hat, Inc. and individual contributors",
@@ -46,7 +52,7 @@
         }
       },
       "@rdf:about": "http://www.spdx.org/tools#SPDXRef-DOCUMENT",
-      "ns1:specVersion": "SPDX-2.1"
+      "ns1:specVersion": "SPDX-2.2"
     },
     "@xmlns:ns1": "http://spdx.org/rdf/terms#",
     "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"

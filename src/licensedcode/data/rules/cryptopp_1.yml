@@ -1,0 +1,5 @@
+license_expression: cryptopp
+is_license_text: yes
+notes: Before March 2013, Crypto++ was licensed under this unique license. It has been relicensed
+    under the Boost license in March 2013 that can be seen on the current version of the page
+    at http://www.cryptopp.com/License.txt This can be seen instead at https://web.archive.org/web/20130215095323/http://www.cryptopp.com/License.txt

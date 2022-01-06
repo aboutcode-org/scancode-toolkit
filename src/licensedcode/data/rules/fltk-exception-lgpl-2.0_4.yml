@@ -1,0 +1,6 @@
+license_expression: fltk-exception-lgpl-2.0
+is_license_tag: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+notes: Rule based on an SPDX license identifier and name

@@ -99,8 +99,8 @@ matches:
     start_line: 77
     end_line: 78
     matcher: 1-hash
-    rule_length: 17
-    matched_length: 17
+    rule_length: 18
+    matched_length: 18
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: public-domain-disclaimer_7.RULE
@@ -355,8 +355,8 @@ matches:
     start_line: 254
     end_line: 262
     matcher: 1-hash
-    rule_length: 81
-    matched_length: 81
+    rule_length: 82
+    matched_length: 82
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: cc0-1.0_153.RULE

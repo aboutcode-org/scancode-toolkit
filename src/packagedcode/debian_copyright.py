@@ -24,7 +24,7 @@ from license_expression import Licensing
 from licensedcode.cache import get_index
 from licensedcode.query import Query
 from licensedcode.match import LicenseMatch
-from licensedcode.match import set_lines
+from licensedcode.match import set_matched_lines
 from licensedcode.models import Rule
 from licensedcode.spans import Span
 from packagedcode.utils import combine_expressions
@@ -1400,7 +1400,7 @@ def clean_expression(text):
 def remove_known_license_intros(license_matches):
     """
     Return a filtered ``license_matches`` list of LicenseMatch objects removing
-    spurrious matches to license introduction statements (e.g.
+    spurious matches to license introduction statements (e.g.
     `is_license_intro` Rules.)
 
     A common source of false positive license detections in unstructured files
@@ -1475,7 +1475,7 @@ def add_unknown_matches(name, text):
     )
 
     matches = [match]
-    set_lines(matches, query.line_by_pos)
+    set_matched_lines(matches, query.line_by_pos)
     return matches
 
 

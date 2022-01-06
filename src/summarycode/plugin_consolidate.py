@@ -10,17 +10,17 @@
 from collections import Counter
 
 import attr
+from license_expression import Licensing
 
 from cluecode.copyrights import CopyrightDetector
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import POST_SCAN_GROUP
 from commoncode.text import python_safe_name
-from license_expression import Licensing
 from packagedcode import get_package_instance
 from packagedcode.build import BaseBuildManifestPackage
 from packagedcode.utils import combine_expressions
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from commoncode.cliutils import PluggableCommandLineOption
-from commoncode.cliutils import POST_SCAN_GROUP
 from summarycode import copyright_summary
 
 
@@ -401,9 +401,11 @@ def create_consolidated_components(resource, codebase, holder_key):
     resources.append(resource)
     resource.extra_data['majority'] = True
     resource.save(codebase)
-
+    core_license_expression = combine_expressions(license_expressions)
+    if core_license_expression is not None:
+        core_license_expression=str(core_license_expression)
     c = Consolidation(
-        core_license_expression=combine_expressions(license_expressions),
+        core_license_expression=core_license_expression,
         core_holders=[holder],
         files_count=len([r for r in resources if r.is_file]),
         resources=resources,

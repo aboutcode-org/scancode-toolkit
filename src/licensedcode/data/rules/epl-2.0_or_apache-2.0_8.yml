@@ -1,0 +1,6 @@
+license_expression: epl-2.0 OR apache-2.0
+is_license_notice: yes
+notes: https://github.com/eclipse/jetty.project/commit/31e5030550e317dfd2cabbec0eb29a7082a1edd9
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0
+    - https://www.eclipse.org/legal/epl-2.0

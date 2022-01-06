@@ -1,0 +1,20 @@
+license_expression: truecrypt-3.1
+is_license_notice: yes
+relevance: 90
+minimum_coverage: 95
+notes: this is an older version of this rare license thatw e report as if it was the newer version
+    with a lesser relevance.
+ignorable_copyrights:
+    - Copyright (c) 1998-2000 Paul Le Roux
+    - Copyright (c) 1998-2008, Brian Gladman, Worcester, UK.
+    - Copyright (c) 2002-2004 Mark Adler
+ignorable_holders:
+    - Brian Gladman, Worcester, UK.
+    - Mark Adler
+    - Paul Le Roux
+ignorable_authors:
+    - Paul Le Roux <pleroux@swprofessionals.com>
+ignorable_urls:
+    - http://www.truecrypt.org/
+ignorable_emails:
+    - pleroux@swprofessionals.com

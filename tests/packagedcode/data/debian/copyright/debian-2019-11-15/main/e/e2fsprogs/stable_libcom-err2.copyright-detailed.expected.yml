@@ -8,8 +8,8 @@ matches:
     start_line: 14
     end_line: 24
     matcher: 2-aho
-    rule_length: 110
-    matched_length: 110
+    rule_length: 112
+    matched_length: 112
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: mit-old-style-no-advert_5.RULE

@@ -59,7 +59,7 @@ def check_expected_parse_copyright_file(
         license_expression = dc.get_license_expression(
             skip_debian_packaging=skip_debian_packaging,
             simplify_licenses=simplify_licenses,
-        ).strip()
+        )
 
         license_expression_keys = set(_licensing.license_keys(license_expression))
 

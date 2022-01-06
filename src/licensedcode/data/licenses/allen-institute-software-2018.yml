@@ -1,0 +1,17 @@
+key: allen-institute-software-2018
+short_name: Allen Institute Software License 2018
+name: Allen Institute Software License 2018
+category: Free Restricted
+owner: Allen Institute
+homepage_url: https://raw.githubusercontent.com/AllenInstitute/human_neuron_Ih/master/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-allen-institute-software-2018
+other_urls:
+    - https://github.com/AllenInstitute
+standard_notice: |
+    Allen Institute Software License – This software license is the 2-clause
+    BSD license plus clause a third clause that
+    prohibits redistribution for commercial purposes without further
+    permission.
+    Copyright © 2018. Allen Institute. All rights reserved.
+ignorable_emails:
+    - terms@alleninstitute.org

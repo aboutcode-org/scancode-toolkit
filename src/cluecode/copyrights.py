@@ -577,6 +577,17 @@ patterns = [
     (r'^[Rr]eversed[\.,]*$', 'RESERVED'),
     (r'^REVERSED[\.,]*$', 'RESERVED'),
 
+    # in German
+    (r'^[Aa]lle$', 'NN'),
+    (r'^[Rr]echte$', 'RIGHT'),
+    (r'^[Vv]orbehalten[\.,]*$', 'RESERVED'),
+
+    # in French
+    (r'^[Tt]ous$', 'NN'),
+    (r'^[Dr]roits?$', 'RIGHT'),
+    (r'^[Rr]éservés[\.,]*$', 'RESERVED'),
+    (r'^[Rr]eserves[\.,]*$', 'RESERVED'),
+
     ############################################################################
     # JUNK are things to ignore
     ############################################################################
@@ -913,8 +924,8 @@ patterns = [
     # JUNK as camel case with a single hump such as in "processingInfo"
     (r'^[a-z]{3,10}[A-Z][a-z]{3,10}$', 'JUNK'),
 
-    (r'^\$?Guid$', 'JUNK'), 
-    (r'^Small$', 'NN'), 
+    (r'^\$?Guid$', 'JUNK'),
+    (r'^Small$', 'NN'),
 
     ############################################################################
     # Nouns and proper Nouns
@@ -1351,7 +1362,7 @@ patterns = [
 
     # company suffix : SA, SAS, AG, AB, AS, CO, labs followed by a dot
     (r'^(S\.?A\.?S?|Sas|sas|A\/S|AG,?|AB|Labs?|[Cc][Oo]|Research|Center|INRIA|Societe)\.?$', 'COMP'),
-    # French SARL 
+    # French SARL
     (r'^(SARL|S\.A\.R\.L\.)[\.,\)]*$', 'COMP'),
     # company suffix : AS: this is frequent beyond Norway.
     (r'^AS.$', 'COMP'),
@@ -2575,7 +2586,6 @@ def refine_copyright(c):
     c = strip_some_punct(c)
     # this catches trailing slashes in URL for consistency
     c = c.strip('/ ')
-    # c = fix_trailing_space_dot(c)
     c = strip_all_unbalanced_parens(c)
     c = remove_same_extra_words(c)
     c = ' '.join(c.split())
@@ -2891,6 +2901,7 @@ HOLDERS_PREFIXES = frozenset(set.union(
         'held',
         'by',
         'is',
+        '(x)',
     ])
 ))
 
@@ -3020,7 +3031,9 @@ def strip_trailing_period(s):
     if len(s) < 3 :
         return s
 
-    if s[-2].isupper():
+    is_single_word = len(s.split()) == 1
+
+    if s[-2].isupper() and not is_single_word:
         # U.S.A. , e.V., M.I.T. and similar
         return s
 

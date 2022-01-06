@@ -1835,8 +1835,8 @@ matches:
     start_line: 1314
     end_line: 1336
     matcher: 2-aho
-    rule_length: 209
-    matched_length: 209
+    rule_length: 210
+    matched_length: 210
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: intel-osl-1993.LICENSE
@@ -2075,8 +2075,8 @@ matches:
     start_line: 1494
     end_line: 1511
     matcher: 2-aho
-    rule_length: 150
-    matched_length: 150
+    rule_length: 151
+    matched_length: 151
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: unicode_6.RULE
@@ -2109,8 +2109,8 @@ matches:
     start_line: 1513
     end_line: 1543
     matcher: 2-aho
-    rule_length: 306
-    matched_length: 306
+    rule_length: 309
+    matched_length: 309
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: unicode_17.RULE

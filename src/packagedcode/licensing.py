@@ -90,7 +90,7 @@ def get_license_expression_from_matches(license_matches):
     license_expressions = [
         match.rule.license_expression for match in license_matches
     ]
-    return combine_expressions(license_expressions, unique=False)
+    return str(combine_expressions(license_expressions, unique=False))
 
 
 def matches_have_unknown(matches, licensing):

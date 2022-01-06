@@ -64,7 +64,7 @@ def cli(source, replacement):
         rulerec = models.Rule(**rd)
 
         # force recomputing relevance to remove junk stored relevance for long rules
-        rulerec.compute_relevance(_threshold=18.0)
+        rulerec.set_relevance()
 
         rulerec.data_file = base_loc + '.yml'
         rulerec.text_file = base_loc + '.RULE'

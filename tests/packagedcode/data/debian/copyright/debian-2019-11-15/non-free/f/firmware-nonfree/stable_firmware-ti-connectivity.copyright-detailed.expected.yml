@@ -8,8 +8,8 @@ matches:
     start_line: 9
     end_line: 65
     matcher: 1-hash
-    rule_length: 434
-    matched_length: 434
+    rule_length: 436
+    matched_length: 436
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: proprietary-license_556.RULE

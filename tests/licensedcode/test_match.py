@@ -9,22 +9,22 @@
 #
 import os
 
-import pytest
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
+from licensedcode import models
 from licensedcode.index import LicenseIndex
 from licensedcode.match import filter_contained_matches
-from licensedcode.match import filter_key_phrase_spans
+from licensedcode.match import filter_matches_missing_key_phrases
 from licensedcode.match import filter_overlapping_matches
 from licensedcode.match import get_full_matched_text
+from licensedcode.match import get_matching_regions
 from licensedcode.match import LicenseMatch
 from licensedcode.match import merge_matches
 from licensedcode.match import reportable_tokens
 from licensedcode.match import restore_non_overlapping
 from licensedcode.match import tokenize_matched_text
 from licensedcode.match import Token
-from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode.query import Query
@@ -113,7 +113,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
         same_span2 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
         before_after = LicenseMatch(rule=r1, qspan=Span(8, 9), ispan=Span(8, 9))
         touching = LicenseMatch(rule=r1, qspan=Span(7, 7), ispan=Span(7, 7))
-        overlaping = LicenseMatch(rule=r1, qspan=Span(4, 7), ispan=Span(4, 7))
+        overlapping = LicenseMatch(rule=r1, qspan=Span(4, 7), ispan=Span(4, 7))
 
         assert same_span1 == same_span2
         assert same_span1 in same_span2
@@ -130,11 +130,11 @@ class TestLicenseMatchBasic(FileBasedTesting):
         assert contained2 in same_span2
         assert contained2 in contained1
 
-        assert contained2.overlap(overlaping)
+        assert contained2.overlap(overlapping)
 
-        assert overlaping.overlap(contained2)
-        assert overlaping.overlap(same_span1)
-        assert not overlaping.overlap(before_after)
+        assert overlapping.overlap(contained2)
+        assert overlapping.overlap(same_span1)
+        assert not overlapping.overlap(before_after)
 
         assert before_after.is_after(same_span1)
         assert before_after.is_after(touching)
@@ -258,10 +258,17 @@ class TestLicenseMatchBasic(FileBasedTesting):
     def test_LicenseMatch_matches_only_when_all_key_phrases_are_present(self):
         text_r1 = (
             'License '
-            'Distributed under the {{MIT License}}. See LICENSE for more information.'
+            'Distributed under the {{MIT License}}. See LICENSE for {{more information}}.'
             'You can redistribute this file under this or any other license.')
         r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
-        idx = index.LicenseIndex([r1])
+
+        text_r2 = (
+            'License '
+            'Distributed under the {{GPL License}} License. See LICENSE for {{more information}}.'
+            'You can redistribute this file under this or any other license.')
+        r2 = Rule(text_file='r2', license_expression='gpl', stored_text=text_r2)
+
+        idx = index.LicenseIndex([r1, r2])
 
         querys = (
             'License '
@@ -269,49 +276,99 @@ class TestLicenseMatchBasic(FileBasedTesting):
             'You can redistribute this file under this or any other license.')
 
         matches = idx.match(query_string=querys)
-        assert len(matches) == 0
+        assert not matches
 
     def test_LicenseMatch_matches_only_when_all_key_phrases_are_present_in_order(self):
         text_r1 = (
             'License '
-            'Distributed under the {{MIT License}}. See LICENSE for more information.'
-            'You can redistribute this file under this or any other license.')
+            'Distributed under the {{MIT License}}. See LICENSE for more information. '
+            '{{You can redistribute this file}} under this or any other license. '
+        )
         r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
-        idx = index.LicenseIndex([r1])
+
+        text_r2 = 'Foo bar'
+
+        r2 = Rule(text_file='r2', license_expression='gpl', stored_text=text_r2)
+
+        idx = index.LicenseIndex([r1, r2])
 
         querys = (
             'License '
-            'Distributed under the License MIT. See LICENSE for more information.'
-            'You can redistribute this file under this or any other license.')
+            'Distributed under the License MIT. See LICENSE for more information. '
+            'You can redistribute this file under this or any other license. '
+            ' and otherwise foo bar'
+        )
 
         matches = idx.match(query_string=querys)
-        assert len(matches) == 0
+        assert len(matches) == 1
+        assert matches[0].rule == r2
 
-    def test_LicenseMatch_matches_only_when_key_phrases_are_uninterrupted(self):
+    def test_LicenseMatch_matches_only_when_key_phrases_are_uninterrupted_by_unknown(self):
         text_r1 = (
             'License '
             'Distributed under the {{MIT License}}. See LICENSE for more information.'
             'You can redistribute this file under this or any other license.')
         r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
-        idx = index.LicenseIndex([r1])
+
+        text_r2 = (
+            'License '
+            'Distributed under the BSD License. See LICENSE for more information.'
+            'You can redistribute this file under this or any other license.')
+        r2 = Rule(text_file='r2', license_expression='gpl', stored_text=text_r2)
+
+        idx = index.LicenseIndex([r1, r2])
 
         querys = (
             'See LICENSE for more information, and also you can redistribute this file under this or any other license.'
             'License '
-            'Distributed under the MIT, Version 2 License. See LICENSE or website for more information.'
+            'Distributed under the MIT, foobar License. See LICENSE or website for more information.'
             'You can redistribute this file under this or any other license.'
         )
 
         matches = idx.match(query_string=querys)
-        assert len(matches) == 0
+        assert len(matches) == 1
+        assert matches[0].rule == r2
 
-    def test_LicenseMatch_matches_aho_with_exact_match(self):
+    def test_LicenseMatch_matches_only_when_key_phrases_are_uninterrupted_by_stopword(self):
         text_r1 = (
             'License '
             'Distributed under the {{MIT License}}. See LICENSE for more information.'
             'You can redistribute this file under this or any other license.')
         r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
-        idx = index.LicenseIndex([r1])
+
+        text_r2 = (
+            'License '
+            'Distributed under the BSD License. See LICENSE for more information.'
+            'You can redistribute this file under this or any other license.')
+        r2 = Rule(text_file='r2', license_expression='gpl', stored_text=text_r2)
+
+        idx = index.LicenseIndex([r1, r2])
+
+        querys = (
+            'See LICENSE for more information, and also you can redistribute this file under this or any other license.'
+            'License '
+            'Distributed under the MIT,       a         License. See LICENSE or website for more information.'
+            #                           ^ stopword ^
+            'You can redistribute this file under this or any other license.'
+        )
+
+        matches = idx.match(query_string=querys)
+        assert len(matches) == 1
+        assert matches[0].rule == r2
+
+    def test_LicenseMatch_matches_key_phrases_aho_with_exact_match_selects_key_phrase_match(self):
+        text_r1 = (
+            'License '
+            'Distributed under the {{MIT License}}. See LICENSE for more information.'
+        )
+        r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
+        text_r2 = (
+            'License '
+            'Distributed under the {{BSD License}}. See LICENSE for more information.'
+            'You can redistribute this file under this or any other license.')
+        r2 = Rule(text_file='r2', license_expression='bsd', stored_text=text_r2)
+
+        idx = index.LicenseIndex([r1, r2])
 
         querys = (
             'License '
@@ -321,35 +378,78 @@ class TestLicenseMatchBasic(FileBasedTesting):
 
         matches = idx.match(query_string=querys, _skip_hash_match=True)
         assert len(matches) == 1
+        assert matches[0].rule == r1
 
     def test_LicenseMatch_matches_only_when_key_phrase_is_uninterrupted(self):
         text_r1 = (
-            'under the {{Creative Commons Attribution 4.0 International License}} (the "License");'
-            'you may not use this file except in compliance with the License.'
-            'You may obtain a copy of the License at'
-            ''
-            '     http://creativecommons.org/licenses/by/4.0'
-            ''
-            'This file is distributed on an "AS IS" BASIS,'
-            'WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.'
-            'See the License for the specific language governing permissions and'
-            'limitations under the License.'
+            'licensed under the '
+            '{{Creative Commons Attribution 4.0  License}} '
+            '(the "License"); '
+            ' this is a license with has several interesting characteristics '
         )
-        r1 = Rule(text_file='r1', license_expression='mit', stored_text=text_r1)
-        idx = index.LicenseIndex([r1])
+        r1 = Rule(text_file='r1', license_expression='keyphrase', stored_text=text_r1)
 
-        querys = """
-        This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-        International License (the "License"). You may not use this file except in compliance with the
-        License. A copy of the License is located at http://creativecommons.org/licenses/by-nc-sa/4.0/.
+        text_r2 = (
+            'licensed under the '
+            'Creative Commons Attribution 4.0  License '
+            '(the  "License"); '
+            ' this is a license that has several interesting characteristics also '
+        )
+        r2 = Rule(text_file='r2', license_expression='plain', stored_text=text_r2)
 
-        This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-        either express or implied. See the License for the specific language governing permissions and
-        limitations under the License.
-        """
+        legalese = set(['licensed', 'license', 'attribution', ])
+        idx = index.LicenseIndex([r1, r2], _legalese=legalese)
 
-        matches = idx.match(query_string=querys, _skip_hash_match=True)
-        assert len(matches) == 0
+        assert r1.key_phrase_spans == [Span(3, 8)]
+        assert r2.key_phrase_spans == []
+
+        # NonCommercial and ShareAlike are "unknown" words here
+        # therefore we should match r2 as as a sequence and not r1 because the
+        # key phrase are interrupted
+        querys = (
+            'This work is '
+            # 0   UW   1
+            'licensed under the '
+            # 2       3      4
+            'Creative Commons Attribution-Share Alike 4.0  License '
+            # 5       6       7           UW    UW    8 9  10
+            '(the "License"). '
+            # 11  12
+            'this is a license that has several interesting characteristics FOO'
+            # 13  14 SW  15    16   17  18      19          20              UW  21
+        )
+
+        matches = idx.match(query_string=querys)
+
+        assert len(matches) == 1
+        match = matches[0]
+
+        assert match.query.unknowns_by_pos == {0: 1, 7: 2, 20: 1}
+        assert match.qspan == Span(2, 20)
+
+        itokens = [idx.tokens_by_tid[i] for i in match.itokens(idx)]
+        assert itokens == [
+            'licensed',
+            'under',
+            'the',
+            'creative',
+            'commons',
+            'attribution',
+            '4',
+            '0',
+            'license',
+            'the',
+            'license',
+            'this',
+            'is',
+            'license',
+            'that',
+            'has',
+            'several',
+            'interesting',
+            'characteristics',
+        ]
+        assert match.rule == r2
 
 
 class TestMergeMatches(FileBasedTesting):
@@ -371,7 +471,8 @@ class TestMergeMatches(FileBasedTesting):
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
         m2 = LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6))
 
-        assert merge_matches([m1, m2]) == [m1, m2]
+        results = merge_matches([m1, m2])
+        assert results == [m1, m2]
 
     def test_merge_does_merge_overlapping_matches_of_same_rules_if_in_sequence(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
@@ -379,7 +480,8 @@ class TestMergeMatches(FileBasedTesting):
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
         m2 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
 
-        assert merge_matches([m1, m2]) == [LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6))]
+        results = merge_matches([m1, m2])
+        assert results == [LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6))]
 
     def test_merge_does_not_merge_overlapping_matches_of_same_rules_if_in_sequence_with_gaps(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
@@ -432,7 +534,7 @@ class TestMergeMatches(FileBasedTesting):
         assert matches == [m2]
         assert discarded == [m1]
 
-    def test_merge_does_not_merge_overlaping_matches_with_same_licensings(self):
+    def test_merge_does_not_merge_overlapping_matches_with_same_licensings(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
 
@@ -459,7 +561,7 @@ class TestMergeMatches(FileBasedTesting):
         assert matches == [overlap, same_span1]
         assert discarded
 
-    def test_filter_overlaping_matches_does_filter_overlaping_matches_with_same_licensings(self):
+    def test_filter_overlapping_matches_does_filter_overlapping_matches_with_same_licensings(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
 
@@ -471,7 +573,7 @@ class TestMergeMatches(FileBasedTesting):
         assert matches == [overlap]
         assert discarded
 
-    def test_filter_contained_matches_prefers_longer_overlaping_matches(self):
+    def test_filter_contained_matches_prefers_longer_overlapping_matches(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
 
@@ -483,7 +585,7 @@ class TestMergeMatches(FileBasedTesting):
         assert matches == [overlap, same_span2]
         assert discarded
 
-    def test_filter_overlapping_matches_prefers_longer_overlaping_matches(self):
+    def test_filter_overlapping_matches_prefers_longer_overlapping_matches(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
 
@@ -853,7 +955,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
 
         assert matches == expected
 
-    def test_filter_contained_matches_matches_filters_matches_does_not_discard_non_overlaping(self):
+    def test_filter_contained_matches_matches_filters_matches_does_not_discard_non_overlapping(self):
         r1 = Rule(text_file='r1', license_expression='apache-1.1')
         r2 = Rule(text_file='r2', license_expression='gpl OR apache-2.0')
         r3 = Rule(text_file='r3', license_expression='gpl')
@@ -872,7 +974,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
         assert result == [m2, m3]
         assert discarded == [m1]
 
-    def test_filter_overlapping_matches_matches_filters_matches_does_not_discard_non_overlaping(self):
+    def test_filter_overlapping_matches_matches_filters_matches_does_not_discard_non_overlapping(self):
         r1 = Rule(text_file='r1', license_expression='apache-1.1')
         r2 = Rule(text_file='r2', license_expression='gpl OR apache-2.0')
         r3 = Rule(text_file='r3', license_expression='gpl')
@@ -906,7 +1008,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
         match_key_phrase_partially_contained = LicenseMatch(rule=r1, query=query, qspan=Span(0, 3), ispan=Span(0, 2))
         match_key_phrase_fully_containing = LicenseMatch(rule=r1, query=query, qspan=Span(3), ispan=Span(3))
 
-        kept, discarded = filter_key_phrase_spans([
+        kept, discarded = filter_matches_missing_key_phrases([
             match_key_phrase_fully_contained,
             match_key_phrase_fully_outside,
             match_key_phrase_partially_contained,
@@ -933,7 +1035,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
         match_qspan_intersects_with_unknowns = LicenseMatch(rule=r1, query=query, qspan=Span(10, 15), ispan=Span(0, 5))
         match_qspan_intersects_with_stopwords = LicenseMatch(rule=r1, query=query, qspan=Span(20, 25), ispan=Span(0, 5))
 
-        kept, discarded = filter_key_phrase_spans([
+        kept, discarded = filter_matches_missing_key_phrases([
             match_key_phrase_fully_contained,
             match_qspan_intersects_with_unknowns,
             match_qspan_intersects_with_stopwords,
@@ -950,26 +1052,235 @@ class TestLicenseMatchFilter(FileBasedTesting):
         idx = index.LicenseIndex()
         query = Query(query_string="Lorum ipsum", idx=idx)
         query.unknowns_by_pos = {}
-        query.stopwords_by_pos = {}
 
-        r1 = Rule(text_file='r1', license_expression='apache-1.1', key_phrase_spans=[Span(12, 14)])
+        r1 = Rule(
+            text_file='r1',
+            license_expression='apache-1.1',
+            key_phrase_spans=[Span(12, 14)],
+        )
 
-        match_qspan_ispan_same_matching = LicenseMatch(rule=r1, query=query, qspan=Span(10, 15), ispan=Span(10, 15))
-        match_qspan_with_offset_matching = LicenseMatch(rule=r1, query=query, qspan=Span(20, 25), ispan=Span(10, 15))
-        match_qspan_with_offset_not_matching = LicenseMatch(rule=r1, query=query, qspan=Span([20, 21, 22, 23, 25]), ispan=Span(10, 15))
+        qspan_ispan_same_pos = LicenseMatch(
+            rule=r1, query=query,
+            qspan=Span(10, 15), ispan=Span(10, 15)
+        )
+        qspan_with_offset = LicenseMatch(
+            rule=r1, query=query,
+            qspan=Span(20, 25), ispan=Span(10, 15)
+        )
+        qspan_non_contiguous = LicenseMatch(
+            rule=r1, query=query,
+            qspan=Span([20, 21, 22, 23, 25]), ispan=Span(10, 15)
+        )
 
-        kept, discarded = filter_key_phrase_spans([
-            match_qspan_ispan_same_matching,
-            match_qspan_with_offset_matching,
-            match_qspan_with_offset_not_matching
+        kept, discarded = filter_matches_missing_key_phrases([
+            qspan_ispan_same_pos,
+            qspan_with_offset,
+            qspan_non_contiguous
         ])
+
         assert kept == [
-            match_qspan_ispan_same_matching,
-            match_qspan_with_offset_matching
+            qspan_ispan_same_pos,
+            qspan_with_offset
         ]
         assert discarded == [
-            match_qspan_with_offset_not_matching,
+            qspan_non_contiguous,
         ]
+
+    def test_get_matching_regions_15_words(self):
+        rule_dir = self.get_test_loc('match_regions/rules')
+        idx = index.LicenseIndex(load_rules(rule_dir))
+        query_string = '''GPLv2
+        This source code is licensed under the MIT
+        GPLv2
+        under both the GPLv2 and Apache 2.0 License
+
+        the under  both the under  both the under  both the under  both the under  both
+        GPL v2 license
+        This source code is licensed under the MIT
+        '''
+        matches = idx.match(query_string=query_string)
+        matched_rules = [m.rule.identifier for m in matches]
+        expected_rules = [
+            'gpl-2.0_bare_single_word.RULE',
+            'mit_101.RULE',
+            'gpl-2.0_bare_single_word.RULE',
+            'gpl-2.0_or_apache-2.0_2.RULE',
+            'gpl-2.0_bare_single_word2.RULE',
+            'mit_101.RULE',
+        ]
+        assert matched_rules == expected_rules
+
+        regions = get_matching_regions(matches)
+        expected_regions = [Span(0, 18), Span(34, 44)]
+        assert regions == expected_regions
+
+        assert matches[0].qspan in regions[0]
+        assert matches[1].qspan in regions[0]
+        assert matches[2].qspan in regions[0]
+        assert matches[3].qspan in regions[0]
+
+        assert matches[4].qspan in regions[1]
+        assert matches[5].qspan in regions[1]
+
+    def test_get_matching_regions_10_words_are_not_enough(self):
+        rule_dir = self.get_test_loc('match_regions/rules')
+        idx = index.LicenseIndex(load_rules(rule_dir))
+        query_string = '''GPLv2
+        This source code is licensed under the MIT
+        GPLv2
+        under both the GPLv2 and Apache 2.0 License
+
+        the under  both the under  foo bar both the under
+        GPL v2 license
+        This source code is licensed under the MIT
+        '''
+        matches = idx.match(query_string=query_string)
+        matched_rules = [m.rule.identifier for m in matches]
+        expected_rules = [
+            'gpl-2.0_bare_single_word.RULE',
+            'mit_101.RULE',
+            'gpl-2.0_bare_single_word.RULE',
+            'gpl-2.0_or_apache-2.0_2.RULE',
+            'gpl-2.0_bare_single_word2.RULE',
+            'mit_101.RULE',
+        ]
+        assert matched_rules == expected_rules
+
+        regions = get_matching_regions(matches)
+        expected_regions = [Span(0, 37)]
+        assert regions == expected_regions
+
+    def test_get_matching_regions_11_words_are_enough(self):
+        rule_dir = self.get_test_loc('match_regions/rules')
+        idx = index.LicenseIndex(load_rules(rule_dir))
+        query_string = '''GPLv2
+        This source code is licensed under the MIT
+        GPLv2
+        under both the GPLv2 and Apache 2.0 License
+
+        the under both the under    both the under both the   under
+        GPL v2 license
+        This source code is licensed under the MIT
+        '''
+        matches = idx.match(query_string=query_string)
+        matched_rules = [m.rule.identifier for m in matches]
+        expected_rules = [
+            'gpl-2.0_bare_single_word.RULE',
+            'mit_101.RULE',
+            'gpl-2.0_bare_single_word.RULE',
+            'gpl-2.0_or_apache-2.0_2.RULE',
+            'gpl-2.0_bare_single_word2.RULE',
+            'mit_101.RULE',
+        ]
+        assert matched_rules == expected_rules
+
+        regions = get_matching_regions(matches)
+        expected_regions = [Span(0, 18), Span(30, 40)]
+        assert regions == expected_regions
+
+        assert matches[0].qspan in regions[0]
+        assert matches[1].qspan in regions[0]
+        assert matches[2].qspan in regions[0]
+        assert matches[3].qspan in regions[0]
+
+        assert matches[4].qspan in regions[1]
+        assert matches[5].qspan in regions[1]
+
+    def test_get_matching_regions_2_lines_are_not_enough(self):
+        rule_dir = self.get_test_loc('match_regions/rules')
+        idx = index.LicenseIndex(load_rules(rule_dir))
+        query_string = '''GPLv2
+        This source code is licensed under the MIT
+        GPLv2
+        under both the GPLv2 and Apache 2.0 License
+        one
+        two
+        GPL v2 license
+        This source code is licensed under the MIT
+        '''
+        matches = idx.match(query_string=query_string)
+        matched_rules = [m.rule.identifier for m in matches]
+        expected_rules = [
+            'gpl-2.0_bare_single_word.RULE',
+            'mit_101.RULE',
+            'gpl-2.0_bare_single_word.RULE',
+            'gpl-2.0_or_apache-2.0_2.RULE',
+            'gpl-2.0_bare_single_word2.RULE',
+            'mit_101.RULE',
+        ]
+        assert matched_rules == expected_rules
+
+        regions = get_matching_regions(matches)
+        expected_regions = [Span(0, 29)]
+
+        assert regions == expected_regions
+
+    def test_get_matching_regions_2_lines_with_10_words_are_enough(self):
+        rule_dir = self.get_test_loc('match_regions/rules')
+        idx = index.LicenseIndex(load_rules(rule_dir))
+        query_string = '''GPLv2
+        This source code is licensed under the MIT
+        GPLv2
+        under both the GPLv2 and Apache 2.0 License
+        one
+        two three four five six seven eight nine ten
+        GPL v2 license
+        This source code is licensed under the MIT
+        '''
+        matches = idx.match(query_string=query_string)
+        matched_rules = [m.rule.identifier for m in matches]
+        expected_rules = [
+            'gpl-2.0_bare_single_word.RULE',
+            'mit_101.RULE',
+            'gpl-2.0_bare_single_word.RULE',
+            'gpl-2.0_or_apache-2.0_2.RULE',
+            'gpl-2.0_bare_single_word2.RULE',
+            'mit_101.RULE',
+        ]
+        assert matched_rules == expected_rules
+
+        regions = get_matching_regions(matches)
+        expected_regions = [Span(0, 29)]
+
+        assert regions == expected_regions
+
+    def test_get_matching_regions_3_lines_enough(self):
+        rule_dir = self.get_test_loc('match_regions/rules')
+        idx = index.LicenseIndex(load_rules(rule_dir))
+        query_string = '''GPLv2
+        This source code is licensed under the MIT
+        GPLv2
+        under both the GPLv2 and Apache 2.0 License
+        one
+        two
+        three
+        GPL v2 license
+        This source code is licensed under the MIT
+        '''
+        matches = idx.match(query_string=query_string)
+        matched_rules = [m.rule.identifier for m in matches]
+        expected_rules = [
+            'gpl-2.0_bare_single_word.RULE',
+            'mit_101.RULE',
+            'gpl-2.0_bare_single_word.RULE',
+            'gpl-2.0_or_apache-2.0_2.RULE',
+            'gpl-2.0_bare_single_word2.RULE',
+            'mit_101.RULE',
+        ]
+        assert matched_rules == expected_rules
+
+        regions = get_matching_regions(matches)
+        expected_regions = [Span(0, 18), Span(19, 29)]
+
+        assert regions == expected_regions
+
+        assert matches[0].qspan in regions[0]
+        assert matches[1].qspan in regions[0]
+        assert matches[2].qspan in regions[0]
+        assert matches[3].qspan in regions[0]
+
+        assert matches[4].qspan in regions[1]
+        assert matches[5].qspan in regions[1]
 
 
 class TestLicenseMatchScore(FileBasedTesting):
@@ -1040,7 +1351,8 @@ class TestLicenseMatchScore(FileBasedTesting):
 
         query_location = self.get_test_loc('stopwords/query.txt')
         matches = idx.match(location=query_location)
-        assert matches == []
+        results = [m.rule.identifier for m in matches]
+        assert results == ['gpl-1.0.bare.RULE', 'gpl-1.0.bare.RULE', 'gpl-1.0.bare.RULE']
 
 
 class TestCollectLicenseMatchTexts(FileBasedTesting):
@@ -1316,7 +1628,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
         assert result == expected
 
-        # est again with whole lines
+        # test again with whole lines
         match_qspan = Span(0, 1)
         result = list(reportable_tokens(tokens, match_qspan, start_line=1, end_line=2, whole_lines=True))
         expected = [
@@ -1539,7 +1851,6 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             '--enable-libx265 --enable-libxavs --enable-libxvid --enable-libzimg '
             '--enable-lzma --enable-decklink --enable-zlib',
 
-
             '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
             '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
             '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
@@ -1669,7 +1980,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             'You should have received a copy of the GNU General Public License\n'
 
             'along with %s.  If not, see <http://www.gnu.org/licenses/>.\n'
-            
+
             'File formats:\n'
             'D. = Demuxing supported\n'
             '.E = Muxing supported\n'

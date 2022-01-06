@@ -7,8 +7,8 @@ matches:
     start_line: 4
     end_line: 207
     matcher: 2-aho
-    rule_length: 1764
-    matched_length: 1764
+    rule_length: 1770
+    matched_length: 1770
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: broadcom-proprietary_1.RULE

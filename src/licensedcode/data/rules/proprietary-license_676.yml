@@ -1,0 +1,3 @@
+license_expression: proprietary-license
+is_license_notice: yes
+notes: Since this MIT rider is not clear, this is detected as proprietary for now See https://github.com/opengovsg/FormSG/blob/dbcb0f96c645a95976e69b4eb6ba11b85915bdd5/LICENSE.md

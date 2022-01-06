@@ -389,8 +389,8 @@ matches:
     start_line: 248
     end_line: 253
     matcher: 1-hash
-    rule_length: 56
-    matched_length: 56
+    rule_length: 57
+    matched_length: 57
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: cc0-1.0_131.RULE

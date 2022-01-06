@@ -2212,8 +2212,8 @@ matches:
     start_line: 1522
     end_line: 1544
     matcher: 2-aho
-    rule_length: 209
-    matched_length: 209
+    rule_length: 210
+    matched_length: 210
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: intel-osl-1993.LICENSE

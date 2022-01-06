@@ -24,8 +24,8 @@ matches:
     start_line: 25
     end_line: 63
     matcher: 3-seq
-    rule_length: 281
-    matched_length: 281
+    rule_length: 282
+    matched_length: 282
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: bsd-new_or_lgpl-2.0-plus_4.RULE

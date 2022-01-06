@@ -3,4 +3,3 @@ is_license_text: yes
 minimum_coverage: 80
 referenced_filenames:
     - /usr/share/common-licenses/GPL-2
-

@@ -1,0 +1,8 @@
+<licenses>
+    <license>
+      <name>The GNU General Public License, Version 2</name>
+<url>http://www.gnu.org/licenses/gpl.txt
+
+MySQL Connector/J contains exceptions to GPL requirements when linking with other components
+that are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J
+in this distribution for more details.

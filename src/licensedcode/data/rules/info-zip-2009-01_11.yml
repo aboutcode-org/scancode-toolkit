@@ -5,5 +5,4 @@ referenced_filenames:
     - LICENSE
     - zip.h
 ignorable_urls:
-  - ftp://ftp.info-zip.org/pub/infozip/license.html
-
+    - ftp://ftp.info-zip.org/pub/infozip/license.html

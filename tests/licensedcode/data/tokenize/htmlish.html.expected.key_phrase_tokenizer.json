@@ -1059,7 +1059,8 @@
   ],
   [],
   [
-    "contributor"
+    "contributor",
+    "s"
   ],
   [
     "ruben",
@@ -1830,6 +1831,7 @@
     "com",
     "malwaredomainlist",
     "com",
+    "s",
     "list",
     "of",
     "infected",
