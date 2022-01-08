@@ -245,8 +245,8 @@ class LicenseDetection:
         self,
         whole_lines=False,
         highlight=True,
-        highlight_matched=u'%s',
-        highlight_not_matched=u'[%s]',
+        highlight_matched='{}',
+        highlight_not_matched='[{}]',
     ):
         """
         Return the matched text for this detection, combining texts from all
