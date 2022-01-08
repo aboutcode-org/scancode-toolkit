@@ -131,7 +131,7 @@ class TestLicense(FileBasedTesting):
             'bsd-ack-carrot2': [
                 'No short name',
                 'No name',
-                'No category',
+                'No category: Use "Unstated License" if not known.',
                 'No owner: Use "Unspecified" if not known.',
                 'No SPDX license key'],
             'gpl-1.0': [

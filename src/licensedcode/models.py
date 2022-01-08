@@ -179,7 +179,14 @@ class License:
         default=False,
         repr=False,
         metadata=dict(
-            help='Flag set to True, if this license is for some unknown license')
+            help='Flag set to True if this license is for some unknown licensing')
+    )
+
+    is_generic = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='Flag set to True if this license if for a generic, unnamed license')
     )
 
     spdx_license_key = attr.ib(
@@ -525,7 +532,7 @@ class License:
                 error('No name')
 
             if not lic.category:
-                error('No category')
+                error('No category: Use "Unstated License" if not known.')
             if lic.category and lic.category not in CATEGORIES:
                 cats = '\n'.join(sorted(CATEGORIES))
                 error(
@@ -538,8 +545,11 @@ class License:
 
             if lic.is_unknown:
                 if not 'unknown' in lic.key:
-                    error(
-                        'is_unknown is true only for unknown licenses')
+                    error('is_unknown can be true only for licenses with '
+                          '"unknown " in their key string.')
+
+            if lic.is_generic and lic.is_unknown:
+                error('is_generic and is_unknown are incompatible')
 
             # URLS dedupe and consistency
             if no_dupe_urls:
@@ -2059,7 +2069,7 @@ class UnknownRule(Rule):
     def __attrs_post_init__(self, *args, **kwargs):
         # We craft a UNIQUE identifier for the matched content
         self.identifier = f'unknown-license-detection:{self.compute_unique_id()}'
-        
+
         self.license_expression = UNKNOWN_LICENSE_KEY
         # note that this could be shared across rules as an optimization
         self.license_expression_object = self.licensing.parse(UNKNOWN_LICENSE_KEY)
