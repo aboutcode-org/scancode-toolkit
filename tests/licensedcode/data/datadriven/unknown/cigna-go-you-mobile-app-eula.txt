@@ -1,0 +1,141 @@
+APPLE END USER LICENSE AGREEMENT
+This End User License Agreement (the “Agreement”) for the Cigna GO YOU Mobile Application (together with any
+updates, upgrades or patches, the “Application”) is a legal agreement between user (“You” or “Your”), and Cigna
+Corporate Services, LLC, its successors and/or assigns (“Cigna”). By accessing, downloading, copying or otherwise
+using the Application, You acknowledge that You have read this Agreement, understand it, and agree to be
+bound by its terms and conditions. If You do not agree to the terms and conditions of this Agreement, do not
+access, download, copy or use the Application. Cigna will not and does not grant You access to the Application
+unless You agree to the terms of this Agreement.
+In consideration of the promises and covenants described below, and other good and valuable consideration, You
+agree as follows:
+1.
+License Grant; Compliance with Terms of Use. The Application is licensed, not sold, and Cigna reserves all rights
+not expressly granted in this Agreement. Subject to the terms and conditions hereof, Cigna grants You a personal,
+nonexclusive, nontransferable, non-sublicenseable, limited license to download and use the Application on an iPhone or
+iPod touch that You own or control.
+2.
+License Restrictions. Except as specifically provided herein, You may not: (i) distribute or make the Application
+available over a network where it could be used by multiple devices at the same time; (ii) copy the Application; (iii) modify,
+adapt, translate, reverse engineer, make alterations, decompile, disassemble or make derivative works based on the
+Application, except as otherwise permitted by law; or (iv) rent, loan, sub-license, lease, distribute or attempt to grant other
+rights to the Application to third parties.
+3.
+Ownership. All of the content featured or displayed in or through the Application, including without limitation text,
+graphics, photographs, images, moving images, sound, and illustrations ("Content") and all trademarks, service marks
+and trade names included therein, are owned by Cigna, or its licensors, vendors, agents and/or its Content providers. All
+elements of the Application, including without limitation the general design and the Content, are protected by trade dress,
+copyright, moral rights, trademark and other laws relating to intellectual property rights. Any text that You include with any
+Content (“Messages”), are owned by You. All Content and Messages are subject to Cigna’s Terms of Use, as may be
+amended from time to time, and as incorporated herein by this reference (available on the platform where You download
+the Application and via the information link on the Application welcome screen). ALL RIGHTS NOT EXPRESSLY
+GRANTED HEREIN ARE RESERVED TO CIGNA.
+4.
+Your Warranty to Cigna. You represent and warrant that: (i) You have the authority to bind Yourself to this
+Agreement; (ii) Your use of the Application will be solely for purposes that are permitted by this Agreement; (iii) You are
+not located in a country that is subject to a U.S. government embargo, or that has been designated by the U.S.
+government as a “terrorist supporting” country; (iv) You are not listed on any U.S. government list of prohibited or
+restricted parties; and (v) Your use of the Application will comply with all local, state and federal laws, rules, and
+regulations (“Laws”).
+5.
+Privacy. By using the Application, you agree that Cigna and its agents, contractors, affiliates and promotional
+partners may collect and use certain information about you, your mobile device, your use of the Application and the
+Application’s performance in accordance with the Privacy Policy, as may be amended from time to time and incorporated
+herein by this reference (available on the platform where You download the Application and via the information link on the
+Application welcome screen).
+6.
+Apple Store. In the event that You download this Application from Apple, Inc. (“Apple”): (i) You agree that Apple
+and its subsidiaries are third party beneficiaries of this Agreement, and that, upon Your acceptance of this Agreement,
+Apple will have the right to (and will be deemed to have accepted the right) to enforce this Agreement against You as the
+third party beneficiary thereof; (ii) You acknowledge and agree that Cigna, and not Apple, are responsible for addressing
+any claims You or any third party may have in relation to the Application; and (iii) in the event of any failure of the
+Application to conform to any applicable warranty, as Your sole and exclusive remedy with Apple, You may notify Apple of
+such failure. Upon notification Apple will refund the purchase price for the Application (if any) to You.
+
+DWT 19339983v3 0062274-000284
+
+7.
+Maintenance and Support. Neither Cigna nor Apple have any obligation whatsoever to furnish any maintenance
+and support service with respect to the Application.
+8.
+Disclaimer of Warranties and Indemnification. Neither Cigna nor any of its parents, affiliates, franchisees,
+suppliers, agents, promotional partners, vendors or contractors, any of their successors, or any of their respective officers,
+directors or employees (collectively the “Cigna Parties”) will be liable for losses or damages arising from or in any way
+related to Your access to or use of the Application. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW,
+CIGNA AND THE CIGNA PARTIES ARE LICENSING THE APPLICATION “AS IS,” “AS AVAILABLE,” AND “WITH ALL
+FAULTS.” NEITHER CIGNA NOR THE CIGNA PARTIES MAKE ANY REPRESENTATIONS OR WARRANTIES ABOUT
+THE SUITABILITY, RELIABILITY, TIMELINESS, AND ACCURACY, FOR ANY PURPOSE, OF THE APPLICATION, THE
+OPERATION OF THE APPLICATION ALONE OR IN CONJUNCTION WITH ANY DEVICE, OR THE CONTENT
+CONTAINED HEREIN. CIGNA AND THE CIGNA PARTIES DISCLAIM ALL WARRANTIES, EITHER EXPRESS OR
+IMPLIED, REGARDING THE APPLICATION AND ITS OPERATION AND EXPRESSLY DISCLAIMS THE IMPLIED
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+9.
+Limitation of Liability. TO THE MAXIMUM EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL CIGNA
+OR THE CIGNA PARTIES BE LIABLE FOR ANY CONSEQUENTIAL, INDIRECT, INCIDENTAL, PUNITIVE, SPECIAL
+OR OTHER RELATED OR SIMILAR DAMAGES WHATSOEVER, INCLUDING WITHOUT LIMITATION, DAMAGES FOR
+LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, AND THE LIKE
+CONNECTED WITH THE USE OF OR INABILITY TO USE THE APPLICATION, AND FOR ANY CAUSE OF ACTION,
+INCLUDING CONTRACT, TORT (INCLUDING NEGLIGENCE) OR OTHERWISE, EVEN IF CIGNA OR THE CIGNA
+PARTIES HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. ANY DAMAGES ARISING UNDER THIS
+AGREEMENT OR THE USE OF THE APPLICATION THAT CIGNA OR THE CIGNA PARTIES IS REQUIRED TO PAY
+FOR ANY PURPOSE WHATSOEVER, INCLUDING WITHOUT LIMITATION, CONTRACT, TORT (INCLUDING
+NEGLIGENCE) OR OTHERWISE, SHALL BE LIMITED TO TWENTY FIVE DOLLARS ($25.00). SOME STATES DO
+NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES,
+SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU UNDER THE LAWS OF THOSE STATES. No action,
+regardless of form, whether in court or through arbitration, arising out of any transaction under this Agreement, may be
+brought by You more than one year after You have knowledge of the occurrence which gives rise to the cause of such
+action.
+10.
+Indemnity. You agree to indemnify and hold harmless Cigna, the Cigna Parties, and their affiliates, officers,
+directors, employees, consultants, agents and anyone providing information or software used in the Application from any
+and all claims arising from, related to, or incidental to Your use of the Application.
+11.
+Termination. This Agreement is effective until terminated. Cigna may immediately terminate this Agreement at
+any time at its sole discretion with or without notice to You. Additionally, Your rights under this Agreement will terminate
+automatically if You fail to comply with any term(s) of this Agreement. Upon termination, all legal rights and licenses
+granted to You hereunder shall terminate immediately and You shall cease all use of the Application and destroy all
+copies of the Application. All sections that may be reasonably interpreted to or are intended to survive this Agreement will
+survive this Agreement.
+12.
+Governing Law. This Agreement shall be governed by the laws of the Commonwealth of Pennsylvania in the
+United States, without giving effect to the Commonwealth of Pennsylvania’s choice of law principles. You irrevocably
+consent to the exclusive jurisdiction and venue of the state or federal courts in Philadelphia, Pennsylvania for all disputes
+arising out of or relating to this Agreement. If any action is brought to enforce, or arises out of, the Agreement or any
+term, clause, or provision hereof, the prevailing party shall be awarded its reasonable attorney’s fees together with
+expenses and costs incurred with such action.
+13.
+Acknowledgment of Understanding/Entire Agreement. You acknowledge that You have read this Agreement,
+understand it and agree to be bound by its terms and conditions. You also agree that this Agreement is the complete and
+exclusive statement of the Agreement between Cigna and You and supersedes all proposals, representations or prior
+agreements, oral or written, and any other communications between Cigna and You relating to the subject matter of this
+Agreement.
+
+2
+DWT 19339983v3 0062274-000284
+
+14.
+Severability. You agree that the terms and conditions stated in this Agreement are severable. If any paragraph,
+provision, or clause in this Agreement shall be found or be held to be invalid or unenforceable in any jurisdiction, the
+remainder of this Agreement shall be valid and enforceable.
+15.
+Assignment and Transfer. Cigna may assign, transfer, sell, rent or lend this Agreement, in whole or in part, at any
+time without notice to You. You may not assign this Agreement or any part of it or any rights to use the Application, in
+whole or in part, either temporarily or permanently, to any other party. Any attempt to do so is void.
+16.
+Additional Assistance. If You have any questions, complaints, or claims with respect to the Application or this
+Agreement, You may contact us at Cigna, 900 Cottage Grove Road, B4MKT, Bloomfield, CT 06152 or by sending an
+email to LetUsHelpU@Cigna.com.
+17.
+Amendment of this Agreement. CIGNA RESERVES THE RIGHT TO MODIFY OR AMEND THIS AGREEMENT
+FROM TIME TO TIME WITHOUT NOTICE. YOUR CONTINUED USE OF THE APPLICATION FOLLOWING THE
+POSTING OF CHANGES TO THE AGREEMENT WILL MEAN YOU ACCEPT THOSE CHANGES.
+
+IF YOU ACCEPT AND AGREE TO THESE TERMS AND CONDITIONS YOU MAY USE AND DOWNLOAD THE
+APPLICATION.
+
+IF YOU DO NOT ACCEPT AND AGREE TO THESE TERMS AND CONDITIONS DO NOT DOWNLOAD OR USE THE
+APPLICATION.
+
+3
+DWT 19339983v3 0062274-000284
+
+

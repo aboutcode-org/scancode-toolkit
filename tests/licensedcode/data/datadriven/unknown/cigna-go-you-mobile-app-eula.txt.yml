@@ -1,0 +1,9 @@
+license_expressions:
+  - proprietary-license
+  - proprietary-license
+  - unknown-license-reference
+  - unknown-license-reference
+  - warranty-disclaimer
+  - warranty-disclaimer
+  - warranty-disclaimer
+notes: this is using unknwown license detection
