@@ -39,6 +39,7 @@ from licensedcode.tokenize import key_phrase_tokenizer
 from licensedcode.tokenize import KEY_PHRASE_OPEN
 from licensedcode.tokenize import KEY_PHRASE_CLOSE
 from textcode.analysis import numbered_text_lines
+import hashlib
 
 """
 Reference License and license Rule structures persisted as a combo of a YAML
@@ -1215,7 +1216,8 @@ class BasicRule:
         metadata=dict(
             help='Internal field with the text of this rule for special cases '
             'where the rule is not backed by a file, such as with SPDX license '
-            'identifier expressions dynamically generated rules or testing convenience')
+            'identifier expressions dynamically generated rules or for testing '
+            'convenience')
     )
 
     key_phrase_spans = attr.ib(
@@ -1336,13 +1338,13 @@ class BasicRule:
         if self.license_expression:
             try:
                 expression = self.licensing.parse(self.license_expression)
-            except:
+            except Exception as e:
                 exp = self.license_expression
                 trace = traceback.format_exc()
                 raise InvalidRule(
-                    f'Unable to parse rule License expression: {exp!r} '
+                    f'Unable to parse Rule license expression: {exp!r} '
                     f'for: file://{self.data_file}\n{trace}'
-                )
+                ) from e
 
             if expression is None:
                 raise InvalidRule(
@@ -1825,9 +1827,8 @@ class Rule(BasicRule):
         - false positive or SPDX rules have 100 relevance.
         - relevance is computed based on the rule length
         """
-        # false positive rules with no license and their matches are never returned
-        if isinstance(self, SpdxRule) or self.is_false_positive:
-            # use the default max relevance of 100
+
+        if self.is_false_positive:
             self.relevance = 100
             self.has_stored_relevance = True
             return
@@ -2023,24 +2024,11 @@ class SpdxRule(Rule):
 
     def __attrs_post_init__(self, *args, **kwargs):
         self.identifier = f'spdx-license-identifier: {self.license_expression}'
-        expression = None
-        try:
-            expression = self.licensing.parse(self.license_expression)
-        except:
-            raise InvalidRule(
-                'Unable to parse License rule expression: '
-                f'{self.license_expression!r} for: SPDX rule: '
-                f'{self.stored_text}\n' + traceback.format_exc()
-            )
+        self.setup()
 
-        if expression is None:
-            raise InvalidRule(
-                'Unable to parse License rule expression: '
-                f'{self.license_expression!r} for: {self.data_file!r}'
-            )
+        if not self.license_expression:
+            raise InvalidRule(f'Empty license expression: {self.identifier}')
 
-        self.license_expression = expression.render()
-        self.license_expression_object = expression
         self.is_license_tag = True
         self.is_small = False
         self.relevance = 100
@@ -2053,34 +2041,47 @@ class SpdxRule(Rule):
         raise NotImplementedError
 
 
+UNKNOWN_LICENSE_KEY = 'unknown'
+
+
 @attr.s(slots=True, repr=False)
 class UnknownRule(Rule):
     """
-    A specialized rule object that is used for the special case of unknown license
-    detection.
-    Since we may have an infinite possible number of unknown licenses and these
+    A specialized rule object that is used for the special case of unknown
+    license detection.
+
+    Since we may have an infinite number of possible unknown licenses and these
     are not backed by a traditional rule text file, we use this class to handle
-    the specifics of these how rules are built at matching time: one rule
-    is created for each detected unknown license.
+    the specifics of these how such rules are built at matching time: one new
+    synthetic rule is created for each detected unknown license match.
     """
 
     def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = f'unknown-license-identifier: ' 
-        self.license_expression = 'unknown-license'
-        expression = self.licensing.parse(self.license_expression)
-
-        self.is_unknown = True
-        self.license_expression_object = expression
+        # We craft a UNIQUE identifier for the matched content
+        self.identifier = f'unknown-license-detection:{self.compute_unique_id()}'
+        
+        self.license_expression = UNKNOWN_LICENSE_KEY
+        # note that this could be shared across rules as an optimization
+        self.license_expression_object = self.licensing.parse(UNKNOWN_LICENSE_KEY)
         self.is_license_notice = True
-        self.is_small = False
-        self.relevance = 100
-        self.has_stored_relevance = True
+        self.notes = 'Unknown license based on a composite of license words.'
+        self.setup()
+
+        # called only for it's side effects
+        self.tokens()
 
     def load(self):
         raise NotImplementedError
 
     def dump(self):
         raise NotImplementedError
+
+    def compute_unique_id(self):
+        """
+        Return a a unique id string based on this rule content. (Today this is
+        a MD5 of the text, but that's an implementation detail)
+        """
+        return hashlib.md5(self.stored_text.encode('utf-8')).hexdigest()
 
 
 def _print_rule_stats():
@@ -2285,6 +2286,7 @@ def get_key_phrase_spans(text):
     >>> check_exception('{{}}')
     >>> check_exception('{{This is')
     >>> check_exception('{{This is{{')
+    >>> check_exception('{{This is{{ }}')
     >>> check_exception('{{{{This}}}}')
     >>> check_exception('}}This {{is}}')
     >>> check_exception('This }} {{is}}')
@@ -2300,6 +2302,8 @@ def get_key_phrase_spans(text):
     key_phrase = []
     for token in key_phrase_tokenizer(text):
         if token == KEY_PHRASE_OPEN:
+            if in_key_phrase:
+                raise InvalidRule('Invalid rule with nested key phrase {{ {{ braces', text)
             in_key_phrase = True
 
         elif token == KEY_PHRASE_CLOSE:
