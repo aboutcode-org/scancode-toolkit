@@ -6,9 +6,9 @@
 
     <license>
 
-      MPL 1.1
+      {{MPL 1.1
 
-      http://www.mozilla.org/MPL/MPL-1.1.html
+      http://www.mozilla.org/MPL/MPL-1.1.html}}
 
     </license>
 
@@ -20,9 +20,9 @@
 
     <license>
 
-      LGPL 2.1
+      {{LGPL 2.1
 
-      https://www.gnu.org/licenses/lgpl-2.1.html
+      https://www.gnu.org/licenses/lgpl-2.1.html}}
 
     </license>
 

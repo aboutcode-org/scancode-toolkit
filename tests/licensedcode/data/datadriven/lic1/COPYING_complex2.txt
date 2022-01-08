@@ -1,0 +1,14 @@
+Except where noted otherwise in the file itself, the source code for all
+Pacemaker programs is licensed under version 2 or later of the GNU General
+Public License (GPLv2+), its headers and libraries under version 2.1 or
+later of the less restrictive GNU Lesser General Public License (LGPLv2.1+),
+its documentation under version 4.0 or later of the Creative Commons
+Attribution-ShareAlike International Public License (CC-BY-SA v4.0+),
+and its init scripts under the Revised BSD license.
+
+The text of these licenses are provided in the "licenses" subdirectory.
+
+If you find any deviations from this policy, or wish to inquire about alternate
+licensing arrangements, please e-mail the developers@ClusterLabs.org mailing
+list. Licensing issues are further discussed on the ClusterLabs wiki
+(at https://wiki.clusterlabs.org/wiki/License).

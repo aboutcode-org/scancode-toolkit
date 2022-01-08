@@ -1,7 +1,7 @@
 license_expressions:
   - apache-2.0
   - apache-2.0
-  - unknown-license-reference
+  - apache-2.0 AND other-permissive
   - apache-2.0
   - hs-regexp
   - bsd-simplified-darwin

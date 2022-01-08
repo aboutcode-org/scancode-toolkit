@@ -1,7 +1,7 @@
-library is licensed under the terms of the GNU General
+library is {{licensed under the terms of the GNU General
 Public License.
 
-Linking this library statically or dynamically with other modules is
+Linking this library statically or dynamically }} with other modules is
 making a combined work based on this library.  Thus, the terms and
 conditions of the GNU General Public License cover the whole
 combination.

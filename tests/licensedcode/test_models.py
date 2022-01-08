@@ -271,7 +271,7 @@ class TestRule(FileBasedTesting):
             )
         except Exception as e:
             ex = str(e)
-            assert 'Unable to parse License rule expression: ' in ex
+            assert 'Unable to parse Rule license expression:' in ex
             assert 'ExpressionError: AND requires two or more licenses as in: MIT AND BSD' in ex
 
     def test_template_rule_is_loaded_correctly(self):

@@ -35,7 +35,7 @@ class TestConda(PackageTester):
         test_file = self.get_test_loc('conda/meta.yaml')
         package = conda.Condayml.recognize(test_file)
         expected_loc = self.get_test_loc('conda/meta.yaml.expected.json')
-        self.check_packages(package, expected_loc, regen=True)
+        self.check_packages(package, expected_loc, regen=False)
 
     def test_root_dir(self):
         test_file = self.get_test_loc('conda/requests-kerberos-0.8.0-py35_0.tar.bz2-extract/info/recipe.tar-extract/recipe/meta.yaml')
