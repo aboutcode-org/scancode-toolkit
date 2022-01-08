@@ -19,7 +19,7 @@ from licensedcode.spans import Span
 Matching strategy for exact matching using Aho-Corasick automatons.
 """
 
-# Set to False to enable debug tracing
+# Set to True to enable debug tracing
 TRACE = False
 TRACE_FRAG = False
 TRACE_DEEP = False
@@ -155,9 +155,9 @@ def get_matched_positions(tokens, qbegin, automaton):
 
 def get_matches(tokens, qbegin, automaton):
     """
-    Yield tuples of automaton matches positions as (match end, match value) from
-    matching `tokens` sequence of token ids starting at the `qbegin` absolute
-    query start position position using the `automaton`.
+    Yield tuples of automaton matches as (match end, match value) from matching
+    the ``tokens`` sequence of token ids starting at the `qbegin` absolute query
+    start position position using the `automaton`.
     """
     # iterate over matched strings: the matched value is (rule id, index start
     # pos, index end pos)

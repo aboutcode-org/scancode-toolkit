@@ -147,7 +147,7 @@ class LicenseTest(object):
         ]
 
 
-def build_tests(test_dir, clazz, regen=False):
+def build_tests(test_dir, clazz, unknown_detection=False, regen=False):
     """
     Dynamically build license_test methods from a sequence of LicenseTest and
     attach these method to the clazz license test class.
@@ -162,7 +162,11 @@ def build_tests(test_dir, clazz, regen=False):
         test_file = license_test.test_file
 
         # closure on the license_test params
-        test_method = make_test(license_test, regen=regen)
+        test_method = make_test(
+            license_test,
+            unknown_detection=unknown_detection,
+            regen=regen,
+        )
 
         # avoid duplicated test method
         if hasattr(clazz, test_name):
@@ -175,7 +179,7 @@ def build_tests(test_dir, clazz, regen=False):
         setattr(clazz, test_name, test_method)
 
 
-def make_test(license_test, regen=False):
+def make_test(license_test, unknown_detection=False, regen=False):
     """
     Build and return a test function closing on tests arguments for a
     license_test LicenseTest object.
@@ -193,7 +197,11 @@ def make_test(license_test, regen=False):
 
     def closure_test_function(*args, **kwargs):
         idx = cache.get_index()
-        matches = idx.match(location=test_file, min_score=0)
+        matches = idx.match(
+            location=test_file,
+            min_score=0,
+            unknown_licenses=unknown_detection,
+        )
         if not matches:
             matches = []
 
@@ -210,7 +218,11 @@ def make_test(license_test, regen=False):
             # On failure, we compare against more result data to get additional
             # failure details, including the test_file and full match details
             expected = expected_expressions + ['======================', '']
-            results_failure_trace = detected_expressions[:] + ['======================', '']
+            results_failure_trace = (
+                detected_expressions[:]
+                +['======================', '']
+            )
+
             for match in matches:
                 qtext, itext = get_texts(match)
                 rule_text_file = match.rule.text_file

@@ -1,4 +1,5 @@
 key: generic-cla
+is_generic: yes
 short_name: Generic CLA
 name: Prior Generic Contributor License Agreement
 category: Unstated License

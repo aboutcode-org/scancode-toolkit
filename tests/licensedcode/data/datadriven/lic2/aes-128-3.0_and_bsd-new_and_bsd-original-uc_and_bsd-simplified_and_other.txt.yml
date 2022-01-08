@@ -49,6 +49,7 @@ license_expressions:
   - bsd-new
   - isc
   - json
+  - mit-old-style-no-advert
   - warranty-disclaimer
   - ijg
   - x11-tiff
@@ -71,6 +72,7 @@ license_expressions:
   - bzip2-libbzip-2010
   - bsd-new
   - sunpro
+  - sun-rpc
   - bsd-new
   - unicode-mappings
   - netcdf

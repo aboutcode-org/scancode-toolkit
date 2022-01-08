@@ -131,7 +131,7 @@ class TestLicense(FileBasedTesting):
             'bsd-ack-carrot2': [
                 'No short name',
                 'No name',
-                'No category',
+                'No category: Use "Unstated License" if not known.',
                 'No owner: Use "Unspecified" if not known.',
                 'No SPDX license key'],
             'gpl-1.0': [
@@ -271,7 +271,7 @@ class TestRule(FileBasedTesting):
             )
         except Exception as e:
             ex = str(e)
-            assert 'Unable to parse License rule expression: ' in ex
+            assert 'Unable to parse Rule license expression:' in ex
             assert 'ExpressionError: AND requires two or more licenses as in: MIT AND BSD' in ex
 
     def test_template_rule_is_loaded_correctly(self):

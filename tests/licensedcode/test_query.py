@@ -705,7 +705,6 @@ class TestQueryWithMultipleRuns(IndexTesting):
             {'end': 5, 'start': 0, 'tokens': '1 80 0 256 1568 1953'},
             {'end': 12, 'start': 6, 'tokens': '406 1151 1 429 368 634 8'},
             {'end': 17, 'start': 13, 'tokens': '1955 724 2 932 234'},
-            {'end': 20, 'start': 18, 'tokens': '694 634 110'},
         ]
         assert result == expected
 

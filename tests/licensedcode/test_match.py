@@ -1405,7 +1405,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             match,
             query_string=querys,
             idx=idx,
-            highlight_not_matched=u'%s',
+            highlight_not_matched='{}',
         ))
         assert origin_matched_text == expected_origin_text
 
@@ -1450,7 +1450,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             IN NO EVENT SHALL THE <br>best</br> CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
         matched_text = u''.join(get_full_matched_text(
-            match, query_string=querys, idx=idx, highlight_not_matched=u'<br>%s</br>', _usecache=False))
+            match, query_string=querys, idx=idx, highlight_not_matched='<br>{}</br>', _usecache=False))
         assert matched_text == expected
 
         # test again using whole_lines
@@ -1459,7 +1459,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             IN NO EVENT SHALL THE best CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. chabada DAMAGE 12 ABC\n"""
         matched_text = u''.join(get_full_matched_text(
-            match, query_string=querys, idx=idx, highlight_not_matched=u'%s', whole_lines=True))
+            match, query_string=querys, idx=idx, highlight_not_matched='{}', whole_lines=True))
         assert matched_text == expected
 
     def test_get_full_matched_text_does_not_munge_underscore(self):

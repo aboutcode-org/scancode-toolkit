@@ -1,0 +1,5 @@
+license_expression: (mpl-1.0 OR lgpl-2.0-plus OR gpl-1.0-plus) AND apache-2.0 AND apache-2.0
+    AND apache-2.0 AND apache-2.0 AND (bsd-new OR afl-2.1)
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE

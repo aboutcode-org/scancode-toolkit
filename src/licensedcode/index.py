@@ -28,10 +28,12 @@ from licensedcode import match_hash
 from licensedcode import match_seq
 from licensedcode import match_set
 from licensedcode import match_spdx_lid
+from licensedcode import match_unknown
 from licensedcode.dmp import match_blocks as match_blocks_dmp
 from licensedcode.seq import match_blocks as match_blocks_seq
 from licensedcode import query
 from licensedcode import tokenize
+from licensedcode.spans import Span
 
 """
 Main license index construction, query processing and matching entry points for
@@ -135,6 +137,7 @@ class LicenseIndex(object):
         'rules_automaton',
         'fragments_automaton',
         'starts_automaton',
+        'unknown_automaton',
 
         'regular_rids',
         'false_positive_rids',
@@ -199,6 +202,7 @@ class LicenseIndex(object):
         self.rules_automaton = match_aho.get_automaton()
         self.fragments_automaton = USE_AHO_FRAGMENTS and match_aho.get_automaton()
         self.starts_automaton = USE_RULE_STARTS and match_aho.get_automaton()
+        self.unknown_automaton = match_unknown.get_automaton()
 
         # disjunctive sets of rule ids: regular and false positive
 
@@ -358,12 +362,16 @@ class LicenseIndex(object):
             tids_by_rid_append(rule_token_ids)
             rule_token_ids_append = rule_token_ids.append
 
+            rule_tokens = []
+            rule_tokens_append = rule_tokens.append
+
             # A rule is weak if it does not contain at least one legalese word:
             # we consider all rules to be weak until proven otherwise below.
             # "weak" rules can only be matched with an automaton.
             is_weak = True
 
             for rts in rule.tokens():
+                rule_tokens_append(rts)
                 rtid = dictionary_get(rts)
                 if rtid is None:
                     # we have a never yet seen token, so we assign a new tokenid
@@ -376,7 +384,8 @@ class LicenseIndex(object):
 
                 rule_token_ids_append(rtid)
 
-            is_tiny = rule.length < TINY_RULE
+            rule_length = rule.length
+            is_tiny = rule_length < TINY_RULE
 
             # build hashes index and check for duplicates rule texts
             rule_hash = match_hash_index_hash(rule_token_ids)
@@ -407,6 +416,17 @@ class LicenseIndex(object):
                     rule.ends_with_license = True
                 if rule_token_ids[0] in license_tokens:
                     rule.starts_with_license = True
+
+            # populate unknown_automaton that only makes sense for rules that
+            # are also sequence matchable.
+            ####################
+            match_unknown.add_ngrams(
+                automaton=self.unknown_automaton,
+                tids=rule_token_ids,
+                tokens=rule_tokens,
+                len_legalese=len_legalese,
+                rule_length=rule_length,
+            )
 
             # Some rules that cannot be matched as a sequence are "weak" rules
             # or can require to be matched only as a continuous sequence of
@@ -443,7 +463,7 @@ class LicenseIndex(object):
                 ####################
                 if (USE_AHO_FRAGMENTS
                     and rule.minimum_coverage < 100
-                    and rule.length > ngram_len
+                    and rule_length > ngram_len
                 ):
                     all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=ngram_len)
                     all_ngrams_with_pos = tokenize.select_ngrams(all_ngrams, with_pos=True)
@@ -454,11 +474,11 @@ class LicenseIndex(object):
                 ####################
                 # use the start and end of this rule as a break point for query runs
                 ####################
-                if USE_RULE_STARTS and rule.length > min_len_starts:
+                if USE_RULE_STARTS and rule_length > min_len_starts:
                     starts_automaton_add_start(
                         tids=rule_token_ids[:len_starts],
                         rule_identifier=rule.identifier,
-                        rule_length=rule.length,
+                        rule_length=rule_length,
                     )
 
             ####################
@@ -495,18 +515,17 @@ class LicenseIndex(object):
         ########################################################################
         # Finalize index data structures
         ########################################################################
+        # Create the tid -> token string lookup structure.
+        ########################################################################
+        self.tokens_by_tid = tokens_by_tid = [
+            ts for ts, _tid in sorted(dictionary.items(), key=itemgetter(1))]
+        self.len_tokens = len_tokens = len(tokens_by_tid)
 
         # some tokens are made entirely of digits and these can create some
         # worst case behavior when there are long runs on these
         ########################################################################
         self.digit_only_tids = intbitset([
             i for i, s in enumerate(self.tokens_by_tid) if s.isdigit()])
-
-        # Create the tid -> token string lookup structure.
-        ########################################################################
-        self.tokens_by_tid = tokens_by_tid = [
-            ts for ts, _tid in sorted(dictionary.items(), key=itemgetter(1))]
-        self.len_tokens = len_tokens = len(tokens_by_tid)
 
         # Finalize automatons
         ########################################################################
@@ -515,6 +534,7 @@ class LicenseIndex(object):
             self.fragments_automaton.make_automaton()
         if USE_RULE_STARTS:
             match_aho.finalize_starts(self.starts_automaton)
+        self.unknown_automaton.make_automaton()
 
         ########################################################################
         # Do some sanity checks
@@ -621,7 +641,8 @@ class LicenseIndex(object):
 
     def get_exact_matches(self, query, deadline=sys.maxsize, **kwargs):
         """
-        Extract matching strategy using an automaton for multimatching at once.
+        Exact matching strategy using an automaton for multimatching many rules
+        at once.
         """
         wqr = query.whole_query_run()
 
@@ -841,6 +862,7 @@ class LicenseIndex(object):
         as_expression=False,
         expression_symbols=None,
         approximate=True,
+        unknown_licenses=False,
         deadline=sys.maxsize,
         _skip_hash_match=False,
         **kwargs,
@@ -848,23 +870,26 @@ class LicenseIndex(object):
         """
         This is the main entry point to match licenses.
 
-        Return a sequence of LicenseMatch by matching the file at `location` or
-        the `query_string` string against this index. Only include matches with
-        scores greater or equal to `min_score`.
+        Return a sequence of LicenseMatch by matching the file at ``location`` or
+        the ``query_string`` string against this index. Only include matches with
+        scores greater or equal to ``min_score``.
 
-        If `as_expression` is True, treat the whole text as a single SPDX
+        If ``as_expression`` is True, treat the whole text as a single SPDX
         license expression and use only expression matching.
 
         Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol}
         if provided. Otherwise use the standard SPDX license symbols mapping.
 
-        If `approximate` is True, perform approximate matching as a last
+        If ``approximate`` is True, perform approximate matching as a last
         matching step. Otherwise, only do hash, exact and expression matching.
 
-        `deadline` is a time.time() value in seconds by which the processing
+        If ``unknown_licenses`` is True, perform unknown licenses matching after
+        all regular matching steps.
+
+        ``deadline`` is a time.time() value in seconds by which the processing
         should stop and return whatever was matched so far.
 
-        `_skip_hash_match` is used only for testing.
+        ``_skip_hash_match`` is used only for testing.
         """
         assert 0 <= min_score <= 100
 
@@ -891,6 +916,7 @@ class LicenseIndex(object):
             as_expression=as_expression,
             expression_symbols=expression_symbols,
             approximate=approximate,
+            unknown_licenses=unknown_licenses,
             deadline=deadline,
             _skip_hash_match=_skip_hash_match,
             **kwargs,
@@ -903,12 +929,13 @@ class LicenseIndex(object):
         as_expression=False,
         expression_symbols=None,
         approximate=True,
+        unknown_licenses=False,
         deadline=sys.maxsize,
         _skip_hash_match=False,
         **kwargs,
     ):
         """
-        Return a sequence of LicenseMatch by matching the `qry` Query against
+        Return a sequence of LicenseMatch by matching the ``qry`` Query against
         this index. See Index.match() for arguments documentation.
         """
 
@@ -995,6 +1022,53 @@ class LicenseIndex(object):
             # break if deadline has passed
             if time() > deadline:
                 break
+
+        # refining matches without filtering false positives
+        matches, _discarded = match.refine_matches(
+            matches=matches,
+            query=qry,
+            min_score=min_score,
+            filter_false_positive=False,
+            merge=True,
+        )
+
+        if unknown_licenses:
+            good_matches, weak_matches = match.split_weak_matches(matches)
+            # collect the positions that are "good matches" to exclude from
+            # matching for unknown_licenses. Create a Span to check for unknown
+            # based on this.
+            original_qspan = Span(0, len(qry.tokens) - 1)
+            good_qspans = (m.qspan for m in good_matches)
+            good_qspan = Span().union(*good_qspans)
+
+            unmatched_qspan = original_qspan.difference(good_qspan)
+
+            # for each subspan, run unknown license detection
+            unknown_matches = []
+            for unspan in unmatched_qspan.subspans():
+                unquery_run = query.QueryRun(
+                    query=qry,
+                    start=unspan.start,
+                    end=unspan.end,
+                )
+
+                unknown_match = match_unknown.match_unknowns(
+                    idx=self,
+                    query_run=unquery_run,
+                    automaton=self.unknown_automaton,
+                )
+
+                if unknown_match:
+                    unknown_matches.append(unknown_match)
+
+            unknown_matches = match.filter_invalid_contained_unknown_matches(
+                unknown_matches=unknown_matches,
+                good_matches=good_matches,
+            )
+
+            matches.extend(unknown_matches)
+            # reinject weak matches and let refine matches keep the bests
+            matches.extend(weak_matches)
 
         if not matches:
             return []

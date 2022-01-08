@@ -477,7 +477,7 @@ class TestPyPiSetupPy(PackageTester):
         test_file = self.get_test_loc('pypi/setup.py/arpy_setup.py')
         package = pypi.SetupPy.recognize(test_file)
         expected_loc = self.get_test_loc('pypi/setup.py/arpy_setup.py-expected.json')
-        self.check_packages(package, expected_loc, regen=True)
+        self.check_packages(package, expected_loc, regen=False)
 
     @expectedFailure
     def test_parse_setup_py_pluggy(self):
