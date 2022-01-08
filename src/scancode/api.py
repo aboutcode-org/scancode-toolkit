@@ -157,6 +157,7 @@ def get_licenses(
     include_text=False,
     license_text_diagnostics=False,
     license_url_template=SCANCODE_LICENSEDB_URL,
+    unknown_licenses=False,
     deadline=sys.maxsize,
     **kwargs,
 ):
@@ -178,6 +179,8 @@ def get_licenses(
     indicate the overall proportion of detected license text and license notice
     words in the file. This is used to determine if a file contains mostly
     licensing information.
+
+    If ``unknown_licenses`` is True, also detect unknown licenses.
     """
     from licensedcode import cache
     from licensedcode.spans import Span
@@ -188,7 +191,11 @@ def get_licenses(
     detected_expressions = []
 
     matches = idx.match(
-        location=location, min_score=min_score, deadline=deadline, **kwargs
+        location=location,
+        min_score=min_score,
+        deadline=deadline,
+        unknown_licenses=unknown_licenses,
+        **kwargs,
     )
 
     qspans = []

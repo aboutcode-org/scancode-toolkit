@@ -145,6 +145,7 @@ class LicenseScanner(ScanPlugin):
         license_text=False,
         license_text_diagnostics=False,
         license_url_template=SCANCODE_LICENSEDB_URL,
+        unknown_licenses=False,
         **kwargs
     ):
 
@@ -153,7 +154,8 @@ class LicenseScanner(ScanPlugin):
             min_score=license_score,
             include_text=license_text,
             license_text_diagnostics=license_text_diagnostics,
-            license_url_template=license_url_template
+            license_url_template=license_url_template,
+            unknown_licenses=unknown_licenses,
         )
 
     def process_codebase(self, codebase, unknown_licenses, **kwargs):
