@@ -15,11 +15,12 @@ import attr
 import pytest
 import saneyaml
 
-import cluecode.copyrights
 from commoncode.testcase import FileDrivenTesting
 from commoncode.testcase import get_test_file_pairs
 from commoncode.text import python_safe_name
 
+from cluecode.copyrights import detect_copyrights
+from cluecode.copyrights import Detection
 
 """
 Data-driven Copyright test utilities.
@@ -73,7 +74,10 @@ class CopyrightTest(object):
                             setattr(self, key, value)
             except:
                 import traceback
-                msg = 'file://' + self.data_file + '\n' + repr(self) + '\n' + traceback.format_exc()
+                msg = (
+                    f'file://{self.data_file}\n'
+                    f'{self!r}\n' + traceback.format_exc()
+                )
                 raise Exception(msg)
 
         # fix counts to be ints: saneyaml loads everything as string
@@ -90,14 +94,19 @@ class CopyrightTest(object):
         """
         Serialize self to an ordered mapping.
         """
-        filtered = [field for field in attr.fields(CopyrightTest)
-                    if '_file' in field.name]
+        filtered = [
+            field for field in attr.fields(CopyrightTest)
+            if '_file' in field.name
+        ]
+
         fields_filter = attr.filters.exclude(*filtered)
         data = attr.asdict(self, filter=fields_filter, dict_factory=dict)
+
         return dict([
             (key, value) for key, value in data.items()
             # do not dump false and empties
-            if value])
+            if value
+        ])
 
     def dumps(self):
         """
@@ -129,29 +138,6 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
         yield CopyrightTest(data_file, test_file)
 
 
-def copyright_detector(location):
-    """
-    Return lists of detected copyrights, authors and holders
-    in file at location.
-    """
-    copyrights = []
-    copyrights_append = copyrights.append
-    holders = []
-    holders_append = holders.append
-    authors = []
-    authors_append = authors.append
-
-    for dtype, value, _start, _end in cluecode.copyrights.detect_copyrights(location):
-        if dtype == 'copyrights':
-            copyrights_append(value)
-        elif dtype == 'holders':
-            holders_append(value)
-        elif dtype == 'authors':
-            authors_append(value)
-
-    return copyrights, holders, authors
-
-
 def as_sorted_mapping(counter):
     """
     Return a list of ordered mapping of {value:val, count:cnt} built from a
@@ -163,12 +149,25 @@ def as_sorted_mapping(counter):
         value, count = value_count
         return -count, value
 
-    summarized = [dict([('value', value), ('count', count)])
-                  for value, count in sorted(counter.items(), key=by_count_value)]
+    summarized = [
+        dict([('value', value), ('count', count)])
+        for value, count in sorted(counter.items(), key=by_count_value)
+    ]
+
     return summarized
 
 
-def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_dir, regen=False):
+def get_detections(test_file):
+    detections = detect_copyrights(test_file)
+    return Detection.split_values(detections)
+
+
+def make_copyright_test_functions(
+    test,
+    index,
+    test_data_dir=test_env.test_data_dir,
+    regen=False,
+):
     """
     Build and return a test function closing on tests arguments and the function
     name. Create only a single function for multiple tests (e.g. copyrights and
@@ -176,10 +175,10 @@ def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_
     """
     from summarycode.copyright_summary import summarize_copyrights
     from summarycode.copyright_summary import summarize_persons
-    from summarycode.copyright_summary import Text
 
     def closure_test_function(*args, **kwargs):
-        copyrights, holders, authors = copyright_detector(test_file)
+        detections = detect_copyrights(test_file)
+        copyrights, holders, authors = Detection.split_values(detections)
 
         holders_summary = []
         if 'holders_summary' in test.what:
@@ -220,12 +219,9 @@ def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_
 
     data_file = test.data_file
     test_file = test.test_file
-    what = test.what
 
     tfn = test_file.replace(test_data_dir, '').strip('\\/\\')
-    whats = '_'.join(what)
-    test_name = 'test_%(tfn)s_%(index)s' % locals()
-    test_name = python_safe_name(test_name)
+    test_name = python_safe_name(f'test_{tfn}_{index}')
     closure_test_function.__name__ = test_name
 
     if test.expected_failures:
@@ -234,7 +230,12 @@ def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_
     return closure_test_function, test_name
 
 
-def build_tests(copyright_tests, clazz, test_data_dir=test_env.test_data_dir, regen=False):
+def build_tests(
+    copyright_tests,
+    clazz,
+    test_data_dir=test_env.test_data_dir,
+    regen=False,
+):
     """
     Dynamically build test methods from a sequence of CopyrightTest and attach
     these method to the clazz test class.
@@ -245,6 +246,13 @@ def build_tests(copyright_tests, clazz, test_data_dir=test_env.test_data_dir, re
             actual_regen = False
         else:
             actual_regen = regen
-        method, name = make_copyright_test_functions(test, i, test_data_dir, actual_regen)
+
+        method, name = make_copyright_test_functions(
+            test=test,
+            index=i,
+            test_data_dir=test_data_dir,
+            regen=actual_regen,
+        )
+
         # attach that method to our test class
         setattr(clazz, name, method)

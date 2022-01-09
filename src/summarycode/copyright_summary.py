@@ -205,14 +205,14 @@ def summarize_copyrights(texts, _detector=CopyrightDetector()):
             # FIXME: redetect to strip year should not be needed!!
             statements_without_years = _detector.detect(
                 [(1, text)],
-                copyrights=True,
-                holders=False,
-                authors=False,
-                include_years=False,
+                include_copyrights=True,
+                include_holders=False,
+                include_authors=False,
+                include_copyright_years=False,
             )
 
             for detection in statements_without_years:
-                copyr = detection.value
+                copyr = detection.copyright
                 summary_texts.append(Text(copyr, copyr))
 
     counter = summarize(summary_texts)

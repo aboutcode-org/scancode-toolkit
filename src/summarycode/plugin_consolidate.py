@@ -23,7 +23,6 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from summarycode import copyright_summary
 
-
 # Tracing flags
 TRACE = False
 
@@ -64,10 +63,12 @@ class Consolidation(object):
     resources = attr.ib(default=attr.Factory(list))
 
     def to_dict(self, **kwargs):
+
         def dict_fields(attr, value):
-            if attr.name in ('resources', ):
+            if attr.name in ('resources',):
                 return False
             return True
+
         license_expressions_to_combine = []
         if self.core_license_expression:
             license_expressions_to_combine.append(self.core_license_expression)
@@ -88,7 +89,7 @@ class Consolidation(object):
 @attr.s
 class ConsolidatedComponent(object):
     # TODO: have an attribute for key files (one that strongly determines origin)
-    type=attr.ib()
+    type = attr.ib()
     consolidation = attr.ib()
 
     def to_dict(self, **kwargs):
@@ -236,9 +237,17 @@ def get_consolidated_packages(codebase):
             package_holders = []
             if package_copyright:
                 numbered_lines = [(0, package_copyright)]
-                for _, holder, _, _ in CopyrightDetector().detect(numbered_lines,
-                        copyrights=False, holders=True, authors=False, include_years=False):
-                    package_holders.append(holder)
+
+                holder_detections = CopyrightDetector().detect(
+                    numbered_lines,
+                    include_copyrights=False,
+                    include_holders=True,
+                    include_authors=False,
+                )
+
+                for holder_detection in holder_detections:
+                    package_holders.append(holder_detection.holder)
+
             package_holders = process_holders(package_holders)
 
             discovered_license_expressions = []
@@ -403,7 +412,7 @@ def create_consolidated_components(resource, codebase, holder_key):
     resource.save(codebase)
     core_license_expression = combine_expressions(license_expressions)
     if core_license_expression is not None:
-        core_license_expression=str(core_license_expression)
+        core_license_expression = str(core_license_expression)
     c = Consolidation(
         core_license_expression=core_license_expression,
         core_holders=[holder],
