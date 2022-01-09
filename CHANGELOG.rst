@@ -33,7 +33,7 @@ Important API changes:
   authors, emails, and urls into separate tables like "licenses" and "copyrights".
 
 - The data structure for CSV output has been changed to rename the Resource
-  column to "path".
+  column to "path". The "copyright_holder" has been ranmed to "holder"
 
 
 Copyright detection:

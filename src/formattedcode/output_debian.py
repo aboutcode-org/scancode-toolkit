@@ -127,7 +127,7 @@ def build_copyright_field(scanned_file):
     if not holders:
         return
     # TODO: reinjects copyright year ranges like they show up in Debian
-    statements = [h['value'] for h in holders]
+    statements = [h['holder'] for h in holders]
     return '\n'.join(statements)
 
 

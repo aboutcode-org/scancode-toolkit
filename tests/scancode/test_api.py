@@ -73,13 +73,13 @@ class TestAPI(FileBasedTesting):
         cops = api.get_copyrights(test_file)
         expected = dict([
             ('copyrights', [
-                dict([(u'value', u'Copyright (c) 2010 Patrick McHardy'), (u'start_line', 2), (u'end_line', 2)])
+                dict([('copyright', 'Copyright (c) 2010 Patrick McHardy'), ('start_line', 2), ('end_line', 2)])
             ]),
             ('holders', [
-                dict([(u'value', u'Patrick McHardy'), (u'start_line', 2), (u'end_line', 2)])
+                dict([('holder', 'Patrick McHardy'), ('start_line', 2), ('end_line', 2)])
             ]),
             ('authors', [
-                dict([(u'value', u'Patrick McHardy <kaber@trash.net>'), (u'start_line', 11), (u'end_line', 11)])
+                dict([('author', 'Patrick McHardy <kaber@trash.net>'), ('start_line', 11), ('end_line', 11)])
             ]),
         ])
 

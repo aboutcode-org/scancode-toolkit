@@ -175,7 +175,7 @@ def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_
     holders together).
     """
     from summarycode.copyright_summary import summarize_copyrights
-    from summarycode.copyright_summary import summarize_holders
+    from summarycode.copyright_summary import summarize_persons
     from summarycode.copyright_summary import Text
 
     def closure_test_function(*args, **kwargs):
@@ -183,7 +183,7 @@ def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_
 
         holders_summary = []
         if 'holders_summary' in test.what:
-            holders_summary = as_sorted_mapping(summarize_holders(holders))
+            holders_summary = as_sorted_mapping(summarize_persons(holders))
 
         copyrights_summary = []
         if 'copyrights_summary' in test.what:
@@ -191,7 +191,7 @@ def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_
 
         authors_summary = []
         if 'authors_summary' in test.what:
-            authors_summary = as_sorted_mapping(summarize_holders(authors))
+            authors_summary = as_sorted_mapping(summarize_persons(authors))
 
         results = dict(
             copyrights=copyrights,

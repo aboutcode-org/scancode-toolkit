@@ -413,7 +413,7 @@
         "holders": [],
         "authors": [
           {
-            "value": "name' Isaac Z.",
+            "author": "name' Isaac Z.",
             "start_line": 16,
             "end_line": 17
           }
@@ -577,14 +577,14 @@
         "percentage_of_license_text": 42.86,
         "copyrights": [
           {
-            "value": "Copyright (c) 1995-2011 Mark Adler",
+            "copyright": "Copyright (c) 1995-2011 Mark Adler",
             "start_line": 2,
             "end_line": 2
           }
         ],
         "holders": [
           {
-            "value": "Mark Adler",
+            "holder": "Mark Adler",
             "start_line": 2,
             "end_line": 2
           }
@@ -669,14 +669,14 @@
         "percentage_of_license_text": 69.57,
         "copyrights": [
           {
-            "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
+            "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
             "start_line": 4,
             "end_line": 4
           }
         ],
         "holders": [
           {
-            "value": "Jean-loup Gailly and Mark Adler",
+            "holder": "Jean-loup Gailly and Mark Adler",
             "start_line": 4,
             "end_line": 4
           }
@@ -763,14 +763,14 @@
         "percentage_of_license_text": 20.34,
         "copyrights": [
           {
-            "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
+            "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly",
             "start_line": 2,
             "end_line": 2
           }
         ],
         "holders": [
           {
-            "value": "Jean-loup Gailly",
+            "holder": "Jean-loup Gailly",
             "start_line": 2,
             "end_line": 2
           }
@@ -933,14 +933,14 @@
         "percentage_of_license_text": 79.62,
         "copyrights": [
           {
-            "value": "Copyright 2005, JBoss Inc., and individual contributors",
+            "copyright": "Copyright 2005, JBoss Inc., and individual contributors",
             "start_line": 3,
             "end_line": 3
           }
         ],
         "holders": [
           {
-            "value": "JBoss Inc., and individual contributors",
+            "holder": "JBoss Inc., and individual contributors",
             "start_line": 3,
             "end_line": 3
           }
@@ -1025,21 +1025,21 @@
         "percentage_of_license_text": 19.72,
         "copyrights": [
           {
-            "value": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
+            "copyright": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
             "start_line": 3,
             "end_line": 3
           }
         ],
         "holders": [
           {
-            "value": "Brian Goetz and Tim Peierls",
+            "holder": "Brian Goetz and Tim Peierls",
             "start_line": 3,
             "end_line": 3
           }
         ],
         "authors": [
           {
-            "value": "Bela Ban",
+            "author": "Bela Ban",
             "start_line": 10,
             "end_line": 10
           }
@@ -1123,14 +1123,14 @@
         "percentage_of_license_text": 78.62,
         "copyrights": [
           {
-            "value": "Copyright 2010, Red Hat, Inc. and individual contributors",
+            "copyright": "Copyright 2010, Red Hat, Inc. and individual contributors",
             "start_line": 3,
             "end_line": 3
           }
         ],
         "holders": [
           {
-            "value": "Red Hat, Inc. and individual contributors",
+            "holder": "Red Hat, Inc. and individual contributors",
             "start_line": 3,
             "end_line": 3
           }
@@ -1176,7 +1176,7 @@
         "holders": [],
         "authors": [
           {
-            "value": "Bela Ban",
+            "author": "Bela Ban",
             "start_line": 4,
             "end_line": 4
           }
@@ -1221,7 +1221,7 @@
         "holders": [],
         "authors": [
           {
-            "value": "Bela Ban",
+            "author": "Bela Ban",
             "start_line": 3,
             "end_line": 3
           }
@@ -1305,14 +1305,14 @@
         "percentage_of_license_text": 78.12,
         "copyrights": [
           {
-            "value": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
+            "copyright": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
             "start_line": 3,
             "end_line": 3
           }
         ],
         "holders": [
           {
-            "value": "Red Hat Middleware LLC, and individual contributors",
+            "holder": "Red Hat Middleware LLC, and individual contributors",
             "start_line": 3,
             "end_line": 3
           }
@@ -1358,7 +1358,7 @@
         "holders": [],
         "authors": [
           {
-            "value": "Bela Ban",
+            "author": "Bela Ban",
             "start_line": 3,
             "end_line": 3
           }
@@ -1483,14 +1483,14 @@
         "percentage_of_license_text": 42.86,
         "copyrights": [
           {
-            "value": "Copyright (c) 1995-2011 Mark Adler",
+            "copyright": "Copyright (c) 1995-2011 Mark Adler",
             "start_line": 2,
             "end_line": 2
           }
         ],
         "holders": [
           {
-            "value": "Mark Adler",
+            "holder": "Mark Adler",
             "start_line": 2,
             "end_line": 2
           }
@@ -1577,14 +1577,14 @@
         "percentage_of_license_text": 40.0,
         "copyrights": [
           {
-            "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
+            "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
             "start_line": 2,
             "end_line": 2
           }
         ],
         "holders": [
           {
-            "value": "Jean-loup Gailly and Mark Adler",
+            "holder": "Jean-loup Gailly and Mark Adler",
             "start_line": 2,
             "end_line": 2
           }
@@ -1671,14 +1671,14 @@
         "percentage_of_license_text": 50.0,
         "copyrights": [
           {
-            "value": "Copyright (c) 1995-2012 Jean-loup Gailly",
+            "copyright": "Copyright (c) 1995-2012 Jean-loup Gailly",
             "start_line": 2,
             "end_line": 2
           }
         ],
         "holders": [
           {
-            "value": "Jean-loup Gailly",
+            "holder": "Jean-loup Gailly",
             "start_line": 2,
             "end_line": 2
           }
@@ -1763,14 +1763,14 @@
         "percentage_of_license_text": 84.21,
         "copyrights": [
           {
-            "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
+            "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
             "start_line": 4,
             "end_line": 4
           }
         ],
         "holders": [
           {
-            "value": "Jean-loup Gailly and Mark Adler",
+            "holder": "Jean-loup Gailly and Mark Adler",
             "start_line": 4,
             "end_line": 4
           }
@@ -1857,14 +1857,14 @@
         "percentage_of_license_text": 37.5,
         "copyrights": [
           {
-            "value": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
+            "copyright": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
             "start_line": 2,
             "end_line": 2
           }
         ],
         "holders": [
           {
-            "value": "Jean-loup Gailly",
+            "holder": "Jean-loup Gailly",
             "start_line": 2,
             "end_line": 2
           }
@@ -1951,14 +1951,14 @@
         "percentage_of_license_text": 20.34,
         "copyrights": [
           {
-            "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
+            "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly",
             "start_line": 2,
             "end_line": 2
           }
         ],
         "holders": [
           {
-            "value": "Jean-loup Gailly",
+            "holder": "Jean-loup Gailly",
             "start_line": 2,
             "end_line": 2
           }
@@ -2122,14 +2122,14 @@
         "percentage_of_license_text": 94.12,
         "copyrights": [
           {
-            "value": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
+            "copyright": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
             "start_line": 4,
             "end_line": 4
           }
         ],
         "holders": [
           {
-            "value": "Dmitriy Anisimkov",
+            "holder": "Dmitriy Anisimkov",
             "start_line": 4,
             "end_line": 4
           }
@@ -2212,14 +2212,14 @@
         "percentage_of_license_text": 0,
         "copyrights": [
           {
-            "value": "Copyright (c) 2004 by Henrik Ravn",
+            "copyright": "Copyright (c) 2004 by Henrik Ravn",
             "start_line": 14,
             "end_line": 14
           }
         ],
         "holders": [
           {
-            "value": "Henrik Ravn",
+            "holder": "Henrik Ravn",
             "start_line": 14,
             "end_line": 14
           }
@@ -2306,14 +2306,14 @@
         "percentage_of_license_text": 88.89,
         "copyrights": [
           {
-            "value": "Copyright Henrik Ravn 2004",
+            "copyright": "Copyright Henrik Ravn 2004",
             "start_line": 2,
             "end_line": 2
           }
         ],
         "holders": [
           {
-            "value": "Henrik Ravn",
+            "holder": "Henrik Ravn",
             "start_line": 2,
             "end_line": 2
           }
@@ -2437,21 +2437,21 @@
         "percentage_of_license_text": 50.0,
         "copyrights": [
           {
-            "value": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+            "copyright": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
             "start_line": 10,
             "end_line": 10
           }
         ],
         "holders": [
           {
-            "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+            "holder": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
             "start_line": 10,
             "end_line": 10
           }
         ],
         "authors": [
           {
-            "value": "Gilles Vollant",
+            "author": "Gilles Vollant",
             "start_line": 12,
             "end_line": 12
           }
@@ -2576,14 +2576,14 @@
         "percentage_of_license_text": 44.44,
         "copyrights": [
           {
-            "value": "Copyright (c) 1995-2008 Mark Adler",
+            "copyright": "Copyright (c) 1995-2008 Mark Adler",
             "start_line": 2,
             "end_line": 2
           }
         ],
         "holders": [
           {
-            "value": "Mark Adler",
+            "holder": "Mark Adler",
             "start_line": 2,
             "end_line": 2
           }
@@ -2670,14 +2670,14 @@
         "percentage_of_license_text": 50.0,
         "copyrights": [
           {
-            "value": "Copyright (c) 2003 Mark Adler",
+            "copyright": "Copyright (c) 2003 Mark Adler",
             "start_line": 2,
             "end_line": 2
           }
         ],
         "holders": [
           {
-            "value": "Mark Adler",
+            "holder": "Mark Adler",
             "start_line": 2,
             "end_line": 2
           }
@@ -2801,14 +2801,14 @@
         "percentage_of_license_text": 79.78,
         "copyrights": [
           {
-            "value": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
+            "copyright": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
             "start_line": 3,
             "end_line": 5
           }
         ],
         "holders": [
           {
-            "value": "Christian Michelsen Research AS Advanced Computing",
+            "holder": "Christian Michelsen Research AS Advanced Computing",
             "start_line": 4,
             "end_line": 5
           }

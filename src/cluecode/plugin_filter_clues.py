@@ -273,14 +273,14 @@ def filter_ignorable_clues(detections, rules_by_id):
     )
 
 
-def filter_values(attributes, ignorables, value_key='value', strip=''):
+def filter_values(attributes, ignorables, value_key='copyright', strip=''):
     """
     Yield filtered ``attributes`` based on line positions and values found in a
     ``ignorables`` Ignorables object. Use the ``value_key`` key for getting the
     value.
 
-    `attributes` is a list of mappings that contain a `start_line`, `end_line`
-    and a `value_key` key.
+    ``attributes`` is a list of mappings that contain a `start_line`, `end_line`
+    and a ``value_key`` key as one of: email, url, copyright, holder or author.
 
     Optionally strip the ``strip`` characters from the values.
     """
@@ -297,7 +297,7 @@ def filter_values(attributes, ignorables, value_key='value', strip=''):
 
         for ign in ignorables:
             if TRACE: logger_debug('   filter_values: ign:', ign)
-            if (ls in ign.lines_range or el in ign.lines_range)  and val in ign.value:
+            if (ls in ign.lines_range or el in ign.lines_range) and val in ign.value:
                 ignored = True
                 if TRACE: logger_debug('   filter_values: skipped')
                 break

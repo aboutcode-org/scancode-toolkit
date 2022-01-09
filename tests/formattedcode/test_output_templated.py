@@ -115,7 +115,7 @@ def normalize_quotes(s):
     return s.replace("'", '"')
 
 
-def assert_results_equal_expected_file(result_file, expected_file, regen=True):
+def assert_results_equal_expected_file(result_file, expected_file, regen=False):
     with open(result_file) as rf:
         results = rf.read()
     if regen:
@@ -136,7 +136,7 @@ def test_scan_custom_html_output_for_a_directory():
     result_file = test_env.get_temp_file('html')
     args = ['-clip', '--strip-root', '--custom-template', custom_template, '--custom-output', result_file, test_dir]
     run_scan_click(args)
-    assert_results_equal_expected_file(result_file, expected_file, regen=True)
+    assert_results_equal_expected_file(result_file, expected_file, regen=False)
 
 
 @pytest.mark.scanslow
@@ -147,7 +147,7 @@ def test_custom_format_with_custom_filename():
     result_file = test_env.get_temp_file('html')
     args = ['-clip', '--custom-template', custom_template, '--custom-output', result_file, test_dir]
     run_scan_click(args)
-    assert_results_equal_expected_file(result_file, expected_file, regen=True)
+    assert_results_equal_expected_file(result_file, expected_file, regen=False)
 
 
 @pytest.mark.scanslow

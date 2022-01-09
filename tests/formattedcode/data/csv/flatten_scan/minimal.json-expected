@@ -40,7 +40,7 @@
     },
     {
         "path": "srp/srp_lib.c",
-        "copyright_holder": "The OpenSSL Project",
+        "holder": "The OpenSSL Project",
         "start_line": 2,
         "end_line": 2
     },
@@ -75,7 +75,7 @@
     },
     {
         "path": "srp/srp_vfy.c",
-        "copyright_holder": "The OpenSSL Project",
+        "holder": "The OpenSSL Project",
         "start_line": 2,
         "end_line": 2
     }

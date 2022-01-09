@@ -335,21 +335,21 @@
       "percentage_of_license_text": 4.82,
       "copyrights": [
         {
-          "value": "Copyright (c) 1993 The Regents of the University of California",
+          "copyright": "Copyright (c) 1993 The Regents of the University of California",
           "start_line": 22,
           "end_line": 22
         }
       ],
       "holders": [
         {
-          "value": "The Regents of the University of California",
+          "holder": "The Regents of the University of California",
           "start_line": 22,
           "end_line": 22
         }
       ],
       "authors": [
         {
-          "value": "the University of California, Berkeley and its contributors",
+          "author": "the University of California, Berkeley and its contributors",
           "start_line": 35,
           "end_line": 36
         }
@@ -502,14 +502,14 @@
       "percentage_of_license_text": 19.01,
       "copyrights": [
         {
-          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
+          "copyright": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
           "start_line": 3,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jouni Malinen",
+          "holder": "Jouni Malinen",
           "start_line": 3,
           "end_line": 3
         }

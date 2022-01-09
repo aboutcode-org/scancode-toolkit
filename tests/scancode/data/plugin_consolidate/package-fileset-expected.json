@@ -272,14 +272,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -353,14 +353,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -434,14 +434,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
