@@ -3,4 +3,5 @@ short_name: Unpublished Source License
 name: Unpublished Source License
 category: Commercial
 owner: Unspecified
+is_generic: yes
 spdx_license_key: LicenseRef-scancode-unpublished-source

@@ -154,9 +154,7 @@ def generate_output(results, version, template):
 
     LICENSES = 'licenses'
     COPYRIGHTS = 'copyrights'
-    PACKAGES = 'packages'
-    URLS = 'urls'
-    EMAILS = 'emails'
+    PACKAGES = 'package_manifests'
 
     # Create a flattened data dict keyed by path
     for scanned_file in results:
@@ -169,7 +167,7 @@ def generate_output(results, version, template):
                     'start': entry['start_line'],
                     'end': entry['end_line'],
                     'what': 'copyright',
-                    'value': entry['value'],
+                    'value': entry['copyright'],
                 })
         if LICENSES in scanned_file:
             for entry in scanned_file[LICENSES]:
@@ -197,7 +195,7 @@ def generate_output(results, version, template):
         # denormalizing the list here??
         converted_infos[path] = {}
         for name, value in scanned_file.items():
-            if name in (LICENSES, PACKAGES, COPYRIGHTS, EMAILS, URLS):
+            if name in (LICENSES, PACKAGES, COPYRIGHTS):
                 continue
             converted_infos[path][name] = value
 
@@ -209,7 +207,7 @@ def generate_output(results, version, template):
     files = {
         'license_copyright': converted,
         'infos': converted_infos,
-        'packages': converted_packages
+        'package_manifests': converted_packages
     }
 
     return template.generate(files=files, licenses=licenses, version=version)

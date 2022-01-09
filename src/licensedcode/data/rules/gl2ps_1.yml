@@ -1,0 +1,6 @@
+license_expression: gl2ps
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 2003, Christophe Geuzaine
+ignorable_holders:
+    - Christophe Geuzaine

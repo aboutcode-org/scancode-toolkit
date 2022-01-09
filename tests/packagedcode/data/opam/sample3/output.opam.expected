@@ -1,90 +1,92 @@
-{
-  "type": "opam",
-  "namespace": null,
-  "name": null,
-  "version": null,
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Ocaml",
-  "description": "Interactive theorem prover based on lambda-tree syntax",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Andrew Gacek",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Yuting Wang",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Kaustuv Chaudhuri",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "maintainer",
-      "name": null,
-      "email": "kaustuv@chaudhuri.info",
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": "http://abella-prover.org",
-  "download_url": "https://codeload.github.com/abella-prover/abella/tar.gz/v2.0.2",
-  "size": null,
-  "sha1": null,
-  "md5": "d7d94e62e9c0a0dbeeded9fa0104e18f",
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "gpl-3.0",
-  "declared_license": "GPL-3.0-only",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:opam/ocaml",
-      "requirement": ">= 4.01.0",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/ocamlfind",
-      "requirement": "",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/ocamlbuild",
-      "requirement": "build",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": null,
-  "repository_homepage_url": null,
-  "repository_download_url": null,
-  "api_data_url": null
-}
+[  
+  {
+    "type": "opam",
+    "namespace": null,
+    "name": null,
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ocaml",
+    "description": "Interactive theorem prover based on lambda-tree syntax",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Andrew Gacek",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Yuting Wang",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Kaustuv Chaudhuri",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": null,
+        "email": "kaustuv@chaudhuri.info",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "http://abella-prover.org",
+    "download_url": "https://codeload.github.com/abella-prover/abella/tar.gz/v2.0.2",
+    "size": null,
+    "sha1": null,
+    "md5": "d7d94e62e9c0a0dbeeded9fa0104e18f",
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "gpl-3.0",
+    "declared_license": "GPL-3.0-only",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:opam/ocaml",
+        "requirement": ">= 4.01.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/ocamlfind",
+        "requirement": "",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/ocamlbuild",
+        "requirement": "build",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": null,
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

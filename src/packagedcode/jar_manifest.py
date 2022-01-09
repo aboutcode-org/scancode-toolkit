@@ -14,7 +14,7 @@ import attr
 from commoncode.fileutils import as_posixpath
 from packagedcode.utils import normalize_vcs_url
 from packagedcode.maven import parse_scm_connection
-from packagedcode.models import Package
+from packagedcode import models
 
 
 """
@@ -28,18 +28,12 @@ See https://github.com/shevek/jdiagnostics/blob/master/src/main/java/org/anarres
 
 
 @attr.s()
-class JavaArchive(Package):
-    metafiles = ('META-INF/MANIFEST.MF',)
-    extensions = ('.jar', '.war', '.ear')
+class JavaArchive(models.Package):
+
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip',)
     default_type = 'jar'
     default_primary_language = 'Java'
-
-    @classmethod
-    def recognize(cls, location):
-        if is_manifest(location):
-            yield parse_manifest(location)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -50,11 +44,29 @@ class JavaArchive(Package):
             return manifest_resource
 
 
-def is_manifest(location):
-    """
-    Return Trye if the file at location is a Manifest.
-    """
-    return as_posixpath(location).lower().endswith('meta-inf/manifest.mf')
+@attr.s()
+class IvyJar(JavaArchive, models.PackageManifest):
+    file_patterns = ('ivy.xml',)
+    default_type = 'ivy'
+    default_primary_language = 'Java'
+
+
+@attr.s()
+class JavaManifest(JavaArchive, models.PackageManifest):
+    file_patterns = ('META-INF/MANIFEST.MF',)
+    extensions = ('.jar', '.war', '.ear')
+
+    @classmethod
+    def get_manifest_data(cls, location):
+        if cls.is_manifest(location):
+            yield parse_manifest(location)
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return Trye if the file at location is a Manifest.
+        """
+        return as_posixpath(location).lower().endswith('meta-inf/manifest.mf')
 
 
 def parse_manifest(location):

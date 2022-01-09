@@ -1,0 +1,4 @@
+license_expression: mit OR unlicense
+is_license_text: yes
+ignorable_urls:
+    - http://www.unlicense.org/

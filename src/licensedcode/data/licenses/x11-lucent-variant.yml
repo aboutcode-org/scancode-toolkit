@@ -1,0 +1,7 @@
+key: x11-lucent-variant
+short_name: X11-Style (Lucent-variant)
+name: X11-Style (Lucent-variant)
+category: Permissive
+owner: Alcatel-Lucent
+homepage_url: http://git.ghostscript.com/?p=ghostpdl.git;a=blob;f=devices/gdevifno.c;h=3a34cc1942d4a858a24d9b982907daf52a0c4c67;hb=HEAD
+spdx_license_key: LicenseRef-scancode-x11-lucent-variant

@@ -1,0 +1,12 @@
+key: coil-1.0
+short_name: COIL-1.0
+name: Copyfree Open Innovation License 1.0
+category: Permissive
+owner: coil.apotheon.org
+homepage_url: https://coil.apotheon.org/about/
+spdx_license_key: COIL-1.0
+text_urls:
+    - https://coil.apotheon.org/plaintext/01.0.txt
+faq_url: https://coil.apotheon.org/notice/
+other_urls:
+    - https://github.com/spdx/license-list-XML/blob/12ac54f8ddead3f590c6877eef6650873c6de6fc/test/simpleTestForGenerator/COIL-1.0.txt

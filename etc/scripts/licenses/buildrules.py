@@ -143,14 +143,22 @@ def rule_exists(text):
         return match.rule.identifier
 
 
-def all_rule_tokens():
+def all_rule_by_tokens():
     """
-    Return a set of tuples of tokens, one corresponding to every existing and
-    added rules. Used to avoid duplicates.
+    Return a mapping of {tuples of tokens: rule id}, with one item for each
+    existing and added rules. Used to avoid duplicates.
     """
-    rule_tokens = set()
+    rule_tokens = {}
     for rule in models.get_rules():
-        rule_tokens.add(tuple(rule.tokens()))
+        try:
+            rule_tokens[tuple(rule.tokens())] = rule.identifier
+        except Exception as e:
+            df=('  file://' + rule.data_file)
+            tf=('  file://' + rule.text_file)
+            raise Exception(
+                f'Failed to to get tokens from rule:: {rule.identifier}\n'
+                f'{df}\n{tf}'
+            ) from e
     return rule_tokens
 
 
@@ -185,7 +193,7 @@ def cli(licenses_file):
     """
 
     rules_data = load_data(licenses_file)
-    rules_tokens = all_rule_tokens()
+    rule_by_tokens = all_rule_by_tokens()
 
     licenses_by_key = cache.get_licenses_db()
     skinny_rules = []
@@ -205,10 +213,6 @@ def cli(licenses_file):
 
     print()
     for rule in skinny_rules:
-        existing = rule_exists(rule.text())
-        if existing:
-            print('Skipping existing rule:', existing, 'with text:\n', rule.text()[:50].strip(), '...')
-            continue
 
         if rule.is_false_positive:
             base_name = 'false-positive'
@@ -216,6 +220,21 @@ def cli(licenses_file):
             base_name = 'license-intro'
         else:
             base_name = rule.license_expression
+
+        text = rule.text()
+
+        existing_rule = rule_exists(text)
+        skinny_text = ' '.join(text[:80].split())
+
+        existing_msg = (
+            f'Skipping rule for: {base_name!r}, '
+            'dupe of: {existing_rule} '
+            f'with text: {skinny_text!r}...'
+        )
+
+        if existing_rule:
+            print(existing_msg.format(**locals()))
+            continue
 
         base_loc = find_rule_base_loc(base_name)
 
@@ -226,18 +245,27 @@ def cli(licenses_file):
 
         rulerec = models.Rule(**rd)
 
+        # force recomputing relevance to remove junk stored relevance for long rules
+        rulerec.set_relevance()
+
         rulerec.data_file = base_loc + '.yml'
         rulerec.text_file = base_loc + '.RULE'
 
         rule_tokens = tuple(rulerec.tokens())
 
-        if rule_tokens in rules_tokens:
-            print('Skipping already added rule with text for:', base_name)
+        existing_rule = rule_by_tokens.get(rule_tokens)
+        if existing_rule:
+            print(existing_msg.format(**locals()))
+            continue
         else:
-            rules_tokens.add(rule_tokens)
+            print(f'Adding new rule: {base_name}')
+            print('  file://' + rulerec.data_file)
+            print('  file://' + rulerec.text_file,)
+            rulerec.dump()
             models.update_ignorables(rulerec, verbose=False)
             rulerec.dump()
-            print('Rule added:', 'file://' + rulerec.data_file, '\n', 'file://' + rulerec.text_file,)
+
+            rule_by_tokens[rule_tokens] = base_name
 
 
 if __name__ == '__main__':

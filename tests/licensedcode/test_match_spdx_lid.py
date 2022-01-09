@@ -68,13 +68,12 @@ def get_query_spdx_lines_test_method(test_loc , expected_loc, regen=False):
         qry = Query(location=test_loc, idx=idx)
         results = [list(l) for l in qry.spdx_lines]
         if regen:
-            wmode = 'w'
-            with open(expected_loc, wmode) as ef:
+            with open(expected_loc, 'w') as ef:
                 json.dump(results, ef, indent=2)
             expected = results
         else:
-            with open(expected_loc, 'rb') as ef:
-                expected = json.load(ef, encoding='utf-8')
+            with open(expected_loc) as ef:
+                expected = json.load(ef)
 
         assert results == expected
 
@@ -364,7 +363,7 @@ class TestMatchSpdx(FileBasedTesting):
 
         assert all(s.wrapped for s in licensing.license_symbols(expression, decompose=True))
 
-    def test_get_expression_complex_with_unknown_symbols_and_refs(self):
+    def test_get_expression_complex_with_other_spdx_symbols_and_refs(self):
         licensing = Licensing()
         spdx_symbols = get_spdx_symbols()
         unknown_symbol = get_unknown_spdx_symbol()
@@ -375,10 +374,10 @@ class TestMatchSpdx(FileBasedTesting):
 
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
 
-        expected = 'epl-2.0 OR apache-2.0 OR gpl-2.0 WITH classpath-exception-2.0 OR unknown-spdx WITH unknown-spdx'
+        expected = 'epl-2.0 OR apache-2.0 OR gpl-2.0 WITH classpath-exception-2.0 OR gpl-2.0 WITH openjdk-exception'
         assert expression.render() == expected
 
-        expected = ['epl-2.0', 'apache-2.0', 'gpl-2.0', 'classpath-exception-2.0', 'unknown-spdx', 'unknown-spdx']
+        expected = ['epl-2.0', 'apache-2.0', 'gpl-2.0', 'classpath-exception-2.0', 'gpl-2.0', 'openjdk-exception']
         assert licensing.license_keys(expression, unique=False) == expected
 
         assert all(s.wrapped for s in licensing.license_symbols(expression, decompose=True))

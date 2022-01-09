@@ -1,0 +1,20 @@
+key: gcc-exception-3.0
+short_name: GCC Runtime Library Exception v3.0
+name: GCC Runtime Library Exception v3.0
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/gcc-exception-3.0.html
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-exception-3.0
+text_urls:
+    - http://www.gnu.org/licenses/gcc-exception-3.0.html
+other_urls:
+    - http://www.gnu.org/licenses/gpl-3.0.txt
+    - https://github.com/earthcomputing/Netronome/blob/9f5132ecea3c134322305c9524da7189374881ec/nfp-sdk-6.0.1/NFP_SDK_EULA.txt
+minimum_coverage: 98
+ignorable_copyrights:
+    - Copyright (c) 2009 Free Software Foundation, Inc. <https://fsf.org/>
+ignorable_holders:
+    - Free Software Foundation, Inc.
+ignorable_urls:
+    - https://fsf.org/

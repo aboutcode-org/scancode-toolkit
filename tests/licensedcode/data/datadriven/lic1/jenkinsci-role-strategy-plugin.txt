@@ -1,0 +1,109 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>4.18</version>
+        <relativePath />
+    </parent>
+
+    <artifactId>role-strategy</artifactId>
+    <packaging>hpi</packaging>
+    <version>${revision}${changelist}</version>
+    <name>Role-based Authorization Strategy</name>
+    <url>https://github.com/jenkinsci/role-strategy-plugin</url>
+
+    <scm>
+        <connection>scm:git:ssh://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/jenkinsci/${project.artifactId}-plugin.git</developerConnection>
+        <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
+        <tag>${scmTag}</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>tmaurel</id>
+            <name>Thomas Maurel</name>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>rseguy</id>
+            <name>Romain Seguy</name>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <name>Oleg Nenashev</name>
+            <id>oleg_nenashev</id>
+            <email>o.v.nenashev@gmail.com</email>
+        </developer>
+    </developers>
+
+    <properties>
+        <revision>3.2.1</revision>
+        <changelist>-SNAPSHOT</changelist>
+        <jenkins.version>2.222.4</jenkins.version>
+        <java.level>8</java.level>
+        <useBeta>true</useBeta>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.jenkins.tools.bom</groupId>
+                <artifactId>bom-2.222.x</artifactId>
+                <version>887.vae9c8ac09ff7</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>matrix-auth</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jenkins.plugins</groupId>
+            <artifactId>caffeine-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>cloudbees-folder</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jenkins</groupId>
+            <artifactId>configuration-as-code</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>io.jenkins.configuration-as-code</groupId>
+            <artifactId>test-harness</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

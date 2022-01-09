@@ -1,0 +1,5 @@
+license_expression: w3c-software-19980720
+is_license_notice: yes
+notes: Seen in W3C's libwww
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/

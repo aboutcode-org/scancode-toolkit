@@ -260,14 +260,14 @@ A sample JSON output for an individual file will look like::
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
+          "copyright": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "holders": [
         {
-          "value": "Christian Michelsen Research AS Advanced Computing",
+          "holder": "Christian Michelsen Research AS Advanced Computing",
           "start_line": 3,
           "end_line": 5
         }

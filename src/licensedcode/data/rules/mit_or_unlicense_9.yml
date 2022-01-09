@@ -1,0 +1,10 @@
+license_expression: mit OR unlicense
+is_license_text: yes
+minimum_coverage: 95
+notes: seen in stb library
+ignorable_copyrights:
+    - Copyright (c) 2017 Sean Barrett
+ignorable_holders:
+    - Sean Barrett
+ignorable_urls:
+    - http://www.unlicense.org/

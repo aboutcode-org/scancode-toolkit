@@ -10,7 +10,8 @@ declared_license:
   - CC-BY-3.0
   - BSD-3-clause
 license_expression: (bsd-new AND google-patent-license-golang) AND mit AND bsd-simplified AND
-  sunpro AND mpeg-ssg AND multics AND apache-2.0 AND bsd-2-clause-views AND cc-by-3.0 AND bsd-new
+  sunpro AND mpeg-ssg AND other-permissive AND apache-2.0 AND bsd-2-clause-views AND cc-by-3.0
+  AND (cc-by-sa-3.0 AND cc-by-3.0) AND bsd-new
 copyright: |
   © 2009, 2010, The Go Authors. All rights reserved.
   © 1994-1999 Lucent Technologies Inc. All rights reserved.
@@ -35,23 +36,23 @@ copyright: |
   Renée French
   2012 The Chromium Authors
 matches:
-  - score: '15.38'
+  - score: '53.57'
     start_line: 1
     end_line: 2
     matcher: 3-seq
-    rule_length: 104
-    matched_length: 16
-    match_coverage: '15.38'
+    rule_length: 28
+    matched_length: 15
+    match_coverage: '53.57'
     rule_relevance: 100
-    identifier: multics.LICENSE
-    license_expression: multics
+    identifier: other-permissive_wcwidth_1.RULE
+    license_expression: other-permissive
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      Permission to use, copy, and distribute these [images] for any purpose and
+      Permission to use, copy, and distribute [these] [images] for any purpose and
       without fee is hereby granted.
   - score: '100.0'
     start_line: 1
@@ -718,6 +719,24 @@ matches:
       Permission to use, copy, modify, and distribute this
       software is freely granted, provided that this notice
       is preserved.
+  - score: '50.0'
+    start_line: 7
+    end_line: 8
+    matcher: 3-seq
+    rule_length: 18
+    matched_length: 9
+    match_coverage: '50.0'
+    rule_relevance: 100
+    identifier: cc-by-sa-3.0_44.RULE
+    license_expression: cc-by-sa-3.0
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      are covered by the
+      [Creative] [Commons] [Attribution] [3].[0] <http://creativecommons.org/licenses/by/
   - score: '65.0'
     start_line: 7
     end_line: 8

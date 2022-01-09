@@ -48,8 +48,8 @@ copyright: |
   2010 Gary Wilson Jr. <gary.wilson@gmail.com> and contributors
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 84
+    end_line: 84
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -64,8 +64,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: apache-2.0'
   - score: '100.0'
-    start_line: 1
-    end_line: 11
+    start_line: 85
+    end_line: 95
     matcher: 2-aho
     rule_length: 85
     matched_length: 85
@@ -91,8 +91,8 @@ matches:
       See the License for the specific language governing permissions and
       limitations under the License.
   - score: '100.0'
-    start_line: 13
-    end_line: 14
+    start_line: 97
+    end_line: 98
     matcher: 2-aho
     rule_length: 24
     matched_length: 24
@@ -109,8 +109,8 @@ matches:
       On Debian systems, the complete text of the Apache version 2.0 license
       can be found in `/usr/share/common-licenses/Apache-2.0'.
   - score: '100.0'
-    start_line: 1
-    end_line: 18
+    start_line: 101
+    end_line: 118
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -142,13 +142,13 @@ matches:
       LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
       OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
       WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  - score: '89.32'
-    start_line: 1
-    end_line: 49
+  - score: '89.1'
+    start_line: 121
+    end_line: 169
     matcher: 3-seq
-    rule_length: 365
-    matched_length: 326
-    match_coverage: '89.32'
+    rule_length: 367
+    matched_length: 327
+    match_coverage: '89.1'
     rule_relevance: 100
     identifier: psf-2.0.LICENSE
     license_expression: psf-2.0
@@ -171,7 +171,7 @@ matches:
       world-wide license to reproduce, analyze, test, perform and/or display
       publicly, prepare derivative works, distribute, and otherwise use
       [Baseconv] alone or in any derivative version, provided, however, that
-      [Baseconv] [Authors]'s License Agreement and [Baseconv] [Author]'s [notice] [of]
+      [Baseconv] [Authors]'s License Agreement and [Baseconv] [Author]'[s] [notice] [of]
       [copyright], [i].[e]., "[Copyright] ([c]) [2010] [Guilherme] [Gondim].; [Copyright]
       ([c]) [2009] [Simon] [Willison].; [Copyright] ([c]) [2002] [Drew] [Perttula].; All Rights
       Reserved" are retained in [Baseconv] alone or in any derivative version
@@ -208,8 +208,8 @@ matches:
       8. By copying, installing or otherwise using [Baseconv], Licensee agrees
       to be bound by the terms and conditions of this License Agreement.
   - score: '100.0'
-    start_line: 1
-    end_line: 20
+    start_line: 172
+    end_line: '191'
     matcher: 1-hash
     rule_length: 185
     matched_length: 185
@@ -243,15 +243,15 @@ matches:
       CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
       OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '95.77'
-    start_line: 1
-    end_line: 24
-    matcher: 3-seq
-    rule_length: 213
-    matched_length: 204
-    match_coverage: '95.77'
+  - score: '100.0'
+    start_line: '194'
+    end_line: 217
+    matcher: 1-hash
+    rule_length: 214
+    matched_length: 214
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-new_156.RULE
+    identifier: bsd-new_1072.RULE
     license_expression: bsd-new
     is_license_text: yes
     is_license_notice: no
@@ -269,7 +269,7 @@ matches:
             notice, this list of conditions and the following disclaimer in the
             documentation and/or other materials provided with the distribution.
 
-         3. Neither the name of <[NAME]> [nor] [the] [names] [of] [its] [contributors] [may] [be] [use]
+         3. Neither the name of <NAME> nor the names of its contributors may be use
             to endorse or promote products derived from this software without
             specific prior written permission.
 
@@ -284,8 +284,8 @@ matches:
       OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '99.0'
-    start_line: 2
-    end_line: 2
+    start_line: 76
+    end_line: 76
     matcher: 2-aho
     rule_length: 5
     matched_length: 5

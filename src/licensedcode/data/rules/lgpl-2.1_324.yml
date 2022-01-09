@@ -1,0 +1,8 @@
+license_expression: lgpl-2.1
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - /usr/share/common-licenses/LGPL-2.1
+    - LICENSE.LGPL
+ignorable_urls:
+    - http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html

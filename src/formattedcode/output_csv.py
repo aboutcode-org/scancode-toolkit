@@ -113,7 +113,7 @@ def flatten_scan(scan, headers):
 
         errors = scanned_file.pop('scan_errors', [])
 
-        file_info = dict(Resource=path)
+        file_info = dict(path=path)
         file_info.update(((k, v) for k, v in scanned_file.items()
         # FIXME: info are NOT lists: lists are the actual scans
                           if not isinstance(v, (list, dict))))
@@ -124,12 +124,12 @@ def flatten_scan(scan, headers):
         yield file_info
 
         for lic_exp in scanned_file.get('license_expressions', []):
-            inf = dict(Resource=path, license_expression=lic_exp)
+            inf = dict(path=path, license_expression=lic_exp)
             collect_keys(inf, 'license_expression')
             yield inf
 
         for licensing in scanned_file.get('licenses', []):
-            lic = dict(Resource=path)
+            lic = dict(path=path)
             for k, val in licensing.items():
                 # do not include matched text for now.
                 if k == 'matched_text':
@@ -159,42 +159,42 @@ def flatten_scan(scan, headers):
             yield lic
 
         for copyr in scanned_file.get('copyrights', []):
-            inf = dict(Resource=path)
-            inf['copyright'] = copyr['value']
+            inf = dict(path=path)
+            inf['copyright'] = copyr['copyright']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
             collect_keys(inf, 'copyright')
             yield inf
 
         for copyr in scanned_file.get('holders', []):
-            inf = dict(Resource=path)
-            inf['copyright_holder'] = copyr['value']
+            inf = dict(path=path)
+            inf['holder'] = copyr['holder']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
             collect_keys(inf, 'copyright')
             yield inf
 
         for copyr in scanned_file.get('authors', []):
-            inf = dict(Resource=path)
-            inf['author'] = copyr['value']
+            inf = dict(path=path)
+            inf['author'] = copyr['author']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
             collect_keys(inf, 'copyright')
             yield inf
 
         for email in scanned_file.get('emails', []):
-            email_info = dict(Resource=path)
+            email_info = dict(path=path)
             email_info.update(email)
             collect_keys(email_info, 'email')
             yield email_info
 
         for url in scanned_file.get('urls', []):
-            url_info = dict(Resource=path)
+            url_info = dict(path=path)
             url_info.update(url)
             collect_keys(url_info, 'url')
             yield url_info
 
-        for package in scanned_file.get('packages', []):
+        for package in scanned_file.get('package_manifests', []):
             flat = flatten_package(package, path)
             collect_keys(flat, 'package')
             yield flat
@@ -243,6 +243,7 @@ def get_package_columns(_columns=set()):
 
     # some extra columns for components
     extra_columns = [
+        'purl',
         'components',
         'owner_name',
         'reference_notes',
@@ -262,7 +263,7 @@ def flatten_package(_package, path, prefix='package__'):
 
     package_columns = get_package_columns()
 
-    pack = dict(Resource=path)
+    pack = dict(path=path)
     for k, val in _package.items():
         if k not in package_columns:
             continue

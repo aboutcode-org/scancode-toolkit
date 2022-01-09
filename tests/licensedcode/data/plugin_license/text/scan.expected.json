@@ -13,6 +13,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 2
       }
     }
@@ -48,6 +49,7 @@
               "linux-syscall-exception-gpl",
               "linux-openib"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -88,6 +90,7 @@
               "linux-syscall-exception-gpl",
               "linux-openib"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -128,6 +131,7 @@
               "linux-syscall-exception-gpl",
               "linux-openib"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -177,6 +181,7 @@
             "licenses": [
               "fsf-ap"
             ],
+            "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,

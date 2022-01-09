@@ -15,11 +15,11 @@ copyright: |
   1980,1991,1992,1993 The Regents of the University of California
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 22
+    end_line: 44
     matcher: 1-hash
-    rule_length: '199'
-    matched_length: '199'
+    rule_length: 200
+    matched_length: 200
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: x11-fsf.LICENSE
@@ -54,8 +54,8 @@ matches:
       sale, use or other dealings in this Software without prior written
       authorization.
   - score: '100.0'
-    start_line: 1
-    end_line: 21
+    start_line: 47
+    end_line: 67
     matcher: 1-hash
     rule_length: 201
     matched_length: 201
@@ -91,8 +91,8 @@ matches:
       ings in this Software without prior written authorization from the X Consor-
       tium.
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 70
+    end_line: 92
     matcher: 1-hash
     rule_length: 213
     matched_length: 213

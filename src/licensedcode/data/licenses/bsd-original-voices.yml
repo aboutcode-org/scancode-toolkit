@@ -7,4 +7,4 @@ homepage_url: https://github.com/freebsd/freebsd-src/blob/098dbd7ff7f3da9dda0380
 spdx_license_key: LicenseRef-scancode-bsd-original-voices
 ignorable_authors:
   - Bill Paul
-
+minimum_coverage: 99

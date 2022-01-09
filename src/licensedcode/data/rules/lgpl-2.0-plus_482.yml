@@ -1,0 +1,6 @@
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+notes: this is a confused notice mixing v2 and v2.1 references
+ignorable_urls:
+    - https://www.gnu.org/licenses/

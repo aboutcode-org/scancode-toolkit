@@ -8,3 +8,4 @@ license_expressions:
   - sun-bsd-extra
   - bsd-new
   - afl-3.0
+  - afl-3.0

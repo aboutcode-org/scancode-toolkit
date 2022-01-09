@@ -9,7 +9,7 @@ declared_license:
   - LGPL-2+
   - LGPL-2.1+
 license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND mit AND (lgpl-2.0-plus AND
-  lgpl-2.1-plus AND lgpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus)
+  lgpl-2.0-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)
 copyright: |
   1996-2018 Free Software Foundation, Inc.
   1999-2015 The Gnome Project
@@ -77,8 +77,8 @@ copyright: |
   2017-2018 Red Hat, Inc.
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 105
+    end_line: 105
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -93,8 +93,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 9
+    start_line: 106
+    end_line: 114
     matcher: 1-hash
     rule_length: 79
     matched_length: 79
@@ -118,8 +118,8 @@ matches:
        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
        GNU General Public License for more details.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 116
+    end_line: 117
     matcher: 1-hash
     rule_length: 22
     matched_length: 22
@@ -136,8 +136,8 @@ matches:
       On Debian systems, the complete text of the GNU General
       Public License can be found in `/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 120
+    end_line: 136
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -169,8 +169,8 @@ matches:
       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
       THE SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 138
+    end_line: 138
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -184,16 +184,16 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2+'
-  - score: '98.78'
-    start_line: 1
-    end_line: 9
-    matcher: 3-seq
-    rule_length: 82
+  - score: '100.0'
+    start_line: 139
+    end_line: 147
+    matcher: 1-hash
+    rule_length: 81
     matched_length: 81
-    match_coverage: '98.78'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.1-plus_34.RULE
-    license_expression: lgpl-2.1-plus
+    identifier: lgpl-2.0-plus_530.RULE
+    license_expression: lgpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -210,15 +210,15 @@ matches:
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 22
-    matched_length: 22
+    start_line: 149
+    end_line: 150
+    matcher: 1-hash
+    rule_length: 24
+    matched_length: 24
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.0-plus_437.RULE
-    license_expression: lgpl-2.0-plus
+    identifier: lgpl-2.1_385.RULE
+    license_expression: lgpl-2.1
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
@@ -226,10 +226,10 @@ matches:
     is_license_intro: no
     matched_text: |
       On Debian systems, the complete text of the GNU Lesser General
-      Public License can be found in `/usr/share/common-licenses/LGPL-
+      Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 152
+    end_line: 152
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -244,8 +244,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-2.1+'
   - score: '100.0'
-    start_line: 1
-    end_line: 9
+    start_line: 153
+    end_line: 161
     matcher: 1-hash
     rule_length: 82
     matched_length: 82
@@ -269,15 +269,15 @@ matches:
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 22
-    matched_length: 22
+    start_line: 163
+    end_line: 164
+    matcher: 1-hash
+    rule_length: 24
+    matched_length: 24
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.0-plus_437.RULE
-    license_expression: lgpl-2.0-plus
+    identifier: lgpl-2.1_385.RULE
+    license_expression: lgpl-2.1
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
@@ -285,4 +285,4 @@ matches:
     is_license_intro: no
     matched_text: |
       On Debian systems, the complete text of the GNU Lesser General
-      Public License can be found in `/usr/share/common-licenses/LGPL-
+      Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.

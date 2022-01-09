@@ -1,4 +1,4 @@
-Resource,type,scan_errors,license_expression
+path,type,scan_errors,license_expression
 apache-2.0.LICENSE,file,,
 apache-2.0.LICENSE,,,apache-2.0
 apache-2.0.LICENSE,,,mit

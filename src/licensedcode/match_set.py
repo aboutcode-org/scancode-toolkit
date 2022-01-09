@@ -471,7 +471,8 @@ def filter_dupes(sortable_candidates):
             sv_round.is_highly_resemblant,
             sv_round.containment,
             sv_round.resemblance,
-            sv_round.matched_length
+            sv_round.matched_length,
+            rule.length,
         )
 
     sortable_candidates = sorted(sortable_candidates, key=group_key)

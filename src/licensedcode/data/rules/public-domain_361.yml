@@ -1,19 +1,19 @@
 license_expression: public-domain
 is_license_notice: yes
+ignorable_copyrights:
+    - copyright 1992 by Eric Haines, erich@eye.com
+ignorable_holders:
+    - Eric Haines
 ignorable_authors:
     - Craig Milo Rogers, Rogers@ISI.Edu
     - Rob McCool
-ignorable_copyrights:
-    - copyright 1992 by Eric Haines, erich@eye.com
 ignorable_emails:
-    - robm@ncsa.uiuc.edu
-    - kevinh@pulua.hcc.hawaii.edu
-    - erich@eye.com
-    - randy@zyzzyva.com
-    - cloos@jhcloos.com
     - Rogers@ISI.Edu
-    - nate@tripod.com
+    - cloos@jhcloos.com
+    - erich@eye.com
     - jsbell@acs.ucalgary.ca
+    - kevinh@pulua.hcc.hawaii.edu
     - mark@ukweb.com
-ignorable_holders:
-    - Eric Haines
+    - nate@tripod.com
+    - randy@zyzzyva.com
+    - robm@ncsa.uiuc.edu

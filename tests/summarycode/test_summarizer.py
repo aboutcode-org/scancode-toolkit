@@ -99,7 +99,7 @@ class TestScanSummary(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('full_summary/summary_by_facet.expected.json')
         run_scan_click([
-            '-cli',
+            '-clpieu',
             '--facet', 'dev=*.java',
             '--facet', 'dev=*.cs',
             '--facet', 'dev=*ada*',

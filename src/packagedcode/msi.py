@@ -168,7 +168,7 @@ def msi_parse(location):
 
 
 @attr.s()
-class MsiInstallerPackage(models.Package):
+class MsiInstallerPackage(models.Package, models.PackageManifest):
     filetypes = ('msi installer',)
     mimetypes = ('application/x-msi',)
     extensions = ('.msi',)

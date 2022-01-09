@@ -34,8 +34,8 @@ copyright: |
   Copyright (c) 2009 - 2012 Peter Pentchev.
 matches:
   - score: '90.0'
-    start_line: 1
-    end_line: 13
+    start_line: 47
+    end_line: 59
     matcher: 1-hash
     rule_length: 101
     matched_length: 101
@@ -63,8 +63,8 @@ matches:
           contributors may be used to endorse or promote products derived
           from this software without specific, prior written permission.
   - score: '100.0'
-    start_line: 1
-    end_line: 11
+    start_line: 62
+    end_line: 72
     matcher: 1-hash
     rule_length: 111
     matched_length: 111
@@ -90,8 +90,8 @@ matches:
        ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
        OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 20
+    start_line: 75
+    end_line: 94
     matcher: 1-hash
     rule_length: 183
     matched_length: 183

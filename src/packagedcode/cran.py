@@ -34,8 +34,8 @@ if TRACE:
 
 
 @attr.s()
-class CranPackage(models.Package):
-    metafiles = ('DESCRIPTION',)
+class CranPackage(models.Package, models.PackageManifest):
+    file_patterns = ('DESCRIPTION',)
     default_type = 'cran'
     default_web_baseurl = 'https://cran.r-project.org/package='
 

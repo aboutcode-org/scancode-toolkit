@@ -9,9 +9,9 @@ declared_license:
   - GPL-2+
   - LGPL-3+
   - Unicode
-license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND ((lgpl-3.0-plus AND lgpl-3.0-plus AND
-  lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND (gpl-3.0-plus AND gpl-3.0-plus) AND
-  (gpl-3.0-plus AND gpl-3.0-plus) AND (unicode AND unicode)
+license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR
+  (gpl-2.0-plus AND gpl-2.0-plus)) AND (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus AND
+  gpl-3.0-plus) AND (unicode AND unicode)
 copyright: |
   Copyright (C) 2011-2014 Simon Josefsson
   Copyright (C) 2011-2014 Simon Josefsson
@@ -22,8 +22,8 @@ copyright: |
   Copyright (c) 1991-2010 Unicode, Inc.
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 28
+    end_line: 28
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -38,8 +38,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-3+'
   - score: '100.0'
-    start_line: 1
-    end_line: 15
+    start_line: 29
+    end_line: 43
     matcher: 1-hash
     rule_length: 128
     matched_length: 128
@@ -69,8 +69,8 @@ matches:
       On Debian GNU/Linux systems, the complete text of the GNU General Public
       License version 3 can be found in /usr/share/common-licenses/GPL-3.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 45
+    end_line: 45
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -85,8 +85,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 15
+    start_line: 46
+    end_line: 60
     matcher: 1-hash
     rule_length: 128
     matched_length: 128
@@ -116,8 +116,8 @@ matches:
       On Debian GNU/Linux systems, the complete text of the GNU General Public
       License version 2 can be found in /usr/share/common-licenses/GPL-2.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 62
+    end_line: 62
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -132,14 +132,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-3+'
   - score: '100.0'
-    start_line: 1
-    end_line: 12
-    matcher: 2-aho
-    rule_length: 104
-    matched_length: 104
+    start_line: 63
+    end_line: 77
+    matcher: 1-hash
+    rule_length: 131
+    matched_length: 131
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-3.0-plus_4.RULE
+    identifier: lgpl-3.0-plus_242.RULE
     license_expression: lgpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -159,40 +159,12 @@ matches:
 
       You should have received a copy of the GNU Lesser General Public License
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  - score: '72.31'
-    start_line: 1
-    end_line: 15
-    matcher: 3-seq
-    rule_length: 130
-    matched_length: 94
-    match_coverage: '72.31'
-    rule_relevance: 100
-    identifier: lgpl-3.0-plus_167.RULE
-    license_expression: lgpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      is free software: you can redistribute it and/or modify
-      it under the terms of the GNU Lesser General Public License as published
-      by the Free Software Foundation, either version 3 of the License, or
-      (at your option) any later version.
 
-      This [program] is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See [the]
-      [GNU] [General] [Public] [License] [for] [more] [details].
-
-      [You] [should] [have] [received] a [copy] [of] the GNU Lesser General Public License
-      [along] [with] [this] [program].  [If] [not], [see] <[http]://[www].[gnu].[org]/[licenses]/>.
-
-      [On] [Debian] [GNU]/[Linux] [systems], [the] [complete] [text] of the GNU Lesser General
+      On Debian GNU/Linux systems, the complete text of the GNU Lesser General
       Public License version 3 can be found in /usr/share/common-licenses/LGPL-3.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 80
+    end_line: 80
     matcher: 2-aho
     rule_length: 13
     matched_length: 13
@@ -207,11 +179,11 @@ matches:
     is_license_intro: no
     matched_text: For terms of use, see http://www.unicode.org/terms_of_use.html
   - score: '100.0'
-    start_line: 2
-    end_line: 34
+    start_line: 81
+    end_line: 113
     matcher: 2-aho
-    rule_length: 306
-    matched_length: 306
+    rule_length: 309
+    matched_length: 309
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: unicode_17.RULE

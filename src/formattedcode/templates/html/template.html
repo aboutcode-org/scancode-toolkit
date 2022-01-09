@@ -131,9 +131,109 @@
         {% endfor %}
       </tbody>
     </table>
+    <table>
+      <caption>Holders</caption>
+      <thead>
+        <tr>
+          <th>path</th>
+          <th>holder</th>
+          <th>start</th>
+          <th>end</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for path, row in files.infos.items() %}
+        {% if row.holders %}
+        {% for data in row.holders %}
+        <tr>
+          <td>{{ path }}</td>
+          <td>{{ data.holder }}</td>
+          <td>{{ data.start_line }}</td>
+          <td>{{ data.end_line }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+    <table>
+      <caption>Authors</caption>
+      <thead>
+        <tr>
+          <th>path</th>
+          <th>Author</th>
+          <th>start</th>
+          <th>end</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for path, row in files.infos.items() %}
+        {% if row.authors %}
+        {% for data in row.authors %}
+        <tr>
+          <td>{{ path }}</td>
+          <td>{{ data.author }}</td>
+          <td>{{ data.start_line }}</td>
+          <td>{{ data.end_line }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+    <table>
+      <caption>Emails</caption>
+      <thead>
+        <tr>
+          <th>path</th>
+          <th>email</th>
+          <th>start</th>
+          <th>end</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for path, row in files.infos.items() %}
+        {% if row.emails %}
+        {% for data in row.emails %}
+        <tr>
+          <td>{{ path }}</td>
+          <td>{{ data.email |urlize(target='_blank') }}</td>
+          <td>{{ data.start_line }}</td>
+          <td>{{ data.end_line }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+    <table>
+      <caption>Urls</caption>
+      <thead>
+        <tr>
+          <th>path</th>
+          <th>url</th>
+          <th>start</th>
+          <th>end</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for path, row in files.infos.items() %}
+        {% if row.urls %}
+        {% for data in row.urls %}
+        <tr>
+          <td>{{ path }}</td>
+          <td>{{ data.url |urlize(target='_blank') }}</td>
+          <td>{{ data.start_line }}</td>
+          <td>{{ data.end_line }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
     {% endif %}
 
-    {% if files.packages %}
+    {% if files.package_manifests %}
     <table>
       <caption>Package Information</caption>
       <thead>
@@ -145,7 +245,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for path, data in files.packages.items() %}
+        {% for path, data in files.package_manifests.items() %}
           {% for row in data %}
             <tr>
               <td>{{ path }}</td>

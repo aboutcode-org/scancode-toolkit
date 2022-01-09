@@ -1,0 +1,8 @@
+license_expression: lgpl-2.1 AND gpl-2.0 AND gpl-3.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - /usr/share/common-licenses/LGPL-2.1
+    - /usr/share/common-licenses/GPL-2
+    - /usr/share/common-licenses/GPL-3

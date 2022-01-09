@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_notice: yes
+notes: http://mindprod.com/contact/nonmil.html This comes with non-military restriction
+ignorable_urls:
+    - http://mindprod.com/contact/nonmil.html

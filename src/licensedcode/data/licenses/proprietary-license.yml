@@ -4,4 +4,5 @@ name: Proprietary License
 category: Commercial
 owner: Unspecified
 notes: replaces the proprietary key
+is_generic: yes
 spdx_license_key: LicenseRef-scancode-proprietary-license

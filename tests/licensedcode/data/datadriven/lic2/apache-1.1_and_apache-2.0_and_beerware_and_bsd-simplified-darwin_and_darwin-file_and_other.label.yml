@@ -1,7 +1,7 @@
 license_expressions:
   - apache-2.0
   - apache-2.0
-  - unknown-license-reference
+  - apache-2.0 AND other-permissive
   - apache-2.0
   - hs-regexp
   - bsd-simplified-darwin
@@ -15,10 +15,13 @@ license_expressions:
   - rsa-md4
   - rsa-md4
   - apache-1.1
+  - apache-1.1
   - public-domain
   - rsa-1990
   - mit-old-style-no-advert
   - mit-old-style-no-advert
+  - pcre
+  - pcre
   - pcre
   - gpl-1.0-plus AND lgpl-2.0-plus
   - zeusbench

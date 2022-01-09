@@ -1,0 +1,4 @@
+license_expression: boost-1.0
+is_license_notice: yes
+ignorable_urls:
+    - https://www.boost.org/LICENSE_1_0.txt

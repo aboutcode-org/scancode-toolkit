@@ -9,9 +9,11 @@
         "--summary": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 1
       }
     }
@@ -58,24 +60,24 @@
       "type": "file",
       "copyrights": [
         {
-          "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others",
+          "copyright": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others",
           "start_line": 44,
           "end_line": 45
         },
         {
-          "value": "copyright Sun Microsystems Inc.",
+          "copyright": "copyright Sun Microsystems Inc.",
           "start_line": 46,
           "end_line": 46
         }
       ],
       "holders": [
         {
-          "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others",
+          "holder": "Mort Bay Consulting Pty. Ltd. (Australia) and others",
           "start_line": 44,
           "end_line": 45
         },
         {
-          "value": "Sun Microsystems Inc.",
+          "holder": "Sun Microsystems Inc.",
           "start_line": 46,
           "end_line": 46
         }

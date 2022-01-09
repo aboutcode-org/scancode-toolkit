@@ -18,13 +18,13 @@ class TestPackageAPI(FileBasedTesting):
 
     def test_get_package_info_works_for_maven_dot_pom(self):
         test_file = self.get_test_loc('api/package/p6spy-1.3.pom')
-        packages = api.get_package_info(test_file)
-        assert packages['packages'][0]['version'] == '1.3'
+        packages = api.get_package_manifests(test_file)
+        assert packages['package_manifests'][0]['version'] == '1.3'
 
     def test_get_package_info_works_for_maven_pom_dot_xml(self):
         test_file = self.get_test_loc('api/package/pom.xml')
-        packages = api.get_package_info(test_file)
-        assert packages['packages'][0]['version'] == '1.3'
+        packages = api.get_package_manifests(test_file)
+        assert packages['package_manifests'][0]['version'] == '1.3'
 
 
 class TestAPI(FileBasedTesting):
@@ -32,7 +32,7 @@ class TestAPI(FileBasedTesting):
 
     def test_get_package_info_can_pickle(self):
         test_file = self.get_test_loc('api/package/package.json')
-        package = api.get_package_info(test_file)
+        package = api.get_package_manifests(test_file)
 
         import pickle
         try:
@@ -73,13 +73,13 @@ class TestAPI(FileBasedTesting):
         cops = api.get_copyrights(test_file)
         expected = dict([
             ('copyrights', [
-                dict([(u'value', u'Copyright (c) 2010 Patrick McHardy'), (u'start_line', 2), (u'end_line', 2)])
+                dict([('copyright', 'Copyright (c) 2010 Patrick McHardy'), ('start_line', 2), ('end_line', 2)])
             ]),
             ('holders', [
-                dict([(u'value', u'Patrick McHardy'), (u'start_line', 2), (u'end_line', 2)])
+                dict([('holder', 'Patrick McHardy'), ('start_line', 2), ('end_line', 2)])
             ]),
             ('authors', [
-                dict([(u'value', u'Patrick McHardy <kaber@trash.net>'), (u'start_line', 11), (u'end_line', 11)])
+                dict([('author', 'Patrick McHardy <kaber@trash.net>'), ('start_line', 11), ('end_line', 11)])
             ]),
         ])
 

@@ -1,0 +1,9 @@
+license_expression: other-permissive
+is_license_text: yes
+notes: Apache-1.1 base with extra post cards clause. Seen in "mod_macro" version by Fabien Coelho
+ignorable_authors:
+    - Fabien Coelho <mod.macro@coelho.net>
+ignorable_urls:
+    - http://www.coelho.net/mod_macro
+ignorable_emails:
+    - mod.macro@coelho.net

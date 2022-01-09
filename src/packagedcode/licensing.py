@@ -8,16 +8,18 @@
 #
 
 import logging
+import os
 
 from license_expression import Licensing
 
 from licensedcode.spans import Span
+from licensedcode import query
 
 """
 Detect and normalize licenses as found in package manifests data.
 """
 
-TRACE = False
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 
 
 def logger_debug(*args):
@@ -32,8 +34,63 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a)
-                                     for a in args))
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
+
+
+def get_license_matches(location=None, query_string=None):
+    """
+    Returns a sequence of LicenseMatch objects from license detection of the
+    `query_string` or the file at `location`.
+    """
+    if TRACE:
+        logger_debug('get_license_matches: location:', location)
+
+    if not query_string and not location:
+        return []
+
+    from licensedcode import cache
+
+    idx = cache.get_index()
+    matches = idx.match(location=location, query_string=query_string)
+
+    if TRACE:
+        logger_debug('get_license_matches: matches:', matches)
+
+    return matches
+
+
+def get_license_matches_from_query_string(query_string, start_line=1):
+    """
+    Returns a sequence of LicenseMatch objects from license detection of the
+    `query_string` starting at ``start_line`` number. This is useful when
+    matching a text fragment alone when it is part of a larger text.
+    """
+    if not query_string:
+        return []
+    from licensedcode import cache
+
+    idx = cache.get_index()
+    qry = query.build_query(
+        query_string=query_string,
+        idx=idx,
+        start_line=start_line,
+    )
+
+    return idx.match_query(qry=qry)
+
+
+def get_license_expression_from_matches(license_matches):
+    """
+    Craft a license expression from a list of LicenseMatch objects.
+    """
+    from packagedcode.utils import combine_expressions
+
+    license_expressions = [
+        match.rule.license_expression for match in license_matches
+    ]
+    return str(combine_expressions(license_expressions, unique=False))
 
 
 def matches_have_unknown(matches, licensing):
@@ -42,13 +99,16 @@ def matches_have_unknown(matches, licensing):
     """
     for match in matches:
         exp = match.rule.license_expression_object
-        if any(key in ('unknown', 'unknown-spdx') for key in licensing.license_keys(exp)):
+        if any(
+            key in ('unknown', 'unknown-spdx')
+            for key in licensing.license_keys(exp)
+        ):
             return True
 
 
 def get_normalized_expression(
-    query_string, 
-    try_as_expression=True, 
+    query_string,
+    try_as_expression=True,
     approximate=True,
     expression_symbols=None,
 ):

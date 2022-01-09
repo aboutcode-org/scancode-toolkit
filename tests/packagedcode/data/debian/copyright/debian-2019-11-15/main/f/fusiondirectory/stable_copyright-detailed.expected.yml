@@ -37,25 +37,19 @@ declared_license:
   - BSD-4-clause
   - LGPL-3+
   - public-domain
-license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND free-unknown AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0)
-  AND bsd-new AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus
-  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus
-  AND gpl-2.0) AND free-unknown AND (lgpl-3.0-plus AND gpl-2.0-plus) AND public-domain AND gpl-2.0-plus
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-1.0-plus AND gpl-2.0) AND mit AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus
-  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus
-  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus
-  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus
-  AND gpl-2.0) AND bsd-original AND mit AND ((gpl-2.0-plus AND gpl-2.0-plus AND gpl-1.0-plus
-  AND gpl-2.0) OR (gpl-3.0-plus AND gpl-2.0-plus) OR (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)
-  OR (lgpl-3.0-plus AND gpl-2.0-plus) OR mit OR bsd-new OR bsd-original)
+license_expression: (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
+  free-unknown AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND bsd-new
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND free-unknown AND (lgpl-3.0-plus AND lgpl-3.0-plus)
+  AND other-permissive AND gpl-2.0-plus AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND mit AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND bsd-original AND mit AND ((gpl-2.0-plus AND gpl-2.0-plus) OR (gpl-3.0-plus
+  AND gpl-3.0-plus) OR (lgpl-2.1-plus AND lgpl-2.1-plus) OR (lgpl-3.0-plus AND lgpl-3.0-plus)
+  OR mit OR bsd-new OR bsd-original)
 copyright: |
   2011-2016, FusionDirectory
   2011-2017, FusionDirectory
@@ -148,8 +142,8 @@ copyright: |
   2014, Mike Gabriel <sunweaver@debian.org>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1472
+    end_line: 1472
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -164,14 +158,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 13
-    matcher: 2-aho
-    rule_length: 113
-    matched_length: 113
+    start_line: 1473
+    end_line: 1488
+    matcher: 1-hash
+    rule_length: 136
+    matched_length: 136
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_8.RULE
+    identifier: gpl-2.0-plus_1038.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -192,43 +186,12 @@ matches:
       You should have received a copy of the GNU General Public License
       along with this package; if not, write to the Free Software
       Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+      On Debian systems, the complete text of the GNU General
+      Public License 2 can be found in `/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
-    start_line: 15
-    end_line: 16
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-1.0-plus_33.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      the GNU General
-      Public License
-  - score: '100.0'
-    start_line: 16
-    end_line: 16
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1490
+    end_line: 1490
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -242,16 +205,16 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-3+'
-  - score: '99.25'
-    start_line: 1
-    end_line: 16
-    matcher: 3-seq
-    rule_length: 134
-    matched_length: 133
-    match_coverage: '99.25'
+  - score: '100.0'
+    start_line: 1491
+    end_line: 1506
+    matcher: 1-hash
+    rule_length: 136
+    matched_length: 136
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_27.RULE
-    license_expression: gpl-2.0-plus
+    identifier: gpl-3.0-plus_512.RULE
+    license_expression: gpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -260,7 +223,7 @@ matches:
     matched_text: |
       This package is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version [3] of the License, or
+      the Free Software Foundation; either version 3 of the License, or
       (at your option) any later version.
 
       This package is distributed in the hope that it will be useful,
@@ -273,10 +236,10 @@ matches:
       Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
       On Debian systems, the complete text of the GNU General
-      Public License [3] can be found in `/usr/share/common-licenses/GPL-
+      Public License 3 can be found in `/usr/share/common-licenses/GPL-3'.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1508
+    end_line: 1508
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -291,14 +254,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-2.1+'
   - score: '100.0'
-    start_line: 1
-    end_line: 14
-    matcher: 2-aho
-    rule_length: 117
-    matched_length: 117
+    start_line: 1509
+    end_line: 1526
+    matcher: 1-hash
+    rule_length: 146
+    matched_length: 146
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.1-plus_239.RULE
+    identifier: lgpl-2.1-plus_418.RULE
     license_expression: lgpl-2.1-plus
     is_license_text: no
     is_license_notice: yes
@@ -320,28 +283,13 @@ matches:
       License along with this library; if not, write to the Free Software
       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
       MA  02110-1301  USA
-  - score: '100.0'
-    start_line: 16
-    end_line: 18
-    matcher: 2-aho
-    rule_length: 29
-    matched_length: 29
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1_294.RULE
-    license_expression: lgpl-2.1
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
+
       On Debian systems, the full text of the GNU Lesser General Public
       License version 2,1 can be found in the file
       `/usr/share/common-licenses/LGPL-2.1'.
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 1529
+    end_line: 1545
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -373,8 +321,8 @@ matches:
       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 1548
+    end_line: 1570
     matcher: 1-hash
     rule_length: 213
     matched_length: 213
@@ -411,15 +359,15 @@ matches:
       INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
       STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '96.49'
-    start_line: 1
-    end_line: 26
-    matcher: 3-seq
-    rule_length: 228
-    matched_length: 220
-    match_coverage: '96.49'
+  - score: '100.0'
+    start_line: 1573
+    end_line: 1598
+    matcher: 1-hash
+    rule_length: 236
+    matched_length: 236
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-original_27.RULE
+    identifier: bsd-original_71.RULE
     license_expression: bsd-original
     is_license_text: yes
     is_license_notice: no
@@ -438,12 +386,12 @@ matches:
           and/or other materials provided with the distribution.
         - All advertising materials mentioning features or use of this software must
           display the following acknowledgement: “This product includes software
-          developed by [the] <[author](s)>.”
-        - Neither the name of [the] [author](s) [nor] [the] [names] [of] [this] [program]'s
-          [contributors] may be used to endorse or promote products derived from this
+          developed by the <author(s)>.”
+        - Neither the name of the author(s) nor the names of this program's
+          contributors may be used to endorse or promote products derived from this
           software without specific prior written permission.
 
-      THIS SOFTWARE IS PROVIDED BY THE [AUTHOR](S) “AS IS” AND ANY EXPRESS OR IMPLIED
+      THIS SOFTWARE IS PROVIDED BY THE AUTHOR(S) “AS IS” AND ANY EXPRESS OR IMPLIED
       WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
       MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
       EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
@@ -454,8 +402,8 @@ matches:
       OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
       ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 1600
+    end_line: 1600
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -469,53 +417,57 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-3+'
-  - score: '94.06'
-    start_line: 1
-    end_line: 12
-    matcher: 3-seq
-    rule_length: 101
-    matched_length: 95
-    match_coverage: '94.06'
+  - score: '100.0'
+    start_line: 1601
+    end_line: 1612
+    matcher: 1-hash
+    rule_length: 105
+    matched_length: 105
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_808.RULE
-    license_expression: gpl-2.0-plus
+    identifier: lgpl-3.0-plus_189.RULE
+    license_expression: lgpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or
-      modify it under the terms of the GNU [Lesser] General Public
+      This library is free software; you can redistribute it and/or
+      modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
-      version [3] of the License, or (at your option) any later version.
+      version 3 of the License, or (at your option) any later version.
 
-      This [library] is distributed in the hope that it will be useful,
+      This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-      [Lesser] General Public License for more details.
+      Lesser General Public License for more details.
 
-      On Debian systems, the complete text of the GNU [Lesser] General
-      Public License [3] can be found in `/usr/share/common-licenses/
+      On Debian systems, the complete text of the GNU Lesser General
+      Public License 3 can be found in `/usr/share/common-licenses/LGPL-3'.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 1615
+    end_line: 1618
+    matcher: 1-hash
+    rule_length: 40
+    matched_length: 40
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: public-domain_50.RULE
-    license_expression: public-domain
+    identifier: other-permissive_325.RULE
+    license_expression: other-permissive
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: This file is in the public domain.
+    matched_text: |
+      This file is in the public domain.  You may use and modify it as
+      you see fit, as long as this copyright message is included and
+      that there is an indication as to what modifications have been
+      made (if any).
   - score: '90.0'
-    start_line: 1
-    end_line: 1
+    start_line: 401
+    end_line: 401
     matcher: 1-hash
     rule_length: 12
     matched_length: 12
@@ -530,8 +482,8 @@ matches:
     is_license_intro: no
     matched_text: This file is distributed under the same license as the PACKAGE package.
   - score: '82.5'
-    start_line: 1
-    end_line: 1
+    start_line: 539
+    end_line: 539
     matcher: 1-hash
     rule_length: 11
     matched_length: 11
@@ -545,14 +497,14 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: This file is distributed under the same license as the [fusiondirectory] package.
-  - score: '11.0'
-    start_line: 4
-    end_line: 4
+  - score: '100.0'
+    start_line: 1076
+    end_line: 1076
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
     match_coverage: '100.0'
-    rule_relevance: 11
+    rule_relevance: 100
     identifier: gpl-2.0-plus_67.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no

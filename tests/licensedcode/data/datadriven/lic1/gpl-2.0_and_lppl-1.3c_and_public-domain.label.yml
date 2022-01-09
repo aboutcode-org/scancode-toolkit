@@ -12,6 +12,8 @@ license_expressions:
   - artistic-2.0 AND bsd-new AND gpl-2.0
   - gpl-1.0-plus
   - lppl-1.3c
+  - lppl-1.3c
+  - lppl-1.3c
   - artistic-2.0 AND public-domain
   - public-domain
   - public-domain

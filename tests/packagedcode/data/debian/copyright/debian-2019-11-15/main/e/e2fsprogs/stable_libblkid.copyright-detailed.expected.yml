@@ -20,6 +20,9 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "You are free to distribute this software under the terms of the GNU\n Lesser\
-      \ (Library) General Public License.\n \n On Debian systems, the complete text of the GNU\
-      \ Lesser (Library)\n General Public License can be found in /usr/share/common-licenses/LGPL-2."
+    matched_text: |
+      You are free to distribute this software under the terms of the GNU
+      Lesser (Library) General Public License.
+
+      On Debian systems, the complete text of the GNU Lesser (Library)
+      General Public License can be found in /usr/share/common-licenses/LGPL-2.

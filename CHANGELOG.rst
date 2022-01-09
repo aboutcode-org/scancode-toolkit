@@ -1,65 +1,324 @@
 Changelog
 =========
 
-v21.x.x (next, future)
+31.0.0 (next, roadmap)
 -----------------------
+
+
 
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
- - The data structure of the JSON output is now versioned and the next version
-   is available with a new command line option. We are also documenting a new
-   and clear API policy and backward compatibility policy.
+- Main package API function `get_package_infos` is now deprecated, and is replaced by
+  `get_package_manifests`.
 
- - The data structure of the JSON output has changed for copyrights, authors
-   and holders: we now use proper name for attributes and not a generic "value".
+- The data structure of the JSON output has changed for copyrights, authors
+  and holders: we now use proper name for attributes and not a generic "value".
 
- - The data structure of the JSON output has changed for licenses: we now
-   return match details once for each matched license expression rather than
-   once for each license in a matched expression. There is a new top-level
-   "licenses" attributes that contains the data details for each detected
-   licenses only once. This data can contain the reference license text
-   as an option.
+- The data structure of the JSON output has changed for licenses: we now
+  return match details once for each matched license expression rather than
+  once for each license in a matched expression. There is a new top-level
+  "license_references" attributes that contains the data details for each
+  detected licenses only once. This data can contain the reference license text
+  as an option.
 
- - The data structure of the JSON output has changed for packages: we now
-   return "package_manifests" package information at the manifest file-level
-   rather than "packages". There is a a new top-level "packages" attribute
-   that contains each package instance that can be aggregating data from
-   multiple manifests for a single package instance.
+- The data structure of the JSON output has changed for packages: we now
+  return "package_manifests" package information at the manifest file-level
+  rather than "packages". There is a a new top-level "packages" attribute
+  that contains each package instance that can be aggregating data from
+  multiple manifests for a single package instance.
+
+- The data structure for HTML output has been changed to include emails and
+  urls under the  "infos" object. Now HTML template will output holders,
+  authors, emails, and urls into separate tables like "licenses" and "copyrights".
+
+- The data structure for CSV output has been changed to rename the Resource
+  column to "path". The "copyright_holder" has been ranmed to "holder"
 
 
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
 
- - The data structure in the JSON is now using consistently named attributes as
-   opposed to a plain value.
-
-
-Package detection:
-~~~~~~~~~~~~~~~~~~
-
- - Add support for OpenWRT packages.
- - Add support for Yocto/BitBake .bb recipes.
- - Add support to track installed files for each Package type.
+- The data structure in the JSON is now using consistently named attributes as
+  opposed to a plain value.
+- Several copyright detection bugs have been fixed.
+- French and German copyright detection is improved.
+- Some spurious trailing dots in holders are not stripped.
 
 
 License detection:
 ~~~~~~~~~~~~~~~~~~~
 
-- Unknown licenses have a new flag "is_unknown" to identify them
-  beyond just the naming convention of having "unknown" as part of their name.
+- There have been significant license detection rules and licenses updates:
+
+  - XX new licenses have been added, 
+  - XX existing license metadata have been updated,
+  - XXXX new license detection rules have been added, and
+  - XXXX existing license rules have been updated.
+  - XXXX existing false positive license rules have been removed (see below).
+  - The SPDX license list has been updated to the latest v3.15
+
+- The rule attribute "only_known_words" has been renamed to "is_continuous" and its
+  meaning has been updated and expanded. A rule tagged as "is_continuous" can only
+  be matched if there are no gaps between matched words, be they stopwords, extra
+  unknown or known words. This improves several false positive license detections. 
+  The processing for "is_continous" has been merged in "key phrases" processing
+  below.
+
+- Key phrases can now be defined in RULEs by surrounding one or more words with
+  `{{` and `}}`. When defined a RULE will only match when the key phrases match
+  exactly. When all the text of rule is a "key phrase", this is the same as being
+  "is_continuous".
+
+- The "--unknown-licenses" option now also detects unknown licenses using a
+  simple and effective ngrams-based matching in area that are not matched or
+  weakly matched. This helps detects things that look like a license but are not
+  yet known as licenses.
+
+- False positive detection of "license lists" like list seen in license and
+  package management tools has been entirely reworked. Rather than using
+  thousands of small false positive rules, there is now a new filter to detect
+  long run of license references and tags that are typical of license lists.
+  As a results, thousands of rules have been replaced by a simpler filter, and
+  the license detection is both more accurate, faster and has fewer false
+  positives.
+
+- The new license flag "is_generic" tags licenses that are "generic" licenses
+  such as "other-permissive" or "other-copyleft". This is not yet
+  returned in the JSON API.
+
+- When scanning binary files, the detection of single word rules is filtered when
+  surrounded by gibberish or is using mixed case. For instance $#%$GpL$ is a false
+  positive and is no longer reported.
+
+- Several rules we tagged as is_license_notice incorrectly but were references
+  and have been requalified as is_license_reference. All rules made of a single
+  ord have been requalified as is_license_reference if they were not qualified
+  this way.
+
+- Matches to small license rules (with small defined as under 15 words)
+  that are scattered on too many lines are now filtered as false matches.
+
+- Small, two-words matches that overlap the previous or next match by
+  by the word "license" and assimilated are now filtered as false matches.
+
+
+Package detection:
+~~~~~~~~~~~~~~~~~~
+
+- We now support new package manifest formats:
+  - OpenWRT packages.
+  - Yocto/BitBake .bb recipes.
+
+- Major changes in packages detection and reporting, codebase-level attribute `packages`
+  with one or more "package_manifests" and files for the packages are reported.
+  The specific changes made are:
+
+  - The resource level attribute `packages` has been renamed to `package_manifests`,
+    as these are really package manifests that are being detected.
+
+  - A new top-level attribute `packages` has been added which contains package
+    instances created from package_manifests detected in the codebase.
+
+  - A new codebase level attribute `packages` has been added which contains package
+    instances created from package_manifests detected in the codebase.
+
+
+Outputs:
+~~~~~~~~
+
+ - Add new outputs for the CycloneDx format.
+   The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
+
+
+Output version
+--------------
+
+Scancode Data Output Version is now 2.0.0.
+
+Changes:
+
+- rename resource level attribute `packages` to `package_manifests`.
+- add top-level attribute `packages`.
+
+
+30.1.0 - 2021-09-25
+--------------------
+
+This is a bug fix release for these bugs:
+
+- https://github.com/nexB/scancode-toolkit/issues/2717
+
+We now return the package in the summaries as before.
+
+There is also a minor API change: we no longer return a count of "null" empty
+values in the summaries for license, copyrights, etc.
+
+
+Thank you to:
+- Thomas Druez @tdruez 
+
+
+
+30.0.1 - 2021-09-24
+--------------------
+
+This is a minor bug fix release for these bugs:
+
+- https://github.com/nexB/commoncode/issues/31
+- https://github.com/nexB/scancode-toolkit/issues/2713
+
+We now correctly work with all supported Click versions. 
+
+Thank you to:
+- Konstantin Kochin @vznncv
+- Thomas Druez @tdruez 
+
+
+
+30.0.0 - 2021-09-23
+--------------------
+
+This is a major release with new features, and several bug fixes and
+improvements including major updates to the license detection.
+
+We have droped using calendar-based versions and are now switched back to semver
+versioning. To ensure that there is no ambiguity, the new major version has been
+updated from 21 to 30. The primary reason is that calver was not helping
+integrators to track major version changes like semver does.
+
+We also have introduced a new JSON output format version based on semver to
+version the JSON output format data structure and have documented the new
+versioning approach.
+
+
+Package detection:
+~~~~~~~~~~~~~~~~~~
+
+- The Debian packages declared license detection in machine readable copyright
+  files and unstructured copyright has been significantly improved with the
+  tracking of the detection start and end line of a license match. This is not
+  yet exposed outside of tests but has been essential to help improve detection.
+
+- Debian copyright license detection has been significantly improved with new
+  license detection rules.
+
+- Support for Windows packages has been improved (and in particular the handling
+  of Windows packages detection in the Windows registry).
+
+- Support for Cocoapod packages has been significantly revamped and is now
+  working as expected.
+
+- Support for PyPI packages has been refined, in particular package descriptions.
+
+
+
+Copyright detection:
+~~~~~~~~~~~~~~~~~~~~
+
+- The copyright detection accuracy has been improved and several bugs have been
+  fixed.
+
+
+License detection:
+~~~~~~~~~~~~~~~~~~~
+
+There have been some significant updates in license detection. We now track
+34,164 license and license notices:
+
+  - 84 new licenses have been added, 
+  - 34 existing license metadata have been updated,
+  - 2765 new license detection rules have been added, and
+  - 2041 existing license rules have been updated.
+
+
+- Several license detection bugs have fixed.
+
+- The SPDX license list 3.14 is now supported and has been synced with the
+  licensedb. We also include the version of the SPDX license list in the
+  ScanCode YAML, JSON and the SPDX outputs, as well as display it with the
+  "--version" command line option.
+
+- Unknown licenses have a new flag "is_unknown" in their metadata to identify
+  them explicitly. Before that we were just relying on the naming convention of
+  having "unknown" as part of a license key.
 
 - Rules that match at least one unknown license have a flag "has_unknown" set
-  in the returned match results.
+  and returned in the match results.
+
+- Experimental: License detection can now "follow" license mentions that
+  reference another file such as "see license in COPYING" where we can relate
+  this mention to the actual license detected in the COPYING file. Use the new
+  "--unknown-licenses" command line option to test this new feature.
+  This feature will evolve significantly in the next version(s).
 
 
-Many thanks to every contributors that made this possible and in particular:
+Outputs:
+~~~~~~~~
+
+- The SPDX output now has the mandatory ids attribute per SPDX spec. And we
+  support SPDX 2.2 and SPDX license list 3.14.
+
+
+Miscellaneous
+~~~~~~~~~~~~~~~
+
+- There is a new "--no-check-version" CLI option to scancode to bypass live,
+  remote outdated version check on PyPI
+
+- The scan results and the CLI now display an outdated version warning when
+  the installed ScanCode version is older than 90 days. This is to warn users
+  that they are relying on outdated, likely buggy, insecure and inaccurate scan
+  results and encourage them to update to a newer version. This is made entirely
+  locally based on date comparisons.
+
+- We now display again the command line progressbar counters correctly.
+
+- A bug has been fixed in summarization.
+
+- Generated code detection has been improved with several new keywords.
+
+
+Thank you!
+~~~~~~~~~~~~
+
+Many thanks to the many contributors that made this release possible and in
+particular:
 
 - Akanksha Garg @akugarg
+- Armijn Hemel @armijnhemel 
 - Ayan Sinha Mahapatra @AyanSinhaMahapatra
+- Bryan Sutula @sutula
+- Chin-Yeung Li @chinyeungli
+- Dennis Clark @DennisClark
+- dyh @yunhua-deng
+- Dr. Frank Heimes @FrankHeimes 
+- gunaztar @gunaztar
+- Helio Chissini de Castro @heliocastro
+- Henrik Sandklef @hesa
+- Jiyeong Seok @dd-jy
+- John M. Horan @johnmhoran
 - Jono Yang @JonoYang
+- Joseph Heck @heckj
+- Luis Villa @tieguy
+- Konrad Weihmann @priv-kweihmann
+- mapelpapel @mapelpapel
+- Maximilian Huber @maxhbr
+- Michael Herzog @mjherzog
+- MMarwedel @MMarwedel
+- Mikko Murto @mmurto
+- Nishchith Shetty @inishchith 
+- Peter Gardfjäll @petergardfjall
 - Philippe Ombredanne @pombredanne
-
+- Rainer Bieniek @rbieniek 
+- Roshan Thomas @Thomshan
+- Sadhana @s4-2
+- Sarita Singh @itssingh
+- Siddhant Khare @Siddhant-K-code
+- Soim Kim @soimkim
+- Thomas Druez @tdruez 
+- Thorsten Godau @tgodau
+- Yunus Rahbar @yns88
 
 
 v21.8.4

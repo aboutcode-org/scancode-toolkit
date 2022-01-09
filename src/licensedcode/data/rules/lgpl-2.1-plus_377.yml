@@ -1,0 +1,6 @@
+license_expression: lgpl-2.1-plus
+is_license_reference: yes
+relevance: 100
+notes: with lesser hence the 2.1-plus version
+ignorable_urls:
+    - https://www.gnu.org/copyleft/lesser.html

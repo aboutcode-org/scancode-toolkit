@@ -1,0 +1,13 @@
+key: nxp-mc-firmware
+short_name: NXP MC Firmware License
+name: NXP MC Firmware License
+category: Proprietary Free
+owner: NXP
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.nxp_mc_firmware
+spdx_license_key: LicenseRef-scancode-nxp-mc-firmware
+ignorable_copyrights:
+    - Copyright (c) 2006 David Gibson, IBM Corporation
+    - Copyright (c) 2006,2008-2011 Joseph Koshy
+ignorable_holders:
+    - David Gibson, IBM Corporation
+    - Joseph Koshy

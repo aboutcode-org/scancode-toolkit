@@ -1,6 +1,5 @@
 license_expressions:
-  - epl-2.0 OR apache-2.0 OR (gpl-2.0 WITH classpath-exception-2.0 AND gpl-2.0 WITH openjdk-exception)
-  - epl-2.0 OR apache-2.0
+  - epl-2.0 OR apache-2.0 OR gpl-2.0 WITH classpath-exception-2.0 OR gpl-2.0 WITH openjdk-exception
   - (epl-2.0 OR apache-2.0 OR (gpl-2.0 WITH classpath-exception-2.0 AND gpl-2.0 WITH openjdk-exception))
     AND bsd-new AND mit AND gpl-3.0-plus WITH autoconf-simple-exception
   - epl-2.0 OR apache-2.0

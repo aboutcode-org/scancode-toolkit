@@ -10,8 +10,8 @@ declared_license:
   - Expat
   - GPL-2
   - BSD-3-clause
-license_expression: (bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)) AND zlib AND zlib AND mit
-  AND (bsd-new AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)) AND mit
+license_expression: (bsd-new AND (gpl-2.0 AND gpl-2.0)) AND zlib AND zlib AND mit AND (bsd-new
+  AND (gpl-2.0 AND gpl-2.0)) AND mit
 copyright: |
   2013-2018, Yann Collet
   2016, Przemyslaw Skibinski
@@ -23,8 +23,8 @@ copyright: |
   2015-2016 Kevin Murray <spam@kdmurray.id.au>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 15
+    start_line: 30
+    end_line: 44
     matcher: 1-hash
     rule_length: 132
     matched_length: 132
@@ -54,8 +54,8 @@ matches:
          misrepresented as being the original software.
       3. This notice may not be removed or altered from any source distribution.
   - score: '100.0'
-    start_line: 1
-    end_line: '19'
+    start_line: 59
+    end_line: 77
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -89,8 +89,8 @@ matches:
       CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 79
+    end_line: 79
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -105,14 +105,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2'
   - score: '100.0'
-    start_line: 1
-    end_line: 12
-    matcher: 2-aho
-    rule_length: 101
-    matched_length: 101
+    start_line: 80
+    end_line: 94
+    matcher: 1-hash
+    rule_length: 125
+    matched_length: 125
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_259.RULE
+    identifier: gpl-2.0_1189.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes
@@ -132,27 +132,12 @@ matches:
       You should have received a copy of the GNU General Public License along
       with this program; if not, write to the Free Software Foundation, Inc.,
       51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-  - score: '100.0'
-    start_line: 14
-    end_line: 15
-    matcher: 2-aho
-    rule_length: 24
-    matched_length: 24
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_1120.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
+
       On Debian systems, the complete text of the GNU General Public
       License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
   - score: '99.52'
-    start_line: 1
-    end_line: 21
+    start_line: 97
+    end_line: 117
     matcher: 3-seq
     rule_length: 207
     matched_length: 206

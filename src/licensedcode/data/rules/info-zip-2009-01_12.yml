@@ -1,0 +1,9 @@
+license_expression: info-zip-2009-01
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 1990-2009 Info-ZIP.
+ignorable_holders:
+    - Info-ZIP
+ignorable_urls:
+    - ftp://ftp.info-zip.org/pub/infozip/license.html
+    - http://www.info-zip.org/pub/infozip/license.html

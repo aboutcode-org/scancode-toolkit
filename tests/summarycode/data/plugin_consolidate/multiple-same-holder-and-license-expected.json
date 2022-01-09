@@ -12,13 +12,16 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.15",
         "files_count": 2
       }
     }
   ],
+  "packages": [],
   "consolidated_components": [
     {
       "type": "holders",
@@ -64,7 +67,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -117,6 +120,7 @@
             "licenses": [
               "gpl-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -154,6 +158,7 @@
             "licenses": [
               "gpl-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -175,30 +180,30 @@
       "percentage_of_license_text": 50.0,
       "copyrights": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 1
         },
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 1
         },
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -251,6 +256,7 @@
             "licenses": [
               "gpl-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -288,6 +294,7 @@
             "licenses": [
               "gpl-2.0"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -309,30 +316,30 @@
       "percentage_of_license_text": 50.0,
       "copyrights": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 1
         },
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 1
         },
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],

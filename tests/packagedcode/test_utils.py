@@ -9,7 +9,6 @@
 
 from unittest import TestCase
 
-from packagedcode.utils import combine_expressions
 from packagedcode.utils import normalize_vcs_url
 
 
@@ -129,16 +128,3 @@ class TestPackageUtils(TestCase):
         assert normalize_vcs_url(None) == None
         assert normalize_vcs_url('') == None
         assert normalize_vcs_url(' ') == None
-
-    def test_combine_expressions_with_empty_input(self):
-        assert combine_expressions(None) == None
-        assert combine_expressions([]) == None
-
-    def test_combine_expressions_with_regular(self):
-        assert combine_expressions(['mit', 'apache-2.0']) == 'mit AND apache-2.0'
-
-    def test_combine_expressions_with_duplicated_elements(self):
-        assert combine_expressions(['mit', 'apache-2.0', 'mit']) == 'mit AND apache-2.0'
-
-    def test_combine_expressions_with_or_relationship(self):
-        assert combine_expressions(['mit', 'apache-2.0'], 'OR') == 'mit OR apache-2.0'

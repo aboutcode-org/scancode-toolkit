@@ -1,9 +1,12 @@
 primary_license:
 declared_license:
-license_expression: lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1 AND lgpl-2.1 AND bsd-new AND
-  public-domain AND public-domain AND bsd-simplified AND bsd-simplified AND bsd-simplified AND
-  bsd-simplified AND bsd-simplified AND public-domain AND bsd-new AND bsd-simplified AND public-domain
-  AND gpl-3.0 AND gpl-2.0-plus AND gpl-3.0
+license_expression: lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND bsd-new AND public-domain
+  AND public-domain AND bsd-zero AND bsd-simplified AND bsd-simplified AND bsd-simplified AND
+  bsd-zero AND bsd-zero AND bsd-zero AND bsd-zero AND bsd-simplified AND bsd-simplified AND
+  public-domain AND bsd-new AND bsd-simplified AND public-domain AND gpl-3.0-plus WITH autoconf-exception-3.0
+  AND bsd-zero AND fsf-ap AND fsf-ap AND fsf-ap AND fsf-ap AND gpl-2.0-plus WITH autoconf-simple-exception-2.0
+  AND fsf-ap AND fsf-ap AND gpl-3.0-plus WITH autoconf-exception-3.0 AND fsf-ap AND fsf-ap AND
+  free-unknown
 copyright: |
   Copyright Thorsten Kukuk, Bjorn Esser, Zack Weinberg LGPL
   Copyright Free Software Foundation, Inc.
@@ -52,56 +55,40 @@ matches:
     is_license_intro: no
     matched_text: |
       The overall license for [libxcrypt] is the GNU Lesser General Public
-       License, version 2.1 (or, at your option, any later version); see
-       the file COPYING.LIB for the full terms of this license.
-  - score: '20.0'
+      License, version 2.1 (or, at your option, any later version); see
+      the file COPYING.LIB for the full terms of this license.
+  - score: '100.0'
     start_line: 22
     end_line: 22
     matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+    rule_length: 5
+    matched_length: 5
     match_coverage: '100.0'
-    rule_relevance: 80
-    identifier: lgpl_20_tag.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: Copyright [Thorsten] [Kukuk], [Björn] [Esser], [Zack] [Weinberg]; LGPL (
-  - score: '75.0'
-    start_line: 22
-    end_line: 22
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 75
-    identifier: lgpl-2.1_88.RULE
-    license_expression: lgpl-2.1
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_392.RULE
+    license_expression: lgpl-2.1-plus
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text: LGPL (v2.1
-  - score: '75.0'
+    matched_text: 'LGPL (v2.1 or later):'
+  - score: '100.0'
     start_line: 25
     end_line: 25
     matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
+    rule_length: 5
+    matched_length: 5
     match_coverage: '100.0'
-    rule_relevance: 75
-    identifier: lgpl-2.1_88.RULE
-    license_expression: lgpl-2.1
+    rule_relevance: 100
+    identifier: lgpl-2.1-plus_392.RULE
+    license_expression: lgpl-2.1-plus
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text: LGPL (v2.1
+    matched_text: 'LGPL (v2.1 or later):'
   - score: '100.0'
     start_line: 29
     end_line: 29
@@ -118,38 +105,54 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: '3-clause BSD:'
-  - score: '70.0'
+  - score: '100.0'
     start_line: 33
     end_line: 33
     matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+    rule_length: 4
+    matched_length: 4
     match_coverage: '100.0'
-    rule_relevance: 70
-    identifier: public-domain_bare_words.RULE
+    rule_relevance: 100
+    identifier: public-domain_426.RULE
     license_expression: public-domain
-    is_license_text: no
+    is_license_text: yes
     is_license_notice: no
-    is_license_reference: yes
+    is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: Public domain,
-  - score: '70.0'
+    matched_text: Public domain, written by
+  - score: '100.0'
     start_line: 36
     end_line: 36
     matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+    rule_length: 4
+    matched_length: 4
     match_coverage: '100.0'
-    rule_relevance: 70
-    identifier: public-domain_bare_words.RULE
+    rule_relevance: 100
+    identifier: public-domain_426.RULE
     license_expression: public-domain
+    is_license_text: yes
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: Public domain, written by
+  - score: '100.0'
+    start_line: 40
+    end_line: 40
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-zero_6.RULE
+    license_expression: bsd-zero
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text: Public domain,
+    matched_text: '0-clause BSD:'
   - score: '100.0'
     start_line: 43
     end_line: 43
@@ -199,6 +202,70 @@ matches:
     is_license_intro: no
     matched_text: '2-clause BSD:'
   - score: '100.0'
+    start_line: 55
+    end_line: 55
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-zero_6.RULE
+    license_expression: bsd-zero
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: '0-clause BSD:'
+  - score: '100.0'
+    start_line: 61
+    end_line: 61
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-zero_6.RULE
+    license_expression: bsd-zero
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: '0-clause BSD:'
+  - score: '100.0'
+    start_line: 64
+    end_line: 64
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-zero_6.RULE
+    license_expression: bsd-zero
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: '0-clause BSD:'
+  - score: '100.0'
+    start_line: 67
+    end_line: 67
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-zero_6.RULE
+    license_expression: bsd-zero
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: '0-clause BSD:'
+  - score: '100.0'
     start_line: 71
     end_line: 71
     matcher: 2-aho
@@ -230,22 +297,22 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: '2-clause BSD:'
-  - score: '70.0'
+  - score: '100.0'
     start_line: 77
     end_line: 77
     matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+    rule_length: 4
+    matched_length: 4
     match_coverage: '100.0'
-    rule_relevance: 70
-    identifier: public-domain_bare_words.RULE
+    rule_relevance: 100
+    identifier: public-domain_426.RULE
     license_expression: public-domain
-    is_license_text: no
+    is_license_text: yes
     is_license_notice: no
-    is_license_reference: yes
+    is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: Public domain,
+    matched_text: Public domain, written by
   - score: '100.0'
     start_line: 80
     end_line: 80
@@ -278,67 +345,230 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: '2-clause BSD:'
-  - score: '70.0'
+  - score: '100.0'
     start_line: 86
     end_line: 86
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 70
-    identifier: public-domain_bare_words.RULE
-    license_expression: public-domain
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Public domain,
-  - score: '100.0'
-    start_line: 98
-    end_line: 98
-    matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0_76.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: GPL (v3
-  - score: '90.0'
-    start_line: 118
-    end_line: 118
     matcher: 2-aho
     rule_length: 4
     matched_length: 4
     match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: gpl-2.0-plus_176.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
+    rule_relevance: 100
+    identifier: public-domain_426.RULE
+    license_expression: public-domain
+    is_license_text: yes
     is_license_notice: no
     is_license_reference: no
-    is_license_tag: yes
+    is_license_tag: no
     is_license_intro: no
-    matched_text: GPL (v2 or later),
-  - score: '100.0'
-    start_line: 128
-    end_line: 128
+    matched_text: Public domain, written by
+  - score: '99.0'
+    start_line: 98
+    end_line: 98
     matcher: 2-aho
-    rule_length: 2
-    matched_length: 2
+    rule_length: 7
+    matched_length: 7
     match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0_76.RULE
-    license_expression: gpl-3.0
+    rule_relevance: 99
+    identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
+    license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text: GPL (v3
+    matched_text: 'GPL (v3 or later), with Autoconf exception:'
+  - score: '100.0'
+    start_line: 101
+    end_line: 101
+    matcher: 2-aho
+    rule_length: 3
+    matched_length: 3
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-zero_6.RULE
+    license_expression: bsd-zero
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: '0-clause BSD:'
+  - score: '100.0'
+    start_line: 104
+    end_line: 104
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-ap_6.RULE
+    license_expression: fsf-ap
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: 'FSF All Permissive License:'
+  - score: '100.0'
+    start_line: 107
+    end_line: 107
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-ap_6.RULE
+    license_expression: fsf-ap
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: 'FSF All Permissive License:'
+  - score: '100.0'
+    start_line: 111
+    end_line: 111
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-ap_6.RULE
+    license_expression: fsf-ap
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: 'FSF All Permissive License:'
+  - score: '100.0'
+    start_line: 114
+    end_line: 114
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-ap_6.RULE
+    license_expression: fsf-ap
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: 'FSF All Permissive License:'
+  - score: '99.0'
+    start_line: 118
+    end_line: 118
+    matcher: 2-aho
+    rule_length: 7
+    matched_length: 7
+    match_coverage: '100.0'
+    rule_relevance: 99
+    identifier: gpl-2.0-plus_with_autoconf-simple-exception-2.0_17.RULE
+    license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: 'GPL (v2 or later), with Autoconf exception:'
+  - score: '100.0'
+    start_line: 121
+    end_line: 121
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-ap_6.RULE
+    license_expression: fsf-ap
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: 'FSF All Permissive License:'
+  - score: '100.0'
+    start_line: 124
+    end_line: 124
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-ap_6.RULE
+    license_expression: fsf-ap
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: 'FSF All Permissive License:'
+  - score: '99.0'
+    start_line: 128
+    end_line: 128
+    matcher: 2-aho
+    rule_length: 7
+    matched_length: 7
+    match_coverage: '100.0'
+    rule_relevance: 99
+    identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
+    license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: 'GPL (v3 or later), with Autoconf exception:'
+  - score: '100.0'
+    start_line: 131
+    end_line: 131
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-ap_6.RULE
+    license_expression: fsf-ap
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: 'FSF All Permissive License:'
+  - score: '100.0'
+    start_line: 134
+    end_line: 134
+    matcher: 2-aho
+    rule_length: 4
+    matched_length: 4
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: fsf-ap_6.RULE
+    license_expression: fsf-ap
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: 'FSF All Permissive License:'
+  - score: '100.0'
+    start_line: 137
+    end_line: 139
+    matcher: 2-aho
+    rule_length: 27
+    matched_length: 27
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: free-unknown_120.RULE
+    license_expression: free-unknown
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: |
+      Copyright holders unknown, no statement of license (all of these
+         files are part of the testsuite and do not contribute to the
+         installed library or its headers):

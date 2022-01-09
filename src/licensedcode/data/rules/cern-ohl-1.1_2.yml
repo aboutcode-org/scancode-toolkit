@@ -1,0 +1,9 @@
+license_expression: cern-ohl-1.1
+is_license_text: yes
+notes: from https://ohwr.org/project/cernohl/uploads/33a541feca58613f9b5b6f837f5ab62f/CERNOHLv1_1.txt
+ignorable_copyrights:
+    - copyright of CERN.
+ignorable_holders:
+    - CERN
+ignorable_urls:
+    - http://www.ohwr.org/

@@ -1,0 +1,15 @@
+{
+  "name": "abbrev",
+  "version": "1.0.7",
+  "description": "Like ruby's abbrev module, but in js",
+  "author": "Isaac Z. Schlueter <i@izs.me>",
+  "main": "abbrev.js",
+  "scripts": {
+    "test": "tap test.js --cov"
+  },
+  "repository": "http://github.com/isaacs/abbrev-js",
+  "license": "ISC",
+  "devDependencies": {
+    "tap": "^1.2.0"
+  }
+}

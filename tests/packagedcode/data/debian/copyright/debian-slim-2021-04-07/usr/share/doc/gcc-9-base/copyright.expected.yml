@@ -3,11 +3,11 @@ declared_license:
 license_expression: gpl-3.0-plus AND gpl-3.0-plus WITH gcc-exception-3.1 AND bsd-new AND uoi-ncsa
   AND mit AND (mit OR commercial-license) AND gfdl-1.2 AND gcc-exception-3.1 AND gpl-2.0 AND
   lgpl-2.0-plus AND lgpl-2.1-plus AND public-domain AND sunpro AND gpl-2.0-plus AND (artistic-perl-1.0
-  OR gpl-1.0) AND zlib AND d-zlib AND gfdl-1.3-plus AND (gpl-3.0 AND lgpl-2.1) AND lgpl-2.1
-  AND (lgpl-3.0 AND gpl-3.0) AND (gpl-3.0 AND lgpl-2.1 AND lgpl-3.0) AND (lgpl-2.0 AND gpl-3.0)
-  AND gpl-1.0-plus AND (gpl-2.0-plus AND gpl-3.0-plus) AND (lgpl-2.1 AND lgpl-3.0 AND gpl-3.0)
-  AND (lgpl-2.1 AND lgpl-3.0) AND (lgpl-2.0-plus AND gpl-1.0-plus) AND bsla-no-advert AND bsla
-  AND bsd-original-uc AND flex-2.5 AND (gpl-3.0 AND gpl-2.0 AND lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus
+  OR gpl-1.0) AND zlib AND d-zlib AND gfdl-1.3-plus AND (gpl-3.0 AND lgpl-2.1) AND (lgpl-3.0
+  AND gpl-3.0) AND (gpl-3.0 AND lgpl-2.1 AND lgpl-3.0) AND (lgpl-2.0 AND gpl-3.0) AND gpl-1.0-plus
+  AND (gpl-2.0-plus AND gpl-3.0-plus) AND (lgpl-2.1 AND lgpl-3.0 AND gpl-3.0) AND (lgpl-2.1
+  AND lgpl-3.0) AND (lgpl-2.0-plus AND gpl-1.0-plus) AND bsla-no-advert AND bsla AND bsd-original-uc
+  AND flex-2.5 AND (gpl-3.0 AND gpl-2.0 AND lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus
   AND other-copyleft AND other-permissive) AND x11-lucent AND amd-historical AND osf-1990 AND
   nilsson-historical AND newlib-historical AND bsd-simplified AND x11-hanson AND intel-osl-1993
   AND hs-regexp
@@ -844,27 +844,27 @@ matches:
       \ is distributed in the hope that it will be useful, but\n WITHOUT ANY WARRANTY; without\
       \ even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\
       \  See the GNU\n General Public License for more details."
-  - score: '97.3'
+  - score: '96.05'
     start_line: 728
     end_line: 736
     matcher: 3-seq
-    rule_length: 72
-    matched_length: 72
-    match_coverage: '100.0'
+    rule_length: 76
+    matched_length: 73
+    match_coverage: '96.05'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_353.RULE
-    license_expression: gpl-3.0-plus
+    identifier: gpl-2.0-plus_287.RULE
+    license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "is free software; you can redistribute it and/or modify it under\n the terms\
-      \ of the GNU General Public License as published by the Free\n Software Foundation; either\
-      \ version 3, or (at your option) any later\n version.\n \n [GNU] [Modula]-[2] is distributed\
-      \ in the hope that it will be useful, but WITHOUT ANY\n WARRANTY; without even the implied\
-      \ warranty of MERCHANTABILITY or\n FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General\
-      \ Public License\n for more details."
+    matched_text: "GNU [Modula]-[2] is free software; you can redistribute it and/or modify\
+      \ it under\n the terms of the GNU General Public License as published by the Free\n Software\
+      \ Foundation; either version [3], or (at your option) any later\n version.\n \n GNU [Modula]-[2]\
+      \ is distributed in the hope that it will be useful, but WITHOUT ANY\n WARRANTY; without\
+      \ even the implied warranty of MERCHANTABILITY or\n FITNESS FOR A PARTICULAR PURPOSE.\
+      \  See the GNU General Public License\n for more details."
   - score: '95.0'
     start_line: 739
     end_line: 739
@@ -902,23 +902,6 @@ matches:
       \ version.\n \n This library is distributed in the hope that it will be useful,\n but\
       \ WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS\
       \ FOR A PARTICULAR PURPOSE.  See the GNU\n Lesser General Public License for more details."
-  - score: '25.0'
-    start_line: 764
-    end_line: 769
-    matcher: 3-seq
-    rule_length: 36
-    matched_length: 9
-    match_coverage: '25.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1_90.RULE
-    license_expression: lgpl-2.1
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "the GNU\n Lesser General Public License [for] [more] [details].\n \n [gcc]/[gm2]/[gm2]-[libs]-[iso]/*.[mod]:\n\
-      \ \n [Copyright] ([C]) [2012] Free Software Foundation,"
   - score: '97.3'
     start_line: 771
     end_line: 779
@@ -1135,23 +1118,6 @@ matches:
       \ version.\n \n This library is distributed in the hope that it will be useful,\n but\
       \ WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS\
       \ FOR A PARTICULAR PURPOSE.  See the GNU\n Lesser General Public License for more details."
-  - score: '25.0'
-    start_line: 844
-    end_line: 848
-    matcher: 3-seq
-    rule_length: 36
-    matched_length: 9
-    match_coverage: '25.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1_90.RULE
-    license_expression: lgpl-2.1
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "the GNU\n Lesser General Public License [for] [more] [details].\n \n [libgm2]/[libpim]/:\n\
-      \ [Copyright] ([C]) [2005]-[2014] Free Software Foundation,"
   - score: '55.0'
     start_line: 849
     end_line: 849
@@ -1246,16 +1212,16 @@ matches:
       \ in the hope that it will be useful, but WITHOUT ANY\n WARRANTY; without even the implied\
       \ warranty of MERCHANTABILITY or\n FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General\
       \ Public License\n for more details."
-  - score: '21.62'
+  - score: '14.04'
     start_line: 879
     end_line: 883
     matcher: 3-seq
-    rule_length: 37
+    rule_length: 57
     matched_length: 8
-    match_coverage: '21.62'
+    match_coverage: '14.04'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_409.RULE
-    license_expression: gpl-2.0-plus
+    identifier: gpl-1.0-plus_413.RULE
+    license_expression: gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no

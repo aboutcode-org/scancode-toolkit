@@ -1,6 +1,5 @@
 license_expressions:
   - artistic-perl-1.0 OR gpl-1.0-plus
-  - unknown-license-reference
   - zlib
   - artistic-perl-1.0 OR gpl-1.0-plus
   - artistic-perl-1.0 OR gpl-1.0-plus

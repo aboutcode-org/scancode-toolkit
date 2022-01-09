@@ -3743,7 +3743,7 @@ matches:
     matched_length: 8
     match_coverage: '80.0'
     rule_relevance: 100
-    identifier: artistic-perl-1.0_or_gpl-1.0-plus_32.RULE
+    identifier: artistic-perl-1.0_or_gpl-1.0-plus_30.RULE
     license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes

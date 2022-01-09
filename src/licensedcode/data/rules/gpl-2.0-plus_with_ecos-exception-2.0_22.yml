@@ -1,0 +1,7 @@
+license_expression: gpl-2.0-plus WITH ecos-exception-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 50
+ignorable_urls:
+    - https://www.gnu.org/copyleft/gpl.html
+    - https://www.gnu.org/philosophy/license-list.html

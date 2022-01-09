@@ -1,0 +1,6 @@
+license_expression: agpl-3.0-plus WITH agpl-generic-additional-terms AND lucre
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://github.com/benlaurie/lucre
+    - https://www.gnu.org/licenses/

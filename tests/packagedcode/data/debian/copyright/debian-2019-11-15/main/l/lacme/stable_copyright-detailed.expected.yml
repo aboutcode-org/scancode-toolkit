@@ -1,13 +1,13 @@
-primary_license: gpl-3.0-plus AND lgpl-2.0-plus
+primary_license: gpl-3.0-plus
 declared_license:
   - GPL-3+
   - GPL-3+
-license_expression: gpl-3.0-plus AND lgpl-2.0-plus
+license_expression: gpl-3.0-plus AND gpl-3.0-plus
 copyright: © 2015-2017 Guilhem Moulin <guilhem@fripost.org>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 8
+    end_line: 8
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -21,26 +21,26 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-3+'
-  - score: '82.09'
-    start_line: 1
-    end_line: 7
-    matcher: 3-seq
+  - score: '100.0'
+    start_line: 9
+    end_line: 15
+    matcher: 1-hash
     rule_length: 67
-    matched_length: 55
-    match_coverage: '82.09'
+    matched_length: 67
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.0-plus_16.RULE
-    license_expression: lgpl-2.0-plus
+    identifier: gpl-3.0-plus_509.RULE
+    license_expression: gpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify it
+      This package is free software; you can redistribute it and/or modify it
       under the terms of the GNU General Public License as published by the
-      Free Software Foundation; either version [3] of the License, or (at your
+      Free Software Foundation; either version 3 of the License, or (at your
       option) any later version.
 
       On Debian systems, the complete text of the GNU General Public License
-      [version] [3] [can] [be] [found] [in] [file] "/usr/share/common-licenses/
+      version 3 can be found in file "/usr/share/common-licenses/GPL-3".

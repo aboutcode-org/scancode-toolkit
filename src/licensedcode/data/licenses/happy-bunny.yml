@@ -1,0 +1,11 @@
+key: happy-bunny
+short_name: The Happy Bunny License
+name: The Happy Bunny License
+category: Permissive
+owner: G-Truc Creation
+homepage_url: https://glm.g-truc.net/copying.txt
+spdx_license_key: LicenseRef-scancode-happy-bunny
+ignorable_copyrights:
+    - Copyright (c) G-Truc Creation
+ignorable_holders:
+    - G-Truc Creation

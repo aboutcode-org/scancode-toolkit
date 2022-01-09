@@ -19,7 +19,6 @@ from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
 
-
 # Tracing flags
 TRACE = False
 TRACE_LIGHT = False
@@ -41,49 +40,7 @@ if TRACE or TRACE_LIGHT:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 """
-top_level:
-    - license_expressions:
-        - count: 1
-          value: gpl-2.0
-    - holders:
-        - count: 1
-          value: RedHat Inc.
-
-by_facet:
-    facet: core
-        - license_expressions:
-            - count: 10
-              value: gpl-2.0 or bsd-new
-            - count: 2
-              value: mit
-        - programming_language:
-            - count: 10
-              value: java
-        - holders:
-            - count: 10
-              value: RedHat Inc.
-    facet: dev
-        - license_expressions:
-            - count: 23
-              value: gpl-2.0
-        - holders:
-            - count: 20
-              value: RedHat Inc.
-            - count: 10
-              value: none
-        - programming_languages:
-            - count: 34
-              value: java
-all:
-    - license_expressions:
-        - count: 10
-          value: gpl-2.0 or bsd-new
-    - programming_language:
-        - count: 10
-          value: java
-    - holders:
-        - count: 10
-          value: RedHat Inc.
+Create summarized scan data.
 """
 
 
@@ -206,8 +163,10 @@ def license_summarizer(resource, children, keep_details=False):
         child_summaries = get_resource_summary(child, key=LIC_EXP, as_attribute=keep_details) or []
         for child_summary in child_summaries:
             # TODO: review this: this feels rather weird
-            values = [child_summary['value']] * child_summary['count']
-            license_expressions.extend(values)
+            child_sum_val = child_summary.get('value')
+            if child_sum_val:
+                values = [child_sum_val] * child_summary['count']
+                license_expressions.extend(values)
 
     # summarize proper
     licenses_counter = summarize_licenses(license_expressions)
@@ -246,8 +205,10 @@ def language_summarizer(resource, children, keep_details=False):
     for child in children:
         child_summaries = get_resource_summary(child, key=PROG_LANG, as_attribute=keep_details) or []
         for child_summary in child_summaries:
-            values = [child_summary['value']] * child_summary['count']
-            languages.extend(values)
+            child_sum_val = child_summary.get('value')
+            if child_sum_val:
+                values = [child_sum_val] * child_summary['count']
+                languages.extend(values)
 
     # summarize proper
     languages_counter = summarize_languages(languages)
@@ -265,19 +226,31 @@ def summarize_languages(languages):
     return Counter(languages)
 
 
+SUMMARIZABLE_ATTRS = set([
+    'license_expressions',
+    'copyrights',
+    'holders',
+    'authors',
+    'programming_language',
+    # 'packages',
+])
+
+
 def summarize_values(values, attribute):
     """
     Given a list of `values` for a given `attribute`, return a mapping of
     {value: count of occurences} using a summarization specific to the attribute.
     """
-    from summarycode.copyright_summary import summarize_holders
+    if attribute not in SUMMARIZABLE_ATTRS:
+        return {}
+    from summarycode.copyright_summary import summarize_persons
     from summarycode.copyright_summary import summarize_copyrights
 
     value_summarizers_by_attr = dict(
         license_expressions=summarize_licenses,
         copyrights=summarize_copyrights,
-        holders=summarize_holders,
-        authors=summarize_holders,
+        holders=summarize_persons,
+        authors=summarize_persons,
         programming_language=summarize_languages,
     )
     return value_summarizers_by_attr[attribute](values)
@@ -317,23 +290,14 @@ def summarize_codebase_key_files(codebase, **kwargs):
     """
     Summarize codebase key files.
     """
-    summarizable_attributes = codebase.attributes.summary.keys()
-    if TRACE: logger_debug('summarizable_attributes:', summarizable_attributes)
+    summarizables = codebase.attributes.summary.keys()
+    if TRACE: logger_debug('summarizables:', summarizables)
 
-    # TODO: we cannot summarize packages with "key files for now
-    really_summarizable_attributes = set([
-        'license_expressions',
-        'copyrights',
-        'holders',
-        'authors',
-        'programming_language',
-        # 'packages',
-    ])  
-    summarizable_attributes = [k for k in summarizable_attributes
-        if k in really_summarizable_attributes]
+    # TODO: we cannot summarize packages with "key files" for now
+    summarizables = [k for k in summarizables if k in SUMMARIZABLE_ATTRS]
 
     # create one counter for each summarized attribute
-    summarizable_values_by_key = dict([(key, []) for key in summarizable_attributes])
+    summarizable_values_by_key = dict([(key, []) for key in summarizables])
 
     # filter to get only key files
     key_files = (res for res in codebase.walk(topdown=True)
@@ -347,10 +311,14 @@ def summarize_codebase_key_files(codebase, **kwargs):
             res_summaries = get_resource_summary(resource, key=key, as_attribute=False) or []
             for summary in res_summaries:
                 # each summary is a mapping with value/count: we transform back to values
-                values.extend([summary['value']] * summary['count'])
+                sum_value = summary.get('value')
+                if sum_value:
+                    values.extend([sum_value] * summary['count'])
 
     summary_counters = []
     for key, values in summarizable_values_by_key.items():
+        if key not in SUMMARIZABLE_ATTRS:
+            continue
         summarized = summarize_values(values, key)
         summary_counters.append((key, summarized))
 
@@ -394,13 +362,13 @@ def summarize_codebase_by_facet(codebase, **kwargs):
     """
     from summarycode import facet as facet_module
 
-    summarizable_attributes = codebase.attributes.summary.keys()
+    summarizable = codebase.attributes.summary.keys()
     if TRACE:
-        logger_debug('summarize_codebase_by_facet for attributes:', summarizable_attributes)
+        logger_debug('summarize_codebase_by_facet for attributes:', summarizable)
 
     # create one group of by-facet values lists for each summarized attribute
     summarizable_values_by_key_by_facet = dict([
-        (facet, dict([(key, []) for key in summarizable_attributes]))
+        (facet, dict([(key, []) for key in summarizable]))
         for facet in facet_module.FACETS
     ])
 
@@ -417,7 +385,9 @@ def summarize_codebase_by_facet(codebase, **kwargs):
                 res_summaries = get_resource_summary(resource, key=key, as_attribute=False) or []
                 for summary in res_summaries:
                     # each summary is a mapping with value/count: we transform back to discrete values
-                    values.extend([summary['value']] * summary['count'])
+                    sum_value = summary.get('value')
+                    if sum_value:
+                        values.extend([sum_value] * summary['count'])
 
     final_summaries = []
     for facet, summarizable_values_by_key in summarizable_values_by_key_by_facet.items():
@@ -441,7 +411,7 @@ def summarize_codebase_by_facet(codebase, **kwargs):
 def add_files(packages, resource):
     """
     Update in-place every package mapping in the `packages` list by updating or
-    creatig the the "files" attribute from the `resource`. Yield back the
+    creating the the "files" attribute from the `resource`. Yield back the
     packages.
     """
     for package in packages:

@@ -12,9 +12,11 @@
         "--license-clarity-score": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 4
       }
     }
@@ -142,6 +144,7 @@
             "licenses": [
               "mit"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -164,7 +167,7 @@
       "holders": [],
       "authors": [
         {
-          "value": "Alexander Plavinski <alexander.plavinski@invision.de>",
+          "author": "Alexander Plavinski <alexander.plavinski@invision.de>",
           "start_line": 6,
           "end_line": 6
         }
@@ -258,6 +261,7 @@
             "licenses": [
               "mit"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
@@ -311,7 +315,7 @@
       "licenses": [
         {
           "key": "other-permissive",
-          "score": 88.0,
+          "score": 100.0,
           "name": "Other Permissive Licenses",
           "short_name": "Other Permissive Licenses",
           "category": "Permissive",
@@ -333,6 +337,7 @@
             "licenses": [
               "other-permissive"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
@@ -343,7 +348,7 @@
             "rule_length": 16,
             "matched_length": 16,
             "match_coverage": 100.0,
-            "rule_relevance": 88
+            "rule_relevance": 100
           }
         }
       ],

@@ -1,0 +1,23 @@
+key: csl-1.0
+short_name: CSL-1.0
+name: Community Specification License 1.0
+category: Permissive
+owner: Linux Foundation
+homepage_url: https://github.com/CommunitySpecification/1.0
+spdx_license_key: Community-Spec-1.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-csl-1.0
+text_urls:
+    - https://github.com/CommunitySpecification/1.0/blob/master/1._Community_Specification_License-v1.md
+other_urls:
+    - https://github.com/spdx/spdx-3-model/blob/main/License.md
+ignorable_copyrights:
+    - Copyright 2020 Joint Development Foundation
+    - Copyright Attribution. As
+ignorable_authors:
+    - the Working Group
+ignorable_holders:
+    - Attribution. As
+    - Joint Development Foundation
+ignorable_urls:
+    - https://creativecommons.org/licenses/by/4.0

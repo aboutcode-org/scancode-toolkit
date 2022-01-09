@@ -1,0 +1,7 @@
+license_expression: lgpl-2.0 AND lgpl-2.1
+is_license_reference: yes
+referenced_filenames:
+    - intl/COPYING.LIB-2.0
+    - /usr/share/common-licenses/LGPL-2
+    - intl/COPYING.LIB-2.1
+    - /usr/share/common-licenses/LGPL-2.1

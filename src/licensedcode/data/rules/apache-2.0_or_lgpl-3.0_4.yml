@@ -6,5 +6,5 @@ referenced_filenames:
     - LICENSE-apache2
     - LICENSE-lgpl
 ignorable_urls:
-    - https://www.apache.org/licenses/LICENSE-2.0.txt
     - http://www.gnu.org/licenses/lgpl-3.0.txt
+    - https://www.apache.org/licenses/LICENSE-2.0.txt

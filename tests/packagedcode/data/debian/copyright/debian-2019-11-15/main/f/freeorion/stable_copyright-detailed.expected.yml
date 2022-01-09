@@ -1,4 +1,4 @@
-primary_license: gpl-2.0 AND gpl-2.0-plus
+primary_license: gpl-2.0
 declared_license:
   - GPL-2
   - CC-BY-SA-3.0
@@ -16,11 +16,11 @@ declared_license:
   - Apache-2.0
   - CC-BY-SA-3.0
   - DejaVu-License
-license_expression: (gpl-2.0 AND gpl-2.0-plus) AND cc-by-sa-3.0 AND (cc-by-sa-3.0 AND gpl-2.0)
-  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1) AND boost-1.0 AND (lgpl-2.1-plus
+license_expression: (gpl-2.0 AND gpl-2.0) AND cc-by-sa-3.0 AND (cc-by-sa-3.0 AND gpl-2.0) AND
+  (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1) AND boost-1.0 AND (lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1) AND bsd-new AND (bitstream AND bitstream)
-  AND (apache-2.0 AND apache-2.0 AND apache-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus
-  AND lgpl-2.1)
+  AND (apache-2.0 AND apache-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND
+  lgpl-2.1)
 copyright: |
   The FreeOrion project
   The FreeOrion project
@@ -36,8 +36,8 @@ copyright: |
   2013-2018, Markus Koschany <apo@debian.org>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 69
+    end_line: 69
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -51,24 +51,24 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2'
-  - score: '88.1'
-    start_line: 1
-    end_line: 14
-    matcher: 3-seq
-    rule_length: 126
-    matched_length: 111
-    match_coverage: '88.1'
+  - score: '100.0'
+    start_line: 70
+    end_line: 83
+    matcher: 1-hash
+    rule_length: 114
+    matched_length: 114
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_38.RULE
-    license_expression: gpl-2.0-plus
+    identifier: gpl-2.0_1149.RULE
+    license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License [2] as published by
+      This package is free software; you can redistribute it and/or modify
+      it under the terms of the GNU General Public License 2 as published by
       the Free Software Foundation.
 
       This package is distributed in the hope that it will be useful,
@@ -82,8 +82,8 @@ matches:
       On Debian systems, the complete text of the GNU General
       Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 85
+    end_line: 85
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -98,8 +98,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-2.1+'
   - score: '100.0'
-    start_line: 1
-    end_line: 9
+    start_line: 86
+    end_line: 94
     matcher: 2-aho
     rule_length: 82
     matched_length: 82
@@ -123,8 +123,8 @@ matches:
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
   - score: '100.0'
-    start_line: 11
-    end_line: 11
+    start_line: 96
+    end_line: 96
     matcher: 2-aho
     rule_length: 6
     matched_length: 6
@@ -139,8 +139,8 @@ matches:
     is_license_intro: no
     matched_text: the GNU Library General Public License
   - score: '100.0'
-    start_line: 12
-    end_line: 12
+    start_line: 97
+    end_line: 97
     matcher: 2-aho
     rule_length: 7
     matched_length: 7
@@ -155,8 +155,8 @@ matches:
     is_license_intro: no
     matched_text: usr/share/common-licenses/LGPL-2.1'.
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 100
+    end_line: 122
     matcher: 1-hash
     rule_length: 211
     matched_length: 211
@@ -193,15 +193,15 @@ matches:
       FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
       ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
       DEALINGS IN THE SOFTWARE.
-  - score: '78.42'
-    start_line: 1
-    end_line: 15
-    matcher: 3-seq
+  - score: '100.0'
+    start_line: 125
+    end_line: 139
+    matcher: 1-hash
     rule_length: 101
-    matched_length: 88
-    match_coverage: '87.13'
-    rule_relevance: 90
-    identifier: bsd-new_1036.RULE
+    matched_length: 101
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: bsd-new_1073.RULE
     license_expression: bsd-new
     is_license_text: no
     is_license_notice: yes
@@ -220,13 +220,13 @@ matches:
         notice, this list of conditions and the following disclaimer in the
         documentation and/or other materials provided with the distribution.
 
-      * Neither the [names] [of] [Kitware], [Inc]., [the] [Insight] [Software] [Consortium],
-        [nor] [the] [names] [of] [their] contributors may be used to endorse or promote
+      * Neither the names of Kitware, Inc., the Insight Software Consortium,
+        nor the names of their contributors may be used to endorse or promote
         products derived from this software without specific prior written
         permission.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 141
+    end_line: 141
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -241,43 +241,29 @@ matches:
     is_license_intro: no
     matched_text: 'License: apache-2.0'
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
+    start_line: 142
+    end_line: 143
+    matcher: 1-hash
+    rule_length: 25
+    matched_length: 25
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: apache-2.0_182.RULE
+    identifier: apache-2.0_1020.RULE
     license_expression: apache-2.0
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text: the Apache license version 2.0
-  - score: '100.0'
-    start_line: 2
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Apache-2.0.
+    matched_text: |
+      On Debian systems the complete license text of the Apache license version 2.0
+      can be found at /usr/share/common-licenses/Apache-2.0.
   - score: '99.82'
-    start_line: 1
-    end_line: 376
+    start_line: 146
+    end_line: 521
     matcher: 3-seq
-    rule_length: 3346
-    matched_length: 3340
+    rule_length: 3354
+    matched_length: 3348
     match_coverage: '99.82'
     rule_relevance: 100
     identifier: cc-by-sa-3.0_41.RULE
@@ -665,8 +651,8 @@ matches:
       ․
       Creative Commons may be contacted at http://creativecommons.org/.
   - score: '100.0'
-    start_line: 4
-    end_line: 43
+    start_line: 527
+    end_line: 566
     matcher: 2-aho
     rule_length: 357
     matched_length: 357
@@ -721,8 +707,8 @@ matches:
       Inc., respectively. For further information, contact: fonts at gnome dot
       org.
   - score: '99.0'
-    start_line: 50
-    end_line: 91
+    start_line: 573
+    end_line: 614
     matcher: 2-aho
     rule_length: 349
     matched_length: 349
@@ -778,15 +764,15 @@ matches:
       dealings in this Font Software without prior written authorization
       from Tavmjong Bah. For further information, contact: tavmjong @ free
        fr.
-  - score: '65.52'
-    start_line: 1
-    end_line: 3
-    matcher: 3-seq
-    rule_length: 29
-    matched_length: '19'
-    match_coverage: '65.52'
+  - score: '100.0'
+    start_line: '19'
+    end_line: 21
+    matcher: 2-aho
+    rule_length: 25
+    matched_length: 25
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: cc-by-sa-3.0_32.RULE
+    identifier: cc-by-sa-3.0_85.RULE
     license_expression: cc-by-sa-3.0
     is_license_text: no
     is_license_notice: yes
@@ -794,12 +780,12 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is licensed under the Creative Commons
-      Attribution-[Share] [Alike] 3.0 Unported license.
+      Artistic or creative content is licensed under the Creative Commons
+      Attribution-Share Alike 3.0 Unported license.
       (http://creativecommons.org/licenses/by-sa/3.0/)
   - score: '100.0'
-    start_line: 8
-    end_line: 9
+    start_line: 26
+    end_line: 27
     matcher: 2-aho
     rule_length: 9
     matched_length: 9

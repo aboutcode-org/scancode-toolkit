@@ -1,3 +1,4 @@
 license_expressions:
+  - proprietary-license
   - sun-jsr-spec-04-2006
 notes: this is not really the exact same license but is very close and arcane enough

@@ -3,5 +3,4 @@ is_license_notice: yes
 relevance: 100
 notes: Seen in monit at https://bitbucket.org/tildeslash/monit
 ignorable_urls:
-  - http://www.gnu.org/licenses/
-
+    - http://www.gnu.org/licenses/
