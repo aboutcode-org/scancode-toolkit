@@ -114,6 +114,20 @@ def test_custom_format_with_custom_filename_fails_for_directory():
 def normalize_quotes(s):
     return s.replace("'", '"')
 
+
+def assert_results_equal_expected_file(result_file, expected_file, regen=True):
+    with open(result_file) as rf:
+        results = rf.read()
+    if regen:
+        with open(expected_file, 'w') as of:
+            of.write(results)
+        expected = results
+    else:
+        with open(expected_file) as ef:
+            expected = ef.read()
+    assert results == expected
+
+
 @pytest.mark.scanslow
 def test_scan_custom_html_output_for_a_directory():
     test_dir = test_env.get_test_loc('templated/tree/scan/')
@@ -122,9 +136,8 @@ def test_scan_custom_html_output_for_a_directory():
     result_file = test_env.get_temp_file('html')
     args = ['-clip', '--strip-root', '--custom-template', custom_template, '--custom-output', result_file, test_dir]
     run_scan_click(args)
-    results = open(result_file).read()
-    expected = open(expected_file).read()
-    assert expected == results
+    assert_results_equal_expected_file(result_file, expected_file, regen=True)
+
 
 @pytest.mark.scanslow
 def test_custom_format_with_custom_filename():
@@ -134,9 +147,7 @@ def test_custom_format_with_custom_filename():
     result_file = test_env.get_temp_file('html')
     args = ['-clip', '--custom-template', custom_template, '--custom-output', result_file, test_dir]
     run_scan_click(args)
-    results = open(result_file).read()
-    expected = open(expected_file).read()
-    assert expected == results
+    assert_results_equal_expected_file(result_file, expected_file, regen=True)
 
 
 @pytest.mark.scanslow
