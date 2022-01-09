@@ -138,21 +138,21 @@ class Detections(object):
         copyrights_as_ignorable = frozenset(
             Ignorable(
                 lines_range=frozenset(range(c['start_line'], c['end_line'] + 1)),
-                value=c['value']
+                value=c['copyright']
             )
             for c in detected_copyrights)
 
         holders_as_ignorable = frozenset(
             Ignorable(
                 lines_range=frozenset(range(c['start_line'], c['end_line'] + 1)),
-                value=c['value']
+                value=c['holder']
             )
             for c in detected_holders)
 
         authors_as_ignorable = frozenset(
             Ignorable(
                 lines_range=frozenset(range(a['start_line'], a['end_line'] + 1)),
-                value=a['value'])
+                value=a['author'])
             for a in detected_authors
         )
 
@@ -247,21 +247,21 @@ def filter_ignorable_clues(detections, rules_by_id):
             detections.copyrights_as_ignorable,
             detections.holders_as_ignorable,
         ),
-        value_key='value',
+        value_key='author',
     ))
 
     # discard redundant holders if ignorable
     holders = list(filter_values(
         attributes=detections.holders,
         ignorables=ignorables.holders,
-        value_key='value',
+        value_key='holder',
     ))
 
     # discard redundant copyrights if ignorable
     copyrights = list(filter_values(
         attributes=detections.copyrights,
         ignorables=ignorables.copyrights,
-        value_key='value',
+        value_key='copyright',
     ))
 
     return Detections(

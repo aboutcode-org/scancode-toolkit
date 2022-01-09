@@ -55,7 +55,7 @@ def get_copyrights(
         if dtype == 'copyrights':
             copyrights.append(
                 dict([
-                    ('value', value),
+                    ('copyright', value),
                     ('start_line', start),
                     ('end_line', end)
                 ])
@@ -63,7 +63,7 @@ def get_copyrights(
         elif dtype == 'holders':
             holders.append(
                 dict([
-                    ('value', value),
+                    ('holder', value),
                     ('start_line', start),
                     ('end_line', end)
                 ])
@@ -71,7 +71,7 @@ def get_copyrights(
         elif dtype == 'authors':
             authors.append(
                 dict([
-                    ('value', value),
+                    ('author', value),
                     ('start_line', start),
                     ('end_line', end)
                 ])

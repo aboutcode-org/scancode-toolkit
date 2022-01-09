@@ -253,7 +253,7 @@ def get_consolidated_packages(codebase):
                     if package_resource_license_expression:
                         discovered_license_expressions.append(package_resource_license_expression)
                 if package_resource.holders:
-                    discovered_holders.extend(h.get('value') for h in package_resource.holders)
+                    discovered_holders.extend(h.get('holder') for h in package_resource.holders)
             discovered_holders = process_holders(discovered_holders)
 
             combined_discovered_license_expression = combine_expressions(discovered_license_expressions)
@@ -340,7 +340,7 @@ def get_holders_consolidated_components(codebase):
                     child.save(codebase)
 
             if child.holders:
-                holders = process_holders(h['value'] for h in child.holders)
+                holders = process_holders(h['holder'] for h in child.holders)
                 if holders:
                     # Dedupe holders
                     d = {}
