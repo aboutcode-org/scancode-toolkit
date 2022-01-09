@@ -104,6 +104,8 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
                                       Files and directories without findings
                                       are omitted (file information is not
                                       treated as findings).
+      --filter-ignorable-copyrights   Filter out copyrights that are for the 
+                                      license text and not the code itself.
 
     output control:
       --full-root   Report full, absolute paths.
@@ -447,6 +449,17 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
           help: Only return files or directories with findings for the requested scans. Files and directories without findings are omitted (file information is not treated as findings).
       doc:
         Filter files or directories without scan findings for the requested scans.
+
+    --------------------------------------------
+    Plugin: scancode_output_filter:filter-ignorable-copyrights  class: cluecode.plugin_filter_ignorable_copyrights:FilterIgnorableCopyrights
+      codebase_attributes:
+      resource_attributes:
+      sort_order: 100
+      required_plugins:
+      options:
+        help_group: output filters, name: filter_ignorable_copyrights: --filter-ignorable-copyrights
+          help: Filter out copyrights that are for the license text and not the code itself.
+      doc: None
 
     --------------------------------------------
     Plugin: scancode_post_scan:classify-package  class: summarycode.classify:PackageTopAndKeyFilesTagger

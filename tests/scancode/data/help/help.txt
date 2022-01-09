@@ -58,6 +58,8 @@ Options:
                             Write scan output as a mini HTML application to FILE.
 
   output filters:
+    --filter-ignorable-copyrights   Filter out copyrights that are for the license
+                                    text and not the code itself
     --ignore-author <pattern>       Ignore a file (and all its findings) if an
                                     author contains a match to the <pattern>
                                     regular expression. Note that this will ignore

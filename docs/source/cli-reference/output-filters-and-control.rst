@@ -99,3 +99,13 @@ Controlling Scancode Output and Filters
     For example, scanning the ``sample`` files (distributed by default with scancode-toolkit) without
     this option, displays in it's report information of 43 files. But after enabling this option, the
     result shows information for only 31 files.
+
+``--filter-ignorable-copyrights`` Plugin
+--------------------------
+
+    This plugin is used to filter out copyrights that are for the license text and not the code itself.
+    It is helpful in removing noise form the output.
+
+    An example Scan::
+
+        scancode -cplieu --json-pp output.json samples --filter-ignorable-copyrights

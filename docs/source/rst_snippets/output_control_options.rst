@@ -23,3 +23,6 @@ All "Output Control" Scan Options
                                 Files and directories without findings
                                 are omitted (file information is not
                                 treated as findings).
+
+--filter-ignorable-copyrights   Filter out copyrights that are for the
+                                license text and not the code itself.
