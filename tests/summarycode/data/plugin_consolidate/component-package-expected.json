@@ -50,6 +50,7 @@
       "errors": [],
       "extra_data": {
         "spdx_license_list_version": "3.15",
+        "OUTDATED": "WARNING: Outdated ScanCode Toolkit version! You are using an outdated version of ScanCode Toolkit: 30.1.0 released on: 2021-09-24. A new version is available with important improvements including bug and security fixes, updated license, copyright and package detection, and improved scanning accuracy. Please download and install the latest version of ScanCode. Visit https://github.com/nexB/scancode-toolkit/releases for details.",
         "files_count": 7
       }
     }
@@ -294,14 +295,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
@@ -381,14 +382,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
@@ -468,14 +469,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
@@ -555,14 +556,14 @@
       "percentage_of_license_text": 42.86,
       "copyrights": [
         {
-          "value": "Copyright (c) nexB, Inc.",
+          "copyright": "Copyright (c) nexB, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "nexB, Inc.",
+          "holder": "nexB, Inc.",
           "start_line": 1,
           "end_line": 1
         }
@@ -677,14 +678,14 @@
       "percentage_of_license_text": 22.22,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software",
+          "copyright": "Copyright (c) The Apache Software",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software",
+          "holder": "The Apache Software",
           "start_line": 4,
           "end_line": 4
         }
@@ -803,14 +804,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
@@ -888,14 +889,14 @@
       "percentage_of_license_text": 64.29,
       "copyrights": [
         {
-          "value": "copyright (c) 2017 IBM Corp.",
+          "copyright": "copyright (c) 2017 IBM Corp.",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 1
         }

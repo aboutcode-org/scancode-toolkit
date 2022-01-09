@@ -12,11 +12,11 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.15",
         "files_count": 4
       }
     }
@@ -292,14 +292,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
@@ -379,14 +379,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
@@ -466,14 +466,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }

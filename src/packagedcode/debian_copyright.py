@@ -1278,9 +1278,13 @@ def copyright_detector(location):
 
         copyrights = []
 
-        for dtype, value, _start, _end in detect_copyrights(location):
-            if dtype == 'copyrights':
-                copyrights.append(value)
+        for detection in detect_copyrights(
+            location,
+            include_copyrights=True,
+            include_holders=False,
+            include_authors=False,
+        ):
+            copyrights.append(detection.copyright)
         return copyrights
 
 

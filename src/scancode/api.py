@@ -45,37 +45,19 @@ def get_copyrights(
     of mappings for copyright detected in the file at `location`.
     """
     from cluecode.copyrights import detect_copyrights
+    from cluecode.copyrights import Detection
 
-    copyrights = []
-    holders = []
-    authors = []
+    detections = detect_copyrights(
+        location,
+        include_copyrights=True,
+        include_holders=True,
+        include_authors=True,
+        include_copyright_years=True,
+        include_copyright_allrights=False,
+        deadline=deadline,
+    )
 
-    for dtype, value, start, end in detect_copyrights(location, deadline=deadline):
-
-        if dtype == 'copyrights':
-            copyrights.append(
-                dict([
-                    ('value', value),
-                    ('start_line', start),
-                    ('end_line', end)
-                ])
-            )
-        elif dtype == 'holders':
-            holders.append(
-                dict([
-                    ('value', value),
-                    ('start_line', start),
-                    ('end_line', end)
-                ])
-            )
-        elif dtype == 'authors':
-            authors.append(
-                dict([
-                    ('value', value),
-                    ('start_line', start),
-                    ('end_line', end)
-                ])
-            )
+    copyrights, holders, authors = Detection.split(detections, to_dict=True)
 
     results = dict([
         ('copyrights', copyrights),
@@ -83,6 +65,7 @@ def get_copyrights(
         ('authors', authors),
     ])
 
+    # TODO: do something if we missed the deadline
     return results
 
 

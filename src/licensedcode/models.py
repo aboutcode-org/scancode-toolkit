@@ -2161,25 +2161,23 @@ def get_ignorables(text_file, verbose=False):
     Display progress messages if ``verbose`` is True.
     """
     from cluecode.copyrights import detect_copyrights
+    from cluecode.copyrights import Detection
+
     from cluecode.finder import find_urls
     from cluecode.finder import find_emails
 
-    # redundant clues found in a license or rule text
-    # collect and set ignorable copyrights, holders and authors
-    copyrights = set()
-    holders = set()
-    authors = set()
+    # Redundant clues found in a license or rule text can be ignored.
+    # Therefdore we collect and set ignorable copyrights, holders and authors
+    detections = detect_copyrights(text_file)
+    copyrights, holders, authors = Detection.split_values(detections)
 
-    for dtype, value, _start, _end in detect_copyrights(text_file):
-        if verbose:
-            print(f'  Found {dtype}: {value}')
+    if verbose:
+        for detection in (copyrights + holders + authors):
+            print(f'  Found ignorable: {detection}')
 
-        if dtype == 'copyrights':
-            copyrights.add(value)
-        elif dtype == 'holders':
-            holders.add(value)
-        elif dtype == 'authors':
-            authors.add(value)
+    copyrights = set(copyrights)
+    holders = set(holders)
+    authors = set(authors)
 
     # collect and set ignorable emails and urls
     urls = set(u for (u, _ln) in find_urls(text_file) if u)
