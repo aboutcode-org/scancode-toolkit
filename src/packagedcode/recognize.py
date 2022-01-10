@@ -7,16 +7,11 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import fnmatch
 import os
 import sys
 
 from commoncode import filetype
-from commoncode.fileutils import file_name
-from commoncode.fileutils import as_posixpath
-from commoncode.fileutils import splitext_name
 from packagedcode import PACKAGE_MANIFEST_TYPES
-from typecode import contenttype
 
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
