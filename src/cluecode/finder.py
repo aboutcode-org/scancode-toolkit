@@ -46,13 +46,6 @@ Find patterns in text lines such as a emails and URLs.
 Optionally apply filters to pattern matches.
 """
 
-def common_filter(line):
-    """
-    Looks for the pattern that are common to both emails and urls
-    """
-    return any(p in line for p in "@.:/")
-
-
 def find(location, patterns):
     """
     Yield match and matched lines for patterns found in file at location as a
@@ -67,7 +60,7 @@ def find(location, patterns):
         logger_debug('find(location=%(loc)r,\n  patterns=%(patterns)r)' % locals())
 
     for line_number, line in analysis.numbered_text_lines(location, demarkup=False):
-        if common_filter(line):
+        if any(p in line for p in "@:/"):
             for key, pattern in patterns:
                 for match in pattern.findall(line):
 
@@ -75,8 +68,6 @@ def find(location, patterns):
                         logger_debug('find: yielding match: key=%(key)r, '
                                 'match=%(match)r,\n    line=%(line)r' % locals())
                     yield key, toascii(match), line, line_number
-        else:
-            continue
 
 
 def unique_filter(matches):
