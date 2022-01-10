@@ -54,7 +54,7 @@ PACKAGE_MANIFEST_TYPES = [
     models.Axis2Mar,
 
     about.Aboutfile,
-    bitbake.BitbakePackage,
+    bitbake.BitbakeBbClassManifest,
     npm.PackageJson,
     npm.PackageLockJson,
     npm.YarnLockJson,

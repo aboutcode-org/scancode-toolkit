@@ -27,31 +27,34 @@ if TRACE:
 
 
 @attr.s()
-class BitbakePackage(models.Package):
-    metafiles = ('*.bb',)
+class BitbakePacakge(models.Package):
     default_type = 'bitbake'
-
-    @classmethod
-    def recognize(cls, location):
-        yield parse(location)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
+@attr.s()
+class BitbakeBbManifest(BitbakePacakge, models.PackageManifest):
+    file_patterns = ('*.bb',)
+    extensions = ('.bb', '.bbclass',)
 
-def is_bb_file(location):
-    return (filetype.is_file(location)
-            and location.lower().endswith(('.bb',)))
+    @classmethod
+    def is_manifest(cls, location):
+        return (
+            filetype.is_file(location)
+            and location.lower().endswith(('.bb',))
+        )
+
+    @classmethod
+    def recognize(cls, location):
+        yield parse(location)
 
 
 def parse(location):
     """
     Return a Package object from an BitBake file or None.
     """
-    if not is_bb_file(location):
-        return
-
     _stash = Stash()
     # add any bitbake like file
     _stash.AddFile(location)
@@ -110,8 +113,7 @@ def build_package(data):
             else:
                 dependencies = data[d]
 
-    return BitbakePackage(
-        type='bitbake',
+    return BitbakeBbManifest(
         name=name,
         version=version,
         description=description,
