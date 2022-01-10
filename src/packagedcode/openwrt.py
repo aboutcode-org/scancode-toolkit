@@ -11,23 +11,21 @@ import logging
 import os
 
 import attr
-from debut import debcon
-from debut.deps import parse_depends
-from debut.deps import VersionedRelationship
+from debian_inspector import debcon
+from debian_inspector.deps import parse_depends
+from debian_inspector.deps import VersionedRelationship
 from packageurl import PackageURL
 
 from commoncode import archive
 from commoncode import filetype
 from commoncode import fileutils
-from commoncode.datautils import List
 from commoncode.fileutils import as_posixpath
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 
 """
 Handle OpenWRT packages. These are highly similar to the Debian packages and use
-control files.
-
+control files with the same RFC822-style format.
 
 Each source package Makefile contains pointers to the upstream sources:
 https://github.com/openwrt/openwrt/blob/master/package/network/utils/arptables/Makefile
@@ -45,47 +43,92 @@ if TRACE:
 
 @attr.s()
 class OpenwrtPackage(models.Package):
-    # metafiles = ('*.control',)
-    # this is a tar.gz archive, unlike Debian which use ar archives
-    extensions = ('.ipk',)
-    filetypes = ('gzip compressed data',)
-    mimetypes = ('application/gzip',)
-    installed_dbs = ('/usr/lib/opkg/status',)
     default_type = 'openwrt'
-
-    installed_files = List(
-        item_type=models.PackageFile,
-        label='installed files',
-        help='List of files installed by this package.')
-
     default_web_baseurl = 'https://openwrt.org/packages/pkgdata'
     default_download_baseurl = 'https://downloads.openwrt.org/releases'
-
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return f'{self.default_web_baseurl}/{self.name}'
-
-    @classmethod
-    def recognize(cls, location):
-        for package in parse(location):
-            yield package
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
 
-    def to_dict(self, _detailed=True, **kwargs):
-        data = models.Package.to_dict(self, **kwargs)
-        if _detailed:
-            #################################################
-            # remove temporary fields
-            data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
-            #################################################
-        else:
-            #################################################
-            # remove temporary fields
-            data.pop('installed_files', None)
-            #################################################
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        if self.name:
+            return f'{baseurl}/{self.name}'
 
-        return data
+    def repository_download_url(self, baseurl=default_download_baseurl):
+        # TODO: This is rather complex as it depends on several arch and
+        # release factors
+        pass
+
+
+@attr.s()
+class OpenWrtControlFile(OpenwrtPackage, models.PackageManifest):
+
+    file_patterns = ('control',)
+
+    @classmethod
+    def is_manifest(cls, location):
+        return (
+            filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'control'
+        )
+
+    @classmethod
+    def recognize(cls, location):
+        package_data = debcon.get_paragraph_data_from_file(location)
+        yield build_package(cls, package_data)
+
+
+@attr.s()
+class OpenWrtIpkArchive(OpenwrtPackage, models.PackageManifest):
+
+    # NOTEs: this is a tar.gz archive, unlike Debian which use ar archives
+
+    file_patterns = ('*.ipk',)
+    extensions = ('.ipk',)
+
+    @classmethod
+    def is_manifest(cls, location):
+        return filetype.is_file(location) and location.endswith('.ipk')
+
+    @classmethod
+    def recognize(cls, location):
+        ipk_content = get_ipk_control_content(location)
+        if ipk_content:
+            package_data = debcon.get_paragraph_data(ipk_content)
+            package = build_package(cls, package_data)
+            if package:
+                yield package
+
+
+@attr.s()
+class OpenWrtInstalledDb(OpenwrtPackage, models.PackageManifest):
+    """
+    An OpenWRT installed package database.
+    """
+    file_patterns = ('status',)
+
+    @classmethod
+    def is_manifest(cls, location):
+        return (
+            filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'status'
+            and as_posixpath(location).endswith('/usr/lib/opkg/status')
+        )
+
+    @classmethod
+    def recognize(cls, location):
+        opkg_dir = fileutils.parent_directory(location)
+        rootfs_dir = fileutils.parent_directory(fileutils.parent_directory(opkg_dir))
+        openwrt_version = get_openwrt_version(rootfs_dir)
+
+        installed_package = get_installed_packages(
+            opkg_dir=opkg_dir,
+            openwrt_version=openwrt_version,
+            detect_licenses=False,
+        )
+
+        for package  in installed_package:
+            yield package
 
     def populate_installed_files(self, usr_lib_opkg_info_dir):
         """
@@ -128,63 +171,6 @@ class OpenwrtPackage(models.Package):
         ]
 
         return installed_files
-
-
-def is_control_file(location):
-    return (
-        filetype.is_file(location)
-        and fileutils.file_extension(location).lower() == '.control'
-    )
-
-
-def is_ipk(location):
-    return (
-        filetype.is_file(location)
-        and fileutils.file_extension(location).lower() == '.ipk'
-    )
-
-
-def is_status_file(location, include_path=False):
-    has_name = (
-        filetype.is_file(location)
-        and fileutils.file_name(location).lower() == 'status'
-    )
-    if include_path:
-        posix_location = as_posixpath(location)
-        return has_name and posix_location.endswith('/usr/lib/opkg/status')
-    else:
-        return has_name
-
-
-def parse(location):
-    """
-    Return a Package object from an ipk or control file or None.
-    """
-    if is_control_file(location):
-        package_data = debcon.get_paragraph_data_from_file(location)
-        yield build_package(package_data)
-
-    elif is_ipk(location):
-        ipk_content = get_ipk_control_content(location)
-        if ipk_content:
-            package_data = debcon.get_paragraph_data(ipk_content)
-            package = build_package(package_data)
-            if package:
-                yield package
-
-    elif is_status_file(location, include_path=True):
-        opkg_dir = fileutils.parent_directory(location)
-        rootfs_dir = fileutils.parent_directory(fileutils.parent_directory(opkg_dir))
-        openwrt_version = get_openwrt_version(rootfs_dir)
-
-        installed_package = get_installed_packages(
-            opkg_dir=opkg_dir,
-            openwrt_version=openwrt_version,
-            detect_licenses=False,
-        )
-
-        for package  in installed_package:
-            yield package
 
 
 def get_openwrt_version(rootfs_dir):
@@ -249,9 +235,6 @@ def parse_status_file(location, openwrt_version=None, installed_only=True):
     if not os.path.exists(location):
         raise FileNotFoundError(f'[Errno 2] No such file or directory: {location!r}')
 
-    if not is_status_file(location):
-        return
-
     for pkg_data in debcon.get_paragraphs_data_from_file(location):
         if installed_only:
             status = pkg_data.get('status') or ''
@@ -263,12 +246,12 @@ def parse_status_file(location, openwrt_version=None, installed_only=True):
             yield package
 
 
-def build_package(package_data, openwrt_version=None):
+def build_package(cls, package_data, openwrt_version=None):
     """
-    Return an OpenwrtPackage object from a ``package_data`` mapping (from an opkg
-    status file) or None.
+    Return an OpenwrtPackage object of type cls from a ``package_data`` mapping
+    (from an opkg status file or manifest) or None.
     """
-    package = OpenwrtPackage(
+    package = cls(
         namespace=openwrt_version,
         name=package_data.get('package'),
         version=package_data.get('version'),
@@ -479,9 +462,6 @@ def get_ipk_control_content(location):
     Return the text content of a control file extracted from the .ipk file at
     ``location`` or None.
     """
-    if not is_ipk(location):
-        return
-
     extract_loc = None
     extract_control_loc = None
     try:
@@ -509,4 +489,3 @@ def get_ipk_control_content(location):
             fileutils.delete(extract_loc)
         if extract_control_loc:
             fileutils.delete(extract_control_loc)
-
