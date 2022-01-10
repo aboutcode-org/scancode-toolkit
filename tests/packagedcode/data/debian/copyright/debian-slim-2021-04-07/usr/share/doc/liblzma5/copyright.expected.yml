@@ -1,6 +1,6 @@
 primary_license: (public-domain AND lgpl-2.0 AND lgpl-2.1-plus AND gpl-2.0-plus AND (public-domain
-  AND gpl-2.0-plus AND gpl-3.0-plus) AND lgpl-2.1 AND (epl-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus)
-  AND gpl-3.0) AND public-domain
+  AND gpl-2.0-plus AND gpl-3.0-plus) AND lgpl-2.1 AND gpl-2.0 AND (epl-2.0 OR gpl-2.0-plus OR
+  lgpl-2.1-plus) AND gpl-3.0) AND public-domain
 declared_license:
   - Different licenses apply to different files in this package. Here
   - PD
@@ -15,10 +15,11 @@ declared_license:
   - config-h
   - noderivs
 license_expression: (public-domain AND lgpl-2.0 AND lgpl-2.1-plus AND gpl-2.0-plus AND (public-domain
-  AND gpl-2.0-plus AND gpl-3.0-plus) AND lgpl-2.1 AND (epl-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus)
-  AND gpl-3.0) AND public-domain AND gpl-2.0-plus AND (lgpl-2.1-plus AND lgpl-2.1) AND fsf-unlimited
-  AND (gpl-3.0-plus WITH autoconf-macro-exception AND gpl-3.0) AND fsf-ap AND (gpl-2.0 AND gpl-2.0-plus)
-  AND (public-domain AND fsf-unlimited AND autoconf-exception-2.0 AND gpl-2.0) AND other-copyleft
+  AND gpl-2.0-plus AND gpl-3.0-plus) AND lgpl-2.1 AND gpl-2.0 AND (epl-2.0 OR gpl-2.0-plus OR
+  lgpl-2.1-plus) AND gpl-3.0) AND public-domain AND gpl-2.0-plus AND (lgpl-2.1-plus AND lgpl-2.1)
+  AND fsf-unlimited AND (gpl-3.0-plus WITH autoconf-macro-exception AND gpl-3.0) AND fsf-ap
+  AND (gpl-2.0 AND gpl-1.0-plus) AND (public-domain AND fsf-unlimited AND autoconf-exception-2.0
+  AND gpl-2.0) AND other-copyleft
 copyright: |
   2006-2018, Lasse Collin
   1999-2008, Igor Pavlov
@@ -290,6 +291,22 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: 'COPYING.LGPLv2.1: GNU Lesser General Public License version 2.1'
+  - score: '90.0'
+    start_line: 49
+    end_line: 49
+    matcher: 3-seq
+    rule_length: 2
+    matched_length: 2
+    match_coverage: '100.0'
+    rule_relevance: 90
+    identifier: gpl-2.0_copying_gplv2.RULE
+    license_expression: gpl-2.0
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: 'COPYING.GPLv2:'
   - score: '50.0'
     start_line: 49
     end_line: 50
@@ -772,23 +789,23 @@ matches:
       this software for any purpose. It is provided "as is" without express
       or implied warranty. See the GNU General Public License for more
       details.
-  - score: '10.71'
+  - score: '100.0'
     start_line: 11
     end_line: 12
-    matcher: 3-seq
-    rule_length: 56
-    matched_length: 6
-    match_coverage: '10.71'
+    matcher: 2-aho
+    rule_length: 5
+    matched_length: 5
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_767.RULE
-    license_expression: gpl-2.0-plus
+    identifier: gpl-1.0-plus_33.RULE
+    license_expression: gpl-1.0-plus
     is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
+    is_license_notice: no
+    is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      of the GNU General
+      the GNU General
       Public License
   - score: '100.0'
     start_line: 13

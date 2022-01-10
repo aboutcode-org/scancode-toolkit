@@ -1,64 +1,66 @@
-{
-  "type": "pypi",
-  "namespace": null,
-  "name": "packageurl-python",
-  "version": "0.8.5",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Python",
-  "description": "A \"purl\" aka. package URL parser and builder",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "the purl authors",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [
-    "package",
-    "url",
-    "package manager",
-    "package url",
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Developers",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 2",
-    "Programming Language :: Python :: 2.7",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
-    "Topic :: Software Development :: Libraries",
-    "Topic :: Utilities"
-  ],
-  "homepage_url": "https://github.com/package-url/packageurl-python",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "mit",
-  "declared_license": {
-    "license": "MIT",
-    "classifiers": [
-      "License :: OSI Approved :: MIT License"
-    ]
-  },
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:pypi/packageurl-python@0.8.5",
-  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-  "repository_download_url": "https://pypi.org/packages/source/p/packageurl-python/packageurl-python-0.8.5.tar.gz",
-  "api_data_url": "https://pypi.org/pypi/packageurl-python/0.8.5/json"
-}
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "packageurl-python",
+    "version": "0.8.5",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "A \"purl\" aka. package URL parser and builder",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "the purl authors",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "package",
+      "url",
+      "package manager",
+      "package url",
+      "Development Status :: 4 - Beta",
+      "Intended Audience :: Developers",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.6",
+      "Topic :: Software Development :: Libraries",
+      "Topic :: Utilities"
+    ],
+    "homepage_url": "https://github.com/package-url/packageurl-python",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ]
+    },
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:pypi/packageurl-python@0.8.5",
+    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_download_url": "https://pypi.org/packages/source/p/packageurl-python/packageurl-python-0.8.5.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/packageurl-python/0.8.5/json"
+  }
+]

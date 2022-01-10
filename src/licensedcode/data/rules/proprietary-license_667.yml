@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_notice: yes
+ignorable_urls:
+    - http://www.twitch.tv/p/api_terms_of_service
+    - http://www.twitch.tv/p/terms_of_service

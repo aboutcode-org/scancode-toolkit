@@ -1,4 +1,4 @@
-primary_license: lgpl-2.1 AND gpl-3.0-plus
+primary_license: lgpl-2.1 AND lgpl-2.0-plus
 declared_license:
   - LGPL-2.1
   - GPL-2
@@ -12,9 +12,8 @@ declared_license:
   - LGPL-2.1
   - MIT(*)
   - MIT(**)
-license_expression: (lgpl-2.1 AND gpl-3.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus AND
-  gpl-2.0) AND bsd-new AND (isc AND ibm-dhcp) AND xfree86-1.0 AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-1.0-plus AND gpl-2.0)
+license_expression: (lgpl-2.1 AND lgpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND bsd-new
+  AND (isc AND ibm-dhcp) AND xfree86-1.0 AND (gpl-2.0-plus AND gpl-2.0-plus)
 copyright: |
   VMware, Inc. <http://www.vmware.com/>
   VMware, Inc. <http://www.vmware.com/>
@@ -25,8 +24,8 @@ copyright: |
   2014 Bernd Zeimetz <bzed@debian.org>
 matches:
   - score: '100.0'
-    start_line: 3
-    end_line: 26
+    start_line: 38
+    end_line: 61
     matcher: 2-aho
     rule_length: 213
     matched_length: 213
@@ -57,8 +56,8 @@ matches:
       \ ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY\
       \ OF SUCH DAMAGE."
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 63
+    end_line: 63
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -73,8 +72,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2'
   - score: '100.0'
-    start_line: 1
-    end_line: 11
+    start_line: 64
+    end_line: 74
     matcher: 2-aho
     rule_length: 94
     matched_length: 94
@@ -100,40 +99,26 @@ matches:
       You should have received a copy of the GNU General Public License
       along with this program. If not, see <http://www.gnu.org/licenses/>.
   - score: '100.0'
-    start_line: 13
-    end_line: 13
+    start_line: 76
+    end_line: 77
     matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
+    rule_length: 20
+    matched_length: 20
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_33.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: the GNU General Public License
-  - score: '100.0'
-    start_line: 14
-    end_line: 14
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
+    identifier: gpl-2.0_1290.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2
+    matched_text: |
+      The complete text of the GNU General Public License
+      can be found in /usr/share/common-licenses/GPL-2 file.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 79
+    end_line: 79
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -148,14 +133,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 12
-    matcher: 2-aho
-    rule_length: 102
-    matched_length: 102
+    start_line: 80
+    end_line: 94
+    matcher: 1-hash
+    rule_length: 122
+    matched_length: 122
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_119.RULE
+    identifier: gpl-2.0-plus_983.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -175,41 +160,12 @@ matches:
 
       You should have received a copy of the GNU General Public License
       along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+      The complete text of the GNU General Public License
+      can be found in /usr/share/common-licenses/GPL-2 file.
   - score: '100.0'
-    start_line: 14
-    end_line: 14
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-1.0-plus_33.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: the GNU General Public License
-  - score: '100.0'
-    start_line: 15
-    end_line: 15
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 96
+    end_line: 96
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -223,16 +179,16 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2.1'
-  - score: '89.43'
-    start_line: 1
-    end_line: 14
+  - score: '89.68'
+    start_line: 97
+    end_line: 110
     matcher: 3-seq
-    rule_length: 123
-    matched_length: 110
-    match_coverage: '89.43'
+    rule_length: 126
+    matched_length: 113
+    match_coverage: '89.68'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_23.RULE
-    license_expression: gpl-3.0-plus
+    identifier: lgpl-2.0-plus_477.RULE
+    license_expression: lgpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -240,22 +196,22 @@ matches:
     is_license_intro: no
     matched_text: |
       This program is free software: you can redistribute it and/or modify
-      it under the terms of the GNU [Lesser] General Public License as published by
+      it under the terms of the GNU Lesser General Public License as published by
       the Free Software Foundation, [version] [2].[1] of the License.
 
       This program is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-      GNU [Lesser] General Public License for more details.
+      GNU Lesser General Public License for more details.
 
-      You should have received a copy of the GNU [Lesser] General Public License
+      You should have received a copy of the GNU Lesser General Public License
       along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-      The complete text of the GNU [Lesser] General Public License
-      can be found in /usr/share/common-licenses/GPL-
+      The complete text of the GNU Lesser General Public License
+      can be found in /usr/share/common-licenses/
   - score: '100.0'
-    start_line: 1
-    end_line: 11
+    start_line: 113
+    end_line: 123
     matcher: 2-aho
     rule_length: 113
     matched_length: 113
@@ -281,8 +237,8 @@ matches:
       ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
       CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
-    start_line: 15
-    end_line: 33
+    start_line: 127
+    end_line: 145
     matcher: 2-aho
     rule_length: 203
     matched_length: 203
@@ -316,11 +272,11 @@ matches:
       WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN IF IBM IS APPRISED OF THE
       POSSIBILITY OF SUCH DAMAGES.
   - score: '100.0'
-    start_line: 1
-    end_line: 22
+    start_line: 148
+    end_line: 169
     matcher: 1-hash
-    rule_length: 204
-    matched_length: 204
+    rule_length: 210
+    matched_length: 210
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: xfree86-1.0_2.RULE
@@ -352,4 +308,4 @@ matches:
       Except as contained in this notice, the name of the copyright holder(s) and
       author(s) shall not be used in advertising or otherwise to promote the sale,
       use or other dealings in this Software without prior written authorization from
-      the copyright holder(s) and author(
+      the copyright holder(s) and author(s).

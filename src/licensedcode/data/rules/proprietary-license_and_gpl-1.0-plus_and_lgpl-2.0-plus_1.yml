@@ -1,0 +1,7 @@
+license_expression: proprietary-license AND gpl-1.0-plus AND lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+notes: GPL and  LGPL ref in commercial license
+ignorable_urls:
+    - https://www.gnu.org/copyleft/gpl.html
+    - https://www.gnu.org/copyleft/lesser.html

@@ -1,60 +1,62 @@
-{
-  "type": "opam",
-  "namespace": null,
-  "name": null,
-  "version": null,
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Ocaml",
-  "description": "Library to make OCaml program act as a Windows service",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Romain Beauxis <toots@rastageeks.org>\"] license: \"GPL-2.0\" homepage: \"https://github.com/savonet/ocaml-winsvc\" bug-reports: \"https://github.com/savonet/ocaml-winsvc/issues\" depends: [ \"dune\" {> \"2.0\"}",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "maintainer",
-      "name": null,
-      "email": "The Savonet Team <savonet-users@lists.sourceforge.net>",
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": "https://github.com/savonet/ocaml-winsvc",
-  "download_url": "https://github.com/savonet/ocaml-winsvc/archive/v1.0.0.tar.gz",
-  "size": null,
-  "sha1": null,
-  "md5": "86d48dc11dd66adac6daadbecb5f6888",
-  "sha256": null,
-  "sha512": "30e208d35ed7eb30e90d5fd4f0dde3ff4f527155df90e2d9cffadec15513b65b72503fc223bd784203f2b9081f68bedd5a2b157ffb0b2d9b765546dac1094875",
-  "bug_tracking_url": "https://github.com/savonet/ocaml-winsvc/issues",
-  "code_view_url": null,
-  "vcs_url": "git+https://github.com/savonet/ocaml-winsvc.git",
-  "copyright": null,
-  "license_expression": "gpl-2.0",
-  "declared_license": "GPL-2.0",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:opam/dune",
-      "requirement": "> 2.0",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": null,
-  "repository_homepage_url": null,
-  "repository_download_url": null,
-  "api_data_url": null
-}
+[  
+  {
+    "type": "opam",
+    "namespace": null,
+    "name": null,
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ocaml",
+    "description": "Library to make OCaml program act as a Windows service",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Romain Beauxis <toots@rastageeks.org>\"] license: \"GPL-2.0\" homepage: \"https://github.com/savonet/ocaml-winsvc\" bug-reports: \"https://github.com/savonet/ocaml-winsvc/issues\" depends: [ \"dune\" {> \"2.0\"}",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": null,
+        "email": "The Savonet Team <savonet-users@lists.sourceforge.net>",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/savonet/ocaml-winsvc",
+    "download_url": "https://github.com/savonet/ocaml-winsvc/archive/v1.0.0.tar.gz",
+    "size": null,
+    "sha1": null,
+    "md5": "86d48dc11dd66adac6daadbecb5f6888",
+    "sha256": null,
+    "sha512": "30e208d35ed7eb30e90d5fd4f0dde3ff4f527155df90e2d9cffadec15513b65b72503fc223bd784203f2b9081f68bedd5a2b157ffb0b2d9b765546dac1094875",
+    "bug_tracking_url": "https://github.com/savonet/ocaml-winsvc/issues",
+    "code_view_url": null,
+    "vcs_url": "git+https://github.com/savonet/ocaml-winsvc.git",
+    "copyright": null,
+    "license_expression": "gpl-2.0",
+    "declared_license": "GPL-2.0",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:opam/dune",
+        "requirement": "> 2.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": null,
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

@@ -10,6 +10,8 @@
 import json
 import os
 
+import saneyaml
+
 from commoncode import testcase
 from commoncode import text
 
@@ -85,7 +87,8 @@ def check_result_equals_expected_json(result, expected_loc, regen=False):
         with open(expected_loc) as ex:
             expected = json.load(ex)
 
-    assert result == expected
+    if result != expected:
+        assert saneyaml.dump(result) == saneyaml.dump(expected)
 
 
 def get_test_files(location, test_file_suffix):

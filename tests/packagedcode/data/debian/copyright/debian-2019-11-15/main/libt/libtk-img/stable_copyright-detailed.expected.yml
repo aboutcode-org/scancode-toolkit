@@ -9,13 +9,13 @@ copyright: |
   1997-2004 Jan Nijtmans
   1999, 2011 Willem van Schaik
 matches:
-  - score: '98.79'
-    start_line: 1
-    end_line: 41
+  - score: '98.8'
+    start_line: 13
+    end_line: 53
     matcher: 3-seq
-    rule_length: 330
-    matched_length: 326
-    match_coverage: '98.79'
+    rule_length: 332
+    matched_length: 328
+    match_coverage: '98.8'
     rule_relevance: 100
     identifier: tcl_3.RULE
     license_expression: tcl
@@ -67,8 +67,8 @@ matches:
       permission to use and distribute the software in accordance with the
       terms specified in this license.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 56
+    end_line: 57
     matcher: 1-hash
     rule_length: 18
     matched_length: 18

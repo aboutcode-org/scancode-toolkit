@@ -2,7 +2,7 @@ primary_license: bzip2-libbzip-2010
 declared_license:
   - BSD-variant
   - GPL-2
-license_expression: bzip2-libbzip-2010 AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)
+license_expression: bzip2-libbzip-2010 AND (gpl-2.0 AND gpl-2.0)
 copyright: |
   1996-2010 Julian R Seward <jseward@bzip.org>
   2018 Nicolas Boulenguez <nicolas.boulenguez@free.fr>
@@ -13,8 +13,8 @@ copyright: |
   1997-1999 Anthony Fok <foka@debian.org>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 30
+    start_line: 8
+    end_line: 37
     matcher: 1-hash
     rule_length: 233
     matched_length: 233
@@ -59,8 +59,8 @@ matches:
       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
       SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 46
+    end_line: 46
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -75,34 +75,20 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2'
   - score: '100.0'
-    start_line: 1
-    end_line: 1
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
+    start_line: 47
+    end_line: 48
+    matcher: 1-hash
+    rule_length: 21
+    matched_length: 21
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_660.RULE
+    identifier: gpl-2.0_1294.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
-    matched_text: the GNU General Public License version 2
-  - score: '100.0'
-    start_line: 2
-    end_line: 2
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2.
+    matched_text: |
+      The full text of the GNU General Public License version 2
+      can be found in /usr/share/common-licenses/GPL-2.

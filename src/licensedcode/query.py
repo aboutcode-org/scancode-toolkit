@@ -71,13 +71,14 @@ TRACE = False
 TRACE_QR = False
 TRACE_QR_BREAK = False
 TRACE_REPR = False
+TRACE_STOP_AND_UNKNOWN = False
 
 
 def logger_debug(*args):
     pass
 
 
-if TRACE or TRACE_QR or TRACE_QR_BREAK:
+if TRACE or TRACE_QR or TRACE_QR_BREAK or TRACE_STOP_AND_UNKNOWN:
     import sys
 
     use_print = True
@@ -108,6 +109,7 @@ def build_query(
     idx=None,
     text_line_threshold=15,
     bin_line_threshold=50,
+    start_line=1,
 ):
     """
     Return a Query built from location or query string given an index.
@@ -120,13 +122,27 @@ def build_query(
         if T.is_binary:
             # for binaries we want to avoid a large number of query runs as the
             # license context is often very sparse or absent
-            qry = Query(location=location, idx=idx, line_threshold=bin_line_threshold)
+            qry = Query(
+                location=location,
+                idx=idx,
+                line_threshold=bin_line_threshold,
+                start_line=start_line,
+            )
         else:
             # for text
-            qry = Query(location=location, idx=idx, line_threshold=text_line_threshold)
+            qry = Query(
+                location=location,
+                idx=idx,
+                line_threshold=text_line_threshold,
+                start_line=start_line,
+            )
     else:
         # a string is always considered text
-        qry = Query(query_string=query_string, idx=idx)
+        qry = Query(
+            query_string=query_string,
+            idx=idx,
+            start_line=start_line,
+        )
 
     return qry
 
@@ -143,6 +159,9 @@ class Query(object):
     known token position. (using -1 for unknown tokens that precede the first
     known token.)
 
+    Line positions (e.g. line numbers) start at 1 with a possibility
+    to set the start_line to another value for special cases.
+
     A query is broken down in one or more "runs" that are slices of tokens used
     as a matching unit.
     """
@@ -157,7 +176,6 @@ class Query(object):
         'unknowns_by_pos',
         'unknowns_span',
         'stopwords_by_pos',
-        'stopwords_span',
         'shorts_and_digits_pos',
         'query_runs',
         '_whole_query_run',
@@ -167,6 +185,7 @@ class Query(object):
         'spdx_lines',
         'has_long_lines',
         'is_binary',
+        'start_line',
     )
 
     def __init__(
@@ -175,14 +194,15 @@ class Query(object):
         query_string=None,
         idx=None,
         line_threshold=4,
+        start_line=1,
         _test_mode=False,
     ):
         """
         Initialize the query from a file `location` or `query_string` string for
         an `idx` LicenseIndex.
-
         Break query in runs when there are at least `line_threshold` empty lines
         or junk-only lines.
+        Line numbers start at ``start_line`` which is 1-based by default.
         """
         assert (location or query_string) and idx
 
@@ -191,6 +211,7 @@ class Query(object):
         self.idx = idx
 
         self.line_threshold = line_threshold
+        self.start_line = start_line
 
         # True if the text is made of very long lines
         self.has_long_lines = False
@@ -207,18 +228,15 @@ class Query(object):
         # index of "known positions" (yes really!) to a number of unknown tokens
         # after that known position. For unknowns at the start, the position is
         # using the magic -1 key
-        self.unknowns_by_pos = defaultdict(int)
+        self.unknowns_by_pos = {}
 
         # Span of "known positions" (yes really!) followed by unknown token(s)
         self.unknowns_span = None
 
-        # index of "known positions" (yes really!) to a number of stopword tokens
-        # after that known position. For stopwords at the start, the position is
-        # using the magic -1 key
-        self.stopwords_by_pos = defaultdict(int)
-
-        # Span of "known positions" (yes really!) followed by stopwords
-        self.stopwords_span = None
+        # index of "known positions" (yes really!) to a number of stopword
+        # tokens after this known position. For stopwords at the start, the
+        # position is using the magic -1 key
+        self.stopwords_by_pos = {}
 
         # set of known positions were there is a short, single letter token or
         # digits-only token
@@ -232,10 +250,14 @@ class Query(object):
         _spdx = dic_get(u'spdx')
         _spdx_id = dic_get(u'identifier')
         spdxid1 = [_spdx, dic_get(u'license'), _spdx_id]
+
         # Even though it is invalid, this Enlish seplling happens in the wild
         spdxid2 = [_spdx, dic_get(u'licence'), _spdx_id]
+
         # None, None None: this is mostly a possible issue in test mode
-        self.spdx_lid_token_ids = [x for x in [spdxid1, spdxid2, ] if x != [None, None, None]]
+        self.spdx_lid_token_ids = [
+            x for x in [spdxid1, spdxid2, ] if x != [None, None, None]
+        ]
 
         # list of tuple (original line text, start known pos, end known pos) for
         # lines starting with SPDX-License-Identifier. This is to support the
@@ -252,9 +274,14 @@ class Query(object):
         tokens_by_line = self.tokens_by_line(
             location=location,
             query_string=query_string,
+            start_line=start_line,
         )
+
         # this method has side effects to populate various data structures
-        self.tokenize_and_build_runs(tokens_by_line, line_threshold=line_threshold)
+        self.tokenize_and_build_runs(
+            tokens_by_line=tokens_by_line,
+            line_threshold=line_threshold,
+        )
 
         len_legalese = idx.len_legalese
         tokens = self.tokens
@@ -277,7 +304,12 @@ class Query(object):
         Return a query run built from the whole range of query tokens.
         """
         if not self._whole_query_run:
-            self._whole_query_run = QueryRun(query=self, start=0, end=len(self.tokens) - 1)
+            self._whole_query_run = QueryRun(
+                query=self,
+                start=0,
+                end=len(self.tokens) - 1,
+            )
+
         return self._whole_query_run
 
     def spdx_lid_query_runs_and_text(self):
@@ -313,28 +345,18 @@ class Query(object):
         all_pos.difference_update(self.matchables)
         return all_pos
 
-    # FIXME: this is not used anywhere except for tests
-    def tokens_with_unknowns(self):
-        """
-        Yield the original tokens stream with unknown tokens represented by None.
-        """
-        unknowns = self.unknowns_by_pos
-        # yield anything at the start
-        for _ in range(unknowns[-1]):
-            yield None
-
-        for pos, token in enumerate(self.tokens):
-            yield token
-            for _ in range(unknowns[pos]):
-                yield None
-
-    def tokens_by_line(self, location=None, query_string=None):
+    def tokens_by_line(
+        self,
+        location=None,
+        query_string=None,
+        start_line=1,
+    ):
         """
         Yield multiple sequences of tokens, one for each line in this query.
+        Line numbers start at ``start_line`` which is 1-based by default.
 
         SIDE EFFECT: This populates the query `line_by_pos`, `unknowns_by_pos`,
-        `unknowns_span`, `stopwords_by_pos`, `stopwords_span`,
-        `shorts_and_digits_pos` and `spdx_lines` .
+        `unknowns_span`, `stopwords_by_pos`, `shorts_and_digits_pos` and `spdx_lines` .
         """
         from licensedcode.match_spdx_lid import split_spdx_lid
         from licensedcode.stopwords import STOPWORDS
@@ -345,11 +367,13 @@ class Query(object):
         # bind frequently called functions to local scope
         line_by_pos_append = self.line_by_pos.append
 
-        self_unknowns_by_pos = self.unknowns_by_pos
+        # we use a defaultdict as a convenience at construction time
+        unknowns_by_pos = defaultdict(int)
         unknowns_pos = set()
         unknowns_pos_add = unknowns_pos.add
 
-        self_stopwords_by_pos = self.stopwords_by_pos
+        # we use a defaultdict as a convenience at construction time
+        stopwords_by_pos = defaultdict(int)
         stopwords_pos = set()
         stopwords_pos_add = stopwords_pos.add
 
@@ -366,14 +390,21 @@ class Query(object):
 
         spdx_lid_token_ids = self.spdx_lid_token_ids
 
-        qlines = query_lines(location=location, query_string=query_string)
-        if TRACE:
+        qlines = query_lines(
+            location=location,
+            query_string=query_string,
+            start_line=start_line,
+        )
+        if TRACE or TRACE_STOP_AND_UNKNOWN:
             logger_debug('tokens_by_line: query lines:')
             qlines = list(qlines)
             for line_num, line in qlines:
                 logger_debug(' ', line_num, ':', line)
 
         for line_num, line in qlines:
+            if TRACE_STOP_AND_UNKNOWN:
+                logger_debug(f'  line: {line_num}: {line!r}')
+
             # keep track of tokens in a line
             line_tokens = []
             line_tokens_append = line_tokens.append
@@ -382,6 +413,11 @@ class Query(object):
             for token in query_tokenizer(line):
                 tid = dic_get(token)
                 is_stopword = token in STOPWORDS
+
+                if TRACE_STOP_AND_UNKNOWN:
+                    logger_debug(
+                        f'    token: {token!r}, tid: {tid}, is_stopword: {is_stopword}')
+
                 if tid is not None and not is_stopword:
                     # this is a known token
                     known_pos += 1
@@ -391,6 +427,11 @@ class Query(object):
                         self_shorts_and_digits_pos_add(known_pos)
                     if line_first_known_pos is None:
                         line_first_known_pos = known_pos
+
+                    if TRACE_STOP_AND_UNKNOWN:
+                        logger_debug(
+                            f'      KNOWN token: known_pos: {known_pos}')
+
                 else:
                     # process STOPWORDS and unknown words
                     if is_stopword:
@@ -398,25 +439,40 @@ class Query(object):
                             # If we have not yet started globally, then all tokens
                             # seen so far are stopwords and we keep a count of them
                             # in the magic "-1" position.
-                            self_stopwords_by_pos[-1] += 1
+                            stopwords_by_pos[-1] += 1
+
+                            if TRACE_STOP_AND_UNKNOWN:
+                                logger_debug(f'      STOPWORD token: known_pos: -1')
                         else:
                             # here we have a new unknwon token positioned right after
                             # the current known_pos
-                            self_stopwords_by_pos[known_pos] += 1
+                            stopwords_by_pos[known_pos] += 1
                             stopwords_pos_add(known_pos)
+
+                            if TRACE_STOP_AND_UNKNOWN:
+                                logger_debug(f'      STOPWORD token: known_pos: {known_pos}')
+
                         # we do not track stopwords, only their position
                         continue
                     else:
+                        # this is an UNKNOWN word
                         if not started:
                             # If we have not yet started globally, then all tokens
                             # seen so far are unknowns and we keep a count of them
                             # in the magic "-1" position.
-                            self_unknowns_by_pos[-1] += 1
+                            unknowns_by_pos[-1] += 1
+
+                            if TRACE_STOP_AND_UNKNOWN:
+                                logger_debug(f'      UNKNOWN token: known_pos: -1')
+
                         else:
                             # here we have a new unknwon token positioned right after
                             # the current known_pos
-                            self_unknowns_by_pos[known_pos] += 1
+                            unknowns_by_pos[known_pos] += 1
                             unknowns_pos_add(known_pos)
+
+                            if TRACE_STOP_AND_UNKNOWN:
+                                logger_debug(f'      UNKNOWN token: known_pos: {known_pos}')
 
                 line_tokens_append(tid)
 
@@ -447,11 +503,18 @@ class Query(object):
 
             yield line_tokens
 
-        # finally create a Span of positions followed by unkwnons and another
-        # for positions followed by stopwords used for intersection with the
-        # query span to do the scoring matches correctly
+        # finally update the attributes and create a Span of positions followed
+        # by unkwnons and another for positions followed by stopwords used for
+        # intersection with the query span to do the scoring matches correctly
         self.unknowns_span = Span(unknowns_pos)
-        self.stopwords_span = Span(stopwords_pos)
+        # also convert the defaultdicts back to plain discts
+        self.unknowns_by_pos = dict(unknowns_by_pos)
+        self.stopwords_by_pos = dict(stopwords_by_pos)
+
+        if TRACE_STOP_AND_UNKNOWN:
+            logger_debug(f'  self.unknowns_span: {self.unknowns_span}')
+            logger_debug(f'  self.unknowns_by_pos: {self.unknowns_by_pos}')
+            logger_debug(f'  self.stopwords_by_pos: {self.stopwords_by_pos}')
 
     def tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
         """
@@ -459,8 +522,9 @@ class Query(object):
         point. Only keep known token ids but consider unknown token ids to break
         a query in runs.
 
-        `tokens_by_line` is the output of the self.tokens_by_line() method and is an
-        iterator of lines (eg. list) of token ids.
+        `tokens_by_line` is the output of the self.tokens_by_line() method and
+        is an iterator of lines (eg. lists) of token ids.
+
         `line_threshold` is the number of empty or junk lines to break a new run.
         """
         self._tokenize_and_build_runs(tokens_by_line, line_threshold)
@@ -473,13 +537,16 @@ class Query(object):
             print()
 
     def refine_runs(self):
-        # TODO: move me to the approximate matching loop so that this is done only if neeed
-        # rebreak query runs based on potential rule boundaries
+        # TODO: move me to the approximate matching loop so that this is done
+        # only if neeed rebreak query runs based on potential rule boundaries
         query_runs = list(chain.from_iterable(
             break_on_boundaries(qr) for qr in self.query_runs))
 
         if TRACE_QR_BREAK:
-            logger_debug('Initial # query runs:', len(self.query_runs), 'after breaking:', len(query_runs))
+            logger_debug(
+                'Initial # query runs:', len(self.query_runs),
+                'after breaking:', len(query_runs),
+            )
 
         self.query_runs = query_runs
 
@@ -533,7 +600,9 @@ class Query(object):
 
             line_has_known_tokens = False
             line_has_good_tokens = False
-            line_is_all_digit = all([tid is None or tid in digit_only_tids for tid in tokens])
+            line_is_all_digit = all([
+                tid is None or tid in digit_only_tids for tid in tokens
+            ])
 
             for token_id in tokens:
                 if token_id is not None:
@@ -567,7 +636,9 @@ class Query(object):
             print()
             logger_debug('Query runs for query:', self.location)
             for qr in self.query_runs:
-                high_matchables = len([p for p, t in enumerate(qr.tokens) if t < len_legalese])
+                high_matchables = len([
+                    p for p, t in enumerate(qr.tokens) if t < len_legalese
+                ])
 
                 print(' ' , repr(qr), 'high_matchables:', high_matchables)
             print()
@@ -644,8 +715,13 @@ class QueryRun(object):
     positions inclusive.
     """
     __slots__ = (
-        'query', 'start', 'end', 'len_legalese', 'digit_only_tids',
-        '_low_matchables', '_high_matchables',
+        'query',
+        'start',
+        'end',
+        'len_legalese',
+        'digit_only_tids',
+        '_low_matchables',
+        '_high_matchables',
     )
 
     def __init__(self, query, start, end=None):
@@ -670,14 +746,17 @@ class QueryRun(object):
         return self.end - self.start + 1
 
     def __repr__(self, trace_repr=TRACE_REPR):
+        toks = ''
+        if trace_repr:
+            toks = ', tokens="{tokens}"'
         base = (
             'QueryRun('
-                'start={start}, len={length}, '
-                'start_line={start_line}, end_line={end_line}'
+                'start={start}, '
+                'len={length}, '
+                'start_line={start_line}, '
+                'end_line={end_line}'
+                f'{toks})'
         )
-        if trace_repr:
-            base += ', tokens="{tokens}"'
-        base += ')'
         qdata = self.to_dict(brief=False, comprehensive=True, include_high=False)
         return base.format(**qdata)
 
@@ -697,25 +776,6 @@ class QueryRun(object):
         if self.end is None:
             return []
         return self.query.tokens[self.start: self.end + 1]
-
-    # FIXME: this is not used anywhere except for tests
-    def tokens_with_unknowns(self):
-        """
-        Yield the original token ids stream including unknown tokens
-        (represented by None).
-        """
-        unknowns = self.query.unknowns_by_pos
-        # yield anything at the start only if this is the first query run
-        if self.start == 0:
-            for _ in range(unknowns[-1]):
-                yield None
-
-        for pos, token in self.tokens_with_pos():
-            yield token
-            if pos == self.end:
-                break
-            for _ in range(unknowns[pos]):
-                yield None
 
     def tokens_with_pos(self):
         return enumerate(self.tokens, self.start)
@@ -850,9 +910,9 @@ def tokens_ngram_processor(tokens, ngram_len):
     """
     Given a `tokens` sequence or iterable of Tokens, return an iterator of
     tuples of Tokens where the tuples length is length `ngram_len`. Buffers at
-    most `ngram_len` iterable items. The returned tuples contains
-    either `ngram_len` items or less for these cases where the number of tokens
-    is smaller than `ngram_len`.
+    most `ngram_len` iterable items. The returned tuples contains either
+    `ngram_len` items or less for these cases where the number of tokens is
+    smaller than `ngram_len`.
     """
     ngram = deque()
     for token in tokens:

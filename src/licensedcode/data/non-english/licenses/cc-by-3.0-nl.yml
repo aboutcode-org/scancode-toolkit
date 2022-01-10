@@ -1,0 +1,8 @@
+key: cc-by-3.0-nl
+short_name: Creative Commons Attribution 3.0 Netherlands
+name: Creative Commons Attribution 3.0 Netherlands
+spdx_license_key: CC-BY-3.0-NL
+other_urls:
+    - https://creativecommons.org/licenses/by/3.0/nl/legalcode
+ignorable_urls:
+    - https://creativecommons.org/

@@ -1,18 +1,18 @@
-primary_license: None
-declared_license: []
-license_expression: (other-permissive OR commercial-license) AND zlib AND zlib
-copyright:
+primary_license:
+declared_license:
+license_expression: zlib
+copyright: Copyright (c) 1995-1998 Jean-loup Gailly and Mark Adler
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 3
-    matcher: 1-hash
-    rule_length: 31
-    matched_length: 31
+    start_line: 42
+    end_line: 59
+    matcher: 2-aho
+    rule_length: 144
+    matched_length: 144
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: other-permissive_or_commercial-license_2.RULE
-    license_expression: other-permissive OR commercial-license
+    identifier: zlib_17.RULE
+    license_expression: zlib
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -22,45 +22,18 @@ matches:
       This software is provided 'as-is', without any express or implied
         warranty.  In no event will the authors be held liable for any damages
         arising from the use of this software.
-  - score: '21.21'
-    start_line: 1
-    end_line: 3
-    matcher: 3-seq
-    rule_length: 132
-    matched_length: 28
-    match_coverage: '21.21'
-    rule_relevance: 100
-    identifier: zlib_variant.RULE
-    license_expression: zlib
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to anyone to use this software for any purpose,
+
+        Permission is granted to anyone to use this software for any purpose,
         including commercial applications, and to alter it and redistribute it
         freely, subject to the following restrictions:
-  - score: '55.3'
-    start_line: 1
-    end_line: 7
-    matcher: 3-seq
-    rule_length: 132
-    matched_length: 73
-    match_coverage: '55.3'
-    rule_relevance: 100
-    identifier: zlib_variant.RULE
-    license_expression: zlib
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      1. The origin of this software must not be misrepresented; you must not
+
+        1. The origin of this software must not be misrepresented; you must not
            claim that you wrote the original software. If you use this software
            in a product, an acknowledgment in the product documentation would be
            appreciated but is not required.
         2. Altered source versions must be plainly marked as such, and must not be
            misrepresented as being the original software.
         3. This notice may not be removed or altered from any source distribution.
+
+        Jean-loup Gailly        Mark Adler
+        jloup@gzip.org          madler@alumni.caltech.edu

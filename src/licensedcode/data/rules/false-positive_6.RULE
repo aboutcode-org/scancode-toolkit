@@ -1,10 +1,8 @@
-LGPL-2.0-only
-LGPL-2.0-or-later
-LGPL-2.1-only
-LGPL-2.1-or-later
-LGPL-3.0-only
-LGPL-3.0-or-later
-LGPLLR
-Libpng
-libtiff
-LiLiQ-P-1.1
+if ([
+    'GPL-1.0', 'LGPL-1.0', 'AGPL-1.0',
+    'GPL-2.0', 'LGPL-2.0', 'AGPL-2.0',
+    'LGPL-2.1'
+  ].indexOf(value) !== -1) {
+    return value + '-only'
+  } else if (['GPL-3.0', 'LGPL-3.0', 'AGPL-3.0'].indexOf(value) !== -1) {
+    return value + '-or-later'

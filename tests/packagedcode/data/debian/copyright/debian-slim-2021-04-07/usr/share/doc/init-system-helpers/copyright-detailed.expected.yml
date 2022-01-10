@@ -19,8 +19,8 @@ copyright: |
   Members of the pkg-sysvinit project
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 25
+    end_line: 25
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -35,8 +35,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 16
+    start_line: 26
+    end_line: 41
     matcher: 1-hash
     rule_length: 134
     matched_length: 134
@@ -66,15 +66,15 @@ matches:
 
       On Debian systems, the complete text of the GNU General Public License
       version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
-  - score: '97.5'
-    start_line: 4
-    end_line: 27
-    matcher: 3-seq
-    rule_length: 200
-    matched_length: '195'
-    match_coverage: '97.5'
+  - score: '100.0'
+    start_line: 47
+    end_line: 70
+    matcher: 2-aho
+    rule_length: 205
+    matched_length: 205
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-new_238.RULE
+    identifier: bsd-new_1068.RULE
     license_expression: bsd-new
     is_license_text: yes
     is_license_notice: no
@@ -92,14 +92,14 @@ matches:
             notice, this list of conditions and the following disclaimer in the
             documentation and/or other materials provided with the distribution.
 
-          * Neither the name of [Michael] [Stapelberg] [nor] [the]
-            [names] [of] contributors may be used to endorse or promote products
+          * Neither the name of Michael Stapelberg nor the
+            names of contributors may be used to endorse or promote products
             derived from this software without specific prior written permission.
 
-      THIS SOFTWARE IS PROVIDED BY [Michael] [Stapelberg] ''AS IS'' AND ANY
+      THIS SOFTWARE IS PROVIDED BY Michael Stapelberg ''AS IS'' AND ANY
       EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
       WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-      DISCLAIMED. IN NO EVENT SHALL [Michael] [Stapelberg] BE LIABLE FOR ANY
+      DISCLAIMED. IN NO EVENT SHALL Michael Stapelberg BE LIABLE FOR ANY
       DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
       (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
       LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND

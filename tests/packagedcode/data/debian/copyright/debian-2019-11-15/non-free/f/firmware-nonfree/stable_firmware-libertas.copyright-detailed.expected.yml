@@ -8,8 +8,8 @@ copyright: |
   2006, One Laptop per Child and Marvell Corporation.
 matches:
   - score: '96.37'
-    start_line: 3
-    end_line: 40
+    start_line: 11
+    end_line: 48
     matcher: 3-seq
     rule_length: 303
     matched_length: 292
@@ -62,8 +62,8 @@ matches:
       USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
       DAMAGE.
   - score: '100.0'
-    start_line: 3
-    end_line: 32
+    start_line: 55
+    end_line: 84
     matcher: 2-aho
     rule_length: 242
     matched_length: 242

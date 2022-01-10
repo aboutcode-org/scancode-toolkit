@@ -1,0 +1,6 @@
+license_expression: lgpl-2.1-plus WITH linking-exception-2.1-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_urls:
+    - https://www.gnu.org/licenses/

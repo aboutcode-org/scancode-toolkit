@@ -529,16 +529,16 @@ matches:
       \ OR RELATED TO ANY USE OF THE LICENSED PATENTS, INCLUDING,\n  WITHOUT LIMITATION, DIRECT,\
       \ INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE\n  OR SPECIAL DAMAGES, EVEN IF LICENSOR\
       \ HAS BEEN ADVISED OF THE POSSIBILITY OF\n  SUCH DAMAGES PRIOR TO SUCH AN OCCURRENCE."
-  - score: '62.5'
+  - score: '95.65'
     start_line: 545
     end_line: 546
     matcher: 3-seq
-    rule_length: 40
-    matched_length: 25
-    match_coverage: '62.5'
+    rule_length: 23
+    matched_length: 22
+    match_coverage: '95.65'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_754.RULE
-    license_expression: gpl-2.0-plus
+    identifier: gpl-1.0-plus_10.RULE
+    license_expression: gpl-1.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -546,4 +546,4 @@ matches:
     is_license_intro: no
     matched_text: |
       On Debian GNU/Linux systems, the text of the GNU General Public License,
-       version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+       [version] [2] can be found in `/usr/share/common-licenses/GPL-

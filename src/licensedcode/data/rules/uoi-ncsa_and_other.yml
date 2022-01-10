@@ -2,13 +2,12 @@ license_expression: uoi-ncsa AND other-permissive AND other-copyleft
 is_license_notice: yes
 minimum_coverage: 95
 ignorable_copyrights:
-  - Copyright The LLVM project
-ignorable_emails:
-  - llvm-oversight@cs.uiuc.edu
-  - llvmdev@cs.uiuc.edu
+    - Copyright The LLVM project
 ignorable_holders:
-  - The LLVM project
+    - The LLVM project
 ignorable_urls:
-  - http://www.opensource.org/licenses/UoI-NCSA.php
-  - http://www.opensource.org/licenses/mit-license.php
-
+    - http://www.opensource.org/licenses/UoI-NCSA.php
+    - http://www.opensource.org/licenses/mit-license.php
+ignorable_emails:
+    - llvm-oversight@cs.uiuc.edu
+    - llvmdev@cs.uiuc.edu

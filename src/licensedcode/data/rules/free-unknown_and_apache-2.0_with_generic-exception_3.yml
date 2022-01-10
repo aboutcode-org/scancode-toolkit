@@ -1,0 +1,10 @@
+license_expression: free-unknown AND apache-2.0 WITH generic-exception
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.YARA
+    - /usr/share/common-licenses/Apache-2.0
+notes: See https://bugzilla.clamav.net/show_bug.cgi?id=11336 and https://github.com/Cisco-Talos/clamav/issues/283
+    to understand why there are licensing issues
+ignorable_urls:
+    - https://bugzilla.clamav.net/show_bug.cgi?id=11336

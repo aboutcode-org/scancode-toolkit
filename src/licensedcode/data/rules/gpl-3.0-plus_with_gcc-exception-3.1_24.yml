@@ -1,0 +1,10 @@
+license_expression: gpl-3.0-plus WITH gcc-exception-3.1
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 2009 Free Software Foundation, Inc. <http://fsf.org/>
+ignorable_holders:
+    - Free Software Foundation, Inc.
+ignorable_urls:
+    - http://fsf.org/
+    - https://www.gnu.org/licenses/

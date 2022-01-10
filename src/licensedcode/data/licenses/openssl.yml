@@ -12,7 +12,6 @@ spdx_license_key: LicenseRef-scancode-openssl
 faq_url: http://www.openssl.org/support/faq.html
 other_urls:
     - http://www.openssl.org/source/license.html
-minimum_coverage: 30
 ignorable_authors:
     - the OpenSSL Project
 ignorable_urls:

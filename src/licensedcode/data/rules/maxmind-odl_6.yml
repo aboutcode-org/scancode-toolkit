@@ -1,0 +1,4 @@
+license_expression: maxmind-odl
+is_license_text: yes
+ignorable_urls:
+    - http://maxmind.com/

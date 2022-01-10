@@ -1,8 +1,10 @@
 # Document Information
-SPDXVersion: SPDX-2.1
+SPDXVersion: SPDX-2.2
 DataLicense: CC0-1.0
+DocumentNamespace: http://spdx.org/spdxdocs/scan
+DocumentName: SPDX Document created by ScanCode Toolkit
+LicenseListVersion: 3.15
 SPDXID: SPDXRef-DOCUMENT
-DocumentNamespace: http://spdx.org/spdxdocs/scan-3ef222be-8dfb-4d4f-b12c-a42e51156151
 DocumentComment: <text>Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
 OR CONDITIONS OF ANY KIND, either express or implied. No content created from
 ScanCode should be considered or used as legal advice. Consult an Attorney
@@ -12,6 +14,7 @@ Visit https://github.com/nexB/scancode-toolkit/ for support and download.</text>
 # Creation Info
 # Package
 PackageName: scan
+SPDXID: SPDXRef-001
 PackageDownloadLocation: NOASSERTION
 PackageVerificationCode: ed7a0c42e0411fe584d7c6d04105416593624be3
 PackageLicenseDeclared: NOASSERTION
@@ -21,6 +24,7 @@ PackageCopyrightText: <text>Copyright (c) 2000 ACME, Inc.
 </text>
 # File
 FileName: ./scan/copy1.c
+SPDXID: SPDXRef-2
 FileChecksum: SHA1: 3922760d8492eb8f853c10a627f5a73f9eaec6ff
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: NONE
@@ -28,6 +32,7 @@ FileCopyrightText: <text>Copyright (c) 2000 ACME, Inc.
 </text>
 # File
 FileName: ./scan/copy2.c
+SPDXID: SPDXRef-3
 FileChecksum: SHA1: 3922760d8492eb8f853c10a627f5a73f9eaec6ff
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: NONE
@@ -35,6 +40,7 @@ FileCopyrightText: <text>Copyright (c) 2000 ACME, Inc.
 </text>
 # File
 FileName: ./scan/copy3.c
+SPDXID: SPDXRef-4
 FileChecksum: SHA1: c91811eb5fdc7ab440355f9f8d1580e1518b0c2f
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: NONE
@@ -42,6 +48,7 @@ FileCopyrightText: <text>Copyright (c) 2000 ACME, Inc.
 </text>
 # File
 FileName: ./scan/subdir/copy1.c
+SPDXID: SPDXRef-6
 FileChecksum: SHA1: 3922760d8492eb8f853c10a627f5a73f9eaec6ff
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: NONE
@@ -49,6 +56,7 @@ FileCopyrightText: <text>Copyright (c) 2000 ACME, Inc.
 </text>
 # File
 FileName: ./scan/subdir/copy2.c
+SPDXID: SPDXRef-7
 FileChecksum: SHA1: 3922760d8492eb8f853c10a627f5a73f9eaec6ff
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: NONE
@@ -56,6 +64,7 @@ FileCopyrightText: <text>Copyright (c) 2000 ACME, Inc.
 </text>
 # File
 FileName: ./scan/subdir/copy3.c
+SPDXID: SPDXRef-8
 FileChecksum: SHA1: 389af7e629a9853056e42b262d5e30bf4579a74f
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: NONE
@@ -63,6 +72,7 @@ FileCopyrightText: <text>Copyright (c) 2000 ACME, Inc.
 </text>
 # File
 FileName: ./scan/subdir/copy4.c
+SPDXID: SPDXRef-9
 FileChecksum: SHA1: 58748872d25374160692f1ed7075d0fe80a544b1
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: NONE

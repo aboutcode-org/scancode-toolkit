@@ -1,0 +1,7 @@
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 95
+minimum_coverage: 50
+notes: ths warranty disclaimer is derived from a BSD license
+ignorable_urls:
+    - https://www.gnu.org/licenses/gpl.html

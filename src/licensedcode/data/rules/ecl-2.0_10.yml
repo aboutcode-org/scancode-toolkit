@@ -3,6 +3,6 @@ is_license_text: yes
 minimum_coverage: 70
 notes: license text as published by SPDX
 ignorable_urls:
-    - https://www.apache.org/licenses/LICENSE-2.0
     - http://www.osedu.org/licenses/
     - http://www.osedu.org/licenses/ECL-2.0
+    - https://www.apache.org/licenses/LICENSE-2.0

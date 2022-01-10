@@ -1,0 +1,7 @@
+key: broadcom-linux-firmware
+short_name: Broadcom Linux Firmware License
+name: Broadcom Linux Firmware License
+category: Proprietary Free
+owner: Broadcom
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.broadcom_bcm43xx
+spdx_license_key: LicenseRef-scancode-broadcom-linux-firmware

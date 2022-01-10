@@ -1,0 +1,7 @@
+key: amlogic-linux-firmware
+short_name: Amlogic Linux Firmware License
+name: Amlogic Linux Firmware License
+category: Proprietary Free
+owner: Amlogic
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.amlogic_vdec
+spdx_license_key: LicenseRef-scancode-amlogic-linux-firmware

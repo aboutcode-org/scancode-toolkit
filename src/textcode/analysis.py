@@ -48,12 +48,19 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-def numbered_text_lines(location, demarkup=False, plain_text=False):
+def numbered_text_lines(
+    location,
+    demarkup=False,
+    plain_text=False,
+    start_line=1,
+):
     """
     Yield tuples of (line number, text line) from the file at `location`. Return
     an empty iterator if no text content is extractible. Text extraction is
     based on detected file type. Long lines are broken down in chunks, therefore
     two items can have the same line number.
+
+    line numbers start at ``start_line`` which is 1-based by default.
 
     If `demarkup` is True, attempt to detect if a file contains HTML/XML-like
     markup and cleanup this markup.
@@ -73,12 +80,12 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
         # of lines
         if TRACE:
             logger_debug('numbered_text_lines:', 'location is not a file')
-        return enumerate(iter(location), 1)
+        return enumerate(iter(location), start_line)
 
     if plain_text:
         if TRACE:
             logger_debug('numbered_text_lines:', 'plain_text')
-        return enumerate(unicode_text_lines(location), 1)
+        return enumerate(unicode_text_lines(location), start_line)
 
     T = typecode.get_type(location)
 
@@ -95,17 +102,20 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
     if T.is_pdf and T.is_pdf_with_text:
         if TRACE:
             logger_debug('numbered_text_lines:', 'is_pdf')
-        return enumerate(unicode_text_lines_from_pdf(location), 1)
+        return enumerate(unicode_text_lines_from_pdf(location), start_line)
 
     if T.filetype_file.startswith('Spline Font Database'):
         if TRACE:
             logger_debug('numbered_text_lines:', 'Spline Font Database')
-        return enumerate((as_unicode(l) for l in sfdb.get_text_lines(location)), 1)
+        return enumerate(
+            (as_unicode(l) for l in sfdb.get_text_lines(location)),
+            start_line,
+        )
 
     # lightweight markup stripping support
     if demarkup and markup.is_markup(location):
         try:
-            lines = list(enumerate(markup.demarkup(location), 1))
+            lines = list(enumerate(markup.demarkup(location), start_line))
             if TRACE:
                 logger_debug('numbered_text_lines:', 'demarkup')
             return lines
@@ -115,7 +125,7 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
 
     if T.is_js_map:
         try:
-            lines = list(enumerate(js_map_sources_lines(location), 1))
+            lines = list(enumerate(js_map_sources_lines(location), start_line))
             if TRACE:
                 logger_debug('numbered_text_lines:', 'js_map')
             return lines
@@ -124,7 +134,7 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
             pass
 
     if T.is_text:
-        numbered_lines = enumerate(unicode_text_lines(location), 1)
+        numbered_lines = enumerate(unicode_text_lines(location), start_line)
         # text with very long lines such minified JS, JS map files or large JSON
         if (not location.endswith('package.json')
             and (T.is_text_with_long_lines or T.is_compact_js
@@ -148,7 +158,7 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
         if TRACE:
             logger_debug('numbered_text_lines:', 'is_binary')
 
-        return enumerate(unicode_text_lines_from_binary(location), 1)
+        return enumerate(unicode_text_lines_from_binary(location), start_line)
 
     return iter([])
 
@@ -173,7 +183,12 @@ def unicode_text_lines_from_pdf(location):
         yield as_unicode(line)
 
 
-def break_numbered_unicode_text_lines(numbered_lines, split=u'([",\'])', max_len=200, chunk_len=30):
+def break_numbered_unicode_text_lines(
+    numbered_lines,
+    split=u'([",\'])',
+    max_len=200,
+    chunk_len=30,
+):
     """
     Yield text lines breaking long lines on `split` where numbered_lines is an
     iterator of (line number, line text).

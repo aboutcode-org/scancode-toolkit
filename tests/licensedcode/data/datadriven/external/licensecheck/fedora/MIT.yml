@@ -29,7 +29,7 @@ license_expressions:
   - adobe-glyph
   - mit-xfig
   - x11-tiff
-  - x11
+  - other-permissive
   - x11 AND other-permissive
   - other-permissive
   - other-permissive

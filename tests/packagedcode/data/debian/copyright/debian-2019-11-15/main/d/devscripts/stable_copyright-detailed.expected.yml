@@ -76,48 +76,42 @@ declared_license:
   - GPL-3+
   - ISC
   - Public-Domain
-license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-3.0 AND
-  gpl-1.0-plus AND gpl-3.0 AND gpl-3.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0)
-  AND isc AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND ((artistic-2.0 AND
-  artistic-2.0) OR (gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0))
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND
-  gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0
-  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND
-  gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND
-  gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus
-  AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND artistic-2.0
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
+license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0 AND gpl-1.0-plus
+  AND gpl-3.0 AND gpl-3.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND isc
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND ((artistic-perl-1.0 AND artistic-perl-1.0)
+  OR (gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0)) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0
+  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0
   AND gpl-2.0 AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND
-  gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-3.0-plus AND
-  gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-3.0-plus
-  AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND
-  gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND
-  gpl-2.0) AND ((artistic-2.0 AND artistic-2.0) OR (gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
-  AND gpl-1.0-plus AND gpl-1.0)) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND
-  gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND
-  gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND public-domain-disclaimer AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0 AND gpl-2.0)
+  AND gpl-2.0-plus AND gpl-2.0) AND artistic-2.0 AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0
+  AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus
+  AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0)
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND ((artistic-perl-1.0 AND artistic-perl-1.0)
+  OR (gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0)) AND (gpl-2.0
+  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND public-domain-disclaimer AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0)
 copyright: |
   1997, Klee Dienes <klee@mit.edu>
   Christoph Lameter <clameter@debian.org>
@@ -231,32 +225,32 @@ copyright: |
   2006, Julian Gilbey <jdg@debian.org>
   2015, Nicholas Bamber <nicholas@periapt.co.uk>
 matches:
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+  - score: '99.0'
+    start_line: 355
+    end_line: 355
     matcher: 1-hash
     rule_length: 2
     matched_length: 2
     match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: artistic-2.0_26.RULE
-    license_expression: artistic-2.0
+    rule_relevance: 99
+    identifier: artistic-perl-1.0_26.RULE
+    license_expression: artistic-perl-1.0
     is_license_text: no
     is_license_notice: no
     is_license_reference: no
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: artistic'
-  - score: '91.49'
-    start_line: 1
-    end_line: 5
-    matcher: 3-seq
-    rule_length: 47
+  - score: '100.0'
+    start_line: 356
+    end_line: 360
+    matcher: 1-hash
+    rule_length: 43
     matched_length: 43
-    match_coverage: '91.49'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: artistic-2.0_4.RULE
-    license_expression: artistic-2.0
+    identifier: artistic-perl-1.0_13.RULE
+    license_expression: artistic-perl-1.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -269,11 +263,11 @@ matches:
       On Debian systems, the complete text of the Artistic License can be
       found in `/usr/share/common-licenses/Artistic'.
   - score: '99.93'
-    start_line: 1
-    end_line: 189
+    start_line: 363
+    end_line: 551
     matcher: 3-seq
-    rule_length: 1351
-    matched_length: 1350
+    rule_length: 1354
+    matched_length: 1353
     match_coverage: '99.93'
     rule_relevance: 100
     identifier: artistic-2.0_36.RULE
@@ -474,8 +468,8 @@ matches:
            DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE, EVEN
            IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 553
+    end_line: 553
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -490,8 +484,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-1+'
   - score: '100.0'
-    start_line: 1
-    end_line: 4
+    start_line: 554
+    end_line: 557
     matcher: 2-aho
     rule_length: 39
     matched_length: 39
@@ -510,8 +504,8 @@ matches:
       the Free Software Foundation; either version 1, or (at your option)
       any later version.
   - score: '100.0'
-    start_line: 6
-    end_line: 7
+    start_line: 559
+    end_line: 560
     matcher: 2-aho
     rule_length: 5
     matched_length: 5
@@ -528,8 +522,8 @@ matches:
       the GNU General
       Public License
   - score: '100.0'
-    start_line: 7
-    end_line: 7
+    start_line: 560
+    end_line: 560
     matcher: 2-aho
     rule_length: 5
     matched_length: 5
@@ -544,8 +538,8 @@ matches:
     is_license_intro: no
     matched_text: usr/share/common-licenses/GPL-
   - score: '60.0'
-    start_line: 7
-    end_line: 7
+    start_line: 560
+    end_line: 560
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
@@ -560,8 +554,8 @@ matches:
     is_license_intro: no
     matched_text: GPL-1'
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 562
+    end_line: 562
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -576,8 +570,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2'
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 563
+    end_line: 565
     matcher: 2-aho
     rule_length: 31
     matched_length: 31
@@ -595,14 +589,14 @@ matches:
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation; version 2.
   - score: '100.0'
-    start_line: 5
-    end_line: 6
+    start_line: 567
+    end_line: 568
     matcher: 2-aho
-    rule_length: 8
-    matched_length: 8
+    rule_length: 25
+    matched_length: 25
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_836.RULE
+    identifier: gpl-2.0_1295.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: no
@@ -610,27 +604,11 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      version 2 of the GNU General
-      Public License
+      On Debian systems, the complete text of version 2 of the GNU General
+      Public License can be found in `/usr/share/common-licenses/GPL-2'
   - score: '100.0'
-    start_line: 6
-    end_line: 6
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2'
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 570
+    end_line: 570
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -645,8 +623,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 4
+    start_line: 571
+    end_line: 574
     matcher: 2-aho
     rule_length: 39
     matched_length: 39
@@ -665,14 +643,14 @@ matches:
       the Free Software Foundation; either version 2, or (at your option)
       any later version.
   - score: '100.0'
-    start_line: 6
-    end_line: 7
+    start_line: 576
+    end_line: 577
     matcher: 2-aho
-    rule_length: 8
-    matched_length: 8
+    rule_length: 25
+    matched_length: 25
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_836.RULE
+    identifier: gpl-2.0_1295.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: no
@@ -680,27 +658,11 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      version 2 of the GNU General
-      Public License
+      On Debian systems, the complete text of version 2 of the GNU General
+      Public License can be found in `/usr/share/common-licenses/GPL-2'
   - score: '100.0'
-    start_line: 7
-    end_line: 7
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2'
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 579
+    end_line: 579
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -715,8 +677,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-3'
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 580
+    end_line: 582
     matcher: 2-aho
     rule_length: 29
     matched_length: 29
@@ -734,8 +696,8 @@ matches:
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation;
   - score: '100.0'
-    start_line: 5
-    end_line: 6
+    start_line: 584
+    end_line: 585
     matcher: 2-aho
     rule_length: 8
     matched_length: 8
@@ -751,25 +713,25 @@ matches:
     matched_text: |
       version 3 of the GNU General
       Public License
-  - score: '33.0'
-    start_line: 6
-    end_line: 6
+  - score: '100.0'
+    start_line: 585
+    end_line: 585
     matcher: 2-aho
     rule_length: 6
     matched_length: 6
     match_coverage: '100.0'
-    rule_relevance: 33
+    rule_relevance: 100
     identifier: gpl-3.0_93.RULE
     license_expression: gpl-3.0
     is_license_text: no
     is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
+    is_license_reference: yes
+    is_license_tag: no
     is_license_intro: no
     matched_text: usr/share/common-licenses/GPL-3'
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 587
+    end_line: 587
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -784,8 +746,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-3+'
   - score: '100.0'
-    start_line: 1
-    end_line: 4
+    start_line: 588
+    end_line: 591
     matcher: 2-aho
     rule_length: 39
     matched_length: 39
@@ -804,8 +766,8 @@ matches:
       the Free Software Foundation; either version 3, or (at your option)
       any later version.
   - score: '100.0'
-    start_line: 6
-    end_line: 7
+    start_line: 593
+    end_line: 594
     matcher: 2-aho
     rule_length: 8
     matched_length: 8
@@ -821,25 +783,25 @@ matches:
     matched_text: |
       version 3 of the GNU General
       Public License
-  - score: '33.0'
-    start_line: 7
-    end_line: 7
+  - score: '100.0'
+    start_line: 594
+    end_line: 594
     matcher: 2-aho
     rule_length: 6
     matched_length: 6
     match_coverage: '100.0'
-    rule_relevance: 33
+    rule_relevance: 100
     identifier: gpl-3.0_93.RULE
     license_expression: gpl-3.0
     is_license_text: no
     is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
+    is_license_reference: yes
+    is_license_tag: no
     is_license_intro: no
     matched_text: usr/share/common-licenses/GPL-3'
   - score: '100.0'
-    start_line: 1
-    end_line: 11
+    start_line: 597
+    end_line: 607
     matcher: 1-hash
     rule_length: 112
     matched_length: 112
@@ -865,11 +827,11 @@ matches:
       OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
       PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 610
+    end_line: 612
     matcher: 1-hash
-    rule_length: 32
-    matched_length: 32
+    rule_length: 33
+    matched_length: 33
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: public-domain-disclaimer_16.RULE

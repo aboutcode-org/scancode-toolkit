@@ -10,10 +10,9 @@ declared_license:
   - GPL-2+
   - GPL-3+
   - BSD-2-clause
-license_expression: bsd-simplified AND bsd-simplified AND (gpl-2.0-plus AND gpl-2.0-plus AND
-  gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND fsf-unlimited AND (gpl-3.0-plus
-  AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND libtool-exception-2.0
-  AND gpl-2.0-plus AND gpl-2.0)
+license_expression: bsd-simplified AND bsd-simplified AND (gpl-2.0-plus AND gpl-2.0-plus) AND
+  (gpl-2.0-plus AND gpl-2.0-plus) AND fsf-unlimited AND (gpl-3.0-plus AND gpl-3.0-plus) AND
+  gpl-2.0-plus WITH libtool-exception-2.0
 copyright: |
   Copyright (c) 2006-2018 Yubico AB
   2014-2016 Yubico AB
@@ -28,8 +27,8 @@ copyright: |
   1996-2017, Free Software Foundation, Inc.
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 3
+    start_line: 27
+    end_line: 29
     matcher: 1-hash
     rule_length: 29
     matched_length: 29
@@ -46,105 +45,38 @@ matches:
       This file is free software; the Free Software Foundation gives
       unlimited permission to copy and/or distribute it, with or without
       modifications, as long as this notice is preserved.
-  - score: '93.02'
-    start_line: 1
-    end_line: 4
-    matcher: 3-seq
-    rule_length: 43
-    matched_length: 40
-    match_coverage: '93.02'
+  - score: '100.0'
+    start_line: 39
+    end_line: 51
+    matcher: 1-hash
+    rule_length: 113
+    matched_length: 113
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_434.RULE
-    license_expression: gpl-2.0-plus
+    identifier: gpl-2.0-plus_with_libtool-exception-2.0_8.RULE
+    license_expression: gpl-2.0-plus WITH libtool-exception-2.0
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify
+      GNU Libtool is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation; either version 2 of the License, or
       (at your option) any later version.
-  - score: '53.85'
-    start_line: 1
-    end_line: 6
-    matcher: 3-seq
-    rule_length: 65
-    matched_length: 35
-    match_coverage: '53.85'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_734.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version 2 [of] [the] [License], [or]
-      ([at] [your] [option]) [any] [later] [version].
 
-      [As] a [special] [exception] [to] the GNU General Public License,
-  - score: '100.0'
-    start_line: 6
-    end_line: 9
-    matcher: 2-aho
-    rule_length: 45
-    matched_length: 45
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: libtool-exception-2.0.LICENSE
-    license_expression: libtool-exception-2.0
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
       As a special exception to the GNU General Public License,
       if you distribute this file as part of a program or library that
       is built using GNU Libtool, you may include this file under the
       same distribution terms that you use for the rest of that program.
-  - score: '24.24'
-    start_line: 11
-    end_line: 12
-    matcher: 3-seq
-    rule_length: 33
-    matched_length: 8
-    match_coverage: '24.24'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_101.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      of the GNU General Public
-      License version 2
+
+      On Debian systems, the full text of the GNU General Public
+      License version 2 can be found in the file
+      `/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
-    start_line: 13
-    end_line: 13
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 54
+    end_line: 54
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -159,14 +91,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 4
-    matcher: 2-aho
-    rule_length: 42
-    matched_length: 42
+    start_line: 55
+    end_line: 61
+    matcher: 1-hash
+    rule_length: 66
+    matched_length: 66
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_64.RULE
+    identifier: gpl-2.0-plus_842.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -178,27 +110,12 @@ matches:
       the terms of the GNU General Public License as published by the Free Software
       Foundation; either version 2 of the License, or (at your option) any later
       version.
-  - score: '100.0'
-    start_line: 6
-    end_line: 7
-    matcher: 2-aho
-    rule_length: 24
-    matched_length: 24
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_1120.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
+
       On Debian systems, the complete text of the GNU General Public License version 2
       can be found in /usr/share/common-licenses/GPL-2.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 63
+    end_line: 63
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -213,14 +130,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-3+'
   - score: '100.0'
-    start_line: 1
-    end_line: 4
-    matcher: 2-aho
-    rule_length: 40
-    matched_length: 40
+    start_line: 64
+    end_line: 70
+    matcher: 1-hash
+    rule_length: 68
+    matched_length: 68
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_98.RULE
+    identifier: gpl-3.0-plus_387.RULE
     license_expression: gpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -228,45 +145,16 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software: you can redistribute it and/or modify
+      This file is free software: you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation, either version 3 of the License, or
       (at your option) any later version.
+
+      On Debian systems, the full text of the GNU General Public License version 3
+      can be found in the file `/usr/share/common-licenses/GPL-3'.
   - score: '100.0'
-    start_line: 6
-    end_line: 6
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0_378.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: the GNU General Public License version 3
-  - score: '33.0'
-    start_line: 7
-    end_line: 7
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 33
-    identifier: gpl-3.0_93.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-3'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 73
+    end_line: 95
     matcher: 1-hash
     rule_length: 183
     matched_length: 183

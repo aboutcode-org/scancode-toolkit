@@ -1,0 +1,8 @@
+key: ago-private-1.0
+short_name: Ago Private License 1.0
+name: Ago Private License 1.0
+category: Proprietary Free
+owner: Unspecified
+spdx_license_key: LicenseRef-scancode-ago-private-1.0
+text_urls:
+    - https://bitbucket.org/mikechung/agobot3/src/master/apl.txt

@@ -1,0 +1,10 @@
+license_expression: mx4j
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) by the MX4J contributors
+ignorable_holders:
+    - the MX4J contributors
+ignorable_authors:
+    - the MX4J project (http://mx4j.sourceforge.net)
+ignorable_urls:
+    - http://mx4j.sourceforge.net/

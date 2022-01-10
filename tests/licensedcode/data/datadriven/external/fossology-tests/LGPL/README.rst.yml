@@ -1,4 +1,5 @@
 license_expressions:
   - free-unknown
+  - unknown-license-reference
   - lgpl-2.1-plus AND gpl-3.0
   - cc-by-sa-3.0

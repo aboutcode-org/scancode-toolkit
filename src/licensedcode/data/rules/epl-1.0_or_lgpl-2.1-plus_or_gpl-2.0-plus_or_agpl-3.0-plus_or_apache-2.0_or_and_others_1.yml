@@ -4,10 +4,10 @@ is_license_notice: yes
 minimum_coverage: 95
 notes: seen in http://www.source-code.biz/base64coder/java/Base64Coder.java.txt
 ignorable_urls:
-    - https://www.apache.org/licenses
     - http://www.eclipse.org/legal
     - http://www.gnu.org/licenses/agpl.html
     - http://www.gnu.org/licenses/gpl.html
     - http://www.gnu.org/licenses/lgpl.html
     - http://www.opensource.org/licenses/MIT
     - http://www.opensource.org/licenses/bsd-license.php
+    - https://www.apache.org/licenses

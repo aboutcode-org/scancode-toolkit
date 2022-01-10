@@ -1,0 +1,9 @@
+license_expression: gpl-3.0-plus WITH gcc-exception-3.1
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - COPYING3
+    - COPYING.RUNTIME
+ignorable_urls:
+    - https://www.gnu.org/licenses/

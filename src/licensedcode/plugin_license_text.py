@@ -14,7 +14,6 @@ from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
 
-
 # Set to True to enable debug tracing
 TRACE = False
 
@@ -75,12 +74,12 @@ class IsLicenseText(PostScanPlugin):
             license_texts = set()
             for lic in resource.licenses:
                 license_texts.add(
-                    (lic.get('matched_text'), 
-                     lic.get('start_line', 0), 
-                     lic.get('end_line',0),
+                    (lic.get('matched_text'),
+                     lic.get('start_line', 0),
+                     lic.get('end_line', 0),
                      lic.get('matched_rule', {}).get('match_coverage', 0))
                 )
-                
+
             # use coverage to weight and estimate of the the actual matched length
             license_texts_size = 0
             for txt, _, _, cov in license_texts:

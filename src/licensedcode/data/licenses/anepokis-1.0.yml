@@ -1,0 +1,17 @@
+key: anepokis-1.0
+short_name: Anepokis License 1.0
+name: Anepokis License 1.0
+category: Copyleft
+owner: Salif Mehmed
+homepage_url: https://github.com/salif/anepokis-license
+spdx_license_key: LicenseRef-scancode-anepokis-1.0
+text_urls:
+    - https://salif.github.io/anepokis-license/LICENSE.txt
+other_urls:
+    - https://salif.github.io/anepokis-license/LICENSE.html
+ignorable_copyrights:
+    - Copyright 2005 Lawrence Rosen
+    - Copyright 2020 Salif Mehmed
+ignorable_holders:
+    - Lawrence Rosen
+    - Salif Mehmed

@@ -1,0 +1,7 @@
+key: broadcom-raspberry-pi
+short_name: Broadcom Raspberry Pi Firmware License
+name: Broadcom Raspberry Pi Firmware License
+category: Proprietary Free
+owner: Broadcom
+homepage_url: https://github.com/raspberrypi/firmware/blob/master/boot/LICENCE.broadcom
+spdx_license_key: LicenseRef-scancode-broadcom-raspberry-pi

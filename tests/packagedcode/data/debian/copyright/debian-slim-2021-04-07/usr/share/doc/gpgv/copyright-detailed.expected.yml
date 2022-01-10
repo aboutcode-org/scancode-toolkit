@@ -1,4 +1,4 @@
-primary_license: gpl-3.0-plus AND gpl-1.0-plus AND gpl-3.0
+primary_license: gpl-3.0-plus
 declared_license:
   - GPL-3+
   - GPL-3+
@@ -23,15 +23,11 @@ declared_license:
   - BSD-3-clause
   - Expat
   - CC0-1.0
-license_expression: (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-3.0
-  AND gpl-3.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-3.0
-  AND gpl-3.0) AND fsf-unlimited-no-warranty AND fsf-unlimited-no-warranty AND (lgpl-2.1-plus
-  AND lgpl-3.0-plus) AND mit AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
-  AND gpl-3.0 AND gpl-3.0) AND ((gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus
-  AND gpl-3.0 AND gpl-3.0) OR bsd-new) AND (lgpl-3.0-plus AND lgpl-3.0-plus AND lgpl-3.0 AND
-  lgpl-3.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-3.0
-  AND gpl-3.0) AND ietf AND bsd-new AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus AND
-  gpl-1.0-plus AND gpl-3.0 AND gpl-3.0) AND (cc0-1.0 AND cc0-1.0)
+license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND
+  fsf-unlimited-no-warranty AND fsf-unlimited-no-warranty AND (lgpl-2.1-plus AND lgpl-2.1-plus)
+  AND mit AND (gpl-3.0-plus AND gpl-3.0-plus) AND ((gpl-3.0-plus AND gpl-3.0-plus) OR bsd-new)
+  AND (lgpl-3.0-plus AND lgpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND ietf AND bsd-new
+  AND (gpl-3.0-plus AND gpl-3.0-plus) AND (cc0-1.0 AND cc0-1.0) AND other-permissive
 copyright: |
   1992, 1995-2020, Free Software Foundation, Inc
   1998-2007, 2009, 2012, Free Software Foundation, Inc
@@ -58,8 +54,8 @@ copyright: |
   2017 Daniel Kahn Gillmor <dkg@fifthhorseman.net>
 matches:
   - score: '99.05'
-    start_line: 1
-    end_line: 26
+    start_line: 85
+    end_line: 110
     matcher: 1-hash
     rule_length: 209
     matched_length: 209
@@ -100,8 +96,8 @@ matches:
       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
       SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 8
+    start_line: 114
+    end_line: 121
     matcher: 1-hash
     rule_length: 64
     matched_length: 64
@@ -124,8 +120,8 @@ matches:
       the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
       PURPOSE.
   - score: '90.0'
-    start_line: 6
-    end_line: 21
+    start_line: 129
+    end_line: 144
     matcher: 2-aho
     rule_length: 149
     matched_length: 149
@@ -156,8 +152,8 @@ matches:
       The limited permissions granted above are perpetual and will not be
       revoked by the Internet Society or its successors or assigns.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 147
+    end_line: 147
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -172,14 +168,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-3+'
   - score: '100.0'
-    start_line: 1
-    end_line: 4
-    matcher: 2-aho
-    rule_length: 40
-    matched_length: 40
+    start_line: 148
+    end_line: 163
+    matcher: 1-hash
+    rule_length: 126
+    matched_length: 126
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_98.RULE
+    identifier: gpl-3.0-plus_480.RULE
     license_expression: gpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -187,85 +183,25 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify
+      GnuPG is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation; either version 3 of the License, or
       (at your option) any later version.
-  - score: '100.0'
-    start_line: 6
-    end_line: 9
-    matcher: 2-aho
-    rule_length: 35
-    matched_length: 35
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-1.0-plus_421.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      is distributed in the hope that it will be useful,
+
+      GnuPG is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more details.
-  - score: '100.0'
-    start_line: 11
-    end_line: 12
-    matcher: 2-aho
-    rule_length: 23
-    matched_length: 23
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-1.0-plus_36.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
+
       You should have received a copy of the GNU General Public License
       along with this program; if not, see <https://www.gnu.org/licenses/>.
+
+      On Debian systems, the full text of the GNU General Public
+      License version 3 can be found in the file
+      `/usr/share/common-licenses/GPL-3'.
   - score: '100.0'
-    start_line: 14
-    end_line: 15
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0_378.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      the GNU General Public
-      License version 3
-  - score: '33.0'
-    start_line: 16
-    end_line: 16
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 33
-    identifier: gpl-3.0_93.RULE
-    license_expression: gpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-3'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 165
+    end_line: 165
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -280,14 +216,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: lgpl-3+'
   - score: '100.0'
-    start_line: 1
-    end_line: 12
-    matcher: 2-aho
-    rule_length: 105
-    matched_length: 105
+    start_line: 166
+    end_line: 181
+    matcher: 1-hash
+    rule_length: 132
+    matched_length: 132
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-3.0-plus_162.RULE
+    identifier: lgpl-3.0-plus_191.RULE
     license_expression: lgpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -307,43 +243,13 @@ matches:
 
       You should have received a copy of the GNU Lesser General Public
       License along with this program; if not, see <https://www.gnu.org/licenses/>.
+
+      On Debian systems, the full text of the GNU Lesser General Public
+      License version 3 can be found in the file
+      `/usr/share/common-licenses/LGPL-3'.
   - score: '100.0'
-    start_line: 14
-    end_line: 15
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-3.0_51.RULE
-    license_expression: lgpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      GNU Lesser General Public
-      License version 3
-  - score: '100.0'
-    start_line: 16
-    end_line: 16
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-3.0_41.RULE
-    license_expression: lgpl-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/LGPL-3'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 183
+    end_line: 183
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -357,41 +263,41 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2.1+'
-  - score: '88.97'
-    start_line: 1
-    end_line: 16
-    matcher: 3-seq
-    rule_length: 136
-    matched_length: 121
-    match_coverage: '88.97'
+  - score: '100.0'
+    start_line: 184
+    end_line: '199'
+    matcher: 1-hash
+    rule_length: 135
+    matched_length: 135
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-3.0-plus_96.RULE
-    license_expression: lgpl-3.0-plus
+    identifier: lgpl-2.1-plus_307.RULE
+    license_expression: lgpl-2.1-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
     matched_text: |
-      is free software; you can redistribute it and/or modify it
+      This program is free software; you can redistribute it and/or modify it
       under the terms of the GNU Lesser General Public License as
-      published by the Free Software Foundation; either version [2].[1] of
+      published by the Free Software Foundation; either version 2.1 of
       the License, or (at your option) any later version.
 
-      This [program] is distributed in the hope that it will be useful, but
+      This program is distributed in the hope that it will be useful, but
       WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
 
       You should have received a copy of the GNU Lesser General Public
-      License along with this [program]; [if] [not], [see] <[https]://www.gnu.org/licenses/>.
+      License along with this program; if not, see <https://www.gnu.org/licenses/>.
 
       On Debian systems, the full text of the GNU Lesser General Public
-      License version [2].[1] can be found in the file
-      `/usr/share/common-licenses/LGPL-
+      License version 2.1 can be found in the file
+      `/usr/share/common-licenses/LGPL-2.1'.
   - score: '100.0'
-    start_line: 1
-    end_line: 24
+    start_line: 202
+    end_line: 225
     matcher: 1-hash
     rule_length: 205
     matched_length: 205
@@ -430,8 +336,8 @@ matches:
       ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
       OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 18
+    start_line: 228
+    end_line: 245
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -464,8 +370,8 @@ matches:
       OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
       USE OR OTHER DEALINGS IN THE SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 247
+    end_line: 247
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -480,11 +386,11 @@ matches:
     is_license_intro: no
     matched_text: 'License: cc0-1.0'
   - score: '100.0'
-    start_line: 1
-    end_line: 6
+    start_line: 248
+    end_line: 253
     matcher: 1-hash
-    rule_length: 56
-    matched_length: 56
+    rule_length: 57
+    matched_length: 57
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: cc0-1.0_131.RULE
@@ -501,3 +407,19 @@ matches:
 
       On Debian systems, the complete text of the CC0 license, version 1.0,
       can be found in /usr/share/common-licenses/CC0-1.0.
+  - score: '100.0'
+    start_line: 81
+    end_line: 81
+    matcher: 2-aho
+    rule_length: 5
+    matched_length: 5
+    match_coverage: '100.0'
+    rule_relevance: 100
+    identifier: other-permissive_321.RULE
+    license_expression: other-permissive
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    matched_text: This file is licensed permissively

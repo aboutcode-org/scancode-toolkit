@@ -1,0 +1,12 @@
+key: tfl
+short_name: TFL
+name: Truly Free License
+category: Public Domain
+owner: Tom Vajzovic
+homepage_url: https://www.purposeful.co.uk/tfl/
+spdx_license_key: LicenseRef-scancode-tfl
+other_urls:
+    - https://github.com/thoni56/gopt
+    - https://www.purposeful.co.uk/gopt/
+ignorable_urls:
+    - http://www.purposeful.co.uk/tfl/

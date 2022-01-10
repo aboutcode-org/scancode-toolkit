@@ -41,7 +41,7 @@ def test_scan_plugin_filter_clues_for_rule():
     args = ['-clieu', '--filter-clues', test_dir, '--json', result_file]
     run_scan_click(args)
     expected = test_env.get_test_loc('plugin_filter_clues/filtered-expected.json')
-    check_json_scan(expected, result_file, remove_file_date=True, ignore_headers=True, regen=False)
+    check_json_scan(expected, result_file, remove_file_date=True, regen=False)
 
 
 def test_scan_plugin_filter_clues_does_not_filter_incorrectly():
@@ -53,7 +53,7 @@ def test_scan_plugin_filter_clues_does_not_filter_incorrectly():
     args = ['-clieu', '--filter-clues', test_dir, '--json', result_file]
     run_scan_click(args)
     expected = test_env.get_test_loc('plugin_filter_clues/filtered-expected2.json')
-    check_json_scan(expected, result_file, remove_file_date=True, ignore_headers=True, regen=False)
+    check_json_scan(expected, result_file, remove_file_date=True, regen=False)
 
 
 # Regression on types tracked in https://github.com/nexB/typecode/issues/21
@@ -66,4 +66,4 @@ def test_scan_plugin_filter_clues_for_license():
     args = ['-clieu', '--filter-clues', test_dir, '--json', result_file]
     run_scan_click(args)
     expected = test_env.get_test_loc('plugin_filter_clues/filtered-expected3.json')
-    check_json_scan(expected, result_file, remove_file_date=True, ignore_headers=True, regen=False)
+    check_json_scan(expected, result_file, remove_file_date=True, regen=False)

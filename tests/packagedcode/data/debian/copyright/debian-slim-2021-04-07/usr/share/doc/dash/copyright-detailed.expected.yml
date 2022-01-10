@@ -92,8 +92,8 @@ copyright: |
   1992, 1996, 1997, 1999, 2000, 2002-2012, Free Software Foundation, Inc.
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 23
+    start_line: 155
+    end_line: 177
     matcher: 1-hash
     rule_length: 213
     matched_length: 213
@@ -131,8 +131,8 @@ matches:
       OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
       SUCH DAMAGE.
   - score: '100.0'
-    start_line: 1
-    end_line: 2
+    start_line: 180
+    end_line: 181
     matcher: 1-hash
     rule_length: 18
     matched_length: 18
@@ -149,8 +149,8 @@ matches:
       This configure script is free software; the Free Software Foundation
       gives unlimited permission to copy, distribute and modify it.
   - score: '100.0'
-    start_line: 1
-    end_line: 8
+    start_line: 184
+    end_line: '191'
     matcher: 1-hash
     rule_length: 63
     matched_length: 63
@@ -173,8 +173,8 @@ matches:
       even the implied warranty of MERCHANTABILITY or FITNESS FOR A
       PARTICULAR PURPOSE.
   - score: '100.0'
-    start_line: 1
-    end_line: 21
+    start_line: '194'
+    end_line: 214
     matcher: 2-aho
     rule_length: 201
     matched_length: 201
@@ -210,8 +210,8 @@ matches:
       ings in this Software without prior written authorization from the X Consor-
       tium.
   - score: '100.0'
-    start_line: 23
-    end_line: 23
+    start_line: 216
+    end_line: 216
     matcher: 2-aho
     rule_length: 10
     matched_length: 10
@@ -226,8 +226,8 @@ matches:
     is_license_intro: no
     matched_text: FSF changes to this file are in the public domain.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 218
+    end_line: 218
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -242,8 +242,8 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 16
+    start_line: 219
+    end_line: 234
     matcher: 1-hash
     rule_length: 134
     matched_length: 134
@@ -274,8 +274,8 @@ matches:
       On Debian systems, the complete text of the GNU General Public License
       version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
   - score: '99.0'
-    start_line: 1
-    end_line: 1
+    start_line: 138
+    end_line: 138
     matcher: 1-hash
     rule_length: 3
     matched_length: 3

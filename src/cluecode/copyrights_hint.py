@@ -45,29 +45,29 @@ years = re.compile(years).findall
 #  decomposition: <super> U+0054 U+004D
 # Ⓜ  mask work
 
-
 statement_markers = (
-    u'©',
-    u'(c)',
-    u'&#169',
-    u'&#xa9',
-    u'169',
-    u'xa9',
-    u'u00a9',
-    u'00a9',
-    u'\251',
-    u'copyr',
-    u'copyl',
-    u'copr',
-    u'right',
-    u'reserv',
-    u'auth',
-    u'devel',
-    u'<s>',
-    u'</s>',
-    u'<s/>',
-    u'by ',  # note the trailing space
+    '©',
+    '(c)',
+    '&#169',
+    '&#xa9',
+    '169',
+    'xa9',
+    'u00a9',
+    '00a9',
+    '\251',
+    'copyr',
+    'copyl',
+    'copr',
+    'right',
+    'reserv',
+    'auth',
+    'devel',
+    '<s>',
+    '</s>',
+    '<s/>',
+    'by ',  # note the trailing space
 )
+
 '''
 HTML Entity (decimal)     &#169;
 HTML Entity (hex)     &#xa9;
@@ -85,11 +85,20 @@ Python source code     u"\u00A9"
 '''
 
 end_of_statement = (
-    u'rights reserve',
-    u'right reserve',
-    u'rights reserved',
-    u'right reserved',
-    u'right reserved.',
+    'rights reserve',
+    'right reserve',
+    'rights reserved',
+    'rights reserved.',
+    'right reserved',
+    'right reserved.',
+    # in German
+    'rechte vorbehalten',
+    'rechte vorbehalten.'
+    # in French
+    'droits réservés',
+    'droits réservés.'
+    'droits reserves',
+    'droits reserves.'
 )
 
 # others stuffs

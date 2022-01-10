@@ -1,0 +1,9 @@
+license_expression: lgpl-2.1
+is_license_notice: yes
+relevance: 100
+notes: This text is from the GPL 2.0 with a manual replacement to make it look like an LGPL
+    2.1 notice. This introduces a bias in license detection towards GPL 2.0 when this is really
+    an LGPL 2.1 license. This weird license header was originally found in the source code  of
+    the http://sourceforge.net/projects/glassbox/ project.
+ignorable_urls:
+    - https://www.gnu.org/licenses/lgpl.txt

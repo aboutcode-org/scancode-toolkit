@@ -8,8 +8,8 @@ matches:
     start_line: 15
     end_line: 25
     matcher: 2-aho
-    rule_length: 110
-    matched_length: 110
+    rule_length: 112
+    matched_length: 112
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: mit-old-style-no-advert_5.RULE
@@ -21,13 +21,13 @@ matches:
     is_license_intro: no
     matched_text: |
       Permission to use, copy, modify, and distribute this software
-       and its documentation for any purpose and without fee is
-       hereby granted, provided that the above copyright notice
-       appear in all copies and that both that copyright notice and
-       this permission notice appear in supporting documentation,
-       and that the names of M.I.T. and the M.I.T. S.I.P.B. not be
-       used in advertising or publicity pertaining to distribution
-       of the software without specific, written prior permission.
-       M.I.T. and the M.I.T. S.I.P.B. make no representations about
-       the suitability of this software for any purpose.  It is
-       provided "as is" without express or implied warranty.
+      and its documentation for any purpose and without fee is
+      hereby granted, provided that the above copyright notice
+      appear in all copies and that both that copyright notice and
+      this permission notice appear in supporting documentation,
+      and that the names of M.I.T. and the M.I.T. S.I.P.B. not be
+      used in advertising or publicity pertaining to distribution
+      of the software without specific, written prior permission.
+      M.I.T. and the M.I.T. S.I.P.B. make no representations about
+      the suitability of this software for any purpose.  It is
+      provided "as is" without express or implied warranty.

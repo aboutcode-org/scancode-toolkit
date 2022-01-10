@@ -8,7 +8,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
@@ -19,7 +19,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
@@ -51,20 +51,20 @@
       "license_expressions": [],
       "holders": [
         {
-          "value": "The OpenSSL Project",
+          "holder": "The OpenSSL Project",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "Copyright 2011-2016 The OpenSSL Project",
+          "copyright": "Copyright 2011-2016 The OpenSSL Project",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     },
     {
@@ -96,20 +96,20 @@
       "license_expressions": [],
       "holders": [
         {
-          "value": "The OpenSSL Project",
+          "holder": "The OpenSSL Project",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "Copyright 2011-2016 The OpenSSL Project",
+          "copyright": "Copyright 2011-2016 The OpenSSL Project",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "scan_errors": []
     }
   ]

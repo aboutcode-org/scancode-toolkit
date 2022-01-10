@@ -1,0 +1,11 @@
+key: bapl-1.0
+short_name: Booz Allen Public License v1.0
+name: Booz Allen Public License v1.0
+category: Source-available
+owner: Booz Allen Hamilton
+homepage_url: https://github.com/boozallen/Public-License/blob/master/LICENSE.md
+spdx_license_key: LicenseRef-scancode-bapl-1.0
+text_urls:
+    - https://raw.githubusercontent.com/boozallen/Public-License/master/LICENSE.md
+ignorable_emails:
+    - opensource@bah.com

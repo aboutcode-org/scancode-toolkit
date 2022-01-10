@@ -1,4 +1,4 @@
-primary_license: gpl-3.0-plus AND gpl-1.0-plus
+primary_license: gpl-3.0-plus
 declared_license:
   - GPL-3+
   - GPL-3+
@@ -7,8 +7,8 @@ declared_license:
   - GPL-3+
   - GFDL-1.3+-no-invariant
   - FSF-manpages
-license_expression: (gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus
-  AND gpl-1.0-plus) AND gfdl-1.2-plus AND latex2e
+license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND
+  gfdl-1.3-plus AND latex2e
 copyright: |
   1999-2016 Free Software Foundation, Inc.
   1992-1993 Jean-loup Gailly and Mark Adler
@@ -19,8 +19,8 @@ copyright: |
   1992-1993 Jean-loup Gailly
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 25
+    end_line: 25
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -35,14 +35,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-3+'
   - score: '100.0'
-    start_line: 1
-    end_line: 12
-    matcher: 2-aho
-    rule_length: 99
-    matched_length: 99
+    start_line: 26
+    end_line: 40
+    matcher: 1-hash
+    rule_length: 123
+    matched_length: 123
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_8.RULE
+    identifier: gpl-3.0-plus_482.RULE
     license_expression: gpl-3.0-plus
     is_license_text: no
     is_license_notice: yes
@@ -62,34 +62,19 @@ matches:
 
       You should have received a copy of the GNU General Public License
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+      On Debian GNU/Linux systems, the complete text of the GNU General
+      Public License can be found in `/usr/share/common-licenses/GPL-3'.
   - score: '100.0'
-    start_line: 14
-    end_line: 15
-    matcher: 2-aho
-    rule_length: 23
-    matched_length: 23
+    start_line: 43
+    end_line: 50
+    matcher: 1-hash
+    rule_length: 72
+    matched_length: 72
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-1.0-plus_10.RULE
-    license_expression: gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      On Debian GNU/Linux systems, the complete text of the GNU General
-      Public License can be found in `/usr/share/common-licenses/GPL-
-  - score: '80.72'
-    start_line: 1
-    end_line: 8
-    matcher: 3-seq
-    rule_length: 83
-    matched_length: 67
-    match_coverage: '80.72'
-    rule_relevance: 100
-    identifier: gfdl-1.2-plus_11.RULE
-    license_expression: gfdl-1.2-plus
+    identifier: gfdl-1.3-plus_24.RULE
+    license_expression: gfdl-1.3-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -97,16 +82,16 @@ matches:
     is_license_intro: no
     matched_text: |
       Permission is granted to copy, distribute and/or modify this document
-      under the terms of the GNU Free Documentation License, Version 1.[3] or
+      under the terms of the GNU Free Documentation License, Version 1.3 or
       any later version published by the Free Software Foundation; with no
       Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
       Texts.
 
-      [On] [Debian] GNU/[Linux] systems, the complete text of the GNU Free Documentation
-      License can be found in `/usr/share/common-licenses/GFDL-
+      On Debian GNU/Linux systems, the complete text of the GNU Free Documentation
+      License can be found in `/usr/share/common-licenses/GFDL-3'.
   - score: '85.0'
-    start_line: 1
-    end_line: 18
+    start_line: 53
+    end_line: 70
     matcher: 1-hash
     rule_length: 138
     matched_length: 138

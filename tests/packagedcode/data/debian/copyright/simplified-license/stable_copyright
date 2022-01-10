@@ -1,0 +1,454 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Apache HTTPD Server
+Source: https://httpd.apache.org/
+
+Files: *
+Copyright: Copyright 2019 The Apache Software Foundation
+License: Apache-2.0
+
+Files: include/ap_regex.h
+Copyright: 2019 The Apache Software Foundation
+ Copyright: 1997-2004 University of Cambridge
+License: Apache-2.0 and BSD-3-clause-Cambridge
+
+Files: server/util_pcre.c
+Copyright:  1997-2004 University of Cambridge
+License: PCRE
+
+Files: server/util_expr_parse.c
+Copyright: 1984, 1989-1990, 2000-2011 Free Software Foundation, Inc.
+License: GPL-3+ or Custom
+
+Files: test/test_limits.c
+Copyright: 1998 Dag-Erling Codan Smrgrav
+License: BSD-3-clause-Smrgrav
+
+Files: modules/metadata/mod_mime_magic.c
+Copyright: 2019 The Apache Software Foundation
+ 1996-1997 Cisco Systems, Inc.
+ 1987 Ian F. Darwin.
+License: Apache-2.0 and Cisco
+
+Files: modules/proxy/mod_proxy_uwsgi.c
+Copyright: 2019 The Apache Software Foundation
+ 2009-2017 Unbit S.a.s. <info@unbit.it>
+License: Apache-2.0
+
+Files: docs/conf/magic debian/config-dir/magic
+Copyright: Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
+License: BSD-2-clause-Darwin
+
+Files: modules/mappers/mod_imagemap.c
+Copyright: 2019 The Apache Software Foundation
+ 1992 by Eric Haines, erich@eye.com
+License: Apache-2.0 and Haines
+
+Files: server/util_md5.c
+Copyright: 2019 The Apache Software Foundation
+ 1995, Board of Trustees of the University of Illinois
+ 1994, Jeff Hostetler, Spyglass, Inc.
+ 1993,1994 by Carnegie Mellon University
+ 1991 Bell Communications Research, Inc. (Bellcore)
+License: Apache-2.0 and MD5
+
+Files: support/ab.c
+Copyright: 2019 The Apache Software Foundation
+ 1996 by Zeus Technology Ltd. http://www.zeustech.net/
+License: Apache-2.0 and Zeus
+
+Files: debian/a2query.in debian/debhelper/dh_apache2.in
+Copyright: 2012 Arno Töll
+License: Apache-2.0 or GPL-2+
+
+Files: debian/debhelper/apache2-maintscript-helper
+Copyright: 2012 Arno Töll
+License: Expat
+
+Files: debian/a2enmod
+Copyright: 2008 Stefan Fritsch
+License: Apache-2.0
+
+License: Apache-2.0
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+ .
+      https://www.apache.org/licenses/LICENSE-2.0
+ .
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ .
+ On Debian systems, the full text of the Apache Software License version 2 can
+ be found in the file `/usr/share/common-licenses/Apache-2.0'.
+
+License: Zeus
+   This program is based on ZeusBench V1.0 written by Adam Twiss
+   which is Copyright (c) 1996 by Zeus Technology Ltd. http://www.zeustech.net/
+   .
+   This software is provided "as is" and any express or implied warranties,
+   including but not limited to, the implied warranties of merchantability and
+   fitness for a particular purpose are disclaimed.  In no event shall
+   Zeus Technology Ltd. be liable for any direct, indirect, incidental, special,
+   exemplary, or consequential damaged (including, but not limited to,
+   procurement of substitute good or services; loss of use, data, or profits;
+   or business interruption) however caused and on theory of liability.  Whether
+   in contract, strict liability or tort (including negligence or otherwise)
+   arising in any way out of the use of this software, even if advised of the
+   possibility of such damage
+
+License: PCRE
+ This is a library of functions to support regular expressions whose syntax
+ and semantics are as close as possible to those of the Perl 5 language. See
+ the file Tech.Notes for some information on the internals.
+ .
+ This module is a wrapper that provides a POSIX API to the underlying PCRE
+ functions.
+ .
+ Written by: Philip Hazel <ph10@cam.ac.uk>
+ .
+           Copyright (c) 1997-2004 University of Cambridge
+ .
+ -----------------------------------------------------------------------------
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+    * Redistributions of source code must retain the above copyright notice,
+      this list of conditions and the following disclaimer.
+ .
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+ .
+    * Neither the name of the University of Cambridge nor the names of its
+      contributors may be used to endorse or promote products derived from
+      this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+
+
+License: MD5
+ NCSA HTTPd Server
+ Software Development Group
+ National Center for Supercomputing Applications
+ University of Illinois at Urbana-Champaign
+ 605 E. Springfield, Champaign, IL 61820
+ httpd@ncsa.uiuc.edu
+ .
+  Copyright  (C)  1995, Board of Trustees of the University of Illinois
+ .
+ ***********************************************************************
+ .
+ md5.c: NCSA HTTPd code which uses the md5c.c RSA Code
+ .
+   Original Code Copyright (C) 1994, Jeff Hostetler, Spyglass, Inc.
+   Portions of Content-MD5 code Copyright (C) 1993, 1994 by Carnegie Mellon
+      University (see Copyright below).
+   Portions of Content-MD5 code Copyright (C) 1991 Bell Communications
+      Research, Inc. (Bellcore) (see Copyright below).
+   Portions extracted from mpack, John G. Myers - jgm+@cmu.edu
+   Content-MD5 Code contributed by Martin Hamilton (martin@net.lut.ac.uk)
+ .
+ these portions extracted from mpack, John G. Myers - jgm+@cmu.edu */
+ .
+ (C) Copyright 1993,1994 by Carnegie Mellon University
+ All Rights Reserved.
+ .
+ Permission to use, copy, modify, distribute, and sell this software
+ and its documentation for any purpose is hereby granted without
+ fee, provided that the above copyright notice appear in all copies
+ and that both that copyright notice and this permission notice
+ appear in supporting documentation, and that the name of Carnegie
+ Mellon University not be used in advertising or publicity
+ pertaining to distribution of the software without specific,
+ written prior permission.  Carnegie Mellon University makes no
+ representations about the suitability of this software for any
+ purpose.  It is provided "as is" without express or implied
+ warranty.
+ .
+ CARNEGIE MELLON UNIVERSITY DISCLAIMS ALL WARRANTIES WITH REGARD TO
+ THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ AND FITNESS, IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY BE LIABLE
+ FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+ AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
+ OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+ SOFTWARE.
+ .
+ .
+ .
+ Copyright (c) 1991 Bell Communications Research, Inc. (Bellcore)
+ .
+ Permission to use, copy, modify, and distribute this material
+ for any purpose and without fee is hereby granted, provided
+ that the above copyright notice and this permission notice
+ appear in all copies, and that the name of Bellcore not be
+ used in advertising or publicity pertaining to this
+ material without the specific, prior written permission
+ of an authorized representative of Bellcore.  BELLCORE
+ MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY
+ OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",
+ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
+
+
+License: GPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-3'.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License
+ as published by the Free Software Foundation; either version 2
+ of the License, or (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.
+
+License: Haines
+ This imagemap module started as a port of the original imagemap.c
+ written by Rob McCool (11/13/93 robm@ncsa.uiuc.edu).
+ This version includes the mapping algorithms found in version 1.3
+ of imagemap.c.
+ .
+ Contributors to this code include:
+ .
+ Kevin Hughes, kevinh@pulua.hcc.hawaii.edu
+ .
+ Eric Haines, erich@eye.com
+ "macmartinized" polygon code copyright 1992 by Eric Haines, erich@eye.com
+ .
+ Randy Terbush, randy@zyzzyva.com
+ port to Apache module format, "base_uri" and support for relative URLs
+ .
+ James H. Cloos, Jr., cloos@jhcloos.com
+ Added point datatype, using code in NCSA's version 1.8 imagemap.c
+ program, as distributed with version 1.4.1 of their server.
+ The point code is originally added by Craig Milo Rogers, Rogers@ISI.Edu
+ .
+ Nathan Kurz, nate@tripod.com
+ Rewrite/reorganization.  New handling of default, base and relative URLs.
+ New Configuration directives:
+    ImapMenu {none, formatted, semiformatted, unformatted}
+    ImapDefault {error, nocontent, referer, menu, URL}
+    ImapBase {map, referer, URL}
+ Support for creating non-graphical menu added.  (backwards compatible):
+    Old:  directive URL [x,y ...]
+    New:  directive URL "Menu text" [x,y ...]
+     or:  directive URL x,y ... "Menu text"
+ Map format and menu concept courtesy Joshua Bell, jsbell@acs.ucalgary.ca.
+ .
+ Mark Cox, mark@ukweb.com, Allow relative URLs even when no base specified
+
+
+License: BSD-2-clause-Darwin
+ Software written by Ian F. Darwin and others;
+ maintained 1994-2004 Christos Zoulas.
+ .
+ This software is not subject to any export provision of the United States
+ Department of Commerce, and may be exported to any country or planet.
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice immediately at the beginning of the file, without modification,
+    this list of conditions, and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR
+ ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+
+
+License: Cisco
+ This software was submitted by Cisco Systems to the Apache Software Foundation in July
+ 1997.  Future revisions and derivatives of this source code must
+ acknowledge Cisco Systems as the original contributor of this module.
+ All other licensing and usage conditions are those of the Apache Software Foundation.
+ .
+ Some of this code is derived from the free version of the file command
+ originally posted to comp.sources.unix.  Copyright info for that program
+ is included below as required.
+ ---------------------------------------------------------------------------
+ - Copyright (c) Ian F. Darwin, 1987. Written by Ian F. Darwin.
+ .
+ This software is not subject to any license of the American Telephone and
+ Telegraph Company or of the Regents of the University of California.
+ .
+ Permission is granted to anyone to use this software for any purpose on any
+ computer system, and to alter it and redistribute it freely, subject to
+ the following restrictions:
+ .
+ 1. The author is not responsible for the consequences of use of this
+ software, no matter how awful, even if they arise from flaws in it.
+ .
+ 2. The origin of this software must not be misrepresented, either by
+ explicit claim or by omission.  Since few users ever read sources, credits
+ must appear in the documentation.
+ .
+ 3. Altered versions must be plainly marked as such, and must not be
+ misrepresented as being the original software.  Since few users ever read
+ sources, credits must appear in the documentation.
+ .
+ 4. This notice may not be removed or altered.
+  -------------------------------------------------------------------------
+ .
+ For compliance with Mr Darwin's terms: this has been very significantly
+ modified from the free "file" command.
+ - all-in-one file for compilation convenience when moving from one
+   version of Apache to the next.
+ - Memory allocation is done through the Apache API's apr_pool_t structure.
+ - All functions have had necessary Apache API request or server
+   structures passed to them where necessary to call other Apache API
+   routines.  (i.e. usually for logging, files, or memory allocation in
+   itself or a called function.)
+ - struct magic has been converted from an array to a single-ended linked
+   list because it only grows one record at a time, it's only accessed
+   sequentially, and the Apache API has no equivalent of realloc().
+ - Functions have been changed to get their parameters from the server
+   configuration instead of globals.  (It should be reentrant now but has
+   not been tested in a threaded environment.)
+ - Places where it used to print results to stdout now saves them in a
+   list where they're used to set the MIME type in the Apache request
+   record.
+ - Command-line flags have been removed since they will never be used here.
+ .
+ Ian Kluft <ikluft@cisco.com>
+ Engineering Information Framework
+ Central Engineering
+ Cisco Systems, Inc.
+ San Jose, CA, USA
+ .
+ Initial installation          July/August 1996
+ Misc bug fixes                May 1997
+ Submission to Apache Software Foundation    July 1997
+
+
+License: BSD-3-clause-Smrgrav
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer
+    in this position and unchanged.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. The name of the author may not be used to endorse or promote products
+    derived from this software withough specific prior written permission
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+License: BSD-3-clause-Cambridge
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+    * Redistributions of source code must retain the above copyright notice,
+      this list of conditions and the following disclaimer.
+ .
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+ .
+    * Neither the name of the University of Cambridge nor the names of its
+      contributors may be used to endorse or promote products derived from
+      this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+
+License: Custom
+   As a special exception, you may create a larger work that contains
+   part or all of the Bison parser skeleton and distribute that work
+   under terms of your choice, so long as that work isn't itself a
+   parser generator using the skeleton or a modified version thereof
+   as a parser skeleton.  Alternatively, if you modify or redistribute
+   the parser skeleton itself, you may (at your option) remove this
+   special exception, which will cause the skeleton and the resulting
+   Bison output files to be licensed under the GNU General Public
+   License without this special exception.
+   .
+   This special exception was added by the Free Software Foundation in
+   version 2.2 of Bison.  */
+   .
+   C LALR(1) parser skeleton written by Richard Stallman, by
+   simplifying the original so-called "semantic" parser.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy of
+ this software and associated documentation files (the "Software"), to deal in
+ the Software without restriction, including without limitation the rights to
+ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ the Software, and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

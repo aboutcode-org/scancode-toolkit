@@ -1,0 +1,8 @@
+key: cc-by-nc-sa-2.0-fr
+short_name: Creative Commons Attribution-NonCommercial-ShareAlike 2.0 France
+name: Creative Commons Attribution-NonCommercial-ShareAlike 2.0 France
+spdx_license_key: CC-BY-NC-SA-2.0-FR
+other_urls:
+    - https://creativecommons.org/licenses/by-nc-sa/2.0/fr/legalcode
+ignorable_urls:
+    - https://creativecommons.org/

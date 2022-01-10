@@ -1,6 +1,6 @@
 license_expressions:
   - apache-2.0
-  - unknown-license-reference
+  - apache-2.0 AND other-permissive
   - mx4j
   - epl-1.0
   - zlib

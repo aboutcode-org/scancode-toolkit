@@ -1,0 +1,5 @@
+license_expression: commercial-license OR gpl-2.0 OR gpl-3.0 OR bsd-simplified
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/gpl-2.0.html

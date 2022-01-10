@@ -17,11 +17,9 @@ declared_license:
   - GPL-2+
   - BSD-2-clause
 license_expression: bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified
-  AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0
-  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND
-  gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0
-  AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND
-  bsd-simplified AND (gpl-2.0-plus AND gpl-2.0 AND gpl-2.0 AND gpl-2.0)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0) AND (gpl-2.0
+  AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND bsd-simplified AND (gpl-2.0-plus AND gpl-2.0-plus)
 copyright: |
   Copyright (C) 2011-2017, Yann Collet.
   Copyright (C) 2011-2017, Yann Collet.
@@ -38,8 +36,8 @@ copyright: |
   2013 Nobuhiro Iwamatsu <iwamatsu@debian.org>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 64
+    end_line: 64
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -54,14 +52,14 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2'
   - score: '100.0'
-    start_line: 1
-    end_line: 3
-    matcher: 2-aho
-    rule_length: 31
-    matched_length: 31
+    start_line: 65
+    end_line: 70
+    matcher: 1-hash
+    rule_length: 59
+    matched_length: 59
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_396.RULE
+    identifier: gpl-2.0_1296.RULE
     license_expression: gpl-2.0
     is_license_text: no
     is_license_notice: yes
@@ -71,44 +69,13 @@ matches:
     matched_text: |
       This program is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; version 2
+      the Free Software Foundation; version 2 dated June, 1991.
+
+      On Debian systems, the complete text of version 2 of the GNU General
+      Public License can be found in '/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
-    start_line: 5
-    end_line: 6
-    matcher: 2-aho
-    rule_length: 8
-    matched_length: 8
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_836.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      version 2 of the GNU General
-      Public License
-  - score: '100.0'
-    start_line: 6
-    end_line: 6
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 72
+    end_line: 72
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -123,15 +90,15 @@ matches:
     is_license_intro: no
     matched_text: 'License: gpl-2+'
   - score: '100.0'
-    start_line: 1
-    end_line: 3
-    matcher: 2-aho
-    rule_length: 31
-    matched_length: 31
+    start_line: 73
+    end_line: 79
+    matcher: 1-hash
+    rule_length: 66
+    matched_length: 66
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0_396.RULE
-    license_expression: gpl-2.0
+    identifier: gpl-2.0-plus_985.RULE
+    license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -140,44 +107,14 @@ matches:
     matched_text: |
       This program is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; version 2
+      the Free Software Foundation; version 2 dated June, 1991, or (at
+      your option) any later version.
+
+      On Debian systems, the complete text of version 2 of the GNU General
+      Public License can be found in '/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
-    start_line: 6
-    end_line: 7
-    matcher: 2-aho
-    rule_length: 8
-    matched_length: 8
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_836.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      version 2 of the GNU General
-      Public License
-  - score: '100.0'
-    start_line: 7
-    end_line: 7
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_621.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 1
-    end_line: 20
+    start_line: 82
+    end_line: 101
     matcher: 1-hash
     rule_length: 183
     matched_length: 183

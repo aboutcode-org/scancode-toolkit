@@ -1,0 +1,4 @@
+		if (type == FileType.Classpath) throw Exception("Cannot list a classpath directory: " + file);
+
+
+using namespace gnu::classpath::jdwp::exception;

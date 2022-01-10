@@ -48,45 +48,69 @@ if TRACE or TRACE_CANO:
 
 def copyright_summarizer(resource, children, keep_details=False):
     return build_summary(
-        resource, children,
-        attribute='copyrights', summarizer=summarize_copyrights,
+        resource=resource,
+        children=children,
+        attributes_list='copyrights',
+        attribute_value='copyright',
+        summarizer=summarize_copyrights,
         keep_details=keep_details
     )
 
 
 def holder_summarizer(resource, children, keep_details=False):
     return build_summary(
-        resource, children,
-        attribute='holders', summarizer=summarize_holders,
+        resource=resource,
+        children=children,
+        attributes_list='holders',
+        attribute_value='holder',
+        summarizer=summarize_persons,
         keep_details=keep_details
     )
 
 
 def author_summarizer(resource, children, keep_details=False):
     return build_summary(
-        resource, children,
-        attribute='authors', summarizer=summarize_holders,
+        resource=resource,
+        children=children,
+        attributes_list='authors',
+        attribute_value='author',
+        summarizer=summarize_persons,
         keep_details=keep_details
     )
 
 
-def build_summary(resource, children, attribute, summarizer, keep_details=False):
+def build_summary(
+    resource,
+    children,
+    attributes_list,
+    attribute_value,
+    summarizer,
+    keep_details=False,
+):
     """
-    Update the `resource` Resource with a summary of itself and its `children`
-    Resources and this for the `attribute` key (such as copyrights, etc).
+    Update the ``resource`` Resource with a summary of itself and its
+    ``children``.
 
-     - `attribute` is the name of the attribute ('copyrights', 'holders' etc.)
+    Resources and this for the `attributes_list` values list key (such as
+    copyrights, etc) and the ``attribute_value`` details key (such as copyright).
+
+     - `attributes_list` is the name of the attribute values list
+       ('copyrights', 'holders' etc.)
+
+     - `attribute_value` is the name of the attribute value  key in this list
+       ('copyright', 'holder' etc.)
+
      - `summarizer` is a function that takes a list of texts and returns
         summarized texts with counts
      """
     # Collect current data
-    values = getattr(resource, attribute, [])
+    values = getattr(resource, attributes_list, [])
 
     no_detection_counter = 0
 
     if values:
         # keep current data as plain strings
-        candidate_texts = [entry.get('value') for entry in values]
+        candidate_texts = [entry.get(attribute_value) for entry in values]
     else:
         candidate_texts = []
         if resource.is_file:
@@ -94,7 +118,12 @@ def build_summary(resource, children, attribute, summarizer, keep_details=False)
 
     # Collect direct children existing summaries
     for child in children:
-        child_summaries = get_resource_summary(child, key=attribute, as_attribute=keep_details) or []
+        child_summaries = get_resource_summary(
+            child,
+            key=attributes_list,
+            as_attribute=keep_details
+        ) or []
+
         for child_summary in child_summaries:
             count = child_summary['count']
             value = child_summary['value']
@@ -113,7 +142,13 @@ def build_summary(resource, children, attribute, summarizer, keep_details=False)
     summarized = sorted_counter(summarized)
     if TRACE:
         logger_debug('COPYRIGHT summarized:', summarized)
-    set_resource_summary(resource, key=attribute, value=summarized, as_attribute=keep_details)
+
+    set_resource_summary(
+        resource,
+        key=attributes_list,
+        value=summarized,
+        as_attribute=keep_details,
+    )
     return summarized
 
 
@@ -170,22 +205,24 @@ def summarize_copyrights(texts, _detector=CopyrightDetector()):
             # FIXME: redetect to strip year should not be needed!!
             statements_without_years = _detector.detect(
                 [(1, text)],
-                copyrights=True,
-                holders=False,
-                authors=False,
-                include_years=False,
+                include_copyrights=True,
+                include_holders=False,
+                include_authors=False,
+                include_copyright_years=False,
             )
 
             for detection in statements_without_years:
-                copyr = detection.value
+                copyr = detection.copyright
                 summary_texts.append(Text(copyr, copyr))
+
     counter = summarize(summary_texts)
     if no_detection_counter:
         counter[None] = no_detection_counter
+
     return counter
 
 
-def summarize_holders(texts):
+def summarize_persons(texts):
     """
     Return a summarized list of mapping of {value:string, count:int} given a
     list of holders strings or Text() objects.
@@ -202,9 +239,12 @@ def summarize_holders(texts):
         else:
             cano = canonical_holder(text)
             summary_texts.append(Text(cano, cano))
+
     counter = summarize(summary_texts)
+
     if no_detection_counter:
         counter[None] = no_detection_counter
+
     return counter
 
 
@@ -311,10 +351,13 @@ def cluster(texts):
                 logger_debug('cluster: representative, count', representative, count)
             yield representative, count
         except Exception as e:
-            msg = ('Error in cluster(): cluster_key: %(cluster_key)r, cluster_texts: %(cluster_texts)r\n' % locals())
+            msg = (
+                f'Error in cluster(): cluster_key: {cluster_key!r}, '
+                f'cluster_texts: {cluster_texts!r}\n'
+            )
             import traceback
             msg += traceback.format_exc()
-            raise Exception(msg)
+            raise Exception(msg) from e
 
 
 def clean(text):
@@ -353,7 +396,7 @@ def strip_prefixes(s, prefixes=prefixes):
     s = s.split()
     while s and s[0].lower().strip().strip('.,') in prefixes:
         s = s[1:]
-    return u' '.join(s)
+    return ' '.join(s)
 
 
 # set of suffixes that can be stripped from a name
@@ -434,6 +477,7 @@ def filter_junk(texts):
         if len(text.key) == 1:
             continue
         yield text
+
 
 # Mapping of commonly abbreviated names to their expanded, canonical forms.
 # This is mostly of use when these common names show as holders without their

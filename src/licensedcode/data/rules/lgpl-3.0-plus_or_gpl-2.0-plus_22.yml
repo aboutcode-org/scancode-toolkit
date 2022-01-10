@@ -1,0 +1,6 @@
+license_expression: lgpl-3.0-plus OR gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+notes: from https://sourceware.org/git/?p=elfutils.git;a=blob;f=libdwelf/dwelf_dwarf_gnu_debugaltlink.c;h=b8285d0906680f3f1b2243c1185c2dea50b7bab7;hb=HEAD
+ignorable_urls:
+    - https://www.gnu.org/licenses/

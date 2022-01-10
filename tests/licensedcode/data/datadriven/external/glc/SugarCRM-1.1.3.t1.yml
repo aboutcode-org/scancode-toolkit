@@ -1,9 +1,4 @@
 license_expressions:
-  - zimbra-1.3
-  - mpl-1.1
-  - proprietary-license
-  - mpl-1.1
-  - mpl-1.1
   - sugarcrm-1.1.3
 notes: |
   License test derived from a file of the BSD-licensed repository at:

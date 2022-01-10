@@ -214,14 +214,14 @@
       "percentage_of_license_text": 45.45,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -329,14 +329,14 @@
       "percentage_of_license_text": 45.45,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -477,14 +477,14 @@
       "percentage_of_license_text": 44.44,
       "copyrights": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
@@ -592,14 +592,14 @@
       "percentage_of_license_text": 45.45,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }

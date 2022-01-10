@@ -2,4 +2,4 @@ license_expression: mit
 is_license_tag: yes
 relevance: 100
 ignorable_urls:
-  - http://opensource.org/licenses/MIT
+    - http://opensource.org/licenses/MIT

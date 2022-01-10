@@ -1,0 +1,57 @@
+This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, version 2 of the License.
+ .
+ The full text of the GPL is distributed as in
+ /usr/share/common-licenses/GPL-2 on Debian systems.
+ .
+ In addition, as the copyright holder of CUPS, Apple Inc. grants
+ the following special exception:
+ .
+      1. Apple Operating System Development License Exception;
+ .
+     a. Software that is developed by any person or entity
+        for an Apple Operating System ("Apple OS-Developed
+        Software"), including but not limited to Apple and
+        third party printer drivers, filters, and backends
+        for an Apple Operating System, that is linked to the
+        CUPS imaging library or based on any sample filters
+        or backends provided with CUPS shall not be
+        considered to be a derivative work or collective work
+        based on the CUPS program and is exempt from the
+        mandatory source code release clauses of the GNU GPL.
+        You may therefore distribute linked combinations of
+        the CUPS imaging library with Apple OS-Developed
+        Software without releasing the source code of the
+        Apple OS-Developed Software. You may also use sample
+        filters and backends provided with CUPS to develop
+        Apple OS-Developed Software without releasing the
+        source code of the Apple OS-Developed Software.
+ .
+     b. An Apple Operating System means any operating system
+        software developed and/or marketed by Apple Computer,
+        Inc., including but not limited to all existing
+        releases and versions of Apple's Darwin, Mac OS X,
+        and Mac OS X Server products and all follow-on
+        releases and future versions thereof.
+ .
+     c. This exception is only available for Apple
+        OS-Developed Software and does not apply to software
+        that is distributed for use on other operating
+        systems.
+ .
+     d. All CUPS software that falls under this license
+        exception have the following text at the top of each
+        source file:
+ .
+          This file is subject to the Apple OS-Developed
+          Software exception.
+ .
+      2. OpenSSL Toolkit License Exception;
+ .
+     a. Apple Inc. explicitly allows the compilation and
+        distribution of the CUPS software with the OpenSSL
+        Toolkit.
+ .
+ No developer is required to provide these exceptions in a
+ derived work.

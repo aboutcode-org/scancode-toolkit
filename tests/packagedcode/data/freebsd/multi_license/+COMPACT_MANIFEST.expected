@@ -1,56 +1,58 @@
-{
-  "type": "freebsd",
-  "namespace": null,
-  "name": "py27-idna",
-  "version": "2.6",
-  "qualifiers": {
-    "arch": "freebsd:10:*",
-    "origin": "dns/py-idna"
-  },
-  "subpath": null,
-  "primary_language": null,
-  "description": "A library to support the Internationalised Domain Names in Applications\n(IDNA) protocol as specified in RFC 5891. This version of the protocol\nis often referred to as \"IDNA2008\" and can produce different res\nlts from the earlier standard from 2003.\n\nThe library is also intended to act as a suitable drop-in replacement\nfor the \"encodings.idna\" module that comes with the Python standard\nlibrary but currently only supports the older 2003 specification.\n\nWWW: https://github.com/kjd/idna",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "maintainer",
-      "name": null,
-      "email": "koobs@FreeBSD.org",
-      "url": null
-    }
-  ],
-  "keywords": [
-    "python",
-    "dns"
-  ],
-  "homepage_url": "https://github.com/kjd/idna",
-  "download_url": "https://pkg.freebsd.org/freebsd:10:*/latest/All/py27-idna-2.6.txz",
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": "https://svnweb.freebsd.org/ports/head/dns/py-idna",
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "python AND bsd-new",
-  "declared_license": {
-    "licenses": [
-      "PSFL",
-      "BSD3CLAUSE"
+[  
+  {
+    "type": "freebsd",
+    "namespace": null,
+    "name": "py27-idna",
+    "version": "2.6",
+    "qualifiers": {
+      "arch": "freebsd:10:*",
+      "origin": "dns/py-idna"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "A library to support the Internationalised Domain Names in Applications\n(IDNA) protocol as specified in RFC 5891. This version of the protocol\nis often referred to as \"IDNA2008\" and can produce different res\nlts from the earlier standard from 2003.\n\nThe library is also intended to act as a suitable drop-in replacement\nfor the \"encodings.idna\" module that comes with the Python standard\nlibrary but currently only supports the older 2003 specification.\n\nWWW: https://github.com/kjd/idna",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": null,
+        "email": "koobs@FreeBSD.org",
+        "url": null
+      }
     ],
-    "licenselogic": "and"
-  },
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:freebsd/py27-idna@2.6?arch=freebsd:10:%2A&origin=dns/py-idna",
-  "repository_homepage_url": null,
-  "repository_download_url": null,
-  "api_data_url": null
-}
+    "keywords": [
+      "python",
+      "dns"
+    ],
+    "homepage_url": "https://github.com/kjd/idna",
+    "download_url": "https://pkg.freebsd.org/freebsd:10:*/latest/All/py27-idna-2.6.txz",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": "https://svnweb.freebsd.org/ports/head/dns/py-idna",
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "python AND bsd-new",
+    "declared_license": {
+      "licenses": [
+        "PSFL",
+        "BSD3CLAUSE"
+      ],
+      "licenselogic": "and"
+    },
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:freebsd/py27-idna@2.6?arch=freebsd:10:%2A&origin=dns/py-idna",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

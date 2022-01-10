@@ -1,0 +1,10 @@
+There are no copyright or license notices in this distribution. It
+ is assumed that the copyright and license of Perl itself applies here
+ as well.
+ .
+ This is supported by the README of the separate CPAN distribution at
+ <https://metacpan.org/release/ExtUtils-Constant>, which states:
+ .
+ You may distribute this work under the terms of either the GNU General
+ Public License or the Artistic License, as specified in perl's README
+ file.

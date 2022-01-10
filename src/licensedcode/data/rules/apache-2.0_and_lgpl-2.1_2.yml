@@ -1,0 +1,8 @@
+license_expression: apache-2.0 AND lgpl-2.1
+is_license_notice: yes
+relevance: 90
+referenced_filenames:
+    - /usr/share/common-licenses/Apache-2.0
+notes: this is likely some typo See https://salsa.debian.org/owncloud-team/nextcloud-desktop/-/merge_requests/9#note_256687
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0

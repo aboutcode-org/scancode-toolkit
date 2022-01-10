@@ -50,17 +50,24 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "The GNU C Library is free software; you can redistribute it and/or\n    \
-      \ modify it under the terms of the GNU Lesser General Public\n     License as published\
-      \ by the Free Software Foundation; either\n     version 2.1 of the License, or (at your\
-      \ option) any later version.\n \n     The GNU C Library is distributed in the hope that\
-      \ it will be useful,\n     but WITHOUT ANY WARRANTY; without even the implied warranty\
-      \ of\n     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n     Lesser\
-      \ General Public License for more details.\n \n     You should have received a copy of\
-      \ the GNU Lesser General Public\n     License along with the GNU C Library; if not, write\
-      \ to the Free\n     Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA\n\
-      \     02110-1301 USA\n \n   On Debian systems, the complete text of the GNU Library\n\
-      \   General Public License can be found in `/usr/share/common-licenses/LGPL-2.1'."
+    matched_text: |
+      The GNU C Library is free software; you can redistribute it and/or
+          modify it under the terms of the GNU Lesser General Public
+          License as published by the Free Software Foundation; either
+          version 2.1 of the License, or (at your option) any later version.
+
+          The GNU C Library is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+          Lesser General Public License for more details.
+
+          You should have received a copy of the GNU Lesser General Public
+          License along with the GNU C Library; if not, write to the Free
+          Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+          02110-1301 USA
+
+        On Debian systems, the complete text of the GNU Library
+        General Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
   - score: '95.0'
     start_line: 33
     end_line: 48
@@ -76,16 +83,23 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "This program is free software; you can redistribute it and/or modify\n  \
-      \   it under the terms of the GNU General Public License as published\n     by the Free\
-      \ Software Foundation; version 2 of the License, or\n     (at your option) any later version.\n\
-      \ \n     This program is distributed in the hope that it will be useful,\n     but WITHOUT\
-      \ ANY WARRANTY; without even the implied warranty of\n     MERCHANTABILITY or FITNESS\
-      \ FOR A PARTICULAR PURPOSE.  See the\n     GNU General Public License for more details.\n\
-      \ \n     You should have received a copy of the GNU General Public License\n     along\
-      \ with this program; if not, write to the Free Software Foundation,\n     Inc., 51 Franklin\
-      \ St, Fifth Floor, Boston, MA 02110-1301 USA.\n \n   On Debian systems, the complete text\
-      \ of the GNU Library\n   General Public License can be found in `/usr/share/common-licenses/GPL-2'."
+    matched_text: |
+      This program is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published
+          by the Free Software Foundation; version 2 of the License, or
+          (at your option) any later version.
+
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
+
+          You should have received a copy of the GNU General Public License
+          along with this program; if not, write to the Free Software Foundation,
+          Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+
+        On Debian systems, the complete text of the GNU Library
+        General Public License can be found in `/usr/share/common-licenses/GPL-2'.
   - score: '100.0'
     start_line: 50
     end_line: 51
@@ -103,7 +117,7 @@ matches:
     is_license_intro: no
     matched_text: |
       All code incorporated from 4.4 BSD is distributed under the following
-         license:
+        license:
   - score: '100.0'
     start_line: 56
     end_line: 80
@@ -119,24 +133,32 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "Redistribution and use in source and binary forms, with or without\n    modification,\
-      \ are permitted provided that the following conditions\n    are met:\n \n    1. Redistributions\
-      \ of source code must retain the above copyright\n       notice, this list of conditions\
-      \ and the following disclaimer.\n    2. Redistributions in binary form must reproduce\
-      \ the above copyright\n       notice, this list of conditions and the following disclaimer\
-      \ in the\n       documentation and/or other materials provided with the distribution.\n\
-      \    3. [This condition was removed.]\n    4. Neither the name of the University nor the\
-      \ names of its contributors\n       may be used to endorse or promote products derived\
-      \ from this software\n       without specific prior written permission.\n \n    THIS SOFTWARE\
-      \ IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\n    ANY EXPRESS OR IMPLIED\
-      \ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n    IMPLIED WARRANTIES OF MERCHANTABILITY\
-      \ AND FITNESS FOR A PARTICULAR PURPOSE\n    ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS\
-      \ OR CONTRIBUTORS BE LIABLE\n    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
-      \ OR CONSEQUENTIAL\n    DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
-      \ GOODS\n    OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n \
-      \   HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n    LIABILITY,\
-      \ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n    OUT OF THE USE OF\
-      \ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n    SUCH DAMAGE."
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+         modification, are permitted provided that the following conditions
+         are met:
+
+         1. Redistributions of source code must retain the above copyright
+            notice, this list of conditions and the following disclaimer.
+         2. Redistributions in binary form must reproduce the above copyright
+            notice, this list of conditions and the following disclaimer in the
+            documentation and/or other materials provided with the distribution.
+         3. [This condition was removed.]
+         4. Neither the name of the University nor the names of its contributors
+            may be used to endorse or promote products derived from this software
+            without specific prior written permission.
+
+         THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+         ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+         IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+         ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+         FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+         DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+         OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+         HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+         LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+         OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+         SUCH DAMAGE.
   - score: '100.0'
     start_line: 88
     end_line: 102
@@ -152,18 +174,22 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "Permission to use, copy, modify, and distribute this software for any\n \
-      \    purpose with or without fee is hereby granted, provided that the above\n     copyright\
-      \ notice and this permission notice appear in all copies, and\n     that the name of Digital\
-      \ Equipment Corporation not be used in\n     advertising or publicity pertaining to distribution\
-      \ of the document or\n     software without specific, written prior permission.\n \n \
-      \    THE SOFTWARE IS PROVIDED ``AS IS'' AND DIGITAL EQUIPMENT CORP.\n     DISCLAIMS ALL\
-      \ WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL\n     IMPLIED WARRANTIES OF MERCHANTABILITY\
-      \ AND FITNESS.  IN NO EVENT SHALL\n     DIGITAL EQUIPMENT CORPORATION BE LIABLE FOR ANY\
-      \ SPECIAL, DIRECT,\n     INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER\
-      \ RESULTING\n     FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,\n\
-      \     NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION\n     WITH\
-      \ THE USE OR PERFORMANCE OF THIS SOFTWARE."
+    matched_text: |
+      Permission to use, copy, modify, and distribute this software for any
+          purpose with or without fee is hereby granted, provided that the above
+          copyright notice and this permission notice appear in all copies, and
+          that the name of Digital Equipment Corporation not be used in
+          advertising or publicity pertaining to distribution of the document or
+          software without specific, written prior permission.
+
+          THE SOFTWARE IS PROVIDED ``AS IS'' AND DIGITAL EQUIPMENT CORP.
+          DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.  IN NO EVENT SHALL
+          DIGITAL EQUIPMENT CORPORATION BE LIABLE FOR ANY SPECIAL, DIRECT,
+          INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING
+          FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+          NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
+          WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
     start_line: 108
     end_line: 119
@@ -179,16 +205,19 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "Permission to use, copy, modify, and distribute this software for any\n \
-      \    purpose with or without fee is hereby granted, provided that the above\n     copyright\
-      \ notice and this permission notice appear in all copies.\n \n     THE SOFTWARE IS PROVIDED\
-      \ \"AS IS\" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS\n     ALL WARRANTIES WITH REGARD\
-      \ TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES\n     OF MERCHANTABILITY AND FITNESS.\
-      \ IN NO EVENT SHALL INTERNET SOFTWARE\n     CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT,\
-      \ INDIRECT, OR CONSEQUENTIAL\n     DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS\
-      \ OF USE, DATA OR\n     PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER\
-      \ TORTIOUS\n     ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF\
-      \ THIS\n     SOFTWARE."
+    matched_text: |
+      Permission to use, copy, modify, and distribute this software for any
+          purpose with or without fee is hereby granted, provided that the above
+          copyright notice and this permission notice appear in all copies.
+
+          THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
+          ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
+          OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
+          CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+          DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+          PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+          ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+          SOFTWARE.
   - score: '100.0'
     start_line: 126
     end_line: 151
@@ -204,25 +233,33 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "Redistribution and use in source and binary forms, with or without\n    \
-      \ modification, are permitted provided that the following conditions are\n     met:\n\
-      \ \n         * Redistributions of source code must retain the above copyright\n      \
-      \     notice, this list of conditions and the following disclaimer.\n         * Redistributions\
-      \ in binary form must reproduce the above\n           copyright notice, this list of conditions\
-      \ and the following\n           disclaimer in the documentation and/or other materials\n\
-      \           provided with the distribution.\n         * Neither the name of the \"Oracle\
-      \ America, Inc.\" nor the names of its\n           contributors may be used to endorse\
-      \ or promote products derived\n           from this software without specific prior written\
-      \ permission.\n \n       THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\
-      \       \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n       LIMITED\
-      \ TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS\n       FOR A PARTICULAR PURPOSE\
-      \ ARE DISCLAIMED. IN NO EVENT SHALL THE\n       COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\
-      \ FOR ANY DIRECT,\n       INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n\
-      \       DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\n       GOODS\
-      \ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n       INTERRUPTION) HOWEVER\
-      \ CAUSED AND ON ANY THEORY OF LIABILITY,\n       WHETHER IN CONTRACT, STRICT LIABILITY,\
-      \ OR TORT (INCLUDING\n       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n\
-      \       OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions are
+          met:
+
+              * Redistributions of source code must retain the above copyright
+                notice, this list of conditions and the following disclaimer.
+              * Redistributions in binary form must reproduce the above
+                copyright notice, this list of conditions and the following
+                disclaimer in the documentation and/or other materials
+                provided with the distribution.
+              * Neither the name of the "Oracle America, Inc." nor the names of its
+                contributors may be used to endorse or promote products derived
+                from this software without specific prior written permission.
+
+            THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+            "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+            LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+            FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+            COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+            INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+            DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+            GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+            INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+            WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+            NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+            OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
     start_line: 153
     end_line: 179
@@ -238,20 +275,34 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "The following CMU license covers some of the support code for Mach,\n   derived\
-      \ from Mach 3.0:\n \n     Mach Operating System\n     Copyright (C) 1991,1990,1989 Carnegie\
-      \ Mellon University\n     All Rights Reserved.\n \n     Permission to use, copy, modify\
-      \ and distribute this software and its\n     documentation is hereby granted, provided\
-      \ that both the copyright\n     notice and this permission notice appear in all copies\
-      \ of the\n     software, derivative works or modified versions, and any portions\n   \
-      \  thereof, and that both notices appear in supporting documentation.\n \n     CARNEGIE\
-      \ MELLON ALLOWS FREE USE OF THIS SOFTWARE IN ITS ``AS IS''\n     CONDITION.  CARNEGIE\
-      \ MELLON DISCLAIMS ANY LIABILITY OF ANY KIND FOR\n     ANY DAMAGES WHATSOEVER RESULTING\
-      \ FROM THE USE OF THIS SOFTWARE.\n \n     Carnegie Mellon requests users of this software\
-      \ to return to\n \n      Software Distribution Coordinator\n      School of Computer Science\n\
-      \      Carnegie Mellon University\n      Pittsburgh PA 15213-3890\n \n     or Software.Distribution@CS.CMU.EDU\
-      \ any improvements or\n     extensions that they make and grant Carnegie Mellon the rights\
-      \ to\n     redistribute these changes."
+    matched_text: |
+      The following CMU license covers some of the support code for Mach,
+        derived from Mach 3.0:
+
+          Mach Operating System
+          Copyright (C) 1991,1990,1989 Carnegie Mellon University
+          All Rights Reserved.
+
+          Permission to use, copy, modify and distribute this software and its
+          documentation is hereby granted, provided that both the copyright
+          notice and this permission notice appear in all copies of the
+          software, derivative works or modified versions, and any portions
+          thereof, and that both notices appear in supporting documentation.
+
+          CARNEGIE MELLON ALLOWS FREE USE OF THIS SOFTWARE IN ITS ``AS IS''
+          CONDITION.  CARNEGIE MELLON DISCLAIMS ANY LIABILITY OF ANY KIND FOR
+          ANY DAMAGES WHATSOEVER RESULTING FROM THE USE OF THIS SOFTWARE.
+
+          Carnegie Mellon requests users of this software to return to
+
+           Software Distribution Coordinator
+           School of Computer Science
+           Carnegie Mellon University
+           Pittsburgh PA 15213-3890
+
+          or Software.Distribution@CS.CMU.EDU any improvements or
+          extensions that they make and grant Carnegie Mellon the rights to
+          redistribute these changes.
   - score: '100.0'
     start_line: 181
     end_line: 206
@@ -267,31 +318,39 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "under the following CMU license:\n \n      Redistribution and use in source\
-      \ and binary forms, with or without\n      modification, are permitted provided that the\
-      \ following conditions\n      are met:\n      1. Redistributions of source code must retain\
-      \ the above copyright\n         notice, this list of conditions and the following disclaimer.\n\
-      \      2. Redistributions in binary form must reproduce the above copyright\n        \
-      \ notice, this list of conditions and the following disclaimer in the\n         documentation\
-      \ and/or other materials provided with the distribution.\n      3. Neither the name of\
-      \ the University nor the names of its contributors\n         may be used to endorse or\
-      \ promote products derived from this software\n         without specific prior written\
-      \ permission.\n \n      THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY AND\n\
-      \      CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,\n      INCLUDING,\
-      \ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\n      MERCHANTABILITY AND FITNESS FOR\
-      \ A PARTICULAR PURPOSE ARE DISCLAIMED.\n      IN NO EVENT SHALL THE UNIVERSITY OR CONTRIBUTORS\
-      \ BE LIABLE FOR ANY\n      DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n\
-      \      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\n      GOODS\
-      \ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n      INTERRUPTION) HOWEVER\
-      \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER\n      IN CONTRACT, STRICT LIABILITY,\
-      \ OR TORT (INCLUDING NEGLIGENCE OR\n      OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\
-      \ OF THIS SOFTWARE, EVEN\n      IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    matched_text: |
+      under the following CMU license:
+
+           Redistribution and use in source and binary forms, with or without
+           modification, are permitted provided that the following conditions
+           are met:
+           1. Redistributions of source code must retain the above copyright
+              notice, this list of conditions and the following disclaimer.
+           2. Redistributions in binary form must reproduce the above copyright
+              notice, this list of conditions and the following disclaimer in the
+              documentation and/or other materials provided with the distribution.
+           3. Neither the name of the University nor the names of its contributors
+              may be used to endorse or promote products derived from this software
+              without specific prior written permission.
+
+           THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY AND
+           CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+           INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+           MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+           IN NO EVENT SHALL THE UNIVERSITY OR CONTRIBUTORS BE LIABLE FOR ANY
+           DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+           DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+           GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+           INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+           IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+           OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+           IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
     start_line: 208
     end_line: 211
     matcher: 2-aho
-    rule_length: 18
-    matched_length: 18
+    rule_length: '19'
+    matched_length: '19'
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: bsd-new_593.RULE
@@ -301,8 +360,11 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "The following license covers the files from Intel's \"Highly Optimized\n\
-      \   Mathematical Functions for Itanium\" collection:\n \n     Intel License Agreement"
+    matched_text: |
+      The following license covers the files from Intel's "Highly Optimized
+        Mathematical Functions for Itanium" collection:
+
+          Intel License Agreement
   - score: '100.0'
     start_line: 217
     end_line: 242
@@ -318,30 +380,39 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "Redistribution and use in source and binary forms, with or without\n    \
-      \ modification, are permitted provided that the following conditions are\n     met:\n\
-      \ \n     * Redistributions of source code must retain the above copyright\n     notice,\
-      \ this list of conditions and the following disclaimer.\n \n     * Redistributions in\
-      \ binary form must reproduce the above copyright\n     notice, this list of conditions\
-      \ and the following disclaimer in the\n     documentation and/or other materials provided\
-      \ with the distribution.\n \n     * The name of Intel Corporation may not be used to endorse\
-      \ or promote\n     products derived from this software without specific prior written\n\
-      \     permission.\n \n     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\
-      \     \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n     LIMITED\
-      \ TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n     A PARTICULAR PURPOSE\
-      \ ARE DISCLAIMED. IN NO EVENT SHALL INTEL OR\n     CONTRIBUTORS BE LIABLE FOR ANY DIRECT,\
-      \ INDIRECT, INCIDENTAL, SPECIAL,\n     EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,\
-      \ BUT NOT LIMITED TO,\n     PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\
-      \ DATA, OR\n     PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\n\
-      \     LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n     NEGLIGENCE\
-      \ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n     SOFTWARE, EVEN IF ADVISED\
-      \ OF THE POSSIBILITY OF SUCH DAMAGE."
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions are
+          met:
+
+          * Redistributions of source code must retain the above copyright
+          notice, this list of conditions and the following disclaimer.
+
+          * Redistributions in binary form must reproduce the above copyright
+          notice, this list of conditions and the following disclaimer in the
+          documentation and/or other materials provided with the distribution.
+
+          * The name of Intel Corporation may not be used to endorse or promote
+          products derived from this software without specific prior written
+          permission.
+
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+          "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+          LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+          A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL INTEL OR
+          CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+          EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+          PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+          PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+          LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+          NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+          SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
     start_line: 245
     end_line: 280
     matcher: 2-aho
-    rule_length: 309
-    matched_length: 309
+    rule_length: 314
+    matched_length: 314
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: inner-net-2.0_2.RULE
@@ -351,32 +422,43 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "distributed under the following license:\n \n     /* The Inner Net License,\
-      \ Version 2.00\n \n       The author(s) grant permission for redistribution and use in\
-      \ source and\n     binary forms, with or without modification, of the software and documentation\n\
-      \     provided that the following conditions are met:\n \n     0. If you receive a version\
-      \ of the software that is specifically labelled\n        as not being for redistribution\
-      \ (check the version message and/or README),\n        you are not permitted to redistribute\
-      \ that version of the software in any\n        way or form.\n     1. All terms of the\
-      \ all other applicable copyrights and licenses must be\n        followed.\n     2. Redistributions\
-      \ of source code must retain the authors' copyright\n        notice(s), this list of conditions,\
-      \ and the following disclaimer.\n     3. Redistributions in binary form must reproduce\
-      \ the authors' copyright\n        notice(s), this list of conditions, and the following\
-      \ disclaimer in the\n        documentation and/or other materials provided with the distribution.\n\
-      \     4. [The copyright holder has authorized the removal of this clause.]\n     5. Neither\
-      \ the name(s) of the author(s) nor the names of its contributors\n        may be used\
-      \ to endorse or promote products derived from this software\n        without specific\
-      \ prior written permission.\n \n     THIS SOFTWARE IS PROVIDED BY ITS AUTHORS AND CONTRIBUTORS\
-      \ ``AS IS'' AND ANY\n     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\
-      \ THE IMPLIED\n     WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\
-      \ ARE\n     DISCLAIMED. IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE FOR ANY\n\
-      \     DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n   \
-      \  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n    \
-      \ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\n   \
-      \  ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n     (INCLUDING\
-      \ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n     SOFTWARE, EVEN\
-      \ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n \n       If these license terms cause\
-      \ you a real problem, contact the author.  */"
+    matched_text: |
+      distributed under the following license:
+
+          /* The Inner Net License, Version 2.00
+
+            The author(s) grant permission for redistribution and use in source and
+          binary forms, with or without modification, of the software and documentation
+          provided that the following conditions are met:
+
+          0. If you receive a version of the software that is specifically labelled
+             as not being for redistribution (check the version message and/or README),
+             you are not permitted to redistribute that version of the software in any
+             way or form.
+          1. All terms of the all other applicable copyrights and licenses must be
+             followed.
+          2. Redistributions of source code must retain the authors' copyright
+             notice(s), this list of conditions, and the following disclaimer.
+          3. Redistributions in binary form must reproduce the authors' copyright
+             notice(s), this list of conditions, and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+          4. [The copyright holder has authorized the removal of this clause.]
+          5. Neither the name(s) of the author(s) nor the names of its contributors
+             may be used to endorse or promote products derived from this software
+             without specific prior written permission.
+
+          THIS SOFTWARE IS PROVIDED BY ITS AUTHORS AND CONTRIBUTORS ``AS IS'' AND ANY
+          EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+          WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+          DISCLAIMED. IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE FOR ANY
+          DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+          (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+          LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+          ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+          (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+          SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+            If these license terms cause you a real problem, contact the author.  */
   - score: '100.0'
     start_line: 286
     end_line: 289
@@ -394,32 +476,37 @@ matches:
     is_license_intro: no
     matched_text: |
       This file is distributed under the terms of the GNU Lesser General
-           Public License, version 2.1 or later - see the file COPYING.LIB for details.
-           If you did not receive a copy of the license with this program, please
-           see <http://www.gnu.org/licenses/> to obtain a copy.
-  - score: '91.96'
-    start_line: 296
+          Public License, version 2.1 or later - see the file COPYING.LIB for details.
+          If you did not receive a copy of the license with this program, please
+          see <http://www.gnu.org/licenses/> to obtain a copy.
+  - score: '97.17'
+    start_line: 298
     end_line: 309
-    matcher: 3-seq
-    rule_length: 112
+    matcher: 2-aho
+    rule_length: 103
     matched_length: 103
-    match_coverage: '91.96'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-2.1-plus_56.RULE
+    identifier: lgpl-2.1-plus_180.RULE
     license_expression: lgpl-2.1-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "GNU [Libidn].\n \n     [GNU] [Libidn] is free software; you can redistribute\
-      \ it and/or\n     modify it under the terms of the GNU Lesser General Public\n     License\
-      \ as published by the Free Software Foundation; either\n     version 2.1 of the License,\
-      \ or (at your option) any later version.\n \n     GNU [Libidn] is distributed in the hope\
-      \ that it will be useful,\n     but WITHOUT ANY WARRANTY; without even the implied warranty\
-      \ of\n     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n     Lesser\
-      \ General Public License for more details.\n \n     You should have received a copy of\
-      \ the GNU Lesser General Public\n     License along with GNU [Libidn]; if not, see <http://www.gnu.org/licenses/>."
+    matched_text: |
+      GNU [Libidn] is free software; you can redistribute it and/or
+          modify it under the terms of the GNU Lesser General Public
+          License as published by the Free Software Foundation; either
+          version 2.1 of the License, or (at your option) any later version.
+
+          GNU [Libidn] is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+          Lesser General Public License for more details.
+
+          You should have received a copy of the GNU Lesser General Public
+          License along with GNU [Libidn]; if not, see <http://www.gnu.org/licenses/>.
   - score: '100.0'
     start_line: 314
     end_line: 314
@@ -436,15 +523,15 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: all licensed under LGPL
-  - score: '93.55'
+  - score: '100.0'
     start_line: 324
     end_line: 332
-    matcher: 3-seq
-    rule_length: 93
+    matcher: 2-aho
+    rule_length: 87
     matched_length: 87
-    match_coverage: '93.55'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: other-permissive_punycode_1.RULE
+    identifier: other-permissive_320.RULE
     license_expression: other-permissive
     is_license_text: yes
     is_license_notice: no
@@ -453,14 +540,14 @@ matches:
     is_license_intro: no
     matched_text: |
       Disclaimer and license: Regarding this entire document or any
-           portion of it (including the pseudocode and C code), the author
-           makes no guarantees and is not responsible for any damage resulting
-           from its use.  The author grants irrevocable permission to anyone
-           to use, modify, and distribute it in any way that does not diminish
-           the rights of anyone else to use, modify, and distribute it,
-           provided that redistributed derivative works do not contain
-           misleading author or version information.  Derivative works need
-           not be licensed under similar terms.
+          portion of it (including the pseudocode and C code), the author
+          makes no guarantees and is not responsible for any damage resulting
+          from its use.  The author grants irrevocable permission to anyone
+          to use, modify, and distribute it in any way that does not diminish
+          the rights of anyone else to use, modify, and distribute it,
+          provided that redistributed derivative works do not contain
+          misleading author or version information.  Derivative works need
+          not be licensed under similar terms.
   - score: '100.0'
     start_line: 336
     end_line: 358
@@ -476,23 +563,30 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "This document and translations of it may be copied and furnished to\n   \
-      \  others, and derivative works that comment on or otherwise explain it\n     or assist\
-      \ in its implementation may be prepared, copied, published\n     and distributed, in whole\
-      \ or in part, without restriction of any\n     kind, provided that the above copyright\
-      \ notice and this paragraph are\n     included on all such copies and derivative works.\
-      \  However, this\n     document itself may not be modified in any way, such as by removing\n\
-      \     the copyright notice or references to the Internet Society or other\n     Internet\
-      \ organizations, except as needed for the purpose of\n     developing Internet standards\
-      \ in which case the procedures for\n     copyrights defined in the Internet Standards\
-      \ process must be\n     followed, or as required to translate it into languages other\
-      \ than\n     English.\n \n     The limited permissions granted above are perpetual and\
-      \ will not be\n     revoked by the Internet Society or its successors or assigns.\n \n\
-      \     This document and the information contained herein is provided on an\n     \"AS\
-      \ IS\" basis and THE INTERNET SOCIETY AND THE INTERNET ENGINEERING\n     TASK FORCE DISCLAIMS\
-      \ ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING\n     BUT NOT LIMITED TO ANY WARRANTY\
-      \ THAT THE USE OF THE INFORMATION\n     HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED\
-      \ WARRANTIES OF\n     MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE."
+    matched_text: |
+      This document and translations of it may be copied and furnished to
+          others, and derivative works that comment on or otherwise explain it
+          or assist in its implementation may be prepared, copied, published
+          and distributed, in whole or in part, without restriction of any
+          kind, provided that the above copyright notice and this paragraph are
+          included on all such copies and derivative works.  However, this
+          document itself may not be modified in any way, such as by removing
+          the copyright notice or references to the Internet Society or other
+          Internet organizations, except as needed for the purpose of
+          developing Internet standards in which case the procedures for
+          copyrights defined in the Internet Standards process must be
+          followed, or as required to translate it into languages other than
+          English.
+
+          The limited permissions granted above are perpetual and will not be
+          revoked by the Internet Society or its successors or assigns.
+
+          This document and the information contained herein is provided on an
+          "AS IS" basis and THE INTERNET SOCIETY AND THE INTERNET ENGINEERING
+          TASK FORCE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
+          BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION
+          HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
+          MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
   - score: '100.0'
     start_line: 365
     end_line: 387
@@ -508,24 +602,30 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "Redistribution and use in source and binary forms, with or without\n    \
-      \ modification, are permitted provided that the following conditions\n     are met:\n\
-      \     1. Redistributions of source code must retain the above copyright\n        notice,\
-      \ this list of conditions and the following disclaimer.\n     2. Redistributions in binary\
-      \ form must reproduce the above copyright\n        notice, this list of conditions and\
-      \ the following disclaimer in the\n        documentation and/or other materials provided\
-      \ with the distribution.\n     3. Neither the name of the project nor the names of its\
-      \ contributors\n        may be used to endorse or promote products derived from this software\n\
-      \        without specific prior written permission.\n \n     THIS SOFTWARE IS PROVIDED\
-      \ BY THE PROJECT AND CONTRIBUTORS ``AS IS'' AND\n     ANY EXPRESS OR IMPLIED WARRANTIES,\
-      \ INCLUDING, BUT NOT LIMITED TO, THE\n     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS\
-      \ FOR A PARTICULAR PURPOSE\n     ARE DISCLAIMED.  IN NO EVENT SHALL THE PROJECT OR CONTRIBUTORS\
-      \ BE LIABLE\n     FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n\
-      \     DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n     OR\
-      \ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n     HOWEVER CAUSED\
-      \ AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n     LIABILITY, OR TORT\
-      \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n     OUT OF THE USE OF THIS\
-      \ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n     SUCH DAMAGE."
+    matched_text: |
+      Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+          3. Neither the name of the project nor the names of its contributors
+             may be used to endorse or promote products derived from this software
+             without specific prior written permission.
+
+          THIS SOFTWARE IS PROVIDED BY THE PROJECT AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL THE PROJECT OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
   - score: '100.0'
     start_line: 395
     end_line: 409
@@ -541,18 +641,22 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "Permission to use, copy, modify, and distribute this software and its\n \
-      \    documentation for any purpose and without fee is hereby granted,\n     provided that\
-      \ the above copyright notice appear in all copies and that\n     both that copyright notice\
-      \ and this permission notice appear in\n     supporting documentation, and that the name\
-      \ of the copyright holder not be\n     used in advertising or publicity pertaining to\
-      \ distribution of the\n     software without specific, written prior permission.\n \n\
-      \     Tom Lord DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,\n     INCLUDING\
-      \ ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO\n     EVENT SHALL TOM LORD\
-      \ BE LIABLE FOR ANY SPECIAL, INDIRECT OR\n     CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER\
-      \ RESULTING FROM LOSS OF\n     USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,\
-      \ NEGLIGENCE OR\n     OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE\
-      \ USE OR\n     PERFORMANCE OF THIS SOFTWARE."
+    matched_text: |
+      Permission to use, copy, modify, and distribute this software and its
+          documentation for any purpose and without fee is hereby granted,
+          provided that the above copyright notice appear in all copies and that
+          both that copyright notice and this permission notice appear in
+          supporting documentation, and that the name of the copyright holder not be
+          used in advertising or publicity pertaining to distribution of the
+          software without specific, written prior permission.
+
+          Tom Lord DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+          INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO
+          EVENT SHALL TOM LORD BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+          CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF
+          USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+          OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+          PERFORMANCE OF THIS SOFTWARE.
   - score: '100.0'
     start_line: 414
     end_line: 432
@@ -568,18 +672,26 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "This software is not subject to any license of the American Telephone\n \
-      \    and Telegraph Company or of the Regents of the University of California.\n \n   \
-      \  Permission is granted to anyone to use this software for any purpose on\n     any computer\
-      \ system, and to alter it and redistribute it, subject\n     to the following restrictions:\n\
-      \ \n     1. The author is not responsible for the consequences of use of this\n      \
-      \  software, no matter how awful, even if they arise from flaws in it.\n \n     2. The\
-      \ origin of this software must not be misrepresented, either by\n        explicit claim\
-      \ or by omission.  Since few users ever read sources,\n        credits must appear in\
-      \ the documentation.\n \n     3. Altered versions must be plainly marked as such, and\
-      \ must not be\n        misrepresented as being the original software.  Since few users\n\
-      \        ever read sources, credits must appear in the documentation.\n \n     4. This\
-      \ notice may not be removed or altered."
+    matched_text: |
+      This software is not subject to any license of the American Telephone
+          and Telegraph Company or of the Regents of the University of California.
+
+          Permission is granted to anyone to use this software for any purpose on
+          any computer system, and to alter it and redistribute it, subject
+          to the following restrictions:
+
+          1. The author is not responsible for the consequences of use of this
+             software, no matter how awful, even if they arise from flaws in it.
+
+          2. The origin of this software must not be misrepresented, either by
+             explicit claim or by omission.  Since few users ever read sources,
+             credits must appear in the documentation.
+
+          3. Altered versions must be plainly marked as such, and must not be
+             misrepresented as being the original software.  Since few users
+             ever read sources, credits must appear in the documentation.
+
+          4. This notice may not be removed or altered.
   - score: '95.0'
     start_line: 438
     end_line: 473
@@ -595,28 +707,43 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "Permission is granted to anyone to use this software for any purpose on any\n\
-      \     computer system, and to redistribute it freely, subject to the following\n     restrictions:\n\
-      \ \n     1. This software is distributed in the hope that it will be useful,\n       \
-      \ but WITHOUT ANY WARRANTY; without even the implied warranty of\n        MERCHANTABILITY\
-      \ or FITNESS FOR A PARTICULAR PURPOSE.\n \n     2. The origin of this software must not\
-      \ be misrepresented, either by\n        explicit claim or by omission. In practice, this\
-      \ means that if you use\n        PCRE in software that you distribute to others, commercially\
-      \ or\n        otherwise, you must put a sentence like this\n \n          Regular expression\
-      \ support is provided by the PCRE library package,\n          which is open source software,\
-      \ written by Philip Hazel, and copyright\n          by the University of Cambridge, England.\n\
-      \ \n        somewhere reasonably visible in your documentation and in any relevant\n \
-      \       files or online help data or similar. A reference to the ftp site for\n      \
-      \  the source, that is, to\n \n          ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/\n\
-      \ \n        should also be given in the documentation. However, this condition is not\n\
-      \        intended to apply to whole chains of software. If package A includes PCRE,\n\
-      \        it must acknowledge it, but if package B is software that includes package\n\
-      \        A, the condition is not imposed on package B (unless it uses PCRE\n        independently).\n\
-      \ \n     3. Altered versions must be plainly marked as such, and must not be\n       \
-      \ misrepresented as being the original software.\n \n     4. If PCRE is embedded in any\
-      \ software that is released under the GNU\n       General Purpose Licence (GPL), or Lesser\
-      \ General Purpose Licence (LGPL),\n       then the terms of that licence shall supersede\
-      \ any condition above with\n       which it is incompatible."
+    matched_text: |
+      Permission is granted to anyone to use this software for any purpose on any
+          computer system, and to redistribute it freely, subject to the following
+          restrictions:
+
+          1. This software is distributed in the hope that it will be useful,
+             but WITHOUT ANY WARRANTY; without even the implied warranty of
+             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+          2. The origin of this software must not be misrepresented, either by
+             explicit claim or by omission. In practice, this means that if you use
+             PCRE in software that you distribute to others, commercially or
+             otherwise, you must put a sentence like this
+
+               Regular expression support is provided by the PCRE library package,
+               which is open source software, written by Philip Hazel, and copyright
+               by the University of Cambridge, England.
+
+             somewhere reasonably visible in your documentation and in any relevant
+             files or online help data or similar. A reference to the ftp site for
+             the source, that is, to
+
+               ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
+
+             should also be given in the documentation. However, this condition is not
+             intended to apply to whole chains of software. If package A includes PCRE,
+             it must acknowledge it, but if package B is software that includes package
+             A, the condition is not imposed on package B (unless it uses PCRE
+             independently).
+
+          3. Altered versions must be plainly marked as such, and must not be
+             misrepresented as being the original software.
+
+          4. If PCRE is embedded in any software that is released under the GNU
+            General Purpose Licence (GPL), or Lesser General Purpose Licence (LGPL),
+            then the terms of that licence shall supersede any condition above with
+            which it is incompatible.
   - score: '100.0'
     start_line: 479
     end_line: 482
@@ -634,9 +761,9 @@ matches:
     is_license_intro: no
     matched_text: |
       Developed at SunPro, a Sun Microsystems, Inc. business.
-           Permission to use, copy, modify, and distribute this
-           software is freely granted, provided that this notice
-           is preserved.
+          Permission to use, copy, modify, and distribute this
+          software is freely granted, provided that this notice
+          is preserved.
   - score: '100.0'
     start_line: 488
     end_line: 491
@@ -652,9 +779,11 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "Feel free to copy, use and distribute this software provided:\n \n      \
-      \    1. you do not pretend that you wrote it\n          2. you leave this copyright notice\
-      \ intact."
+    matched_text: |
+      Feel free to copy, use and distribute this software provided:
+
+               1. you do not pretend that you wrote it
+               2. you leave this copyright notice intact.
   - score: '100.0'
     start_line: 497
     end_line: 509
@@ -670,12 +799,17 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "This library is free software; you can redistribute it and/or\n      modify\
-      \ it under the terms of the GNU Lesser General Public\n      License as published by the\
-      \ Free Software Foundation; either\n      version 2.1 of the License, or (at your option)\
-      \ any later version.\n \n      This library is distributed in the hope that it will be\
-      \ useful,\n      but WITHOUT ANY WARRANTY; without even the implied warranty of\n    \
-      \  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n      Lesser General\
-      \ Public License for more details.\n \n      You should have received a copy of the GNU\
-      \ Lesser General Public\n      License along with this library; if not, see\n      <http://www.gnu.org/licenses/>.\
-      \  */"
+    matched_text: |
+      This library is free software; you can redistribute it and/or
+           modify it under the terms of the GNU Lesser General Public
+           License as published by the Free Software Foundation; either
+           version 2.1 of the License, or (at your option) any later version.
+
+           This library is distributed in the hope that it will be useful,
+           but WITHOUT ANY WARRANTY; without even the implied warranty of
+           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+           Lesser General Public License for more details.
+
+           You should have received a copy of the GNU Lesser General Public
+           License along with this library; if not, see
+           <http://www.gnu.org/licenses/>.  */

@@ -22,10 +22,10 @@ declared_license:
   - NCSA
   - BSD-3-Clause
   - GPL-2+
-license_expression: (public-domain AND us-govt-public-domain) AND boost-1.0 AND (mit-old-style-no-advert
-  AND mit-veillard-variant AND proprietary-license) AND public-domain AND flex-2.5 AND flex-2.5
-  AND flex-2.5 AND flex-2.5 AND flex-2.5 AND mit AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
-  AND gpl-2.0-plus) AND (public-domain AND us-govt-public-domain) AND (public-domain AND us-govt-public-domain)
+license_expression: (public-domain AND us-govt-public-domain) AND boost-1.0 AND (mit-with-modification-obligations
+  AND proprietary-license) AND public-domain AND flex-2.5 AND flex-2.5 AND flex-2.5 AND flex-2.5
+  AND flex-2.5 AND mit AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (public-domain AND us-govt-public-domain) AND (public-domain AND us-govt-public-domain)
   AND (public-domain AND us-govt-public-domain)
 copyright: |
   1996-2017 NCBI
@@ -49,8 +49,8 @@ copyright: |
   2018 Liubov Chuprikova <chuprikovalv@gmail.com>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 92
+    end_line: 92
     matcher: 2-aho
     rule_length: 5
     matched_length: 5
@@ -65,11 +65,11 @@ matches:
     is_license_intro: no
     matched_text: put into the public domain,
   - score: '100.0'
-    start_line: 3
-    end_line: 21
+    start_line: 94
+    end_line: 112
     matcher: 2-aho
-    rule_length: 154
-    matched_length: 154
+    rule_length: 158
+    matched_length: 158
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: us-govt-public-domain_24.RULE
@@ -100,8 +100,8 @@ matches:
 
       Please cite the author in any work or product based on this material.
   - score: '100.0'
-    start_line: 1
-    end_line: 21
+    start_line: 115
+    end_line: 135
     matcher: 1-hash
     rule_length: 202
     matched_length: 202
@@ -137,8 +137,8 @@ matches:
       ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
       DEALINGS IN THE SOFTWARE.
   - score: '100.0'
-    start_line: 1
-    end_line: 17
+    start_line: 138
+    end_line: 154
     matcher: 1-hash
     rule_length: 161
     matched_length: 161
@@ -169,18 +169,18 @@ matches:
       LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
       FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
       IN THE SOFTWARE.
-  - score: '75.59'
-    start_line: 1
-    end_line: 12
-    matcher: 3-seq
-    rule_length: 96
-    matched_length: 96
+  - score: '100.0'
+    start_line: 157
+    end_line: 172
+    matcher: 2-aho
+    rule_length: 153
+    matched_length: 153
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: mit-old-style-no-advert_1.RULE
-    license_expression: mit-old-style-no-advert
-    is_license_text: yes
-    is_license_notice: no
+    identifier: mit-with-modification-obligations_4.RULE
+    license_expression: mit-with-modification-obligations
+    is_license_text: no
+    is_license_notice: yes
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
@@ -191,36 +191,19 @@ matches:
       both that copyright notice and this permission notice appear in
       supporting documentation, and that the name of M.I.T. not be used in
       advertising or publicity pertaining to distribution of the software
-      without specific, written prior permission.  [Furthermore] [if] [you] [modify]
-      [this] [software] [you] [must] [label] [your] [software] [as] [modified] [software] [and] [not]
-      [distribute] [it] [in] [such] a [fashion] [that] [it] [might] [be] [confused] [with] [the]
-      [original] [MIT] [software]. M.I.T. makes no representations about the
+      without specific, written prior permission.  Furthermore if you modify
+      this software you must label your software as modified software and not
+      distribute it in such a fashion that it might be confused with the
+      original MIT software. M.I.T. makes no representations about the
       suitability of this software for any purpose.  It is provided "as is"
       without express or implied warranty.
-  - score: '24.29'
-    start_line: 12
-    end_line: 16
-    matcher: 3-seq
-    rule_length: 70
-    matched_length: 17
-    match_coverage: '24.29'
-    rule_relevance: 100
-    identifier: mit-veillard-variant.LICENSE
-    license_expression: mit-veillard-variant
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      express or implied [warranty].
 
-      [THIS] [SOFTWARE] [IS] [PROVIDED] ``[AS] [IS]'' [AND] [WITHOUT] [ANY] [EXPRESS] [OR] [IMPLIED]
+      THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED
       WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
       MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
   - score: '100.0'
-    start_line: 23
-    end_line: 29
+    start_line: 179
+    end_line: 185
     matcher: 2-aho
     rule_length: 57
     matched_length: 57
@@ -242,8 +225,8 @@ matches:
       trademarks in order to convey information (although in doing so,
       recognition of their trademark status should be given).
   - score: '100.0'
-    start_line: 1
-    end_line: 7
+    start_line: 188
+    end_line: '194'
     matcher: 1-hash
     rule_length: 36
     matched_length: 36
@@ -265,8 +248,8 @@ matches:
            605 E. Springfield Ave.
            Champaign, IL  61820
   - score: '100.0'
-    start_line: 1
-    end_line: 13
+    start_line: '197'
+    end_line: 209
     matcher: 1-hash
     rule_length: 122
     matched_length: 122
@@ -294,8 +277,8 @@ matches:
       IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
       WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 211
+    end_line: 211
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -309,15 +292,15 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2+'
-  - score: '95.86'
-    start_line: 1
-    end_line: 20
-    matcher: 3-seq
-    rule_length: 145
+  - score: '100.0'
+    start_line: 212
+    end_line: 231
+    matcher: 1-hash
+    rule_length: 139
     matched_length: 139
-    match_coverage: '95.86'
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-2.0-plus_537.RULE
+    identifier: gpl-2.0-plus_845.RULE
     license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes

@@ -24,8 +24,8 @@ matches:
     start_line: 25
     end_line: 63
     matcher: 3-seq
-    rule_length: 281
-    matched_length: 281
+    rule_length: 282
+    matched_length: 282
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: bsd-new_or_lgpl-2.0-plus_4.RULE
@@ -35,30 +35,46 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "Unless otherwise *explicitly* stated the following text describes the\n licensed\
-      \ conditions under which the contents of this [Linux]-[PAM] release\n may be distributed:\n\
-      \ \n -------------------------------------------------------------------------\n Redistribution\
-      \ and use in source and binary forms of [Linux]-[PAM], with\n or without modification,\
-      \ are permitted provided that the following\n conditions are met:\n \n 1. Redistributions\
-      \ of source code must retain any existing copyright\n    notice, and this entire permission\
-      \ notice in its entirety,\n    including the disclaimer of warranties.\n \n 2. Redistributions\
-      \ in binary form must reproduce all prior and current\n    copyright notices, this list\
-      \ of conditions, and the following\n    disclaimer in the documentation and/or other materials\
-      \ provided\n    with the distribution.\n \n 3. The name of any author may not be used\
-      \ to endorse or promote\n    products derived from this software without their specific\
-      \ prior\n    written permission.\n \n ALTERNATIVELY, this product may be distributed under\
-      \ the terms of the\n GNU General Public License, in which case the provisions of the GNU\n\
-      \ GPL are required INSTEAD OF the above restrictions.  (This clause is\n necessary due\
-      \ to a potential conflict between the GNU GPL and the\n restrictions contained in a BSD-style\
-      \ copyright.)\n \n THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED\n WARRANTIES,\
-      \ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\n MERCHANTABILITY AND FITNESS\
-      \ FOR A PARTICULAR PURPOSE ARE DISCLAIMED.\n IN NO EVENT SHALL THE AUTHOR(S) BE LIABLE\
-      \ FOR ANY DIRECT, INDIRECT,\n INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\
-      \ (INCLUDING,\n BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS\n\
-      \ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n ON ANY THEORY\
-      \ OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR\n TORT (INCLUDING NEGLIGENCE\
-      \ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE\n USE OF THIS SOFTWARE, EVEN IF ADVISED\
-      \ OF THE POSSIBILITY OF SUCH\n DAMAGE."
+    matched_text: |
+      Unless otherwise *explicitly* stated the following text describes the
+      licensed conditions under which the contents of this [Linux]-[PAM] release
+      may be distributed:
+
+      -------------------------------------------------------------------------
+      Redistribution and use in source and binary forms of [Linux]-[PAM], with
+      or without modification, are permitted provided that the following
+      conditions are met:
+
+      1. Redistributions of source code must retain any existing copyright
+         notice, and this entire permission notice in its entirety,
+         including the disclaimer of warranties.
+
+      2. Redistributions in binary form must reproduce all prior and current
+         copyright notices, this list of conditions, and the following
+         disclaimer in the documentation and/or other materials provided
+         with the distribution.
+
+      3. The name of any author may not be used to endorse or promote
+         products derived from this software without their specific prior
+         written permission.
+
+      ALTERNATIVELY, this product may be distributed under the terms of the
+      GNU General Public License, in which case the provisions of the GNU
+      GPL are required INSTEAD OF the above restrictions.  (This clause is
+      necessary due to a potential conflict between the GNU GPL and the
+      restrictions contained in a BSD-style copyright.)
+
+      THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED
+      WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+      MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+      IN NO EVENT SHALL THE AUTHOR(S) BE LIABLE FOR ANY DIRECT, INDIRECT,
+      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+      BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+      OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+      ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+      TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+      USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+      DAMAGE.
   - score: '100.0'
     start_line: 66
     end_line: 67
@@ -76,4 +92,4 @@ matches:
     is_license_intro: no
     matched_text: |
       On Debian GNU/Linux systems, the complete text of the GNU General
-       Public License can be found in `/usr/share/common-licenses/GPL'.
+      Public License can be found in `/usr/share/common-licenses/GPL'.

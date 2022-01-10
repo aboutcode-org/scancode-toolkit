@@ -1,0 +1,14 @@
+key: ms-python-vscode-pylance-2021
+short_name: MS Pylance Extension for VSCode License
+name: Microsoft Pylance Extension for Visual Studio Code License
+category: Commercial
+owner: Microsoft
+homepage_url: https://marketplace.visualstudio.com/items/ms-python.vscode-pylance/license
+spdx_license_key: LicenseRef-scancode-ms-python-vscode-pylance-2021
+faq_url: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
+other_urls:
+    - https://github.com/microsoft/pyright
+ignorable_urls:
+    - https://aka.ms/exporting
+    - https://aka.ms/privacy
+    - https://docs.microsoft.com/en-us/legal/gdpr

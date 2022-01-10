@@ -1,0 +1,12 @@
+key: cdla-permissive-2.0
+short_name: CDLA Permissive 2.0
+name: Community Data License Agreement Permissive 2.0
+category: Permissive
+owner: Linux Foundation
+homepage_url: https://cdla.dev/permissive-2-0/
+spdx_license_key: CDLA-Permissive-2.0
+text_urls:
+    - https://raw.githubusercontent.com/Community-Data-License-Agreements/Releases/main/CDLA-Permissive-2.0.txt
+faq_url: https://cdla.dev/
+other_urls:
+    - https://cdla.dev/permissive-2-0

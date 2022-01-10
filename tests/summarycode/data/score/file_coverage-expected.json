@@ -12,9 +12,11 @@
         "--license-clarity-score": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 5
       }
     }
@@ -165,7 +167,7 @@
       "holders": [],
       "authors": [
         {
-          "value": "Alexander Plavinski <alexander.plavinski@invision.de>",
+          "author": "Alexander Plavinski <alexander.plavinski@invision.de>",
           "start_line": 6,
           "end_line": 6
         }
@@ -280,14 +282,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) 2007 nexB Inc.",
+          "copyright": "Copyright (c) 2007 nexB Inc.",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "nexB Inc.",
+          "holder": "nexB Inc.",
           "start_line": 2,
           "end_line": 2
         }
@@ -327,14 +329,14 @@
       "percentage_of_license_text": 0,
       "copyrights": [
         {
-          "value": "Copyright (c) 2007 nexB Inc.",
+          "copyright": "Copyright (c) 2007 nexB Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "nexB Inc.",
+          "holder": "nexB Inc.",
           "start_line": 1,
           "end_line": 1
         }
@@ -374,14 +376,14 @@
       "percentage_of_license_text": 0,
       "copyrights": [
         {
-          "value": "Copyright (c) 2007 nexB Inc.",
+          "copyright": "Copyright (c) 2007 nexB Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "nexB Inc.",
+          "holder": "nexB Inc.",
           "start_line": 1,
           "end_line": 1
         }

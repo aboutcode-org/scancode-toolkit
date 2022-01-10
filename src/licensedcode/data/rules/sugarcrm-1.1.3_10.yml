@@ -1,0 +1,12 @@
+license_expression: sugarcrm-1.1.3
+is_license_text: yes
+minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright (c) 2004 SugarCRM, Inc.
+ignorable_holders:
+    - SugarCRM, Inc.
+ignorable_urls:
+    - http://www.mozilla.org/MPL/MPL-1.1.html
+    - http://www.sugarcrm.com/
+    - http://www.sugarcrm.com/SPL
+    - http://www.sugarforge.org/

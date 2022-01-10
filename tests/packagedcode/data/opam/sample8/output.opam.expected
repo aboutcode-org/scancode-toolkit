@@ -1,91 +1,93 @@
-{
-  "type": "opam",
-  "namespace": null,
-  "name": null,
-  "version": null,
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Ocaml",
-  "description": "Basic control of ANSI compliant terminals and the windows shell.\nANSITerminal is a module allowing to use the colors and cursor movements on ANSI terminals. It also works on the windows shell (but this part is currently work in progress).",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Christophe Troestler",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Vincent Hugot",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "maintainer",
-      "name": null,
-      "email": "Christophe.Troestler@umons.ac.be",
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": "https://github.com/Chris00/ANSITerminal",
-  "download_url": "https://download.ocamlcore.org/ansiterminal/ansiterminal/0.6.2/ANSITerminal-0.6.2.tar.gz",
-  "size": null,
-  "sha1": null,
-  "md5": "b7a7b7cce64eabf224d05ed9f2b9d471",
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": "https://github.com/Chris00/ANSITerminal/issues",
-  "code_view_url": null,
-  "vcs_url": "git+https://github.com/Chris00/ANSITerminal.git",
-  "copyright": null,
-  "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
-  "declared_license": "LGPL-3.0-only with OCaml-LGPL-linking-exception",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:opam/ocaml",
-      "requirement": "< 4.05.0",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/base-unix",
-      "requirement": "",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/ocamlbuild",
-      "requirement": "build",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/ocamlfind",
-      "requirement": "build",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": null,
-  "repository_homepage_url": null,
-  "repository_download_url": null,
-  "api_data_url": null
-}
+[  
+  {
+    "type": "opam",
+    "namespace": null,
+    "name": null,
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ocaml",
+    "description": "Basic control of ANSI compliant terminals and the windows shell.\nANSITerminal is a module allowing to use the colors and cursor movements on ANSI terminals. It also works on the windows shell (but this part is currently work in progress).",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Christophe Troestler",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Vincent Hugot",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": null,
+        "email": "Christophe.Troestler@umons.ac.be",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/Chris00/ANSITerminal",
+    "download_url": "https://download.ocamlcore.org/ansiterminal/ansiterminal/0.6.2/ANSITerminal-0.6.2.tar.gz",
+    "size": null,
+    "sha1": null,
+    "md5": "b7a7b7cce64eabf224d05ed9f2b9d471",
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": "https://github.com/Chris00/ANSITerminal/issues",
+    "code_view_url": null,
+    "vcs_url": "git+https://github.com/Chris00/ANSITerminal.git",
+    "copyright": null,
+    "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
+    "declared_license": "LGPL-3.0-only with OCaml-LGPL-linking-exception",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:opam/ocaml",
+        "requirement": "< 4.05.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/base-unix",
+        "requirement": "",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/ocamlbuild",
+        "requirement": "build",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/ocamlfind",
+        "requirement": "build",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": null,
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

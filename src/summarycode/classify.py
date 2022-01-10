@@ -169,25 +169,25 @@ class PackageTopAndKeyFilesTagger(PostScanPlugin):
 
         root_path = codebase.root.path
 
-        has_packages = hasattr(codebase.root, 'packages')
-        if not has_packages:
+        has_package_manifests = hasattr(codebase.root, 'package_manifests')
+        if not has_package_manifests:
             # FIXME: this is not correct... we may still have cases where this
             # is wrong: e.g. a META-INF directory and we may not have a package 
             return
 
 
         for resource in codebase.walk(topdown=True):
-            packages_info = resource.packages or []
+            package_manifests_info = resource.package_manifests or []
 
-            if not packages_info:
+            if not package_manifests_info:
                 continue
             if not resource.has_children():
                 continue
 
             descendants = None
 
-            for package_info in packages_info:
-                package_class = get_package_class(package_info)
+            for package_manifest_info in package_manifests_info:
+                package_class = get_package_class(package_manifest_info)
                 extra_root_dirs = package_class.extra_root_dirs()
                 extra_key_files = package_class.extra_key_files()
                 if TRACE:

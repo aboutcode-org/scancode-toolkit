@@ -1,4 +1,4 @@
-primary_license: lgpl-2.1-plus AND lgpl-3.0-plus
+primary_license: lgpl-2.1-plus
 declared_license:
   - LGPL-2.1+
   - GPL-2+
@@ -6,8 +6,8 @@ declared_license:
   - GPL-2+
   - GPL-2+
   - LGPL-2.1+
-license_expression: (lgpl-2.1-plus AND lgpl-3.0-plus) AND (gpl-2.0-plus AND gpl-3.0-plus) AND
-  (gpl-2.0-plus AND gpl-3.0-plus) AND (gpl-2.0-plus AND gpl-3.0-plus)
+license_expression: (lgpl-2.1-plus AND lgpl-2.1-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
+  (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
 copyright: |
   2006-2013 Bastien Nocera <hadess@hadess.net>
   2010 Giovanni Campagna <scampa.giovanni@gmail.com>
@@ -20,8 +20,8 @@ copyright: |
   2009 Bastien Nocera <hadess@hadess.net>
 matches:
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 27
+    end_line: 27
     matcher: 1-hash
     rule_length: 3
     matched_length: 3
@@ -35,16 +35,16 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: gpl-2+'
-  - score: '97.62'
-    start_line: 1
-    end_line: 15
-    matcher: 3-seq
+  - score: '100.0'
+    start_line: 28
+    end_line: 42
+    matcher: 1-hash
     rule_length: 126
-    matched_length: 123
-    match_coverage: '97.62'
+    matched_length: 126
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: gpl-3.0-plus_321.RULE
-    license_expression: gpl-3.0-plus
+    identifier: gpl-2.0-plus_839.RULE
+    license_expression: gpl-2.0-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -53,7 +53,7 @@ matches:
     matched_text: |
       This package is free software; you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version [2] of the License, or
+      the Free Software Foundation; either version 2 of the License, or
       (at your option) any later version.
 
       This package is distributed in the hope that it will be useful,
@@ -65,10 +65,10 @@ matches:
       along with this program. If not, see <https://www.gnu.org/licenses/>
 
       On Debian systems, the complete text of the GNU General
-      Public License version [2] can be found in "/usr/share/common-licenses/GPL-
+      Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
   - score: '100.0'
-    start_line: 1
-    end_line: 1
+    start_line: 44
+    end_line: 44
     matcher: 1-hash
     rule_length: 4
     matched_length: 4
@@ -82,16 +82,16 @@ matches:
     is_license_tag: yes
     is_license_intro: no
     matched_text: 'License: lgpl-2.1+'
-  - score: '96.15'
-    start_line: 1
-    end_line: 15
-    matcher: 3-seq
-    rule_length: 130
-    matched_length: 125
-    match_coverage: '96.15'
+  - score: '100.0'
+    start_line: 45
+    end_line: 59
+    matcher: 1-hash
+    rule_length: 129
+    matched_length: 129
+    match_coverage: '100.0'
     rule_relevance: 100
-    identifier: lgpl-3.0-plus_171.RULE
-    license_expression: lgpl-3.0-plus
+    identifier: lgpl-2.1-plus_416.RULE
+    license_expression: lgpl-2.1-plus
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -101,7 +101,7 @@ matches:
       This package is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
-      version [2].[1] of the License, or (at your option) any later version.
+      version 2.1 of the License, or (at your option) any later version.
 
       This package is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -112,4 +112,4 @@ matches:
       along with this program. If not, see <https://www.gnu.org/licenses/>.
 
       On Debian systems, the complete text of the GNU Lesser General
-      Public License can be found in "/usr/share/common-licenses/LGPL-
+      Public License can be found in "/usr/share/common-licenses/LGPL-2.1".

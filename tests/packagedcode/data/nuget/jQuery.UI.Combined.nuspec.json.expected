@@ -1,51 +1,53 @@
-{
-  "type": "nuget",
-  "namespace": null,
-  "name": "jQuery.UI.Combined",
-  "version": "1.11.4",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": null,
-  "description": "jQuery UI (Combined Library)\nThe full jQuery UI library as a single combined file. Includes the base theme.\njQuery UI is an open source library of interface components \u2014 interactions, full-featured widgets, and animation effects \u2014 based on the stellar jQuery javascript library . Each component is built according to jQuery's event-driven architecture (find something, manipulate it) and is themeable, making it easy for developers of any skill level to integrate and extend into their own code.\n    NOTE: This package is maintained on behalf of the library owners by the NuGet Community Packages project at http://nugetpackages.codeplex.com/",
-  "release_date": null,
-  "parties": [
-    {
-      "type": null,
-      "role": "author",
-      "name": "jQuery UI Team",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": null,
-      "role": "owner",
-      "name": "jQuery UI Team",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": "http://jqueryui.com/",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "mit",
-  "declared_license": "http://jquery.org/license",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:nuget/jQuery.UI.Combined@1.11.4",
-  "repository_homepage_url": "https://www.nuget.org/packages/jQuery.UI.Combined/1.11.4",
-  "repository_download_url": "https://www.nuget.org/api/v2/package/jQuery.UI.Combined/1.11.4",
-  "api_data_url": "https://api.nuget.org/v3/registration3/jquery.ui.combined/1.11.4.json"
-}
+[
+  {
+    "type": "nuget",
+    "namespace": null,
+    "name": "jQuery.UI.Combined",
+    "version": "1.11.4",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "jQuery UI (Combined Library)\nThe full jQuery UI library as a single combined file. Includes the base theme.\njQuery UI is an open source library of interface components \u2014 interactions, full-featured widgets, and animation effects \u2014 based on the stellar jQuery javascript library . Each component is built according to jQuery's event-driven architecture (find something, manipulate it) and is themeable, making it easy for developers of any skill level to integrate and extend into their own code.\n    NOTE: This package is maintained on behalf of the library owners by the NuGet Community Packages project at http://nugetpackages.codeplex.com/",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "author",
+        "name": "jQuery UI Team",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "owner",
+        "name": "jQuery UI Team",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "http://jqueryui.com/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": "http://jquery.org/license",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:nuget/jQuery.UI.Combined@1.11.4",
+    "repository_homepage_url": "https://www.nuget.org/packages/jQuery.UI.Combined/1.11.4",
+    "repository_download_url": "https://www.nuget.org/api/v2/package/jQuery.UI.Combined/1.11.4",
+    "api_data_url": "https://api.nuget.org/v3/registration3/jquery.ui.combined/1.11.4.json"
+  }
+]
