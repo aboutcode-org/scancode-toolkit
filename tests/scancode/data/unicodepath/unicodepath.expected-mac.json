@@ -21,6 +21,7 @@
       }
     }
   ],
+  "packages": [],
   "files": [
     {
       "path": "unicodepath",
@@ -47,7 +48,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 3,
@@ -80,7 +81,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -113,7 +114,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -146,7 +147,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,

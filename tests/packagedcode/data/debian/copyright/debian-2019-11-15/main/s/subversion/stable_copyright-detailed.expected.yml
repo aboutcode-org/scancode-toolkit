@@ -318,8 +318,8 @@ matches:
     start_line: 177
     end_line: 208
     matcher: 1-hash
-    rule_length: 325
-    matched_length: 325
+    rule_length: 328
+    matched_length: 328
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: unicode_56.RULE
@@ -366,8 +366,8 @@ matches:
     start_line: 211
     end_line: 396
     matcher: 1-hash
-    rule_length: 1623
-    matched_length: 1623
+    rule_length: 1626
+    matched_length: 1626
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: afl-3.0.LICENSE

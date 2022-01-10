@@ -1,63 +1,65 @@
-{
-  "type": "pypi",
-  "namespace": null,
-  "name": "urlpy",
-  "version": "0.2.0.2",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Python",
-  "description": "URL Parsing",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Dan Lecocq",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [
-    "Development Status :: 3 - Alpha",
-    "Environment :: Web Environment",
-    "Intended Audience :: Developers",
-    "Topic :: Internet :: WWW/HTTP"
-  ],
-  "homepage_url": "http://github.com/nexB/url-py",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "mit",
-  "declared_license": {
-    "license": "MIT",
-    "classifiers": [
-      "License :: OSI Approved :: MIT License"
-    ]
-  },
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:pypi/publicsuffix2",
-      "requirement": null,
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:pypi/urlpy@0.2.0.2",
-  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-  "repository_download_url": "https://pypi.org/packages/source/u/urlpy/urlpy-0.2.0.2.tar.gz",
-  "api_data_url": "https://pypi.org/pypi/urlpy/0.2.0.2/json"
-}
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "urlpy",
+    "version": "0.2.0.2",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "URL Parsing",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Dan Lecocq",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Development Status :: 3 - Alpha",
+      "Environment :: Web Environment",
+      "Intended Audience :: Developers",
+      "Topic :: Internet :: WWW/HTTP"
+    ],
+    "homepage_url": "http://github.com/nexB/url-py",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ]
+    },
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/publicsuffix2",
+        "requirement": null,
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:pypi/urlpy@0.2.0.2",
+    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_download_url": "https://pypi.org/packages/source/u/urlpy/urlpy-0.2.0.2.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/urlpy/0.2.0.2/json"
+  }
+]

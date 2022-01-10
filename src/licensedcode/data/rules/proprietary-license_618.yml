@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://github.com/AceKiron/Xondalf/blob/f14f01b5e7531aa28c32d2cc9b7dcf23f2656c2e/LICENSE#L10
+ignorable_urls:
+    - https://github.com/AceKiron/AceKiron

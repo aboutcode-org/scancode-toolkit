@@ -138,21 +138,21 @@ class Detections(object):
         copyrights_as_ignorable = frozenset(
             Ignorable(
                 lines_range=frozenset(range(c['start_line'], c['end_line'] + 1)),
-                value=c['value']
+                value=c['copyright']
             )
             for c in detected_copyrights)
 
         holders_as_ignorable = frozenset(
             Ignorable(
                 lines_range=frozenset(range(c['start_line'], c['end_line'] + 1)),
-                value=c['value']
+                value=c['holder']
             )
             for c in detected_holders)
 
         authors_as_ignorable = frozenset(
             Ignorable(
                 lines_range=frozenset(range(a['start_line'], a['end_line'] + 1)),
-                value=a['value'])
+                value=a['author'])
             for a in detected_authors
         )
 
@@ -247,21 +247,21 @@ def filter_ignorable_clues(detections, rules_by_id):
             detections.copyrights_as_ignorable,
             detections.holders_as_ignorable,
         ),
-        value_key='value',
+        value_key='author',
     ))
 
     # discard redundant holders if ignorable
     holders = list(filter_values(
         attributes=detections.holders,
         ignorables=ignorables.holders,
-        value_key='value',
+        value_key='holder',
     ))
 
     # discard redundant copyrights if ignorable
     copyrights = list(filter_values(
         attributes=detections.copyrights,
         ignorables=ignorables.copyrights,
-        value_key='value',
+        value_key='copyright',
     ))
 
     return Detections(
@@ -273,14 +273,14 @@ def filter_ignorable_clues(detections, rules_by_id):
     )
 
 
-def filter_values(attributes, ignorables, value_key='value', strip=''):
+def filter_values(attributes, ignorables, value_key='copyright', strip=''):
     """
     Yield filtered ``attributes`` based on line positions and values found in a
     ``ignorables`` Ignorables object. Use the ``value_key`` key for getting the
     value.
 
-    `attributes` is a list of mappings that contain a `start_line`, `end_line`
-    and a `value_key` key.
+    ``attributes`` is a list of mappings that contain a `start_line`, `end_line`
+    and a ``value_key`` key as one of: email, url, copyright, holder or author.
 
     Optionally strip the ``strip`` characters from the values.
     """
@@ -297,7 +297,7 @@ def filter_values(attributes, ignorables, value_key='value', strip=''):
 
         for ign in ignorables:
             if TRACE: logger_debug('   filter_values: ign:', ign)
-            if (ls in ign.lines_range or el in ign.lines_range)  and val in ign.value:
+            if (ls in ign.lines_range or el in ign.lines_range) and val in ign.value:
                 ignored = True
                 if TRACE: logger_debug('   filter_values: skipped')
                 break

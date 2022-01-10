@@ -68,8 +68,8 @@ matches:
     start_line: 94
     end_line: 112
     matcher: 2-aho
-    rule_length: 154
-    matched_length: 154
+    rule_length: 158
+    matched_length: 158
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: us-govt-public-domain_24.RULE

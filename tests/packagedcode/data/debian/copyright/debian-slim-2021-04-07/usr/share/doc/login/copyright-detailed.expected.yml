@@ -12,7 +12,7 @@ matches:
   - score: '97.18'
     start_line: 20
     end_line: 42
-    matcher: 2-aho
+    matcher: 3-seq
     rule_length: 207
     matched_length: 207
     match_coverage: '100.0'
@@ -33,7 +33,7 @@ matches:
       2. Redistributions in binary form must reproduce the above copyright
          notice, this list of conditions and the following disclaimer in the
          documentation and/or other materials provided with the distribution.
-      3. Neither the name of [Julianne] F. [Haugh] nor the names of its contributors
+      3. Neither the name of [Julianne] [F]. [Haugh] nor the names of its contributors
          may be used to endorse or promote products derived from this software
          without specific prior written permission.
 

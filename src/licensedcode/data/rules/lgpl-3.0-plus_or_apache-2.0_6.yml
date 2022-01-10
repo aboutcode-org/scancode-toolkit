@@ -3,5 +3,5 @@ is_license_tag: yes
 relevance: 100
 minimum_coverage: 80
 ignorable_urls:
-    - https://www.apache.org/licenses/LICENSE-2.0.txt
     - http://www.gnu.org/licenses/lgpl-3.0.html
+    - https://www.apache.org/licenses/LICENSE-2.0.txt

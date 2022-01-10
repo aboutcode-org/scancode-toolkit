@@ -11,10 +11,11 @@
         "--url": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.15",
         "files_count": 6
       }
     }
@@ -183,24 +184,24 @@
       "license_expressions": [
         "bsd-original-uc"
       ],
-      "percentage_of_license_text": 4.83,
+      "percentage_of_license_text": 4.82,
       "copyrights": [
         {
-          "value": "Copyright (c) 1993 The Regents of the University of California",
+          "copyright": "Copyright (c) 1993 The Regents of the University of California",
           "start_line": 22,
           "end_line": 22
         }
       ],
       "holders": [
         {
-          "value": "The Regents of the University of California",
+          "holder": "The Regents of the University of California",
           "start_line": 22,
           "end_line": 22
         }
       ],
       "authors": [
         {
-          "value": "the University of California, Berkeley and its contributors",
+          "author": "the University of California, Berkeley and its contributors",
           "start_line": 35,
           "end_line": 36
         }
@@ -335,14 +336,14 @@
       "percentage_of_license_text": 19.01,
       "copyrights": [
         {
-          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
+          "copyright": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
           "start_line": 3,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jouni Malinen",
+          "holder": "Jouni Malinen",
           "start_line": 3,
           "end_line": 3
         }

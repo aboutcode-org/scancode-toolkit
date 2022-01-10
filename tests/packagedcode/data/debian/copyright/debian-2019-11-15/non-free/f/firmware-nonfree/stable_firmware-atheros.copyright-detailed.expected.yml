@@ -102,8 +102,8 @@ matches:
     start_line: 57
     end_line: 85
     matcher: 3-seq
-    rule_length: 233
-    matched_length: 233
+    rule_length: 234
+    matched_length: 234
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: clear-bsd_3.RULE
@@ -283,8 +283,8 @@ matches:
     start_line: 205
     end_line: 248
     matcher: 2-aho
-    rule_length: 388
-    matched_length: 388
+    rule_length: 390
+    matched_length: 390
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: qca-linux-firmware.LICENSE

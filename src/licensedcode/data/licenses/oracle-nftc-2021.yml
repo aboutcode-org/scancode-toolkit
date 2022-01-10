@@ -1,0 +1,20 @@
+key: oracle-nftc-2021
+short_name: Oracle NFTC 2021
+name: Oracle No-Fee Terms and Conditions (NFTC) 2021
+category: Proprietary Free
+owner: Oracle Corporation
+homepage_url: https://www.oracle.com/downloads/licenses/no-fee-license.html
+spdx_license_key: LicenseRef-scancode-oracle-nftc-2021
+other_urls:
+    - https://www.theregister.com/2021/09/16/oracle_jdk_free_license/
+standard_notice: |
+    Your use of this Program is governed by the No-Fee Terms and Conditions set
+    forth below, unless you have received this Program (alone or as part of
+    another Oracle product) under an Oracle license agreement (including but
+    not limited to the Oracle Master Agreement), in which case your use of this
+    Program is governed solely by such license agreement with Oracle.
+ignorable_urls:
+    - http://www.oracle.com/documentation
+    - http://www.oracle.com/goto/opensourcecode
+    - http://www.oracle.com/privacy
+    - https://oss.oracle.com/sources/

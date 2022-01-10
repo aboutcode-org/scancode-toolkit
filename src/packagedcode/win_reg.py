@@ -309,7 +309,7 @@ def create_relative_file_path(file_path, root_dir, root_prefix=''):
 
 
 @attr.s()
-class InstalledWindowsProgram(models.Package):
+class InstalledWindowsProgram(models.Package, models.PackageManifest):
     default_type = 'windows-program'
 
     @classmethod

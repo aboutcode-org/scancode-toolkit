@@ -52,7 +52,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 253,
@@ -119,20 +119,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2011, 2016 Mark Adler",
+          "copyright": "Copyright (c) 1995-2011, 2016 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -165,27 +165,27 @@
       "holders": [],
       "authors": [
         {
-          "value": "Gilles Vollant <info@winimage.com>",
+          "author": "Gilles Vollant <info@winimage.com>",
           "start_line": 1220,
           "end_line": 1230
         },
         {
-          "value": "Kevin Ruland <kevin@rodin.wustl.edu>",
+          "author": "Kevin Ruland <kevin@rodin.wustl.edu>",
           "start_line": 1220,
           "end_line": 1230
         },
         {
-          "value": "Tyge Lovset <Tyge.Lovset@cmr.no>",
+          "author": "Tyge Lovset <Tyge.Lovset@cmr.no>",
           "start_line": 1220,
           "end_line": 1230
         },
         {
-          "value": "Carlos Rios <c_rios@sonda.cl>",
+          "author": "Carlos Rios <c_rios@sonda.cl>",
           "start_line": 1220,
           "end_line": 1230
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "info@winimage.com",
@@ -269,7 +269,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -336,20 +336,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2005, 2014, 2016 Jean-loup Gailly, Mark Adler",
+          "copyright": "Copyright (c) 1995-2005, 2014, 2016 Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly, Mark Adler",
+          "holder": "Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -381,7 +381,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "alain.bonnefoy@icbt.com",
@@ -464,20 +464,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2006, 2010, 2011, 2012, 2016 Mark Adler",
+          "copyright": "Copyright (c) 1995-2006, 2010, 2011, 2012, 2016 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "rbrown64@csc.com.au",
@@ -515,7 +515,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -582,36 +582,36 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2017 Jean-loup Gailly and Mark Adler",
+          "copyright": "Copyright (c) 1995-2017 Jean-loup Gailly and Mark Adler",
           "start_line": 2,
           "end_line": 3
         },
         {
-          "value": "Copyright 1995-2017 Jean-loup Gailly and Mark Adler",
+          "copyright": "Copyright 1995-2017 Jean-loup Gailly and Mark Adler",
           "start_line": 54,
           "end_line": 55
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "start_line": 2,
           "end_line": 3
         },
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "start_line": 54,
           "end_line": 55
         }
       ],
       "authors": [
         {
-          "value": "Leonid Broukhis",
+          "author": "Leonid Broukhis",
           "start_line": 34,
           "end_line": 35
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -718,20 +718,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2016 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-2016 Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -763,7 +763,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "zlib@gzip.org",
@@ -897,20 +897,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2004, 2010 Mark Adler",
+          "copyright": "Copyright (c) 2004, 2010 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -977,20 +977,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2004, 2005, 2010, 2011, 2012, 2013, 2016 Mark Adler",
+          "copyright": "Copyright (c) 2004, 2005, 2010, 2011, 2012, 2013, 2016 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1057,20 +1057,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2004-2017 Mark Adler",
+          "copyright": "Copyright (c) 2004-2017 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1137,20 +1137,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2004, 2005, 2010, 2011, 2012, 2013, 2016 Mark Adler",
+          "copyright": "Copyright (c) 2004, 2005, 2010, 2011, 2012, 2013, 2016 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1217,20 +1217,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2004-2017 Mark Adler",
+          "copyright": "Copyright (c) 2004-2017 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1262,7 +1262,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1329,20 +1329,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2016 Mark Adler",
+          "copyright": "Copyright (c) 1995-2016 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1409,20 +1409,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2017 Mark Adler",
+          "copyright": "Copyright (c) 1995-2017 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1489,20 +1489,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2003, 2010 Mark Adler",
+          "copyright": "Copyright (c) 1995-2003, 2010 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1534,7 +1534,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1601,20 +1601,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2016 Mark Adler",
+          "copyright": "Copyright (c) 1995-2016 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1681,20 +1681,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2016 Mark Adler",
+          "copyright": "Copyright (c) 1995-2016 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1761,30 +1761,30 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2017 Mark Adler",
+          "copyright": "Copyright (c) 1995-2017 Mark Adler",
           "start_line": 2,
           "end_line": 3
         },
         {
-          "value": "Copyright 1995-2017 Mark Adler",
+          "copyright": "Copyright 1995-2017 Mark Adler",
           "start_line": 11,
           "end_line": 12
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         },
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 11,
           "end_line": 12
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1851,20 +1851,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2005, 2010 Mark Adler",
+          "copyright": "Copyright (c) 1995-2005, 2010 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -1897,12 +1897,12 @@
       "holders": [],
       "authors": [
         {
-          "value": "Martin P.J. Zinser zinser@zinser.no-ip.info",
+          "author": "Martin P.J. Zinser zinser@zinser.no-ip.info",
           "start_line": 426,
           "end_line": 427
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "zinser@zinser.no-ip.info",
@@ -1945,7 +1945,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -2012,20 +2012,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2017 Jean-loup Gailly, Mark Adler",
+          "copyright": "Copyright (c) 1995-2017 Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly, Mark Adler",
+          "holder": "Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -2092,46 +2092,46 @@
       ],
       "copyrights": [
         {
-          "value": "(c) 1995-2017 Jean-loup Gailly and Mark Adler",
+          "copyright": "(c) 1995-2017 Jean-loup Gailly and Mark Adler",
           "start_line": 87,
           "end_line": 87
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "start_line": 87,
           "end_line": 87
         }
       ],
       "authors": [
         {
-          "value": "Paul Marquess <pmqs@cpan.org>",
+          "author": "Paul Marquess <pmqs@cpan.org>",
           "start_line": 41,
           "end_line": 43
         },
         {
-          "value": "A.M. Kuchling <amk@amk.ca>",
+          "author": "A.M. Kuchling <amk@amk.ca>",
           "start_line": 45,
           "end_line": 47
         },
         {
-          "value": "Gilles Vollant <info@winimage.com>",
+          "author": "Gilles Vollant <info@winimage.com>",
           "start_line": 52,
           "end_line": 53
         },
         {
-          "value": "L. Peter Deutsch",
+          "author": "L. Peter Deutsch",
           "start_line": 80,
           "end_line": 83
         },
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "author": "Jean-loup Gailly and Mark Adler",
           "start_line": 110,
           "end_line": 111
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "zlib@gzip.org",
@@ -2245,7 +2245,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -2312,20 +2312,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2017 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-2017 Jean-loup Gailly",
           "start_line": 2,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 2,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -2363,7 +2363,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -2430,20 +2430,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2003, 2010, 2014, 2016 Jean-loup Gailly, Mark Adler",
+          "copyright": "Copyright (c) 1995-2003, 2010, 2014, 2016 Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly, Mark Adler",
+          "holder": "Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -2510,20 +2510,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2016 Jean-loup Gailly, Mark Adler",
+          "copyright": "Copyright (c) 1995-2016 Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly, Mark Adler",
+          "holder": "Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -2590,20 +2590,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2016 Jean-loup Gailly, Mark Adler",
+          "copyright": "Copyright (c) 1995-2016 Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly, Mark Adler",
+          "holder": "Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -2670,20 +2670,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2016 Jean-loup Gailly, Mark Adler",
+          "copyright": "Copyright (c) 1995-2016 Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly, Mark Adler",
+          "holder": "Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -2750,31 +2750,31 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2017 Jean-loup Gailly and Mark Adler",
+          "copyright": "Copyright (c) 1995-2017 Jean-loup Gailly and Mark Adler",
           "start_line": 107,
           "end_line": 115
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "start_line": 107,
           "end_line": 115
         }
       ],
       "authors": [
         {
-          "value": "Gilles Vollant (info@winimage.com)",
+          "author": "Gilles Vollant (info@winimage.com)",
           "start_line": 57,
           "end_line": 59
         },
         {
-          "value": "L. Peter Deutsch",
+          "author": "L. Peter Deutsch",
           "start_line": 138,
           "end_line": 143
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "info@winimage.com",
@@ -2903,31 +2903,31 @@
       ],
       "copyrights": [
         {
-          "value": "(c) 1995-2017 Jean-loup Gailly and Mark Adler",
+          "copyright": "(c) 1995-2017 Jean-loup Gailly and Mark Adler",
           "start_line": 89,
           "end_line": 89
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "start_line": 89,
           "end_line": 89
         }
       ],
       "authors": [
         {
-          "value": "Gilles Vollant (info@winimage.com)",
+          "author": "Gilles Vollant (info@winimage.com)",
           "start_line": 42,
           "end_line": 43
         },
         {
-          "value": "L. Peter Deutsch",
+          "author": "L. Peter Deutsch",
           "start_line": 115,
           "end_line": 117
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "info@winimage.com",
@@ -3051,20 +3051,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2017 Jean-loup Gailly and Mark Adler",
+          "copyright": "Copyright (c) 1995-2017 Jean-loup Gailly and Mark Adler",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -3113,7 +3113,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -3145,7 +3145,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -3177,7 +3177,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -3210,12 +3210,12 @@
       "holders": [],
       "authors": [
         {
-          "value": "Paul Marquess",
+          "author": "Paul Marquess",
           "start_line": 5,
           "end_line": 7
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -3282,20 +3282,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2017 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-2017 Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -3362,20 +3362,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2016 Jean-loup Gailly, Mark Adler",
+          "copyright": "Copyright (c) 1995-2016 Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly, Mark Adler",
+          "holder": "Jean-loup Gailly, Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -3407,7 +3407,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 2,
@@ -3438,20 +3438,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998 by Andreas R. Kleinert",
+          "copyright": "Copyright (c) 1998 by Andreas R. Kleinert",
           "start_line": 3,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Andreas R. Kleinert",
+          "holder": "Andreas R. Kleinert",
           "start_line": 3,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -3482,20 +3482,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright Jean-loup Gailly Osma Ahvenlampi <Osma.Ahvenlampi@hut.fi>",
+          "copyright": "Copyright Jean-loup Gailly Osma Ahvenlampi <Osma.Ahvenlampi@hut.fi>",
           "start_line": 2,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly Osma Ahvenlampi",
+          "holder": "Jean-loup Gailly Osma Ahvenlampi",
           "start_line": 2,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "Osma.Ahvenlampi@hut.fi",
@@ -3533,7 +3533,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 159,
@@ -3566,102 +3566,102 @@
       "holders": [],
       "authors": [
         {
-          "value": "Dmitriy Anisimkov <anisimkov@yahoo.com>",
+          "author": "Dmitriy Anisimkov <anisimkov@yahoo.com>",
           "start_line": 7,
           "end_line": 9
         },
         {
-          "value": "Mikhail Teterin <mi@ALDAN.algebra.com>",
+          "author": "Mikhail Teterin <mi@ALDAN.algebra.com>",
           "start_line": 11,
           "end_line": 13
         },
         {
-          "value": "Brian Raiter <breadbox@muppetlabs.com>",
+          "author": "Brian Raiter <breadbox@muppetlabs.com>",
           "start_line": 15,
           "end_line": 17
         },
         {
-          "value": "Mark Adler <madler@alumni.caltech.edu>",
+          "author": "Mark Adler <madler@alumni.caltech.edu>",
           "start_line": 19,
           "end_line": 20
         },
         {
-          "value": "Cosmin Truta <cosmint@cs.ubbcluj.ro>",
+          "author": "Cosmin Truta <cosmint@cs.ubbcluj.ro>",
           "start_line": 22,
           "end_line": 23
         },
         {
-          "value": "Henrik Ravn <henrik@ravn.com>",
+          "author": "Henrik Ravn <henrik@ravn.com>",
           "start_line": 25,
           "end_line": 26
         },
         {
-          "value": "Mark Adler <madler@alumni.caltech.edu>",
+          "author": "Mark Adler <madler@alumni.caltech.edu>",
           "start_line": 32,
           "end_line": 33
         },
         {
-          "value": "Chris Anderson <christop@charm.net>",
+          "author": "Chris Anderson <christop@charm.net>",
           "start_line": 35,
           "end_line": 36
         },
         {
-          "value": "Kevin Ruland <kevin@rodin.wustl.edu>",
+          "author": "Kevin Ruland <kevin@rodin.wustl.edu>",
           "start_line": 38,
           "end_line": 39
         },
         {
-          "value": "Tyge Lovset <Tyge.Lovset@cmr.no>",
+          "author": "Tyge Lovset <Tyge.Lovset@cmr.no>",
           "start_line": 41,
           "end_line": 42
         },
         {
-          "value": "Gilles Vollant <info@winimage.com>",
+          "author": "Gilles Vollant <info@winimage.com>",
           "start_line": 48,
           "end_line": 50
         },
         {
-          "value": "Gilles Vollant <info@winimage.com>",
+          "author": "Gilles Vollant <info@winimage.com>",
           "start_line": 53,
           "end_line": 55
         },
         {
-          "value": "Gilles Vollant <info@winimage.com>",
+          "author": "Gilles Vollant <info@winimage.com>",
           "start_line": 58,
           "end_line": 61
         },
         {
-          "value": "Mathias Svensson <mathias@result42.com>",
+          "author": "Mathias Svensson <mathias@result42.com>",
           "start_line": 58,
           "end_line": 61
         },
         {
-          "value": "Bob Dellaca <bobdl@xtra.co.nz>",
+          "author": "Bob Dellaca <bobdl@xtra.co.nz>",
           "start_line": 63,
           "end_line": 64
         },
         {
-          "value": "Mark Adler <madler@alumni.caltech.edu>",
+          "author": "Mark Adler <madler@alumni.caltech.edu>",
           "start_line": 66,
           "end_line": 68
         },
         {
-          "value": "Gilles Vollant <info@winimage.com>",
+          "author": "Gilles Vollant <info@winimage.com>",
           "start_line": 70,
           "end_line": 71
         },
         {
-          "value": "Pedro A. Aranda Gutierrez <paag@tid.es>",
+          "author": "Pedro A. Aranda Gutierrez <paag@tid.es>",
           "start_line": 73,
           "end_line": 74
         },
         {
-          "value": "Gilles Vollant <info@winimage.com>",
+          "author": "Gilles Vollant <info@winimage.com>",
           "start_line": 76,
           "end_line": 78
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "anisimkov@yahoo.com",
@@ -3785,7 +3785,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 12,
@@ -3887,26 +3887,26 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
+          "copyright": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Dmitriy Anisimkov",
+          "holder": "Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [
         {
-          "value": "Dr Steve Sangwine <sjs@essex.ac.uk>",
+          "author": "Dr Steve Sangwine <sjs@essex.ac.uk>",
           "start_line": 11,
           "end_line": 11
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "sjs@essex.ac.uk",
@@ -4014,20 +4014,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
+          "copyright": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Dmitriy Anisimkov",
+          "holder": "Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -4129,20 +4129,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
+          "copyright": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Dmitriy Anisimkov",
+          "holder": "Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -4175,12 +4175,12 @@
       "holders": [],
       "authors": [
         {
-          "value": "Dmitriy Anisimkov <anisimkov@yahoo.com>",
+          "author": "Dmitriy Anisimkov <anisimkov@yahoo.com>",
           "start_line": 63,
           "end_line": 63
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "anisimkov@yahoo.com",
@@ -4309,20 +4309,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
+          "copyright": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Dmitriy Anisimkov",
+          "holder": "Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -4424,20 +4424,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
+          "copyright": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Dmitriy Anisimkov",
+          "holder": "Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -4539,20 +4539,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
+          "copyright": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Dmitriy Anisimkov",
+          "holder": "Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -4654,20 +4654,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
+          "copyright": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Dmitriy Anisimkov",
+          "holder": "Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -4769,20 +4769,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
+          "copyright": "Copyright (c) 2002-2003 Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Dmitriy Anisimkov",
+          "holder": "Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -4884,20 +4884,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
+          "copyright": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Dmitriy Anisimkov",
+          "holder": "Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -4999,20 +4999,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
+          "copyright": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Dmitriy Anisimkov",
+          "holder": "Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -5044,7 +5044,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -5076,7 +5076,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 1,
@@ -5144,7 +5144,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -5176,7 +5176,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 2,
@@ -5243,20 +5243,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998, 2007 Brian Raiter <breadbox@muppetlabs.com>",
+          "copyright": "Copyright (c) 1998, 2007 Brian Raiter <breadbox@muppetlabs.com>",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Brian Raiter",
+          "holder": "Brian Raiter",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "breadbox@muppetlabs.com",
@@ -5294,7 +5294,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "breadbox@muppetlabs.com",
@@ -5338,7 +5338,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 6,
@@ -5405,20 +5405,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2003, 2012, 2013 Mark Adler",
+          "copyright": "Copyright (c) 2003, 2012, 2013 Mark Adler",
           "start_line": 2,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -5485,20 +5485,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2003, 2012, 2013 Mark Adler",
+          "copyright": "Copyright (c) 2003, 2012, 2013 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -5536,7 +5536,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -5568,7 +5568,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -5606,7 +5606,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -5638,7 +5638,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -5670,7 +5670,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 4,
@@ -5701,20 +5701,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 1997,99 Borland Corp.",
+          "copyright": "Copyright (c) 1997,99 Borland Corp.",
           "start_line": 8,
           "end_line": 10
         }
       ],
       "holders": [
         {
-          "value": "Borland Corp.",
+          "holder": "Borland Corp.",
           "start_line": 8,
           "end_line": 10
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "cosmint@cs.ubbcluj.ro",
@@ -5751,26 +5751,26 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 1997,99 Borland Corporation",
+          "copyright": "Copyright (c) 1997,99 Borland Corporation",
           "start_line": 6,
           "end_line": 6
         }
       ],
       "holders": [
         {
-          "value": "Borland Corporation",
+          "holder": "Borland Corporation",
           "start_line": 6,
           "end_line": 6
         }
       ],
       "authors": [
         {
-          "value": "Cosmin Truta <cosmint@cs.ubbcluj.ro>",
+          "author": "Cosmin Truta <cosmint@cs.ubbcluj.ro>",
           "start_line": 10,
           "end_line": 10
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "cosmint@cs.ubbcluj.ro",
@@ -5808,7 +5808,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -5840,7 +5840,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -5872,7 +5872,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 15,
@@ -5904,7 +5904,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -5936,7 +5936,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -5968,7 +5968,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -6036,7 +6036,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -6103,20 +6103,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) Henrik Ravn 2004",
+          "copyright": "Copyright (c) Henrik Ravn 2004",
           "start_line": 55,
           "end_line": 55
         }
       ],
       "holders": [
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "start_line": 55,
           "end_line": 55
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6154,7 +6154,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 10,
@@ -6185,20 +6185,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 2004 by Henrik Ravn",
+          "copyright": "Copyright (c) 2004 by Henrik Ravn",
           "start_line": 14,
           "end_line": 16
         }
       ],
       "holders": [
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "start_line": 14,
           "end_line": 16
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -6265,20 +6265,20 @@
       ],
       "copyrights": [
         {
-          "value": "(c) Copyright Henrik Ravn 2004",
+          "copyright": "(c) Copyright Henrik Ravn 2004",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6351,20 +6351,20 @@
       ],
       "copyrights": [
         {
-          "value": "(c) Copyright Henrik Ravn 2004",
+          "copyright": "(c) Copyright Henrik Ravn 2004",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6437,20 +6437,20 @@
       ],
       "copyrights": [
         {
-          "value": "(c) Copyright Henrik Ravn 2004",
+          "copyright": "(c) Copyright Henrik Ravn 2004",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6523,20 +6523,20 @@
       ],
       "copyrights": [
         {
-          "value": "(c) Copyright Henrik Ravn 2004",
+          "copyright": "(c) Copyright Henrik Ravn 2004",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6609,20 +6609,20 @@
       ],
       "copyrights": [
         {
-          "value": "(c) Copyright Henrik Ravn 2004",
+          "copyright": "(c) Copyright Henrik Ravn 2004",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6660,7 +6660,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -6727,20 +6727,20 @@
       ],
       "copyrights": [
         {
-          "value": "(c) Copyright Henrik Ravn 2004",
+          "copyright": "(c) Copyright Henrik Ravn 2004",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6813,20 +6813,20 @@
       ],
       "copyrights": [
         {
-          "value": "(c) Copyright Henrik Ravn 2004",
+          "copyright": "(c) Copyright Henrik Ravn 2004",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6899,20 +6899,20 @@
       ],
       "copyrights": [
         {
-          "value": "(c) Copyright Henrik Ravn 2004",
+          "copyright": "(c) Copyright Henrik Ravn 2004",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -6955,7 +6955,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 1,
@@ -7022,26 +7022,26 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "copyright": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
           "start_line": 10,
           "end_line": 10
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "holder": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
           "start_line": 10,
           "end_line": 10
         }
       ],
       "authors": [
         {
-          "value": "Gilles Vollant",
+          "author": "Gilles Vollant",
           "start_line": 12,
           "end_line": 15
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -7104,7 +7104,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 7,
@@ -7171,20 +7171,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2008 Mark Adler",
+          "copyright": "Copyright (c) 1995-2008 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -7251,20 +7251,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2003 Mark Adler",
+          "copyright": "Copyright (c) 2003 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -7296,7 +7296,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -7363,20 +7363,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2003 Mark Adler",
+          "copyright": "Copyright (c) 1995-2003 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -7443,30 +7443,30 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2017 Mark Adler",
+          "copyright": "Copyright (c) 1995-2017 Mark Adler",
           "start_line": 2,
           "end_line": 3
         },
         {
-          "value": "Copyright 1995-2017 Mark Adler",
+          "copyright": "Copyright 1995-2017 Mark Adler",
           "start_line": 11,
           "end_line": 12
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         },
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 11,
           "end_line": 12
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -7533,20 +7533,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2008 Mark Adler",
+          "copyright": "Copyright (c) 1995-2008 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -7578,7 +7578,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -7610,7 +7610,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 2,
@@ -7677,30 +7677,30 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2003 Mark Adler",
+          "copyright": "Copyright (c) 1995-2003 Mark Adler",
           "start_line": 4,
           "end_line": 5
         },
         {
-          "value": "Copyright (c) 2003 Chris Anderson <christop@charm.net>",
+          "copyright": "Copyright (c) 2003 Chris Anderson <christop@charm.net>",
           "start_line": 7,
           "end_line": 8
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 4,
           "end_line": 5
         },
         {
-          "value": "Chris Anderson",
+          "holder": "Chris Anderson",
           "start_line": 7,
           "end_line": 8
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "christop@charm.net",
@@ -7789,30 +7789,30 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2003 Mark Adler",
+          "copyright": "Copyright (c) 1995-2003 Mark Adler",
           "start_line": 5,
           "end_line": 6
         },
         {
-          "value": "Copyright (c) 2003 Chris Anderson <christop@charm.net>",
+          "copyright": "Copyright (c) 2003 Chris Anderson <christop@charm.net>",
           "start_line": 8,
           "end_line": 9
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 5,
           "end_line": 6
         },
         {
-          "value": "Chris Anderson",
+          "holder": "Chris Anderson",
           "start_line": 8,
           "end_line": 9
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "christop@charm.net",
@@ -7861,7 +7861,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 3,
@@ -7893,7 +7893,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -7925,7 +7925,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -7957,7 +7957,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -7989,7 +7989,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 2,
@@ -8056,20 +8056,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
+          "copyright": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "holders": [
         {
-          "value": "Christian Michelsen Research AS Advanced Computing",
+          "holder": "Christian Michelsen Research AS Advanced Computing",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -8107,7 +8107,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -8139,7 +8139,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 5,
@@ -8208,12 +8208,12 @@
       "holders": [],
       "authors": [
         {
-          "value": "Kevin Ruland",
+          "author": "Kevin Ruland",
           "start_line": 10,
           "end_line": 13
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "schwardt@sun.ac.za",
@@ -8252,17 +8252,17 @@
       "holders": [],
       "authors": [
         {
-          "value": "Ludwig Schwardt <schwardt@sun.ac.za>",
+          "author": "Ludwig Schwardt <schwardt@sun.ac.za>",
           "start_line": 4,
           "end_line": 5
         },
         {
-          "value": "Kevin Ruland <kevin@rodin.wustl.edu>",
+          "author": "Kevin Ruland <kevin@rodin.wustl.edu>",
           "start_line": 4,
           "end_line": 5
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "schwardt@sun.ac.za",
@@ -8305,7 +8305,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -8338,17 +8338,17 @@
       "holders": [],
       "authors": [
         {
-          "value": "Ludwig Schwardt <schwardt@sun.ac.za>",
+          "author": "Ludwig Schwardt <schwardt@sun.ac.za>",
           "start_line": 4,
           "end_line": 5
         },
         {
-          "value": "Kevin Ruland <kevin@rodin.wustl.edu>",
+          "author": "Kevin Ruland <kevin@rodin.wustl.edu>",
           "start_line": 4,
           "end_line": 5
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "schwardt@sun.ac.za",
@@ -8392,17 +8392,17 @@
       "holders": [],
       "authors": [
         {
-          "value": "Ludwig Schwardt <schwardt@sun.ac.za>",
+          "author": "Ludwig Schwardt <schwardt@sun.ac.za>",
           "start_line": 4,
           "end_line": 5
         },
         {
-          "value": "Kevin Ruland <kevin@rodin.wustl.edu>",
+          "author": "Kevin Ruland <kevin@rodin.wustl.edu>",
           "start_line": 4,
           "end_line": 5
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "schwardt@sun.ac.za",
@@ -8445,7 +8445,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 5,
@@ -8477,7 +8477,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -8544,26 +8544,26 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "copyright": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
           "start_line": 8,
           "end_line": 8
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "holder": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
           "start_line": 8,
           "end_line": 8
         }
       ],
       "authors": [
         {
-          "value": "Gilles Vollant",
+          "author": "Gilles Vollant",
           "start_line": 10,
           "end_line": 11
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -8661,30 +8661,30 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2003 Mark Adler",
+          "copyright": "Copyright (c) 1995-2003 Mark Adler",
           "start_line": 4,
           "end_line": 5
         },
         {
-          "value": "Copyright (c) 2003 Chris Anderson <christop@charm.net>",
+          "copyright": "Copyright (c) 2003 Chris Anderson <christop@charm.net>",
           "start_line": 7,
           "end_line": 8
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 4,
           "end_line": 5
         },
         {
-          "value": "Chris Anderson",
+          "holder": "Chris Anderson",
           "start_line": 7,
           "end_line": 8
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "christop@charm.net",
@@ -8738,7 +8738,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -8787,17 +8787,17 @@
       "holders": [],
       "authors": [
         {
-          "value": "Gilles Vollant",
+          "author": "Gilles Vollant",
           "start_line": 7,
           "end_line": 8
         },
         {
-          "value": "Chris Anderson",
+          "author": "Chris Anderson",
           "start_line": 10,
           "end_line": 11
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -8840,7 +8840,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 4,
@@ -8872,7 +8872,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -8939,30 +8939,30 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2003 Mark Adler",
+          "copyright": "Copyright (c) 1995-2003 Mark Adler",
           "start_line": 5,
           "end_line": 6
         },
         {
-          "value": "Copyright (c) 2003 Chris Anderson <christop@charm.net>",
+          "copyright": "Copyright (c) 2003 Chris Anderson <christop@charm.net>",
           "start_line": 8,
           "end_line": 9
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 5,
           "end_line": 6
         },
         {
-          "value": "Chris Anderson",
+          "holder": "Chris Anderson",
           "start_line": 8,
           "end_line": 9
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "christop@charm.net",
@@ -9056,36 +9056,36 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-1996 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "copyright": "Copyright (c) 1995-1996 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
           "start_line": 2,
           "end_line": 5
         },
         {
-          "value": "Copyright (c) 1998 Brian Raiter <breadbox@muppetlabs.com>",
+          "copyright": "Copyright (c) 1998 Brian Raiter <breadbox@muppetlabs.com>",
           "start_line": 164,
           "end_line": 165
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "holder": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
           "start_line": 2,
           "end_line": 5
         },
         {
-          "value": "Brian Raiter",
+          "holder": "Brian Raiter",
           "start_line": 164,
           "end_line": 165
         }
       ],
       "authors": [
         {
-          "value": "Gilles Vollant",
+          "author": "Gilles Vollant",
           "start_line": 2,
           "end_line": 5
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "breadbox@muppetlabs.com",
@@ -9144,7 +9144,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -9187,7 +9187,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 22,
@@ -9219,7 +9219,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [
+      "package_manifests": [
         {
           "type": "autotools",
           "namespace": null,
@@ -9286,20 +9286,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998-2005 Gilles Vollant",
+          "copyright": "Copyright (c) 1998-2005 Gilles Vollant",
           "start_line": 6,
           "end_line": 6
         }
       ],
       "holders": [
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 6,
           "end_line": 6
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -9336,30 +9336,30 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
+          "copyright": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
           "start_line": 4,
           "end_line": 4
         },
         {
-          "value": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
+          "copyright": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
           "start_line": 7,
           "end_line": 7
         }
       ],
       "holders": [
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 4,
           "end_line": 4
         },
         {
-          "value": "Mathias Svensson",
+          "holder": "Mathias Svensson",
           "start_line": 7,
           "end_line": 7
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -9401,30 +9401,30 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
+          "copyright": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
           "start_line": 4,
           "end_line": 4
         },
         {
-          "value": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
+          "copyright": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
           "start_line": 7,
           "end_line": 7
         }
       ],
       "holders": [
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 4,
           "end_line": 4
         },
         {
-          "value": "Mathias Svensson",
+          "holder": "Mathias Svensson",
           "start_line": 7,
           "end_line": 7
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -9466,30 +9466,30 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
+          "copyright": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
           "start_line": 5,
           "end_line": 5
         },
         {
-          "value": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
+          "copyright": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
           "start_line": 8,
           "end_line": 8
         }
       ],
       "holders": [
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 5,
           "end_line": 5
         },
         {
-          "value": "Mathias Svensson",
+          "holder": "Mathias Svensson",
           "start_line": 8,
           "end_line": 8
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -9531,30 +9531,30 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
+          "copyright": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
           "start_line": 5,
           "end_line": 5
         },
         {
-          "value": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
+          "copyright": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
           "start_line": 8,
           "end_line": 8
         }
       ],
       "holders": [
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 5,
           "end_line": 5
         },
         {
-          "value": "Mathias Svensson",
+          "holder": "Mathias Svensson",
           "start_line": 8,
           "end_line": 8
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -9597,7 +9597,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -9629,7 +9629,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -9661,7 +9661,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -9692,46 +9692,46 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
+          "copyright": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
           "start_line": 6,
           "end_line": 6
         },
         {
-          "value": "Copyright (c) 2007-2008 Even Rouault",
+          "copyright": "Copyright (c) 2007-2008 Even Rouault",
           "start_line": 9,
           "end_line": 9
         },
         {
-          "value": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
+          "copyright": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
           "start_line": 12,
           "end_line": 12
         }
       ],
       "holders": [
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 6,
           "end_line": 6
         },
         {
-          "value": "Even Rouault",
+          "holder": "Even Rouault",
           "start_line": 9,
           "end_line": 9
         },
         {
-          "value": "Mathias Svensson",
+          "holder": "Mathias Svensson",
           "start_line": 12,
           "end_line": 12
         }
       ],
       "authors": [
         {
-          "value": "Gilles Vollant",
+          "author": "Gilles Vollant",
           "start_line": 190,
           "end_line": 191
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -9780,22 +9780,22 @@
       "holders": [],
       "authors": [
         {
-          "value": "Gilles Vollant",
+          "author": "Gilles Vollant",
           "start_line": 60,
           "end_line": 63
         },
         {
-          "value": "Mark Brown <broonie@sirena.org.uk>",
+          "author": "Mark Brown <broonie@sirena.org.uk>",
           "start_line": 60,
           "end_line": 63
         },
         {
-          "value": "Dirk Eddelbuettel <edd@debian.org>",
+          "author": "Dirk Eddelbuettel <edd@debian.org>",
           "start_line": 60,
           "end_line": 63
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "broonie@sirena.org.uk",
@@ -9839,17 +9839,17 @@
       "holders": [],
       "authors": [
         {
-          "value": "Gilles Vollant",
+          "author": "Gilles Vollant",
           "start_line": 43,
           "end_line": 45
         },
         {
-          "value": "Mark Brown <broonie@sirena.org.uk>",
+          "author": "Mark Brown <broonie@sirena.org.uk>",
           "start_line": 43,
           "end_line": 45
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "broonie@sirena.org.uk",
@@ -9886,46 +9886,46 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
+          "copyright": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
           "start_line": 6,
           "end_line": 6
         },
         {
-          "value": "Copyright (c) 2007-2008 Even Rouault",
+          "copyright": "Copyright (c) 2007-2008 Even Rouault",
           "start_line": 9,
           "end_line": 9
         },
         {
-          "value": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
+          "copyright": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
           "start_line": 12,
           "end_line": 12
         }
       ],
       "holders": [
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 6,
           "end_line": 6
         },
         {
-          "value": "Even Rouault",
+          "holder": "Even Rouault",
           "start_line": 9,
           "end_line": 9
         },
         {
-          "value": "Mathias Svensson",
+          "holder": "Mathias Svensson",
           "start_line": 12,
           "end_line": 12
         }
       ],
       "authors": [
         {
-          "value": "Gilles Vollant",
+          "author": "Gilles Vollant",
           "start_line": 168,
           "end_line": 169
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -9968,7 +9968,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -10000,7 +10000,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -10067,26 +10067,26 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998-2010 - by Gilles Vollant",
+          "copyright": "Copyright (c) 1998-2010 - by Gilles Vollant",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "authors": [
         {
-          "value": "Even Rouault",
+          "author": "Even Rouault",
           "start_line": 33,
           "end_line": 35
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -10175,7 +10175,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -10249,7 +10249,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -10322,86 +10322,86 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
+          "copyright": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
           "start_line": 5,
           "end_line": 5
         },
         {
-          "value": "Copyright (c) 2007-2008 Even Rouault",
+          "copyright": "Copyright (c) 2007-2008 Even Rouault",
           "start_line": 8,
           "end_line": 8
         },
         {
-          "value": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
+          "copyright": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
           "start_line": 11,
           "end_line": 11
         },
         {
-          "value": "Copyright (c) 1990-2000 Info-ZIP.",
+          "copyright": "Copyright (c) 1990-2000 Info-ZIP.",
           "start_line": 21,
           "end_line": 21
         },
         {
-          "value": "Copyright (c) 2007-2008 Even Rouault",
+          "copyright": "Copyright (c) 2007-2008 Even Rouault",
           "start_line": 49,
           "end_line": 49
         },
         {
-          "value": "Copyright (c) 1998 - 2010 Gilles Vollant, Even Rouault, Mathias Svensson",
+          "copyright": "Copyright (c) 1998 - 2010 Gilles Vollant, Even Rouault, Mathias Svensson",
           "start_line": 62,
           "end_line": 62
         },
         {
-          "value": "Copyright 1998-2004 Gilles Vollant",
+          "copyright": "Copyright 1998-2004 Gilles Vollant",
           "start_line": 122,
           "end_line": 123
         }
       ],
       "holders": [
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 5,
           "end_line": 5
         },
         {
-          "value": "Even Rouault",
+          "holder": "Even Rouault",
           "start_line": 8,
           "end_line": 8
         },
         {
-          "value": "Mathias Svensson",
+          "holder": "Mathias Svensson",
           "start_line": 11,
           "end_line": 11
         },
         {
-          "value": "Info-ZIP.",
+          "holder": "Info-ZIP.",
           "start_line": 21,
           "end_line": 21
         },
         {
-          "value": "Even Rouault",
+          "holder": "Even Rouault",
           "start_line": 49,
           "end_line": 49
         },
         {
-          "value": "Gilles Vollant, Even Rouault, Mathias Svensson",
+          "holder": "Gilles Vollant, Even Rouault, Mathias Svensson",
           "start_line": 62,
           "end_line": 62
         },
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 122,
           "end_line": 123
         }
       ],
       "authors": [
         {
-          "value": "Daniel Borca",
+          "author": "Daniel Borca",
           "start_line": 52,
           "end_line": 58
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "cryogen@infoserve.net",
@@ -10495,40 +10495,40 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
+          "copyright": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
           "start_line": 5,
           "end_line": 5
         },
         {
-          "value": "Copyright (c) 2007-2008 Even Rouault",
+          "copyright": "Copyright (c) 2007-2008 Even Rouault",
           "start_line": 8,
           "end_line": 8
         },
         {
-          "value": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
+          "copyright": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
           "start_line": 11,
           "end_line": 11
         }
       ],
       "holders": [
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 5,
           "end_line": 5
         },
         {
-          "value": "Even Rouault",
+          "holder": "Even Rouault",
           "start_line": 8,
           "end_line": 8
         },
         {
-          "value": "Mathias Svensson",
+          "holder": "Mathias Svensson",
           "start_line": 11,
           "end_line": 11
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -10570,40 +10570,40 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
+          "copyright": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
           "start_line": 5,
           "end_line": 5
         },
         {
-          "value": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
+          "copyright": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
           "start_line": 8,
           "end_line": 8
         },
         {
-          "value": "Copyright 1998-2004 Gilles Vollant",
+          "copyright": "Copyright 1998-2004 Gilles Vollant",
           "start_line": 98,
           "end_line": 98
         }
       ],
       "holders": [
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 5,
           "end_line": 5
         },
         {
-          "value": "Mathias Svensson",
+          "holder": "Mathias Svensson",
           "start_line": 8,
           "end_line": 8
         },
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 98,
           "end_line": 98
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -10686,30 +10686,30 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
+          "copyright": "Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html",
           "start_line": 5,
           "end_line": 5
         },
         {
-          "value": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
+          "copyright": "Copyright (c) 2009-2010 Mathias Svensson http://result42.com",
           "start_line": 8,
           "end_line": 8
         }
       ],
       "holders": [
         {
-          "value": "Gilles Vollant",
+          "holder": "Gilles Vollant",
           "start_line": 5,
           "end_line": 5
         },
         {
-          "value": "Mathias Svensson",
+          "holder": "Mathias Svensson",
           "start_line": 8,
           "end_line": 8
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -10752,7 +10752,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 4,
@@ -10819,40 +10819,40 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2003 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-2003 Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         },
         {
-          "value": "Copyright (c) 1998 by Jacques Nomssi Nzali",
+          "copyright": "Copyright (c) 1998 by Jacques Nomssi Nzali",
           "start_line": 6,
           "end_line": 7
         },
         {
-          "value": "Copyright (c) 2003 by Cosmin Truta",
+          "copyright": "Copyright (c) 2003 by Cosmin Truta",
           "start_line": 10,
           "end_line": 11
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         },
         {
-          "value": "Jacques Nomssi Nzali",
+          "holder": "Jacques Nomssi Nzali",
           "start_line": 6,
           "end_line": 7
         },
         {
-          "value": "Cosmin Truta",
+          "holder": "Cosmin Truta",
           "start_line": 10,
           "end_line": 11
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -10919,70 +10919,70 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2003 Jean-loup Gailly and Mark Adler",
+          "copyright": "Copyright (c) 1995-2003 Jean-loup Gailly and Mark Adler",
           "start_line": 52,
           "end_line": 54
         },
         {
-          "value": "Copyright (c) 1998 by Bob Dellaca",
+          "copyright": "Copyright (c) 1998 by Bob Dellaca",
           "start_line": 52,
           "end_line": 54
         },
         {
-          "value": "Copyright (c) 2003 by Cosmin Truta",
+          "copyright": "Copyright (c) 2003 by Cosmin Truta",
           "start_line": 52,
           "end_line": 54
         },
         {
-          "value": "Copyright (c) 1995-2003 by Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-2003 by Jean-loup Gailly",
           "start_line": 57,
           "end_line": 59
         },
         {
-          "value": "Copyright (c) 1998,1999,2000 by Jacques Nomssi Nzali",
+          "copyright": "Copyright (c) 1998,1999,2000 by Jacques Nomssi Nzali",
           "start_line": 57,
           "end_line": 59
         },
         {
-          "value": "Copyright (c) 2003 by Cosmin Truta",
+          "copyright": "Copyright (c) 2003 by Cosmin Truta",
           "start_line": 57,
           "end_line": 59
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "start_line": 52,
           "end_line": 54
         },
         {
-          "value": "Bob Dellaca",
+          "holder": "Bob Dellaca",
           "start_line": 52,
           "end_line": 54
         },
         {
-          "value": "Cosmin Truta",
+          "holder": "Cosmin Truta",
           "start_line": 52,
           "end_line": 54
         },
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 57,
           "end_line": 59
         },
         {
-          "value": "Jacques Nomssi Nzali",
+          "holder": "Jacques Nomssi Nzali",
           "start_line": 57,
           "end_line": 59
         },
         {
-          "value": "Cosmin Truta",
+          "holder": "Cosmin Truta",
           "start_line": 57,
           "end_line": 59
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -11014,7 +11014,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -11081,20 +11081,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2003 Cosmin Truta",
+          "copyright": "Copyright (c) 2003 Cosmin Truta",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "holders": [
         {
-          "value": "Cosmin Truta",
+          "holder": "Cosmin Truta",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -11126,7 +11126,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 6,
@@ -11158,7 +11158,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -11225,20 +11225,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2013 Mark Adler",
+          "copyright": "Copyright (c) 2002-2013 Mark Adler",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -11311,20 +11311,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2013 Mark Adler",
+          "copyright": "Copyright (c) 2002-2013 Mark Adler",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -11397,20 +11397,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2002-2013 Mark Adler",
+          "copyright": "Copyright (c) 2002-2013 Mark Adler",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -11442,7 +11442,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -11480,7 +11480,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -11512,7 +11512,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 2,
@@ -11544,7 +11544,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {
@@ -11582,7 +11582,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -11614,7 +11614,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 3,
@@ -11646,7 +11646,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -11678,7 +11678,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -11711,22 +11711,22 @@
       "holders": [],
       "authors": [
         {
-          "value": "Pedro A. Aranda Gutierrez <paag@tid.es>",
+          "author": "Pedro A. Aranda Gutierrez <paag@tid.es>",
           "start_line": 4,
           "end_line": 6
         },
         {
-          "value": "Jean-loup Gailly <jloup@gzip.org>",
+          "author": "Jean-loup Gailly <jloup@gzip.org>",
           "start_line": 4,
           "end_line": 6
         },
         {
-          "value": "Cosmin Truta <cosmint@cs.ubbcluj.ro>",
+          "author": "Cosmin Truta <cosmint@cs.ubbcluj.ro>",
           "start_line": 4,
           "end_line": 6
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "paag@tid.es",
@@ -11774,7 +11774,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 52,
@@ -11806,7 +11806,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "info@winimage.com",
@@ -11855,7 +11855,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 15,
@@ -11887,7 +11887,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -11919,7 +11919,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -11951,7 +11951,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -11983,7 +11983,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12015,7 +12015,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12047,7 +12047,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12079,7 +12079,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12111,7 +12111,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12142,20 +12142,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "(c) 1995-2017 Jean-loup Gailly & Mark Adler",
+          "copyright": "(c) 1995-2017 Jean-loup Gailly & Mark Adler",
           "start_line": 24,
           "end_line": 27
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly & Mark Adler",
+          "holder": "Jean-loup Gailly & Mark Adler",
           "start_line": 24,
           "end_line": 27
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12187,7 +12187,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12219,7 +12219,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12251,7 +12251,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12283,7 +12283,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12315,7 +12315,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12347,7 +12347,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12379,7 +12379,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 9,
@@ -12411,7 +12411,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12443,7 +12443,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12475,7 +12475,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12507,7 +12507,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12538,20 +12538,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "(c) 1995-2017 Jean-loup Gailly & Mark Adler",
+          "copyright": "(c) 1995-2017 Jean-loup Gailly & Mark Adler",
           "start_line": 24,
           "end_line": 27
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly & Mark Adler",
+          "holder": "Jean-loup Gailly & Mark Adler",
           "start_line": 24,
           "end_line": 27
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12583,7 +12583,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12615,7 +12615,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12647,7 +12647,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12679,7 +12679,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12711,7 +12711,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 9,
@@ -12743,7 +12743,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12775,7 +12775,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12807,7 +12807,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12839,7 +12839,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12870,20 +12870,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "(c) 1995-2017 Jean-loup Gailly & Mark Adler",
+          "copyright": "(c) 1995-2017 Jean-loup Gailly & Mark Adler",
           "start_line": 24,
           "end_line": 27
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly & Mark Adler",
+          "holder": "Jean-loup Gailly & Mark Adler",
           "start_line": 24,
           "end_line": 27
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12915,7 +12915,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12947,7 +12947,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -12979,7 +12979,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13011,7 +13011,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13043,7 +13043,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 9,
@@ -13075,7 +13075,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13107,7 +13107,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13139,7 +13139,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13171,7 +13171,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13202,20 +13202,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "(c) 1995-2017 Jean-loup Gailly & Mark Adler",
+          "copyright": "(c) 1995-2017 Jean-loup Gailly & Mark Adler",
           "start_line": 24,
           "end_line": 27
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly & Mark Adler",
+          "holder": "Jean-loup Gailly & Mark Adler",
           "start_line": 24,
           "end_line": 27
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13247,7 +13247,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13279,7 +13279,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13311,7 +13311,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13343,7 +13343,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13375,7 +13375,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 9,
@@ -13407,7 +13407,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13439,7 +13439,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13471,7 +13471,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13503,7 +13503,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13534,20 +13534,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "(c) 1995-2017 Jean-loup Gailly & Mark Adler",
+          "copyright": "(c) 1995-2017 Jean-loup Gailly & Mark Adler",
           "start_line": 24,
           "end_line": 27
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly & Mark Adler",
+          "holder": "Jean-loup Gailly & Mark Adler",
           "start_line": 24,
           "end_line": 27
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13579,7 +13579,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13611,7 +13611,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13643,7 +13643,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13675,7 +13675,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -13707,7 +13707,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 5,
@@ -13739,7 +13739,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -13823,20 +13823,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1996 L. Peter Deutsch and Jean-Loup Gailly",
+          "copyright": "Copyright (c) 1996 L. Peter Deutsch and Jean-Loup Gailly",
           "start_line": 29,
           "end_line": 29
         }
       ],
       "holders": [
         {
-          "value": "L. Peter Deutsch and Jean-Loup Gailly",
+          "holder": "L. Peter Deutsch and Jean-Loup Gailly",
           "start_line": 29,
           "end_line": 29
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "ghost@aladdin.com",
@@ -13945,20 +13945,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1996 L. Peter Deutsch",
+          "copyright": "Copyright (c) 1996 L. Peter Deutsch",
           "start_line": 27,
           "end_line": 27
         }
       ],
       "holders": [
         {
-          "value": "L. Peter Deutsch",
+          "holder": "L. Peter Deutsch",
           "start_line": 27,
           "end_line": 27
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "ghost@aladdin.com",
@@ -14067,26 +14067,26 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1996 L. Peter Deutsch",
+          "copyright": "Copyright (c) 1996 L. Peter Deutsch",
           "start_line": 27,
           "end_line": 27
         }
       ],
       "holders": [
         {
-          "value": "L. Peter Deutsch",
+          "holder": "L. Peter Deutsch",
           "start_line": 27,
           "end_line": 27
         }
       ],
       "authors": [
         {
-          "value": "Jean-Loup Gailly <gzip@prep.ai.mit.edu>",
+          "author": "Jean-Loup Gailly <gzip@prep.ai.mit.edu>",
           "start_line": 571,
           "end_line": 573
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "gzip@prep.ai.mit.edu",
@@ -14170,7 +14170,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -14202,7 +14202,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 11,
@@ -14233,20 +14233,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 2007, 2008, 2012 Mark Adler",
+          "copyright": "Copyright (c) 2007, 2008, 2012 Mark Adler",
           "start_line": 3,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 3,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -14314,7 +14314,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -14381,30 +14381,30 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2003, 2005, 2008, 2010, 2012 Mark Adler",
+          "copyright": "Copyright (c) 2003, 2005, 2008, 2010, 2012 Mark Adler",
           "start_line": 2,
           "end_line": 4
         },
         {
-          "value": "Copyright (c) 2003-2010 Mark Adler",
+          "copyright": "Copyright (c) 2003-2010 Mark Adler",
           "start_line": 654,
           "end_line": 657
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 4
         },
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 654,
           "end_line": 657
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -14471,30 +14471,30 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2003, 2012 Mark Adler",
+          "copyright": "Copyright (c) 2003, 2012 Mark Adler",
           "start_line": 3,
           "end_line": 3
         },
         {
-          "value": "Copyright (c) 2003, 2012 Mark Adler",
+          "copyright": "Copyright (c) 2003, 2012 Mark Adler",
           "start_line": 477,
           "end_line": 477
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 3,
           "end_line": 3
         },
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 477,
           "end_line": 477
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -14567,20 +14567,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2004, 2005, 2012 Mark Adler",
+          "copyright": "Copyright (c) 2004, 2005, 2012 Mark Adler",
           "start_line": 3,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 3,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -14653,20 +14653,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2004, 2008, 2012, 2016 Mark Adler",
+          "copyright": "Copyright (c) 2004, 2008, 2012, 2016 Mark Adler",
           "start_line": 3,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 3,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -14733,20 +14733,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2004, 2008, 2012 Mark Adler",
+          "copyright": "Copyright (c) 2004, 2008, 2012 Mark Adler",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "madler@alumni.caltech.edu",
@@ -14784,7 +14784,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -14851,30 +14851,30 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2004, 2005 Mark Adler",
+          "copyright": "Copyright (c) 2004, 2005 Mark Adler",
           "start_line": 7,
           "end_line": 7
         },
         {
-          "value": "Copyright (c) 2004, 2005 by Mark Adler",
+          "copyright": "Copyright (c) 2004, 2005 by Mark Adler",
           "start_line": 543,
           "end_line": 543
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 7,
           "end_line": 7
         },
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 543,
           "end_line": 543
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -14942,7 +14942,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15009,20 +15009,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2005, 2012 Mark Adler",
+          "copyright": "Copyright (c) 2005, 2012 Mark Adler",
           "start_line": 2,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 4
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15054,7 +15054,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 5,
@@ -15086,7 +15086,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15153,20 +15153,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-1998 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-1998 Jean-loup Gailly",
           "start_line": 1,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 1,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15233,20 +15233,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-1998 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-1998 Jean-loup Gailly",
           "start_line": 1,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 1,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15278,7 +15278,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15310,7 +15310,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15342,7 +15342,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 2,
@@ -15374,7 +15374,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15406,7 +15406,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "eduardo.m.costa@gmail.com",
@@ -15450,7 +15450,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 7,
@@ -15483,12 +15483,12 @@
       "holders": [],
       "authors": [
         {
-          "value": "Martin P.J. Zinser <m.zinser@gsi.de>",
+          "author": "Martin P.J. Zinser <m.zinser@gsi.de>",
           "start_line": 2,
           "end_line": 2
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "m.zinser@gsi.de",
@@ -15561,20 +15561,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-1998 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-1998 Jean-loup Gailly",
           "start_line": 1,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 1,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15606,7 +15606,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "rw@shadow.org.uk",
@@ -15644,7 +15644,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15676,7 +15676,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "jon-net@usa.net",
@@ -15724,7 +15724,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 2,
@@ -15792,7 +15792,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15824,7 +15824,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15856,7 +15856,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 4,
@@ -15888,7 +15888,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15919,20 +15919,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2017 Jean-Loup Gailly, Mark Adler",
+          "copyright": "Copyright (c) 1995-2017 Jean-Loup Gailly, Mark Adler",
           "start_line": 263,
           "end_line": 265
         }
       ],
       "holders": [
         {
-          "value": "Jean-Loup Gailly, Mark Adler",
+          "holder": "Jean-Loup Gailly, Mark Adler",
           "start_line": 263,
           "end_line": 265
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15964,7 +15964,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -15996,7 +15996,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -16028,7 +16028,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 1,
@@ -16060,7 +16060,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "alain.bonnefoy@icbt.com",
@@ -16109,7 +16109,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 3,
@@ -16176,20 +16176,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2006, 2011, 2016 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-2006, 2011, 2016 Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -16256,20 +16256,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2011, 2016 Mark Adler",
+          "copyright": "Copyright (c) 2011, 2016 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -16336,20 +16336,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2006, 2010, 2011, 2016 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-2006, 2010, 2011, 2016 Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "malbrech@eso.org",
@@ -16387,7 +16387,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 2,
@@ -16419,7 +16419,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -16451,7 +16451,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -16483,7 +16483,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 8,
@@ -16515,7 +16515,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "cosmint@cs.ubbcluj.ro",
@@ -16564,7 +16564,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -16631,20 +16631,20 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 1995-2003 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-2003 Jean-loup Gailly",
           "start_line": 7,
           "end_line": 8
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 7,
           "end_line": 8
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -16675,20 +16675,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "copyright (c) 1995-2017 Jean-loup Gailly and Mark Adler",
+          "copyright": "copyright (c) 1995-2017 Jean-loup Gailly and Mark Adler",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -16755,31 +16755,31 @@
       ],
       "copyrights": [
         {
-          "value": "(c) 1995-2017 Jean-loup Gailly and Mark Adler",
+          "copyright": "(c) 1995-2017 Jean-loup Gailly and Mark Adler",
           "start_line": 75,
           "end_line": 75
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "start_line": 75,
           "end_line": 75
         }
       ],
       "authors": [
         {
-          "value": "L. Peter Deutsch",
+          "author": "L. Peter Deutsch",
           "start_line": 67,
           "end_line": 70
         },
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "author": "Jean-loup Gailly and Mark Adler",
           "start_line": 98,
           "end_line": 99
         }
       ],
-      "packages": [],
+      "package_manifests": [],
       "emails": [
         {
           "email": "zlib@gzip.org",
@@ -16843,7 +16843,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -16875,7 +16875,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
@@ -16906,20 +16906,20 @@
       "license_expressions": [],
       "copyrights": [
         {
-          "value": "(c) 1995-2017 Jean-loup Gailly & Mark Adler",
+          "copyright": "(c) 1995-2017 Jean-loup Gailly & Mark Adler",
           "start_line": 29,
           "end_line": 31
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly & Mark Adler",
+          "holder": "Jean-loup Gailly & Mark Adler",
           "start_line": 29,
           "end_line": 31
         }
       ],
       "authors": [],
-      "packages": [],
+      "package_manifests": [],
       "emails": [],
       "urls": [
         {

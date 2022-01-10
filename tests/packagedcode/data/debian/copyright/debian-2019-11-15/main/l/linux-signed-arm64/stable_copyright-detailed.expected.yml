@@ -87,8 +87,8 @@ matches:
     start_line: 126
     end_line: 156
     matcher: 2-aho
-    rule_length: 306
-    matched_length: 306
+    rule_length: 309
+    matched_length: 309
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: unicode_17.RULE

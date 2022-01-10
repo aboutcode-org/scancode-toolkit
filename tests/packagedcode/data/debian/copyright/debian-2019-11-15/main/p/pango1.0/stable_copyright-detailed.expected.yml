@@ -87,8 +87,8 @@ matches:
     start_line: 90
     end_line: 116
     matcher: 1-hash
-    rule_length: 239
-    matched_length: 239
+    rule_length: 241
+    matched_length: 241
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: x11_2.RULE
@@ -174,8 +174,8 @@ matches:
     start_line: 133
     end_line: 171
     matcher: 1-hash
-    rule_length: 339
-    matched_length: 339
+    rule_length: 341
+    matched_length: 341
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: tcl_14.RULE
@@ -229,8 +229,8 @@ matches:
     start_line: 174
     end_line: 224
     matcher: 1-hash
-    rule_length: 422
-    matched_length: 422
+    rule_length: 423
+    matched_length: 423
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: unicode_57.RULE

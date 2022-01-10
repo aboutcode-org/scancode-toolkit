@@ -1,202 +1,204 @@
-{
-  "type": "opam",
-  "namespace": null,
-  "name": null,
-  "version": null,
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Ocaml",
-  "description": "The MirageOS library operating system\nMirageOS is a library operating system that constructs unikernels for secure, high-performance network applications across a variety of cloud computing and mobile platforms. Code can be developed on a normal OS such as Linux or MacOS X, and then compiled into a fully-standalone, specialised unikernel that runs under the Xen hypervisor.  Since Xen powers most public cloud computing infrastructure such as Amazon EC2 or Rackspace, this lets your servers run more cheaply, securely and with finer control than with a full software stack.",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Thomas Gazagnaire",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Anil Madhavapeddy",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Gabriel Radanne",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Mindy Preston",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Thomas Leonard",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Nicolas Ojeda Bar",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Dave Scott",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "David Kaloper",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Hannes Mehnert",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Richard Mortier",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "maintainer",
-      "name": null,
-      "email": "anil@recoil.org",
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "maintainer",
-      "name": null,
-      "email": "thomas@gazagnaire.org",
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": "https://github.com/mirage/mirage",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": "https://github.com/mirage/mirage/issues/",
-  "code_view_url": null,
-  "vcs_url": "git+https://github.com/mirage/mirage.git",
-  "copyright": null,
-  "license_expression": "isc",
-  "declared_license": "ISC",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:opam/ocaml",
-      "requirement": ">= 4.06.0",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/dune",
-      "requirement": ">= 2.0.0",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/ipaddr",
-      "requirement": ">= 3.0.0",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/functoria",
-      "requirement": ">= 3.0.2",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/bos",
-      "requirement": "",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/astring",
-      "requirement": "",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/logs",
-      "requirement": "",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/stdlib-shims",
-      "requirement": "",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/mirage-runtime",
-      "requirement": ">= 3.7.0 & <= version",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/alcotest",
-      "requirement": "with-test",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": null,
-  "repository_homepage_url": null,
-  "repository_download_url": null,
-  "api_data_url": null
-}
+[  
+  {
+    "type": "opam",
+    "namespace": null,
+    "name": null,
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ocaml",
+    "description": "The MirageOS library operating system\nMirageOS is a library operating system that constructs unikernels for secure, high-performance network applications across a variety of cloud computing and mobile platforms. Code can be developed on a normal OS such as Linux or MacOS X, and then compiled into a fully-standalone, specialised unikernel that runs under the Xen hypervisor.  Since Xen powers most public cloud computing infrastructure such as Amazon EC2 or Rackspace, this lets your servers run more cheaply, securely and with finer control than with a full software stack.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Thomas Gazagnaire",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Anil Madhavapeddy",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Gabriel Radanne",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Mindy Preston",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Thomas Leonard",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Nicolas Ojeda Bar",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Dave Scott",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "David Kaloper",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Hannes Mehnert",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Richard Mortier",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": null,
+        "email": "anil@recoil.org",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": null,
+        "email": "thomas@gazagnaire.org",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/mirage/mirage",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": "https://github.com/mirage/mirage/issues/",
+    "code_view_url": null,
+    "vcs_url": "git+https://github.com/mirage/mirage.git",
+    "copyright": null,
+    "license_expression": "isc",
+    "declared_license": "ISC",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:opam/ocaml",
+        "requirement": ">= 4.06.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/dune",
+        "requirement": ">= 2.0.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/ipaddr",
+        "requirement": ">= 3.0.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/functoria",
+        "requirement": ">= 3.0.2",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/bos",
+        "requirement": "",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/astring",
+        "requirement": "",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/logs",
+        "requirement": "",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/stdlib-shims",
+        "requirement": "",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/mirage-runtime",
+        "requirement": ">= 3.7.0 & <= version",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/alcotest",
+        "requirement": "with-test",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": null,
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

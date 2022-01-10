@@ -1,0 +1,15 @@
+License
+--------
+
+MIT
+
+
+
+
+
+
+
+
+Other licensing indo:
+
+Some code is released in the public domain

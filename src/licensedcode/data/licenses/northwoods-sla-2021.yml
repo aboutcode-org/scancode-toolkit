@@ -1,0 +1,17 @@
+key: northwoods-sla-2021
+short_name: Northwoods Software SLA 2021
+name: Northwoods Software SLA 2021
+category: Commercial
+owner: Northwoods
+homepage_url: https://gojs.net/latest/license.html
+spdx_license_key: LicenseRef-scancode-northwoods-sla-2021
+other_urls:
+    - https://github.com/NorthwoodsSoftware/GoJS/blob/master/README.md#license
+ignorable_copyrights:
+    - Copyright (c) 1999-2021 Northwoods Software Corporation
+ignorable_holders:
+    - Northwoods Software Corporation
+ignorable_urls:
+    - https://www.nwoods.com/
+ignorable_emails:
+    - GoSales@nwoods.com

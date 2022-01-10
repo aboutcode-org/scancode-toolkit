@@ -6,3 +6,5 @@ owner: Unspecified
 spdx_license_key: LicenseRef-scancode-public-domain-disclaimer
 notes: this is used also as a placeholder for similar public domain dedications
  texts and notices that come with an additional warranty disclaimer
+is_generic: yes
+ 

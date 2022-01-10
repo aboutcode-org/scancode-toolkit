@@ -1,0 +1,6 @@
+license_expression: mit OR unlicense
+is_license_text: yes
+minimum_coverage: 95
+notes: seen in stb library
+ignorable_urls:
+    - http://www.unlicense.org/

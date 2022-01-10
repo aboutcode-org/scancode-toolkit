@@ -1,0 +1,6 @@
+license_expression: mpl-1.1 OR x11
+is_license_notice: yes
+referenced_filenames:
+    - MITX.txt
+    - MPL-1.1.txt
+notes: old cURL 7.5.2 notices

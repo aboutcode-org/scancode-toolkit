@@ -1,76 +1,78 @@
-{
-  "type": "pubspec",
-  "namespace": null,
-  "name": "openapi",
-  "version": "1.0.0",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "dart",
-  "description": "OpenAPI API client",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "John Does",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Author <author@homepage>",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": "homepage",
-  "download_url": "https://pub.dartlang.org/packages/openapi/versions/1.0.0.tar.gz",
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:pubspec/http",
-      "requirement": ">=0.12.0 <0.13.0",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pubspec/test",
-      "requirement": "^1.3.0",
-      "scope": "dev_dependencies",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:pubspec/sdk",
-      "requirement": ">=2.0.0 <3.0.0",
-      "scope": "environment",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:pubspec/openapi@1.0.0",
-  "repository_homepage_url": "https://pub.dev/packages/openapi/versions/1.0.0",
-  "repository_download_url": "https://pub.dartlang.org/packages/openapi/versions/1.0.0.tar.gz",
-  "api_data_url": "https://pub.dev/api/packages/openapi/versions/1.0.0"
-}
+[
+  {
+    "type": "pubspec",
+    "namespace": null,
+    "name": "openapi",
+    "version": "1.0.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "dart",
+    "description": "OpenAPI API client",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "John Does",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Author <author@homepage>",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "homepage",
+    "download_url": "https://pub.dartlang.org/packages/openapi/versions/1.0.0.tar.gz",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:pubspec/http",
+        "requirement": ">=0.12.0 <0.13.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pubspec/test",
+        "requirement": "^1.3.0",
+        "scope": "dev_dependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pubspec/sdk",
+        "requirement": ">=2.0.0 <3.0.0",
+        "scope": "environment",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:pubspec/openapi@1.0.0",
+    "repository_homepage_url": "https://pub.dev/packages/openapi/versions/1.0.0",
+    "repository_download_url": "https://pub.dartlang.org/packages/openapi/versions/1.0.0.tar.gz",
+    "api_data_url": "https://pub.dev/api/packages/openapi/versions/1.0.0"
+  }
+]

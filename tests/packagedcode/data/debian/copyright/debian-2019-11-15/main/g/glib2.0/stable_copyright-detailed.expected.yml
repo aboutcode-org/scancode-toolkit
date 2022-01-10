@@ -1,7 +1,7 @@
 primary_license:
 declared_license:
 license_expression: lgpl-2.0-plus AND mit AND gpl-2.0-plus AND apache-2.0 AND apache-2.0 AND
-  apache-2.0 AND apache-2.0 AND mit AND mit AND gpl-2.0-plus AND gpl-2.0-plus
+  mit AND mit AND gpl-2.0-plus AND gpl-2.0-plus
 copyright: |
   Copyright (c) 1995-2018 Red Hat, Inc.
   Copyright (c) 2008-2010 Novell, Inc.
@@ -95,13 +95,13 @@ matches:
     matched_text: 'License: Apache-2.0'
   - score: '100.0'
     start_line: 82
-    end_line: 93
+    end_line: 96
     matcher: 2-aho
-    rule_length: 89
-    matched_length: 89
+    rule_length: 108
+    matched_length: 108
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: apache-2.0_474.RULE
+    identifier: apache-2.0_1035.RULE
     license_expression: apache-2.0
     is_license_text: no
     is_license_notice: yes
@@ -121,41 +121,9 @@ matches:
        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
        See the License for the specific language governing permissions and
        limitations under the License.
-  - score: '90.0'
-    start_line: 95
-    end_line: 95
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 90
-    identifier: apache-2.0_417.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: the Apache license
-  - score: '100.0'
-    start_line: 96
-    end_line: 98
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: apache-2.0_176.RULE
-    license_expression: apache-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Apache-2.0>.
-
-      License:
+       .
+       On Debian systems, a copy of the Apache license is available in
+       <file:///usr/share/common-licenses/Apache-2.0>.
   - score: '100.0'
     start_line: 98
     end_line: 98

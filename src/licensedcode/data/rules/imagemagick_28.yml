@@ -1,0 +1,5 @@
+license_expression: imagemagick
+is_license_text: yes
+minimum_coverage: 80
+ignorable_urls:
+    - http://www.imagemagick.org/script/license.php

@@ -1,59 +1,61 @@
-{
-  "type": "pypi",
-  "namespace": null,
-  "name": "pipdeptree",
-  "version": null,
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Python",
-  "description": "Command line utility to show dependency tree of packages",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Vineet Naik",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [
-    "Environment :: Console",
-    "Intended Audience :: Developers",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 2.7",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.3",
-    "Programming Language :: Python :: 3.4",
-    "Programming Language :: Python :: 3.5",
-    "Programming Language :: Python :: 3.6"
-  ],
-  "homepage_url": "https://github.com/naiquevin/pipdeptree",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "mit",
-  "declared_license": {
-    "license": "MIT License",
-    "classifiers": [
-      "License :: OSI Approved :: MIT License"
-    ]
-  },
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:pypi/pipdeptree",
-  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-  "repository_download_url": null,
-  "api_data_url": "https://pypi.org/pypi/pipdeptree/json"
-}
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "pipdeptree",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Command line utility to show dependency tree of packages",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Vineet Naik",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Environment :: Console",
+      "Intended Audience :: Developers",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.3",
+      "Programming Language :: Python :: 3.4",
+      "Programming Language :: Python :: 3.5",
+      "Programming Language :: Python :: 3.6"
+    ],
+    "homepage_url": "https://github.com/naiquevin/pipdeptree",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": {
+      "license": "MIT License",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ]
+    },
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:pypi/pipdeptree",
+    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_download_url": null,
+    "api_data_url": "https://pypi.org/pypi/pipdeptree/json"
+  }
+]

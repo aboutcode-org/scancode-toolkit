@@ -45,15 +45,10 @@ if TRACE:
 
 @attr.s()
 class CondaPackage(models.Package):
-    metafiles = ('meta.yaml', 'META.yml',)
     default_type = 'conda'
     default_web_baseurl = None
     default_download_baseurl = 'https://repo.continuum.io/pkgs/free'
     default_api_baseurl = None
-
-    @classmethod
-    def recognize(cls, location):
-        yield parse(location)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -77,97 +72,99 @@ class CondaPackage(models.Package):
     def compute_normalized_license(self):
         return models.compute_normalized_license(self.declared_license)
 
+@attr.s()
+class Condayml(CondaPackage, models.PackageManifest):
 
-def is_conda_yaml(location):
-    return (filetype.is_file(location) and fileutils.file_name(location).lower().endswith(('.yaml', '.yml')))
+    file_patterns = ('meta.yaml', 'META.yml',)
+    extensions = ('.yml', '.yaml',)
 
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return (filetype.is_file(location) 
+            and fileutils.file_name(location).lower().endswith(('.yaml', '.yml')))
 
-def parse(location):
-    """
-    Return a Package object from a meta.yaml file or None.
-    """
-    if not is_conda_yaml(location):
-        return
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        package_data = get_yaml_data(location)
 
-    yaml_data = get_yaml_data(location)
-    return build_package(yaml_data)
+        name = None
+        version = None
 
+        # Handle the package element
+        package_element = package_data.get('package')
+        if package_element:
+            for key, value in package_element.items():
+                if key == 'name':
+                    name = value
+                elif key == 'version':
+                    version = value
+        if not name:
+            return
 
-def build_package(package_data):
-    """
-    Return a Conda Package object from a dictionary yaml data.
-    """
-    name = None
-    version = None
+        package_manifest = cls(
+            name=name,
+            version=version or None,
+        )
 
-    # Handle the package element
-    package_element = package_data.get('package')
-    if package_element:
-        for key, value in package_element.items():
-            if key == 'name':
-                name = value
-            elif key == 'version':
-                version = value
-    if not name:
-        return
+        # Handle the source element
+        source_element = package_data.get('source')
+        if source_element:
+            for key, value in source_element.items():
+                if key == 'url' and value:
+                    package_manifest.download_url = value
+                elif key == 'sha256' and value:
+                    package_manifest.sha256 = value
 
-    package = CondaPackage(
-        name=name,
-        version=version or None,
-    )
+        # Handle the about element
+        about_element = package_data.get('about')
+        if about_element:
+            for key, value in about_element.items():
+                if key == 'home' and value:
+                    package_manifest.homepage_url = value
+                elif key == 'license' and value:
+                    package_manifest.declared_license = value
+                elif key == 'summary' and value:
+                    package_manifest.description = value
+                elif key == 'dev_url' and value:
+                    package_manifest.vcs_url = value
 
-    # Handle the source element
-    source_element = package_data.get('source')
-    if source_element:
-        for key, value in source_element.items():
-            if key == 'url' and value:
-                package.download_url = value
-            elif key == 'sha256' and value:
-                package.sha256 = value
-
-    # Handle the about element
-    about_element = package_data.get('about')
-    if about_element:
-        for key, value in about_element.items():
-            if key == 'home' and value:
-                package.homepage_url = value
-            elif key == 'license' and value:
-                package.declared_license = value
-            elif key == 'summary' and value:
-                package.description = value
-            elif key == 'dev_url' and value:
-                package.vcs_url = value
-
-    # Handle the about element
-    requirements_element = package_data.get('requirements')
-    if requirements_element:
-        for key, value in requirements_element.items():
-            # Run element format is like:
-            # (u'run', [u'mccortex ==1.0', u'nextflow ==19.01.0', u'cortexpy ==0.45.7', u'kallisto ==0.44.0', u'bwa', u'pandas', u'progressbar2', u'python >=3.6'])])
-            if key == 'run' and value and isinstance(value, (list, tuple)):
-                package_dependencies = []
-                for dependency in value:
-                    requirement = None
-                    for splitter in ('==', '>=', '<=', '>', '<'):
-                        if splitter in dependency:
-                            splits = dependency.split(splitter)
-                            # Replace the package name and keep the relationship and version
-                            # For example: keep ==19.01.0
-                            requirement = dependency.replace(splits[0], '').strip()
-                            dependency = splits[0].strip()
-                            break
-                    package_dependencies.append(
-                        models.DependentPackage(
-                            purl=PackageURL(
-                                type='conda', name=dependency).to_string(),
-                            requirement=requirement,
-                            scope='dependencies',
-                            is_runtime=True,
-                            is_optional=False,
+        # Handle the about element
+        requirements_element = package_data.get('requirements')
+        if requirements_element:
+            for key, value in requirements_element.items():
+                # Run element format is like:
+                # (u'run', [u'mccortex ==1.0', u'nextflow ==19.01.0', u'cortexpy ==0.45.7', u'kallisto ==0.44.0', u'bwa', u'pandas', u'progressbar2', u'python >=3.6'])])
+                if key == 'run' and value and isinstance(value, (list, tuple)):
+                    package_dependencies = []
+                    for dependency in value:
+                        requirement = None
+                        for splitter in ('==', '>=', '<=', '>', '<'):
+                            if splitter in dependency:
+                                splits = dependency.split(splitter)
+                                # Replace the package name and keep the relationship and version
+                                # For example: keep ==19.01.0
+                                requirement = dependency.replace(splits[0], '').strip()
+                                dependency = splits[0].strip()
+                                break
+                        package_dependencies.append(
+                            models.DependentPackage(
+                                purl=PackageURL(
+                                    type='conda', name=dependency).to_string(),
+                                requirement=requirement,
+                                scope='dependencies',
+                                is_runtime=True,
+                                is_optional=False,
+                            )
                         )
-                    )
-                package.dependencies = package_dependencies
-    return package
+                    package_manifest.dependencies = package_dependencies
+        yield package_manifest
 
 
 def get_yaml_data(location):

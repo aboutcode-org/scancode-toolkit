@@ -93,9 +93,9 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: mac1014
-          image_name: macos-10.14
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          job_name: mac11
+          image_name: macOS-11
+          python_versions: ['3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
               all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -123,9 +123,9 @@ jobs:
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win2016
-          image_name: vs2017-win2016
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          job_name: win2022
+          image_name: windows-2022
+          python_versions: ['3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
               all: Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py

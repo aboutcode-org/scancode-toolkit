@@ -452,8 +452,8 @@ matches:
     start_line: 476
     end_line: 504
     matcher: 2-aho
-    rule_length: 973
-    matched_length: 973
+    rule_length: 984
+    matched_length: 984
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: cc0-1.0_147.RULE

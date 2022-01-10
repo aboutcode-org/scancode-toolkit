@@ -325,7 +325,7 @@ def write_spdx(
             all_files_have_no_copyright = False
             file_entry.copyright = []
             for file_copyright in file_copyrights:
-                file_entry.copyright.append(file_copyright.get('value'))
+                file_entry.copyright.append(file_copyright.get('copyright'))
 
             package.cr_text.update(file_entry.copyright)
 

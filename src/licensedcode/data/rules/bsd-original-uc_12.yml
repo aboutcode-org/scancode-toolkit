@@ -1,5 +1,4 @@
 license_expression: bsd-original-uc
 is_license_notice: yes
 ignorable_authors:
-  - the University of California, Lawrence Berkeley Laboratory
-
+    - the University of California, Lawrence Berkeley Laboratory

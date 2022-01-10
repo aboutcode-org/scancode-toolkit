@@ -309,8 +309,8 @@ matches:
     start_line: 358
     end_line: 376
     matcher: 1-hash
-    rule_length: 152
-    matched_length: 152
+    rule_length: 153
+    matched_length: 153
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: mpeg-ssg_1.RULE
@@ -340,13 +340,13 @@ matches:
       are subject to royalty fees to patent holders.  Many of these patents are
       general enough such that they are unavoidable regardless of implementation
       design.
-  - score: '97.84'
+  - score: '97.85'
     start_line: 379
     end_line: 705
     matcher: 3-seq
-    rule_length: 2737
-    matched_length: 2678
-    match_coverage: '97.84'
+    rule_length: 2745
+    matched_length: 2686
+    match_coverage: '97.85'
     rule_relevance: 100
     identifier: cc-by-3.0_102.RULE
     license_expression: cc-by-3.0

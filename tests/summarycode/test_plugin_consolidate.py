@@ -73,7 +73,7 @@ class TestConsolidate(FileDrivenTesting):
         scan_file = self.get_scan('plugin_consolidate/nested-packages', cli_options='-p')
         codebase = VirtualCodebase(scan_file)
         for resource in codebase.walk():
-            for package_data in resource.packages:
+            for package_data in resource.package_manifests:
                 package = get_package_instance(package_data)
                 package_resources = list(package.get_package_resources(resource, codebase))
                 assert any(r.name == 'package.json' for r in package_resources), resource.path

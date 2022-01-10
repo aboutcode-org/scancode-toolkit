@@ -1,101 +1,103 @@
-{
-  "type": "conda",
-  "namespace": null,
-  "name": "abeona",
-  "version": "0.45.0",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": null,
-  "description": "A simple transcriptome assembler based on kallisto and Cortex graphs.",
-  "release_date": null,
-  "parties": [],
-  "keywords": [],
-  "homepage_url": "https://github.com/winni2k/abeona",
-  "download_url": "https://pypi.io/packages/source/a/abeona/abeona-0.45.0.tar.gz",
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": "bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f",
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": "https://github.com/winni2k/abeona",
-  "copyright": null,
-  "license_expression": "unknown",
-  "declared_license": "Apache Software",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:conda/mccortex",
-      "requirement": "==1.0",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:conda/nextflow",
-      "requirement": "==19.01.0",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:conda/cortexpy",
-      "requirement": "==0.45.7",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:conda/kallisto",
-      "requirement": "==0.44.0",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:conda/bwa",
-      "requirement": null,
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:conda/pandas",
-      "requirement": null,
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:conda/progressbar2",
-      "requirement": null,
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:conda/python",
-      "requirement": ">=3.6",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:conda/abeona@0.45.0",
-  "repository_homepage_url": null,
-  "repository_download_url": null,
-  "api_data_url": null
-}
+[
+  {
+    "type": "conda",
+    "namespace": null,
+    "name": "abeona",
+    "version": "0.45.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "A simple transcriptome assembler based on kallisto and Cortex graphs.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": "https://github.com/winni2k/abeona",
+    "download_url": "https://pypi.io/packages/source/a/abeona/abeona-0.45.0.tar.gz",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": "bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f",
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": "https://github.com/winni2k/abeona",
+    "copyright": null,
+    "license_expression": "unknown",
+    "declared_license": "Apache Software",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:conda/mccortex",
+        "requirement": "==1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:conda/nextflow",
+        "requirement": "==19.01.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:conda/cortexpy",
+        "requirement": "==0.45.7",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:conda/kallisto",
+        "requirement": "==0.44.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:conda/bwa",
+        "requirement": null,
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:conda/pandas",
+        "requirement": null,
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:conda/progressbar2",
+        "requirement": null,
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:conda/python",
+        "requirement": ">=3.6",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:conda/abeona@0.45.0",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

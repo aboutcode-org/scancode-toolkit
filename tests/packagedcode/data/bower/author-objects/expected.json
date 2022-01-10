@@ -1,84 +1,86 @@
-{
-  "type": "bower",
-  "namespace": null,
-  "name": "John Doe",
-  "version": null,
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "JavaScript",
-  "description": "Physics-like animations for pretty particles",
-  "release_date": null,
-  "parties": [
-    {
-      "type": null,
-      "role": "author",
-      "name": "Betty Beta <bbeta@example.com>",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": null,
-      "role": "author",
-      "name": "John Doe",
-      "email": "john@doe.com",
-      "url": "http://johndoe.com"
-    }
-  ],
-  "keywords": [
-    "motion",
-    "physics",
-    "particles"
-  ],
-  "homepage_url": null,
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "mit AND apache-2.0 AND bsd-new",
-  "declared_license": [
-    "MIT",
-    "Apache 2.0",
-    "BSD-3-Clause"
-  ],
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:bower/get-size",
-      "requirement": "~1.2.2",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:bower/eventEmitter",
-      "requirement": "~4.2.11",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:bower/qunit",
-      "requirement": "~1.16.0",
-      "scope": "devDependencies",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:bower/John%20Doe",
-  "repository_homepage_url": null,
-  "repository_download_url": null,
-  "api_data_url": null
-}
+[  
+  {
+    "type": "bower",
+    "namespace": null,
+    "name": "John Doe",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "JavaScript",
+    "description": "Physics-like animations for pretty particles",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "author",
+        "name": "Betty Beta <bbeta@example.com>",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "author",
+        "name": "John Doe",
+        "email": "john@doe.com",
+        "url": "http://johndoe.com"
+      }
+    ],
+    "keywords": [
+      "motion",
+      "physics",
+      "particles"
+    ],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit AND apache-2.0 AND bsd-new",
+    "declared_license": [
+      "MIT",
+      "Apache 2.0",
+      "BSD-3-Clause"
+    ],
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:bower/get-size",
+        "requirement": "~1.2.2",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:bower/eventEmitter",
+        "requirement": "~4.2.11",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:bower/qunit",
+        "requirement": "~1.16.0",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:bower/John%20Doe",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

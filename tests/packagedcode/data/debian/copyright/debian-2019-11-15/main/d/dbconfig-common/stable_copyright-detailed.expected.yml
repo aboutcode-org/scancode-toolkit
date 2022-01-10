@@ -67,8 +67,8 @@ matches:
     start_line: 26
     end_line: 181
     matcher: 2-aho
-    rule_length: 1406
-    matched_length: 1406
+    rule_length: 1411
+    matched_length: 1411
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: afl-2.1_6.RULE

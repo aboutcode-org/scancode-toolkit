@@ -20,6 +20,7 @@ from time import time
 from intbitset import intbitset
 
 from licensedcode import SMALL_RULE
+from licensedcode import TINY_RULE
 from licensedcode.legalese import common_license_words
 from licensedcode import match
 from licensedcode import match_aho
@@ -27,10 +28,12 @@ from licensedcode import match_hash
 from licensedcode import match_seq
 from licensedcode import match_set
 from licensedcode import match_spdx_lid
+from licensedcode import match_unknown
 from licensedcode.dmp import match_blocks as match_blocks_dmp
 from licensedcode.seq import match_blocks as match_blocks_seq
 from licensedcode import query
 from licensedcode import tokenize
+from licensedcode.spans import Span
 
 """
 Main license index construction, query processing and matching entry points for
@@ -134,6 +137,7 @@ class LicenseIndex(object):
         'rules_automaton',
         'fragments_automaton',
         'starts_automaton',
+        'unknown_automaton',
 
         'regular_rids',
         'false_positive_rids',
@@ -142,11 +146,18 @@ class LicenseIndex(object):
         'optimized',
     )
 
-    def __init__(self, rules=None, _legalese=common_license_words, _spdx_tokens=frozenset()):
+    def __init__(
+        self,
+        rules=None,
+        _legalese=common_license_words,
+        _spdx_tokens=frozenset(),
+        _license_tokens=frozenset(),
+    ):
         """
         Initialize the index with an iterable of Rule objects.
-        `_legalese` is a set of common license-specific words aka. legalese
-        `_spdx_tokens` is a set of tokens used in SPDX license identifiers
+        ``_legalese`` is a set of common license-specific words aka. legalese
+        ``_spdx_tokens`` is a set of tokens used in SPDX license identifiers
+        ``license_tokens`` is a set of "license" tokens used as start or end of a rule
         """
         # total number of unique known tokens
         self.len_tokens = 0
@@ -191,6 +202,7 @@ class LicenseIndex(object):
         self.rules_automaton = match_aho.get_automaton()
         self.fragments_automaton = USE_AHO_FRAGMENTS and match_aho.get_automaton()
         self.starts_automaton = USE_RULE_STARTS and match_aho.get_automaton()
+        self.unknown_automaton = match_unknown.get_automaton()
 
         # disjunctive sets of rule ids: regular and false positive
 
@@ -212,7 +224,11 @@ class LicenseIndex(object):
                 logger_debug('LicenseIndex: building index.')
             # index all and optimize
             self._add_rules(
-                rules, _legalese=_legalese, _spdx_tokens=_spdx_tokens)
+                rules,
+                _legalese=_legalese,
+                _spdx_tokens=_spdx_tokens,
+                _license_tokens=_license_tokens,
+            )
 
             if TRACE_TOKEN_DOC_FREQ:
                 logger_debug('LicenseIndex: token, frequency')
@@ -228,13 +244,20 @@ class LicenseIndex(object):
                       '%(duration)f seconds.' % locals())
                 self._print_index_stats()
 
-    def _add_rules(self, rules, _legalese=common_license_words, _spdx_tokens=frozenset()):
+    def _add_rules(
+        self,
+        rules,
+        _legalese=common_license_words,
+        _spdx_tokens=frozenset(),
+        _license_tokens=frozenset(),
+    ):
         """
         Add a list of Rule objects to the index and constructs optimized and
         immutable index structures.
 
         `_legalese` is a set of common license-specific words aka. legalese
         `_spdx_tokens` is a set of token strings used in SPDX license identifiers
+        ``license_tokens`` is a set of "license" tokens used as start or end of a rule
         """
         if self.optimized:
             raise Exception('Index has been optimized and cannot be updated.')
@@ -242,10 +265,14 @@ class LicenseIndex(object):
         # initial dictionary mapping for known legalese tokens
         ########################################################################
 
-        # FIXME: we should start at 1, and ids are become valid unichr values
+        # FIXME: we should start enumerating at 1 below: token ids then become
+        # valid "unichr" values, making it easier downstream when used in
+        # automatons
 
         self.dictionary = dictionary = {
-            ts: tid for tid, ts in enumerate(sorted(_legalese))}
+            ts: tid for tid, ts in enumerate(sorted(_legalese))
+        }
+
         dictionary_get = dictionary.get
 
         self.len_legalese = len_legalese = len(dictionary)
@@ -288,6 +315,15 @@ class LicenseIndex(object):
         # track all duplicate rules: fail and report dupes at once at the end
         dupe_rules_by_hash = defaultdict(list)
 
+        # create a set of known "license" words used to determine if a rule
+        # starts or ends with a "license" word/token
+        ########################################################################
+        license_tokens = set()
+        for t in _license_tokens:
+            tid = dictionary_get(t)
+            if tid is not None:
+                license_tokens.add(tid)
+
         rules_automaton_add = partial(match_aho.add_sequence,
             automaton=self.rules_automaton, with_duplicates=False)
 
@@ -324,6 +360,10 @@ class LicenseIndex(object):
 
             rule_token_ids = array('h', [])
             tids_by_rid_append(rule_token_ids)
+            rule_token_ids_append = rule_token_ids.append
+
+            rule_tokens = []
+            rule_tokens_append = rule_tokens.append
 
             # A rule is weak if it does not contain at least one legalese word:
             # we consider all rules to be weak until proven otherwise below.
@@ -331,6 +371,7 @@ class LicenseIndex(object):
             is_weak = True
 
             for rts in rule.tokens():
+                rule_tokens_append(rts)
                 rtid = dictionary_get(rts)
                 if rtid is None:
                     # we have a never yet seen token, so we assign a new tokenid
@@ -341,7 +382,10 @@ class LicenseIndex(object):
                 if is_weak and rtid < len_legalese:
                     is_weak = False
 
-                rule_token_ids.append(rtid)
+                rule_token_ids_append(rtid)
+
+            rule_length = rule.length
+            is_tiny = rule_length < TINY_RULE
 
             # build hashes index and check for duplicates rule texts
             rule_hash = match_hash_index_hash(rule_token_ids)
@@ -364,8 +408,40 @@ class LicenseIndex(object):
             rid_by_hash[rule_hash] = rid
             regular_rids_add(rid)
 
-            # Some rules cannot be matched as a sequence are "weak" rules
-            if not is_weak:
+            # Does the rule starts or ends with a "license" word? We track this
+            # to help disambiguate some overlapping false positive short rules
+            # OPTIMIZED: the last rtid above IS the last token id
+            if license_tokens:
+                if rtid in license_tokens:
+                    rule.ends_with_license = True
+                if rule_token_ids[0] in license_tokens:
+                    rule.starts_with_license = True
+
+            # populate unknown_automaton that only makes sense for rules that
+            # are also sequence matchable.
+            ####################
+            match_unknown.add_ngrams(
+                automaton=self.unknown_automaton,
+                tids=rule_token_ids,
+                tokens=rule_tokens,
+                len_legalese=len_legalese,
+                rule_length=rule_length,
+            )
+
+            # Some rules that cannot be matched as a sequence are "weak" rules
+            # or can require to be matched only as a continuous sequence of
+            # tokens. This includes, tiny, is_continuous or is_license_reference
+            # rules. We skip adding these to the data structures used for
+            # sequence matching.
+            can_match_as_sequence = not (
+                is_weak
+                or is_tiny
+                or rule.is_continuous
+                or (rule.is_small
+                    and (rule.is_license_reference or rule.is_license_tag))
+            )
+
+            if can_match_as_sequence:
                 approx_matchable_rids_add(rid)
 
                 ####################
@@ -387,7 +463,7 @@ class LicenseIndex(object):
                 ####################
                 if (USE_AHO_FRAGMENTS
                     and rule.minimum_coverage < 100
-                    and rule.length > ngram_len
+                    and rule_length > ngram_len
                 ):
                     all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=ngram_len)
                     all_ngrams_with_pos = tokenize.select_ngrams(all_ngrams, with_pos=True)
@@ -398,11 +474,11 @@ class LicenseIndex(object):
                 ####################
                 # use the start and end of this rule as a break point for query runs
                 ####################
-                if USE_RULE_STARTS and rule.length > min_len_starts:
+                if USE_RULE_STARTS and rule_length > min_len_starts:
                     starts_automaton_add_start(
                         tids=rule_token_ids[:len_starts],
                         rule_identifier=rule.identifier,
-                        rule_length=rule.length,
+                        rule_length=rule_length,
                     )
 
             ####################
@@ -439,18 +515,17 @@ class LicenseIndex(object):
         ########################################################################
         # Finalize index data structures
         ########################################################################
+        # Create the tid -> token string lookup structure.
+        ########################################################################
+        self.tokens_by_tid = tokens_by_tid = [
+            ts for ts, _tid in sorted(dictionary.items(), key=itemgetter(1))]
+        self.len_tokens = len_tokens = len(tokens_by_tid)
 
         # some tokens are made entirely of digits and these can create some
         # worst case behavior when there are long runs on these
         ########################################################################
         self.digit_only_tids = intbitset([
             i for i, s in enumerate(self.tokens_by_tid) if s.isdigit()])
-
-        # Create the tid -> token string lookup structure.
-        ########################################################################
-        self.tokens_by_tid = tokens_by_tid = [
-            ts for ts, _tid in sorted(dictionary.items(), key=itemgetter(1))]
-        self.len_tokens = len_tokens = len(tokens_by_tid)
 
         # Finalize automatons
         ########################################################################
@@ -459,6 +534,7 @@ class LicenseIndex(object):
             self.fragments_automaton.make_automaton()
         if USE_RULE_STARTS:
             match_aho.finalize_starts(self.starts_automaton)
+        self.unknown_automaton.make_automaton()
 
         ########################################################################
         # Do some sanity checks
@@ -495,7 +571,7 @@ class LicenseIndex(object):
         logger_debug(message + ':', len(matches))
         if qry:
             # set line early to ease debugging
-            match.set_lines(matches, qry.line_by_pos)
+            match.set_matched_lines(matches, qry.line_by_pos)
 
         if not with_text:
             for m in matches:
@@ -565,7 +641,8 @@ class LicenseIndex(object):
 
     def get_exact_matches(self, query, deadline=sys.maxsize, **kwargs):
         """
-        Extract matching strategy using an automaton for multimatching at once.
+        Exact matching strategy using an automaton for multimatching many rules
+        at once.
         """
         wqr = query.whole_query_run()
 
@@ -578,7 +655,6 @@ class LicenseIndex(object):
 
         matches, _discarded = match.refine_matches(
             matches=matches,
-            idx=self,
             query=query,
             filter_false_positive=False,
             merge=False,
@@ -786,6 +862,7 @@ class LicenseIndex(object):
         as_expression=False,
         expression_symbols=None,
         approximate=True,
+        unknown_licenses=False,
         deadline=sys.maxsize,
         _skip_hash_match=False,
         **kwargs,
@@ -793,23 +870,26 @@ class LicenseIndex(object):
         """
         This is the main entry point to match licenses.
 
-        Return a sequence of LicenseMatch by matching the file at `location` or
-        the `query_string` string against this index. Only include matches with
-        scores greater or equal to `min_score`.
+        Return a sequence of LicenseMatch by matching the file at ``location`` or
+        the ``query_string`` string against this index. Only include matches with
+        scores greater or equal to ``min_score``.
 
-        If `as_expression` is True, treat the whole text as a single SPDX
+        If ``as_expression`` is True, treat the whole text as a single SPDX
         license expression and use only expression matching.
 
         Use the ``expression_symbols`` mapping of {lowered key: LicenseSymbol}
         if provided. Otherwise use the standard SPDX license symbols mapping.
 
-        If `approximate` is True, perform approximate matching as a last
+        If ``approximate`` is True, perform approximate matching as a last
         matching step. Otherwise, only do hash, exact and expression matching.
 
-        `deadline` is a time.time() value in seconds by which the processing
+        If ``unknown_licenses`` is True, perform unknown licenses matching after
+        all regular matching steps.
+
+        ``deadline`` is a time.time() value in seconds by which the processing
         should stop and return whatever was matched so far.
 
-        `_skip_hash_match` is used only for testing.
+        ``_skip_hash_match`` is used only for testing.
         """
         assert 0 <= min_score <= 100
 
@@ -836,6 +916,7 @@ class LicenseIndex(object):
             as_expression=as_expression,
             expression_symbols=expression_symbols,
             approximate=approximate,
+            unknown_licenses=unknown_licenses,
             deadline=deadline,
             _skip_hash_match=_skip_hash_match,
             **kwargs,
@@ -848,12 +929,13 @@ class LicenseIndex(object):
         as_expression=False,
         expression_symbols=None,
         approximate=True,
+        unknown_licenses=False,
         deadline=sys.maxsize,
         _skip_hash_match=False,
         **kwargs,
     ):
         """
-        Return a sequence of LicenseMatch by matching the `qry` Query against
+        Return a sequence of LicenseMatch by matching the ``qry`` Query against
         this index. See Index.match() for arguments documentation.
         """
 
@@ -864,7 +946,7 @@ class LicenseIndex(object):
         if not _skip_hash_match:
             matches = match_hash.hash_match(self, whole_query_run)
             if matches:
-                match.set_lines(matches, qry.line_by_pos)
+                match.set_matched_lines(matches, qry.line_by_pos)
                 return matches
 
         get_spdx_id_matches = partial(
@@ -874,7 +956,7 @@ class LicenseIndex(object):
 
         if as_expression:
             matches = get_spdx_id_matches(qry, from_spdx_id_lines=False)
-            match.set_lines(matches, qry.line_by_pos)
+            match.set_matched_lines(matches, qry.line_by_pos)
             return matches
 
         matches = []
@@ -910,8 +992,8 @@ class LicenseIndex(object):
                 self.debug_matches(
                     matches=matched,
                     message='matched with: ' + matcher_name,
-                    location=location,
-                    query_string=query_string,
+                    location=qry.location,
+                    query_string=qry.query_string,
                 )
 
             matched = match.merge_matches(matched)
@@ -941,6 +1023,53 @@ class LicenseIndex(object):
             if time() > deadline:
                 break
 
+        # refining matches without filtering false positives
+        matches, _discarded = match.refine_matches(
+            matches=matches,
+            query=qry,
+            min_score=min_score,
+            filter_false_positive=False,
+            merge=True,
+        )
+
+        if unknown_licenses:
+            good_matches, weak_matches = match.split_weak_matches(matches)
+            # collect the positions that are "good matches" to exclude from
+            # matching for unknown_licenses. Create a Span to check for unknown
+            # based on this.
+            original_qspan = Span(0, len(qry.tokens) - 1)
+            good_qspans = (m.qspan for m in good_matches)
+            good_qspan = Span().union(*good_qspans)
+
+            unmatched_qspan = original_qspan.difference(good_qspan)
+
+            # for each subspan, run unknown license detection
+            unknown_matches = []
+            for unspan in unmatched_qspan.subspans():
+                unquery_run = query.QueryRun(
+                    query=qry,
+                    start=unspan.start,
+                    end=unspan.end,
+                )
+
+                unknown_match = match_unknown.match_unknowns(
+                    idx=self,
+                    query_run=unquery_run,
+                    automaton=self.unknown_automaton,
+                )
+
+                if unknown_match:
+                    unknown_matches.append(unknown_match)
+
+            unknown_matches = match.filter_invalid_contained_unknown_matches(
+                unknown_matches=unknown_matches,
+                good_matches=good_matches,
+            )
+
+            matches.extend(unknown_matches)
+            # reinject weak matches and let refine matches keep the bests
+            matches.extend(weak_matches)
+
         if not matches:
             return []
 
@@ -948,12 +1077,12 @@ class LicenseIndex(object):
             logger_debug()
             self.debug_matches(
                 matches=matches, message='matches before final merge',
-                location=location, query_string=query_string,
+                location=qry.location,
+                query_string=qry.query_string,
                 with_text=True, qry=qry)
 
         matches, _discarded = match.refine_matches(
             matches=matches,
-            idx=self,
             query=qry,
             min_score=min_score,
             filter_false_positive=True,
@@ -961,14 +1090,13 @@ class LicenseIndex(object):
         )
 
         matches.sort()
-        match.set_lines(matches, qry.line_by_pos)
 
         if TRACE:
             self.debug_matches(
                 matches=matches,
                 message='final matches',
-                location=location,
-                query_string=query_string ,
+                location=qry.location,
+                query_string=qry.query_string,
                 with_text=True,
                 qry=qry,
             )

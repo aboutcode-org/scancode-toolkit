@@ -154,7 +154,7 @@ def generate_output(results, version, template):
 
     LICENSES = 'licenses'
     COPYRIGHTS = 'copyrights'
-    PACKAGES = 'packages'
+    PACKAGES = 'package_manifests'
 
     # Create a flattened data dict keyed by path
     for scanned_file in results:
@@ -167,7 +167,7 @@ def generate_output(results, version, template):
                     'start': entry['start_line'],
                     'end': entry['end_line'],
                     'what': 'copyright',
-                    'value': entry['value'],
+                    'value': entry['copyright'],
                 })
         if LICENSES in scanned_file:
             for entry in scanned_file[LICENSES]:
@@ -207,7 +207,7 @@ def generate_output(results, version, template):
     files = {
         'license_copyright': converted,
         'infos': converted_infos,
-        'packages': converted_packages
+        'package_manifests': converted_packages
     }
 
     return template.generate(files=files, licenses=licenses, version=version)

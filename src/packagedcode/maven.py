@@ -47,8 +47,8 @@ Attempts to resolve Maven properties when possible.
 
 
 @attr.s()
-class MavenPomPackage(models.Package):
-    metafiles = ('*.pom', 'pom.xml',)
+class MavenPomPackage(models.Package, models.PackageManifest):
+    file_patterns = ('*.pom', 'pom.xml',)
     extensions = ('.pom',)
     default_type = 'maven'
     default_primary_language = 'Java'
@@ -66,7 +66,7 @@ class MavenPomPackage(models.Package):
         if manifest_resource.name.endswith(('pom.xml', '.pom',)):
             # the root is either the parent or further up for poms stored under
             # a META-INF dir
-            package_data = manifest_resource.packages
+            package_data = manifest_resource.package_manifests
             if not package_data:
                 return manifest_resource
             package_data = package_data[0]

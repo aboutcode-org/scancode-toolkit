@@ -240,8 +240,8 @@ matches:
     start_line: 501
     end_line: 1350
     matcher: 1-hash
-    rule_length: 5374
-    matched_length: 5374
+    rule_length: 5386
+    matched_length: 5386
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: agpl-3.0.SPDX.RULE
@@ -1422,8 +1422,8 @@ matches:
     start_line: 1561
     end_line: 1740
     matcher: 1-hash
-    rule_length: 928
-    matched_length: 928
+    rule_length: 929
+    matched_length: 929
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: freetype_13.RULE

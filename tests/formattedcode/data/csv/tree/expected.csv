@@ -1,4 +1,4 @@
-Resource,type,scan_errors,copyright,start_line,end_line,copyright_holder
+path,type,scan_errors,copyright,start_line,end_line,holder
 scan/,directory,,,,,
 scan/copy1.c,file,,,,,
 scan/copy1.c,,,"Copyright (c) 2000 ACME, Inc.",1,1,

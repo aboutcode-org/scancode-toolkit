@@ -5,3 +5,4 @@ name: Proprietary
 category: Proprietary Free
 owner: Unspecified
 notes: see proprietary-license instead
+is_generic: yes

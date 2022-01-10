@@ -72,7 +72,7 @@ def check_yaml_scan(expected_file, result_file, regen=False):
     # failures comparison/diff
     expected = saneyaml.dump(expected)
     results = saneyaml.dump(results)
-    assert expected == results
+    assert results == expected
 
 
 def load_yaml_results(location):

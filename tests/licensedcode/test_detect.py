@@ -682,9 +682,8 @@ class TestIndexPartialMatch(FileBasedTesting):
         assert itext.split() == expected_itokens
 
     def test_match_can_match_discontinuous_rule_text_1(self):
-        # in this template text there are only 2 tokens between the two templates markers
         test_text = u'''Redistributions in binary form must
-        {{}} reproduce the {{}}above copyright notice'''
+         reproduce the above copyright notice'''
         rule = Rule(stored_text=test_text, license_expression='mylicense')
         idx = MiniLicenseIndex([rule])
 
@@ -700,9 +699,8 @@ class TestIndexPartialMatch(FileBasedTesting):
         assert Span(0, 9) == match.ispan
 
     def test_match_can_match_discontinuous_rule_text_2(self):
-        # in this template there are 3 tokens between the two template markers
         test_text = u'''Redistributions in binary form must
-        {{}} reproduce the stipulated {{}}above copyright notice'''
+        reproduce the stipulated above copyright notice'''
         rule = Rule(stored_text=test_text, license_expression='mylicense')
         idx = MiniLicenseIndex([rule])
 
@@ -719,9 +717,8 @@ class TestIndexPartialMatch(FileBasedTesting):
         assert match.ispan == Span(0, 10)
 
     def test_match_can_match_discontinuous_rule_text_3(self):
-        # in this template there are 4 tokens between the two templates markers
         test_text = u'''Redistributions in binary form must
-        {{}} reproduce as is stipulated {{}}above copyright notice'''
+        reproduce as is stipulated above copyright notice'''
         rule = Rule(stored_text=test_text, license_expression='mylicense')
         idx = MiniLicenseIndex([rule])
 
@@ -899,7 +896,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         matches = idx.match(location=query_loc)
         assert len(matches) == 1
         match = matches[0]
-        expected = Span(0, 941) | Span(943, 1723)
+        expected = Span(0, 949)|Span(951, 1739)
         assert match.qspan == expected
         assert match.matcher == match_seq.MATCH_SEQ
 
@@ -931,9 +928,9 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         matches = idx.match(query_string=querys)
 
         rule = [r for r in idx.rules_by_rid if r.identifier == 'gpl_69.RULE'][0]
-        m1 = LicenseMatch(rule=rule, qspan=Span(0, 7), ispan=Span(0, 7), start_line=1, end_line=1)
-        m2 = LicenseMatch(rule=rule, qspan=Span(8, 15), ispan=Span(0, 7), start_line=2, end_line=2)
-        m3 = LicenseMatch(rule=rule, qspan=Span(16, 23), ispan=Span(0, 7), start_line=3, end_line=3)
+        m1 = LicenseMatch(rule=rule, matcher='2-aho', qspan=Span(0, 7), ispan=Span(0, 7), start_line=1, end_line=1)
+        m2 = LicenseMatch(rule=rule, matcher='2-aho', qspan=Span(8, 15), ispan=Span(0, 7), start_line=2, end_line=2)
+        m3 = LicenseMatch(rule=rule, matcher='2-aho', qspan=Span(16, 23), ispan=Span(0, 7), start_line=3, end_line=3)
         assert matches == [m1, m2, m3]
 
     def test_match_has_correct_line_positions_for_query_with_repeats(self):
@@ -1022,7 +1019,7 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         assert qtext == expected
         assert match.lines() == (1, 4)
 
-    def test_match_does_not_detect_spurrious_short_apache_rule(self):
+    def test_match_does_not_detect_spurious_short_apache_rule(self):
         idx = cache.get_index()
         querys = u'''
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -1056,13 +1053,13 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         # reported as https://github.com/nexB/scancode-toolkit/issues/88
         # note that this test is very sensitive to changes in the licenses data
         # set on purpose. Adding new license and/or frequent tokens will likely make it fail
-        # in thsi case review the new not-frequent tokens that could be involved.
+        # In this case review the new not-frequent tokens that could be involved.
         # eventually update the rule-side Span offset if this looks acceptable
         expected = [
-              # detected, match.lines(), match.qspan,
-            (u'gpl-2.0-plus', (12, 25), Span(46, 155)),
-            (u'fsf-unlimited-no-warranty', (231, 238), Span(945, 1008)),
-            (u'free-unknown', (306, 307), Span(1314, 1336)),
+            # detected, match.lines(), match.qspan,
+            ('gpl-2.0-plus', (12, 25), Span(48, 157)),
+            ('fsf-unlimited-no-warranty', (231, 238), Span(964, 1027)),
+            ('free-unknown', (306, 307), Span(1333, 1355)),
         ]
         self.check_position('positions/automake.pl', expected)
 
@@ -1090,6 +1087,44 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
             'GNU Lesser General Public (LGPL)',
             'GNU Lesser General Public (LGPL)']
         assert results == expected
+
+    def test_match_filtering_discards_overlapping_trailing_matches_by_one_word(self):
+        idx = cache.get_index()
+
+        # "License Python" should not be returned as a second match
+        query1 = '''
+
+        simplejson
+        ----------
+        python-lib/simplejson
+        Made available under the MIT license.
+
+        Python Markdown
+        ---------------
+        python-lib/markdown
+        '''
+
+        matches = idx.match(query_string=query1)
+        assert len(matches) == 1
+        matched_text = matches[0].matched_text(whole_lines=False, _usecache=False)
+        assert matched_text == 'Made available under the MIT license.'
+
+    def test_match_filtering_discards_overlapping_leading_matches_by_one_word(self):
+        idx = cache.get_index()
+        # "apache Licensed" should not be returned as a first match
+        # "License Python" should not be returned as a third match
+        query2 = '''
+        lib/simplejson from Apache
+
+        Licensed under the GPL 2.0 license.
+
+        Python Markdown
+        '''
+
+        matches = idx.match(query_string=query2)
+        assert len(matches) == 1
+        matched_text = matches[0].matched_text(whole_lines=False, _usecache=False)
+        assert matched_text == 'Licensed under the GPL 2.0 license.'
 
 
 class TestMatchBinariesWithFullIndex(FileBasedTesting):
@@ -1135,6 +1170,24 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         assert qtext == 'license=Dual BSD/GPL'
         assert itext == 'license dual bsd gpl'
         assert match.ispan == Span(0, 3)
+
+    @pytest.mark.scanslow
+    def test_spurious_matches_in_binary_are_filtered(self):
+        idx = cache.get_index()
+        qloc = self.get_test_loc('false_positive/false-positive-in-binaries.zip')
+
+        # Originally we were detecting these spurious license_expressions:
+        #     - apache-2.0 with matched_text: ALv2@ : should be kept
+        #     - lgpl-2.0-plus with matched_text: lGPl~= : invalid
+        #     - gpl-2.0 with matched_text: GPL2\ : invalid
+        # Each have these shared attributes:
+        # - is_license_reference: yes
+        # - rule_length: yes
+        # And we matched with trailing punctuatiosn
+        # And the file has: is_binary: yes
+        matches = idx.match(location=qloc)
+        assert len(matches) == 1
+        assert matches[0].rule.license_expression == 'apache-2.0'
 
 
 class TestRegression(FileBasedTesting):

@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://github.com/jaxsb/jaxsb/blob/de067fc2b0c301300dd7fcbc7432634014430286/compiler/src/main/java/org/jaxsb/compiler/processor/normalize/element/MaxExclusiveNormalizer.java
+ignorable_urls:
+    - http://opensource.org/licenses/MIT/

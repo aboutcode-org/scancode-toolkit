@@ -8,17 +8,17 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import re
+from collections import defaultdict
 from binascii import crc32
 from itertools import islice
-import re
 
 from licensedcode.stopwords import STOPWORDS
 from textcode.analysis import numbered_text_lines
 
-
 """
-Utilities to break texts in lines and tokens (aka. words) with specialized version
-for queries and rules texts.
+Utilities to break texts in lines and tokens (aka. words) with specialized
+version for queries and rules texts.
 """
 
 
@@ -33,7 +33,7 @@ def query_lines(location=None, query_string=None, strip=True, start_line=1):
     numbered_lines = []
     if location:
         numbered_lines = numbered_text_lines(
-            location, 
+            location,
             demarkup=False,
             start_line=start_line,
         )
@@ -45,7 +45,7 @@ def query_lines(location=None, query_string=None, strip=True, start_line=1):
             keepends = True
 
         numbered_lines = enumerate(
-            query_string.splitlines(keepends), 
+            query_string.splitlines(keepends),
             start_line,
         )
 
@@ -62,11 +62,49 @@ def query_lines(location=None, query_string=None, strip=True, start_line=1):
 query_pattern = '[^_\\W]+\\+?[^_\\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
+key_phrase_pattern = '(?:' + query_pattern + '|\\{\\{|\\}\\})'
+key_phrase_splitter = re.compile(key_phrase_pattern, re.UNICODE).findall
+
+KEY_PHRASE_OPEN = '{{'
+KEY_PHRASE_CLOSE = '}}'
+
+# FIXME: this should be folded in a single pass tokenization with the index_tokenizer
+
+
+def key_phrase_tokenizer(text, stopwords=STOPWORDS):
+    """
+    Yield tokens from a rule ``text`` including key phrases {{brace}} markers.
+    This tokenizer behaves the same as as the ``index_tokenizer`` returning also
+    KEY_PHRASE_OPEN and KEY_PHRASE_CLOSE as separate tokens so that they can be
+    used to parse key phrases.
+
+    >>> x = list(key_phrase_splitter('{{AGPL-3.0  GNU Affero License v3.0}}'))
+    >>> assert x == ['{{', 'AGPL', '3', '0', 'GNU', 'Affero', 'License', 'v3', '0', '}}'], x
+
+    >>> x = list(key_phrase_splitter('{{{AGPL{{{{Affero }}License}}0}}'))
+    >>> assert x == ['{{', 'AGPL', '{{', '{{', 'Affero', '}}', 'License', '}}', '0', '}}'], x
+
+    >>> list(index_tokenizer('')) == []
+    True
+
+    >>> x = list(index_tokenizer('{{AGPL-3.0  GNU Affero License v3.0}}'))
+    >>> assert x == ['agpl', '3', '0', 'gnu', 'affero', 'license', 'v3', '0']
+
+    >>> x = list(key_phrase_tokenizer('{{AGPL-3.0  GNU Affero License v3.0}}'))
+    >>> assert x == ['{{', 'agpl', '3', '0', 'gnu', 'affero', 'license', 'v3', '0', '}}']
+    """
+    if not text:
+        return
+    for token in key_phrase_splitter(text.lower()):
+        if token and token not in stopwords:
+            yield token
+
 
 def index_tokenizer(text, stopwords=STOPWORDS):
     """
-    Return an iterable of tokens from a unicode query text. Ignore words that
-    exist as lowercase in the `stopwords` set.
+    Return an iterable of tokens from a rule or query ``text`` using index
+    tokenizing rules. Ignore words that exist as lowercase in the ``stopwords``
+    set.
 
     For example::
     >>> list(index_tokenizer(''))
@@ -88,6 +126,68 @@ def index_tokenizer(text, stopwords=STOPWORDS):
         return []
     words = word_splitter(text.lower())
     return (token for token in words if token and token not in stopwords)
+
+
+def index_tokenizer_with_stopwords(text, stopwords=STOPWORDS):
+    """
+    Return a tuple of (tokens, stopwords_by_pos) for a rule
+    ``text`` using index tokenizing rules where tokens is a list of tokens and
+    stopwords_by_pos is a mapping of {pos: stops count} where "pos" is a token
+    position and "stops count" is the number of stopword tokens after this
+    position if any. For stopwords at the start, the position is using the magic
+    -1 key. Use the lowercase ``stopwords`` set.
+
+    For example::
+
+    >>> toks, stops = index_tokenizer_with_stopwords('')
+    >>> assert toks == [], (toks, stops)
+    >>> assert stops == {}
+
+    >>> toks, stops = index_tokenizer_with_stopwords('some Text with   spAces! + _ -')
+    >>> assert toks == ['some', 'text', 'with', 'spaces'], (toks, stops)
+    >>> assert stops == {}
+
+    >>> toks, stops = index_tokenizer_with_stopwords('{{}some }}Text with   spAces! + _ -')
+    >>> assert toks == ['some', 'text', 'with', 'spaces'], (toks, stops)
+    >>> assert stops == {}
+
+    >>> toks, stops = index_tokenizer_with_stopwords('{{Hi}}some {{}}Text with{{noth+-_!@ing}}   {{junk}}spAces! + _ -{{}}')
+    >>> assert toks == ['hi', 'some', 'text', 'with', 'noth+', 'ing', 'junk', 'spaces'], (toks, stops)
+    >>> assert stops == {}
+
+    >>> stops = set(['quot', 'lt', 'gt'])
+    >>> toks, stops = index_tokenizer_with_stopwords('some &quot&lt markup &gt&quot', stopwords=stops)
+    >>> assert toks == ['some', 'markup'], (toks, stops)
+    >>> assert stops == {0: 2, 1: 2}
+
+    >>> toks, stops = index_tokenizer_with_stopwords('{{g', stopwords=stops)
+    >>> assert toks == ['g'], (toks, stops)
+    >>> assert stops == {}
+    """
+    if not text:
+        return [], {}
+
+    tokens = []
+    tokens_append = tokens.append
+
+    # we use a defaultdict as a convenience at construction time
+    # TODO: use the actual words and not just a count
+    stopwords_by_pos = defaultdict(int)
+
+    pos = -1
+
+    for token in word_splitter(text.lower()):
+        if token:
+            if token in stopwords:
+                # If we have not yet started, then all tokens seen so far
+                # are stopwords and we keep a count of them in the magic
+                # "-1" position.
+                stopwords_by_pos[pos] += 1
+            else:
+                pos += 1
+                tokens_append(token)
+
+    return tokens, dict(stopwords_by_pos)
 
 
 def query_tokenizer(text):
