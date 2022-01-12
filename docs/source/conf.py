@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = "nexb-skeleton"
-copyright = "nexb Inc."
-author = "nexb Inc."
+copyright = "nexB Inc. and others."
+author = "AboutCode.org authors and contributors"
 
 
 # -- General configuration ---------------------------------------------------
@@ -27,7 +27,19 @@ author = "nexb Inc."
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = [
+'sphinx.ext.intersphinx',
+]
+
+# This points to aboutcode.readthedocs.io
+# In case of "undefined label" ERRORS check docs on intersphinx to troubleshoot
+# Link was created at commit - https://github.com/nexB/aboutcode/commit/faea9fcf3248f8f198844fe34d43833224ac4a83
+
+intersphinx_mapping = {
+    'aboutcode': ('https://aboutcode.readthedocs.io/en/latest/', None),
+    'scancode-workbench': ('https://scancode-workbench.readthedocs.io/en/develop/', None),
+}
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -49,6 +61,8 @@ html_theme = "sphinx_rtd_theme"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
+
+master_doc = 'index'
 
 html_context = {
     "css_files": [

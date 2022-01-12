@@ -35,7 +35,9 @@ norecursedirs = [
    "tmp",
    "venv",
    "tests/data",
-   ".eggs"
+   ".eggs",
+   "src/*/data",
+   "tests/*/data"
 ]
 
 python_files = "*.py"
@@ -46,5 +48,6 @@ python_functions = "test"
 addopts = [
     "-rfExXw",
     "--strict-markers",
+    "--ignore setup.py",
     "--doctest-modules"
 ]
