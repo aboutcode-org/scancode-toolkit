@@ -107,10 +107,7 @@ scancode_root_dir = dirname(scancode_src_dir)
 ################################################################################
 
 # tag file or env var to determined if we are in dev mode
-SCANCODE_DEV_MODE = (
-    os.getenv('SCANCODE_DEV_MODE')
-    or exists(join(scancode_root_dir, 'SCANCODE_DEV_MODE'))
-)
+SCANCODE_DEV_MODE = os.getenv('SCANCODE_DEV_MODE', False)
 
 ################################################################################
 # USAGE MODE-, INSTALLATION- and IMPORT- and RUN-SPECIFIC DIRECTORIES
