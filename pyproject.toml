@@ -48,6 +48,5 @@ python_functions = "test"
 addopts = [
     "-rfExXw",
     "--strict-markers",
-    "--ignore setup.py",
     "--doctest-modules"
 ]
