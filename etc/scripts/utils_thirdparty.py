@@ -2528,7 +2528,11 @@ def hash_requirements(dest_dir=THIRDPARTY_DIR, requirements_file="requirements.t
 ################################################################################
 
 
-def add_fetch_or_update_about_and_license_files(dest_dir=THIRDPARTY_DIR, include_remote=True):
+def add_fetch_or_update_about_and_license_files(
+    dest_dir=THIRDPARTY_DIR, 
+    include_remote=True,
+    strip_classifiers=False,
+):
     """
     Given a thirdparty dir, add missing ABOUT. LICENSE and NOTICE files using
     best efforts:
@@ -2559,6 +2563,10 @@ def add_fetch_or_update_about_and_license_files(dest_dir=THIRDPARTY_DIR, include
         for local_dist in local_package.get_distributions():
             local_dist.load_about_data(dest_dir=dest_dir)
             local_dist.set_checksums(dest_dir=dest_dir)
+
+            if strip_classifiers and "classifiers" in local_dist.extra_data:
+                local_dist.extra_data.pop("classifiers", None)
+                local_dist.save_about_and_notice_files(dest_dir)
 
             # if has key data we may look to improve later, but we can move on
             if local_dist.has_key_metadata():

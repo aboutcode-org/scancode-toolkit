@@ -41,12 +41,18 @@ import utils_thirdparty
     "do not download them either). Instead create a JSON lines log file with "
     "one entry for each build suitable to fetch the artifacts at a later time.",
 )
+@click.option(
+    "--strip-classifiers",
+    is_flag=True,
+    help="Remove danglingf classifiers",
+)
 @click.help_option("-h", "--help")
 def fix_thirdparty_dir(
     thirdparty_dir,
     build_wheels,
     build_remotely,
     remote_build_log_file,
+    strip_classifiers,
 ):
     """
     Fix a thirdparty directory of dependent package wheels and sdist.
@@ -61,34 +67,44 @@ def fix_thirdparty_dir(
     Optionally build missing binary wheels for all supported OS and Python
     version combos locally or remotely.
     """
-    print("***FETCH*** MISSING WHEELS")
-    package_envts_not_fetched = utils_thirdparty.fetch_missing_wheels(dest_dir=thirdparty_dir)
-    print("***FETCH*** MISSING SOURCES")
-    src_name_ver_not_fetched = utils_thirdparty.fetch_missing_sources(dest_dir=thirdparty_dir)
-
-    package_envts_not_built = []
-    if build_wheels:
-        print("***BUILD*** MISSING WHEELS")
-        results = utils_thirdparty.build_missing_wheels(
-            packages_and_envts=package_envts_not_fetched,
-            build_remotely=build_remotely,
-            remote_build_log_file=remote_build_log_file,
+    if strip_classifiers:
+        print("***ADD*** ABOUT AND LICENSES, STRIP CLASSIFIERS")
+        utils_thirdparty.add_fetch_or_update_about_and_license_files(
             dest_dir=thirdparty_dir,
+            strip_classifiers=strip_classifiers,
         )
-        package_envts_not_built, _wheel_filenames_built = results
-
-    print("***ADD*** ABOUT AND LICENSES")
-    utils_thirdparty.add_fetch_or_update_about_and_license_files(dest_dir=thirdparty_dir)
-
-    # report issues
-    for name, version in src_name_ver_not_fetched:
-        print(f"{name}=={version}: Failed to fetch source distribution.")
-
-    for package, envt in package_envts_not_built:
-        print(
-            f"{package.name}=={package.version}: Failed to build wheel "
-            f"on {envt.operating_system} for Python {envt.python_version}"
+    else:
+        print("***FETCH*** MISSING WHEELS")
+        package_envts_not_fetched = utils_thirdparty.fetch_missing_wheels(dest_dir=thirdparty_dir)
+        print("***FETCH*** MISSING SOURCES")
+        src_name_ver_not_fetched = utils_thirdparty.fetch_missing_sources(dest_dir=thirdparty_dir)
+    
+        package_envts_not_built = []
+        if build_wheels:
+            print("***BUILD*** MISSING WHEELS")
+            results = utils_thirdparty.build_missing_wheels(
+                packages_and_envts=package_envts_not_fetched,
+                build_remotely=build_remotely,
+                remote_build_log_file=remote_build_log_file,
+                dest_dir=thirdparty_dir,
+            )
+            package_envts_not_built, _wheel_filenames_built = results
+    
+        print("***ADD*** ABOUT AND LICENSES")
+        utils_thirdparty.add_fetch_or_update_about_and_license_files(
+            dest_dir=thirdparty_dir,
+            strip_classifiers=strip_classifiers,
         )
+
+        # report issues
+        for name, version in src_name_ver_not_fetched:
+            print(f"{name}=={version}: Failed to fetch source distribution.")
+    
+        for package, envt in package_envts_not_built:
+            print(
+                f"{package.name}=={package.version}: Failed to build wheel "
+                f"on {envt.operating_system} for Python {envt.python_version}"
+            )
 
     print("***FIND PROBLEMS***")
     utils_thirdparty.find_problems(dest_dir=thirdparty_dir)

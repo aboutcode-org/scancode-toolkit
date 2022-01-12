@@ -8,11 +8,13 @@
 # See https://github.com/nexB/skeleton for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+import re
 import subprocess
 
 """
 Utilities to manage requirements files and call pip.
-NOTE: this should use ONLY the standard library and not import anything else.
+NOTE: this should use ONLY the standard library and not import anything else
+becasue this is used for boostrapping.
 """
 
 
@@ -27,26 +29,67 @@ def load_requirements(requirements_file="requirements.txt", force_pinned=True):
     return get_required_name_versions(req_lines, force_pinned)
 
 
-def get_required_name_versions(requirement_lines, force_pinned=True):
+def get_required_name_versions(
+    requirement_lines,
+    force_pinned=True,
+):
     """
     Yield required (name, version) tuples given a`requirement_lines` iterable of
     requirement text lines. Every requirement versions must be pinned if
     `force_pinned` is True. Otherwise un-pinned requirements are returned with a
-    None version
+    None version.
+
     """
     for req_line in requirement_lines:
         req_line = req_line.strip()
         if not req_line or req_line.startswith("#"):
             continue
-        if "==" not in req_line and force_pinned:
-            raise Exception(f"Requirement version is not pinned: {req_line}")
+        if force_pinned:
+            if "==" not in req_line:
+                raise Exception(f"Requirement version is not pinned: {req_line}")
             name = req_line
             version = None
         else:
-            name, _, version = req_line.partition("==")
-            name = name.lower().strip()
-            version = version.lower().strip()
+            if req_line.startswith("-"):
+                print(f"Requirement skipped, is not supported: {req_line}")
+
+            if "==" in req_line:
+                name, _, version = req_line.partition("==")
+                version = version.lower().strip()
+            else:
+                # FIXME: we do not support unpinned requirements yet!
+                name = strip_reqs(req_line)
+                version = None
+
+        name = name.lower().strip()
         yield name, version
+
+
+def strip_reqs(line):
+    """
+    Return a name given a pip reuirement text ``line` striping version and
+    requirements.
+
+    For example::
+
+    >>> s = strip_reqs("foo <=12, >=13,!=12.6")
+    >>> assert s == "foo"
+    """
+    if "--" in line:
+        raise Exception(f"Unsupported requirement style: {line}")
+
+    line = line.strip()
+
+    ops = "><!=~;, []"
+
+    def has_ops(l):
+        return any(op in l for op in ops)
+
+    if not has_ops:
+        return  line
+
+    splitter = re.compile(r"[><!=~;, \[\]]+").split
+    return splitter(line)[0]
 
 
 def parse_requires(requires):
