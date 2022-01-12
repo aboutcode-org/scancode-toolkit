@@ -1,7 +1,8 @@
 
 ################################################################################
-# We use Azure to run the full tests suites on Pythons 3.6 and above.
-# on Windows, macOS and Linux (various distro) only on 64 bits
+# We use Azure to run the full tests suites on multiple Python 3.x
+# on multiple Windows, macOS and Linux versions all on 64 bits
+# These jobs are using VMs with Azure-provided Python builds
 ################################################################################
 
 jobs:
@@ -354,5 +355,3 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
               all: bin/pip install --force-reinstall --upgrade -e .[dev] && bin/pytest -n 2 -vvs  tests/scancode/test_cli.py
-
-

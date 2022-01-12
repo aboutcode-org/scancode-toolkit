@@ -47,7 +47,7 @@ import utils_pip_compatibility_tags
     ],
 )
 def test_version_info_to_nodot(version_info, expected):
-    actual = pip_compatibility_tags.version_info_to_nodot(version_info)
+    actual = utils_pip_compatibility_tags.version_info_to_nodot(version_info)
     assert actual == expected
 
 
@@ -95,7 +95,7 @@ class TestManylinux2010Tags(object):
         Specifying manylinux2010 implies manylinux1.
         """
         groups = {}
-        supported = pip_compatibility_tags.get_supported(platforms=[manylinux2010])
+        supported = utils_pip_compatibility_tags.get_supported(platforms=[manylinux2010])
         for tag in supported:
             groups.setdefault((tag.interpreter, tag.abi), []).append(tag.platform)
 
@@ -118,7 +118,7 @@ class TestManylinux2014Tags(object):
         Specifying manylinux2014 implies manylinux2010/manylinux1.
         """
         groups = {}
-        supported = pip_compatibility_tags.get_supported(platforms=[manylinuxA])
+        supported = utils_pip_compatibility_tags.get_supported(platforms=[manylinuxA])
         for tag in supported:
             groups.setdefault((tag.interpreter, tag.abi), []).append(tag.platform)
 

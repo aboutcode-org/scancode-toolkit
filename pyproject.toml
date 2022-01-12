@@ -2,3 +2,52 @@
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools_scm]
+# this is used populated when creating a git archive
+# and when there is .git dir and/or there is no git installed
+fallback_version = "9999.$Format:%h-%cs$"
+
+[tool.pytest.ini_options]
+norecursedirs = [
+   ".git",
+   "bin",
+   "dist",
+   "build",
+   "_build",
+   "dist",
+   "etc",
+   "local",
+   "ci",
+   "docs",
+   "man",
+   "share",
+   "samples",
+   ".cache",
+   ".settings",
+   "Include",
+   "include",
+   "Lib",
+   "lib",
+   "lib64",
+   "Lib64",
+   "Scripts",
+   "thirdparty",
+   "tmp",
+   "venv",
+   "tests/data",
+   ".eggs",
+   "src/*/data",
+   "tests/*/data"
+]
+
+python_files = "*.py"
+
+python_classes = "Test"
+python_functions = "test"
+
+addopts = [
+    "-rfExXw",
+    "--strict-markers",
+    "--ignore setup.py",
+    "--doctest-modules"
+]

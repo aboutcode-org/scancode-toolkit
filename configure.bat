@@ -9,7 +9,7 @@
 
 
 @rem ################################
-@rem # A configuration script to set things up: 
+@rem # A configuration script to set things up:
 @rem # create a virtualenv and install or update thirdparty packages.
 @rem # Source this script for initial configuration
 @rem # Use configure --help for details
@@ -25,13 +25,13 @@
 
 @rem # Requirement arguments passed to pip and used by default or with --dev.
 set "REQUIREMENTS=--editable . --constraint requirements.txt"
-set "DEV_REQUIREMENTS=--editable .[dev] --editable .[packages] --constraint requirements.txt --constraint requirements-dev.txt"
+set "DEV_REQUIREMENTS=--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
 
 @rem # where we create a virtualenv
-set "VIRTUALENV_DIR=."
+set "VIRTUALENV_DIR=venv"
 
 @rem # Cleanable files and directories to delete with the --clean option
-set "CLEANABLE=build Scripts Lib include tcl local .Python .eggs pip-selfcheck.json src/scancode_toolkit.egg-info SCANCODE_DEV_MODE man"
+set "CLEANABLE=build venv"
 
 @rem # extra  arguments passed to pip
 set "PIP_EXTRA_ARGS= "
@@ -48,19 +48,17 @@ set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
 
 
 @rem ################################
-@rem # scancode-specific: Thirdparty package locations and index handling
-@rem # Do we have thirdparty/files? use the mit.LICENSE as a proxy
-if exist ""%CFG_ROOT_DIR%\thirdparty\mit.LICENSE"" (
-    set "LINKS=%CFG_ROOT_DIR%\thirdparty"
-) else (
-    set "LINKS=https://thirdparty.aboutcode.org/pypi"
+@rem # Thirdparty package locations and index handling
+if exist ""%CFG_ROOT_DIR%\thirdparty"" (
+    set "PIP_EXTRA_ARGS=--find-links %CFG_ROOT_DIR%\thirdparty "
 )
-set "PIP_EXTRA_ARGS=--no-index --find-links %LINKS%"
+
+set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS% --find-links https://thirdparty.aboutcode.org/pypi" & %INDEX_ARG%
 @rem ################################
 
 
 @rem ################################
-@rem # Set the quiet flag to empty if not defined 
+@rem # Set the quiet flag to empty if not defined
 if not defined CFG_QUIET (
     set "CFG_QUIET= "
 )
@@ -70,25 +68,32 @@ if not defined CFG_QUIET (
 @rem # Main command line entry point
 set CFG_DEV_MODE=0
 set "CFG_REQUIREMENTS=%REQUIREMENTS%"
+set "NO_INDEX=--no-index"
 
-if "%1" EQU "--help"   (goto cli_help)
-if "%1" EQU "--clean"  (goto clean)
-if "%1" EQU "--dev"    (
-    set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
-    set CFG_DEV_MODE=1
+:again
+if not "%1" == "" (
+    if "%1" EQU "--help"   (goto cli_help)
+    if "%1" EQU "--clean"  (goto clean)
+    if "%1" EQU "--dev"    (
+        set "CFG_REQUIREMENTS=%DEV_REQUIREMENTS%"
+        set CFG_DEV_MODE=1
+    )
+    if "%1" EQU "--init"   (
+        set "NO_INDEX= "
+    )
+    shift
+    goto again
 )
-if "%1" EQU "--python"  (
-    echo "The --python is now DEPRECATED. Use the PYTHON_EXECUTABLE environment
-    echo "variable instead. Run configure --help for details."
-    exit /b 0
-)
+
+set "PIP_EXTRA_ARGS=%PIP_EXTRA_ARGS% %NO_INDEX%"
+
 
 @rem ################################
 @rem # find a proper Python to run
 @rem # Use environment variables or a file if available.
 @rem # Otherwise the latest Python by default.
 if not defined PYTHON_EXECUTABLE (
-    @rem # check for a file named PYTHON_EXECUTABLE 
+    @rem # check for a file named PYTHON_EXECUTABLE
     if exist ""%CFG_ROOT_DIR%\PYTHON_EXECUTABLE"" (
         set /p PYTHON_EXECUTABLE=<""%CFG_ROOT_DIR%\PYTHON_EXECUTABLE""
     ) else (
@@ -154,18 +159,15 @@ if %ERRORLEVEL% neq 0 (
     %PIP_EXTRA_ARGS% ^
     %CFG_REQUIREMENTS%
 
+@rem # Create junction to bin to have the same directory between linux and windows
+if exist "%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\bin" (
+    rmdir /s /q "%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\bin"
+)
+mklink /J %CFG_ROOT_DIR%\%VIRTUALENV_DIR%\bin %CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts
+
 if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
-
-
-@rem ################################
-@rem # scancode-specific: Setup development mode
-if "%CFG_DEV_MODE%" == 1 (
-    @rem # Add development tag file to auto-regen license index on file changes
-    echo.>%CFG_ROOT_DIR%\SCANCODE_DEV_MODE
-)
-@rem ################################
 
 exit /b 0
 
@@ -177,10 +179,14 @@ exit /b 0
     echo "  usage: configure [options]"
     echo " "
     echo The default is to configure for regular use. Use --dev for development.
+    echo Use the --init option if starting a new project and the project
+    echo dependencies are not available on thirdparty.aboutcode.org/pypi/
+    echo and requirements.txt and/or requirements-dev.txt has not been generated.
     echo " "
     echo The options are:
     echo " --clean: clean built and installed files and exit."
     echo " --dev:   configure the environment for development."
+    echo " --init:  pull dependencies from PyPI. Used when first setting up a project."
     echo " --help:  display this help message and exit."
     echo " "
     echo By default, the python interpreter version found in the path is used.
