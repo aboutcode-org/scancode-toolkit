@@ -31,11 +31,22 @@ import utils_thirdparty
     is_flag=True,
     help="Build missing wheels remotely.",
 )
+@click.option(
+    "--remote-build-log-file",
+    type=click.Path(writable=True),
+    default=None,
+    metavar="LOG-FILE",
+    help="Path to an optional log file where to list remote builds download URLs. "
+    "If provided, do not wait for remote builds to complete (and therefore, "
+    "do not download them either). Instead create a JSON lines log file with "
+    "one entry for each build suitable to fetch the artifacts at a later time.",
+)
 @click.help_option("-h", "--help")
 def fix_thirdparty_dir(
     thirdparty_dir,
     build_wheels,
     build_remotely,
+    remote_build_log_file,
 ):
     """
     Fix a thirdparty directory of dependent package wheels and sdist.
@@ -58,11 +69,13 @@ def fix_thirdparty_dir(
     package_envts_not_built = []
     if build_wheels:
         print("***BUILD*** MISSING WHEELS")
-        package_envts_not_built, _wheel_filenames_built = utils_thirdparty.build_missing_wheels(
+        results = utils_thirdparty.build_missing_wheels(
             packages_and_envts=package_envts_not_fetched,
             build_remotely=build_remotely,
+            remote_build_log_file=remote_build_log_file,
             dest_dir=thirdparty_dir,
         )
+        package_envts_not_built, _wheel_filenames_built = results
 
     print("***ADD*** ABOUT AND LICENSES")
     utils_thirdparty.add_fetch_or_update_about_and_license_files(dest_dir=thirdparty_dir)

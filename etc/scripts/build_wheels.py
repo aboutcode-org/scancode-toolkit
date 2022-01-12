@@ -70,6 +70,16 @@ import utils_thirdparty
     help="Also include all dependent wheels.",
 )
 @click.option(
+    "--remote-build-log-file",
+    type=click.Path(writable=True),
+    default=None,
+    metavar="LOG-FILE",
+    help="Path to an optional log file where to list remote builds download URLs. "
+    "If provided, do not wait for remote builds to complete (and therefore, "
+    "do not download them either). Instead create a JSON lines log file with "
+    "one entry for each build suitable to fetch the artifacts at a later time.",
+)
+@click.option(
     "--verbose",
     is_flag=True,
     help="Provide verbose output.",
@@ -83,6 +93,7 @@ def build_wheels(
     operating_system,
     with_deps,
     build_remotely,
+    remote_build_log_file,
     verbose,
 ):
     """
@@ -102,6 +113,7 @@ def build_wheels(
         build_remotely=build_remotely,
         with_deps=with_deps,
         verbose=verbose,
+        remote_build_log_file=remote_build_log_file,
     )
 
 

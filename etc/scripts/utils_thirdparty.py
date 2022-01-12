@@ -89,21 +89,39 @@ TRACE = False
 # Supported environments
 PYTHON_VERSIONS = "36", "37", "38", "39", "310"
 
+PYTHON_DOT_VERSIONS_BY_VER = {
+    "36": "3.6",
+    "37": "3.7",
+    "38": "3.8",
+    "39": "3.9",
+    "310": "3.10",
+}
+
+def get_python_dot_version(version):
+    """
+    Return a dot version from a plain, non-dot version.
+    """
+    return PYTHON_DOT_VERSIONS_BY_VER[version]
+
 ABIS_BY_PYTHON_VERSION = {
     "36": ["cp36", "cp36m"],
     "37": ["cp37", "cp37m"],
     "38": ["cp38", "cp38m"],
     "39": ["cp39", "cp39m"],
     "310": ["cp310", "cp310m"],
+    "36": ["cp36", "abi3"],
+    "37": ["cp37", "abi3"],
+    "38": ["cp38", "abi3"],
+    "39": ["cp39", "abi3"],
+    "310": ["cp310", "abi3"],
 }
 
 PLATFORMS_BY_OS = {
     "linux": [
         "linux_x86_64",
         "manylinux1_x86_64",
-        "manylinux2014_x86_64",
         "manylinux2010_x86_64",
-        "manylinux_2_12_x86_64",
+        "manylinux2014_x86_64",
     ],
     "macos": [
         "macosx_10_6_intel",
@@ -122,8 +140,8 @@ PLATFORMS_BY_OS = {
         "macosx_10_14_x86_64",
         "macosx_10_15_intel",
         "macosx_10_15_x86_64",
-        "macosx_10_15_x86_64",
         "macosx_11_0_x86_64",
+        "macosx_11_intel",
         # 'macosx_11_0_arm64',
     ],
     "windows": [
@@ -156,6 +174,10 @@ PYPI_SIMPLE_URL = "https://pypi.org/simple"
 LICENSEDB_API_URL = "https://scancode-licensedb.aboutcode.org"
 
 LICENSING = license_expression.Licensing()
+
+# time to wait build for in seconds, as a string
+# 0 measn no wait
+DEFAULT_ROMP_BUILD_WAIT = "5"
 
 ################################################################################
 #
@@ -1478,7 +1500,8 @@ class PypiPackage(NameVer):
         else:
             fetched_filenames = set()
 
-        for wheel in self.get_supported_wheels(environment):
+        supported_wheels = list(self.get_supported_wheels(environment))
+        for wheel in supported_wheels:
 
             if wheel.filename not in fetched_filenames:
                 fetch_and_save_path_or_url(
@@ -2212,6 +2235,7 @@ def build_missing_wheels(
     build_remotely=False,
     with_deps=False,
     dest_dir=THIRDPARTY_DIR,
+    remote_build_log_file=None,
 ):
     """
     Build all wheels in a list of tuple (Package, Environment) and save in
@@ -2237,8 +2261,9 @@ def build_missing_wheels(
                 build_remotely=build_remotely,
                 python_versions=python_versions,
                 operating_systems=operating_systems,
-                verbose=False,
+                verbose=TRACE,
                 dest_dir=dest_dir,
+                remote_build_log_file=remote_build_log_file,
             )
             print(".")
         except Exception as e:
@@ -2642,26 +2667,32 @@ def add_fetch_or_update_about_and_license_files(dest_dir=THIRDPARTY_DIR, include
 ################################################################################
 
 
-def call(args):
+def call(args, verbose=TRACE):
     """
-    Call args in a subprocess and display output on the fly.
+    Call args in a subprocess and display output on the fly if ``trace`` is True.
     Return or raise stdout, stderr, returncode
     """
     if TRACE:
         print("Calling:", " ".join(args))
     with subprocess.Popen(
-        args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, encoding="utf-8"
+        args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding="utf-8"
     ) as process:
 
+        stdouts = []
         while True:
             line = process.stdout.readline()
             if not line and process.poll() is not None:
                 break
-            if TRACE:
+            stdouts.append(line)
+            if verbose:
                 print(line.rstrip(), flush=True)
 
         stdout, stderr = process.communicate()
+        if not stdout.strip():
+            stdout = "\n".join(stdouts)
+
         returncode = process.returncode
+
         if returncode == 0:
             return returncode, stdout, stderr
         else:
@@ -2676,7 +2707,8 @@ def add_or_upgrade_built_wheels(
     dest_dir=THIRDPARTY_DIR,
     build_remotely=False,
     with_deps=False,
-    verbose=False,
+    verbose=TRACE,
+    remote_build_log_file=None,
 ):
     """
     Add or update package `name` and `version` as a binary wheel saved in
@@ -2689,10 +2721,16 @@ def add_or_upgrade_built_wheels(
 
     Include wheels for all dependencies if `with_deps` is True.
     Build remotely is `build_remotely` is True.
+    Do not wait for build completion and log to ``remote_build_log_file``
+    file path if provided.
     """
     assert name, "Name is required"
     ver = version and f"=={version}" or ""
     print(f"\nAdding wheels for package: {name}{ver}")
+
+    if verbose:
+        print("python_versions:", python_versions)
+        print("operating_systems:", operating_systems)
 
     wheel_filenames = []
     # a mapping of {req specifier: {mapping build_wheels kwargs}}
@@ -2725,6 +2763,8 @@ def add_or_upgrade_built_wheels(
         wheel_filename = fetch_package_wheel(
             name=name, version=version, environment=environment, dest_dir=dest_dir
         )
+        if verbose:
+            print("    fetching package wheel:", wheel_filename)
         if wheel_filename:
             wheel_filenames.append(wheel_filename)
 
@@ -2744,6 +2784,7 @@ def add_or_upgrade_built_wheels(
                 build_remotely=build_remotely,
                 with_deps=with_deps,
                 verbose=verbose,
+                remote_build_log_file=remote_build_log_file,
             )
 
     for build_wheels_kwargs in wheels_to_build.values():
@@ -2761,6 +2802,7 @@ def build_wheels(
     build_remotely=False,
     with_deps=False,
     verbose=False,
+    remote_build_log_file=None,
 ):
     """
     Given a pip `requirements_specifier` string (such as package names or as
@@ -2772,6 +2814,9 @@ def build_wheels(
 
     First try to build locally to process pure Python wheels, and fall back to
     build remotey on all requested Pythons and operating systems.
+
+    Do not wait for build completion and log to ``remote_build_log_file``
+    file path if provided.
     """
     all_pure, builds = build_wheels_locally_if_pure_python(
         requirements_specifier=requirements_specifier,
@@ -2793,6 +2838,7 @@ def build_wheels(
             operating_systems=operating_systems,
             verbose=verbose,
             dest_dir=dest_dir,
+            remote_build_log_file=remote_build_log_file,
         )
         builds.extend(remote_builds)
 
@@ -2806,6 +2852,7 @@ def build_wheels_remotely_on_multiple_platforms(
     operating_systems=PLATFORMS_BY_OS,
     verbose=False,
     dest_dir=THIRDPARTY_DIR,
+    remote_build_log_file=None,
 ):
     """
     Given pip `requirements_specifier` string (such as package names or as
@@ -2813,35 +2860,43 @@ def build_wheels_remotely_on_multiple_platforms(
     all dependencies for all `python_versions` and `operating_systems`
     combinations and save them back in `dest_dir` and return a list of built
     wheel file names.
+
+    Do not wait for build completion and log to ``remote_build_log_file``
+    file path if provided.
     """
     check_romp_is_configured()
     pyos_options = get_romp_pyos_options(python_versions, operating_systems)
     deps = "" if with_deps else "--no-deps"
     verbose = "--verbose" if verbose else ""
 
-    romp_args = (
-        [
-            "romp",
-            "--interpreter",
-            "cpython",
-            "--architecture",
-            "x86_64",
-            "--check-period",
-            "5",  # in seconds
-        ]
-        + pyos_options
-        + [
-            "--artifact-paths",
-            "*.whl",
-            "--artifact",
-            "artifacts.tar.gz",
-            "--command",
-            # create a virtualenv, upgrade pip
-            #            f'python -m ensurepip --user --upgrade; '
-            f"python -m pip {verbose} install  --user --upgrade pip setuptools wheel; "
-            f"python -m pip {verbose} wheel {deps} {requirements_specifier}",
-        ]
-    )
+    if remote_build_log_file:
+        # zero seconds, no wait, log to file instead
+        wait_build_for = "0"
+    else:
+        wait_build_for = DEFAULT_ROMP_BUILD_WAIT
+
+    romp_args = [
+        "romp",
+        "--interpreter",
+        "cpython",
+        "--architecture",
+        "x86_64",
+        "--check-period",
+        wait_build_for,  # in seconds
+    ]
+
+    if remote_build_log_file:
+        romp_args += ["--build-log-file", remote_build_log_file]
+
+    romp_args += pyos_options + [
+        "--artifact-paths",
+        "*.whl",
+        "--artifact",
+        "artifacts.tar.gz",
+        "--command",
+        f"python -m pip {verbose} install  --user --upgrade pip setuptools wheel; "
+        f"python -m pip {verbose} wheel {deps} {requirements_specifier}",
+    ]
 
     if verbose:
         romp_args.append("--verbose")
@@ -2849,10 +2904,54 @@ def build_wheels_remotely_on_multiple_platforms(
     print(f"Building wheels for: {requirements_specifier}")
     print(f"Using command:", " ".join(romp_args))
     call(romp_args)
+    wheel_filenames = []
+    if not remote_build_log_file:
+        wheel_filenames = extract_tar("artifacts.tar.gz", dest_dir)
+        for wfn in wheel_filenames:
+            print(f" built wheel: {wfn}")
+    return wheel_filenames
 
-    wheel_filenames = extract_tar("artifacts.tar.gz", dest_dir)
-    for wfn in wheel_filenames:
-        print(f" built wheel: {wfn}")
+
+def fetch_remotely_built_wheels(
+    remote_build_log_file,
+    dest_dir=THIRDPARTY_DIR,
+    no_wait=False,
+    verbose=False,
+):
+    """
+    Given a ``remote_build_log_file`` file path with a JSON lines log of a
+    remote build, fetch the built wheels and move them to ``dest_dir``. Return a
+    list of built wheel file names.
+    """
+    wait = "0" if no_wait else DEFAULT_ROMP_BUILD_WAIT  # in seconds
+
+    romp_args = [
+        "romp-fetch",
+        "--build-log-file",
+        remote_build_log_file,
+        "--check-period",
+        wait,
+    ]
+
+    if verbose:
+        romp_args.append("--verbose")
+
+    print(f"Fetching built wheels from log file: {remote_build_log_file}")
+    print(f"Using command:", " ".join(romp_args))
+
+    call(romp_args, verbose=verbose)
+
+    wheel_filenames = []
+
+    for art in os.listdir(os.getcwd()):
+        if not art.endswith("artifacts.tar.gz") or not os.path.getsize(art):
+            continue
+
+        print(f"  Processing artifact archive: {art}")
+        wheel_fns = extract_tar(art, dest_dir)
+        for wfn in wheel_fns:
+            print(f"   Retrieved built wheel: {wfn}")
+        wheel_filenames.extend(wheel_fns)
     return wheel_filenames
 
 
@@ -2864,11 +2963,11 @@ def get_romp_pyos_options(
     Return a list of CLI options for romp
     For example:
     >>> expected = ['--version', '3.6', '--version', '3.7', '--version', '3.8',
-    ... '--version', '3.9', '--platform', 'linux', '--platform', 'macos',
-    ... '--platform', 'windows']
+    ... '--version', '3.9', '--version', '3.10', '--platform', 'linux',
+    ... '--platform', 'macos', '--platform', 'windows']
     >>> assert get_romp_pyos_options() == expected
     """
-    python_dot_versions = [".".join(pv) for pv in sorted(set(python_versions))]
+    python_dot_versions = [get_python_dot_version(pv) for pv in sorted(set(python_versions))]
     pyos_options = list(
         itertools.chain.from_iterable(("--version", ver) for ver in python_dot_versions)
     )
@@ -3029,12 +3128,16 @@ def fetch_package_wheel(name, version, environment, dest_dir=THIRDPARTY_DIR):
     """
     wheel_filename = None
     remote_package = get_remote_package(name=name, version=version)
+    if TRACE:
+        print("    remote_package:", remote_package)
     if remote_package:
         wheel_filename = remote_package.fetch_wheel(environment=environment, dest_dir=dest_dir)
         if wheel_filename:
             return wheel_filename
 
     pypi_package = get_pypi_package(name=name, version=version)
+    if TRACE:
+        print("    pypi_package:", pypi_package)
     if pypi_package:
         wheel_filename = pypi_package.fetch_wheel(environment=environment, dest_dir=dest_dir)
     return wheel_filename
