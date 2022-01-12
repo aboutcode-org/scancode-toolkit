@@ -1,100 +1,102 @@
-{
-  "type": "opam",
-  "namespace": null,
-  "name": "js_of_ocaml",
-  "version": null,
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Ocaml",
-  "description": "Compiler from OCaml bytecode to Javascript\nJs_of_ocaml is a compiler from OCaml bytecode to JavaScript. It makes it possible to run pure OCaml programs in JavaScript environment like browsers and Node.js",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Ocsigen team",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "maintainer",
-      "name": null,
-      "email": "dev@ocsigen.org",
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": "http://ocsigen.github.io/js_of_ocaml",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": "https://github.com/ocsigen/js_of_ocaml/issues",
-  "code_view_url": null,
-  "vcs_url": "git+https://github.com/ocsigen/js_of_ocaml.git",
-  "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:opam/ocaml",
-      "requirement": ">= 4.02.0",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/dune",
-      "requirement": ">= 1.11.1",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/ocaml-migrate-parsetree",
-      "requirement": ">= 1.4",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/ppx_tools_versioned",
-      "requirement": ">= 5.2.3",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/uchar",
-      "requirement": "",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/js_of_ocaml-compiler",
-      "requirement": "= version",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:opam/js_of_ocaml",
-  "repository_homepage_url": "https://opam.ocaml.org/packages/js_of_ocaml",
-  "repository_download_url": null,
-  "api_data_url": null
-}
+[  
+  {
+    "type": "opam",
+    "namespace": null,
+    "name": "js_of_ocaml",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ocaml",
+    "description": "Compiler from OCaml bytecode to Javascript\nJs_of_ocaml is a compiler from OCaml bytecode to JavaScript. It makes it possible to run pure OCaml programs in JavaScript environment like browsers and Node.js",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Ocsigen team",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": null,
+        "email": "dev@ocsigen.org",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "http://ocsigen.github.io/js_of_ocaml",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": "https://github.com/ocsigen/js_of_ocaml/issues",
+    "code_view_url": null,
+    "vcs_url": "git+https://github.com/ocsigen/js_of_ocaml.git",
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:opam/ocaml",
+        "requirement": ">= 4.02.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/dune",
+        "requirement": ">= 1.11.1",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/ocaml-migrate-parsetree",
+        "requirement": ">= 1.4",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/ppx_tools_versioned",
+        "requirement": ">= 5.2.3",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/uchar",
+        "requirement": "",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:opam/js_of_ocaml-compiler",
+        "requirement": "= version",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:opam/js_of_ocaml",
+    "repository_homepage_url": "https://opam.ocaml.org/packages/js_of_ocaml",
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

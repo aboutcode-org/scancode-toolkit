@@ -16,15 +16,14 @@ import click
 
 import scancode_config
 
-
 # hack to be able to load testxx utilities. The test code is not in the path otherwise
 cluecode_test_dir = path.join(scancode_config.scancode_root_dir, "tests", "cluecode")
 sys.path.append(cluecode_test_dir)
 
 import cluecode_test_utils  # NOQA
 
-
 TRACE = True
+
 
 
 def load_data(location="00-new-copyright-tests.txt"):
@@ -72,11 +71,8 @@ def build_dupe_index():
 
 
 @click.command()
-@click.argument(
-    "copyrights_file",
-    type=click.Path(),
-    metavar="FILE",
-)
+@click.argument('copyrights_file', type=click.Path(), metavar='FILE',)
+@click.help_option('-h', '--help')
 @click.help_option("-h", "--help")
 def cli(copyrights_file):
     """
@@ -86,6 +82,8 @@ def cli(copyrights_file):
         Copyright (c) All the Raige Dog Salon
     """
     from cluecode.copyrights import detect_copyrights
+    from cluecode.copyrights import Detection
+
     from cluecode_test_utils import CopyrightTest  # NOQA
 
     test_data_dir = path.join(cluecode_test_utils.test_env.test_data_dir, "generated")
@@ -105,16 +103,8 @@ def cli(copyrights_file):
             tf.write(text)
 
         # collect expected values
-        copyrights = []
-        holders = []
-        authors = []
-        for dtype, value, _start, _end in detect_copyrights([text]):
-            if dtype == "copyrights":
-                copyrights.append(value)
-            elif dtype == "holders":
-                holders.append(value)
-            elif dtype == "authors":
-                authors.append(value)
+        detections = detect_copyrights(test_file_loc)
+        copyrights, holders, authors = Detection.split_values(detections)
 
         test = CopyrightTest(
             what=["holders", "copyrights", "authors"],

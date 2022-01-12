@@ -12,8 +12,8 @@ matches:
     start_line: 23
     end_line: 45
     matcher: 2-aho
-    rule_length: '199'
-    matched_length: '199'
+    rule_length: 200
+    matched_length: 200
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: x11-fsf.LICENSE
@@ -127,8 +127,8 @@ matches:
     start_line: 105
     end_line: 127
     matcher: 2-aho
-    rule_length: '197'
-    matched_length: '197'
+    rule_length: '199'
+    matched_length: '199'
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: x11-fsf_7.RULE

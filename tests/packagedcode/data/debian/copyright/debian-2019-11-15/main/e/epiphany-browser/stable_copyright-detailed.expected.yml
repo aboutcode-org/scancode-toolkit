@@ -294,8 +294,8 @@ matches:
     start_line: 182
     end_line: 488
     matcher: 3-seq
-    rule_length: 3137
-    matched_length: 3068
+    rule_length: 3143
+    matched_length: 3074
     match_coverage: '97.8'
     rule_relevance: 100
     identifier: cc-by-sa-3.0_35.RULE
@@ -633,8 +633,8 @@ matches:
     start_line: 493
     end_line: 914
     matcher: 3-seq
-    rule_length: 2762
-    matched_length: 2757
+    rule_length: 2771
+    matched_length: 2766
     match_coverage: '99.82'
     rule_relevance: 100
     identifier: cc-by-sa-4.0.LICENSE

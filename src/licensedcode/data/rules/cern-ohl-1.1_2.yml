@@ -4,6 +4,6 @@ notes: from https://ohwr.org/project/cernohl/uploads/33a541feca58613f9b5b6f837f5
 ignorable_copyrights:
     - copyright of CERN.
 ignorable_holders:
-    - CERN.
+    - CERN
 ignorable_urls:
     - http://www.ohwr.org/

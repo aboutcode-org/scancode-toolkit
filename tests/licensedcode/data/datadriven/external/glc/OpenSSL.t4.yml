@@ -1,5 +1,4 @@
 license_expressions:
-  - openssl-ssleay
   - openssl
 notes: |
   License test derived from a file of the BSD-licensed repository at:

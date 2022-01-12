@@ -1,0 +1,10 @@
+key: adobe-color-profile-bundling
+short_name: Adobe Color Profile Bundling agreement
+name: Adobe Color Profile Bundling agreement
+category: Proprietary Free
+owner: Adobe Systems
+homepage_url: https://www.adobe.com/support/downloads/iccprofiles/icc_eula_win_dist.html
+spdx_license_key: LicenseRef-scancode-adobe-color-profile-bundling
+ignorable_urls:
+    - http://partners.adobe.com/
+    - http://www.adobe.com/

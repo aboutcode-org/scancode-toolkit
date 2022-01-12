@@ -6,4 +6,5 @@ owner: Unspecified
 notes: this is a generic license exception notice. Actual terms are most commonly related to
     rare, one-off extra permission to the A/L/GPL licenses
 is_exception: yes
+is_generic: yes
 spdx_license_key: LicenseRef-scancode-generic-exception

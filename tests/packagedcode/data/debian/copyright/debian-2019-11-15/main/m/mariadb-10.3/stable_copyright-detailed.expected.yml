@@ -822,8 +822,8 @@ matches:
     start_line: 962
     end_line: 1088
     matcher: 1-hash
-    rule_length: 958
-    matched_length: 958
+    rule_length: 960
+    matched_length: 960
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: artistic-perl-1.0.LICENSE

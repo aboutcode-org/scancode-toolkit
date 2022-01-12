@@ -59,20 +59,11 @@ See https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md
 
 @attr.s()
 class PubspecPackage(models.Package):
-    metafiles = ('pubspec.yaml', 'pubspec.lock',)
-    extensions = ('.yaml', '.lock',)
     default_type = 'pubspec'
     default_primary_language = 'dart'
     default_web_baseurl = 'https://pub.dev/packages'
     default_download_baseurl = 'https://pub.dartlang.org/packages'
     default_api_baseurl = 'https://pub.dev/api/packages'
-
-    @classmethod
-    def recognize(cls, location):
-        if is_pubspec_yaml(location):
-            yield parse_pub(location)
-        elif is_pubspec_lock(location):
-            yield parse_lock(location)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return f'{baseurl}/{self.name}/versions/{self.version}'
@@ -115,20 +106,32 @@ def compute_normalized_license(declared_license, location=None):
         return combine_expressions(detected_licenses)
 
 
-def parse_pub(location, compute_normalized_license=False):
-    """
-    Return a PubspecPackage constructed from the pubspec.yaml file at ``location``
-    or None.
-    """
-    if not is_pubspec_yaml(location):
-        return
-    with open(location) as inp:
-        package_data = saneyaml.load(inp.read())
+@attr.s()
+class PubspecYaml(PubspecPackage, models.PackageManifest):
 
-    package = build_package(package_data)
-    if package and compute_normalized_license:
-        package.compute_normalized_license()
-    return package
+    file_patterns = ('pubspec.yaml',)
+    extensions = ('.yaml',)
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return file_endswith(location, 'pubspec.yaml')
+
+    @classmethod
+    def recognize(cls, location, compute_normalized_license=False):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        with open(location) as inp:
+            package_data = saneyaml.load(inp.read())
+
+        package = build_package(cls, package_data)
+        if package and compute_normalized_license:
+            package.compute_normalized_license()
+        yield package
 
 
 def file_endswith(location, endswith):
@@ -138,26 +141,29 @@ def file_endswith(location, endswith):
     return filetype.is_file(location) and location.endswith(endswith)
 
 
-def is_pubspec_yaml(location):
-    return file_endswith(location, 'pubspec.yaml')
+@attr.s()
+class PubspecLock(PubspecPackage, models.PackageManifest):
 
+    file_patterns = ('pubspec.lock',)
+    extensions = ('.lock',)
 
-def is_pubspec_lock(location):
-    return file_endswith(location, 'pubspec.lock')
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return file_endswith(location, 'pubspec.lock')
 
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        with open(location) as inp:
+            locks_data = saneyaml.load(inp.read())
 
-def parse_lock(location):
-    """
-    Yield PubspecPackages dependencies constructed from the pubspec.lock file at
-    ``location``.
-    """
-    if not is_pubspec_lock(location):
-        return
-
-    with open(location) as inp:
-        locks_data = saneyaml.load(inp.read())
-
-    return PubspecPackage(dependencies=list(collect_locks(locks_data)))
+        yield cls(dependencies=list(collect_locks(locks_data)))
 
 
 def collect_locks(locks_data):
@@ -299,7 +305,7 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
     return dep
 
 
-def build_package(pubspec_data):
+def build_package(cls, pubspec_data):
     """
     Return a package object from a package data mapping or None
     """
@@ -364,7 +370,7 @@ def build_package(pubspec_data):
     add_to_extra_if_present('executables')
     add_to_extra_if_present('publish_to')
 
-    package = PubspecPackage(
+    package = cls(
         name=name,
         version=version,
         vcs_url=vcs_url,

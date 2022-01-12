@@ -1,0 +1,12 @@
+key: mapbox-tos-2021
+short_name: Mapbox TOS 2021
+name: Mapbox Terms of Service 2021
+category: Commercial
+owner: Mapbox
+homepage_url: https://www.mapbox.com/legal/tos/
+spdx_license_key: LicenseRef-scancode-mapbox-tos-2021
+ignorable_urls:
+    - http://www.mapbox.com/
+    - http://www.mapbox.com/pricing
+ignorable_emails:
+    - copyright@mapbox.com

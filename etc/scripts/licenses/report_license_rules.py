@@ -8,8 +8,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import io
-
 import click
 import csv
 
@@ -181,13 +179,13 @@ def cli(licenses, rules, category, license_key, with_text):
     licenses_data = load_licenses()
 
     if licenses:
-        for license in licenses_data.values():
-            license_data = license.to_dict()
+        for lic in licenses_data.values():
+            license_data = lic.to_dict()
             if with_text:
-                license_data["text"] = license.text[:200]
-            license_data["is_unknown"] = license.is_unknown
-            license_data["words_count"] = len(license.text)
-            license_data["reference_url"] = SCANCODE_LICENSEDB_URL.format(license.key)
+                license_data["text"] = lic.text[:200]
+            license_data["is_unknown"] = lic.is_unknown
+            license_data["words_count"] = len(lic.text)
+            license_data["reference_url"] = SCANCODE_LICENSEDB_URL.format(lic.key)
             licenses_output.append(license_data)
 
         if category:

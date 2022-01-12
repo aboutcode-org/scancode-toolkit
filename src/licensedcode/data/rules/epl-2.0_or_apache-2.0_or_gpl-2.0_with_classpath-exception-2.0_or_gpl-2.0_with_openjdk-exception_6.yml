@@ -1,0 +1,4 @@
+license_expression: epl-2.0 OR apache-2.0 OR gpl-2.0 WITH classpath-exception-2.0 OR gpl-2.0
+    WITH openjdk-exception
+is_license_tag: yes
+is_continuous: yes

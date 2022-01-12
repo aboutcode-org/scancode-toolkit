@@ -41,8 +41,8 @@ matches:
     start_line: 43
     end_line: 100
     matcher: 2-aho
-    rule_length: 453
-    matched_length: 453
+    rule_length: 454
+    matched_length: 454
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: ssleay-windows_8.RULE

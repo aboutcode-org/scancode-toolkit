@@ -1,0 +1,6 @@
+license_expression: free-unknown
+is_license_reference: yes
+relevance: 100
+notes: http://www.openi.org/docs/opl-1.0.txt is too rare to warrant more rules
+ignorable_urls:
+    - http://www.openi.org/docs/opl-1.0.txt

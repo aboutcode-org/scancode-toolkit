@@ -3,5 +3,4 @@ is_license_reference: yes
 relevance: 100
 notes: See in Firebase iOS SDK
 ignorable_urls:
-  - https://firebase.google.com/terms/
-
+    - https://firebase.google.com/terms/

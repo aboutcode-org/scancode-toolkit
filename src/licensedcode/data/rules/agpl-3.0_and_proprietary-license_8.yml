@@ -1,0 +1,8 @@
+license_expression: agpl-3.0 AND proprietary-license
+is_license_notice: yes
+notes: a complex AGPL rider that requires review
+ignorable_urls:
+    - http://www.linagora.com/
+    - https://smartsla.org/
+ignorable_emails:
+    - info@LINAGORA.com

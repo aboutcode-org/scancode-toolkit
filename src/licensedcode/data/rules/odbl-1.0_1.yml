@@ -2,4 +2,4 @@ license_expression: odbl-1.0
 is_license_reference: yes
 relevance: 100
 ignorable_urls:
-  - http://www.opendatacommons.org/licenses/odbl/
+    - http://www.opendatacommons.org/licenses/odbl/

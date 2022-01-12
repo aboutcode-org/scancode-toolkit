@@ -4,5 +4,4 @@ relevance: 100
 minimum_coverage: 100
 notes: in x11 legacy
 ignorable_authors:
-  - FUJITSU LIMITED
-
+    - FUJITSU LIMITED

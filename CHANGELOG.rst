@@ -6,6 +6,7 @@ Changelog
 -----------------------
 
 
+
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -32,12 +33,18 @@ Important API changes:
   urls under the  "infos" object. Now HTML template will output holders,
   authors, emails, and urls into separate tables like "licenses" and "copyrights".
 
+- The data structure for CSV output has been changed to rename the Resource
+  column to "path". The "copyright_holder" has been ranmed to "holder"
+
+
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
 
 - The data structure in the JSON is now using consistently named attributes as
   opposed to a plain value.
-- Several copyright detection bugs have been fixed. 
+- Several copyright detection bugs have been fixed.
+- French and German copyright detection is improved.
+- Some spurious trailing dots in holders are not stripped.
 
 
 License detection:
@@ -49,6 +56,52 @@ License detection:
   - XX existing license metadata have been updated,
   - XXXX new license detection rules have been added, and
   - XXXX existing license rules have been updated.
+  - XXXX existing false positive license rules have been removed (see below).
+  - The SPDX license list has been updated to the latest v3.15
+
+- The rule attribute "only_known_words" has been renamed to "is_continuous" and its
+  meaning has been updated and expanded. A rule tagged as "is_continuous" can only
+  be matched if there are no gaps between matched words, be they stopwords, extra
+  unknown or known words. This improves several false positive license detections. 
+  The processing for "is_continous" has been merged in "key phrases" processing
+  below.
+
+- Key phrases can now be defined in RULEs by surrounding one or more words with
+  `{{` and `}}`. When defined a RULE will only match when the key phrases match
+  exactly. When all the text of rule is a "key phrase", this is the same as being
+  "is_continuous".
+
+- The "--unknown-licenses" option now also detects unknown licenses using a
+  simple and effective ngrams-based matching in area that are not matched or
+  weakly matched. This helps detects things that look like a license but are not
+  yet known as licenses.
+
+- False positive detection of "license lists" like list seen in license and
+  package management tools has been entirely reworked. Rather than using
+  thousands of small false positive rules, there is now a new filter to detect
+  long run of license references and tags that are typical of license lists.
+  As a results, thousands of rules have been replaced by a simpler filter, and
+  the license detection is both more accurate, faster and has fewer false
+  positives.
+
+- The new license flag "is_generic" tags licenses that are "generic" licenses
+  such as "other-permissive" or "other-copyleft". This is not yet
+  returned in the JSON API.
+
+- When scanning binary files, the detection of single word rules is filtered when
+  surrounded by gibberish or is using mixed case. For instance $#%$GpL$ is a false
+  positive and is no longer reported.
+
+- Several rules we tagged as is_license_notice incorrectly but were references
+  and have been requalified as is_license_reference. All rules made of a single
+  ord have been requalified as is_license_reference if they were not qualified
+  this way.
+
+- Matches to small license rules (with small defined as under 15 words)
+  that are scattered on too many lines are now filtered as false matches.
+
+- Small, two-words matches that overlap the previous or next match by
+  by the word "license" and assimilated are now filtered as false matches.
 
 
 Package detection:
@@ -59,11 +112,15 @@ Package detection:
   - Yocto/BitBake .bb recipes.
 
 - Major changes in packages detection and reporting, codebase-level attribute `packages`
-  with one or more package_manifests and files for the packages will be reported.
+  with one or more "package_manifests" and files for the packages are reported.
   The specific changes made are:
 
   - The resource level attribute `packages` has been renamed to `package_manifests`,
     as these are really package manifests that are being detected.
+
+  - A new top-level attribute `packages` has been added which contains package
+    instances created from package_manifests detected in the codebase.
+
   - A new codebase level attribute `packages` has been added which contains package
     instances created from package_manifests detected in the codebase.
 
@@ -71,7 +128,8 @@ Package detection:
 Outputs:
 ~~~~~~~~
 
-- There is a new CycloneDX 1.2 output as XML and JSON.
+ - Add new outputs for the CycloneDx format.
+   The CLI now exposes options to produce CycloneDx BOMs in either JSON or XML format
 
 
 Output version
@@ -82,7 +140,7 @@ Scancode Data Output Version is now 2.0.0.
 Changes:
 
 - rename resource level attribute `packages` to `package_manifests`.
-- add codebase level attribute `packages`.
+- add top-level attribute `packages`.
 
 
 30.1.0 - 2021-09-25

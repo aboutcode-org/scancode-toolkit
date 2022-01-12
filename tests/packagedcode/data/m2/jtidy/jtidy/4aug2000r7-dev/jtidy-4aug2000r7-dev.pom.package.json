@@ -29,7 +29,7 @@
   "code_view_url": "http://svn.sourceforge.net/viewcvs.cgi/jtidy/trunk/jtidy/",
   "vcs_url": "svn+https://svn.sourceforge.net/svnroot/jtidy/trunk/jtidy/",
   "copyright": null,
-  "license_expression": "unknown",
+  "license_expression": "tidy AND unknown",
   "declared_license": [
     {
       "name": "Java HTML Tidy License",

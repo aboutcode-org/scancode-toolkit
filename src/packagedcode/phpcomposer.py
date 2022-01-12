@@ -47,12 +47,8 @@ if TRACE:
 
 
 @attr.s()
-class PHPComposerPackage(models.Package):
-    metafiles = (
-        'composer.json',
-        'composer.lock',
-    )
-    extensions = ('.json', '.lock',)
+class PhpComposerPackage(models.Package):
+    
     mimetypes = ('application/json',)
 
     default_type = 'composer'
@@ -60,11 +56,6 @@ class PHPComposerPackage(models.Package):
     default_web_baseurl = 'https://packagist.org'
     default_download_baseurl = None
     default_api_baseurl = 'https://packagist.org/p'
-
-    @classmethod
-    def recognize(cls, location):
-        for package in parse(location):
-            yield package
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -89,68 +80,38 @@ class PHPComposerPackage(models.Package):
         return compute_normalized_license(self.declared_license)
 
 
-def compute_normalized_license(declared_license):
-    """
-    Return a normalized license expression string detected from a list of
-    declared license items or string type.
-    """
-    if not declared_license:
-        return
+@attr.s()
+class ComposerJson(PhpComposerPackage, models.PackageManifest):
 
-    detected_licenses = []
+    file_patterns = (
+        'composer.json',
+    )
+    extensions = ('.json',)
 
-    if isinstance(declared_license, str):
-        if declared_license == 'proprietary':
-            return declared_license
-        if '(' in declared_license and ')' in declared_license and ' or ' in declared_license:
-            declared_license = declared_license.strip().rstrip(')').lstrip('(')
-            declared_license = declared_license.split(' or ')
-        else:
-            return models.compute_normalized_license(declared_license)
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.json'
 
-    if isinstance(declared_license, list):
-        for declared in declared_license:
-            detected_license = models.compute_normalized_license(declared)
-            detected_licenses.append(detected_license)
-    else:
-        declared_license = repr(declared_license)
-        detected_license = models.compute_normalized_license(declared_license)
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
 
-    if detected_licenses:
-        # build a proper license expression: the defaultfor composer is OR
-        return combine_expressions(detected_licenses, 'OR')
-
-
-def is_phpcomposer_json(location):
-    return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.json'
-
-
-def is_phpcomposer_lock(location):
-    return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.lock'
-
-
-def parse(location):
-    """
-    Yield Package objects from a composer.json or composer.lock file. Note that
-    this is NOT exactly the packagist .json format (all are closely related of
-    course but have important (even if minor) differences.
-    """
-    if is_phpcomposer_json(location):
+        Note that this is NOT exactly the packagist .json format (all are closely related of
+        course but have important (even if minor) differences.
+        """
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
-        yield build_package_from_json(package_data)
 
-    elif is_phpcomposer_lock(location):
-        with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc)
-        for package in build_packages_from_lock(package_data):
-            yield package
+        yield build_package_manifest(cls, package_data)
 
 
-def build_package_from_json(package_data):
-    """
-    Return a composer Package object from a package data mapping or None.
-    """
+def build_package_manifest(cls, package_data):
+    
     # A composer.json without name and description is not a usable PHP
     # composer package. Name and description fields are required but
     # only for published packages:
@@ -168,7 +129,7 @@ def build_package_from_json(package_data):
     else:
         ns, _, name = ns_name.rpartition('/')
 
-    package = PHPComposerPackage(
+    package = cls(
         namespace=ns,
         name=name,
     )
@@ -216,6 +177,88 @@ def build_package_from_json(package_data):
     # Parse vendor from name value
     vendor_mapper(package)
     return package
+
+@attr.s()
+class ComposerLock(PhpComposerPackage, models.PackageManifest):
+
+    file_patterns = (
+        'composer.lock',
+    )
+    extensions = ('.lock',)
+
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if the file at ``location`` is likely a manifest of this type.
+        """
+        return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.lock'
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+
+        Note that this is NOT exactly the packagist .json format (all are closely related of
+        course but have important (even if minor) differences.
+        """
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc)
+        
+        packages = [
+            build_package_manifest(cls, p)
+            for p in package_data.get('packages', [])
+        ]
+        packages_dev = [
+            build_package_manifest(cls, p)
+            for p in package_data.get('packages-dev', [])
+        ]
+
+        required_deps = [
+            build_dep_package(p, scope='require', is_runtime=True, is_optional=False)
+            for p in packages
+        ]
+        required_dev_deps = [
+            build_dep_package(p, scope='require-dev', is_runtime=False, is_optional=True)
+            for p in packages_dev
+        ]
+
+        yield cls(dependencies=required_deps + required_dev_deps)
+
+        for package in packages + packages_dev:
+            yield package
+
+
+def compute_normalized_license(declared_license):
+    """
+    Return a normalized license expression string detected from a list of
+    declared license items or string type.
+    """
+    if not declared_license:
+        return
+
+    detected_licenses = []
+
+    if isinstance(declared_license, str):
+        if declared_license == 'proprietary':
+            return declared_license
+        if '(' in declared_license and ')' in declared_license and ' or ' in declared_license:
+            declared_license = declared_license.strip().rstrip(')').lstrip('(')
+            declared_license = declared_license.split(' or ')
+        else:
+            return models.compute_normalized_license(declared_license)
+
+    if isinstance(declared_license, list):
+        for declared in declared_license:
+            detected_license = models.compute_normalized_license(declared)
+            detected_licenses.append(detected_license)
+    else:
+        declared_license = repr(declared_license)
+        detected_license = models.compute_normalized_license(declared_license)
+
+    if detected_licenses:
+        # build a proper license expression: the defaultfor composer is OR
+        return combine_expressions(detected_licenses, 'OR')
 
 
 def licensing_mapper(licenses, package, is_private=False):
@@ -372,16 +415,3 @@ def build_dep_package(package, scope, is_runtime, is_optional):
         is_resolved=True,
     )
 
-
-def build_packages_from_lock(package_data):
-    """
-    Yield composer Package objects from a package data mapping that originated
-    from a composer.lock file
-    """
-    packages = [build_package_from_json(p) for p in package_data.get('packages', [])]
-    packages_dev = [build_package_from_json(p) for p in package_data.get('packages-dev', [])]
-    required_deps = [build_dep_package(p, scope='require', is_runtime=True, is_optional=False) for p in packages]
-    required_dev_deps = [build_dep_package(p, scope='require-dev', is_runtime=False, is_optional=True) for p in packages_dev]
-    yield PHPComposerPackage(dependencies=required_deps + required_dev_deps)
-    for package in packages + packages_dev:
-        yield package

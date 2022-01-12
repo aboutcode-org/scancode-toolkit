@@ -1,6 +1,4 @@
 license_expressions:
-  - imlib2
-  - bsd-simplified
-  - imlib2
-  - bsd-simplified
-  - imlib2
+  - bsd-simplified AND imlib2
+  - bsd-simplified AND imlib2
+

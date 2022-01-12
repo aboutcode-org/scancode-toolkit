@@ -9,14 +9,18 @@
 
 import json
 import os
+from unittest import TestCase as TestCaseClass
 
 from commoncode.testcase import FileBasedTesting
 
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
+from licensedcode.models import get_key_phrase_spans
+from licensedcode.models import InvalidRule
 from licensedcode.models import Rule
 from licensedcode.models import rules_data_dir
+from licensedcode.spans import Span
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -127,8 +131,8 @@ class TestLicense(FileBasedTesting):
             'bsd-ack-carrot2': [
                 'No short name',
                 'No name',
-                'No category',
-                'No owner',
+                'No category: Use "Unstated License" if not known.',
+                'No owner: Use "Unspecified" if not known.',
                 'No SPDX license key'],
             'gpl-1.0': [
                 'Unknown license category: GNU Copyleft.\nUse one of these valid categories:\n'
@@ -174,7 +178,7 @@ class TestRule(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_create_rule_ignore_punctuation(self):
-        test_rule = models.Rule(stored_text='A one. A {{}}two. A three.')
+        test_rule = models.Rule(stored_text='A one. A two. A three.')
         expected = ['one', 'two', 'three']
         assert list(test_rule.tokens()) == expected
         assert test_rule.length == 3
@@ -267,7 +271,7 @@ class TestRule(FileBasedTesting):
             )
         except Exception as e:
             ex = str(e)
-            assert 'Unable to parse License rule expression: ' in ex
+            assert 'Unable to parse Rule license expression:' in ex
             assert 'ExpressionError: AND requires two or more licenses as in: MIT AND BSD' in ex
 
     def test_template_rule_is_loaded_correctly(self):
@@ -277,19 +281,19 @@ class TestRule(FileBasedTesting):
 
     def test_rule_len_is_computed_correctly(self):
         test_text = '''zero one two three
-            four {{gap1}}
+            four gap1
             five six seven eight nine ten'''
         r1 = models.Rule(stored_text=test_text)
         list(r1.tokens())
         assert r1.length == 12
 
     def test_rule_templates_are_ignored(self):
-        test_text = '''{{gap0}}zero one two three{{gap2}}'''
+        test_text = '''gap0 zero one two three gap2'''
         r1 = models.Rule(stored_text=test_text)
         assert list(r1.tokens()) == ['gap0', 'zero', 'one', 'two', 'three', 'gap2']
 
     def test_rule_tokens_are_computed_correctly_ignoring_templates(self):
-        test_text = '''I hereby abandon any{{SAX 2.0 (the)}}, and Release all of {{the SAX 2.0 }}source code of his'''
+        test_text = '''I hereby abandon any SAX 2.0 (the), and Release all of the SAX 2.0 source code of his'''
         rule = models.Rule(stored_text=test_text, license_expression='public-domain')
 
         rule_tokens = list(rule.tokens())
@@ -363,7 +367,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 13
         rule.has_stored_relevance = True
         rule.length = 1000
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 13
         assert rule.has_stored_relevance
 
@@ -372,7 +376,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 100
         rule.has_stored_relevance = True
         rule.length = 18
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
         assert not rule.has_stored_relevance
 
@@ -381,7 +385,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 100
         rule.has_stored_relevance = True
         rule.length = 17
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
         assert rule.has_stored_relevance
 
@@ -390,7 +394,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 100
         rule.has_stored_relevance = True
         rule.length = 17
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
         assert rule.has_stored_relevance
 
@@ -399,7 +403,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 99
         rule.has_stored_relevance = True
         rule.length = 18
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 99
         assert rule.has_stored_relevance
 
@@ -408,7 +412,7 @@ class TestRule(FileBasedTesting):
         rule.relevance = 94
         rule.has_stored_relevance = True
         rule.length = 17
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 94
         assert not rule.has_stored_relevance
 
@@ -417,10 +421,9 @@ class TestRule(FileBasedTesting):
         rule.relevance = 94
         rule.has_stored_relevance = True
         rule.length = 16
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 94
         assert rule.has_stored_relevance
-
 
     def test_compute_relevance_is_hundred_for_false_positive(self):
         rule = models.Rule(stored_text='1', license_expression='public-domain')
@@ -428,7 +431,7 @@ class TestRule(FileBasedTesting):
         rule.has_stored_relevance = False
         rule.is_false_positive = True
         rule.length = 1000
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
 
     def test_compute_relevance_is_using_rule_length(self):
@@ -438,71 +441,71 @@ class TestRule(FileBasedTesting):
         rule.is_false_positive = False
 
         rule.length = 1000
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
 
         rule.length = 21
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
 
         rule.length = 20
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
 
         rule.length = 18
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 100
 
         rule.length = 17
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 94
 
         rule.length = 16
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 88
 
         rule.length = 15
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 83
 
         rule.length = 14
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 77
 
         rule.length = 13
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 72
 
         rule.length = 12
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 66
 
         rule.length = 11
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 61
 
         rule.length = 10
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 55
 
         rule.length = 8
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 44
 
         rule.length = 5
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 27
 
         rule.length = 2
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 11
 
         rule.length = 1
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 5
 
         rule.length = 0
-        rule.compute_relevance()
+        rule.set_relevance()
         assert rule.relevance == 0
 
     def test_rule_must_have_text(self):
@@ -534,3 +537,76 @@ class TestRule(FileBasedTesting):
         rule_dir = self.get_test_loc('models/rule_validate')
         rule = list(models.load_rules(rule_dir))[0]
         assert list(rule.validate()) == []
+
+    def test_key_phrases_yields_spans(self):
+        rule_stored_text = (
+            'This released software is {{released}} by under {{the MIT license}}. '
+            'Which is a license originating at Massachusetts Institute of Technology (MIT).'
+        )
+        rule = models.Rule(license_expression='mit', stored_text=rule_stored_text)
+        key_phrase_spans = list(rule.build_key_phrase_spans())
+        assert key_phrase_spans == [Span(4), Span(7, 9)]
+
+    def test_key_phrases_raises_exception_when_markup_is_not_closed(self):
+        rule_stored_text = (
+            'This released software is {{released}} by under {{the MIT license. '
+            'Which is a license originating at Massachusetts Institute of Technology (MIT).'
+        )
+        rule = models.Rule(license_expression='mit', stored_text=rule_stored_text)
+
+        try:
+            list(rule.build_key_phrase_spans())
+            raise Exception('Exception should be raised')
+        except InvalidRule:
+            pass
+
+
+class TestGetKeyPhrases(TestCaseClass):
+
+    def test_get_key_phrases_yields_spans(self):
+        text = (
+            'This released software is {{released}} by under {{the MIT license}}. '
+            'Which is a license originating at Massachusetts Institute of Technology (MIT).'
+        )
+
+        key_phrase_spans = get_key_phrase_spans(text)
+        assert list(key_phrase_spans) == [Span(4), Span(7, 9)]
+
+    def test_get_key_phrases_raises_exception_key_phrase_markup_is_not_closed(self):
+        text = 'This software is {{released by under the MIT license.'
+        try:
+            list(get_key_phrase_spans(text))
+            raise Exception('Exception should be raised')
+        except InvalidRule:
+            pass
+
+    def test_get_key_phrases_ignores_stopwords_in_positions(self):
+        text = 'The word comma is a stop word so comma does not increase the span position {{MIT license}}.'
+        key_phrase_spans = get_key_phrase_spans(text)
+        assert list(key_phrase_spans) == [Span(11, 12)]
+
+    def test_get_key_phrases_yields_spans_without_stop_words(self):
+        text = 'This released software is {{released span}} by under {{the MIT quot license}}.'
+        key_phrase_spans = get_key_phrase_spans(text)
+        assert list(key_phrase_spans) == [Span(4), Span(7, 9)]
+
+    def test_get_key_phrases_does_not_yield_empty_spans(self):
+        text = 'This released software {{comma}} is {{}} by under {{the MIT license}}.'
+        try:
+            list(get_key_phrase_spans(text))
+            raise Exception('Exception should be raised')
+        except InvalidRule:
+            pass
+
+    def test_get_key_phrases_only_considers_outer_key_phrase_markup(self):
+        text = 'This released {{{software under the MIT}}} license.'
+        key_phrase_spans = get_key_phrase_spans(text)
+        assert list(key_phrase_spans) == [Span(2, 5)]
+
+    def test_get_key_phrases_ignores_nested_key_phrase_markup(self):
+        text = 'This released {{software {{under the}} MIT}} license.'
+        try:
+            list(get_key_phrase_spans(text))
+            raise Exception('Exception should be raised')
+        except InvalidRule:
+            pass

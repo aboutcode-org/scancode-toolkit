@@ -11,15 +11,12 @@
 import os
 
 import click
-
-from license_expression import Licensing
-
 from commoncode import fetch
+from license_expression import combine_expressions
 
 from licensedcode.cache import get_index
 from licensedcode.match_hash import MATCH_HASH
 from licensedcode.models import Rule
-
 
 TRACE = True
 
@@ -45,7 +42,7 @@ def get_license_expression(location):
     matches = get_license_matches(location=location)
     if matches:
         expressions = [m.rule.license_expression for m in matches]
-        return combine_expressions(expressions)
+        return combine_expressions(expressions, unique=False)
     else:
         return "unknown"
 
@@ -68,43 +65,6 @@ def get_existing_rule(text):
         match = matches[0]
         if match.matcher == MATCH_HASH:
             return match.rule
-
-
-def combine_expressions(expressions, relation="AND", licensing=Licensing()):
-    """
-    Return a combined license expression string with relation, given a list of
-    license expressions strings.
-
-    For example:
-    >>> a = 'mit'
-    >>> b = 'gpl'
-    >>> combine_expressions([a, b])
-    'mit AND gpl'
-    >>> assert 'mit' == combine_expressions([a])
-    >>> combine_expressions([])
-    >>> combine_expressions(None)
-    >>> combine_expressions(('gpl', 'mit', 'apache',))
-    'gpl AND mit AND apache'
-    """
-    if not expressions:
-        return
-
-    if not isinstance(expressions, (list, tuple)):
-        raise TypeError(
-            "expressions should be a list or tuple and not: {}".format(type(expressions))
-        )
-
-    # Remove duplicate element in the expressions list
-    expressions = dict((x, True) for x in expressions).keys()
-
-    if len(expressions) == 1:
-        return expressions[0]
-
-    expressions = [licensing.parse(le, simple=True) for le in expressions]
-    if relation == "OR":
-        return str(licensing.OR(*expressions))
-    else:
-        return str(licensing.AND(*expressions))
 
 
 def find_rule_base_loc(license_expression):

@@ -7,8 +7,8 @@ matches:
     start_line: 6
     end_line: 154
     matcher: 2-aho
-    rule_length: 1270
-    matched_length: 1270
+    rule_length: 1277
+    matched_length: 1277
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: hauppauge-firmware-oem.LICENSE

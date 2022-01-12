@@ -1,73 +1,75 @@
-{
-  "type": "pypi",
-  "namespace": null,
-  "name": "saneyaml",
-  "version": "0.2dev",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "Python",
-  "description": "Dump readable YAML and load safely any YAML preserving ordering and avoiding surprises of type conversions. This library is a PyYaml wrapper with sane behaviour to read and write readable YAML safely, typically when used for configuration.",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "AboutCode authors and others.",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [
-    "yaml",
-    "block",
-    "flow",
-    "readable",
-    "Development Status :: 4 - Beta",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 2",
-    "Programming Language :: Python :: 2.7",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
-    "Intended Audience :: Developers",
-    "Operating System :: OS Independent",
-    "Topic :: Software Development",
-    "Topic :: Utilities"
-  ],
-  "homepage_url": "http://aboutcode.org",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "apache-2.0",
-  "declared_license": {
-    "license": "Apache-2.0",
-    "classifiers": [
-      "License :: OSI Approved :: Apache Software License"
-    ]
-  },
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:pypi/pyyaml",
-      "requirement": "<=3.13,>=3.11",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "extra_data": {},
-  "purl": "pkg:pypi/saneyaml@0.2dev",
-  "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-  "repository_download_url": "https://pypi.org/packages/source/s/saneyaml/saneyaml-0.2dev.tar.gz",
-  "api_data_url": "https://pypi.org/pypi/saneyaml/0.2dev/json"
-}
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "saneyaml",
+    "version": "0.2dev",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Dump readable YAML and load safely any YAML preserving ordering and avoiding surprises of type conversions. This library is a PyYaml wrapper with sane behaviour to read and write readable YAML safely, typically when used for configuration.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "AboutCode authors and others.",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "yaml",
+      "block",
+      "flow",
+      "readable",
+      "Development Status :: 4 - Beta",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.6",
+      "Intended Audience :: Developers",
+      "Operating System :: OS Independent",
+      "Topic :: Software Development",
+      "Topic :: Utilities"
+    ],
+    "homepage_url": "http://aboutcode.org",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "apache-2.0",
+    "declared_license": {
+      "license": "Apache-2.0",
+      "classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ]
+    },
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/pyyaml",
+        "requirement": "<=3.13,>=3.11",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
+    "purl": "pkg:pypi/saneyaml@0.2dev",
+    "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+    "repository_download_url": "https://pypi.org/packages/source/s/saneyaml/saneyaml-0.2dev.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/saneyaml/0.2dev/json"
+  }
+]

@@ -512,8 +512,8 @@ matches:
     start_line: 470
     end_line: 540
     matcher: 2-aho
-    rule_length: 601
-    matched_length: 601
+    rule_length: 602
+    matched_length: 602
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: ocb-open-source-2013_10.RULE

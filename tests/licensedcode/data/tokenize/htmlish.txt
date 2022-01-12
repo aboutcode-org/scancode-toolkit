@@ -1,5 +1,5 @@
     <hr class="small" /><div class="main-text-cont">
-        <h3>MySQL</h3>
+        <h3>{{MySQL}}</h3>
         <p>For some of our temporary storage, we use a hardened version of MySQL.</p>
     </div>
     <hr class="small" /><div class="main-text-cont">

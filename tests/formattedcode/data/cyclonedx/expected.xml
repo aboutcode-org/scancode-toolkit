@@ -1,0 +1,79 @@
+<bom xmlns="http://cyclonedx.org/schema/bom/1.3" version="1" serialNumber="urn:uuid:21137fb6-9335-4386-bfb7-9637cd3f305d">
+  <metadata>
+    <timestamp>2021-12-25T20:52:52Z</timestamp>
+    <tools>
+      <tool>
+        <vendor>AboutCode.org</vendor>
+        <name>scancode-toolkit</name>
+        <version>30.1.0</version>
+      </tool>
+    </tools>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:npm/npm@2.13.5">
+      <name>npm</name>
+      <version>2.13.5</version>
+      <description>a package manager for JavaScript</description>
+      <author>Isaac Z. Schlueter</author>
+      <scope>required</scope>
+      <purl>pkg:npm/npm@2.13.5</purl>
+      <hashes>
+        <hash alg="SHA-1">a124386bce4a90506f28ad4b1d1a804a17baaf32</hash>
+      </hashes>
+      <licenses>
+        <expression>Artistic-2.0</expression>
+      </licenses>
+      <externalReferences>
+        <reference type="bom">
+          <url>https://registry.npmjs.org/npm/2.13.5</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>http://github.com/npm/npm/issues</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://registry.npmjs.org/npm/-/npm-2.13.5.tgz</url>
+        </reference>
+        <reference type="website">
+          <url>https://docs.npmjs.com/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://registry.npmjs.org/npm/-/npm-2.13.5.tgz</url>
+        </reference>
+        <reference type="website">
+          <url>https://www.npmjs.com/package/npm</url>
+        </reference>
+        <reference type="vcs">
+          <url>git+https://github.com/npm/npm.git@fc7bbf03e39cc48a8924b90696d28345a6a90f3c</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:npm/abbrev@1.0.7">
+      <name>abbrev</name>
+      <version>1.0.7</version>
+      <description>Like ruby's abbrev module, but in js</description>
+      <author>Isaac Z. Schlueter</author>
+      <scope>required</scope>
+      <purl>pkg:npm/abbrev@1.0.7</purl>
+      <licenses>
+        <expression>ISC</expression>
+      </licenses>
+      <externalReferences>
+        <reference type="bom">
+          <url>https://registry.npmjs.org/abbrev/1.0.7</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://registry.npmjs.org/abbrev/-/abbrev-1.0.7.tgz</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://registry.npmjs.org/abbrev/-/abbrev-1.0.7.tgz</url>
+        </reference>
+        <reference type="website">
+          <url>https://www.npmjs.com/package/abbrev</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/isaacs/abbrev-js</url>
+        </reference>
+      </externalReferences>
+    </component>
+  </components>
+</bom>

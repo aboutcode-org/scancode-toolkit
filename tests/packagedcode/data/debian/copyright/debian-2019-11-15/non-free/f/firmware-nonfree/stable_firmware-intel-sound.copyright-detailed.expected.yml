@@ -3,13 +3,14 @@ declared_license:
   - Binary redistribution (Intel 1)
   - Binary redistribution (Intel 2)
   - Binary redistribution (Intel 3)
-license_expression: intel AND intel AND (intel AND free-unknown AND bsd-new AND bsd-new AND
-  x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND osf-1990 AND nilsson-historical
-  AND newlib-historical AND bsd-new AND amd-historical AND bsd-new AND bsd-simplified AND bsd-simplified
-  AND bsd-simplified AND x11-hanson AND bsd-simplified AND bsd-new AND delorie-historical AND
-  intel-osl-1993 AND osf-1990 AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-new
-  AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified
-  AND bsd-new AND bsd-new AND bsd-new AND newlib-historical AND bsd-new AND bsd-new AND bsd-simplified)
+license_expression: intel AND intel AND (intel AND (bsd-new AND other-permissive AND other-copyleft)
+  AND bsd-new AND bsd-new AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND
+  osf-1990 AND nilsson-historical AND newlib-historical AND bsd-new AND amd-historical AND bsd-new
+  AND bsd-simplified AND bsd-simplified AND bsd-simplified AND x11-hanson AND bsd-simplified
+  AND bsd-new AND delorie-historical AND intel-osl-1993 AND osf-1990 AND bsd-simplified AND
+  bsd-simplified AND bsd-simplified AND bsd-new AND bsd-simplified AND bsd-simplified AND bsd-simplified
+  AND bsd-simplified AND bsd-simplified AND bsd-new AND bsd-new AND bsd-new AND newlib-historical
+  AND bsd-new AND bsd-new AND bsd-simplified)
 copyright: |
   2014, Intel Corporation.
   2014, Intel Corporation
@@ -177,21 +178,23 @@ matches:
       ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
   - score: '100.0'
-    start_line: 141
+    start_line: 139
     end_line: 143
     matcher: 2-aho
-    rule_length: 37
-    matched_length: 37
+    rule_length: 48
+    matched_length: 48
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: free-unknown_47.RULE
-    license_expression: free-unknown
+    identifier: license-intro_55.RULE
+    license_expression: bsd-new AND other-permissive AND other-copyleft
     is_license_text: no
     is_license_notice: no
     is_license_reference: no
     is_license_tag: no
     is_license_intro: yes
     matched_text: |
+      The newlib subdirectory is a collection of software from several sources.
+
       Each file may have its own copyright/license that is embedded in the source
       file.  Unless otherwise noted in the body of the source file(s), the following copyright
       notices will apply to the contents of the newlib subdirectory:
@@ -781,8 +784,8 @@ matches:
     start_line: 563
     end_line: 585
     matcher: 2-aho
-    rule_length: 209
-    matched_length: 209
+    rule_length: 210
+    matched_length: 210
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: intel-osl-1993.LICENSE
