@@ -14,7 +14,7 @@ set -x
 echo "## Build a wheel"
 ./configure --dev
 ./scancode --reindex-licenses
-bin/python setup.py bdist_wheel
+venv/bin/python setup.py bdist_wheel
 
 echo "###  Installing ScanCode release with pip ###"
 

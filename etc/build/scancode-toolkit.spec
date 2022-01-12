@@ -29,7 +29,7 @@ ScanCode is a tool to scan code and detect licenses, copyrights and more.
 ls -al
 pwd
 ./configure
-cd `pwd` && bin/py.test -n 2 -vvs src tests/commoncode
+cd `pwd` && venv/bin/py.test -n 2 -vvs src tests/commoncode
 
 #py.test -n 2 -vvs src tests/commoncode tests/extractcode tests/textcode tests/typecode tests/cluecode tests/scancode tests/licensedcode/test_detect.py tests/licensedcode/test_index.py tests/licensedcode/test_legal.py tests/licensedcode/test_models.py
 

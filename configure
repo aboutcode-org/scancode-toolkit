@@ -27,7 +27,7 @@ CLI_ARGS=$1
 
 # Requirement arguments passed to pip and used by default or with --dev.
 REQUIREMENTS="--editable . --constraint requirements.txt"
-DEV_REQUIREMENTS="--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
+DEV_REQUIREMENTS="--editable .[dev] --constraint requirements.txt --constraint requirements-dev.txt"
 
 # where we create a virtualenv
 VIRTUALENV_DIR=venv

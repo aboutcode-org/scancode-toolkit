@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "${workspaceRoot}/bin/python",
+    "python.pythonPath": "${workspaceRoot}/venv/bin/python",
     "python.unitTest.pyTestEnabled": true
 }

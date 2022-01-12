@@ -32,13 +32,13 @@ on_linux = str(sys.platform).lower().startswith('linux')
 @unittest.skipIf(not on_linux, 'Check about files only on one OS')
 class TestCheckAboutFiles(unittest.TestCase):
     def test_about_files_src(self):
-        subprocess.check_output('bin/about check src/'.split(), cwd=root_dir)
+        subprocess.check_output('venv/bin/about check src/'.split(), cwd=root_dir)
 
     def test_about_files_etc(self):
-        subprocess.check_output('bin/about check etc/'.split(), cwd=root_dir)
+        subprocess.check_output('venv/bin/about check etc/'.split(), cwd=root_dir)
 
     def test_about_files_self(self):
-        subprocess.check_output('bin/about check scancode-toolkit.ABOUT'.split(), cwd=root_dir)
+        subprocess.check_output('venv/bin/about check scancode-toolkit.ABOUT'.split(), cwd=root_dir)
 
 
 @unittest.skip('We do not yet check for code style')
