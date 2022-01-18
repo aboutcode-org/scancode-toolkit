@@ -334,7 +334,7 @@ class ScalaLexer(RegexLexer):
             (r'(\.)(type)\b', bygroups(Punctuation, Keyword)),
         ],
         'inline': [
-            # inline is a soft modifer, only highlighted if followed by if, 
+            # inline is a soft modifier, only highlighted if followed by if, 
             # match or parameters.
             (r'\b(inline)(?=\s+(%s|%s)\s*:)' % (plainid, backQuotedId),
                 Keyword),
