@@ -143,7 +143,7 @@ def check_scancode_version_locally(
     Return a message to display if outdated or None. Work offline, without a
     PyPI remote check.
     """
-    if is_outdated(release_date):
+    if is_outdated(release_date) and installed_version<fetch_latest_version():
         return build_outdated_message(
             installed_version=installed_version,
             release_date=release_date,
