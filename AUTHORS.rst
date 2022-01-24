@@ -38,6 +38,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Jiyeong Seok @dd-jy
 - Johannes Najjar @joshovi
 - Jose Nazario @paralax
+- Kevin Ji @KevinJi22
 - Lemo Shi @lemoshi
 - Li Ha @linexb
 - Mankaran Singh @MankaranSingh
