@@ -3,8 +3,11 @@ Changelog
 
 31.0.0 (next, roadmap)
 -----------------------
-
-
+Documentation Update
+~~~~~~~~~~~~~~~~~~~~~~~~
+- Changed scancode -clpieu --csv output.html samples to scancode -clpieu --html-app output.html samples to publish the result in [html-app] at
+[output-format.html](https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/output-format.html#html-app-file)
+ 
 
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
