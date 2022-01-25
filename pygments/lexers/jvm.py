@@ -808,7 +808,7 @@ class ClojureLexer(RegexLexer):
     """
     name = 'Clojure'
     aliases = ['clojure', 'clj']
-    filenames = ['*.clj']
+    filenames = ['*.clj', '*.cljc']
     mimetypes = ['text/x-clojure', 'application/x-clojure']
 
     special_forms = (
