@@ -34,6 +34,14 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true
+      },
+      {
+        "purl": "pkg:pypi/django-haystack",
+        "requirement": "git+git://github.com/toastdriven/django-haystack@259274e4127f723d76b893c87a82777f9490b960#egg=django_haystack",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,

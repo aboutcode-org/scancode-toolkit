@@ -29,7 +29,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/setuptools",
-        "requirement": "setuptools",
+        "requirement": "",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -37,7 +37,7 @@
       },
       {
         "purl": "pkg:pypi/nose",
-        "requirement": "nose",
+        "requirement": "",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
