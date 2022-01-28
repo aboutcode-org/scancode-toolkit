@@ -365,7 +365,7 @@ class TestRequirementsFile(PackageTester):
         test_file = self.get_test_loc('pypi/requirements_txt/invalid_spec/requirements.txt')
         package = pypi.RequirementsFile.recognize(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/invalid_spec/output.expected.json')
-        self.check_packages(package, expected_loc, regen=True)
+        self.check_packages(package, expected_loc, regen=False)
 
 
 class TestPyPiPipfile(PackageTester):
