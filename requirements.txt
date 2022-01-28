@@ -39,7 +39,7 @@ more-itertools==8.8.0
 normality==2.2.2
 packagedcode-msitools==0.101.210706
 packageurl-python==0.9.4
-packaging==20.9
+packaging==21.3
 patch==1.16
 #parameter_expansion==0.2.0
 parameter-expansion-patched==0.2.1b4
