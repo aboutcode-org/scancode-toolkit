@@ -194,4 +194,4 @@ if __name__ == "__main__":
     import sys
 
     pkg_dir = sys.argv[1]
-    build_pypi_index(pkg_dir)
+    build_pypi_index(pkg_dir, True)
