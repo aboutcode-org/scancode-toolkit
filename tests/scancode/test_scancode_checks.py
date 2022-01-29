@@ -47,6 +47,6 @@ class TestCheckCode(unittest.TestCase):
 
     def test_codestyle(self):
         subprocess.check_output(
-            'bin/pycodestyle --ignore E501,W503,W504,W605 '
+            'venv/bin/pycodestyle --ignore E501,W503,W504,W605 '
             '--exclude=lib,lib64,thirdparty,'
             'docs,bin,migrations,settings,local,tmp .'.split(), cwd=root_dir)

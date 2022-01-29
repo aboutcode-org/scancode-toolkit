@@ -16,4 +16,4 @@ build: off
 
 test_script:
     - python -c "import sys;print(sys.getdefaultencoding())"
-    - cmd: "set PYTHON_EXECUTABLE=%PYTHON%\\python.exe && configure --dev && Scripts\\pytest -vvs tests\\scancode"
+    - cmd: "set PYTHON_EXECUTABLE=%PYTHON%\\python.exe && configure --dev && venv\\Scripts\\pytest -vvs tests\\scancode"

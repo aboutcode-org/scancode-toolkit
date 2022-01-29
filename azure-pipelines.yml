@@ -129,7 +129,7 @@ jobs:
           python_versions: ['3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
+              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
 
 
     - template: etc/ci/azure-win.yml
@@ -139,7 +139,7 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
+              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
 
 
     - template: etc/ci/azure-posix.yml
@@ -176,9 +176,9 @@ jobs:
               click_versions: |
                 for clk_ver in 8.0.1 7.1.2 7.1.1 7.1 6.7; 
                  do
-                  bin/pip install click==$clk_ver;
-                  bin/scancode -i samples/ -n3 --json foo.json; 
-                  bin/scancode -i --verbose samples/ -n3 --json foo.json; 
+                  venv/bin/pip install click==$clk_ver;
+                  venv/bin/scancode -i samples/ -n3 --json foo.json; 
+                  venv/bin/scancode -i --verbose samples/ -n3 --json foo.json; 
                  done
 
 
@@ -338,7 +338,7 @@ jobs:
           image_name: ubuntu-20.04
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -346,7 +346,7 @@ jobs:
           image_name: windows-2019
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: Scripts\pip install --force-reinstall --upgrade -e .[dev] &&  Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
+              all: venv\Scripts\pip install --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
 
     - template: etc/ci/azure-posix.yml
       parameters:
@@ -354,4 +354,4 @@ jobs:
           image_name: macos-10.15
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs  tests/scancode/test_cli.py
+              all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs  tests/scancode/test_cli.py

@@ -10,7 +10,7 @@
 @rem  A wrapper to ScanCode command line entry point
 
 set SCANCODE_ROOT_DIR=%~dp0
-set SCANCODE_CONFIGURED_PYTHON=%SCANCODE_ROOT_DIR%Scripts\python.exe
+set SCANCODE_CONFIGURED_PYTHON=%SCANCODE_ROOT_DIR%venv\Scripts\python.exe
 
 if not exist "%SCANCODE_CONFIGURED_PYTHON%" goto configure
 goto scancode
@@ -31,4 +31,4 @@ if %errorlevel% neq 0 (
 @rem without this things may not always work on Windows 10, but this makes things slower
 set PYTHONDONTWRITEBYTECODE=1
 
-"%SCANCODE_ROOT_DIR%Scripts\scancode" %*
+"%SCANCODE_ROOT_DIR%venv\Scripts\scancode" %*
