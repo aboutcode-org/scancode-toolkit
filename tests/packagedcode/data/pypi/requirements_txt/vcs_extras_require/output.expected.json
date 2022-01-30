@@ -26,7 +26,16 @@
     "declared_license": null,
     "notice_text": null,
     "root_path": null,
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "git+https://git.myproject.org/MyProject.git@v0.1#egg=MyProject[security]",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},

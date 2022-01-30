@@ -20,21 +20,29 @@ def as_json(results, pretty=True):
     """
     import json
 
-    kwargs = dict(encoding='utf-8')
+    kwargs = dict(encoding="utf-8")
     if pretty:
-        kwargs.update(dict(indent=2 * b' '))
+        kwargs.update(dict(indent=2 * b" "))
     else:
-        kwargs.update(dict(separators=(b',', b':',)))
-    return json.dumps(results, **kwargs) + b'\n'
+        kwargs.update(
+            dict(
+                separators=(
+                    b",",
+                    b":",
+                )
+            )
+        )
+    return json.dumps(results, **kwargs) + b"\n"
 
 
 def run_scan(location, **kwargs):
     from scancode import cli
-    pretty = kwargs.pop('pretty', True)
+
+    pretty = kwargs.pop("pretty", True)
     return as_json(cli.run_scan(location, **kwargs), pretty=pretty)
 
 
-if __name__ == '__channelexec__':
+if __name__ == "__channelexec__":
     for kwargs in channel:  # NOQA
         # a mapping of kwargs or a location string
         if isinstance(kwargs, (str, str)):
@@ -42,4 +50,4 @@ if __name__ == '__channelexec__':
         elif isinstance(kwargs, dict):
             channel.send(run_scan(**kwargs))  # NOQA
         else:
-            raise Exception('Unknown arguments type: ' + repr(kwargs))
+            raise Exception("Unknown arguments type: " + repr(kwargs))

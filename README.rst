@@ -198,10 +198,10 @@ For discussions and chats, we have:
   Gitter is also accessible via an `IRC bridge <https://irc.gitter.im/>`_.
   There are other AboutCode project-specific channels available there too.
 
-* an official `#aboutcode` IRC channel on freenode (server chat.freenode.net).
+* an official `#aboutcode` IRC channel on liberachat (server web.libera.chat).
   This channel receives build and commit notifications and can be noisy.
   You can use your favorite IRC client or use the `web chat 
-  <https://webchat.freenode.net/>`_.
+  <https://web.libera.chat/?#aboutcode>`_.
 
 
 Source code and downloads

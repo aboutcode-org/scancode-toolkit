@@ -1,16 +1,20 @@
 Changelog
 =========
 
+
 31.0.0 (next, roadmap)
 -----------------------
-
-
 
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Main package API function `get_package_infos` is now deprecated, and is replaced by
-  `get_package_manifests`.
+- Adopt the new skeleton from https://github.com/nexB/skeleton
+  The key change is the location of the virtual environment. It used to be
+  created at the root of the scancode-toolkit directory. Its is now created
+  instead under the ``venv`` subdirectory.
+
+- Main package API function `get_package_infos` is now deprecated, and is
+  replaced by `get_package_manifests`.
 
 - The data structure of the JSON output has changed for copyrights, authors
   and holders: we now use proper name for attributes and not a generic "value".
@@ -140,6 +144,12 @@ Changes:
 
 - rename resource level attribute `packages` to `package_manifests`.
 - add top-level attribute `packages`.
+
+
+Documentation Update
+~~~~~~~~~~~~~~~~~~~~~~~~
+- Various documentations have been updated to reflects API changes and
+  correct minor documentation issues.
 
 
 30.1.0 - 2021-09-25

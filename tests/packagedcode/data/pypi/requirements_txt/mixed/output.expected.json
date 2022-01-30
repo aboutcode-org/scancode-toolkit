@@ -28,8 +28,16 @@
     "root_path": null,
     "dependencies": [
       {
+        "purl": "pkg:pypi/requirements",
+        "requirement": "--editable git+https://github.com/davidfischer/requirements-parser.git#egg=requirements",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
         "purl": "pkg:pypi/django",
-        "requirement": "<1.6,>=1.5",
+        "requirement": ">=1.5,<1.6",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -37,7 +45,7 @@
       },
       {
         "purl": "pkg:pypi/numpy",
-        "requirement": "numpy",
+        "requirement": "",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -45,7 +53,7 @@
       },
       {
         "purl": "pkg:pypi/docparser",
-        "requirement": "DocParser",
+        "requirement": "[pdf]",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

@@ -465,7 +465,7 @@ Comparing Different ``json`` Output Formats
     The following code performs a scan on the samples directory, and publishes the results in
     ``html-app`` format::
 
-        scancode -clpieu --csv output.html samples
+        scancode -clpieu --html-app output.html samples
 
     The Files scanned are shown in the left sidebar, and the section on the right contains separate
     tabs for the following:
