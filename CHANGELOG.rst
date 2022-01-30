@@ -4,11 +4,6 @@ Changelog
 
 31.0.0 (next, roadmap)
 -----------------------
-Documentation Update
-~~~~~~~~~~~~~~~~~~~~~~~~
-- Changed scancode -clpieu --csv output.html samples to scancode -clpieu --html-app output.html samples to publish the result in [html-app] at
-[output-format.html](https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/output-format.html#html-app-file)
- 
 
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -149,6 +144,12 @@ Changes:
 
 - rename resource level attribute `packages` to `package_manifests`.
 - add top-level attribute `packages`.
+
+
+Documentation Update
+~~~~~~~~~~~~~~~~~~~~~~~~
+- Various documentations have been updated to reflects API changes and
+  correct minor documentation issues.
 
 
 30.1.0 - 2021-09-25
