@@ -1,4 +1,5 @@
 graft src
+
 graft thirdparty
 recursive-include etc configure.py
 graft etc/thirdparty
@@ -7,11 +8,13 @@ recursive-include etc/thirdparty *
 include *.LICENSE
 include NOTICE
 include *.ABOUT
-
+include *.toml
+include *.yml
+include *.rst
 include setup.*
 include configure*
 include requirements*
-include *.toml
+include .git*
 
 include extractcode*
 include scancode*
@@ -19,7 +22,6 @@ include scancode*
 # path to executable used by a built app
 include PYTHON_EXECUTABLE
 
-include *.rst
 include Dockerfile
 include .VERSION
 

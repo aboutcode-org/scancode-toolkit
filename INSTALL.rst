@@ -47,7 +47,7 @@ Advanced installation: pip install a Python PyPI package
 
 - Create a virtual environment for Python 3.x and activate it::
 
-    virtualenv -p python3 venv-scancode && source venv-scancode/bin/activate
+    virtualenv -p python3 venv && source venv/bin/activate
 
 - Run ``pip install scancode-toolkit[full]``
 

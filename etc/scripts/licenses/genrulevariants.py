@@ -35,9 +35,11 @@ def get_rules(source, replacement):
 
 
 @click.command()
-@click.option('--source', metavar='SOURCE', type=str, help='The source, old string to replace.')
-@click.option('--replacement', metavar='REPLACEMENT', type=str, help='The replacement string to use.')
-@click.help_option('-h', '--help')
+@click.option("--source", metavar="SOURCE", type=str, help="The source, old string to replace.")
+@click.option(
+    "--replacement", metavar="REPLACEMENT", type=str, help="The replacement string to use."
+)
+@click.help_option("-h", "--help")
 def cli(source, replacement):
     """
     Create new license detection rules from existing rules by replacing a SOURCE
@@ -50,32 +52,34 @@ def cli(source, replacement):
             continue
 
         if rule.is_license_intro:
-            base_name = 'license-intro'
+            base_name = "license-intro"
         else:
             base_name = rule.license_expression
 
         base_loc = find_rule_base_loc(base_name)
 
         rd = rule.to_dict()
-        rd['stored_text'] = new_text
-        rd['has_stored_relevance'] = rule.has_stored_relevance
-        rd['has_stored_minimum_coverage'] = rule.has_stored_minimum_coverage
+        rd["stored_text"] = new_text
+        rd["has_stored_relevance"] = rule.has_stored_relevance
+        rd["has_stored_minimum_coverage"] = rule.has_stored_minimum_coverage
 
         rulerec = models.Rule(**rd)
 
         # force recomputing relevance to remove junk stored relevance for long rules
         rulerec.set_relevance()
 
-        rulerec.data_file = base_loc + '.yml'
-        rulerec.text_file = base_loc + '.RULE'
+        rulerec.data_file = base_loc + ".yml"
+        rulerec.text_file = base_loc + ".RULE"
 
-        print('Adding new rule:')
-        print('  file://' + rulerec.data_file)
-        print('  file://' + rulerec.text_file,)
+        print("Adding new rule:")
+        print("  file://" + rulerec.data_file)
+        print(
+            "  file://" + rulerec.text_file,
+        )
         rulerec.dump()
         models.update_ignorables(rulerec, verbose=False)
         rulerec.dump()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cli()

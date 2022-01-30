@@ -109,10 +109,10 @@ _canonicalize_file_path() {
 SCANCODE_BIN="$( realpath "${BASH_SOURCE[0]}" )"
 SCANCODE_ROOT_DIR="$( cd "$( dirname "${SCANCODE_BIN}" )" && pwd )"
 
-SCANCODE_CONFIGURED_PYTHON="$SCANCODE_ROOT_DIR/bin/python"
+SCANCODE_CONFIGURED_PYTHON="$SCANCODE_ROOT_DIR/venv/bin/python"
 if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
     echo "* Configuring ScanCode for first use..."
     CONFIGURE_QUIET=-qq "$SCANCODE_ROOT_DIR/configure"
 fi
 
-"$SCANCODE_ROOT_DIR/bin/extractcode" "$@"
+"$SCANCODE_ROOT_DIR/venv/bin/extractcode" "$@"

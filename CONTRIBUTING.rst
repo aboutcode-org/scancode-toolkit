@@ -142,15 +142,15 @@ To set up ScanCode for local development:
 
    Then activate the virtual environment::
 
-        source bin/activate
+        source venv/bin/activate
 
         or
 
-        . bin/activate
+        . venv/bin/activate
 
    On Windows use::
 
-        Scripts\activate
+        venv\Scripts\activate
 
    When you create a new terminal/shell to work on ScanCode rerun the activate step.
 

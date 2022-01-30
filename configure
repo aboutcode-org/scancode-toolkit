@@ -11,7 +11,7 @@ set -e
 #set -x
 
 ################################
-# A configuration script to set things up: 
+# A configuration script to set things up:
 # create a virtualenv and install or update thirdparty packages.
 # Source this script for initial configuration
 # Use configure --help for details
@@ -27,29 +27,15 @@ CLI_ARGS=$1
 
 # Requirement arguments passed to pip and used by default or with --dev.
 REQUIREMENTS="--editable . --constraint requirements.txt"
-DEV_REQUIREMENTS="--editable .[dev] --editable .[packages] --constraint requirements.txt --constraint requirements-dev.txt"
+DEV_REQUIREMENTS="--editable .[dev,packages] --constraint requirements.txt --constraint requirements-dev.txt"
 
 # where we create a virtualenv
-VIRTUALENV_DIR=.
+VIRTUALENV_DIR=venv
 
-# Cleanable files and directories to delete with the --clean option
+# Cleanable files and directories with the --clean option
 CLEANABLE="
     build
-    bin
-    lib
-    lib64
-    include
-    tcl
-    local
-    .Python
-    .eggs
-    pip-selfcheck.json
-    src/scancode_toolkit.egg-info
-    src/scancode_toolkit_mini.egg-info
-    SCANCODE_DEV_MODE
-    man
-    Scripts"
-
+	venv"
 
 # extra  arguments passed to pip
 PIP_EXTRA_ARGS=" "
@@ -64,26 +50,15 @@ VIRTUALENV_PYZ_URL=https://bootstrap.pypa.io/virtualenv.pyz
 CFG_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
-
-################################
-# scancode-specific: Thirdparty package locations and index handling
-if [[ "$PYPI_LINKS" == "" ]]; then
-    # Do we have thirdparty/files? use the mit.LICENSE as a proxy
-    if [[ -f "$CFG_ROOT_DIR/thirdparty/mit.LICENSE" ]]; then
-        LINKS=$CFG_ROOT_DIR/thirdparty
-    else
-        LINKS=https://thirdparty.aboutcode.org/pypi
-    fi
-else
-    LINKS=$PYPI_LINKS
+# Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
+if [ -f "$CFG_ROOT_DIR/thirdparty" ]; then
+    PIP_EXTRA_ARGS="--find-links $CFG_ROOT_DIR/thirdparty "
 fi
-
-PIP_EXTRA_ARGS="--no-index --find-links $LINKS"
-################################
+PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS --find-links https://thirdparty.aboutcode.org/pypi"
 
 
 ################################
-# Set the quiet flag to empty if not defined 
+# Set the quiet flag to empty if not defined
 if [[ "$CFG_QUIET" == "" ]]; then
     CFG_QUIET=" "
 fi
@@ -94,7 +69,7 @@ fi
 # Use environment variables or a file if available.
 # Otherwise the latest Python by default.
 if [[ "$PYTHON_EXECUTABLE" == "" ]]; then
-    # check for a file named PYTHON_EXECUTABLE 
+    # check for a file named PYTHON_EXECUTABLE
     if [ -f "$CFG_ROOT_DIR/PYTHON_EXECUTABLE" ]; then
         PYTHON_EXECUTABLE=$(cat "$CFG_ROOT_DIR/PYTHON_EXECUTABLE")
     else
@@ -109,10 +84,14 @@ cli_help() {
     echo "  usage: ./configure [options]"
     echo
     echo The default is to configure for regular use. Use --dev for development.
+    echo Use the --init option if starting a new project and the project
+    echo dependencies are not available on thirdparty.aboutcode.org/pypi/
+    echo and requirements.txt and/or requirements-dev.txt has not been generated.
     echo
     echo The options are:
     echo " --clean: clean built and installed files and exit."
     echo " --dev:   configure the environment for development."
+    echo " --init:  pull dependencies from PyPI. Used when first setting up a project."
     echo " --help:  display this help message and exit."
     echo
     echo By default, the python interpreter version found in the path is used.
@@ -151,7 +130,7 @@ create_virtualenv() {
             VIRTUALENV_PYZ="$CFG_ROOT_DIR/etc/thirdparty/virtualenv.pyz"
         else
             VIRTUALENV_PYZ="$CFG_ROOT_DIR/$VENV_DIR/virtualenv.pyz"
-            wget -O "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL"
+            wget -O "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL" 2>/dev/null || curl -o  "$VIRTUALENV_PYZ" "$VIRTUALENV_PYZ_URL"
         fi
 
         $PYTHON_EXECUTABLE "$VIRTUALENV_PYZ" \
@@ -186,23 +165,25 @@ install_packages() {
 # Main command line entry point
 CFG_DEV_MODE=0
 CFG_REQUIREMENTS=$REQUIREMENTS
+NO_INDEX="--no-index"
 
-case "$CLI_ARGS" in
-    --help)    cli_help;;
-    --clean)   clean;;
-    --dev)     CFG_REQUIREMENTS="$DEV_REQUIREMENTS" && CFG_DEV_MODE=1;;
-esac
+# We are using getopts to parse option arguments that start with "-"
+while getopts :-: optchar; do
+    case "${optchar}" in
+        -)
+            case "${OPTARG}" in
+                help  ) cli_help;;
+                clean ) clean;;
+                dev   ) CFG_REQUIREMENTS="$DEV_REQUIREMENTS" && CFG_DEV_MODE=1;;
+                init  ) NO_INDEX="";;
+            esac;;
+    esac
+done
+
+PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS $NO_INDEX"
 
 create_virtualenv "$VIRTUALENV_DIR"
 install_packages "$CFG_REQUIREMENTS"
 . "$CFG_BIN_DIR/activate"
-
-################################
-# scancode-specific: Setup development mode
-
-if [[ "$CFG_DEV_MODE" == 1 ]]; then
-    # Add development tag file to auto-regen license index on file changes
-    touch "$CFG_ROOT_DIR/SCANCODE_DEV_MODE"
-fi
 
 set +e
