@@ -4,11 +4,12 @@
 # Python compiled files
 *.py[cod]
 
-# do not commit thriparty cache of wheels
+# do not commit thirdparty cache of wheels
 /thirdparty
 
 # virtualenv and other misc bits
 /src/*.egg-info
+*.egg-info
 /dist
 /build
 /bin
@@ -18,6 +19,7 @@
 /Lib
 /pip-selfcheck.json
 /tmp
+/venv
 .Python
 /include
 /Include
@@ -82,6 +84,9 @@ pyvenv.cfg
 lib64
 tcl
 /.env
+
+# Ignore Jupyter Notebook related temp files
+.ipynb_checkpoints/
 
 *.orig
 /release*

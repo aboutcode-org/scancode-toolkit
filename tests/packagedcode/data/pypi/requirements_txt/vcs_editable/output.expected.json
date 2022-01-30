@@ -26,7 +26,104 @@
     "declared_license": null,
     "notice_text": null,
     "root_path": null,
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "--editable bzr+http://bzr.myproject.org/MyProject/trunk#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "--editable bzr+sftp://user@myproject.org/MyProject/trunk#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "--editable bzr+ssh://user@myproject.org/MyProject/trunk#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "--editable bzr+ftp://user@myproject.org/MyProject/trunk#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "--editable bzr+https://bzr.myproject.org/MyProject/trunk@2019#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "--editable bzr+http://bzr.myproject.org/MyProject/trunk@v1.0#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "bzr+http://bzr.myproject.org/MyProject/trunk#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "bzr+sftp://user@myproject.org/MyProject/trunk#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "bzr+ssh://user@myproject.org/MyProject/trunk#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "bzr+ftp://user@myproject.org/MyProject/trunk#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "bzr+https://bzr.myproject.org/MyProject/trunk@2019#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "bzr+http://bzr.myproject.org/MyProject/trunk@v1.0#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},

@@ -360,7 +360,7 @@ Package: pypi
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:RequirementsFile
-  file_patterns: *requirements*.txt, *requirements*.pip, *requirements*.in, requires.txt
+  file_patterns: *requirement*.txt, *requirement*.pip, *requirement*.in, requires.txt, requirements/*.txt, requirements/*.pip, requirements/*.in
 
 --------------------------------------------
 Package: readme

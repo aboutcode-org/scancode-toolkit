@@ -1,6 +1,6 @@
-# make sure end of lines are always lf
-*		text eol=lf
-*.bat		text eol=crlf
+# Ignore all Git auto CR/LF line endings conversions
+* -text
+pyproject.toml export-subst
 
 # data in the tests should be kept as is
 **/data/** binary

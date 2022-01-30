@@ -24,16 +24,16 @@ jobs:
         run: ./configure --dev
 
       - name: Activate VirtualEnv
-        run: source bin/activate
+        run: source venv/bin/activate
 
       #- name: Check About Files in thirdparty
-      #  run: ./bin/about check thirdparty/
+      #  run: ./venv/bin/about check thirdparty/
 
       - name: Check About Files in thirdparty
-        run: ./bin/about check src/
+        run: ./venv/bin/about check src/
 
       - name: Check About Files in thirdparty
-        run: ./bin/about check etc/
+        run: ./venv/bin/about check etc/
 
       - name: Check About Files in thirdparty
-        run: ./bin/about check scancode-toolkit.ABOUT
+        run: ./venv/bin/about check scancode-toolkit.ABOUT
