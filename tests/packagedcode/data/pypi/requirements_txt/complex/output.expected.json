@@ -36,12 +36,28 @@
         "is_resolved": true
       },
       {
+        "purl": "pkg:pypi/crate.web",
+        "requirement": "--editable git+https://github.com/crateio/crate.web.git#egg=crate.web",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
         "purl": "pkg:pypi/django-uuidfield@0.2",
         "requirement": "==0.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true
+      },
+      {
+        "purl": "pkg:pypi/jutils",
+        "requirement": "--editable git+https://github.com/dstufft/jutils.git#egg=jutils",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,

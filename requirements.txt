@@ -13,7 +13,7 @@ commoncode==30.0.0
 construct==2.10.67
 cryptography==3.4.7
 debian-inspector==30.0.0
-dparse==0.5.1
+dparse2==0.6.0
 extractcode==21.7.23
 extractcode-7z==16.5.210531
 extractcode-libarchive==3.5.1.210531
@@ -33,19 +33,20 @@ javaproperties==0.8.0
 Jinja2==3.0.1
 jsonstreams==0.6.0
 license-expression==21.6.14
-lxml==4.6.3
+lxml==4.7.1
 MarkupSafe==2.0.1
 more-itertools==8.8.0
 normality==2.2.2
 packagedcode-msitools==0.101.210706
 packageurl-python==0.9.4
-packaging==20.9
+packaging==21.3
 patch==1.16
 #parameter_expansion==0.2.0
 parameter-expansion-patched==0.2.1b4
 pdfminer.six==20201018
 pefile==2021.5.24
-pkginfo==1.7.0
+pkginfo2==30.0.0
+pip-requirements-parser==31.2.0
 pluggy==0.13.1
 plugincode==21.1.21
 ply==3.11
@@ -79,3 +80,4 @@ wcwidth==0.2.5
 webencodings==0.5.1
 xmltodict==0.12.0
 zipp==3.4.1
+

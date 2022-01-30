@@ -306,14 +306,14 @@ On Linux/Mac:
 - Open a terminal
 - cd to the clone directory
 - run ``./configure``
-- run ``source bin/activate``
+- run ``source venv/bin/activate``
 
 On Windows:
 
 - open a command prompt
 - cd to the clone directory
 - run ``configure``
-- run ``Scripts\activate``
+- run ``venv\Scripts\activate``
 
 Now you are ready to use the freshly configured scancode-toolkit.
 
@@ -336,14 +336,14 @@ The steps are:
 
 #. Create a Python virtual environment::
 
-    /usr/bin/python3 -m venv .
+    /usr/bin/python3 -m venv venv
 
 For more information on Python virtualenv, visit this
 `page <https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv>`_.
 
 #. Activate the virtual environment you just created::
 
-    source bin/activate
+    source venv/bin/activate
 
 #. Run ``pip install --upgrade pip setuptools wheel`` to install the latest
    versions of base utilities.

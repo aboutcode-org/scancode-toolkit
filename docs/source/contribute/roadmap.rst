@@ -15,15 +15,15 @@ Work in Progress
 
 (see Completed features below)
 
-Packages manifests and dependencies parsers
+Package manifest and dependency parsers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- |clock1030| Docker images base (as part of: https://github.com/pombredanne/conan ) #651
+- |clock1030| Docker image base (as part of: https://github.com/pombredanne/conan ) #651
 - |clock1030| RubyGems base and dependencies #650 (code in https://github.com/nexB/scancode-toolkit-contrib/ )
 - |clock1030| Perl, CPAN (basic in https://github.com/nexB/scancode-toolkit-contrib/)
 - |clock1030| Go : parsing for Godep in https://github.com/nexB/scancode-toolkit-contrib/
 - |clock1030| Windows PE #652
-- |white_large_square| RPMs dependencies #649
+- |white_large_square| RPM dependencies #649
 - |white_large_square| Windows Nuget dependencies #648
 - |white_check_mark| Bower packages #654
 - |clock1030| Python dependencies #653
@@ -122,19 +122,19 @@ CI integration
 Other work in progress
 ----------------------
 
-- |clock1030| ScanCode server: Spawned as its own project: https://github.com/nexB/scancode-server.
+- |clock1030| ScanCode server: Separate project: https://github.com/nexB/scancode-server.
   Will include Integration / webhooks for Github, Bitbucket.
-- |clock1030| VulnerableCode: NVD and CVE lookups: Spawned as its own project:
+- |clock1030| VulnerableCode: NVD and CVE lookups: Separate project:
   https://github.com/nexB/vulnerablecode
-- |white_check_mark| ScanCode Workbench: desktop app for scan review: Spawned as its own project:
+- |white_check_mark| ScanCode Workbench: desktop app for scan review: Separate project:
   https://github.com/nexB/scancode-workbench
-- |white_large_square| DependentCode: dynamic dependencies resolutions: Spawned as its own project:
+- |white_large_square| DependentCode: dynamic dependencies resolutions: Separate project:
   https://github.com/nexB/dependentcode
 
 Package mining and matching
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(Note that this will be spawned in its project)
+(Note that this will be a separate project)
 Some code is in https://github.com/nexB/scancode-toolkit-contrib/
 
 - |clock1030| exact matching
@@ -167,20 +167,19 @@ Outputs and UI
 - |white_check_mark| plain HTML tables, also usable in a spreadsheet
 - |white_check_mark| fancy HTML 'app' with a file tree navigation, and scan results filtering,
   search and sorting
-- |white_check_mark| improved scans GUI now its own project: https://github.com/nexB/aboutcode-manager
 - |white_check_mark| simple scan summary
 - |white_check_mark| SPDX output
 
 Package and dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^
-- |white_check_mark| common model for packages data
-- |white_check_mark| basic support for common packages format
-- |white_check_mark| RPM packages base
-- |white_check_mark| NuGet packages base
-- |white_check_mark| Python packages base
-- |white_check_mark| PHP Composer packages support with dependencies
-- |white_check_mark| Java Maven POM packages support with dependencies
-- |white_check_mark| npm packages support with dependencies
+- |white_check_mark| common model for package data
+- |white_check_mark| basic support for common package format
+- |white_check_mark| RPM package base
+- |white_check_mark| NuGet package base
+- |white_check_mark| Python package base
+- |white_check_mark| PHP Composer package support with dependencies
+- |white_check_mark| Java Maven POM package support with dependencies
+- |white_check_mark| npm package support with dependencies
 
 Speed!
 ^^^^^^

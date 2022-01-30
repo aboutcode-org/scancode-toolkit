@@ -6,7 +6,6 @@
 
    home
    install
-   ide-config
    newcomer
 
 ..

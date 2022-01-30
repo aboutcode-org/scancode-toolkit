@@ -69,11 +69,11 @@ test suite. This is installed with the ``pytest`` package which is installed
 when you run ``./configure --dev``).
 
 If you are running from a fresh git clone and you run ``./configure`` and then
-``source bin/activate`` the ``pytest`` command will be available in your path.
+``source venv/bin/activate`` the ``pytest`` command will be available in your path.
 
 Alternatively, if you have already configured but are not in an activated
 "virtualenv" the ``pytest`` command is available under
-``<root of your checkout>/bin/pytest``
+``<root of your checkout>/venv/bin/pytest``
 
 (Note: paths here are for POSIX, but mostly the same applies to Windows)
 

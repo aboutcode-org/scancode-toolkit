@@ -11,12 +11,14 @@ from os import path
 import sys
 
 import click
+
 click.disable_unicode_literals_warning = True
 from commoncode import fileutils
 
 import scancode_config
+
 # hack to be able to load testxx utilities. The test code is not in the path otherwise
-licensedcode_test_dir = path.join(scancode_config.scancode_root_dir, 'tests', 'licensedcode')
+licensedcode_test_dir = path.join(scancode_config.scancode_root_dir, "tests", "licensedcode")
 sys.path.append(licensedcode_test_dir)
 
 import licensedcode_test_utils  # NOQA
@@ -38,23 +40,23 @@ def build_test(test_file):
     idx = cache.get_index()
     matches = idx.match(location=test_file) or []
     detected_expressions = [match.rule.license_expression for match in matches]
-    notes = ''
+    notes = ""
     if not detected_expressions:
-        notes = 'No license should be detected'
+        notes = "No license should be detected"
 
-    lt = LicenseTest(
-        test_file=test_file,
-        license_expressions=detected_expressions,
-        notes=notes
-    )
+    lt = LicenseTest(test_file=test_file, license_expressions=detected_expressions, notes=notes)
 
-    lt.data_file = test_file + '.yml'
+    lt.data_file = test_file + ".yml"
     return lt
 
 
 @click.command()
-@click.argument('test_directory', type=click.Path(), metavar='DIR',)
-@click.help_option('-h', '--help')
+@click.argument(
+    "test_directory",
+    type=click.Path(),
+    metavar="DIR",
+)
+@click.help_option("-h", "--help")
 def cli(test_directory):
     """
     Generate license tests YAML data files for each file in a directory tree.
@@ -66,9 +68,9 @@ def cli(test_directory):
     for test_file in fileutils.resource_iter(test_directory, with_dirs=False):
         lt = build_test(test_file)
         lt.dump()
-        print('--> License Test added:', lt)
+        print("--> License Test added:", lt)
         print()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cli()
