@@ -33,7 +33,7 @@ class JavaLexer(RegexLexer):
     filenames = ['*.java']
     mimetypes = ['text/x-java']
 
-    flags = re.MULTILINE | re.DOTALL | re.UNICODE
+    flags = re.MULTILINE | re.DOTALL
 
     tokens = {
         'root': [
@@ -272,7 +272,7 @@ class ScalaLexer(RegexLexer):
             (r'\b(package)(\s+)', bygroups(Keyword, Text), 'package'),
             (r'\b(given)\b(\s*)(%s)' % idUpper,
                 bygroups(Keyword, Text, Name.Class)),
-            (r'\b(given)\b(\s*)(%s)?' % anyId, 
+            (r'\b(given)\b(\s*)(%s)?' % anyId,
                 bygroups(Keyword, Text, Name)),
         ],
         'inheritance': [
@@ -296,7 +296,7 @@ class ScalaLexer(RegexLexer):
         ],
         'punctuation': [
             (r'[{}()\[\];,.]', Punctuation),
-            (r'(?<!:):(?!:)', Punctuation),  
+            (r'(?<!:):(?!:)', Punctuation),
         ],
         'keywords': [
             (words(keywords, prefix=r'\b', suffix=r'\b'), Keyword),
@@ -334,7 +334,7 @@ class ScalaLexer(RegexLexer):
             (r'(\.)(type)\b', bygroups(Punctuation, Keyword)),
         ],
         'inline': [
-            # inline is a soft modifier, only highlighted if followed by if, 
+            # inline is a soft modifier, only highlighted if followed by if,
             # match or parameters.
             (r'\b(inline)(?=\s+(%s|%s)\s*:)' % (plainid, backQuotedId),
                 Keyword),
@@ -1091,7 +1091,7 @@ class KotlinLexer(RegexLexer):
     filenames = ['*.kt', '*.kts']
     mimetypes = ['text/x-kotlin']
 
-    flags = re.MULTILINE | re.DOTALL | re.UNICODE
+    flags = re.MULTILINE | re.DOTALL
 
     kt_name = ('@?[_' + uni.combine('Lu', 'Ll', 'Lt', 'Lm', 'Nl') + ']' +
                '[' + uni.combine('Lu', 'Ll', 'Lt', 'Lm', 'Nl', 'Nd', 'Pc', 'Cf',
@@ -1214,7 +1214,7 @@ class KotlinLexer(RegexLexer):
         'string_common': [
             (r'\\\\', String),  # escaped backslash
             (r'\\"', String),  # escaped quote
-            (r'\\', String),  # bare backslash 
+            (r'\\', String),  # bare backslash
             (r'\$\{', String.Interpol, 'interpolation'),
             (r'(\$)(\w+)', bygroups(String.Interpol, Name)),
             (r'[^\\"$]+', String)
