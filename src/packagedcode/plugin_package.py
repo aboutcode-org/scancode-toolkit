@@ -10,6 +10,9 @@
 
 import attr
 import click
+import os
+import sys
+import uuid
 
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
@@ -19,7 +22,29 @@ from commoncode.cliutils import SCAN_GROUP
 
 from packagedcode import get_package_instance
 from packagedcode import PACKAGE_MANIFEST_TYPES
+from packagedcode import PACKAGE_INSTANCES_BY_TYPE
 
+
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+
+if TRACE:
+
+    use_print = True
+
+    if use_print:
+        printer = print
+    else:
+        import logging
+
+        logger = logging.getLogger(__name__)
+        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+        logging.basicConfig(stream=sys.stdout)
+        logger.setLevel(logging.DEBUG)
+        printer = logger.debug
+
+    def logger_debug(*args):
+        return printer(' '.join(isinstance(a, str) and a or repr(a)
+                                     for a in args))
 
 def print_packages(ctx, param, value):
     if not value or ctx.resilient_parsing:
@@ -51,8 +76,9 @@ class PackageScanner(ScanPlugin):
 
     resource_attributes = {}
     codebase_attributes = {}
-    resource_attributes['package_manifests'] = attr.ib(default=attr.Factory(list), repr=False)
     codebase_attributes['packages'] = attr.ib(default=attr.Factory(list), repr=False)
+    resource_attributes['package_manifests'] = attr.ib(default=attr.Factory(list), repr=False)
+    #resource_attributes['for_packages'] = attr.ib(default=attr.Factory(list), repr=False)
 
     sort_order = 6
 
@@ -102,12 +128,89 @@ def create_packages_from_manifests(codebase, **kwargs):
     Create package instances from package manifests present in the codebase.
     """
     package_manifests = []
+    package_instances_by_paths = {}
+    package_instance_by_identifiers = {}
 
     for resource in codebase.walk(topdown=False):
-        if resource.package_manifests:
-            package_manifests.extend(resource.package_manifests)
+        if not resource.package_manifests:
+            continue
 
+        # continue if resource.path already in `package_instances_by_paths`
+        if resource.path in package_instances_by_paths:
+            continue
+
+        if TRACE:
+            logger_debug(
+                'create_packages_from_manifests:',
+                'location:', resource.location,
+            )
+
+        # Currently we assume there is only one PackageManifest 
+        # ToDo: Do this for multiple PackageManifests per resource
+        manifest = resource.package_manifests[0]
+
+        # Check if PackageInstance is implemented
+        pk_instance_class = PACKAGE_INSTANCES_BY_TYPE.get(manifest["type"])
+        if not pk_instance_class:
+            package_manifests.extend(resource.package_manifests)
+            continue
+
+        # create a PackageInstance from the `default_type`
+        pk_instance = pk_instance_class()
+        pk_instance_uuid = uuid.uuid4()
+        package_instance_by_identifiers[pk_instance_uuid] = pk_instance
+
+        # use the get_other_manifests_for_instance to get other instances
+        package_manifests_by_path = pk_instance.get_other_manifests_for_instance(resource, codebase)
+        package_manifests_by_path[resource.path] = manifest
+
+        if TRACE:
+            logger_debug(
+                'create_packages_from_manifests:',
+                'package_manifests_by_path:', package_manifests_by_path,
+            )
+
+        # add `path: Instance` into `package_instances_by_paths` for all manifests
+        for path in package_manifests_by_path.keys():
+            print(f"Path: {path}")
+            package_instances_by_paths[path] = pk_instance
+
+        # populate PackageInstance with data from manifests
+        pk_instance.populate_instance_from_manifests(package_manifests_by_path, uuid=pk_instance_uuid)
+
+        # get files for this PackageInstance
+        pk_instance.files = tuple(pk_instance.get_package_files(resource, codebase))
+
+        # add instance uuid to `for_packages` for all manifests (and files ?)
+        update_files_with_package_instances(package_manifests_by_path, codebase, pk_instance)
+
+        if TRACE:
+            logger_debug(
+                'create_packages_from_manifests:',
+                'pk_instance:', pk_instance,
+            )
+
+    # ToDo: replace this with PackageInstance objects once basic implementation is complete
     codebase.attributes.packages.extend(package_manifests)
+
+    if TRACE:
+        logger_debug(
+            'create_packages_from_manifests:',
+            'package_instances_by_paths:', package_instances_by_paths,
+        )
+
+    # Get unique PackageInstance objects from `package_instances_by_paths`
+
+    package_instances = list(package_instance_by_identifiers.values())
+    codebase.attributes.packages.extend(package_instances)
+
+
+def update_files_with_package_instances(package_manifests_by_path, codebase, package_instance):
+
+    for path in package_manifests_by_path.keys():
+        # Update `for_packages` attribute for resource at path with
+        # reference to this package_instance
+        continue
 
 
 def set_packages_root(resource, codebase):

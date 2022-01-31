@@ -48,7 +48,7 @@ except ImportError:
 """
 Detect and collect Python packages information.
 """
-# TODO: add support for poetry and setup.cfg
+# TODO: add support for poetry and setup.cfg and metadata.json
 
 TRACE = False
 
@@ -372,6 +372,23 @@ class RequirementsFile(PythonPackage, models.PackageManifest):
         )
         yield cls(dependencies=dependent_packages)
 
+
+@attr.s()
+class PythonPackageInstance(PythonPackage, models.PackageInstance):
+    """
+    A Python PackageInstance that is created out of one/multiple python package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            MetadataFile,
+            RequirementsFile,
+            PipfileLock,
+            DependencyFile,
+            SetupPy
+        ]
 
 
 def get_attribute(metainfo, name, multiple=False):

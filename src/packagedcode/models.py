@@ -765,6 +765,100 @@ class PackageManifest:
         raise NotImplementedError
 
 
+@attr.s()
+class PackageInstance:
+    """
+    A package instance mixin as represented by its package manifests, files and data
+    from its package manifests.
+
+    Subclasses must extend a Package subclass for a given ecosystem.
+    """
+
+    package_uuid = String(
+        label='Package instance UUID',
+        help='A unique ID for package instances in a codebase scan.'
+             'Consists of a pURL and an UUID field as a pURL qualifier.'
+    )
+
+    package_manifest_paths = List(
+        item_type=String,
+        label='Package manifest paths',
+        help='List of package manifest file paths for this package'
+    )
+
+    files = List(
+        item_type=PackageFile,
+        label='Provided files',
+        help='List of files provided by this package.'
+    )
+
+    def populate_instance_from_manifests(self, package_manifests_by_path, uuid):
+        """
+        Create a package instance object from one or multiple package manifests.
+        """
+        for path, package_manifest in package_manifests_by_path.items():
+            self.package_manifest_paths.append(path)
+
+        self.package_manifest_paths = tuple(self.package_manifest_paths)
+
+        # ToDo: This field would be pURL + UUID as a qualifier instead
+        self.package_uuid = str(uuid)
+
+    def get_package_files(self, resource, codebase):
+        """
+        Return a list of all the file paths for a package instance.
+ 
+        Sub-classes should override to implement their own package files finding methods.
+        """
+        files = []
+
+        parent = resource.parent(codebase)
+
+        for resource in parent.walk(codebase):
+            if resource.is_dir:
+                continue
+
+            files.append(resource.path)
+        
+        return files
+
+    def get_other_manifests_for_instance(self, resource, codebase):
+        """
+        Return a dictionary of other package manifests by their paths for a given package instance.
+
+        Sub-classes can override to implement their own package manifest finding methods.
+        """
+        package_manifests_by_path = {}
+
+        parent = resource.parent(codebase)
+
+        for resource in parent.walk(codebase):
+            if resource.is_dir:
+                continue
+
+            filename = file_name(resource.location)
+            file_patterns = self.get_file_patterns(manifests=self.manifests)
+            if any(fnmatch.fnmatchcase(filename, pattern) for pattern in file_patterns):
+                if not resource.package_manifests:
+                    continue # Raise Exception(?)
+
+                #ToDo: Implement for multiple package manifests per path
+                package_manifests_by_path[resource.path] = resource.package_manifests[0]
+
+        return package_manifests_by_path
+    
+    def get_file_patterns(self, manifests):
+        """
+        Return a list of all `file_patterns` for all the PackageManifest classes
+        in `manifests`.
+        """
+        manifest_file_patterns = []
+        for manifest in manifests:
+            manifest_file_patterns.extend(manifest.file_patterns)
+        
+        return manifest_file_patterns
+
+
 # Package types
 # NOTE: this is somewhat redundant with extractcode archive handlers
 # yet the purpose and semantics are rather different here

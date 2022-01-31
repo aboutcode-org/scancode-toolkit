@@ -110,28 +110,36 @@ PACKAGE_MANIFEST_TYPES = [
     pubspec.PubspecLock
 ]
 
+PACKAGE_INSTANCE_TYPES = [
+    pypi.PythonPackageInstance
+]
+
 PACKAGE_MANIFESTS_BY_TYPE = {
-    (
-        cls.package_manifest_type
-        if isinstance(cls, models.PackageManifest)
-        else cls.default_type
-    ): cls
+    cls.default_type: cls
     for cls in PACKAGE_MANIFEST_TYPES
 }
-# We cannot have two package classes with the same type
-if len(PACKAGE_MANIFESTS_BY_TYPE) != len(PACKAGE_MANIFEST_TYPES):
-    seen_types = {}
-    for pmt in PACKAGE_MANIFEST_TYPES:
-        manifest = pmt()
-        assert manifest.package_manifest_type
-        seen = seen_types.get(manifest.package_manifest_type)
-        if seen:
-            msg = ('Invalid duplicated packagedcode.Package types: '
-                   '"{}:{}" and "{}:{}" have the same type.'
-                  .format(manifest.package_manifest_type, manifest.__name__, seen.package_manifest_type, seen.__name__,))
-            raise Exception(msg)
-        else:
-            seen_types[manifest.package_manifest_type] = manifest
+
+PACKAGE_INSTANCES_BY_TYPE = {
+    cls.default_type: cls
+    for cls in PACKAGE_INSTANCE_TYPES
+}
+
+def check_package_manifest_classes():
+
+    # We cannot have two package classes with the same type
+    if len(PACKAGE_MANIFESTS_BY_TYPE) != len(PACKAGE_MANIFEST_TYPES):
+        seen_types = {}
+        for pmt in PACKAGE_MANIFEST_TYPES:
+            manifest = pmt()
+            assert manifest.package_manifest_type
+            seen = seen_types.get(manifest.package_manifest_type)
+            if seen:
+                msg = ('Invalid duplicated packagedcode.Package types: '
+                    '"{}:{}" and "{}:{}" have the same type.'
+                    .format(manifest.package_manifest_type, manifest.__name__, seen.package_manifest_type, seen.__name__,))
+                raise Exception(msg)
+            else:
+                seen_types[manifest.package_manifest_type] = manifest
 
 
 def get_package_class(scan_data, default=models.Package):

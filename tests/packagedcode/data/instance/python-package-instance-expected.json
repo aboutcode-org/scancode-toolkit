@@ -1,0 +1,328 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json": "<file>",
+        "--package": true,
+        "--processes": "-1",
+        "--strip-root": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "2.0.0",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "spdx_license_list_version": "3.14",
+        "OUTDATED": "WARNING: Outdated ScanCode Toolkit version! You are using an outdated version of ScanCode Toolkit: 30.1.0 released on: 2021-09-24. A new version is available with important improvements including bug and security fixes, updated license, copyright and package detection, and improved scanning accuracy. Please download and install the latest version of ScanCode. Visit https://github.com/nexB/scancode-toolkit/releases for details.",
+        "files_count": 7
+      }
+    }
+  ],
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "click",
+      "version": "8.0.1",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "Composable command line interface toolkit\n\\$ click\\_\n==========\n\nClick is a Python package for creating beautiful command line interfaces\nin a composable way with as little code as necessary. It's the \"Command\nLine Interface Creation Kit\". It's highly configurable but comes with\nsensible defaults out of the box.\n\nIt aims to make the process of writing command line tools quick and fun\nwhile also preventing any frustration caused by the inability to\nimplement an intended CLI API.\n\nClick in three points:\n\n-   Arbitrary nesting of commands\n-   Automatic help page generation\n-   Supports lazy loading of subcommands at runtime\n\n\nInstalling\n----------\n\nInstall and update using `pip`_:\n\n.. code-block:: text\n\n    $ pip install -U click\n\n.. _pip: https://pip.pypa.io/en/stable/quickstart/\n\n\nA Simple Example\n----------------\n\n.. code-block:: python\n\n    import click\n\n    @click.command()\n    @click.option(\"--count\", default=1, help=\"Number of greetings.\")\n    @click.option(\"--name\", prompt=\"Your name\", help=\"The person to greet.\")\n    def hello(count, name):\n        \"\"\"Simple program that greets NAME for a total of COUNT times.\"\"\"\n        for _ in range(count):\n            click.echo(f\"Hello, {name}!\")\n\n    if __name__ == '__main__':\n        hello()\n\n.. code-block:: text\n\n    $ python hello.py --count=3\n    Your name: Click\n    Hello, Click!\n    Hello, Click!\n    Hello, Click!\n\n\nDonate\n------\n\nThe Pallets organization develops and supports Click and other popular\npackages. In order to grow the community of contributors and users, and\nallow the maintainers to devote more time to the projects, `please\ndonate today`_.\n\n.. _please donate today: https://palletsprojects.com/donate\n\n\nLinks\n-----\n\n-   Documentation: https://click.palletsprojects.com/\n-   Changes: https://click.palletsprojects.com/changes/\n-   PyPI Releases: https://pypi.org/project/click/\n-   Source Code: https://github.com/pallets/click\n-   Issue Tracker: https://github.com/pallets/click/issues\n-   Website: https://palletsprojects.com/p/click\n-   Twitter: https://twitter.com/PalletsTeam\n-   Chat: https://discord.gg/pallets",
+      "release_date": null,
+      "parties": [],
+      "keywords": [
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python"
+      ],
+      "homepage_url": "https://palletsprojects.com/p/click/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "Issue Tracker, https://github.com/pallets/click/issues/",
+      "code_view_url": "Source Code, https://github.com/pallets/click/",
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "bsd-new",
+      "declared_license": {
+        "license": "BSD-3-Clause",
+        "classifiers": [
+          "License :: OSI Approved :: BSD License"
+        ]
+      },
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [],
+      "installed_files": [],
+      "extra_data": {},
+      "package_uuid": "f7a2dd3f-8374-40bf-b640-13a5c9e4a27a",
+      "package_manifest_paths": [
+        "METADATA",
+        "setup.cfg",
+        "setup.py",
+        "tox.ini"
+      ],
+      "files": [
+        "LICENSE.rst",
+        "MANIFEST.in",
+        "METADATA",
+        "README.rst",
+        "setup.cfg",
+        "setup.py",
+        "tox.ini"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE.rst",
+      "type": "file",
+      "package_manifests": [],
+      "scan_errors": []
+    },
+    {
+      "path": "MANIFEST.in",
+      "type": "file",
+      "package_manifests": [],
+      "scan_errors": []
+    },
+    {
+      "path": "METADATA",
+      "type": "file",
+      "package_manifests": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "click",
+          "version": "8.0.1",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "Composable command line interface toolkit\n\\$ click\\_\n==========\n\nClick is a Python package for creating beautiful command line interfaces\nin a composable way with as little code as necessary. It's the \"Command\nLine Interface Creation Kit\". It's highly configurable but comes with\nsensible defaults out of the box.\n\nIt aims to make the process of writing command line tools quick and fun\nwhile also preventing any frustration caused by the inability to\nimplement an intended CLI API.\n\nClick in three points:\n\n-   Arbitrary nesting of commands\n-   Automatic help page generation\n-   Supports lazy loading of subcommands at runtime\n\n\nInstalling\n----------\n\nInstall and update using `pip`_:\n\n.. code-block:: text\n\n    $ pip install -U click\n\n.. _pip: https://pip.pypa.io/en/stable/quickstart/\n\n\nA Simple Example\n----------------\n\n.. code-block:: python\n\n    import click\n\n    @click.command()\n    @click.option(\"--count\", default=1, help=\"Number of greetings.\")\n    @click.option(\"--name\", prompt=\"Your name\", help=\"The person to greet.\")\n    def hello(count, name):\n        \"\"\"Simple program that greets NAME for a total of COUNT times.\"\"\"\n        for _ in range(count):\n            click.echo(f\"Hello, {name}!\")\n\n    if __name__ == '__main__':\n        hello()\n\n.. code-block:: text\n\n    $ python hello.py --count=3\n    Your name: Click\n    Hello, Click!\n    Hello, Click!\n    Hello, Click!\n\n\nDonate\n------\n\nThe Pallets organization develops and supports Click and other popular\npackages. In order to grow the community of contributors and users, and\nallow the maintainers to devote more time to the projects, `please\ndonate today`_.\n\n.. _please donate today: https://palletsprojects.com/donate\n\n\nLinks\n-----\n\n-   Documentation: https://click.palletsprojects.com/\n-   Changes: https://click.palletsprojects.com/changes/\n-   PyPI Releases: https://pypi.org/project/click/\n-   Source Code: https://github.com/pallets/click\n-   Issue Tracker: https://github.com/pallets/click/issues\n-   Website: https://palletsprojects.com/p/click\n-   Twitter: https://twitter.com/PalletsTeam\n-   Chat: https://discord.gg/pallets",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Armin Ronacher",
+              "email": "armin.ronacher@active-4.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "maintainer",
+              "name": "Pallets",
+              "email": "contact@palletsprojects.com",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python"
+          ],
+          "homepage_url": "https://palletsprojects.com/p/click/",
+          "download_url": null,
+          "size": null,
+          "bug_tracking_url": "Issue Tracker, https://github.com/pallets/click/issues/",
+          "code_view_url": "Source Code, https://github.com/pallets/click/",
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "bsd-new",
+          "declared_license": {
+            "license": "BSD-3-Clause",
+            "classifiers": [
+              "License :: OSI Approved :: BSD License"
+            ]
+          },
+          "notice_text": null,
+          "root_path": "METADATA",
+          "dependencies": [
+            {
+              "purl": "pkg:pypi/colorama",
+              "requirement": null,
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:pypi/importlib-metadata",
+              "requirement": null,
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "purl": "pkg:pypi/click@8.0.1",
+          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_download_url": "https://pypi.org/packages/source/c/click/click-8.0.1.tar.gz",
+          "api_data_url": "https://pypi.org/pypi/click/8.0.1/json"
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "README.rst",
+      "type": "file",
+      "package_manifests": [],
+      "scan_errors": []
+    },
+    {
+      "path": "setup.cfg",
+      "type": "file",
+      "package_manifests": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": "setup.cfg",
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "purl": null,
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "setup.py",
+      "type": "file",
+      "package_manifests": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "click",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": {},
+          "notice_text": null,
+          "root_path": "setup.py",
+          "dependencies": [
+            {
+              "purl": "pkg:pypi/colorama",
+              "requirement": null,
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:pypi/importlib-metadata",
+              "requirement": null,
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "purl": "pkg:pypi/click",
+          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_download_url": null,
+          "api_data_url": "https://pypi.org/pypi/click/json"
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "tox.ini",
+      "type": "file",
+      "package_manifests": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": "tox.ini",
+          "dependencies": [
+            {
+              "purl": "pkg:pypi/pre-commit",
+              "requirement": "pre-commit",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "purl": null,
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
+      "scan_errors": []
+    }
+  ]
+}
