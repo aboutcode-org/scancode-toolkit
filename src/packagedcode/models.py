@@ -792,12 +792,33 @@ class PackageInstance:
         help='List of files provided by this package.'
     )
 
+    def get_package_data(self):
+        """
+        Returns a mapping of package data attributes and corresponding values.
+        """
+        mapping = self.to_dict()
+
+        # Removes PackageInstance specific attributes
+        for attribute in ('package_uuid', 'package_manifest_paths', 'files'):
+            mapping.pop(attribute)
+        
+        # Remove attributes which are BasePackage functions
+        for attribute in ('repository_homepage_url', 'repository_download_url', 'api_data_url'):
+            mapping.pop(attribute)
+
+        return mapping
+
+
     def populate_instance_from_manifests(self, package_manifests_by_path, uuid):
         """
         Create a package instance object from one or multiple package manifests.
         """
         for path, package_manifest in package_manifests_by_path.items():
+            if TRACE:
+                logger.debug('Merging package manifest data for: {}'.format(path))
+                logger.debug('package manifest data: {}'.format(repr(package_manifest)))
             self.package_manifest_paths.append(path)
+            self.merge_package_data_into_instance(package_manifest)
 
         self.package_manifest_paths = tuple(self.package_manifest_paths)
 
@@ -857,6 +878,136 @@ class PackageInstance:
             manifest_file_patterns.extend(manifest.file_patterns)
         
         return manifest_file_patterns
+
+    def merge_package_data_into_instance(self, package_manifest, replace=False):
+        """
+        Merge the `package_manifest` ScannedPackage object into the `package_instance`
+        Package model object.
+        When an `package_instance` field has no value one side and and the
+        package_manifest field has a value, the package_instance field is always
+        set to this value.
+        If `replace` is True and a field has a value on both sides, then
+        package_instance field value will be replaced by the package_manifest
+        field value. Otherwise if `replace` is False, the package_instance
+        field value is left unchanged in this case.
+        """
+
+
+        existing_mapping = self.get_package_data()
+
+        # Remove PackageManifest specific attributes
+        for attribute in ('md5', 'sha1', 'sha256', 'sha512'):
+            package_manifest.pop(attribute)
+            existing_mapping.pop(attribute)
+
+        for existing_field, existing_value in existing_mapping.items():
+            new_value = package_manifest[existing_field]
+            if TRACE:
+                logger.debug(
+                    '\n'.join([
+                        'existing_field:', repr(existing_field),
+                        '    existing_value:', repr(existing_value),
+                        '    new_value:', repr(new_value)])
+                )
+
+            # FIXME: handle Booleans???
+
+            # These fields has to be same across the package_manifests
+            if existing_field in ('name', 'version', 'type', 'primary_language'):
+                if existing_value and new_value and existing_value != new_value:
+                    raise Exception(
+                        '\n'.join([
+                            'Mismatched {}:'.format(existing_field),
+                            '    existing_value: {}'.format(existing_value),
+                            '    new_value: {}'.format(new_value)
+                        ])
+                    )
+
+            if not new_value:
+                if TRACE:
+                    logger.debug('  No new value for {}: skipping'.format(existing_field))
+                continue
+
+            if not existing_value or replace:
+                if TRACE and not existing_value:
+                    logger.debug(
+                        '  No existing value: set to new: {}'.format(new_value))
+
+                if TRACE and replace:
+                    logger.debug(
+                        '  Existing value and replace: set to new: {}'.format(new_value))
+
+                if existing_field == 'parties':
+                    # If `existing_field` is `parties`, then we update the `Party` table
+                    parties = new_value
+                    parties_new = []
+
+                    for party in parties:
+                        party_new = Party(
+                            type=party['type'],
+                            role=party['role'],
+                            name=party['name'],
+                            email=party['email'],
+                            url=party['url'],
+                        )
+                        parties_new.append(party_new)
+
+                    if replace:
+                        setattr(self, existing_field, parties_new)
+                    else:
+                        existing_value.extend(parties_new)
+
+                elif existing_field == 'dependencies':
+                    # If `existing_field` is `dependencies`, then we update the `DependentPackage` table
+                    dependencies = new_value
+                    deps_new = []
+                    
+                    for dependency in dependencies:
+                        dep_new = DependentPackage(
+                            purl=dependency['purl'],
+                            requirement=dependency['requirement'],
+                            scope=dependency['scope'],
+                            is_runtime=dependency['is_runtime'],
+                            is_optional=dependency['is_optional'],
+                            is_resolved=dependency['is_resolved'],
+                        )
+                        deps_new.append(dep_new)
+
+                    if replace:
+                        setattr(self, existing_field, deps_new)
+                    else:
+                        existing_value.extend(deps_new)
+                
+                elif existing_field == 'purl':
+                    self.set_purl(package_url=new_value)
+                
+                elif existing_field == 'root_path':
+                    continue
+
+                else:
+                    # If `existing_field` is not `parties` or `dependencies`, then the
+                    # `existing_field` is a regular field on the Package model and can
+                    # be updated normally.
+                    if TRACE:
+                        logger.debug("Set value to self: {} at {}".format(new_value, existing_field))
+                        logger.debug("Set value to self: types: {} at {}".format(type(new_value), type(existing_field)))  
+                    setattr(self, existing_field, new_value)
+                    # package_instance.save()
+
+            if existing_value and new_value and existing_value != new_value:
+                # ToDo: What to do when conflicting values are present
+                # license_expression: do AND?
+                if TRACE:
+                    logger.debug("Value mismatch between new and existing: ")  
+                    logger.debug(
+                        '\n'.join([
+                            'existing_field:', repr(existing_field),
+                            '    existing_value:', repr(existing_value),
+                            '    new_value:', repr(new_value)])
+                    )                
+
+            if TRACE:
+                logger.debug('  Nothing done')
 
 
 # Package types
