@@ -13,6 +13,8 @@ import logging
 import attr
 import saneyaml
 
+from commoncode import filetype
+from commoncode import fileutils
 from packagedcode import models
 from packageurl import PackageURL
 
@@ -34,14 +36,10 @@ if TRACE:
 
 
 @attr.s()
-class CranPackage(models.Package, models.PackageManifest):
+class CranPackage(models.Package):
     file_patterns = ('DESCRIPTION',)
     default_type = 'cran'
     default_web_baseurl = 'https://cran.r-project.org/package='
-
-    @classmethod
-    def recognize(cls, location):
-        yield parse(location)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -51,79 +49,87 @@ class CranPackage(models.Package, models.PackageManifest):
         return '{}{}'.format(baseurl, self.name)
 
 
-def parse(location):
-    """
-    Return a Package object from a DESCRIPTION file or None.
-    """
-    yaml_data = get_yaml_data(location)
-    return build_package(yaml_data)
+@attr.s()
+class DescriptionFile(CranPackage, models.PackageManifest):
 
+    file_patterns = ('DESCRIPTION')
 
-def build_package(package_data):
-    """
-    Return a cran Package object from a dictionary yaml data.
-    """
-    name = package_data.get('Package')
-    if name:
-        parties = []
-        maintainers = package_data.get('Maintainer')
-        if maintainers:
-            for maintainer in maintainers.split(',\n'):
-                maintainer_name, maintainer_email = get_party_info(maintainer)
-                if maintainer_name or maintainer_email:
-                    parties.append(
-                        models.Party(
-                            name=maintainer_name,
-                            role='maintainer',
-                            email=maintainer_email,
+    @classmethod
+    def is_manifest(cls, location):
+        """
+        Return True if `location` path is for a Cran DESCRIPTION file.
+        """
+        return (filetype.is_file(location)
+            and fileutils.file_name(location) == 'DESCRIPTION')
+
+    @classmethod
+    def recognize(cls, location):
+        """
+        Yield one or more Package manifest objects given a file ``location`` pointing to a
+        package archive, manifest or similar.
+        """
+        package_data = get_yaml_data(location)
+
+        name = package_data.get('Package')
+        if name:
+            parties = []
+            maintainers = package_data.get('Maintainer')
+            if maintainers:
+                for maintainer in maintainers.split(',\n'):
+                    maintainer_name, maintainer_email = get_party_info(maintainer)
+                    if maintainer_name or maintainer_email:
+                        parties.append(
+                            models.Party(
+                                name=maintainer_name,
+                                role='maintainer',
+                                email=maintainer_email,
+                            )
+                        )
+            authors = package_data.get('Author')
+            if authors:
+                for author in authors.split(',\n'):
+                    author_name, author_email = get_party_info(author)
+                    if author_name or author_email:
+                        parties.append(
+                            models.Party(
+                                name=author_name,
+                                role='author',
+                                email=author_email,
+                            )
+                        )
+            package_dependencies = []
+            dependencies = package_data.get('Depends')
+            if dependencies:
+                for dependency in dependencies.split(',\n'):
+                    requirement = None
+                    for splitter in ('==', '>=', '<=', '>', '<'):
+                        if splitter in dependency:
+                            splits = dependency.split(splitter)
+                            # Replace the package name and keep the relationship and version
+                            # For example: R (>= 2.1)
+                            requirement = dependency.replace(splits[0], '').strip().strip(')').strip()
+                            dependency = splits[0].strip().strip('(').strip()
+                            break
+                    package_dependencies.append(
+                        models.DependentPackage(
+                            purl=PackageURL(
+                                type='cran', name=dependency).to_string(),
+                            requirement=requirement,
+                            scope='dependencies',
+                            is_runtime=True,
+                            is_optional=False,
                         )
                     )
-        authors = package_data.get('Author')
-        if authors:
-            for author in authors.split(',\n'):
-                author_name, author_email = get_party_info(author)
-                if author_name or author_email:
-                    parties.append(
-                        models.Party(
-                            name=author_name,
-                            role='author',
-                            email=author_email,
-                        )
-                    )
-        package_dependencies = []
-        dependencies = package_data.get('Depends')
-        if dependencies:
-            for dependency in dependencies.split(',\n'):
-                requirement = None
-                for splitter in ('==', '>=', '<=', '>', '<'):
-                    if splitter in dependency:
-                        splits = dependency.split(splitter)
-                        # Replace the package name and keep the relationship and version
-                        # For example: R (>= 2.1)
-                        requirement = dependency.replace(splits[0], '').strip().strip(')').strip()
-                        dependency = splits[0].strip().strip('(').strip()
-                        break
-                package_dependencies.append(
-                    models.DependentPackage(
-                        purl=PackageURL(
-                            type='cran', name=dependency).to_string(),
-                        requirement=requirement,
-                        scope='dependencies',
-                        is_runtime=True,
-                        is_optional=False,
-                    )
-                )
-        package = CranPackage(
-            name=name,
-            version=package_data.get('Version'),
-            description=package_data.get('Description', '') or package_data.get('Title', ''),
-            declared_license=package_data.get('License'),
-            parties=parties,
-            dependencies=package_dependencies,
-            # TODO: Let's handle the release date as a Date type
-            # release_date = package_data.get('Date/Publication'),
-        )
-        return package
+            yield cls(
+                name=name,
+                version=package_data.get('Version'),
+                description=package_data.get('Description', '') or package_data.get('Title', ''),
+                declared_license=package_data.get('License'),
+                parties=parties,
+                dependencies=package_dependencies,
+                # TODO: Let's handle the release date as a Date type
+                # release_date = package_data.get('Date/Publication'),
+            )
 
 
 def get_yaml_data(location):
