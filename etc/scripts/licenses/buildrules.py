@@ -226,12 +226,12 @@ def cli(licenses_file):
         text = rule.text()
 
         existing_rule = rule_exists(text)
-        skinny_text = ' '.join(text[:80].split())
+        skinny_text = " ".join(text[:80].split())
 
         existing_msg = (
-            f'Skipping rule for: {base_name!r}, '
-            'dupe of: {existing_rule} '
-            f'with text: {skinny_text!r}...'
+            f"Skipping rule for: {base_name!r}, "
+            "dupe of: {existing_rule} "
+            f"with text: {skinny_text!r}..."
         )
 
         if existing_rule:
@@ -260,9 +260,11 @@ def cli(licenses_file):
             print(existing_msg.format(**locals()))
             continue
         else:
-            print(f'Adding new rule: {base_name}')
-            print('  file://' + rulerec.data_file)
-            print('  file://' + rulerec.text_file)
+            print(f"Adding new rule: {base_name}")
+            print("  file://" + rulerec.data_file)
+            print(
+                "  file://" + rulerec.text_file,
+            )
             rulerec.dump()
             models.update_ignorables(rulerec, verbose=False)
             rulerec.dump()
