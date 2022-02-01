@@ -10,16 +10,144 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
         "spdx_license_list_version": "3.14",
+        "OUTDATED": "WARNING: Outdated ScanCode Toolkit version! You are using an outdated version of ScanCode Toolkit: 30.1.0 released on: 2021-09-24. A new version is available with important improvements including bug and security fixes, updated license, copyright and package detection, and improved scanning accuracy. Please download and install the latest version of ScanCode. Visit https://github.com/nexB/scancode-toolkit/releases for details.",
         "files_count": 102
       }
     }
   ],
   "packages": [
+    {
+      "type": "maven",
+      "namespace": "org.apache.activemq",
+      "name": "activemq-camel",
+      "version": "5.4.2",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "ActiveMQ :: Camel\nActiveMQ component for Camel",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [
+        {
+          "purl": "pkg:maven/commons-logging/commons-logging-api",
+          "requirement": null,
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        },
+        {
+          "purl": "pkg:maven/org.apache.camel/camel-jms",
+          "requirement": null,
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        },
+        {
+          "purl": "pkg:maven/org.apache.activemq/activemq-core",
+          "requirement": null,
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        },
+        {
+          "purl": "pkg:maven/org.apache.activemq/activemq-pool",
+          "requirement": null,
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        },
+        {
+          "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.0_spec",
+          "requirement": null,
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        },
+        {
+          "purl": "pkg:maven/org.apache.activemq/activemq-core",
+          "requirement": null,
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        },
+        {
+          "purl": "pkg:maven/org.apache.camel/camel-core",
+          "requirement": null,
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        },
+        {
+          "purl": "pkg:maven/org.apache.camel/camel-spring",
+          "requirement": null,
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        },
+        {
+          "purl": "pkg:maven/org.springframework/spring-test",
+          "requirement": null,
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        },
+        {
+          "purl": "pkg:maven/junit/junit",
+          "requirement": null,
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        },
+        {
+          "purl": "pkg:maven/org.hamcrest/hamcrest-all",
+          "requirement": null,
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        }
+      ],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/",
+      "repository_download_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.pom"
+    },
     {
       "type": "maven",
       "namespace": "adarwin",
@@ -758,6 +886,44 @@
     },
     {
       "type": "maven",
+      "namespace": "org.dbwebx",
+      "name": "tools",
+      "version": "0.0.1.SNAPSHOT",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "org.dbwebx::tools",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "${vendor.url}",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/",
+      "repository_download_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/tools-0.0.1.SNAPSHOT.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/tools-0.0.1.SNAPSHOT.pom"
+    },
+    {
+      "type": "maven",
       "namespace": "easyconf",
       "name": "easyconf",
       "version": "0.9.0",
@@ -1092,6 +1258,485 @@
     },
     {
       "type": "maven",
+      "namespace": "com.adobe.ac.samples.lcds",
+      "name": "flex_app",
+      "version": "1.0-SNAPSHOT",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "com.adobe.ac.samples.lcds custom flex_app\nThis project hold the flex (blazeds enabled) flex front-end.\n        Its architecture is based on adobe consulting mvn framework: cairngorm.",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [
+        {
+          "purl": "pkg:maven/info.flex-mojos/testing-support",
+          "requirement": "${flex-mojos.version}",
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:maven/com.adobe.flexunit/flexunit",
+          "requirement": "${flexUnit.version}",
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:maven/com.adobe.flexunit/flexunit-optional",
+          "requirement": "${flexUnit.version}",
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:maven/com.adobe.ac.samples.lcds/blazeds_service_config@1.0-SNAPSHOT",
+          "requirement": "1.0-SNAPSHOT",
+          "scope": "provided",
+          "is_runtime": true,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/com.adobe.ac.samples.lcds/flex_remoted_objects@1.0-SNAPSHOT",
+          "requirement": "1.0-SNAPSHOT",
+          "scope": "internal",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/com.adobe.flex/compiler",
+          "requirement": "${flex.sdk.version}",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:maven/com.adobe.flex.framework/flex-framework",
+          "requirement": "${flex.sdk.version}",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:maven/com.adobe.cairngorm/cairngorm",
+          "requirement": "${cairngorm.version}",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:maven/com.adobe.cairngorm/cairngorm-enterprise",
+          "requirement": "${cairngorm.version}",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:maven/com.adobe.lcds/fds",
+          "requirement": "${lcds.version}",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        }
+      ],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/",
+      "repository_download_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/flex_app-1.0-SNAPSHOT.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/flex_app-1.0-SNAPSHOT.pom"
+    },
+    {
+      "type": "maven",
+      "namespace": "com.adobe.ac.samples.bash",
+      "name": "bash_flex_app",
+      "version": "1.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "com.adobe.ac.samples.bash bash bash_flex_app\nThis project hold the flex (blazeds enabled) flex front-end.\n\tIts architecture is based on adobe consulting mvn framework: cairngorm.",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": "fna_pom_project.xml",
+      "dependencies": [
+        {
+          "purl": "pkg:maven/com.adobe.ac.samples.bash/bash_blazeds_service_config@1.0",
+          "requirement": "1.0",
+          "scope": "provided",
+          "is_runtime": true,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_remoted_objects@1.0",
+          "requirement": "1.0",
+          "scope": "internal",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/com.adobe.flex/compiler",
+          "requirement": "${flex.sdk.version}",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:maven/com.adobe.flex.framework/flex-framework",
+          "requirement": "${flex.sdk.version}",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:maven/com.adobe.cairngorm/cairngorm",
+          "requirement": "${cairngorm.version}",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:maven/com.adobe.flexunit/flexunit",
+          "requirement": "${flexunit.version}",
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:maven/info.flex-mojos/testing-support",
+          "requirement": "${flex-mojos.version}",
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        }
+      ],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/",
+      "repository_download_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/bash_flex_app-1.0.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/bash_flex_app-1.0.pom"
+    },
+    {
+      "type": "maven",
+      "namespace": "com.myco.foo.bar.baz",
+      "name": "baz-bar-parent",
+      "version": "1.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "developper",
+          "name": "John Doe",
+          "email": "jdoe@myco.com",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": "https://github.com/jode/baz-bar-parent/tree/master",
+      "vcs_url": "git://github.com/jode/baz-bar-parent.git",
+      "copyright": null,
+      "license_expression": "epl-1.0",
+      "declared_license": [
+        {
+          "name": "Eclipse Public License - v 1.0",
+          "url": "http://www.eclipse.org/legal/epl-v10.html",
+          "comments": null,
+          "distribution": null
+        }
+      ],
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [
+        {
+          "purl": "pkg:maven/com.myco.foo/common-dependencies@1.1",
+          "requirement": "1.1",
+          "scope": "import",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE",
+          "requirement": "1.4.2.RELEASE",
+          "scope": "import",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5",
+          "requirement": "Camden.SR5",
+          "scope": "import",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar@1.0",
+          "requirement": "1.0",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/com.myco.foo/common-dependencies@1.1",
+          "requirement": "1.1",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE",
+          "requirement": "1.4.2.RELEASE",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.springframework.boot/spring-boot-starter@1.4.2.RELEASE",
+          "requirement": "1.4.2.RELEASE",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5",
+          "requirement": "Camden.SR5",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        }
+      ],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/",
+      "repository_download_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.pom"
+    },
+    {
+      "type": "maven",
+      "namespace": "org.apache.geronimo.bundles",
+      "name": "axis",
+      "version": "1.4_1-SNAPSHOT",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "Apache Geronimo Bundles: axis-1.4\nThis bundle simply wraps axis-1.4.jar.",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [
+        {
+          "purl": "pkg:maven/org.apache.axis/axis@1.4",
+          "requirement": "1.4",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        }
+      ],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/",
+      "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.pom"
+    },
+    {
+      "type": "maven",
+      "namespace": "com.idega.block.addon",
+      "name": "com.idega.block.contract",
+      "version": "4.1.3-SNAPSHOT",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "idegaWeb Contract Block\nContract",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "developper",
+          "name": "Tryggvi Larusson",
+          "email": "tryggvi@idega.is",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "developper",
+          "name": "Pall Helgason",
+          "email": "palli@idega.is",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "developper",
+          "name": "Eirikur Sveinn Hrafnsson",
+          "email": "eiki@idega.is",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "developper",
+          "name": "Thorhallur Helgason",
+          "email": "laddi@idega.is",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "cvs+ext:idegaweb@code.idega.com:/idega/cvs:com.idega.block.addon/com.idega.block.contract/",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [
+        {
+          "purl": "pkg:maven/com.idega.block.platform/com.idega.core",
+          "requirement": null,
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        },
+        {
+          "purl": "pkg:maven/com.idega.block.platform/com.idega.block.media",
+          "requirement": null,
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": null
+        },
+        {
+          "purl": "pkg:maven/itextpdf/itext-paulo",
+          "requirement": "${itextpdf-itext-paulo-version}",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:maven/itext/itext-xml",
+          "requirement": "${itext-itext-xml-version}",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": false
+        }
+      ],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/",
+      "repository_download_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/com.idega.block.contract-4.1.3-SNAPSHOT.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/com.idega.block.contract-4.1.3-SNAPSHOT.pom"
+    },
+    {
+      "type": "maven",
       "namespace": "it.assist.jrecordbind",
       "name": "jrecordbind${artifactId.ext}",
       "version": "2.3.4",
@@ -1175,6 +1820,108 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/",
       "repository_download_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.jar",
       "api_data_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.pom"
+    },
+    {
+      "type": "maven",
+      "namespace": "log4j",
+      "name": "log4j",
+      "version": "1.2.15",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "Apache Log4j\nApache Log4j 1.2",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "organization",
+          "role": "owner",
+          "name": "Apache Software Foundation",
+          "email": null,
+          "url": "http://www.apache.org"
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "http://logging.apache.org:80/log4j/1.2/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "http://issues.apache.org/bugzilla/",
+      "code_view_url": "http://svn.apache.org/viewcvs.cgi/logging/log4j/tags/v1_2_15_rc6",
+      "vcs_url": "svn+http://svn.apache.org/repos/asf/logging/log4j/tags/v1_2_15_rc6",
+      "copyright": null,
+      "license_expression": "apache-2.0",
+      "declared_license": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": null,
+          "distribution": "repo"
+        }
+      ],
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [
+        {
+          "purl": "pkg:maven/javax.mail/mail@1.4",
+          "requirement": "1.4",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/javax.jms/jms@1.1",
+          "requirement": "1.1",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/com.sun.jdmk/jmxtools@1.2.1",
+          "requirement": "1.2.1",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/com.sun.jmx/jmxri@1.2.1",
+          "requirement": "1.2.1",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/oro/oro@2.0.8",
+          "requirement": "2.0.8",
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/junit/junit@3.8.1",
+          "requirement": "3.8.1",
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        }
+      ],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/log4j/log4j@1.2.15?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/log4j/log4j@1.2.15",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/",
+      "repository_download_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.pom"
     },
     {
       "type": "maven",
@@ -1455,6 +2202,521 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/main-1.0.0-SNAPSHOT.jar",
       "api_data_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/main-1.0.0-SNAPSHOT.pom"
+    },
+    {
+      "type": "maven",
+      "namespace": "org.apache.geronimo.bundles",
+      "name": "axis",
+      "version": "1.4_1-SNAPSHOT",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "Apache Geronimo Bundles: axis-1.4\nThis bundle simply wraps axis-1.4.jar.",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [
+        {
+          "purl": "pkg:maven/org.apache.axis/axis@1.4",
+          "requirement": "1.4",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        }
+      ],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/",
+      "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.pom"
+    },
+    {
+      "type": "maven",
+      "namespace": "org.modeler",
+      "name": "modeler",
+      "version": "0.1",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "org.modeler~modeler",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [
+        {
+          "purl": "pkg:maven/org.apache.ant/ant@1.7.0",
+          "requirement": "1.7.0",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/commons-lang/commons-lang@2.0",
+          "requirement": "2.0",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/commons-digester/commons-digester@2.0",
+          "requirement": "2.0",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/dom4j/dom4j@1.6.1",
+          "requirement": "1.6.1",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.hibernate/hibernate-annotations@3.4.0.GA",
+          "requirement": "3.4.0.GA",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.4.0.GA",
+          "requirement": "3.4.0.GA",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.hibernate/ejb3-persistence@3.3.2.Beta1",
+          "requirement": "3.3.2.Beta1",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.slf4j/slf4j-jcl@1.4.2",
+          "requirement": "1.4.2",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/postgresql/postgresql@8.3-603.jdbc4",
+          "requirement": "8.3-603.jdbc4",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        }
+      ],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/org.modeler/modeler@0.1?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/org.modeler/modeler@0.1",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/",
+      "repository_download_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/modeler-0.1.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/modeler-0.1.pom"
+    },
+    {
+      "type": "maven",
+      "namespace": "no.knowit.seam",
+      "name": "root",
+      "version": "2.2.0-SNAPSHOT",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "no.knowit.seam : root : 2.2.0-SNAPSHOT\nThe Seam Maven Reference implementation root POM. \n    You can use this POM as a template for your own root pom.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "developper",
+          "name": "Leif Olsen",
+          "email": "loo@knowit.no",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "developper",
+          "name": "Ken Gullaksen",
+          "email": "krg@knowit.no",
+          "url": null
+        },
+        {
+          "type": "organization",
+          "role": "owner",
+          "name": "Know IT Objectnet AS",
+          "email": null,
+          "url": "http://www.knowit.no/"
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "http://code.google.com/p/seam-maven-refimpl/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": "http://code.google.com/p/seam-maven-refimpl/source/browse/#svn/trunk",
+      "vcs_url": "svn+http://seam-maven-refimpl.googlecode.com/svn/trunk",
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [
+        {
+          "purl": "pkg:maven/org.jboss.seam/jboss-seam@2.2.0.GA",
+          "requirement": "2.2.0.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jboss.seam/jboss-seam-ioc@2.2.0.GA",
+          "requirement": "2.2.0.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jboss.seam/jboss-seam-mail@2.2.0.GA",
+          "requirement": "2.2.0.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jboss.seam/jboss-seam-pdf@2.2.0.GA",
+          "requirement": "2.2.0.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jboss.seam/jboss-seam-remoting@2.2.0.GA",
+          "requirement": "2.2.0.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jboss.seam/jboss-seam-resteasy@2.2.0.GA",
+          "requirement": "2.2.0.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jboss.seam/jboss-seam-ui@2.2.0.GA",
+          "requirement": "2.2.0.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jboss.seam/jboss-seam-debug@2.2.0.GA",
+          "requirement": "2.2.0.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jboss.seam/jboss-seam-excel@2.2.0.GA",
+          "requirement": "2.2.0.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jboss.seam/jboss-seam-jul@2.2.0.GA",
+          "requirement": "2.2.0.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.richfaces.framework/richfaces-api@3.3.1.GA",
+          "requirement": "3.3.1.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.richfaces.framework/richfaces-impl@3.3.1.GA",
+          "requirement": "3.3.1.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.richfaces.ui/richfaces-ui@3.3.1.GA",
+          "requirement": "3.3.1.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jbpm/jbpm-jpdl@3.2.2",
+          "requirement": "3.2.2",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/jboss/jboss-cache@1.4.1.SP9",
+          "requirement": "1.4.1.SP9",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxrs@1.1-RC2",
+          "requirement": "1.1-RC2",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxb-provider@1.1-RC2",
+          "requirement": "1.1-RC2",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.hibernate/hibernate-core@3.3.1.GA",
+          "requirement": "3.3.1.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.hibernate/hibernate-search@3.1.1.GA",
+          "requirement": "3.1.1.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/javax.transaction/jta@1.1",
+          "requirement": "1.1",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.codehaus.groovy/groovy-all@1.6.3",
+          "requirement": "1.6.3",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.drools/drools-core@5.0.1",
+          "requirement": "5.0.1",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.jboss.el/jboss-el@1.0_02.CR4",
+          "requirement": "1.0_02.CR4",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.tuckey/urlrewritefilter@3.1.0",
+          "requirement": "3.1.0",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.richfaces.samples/glassX@3.3.1.GA",
+          "requirement": "3.3.1.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.richfaces.samples/darkX@3.3.1.GA",
+          "requirement": "3.3.1.GA",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.drools/drools-api@5.0.1",
+          "requirement": "5.0.1",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.hibernate/hibernate-commons-annotations@3.3.0.ga",
+          "requirement": "3.3.0.ga",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.antlr/antlr@3.2",
+          "requirement": "3.2",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.antlr/antlr-runtime@3.2",
+          "requirement": "3.2",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/commons-digester/commons-digester@1.8.1",
+          "requirement": "1.8.1",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/commons-lang/commons-lang@2.3",
+          "requirement": "2.3",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/com.h2database/h2@1.1.118",
+          "requirement": "1.1.118",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/mysql/mysql-connector-java@5.1.10",
+          "requirement": "5.1.10",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.apache.openejb/openejb-core@3.1.2",
+          "requirement": "3.1.2",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/junit/junit@4.7",
+          "requirement": "4.7",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/org.testng/testng@5.9",
+          "requirement": "5.9",
+          "scope": "dependencymanagement",
+          "is_runtime": false,
+          "is_optional": false,
+          "is_resolved": true
+        }
+      ],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/",
+      "repository_download_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.pom"
     },
     {
       "type": "maven",
@@ -2546,6 +3808,161 @@
     },
     {
       "type": "maven",
+      "namespace": "de.fzj.unicore.rcp",
+      "name": "eclipseSequencePlugin",
+      "version": "0.0.1-SNAPSHOT",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "Eclipse Sequence Plugin",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [
+        {
+          "purl": "pkg:maven/com.intel.gpe.clients/gpe-clients-all@2.0.4-SNAPSHOT",
+          "requirement": "2.0.4-SNAPSHOT",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/com.intel.gpe.clients/gpe-gridbean-api@2.0.5-SNAPSHOT",
+          "requirement": "2.0.5-SNAPSHOT",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/com.intel.gpe/gpe-utils@2.0.5-SNAPSHOT",
+          "requirement": "2.0.5-SNAPSHOT",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/com.intel.gpe.clients/gpe-gridbeans-swt@0.0.2-SNAPSHOT",
+          "requirement": "0.0.2-SNAPSHOT",
+          "scope": "compile",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        },
+        {
+          "purl": "pkg:maven/junit/junit@3.8.1",
+          "requirement": "3.8.1",
+          "scope": "test",
+          "is_runtime": false,
+          "is_optional": true,
+          "is_resolved": true
+        }
+      ],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/",
+      "repository_download_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.pom"
+    },
+    {
+      "type": "maven",
+      "namespace": "ur.urwerk.test",
+      "name": "ur.urwerk.test.module-y",
+      "version": "1.0.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "ur.urwerk.test:ur.urwerk.test.module-y:jar:1.0.0",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/",
+      "repository_download_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/ur.urwerk.test.module-y-1.0.0.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/ur.urwerk.test.module-y-1.0.0.pom"
+    },
+    {
+      "type": "maven",
+      "namespace": "org.webreformatter.wrappers",
+      "name": "com.google.gwt.query",
+      "version": "0.1.5.SNAPSHOT",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "com.google.gwt.query",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": null,
+      "declared_license": null,
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT?classifier=sources"
+      ],
+      "extra_data": {},
+      "purl": "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/",
+      "repository_download_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/com.google.gwt.query-0.1.5.SNAPSHOT.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/com.google.gwt.query-0.1.5.SNAPSHOT.pom"
+    },
+    {
+      "type": "maven",
       "namespace": "au.com.acegi",
       "name": "xml-format-maven-plugin",
       "version": "3.0.6",
@@ -2644,7 +4061,135 @@
     {
       "path": "activemq-camel-pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "org.apache.activemq",
+          "name": "activemq-camel",
+          "version": "5.4.2",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "ActiveMQ :: Camel\nActiveMQ component for Camel",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:maven/commons-logging/commons-logging-api",
+              "requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "purl": "pkg:maven/org.apache.camel/camel-jms",
+              "requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "purl": "pkg:maven/org.apache.activemq/activemq-core",
+              "requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "purl": "pkg:maven/org.apache.activemq/activemq-pool",
+              "requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.0_spec",
+              "requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "purl": "pkg:maven/org.apache.activemq/activemq-core",
+              "requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "purl": "pkg:maven/org.apache.camel/camel-core",
+              "requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "purl": "pkg:maven/org.apache.camel/camel-spring",
+              "requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "purl": "pkg:maven/org.springframework/spring-test",
+              "requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "purl": "pkg:maven/junit/junit",
+              "requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "purl": "pkg:maven/org.hamcrest/hamcrest-all",
+              "requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/",
+          "repository_download_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -3550,7 +5095,46 @@
     {
       "path": "dbwebx_pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "org.dbwebx",
+          "name": "tools",
+          "version": "0.0.1.SNAPSHOT",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "org.dbwebx::tools",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "${vendor.url}",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/",
+          "repository_download_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/tools-0.0.1.SNAPSHOT.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/tools-0.0.1.SNAPSHOT.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -3940,7 +5524,127 @@
     {
       "path": "fna2_pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "com.adobe.ac.samples.lcds",
+          "name": "flex_app",
+          "version": "1.0-SNAPSHOT",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "com.adobe.ac.samples.lcds custom flex_app\nThis project hold the flex (blazeds enabled) flex front-end.\n        Its architecture is based on adobe consulting mvn framework: cairngorm.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:maven/info.flex-mojos/testing-support",
+              "requirement": "${flex-mojos.version}",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:maven/com.adobe.flexunit/flexunit",
+              "requirement": "${flexUnit.version}",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:maven/com.adobe.flexunit/flexunit-optional",
+              "requirement": "${flexUnit.version}",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:maven/com.adobe.ac.samples.lcds/blazeds_service_config@1.0-SNAPSHOT",
+              "requirement": "1.0-SNAPSHOT",
+              "scope": "provided",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/com.adobe.ac.samples.lcds/flex_remoted_objects@1.0-SNAPSHOT",
+              "requirement": "1.0-SNAPSHOT",
+              "scope": "internal",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/com.adobe.flex/compiler",
+              "requirement": "${flex.sdk.version}",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:maven/com.adobe.flex.framework/flex-framework",
+              "requirement": "${flex.sdk.version}",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:maven/com.adobe.cairngorm/cairngorm",
+              "requirement": "${cairngorm.version}",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:maven/com.adobe.cairngorm/cairngorm-enterprise",
+              "requirement": "${cairngorm.version}",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:maven/com.adobe.lcds/fds",
+              "requirement": "${lcds.version}",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/",
+          "repository_download_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/flex_app-1.0-SNAPSHOT.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/flex_app-1.0-SNAPSHOT.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -3958,7 +5662,103 @@
     {
       "path": "fna_pom_project.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "com.adobe.ac.samples.bash",
+          "name": "bash_flex_app",
+          "version": "1.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "com.adobe.ac.samples.bash bash bash_flex_app\nThis project hold the flex (blazeds enabled) flex front-end.\n\tIts architecture is based on adobe consulting mvn framework: cairngorm.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": "fna_pom_project.xml",
+          "dependencies": [
+            {
+              "purl": "pkg:maven/com.adobe.ac.samples.bash/bash_blazeds_service_config@1.0",
+              "requirement": "1.0",
+              "scope": "provided",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_remoted_objects@1.0",
+              "requirement": "1.0",
+              "scope": "internal",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/com.adobe.flex/compiler",
+              "requirement": "${flex.sdk.version}",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:maven/com.adobe.flex.framework/flex-framework",
+              "requirement": "${flex.sdk.version}",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:maven/com.adobe.cairngorm/cairngorm",
+              "requirement": "${cairngorm.version}",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:maven/com.adobe.flexunit/flexunit",
+              "requirement": "${flexunit.version}",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:maven/info.flex-mojos/testing-support",
+              "requirement": "${flex-mojos.version}",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/",
+          "repository_download_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/bash_flex_app-1.0.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/bash_flex_app-1.0.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -3976,7 +5776,126 @@
     {
       "path": "foo-pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "com.myco.foo.bar.baz",
+          "name": "baz-bar-parent",
+          "version": "1.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "developper",
+              "name": "John Doe",
+              "email": "jdoe@myco.com",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": "https://github.com/jode/baz-bar-parent/tree/master",
+          "vcs_url": "git://github.com/jode/baz-bar-parent.git",
+          "copyright": null,
+          "license_expression": "epl-1.0",
+          "declared_license": [
+            {
+              "name": "Eclipse Public License - v 1.0",
+              "url": "http://www.eclipse.org/legal/epl-v10.html",
+              "comments": null,
+              "distribution": null
+            }
+          ],
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:maven/com.myco.foo/common-dependencies@1.1",
+              "requirement": "1.1",
+              "scope": "import",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE",
+              "requirement": "1.4.2.RELEASE",
+              "scope": "import",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5",
+              "requirement": "Camden.SR5",
+              "scope": "import",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar@1.0",
+              "requirement": "1.0",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/com.myco.foo/common-dependencies@1.1",
+              "requirement": "1.1",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE",
+              "requirement": "1.4.2.RELEASE",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.springframework.boot/spring-boot-starter@1.4.2.RELEASE",
+              "requirement": "1.4.2.RELEASE",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5",
+              "requirement": "Camden.SR5",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/",
+          "repository_download_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -3994,7 +5913,55 @@
     {
       "path": "gero_pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "org.apache.geronimo.bundles",
+          "name": "axis",
+          "version": "1.4_1-SNAPSHOT",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "Apache Geronimo Bundles: axis-1.4\nThis bundle simply wraps axis-1.4.jar.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:maven/org.apache.axis/axis@1.4",
+              "requirement": "1.4",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/",
+          "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -4012,7 +5979,108 @@
     {
       "path": "idega_pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "com.idega.block.addon",
+          "name": "com.idega.block.contract",
+          "version": "4.1.3-SNAPSHOT",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "idegaWeb Contract Block\nContract",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "developper",
+              "name": "Tryggvi Larusson",
+              "email": "tryggvi@idega.is",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "developper",
+              "name": "Pall Helgason",
+              "email": "palli@idega.is",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "developper",
+              "name": "Eirikur Sveinn Hrafnsson",
+              "email": "eiki@idega.is",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "developper",
+              "name": "Thorhallur Helgason",
+              "email": "laddi@idega.is",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "cvs+ext:idegaweb@code.idega.com:/idega/cvs:com.idega.block.addon/com.idega.block.contract/",
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:maven/com.idega.block.platform/com.idega.core",
+              "requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "purl": "pkg:maven/com.idega.block.platform/com.idega.block.media",
+              "requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "purl": "pkg:maven/itextpdf/itext-paulo",
+              "requirement": "${itextpdf-itext-paulo-version}",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:maven/itext/itext-xml",
+              "requirement": "${itext-itext-xml-version}",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/",
+          "repository_download_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/com.idega.block.contract-4.1.3-SNAPSHOT.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/com.idega.block.contract-4.1.3-SNAPSHOT.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -4135,7 +6203,110 @@
     {
       "path": "log4j-pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "log4j",
+          "name": "log4j",
+          "version": "1.2.15",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "Apache Log4j\nApache Log4j 1.2",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "organization",
+              "role": "owner",
+              "name": "Apache Software Foundation",
+              "email": null,
+              "url": "http://www.apache.org"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "http://logging.apache.org:80/log4j/1.2/",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "http://issues.apache.org/bugzilla/",
+          "code_view_url": "http://svn.apache.org/viewcvs.cgi/logging/log4j/tags/v1_2_15_rc6",
+          "vcs_url": "svn+http://svn.apache.org/repos/asf/logging/log4j/tags/v1_2_15_rc6",
+          "copyright": null,
+          "license_expression": "apache-2.0",
+          "declared_license": [
+            {
+              "name": "The Apache Software License, Version 2.0",
+              "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+              "comments": null,
+              "distribution": "repo"
+            }
+          ],
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:maven/javax.mail/mail@1.4",
+              "requirement": "1.4",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/javax.jms/jms@1.1",
+              "requirement": "1.1",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/com.sun.jdmk/jmxtools@1.2.1",
+              "requirement": "1.2.1",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/com.sun.jmx/jmxri@1.2.1",
+              "requirement": "1.2.1",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/oro/oro@2.0.8",
+              "requirement": "2.0.8",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/junit/junit@3.8.1",
+              "requirement": "3.8.1",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/log4j/log4j@1.2.15?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/log4j/log4j@1.2.15",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/",
+          "repository_download_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -4490,7 +6661,55 @@
     {
       "path": "proper_pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "org.apache.geronimo.bundles",
+          "name": "axis",
+          "version": "1.4_1-SNAPSHOT",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "Apache Geronimo Bundles: axis-1.4\nThis bundle simply wraps axis-1.4.jar.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:maven/org.apache.axis/axis@1.4",
+              "requirement": "1.4",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/",
+          "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -4508,7 +6727,119 @@
     {
       "path": "rel_pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "org.modeler",
+          "name": "modeler",
+          "version": "0.1",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "org.modeler~modeler",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:maven/org.apache.ant/ant@1.7.0",
+              "requirement": "1.7.0",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/commons-lang/commons-lang@2.0",
+              "requirement": "2.0",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/commons-digester/commons-digester@2.0",
+              "requirement": "2.0",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/dom4j/dom4j@1.6.1",
+              "requirement": "1.6.1",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.hibernate/hibernate-annotations@3.4.0.GA",
+              "requirement": "3.4.0.GA",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.4.0.GA",
+              "requirement": "3.4.0.GA",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.hibernate/ejb3-persistence@3.3.2.Beta1",
+              "requirement": "3.3.2.Beta1",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.slf4j/slf4j-jcl@1.4.2",
+              "requirement": "1.4.2",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/postgresql/postgresql@8.3-603.jdbc4",
+              "requirement": "8.3-603.jdbc4",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/org.modeler/modeler@0.1?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/org.modeler/modeler@0.1",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/",
+          "repository_download_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/modeler-0.1.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/modeler-0.1.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -4526,7 +6857,365 @@
     {
       "path": "sea_pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "no.knowit.seam",
+          "name": "root",
+          "version": "2.2.0-SNAPSHOT",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "no.knowit.seam : root : 2.2.0-SNAPSHOT\nThe Seam Maven Reference implementation root POM. \n    You can use this POM as a template for your own root pom.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "developper",
+              "name": "Leif Olsen",
+              "email": "loo@knowit.no",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "developper",
+              "name": "Ken Gullaksen",
+              "email": "krg@knowit.no",
+              "url": null
+            },
+            {
+              "type": "organization",
+              "role": "owner",
+              "name": "Know IT Objectnet AS",
+              "email": null,
+              "url": "http://www.knowit.no/"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "http://code.google.com/p/seam-maven-refimpl/",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": "http://code.google.com/p/seam-maven-refimpl/source/browse/#svn/trunk",
+          "vcs_url": "svn+http://seam-maven-refimpl.googlecode.com/svn/trunk",
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:maven/org.jboss.seam/jboss-seam@2.2.0.GA",
+              "requirement": "2.2.0.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jboss.seam/jboss-seam-ioc@2.2.0.GA",
+              "requirement": "2.2.0.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jboss.seam/jboss-seam-mail@2.2.0.GA",
+              "requirement": "2.2.0.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jboss.seam/jboss-seam-pdf@2.2.0.GA",
+              "requirement": "2.2.0.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jboss.seam/jboss-seam-remoting@2.2.0.GA",
+              "requirement": "2.2.0.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jboss.seam/jboss-seam-resteasy@2.2.0.GA",
+              "requirement": "2.2.0.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jboss.seam/jboss-seam-ui@2.2.0.GA",
+              "requirement": "2.2.0.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jboss.seam/jboss-seam-debug@2.2.0.GA",
+              "requirement": "2.2.0.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jboss.seam/jboss-seam-excel@2.2.0.GA",
+              "requirement": "2.2.0.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jboss.seam/jboss-seam-jul@2.2.0.GA",
+              "requirement": "2.2.0.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.richfaces.framework/richfaces-api@3.3.1.GA",
+              "requirement": "3.3.1.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.richfaces.framework/richfaces-impl@3.3.1.GA",
+              "requirement": "3.3.1.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.richfaces.ui/richfaces-ui@3.3.1.GA",
+              "requirement": "3.3.1.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jbpm/jbpm-jpdl@3.2.2",
+              "requirement": "3.2.2",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/jboss/jboss-cache@1.4.1.SP9",
+              "requirement": "1.4.1.SP9",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxrs@1.1-RC2",
+              "requirement": "1.1-RC2",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxb-provider@1.1-RC2",
+              "requirement": "1.1-RC2",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.hibernate/hibernate-core@3.3.1.GA",
+              "requirement": "3.3.1.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.hibernate/hibernate-search@3.1.1.GA",
+              "requirement": "3.1.1.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/javax.transaction/jta@1.1",
+              "requirement": "1.1",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.codehaus.groovy/groovy-all@1.6.3",
+              "requirement": "1.6.3",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.drools/drools-core@5.0.1",
+              "requirement": "5.0.1",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.jboss.el/jboss-el@1.0_02.CR4",
+              "requirement": "1.0_02.CR4",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.tuckey/urlrewritefilter@3.1.0",
+              "requirement": "3.1.0",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.richfaces.samples/glassX@3.3.1.GA",
+              "requirement": "3.3.1.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.richfaces.samples/darkX@3.3.1.GA",
+              "requirement": "3.3.1.GA",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.drools/drools-api@5.0.1",
+              "requirement": "5.0.1",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.hibernate/hibernate-commons-annotations@3.3.0.ga",
+              "requirement": "3.3.0.ga",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.antlr/antlr@3.2",
+              "requirement": "3.2",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.antlr/antlr-runtime@3.2",
+              "requirement": "3.2",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/commons-digester/commons-digester@1.8.1",
+              "requirement": "1.8.1",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/commons-lang/commons-lang@2.3",
+              "requirement": "2.3",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/com.h2database/h2@1.1.118",
+              "requirement": "1.1.118",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/mysql/mysql-connector-java@5.1.10",
+              "requirement": "5.1.10",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.apache.openejb/openejb-core@3.1.2",
+              "requirement": "3.1.2",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/junit/junit@4.7",
+              "requirement": "4.7",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/org.testng/testng@5.9",
+              "requirement": "5.9",
+              "scope": "dependencymanagement",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/",
+          "repository_download_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -5727,7 +8416,87 @@
     {
       "path": "uni_pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "de.fzj.unicore.rcp",
+          "name": "eclipseSequencePlugin",
+          "version": "0.0.1-SNAPSHOT",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "Eclipse Sequence Plugin",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:maven/com.intel.gpe.clients/gpe-clients-all@2.0.4-SNAPSHOT",
+              "requirement": "2.0.4-SNAPSHOT",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/com.intel.gpe.clients/gpe-gridbean-api@2.0.5-SNAPSHOT",
+              "requirement": "2.0.5-SNAPSHOT",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/com.intel.gpe/gpe-utils@2.0.5-SNAPSHOT",
+              "requirement": "2.0.5-SNAPSHOT",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/com.intel.gpe.clients/gpe-gridbeans-swt@0.0.2-SNAPSHOT",
+              "requirement": "0.0.2-SNAPSHOT",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:maven/junit/junit@3.8.1",
+              "requirement": "3.8.1",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/",
+          "repository_download_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -5745,7 +8514,46 @@
     {
       "path": "urwerky_pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "ur.urwerk.test",
+          "name": "ur.urwerk.test.module-y",
+          "version": "1.0.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "ur.urwerk.test:ur.urwerk.test.module-y:jar:1.0.0",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/",
+          "repository_download_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/ur.urwerk.test.module-y-1.0.0.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/ur.urwerk.test.module-y-1.0.0.pom"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -5763,7 +8571,46 @@
     {
       "path": "webre_pom.xml",
       "type": "file",
-      "package_manifests": [],
+      "package_manifests": [
+        {
+          "type": "maven",
+          "namespace": "org.webreformatter.wrappers",
+          "name": "com.google.gwt.query",
+          "version": "0.1.5.SNAPSHOT",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "com.google.gwt.query",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT?classifier=sources"
+          ],
+          "extra_data": {},
+          "purl": "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT",
+          "repository_homepage_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/",
+          "repository_download_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/com.google.gwt.query-0.1.5.SNAPSHOT.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/com.google.gwt.query-0.1.5.SNAPSHOT.pom"
+        }
+      ],
       "scan_errors": []
     },
     {

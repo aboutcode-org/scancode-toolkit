@@ -47,7 +47,7 @@ PACKAGE_MANIFEST_TYPES = [
     jar_manifest.JavaManifest,
     models.JavaEar,
     models.JavaWar,
-    maven.MavenPomPackage,
+    maven.PomXml,
     jar_manifest.IvyJar,
     models.JBossSar,
     models.Axis2Mar,

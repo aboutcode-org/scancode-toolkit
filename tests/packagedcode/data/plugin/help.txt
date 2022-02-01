@@ -229,7 +229,7 @@ Package: jboss
 
 --------------------------------------------
 Package: maven
-  class: packagedcode.maven:MavenPomPackage
+  class: packagedcode.maven:PomXml
   file_patterns: *.pom, pom.xml
   extensions: .pom
 
