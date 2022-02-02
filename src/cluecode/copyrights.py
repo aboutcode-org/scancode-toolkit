@@ -2562,6 +2562,9 @@ grammar = """
     #holder is Tim Hudson (tjh@mincom.oz.au).
     COPYRIGHT: {<HOLDER> <JUNK> <NAME-EMAIL>}       #83001
 
+    # Copyright lowRISC contributors.
+    COPYRIGHT: {<COPY> <NN> <CONTRIBUTORS>}
+
 #######################################
 # Authors
 #######################################
