@@ -61,6 +61,7 @@ statement_markers = (
     'right',
     'reserv',
     'auth',
+    'contributor',
     'devel',
     '<s>',
     '</s>',
