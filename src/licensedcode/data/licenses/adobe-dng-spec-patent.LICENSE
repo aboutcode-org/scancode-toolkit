@@ -1,0 +1,29 @@
+DNG Specification patent license
+
+Digital Negative (DNG) Specification patent license
+
+Adobe is the publisher of the Digital Negative (DNG) Specification describing an image file format for storing camera raw information used in a wide range of hardware and software. Adobe provides the DNG Specification to the public for the purpose of encouraging implementation of this file format in a compliant manner. This document is a patent license granted by Adobe to individuals and organizations that desire to develop, market, and/or distribute hardware and software that reads and/or writes image files compliant with the DNG Specification.
+
+Grant of rights
+
+Subject to the terms below and solely to permit the reading and writing of image files that comply with the DNG Specification, Adobe hereby grants all individuals and organizations the worldwide, royalty-free, nontransferable, nonexclusive right under all Essential Claims to make, have made, use, sell, import, and distribute Compliant Implementations.
+
+“Compliant Implementation” means a portion of a software or hardware product that reads or writes computer files compliant with the DNG Specification.
+
+“DNG Specification” means any version of the Adobe DNG Specification made publicly available by Adobe (for example, version 1.0.0.0 dated September 2004).
+
+“Essential Claim” means a claim of a patent, whenever and wherever issued, that Adobe has the right to license without payment of royalty or other fee that is unavoidably infringed by implementation of the DNG Specification. A claim is unavoidably infringed by the DNG Specification only when it is not possible to avoid infringing when conforming with such specification because there is no technically possible noninfringing alternative for achieving such conformity. Essential Claim does not include a claim that is infringed by implementation of (a) enabling technology that may be necessary to make or use any product or portion thereof that complies with the DNG Specification but is not itself expressly set forth in the DNG Specification (for example, compiler technology and basic operating system technology), (b) technology developed elsewhere and merely incorporated by reference in the DNG Specification, or (c) the implementation of file formats other than DNG.
+
+Revocation
+
+Adobe may revoke the rights granted above to any individual or organizational licensee in the event that such licensee or its affiliates brings any patent action against Adobe or its affiliates related to the reading or writing of files that comply with the DNG Specification.
+
+Any Compliant Implementation distributed under this license must include the following notice displayed in a prominent manner within its source code and documentation: "This product includes DNG technology under license by Adobe.”
+
+No warranty
+
+The rights granted herein are provided on an as-is basis without warranty of any kind, including warranty of title or noninfringement. Nothing in this license shall be construed as (a) requiring the maintenance of any patent, (b) a warranty or representation as to the validity or scope of any patent, (c) a warranty or representation that any product or service will be free from infringement of any patent, (d) an agreement to bring or prosecute actions against any infringers of any patent, or (e) conferring any right or license under any patent claim other than Essential Claims.
+
+Reservation of rights
+
+All rights not expressly granted herein are reserved.

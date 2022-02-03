@@ -1,0 +1,13 @@
+key: ic-1.0
+short_name: IC 1.0
+name: Internet Computer Community Source License 1.0
+category: Free Restricted
+owner: DFINITY
+homepage_url: https://dfinity.org/licenses/IC-1.0/
+spdx_license_key: LicenseRef-scancode-ic-1.0
+text_urls:
+    - https://github.com/dfinity/ic/blob/master/licenses/IC-1.0.txt
+ignorable_copyrights:
+    - copyright (c) 2021 DFINITY Foundation
+ignorable_holders:
+    - DFINITY Foundation
