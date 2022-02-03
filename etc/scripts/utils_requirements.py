@@ -14,7 +14,7 @@ import subprocess
 """
 Utilities to manage requirements files and call pip.
 NOTE: this should use ONLY the standard library and not import anything else
-becasue this is used for boostrapping.
+because this is used for boostrapping with no requirements installed.
 """
 
 
@@ -67,7 +67,7 @@ def get_required_name_versions(
 
 def strip_reqs(line):
     """
-    Return a name given a pip reuirement text ``line` striping version and
+    Return a name given a pip requirement text ``line` striping version and
     requirements.
 
     For example::
