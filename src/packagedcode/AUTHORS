@@ -185,7 +185,7 @@ Other contributors, listed alphabetically, are:
 * Justin Reidy -- MXML lexer
 * Norman Richards -- JSON lexer
 * Corey Richardson -- Rust lexer updates
-* Fabrizio Riguzzi -- cplint lexer 
+* Fabrizio Riguzzi -- cplint leder 
 * Lubomir Rintel -- GoodData MAQL and CL lexers
 * Andre Roberge -- Tango style
 * Georg Rollinger -- HSAIL lexer
