@@ -115,11 +115,11 @@ class ExternalLicensesSource(object):
 
             # we use four sub-directories:
             # we store the original fetched licenses in this directory
-            self.original_dir = os.path.join(external_base_dir, 'original')
+            self.original_dir = os.path.join(external_base_dir, "original")
             # we store updated external licenses in this directory
-            self.update_dir = os.path.join(external_base_dir, 'updated')
+            self.update_dir = os.path.join(external_base_dir, "updated")
             # we store new external licenses in this directory
-            self.new_dir = os.path.join(external_base_dir, 'new')
+            self.new_dir = os.path.join(external_base_dir, "new")
 
             self.fetched = False
             if exists(self.original_dir):
@@ -335,8 +335,8 @@ class SpdxSource(ExternalLicensesSource):
         licenses.
         """
         for spdx_details in self.fetch_spdx_licenses(
-            commitish=commitish, 
-            skip_oddities=skip_oddities, 
+            commitish=commitish,
+            skip_oddities=skip_oddities,
             from_repo=from_repo,
         ):
 
@@ -393,7 +393,6 @@ class SpdxSource(ExternalLicensesSource):
                     # ScanCode, but they are deprecated in SPDX.
                     continue
                 yield json.loads(archive.read(path))
-
 
     def build_license(self, mapping, skip_oddities=True, scancode_licenses=None):
         """
@@ -492,28 +491,30 @@ class SpdxSource(ExternalLicensesSource):
         return lic, text
 
 
-dejacode_special_composites = set([
-    'net-snmp',
-    'aes-128-3.0',
-    'agpl-3.0-bacula',
-    'bacula-exception',
-    'componentace-jcraft',
-    'nvidia-cuda-supplement-2020',
-    'dejacode',
-    'ibm-icu',
-    'unicode-icu-58',
-    'info-zip-1997-10',
-    'info-zip-2001-01',
-    'info-zip-2002-02',
-    'info-zip-2003-05',
-    'info-zip-2004-05',
-    'info-zip-2005-02',
-    'info-zip-2007-03',
-    'info-zip-2009-01',
-    'intel-bsd-special',
-    'lgpl-3.0-plus-openssl',
-    'newlib-subdirectory',
-])
+dejacode_special_composites = set(
+    [
+        "net-snmp",
+        "aes-128-3.0",
+        "agpl-3.0-bacula",
+        "bacula-exception",
+        "componentace-jcraft",
+        "nvidia-cuda-supplement-2020",
+        "dejacode",
+        "ibm-icu",
+        "unicode-icu-58",
+        "info-zip-1997-10",
+        "info-zip-2001-01",
+        "info-zip-2002-02",
+        "info-zip-2003-05",
+        "info-zip-2004-05",
+        "info-zip-2005-02",
+        "info-zip-2007-03",
+        "info-zip-2009-01",
+        "intel-bsd-special",
+        "lgpl-3.0-plus-openssl",
+        "newlib-subdirectory",
+    ]
+)
 
 
 class DejaSource(ExternalLicensesSource):
@@ -598,13 +599,16 @@ class DejaSource(ExternalLicensesSource):
             return
 
         # these licenses are ignored for now for some weirdness
-        dejacode_weird = set([
-            'sun-jta-spec-1.0.1b', # invalid case
-            'sun-jta-spec-1.0.1B',
-        ])
-        is_weird= key in dejacode_weird
+        dejacode_weird = set(
+            [
+                "sun-jta-spec-1.0.1b",  # invalid case
+                "sun-jta-spec-1.0.1B",
+            ]
+        )
+        is_weird = key in dejacode_weird
         if is_weird:
-            if TRACE: print('Skipping DejaCode weird license', key)
+            if TRACE:
+                print("Skipping DejaCode weird license", key)
             return
 
         deprecated = not mapping.get("is_active")
@@ -1256,13 +1260,15 @@ def synchronize_licenses(
         print()
         print("Processing unmatched_scancode_by_key.")
     for lkey, scancode_license in unmatched_scancode_by_key.items():
-        if lkey in set([
-            'here-proprietary'
-            # these licenses are ignored for now for some weirdness
-            # invalid case
-            'sun-jta-spec-1.0.1b', 
-            'sun-jta-spec-1.0.1B',
-        ]):
+        if lkey in set(
+            [
+                "here-proprietary"
+                # these licenses are ignored for now for some weirdness
+                # invalid case
+                "sun-jta-spec-1.0.1b",
+                "sun-jta-spec-1.0.1B",
+            ]
+        ):
             continue
 
         if scancode_license.is_deprecated:
