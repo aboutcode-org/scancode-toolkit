@@ -1,6 +1,6 @@
 primary_license:
 declared_license:
-license_expression: x11-xconsortium_veillard AND x11-xconsortium
+license_expression: x11-xconsortium-veillard AND x11-xconsortium
 copyright: |
   Copyright (c) 2001-2002 Daniel Veillard
   Copyright (c) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard
@@ -13,8 +13,8 @@ matches:
     matched_length: '199'
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: x11-xconsortium_veillard.LICENSE
-    license_expression: x11-xconsortium_veillard
+    identifier: x11-xconsortium-veillard.LICENSE
+    license_expression: x11-xconsortium-veillard
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
