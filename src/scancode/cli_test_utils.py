@@ -171,6 +171,7 @@ def check_json_scan(
     regen=False,
     remove_file_date=False,
     check_headers=False,
+    remove_package_uuid=False,
 ):
     """
     Check the scan `result_file` JSON results against the `expected_file`
@@ -184,6 +185,10 @@ def check_json_scan(
     If `check_headers` is True, the scan headers attribute is not removed.
     """
     results = load_json_result(result_file, remove_file_date)
+
+    if remove_package_uuid:
+        results = remove_uuid_from_scan(results)
+
     if regen:
         with open(expected_file, 'w') as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
@@ -194,12 +199,35 @@ def check_json_scan(
         results.pop('headers', None)
         expected.pop('headers', None)
 
+    if remove_package_uuid:
+        expected = remove_uuid_from_scan(expected)
+
     # NOTE we redump the JSON as a YAML string for easier display of
     # the failures comparison/diff
     if results != expected:
         expected = saneyaml.dump(expected)
         results = saneyaml.dump(results)
         assert results == expected
+
+
+def remove_uuid_from_scan(results):
+    """
+    Remove `package_uuid` fields from all the packages in `packages`,
+    in `results`.
+
+    UUID fields are generated uniquely and would cause test failures
+    when comparing results and expected.
+    """
+    modified_results = results
+    packages = modified_results['packages']
+    modified_packages = []
+
+    for package in packages:
+        package.pop('package_uuid', None)
+        modified_packages.append(package)
+
+    modified_results['packages'] = modified_packages
+    return modified_results
 
 
 def load_json_result(location, remove_file_date=False):

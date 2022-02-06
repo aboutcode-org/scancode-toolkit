@@ -10,6 +10,10 @@
 import os.path
 
 from packagedcode import models
+from packagedcode import PACKAGE_INSTANCE_TYPES
+from packagedcode import PACKAGE_MANIFEST_TYPES
+from packagedcode import PACKAGE_MANIFESTS_BY_TYPE
+from packagedcode import PACKAGE_INSTANCES_BY_TYPE
 from packagedcode.models import Package
 from packagedcode.models import Party
 from packagedcode.models import DependentPackage
@@ -177,3 +181,62 @@ class TestModels(PackageTester):
                 assert isinstance(package, npm.NpmPackage)
                 package_resources = list(package.get_package_resources(resource, codebase))
                 assert any(r.name == 'package.json' for r in package_resources), resource.path
+
+
+class TestManifestInstanceModels(PackageTester):
+
+    def test_package_manifest_types(self):
+        check_package_manifest_classes()
+
+    def test_package_instance_types(self):
+        check_package_instance_classes()
+
+
+def check_package_instance_classes():
+    """
+    Check that we don't have two package instance classes with the same
+    default_type.
+    """
+    package_instances_by_type = {
+        cls.default_type: cls
+        for cls in PACKAGE_INSTANCE_TYPES
+    }
+
+    if len(package_instances_by_type) != len(PACKAGE_INSTANCE_TYPES):
+        seen_types = {}
+        for pt in PACKAGE_INSTANCE_TYPES:
+            pk_instance = pt()
+            assert pk_instance.default_type
+            seen = seen_types.get(pk_instance.default_type)
+            if seen:
+                msg = ('Invalid duplicated packagedcode.Package types: '
+                    '"{}:{}" and "{}:{}" have the same type.'
+                    .format(pk_instance.default_type, pk_instance.__name__, seen.default_type, seen.__name__,))
+                raise Exception(msg)
+            else:
+                seen_types[pk_instance.default_type] = pk_instance
+
+
+def check_package_manifest_classes():
+    """
+    Check that we don't have two package manifest classes with the same
+    package_manifest_type.
+    """
+    package_manifests_by_type = {
+        cls.default_type: cls
+        for cls in PACKAGE_MANIFEST_TYPES
+    }
+
+    if len(package_manifests_by_type) != len(PACKAGE_MANIFEST_TYPES):
+        seen_types = {}
+        for pmt in PACKAGE_MANIFEST_TYPES:
+            manifest = pmt()
+            assert manifest.package_manifest_type
+            seen = seen_types.get(manifest.package_manifest_type)
+            if seen:
+                msg = ('Invalid duplicated packagedcode.Package types: '
+                    '"{}:{}" and "{}:{}" have the same type.'
+                    .format(manifest.package_manifest_type, manifest.__name__, seen.package_manifest_type, seen.__name__,))
+                raise Exception(msg)
+            else:
+                seen_types[manifest.package_manifest_type] = manifest

@@ -63,7 +63,6 @@
       "source_packages": [],
       "installed_files": [],
       "extra_data": {},
-      "package_uuid": "f7a2dd3f-8374-40bf-b640-13a5c9e4a27a",
       "package_manifest_paths": [
         "METADATA",
         "setup.cfg",
