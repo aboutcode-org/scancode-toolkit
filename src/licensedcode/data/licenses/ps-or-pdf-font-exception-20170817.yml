@@ -5,6 +5,8 @@ category: Copyleft Limited
 owner: Artifex Software
 homepage_url: https://github.com/ArtifexSoftware/urw-base35-fonts/blob/master/LICENSE
 is_exception: yes
-spdx_license_key: PS-or-PDF-font-exception-20170817
+spdx_license_key: LicenseRef-scancode-ps-pdf-font-exception-20170817
+other_spdx_license_keys:
+    - PS-or-PDF-font-exception-20170817
 text_urls:
     - https://github.com/ArtifexSoftware/urw-base35-fonts/blob/65962e27febc3883a17e651cdb23e783668c996f/LICENSE
