@@ -1,0 +1,10 @@
+key: apache-patent-exception
+short_name: Apache Patent Provision Exception Terms
+name: Apache Patent Provision Exception Terms
+category: Permissive
+owner: Michael R Sweet
+homepage_url: https://github.com/michaelrsweet/mxml/blob/c44aa254ccd90b10b260f04cf9e499bbf971c257/NOTICE
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-apache-patent-exception
+other_spdx_license_keys:
+    - LicenseRef-scancode-apache-patent-provision-exception
