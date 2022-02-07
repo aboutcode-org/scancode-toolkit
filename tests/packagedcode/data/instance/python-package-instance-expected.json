@@ -77,7 +77,8 @@
         "setup.cfg",
         "setup.py",
         "tox.ini"
-      ]
+      ],
+      "package_uuid": "pkg:pypi/click@8.0.1"
     }
   ],
   "files": [

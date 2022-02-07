@@ -822,8 +822,11 @@ class PackageInstance:
 
         self.package_manifest_paths = tuple(self.package_manifest_paths)
 
-        # ToDo: This field would be pURL + UUID as a qualifier instead
-        self.package_uuid = str(uuid)
+        # Set `package_uuid` as pURL for the package + it's uuid as a qualifier
+        # in the pURL string
+        purl_with_uuid = PackageURL.from_string(self.purl)
+        purl_with_uuid.qualifiers["uuid"] = str(uuid)
+        self.package_uuid = purl_with_uuid.to_string()
 
     def get_package_files(self, resource, codebase):
         """
@@ -891,8 +894,6 @@ class PackageInstance:
         field value. Otherwise if `replace` is False, the package_instance
         field value is left unchanged in this case.
         """
-
-
         existing_mapping = self.get_package_data()
 
         # Remove PackageManifest specific attributes

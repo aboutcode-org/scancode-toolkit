@@ -14,6 +14,7 @@ import time
 
 import saneyaml
 from commoncode.system import on_windows
+from packageurl import PackageURL
 
 from scancode_config import scancode_root_dir
 
@@ -223,7 +224,9 @@ def remove_uuid_from_scan(results):
     modified_packages = []
 
     for package in packages:
-        package.pop('package_uuid', None)
+        purl = PackageURL.from_string(package.pop('package_uuid', None))
+        purl.qualifiers.pop("uuid", None)
+        package["package_uuid"] = purl.to_string()
         modified_packages.append(package)
 
     modified_results['packages'] = modified_packages
