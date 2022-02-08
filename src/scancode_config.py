@@ -10,12 +10,12 @@
 import datetime
 import errno
 import os
+import tempfile
 from os.path import abspath
 from os.path import dirname
+from os.path import exists
 from os.path import expanduser
 from os.path import join
-from os.path import exists
-import tempfile
 
 """
 Core configuration globals.
@@ -106,8 +106,7 @@ scancode_root_dir = dirname(scancode_src_dir)
 # USAGE MODE FLAGS
 ################################################################################
 
-# tag file or env var to determined if we are in dev mode
-SCANCODE_DEV_MODE = os.getenv('SCANCODE_DEV_MODE', False)
+_SCANCODE_DEV_MODE = os.path.exists(join(scancode_root_dir, '.git'))
 
 ################################################################################
 # USAGE MODE-, INSTALLATION- and IMPORT- and RUN-SPECIFIC DIRECTORIES
@@ -125,8 +124,8 @@ available across runs from the value of the `SCANCODE_CACHE` environment
 variable. If `SCANCODE_CACHE` is not set, a default sub-directory in the user
 home directory is used instead.
 """
-if SCANCODE_DEV_MODE:
-    # in dev mode the cache and temp files are stored execlusively under the
+if _SCANCODE_DEV_MODE:
+    # in dev mode the cache and temp files are stored exclusively under the
     # scancode_root_dir
     scancode_cache_dir = join(scancode_root_dir, '.cache')
 else:
@@ -163,7 +162,7 @@ is used instead. Each scan run creates its own tempfile subdirectory.
 __scancode_temp_base_dir = os.getenv('SCANCODE_TEMP')
 
 if not __scancode_temp_base_dir:
-    if SCANCODE_DEV_MODE:
+    if _SCANCODE_DEV_MODE:
         __scancode_temp_base_dir = join(scancode_root_dir, 'tmp')
     else:
         __scancode_temp_base_dir = system_temp_dir
