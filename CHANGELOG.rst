@@ -114,6 +114,13 @@ License detection:
 - Small, two-words matches that overlap the previous or next match by
   by the word "license" and assimilated are now filtered as false matches.
 
+
+- The new --licenses-reference option adds a new "licenses_reference" top
+  level attribute to a scan when using the JSON and YAML outputs. This contains
+  all the details and the full text of every licenses seen in a file or
+  package license expression of a scan. This can be added added after the fact
+  using the --from-json option.
+
 - New experimental support for non-English licenses. Use the command
   ./scancode --reindex-licenses-for-all-languages to index all known non-English
   licenses and rules. From that point on, they will be detected. Because of this
