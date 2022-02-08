@@ -44,14 +44,34 @@ if TRACE:
 
 
 def reindex_licenses(ctx, param, value):
+    """
+    Rebuild and cache the license index
+    """
     if not value or ctx.resilient_parsing:
         return
 
     # TODO: check for temp file configuration and use that for the cache!!!
     from licensedcode.cache import get_index
     import click
-    click.echo('Checking and rebuilding the license index...')
-    get_index(check_consistency=True)
+    click.echo('Rebuilding the license index...')
+    get_index(force=True)
+    click.echo('Done.')
+    ctx.exit(0)
+
+
+def reindex_licenses_all_languages(ctx, param, value):
+    """
+    EXPERIMENTAL: Rebuild and cache the license index including all languages
+    and not only English.
+    """
+    if not value or ctx.resilient_parsing:
+        return
+
+    # TODO: check for temp file configuration and use that for the cache!!!
+    from licensedcode.cache import get_index
+    import click
+    click.echo('Rebuilding the license index for all languages...')
+    get_index(force=True, index_all_languages=True)
     click.echo('Done.')
     ctx.exit(0)
 
@@ -123,9 +143,20 @@ class LicenseScanner(ScanPlugin):
             hidden=True,
             is_flag=True, is_eager=True,
             callback=reindex_licenses,
-            help='Check the license index cache and reindex if needed and exit.',
+            help='Rebuild the license index and exit.',
+            help_group=MISC_GROUP,
+        ),
+
+        PluggableCommandLineOption(
+            ('--reindex-licenses-for-all-languages',),
+            hidden=True,
+            is_flag=True, is_eager=True,
+            callback=reindex_licenses_all_languages,
+            help='[EXPERIMENTAL] Rebuild the license index including texts all '
+                 'languages (and not only English) and exit.',
             help_group=MISC_GROUP,
         )
+
     ]
 
     def is_enabled(self, license, **kwargs):  # NOQA
