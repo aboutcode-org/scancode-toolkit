@@ -93,9 +93,9 @@ def print_examples(ctx, param, value):
 def print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    click.echo('ScanCode version ' + scancode_config.__version__)
-    click.echo('ScanCode Output Format version ' + scancode_config.__output_format_version__)
-    click.echo('SPDX License list version ' + scancode_config.spdx_license_list_version)
+    click.echo(f'ScanCode version: {scancode_config.__version__}')
+    click.echo(f'ScanCode Output Format version: {scancode_config.__output_format_version__}')
+    click.echo(f'SPDX License list version: {scancode_config.spdx_license_list_version}')
     ctx.exit()
 
 
