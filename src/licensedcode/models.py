@@ -395,7 +395,7 @@ class License:
         """
         return self._read_text(self.text_file)
 
-    def to_dict(self):
+    def to_dict(self, include_ignorables=True):
         """
         Return an ordered mapping of license data (excluding texts).
         Fields with empty values are not included.
@@ -415,6 +415,10 @@ class License:
 
             if attr.name == 'minimum_coverage' and value == 100:
                 return False
+
+            if not include_ignorables and  attr.name.startswith('ignorable_'):
+                return False
+
             return True
 
         data = attr.asdict(self, filter=dict_fields, dict_factory=dict)
