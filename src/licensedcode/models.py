@@ -395,10 +395,12 @@ class License:
         """
         return self._read_text(self.text_file)
 
-    def to_dict(self, include_ignorables=True):
+    def to_dict(self, include_ignorables=True, include_text=False):
         """
-        Return an ordered mapping of license data (excluding texts).
-        Fields with empty values are not included.
+        Return an ordered mapping of license data (excluding text, unless
+        ``include_text`` is True). Fields with empty values are not included.
+        Optionally include the "ignorable*" attributes if ``include_ignorables``
+        is True.
         """
 
         # do not dump false, empties and paths
@@ -425,6 +427,9 @@ class License:
         cv = data.get('minimum_coverage', 0)
         if cv:
             data['minimum_coverage'] = as_int(cv)
+
+        if include_text:
+            data['text'] = self.text
         return data
 
     def dump(self):
