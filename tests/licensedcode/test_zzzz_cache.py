@@ -81,6 +81,8 @@ class LicenseIndexCacheTest(FileBasedTesting):
         assert hash.sha1(cache_file) != idx_checksum_before
 
         # force=False loads an index
+        idx_checksum_before = hash.sha1(cache_file)
+
         _cached4 = cache.LicenseCache.load_or_build(
             licensedcode_cache_dir=licensedcode_cache_dir,
             scancode_cache_dir=scancode_cache_dir,
