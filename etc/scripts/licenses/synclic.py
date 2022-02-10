@@ -17,7 +17,6 @@ import zipfile
 
 from os import mkdir
 from os.path import exists
-from os.path import join
 from os.path import realpath
 from pprint import pprint
 
@@ -59,32 +58,22 @@ class ScanCodeLicenses:
         self.by_key = load_licenses(with_deprecated=True)
         self.by_spdx_key = get_licenses_by_spdx_key(self.by_key.values())
 
-        # TODO: not yet used
-        foreign_dir = join(licensedcode.models.data_dir, "non-english", "licenses")
-        self.non_english_by_key = load_licenses(foreign_dir, with_deprecated=True)
-        self.non_english_by_spdx_key = get_licenses_by_spdx_key(self.non_english_by_key.values())
-
     def clean(self):
         """
-        Redump licenses YAML applying some reformating.
+        Redump licenses YAML re-applying pretty-printing.
         """
+        for lic in self.by_key.values():
+            updated = False
+            if lic.standard_notice:
+                updated = True
+                lic.standard_notice = clean_text(lic.standard_notice)
+            if lic.notes:
+                updated = True
+                lic.notes = clean_text(lic.notes)
 
-        def _clean(licenses):
-            for lic in licenses.values():
-                updated = False
-                if lic.standard_notice:
-                    updated = True
-                    lic.standard_notice = clean_text(lic.standard_notice)
-                if lic.notes:
-                    updated = True
-                    lic.notes = clean_text(lic.notes)
-
-                if updated:
-                    models.update_ignorables(lic, verbose=False)
-                    lic.dump()
-
-        for lics in [self.by_key, self.non_english_by_key]:
-            _clean(lics)
+            if updated:
+                models.update_ignorables(lic, verbose=False)
+                lic.dump()
 
 
 class ExternalLicensesSource:
@@ -137,8 +126,8 @@ class ExternalLicensesSource:
                 mkdir(self.new_dir)
 
     def get_licenses(
-        self, 
-        scancode_licenses=None, 
+        self,
+        scancode_licenses=None,
         **kwargs,
     ):
         """
@@ -167,8 +156,8 @@ class ExternalLicensesSource:
                     print()
                     print(repr(lic))
                 raise
-            if TRACE: 
-                print(f"    Saving fetched license: {lic.key} in :", round(time.time()- start, 1), "s")
+            if TRACE:
+                print(f"    Saving fetched license: {lic.key} in :", round(time.time() - start, 1), "s")
 
         print(
             "Stored %d external licenses in: %r."
@@ -347,8 +336,7 @@ class SpdxSource(ExternalLicensesSource):
         Yield tuples of (License object, license text) fetched
         from the latest SPDX license list. Use the latest tagged version or the
         `commitish` if provided. If ``skip_oddities`` is True, some oddities are
-        skipped or handled specially, such as licenses with a trailing + or
-        foreign language licenses.
+        skipped or handled specially, such as licenses with a trailing +.
         """
         for spdx_details in self.fetch_spdx_licenses(
             commitish=commitish,
@@ -376,8 +364,7 @@ class SpdxSource(ExternalLicensesSource):
         list. Use the latest tagged version or the `commitish` if provided.
 
         If ``skip_oddities`` is True, some oddities are skipped or handled
-        specially, such as licenses with a trailing + or foreign language
-        licenses.
+        specially, such as licenses with a trailing +.
         """
         if not commitish:
             # get latest tag
@@ -414,20 +401,12 @@ class SpdxSource(ExternalLicensesSource):
         """
         Return a tuple of (License object, license text) built
         from an SPDX license mapping. If skip_oddities is True, some oddities
-        are skipped or handled specially, such as licenses with a trailing + or
-        foreign language licenses.
+        are skipped or handled specially, such as licenses with a trailing +.
         """
         spdx_license_key = mapping.get("licenseId") or mapping.get("licenseExceptionId")
         assert spdx_license_key
         spdx_license_key = spdx_license_key.strip()
         key = spdx_license_key.lower()
-
-        # TODO: Not yet available in ScanCode
-        is_foreign = scancode_licenses and key in scancode_licenses.non_english_by_spdx_key
-        if skip_oddities and is_foreign:
-            if TRACE:
-                print("Skipping NON-english license FOR NOW:", key)
-            return
 
         # these keys have a complicated history
         spdx_keys_with_complicated_past = set(
@@ -592,13 +571,6 @@ class DejaSource(ExternalLicensesSource):
         for lic_data in license_data:
             key = lic_data["key"]
 
-            # TODO: Not yet available in ScanCode
-            is_foreign = key in scancode_licenses.non_english_by_key
-            if is_foreign:
-                if TRACE:
-                    print("Skipping NON-english license:", key)
-                continue
-
             if skip_oddities:
                 special_reason = dejacode_special_skippable_keys.get(key)
                 if special_reason:
@@ -637,6 +609,7 @@ class DejaSource(ExternalLicensesSource):
             src_dir=self.original_dir,
             name=mapping["name"],
             short_name=mapping["short_name"],
+            language=mapping.get("language") or "en",
             homepage_url=mapping["homepage_url"],
             category=mapping["category"],
             owner=mapping["owner_name"],
@@ -756,7 +729,6 @@ def get_deja_api_data(api_url, api_key, params=None):
     return data
 
 
-
 def create_or_update_license(api_url, api_key, lico, update=False):
     """
     POST the ``lico`` License object to the DejaCode API at ``api_url`` with
@@ -866,6 +838,7 @@ def get_or_create_owner(api_url, api_key, name, create=False):
         if TRACE_DEEP:
             pprint(result)
     return result
+
 
 def get_api_headers(api_key):
     return {
@@ -1149,10 +1122,10 @@ def synchronize_licenses(
 
     if TRACE: start = time.time()
     externals_by_key = external_source.get_licenses(
-        scancode_licenses, 
+        scancode_licenses,
         commitish=commitish,
     )
-    if TRACE: print("Fetched all externals_by_key licenses in :", int(time.time()- start))
+    if TRACE: print("Fetched all externals_by_key licenses in :", int(time.time() - start))
 
     if use_spdx_key:
         scancodes_by_key = scancode_licenses.by_spdx_key
