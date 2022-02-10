@@ -4,7 +4,6 @@ license_expressions:
   - bsd-new
   - bsd-new
   - bsd-new
-  - bsd-new-nomod
   - bsd-new
   - bsd-new
   - bsd-new
@@ -12,7 +11,8 @@ license_expressions:
   - bsd-new
   - bsd-new
   - bsd-new
-  - bsd-new-nomod
+  - bsd-new
+  - bsd-x11
   - bsd-new
   - bsd-new
   - bsd-new

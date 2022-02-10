@@ -1,0 +1,3 @@
+license_expression: adobe-dng-sdk
+is_license_notice: yes
+notes: https://android.googlesource.com/platform/external/dng_sdk/+/refs/heads/master/source/dng_1d_function.cpp

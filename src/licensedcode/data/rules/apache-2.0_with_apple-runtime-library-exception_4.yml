@@ -1,0 +1,5 @@
+license_expression: apache-2.0 WITH apple-runtime-library-exception
+is_license_notice: yes
+notes: See https://github.com/Minionguyjpro/Swift/blob/bd112ca8e57862776591937bd8160146b71759b2/utils/swift_build_support/swift_build_support/products/swiftformat.py#L66
+ignorable_urls:
+    - https://swift.org/LICENSE.txt
