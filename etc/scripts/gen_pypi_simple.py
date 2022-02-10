@@ -69,22 +69,22 @@ def get_package_name_from_filename(filename, normalize=True):
     Optionally ``normalize`` the name according to distribution name rules.
     Raise an ``InvalidDistributionFilename`` if the ``filename`` is invalid::
 
+    >>> get_package_name_from_filename("aboutcode_toolkit-5.1.0-py2.py3-none-any.whl")
+    'aboutcode-toolkit'
+    >>> get_package_name_from_filename("boolean.py-3.7-py2.py3-none-any.whl")
+    'boolean-py'
+    >>> get_package_name_from_filename("boolean.py-3.7.tar.gz")
+    'boolean-py'
     >>> get_package_name_from_filename("foo-1.2.3_rc1.tar.gz")
     'foo'
-    >>> get_package_name_from_filename("foo-bar-1.2-py27-none-any.whl")
+    >>> get_package_name_from_filename("foo_bar-1.2-py27-none-any.whl")
     'foo-bar'
+    >>> get_package_name_from_filename("foo.py-1.2-py27-none-any.whl")
+    'foo-py'
     >>> get_package_name_from_filename("Cython-0.17.2-cp26-none-linux_x86_64.whl")
     'cython'
     >>> get_package_name_from_filename("python_ldap-2.4.19-cp27-none-macosx_10_10_x86_64.whl")
     'python-ldap'
-    >>> get_package_name_from_filename("foo.whl")
-    Traceback (most recent call last):
-        ...
-    InvalidDistributionFilename: ...
-    >>> get_package_name_from_filename("foo.png")
-    Traceback (most recent call last):
-        ...
-    InvalidFilePackageName: ...
     """
     if not filename or not filename.endswith(dist_exts):
         raise InvalidDistributionFilename(filename)
@@ -133,15 +133,30 @@ def get_package_name_from_filename(filename, normalize=True):
             raise InvalidDistributionFilename(filename)
 
     if normalize:
-        name = name.lower().replace("_", "-")
+        name = normalize_name(name)
     return name
 
 
-def build_pypi_index(directory, write_index=False):
+def normalize_name(name):
     """
-    Using a ``directory`` directory of wheels and sdists, create the a PyPI simple
-    directory index at ``directory``/simple/ populated with the proper PyPI simple
-    index directory structure crafted using symlinks.
+    Return a normalized package name per PEP503, and copied from
+    https://www.python.org/dev/peps/pep-0503/#id4
+    """
+    return name and re.sub(r"[-_.]+", "-", name).lower() or name
+
+
+def normalize_name_plain(name):
+    """
+    Return a normalized package name, but do not replace dots
+    """
+    return name and re.sub(r"[-_]+", "-", name).lower() or name
+
+
+def build_pypi_index(directory):
+    """
+    Using a ``directory`` directory of wheels and sdists, create the a PyPI
+    simple directory index at ``directory``/simple/ populated with the proper
+    PyPI simple index directory structure crafted using symlinks.
 
     WARNING: The ``directory``/simple/ directory is removed if it exists.
     """
@@ -154,11 +169,15 @@ def build_pypi_index(directory, write_index=False):
 
     index_dir.mkdir(parents=True)
 
-    if write_index:
-        simple_html_index = [
-            "<html><head><title>PyPI Simple Index</title>",
-            "<meta name='api-version' value='2' /></head><body>",
-        ]
+    simple_html_index = [
+        "<html>"
+        "<head>"
+            "<title>PyPI Simple Index</title>",
+            '<meta charset="UTF-8">'
+            '<meta name="api-version" value="2" />'
+        "</head>"
+        "<body>",
+    ]
 
     package_names = set()
     for pkg_file in directory.iterdir():
@@ -172,26 +191,30 @@ def build_pypi_index(directory, write_index=False):
         ):
             continue
 
-        pkg_name = get_package_name_from_filename(pkg_filename)
-        pkg_index_dir = index_dir / pkg_name
+        original_name = get_package_name_from_filename(pkg_filename, normalize=False)
+        pkg_dir_name = normalize_name(original_name)
+        pkg_link_name = normalize_name_plain(original_name)
+
+        pkg_index_dir = index_dir / pkg_dir_name
         pkg_index_dir.mkdir(parents=True, exist_ok=True)
         pkg_indexed_file = pkg_index_dir / pkg_filename
         link_target = Path("../..") / pkg_filename
         pkg_indexed_file.symlink_to(link_target)
 
-        if write_index and pkg_name not in package_names:
-            esc_name = escape(pkg_name)
-            simple_html_index.append(f'<a href="{esc_name}/">{esc_name}</a><br/>')
-            package_names.add(pkg_name)
+        if pkg_link_name not in package_names:
+            esc_dir = escape(pkg_dir_name)
+            esc_link = escape(pkg_link_name)
 
-    if write_index:
-        simple_html_index.append("</body></html>")
-        index_html = index_dir / "index.html"
-        index_html.write_text("\n".join(simple_html_index))
+            simple_html_index.append(f'<a href="{esc_dir}/">{esc_link}</a><br/>')
+            package_names.add(pkg_link_name)
+
+    simple_html_index.append("</body></html>")
+    index_html = index_dir / "index.html"
+    index_html.write_text("\n".join(simple_html_index))
 
 
 if __name__ == "__main__":
     import sys
 
     pkg_dir = sys.argv[1]
-    build_pypi_index(pkg_dir, True)
+    build_pypi_index(pkg_dir)
