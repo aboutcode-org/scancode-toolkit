@@ -5,6 +5,6 @@ name: Datenlizenz Deutschland - Namensnennung - Version 1.0 - Deutsch
 category: Permissive
 owner: govdata.de
 homepage_url: https://www.govdata.de/dl-de/by-1-0
+spdx_license_key: LicenseRef-scancode-dl-de-by-1-0-de
 other_urls:
     - https://www.dcat-ap.de/def/licenses/
-spdx_license_key: LicenseRef-scancode-dl-de-by-1-0-de
