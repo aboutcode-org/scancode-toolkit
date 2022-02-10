@@ -1,6 +1,6 @@
 primary_license:
 declared_license:
-license_expression: pcre AND bsd-new AND bsd-new AND bsd-new
+license_expression: pcre AND bsd-new AND bsd-new
 copyright: |
   Copyright (c) 1997-2007 University of Cambridge
   Copyright (c) 2007, Google Inc.
@@ -40,31 +40,15 @@ matches:
       PCRE is distributed under the terms of the "BSD" licence, as
       specified below. The documentation for PCRE, supplied in the "doc"
       directory, is distributed under the same terms as the software itself.
-  - score: '99.0'
-    start_line: 44
-    end_line: 44
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: bsd-new_898.RULE
-    license_expression: bsd-new
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: THE "BSD" LICENCE
   - score: '100.0'
-    start_line: 47
+    start_line: 44
     end_line: 72
     matcher: 2-aho
-    rule_length: 220
-    matched_length: 220
+    rule_length: 223
+    matched_length: 223
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: bsd-new_899.RULE
+    identifier: bsd-new_1105.RULE
     license_expression: bsd-new
     is_license_text: yes
     is_license_notice: no
@@ -72,6 +56,9 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: |
+      THE "BSD" LICENCE
+      -----------------
+
       Redistribution and use in source and binary forms, with or without
       modification, are permitted provided that the following conditions are met:
 
