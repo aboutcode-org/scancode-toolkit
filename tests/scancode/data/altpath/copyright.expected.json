@@ -15,7 +15,6 @@
       "errors": [],
       "extra_data": {
         "spdx_license_list_version": "3.16",
-        "OUTDATED": "WARNING: Outdated ScanCode Toolkit version! You are using an outdated version of ScanCode Toolkit: 31.0.0 released on: 2021-09-24. A new version is available with important improvements including bug and security fixes, updated license, copyright and package detection, and improved scanning accuracy. Please download and install the latest version of ScanCode. Visit https://github.com/nexB/scancode-toolkit/releases for details.",
         "files_count": 1
       }
     }
