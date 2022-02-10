@@ -101,7 +101,7 @@ Before you start using Scancode
 
 .. note::
 
-    For Windows, Refer to :ref:`_windows_app_install` for installing easily using Releases.
+    For Windows, Refer to :ref:`windows_app_install` for installing easily using Releases.
 
 .. _newcomer_scan_codebase:
 
