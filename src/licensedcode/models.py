@@ -802,30 +802,40 @@ def build_rules_from_licenses(licenses):
     Return an iterable of rules built from each license text from a ``licenses``
     iterable of License objects.
     """
-    for license_key, license_obj in licenses.items():
-        text_file = join(license_obj.src_dir, license_obj.text_file)
-        if exists(text_file):
-            minimum_coverage = license_obj.minimum_coverage or 0
-            yield Rule(
-                text_file=text_file,
-                license_expression=license_key,
+    for license_obj in licenses.values():
+        rule = build_rule_from_license(license_obj)
+        if rule:
+            yield rule
 
-                # a license text is always 100% relevant
-                has_stored_relevance=True,
-                relevance=100,
 
-                has_stored_minimum_coverage=bool(minimum_coverage),
-                minimum_coverage=minimum_coverage,
+def build_rule_from_license(license_obj):
+    """
+    Return a Rule built from a ``license`` License object, or None.
+    """
+    text_file = join(license_obj.src_dir, license_obj.text_file)
+    if exists(text_file):
+        minimum_coverage = license_obj.minimum_coverage or 0
+        return Rule(
+            text_file=text_file,
+            license_expression=license_obj.key,
 
-                is_from_license=True,
-                is_license_text=True,
+            # a license text is always 100% relevant
+            has_stored_relevance=True,
+            relevance=100,
 
-                ignorable_copyrights=license_obj.ignorable_copyrights,
-                ignorable_holders=license_obj.ignorable_holders,
-                ignorable_authors=license_obj.ignorable_authors,
-                ignorable_urls=license_obj.ignorable_urls,
-                ignorable_emails=license_obj.ignorable_emails,
-            )
+            has_stored_minimum_coverage=bool(minimum_coverage),
+            minimum_coverage=minimum_coverage,
+
+            is_from_license=True,
+            is_license_text=True,
+
+            ignorable_copyrights=license_obj.ignorable_copyrights,
+            ignorable_holders=license_obj.ignorable_holders,
+            ignorable_authors=license_obj.ignorable_authors,
+            ignorable_urls=license_obj.ignorable_urls,
+            ignorable_emails=license_obj.ignorable_emails,
+        )
+
 
 
 def get_all_spdx_keys(licenses_db):

@@ -122,7 +122,7 @@ def check_ignorable_clues(licensish, regen=False, verbose=False):
     """
     Validate that all expected ignorable clues declared in a `licensish` License
     or Rule object are properly detected in that rule text file. Optionally
-    regen the ignorables and updates the License or Rule .yml data file.
+    ``regen`` the ignorables to update the License or Rule .yml data file.
     """
     result = models.get_ignorables(text_file=licensish.text_file)
 
@@ -132,8 +132,17 @@ def check_ignorable_clues(licensish, regen=False, verbose=False):
         pprint(result)
 
     if regen:
-        models.set_ignorables(licensish, result , verbose=verbose)
-        licensish.dump()
+        is_from_license = licensish.is_from_license
+        if is_from_license:
+            db = cache.get_licenses_db()
+            licish = db[licensish.license_expression]
+        else:
+            licish = licensish
+        models.set_ignorables(licish, result , verbose=verbose)
+        licish.dump()
+        if is_from_license:
+            licensish= models.build_rule_from_license(licish)
+
 
     expected = models.get_normalized_ignorables(licensish)
 

@@ -2,7 +2,9 @@ key: scola-fr
 language: fr
 short_name: Statistics Canada Open Licence
 name: Entente de licence ouverte de Statistique Canada
-owner:  Statistique Canada
-homepage_url: https://www.statcan.gc.ca/fra/reference/licence
 category: Unstated License
+owner: Statistique Canada
+homepage_url: https://www.statcan.gc.ca/fra/reference/licence
 spdx_license_key: LicenseRef-scancode-scola-fr
+ignorable_emails:
+    - information@fip-pcim.gc.ca
