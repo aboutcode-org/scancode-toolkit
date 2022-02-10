@@ -531,7 +531,7 @@ class License:
             if lic.key != lic.key.lower():
                 error('Incorrect license key case. Should be lowercase.')
 
-            if len(lic.key) >= 50:
+            if len(lic.key) > 50:
                 error('key must be 50 characters or less.')
 
             if not lic.short_name:
@@ -605,7 +605,7 @@ class License:
 
             # SPDX consistency
             if lic.spdx_license_key:
-                if len(lic.spdx_license_key) >= 50:
+                if len(lic.spdx_license_key) > 50:
                     error('spdx_license_key must be 50 characters or less.')
 
                 by_spdx_key[lic.spdx_license_key].append(key)

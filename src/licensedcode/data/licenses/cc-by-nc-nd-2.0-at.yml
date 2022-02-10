@@ -7,3 +7,5 @@ owner: Creative Commons
 homepage_url: https://creativecommons.org/licenses/by-nc-nd/2.0/
 text_urls:
     - https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode.at
+spdx_license_key: LicenseRef-scancode-cc-by-nc-nd-2.0-at
+    

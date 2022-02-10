@@ -7,3 +7,4 @@ owner: Creative Commons
 homepage_url: https://creativecommons.org/licenses/GPL/2.0/
 text_urls:
     - https://creativecommons.org/licenses/GPL/2.0/legalcode.pt
+spdx_license_key: LicenseRef-scancode-cc-gpl-2.0-pt

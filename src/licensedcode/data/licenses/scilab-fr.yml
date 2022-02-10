@@ -7,3 +7,4 @@ owner: INRIA/ENPC
 homepage_url: http://web.archive.org/web/20051212214843/http://www.scilab.org/legal/license.html
 text_urls: 
     - https://directory.fsf.org/wiki/License:Scilab-old
+spdx_license_key: LicenseRef-scancode-scilab-fr
