@@ -8,5 +8,6 @@ homepage_url: https://creativecommons.org/licenses/by-sa/3.0/at/legalcode
 spdx_license_key: CC-BY-SA-3.0-AT
 faq_url: https://creativecommons.org/licenses/by-sa/3.0/at/
 ignorable_urls:
+  - https://creativecommons.org/
   - https://creativecommons.org/compatiblelicenses
 
