@@ -108,7 +108,7 @@ def test_license_option_reports_license_texts_diag_long_lines():
     check_json_scan(test_loc, result_file, regen=False)
 
 
-def test_license_match_unknwon_license_with_license_reference():
+def test_license_match_unknown_license_with_license_reference():
     test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/scan-ref', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [
@@ -126,7 +126,26 @@ def test_license_match_unknwon_license_with_license_reference():
     check_json_scan(test_loc, result_file, regen=False)
 
 
-def test_license_match_unknwon_license_without_license_reference():
+@pytest.mark.xfail(reason="Set as failing until we have proper LicenseDetection support")
+def test_license_match_unknown_license_without_license_reference():
+    test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/license-ref-see-copying', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--strip-root',
+        '--verbose',
+        '--unknown-licenses',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/license_reference/license-ref-see-copying.expected.json')
+    check_json_scan(test_loc, result_file, regen=False)
+
+
+def test_license_match_referenced_filename():
     test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/scan-without-ref', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [

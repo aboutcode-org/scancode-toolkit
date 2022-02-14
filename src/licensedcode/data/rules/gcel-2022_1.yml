@@ -1,0 +1,5 @@
+license_expression: gcel-2022
+is_license_notice: yes
+notes: https://github.com/gridgain/gridgain/blob/master/LICENSE
+ignorable_urls:
+    - https://www.gridgain.com/products/software/community-edition/gridgain-community-edition-license

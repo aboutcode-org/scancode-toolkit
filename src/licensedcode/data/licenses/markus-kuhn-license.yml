@@ -1,0 +1,11 @@
+key: markus-kuhn-license
+short_name: Markus Kuhn License
+name: Markus Kuhn License
+category: Permissive
+owner: Markus Kuhn
+homepage_url: https://www.cl.cam.ac.uk/~mgk25/ucs/wcwidth.c
+spdx_license_key: LicenseRef-scancode-markus-kuhn-license
+text_urls:
+    - https://www.cl.cam.ac.uk/~mgk25/ucs/langinfo.c
+other_urls:
+    - https://github.com/search?q=%22Permission+to+use%2C+copy%2C+modify%2C+and+distribute+this+software+for+any+purpose+and+without+fee+is+hereby+granted.%22+%22The+author+disclaims+all+warranties+with+regard+to+this+software.%22&type=code

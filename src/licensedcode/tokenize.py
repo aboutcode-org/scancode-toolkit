@@ -58,7 +58,9 @@ def query_lines(location=None, query_string=None, strip=True, start_line=1):
 
 # Split on whitespace and punctuations: keep only characters and numbers and +
 # when in the middle or end of a word. Keeping the trailing + is important for
-# licenses name such as GPL2+
+# licenses name such as GPL2+. The use a double negation "not non word" meaning
+# "words" to define the character ranges
+
 query_pattern = '[^_\\W]+\\+?[^_\\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 

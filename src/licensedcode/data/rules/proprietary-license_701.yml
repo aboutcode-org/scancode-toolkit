@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_reference: yes
+relevance: 100
+notes: Rarely seen in old Linux 2.6 kernel modules from now defunct www.systec-electronic.com
+    See https://github.com/jameshilliard/WECB-VZ-GPL/blob/adfad80b3144c788efb636d5acfcdd6ed91b3d79/rtl819x/linux-2.6.30/drivers/staging/epl/user/EplNmtuCal.h#L13
+    It is not clear if this is proprietary or not.

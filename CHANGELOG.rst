@@ -40,6 +40,14 @@ Important API changes:
   column to "path". The "copyright_holder" has been ranmed to "holder"
 
 
+Development environment changes:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - The license cache consistency is not checked anymore when you are using a Git
+   checkout. The SCANCODE_DEV_MODE tag file has been removed entirely. Use
+   instead the --reindex-licenses option to rebuild the license index.
+
+
 Copyright detection:
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -106,6 +114,19 @@ License detection:
 - Small, two-words matches that overlap the previous or next match by
   by the word "license" and assimilated are now filtered as false matches.
 
+
+- The new --licenses-reference option adds a new "licenses_reference" top
+  level attribute to a scan when using the JSON and YAML outputs. This contains
+  all the details and the full text of every licenses seen in a file or
+  package license expression of a scan. This can be added added after the fact
+  using the --from-json option.
+
+- New experimental support for non-English licenses. Use the command
+  ./scancode --reindex-licenses-for-all-languages to index all known non-English
+  licenses and rules. From that point on, they will be detected. Because of this
+  some licenses that were not tagged with their languages are now correctly
+  tagged and they may not be detected unless you activate this new indexing
+  feature.
 
 Package detection:
 ~~~~~~~~~~~~~~~~~~

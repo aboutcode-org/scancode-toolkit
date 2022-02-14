@@ -1,4 +1,5 @@
 license_expressions:
+  - free-unknown
   - apache-2.0
 notes: |
   License test derived from a file of the BSD-licensed repository at:
@@ -6,5 +7,3 @@ notes: |
   originally expected to be detected as Apache-2.0
   with coverage of 68.8
   Example: https://github.com/donnemartin/saws
-expected_failure: yes
-

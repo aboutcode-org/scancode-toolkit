@@ -12,10 +12,10 @@ import os
 import re
 from unittest.case import expectedFailure
 
-import pytest
-
 from commoncode.testcase import FileBasedTesting
+
 from cluecode import finder
+from cluecode import finder_data
 from cluecode.finder import find
 from cluecode.finder import urls_regex
 
@@ -160,6 +160,18 @@ class TestEmail(FileBasedTesting):
         expected = []
         result = find_emails_tester(test_file)
         assert result == expected
+
+    def test_emails_does_filter_junk_gibberish_domains(self):
+        test_file = self.get_test_loc('finder/email/gibberish-bug-6H.txt')
+        expected = []
+        result = find_emails_tester(test_file)
+        assert result == expected
+
+    def test_finder_classify_host_as_ok_for_gibberish(self):
+        assert finder_data.classify_host("FO.LwfT")
+
+    def test_is_good_email_domain_classify_host_as_bad_for_gibberish(self):
+        assert not finder.is_good_email_domain("foo@FO.LwfT")
 
     def test_emails_for_ignored_hosts(self):
         test_string = '''

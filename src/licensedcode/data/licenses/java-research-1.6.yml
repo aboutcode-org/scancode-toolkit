@@ -1,0 +1,10 @@
+key: java-research-1.6
+short_name: Java Research License 1.6
+name: Java Research License Version 1.6
+category: Proprietary Free
+owner: Oracle Corporation
+homepage_url: https://web.archive.org/web/20070112020225/http://www.java.net/jrl.csp
+spdx_license_key: LicenseRef-scancode-java-research-1.6
+ignorable_urls:
+    - http://www.sun.com/its
+    - http://www.sun.com/policies/trademarks

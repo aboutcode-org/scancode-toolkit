@@ -1,0 +1,6 @@
+license_expression: mit AND ofl-1.1
+is_license_notice: yes
+notes: https://raw.githubusercontent.com/DataJuggler/Blazor.Crypto/42de409fbf0afd359aef3c4876b779494eb43b79/wwwroot/css/open-iconic/README.md
+ignorable_urls:
+    - http://opensource.org/licenses/MIT
+    - http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web

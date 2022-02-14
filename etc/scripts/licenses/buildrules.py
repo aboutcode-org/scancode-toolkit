@@ -156,11 +156,11 @@ def all_rule_by_tokens():
         try:
             rule_tokens[tuple(rule.tokens())] = rule.identifier
         except Exception as e:
-            df=('  file://' + rule.data_file)
-            tf=('  file://' + rule.text_file)
+            df = f"  file://{rule.data_file}"
+            tf = f"  file://{rule.text_file}"
             raise Exception(
-                f'Failed to to get tokens from rule:: {rule.identifier}\n'
-                f'{df}\n{tf}'
+                f"Failed to to get tokens from rule:: {rule.identifier}\n"
+                f"{df}\n{tf}"
             ) from e
     return rule_tokens
 

@@ -1,0 +1,6 @@
+license_expression: mpl-1.1 OR gpl-3.0 OR lgpl-3.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl.txt
+    - http://www.gnu.org/licenses/lgpl.txt
+    - https://www.mozilla.org/en-US/MPL/1.1/
