@@ -86,6 +86,7 @@ package type or ecosystem `dummy`.
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 TRACE = False or SCANCODE_DEBUG_PACKAGE_API
+TRACE_MERGING = True or SCANCODE_DEBUG_PACKAGE_API
 
 def logger_debug(*args):
     pass
@@ -354,10 +355,13 @@ class DependentPackage(BaseModel):
              'If the dependency is resolved, the version should be added to '
              'the purl')
 
+    # ToDo: rename to `extracted_requirement`  * as found in the package manifest *
     requirement = String(
         repr=True,
         label='dependent package version requirement',
         help='A string defining version(s)requirements. Package-type specific.')
+
+    # ToDo: add `vers` *  *
 
     scope = String(
         repr=True,
@@ -381,6 +385,8 @@ class DependentPackage(BaseModel):
         help='True if this dependency version requirement has '
              'been resolved and this dependency url points to an '
              'exact version.')
+
+    #ToDo: add `resolved_package` -> (PackageData)
 
 
 @attr.s()
@@ -773,6 +779,17 @@ class PackageInstance:
         help='List of files provided by this package.'
     )
 
+    def to_dict(self, **kwargs):
+        """
+        Return an dict of primitive Python types.
+        """
+        data = super().to_dict(**kwargs)
+
+        for attribute in ('root_path', 'purl'):
+            data.pop(attribute, None)
+
+        return data
+
     def get_package_data(self):
         """
         Returns a mapping of package data attributes and corresponding values.
@@ -781,14 +798,13 @@ class PackageInstance:
 
         # Removes PackageInstance specific attributes
         for attribute in ('package_uuid', 'package_manifest_paths', 'files'):
-            mapping.pop(attribute)
-        
+            mapping.pop(attribute, None)
+
         # Remove attributes which are BasePackage functions
         for attribute in ('repository_homepage_url', 'repository_download_url', 'api_data_url'):
-            mapping.pop(attribute)
+            mapping.pop(attribute, None)
 
         return mapping
-
 
     def populate_instance_from_manifests(self, package_manifests_by_path, uuid):
         """
@@ -799,13 +815,19 @@ class PackageInstance:
                 logger.debug('Merging package manifest data for: {}'.format(path))
                 logger.debug('package manifest data: {}'.format(repr(package_manifest)))
             self.package_manifest_paths.append(path)
-            self.merge_package_data_into_instance(package_manifest)
+            self.merge_package_data_into_instance(package_manifest.copy())
 
         self.package_manifest_paths = tuple(self.package_manifest_paths)
 
         # Set `package_uuid` as pURL for the package + it's uuid as a qualifier
         # in the pURL string
-        purl_with_uuid = PackageURL.from_string(self.purl)
+        try:
+            purl_with_uuid = PackageURL.from_string(self.purl)
+        except ValueError:
+            if TRACE:
+                logger.debug("Couldn't create purl for: {}".format(path))
+            return
+
         purl_with_uuid.qualifiers["uuid"] = str(uuid)
         self.package_uuid = purl_with_uuid.to_string()
 
@@ -816,6 +838,10 @@ class PackageInstance:
         Sub-classes should override to implement their own package files finding methods.
         """
         files = []
+
+        if codebase.has_single_resource:
+            files.append(resource.path)
+            return files
 
         parent = resource.parent(codebase)
 
@@ -834,6 +860,9 @@ class PackageInstance:
         Sub-classes can override to implement their own package manifest finding methods.
         """
         package_manifests_by_path = {}
+
+        if codebase.has_single_resource:
+            return package_manifests_by_path
 
         parent = resource.parent(codebase)
 
@@ -878,13 +907,13 @@ class PackageInstance:
         existing_mapping = self.get_package_data()
 
         # Remove PackageManifest specific attributes
-        for attribute in ('md5', 'sha1', 'sha256', 'sha512'):
-            package_manifest.pop(attribute)
-            existing_mapping.pop(attribute)
+        for attribute in ('md5', 'sha1', 'sha256', 'sha512', 'root_path'):
+            package_manifest.pop(attribute, None)
+            existing_mapping.pop(attribute, None)
 
         for existing_field, existing_value in existing_mapping.items():
             new_value = package_manifest[existing_field]
-            if TRACE:
+            if TRACE_MERGING:
                 logger.debug(
                     '\n'.join([
                         'existing_field:', repr(existing_field),
@@ -906,16 +935,16 @@ class PackageInstance:
                     )
 
             if not new_value:
-                if TRACE:
+                if TRACE_MERGING:
                     logger.debug('  No new value for {}: skipping'.format(existing_field))
                 continue
 
             if not existing_value or replace:
-                if TRACE and not existing_value:
+                if TRACE_MERGING and not existing_value:
                     logger.debug(
                         '  No existing value: set to new: {}'.format(new_value))
 
-                if TRACE and replace:
+                if TRACE_MERGING and replace:
                     logger.debug(
                         '  Existing value and replace: set to new: {}'.format(new_value))
 
@@ -938,12 +967,13 @@ class PackageInstance:
                         setattr(self, existing_field, parties_new)
                     else:
                         existing_value.extend(parties_new)
+                        setattr(self, existing_field, existing_value)
 
                 elif existing_field == 'dependencies':
                     # If `existing_field` is `dependencies`, then we update the `DependentPackage` table
                     dependencies = new_value
                     deps_new = []
-                    
+
                     for dependency in dependencies:
                         dep_new = DependentPackage(
                             purl=dependency['purl'],
@@ -959,36 +989,37 @@ class PackageInstance:
                         setattr(self, existing_field, deps_new)
                     else:
                         existing_value.extend(deps_new)
-                
+                        setattr(self, existing_field, existing_value)
+
+                    if TRACE_MERGING:
+                        logger.debug("Set value to self: {} at {}".format(new_value, existing_field))
+                        logger.debug("Set value to self: types: {} at {}".format(type(new_value), type(existing_field)))
+
                 elif existing_field == 'purl':
                     self.set_purl(package_url=new_value)
-                
-                elif existing_field == 'root_path':
-                    continue
 
                 else:
                     # If `existing_field` is not `parties` or `dependencies`, then the
                     # `existing_field` is a regular field on the Package model and can
                     # be updated normally.
-                    if TRACE:
+                    if TRACE_MERGING:
                         logger.debug("Set value to self: {} at {}".format(new_value, existing_field))
                         logger.debug("Set value to self: types: {} at {}".format(type(new_value), type(existing_field)))  
                     setattr(self, existing_field, new_value)
-                    # package_instance.save()
 
             if existing_value and new_value and existing_value != new_value:
                 # ToDo: What to do when conflicting values are present
                 # license_expression: do AND?
-                if TRACE:
+                if TRACE_MERGING:
                     logger.debug("Value mismatch between new and existing: ")  
                     logger.debug(
                         '\n'.join([
                             'existing_field:', repr(existing_field),
                             '    existing_value:', repr(existing_value),
                             '    new_value:', repr(new_value)])
-                    )                
+                    )              
 
-            if TRACE:
+            if TRACE_MERGING:
                 logger.debug('  Nothing done')
 
 

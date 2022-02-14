@@ -164,37 +164,37 @@ class TestRecognize(FileBasedTesting):
         assert isinstance(packages[0], models.CpanModule)
 
     def test_recognize_python2(self):
-        test_file = self.get_test_loc('recon/pypi/atomicwrites-1.2.1-py2.py3-none-any.whl')
+        test_file = self.get_test_loc('recon/pypi/atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl')
         packages = recognize_package_manifests(test_file)
         assert packages
         assert isinstance(packages[0], pypi.PythonPackage)
 
     def test_recognize_python3(self):
-        test_file = self.get_test_loc('recon/pypi/METADATA')
+        test_file = self.get_test_loc('recon/pypi/Six/METADATA')
         packages = recognize_package_manifests(test_file)
         assert packages
         assert isinstance(packages[0], pypi.PythonPackage)
 
     def test_recognize_python5(self):
-        test_file = self.get_test_loc('recon/pypi/PKG-INFO')
+        test_file = self.get_test_loc('recon/pypi/TicketImport/PKG-INFO')
         packages = recognize_package_manifests(test_file)
         assert packages
         assert isinstance(packages[0], pypi.PythonPackage)
 
     def test_recognize_python6(self):
-        test_file = self.get_test_loc('recon/pypi/setup.py')
+        test_file = self.get_test_loc('recon/pypi/arpy/setup.py')
         packages = recognize_package_manifests(test_file)
         assert packages
         assert isinstance(packages[0], pypi.PythonPackage)
 
     def test_recognize_python7(self):
-        test_file = self.get_test_loc('recon/pypi/Pipfile.lock')
+        test_file = self.get_test_loc('recon/pypi/atomicwrites/Pipfile.lock')
         packages = recognize_package_manifests(test_file)
         assert packages
         assert isinstance(packages[0], pypi.PythonPackage)
 
     def test_recognize_python8(self):
-        test_file = self.get_test_loc('recon/pypi/requirements.txt')
+        test_file = self.get_test_loc('recon/pypi/requirements/requirements.txt')
         packages = recognize_package_manifests(test_file)
         assert packages
         assert isinstance(packages[0], pypi.PythonPackage)

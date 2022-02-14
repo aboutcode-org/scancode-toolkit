@@ -111,16 +111,10 @@ class PackageScanner(ScanPlugin):
 
     def process_codebase(self, codebase, **kwargs):
         """
-        Set the package root given a package "type".
+        Populate top level `packages` with package instances.
         """
-        create_packages_from_manifests(codebase, **kwargs)
-
-        if codebase.has_single_resource:
-            # What if we scanned a single file and we do not have a root proper?
-            return
-
-        for resource in codebase.walk(topdown=False):
-            set_packages_root(resource, codebase)
+        for package_instance in create_packages_from_manifests(codebase, **kwargs):
+            codebase.attributes.packages.append(package_instance.to_dict())
 
 
 def create_packages_from_manifests(codebase, **kwargs):
@@ -149,10 +143,13 @@ def create_packages_from_manifests(codebase, **kwargs):
         # ToDo: Do this for multiple PackageManifests per resource
         manifest = resource.package_manifests[0]
 
+        # Check if the package manifests has all the mandatory attributes to create a pURL
+        if not manifest.get("name"):
+            continue
+
         # Check if PackageInstance is implemented
         pk_instance_class = PACKAGE_INSTANCES_BY_TYPE.get(manifest["type"])
         if not pk_instance_class:
-            package_manifests.extend(resource.package_manifests)
             continue
 
         # create a PackageInstance from the `default_type`
@@ -172,7 +169,6 @@ def create_packages_from_manifests(codebase, **kwargs):
 
         # add `path: Instance` into `package_instances_by_paths` for all manifests
         for path in package_manifests_by_path.keys():
-            print(f"Path: {path}")
             package_instances_by_paths[path] = pk_instance
 
         # populate PackageInstance with data from manifests
@@ -190,9 +186,6 @@ def create_packages_from_manifests(codebase, **kwargs):
                 'pk_instance:', pk_instance,
             )
 
-    # ToDo: replace this with PackageInstance objects once basic implementation is complete
-    codebase.attributes.packages.extend(package_manifests)
-
     if TRACE:
         logger_debug(
             'create_packages_from_manifests:',
@@ -200,9 +193,7 @@ def create_packages_from_manifests(codebase, **kwargs):
         )
 
     # Get unique PackageInstance objects from `package_instances_by_paths`
-
-    package_instances = list(package_instance_by_identifiers.values())
-    codebase.attributes.packages.extend(package_instances)
+    return list(package_instance_by_identifiers.values())
 
 
 def update_files_with_package_instances(package_manifests_by_path, codebase, package_instance):

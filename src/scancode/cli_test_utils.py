@@ -224,7 +224,12 @@ def remove_uuid_from_scan(results):
     modified_packages = []
 
     for package in packages:
-        purl = PackageURL.from_string(package.pop('package_uuid', None))
+        p_uuid = package.get('package_uuid', None)
+        if not p_uuid:
+            modified_packages.append(package)
+            continue
+
+        purl = PackageURL.from_string(p_uuid)
         purl.qualifiers.pop("uuid", None)
         package["package_uuid"] = purl.to_string()
         modified_packages.append(package)

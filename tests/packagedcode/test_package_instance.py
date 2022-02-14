@@ -27,9 +27,22 @@ class TestPackageInstance(PackageTester):
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_package_uuid=True)
 
-    def test_package_manifests_merge(self, regen=False):
+    def test_package_manifests_merge_click(self, regen=False):
         input_file = self.get_test_loc('instance/python-manifests-click-scanned.json')
         expected_file = self.get_test_loc('instance/python-manifests-click-scanned-result.json')
+
+        with io.open(input_file, encoding='utf-8') as res:
+            manifests = json.load(res)
+
+        pk_instance = PythonPackageInstance()
+        for manifest in manifests:
+            pk_instance.merge_package_data_into_instance(manifest)
+
+        self.check_package(pk_instance, expected_file, regen)
+
+    def test_package_manifests_merge_atomicwrites(self, regen=False):
+        input_file = self.get_test_loc('instance/python-manifests-atomicwrites-scanned.json')
+        expected_file = self.get_test_loc('instance/python-manifests-atomicwrites-scanned-result.json')
 
         with io.open(input_file, encoding='utf-8') as res:
             manifests = json.load(res)
