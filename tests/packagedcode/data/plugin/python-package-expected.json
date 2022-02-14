@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -20,6 +20,59 @@
     }
   ],
   "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "arpy",
+      "version": "0.1.1",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "Library for accessing \"ar\" files",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Stanis\u0142aw Pitucha",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "http://bitbucket.org/viraptor/arpy",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "bsd-simplified",
+      "declared_license": {
+        "license": "Simplified BSD"
+      },
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [],
+      "extra_data": {},
+      "package_uuid": "pkg:pypi/arpy@0.1.1",
+      "package_manifest_paths": [
+        "arpy/setup.py"
+      ],
+      "files": [
+        "arpy/setup.py"
+      ],
+      "purl": "pkg:pypi/arpy@0.1.1",
+      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json"
+    },
     {
       "type": "pypi",
       "namespace": null,
@@ -67,134 +120,7 @@
         ]
       },
       "notice_text": null,
-      "root_path": "atomicwrites-1.2.1-py2.py3-none-any.whl",
-      "dependencies": [],
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {},
-      "purl": "pkg:pypi/atomicwrites@1.2.1",
-      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-      "repository_download_url": "https://pypi.org/packages/source/a/atomicwrites/atomicwrites-1.2.1.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json"
-    },
-    {
-      "type": "pypi",
-      "namespace": null,
-      "name": "six",
-      "version": "1.10.0",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Python",
-      "description": "Python 2 and 3 compatibility utilities\nSix is a Python 2 and 3 compatibility library.  It provides utility functions\nfor smoothing over the differences between the Python versions with the goal of\nwriting Python code that is compatible on both Python versions.  See the\ndocumentation for more information on what is provided.\n\nSix supports every Python version since 2.6.  It is contained in only one Python\nfile, so it can be easily copied into your project. (The copyright and license\nnotice must be retained.)\n\nOnline documentation is at https://pythonhosted.org/six/.\n\nBugs can be reported to https://bitbucket.org/gutworth/six.  The code can also\nbe found there.\n\nFor questions about six or porting in general, email the python-porting mailing\nlist: https://mail.python.org/mailman/listinfo/python-porting",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Benjamin Peterson",
-          "email": "benjamin@python.org",
-          "url": null
-        }
-      ],
-      "keywords": [
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 3",
-        "Intended Audience :: Developers",
-        "Topic :: Software Development :: Libraries",
-        "Topic :: Utilities"
-      ],
-      "homepage_url": "http://pypi.python.org/pypi/six/",
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": "mit",
-      "declared_license": {
-        "license": "MIT",
-        "classifiers": [
-          "License :: OSI Approved :: MIT License"
-        ]
-      },
-      "notice_text": null,
-      "root_path": "METADATA",
-      "dependencies": [],
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {},
-      "purl": "pkg:pypi/six@1.10.0",
-      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-      "repository_download_url": "https://pypi.org/packages/source/s/six/six-1.10.0.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/six/1.10.0/json"
-    },
-    {
-      "type": "chef",
-      "namespace": null,
-      "name": "six",
-      "version": "1.10.0",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Ruby",
-      "description": null,
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": "mit",
-      "declared_license": "MIT",
-      "notice_text": null,
       "root_path": null,
-      "dependencies": [],
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {},
-      "purl": "pkg:chef/six@1.10.0",
-      "repository_homepage_url": null,
-      "repository_download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
-      "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/six/versions/1.10.0"
-    },
-    {
-      "type": "pypi",
-      "namespace": null,
-      "name": null,
-      "version": null,
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Python",
-      "description": null,
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": "6e45251662433bf51f96fb3d2204b65416fece329d60e6235c0f0edc416cfe24",
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
-      "notice_text": null,
-      "root_path": "Pipfile.lock",
       "dependencies": [
         {
           "purl": "pkg:pypi/atomicwrites@1.1.5",
@@ -336,10 +262,128 @@
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "purl": null,
+      "package_uuid": "pkg:pypi/atomicwrites@1.2.1",
+      "package_manifest_paths": [
+        "atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl",
+        "atomicwrites/Pipfile.lock"
+      ],
+      "files": [
+        "atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl",
+        "atomicwrites/Pipfile.lock"
+      ],
+      "purl": "pkg:pypi/atomicwrites@1.2.1",
+      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_download_url": "https://pypi.org/packages/source/a/atomicwrites/atomicwrites-1.2.1.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json"
+    },
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "six",
+      "version": "1.10.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "Python 2 and 3 compatibility utilities\nSix is a Python 2 and 3 compatibility library.  It provides utility functions\nfor smoothing over the differences between the Python versions with the goal of\nwriting Python code that is compatible on both Python versions.  See the\ndocumentation for more information on what is provided.\n\nSix supports every Python version since 2.6.  It is contained in only one Python\nfile, so it can be easily copied into your project. (The copyright and license\nnotice must be retained.)\n\nOnline documentation is at https://pythonhosted.org/six/.\n\nBugs can be reported to https://bitbucket.org/gutworth/six.  The code can also\nbe found there.\n\nFor questions about six or porting in general, email the python-porting mailing\nlist: https://mail.python.org/mailman/listinfo/python-porting",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Benjamin Peterson",
+          "email": "benjamin@python.org",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 3",
+        "Intended Audience :: Developers",
+        "Topic :: Software Development :: Libraries",
+        "Topic :: Utilities"
+      ],
+      "homepage_url": "http://pypi.python.org/pypi/six/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "mit",
+      "declared_license": {
+        "license": "MIT",
+        "classifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [],
+      "extra_data": {},
+      "package_uuid": "pkg:pypi/six@1.10.0",
+      "package_manifest_paths": [
+        "Six/METADATA"
+      ],
+      "files": [
+        "Six/DESCRIPTION.rst",
+        "Six/METADATA",
+        "Six/metadata.json"
+      ],
+      "purl": "pkg:pypi/six@1.10.0",
+      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_download_url": "https://pypi.org/packages/source/s/six/six-1.10.0.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/six/1.10.0/json"
+    },
+    {
+      "type": "chef",
+      "namespace": null,
+      "name": "six",
+      "version": "1.10.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Ruby",
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "mit",
+      "declared_license": "MIT",
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [],
+      "extra_data": {},
+      "package_uuid": "pkg:chef/six@1.10.0",
+      "package_manifest_paths": [
+        "Six/metadata.json"
+      ],
+      "files": [
+        "Six/DESCRIPTION.rst",
+        "Six/METADATA",
+        "Six/metadata.json"
+      ],
+      "purl": "pkg:chef/six@1.10.0",
       "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null
+      "repository_download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
+      "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/six/versions/1.10.0"
     },
     {
       "type": "pypi",
@@ -377,133 +421,39 @@
         "license": "BSD"
       },
       "notice_text": null,
-      "root_path": "PKG-INFO",
+      "root_path": null,
       "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:pypi/ticketimport@0.7a",
+      "package_manifest_paths": [
+        "TicketImport/PKG-INFO"
+      ],
+      "files": [
+        "TicketImport/PKG-INFO"
+      ],
       "purl": "pkg:pypi/ticketimport@0.7a",
       "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
       "repository_download_url": "https://pypi.org/packages/source/T/TicketImport/TicketImport-0.7a.tar.gz",
       "api_data_url": "https://pypi.org/pypi/TicketImport/0.7a/json"
-    },
-    {
-      "type": "pypi",
-      "namespace": null,
-      "name": null,
-      "version": null,
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Python",
-      "description": null,
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
-      "notice_text": null,
-      "root_path": "requirements.txt",
-      "dependencies": [
-        {
-          "purl": "pkg:pypi/setuptools",
-          "requirement": ">=32.0.0",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:pypi/nose",
-          "requirement": ">=1.3.7",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:pypi/chardet",
-          "requirement": ">=3.0.4",
-          "scope": "install",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        }
-      ],
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {},
-      "purl": null,
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null
-    },
-    {
-      "type": "pypi",
-      "namespace": null,
-      "name": "arpy",
-      "version": "0.1.1",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Python",
-      "description": "Library for accessing \"ar\" files",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Stanis\u0142aw Pitucha",
-          "email": null,
-          "url": null
-        }
-      ],
-      "keywords": [],
-      "homepage_url": "http://bitbucket.org/viraptor/arpy",
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": "bsd-simplified",
-      "declared_license": {
-        "license": "Simplified BSD"
-      },
-      "notice_text": null,
-      "root_path": "setup.py",
-      "dependencies": [],
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {},
-      "purl": "pkg:pypi/arpy@0.1.1",
-      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-      "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json"
     }
   ],
   "files": [
     {
-      "path": "DESCRIPTION.rst",
+      "path": "Six",
+      "type": "directory",
+      "package_manifests": [],
+      "scan_errors": []
+    },
+    {
+      "path": "Six/DESCRIPTION.rst",
       "type": "file",
       "package_manifests": [],
       "scan_errors": []
     },
     {
-      "path": "METADATA",
+      "path": "Six/METADATA",
       "type": "file",
       "package_manifests": [
         {
@@ -551,7 +501,7 @@
             ]
           },
           "notice_text": null,
-          "root_path": "METADATA",
+          "root_path": null,
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -565,7 +515,56 @@
       "scan_errors": []
     },
     {
-      "path": "PKG-INFO",
+      "path": "Six/metadata.json",
+      "type": "file",
+      "package_manifests": [
+        {
+          "type": "chef",
+          "namespace": null,
+          "name": "six",
+          "version": "1.10.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Ruby",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "mit",
+          "declared_license": "MIT",
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "purl": "pkg:chef/six@1.10.0",
+          "repository_homepage_url": null,
+          "repository_download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
+          "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/six/versions/1.10.0"
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "TicketImport",
+      "type": "directory",
+      "package_manifests": [],
+      "scan_errors": []
+    },
+    {
+      "path": "TicketImport/PKG-INFO",
       "type": "file",
       "package_manifests": [
         {
@@ -604,7 +603,7 @@
             "license": "BSD"
           },
           "notice_text": null,
-          "root_path": "PKG-INFO",
+          "root_path": null,
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -618,7 +617,72 @@
       "scan_errors": []
     },
     {
-      "path": "Pipfile.lock",
+      "path": "arpy",
+      "type": "directory",
+      "package_manifests": [],
+      "scan_errors": []
+    },
+    {
+      "path": "arpy/setup.py",
+      "type": "file",
+      "package_manifests": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "arpy",
+          "version": "0.1.1",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "Library for accessing \"ar\" files",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Stanis\u0142aw Pitucha",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "http://bitbucket.org/viraptor/arpy",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "bsd-simplified",
+          "declared_license": {
+            "license": "Simplified BSD"
+          },
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "purl": "pkg:pypi/arpy@0.1.1",
+          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+          "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",
+          "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json"
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "atomicwrites",
+      "type": "directory",
+      "package_manifests": [],
+      "scan_errors": []
+    },
+    {
+      "path": "atomicwrites/Pipfile.lock",
       "type": "file",
       "package_manifests": [
         {
@@ -647,7 +711,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "root_path": "Pipfile.lock",
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:pypi/atomicwrites@1.1.5",
@@ -798,7 +862,7 @@
       "scan_errors": []
     },
     {
-      "path": "atomicwrites-1.2.1-py2.py3-none-any.whl",
+      "path": "atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl",
       "type": "file",
       "package_manifests": [
         {
@@ -848,7 +912,7 @@
             ]
           },
           "notice_text": null,
-          "root_path": "atomicwrites-1.2.1-py2.py3-none-any.whl",
+          "root_path": null,
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -862,50 +926,13 @@
       "scan_errors": []
     },
     {
-      "path": "metadata.json",
-      "type": "file",
-      "package_manifests": [
-        {
-          "type": "chef",
-          "namespace": null,
-          "name": "six",
-          "version": "1.10.0",
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "Ruby",
-          "description": null,
-          "release_date": null,
-          "parties": [],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "license_expression": "mit",
-          "declared_license": "MIT",
-          "notice_text": null,
-          "root_path": null,
-          "dependencies": [],
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
-          "purl": "pkg:chef/six@1.10.0",
-          "repository_homepage_url": null,
-          "repository_download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
-          "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/six/versions/1.10.0"
-        }
-      ],
+      "path": "requirements",
+      "type": "directory",
+      "package_manifests": [],
       "scan_errors": []
     },
     {
-      "path": "requirements.txt",
+      "path": "requirements/requirements.txt",
       "type": "file",
       "package_manifests": [
         {
@@ -934,7 +961,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "root_path": "requirements.txt",
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:pypi/setuptools",
@@ -968,59 +995,6 @@
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null
-        }
-      ],
-      "scan_errors": []
-    },
-    {
-      "path": "setup.py",
-      "type": "file",
-      "package_manifests": [
-        {
-          "type": "pypi",
-          "namespace": null,
-          "name": "arpy",
-          "version": "0.1.1",
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "Python",
-          "description": "Library for accessing \"ar\" files",
-          "release_date": null,
-          "parties": [
-            {
-              "type": "person",
-              "role": "author",
-              "name": "Stanis\u0142aw Pitucha",
-              "email": null,
-              "url": null
-            }
-          ],
-          "keywords": [],
-          "homepage_url": "http://bitbucket.org/viraptor/arpy",
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "license_expression": "bsd-simplified",
-          "declared_license": {
-            "license": "Simplified BSD"
-          },
-          "notice_text": null,
-          "root_path": "setup.py",
-          "dependencies": [],
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
-          "purl": "pkg:pypi/arpy@0.1.1",
-          "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
-          "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",
-          "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json"
         }
       ],
       "scan_errors": []

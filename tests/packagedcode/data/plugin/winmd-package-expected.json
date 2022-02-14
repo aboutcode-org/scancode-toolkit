@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -63,6 +63,13 @@
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:winexe/Windows%20SDK@10.0.10011.16384",
+      "package_manifest_paths": [
+        "Windows.AI.winmd"
+      ],
+      "files": [
+        "Windows.AI.winmd"
+      ],
       "purl": "pkg:winexe/Windows%20SDK@10.0.10011.16384",
       "repository_homepage_url": null,
       "repository_download_url": null,

@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -68,59 +68,15 @@
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "purl": "pkg:chef/301@0.1.0",
-      "repository_homepage_url": null,
-      "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
-      "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0"
-    },
-    {
-      "type": "chef",
-      "namespace": null,
-      "name": "301",
-      "version": "0.1.0",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Ruby",
-      "description": "Installs/Configures 301",
-      "release_date": null,
-      "parties": [
-        {
-          "type": null,
-          "role": "maintainer",
-          "name": "Mark Wilkerson",
-          "email": "mark@segfawlt.net",
-          "url": null
-        }
+      "package_uuid": "pkg:chef/301@0.1.0",
+      "package_manifest_paths": [
+        "metadata.json",
+        "metadata.rb"
       ],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": "mit",
-      "declared_license": "MIT",
-      "notice_text": null,
-      "root_path": null,
-      "dependencies": [
-        {
-          "purl": "pkg:chef/nodejs",
-          "requirement": null,
-          "scope": "dependencies",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        }
+      "files": [
+        "metadata.json",
+        "metadata.rb"
       ],
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {},
       "purl": "pkg:chef/301@0.1.0",
       "repository_homepage_url": null,
       "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",

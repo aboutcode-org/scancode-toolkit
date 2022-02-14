@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -77,7 +77,7 @@
         "MIT"
       ],
       "notice_text": null,
-      "root_path": "m2r-2.1.0.gem",
+      "root_path": null,
       "dependencies": [
         {
           "purl": "pkg:gem/ffi-rzmq",
@@ -187,6 +187,14 @@
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:gem/m2r@2.1.0",
+      "package_manifest_paths": [
+        "m2r-2.1.0.gem"
+      ],
+      "files": [
+        "m2r-2.1.0.gem",
+        "m2r-2.1.0.gem.json"
+      ],
       "purl": "pkg:gem/m2r@2.1.0",
       "repository_homepage_url": "https://rubygems.org/gems/m2r/versions/2.1.0",
       "repository_download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem",
@@ -255,7 +263,7 @@
             "MIT"
           ],
           "notice_text": null,
-          "root_path": "m2r-2.1.0.gem",
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:gem/ffi-rzmq",

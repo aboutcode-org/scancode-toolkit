@@ -112,6 +112,11 @@ Package: cpan
   extensions: .tar.gz
 
 --------------------------------------------
+Package: cran
+  class: packagedcode.cran:DescriptionFile
+  file_patterns: DESCRIPTION
+
+--------------------------------------------
 Package: deb
   class: packagedcode.debian:DebianPackage
   file_patterns: *.control
@@ -308,13 +313,13 @@ Package: pods
 --------------------------------------------
 Package: pubspec
   class: packagedcode.pubspec:PubspecYaml
-  file_patterns: pubspec.yaml
+  file_patterns: *pubspec.yaml
   extensions: .yaml
 
 --------------------------------------------
 Package: pubspec
   class: packagedcode.pubspec:PubspecLock
-  file_patterns: pubspec.lock
+  file_patterns: *pubspec.lock
   extensions: .lock
 
 --------------------------------------------

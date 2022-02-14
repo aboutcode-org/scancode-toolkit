@@ -10,7 +10,7 @@
         "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -19,127 +19,7 @@
       }
     }
   ],
-  "packages": [
-    {
-      "type": "opam",
-      "namespace": null,
-      "name": null,
-      "version": "4.11.0+trunk",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Ocaml",
-      "description": "OCaml development version",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Xavier Leroy",
-          "email": null,
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Damien Doligez",
-          "email": null,
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Alain Frisch",
-          "email": null,
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Jacques Garrigue",
-          "email": null,
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Didier R\u00e9my",
-          "email": null,
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "author",
-          "name": "J\u00e9r\u00f4me Vouillon",
-          "email": null,
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "maintainer",
-          "name": null,
-          "email": "caml-list@inria.fr",
-          "url": null
-        }
-      ],
-      "keywords": [],
-      "homepage_url": "https://github.com/ocaml/ocaml/",
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": "https://github.com/ocaml/ocaml/issues",
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
-      "notice_text": null,
-      "root_path": null,
-      "dependencies": [
-        {
-          "purl": "pkg:opam/ocaml",
-          "requirement": "= 4.11.0 & post",
-          "scope": "dependency",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:opam/base-unix",
-          "requirement": "post",
-          "scope": "dependency",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:opam/base-bigarray",
-          "requirement": "post",
-          "scope": "dependency",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        },
-        {
-          "purl": "pkg:opam/base-threads",
-          "requirement": "post",
-          "scope": "dependency",
-          "is_runtime": true,
-          "is_optional": false,
-          "is_resolved": false
-        }
-      ],
-      "contains_source_code": null,
-      "source_packages": [],
-      "extra_data": {},
-      "purl": null,
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null
-    }
-  ],
+  "packages": [],
   "files": [
     {
       "path": "ocaml-variants.opam",

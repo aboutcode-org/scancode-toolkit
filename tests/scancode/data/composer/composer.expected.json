@@ -8,7 +8,7 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -122,6 +122,13 @@
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:composer/laravel/laravel?uuid=381adcb6-2bd5-43b5-a3e4-c05572db7686",
+      "package_manifest_paths": [
+        "composer.json"
+      ],
+      "files": [
+        "composer.json"
+      ],
       "purl": "pkg:composer/laravel/laravel",
       "repository_homepage_url": "https://packagist.org/packages/laravel/laravel",
       "repository_download_url": null,
