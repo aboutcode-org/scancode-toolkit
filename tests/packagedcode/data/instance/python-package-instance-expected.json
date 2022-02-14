@@ -15,7 +15,6 @@
       "errors": [],
       "extra_data": {
         "spdx_license_list_version": "3.14",
-        "OUTDATED": "WARNING: Outdated ScanCode Toolkit version! You are using an outdated version of ScanCode Toolkit: 30.1.0 released on: 2021-09-24. A new version is available with important improvements including bug and security fixes, updated license, copyright and package detection, and improved scanning accuracy. Please download and install the latest version of ScanCode. Visit https://github.com/nexB/scancode-toolkit/releases for details.",
         "files_count": 7
       }
     }
@@ -31,7 +30,22 @@
       "primary_language": "Python",
       "description": "Composable command line interface toolkit\n\\$ click\\_\n==========\n\nClick is a Python package for creating beautiful command line interfaces\nin a composable way with as little code as necessary. It's the \"Command\nLine Interface Creation Kit\". It's highly configurable but comes with\nsensible defaults out of the box.\n\nIt aims to make the process of writing command line tools quick and fun\nwhile also preventing any frustration caused by the inability to\nimplement an intended CLI API.\n\nClick in three points:\n\n-   Arbitrary nesting of commands\n-   Automatic help page generation\n-   Supports lazy loading of subcommands at runtime\n\n\nInstalling\n----------\n\nInstall and update using `pip`_:\n\n.. code-block:: text\n\n    $ pip install -U click\n\n.. _pip: https://pip.pypa.io/en/stable/quickstart/\n\n\nA Simple Example\n----------------\n\n.. code-block:: python\n\n    import click\n\n    @click.command()\n    @click.option(\"--count\", default=1, help=\"Number of greetings.\")\n    @click.option(\"--name\", prompt=\"Your name\", help=\"The person to greet.\")\n    def hello(count, name):\n        \"\"\"Simple program that greets NAME for a total of COUNT times.\"\"\"\n        for _ in range(count):\n            click.echo(f\"Hello, {name}!\")\n\n    if __name__ == '__main__':\n        hello()\n\n.. code-block:: text\n\n    $ python hello.py --count=3\n    Your name: Click\n    Hello, Click!\n    Hello, Click!\n    Hello, Click!\n\n\nDonate\n------\n\nThe Pallets organization develops and supports Click and other popular\npackages. In order to grow the community of contributors and users, and\nallow the maintainers to devote more time to the projects, `please\ndonate today`_.\n\n.. _please donate today: https://palletsprojects.com/donate\n\n\nLinks\n-----\n\n-   Documentation: https://click.palletsprojects.com/\n-   Changes: https://click.palletsprojects.com/changes/\n-   PyPI Releases: https://pypi.org/project/click/\n-   Source Code: https://github.com/pallets/click\n-   Issue Tracker: https://github.com/pallets/click/issues\n-   Website: https://palletsprojects.com/p/click\n-   Twitter: https://twitter.com/PalletsTeam\n-   Chat: https://discord.gg/pallets",
       "release_date": null,
-      "parties": [],
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Armin Ronacher",
+          "email": "armin.ronacher@active-4.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "maintainer",
+          "name": "Pallets",
+          "email": "contact@palletsprojects.com",
+          "url": null
+        }
+      ],
       "keywords": [
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
@@ -58,11 +72,28 @@
       },
       "notice_text": null,
       "root_path": null,
-      "dependencies": [],
+      "dependencies": [
+        {
+          "purl": "pkg:pypi/colorama",
+          "requirement": null,
+          "scope": "install",
+          "is_runtime": true,
+          "is_optional": false,
+          "is_resolved": false
+        },
+        {
+          "purl": "pkg:pypi/importlib-metadata",
+          "requirement": null,
+          "scope": "install",
+          "is_runtime": true,
+          "is_optional": false,
+          "is_resolved": false
+        }
+      ],
       "contains_source_code": null,
       "source_packages": [],
-      "installed_files": [],
       "extra_data": {},
+      "package_uuid": "pkg:pypi/click@8.0.1",
       "package_manifest_paths": [
         "METADATA",
         "setup.cfg",
@@ -78,7 +109,10 @@
         "setup.py",
         "tox.ini"
       ],
-      "package_uuid": "pkg:pypi/click@8.0.1"
+      "purl": "pkg:pypi/click@8.0.1",
+      "repository_homepage_url": "https://pypi.org/project/https://pypi.org",
+      "repository_download_url": "https://pypi.org/packages/source/c/click/click-8.0.1.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/click/8.0.1/json"
     }
   ],
   "files": [
@@ -133,6 +167,10 @@
           "homepage_url": "https://palletsprojects.com/p/click/",
           "download_url": null,
           "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
           "bug_tracking_url": "Issue Tracker, https://github.com/pallets/click/issues/",
           "code_view_url": "Source Code, https://github.com/pallets/click/",
           "vcs_url": null,
@@ -145,7 +183,7 @@
             ]
           },
           "notice_text": null,
-          "root_path": "METADATA",
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:pypi/colorama",
@@ -200,6 +238,10 @@
           "homepage_url": null,
           "download_url": null,
           "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
           "vcs_url": null,
@@ -207,7 +249,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "root_path": "setup.cfg",
+          "root_path": null,
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -239,6 +281,10 @@
           "homepage_url": null,
           "download_url": null,
           "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
           "vcs_url": null,
@@ -246,7 +292,7 @@
           "license_expression": null,
           "declared_license": {},
           "notice_text": null,
-          "root_path": "setup.py",
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:pypi/colorama",
@@ -295,6 +341,10 @@
           "homepage_url": null,
           "download_url": null,
           "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
           "vcs_url": null,
@@ -302,7 +352,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "root_path": "tox.ini",
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:pypi/pre-commit",
