@@ -93,9 +93,9 @@ def print_examples(ctx, param, value):
 def print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    click.echo('ScanCode version ' + scancode_config.__version__)
-    click.echo('ScanCode Output Format version ' + scancode_config.__output_format_version__)
-    click.echo('SPDX License list version ' + scancode_config.spdx_license_list_version)
+    click.echo(f'ScanCode version: {scancode_config.__version__}')
+    click.echo(f'ScanCode Output Format version: {scancode_config.__output_format_version__}')
+    click.echo(f'SPDX License list version: {scancode_config.spdx_license_list_version}')
     ctx.exit()
 
 
@@ -439,13 +439,10 @@ def scancode(
         cliutils.validate_option_dependencies(ctx)
         pretty_params = get_pretty_params(ctx, generic_paths=test_mode)
 
-        # warn for outdated version and/or check for updates
-        from scancode.outdated import check_scancode_version_locally
-        outdated = check_scancode_version_locally()
-
-        if not outdated and check_version:
-            from scancode.outdated import check_scancode_version_remotely
-            outdated = check_scancode_version_remotely()
+        # Check for updates
+        if check_version:
+            from scancode.outdated import check_scancode_version
+            outdated = check_scancode_version()
 
         # run proper
         success, _results = run_scan(
@@ -473,6 +470,7 @@ def scancode(
             **kwargs
         )
 
+        #echo outdated message if newer version is available
         if not quiet and outdated:
             echo_stderr(outdated, fg='yellow')
 

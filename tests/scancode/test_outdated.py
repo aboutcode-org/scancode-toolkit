@@ -102,7 +102,7 @@ def test_fetch_newer_version():
         assert outdated.fetch_newer_version(force=True) == '42.5.1'
 
 
-def test_check_scancode_version_remotely():
+def test_check_scancode_version():
     from unittest import mock
     pypi_mock_releases = {
         'releases': {
@@ -126,7 +126,7 @@ def test_check_scancode_version_remotely():
             status_code=200
         )
 
-        result = outdated.check_scancode_version_remotely(force=True)
+        result = outdated.check_scancode_version(force=True)
         assert result.startswith('WARNING: Outdated ScanCode')
         assert 'A new version 42.5.1 is available' in result
 
@@ -153,7 +153,7 @@ def test_fetch_newer_version_no_new_version():
             status_code=200
         )
         assert not outdated.fetch_newer_version(force=True)
-        assert not outdated.check_scancode_version_remotely(force=True)
+        assert not outdated.check_scancode_version(force=True)
 
 
 def test_fetch_newer_version_local_git_version():
@@ -184,7 +184,7 @@ def test_fetch_newer_version_local_git_version():
         )
         assert not result
 
-        result = outdated.check_scancode_version_remotely(
+        result = outdated.check_scancode_version(
             installed_version='3.1.2.post351.850399bc3',
             force=True,
         )

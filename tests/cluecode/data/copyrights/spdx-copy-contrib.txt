@@ -1,0 +1,4 @@
+ * SPDX-FileCopyrightText: 2008 Red Hat Inc.
+ * SPDX-FileContributor: Adam Jackson <ajax@redhat.com>
+ * SPDX-FileContributor: Bill Nottingham <notting@redhat.com>
+ * SPDX-FileContributor: Ray Strode <rstrode@redhat.com>
