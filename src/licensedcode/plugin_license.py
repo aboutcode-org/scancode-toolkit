@@ -140,7 +140,6 @@ class LicenseScanner(ScanPlugin):
 
         PluggableCommandLineOption(
             ('--reindex-licenses',),
-            hidden=True,
             is_flag=True, is_eager=True,
             callback=reindex_licenses,
             help='Rebuild the license index and exit.',
@@ -149,7 +148,6 @@ class LicenseScanner(ScanPlugin):
 
         PluggableCommandLineOption(
             ('--reindex-licenses-for-all-languages',),
-            hidden=True,
             is_flag=True, is_eager=True,
             callback=reindex_licenses_all_languages,
             help='[EXPERIMENTAL] Rebuild the license index including texts all '
