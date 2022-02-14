@@ -71,6 +71,7 @@ class TestBuild(PackageTester):
             build.BuckPackage(
                 name='app',
                 declared_license=['LICENSE'],
+                license_expression= 'apache-2.0',
             )
         ]
         compare_package_results(expected_packages, result_packages)

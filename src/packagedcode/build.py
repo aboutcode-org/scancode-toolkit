@@ -134,11 +134,15 @@ class StarlarkManifestPackage(BaseBuildManifestPackage, models.PackageManifest):
                     if not name:
                         continue
                     license_files = args.get('licenses')
-                    yield cls(
+
+                    manifest = cls(
                         name=name,
                         declared_license=license_files,
-                        root_path=fileutils.parent_directory(location)
                     )
+                    manifest.license_expression = manifest.compute_normalized_license(
+                        manifest_parent_path=fileutils.parent_directory(location)
+                    )
+                    yield manifest
         else:
             # If we don't find anything in the manifest file, we yield a Package with
             # the parent directory as the name
@@ -146,13 +150,12 @@ class StarlarkManifestPackage(BaseBuildManifestPackage, models.PackageManifest):
                 name=fileutils.file_name(fileutils.parent_directory(location))
             )
 
-    def compute_normalized_license(self):
+    def compute_normalized_license(self, manifest_parent_path):
         """
         Return a normalized license expression string detected from a list of
         declared license items.
         """
         declared_license = self.declared_license
-        manifest_parent_path = self.root_path
 
         if not declared_license or not manifest_parent_path:
             return

@@ -554,25 +554,6 @@ class Package(BasePackage):
             self.primary_language = self.default_primary_language
 
     @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        """
-        Return the Resource for the package root given a `manifest_resource`
-        Resource object that represents a manifest in the `codebase` Codebase.
-
-        Each package type and instance have different conventions on how a
-        package manifest relates to the root of a package.
-
-        For instance, given a "package.json" file, the root of an npm is the
-        parent directory. The same applies with a Maven "pom.xml". In the case
-        of a "xyz.pom" file found inside a JAR META-INF/ directory, the root is
-        the JAR itself which may not be the direct parent
-
-        Each package type should subclass as needed. This default to return the
-        same path.
-        """
-        return manifest_resource
-
-    @classmethod
     def get_package_resources(cls, package_root, codebase):
         """
         Yield the Resources of a Package starting from `package_root`
@@ -1073,10 +1054,6 @@ class MeteorPackage(Package, PackageManifest):
     default_type = 'meteor'
     default_primary_language = 'JavaScript'
 
-    @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
-
 
 @attr.s()
 class CpanModule(Package, PackageManifest):
@@ -1103,10 +1080,6 @@ class Godep(Package, PackageManifest):
     file_patterns = ('Godeps',)
     default_type = 'golang'
     default_primary_language = 'Go'
-
-    @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
 
 
 @attr.s()
