@@ -253,4 +253,4 @@ def test_detection_is_correct_in_legacy_npm_package_json():
     result_file = test_env.get_temp_file('json')
     expected_file = test_env.get_test_loc('plugin_license/package/package.expected.json')
     run_scan_click(['-lp', '--json-pp', result_file, test_dir])
-    check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
+    check_json_scan(expected_file, result_file, remove_package_uuid=True, remove_file_date=True, regen=False)

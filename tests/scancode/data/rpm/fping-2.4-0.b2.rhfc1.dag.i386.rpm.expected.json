@@ -59,7 +59,7 @@
         "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"
       ],
       "extra_data": {},
-      "package_uuid": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?uuid=945bc0a9-d033-494b-9942-17206393b5c3",
+      "package_uuid": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
       "package_manifest_paths": [
         "fping-2.4-0.b2.rhfc1.dag.i386.rpm"
       ],

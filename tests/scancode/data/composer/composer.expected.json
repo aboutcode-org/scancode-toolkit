@@ -122,7 +122,7 @@
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:composer/laravel/laravel?uuid=381adcb6-2bd5-43b5-a3e4-c05572db7686",
+      "package_uuid": "pkg:composer/laravel/laravel",
       "package_manifest_paths": [
         "composer.json"
       ],

@@ -12,7 +12,7 @@
         "--summary": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "output_format_version": "1.0.0",
+      "output_format_version": "2.0.0",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -2220,7 +2220,7 @@
       "homepage_url": "https://docs.npmjs.com/",
       "download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
       "size": null,
-      "sha1": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
+      "sha1": null,
       "md5": null,
       "sha256": null,
       "sha512": null,
@@ -2233,7 +2233,7 @@
         "Artistic-2.0"
       ],
       "notice_text": null,
-      "root_path": "scan",
+      "root_path": null,
       "dependencies": [
         {
           "purl": "pkg:npm/abbrev",
@@ -2855,6 +2855,38 @@
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
+      "package_uuid": "pkg:npm/npm@2.13.5",
+      "package_manifest_paths": [
+        "scan/package.json"
+      ],
+      "files": [
+        "scan/cc0-1.0.LICENSE",
+        "scan/package.json",
+        "scan/README",
+        "scan/arch/adler32.c",
+        "scan/arch/zlib.h",
+        "scan/arch/zutil.h",
+        "scan/JGroups/src/FixedMembershipToken.java",
+        "scan/JGroups/src/GuardedBy.java",
+        "scan/JGroups/src/ImmutableReference.java",
+        "scan/JGroups/src/RATE_LIMITER.java",
+        "scan/JGroups/src/RouterStub.java",
+        "scan/JGroups/src/RouterStubManager.java",
+        "scan/JGroups/src/S3_PING.java",
+        "scan/zlib/adler32.c",
+        "scan/zlib/deflate.c",
+        "scan/zlib/deflate.h",
+        "scan/zlib/zlib.h",
+        "scan/zlib/zutil.c",
+        "scan/zlib/zutil.h",
+        "scan/zlib/ada/zlib.ads",
+        "scan/zlib/dotzlib/AssemblyInfo.cs",
+        "scan/zlib/dotzlib/ChecksumImpl.cs",
+        "scan/zlib/gcc_gvmat64/gvmat64.S",
+        "scan/zlib/infback9/infback9.c",
+        "scan/zlib/infback9/infback9.h",
+        "scan/zlib/iostream2/zstream.h"
+      ],
       "purl": "pkg:npm/npm@2.13.5",
       "repository_homepage_url": "https://www.npmjs.com/package/npm",
       "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
@@ -6258,7 +6290,7 @@
             "Artistic-2.0"
           ],
           "notice_text": null,
-          "root_path": "scan",
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:npm/abbrev",
