@@ -353,3 +353,18 @@ class WindowsExecutableManifest(WindowsExecutable, models.PackageManifest):
             parties=parties,
             homepage_url=homepage_url,
         )
+
+
+@attr.s()
+class WindowsPackageInstance(WindowsExecutable, models.PackageInstance):
+    """
+    A Windows PackageInstance that is created out of one/multiple windows package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            WindowsExecutableManifest
+        ]
+

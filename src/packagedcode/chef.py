@@ -216,6 +216,21 @@ class Metadatarb(ChefPackage, models.PackageManifest):
         return build_package(cls, package_data)
 
 
+@attr.s()
+class ChefPackageInstance(ChefPackage, models.PackageInstance):
+    """
+    A Chef PackageInstance that is created out of one/multiple chef package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            MetadataJson,
+            Metadatarb
+        ]
+
+
 def build_package(cls, package_data):
     """
     Return a Package object from a package_data mapping (from a metadata.json or

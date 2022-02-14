@@ -145,6 +145,20 @@ class BowerJson(BowerPackage, models.PackageManifest):
         )
 
 
+@attr.s()
+class BowerPackageInstance(BowerPackage, models.PackageInstance):
+    """
+    A Bower PackageInstance that is created out of one/multiple bower package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            BowerJson
+        ]
+
+
 def compute_normalized_license(declared_license):
     """
     Return a normalized license expression string detected from a list of

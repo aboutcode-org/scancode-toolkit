@@ -109,7 +109,7 @@ def compute_normalized_license(declared_license, location=None):
 @attr.s()
 class PubspecYaml(PubspecPackage, models.PackageManifest):
 
-    file_patterns = ('pubspec.yaml',)
+    file_patterns = ('*pubspec.yaml',)
     extensions = ('.yaml',)
 
     @classmethod
@@ -144,7 +144,7 @@ def file_endswith(location, endswith):
 @attr.s()
 class PubspecLock(PubspecPackage, models.PackageManifest):
 
-    file_patterns = ('pubspec.lock',)
+    file_patterns = ('*pubspec.lock',)
     extensions = ('.lock',)
 
     @classmethod
@@ -164,6 +164,21 @@ class PubspecLock(PubspecPackage, models.PackageManifest):
             locks_data = saneyaml.load(inp.read())
 
         yield cls(dependencies=list(collect_locks(locks_data)))
+
+
+@attr.s()
+class PubspecPackageInstance(PubspecPackage, models.PackageInstance):
+    """
+    A Pubspec PackageInstance that is created out of one/multiple pubspec package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            PubspecYaml,
+            PubspecLock
+        ]
 
 
 def collect_locks(locks_data):

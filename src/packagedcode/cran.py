@@ -37,7 +37,6 @@ if TRACE:
 
 @attr.s()
 class CranPackage(models.Package):
-    file_patterns = ('DESCRIPTION',)
     default_type = 'cran'
     default_web_baseurl = 'https://cran.r-project.org/package='
 
@@ -52,7 +51,7 @@ class CranPackage(models.Package):
 @attr.s()
 class DescriptionFile(CranPackage, models.PackageManifest):
 
-    file_patterns = ('DESCRIPTION')
+    file_patterns = ('DESCRIPTION',)
 
     @classmethod
     def is_manifest(cls, location):
@@ -130,6 +129,20 @@ class DescriptionFile(CranPackage, models.PackageManifest):
                 # TODO: Let's handle the release date as a Date type
                 # release_date = package_data.get('Date/Publication'),
             )
+
+
+@attr.s()
+class CranPackageInstance(CranPackage, models.PackageInstance):
+    """
+    A cran PackageInstance that is created out of one/multiple cran package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            DescriptionFile
+        ]
 
 
 def get_yaml_data(location):

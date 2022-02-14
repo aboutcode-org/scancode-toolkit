@@ -116,6 +116,20 @@ class CompactManifest(FreeBSDPackage, models.PackageManifest):
         yield package
 
 
+@attr.s()
+class FreebsdPackageInstance(FreeBSDPackage, models.PackageInstance):
+    """
+    A Freebsd PackageInstance that is created out of one/multiple Freebsd package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            CompactManifest
+        ]
+
+
 def compute_normalized_license(declared_license):
     """
     Return a normalized license expression string detected from a list of

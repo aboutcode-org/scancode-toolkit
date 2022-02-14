@@ -460,6 +460,22 @@ class YarnLockJson(NpmPackage, models.PackageManifest):
                 yield package
 
 
+@attr.s()
+class NpmPackageInstance(NpmPackage, models.PackageInstance):
+    """
+    A NPM PackageInstance that is created out of one/multiple npm package
+    manifests, lockfiles, build scripts and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            PackageJson,
+            PackageLockJson,
+            YarnLockJson
+        ]
+
+
 def compute_normalized_license(declared_license):
     """
     Return a normalized license expression string detected from a list of

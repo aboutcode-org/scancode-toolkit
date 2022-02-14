@@ -387,7 +387,9 @@ class PythonPackageInstance(PythonPackage, models.PackageInstance):
             RequirementsFile,
             PipfileLock,
             DependencyFile,
-            SetupPy
+            SetupPy,
+            BinaryDistArchive,
+            SourceDistArchive
         ]
 
 

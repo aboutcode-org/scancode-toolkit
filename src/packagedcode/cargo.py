@@ -145,6 +145,21 @@ class CargoLock(RustCargoCrate, models.PackageManifest):
         yield cls(dependencies=package_dependencies)
 
 
+@attr.s()
+class RustPackageInstance(RustCargoCrate, models.PackageInstance):
+    """
+    A Rust PackageInstance that is created out of one/multiple rust package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            CargoToml,
+            CargoLock
+        ]
+
+
 def party_mapper(party, party_role):
     """
     Yields a Party object with party of `party_role`.

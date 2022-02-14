@@ -169,3 +169,17 @@ class Nuspec(NugetPackage, models.PackageManifest):
             copyright=nuspec.get('copyright') or None,
             vcs_url=vcs_url,
         )
+
+
+@attr.s()
+class NugetPackageInstance(NugetPackage, models.PackageInstance):
+    """
+    A Nuget PackageInstance that is created out of one/multiple nuget package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            NugetPackageInstance
+        ]

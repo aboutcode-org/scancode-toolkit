@@ -150,3 +150,18 @@ class GoSum(GolangPackage, models.PackageManifest):
             )
 
         yield cls(dependencies=package_dependencies)
+
+
+@attr.s()
+class GoPackageInstance(GolangPackage, models.PackageInstance):
+    """
+    A Golang PackageInstance that is created out of one/multiple go package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            GoMod,
+            GoSum
+        ]

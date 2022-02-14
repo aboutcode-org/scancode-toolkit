@@ -304,6 +304,24 @@ class GemfileLock(RubyGem, models.PackageManifest):
             )
 
 
+@attr.s()
+class RubyPackageInstance(RubyGem, models.PackageInstance):
+    """
+    A Ruby PackageInstance that is created out of one/multiple ruby package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            GemArchive,
+            GemArchiveExtracted,
+            Gemfile,
+            GemSpec,
+            GemfileLock
+        ]
+
+
 def compute_normalized_license(declared_license):
     """
     Return a normalized license expression string detected from a list of

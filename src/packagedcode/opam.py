@@ -147,6 +147,21 @@ class OpamFile(OpamPackage, models.PackageManifest):
 
         yield package
 
+
+@attr.s()
+class OpamPackageInstance(OpamPackage, models.PackageInstance):
+    """
+    A Opam PackageInstance that is created out of one/multiple opam package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            OpamFile
+        ]
+
+
 """
 Example:- 
 

@@ -17,6 +17,7 @@ from packagedcode import chef
 from packagedcode import debian
 from packagedcode import conda
 from packagedcode import cocoapods
+from packagedcode import cran
 from packagedcode import freebsd
 from packagedcode import golang
 from packagedcode import haxe
@@ -107,12 +108,31 @@ PACKAGE_MANIFEST_TYPES = [
     msi.MsiInstallerPackage,
     windows.MicrosoftUpdateManifest,
     pubspec.PubspecYaml,
-    pubspec.PubspecLock
+    pubspec.PubspecLock,
+    cran.DescriptionFile
 ]
 
+# ToDo: Activate commented package instances
 
 PACKAGE_INSTANCE_TYPES = [
-    pypi.PythonPackageInstance
+    rpm.RpmPackageInstance,
+    # maven.MavenPackageInstance,
+    npm.NpmPackageInstance,
+    phpcomposer.PhpPackageInstance,
+    haxe.HaxePackageInstance,
+    cargo.RustPackageInstance,
+    cocoapods.CocoapodsPackageInstance,
+    opam.OpamPackageInstance,
+    bower.BowerPackageInstance,
+    freebsd.FreebsdPackageInstance,
+    rubygems.RubyPackageInstance,
+    pypi.PythonPackageInstance,
+    golang.GoPackageInstance,
+    # nuget.NugetPackageInstance,
+    chef.ChefPackageInstance,
+    win_pe.WindowsPackageInstance,
+    pubspec.PubspecPackageInstance,
+    cran.CranPackageInstance
 ]
 
 

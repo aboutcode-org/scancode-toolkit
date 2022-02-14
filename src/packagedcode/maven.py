@@ -981,6 +981,20 @@ def get_parties(pom):
 
 
 @attr.s()
+class MavenPackageInstance(MavenPomPackage, models.PackageInstance):
+    """
+    A Maven PackageInstance that is created out of one/multiple maven package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            PomXml
+        ]
+
+
+@attr.s()
 class PomXml(MavenPomPackage, models.PackageManifest):
 
     file_patterns = ('*.pom', 'pom.xml',)

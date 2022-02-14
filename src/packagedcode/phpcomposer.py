@@ -229,6 +229,21 @@ class ComposerLock(PhpComposerPackage, models.PackageManifest):
             yield package
 
 
+@attr.s()
+class PhpPackageInstance(PhpComposerPackage, models.PackageInstance):
+    """
+    A PHP PackageInstance that is created out of one/multiple python package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            ComposerJson,
+            ComposerLock
+        ]
+
+
 def compute_normalized_license(declared_license):
     """
     Return a normalized license expression string detected from a list of

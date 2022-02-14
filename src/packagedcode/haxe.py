@@ -135,6 +135,20 @@ class HaxelibJson(HaxePackage, models.PackageManifest):
         yield package
 
 
+@attr.s()
+class HaxePackageInstance(HaxePackage, models.PackageInstance):
+    """
+    A Haxe PackageInstance that is created out of one/multiple haxe package
+    manifests, lockfiles, build scripts and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            HaxelibJson
+        ]
+
+
 def haxelib_homepage_url(name, baseurl='https://lib.haxe.org/p/'):
     """
     Return an haxelib package homepage URL given a name and a base registry web

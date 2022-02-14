@@ -265,10 +265,23 @@ class RpmManifest(RpmPackage, models.PackageManifest):
 
         yield package
 
+
+@attr.s()
+class RpmPackageInstance(RpmPackage, models.PackageInstance):
+    """
+    A RPM PackageInstance that is created out of one/multiple RPM package
+    manifests.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            RpmManifest
+        ]
+
 ############################################################################
 # FIXME: this license detection code is mostly copied from debian_copyright.py and alpine.py
 ############################################################################
-
 
 def detect_declared_license(declared):
     """

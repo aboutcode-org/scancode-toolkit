@@ -376,6 +376,22 @@ class PodspecJson(CocoapodsPackage, models.PackageManifest):
         return data
 
 
+@attr.s()
+class CocoapodsPackageInstance(CocoapodsPackage, models.PackageInstance):
+    """
+    A cocoapods PackageInstance that is created out of one/multiple cocoapods package
+    manifests and package-like data, with it's files.
+    """
+
+    @property
+    def manifests(self):
+        return [
+            Podspec,
+            PodspecJson,
+            PodfileLock
+        ]
+
+
 def party_mapper(author, email):
     """
     Yields a Party object with author and email.
