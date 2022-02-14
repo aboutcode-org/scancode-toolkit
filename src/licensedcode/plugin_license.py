@@ -209,7 +209,7 @@ class LicenseScanner(ScanPlugin):
                     license_expressions_after = list(resource.license_expressions)
                     logger_debug(
                         f'add_referenced_filenames_license_matches: Modfied:',
-                        f'{resource} with license_expressions:\n'
+                        f'{resource.path} with license_expressions:\n'
                         f'before: {license_expressions_before}\n'
                         f'after : {license_expressions_after}'
                     )
