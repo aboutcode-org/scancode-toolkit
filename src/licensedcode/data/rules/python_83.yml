@@ -1,0 +1,5 @@
+license_expression: python
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://hg.python.org/cpython/raw-file/89ce323357db/LICENSE
