@@ -3360,6 +3360,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -3394,6 +3395,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -3428,6 +3430,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -3515,6 +3518,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [
         {
@@ -3616,6 +3622,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [
         {
@@ -3716,6 +3725,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [
         {
@@ -3764,6 +3776,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -3806,6 +3821,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -3895,6 +3913,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [
         {
@@ -3943,6 +3964,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -3979,6 +4003,9 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [
         {
@@ -4026,6 +4053,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -4115,6 +4143,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -4204,6 +4235,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -4312,6 +4346,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -4389,6 +4426,9 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -7311,6 +7351,9 @@
           "api_data_url": "https://registry.npmjs.org/npm/2.13.5"
         }
       ],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [
         {
           "email": "i@izs.me",
@@ -7629,6 +7672,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -7663,6 +7707,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -7790,6 +7835,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -7881,6 +7929,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -7972,6 +8023,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -8063,6 +8117,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -8099,6 +8156,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -8145,6 +8203,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -8236,6 +8297,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [
         {
@@ -8278,6 +8342,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -8371,6 +8436,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [
         {
@@ -8423,6 +8491,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -8512,6 +8581,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -8603,6 +8675,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -8639,6 +8714,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -8726,6 +8802,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [
         {
@@ -8821,6 +8900,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -8923,6 +9005,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [
@@ -9014,6 +9099,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "emails": [],
       "urls": [],
       "facets": [

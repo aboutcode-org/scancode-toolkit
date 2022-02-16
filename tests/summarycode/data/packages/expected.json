@@ -629,24 +629,28 @@
       "path": "scan",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "scan/aopalliance",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "scan/aopalliance/aopalliance",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "scan/aopalliance/aopalliance/1.0",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -699,18 +703,21 @@
           "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
         }
       ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "scan/freebsd",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "scan/freebsd/basic",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -772,12 +779,16 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [
+        "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
+      ],
       "scan_errors": []
     },
     {
       "path": "scan/scoped1",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -1319,6 +1330,9 @@
           "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
           "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts"
         }
+      ],
+      "for_packages": [
+        "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651"
       ],
       "scan_errors": []
     }

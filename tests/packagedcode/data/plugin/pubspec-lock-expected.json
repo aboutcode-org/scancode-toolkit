@@ -519,6 +519,7 @@
           "api_data_url": "https://pub.dev/api/packages/None/versions/None"
         }
       ],
+      "for_packages": [],
       "scan_errors": []
     }
   ]

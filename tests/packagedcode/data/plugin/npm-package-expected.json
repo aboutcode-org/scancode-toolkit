@@ -164,6 +164,9 @@
           "api_data_url": "https://registry.npmjs.org/cookie-signature/1.0.3"
         }
       ],
+      "for_packages": [
+        "pkg:npm/cookie-signature@1.0.3"
+      ],
       "scan_errors": []
     }
   ]

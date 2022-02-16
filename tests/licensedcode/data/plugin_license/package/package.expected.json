@@ -219,6 +219,9 @@
           "api_data_url": "https://registry.npmjs.org/busboy/0.2.14"
         }
       ],
+      "for_packages": [
+        "pkg:npm/busboy@0.2.14"
+      ],
       "scan_errors": []
     }
   ]

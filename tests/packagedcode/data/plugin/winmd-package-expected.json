@@ -130,6 +130,9 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [
+        "pkg:winexe/Windows%20SDK@10.0.10011.16384"
+      ],
       "scan_errors": []
     }
   ]

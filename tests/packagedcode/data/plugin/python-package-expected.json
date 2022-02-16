@@ -444,12 +444,17 @@
       "path": "Six",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "Six/DESCRIPTION.rst",
       "type": "file",
       "package_manifests": [],
+      "for_packages": [
+        "pkg:pypi/six@1.10.0",
+        "pkg:chef/six@1.10.0"
+      ],
       "scan_errors": []
     },
     {
@@ -512,6 +517,10 @@
           "api_data_url": "https://pypi.org/pypi/six/1.10.0/json"
         }
       ],
+      "for_packages": [
+        "pkg:pypi/six@1.10.0",
+        "pkg:chef/six@1.10.0"
+      ],
       "scan_errors": []
     },
     {
@@ -555,12 +564,17 @@
           "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/six/versions/1.10.0"
         }
       ],
+      "for_packages": [
+        "pkg:pypi/six@1.10.0",
+        "pkg:chef/six@1.10.0"
+      ],
       "scan_errors": []
     },
     {
       "path": "TicketImport",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -614,12 +628,16 @@
           "api_data_url": "https://pypi.org/pypi/TicketImport/0.7a/json"
         }
       ],
+      "for_packages": [
+        "pkg:pypi/ticketimport@0.7a"
+      ],
       "scan_errors": []
     },
     {
       "path": "arpy",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -673,12 +691,16 @@
           "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json"
         }
       ],
+      "for_packages": [
+        "pkg:pypi/arpy@0.1.1"
+      ],
       "scan_errors": []
     },
     {
       "path": "atomicwrites",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -859,6 +881,9 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [
+        "pkg:pypi/atomicwrites@1.2.1"
+      ],
       "scan_errors": []
     },
     {
@@ -923,12 +948,16 @@
           "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json"
         }
       ],
+      "for_packages": [
+        "pkg:pypi/atomicwrites@1.2.1"
+      ],
       "scan_errors": []
     },
     {
       "path": "requirements",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -997,6 +1026,7 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [],
       "scan_errors": []
     }
   ]

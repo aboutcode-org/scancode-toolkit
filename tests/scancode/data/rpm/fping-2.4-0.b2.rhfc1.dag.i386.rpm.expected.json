@@ -124,6 +124,9 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [
+        "pkg:rpm/fping@2.4-0.b2.rhfc1.dag"
+      ],
       "scan_errors": []
     }
   ]

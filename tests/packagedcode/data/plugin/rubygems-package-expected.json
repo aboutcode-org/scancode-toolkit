@@ -379,12 +379,18 @@
           "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json"
         }
       ],
+      "for_packages": [
+        "pkg:gem/m2r@2.1.0"
+      ],
       "scan_errors": []
     },
     {
       "path": "m2r-2.1.0.gem.json",
       "type": "file",
       "package_manifests": [],
+      "for_packages": [
+        "pkg:gem/m2r@2.1.0"
+      ],
       "scan_errors": []
     }
   ]

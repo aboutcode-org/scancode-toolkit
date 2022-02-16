@@ -23,6 +23,7 @@
       "path": "end2end",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -66,36 +67,42 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir/dir",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir/dir/file1",
       "type": "file",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir/file1",
       "type": "file",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -141,30 +148,35 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/LICENSE",
       "type": "file",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/file2",
       "type": "file",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/subdir3",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/subdir3/file2",
       "type": "file",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     }
   ]

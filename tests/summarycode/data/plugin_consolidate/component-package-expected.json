@@ -164,6 +164,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "consolidated_to": [],
       "files_count": 7,
       "dirs_count": 2,
@@ -196,6 +197,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1",
         "inc_nexb_1"
@@ -284,6 +286,7 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -371,6 +374,7 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -458,6 +462,7 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -545,6 +550,7 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "consolidated_to": [
         "inc_nexb_1"
       ],
@@ -579,6 +585,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "consolidated_to": [
         "apache_software_1",
         "corp_ibm_1"
@@ -706,6 +713,9 @@
           "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
         }
       ],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
+      ],
       "consolidated_to": [
         "apache_software_1"
       ],
@@ -793,6 +803,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
+      ],
       "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -878,6 +891,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
+      ],
       "consolidated_to": [
         "corp_ibm_1"
       ],

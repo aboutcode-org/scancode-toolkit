@@ -25,18 +25,21 @@
       "path": "info",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract/recipe",
       "type": "directory",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
@@ -105,6 +108,7 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [],
       "scan_errors": []
     }
   ]

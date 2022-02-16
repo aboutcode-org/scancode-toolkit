@@ -154,6 +154,9 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [
+        "pkg:cran/codetools@0.2-16"
+      ],
       "scan_errors": []
     }
   ]

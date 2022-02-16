@@ -130,6 +130,9 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [
+        "pkg:winexe/Microsoft%C2%AE%20Windows%C2%AE%20Operating%20System@10.0.18362.1256"
+      ],
       "scan_errors": []
     }
   ]

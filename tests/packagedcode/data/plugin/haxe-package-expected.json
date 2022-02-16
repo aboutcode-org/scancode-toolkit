@@ -132,6 +132,9 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [
+        "pkg:haxe/hxsocketio@0.1.0"
+      ],
       "scan_errors": []
     }
   ]

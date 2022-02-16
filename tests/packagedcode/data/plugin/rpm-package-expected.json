@@ -110,6 +110,9 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [
+        "pkg:rpm/alfandega@2.0-1.7.3"
+      ],
       "scan_errors": []
     }
   ]

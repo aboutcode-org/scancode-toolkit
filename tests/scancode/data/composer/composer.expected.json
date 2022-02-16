@@ -250,6 +250,9 @@
           "api_data_url": "https://packagist.org/p/packages/laravel/laravel.json"
         }
       ],
+      "for_packages": [
+        "pkg:composer/laravel/laravel"
+      ],
       "scan_errors": []
     }
   ]

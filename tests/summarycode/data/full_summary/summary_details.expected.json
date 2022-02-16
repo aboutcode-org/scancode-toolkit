@@ -3096,6 +3096,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3303,6 +3304,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3406,6 +3408,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3562,6 +3565,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -3684,6 +3690,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -3800,6 +3809,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -3869,6 +3881,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -3938,6 +3953,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -4054,6 +4072,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -4123,6 +4144,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -4186,6 +4210,9 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -4249,6 +4276,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4383,6 +4411,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -4499,6 +4530,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -4617,6 +4651,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -4721,6 +4758,9 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -7670,6 +7710,9 @@
           "api_data_url": "https://registry.npmjs.org/npm/2.13.5"
         }
       ],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -7733,6 +7776,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -7872,6 +7916,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8023,6 +8068,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -8141,6 +8189,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -8259,6 +8310,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -8377,6 +8431,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -8440,6 +8497,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8519,6 +8577,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -8637,6 +8698,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -8700,6 +8764,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8822,6 +8887,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -8885,6 +8953,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -9003,6 +9072,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -9121,6 +9193,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -9184,6 +9259,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -9300,6 +9376,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -9416,6 +9495,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -9534,6 +9616,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {
@@ -9652,6 +9737,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "summary": {
         "license_expressions": [
           {

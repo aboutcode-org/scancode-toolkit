@@ -3096,6 +3096,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "files_count": 26,
       "dirs_count": 9,
       "size_count": 58647,
@@ -3127,6 +3128,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "files_count": 7,
       "dirs_count": 1,
       "size_count": 4227,
@@ -3158,6 +3160,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "files_count": 7,
       "dirs_count": 0,
       "size_count": 4227,
@@ -3242,6 +3245,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3332,6 +3338,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3416,6 +3425,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3453,6 +3465,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3490,6 +3505,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3574,6 +3592,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3611,6 +3632,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3642,6 +3666,9 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3673,6 +3700,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "files_count": 3,
       "dirs_count": 0,
       "size_count": 1896,
@@ -3759,6 +3787,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3843,6 +3874,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3929,6 +3963,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4001,6 +4038,9 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -6918,6 +6958,9 @@
           "api_data_url": "https://registry.npmjs.org/npm/2.13.5"
         }
       ],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -6949,6 +6992,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "files_count": 13,
       "dirs_count": 5,
       "size_count": 7951,
@@ -6980,6 +7024,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 2054,
@@ -7104,6 +7149,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7190,6 +7238,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7276,6 +7327,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7362,6 +7416,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7393,6 +7450,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 863,
@@ -7436,6 +7494,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7522,6 +7583,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7553,6 +7617,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 1774,
@@ -7643,6 +7708,9 @@
         }
       ],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7674,6 +7742,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 353,
@@ -7760,6 +7829,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7846,6 +7918,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7877,6 +7952,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 649,
@@ -7961,6 +8037,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8045,6 +8124,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8131,6 +8213,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8217,6 +8302,9 @@
       ],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

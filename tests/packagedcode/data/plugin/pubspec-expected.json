@@ -25,6 +25,7 @@
       "path": "authors-pubspec.yaml",
       "type": "file",
       "package_manifests": [],
+      "for_packages": [],
       "scan_errors": []
     }
   ]

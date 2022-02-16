@@ -120,12 +120,18 @@
       "path": "LICENSE.rst",
       "type": "file",
       "package_manifests": [],
+      "for_packages": [
+        "pkg:pypi/click@8.0.1"
+      ],
       "scan_errors": []
     },
     {
       "path": "MANIFEST.in",
       "type": "file",
       "package_manifests": [],
+      "for_packages": [
+        "pkg:pypi/click@8.0.1"
+      ],
       "scan_errors": []
     },
     {
@@ -211,12 +217,18 @@
           "api_data_url": "https://pypi.org/pypi/click/8.0.1/json"
         }
       ],
+      "for_packages": [
+        "pkg:pypi/click@8.0.1"
+      ],
       "scan_errors": []
     },
     {
       "path": "README.rst",
       "type": "file",
       "package_manifests": [],
+      "for_packages": [
+        "pkg:pypi/click@8.0.1"
+      ],
       "scan_errors": []
     },
     {
@@ -259,6 +271,9 @@
           "repository_download_url": null,
           "api_data_url": null
         }
+      ],
+      "for_packages": [
+        "pkg:pypi/click@8.0.1"
       ],
       "scan_errors": []
     },
@@ -320,6 +335,9 @@
           "api_data_url": "https://pypi.org/pypi/click/json"
         }
       ],
+      "for_packages": [
+        "pkg:pypi/click@8.0.1"
+      ],
       "scan_errors": []
     },
     {
@@ -371,6 +389,9 @@
           "repository_download_url": null,
           "api_data_url": null
         }
+      ],
+      "for_packages": [
+        "pkg:pypi/click@8.0.1"
       ],
       "scan_errors": []
     }

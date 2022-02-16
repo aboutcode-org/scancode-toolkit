@@ -130,6 +130,9 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [
+        "pkg:winexe/File@5.03.3414.16721"
+      ],
       "scan_errors": []
     }
   ]

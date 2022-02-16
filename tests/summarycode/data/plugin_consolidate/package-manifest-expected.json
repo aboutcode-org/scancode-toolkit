@@ -97,6 +97,7 @@
       "holders": [],
       "authors": [],
       "package_manifests": [],
+      "for_packages": [],
       "consolidated_to": [],
       "files_count": 1,
       "dirs_count": 0,
@@ -208,6 +209,9 @@
           "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
           "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
         }
+      ],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1"
       ],
       "consolidated_to": [],
       "files_count": 0,

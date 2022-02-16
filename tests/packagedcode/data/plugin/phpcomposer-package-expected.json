@@ -186,6 +186,9 @@
           "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json"
         }
       ],
+      "for_packages": [
+        "pkg:composer/jandreasn/a-timer"
+      ],
       "scan_errors": []
     }
   ]

@@ -184,6 +184,9 @@
           "api_data_url": null
         }
       ],
+      "for_packages": [
+        "pkg:bower/blue-leaf"
+      ],
       "scan_errors": []
     }
   ]
