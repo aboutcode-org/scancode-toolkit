@@ -73,12 +73,11 @@ class PackageScanner(ScanPlugin):
     Scan a Resource for Package manifests and report these as "packages" at the
     right file or directory level.
     """
-
     resource_attributes = {}
     codebase_attributes = {}
     codebase_attributes['packages'] = attr.ib(default=attr.Factory(list), repr=False)
     resource_attributes['package_manifests'] = attr.ib(default=attr.Factory(list), repr=False)
-    #resource_attributes['for_packages'] = attr.ib(default=attr.Factory(list), repr=False)
+    resource_attributes['for_packages'] = attr.ib(default=attr.Factory(list), repr=False)
 
     sort_order = 6
 
@@ -121,7 +120,6 @@ def create_packages_from_manifests(codebase, **kwargs):
     """
     Create package instances from package manifests present in the codebase.
     """
-    package_manifests = []
     package_instances_by_paths = {}
     package_instance_by_identifiers = {}
 
@@ -177,8 +175,8 @@ def create_packages_from_manifests(codebase, **kwargs):
         # get files for this PackageInstance
         pk_instance.files = tuple(pk_instance.get_package_files(resource, codebase))
 
-        # add instance uuid to `for_packages` for all manifests (and files ?)
-        update_files_with_package_instances(package_manifests_by_path, codebase, pk_instance)
+        # add `package_uuid` to `for_packages` for all files of that package
+        update_files_with_package_uuid(pk_instance.files, codebase, pk_instance.package_uuid)
 
         if TRACE:
             logger_debug(
@@ -196,12 +194,15 @@ def create_packages_from_manifests(codebase, **kwargs):
     return list(package_instance_by_identifiers.values())
 
 
-def update_files_with_package_instances(package_manifests_by_path, codebase, package_instance):
-
-    for path in package_manifests_by_path.keys():
-        # Update `for_packages` attribute for resource at path with
-        # reference to this package_instance
-        continue
+def update_files_with_package_uuid(file_paths, codebase, package_uuid):
+    """
+    For the corresponding resources to a list of `file_paths` for a PackageInstance,
+    set their `for_packages` with the `package_uuid`. 
+    """
+    for file_path in file_paths:
+        resource = codebase.get_resource_from_path(file_path)
+        resource.for_packages.append(package_uuid)
+        resource.save(codebase)
 
 
 def set_packages_root(resource, codebase):

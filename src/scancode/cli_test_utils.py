@@ -221,7 +221,9 @@ def remove_uuid_from_scan(results):
     """
     modified_results = results
     packages = modified_results['packages']
+    files = modified_results['files']
     modified_packages = []
+    modified_files = []
 
     for package in packages:
         p_uuid = package.get('package_uuid', None)
@@ -234,7 +236,24 @@ def remove_uuid_from_scan(results):
         package["package_uuid"] = purl.to_string()
         modified_packages.append(package)
 
+    for file_old in files:
+        p_uuids = file_old.get('for_packages', None)
+        if not p_uuids:
+            modified_files.append(file_old)
+            continue
+
+        new_p_uuids = []
+
+        for p_uuid in p_uuids:
+            purl = PackageURL.from_string(p_uuid)
+            purl.qualifiers.pop("uuid", None)
+            new_p_uuids.append(purl.to_string())
+        
+        file_old["for_packages"] = new_p_uuids
+        modified_files.append(file_old)
+
     modified_results['packages'] = modified_packages
+    modified_results['files'] = modified_files
     return modified_results
 
 
