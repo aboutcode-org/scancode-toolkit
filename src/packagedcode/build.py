@@ -9,19 +9,11 @@
 
 from collections import defaultdict
 import ast
-import io
-import json
 import logging
 import os
 
-from packageurl import PackageURL
-from pygments import highlight
-from pygments.formatter import Formatter
-from pygments.lexers import GroovyLexer
-from pygments.token import Token
 import attr
 
-from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import combine_expressions
@@ -264,100 +256,3 @@ class MetadataBzl(BaseBuildManifestPackage, models.PackageManifest):
 
         if detected_licenses:
             return combine_expressions(detected_licenses)
-
-
-class BuildGradleFormatter(Formatter):
-    def format(self, tokens, outfile):
-        quoted = lambda x: (x.startswith('"') and x.endswith('"')) or (x.startswith("'") and value.endswith("'"))
-        start_dependencies_block = False
-        lines = []
-        current_dep_line = []
-        for ttype, value in tokens:
-            if not start_dependencies_block:
-                if ttype == Token.Name and value == 'dependencies':
-                    # If we are at the start of the 'dependencies' code block,
-                    # we continue executing the rest of the dependency
-                    # collection code within this for-loop
-                    start_dependencies_block = True
-                    continue
-                else:
-                    # If we do not see the 'dependencies' block yet, we continue
-                    # and do not execute the code within this for-loop.
-                    continue
-
-            if ttype == Token.Name:
-                current_dep_line.append(value)
-            elif ttype in (Token.Literal.String.Single, Token.Literal.String.Double,):
-                if quoted(value):
-                    value = value[1:-1]
-                current_dep_line.append(value)
-            elif ttype == Token.Text and value == '\n' and current_dep_line:
-                # If we are looking at the end of a dependency declaration line,
-                # append the info from the line we are looking at to our main collection
-                # of dependency info and reset `current_dep_line` so we can
-                # start collecting info for the next line
-                lines.append(current_dep_line)
-                current_dep_line = []
-            elif ttype == Token.Operator and value == '}':
-                # we are at the end of the dependencies block, so we can back out
-                # and return the data we collected
-                break
-            else:
-                # Ignore all other tokens and values that we do not care for
-                continue
-        json.dump(lines, outfile)
-
-
-def build_package(cls, dependencies):
-    package_dependencies = []
-    for dependency_line in dependencies:
-        if len(dependency_line) != 2:
-            continue
-
-        dependency_type, dependency = dependency_line
-        namespace, name, version = dependency.split(':')
-
-        is_runtime = True
-        is_optional = False
-        if 'test' in dependency_type:
-            is_runtime = False
-            is_optional = True
-
-        package_dependencies.append(
-            models.DependentPackage(
-                purl=PackageURL(
-                    type='build.gradle',
-                    namespace=namespace,
-                    name=name,
-                    version=version
-                ).to_string(),
-                scope='dependencies',
-                requirement=version,
-                is_runtime=is_runtime,
-                is_optional=is_optional,
-            )
-        )
-
-    yield cls(
-        dependencies=package_dependencies,
-    )
-
-
-@attr.s()
-class BuildGradle(BaseBuildManifestPackage, models.PackageManifest):
-    file_patterns = ('build.gradle',)
-    extensions = ('.gradle',)
-    # TODO: Not sure what the default type should be, change this to something
-    # more appropriate later
-    default_type = 'build.gradle'
-
-    @classmethod
-    def recognize(cls, location):
-        if not cls.is_manifest(location):
-            return
-        with io.open(location, encoding='utf-8') as loc:
-            file_contents = loc.read()
-        dependencies = highlight(
-            file_contents, GroovyLexer(), BuildGradleFormatter())
-        dependencies = json.loads(dependencies)
-        return build_package(cls, dependencies)

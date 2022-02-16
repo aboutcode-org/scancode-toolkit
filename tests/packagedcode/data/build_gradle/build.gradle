@@ -1,0 +1,16 @@
+dependencies {
+    // DEPENDENCY-5
+    api dependencies.lombok
+
+    // DEPENDENCY-4
+    api group: 'com.google', name: 'guava', version: '1.0'
+
+    // DEPENDENCY-4
+    usageDependencies group: 'org.apache', name: 'commons', version: '1.0'
+
+    // DEPENDENCY-1
+    runtimeOnly(
+        [group: 'org.jacoco', name: 'org.jacoco.ant', version: '0.7.4.201502262128', classifier: "nodeps", transitive: false],
+        [group: 'org.jacoco', name: 'org.jacoco.agent', version: '0.7.4.201502262128', classifier: "runtime", transitive: false]
+    )
+}

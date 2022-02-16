@@ -12,6 +12,7 @@ import attr
 from packagedcode import about
 from packagedcode import bower
 from packagedcode import build
+from packagedcode import build_gradle
 from packagedcode import cargo
 from packagedcode import chef
 from packagedcode import debian
@@ -108,7 +109,7 @@ PACKAGE_MANIFEST_TYPES = [
     windows.MicrosoftUpdateManifest,
     pubspec.PubspecYaml,
     pubspec.PubspecLock,
-    build.BuildGradle,
+    build_gradle.BuildGradle,
 ]
 
 PACKAGE_MANIFESTS_BY_TYPE = {
