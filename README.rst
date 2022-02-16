@@ -7,7 +7,7 @@ License and origin information is not always easy to find and not normalized:
 ScanCode discovers and normalizes this data for you.
 
 Read more about ScanCode here: `scancode-toolkit.readthedocs.io 
-<https://scancode-toolkit.readthedocs.io/en/latest/>`_.
+<https://scancode-toolkit.readthedocs.io/>`_.
 
 Check out the code at https://github.com/nexB/scancode-toolkit
 
