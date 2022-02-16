@@ -204,6 +204,10 @@ def cli(licenses_file):
         relevance = rdata.data.get("relevance")
         rdata.data["has_stored_relevance"] = bool(relevance)
 
+        license_expression = rdata.data.get("license_expression")
+        if license_expression:
+            rdata.data["license_expression"] = license_expression.lower().strip()
+
         minimum_coverage = rdata.data.get("minimum_coverage")
         rdata.data["has_stored_minimum_coverage"] = bool(minimum_coverage)
 
@@ -226,7 +230,7 @@ def cli(licenses_file):
         text = rule.text()
 
         existing_rule = rule_exists(text)
-        skinny_text = " ".join(text[:80].split())
+        skinny_text = " ".join(text[:80].split()).replace("{", " ").replace("}", " ")
 
         existing_msg = (
             f"Skipping rule for: {base_name!r}, "
