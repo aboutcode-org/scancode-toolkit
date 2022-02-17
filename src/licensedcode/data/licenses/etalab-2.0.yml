@@ -1,7 +1,6 @@
 key: etalab-2.0
-language: en
-short_name: Etalab Open License 2.0 English
-name: Etalab Open License 2.0 English
+short_name: Etalab Open License 2.0
+name: Etalab Open License 2.0
 category: Permissive
 owner: DINUM
 homepage_url: https://raw.githubusercontent.com/DISIC/politique-de-contribution-open-source/master/LICENSE
