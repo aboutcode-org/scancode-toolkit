@@ -1,0 +1,9 @@
+license_expression: dco-1.1 AND cc-by-sa-4.0 AND mit
+is_license_notice: yes
+minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright (c) 2004, 2006 The Linux Foundation and its contributors
+ignorable_holders:
+    - The Linux Foundation and its contributors
+ignorable_urls:
+    - https://creativecommons.org/licenses/by-sa/4.0/legalcode
