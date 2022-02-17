@@ -152,14 +152,6 @@ if %ERRORLEVEL% neq 0 (
 @rem # speeds up the installation.
 @rem # We always have the PEP517 build dependencies installed already.
 
-echo "%CFG_BIN_DIR%\pip" install ^
-    --upgrade ^
-    --no-build-isolation ^
-    %CFG_QUIET% ^
-    %PIP_EXTRA_ARGS% ^
-    %CFG_REQUIREMENTS%
-
-
 "%CFG_BIN_DIR%\pip" install ^
     --upgrade ^
     --no-build-isolation ^
