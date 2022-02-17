@@ -41,7 +41,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "(((apache-2.0 AND scancode-acknowledgment) AND cc0-1.0) AND unknown) AND apache-2.0 AND (free-unknown AND unknown)",
+    "license_expression": "(((apache-2.0 AND scancode-acknowledgment) AND cc0-1.0) AND unknown) AND apache-2.0 AND (free-unknown AND cc0-1.0)",
     "declared_license": {
       "license": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
       "classifiers": [
