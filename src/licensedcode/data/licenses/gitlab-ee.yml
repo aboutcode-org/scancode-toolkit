@@ -1,0 +1,14 @@
+key: gitlab-ee
+short_name: GitLab EE
+name: GitLab Enterprise Edition (EE) license
+category: Commercial
+owner: GitLab.org
+homepage_url: https://gitlab.com/gitlab-org/gitlab/-/blob/master/ee/LICENSE
+spdx_license_key: LicenseRef-scancode-gitlab-ee
+faq_url: https://docs.gitlab.com/ee/development/licensing.html
+ignorable_copyrights:
+    - Copyright (c) 2011-present GitLab B.V.
+ignorable_holders:
+    - GitLab B.V.
+ignorable_urls:
+    - https://about.gitlab.com/terms/#subscription
