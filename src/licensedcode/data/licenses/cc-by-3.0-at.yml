@@ -10,5 +10,4 @@ text_urls:
     - https://creativecommons.org/licenses/by/3.0/at/legalcode
 faq_url: https://creativecommons.org/licenses/by/3.0/at/
 ignorable_urls:
-  - https://creativecommons.org/
-
+    - https://creativecommons.org/
