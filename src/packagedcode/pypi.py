@@ -101,12 +101,12 @@ meta_file_names = 'PKG-INFO', 'METADATA',
 
 
 @attr.s()
-class MetadataFile(PythonPackage, models.PackageManifest):
+class MetadataFile(PythonPackage, models.PackageData):
 
     file_patterns = meta_file_names
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -159,13 +159,13 @@ bdist_file_suffixes = '.whl', '.egg',
 
 
 @attr.s()
-class BinaryDistArchive(PythonPackage, models.PackageManifest):
+class BinaryDistArchive(PythonPackage, models.PackageData):
 
     file_patterns = ('*.whl', '*.egg',)
     extensions = bdist_file_suffixes
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -190,13 +190,13 @@ sdist_file_suffixes = '.tar.gz', '.tar.bz2', '.zip',
 
 
 @attr.s()
-class SourceDistArchive(PythonPackage, models.PackageManifest):
+class SourceDistArchive(PythonPackage, models.PackageData):
     # TODO: we are ignoing sdists such as pex, pyz, etc.
     file_patterns = ('*.tar.gz', '*.tar.bz2', '*.zip',)
     extensions = sdist_file_suffixes
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -229,13 +229,13 @@ class SourceDistArchive(PythonPackage, models.PackageManifest):
 
 
 @attr.s()
-class SetupPy(PythonPackage, models.PackageManifest):
+class SetupPy(PythonPackage, models.PackageData):
 
     file_patterns = ('setup.py',)
     extensions = ('.py',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -272,7 +272,7 @@ class SetupPy(PythonPackage, models.PackageManifest):
 
 
 @attr.s()
-class DependencyFile(PythonPackage, models.PackageManifest):
+class DependencyFile(PythonPackage, models.PackageData):
 
     file_patterns = (
         'Pipfile',
@@ -282,7 +282,7 @@ class DependencyFile(PythonPackage, models.PackageManifest):
     )
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         for file_pattern in cls.file_patterns:
             if filetype.is_file(location) and location.endswith(file_pattern):
                 return True
@@ -307,13 +307,13 @@ class DependencyFile(PythonPackage, models.PackageManifest):
 
 
 @attr.s()
-class PipfileLock(PythonPackage, models.PackageManifest):
+class PipfileLock(PythonPackage, models.PackageData):
 
     file_patterns = ('Pipfile.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -344,7 +344,7 @@ class PipfileLock(PythonPackage, models.PackageManifest):
 
 
 @attr.s()
-class RequirementsFile(PythonPackage, models.PackageManifest):
+class RequirementsFile(PythonPackage, models.PackageData):
 
     file_patterns = (
         '*requirements*.txt',
@@ -354,7 +354,7 @@ class RequirementsFile(PythonPackage, models.PackageManifest):
     )
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the ``location`` is likely a pip requirements file.
         """

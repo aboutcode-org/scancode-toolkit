@@ -69,13 +69,13 @@ class HaxePackage(models.Package):
 
 
 @attr.s()
-class HaxelibJson(HaxePackage, models.PackageManifest):
+class HaxelibJson(HaxePackage, models.PackageData):
 
     file_patterns = ('haxelib.json',)
     extensions = ('.json',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

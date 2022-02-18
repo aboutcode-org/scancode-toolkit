@@ -45,24 +45,24 @@ class JavaArchive(models.Package):
 
 
 @attr.s()
-class IvyJar(JavaArchive, models.PackageManifest):
+class IvyJar(JavaArchive, models.PackageData):
     file_patterns = ('ivy.xml',)
     default_type = 'ivy'
     default_primary_language = 'Java'
 
 
 @attr.s()
-class JavaManifest(JavaArchive, models.PackageManifest):
+class JavaManifest(JavaArchive, models.PackageData):
     file_patterns = ('META-INF/MANIFEST.MF',)
     extensions = ('.jar', '.war', '.ear')
 
     @classmethod
     def get_manifest_data(cls, location):
-        if cls.is_manifest(location):
+        if cls.is_package_data(location):
             yield parse_manifest(location)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return Trye if the file at location is a Manifest.
         """

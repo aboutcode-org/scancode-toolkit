@@ -59,7 +59,7 @@ class TestNpm(PackageTester):
 
     def test_is_manifest_package_json(self):
         test_file = self.get_test_loc('npm/dist/package.json')
-        assert npm.PackageJson.is_manifest(test_file)
+        assert npm.PackageJson.is_package_data(test_file)
 
     def test_parse_dist_with_string_values(self):
         test_file = self.get_test_loc('npm/dist/package.json')
@@ -239,7 +239,7 @@ class TestNpm(PackageTester):
 
     def test_is_manifest_package_lock_json(self):
         test_file = self.get_test_loc('npm/package-lock/package-lock.json')
-        assert npm.PackageLockJson.is_manifest(test_file)
+        assert npm.PackageLockJson.is_package_data(test_file)
 
     def test_parse_package_lock(self):
         test_file = self.get_test_loc('npm/package-lock/package-lock.json')
@@ -250,7 +250,7 @@ class TestNpm(PackageTester):
 
     def test_is_manifest_npm_shrinkwrap_json(self):
         test_file = self.get_test_loc('npm/npm-shrinkwrap/npm-shrinkwrap.json')
-        assert npm.PackageLockJson.is_manifest(test_file)
+        assert npm.PackageLockJson.is_package_data(test_file)
 
     def test_parse_npm_shrinkwrap(self):
         test_file = self.get_test_loc('npm/npm-shrinkwrap/npm-shrinkwrap.json')
@@ -274,7 +274,7 @@ class TestNpm(PackageTester):
 
     def test_is_manifest_yarn_lock(self):
         test_file = self.get_test_loc('npm/yarn-lock/yarn.lock')
-        assert npm.YarnLockJson.is_manifest(test_file)
+        assert npm.YarnLockJson.is_package_data(test_file)
 
     def test_parse_yarn_lock(self):
         test_file = self.get_test_loc('npm/yarn-lock/yarn.lock')

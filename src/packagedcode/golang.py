@@ -52,13 +52,13 @@ class GolangPackage(models.Package):
 
 
 @attr.s()
-class GoMod(GolangPackage, models.PackageManifest):
+class GoMod(GolangPackage, models.PackageData):
 
     file_patterns = ('go.mod',)
     extensions = ('.mod',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -115,13 +115,13 @@ class GoMod(GolangPackage, models.PackageManifest):
 
 
 @attr.s()
-class GoSum(GolangPackage, models.PackageManifest):
+class GoSum(GolangPackage, models.PackageData):
 
     file_patterns = ('go.sum',)
     extensions = ('.sum',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

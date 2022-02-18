@@ -47,12 +47,12 @@ class FreeBSDPackage(models.Package):
 
 
 @attr.s()
-class CompactManifest(FreeBSDPackage, models.PackageManifest):
+class CompactManifest(FreeBSDPackage, models.PackageData):
 
     file_patterns = ('+COMPACT_MANIFEST',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

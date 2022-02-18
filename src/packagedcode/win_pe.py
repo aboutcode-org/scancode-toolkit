@@ -258,7 +258,7 @@ def concat(mapping, *keys):
 
 
 @attr.s()
-class WindowsExecutableManifest(WindowsExecutable, models.PackageManifest):
+class WindowsExecutable(WindowsExecutable, models.PackageData):
     extensions = (
         '.exe',
         '.dll',
@@ -279,7 +279,7 @@ class WindowsExecutableManifest(WindowsExecutable, models.PackageManifest):
     )
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -365,6 +365,6 @@ class WindowsPackageInstance(WindowsExecutable, models.PackageInstance):
     @property
     def manifests(self):
         return [
-            WindowsExecutableManifest
+            WindowsExecutable
         ]
 

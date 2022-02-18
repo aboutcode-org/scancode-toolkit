@@ -43,13 +43,13 @@ class BowerPackage(models.Package):
 
 
 @attr.s()
-class BowerJson(BowerPackage, models.PackageManifest):
+class BowerJson(BowerPackage, models.PackageData):
 
     file_patterns = ('bower.json', '.bower.json')
     extensions = ('.json',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

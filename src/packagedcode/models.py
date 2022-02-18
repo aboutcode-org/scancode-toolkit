@@ -33,7 +33,7 @@ from typecode import contenttype
 
 """
 Data models for package information and dependencies, and also data models
-for package manifests for abstracting the differences existing between
+for package data for abstracting the differences existing between
 package formats and tools.
 
 A package has a somewhat fuzzy definition and is code that can be consumed and
@@ -57,7 +57,7 @@ We handle package information at two levels:
 
 1. package manifest information collected in a "manifest" at a file level
 2. package instances at the codebase level, where a package instance contains
-   one or more package manifests, and files for that package.
+   one or more package data, and files for that package.
 
 The second requires the first to be computed.
 
@@ -65,18 +65,18 @@ These are case classes to extend:
 
 - Package:
     Base class with shared package attributes and methods.
-- PackageManifest:
+- PackageData:
     Mixin class that represents a specific package manifest file.
 - PackageInstance:
     Mixin class that represents a package that's constructed from one or more
-    package manifests. It also tracks package files.
+    package data. It also tracks package files.
 
 Here is an example of the classes that would need to exist to support a new fictitious
 package type or ecosystem `dummy`.
 
 - DummyPackage(Package):
     This class provides type wide defaults and basic implementation for type specific methods.
-- DummyManifest(DummyPackage, PackageManifest):
+- DummyManifest(DummyPackage, PackageData):
     This class provides methods to recognize and parse a package manifest file format.
 - DummyPackageInstance(DummyPackage, PackageInstance):
     This class provides methods to create package instances for one or more manifests and to
@@ -428,8 +428,8 @@ class PackageFile(BaseModel):
 class Package(BasePackage):
     """
     A package object as represented by either data from one of its different types of
-    package manifests or that of a package instance created from one or more of these
-    package manifests, and files for that package.
+    package data or that of a package instance created from one or more of these
+    package data, and files for that package.
     """
 
     # Optional. Public default type for a package class.
@@ -578,8 +578,8 @@ class Package(BasePackage):
 
     @staticmethod
     def is_ignored_package_resource(resource, codebase):
-        from packagedcode import PACKAGE_MANIFEST_TYPES
-        return any(pt.ignore_resource(resource, codebase) for pt in PACKAGE_MANIFEST_TYPES)
+        from packagedcode import PACKAGE_DATA_TYPES
+        return any(pt.ignore_resource(resource, codebase) for pt in PACKAGE_DATA_TYPES)
 
     def compute_normalized_license(self):
         """
@@ -660,12 +660,14 @@ def compute_normalized_license(declared_license, expression_symbols=None):
         return 'unknown'
 
 
-class PackageManifest:
+@attr.s
+class PackageData:
     """
-    A mixin for package manifest that can be recognized.
+    A mixin for package manifests, lockfiles and other package data that can be
+    recognized.
 
-    When creating a new package manifest, a class should be created that extends
-    both PackageManifest and Package.
+    When creating a new package data, a class should be created that extends
+    both PackageData and Package.
     """
 
     # class-level attributes used to recognize a package
@@ -677,9 +679,9 @@ class PackageManifest:
     file_patterns = tuple()
 
     @property
-    def package_manifest_type(self):
+    def package_data_type(self):
         """
-        A tuple unique across package manifests, created from the default package type
+        A tuple unique across package data, created from the default package type
         and the manifest type.
         """
         return self.default_type, self.manifest_type()
@@ -689,7 +691,7 @@ class PackageManifest:
         return f"{cls.__module__}.{cls.__qualname__}"
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
 
@@ -741,8 +743,8 @@ class PackageManifest:
     @classmethod
     def recognize(cls, location):
         """
-        Yield one or more PackageManifest objects given a file at `location`
-        pointing to a package archive, manifest or similar.
+        Yield one or more PackageData objects given a file at `location`
+        pointing to a package archive, manifest, lockfile or other package data.
 
         Sub-classes should override to implement their own package recognition and creation.
  
@@ -755,8 +757,8 @@ class PackageManifest:
 @attr.s()
 class PackageInstance:
     """
-    A package instance mixin as represented by its package manifests, files and data
-    from its package manifests.
+    A package instance mixin as represented by its package data, files and data
+    from its package data.
 
     Subclasses must extend a Package subclass for a given ecosystem.
     """
@@ -767,10 +769,10 @@ class PackageInstance:
              'Consists of a pURL and an UUID field as a pURL qualifier.'
     )
 
-    package_manifest_paths = List(
+    package_data_paths = List(
         item_type=String,
-        label='Package manifest paths',
-        help='List of package manifest file paths for this package'
+        label='Package data paths',
+        help='List of package data file paths for this package'
     )
 
     files = List(
@@ -797,7 +799,7 @@ class PackageInstance:
         mapping = self.to_dict()
 
         # Removes PackageInstance specific attributes
-        for attribute in ('package_uuid', 'package_manifest_paths', 'files'):
+        for attribute in ('package_uuid', 'package_data_paths', 'files'):
             mapping.pop(attribute, None)
 
         # Remove attributes which are BasePackage functions
@@ -806,18 +808,18 @@ class PackageInstance:
 
         return mapping
 
-    def populate_instance_from_manifests(self, package_manifests_by_path, uuid):
+    def populate_instance_from_package_data(self, package_data_by_path, uuid):
         """
-        Create a package instance object from one or multiple package manifests.
+        Create a package instance object from one or multiple package data.
         """
-        for path, package_manifest in package_manifests_by_path.items():
+        for path, package_data in package_data_by_path.items():
             if TRACE:
                 logger.debug('Merging package manifest data for: {}'.format(path))
-                logger.debug('package manifest data: {}'.format(repr(package_manifest)))
-            self.package_manifest_paths.append(path)
-            self.merge_package_data_into_instance(package_manifest.copy())
+                logger.debug('package manifest data: {}'.format(repr(package_data)))
+            self.package_data_paths.append(path)
+            self.merge_package_data_into_instance(package_data.copy())
 
-        self.package_manifest_paths = tuple(self.package_manifest_paths)
+        self.package_data_paths = tuple(self.package_data_paths)
 
         # Set `package_uuid` as pURL for the package + it's uuid as a qualifier
         # in the pURL string
@@ -853,16 +855,16 @@ class PackageInstance:
         
         return files
 
-    def get_other_manifests_for_instance(self, resource, codebase):
+    def get_other_package_data_for_instance(self, resource, codebase):
         """
-        Return a dictionary of other package manifests by their paths for a given package instance.
+        Return a dictionary of other package data by their paths for a given package instance.
 
         Sub-classes can override to implement their own package manifest finding methods.
         """
-        package_manifests_by_path = {}
+        package_data_by_path = {}
 
         if codebase.has_single_resource:
-            return package_manifests_by_path
+            return package_data_by_path
 
         parent = resource.parent(codebase)
 
@@ -873,17 +875,17 @@ class PackageInstance:
             filename = file_name(resource.location)
             file_patterns = self.get_file_patterns(manifests=self.manifests)
             if any(fnmatch.fnmatchcase(filename, pattern) for pattern in file_patterns):
-                if not resource.package_manifests:
+                if not resource.package_data:
                     continue # Raise Exception(?)
 
-                #ToDo: Implement for multiple package manifests per path
-                package_manifests_by_path[resource.path] = resource.package_manifests[0]
+                #ToDo: Implement for multiple package data per path
+                package_data_by_path[resource.path] = resource.package_data[0]
 
-        return package_manifests_by_path
+        return package_data_by_path
     
     def get_file_patterns(self, manifests):
         """
-        Return a list of all `file_patterns` for all the PackageManifest classes
+        Return a list of all `file_patterns` for all the PackageData classes
         in `manifests`.
         """
         manifest_file_patterns = []
@@ -892,27 +894,27 @@ class PackageInstance:
         
         return manifest_file_patterns
 
-    def merge_package_data_into_instance(self, package_manifest, replace=False):
+    def merge_package_data_into_instance(self, package_data, replace=False):
         """
-        Merge the `package_manifest` ScannedPackage object into the `package_instance`
+        Merge the `package_data` ScannedPackage object into the `package_instance`
         Package model object.
         When an `package_instance` field has no value one side and and the
-        package_manifest field has a value, the package_instance field is always
+        package_data field has a value, the package_instance field is always
         set to this value.
         If `replace` is True and a field has a value on both sides, then
-        package_instance field value will be replaced by the package_manifest
+        package_instance field value will be replaced by the package_data
         field value. Otherwise if `replace` is False, the package_instance
         field value is left unchanged in this case.
         """
         existing_mapping = self.get_package_data()
 
-        # Remove PackageManifest specific attributes
+        # Remove PackageData specific attributes
         for attribute in ('md5', 'sha1', 'sha256', 'sha512', 'root_path'):
-            package_manifest.pop(attribute, None)
+            package_data.pop(attribute, None)
             existing_mapping.pop(attribute, None)
 
         for existing_field, existing_value in existing_mapping.items():
-            new_value = package_manifest[existing_field]
+            new_value = package_data[existing_field]
             if TRACE_MERGING:
                 logger.debug(
                     '\n'.join([
@@ -923,7 +925,7 @@ class PackageInstance:
 
             # FIXME: handle Booleans???
 
-            # These fields has to be same across the package_manifests
+            # These fields has to be same across the package_data
             if existing_field in ('name', 'version', 'type', 'primary_language'):
                 if existing_value and new_value and existing_value != new_value:
                     raise Exception(
@@ -1029,7 +1031,7 @@ class PackageInstance:
 
 
 @attr.s()
-class JavaJar(Package, PackageManifest):
+class JavaJar(Package, PackageData):
     file_patterns = ('META-INF/MANIFEST.MF',)
     extensions = ('.jar',)
     filetypes = ('java archive ', 'zip archive',)
@@ -1039,7 +1041,7 @@ class JavaJar(Package, PackageManifest):
 
 
 @attr.s()
-class JavaWar(Package, PackageManifest):
+class JavaWar(Package, PackageData):
     file_patterns = ('WEB-INF/web.xml',)
     extensions = ('.war',)
     filetypes = ('java archive ', 'zip archive',)
@@ -1049,7 +1051,7 @@ class JavaWar(Package, PackageManifest):
 
 
 @attr.s()
-class JavaEar(Package, PackageManifest):
+class JavaEar(Package, PackageData):
     file_patterns = ('META-INF/application.xml', 'META-INF/ejb-jar.xml')
     extensions = ('.ear',)
     filetypes = ('java archive ', 'zip archive',)
@@ -1059,7 +1061,7 @@ class JavaEar(Package, PackageManifest):
 
 
 @attr.s()
-class Axis2Mar(Package, PackageManifest):
+class Axis2Mar(Package, PackageData):
     """Apache Axis2 module"""
     file_patterns = ('META-INF/module.xml',)
     extensions = ('.mar',)
@@ -1070,7 +1072,7 @@ class Axis2Mar(Package, PackageManifest):
 
 
 @attr.s()
-class JBossSar(Package, PackageManifest):
+class JBossSar(Package, PackageData):
     file_patterns = ('META-INF/jboss-service.xml',)
     extensions = ('.sar',)
     filetypes = ('java archive ', 'zip archive',)
@@ -1080,14 +1082,14 @@ class JBossSar(Package, PackageManifest):
 
 
 @attr.s()
-class MeteorPackage(Package, PackageManifest):
+class MeteorPackage(Package, PackageData):
     file_patterns = ('package.js',)
     default_type = 'meteor'
     default_primary_language = 'JavaScript'
 
 
 @attr.s()
-class CpanModule(Package, PackageManifest):
+class CpanModule(Package, PackageData):
     file_patterns = (
         '*.pod',
         # TODO: .pm is not a package manifest
@@ -1107,14 +1109,14 @@ class CpanModule(Package, PackageManifest):
 # TODO: refine me: Go packages are a mess but something is emerging
 # TODO: move to and use godeps.py
 @attr.s()
-class Godep(Package, PackageManifest):
+class Godep(Package, PackageData):
     file_patterns = ('Godeps',)
     default_type = 'golang'
     default_primary_language = 'Go'
 
 
 @attr.s()
-class AndroidApp(Package, PackageManifest):
+class AndroidApp(Package, PackageData):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.apk',)
@@ -1124,7 +1126,7 @@ class AndroidApp(Package, PackageManifest):
 
 # see http://tools.android.com/tech-docs/new-build-system/aar-formats
 @attr.s()
-class AndroidLibrary(Package, PackageManifest):
+class AndroidLibrary(Package, PackageData):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     # note: Apache Axis also uses AAR extensions for plain Jars.
@@ -1135,7 +1137,7 @@ class AndroidLibrary(Package, PackageManifest):
 
 
 @attr.s()
-class MozillaExtension(Package, PackageManifest):
+class MozillaExtension(Package, PackageData):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.xpi',)
@@ -1144,7 +1146,7 @@ class MozillaExtension(Package, PackageManifest):
 
 
 @attr.s()
-class ChromeExtension(Package, PackageManifest):
+class ChromeExtension(Package, PackageData):
     filetypes = ('data',)
     mimetypes = ('application/octet-stream',)
     extensions = ('.crx',)
@@ -1153,7 +1155,7 @@ class ChromeExtension(Package, PackageManifest):
 
 
 @attr.s()
-class IOSApp(Package, PackageManifest):
+class IOSApp(Package, PackageData):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.ipa',)
@@ -1162,7 +1164,7 @@ class IOSApp(Package, PackageManifest):
 
 
 @attr.s()
-class CabPackage(Package, PackageManifest):
+class CabPackage(Package, PackageData):
     filetypes = ('microsoft cabinet',)
     mimetypes = ('application/vnd.ms-cab-compressed',)
     extensions = ('.cab',)
@@ -1170,7 +1172,7 @@ class CabPackage(Package, PackageManifest):
 
 
 @attr.s()
-class InstallShieldPackage(Package, PackageManifest):
+class InstallShieldPackage(Package, PackageData):
     filetypes = ('installshield',)
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
@@ -1178,7 +1180,7 @@ class InstallShieldPackage(Package, PackageManifest):
 
 
 @attr.s()
-class NSISInstallerPackage(Package, PackageManifest):
+class NSISInstallerPackage(Package, PackageData):
     filetypes = ('nullsoft installer',)
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
@@ -1186,7 +1188,7 @@ class NSISInstallerPackage(Package, PackageManifest):
 
 
 @attr.s()
-class SharPackage(Package, PackageManifest):
+class SharPackage(Package, PackageData):
     filetypes = ('posix shell script',)
     mimetypes = ('text/x-shellscript',)
     extensions = ('.sha', '.shar', '.bin',)
@@ -1194,7 +1196,7 @@ class SharPackage(Package, PackageManifest):
 
 
 @attr.s()
-class AppleDmgPackage(Package, PackageManifest):
+class AppleDmgPackage(Package, PackageData):
     filetypes = ('zlib compressed',)
     mimetypes = ('application/zlib',)
     extensions = ('.dmg', '.sparseimage',)
@@ -1202,7 +1204,7 @@ class AppleDmgPackage(Package, PackageManifest):
 
 
 @attr.s()
-class IsoImagePackage(Package, PackageManifest):
+class IsoImagePackage(Package, PackageData):
     filetypes = ('iso 9660 cd-rom', 'high sierra cd-rom',)
     mimetypes = ('application/x-iso9660-image',)
     extensions = ('.iso', '.udf', '.img',)
@@ -1210,7 +1212,7 @@ class IsoImagePackage(Package, PackageManifest):
 
 
 @attr.s()
-class SquashfsPackage(Package, PackageManifest):
+class SquashfsPackage(Package, PackageData):
     filetypes = ('squashfs',)
     default_type = 'squashfs'
 

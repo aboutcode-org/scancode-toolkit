@@ -73,13 +73,13 @@ class CondaPackage(models.Package):
         return models.compute_normalized_license(self.declared_license)
 
 @attr.s()
-class Condayml(CondaPackage, models.PackageManifest):
+class Condayml(CondaPackage, models.PackageData):
 
     file_patterns = ('meta.yaml', 'META.yml',)
     extensions = ('.yml', '.yaml',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

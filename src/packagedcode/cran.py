@@ -49,12 +49,12 @@ class CranPackage(models.Package):
 
 
 @attr.s()
-class DescriptionFile(CranPackage, models.PackageManifest):
+class DescriptionFile(CranPackage, models.PackageData):
 
     file_patterns = ('DESCRIPTION',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if `location` path is for a Cran DESCRIPTION file.
         """

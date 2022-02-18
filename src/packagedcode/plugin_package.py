@@ -21,7 +21,7 @@ from commoncode.cliutils import DOC_GROUP
 from commoncode.cliutils import SCAN_GROUP
 
 from packagedcode import get_package_instance
-from packagedcode import PACKAGE_MANIFEST_TYPES
+from packagedcode import PACKAGE_DATA_TYPES
 from packagedcode import PACKAGE_INSTANCES_BY_TYPE
 
 
@@ -49,7 +49,7 @@ if TRACE:
 def print_packages(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    for package_cls in sorted(PACKAGE_MANIFEST_TYPES, key=lambda pc: (pc.default_type)):
+    for package_cls in sorted(PACKAGE_DATA_TYPES, key=lambda pc: (pc.default_type)):
         click.echo('--------------------------------------------')
         click.echo('Package: {self.default_type}'.format(self=package_cls))
         click.echo(
@@ -70,13 +70,15 @@ def print_packages(ctx, param, value):
 @scan_impl
 class PackageScanner(ScanPlugin):
     """
-    Scan a Resource for Package manifests and report these as "packages" at the
-    right file or directory level.
+    Scan a Resource for Package data and report these as "package_data" at the
+    right file or directory level. Then create package instances with these and
+    other package information and files, and report these as "packages" at the
+    top level (codebase level).
     """
     resource_attributes = {}
     codebase_attributes = {}
     codebase_attributes['packages'] = attr.ib(default=attr.Factory(list), repr=False)
-    resource_attributes['package_manifests'] = attr.ib(default=attr.Factory(list), repr=False)
+    resource_attributes['package_data'] = attr.ib(default=attr.Factory(list), repr=False)
     resource_attributes['for_packages'] = attr.ib(default=attr.Factory(list), repr=False)
 
     sort_order = 6
@@ -86,7 +88,7 @@ class PackageScanner(ScanPlugin):
     options = [
         PluggableCommandLineOption(('-p', '--package',),
             is_flag=True, default=False,
-            help='Scan <input> for package manifests and build scripts.',
+            help='Scan <input> for package data and build scripts.',
             help_group=SCAN_GROUP,
             sort_order=20),
 
@@ -105,26 +107,26 @@ class PackageScanner(ScanPlugin):
         """
         Return a scanner callable to scan a Resource for packages.
         """
-        from scancode.api import get_package_manifests
-        return get_package_manifests
+        from scancode.api import get_package_data
+        return get_package_data
 
     def process_codebase(self, codebase, **kwargs):
         """
         Populate top level `packages` with package instances.
         """
-        for package_instance in create_packages_from_manifests(codebase, **kwargs):
+        for package_instance in create_package_instances(codebase, **kwargs):
             codebase.attributes.packages.append(package_instance.to_dict())
 
 
-def create_packages_from_manifests(codebase, **kwargs):
+def create_package_instances(codebase, **kwargs):
     """
-    Create package instances from package manifests present in the codebase.
+    Create package instances from package data present in the codebase.
     """
     package_instances_by_paths = {}
     package_instance_by_identifiers = {}
 
     for resource in codebase.walk(topdown=False):
-        if not resource.package_manifests:
+        if not resource.package_data:
             continue
 
         # continue if resource.path already in `package_instances_by_paths`
@@ -133,20 +135,20 @@ def create_packages_from_manifests(codebase, **kwargs):
 
         if TRACE:
             logger_debug(
-                'create_packages_from_manifests:',
+                'create_package_instances:',
                 'location:', resource.location,
             )
 
-        # Currently we assume there is only one PackageManifest 
-        # ToDo: Do this for multiple PackageManifests per resource
-        manifest = resource.package_manifests[0]
+        # Currently we assume there is only one PackageData 
+        # ToDo: Do this for multiple PackageDatas per resource
+        package_data_file = resource.package_data[0]
 
-        # Check if the package manifests has all the mandatory attributes to create a pURL
-        if not manifest.get("name"):
+        # Check if the package data has all the mandatory attributes to create a pURL
+        if not package_data_file.get("name"):
             continue
 
         # Check if PackageInstance is implemented
-        pk_instance_class = PACKAGE_INSTANCES_BY_TYPE.get(manifest["type"])
+        pk_instance_class = PACKAGE_INSTANCES_BY_TYPE.get(package_data_file["type"])
         if not pk_instance_class:
             continue
 
@@ -155,22 +157,22 @@ def create_packages_from_manifests(codebase, **kwargs):
         pk_instance_uuid = uuid.uuid4()
         package_instance_by_identifiers[pk_instance_uuid] = pk_instance
 
-        # use the get_other_manifests_for_instance to get other instances
-        package_manifests_by_path = pk_instance.get_other_manifests_for_instance(resource, codebase)
-        package_manifests_by_path[resource.path] = manifest
+        # use the get_other_package_data_for_instance to get other instances
+        package_data_by_path = pk_instance.get_other_package_data_for_instance(resource, codebase)
+        package_data_by_path[resource.path] = package_data_file
 
         if TRACE:
             logger_debug(
-                'create_packages_from_manifests:',
-                'package_manifests_by_path:', package_manifests_by_path,
+                'create_package_instances:',
+                'package_data_by_path:', package_data_by_path,
             )
 
-        # add `path: Instance` into `package_instances_by_paths` for all manifests
-        for path in package_manifests_by_path.keys():
+        # add `path: Instance` into `package_instances_by_paths` for all package_data_files
+        for path in package_data_by_path.keys():
             package_instances_by_paths[path] = pk_instance
 
-        # populate PackageInstance with data from manifests
-        pk_instance.populate_instance_from_manifests(package_manifests_by_path, uuid=pk_instance_uuid)
+        # populate PackageInstance with data from package_data_files
+        pk_instance.populate_instance_from_package_data(package_data_by_path, uuid=pk_instance_uuid)
 
         # get files for this PackageInstance
         pk_instance.files = tuple(pk_instance.get_package_files(resource, codebase))
@@ -180,13 +182,13 @@ def create_packages_from_manifests(codebase, **kwargs):
 
         if TRACE:
             logger_debug(
-                'create_packages_from_manifests:',
+                'create_package_instances:',
                 'pk_instance:', pk_instance,
             )
 
     if TRACE:
         logger_debug(
-            'create_packages_from_manifests:',
+            'create_package_instances:',
             'package_instances_by_paths:', package_instances_by_paths,
         )
 
@@ -214,17 +216,17 @@ def set_packages_root(resource, codebase):
     if not resource.is_file:
         return
 
-    package_manifests = resource.package_manifests
-    if not package_manifests:
+    package_data_all = resource.package_data
+    if not package_data_all:
         return
     # NOTE: we are dealing with a single file therefore there should be only be
-    # a single package detected. But some package manifests can document more
+    # a single package detected. But some package data can document more
     # than one package at a time such as multiple arches/platforms for a gempsec
     # or multiple sub package (with "%package") in an RPM .spec file.
 
     modified = False
-    for package_manifest in package_manifests:
-        package_instance = get_package_instance(package_manifest)
+    for package_data in package_data_all:
+        package_instance = get_package_instance(package_data)
         package_root = package_instance.get_package_root(resource, codebase)
         if not package_root:
             # this can happen if we scan a single resource that is a package package
@@ -232,7 +234,7 @@ def set_packages_root(resource, codebase):
         # What if the target resource (e.g. a parent) is the root and we are in stripped root mode?
         if package_root.is_root and codebase.strip_root:
             continue
-        package_manifest['root_path'] = package_root.path
+        package_data['root_path'] = package_root.path
         modified = True
 
     if modified:

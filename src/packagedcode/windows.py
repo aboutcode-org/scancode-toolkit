@@ -35,7 +35,7 @@ if TRACE:
 
 
 @attr.s()
-class MicrosoftUpdatePackage(models.Package, models.PackageManifest):
+class MicrosoftUpdatePackage(models.Package, models.PackageData):
     extensions = ('.mum',)
     filetypes = ('xml 1.0 document',)
     mimetypes = ('text/xml',)
@@ -44,10 +44,10 @@ class MicrosoftUpdatePackage(models.Package, models.PackageManifest):
 
 
 @attr.s()
-class MicrosoftUpdateManifest(MicrosoftUpdatePackage, models.PackageManifest):
+class MicrosoftUpdateManifest(MicrosoftUpdatePackage, models.PackageData):
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

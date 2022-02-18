@@ -40,7 +40,7 @@ from packagedcode import windows
 
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
-PACKAGE_MANIFEST_TYPES = [
+PACKAGE_DATA_TYPES = [
     rpm.RpmManifest,
     debian.DebianPackage,
 
@@ -102,7 +102,7 @@ PACKAGE_MANIFEST_TYPES = [
     build.BuckPackage,
     build.AutotoolsPackage,
     conda.Condayml,
-    win_pe.WindowsExecutableManifest,
+    win_pe.WindowsExecutable,
     readme.ReadmeManifest,
     build.MetadataBzl,
     msi.MsiInstallerPackage,
@@ -136,9 +136,9 @@ PACKAGE_INSTANCE_TYPES = [
 ]
 
 
-PACKAGE_MANIFESTS_BY_TYPE = {
+PACKAGE_DATA_BY_TYPE = {
     cls.default_type: cls
-    for cls in PACKAGE_MANIFEST_TYPES
+    for cls in PACKAGE_DATA_TYPES
 }
 
 
@@ -171,7 +171,7 @@ def get_package_class(scan_data, default=models.Package):
     if not ptype:
         # basic type for default package types
         return default
-    ptype_class = PACKAGE_MANIFESTS_BY_TYPE.get(ptype)
+    ptype_class = PACKAGE_DATA_BY_TYPE.get(ptype)
     return ptype_class or default
 
 

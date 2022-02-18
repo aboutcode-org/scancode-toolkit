@@ -27,7 +27,7 @@ from textcode.analysis import as_unicode
 
 
 @attr.s()
-class AlpinePackage(models.Package, models.PackageManifest):
+class AlpinePackage(models.Package, models.PackageData):
     extensions = ('.apk', 'APKBUILD')
     default_type = 'alpine'
 

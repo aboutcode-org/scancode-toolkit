@@ -17,9 +17,9 @@ from packages_test_utils import PackageTester
 class TestNuget(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_nuspec_is_manifest(self):
+    def test_nuspec_is_package_data(self):
         test_file = self.get_test_loc('nuget/bootstrap.nuspec')
-        assert nuget.Nuspec.is_manifest(test_file)
+        assert nuget.Nuspec.is_package_data(test_file)
 
     def test_parse_creates_package_from_nuspec_bootstrap(self):
         test_file = self.get_test_loc('nuget/bootstrap.nuspec')

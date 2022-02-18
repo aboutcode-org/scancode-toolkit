@@ -107,13 +107,13 @@ def compute_normalized_license(declared_license, location=None):
 
 
 @attr.s()
-class PubspecYaml(PubspecPackage, models.PackageManifest):
+class PubspecYaml(PubspecPackage, models.PackageData):
 
     file_patterns = ('*pubspec.yaml',)
     extensions = ('.yaml',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -142,13 +142,13 @@ def file_endswith(location, endswith):
 
 
 @attr.s()
-class PubspecLock(PubspecPackage, models.PackageManifest):
+class PubspecLock(PubspecPackage, models.PackageData):
 
     file_patterns = ('*pubspec.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

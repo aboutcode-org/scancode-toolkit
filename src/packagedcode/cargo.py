@@ -59,13 +59,13 @@ class RustCargoCrate(models.Package):
 
 
 @attr.s()
-class CargoToml(RustCargoCrate, models.PackageManifest):
+class CargoToml(RustCargoCrate, models.PackageData):
 
     file_patterns = ('Cargo.toml',)
     extensions = ('.toml',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -103,13 +103,13 @@ class CargoToml(RustCargoCrate, models.PackageManifest):
 
 
 @attr.s()
-class CargoLock(RustCargoCrate, models.PackageManifest):
+class CargoLock(RustCargoCrate, models.PackageData):
 
     file_patterns = ('Cargo.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

@@ -30,7 +30,7 @@ class TestGemSpec(PackageTester):
 
     def test_is_manifest_ruby_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/address_standardization.gemspec')
-        assert rubygems.GemSpec.is_manifest(test_file)
+        assert rubygems.GemSpec.is_package_data(test_file)
 
     def test_rubygems_can_parse_gemspec_address_standardization_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/address_standardization.gemspec')
@@ -86,7 +86,7 @@ class TestRubyGemMetadata(FileBasedTesting):
 
     def test_is_manifest_ruby_archive_extracted(self):
         test_file = self.get_test_loc('rubygems/metadata/metadata.gz-extract')
-        assert rubygems.GemArchiveExtracted.is_manifest(test_file)
+        assert rubygems.GemArchiveExtracted.is_package_data(test_file)
 
     def test_build_rubygem_package_does_not_crash(self):
         test_file = self.get_test_loc('rubygems/metadata/metadata.gz-extract')
@@ -160,7 +160,7 @@ class TestGemfileLock(PackageTester):
 
     def test_is_manifest_ruby_gemfilelock(self):
         test_file = self.get_test_loc('rubygems/gemfile-lock/Gemfile.lock')
-        assert rubygems.GemfileLock.is_manifest(test_file)
+        assert rubygems.GemfileLock.is_package_data(test_file)
 
     def test_ruby_gemfile_lock_as_dict(self):
         test_file = self.get_test_loc('rubygems/gemfile-lock/Gemfile.lock')

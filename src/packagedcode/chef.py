@@ -156,13 +156,13 @@ class ChefMetadataFormatter(Formatter):
 
 
 @attr.s()
-class MetadataJson(ChefPackage, models.PackageManifest):
+class MetadataJson(ChefPackage, models.PackageData):
 
     file_patterns = ('metadata.json',)
     extensions = ('.json',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if `location` path is for a Chef metadata.json file.
         The metadata.json is also used in Python installed packages in a 'dist-info'
@@ -187,13 +187,13 @@ class MetadataJson(ChefPackage, models.PackageManifest):
 
 
 @attr.s()
-class Metadatarb(ChefPackage, models.PackageManifest):
+class Metadatarb(ChefPackage, models.PackageData):
 
     file_patterns = ('metadata.rb',)
     extensions = ('.rb',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if `location` path is for a Chef metadata.json file.
         The metadata.json is also used in Python installed packages in a 'dist-info'

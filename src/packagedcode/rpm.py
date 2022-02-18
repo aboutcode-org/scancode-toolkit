@@ -112,7 +112,7 @@ class EVR(namedtuple('EVR', 'epoch version release')):
 
 
 @attr.s()
-class RpmPackage(models.Package, models.PackageManifest):
+class RpmPackage(models.Package, models.PackageData):
 
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
@@ -156,13 +156,13 @@ def get_installed_packages(root_dir, detect_licenses=False, **kwargs):
 
 
 @attr.s()
-class RpmManifest(RpmPackage, models.PackageManifest):
+class RpmManifest(RpmPackage, models.PackageData):
 
     file_patterns = ('*.spec',)
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

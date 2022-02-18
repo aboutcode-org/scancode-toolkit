@@ -11,8 +11,8 @@ import os.path
 
 from packagedcode import models
 from packagedcode import PACKAGE_INSTANCE_TYPES
-from packagedcode import PACKAGE_MANIFEST_TYPES
-from packagedcode import PACKAGE_MANIFESTS_BY_TYPE
+from packagedcode import PACKAGE_DATA_TYPES
+from packagedcode import PACKAGE_DATA_BY_TYPE
 from packagedcode import PACKAGE_INSTANCES_BY_TYPE
 from packagedcode.models import Package
 from packagedcode.models import Party
@@ -185,8 +185,8 @@ class TestModels(PackageTester):
 
 class TestManifestInstanceModels(PackageTester):
 
-    def test_package_manifest_types(self):
-        check_package_manifest_classes()
+    def test_package_data_types(self):
+        check_package_data_classes()
 
     def test_package_instance_types(self):
         check_package_instance_classes()
@@ -217,26 +217,26 @@ def check_package_instance_classes():
                 seen_types[pk_instance.default_type] = pk_instance
 
 
-def check_package_manifest_classes():
+def check_package_data_classes():
     """
     Check that we don't have two package manifest classes with the same
-    package_manifest_type.
+    package_data_type.
     """
-    package_manifests_by_type = {
+    package_data_by_type = {
         cls.default_type: cls
-        for cls in PACKAGE_MANIFEST_TYPES
+        for cls in PACKAGE_DATA_TYPES
     }
 
-    if len(package_manifests_by_type) != len(PACKAGE_MANIFEST_TYPES):
+    if len(package_data_by_type) != len(PACKAGE_DATA_TYPES):
         seen_types = {}
-        for pmt in PACKAGE_MANIFEST_TYPES:
+        for pmt in PACKAGE_DATA_TYPES:
             manifest = pmt()
-            assert manifest.package_manifest_type
-            seen = seen_types.get(manifest.package_manifest_type)
+            assert manifest.package_data_type
+            seen = seen_types.get(manifest.package_data_type)
             if seen:
                 msg = ('Invalid duplicated packagedcode.Package types: '
                     '"{}:{}" and "{}:{}" have the same type.'
-                    .format(manifest.package_manifest_type, manifest.__name__, seen.package_manifest_type, seen.__name__,))
+                    .format(manifest.package_data_type, manifest.__name__, seen.package_data_type, seen.__name__,))
                 raise Exception(msg)
             else:
-                seen_types[manifest.package_manifest_type] = manifest
+                seen_types[manifest.package_data_type] = manifest

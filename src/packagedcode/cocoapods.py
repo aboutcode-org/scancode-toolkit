@@ -117,13 +117,13 @@ class CocoapodsPackage(models.Package):
 
 
 @attr.s()
-class Podspec(CocoapodsPackage, models.PackageManifest):
+class Podspec(CocoapodsPackage, models.PackageData):
 
     file_patterns = ('*.podspec',)
     extensions = ('.podspec',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -176,13 +176,13 @@ class Podspec(CocoapodsPackage, models.PackageManifest):
 
 
 @attr.s()
-class PodfileLock(CocoapodsPackage, models.PackageManifest):
+class PodfileLock(CocoapodsPackage, models.PackageData):
 
     file_patterns = ('*podfile.lock',)
     extensions = ('.lock',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -262,13 +262,13 @@ class PodfileLock(CocoapodsPackage, models.PackageManifest):
 
 
 @attr.s()
-class PodspecJson(CocoapodsPackage, models.PackageManifest):
+class PodspecJson(CocoapodsPackage, models.PackageData):
 
     file_patterns = ('*.podspec.json',)
     extensions = ('.json',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -349,7 +349,7 @@ class PodspecJson(CocoapodsPackage, models.PackageManifest):
             extra_data['dependencies'] = dependencies
         extra_data['podspec.json'] = data
 
-        package_manifest = cls(
+        package_data = cls(
             name=name,
             version=version,
             vcs_url=vcs_url,
@@ -361,9 +361,9 @@ class PodspecJson(CocoapodsPackage, models.PackageManifest):
             parties=parties,
         )
 
-        package_manifest.api_data_url = package_manifest.get_api_data_url()
+        package_data.api_data_url = package_data.get_api_data_url()
 
-        yield package_manifest
+        yield package_data
 
     @staticmethod
     def read_podspec_json(location):

@@ -85,13 +85,13 @@ class NpmPackage(models.Package):
 
 
 @attr.s()
-class PackageJson(NpmPackage, models.PackageManifest):
+class PackageJson(NpmPackage, models.PackageData):
 
     file_patterns = ('package.json',)
     extensions = ('.tgz',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -177,7 +177,7 @@ class PackageJson(NpmPackage, models.PackageManifest):
 
 
 @attr.s()
-class PackageLockJson(NpmPackage, models.PackageManifest):
+class PackageLockJson(NpmPackage, models.PackageData):
 
     file_patterns = (
         'npm-shrinkwrap.json',
@@ -196,7 +196,7 @@ class PackageLockJson(NpmPackage, models.PackageManifest):
             and fileutils.file_name(location).lower() == 'npm-shrinkwrap.json')
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -318,13 +318,13 @@ class PackageLockJson(NpmPackage, models.PackageManifest):
 
 
 @attr.s()
-class YarnLockJson(NpmPackage, models.PackageManifest):
+class YarnLockJson(NpmPackage, models.PackageData):
 
     file_patterns = ('yarn.lock',)
     extensions = ('.tgz',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """

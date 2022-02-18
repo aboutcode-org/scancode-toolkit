@@ -81,7 +81,7 @@ class PhpComposerPackage(models.Package):
 
 
 @attr.s()
-class ComposerJson(PhpComposerPackage, models.PackageManifest):
+class ComposerJson(PhpComposerPackage, models.PackageData):
 
     file_patterns = (
         'composer.json',
@@ -89,7 +89,7 @@ class ComposerJson(PhpComposerPackage, models.PackageManifest):
     extensions = ('.json',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -107,10 +107,10 @@ class ComposerJson(PhpComposerPackage, models.PackageManifest):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
 
-        yield build_package_manifest(cls, package_data)
+        yield build_package_data(cls, package_data)
 
 
-def build_package_manifest(cls, package_data):
+def build_package_data(cls, package_data):
     
     # A composer.json without name and description is not a usable PHP
     # composer package. Name and description fields are required but
@@ -179,7 +179,7 @@ def build_package_manifest(cls, package_data):
     return package
 
 @attr.s()
-class ComposerLock(PhpComposerPackage, models.PackageManifest):
+class ComposerLock(PhpComposerPackage, models.PackageData):
 
     file_patterns = (
         'composer.lock',
@@ -187,7 +187,7 @@ class ComposerLock(PhpComposerPackage, models.PackageManifest):
     extensions = ('.lock',)
 
     @classmethod
-    def is_manifest(cls, location):
+    def is_package_data(cls, location):
         """
         Return True if the file at ``location`` is likely a manifest of this type.
         """
@@ -206,11 +206,11 @@ class ComposerLock(PhpComposerPackage, models.PackageManifest):
             package_data = json.load(loc)
         
         packages = [
-            build_package_manifest(cls, p)
+            build_package_data(cls, p)
             for p in package_data.get('packages', [])
         ]
         packages_dev = [
-            build_package_manifest(cls, p)
+            build_package_data(cls, p)
             for p in package_data.get('packages-dev', [])
         ]
 

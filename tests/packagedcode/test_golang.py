@@ -21,9 +21,9 @@ class TestGolang(PackageTester):
     """
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_gomod_is_manifest(self):
+    def test_gomod_is_package_data(self):
         test_file = self.get_test_loc('golang/gomod/kingpin/go.mod')
-        assert golang.GoMod.is_manifest(test_file)
+        assert golang.GoMod.is_package_data(test_file)
 
     def test_parse_gomod_kingpin(self):
         test_file = self.get_test_loc('golang/gomod/kingpin/go.mod')
@@ -61,9 +61,9 @@ class TestGolang(PackageTester):
         package = golang.GoMod.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
-    def test_gosum_is_manifest(self):
+    def test_gosum_is_package_data(self):
         test_file = self.get_test_loc('golang/gosum/sample1/go.sum')
-        assert golang.GoSum.is_manifest(test_file)
+        assert golang.GoSum.is_package_data(test_file)
 
     def test_parse_gosum_sample1(self):
         test_file = self.get_test_loc('golang/gosum/sample1/go.sum')

@@ -25,9 +25,9 @@ from packages_test_utils import PackageTester
 class TestPyPiDevelop(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_python_pkg_info_is_manifest(self):
+    def test_python_pkg_info_is_package_data(self):
         test_file = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info/PKG-INFO')
-        assert pypi.MetadataFile.is_manifest(test_file)
+        assert pypi.MetadataFile.is_package_data(test_file)
 
     def test_develop_with_parse_metadata(self):
         test_file = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info/PKG-INFO')
@@ -81,9 +81,9 @@ class TestPyPiMetadata(PackageTester):
         expected_loc = self.get_test_loc('pypi/metadata/PKG-INFO-expected.json')
         self.check_packages(package, expected_loc, regen=False)
 
-    def test_python_metadata_is_manifest(self):
+    def test_python_metadata_is_package_data(self):
         test_file = self.get_test_loc('pypi/metadata/METADATA')
-        assert pypi.MetadataFile.is_manifest(test_file)
+        assert pypi.MetadataFile.is_package_data(test_file)
 
     def test_parse_metadata_basic(self):
         test_file = self.get_test_loc('pypi/metadata/METADATA')
@@ -95,13 +95,13 @@ class TestPyPiMetadata(PackageTester):
 class TestPypiArchive(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_python_bdist_whl_is_manifest(self):
+    def test_python_bdist_whl_is_package_data(self):
         test_file = self.get_test_loc('pypi/archive/atomicwrites-1.2.1-py2.py3-none-any.whl')
-        assert pypi.BinaryDistArchive.is_manifest(test_file)
+        assert pypi.BinaryDistArchive.is_package_data(test_file)
 
-    def test_python_bdist_egg_is_manifest(self):
+    def test_python_bdist_egg_is_package_data(self):
         test_file = self.get_test_loc('pypi/archive/commoncode-21.5.12-py3.9.egg')
-        assert pypi.BinaryDistArchive.is_manifest(test_file)
+        assert pypi.BinaryDistArchive.is_package_data(test_file)
 
     def test_parse_archive_with_wheelfile(self):
         test_file = self.get_test_loc('pypi/archive/atomicwrites-1.2.1-py2.py3-none-any.whl')
@@ -241,9 +241,9 @@ class TestPypiUnpackedSdist(PackageTester):
 class TestPyPiRequirements(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_python_requirements_is_manifest(self):
+    def test_python_requirements_is_package_data(self):
         test_file = self.get_test_loc('pypi/requirements_txt/basic/requirements.txt')
-        assert pypi.RequirementsFile.is_manifest(test_file)
+        assert pypi.RequirementsFile.is_package_data(test_file)
 
     def test_parse_with_dparse_requirements(self):
         test_file = self.get_test_loc('pypi/requirements_txt/simple/requirements.txt')

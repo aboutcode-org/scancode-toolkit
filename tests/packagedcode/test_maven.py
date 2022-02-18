@@ -26,7 +26,7 @@ class TestIsPom(testcase.FileBasedTesting):
 
     def test_is_pom_non_pom(self):
         test_file = self.get_test_loc('maven_misc/non-maven.pom')
-        assert not maven.PomXml.is_manifest(test_file)
+        assert not maven.PomXml.is_package_data(test_file)
 
     def test_is_pom_maven2(self):
         test_dir = self.get_test_loc('maven2')
@@ -35,11 +35,11 @@ class TestIsPom(testcase.FileBasedTesting):
                 continue
 
             loc = os.path.join(test_dir, test_file)
-            assert maven.PomXml.is_manifest(loc), loc + ' should be a POM'
+            assert maven.PomXml.is_package_data(loc), loc + ' should be a POM'
 
     def test_is_pom_not_misc2(self):
         test_file = self.get_test_loc('maven_misc/properties-section-single.xml')
-        assert not maven.PomXml.is_manifest(test_file)
+        assert not maven.PomXml.is_package_data(test_file)
 
     def test_is_pom_m2(self):
         test_dir = self.get_test_loc('m2')
@@ -48,11 +48,11 @@ class TestIsPom(testcase.FileBasedTesting):
                 continue
 
             loc = os.path.join(test_dir, test_file)
-            assert maven.PomXml.is_manifest(loc), 'file://' + loc + ' should be a POM'
+            assert maven.PomXml.is_package_data(loc), 'file://' + loc + ' should be a POM'
 
     def test_is_pom_not_misc(self):
         test_file = self.get_test_loc('maven_misc/properties-section.xml')
-        assert not maven.PomXml.is_manifest(test_file)
+        assert not maven.PomXml.is_package_data(test_file)
 
 
 def compare_results(results, test_pom_loc, expected_json_loc, regen=False):
@@ -217,7 +217,7 @@ class TestMavenMisc(BaseMavenCase):
         manifest_resource = [r for r in codebase.walk() if r.name == 'pom.xml'][0]
         packages = list(maven.PomXml.recognize(manifest_resource.location))
         assert packages
-        manifest_resource.package_manifests.append(packages[0].to_dict())
+        manifest_resource.package_data.append(packages[0].to_dict())
         manifest_resource.save(codebase)
         proot = maven.MavenPomPackage.get_package_root(manifest_resource, codebase)
         assert proot.name == 'activiti-image-generator-7-201802-EA-sources.jar-extract'

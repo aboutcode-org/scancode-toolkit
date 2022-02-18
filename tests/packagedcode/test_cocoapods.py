@@ -20,7 +20,7 @@ class TestCocoaPodspec(PackageTester):
 
     def test_cocoapods_can_detect_podspec(self):
         test_file = self.get_test_loc('cocoapods/podspec/BadgeHub.podspec')
-        assert Podspec.is_manifest(test_file)
+        assert Podspec.is_package_data(test_file)
 
     def test_cocoapods_can_parse_BadgeHub(self):
         test_file = self.get_test_loc('cocoapods/podspec/BadgeHub.podspec')
@@ -58,7 +58,7 @@ class TestCocoaPodspecJson(PackageTester):
 
     def test_cocoapods_can_detect_podspec_json(self):
         test_file = self.get_test_loc('cocoapods/podspec.json/FirebaseAnalytics.podspec.json')
-        assert PodspecJson.is_manifest(test_file)
+        assert PodspecJson.is_package_data(test_file)
 
     def test_cocoapods_can_parse_FirebaseAnalytics(self):
         test_file = self.get_test_loc('cocoapods/podspec.json/FirebaseAnalytics.podspec.json')
@@ -72,7 +72,7 @@ class TestCocoaPodfileLock(PackageTester):
 
     def test_cocoapods_can_detect_podfile_lock(self):
         test_file = self.get_test_loc('cocoapods/podfle.lock/braintree_ios_Podfile.lock')
-        assert PodfileLock.is_manifest(test_file)
+        assert PodfileLock.is_package_data(test_file)
 
     def test_cocoapods_can_parse_braintree_ios(self):
         test_file = self.get_test_loc('cocoapods/podfle.lock/braintree_ios_Podfile.lock')
