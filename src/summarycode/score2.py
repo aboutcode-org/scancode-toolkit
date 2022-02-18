@@ -7,19 +7,13 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from itertools import chain
-
 import attr
-from license_expression import Licensing
 
 from commoncode.datautils import Mapping
-from licensedcode.cache import get_licenses_db
-from licensedcode import models
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
-from summarycode import facet
 
 
 # Tracing flags
@@ -41,14 +35,80 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
+
 """
 A plugin to compute a licensing clarity score as designed in ClearlyDefined
 """
 
 
+@post_scan_impl
+class LicenseClarityScore2(PostScanPlugin):
+    """
+    Compute a License clarity score at the codebase level.
+    """
+    codebase_attributes = dict(license_clarity_score=Mapping(
+        help='Computed license clarity score as mapping containing the score '
+             'proper and each scoring elements.'))
+
+    sort_order = 110
+
+    options = [
+        PluggableCommandLineOption(('--license-clarity-score-2',),
+            is_flag=True,
+            default=False,
+            help='Compute a summary license clarity score at the codebase level.',
+            help_group=POST_SCAN_GROUP,
+            required_options=[
+                'classify',
+            ],
+        )
+    ]
+
+    def is_enabled(self, license_clarity_score_2, **kwargs):
+        return license_clarity_score_2
+
+    def process_codebase(self, codebase, license_clarity_score_2, **kwargs):
+        if TRACE:
+            logger_debug('LicenseClarityScore2:process_codebase')
+        score = calculate(codebase)
+        codebase.attributes.license_clarity_score['score'] = score
+
+
+def calculate(codebase):
+    """
+    Return a score for how well a codebase defined it's license
+    """
+    score = 0
+    declared_licenses = get_declared_license_info_in_key_files_from_top_level_dir(codebase)
+    declared_license_categories = get_license_categories(declared_licenses)
+    copyrights = get_copyrights_from_key_files(codebase)
+    other_licenses = get_other_licenses(codebase)
+
+    if declared_licenses:
+        score += 40
+
+    if check_declared_licenses(declared_licenses):
+        score += 40
+
+    if check_for_license_texts(declared_licenses):
+        score += 10
+
+    if copyrights:
+        score += 10
+
+    is_permissively_licensed = 'Copyleft' not in declared_license_categories
+    if is_permissively_licensed:
+        contains_copyleft_licenses = check_for_copyleft(other_licenses)
+        if contains_copyleft_licenses:
+            score -= 20
+
+    return score
+
+
 # minimum score to consider a license detection as good.
 
 # MIN_GOOD_LICENSE_SCORE = 80
+
 
 @attr.s(slots=True)
 class LicenseFilter(object):
@@ -104,67 +164,7 @@ def is_good_license(detected_license):
     return False
 
 
-@post_scan_impl
-class LicenseClarityScore2(PostScanPlugin):
-    """
-    Compute a License clarity score at the codebase level.
-    """
-    codebase_attributes = dict(license_clarity_score=Mapping(
-        help='Computed license clarity score as mapping containing the score '
-             'proper and each scoring elements.'))
-
-    sort_order = 110
-
-    options = [
-        PluggableCommandLineOption(('--license-clarity-score-2',),
-            is_flag=True,
-            default=False,
-            help='Compute a summary license clarity score at the codebase level.',
-            help_group=POST_SCAN_GROUP,
-            required_options=[
-                'classify',
-            ],
-        )
-    ]
-
-    def is_enabled(self, license_clarity_score_2, **kwargs):
-        return license_clarity_score_2
-
-    def process_codebase(self, codebase, license_clarity_score_2, **kwargs):
-        if TRACE:
-            logger_debug('LicenseClarityScore2:process_codebase')
-        scoring_elements = compute_license_score(codebase)
-        codebase.attributes.license_clarity_score.update(scoring_elements)
-
-
-def compute_license_score(codebase):
-    """
-    Return a mapping of scoring elements and a license clarity score computed at
-    the codebase level.
-    """
-
-    score = 0
-    scoring_elements = dict(score=score)
-
-    for element in SCORING_ELEMENTS:
-        element_score = element.scorer(codebase)
-        if element.is_binary:
-            scoring_elements[element.name] = bool(element_score)
-            element_score = 1 if element_score else 0
-        else:
-            scoring_elements[element.name] = round(element_score, 2) or 0
-
-        score += int(element_score * element.weight)
-        if TRACE:
-            logger_debug(
-                'compute_license_score: element:', element, 'element_score: ',
-                element_score, ' new score:', score)
-
-    scoring_elements['score'] = score or 0
-    return scoring_elements
-
-
-def get_declared_license_keys_in_key_files_from_top_level_dir(codebase):
+def get_declared_license_info_in_key_files_from_top_level_dir(codebase):
     """
     Return a list of "declared" license keys from the expressions as detected in
     key files from top-level directories.
@@ -183,36 +183,29 @@ def get_declared_license_keys_in_key_files_from_top_level_dir(codebase):
             if not child.is_key_file:
                 continue
             for detected_license in getattr(child, 'licenses', []) or []:
-                if not is_good_license(detected_license):
-                    declared.append('unknown')
-                else:
-                    declared.append(detected_license['key'])
+                declared.append(detected_license)
     return declared
 
 
-def get_license_text_from_key_files(codebase):
+def get_other_licenses(codebase):
     """
-    Return a list of license keys that were detected from license text.
+    Return a list of detected licenses from non-key files under a top-level directory
     """
-    license_keys_with_text = []
+    other_licenses = []
     for resource in codebase.walk(topdown=True):
         if not (resource.is_dir and resource.is_top_level):
             continue
         for child in resource.walk(codebase):
-            if not child.is_key_file:
+            if child.is_key_file:
                 continue
             for detected_license in getattr(child, 'licenses', []) or []:
-                matched_rule = detected_license.get('matched_rule', {})
-                is_license_text = matched_rule.get('is_license_text')
-                if not is_license_text:
-                    continue
-                license_keys_with_text.append(detected_license['key'])
-    return license_keys_with_text
+                other_licenses.append(detected_license)
+    return other_licenses
 
 
 def get_copyrights_from_key_files(codebase):
     """
-    Return a list of copyright statements from key files
+    Return a list of copyright statements from key files from a top-level directory
     """
     copyright_statements = []
     for resource in codebase.walk(topdown=True):
@@ -228,37 +221,54 @@ def get_copyrights_from_key_files(codebase):
     return copyright_statements
 
 
-@attr.s
-class ScoringElement(object):
-    is_binary = attr.ib()
-    name = attr.ib()
-    scorer = attr.ib()
-    weight = attr.ib()
+def get_license_categories(license_infos):
+    """
+    Return a list of license category strings from `license_infos`
+    """
+    license_categories = []
+    for license_info in license_infos:
+        category = license_info.get('category', '')
+        if category not in license_categories:
+            license_categories.append(category)
+    return license_categories
 
 
-declared = ScoringElement(
-    is_binary=True,
-    name='declared',
-    scorer=get_declared_license_keys_in_key_files_from_top_level_dir,
-    weight=40)
+def check_for_license_texts(declared_licenses):
+    """
+    Check if any license in `declared_licenses` is from a license text or notice.
+
+    If so, return True. Otherwise, return False.
+    """
+    for declared_license in declared_licenses:
+        matched_rule = declared_license.get('matched_rule', {})
+        if any([
+            matched_rule.get('is_license_text', False),
+            matched_rule.get('is_license_notice', False),
+        ]):
+            return True
+    return False
 
 
-license_text = ScoringElement(
-    is_binary=True,
-    name='license_text',
-    scorer=get_license_text_from_key_files,
-    weight=10)
+def check_declared_licenses(declared_licenses):
+    """
+    Check whether or not all the licenses in `declared_licenses` are good.
+
+    If so, return True. Otherwise, return False.
+    """
+    return all(
+        is_good_license(declared_license)
+        for declared_license
+        in declared_licenses
+    )
 
 
-copyrights = ScoringElement(
-    is_binary=True,
-    name='copyrights',
-    scorer=get_copyrights_from_key_files,
-    weight=10)
+def check_for_copyleft(other_licenses):
+    """
+    Check if there is a copyleft license in `other_licenses`.
 
-
-SCORING_ELEMENTS = [
-    declared,
-    license_text,
-    copyrights,
-]
+    If so, return True. Otherwise, return False.
+    """
+    for license_info in other_licenses:
+        if license_info.get('category', '') in ('Copyleft',):
+            return True
+    return False
