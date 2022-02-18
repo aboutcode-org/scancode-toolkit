@@ -76,7 +76,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:cran/codetools@0.2-16",
-      "package_manifest_paths": [
+      "package_data_paths": [
         "DESCRIPTION"
       ],
       "files": [
@@ -92,7 +92,7 @@
     {
       "path": "DESCRIPTION",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "cran",
           "namespace": null,

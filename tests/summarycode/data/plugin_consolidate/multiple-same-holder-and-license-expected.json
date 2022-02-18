@@ -67,7 +67,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
@@ -204,7 +204,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
@@ -341,7 +341,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"

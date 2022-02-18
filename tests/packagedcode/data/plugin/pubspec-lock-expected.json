@@ -24,7 +24,7 @@
     {
       "path": "dart-pubspec.lock",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "pubspec",
           "namespace": null,

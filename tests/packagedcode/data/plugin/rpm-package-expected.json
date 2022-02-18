@@ -54,7 +54,7 @@
       ],
       "extra_data": {},
       "package_uuid": "pkg:rpm/alfandega@2.0-1.7.3",
-      "package_manifest_paths": [
+      "package_data_paths": [
         "alfandega-2.0-1.7.3.noarch.rpm"
       ],
       "files": [
@@ -70,7 +70,7 @@
     {
       "path": "alfandega-2.0-1.7.3.noarch.rpm",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "rpm",
           "namespace": null,

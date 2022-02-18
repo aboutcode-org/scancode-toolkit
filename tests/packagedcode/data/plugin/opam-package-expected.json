@@ -24,7 +24,7 @@
     {
       "path": "ocaml-variants.opam",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "opam",
           "namespace": null,

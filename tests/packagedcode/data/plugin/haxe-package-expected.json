@@ -65,7 +65,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:haxe/hxsocketio@0.1.0",
-      "package_manifest_paths": [
+      "package_data_paths": [
         "haxelib.json"
       ],
       "files": [
@@ -81,7 +81,7 @@
     {
       "path": "haxelib.json",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "haxe",
           "namespace": null,

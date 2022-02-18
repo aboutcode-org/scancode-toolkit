@@ -70,7 +70,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
-      "package_manifest_paths": [
+      "package_data_paths": [
         "+COMPACT_MANIFEST"
       ],
       "files": [
@@ -86,7 +86,7 @@
     {
       "path": "+COMPACT_MANIFEST",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "freebsd",
           "namespace": null,

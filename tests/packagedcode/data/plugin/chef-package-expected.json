@@ -69,7 +69,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:chef/301@0.1.0",
-      "package_manifest_paths": [
+      "package_data_paths": [
         "metadata.json",
         "metadata.rb"
       ],
@@ -87,7 +87,7 @@
     {
       "path": "metadata.json",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "chef",
           "namespace": null,
@@ -150,7 +150,7 @@
     {
       "path": "metadata.rb",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "chef",
           "namespace": null,

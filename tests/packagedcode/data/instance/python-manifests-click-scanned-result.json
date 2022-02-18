@@ -72,7 +72,7 @@
   "source_packages": [],
   "extra_data": {},
   "package_uuid": null,
-  "package_manifest_paths": [],
+  "package_data_paths": [],
   "files": [],
   "purl": "pkg:pypi/click@8.0.1",
   "repository_homepage_url": "https://pypi.org/project/https://pypi.org",

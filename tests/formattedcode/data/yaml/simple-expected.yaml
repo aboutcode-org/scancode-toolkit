@@ -46,7 +46,7 @@ files:
     copyrights: []
     holders: []
     authors: []
-    package_manifests: []
+    package_data: []
     for_packages: []
     files_count: 1
     dirs_count: '0'
@@ -82,7 +82,7 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_manifests: []
+    package_data: []
     for_packages: []
     files_count: '0'
     dirs_count: '0'

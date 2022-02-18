@@ -113,7 +113,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "facets": [],
       "is_legal": false,
@@ -151,7 +151,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "facets": [],
       "is_legal": false,
@@ -189,7 +189,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "facets": [],
       "is_legal": false,
@@ -227,7 +227,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "facets": [],
       "is_legal": false,
@@ -306,7 +306,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "facets": [
         "core"
@@ -346,7 +346,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "facets": [
         "core"
@@ -386,7 +386,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "facets": [],
       "is_legal": false,
@@ -424,7 +424,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "facets": [],
       "is_legal": false,
@@ -462,7 +462,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "facets": [],
       "is_legal": false,
@@ -553,7 +553,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "facets": [
         "core"
@@ -605,7 +605,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "facets": [
         "core"

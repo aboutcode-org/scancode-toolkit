@@ -64,7 +64,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:winexe/Microsoft%C2%AE%20Windows%C2%AE%20Operating%20System@10.0.17763.1697",
-      "package_manifest_paths": [
+      "package_data_paths": [
         "tbs.sys"
       ],
       "files": [
@@ -80,7 +80,7 @@
     {
       "path": "tbs.sys",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "winexe",
           "namespace": null,

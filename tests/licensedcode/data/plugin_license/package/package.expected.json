@@ -86,7 +86,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:npm/busboy@0.2.14",
-      "package_manifest_paths": [
+      "package_data_paths": [
         "package.json"
       ],
       "files": [
@@ -146,7 +146,7 @@
         "mit"
       ],
       "percentage_of_license_text": 4.05,
-      "package_manifests": [
+      "package_data": [
         {
           "type": "npm",
           "namespace": null,

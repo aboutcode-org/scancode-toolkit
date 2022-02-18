@@ -9,7 +9,7 @@ Options:
 
   primary scans:
     -l, --license    Scan <input> for licenses.
-    -p, --package    Scan <input> for package manifests and build scripts.
+    -p, --package    Scan <input> for package data and build scripts.
     -c, --copyright  Scan <input> for copyrights.
 
   other scans:

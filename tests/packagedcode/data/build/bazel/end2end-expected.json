@@ -22,14 +22,14 @@
     {
       "path": "end2end",
       "type": "directory",
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/BUILD",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "bazel",
           "namespace": null,
@@ -73,42 +73,42 @@
     {
       "path": "end2end/subdir",
       "type": "directory",
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir/dir",
       "type": "directory",
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir/dir/file1",
       "type": "file",
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir/file1",
       "type": "file",
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2",
       "type": "directory",
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/BUILD",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "bazel",
           "namespace": null,
@@ -152,21 +152,21 @@
     {
       "path": "end2end/subdir2/file2",
       "type": "file",
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/subdir3",
       "type": "directory",
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "end2end/subdir2/subdir3/file2",
       "type": "file",
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "scan_errors": []
     }

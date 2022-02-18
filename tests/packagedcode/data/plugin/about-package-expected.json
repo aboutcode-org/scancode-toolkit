@@ -24,7 +24,7 @@
     {
       "path": "apipkg.ABOUT",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "about",
           "namespace": null,
@@ -78,7 +78,7 @@
     {
       "path": "appdirs.ABOUT",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "about",
           "namespace": null,

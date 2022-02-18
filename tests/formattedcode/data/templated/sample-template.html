@@ -245,7 +245,7 @@
     </table>
     {% endif %}
 
-    {% if files.package_manifests %}
+    {% if files.package_data %}
     <table>
       <caption>Package Information</caption>
       <thead>
@@ -257,7 +257,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for path, data in files.package_manifests.items() %}
+        {% for path, data in files.package_data.items() %}
           {% for row in data %}
             <tr>
               <td>{{ path }}</td>

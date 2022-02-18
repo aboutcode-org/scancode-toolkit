@@ -56,7 +56,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:npm/test-package@0.0.1",
-      "package_manifest_paths": [
+      "package_data_paths": [
         "component-package-build/package/package.json"
       ],
       "files": [
@@ -163,7 +163,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "consolidated_to": [],
       "files_count": 8,
@@ -196,7 +196,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "consolidated_to": [],
       "files_count": 1,
@@ -229,7 +229,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [
+      "package_data": [
         {
           "type": "buck",
           "namespace": null,
@@ -299,7 +299,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1",
@@ -388,7 +388,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
@@ -476,7 +476,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
@@ -564,7 +564,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
@@ -652,7 +652,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "consolidated_to": [
         "inc_nexb_1"
@@ -687,7 +687,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "consolidated_to": [
         "apache_software_1",
@@ -776,7 +776,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [
+      "package_data": [
         {
           "type": "npm",
           "namespace": null,
@@ -905,7 +905,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [
         "pkg:npm/test-package@0.0.1"
       ],
@@ -993,7 +993,7 @@
         }
       ],
       "authors": [],
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [
         "pkg:npm/test-package@0.0.1"
       ],

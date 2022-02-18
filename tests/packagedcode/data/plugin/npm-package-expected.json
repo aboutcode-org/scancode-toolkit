@@ -81,7 +81,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:npm/cookie-signature@1.0.3",
-      "package_manifest_paths": [
+      "package_data_paths": [
         "package.json"
       ],
       "files": [
@@ -97,7 +97,7 @@
     {
       "path": "package.json",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "npm",
           "namespace": null,

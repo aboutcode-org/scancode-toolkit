@@ -24,28 +24,28 @@
     {
       "path": "info",
       "type": "directory",
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract",
       "type": "directory",
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract/recipe",
       "type": "directory",
-      "package_manifests": [],
+      "package_data": [],
       "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract/recipe/meta.yaml",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "conda",
           "namespace": null,

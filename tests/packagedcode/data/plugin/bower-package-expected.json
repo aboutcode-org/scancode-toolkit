@@ -91,7 +91,7 @@
       "source_packages": [],
       "extra_data": {},
       "package_uuid": "pkg:bower/blue-leaf",
-      "package_manifest_paths": [
+      "package_data_paths": [
         "bower.json"
       ],
       "files": [
@@ -107,7 +107,7 @@
     {
       "path": "bower.json",
       "type": "file",
-      "package_manifests": [
+      "package_data": [
         {
           "type": "bower",
           "namespace": null,

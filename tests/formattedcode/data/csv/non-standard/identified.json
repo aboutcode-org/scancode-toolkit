@@ -42,7 +42,7 @@
       "dirs_count": 0,
       "size_count": 0,
       "scan_errors": [],
-      "package_manifests": [
+      "package_data": [
         {
           "api_url": "/api/v2/packages/27a4509e-b755-4601-9998-a97782383eb0/",
           "absolute_url": "https://enterprise.dejacode.com/packages/nexB/27a4509e-b755-4601-9998-a97782383eb0/",
