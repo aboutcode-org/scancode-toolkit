@@ -1,0 +1,2 @@
+is_false_positive: yes
+notes: See in https://raw.githubusercontent.com/google/guava/v31.0.1/guava/src/com/google/common/graph/StandardValueGraph.java

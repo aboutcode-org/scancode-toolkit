@@ -1,0 +1,14 @@
+key: vita-nuova-liberal
+short_name: Vita Nuova Liberal Source License
+name: Vita Nuova Liberal Source License
+category: Copyleft
+owner: Vita Nuova
+homepage_url: https://web.archive.org/web/20070227005341/https://www.vitanuova.com/inferno/liblicence.txt
+spdx_license_key: LicenseRef-scancode-vita-nuova-liberal
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/Vita_Nuova_Liberal_Source_License
+other_urls:
+    - https://github.com/search?q="VITA+NUOVA+LIBERAL+SOURCE+LICENCE"&type=code
+    - https://github.com/dsummerfield/acme-sac/blob/a37310031957f93b176f483b33c10095d341af86/LICENCE#L1
+ignorable_urls:
+    - http://www.vitanuova.com/

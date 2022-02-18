@@ -1,0 +1,1 @@
+https://opensource.org/licenses/Python-2.0

@@ -1,0 +1,16 @@
+key: losla
+short_name: LOSLA
+name: LEGO Open Source License Agreement
+category: Copyleft Limited
+owner: LEGO Group
+homepage_url: https://fedoraproject.org/wiki/Licensing/LOSLA
+spdx_license_key: LicenseRef-scancode-losla
+text_urls:
+    - https://raw.githubusercontent.com/nxt3-org/nxt3/master/firmware/core/LICENSE.pdf
+faq_url: https://fedoraproject.org/wiki/Licensing/LOSLA#License_Notes
+ignorable_copyrights:
+    - (c) 2006
+ignorable_authors:
+    - National Instruments
+ignorable_urls:
+    - http://mindstorms.lego.com/Overview/NXTreme.aspx

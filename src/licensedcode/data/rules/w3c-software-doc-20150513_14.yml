@@ -1,0 +1,5 @@
+license_expression: w3c-software-doc-20150513
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://licenses.nuget.org/W3C-20150513
