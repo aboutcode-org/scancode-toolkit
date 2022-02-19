@@ -122,6 +122,9 @@ def compute_license_score(codebase):
 
 
 def check_ambiguous_license_expression(declared_license_expressions):
+    if not declared_license_expressions:
+        return False
+
     unique_declared_license_expressions = set(declared_license_expressions)
     if len(unique_declared_license_expressions) == 1:
         return False
@@ -331,6 +334,8 @@ def check_declared_licenses(declared_licenses):
 
     If so, return True. Otherwise, return False.
     """
+    if not declared_licenses:
+        return False
     return all(
         is_good_license(declared_license)
         for declared_license

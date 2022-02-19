@@ -1,0 +1,328 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--classify": true,
+        "--copyright": true,
+        "--info": true,
+        "--json": "<file>",
+        "--license": true,
+        "--license-clarity-score-2": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "2.0.0",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "spdx_license_list_version": "3.16",
+        "files_count": 3
+      }
+    }
+  ],
+  "license_clarity_score": {
+    "score": 100,
+    "declared_license": true,
+    "precise_license_detection": true,
+    "has_license_text": true,
+    "declared_copyrights": true,
+    "conflicting_license_categories": false,
+    "ambigous_compound_licensing": false
+  },
+  "files": [
+    {
+      "path": "basic",
+      "type": "directory",
+      "name": "basic",
+      "base_name": "basic",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "files_count": 3,
+      "dirs_count": 0,
+      "size_count": 4286,
+      "scan_errors": []
+    },
+    {
+      "path": "basic/README.md",
+      "type": "file",
+      "name": "README.md",
+      "base_name": "README",
+      "extension": ".md",
+      "size": 1348,
+      "sha1": "f4399249b905c17338eb06776a7205d6f643d396",
+      "md5": "d897358d498fd2dbb1efedfa297fc0f3",
+      "sha256": "63940bc96c0feeef3b22b96d7d6a4873cdb7f12151ce3362967afdc7f8ec6698",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "mit",
+          "score": 100.0,
+          "name": "MIT License",
+          "short_name": "MIT License",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "MIT",
+          "homepage_url": "http://opensource.org/licenses/mit-license.php",
+          "text_url": "http://opensource.org/licenses/mit-license.php",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+          "spdx_license_key": "MIT",
+          "spdx_url": "https://spdx.org/licenses/MIT",
+          "start_line": 20,
+          "end_line": 37,
+          "matched_rule": {
+            "identifier": "mit.LICENSE",
+            "license_expression": "mit",
+            "licenses": [
+              "mit"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 161,
+            "matched_length": 161,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        }
+      ],
+      "license_expressions": [
+        "mit"
+      ],
+      "percentage_of_license_text": 79.31,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) Example, Inc.",
+          "start_line": 18,
+          "end_line": 18
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Example, Inc.",
+          "start_line": 18,
+          "end_line": 18
+        }
+      ],
+      "authors": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": true,
+      "is_key_file": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "basic/index.js",
+      "type": "file",
+      "name": "index.js",
+      "base_name": "index",
+      "extension": ".js",
+      "size": 2109,
+      "sha1": "1ef59e75d33ed8b7b43548fd55843d894db4b910",
+      "md5": "1385905becfdfd8d777342fcb1242d83",
+      "sha256": "1780e44cd2317e04461131b34ea6fa5b1da4a571123c9a391ddc3b865c456298",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "JavaScript",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "mit",
+          "score": 100.0,
+          "name": "MIT License",
+          "short_name": "MIT License",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "MIT",
+          "homepage_url": "http://opensource.org/licenses/mit-license.php",
+          "text_url": "http://opensource.org/licenses/mit-license.php",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+          "spdx_license_key": "MIT",
+          "spdx_url": "https://spdx.org/licenses/MIT",
+          "start_line": 2,
+          "end_line": 19,
+          "matched_rule": {
+            "identifier": "mit.LICENSE",
+            "license_expression": "mit",
+            "licenses": [
+              "mit"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 161,
+            "matched_length": 161,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        }
+      ],
+      "license_expressions": [
+        "mit"
+      ],
+      "percentage_of_license_text": 64.4,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2007 nexB Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "holders": [
+        {
+          "holder": "nexB Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "basic/package.json",
+      "type": "file",
+      "name": "package.json",
+      "base_name": "package",
+      "extension": ".json",
+      "size": 829,
+      "sha1": "003103b742ebfb1e76e80d9fc05ab0b3046f2ab6",
+      "md5": "bd8911e2d8af0caa689f76b9975761fd",
+      "sha256": "d27968b827780212a965387f5ec3421ee59a0bf9166847629db0e716e6d2d9c3",
+      "mime_type": "application/json",
+      "file_type": "JSON data",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "mit",
+          "score": 100.0,
+          "name": "MIT License",
+          "short_name": "MIT License",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "MIT",
+          "homepage_url": "http://opensource.org/licenses/mit-license.php",
+          "text_url": "http://opensource.org/licenses/mit-license.php",
+          "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+          "spdx_license_key": "MIT",
+          "spdx_url": "https://spdx.org/licenses/MIT",
+          "start_line": 7,
+          "end_line": 7,
+          "matched_rule": {
+            "identifier": "mit_30.RULE",
+            "license_expression": "mit",
+            "licenses": [
+              "mit"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        }
+      ],
+      "license_expressions": [
+        "mit"
+      ],
+      "percentage_of_license_text": 1.83,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Alexander Plavinski <alexander.plavinski@invision.de>",
+          "start_line": 6,
+          "end_line": 6
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}
