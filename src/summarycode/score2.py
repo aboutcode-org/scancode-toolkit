@@ -80,45 +80,66 @@ def compute_license_score(codebase):
     the codebase level.
     """
 
-    score = 0
-    scoring_elements = {'score': score}
+    scoring_elements = ScoringElements()
     declared_licenses = get_declared_license_info_from_top_level_key_files(codebase)
     declared_license_expressions = get_declared_license_expressions_from_top_level_key_files(codebase)
     declared_license_categories = get_license_categories(declared_licenses)
     copyrights = get_copyrights_from_key_files(codebase)
     other_licenses = get_other_licenses(codebase)
 
-    scoring_elements['declared_license'] = bool(declared_licenses)
+    scoring_elements.declared_license = bool(declared_licenses)
     if declared_licenses:
-        scoring_elements['score'] += 40
+        scoring_elements.score += 40
 
     precise_license_detection = check_declared_licenses(declared_licenses)
-    scoring_elements['precise_license_detection'] = precise_license_detection
+    scoring_elements.precise_license_detection = precise_license_detection
     if precise_license_detection:
-        scoring_elements['score'] += 40
+        scoring_elements.score += 40
 
     has_license_text = check_for_license_texts(declared_licenses)
-    scoring_elements['has_license_text'] = has_license_text
+    scoring_elements.has_license_text = has_license_text
     if has_license_text:
-        scoring_elements['score'] += 10
+        scoring_elements.score += 10
 
-    scoring_elements['declared_copyrights'] = bool(copyrights)
+    scoring_elements.declared_copyrights = bool(copyrights)
     if copyrights:
-        scoring_elements['score'] += 10
+        scoring_elements.score += 10
 
     is_permissively_licensed = 'Copyleft' not in declared_license_categories
     if is_permissively_licensed:
         contains_copyleft_licenses = check_for_copyleft(other_licenses)
-        scoring_elements['conflicting_license_categories'] = contains_copyleft_licenses
+        scoring_elements.conflicting_license_categories = contains_copyleft_licenses
         if contains_copyleft_licenses:
-            scoring_elements['score'] -= 20
+            scoring_elements.score -= 20
 
     ambigous_compound_licensing = check_ambiguous_license_expression(declared_license_expressions)
-    scoring_elements['ambigous_compound_licensing'] = ambigous_compound_licensing
+    scoring_elements.ambigous_compound_licensing = ambigous_compound_licensing
     if ambigous_compound_licensing:
-        scoring_elements['score'] -= 10
+        scoring_elements.score -= 10
 
-    return scoring_elements
+    return scoring_elements.to_dict()
+
+
+@attr.s()
+class ScoringElements:
+    score = attr.ib(default=0)
+    declared_license = attr.ib(default=False)
+    precise_license_detection = attr.ib(default=False)
+    has_license_text = attr.ib(default=False)
+    declared_copyrights = attr.ib(default=False)
+    conflicting_license_categories = attr.ib(default=False)
+    ambigous_compound_licensing = attr.ib(default=False)
+
+    def to_dict(self):
+        return {
+            'score': self.score,
+            'declared_license': self.declared_license,
+            'precise_license_detection': self.precise_license_detection,
+            'has_license_text': self.has_license_text,
+            'declared_copyrights': self.declared_copyrights,
+            'conflicting_license_categories': self.conflicting_license_categories,
+            'ambigous_compound_licensing': self.ambigous_compound_licensing
+        }
 
 
 def check_ambiguous_license_expression(declared_license_expressions):
