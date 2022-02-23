@@ -172,7 +172,8 @@ def check_json_scan(
     regen=False,
     remove_file_date=False,
     check_headers=False,
-    remove_package_uuid=False,
+    remove_instance_uuid=False,
+    ignore_instance_uuid=False,
 ):
     """
     Check the scan `result_file` JSON results against the `expected_file`
@@ -184,13 +185,19 @@ def check_json_scan(
 
     If `remove_file_date` is True, the file.date attribute is removed.
     If `check_headers` is True, the scan headers attribute is not removed.
+    If `remove_instance_uuid` is True, removes UUID qualifiers from instance UUIDs.
+    If `ignore_instance_uuid` is True, skips checking UUID qualifiers from instance UUIDs
+    and if also `regen` is True then regenerate expected file with old UUIDs present already.
     """
     results = load_json_result(result_file, remove_file_date)
 
-    if remove_package_uuid:
+    if remove_instance_uuid or ignore_instance_uuid:
         results = remove_uuid_from_scan(results)
 
     if regen:
+        if ignore_instance_uuid:
+            results = load_json_result(result_file, remove_file_date)
+
         with open(expected_file, 'w') as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
@@ -200,7 +207,7 @@ def check_json_scan(
         results.pop('headers', None)
         expected.pop('headers', None)
 
-    if remove_package_uuid:
+    if remove_instance_uuid or ignore_instance_uuid:
         expected = remove_uuid_from_scan(expected)
 
     # NOTE we redump the JSON as a YAML string for easier display of
@@ -213,48 +220,61 @@ def check_json_scan(
 
 def remove_uuid_from_scan(results):
     """
-    Remove `package_uuid` fields from all the packages in `packages`,
-    in `results`.
+    In `results` data mapping remove `uuid` qualifiers from all the
+    `package_uuid fields` in `packages` and `dependency_uuid` fields in `dependencies`.
 
     UUID fields are generated uniquely and would cause test failures
     when comparing results and expected.
     """
-    modified_results = results
-    packages = modified_results['packages']
-    files = modified_results['files']
-    modified_packages = []
-    modified_files = []
+    modified_results = results.copy()
 
-    for package in packages:
-        p_uuid = package.get('package_uuid', None)
-        if not p_uuid:
-            modified_packages.append(package)
-            continue
+    remove_uuid_from_instances(
+        instances=modified_results["dependencies"],
+        uuid_string_fields=["dependency_uuid", "for_package"],
+    )
 
-        purl = PackageURL.from_string(p_uuid)
-        purl.qualifiers.pop("uuid", None)
-        package["package_uuid"] = purl.to_string()
-        modified_packages.append(package)
+    remove_uuid_from_instances(
+        instances=modified_results["packages"],
+        uuid_string_fields=["package_uuid"],
+    )
 
-    for file_old in files:
-        p_uuids = file_old.get('for_packages', None)
-        if not p_uuids:
-            modified_files.append(file_old)
-            continue
+    remove_uuid_from_instances(
+        instances=modified_results["files"],
+        uuid_list_fields=["for_packages"],
+    )
 
-        new_p_uuids = []
-
-        for p_uuid in p_uuids:
-            purl = PackageURL.from_string(p_uuid)
-            purl.qualifiers.pop("uuid", None)
-            new_p_uuids.append(purl.to_string())
-        
-        file_old["for_packages"] = new_p_uuids
-        modified_files.append(file_old)
-
-    modified_results['packages'] = modified_packages
-    modified_results['files'] = modified_files
     return modified_results
+
+
+def remove_uuid_from_instances(instances, uuid_string_fields=[], uuid_list_fields=[]):
+    """
+    Remove UUIDs from each of the instances in a list of instances (like files/packages/dependencies),
+    given the list of `uuid_string_fields` and/or `uuid_list_fields` from which to remove the UUIDs from.
+    """
+    new_instances = []
+
+    for instance in instances:
+
+        for uuid_string_field in uuid_string_fields:
+            uuid_string = instance.get(uuid_string_field, None)
+            if uuid_string:
+                purl = PackageURL.from_string(uuid_string)
+                purl.qualifiers.pop("uuid", None)
+                instance[uuid_string_field] = purl.to_string()
+        
+        for uuid_list_field in uuid_list_fields:
+            uuid_list = instance.get(uuid_list_field, None)
+            if uuid_list:
+                new_uuids = []
+                for uuid in uuid_list:
+                    purl = PackageURL.from_string(uuid)
+                    purl.qualifiers.pop("uuid", None)
+                    new_uuids.append(purl.to_string())
+                instance[uuid_list_field] = new_uuids
+
+        new_instances.append(instance)
+
+    return new_instances
 
 
 def load_json_result(location, remove_file_date=False):

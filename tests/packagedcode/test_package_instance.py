@@ -17,7 +17,7 @@ from scancode.cli_test_utils import run_scan_click
 from packagedcode.pypi import PythonPackageInstance
 
 
-class TestPackageInstance(PackageTester):
+class TestPackageAndDependencyInstance(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_package_instance_scan_python(self):
@@ -25,7 +25,14 @@ class TestPackageInstance(PackageTester):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('instance/python-package-instance-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=False, remove_package_uuid=True)
+        check_json_scan(expected_file, result_file, regen=False, remove_instance_uuid=True)
+
+    def test_package_instance_scan_python_with_uuid(self):
+        test_dir = self.get_test_loc('instance/pypi')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('instance/python-package-instance-expected-with-uuid.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False, ignore_instance_uuid=True)
 
     def test_package_data_merge_click(self, regen=False):
         input_file = self.get_test_loc('instance/python-manifests-click-scanned.json')
