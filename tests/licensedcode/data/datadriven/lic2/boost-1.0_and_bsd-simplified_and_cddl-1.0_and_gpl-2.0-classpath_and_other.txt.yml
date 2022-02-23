@@ -53,7 +53,7 @@ license_expressions:
   - unknown-license-reference
   - x11-xconsortium
   - mpl-1.1
-  - x11-xconsortium_veillard
+  - x11-xconsortium-veillard
   - lgpl-2.1
   - other-permissive
   - apache-2.0
@@ -75,7 +75,7 @@ license_expressions:
   - unknown-license-reference
   - x11-xconsortium
   - mpl-1.1
-  - x11-xconsortium_veillard
+  - x11-xconsortium-veillard
   - lgpl-2.1
   - other-permissive
   - apache-2.0
@@ -86,7 +86,8 @@ license_expressions:
   - fsf-unlimited-no-warranty
   - mpl-1.1
   - unknown-license-reference
-  - openssl-ssleay
+  - openssl
+  - ssleay-windows
   - python
   - lgpl-2.0 OR apache-2.0
   - lgpl-3.0

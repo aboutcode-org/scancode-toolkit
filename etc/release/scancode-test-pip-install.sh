@@ -4,7 +4,7 @@
 #
 
 # ScanCode release test script
-# This script testss the installation of scancode from a wheel using the public PyPI
+# This script tests the installation of scancode from a wheel using the public PyPI
 
 set -e
 
@@ -14,7 +14,7 @@ set -x
 echo "## Build a wheel"
 ./configure --dev
 ./scancode --reindex-licenses
-bin/python setup.py bdist_wheel
+venv/bin/python setup.py bdist_wheel
 
 echo "###  Installing ScanCode release with pip ###"
 

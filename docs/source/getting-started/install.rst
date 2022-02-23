@@ -70,11 +70,11 @@ ScanCode needs a Python 3.6+ interpreter; We support all Python versions from
 
     - On Debian and Debian-based distros run::
 
-          sudo apt-get install python3-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-devlibpopt0
+          sudo apt-get install python3-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev libpopt0
 
     - On RPM-based distros run::
 
-          sudo yum install python3.6-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devellibpopt0
+          sudo yum install python3.6-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel libpopt0
 
     - On Fedora 22 and later run::
 
@@ -306,14 +306,14 @@ On Linux/Mac:
 - Open a terminal
 - cd to the clone directory
 - run ``./configure``
-- run ``source bin/activate``
+- run ``source venv/bin/activate``
 
 On Windows:
 
 - open a command prompt
 - cd to the clone directory
 - run ``configure``
-- run ``Scripts\activate``
+- run ``venv\Scripts\activate``
 
 Now you are ready to use the freshly configured scancode-toolkit.
 
@@ -336,14 +336,14 @@ The steps are:
 
 #. Create a Python virtual environment::
 
-    /usr/bin/python3 -m venv .
+    /usr/bin/python3 -m venv venv
 
 For more information on Python virtualenv, visit this
 `page <https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv>`_.
 
 #. Activate the virtual environment you just created::
 
-    source bin/activate
+    source venv/bin/activate
 
 #. Run ``pip install --upgrade pip setuptools wheel`` to install the latest
    versions of base utilities.

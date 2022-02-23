@@ -99,6 +99,10 @@ Before you start using Scancode
 
     Refer :ref:`synopsis_quickstart` to make sure you are using the scan command correctly.
 
+.. note::
+
+    For Windows, Refer to :ref:`windows_app_install` for installing easily using Releases.
+
 .. _newcomer_scan_codebase:
 
 Scan a Codebase

@@ -3,6 +3,6 @@ is_license_notice: yes
 referenced_filenames:
     - LICENSE.txt
 ignorable_urls:
-    - https://www.apache.org/licenses/LICENSE-2.0
     - http://www.gnu.org/licenses/
     - http://www.gnu.org/software/classpath/license.html
+    - https://www.apache.org/licenses/LICENSE-2.0

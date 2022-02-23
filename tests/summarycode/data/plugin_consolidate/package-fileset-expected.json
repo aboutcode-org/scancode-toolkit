@@ -16,7 +16,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.15",
         "files_count": 4
       }
     }
@@ -307,14 +307,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
@@ -397,14 +397,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
@@ -487,14 +487,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 1
         }

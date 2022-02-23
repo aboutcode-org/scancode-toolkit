@@ -2,5 +2,4 @@ license_expression: apache-1.1
 is_license_text: yes
 relevance: 100
 ignorable_authors:
-  - University of Technology
-
+    - University of Technology

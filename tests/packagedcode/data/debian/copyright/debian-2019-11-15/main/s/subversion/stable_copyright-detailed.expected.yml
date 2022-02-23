@@ -21,8 +21,9 @@ declared_license:
   - Unicode
   - AFL-3
 license_expression: (apache-2.0 AND apache-2.0) AND (bsd-new OR (apache-2.0 AND apache-2.0))
-  AND other-permissive AND bsd-new AND other-permissive AND (gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0-plus
-  AND gpl-3.0) AND afl-3.0 AND (mit AND unicode) AND bsd-simplified AND bsd-new AND bsd-simplified
+  AND markus-kuhn-license AND bsd-new AND other-permissive AND (gpl-2.0-plus AND gpl-2.0) AND
+  (gpl-3.0-plus AND gpl-3.0) AND afl-3.0 AND (mit AND unicode) AND bsd-simplified AND bsd-new
+  AND bsd-simplified
 copyright: |
   Apache Software Foundation
   2007 Max Bowsher
@@ -59,8 +60,8 @@ matches:
     matched_length: 28
     match_coverage: '100.0'
     rule_relevance: 100
-    identifier: other-permissive_wcwidth_1.RULE
-    license_expression: other-permissive
+    identifier: markus-kuhn-license.LICENSE
+    license_expression: markus-kuhn-license
     is_license_text: yes
     is_license_notice: no
     is_license_reference: no
@@ -318,8 +319,8 @@ matches:
     start_line: 177
     end_line: 208
     matcher: 1-hash
-    rule_length: 325
-    matched_length: 325
+    rule_length: 328
+    matched_length: 328
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: unicode_56.RULE
@@ -366,8 +367,8 @@ matches:
     start_line: 211
     end_line: 396
     matcher: 1-hash
-    rule_length: 1623
-    matched_length: 1623
+    rule_length: 1626
+    matched_length: 1626
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: afl-3.0.LICENSE

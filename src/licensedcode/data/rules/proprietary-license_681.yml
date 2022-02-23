@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_notice: yes
+notes: https://www.activevb.de/cgi-bin/tippupload/show/276/Erweiterbarer_Playlistparser in_German.
+ignorable_urls:
+    - http://www.activevb.de/

@@ -1,0 +1,7 @@
+key: scintilla
+short_name: Scintilla License
+name: Scintilla License
+category: Permissive
+owner: Scintilla Project
+homepage_url: https://www.scintilla.org/License.txt
+spdx_license_key: LicenseRef-scancode-scintilla

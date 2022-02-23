@@ -5,4 +5,5 @@ category: Unstated License
 owner: Unspecified
 notes: this is a generic license for Terms of Service such as aprivary terms and and other ToS-like
     agreement found in software but that are not directly licenses.
+is_generic: yes
 spdx_license_key: LicenseRef-scancode-generic-tos

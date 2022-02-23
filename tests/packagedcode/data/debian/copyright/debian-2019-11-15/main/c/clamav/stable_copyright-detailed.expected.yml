@@ -175,8 +175,8 @@ matches:
     start_line: 59
     end_line: 71
     matcher: 2-aho
-    rule_length: 119
-    matched_length: 119
+    rule_length: 121
+    matched_length: 121
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: openssl-exception-gpl-3.0-plus.LICENSE

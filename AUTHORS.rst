@@ -6,6 +6,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Agni Bhattacharyya @PyAgni
 - Akanksha Garg @akugarg
 - Alex Blekhman @a-tinsmith
+- Alexander Gschrei @agschrei
 - Armijn Hemmel @armijnhemel
 - Arnaud Jeansen @ajeans
 - Arnav Mandal @arnav-mandal1234
@@ -32,10 +33,13 @@ The following organizations or individuals have contributed to ScanCode:
 - Horie Issei @is2ei
 - James Ward @jamesward
 - Jelmer Vernooĳ @jelmer
+- Kunal Chhabra @kunalchhabra37
 - Jillian Daguil @jdaguil
 - Jiri Popelka @jpopelka
+- Jiyeong Seok @dd-jy
 - Johannes Najjar @joshovi
 - Jose Nazario @paralax
+- Kevin Ji @KevinJi22
 - Lemo Shi @lemoshi
 - Li Ha @linexb
 - Mankaran Singh @MankaranSingh
@@ -43,6 +47,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Maximilian Huber @maxhbr 
 - Michael Herzog @mjherzog
 - Michael Rupprecht @michaelrup
+- Mike Rombout @mrombout
 - Mrinal Paliwal @mnpw
 - nexB Inc. @nexB
 - Nirmal Sarswat @vivonk
@@ -93,3 +98,4 @@ The following organizations or individuals have contributed to ScanCode:
 - Yash Nisar @yash-nisar
 - Yash Sharma @yasharmaster
 - Yunus Rahbar @yns88
+- Stefano Zacchiroli @zacchiro

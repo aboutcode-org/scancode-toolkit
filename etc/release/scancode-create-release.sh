@@ -45,6 +45,7 @@ fi
 
 CLI_ARGS=$1
 
+BIN_DIR=venv/bin
 
 ################################
 # Run tests and exist with --test
@@ -236,7 +237,7 @@ function build_wheels {
     echo " "
     echo "## RELEASE: Building a wheel and a source distribution"
     clean_egg_info
-    bin/python setup.py $QUIET sdist bdist_wheel
+    $BIN_DIR/python setup.py $QUIET sdist bdist_wheel
 
     mv dist release/pypi
 
@@ -246,7 +247,7 @@ function build_wheels {
     mv setup.cfg setup-full.cfg
     cp setup-mini.cfg setup.cfg
     rm -rf build
-    bin/python setup.py $QUIET sdist bdist_wheel
+    $BIN_DIR/python setup.py $QUIET sdist bdist_wheel
     mv setup-full.cfg setup.cfg
 
     cp dist/* release/pypi/
@@ -297,7 +298,7 @@ function build_app_archive {
         fi
 
         # 1. Collect thirdparty deps only for the subset for this Python/operating_system
-        bin/python etc/release/fetch_requirements.py \
+        $BIN_DIR/python etc/scripts/fetch_requirements.py \
             --requirements-file=requirements.txt \
             --thirdparty-dir=thirdparty \
             --python-version=$python_app_version \
@@ -309,8 +310,8 @@ function build_app_archive {
         # For now as a shortcut we use the Python setup.py sdist to create a tarball.
         # This is hackish and we should instead use our own archiving code that
         # would take a distutils manifest-like input
-        bin/python setup.py $QUIET sdist --formats=$formats 
-        bin/python etc/release/scancode_rename_archives.py dist/ _py$python_app_version-$operating_system
+        $BIN_DIR/python setup.py $QUIET sdist --formats=$formats 
+        $BIN_DIR/python etc/release/scancode_rename_archives.py dist/ _py$python_app_version-$operating_system
         mkdir -p release/archives
         mv dist/* release/archives/
     fi
@@ -329,7 +330,7 @@ function build_source_archive {
     mkdir -p thirdparty
 
     # 1. collect thirdparty deps sources
-    bin/python etc/release/fetch_requirements.py \
+    $BIN_DIR/python etc/scripts/fetch_requirements.py \
         --requirements-file=requirements.txt \
         --thirdparty-dir=thirdparty \
         --with-about \
@@ -341,8 +342,8 @@ function build_source_archive {
     # This is hackish and we should instead use our own archiving code that
     # would take a distutils manifest-like input
 
-    bin/python setup.py $QUIET sdist --formats=xztar
-    bin/python etc/release/scancode_rename_archives.py dist/ $src _sources
+    $BIN_DIR/python setup.py $QUIET sdist --formats=xztar
+    $BIN_DIR/python etc/release/scancode_rename_archives.py dist/ $src _sources
     mkdir -p release/archives
     mv dist/* release/archives/
 }
@@ -359,12 +360,12 @@ if [ "$CLI_ARGS" != "--continue" ]; then
     echo "## RELEASE: Clean and configure, then regen license index"
     ./configure --clean
     ./configure --local 
-    source bin/activate
+    source $BIN_DIR/activate
     scancode --reindex-licenses
 
-    echo "## RELEASE: Install release requirements"
+    echo "## RELEASE: Install utilities requirements"
     # We do not need a full env for releasing
-    bin/pip install $QUIET -r etc/release/requirements.txt
+    $BIN_DIR/pip install $QUIET -r etc/scripts/requirements.txt
 else
     echo "############# Continuing previous release creation #############################"
 fi

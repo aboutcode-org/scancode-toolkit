@@ -1,0 +1,13 @@
+key: android-sdk-2021
+short_name: Android SDK License 2021
+name: Android Software Development Kit License Agreement 2021
+category: Proprietary Free
+owner: Google
+homepage_url: https://developer.android.com/ndk/downloads#lts-downloads
+spdx_license_key: LicenseRef-scancode-android-sdk-2021
+ignorable_urls:
+    - https://developer.android.com/reference/android/speech/RecognitionService
+    - https://policies.google.com/privacy
+    - https://privacy.google.com/businesses/gdprprocessorterms
+    - https://source.android.com/
+    - https://source.android.com/compatibility

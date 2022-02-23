@@ -1,0 +1,4 @@
+license_expression: other-permissive
+is_license_text: yes
+minimum_coverage: 90
+notes: legacy openssl-like rare license seen in  http://www.odbms.org/wp-content/uploads/2014/02/oqlg.zip

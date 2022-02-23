@@ -3,5 +3,8 @@ short_name: X11-Style (FSF)
 name: X11-Style (FSF)
 category: Permissive
 owner: Free Software Foundation (FSF)
-spdx_license_key: LicenseRef-scancode-x11-fsf
+spdx_license_key: X11-distribute-modifications-variant
+other_spdx_license_keys:
+    - LicenseRef-scancode-x11-fsf
 minimum_coverage: 80
+notes: named by SPDX as "X11 License Distribution Modification Variant"

@@ -166,24 +166,24 @@
       "percentage_of_license_text": 37.5,
       "copyrights": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 2
         },
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 2
         },
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
@@ -291,24 +291,24 @@
       "percentage_of_license_text": 37.5,
       "copyrights": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 2
         },
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 2
         },
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }

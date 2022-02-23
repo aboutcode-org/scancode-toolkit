@@ -10,9 +10,8 @@
 from functools import partial
 import textwrap
 
-
 """
-Utility function to trace matched texts.
+Utility function to trace matched texts used for tracing and testing.
 """
 
 
@@ -28,8 +27,10 @@ def get_texts(match, width=80, margin=0):
     """
     qtokens = match.matched_text(whole_lines=False).split()
     mqt = format_text(tokens=qtokens, width=width, margin=margin)
-
-    itokens = matched_rule_tokens_str(match)
+    if match.matcher == '6-unknown':
+        itokens = match.rule.text().split()
+    else:
+        itokens = matched_rule_tokens_str(match)
     mit = format_text(tokens=itokens, width=width, margin=margin)
 
     return mqt, mit
@@ -54,12 +55,13 @@ def format_text(tokens, width=80, margin=4):
 def matched_rule_tokens_str(match):
     """
     Return an iterable of matched rule token strings given a match.
-    Punctuation is removed, spaces are normalized (new line is replaced by a space),
-    case is preserved.
+
+    Punctuation is removed, spaces are normalized (new line is replaced by a
+    space), case is not preserved.
     """
     for pos, token in enumerate(match.rule.tokens()):
         if match.ispan.start <= pos <= match.ispan.end:
             if pos in match.ispan:
                 yield token
             else:
-                yield '<%s>' % token
+                yield '<{}>'.format(token)

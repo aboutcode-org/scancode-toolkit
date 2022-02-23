@@ -167,7 +167,7 @@
       "holders": [],
       "authors": [
         {
-          "value": "Alexander Plavinski <alexander.plavinski@invision.de>",
+          "author": "Alexander Plavinski <alexander.plavinski@invision.de>",
           "start_line": 6,
           "end_line": 6
         }

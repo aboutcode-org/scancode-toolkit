@@ -1,0 +1,10 @@
+key: dl-de-by-nc-1-0-de
+language: de
+short_name: dl-de/by-nc-1-0-de
+name: Datenlizenz Deutschland - Namensnennung - nicht kommerziell - Version 1.0 - Deutsch
+category: Free Restricted
+owner: govdata.de
+homepage_url: https://www.govdata.de/dl-de/by-nc-1-0
+spdx_license_key: LicenseRef-scancode-dl-de-by-nc-1-0-de
+other_urls:
+    - https://www.dcat-ap.de/def/licenses/

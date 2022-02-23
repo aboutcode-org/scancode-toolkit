@@ -787,8 +787,8 @@ matches:
     start_line: 350
     end_line: 377
     matcher: 1-hash
-    rule_length: 251
-    matched_length: 251
+    rule_length: 252
+    matched_length: 252
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: gpl-3.0-plus_with_autoconf-macro-exception_6.RULE

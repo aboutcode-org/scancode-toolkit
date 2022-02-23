@@ -11,7 +11,6 @@ import json
 import os
 from unittest.case import expectedFailure
 from unittest.case import skipIf
-import dparse
 
 import pytest
 
@@ -238,20 +237,18 @@ class TestPypiUnpackedSdist(PackageTester):
         self.check_packages(package, expected_loc, regen=False)
 
 
-class TestPyPiRequirements(PackageTester):
+class TestRequirementsFile(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_python_requirements_is_package_data(self):
         test_file = self.get_test_loc('pypi/requirements_txt/basic/requirements.txt')
         assert pypi.RequirementsFile.is_package_data(test_file)
 
-    def test_parse_with_dparse_requirements(self):
+    def test_get_requirements_txt_dependencies(self):
         test_file = self.get_test_loc('pypi/requirements_txt/simple/requirements.txt')
         dependencies = [
             d.to_dict()
-            for d in pypi.parse_with_dparse(
-                location=test_file, dependency_type=dparse.filetypes.requirements_txt
-            )
+            for d in pypi.get_requirements_txt_dependencies(location=test_file)
         ]
         expected_loc = self.get_test_loc('pypi/requirements_txt/simple/output.expected.json')
         check_result_equals_expected_json(dependencies, expected_loc, regen=False)
@@ -304,11 +301,7 @@ class TestPyPiRequirements(PackageTester):
         expected_loc = self.get_test_loc('pypi/requirements_txt/double_extras/output.expected.json')
         self.check_packages(package, expected_loc, regen=False)
 
-    @expectedFailure
     def test_parse_dependency_file_repeated(self):
-        # FAILURE: dparse library wrongly detect the first of two repeated
-        # dependencies we should return only a single value which should be the
-        # last one
         test_file = self.get_test_loc('pypi/requirements_txt/repeated/requirements.txt')
         package = pypi.RequirementsFile.recognize(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/repeated/output.expected.json')
@@ -368,6 +361,12 @@ class TestPyPiRequirements(PackageTester):
         expected_loc = self.get_test_loc('pypi/requirements_txt/vcs-git/output.expected.json')
         self.check_packages(package, expected_loc, regen=False)
 
+    def test_parse_dependency_file_with_invalid_does_not_fail(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/invalid_spec/requirements.txt')
+        package = pypi.RequirementsFile.recognize(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/invalid_spec/output.expected.json')
+        self.check_packages(package, expected_loc, regen=False)
+
 
 class TestPyPiPipfile(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -402,29 +401,40 @@ class TestPyPiPipfile(PackageTester):
         expected_loc = self.get_test_loc('pypi/pipfile.lock/sample5/Pipfile.lock-expected.json')
         self.check_packages(package, expected_loc, regen=False)
 
+    def test_file_type(self):
+        filename = pypi.get_dparse2_supported_file_name('Pipfile.lock')
+        assert filename == 'Pipfile.lock'
 
-class TestRequirementsFiletype(object):
 
-    requirement_files = [
-        ('requirements.txt', 'requirements.txt'),
-        ('sample-requirements.txt', 'requirements.txt'),
-        ('requirements-test.txt', 'requirements.txt'),
-        ('sample-requirements-test.txt', 'requirements.txt'),
-        ('requirements-dev.txt', 'requirements.txt'),
-        ('sample-requirements-dev.txt', 'requirements.txt'),
-        ('requirements.in', 'requirements.txt'),
-        ('sample-requirements.in', 'requirements.txt'),
-        ('requirements-test.in', 'requirements.txt'),
-        ('sample-requirements-test.in', 'requirements.txt'),
-        ('requirements-dev.in', 'requirements.txt'),
-        ('sample-requirements-dev.in', 'requirements.txt'),
-        ('Pipfile.lock', 'Pipfile.lock')
+class TestIsRequirementsFile(object):
+
+    requirement_location = [
+        'requirements.txt',
+        'requirement.txt',
+        'sample-requirements.txt',
+        'requirements-test.txt',
+        'sample-requirements-test.txt',
+        'requirements-dev.txt',
+        'sample-requirements-dev.txt',
+        'requirements.in',
+        'requirement.in',
+        'sample-requirements.in',
+        'requirements-test.in',
+        'sample-requirements-test.in',
+        'requirements-dev.in',
+        'sample-requirements-dev.in',
+        'requirements/dev.pip',
+        'requirements/test.txt',
+        'requirements/dev.in',
     ]
 
-    @pytest.mark.parametrize('filename, expected_filename', requirement_files)
-    def test_file_type(self, filename, expected_filename):
-        filename = pypi.get_dparse_dependency_type(filename)
-        assert filename == expected_filename
+    @pytest.mark.parametrize('location', requirement_location)
+    def test_is_requirements_file(self, location):
+        assert pypi.is_requirements_file(location)
+
+    def test_is_not_requirements_file(self):
+        assert not pypi.is_requirements_file('req.txt')
+        assert not pypi.is_requirements_file('requiremenst.py')
 
 
 def get_setup_py_test_files(test_dir):

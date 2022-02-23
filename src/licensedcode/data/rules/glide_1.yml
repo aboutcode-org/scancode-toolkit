@@ -1,0 +1,4 @@
+license_expression: glide
+is_license_notice: yes
+ignorable_emails:
+    - info@3dfx.com

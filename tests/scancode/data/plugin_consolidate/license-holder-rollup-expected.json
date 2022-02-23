@@ -261,14 +261,14 @@
       "percentage_of_license_text": 44.44,
       "copyrights": [
         {
-          "value": "Copyright (c) omega.com",
+          "copyright": "Copyright (c) omega.com",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "omega.com",
+          "holder": "omega.com",
           "start_line": 1,
           "end_line": 2
         }
@@ -440,14 +440,14 @@
       "percentage_of_license_text": 44.44,
       "copyrights": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
@@ -588,14 +588,14 @@
       "percentage_of_license_text": 55.56,
       "copyrights": [
         {
-          "value": "Copyright (c) Oracle Corp.",
+          "copyright": "Copyright (c) Oracle Corp.",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Oracle Corp.",
+          "holder": "Oracle Corp.",
           "start_line": 1,
           "end_line": 2
         }

@@ -1,0 +1,8 @@
+key: app-s2p
+short_name: App::s2p License
+name: App::s2p License
+spdx_license_key: App-s2p
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/App-s2p
+category: Permissive
+owner: Unspecified

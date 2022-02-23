@@ -1,6 +1,7 @@
 license_expression: bsd-new AND bsd-simplified AND (artistic-1.0 OR gpl-1.0-plus OR lgpl-2.0-plus)
 is_license_notice: yes
 relevance: 100
+minimum_coverage: 90
 referenced_filenames:
     - BSD.txt
     - Artistic.txt

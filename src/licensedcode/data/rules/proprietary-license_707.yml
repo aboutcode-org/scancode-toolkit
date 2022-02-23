@@ -1,0 +1,8 @@
+license_expression: proprietary-license
+is_license_text: yes
+minimum_coverage: 95
+notes: Very close to sun-jsr-spec-04-2006 and rarely seen
+ignorable_copyrights:
+    - Copyright 2002, 2003 BEA Systems, Inc. 2315 North First Street, San Jose CA, 95131
+ignorable_holders:
+    - BEA Systems, Inc. 2315 North First Street, San Jose CA, 95131

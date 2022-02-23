@@ -50,6 +50,8 @@ Options:
     --debian FILE           Write scan output in machine-readable Debian copyright
                             format to FILE.
     --custom-template FILE  Use this Jinja template FILE as a custom template.
+    --cyclonedx FILE        Write scan output in CycloneDX JSON format to FILE.
+    --cyclonedx-xml FILE    Write scan output in CycloneDX XML format to FILE.
     --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
     --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
     --html-app FILE         (DEPRECATED: use the ScanCode Workbench app instead )
@@ -104,6 +106,8 @@ Options:
                              codebase level.
     --license-policy FILE    Load a License Policy file and apply it to the scan
                              at the Resource level.
+    --licenses-reference     Include a reference of all the licenses referenced in
+                             this scan with the data details and full texts.
     --mark-source            Set the "is_source" to true for directories that
                              contain over 90% of source files as children and
                              descendants. Count the number of source files in a
@@ -142,6 +146,13 @@ Options:
                              Descend at most INTEGER levels of directories below
                              and including the starting directory. Use 0 for no
                              scan depth limit.
+
+  miscellaneous:
+    --reindex-licenses              Rebuild the license index and exit.
+    --reindex-licenses-for-all-languages
+                                    [EXPERIMENTAL] Rebuild the license index
+                                    including texts all languages (and not only
+                                    English) and exit.
 
   documentation:
     -h, --help       Show this message and exit.

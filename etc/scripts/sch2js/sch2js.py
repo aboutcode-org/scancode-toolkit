@@ -38,36 +38,35 @@ for model in models:
     json.dump(jsc, o, indent=2)
 """
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     from schematics.types.base import BaseType
     from schematics.types.compound import ListType
     from schematics.types.compound import ModelType
 
-    __version__ = '1.0.1.patch'
+    __version__ = "1.0.1.patch"
 
     SCHEMATIC_TYPE_TO_JSON_TYPE = {
-        'NumberType': 'number',
-        'IntType': 'integer',
-        'LongType': 'integer',
-        'FloatType': 'number',
-        'DecimalType': 'number',
-        'BooleanType': 'boolean',
-        'BaseType': 'object'
+        "NumberType": "number",
+        "IntType": "integer",
+        "LongType": "integer",
+        "FloatType": "number",
+        "DecimalType": "number",
+        "BooleanType": "boolean",
+        "BaseType": "object",
     }
 
     # Schema Serialization
 
     # Parameters for serialization to JSONSchema
     schema_kwargs_to_schematics = {
-        'maxLength': 'max_length',
-        'minLength': 'min_length',
-        'pattern': 'regex',
-        'minimum': 'min_value',
-        'maximum': 'max_value',
-        'enum': 'choices'
+        "maxLength": "max_length",
+        "minLength": "min_length",
+        "pattern": "regex",
+        "minimum": "min_value",
+        "maximum": "max_value",
+        "enum": "choices",
     }
-
 
     def jsonschema_for_single_field(field_instance):
         """
@@ -75,12 +74,13 @@ if __name__ == '__main__':
         """
         field_schema = {}
 
-        field_schema['type'] = SCHEMATIC_TYPE_TO_JSON_TYPE.get(
-            field_instance.__class__.__name__, 'string')
+        field_schema["type"] = SCHEMATIC_TYPE_TO_JSON_TYPE.get(
+            field_instance.__class__.__name__, "string"
+        )
 
-        if hasattr(field_instance, 'metadata'):
-            field_schema['title'] = field_instance.metadata.get('label', '')
-            field_schema['description'] = field_instance.metadata.get('description', '')
+        if hasattr(field_instance, "metadata"):
+            field_schema["title"] = field_instance.metadata.get("label", "")
+            field_schema["description"] = field_instance.metadata.get("description", "")
 
         for js_key, schematic_key in schema_kwargs_to_schematics.items():
             value = getattr(field_instance, schematic_key, None)
@@ -89,7 +89,6 @@ if __name__ == '__main__':
 
         return field_schema
 
-
     def jsonschema_for_fields(model):
         """
         Return a mapping for the schema of a collection of fields.
@@ -97,94 +96,93 @@ if __name__ == '__main__':
         properties = {}
         required = []
         for field_name, field_instance in model.fields.items():
-            serialized_name = getattr(field_instance, 'serialized_name', None) or field_name
+            serialized_name = getattr(field_instance, "serialized_name", None) or field_name
 
             if isinstance(field_instance, ModelType):
                 node = jsonschema_for_model(field_instance.model_class)
 
             elif isinstance(field_instance, ListType):
                 try:
-                    node = jsonschema_for_model(field_instance.model_class, 'array')
-                    if hasattr(field_instance, 'metadata'):
+                    node = jsonschema_for_model(field_instance.model_class, "array")
+                    if hasattr(field_instance, "metadata"):
                         _node = {}
-                        _node['type'] = node.pop('type')
-                        _node['title'] = field_instance.metadata.get('label', '')
-                        _node['description'] = field_instance.metadata.get('description', '')
+                        _node["type"] = node.pop("type")
+                        _node["title"] = field_instance.metadata.get("label", "")
+                        _node["description"] = field_instance.metadata.get("description", "")
                         _node.update(node)
                         node = _node
                 except AttributeError:
                     field_schema = jsonschema_for_single_field(field_instance.field)
                     node = {}
-                    node['type'] = 'array'
-                    if hasattr(field_instance, 'metadata'):
-                        node['title'] = field_instance.metadata.get('label', '')
-                        node['description'] = field_instance.metadata.get('description', '')
-                    node['items'] = field_schema
+                    node["type"] = "array"
+                    if hasattr(field_instance, "metadata"):
+                        node["title"] = field_instance.metadata.get("label", "")
+                        node["description"] = field_instance.metadata.get("description", "")
+                    node["items"] = field_schema
 
             # Convert field as single model
             elif isinstance(field_instance, BaseType):
                 node = jsonschema_for_single_field(field_instance)
 
-            if getattr(field_instance, 'required', False):
+            if getattr(field_instance, "required", False):
                 required.append(serialized_name)
                 properties[serialized_name] = node
             else:
                 properties[serialized_name] = {
-                    'oneOf': [
+                    "oneOf": [
                         node,
-                        {'type': 'null'},
+                        {"type": "null"},
                     ]
                 }
 
         return properties, required
 
-
-    def jsonschema_for_model(model, _type='object'):
+    def jsonschema_for_model(model, _type="object"):
         """
         Return a mapping for the schema of a model field.
         """
 
         properties, required = jsonschema_for_fields(model)
 
-        if hasattr(model, 'metadata'):
-            schema_title = model.metadata.get('label', '')
-            schema_description = model.metadata.get('description', '')
+        if hasattr(model, "metadata"):
+            schema_title = model.metadata.get("label", "")
+            schema_description = model.metadata.get("description", "")
         else:
-            schema_title = ''
-            schema_description = ''
+            schema_title = ""
+            schema_description = ""
 
         schema = {
-            'type': 'object',
-            'title': schema_title,
-            'description':schema_description,
+            "type": "object",
+            "title": schema_title,
+            "description": schema_description,
         }
 
         if required:
-            schema['required'] = required
+            schema["required"] = required
 
-        if hasattr(model, '_schema_order'):
+        if hasattr(model, "_schema_order"):
             ordered_properties = [(i, properties.pop(i)) for i in model._schema_order]
-            schema['properties'] = dict(ordered_properties)
+            schema["properties"] = dict(ordered_properties)
         else:
-            schema['properties'] = properties
+            schema["properties"] = properties
 
-        if _type == 'array':
-            schema = dict([
-                ('type', 'array'),
-                ('items', schema),
-            ])
+        if _type == "array":
+            schema = dict(
+                [
+                    ("type", "array"),
+                    ("items", schema),
+                ]
+            )
 
         return schema
-
 
     def to_jsonschema(model, **kwargs):
         """
         Return a a JSON schema mapping for the `model` class.
         """
-        schema_id = kwargs.pop('schema_id', '')
-        jsonschema = dict([
-            ('$schema', 'http://json-schema.org/draft-04/schema#'),
-            ('id', schema_id)
-        ])
+        schema_id = kwargs.pop("schema_id", "")
+        jsonschema = dict(
+            [("$schema", "http://json-schema.org/draft-04/schema#"), ("id", schema_id)]
+        )
         jsonschema.update(jsonschema_for_model(model))
         return jsonschema

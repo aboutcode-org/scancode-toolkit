@@ -1,0 +1,23 @@
+license_expressions:
+  - commercial-license
+  - commercial-license
+  - unknown
+  - unknown-license-reference
+  - lgpl-2.1 AND gpl-2.0 AND gpl-3.0
+  - lgpl-2.0-plus AND gpl-1.0-plus
+  - lgpl-2.1 AND gpl-2.0 AND gpl-3.0
+  - unknown
+  - unknown-license-reference
+  - commercial-license
+  - unknown
+  - commercial-license
+  - unknown
+  - commercial-license
+  - unknown
+  - commercial-license
+  - unknown
+  - commercial-license
+  - commercial-license
+  - unknown
+notes: this is a license from fossology license reference QT.Commercial (QT Commercial License
+  Agreement 3.8) http://qt.nokia.com/files/pdf/licenses/qtdesktop_us_v3_8.pdf

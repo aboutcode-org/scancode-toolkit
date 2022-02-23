@@ -1,0 +1,11 @@
+key: kreative-relay-fonts-free-use-1.2f
+short_name: Kreative Software Relay Fonts Free Use 1.2f
+name: Kreative Software Relay Fonts Free Use License 1.2f
+category: Proprietary Free
+owner: KreativeKorp
+homepage_url: http://www.kreativekorp.com/software/fonts/FreeLicense.txt
+spdx_license_key: LicenseRef-scancode-kreative-relay-fonts-free-1.2f
+other_spdx_license_keys:
+    - LicenseRef-scancode-kreative-relay-fonts-free-use-1.2f
+other_urls:
+    - http://www.kreativekorp.com/software/fonts/index.shtml

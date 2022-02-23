@@ -487,8 +487,8 @@ matches:
     start_line: 1218
     end_line: 1241
     matcher: 1-hash
-    rule_length: 225
-    matched_length: 225
+    rule_length: 227
+    matched_length: 227
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: x11.LICENSE
@@ -543,8 +543,8 @@ matches:
     start_line: 1244
     end_line: 1710
     matcher: 1-hash
-    rule_length: 3690
-    matched_length: 3690
+    rule_length: 3710
+    matched_length: 3710
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: mpl-1.1.LICENSE

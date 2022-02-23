@@ -1,0 +1,6 @@
+license_expression: gpl-3.0 WITH generic-exception
+is_license_notice: yes
+notes: Seen in Signal library
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl-3.0.html
+    - https://www.mozilla.org/en-US/MPL/2.0

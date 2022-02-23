@@ -1,0 +1,5 @@
+license_expression: cpol-1.02
+is_license_notice: yes
+notes: https://github.com/bofhbug/privateprj/blob/96350324dc62d5792c0311a01d9d192fa73621b1/PortableAppStudio/Reference/EnhancedCollectionEds/NuControl/ExampleComponent.vb#L6
+ignorable_urls:
+    - http://www.codeproject.com/info/cpol10.aspx

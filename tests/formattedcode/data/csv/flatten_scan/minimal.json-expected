@@ -1,21 +1,21 @@
 [
     {
-        "Resource": "srp/",
+        "path": "srp/",
         "type": "directory",
         "scan_errors": ""
     },
     {
-        "Resource": "srp/build.info",
+        "path": "srp/build.info",
         "type": "file",
         "scan_errors": ""
     },
     {
-        "Resource": "srp/srp_lib.c",
+        "path": "srp/srp_lib.c",
         "type": "file",
         "scan_errors": ""
     },
     {
-        "Resource": "srp/srp_lib.c",
+        "path": "srp/srp_lib.c",
         "license__key": "openssl",
         "license__score": "100.00",
         "license__short_name": "OpenSSL License",
@@ -33,24 +33,24 @@
         "matched_rule__licenses": "openssl"
     },
     {
-        "Resource": "srp/srp_lib.c",
+        "path": "srp/srp_lib.c",
         "copyright": "Copyright 2011-2016 The OpenSSL Project",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "srp/srp_lib.c",
-        "copyright_holder": "The OpenSSL Project",
+        "path": "srp/srp_lib.c",
+        "holder": "The OpenSSL Project",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "srp/srp_vfy.c",
+        "path": "srp/srp_vfy.c",
         "type": "file",
         "scan_errors": ""
     },
     {
-        "Resource": "srp/srp_vfy.c",
+        "path": "srp/srp_vfy.c",
         "license__key": "openssl",
         "license__score": "100.00",
         "license__short_name": "OpenSSL License",
@@ -68,14 +68,14 @@
         "matched_rule__licenses": "openssl"
     },
     {
-        "Resource": "srp/srp_vfy.c",
+        "path": "srp/srp_vfy.c",
         "copyright": "Copyright 2011-2016 The OpenSSL Project",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "srp/srp_vfy.c",
-        "copyright_holder": "The OpenSSL Project",
+        "path": "srp/srp_vfy.c",
+        "holder": "The OpenSSL Project",
         "start_line": 2,
         "end_line": 2
     }

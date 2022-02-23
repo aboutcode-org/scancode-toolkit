@@ -26,7 +26,40 @@
     "declared_license": null,
     "notice_text": null,
     "root_path": null,
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "--editable svn+svn://svn.myproject.org/svn/MyProject#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "--editable git://git.myproject.org/MyProject.git@da39a3ee5e6b4b0d3255bfef95601890afd80709#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "--editable hg+http://hg.myproject.org/MyProject/@special_feature#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:pypi/myproject",
+        "requirement": "--editable bzr+lp://MyProject#egg=MyProject",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},

@@ -20,14 +20,13 @@ import zipfile
 from pathlib import Path
 
 import attr
-import dparse
+import dparse2
+import pip_requirements_parser
+import pkginfo2
 from packageurl import PackageURL
 from packaging.requirements import Requirement
 from packaging import markers
 from packaging.utils import canonicalize_name
-
-# TODO: replace this
-from pkginfo import SDist
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -119,7 +118,7 @@ class MetadataFile(PythonPackage, models.PackageData):
         package archive, manifest or similar.
         """
         yield parse_metadata(cls, location)
-        
+
 
 def parse_metadata(cls, location):
     """
@@ -213,7 +212,7 @@ class SourceDistArchive(PythonPackage, models.PackageData):
         # FIXME: handle other_urls
 
         try:
-            sdist = SDist(location)
+            sdist = pkginfo2.SDist(location)
         except ValueError:
             return
         urls, other_urls = get_urls(sdist)
@@ -295,11 +294,11 @@ class DependencyFile(PythonPackage, models.PackageData):
         """
         file_name = fileutils.file_name(location)
 
-        dependency_type = get_dparse_dependency_type(file_name)
+        dependency_type = get_dparse2_supported_file_name(file_name)
         if not dependency_type:
             return
 
-        dependent_packages = parse_with_dparse(
+        dependent_packages = parse_with_dparse2(
             location=location,
             dependency_type=dependency_type,
         )
@@ -336,9 +335,9 @@ class PipfileLock(PythonPackage, models.PackageData):
                 if name == 'hash':
                     sha256 = meta.get('sha256')
 
-        dependent_packages = parse_with_dparse(
+        dependent_packages = parse_with_dparse2(
             location=location,
-            dependency_type=dparse.filetypes.pipfile_lock,
+            file_name='Pipfile.lock',
         )
         yield cls(sha256=sha256, dependencies=dependent_packages)
 
@@ -347,10 +346,13 @@ class PipfileLock(PythonPackage, models.PackageData):
 class RequirementsFile(PythonPackage, models.PackageData):
 
     file_patterns = (
-        '*requirements*.txt',
-        '*requirements*.pip',
-        '*requirements*.in',
+        '*requirement*.txt',
+        '*requirement*.pip',
+        '*requirement*.in',
         'requires.txt',
+        'requirements/*.txt',
+        'requirements/*.pip',
+        'requirements/*.in',
     )
 
     @classmethod
@@ -366,12 +368,64 @@ class RequirementsFile(PythonPackage, models.PackageData):
         Yield one or more Package manifest objects given a file ``location`` pointing to a
         package archive, manifest or similar.
         """
-        dependent_packages = parse_with_dparse(
-            location=location,
-            dependency_type=dparse.filetypes.requirements_txt
-        )
-        yield cls(dependencies=dependent_packages)
+        dependencies = get_requirements_txt_dependencies(location=location)
+        yield cls(dependencies=dependencies)
 
+
+def get_requirements_txt_dependencies(location):
+    """
+    Return a list of DependentPackage found in a requirements file at
+    ``location`` or an empty list.
+    """
+    req_file = pip_requirements_parser.RequirementsFile.from_file(
+        filename=location,
+        include_nested=False,
+    )
+    if not req_file or not req_file.requirements:
+        return []
+
+    dependent_packages = []
+
+    # for now we ignore plain options and errors
+    for req in req_file.requirements:
+
+        if req.name:
+            # will be None if not pinned
+            version = req.get_pinned_version
+            purl = PackageURL(type='pypi', name=req.name, version=version)
+
+        else:
+            # this is odd, but this can be null
+            purl = None
+
+        purl = purl and purl.to_string() or None
+
+        if req.is_editable:
+            requirement = req.dumps()
+        else:
+            requirement = req.dumps(with_name=False)
+
+        if location.endswith(('dev.txt', 'test.txt', 'tests.txt',)):
+            scope = 'development'
+            is_runtime = False
+            is_optional = True
+        else:
+            scope = 'install'
+            is_runtime = True
+            is_optional = False
+
+        dependent_packages.append(
+            models.DependentPackage(
+                purl=purl,
+                scope=scope,
+                is_runtime=is_runtime,
+                is_optional=is_optional,
+                is_resolved=req.is_pinned or False,
+                requirement=requirement
+            )
+        )
+
+    return dependent_packages
 
 @attr.s()
 class PythonPackageInstance(PythonPackage, models.PackageInstance):
@@ -721,6 +775,8 @@ def is_requirements_file(location):
     True
     >>> is_requirements_file('requirements.txt')
     True
+    >>> is_requirements_file('requirement.txt')
+    True
     >>> is_requirements_file('requirements.in')
     True
     >>> is_requirements_file('requirements.pip')
@@ -729,53 +785,59 @@ def is_requirements_file(location):
     True
     >>> is_requirements_file('some-requirements-dev.txt')
     True
-    >>> is_requirements_file('reqs.txt')
-    False
     >>> is_requirements_file('requires.txt')
     True
+    >>> is_requirements_file('requirements/base.txt')
+    True
+    >>> is_requirements_file('reqs.txt')
+    False
     """
     filename = fileutils.file_name(location)
     req_files = (
-        '*requirements*.txt',
-        '*requirements*.pip',
-        '*requirements*.in',
+        '*requirement*.txt',
+        '*requirement*.pip',
+        '*requirement*.in',
         'requires.txt',
     )
-    return any(fnmatch.fnmatchcase(filename, rf) for rf in req_files)
+    is_req = any(fnmatch.fnmatchcase(filename, rf) for rf in req_files)
+    if is_req:
+        return True
+
+    parent = fileutils.parent_directory(location)
+    parent_name = fileutils.file_name(parent)
+    pip_extensions = ('.txt', 'pip', '.in',)
+    return parent_name == 'requirements' and filename.endswith(pip_extensions)
 
 
-def get_dparse_dependency_type(file_name):
+def get_dparse2_supported_file_name(file_name):
     """
-    Return the type of a dependency as a string or None given a `file_name`
+    Return the file_name if this is supported or None given a `file_name`
     string.
     """
     # this is kludgy but the upstream data structure and API needs this
-    filetype_by_name_end = {
-        'Pipfile.lock': dparse.filetypes.pipfile_lock,
-        'Pipfile': dparse.filetypes.pipfile,
-        'conda.yml': dparse.filetypes.conda_yml,
-        'setup.cfg': dparse.filetypes.setup_cfg,
-        'tox.ini': dparse.filetypes.tox_ini,
-    }
+    dfile_names = (
+        'Pipfile.lock',
+        'Pipfile',
+        'conda.yml',
+        'setup.cfg',
+        'tox.ini',
+    )
 
-    for extensions, dependency_type in filetype_by_name_end.items():
-        if file_name.endswith(extensions):
-            return dependency_type
-
-        if is_requirements_file(file_name):
-            return dparse.filetypes.requirements_txt
+    for dfile_name in dfile_names:
+        if file_name.endswith(dfile_name):
+            return file_name
 
 
-def parse_with_dparse(location, dependency_type=None):
+def parse_with_dparse2(location, file_name=None):
     """
-    Return a list of DependentPackage built from a dparse-supported dependency
-    manifest such as requirements.txt, Conda manifest or Pipfile.lock files, or
-    return an empty list.
+    Return a list of DependentPackage built from a dparse2-supported dependency
+    manifest such as Conda manifest or Pipfile.lock files, or return an empty
+    list.
     """
     with open(location) as f:
         content = f.read()
 
-    dep_file = dparse.parse(content, file_type=dependency_type)
+    dep_file = dparse2.parse(content, file_name=file_name)
     if not dep_file:
         return []
 
@@ -786,7 +848,7 @@ def parse_with_dparse(location, dependency_type=None):
         is_resolved = False
         purl = PackageURL(type='pypi', name=dependency.name)
 
-        # note: dparse.dependencies.Dependency.specs comes from
+        # note: dparse2.dependencies.Dependency.specs comes from
         # packaging.requirements.Requirement.specifier
         # which in turn is a packaging.specifiers.SpecifierSet objects
         # and a SpecifierSet._specs is a set of either:

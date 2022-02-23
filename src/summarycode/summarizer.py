@@ -243,14 +243,14 @@ def summarize_values(values, attribute):
     """
     if attribute not in SUMMARIZABLE_ATTRS:
         return {}
-    from summarycode.copyright_summary import summarize_holders
+    from summarycode.copyright_summary import summarize_persons
     from summarycode.copyright_summary import summarize_copyrights
 
     value_summarizers_by_attr = dict(
         license_expressions=summarize_licenses,
         copyrights=summarize_copyrights,
-        holders=summarize_holders,
-        authors=summarize_holders,
+        holders=summarize_persons,
+        authors=summarize_persons,
         programming_language=summarize_languages,
     )
     return value_summarizers_by_attr[attribute](values)

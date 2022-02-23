@@ -8,6 +8,7 @@ license_expressions:
   - gpl-3.0-plus
   - agpl-3.0-plus
   - lgpl-3.0-plus
+  - bsd-simplified
   - bsd-2-clause-views
   - bsd-new
   - public-domain

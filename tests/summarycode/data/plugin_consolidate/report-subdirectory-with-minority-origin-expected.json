@@ -16,7 +16,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.15",
         "files_count": 4
       }
     }
@@ -159,14 +159,14 @@
       "percentage_of_license_text": 97.58,
       "copyrights": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 1
         }
@@ -247,14 +247,14 @@
       "percentage_of_license_text": 97.58,
       "copyrights": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 1
         }
@@ -335,14 +335,14 @@
       "percentage_of_license_text": 97.58,
       "copyrights": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 1
         }
@@ -458,14 +458,14 @@
       "percentage_of_license_text": 97.58,
       "copyrights": [
         {
-          "value": "Copyright (c) Omega Corp.",
+          "copyright": "Copyright (c) Omega Corp.",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "Omega Corp.",
+          "holder": "Omega Corp.",
           "start_line": 1,
           "end_line": 1
         }

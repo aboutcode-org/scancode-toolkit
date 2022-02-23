@@ -44,14 +44,34 @@ if TRACE:
 
 
 def reindex_licenses(ctx, param, value):
+    """
+    Rebuild and cache the license index
+    """
     if not value or ctx.resilient_parsing:
         return
 
     # TODO: check for temp file configuration and use that for the cache!!!
     from licensedcode.cache import get_index
     import click
-    click.echo('Checking and rebuilding the license index...')
-    get_index(check_consistency=True)
+    click.echo('Rebuilding the license index...')
+    get_index(force=True)
+    click.echo('Done.')
+    ctx.exit(0)
+
+
+def reindex_licenses_all_languages(ctx, param, value):
+    """
+    EXPERIMENTAL: Rebuild and cache the license index including all languages
+    and not only English.
+    """
+    if not value or ctx.resilient_parsing:
+        return
+
+    # TODO: check for temp file configuration and use that for the cache!!!
+    from licensedcode.cache import get_index
+    import click
+    click.echo('Rebuilding the license index for all languages...')
+    get_index(force=True, index_all_languages=True)
     click.echo('Done.')
     ctx.exit(0)
 
@@ -120,12 +140,21 @@ class LicenseScanner(ScanPlugin):
 
         PluggableCommandLineOption(
             ('--reindex-licenses',),
-            hidden=True,
             is_flag=True, is_eager=True,
             callback=reindex_licenses,
-            help='Check the license index cache and reindex if needed and exit.',
+            help='Rebuild the license index and exit.',
+            help_group=MISC_GROUP,
+        ),
+
+        PluggableCommandLineOption(
+            ('--reindex-licenses-for-all-languages',),
+            is_flag=True, is_eager=True,
+            callback=reindex_licenses_all_languages,
+            help='[EXPERIMENTAL] Rebuild the license index including texts all '
+                 'languages (and not only English) and exit.',
             help_group=MISC_GROUP,
         )
+
     ]
 
     def is_enabled(self, license, **kwargs):  # NOQA
@@ -145,6 +174,7 @@ class LicenseScanner(ScanPlugin):
         license_text=False,
         license_text_diagnostics=False,
         license_url_template=SCANCODE_LICENSEDB_URL,
+        unknown_licenses=False,
         **kwargs
     ):
 
@@ -153,7 +183,8 @@ class LicenseScanner(ScanPlugin):
             min_score=license_score,
             include_text=license_text,
             license_text_diagnostics=license_text_diagnostics,
-            license_url_template=license_url_template
+            license_url_template=license_url_template,
+            unknown_licenses=unknown_licenses,
         )
 
     def process_codebase(self, codebase, unknown_licenses, **kwargs):
@@ -178,7 +209,7 @@ class LicenseScanner(ScanPlugin):
                     license_expressions_after = list(resource.license_expressions)
                     logger_debug(
                         f'add_referenced_filenames_license_matches: Modfied:',
-                        f'{resource} with license_expressions:\n'
+                        f'{resource.path} with license_expressions:\n'
                         f'before: {license_expressions_before}\n'
                         f'after : {license_expressions_after}'
                     )

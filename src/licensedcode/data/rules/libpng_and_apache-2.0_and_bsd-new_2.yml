@@ -7,6 +7,6 @@ ignorable_copyrights:
 ignorable_holders:
     - Glenn Randers-Pehrson
 ignorable_urls:
-    - https://www.apache.org/licenses/LICENSE-2.0
     - https://cs.chromium.org/chromium/src/LICENSE
     - https://github.com/google/oss-fuzz/tree/master/projects/libpng
+    - https://www.apache.org/licenses/LICENSE-2.0

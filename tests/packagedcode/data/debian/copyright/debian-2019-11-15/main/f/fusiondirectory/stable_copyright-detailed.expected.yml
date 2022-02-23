@@ -363,8 +363,8 @@ matches:
     start_line: 1573
     end_line: 1598
     matcher: 1-hash
-    rule_length: 232
-    matched_length: 232
+    rule_length: 236
+    matched_length: 236
     match_coverage: '100.0'
     rule_relevance: 100
     identifier: bsd-original_71.RULE

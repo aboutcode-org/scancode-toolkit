@@ -63,6 +63,8 @@ JUNK_URLS = set_from_text(u'''
     http://www.w3.org/1999/XSL/Transform
     http://docs.oasis-open.org/ns/xri/xrd-1.0
     http://www.w3.org/2001/XMLSchema-instance
+    http://www.w3.org/2001/XMLSchema}string
+    http://www.w3.org/2001/XMLSchema
     http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd
     http://bing.com
     http://google.com

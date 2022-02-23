@@ -7,7 +7,7 @@ License and origin information is not always easy to find and not normalized:
 ScanCode discovers and normalizes this data for you.
 
 Read more about ScanCode here: `scancode-toolkit.readthedocs.io 
-<https://scancode-toolkit.readthedocs.io/en/latest/>`_.
+<https://scancode-toolkit.readthedocs.io/>`_.
 
 Check out the code at https://github.com/nexB/scancode-toolkit
 
@@ -198,10 +198,10 @@ For discussions and chats, we have:
   Gitter is also accessible via an `IRC bridge <https://irc.gitter.im/>`_.
   There are other AboutCode project-specific channels available there too.
 
-* an official `#aboutcode` IRC channel on freenode (server chat.freenode.net).
+* an official `#aboutcode` IRC channel on liberachat (server web.libera.chat).
   This channel receives build and commit notifications and can be noisy.
   You can use your favorite IRC client or use the `web chat 
-  <https://webchat.freenode.net/>`_.
+  <https://web.libera.chat/?#aboutcode>`_.
 
 
 Source code and downloads

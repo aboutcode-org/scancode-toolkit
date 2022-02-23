@@ -1,0 +1,3 @@
+license_expression: proprietary-license
+is_license_notice: yes
+notes: https://github.com/quantstamp/universal-solc-compiler/blob/3db311baf856044ffce07850338b3ef9db980db8/src/usolc/usolc.py

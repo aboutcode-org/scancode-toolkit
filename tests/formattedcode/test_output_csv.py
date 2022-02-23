@@ -93,7 +93,7 @@ def test_flatten_scan_minimal():
         ])
     result = list(flatten_scan(scan, headers))
     expected_file = test_env.get_test_loc('csv/flatten_scan/minimal.json-expected')
-    check_json(result, expected_file)
+    check_json(result, expected_file, regen=False)
 
 
 def test_flatten_scan_can_process_path_with_and_without_leading_slash():

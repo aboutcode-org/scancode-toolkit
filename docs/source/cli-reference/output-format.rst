@@ -465,7 +465,7 @@ Comparing Different ``json`` Output Formats
     The following code performs a scan on the samples directory, and publishes the results in
     ``html-app`` format::
 
-        scancode -clpieu --csv output.html samples
+        scancode -clpieu --html-app output.html samples
 
     The Files scanned are shown in the left sidebar, and the section on the right contains separate
     tabs for the following:
@@ -575,5 +575,32 @@ Comparing Different ``json`` Output Formats
     .. figure:: data/output_csv.png
 
 ----
+
+``--cyclonedx FILE``
+--------------------
+    Scancode also supports the `CycloneDx <https://cyclonedx.org/specification/overview/>`_ output format
+
+    Please note that this output format is only useful when scanning with the ``--package`` option
+
+    This output format is particularly useful if you want to process ScanCode results
+    in downstream tools that can't process ScanCode's native JSON output,
+    but do support CycloneDx BOMs.
+
+    To run an example scan on the test resources try:
+    ``./scancode --package --cyclonedx=bom.json tests/formattedcode/data/cyclonedx/simple``
+
+    If you prefer XML output over JSON, please have a look at the ``--cyclonedx-xml`` option instead
+
+____
+
+``--cyclonedx-xml FILE``
+-------------------------
+
+    This option allows outputting CycloneDx BOMs in XML format instead of JSON
+
+    To run an example scan on the test resources try:
+    ``./scancode --package --cyclonedx-xml=bom.xml tests/formattedcode/data/cyclonedx/simple``
+
+____
 
 .. include::  /rst_snippets/custom_output_format.rst

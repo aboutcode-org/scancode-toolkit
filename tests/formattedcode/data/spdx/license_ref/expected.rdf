@@ -1,6 +1,9 @@
 {
   "rdf:RDF": {
     "ns1:SpdxDocument": {
+      "ns1:name": {
+        "@rdf:resource": "SPDX Document created by ScanCode Toolkit"
+      },
       "ns1:dataLicense": {
         "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
       },
@@ -19,6 +22,7 @@
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:licenseId": "LicenseRef-scancode-other-copyleft",
+                "ns1:licenseName": "Other Copyleft Licenses",
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml",
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml"
               }
@@ -26,6 +30,7 @@
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:licenseId": "LicenseRef-scancode-other-permissive",
+                "ns1:licenseName": "Other Permissive Licenses",
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml",
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml"
               }
@@ -33,6 +38,7 @@
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:licenseId": "LicenseRef-scancode-scancode-acknowledgment",
+                "ns1:licenseName": "ScanCode generated data acknowledgment",
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml",
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
               }
@@ -45,12 +51,15 @@
             }
           },
           "ns1:fileName": "./scan/NOTICE",
-          "@rdf:about": "http://www.spdx.org/files#None",
+          "@rdf:about": "http://www.spdx.org/files#SPDXRef-2",
           "ns1:copyrightText": "Copyright (c) 2017 nexB Inc. and others"
         }
       },
       "ns1:describesPackage": {
         "ns1:Package": {
+          "ns1:Package": {
+            "@rdf:resource": "SPDXRef-001"
+          },
           "ns1:downloadLocation": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           },
@@ -61,7 +70,7 @@
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           },
           "ns1:hasFile": {
-            "@rdf:resource": "http://www.spdx.org/files#None"
+            "@rdf:resource": "http://www.spdx.org/files#SPDXRef-2"
           },
           "ns1:licenseInfoFromFiles": [
             {
@@ -73,6 +82,7 @@
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:licenseId": "LicenseRef-scancode-other-copyleft",
+                "ns1:licenseName": "Other Copyleft Licenses",
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml",
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml"
               }
@@ -80,6 +90,7 @@
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:licenseId": "LicenseRef-scancode-other-permissive",
+                "ns1:licenseName": "Other Permissive Licenses",
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml",
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml"
               }
@@ -87,6 +98,7 @@
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:licenseId": "LicenseRef-scancode-scancode-acknowledgment",
+                "ns1:licenseName": "ScanCode generated data acknowledgment",
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml",
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
               }
@@ -101,6 +113,7 @@
         {
           "ns1:ExtractedLicensingInfo": {
             "ns1:licenseId": "LicenseRef-scancode-other-copyleft",
+            "ns1:licenseName": "Other Copyleft Licenses",
             "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml",
             "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml"
           }
@@ -108,6 +121,7 @@
         {
           "ns1:ExtractedLicensingInfo": {
             "ns1:licenseId": "LicenseRef-scancode-other-permissive",
+            "ns1:licenseName": "Other Permissive Licenses",
             "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml",
             "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml"
           }
@@ -115,13 +129,14 @@
         {
           "ns1:ExtractedLicensingInfo": {
             "ns1:licenseId": "LicenseRef-scancode-scancode-acknowledgment",
+            "ns1:licenseName": "ScanCode generated data acknowledgment",
             "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml",
             "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
           }
         }
       ],
       "@rdf:about": "http://www.spdx.org/tools#SPDXRef-DOCUMENT",
-      "ns1:specVersion": "SPDX-2.1"
+      "ns1:specVersion": "SPDX-2.2"
     },
     "@xmlns:ns1": "http://spdx.org/rdf/terms#",
     "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",

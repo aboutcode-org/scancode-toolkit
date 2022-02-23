@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_notice: yes
+ignorable_urls:
+    - https://aws.amazon.com/agreement
+    - https://aws.amazon.com/service-terms

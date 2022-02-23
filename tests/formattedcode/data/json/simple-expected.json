@@ -15,7 +15,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.15",
         "files_count": 1
       }
     }
@@ -79,14 +79,14 @@
       "percentage_of_license_text": 0,
       "copyrights": [
         {
-          "value": "Copyright (c) 2000 ACME, Inc.",
+          "copyright": "Copyright (c) 2000 ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "ACME, Inc.",
+          "holder": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }

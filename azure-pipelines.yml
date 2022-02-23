@@ -1,7 +1,8 @@
 
 ################################################################################
-# We use Azure to run the full tests suites on Pythons 3.6 and above.
-# on Windows, macOS and Linux (various distro) only on 64 bits
+# We use Azure to run the full tests suites on multiple Python 3.x
+# on multiple Windows, macOS and Linux versions all on 64 bits
+# These jobs are using VMs with Azure-provided Python builds
 ################################################################################
 
 jobs:
@@ -17,22 +18,22 @@ jobs:
           python_versions: ['3.6']
           test_suites:
               misc: |
-                bin/pytest -n 3 -vvs --test-suite=all \
+                venv/bin/pytest -n 3 -vvs --test-suite=all \
                   --ignore=tests/scancode \
                   --ignore=tests/cluecode \
                   --ignore=tests/licensedcode
 
               scancode: |
-                bin/pytest -vvs --test-suite=all \
+                venv/bin/pytest -vvs --test-suite=all \
                   tests/scancode
 
               cluecode: |
-                bin/pytest -n 3 -vvs --test-suite=all \
+                venv/bin/pytest -n 3 -vvs --test-suite=all \
                   tests/cluecode \
                   --cov=src --cov-report=term
 
               license_base: |
-                bin/pytest -n 3 -vvs --test-suite=all \
+                venv/bin/pytest -n 3 -vvs --test-suite=all \
                   --ignore=tests/licensedcode/test_zzzz_cache.py \
                   --ignore=tests/licensedcode/test_detection_datadriven_external.py \
                   --ignore=tests/licensedcode/test_detection_datadriven1.py \
@@ -42,63 +43,63 @@ jobs:
                   tests/licensedcode
 
               license_datadriven1: |
-                bin/pytest -n 3 -vvs --test-suite=all \
+                venv/bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_detection_datadriven1.py
 
               license_datadriven2: |
-                bin/pytest -n 3 -vvs --test-suite=all \
+                venv/bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_detection_datadriven2.py
 
               license_datadriven3: |
-                bin/pytest -n 3 -vvs --test-suite=all \
+                venv/bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_detection_datadriven3.py
 
               license_datadriven4: |
-                bin/pytest -n 3 -vvs --test-suite=all \
+                venv/bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_detection_datadriven4.py
 
               license_datadriven_ext: |
-                bin/pytest -n 3 -vvs --test-suite=all \
+                venv/bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_detection_datadriven_external.py
 
               license_validate_ext_1: |
-                bin/pytest -n 3 -vvs --test-suite=validate \
+                venv/bin/pytest -n 3 -vvs --test-suite=validate \
                   tests/licensedcode/test_detection_validate.py \
                   -k TestValidateLicenseExtended1
 
               license_validate_ext_2: |
-                bin/pytest -n 3 -vvs --test-suite=validate \
+                venv/bin/pytest -n 3 -vvs --test-suite=validate \
                   tests/licensedcode/test_detection_validate.py \
                   -k TestValidateLicenseExtended2
 
               license_validate_ext_3: |
-                bin/pytest -n 3 -vvs --test-suite=validate \
+                venv/bin/pytest -n 3 -vvs --test-suite=validate \
                   tests/licensedcode/test_detection_validate.py \
                   -k TestValidateLicenseExtended3
 
               license_validate_ext_4: |
-                bin/pytest -n 3 -vvs --test-suite=validate \
+                venv/bin/pytest -n 3 -vvs --test-suite=validate \
                   tests/licensedcode/test_detection_validate.py \
                   -k TestValidateLicenseExtended4
 
               license_validate_ext_5: |
-                bin/pytest -n 3 -vvs --test-suite=validate \
+                venv/bin/pytest -n 3 -vvs --test-suite=validate \
                   tests/licensedcode/test_detection_validate.py \
                   -k TestValidateLicenseExtended5
 
               license_cache: |
-                bin/pytest -n 3 -vvs --test-suite=all \
+                venv/bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_zzzz_cache.py
 
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: mac1014
-          image_name: macos-10.14
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          job_name: mac11
+          image_name: macOS-11
+          python_versions: ['3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
     - template: etc/ci/azure-posix.yml
@@ -108,7 +109,7 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
 #    - template: etc/ci/azure-posix.yml
@@ -118,17 +119,17 @@ jobs:
 #          python_versions: ['3.6', '3.7', '3.8', '3.9']
 #          python_architecture: x64
 #          test_suites:
-#              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+#              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win2016
-          image_name: vs2017-win2016
-          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          job_name: win2022
+          image_name: windows-2022
+          python_versions: ['3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
+              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
 
 
     - template: etc/ci/azure-win.yml
@@ -138,7 +139,7 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
+              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
 
 
     - template: etc/ci/azure-posix.yml
@@ -148,7 +149,7 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-posix.yml
       parameters:
@@ -157,7 +158,7 @@ jobs:
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           python_architecture: x64
           test_suites:
-              all: bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
 
 ################################################################################
@@ -175,9 +176,9 @@ jobs:
               click_versions: |
                 for clk_ver in 8.0.1 7.1.2 7.1.1 7.1 6.7; 
                  do
-                  bin/pip install click==$clk_ver;
-                  bin/scancode -i samples/ -n3 --json foo.json; 
-                  bin/scancode -i --verbose samples/ -n3 --json foo.json; 
+                  venv/bin/pip install click==$clk_ver;
+                  venv/bin/scancode -i samples/ -n3 --json foo.json; 
+                  venv/bin/scancode -i --verbose samples/ -n3 --json foo.json; 
                  done
 
 
@@ -194,7 +195,7 @@ jobs:
 #          python_version: '3.6'
 #          install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 3 -vvs tests/scancode
+#          test_suite: venv/bin/pytest -n 3 -vvs tests/scancode
 
 
 #    - template: etc/ci/azure-container-deb.yml
@@ -205,7 +206,7 @@ jobs:
 #          python_version: '3.8'
 #          install_python: sudo apt-get install -y python3.8 python3.8-venv python3.8-dev
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 3 -vvs tests/scancode
+#          test_suite: venv/bin/pytest -n 3 -vvs tests/scancode
 
 
 #    - template: etc/ci/azure-container-rpm.yml
@@ -219,7 +220,7 @@ jobs:
 #              sudo yum install -y epel-release
 #              sudo yum install -y python36 python36-devel python36-virtualenv
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 2 -vvs
+#          test_suite: venv/bin/pytest -n 2 -vvs
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -230,7 +231,7 @@ jobs:
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 2 -vvs
+#          test_suite: venv/bin/pytest -n 2 -vvs
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -241,7 +242,7 @@ jobs:
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 2 -vvs
+#          test_suite: venv/bin/pytest -n 2 -vvs
 
 
 ################################################################################
@@ -259,7 +260,7 @@ jobs:
 #              set -e -x
 #              sudo dnf install -y python3 python3-devel python3-virtualenv
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 2 -vvs
+#          test_suite: venv/bin/pytest -n 2 -vvs
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -270,7 +271,7 @@ jobs:
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
 #          test_suite_label: all
-#          test_suite: bin/pytest -n 2 -vvs
+#          test_suite: venv/bin/pytest -n 2 -vvs
 
 
 ################################################################################
@@ -301,7 +302,7 @@ jobs:
 #            make -j8
 #            sudo make altinstall
 #          test_suite_label: basic tests
-#          test_suite: bin/pytest -n 2 -vvs
+#          test_suite: venv/bin/pytest -n 2 -vvs
 
 
 ########################################################################
@@ -337,7 +338,7 @@ jobs:
           image_name: ubuntu-20.04
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pip install --force-reinstall --upgrade -e .[dev] && bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -345,7 +346,7 @@ jobs:
           image_name: windows-2019
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: Scripts\pip install --force-reinstall --upgrade -e .[dev] &&  Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
+              all: venv\Scripts\pip install --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
 
     - template: etc/ci/azure-posix.yml
       parameters:
@@ -353,6 +354,4 @@ jobs:
           image_name: macos-10.15
           python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: bin/pip install --force-reinstall --upgrade -e .[dev] && bin/pytest -n 2 -vvs  tests/scancode/test_cli.py
-
-
+              all: venv/bin/pip install --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs  tests/scancode/test_cli.py

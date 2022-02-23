@@ -9,7 +9,7 @@
 from debian_inspector.copyright import CopyrightFilesParagraph
 from debian_inspector.copyright import CopyrightHeaderParagraph
 from debian_inspector.copyright import DebianCopyright
-from license_expression import Licensing
+from license_expression import combine_expressions
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
@@ -127,7 +127,7 @@ def build_copyright_field(scanned_file):
     if not holders:
         return
     # TODO: reinjects copyright year ranges like they show up in Debian
-    statements = [h['value'] for h in holders]
+    statements = [h['holder'] for h in holders]
     return '\n'.join(statements)
 
 
@@ -144,49 +144,11 @@ def build_license(scanned_file):
 
     # TODO: use either Debian license symbols or SPDX
     # TODO: convert license expression to Debian style of expressions
-    expression = combine_expressions(license_expressions)
+    expression = str(combine_expressions(license_expressions, unique=False))
 
     licenses = scanned_file.get('licenses', [])
     text = '\n'.join(get_texts(licenses))
     return f'{expression}\n{text}'
-
-
-# TODO: this has no readon to be here and should be part of the license_expression library
-def combine_expressions(expressions, relation='AND', licensing=Licensing()):
-    """
-    Return a combined license expression string with relation, given a list of
-    license expressions strings.
-
-    For example:
-    >>> a = 'mit'
-    >>> b = 'gpl'
-    >>> combine_expressions([a, b])
-    'mit AND gpl'
-    >>> assert 'mit' == combine_expressions([a])
-    >>> combine_expressions([])
-    >>> combine_expressions(None)
-    >>> combine_expressions(('gpl', 'mit', 'apache',))
-    'gpl AND mit AND apache'
-    """
-    if not expressions:
-        return
-
-    if not isinstance(expressions, (list, tuple)):
-        raise TypeError(
-            'expressions should be a list or tuple and not: {}'.format(
-                type(expressions)))
-
-    # Remove duplicate element in the expressions list
-    expressions = list(dict((x, True) for x in expressions).keys())
-
-    if len(expressions) == 1:
-        return expressions[0]
-
-    expressions = [licensing.parse(le, simple=True) for le in expressions]
-    if relation == 'OR':
-        return str(licensing.OR(*expressions))
-    else:
-        return str(licensing.AND(*expressions))
 
 
 def get_texts(detected_licenses):

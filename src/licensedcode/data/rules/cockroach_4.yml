@@ -6,7 +6,7 @@ ignorable_copyrights:
 ignorable_holders:
     - CockroachDB Enterprise Edition
 ignorable_urls:
-    - https://www.apache.org/licenses/LICENSE-2.0
     - https://cla-assistant.io/cockroachdb/cockroach
     - https://cockroachlabs.com/pricing
     - https://github.com/cockroachdb/cockroach
+    - https://www.apache.org/licenses/LICENSE-2.0

@@ -1,0 +1,10 @@
+key: adobe-dng-spec-patent
+short_name: Adobe DNG Specification patent license
+name: Adobe Digital Negative (DNG) Specification patent license
+category: Patent License
+owner: Adobe Systems
+homepage_url: https://helpx.adobe.com/camera-raw/digital-negative.html#dng
+spdx_license_key: LicenseRef-scancode-adobe-dng-spec-patent
+other_urls:
+    - https://www.adobe.com/support/downloads/dng/dng_sdk_eula_win.html
+    - https://android.googlesource.com/platform/external/dng_sdk/+/refs/heads/master/PATENTS

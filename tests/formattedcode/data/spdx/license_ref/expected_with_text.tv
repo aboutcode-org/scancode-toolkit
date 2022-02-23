@@ -3,7 +3,7 @@ SPDXVersion: SPDX-2.2
 DataLicense: CC0-1.0
 DocumentNamespace: http://spdx.org/spdxdocs/scan
 DocumentName: SPDX Document created by ScanCode Toolkit
-LicenseListVersion: 3.14
+LicenseListVersion: 3.16
 SPDXID: SPDXRef-DOCUMENT
 DocumentComment: <text>Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
 OR CONDITIONS OF ANY KIND, either express or implied. No content created from

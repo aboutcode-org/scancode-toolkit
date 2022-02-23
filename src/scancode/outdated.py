@@ -67,25 +67,6 @@ def total_seconds(td):
         return val / 10 ** 6
 
 
-def is_outdated(release_date):
-    """
-    Return True if 90 days have passed since `release_date` datetime object.
-
-    For example:
-
-    >>> release_date = datetime.datetime(2020, 9, 23)
-    >>> is_outdated(release_date)
-    True
-    >>> release_date =  datetime.datetime.utcnow()
-    >>> is_outdated(release_date)
-    False
-    """
-    current_time = datetime.datetime.utcnow()
-    seconds_since_last_check = total_seconds(current_time - release_date)
-    ninety_days = 90 * 24 * 60 * 60
-    return seconds_since_last_check > ninety_days
-
-
 class VersionCheckState:
 
     def __init__(self):
@@ -133,24 +114,10 @@ def build_outdated_message(installed_version, release_date, newer_version=''):
         'Visit https://github.com/nexB/scancode-toolkit/releases for details.'
     )
     return msg
+ 
 
 
-def check_scancode_version_locally(
-    installed_version=scancode_version,
-    release_date=scancode_release_date,
-):
-    """
-    Return a message to display if outdated or None. Work offline, without a
-    PyPI remote check.
-    """
-    if is_outdated(release_date):
-        return build_outdated_message(
-            installed_version=installed_version,
-            release_date=release_date,
-        )
-
-
-def check_scancode_version_remotely(
+def check_scancode_version(
     installed_version=scancode_version,
     release_date=scancode_release_date,
     new_version_url='https://pypi.org/pypi/scancode-toolkit/json',

@@ -1,6 +1,6 @@
 [
     {
-        "Resource": "samples/",
+        "path": "samples/",
         "type": "directory",
         "name": "samples",
         "base_name": "samples",
@@ -24,7 +24,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/README",
+        "path": "samples/README",
         "type": "file",
         "name": "README",
         "base_name": "README",
@@ -48,19 +48,19 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/README",
+        "path": "samples/README",
         "url": "http://zlib.net/zlib-1.2.8.tar.gz",
         "start_line": 3,
         "end_line": 3
     },
     {
-        "Resource": "samples/README",
+        "path": "samples/README",
         "url": "http://master.dl.sourceforge.net/project/javagroups/JGroups/2.10.0.GA/JGroups-2.10.0.GA.src.zip",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/screenshot.png",
+        "path": "samples/screenshot.png",
         "type": "file",
         "name": "screenshot.png",
         "base_name": "screenshot",
@@ -84,7 +84,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/arch/",
+        "path": "samples/arch/",
         "type": "directory",
         "name": "arch",
         "base_name": "arch",
@@ -108,7 +108,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/arch/zlib.tar.gz",
+        "path": "samples/arch/zlib.tar.gz",
         "type": "file",
         "name": "zlib.tar.gz",
         "base_name": "zlib",
@@ -132,7 +132,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/arch/zlib.tar.gz",
+        "path": "samples/arch/zlib.tar.gz",
         "package__type": "tarball",
         "package__namespace": "",
         "package__name": "",
@@ -153,7 +153,7 @@
         "package__contains_source_code": ""
     },
     {
-        "Resource": "samples/JGroups/",
+        "path": "samples/JGroups/",
         "type": "directory",
         "name": "JGroups",
         "base_name": "JGroups",
@@ -177,7 +177,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/EULA",
+        "path": "samples/JGroups/EULA",
         "type": "file",
         "name": "EULA",
         "base_name": "EULA",
@@ -201,7 +201,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/EULA",
+        "path": "samples/JGroups/EULA",
         "license__key": "jboss-eula",
         "license__score": "100.00",
         "license__short_name": "JBoss EULA",
@@ -224,49 +224,49 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/JGroups/EULA",
+        "path": "samples/JGroups/EULA",
         "copyright": "Copyright 2006 Red Hat, Inc.",
         "start_line": 104,
         "end_line": 104
     },
     {
-        "Resource": "samples/JGroups/EULA",
-        "copyright_holder": "Red Hat, Inc.",
+        "path": "samples/JGroups/EULA",
+        "holder": "Red Hat, Inc.",
         "start_line": 104,
         "end_line": 104
     },
     {
-        "Resource": "samples/JGroups/EULA",
+        "path": "samples/JGroups/EULA",
         "url": "http://www.opensource.org/licenses/index.php",
         "start_line": 24,
         "end_line": 24
     },
     {
-        "Resource": "samples/JGroups/EULA",
+        "path": "samples/JGroups/EULA",
         "url": "http://www.jboss.org/",
         "start_line": 27,
         "end_line": 27
     },
     {
-        "Resource": "samples/JGroups/EULA",
+        "path": "samples/JGroups/EULA",
         "url": "http://www.redhat.com/about/corporate/trademark",
         "start_line": 40,
         "end_line": 40
     },
     {
-        "Resource": "samples/JGroups/EULA",
+        "path": "samples/JGroups/EULA",
         "url": "http://www.jboss.com/company/logos",
         "start_line": 43,
         "end_line": 43
     },
     {
-        "Resource": "samples/JGroups/EULA",
+        "path": "samples/JGroups/EULA",
         "url": "http://www.redhat.com/licenses",
         "start_line": 94,
         "end_line": 94
     },
     {
-        "Resource": "samples/JGroups/LICENSE",
+        "path": "samples/JGroups/LICENSE",
         "type": "file",
         "name": "LICENSE",
         "base_name": "LICENSE",
@@ -290,7 +290,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/LICENSE",
+        "path": "samples/JGroups/LICENSE",
         "license__key": "lgpl-2.1-plus",
         "license__score": "100.00",
         "license__short_name": "LGPL 2.1 or later",
@@ -313,31 +313,31 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/JGroups/LICENSE",
+        "path": "samples/JGroups/LICENSE",
         "copyright": "Copyright (c) 1991, 1999 Free Software Foundation, Inc.",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/JGroups/LICENSE",
+        "path": "samples/JGroups/LICENSE",
         "copyright": "copyrighted by the Free Software Foundation",
         "start_line": 428,
         "end_line": 428
     },
     {
-        "Resource": "samples/JGroups/LICENSE",
-        "copyright_holder": "Free Software Foundation, Inc.",
+        "path": "samples/JGroups/LICENSE",
+        "holder": "Free Software Foundation, Inc.",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/JGroups/LICENSE",
-        "copyright_holder": "the Free Software Foundation",
+        "path": "samples/JGroups/LICENSE",
+        "holder": "the Free Software Foundation",
         "start_line": 428,
         "end_line": 428
     },
     {
-        "Resource": "samples/JGroups/licenses/",
+        "path": "samples/JGroups/licenses/",
         "type": "directory",
         "name": "licenses",
         "base_name": "licenses",
@@ -361,7 +361,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/licenses/apache-1.1.txt",
+        "path": "samples/JGroups/licenses/apache-1.1.txt",
         "type": "file",
         "name": "apache-1.1.txt",
         "base_name": "apache-1.1",
@@ -385,7 +385,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/licenses/apache-1.1.txt",
+        "path": "samples/JGroups/licenses/apache-1.1.txt",
         "license__key": "apache-1.1",
         "license__score": "100.00",
         "license__short_name": "Apache 1.1",
@@ -408,37 +408,37 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/JGroups/licenses/apache-1.1.txt",
+        "path": "samples/JGroups/licenses/apache-1.1.txt",
         "copyright": "Copyright (c) 2000 The Apache Software Foundation.",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/JGroups/licenses/apache-1.1.txt",
-        "copyright_holder": "The Apache Software Foundation.",
+        "path": "samples/JGroups/licenses/apache-1.1.txt",
+        "holder": "The Apache Software Foundation.",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/JGroups/licenses/apache-1.1.txt",
+        "path": "samples/JGroups/licenses/apache-1.1.txt",
         "author": "the Apache Software Foundation (http://www.apache.org/).",
         "start_line": 21,
         "end_line": 21
     },
     {
-        "Resource": "samples/JGroups/licenses/apache-1.1.txt",
+        "path": "samples/JGroups/licenses/apache-1.1.txt",
         "email": "apache@apache.org",
         "start_line": 29,
         "end_line": 29
     },
     {
-        "Resource": "samples/JGroups/licenses/apache-1.1.txt",
+        "path": "samples/JGroups/licenses/apache-1.1.txt",
         "url": "http://www.apache.org/",
         "start_line": 22,
         "end_line": 22
     },
     {
-        "Resource": "samples/JGroups/licenses/apache-2.0.txt",
+        "path": "samples/JGroups/licenses/apache-2.0.txt",
         "type": "file",
         "name": "apache-2.0.txt",
         "base_name": "apache-2.0",
@@ -462,7 +462,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/licenses/apache-2.0.txt",
+        "path": "samples/JGroups/licenses/apache-2.0.txt",
         "license__key": "apache-2.0",
         "license__score": "100.00",
         "license__short_name": "Apache 2.0",
@@ -485,19 +485,19 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/JGroups/licenses/apache-2.0.txt",
+        "path": "samples/JGroups/licenses/apache-2.0.txt",
         "url": "http://www.apache.org/licenses/",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/JGroups/licenses/apache-2.0.txt",
+        "path": "samples/JGroups/licenses/apache-2.0.txt",
         "url": "http://www.apache.org/licenses/LICENSE-2.0",
         "start_line": 196,
         "end_line": 196
     },
     {
-        "Resource": "samples/JGroups/licenses/bouncycastle.txt",
+        "path": "samples/JGroups/licenses/bouncycastle.txt",
         "type": "file",
         "name": "bouncycastle.txt",
         "base_name": "bouncycastle",
@@ -521,7 +521,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/licenses/bouncycastle.txt",
+        "path": "samples/JGroups/licenses/bouncycastle.txt",
         "license__key": "mit",
         "license__score": "100.00",
         "license__short_name": "MIT License",
@@ -544,25 +544,25 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/JGroups/licenses/bouncycastle.txt",
+        "path": "samples/JGroups/licenses/bouncycastle.txt",
         "copyright": "Copyright (c) 2000 - 2006 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)",
         "start_line": 5,
         "end_line": 5
     },
     {
-        "Resource": "samples/JGroups/licenses/bouncycastle.txt",
-        "copyright_holder": "The Legion Of The Bouncy Castle",
+        "path": "samples/JGroups/licenses/bouncycastle.txt",
+        "holder": "The Legion Of The Bouncy Castle",
         "start_line": 5,
         "end_line": 5
     },
     {
-        "Resource": "samples/JGroups/licenses/bouncycastle.txt",
+        "path": "samples/JGroups/licenses/bouncycastle.txt",
         "url": "http://www.bouncycastle.org/",
         "start_line": 5,
         "end_line": 5
     },
     {
-        "Resource": "samples/JGroups/licenses/cpl-1.0.txt",
+        "path": "samples/JGroups/licenses/cpl-1.0.txt",
         "type": "file",
         "name": "cpl-1.0.txt",
         "base_name": "cpl-1.0",
@@ -586,7 +586,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/licenses/cpl-1.0.txt",
+        "path": "samples/JGroups/licenses/cpl-1.0.txt",
         "license__key": "cpl-1.0",
         "license__score": "99.94",
         "license__short_name": "CPL 1.0",
@@ -609,7 +609,7 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/JGroups/licenses/lgpl.txt",
+        "path": "samples/JGroups/licenses/lgpl.txt",
         "type": "file",
         "name": "lgpl.txt",
         "base_name": "lgpl",
@@ -633,7 +633,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/licenses/lgpl.txt",
+        "path": "samples/JGroups/licenses/lgpl.txt",
         "license__key": "lgpl-2.1-plus",
         "license__score": "100.00",
         "license__short_name": "LGPL 2.1 or later",
@@ -656,31 +656,31 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/JGroups/licenses/lgpl.txt",
+        "path": "samples/JGroups/licenses/lgpl.txt",
         "copyright": "Copyright (c) 1991, 1999 Free Software Foundation, Inc.",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/JGroups/licenses/lgpl.txt",
+        "path": "samples/JGroups/licenses/lgpl.txt",
         "copyright": "copyrighted by the Free Software Foundation",
         "start_line": 428,
         "end_line": 428
     },
     {
-        "Resource": "samples/JGroups/licenses/lgpl.txt",
-        "copyright_holder": "Free Software Foundation, Inc.",
+        "path": "samples/JGroups/licenses/lgpl.txt",
+        "holder": "Free Software Foundation, Inc.",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/JGroups/licenses/lgpl.txt",
-        "copyright_holder": "the Free Software Foundation",
+        "path": "samples/JGroups/licenses/lgpl.txt",
+        "holder": "the Free Software Foundation",
         "start_line": 428,
         "end_line": 428
     },
     {
-        "Resource": "samples/JGroups/src/",
+        "path": "samples/JGroups/src/",
         "type": "directory",
         "name": "src",
         "base_name": "src",
@@ -704,7 +704,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/src/FixedMembershipToken.java",
+        "path": "samples/JGroups/src/FixedMembershipToken.java",
         "type": "file",
         "name": "FixedMembershipToken.java",
         "base_name": "FixedMembershipToken",
@@ -728,7 +728,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/src/FixedMembershipToken.java",
+        "path": "samples/JGroups/src/FixedMembershipToken.java",
         "license__key": "lgpl-2.1-plus",
         "license__score": "100.00",
         "license__short_name": "LGPL 2.1 or later",
@@ -751,37 +751,37 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/JGroups/src/FixedMembershipToken.java",
+        "path": "samples/JGroups/src/FixedMembershipToken.java",
         "copyright": "Copyright 2005, JBoss Inc., and individual contributors",
         "start_line": 3,
         "end_line": 3
     },
     {
-        "Resource": "samples/JGroups/src/FixedMembershipToken.java",
-        "copyright_holder": "JBoss Inc., and individual contributors",
+        "path": "samples/JGroups/src/FixedMembershipToken.java",
+        "holder": "JBoss Inc., and individual contributors",
         "start_line": 3,
         "end_line": 3
     },
     {
-        "Resource": "samples/JGroups/src/FixedMembershipToken.java",
+        "path": "samples/JGroups/src/FixedMembershipToken.java",
         "author": "Chris Mills (millsy@jboss.com)",
         "start_line": 51,
         "end_line": 51
     },
     {
-        "Resource": "samples/JGroups/src/FixedMembershipToken.java",
+        "path": "samples/JGroups/src/FixedMembershipToken.java",
         "email": "millsy@jboss.com",
         "start_line": 51,
         "end_line": 51
     },
     {
-        "Resource": "samples/JGroups/src/FixedMembershipToken.java",
+        "path": "samples/JGroups/src/FixedMembershipToken.java",
         "url": "http://www.fsf.org/",
         "start_line": 20,
         "end_line": 20
     },
     {
-        "Resource": "samples/JGroups/src/GuardedBy.java",
+        "path": "samples/JGroups/src/GuardedBy.java",
         "type": "file",
         "name": "GuardedBy.java",
         "base_name": "GuardedBy",
@@ -805,7 +805,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/src/GuardedBy.java",
+        "path": "samples/JGroups/src/GuardedBy.java",
         "license__key": "cc-by-2.5",
         "license__score": "70.00",
         "license__short_name": "CC-BY-2.5",
@@ -828,37 +828,37 @@
         "matched_rule__rule_relevance": "70.00"
     },
     {
-        "Resource": "samples/JGroups/src/GuardedBy.java",
+        "path": "samples/JGroups/src/GuardedBy.java",
         "copyright": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
         "start_line": 9,
         "end_line": 9
     },
     {
-        "Resource": "samples/JGroups/src/GuardedBy.java",
-        "copyright_holder": "Brian Goetz and Tim Peierls",
+        "path": "samples/JGroups/src/GuardedBy.java",
+        "holder": "Brian Goetz and Tim Peierls",
         "start_line": 9,
         "end_line": 9
     },
     {
-        "Resource": "samples/JGroups/src/GuardedBy.java",
+        "path": "samples/JGroups/src/GuardedBy.java",
         "author": "Bela Ban",
         "start_line": 15,
         "end_line": 15
     },
     {
-        "Resource": "samples/JGroups/src/GuardedBy.java",
+        "path": "samples/JGroups/src/GuardedBy.java",
         "url": "http://creativecommons.org/licenses/by/2.5",
         "start_line": 11,
         "end_line": 11
     },
     {
-        "Resource": "samples/JGroups/src/GuardedBy.java",
+        "path": "samples/JGroups/src/GuardedBy.java",
         "url": "http://www.jcip.net/",
         "start_line": 12,
         "end_line": 12
     },
     {
-        "Resource": "samples/JGroups/src/ImmutableReference.java",
+        "path": "samples/JGroups/src/ImmutableReference.java",
         "type": "file",
         "name": "ImmutableReference.java",
         "base_name": "ImmutableReference",
@@ -882,7 +882,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/src/ImmutableReference.java",
+        "path": "samples/JGroups/src/ImmutableReference.java",
         "license__key": "lgpl-2.1-plus",
         "license__score": "100.00",
         "license__short_name": "LGPL 2.1 or later",
@@ -905,31 +905,31 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/JGroups/src/ImmutableReference.java",
+        "path": "samples/JGroups/src/ImmutableReference.java",
         "copyright": "Copyright 2010, Red Hat, Inc. and individual contributors",
         "start_line": 3,
         "end_line": 3
     },
     {
-        "Resource": "samples/JGroups/src/ImmutableReference.java",
-        "copyright_holder": "Red Hat, Inc. and individual contributors",
+        "path": "samples/JGroups/src/ImmutableReference.java",
+        "holder": "Red Hat, Inc. and individual contributors",
         "start_line": 3,
         "end_line": 3
     },
     {
-        "Resource": "samples/JGroups/src/ImmutableReference.java",
+        "path": "samples/JGroups/src/ImmutableReference.java",
         "author": "Brian Stansberry",
         "start_line": 29,
         "end_line": 29
     },
     {
-        "Resource": "samples/JGroups/src/ImmutableReference.java",
+        "path": "samples/JGroups/src/ImmutableReference.java",
         "url": "http://www.fsf.org/",
         "start_line": 20,
         "end_line": 20
     },
     {
-        "Resource": "samples/JGroups/src/RATE_LIMITER.java",
+        "path": "samples/JGroups/src/RATE_LIMITER.java",
         "type": "file",
         "name": "RATE_LIMITER.java",
         "base_name": "RATE_LIMITER",
@@ -953,13 +953,13 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/src/RATE_LIMITER.java",
+        "path": "samples/JGroups/src/RATE_LIMITER.java",
         "author": "Bela Ban",
         "start_line": 14,
         "end_line": 14
     },
     {
-        "Resource": "samples/JGroups/src/RouterStub.java",
+        "path": "samples/JGroups/src/RouterStub.java",
         "type": "file",
         "name": "RouterStub.java",
         "base_name": "RouterStub",
@@ -983,19 +983,19 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/src/RouterStub.java",
+        "path": "samples/JGroups/src/RouterStub.java",
         "author": "Bela Ban",
         "start_line": 23,
         "end_line": 23
     },
     {
-        "Resource": "samples/JGroups/src/RouterStub.java",
+        "path": "samples/JGroups/src/RouterStub.java",
         "url": "https://jira.jboss.org/jira/browse/JGRP-1151",
         "start_line": 232,
         "end_line": 232
     },
     {
-        "Resource": "samples/JGroups/src/RouterStubManager.java",
+        "path": "samples/JGroups/src/RouterStubManager.java",
         "type": "file",
         "name": "RouterStubManager.java",
         "base_name": "RouterStubManager",
@@ -1019,7 +1019,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/src/RouterStubManager.java",
+        "path": "samples/JGroups/src/RouterStubManager.java",
         "license__key": "lgpl-2.1-plus",
         "license__score": "100.00",
         "license__short_name": "LGPL 2.1 or later",
@@ -1042,25 +1042,25 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/JGroups/src/RouterStubManager.java",
+        "path": "samples/JGroups/src/RouterStubManager.java",
         "copyright": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
         "start_line": 3,
         "end_line": 3
     },
     {
-        "Resource": "samples/JGroups/src/RouterStubManager.java",
-        "copyright_holder": "Red Hat Middleware LLC, and individual contributors",
+        "path": "samples/JGroups/src/RouterStubManager.java",
+        "holder": "Red Hat Middleware LLC, and individual contributors",
         "start_line": 3,
         "end_line": 3
     },
     {
-        "Resource": "samples/JGroups/src/RouterStubManager.java",
+        "path": "samples/JGroups/src/RouterStubManager.java",
         "url": "http://www.fsf.org/",
         "start_line": 20,
         "end_line": 20
     },
     {
-        "Resource": "samples/JGroups/src/S3_PING.java",
+        "path": "samples/JGroups/src/S3_PING.java",
         "type": "file",
         "name": "S3_PING.java",
         "base_name": "S3_PING",
@@ -1084,7 +1084,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/JGroups/src/S3_PING.java",
+        "path": "samples/JGroups/src/S3_PING.java",
         "license__key": "public-domain",
         "license__score": "10.00",
         "license__short_name": "Public Domain",
@@ -1107,7 +1107,7 @@
         "matched_rule__rule_relevance": "10.00"
     },
     {
-        "Resource": "samples/JGroups/src/S3_PING.java",
+        "path": "samples/JGroups/src/S3_PING.java",
         "license__key": "public-domain",
         "license__score": "10.00",
         "license__short_name": "Public Domain",
@@ -1130,43 +1130,43 @@
         "matched_rule__rule_relevance": "10.00"
     },
     {
-        "Resource": "samples/JGroups/src/S3_PING.java",
+        "path": "samples/JGroups/src/S3_PING.java",
         "author": "Bela Ban",
         "start_line": 35,
         "end_line": 35
     },
     {
-        "Resource": "samples/JGroups/src/S3_PING.java",
+        "path": "samples/JGroups/src/S3_PING.java",
         "author": "Robert Harder",
         "start_line": 1698,
         "end_line": 1698
     },
     {
-        "Resource": "samples/JGroups/src/S3_PING.java",
+        "path": "samples/JGroups/src/S3_PING.java",
         "author": "rob@iharder.net",
         "start_line": 1698,
         "end_line": 1698
     },
     {
-        "Resource": "samples/JGroups/src/S3_PING.java",
+        "path": "samples/JGroups/src/S3_PING.java",
         "email": "rob@iharder.net",
         "start_line": 1699,
         "end_line": 1699
     },
     {
-        "Resource": "samples/JGroups/src/S3_PING.java",
+        "path": "samples/JGroups/src/S3_PING.java",
         "url": "http://iharder.sourceforge.net/current/java/base64/",
         "start_line": 1652,
         "end_line": 1652
     },
     {
-        "Resource": "samples/JGroups/src/S3_PING.java",
+        "path": "samples/JGroups/src/S3_PING.java",
         "url": "http://iharder.net/base64",
         "start_line": 1695,
         "end_line": 1695
     },
     {
-        "Resource": "samples/srp/",
+        "path": "samples/srp/",
         "type": "directory",
         "name": "srp",
         "base_name": "srp",
@@ -1190,7 +1190,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/srp/build.info",
+        "path": "samples/srp/build.info",
         "type": "file",
         "name": "build.info",
         "base_name": "build",
@@ -1214,7 +1214,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/srp/srp_lib.c",
+        "path": "samples/srp/srp_lib.c",
         "type": "file",
         "name": "srp_lib.c",
         "base_name": "srp_lib",
@@ -1238,7 +1238,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/srp/srp_lib.c",
+        "path": "samples/srp/srp_lib.c",
         "license__key": "openssl",
         "license__score": "100.00",
         "license__short_name": "OpenSSL License",
@@ -1261,25 +1261,25 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/srp/srp_lib.c",
+        "path": "samples/srp/srp_lib.c",
         "copyright": "Copyright 2011-2016 The OpenSSL Project",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/srp/srp_lib.c",
-        "copyright_holder": "The OpenSSL Project",
+        "path": "samples/srp/srp_lib.c",
+        "holder": "The OpenSSL Project",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/srp/srp_lib.c",
+        "path": "samples/srp/srp_lib.c",
         "url": "https://www.openssl.org/source/license.html",
         "start_line": 7,
         "end_line": 7
     },
     {
-        "Resource": "samples/srp/srp_vfy.c",
+        "path": "samples/srp/srp_vfy.c",
         "type": "file",
         "name": "srp_vfy.c",
         "base_name": "srp_vfy",
@@ -1303,7 +1303,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/srp/srp_vfy.c",
+        "path": "samples/srp/srp_vfy.c",
         "license__key": "openssl",
         "license__score": "100.00",
         "license__short_name": "OpenSSL License",
@@ -1326,25 +1326,25 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/srp/srp_vfy.c",
+        "path": "samples/srp/srp_vfy.c",
         "copyright": "Copyright 2011-2016 The OpenSSL Project",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/srp/srp_vfy.c",
-        "copyright_holder": "The OpenSSL Project",
+        "path": "samples/srp/srp_vfy.c",
+        "holder": "The OpenSSL Project",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/srp/srp_vfy.c",
+        "path": "samples/srp/srp_vfy.c",
         "url": "https://www.openssl.org/source/license.html",
         "start_line": 7,
         "end_line": 7
     },
     {
-        "Resource": "samples/srp/scan/",
+        "path": "samples/srp/scan/",
         "type": "directory",
         "name": "scan",
         "base_name": "scan",
@@ -1368,7 +1368,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/srp/scan/",
+        "path": "samples/srp/scan/",
         "package__type": "npm",
         "package__namespace": "",
         "package__name": "cookie-signature",
@@ -1389,7 +1389,7 @@
         "package__contains_source_code": ""
     },
     {
-        "Resource": "samples/srp/scan/json2csv.rb",
+        "path": "samples/srp/scan/json2csv.rb",
         "type": "file",
         "name": "json2csv.rb",
         "base_name": "json2csv",
@@ -1413,7 +1413,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/srp/scan/json2csv.rb",
+        "path": "samples/srp/scan/json2csv.rb",
         "license__key": "apache-2.0",
         "license__score": "89.53",
         "license__short_name": "Apache 2.0",
@@ -1436,37 +1436,37 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/srp/scan/json2csv.rb",
+        "path": "samples/srp/scan/json2csv.rb",
         "copyright": "Copyright (c) 2017 nexB Inc. and others.",
         "start_line": 3,
         "end_line": 3
     },
     {
-        "Resource": "samples/srp/scan/json2csv.rb",
-        "copyright_holder": "nexB Inc. and others.",
+        "path": "samples/srp/scan/json2csv.rb",
+        "holder": "nexB Inc. and others.",
         "start_line": 3,
         "end_line": 3
     },
     {
-        "Resource": "samples/srp/scan/json2csv.rb",
+        "path": "samples/srp/scan/json2csv.rb",
         "url": "http://nexb.com/",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/srp/scan/json2csv.rb",
+        "path": "samples/srp/scan/json2csv.rb",
         "url": "https://github.com/nexB/scancode-toolkit/",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/srp/scan/json2csv.rb",
+        "path": "samples/srp/scan/json2csv.rb",
         "url": "http://apache.org/licenses/LICENSE-2.0",
         "start_line": 10,
         "end_line": 10
     },
     {
-        "Resource": "samples/srp/scan/license",
+        "path": "samples/srp/scan/license",
         "type": "file",
         "name": "license",
         "base_name": "license",
@@ -1490,7 +1490,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/srp/scan/license",
+        "path": "samples/srp/scan/license",
         "license__key": "gpl-2.0-plus",
         "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
@@ -1513,7 +1513,7 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/srp/scan/package.json",
+        "path": "samples/srp/scan/package.json",
         "type": "file",
         "name": "package.json",
         "base_name": "package",
@@ -1537,7 +1537,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/srp/scan/package.json",
+        "path": "samples/srp/scan/package.json",
         "license__key": "mit",
         "license__score": "15.00",
         "license__short_name": "MIT License",
@@ -1560,7 +1560,7 @@
         "matched_rule__rule_relevance": "15.00"
     },
     {
-        "Resource": "samples/srp/scan/package.json",
+        "path": "samples/srp/scan/package.json",
         "license__key": "mit",
         "license__score": "100.00",
         "license__short_name": "MIT License",
@@ -1583,37 +1583,37 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/srp/scan/package.json",
+        "path": "samples/srp/scan/package.json",
         "copyright": "Copyright (c) 2012 LearnBoost <tj@learnboost.com>",
         "start_line": 24,
         "end_line": 24
     },
     {
-        "Resource": "samples/srp/scan/package.json",
-        "copyright_holder": "LearnBoost",
+        "path": "samples/srp/scan/package.json",
+        "holder": "LearnBoost",
         "start_line": 24,
         "end_line": 24
     },
     {
-        "Resource": "samples/srp/scan/package.json",
+        "path": "samples/srp/scan/package.json",
         "email": "tj@learnboost.com",
         "start_line": 12,
         "end_line": 12
     },
     {
-        "Resource": "samples/srp/scan/package.json",
+        "path": "samples/srp/scan/package.json",
         "url": "https://github.com/visionmedia/node-cookie-signature.git",
         "start_line": 16,
         "end_line": 16
     },
     {
-        "Resource": "samples/srp/scan/package.json",
+        "path": "samples/srp/scan/package.json",
         "url": "https://github.com/visionmedia/node-cookie-signature/issues",
         "start_line": 27,
         "end_line": 27
     },
     {
-        "Resource": "samples/zlib/",
+        "path": "samples/zlib/",
         "type": "directory",
         "name": "zlib",
         "base_name": "zlib",
@@ -1637,7 +1637,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/adler32.c",
+        "path": "samples/zlib/adler32.c",
         "type": "file",
         "name": "adler32.c",
         "base_name": "adler32",
@@ -1661,7 +1661,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/adler32.c",
+        "path": "samples/zlib/adler32.c",
         "license__key": "zlib",
         "license__score": "60.00",
         "license__short_name": "ZLIB License",
@@ -1684,19 +1684,19 @@
         "matched_rule__rule_relevance": "60.00"
     },
     {
-        "Resource": "samples/zlib/adler32.c",
+        "path": "samples/zlib/adler32.c",
         "copyright": "Copyright (c) 1995-2011 Mark Adler",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/adler32.c",
-        "copyright_holder": "Mark Adler",
+        "path": "samples/zlib/adler32.c",
+        "holder": "Mark Adler",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/deflate.c",
+        "path": "samples/zlib/deflate.c",
         "type": "file",
         "name": "deflate.c",
         "base_name": "deflate",
@@ -1720,7 +1720,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/deflate.c",
+        "path": "samples/zlib/deflate.c",
         "license__key": "zlib",
         "license__score": "60.00",
         "license__short_name": "ZLIB License",
@@ -1743,43 +1743,43 @@
         "matched_rule__rule_relevance": "60.00"
     },
     {
-        "Resource": "samples/zlib/deflate.c",
+        "path": "samples/zlib/deflate.c",
         "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/deflate.c",
+        "path": "samples/zlib/deflate.c",
         "copyright": "Copyright 1995-2013 Jean-loup Gailly and Mark Adler",
         "start_line": 54,
         "end_line": 54
     },
     {
-        "Resource": "samples/zlib/deflate.c",
-        "copyright_holder": "Jean-loup Gailly and Mark Adler",
+        "path": "samples/zlib/deflate.c",
+        "holder": "Jean-loup Gailly and Mark Adler",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/deflate.c",
-        "copyright_holder": "Jean-loup Gailly and Mark Adler",
+        "path": "samples/zlib/deflate.c",
+        "holder": "Jean-loup Gailly and Mark Adler",
         "start_line": 54,
         "end_line": 54
     },
     {
-        "Resource": "samples/zlib/deflate.c",
+        "path": "samples/zlib/deflate.c",
         "author": "Leonid Broukhis.",
         "start_line": 34,
         "end_line": 34
     },
     {
-        "Resource": "samples/zlib/deflate.c",
+        "path": "samples/zlib/deflate.c",
         "url": "http://tools.ietf.org/html/rfc1951",
         "start_line": 40,
         "end_line": 40
     },
     {
-        "Resource": "samples/zlib/deflate.h",
+        "path": "samples/zlib/deflate.h",
         "type": "file",
         "name": "deflate.h",
         "base_name": "deflate",
@@ -1803,7 +1803,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/deflate.h",
+        "path": "samples/zlib/deflate.h",
         "license__key": "zlib",
         "license__score": "60.00",
         "license__short_name": "ZLIB License",
@@ -1826,7 +1826,7 @@
         "matched_rule__rule_relevance": "60.00"
     },
     {
-        "Resource": "samples/zlib/deflate.h",
+        "path": "samples/zlib/deflate.h",
         "license__key": "zlib",
         "license__score": "100.00",
         "license__short_name": "ZLIB License",
@@ -1849,19 +1849,19 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/zlib/deflate.h",
+        "path": "samples/zlib/deflate.h",
         "copyright": "Copyright (c) 1995-2012 Jean-loup Gailly",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/deflate.h",
-        "copyright_holder": "Jean-loup Gailly",
+        "path": "samples/zlib/deflate.h",
+        "holder": "Jean-loup Gailly",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/zlib.h",
+        "path": "samples/zlib/zlib.h",
         "type": "file",
         "name": "zlib.h",
         "base_name": "zlib",
@@ -1885,7 +1885,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/zlib.h",
+        "path": "samples/zlib/zlib.h",
         "license__key": "zlib",
         "license__score": "100.00",
         "license__short_name": "ZLIB License",
@@ -1908,37 +1908,37 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/zlib/zlib.h",
+        "path": "samples/zlib/zlib.h",
         "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/zlib/zlib.h",
-        "copyright_holder": "Jean-loup Gailly and Mark Adler",
+        "path": "samples/zlib/zlib.h",
+        "holder": "Jean-loup Gailly and Mark Adler",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/zlib/zlib.h",
+        "path": "samples/zlib/zlib.h",
         "email": "jloup@gzip.org",
         "start_line": 23,
         "end_line": 23
     },
     {
-        "Resource": "samples/zlib/zlib.h",
+        "path": "samples/zlib/zlib.h",
         "email": "madler@alumni.caltech.edu",
         "start_line": 23,
         "end_line": 23
     },
     {
-        "Resource": "samples/zlib/zlib.h",
+        "path": "samples/zlib/zlib.h",
         "url": "http://tools.ietf.org/html/rfc1950",
         "start_line": 27,
         "end_line": 27
     },
     {
-        "Resource": "samples/zlib/zutil.c",
+        "path": "samples/zlib/zutil.c",
         "type": "file",
         "name": "zutil.c",
         "base_name": "zutil",
@@ -1962,7 +1962,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/zutil.c",
+        "path": "samples/zlib/zutil.c",
         "license__key": "zlib",
         "license__score": "60.00",
         "license__short_name": "ZLIB License",
@@ -1985,19 +1985,19 @@
         "matched_rule__rule_relevance": "60.00"
     },
     {
-        "Resource": "samples/zlib/zutil.c",
+        "path": "samples/zlib/zutil.c",
         "copyright": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly.",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/zutil.c",
-        "copyright_holder": "Jean-loup Gailly.",
+        "path": "samples/zlib/zutil.c",
+        "holder": "Jean-loup Gailly.",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/zutil.h",
+        "path": "samples/zlib/zutil.h",
         "type": "file",
         "name": "zutil.h",
         "base_name": "zutil",
@@ -2021,7 +2021,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/zutil.h",
+        "path": "samples/zlib/zutil.h",
         "license__key": "zlib",
         "license__score": "60.00",
         "license__short_name": "ZLIB License",
@@ -2044,19 +2044,19 @@
         "matched_rule__rule_relevance": "60.00"
     },
     {
-        "Resource": "samples/zlib/zutil.h",
+        "path": "samples/zlib/zutil.h",
         "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly.",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/zutil.h",
-        "copyright_holder": "Jean-loup Gailly.",
+        "path": "samples/zlib/zutil.h",
+        "holder": "Jean-loup Gailly.",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/ada/",
+        "path": "samples/zlib/ada/",
         "type": "directory",
         "name": "ada",
         "base_name": "ada",
@@ -2080,7 +2080,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/ada/zlib.ads",
+        "path": "samples/zlib/ada/zlib.ads",
         "type": "file",
         "name": "zlib.ads",
         "base_name": "zlib",
@@ -2104,7 +2104,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/ada/zlib.ads",
+        "path": "samples/zlib/ada/zlib.ads",
         "license__key": "lgpl-2.0-plus",
         "license__score": "97.39",
         "license__short_name": "LGPL 2.0 or later",
@@ -2127,7 +2127,7 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/zlib/ada/zlib.ads",
+        "path": "samples/zlib/ada/zlib.ads",
         "license__key": "ada-linking-exception",
         "license__score": "100.00",
         "license__short_name": "Ada linking exception to GPL 2.0 or later",
@@ -2150,19 +2150,19 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/zlib/ada/zlib.ads",
+        "path": "samples/zlib/ada/zlib.ads",
         "copyright": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/zlib/ada/zlib.ads",
-        "copyright_holder": "Dmitriy Anisimkov",
+        "path": "samples/zlib/ada/zlib.ads",
+        "holder": "Dmitriy Anisimkov",
         "start_line": 4,
         "end_line": 4
     },
     {
-        "Resource": "samples/zlib/dotzlib/",
+        "path": "samples/zlib/dotzlib/",
         "type": "directory",
         "name": "dotzlib",
         "base_name": "dotzlib",
@@ -2186,7 +2186,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/dotzlib/AssemblyInfo.cs",
+        "path": "samples/zlib/dotzlib/AssemblyInfo.cs",
         "type": "file",
         "name": "AssemblyInfo.cs",
         "base_name": "AssemblyInfo",
@@ -2210,19 +2210,19 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/dotzlib/AssemblyInfo.cs",
+        "path": "samples/zlib/dotzlib/AssemblyInfo.cs",
         "copyright": "Copyright (c) 2004 by Henrik Ravn",
         "start_line": 14,
         "end_line": 14
     },
     {
-        "Resource": "samples/zlib/dotzlib/AssemblyInfo.cs",
-        "copyright_holder": "Henrik Ravn",
+        "path": "samples/zlib/dotzlib/AssemblyInfo.cs",
+        "holder": "Henrik Ravn",
         "start_line": 14,
         "end_line": 14
     },
     {
-        "Resource": "samples/zlib/dotzlib/ChecksumImpl.cs",
+        "path": "samples/zlib/dotzlib/ChecksumImpl.cs",
         "type": "file",
         "name": "ChecksumImpl.cs",
         "base_name": "ChecksumImpl",
@@ -2246,7 +2246,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/dotzlib/ChecksumImpl.cs",
+        "path": "samples/zlib/dotzlib/ChecksumImpl.cs",
         "license__key": "boost-1.0",
         "license__score": "92.59",
         "license__short_name": "Boost 1.0",
@@ -2269,25 +2269,25 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/zlib/dotzlib/ChecksumImpl.cs",
+        "path": "samples/zlib/dotzlib/ChecksumImpl.cs",
         "copyright": "(c) Copyright Henrik Ravn 2004",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/dotzlib/ChecksumImpl.cs",
-        "copyright_holder": "Henrik Ravn",
+        "path": "samples/zlib/dotzlib/ChecksumImpl.cs",
+        "holder": "Henrik Ravn",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/dotzlib/ChecksumImpl.cs",
+        "path": "samples/zlib/dotzlib/ChecksumImpl.cs",
         "url": "http://www.boost.org/LICENSE_1_0.txt",
         "start_line": 5,
         "end_line": 5
     },
     {
-        "Resource": "samples/zlib/dotzlib/LICENSE_1_0.txt",
+        "path": "samples/zlib/dotzlib/LICENSE_1_0.txt",
         "type": "file",
         "name": "LICENSE_1_0.txt",
         "base_name": "LICENSE_1_0",
@@ -2311,7 +2311,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/dotzlib/LICENSE_1_0.txt",
+        "path": "samples/zlib/dotzlib/LICENSE_1_0.txt",
         "license__key": "boost-1.0",
         "license__score": "100.00",
         "license__short_name": "Boost 1.0",
@@ -2334,7 +2334,7 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/zlib/dotzlib/readme.txt",
+        "path": "samples/zlib/dotzlib/readme.txt",
         "type": "file",
         "name": "readme.txt",
         "base_name": "readme",
@@ -2358,7 +2358,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/dotzlib/readme.txt",
+        "path": "samples/zlib/dotzlib/readme.txt",
         "license__key": "boost-1.0",
         "license__score": "92.59",
         "license__short_name": "Boost 1.0",
@@ -2381,25 +2381,25 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/zlib/dotzlib/readme.txt",
+        "path": "samples/zlib/dotzlib/readme.txt",
         "copyright": "Copyright (c) Henrik Ravn 2004",
         "start_line": 55,
         "end_line": 55
     },
     {
-        "Resource": "samples/zlib/dotzlib/readme.txt",
-        "copyright_holder": "Henrik Ravn",
+        "path": "samples/zlib/dotzlib/readme.txt",
+        "holder": "Henrik Ravn",
         "start_line": 55,
         "end_line": 55
     },
     {
-        "Resource": "samples/zlib/dotzlib/readme.txt",
+        "path": "samples/zlib/dotzlib/readme.txt",
         "url": "http://www.boost.org/LICENSE_1_0.txt",
         "start_line": 58,
         "end_line": 58
     },
     {
-        "Resource": "samples/zlib/gcc_gvmat64/",
+        "path": "samples/zlib/gcc_gvmat64/",
         "type": "directory",
         "name": "gcc_gvmat64",
         "base_name": "gcc_gvmat64",
@@ -2423,7 +2423,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/gcc_gvmat64/gvmat64.S",
+        "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
         "type": "file",
         "name": "gvmat64.S",
         "base_name": "gvmat64",
@@ -2447,7 +2447,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/gcc_gvmat64/gvmat64.S",
+        "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
         "license__key": "zlib",
         "license__score": "100.00",
         "license__short_name": "ZLIB License",
@@ -2470,61 +2470,61 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/zlib/gcc_gvmat64/gvmat64.S",
+        "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
         "copyright": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
         "start_line": 10,
         "end_line": 10
     },
     {
-        "Resource": "samples/zlib/gcc_gvmat64/gvmat64.S",
-        "copyright_holder": "Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
+        "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
+        "holder": "Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
         "start_line": 10,
         "end_line": 10
     },
     {
-        "Resource": "samples/zlib/gcc_gvmat64/gvmat64.S",
+        "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
         "author": "Gilles Vollant",
         "start_line": 12,
         "end_line": 12
     },
     {
-        "Resource": "samples/zlib/gcc_gvmat64/gvmat64.S",
+        "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
         "url": "http://www.zlib.net/",
         "start_line": 33,
         "end_line": 33
     },
     {
-        "Resource": "samples/zlib/gcc_gvmat64/gvmat64.S",
+        "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
         "url": "http://www.winimage.com/zLibDll",
         "start_line": 34,
         "end_line": 34
     },
     {
-        "Resource": "samples/zlib/gcc_gvmat64/gvmat64.S",
+        "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
         "url": "http://www.muppetlabs.com/~breadbox/software/assembly.html",
         "start_line": 35,
         "end_line": 35
     },
     {
-        "Resource": "samples/zlib/gcc_gvmat64/gvmat64.S",
+        "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
         "url": "http://weblogs.asp.net/oldnewthing/archive/2004/01/14/58579.aspx",
         "start_line": 172,
         "end_line": 172
     },
     {
-        "Resource": "samples/zlib/gcc_gvmat64/gvmat64.S",
+        "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
         "url": "http://msdn.microsoft.com/library/en-us/kmarch/hh/kmarch/64bitAMD_8e951dd2-ee77-4728-8702-55ce4b5dd24a.xml.asp",
         "start_line": 173,
         "end_line": 173
     },
     {
-        "Resource": "samples/zlib/gcc_gvmat64/gvmat64.S",
+        "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
         "url": "http://www.x86-64.org/documentation/abi-0.99.pdf",
         "start_line": 180,
         "end_line": 180
     },
     {
-        "Resource": "samples/zlib/infback9/",
+        "path": "samples/zlib/infback9/",
         "type": "directory",
         "name": "infback9",
         "base_name": "infback9",
@@ -2548,7 +2548,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/infback9/infback9.c",
+        "path": "samples/zlib/infback9/infback9.c",
         "type": "file",
         "name": "infback9.c",
         "base_name": "infback9",
@@ -2572,7 +2572,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/infback9/infback9.c",
+        "path": "samples/zlib/infback9/infback9.c",
         "license__key": "zlib",
         "license__score": "60.00",
         "license__short_name": "ZLIB License",
@@ -2595,19 +2595,19 @@
         "matched_rule__rule_relevance": "60.00"
     },
     {
-        "Resource": "samples/zlib/infback9/infback9.c",
+        "path": "samples/zlib/infback9/infback9.c",
         "copyright": "Copyright (c) 1995-2008 Mark Adler",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/infback9/infback9.c",
-        "copyright_holder": "Mark Adler",
+        "path": "samples/zlib/infback9/infback9.c",
+        "holder": "Mark Adler",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/infback9/infback9.h",
+        "path": "samples/zlib/infback9/infback9.h",
         "type": "file",
         "name": "infback9.h",
         "base_name": "infback9",
@@ -2631,7 +2631,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/infback9/infback9.h",
+        "path": "samples/zlib/infback9/infback9.h",
         "license__key": "zlib",
         "license__score": "60.00",
         "license__short_name": "ZLIB License",
@@ -2654,19 +2654,19 @@
         "matched_rule__rule_relevance": "60.00"
     },
     {
-        "Resource": "samples/zlib/infback9/infback9.h",
+        "path": "samples/zlib/infback9/infback9.h",
         "copyright": "Copyright (c) 2003 Mark Adler",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/infback9/infback9.h",
-        "copyright_holder": "Mark Adler",
+        "path": "samples/zlib/infback9/infback9.h",
+        "holder": "Mark Adler",
         "start_line": 2,
         "end_line": 2
     },
     {
-        "Resource": "samples/zlib/iostream2/",
+        "path": "samples/zlib/iostream2/",
         "type": "directory",
         "name": "iostream2",
         "base_name": "iostream2",
@@ -2690,7 +2690,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/iostream2/zstream.h",
+        "path": "samples/zlib/iostream2/zstream.h",
         "type": "file",
         "name": "zstream.h",
         "base_name": "zstream",
@@ -2714,7 +2714,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/zlib/iostream2/zstream.h",
+        "path": "samples/zlib/iostream2/zstream.h",
         "license__key": "cmr-no",
         "license__score": "100.00",
         "license__short_name": "CMR License",
@@ -2737,25 +2737,25 @@
         "matched_rule__rule_relevance": "100.00"
     },
     {
-        "Resource": "samples/zlib/iostream2/zstream.h",
+        "path": "samples/zlib/iostream2/zstream.h",
         "copyright": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
         "start_line": 3,
         "end_line": 3
     },
     {
-        "Resource": "samples/zlib/iostream2/zstream.h",
-        "copyright_holder": "Christian Michelsen Research AS Advanced Computing",
+        "path": "samples/zlib/iostream2/zstream.h",
+        "holder": "Christian Michelsen Research AS Advanced Computing",
         "start_line": 3,
         "end_line": 3
     },
     {
-        "Resource": "samples/zlib/iostream2/zstream.h",
+        "path": "samples/zlib/iostream2/zstream.h",
         "url": "http://www.cmr.no/",
         "start_line": 7,
         "end_line": 7
     },
     {
-        "Resource": "samples/zlib/iostream2/zstream_test.cpp",
+        "path": "samples/zlib/iostream2/zstream_test.cpp",
         "type": "file",
         "name": "zstream_test.cpp",
         "base_name": "zstream_test",

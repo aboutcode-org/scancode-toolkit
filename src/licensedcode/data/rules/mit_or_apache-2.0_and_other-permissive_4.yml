@@ -4,5 +4,5 @@ relevance: 99
 minimum_coverage: 90
 ignorable_urls:
     - http://opensource.org/licenses/MIT
-    - https://www.apache.org/licenses/LICENSE-2.0
     - https://thanks.rust-lang.org/
+    - https://www.apache.org/licenses/LICENSE-2.0

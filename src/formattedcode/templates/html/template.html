@@ -147,7 +147,7 @@
         {% for data in row.holders %}
         <tr>
           <td>{{ path }}</td>
-          <td>{{ data.value }}</td>
+          <td>{{ data.holder }}</td>
           <td>{{ data.start_line }}</td>
           <td>{{ data.end_line }}</td>
         </tr>
@@ -172,7 +172,7 @@
         {% for data in row.authors %}
         <tr>
           <td>{{ path }}</td>
-          <td>{{ data.value }}</td>
+          <td>{{ data.author }}</td>
           <td>{{ data.start_line }}</td>
           <td>{{ data.end_line }}</td>
         </tr>

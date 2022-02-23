@@ -1,0 +1,13 @@
+key: opensc-openssl-openpace-exception-gpl
+short_name: OpenSC OpenSSL linking exception GPL in OpenPace
+name: OpenSC and OpenSSL linking exception to GPL in OpenPace
+category: Copyleft
+owner: OpenPACE Project
+homepage_url: https://github.com/frankmorgner/openpace/blob/812ecb1f60188e6df89998c7a3704b8021c8bfd7/COPYING#L676
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-openpace-exception-gpl
+other_spdx_license_keys:
+    - LicenseRef-scancode-opensc-openssl-openpace-exception-gpl
+other_urls:
+    - https://github.com/frankmorgner/openpace/issues/46
+    - https://github.com/frankmorgner/openpace/commit/3077280a49992c2d947fbde327ef53add8576587

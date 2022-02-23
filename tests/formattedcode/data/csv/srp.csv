@@ -1,4 +1,4 @@
-Resource,type,scan_errors,copyright,start_line,end_line,copyright_holder
+path,type,scan_errors,copyright,start_line,end_line,holder
 srp/,directory,,,,,
 srp/build.info,file,,,,,
 srp/srp_lib.c,file,,,,,

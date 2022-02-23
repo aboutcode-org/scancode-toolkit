@@ -1,0 +1,16 @@
+key: openi-pl-1.0
+short_name: OpenI Public License 1.0
+name: OpenI Public License 1.0
+category: Copyleft Limited
+owner: OpenI
+homepage_url: http://openi.sourceforge.net/docs/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-openi-pl-1.0
+ignorable_copyrights:
+    - Copyright (c) 2005 Loyalty Matrix, Inc.
+ignorable_holders:
+    - Loyalty Matrix, Inc.
+ignorable_authors:
+    - Loyalty Matrix
+ignorable_urls:
+    - http://www.mozilla.org/MPL/MPL-1.1.html
+    - http://www.openi.org/docs/opl-1.0.txt

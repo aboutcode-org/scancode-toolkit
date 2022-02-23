@@ -142,13 +142,13 @@ matches:
       LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
       OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
       WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  - score: '89.32'
+  - score: '89.1'
     start_line: 121
     end_line: 169
     matcher: 3-seq
-    rule_length: 365
-    matched_length: 326
-    match_coverage: '89.32'
+    rule_length: 367
+    matched_length: 327
+    match_coverage: '89.1'
     rule_relevance: 100
     identifier: psf-2.0.LICENSE
     license_expression: psf-2.0
@@ -171,7 +171,7 @@ matches:
       world-wide license to reproduce, analyze, test, perform and/or display
       publicly, prepare derivative works, distribute, and otherwise use
       [Baseconv] alone or in any derivative version, provided, however, that
-      [Baseconv] [Authors]'s License Agreement and [Baseconv] [Author]'s [notice] [of]
+      [Baseconv] [Authors]'s License Agreement and [Baseconv] [Author]'[s] [notice] [of]
       [copyright], [i].[e]., "[Copyright] ([c]) [2010] [Guilherme] [Gondim].; [Copyright]
       ([c]) [2009] [Simon] [Willison].; [Copyright] ([c]) [2002] [Drew] [Perttula].; All Rights
       Reserved" are retained in [Baseconv] alone or in any derivative version

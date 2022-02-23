@@ -16,7 +16,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.15",
         "files_count": 2
       }
     }
@@ -182,24 +182,24 @@
       "percentage_of_license_text": 50.0,
       "copyrights": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 1
         },
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 1
         },
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 2,
           "end_line": 2
         }
@@ -319,24 +319,24 @@
       "percentage_of_license_text": 50.0,
       "copyrights": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 1
         },
         {
-          "value": "Copyright (c) IBM Corp.",
+          "copyright": "Copyright (c) IBM Corp.",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 1
         },
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 2,
           "end_line": 2
         }

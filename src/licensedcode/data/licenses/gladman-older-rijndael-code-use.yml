@@ -1,0 +1,9 @@
+key: gladman-older-rijndael-code-use
+short_name: Gladman Older Rigndael Code Use
+name: Gladman Older Rigndael Code Use
+category: Permissive
+owner: Brian Gladman
+homepage_url: http://ccgi.gladman.plus.com/oldsite/cryptography_technology/rijndael/index.php
+spdx_license_key: LicenseRef-scancode-gladman-older-rijndael-code
+other_spdx_license_keys:
+    - LicenseRef-scancode-gladman-older-rijndael-code-use

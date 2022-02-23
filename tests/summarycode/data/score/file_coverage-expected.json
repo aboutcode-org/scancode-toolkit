@@ -167,7 +167,7 @@
       "holders": [],
       "authors": [
         {
-          "value": "Alexander Plavinski <alexander.plavinski@invision.de>",
+          "author": "Alexander Plavinski <alexander.plavinski@invision.de>",
           "start_line": 6,
           "end_line": 6
         }
@@ -282,14 +282,14 @@
       "percentage_of_license_text": 33.33,
       "copyrights": [
         {
-          "value": "Copyright (c) 2007 nexB Inc.",
+          "copyright": "Copyright (c) 2007 nexB Inc.",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "nexB Inc.",
+          "holder": "nexB Inc.",
           "start_line": 2,
           "end_line": 2
         }
@@ -329,14 +329,14 @@
       "percentage_of_license_text": 0,
       "copyrights": [
         {
-          "value": "Copyright (c) 2007 nexB Inc.",
+          "copyright": "Copyright (c) 2007 nexB Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "nexB Inc.",
+          "holder": "nexB Inc.",
           "start_line": 1,
           "end_line": 1
         }
@@ -376,14 +376,14 @@
       "percentage_of_license_text": 0,
       "copyrights": [
         {
-          "value": "Copyright (c) 2007 nexB Inc.",
+          "copyright": "Copyright (c) 2007 nexB Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
       "holders": [
         {
-          "value": "nexB Inc.",
+          "holder": "nexB Inc.",
           "start_line": 1,
           "end_line": 1
         }
