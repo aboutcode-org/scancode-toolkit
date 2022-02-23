@@ -802,6 +802,15 @@ class PackageInstance:
         help='List of files provided by this package.'
     )
 
+    @property
+    def ignore_paths(self):
+        """
+        Paths to ignore when looking for other package_data files.
+
+        Override the default empty list by defining for each package ecosystems specifically.
+        """
+        return []
+
     def to_dict(self, **kwargs):
         """
         Return an dict of primitive Python types.
@@ -889,9 +898,18 @@ class PackageInstance:
 
         parent = resource.parent(codebase)
 
+        paths_to_ignore = self.ignore_paths
+
         for resource in parent.walk(codebase):
             if resource.is_dir:
                 continue
+
+            if paths_to_ignore:
+                if any(
+                    path in resource.path
+                    for path in paths_to_ignore
+                ):
+                    continue
 
             filename = file_name(resource.location)
             file_patterns = self.get_file_patterns(manifests=self.manifests)

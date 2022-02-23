@@ -27,5 +27,5 @@ def test_licenses_reference_works():
     run_scan_click(args)
     check_json_scan(
         test_env.get_test_loc('plugin_licenses_reference/scan.expected.json'),
-        result_file, remove_file_date=True, regen=False,
+        result_file, remove_file_date=True, remove_instance_uuid=True, regen=False,
     )

@@ -14,7 +14,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 7
       }
     }
@@ -63,17 +63,6 @@
       "dependency_uuid": "pkg:pypi/importlib-metadata",
       "for_package": "pkg:pypi/click@8.0.1",
       "lockfile": "setup.py"
-    },
-    {
-      "purl": "pkg:pypi/pre-commit",
-      "requirement": "pre-commit",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/pre-commit",
-      "for_package": "pkg:pypi/click@8.0.1",
-      "lockfile": "tox.ini"
     }
   ],
   "packages": [
@@ -153,9 +142,7 @@
       "package_uuid": "pkg:pypi/click@8.0.1",
       "package_data_paths": [
         "METADATA",
-        "setup.cfg",
-        "setup.py",
-        "tox.ini"
+        "setup.py"
       ],
       "files": [
         "LICENSE.rst",
@@ -291,44 +278,7 @@
     {
       "path": "setup.cfg",
       "type": "file",
-      "package_data": [
-        {
-          "type": "pypi",
-          "namespace": null,
-          "name": null,
-          "version": null,
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "Python",
-          "description": null,
-          "release_date": null,
-          "parties": [],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
-          "notice_text": null,
-          "root_path": null,
-          "dependencies": [],
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
-          "purl": null,
-          "repository_homepage_url": null,
-          "repository_download_url": null,
-          "api_data_url": null
-        }
-      ],
+      "package_data": [],
       "for_packages": [
         "pkg:pypi/click@8.0.1"
       ],
@@ -400,53 +350,7 @@
     {
       "path": "tox.ini",
       "type": "file",
-      "package_data": [
-        {
-          "type": "pypi",
-          "namespace": null,
-          "name": null,
-          "version": null,
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "Python",
-          "description": null,
-          "release_date": null,
-          "parties": [],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
-          "notice_text": null,
-          "root_path": null,
-          "dependencies": [
-            {
-              "purl": "pkg:pypi/pre-commit",
-              "requirement": "pre-commit",
-              "scope": "install",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false
-            }
-          ],
-          "contains_source_code": null,
-          "source_packages": [],
-          "extra_data": {},
-          "purl": null,
-          "repository_homepage_url": null,
-          "repository_download_url": null,
-          "api_data_url": null
-        }
-      ],
+      "package_data": [],
       "for_packages": [
         "pkg:pypi/click@8.0.1"
       ],

@@ -69,7 +69,6 @@ class TestConsolidate(FileDrivenTesting):
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, remove_instance_uuid=True, regen=False, remove_file_date=True)
 
-    @pytest.mark.xfail
     def test_get_package_resources_on_nested_packages_should_include_manifest(self):
         from packagedcode import get_package_instance
         from commoncode.resource import VirtualCodebase

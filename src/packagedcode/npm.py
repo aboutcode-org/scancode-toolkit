@@ -468,6 +468,12 @@ class NpmPackageInstance(NpmPackage, models.PackageInstance):
     """
 
     @property
+    def ignore_paths(self):
+        return [
+            "node_modules"
+        ]
+
+    @property
     def manifests(self):
         return [
             PackageJson,
