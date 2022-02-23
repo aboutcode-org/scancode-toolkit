@@ -78,7 +78,7 @@ def fix_thirdparty_dir(
         package_envts_not_fetched = utils_thirdparty.fetch_missing_wheels(dest_dir=thirdparty_dir)
         print("***FETCH*** MISSING SOURCES")
         src_name_ver_not_fetched = utils_thirdparty.fetch_missing_sources(dest_dir=thirdparty_dir)
-    
+
         package_envts_not_built = []
         if build_wheels:
             print("***BUILD*** MISSING WHEELS")
@@ -89,7 +89,7 @@ def fix_thirdparty_dir(
                 dest_dir=thirdparty_dir,
             )
             package_envts_not_built, _wheel_filenames_built = results
-    
+
         print("***ADD*** ABOUT AND LICENSES")
         utils_thirdparty.add_fetch_or_update_about_and_license_files(
             dest_dir=thirdparty_dir,
@@ -99,7 +99,7 @@ def fix_thirdparty_dir(
         # report issues
         for name, version in src_name_ver_not_fetched:
             print(f"{name}=={version}: Failed to fetch source distribution.")
-    
+
         for package, envt in package_envts_not_built:
             print(
                 f"{package.name}=={package.version}: Failed to build wheel "

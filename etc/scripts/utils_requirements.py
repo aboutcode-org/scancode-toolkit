@@ -86,7 +86,7 @@ def strip_reqs(line):
         return any(op in l for op in ops)
 
     if not has_ops:
-        return  line
+        return line
 
     splitter = re.compile(r"[><!=~;, \[\]]+").split
     return splitter(line)[0]

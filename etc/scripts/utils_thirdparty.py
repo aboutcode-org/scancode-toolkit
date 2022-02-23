@@ -97,11 +97,13 @@ PYTHON_DOT_VERSIONS_BY_VER = {
     "310": "3.10",
 }
 
+
 def get_python_dot_version(version):
     """
     Return a dot version from a plain, non-dot version.
     """
     return PYTHON_DOT_VERSIONS_BY_VER[version]
+
 
 ABIS_BY_PYTHON_VERSION = {
     "36": ["cp36", "cp36m"],
@@ -2529,7 +2531,7 @@ def hash_requirements(dest_dir=THIRDPARTY_DIR, requirements_file="requirements.t
 
 
 def add_fetch_or_update_about_and_license_files(
-    dest_dir=THIRDPARTY_DIR, 
+    dest_dir=THIRDPARTY_DIR,
     include_remote=True,
     strip_classifiers=False,
 ):
