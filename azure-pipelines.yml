@@ -41,8 +41,8 @@ jobs:
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win2016_cpython
-          image_name: vs2017-win2016
+          job_name: win2022_cpython
+          image_name: windows-2022
           python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs
