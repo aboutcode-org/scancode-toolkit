@@ -19,6 +19,30 @@
       }
     }
   ],
+  "dependencies": [
+    {
+      "purl": "pkg:npm/mocha",
+      "requirement": "*",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:npm/mocha",
+      "for_package": "pkg:npm/cookie-signature@1.0.3",
+      "lockfile": "package.json"
+    },
+    {
+      "purl": "pkg:npm/should",
+      "requirement": "*",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:npm/should",
+      "for_package": "pkg:npm/cookie-signature@1.0.3",
+      "lockfile": "package.json"
+    }
+  ],
   "packages": [
     {
       "type": "npm",

@@ -19,6 +19,52 @@
       }
     }
   ],
+  "dependencies": [
+    {
+      "purl": "pkg:opam/ocaml",
+      "requirement": "= 4.11.0 & post",
+      "scope": "dependency",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:opam/ocaml",
+      "for_package": null,
+      "lockfile": "ocaml-variants.opam"
+    },
+    {
+      "purl": "pkg:opam/base-unix",
+      "requirement": "post",
+      "scope": "dependency",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:opam/base-unix",
+      "for_package": null,
+      "lockfile": "ocaml-variants.opam"
+    },
+    {
+      "purl": "pkg:opam/base-bigarray",
+      "requirement": "post",
+      "scope": "dependency",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:opam/base-bigarray",
+      "for_package": null,
+      "lockfile": "ocaml-variants.opam"
+    },
+    {
+      "purl": "pkg:opam/base-threads",
+      "requirement": "post",
+      "scope": "dependency",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:opam/base-threads",
+      "for_package": null,
+      "lockfile": "ocaml-variants.opam"
+    }
+  ],
   "packages": [],
   "files": [
     {

@@ -17,6 +17,96 @@
       }
     }
   ],
+  "dependencies": [
+    {
+      "purl": "pkg:composer/php",
+      "requirement": ">=7.0.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:composer/php",
+      "for_package": "pkg:composer/laravel/laravel",
+      "lockfile": "composer.json"
+    },
+    {
+      "purl": "pkg:composer/fideloper/proxy",
+      "requirement": "~3.3",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:composer/fideloper/proxy",
+      "for_package": "pkg:composer/laravel/laravel",
+      "lockfile": "composer.json"
+    },
+    {
+      "purl": "pkg:composer/laravel/framework",
+      "requirement": "5.5.*",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:composer/laravel/framework",
+      "for_package": "pkg:composer/laravel/laravel",
+      "lockfile": "composer.json"
+    },
+    {
+      "purl": "pkg:composer/laravel/tinker",
+      "requirement": "~1.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:composer/laravel/tinker",
+      "for_package": "pkg:composer/laravel/laravel",
+      "lockfile": "composer.json"
+    },
+    {
+      "purl": "pkg:composer/filp/whoops",
+      "requirement": "~2.0",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:composer/filp/whoops",
+      "for_package": "pkg:composer/laravel/laravel",
+      "lockfile": "composer.json"
+    },
+    {
+      "purl": "pkg:composer/fzaninotto/faker",
+      "requirement": "~1.4",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:composer/fzaninotto/faker",
+      "for_package": "pkg:composer/laravel/laravel",
+      "lockfile": "composer.json"
+    },
+    {
+      "purl": "pkg:composer/mockery/mockery",
+      "requirement": "0.9.*",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:composer/mockery/mockery",
+      "for_package": "pkg:composer/laravel/laravel",
+      "lockfile": "composer.json"
+    },
+    {
+      "purl": "pkg:composer/phpunit/phpunit",
+      "requirement": "~6.0",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:composer/phpunit/phpunit",
+      "for_package": "pkg:composer/laravel/laravel",
+      "lockfile": "composer.json"
+    }
+  ],
   "packages": [
     {
       "type": "composer",

@@ -19,6 +19,63 @@
       }
     }
   ],
+  "dependencies": [
+    {
+      "purl": "pkg:pypi/colorama",
+      "requirement": null,
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:pypi/colorama",
+      "for_package": "pkg:pypi/click@8.0.1",
+      "lockfile": "METADATA"
+    },
+    {
+      "purl": "pkg:pypi/importlib-metadata",
+      "requirement": null,
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:pypi/importlib-metadata",
+      "for_package": "pkg:pypi/click@8.0.1",
+      "lockfile": "METADATA"
+    },
+    {
+      "purl": "pkg:pypi/colorama",
+      "requirement": null,
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:pypi/colorama",
+      "for_package": "pkg:pypi/click@8.0.1",
+      "lockfile": "setup.py"
+    },
+    {
+      "purl": "pkg:pypi/importlib-metadata",
+      "requirement": null,
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:pypi/importlib-metadata",
+      "for_package": "pkg:pypi/click@8.0.1",
+      "lockfile": "setup.py"
+    },
+    {
+      "purl": "pkg:pypi/pre-commit",
+      "requirement": "pre-commit",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:pypi/pre-commit",
+      "for_package": "pkg:pypi/click@8.0.1",
+      "lockfile": "tox.ini"
+    }
+  ],
   "packages": [
     {
       "type": "pypi",

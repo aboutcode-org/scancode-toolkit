@@ -18,6 +18,30 @@
       }
     }
   ],
+  "dependencies": [
+    {
+      "purl": "pkg:npm/dicer",
+      "requirement": "0.2.5",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:npm/dicer",
+      "for_package": "pkg:npm/busboy@0.2.14",
+      "lockfile": "package.json"
+    },
+    {
+      "purl": "pkg:npm/readable-stream",
+      "requirement": "1.1.x",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:npm/readable-stream",
+      "for_package": "pkg:npm/busboy@0.2.14",
+      "lockfile": "package.json"
+    }
+  ],
   "packages": [
     {
       "type": "npm",

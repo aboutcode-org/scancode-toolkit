@@ -19,6 +19,41 @@
       }
     }
   ],
+  "dependencies": [
+    {
+      "purl": "pkg:composer/php",
+      "requirement": ">=5.6.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:composer/php",
+      "for_package": "pkg:composer/jandreasn/a-timer",
+      "lockfile": "composer.json"
+    },
+    {
+      "purl": "pkg:composer/phpunit/phpunit",
+      "requirement": "^5.6",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:composer/phpunit/phpunit",
+      "for_package": "pkg:composer/jandreasn/a-timer",
+      "lockfile": "composer.json"
+    },
+    {
+      "purl": "pkg:composer/squizlabs/php_codesniffer",
+      "requirement": "^2.7",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:composer/squizlabs/php_codesniffer",
+      "for_package": "pkg:composer/jandreasn/a-timer",
+      "lockfile": "composer.json"
+    }
+  ],
   "packages": [
     {
       "type": "composer",

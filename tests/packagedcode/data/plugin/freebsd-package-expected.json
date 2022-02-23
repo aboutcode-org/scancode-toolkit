@@ -19,6 +19,7 @@
       }
     }
   ],
+  "dependencies": [],
   "packages": [
     {
       "type": "freebsd",

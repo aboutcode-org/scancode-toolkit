@@ -19,6 +19,30 @@
       }
     }
   ],
+  "dependencies": [
+    {
+      "purl": "pkg:chef/nodejs",
+      "requirement": ">= 0.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:chef/nodejs",
+      "for_package": "pkg:chef/301@0.1.0",
+      "lockfile": "metadata.json"
+    },
+    {
+      "purl": "pkg:chef/nodejs",
+      "requirement": null,
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:chef/nodejs",
+      "for_package": "pkg:chef/301@0.1.0",
+      "lockfile": "metadata.rb"
+    }
+  ],
   "packages": [
     {
       "type": "chef",

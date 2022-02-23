@@ -19,6 +19,41 @@
       }
     }
   ],
+  "dependencies": [
+    {
+      "purl": "pkg:bower/get-size",
+      "requirement": "~1.2.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:bower/get-size",
+      "for_package": "pkg:bower/blue-leaf",
+      "lockfile": "bower.json"
+    },
+    {
+      "purl": "pkg:bower/eventEmitter",
+      "requirement": "~4.2.11",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:bower/eventEmitter",
+      "for_package": "pkg:bower/blue-leaf",
+      "lockfile": "bower.json"
+    },
+    {
+      "purl": "pkg:bower/qunit",
+      "requirement": "~1.16.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:bower/qunit",
+      "for_package": "pkg:bower/blue-leaf",
+      "lockfile": "bower.json"
+    }
+  ],
   "packages": [
     {
       "type": "bower",

@@ -21,6 +21,7 @@ headers:
     extra_data:
       spdx_license_list_version: '3.14'
       files_count: 7
+dependencies: []
 packages: []
 files:
   - path: copy1.c

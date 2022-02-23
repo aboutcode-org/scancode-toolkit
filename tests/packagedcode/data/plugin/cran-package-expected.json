@@ -19,6 +19,19 @@
       }
     }
   ],
+  "dependencies": [
+    {
+      "purl": "pkg:cran/R",
+      "requirement": ">= 2.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:cran/R",
+      "for_package": "pkg:cran/codetools@0.2-16",
+      "lockfile": "DESCRIPTION"
+    }
+  ],
   "packages": [
     {
       "type": "cran",
