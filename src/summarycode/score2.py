@@ -105,11 +105,11 @@ def compute_license_score(codebase):
     if copyrights:
         scoring_elements.score += 10
 
-    is_permissively_licensed = 'Copyleft' not in declared_license_categories
+    is_permissively_licensed = check_declared_license_categories(declared_license_categories)
     if is_permissively_licensed:
-        contains_copyleft_licenses = check_for_copyleft(other_licenses)
-        scoring_elements.conflicting_license_categories = contains_copyleft_licenses
-        if contains_copyleft_licenses:
+        contains_conflicting_license = check_for_conflicting_licenses(other_licenses)
+        scoring_elements.conflicting_license_categories = contains_conflicting_license
+        if contains_conflicting_license:
             scoring_elements.score -= 20
 
     ambigous_compound_licensing = check_ambiguous_license_expression(declared_license_expressions)
@@ -140,46 +140,6 @@ class ScoringElements:
             'conflicting_license_categories': self.conflicting_license_categories,
             'ambigous_compound_licensing': self.ambigous_compound_licensing
         }
-
-
-def check_ambiguous_license_expression(declared_license_expressions):
-    if not declared_license_expressions:
-        return False
-
-    unique_declared_license_expressions = set(declared_license_expressions)
-    if len(unique_declared_license_expressions) == 1:
-        return False
-
-    joined_expressions = []
-    single_expressions = []
-    for declared_license_expression in declared_license_expressions:
-        if (
-            'AND' in declared_license_expression
-            or 'OR' in declared_license_expression
-            or 'WITH' in declared_license_expression
-        ):
-            joined_expressions.append(declared_license_expression)
-        else:
-            single_expressions.append(declared_license_expression)
-
-    single_expressions_by_joined_expressions = {
-        joined_expression: []
-        for joined_expression
-        in joined_expressions
-    }
-    not_in_joined_expressions = []
-    # check to see if the single expression is in the joined expression
-    for joined_expression in joined_expressions:
-        for expression in single_expressions:
-            if expression not in joined_expression:
-                not_in_joined_expressions.append(expression)
-            else:
-                single_expressions_by_joined_expressions[joined_expression].append(expression)
-
-    if len(single_expressions_by_joined_expressions) == 1 and not not_in_joined_expressions:
-        return False
-    else:
-        return True
 
 
 # minimum score to consider a license detection as good.
@@ -364,13 +324,79 @@ def check_declared_licenses(declared_licenses):
     )
 
 
-def check_for_copyleft(other_licenses):
+CONFLICTING_LICENSE_CATEGORIES = (
+    'Commercial',
+    'Copyleft',
+    'Copyleft Limited',
+    'Proprietary Free'
+)
+
+
+def check_declared_license_categories(declared_licenses):
     """
-    Check if there is a copyleft license in `other_licenses`.
+    Check whether or not if the licenses in `declared_licenses` are permissively
+    licensed, or compatible with permissive licenses.
+
+    If so, return True. Otherwise, return False.
+    """
+
+    for category in CONFLICTING_LICENSE_CATEGORIES:
+        if category in declared_licenses:
+            return False
+    return True
+
+
+def check_for_conflicting_licenses(other_licenses):
+    """
+    Check if there is a license in `other_licenses` that conflicts with
+    permissive licenses.
 
     If so, return True. Otherwise, return False.
     """
     for license_info in other_licenses:
-        if license_info.get('category', '') in ('Copyleft',):
+        if (
+            license_info.get('category', '')
+            in CONFLICTING_LICENSE_CATEGORIES
+        ):
             return True
     return False
+
+
+def check_ambiguous_license_expression(declared_license_expressions):
+    if not declared_license_expressions:
+        return False
+
+    unique_declared_license_expressions = set(declared_license_expressions)
+    if len(unique_declared_license_expressions) == 1:
+        return False
+
+    joined_expressions = []
+    single_expressions = []
+    for declared_license_expression in declared_license_expressions:
+        if (
+            'AND' in declared_license_expression
+            or 'OR' in declared_license_expression
+            or 'WITH' in declared_license_expression
+        ):
+            joined_expressions.append(declared_license_expression)
+        else:
+            single_expressions.append(declared_license_expression)
+
+    single_expressions_by_joined_expressions = {
+        joined_expression: []
+        for joined_expression
+        in joined_expressions
+    }
+    not_in_joined_expressions = []
+    # check to see if the single expression is in the joined expression
+    for joined_expression in joined_expressions:
+        for expression in single_expressions:
+            if expression not in joined_expression:
+                not_in_joined_expressions.append(expression)
+            else:
+                single_expressions_by_joined_expressions[joined_expression].append(expression)
+
+    if len(single_expressions_by_joined_expressions) == 1 and not not_in_joined_expressions:
+        return False
+    else:
+        return True
