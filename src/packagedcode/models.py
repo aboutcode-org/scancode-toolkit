@@ -76,7 +76,7 @@ package type or ecosystem `dummy`.
 
 - DummyPackage(Package):
     This class provides type wide defaults and basic implementation for type specific methods.
-- DummyManifest(DummyPackage, PackageData):
+- DummyManifest(DummyPackage, PackageData) or DummyLockFile(DummyPackage, PackageData):
     This class provides methods to recognize and parse a package manifest file format.
 - DummyPackageInstance(DummyPackage, PackageInstance):
     This class provides methods to create package instances for one or more manifests and to
@@ -361,7 +361,7 @@ class DependentPackage(BaseModel):
         label='dependent package version requirement',
         help='A string defining version(s)requirements. Package-type specific.')
 
-    # ToDo: add `vers` *  *
+    # ToDo: add `vers` See https://github.com/nexB/univers/blob/main/src/univers/version_range.py
 
     scope = String(
         repr=True,
@@ -387,6 +387,27 @@ class DependentPackage(BaseModel):
              'exact version.')
 
     #ToDo: add `resolved_package` -> (PackageData)
+
+
+@attr.s
+class DependencyInstance(DependentPackage):
+
+    dependency_uuid = String(
+        label='Dependency instance UUID',
+        help='A unique ID for dependency instances in a codebase scan.'
+             'Consists of a pURL and an UUID field as a pURL qualifier.'
+    )
+
+    for_package = String(
+        label='A Package UUID',
+        help='The UUID of the package instance to which this dependency file belongs'
+    )
+
+    lockfile = String(
+        label='path to a lockfile',
+        help='A path string from where this dependency instance was created'
+             'Consists of a pURL and an UUID field as a pURL qualifier.'
+    )
 
 
 @attr.s()
