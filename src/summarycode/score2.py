@@ -15,6 +15,8 @@ from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
 
+from license_expression import Licensing
+
 
 # Tracing flags
 TRACE = False
@@ -311,13 +313,11 @@ def check_for_license_texts(declared_licenses):
 
 def check_declared_licenses(declared_licenses):
     """
-    Check whether or not all the licenses in `declared_licenses` are good.
+    Check if at least one of the licenses in `declared_licenses` is good.
 
     If so, return True. Otherwise, return False.
     """
-    if not declared_licenses:
-        return False
-    return all(
+    return any(
         is_good_license(declared_license)
         for declared_license
         in declared_licenses
@@ -327,8 +327,8 @@ def check_declared_licenses(declared_licenses):
 CONFLICTING_LICENSE_CATEGORIES = (
     'Commercial',
     'Copyleft',
-    'Copyleft Limited',
-    'Proprietary Free'
+    'Proprietary Free',
+    'Source Available',
 )
 
 
@@ -362,17 +362,20 @@ def check_for_conflicting_licenses(other_licenses):
     return False
 
 
-def check_ambiguous_license_expression(declared_license_expressions):
-    if not declared_license_expressions:
-        return False
+def group_license_expressions(declared_license_expressions):
+    """
+    Return a tuple that contains two list of license expressions.
 
+    The first list in the tuple contains unique license expressions with "AND",
+    "OR, or "WITH" in it.
+
+    The second list in the tuple contains unique license
+    expressions without "AND", "OR", or "WITH".
+    """
     unique_declared_license_expressions = set(declared_license_expressions)
-    if len(unique_declared_license_expressions) == 1:
-        return False
-
     joined_expressions = []
     single_expressions = []
-    for declared_license_expression in declared_license_expressions:
+    for declared_license_expression in unique_declared_license_expressions:
         if (
             'AND' in declared_license_expression
             or 'OR' in declared_license_expression
@@ -382,14 +385,40 @@ def check_ambiguous_license_expression(declared_license_expressions):
         else:
             single_expressions.append(declared_license_expression)
 
+    licensing = Licensing()
+    unique_joined_expressions = []
+    seen_joined_expression = []
+    for j in joined_expressions:
+        for j1 in joined_expressions[1:]:
+            if licensing.is_equivalent(j, j1):
+                if (
+                    j not in unique_joined_expressions
+                    and j not in seen_joined_expression
+                ):
+                    unique_joined_expressions.append(j)
+                    seen_joined_expression.append(j1)
+
+    return unique_joined_expressions, single_expressions
+
+
+def check_ambiguous_license_expression(declared_license_expressions):
+    # Get lists of unique license expressions
+    unique_joined_expressions, single_expressions = group_license_expressions(
+        declared_license_expressions
+    )
+    if not unique_joined_expressions and not single_expressions:
+        return True
+
+    # Group single expressions to joined expressions to see if single
+    # expressions are accounted for in a joined expression
     single_expressions_by_joined_expressions = {
         joined_expression: []
         for joined_expression
-        in joined_expressions
+        in unique_joined_expressions
     }
     not_in_joined_expressions = []
     # check to see if the single expression is in the joined expression
-    for joined_expression in joined_expressions:
+    for joined_expression in unique_joined_expressions:
         for expression in single_expressions:
             if expression not in joined_expression:
                 not_in_joined_expressions.append(expression)
