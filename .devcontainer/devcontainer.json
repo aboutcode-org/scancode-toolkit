@@ -2,30 +2,30 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.112.0/containers/python-3
 {
 	"name": "ScanCode-Toolkit",
-
 	"build": {
 		"dockerfile": "Dockerfile",
 	},
-
 	"settings": {
 		"puppet.installType": "pdk",
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.languageServer": "Pylance",
+		"python.linting.enabled": true,
+		"python.formatting.provider": "black",
+		"python.unitTest.pyTestEnabled": true,
+		"editor.formatOnSave": true,
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"ms-python.python",
-        "ms-python.vscode-pylance",
-        "shardulm94.trailing-spaces",
-        "formulahendry.code-runner",
-        "aaron-bond.better-comments",
-        "eamodio.gitlens",
+		"ms-python.vscode-pylance",
+		"shardulm94.trailing-spaces",
+		"formulahendry.code-runner",
+		"aaron-bond.better-comments",
+		"eamodio.gitlens",
 		"wholroyd.jinja",
-		"xdebug.php-pack",
-		"puppet.puppet-vscode",
+		// "xdebug.php-pack",
+		// "puppet.puppet-vscode",
 	],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install poetry pylint flake8 mypy autopep8 black pre-commit",
-
-    // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "user"
+	// "postCreateCommand": "./configure --dev",
+	"postStartCommand": "pip install -r requirements.txt -r requirements-dev.txt"
 }
