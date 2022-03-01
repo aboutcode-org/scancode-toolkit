@@ -83,40 +83,42 @@ def compute_license_score(codebase):
     """
 
     scoring_elements = ScoringElements()
-    declared_licenses = get_declared_license_info_from_top_level_key_files(codebase)
-    declared_license_expressions = get_declared_license_expressions_from_top_level_key_files(codebase)
+    declared_licenses = get_field_values_from_codebase_resources(codebase, 'licenses', key_files_only=True)
+    declared_license_expressions = get_field_values_from_codebase_resources(codebase, 'license_expressions', key_files_only=True)
     declared_license_categories = get_license_categories(declared_licenses)
-    copyrights = get_copyrights_from_key_files(codebase)
-    other_licenses = get_other_licenses(codebase)
+    copyrights = get_field_values_from_codebase_resources(codebase, 'copyrights', key_files_only=True)
+    other_licenses = get_field_values_from_codebase_resources(codebase, 'licenses', key_files_only=False)
 
     scoring_elements.declared_license = bool(declared_licenses)
-    if declared_licenses:
+    if scoring_elements.declared_license:
         scoring_elements.score += 40
 
-    precise_license_detection = check_declared_licenses(declared_licenses)
-    scoring_elements.precise_license_detection = precise_license_detection
-    if precise_license_detection:
+    scoring_elements.precise_license_detection = check_declared_licenses(declared_licenses)
+    if scoring_elements.precise_license_detection:
         scoring_elements.score += 40
 
-    has_license_text = check_for_license_texts(declared_licenses)
-    scoring_elements.has_license_text = has_license_text
-    if has_license_text:
+    scoring_elements.has_license_text = check_for_license_texts(declared_licenses)
+    if scoring_elements.has_license_text:
         scoring_elements.score += 10
 
     scoring_elements.declared_copyrights = bool(copyrights)
-    if copyrights:
+    if scoring_elements.declared_copyrights:
         scoring_elements.score += 10
 
     is_permissively_licensed = check_declared_license_categories(declared_license_categories)
     if is_permissively_licensed:
-        contains_conflicting_license = check_for_conflicting_licenses(other_licenses)
-        scoring_elements.conflicting_license_categories = contains_conflicting_license
-        if contains_conflicting_license and scoring_elements.score > 0:
+        scoring_elements.conflicting_license_categories = check_for_conflicting_licenses(other_licenses)
+        if (
+            scoring_elements.conflicting_license_categories
+            and scoring_elements.score > 0
+        ):
             scoring_elements.score -= 20
 
-    ambigous_compound_licensing = check_ambiguous_license_expression(declared_license_expressions)
-    scoring_elements.ambigous_compound_licensing = ambigous_compound_licensing
-    if ambigous_compound_licensing and scoring_elements.score > 0:
+    scoring_elements.ambigous_compound_licensing = check_for_license_ambiguity(declared_license_expressions)
+    if (
+        scoring_elements.ambigous_compound_licensing
+        and scoring_elements.score > 0
+    ):
         scoring_elements.score -= 10
 
     return scoring_elements.to_dict()
@@ -203,84 +205,31 @@ def is_good_license(detected_license):
     return False
 
 
-def get_declared_license_info_from_top_level_key_files(codebase):
+def get_field_values_from_codebase_resources(codebase, field_name, key_files_only=False):
     """
-    Return a list of "declared" license keys from the expressions as detected in
-    key files from top-level directories.
+    Return a list of values from the `field_name` field of the Resources from
+    `codebase`
 
-    A project has specific key file(s) at the top level of its code hierarchy
-    such as LICENSE, NOTICE or similar (and/or a package manifest) containing
-    structured license information such as an SPDX license expression or SPDX
-    license identifier: when such a file contains "clearly defined" declared
-    license information, we return this.
+    If `key_files_only` is True, then we only return the field values from
+    Resources classified as key files.
+
+    If `key_files_only` is False, then we return the field values from Resources
+    that are not classified as key files.
     """
-    declared = []
+    values = []
     for resource in codebase.walk(topdown=True):
         if not (resource.is_dir and resource.is_top_level):
             continue
         for child in resource.walk(codebase):
-            if not child.is_key_file:
-                continue
-            for detected_license in getattr(child, 'licenses', []) or []:
-                declared.append(detected_license)
-    return declared
-
-
-def get_declared_license_expressions_from_top_level_key_files(codebase):
-    """
-    Return a list of "declared" license expressions as detected in key files
-    from top-level directories.
-
-    A project has specific key file(s) at the top level of its code hierarchy
-    such as LICENSE, NOTICE or similar (and/or a package manifest) containing
-    structured license information such as an SPDX license expression or SPDX
-    license identifier: when such a file contains "clearly defined" declared
-    license information, we return this.
-    """
-    declared = []
-    for resource in codebase.walk(topdown=True):
-        if not (resource.is_dir and resource.is_top_level):
-            continue
-        for child in resource.walk(codebase):
-            if not child.is_key_file:
-                continue
-            for detected_license_expression in getattr(child, 'license_expressions', []) or []:
-                declared.append(detected_license_expression)
-    return declared
-
-
-def get_other_licenses(codebase):
-    """
-    Return a list of detected licenses from non-key files under a top-level directory
-    """
-    other_licenses = []
-    for resource in codebase.walk(topdown=True):
-        if not (resource.is_dir and resource.is_top_level):
-            continue
-        for child in resource.walk(codebase):
-            if child.is_key_file:
-                continue
-            for detected_license in getattr(child, 'licenses', []) or []:
-                other_licenses.append(detected_license)
-    return other_licenses
-
-
-def get_copyrights_from_key_files(codebase):
-    """
-    Return a list of copyright statements from key files from a top-level directory
-    """
-    copyright_statements = []
-    for resource in codebase.walk(topdown=True):
-        if not (resource.is_dir and resource.is_top_level):
-            continue
-        for child in resource.walk(codebase):
-            if not child.is_key_file:
-                continue
-            for detected_copyright in getattr(child, 'copyrights', []) or []:
-                copyright_statement = detected_copyright.get('copyright')
-                if copyright_statement:
-                    copyright_statements.append(copyright_statement)
-    return copyright_statements
+            if key_files_only:
+                if not child.is_key_file:
+                    continue
+            else:
+                if child.is_key_file:
+                    continue
+            for detected_license in getattr(child, field_name, []) or []:
+                values.append(detected_license)
+    return values
 
 
 def get_license_categories(license_infos):
@@ -362,7 +311,7 @@ def check_for_conflicting_licenses(other_licenses):
     return False
 
 
-def group_license_expressions(declared_license_expressions):
+def group_license_expressions(unique_license_expressions):
     """
     Return a tuple that contains two list of license expressions.
 
@@ -372,18 +321,17 @@ def group_license_expressions(declared_license_expressions):
     The second list in the tuple contains unique license
     expressions without "AND", "OR", or "WITH".
     """
-    unique_declared_license_expressions = set(declared_license_expressions)
     joined_expressions = []
     single_expressions = []
-    for declared_license_expression in unique_declared_license_expressions:
+    for license_expression in unique_license_expressions:
         if (
-            'AND' in declared_license_expression
-            or 'OR' in declared_license_expression
-            or 'WITH' in declared_license_expression
+            'AND' in license_expression
+            or 'OR' in license_expression
+            or 'WITH' in license_expression
         ):
-            joined_expressions.append(declared_license_expression)
+            joined_expressions.append(license_expression)
         else:
-            single_expressions.append(declared_license_expression)
+            single_expressions.append(license_expression)
 
     licensing = Licensing()
     unique_joined_expressions = []
@@ -405,13 +353,33 @@ def group_license_expressions(declared_license_expressions):
     return unique_joined_expressions, single_expressions
 
 
-def check_ambiguous_license_expression(declared_license_expressions):
-    # Get lists of unique license expressions
+def check_for_license_ambiguity(declared_license_expressions):
+    """
+    License ambiguity is the situation where there is a license declaration that makes
+    it difficult to construct a reliable license expression, such as in the case
+    of multiple licenses where the conjunctive versus disjunctive relationship
+    is not well defined.
+
+    We determine if a list of `declared_license_expressions` has license ambiguity if
+    we cannot resolve the `declared_license_expressions` into one expression.
+    """
+    unique_declared_license_expressions = set(declared_license_expressions)
+    # If we only have a single unique license expression, then we do not have
+    # any ambiguity about the licensing
+    if len(unique_declared_license_expressions) == 1:
+        return False
+
     unique_joined_expressions, single_expressions = group_license_expressions(
-        declared_license_expressions
+        unique_declared_license_expressions
     )
-    if not unique_joined_expressions and not single_expressions:
-        return True
+
+    if not unique_joined_expressions:
+        # If we do not have any joined expressions, but multiple single
+        # expressions remaining, then we have license ambiguity
+        if len(single_expressions) > 1:
+            return True
+        else:
+            return False
 
     # Group single expressions to joined expressions to see if single
     # expressions are accounted for in a joined expression
@@ -421,7 +389,7 @@ def check_ambiguous_license_expression(declared_license_expressions):
         in unique_joined_expressions
     }
     not_in_joined_expressions = []
-    # check to see if the single expression is in the joined expression
+    # Check to see if the single expression is in the joined expression
     for joined_expression in unique_joined_expressions:
         for expression in single_expressions:
             if expression not in joined_expression:
@@ -429,6 +397,9 @@ def check_ambiguous_license_expression(declared_license_expressions):
             else:
                 single_expressions_by_joined_expressions[joined_expression].append(expression)
 
+    # If we have a single joined license expression and no license expressions
+    # that have not been associated with a joined license expression, then we do
+    # not have any ambiguity about the license
     if len(single_expressions_by_joined_expressions) == 1 and not not_in_joined_expressions:
         return False
     else:
