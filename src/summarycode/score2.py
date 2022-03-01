@@ -111,12 +111,12 @@ def compute_license_score(codebase):
     if is_permissively_licensed:
         contains_conflicting_license = check_for_conflicting_licenses(other_licenses)
         scoring_elements.conflicting_license_categories = contains_conflicting_license
-        if contains_conflicting_license:
+        if contains_conflicting_license and scoring_elements.score > 0:
             scoring_elements.score -= 20
 
     ambigous_compound_licensing = check_ambiguous_license_expression(declared_license_expressions)
     scoring_elements.ambigous_compound_licensing = ambigous_compound_licensing
-    if ambigous_compound_licensing:
+    if ambigous_compound_licensing and scoring_elements.score > 0:
         scoring_elements.score -= 10
 
     return scoring_elements.to_dict()
@@ -388,8 +388,12 @@ def group_license_expressions(declared_license_expressions):
     licensing = Licensing()
     unique_joined_expressions = []
     seen_joined_expression = []
-    for j in joined_expressions:
-        for j1 in joined_expressions[1:]:
+    len_joined_expressions = len(joined_expressions)
+    for i, j in enumerate(joined_expressions):
+        starting_index = i + 1
+        if starting_index > len_joined_expressions:
+            break
+        for j1 in joined_expressions[starting_index:]:
             if licensing.is_equivalent(j, j1):
                 if (
                     j not in unique_joined_expressions
