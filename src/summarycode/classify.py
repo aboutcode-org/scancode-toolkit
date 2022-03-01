@@ -172,7 +172,7 @@ class PackageTopAndKeyFilesTagger(PostScanPlugin):
         has_package_manifests = hasattr(codebase.root, 'package_manifests')
         if not has_package_manifests:
             # FIXME: this is not correct... we may still have cases where this
-            # is wrong: e.g. a META-INF directory and we may not have a package 
+            # is wrong: e.g. a META-INF directory and we may not have a package
             return
 
 
@@ -286,7 +286,7 @@ _MANIFEST_ENDS = {
     '/setup.cfg': 'pypi',
     '/setup.py': 'pypi',
     '/PKG-INFO': 'pypi',
-    '/pyproject.toml': 'pypi', 
+    '/pyproject.toml': 'pypi',
     '.spec': 'rpm',
     '/cargo.toml': 'rust',
     '.spdx': 'spdx',
@@ -310,6 +310,21 @@ README_STARTS_ENDS = (
 )
 
 
+def check_resource_name_start_and_end(resource, STARTS_ENDS):
+    """
+    Return True if `resource.name` or `resource.base_name` begins or ends with
+    an element of `STARTS_ENDS`
+    """
+    name = resource.name.lower()
+    base_name = resource.base_name.lower()
+    return (
+        name.startswith(STARTS_ENDS)
+        or name.endswith(STARTS_ENDS)
+        or base_name.startswith(STARTS_ENDS)
+        or base_name.endswith(STARTS_ENDS)
+    )
+
+
 def set_classification_flags(resource,
         _LEGAL=LEGAL_STARTS_ENDS,
         _MANIF=MANIFEST_ENDS,
@@ -317,11 +332,10 @@ def set_classification_flags(resource,
     """
     Set classification flags on the `resource` Resource
     """
-    name = resource.name.lower()
     path = resource.path.lower()
 
-    resource.is_legal = is_legal = name.startswith(_LEGAL) or name.endswith(_LEGAL)
-    resource.is_readme = is_readme = name.startswith(_README) or name.endswith(_README)
+    resource.is_legal = is_legal = check_resource_name_start_and_end(resource, _LEGAL)
+    resource.is_readme = is_readme = check_resource_name_start_and_end(resource, _README)
     resource.is_manifest = is_manifest = path.endswith(_MANIF)
     resource.is_key_file = (resource.is_top_level
                             and (is_readme or is_legal or is_manifest))
