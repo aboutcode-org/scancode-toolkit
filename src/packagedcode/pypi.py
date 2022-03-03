@@ -300,7 +300,7 @@ class DependencyFile(PythonPackage, models.PackageData):
 
         dependent_packages = parse_with_dparse2(
             location=location,
-            dependency_type=dependency_type,
+            file_name=dependency_type,
         )
         yield cls(dependencies=dependent_packages)
 

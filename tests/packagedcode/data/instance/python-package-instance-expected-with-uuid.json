@@ -27,8 +27,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/colorama?uuid=0af638f1-97ce-4415-b012-09cf986d4b0e",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=b3e1f027-fd5a-4e77-a399-a5178cd3189f",
+      "dependency_uuid": "pkg:pypi/colorama?uuid=6bf7d1d3-fc5d-43bd-ba39-e54f14dbf14e",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0",
       "lockfile": "METADATA"
     },
     {
@@ -38,8 +38,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=3b9c184d-830e-4b11-a180-2cec72bcb91d",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=b3e1f027-fd5a-4e77-a399-a5178cd3189f",
+      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=cf451110-8833-4591-aa10-fc7440b41dfa",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0",
       "lockfile": "METADATA"
     },
     {
@@ -49,8 +49,8 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/colorama?uuid=25056a30-b296-4a84-894b-118248507c22",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=b3e1f027-fd5a-4e77-a399-a5178cd3189f",
+      "dependency_uuid": "pkg:pypi/colorama?uuid=e7320fd7-b926-4892-9f49-8332e5a11220",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0",
       "lockfile": "setup.py"
     },
     {
@@ -60,9 +60,20 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
-      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=c53aa178-d981-49e1-b85f-003650f840a4",
-      "for_package": "pkg:pypi/click@8.0.1?uuid=b3e1f027-fd5a-4e77-a399-a5178cd3189f",
+      "dependency_uuid": "pkg:pypi/importlib-metadata?uuid=05b8a6ec-e5ac-4c13-9fb5-32c1ed61193d",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0",
       "lockfile": "setup.py"
+    },
+    {
+      "purl": "pkg:pypi/pre-commit",
+      "requirement": "pre-commit",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "dependency_uuid": "pkg:pypi/pre-commit?uuid=ea29ec73-4851-4cac-ac63-60a3e9667c61",
+      "for_package": "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0",
+      "lockfile": "tox.ini"
     }
   ],
   "packages": [
@@ -139,10 +150,12 @@
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
-      "package_uuid": "pkg:pypi/click@8.0.1?uuid=b3e1f027-fd5a-4e77-a399-a5178cd3189f",
+      "package_uuid": "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0",
       "package_data_paths": [
         "METADATA",
-        "setup.py"
+        "setup.cfg",
+        "setup.py",
+        "tox.ini"
       ],
       "files": [
         "LICENSE.rst",
@@ -165,7 +178,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=b3e1f027-fd5a-4e77-a399-a5178cd3189f"
+        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
       ],
       "scan_errors": []
     },
@@ -174,7 +187,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=b3e1f027-fd5a-4e77-a399-a5178cd3189f"
+        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
       ],
       "scan_errors": []
     },
@@ -262,7 +275,7 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=b3e1f027-fd5a-4e77-a399-a5178cd3189f"
+        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
       ],
       "scan_errors": []
     },
@@ -271,16 +284,53 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=b3e1f027-fd5a-4e77-a399-a5178cd3189f"
+        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
       ],
       "scan_errors": []
     },
     {
       "path": "setup.cfg",
       "type": "file",
-      "package_data": [],
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "purl": null,
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=b3e1f027-fd5a-4e77-a399-a5178cd3189f"
+        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
       ],
       "scan_errors": []
     },
@@ -343,16 +393,62 @@
         }
       ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=b3e1f027-fd5a-4e77-a399-a5178cd3189f"
+        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
       ],
       "scan_errors": []
     },
     {
       "path": "tox.ini",
       "type": "file",
-      "package_data": [],
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:pypi/pre-commit",
+              "requirement": "pre-commit",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [],
+          "extra_data": {},
+          "purl": null,
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
       "for_packages": [
-        "pkg:pypi/click@8.0.1?uuid=b3e1f027-fd5a-4e77-a399-a5178cd3189f"
+        "pkg:pypi/click@8.0.1?uuid=72fd2656-d125-436a-863d-4f73eb53b5d0"
       ],
       "scan_errors": []
     }
