@@ -92,7 +92,7 @@ class TestRecognize(FileBasedTesting):
         assert isinstance(packages[0], maven.MavenPomPackage)
 
     def test_recognize_maven_pom_xml(self):
-        test_file = self.get_test_loc('maven2/pom.xml')
+        test_file = self.get_test_loc('maven2/pom-generic/pom.xml')
         packages = recognize_package_data(test_file)
         assert packages
         assert isinstance(packages[0], maven.MavenPomPackage)

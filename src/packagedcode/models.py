@@ -317,10 +317,16 @@ class BasePackage(BaseModel):
         Return an dict of primitive Python types.
         """
         mapping = attr.asdict(self)
-        mapping['purl'] = self.purl
-        mapping['repository_homepage_url'] = self.repository_homepage_url()
-        mapping['repository_download_url'] = self.repository_download_url()
-        mapping['api_data_url'] = self.api_data_url()
+        if self.name:
+            mapping['purl'] = self.purl
+            mapping['repository_homepage_url'] = self.repository_homepage_url()
+            mapping['repository_download_url'] = self.repository_download_url()
+            mapping['api_data_url'] = self.api_data_url()
+        else:
+            mapping['purl'] = None
+            mapping['repository_homepage_url'] = None
+            mapping['repository_download_url'] = None
+            mapping['api_data_url'] = None
 
         if self.qualifiers:
             mapping['qualifiers'] = normalize_qualifiers(

@@ -181,5 +181,5 @@ class NugetPackageInstance(NugetPackage, models.PackageInstance):
     @property
     def manifests(self):
         return [
-            NugetPackageInstance
+            Nuspec
         ]

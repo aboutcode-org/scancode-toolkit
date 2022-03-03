@@ -13,7 +13,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 3
       }
     }
@@ -692,6 +692,58 @@
     }
   ],
   "packages": [
+    {
+      "type": "maven",
+      "namespace": "aopalliance",
+      "name": "aopalliance",
+      "version": "1.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "AOP alliance\nAOP Alliance",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "http://aopalliance.sourceforge.net",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "public-domain",
+      "declared_license": [
+        {
+          "name": "Public Domain",
+          "url": null,
+          "comments": null,
+          "distribution": null
+        }
+      ],
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [
+        "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
+      ],
+      "extra_data": {},
+      "package_uuid": "pkg:maven/aopalliance/aopalliance@1.0",
+      "package_data_paths": [
+        "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
+      ],
+      "files": [
+        "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
+      ],
+      "purl": "pkg:maven/aopalliance/aopalliance@1.0",
+      "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
+      "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
+    },
     {
       "type": "freebsd",
       "namespace": null,
@@ -1376,7 +1428,9 @@
           "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/aopalliance/aopalliance@1.0"
+      ],
       "scan_errors": []
     },
     {

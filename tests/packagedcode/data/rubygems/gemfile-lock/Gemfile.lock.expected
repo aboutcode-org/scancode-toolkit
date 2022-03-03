@@ -546,7 +546,7 @@
     "purl": null,
     "repository_homepage_url": null,
     "repository_download_url": null,
-    "api_data_url": "https://rubygems.org/api/v1/versions/None.json"
+    "api_data_url": null
   },
   {
     "type": "gem",

@@ -131,7 +131,7 @@ class TestMavenMisc(BaseMavenCase):
         assert pom.group_id == None
 
     def test_pom_dependencies(self):
-        test_loc = self.get_test_loc('maven2/activemq-camel-pom.xml')
+        test_loc = self.get_test_loc('maven2/activemq-camel/activemq-camel-pom.xml')
         pom = maven.MavenPom(test_loc)
         expected = [
             ('compile', [
@@ -157,7 +157,7 @@ class TestMavenMisc(BaseMavenCase):
         assert results == expected
 
     def test_pom_issue_management_properties_are_resolved(self):
-        test_loc = self.get_test_loc('maven2/xml-format-maven-plugin-3.0.6.pom')
+        test_loc = self.get_test_loc('maven2/xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom')
         pom = maven.MavenPom(test_loc)
         pom.resolve()
         expected = dict([
@@ -168,7 +168,7 @@ class TestMavenMisc(BaseMavenCase):
         assert result == expected
 
     def test_pom_dependencies_are_resolved(self):
-        test_loc = self.get_test_loc('maven2/activemq-camel-pom.xml')
+        test_loc = self.get_test_loc('maven2/activemq-camel/activemq-camel-pom.xml')
         pom = maven.MavenPom(test_loc)
         pom.resolve()
         expected = [
@@ -223,7 +223,7 @@ class TestMavenMisc(BaseMavenCase):
         assert proot.name == 'activiti-image-generator-7-201802-EA-sources.jar-extract'
 
     def test_package_dependency_not_missing(self):
-        test_file = self.get_test_loc('maven2/log4j-pom.xml')
+        test_file = self.get_test_loc('maven2/log4j/log4j-pom.xml')
         self.check_parse_to_package(test_file, regen=False)
 
 

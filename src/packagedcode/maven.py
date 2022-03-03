@@ -200,8 +200,12 @@ def build_url(group_id, artifact_id, version, filename, baseurl='http://repo1.ma
     Return a download URL for a Maven artifact built from its coordinates.
     """
     filename = filename or ''
-    group_id = group_id.replace('.', '/')
-    path = '{group_id}/{artifact_id}/{version}'.format(**locals())
+    if group_id:
+        group_id = group_id.replace('.', '/')
+        path = '{group_id}/{artifact_id}/{version}'.format(**locals())
+    else:
+        path = '{artifact_id}/{version}'.format(**locals())
+
     return '{baseurl}/{path}/{filename}'.format(**locals())
 
 

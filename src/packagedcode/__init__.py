@@ -112,11 +112,10 @@ PACKAGE_DATA_TYPES = [
     cran.DescriptionFile
 ]
 
-# ToDo: Activate commented package instances
 
 PACKAGE_INSTANCE_TYPES = [
     rpm.RpmPackageInstance,
-    # maven.MavenPackageInstance,
+    maven.MavenPackageInstance,
     npm.NpmPackageInstance,
     phpcomposer.PhpPackageInstance,
     haxe.HaxePackageInstance,
@@ -128,7 +127,7 @@ PACKAGE_INSTANCE_TYPES = [
     rubygems.RubyPackageInstance,
     pypi.PythonPackageInstance,
     golang.GoPackageInstance,
-    # nuget.NugetPackageInstance,
+    nuget.NugetPackageInstance,
     chef.ChefPackageInstance,
     win_pe.WindowsPackageInstance,
     pubspec.PubspecPackageInstance,

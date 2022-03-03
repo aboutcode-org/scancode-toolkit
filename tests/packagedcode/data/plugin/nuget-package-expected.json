@@ -14,13 +14,72 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 1
       }
     }
   ],
   "dependencies": [],
-  "packages": [],
+  "packages": [
+    {
+      "type": "nuget",
+      "namespace": null,
+      "name": "Castle.Core",
+      "version": "4.2.1",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": "Castle Core, including DynamicProxy, Logging Abstractions and DictionaryAdapter",
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "author",
+          "name": "Castle Project Contributors",
+          "email": null,
+          "url": null
+        },
+        {
+          "type": null,
+          "role": "owner",
+          "name": "Castle Project Contributors",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "http://www.castleproject.org/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "git+https://github.com/castleproject/Core",
+      "copyright": "Copyright (c) 2004-2017 Castle Project - http://www.castleproject.org/",
+      "license_expression": "apache-2.0",
+      "declared_license": "http://www.apache.org/licenses/LICENSE-2.0.html",
+      "notice_text": null,
+      "root_path": null,
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [],
+      "extra_data": {},
+      "package_uuid": "pkg:nuget/Castle.Core@4.2.1",
+      "package_data_paths": [
+        "Castle.Core.nuspec"
+      ],
+      "files": [
+        "Castle.Core.nuspec"
+      ],
+      "purl": "pkg:nuget/Castle.Core@4.2.1",
+      "repository_homepage_url": "https://www.nuget.org/packages/Castle.Core/4.2.1",
+      "repository_download_url": "https://www.nuget.org/api/v2/package/Castle.Core/4.2.1",
+      "api_data_url": "https://api.nuget.org/v3/registration3/castle.core/4.2.1.json"
+    }
+  ],
   "files": [
     {
       "path": "Castle.Core.nuspec",
@@ -78,7 +137,9 @@
           "api_data_url": "https://api.nuget.org/v3/registration3/castle.core/4.2.1.json"
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:nuget/Castle.Core@4.2.1"
+      ],
       "scan_errors": []
     }
   ]
