@@ -17,6 +17,9 @@
       <author>Isaac Z. Schlueter</author>
       <scope>required</scope>
       <purl>pkg:npm/npm@2.13.5</purl>
+      <hashes>
+        <hash alg="SHA-1">a124386bce4a90506f28ad4b1d1a804a17baaf32</hash>
+      </hashes>
       <licenses>
         <expression>Artistic-2.0</expression>
       </licenses>

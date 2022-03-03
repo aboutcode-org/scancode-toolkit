@@ -15,7 +15,12 @@
       "author": "Isaac Z. Schlueter",
       "description": "a package manager for JavaScript",
       "purl": "pkg:npm/npm@2.13.5",
-      "hashes": [],
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "a124386bce4a90506f28ad4b1d1a804a17baaf32"
+        }
+      ],
       "licenses": [
         {
           "expression": "Artistic-2.0"

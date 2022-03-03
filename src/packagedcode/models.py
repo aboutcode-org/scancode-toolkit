@@ -853,7 +853,7 @@ class PackageInstance:
                 logger.debug('Merging package manifest data for: {}'.format(path))
                 logger.debug('package manifest data: {}'.format(repr(package_data)))
             self.package_data_paths.append(path)
-            self.merge_package_data_into_instance(package_data.copy())
+            self.update(package_data.copy())
 
         self.package_data_paths = tuple(self.package_data_paths)
 
@@ -939,12 +939,12 @@ class PackageInstance:
         
         return manifest_file_patterns
 
-    def merge_package_data_into_instance(self, package_data, replace=False):
+    def update(self, package_data, replace=False):
         """
-        Merge the `package_data` ScannedPackage object into the `package_instance`
-        Package model object.
+        Update the PackageInstance object with data from the `package_data`
+        object.
         When an `package_instance` field has no value one side and and the
-        package_data field has a value, the package_instance field is always
+        `package_data` field has a value, the `package_instance` field is always
         set to this value.
         If `replace` is True and a field has a value on both sides, then
         package_instance field value will be replaced by the package_data
@@ -954,7 +954,7 @@ class PackageInstance:
         existing_mapping = self.get_package_data()
 
         # Remove PackageData specific attributes
-        for attribute in ('md5', 'sha1', 'sha256', 'sha512', 'root_path'):
+        for attribute in ['root_path']:
             package_data.pop(attribute, None)
             existing_mapping.pop(attribute, None)
 

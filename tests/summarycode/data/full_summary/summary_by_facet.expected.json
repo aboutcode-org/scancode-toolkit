@@ -27,7 +27,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.15",
+        "spdx_license_list_version": "3.16",
         "files_count": 26
       }
     }
@@ -3080,7 +3080,7 @@
       "homepage_url": "https://docs.npmjs.com/",
       "download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
       "size": null,
-      "sha1": null,
+      "sha1": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
       "md5": null,
       "sha256": null,
       "sha512": null,

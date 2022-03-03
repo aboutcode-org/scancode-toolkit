@@ -14,7 +14,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "spdx_license_list_version": "3.14",
+        "spdx_license_list_version": "3.16",
         "files_count": 8
       }
     }
@@ -328,7 +328,7 @@
       "size": null,
       "sha1": null,
       "md5": null,
-      "sha256": null,
+      "sha256": "6e45251662433bf51f96fb3d2204b65416fece329d60e6235c0f0edc416cfe24",
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,

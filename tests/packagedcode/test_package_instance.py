@@ -43,7 +43,7 @@ class TestPackageAndDependencyInstance(PackageTester):
 
         pk_instance = PythonPackageInstance()
         for manifest in manifests:
-            pk_instance.merge_package_data_into_instance(manifest)
+            pk_instance.update(manifest)
 
         self.check_package(pk_instance, expected_file, regen)
 
@@ -56,6 +56,6 @@ class TestPackageAndDependencyInstance(PackageTester):
 
         pk_instance = PythonPackageInstance()
         for manifest in manifests:
-            pk_instance.merge_package_data_into_instance(manifest)
+            pk_instance.update(manifest)
 
         self.check_package(pk_instance, expected_file, regen)
