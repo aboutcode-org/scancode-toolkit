@@ -31,7 +31,6 @@
     }
   ],
   "notice_text": null,
-  "root_path": null,
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.hibernate/hibernate-commons-annotations@3.0.0.ga?classifier=sources"

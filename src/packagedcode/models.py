@@ -548,11 +548,6 @@ class PackageData(BasePackageData):
         label='notice text',
         help='A notice text for this package.')
 
-    root_path = String(
-        label='package root path',
-        help='The path to the root of the package documented in this manifest '
-             'if any, such as a Maven .pom or a npm package.json parent directory.')
-
     contains_source_code = TriBoolean(
         label='contains source code',
         help='Flag set to True if this package contains its own source code, None '

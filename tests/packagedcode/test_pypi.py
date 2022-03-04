@@ -489,14 +489,12 @@ class TestPyPiSetupPy(PackageTester):
         expected_loc = self.get_test_loc('pypi/setup.py/arpy_setup.py-expected.json')
         self.check_packages(package, expected_loc, regen=False)
 
-    @expectedFailure
     def test_parse_setup_py_pluggy(self):
         test_file = self.get_test_loc('pypi/setup.py/pluggy_setup.py')
         package = pypi.SetupPy.recognize(test_file)
         expected_loc = self.get_test_loc('pypi/setup.py/pluggy_setup.py-expected.json')
         self.check_packages(package, expected_loc, regen=False)
 
-    @expectedFailure
     def test_parse_setup_py_pygtrie(self):
         # this uses a kwargs dict
         test_file = self.get_test_loc('pypi/setup.py/pygtrie_setup.py')

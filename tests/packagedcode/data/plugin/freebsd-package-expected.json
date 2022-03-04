@@ -65,7 +65,6 @@
         "licenselogic": "single"
       },
       "notice_text": null,
-      "root_path": null,
       "contains_source_code": null,
       "source_packages": [],
       "extra_data": {},
@@ -131,7 +130,6 @@
             "licenselogic": "single"
           },
           "notice_text": null,
-          "root_path": null,
           "contains_source_code": null,
           "source_packages": [],
           "extra_data": {},

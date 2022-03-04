@@ -1,4 +1,4 @@
-[  
+[
   {
     "type": "freebsd",
     "namespace": null,
@@ -38,11 +38,10 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
     "extra_data": {},
+    "dependencies": [],
     "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
     "repository_homepage_url": null,
     "repository_download_url": null,

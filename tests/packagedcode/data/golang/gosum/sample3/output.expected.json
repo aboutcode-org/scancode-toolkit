@@ -25,7 +25,9 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
     "dependencies": [
       {
         "purl": "pkg:golang/github.com/cznic/parser@v0.0.0-20160622100904-31edd927e5b1",
@@ -44,9 +46,6 @@
         "is_resolved": true
       }
     ],
-    "contains_source_code": null,
-    "source_packages": [],
-    "extra_data": {},
     "purl": null,
     "repository_homepage_url": null,
     "repository_download_url": null,

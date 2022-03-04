@@ -33,8 +33,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
     "installed_files": [],
@@ -43,6 +41,7 @@
         "MsiExec.exe /I{351016A7-AED4-4824-8D2E-2F9ED497CF77}"
       ]
     },
+    "dependencies": [],
     "purl": "pkg:windows-program/Python%203.9.5%20Tcl/Tk%20Support%20%2864-bit%29@3.9.5150.0",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -82,8 +81,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
     "installed_files": [],
@@ -92,6 +89,7 @@
         "MsiExec.exe /I{420E50F6-A8E8-4098-A321-7DF6B3C3BA82}"
       ]
     },
+    "dependencies": [],
     "purl": "pkg:windows-program/Python%203.9.5%20Utility%20Scripts%20%2864-bit%29@3.9.5150.0",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -131,8 +129,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
     "installed_files": [],
@@ -141,6 +137,7 @@
         "MsiExec.exe /I{6504EEE5-2172-4D34-A76D-0372356396B4}"
       ]
     },
+    "dependencies": [],
     "purl": "pkg:windows-program/Python%203.9.5%20Add%20to%20Path%20%2864-bit%29@3.9.5150.0",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -180,8 +177,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
     "installed_files": [],
@@ -190,6 +185,7 @@
         "MsiExec.exe /I{843C07B6-040E-4E83-B244-5383247D70AB}"
       ]
     },
+    "dependencies": [],
     "purl": "pkg:windows-program/Python%203.9.5%20Executables%20%2864-bit%29@3.9.5150.0",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -229,8 +225,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
     "installed_files": [],
@@ -239,6 +233,7 @@
         "MsiExec.exe /I{AEE58901-97A1-422A-B964-4FD9BF3327B8}"
       ]
     },
+    "dependencies": [],
     "purl": "pkg:windows-program/Python%203.9.5%20Development%20Libraries%20%2864-bit%29@3.9.5150.0",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -278,8 +273,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
     "installed_files": [],
@@ -288,6 +281,7 @@
         "MsiExec.exe /I{F4DC18F4-6323-4BE8-A322-38268831BC24}"
       ]
     },
+    "dependencies": [],
     "purl": "pkg:windows-program/Python%203.9.5%20Standard%20Library%20%2864-bit%29@3.9.5150.0",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -327,8 +321,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
     "installed_files": [],
@@ -337,6 +329,7 @@
         "MsiExec.exe /I{FBB6299D-CB58-4177-B6A0-63BFB1C8C3AE}"
       ]
     },
+    "dependencies": [],
     "purl": "pkg:windows-program/Python%203.9.5%20Core%20Interpreter%20%2864-bit%29@3.9.5150.0",
     "repository_homepage_url": null,
     "repository_download_url": null,

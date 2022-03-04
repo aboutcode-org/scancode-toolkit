@@ -536,7 +536,6 @@
     }
   ],
   "notice_text": null,
-  "root_path": null,
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/commons-lang/commons-lang@2.1?classifier=sources"

@@ -51,7 +51,6 @@ class TestModels(PackageTester):
             ('license_expression', None),
             ('declared_license', None),
             ('notice_text', None),
-            ('root_path', None),
             ('contains_source_code', None),
             ('source_packages', []),
             ('extra_data', {}),
@@ -142,7 +141,6 @@ class TestModels(PackageTester):
             license_expression='apache-2.0',
             declared_license=u'apache-2.0',
             notice_text='licensed under the apacche 2.0 \nlicense',
-            root_path='',
             contains_source_code=True,
             source_packages=[
                 "pkg:maven/aspectj/aspectjtools@1.5.4?classifier=sources"

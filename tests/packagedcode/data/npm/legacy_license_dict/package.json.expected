@@ -45,7 +45,9 @@
       }
     ],
     "notice_text": null,
-    "root_path": null,
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
     "dependencies": [
       {
         "purl": "pkg:npm/imagesize",
@@ -104,9 +106,6 @@
         "is_resolved": false
       }
     ],
-    "contains_source_code": null,
-    "source_packages": [],
-    "extra_data": {},
     "purl": "pkg:npm/grunt-inline-imgsize@0.0.1",
     "repository_homepage_url": "https://www.npmjs.com/package/grunt-inline-imgsize",
     "repository_download_url": "https://registry.npmjs.org/grunt-inline-imgsize/-/grunt-inline-imgsize-0.0.1.tgz",

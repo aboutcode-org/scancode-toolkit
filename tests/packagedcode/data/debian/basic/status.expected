@@ -37,8 +37,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [
       "pkg:deb/ubuntu/ncurses"
@@ -46,6 +44,7 @@
     "extra_data": {
       "multi_arch": "same"
     },
+    "dependencies": [],
     "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -89,8 +88,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [
       "pkg:deb/ubuntu/e2fsprogs"
@@ -98,6 +95,7 @@
     "extra_data": {
       "multi_arch": "same"
     },
+    "dependencies": [],
     "purl": "pkg:deb/ubuntu/libcom-err2@1.44.1-1ubuntu1.1?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -141,8 +139,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [
       "pkg:deb/ubuntu/apt"
@@ -150,6 +146,7 @@
     "extra_data": {
       "multi_arch": "same"
     },
+    "dependencies": [],
     "purl": "pkg:deb/ubuntu/libapt-pkg5.0@1.6.11?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -193,8 +190,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [
       "pkg:deb/ubuntu/audit"
@@ -202,6 +197,7 @@
     "extra_data": {
       "multi_arch": "same"
     },
+    "dependencies": [],
     "purl": "pkg:deb/ubuntu/libaudit1@1:2.8.2-1ubuntu1?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -245,13 +241,12 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [
       "pkg:deb/ubuntu/perl"
     ],
     "extra_data": {},
+    "dependencies": [],
     "purl": "pkg:deb/ubuntu/perl-base@5.26.1-6ubuntu0.3?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -295,8 +290,6 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
-    "dependencies": [],
     "contains_source_code": null,
     "source_packages": [
       "pkg:deb/ubuntu/systemd"
@@ -304,6 +297,7 @@
     "extra_data": {
       "multi_arch": "same"
     },
+    "dependencies": [],
     "purl": "pkg:deb/ubuntu/libudev1@237-3ubuntu10.22?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,

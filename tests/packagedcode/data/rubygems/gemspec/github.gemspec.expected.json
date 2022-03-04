@@ -61,7 +61,9 @@
     "license_expression": null,
     "declared_license": null,
     "notice_text": null,
-    "root_path": null,
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
     "dependencies": [
       {
         "purl": "pkg:gem/rake",
@@ -128,9 +130,6 @@
         "is_resolved": false
       }
     ],
-    "contains_source_code": null,
-    "source_packages": [],
-    "extra_data": {},
     "purl": "pkg:gem/github@GitHub::VERSION",
     "repository_homepage_url": "https://rubygems.org/gems/github/versions/GitHub::VERSION",
     "repository_download_url": "https://rubygems.org/downloads/github-GitHub::VERSION.gem",

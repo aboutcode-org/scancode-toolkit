@@ -27,6 +27,9 @@ class TestPackageAndDependency(PackageTester):
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_instance_uuid=True)
 
+    # Note that this will fail even at regen True.
+    # Will pass on the next regen False run.
+    # ToDo: Use moking instead
     def test_package_instance_scan_python_with_uuid(self):
         test_dir = self.get_test_loc('instance/pypi')
         result_file = self.get_temp_file('json')

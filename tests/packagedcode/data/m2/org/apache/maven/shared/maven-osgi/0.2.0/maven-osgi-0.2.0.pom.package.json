@@ -24,7 +24,6 @@
   "license_expression": null,
   "declared_license": null,
   "notice_text": null,
-  "root_path": null,
   "contains_source_code": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.shared/maven-osgi@0.2.0?classifier=sources"

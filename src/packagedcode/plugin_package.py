@@ -279,39 +279,3 @@ def create_dependency_instances(path, dependencies):
         )
 
     return dependency_instances
-
-
-def set_packages_root(resource, codebase):
-    """
-    Set the root_path attribute as the path to the root Resource for a given
-    package package or build script that may exist in a `resource`.
-    """
-    # only files can have a package
-    if not resource.is_file:
-        return
-
-    package_data_all = resource.package_data
-    if not package_data_all:
-        return
-    # NOTE: we are dealing with a single file therefore there should be only be
-    # a single package detected. But some package data can document more
-    # than one package at a time such as multiple arches/platforms for a gempsec
-    # or multiple sub package (with "%package") in an RPM .spec file.
-
-    modified = False
-    for package_data in package_data_all:
-        package_instance = get_package_instance(package_data)
-        package_root = package_instance.get_package_root(resource, codebase)
-        if not package_root:
-            # this can happen if we scan a single resource that is a package package
-            continue
-        # What if the target resource (e.g. a parent) is the root and we are in stripped root mode?
-        if package_root.is_root and codebase.strip_root:
-            continue
-        package_data['root_path'] = package_root.path
-        modified = True
-
-    if modified:
-        # we did set the root_path
-        codebase.save_resource(resource)
-    return resource

@@ -43,7 +43,9 @@
       }
     ],
     "notice_text": null,
-    "root_path": null,
+    "contains_source_code": null,
+    "source_packages": [],
+    "extra_data": {},
     "dependencies": [
       {
         "purl": "pkg:npm/styout",
@@ -54,9 +56,6 @@
         "is_resolved": false
       }
     ],
-    "contains_source_code": null,
-    "source_packages": [],
-    "extra_data": {},
     "purl": "pkg:npm/jsonp-filter@0.0.3",
     "repository_homepage_url": "https://www.npmjs.com/package/jsonp-filter",
     "repository_download_url": "https://registry.npmjs.org/jsonp-filter/-/jsonp-filter-0.0.3.tgz",

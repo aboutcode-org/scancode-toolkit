@@ -104,11 +104,9 @@ def compare_package_results(expected, result):
     result_packages = []
     for result_package in result:
         r = result_package.to_dict()
-        r.pop('root_path')
         result_packages.append(r)
     expected_packages = []
     for expected_package in expected:
         e = expected_package.to_dict()
-        e.pop('root_path')
         expected_packages.append(e)
     assert result_packages == expected_packages

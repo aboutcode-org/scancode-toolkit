@@ -59,7 +59,6 @@ class TestRpmBasics(FileBasedTesting):
             ('license_expression', None),
             ('declared_license', 'LGPLv2+'),
             ('notice_text', None),
-            ('root_path', None),
             ('contains_source_code', None),
             ('source_packages', [ 'pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src']),
             ('extra_data', {}),
